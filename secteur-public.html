@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>EN PLATEAU — Secteur public</title>
+<meta name="description" content="EN PLATEAU accompagne ministères, collectivités et agences dans la structuration de la prise de parole publique : clarté, cohérence inter-services, crédibilité et séquences à forte exposition." />
+<link rel="canonical" href="https://enplateau.fr/secteur-public.html" />
+<style>
+:root{
+  --ink:#0B0F19;
+  --slate:#2B3340;
+  --muted:#5B6472;
+  --line:#E7EAF0;
+  --sig:#0B1F3A;
+  --max:980px;
+  --bg:#ffffff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;color:var(--slate);background:var(--bg);}
+a{color:inherit}
+.container{max-width:var(--max);margin:0 auto;padding:34px 22px 100px;}
+
+/* Header (commun) */
+.header-wrap{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);}
+.header{max-width:var(--max);margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-mark{width:34px;height:34px;border-radius:10px;background:var(--sig);display:inline-block}
+.brand-name{font-weight:900;letter-spacing:-.02em;color:var(--ink)}
+.nav{display:none;gap:18px;align-items:center}
+.nav a{font-size:14px;color:var(--muted);text-decoration:none;font-weight:750;padding:10px 10px;border-radius:999px}
+.nav a:hover{color:var(--ink);background:#f5f7fb}
+.nav a.active{color:var(--ink);background:#eef2f8}
+.burger{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-weight:800;color:var(--ink);cursor:pointer}
+.mobile{display:none;border-top:1px solid var(--line);}
+.mobile a{display:block;padding:14px 22px;text-decoration:none;color:var(--muted);font-weight:750}
+.mobile a:hover{background:#f5f7fb;color:var(--ink)}
+@media(min-width:900px){
+  .nav{display:flex}
+  .burger{display:none}
+  .mobile{display:none !important}
+}
+
+/* Typography */
+h1{font-size:clamp(34px,6vw,52px);line-height:1.06;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
+h2{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
+h3{font-size:20px;margin:0 0 10px;color:var(--ink);font-weight:760;}
+p{margin:0 0 18px;}
+
+/* Sections */
+.hero{background:var(--sig);color:#fff;border-radius:26px;padding:52px 22px 40px;margin:26px 0 54px;text-align:center;}
+.hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
+.hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-bottom:18px;}
+.section{margin-bottom:78px;text-align:center;}
+.measure{max-width:860px;margin-left:auto;margin-right:auto;}
+.grid-3{display:grid;gap:22px;margin-top:28px;}
+@media(min-width:900px){.grid-3{grid-template-columns:repeat(3,1fr);}}
+.panel{border:1px solid var(--line);border-radius:20px;padding:26px;background:#fff;text-align:left;}
+.panel.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
+.panel ul{margin:10px 0 0 18px}
+.meta{font-size:14px;color:var(--muted);margin-top:14px;}
+.exec-block{border:1px solid var(--line);border-radius:22px;padding:28px;background:#f8f9fb;margin-top:26px;text-align:left;}
+.exec-block ul{margin:10px 0 0 18px}
+.badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+.badge{font-size:12px;font-weight:800;border:1px solid var(--line);padding:8px 10px;border-radius:999px;color:var(--muted);background:#fff}
+.cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.btn{padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;}
+.btn-primary{background:#fff;color:var(--sig);}
+.btn-ghost{border:1px solid rgba(255,255,255,.38);color:#fff;}
+.final{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px;text-align:center;}
+.final h2{color:#fff;}
+</style>
+</head>
+<body>
+
+<div class="header-wrap">
+  <header class="header" aria-label="Navigation principale">
+    <a class="brand" href="index.html" aria-label="EN PLATEAU — Accueil">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">EN&nbsp;PLATEAU</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation">
+      <a href="grands-comptes.html">Grands comptes</a>
+      <a href="pme.html">PME</a>
+      <a href="association-ess.html">Association &amp; ESS</a>
+      <a class="active" href="secteur-public.html" aria-current="page">Secteur public</a>
+      <a href="a-propos.html">À propos</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+  </header>
+
+  <div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
+    <a href="grands-comptes.html">Grands comptes</a>
+    <a href="pme.html">PME</a>
+    <a href="association-ess.html">Association &amp; ESS</a>
+    <a href="secteur-public.html" aria-current="page">Secteur public</a>
+    <a href="a-propos.html">À propos</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="kicker">Architecte de prises de parole</div>
+    <h1>Secteur public</h1>
+    <div class="baseline">Ministères · Collectivités · Agences</div>
+    <div class="cta">
+      <a href="#contact" class="btn btn-primary">Cadrer votre séquence</a>
+      <a href="#cadres" class="btn btn-ghost">Voir les cadres</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Quand la parole engage la confiance</h2>
+<p class="measure">
+Dans le secteur public, l’enjeu n’est pas seulement d’annoncer une décision. Il est de rendre une politique lisible, d’anticiper les interprétations et de préserver la confiance des citoyens, des partenaires et des territoires. Une séquence mal structurée peut fragiliser un dispositif pourtant solide.
+</p>
+
+    <p class="measure">
+      Dans le secteur public, une prise de parole n’est jamais neutre : elle engage la confiance, la lisibilité de l’action,
+      la capacité d’embarquement des parties prenantes, et la robustesse d’une politique publique.
+      EN PLATEAU intervient en amont pour structurer le récit, sécuriser les angles et préparer les porte-parole
+      dans le respect des contraintes institutionnelles.
+    </p>
+    <div class="badges" aria-label="Engagements">
+      <span class="badge">Neutralité &amp; sobriété</span>
+      <span class="badge">Cohérence inter-services</span>
+      <span class="badge">Clarté pour le public</span>
+      <span class="badge">Exigence éditoriale</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Ce que nous rendons possible</h2>
+    <p class="measure">
+      Nous concevons des architectures de parole adaptées aux enjeux publics : annonces, bilans, crises, concertations,
+      lancement de dispositifs, transformations territoriales. Notre rôle : réduire l’ambiguïté, anticiper les questions,
+      et produire une cohérence utilisable par l’ensemble des acteurs (cabinet, directions, opérateurs, partenaires).
+    </p>
+
+    <div class="grid-3">
+      <div class="panel featured">
+        <h3>Lisibilité</h3>
+        <p><strong>Clarifier</strong> : ce qui change, pourquoi, pour qui, et comment.</p>
+        <ul>
+          <li>Messages clés et hiérarchie</li>
+          <li>Explications simples, sans appauvrir le fond</li>
+          <li>Points sensibles : cadrage &amp; réponses</li>
+        </ul>
+        <p class="meta">Objectif : réduire l’interprétation et les contresens.</p>
+      </div>
+
+      <div class="panel">
+        <h3>Cohérence</h3>
+        <p><strong>Aligner</strong> : cabinet, directions, opérateurs, territoires.</p>
+        <ul>
+          <li>Langage commun &amp; règles de prise de parole</li>
+          <li>Q&amp;A partagé (interne / externe)</li>
+          <li>Dispositifs multi-cibles (agents, élus, citoyens)</li>
+        </ul>
+        <p class="meta">Objectif : une parole stable, reproductible, maîtrisée.</p>
+      </div>
+
+      <div class="panel">
+        <h3>Crédibilité</h3>
+        <p><strong>Sécuriser</strong> : formats, angles et porte-parole.</p>
+        <ul>
+          <li>Préparation des auditions / plateaux / conférences</li>
+          <li>Co-production éditoriale (quand pertinent)</li>
+          <li>Réutilisation : dossiers, pages, supports</li>
+        </ul>
+        <p class="meta">Objectif : gagner en confiance sans sur-promettre.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cadres">
+    <h2>Trois cadres d’engagement</h2>
+    <p class="measure">Même exigence. Trois niveaux selon l’enjeu, la temporalité et le nombre d’acteurs impliqués.</p>
+
+    <div class="grid-3">
+      <div class="panel">
+        <h3>Séquence</h3>
+        <p><strong>Pour cadrer une annonce.</strong> Une décision, un lancement, un bilan.</p>
+        <ul>
+          <li>Architecture des messages</li>
+          <li>Q&amp;A + éléments de langage</li>
+          <li>Préparation 1 porte-parole</li>
+        </ul>
+        <p class="meta"><strong>Délai :</strong> 7 à 15 jours.</p>
+      </div>
+
+      <div class="panel featured">
+        <h3>Multi-acteurs</h3>
+        <p><strong>Pour aligner plusieurs services.</strong> Parole partagée, cohérence multi-voix.</p>
+        <ul>
+          <li>Langage commun + points de validation</li>
+          <li>Préparation 2 à 4 porte-parole</li>
+          <li>Plan de séquence (qui parle, à qui, quand)</li>
+        </ul>
+        <p class="meta"><strong>Délai :</strong> 3 à 6 semaines.</p>
+      </div>
+
+      <div class="panel">
+        <h3>Trajectoire</h3>
+        <p><strong>Pour installer une continuité.</strong> Dispositif, transformation, programme.</p>
+        <ul>
+          <li>Calendrier narratif 6 à 12 mois</li>
+          <li>Réutilisation des contenus (supports &amp; pages)</li>
+          <li>Gouvernance éditoriale légère</li>
+        </ul>
+        <p class="meta"><strong>Délai :</strong> séquence initiale à partir de 4 semaines.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Livrables utilisables et transmis­sibles</h2>
+    <div class="exec-block">
+      <h3>Ce que vous obtenez</h3>
+      <ul>
+        <li><strong>Note d’architecture</strong> (messages, preuves, risques, angles).</li>
+        <li><strong>Q&amp;A</strong> (interne / externe) et éléments de langage.</li>
+        <li><strong>Kit porte-parole</strong> (brief, do / don’t, points de vigilance).</li>
+        <li><strong>Plan de séquence</strong> (cibles, supports, timing, coordination).</li>
+      </ul>
+      <p style="margin-top:14px"><strong>Implication estimée :</strong> 6 à 18 heures cumulées selon cadre, réparties sur 1 à 6 semaines.</p>
+    </div>
+    <p class="measure">
+      Notre objectif : une parole qui se transmet facilement d’un service à l’autre, qui résiste aux questions,
+      et qui permet de parler au public sans créer d’incompréhension.
+    </p>
+  </section>
+
+  <section class="final" id="contact">
+    <h2>Cadrons votre séquence</h2>
+    <p>
+      Un échange confidentiel suffit pour clarifier l’enjeu public, identifier les contraintes et définir le cadre adapté.
+    </p>
+    <div class="cta">
+      <a href="mailto:hocine.reguida@enplateau.fr" class="btn btn-primary">hocine.reguida@enplateau.fr</a>
+    </div>
+    <p style="margin-top:16px;font-size:14px;opacity:.82;">Accord de confidentialité possible avant tout échange approfondi.</p>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  const b = document.getElementById('burger');
+  const m = document.getElementById('mobileNav');
+  if(!b || !m) return;
+  b.addEventListener('click', function(){
+    const open = m.style.display === 'block';
+    m.style.display = open ? 'none' : 'block';
+    b.setAttribute('aria-expanded', open ? 'false' : 'true');
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>EN PLATEAU — Association & ESS</title>
+<meta name="description" content="EN PLATEAU accompagne les associations, fondations et acteurs de l’ESS dans la structuration de leur prise de parole : récit d’impact, crédibilité externe et préparation des porte-parole." />
+<link rel="canonical" href="https://enplateau.fr/association-ess.html" />
+<style>
+:root{
+  --ink:#0B0F19;
+  --slate:#2B3340;
+  --muted:#5B6472;
+  --line:#E7EAF0;
+  --sig:#0B1F3A;
+  --max:980px;
+  --bg:#ffffff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;color:var(--slate);background:var(--bg);}
+a{color:inherit}
+.container{max-width:var(--max);margin:0 auto;padding:34px 22px 100px;}
+
+/* Header (commun) */
+.header-wrap{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);}
+.header{max-width:var(--max);margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-mark{width:34px;height:34px;border-radius:10px;background:var(--sig);display:inline-block}
+.brand-name{font-weight:900;letter-spacing:-.02em;color:var(--ink)}
+.nav{display:none;gap:18px;align-items:center}
+.nav a{font-size:14px;color:var(--muted);text-decoration:none;font-weight:750;padding:10px 10px;border-radius:999px}
+.nav a:hover{color:var(--ink);background:#f5f7fb}
+.nav a.active{color:var(--ink);background:#eef2f8}
+.burger{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-weight:800;color:var(--ink);cursor:pointer}
+.mobile{display:none;border-top:1px solid var(--line);}
+.mobile a{display:block;padding:14px 22px;text-decoration:none;color:var(--muted);font-weight:750}
+.mobile a:hover{background:#f5f7fb;color:var(--ink)}
+@media(min-width:900px){
+  .nav{display:flex}
+  .burger{display:none}
+  .mobile{display:none !important}
+}
+
+/* Typography */
+h1{font-size:clamp(34px,6vw,52px);line-height:1.06;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
+h2{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
+h3{font-size:20px;margin:0 0 10px;color:var(--ink);font-weight:760;}
+p{margin:0 0 18px;}
+small{color:var(--muted)}
+
+/* Sections */
+.hero{background:var(--sig);color:#fff;border-radius:26px;padding:52px 22px 40px;margin:26px 0 54px;text-align:center;}
+.hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
+.hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-bottom:18px;}
+.section{margin-bottom:78px;text-align:center;}
+.measure{max-width:860px;margin-left:auto;margin-right:auto;}
+.grid-3{display:grid;gap:22px;margin-top:28px;}
+@media(min-width:900px){.grid-3{grid-template-columns:repeat(3,1fr);}}
+.panel{border:1px solid var(--line);border-radius:20px;padding:26px;background:#fff;text-align:left;}
+.panel.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
+.panel ul{margin:10px 0 0 18px}
+.meta{font-size:14px;color:var(--muted);margin-top:14px;}
+.exec-block{border:1px solid var(--line);border-radius:22px;padding:28px;background:#f8f9fb;margin-top:26px;text-align:left;}
+.exec-block ul{margin:10px 0 0 18px}
+.badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+.badge{font-size:12px;font-weight:800;border:1px solid var(--line);padding:8px 10px;border-radius:999px;color:var(--muted);background:#fff}
+.cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.btn{padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;}
+.btn-primary{background:#fff;color:var(--sig);}
+.btn-ghost{border:1px solid rgba(255,255,255,.38);color:#fff;}
+.final{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px;text-align:center;}
+.final h2{color:#fff;}
+</style>
+</head>
+<body>
+
+<div class="header-wrap">
+  <header class="header" aria-label="Navigation principale">
+    <a class="brand" href="index.html" aria-label="EN PLATEAU — Accueil">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">EN&nbsp;PLATEAU</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation">
+      <a href="grands-comptes.html">Grands comptes</a>
+      <a href="pme.html">PME</a>
+      <a class="active" href="association-ess.html" aria-current="page">Association &amp; ESS</a>
+      <a href="secteur-public.html">Secteur public</a>
+      <a href="a-propos.html">À propos</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+  </header>
+
+  <div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
+    <a href="grands-comptes.html">Grands comptes</a>
+    <a href="pme.html">PME</a>
+    <a href="association-ess.html" aria-current="page">Association &amp; ESS</a>
+    <a href="secteur-public.html">Secteur public</a>
+    <a href="a-propos.html">À propos</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HERO (allégé) -->
+  <section class="hero">
+    <div class="kicker">Architecte de prises de parole</div>
+    <h1>Rendre votre impact<br>lisible et crédible</h1>
+    <div class="baseline">Associations, fondations &amp; ESS</div>
+    <div class="cta">
+      <a href="#contact" class="btn btn-primary">Cadrer votre séquence</a>
+      <a href="#cadres" class="btn btn-ghost">Voir les cadres</a>
+    </div>
+  </section>
+
+  <!-- Ouverture (texte déplacé sous le hero) -->
+  <section class="section">
+    <h2>Quand l’action doit être comprise, défendue et reconnue</h2>
+<p class="measure">
+Dans un contexte de financements sous tension et d’exigences accrues en matière d’évaluation,
+la reconnaissance ne repose plus uniquement sur l’engagement.
+Elle repose sur la capacité à rendre l’impact lisible, défendable et compréhensible
+par des partenaires, financeurs et décideurs.
+</p>
+
+    <p class="measure">
+      Votre utilité est souvent évidente sur le terrain — mais difficile à expliquer, à défendre et à faire reconnaître.
+      EN PLATEAU structure votre récit, clarifie vos preuves et prépare vos porte-parole pour des séquences à forte crédibilité
+      (partenaires, événements, médias économiques).
+    </p>
+    <div class="badges" aria-label="Engagements">
+      <span class="badge">Exigence éditoriale</span>
+      <span class="badge">Posture non-promotionnelle</span>
+      <span class="badge">Indépendance journalistique</span>
+      <span class="badge">Clarté stratégique</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Quand l’utilité sociale ne suffit plus</h2>
+    <p class="measure">
+      Subventions en tension, concurrence d’initiatives, exigences d’évaluation, fatigue des équipes : la légitimité ne se décrète pas,
+      elle se construit. Dans ces moments, la prise de parole devient un levier de continuité : attirer des partenaires,
+      sécuriser des financements, recruter, convaincre un territoire.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Ce que nous structurons, concrètement</h2>
+    <p class="measure">
+      Nous ne “faisons pas de la com” au sens classique. Nous concevons une architecture de parole : un récit clair,
+      des angles compatibles avec des interlocuteurs exigeants, et une préparation opérationnelle des porte-parole
+      (direction, responsables de programmes, président·e, administrateurs).
+    </p>
+
+    <div class="grid-3">
+      <div class="panel featured">
+        <h3>Récit d’impact</h3>
+        <p><strong>Clarifier</strong> : ce que vous changez, pour qui, et comment vous le prouvez.</p>
+        <ul>
+          <li>Proposition de valeur (utile, lisible, défendable)</li>
+          <li>Preuves : indicateurs, cas, trajectoires</li>
+          <li>Angles : économie, emploi, territoire, santé, transitions</li>
+        </ul>
+        <p class="meta">Objectif : rendre l’impact “auditable” et racontable.</p>
+      </div>
+
+      <div class="panel">
+        <h3>Parole de gouvernance</h3>
+        <p><strong>Aligner</strong> : direction, CA, équipes et partenaires sur un message commun.</p>
+        <ul>
+          <li>Cartographie des sujets sensibles</li>
+          <li>Langage commun et règles de prise de parole</li>
+          <li>Préparation des réponses (Q&amp;A)</li>
+        </ul>
+        <p class="meta">Objectif : cohérence et maîtrise, sans langue de bois.</p>
+      </div>
+
+      <div class="panel">
+        <h3>Crédibilité externe</h3>
+        <p><strong>Exposer</strong> : faire reconnaître l’action par des tiers crédibles.</p>
+        <ul>
+          <li>Co-production éditoriale (formats exigeants)</li>
+          <li>Interventions et séquences partenaires</li>
+          <li>Réutilisation stratégique des contenus</li>
+        </ul>
+        <p class="meta">Objectif : déplacer la perception, durablement.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cadres">
+    <h2>Trois cadres d’engagement</h2>
+    <p class="measure">Même exigence. Trois niveaux selon votre maturité narrative, votre calendrier et vos parties prenantes.</p>
+
+    <div class="grid-3">
+      <div class="panel">
+        <h3>Clarté</h3>
+        <p><strong>Pour stabiliser le récit.</strong> Une base solide avant toute exposition.</p>
+        <ul>
+          <li>Audit narratif &amp; diagnostic de lisibilité</li>
+          <li>Récit d’impact &amp; preuves</li>
+          <li>1 porte-parole préparé</li>
+        </ul>
+        <p class="meta"><strong>Délai :</strong> 10 à 15 jours.</p>
+      </div>
+
+      <div class="panel featured">
+        <h3>Reconnaissance</h3>
+        <p><strong>Pour gagner en crédibilité.</strong> Récit + séquence éditoriale structurée.</p>
+        <ul>
+          <li>Architecture d’angles (territoire / économie / emploi)</li>
+          <li>Préparation 2 porte-parole</li>
+          <li>1 à 2 séquences d’exposition (selon contexte)</li>
+        </ul>
+        <p class="meta"><strong>Délai :</strong> 3 à 6 semaines selon agenda.</p>
+      </div>
+
+      <div class="panel">
+        <h3>Influence utile</h3>
+        <p><strong>Pour installer une trajectoire.</strong> Gouvernance + continuité + activation raisonnée.</p>
+        <ul>
+          <li>Alignement gouvernance (direction / CA)</li>
+          <li>Calendrier narratif 6 à 12 mois</li>
+          <li>Activation sobre (partenaires, RH, territoires)</li>
+        </ul>
+        <p class="meta"><strong>Délai :</strong> séquence initiale à partir de 4 semaines.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Une méthode compatible avec vos contraintes</h2>
+    <div class="exec-block">
+      <h3>Ce que vous obtenez</h3>
+      <ul>
+        <li><strong>Note d’architecture narrative</strong> (angles, preuves, messages clés, risques).</li>
+        <li><strong>Kit porte-parole</strong> (Q&amp;A, éléments de langage, “do / don’t”).</li>
+        <li><strong>Plan de séquence</strong> (qui parle, où, quand, pourquoi).</li>
+        <li><strong>Guide de réutilisation</strong> des contenus (site, partenaires, dossiers, réseaux).</li>
+      </ul>
+      <p style="margin-top:14px"><strong>Implication estimée :</strong> 6 à 14 heures cumulées (selon cadre), réparties sur 1 à 4 semaines.</p>
+    </div>
+    <p class="measure">
+      Notre objectif n’est pas d’ajouter une charge “communication”, mais de rendre vos prises de parole plus simples :
+      moins de dispersion, plus de cohérence, et des contenus réutilisables.
+    </p>
+  </section>
+
+  <section class="final" id="contact">
+    <h2>Cadrons votre séquence</h2>
+    <p>
+      Un échange confidentiel suffit pour clarifier l’enjeu, identifier le bon cadre et décider s’il faut structurer,
+      exposer ou installer une continuité.
+    </p>
+    <div class="cta">
+      <a href="mailto:hocine.reguida@enplateau.fr" class="btn btn-primary">hocine.reguida@enplateau.fr</a>
+    </div>
+    <p style="margin-top:16px;font-size:14px;opacity:.82;">Accord de confidentialité possible avant tout échange approfondi.</p>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  const b = document.getElementById('burger');
+  const m = document.getElementById('mobileNav');
+  if(!b || !m) return;
+  b.addEventListener('click', function(){
+    const open = m.style.display === 'block';
+    m.style.display = open ? 'none' : 'block';
+    b.setAttribute('aria-expanded', open ? 'false' : 'true');
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>EN PLATEAU — Co-production stratégique d’émissions économiques</title>
+<meta name="description" content="Cabinet de conseil spécialisé : structuration des prises de parole et co-production stratégique d’émissions économiques avec des médias nationaux. Séquences : amont, production, aval." />
+<link rel="canonical" href="https://enplateau.fr/" />
+<style>
+:root{
+  --ink:#0B0F19;
+  --slate:#2B3340;
+  --muted:#5B6472;
+  --line:#E7EAF0;
+  --sig:#0B1F3A;
+  --max:1000px;
+  --bg:#ffffff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;color:var(--slate);background:var(--bg);}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--max);margin:0 auto;padding:34px 22px 110px;}
+
+/* Header (desktop horizontal / mobile burger) */
+.header-wrap{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);}
+.header{max-width:var(--max);margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-mark{width:34px;height:34px;border-radius:10px;background:var(--sig);display:inline-block}
+.brand-name{font-weight:900;letter-spacing:-.02em;color:var(--ink)}
+.nav{display:none;gap:18px;align-items:center}
+.nav a{font-size:14px;color:var(--muted);font-weight:750;padding:10px 10px;border-radius:999px}
+.nav a:hover{color:var(--ink);background:#f5f7fb}
+.nav a.active{color:var(--ink);background:#eef2f8}
+.burger{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-weight:800;color:var(--ink);cursor:pointer}
+.mobile{display:none;border-top:1px solid var(--line);}
+.mobile a{display:block;padding:14px 22px;color:var(--muted);font-weight:750}
+.mobile a:hover{background:#f5f7fb;color:var(--ink)}
+@media(min-width:900px){
+  .nav{display:flex}
+  .burger{display:none}
+  .mobile{display:none !important}
+}
+
+/* Typography */
+h1{font-size:clamp(30px,6vw,48px);line-height:1.08;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
+h2{font-size:clamp(24px,4vw,36px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
+h3{font-size:20px;margin:0 0 10px;color:var(--ink);font-weight:760;}
+p{margin:0 0 18px;}
+
+/* Hero */
+.hero{background:var(--sig);color:#fff;border-radius:26px;padding:54px 22px 44px;margin:26px 0 56px;text-align:center;}
+.hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
+.hero .lead{max-width:860px;margin:0 auto 0;opacity:.92;font-size:16px;}
+.cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.btn{padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;}
+.btn-primary{background:#fff;color:var(--sig);}
+.btn-ghost{border:1px solid rgba(255,255,255,.38);color:#fff;}
+
+/* Sections */
+.section{margin-bottom:72px;text-align:center;}
+.measure{max-width:900px;margin-left:auto;margin-right:auto;}
+.grid-3{display:grid;gap:22px;margin-top:26px;}
+.grid-4{display:grid;gap:22px;margin-top:26px;}
+@media(min-width:900px){
+  .grid-3{grid-template-columns:repeat(3,1fr);}
+  .grid-4{grid-template-columns:repeat(4,1fr);}
+}
+.card{border:1px solid var(--line);border-radius:20px;padding:24px;background:#fff;text-align:left;}
+.card.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
+.card p{font-size:14px;color:var(--muted);margin:0 0 14px}
+.pill{display:inline-block;font-size:12px;font-weight:850;border:1px solid var(--line);padding:8px 10px;border-radius:999px;color:var(--muted);background:#fff}
+.card a.btn{margin-top:6px}
+.card .btn{padding:12px 14px;font-size:14px}
+.card .btn-primary{background:var(--sig);color:#fff}
+.card .btn-primary:hover{filter:brightness(1.05)}
+.soft{background:#f8f9fb;border:1px solid var(--line);border-radius:22px;padding:28px;text-align:left;margin-top:22px}
+.soft ul{margin:10px 0 0 18px}
+.final{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px;text-align:center;}
+.final h2{color:#fff;}
+</style>
+</head>
+<body>
+
+<div class="header-wrap">
+  <header class="header" aria-label="Navigation principale">
+    <a class="brand" href="index.html" aria-label="EN PLATEAU — Accueil">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">EN&nbsp;PLATEAU</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation">
+      <a href="grands-comptes.html">Grands comptes</a>
+      <a href="pme.html">PME</a>
+      <a href="associations-organisations-a-mission.html">Associations &amp; organisations à mission</a>
+      <a href="secteur-public.html">Secteur public</a>
+      <a href="a-propos.html">À propos</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+  </header>
+
+  <div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
+    <a href="grands-comptes.html">Grands comptes</a>
+    <a href="pme.html">PME</a>
+    <a href="associations-organisations-a-mission.html">Associations &amp; organisations à mission</a>
+    <a href="secteur-public.html">Secteur public</a>
+    <a href="a-propos.html">À propos</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HERO (plus léger + explicite) -->
+  <section class="hero">
+    <div class="kicker">Cabinet de conseil spécialisé</div>
+    <h1>Co-production stratégique d’émissions économiques<br>avec des médias nationaux</h1>
+    <p class="lead">
+      Nous intervenons en amont pour structurer la prise de parole, puis nous co-produisons une <strong>séquence média</strong>
+      exigeante (journalistes économiques, cadre éditorial maîtrisé) — avant d’en maximiser l’impact en aval.
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#cibles">Choisir votre page</a>
+      <a class="btn btn-ghost" href="#sequence">Comprendre une séquence</a>
+    </div>
+  </section>
+
+  <!-- CONTEXTE / PERTINENCE -->
+  <section class="section">
+    <h2>Dans quels contextes sommes-nous pertinents ?</h2>
+    <p class="measure">
+      Lorsqu’une prise de parole engage un cap : <strong>annonce</strong>, <strong>repositionnement</strong>, <strong>croissance</strong>,
+      <strong>transformation</strong>, <strong>lancement de dispositif</strong>, <strong>crise</strong>, <strong>salon majeur</strong>.
+      La visibilité seule ne suffit pas : il faut une architecture.
+    </p>
+  </section>
+
+  <!-- DÉFINITION SÉQUENCE -->
+  <section class="section" id="sequence">
+    <h2>Qu’est-ce qu’une “séquence média” ?</h2>
+    <p class="measure">
+      Une séquence n’est pas un contenu isolé. C’est un dispositif complet qui articule <strong>amont</strong>,
+      <strong>production</strong> et <strong>aval</strong> pour obtenir un résultat rare : une parole claire, crédible,
+      exposée dans un cadre exigeant et réutilisable sur la durée.
+    </p>
+
+    <div class="grid-3">
+      <div class="card featured">
+        <span class="pill">Amont — architecture</span>
+        <h3>Structurer</h3>
+        <p>Clarifier le cap, hiérarchiser les messages, anticiper les questions, aligner les acteurs.</p>
+        <div class="soft">
+          <strong>Livrables clés</strong>
+          <ul>
+            <li>Note d’architecture narrative</li>
+            <li>Q&amp;A / éléments de langage</li>
+            <li>Brief porte-parole</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="pill">Production — co-production</span>
+        <h3>Co-produire</h3>
+        <p>Concevoir le cadre éditorial, préparer les intervenants, coordonner avec partenaires médias et équipes.</p>
+        <div class="soft">
+          <strong>Partenaires possibles</strong>
+          <ul>
+            <li>Journalistes / médias économiques</li>
+            <li>Studios / équipes techniques</li>
+            <li>Directions com / RP / agences</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="pill">Aval — impact</span>
+        <h3>Activer</h3>
+        <p>Rendre la séquence utile : réutilisation, diffusion ciblée, supports internes/externes, continuité narrative.</p>
+        <div class="soft">
+          <strong>Effets recherchés</strong>
+          <ul>
+            <li>Crédibilité et autorité</li>
+            <li>Attractivité (clients, talents, partenaires)</li>
+            <li>Trajectoire stabilisée</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARTE ÉTHIQUE -->
+  <section class="section">
+    <h2>Charte éthique</h2>
+    <p class="measure">
+      EN PLATEAU défend une posture simple : <strong>l’indépendance journalistique est non négociable</strong>.
+      Nous structurons et préparons la parole ; nous ne “pilotons” pas les journalistes.
+      La crédibilité du dispositif repose sur un cadre éditorial exigeant, transparent, et sur une parole
+      qui résiste aux questions.
+    </p>
+  </section>
+
+  <!-- CIBLES (max clic) -->
+  <section class="section" id="cibles">
+    <h2>Accédez à l’offre adaptée à votre contexte</h2>
+    <p class="measure">
+      Pour maximiser la pertinence, chaque univers dispose d’un <strong>parcours dédié</strong> (lexique, cas d’usage, cadres d’engagement).
+      Choisissez le parcours qui correspond à votre contexte.
+    </p>
+
+    <div class="grid-4">
+      <div class="card">
+        <h3>PME</h3>
+        <p>Cap stratégique, croissance, repositionnement, salon majeur : une parole claire accélère la trajectoire.</p>
+        <a class="btn btn-primary" href="pme.html">Découvrir l’offre PME</a>
+      </div>
+      <div class="card">
+        <h3>Grands comptes</h3>
+        <p>Gouvernance, alignement multi-acteurs, réputation : structurer avant d’exposer.</p>
+        <a class="btn btn-primary" href="grands-comptes.html">Découvrir l’offre Grands comptes</a>
+      </div>
+      <div class="card">
+        <h3>Associations &amp; organisations à mission</h3>
+        <p>Rendre l’impact lisible, défendable et reconnu par partenaires, financeurs et décideurs.</p>
+        <a class="btn btn-primary" href="associations-organisations-a-mission.html">Découvrir l’offre Associations &amp; organisations à mission</a>
+      </div>
+      <div class="card">
+        <h3>Secteur public</h3>
+        <p>Décision, dispositif, action publique : lisibilité, cohérence inter-services, confiance.</p>
+        <a class="btn btn-primary" href="secteur-public.html">Découvrir l’offre Secteur public</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="contact">
+    <h2>Cadrer une séquence</h2>
+    <p>
+      Un échange confidentiel suffit pour qualifier le contexte, déterminer le cadre,
+      et décider s’il faut structurer, co-produire ou activer.
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="mailto:hocine.reguida@enplateau.fr">hocine.reguida@enplateau.fr</a>
+    </div>
+    <p style="margin-top:16px;font-size:14px;opacity:.82;">Accord de confidentialité possible avant tout échange approfondi.</p>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  const b = document.getElementById('burger');
+  const m = document.getElementById('mobileNav');
+  if(!b || !m) return;
+  b.addEventListener('click', function(){
+    const open = m.style.display === 'block';
+    m.style.display = open ? 'none' : 'block';
+    b.setAttribute('aria-expanded', open ? 'false' : 'true');
+  });
+})();
+</script>
+
+</body>
+</html>

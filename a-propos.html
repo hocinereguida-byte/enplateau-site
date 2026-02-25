@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>EN PLATEAU — À propos</title>
+<meta name="description" content="EN PLATEAU est un cabinet de conseil spécialisé dans la structuration stratégique des prises de parole à forte exposition." />
+<link rel="canonical" href="https://enplateau.fr/a-propos.html" />
+<style>
+:root{
+  --ink:#0B0F19;
+  --slate:#2B3340;
+  --muted:#5B6472;
+  --line:#E7EAF0;
+  --sig:#0B1F3A;
+  --max:980px;
+  --bg:#ffffff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;color:var(--slate);background:var(--bg);}
+a{color:inherit}
+.container{max-width:var(--max);margin:0 auto;padding:34px 22px 100px;}
+
+/* Header */
+.header-wrap{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);}
+.header{max-width:var(--max);margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-mark{width:34px;height:34px;border-radius:10px;background:var(--sig);display:inline-block}
+.brand-name{font-weight:900;letter-spacing:-.02em;color:var(--ink)}
+.nav{display:none;gap:18px;align-items:center}
+.nav a{font-size:14px;color:var(--muted);text-decoration:none;font-weight:750;padding:10px 10px;border-radius:999px}
+.nav a:hover{color:var(--ink);background:#f5f7fb}
+.nav a.active{color:var(--ink);background:#eef2f8}
+.burger{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-weight:800;color:var(--ink);cursor:pointer}
+.mobile{display:none;border-top:1px solid var(--line);}
+.mobile a{display:block;padding:14px 22px;text-decoration:none;color:var(--muted);font-weight:750}
+.mobile a:hover{background:#f5f7fb;color:var(--ink)}
+@media(min-width:900px){
+  .nav{display:flex}
+  .burger{display:none}
+  .mobile{display:none !important}
+}
+
+/* Typography */
+h1{font-size:clamp(34px,6vw,52px);line-height:1.06;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
+h2{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
+p{margin:0 0 18px;}
+.section{margin-bottom:78px;text-align:center;}
+.measure{max-width:860px;margin-left:auto;margin-right:auto;}
+
+/* Hero */
+.hero{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px 44px;margin:26px 0 54px;text-align:center;}
+.hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
+.hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-top:10px;}
+
+/* Blocks */
+.exec-block{border:1px solid var(--line);border-radius:22px;padding:32px;background:#f8f9fb;margin-top:28px;text-align:left;}
+.final{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px;text-align:center;}
+.final h2{color:#fff;}
+.btn{padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;background:#fff;color:var(--sig);}
+</style>
+</head>
+<body>
+
+<div class="header-wrap">
+  <header class="header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"></span>
+      <span class="brand-name">EN&nbsp;PLATEAU</span>
+    </a>
+    <nav class="nav">
+      <a href="grands-comptes.html">Grands comptes</a>
+      <a href="pme.html">PME</a>
+      <a href="association-ess.html">Association &amp; ESS</a>
+      <a href="public-institutionnel.html">Public institutionnel</a>
+      <a class="active" href="a-propos.html">À propos</a>
+    </nav>
+    <button class="burger" id="burger">Menu</button>
+  </header>
+  <div class="mobile" id="mobileNav">
+    <a href="grands-comptes.html">Grands comptes</a>
+    <a href="pme.html">PME</a>
+    <a href="association-ess.html">Association &amp; ESS</a>
+    <a href="public-institutionnel.html">Public institutionnel</a>
+    <a href="a-propos.html">À propos</a>
+  </div>
+</div>
+
+<div class="container">
+
+<section class="hero">
+  <div class="kicker">Cabinet de conseil spécialisé</div>
+  <h1>Structurer les prises de parole<br>qui engagent une trajectoire</h1>
+  <div class="baseline">Conseil stratégique · Architecture éditoriale · Co‑production</div>
+</section>
+
+<section class="section">
+  <h2>Notre positionnement</h2>
+  <p class="measure">
+    EN PLATEAU est un cabinet de conseil indépendant spécialisé dans la structuration stratégique
+    des prises de parole à forte exposition. Nous intervenons lorsque la parole engage plus que
+    la communication : elle engage la réputation, la crédibilité, la gouvernance ou l’influence.
+  </p>
+  <p class="measure">
+    Notre rôle n’est pas de produire du contenu promotionnel. Nous concevons des architectures
+    éditoriales solides : clarification des messages, hiérarchisation des enjeux, préparation
+    des porte‑parole et sécurisation des séquences publiques.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Une approche transversale</h2>
+  <div class="exec-block">
+    <p>
+      Notre méthode s’inspire des standards des médias économiques, du conseil stratégique
+      et des environnements institutionnels. Elle repose sur trois principes :
+    </p>
+    <ul>
+      <li><strong>Exigence éditoriale</strong> : rigueur, clarté, cohérence.</li>
+      <li><strong>Posture non‑promotionnelle</strong> : crédibilité avant visibilité.</li>
+      <li><strong>Transmission</strong> : livrables utilisables par vos équipes.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Le fondateur</h2>
+  <p class="measure">
+    Le fondateur d’EN PLATEAU a navigué pendant plus de vingt‑cinq ans entre différents
+    écosystèmes : startups technologiques, univers digital, médias, publicité,
+    action sociale, développement territorial et organisations non gouvernementales.
+  </p>
+  <p class="measure">
+    Cette trajectoire hybride lui permet de comprendre à la fois les logiques économiques,
+    les contraintes institutionnelles, les enjeux d’impact social et les exigences médiatiques.
+    EN PLATEAU est né de cette expérience transversale : créer un espace de structuration
+    avant l’exposition.
+  </p>
+</section>
+
+<section class="final">
+  <h2>Échange confidentiel</h2>
+  <p>Un premier échange permet de cadrer l’enjeu et de déterminer si un accompagnement est pertinent.</p>
+  <a href="mailto:hocine.reguida@enplateau.fr" class="btn">hocine.reguida@enplateau.fr</a>
+</section>
+
+</div>
+
+<script>
+(function(){
+  const b = document.getElementById('burger');
+  const m = document.getElementById('mobileNav');
+  if(!b || !m) return;
+  b.addEventListener('click', function(){
+    const open = m.style.display === 'block';
+    m.style.display = open ? 'none' : 'block';
+  });
+})();
+</script>
+
+</body>
+</html>
