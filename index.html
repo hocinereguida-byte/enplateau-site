@@ -50,7 +50,7 @@ p{margin:0 0 18px;}
 p strong{font-weight:500;}
 
 /* Hero */
-.hero{background:var(--sig);color:#fff;border-radius:26px;padding:54px 22px 44px;margin:26px 0 56px;text-align:center;}
+.hero{background:var(--sig);color:#fff;border-radius:26px;padding:54px 22px 44px;margin:26px 0 34px;text-align:center;}
 .hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
 .hero .lead{max-width:860px;margin:0 auto 0;opacity:.92;font-size:16px;}
 
@@ -110,6 +110,28 @@ p strong{font-weight:500;}
 /* Soft blocks */
 .soft{background:#f8f9fb;border:1px solid var(--line);border-radius:22px;padding:28px;text-align:left;margin-top:22px}
 .soft ul{margin:10px 0 0 18px}
+.soft li{margin:6px 0}
+
+/* Emphasis block */
+.callout{
+  max-width:900px;
+  margin:0 auto 56px;
+  border:1px solid rgba(231,234,240,.9);
+  background:#fff;
+  border-radius:22px;
+  padding:22px;
+  text-align:left;
+  box-shadow:0 12px 30px rgba(0,0,0,.04);
+}
+.callout h3{margin:0 0 10px}
+.callout ul{margin:10px 0 0 18px}
+.callout li{margin:8px 0;color:var(--muted);font-size:14px}
+.callout .proof{
+  margin-top:14px;
+  font-size:13px;
+  color:var(--muted);
+}
+.callout .proof strong{color:var(--ink);font-weight:800}
 
 /* Final */
 .cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
@@ -153,10 +175,23 @@ p strong{font-weight:500;}
   <!-- HERO -->
   <section class="hero">
     <div class="kicker">Séquence Média</div>
-    <h1>Ce n’est pas parce qu’on vous invite<br>qu’il faut parler.</h1>
+    <h1>Être invité ne signifie pas<br>être prêt.</h1>
     <p class="lead">
       Une émission ne s’improvise pas. Elle se prépare.<br>
       Elle engage une ligne, une crédibilité, une trajectoire.
+    </p>
+  </section>
+
+  <!-- POURQUOI C'EST STRATÉGIQUE (conversion) -->
+  <section class="callout" aria-label="Pourquoi préparer une émission">
+    <h3>Pourquoi préparer une émission ?</h3>
+    <ul>
+      <li>Une phrase mal calibrée peut devenir un angle éditorial.</li>
+      <li>Une séquence bien cadrée crédibilise un positionnement pour longtemps.</li>
+      <li>Une émission bien exploitée devient un actif : partenaires, recrutement, vente, institutionnel.</li>
+    </ul>
+    <p class="proof">
+      <strong>Signal opérationnel :</strong> travail en lien avec équipes éditoriales, producteurs et journalistes spécialisés économie.
     </p>
   </section>
 
@@ -172,10 +207,9 @@ p strong{font-weight:500;}
       <img src="images/la-tribune.svg" alt="La Tribune">
       <img src="images/forbes.svg" alt="Forbes">
     </div>
-    
   </section>
 
-  <!-- SECTION 1 — SEGMENTS (Option B) -->
+  <!-- SECTION 1 — SEGMENTS (conservée mais plus légère) -->
   <section class="section" id="cibles">
     <h2>Des contextes différents. Une même exigence.</h2>
     <p class="measure">
@@ -199,8 +233,8 @@ p strong{font-weight:500;}
 
       <div class="card">
         <span class="pill">Associations</span>
-        <h3>Engagement visible</h3>
-        <p>Impact, emploi, financement : parler sans tomber dans l’auto-promotion.</p>
+        <h3>Engagement lisible</h3>
+        <p>Impact, emploi, financement : parler utile, sans tomber dans l’auto-promotion.</p>
         <a class="link" href="associations.html">En savoir plus</a>
       </div>
 
@@ -223,67 +257,66 @@ p strong{font-weight:500;}
     </p>
   </section>
 
-  <!-- CAS D’USAGE — Ligne 1 -->
-  <section class="section" id="cas-usage-1">
-    <div class="grid-3">
+  <!-- MICRO-CAS (projection concrète) -->
+  <section class="section" id="micro-cas">
+    <h2>Exemples concrets de situations</h2>
+    <p class="measure">
+      Sans “storytelling”. Sans sur-vendre. Avec un objectif : rendre votre rôle clair, utile, et défendable.
+    </p>
 
+    <div class="grid-3">
       <div class="card">
-        <span class="pill">PME</span>
-        <h3>Accélération commerciale</h3>
-        <p>Nouveau marché, croissance rapide, salon stratégique : convaincre sans sur-vendre.</p>
+        <span class="pill">PME industrielle</span>
+        <h3>Avant un moment commercial</h3>
+        <p>Passage média avant salon / annonce : gagner en crédibilité sans promettre plus que ce que l’on peut tenir.</p>
         <a class="link" href="pme-eti.html">Voir les cas d’usage</a>
       </div>
 
       <div class="card">
-        <span class="pill">Associations</span>
-        <h3>Impact et économie</h3>
-        <p>Emploi, prévention, cohésion : parler “économie réelle” et rendre l’action lisible.</p>
+        <span class="pill">Association / ESS</span>
+        <h3>Impact et économie réelle</h3>
+        <p>Rendre l’action lisible pour financeurs et partenaires : parler d’impact sans “auto-promo”.</p>
         <a class="link" href="associations.html">Voir les angles</a>
       </div>
 
       <div class="card">
-        <span class="pill">Secteur public</span>
-        <h3>Décision et confiance</h3>
-        <p>Programme, bilan, transformation : réduire les contresens et tenir une ligne claire.</p>
-        <a class="link" href="secteur-public.html">Voir les cadres</a>
+        <span class="pill">ETI / Territoire</span>
+        <h3>Dans une transition sectorielle</h3>
+        <p>Énergie, relocalisation, compétences : tenir une parole de gouvernance, compréhensible au-delà du secteur.</p>
+        <a class="link" href="grands-comptes.html">Voir les cadres</a>
       </div>
-
     </div>
   </section>
 
-  <!-- SECTION INTERMÉDIAIRE (transition) -->
-  <section class="section">
+  <!-- CAS D'USAGE (fusion des deux lignes, plus tranchant) -->
+  <section class="section" id="situations">
+    <h2>Trois situations où la séquence devient stratégique</h2>
     <p class="measure" style="color:var(--muted);">
       La même émission peut servir des objectifs différents : crédibiliser une filière, clarifier une transition,
       expliquer une stratégie, situer un acteur dans un environnement complexe. Le point commun : ne pas improviser.
     </p>
-  </section>
 
-  <!-- CAS D’USAGE — Ligne 2 -->
-  <section class="section" id="cas-usage-2">
     <div class="grid-3">
-
       <div class="card">
-        <span class="pill">ETI</span>
-        <h3>Transformation industrielle</h3>
-        <p>Changement d’échelle, relocalisation, énergie : tenir une parole de gouvernance.</p>
-        <a class="link" href="pme-eti.html">Voir les cas d’usage</a>
+        <span class="pill">Croissance / exposition</span>
+        <h3>Convaincre sans sur-vendre</h3>
+        <p>Accélération, prise de marché, recrutement : une parole nette, immédiatement compréhensible.</p>
+        <a class="link" href="pme-eti.html">Voir des exemples</a>
       </div>
 
       <div class="card">
-        <span class="pill">Grands comptes</span>
-        <h3>Multi-acteurs et réputation</h3>
-        <p>Aligner les messages, anticiper les questions, éviter les décrochages publics.</p>
+        <span class="pill">Transformation / tension</span>
+        <h3>Tenir une ligne dans la complexité</h3>
+        <p>Multi-acteurs, arbitrages, réputation : anticiper les questions et réduire les angles morts.</p>
         <a class="link" href="grands-comptes.html">Voir les cadres</a>
       </div>
 
       <div class="card">
-        <span class="pill">Secteur public</span>
-        <h3>Crise et arbitrage</h3>
-        <p>Moments sensibles : expliquer sans simplifier à l’excès, protéger la confiance.</p>
+        <span class="pill">Décision / responsabilité</span>
+        <h3>Réduire le risque d’interprétation</h3>
+        <p>Programmes, bilans, crises : protéger la confiance sans simplifier à l’excès.</p>
         <a class="link" href="secteur-public.html">Voir les cadres</a>
       </div>
-
     </div>
   </section>
 
@@ -295,50 +328,27 @@ p strong{font-weight:500;}
       Elle transforme une émission en contenu utile, réexploitable, et cohérent avec vos autres prises de parole.
     </p>
 
-    <section class="section" id="architecturesequence">
+    <!-- ARCHITECTURE (raccourcie sur la home) -->
+    <section class="section" id="architecturesequence" style="margin-bottom:0;">
       <h2>L’architecture d’une séquence</h2>
 
       <div class="grid-3">
         <div class="card featured">
-          <span class="pill">Amont — préparation</span>
+          <span class="pill">1 — Amont</span>
           <h3>Structurer</h3>
-          <p>Clarifier les messages, hiérarchiser les enjeux, anticiper les questions sensibles.</p>
-          <div class="soft">
-            <ul>
-              <li>Note d’architecture</li>
-              <li>Messages prioritaires</li>
-              <li>Brief porte-parole</li>
-              <li>Validation interne (communication / juridique / direction)</li>
-            </ul>
-          </div>
+          <p>Clarifier, hiérarchiser, anticiper. Une parole qui tient, avant même d’entrer en studio.</p>
         </div>
 
         <div class="card">
-          <span class="pill">Émission — cadre éditorial</span>
+          <span class="pill">2 — Émission</span>
           <h3>Rendre intelligible</h3>
-          <p>Contribuer à un contenu compréhensible : vue large (secteur/territoire), puis focus (acteur/positionnement).</p>
-          <div class="soft">
-            <ul>
-              <li>Coordination avec la production</li>
-              <li>Respect du cadre éditorial</li>
-              <li>Questions posées par un journaliste</li>
-              <li>Rôle : clarté, précision, cohérence</li>
-            </ul>
-          </div>
+          <p>Vue large (secteur/territoire), puis focus (acteur/positionnement). Clarté, précision, cohérence.</p>
         </div>
 
         <div class="card">
-          <span class="pill">Aval — réutilisation</span>
+          <span class="pill">3 — Aval</span>
           <h3>Activer</h3>
-          <p>Réutiliser l’émission : site, dossiers, partenaires, recrutement, interventions publiques.</p>
-          <div class="soft">
-            <ul>
-              <li>Extraits utiles</li>
-              <li>Messages “prêts à réemployer”</li>
-              <li>Diffusion cohérente dans le temps</li>
-              <li>Alignement avec vos autres prises de parole</li>
-            </ul>
-          </div>
+          <p>Transformer l’émission en actifs : extraits, messages prêts à réemployer, diffusion cohérente.</p>
         </div>
       </div>
     </section>
@@ -348,17 +358,20 @@ p strong{font-weight:500;}
   <section class="section">
     <h2>Avec vos processus internes</h2>
     <p class="measure">
-      Le travail s’inscrit dans vos circuits de validation : communication, juridique, direction, cabinets et agences de communication.
+      Le travail s’inscrit dans vos circuits de validation : communication, juridique, direction, cabinets et agences.
       L’objectif est simple : réduire le risque d’interprétation et tenir une ligne lisible.
     </p>
   </section>
 
-  <!-- CHARTE ÉDITORIALE (reformulée) -->
+  <!-- CHARTE ÉDITORIALE (plus tranchée + "pas pour...") -->
   <section class="section">
     <h2>Notre ligne</h2>
     <p class="measure">
       L’objectif n’est pas l’auto-promotion. Au contraire : parler “vrai”, utile, compréhensible.
       Une émission réussie aide aussi le dirigeant à mieux prendre la parole ensuite — dans et hors médias.
+    </p>
+    <p class="measure" style="color:var(--muted);margin-top:-6px;">
+      Cette approche n’est pas adaptée aux communications purement promotionnelles.
     </p>
   </section>
 
@@ -370,7 +383,7 @@ p strong{font-weight:500;}
       et de décider si le moment est le bon.
     </p>
     <div class="cta">
-      <a class="btn btn-primary" href="mailto:hocine.reguida@enplateau.fr">contact@enplateau.fr</a>
+      <a class="btn btn-primary" href="mailto:contact@enplateau.fr">contact@enplateau.fr</a>
     </div>
     <p style="margin-top:16px;font-size:14px;opacity:.82;">
       Lorsque nécessaire, un accord de confidentialité peut être formalisé en amont de toute analyse approfondie.
