@@ -3,289 +3,355 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>EN PLATEAU — Architecte de prises de parole pour PME</title>
-<meta name="description" content="EN PLATEAU accompagne les dirigeants de PME en phase de cap : architecture éditoriale, co-production stratégique d’émissions économiques avec des médias nationaux, activation et influence durable." />
+<title>EN PLATEAU — PME & ETI</title>
+<meta name="description" content="EN PLATEAU accompagne dirigeants de PME et ETI en phase de cap : architecture éditoriale, co-production stratégique d’émissions économiques avec des médias nationaux, activation et influence durable." />
+<link rel="canonical" href="https://enplateau.fr/pme-eti.html" />
+
 <style>
 :root{
---ink:#0B0F19;
---slate:#2B3340;
---muted:#5B6472;
---line:#E7EAF0;
---sig:#0B1F3A;
---max:980px;
+  --ink:#0B0F19;
+  --slate:#2B3340;
+  --muted:#5B6472;
+  --line:#E7EAF0;
+  --sig:#0B1F3A;
+  --max:1000px;
+  --bg:#ffffff;
 }
-body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;color:var(--slate);background:#fff;}
-.container{max-width:var(--max);margin:0 auto;padding:60px 22px 100px;}
-h1{font-size:clamp(36px,6vw,54px);line-height:1.05;margin:0 0 12px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
-h2{font-size:clamp(28px,4vw,38px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
-h3{font-size:20px;margin:0 0 10px;color:var(--ink);font-weight:760;}
-p{margin:0 0 18px;}
-.hero{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px 44px;margin-bottom:60px;text-align:center;}
-.hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.75;margin-bottom:10px;}
-.hero .baseline{font-size:15px;letter-spacing:.08em;text-transform:uppercase;opacity:.65;margin-bottom:16px;}
-.cta{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
-.btn{padding:14px 20px;border-radius:999px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;}
-.btn-primary{background:#fff;color:var(--sig);}
-.btn-ghost{border:1px solid rgba(255,255,255,.4);color:#fff;}
-.section{margin-bottom:80px;text-align:center;}
-.measure{max-width:820px;margin-left:auto;margin-right:auto;}
-.grid-3{display:grid;gap:22px;margin-top:28px;}
-@media(min-width:900px){.grid-3{grid-template-columns:repeat(3,1fr);}}
-.panel{border:1px solid var(--line);border-radius:20px;padding:26px;background:#fff;text-align:left;}
-.panel.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
-.exec-block{border:1px solid var(--line);border-radius:22px;padding:28px;background:#f8f9fb;margin-top:28px;text-align:left;}
-.final{background:var(--sig);color:#fff;border-radius:26px;padding:60px 30px;text-align:center;}
-.final h2{color:#fff;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.7;
+  color:var(--slate);
+  background:var(--bg);
+}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--max);margin:0 auto;padding:34px 22px 110px;}
 
-/* ===== Shared Sticky Header ===== */
-.site-header{
-  position:sticky; top:0; z-index:999;
+/* Header (STRICTEMENT conforme Accueil / À propos) */
+.header-wrap{
+  position:sticky;top:0;z-index:50;
   background:rgba(255,255,255,.92);
-  backdrop-filter:saturate(180%) blur(10px);
+  backdrop-filter:saturate(140%) blur(10px);
   border-bottom:1px solid var(--line);
 }
-.header-inner{
+.header{
   max-width:var(--max);
   margin:0 auto;
-  padding:14px 22px;
-  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
   gap:14px;
 }
-.brand{
-  display:flex; align-items:center; gap:10px;
-  font-weight:900; letter-spacing:-.02em;
-  color:var(--ink); text-decoration:none;
-  white-space:nowrap;
-}
-.brand-badge{
-  width:30px; height:30px; border-radius:10px;
-  background:var(--sig);
-  box-shadow:0 10px 24px rgba(0,0,0,.10);
-}
-.nav{
-  display:flex; align-items:center; gap:18px;
-}
-.nav a{
-  text-decoration:none;
-  color:var(--slate);
-  font-weight:760;
-  font-size:14px;
-  letter-spacing:-.01em;
-  padding:10px 12px;
-  border-radius:999px;
-}
-.nav a:hover{background:#F4F6FA;}
-.nav a[aria-current="page"]{
-  background:#EEF2F8;
-  color:var(--ink);
-}
-.menu-btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:42px; height:42px;
-  border-radius:12px;
-  border:1px solid rgba(11,31,58,.12);
-  background:#fff;
-}
-.menu-btn span{
-  width:18px; height:2px; background:var(--ink);
-  display:block; position:relative;
-}
-.menu-btn span:before,.menu-btn span:after{
-  content:""; position:absolute; left:0; width:18px; height:2px; background:var(--ink);
-}
-.menu-btn span:before{top:-6px;}
-.menu-btn span:after{top:6px;}
-@media(min-width:900px){ .menu-btn{display:none;} }
-@media(max-width:899px){
-  .nav{
-    display:none;
-    position:absolute;
-    left:12px; right:12px;
-    top:64px;
-    background:#fff;
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:10px;
-    box-shadow:0 18px 40px rgba(0,0,0,.08);
-    flex-direction:column;
-    align-items:stretch;
-    gap:6px;
-  }
-  .nav a{padding:12px 14px; border-radius:14px;}
-  .site-header[data-open="true"] .nav{display:flex;}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-mark{width:34px;height:34px;border-radius:10px;background:var(--sig);display:inline-block}
+.brand-name{font-weight:900;letter-spacing:-.02em;color:var(--ink)}
+.nav{display:none;gap:18px;align-items:center}
+.nav a{font-size:14px;color:var(--muted);font-weight:750;padding:10px 10px;border-radius:999px}
+.nav a:hover{color:var(--ink);background:#f5f7fb}
+.nav a.active{color:var(--ink);background:#eef2f8}
+.burger{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-weight:800;color:var(--ink);cursor:pointer}
+.mobile{display:none;border-top:1px solid var(--line);}
+.mobile a{display:block;padding:14px 22px;color:var(--muted);font-weight:750}
+.mobile a:hover{background:#f5f7fb;color:var(--ink)}
+@media(min-width:900px){
+  .nav{display:flex}
+  .burger{display:none}
+  .mobile{display:none !important}
 }
 
+/* Typography */
+h1{font-size:clamp(34px,6vw,52px);line-height:1.06;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
+h2{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
+h3{font-size:20px;margin:0 0 10px;color:var(--ink);font-weight:760;}
+p{margin:0 0 18px;}
+.section{margin-bottom:72px;text-align:center;}
+.measure{max-width:900px;margin-left:auto;margin-right:auto;}
+
+/* Hero (conforme style global) */
+.hero{
+  background:var(--sig);
+  color:#fff;
+  border-radius:26px;
+  padding:56px 22px 44px;
+  margin:26px 0 56px;
+  text-align:center;
+}
+.hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
+.hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-top:10px;}
+.cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.btn{
+  padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;
+  display:inline-flex;align-items:center;justify-content:center;
+}
+.btn-primary{background:#fff;color:var(--sig);}
+.btn-ghost{border:1px solid rgba(255,255,255,.38);color:#fff;}
+
+/* Cards / Grid (conforme) */
+.grid-3{display:grid;gap:22px;margin-top:26px;}
+@media(min-width:900px){ .grid-3{grid-template-columns:repeat(3,1fr);} }
+
+.card{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:24px;
+  background:#fff;
+  text-align:left;
+}
+.card.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
+.card p{font-size:14px;color:var(--muted);margin:0 0 14px}
+
+.pill{
+  display:inline-block;
+  font-size:12px;
+  font-weight:850;
+  border:1px solid var(--line);
+  padding:8px 10px;
+  border-radius:999px;
+  color:var(--muted);
+  background:#fff;
+  margin-bottom:10px;
+}
+
+/* Listes propres (pour éviter l’effet “brouillon”) */
+.card ul{
+  margin:10px 0 0 18px;
+  padding:0;
+  color:var(--muted);
+  font-size:14px;
+}
+.card li{margin:6px 0;}
+
+.meta{
+  margin-top:14px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* Encadrés */
+.exec-block{
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:28px;
+  background:#f8f9fb;
+  text-align:left;
+  max-width:900px;
+  margin:0 auto;
+}
+.exec-block h3{margin:0 0 10px}
+.exec-block ul{margin:10px 0 0 18px;color:var(--muted)}
+.exec-block li{margin:6px 0}
+
+/* Deux profils (PME vs ETI) */
+.split{
+  display:grid;
+  gap:18px;
+  margin-top:18px;
+}
+@media(min-width:900px){
+  .split{grid-template-columns:1fr 1fr;}
+}
+.note{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:18px 18px 16px;
+  background:#fff;
+  text-align:left;
+}
+.note strong{color:var(--ink)}
+.note p{margin:0 0 10px;color:var(--muted);font-size:14px}
+.note ul{margin:10px 0 0 18px;color:var(--muted);font-size:14px}
+.note li{margin:6px 0}
+
+/* Final CTA */
+.final{
+  background:var(--sig);
+  color:#fff;
+  border-radius:26px;
+  padding:56px 22px;
+  text-align:center;
+}
+.final h2{color:#fff;}
+.final p{opacity:.92}
 </style>
 </head>
+
 <body>
 
-
-
-<header class="site-header" id="siteHeader">
-  <div class="header-inner">
-    <a class="brand" href="index.html">
-      <span class="brand-badge" aria-hidden="true"></span>
-      <span>EN&nbsp;PLATEAU</span>
+<div class="header-wrap">
+  <header class="header" aria-label="Navigation principale">
+    <a class="brand" href="index.html" aria-label="EN PLATEAU — Accueil">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">EN&nbsp;PLATEAU</span>
     </a>
 
-    <button class="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primaryNav" id="menuBtn">
-      <span aria-hidden="true"></span>
-    </button>
-
-    <nav class="nav" id="primaryNav" aria-label="Navigation principale">
-      <a href="grands-comptes.html" >Grands comptes</a>
-      <a href="pme-eti.html" aria-current="page">PME&nbsp;ETI</a>
-      <a href="associations.html" >Associations&nbsp;ESS</a>
-      <a href="secteur-public.html" >Secteur&nbsp;Public</a>
-      <a href="a-propos.html" >À&nbsp;propos</a>
+    <nav class="nav" aria-label="Navigation">
+      <a href="grands-comptes.html">Grands comptes</a>
+      <a class="active" href="pme-eti.html">PME</a>
+      <a href="associations.html">Associations</a>
+      <a href="secteur-public.html">Secteur public</a>
+      <a href="a-propos.html">À propos</a>
     </nav>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+  </header>
+
+  <div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
+    <a href="grands-comptes.html">Grands comptes</a>
+    <a href="pme-eti.html">PME</a>
+    <a href="associations.html">Associations</a>
+    <a href="secteur-public.html">Secteur public</a>
+    <a href="a-propos.html">À propos</a>
   </div>
-</header>
-
-<script>
-(function(){
-  var header = document.getElementById('siteHeader');
-  var btn = document.getElementById('menuBtn');
-  if(!header || !btn) return;
-
-  function closeMenu(){
-    header.dataset.open = "false";
-    btn.setAttribute('aria-expanded','false');
-  }
-  function toggleMenu(){
-    var open = header.dataset.open === "true";
-    header.dataset.open = open ? "false" : "true";
-    btn.setAttribute('aria-expanded', open ? "false" : "true");
-  }
-
-  header.dataset.open = "false";
-  btn.addEventListener('click', toggleMenu);
-
-  // Close on outside tap
-  document.addEventListener('click', function(e){
-    if(!header.contains(e.target)) closeMenu();
-  });
-
-  // Close after clicking a link (mobile)
-  var nav = document.getElementById('primaryNav');
-  if(nav){
-    nav.addEventListener('click', function(e){
-      if(e.target && e.target.tagName === 'A') closeMenu();
-    });
-  }
-})();
-</script>
+</div>
 
 <div class="container">
 
-<!-- HERO ALLÉGÉ -->
-<section class="hero">
-<div class="kicker">Pour les PME en phase de cap</div>
-<h1>
-Co-production stratégique d’émissions économiques<br>
-avec des médias nationaux
-</h1>
-<div class="baseline">Architecte de prises de parole</div>
-<div class="cta">
-<a href="#contact" class="btn btn-primary">Évaluez votre séquence stratégique</a>
-<a href="#formats" class="btn btn-ghost">Découvrir les formats</a>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="kicker">Pour les PME & ETI en phase de cap</div>
+    <h1>Co-production stratégique d’émissions économiques<br>avec des médias nationaux</h1>
+    <div class="baseline">Architecte de prises de parole</div>
+    <div class="cta">
+      <a href="#contact" class="btn btn-primary">Évaluer votre séquence</a>
+      <a href="#formats" class="btn btn-ghost">Découvrir les cadres</a>
+    </div>
+  </section>
+
+  <!-- CONTEXTE -->
+  <section class="section">
+    <h2>Quand votre entreprise franchit un cap</h2>
+    <p class="measure">
+      Vous n’avez ni le temps ni l’intérêt d’entrer dans une communication permanente.
+      En revanche, certains moments engagent plus que l’image : ils engagent la trajectoire.
+      Dans ces phases, une prise de parole structurée peut accélérer un cycle commercial, sécuriser un repositionnement,
+      ou renforcer la crédibilité dans un écosystème (clients, partenaires, financeurs, talents).
+    </p>
+
+    <div class="split measure">
+      <div class="note">
+        <strong>Petite / moyenne PME</strong>
+        <p>Objectif : rendre votre cap lisible rapidement et transformer l’exposition en opportunités concrètes.</p>
+        <ul>
+          <li>Accélération commerciale / nouveaux marchés</li>
+          <li>Crédibilisation face à des donneurs d’ordre</li>
+          <li>Attractivité (talents, partenaires)</li>
+        </ul>
+      </div>
+
+      <div class="note">
+        <strong>ETI / PME structurée</strong>
+        <p>Objectif : stabiliser un narratif “gouvernance” et maîtriser l’exposition multi-parties prenantes.</p>
+        <ul>
+          <li>Repositionnement / croissance externe / industrialisation</li>
+          <li>Alignement des directions et validation interne</li>
+          <li>Gestion de sujets sensibles (marchés, territoires, réglementation)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIONNEMENT -->
+  <section class="section">
+    <h2>Nous ne “produisons” pas des formats.<br>Nous sécurisons une architecture d’influence.</h2>
+    <p class="measure">
+      EN PLATEAU intervient comme co-producteur stratégique : nous clarifions le fond, hiérarchisons les enjeux,
+      préparons le dirigeant, puis coordonnons une séquence éditoriale dans un cadre animé par des journalistes économiques.
+      L’exigence éditoriale prime : clarté, cohérence, crédibilité — et respect absolu de l’indépendance journalistique.
+    </p>
+  </section>
+
+  <!-- FORMATS / CADRES -->
+  <section class="section" id="formats">
+    <h2>Trois cadres d’engagement</h2>
+    <p class="measure">Même exigence. Trois intensités, selon votre agenda et l’ambition stratégique.</p>
+
+    <div class="grid-3">
+      <div class="card featured">
+        <span class="pill">Signature</span>
+        <h3>Installer une position durable</h3>
+        <p>Pour les caps structurants (repositionnement, industrialisation, changement d’échelle).</p>
+        <ul>
+          <li>3–4 émissions complémentaires</li>
+          <li>Architecture narrative approfondie</li>
+          <li>Activation coordonnée 6 à 12 mois</li>
+        </ul>
+        <div class="meta"><strong>Délai :</strong> première émission à partir de 4 semaines.</div>
+      </div>
+
+      <div class="card">
+        <span class="pill">Duo</span>
+        <h3>Asseoir une crédibilité cohérente</h3>
+        <p>Pour ancrer un cap et consolider votre lisibilité dans l’écosystème.</p>
+        <ul>
+          <li>2 émissions économiques</li>
+          <li>Structuration renforcée</li>
+          <li>Activation 4 à 6 mois</li>
+        </ul>
+        <div class="meta"><strong>Délai :</strong> première émission à partir de 3 semaines.</div>
+      </div>
+
+      <div class="card">
+        <span class="pill">Single</span>
+        <h3>Sécuriser une prise de parole clé</h3>
+        <p>Pour un moment précis (salon, annonce, étape stratégique) à fort enjeu.</p>
+        <ul>
+          <li>1 émission économique</li>
+          <li>Angle prioritaire stabilisé</li>
+          <li>Activation ciblée 90 jours</li>
+        </ul>
+        <div class="meta"><strong>Délai :</strong> première émission à partir de 2 semaines.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPÉRIENCE DIRIGEANT -->
+  <section class="section">
+    <h2>Une expérience exigeante — et rassurante</h2>
+    <p class="measure">
+      Ce n’est pas un “passage média”. C’est une séquence cadrée, qui protège le dirigeant et sert la trajectoire.
+      L’objectif : sortir de l’approximation, éviter les angles faibles, et tenir une ligne crédible.
+    </p>
+
+    <div class="exec-block">
+      <h3>Implication estimée du dirigeant</h3>
+      <ul>
+        <li><strong>Avant :</strong> 6 à 10h (cadrage, messages, points sensibles, validations).</li>
+        <li><strong>Pendant :</strong> 2 à 3h (brief éditorial + plateau). Émissions regroupables sur 1 à 2 jours.</li>
+        <li><strong>Après :</strong> 3 à 6h (appropriation, activation, diffusion maîtrisée).</li>
+      </ul>
+      <p style="margin-top:14px;color:var(--muted);"><strong>Total :</strong> 12 à 19h pour une séquence PME/ETI aboutie.</p>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final" id="contact">
+    <h2>Clarifions votre prochaine séquence</h2>
+    <p>Un échange confidentiel permet d’identifier l’angle pertinent et le cadre adapté (PME ou ETI).</p>
+    <div class="cta">
+      <a href="mailto:hocine.reguida@enplateau.fr" class="btn btn-primary">hocine.reguida@enplateau.fr</a>
+    </div>
+    <p style="margin-top:16px;font-size:14px;opacity:.82;">
+      Accord de confidentialité possible avant tout échange approfondi.
+    </p>
+  </section>
+
 </div>
-</section>
 
-<!-- BLOC UNIQUE OPTIMISÉ -->
-<section class="section">
-<h2>Quand votre entreprise franchit un cap</h2>
-<p class="measure">
-Dirigeant de PME, vous n’avez ni le temps ni l’intérêt à entrer dans une logique de communication permanente.
-Ce qui compte, c’est que votre cap soit compris — par vos clients, vos partenaires et vos équipes.
-Une prise de parole structurée peut accélérer une trajectoire commerciale, sécuriser un repositionnement
-ou renforcer votre crédibilité lors d’un salon ou d’une phase de croissance.
-</p>
+<script>
+(function(){
+  const b = document.getElementById('burger');
+  const m = document.getElementById('mobileNav');
+  if(!b || !m) return;
+  b.addEventListener('click', function(){
+    const open = m.style.display === 'block';
+    m.style.display = open ? 'none' : 'block';
+    b.setAttribute('aria-expanded', open ? 'false' : 'true');
+  });
+})();
+</script>
 
-<p class="measure">
-Croissance accélérée, nouveau marché, présence à un salon majeur : à ce moment-là, la prise de parole n’est plus de la communication.
-Elle devient stratégique. Elle engage votre crédibilité, votre attractivité et votre trajectoire.
-</p>
-</section>
-
-<!-- POSITIONNEMENT -->
-<section class="section">
-<h2>Nous ne produisons pas des formats.<br>Nous concevons des architectures d’influence.</h2>
-<p class="measure">
-EN PLATEAU intervient comme co-producteur stratégique : nous structurons le fond, hiérarchisons les enjeux et préparons le dirigeant à intervenir dans des plateaux animés par des journalistes économiques de médias nationaux.
-L’exigence éditoriale prime sur la méthode : clarté stratégique, cohérence et respect absolu de l’indépendance journalistique.
-</p>
-</section>
-
-<!-- FORMATS -->
-<section class="section" id="formats">
-<h2>Trois cadres d’engagement</h2>
-<p class="measure">Même exigence éditoriale. Trois niveaux d’intensité selon votre agenda et l’ambition stratégique.</p>
-
-<div class="grid-3">
-
-<div class="panel featured">
-<h3>Signature</h3>
-<p><strong>Pour structurer durablement votre position.</strong></p>
-<ul>
-<li>3–4 émissions économiques complémentaires</li>
-<li>Architecture narrative approfondie</li>
-<li>Activation coordonnée 6 à 12 mois</li>
-</ul>
-<p class="meta"><strong>Délai :</strong> première émission à partir de 4 semaines.</p>
-</div>
-
-<div class="panel">
-<h3>Duo</h3>
-<p><strong>Pour installer une crédibilité cohérente.</strong></p>
-<ul>
-<li>2 émissions économiques</li>
-<li>Structuration renforcée</li>
-<li>Activation 4 à 6 mois</li>
-</ul>
-<p class="meta"><strong>Délai :</strong> première émission à partir de 3 semaines.</p>
-</div>
-
-<div class="panel">
-<h3>Single</h3>
-<p><strong>Pour sécuriser une prise de parole clé.</strong></p>
-<ul>
-<li>1 émission économique</li>
-<li>Angle prioritaire stabilisé</li>
-<li>Activation ciblée 90 jours</li>
-</ul>
-<p class="meta"><strong>Délai :</strong> première émission à partir de 2 semaines.</p>
-</div>
-
-</div>
-</section>
-
-<!-- EXPERIENCE DIRIGEANT -->
-<section class="section">
-<h2>Une expérience exigeante — et rassurante</h2>
-<p class="measure">Travailler avec EN PLATEAU n’est pas un simple passage média. C’est une séquence stratégique structurante pour le dirigeant.</p>
-
-<div class="exec-block">
-<h3>Implication estimée du dirigeant</h3>
-<ul>
-<li><strong>Avant :</strong> 6 à 10 heures (cadrage stratégique, clarification des enjeux sensibles, validation des messages).</li>
-<li><strong>Pendant :</strong> 2 à 3 heures (brief éditorial + plateau). Plusieurs émissions peuvent être regroupées sur 1 à 2 jours.</li>
-<li><strong>Après :</strong> 3 à 6 heures (appropriation des contenus, coordination activation, diffusion stratégique).</li>
-</ul>
-<p><strong>Total :</strong> 12 à 19 heures pour une séquence PME aboutie.</p>
-</div>
-</section>
-
-<!-- CTA FINAL -->
-<section class="final" id="contact">
-<h2>Clarifions votre prochaine séquence stratégique</h2>
-<p>Un échange confidentiel permet d’identifier l’angle pertinent et le cadre d’intervention adapté à votre situation.</p>
-<div class="cta">
-<a href="mailto:hocine.reguida@enplateau.fr" class="btn btn-primary">hocine.reguida@enplateau.fr</a>
-</div>
-<p style="margin-top:16px;font-size:14px;opacity:.8;">Accord de confidentialité possible avant tout échange approfondi.</p>
-</section>
-
-</div>
 </body>
 </html>
