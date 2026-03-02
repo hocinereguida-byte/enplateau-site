@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>EN PLATEAU — Grands comptes</title>
-<meta name="description" content="EN PLATEAU accompagne les groupes et organisations à forte exposition : préparation, cadrage et coordination d’émissions économiques avec des médias nationaux, puis réutilisation des contenus." />
+<meta name="description" content="EN PLATEAU accompagne les groupes à forte exposition dans la préparation d’émissions économiques : messages clairs, validations en amont et réutilisation maîtrisée." />
 <link rel="canonical" href="https://enplateau.fr/grands-comptes.html" />
 
 <style>
@@ -14,11 +14,10 @@
 --muted:#5B6472;
 --line:#E7EAF0;
 --sig:#0B1F3A;
---max:980px;
+--max:1000px;
 --bg:#ffffff;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
@@ -26,60 +25,80 @@ body{
   color:var(--slate);
   background:var(--bg);
 }
-a{color:inherit;text-decoration:none}
-.container{max-width:var(--max);margin:0 auto;padding:60px 22px 100px;}
-h1{font-size:clamp(34px,6vw,52px);line-height:1.06;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
-h2{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
-h3{font-size:20px;margin:0 0 10px;color:var(--ink);font-weight:760;}
-p{margin:0 0 18px;}
-.section{margin-bottom:78px;text-align:center;}
-.measure{max-width:860px;margin-left:auto;margin-right:auto;}
+a{text-decoration:none;color:inherit}
+.container{max-width:var(--max);margin:0 auto;padding:60px 22px 110px;}
 
-/* Hero (sans CTA) */
+h1{font-size:clamp(32px,6vw,50px);line-height:1.05;margin:0 0 14px;color:#fff;font-weight:900;}
+h2{font-size:clamp(24px,4vw,36px);margin:0 0 18px;color:var(--ink);}
+h3{font-size:20px;margin:0 0 10px;color:var(--ink);}
+p{margin:0 0 18px;}
+
+.section{margin-bottom:80px;text-align:center;}
+.measure{max-width:860px;margin:0 auto;}
+
+/* HERO */
 .hero{
   background:var(--sig);
   color:#fff;
   border-radius:26px;
-  padding:66px 28px 54px;
-  margin-bottom:18px;
+  padding:70px 30px 60px;
+  margin-bottom:20px;
   text-align:center;
 }
-.hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
-.hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-top:10px;}
+.hero .kicker{
+  font-size:13px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  opacity:.75;
+  margin-bottom:10px;
+}
+.hero .baseline{
+  font-size:14px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.7;
+}
 
-/* Logos partenaires (comme home) */
-.media-block{margin:18px 0 56px;text-align:center;}
+/* LOGOS */
+.media-block{
+  margin:20px 0 60px;
+  text-align:center;
+}
 .media-block .label{
   font-size:12px;
   letter-spacing:.18em;
   text-transform:uppercase;
   color:var(--muted);
-  margin:0 0 18px;
+  margin-bottom:18px;
 }
 .media-logos{
   display:flex;
-  flex-wrap:wrap;
   justify-content:center;
   align-items:center;
-  gap:80px;
+  gap:70px;
+  flex-wrap:wrap;
 }
 .media-logos img{
-  height:80px;
-  max-width:180px;
+  height:75px;
+  max-width:170px;
   width:auto;
   opacity:.9;
-  transition:opacity .2s ease, transform .2s ease;
 }
-.media-logos img:hover{opacity:1;transform:translateY(-2px);}
 .media-block .partner{
   margin-top:18px;
   font-size:14px;
   color:var(--muted);
 }
 
-/* Grids */
-.grid-3{display:grid;gap:22px;margin-top:26px;}
-@media(min-width:900px){.grid-3{grid-template-columns:repeat(3,1fr);}}
+/* GRID */
+.grid-3{
+  display:grid;
+  gap:22px;
+  margin-top:28px;
+}
+@media(min-width:900px){
+  .grid-3{grid-template-columns:repeat(3,1fr);}
+}
 .card{
   border:1px solid var(--line);
   border-radius:20px;
@@ -87,365 +106,166 @@ p{margin:0 0 18px;}
   background:#fff;
   text-align:left;
 }
-.card.featured{
-  box-shadow:0 18px 40px rgba(0,0,0,.06);
-  border:1px solid rgba(11,31,58,.18);
-}
-.pill{
-  display:inline-block;
-  font-size:12px;
-  font-weight:850;
-  border:1px solid var(--line);
-  padding:8px 10px;
-  border-radius:999px;
-  color:var(--muted);
-  background:#fff;
-  margin-bottom:10px;
-}
-.card p{font-size:14px;color:var(--muted);margin:0 0 14px}
-.card ul{margin:10px 0 0 18px;padding:0;color:var(--muted);font-size:14px}
-.card li{margin:6px 0}
+.card p{font-size:14px;color:var(--muted);}
+.card ul{margin:10px 0 0 18px;color:var(--muted);font-size:14px}
 
-/* Process */
+/* PROCESS */
 .process{
   border:1px solid var(--line);
   border-radius:22px;
-  padding:28px;
+  padding:30px;
   background:#f8f9fb;
   text-align:left;
   max-width:860px;
   margin:0 auto;
 }
-.process h3{margin-top:0}
-.process ul{margin:10px 0 0 18px;color:var(--muted)}
-.process li{margin:6px 0}
+.process ul{margin:10px 0 0 18px;color:var(--muted);}
 
-/* Cadres */
-.panel{border:1px solid var(--line);border-radius:20px;padding:26px;background:#fff;text-align:left;}
-.panel.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
-.panel ul{margin:10px 0 0 18px;color:var(--muted);font-size:14px}
-.meta{font-size:13px;color:var(--muted);margin-top:14px;}
-
-/* CTA bottom only */
-.cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
-.btn{padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;}
-.btn-primary{background:#fff;color:var(--sig);}
-.final{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px;text-align:center;}
-.final h2{color:#fff;}
-.final p{opacity:.92}
-
-/* ===== Shared Sticky Header ===== */
-.site-header{
-  position:sticky; top:0; z-index:999;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:saturate(180%) blur(10px);
-  border-bottom:1px solid var(--line);
-}
-.header-inner{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:14px 22px;
-  display:flex; align-items:center; justify-content:space-between;
-  gap:14px;
-}
-.brand{
-  display:flex; align-items:center; gap:10px;
-  font-weight:900; letter-spacing:-.02em;
-  color:var(--ink); text-decoration:none;
-  white-space:nowrap;
-}
-.brand-badge{
-  width:30px; height:30px; border-radius:10px;
+/* FINAL */
+.final{
   background:var(--sig);
-  box-shadow:0 10px 24px rgba(0,0,0,.10);
+  color:#fff;
+  border-radius:26px;
+  padding:60px 30px;
+  text-align:center;
 }
-.nav{display:flex; align-items:center; gap:18px;}
-.nav a{
-  text-decoration:none;
-  color:var(--slate);
-  font-weight:760;
-  font-size:14px;
-  letter-spacing:-.01em;
-  padding:10px 12px;
+.final h2{color:#fff;}
+.btn{
+  padding:14px 20px;
   border-radius:999px;
-}
-.nav a:hover{background:#F4F6FA;}
-.nav a[aria-current="page"]{background:#EEF2F8;color:var(--ink);}
-.menu-btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:42px; height:42px;
-  border-radius:12px;
-  border:1px solid rgba(11,31,58,.12);
+  font-weight:700;
   background:#fff;
-}
-.menu-btn span{
-  width:18px; height:2px; background:var(--ink);
-  display:block; position:relative;
-}
-.menu-btn span:before,.menu-btn span:after{
-  content:""; position:absolute; left:0; width:18px; height:2px; background:var(--ink);
-}
-.menu-btn span:before{top:-6px;}
-.menu-btn span:after{top:6px;}
-@media(min-width:900px){ .menu-btn{display:none;} }
-@media(max-width:899px){
-  .nav{
-    display:none;
-    position:absolute;
-    left:12px; right:12px;
-    top:64px;
-    background:#fff;
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:10px;
-    box-shadow:0 18px 40px rgba(0,0,0,.08);
-    flex-direction:column;
-    align-items:stretch;
-    gap:6px;
-  }
-  .nav a{padding:12px 14px; border-radius:14px;}
-  .site-header[data-open="true"] .nav{display:flex;}
+  color:var(--sig);
+  display:inline-block;
+  margin-top:20px;
 }
 </style>
 </head>
 
 <body>
 
-<header class="site-header" id="siteHeader">
-  <div class="header-inner">
-    <a class="brand" href="index.html">
-      <span class="brand-badge" aria-hidden="true"></span>
-      <span>EN&nbsp;PLATEAU</span>
-    </a>
-
-    <button class="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primaryNav" id="menuBtn">
-      <span aria-hidden="true"></span>
-    </button>
-
-    <nav class="nav" id="primaryNav" aria-label="Navigation principale">
-      <a href="grands-comptes.html" aria-current="page">Grands comptes</a>
-      <a href="pme-eti.html">PME</a>
-      <a href="associations.html">Association&nbsp;ESS</a>
-      <a href="secteur-public.html">Public&nbsp;institutionnel</a>
-      <a href="a-propos.html">À&nbsp;propos</a>
-    </nav>
-  </div>
-</header>
-
-<script>
-(function(){
-  var header = document.getElementById('siteHeader');
-  var btn = document.getElementById('menuBtn');
-  if(!header || !btn) return;
-
-  function closeMenu(){
-    header.dataset.open = "false";
-    btn.setAttribute('aria-expanded','false');
-  }
-  function toggleMenu(){
-    var open = header.dataset.open === "true";
-    header.dataset.open = open ? "false" : "true";
-    btn.setAttribute('aria-expanded', open ? "false" : "true");
-  }
-
-  header.dataset.open = "false";
-  btn.addEventListener('click', toggleMenu);
-
-  document.addEventListener('click', function(e){
-    if(!header.contains(e.target)) closeMenu();
-  });
-
-  var nav = document.getElementById('primaryNav');
-  if(nav){
-    nav.addEventListener('click', function(e){
-      if(e.target && e.target.tagName === 'A') closeMenu();
-    });
-  }
-})();
-</script>
-
 <div class="container">
 
-  <!-- HERO (sans CTA) -->
-  <section class="hero">
-    <div class="kicker">Pour les organisations à forte exposition</div>
-    <h1>Parler économie<br>sans improviser</h1>
-    <div class="baseline">Préparation · Cadrage · Réutilisation des contenus</div>
-  </section>
+<section class="hero">
+  <div class="kicker">Grands comptes</div>
+  <h1>Préparer une émission<br>sans improviser</h1>
+  <div class="baseline">Messages clairs · Validations en amont · Réutilisation maîtrisée</div>
+</section>
 
-  <!-- LOGOS + PARTENARIAT (sous le hero, comme home) -->
-  <section class="media-block" id="medias">
-    <p class="label">Environnements médias partenaires</p>
-    <div class="media-logos">
-      <img src="images/bfm-business.svg" alt="BFM Business">
-      <img src="images/le-figaro.svg" alt="Le Figaro">
-      <img src="images/la-tribune.svg" alt="La Tribune">
-      <img src="images/forbes.svg" alt="Forbes">
-    </div>
-    <p class="partner">En partenariat avec <strong>BadM &amp; Scribeo</strong></p>
-  </section>
+<section class="media-block">
+  <div class="label">Environnements médias partenaires</div>
+  <div class="media-logos">
+    <img src="images/bfm-business.svg" alt="BFM Business">
+    <img src="images/le-figaro.svg" alt="Le Figaro">
+    <img src="images/la-tribune.svg" alt="La Tribune">
+    <img src="images/forbes.svg" alt="Forbes">
+  </div>
+  <div class="partner">En partenariat avec <strong>BadM &amp; Scribeo</strong></div>
+</section>
 
-  <!-- ÉTUDES DE CAS (juste après logos) -->
-  <section class="section">
-    <h2>Trois situations fréquentes</h2>
-    <p class="measure">
-      Quand l’organisation est visible, une émission économique ne se prépare pas “comme une interview”.
-      Elle se prépare comme un dispositif : messages, preuves, questions sensibles, validations, puis réutilisation.
-    </p>
+<section class="section">
+<h2>Situations à forte exposition</h2>
+<p class="measure">
+Dans un grand groupe, une émission économique intervient souvent dans un contexte sensible.
+Le risque n’est pas le manque de communication, mais l’écart entre stratégie interne et perception externe.
+</p>
 
-    <div class="grid-3">
-      <div class="card featured">
-        <span class="pill">Attractivité d’un territoire</span>
-        <h3>Attirer cadres, médecins, touristes</h3>
-        <p>
-          Une agence territoriale proche d’une métropole veut rendre l’offre du territoire compréhensible et crédible :
-          emploi, santé, mobilité, qualité de vie, investissements.
-        </p>
-        <ul>
-          <li>Angles économiques clairs (emploi, services, accès)</li>
-          <li>Preuves et chiffres validés</li>
-          <li>Porte-parole préparés (agence + élus + partenaires)</li>
-        </ul>
-      </div>
+<div class="grid-3">
 
-      <div class="card">
-        <span class="pill">Collectivité</span>
-        <h3>Valoriser des initiatives pilotes</h3>
-        <p>
-          Une collectivité souhaite faire reconnaître des actions testées sur son territoire :
-          transformation de services, innovation publique, partenariats locaux.
-        </p>
-        <ul>
-          <li>Ce qui a été fait, ce que ça change, ce que ça coûte</li>
-          <li>Ce qui est réplicable (et sous quelles conditions)</li>
-          <li>Réponses prêtes sur les points sensibles</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <span class="pill">Communauté de communes</span>
-        <h3>Relancer une filière “nouvelles technologies”</h3>
-        <p>
-          Besoin d’investisseurs et d’entrepreneurs : il faut une parole structurée sur la stratégie,
-          les ressources, l’écosystème, et les conditions d’implantation.
-        </p>
-        <ul>
-          <li>Positionnement du territoire (compétences, foncier, énergie)</li>
-          <li>Promesse réaliste, sans sur-promettre</li>
-          <li>Contenus réutilisables pour prospection et dossiers</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- CE QUE NOUS FAISONS (concret) -->
-  <section class="section">
-    <h2>Ce que nous faisons, concrètement</h2>
-    <p class="measure">
-      EN PLATEAU intervient pour préparer et cadrer votre prise de parole dans un cadre média exigeant,
-      puis pour transformer l’émission en contenus utiles et réutilisables.
-    </p>
-
-    <div class="process">
-      <h3>Avant / Pendant / Après</h3>
-      <ul>
-        <li><strong>Avant :</strong> messages, preuves, points sensibles, Q&amp;A, préparation des porte-parole.</li>
-        <li><strong>Pendant :</strong> coordination avec l’écosystème de production et le média (format, timing, contraintes).</li>
-        <li><strong>Après :</strong> organisation de la réutilisation : site, dossiers, partenaires, RH, événements, présentations.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- RÉASSURANCE : VALIDATIONS + RÉSEAU -->
-  <section class="section">
-    <h2>Une méthode compatible avec vos validations</h2>
-    <p class="measure">
-      Nous travaillons avec vos équipes <strong>communication</strong> et <strong>juridiques</strong> dès le départ.
-      Les messages, chiffres, exemples et points sensibles sont <strong>validés en amont</strong> (conformité, réserve, droits d’usage).
-    </p>
-    <p class="measure">
-      EN PLATEAU est un cabinet à taille courte : interlocuteur unique, exécution rapide.
-      Nous nous appuyons sur un réseau d’intervenants (production, partenaires, experts) pour mobiliser la bonne compétence au bon moment,
-      sans alourdir votre organisation.
-    </p>
-  </section>
-
-  <!-- CADRES D’ENGAGEMENT (clarifiés) -->
-  <section class="section" id="cadres">
-    <h2>Trois cadres d’accompagnement</h2>
-    <p class="measure">Même exigence. Un niveau d’engagement adapté à votre contexte, vos contraintes et votre calendrier.</p>
-
-    <div class="grid-3">
-      <div class="panel">
-        <h3>Une émission</h3>
-        <p><strong>Pour un moment clé.</strong> Annonce, bilan, décision sensible, événement majeur.</p>
-        <ul>
-          <li>Messages + preuves</li>
-          <li>Q&amp;A + préparation porte-parole</li>
-          <li>Kit de réutilisation des contenus</li>
-        </ul>
-        <p class="meta"><strong>Délai :</strong> première émission à partir de 2 à 3 semaines (selon agenda).</p>
-      </div>
-
-      <div class="panel featured">
-        <h3>Deux émissions</h3>
-        <p><strong>Pour installer une crédibilité cohérente.</strong> Deux angles complémentaires, même ligne.</p>
-        <ul>
-          <li>Architecture des angles</li>
-          <li>Préparation 2 porte-parole (si besoin)</li>
-          <li>Réutilisation organisée sur 3 à 6 mois</li>
-        </ul>
-        <p class="meta"><strong>Délai :</strong> première émission à partir de 3 à 4 semaines.</p>
-      </div>
-
-      <div class="panel">
-        <h3>3–4 émissions</h3>
-        <p><strong>Pour une parole durable.</strong> Plusieurs angles, une continuité, une cohérence.</p>
-        <ul>
-          <li>Architecture complète (messages + preuves + risques)</li>
-          <li>Points de validation structurés</li>
-          <li>Plan de diffusion et de réutilisation sur 6 à 12 mois</li>
-        </ul>
-        <p class="meta"><strong>Délai :</strong> première émission à partir de 4 semaines.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- LIVRABLES (utilisables) -->
-  <section class="section">
-    <h2>Livrables utiles, transmissibles</h2>
-    <div class="process">
-      <ul>
-        <li><strong>Note de préparation</strong> : messages, preuves, points sensibles, angles.</li>
-        <li><strong>Q&amp;A</strong> : réponses prêtes aux questions critiques.</li>
-        <li><strong>Kit porte-parole</strong> : brief, do / don’t, vigilance.</li>
-        <li><strong>Kit de réutilisation</strong> : extraits, citations, trame de diffusion, pages/dossiers.</li>
-      </ul>
-      <p style="margin-top:14px;color:var(--muted);"><strong>Implication estimée :</strong> 10 à 25 heures selon cadre (DG + com + juridique), réparties sur 2 à 8 semaines.</p>
-    </div>
-  </section>
-
-  <!-- CHARTE (sobre) -->
-  <section class="section">
-    <h2>Cadre éditorial</h2>
-    <p class="measure">
-      Il ne s’agit pas de contenu sponsorisé. Les émissions sont animées dans le cadre éditorial du média.
-      Notre rôle : rendre votre intervention <strong>claire</strong>, <strong>solide</strong> et <strong>validée</strong>,
-      sans posture promotionnelle.
-    </p>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="final" id="contact">
-    <h2>Échange confidentiel</h2>
-    <p>Un premier échange permet de cadrer l’enjeu, le niveau d’exposition et l’organisation des validations en amont.</p>
-    <div class="cta">
-      <a href="mailto:hocine.reguida@enplateau.fr" class="btn btn-primary">hocine.reguida@enplateau.fr</a>
-    </div>
-    <p style="margin-top:16px;font-size:14px;opacity:.82;">Accord de confidentialité possible avant tout échange approfondi.</p>
-  </section>
-
+<div class="card">
+<h3>Impact géopolitique</h3>
+<p>Réorganisation de supply chain, implantation stratégique, souveraineté industrielle.</p>
+<ul>
+<li>Positionnement clair</li>
+<li>Preuves validées</li>
+<li>Anticipation des questions sensibles</li>
+</ul>
 </div>
 
+<div class="card">
+<h3>Transition énergétique</h3>
+<p>Décarbonation, arbitrage d’investissements, modernisation ou fermeture de site.</p>
+<ul>
+<li>Explication des choix</li>
+<li>Cadre réglementaire intégré</li>
+<li>Messages alignés direction / communication</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Sujet sensible</h3>
+<p>Restructuration, tension sociale, controverse publique.</p>
+<ul>
+<li>Clarification des faits</li>
+<li>Réduction du risque d’interprétation</li>
+<li>Préparation du porte-parole</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>Ce que nous faisons</h2>
+
+<div class="process">
+<h3>Avant l’émission</h3>
+<ul>
+<li>Clarifier les messages prioritaires</li>
+<li>Vérifier chiffres et éléments factuels</li>
+<li>Identifier les points sensibles</li>
+<li>Préparer le porte-parole</li>
+</ul>
+
+<h3 style="margin-top:30px;">Pendant</h3>
+<ul>
+<li>Coordination avec la production</li>
+<li>Adaptation au format (plateau, entretien, reportage)</li>
+</ul>
+
+<h3 style="margin-top:30px;">Après</h3>
+<ul>
+<li>Organisation de la réutilisation</li>
+<li>Supports investisseurs / partenaires</li>
+<li>Diffusion interne structurée</li>
+</ul>
+</div>
+
+</section>
+
+<section class="section">
+<h2>Validations en amont</h2>
+<p class="measure">
+Nous travaillons avec vos équipes communication et juridiques dès le départ.
+Les messages et données sont validés avant tournage.
+Le cadre réglementaire et les contraintes internes sont intégrés au processus.
+</p>
+</section>
+
+<section class="section">
+<h2>Cadre média</h2>
+<p class="measure">
+Les émissions se déroulent dans le cadre éditorial du média.
+Les questions sont posées par l’animateur.
+Il ne s’agit pas d’un contenu publicitaire.
+</p>
+</section>
+
+<section class="section">
+<h2>Positionnement</h2>
+<p class="measure">
+EN PLATEAU est un cabinet à taille courte.
+Interlocuteur unique.
+Réseau mobilisable selon l’enjeu.
+</p>
+</section>
+
+<section class="final">
+<h2>Échange confidentiel</h2>
+<p>Un premier échange permet de cadrer l’enjeu et les validations nécessaires.</p>
+<a href="mailto:hocine.reguida@enplateau.fr" class="btn">hocine.reguida@enplateau.fr</a>
+</section>
+
+</div>
 </body>
 </html>
