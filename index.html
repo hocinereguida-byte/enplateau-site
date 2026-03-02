@@ -95,23 +95,35 @@ p{margin:0 0 18px;}
 .card.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
 .card p{font-size:14px;color:var(--muted);margin:0 0 14px}
 .pill{display:inline-block;font-size:12px;font-weight:850;border:1px solid var(--line);padding:8px 10px;border-radius:999px;color:var(--muted);background:#fff}
-.card a.btn{margin-top:6px}
-.card .btn{padding:12px 14px;font-size:14px}
-.card .btn-primary{background:var(--sig);color:#fff}
-.card .btn-primary:hover{filter:brightness(1.05)}
-  
-  /* Sécurisation des boutons cartes (évite débordements texte long) */
-.card a.btn{
-  width:100%;
-  justify-content:center;
-  text-align:center;
-  white-space:normal;
-  line-height:1.25;
-  padding:12px 14px;
-  overflow-wrap:anywhere;
-  word-break:break-word;
+/* Remplace les boutons par des liens éditoriaux sobres */
+.card a.link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:14px;
+  font-size:14px;
+  font-weight:750;
+  color:var(--ink);
+  text-decoration:none;
 }
-.soft{background:#f8f9fb;border:1px solid var(--line);border-radius:22px;padding:28px;text-align:left;margin-top:22px}
+
+.card a.link::after{
+  content:"→";
+  font-weight:900;
+  opacity:.55;
+  transform:translateX(0);
+  transition:transform .15s ease, opacity .15s ease;
+}
+
+.card a.link:hover{
+  text-decoration:underline;
+}
+
+.card a.link:hover::after{
+  opacity:.9;
+  transform:translateX(2px);
+}
+  .soft{background:#f8f9fb;border:1px solid var(--line);border-radius:22px;padding:28px;text-align:left;margin-top:22px}
 .soft ul{margin:10px 0 0 18px}
 .final{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px;text-align:center;}
 .final h2{color:#fff;}
