@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>EN PLATEAU — Grands comptes</title>
-<meta name="description" content="EN PLATEAU accompagne les groupes et organisations à forte exposition : préparation d’émissions économiques, messages clairs, validations en amont, et réutilisation maîtrisée des contenus." />
-<link rel="canonical" href="https://enplateau.fr/grands-comptes.html" />
+<title>EN PLATEAU — Émissions économiques · Prise de parole structurée</title>
+<meta name="description" content="EN PLATEAU prépare des émissions économiques (plateau, entretien, reportage) avec des médias nationaux : messages clairs, validations en amont, réutilisation maîtrisée." />
+<link rel="canonical" href="https://enplateau.fr/" />
 
 <style>
 :root{
@@ -29,7 +29,7 @@ body{
 a{color:inherit;text-decoration:none}
 .container{max-width:var(--max);margin:0 auto;padding:34px 22px 110px;}
 
-/* Header (harmonisé Home/PME/Associations) */
+/* Header (desktop horizontal / mobile burger) */
 .header-wrap{
   position:sticky;top:0;z-index:50;
   background:rgba(255,255,255,.92);
@@ -63,39 +63,36 @@ a{color:inherit;text-decoration:none}
 }
 
 /* Typography */
-h1{font-size:clamp(34px,6vw,52px);line-height:1.06;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
-h2{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
+h1{font-size:clamp(30px,6vw,48px);line-height:1.08;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
+h2{font-size:clamp(24px,4vw,36px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
 h3{font-size:20px;margin:0 0 10px;color:var(--ink);font-weight:760;}
 p{margin:0 0 18px;}
+small{color:var(--muted)}
+
+/* Sections */
 .section{margin-bottom:72px;text-align:center;}
 .measure{max-width:900px;margin-left:auto;margin-right:auto;}
+.grid-3{display:grid;gap:22px;margin-top:26px;}
+.grid-4{display:grid;gap:22px;margin-top:26px;}
+@media(min-width:900px){
+  .grid-3{grid-template-columns:repeat(3,1fr);}
+  .grid-4{grid-template-columns:repeat(4,1fr);}
+}
 
 /* Hero */
 .hero{
   background:var(--sig);
   color:#fff;
   border-radius:26px;
-  padding:56px 22px 44px;
+  padding:54px 22px 44px;
   margin:26px 0 40px;
   text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-/* Un léger équilibre visuel (sans “image”) */
-.hero:after{
-  content:"";
-  position:absolute;
-  right:-120px; top:-120px;
-  width:360px; height:360px;
-  border-radius:999px;
-  background:rgba(255,255,255,.06);
-  filter:blur(0);
 }
 .hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
-.hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-top:10px;}
-.hero .lead{max-width:900px;margin:0 auto;opacity:.92;font-size:16px;}
+.hero .lead{max-width:860px;margin:0 auto;opacity:.92;font-size:16px;}
+.hero .sub{max-width:860px;margin:10px auto 0;opacity:.78;font-size:14px;letter-spacing:.06em;text-transform:uppercase;}
 
-/* Logos médias (comme Home) */
+/* Logos médias */
 .media-logos{
   display:flex;
   flex-wrap:wrap;
@@ -113,9 +110,7 @@ p{margin:0 0 18px;}
 }
 .media-logos img:hover{opacity:1;transform:translateY(-2px);}
 
-/* Grid / Cards */
-.grid-3{display:grid;gap:22px;margin-top:26px;}
-@media(min-width:900px){ .grid-3{grid-template-columns:repeat(3,1fr);} }
+/* Cards */
 .card{
   border:1px solid var(--line);
   border-radius:20px;
@@ -139,7 +134,16 @@ p{margin:0 0 18px;}
 .card ul{margin:10px 0 0 18px;color:var(--muted);font-size:14px}
 .card li{margin:6px 0}
 
-/* Encadrés */
+/* Liens éditoriaux sobres */
+.card a.link{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:14px;font-size:14px;font-weight:750;color:var(--ink);text-decoration:none;
+}
+.card a.link::after{content:"→";font-weight:900;opacity:.55;transform:translateX(0);transition:transform .15s ease, opacity .15s ease;}
+.card a.link:hover{text-decoration:underline}
+.card a.link:hover::after{opacity:.9;transform:translateX(2px);}
+
+/* Bloc doux */
 .soft{
   background:#f8f9fb;
   border:1px solid var(--line);
@@ -148,21 +152,13 @@ p{margin:0 0 18px;}
   text-align:left;
   margin-top:22px;
 }
-.soft ul{margin:10px 0 0 18px;color:var(--muted)}
-.note{
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:22px;
-  background:#fff;
-  text-align:left;
-  max-width:900px;
-  margin:0 auto;
-}
+.soft ul{margin:10px 0 0 18px}
+
+/* Badges */
+.badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+.badge{font-size:12px;font-weight:800;border:1px solid var(--line);padding:8px 10px;border-radius:999px;color:var(--muted);background:#fff}
 
 /* Final */
-.cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
-.btn{padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;}
-.btn-primary{background:#fff;color:var(--sig);}
 .final{
   background:var(--sig);
   color:#fff;
@@ -172,6 +168,9 @@ p{margin:0 0 18px;}
 }
 .final h2{color:#fff;}
 .final p{opacity:.92}
+.cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.btn{padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;}
+.btn-primary{background:#fff;color:var(--sig);}
 </style>
 </head>
 
@@ -185,7 +184,7 @@ p{margin:0 0 18px;}
     </a>
 
     <nav class="nav" aria-label="Navigation">
-      <a class="active" href="grands-comptes.html" aria-current="page">Grands comptes</a>
+      <a href="grands-comptes.html">Grands comptes</a>
       <a href="pme-eti.html">PME</a>
       <a href="associations.html">Associations</a>
       <a href="secteur-public.html">Secteur public</a>
@@ -196,7 +195,7 @@ p{margin:0 0 18px;}
   </header>
 
   <div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
-    <a href="grands-comptes.html" aria-current="page">Grands comptes</a>
+    <a href="grands-comptes.html">Grands comptes</a>
     <a href="pme-eti.html">PME</a>
     <a href="associations.html">Associations</a>
     <a href="secteur-public.html">Secteur public</a>
@@ -206,17 +205,17 @@ p{margin:0 0 18px;}
 
 <div class="container">
 
-  <!-- HERO (sans boutons) -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="kicker">Grands comptes</div>
-    <h1>Préparer une émission<br>sans improviser</h1>
+    <div class="kicker">Séquence média</div>
+    <h1>Préparer une émission économique<br>sans improviser.</h1>
     <p class="lead">
-      Messages clairs · validations en amont (communication & juridique) · réutilisation maîtrisée.
+      Messages clairs. Validations en amont (juridique & communication). Réutilisation maîtrisée après diffusion.
     </p>
-    <div class="baseline">Émission · plateau · entretien · reportage</div>
+    <div class="sub">plateau · entretien · reportage</div>
   </section>
 
-  <!-- MÉDIAS PARTENAIRES (sous le hero, comme Home) -->
+  <!-- MÉDIAS PARTENAIRES -->
   <section class="section" id="medias">
     <p style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;">
       Environnements médias partenaires
@@ -232,151 +231,279 @@ p{margin:0 0 18px;}
     <p style="margin-top:18px;font-size:14px;color:var(--muted);">
       En partenariat avec <strong>BadM &amp; Scribeo</strong>
     </p>
-  </section>
 
-  <!-- ÉTUDES DE CAS (juste après les logos) -->
-  <section class="section" id="cas">
-    <h2>Trois situations typiques</h2>
-    <p class="measure">
-      Nous intervenons quand la parole est exposée, multi-acteurs, et qu’un cadrage solide évite les contresens.
-      Voici trois cas concrets, très fréquents chez les groupes.
-    </p>
-
-    <div class="grid-3">
+    <!-- Accès segments sous les logos -->
+    <div class="grid-4" style="margin-top:28px;">
       <div class="card">
-        <span class="pill">Géopolitique & risques</span>
-        <h3>Impact géopolitique sur l’organisation</h3>
-        <p>
-          Chaîne d’approvisionnement, marchés, conformité, zones sous tension : la question n’est pas “quoi dire”,
-          mais “comment le dire” sans créer de lecture erronée.
-        </p>
-        <ul>
-          <li>Réduire le risque d’interprétation</li>
-          <li>Tenir une ligne lisible pour l’externe</li>
-          <li>Préparer les questions difficiles</li>
-        </ul>
+        <span class="pill">PME &amp; ETI</span>
+        <h3>Accéder à l’espace PME</h3>
+        <p>Moments clés : croissance, salon, annonce, financement. Faire simple, solide, utile.</p>
+        <a class="link" href="pme-eti.html">Découvrir PME &amp; ETI</a>
       </div>
-
-      <div class="card featured">
-        <span class="pill">Territoires “ici” / “là-bas”</span>
-        <h3>Positionnement territoires & filières</h3>
-        <p>
-          Implantations, emplois, souveraineté, partenariats publics : une émission peut devenir un point d’appui…
-          ou un sujet politique mal cadré.
-        </p>
-        <ul>
-          <li>Mettre en contexte avant le focus entreprise</li>
-          <li>Articuler filière, territoire, emplois</li>
-          <li>Aligner siège / sites / partenaires</li>
-        </ul>
-      </div>
-
       <div class="card">
-        <span class="pill">Transition énergétique</span>
-        <h3>Arbitrages et trajectoire</h3>
-        <p>
-          Prix, investissements, calendrier, contraintes réglementaires : le public attend du concret.
-          L’émission doit éclairer, pas promettre.
-        </p>
-        <ul>
-          <li>Dire vrai, sans langue de bois</li>
-          <li>Rendre les arbitrages compréhensibles</li>
-          <li>Éviter l’autopromo “hors-sol”</li>
-        </ul>
+        <span class="pill">Grands comptes</span>
+        <h3>Accéder à l’espace Grands comptes</h3>
+        <p>Exposition élevée, multi-acteurs, risques d’interprétation. Préparer, valider, tenir une ligne.</p>
+        <a class="link" href="grands-comptes.html">Découvrir Grands comptes</a>
+      </div>
+      <div class="card">
+        <span class="pill">Associations</span>
+        <h3>Accéder à l’espace Associations</h3>
+        <p>Parole économique sur emploi, financements, filières, territoires. Une utilité sociale “lisible”.</p>
+        <a class="link" href="associations.html">Découvrir Associations</a>
+      </div>
+      <div class="card">
+        <span class="pill">Secteur public</span>
+        <h3>Accéder à l’espace Secteur public</h3>
+        <p>Décision, programme, bilan, crise. Cohérence inter-services et clarté pour le public.</p>
+        <a class="link" href="secteur-public.html">Découvrir Secteur public</a>
       </div>
     </div>
   </section>
 
-  <!-- CE QUE NOUS FAISONS (forme simple, comme Secteur public, adapté) -->
-  <section class="section" id="ce-que-nous-faisons">
+  <!-- CAS D’USAGE (redirigés vers segments) -->
+  <section class="section" id="cas">
+    <h2>Quelques cas d’usage qui reviennent souvent</h2>
+    <p class="measure">
+      Une émission économique est utile quand elle sert une décision, un cap, une transformation — et quand le discours
+      doit rester lisible malgré la complexité (marché, filière, territoire, réglementation).
+    </p>
+
+    <div class="grid-3">
+      <div class="card">
+        <span class="pill">PME</span>
+        <h3>Gagner en crédibilité commerciale</h3>
+        <p>Rassurer des donneurs d’ordre et ouvrir des portes sur un marché plus large.</p>
+        <ul>
+          <li>Contexte de secteur expliqué simplement</li>
+          <li>Focus sur votre positionnement</li>
+          <li>Messages validés en amont</li>
+        </ul>
+        <a class="link" href="pme-eti.html">Voir le cadre PME</a>
+      </div>
+
+      <div class="card">
+        <span class="pill">ETI / Industrie</span>
+        <h3>Rendre une transformation compréhensible</h3>
+        <p>Transition énergétique, relocalisation, investissement, évolution du modèle.</p>
+        <ul>
+          <li>Angles filière / territoire</li>
+          <li>Questions difficiles anticipées</li>
+          <li>Réutilisation des contenus</li>
+        </ul>
+        <a class="link" href="pme-eti.html">Voir le cadre PME &amp; ETI</a>
+      </div>
+
+      <div class="card">
+        <span class="pill">Grands comptes</span>
+        <h3>Réduire le risque d’interprétation</h3>
+        <p>Exposition élevée : tout est repris, commenté, extrait. La ligne doit tenir.</p>
+        <ul>
+          <li>Alignement DG / com / juridique</li>
+          <li>Messages hiérarchisés</li>
+          <li>Cadre éditorial maîtrisé</li>
+        </ul>
+        <a class="link" href="grands-comptes.html">Voir le cadre Grands comptes</a>
+      </div>
+
+      <div class="card">
+        <span class="pill">Association</span>
+        <h3>Parler “économie” sans perdre le sens</h3>
+        <p>Emploi, coût de l’inaction, financement, performance territoriale.</p>
+        <ul>
+          <li>Angles économiques concrets</li>
+          <li>Preuves &amp; résultats présentables</li>
+          <li>Posture non promotionnelle</li>
+        </ul>
+        <a class="link" href="associations.html">Voir le cadre Associations</a>
+      </div>
+
+      <div class="card">
+        <span class="pill">Secteur public</span>
+        <h3>Expliquer une politique sans simplifier à l’excès</h3>
+        <p>Rendre lisible ce qui change, pourquoi, pour qui, avec quels effets attendus.</p>
+        <ul>
+          <li>Cohérence inter-services</li>
+          <li>Q&amp;A partagé</li>
+          <li>Langage commun</li>
+        </ul>
+        <a class="link" href="secteur-public.html">Voir le cadre Secteur public</a>
+      </div>
+
+      <div class="card featured">
+        <span class="pill">Multi-acteurs</span>
+        <h3>Filière / territoire</h3>
+        <p>Présenter un environnement complexe, puis situer votre organisation dans cet ensemble.</p>
+        <ul>
+          <li>Vue large : filière, enjeux, arbitrages</li>
+          <li>Focus : rôle, choix, trajectoire</li>
+          <li>Contenus utiles au-delà du “cercle initié”</li>
+        </ul>
+        <a class="link" href="#methode">Voir la méthode</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CE QUE NOUS FAISONS -->
+  <section class="section" id="offre">
     <h2>Ce que nous faisons</h2>
     <p class="measure">
-      Nous préparons une émission pour qu’elle soit claire, valide et utile — sans improvisation.
-      Concrètement, nous travaillons le fond, le cadrage, et la cohérence interne avant l’enregistrement,
-      puis nous organisons une réutilisation propre des contenus.
+      EN PLATEAU prépare des émissions économiques avec une logique simple :
+      rendre un sujet compréhensible pour quelqu’un qui ne connaît pas votre secteur, puis rendre votre positionnement clair,
+      sans promesse excessive et sans improvisation.
     </p>
 
     <div class="grid-3">
       <div class="card featured">
-        <span class="pill">1) Clarifier</span>
-        <h3>Ligne lisible</h3>
-        <p>Messages hiérarchisés, preuves, et éléments qui tiennent face aux questions.</p>
-        <ul>
-          <li>Messages clés + angles</li>
-          <li>Points sensibles + réponses</li>
-          <li>Matériel de préparation porte-parole</li>
-        </ul>
+        <span class="pill">Avant l’émission</span>
+        <h3>Clarifier et valider</h3>
+        <p>Messages, preuves, points sensibles. Travail en lien avec vos équipes communication et juridiques.</p>
+        <div class="soft">
+          <strong>Livrables typiques</strong>
+          <ul>
+            <li>Note de messages (priorités + preuves)</li>
+            <li>Q&amp;A (questions attendues + réponses tenables)</li>
+            <li>Document de validation interne (com / juridique)</li>
+          </ul>
+        </div>
       </div>
 
       <div class="card">
-        <span class="pill">2) Valider</span>
-        <h3>Amont sécurisé</h3>
-        <p>Un cadrage compatible avec vos processus, sans friction inutile.</p>
-        <ul>
-          <li>Allers-retours communication</li>
-          <li>Relecture juridique si nécessaire</li>
-          <li>Points de validation structurés</li>
-        </ul>
+        <span class="pill">Pendant</span>
+        <h3>Installer un cadre clair</h3>
+        <p>
+          L’émission se déroule dans le cadre éditorial du média : l’animateur mène l’entretien.
+          Notre rôle est d’arriver prêt, aligné, et lisible.
+        </p>
+        <div class="soft">
+          <strong>Objectifs</strong>
+          <ul>
+            <li>Une ligne simple, répétable</li>
+            <li>Réduire les contresens</li>
+            <li>Éviter le “hors sujet” sous pression</li>
+          </ul>
+        </div>
       </div>
 
       <div class="card">
-        <span class="pill">3) Réutiliser</span>
-        <h3>Contenus maîtrisés</h3>
-        <p>Des contenus réemployés avec cohérence, sans déformer le propos.</p>
-        <ul>
-          <li>Découpe & formats</li>
-          <li>Kit citations / séquences</li>
-          <li>Guide d’usage interne/externe</li>
-        </ul>
+        <span class="pill">Après</span>
+        <h3>Réutiliser proprement</h3>
+        <p>Transformer l’émission en contenus utiles : site, dossiers, recrutement, partenaires, territoires.</p>
+        <div class="soft">
+          <strong>Activation maîtrisée</strong>
+          <ul>
+            <li>Extraits courts + citations</li>
+            <li>Kit de réutilisation (où / comment / quoi éviter)</li>
+            <li>Cohérence avec vos communications existantes</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CADRE ÉDITORIAL (brand content, dit proprement) -->
+  <!-- CADRE ÉDITORIAL / PARTENARIAT -->
   <section class="section" id="cadre">
-    <h2>Cadre éditorial de l’émission</h2>
-    <div class="note">
-      <p style="margin:0 0 12px;color:var(--muted);font-size:14px;">
-        Les émissions sont produites dans le cadre d’un <strong>partenariat</strong> entre <strong>Scribeo</strong> et le <strong>média</strong>.
-        Il s’agit d’un format <strong>brand content</strong> avec une ambition simple : proposer un contenu structuré, informatif et utile.
-      </p>
-      <p style="margin:0;color:var(--muted);font-size:14px;">
-        La logique de l’épisode : <strong>un enjeu large</strong> (secteur / transformation / territoire), puis un <strong>focus</strong> sur l’entreprise,
-        ses contraintes et son positionnement. Les questions sont posées par l’animateur, dans le cadre du média.
-      </p>
+    <h2>Cadre éditorial : partenariat, exigence, sobriété</h2>
+    <p class="measure">
+      Les émissions sont produites par <strong>Scribeo</strong> et <strong>BadM</strong> en partenariat avec le média.
+      Le média encadre l’environnement de marque et la diffusion ; l’animateur pose les questions dans son style.
+      L’ambition : produire un contenu compréhensible et intéressant, pas un discours publicitaire.
+    </p>
+    <div class="badges" aria-label="Engagements">
+      <span class="badge">Cadre éditorial du média</span>
+      <span class="badge">Préparation &amp; validations en amont</span>
+      <span class="badge">Posture sobre</span>
+      <span class="badge">Réutilisation maîtrisée</span>
     </div>
   </section>
 
-  <!-- MÉTHODO + RASSURANCE (réseau, validation) -->
-  <section class="section" id="methodo">
-    <h2>Méthode et organisation</h2>
+  <!-- MÉTHODE -->
+  <section class="section" id="methode">
+    <h2>La méthode (simple, mais stricte)</h2>
     <div class="soft">
-      <h3 style="margin:0 0 10px;color:var(--ink);">Un interlocuteur unique, un réseau de compétences</h3>
-      <p style="margin:0 0 14px;color:var(--muted);font-size:14px;">
-        Vous avez un interlocuteur unique côté EN PLATEAU, qui mobilise au besoin un réseau pluridisciplinaire
-        (éditorial, stratégie, data, image, sciences humaines, secteurs).
-      </p>
       <ul>
-        <li>Ateliers de cadrage (messages, enjeux, risques)</li>
-        <li>Préparation porte-parole (questions, réponses, angles)</li>
-        <li>Validations en amont avec vos équipes communication et juridiques</li>
-        <li>Coordination avec l’écosystème de production (Scribeo/BadM) et le média</li>
+        <li><strong>1) Cadrage</strong> : objectifs, risques d’interprétation, contraintes (juridique, réputation, concurrence).</li>
+        <li><strong>2) Messages</strong> : 3 à 5 idées maximum, prouvables, tenables, hiérarchisées.</li>
+        <li><strong>3) Questions</strong> : préparation des angles difficiles (Q&amp;A), sans langue de bois.</li>
+        <li><strong>4) Validation</strong> : points de passage avec vos équipes communication et juridiques.</li>
+        <li><strong>5) Réutilisation</strong> : kit de diffusion et de cohérence (ce qu’on reprend / ce qu’on évite).</li>
       </ul>
     </div>
+    <p class="measure" style="margin-top:18px;">
+      Objectif : une émission qui tient en direct, et qui reste solide une fois découpée, commentée, citée.
+    </p>
   </section>
 
-  <!-- CTA FINAL -->
+  <!-- RÉSEAU -->
+  <section class="section" id="reseau">
+    <h2>Un interlocuteur unique, un réseau de compétences</h2>
+    <p class="measure">
+      EN PLATEAU fonctionne avec un interlocuteur unique côté client, et mobilise un réseau de compétences selon les contextes :
+      production éditoriale, préparation porte-parole, analyse sectorielle, communication institutionnelle, enjeux territoriaux.
+    </p>
+    <div class="grid-3">
+      <div class="card">
+        <span class="pill">Coordination</span>
+        <h3>Un point d’entrée clair</h3>
+        <p>Un pilotage unique, des validations fluides, des livrables réutilisables.</p>
+      </div>
+      <div class="card">
+        <span class="pill">Réseau</span>
+        <h3>Compétences pluridisciplinaires</h3>
+        <p>Selon besoin : éditorial, stratégie, secteurs, territoires, sciences humaines, formats.</p>
+      </div>
+      <div class="card">
+        <span class="pill">Compatibilité</span>
+        <h3>Avec vos processus internes</h3>
+        <p>Travail en lien avec communication, juridique, cabinets et partenaires de production.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIBLES -->
+  <section class="section" id="cibles">
+    <h2>Accéder à votre segment</h2>
+    <p class="measure">
+      Chaque segment a ses contraintes et ses angles convertisseurs. Les pages dédiées reprennent les cas d’usage,
+      les dispositifs et le vocabulaire adaptés.
+    </p>
+
+    <div class="grid-4">
+      <div class="card">
+        <h3>PME</h3>
+        <p>Moments clés : croissance, salon, annonce, financement.</p>
+        <a class="link" href="pme-eti.html">Accéder à l’espace PME</a>
+      </div>
+      <div class="card">
+        <h3>Grands comptes</h3>
+        <p>Exposition élevée : alignement, validations, réduction du risque d’interprétation.</p>
+        <a class="link" href="grands-comptes.html">Accéder à l’espace Grands comptes</a>
+      </div>
+      <div class="card">
+        <h3>Associations</h3>
+        <p>Parole économique : emploi, financement, filières, territoires.</p>
+        <a class="link" href="associations.html">Accéder à l’espace Associations</a>
+      </div>
+      <div class="card">
+        <h3>Secteur public</h3>
+        <p>Décision, programme, bilan, crise : lisibilité et cohérence inter-services.</p>
+        <a class="link" href="secteur-public.html">Accéder à l’espace Secteur public</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
   <section class="final" id="contact">
-    <h2>Échange confidentiel</h2>
+    <h2>Cadrer une prochaine émission</h2>
     <p>
-      Un premier échange permet de qualifier le sujet, le format (émission / plateau / entretien / reportage),
-      et le niveau de préparation nécessaire.
+      Un échange confidentiel permet d’évaluer le contexte, les risques d’interprétation, les validations nécessaires
+      et le segment le plus pertinent.
     </p>
     <div class="cta">
-      <a href="mailto:hocine.reguida@enplateau.fr" class="btn btn-primary">hocine.reguida@enplateau.fr</a>
+      <a class="btn btn-primary" href="mailto:hocine.reguida@enplateau.fr">hocine.reguida@enplateau.fr</a>
     </div>
     <p style="margin-top:16px;font-size:14px;opacity:.82;">
-      Accord de confidentialité possible avant tout échange approfondi.
+      Accord de confidentialité possible avant toute analyse approfondie.
     </p>
   </section>
 
