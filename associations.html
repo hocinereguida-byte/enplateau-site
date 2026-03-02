@@ -1,11 +1,13 @@
+
 <!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>EN PLATEAU — Co-production stratégique d’émissions économiques</title>
-<meta name="description" content="Cabinet de conseil spécialisé : structuration des prises de parole et co-production stratégique d’émissions économiques avec des médias nationaux. Séquences : amont, production, aval." />
-<link rel="canonical" href="https://enplateau.fr/" />
+<title>EN PLATEAU — Associations & ESS</title>
+<meta name="description" content="EN PLATEAU accompagne les associations, fondations et acteurs de l’ESS : structurer une parole claire, défendable et reconnue par les financeurs, institutions, adhérents et donateurs." />
+<link rel="canonical" href="https://enplateau.fr/association-ess.html" />
+
 <style>
 :root{
   --ink:#0B0F19;
@@ -18,13 +20,32 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;color:var(--slate);background:var(--bg);}
+body{
+  margin:0;
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.7;
+  color:var(--slate);
+  background:var(--bg);
+}
 a{color:inherit;text-decoration:none}
 .container{max-width:var(--max);margin:0 auto;padding:34px 22px 110px;}
 
-/* Header (desktop horizontal / mobile burger) */
-.header-wrap{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);}
-.header{max-width:var(--max);margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+/* Header (commun) */
+.header-wrap{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:12px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
 .brand{display:flex;align-items:center;gap:10px}
 .brand-mark{width:34px;height:34px;border-radius:10px;background:var(--sig);display:inline-block}
 .brand-name{font-weight:900;letter-spacing:-.02em;color:var(--ink)}
@@ -43,100 +64,91 @@ a{color:inherit;text-decoration:none}
 }
 
 /* Typography */
-h1{font-size:clamp(30px,6vw,48px);line-height:1.08;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
-h2{font-size:clamp(24px,4vw,36px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.06;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
+h2{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
 h3{font-size:20px;margin:0 0 10px;color:var(--ink);font-weight:760;}
 p{margin:0 0 18px;}
-  p strong{
-  font-weight:500;
-}
-
-/* Hero */
-.hero{background:var(--sig);color:#fff;border-radius:26px;padding:54px 22px 44px;margin:26px 0 56px;text-align:center;}
-.hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
-.hero .lead{max-width:860px;margin:0 auto 0;opacity:.92;font-size:16px;}
-.cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
-.btn{padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;}
-.btn-primary{background:#fff;color:var(--sig);}
-.btn-ghost{border:1px solid rgba(255,255,255,.38);color:#fff;}
-
-/* Sections */
 .section{margin-bottom:72px;text-align:center;}
 .measure{max-width:900px;margin-left:auto;margin-right:auto;}
+
+/* Hero */
+.hero{
+  background:var(--sig);
+  color:#fff;
+  border-radius:26px;
+  padding:56px 22px 44px;
+  margin:26px 0 56px;
+  text-align:center;
+}
+.hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
+.hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-top:10px;}
+
+/* Cards / Grid */
 .grid-3{display:grid;gap:22px;margin-top:26px;}
-.grid-4{display:grid;gap:22px;margin-top:26px;}
-/* Cibles : aligne les cartes et les liens */
-#cibles .card{
-  display:flex;
-  flex-direction:column;
-  min-height:240px;
+@media(min-width:900px){ .grid-3{grid-template-columns:repeat(3,1fr);} }
+.card{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:24px;
+  background:#fff;
+  text-align:left;
 }
-#cibles .card p{margin-bottom:0}
-#cibles .card a.link{margin-top:auto}
-  /* Logos médias */
-.media-logos{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  align-items:center;
-  gap:80px;
-  margin:18px 0 0;
-}
-
-.media-logos img{
-  height:80px;
-  max-width:180px;      /* évite qu’un logo trop “large” prenne toute la ligne */
-  width:auto;
-  opacity:.9;
-  transition:opacity .2s ease, transform .2s ease;
-}
-
-.media-logos img:hover{
-  opacity:1;
-  transform:translateY(-2px);
-}
-  @media(min-width:900px){
-  .grid-3{grid-template-columns:repeat(3,1fr);}
-  .grid-4{grid-template-columns:repeat(4,1fr);}
-}
-.card{border:1px solid var(--line);border-radius:20px;padding:24px;background:#fff;text-align:left;}
 .card.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
 .card p{font-size:14px;color:var(--muted);margin:0 0 14px}
-.pill{display:inline-block;font-size:12px;font-weight:850;border:1px solid var(--line);padding:8px 10px;border-radius:999px;color:var(--muted);background:#fff}
-/* Remplace les boutons par des liens éditoriaux sobres */
-.card a.link{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  margin-top:14px;
-  font-size:14px;
-  font-weight:750;
-  color:var(--ink);
-  text-decoration:none;
+.pill{
+  display:inline-block;
+  font-size:12px;
+  font-weight:850;
+  border:1px solid var(--line);
+  padding:8px 10px;
+  border-radius:999px;
+  color:var(--muted);
+  background:#fff;
+  margin-bottom:10px;
 }
+.card ul{margin:10px 0 0 18px;padding:0;color:var(--muted);font-size:14px}
+.card li{margin:6px 0}
+.meta{margin-top:14px;font-size:13px;color:var(--muted);}
 
-.card a.link::after{
-  content:"→";
-  font-weight:900;
-  opacity:.55;
-  transform:translateX(0);
-  transition:transform .15s ease, opacity .15s ease;
-}
+/* Badges */
+.badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+.badge{font-size:12px;font-weight:800;border:1px solid var(--line);padding:8px 10px;border-radius:999px;color:var(--muted);background:#fff}
 
-.card a.link:hover{
-  text-decoration:underline;
+/* Encadré livrables */
+.exec-block{
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:28px;
+  background:#f8f9fb;
+  text-align:left;
+  max-width:900px;
+  margin:0 auto;
 }
+.exec-block h3{margin:0 0 10px}
+.exec-block ul{margin:10px 0 0 18px;color:var(--muted)}
+.exec-block li{margin:6px 0}
 
-.card a.link:hover::after{
-  opacity:.9;
-  transform:translateX(2px);
+/* CTA styles (utilisés seulement en bas) */
+.cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.btn{
+  padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;
+  display:inline-flex;align-items:center;justify-content:center;
 }
-  .soft{background:#f8f9fb;border:1px solid var(--line);border-radius:22px;padding:28px;text-align:left;margin-top:22px}
-.soft ul{margin:10px 0 0 18px}
-.final{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px;text-align:center;}
+.btn-primary{background:#fff;color:var(--sig);}
+
+/* Final CTA */
+.final{
+  background:var(--sig);
+  color:#fff;
+  border-radius:26px;
+  padding:56px 22px;
+  text-align:center;
+}
 .final h2{color:#fff;}
+.final p{opacity:.92}
 </style>
 </head>
+
 <body>
 
 <div class="header-wrap">
@@ -149,7 +161,7 @@ p{margin:0 0 18px;}
     <nav class="nav" aria-label="Navigation">
       <a href="grands-comptes.html">Grands comptes</a>
       <a href="pme-eti.html">PME</a>
-      <a href="associations.html">Associations</a>
+      <a class="active" href="association-ess.html">Associations</a>
       <a href="secteur-public.html">Secteur public</a>
       <a href="a-propos.html">À propos</a>
     </nav>
@@ -160,7 +172,7 @@ p{margin:0 0 18px;}
   <div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
     <a href="grands-comptes.html">Grands comptes</a>
     <a href="pme-eti.html">PME</a>
-    <a href="associations.html">Associations</a>
+    <a href="association-ess.html">Associations</a>
     <a href="secteur-public.html">Secteur public</a>
     <a href="a-propos.html">À propos</a>
   </div>
@@ -168,161 +180,166 @@ p{margin:0 0 18px;}
 
 <div class="container">
 
-  <!-- HERO (plus léger + explicite) -->
+  <!-- HERO (sans CTA) -->
   <section class="hero">
-    <div class="kicker">Séquence Média</div>
-    <h1>Toutes les prises de parole<br>ne méritent pas un média national.</h1>
-    <p class="lead">
-      Certaines engagent une trajectoire. 
-Elles exigent une architecture, un cadre éditorial, et une activation maîtrisée.
-    </p>
-      </section>
-<!-- MÉDIAS PARTENAIRES -->
-<section class="section" id="medias">
-  <p style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;">
-    Environnements médias partenaires
-  </p>
+    <div class="kicker">Associations, fondations, ESS</div>
+    <h1>Rendre votre action<br>compréhensible et reconnue</h1>
+    <div class="baseline">Clarté · Cohérence · Crédibilité</div>
+  </section>
 
-  <div class="media-logos">
-    <img src="images/bfm-business.svg" alt="BFM Business">
-    <img src="images/le-figaro.svg" alt="Le Figaro">
-    <img src="images/la-tribune.svg" alt="La Tribune">
-    <img src="images/forbes.svg" alt="Forbes">
-  </div>
-
-  <p style="margin-top:18px;font-size:14px;color:var(--muted);">
-    En partenariat avec <strong>BadM & Scribeo</strong>
-  </p>
-</section>
-  <!-- CONTEXTE / PERTINENCE -->
+  <!-- 1) SITUATIONS (identification, comme PME/ETI) -->
   <section class="section">
-    <h2>Quand une prise de parole<br>engage la responsabilité d’une organisation</h2>
+    <h2>Dans quelles situations intervenons-nous ?</h2>
     <p class="measure">
-      Certaines interventions médiatiques relèvent de la communication.  
-D’autres engagent la responsabilité d’une gouvernance, d’un territoire ou d’un collectif.  
-Dans ces situations, l’exposition doit être structurée, cadrée et assumée.
+      Nous intervenons lorsque l’action est réelle sur le terrain, mais que sa lecture devient difficile :
+      attentes multiples, exigences de preuves, débat public, arbitrages budgétaires.
     </p>
-  </section><br><br><br>
 
-  <!-- DÉFINITION SÉQUENCE -->
-  <section class="section" id="sequence">
-    <h2>Qu’est-ce qu’une “séquence média” ?</h2>
-    <p class="measure">
-      Une séquence dépasse la diffusion d’un message.  
-Elle articule préparation stratégique, exposition éditoriale et activation dans le temps afin de transformer une intervention médiatique en actif durable.
-</p>
-<!-- architecture sequence -->
-<section class="section" id="architecturesequence">
-<br><br><br><h2>L'architecture d'une séquence</h2>
     <div class="grid-3">
-      <div class="card featured">
-        <span class="pill">Amont — architecture</span>
-        <h3>Structurer</h3>
-        <p>Clarifier et structurer les messages, anticiper les questions sensibles et aligner les parties prenantes internes.</p>
-        <div class="soft">
-          <strong>Livrables clés</strong>
-          <ul>
-             <li>Note d’architecture stratégique</li>
-  <li>Cartographie des messages prioritaires</li>
-  <li>Dossier de préparation du porte-parole</li>
-  <li>Document de validation interne (direction / communication / juridique)</li>
-          </ul>
-        </div>
-      </div>
 
       <div class="card">
-        <span class="pill">Production — co-production</span>
-        <h3>Co-produire</h3>
-        <p>Traduire la stratégie en séquence éditoriale en coordination avec Scribeo, BadM et les journalistes.</p>
-        <div class="soft">
-          <strong>Partenaires possibles</strong>
-          <ul>
-             <li>Scribeo / BadM (production exécutive)</li>
-  <li>Journalistes et équipes éditoriales</li>
-  <li>Studios et équipes techniques</li>
-  <li>Directions communication / agences</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <span class="pill">Aval — impact</span>
-        <h3>Activer</h3>
+        <span class="pill">Fédération / réseau</span>
+        <h3>Parler aux autorités et aux adhérents</h3>
         <p>
-Déployer la séquence dans le temps : diffusion, valorisation et cohérence institutionnelle.
-</p>
-        <div class="soft">
-          <strong>Effets recherchés</strong>
-          <ul>
-            <li>Crédibilité institutionnelle renforcée</li>
-  <li>Attractivité accrue (clients, talents, partenaires)</li>
-  <li>Alignement interne consolidé</li>
-  <li>Valorisation concrète des contenus produits</li>
-          </ul>
-        </div>
+          Vous représentez une profession, un secteur, une filière ou un réseau.
+          Vous devez tenir une parole claire, stable, et utile à plusieurs publics à la fois.
+        </p>
+        <ul>
+          <li>Position commune lisible (sans langue de bois)</li>
+          <li>Arguments tenables face aux autorités</li>
+          <li>Message compréhensible et mobilisateur pour les adhérents</li>
+        </ul>
       </div>
+
+      <div class="card">
+        <span class="pill">Action sociale</span>
+        <h3>Convaincre des financeurs publics</h3>
+        <p>
+          Subventions sous tension, indicateurs attendus, appels à projets :
+          votre utilité doit être défendable, pas seulement “inspirante”.
+        </p>
+        <ul>
+          <li>Impact rendu lisible (faits, résultats, cas)</li>
+          <li>Dossier et parole de direction cohérents</li>
+          <li>Capacité à répondre aux questions critiques</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="pill">ONG / cause</span>
+        <h3>Gagner la confiance des donateurs</h3>
+        <p>
+          Vos soutiens veulent comprendre : à quoi sert un don, ce qui est fait,
+          ce qui change, et comment vous tenez votre promesse.
+        </p>
+        <ul>
+          <li>Récit clair : mission, résultats, limites, priorités</li>
+          <li>Parole incarnée, crédible, non promotionnelle</li>
+          <li>Contenus réutilisables (site, campagnes, partenaires)</li>
+        </ul>
+      </div>
+
     </div>
+
+    <p class="measure" style="margin-top:24px;">
+      Dans ces contextes, la prise de parole n’est pas un “plus”.
+      C’est un outil de continuité : sécuriser, expliquer, rassembler, durer.
+    </p>
   </section>
 
-  <!-- CHARTE ÉTHIQUE -->
+  <!-- 2) POSITIONNEMENT (crédibilité, sans vocabulaire abstrait) -->
   <section class="section">
-    <h2>Charte éthique</h2>
+    <h2>Une parole claire, défendable, et tenue dans le temps</h2>
     <p class="measure">
-      <p class="measure">
-<p class="measure">
-<p class="measure">
-Il ne s’agit pas de contenu sponsorisé. Les émissions sont produites par Scribeo et BadM, en partenariat avec le média, et animées par des journalistes incarnés dans leur cadre éditorial propre.
-</p>
-
-<p class="measure">
-EN PLATEAU intervient en amont pour structurer et éditorialiser l’intervention, afin qu’elle s’inscrive pleinement dans ce cadre et qu’elle puisse être comprise au-delà de son seul public immédiat.
-</p>
-
-<p class="measure">
-Le cadre contractuel, les droits d’usage et les validations internes sont intégrés au processus lorsque nécessaire.
-</p>  </section>
-
-  <!-- CIBLES (max clic) -->
-  <section class="section" id="cibles">
-    <h2>Choisissez votre cadre d’intervention</h2>
+      EN PLATEAU vous aide à dire les choses simplement, sans les affaiblir.
+      Nous travaillons le fond : ce que vous faites, ce que cela change, comment vous le prouvez,
+      et comment vous le présentez à des interlocuteurs exigeants.
+    </p>
     <p class="measure">
-      Chaque organisation engage sa responsabilité différemment.
-Nous adaptons le dispositif, le niveau d’exigence et l’architecture de la séquence à votre réalité institutionnelle.
+      Notre rôle : préparer, cadrer, et rendre vos prises de parole cohérentes entre direction,
+      gouvernance et équipes — puis organiser une exposition sobre lorsque c’est utile.
     </p>
 
-    <div class="grid-4">
+    <div class="badges" aria-label="Principes de travail">
+      <span class="badge">Clarté</span>
+      <span class="badge">Posture non-promotionnelle</span>
+      <span class="badge">Cohérence direction / CA</span>
+      <span class="badge">Preuves et exemples</span>
+    </div>
+  </section>
+
+  <!-- 3) DISPOSITIFS (mêmes principes que PME : simple, concret, sans jargon) -->
+  <section class="section" id="cadres">
+    <h2>Trois dispositifs, selon votre situation</h2>
+    <p class="measure">Même exigence. Une intensité adaptée à votre urgence, à vos publics et à vos contraintes internes.</p>
+
+    <div class="grid-3">
       <div class="card">
-        <h3>PME</h3>
-        <p>Structurer une prise de parole qui accompagne une étape importante : développement, repositionnement, transmission, croissance externe.</p>
-        <a class="link" href="pme-eti.html">Découvrir le cadre PME</a>
+        <span class="pill">Socle</span>
+        <h3>Clarifier le message</h3>
+        <p>Pour stabiliser votre parole avant une réunion importante, un rendez-vous financeur, un débat, une campagne.</p>
+        <ul>
+          <li>Diagnostic de lisibilité (ce qui est compris / confus)</li>
+          <li>Messages clés + preuves + exemples</li>
+          <li>Préparation d’un porte-parole</li>
+        </ul>
+        <div class="meta"><strong>Repère délai :</strong> 10 à 15 jours.</div>
       </div>
-      <div class="card">
-        <h3>Grands comptes</h3>
-        <p>Encadrer une intervention exposée : gouvernance, multi-acteurs, réputation, articulation avec les directions communication et juridique.</p>
-        <a class="link" href="grands-comptes.html">Découvrir le cadre Grands comptes</a>
+
+      <div class="card featured">
+        <span class="pill">Renforcement</span>
+        <h3>Gagner en crédibilité</h3>
+        <p>Pour rendre l’impact défendable et tenir un discours cohérent face à plusieurs parties prenantes.</p>
+        <ul>
+          <li>Angles adaptés (territoire / emploi / économie / santé…)</li>
+          <li>Préparation de 2 porte-parole</li>
+          <li>Cadrage d’une séquence d’exposition (selon contexte)</li>
+        </ul>
+        <div class="meta"><strong>Repère délai :</strong> 3 à 6 semaines selon agenda.</div>
       </div>
+
       <div class="card">
-        <h3>Associations</h3>
-        <p>Rendre un engagement lisible et défendable dans un environnement institutionnel, médiatique et partenarial exigeant.</p>
-        <a class="link" href="associations.html">Découvrir le parcours Associations</a>
-      </div>
-      <div class="card">
-        <h3>Secteur public</h3>
-        <p>Porter une décision ou un dispositif public dans un cadre maîtrisé : lisibilité, responsabilité, cohérence inter-services.</p>
-        <a class="link" href="secteur-public.html">Découvrir le cadre Secteur public</a>
+        <span class="pill">Continuité</span>
+        <h3>Installer une parole de gouvernance</h3>
+        <p>Pour structurer la cohérence direction–CA et arrêter la dispersion, sur une période plus longue.</p>
+        <ul>
+          <li>Alignement gouvernance (direction / CA / équipes)</li>
+          <li>Calendrier de prises de parole sur 6 à 12 mois</li>
+          <li>Réutilisation organisée des contenus</li>
+        </ul>
+        <div class="meta"><strong>Repère délai :</strong> première séquence à partir de 4 semaines.</div>
       </div>
     </div>
   </section>
 
+  <!-- 4) LIVRABLES (concret, sans “méthodo” abstraite) -->
+  <section class="section">
+    <h2>Ce que vous obtenez, concrètement</h2>
+    <div class="exec-block">
+      <h3>Livrables</h3>
+      <ul>
+        <li><strong>Note de cadrage</strong> : messages clés, preuves, points sensibles, public visé.</li>
+        <li><strong>Kit porte-parole</strong> : questions/réponses, formulations sûres, points à éviter.</li>
+        <li><strong>Plan de séquence</strong> : qui parle, où, quand, pour quel effet.</li>
+        <li><strong>Guide de réutilisation</strong> : comment exploiter les contenus (site, dossiers, partenaires, campagnes).</li>
+      </ul>
+      <p style="margin-top:14px;color:var(--muted);">
+        <strong>Principe :</strong> moins de dispersion, plus de cohérence, et des supports réutilisables par vos équipes.
+      </p>
+    </div>
+  </section>
+
+  <!-- 5) CTA FINAL -->
   <section class="final" id="contact">
-    <h2>Cadrer une séquence stratégique</h2>
+    <h2>Échange confidentiel</h2>
     <p>
-      Un échange confidentiel permet d’analyser votre situation, d’évaluer le niveau d’exposition approprié et de déterminer le cadre d’intervention le plus pertinent.
+      Un premier échange permet de clarifier l’enjeu, d’identifier vos publics prioritaires
+      (financeurs, institutions, adhérents, donateurs) et de choisir le bon dispositif.
     </p>
     <div class="cta">
-      <a class="btn btn-primary" href="mailto:hocine.reguida@enplateau.fr">contact@enplateau.fr</a>
+      <a href="mailto:hocine.reguida@enplateau.fr" class="btn btn-primary">hocine.reguida@enplateau.fr</a>
     </div>
-    <p style="margin-top:16px;font-size:14px;opacity:.82;">Lorsque nécessaire, un accord de confidentialité peut être formalisé en amont de toute analyse approfondie.</p>
+    <p style="margin-top:16px;font-size:14px;opacity:.82;">Accord de confidentialité possible avant tout échange approfondi.</p>
   </section>
 
 </div>
