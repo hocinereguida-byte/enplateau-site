@@ -53,7 +53,50 @@ p{margin:0 0 18px;}
 .hero{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px 44px;margin:26px 0 54px;text-align:center;}
 .hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
 .hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-top:10px;}
+/* Libellé discret */
+.kicker-lite{
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin:0 0 18px;
+}
 
+/* Logos médias (déjà proche de ta home) */
+.media-logos{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:70px;
+  margin:0;
+}
+.media-logos img{
+  height:70px;
+  max-width:180px;
+  width:auto;
+  opacity:.9;
+  transition:opacity .2s ease, transform .2s ease;
+}
+.media-logos img:hover{opacity:1;transform:translateY(-2px);}
+
+/* Logos partenaires (plus “cabinet” : un peu plus petit) */
+.partner-logos{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:60px;
+  margin:0;
+}
+.partner-logos img{
+  height:46px;
+  max-width:180px;
+  width:auto;
+  opacity:.92;
+  transition:opacity .2s ease, transform .2s ease;
+}
+.partner-logos img:hover{opacity:1;transform:translateY(-2px);}
 /* Blocks */
 .exec-block{border:1px solid var(--line);border-radius:22px;padding:32px;background:#f8f9fb;margin-top:28px;text-align:left;}
 .final{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px;text-align:center;}
@@ -94,7 +137,29 @@ p{margin:0 0 18px;}
   <h1>Structurer les prises de parole<br>qui engagent une trajectoire</h1>
   <div class="baseline">Co‑production stratégique · Architecture éditoriale </div>
 </section>
+<!-- MÉDIAS & PARTENAIRES -->
+<section class="section" id="medias">
+  <p class="kicker-lite">Environnements médias partenaires</p>
 
+  <div class="media-logos">
+    <img src="images/bfm-business.svg" alt="BFM Business">
+    <img src="images/le-figaro.svg" alt="Le Figaro">
+    <img src="images/la-tribune.svg" alt="La Tribune">
+    <img src="images/forbes.svg" alt="Forbes">
+  </div>
+
+  <p class="kicker-lite" style="margin-top:26px;">Partenaires de production</p>
+
+  <div class="partner-logos">
+    <img src="images/badm.svg" alt="BadM">
+    <img src="images/scribeo.svg" alt="Scribeo">
+  </div>
+
+  <p class="measure" style="margin-top:18px;font-size:14px;color:var(--muted);">
+    Selon les dossiers, EN PLATEAU intervient en amont (architecture), coordonne la co-production,
+    puis organise l’activation des contenus.
+  </p>
+</section>
 <section class="section">
   <h2>Notre positionnement</h2>
   <p class="measure">
@@ -111,7 +176,7 @@ p{margin:0 0 18px;}
 <section class="section" id="reseau">
   <h2>Un cabinet, un réseau de partenaires<br> activé selon l’enjeu</h2>
   <p class="measure">
-    EN PLATEAU est un cabinet indépendant. Selon la nature de la séquence, nous mobilisons un réseau
+    Fondé fin 2025 par Hocine REGUIDA, EN PLATEAU est un cabinet indépendant. Selon la nature de la séquence, nous mobilisons un réseau
     de partenaires spécialisés — production exécutive, équipes éditoriales, experts image/son,
     conseil communication, experts métiers et sectoriels, juridique, social media — pour sécuriser l’amont, coordonner la production
     et maximiser l’activation.
@@ -191,25 +256,10 @@ p{margin:0 0 18px;}
   </div>
 </section>
 
-<section class="section">
-  <h2>Le fondateur</h2>
-  <p class="measure">
-    Le fondateur d’EN PLATEAU a navigué pendant plus de vingt‑cinq ans entre différents
-    écosystèmes : startups technologiques, univers digital, médias, publicité,
-    action sociale, développement territorial et organisations non gouvernementales.
-  </p>
-  <p class="measure">
-    Cette trajectoire hybride lui permet de comprendre à la fois les logiques économiques,
-    les contraintes institutionnelles, les enjeux d’impact social et les exigences médiatiques.
-    EN PLATEAU est né de cette expérience transversale : créer un espace de structuration
-    avant l’exposition.
-  </p>
-</section>
-
 <section class="final">
   <h2>Échange confidentiel</h2>
   <p>Un premier échange permet de cadrer l’enjeu et de déterminer si un accompagnement est pertinent.</p>
-  <a href="mailto:hocine.reguida@enplateau.fr" class="btn">hocine.reguida@enplateau.fr</a>
+  <a href="mailto:contact@enplateau.fr" class="btn">contact@enplateau.fr</a>
 </section>
 
 </div>
