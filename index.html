@@ -74,6 +74,18 @@ p{margin:0 0 18px;}
 .card .btn{padding:12px 14px;font-size:14px}
 .card .btn-primary{background:var(--sig);color:#fff}
 .card .btn-primary:hover{filter:brightness(1.05)}
+  
+  /* Sécurisation des boutons cartes (évite débordements texte long) */
+.card a.btn{
+  width:100%;
+  justify-content:center;
+  text-align:center;
+  white-space:normal;
+  line-height:1.25;
+  padding:12px 14px;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
 .soft{background:#f8f9fb;border:1px solid var(--line);border-radius:22px;padding:28px;text-align:left;margin-top:22px}
 .soft ul{margin:10px 0 0 18px}
 .final{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px;text-align:center;}
