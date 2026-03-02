@@ -73,13 +73,15 @@ p{margin:0 0 18px;}
 }
 
 .media-logos img{
-  height:58px;
-  opacity:.75;
-  transition:opacity .2s ease;
+  height:48px;
+  opacity:.85;
+  transition:opacity .2s ease, transform .2s ease;
 }
 
 .media-logos img:hover{
   opacity:1;
+  transform:translateY(-2px);
+
 }
 @media(min-width:900px){
   .grid-3{grid-template-columns:repeat(3,1fr);}
