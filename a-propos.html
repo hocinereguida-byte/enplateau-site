@@ -4,8 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>EN PLATEAU — À propos</title>
-<meta name="description" content="EN PLATEAU est un cabinet de conseil spécialisé dans la structuration stratégique des prises de parole à forte exposition." />
+<meta name="description" content="EN PLATEAU, cabinet de conseil indépendant fondé en décembre 2025 par Hocine REGUIDA. Architecture stratégique des prises de parole et coordination de séquences éditoriales (amont, production, aval) avec un réseau de partenaires." />
 <link rel="canonical" href="https://enplateau.fr/a-propos.html" />
+
 <style>
 :root{
   --ink:#0B0F19;
@@ -13,28 +14,28 @@
   --muted:#5B6472;
   --line:#E7EAF0;
   --sig:#0B1F3A;
-  --max:980px;
+  --max:1000px;
   --bg:#ffffff;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;color:var(--slate);background:var(--bg);}
-a{color:inherit}
-.container{max-width:var(--max);margin:0 auto;padding:34px 22px 100px;}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--max);margin:0 auto;padding:34px 22px 110px;}
 
 /* Header */
 .header-wrap{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);}
 .header{max-width:var(--max);margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand{display:flex;align-items:center;gap:10px}
 .brand-mark{width:34px;height:34px;border-radius:10px;background:var(--sig);display:inline-block}
 .brand-name{font-weight:900;letter-spacing:-.02em;color:var(--ink)}
 .nav{display:none;gap:18px;align-items:center}
-.nav a{font-size:14px;color:var(--muted);text-decoration:none;font-weight:750;padding:10px 10px;border-radius:999px}
+.nav a{font-size:14px;color:var(--muted);font-weight:750;padding:10px 10px;border-radius:999px}
 .nav a:hover{color:var(--ink);background:#f5f7fb}
 .nav a.active{color:var(--ink);background:#eef2f8}
 .burger{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-weight:800;color:var(--ink);cursor:pointer}
 .mobile{display:none;border-top:1px solid var(--line);}
-.mobile a{display:block;padding:14px 22px;text-decoration:none;color:var(--muted);font-weight:750}
+.mobile a{display:block;padding:14px 22px;color:var(--muted);font-weight:750}
 .mobile a:hover{background:#f5f7fb;color:var(--ink)}
 @media(min-width:900px){
   .nav{display:flex}
@@ -45,14 +46,16 @@ a{color:inherit}
 /* Typography */
 h1{font-size:clamp(34px,6vw,52px);line-height:1.06;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
 h2{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
+h3{font-size:20px;margin:0 0 10px;color:var(--ink);font-weight:760;}
 p{margin:0 0 18px;}
 .section{margin-bottom:78px;text-align:center;}
-.measure{max-width:860px;margin-left:auto;margin-right:auto;}
+.measure{max-width:900px;margin-left:auto;margin-right:auto;}
 
 /* Hero */
 .hero{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px 44px;margin:26px 0 54px;text-align:center;}
 .hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
 .hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-top:10px;}
+
 /* Libellé discret */
 .kicker-lite{
   font-size:12px;
@@ -62,7 +65,7 @@ p{margin:0 0 18px;}
   margin:0 0 18px;
 }
 
-/* Logos médias (déjà proche de ta home) */
+/* Logos médias */
 .media-logos{
   display:flex;
   flex-wrap:wrap;
@@ -80,7 +83,7 @@ p{margin:0 0 18px;}
 }
 .media-logos img:hover{opacity:1;transform:translateY(-2px);}
 
-/* Logos partenaires (plus “cabinet” : un peu plus petit) */
+/* Logos partenaires */
 .partner-logos{
   display:flex;
   flex-wrap:wrap;
@@ -97,170 +100,219 @@ p{margin:0 0 18px;}
   transition:opacity .2s ease, transform .2s ease;
 }
 .partner-logos img:hover{opacity:1;transform:translateY(-2px);}
+
+/* Cards / Grid (MANQUANT dans ta version) */
+.grid-3{display:grid;gap:22px;margin-top:26px;}
+@media(min-width:900px){ .grid-3{grid-template-columns:repeat(3,1fr);} }
+
+.card{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:24px;
+  background:#fff;
+  text-align:left; /* IMPORTANT : corrige le souci des listes */
+}
+.card.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
+.card p{font-size:14px;color:var(--muted);margin:0 0 14px}
+
+.pill{
+  display:inline-block;
+  font-size:12px;
+  font-weight:850;
+  border:1px solid var(--line);
+  padding:8px 10px;
+  border-radius:999px;
+  color:var(--muted);
+  background:#fff;
+}
+
+.soft{
+  background:#f8f9fb;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:18px 18px 16px;
+  text-align:left;
+  margin-top:16px;
+}
+.soft ul{
+  margin:10px 0 0 18px;
+  padding:0;
+  color:var(--muted);
+}
+.soft li{margin:6px 0;}
+
 /* Blocks */
 .exec-block{border:1px solid var(--line);border-radius:22px;padding:32px;background:#f8f9fb;margin-top:28px;text-align:left;}
+.exec-block ul{margin:10px 0 0 18px}
 .final{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px;text-align:center;}
 .final h2{color:#fff;}
 .btn{padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;background:#fff;color:var(--sig);}
 </style>
 </head>
+
 <body>
 
 <div class="header-wrap">
-  <header class="header">
-    <a class="brand" href="index.html">
-      <span class="brand-mark"></span>
+  <header class="header" aria-label="Navigation principale">
+    <a class="brand" href="index.html" aria-label="EN PLATEAU — Accueil">
+      <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-name">EN&nbsp;PLATEAU</span>
     </a>
-    <nav class="nav">
+
+    <nav class="nav" aria-label="Navigation">
       <a href="grands-comptes.html">Grands comptes</a>
       <a href="pme-eti.html">PME</a>
-      <a href="associations.html">Association &amp; ESS</a>
-      <a href="secteur-public.html">Secteur Public</a>
+      <a href="associations.html">Associations</a>
+      <a href="secteur-public.html">Secteur public</a>
       <a class="active" href="a-propos.html">À propos</a>
     </nav>
-    <button class="burger" id="burger">Menu</button>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mobileNav">Menu</button>
   </header>
-  <div class="mobile" id="mobileNav">
+
+  <div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
     <a href="grands-comptes.html">Grands comptes</a>
     <a href="pme-eti.html">PME</a>
     <a href="associations.html">Associations</a>
-    <a href="secteur-public.html">Secteur Public</a>
+    <a href="secteur-public.html">Secteur public</a>
     <a href="a-propos.html">À propos</a>
   </div>
 </div>
 
 <div class="container">
 
-<section class="hero">
-  <div class="kicker">Cabinet de conseil spécialisé</div>
-  <h1>Structurer les prises de parole<br>qui engagent une trajectoire</h1>
-  <div class="baseline">Co‑production stratégique · Architecture éditoriale </div>
-</section>
-<!-- MÉDIAS & PARTENAIRES -->
-<section class="section" id="medias">
-  <p class="kicker-lite">Environnements médias partenaires</p>
+  <section class="hero">
+    <div class="kicker">Cabinet de conseil spécialisé</div>
+    <h1>Structurer les prises de parole<br>qui engagent une trajectoire</h1>
+    <div class="baseline">Co-production stratégique · Architecture éditoriale</div>
+  </section>
 
-  <div class="media-logos">
-    <img src="images/bfm-business.svg" alt="BFM Business">
-    <img src="images/le-figaro.svg" alt="Le Figaro">
-    <img src="images/la-tribune.svg" alt="La Tribune">
-    <img src="images/forbes.svg" alt="Forbes">
-  </div>
+  <!-- MÉDIAS & PARTENAIRES -->
+  <section class="section" id="medias">
+    <p class="kicker-lite">Environnements médias partenaires</p>
 
-  <p class="kicker-lite" style="margin-top:26px;">Partenaires de production</p>
-
-  <div class="partner-logos">
-    <img src="images/badm.svg" alt="BadM">
-    <img src="images/scribeo.svg" alt="Scribeo">
-  </div>
-
-  <p class="measure" style="margin-top:18px;font-size:14px;color:var(--muted);">
-    Selon les dossiers, EN PLATEAU intervient en amont (architecture), coordonne la co-production,
-    puis organise l’activation des contenus.
-  </p>
-</section>
-<section class="section">
-  <h2>Notre positionnement</h2>
-  <p class="measure">
-    EN PLATEAU est un cabinet de conseil indépendant spécialisé dans la structuration stratégique
-    des prises de parole à forte exposition. Nous intervenons lorsque la parole engage plus que
-    la communication : elle engage la réputation, la crédibilité, la gouvernance ou l’influence.
-  </p>
-  <p class="measure">
-    Notre rôle n’est pas de produire du contenu promotionnel. Nous concevons des architectures
-    éditoriales solides : clarification des messages, hiérarchisation des enjeux, préparation
-    des porte‑parole et sécurisation des séquences publiques.
-  </p>
-</section>
-<section class="section" id="reseau">
-  <h2>Un cabinet, un réseau de partenaires<br> activé selon l’enjeu</h2>
-  <p class="measure">
-    Fondé fin 2025 par Hocine REGUIDA, EN PLATEAU est un cabinet indépendant. Selon la nature de la séquence, nous mobilisons un réseau
-    de partenaires spécialisés — production exécutive, équipes éditoriales, experts image/son,
-    conseil communication, experts métiers et sectoriels, juridique, social media — pour sécuriser l’amont, coordonner la production
-    et maximiser l’activation.
-  </p>
-<section class="section" id="charte">
-  <h2>Charte</h2>
-  <p class="measure">
-    EN PLATEAU ne vend pas du contenu sponsorisé. Les formats sont produits avec des partenaires de production
-    et s’inscrivent dans le cadre éditorial propre du média, animé par des journalistes.
-  </p>
-  <p class="measure">
-    Lorsque nécessaire, le cadre contractuel, les droits d’usage et les validations internes (communication, juridique)
-    sont intégrés au processus.
-  </p>
-</section>
-  <div class="grid-3">
-    <div class="card featured">
-      <span class="pill">Amont — architecture</span>
-      <h3>Structurer</h3>
-      <p>Clarifier les messages, hiérarchiser les enjeux, préparer les porte-parole et aligner les parties prenantes.</p>
-      <div class="soft">
-        <strong>Partenaires typiques</strong>
-        <ul>
-          <li>Conseil & architecture éditoriale</li>
-          <li>Communication / directions internes</li>
-          <li>Juridique & validation</li>
-        </ul>
-      </div>
+    <div class="media-logos">
+      <img src="images/bfm-business.svg" alt="BFM Business">
+      <img src="images/le-figaro.svg" alt="Le Figaro">
+      <img src="images/la-tribune.svg" alt="La Tribune">
+      <img src="images/forbes.svg" alt="Forbes">
     </div>
 
-    <div class="card">
-      <span class="pill">Production — co-production</span>
-      <h3>Co-produire</h3>
-      <p>Transformer la stratégie en séquence éditoriale : cadrage, coordination, préparation interview, conditions de tournage.</p>
-      <div class="soft">
-        <strong>Partenaires typiques</strong>
-        <ul>
-          <li>BadM & Scribeo (production)</li>
-          <li>Journalistes / équipes éditoriales</li>
-          <li>Studios & équipes techniques</li>
-        </ul>
-      </div>
+    <p class="kicker-lite" style="margin-top:26px;">Partenaires de production</p>
+
+    <div class="partner-logos">
+      <img src="images/badm.svg" alt="BadM">
+      <img src="images/scribeo.svg" alt="Scribeo">
     </div>
 
-    <div class="card">
-      <span class="pill">Aval — impact</span>
-      <h3>Activer</h3>
-      <p>Déployer la séquence dans la durée : extraits, kit visuel, diffusion maîtrisée et cohérence institutionnelle.</p>
-      <div class="soft">
-        <strong>Partenaires typiques</strong>
-        <ul>
-          <li>Brand / design / montage</li>
-          <li>Social media & diffusion</li>
-          <li>Relations partenaires / événements</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <p class="measure" style="margin-top:18px;font-size:14px;color:var(--muted);">
-    Selon les dossiers, l’activation peut s’inscrire sur plusieurs mois pour transformer l’intervention
-    médiatique en actif durable.
-  </p>
-</section>
-<section class="section">
-  <h2>Une approche transversale</h2>
-  <div class="exec-block">
-    <p>
-      Notre méthode s’inspire des standards des médias économiques, du conseil stratégique
-      et des environnements institutionnels. Elle repose sur trois principes :
+    <p class="measure" style="margin-top:18px;font-size:14px;color:var(--muted);">
+      EN PLATEAU intervient en amont (architecture), coordonne la co-production, puis organise l’activation des contenus.
     </p>
-    <ul>
-      <li><strong>Exigence éditoriale</strong> : rigueur, clarté, cohérence.</li>
-      <li><strong>Posture non‑promotionnelle</strong> : crédibilité avant visibilité.</li>
-      <li><strong>Transmission</strong> : livrables utilisables par vos équipes.</li>
-    </ul>
-  </div>
-</section>
+  </section>
 
-<section class="final">
-  <h2>Échange confidentiel</h2>
-  <p>Un premier échange permet de cadrer l’enjeu et de déterminer si un accompagnement est pertinent.</p>
-  <a href="mailto:contact@enplateau.fr" class="btn">contact@enplateau.fr</a>
-</section>
+  <section class="section">
+    <h2>Notre positionnement</h2>
+    <p class="measure">
+      EN PLATEAU est un cabinet de conseil indépendant, fondé en <strong>décembre 2025</strong> par <strong>Hocine REGUIDA</strong>.
+      Nous intervenons lorsque la parole engage plus que la communication : elle engage la réputation, la crédibilité,
+      la gouvernance ou l’influence.
+    </p>
+    <p class="measure">
+      Notre rôle n’est pas de produire du contenu promotionnel. Nous concevons des architectures éditoriales solides :
+      clarification des messages, hiérarchisation des enjeux, préparation des porte-parole et sécurisation des séquences publiques.
+    </p>
+  </section>
+
+  <!-- Charte (SÉPARÉE : pas imbriquée dans une autre section) -->
+  <section class="section" id="charte">
+    <h2>Charte</h2>
+    <p class="measure">
+      EN PLATEAU ne vend pas du contenu sponsorisé. Les formats s’inscrivent dans le cadre éditorial propre du média,
+      animé par des journalistes.
+    </p>
+    <p class="measure">
+      Lorsque nécessaire, le cadre contractuel, les droits d’usage et les validations internes (communication, juridique)
+      sont intégrés au processus.
+    </p>
+  </section>
+
+  <section class="section" id="reseau">
+    <h2>Un cabinet, un réseau de partenaires<br>activé selon l’enjeu</h2>
+    <p class="measure">
+      Selon la nature de la séquence, nous mobilisons un réseau de partenaires spécialisés — production exécutive,
+      équipes éditoriales, experts image/son, conseil communication, experts métiers et sectoriels, juridique,
+      social media — pour sécuriser l’amont, coordonner la production et maximiser l’activation.
+    </p>
+
+    <div class="grid-3">
+      <div class="card featured">
+        <span class="pill">Amont — architecture</span>
+        <h3>Structurer</h3>
+        <p>Clarifier les messages, hiérarchiser les enjeux, préparer les porte-parole et aligner les parties prenantes.</p>
+        <div class="soft">
+          <strong>Partenaires typiques</strong>
+          <ul>
+            <li>Conseil & architecture éditoriale</li>
+            <li>Communication / directions internes</li>
+            <li>Juridique & validation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="pill">Production — co-production</span>
+        <h3>Co-produire</h3>
+        <p>Transformer la stratégie en séquence éditoriale : cadrage, coordination, préparation interview, conditions de tournage.</p>
+        <div class="soft">
+          <strong>Partenaires typiques</strong>
+          <ul>
+            <li>BadM & Scribeo (production)</li>
+            <li>Journalistes / équipes éditoriales</li>
+            <li>Studios & équipes techniques</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="pill">Aval — impact</span>
+        <h3>Activer</h3>
+        <p>Déployer la séquence dans la durée : extraits, kit visuel, diffusion maîtrisée et cohérence institutionnelle.</p>
+        <div class="soft">
+          <strong>Partenaires typiques</strong>
+          <ul>
+            <li>Brand / design / montage</li>
+            <li>Social media & diffusion</li>
+            <li>Relations partenaires / événements</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="measure" style="margin-top:18px;font-size:14px;color:var(--muted);">
+      Selon les dossiers, l’activation peut s’inscrire sur plusieurs mois pour transformer l’intervention médiatique en actif durable.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Une approche transversale</h2>
+    <div class="exec-block">
+      <p>
+        Notre méthode s’inspire des standards des médias économiques, du conseil stratégique et des environnements institutionnels.
+        Elle repose sur trois principes :
+      </p>
+      <ul>
+        <li><strong>Exigence éditoriale</strong> : rigueur, clarté, cohérence.</li>
+        <li><strong>Posture non-promotionnelle</strong> : crédibilité avant visibilité.</li>
+        <li><strong>Transmission</strong> : livrables utilisables par vos équipes.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="final">
+    <h2>Échange confidentiel</h2>
+    <p>Un premier échange permet de cadrer l’enjeu et de déterminer si un accompagnement est pertinent.</p>
+    <a href="mailto:contact@enplateau.fr" class="btn">contact@enplateau.fr</a>
+  </section>
 
 </div>
 
@@ -272,6 +324,7 @@ p{margin:0 0 18px;}
   b.addEventListener('click', function(){
     const open = m.style.display === 'block';
     m.style.display = open ? 'none' : 'block';
+    b.setAttribute('aria-expanded', open ? 'false' : 'true');
   });
 })();
 </script>
