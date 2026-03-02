@@ -1,12 +1,11 @@
-
 <!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>EN PLATEAU — Associations & ESS</title>
-<meta name="description" content="EN PLATEAU accompagne les associations, fondations et acteurs de l’ESS : structurer une parole claire, défendable et reconnue par les financeurs, institutions, adhérents et donateurs." />
-<link rel="canonical" href="https://enplateau.fr/association-ess.html" />
+<title>EN PLATEAU — Associations</title>
+<meta name="description" content="EN PLATEAU accompagne les associations, fédérations et ONG qui souhaitent intervenir sur des émissions économiques : emploi, financement public, filières, impact territorial." />
+<link rel="canonical" href="https://enplateau.fr/associations.html" />
 
 <style>
 :root{
@@ -30,7 +29,7 @@ body{
 a{color:inherit;text-decoration:none}
 .container{max-width:var(--max);margin:0 auto;padding:34px 22px 110px;}
 
-/* Header (commun) */
+/* Header (aligné HOME) */
 .header-wrap{
   position:sticky;top:0;z-index:50;
   background:rgba(255,255,255,.92);
@@ -76,14 +75,33 @@ p{margin:0 0 18px;}
   background:var(--sig);
   color:#fff;
   border-radius:26px;
-  padding:56px 22px 44px;
+  padding:58px 22px 46px;
   margin:26px 0 56px;
   text-align:center;
 }
 .hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
-.hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-top:10px;}
+.hero .lead{max-width:860px;margin:0 auto 0;opacity:.92;font-size:16px;}
+.hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-top:12px;}
 
-/* Cards / Grid */
+/* Logos médias — EXACTEMENT comme la HOME */
+.media-logos{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:80px;
+  margin:18px 0 0;
+}
+.media-logos img{
+  height:80px;
+  max-width:180px;
+  width:auto;
+  opacity:.9;
+  transition:opacity .2s ease, transform .2s ease;
+}
+.media-logos img:hover{opacity:1;transform:translateY(-2px);}
+
+/* Grids / Cards */
 .grid-3{display:grid;gap:22px;margin-top:26px;}
 @media(min-width:900px){ .grid-3{grid-template-columns:repeat(3,1fr);} }
 .card{
@@ -94,7 +112,6 @@ p{margin:0 0 18px;}
   text-align:left;
 }
 .card.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
-.card p{font-size:14px;color:var(--muted);margin:0 0 14px}
 .pill{
   display:inline-block;
   font-size:12px;
@@ -106,37 +123,11 @@ p{margin:0 0 18px;}
   background:#fff;
   margin-bottom:10px;
 }
+.card p{font-size:14px;color:var(--muted);margin:0 0 14px}
 .card ul{margin:10px 0 0 18px;padding:0;color:var(--muted);font-size:14px}
 .card li{margin:6px 0}
-.meta{margin-top:14px;font-size:13px;color:var(--muted);}
 
-/* Badges */
-.badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
-.badge{font-size:12px;font-weight:800;border:1px solid var(--line);padding:8px 10px;border-radius:999px;color:var(--muted);background:#fff}
-
-/* Encadré livrables */
-.exec-block{
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:28px;
-  background:#f8f9fb;
-  text-align:left;
-  max-width:900px;
-  margin:0 auto;
-}
-.exec-block h3{margin:0 0 10px}
-.exec-block ul{margin:10px 0 0 18px;color:var(--muted)}
-.exec-block li{margin:6px 0}
-
-/* CTA styles (utilisés seulement en bas) */
-.cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
-.btn{
-  padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;
-  display:inline-flex;align-items:center;justify-content:center;
-}
-.btn-primary{background:#fff;color:var(--sig);}
-
-/* Final CTA */
+/* Final */
 .final{
   background:var(--sig);
   color:#fff;
@@ -145,7 +136,8 @@ p{margin:0 0 18px;}
   text-align:center;
 }
 .final h2{color:#fff;}
-.final p{opacity:.92}
+.btn{padding:14px 20px;border-radius:999px;font-weight:800;background:#fff;color:var(--sig);display:inline-flex;align-items:center;justify-content:center;}
+.cta{margin-top:18px;display:flex;justify-content:center}
 </style>
 </head>
 
@@ -161,7 +153,7 @@ p{margin:0 0 18px;}
     <nav class="nav" aria-label="Navigation">
       <a href="grands-comptes.html">Grands comptes</a>
       <a href="pme-eti.html">PME</a>
-      <a class="active" href="association-ess.html">Associations</a>
+      <a class="active" href="associations.html" aria-current="page">Associations</a>
       <a href="secteur-public.html">Secteur public</a>
       <a href="a-propos.html">À propos</a>
     </nav>
@@ -172,7 +164,7 @@ p{margin:0 0 18px;}
   <div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
     <a href="grands-comptes.html">Grands comptes</a>
     <a href="pme-eti.html">PME</a>
-    <a href="association-ess.html">Associations</a>
+    <a href="associations.html" aria-current="page">Associations</a>
     <a href="secteur-public.html">Secteur public</a>
     <a href="a-propos.html">À propos</a>
   </div>
@@ -180,164 +172,137 @@ p{margin:0 0 18px;}
 
 <div class="container">
 
-  <!-- HERO (sans CTA) -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="kicker">Associations, fondations, ESS</div>
-    <h1>Rendre votre action<br>compréhensible et reconnue</h1>
-    <div class="baseline">Clarté · Cohérence · Crédibilité</div>
+    <div class="kicker">Associations · Fédérations · ONG</div>
+    <h1>Tenir une parole économique<br>à la hauteur de votre mission</h1>
+    <p class="lead">
+      Lorsque votre action devient un sujet d’emploi, de financement, de filière ou de territoire,
+      l’intervention sur une émission économique doit être claire, factuelle et défendable.
+    </p>
+    <div class="baseline">Emploi · Financement · Filières · Territoires</div>
   </section>
 
-  <!-- 1) SITUATIONS (identification, comme PME/ETI) -->
-  <section class="section">
-    <h2>Dans quelles situations intervenons-nous ?</h2>
-    <p class="measure">
-      Nous intervenons lorsque l’action est réelle sur le terrain, mais que sa lecture devient difficile :
-      attentes multiples, exigences de preuves, débat public, arbitrages budgétaires.
+  <!-- MÉDIAS PARTENAIRES (comme la HOME) -->
+  <section class="section" id="medias">
+    <p style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;">
+      Environnements médias partenaires
     </p>
 
-    <div class="grid-3">
-
-      <div class="card">
-        <span class="pill">Fédération / réseau</span>
-        <h3>Parler aux autorités et aux adhérents</h3>
-        <p>
-          Vous représentez une profession, un secteur, une filière ou un réseau.
-          Vous devez tenir une parole claire, stable, et utile à plusieurs publics à la fois.
-        </p>
-        <ul>
-          <li>Position commune lisible (sans langue de bois)</li>
-          <li>Arguments tenables face aux autorités</li>
-          <li>Message compréhensible et mobilisateur pour les adhérents</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <span class="pill">Action sociale</span>
-        <h3>Convaincre des financeurs publics</h3>
-        <p>
-          Subventions sous tension, indicateurs attendus, appels à projets :
-          votre utilité doit être défendable, pas seulement “inspirante”.
-        </p>
-        <ul>
-          <li>Impact rendu lisible (faits, résultats, cas)</li>
-          <li>Dossier et parole de direction cohérents</li>
-          <li>Capacité à répondre aux questions critiques</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <span class="pill">ONG / cause</span>
-        <h3>Gagner la confiance des donateurs</h3>
-        <p>
-          Vos soutiens veulent comprendre : à quoi sert un don, ce qui est fait,
-          ce qui change, et comment vous tenez votre promesse.
-        </p>
-        <ul>
-          <li>Récit clair : mission, résultats, limites, priorités</li>
-          <li>Parole incarnée, crédible, non promotionnelle</li>
-          <li>Contenus réutilisables (site, campagnes, partenaires)</li>
-        </ul>
-      </div>
-
+    <div class="media-logos">
+      <img src="images/bfm-business.svg" alt="BFM Business">
+      <img src="images/le-figaro.svg" alt="Le Figaro">
+      <img src="images/la-tribune.svg" alt="La Tribune">
+      <img src="images/forbes.svg" alt="Forbes">
     </div>
 
-    <p class="measure" style="margin-top:24px;">
-      Dans ces contextes, la prise de parole n’est pas un “plus”.
-      C’est un outil de continuité : sécuriser, expliquer, rassembler, durer.
+    <p style="margin-top:18px;font-size:14px;color:var(--muted);">
+      En partenariat avec <strong>BadM &amp; Scribeo</strong>
     </p>
   </section>
 
-  <!-- 2) POSITIONNEMENT (crédibilité, sans vocabulaire abstrait) -->
+  <!-- QUAND C’EST LÉGITIME -->
   <section class="section">
-    <h2>Une parole claire, défendable, et tenue dans le temps</h2>
+    <h2>Quand une association a sa place dans un média économique</h2>
     <p class="measure">
-      EN PLATEAU vous aide à dire les choses simplement, sans les affaiblir.
-      Nous travaillons le fond : ce que vous faites, ce que cela change, comment vous le prouvez,
-      et comment vous le présentez à des interlocuteurs exigeants.
+      Vous intervenez lorsque votre action éclaire un enjeu économique réel :
+      emploi, coût et efficacité d’une politique publique, viabilité d’un modèle, tension sur une filière,
+      attractivité des métiers, conséquences économiques d’une crise.
     </p>
-    <p class="measure">
-      Notre rôle : préparer, cadrer, et rendre vos prises de parole cohérentes entre direction,
-      gouvernance et équipes — puis organiser une exposition sobre lorsque c’est utile.
-    </p>
-
-    <div class="badges" aria-label="Principes de travail">
-      <span class="badge">Clarté</span>
-      <span class="badge">Posture non-promotionnelle</span>
-      <span class="badge">Cohérence direction / CA</span>
-      <span class="badge">Preuves et exemples</span>
-    </div>
   </section>
 
-  <!-- 3) DISPOSITIFS (mêmes principes que PME : simple, concret, sans jargon) -->
-  <section class="section" id="cadres">
-    <h2>Trois dispositifs, selon votre situation</h2>
-    <p class="measure">Même exigence. Une intensité adaptée à votre urgence, à vos publics et à vos contraintes internes.</p>
+  <!-- CAS À LECTURE ÉCONOMIQUE -->
+  <section class="section">
+    <h2>Trois cas de figure (angles possibles)</h2>
 
     <div class="grid-3">
-      <div class="card">
-        <span class="pill">Socle</span>
-        <h3>Clarifier le message</h3>
-        <p>Pour stabiliser votre parole avant une réunion importante, un rendez-vous financeur, un débat, une campagne.</p>
-        <ul>
-          <li>Diagnostic de lisibilité (ce qui est compris / confus)</li>
-          <li>Messages clés + preuves + exemples</li>
-          <li>Préparation d’un porte-parole</li>
-        </ul>
-        <div class="meta"><strong>Repère délai :</strong> 10 à 15 jours.</div>
-      </div>
 
       <div class="card featured">
-        <span class="pill">Renforcement</span>
-        <h3>Gagner en crédibilité</h3>
-        <p>Pour rendre l’impact défendable et tenir un discours cohérent face à plusieurs parties prenantes.</p>
+        <span class="pill">Association d’action sociale</span>
+        <h3>Emploi et efficacité de la dépense publique</h3>
+        <p>Votre action se mesure aussi en coûts évités, en emplois créés et en continuité de service.</p>
         <ul>
-          <li>Angles adaptés (territoire / emploi / économie / santé…)</li>
-          <li>Préparation de 2 porte-parole</li>
-          <li>Cadrage d’une séquence d’exposition (selon contexte)</li>
+          <li>Insertion : passage à l’emploi, montée en compétences</li>
+          <li>Retour sur investissement social (ordre de grandeur)</li>
+          <li>Effets d’une réforme sur les publics et les territoires</li>
         </ul>
-        <div class="meta"><strong>Repère délai :</strong> 3 à 6 semaines selon agenda.</div>
+      </div>
+
+      <div class="card">
+        <span class="pill">Fédération</span>
+        <h3>Situation économique d’une filière</h3>
+        <p>Vous portez la lecture “secteur” : financement, réglementation, attractivité, qualité de service.</p>
+        <ul>
+          <li>Équilibre économique du secteur</li>
+          <li>Impact d’un changement réglementaire</li>
+          <li>Pénurie de main-d’œuvre / attractivité des métiers</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="pill">ONG</span>
+        <h3>Conséquences économiques d’une crise</h3>
+        <p>Vous apportez des faits et des mécanismes sur des crises qui pèsent sur l’économie.</p>
+        <ul>
+          <li>Coût économique (approvisionnement, énergie, alimentation)</li>
+          <li>Effets sur les chaînes de valeur</li>
+          <li>Risque et stabilité : territoires, entreprises, États</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CE QUE TU APPORTES -->
+  <section class="section">
+    <h2>Ce que nous sécurisons</h2>
+    <p class="measure">
+      Une émission économique demande une parole structurée : données, mécanismes, impacts, limites.
+      Nous aidons à formuler un angle clair, à préparer les réponses difficiles, et à éviter le registre “promotionnel”.
+    </p>
+
+    <div class="grid-3">
+      <div class="card">
+        <span class="pill">Angle économique</span>
+        <h3>Clarifier le sujet</h3>
+        <p>Ce qui est en jeu, pour qui, avec quels ordres de grandeur.</p>
+        <ul>
+          <li>Définition du problème</li>
+          <li>Ce que vous changez concrètement</li>
+          <li>Indicateurs et exemples</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="pill">Préparation</span>
+        <h3>Tenir l’entretien</h3>
+        <p>Questions sensibles, points de tension, objections habituelles.</p>
+        <ul>
+          <li>Questions-réponses</li>
+          <li>Messages clés</li>
+          <li>Réponses “courtes” et “longues”</li>
+        </ul>
       </div>
 
       <div class="card">
         <span class="pill">Continuité</span>
-        <h3>Installer une parole de gouvernance</h3>
-        <p>Pour structurer la cohérence direction–CA et arrêter la dispersion, sur une période plus longue.</p>
+        <h3>Réutiliser</h3>
+        <p>Transformer l’intervention en actif : dossiers, partenaires, recrutement, plaidoyer.</p>
         <ul>
-          <li>Alignement gouvernance (direction / CA / équipes)</li>
-          <li>Calendrier de prises de parole sur 6 à 12 mois</li>
-          <li>Réutilisation organisée des contenus</li>
+          <li>Plan de réutilisation</li>
+          <li>Cohérence des supports</li>
+          <li>Calendrier sobre</li>
         </ul>
-        <div class="meta"><strong>Repère délai :</strong> première séquence à partir de 4 semaines.</div>
       </div>
     </div>
   </section>
 
-  <!-- 4) LIVRABLES (concret, sans “méthodo” abstraite) -->
-  <section class="section">
-    <h2>Ce que vous obtenez, concrètement</h2>
-    <div class="exec-block">
-      <h3>Livrables</h3>
-      <ul>
-        <li><strong>Note de cadrage</strong> : messages clés, preuves, points sensibles, public visé.</li>
-        <li><strong>Kit porte-parole</strong> : questions/réponses, formulations sûres, points à éviter.</li>
-        <li><strong>Plan de séquence</strong> : qui parle, où, quand, pour quel effet.</li>
-        <li><strong>Guide de réutilisation</strong> : comment exploiter les contenus (site, dossiers, partenaires, campagnes).</li>
-      </ul>
-      <p style="margin-top:14px;color:var(--muted);">
-        <strong>Principe :</strong> moins de dispersion, plus de cohérence, et des supports réutilisables par vos équipes.
-      </p>
-    </div>
-  </section>
-
-  <!-- 5) CTA FINAL -->
+  <!-- FINAL -->
   <section class="final" id="contact">
     <h2>Échange confidentiel</h2>
-    <p>
-      Un premier échange permet de clarifier l’enjeu, d’identifier vos publics prioritaires
-      (financeurs, institutions, adhérents, donateurs) et de choisir le bon dispositif.
-    </p>
+    <p>Un premier échange permet de vérifier si votre action se prête à un traitement économique pertinent — et dans quel cadre.</p>
     <div class="cta">
-      <a href="mailto:hocine.reguida@enplateau.fr" class="btn btn-primary">hocine.reguida@enplateau.fr</a>
+      <a href="mailto:hocine.reguida@enplateau.fr" class="btn">hocine.reguida@enplateau.fr</a>
     </div>
     <p style="margin-top:16px;font-size:14px;opacity:.82;">Accord de confidentialité possible avant tout échange approfondi.</p>
   </section>
