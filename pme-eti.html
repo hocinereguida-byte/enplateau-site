@@ -81,13 +81,6 @@ p{margin:0 0 18px;}
 }
 .hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
 .hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-top:10px;}
-.cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
-.btn{
-  padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;
-  display:inline-flex;align-items:center;justify-content:center;
-}
-.btn-primary{background:#fff;color:var(--sig);}
-.btn-ghost{border:1px solid rgba(255,255,255,.38);color:#fff;}
 
 /* Cards / Grid */
 .grid-3{display:grid;gap:22px;margin-top:26px;}
@@ -125,21 +118,7 @@ p{margin:0 0 18px;}
   color:var(--muted);
 }
 
-/* Encadrés */
-.exec-block{
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:28px;
-  background:#f8f9fb;
-  text-align:left;
-  max-width:900px;
-  margin:0 auto;
-}
-.exec-block h3{margin:0 0 10px}
-.exec-block ul{margin:10px 0 0 18px;color:var(--muted)}
-.exec-block li{margin:6px 0}
-
-/* PME vs ETI */
+/* PME vs ETI (si besoin ailleurs) */
 .split{display:grid;gap:18px;margin-top:18px;}
 @media(min-width:900px){ .split{grid-template-columns:1fr 1fr;} }
 .note{
@@ -153,6 +132,14 @@ p{margin:0 0 18px;}
 .note p{margin:0 0 10px;color:var(--muted);font-size:14px}
 .note ul{margin:10px 0 0 18px;color:var(--muted);font-size:14px}
 .note li{margin:6px 0}
+
+/* CTA styles (utilisés seulement en bas) */
+.cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.btn{
+  padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;
+  display:inline-flex;align-items:center;justify-content:center;
+}
+.btn-primary{background:#fff;color:var(--sig);}
 
 /* Final CTA */
 .final{
@@ -198,55 +185,69 @@ p{margin:0 0 18px;}
 
 <div class="container">
 
-  <!-- HERO -->
+  <!-- HERO (sans CTA) -->
   <section class="hero">
     <div class="kicker">Pour les PME & ETI</div>
     <h1>Co-produire une intervention économique nationale<br>qui sert votre trajectoire</h1>
     <div class="baseline">Architecture de prise de parole · Exigence éditoriale · Activation</div>
-    <div class="cta">
-      <a href="#contact" class="btn btn-primary">Évaluer votre situation</a>
-      <a href="#formats" class="btn btn-ghost">Voir les dispositifs</a>
-    </div>
   </section>
 
-  <!-- CONTEXTE -->
+  <!-- 1) SITUATIONS (d’abord l’identification) -->
   <section class="section">
-    <h2>Il existe des moments où l’exposition doit être maîtrisée</h2>
+    <h2>Dans quelles situations intervenons-nous ?</h2>
     <p class="measure">
-      La plupart des entreprises n’ont pas vocation à parler en permanence.
-      En revanche, certains moments demandent de la clarté et du contrôle : annonce stratégique,
-      changement d’échelle, transformation industrielle, ouverture d’un site, opération de croissance,
-      transmission, ou présence sur un salon structurant.
-    </p>
-    <p class="measure">
-      Dans ces situations, une prise de parole ne vaut pas pour “l’image”.
-      Elle vaut pour ce qu’elle déclenche : confiance, crédibilité, attractivité — et capacité à embarquer.
+      Nous intervenons lorsque la prise de parole engage plus qu’une visibilité.
+      Elle engage une trajectoire, une décision, un positionnement.
     </p>
 
-    <div class="split measure">
-      <div class="note">
-        <strong>PME</strong>
-        <p>Objectif : rendre votre trajectoire lisible et accélérer des décisions (clients, partenaires, talents).</p>
+    <div class="grid-3">
+
+      <div class="card">
+        <span class="pill">PME</span>
+        <h3>Accélération commerciale</h3>
+        <p>
+          Nouveau marché, croissance rapide, salon stratégique, référencement national :
+          un moment où la crédibilité doit être lisible immédiatement.
+        </p>
         <ul>
           <li>Rassurer des donneurs d’ordre</li>
-          <li>Ouvrir des portes commerciales</li>
-          <li>Attirer des profils clés</li>
+          <li>Asseoir votre crédibilité sectorielle</li>
+          <li>Transformer l’exposition en opportunités concrètes</li>
         </ul>
       </div>
 
-      <div class="note">
-        <strong>ETI</strong>
-        <p>Objectif : tenir une parole de gouvernance, stable et solide, dans un environnement multi-acteurs.</p>
+      <div class="card">
+        <span class="pill">ETI</span>
+        <h3>Transformation industrielle</h3>
+        <p>
+          Changement d’échelle, relocalisation, transition énergétique,
+          évolution du modèle économique : un moment où la parole doit tenir.
+        </p>
         <ul>
-          <li>Transformation / industrialisation / souveraineté</li>
-          <li>Crédibilité institutionnelle (territoires, filières)</li>
-          <li>Sujets sensibles : emplois, énergie, réglementation</li>
+          <li>Tenir une parole de gouvernance solide</li>
+          <li>Clarifier les enjeux auprès des territoires et filières</li>
+          <li>Stabiliser un récit stratégique</li>
         </ul>
       </div>
+
+      <div class="card">
+        <span class="pill">PME & ETI</span>
+        <h3>Moment sensible</h3>
+        <p>
+          Décision structurante, annonce importante, sujet exposé
+          (emplois, réglementation, financement) : l’improvisation coûte cher.
+        </p>
+        <ul>
+          <li>Éviter l’approximation</li>
+          <li>Anticiper les questions critiques</li>
+          <li>Maîtriser le cadre éditorial</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
-  <!-- POSITIONNEMENT -->
+  <!-- 2) POSITIONNEMENT (ensuite la crédibilité) -->
   <section class="section">
     <h2>Pas de communication “plus”.<br>Une parole structurée, dans un cadre exigeant.</h2>
     <p class="measure">
@@ -260,7 +261,7 @@ p{margin:0 0 18px;}
     </p>
   </section>
 
-  <!-- DISPOSITIFS -->
+  <!-- 3) DISPOSITIFS (puis la structure d’engagement) -->
   <section class="section" id="formats">
     <h2>Trois dispositifs, selon votre enjeu</h2>
     <p class="measure">Même exigence éditoriale. Une intensité adaptée à votre contexte et à votre calendrier.</p>
@@ -304,60 +305,7 @@ p{margin:0 0 18px;}
     </div>
   </section>
 
-  <section class="section">
-  <h2>Dans quelles situations intervenons-nous ?</h2>
-  <p class="measure">
-    Nous intervenons lorsque la prise de parole engage plus qu’une visibilité.
-    Elle engage une trajectoire, une décision, un positionnement.
-  </p>
-
-  <div class="grid-3">
-
-    <div class="card">
-      <span class="pill">PME</span>
-      <h3>Accélération commerciale</h3>
-      <p>
-        Votre entreprise franchit un seuil : nouveau marché, croissance rapide,
-        salon stratégique, référencement national.
-      </p>
-      <ul>
-        <li>Rassurer des donneurs d’ordre</li>
-        <li>Asseoir votre crédibilité sectorielle</li>
-        <li>Transformer l’exposition en opportunités concrètes</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="pill">ETI</span>
-      <h3>Transformation industrielle</h3>
-      <p>
-        Changement d’échelle, relocalisation, transition énergétique,
-        évolution du modèle économique.
-      </p>
-      <ul>
-        <li>Tenir une parole de gouvernance solide</li>
-        <li>Clarifier les enjeux auprès des territoires</li>
-        <li>Stabiliser un récit stratégique</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <span class="pill">PME & ETI</span>
-      <h3>Moment sensible</h3>
-      <p>
-        Décision structurante, annonce importante,
-        sujet exposé (emplois, réglementation, financement).
-      </p>
-      <ul>
-        <li>Éviter l’approximation</li>
-        <li>Anticiper les questions critiques</li>
-        <li>Maîtriser le cadre éditorial</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-  <!-- CTA FINAL -->
+  <!-- 4) CTA FINAL -->
   <section class="final" id="contact">
     <h2>Échange confidentiel</h2>
     <p>Un premier échange permet de cadrer l’enjeu et de déterminer si un accompagnement est pertinent (PME ou ETI).</p>
