@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html> 
 <html lang="fr">
 <head>
 <meta charset="utf-8" />
@@ -81,6 +81,27 @@ p{margin:0 0 18px;}
 }
 .hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
 .hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-top:10px;}
+
+/* ===== AJOUT : Logos médias (comme HOME) ===== */
+.media-logos{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:80px;
+  margin:18px 0 0;
+}
+.media-logos img{
+  height:80px;
+  max-width:180px;
+  width:auto;
+  opacity:.9;
+  transition:opacity .2s ease, transform .2s ease;
+}
+.media-logos img:hover{
+  opacity:1;
+  transform:translateY(-2px);
+}
 
 /* Cards / Grid */
 .grid-3{display:grid;gap:22px;margin-top:26px;}
@@ -190,6 +211,24 @@ p{margin:0 0 18px;}
     <div class="kicker">Pour les PME & ETI</div>
     <h1>Donner à votre parole<br>la portée qu’elle mérite</h1>
     <div class="baseline">Architecture de prise de parole · Médias nationaux · Activation</div>
+  </section>
+
+  <!-- ===== AJOUT : MÉDIAS PARTENAIRES (comme HOME / Associations) ===== -->
+  <section class="section" id="medias">
+    <p style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;">
+      Environnements médias partenaires
+    </p>
+
+    <div class="media-logos">
+      <img src="images/bfm-business.svg" alt="BFM Business">
+      <img src="images/le-figaro.svg" alt="Le Figaro">
+      <img src="images/la-tribune.svg" alt="La Tribune">
+      <img src="images/forbes.svg" alt="Forbes">
+    </div>
+
+    <p style="margin-top:18px;font-size:14px;color:var(--muted);">
+      En partenariat avec <strong>BadM &amp; Scribeo</strong>
+    </p>
   </section>
 
   <!-- 1) SITUATIONS (d’abord l’identification) -->
