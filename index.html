@@ -1,0 +1,711 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>EN PLATEAU — Les Bâtisseurs & Les Architectes</title>
+  <meta
+    name="description"
+    content="EN PLATEAU conçoit des prises de parole stratégiques dans des environnements médias économiques : participation à une série éditoriale ou construction d’une série dirigeant. Préparation, cadrage, valorisation."
+  />
+  <link rel="canonical" href="https://enplateau.fr/" />
+
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0B1F3A" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="EN PLATEAU" />
+  <meta property="og:title" content="EN PLATEAU — Les Bâtisseurs & Les Architectes" />
+  <meta
+    property="og:description"
+    content="Co-production stratégique d’émissions économiques : série éditoriale Les Bâtisseurs, série dirigeant Les Architectes, préparation de la prise de parole et valorisation durable des contenus."
+  />
+  <meta property="og:url" content="https://enplateau.fr/" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EN PLATEAU — Les Bâtisseurs & Les Architectes" />
+  <meta
+    name="twitter:description"
+    content="EN PLATEAU structure des prises de parole dans des médias économiques : série éditoriale, série dirigeant, préparation stratégique et réutilisation durable."
+  />
+
+  <style>
+    :root{
+      --ink:#0B0F19;
+      --slate:#2B3340;
+      --muted:#5B6472;
+      --line:#E7EAF0;
+      --sig:#0B1F3A;
+      --max:1000px;
+      --bg:#ffffff;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.7;
+      color:var(--slate);
+      background:var(--bg);
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    .container{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:34px 22px 110px;
+    }
+
+    .header-wrap{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:saturate(140%) blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .header{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .brand-mark{
+      width:34px;
+      height:34px;
+      border-radius:10px;
+      background:var(--sig);
+      display:inline-block;
+    }
+
+    .brand-name{
+      font-weight:900;
+      letter-spacing:-.02em;
+      color:var(--ink);
+    }
+
+    .nav{
+      display:none;
+      gap:18px;
+      align-items:center;
+    }
+
+    .nav a{
+      font-size:14px;
+      color:var(--muted);
+      font-weight:750;
+      padding:10px 10px;
+      border-radius:999px;
+    }
+
+    .nav a:hover{
+      color:var(--ink);
+      background:#f5f7fb;
+    }
+
+    .burger{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:12px;
+      padding:10px 12px;
+      font-weight:800;
+      color:var(--ink);
+      cursor:pointer;
+    }
+
+    .mobile{
+      display:none;
+      border-top:1px solid var(--line);
+    }
+
+    .mobile a{
+      display:block;
+      padding:14px 22px;
+      color:var(--muted);
+      font-weight:750;
+    }
+
+    .mobile a:hover{
+      background:#f5f7fb;
+      color:var(--ink);
+    }
+
+    @media(min-width:900px){
+      .nav{display:flex}
+      .burger{display:none}
+      .mobile{display:none !important}
+    }
+
+    h1{
+      font-size:clamp(30px,6vw,48px);
+      line-height:1.08;
+      margin:0 0 14px;
+      color:#fff;
+      font-weight:900;
+      letter-spacing:-0.02em;
+    }
+
+    h2{
+      font-size:clamp(24px,4vw,36px);
+      line-height:1.15;
+      margin:0 0 18px;
+      color:var(--ink);
+      font-weight:850;
+      letter-spacing:-0.01em;
+    }
+
+    h3{
+      font-size:20px;
+      margin:0 0 10px;
+      color:var(--ink);
+      font-weight:760;
+    }
+
+    p{margin:0 0 18px}
+    p strong{font-weight:600}
+
+    .hero{
+      background:var(--sig);
+      color:#fff;
+      border-radius:26px;
+      padding:54px 22px 44px;
+      margin:26px 0 34px;
+      text-align:center;
+    }
+
+    .hero .kicker{
+      font-size:13px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      opacity:.78;
+      margin-bottom:10px;
+    }
+
+    .hero .lead{
+      max-width:860px;
+      margin:0 auto;
+      opacity:.92;
+      font-size:16px;
+    }
+
+    .section{
+      margin-bottom:72px;
+      text-align:center;
+    }
+
+    .measure{
+      max-width:900px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .grid-2{
+      display:grid;
+      gap:22px;
+      margin-top:22px;
+    }
+
+    .grid-3{
+      display:grid;
+      gap:22px;
+      margin-top:8px;
+    }
+
+    .grid-4{
+      display:grid;
+      gap:22px;
+      margin-top:26px;
+    }
+
+    @media(min-width:900px){
+      .grid-2{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+      .grid-4{grid-template-columns:repeat(4,1fr)}
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:24px;
+      background:#fff;
+      text-align:left;
+    }
+
+    .card.featured{
+      box-shadow:0 18px 40px rgba(0,0,0,.06);
+      border:1px solid rgba(11,31,58,.18);
+    }
+
+    .card p{
+      font-size:14px;
+      color:var(--muted);
+      margin:0 0 14px;
+    }
+
+    .pill{
+      display:inline-block;
+      font-size:12px;
+      font-weight:850;
+      border:1px solid var(--line);
+      padding:8px 10px;
+      border-radius:999px;
+      color:var(--muted);
+      background:#fff;
+    }
+
+    .card a.link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:14px;
+      font-size:14px;
+      font-weight:750;
+      color:var(--ink);
+      text-decoration:none;
+    }
+
+    .card a.link::after{
+      content:"→";
+      font-weight:900;
+      opacity:.55;
+      transform:translateX(0);
+      transition:transform .15s ease, opacity .15s ease;
+    }
+
+    .card a.link:hover{text-decoration:underline}
+    .card a.link:hover::after{
+      opacity:.9;
+      transform:translateX(2px);
+    }
+
+    .media-logos{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+      gap:70px;
+      margin:6px 0 0;
+    }
+
+    .media-logos img{
+      height:80px;
+      max-width:180px;
+      width:auto;
+      opacity:.9;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .media-logos img:hover{
+      opacity:1;
+      transform:translateY(-2px);
+    }
+
+    .cta{
+      margin-top:22px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .btn{
+      padding:14px 20px;
+      border-radius:999px;
+      font-weight:800;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .btn-primary{
+      background:#fff;
+      color:var(--sig);
+    }
+
+    .final{
+      background:var(--sig);
+      color:#fff;
+      border-radius:26px;
+      padding:56px 22px;
+      text-align:center;
+    }
+
+    .final h2{color:#fff}
+
+    #medias{margin-bottom:10px}
+  </style>
+</head>
+<body>
+
+  <div class="header-wrap">
+    <header class="header" aria-label="Navigation principale">
+      <a class="brand" href="index.html" aria-label="EN PLATEAU — Accueil">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">EN&nbsp;PLATEAU</span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation">
+        <a href="les-batisseurs.html">Les Bâtisseurs</a>
+        <a href="les-architectes.html">Les Architectes</a>
+        <a href="contextes.html">Contextes</a>
+        <a href="a-propos.html">À propos</a>
+      </nav>
+
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+    </header>
+
+    <div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
+      <a href="les-batisseurs.html">Les Bâtisseurs</a>
+      <a href="les-architectes.html">Les Architectes</a>
+      <a href="contextes.html">Contextes</a>
+      <a href="a-propos.html">À propos</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="kicker">Prise de parole stratégique</div>
+      <h1>Deux formats éditoriaux pour structurer votre prise de parole.<br>Passer à l’écran n’est que le début.</h1>
+      <p class="lead">
+        EN PLATEAU conçoit des prises de parole dans des environnements médias économiques :
+        cadrage du sujet, préparation stratégique, émissions, puis valorisation durable des contenus.
+      </p>
+    </section>
+
+    <!-- MÉDIAS -->
+    <section class="section" id="medias">
+      <p style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;">
+        Nos émissions prennent place dans ces environnements médias
+      </p>
+
+      <div class="media-logos">
+        <img src="images/bfm-business.svg" alt="BFM Business">
+        <img src="images/le-figaro.svg" alt="Le Figaro">
+        <img src="images/la-tribune.svg" alt="La Tribune">
+        <img src="images/forbes.svg" alt="Forbes">
+      </div>
+    </section>
+
+    <!-- TRIPTYQUE -->
+    <section class="section" aria-label="Pourquoi passer préparer réutiliser">
+      <h2 style="margin-top:10px;">Pourquoi une émission devient stratégique</h2>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="pill">Passer</span>
+          <h3>Pourquoi et comment gagner en visibilité ?</h3>
+          <p>Accéder à des médias économiques nationaux.</p>
+          <p>Donner une visibilité stratégique à une trajectoire, une organisation ou une transformation en cours.</p>
+          <p>Installer un acteur dans les conversations de son secteur.</p>
+        </div>
+
+        <div class="card featured">
+          <span class="pill">Préparer</span>
+          <h3>Pourquoi et comment préparer une émission ?</h3>
+          <p>Une phrase mal calibrée peut devenir un angle éditorial.</p>
+          <p>Une émission bien cadrée crédibilise un positionnement.</p>
+          <p>Une intervention bien préparée transforme l’exposition en levier stratégique.</p>
+        </div>
+
+        <div class="card">
+          <span class="pill">Réutiliser</span>
+          <h3>Pourquoi et comment réutiliser cette émission ?</h3>
+          <p>Une émission devient un actif de communication durable.</p>
+          <p>Elle peut nourrir votre communication institutionnelle et commerciale.</p>
+          <p>Elle alimente votre écosystème : partenaires, recrutement, influence.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEUX FORMATS -->
+    <section class="section" id="formats">
+      <h2>Deux formats éditoriaux</h2>
+      <p class="measure">
+        Selon votre sujet, votre moment et votre niveau d’exposition, EN PLATEAU peut structurer
+        une prise de parole dans une <strong>série éditoriale</strong> ou dans une <strong>série dirigeant</strong>.
+      </p>
+
+      <div class="grid-2">
+        <div class="card featured">
+          <span class="pill">Les Bâtisseurs</span>
+          <h3>Une série éditoriale consacrée à une transformation collective</h3>
+          <p>
+            Plusieurs organisations interviennent autour d’un même enjeu économique :
+            industrie, innovation, ancrage territorial, production, souveraineté ou transformation sectorielle.
+          </p>
+          <p>
+            Chaque participant apporte sa lecture, sa trajectoire et son rôle dans une dynamique plus large.
+          </p>
+          <a class="link" href="les-batisseurs.html">Découvrir Les Bâtisseurs</a>
+        </div>
+
+        <div class="card">
+          <span class="pill">Les Architectes</span>
+          <h3>Une série consacrée à la trajectoire d’un dirigeant</h3>
+          <p>
+            Certaines situations appellent un traitement plus approfondi : moment stratégique, repositionnement,
+            transformation, développement, vision sectorielle ou responsabilité institutionnelle.
+          </p>
+          <p>
+            La série permet d’aborder sous plusieurs angles un dirigeant, son organisation et la manière dont il conçoit l’action.
+          </p>
+          <a class="link" href="les-architectes.html">Découvrir Les Architectes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERIE MISE EN AVANT -->
+    <section class="section" id="serie-en-cours">
+      <h2>La première série éditoriale en préparation</h2>
+      <p class="measure">
+        EN PLATEAU prépare actuellement la première édition de <strong>Les Bâtisseurs</strong>,
+        une série consacrée aux acteurs qui transforment leur secteur par leurs choix industriels,
+        technologiques, territoriaux ou organisationnels.
+      </p>
+
+      <div class="grid-2">
+        <div class="card featured">
+          <span class="pill">Série éditoriale 2026</span>
+          <h3>Les Bâtisseurs</h3>
+          <p>Une série pour les organisations qui ne se contentent pas de commenter leur secteur mais contribuent à le transformer.</p>
+          <p>La série réunit un nombre limité d’acteurs afin de conserver une cohérence éditoriale forte.</p>
+          <p><strong>Maximum : 4 organisations par édition.</strong></p>
+          <a class="link" href="les-batisseurs.html">Voir la série</a>
+        </div>
+
+        <div class="card">
+          <span class="pill">Série dirigeant</span>
+          <h3>Les Architectes</h3>
+          <p>Un format plus approfondi pour les dirigeants, institutions ou organisations dont la trajectoire mérite un traitement éditorial complet.</p>
+          <p>Approche adaptée aux profils expérimentés, plus discrets, ou aux responsables qui veulent faire comprendre une vision sans surexposition personnelle.</p>
+          <a class="link" href="les-architectes.html">Voir le format</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTEXTES -->
+    <section class="section" id="contextes">
+      <h2>Des contextes différents. Une même exigence.</h2>
+      <p class="measure">
+        Le cadre éditorial, le ton et le niveau de préparation s’adaptent à la réalité de votre organisation.
+      </p>
+
+      <div class="grid-4">
+        <div class="card">
+          <span class="pill">Entrepreneurs</span>
+          <h3>Rendre visible une valeur singulière</h3>
+          <p>Métier rare, innovation, savoir-faire ou trajectoire : faire comprendre ce qui vous distingue à un public plus large.</p>
+          <a class="link" href="entrepreneurs.html">En savoir plus</a>
+        </div>
+
+        <div class="card">
+          <span class="pill">Entreprises</span>
+          <h3>Prendre la parole à un moment décisif</h3>
+          <p>Salon, annonce, croissance, transformation, développement : une prise de parole qui doit être comprise rapidement.</p>
+          <a class="link" href="entreprises.html">En savoir plus</a>
+        </div>
+
+        <div class="card">
+          <span class="pill">Associations</span>
+          <h3>Faire reconnaître une utilité réelle</h3>
+          <p>Sortir de la communication institutionnelle classique pour rendre lisible une action, un impact ou une expertise.</p>
+          <a class="link" href="associations.html">En savoir plus</a>
+        </div>
+
+        <div class="card">
+          <span class="pill">Secteur public</span>
+          <h3>Réduire le risque d’interprétation</h3>
+          <p>Projet, décision, bilan, filière ou attractivité : tenir une ligne claire dans un environnement exposé.</p>
+          <a class="link" href="secteur-public.html">En savoir plus</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTEXTE EDITORIAL -->
+    <section class="section">
+      <h2>Quand le sujet dépasse l’organisation</h2>
+      <p class="measure">
+        Une émission utile commence rarement par vous.
+        Elle commence par le secteur, la filière, le territoire, le savoir-faire ou la transformation en cours,
+        puis situe votre rôle dans cet ensemble.
+        L’objectif : rendre les choses compréhensibles, même pour quelqu’un qui ne connaît rien à votre activité.
+      </p>
+    </section>
+
+    <!-- ETUDES DE CAS -->
+    <section class="section" id="micro-cas">
+      <h2>Exemples concrets de situations</h2>
+      <p class="measure">
+        Sans sur-vendre. Avec un objectif simple : rendre un rôle clair, utile et défendable.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="pill">Entreprise</span>
+          <h3>Avant un moment commercial</h3>
+          <p>Passage média avant salon, annonce ou changement d’échelle : gagner en crédibilité sans promettre plus que ce que l’on peut tenir.</p>
+          <a class="link" href="entreprises.html">Voir les cas d’usage</a>
+        </div>
+
+        <div class="card">
+          <span class="pill">Dirigeant</span>
+          <h3>Donner une lecture plus profonde d’une trajectoire</h3>
+          <p>Repositionnement, transformation, arbitrages, vision du secteur : sortir du commentaire ponctuel pour installer une cohérence d’ensemble.</p>
+          <a class="link" href="les-architectes.html">Voir le format</a>
+        </div>
+
+        <div class="card">
+          <span class="pill">Association / public</span>
+          <h3>Montrer une dynamique collective</h3>
+          <p>Parler impact, développement territorial ou filière locale sans tomber dans les codes habituels de la communication institutionnelle.</p>
+          <a class="link" href="contextes.html">Voir les contextes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SITUATIONS -->
+    <section class="section" id="situations">
+      <h2>Trois situations où l’émission devient stratégique</h2>
+      <p class="measure" style="color:var(--muted);">
+        La même émission peut servir des objectifs différents : crédibiliser un savoir-faire, clarifier une transition,
+        expliquer une stratégie, situer un acteur dans un environnement plus large. Le point commun : ne pas improviser.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="pill">Croissance / visibilité</span>
+          <h3>Convaincre sans sur-vendre</h3>
+          <p>Développement, clients, recrutement, notoriété : une parole nette, immédiatement compréhensible.</p>
+          <a class="link" href="entreprises.html">Voir des exemples</a>
+        </div>
+
+        <div class="card">
+          <span class="pill">Transformation / tension</span>
+          <h3>Tenir une ligne dans la complexité</h3>
+          <p>Arbitrages, réputation, multi-acteurs : anticiper les questions et réduire les angles morts.</p>
+          <a class="link" href="les-architectes.html">Voir le format</a>
+        </div>
+
+        <div class="card">
+          <span class="pill">Décision / responsabilité</span>
+          <h3>Réduire le risque d’interprétation</h3>
+          <p>Programmes, bilans, projets, moments exposés : protéger la confiance sans simplifier à l’excès.</p>
+          <a class="link" href="secteur-public.html">Voir les cadres</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section class="section" id="architecture-emission">
+      <h2>Comment se construit une émission ?</h2>
+
+      <p class="measure">
+        Une émission articule préparation, réalisation et réutilisation.
+        Elle transforme une prise de parole en contenu utile, réexploitable, et cohérent avec vos autres prises de parole.
+      </p>
+
+      <div class="grid-3">
+        <div class="card featured">
+          <span class="pill">1 — Amont</span>
+          <h3>Structurer</h3>
+          <p>Clarifier, hiérarchiser, anticiper. Une parole qui tient, avant même d’entrer en studio.</p>
+        </div>
+
+        <div class="card">
+          <span class="pill">2 — Émission</span>
+          <h3>Rendre intelligible</h3>
+          <p>Vue large, puis focus. Clarté, précision, cohérence, dans un cadre crédible.</p>
+        </div>
+
+        <div class="card">
+          <span class="pill">3 — Aval</span>
+          <h3>Réutiliser</h3>
+          <p>Transformer l’émission en actifs : extraits, messages prêts à réemployer, diffusion cohérente.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CANDIDATURE -->
+    <section class="section">
+      <h2>Une même entrée : la candidature</h2>
+      <p class="measure">
+        Qu’il s’agisse d’une participation à <strong>Les Bâtisseurs</strong> ou de la construction d’une série dirigeant
+        comme <strong>Les Architectes</strong>, la première étape reste la même :
+        comprendre votre sujet, votre moment, votre objectif et le bon niveau d’exposition.
+      </p>
+    </section>
+
+    <!-- CADRE -->
+    <section class="section">
+      <h2>Un travail compatible avec vos organisations</h2>
+      <p class="measure">
+        Le travail s’inscrit dans vos circuits de validation : communication, juridique, direction, cabinets et agences.
+        L’objectif est simple : réduire le risque d’interprétation et tenir une ligne lisible.
+      </p>
+    </section>
+
+    <!-- LIGNE -->
+    <section class="section">
+      <h2>Notre ligne</h2>
+      <p class="measure">
+        L’objectif n’est pas l’auto-promotion. Au contraire : parler vrai, utile, compréhensible.
+        Une émission réussie aide aussi à mieux prendre la parole ensuite, dans et hors médias.
+      </p>
+      <p class="measure" style="color:var(--muted);margin-top:-6px;">
+        Cette approche n’est pas adaptée aux communications purement promotionnelles.
+      </p>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final" id="contact">
+      <h2>Candidater à une série</h2>
+      <p>
+        Un échange confidentiel permet d’analyser votre situation, d’évaluer le niveau d’exposition approprié
+        et de déterminer le cadre éditorial le plus pertinent : participation à une série éditoriale
+        ou construction d’une série dirigeant.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="formulaire-candidature.html">Accéder au formulaire</a>
+      </div>
+      <p style="margin-top:16px;font-size:14px;opacity:.82;">
+        Lorsque nécessaire, un accord de confidentialité peut être formalisé en amont de toute analyse approfondie.
+      </p>
+    </section>
+
+  </div>
+
+  <script>
+    (function(){
+      const b = document.getElementById('burger');
+      const m = document.getElementById('mobileNav');
+      if(!b || !m) return;
+
+      b.addEventListener('click', function(){
+        const open = m.style.display === 'block';
+        m.style.display = open ? 'none' : 'block';
+        b.setAttribute('aria-expanded', open ? 'false' : 'true');
+      });
+    })();
+  </script>
+
+</body>
+</html>
