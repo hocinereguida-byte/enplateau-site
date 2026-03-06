@@ -1,10 +1,11 @@
-<!doctype html> 
+<!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>EN PLATEAU — PME & ETI</title>
-<meta name="description" content="EN PLATEAU accompagne les dirigeants de PME et d’ETI : architecture de prise de parole, co-production de séquences économiques avec des médias nationaux, et activation des contenus." />
+<meta name="description" content="EN PLATEAU accompagne les PME et ETI dans la préparation d’émissions économiques : clarification des messages, cadrage éditorial, prise de parole dirigeant et réutilisation stratégique des contenus." />
+<meta name="keywords" content="PME, ETI, émission économique, média, prise de parole dirigeant, stratégie média, cadrage éditorial, préparation interview, développement commercial, transformation industrielle, visibilité stratégique, EN PLATEAU" />
 <link rel="canonical" href="https://enplateau.fr/pme-eti.html" />
 
 <style>
@@ -19,32 +20,13 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  line-height:1.7;
-  color:var(--slate);
-  background:var(--bg);
-}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;color:var(--slate);background:var(--bg);}
 a{color:inherit;text-decoration:none}
 .container{max-width:var(--max);margin:0 auto;padding:34px 22px 110px;}
 
-/* Header (conforme Accueil / À propos) */
-.header-wrap{
-  position:sticky;top:0;z-index:50;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:saturate(140%) blur(10px);
-  border-bottom:1px solid var(--line);
-}
-.header{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:12px 22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
-}
+/* Header (desktop horizontal / mobile burger) */
+.header-wrap{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);}
+.header{max-width:var(--max);margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
 .brand{display:flex;align-items:center;gap:10px}
 .brand-mark{width:34px;height:34px;border-radius:10px;background:var(--sig);display:inline-block}
 .brand-name{font-weight:900;letter-spacing:-.02em;color:var(--ink)}
@@ -63,33 +45,60 @@ a{color:inherit;text-decoration:none}
 }
 
 /* Typography */
-h1{font-size:clamp(34px,6vw,52px);line-height:1.06;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
-h2{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
+h1{font-size:clamp(30px,6vw,48px);line-height:1.08;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
+h2{font-size:clamp(24px,4vw,36px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
 h3{font-size:20px;margin:0 0 10px;color:var(--ink);font-weight:760;}
 p{margin:0 0 18px;}
-.section{margin-bottom:72px;text-align:center;}
-.measure{max-width:900px;margin-left:auto;margin-right:auto;}
+p strong{font-weight:500;}
 
 /* Hero */
-.hero{
-  background:var(--sig);
-  color:#fff;
-  border-radius:26px;
-  padding:56px 22px 44px;
-  margin:26px 0 56px;
-  text-align:center;
-}
+.hero{background:var(--sig);color:#fff;border-radius:26px;padding:54px 22px 44px;margin:26px 0 34px;text-align:center;}
 .hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
-.hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-top:10px;}
+.hero .lead{max-width:860px;margin:0 auto 0;opacity:.92;font-size:16px;}
 
-/* ===== AJOUT : Logos médias (comme HOME) ===== */
+/* Sections */
+.section{margin-bottom:72px;text-align:center;}
+.measure{max-width:900px;margin-left:auto;margin-right:auto;}
+.grid-3{display:grid;gap:22px;margin-top:8px;}
+.grid-4{display:grid;gap:22px;margin-top:26px;}
+@media(min-width:900px){
+  .grid-3{grid-template-columns:repeat(3,1fr);}
+  .grid-4{grid-template-columns:repeat(4,1fr);}
+}
+.card{border:1px solid var(--line);border-radius:20px;padding:24px;background:#fff;text-align:left;}
+.card.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
+.card p{font-size:14px;color:var(--muted);margin:0 0 14px}
+.pill{display:inline-block;font-size:12px;font-weight:850;border:1px solid var(--line);padding:8px 10px;border-radius:999px;color:var(--muted);background:#fff}
+
+/* Links */
+.card a.link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:14px;
+  font-size:14px;
+  font-weight:750;
+  color:var(--ink);
+  text-decoration:none;
+}
+.card a.link::after{
+  content:"→";
+  font-weight:900;
+  opacity:.55;
+  transform:translateX(0);
+  transition:transform .15s ease, opacity .15s ease;
+}
+.card a.link:hover{text-decoration:underline;}
+.card a.link:hover::after{opacity:.9;transform:translateX(2px);}
+
+/* Logos médias */
 .media-logos{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   align-items:center;
-  gap:80px;
-  margin:18px 0 0;
+  gap:70px;
+  margin:6px 0 0;
 }
 .media-logos img{
   height:80px;
@@ -98,80 +107,17 @@ p{margin:0 0 18px;}
   opacity:.9;
   transition:opacity .2s ease, transform .2s ease;
 }
-.media-logos img:hover{
-  opacity:1;
-  transform:translateY(-2px);
-}
+.media-logos img:hover{opacity:1;transform:translateY(-2px);}
 
-/* Cards / Grid */
-.grid-3{display:grid;gap:22px;margin-top:26px;}
-@media(min-width:900px){ .grid-3{grid-template-columns:repeat(3,1fr);} }
-.card{
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:24px;
-  background:#fff;
-  text-align:left;
-}
-.card.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
-.card p{font-size:14px;color:var(--muted);margin:0 0 14px}
-.pill{
-  display:inline-block;
-  font-size:12px;
-  font-weight:850;
-  border:1px solid var(--line);
-  padding:8px 10px;
-  border-radius:999px;
-  color:var(--muted);
-  background:#fff;
-  margin-bottom:10px;
-}
-.card ul{
-  margin:10px 0 0 18px;
-  padding:0;
-  color:var(--muted);
-  font-size:14px;
-}
-.card li{margin:6px 0;}
-.meta{
-  margin-top:14px;
-  font-size:13px;
-  color:var(--muted);
-}
-
-/* PME vs ETI (si besoin ailleurs) */
-.split{display:grid;gap:18px;margin-top:18px;}
-@media(min-width:900px){ .split{grid-template-columns:1fr 1fr;} }
-.note{
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:18px 18px 16px;
-  background:#fff;
-  text-align:left;
-}
-.note strong{color:var(--ink)}
-.note p{margin:0 0 10px;color:var(--muted);font-size:14px}
-.note ul{margin:10px 0 0 18px;color:var(--muted);font-size:14px}
-.note li{margin:6px 0}
-
-/* CTA styles (utilisés seulement en bas) */
+/* Final */
 .cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
-.btn{
-  padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;
-  display:inline-flex;align-items:center;justify-content:center;
-}
+.btn{padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;}
 .btn-primary{background:#fff;color:var(--sig);}
-
-/* Final CTA */
-.final{
-  background:var(--sig);
-  color:#fff;
-  border-radius:26px;
-  padding:56px 22px;
-  text-align:center;
-}
+.final{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px;text-align:center;}
 .final h2{color:#fff;}
-.final p{opacity:.92}
+
+#medias{margin-bottom:10px;}
+.grid-3{margin-top:8px;}
 </style>
 </head>
 
@@ -196,54 +142,27 @@ p{margin:0 0 18px;}
 
   <div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
     <a href="entrepreneurs.html">Entrepreneurs</a>
-      <a href="entreprises.html">Entreprises</a>
-      <a href="secteur-public.html">Secteur public</a>
-      <a href="a-propos.html">À propos</a>
+    <a href="entreprises.html">Entreprises</a>
+    <a href="secteur-public.html">Secteur public</a>
+    <a href="a-propos.html">À propos</a>
   </div>
 </div>
 
 <div class="container">
 
-  <!-- HERO (sans CTA) -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="kicker">Pour les PME & ETI</div>
-    <h1>Donner à votre parole<br>la portée qu’elle mérite</h1>
-    <div class="baseline">Architecture de prise de parole · Médias nationaux · Activation</div>
+    <div class="kicker">PME & ETI</div>
+    <h1>Créer une émission économique.<br>Donner à votre trajectoire la portée qu’elle mérite.</h1>
+    <p class="lead">
+      Pour les dirigeants de PME et d’ETI qui doivent rendre une croissance, une transformation ou un moment sensible immédiatement lisible et crédible.
+    </p>
   </section>
-  <!-- POURQUOI C'EST STRATÉGIQUE (conversion) -->
-  <section class="section" aria-label="Pourquoi passer préparer activer">
-    <div class="grid-3">
 
-      <div class="card">
-        <span class="pill">Passer</span>
-        <h3>Pourquoi passer dans une émission ?</h3>
-        <p>Accéder à des médias économiques nationaux.</p>
-        <p>Donner une visibilité stratégique à votre trajectoire.</p>
-        <p>Installer votre organisation dans les conversations de votre secteur.</p>
-      </div>
-
-      <div class="card featured">
-        <span class="pill">Préparer</span>
-        <h3>Pourquoi préparer une émission ?</h3>
-        <p>Une phrase mal calibrée peut devenir un angle éditorial.</p>
-        <p>Une séquence bien cadrée crédibilise un positionnement.</p>
-        <p>Une intervention bien préparée transforme l’exposition en levier stratégique.</p>
-      </div>
-
-      <div class="card">
-        <span class="pill">Activer</span>
-        <h3>Pourquoi activer une émission ?</h3>
-        <p>Une émission devient un actif de communication durable.</p>
-        <p>Elle peut nourrir votre communication institutionnelle et commerciale.</p>
-        <p>Elle alimente votre écosystème : partenaires, recrutement, influence.</p>
-      </div>
-
-    </div>
-  </section>
-  <!-- ===== AJOUT : MÉDIAS PARTENAIRES (comme HOME / Associations) ===== -->
+  <!-- MÉDIAS -->
   <section class="section" id="medias">
     <p style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;">
-      Environnements médias partenaires
+      Nos émissions prennent place dans ces environnements médias
     </p>
 
     <div class="media-logos">
@@ -252,133 +171,204 @@ p{margin:0 0 18px;}
       <img src="images/la-tribune.svg" alt="La Tribune">
       <img src="images/forbes.svg" alt="Forbes">
     </div>
-
-    <p style="margin-top:18px;font-size:14px;color:var(--muted);">
-      En partenariat avec <strong>BadM &amp; Scribeo</strong>
-    </p>
   </section>
 
-  <!-- 1) SITUATIONS (d’abord l’identification) -->
-  <section class="section">
-    <h2>Dans quelles situations intervenons-nous ?</h2>
-    <p class="measure">
-      Nous intervenons lorsque la prise de parole engage plus qu’une visibilité.
-      Elle engage une trajectoire, une décision, un positionnement.
-    </p>
-
+  <!-- POURQUOI C'EST STRATÉGIQUE -->
+  <section class="section" aria-label="Pourquoi passer préparer réutiliser">
+    <h2 style="margin-top:10px;">Pourquoi une émission devient stratégique</h2>
     <div class="grid-3">
 
       <div class="card">
+        <span class="pill">Passer</span>
+        <h3>Pourquoi et comment avoir une forte visibilité ?</h3>
+        <p>Accéder à des médias économiques nationaux.</p>
+        <p>Donner une visibilité stratégique à votre trajectoire.</p>
+        <p>Installer votre entreprise dans les conversations de votre secteur, de votre marché ou de votre filière.</p>
+      </div>
+
+      <div class="card featured">
+        <span class="pill">Préparer</span>
+        <h3>Pourquoi et comment préparer une émission ?</h3>
+        <p>Une phrase mal calibrée peut devenir un angle éditorial ou un contresens.</p>
+        <p>Une séquence bien cadrée crédibilise un positionnement et rassure l’écosystème.</p>
+        <p>Une intervention bien préparée transforme l’exposition en levier stratégique au lieu de la subir.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Réutiliser</span>
+        <h3>Pourquoi et comment réutiliser cette séquence ?</h3>
+        <p>Une émission devient un actif de communication durable.</p>
+        <p>Elle peut nourrir votre communication commerciale, institutionnelle et RH.</p>
+        <p>Elle alimente votre écosystème : clients, partenaires, prescripteurs, recrutement, influence.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTEXTES -->
+  <section class="section" id="cibles">
+    <h2>Des contextes différents. Une même exigence.</h2>
+    <p class="measure">
+      Adapter le cadre, le ton et la préparation à la réalité d’une PME ou d’une ETI confrontée à un enjeu de croissance, de transformation ou de crédibilité.
+    </p>
+
+    <div class="grid-4">
+      <div class="card">
         <span class="pill">PME</span>
-        <h3>Accélération commerciale</h3>
-        <p>
-          Nouveau marché, croissance rapide, salon stratégique, référencement national :
-          un moment où la crédibilité doit être lisible immédiatement.
-        </p>
-        <ul>
-          <li>Rassurer des donneurs d’ordre</li>
-          <li>Asseoir votre crédibilité sectorielle</li>
-          <li>Transformer l’exposition en opportunités concrètes</li>
-        </ul>
+        <h3>Accélérer sans sur-vendre</h3>
+        <p>Nouveau marché, croissance rapide, salon stratégique, référencement national : être compris vite et crédibiliser la trajectoire.</p>
+        <a class="link" href="#micro-cas">En savoir plus</a>
       </div>
 
       <div class="card">
         <span class="pill">ETI</span>
-        <h3>Transformation industrielle</h3>
-        <p>
-          Changement d’échelle, relocalisation, transition énergétique,
-          évolution du modèle économique : un moment où la parole doit tenir.
-        </p>
-        <ul>
-          <li>Tenir une parole de gouvernance solide</li>
-          <li>Clarifier les enjeux auprès des territoires et filières</li>
-          <li>Stabiliser un récit stratégique</li>
-        </ul>
+        <h3>Tenir une parole de transformation</h3>
+        <p>Changement d’échelle, industrialisation, relocalisation, transition énergétique : rendre les enjeux lisibles et défendables.</p>
+        <a class="link" href="#micro-cas">En savoir plus</a>
       </div>
 
       <div class="card">
         <span class="pill">PME & ETI</span>
-        <h3>Moment sensible</h3>
-        <p>
-          Décision structurante, annonce importante, sujet exposé
-          (emplois, réglementation, financement) : l’improvisation coûte cher.
-        </p>
-        <ul>
-          <li>Éviter l’approximation</li>
-          <li>Anticiper les questions critiques</li>
-          <li>Maîtriser le cadre éditorial</li>
-        </ul>
+        <h3>Sécuriser un moment sensible</h3>
+        <p>Annonce importante, emplois, réglementation, financement, décision structurante : ne pas improviser dans un moment exposé.</p>
+        <a class="link" href="#micro-cas">En savoir plus</a>
       </div>
 
+      <div class="card">
+        <span class="pill">Dirigeant</span>
+        <h3>Incarnation crédible</h3>
+        <p>Clarifier une vision, tenir une ligne et parler juste dans un format qui engage la perception de l’entreprise.</p>
+        <a class="link" href="#micro-cas">En savoir plus</a>
+      </div>
     </div>
   </section>
 
-  <!-- 2) POSITIONNEMENT (ensuite la crédibilité) -->
+  <!-- POSITIONNEMENT -->
   <section class="section">
-    <h2>Pas de communication “plus”.<br>Une parole structurée, dans un cadre exigeant.</h2>
+    <h2>Quand la prise de parole engage plus que la visibilité</h2>
     <p class="measure">
-      EN PLATEAU intervient quand il faut dire juste, dire clair, et tenir la ligne.
-      Nous préparons le fond (messages, preuves, angles), nous cadrons l’intervention
-      avec l’écosystème de production et le média, puis nous organisons l’activation des contenus.
+      Pour une PME ou une ETI, une émission utile ne consiste pas simplement à “communiquer davantage”. Elle engage une trajectoire, une décision, un positionnement, parfois un territoire ou une filière.
     </p>
     <p class="measure">
-      Le principe : une intervention éditoriale animée par des journalistes économiques,
-      dans le cadre propre du média. Notre rôle : sécuriser l’amont, coordonner la séquence, et maximiser l’utilité.
+      L’enjeu est de rendre le sujet intelligible avant de parler de soi. C’est ce qui permet de sortir de la communication creuse et de tenir une parole claire, crédible et utile.
     </p>
   </section>
 
-  <!-- 3) DISPOSITIFS (puis la structure d’engagement) -->
-  <section class="section" id="formats">
-    <h2>Trois dispositifs, selon votre enjeu</h2>
-    <p class="measure">Même exigence éditoriale. Une intensité adaptée à votre contexte et à votre calendrier.</p>
+  <!-- EXEMPLES CONCRETS -->
+  <section class="section" id="micro-cas">
+    <h2>Exemples concrets de situations</h2>
+    <p class="measure">
+      Avec un objectif constant : produire une parole lisible, crédible et directement utile au développement de l’entreprise.
+    </p>
+
+    <div class="grid-3">
+      <div class="card">
+        <span class="pill">PME / développement</span>
+        <h3>Accélération commerciale</h3>
+        <p>Nouveau marché, croissance rapide, salon stratégique, référencement national : rassurer et transformer l’exposition en opportunités concrètes.</p>
+      </div>
+
+      <div class="card featured">
+        <span class="pill">ETI / transformation</span>
+        <h3>Transformation industrielle</h3>
+        <p>Changement d’échelle, relocalisation, transition énergétique, évolution du modèle économique : tenir une parole de gouvernance solide.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">PME & ETI / moment sensible</span>
+        <h3>Décision exposée</h3>
+        <p>Annonce structurante, emplois, financement, réglementation : anticiper les questions critiques et maîtriser le cadre éditorial.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITUATIONS STRATÉGIQUES -->
+  <section class="section" id="situations">
+    <h2>Trois situations où la séquence devient stratégique</h2>
+    <p class="measure" style="color:var(--muted);">
+      La même émission peut servir des objectifs différents : accélérer une trajectoire, clarifier une transformation ou sécuriser une prise de parole sensible. Le point commun : ne pas improviser.
+    </p>
+
+    <div class="grid-3">
+      <div class="card">
+        <span class="pill">Croissance / exposition</span>
+        <h3>Convaincre sans sur-vendre</h3>
+        <p>Développement commercial, nouveau marché, montée en visibilité : une parole nette, immédiatement compréhensible et crédible.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Transformation / cap</span>
+        <h3>Tenir une ligne dans l’évolution</h3>
+        <p>Industrialisation, transition, changement d’échelle : structurer un récit qui éclaire la trajectoire sans simplifier à l’excès.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Décision / responsabilité</span>
+        <h3>Réduire le risque d’interprétation</h3>
+        <p>Moments sensibles, annonces importantes, environnement réglementaire : préparer une parole utile et défendable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section class="section" id="architecturesequence">
+    <h2>Comment se construit une émission ?</h2>
+    <p class="measure">
+      Une “séquence média” articule préparation, réalisation et réutilisation. Elle transforme une émission en contenu utile, réexploitable, et cohérent avec vos autres prises de parole.
+    </p>
 
     <div class="grid-3">
       <div class="card featured">
-        <span class="pill">Dispositif complet</span>
-        <h3>Installer une position durable</h3>
-        <p>Pour une trajectoire structurante : transformation, industrialisation, transmission, changement d’échelle.</p>
-        <ul>
-          <li>3 à 4 interventions économiques complémentaires</li>
-          <li>Architecture de messages approfondie</li>
-          <li>Activation organisée sur plusieurs mois</li>
-        </ul>
-        <div class="meta"><strong>Délai :</strong> première intervention à partir de 4 semaines.</div>
+        <span class="pill">1 — Amont</span>
+        <h3>Structurer</h3>
+        <p>Clarifier les messages, les preuves, les angles et les points sensibles avant toute exposition publique.</p>
       </div>
 
       <div class="card">
-        <span class="pill">Dispositif renforcé</span>
-        <h3>Asseoir une crédibilité cohérente</h3>
-        <p>Pour clarifier un enjeu et le rendre lisible auprès de l’écosystème.</p>
-        <ul>
-          <li>2 interventions économiques</li>
-          <li>Préparation dirigeant + cadrage éditorial</li>
-          <li>Activation sur 3 à 6 mois</li>
-        </ul>
-        <div class="meta"><strong>Délai :</strong> première intervention à partir de 3 semaines.</div>
+        <span class="pill">2 — Émission</span>
+        <h3>Rendre intelligible</h3>
+        <p>Partir d’un enjeu de marché, de secteur ou de transformation, puis situer l’entreprise avec clarté, précision et cohérence.</p>
       </div>
 
       <div class="card">
-        <span class="pill">Dispositif ciblé</span>
-        <h3>Sécuriser un moment clé</h3>
-        <p>Pour une échéance précise : salon majeur, annonce, opération, décision sensible.</p>
-        <ul>
-          <li>1 intervention économique</li>
-          <li>Angle stabilisé + préparation interview</li>
-          <li>Activation sur 90 jours</li>
-        </ul>
-        <div class="meta"><strong>Délai :</strong> première intervention à partir de 2 semaines.</div>
+        <span class="pill">3 — Aval</span>
+        <h3>Réutiliser</h3>
+        <p>Transformer l’émission en actifs : extraits, citations, messages prêts à réemployer, diffusion cohérente dans le temps.</p>
       </div>
     </div>
   </section>
 
-  <!-- 4) CTA FINAL -->
+  <!-- CADRE -->
+  <section class="section">
+    <h2>Un travail compatible avec vos organisations</h2>
+    <p class="measure">
+      Le travail s’adapte à la réalité d’une PME comme à celle d’une ETI : direction, communication, partenaires, parfois juridique ou gouvernance. L’objectif est simple : clarifier l’amont, éviter l’approximation et tenir une ligne lisible.
+    </p>
+  </section>
+
+  <!-- LIGNE -->
+  <section class="section">
+    <h2>Notre ligne</h2>
+    <p class="measure">
+      L’objectif n’est pas d’ajouter de la communication “plus”. Au contraire : parler “vrai”, utile, compréhensible, dans le respect du cadre éditorial du média et des contraintes propres à l’entreprise.
+    </p>
+    <p class="measure" style="color:var(--muted);margin-top:-6px;">
+      Cette approche n’est pas adaptée aux communications purement promotionnelles ni aux prises de parole déconnectées des enjeux réels.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
   <section class="final" id="contact">
-    <h2>Échange confidentiel</h2>
-    <p>Un premier échange permet de cadrer l’enjeu et de déterminer si un accompagnement est pertinent (PME ou ETI).</p>
+    <h2>Cadrer une séquence</h2>
+    <p>
+      Un premier échange permet de cadrer l’enjeu, le niveau d’exposition et de déterminer si un accompagnement est pertinent pour votre PME ou votre ETI.
+    </p>
     <div class="cta">
-      <a href="mailto:hocine.reguida@enplateau.fr" class="btn btn-primary">hocine.reguida@enplateau.fr</a>
+      <a href="mailto:contact@enplateau.fr" class="btn btn-primary">contact@enplateau.fr</a>
     </div>
-    <p style="margin-top:16px;font-size:14px;opacity:.82;">Accord de confidentialité possible avant tout échange approfondi.</p>
+    <p style="margin-top:16px;font-size:14px;opacity:.82;">
+      Lorsque nécessaire, un accord de confidentialité peut être formalisé en amont de toute analyse approfondie.
+    </p>
   </section>
 
 </div>
