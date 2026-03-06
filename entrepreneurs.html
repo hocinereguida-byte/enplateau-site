@@ -4,7 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>EN PLATEAU — Entrepreneurs</title>
-<meta name="description" content="EN PLATEAU accompagne les entrepreneurs, fondateurs, dirigeants de TPE et artisans dans leurs prises de parole à forte visibilité : préparation éditoriale, émissions économiques, et réutilisation des contenus." />
+<meta name="description" content="EN PLATEAU accompagne fondateurs, dirigeants, artisans, consultants, avocats et experts métier dans la préparation d’émissions économiques : clarification du message, cadrage éditorial et réutilisation stratégique." />
+<meta name="keywords" content="entrepreneurs, fondateurs, dirigeants, artisans, consultants, avocats, experts métier, experts sectoriels, émission économique, média, prise de parole, visibilité, cadrage éditorial, préparation interview, stratégie média, EN PLATEAU" />
 <link rel="canonical" href="https://enplateau.fr/entrepreneurs.html" />
 
 <style>
@@ -19,32 +20,13 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  line-height:1.7;
-  color:var(--slate);
-  background:var(--bg);
-}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;color:var(--slate);background:var(--bg);}
 a{color:inherit;text-decoration:none}
 .container{max-width:var(--max);margin:0 auto;padding:34px 22px 110px;}
 
-/* Header */
-.header-wrap{
-  position:sticky;top:0;z-index:50;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:saturate(140%) blur(10px);
-  border-bottom:1px solid var(--line);
-}
-.header{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:12px 22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
-}
+/* Header (desktop horizontal / mobile burger) */
+.header-wrap{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);}
+.header{max-width:var(--max);margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
 .brand{display:flex;align-items:center;gap:10px}
 .brand-mark{width:34px;height:34px;border-radius:10px;background:var(--sig);display:inline-block}
 .brand-name{font-weight:900;letter-spacing:-.02em;color:var(--ink)}
@@ -63,25 +45,51 @@ a{color:inherit;text-decoration:none}
 }
 
 /* Typography */
-h1{font-size:clamp(34px,6vw,52px);line-height:1.06;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
-h2{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
+h1{font-size:clamp(30px,6vw,48px);line-height:1.08;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
+h2{font-size:clamp(24px,4vw,36px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
 h3{font-size:20px;margin:0 0 10px;color:var(--ink);font-weight:760;}
 p{margin:0 0 18px;}
-.section{margin-bottom:72px;text-align:center;}
-.measure{max-width:900px;margin-left:auto;margin-right:auto;}
+p strong{font-weight:500;}
 
 /* Hero */
-.hero{
-  background:var(--sig);
-  color:#fff;
-  border-radius:26px;
-  padding:56px 22px 44px;
-  margin:26px 0 56px;
-  text-align:center;
-}
+.hero{background:var(--sig);color:#fff;border-radius:26px;padding:54px 22px 44px;margin:26px 0 34px;text-align:center;}
 .hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
-.hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-top:10px;}
-.hero .lead{max-width:860px;margin:0 auto;opacity:.92;font-size:16px;}
+.hero .lead{max-width:860px;margin:0 auto 0;opacity:.92;font-size:16px;}
+
+/* Sections */
+.section{margin-bottom:72px;text-align:center;}
+.measure{max-width:900px;margin-left:auto;margin-right:auto;}
+.grid-3{display:grid;gap:22px;margin-top:8px;}
+.grid-4{display:grid;gap:22px;margin-top:26px;}
+@media(min-width:900px){
+  .grid-3{grid-template-columns:repeat(3,1fr);}
+  .grid-4{grid-template-columns:repeat(4,1fr);}
+}
+.card{border:1px solid var(--line);border-radius:20px;padding:24px;background:#fff;text-align:left;}
+.card.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
+.card p{font-size:14px;color:var(--muted);margin:0 0 14px}
+.pill{display:inline-block;font-size:12px;font-weight:850;border:1px solid var(--line);padding:8px 10px;border-radius:999px;color:var(--muted);background:#fff}
+
+/* Links */
+.card a.link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:14px;
+  font-size:14px;
+  font-weight:750;
+  color:var(--ink);
+  text-decoration:none;
+}
+.card a.link::after{
+  content:"→";
+  font-weight:900;
+  opacity:.55;
+  transform:translateX(0);
+  transition:transform .15s ease, opacity .15s ease;
+}
+.card a.link:hover{text-decoration:underline;}
+.card a.link:hover::after{opacity:.9;transform:translateX(2px);}
 
 /* Logos médias */
 .media-logos{
@@ -89,8 +97,8 @@ p{margin:0 0 18px;}
   flex-wrap:wrap;
   justify-content:center;
   align-items:center;
-  gap:80px;
-  margin:18px 0 0;
+  gap:70px;
+  margin:6px 0 0;
 }
 .media-logos img{
   height:80px;
@@ -101,84 +109,21 @@ p{margin:0 0 18px;}
 }
 .media-logos img:hover{opacity:1;transform:translateY(-2px);}
 
-/* Grid / Cards */
-.grid-3{display:grid;gap:22px;margin-top:26px;}
-@media(min-width:900px){ .grid-3{grid-template-columns:repeat(3,1fr);} }
-.card{
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:24px;
-  background:#fff;
-  text-align:left;
-}
-.card.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
-.card p{font-size:14px;color:var(--muted);margin:0 0 14px}
-.pill{
-  display:inline-block;
-  font-size:12px;
-  font-weight:850;
-  border:1px solid var(--line);
-  padding:8px 10px;
-  border-radius:999px;
-  color:var(--muted);
-  background:#fff;
-  margin-bottom:10px;
-}
-.card ul{
-  margin:10px 0 0 18px;
-  padding:0;
-  color:var(--muted);
-  font-size:14px;
-}
-.card li{margin:6px 0;}
-.meta{
-  margin-top:14px;
-  font-size:13px;
-  color:var(--muted);
-}
-
-.note{
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:22px;
-  background:#fff;
-  text-align:left;
-  max-width:900px;
-  margin:0 auto;
-}
-
-.soft{
-  background:#f8f9fb;
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:28px;
-  text-align:left;
-  margin-top:22px;
-}
-.soft ul{margin:10px 0 0 18px;color:var(--muted);font-size:14px}
-.soft li{margin:6px 0}
-
-/* CTA */
-.cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
-.btn{
-  padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;
-  display:inline-flex;align-items:center;justify-content:center;
-}
-.btn-primary{background:#fff;color:var(--sig);}
-
 /* Final */
-.final{
-  background:var(--sig);
-  color:#fff;
-  border-radius:26px;
-  padding:56px 22px;
-  text-align:center;
-}
+.cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.btn{padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;}
+.btn-primary{background:#fff;color:var(--sig);}
+.final{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px;text-align:center;}
 .final h2{color:#fff;}
-.final p{opacity:.92}
+
+#medias{margin-bottom:10px;}
+.grid-3{margin-top:8px;}
+
+@media(min-width:900px){
+  #micro-cas .grid-4{grid-template-columns:repeat(4,1fr);}
+}
 </style>
 </head>
-
 <body>
 
 <div class="header-wrap">
@@ -211,48 +156,16 @@ p{margin:0 0 18px;}
   <!-- HERO -->
   <section class="hero">
     <div class="kicker">Entrepreneurs</div>
-    <h1>Prendre la parole<br>au bon moment</h1>
+    <h1>Créer votre émission économique.<br>Rendre votre activité lisible, crédible et visible.</h1>
     <p class="lead">
-      Pour les fondateurs, dirigeants de TPE, artisans et experts qui veulent rendre leur activité lisible, crédible et visible.
+      Pour les fondateurs, dirigeants, artisans, consultants, avocats et experts métier qui veulent structurer leur prise de parole au bon moment.
     </p>
-    <div class="baseline">Préparation · émission · réutilisation</div>
-  </section>
-
-  <!-- PASSER / PRÉPARER / RÉUTILISER -->
-  <section class="section" aria-label="Pourquoi passer préparer reutiliser">
-    <div class="grid-3">
-
-      <div class="card">
-        <span class="pill">Passer</span>
-        <h3>Pourquoi passer dans une émission ?</h3>
-        <p>Donner plus de portée à votre activité.</p>
-        <p>Montrer votre savoir-faire dans un cadre crédible.</p>
-        <p>Vous faire connaître autrement que par la publicité ou les réseaux sociaux.</p>
-      </div>
-
-      <div class="card featured">
-        <span class="pill">Préparer</span>
-        <h3>Pourquoi préparer une émission ?</h3>
-        <p>Parce qu’un bon sujet mal exprimé perd de sa force.</p>
-        <p>Parce qu’une parole claire inspire plus confiance.</p>
-        <p>Parce qu’une intervention bien préparée peut vraiment changer la perception de votre activité.</p>
-      </div>
-
-      <div class="card">
-        <span class="pill">Réutiliser</span>
-        <h3>Pourquoi réutiliser une émission ?</h3>
-        <p>L’émission ne doit pas vivre un seul jour.</p>
-        <p>Elle peut nourrir votre communication, votre prospection et votre crédibilité.</p>
-        <p>Elle peut devenir un contenu utile pour vos clients, partenaires et futurs contacts.</p>
-      </div>
-
-    </div>
   </section>
 
   <!-- MÉDIAS -->
   <section class="section" id="medias">
     <p style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;">
-      Environnements médias partenaires
+      Nos émissions prennent place dans ces environnements médias
     </p>
 
     <div class="media-logos">
@@ -261,213 +174,209 @@ p{margin:0 0 18px;}
       <img src="images/la-tribune.svg" alt="La Tribune">
       <img src="images/forbes.svg" alt="Forbes">
     </div>
-
-    <p style="margin-top:18px;font-size:14px;color:var(--muted);">
-      En partenariat avec <strong>BadM &amp; Scribeo</strong>
-    </p>
   </section>
 
-  <!-- SITUATIONS -->
-  <section class="section" id="situations">
-    <h2>Dans quels cas cette démarche est utile ?</h2>
-    <p class="measure">
-      Cette démarche n’est pas faite pour “faire parler de soi” à tout prix.
-      Elle est utile quand un entrepreneur a quelque chose de solide à rendre visible et compréhensible.
-    </p>
-
+  <!-- POURQUOI C'EST STRATÉGIQUE -->
+  <section class="section" aria-label="Pourquoi passer préparer réutiliser">
+    <h2 style="margin-top:10px;">Pourquoi une émission devient stratégique</h2>
     <div class="grid-3">
 
       <div class="card">
-        <span class="pill">Lancement</span>
-        <h3>Faire connaître une activité sérieuse</h3>
-        <p>
-          Vous lancez une activité, vous changez d’échelle ou vous voulez être perçu autrement que comme “un petit acteur”.
-        </p>
-        <ul>
-          <li>Présenter clairement votre positionnement</li>
-          <li>Donner de la crédibilité à votre trajectoire</li>
-          <li>Créer un premier socle de visibilité qualitative</li>
-        </ul>
+        <span class="pill">Passer</span>
+        <h3>Pourquoi et comment avoir une forte visibilité ?</h3>
+        <p>Accéder à des médias économiques nationaux.</p>
+        <p>Donner une visibilité stratégique à votre trajectoire.</p>
+        <p>Installer votre activité dans des conversations qui dépassent votre seul cercle professionnel.</p>
       </div>
 
       <div class="card featured">
-        <span class="pill">Développement</span>
-        <h3>Rendre votre expertise visible</h3>
-        <p>
-          Vous avez une vraie expérience, un savoir-faire, une lecture métier, mais cela reste peu visible à l’extérieur.
-        </p>
-        <ul>
-          <li>Faire comprendre ce que vous apportez</li>
-          <li>Sortir d’une communication trop floue ou trop artisanale</li>
-          <li>Installer une image plus claire et plus crédible</li>
-        </ul>
+        <span class="pill">Préparer</span>
+        <h3>Pourquoi et comment préparer une émission ?</h3>
+        <p>Une expertise mal formulée perd immédiatement de sa force.</p>
+        <p>Une séquence bien cadrée crédibilise un positionnement et rassure.</p>
+        <p>Une intervention bien préparée transforme l’exposition en levier de développement.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Réutiliser</span>
+        <h3>Pourquoi et comment réutiliser cette séquence ?</h3>
+        <p>Une émission devient un actif de communication durable.</p>
+        <p>Elle peut nourrir votre prospection, votre crédibilité et votre communication institutionnelle.</p>
+        <p>Elle alimente votre écosystème : clients, partenaires, prescripteurs, recrutement, influence.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTEXTES -->
+  <section class="section" id="cibles">
+    <h2>Des contextes différents. Une même exigence.</h2>
+    <p class="measure">
+      Adapter le cadre, le ton et la préparation à la réalité d’un fondateur, d’un dirigeant, d’un artisan ou d’un expert métier.
+    </p>
+
+    <div class="grid-4">
+      <div class="card">
+        <span class="pill">Fondateur / dirigeant</span>
+        <h3>Clarifier une trajectoire</h3>
+        <p>Lancement, repositionnement, développement : donner une forme claire à une ambition entrepreneuriale.</p>
+        <a class="link" href="#micro-cas">En savoir plus</a>
+      </div>
+
+      <div class="card">
+        <span class="pill">Artisan / savoir-faire</span>
+        <h3>Rendre une valeur perceptible</h3>
+        <p>Métiers rares, excellence technique, transmission : faire comprendre ce qui fait la singularité d’un savoir-faire.</p>
+        <a class="link" href="#micro-cas">En savoir plus</a>
+      </div>
+
+      <div class="card">
+        <span class="pill">Consultant / avocat / expert</span>
+        <h3>Rendre une expertise lisible</h3>
+        <p>Faire apparaître une lecture métier, une méthode ou une valeur d’analyse qui restent souvent peu visibles à l’extérieur.</p>
+        <a class="link" href="#micro-cas">En savoir plus</a>
       </div>
 
       <div class="card">
         <span class="pill">Moment clé</span>
         <h3>Appuyer une étape importante</h3>
-        <p>
-          Salon, ouverture, développement commercial, recherche de partenaires, évolution d’activité : un moment où il faut être compris rapidement.
-        </p>
-        <ul>
-          <li>Éviter l’improvisation</li>
-          <li>Préparer les bons messages</li>
-          <li>Transformer l’exposition en levier concret</li>
-        </ul>
+        <p>Salon, ouverture, développement commercial, évolution d’activité : être compris rapidement au bon moment.</p>
+        <a class="link" href="#micro-cas">En savoir plus</a>
       </div>
-
     </div>
   </section>
 
   <!-- POSITIONNEMENT -->
   <section class="section">
-    <h2>Une prise de parole utile, pas une mise en scène</h2>
+    <h2>Une parole utile, pas une mise en scène</h2>
     <p class="measure">
-      EN PLATEAU n’intervient pas pour “faire passer quelqu’un à la télévision” sans raison.
-      Le sujet doit avoir du fond, de la cohérence et une vraie utilité.
+      EN PLATEAU n’intervient pas pour exposer quelqu’un sans raison. Le sujet doit avoir du fond, de la cohérence et une vraie utilité.
     </p>
     <p class="measure">
-      Notre travail consiste à clarifier ce que vous voulez dire, à préparer l’intervention dans un cadre éditorial sérieux,
-      puis à organiser la réutilisation des contenus pour qu’ils vous servent vraiment après la diffusion.
+      Le travail consiste à clarifier ce qui doit être dit, à préparer l’intervention dans un cadre éditorial sérieux, puis à organiser la réutilisation des contenus après diffusion.
     </p>
   </section>
 
-  <!-- COMMENT NOUS INTERVENONS -->
-  <section class="section" id="intervention">
-    <h2>Comment nous intervenons</h2>
+  <!-- EXEMPLES CONCRETS -->
+  <section class="section" id="micro-cas">
+    <h2>Exemples concrets de situations</h2>
     <p class="measure">
-      Nous vous aidons à transformer une prise de parole en contenu crédible, compréhensible et réutilisable.
+      Sans “storytelling”. Sans sur-vendre. Avec un objectif : rendre votre activité claire, utile et crédible.
     </p>
 
-    <div class="grid-3">
-      <div class="card featured">
-        <span class="pill">1 — Clarifier</span>
-        <h3>Ce que vous voulez vraiment dire</h3>
-        <p>Avant toute émission, il faut rendre votre sujet simple, solide et intelligible.</p>
-        <ul>
-          <li>Clarification du message</li>
-          <li>Hiérarchisation des idées</li>
-          <li>Préparation à l’échange</li>
-        </ul>
+    <div class="grid-4">
+      <div class="card">
+        <span class="pill">Fondateur / lancement</span>
+        <h3>Faire connaître une activité sérieuse</h3>
+        <p>Présenter clairement un positionnement, crédibiliser une trajectoire et créer une première visibilité qualitative.</p>
       </div>
 
       <div class="card">
-        <span class="pill">2 — Cadrer</span>
-        <h3>Préparer l’intervention</h3>
-        <p>Nous travaillons le fond, l’angle, et la façon de rendre votre parole crédible dans un format média.</p>
-        <ul>
-          <li>Angle éditorial</li>
-          <li>Questions à anticiper</li>
-          <li>Cohérence de la séquence</li>
-        </ul>
+        <span class="pill">Entrepreneur / expertise</span>
+        <h3>Rendre une expertise visible</h3>
+        <p>Faire comprendre ce que vous apportez, sortir d’une communication floue et installer une image plus lisible.</p>
       </div>
 
       <div class="card">
-        <span class="pill">3 — Réutiliser</span>
-        <h3>Faire vivre le contenu</h3>
-        <p>Une fois l’émission diffusée, le contenu peut continuer à vous servir durablement.</p>
-        <ul>
-          <li>Extraits réemployables</li>
-          <li>Citations et séquences utiles</li>
-          <li>Réutilisation cohérente dans votre communication</li>
-        </ul>
+        <span class="pill">Artisan / savoir-faire</span>
+        <h3>Rendre un savoir-faire visible</h3>
+        <p>Métiers rares, excellence technique, innovation : faire comprendre la valeur d’un savoir-faire à un public plus large.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Dirigeant / moment clé</span>
+        <h3>Appuyer une étape importante</h3>
+        <p>Salon, ouverture, recherche de partenaires, évolution d’activité : transformer l’exposition en levier concret.</p>
       </div>
     </div>
   </section>
 
-  <!-- CADRES D'INTERVENTION -->
-  <section class="section" id="cadres">
-    <h2>Trois cadres d’intervention</h2>
-    <p class="measure">
-      Le bon niveau d’accompagnement dépend de votre sujet, de votre maturité et du moment que vous traversez.
+  <!-- SITUATIONS STRATÉGIQUES -->
+  <section class="section" id="situations">
+    <h2>Trois situations où la séquence devient stratégique</h2>
+    <p class="measure" style="color:var(--muted);">
+      La même émission peut servir des objectifs différents : rendre une activité lisible, valoriser une expertise, ou accompagner une étape de développement. Le point commun : ne pas improviser.
     </p>
 
     <div class="grid-3">
       <div class="card">
-        <span class="pill">Cadre ciblé</span>
-        <h3>Sécuriser un moment précis</h3>
-        <p>Pour une échéance claire : salon, lancement, annonce, prise de parole ponctuelle.</p>
-        <ul>
-          <li>1 séquence économique</li>
-          <li>Préparation resserrée</li>
-          <li>Réutilisation sur 90 jours</li>
-        </ul>
-        <div class="meta"><strong>Délai :</strong> à partir de 2 semaines.</div>
-      </div>
-
-      <div class="card featured">
-        <span class="pill">Cadre intermédiaire</span>
-        <h3>Installer une crédibilité plus forte</h3>
-        <p>Pour un entrepreneur qui veut rendre son activité plus lisible et plus crédible dans la durée.</p>
-        <ul>
-          <li>2 séquences complémentaires</li>
-          <li>Travail éditorial approfondi</li>
-          <li>Réutilisation sur plusieurs mois</li>
-        </ul>
-        <div class="meta"><strong>Délai :</strong> à partir de 3 semaines.</div>
+        <span class="pill">Lancement / visibilité</span>
+        <h3>Installer une activité sérieuse</h3>
+        <p>Présenter clairement un positionnement, rassurer, et donner une première portée crédible à votre activité.</p>
       </div>
 
       <div class="card">
-        <span class="pill">Cadre approfondi</span>
-        <h3>Accompagner un vrai changement d’échelle</h3>
-        <p>Pour une trajectoire de développement plus structurante ou une exposition plus ambitieuse.</p>
-        <ul>
-          <li>3 à 4 séquences complémentaires</li>
-          <li>Architecture de messages approfondie</li>
-          <li>Réutilisation organisée sur plusieurs mois</li>
-        </ul>
-        <div class="meta"><strong>Délai :</strong> à partir de 4 semaines.</div>
+        <span class="pill">Expertise / différenciation</span>
+        <h3>Montrer ce qui vous distingue</h3>
+        <p>Faire comprendre une compétence, une méthode ou un savoir-faire qui reste souvent invisible à l’extérieur.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Moment clé / développement</span>
+        <h3>Transformer l’exposition en levier</h3>
+        <p>Préparer les bons messages au bon moment pour soutenir un salon, une ouverture, une évolution ou une recherche de partenaires.</p>
       </div>
     </div>
   </section>
 
-  <!-- POUR QUI -->
-  <section class="section" id="pour-qui">
-    <h2>Pour qui ?</h2>
-    <div class="note">
-      <p style="margin:0 0 12px;color:var(--muted);font-size:14px;">
-        Cette page s’adresse notamment aux :
-      </p>
-      <ul style="margin:0 0 0 18px;color:var(--muted);font-size:14px;">
-        <li>fondateurs et cofondateurs</li>
-        <li>dirigeants de TPE</li>
-        <li>artisans avec une vraie singularité</li>
-        <li>experts métier ou profils à forte légitimité terrain</li>
-        <li>indépendants ou structures en développement qui veulent gagner en lisibilité</li>
-      </ul>
+  <!-- ARCHITECTURE -->
+  <section class="section" id="architecturesequence">
+    <h2>Comment se construit une émission ?</h2>
+    <p class="measure">
+      Une “séquence média” articule préparation, réalisation et réutilisation. Elle transforme une émission en contenu utile, réexploitable, et cohérent avec vos autres prises de parole.
+    </p>
+
+    <div class="grid-3">
+      <div class="card featured">
+        <span class="pill">1 — Amont</span>
+        <h3>Structurer</h3>
+        <p>Clarifier, hiérarchiser, anticiper. Une parole qui tient, avant même d’entrer en studio.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">2 — Émission</span>
+        <h3>Rendre intelligible</h3>
+        <p>Vue large, puis focus. Clarté, précision, cohérence : une parole audible au-delà du seul métier.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">3 — Aval</span>
+        <h3>Réutiliser</h3>
+        <p>Transformer l’émission en actifs : extraits, messages prêts à réemployer, diffusion cohérente.</p>
+      </div>
     </div>
   </section>
 
-  <!-- ORGANISATION -->
-  <section class="section" id="organisation">
-    <h2>Organisation de l’accompagnement</h2>
-    <div class="soft">
-      <h3 style="margin:0 0 10px;color:var(--ink);">Un accompagnement resserré et lisible</h3>
-      <p style="margin:0 0 14px;color:var(--muted);font-size:14px;">
-        Vous avez un interlocuteur unique côté EN PLATEAU.
-        L’objectif n’est pas de complexifier les choses, mais de rendre votre prise de parole plus juste, plus claire et plus utile.
-      </p>
-      <ul>
-        <li>Échange de cadrage sur votre activité et votre objectif</li>
-        <li>Travail sur les messages, l’angle et la préparation</li>
-        <li>Articulation avec l’écosystème de production et le média</li>
-        <li>Organisation de la réutilisation des contenus après diffusion</li>
-      </ul>
-    </div>
+  <!-- CADRE -->
+  <section class="section">
+    <h2>Un travail compatible avec vos organisations</h2>
+    <p class="measure">
+      Le travail s’adapte à la réalité d’un entrepreneur, d’une petite structure ou d’un exercice indépendant. L’objectif reste simple : clarifier la parole, réduire le risque d’improvisation et tenir une ligne lisible.
+    </p>
   </section>
 
-  <!-- CTA -->
+  <!-- LIGNE -->
+  <section class="section">
+    <h2>Notre ligne</h2>
+    <p class="measure">
+      L’objectif n’est pas l’auto-promotion. Au contraire : parler “vrai”, utile, compréhensible. Une émission réussie aide aussi le dirigeant ou l’expert à mieux prendre la parole ensuite — dans et hors médias.
+    </p>
+    <p class="measure" style="color:var(--muted);margin-top:-6px;">
+      Cette approche n’est pas adaptée aux communications purement promotionnelles.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
   <section class="final" id="contact">
-    <h2>Échange confidentiel</h2>
+    <h2>Cadrer une séquence</h2>
     <p>
-      Un premier échange permet de voir si votre sujet, votre moment et votre niveau de maturité
-      correspondent à ce type de démarche.
+      Un échange confidentiel permet d’analyser votre situation, d’évaluer le niveau d’exposition approprié et de décider si le moment est le bon.
     </p>
     <div class="cta">
-      <a href="mailto:hocine.reguida@enplateau.fr" class="btn btn-primary">hocine.reguida@enplateau.fr</a>
+      <a class="btn btn-primary" href="mailto:contact@enplateau.fr">contact@enplateau.fr</a>
     </div>
     <p style="margin-top:16px;font-size:14px;opacity:.82;">
-      Accord de confidentialité possible avant tout échange approfondi.
+      Lorsque nécessaire, un accord de confidentialité peut être formalisé en amont de toute analyse approfondie.
     </p>
   </section>
 
