@@ -4,7 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>EN PLATEAU — Associations</title>
-<meta name="description" content="EN PLATEAU accompagne les associations, fédérations et ONG qui souhaitent intervenir sur des émissions économiques : emploi, financement public, filières, impact territorial." />
+<meta name="description" content="EN PLATEAU accompagne associations, fédérations, ONG et acteurs de l’économie sociale dans la préparation d’émissions économiques : clarification des messages, cadrage éditorial, impact, emploi, filières et réutilisation stratégique des contenus." />
+<meta name="keywords" content="associations, fédérations, ONG, ESS, économie sociale, émission économique, média, prise de parole, impact social, emploi, filières, financement, territoire, cadrage éditorial, préparation interview, stratégie média, EN PLATEAU" />
 <link rel="canonical" href="https://enplateau.fr/associations.html" />
 
 <style>
@@ -19,32 +20,13 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  line-height:1.7;
-  color:var(--slate);
-  background:var(--bg);
-}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;color:var(--slate);background:var(--bg);}
 a{color:inherit;text-decoration:none}
 .container{max-width:var(--max);margin:0 auto;padding:34px 22px 110px;}
 
-/* Header (aligné HOME) */
-.header-wrap{
-  position:sticky;top:0;z-index:50;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:saturate(140%) blur(10px);
-  border-bottom:1px solid var(--line);
-}
-.header{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:12px 22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
-}
+/* Header (desktop horizontal / mobile burger) */
+.header-wrap{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);}
+.header{max-width:var(--max);margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
 .brand{display:flex;align-items:center;gap:10px}
 .brand-mark{width:34px;height:34px;border-radius:10px;background:var(--sig);display:inline-block}
 .brand-name{font-weight:900;letter-spacing:-.02em;color:var(--ink)}
@@ -63,34 +45,60 @@ a{color:inherit;text-decoration:none}
 }
 
 /* Typography */
-h1{font-size:clamp(34px,6vw,52px);line-height:1.06;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
-h2{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
+h1{font-size:clamp(30px,6vw,48px);line-height:1.08;margin:0 0 14px;color:#fff;font-weight:900;letter-spacing:-0.02em;}
+h2{font-size:clamp(24px,4vw,36px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
 h3{font-size:20px;margin:0 0 10px;color:var(--ink);font-weight:760;}
 p{margin:0 0 18px;}
-.section{margin-bottom:72px;text-align:center;}
-.measure{max-width:900px;margin-left:auto;margin-right:auto;}
+p strong{font-weight:500;}
 
 /* Hero */
-.hero{
-  background:var(--sig);
-  color:#fff;
-  border-radius:26px;
-  padding:58px 22px 46px;
-  margin:26px 0 56px;
-  text-align:center;
-}
+.hero{background:var(--sig);color:#fff;border-radius:26px;padding:54px 22px 44px;margin:26px 0 34px;text-align:center;}
 .hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
 .hero .lead{max-width:860px;margin:0 auto 0;opacity:.92;font-size:16px;}
-.hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-top:12px;}
 
-/* Logos médias — EXACTEMENT comme la HOME */
+/* Sections */
+.section{margin-bottom:72px;text-align:center;}
+.measure{max-width:900px;margin-left:auto;margin-right:auto;}
+.grid-3{display:grid;gap:22px;margin-top:8px;}
+.grid-4{display:grid;gap:22px;margin-top:26px;}
+@media(min-width:900px){
+  .grid-3{grid-template-columns:repeat(3,1fr);}
+  .grid-4{grid-template-columns:repeat(4,1fr);}
+}
+.card{border:1px solid var(--line);border-radius:20px;padding:24px;background:#fff;text-align:left;}
+.card.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
+.card p{font-size:14px;color:var(--muted);margin:0 0 14px}
+.pill{display:inline-block;font-size:12px;font-weight:850;border:1px solid var(--line);padding:8px 10px;border-radius:999px;color:var(--muted);background:#fff}
+
+/* Links */
+.card a.link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:14px;
+  font-size:14px;
+  font-weight:750;
+  color:var(--ink);
+  text-decoration:none;
+}
+.card a.link::after{
+  content:"→";
+  font-weight:900;
+  opacity:.55;
+  transform:translateX(0);
+  transition:transform .15s ease, opacity .15s ease;
+}
+.card a.link:hover{text-decoration:underline;}
+.card a.link:hover::after{opacity:.9;transform:translateX(2px);}
+
+/* Logos médias */
 .media-logos{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   align-items:center;
-  gap:80px;
-  margin:18px 0 0;
+  gap:70px;
+  margin:6px 0 0;
 }
 .media-logos img{
   height:80px;
@@ -101,46 +109,17 @@ p{margin:0 0 18px;}
 }
 .media-logos img:hover{opacity:1;transform:translateY(-2px);}
 
-/* Grids / Cards */
-.grid-3{display:grid;gap:22px;margin-top:26px;}
-@media(min-width:900px){ .grid-3{grid-template-columns:repeat(3,1fr);} }
-.card{
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:24px;
-  background:#fff;
-  text-align:left;
-}
-.card.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
-.pill{
-  display:inline-block;
-  font-size:12px;
-  font-weight:850;
-  border:1px solid var(--line);
-  padding:8px 10px;
-  border-radius:999px;
-  color:var(--muted);
-  background:#fff;
-  margin-bottom:10px;
-}
-.card p{font-size:14px;color:var(--muted);margin:0 0 14px}
-.card ul{margin:10px 0 0 18px;padding:0;color:var(--muted);font-size:14px}
-.card li{margin:6px 0}
-
 /* Final */
-.final{
-  background:var(--sig);
-  color:#fff;
-  border-radius:26px;
-  padding:56px 22px;
-  text-align:center;
-}
+.cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.btn{padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;}
+.btn-primary{background:#fff;color:var(--sig);}
+.final{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px;text-align:center;}
 .final h2{color:#fff;}
-.btn{padding:14px 20px;border-radius:999px;font-weight:800;background:#fff;color:var(--sig);display:inline-flex;align-items:center;justify-content:center;}
-.cta{margin-top:18px;display:flex;justify-content:center}
+
+#medias{margin-bottom:10px;}
+.grid-3{margin-top:8px;}
 </style>
 </head>
-
 <body>
 
 <div class="header-wrap">
@@ -162,9 +141,9 @@ p{margin:0 0 18px;}
 
   <div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
     <a href="entrepreneurs.html">Entrepreneurs</a>
-      <a href="entreprises.html">Entreprises</a>
-      <a href="secteur-public.html">Secteur public</a>
-      <a href="a-propos.html">À propos</a>
+    <a href="entreprises.html">Entreprises</a>
+    <a href="secteur-public.html">Secteur public</a>
+    <a href="a-propos.html">À propos</a>
   </div>
 </div>
 
@@ -172,48 +151,17 @@ p{margin:0 0 18px;}
 
   <!-- HERO -->
   <section class="hero">
-    <div class="kicker">Associations · Fédérations · ONG</div>
-    <h1>Tenir une parole économique<br>à la hauteur de votre mission</h1>
+    <div class="kicker">Associations</div>
+    <h1>Créer une émission économique.<br>Rendre votre impact lisible sans le surjouer.</h1>
     <p class="lead">
-      Lorsque votre action devient un sujet d’emploi, de financement, de filière ou de territoire,
-      l’intervention sur une émission économique doit être claire, factuelle et défendable.
+      Pour les associations, fédérations, ONG et acteurs de l’économie sociale qui doivent parler emploi, financement, filières, coûts évités, attractivité des métiers ou impact territorial dans un cadre exigeant.
     </p>
-    <div class="baseline">Emploi · Financement · Filières · Territoires</div>
   </section>
-  <!-- POURQUOI C'EST STRATÉGIQUE (conversion) -->
-  <section class="section" aria-label="Pourquoi passer préparer activer">
-    <div class="grid-3">
 
-      <div class="card">
-        <span class="pill">Passer</span>
-        <h3>Pourquoi passer dans une émission ?</h3>
-        <p>Accéder à des médias économiques nationaux.</p>
-        <p>Donner une visibilité stratégique à votre trajectoire.</p>
-        <p>Installer votre organisation dans les conversations de votre secteur.</p>
-      </div>
-
-      <div class="card featured">
-        <span class="pill">Préparer</span>
-        <h3>Pourquoi préparer une émission ?</h3>
-        <p>Une phrase mal calibrée peut devenir un angle éditorial.</p>
-        <p>Une séquence bien cadrée crédibilise un positionnement.</p>
-        <p>Une intervention bien préparée transforme l’exposition en levier stratégique.</p>
-      </div>
-
-      <div class="card">
-        <span class="pill">Activer</span>
-        <h3>Pourquoi activer une émission ?</h3>
-        <p>Une émission devient un actif de communication durable.</p>
-        <p>Elle peut nourrir votre communication institutionnelle et commerciale.</p>
-        <p>Elle alimente votre écosystème : partenaires, recrutement, influence.</p>
-      </div>
-
-    </div>
-  </section>
-  <!-- MÉDIAS PARTENAIRES (comme la HOME) -->
+  <!-- MÉDIAS -->
   <section class="section" id="medias">
     <p style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;">
-      Environnements médias partenaires
+      Nos émissions prennent place dans ces environnements médias
     </p>
 
     <div class="media-logos">
@@ -222,116 +170,204 @@ p{margin:0 0 18px;}
       <img src="images/la-tribune.svg" alt="La Tribune">
       <img src="images/forbes.svg" alt="Forbes">
     </div>
-
-    <p style="margin-top:18px;font-size:14px;color:var(--muted);">
-      En partenariat avec <strong>BadM &amp; Scribeo</strong>
-    </p>
   </section>
 
-  <!-- QUAND C’EST LÉGITIME -->
-  <section class="section">
-    <h2>Quand une association a sa place dans un média économique</h2>
-    <p class="measure">
-      Vous intervenez lorsque votre action éclaire un enjeu économique réel :
-      emploi, coût et efficacité d’une politique publique, viabilité d’un modèle, tension sur une filière,
-      attractivité des métiers, conséquences économiques d’une crise.
-    </p>
-  </section>
-
-  <!-- CAS À LECTURE ÉCONOMIQUE -->
-  <section class="section">
-    <h2>Trois cas de figure (angles possibles)</h2>
-
+  <!-- POURQUOI C'EST STRATÉGIQUE -->
+  <section class="section" aria-label="Pourquoi passer préparer réutiliser">
+    <h2 style="margin-top:10px;">Pourquoi une émission devient stratégique</h2>
     <div class="grid-3">
 
+      <div class="card">
+        <span class="pill">Passer</span>
+        <h3>Pourquoi et comment avoir une forte visibilité ?</h3>
+        <p>Accéder à des médias économiques nationaux.</p>
+        <p>Donner une visibilité stratégique à votre action, à votre modèle ou à votre lecture de terrain.</p>
+        <p>Installer votre organisation dans des conversations qui portent sur l’emploi, les filières, le financement et les territoires.</p>
+      </div>
+
+      <div class="card featured">
+        <span class="pill">Préparer</span>
+        <h3>Pourquoi et comment préparer une émission ?</h3>
+        <p>Une parole associative ou fédérative mal calibrée peut être perçue comme militante, floue ou défensive.</p>
+        <p>Une séquence bien cadrée crédibilise un positionnement et rend les mécanismes économiques compréhensibles.</p>
+        <p>Une intervention bien préparée transforme l’exposition en levier de lisibilité, de confiance et de reconnaissance.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Réutiliser</span>
+        <h3>Pourquoi et comment réutiliser cette séquence ?</h3>
+        <p>Une émission devient un actif de communication durable.</p>
+        <p>Elle peut nourrir vos relations partenaires, votre plaidoyer, votre recrutement et vos dossiers de financement.</p>
+        <p>Elle alimente votre écosystème : institutions, mécènes, adhérents, prescripteurs, élus, réseaux professionnels.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTEXTES -->
+  <section class="section" id="cibles">
+    <h2>Des contextes différents. Une même exigence.</h2>
+    <p class="measure">
+      Adapter le cadre, le ton et la préparation à la réalité d’une association, d’une fédération, d’une ONG ou d’un acteur de l’économie sociale confronté à une parole exposée.
+    </p>
+
+    <div class="grid-4">
+      <div class="card">
+        <span class="pill">Association d’action sociale</span>
+        <h3>Montrer l’impact sans auto-promotion</h3>
+        <p>Emploi, coûts évités, continuité de service, insertion : rendre une action lisible au-delà du registre compassionnel.</p>
+        <a class="link" href="#micro-cas">En savoir plus</a>
+      </div>
+
+      <div class="card">
+        <span class="pill">Fédération</span>
+        <h3>Porter une lecture de filière</h3>
+        <p>Financement, réglementation, attractivité des métiers, qualité de service : expliquer une situation sectorielle avec clarté.</p>
+        <a class="link" href="#micro-cas">En savoir plus</a>
+      </div>
+
+      <div class="card">
+        <span class="pill">ONG</span>
+        <h3>Éclairer les effets économiques d’une crise</h3>
+        <p>Approvisionnement, énergie, alimentation, chaînes de valeur : apporter des faits et des mécanismes plutôt qu’un simple signal d’alerte.</p>
+        <a class="link" href="#micro-cas">En savoir plus</a>
+      </div>
+
+      <div class="card">
+        <span class="pill">Acteur ESS</span>
+        <h3>Tenir une parole de modèle</h3>
+        <p>Viabilité, hybridation financière, utilité sociale, ancrage territorial : parler économie sans renier la mission.</p>
+        <a class="link" href="#micro-cas">En savoir plus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIONNEMENT -->
+  <section class="section">
+    <h2>Quand l’impact doit être expliqué en langage économique</h2>
+    <p class="measure">
+      Une association a sa place dans un média économique lorsque son action éclaire un enjeu réel : emploi, efficacité d’une dépense publique, équilibre d’une filière, attractivité des métiers, coût d’une crise ou robustesse d’un modèle.
+    </p>
+    <p class="measure">
+      L’enjeu n’est pas de “faire parler” l’organisation. L’enjeu est de rendre des mécanismes compréhensibles, avec des faits, des ordres de grandeur, des effets concrets et des limites assumées.
+    </p>
+  </section>
+
+  <!-- EXEMPLES CONCRETS -->
+  <section class="section" id="micro-cas">
+    <h2>Exemples concrets de situations</h2>
+    <p class="measure">
+      Avec un objectif constant : rendre votre action claire, crédible et défendable dans un cadre économique.
+    </p>
+
+    <div class="grid-3">
       <div class="card featured">
         <span class="pill">Association d’action sociale</span>
         <h3>Emploi et efficacité de la dépense publique</h3>
-        <p>Votre action se mesure aussi en coûts évités, en emplois créés et en continuité de service.</p>
-        <ul>
-          <li>Insertion : passage à l’emploi, montée en compétences</li>
-          <li>Retour sur investissement social (ordre de grandeur)</li>
-          <li>Effets d’une réforme sur les publics et les territoires</li>
-        </ul>
+        <p>Insertion, montée en compétences, continuité de service, coûts évités : faire comprendre ce que l’action produit réellement.</p>
       </div>
 
       <div class="card">
         <span class="pill">Fédération</span>
         <h3>Situation économique d’une filière</h3>
-        <p>Vous portez la lecture “secteur” : financement, réglementation, attractivité, qualité de service.</p>
-        <ul>
-          <li>Équilibre économique du secteur</li>
-          <li>Impact d’un changement réglementaire</li>
-          <li>Pénurie de main-d’œuvre / attractivité des métiers</li>
-        </ul>
+        <p>Équilibre économique, réglementation, attractivité des métiers, qualité de service : porter une lecture structurée du secteur.</p>
       </div>
 
       <div class="card">
         <span class="pill">ONG</span>
         <h3>Conséquences économiques d’une crise</h3>
-        <p>Vous apportez des faits et des mécanismes sur des crises qui pèsent sur l’économie.</p>
-        <ul>
-          <li>Coût économique (approvisionnement, énergie, alimentation)</li>
-          <li>Effets sur les chaînes de valeur</li>
-          <li>Risque et stabilité : territoires, entreprises, États</li>
-        </ul>
+        <p>Coûts, dépendances, chaînes de valeur, risques systémiques : apporter des faits et des mécanismes plutôt qu’une réaction d’alerte seule.</p>
       </div>
-
     </div>
   </section>
 
-  <!-- CE QUE TU APPORTES -->
-  <section class="section">
-    <h2>Ce que nous sécurisons</h2>
-    <p class="measure">
-      Une émission économique demande une parole structurée : données, mécanismes, impacts, limites.
-      Nous aidons à formuler un angle clair, à préparer les réponses difficiles, et à éviter le registre “promotionnel”.
+  <!-- SITUATIONS STRATÉGIQUES -->
+  <section class="section" id="situations">
+    <h2>Trois situations où la séquence devient stratégique</h2>
+    <p class="measure" style="color:var(--muted);">
+      La même émission peut servir des objectifs différents : rendre un impact lisible, éclairer une filière ou expliquer les effets économiques d’une crise. Le point commun : ne pas improviser.
     </p>
 
     <div class="grid-3">
       <div class="card">
-        <span class="pill">Angle économique</span>
-        <h3>Clarifier le sujet</h3>
-        <p>Ce qui est en jeu, pour qui, avec quels ordres de grandeur.</p>
-        <ul>
-          <li>Définition du problème</li>
-          <li>Ce que vous changez concrètement</li>
-          <li>Indicateurs et exemples</li>
-        </ul>
+        <span class="pill">Impact / utilité</span>
+        <h3>Montrer ce que l’action change réellement</h3>
+        <p>Passer d’un discours de mission à une démonstration claire : effets, bénéficiaires, coûts évités, continuité de service, résultats.</p>
       </div>
 
       <div class="card">
-        <span class="pill">Préparation</span>
-        <h3>Tenir l’entretien</h3>
-        <p>Questions sensibles, points de tension, objections habituelles.</p>
-        <ul>
-          <li>Questions-réponses</li>
-          <li>Messages clés</li>
-          <li>Réponses “courtes” et “longues”</li>
-        </ul>
+        <span class="pill">Filière / plaidoyer</span>
+        <h3>Porter une lecture crédible d’un secteur</h3>
+        <p>Expliquer un déséquilibre, un besoin de financement, une tension de recrutement ou l’effet d’un changement réglementaire.</p>
       </div>
 
       <div class="card">
-        <span class="pill">Continuité</span>
-        <h3>Réutiliser</h3>
-        <p>Transformer l’intervention en actif : dossiers, partenaires, recrutement, plaidoyer.</p>
-        <ul>
-          <li>Plan de réutilisation</li>
-          <li>Cohérence des supports</li>
-          <li>Calendrier sobre</li>
-        </ul>
+        <span class="pill">Crise / responsabilité</span>
+        <h3>Réduire le risque de simplification</h3>
+        <p>Préparer une parole solide sur des sujets sensibles pour rester factuel, audible et utile aux décideurs.</p>
       </div>
     </div>
   </section>
 
-  <!-- FINAL -->
-  <section class="final" id="contact">
-    <h2>Échange confidentiel</h2>
-    <p>Un premier échange permet de vérifier si votre action se prête à un traitement économique pertinent — et dans quel cadre.</p>
-    <div class="cta">
-      <a href="mailto:hocine.reguida@enplateau.fr" class="btn">hocine.reguida@enplateau.fr</a>
+  <!-- ARCHITECTURE -->
+  <section class="section" id="architecturesequence">
+    <h2>Comment se construit une émission ?</h2>
+    <p class="measure">
+      Une “séquence média” articule préparation, réalisation et réutilisation. Elle transforme une émission en contenu utile, réexploitable, et cohérent avec vos autres prises de parole.
+    </p>
+
+    <div class="grid-3">
+      <div class="card featured">
+        <span class="pill">1 — Amont</span>
+        <h3>Structurer</h3>
+        <p>Clarifier le sujet, les mécanismes, les preuves, les points sensibles et le niveau de détail adapté au format.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">2 — Émission</span>
+        <h3>Rendre intelligible</h3>
+        <p>Partir d’un enjeu économique, social ou territorial, puis situer votre rôle avec précision, sobriété et lisibilité.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">3 — Aval</span>
+        <h3>Réutiliser</h3>
+        <p>Transformer l’émission en actifs : dossiers, supports partenaires, éléments de plaidoyer, recrutement, messages prêts à reprendre.</p>
+      </div>
     </div>
-    <p style="margin-top:16px;font-size:14px;opacity:.82;">Accord de confidentialité possible avant tout échange approfondi.</p>
+  </section>
+
+  <!-- CADRE -->
+  <section class="section">
+    <h2>Un travail compatible avec vos organisations</h2>
+    <p class="measure">
+      Le travail s’inscrit dans vos circuits de validation : direction, présidence, communication, plaidoyer, partenaires financeurs, réseaux. L’objectif est simple : clarifier le message, préparer les réponses difficiles et tenir une ligne lisible.
+    </p>
+  </section>
+
+  <!-- LIGNE -->
+  <section class="section">
+    <h2>Notre ligne</h2>
+    <p class="measure">
+      L’objectif n’est ni l’auto-promotion ni le registre militant. Au contraire : parler “vrai”, utile, compréhensible, avec des faits, des mécanismes et des limites assumées.
+    </p>
+    <p class="measure" style="color:var(--muted);margin-top:-6px;">
+      Cette approche n’est pas adaptée aux communications purement promotionnelles ni aux discours déconnectés des réalités économiques.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="final" id="contact">
+    <h2>Cadrer une séquence</h2>
+    <p>
+      Un échange confidentiel permet de vérifier si votre action, votre sujet et votre moment se prêtent à un traitement économique pertinent — et dans quel cadre.
+    </p>
+    <div class="cta">
+      <a href="mailto:contact@enplateau.fr" class="btn btn-primary">contact@enplateau.fr</a>
+    </div>
+    <p style="margin-top:16px;font-size:14px;opacity:.82;">
+      Lorsque nécessaire, un accord de confidentialité peut être formalisé en amont de toute analyse approfondie.
+    </p>
   </section>
 
 </div>
