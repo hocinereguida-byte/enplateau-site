@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>EN PLATEAU — Entrepreneurs</title>
-<meta name="description" content="EN PLATEAU accompagne les entrepreneurs, fondateurs, dirigeants de TPE et artisans dans leurs prises de parole à forte visibilité : préparation éditoriale, émissions économiques, et réutilisation des contenus." />
+<title>EN PLATEAU â€” Entrepreneurs</title>
+<meta name="description" content="EN PLATEAU accompagne les entrepreneurs, fondateurs, dirigeants de TPE et artisans dans leurs prises de parole Ã  forte visibilitÃ© : prÃ©paration Ã©ditoriale, Ã©missions Ã©conomiques, et rÃ©utilisation des contenus." />
 <link rel="canonical" href="https://enplateau.fr/entrepreneurs.html" />
 
 <style>
@@ -83,7 +83,7 @@ p{margin:0 0 18px;}
 .hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-top:10px;}
 .hero .lead{max-width:860px;margin:0 auto;opacity:.92;font-size:16px;}
 
-/* Logos médias */
+/* Logos mÃ©dias */
 .media-logos{
   display:flex;
   flex-wrap:wrap;
@@ -183,7 +183,7 @@ p{margin:0 0 18px;}
 
 <div class="header-wrap">
   <header class="header" aria-label="Navigation principale">
-    <a class="brand" href="index.html" aria-label="EN PLATEAU — Accueil">
+    <a class="brand" href="index.html" aria-label="EN PLATEAU â€” Accueil">
       <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-name">EN&nbsp;PLATEAU</span>
     </a>
@@ -192,7 +192,7 @@ p{margin:0 0 18px;}
       <a class="active" href="entrepreneurs.html" aria-current="page">Entrepreneurs</a>
       <a href="entreprises.html">Entreprises</a>
       <a href="secteur-public.html">Secteur public</a>
-      <a href="a-propos.html">À propos</a>
+      <a href="a-propos.html">Ã€ propos</a>
     </nav>
 
     <button class="burger" id="burger" aria-expanded="false" aria-controls="mobileNav">Menu</button>
@@ -202,7 +202,7 @@ p{margin:0 0 18px;}
     <a href="entrepreneurs.html" aria-current="page">Entrepreneurs</a>
     <a href="entreprises.html">Entreprises</a>
     <a href="secteur-public.html">Secteur public</a>
-    <a href="a-propos.html">À propos</a>
+    <a href="a-propos.html">Ã€ propos</a>
   </div>
 </div>
 
@@ -213,46 +213,46 @@ p{margin:0 0 18px;}
     <div class="kicker">Entrepreneurs</div>
     <h1>Prendre la parole<br>au bon moment</h1>
     <p class="lead">
-      Pour les fondateurs, dirigeants de TPE, artisans et experts qui veulent rendre leur activité lisible, crédible et visible.
+      Pour les fondateurs, dirigeants de TPE, artisans et experts qui veulent rendre leur activitÃ© lisible, crÃ©dible et visible.
     </p>
-    <div class="baseline">Préparation · émission · réutilisation</div>
+    <div class="baseline">PrÃ©paration Â· Ã©mission Â· rÃ©utilisation</div>
   </section>
 
-  <!-- PASSER / PRÉPARER / RÉUTILISER -->
-  <section class="section" aria-label="Pourquoi passer préparer reutiliser">
+  <!-- PASSER / PRÃ‰PARER / RÃ‰UTILISER -->
+  <section class="section" aria-label="Pourquoi passer prÃ©parer reutiliser">
     <div class="grid-3">
 
       <div class="card">
         <span class="pill">Passer</span>
-        <h3>Pourquoi passer dans une émission ?</h3>
-        <p>Donner plus de portée à votre activité.</p>
-        <p>Montrer votre savoir-faire dans un cadre crédible.</p>
-        <p>Vous faire connaître autrement que par la publicité ou les réseaux sociaux.</p>
+        <h3>Pourquoi passer dans une Ã©mission ?</h3>
+        <p>Donner plus de portÃ©e Ã  votre activitÃ©.</p>
+        <p>Montrer votre savoir-faire dans un cadre crÃ©dible.</p>
+        <p>Vous faire connaÃ®tre autrement que par la publicitÃ© ou les rÃ©seaux sociaux.</p>
       </div>
 
       <div class="card featured">
-        <span class="pill">Préparer</span>
-        <h3>Pourquoi préparer une émission ?</h3>
-        <p>Parce qu’un bon sujet mal exprimé perd de sa force.</p>
-        <p>Parce qu’une parole claire inspire plus confiance.</p>
-        <p>Parce qu’une intervention bien préparée peut vraiment changer la perception de votre activité.</p>
+        <span class="pill">PrÃ©parer</span>
+        <h3>Pourquoi prÃ©parer une Ã©mission ?</h3>
+        <p>Parce quâ€™un bon sujet mal exprimÃ© perd de sa force.</p>
+        <p>Parce quâ€™une parole claire inspire plus confiance.</p>
+        <p>Parce quâ€™une intervention bien prÃ©parÃ©e peut vraiment changer la perception de votre activitÃ©.</p>
       </div>
 
       <div class="card">
-        <span class="pill">Réutiliser</span>
-        <h3>Pourquoi réutiliser une émission ?</h3>
-        <p>L’émission ne doit pas vivre un seul jour.</p>
-        <p>Elle peut nourrir votre communication, votre prospection et votre crédibilité.</p>
+        <span class="pill">RÃ©utiliser</span>
+        <h3>Pourquoi rÃ©utiliser une Ã©mission ?</h3>
+        <p>Lâ€™Ã©mission ne doit pas vivre un seul jour.</p>
+        <p>Elle peut nourrir votre communication, votre prospection et votre crÃ©dibilitÃ©.</p>
         <p>Elle peut devenir un contenu utile pour vos clients, partenaires et futurs contacts.</p>
       </div>
 
     </div>
   </section>
 
-  <!-- MÉDIAS -->
+  <!-- MÃ‰DIAS -->
   <section class="section" id="medias">
     <p style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;">
-      Environnements médias partenaires
+      Environnements mÃ©dias partenaires
     </p>
 
     <div class="media-logos">
@@ -269,50 +269,50 @@ p{margin:0 0 18px;}
 
   <!-- SITUATIONS -->
   <section class="section" id="situations">
-    <h2>Dans quels cas cette démarche est utile ?</h2>
+    <h2>Dans quels cas cette dÃ©marche est utile ?</h2>
     <p class="measure">
-      Cette démarche n’est pas faite pour “faire parler de soi” à tout prix.
-      Elle est utile quand un entrepreneur a quelque chose de solide à rendre visible et compréhensible.
+      Cette dÃ©marche nâ€™est pas faite pour â€œfaire parler de soiâ€ Ã  tout prix.
+      Elle est utile quand un entrepreneur a quelque chose de solide Ã  rendre visible et comprÃ©hensible.
     </p>
 
     <div class="grid-3">
 
       <div class="card">
         <span class="pill">Lancement</span>
-        <h3>Faire connaître une activité sérieuse</h3>
+        <h3>Faire connaÃ®tre une activitÃ© sÃ©rieuse</h3>
         <p>
-          Vous lancez une activité, vous changez d’échelle ou vous voulez être perçu autrement que comme “un petit acteur”.
+          Vous lancez une activitÃ©, vous changez dâ€™Ã©chelle ou vous voulez Ãªtre perÃ§u autrement que comme â€œun petit acteurâ€.
         </p>
         <ul>
-          <li>Présenter clairement votre positionnement</li>
-          <li>Donner de la crédibilité à votre trajectoire</li>
-          <li>Créer un premier socle de visibilité qualitative</li>
+          <li>PrÃ©senter clairement votre positionnement</li>
+          <li>Donner de la crÃ©dibilitÃ© Ã  votre trajectoire</li>
+          <li>CrÃ©er un premier socle de visibilitÃ© qualitative</li>
         </ul>
       </div>
 
       <div class="card featured">
-        <span class="pill">Développement</span>
+        <span class="pill">DÃ©veloppement</span>
         <h3>Rendre votre expertise visible</h3>
         <p>
-          Vous avez une vraie expérience, un savoir-faire, une lecture métier, mais cela reste peu visible à l’extérieur.
+          Vous avez une vraie expÃ©rience, un savoir-faire, une lecture mÃ©tier, mais cela reste peu visible Ã  lâ€™extÃ©rieur.
         </p>
         <ul>
           <li>Faire comprendre ce que vous apportez</li>
-          <li>Sortir d’une communication trop floue ou trop artisanale</li>
-          <li>Installer une image plus claire et plus crédible</li>
+          <li>Sortir dâ€™une communication trop floue ou trop artisanale</li>
+          <li>Installer une image plus claire et plus crÃ©dible</li>
         </ul>
       </div>
 
       <div class="card">
-        <span class="pill">Moment clé</span>
-        <h3>Appuyer une étape importante</h3>
+        <span class="pill">Moment clÃ©</span>
+        <h3>Appuyer une Ã©tape importante</h3>
         <p>
-          Salon, ouverture, développement commercial, recherche de partenaires, évolution d’activité : un moment où il faut être compris rapidement.
+          Salon, ouverture, dÃ©veloppement commercial, recherche de partenaires, Ã©volution dâ€™activitÃ© : un moment oÃ¹ il faut Ãªtre compris rapidement.
         </p>
         <ul>
-          <li>Éviter l’improvisation</li>
-          <li>Préparer les bons messages</li>
-          <li>Transformer l’exposition en levier concret</li>
+          <li>Ã‰viter lâ€™improvisation</li>
+          <li>PrÃ©parer les bons messages</li>
+          <li>Transformer lâ€™exposition en levier concret</li>
         </ul>
       </div>
 
@@ -321,14 +321,14 @@ p{margin:0 0 18px;}
 
   <!-- POSITIONNEMENT -->
   <section class="section">
-    <h2>Une prise de parole utile, pas une mise en scène</h2>
+    <h2>Une prise de parole utile, pas une mise en scÃ¨ne</h2>
     <p class="measure">
-      EN PLATEAU n’intervient pas pour “faire passer quelqu’un à la télévision” sans raison.
-      Le sujet doit avoir du fond, de la cohérence et une vraie utilité.
+      EN PLATEAU nâ€™intervient pas pour â€œfaire passer quelquâ€™un Ã  la tÃ©lÃ©visionâ€ sans raison.
+      Le sujet doit avoir du fond, de la cohÃ©rence et une vraie utilitÃ©.
     </p>
     <p class="measure">
-      Notre travail consiste à clarifier ce que vous voulez dire, à préparer l’intervention dans un cadre éditorial sérieux,
-      puis à organiser la réutilisation des contenus pour qu’ils vous servent vraiment après la diffusion.
+      Notre travail consiste Ã  clarifier ce que vous voulez dire, Ã  prÃ©parer lâ€™intervention dans un cadre Ã©ditorial sÃ©rieux,
+      puis Ã  organiser la rÃ©utilisation des contenus pour quâ€™ils vous servent vraiment aprÃ¨s la diffusion.
     </p>
   </section>
 
@@ -336,40 +336,40 @@ p{margin:0 0 18px;}
   <section class="section" id="intervention">
     <h2>Comment nous intervenons</h2>
     <p class="measure">
-      Nous vous aidons à transformer une prise de parole en contenu crédible, compréhensible et réutilisable.
+      Nous vous aidons Ã  transformer une prise de parole en contenu crÃ©dible, comprÃ©hensible et rÃ©utilisable.
     </p>
 
     <div class="grid-3">
       <div class="card featured">
-        <span class="pill">1 — Clarifier</span>
+        <span class="pill">1 â€” Clarifier</span>
         <h3>Ce que vous voulez vraiment dire</h3>
-        <p>Avant toute émission, il faut rendre votre sujet simple, solide et intelligible.</p>
+        <p>Avant toute Ã©mission, il faut rendre votre sujet simple, solide et intelligible.</p>
         <ul>
           <li>Clarification du message</li>
-          <li>Hiérarchisation des idées</li>
-          <li>Préparation à l’échange</li>
+          <li>HiÃ©rarchisation des idÃ©es</li>
+          <li>PrÃ©paration Ã  lâ€™Ã©change</li>
         </ul>
       </div>
 
       <div class="card">
-        <span class="pill">2 — Cadrer</span>
-        <h3>Préparer l’intervention</h3>
-        <p>Nous travaillons le fond, l’angle, et la façon de rendre votre parole crédible dans un format média.</p>
+        <span class="pill">2 â€” Cadrer</span>
+        <h3>PrÃ©parer lâ€™intervention</h3>
+        <p>Nous travaillons le fond, lâ€™angle, et la faÃ§on de rendre votre parole crÃ©dible dans un format mÃ©dia.</p>
         <ul>
-          <li>Angle éditorial</li>
-          <li>Questions à anticiper</li>
-          <li>Cohérence de la séquence</li>
+          <li>Angle Ã©ditorial</li>
+          <li>Questions Ã  anticiper</li>
+          <li>CohÃ©rence de la sÃ©quence</li>
         </ul>
       </div>
 
       <div class="card">
-        <span class="pill">3 — Réutiliser</span>
+        <span class="pill">3 â€” RÃ©utiliser</span>
         <h3>Faire vivre le contenu</h3>
-        <p>Une fois l’émission diffusée, le contenu peut continuer à vous servir durablement.</p>
+        <p>Une fois lâ€™Ã©mission diffusÃ©e, le contenu peut continuer Ã  vous servir durablement.</p>
         <ul>
-          <li>Extraits réemployables</li>
-          <li>Citations et séquences utiles</li>
-          <li>Réutilisation cohérente dans votre communication</li>
+          <li>Extraits rÃ©employables</li>
+          <li>Citations et sÃ©quences utiles</li>
+          <li>RÃ©utilisation cohÃ©rente dans votre communication</li>
         </ul>
       </div>
     </div>
@@ -377,46 +377,46 @@ p{margin:0 0 18px;}
 
   <!-- CADRES D'INTERVENTION -->
   <section class="section" id="cadres">
-    <h2>Trois cadres d’intervention</h2>
+    <h2>Trois cadres dâ€™intervention</h2>
     <p class="measure">
-      Le bon niveau d’accompagnement dépend de votre sujet, de votre maturité et du moment que vous traversez.
+      Le bon niveau dâ€™accompagnement dÃ©pend de votre sujet, de votre maturitÃ© et du moment que vous traversez.
     </p>
 
     <div class="grid-3">
       <div class="card">
-        <span class="pill">Cadre ciblé</span>
-        <h3>Sécuriser un moment précis</h3>
-        <p>Pour une échéance claire : salon, lancement, annonce, prise de parole ponctuelle.</p>
+        <span class="pill">Cadre ciblÃ©</span>
+        <h3>SÃ©curiser un moment prÃ©cis</h3>
+        <p>Pour une Ã©chÃ©ance claire : salon, lancement, annonce, prise de parole ponctuelle.</p>
         <ul>
-          <li>1 séquence économique</li>
-          <li>Préparation resserrée</li>
-          <li>Réutilisation sur 90 jours</li>
+          <li>1 sÃ©quence Ã©conomique</li>
+          <li>PrÃ©paration resserrÃ©e</li>
+          <li>RÃ©utilisation sur 90 jours</li>
         </ul>
-        <div class="meta"><strong>Délai :</strong> à partir de 2 semaines.</div>
+        <div class="meta"><strong>DÃ©lai :</strong> Ã  partir de 2 semaines.</div>
       </div>
 
       <div class="card featured">
-        <span class="pill">Cadre intermédiaire</span>
-        <h3>Installer une crédibilité plus forte</h3>
-        <p>Pour un entrepreneur qui veut rendre son activité plus lisible et plus crédible dans la durée.</p>
+        <span class="pill">Cadre intermÃ©diaire</span>
+        <h3>Installer une crÃ©dibilitÃ© plus forte</h3>
+        <p>Pour un entrepreneur qui veut rendre son activitÃ© plus lisible et plus crÃ©dible dans la durÃ©e.</p>
         <ul>
-          <li>2 séquences complémentaires</li>
-          <li>Travail éditorial approfondi</li>
-          <li>Réutilisation sur plusieurs mois</li>
+          <li>2 sÃ©quences complÃ©mentaires</li>
+          <li>Travail Ã©ditorial approfondi</li>
+          <li>RÃ©utilisation sur plusieurs mois</li>
         </ul>
-        <div class="meta"><strong>Délai :</strong> à partir de 3 semaines.</div>
+        <div class="meta"><strong>DÃ©lai :</strong> Ã  partir de 3 semaines.</div>
       </div>
 
       <div class="card">
         <span class="pill">Cadre approfondi</span>
-        <h3>Accompagner un vrai changement d’échelle</h3>
-        <p>Pour une trajectoire de développement plus structurante ou une exposition plus ambitieuse.</p>
+        <h3>Accompagner un vrai changement dâ€™Ã©chelle</h3>
+        <p>Pour une trajectoire de dÃ©veloppement plus structurante ou une exposition plus ambitieuse.</p>
         <ul>
-          <li>3 à 4 séquences complémentaires</li>
+          <li>3 Ã  4 sÃ©quences complÃ©mentaires</li>
           <li>Architecture de messages approfondie</li>
-          <li>Réutilisation organisée sur plusieurs mois</li>
+          <li>RÃ©utilisation organisÃ©e sur plusieurs mois</li>
         </ul>
-        <div class="meta"><strong>Délai :</strong> à partir de 4 semaines.</div>
+        <div class="meta"><strong>DÃ©lai :</strong> Ã  partir de 4 semaines.</div>
       </div>
     </div>
   </section>
@@ -426,48 +426,48 @@ p{margin:0 0 18px;}
     <h2>Pour qui ?</h2>
     <div class="note">
       <p style="margin:0 0 12px;color:var(--muted);font-size:14px;">
-        Cette page s’adresse notamment aux :
+        Cette page sâ€™adresse notamment aux :
       </p>
       <ul style="margin:0 0 0 18px;color:var(--muted);font-size:14px;">
         <li>fondateurs et cofondateurs</li>
         <li>dirigeants de TPE</li>
-        <li>artisans avec une vraie singularité</li>
-        <li>experts métier ou profils à forte légitimité terrain</li>
-        <li>indépendants ou structures en développement qui veulent gagner en lisibilité</li>
+        <li>artisans avec une vraie singularitÃ©</li>
+        <li>experts mÃ©tier ou profils Ã  forte lÃ©gitimitÃ© terrain</li>
+        <li>indÃ©pendants ou structures en dÃ©veloppement qui veulent gagner en lisibilitÃ©</li>
       </ul>
     </div>
   </section>
 
   <!-- ORGANISATION -->
   <section class="section" id="organisation">
-    <h2>Organisation de l’accompagnement</h2>
+    <h2>Organisation de lâ€™accompagnement</h2>
     <div class="soft">
-      <h3 style="margin:0 0 10px;color:var(--ink);">Un accompagnement resserré et lisible</h3>
+      <h3 style="margin:0 0 10px;color:var(--ink);">Un accompagnement resserrÃ© et lisible</h3>
       <p style="margin:0 0 14px;color:var(--muted);font-size:14px;">
-        Vous avez un interlocuteur unique côté EN PLATEAU.
-        L’objectif n’est pas de complexifier les choses, mais de rendre votre prise de parole plus juste, plus claire et plus utile.
+        Vous avez un interlocuteur unique cÃ´tÃ© EN PLATEAU.
+        Lâ€™objectif nâ€™est pas de complexifier les choses, mais de rendre votre prise de parole plus juste, plus claire et plus utile.
       </p>
       <ul>
-        <li>Échange de cadrage sur votre activité et votre objectif</li>
-        <li>Travail sur les messages, l’angle et la préparation</li>
-        <li>Articulation avec l’écosystème de production et le média</li>
-        <li>Organisation de la réutilisation des contenus après diffusion</li>
+        <li>Ã‰change de cadrage sur votre activitÃ© et votre objectif</li>
+        <li>Travail sur les messages, lâ€™angle et la prÃ©paration</li>
+        <li>Articulation avec lâ€™Ã©cosystÃ¨me de production et le mÃ©dia</li>
+        <li>Organisation de la rÃ©utilisation des contenus aprÃ¨s diffusion</li>
       </ul>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="final" id="contact">
-    <h2>Échange confidentiel</h2>
+    <h2>Ã‰change confidentiel</h2>
     <p>
-      Un premier échange permet de voir si votre sujet, votre moment et votre niveau de maturité
-      correspondent à ce type de démarche.
+      Un premier Ã©change permet de voir si votre sujet, votre moment et votre niveau de maturitÃ©
+      correspondent Ã  ce type de dÃ©marche.
     </p>
     <div class="cta">
       <a href="mailto:hocine.reguida@enplateau.fr" class="btn btn-primary">hocine.reguida@enplateau.fr</a>
     </div>
     <p style="margin-top:16px;font-size:14px;opacity:.82;">
-      Accord de confidentialité possible avant tout échange approfondi.
+      Accord de confidentialitÃ© possible avant tout Ã©change approfondi.
     </p>
   </section>
 
