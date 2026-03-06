@@ -4,8 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>EN PLATEAU — Secteur public</title>
-<meta name="description" content="EN PLATEAU accompagne ministères, collectivités et agences qui souhaitent intervenir dans des émissions économiques : messages clairs, cohérence inter-services, préparation des porte-parole et réutilisation des contenus." />
+<meta name="description" content="EN PLATEAU accompagne collectivités, agences, opérateurs publics et institutions dans la préparation d’émissions économiques : clarification des messages, coordination des porte-parole, cadrage éditorial et réutilisation stratégique des contenus." />
+<meta name="keywords" content="secteur public, collectivités, institutions, agences publiques, opérateurs publics, émission économique, média, prise de parole publique, attractivité territoriale, filières, investissements, emploi, transition énergétique, cadrage éditorial, préparation interview, stratégie média, EN PLATEAU" />
 <link rel="canonical" href="https://enplateau.fr/secteur-public.html" />
+
 <style>
 :root{
   --ink:#0B0F19;
@@ -18,39 +20,23 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  line-height:1.7;
-  color:var(--slate);
-  background:var(--bg);
-}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;color:var(--slate);background:var(--bg);}
 a{color:inherit;text-decoration:none}
 .container{max-width:var(--max);margin:0 auto;padding:34px 22px 110px;}
 
-/* Header (commun) */
-.header-wrap{
-  position:sticky;top:0;z-index:50;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:saturate(140%) blur(10px);
-  border-bottom:1px solid var(--line);
-}
-.header{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:12px 22px;
-  display:flex;align-items:center;justify-content:space-between;gap:14px;
-}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+/* Header (desktop horizontal / mobile burger) */
+.header-wrap{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);}
+.header{max-width:var(--max);margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.brand{display:flex;align-items:center;gap:10px}
 .brand-mark{width:34px;height:34px;border-radius:10px;background:var(--sig);display:inline-block}
 .brand-name{font-weight:900;letter-spacing:-.02em;color:var(--ink)}
 .nav{display:none;gap:18px;align-items:center}
-.nav a{font-size:14px;color:var(--muted);text-decoration:none;font-weight:750;padding:10px 10px;border-radius:999px}
+.nav a{font-size:14px;color:var(--muted);font-weight:750;padding:10px 10px;border-radius:999px}
 .nav a:hover{color:var(--ink);background:#f5f7fb}
 .nav a.active{color:var(--ink);background:#eef2f8}
 .burger{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-weight:800;color:var(--ink);cursor:pointer}
 .mobile{display:none;border-top:1px solid var(--line);}
-.mobile a{display:block;padding:14px 22px;text-decoration:none;color:var(--muted);font-weight:750}
+.mobile a{display:block;padding:14px 22px;color:var(--muted);font-weight:750}
 .mobile a:hover{background:#f5f7fb;color:var(--ink)}
 @media(min-width:900px){
   .nav{display:flex}
@@ -63,40 +49,56 @@ h1{font-size:clamp(30px,6vw,48px);line-height:1.08;margin:0 0 14px;color:#fff;fo
 h2{font-size:clamp(24px,4vw,36px);line-height:1.15;margin:0 0 18px;color:var(--ink);font-weight:850;letter-spacing:-0.01em;}
 h3{font-size:20px;margin:0 0 10px;color:var(--ink);font-weight:760;}
 p{margin:0 0 18px;}
+p strong{font-weight:500;}
+
+/* Hero */
+.hero{background:var(--sig);color:#fff;border-radius:26px;padding:54px 22px 44px;margin:26px 0 34px;text-align:center;}
+.hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
+.hero .lead{max-width:860px;margin:0 auto 0;opacity:.92;font-size:16px;}
 
 /* Sections */
 .section{margin-bottom:72px;text-align:center;}
 .measure{max-width:900px;margin-left:auto;margin-right:auto;}
-
-/* Hero (sans CTA) */
-.hero{
-  background:var(--sig);
-  color:#fff;
-  border-radius:26px;
-  padding:54px 22px 44px;
-  margin:26px 0 24px; /* plus serré pour enchaîner avec logos */
-  text-align:center;
+.grid-3{display:grid;gap:22px;margin-top:8px;}
+.grid-4{display:grid;gap:22px;margin-top:26px;}
+@media(min-width:900px){
+  .grid-3{grid-template-columns:repeat(3,1fr);}
+  .grid-4{grid-template-columns:repeat(4,1fr);}
 }
-.hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-bottom:10px;}
-.hero .lead{max-width:860px;margin:0 auto 0;opacity:.92;font-size:16px;}
+.card{border:1px solid var(--line);border-radius:20px;padding:24px;background:#fff;text-align:left;}
+.card.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
+.card p{font-size:14px;color:var(--muted);margin:0 0 14px}
+.pill{display:inline-block;font-size:12px;font-weight:850;border:1px solid var(--line);padding:8px 10px;border-radius:999px;color:var(--muted);background:#fff}
 
-/* Libellé discret */
-.kicker-lite{
-  font-size:12px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin:0 0 18px;
+/* Links */
+.card a.link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:14px;
+  font-size:14px;
+  font-weight:750;
+  color:var(--ink);
+  text-decoration:none;
 }
+.card a.link::after{
+  content:"→";
+  font-weight:900;
+  opacity:.55;
+  transform:translateX(0);
+  transition:transform .15s ease, opacity .15s ease;
+}
+.card a.link:hover{text-decoration:underline;}
+.card a.link:hover::after{opacity:.9;transform:translateX(2px);}
 
-/* Logos médias (comme Home) */
+/* Logos médias */
 .media-logos{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   align-items:center;
-  gap:80px;
-  margin:18px 0 0;
+  gap:70px;
+  margin:6px 0 0;
 }
 .media-logos img{
   height:80px;
@@ -107,64 +109,15 @@ p{margin:0 0 18px;}
 }
 .media-logos img:hover{opacity:1;transform:translateY(-2px);}
 
-/* Grid / Cards */
-.grid-3{display:grid;gap:22px;margin-top:26px;}
-@media(min-width:900px){ .grid-3{grid-template-columns:repeat(3,1fr);} }
-
-.card{
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:24px;
-  background:#fff;
-  text-align:left;
-}
-.card.featured{box-shadow:0 18px 40px rgba(0,0,0,.06);border:1px solid rgba(11,31,58,.18);}
-.card p{font-size:14px;color:var(--muted);margin:0 0 14px}
-.pill{
-  display:inline-block;
-  font-size:12px;
-  font-weight:850;
-  border:1px solid var(--line);
-  padding:8px 10px;
-  border-radius:999px;
-  color:var(--muted);
-  background:#fff;
-  margin-bottom:10px;
-}
-.card ul{margin:10px 0 0 18px;padding:0;color:var(--muted);font-size:14px}
-.card li{margin:6px 0}
-.meta{margin-top:14px;font-size:13px;color:var(--muted);}
-
-/* Encadrés */
-.exec-block{
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:28px;
-  background:#f8f9fb;
-  text-align:left;
-  max-width:900px;
-  margin:0 auto;
-}
-.exec-block h3{margin:0 0 10px}
-.exec-block ul{margin:10px 0 0 18px;color:var(--muted)}
-.exec-block li{margin:6px 0}
-
 /* Final */
 .cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
-.btn{
-  padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;
-  display:inline-flex;align-items:center;justify-content:center;
-}
+.btn{padding:14px 20px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;}
 .btn-primary{background:#fff;color:var(--sig);}
-.final{
-  background:var(--sig);
-  color:#fff;
-  border-radius:26px;
-  padding:56px 22px;
-  text-align:center;
-}
+.final{background:var(--sig);color:#fff;border-radius:26px;padding:56px 22px;text-align:center;}
 .final h2{color:#fff;}
-.final p{opacity:.92}
+
+#medias{margin-bottom:10px;}
+.grid-3{margin-top:8px;}
 </style>
 </head>
 <body>
@@ -177,9 +130,8 @@ p{margin:0 0 18px;}
     </a>
 
     <nav class="nav" aria-label="Navigation">
-      <a href="grands-comptes.html">Grands comptes</a>
-      <a href="pme-eti.html">PME</a>
-      <a href="associations.html">Associations</a>
+      <a href="entrepreneurs.html">Entrepreneurs</a>
+      <a href="entreprises.html">Entreprises</a>
       <a class="active" href="secteur-public.html" aria-current="page">Secteur public</a>
       <a href="a-propos.html">À propos</a>
     </nav>
@@ -188,9 +140,8 @@ p{margin:0 0 18px;}
   </header>
 
   <div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
-    <a href="grands-comptes.html">Grands comptes</a>
-    <a href="pme-eti.html">PME</a>
-    <a href="associations.html">Associations</a>
+    <a href="entrepreneurs.html">Entrepreneurs</a>
+    <a href="entreprises.html">Entreprises</a>
     <a href="secteur-public.html" aria-current="page">Secteur public</a>
     <a href="a-propos.html">À propos</a>
   </div>
@@ -198,49 +149,20 @@ p{margin:0 0 18px;}
 
 <div class="container">
 
-  <!-- HERO (sans boutons) -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="kicker">Secteur public · émissions économiques</div>
-    <h1>Parler économie<br>au nom d’un territoire</h1>
+    <div class="kicker">Secteur public</div>
+    <h1>Créer une émission économique.<br>Rendre une stratégie territoriale lisible.</h1>
     <p class="lead">
-      Sur des plateaux économiques, une institution ne “fait pas de communication”.
-      Elle rend une stratégie lisible : attractivité, investissements, filières, emploi qualifié,
-      innovation, tourisme, santé, transition énergétique.
+      Pour les collectivités, agences, opérateurs publics et institutions qui doivent parler attractivité, investissements, filières, emploi, transition ou innovation dans un cadre exigeant.
     </p>
   </section>
-  <!-- POURQUOI C'EST STRATÉGIQUE (conversion) -->
-  <section class="section" aria-label="Pourquoi passer préparer activer">
-    <div class="grid-3">
 
-      <div class="card">
-        <span class="pill">Passer</span>
-        <h3>Pourquoi passer dans une émission ?</h3>
-        <p>Accéder à des médias économiques nationaux.</p>
-        <p>Donner une visibilité stratégique à votre trajectoire.</p>
-        <p>Installer votre organisation dans les conversations de votre secteur.</p>
-      </div>
-
-      <div class="card featured">
-        <span class="pill">Préparer</span>
-        <h3>Pourquoi préparer une émission ?</h3>
-        <p>Une phrase mal calibrée peut devenir un angle éditorial.</p>
-        <p>Une séquence bien cadrée crédibilise un positionnement.</p>
-        <p>Une intervention bien préparée transforme l’exposition en levier stratégique.</p>
-      </div>
-
-      <div class="card">
-        <span class="pill">Activer</span>
-        <h3>Pourquoi activer une émission ?</h3>
-        <p>Une émission devient un actif de communication durable.</p>
-        <p>Elle peut nourrir votre communication institutionnelle et commerciale.</p>
-        <p>Elle alimente votre écosystème : partenaires, recrutement, influence.</p>
-      </div>
-
-    </div>
-  </section>
-  <!-- LOGOS + PARTENARIATS (sous le hero, comme Home) -->
+  <!-- MÉDIAS -->
   <section class="section" id="medias">
-    <p class="kicker-lite">Environnements médias partenaires</p>
+    <p style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;">
+      Nos émissions prennent place dans ces environnements médias
+    </p>
 
     <div class="media-logos">
       <img src="images/bfm-business.svg" alt="BFM Business">
@@ -248,198 +170,204 @@ p{margin:0 0 18px;}
       <img src="images/la-tribune.svg" alt="La Tribune">
       <img src="images/forbes.svg" alt="Forbes">
     </div>
+  </section>
 
-    <p style="margin-top:18px;font-size:14px;color:var(--muted);">
-      En partenariat avec <strong>BadM &amp; Scribeo</strong>
+  <!-- POURQUOI C'EST STRATÉGIQUE -->
+  <section class="section" aria-label="Pourquoi passer préparer réutiliser">
+    <h2 style="margin-top:10px;">Pourquoi une émission devient stratégique</h2>
+    <div class="grid-3">
+
+      <div class="card">
+        <span class="pill">Passer</span>
+        <h3>Pourquoi et comment avoir une forte visibilité ?</h3>
+        <p>Accéder à des médias économiques nationaux.</p>
+        <p>Donner une visibilité stratégique à une trajectoire de territoire ou d’institution.</p>
+        <p>Installer un sujet public dans les conversations économiques, au-delà du seul cadre administratif.</p>
+      </div>
+
+      <div class="card featured">
+        <span class="pill">Préparer</span>
+        <h3>Pourquoi et comment préparer une émission ?</h3>
+        <p>Une phrase mal calibrée peut devenir un angle éditorial ou politique.</p>
+        <p>Une séquence bien cadrée crédibilise un positionnement, une politique publique ou une ambition territoriale.</p>
+        <p>Une intervention bien préparée transforme l’exposition en levier d’attractivité, de lisibilité et de confiance.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">Réutiliser</span>
+        <h3>Pourquoi et comment réutiliser cette séquence ?</h3>
+        <p>Une émission devient un actif de communication durable.</p>
+        <p>Elle peut nourrir l’attractivité, les relations partenaires, les dossiers économiques et la communication institutionnelle.</p>
+        <p>Elle alimente votre écosystème : entreprises, investisseurs, talents, filières, opérateurs, influence.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTEXTES -->
+  <section class="section" id="cibles">
+    <h2>Des contextes différents. Une même exigence.</h2>
+    <p class="measure">
+      Adapter le cadre, le ton et la préparation à la réalité d’une collectivité, d’une agence, d’un opérateur public ou d’une institution exposée.
+    </p>
+
+    <div class="grid-4">
+      <div class="card">
+        <span class="pill">Collectivité</span>
+        <h3>Porter une stratégie territoriale</h3>
+        <p>Attractivité, emploi, filières, transition, santé, tourisme : rendre une ambition lisible au-delà du territoire.</p>
+        <a class="link" href="#micro-cas">En savoir plus</a>
+      </div>
+
+      <div class="card">
+        <span class="pill">Agence d’attractivité</span>
+        <h3>Rendre un territoire crédible</h3>
+        <p>Faire comprendre pourquoi un territoire mérite d’être choisi par des talents, des investisseurs ou des entreprises.</p>
+        <a class="link" href="#micro-cas">En savoir plus</a>
+      </div>
+
+      <div class="card">
+        <span class="pill">Opérateur public</span>
+        <h3>Expliquer une action structurée</h3>
+        <p>Programmes, expérimentations, dispositifs, résultats : parler utile, sans jargon administratif ni simplification excessive.</p>
+        <a class="link" href="#micro-cas">En savoir plus</a>
+      </div>
+
+      <div class="card">
+        <span class="pill">Sujet sensible</span>
+        <h3>Tenir une ligne sur un enjeu exposé</h3>
+        <p>Investissements, arbitrages, filières, tensions locales ou nationales : préparer un moment où l’improvisation coûte cher.</p>
+        <a class="link" href="#micro-cas">En savoir plus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIONNEMENT -->
+  <section class="section">
+    <h2>Quand une décision doit être expliquée sans être simplifiée</h2>
+    <p class="measure">
+      Dans le secteur public, une émission utile ne consiste pas à “faire parler” une institution. Elle consiste à rendre intelligible une stratégie, un arbitrage, un programme ou une trajectoire territoriale.
+    </p>
+    <p class="measure">
+      L’enjeu est de parler économie dans un langage accessible, précis et vérifiable, tout en tenant compte des contraintes politiques, administratives et partenariales.
     </p>
   </section>
 
-  <!-- ÉTUDES DE CAS (immédiatement sous les logos) -->
-  <section class="section" id="cas">
-    <h2>Trois cas de figure (secteur public)</h2>
+  <!-- EXEMPLES CONCRETS -->
+  <section class="section" id="micro-cas">
+    <h2>Exemples concrets de situations</h2>
     <p class="measure">
-      Objectif commun : parler à des décideurs et prescripteurs économiques (entreprises, investisseurs, talents, filières),
-      avec une parole stable, vérifiable et réutilisable en interne.
+      Avec un objectif constant : rendre un enjeu public compréhensible, crédible et réutilisable par l’écosystème.
     </p>
 
     <div class="grid-3">
       <div class="card">
         <span class="pill">Agence d’attractivité</span>
         <h3>Attirer cadres, médecins et visiteurs</h3>
-        <p>
-          Territoire rural proche d’une métropole : vous devez rendre l’offre concrète et crédible
-          pour des profils qui comparent et arbitrent vite.
-        </p>
-        <ul>
-          <li>Mettre en avant des faits : accès, services, immobilier, écosystème</li>
-          <li>Donner des preuves : trajectoires, chiffres, projets, partenaires</li>
-          <li>Aligner la parole avec les acteurs locaux (santé, entreprises, tourisme)</li>
-        </ul>
+        <p>Rendre un territoire concret et crédible pour des profils qui comparent vite : accès, services, immobilier, partenaires, projets.</p>
       </div>
 
-      <div class="card featured">
+      <div class="card">
         <span class="pill">Collectivité territoriale</span>
         <h3>Valoriser des initiatives pilotes</h3>
-        <p>
-          Vous avez lancé des expérimentations (mobilité, emploi, santé, transition) et vous voulez
-          qu’elles soient comprises au-delà du territoire.
-        </p>
-        <ul>
-          <li>Expliquer : pourquoi, comment, résultats, conditions de réussite</li>
-          <li>Assumer un cadre : limites, coûts, temporalité, indicateurs</li>
-          <li>Permettre la réplication : partenaires, filières, financeurs</li>
-        </ul>
+        <p>Mobilité, emploi, santé, transition : expliquer pourquoi l’expérimentation existe, comment elle fonctionne et ce qu’elle permet.</p>
       </div>
 
       <div class="card">
         <span class="pill">Communauté de communes</span>
         <h3>Attirer investisseurs et entrepreneurs</h3>
-        <p>
-          Relancer une filière “nouvelles technologies” : vous devez présenter un projet solide,
-          structuré et lisible pour déclencher des prises de contact.
-        </p>
-        <ul>
-          <li>Clarifier la proposition : foncier, énergie, réseau, accompagnement</li>
-          <li>Parler “filière” : compétences, sous-traitance, marchés, donneurs d’ordre</li>
-          <li>Rendre crédible : gouvernance, calendrier, preuves, partenaires</li>
-        </ul>
+        <p>Présenter une proposition solide et lisible : foncier, énergie, compétences, filières, gouvernance, calendrier, partenaires.</p>
       </div>
     </div>
   </section>
 
-  <!-- CE QUE NOUS FAISONS (simple, opérationnel) -->
-  <section class="section" id="ce-que-nous-faisons">
-    <h2>Ce que nous faisons, concrètement</h2>
-    <p class="measure">
-      Nous préparons une prise de parole qui tient face aux questions, qui respecte vos contraintes,
-      et qui peut être reprise ensuite par vos services et partenaires.
+  <!-- SITUATIONS STRATÉGIQUES -->
+  <section class="section" id="situations">
+    <h2>Trois situations où la séquence devient stratégique</h2>
+    <p class="measure" style="color:var(--muted);">
+      La même émission peut servir des objectifs différents : rendre un territoire attractif, expliquer une initiative publique ou sécuriser une prise de parole exposée. Le point commun : ne pas improviser.
     </p>
 
     <div class="grid-3">
       <div class="card">
-        <span class="pill">Amont</span>
-        <h3>Préparer le fond</h3>
-        <p>Messages, preuves, points sensibles, et niveau de détail adapté au format.</p>
-        <ul>
-          <li>Messages clés hiérarchisés</li>
-          <li>Chiffres, exemples, comparaisons utiles</li>
-          <li>Questions difficiles anticipées</li>
-        </ul>
+        <span class="pill">Attractivité / rayonnement</span>
+        <h3>Faire exister un territoire dans la compétition</h3>
+        <p>Attirer talents, investisseurs, visiteurs ou entreprises en parlant de manière concrète, lisible et crédible.</p>
       </div>
 
       <div class="card">
-        <span class="pill">Coordination</span>
-        <h3>Aligner les acteurs</h3>
-        <p>Cabinet, directions, opérateurs, partenaires : une parole cohérente et transmissible.</p>
-        <ul>
-          <li>Langage commun et règles de prise de parole</li>
-          <li>Validation structurée (juridique, communication, politique)</li>
-          <li>Préparation porte-parole</li>
-        </ul>
+        <span class="pill">Programme / expérimentation</span>
+        <h3>Donner du sens à une action publique</h3>
+        <p>Expliquer un dispositif, ses résultats, ses limites et ses conditions de réussite dans un langage compréhensible.</p>
       </div>
 
       <div class="card">
-        <span class="pill">Après</span>
-        <h3>Réutiliser utilement</h3>
-        <p>Faire des contenus un support : attractivité, dossiers, partenaires, RH.</p>
-        <ul>
-          <li>Kit de réutilisation (site, dossiers, présentations)</li>
-          <li>Extraits et messages “prêts à reprendre”</li>
-          <li>Continuité de discours sur plusieurs mois</li>
-        </ul>
+        <span class="pill">Décision / responsabilité</span>
+        <h3>Réduire le risque d’interprétation</h3>
+        <p>Préparer une parole sur des sujets sensibles pour protéger la confiance sans tomber dans l’esquive ni la simplification.</p>
       </div>
     </div>
   </section>
 
-  <!-- CADRES -->
-  <section class="section" id="cadres">
-    <h2>Trois cadres d’engagement</h2>
+  <!-- ARCHITECTURE -->
+  <section class="section" id="architecturesequence">
+    <h2>Comment se construit une émission ?</h2>
     <p class="measure">
-      Trois formats d’accompagnement, selon le niveau d’exposition, le nombre d’acteurs impliqués,
-      et la durée sur laquelle vous devez tenir la ligne.
+      Une “séquence média” articule préparation, réalisation et réutilisation. Elle transforme une émission en contenu utile, réexploitable, et cohérent avec vos autres prises de parole.
     </p>
 
     <div class="grid-3">
-      <div class="card">
-        <span class="pill">Cadre 1</span>
-        <h3>Préparer une intervention</h3>
-        <p>Pour une échéance courte : plateau, audition, conférence, annonce structurante.</p>
-        <ul>
-          <li>Architecture des messages</li>
-          <li>Q&amp;A + éléments de langage</li>
-          <li>Préparation d’un porte-parole</li>
-        </ul>
-        <p class="meta"><strong>Délai :</strong> 7 à 15 jours.</p>
-      </div>
-
       <div class="card featured">
-        <span class="pill">Cadre 2</span>
-        <h3>Aligner plusieurs porte-parole</h3>
-        <p>Pour une parole multi-voix : services, opérateurs, partenaires, élus.</p>
-        <ul>
-          <li>Langage commun + validation</li>
-          <li>Préparation 2 à 4 porte-parole</li>
-          <li>Plan de séquence (qui parle, à qui, quand)</li>
-        </ul>
-        <p class="meta"><strong>Délai :</strong> 3 à 6 semaines.</p>
+        <span class="pill">1 — Amont</span>
+        <h3>Structurer</h3>
+        <p>Clarifier les messages, les preuves, les points sensibles et le niveau de détail adapté au format.</p>
       </div>
 
       <div class="card">
-        <span class="pill">Cadre 3</span>
-        <h3>Tenir une ligne dans la durée</h3>
-        <p>Pour un programme : attractivité, filière, transition, santé.</p>
-        <ul>
-          <li>Calendrier de prises de parole (6 à 12 mois)</li>
-          <li>Réutilisation structurée des contenus</li>
-          <li>Gouvernance éditoriale légère</li>
-        </ul>
-        <p class="meta"><strong>Délai :</strong> séquence initiale à partir de 4 semaines.</p>
+        <span class="pill">2 — Émission</span>
+        <h3>Rendre intelligible</h3>
+        <p>Partir d’un enjeu économique, territorial ou sectoriel, puis situer le rôle de l’institution avec clarté, précision et sobriété.</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">3 — Aval</span>
+        <h3>Réutiliser</h3>
+        <p>Transformer l’émission en actifs : extraits, dossiers, messages prêts à reprendre, continuité de discours dans le temps.</p>
       </div>
     </div>
   </section>
 
-  <!-- LIVRABLES -->
-  <section class="section" id="livrables">
-    <h2>Des livrables qui circulent en interne</h2>
-    <div class="exec-block">
-      <h3>Ce que vous obtenez</h3>
-      <ul>
-        <li><strong>Note d’architecture</strong> : messages, preuves, angles, risques.</li>
-        <li><strong>Q&amp;A</strong> : questions attendues + réponses solides (interne / externe).</li>
-        <li><strong>Kit porte-parole</strong> : brief, points de vigilance, “do / don’t”.</li>
-        <li><strong>Plan de réutilisation</strong> : exploitation (attractivité, dossiers, RH, partenaires).</li>
-      </ul>
-      <p style="margin-top:14px">
-        <strong>Implication estimée :</strong> 6 à 18 heures cumulées selon cadre, réparties sur 1 à 6 semaines.
-      </p>
-    </div>
+  <!-- CADRE -->
+  <section class="section">
+    <h2>Un travail compatible avec vos organisations</h2>
     <p class="measure">
-      L’objectif n’est pas d’ajouter une charge “communication”.
-      L’objectif est de réduire l’incertitude et de rendre la parole plus simple à tenir.
+      Le travail s’inscrit dans vos circuits de validation : cabinet, direction, communication, juridique, opérateurs, partenaires. L’objectif est simple : aligner les acteurs, réduire l’incertitude et tenir une ligne lisible.
     </p>
   </section>
 
-  <!-- CHARTE -->
-  <section class="section" id="charte">
-    <h2>Cadre et posture</h2>
+  <!-- LIGNE -->
+  <section class="section">
+    <h2>Notre ligne</h2>
     <p class="measure">
-      Sur des émissions économiques, la crédibilité repose sur la précision, la sobriété et le respect du cadre éditorial.
-      EN PLATEAU n’est ni une agence de relations presse, ni un dispositif publicitaire.
+      L’objectif n’est pas la communication institutionnelle au sens étroit. Au contraire : parler “vrai”, utile, compréhensible, dans le respect du cadre éditorial du média et de la responsabilité publique.
     </p>
-    <p class="measure">
-      Notre rôle : préparer, aligner, sécuriser — pour qu’une intervention publique soit comprise, reprise correctement,
-      et utile aux objectifs économiques du territoire.
+    <p class="measure" style="color:var(--muted);margin-top:-6px;">
+      Cette approche n’est pas adaptée aux logiques purement promotionnelles ni aux dispositifs publicitaires.
     </p>
   </section>
 
-  <!-- FINAL -->
+  <!-- CONTACT -->
   <section class="final" id="contact">
-    <h2>Échange confidentiel</h2>
-    <p>Un premier échange permet de qualifier l’enjeu, l’audience visée et le cadre d’accompagnement adapté.</p>
+    <h2>Cadrer une séquence</h2>
+    <p>
+      Un échange confidentiel permet d’analyser l’enjeu, l’audience visée, le niveau d’exposition approprié et le cadre d’accompagnement adapté.
+    </p>
     <div class="cta">
-      <a href="mailto:hocine.reguida@enplateau.fr" class="btn btn-primary">hocine.reguida@enplateau.fr</a>
+      <a class="btn btn-primary" href="mailto:contact@enplateau.fr">contact@enplateau.fr</a>
     </div>
-    <p style="margin-top:16px;font-size:14px;opacity:.82;">Accord de confidentialité possible avant tout échange approfondi.</p>
+    <p style="margin-top:16px;font-size:14px;opacity:.82;">
+      Lorsque nécessaire, un accord de confidentialité peut être formalisé en amont de toute analyse approfondie.
+    </p>
   </section>
 
 </div>
