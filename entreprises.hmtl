@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>EN PLATEAU — Entreprises</title>
-<meta name="description" content="EN PLATEAU accompagne les entreprises dans leurs prises de parole à forte exposition : cadrage éditorial, préparation d’émissions économiques avec des médias nationaux, et réutilisation cohérente des contenus." />
+<title>EN PLATEAU â€” Entreprises</title>
+<meta name="description" content="EN PLATEAU accompagne les entreprises dans leurs prises de parole Ã  forte exposition : cadrage Ã©ditorial, prÃ©paration dâ€™Ã©missions Ã©conomiques avec des mÃ©dias nationaux, et rÃ©utilisation cohÃ©rente des contenus." />
 <link rel="canonical" href="https://enplateau.fr/entreprises.html" />
 
 <style>
@@ -93,7 +93,7 @@ p{margin:0 0 18px;}
 .hero .baseline{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;margin-top:10px;}
 .hero .lead{max-width:900px;margin:0 auto;opacity:.92;font-size:16px;}
 
-/* Logos médias */
+/* Logos mÃ©dias */
 .media-logos{
   display:flex;
   flex-wrap:wrap;
@@ -193,7 +193,7 @@ p{margin:0 0 18px;}
 
 <div class="header-wrap">
   <header class="header" aria-label="Navigation principale">
-    <a class="brand" href="index.html" aria-label="EN PLATEAU — Accueil">
+    <a class="brand" href="index.html" aria-label="EN PLATEAU â€” Accueil">
       <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-name">EN&nbsp;PLATEAU</span>
     </a>
@@ -202,7 +202,7 @@ p{margin:0 0 18px;}
       <a href="entrepreneurs.html">Entrepreneurs</a>
       <a class="active" href="entreprises.html" aria-current="page">Entreprises</a>
       <a href="secteur-public.html">Secteur public</a>
-      <a href="a-propos.html">À propos</a>
+      <a href="a-propos.html">Ã€ propos</a>
     </nav>
 
     <button class="burger" id="burger" aria-expanded="false" aria-controls="mobileNav">Menu</button>
@@ -212,7 +212,7 @@ p{margin:0 0 18px;}
     <a href="entrepreneurs.html">Entrepreneurs</a>
     <a href="entreprises.html" aria-current="page">Entreprises</a>
     <a href="secteur-public.html">Secteur public</a>
-    <a href="a-propos.html">À propos</a>
+    <a href="a-propos.html">Ã€ propos</a>
   </div>
 </div>
 
@@ -221,48 +221,48 @@ p{margin:0 0 18px;}
   <!-- HERO -->
   <section class="hero">
     <div class="kicker">Entreprises</div>
-    <h1>Préparer une prise de parole<br>qui engage votre trajectoire</h1>
+    <h1>PrÃ©parer une prise de parole<br>qui engage votre trajectoire</h1>
     <p class="lead">
-      Architecture de messages · émissions économiques · réutilisation des contenus
+      Architecture de messages Â· Ã©missions Ã©conomiques Â· rÃ©utilisation des contenus
     </p>
-    <div class="baseline">PME · ETI · Groupes</div>
+    <div class="baseline">PME Â· ETI Â· Groupes</div>
   </section>
 
-  <!-- PASSER / PRÉPARER / ACTIVER -->
-  <section class="section" aria-label="Pourquoi passer préparer activer">
+  <!-- PASSER / PRÃ‰PARER / ACTIVER -->
+  <section class="section" aria-label="Pourquoi passer prÃ©parer activer">
     <div class="grid-3">
 
       <div class="card">
         <span class="pill">Passer</span>
-        <h3>Pourquoi passer dans une émission ?</h3>
-        <p>Accéder à des médias économiques nationaux.</p>
-        <p>Donner une visibilité stratégique à votre trajectoire.</p>
+        <h3>Pourquoi passer dans une Ã©mission ?</h3>
+        <p>AccÃ©der Ã  des mÃ©dias Ã©conomiques nationaux.</p>
+        <p>Donner une visibilitÃ© stratÃ©gique Ã  votre trajectoire.</p>
         <p>Installer votre organisation dans les conversations de votre secteur.</p>
       </div>
 
       <div class="card featured">
-        <span class="pill">Préparer</span>
-        <h3>Pourquoi préparer une émission ?</h3>
-        <p>Une phrase mal calibrée peut devenir un angle éditorial.</p>
-        <p>Une séquence bien cadrée crédibilise un positionnement.</p>
-        <p>Une intervention bien préparée transforme l’exposition en levier stratégique.</p>
+        <span class="pill">PrÃ©parer</span>
+        <h3>Pourquoi prÃ©parer une Ã©mission ?</h3>
+        <p>Une phrase mal calibrÃ©e peut devenir un angle Ã©ditorial.</p>
+        <p>Une sÃ©quence bien cadrÃ©e crÃ©dibilise un positionnement.</p>
+        <p>Une intervention bien prÃ©parÃ©e transforme lâ€™exposition en levier stratÃ©gique.</p>
       </div>
 
       <div class="card">
-        <span class="pill">Réutiliser</span>
-        <h3>Pourquoi réutiliser une émission ?</h3>
-        <p>Une émission devient un actif de communication durable.</p>
+        <span class="pill">RÃ©utiliser</span>
+        <h3>Pourquoi rÃ©utiliser une Ã©mission ?</h3>
+        <p>Une Ã©mission devient un actif de communication durable.</p>
         <p>Elle peut nourrir votre communication institutionnelle et commerciale.</p>
-        <p>Elle alimente votre écosystème : partenaires, recrutement, influence.</p>
+        <p>Elle alimente votre Ã©cosystÃ¨me : partenaires, recrutement, influence.</p>
       </div>
 
     </div>
   </section>
 
-  <!-- MÉDIAS PARTENAIRES -->
+  <!-- MÃ‰DIAS PARTENAIRES -->
   <section class="section" id="medias">
     <p style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;">
-      Environnements médias partenaires
+      Environnements mÃ©dias partenaires
     </p>
 
     <div class="media-logos">
@@ -281,51 +281,51 @@ p{margin:0 0 18px;}
   <section class="section" id="situations">
     <h2>Dans quelles situations intervenons-nous ?</h2>
     <p class="measure">
-      Nous intervenons lorsque la prise de parole engage plus qu’une visibilité :
-      une stratégie, une transformation, une annonce importante ou un positionnement exposé.
+      Nous intervenons lorsque la prise de parole engage plus quâ€™une visibilitÃ© :
+      une stratÃ©gie, une transformation, une annonce importante ou un positionnement exposÃ©.
     </p>
 
     <div class="grid-3">
 
       <div class="card">
-        <span class="pill">Croissance & marchés</span>
-        <h3>Accélération commerciale</h3>
+        <span class="pill">Croissance & marchÃ©s</span>
+        <h3>AccÃ©lÃ©ration commerciale</h3>
         <p>
-          Nouveau marché, croissance rapide, salon stratégique, référencement national :
-          un moment où la crédibilité doit être lisible immédiatement.
+          Nouveau marchÃ©, croissance rapide, salon stratÃ©gique, rÃ©fÃ©rencement national :
+          un moment oÃ¹ la crÃ©dibilitÃ© doit Ãªtre lisible immÃ©diatement.
         </p>
         <ul>
           <li>Rassurer partenaires et clients</li>
-          <li>Asseoir votre crédibilité sectorielle</li>
-          <li>Transformer l’exposition en opportunités concrètes</li>
+          <li>Asseoir votre crÃ©dibilitÃ© sectorielle</li>
+          <li>Transformer lâ€™exposition en opportunitÃ©s concrÃ¨tes</li>
         </ul>
       </div>
 
       <div class="card featured">
         <span class="pill">Transformation</span>
-        <h3>Mutation industrielle ou stratégique</h3>
+        <h3>Mutation industrielle ou stratÃ©gique</h3>
         <p>
-          Changement d’échelle, relocalisation, transition énergétique,
-          évolution du modèle économique, arbitrages de filière ou implantation territoriale.
+          Changement dâ€™Ã©chelle, relocalisation, transition Ã©nergÃ©tique,
+          Ã©volution du modÃ¨le Ã©conomique, arbitrages de filiÃ¨re ou implantation territoriale.
         </p>
         <ul>
           <li>Clarifier les enjeux</li>
           <li>Tenir une parole de gouvernance</li>
-          <li>Stabiliser un récit stratégique</li>
+          <li>Stabiliser un rÃ©cit stratÃ©gique</li>
         </ul>
       </div>
 
       <div class="card">
         <span class="pill">Sujet sensible</span>
-        <h3>Décision exposée</h3>
+        <h3>DÃ©cision exposÃ©e</h3>
         <p>
-          Annonce importante, emplois, réglementation, investissements,
-          tensions géopolitiques ou arbitrages publics : l’improvisation coûte cher.
+          Annonce importante, emplois, rÃ©glementation, investissements,
+          tensions gÃ©opolitiques ou arbitrages publics : lâ€™improvisation coÃ»te cher.
         </p>
         <ul>
-          <li>Réduire le risque d’interprétation</li>
+          <li>RÃ©duire le risque dâ€™interprÃ©tation</li>
           <li>Anticiper les questions critiques</li>
-          <li>Maîtriser le cadre éditorial</li>
+          <li>MaÃ®triser le cadre Ã©ditorial</li>
         </ul>
       </div>
 
@@ -334,15 +334,15 @@ p{margin:0 0 18px;}
 
   <!-- POSITIONNEMENT -->
   <section class="section">
-    <h2>Pas de communication “plus”.<br>Une parole structurée, dans un cadre exigeant.</h2>
+    <h2>Pas de communication â€œplusâ€.<br>Une parole structurÃ©e, dans un cadre exigeant.</h2>
     <p class="measure">
       EN PLATEAU intervient quand il faut dire juste, dire clair, et tenir une ligne.
-      Nous préparons le fond (messages, preuves, angles), nous cadrons l’intervention
-      avec l’écosystème de production et le média, puis nous organisons la réutilisation des contenus.
+      Nous prÃ©parons le fond (messages, preuves, angles), nous cadrons lâ€™intervention
+      avec lâ€™Ã©cosystÃ¨me de production et le mÃ©dia, puis nous organisons la rÃ©utilisation des contenus.
     </p>
     <p class="measure">
-      Le principe : une intervention éditoriale animée par des journalistes économiques,
-      dans le cadre propre du média. Notre rôle : sécuriser l’amont, coordonner la séquence, et maximiser son utilité.
+      Le principe : une intervention Ã©ditoriale animÃ©e par des journalistes Ã©conomiques,
+      dans le cadre propre du mÃ©dia. Notre rÃ´le : sÃ©curiser lâ€™amont, coordonner la sÃ©quence, et maximiser son utilitÃ©.
     </p>
   </section>
 
@@ -350,134 +350,134 @@ p{margin:0 0 18px;}
   <section class="section" id="intervention">
     <h2>Comment nous intervenons</h2>
     <p class="measure">
-      Nous préparons une émission pour qu’elle soit claire, crédible et utile — sans improvisation.
-      Concrètement, nous travaillons le fond, le cadrage, et la cohérence interne avant l’enregistrement,
-      puis nous organisons une réutilisation propre des contenus.
+      Nous prÃ©parons une Ã©mission pour quâ€™elle soit claire, crÃ©dible et utile â€” sans improvisation.
+      ConcrÃ¨tement, nous travaillons le fond, le cadrage, et la cohÃ©rence interne avant lâ€™enregistrement,
+      puis nous organisons une rÃ©utilisation propre des contenus.
     </p>
 
     <div class="grid-3">
       <div class="card featured">
-        <span class="pill">1 — Clarifier</span>
+        <span class="pill">1 â€” Clarifier</span>
         <h3>Ligne lisible</h3>
-        <p>Messages hiérarchisés, preuves, et éléments qui tiennent face aux questions.</p>
+        <p>Messages hiÃ©rarchisÃ©s, preuves, et Ã©lÃ©ments qui tiennent face aux questions.</p>
         <ul>
-          <li>Messages clés + angles</li>
-          <li>Points sensibles + réponses</li>
-          <li>Préparation porte-parole</li>
+          <li>Messages clÃ©s + angles</li>
+          <li>Points sensibles + rÃ©ponses</li>
+          <li>PrÃ©paration porte-parole</li>
         </ul>
       </div>
 
       <div class="card">
-        <span class="pill">2 — Cadrer</span>
-        <h3>Amont sécurisé</h3>
+        <span class="pill">2 â€” Cadrer</span>
+        <h3>Amont sÃ©curisÃ©</h3>
         <p>Un cadrage compatible avec vos processus, sans friction inutile.</p>
         <ul>
           <li>Coordination communication</li>
-          <li>Validation interne si nécessaire</li>
-          <li>Cadrage éditorial</li>
+          <li>Validation interne si nÃ©cessaire</li>
+          <li>Cadrage Ã©ditorial</li>
         </ul>
       </div>
 
       <div class="card">
-        <span class="pill">3 — Réutiliser</span>
-        <h3>Contenus maîtrisés</h3>
-        <p>Des contenus réemployés avec cohérence, sans déformer le propos.</p>
+        <span class="pill">3 â€” RÃ©utiliser</span>
+        <h3>Contenus maÃ®trisÃ©s</h3>
+        <p>Des contenus rÃ©employÃ©s avec cohÃ©rence, sans dÃ©former le propos.</p>
         <ul>
-          <li>Extraits et séquences</li>
+          <li>Extraits et sÃ©quences</li>
           <li>Kit citations</li>
-          <li>Réutilisation cohérente</li>
+          <li>RÃ©utilisation cohÃ©rente</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- CADRE ÉDITORIAL -->
+  <!-- CADRE Ã‰DITORIAL -->
   <section class="section" id="cadre">
-    <h2>Cadre éditorial de l’émission</h2>
+    <h2>Cadre Ã©ditorial de lâ€™Ã©mission</h2>
     <div class="note">
       <p style="margin:0;color:var(--muted);font-size:14px;">
-        Les émissions En Plateau sont produites dans le cadre d’un partenariat avec des producteurs et des médias.
-        Il s’agit d’un format structuré avec une ambition simple : proposer un contenu éditorial, informatif et utile.
+        Les Ã©missions En Plateau sont produites dans le cadre dâ€™un partenariat avec des producteurs et des mÃ©dias.
+        Il sâ€™agit dâ€™un format structurÃ© avec une ambition simple : proposer un contenu Ã©ditorial, informatif et utile.
       </p>
     </div>
   </section>
 
-  <!-- CADRES D’INTERVENTION -->
+  <!-- CADRES Dâ€™INTERVENTION -->
   <section class="section" id="formats">
-    <h2>Trois cadres d’intervention</h2>
+    <h2>Trois cadres dâ€™intervention</h2>
     <p class="measure">
-      Même exigence éditoriale. Une intensité adaptée à votre contexte, à votre exposition et à votre calendrier.
+      MÃªme exigence Ã©ditoriale. Une intensitÃ© adaptÃ©e Ã  votre contexte, Ã  votre exposition et Ã  votre calendrier.
     </p>
 
     <div class="grid-3">
       <div class="card featured">
         <span class="pill">Cadre approfondi</span>
         <h3>Installer une position durable</h3>
-        <p>Pour une trajectoire structurante : transformation, industrialisation, transmission, changement d’échelle.</p>
+        <p>Pour une trajectoire structurante : transformation, industrialisation, transmission, changement dâ€™Ã©chelle.</p>
         <ul>
-          <li>3 à 4 interventions économiques complémentaires</li>
+          <li>3 Ã  4 interventions Ã©conomiques complÃ©mentaires</li>
           <li>Architecture de messages approfondie</li>
-          <li>Réutilisation organisée sur plusieurs mois</li>
+          <li>RÃ©utilisation organisÃ©e sur plusieurs mois</li>
         </ul>
-        <div class="meta"><strong>Délai :</strong> première intervention à partir de 4 semaines.</div>
+        <div class="meta"><strong>DÃ©lai :</strong> premiÃ¨re intervention Ã  partir de 4 semaines.</div>
       </div>
 
       <div class="card">
-        <span class="pill">Cadre intermédiaire</span>
-        <h3>Asseoir une crédibilité cohérente</h3>
-        <p>Pour clarifier un enjeu et le rendre lisible auprès de l’écosystème.</p>
+        <span class="pill">Cadre intermÃ©diaire</span>
+        <h3>Asseoir une crÃ©dibilitÃ© cohÃ©rente</h3>
+        <p>Pour clarifier un enjeu et le rendre lisible auprÃ¨s de lâ€™Ã©cosystÃ¨me.</p>
         <ul>
-          <li>2 interventions économiques</li>
-          <li>Préparation dirigeant + cadrage éditorial</li>
-          <li>Réutilisation sur 3 à 6 mois</li>
+          <li>2 interventions Ã©conomiques</li>
+          <li>PrÃ©paration dirigeant + cadrage Ã©ditorial</li>
+          <li>RÃ©utilisation sur 3 Ã  6 mois</li>
         </ul>
-        <div class="meta"><strong>Délai :</strong> première intervention à partir de 3 semaines.</div>
+        <div class="meta"><strong>DÃ©lai :</strong> premiÃ¨re intervention Ã  partir de 3 semaines.</div>
       </div>
 
       <div class="card">
-        <span class="pill">Cadre ciblé</span>
-        <h3>Sécuriser un moment clé</h3>
-        <p>Pour une échéance précise : salon majeur, annonce, opération, décision sensible.</p>
+        <span class="pill">Cadre ciblÃ©</span>
+        <h3>SÃ©curiser un moment clÃ©</h3>
+        <p>Pour une Ã©chÃ©ance prÃ©cise : salon majeur, annonce, opÃ©ration, dÃ©cision sensible.</p>
         <ul>
-          <li>1 intervention économique</li>
-          <li>Angle stabilisé + préparation interview</li>
-          <li>Réutilisation sur 90 jours</li>
+          <li>1 intervention Ã©conomique</li>
+          <li>Angle stabilisÃ© + prÃ©paration interview</li>
+          <li>RÃ©utilisation sur 90 jours</li>
         </ul>
-        <div class="meta"><strong>Délai :</strong> première intervention à partir de 2 semaines.</div>
+        <div class="meta"><strong>DÃ©lai :</strong> premiÃ¨re intervention Ã  partir de 2 semaines.</div>
       </div>
     </div>
   </section>
 
-  <!-- MÉTHODE / ORGANISATION -->
+  <!-- MÃ‰THODE / ORGANISATION -->
   <section class="section" id="organisation">
-    <h2>Organisation de l’accompagnement</h2>
+    <h2>Organisation de lâ€™accompagnement</h2>
     <div class="soft">
-      <h3 style="margin:0 0 10px;color:var(--ink);">Un interlocuteur unique, un réseau de compétences</h3>
+      <h3 style="margin:0 0 10px;color:var(--ink);">Un interlocuteur unique, un rÃ©seau de compÃ©tences</h3>
       <p style="margin:0 0 14px;color:var(--muted);font-size:14px;">
-        Vous avez un interlocuteur unique côté EN PLATEAU, qui mobilise au besoin un réseau pluridisciplinaire
-        selon le sujet, le niveau d’exposition et le contexte sectoriel.
+        Vous avez un interlocuteur unique cÃ´tÃ© EN PLATEAU, qui mobilise au besoin un rÃ©seau pluridisciplinaire
+        selon le sujet, le niveau dâ€™exposition et le contexte sectoriel.
       </p>
       <ul>
         <li>Ateliers de cadrage (messages, enjeux, risques)</li>
-        <li>Préparation porte-parole (questions, réponses, angles)</li>
-        <li>Coordination avec vos équipes communication et validation interne si nécessaire</li>
-        <li>Articulation avec l’écosystème de production et le média</li>
+        <li>PrÃ©paration porte-parole (questions, rÃ©ponses, angles)</li>
+        <li>Coordination avec vos Ã©quipes communication et validation interne si nÃ©cessaire</li>
+        <li>Articulation avec lâ€™Ã©cosystÃ¨me de production et le mÃ©dia</li>
       </ul>
     </div>
   </section>
 
   <!-- CTA FINAL -->
   <section class="final" id="contact">
-    <h2>Échange confidentiel</h2>
+    <h2>Ã‰change confidentiel</h2>
     <p>
-      Un premier échange permet de qualifier le sujet, le niveau d’exposition,
-      le format pertinent et le cadre d’intervention adapté.
+      Un premier Ã©change permet de qualifier le sujet, le niveau dâ€™exposition,
+      le format pertinent et le cadre dâ€™intervention adaptÃ©.
     </p>
     <div class="cta">
       <a href="mailto:hocine.reguida@enplateau.fr" class="btn btn-primary">hocine.reguida@enplateau.fr</a>
     </div>
     <p style="margin-top:16px;font-size:14px;opacity:.82;">
-      Accord de confidentialité possible avant tout échange approfondi.
+      Accord de confidentialitÃ© possible avant tout Ã©change approfondi.
     </p>
   </section>
 
