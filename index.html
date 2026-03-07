@@ -92,6 +92,7 @@
       border-radius:10px;
       background:var(--sig);
       display:inline-block;
+      flex:0 0 auto;
     }
 
     .brand-name{
@@ -106,17 +107,86 @@
       align-items:center;
     }
 
-    .nav a{
+    .nav-item{
+      position:relative;
+    }
+
+    .nav-item::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      top:100%;
+      height:14px;
+    }
+
+    .nav > a,
+    .nav-trigger{
       font-size:14px;
       color:var(--muted);
       font-weight:750;
       padding:10px 10px;
       border-radius:999px;
+      background:none;
+      border:none;
+      cursor:pointer;
+      font-family:inherit;
+      display:inline-flex;
+      align-items:center;
     }
 
-    .nav a:hover{
+    .nav > a:hover,
+    .nav-trigger:hover,
+    .nav > a.active,
+    .nav-trigger.active{
       color:var(--ink);
       background:#f5f7fb;
+    }
+
+    .dropdown{
+      position:absolute;
+      top:calc(100% + 10px);
+      left:0;
+      min-width:240px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:0 18px 40px rgba(0,0,0,.08);
+      padding:10px;
+      display:none;
+    }
+
+    .dropdown a{
+      display:block;
+      padding:10px 12px;
+      border-radius:12px;
+      color:var(--muted);
+      font-size:14px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .dropdown a:hover{
+      background:#f5f7fb;
+      color:var(--ink);
+    }
+
+    .nav-item:hover .dropdown,
+    .nav-item:focus-within .dropdown{
+      display:block;
+    }
+
+    .chevron{
+      font-size:12px;
+      margin-left:6px;
+      opacity:.55;
+      transition:transform .2s ease;
+      line-height:1;
+    }
+
+    .nav-item:hover .nav-trigger .chevron,
+    .nav-item:focus-within .nav-trigger .chevron{
+      transform:rotate(180deg);
     }
 
     .burger{
@@ -134,16 +204,40 @@
       border-top:1px solid var(--line);
     }
 
-    .mobile a{
-      display:block;
+    .mobile a,
+    .mobile button{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      width:100%;
       padding:14px 22px;
       color:var(--muted);
       font-weight:750;
+      background:none;
+      border:none;
+      text-align:left;
+      font-family:inherit;
+      font-size:15px;
+      cursor:pointer;
     }
 
-    .mobile a:hover{
+    .mobile a:hover,
+    .mobile button:hover{
       background:#f5f7fb;
       color:var(--ink);
+    }
+
+    .mobile-submenu{
+      display:none;
+      border-top:1px solid #f1f3f7;
+      background:#fbfcfe;
+    }
+
+    .mobile-submenu a{
+      padding-left:38px;
+      font-weight:700;
+      font-size:14px;
+      justify-content:flex-start;
     }
 
     @media(min-width:900px){
@@ -197,10 +291,18 @@
       margin-bottom:10px;
     }
 
+    .hero .subhead{
+      max-width:820px;
+      margin:0 auto 14px;
+      font-size:16px;
+      font-weight:700;
+      opacity:.92;
+    }
+
     .hero .lead{
       max-width:860px;
       margin:0 auto;
-      opacity:.92;
+      opacity:.9;
       font-size:16px;
     }
 
@@ -364,7 +466,19 @@
       <nav class="nav" aria-label="Navigation">
         <a href="les-batisseurs.html">Les Bâtisseurs</a>
         <a href="les-architectes.html">Les Architectes</a>
-        <a href="contextes.html">Contextes</a>
+
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+            Contextes <span class="chevron">▾</span>
+          </button>
+          <div class="dropdown" aria-label="Sous-menu Contextes">
+            <a href="entrepreneurs.html">Entrepreneurs</a>
+            <a href="entreprises.html">Entreprises</a>
+            <a href="secteur-public.html">Décideurs publics</a>
+            <a href="associations.html">Dirigeants associatifs</a>
+          </div>
+        </div>
+
         <a href="a-propos.html">À propos</a>
       </nav>
 
@@ -374,24 +488,34 @@
     <div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
       <a href="les-batisseurs.html">Les Bâtisseurs</a>
       <a href="les-architectes.html">Les Architectes</a>
-      <a href="contextes.html">Contextes</a>
+
+      <button type="button" id="mobileContextesBtn" aria-expanded="false" aria-controls="mobileContextesSubmenu">
+        <span>Contextes</span>
+        <span class="chevron">▾</span>
+      </button>
+      <div class="mobile-submenu" id="mobileContextesSubmenu">
+        <a href="entrepreneurs.html">Entrepreneurs</a>
+        <a href="entreprises.html">Entreprises</a>
+        <a href="secteur-public.html">Décideurs publics</a>
+        <a href="associations.html">Dirigeants associatifs</a>
+      </div>
+
       <a href="a-propos.html">À propos</a>
     </div>
   </div>
 
   <div class="container">
 
-    <!-- HERO -->
     <section class="hero">
       <div class="kicker">Prise de parole stratégique</div>
-      <h1>Deux formats éditoriaux pour structurer votre prise de parole.<br>Passer à l’écran n’est que le début.</h1>
+      <h1>Passer à l’écran n’est que le début.</h1>
+      <p class="subhead">Deux formats éditoriaux pour structurer une prise de parole à fort enjeu.</p>
       <p class="lead">
         EN PLATEAU conçoit des prises de parole dans des environnements médias économiques :
         cadrage du sujet, préparation stratégique, émissions, puis valorisation durable des contenus.
       </p>
     </section>
 
-    <!-- MÉDIAS -->
     <section class="section" id="medias">
       <p style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;">
         Nos émissions prennent place dans ces environnements médias
@@ -405,7 +529,6 @@
       </div>
     </section>
 
-    <!-- TRIPTYQUE -->
     <section class="section" aria-label="Pourquoi passer préparer réutiliser">
       <h2 style="margin-top:10px;">Pourquoi une émission devient stratégique</h2>
 
@@ -436,7 +559,6 @@
       </div>
     </section>
 
-    <!-- DEUX FORMATS -->
     <section class="section" id="formats">
       <h2>Deux formats éditoriaux</h2>
       <p class="measure">
@@ -460,20 +582,19 @@
 
         <div class="card">
           <span class="pill">Les Architectes</span>
-          <h3>Une série consacrée à la trajectoire d’un dirigeant</h3>
+          <h3>Une série consacrée à une trajectoire et à sa logique d’action</h3>
           <p>
             Certaines situations appellent un traitement plus approfondi : moment stratégique, repositionnement,
-            transformation, développement, vision sectorielle ou responsabilité institutionnelle.
+            transformation, développement, vision sectorielle ou responsabilité d’organisation.
           </p>
           <p>
-            La série permet d’aborder sous plusieurs angles un dirigeant, son organisation et la manière dont il conçoit l’action.
+            La série permet d’aborder sous plusieurs angles une trajectoire, une organisation et la manière dont une vision se traduit concrètement.
           </p>
           <a class="link" href="les-architectes.html">Découvrir Les Architectes</a>
         </div>
       </div>
     </section>
 
-    <!-- SERIE MISE EN AVANT -->
     <section class="section" id="serie-en-cours">
       <h2>La première série éditoriale en préparation</h2>
       <p class="measure">
@@ -495,14 +616,13 @@
         <div class="card">
           <span class="pill">Série dirigeant</span>
           <h3>Les Architectes</h3>
-          <p>Un format plus approfondi pour les dirigeants, institutions ou organisations dont la trajectoire mérite un traitement éditorial complet.</p>
-          <p>Approche adaptée aux profils expérimentés, plus discrets, ou aux responsables qui veulent faire comprendre une vision sans surexposition personnelle.</p>
+          <p>Un format plus approfondi pour les trajectoires qui nécessitent autre chose qu’une simple intervention ponctuelle.</p>
+          <p>Approche adaptée lorsque l’enjeu consiste à faire comprendre une vision, un cap, des arbitrages et leur cohérence dans le temps.</p>
           <a class="link" href="les-architectes.html">Voir le format</a>
         </div>
       </div>
     </section>
 
-    <!-- CONTEXTES -->
     <section class="section" id="contextes">
       <h2>Des contextes différents. Une même exigence.</h2>
       <p class="measure">
@@ -525,14 +645,14 @@
         </div>
 
         <div class="card">
-          <span class="pill">Associations</span>
+          <span class="pill">Dirigeants associatifs</span>
           <h3>Faire reconnaître une utilité réelle</h3>
           <p>Sortir de la communication institutionnelle classique pour rendre lisible une action, un impact ou une expertise.</p>
           <a class="link" href="associations.html">En savoir plus</a>
         </div>
 
         <div class="card">
-          <span class="pill">Secteur public</span>
+          <span class="pill">Décideurs publics</span>
           <h3>Réduire le risque d’interprétation</h3>
           <p>Projet, décision, bilan, filière ou attractivité : tenir une ligne claire dans un environnement exposé.</p>
           <a class="link" href="secteur-public.html">En savoir plus</a>
@@ -540,7 +660,6 @@
       </div>
     </section>
 
-    <!-- CONTEXTE EDITORIAL -->
     <section class="section">
       <h2>Quand le sujet dépasse l’organisation</h2>
       <p class="measure">
@@ -551,7 +670,6 @@
       </p>
     </section>
 
-    <!-- ETUDES DE CAS -->
     <section class="section" id="micro-cas">
       <h2>Exemples concrets de situations</h2>
       <p class="measure">
@@ -577,12 +695,11 @@
           <span class="pill">Association / public</span>
           <h3>Montrer une dynamique collective</h3>
           <p>Parler impact, développement territorial ou filière locale sans tomber dans les codes habituels de la communication institutionnelle.</p>
-          <a class="link" href="contextes.html">Voir les contextes</a>
+          <a class="link" href="#contextes">Voir les contextes</a>
         </div>
       </div>
     </section>
 
-    <!-- SITUATIONS -->
     <section class="section" id="situations">
       <h2>Trois situations où l’émission devient stratégique</h2>
       <p class="measure" style="color:var(--muted);">
@@ -614,7 +731,6 @@
       </div>
     </section>
 
-    <!-- ARCHITECTURE -->
     <section class="section" id="architecture-emission">
       <h2>Comment se construit une émission ?</h2>
 
@@ -644,7 +760,6 @@
       </div>
     </section>
 
-    <!-- CANDIDATURE -->
     <section class="section">
       <h2>Une même entrée : la candidature</h2>
       <p class="measure">
@@ -654,7 +769,6 @@
       </p>
     </section>
 
-    <!-- CADRE -->
     <section class="section">
       <h2>Un travail compatible avec vos organisations</h2>
       <p class="measure">
@@ -663,7 +777,6 @@
       </p>
     </section>
 
-    <!-- LIGNE -->
     <section class="section">
       <h2>Notre ligne</h2>
       <p class="measure">
@@ -675,7 +788,6 @@
       </p>
     </section>
 
-    <!-- CTA FINAL -->
     <section class="final" id="contact">
       <h2>Candidater à une série</h2>
       <p>
@@ -695,15 +807,31 @@
 
   <script>
     (function(){
-      const b = document.getElementById('burger');
-      const m = document.getElementById('mobileNav');
-      if(!b || !m) return;
+      const burger = document.getElementById('burger');
+      const mobileNav = document.getElementById('mobileNav');
+      const mobileContextesBtn = document.getElementById('mobileContextesBtn');
+      const mobileContextesSubmenu = document.getElementById('mobileContextesSubmenu');
 
-      b.addEventListener('click', function(){
-        const open = m.style.display === 'block';
-        m.style.display = open ? 'none' : 'block';
-        b.setAttribute('aria-expanded', open ? 'false' : 'true');
-      });
+      if (burger && mobileNav) {
+        burger.addEventListener('click', function(){
+          const open = mobileNav.style.display === 'block';
+          mobileNav.style.display = open ? 'none' : 'block';
+          burger.setAttribute('aria-expanded', open ? 'false' : 'true');
+        });
+      }
+
+      if (mobileContextesBtn && mobileContextesSubmenu) {
+        mobileContextesBtn.addEventListener('click', function(){
+          const open = mobileContextesSubmenu.style.display === 'block';
+          mobileContextesSubmenu.style.display = open ? 'none' : 'block';
+          mobileContextesBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
+
+          const chevron = mobileContextesBtn.querySelector('.chevron');
+          if (chevron) {
+            chevron.style.transform = open ? 'rotate(0deg)' : 'rotate(180deg)';
+          }
+        });
+      }
     })();
   </script>
 
