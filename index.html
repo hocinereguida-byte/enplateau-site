@@ -708,10 +708,18 @@
   background:#f2f4f8;
   transform:translateY(-1px);
 }
-    .card p{
-min-height:72px;
+ .card{
+display:flex;
+flex-direction:column;
 }
-  </style>
+
+.card p{
+flex-grow:1;
+}
+
+.card a{
+margin-top:auto;
+}  </style>
 </head>
 <body>
 
@@ -804,7 +812,7 @@ min-height:72px;
     <section class="section section-soft" id="contextes">
       <h2>Dans quels contextes utiliser ce format</h2>
       <p class="measure">
-        Le cadre éditorial et le niveau de préparation s’adaptent à votre organisation.
+        Le cadre éditorial et le niveau de préparation s’adaptent à votre organisation.<br>
 L’objectif reste simple : rendre votre prise de parole claire, crédible et réutilisable.
       </p>
 
