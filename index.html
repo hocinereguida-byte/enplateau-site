@@ -604,8 +604,45 @@
       color:var(--muted);
     }
 
-    #medias{margin-bottom:28px}
+    #medias{
+  margin-top:-6px;
+  margin-bottom:28px;
+  padding-top:42px;
+  padding-bottom:42px;
+}
 
+.media-kicker{
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:18px;
+}
+
+.media-note{
+  max-width:760px;
+  margin:18px auto 0;
+  font-size:14px;
+  line-height:1.7;
+  color:var(--muted);
+}
+
+.media-note strong{
+  color:var(--ink);
+  font-weight:700;
+}
+
+.media-note a{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.media-stack{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
     @media(max-width:700px){
       .container{
         padding:0 16px 88px;
@@ -716,18 +753,24 @@
 </section>
 
     <section class="section section-white" id="medias">
-      <p style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;">
-        Nos émissions prennent place dans ces environnements médias
-      </p>
+  <div class="media-stack">
+    <p class="media-kicker">
+      Des prises de parole conçues pour ces environnements médias
+    </p>
 
-      <div class="media-logos">
-        <img src="images/bfm-business.svg" alt="BFM Business">
-        <img src="images/le-figaro.svg" alt="Le Figaro">
-        <img src="images/la-tribune.svg" alt="La Tribune">
-        <img src="images/forbes.svg" alt="Forbes">
-      </div>
-    </section>
+    <div class="media-logos">
+      <img src="images/bfm-business.svg" alt="BFM Business">
+      <img src="images/le-figaro.svg" alt="Le Figaro">
+      <img src="images/la-tribune.svg" alt="La Tribune">
+      <img src="images/forbes.svg" alt="Forbes">
+    </div>
 
+    <p class="media-note">
+      La production éditoriale s’appuie sur un partenariat avec le studio
+      <strong><a href="https://scribeo.com/" target="_blank" rel="noopener noreferrer">Scribeo Media</a></strong>.
+    </p>
+  </div>
+</section>
     <section class="section section-soft" id="contextes">
       <h2>À qui cela s’adresse</h2>
       <p class="measure">
