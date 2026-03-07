@@ -742,6 +742,32 @@
   .pill{
   margin-bottom:12px;
 }
+    .format-structure{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:18px 0 6px;
+}
+
+.format-structure span{
+  display:inline-block;
+  padding:7px 10px;
+  font-size:12px;
+  line-height:1.2;
+  color:var(--ink);
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:8px;
+  font-weight:600;
+}
+
+#formats .card{
+  text-align:left;
+}
+
+#formats .card .link{
+  margin-top:18px;
+}
   </style>
 </head>
 <body>
@@ -908,37 +934,69 @@ dans un environnement exposé.</p>
   </div>
       </div>
     </section>
+<section class="section section-warm" id="formats">
+  <h2>Deux formats éditoriaux</h2>
+  <p class="measure">
+    Selon votre sujet et votre moment, la prise de parole peut s’inscrire dans une conversation économique réunissant plusieurs acteurs
+    ou dans un parcours médiatique permettant d’explorer une trajectoire sous plusieurs angles.
+  </p>
 
-    <section class="section section-warm" id="formats">
-      <h2>Deux formats éditoriaux</h2>
-      <p class="measure">
-        Selon votre sujet, votre moment et votre niveau d’exposition, EN PLATEAU peut structurer
-        une prise de parole dans une <strong>série éditoriale</strong> ou dans une <strong>série dirigeant</strong>.
+  <div class="grid-2">
+    <div class="card">
+      <span class="pill">Les Bâtisseurs</span>
+      <h3>Une conversation économique à plusieurs voix</h3>
+
+      <p class="card-intro">Plusieurs acteurs. Un enjeu commun.</p>
+
+      <p>
+        Plusieurs organisations interviennent autour d’un même enjeu économique.
+      </p>
+      <p>
+        Chaque entreprise participe à une émission dans un média différent afin d’apporter sa lecture et son expérience sur le sujet.
+      </p>
+      <p>
+        Cette approche permet de faire apparaître un secteur, une dynamique ou une transformation à travers plusieurs regards.
       </p>
 
-      <div class="grid-2">
-        <div class="card featured">
-          <span class="pill">Les Bâtisseurs</span>
-          <h3>Une série éditoriale consacrée à une transformation collective</h3>
-          <p>
-            Plusieurs organisations interviennent autour d’un même enjeu économique précis.
-            Chaque participant apporte sa lecture, sa trajectoire et son rôle dans une dynamique plus large.
-          </p>
-          <a class="link" href="les-batisseurs.html">Découvrir Les Bâtisseurs</a>
-        </div>
-
-        <div class="card">
-          <span class="pill">Les Architectes</span>
-          <h3>Une série consacrée à une trajectoire et à sa logique d’action</h3>
-          <p>
-            Certaines situations appellent un traitement plus approfondi : cap stratégique, transformation,
-            responsabilité d’organisation, vision sectorielle ou cohérence d’ensemble.
-          </p>
-          <a class="link" href="les-architectes.html">Découvrir Les Architectes</a>
-        </div>
+      <div class="format-structure" aria-label="Structure Les Bâtisseurs">
+        <span>4 entreprises</span>
+        <span>4 médias</span>
+        <span>1 conversation économique</span>
       </div>
-    </section>
 
+      <a class="link" href="les-batisseurs.html">Découvrir Les Bâtisseurs</a>
+    </div>
+
+    <div class="card featured">
+      <span class="pill">Les Architectes</span>
+      <h3>Un parcours médiatique pour explorer une trajectoire</h3>
+
+      <p class="card-intro">Un acteur. Plusieurs angles.</p>
+
+      <p>
+        Certaines situations appellent un traitement plus approfondi.
+      </p>
+      <p>
+        Une organisation intervient dans plusieurs médias afin d’explorer sa trajectoire sous différents angles.
+      </p>
+      <p>
+        Chaque entretien aborde un aspect complémentaire : vision, transformation, stratégie ou perspectives.
+      </p>
+      <p>
+        L’ensemble forme un récit progressif qui permet de comprendre la logique d’action d’une organisation.
+      </p>
+
+      <div class="format-structure" aria-label="Structure Les Architectes">
+        <span>1 organisation</span>
+        <span>4 médias</span>
+        <span>4 entretiens complémentaires</span>
+      </div>
+
+      <a class="link" href="les-architectes.html">Découvrir Les Architectes</a>
+    </div>
+  </div>
+</section>
+   
     <section class="section section-soft-3" id="serie-en-cours">
       <h2>Série actuellement ouverte</h2>
       <p class="measure">
