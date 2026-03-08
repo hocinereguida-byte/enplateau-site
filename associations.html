@@ -4,60 +4,72 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>EN PLATEAU — Dirigeants associatifs | Associations, fédérations, ONG, ESS</title>
+  <title>EN PLATEAU — Dirigeants associatifs | Fédérations, têtes de réseau, ONG</title>
   <meta
     name="description"
-    content="EN PLATEAU accompagne associations, fédérations, ONG et acteurs de l’économie sociale via deux formats éditoriaux : série thématique et série dirigeant. Cadrage, préparation, émission et valorisation durable."
+    content="EN PLATEAU organise des séries éditoriales pour les fédérations, têtes de réseau, ONG et organisations associatives confrontées à des prises de parole à fort enjeu. Conversation économique collective ou parcours médiatique approfondi."
   />
   <meta
     name="keywords"
-    content="associations, fédérations, ONG, ESS, économie sociale, émission économique, média, prise de parole, impact social, emploi, filières, financement, territoire, cadrage éditorial, préparation interview, stratégie média, EN PLATEAU"
+    content="fédérations, têtes de réseau, ONG, associations nationales, plaidoyer, filières, financement, régulation, emploi, médias économiques, prise de parole, cadrage éditorial, EN PLATEAU"
   />
   <link rel="canonical" href="https://enplateau.fr/associations.html" />
 
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0B1F3A" />
+  <meta name="theme-color" content="#0F2747" />
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="EN PLATEAU" />
-  <meta property="og:title" content="EN PLATEAU — Dirigeants associatifs | Associations, fédérations, ONG, ESS" />
+  <meta property="og:title" content="EN PLATEAU — Dirigeants associatifs | Fédérations, têtes de réseau, ONG" />
   <meta
     property="og:description"
-    content="Deux formats éditoriaux pour les dirigeants associatifs : une série thématique pour situer une organisation dans une transformation collective, ou une série dirigeant pour déployer une trajectoire, une vision ou une logique d’action."
+    content="Deux cadres éditoriaux pour les fédérations, têtes de réseau, ONG et organisations associatives : conversation économique collective ou parcours médiatique approfondi."
   />
   <meta property="og:url" content="https://enplateau.fr/associations.html" />
   <meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="EN PLATEAU — Dirigeants associatifs | Associations, fédérations, ONG, ESS" />
+  <meta name="twitter:title" content="EN PLATEAU — Dirigeants associatifs | Fédérations, têtes de réseau, ONG" />
   <meta
     name="twitter:description"
-    content="Série éditoriale ou série dirigeant : EN PLATEAU structure les prises de parole des associations, fédérations, ONG et acteurs ESS dans des médias économiques."
+    content="Pour les organisations associatives dont la parole doit être située, clarifiée et tenue dans un cadre éditorial crédible."
   />
   <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --ink:#0B0F19;
       --slate:#2B3340;
       --muted:#5B6472;
-      --line:#E7EAF0;
-      --sig:#0B1F3A;
-      --sig-2:#112B52;
-      --soft:#F7F9FC;
-      --max:1040px;
+      --line:#E3E7EC;
+      --line-2:#D7DEE6;
+      --sig:#0F2747;
+      --soft:#F5F6F7;
+      --soft-2:#F2F4F6;
+      --soft-3:#EEF2F5;
+      --warm:#F8F7F4;
+      --max:1080px;
       --bg:#ffffff;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
       line-height:1.7;
       color:var(--slate);
       background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
     }
 
     a{color:inherit;text-decoration:none}
@@ -65,26 +77,26 @@
     .container{
       max-width:var(--max);
       margin:0 auto;
-      padding:34px 22px 110px;
+      padding:0 24px 110px;
     }
 
     .header-wrap{
       position:sticky;
       top:0;
       z-index:50;
-      background:rgba(255,255,255,.92);
-      backdrop-filter:saturate(140%) blur(10px);
-      border-bottom:1px solid var(--line);
+      background:rgba(255,255,255,.96);
+      backdrop-filter:saturate(130%) blur(8px);
+      border-bottom:1px solid rgba(11,15,25,.06);
     }
 
     .header{
       max-width:var(--max);
       margin:0 auto;
-      padding:12px 22px;
+      padding:14px 24px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:14px;
+      gap:18px;
     }
 
     .brand{
@@ -94,9 +106,9 @@
     }
 
     .brand-mark{
-      width:34px;
-      height:34px;
-      border-radius:10px;
+      width:32px;
+      height:32px;
+      border-radius:8px;
       background:var(--sig);
       display:inline-block;
       flex:0 0 auto;
@@ -106,11 +118,12 @@
       font-weight:900;
       letter-spacing:-.02em;
       color:var(--ink);
+      font-size:15px;
     }
 
     .nav{
       display:none;
-      gap:18px;
+      gap:22px;
       align-items:center;
     }
 
@@ -131,15 +144,28 @@
     .nav-trigger{
       font-size:14px;
       color:var(--muted);
-      font-weight:750;
-      padding:10px 10px;
-      border-radius:999px;
+      font-weight:700;
+      padding:8px 0;
       background:none;
       border:none;
       cursor:pointer;
       font-family:inherit;
       display:inline-flex;
       align-items:center;
+      position:relative;
+    }
+
+    .nav > a::after,
+    .nav-trigger::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-2px;
+      width:0;
+      height:1px;
+      background:var(--ink);
+      transition:width .18s ease;
+      opacity:.8;
     }
 
     .nav > a:hover,
@@ -147,18 +173,24 @@
     .nav > a.active,
     .nav-trigger.active{
       color:var(--ink);
-      background:#f5f7fb;
+    }
+
+    .nav > a:hover::after,
+    .nav-trigger:hover::after,
+    .nav > a.active::after,
+    .nav-trigger.active::after{
+      width:100%;
     }
 
     .dropdown{
       position:absolute;
-      top:calc(100% + 10px);
+      top:calc(100% + 12px);
       left:0;
-      min-width:240px;
+      min-width:250px;
       background:#fff;
       border:1px solid var(--line);
-      border-radius:18px;
-      box-shadow:0 18px 40px rgba(0,0,0,.08);
+      border-radius:10px;
+      box-shadow:0 10px 24px rgba(13,21,32,.06);
       padding:10px;
       display:none;
     }
@@ -166,7 +198,7 @@
     .dropdown a{
       display:block;
       padding:10px 12px;
-      border-radius:12px;
+      border-radius:8px;
       color:var(--muted);
       font-size:14px;
       font-weight:700;
@@ -175,7 +207,7 @@
 
     .dropdown a:hover,
     .dropdown a.active{
-      background:#f5f7fb;
+      background:#F6F8FA;
       color:var(--ink);
     }
 
@@ -187,7 +219,7 @@
     .chevron{
       font-size:12px;
       margin-left:6px;
-      opacity:.55;
+      opacity:.5;
       transition:transform .2s ease;
       line-height:1;
     }
@@ -200,7 +232,7 @@
     .burger{
       border:1px solid var(--line);
       background:#fff;
-      border-radius:12px;
+      border-radius:8px;
       padding:10px 12px;
       font-weight:800;
       color:var(--ink);
@@ -218,7 +250,7 @@
       align-items:center;
       justify-content:space-between;
       width:100%;
-      padding:14px 22px;
+      padding:14px 24px;
       color:var(--muted);
       font-weight:750;
       background:none;
@@ -231,18 +263,18 @@
 
     .mobile a:hover,
     .mobile button:hover{
-      background:#f5f7fb;
+      background:#F6F8FA;
       color:var(--ink);
     }
 
     .mobile-submenu{
       display:none;
-      border-top:1px solid #f1f3f7;
-      background:#fbfcfe;
+      border-top:1px solid #F1F3F6;
+      background:#FBFCFD;
     }
 
     .mobile-submenu a{
-      padding-left:38px;
+      padding-left:40px;
       font-weight:700;
       font-size:14px;
       justify-content:flex-start;
@@ -255,77 +287,88 @@
     }
 
     h1{
-      font-size:clamp(32px,6vw,52px);
-      line-height:1.05;
+      font-family:"Bitter",serif;
+      font-size:clamp(34px,5.4vw,54px);
+      line-height:1.04;
       margin:0 0 14px;
       color:#fff;
-      font-weight:900;
-      letter-spacing:-0.03em;
-    }
-
-    h2{
-      font-size:clamp(24px,4vw,36px);
-      line-height:1.12;
-      margin:0 0 18px;
-      color:var(--ink);
-      font-weight:850;
+      font-weight:700;
       letter-spacing:-0.02em;
     }
 
+    h2{
+      font-family:"Bitter",serif;
+      font-size:clamp(26px,4vw,40px);
+      line-height:1.08;
+      margin:0 0 18px;
+      color:var(--ink);
+      font-weight:700;
+      letter-spacing:-0.012em;
+    }
+
     h3{
-      font-size:20px;
+      font-family:"Bitter",serif;
+      font-size:22px;
+      line-height:1.18;
       margin:0 0 10px;
       color:var(--ink);
-      font-weight:760;
+      font-weight:600;
+      letter-spacing:-0.006em;
     }
 
     p{margin:0 0 18px}
     p strong{font-weight:650}
 
     .hero{
-      background:linear-gradient(135deg, var(--sig), var(--sig-2));
+      background:var(--sig);
       color:#fff;
-      border-radius:28px;
-      padding:58px 24px 48px;
-      margin:26px 0 34px;
+      border-radius:16px;
+      padding:68px 34px 52px;
+      margin:26px 0 28px;
       text-align:center;
+      box-shadow:none;
     }
 
     .hero .kicker{
-      font-size:13px;
-      letter-spacing:.18em;
+      font-size:12px;
+      letter-spacing:.28em;
       text-transform:uppercase;
-      opacity:.78;
-      margin-bottom:10px;
+      opacity:.76;
+      margin-bottom:14px;
+      font-weight:800;
     }
 
     .hero .subhead{
-      max-width:820px;
+      max-width:760px;
       margin:0 auto 14px;
-      font-size:16px;
+      font-size:18px;
+      line-height:1.42;
       font-weight:700;
-      opacity:.92;
+      opacity:.95;
     }
 
     .hero .lead{
-      max-width:860px;
-      margin:0 auto 0;
-      opacity:.9;
-      font-size:16px;
-    }
-
-    .hero-image{
-      display:block;
-      max-width:100%;
-      height:auto;
-      margin:28px auto 0;
-      border-radius:18px;
+      max-width:760px;
+      margin:10px auto 0;
+      opacity:.78;
+      font-size:14px;
+      line-height:1.62;
+      font-weight:500;
     }
 
     .section{
-      margin-bottom:72px;
+      margin:0 0 22px;
+      padding:44px 26px;
+      border-radius:14px;
       text-align:center;
+      border:1px solid var(--line);
     }
+
+    .section-white{background:#fff;}
+    .section-soft{background:var(--soft);}
+    .section-soft-2{background:var(--soft-2);}
+    .section-soft-3{background:var(--soft-3);}
+    .section-warm{background:var(--warm);}
 
     .measure{
       max-width:900px;
@@ -342,13 +385,13 @@
     .grid-3{
       display:grid;
       gap:22px;
-      margin-top:12px;
+      margin-top:14px;
     }
 
     .grid-4{
       display:grid;
-      gap:22px;
-      margin-top:24px;
+      gap:18px;
+      margin-top:22px;
     }
 
     @media(min-width:900px){
@@ -359,53 +402,78 @@
 
     .card{
       border:1px solid var(--line);
-      border-radius:22px;
-      padding:24px;
+      border-radius:10px;
+      padding:22px;
       background:#fff;
       text-align:left;
+      box-shadow:none;
+      display:flex;
+      flex-direction:column;
     }
 
     .card.featured{
-      box-shadow:0 18px 40px rgba(0,0,0,.06);
-      border:1px solid rgba(11,31,58,.18);
+      border:1px solid var(--line-2);
     }
 
     .card p{
+      flex-grow:1;
       font-size:14px;
+      line-height:1.72;
       color:var(--muted);
       margin:0 0 14px;
     }
 
     .pill{
       display:inline-block;
-      font-size:12px;
-      font-weight:850;
-      border:1px solid var(--line);
-      padding:8px 10px;
-      border-radius:999px;
-      color:var(--muted);
-      background:#fff;
-      margin-bottom:10px;
+      padding:0 0 8px;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+      color:#0B1F3A;
+      border-bottom:2px solid #0B1F3A;
+      background:none;
+      border-radius:0;
+      margin-bottom:14px;
     }
 
     .deadline{
-      display:inline-block;
-      margin-top:4px;
-      margin-bottom:14px;
-      font-size:13px;
-      font-weight:800;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:3px;
+      margin-top:10px;
+      margin-bottom:18px;
+      padding:0;
+      background:none;
+      border:none;
+      border-radius:0;
       color:var(--sig);
-      background:#EEF4FB;
-      border:1px solid #D9E4F3;
-      padding:8px 10px;
-      border-radius:999px;
+      width:100%;
+      max-width:none;
+    }
+
+    .deadline-label{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      line-height:1.3;
+      color:#556274;
+    }
+
+    .deadline-date{
+      font-size:15px;
+      font-weight:700;
+      line-height:1.35;
+      color:var(--ink);
     }
 
     .card a.link{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      margin-top:14px;
+      margin-top:auto;
       font-size:14px;
       font-weight:750;
       color:var(--ink);
@@ -430,22 +498,44 @@
       display:flex;
       flex-wrap:wrap;
       justify-content:center;
-      align-items:center;
-      gap:70px;
+      align-items:flex-end;
+      gap:56px;
       margin:6px 0 0;
     }
 
     .media-logos img{
-      height:80px;
-      max-width:180px;
+      height:74px;
+      max-width:170px;
       width:auto;
-      opacity:.9;
+      opacity:.92;
       transition:opacity .2s ease, transform .2s ease;
     }
 
     .media-logos img:hover{
       opacity:1;
       transform:translateY(-2px);
+    }
+
+    #medias{
+      margin-top:-8px;
+      margin-bottom:22px;
+      padding-top:28px;
+      padding-bottom:24px;
+    }
+
+    .media-kicker{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .media-stack{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:6px;
     }
 
     .cta{
@@ -457,7 +547,7 @@
     }
 
     .btn{
-      padding:14px 20px;
+      padding:12px 18px;
       border-radius:999px;
       font-weight:800;
       text-decoration:none;
@@ -465,6 +555,12 @@
       align-items:center;
       justify-content:center;
       border:1px solid transparent;
+      transition:transform .18s ease, background .18s ease;
+      font-size:14px;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
     }
 
     .btn-primary{
@@ -478,51 +574,58 @@
       color:var(--ink);
     }
 
-    .mid-cta{
-      background:var(--soft);
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:30px 24px;
-      text-align:center;
+    .btn-secondary:hover{
+      background:#fff;
     }
 
     .final{
-      background:linear-gradient(135deg, var(--sig), var(--sig-2));
+      background:var(--sig);
       color:#fff;
-      border-radius:28px;
-      padding:58px 24px;
+      border-radius:16px;
+      padding:48px 24px;
       text-align:center;
+      border:none;
     }
 
-    .final h2{color:#fff}
+    .final h2{
+      color:#fff;
+      margin-bottom:14px;
+    }
+
+    .final p{
+      max-width:760px;
+      margin:0 auto 16px;
+      color:#fff;
+    }
 
     .footer{
-      margin-top:72px;
+      margin-top:66px;
       border-top:1px solid var(--line);
       padding:34px 0 0;
     }
 
     .footer-grid{
       display:grid;
-      gap:28px;
+      gap:30px;
     }
 
     @media(min-width:900px){
       .footer-grid{
-        grid-template-columns:1.5fr 1fr 1fr 1fr;
+        grid-template-columns:1.7fr 1fr 1fr 1fr;
       }
     }
 
     .footer-brand{
-      max-width:420px;
+      max-width:460px;
     }
 
     .footer-title{
-      font-size:14px;
+      font-size:12px;
       font-weight:900;
       color:var(--ink);
-      margin:0 0 10px;
-      letter-spacing:-.01em;
+      margin:0 0 12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
     }
 
     .footer p,
@@ -548,7 +651,7 @@
     }
 
     .footer-bottom{
-      margin-top:28px;
+      margin-top:30px;
       padding-top:18px;
       border-top:1px solid var(--line);
       display:flex;
@@ -560,11 +663,56 @@
 
     .footer-bottom p{
       margin:0;
-      font-size:13px;
+      font-size:12px;
       color:var(--muted);
+      letter-spacing:.01em;
     }
 
-    #medias{margin-bottom:12px}
+    @media(max-width:700px){
+      .container{
+        padding:0 16px 88px;
+      }
+
+      .header{
+        padding:12px 16px;
+      }
+
+      .hero{
+        padding:54px 20px 40px;
+        border-radius:14px;
+      }
+
+      .hero .subhead{
+        font-size:16px;
+      }
+
+      .hero .lead{
+        font-size:15px;
+        line-height:1.65;
+      }
+
+      .section{
+        padding:36px 18px;
+        border-radius:12px;
+      }
+
+      .final{
+        border-radius:14px;
+      }
+
+      .card{
+        border-radius:10px;
+      }
+
+      .media-logos{
+        gap:30px;
+      }
+
+      .media-logos img{
+        height:64px;
+        max-width:160px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -621,322 +769,235 @@
 
     <section class="hero">
       <div class="kicker">Dirigeants associatifs</div>
-      <h1>Rendre votre impact lisible sans le surjouer.</h1>
-      <p class="subhead">Pour les associations, fédérations, ONG et acteurs de l’économie sociale qui doivent parler emploi, financement, filières, coûts évités, attractivité des métiers ou impact territorial dans un cadre exigeant.</p>
-      <p class="lead">
-        Pour une organisation associative, la vraie question n’est pas seulement faut-il prendre la parole, mais dans quel cadre ce sujet sera le plus lisible, le plus crédible et le plus utile.
+      <h1>Quand une organisation associative prend la parole, le cadre compte autant que le sujet</h1>
+      <p class="subhead">
+        Fédérations, têtes de réseau, ONG, organisations nationales : certaines prises de parole engagent plus qu’une communication. Elles engagent une lecture de filière, un cadre d’action, une responsabilité ou une vision.
       </p>
-      <img class="hero-image" src="images/en-plateau-og-1200x630.webp" alt="EN PLATEAU — Dirigeants associatifs | Associations, fédérations, ONG, ESS">
+      <p class="lead">
+        La question n’est pas seulement de savoir s’il faut parler, mais dans quel cadre un sujet sera le plus intelligible, le plus crédible et le plus utile.
+      </p>
     </section>
 
-    <section class="section" id="medias">
-      <p style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;">
-        Nos émissions prennent place dans ces environnements médias
-      </p>
+    <section class="section section-white" id="medias">
+      <div class="media-stack">
+        <p class="media-kicker">
+          Les formats s’inscrivent dans des environnements éditoriaux reconnus.
+        </p>
 
-      <div class="media-logos">
-        <img src="images/bfm-business.svg" alt="BFM Business">
-        <img src="images/le-figaro.svg" alt="Le Figaro">
-        <img src="images/la-tribune.svg" alt="La Tribune">
-        <img src="images/forbes.svg" alt="Forbes">
+        <div class="media-logos">
+          <img src="images/bfm-business.svg" alt="BFM Business">
+          <img src="images/le-figaro.svg" alt="Le Figaro">
+          <img src="images/la-tribune.svg" alt="La Tribune">
+          <img src="images/forbes.svg" alt="Forbes">
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Deux formats éditoriaux pour les dirigeants associatifs</h2>
+    <section class="section section-warm">
+      <h2>Pour quels acteurs ?</h2>
       <p class="measure">
-        Selon votre sujet, votre moment et votre niveau d’exposition, EN PLATEAU peut structurer votre prise de parole dans une <strong>série thématique</strong> ou dans une <strong>série dirigeant</strong>.
+        Cette approche concerne les organisations associatives dont la parole porte sur des enjeux qui dépassent leur seule structure : financement d’une filière, attractivité des métiers, mise en œuvre d’une politique publique, régulation, impact économique d’une crise, transformation d’un modèle, articulation entre intérêt général et soutenabilité.
+      </p>
+      <p class="measure">
+        Elle s’adresse d’abord aux acteurs qui structurent, documentent, représentent, coordonnent ou mettent en œuvre : fédérations, unions, têtes de réseau, plateformes, ONG, organisations sectorielles et acteurs nationaux.
+      </p>
+    </section>
+
+    <section class="section section-soft-3">
+      <h2>Deux cadres éditoriaux possibles</h2>
+      <p class="measure">
+        Selon la nature du sujet, une organisation peut relever d’une conversation économique collective ou d’un parcours médiatique plus approfondi.
       </p>
 
       <div class="grid-2">
         <div class="card featured">
-          <span class="pill">Série éditoriale</span>
-          <h3>Inscrire l’organisation dans une transformation collective</h3>
+          <span class="pill">Les Bâtisseurs</span>
+          <h3>Inscrire l’organisation dans une transformation plus large</h3>
           <p>
-            Lorsque votre sujet éclaire un enjeu plus large que votre seule organisation — emploi, filière, financement, coûts évités, attractivité des métiers, crise, territoire — il peut trouver sa place dans une série éditoriale comme <strong>Les Bâtisseurs</strong>.
+            Lorsque le sujet éclaire un enjeu collectif — filière, financement, emploi, attractivité, crise sectorielle, régulation, territoire — la série thématique permet de situer l’organisation dans une dynamique plus vaste qu’elle-même.
           </p>
           <p>
-            La logique n’est pas de parler seulement de vous, mais de situer votre rôle dans une dynamique économique et sociale plus large.
+            Le propos n’est pas centré sur la seule structure, mais sur ce qu’elle aide à rendre lisible dans une transformation en cours.
           </p>
-          <a class="link" href="les-batisseurs.html">Découvrir Les Bâtisseurs</a>
+          <a class="link" href="#series-en-cours">Voir les séries en cours</a>
         </div>
 
         <div class="card">
-          <span class="pill">Série dirigeant</span>
+          <span class="pill">Les Architectes</span>
           <h3>Déployer une trajectoire, une vision, une logique d’action</h3>
           <p>
-            Certaines situations appellent un traitement plus approfondi : changement d’échelle, repositionnement, hybridation économique, stratégie d’impact, gouvernance, plaidoyer ou cohérence d’un modèle.
+            Certaines situations relèvent moins d’un enjeu collectif que d’une trajectoire à clarifier : changement d’échelle, repositionnement, hybridation économique, stratégie de plaidoyer, gouvernance, cohérence d’un modèle ou d’une doctrine d’action.
           </p>
           <p>
-            Dans ce cas, un format comme <strong>Les Architectes</strong> permet d’aborder plusieurs dimensions d’une même trajectoire.
+            Dans ce cas, un parcours médiatique approfondi permet d’explorer plusieurs dimensions d’une même logique d’action.
           </p>
-          <a class="link" href="les-architectes.html">Découvrir Les Architectes</a>
+          <a class="link" href="#series-en-cours">Voir les séries en cours</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="cibles">
-      <h2>Des contextes différents. Une même exigence.</h2>
+    <section class="section section-soft" id="series-en-cours">
+      <h2>Éditions actuellement en constitution</h2>
       <p class="measure">
-        Adapter le cadre, le ton et la préparation à la réalité d’une association, d’une fédération, d’une ONG ou d’un acteur de l’économie sociale confronté à une parole exposée.
+        Certaines organisations peuvent relever d’une conversation économique collective. D’autres appellent un traitement plus approfondi. Les éditions en cours permettent de situer les cadres actuellement ouverts.
+      </p>
+
+      <div class="grid-2">
+        <div class="card featured">
+          <span class="pill">Les Bâtisseurs</span>
+          <h3>Réindustrialisation & souveraineté productive en France et en Europe</h3>
+          <div class="deadline">
+            <span class="deadline-label">Édition en cours de constitution</span>
+            <span class="deadline-date">jusqu’au 15 avril 2026</span>
+          </div>
+          <p>
+            Une conversation consacrée aux organisations qui participent concrètement à la relocalisation industrielle, à la structuration des capacités productives et à la compréhension d’un enjeu économique collectif.
+          </p>
+          <p>
+            <strong>4 organisations seront retenues pour cette édition.</strong>
+          </p>
+          <a class="link" href="les-batisseurs.html">Voir les autres séries</a>
+        </div>
+
+        <div class="card">
+          <span class="pill">Les Architectes</span>
+          <h3>Transformer une organisation face aux ruptures technologiques, réglementaires et géopolitiques</h3>
+          <div class="deadline">
+            <span class="deadline-label">Édition en cours de constitution</span>
+            <span class="deadline-date">jusqu’au 31 juillet 2026</span>
+          </div>
+          <p>
+            Un parcours consacré aux organisations dont la trajectoire permet d’éclairer des arbitrages, une vision de long terme, une transformation du modèle ou une responsabilité structurante dans leur champ.
+          </p>
+          <p>
+            <strong>Une organisation sera retenue pour cette édition.</strong>
+          </p>
+          <a class="link" href="les-architectes.html">Voir les autres séries</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <h2>Des contextes différents, une même exigence</h2>
+      <p class="measure">
+        La nature de l’organisation change les équilibres : gouvernance, plaidoyer, redevabilité, partenaires publics, financeurs, adhérents, réseau. L’exigence, elle, reste la même : tenir une parole claire, située et défendable.
       </p>
 
       <div class="grid-4">
         <div class="card">
-          <span class="pill">Association d’action sociale</span>
-          <h3>Montrer l’impact sans auto-promotion</h3>
-          <p>Emploi, coûts évités, continuité de service, insertion : rendre une action lisible au-delà du registre compassionnel.</p>
-          <a class="link" href="#micro-cas">Voir des exemples</a>
+          <span class="pill">Fédérations</span>
+          <h3>Porter une lecture de filière</h3>
+          <p>
+            Financement, réglementation, attractivité des métiers, équilibre économique d’un secteur : faire comprendre une situation au-delà du cercle initié.
+          </p>
         </div>
 
         <div class="card">
-          <span class="pill">Fédération</span>
-          <h3>Porter une lecture de filière</h3>
-          <p>Financement, réglementation, attractivité des métiers, qualité de service : expliquer une situation sectorielle avec clarté.</p>
-          <a class="link" href="#micro-cas">Voir des exemples</a>
+          <span class="pill">Têtes de réseau</span>
+          <h3>Rendre un modèle lisible</h3>
+          <p>
+            Coordination, mise en œuvre, changement d’échelle, articulation nationale-territoriale : clarifier une logique d’action et ses effets.
+          </p>
         </div>
 
         <div class="card">
           <span class="pill">ONG</span>
           <h3>Éclairer les effets économiques d’une crise</h3>
-          <p>Approvisionnement, énergie, alimentation, chaînes de valeur : apporter des faits et des mécanismes plutôt qu’un simple signal d’alerte.</p>
-          <a class="link" href="#micro-cas">Voir des exemples</a>
+          <p>
+            Approvisionnement, dépendances, chaînes de valeur, énergie, alimentation, vulnérabilités : apporter des faits et des mécanismes plutôt qu’un simple signal d’alerte.
+          </p>
         </div>
 
         <div class="card">
-          <span class="pill">Acteur ESS</span>
-          <h3>Tenir une parole de modèle</h3>
-          <p>Viabilité, hybridation financière, utilité sociale, ancrage territorial : parler économie sans renier la mission.</p>
-          <a class="link" href="#micro-cas">Voir des exemples</a>
+          <span class="pill">Organisations nationales</span>
+          <h3>Tenir une parole de responsabilité</h3>
+          <p>
+            Plaidoyer, représentation, doctrine d’action, arbitrages, partenariats : prendre place dans un débat sans posture ni simplification.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-label="Pourquoi passer préparer réutiliser">
-      <h2>Pourquoi une émission devient stratégique</h2>
-
-      <div class="grid-3">
-        <div class="card">
-          <span class="pill">Passer</span>
-          <h3>Pourquoi et comment gagner en visibilité ?</h3>
-          <p>Accéder à des médias économiques nationaux.</p>
-          <p>Donner une visibilité stratégique à votre action, à votre modèle ou à votre lecture de terrain.</p>
-          <p>Installer votre organisation dans des conversations qui portent sur l’emploi, les filières, le financement et les territoires.</p>
-        </div>
-
-        <div class="card featured">
-          <span class="pill">Préparer</span>
-          <h3>Pourquoi et comment préparer une émission ?</h3>
-          <p>Une parole associative ou fédérative mal calibrée peut être perçue comme militante, floue ou défensive.</p>
-          <p>Une émission bien cadrée crédibilise un positionnement et rend les mécanismes économiques compréhensibles.</p>
-          <p>Une intervention bien préparée transforme l’exposition en levier de lisibilité, de confiance et de reconnaissance.</p>
-        </div>
-
-        <div class="card">
-          <span class="pill">Réutiliser</span>
-          <h3>Pourquoi et comment réutiliser cette émission ?</h3>
-          <p>Une émission devient un actif de communication durable.</p>
-          <p>Elle peut nourrir vos relations partenaires, votre plaidoyer, votre recrutement et vos dossiers de financement.</p>
-          <p>Elle alimente votre écosystème : institutions, mécènes, adhérents, prescripteurs, élus, réseaux professionnels.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Quand l’impact doit être expliqué en langage économique</h2>
+    <section class="section section-soft-2">
+      <h2>Ce qu’une organisation doit chercher dans une émission</h2>
       <p class="measure">
-        Une association a sa place dans un média économique lorsque son action éclaire un enjeu réel : emploi, efficacité d’une dépense publique, équilibre d’une filière, attractivité des métiers, coût d’une crise ou robustesse d’un modèle.
+        Une émission utile n’est pas d’abord un support de visibilité. C’est un cadre qui permet de situer un sujet, d’en hiérarchiser les enjeux et de rendre une lecture plus compréhensible.
       </p>
       <p class="measure">
-        L’enjeu n’est pas de faire parler l’organisation pour elle-même. L’enjeu est de rendre des mécanismes compréhensibles, avec des faits, des ordres de grandeur, des effets concrets et des limites assumées.
+        Lorsqu’elle est bien pensée, elle peut faire apparaître une logique de filière, éclairer un débat de financement, stabiliser une parole de réseau, rendre un modèle plus intelligible ou inscrire une organisation dans une conversation économique crédible.
       </p>
     </section>
 
-    <section class="section" id="serie-en-cours">
-      <h2>Quand une organisation associative relève d’une série éditoriale</h2>
+    <section class="section section-soft-3">
+      <h2>Quelques situations typiques</h2>
       <p class="measure">
-        Une série éditoriale est pertinente lorsque votre sujet permet d’éclairer une dynamique plus large : emploi, filière, financement, crise, attractivité, territoire, hybridation économique ou efficacité de l’action.
-      </p>
-
-      <div class="grid-2">
-        <div class="card featured">
-          <span class="pill">Exemple de série ouverte</span>
-          <h3>Les Bâtisseurs — édition 2026</h3>
-          <div class="deadline">Clôture des candidatures : 15 avril 2026</div>
-          <p><strong>Souveraineté industrielle & relocalisation en Auvergne-Rhône-Alpes</strong></p>
-          <p>
-            Une série consacrée aux organisations qui contribuent concrètement à la réindustrialisation, à la relocalisation et au renforcement productif du territoire.
-          </p>
-          <p><strong>Maximum : 4 organisations sélectionnées.</strong></p>
-          <a class="link" href="les-batisseurs.html">Voir la série</a>
-        </div>
-
-        <div class="card">
-          <span class="pill">Quand choisir ce cadre</span>
-          <h3>L’organisation éclaire plus qu’elle-même</h3>
-          <p>
-            Si votre sujet permet de comprendre une évolution plus large que votre seule action, la série éditoriale est souvent le bon cadre.
-          </p>
-          <p>
-            Elle permet de gagner en crédibilité en vous situant dans une dynamique collective intelligible.
-          </p>
-          <a class="link" href="formulaire-candidature.html">Proposer une candidature</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Quand une organisation associative relève d’un format plus approfondi</h2>
-      <p class="measure">
-        Certaines situations ne relèvent pas d’un angle collectif mais d’une trajectoire à déployer : changement d’échelle, gouvernance, stratégie d’impact, hybridation financière, repositionnement, plaidoyer ou cohérence d’un modèle.
-      </p>
-
-      <div class="grid-2">
-        <div class="card">
-          <span class="pill">Format approfondi</span>
-          <h3>Déployer une logique d’action</h3>
-          <p>
-            Lorsqu’une simple séquence ne suffit pas à rendre votre sujet lisible, un format comme <strong>Les Architectes</strong> permet d’aborder plusieurs dimensions d’une même trajectoire.
-          </p>
-          <a class="link" href="les-architectes.html">Voir le format</a>
-        </div>
-
-        <div class="card featured">
-          <span class="pill">Direction / plaidoyer / impact</span>
-          <h3>Tenir une parole de cap</h3>
-          <p>
-            Clarifier une vision, expliquer un modèle, rendre lisible une stratégie d’impact ou défendre une logique d’action : c’est là que la série dirigeant prend tout son sens.
-          </p>
-          <a class="link" href="formulaire-candidature.html">Étudier mon cas</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="micro-cas">
-      <h2>Exemples concrets de situations</h2>
-      <p class="measure">
-        Avec un objectif constant : rendre votre action claire, crédible et défendable dans un cadre économique.
-      </p>
-
-      <div class="grid-3">
-        <div class="card featured">
-          <span class="pill">Association d’action sociale</span>
-          <h3>Emploi et efficacité de la dépense publique</h3>
-          <p>Insertion, montée en compétences, continuité de service, coûts évités : faire comprendre ce que l’action produit réellement.</p>
-        </div>
-
-        <div class="card">
-          <span class="pill">Fédération</span>
-          <h3>Situation économique d’une filière</h3>
-          <p>Équilibre économique, réglementation, attractivité des métiers, qualité de service : porter une lecture structurée du secteur.</p>
-        </div>
-
-        <div class="card">
-          <span class="pill">ONG</span>
-          <h3>Conséquences économiques d’une crise</h3>
-          <p>Coûts, dépendances, chaînes de valeur, risques systémiques : apporter des faits et des mécanismes plutôt qu’une réaction d’alerte seule.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="mid-cta">
-        <h2 style="margin-bottom:10px;">Une prise de parole utile commence par un bon cadrage</h2>
-        <p class="measure">
-          Toutes les organisations n’ont pas besoin du même niveau d’exposition, ni du même registre de parole. Un échange préalable permet de déterminer si le sujet est mûr, pertinent et défendable.
-        </p>
-        <div class="cta">
-          <a class="btn btn-secondary" href="formulaire-candidature.html">Étudier mon cas</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="situations">
-      <h2>Trois situations où l’émission devient stratégique</h2>
-      <p class="measure" style="color:var(--muted);">
-        La même émission peut servir des objectifs différents : rendre un impact lisible, éclairer une filière ou expliquer les effets économiques d’une crise. Le point commun : ne pas improviser.
+        Avec un objectif constant : rendre un sujet plus compréhensible, plus crédible et plus soutenable dans le temps.
       </p>
 
       <div class="grid-3">
         <div class="card">
-          <span class="pill">Impact / utilité</span>
-          <h3>Montrer ce que l’action change réellement</h3>
-          <p>Passer d’un discours de mission à une démonstration claire : effets, bénéficiaires, coûts évités, continuité de service, résultats.</p>
+          <span class="pill">Filière</span>
+          <h3>Faire comprendre un déséquilibre structurel</h3>
+          <p>
+            Tension de recrutement, financement insuffisant, coût réel d’une mission, dépendances sectorielles : expliquer un mécanisme plutôt qu’additionner les alertes.
+          </p>
         </div>
 
         <div class="card">
-          <span class="pill">Filière / plaidoyer</span>
-          <h3>Porter une lecture crédible d’un secteur</h3>
-          <p>Expliquer un déséquilibre, un besoin de financement, une tension de recrutement ou l’effet d’un changement réglementaire.</p>
+          <span class="pill">Modèle</span>
+          <h3>Rendre lisible une hybridation économique</h3>
+          <p>
+            Articulation entre subventions, activité propre, partenariats, commande publique et mission d’intérêt général : donner une lecture claire d’un équilibre complexe.
+          </p>
         </div>
 
         <div class="card">
-          <span class="pill">Crise / responsabilité</span>
-          <h3>Réduire le risque de simplification</h3>
-          <p>Préparer une parole solide sur des sujets sensibles pour rester factuel, audible et utile aux décideurs.</p>
+          <span class="pill">Responsabilité</span>
+          <h3>Préparer une parole exposée</h3>
+          <p>
+            Réforme, crise, changement de doctrine, débat public sensible : anticiper les lectures possibles et éviter la simplification ou la sur-idéologisation.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="architecturesequence">
-      <h2>Comment se construit une émission ?</h2>
+    <section class="section section-soft">
+      <h2>Une parole utile commence avant l’émission</h2>
       <p class="measure">
-        Une émission articule préparation, réalisation et réutilisation. Elle transforme une prise de parole en contenu utile, réexploitable et cohérent avec vos autres prises de parole.
+        Toutes les organisations n’ont ni le même sujet, ni le même niveau de maturité, ni le même besoin d’exposition. Un échange préalable permet de déterminer si le sujet est pertinent, si le moment est juste et quel cadre éditorial peut réellement lui convenir.
       </p>
-
-      <div class="grid-3">
-        <div class="card featured">
-          <span class="pill">1 — Amont</span>
-          <h3>Structurer</h3>
-          <p>Clarifier le sujet, les mécanismes, les preuves, les points sensibles et le niveau de détail adapté au format.</p>
-        </div>
-
-        <div class="card">
-          <span class="pill">2 — Émission</span>
-          <h3>Rendre intelligible</h3>
-          <p>Partir d’un enjeu économique, social ou territorial, puis situer votre rôle avec précision, sobriété et lisibilité.</p>
-        </div>
-
-        <div class="card">
-          <span class="pill">3 — Aval</span>
-          <h3>Réutiliser</h3>
-          <p>Transformer l’émission en actifs : dossiers, supports partenaires, éléments de plaidoyer, recrutement, messages prêts à reprendre.</p>
-        </div>
+      <div class="cta">
+        <a class="btn btn-secondary" href="formulaire-candidature.html">Étudier mon cas</a>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Une même entrée : la candidature</h2>
+    <section class="section section-white">
+      <h2>Un contexte interne souvent plus complexe qu’il n’y paraît</h2>
       <p class="measure">
-        Qu’il s’agisse d’une participation à une série éditoriale ou de l’examen d’un format plus approfondi, la première étape reste la même : comprendre votre sujet, votre moment, votre objectif et le bon niveau d’exposition.
+        Dans une organisation associative nationale, une prise de parole publique n’engage rarement une seule personne. Elle implique souvent direction, présidence, communication, plaidoyer, réseau, partenaires, financeurs ou instances.
+      </p>
+      <p class="measure">
+        Un cadre éditorial clair permet de réduire les incertitudes en amont, de clarifier les arbitrages de langage et de sécuriser la cohérence de la parole portée publiquement.
       </p>
     </section>
 
-    <section class="section">
-      <h2>Un travail compatible avec vos organisations</h2>
-      <p class="measure">
-        Le travail s’inscrit dans vos circuits de validation : direction, présidence, communication, plaidoyer, partenaires financeurs, réseaux. L’objectif est simple : clarifier le message, préparer les réponses difficiles et tenir une ligne lisible.
-      </p>
-    </section>
-
-    <section class="section">
+    <section class="section section-soft-2">
       <h2>Notre ligne</h2>
       <p class="measure">
-        L’objectif n’est ni l’auto-promotion ni le registre militant. Au contraire : parler vrai, utile, compréhensible, avec des faits, des mécanismes et des limites assumées.
+        Cette approche n’est conçue ni pour l’auto-promotion, ni pour le registre militant, ni pour un discours compassionnel. Elle convient aux organisations qui cherchent à tenir une parole plus lisible, plus précise et plus responsable dans un environnement économique et institutionnel exigeant.
       </p>
       <p class="measure" style="color:var(--muted);margin-top:-6px;">
-        Cette approche n’est pas adaptée aux communications purement promotionnelles ni aux discours déconnectés des réalités économiques.
+        Le sujet compte. Le moment compte. Mais le cadre compte tout autant.
       </p>
     </section>
 
     <section class="final" id="contact">
-      <h2>Proposer une candidature</h2>
+      <h2>Vérifier le bon cadre éditorial</h2>
       <p>
-        Un échange confidentiel permet d’analyser votre situation, d’évaluer le niveau d’exposition approprié
-        et de déterminer le cadre éditorial le plus pertinent.
+        Un échange confidentiel permet d’évaluer si votre sujet relève d’une conversation économique collective, d’un parcours médiatique approfondi ou d’un travail préparatoire en amont.
       </p>
       <div class="cta">
-        <a class="btn btn-primary" href="formulaire-candidature.html">Accéder au formulaire</a>
+        <a class="btn btn-primary" href="formulaire-candidature.html">Demander une évaluation</a>
       </div>
       <p style="margin-top:16px;font-size:14px;opacity:.82;">
         Lorsque nécessaire, un accord de confidentialité peut être formalisé en amont de toute analyse approfondie.
@@ -948,11 +1009,10 @@
         <div class="footer-brand">
           <p class="footer-title">EN PLATEAU</p>
           <p>
-            EN PLATEAU structure des prises de parole dans des médias économiques nationaux.
-            L’activité articule cadrage éditorial, préparation stratégique, émission et valorisation durable des contenus.
+            EN PLATEAU organise des séries éditoriales avec des médias économiques nationaux.
           </p>
           <p>
-            Deux formats éditoriaux : <strong>Les Bâtisseurs</strong>, série éditoriale thématique, et <strong>Les Architectes</strong>, série consacrée à une trajectoire et à sa logique d’action.
+            Deux formats éditoriaux : <strong>Les Bâtisseurs</strong>, conversation économique à plusieurs voix, et <strong>Les Architectes</strong>, parcours consacré à une trajectoire et à sa logique d’action.
           </p>
         </div>
 
@@ -961,7 +1021,7 @@
           <ul>
             <li><a href="les-batisseurs.html">Les Bâtisseurs</a></li>
             <li><a href="les-architectes.html">Les Architectes</a></li>
-            <li><a href="formulaire-candidature.html">Proposer une candidature</a></li>
+            <li><a href="formulaire-candidature.html">Vérifier votre éligibilité</a></li>
           </ul>
         </div>
 
@@ -987,7 +1047,7 @@
 
       <div class="footer-bottom">
         <p>© EN PLATEAU — 2026</p>
-        <p>Prises de parole stratégiques · Médias économiques · Dirigeants associatifs · Cadrage éditorial</p>
+        <p>Séries éditoriales · Médias économiques · Conversations économiques · Parcours médiatiques</p>
       </div>
     </footer>
 
