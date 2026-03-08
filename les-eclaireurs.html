@@ -1,0 +1,1129 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>EN PLATEAU — Experts | Avocats, consultants, économistes, finance</title>
+  <meta
+    name="description"
+    content="EN PLATEAU organise des séries éditoriales pour les avocats, consultants, économistes, experts sectoriels et certains acteurs de la finance dont la parole éclaire une transformation économique, réglementaire ou sectorielle."
+  />
+  <meta
+    name="keywords"
+    content="experts, avocats, consultants, économistes, finance, private equity, dette, M&A, experts sectoriels, médias économiques, Les Éclaireurs, EN PLATEAU"
+  />
+  <link rel="canonical" href="https://enplateau.fr/experts.html" />
+
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0F2747" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="EN PLATEAU" />
+  <meta property="og:title" content="EN PLATEAU — Experts | Avocats, consultants, économistes, finance" />
+  <meta
+    property="og:description"
+    content="Une page pensée pour les experts dont la parole permet d’éclairer une mutation économique, réglementaire, financière ou sectorielle."
+  />
+  <meta property="og:url" content="https://enplateau.fr/experts.html" />
+  <meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EN PLATEAU — Experts | Avocats, consultants, économistes, finance" />
+  <meta
+    name="twitter:description"
+    content="Pour les experts dont la parole gagne à être située dans un cadre éditorial crédible."
+  />
+  <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#0B0F19;
+      --slate:#2B3340;
+      --muted:#5B6472;
+      --line:#E3E7EC;
+      --line-2:#D7DEE6;
+      --sig:#0F2747;
+      --soft:#F5F6F7;
+      --soft-2:#F2F4F6;
+      --soft-3:#EEF2F5;
+      --warm:#F8F7F4;
+      --max:1080px;
+      --bg:#ffffff;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      line-height:1.7;
+      color:var(--slate);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    .container{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 24px 110px;
+    }
+
+    .header-wrap{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:saturate(130%) blur(8px);
+      border-bottom:1px solid rgba(11,15,25,.06);
+    }
+
+    .header{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .brand-mark{
+      width:32px;
+      height:32px;
+      border-radius:8px;
+      background:var(--sig);
+      display:inline-block;
+      flex:0 0 auto;
+    }
+
+    .brand-name{
+      font-weight:900;
+      letter-spacing:-.02em;
+      color:var(--ink);
+      font-size:15px;
+    }
+
+    .nav{
+      display:none;
+      gap:22px;
+      align-items:center;
+    }
+
+    .nav-item{
+      position:relative;
+    }
+
+    .nav-item::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      top:100%;
+      height:14px;
+    }
+
+    .nav > a,
+    .nav-trigger{
+      font-size:14px;
+      color:var(--muted);
+      font-weight:700;
+      padding:8px 0;
+      background:none;
+      border:none;
+      cursor:pointer;
+      font-family:inherit;
+      display:inline-flex;
+      align-items:center;
+      position:relative;
+    }
+
+    .nav > a::after,
+    .nav-trigger::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-2px;
+      width:0;
+      height:1px;
+      background:var(--ink);
+      transition:width .18s ease;
+      opacity:.8;
+    }
+
+    .nav > a:hover,
+    .nav-trigger:hover,
+    .nav > a.active,
+    .nav-trigger.active{
+      color:var(--ink);
+    }
+
+    .nav > a:hover::after,
+    .nav-trigger:hover::after,
+    .nav > a.active::after,
+    .nav-trigger.active::after{
+      width:100%;
+    }
+
+    .dropdown{
+      position:absolute;
+      top:calc(100% + 12px);
+      left:0;
+      min-width:250px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:10px;
+      box-shadow:0 10px 24px rgba(13,21,32,.06);
+      padding:10px;
+      display:none;
+    }
+
+    .dropdown a{
+      display:block;
+      padding:10px 12px;
+      border-radius:8px;
+      color:var(--muted);
+      font-size:14px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .dropdown a:hover,
+    .dropdown a.active{
+      background:#F6F8FA;
+      color:var(--ink);
+    }
+
+    .nav-item:hover .dropdown,
+    .nav-item:focus-within .dropdown{
+      display:block;
+    }
+
+    .chevron{
+      font-size:12px;
+      margin-left:6px;
+      opacity:.5;
+      transition:transform .2s ease;
+      line-height:1;
+    }
+
+    .nav-item:hover .nav-trigger .chevron,
+    .nav-item:focus-within .nav-trigger .chevron{
+      transform:rotate(180deg);
+    }
+
+    .burger{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:8px;
+      padding:10px 12px;
+      font-weight:800;
+      color:var(--ink);
+      cursor:pointer;
+    }
+
+    .mobile{
+      display:none;
+      border-top:1px solid var(--line);
+    }
+
+    .mobile a,
+    .mobile button{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      width:100%;
+      padding:14px 24px;
+      color:var(--muted);
+      font-weight:750;
+      background:none;
+      border:none;
+      text-align:left;
+      font-family:inherit;
+      font-size:15px;
+      cursor:pointer;
+    }
+
+    .mobile a:hover,
+    .mobile button:hover{
+      background:#F6F8FA;
+      color:var(--ink);
+    }
+
+    .mobile-submenu{
+      display:none;
+      border-top:1px solid #F1F3F6;
+      background:#FBFCFD;
+    }
+
+    .mobile-submenu a{
+      padding-left:40px;
+      font-weight:700;
+      font-size:14px;
+      justify-content:flex-start;
+    }
+
+    @media(min-width:900px){
+      .nav{display:flex}
+      .burger{display:none}
+      .mobile{display:none !important}
+    }
+
+    h1{
+      font-family:"Bitter",serif;
+      font-size:clamp(34px,5.4vw,54px);
+      line-height:1.04;
+      margin:0 0 14px;
+      color:#fff;
+      font-weight:700;
+      letter-spacing:-0.02em;
+    }
+
+    h2{
+      font-family:"Bitter",serif;
+      font-size:clamp(26px,4vw,40px);
+      line-height:1.08;
+      margin:0 0 18px;
+      color:var(--ink);
+      font-weight:700;
+      letter-spacing:-0.012em;
+    }
+
+    h3{
+      font-family:"Bitter",serif;
+      font-size:22px;
+      line-height:1.18;
+      margin:0 0 10px;
+      color:var(--ink);
+      font-weight:600;
+      letter-spacing:-0.006em;
+    }
+
+    p{margin:0 0 18px}
+    p strong{font-weight:650}
+
+    .hero{
+      background:var(--sig);
+      color:#fff;
+      border-radius:16px;
+      padding:68px 34px 52px;
+      margin:26px 0 28px;
+      text-align:center;
+      box-shadow:none;
+    }
+
+    .hero .kicker{
+      font-size:12px;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      opacity:.76;
+      margin-bottom:14px;
+      font-weight:800;
+    }
+
+    .hero .subhead{
+      max-width:760px;
+      margin:0 auto 14px;
+      font-size:18px;
+      line-height:1.42;
+      font-weight:700;
+      opacity:.95;
+    }
+
+    .hero .lead{
+      max-width:760px;
+      margin:10px auto 0;
+      opacity:.78;
+      font-size:14px;
+      line-height:1.62;
+      font-weight:500;
+    }
+
+    .section{
+      margin:0 0 22px;
+      padding:44px 26px;
+      border-radius:14px;
+      text-align:center;
+      border:1px solid var(--line);
+    }
+
+    .section-white{background:#fff;}
+    .section-soft{background:var(--soft);}
+    .section-soft-2{background:var(--soft-2);}
+    .section-soft-3{background:var(--soft-3);}
+    .section-warm{background:var(--warm);}
+
+    .measure{
+      max-width:900px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .grid-2{
+      display:grid;
+      gap:22px;
+      margin-top:22px;
+    }
+
+    .grid-3{
+      display:grid;
+      gap:22px;
+      margin-top:14px;
+    }
+
+    .grid-4{
+      display:grid;
+      gap:18px;
+      margin-top:22px;
+    }
+
+    @media(min-width:900px){
+      .grid-2{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+      .grid-4{grid-template-columns:repeat(4,1fr)}
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:22px;
+      background:#fff;
+      text-align:left;
+      box-shadow:none;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .card.featured{
+      border:1px solid var(--line-2);
+    }
+
+    .card p{
+      flex-grow:1;
+      font-size:14px;
+      line-height:1.72;
+      color:var(--muted);
+      margin:0 0 14px;
+    }
+
+    .pill{
+      display:inline-block;
+      padding:0 0 8px;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+      color:#0B1F3A;
+      border-bottom:2px solid #0B1F3A;
+      background:none;
+      border-radius:0;
+      margin-bottom:14px;
+    }
+
+    .deadline{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:3px;
+      margin-top:10px;
+      margin-bottom:18px;
+      padding:0;
+      background:none;
+      border:none;
+      border-radius:0;
+      color:var(--sig);
+      width:100%;
+      max-width:none;
+    }
+
+    .deadline-label{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      line-height:1.3;
+      color:#556274;
+    }
+
+    .deadline-date{
+      font-size:15px;
+      font-weight:700;
+      line-height:1.35;
+      color:var(--ink);
+    }
+
+    .card a.link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:auto;
+      font-size:14px;
+      font-weight:750;
+      color:var(--ink);
+      text-decoration:none;
+    }
+
+    .card a.link::after{
+      content:"→";
+      font-weight:900;
+      opacity:.55;
+      transform:translateX(0);
+      transition:transform .15s ease, opacity .15s ease;
+    }
+
+    .card a.link:hover{text-decoration:underline}
+    .card a.link:hover::after{
+      opacity:.9;
+      transform:translateX(2px);
+    }
+
+    .media-logos{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:flex-end;
+      gap:56px;
+      margin:6px 0 0;
+    }
+
+    .media-logos img{
+      height:74px;
+      max-width:170px;
+      width:auto;
+      opacity:.92;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .media-logos img:hover{
+      opacity:1;
+      transform:translateY(-2px);
+    }
+
+    #medias{
+      margin-top:-8px;
+      margin-bottom:22px;
+      padding-top:28px;
+      padding-bottom:24px;
+    }
+
+    .media-kicker{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .media-stack{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:6px;
+    }
+
+    .cta{
+      margin-top:22px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .btn{
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:800;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid transparent;
+      transition:transform .18s ease, background .18s ease;
+      font-size:14px;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn-primary{
+      background:#fff;
+      color:var(--sig);
+    }
+
+    .btn-secondary{
+      background:transparent;
+      border-color:#D8E1EF;
+      color:var(--ink);
+    }
+
+    .btn-secondary:hover{
+      background:#fff;
+    }
+
+    .final{
+      background:var(--sig);
+      color:#fff;
+      border-radius:16px;
+      padding:48px 24px;
+      text-align:center;
+      border:none;
+    }
+
+    .final h2{
+      color:#fff;
+      margin-bottom:14px;
+    }
+
+    .final p{
+      max-width:760px;
+      margin:0 auto 16px;
+      color:#fff;
+    }
+
+    .footer{
+      margin-top:66px;
+      border-top:1px solid var(--line);
+      padding:34px 0 0;
+    }
+
+    .footer-grid{
+      display:grid;
+      gap:30px;
+    }
+
+    @media(min-width:900px){
+      .footer-grid{
+        grid-template-columns:1.7fr 1fr 1fr 1fr;
+      }
+    }
+
+    .footer-brand{
+      max-width:460px;
+    }
+
+    .footer-title{
+      font-size:12px;
+      font-weight:900;
+      color:var(--ink);
+      margin:0 0 12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .footer p,
+    .footer li,
+    .footer a{
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .footer ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+
+    .footer li{
+      margin:0 0 8px;
+    }
+
+    .footer a:hover{
+      color:var(--ink);
+      text-decoration:underline;
+    }
+
+    .footer-bottom{
+      margin-top:30px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .footer-bottom p{
+      margin:0;
+      font-size:12px;
+      color:var(--muted);
+      letter-spacing:.01em;
+    }
+
+    @media(max-width:700px){
+      .container{
+        padding:0 16px 88px;
+      }
+
+      .header{
+        padding:12px 16px;
+      }
+
+      .hero{
+        padding:54px 20px 40px;
+        border-radius:14px;
+      }
+
+      .hero .subhead{
+        font-size:16px;
+      }
+
+      .hero .lead{
+        font-size:15px;
+        line-height:1.65;
+      }
+
+      .section{
+        padding:36px 18px;
+        border-radius:12px;
+      }
+
+      .final{
+        border-radius:14px;
+      }
+
+      .card{
+        border-radius:10px;
+      }
+
+      .media-logos{
+        gap:30px;
+      }
+
+      .media-logos img{
+        height:64px;
+        max-width:160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-wrap">
+    <header class="header" aria-label="Navigation principale">
+      <a class="brand" href="index.html" aria-label="EN PLATEAU — Accueil">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">EN&nbsp;PLATEAU</span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation">
+        <a href="les-batisseurs.html">Les Bâtisseurs</a>
+        <a href="les-architectes.html">Les Architectes</a>
+
+        <div class="nav-item">
+          <button class="nav-trigger active" type="button" aria-haspopup="true" aria-expanded="false">
+            Contextes <span class="chevron">▾</span>
+          </button>
+          <div class="dropdown" aria-label="Sous-menu Contextes">
+            <a href="entrepreneurs.html">Entrepreneurs</a>
+            <a href="entreprises.html">Entreprises</a>
+            <a href="secteur-public.html">Décideurs publics</a>
+            <a class="active" href="experts.html" aria-current="page">Experts</a>
+          </div>
+        </div>
+
+        <a href="a-propos.html">À propos</a>
+      </nav>
+
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+    </header>
+
+    <div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
+      <a href="les-batisseurs.html">Les Bâtisseurs</a>
+      <a href="les-architectes.html">Les Architectes</a>
+
+      <button type="button" id="mobileContextesBtn" aria-expanded="false" aria-controls="mobileContextesSubmenu">
+        <span>Contextes</span>
+        <span class="chevron">▾</span>
+      </button>
+      <div class="mobile-submenu" id="mobileContextesSubmenu">
+        <a href="entrepreneurs.html">Entrepreneurs</a>
+        <a href="entreprises.html">Entreprises</a>
+        <a href="secteur-public.html">Décideurs publics</a>
+        <a href="experts.html" aria-current="page">Experts</a>
+      </div>
+
+      <a href="a-propos.html">À propos</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <section class="hero">
+      <div class="kicker">Experts</div>
+      <h1>Quand une expertise éclaire plus qu’un profil</h1>
+      <p class="subhead">
+        Avocats, consultants, économistes, experts sectoriels, spécialistes de la finance d’entreprise : certaines paroles ont moins vocation à se montrer qu’à rendre une transformation compréhensible.
+      </p>
+      <p class="lead">
+        Ici, la question n’est pas seulement de prendre la parole, mais de savoir ce qu’une lecture, une méthode ou une analyse permet réellement d’éclairer.
+      </p>
+    </section>
+
+    <section class="section section-white" id="medias">
+      <div class="media-stack">
+        <p class="media-kicker">
+          Les formats s’inscrivent dans des environnements éditoriaux reconnus.
+        </p>
+
+        <div class="media-logos">
+          <img src="images/bfm-business.svg" alt="BFM Business">
+          <img src="images/le-figaro.svg" alt="Le Figaro">
+          <img src="images/la-tribune.svg" alt="La Tribune">
+          <img src="images/forbes.svg" alt="Forbes">
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-warm">
+      <h2>Pour quels profils ?</h2>
+      <p class="measure">
+        Cette page s’adresse aux avocats, consultants, économistes, experts sectoriels, spécialistes des opérations et certains acteurs de la finance dont la parole aide à comprendre une évolution économique, réglementaire, financière ou stratégique.
+      </p>
+      <p class="measure">
+        Le point commun n’est pas le métier lui-même, mais la capacité à apporter une lecture utile sur un sujet plus large : réglementation, gouvernance, financement, restructuration, marchés, dette, capital, transformation sectorielle ou nouvelles pratiques.
+      </p>
+    </section>
+
+    <section class="section section-soft-3">
+      <h2>Le cadre naturel de cette page : Les Éclaireurs</h2>
+      <p class="measure">
+        Les Éclaireurs n’est pas une série de personal branding. C’est un cadre éditorial pour les paroles expertes qui rendent un sujet plus intelligible.
+      </p>
+
+      <div class="grid-2">
+        <div class="card featured">
+          <span class="pill">Les Éclaireurs</span>
+          <h3>Un éclairage expert sur les transformations en cours</h3>
+          <p>
+            Un Éclaireur n’est pas défini par sa notoriété, mais par ce qu’il aide à comprendre : un changement réglementaire, un mécanisme de financement, une recomposition de marché, une innovation de méthode, une lecture sectorielle.
+          </p>
+          <p>
+            Le propos ne porte pas d’abord sur la personne, mais sur le sujet qu’elle rend plus clair.
+          </p>
+          <a class="link" href="#series-en-cours">Voir les séries en cours</a>
+        </div>
+
+        <div class="card">
+          <span class="pill">Principe éditorial</span>
+          <h3>Rendre un mécanisme intelligible</h3>
+          <p>
+            La série n’est pas conçue pour des logiques d’exposition générique. Elle vise à situer une expertise dans un enjeu économique ou réglementaire compréhensible pour un public plus large.
+          </p>
+          <p>
+            C’est ce qui distingue un Éclaireur d’un simple commentaire d’actualité ou d’un discours commercial.
+          </p>
+          <a class="link" href="#contact">Vérifier la pertinence</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft-2" id="series-en-cours">
+      <h2>Éditions actuellement en constitution</h2>
+      <p class="measure">
+        Certaines expertises relèvent naturellement des Éclaireurs. D’autres peuvent, selon le sujet, s’inscrire dans une conversation collective ou dans un traitement plus approfondi.
+      </p>
+
+      <div class="grid-3">
+        <div class="card featured">
+          <span class="pill">Les Éclaireurs</span>
+          <h3>Régulation, financement, expertise sectorielle et nouveaux équilibres économiques</h3>
+          <div class="deadline">
+            <span class="deadline-label">Édition en cours de constitution</span>
+            <span class="deadline-date">jusqu’au 31 mai 2026</span>
+          </div>
+          <p>
+            Une édition consacrée aux experts dont la parole permet d’éclairer des mutations réglementaires, financières, capitalistiques ou sectorielles.
+          </p>
+          <p>
+            <strong>Une émission est ouverte pour cette édition.</strong>
+          </p>
+          <a class="link" href="#contact">Vérifier la pertinence</a>
+        </div>
+
+        <div class="card">
+          <span class="pill">Les Bâtisseurs</span>
+          <h3>Intelligence artificielle, productivité & transformation des entreprises en Europe</h3>
+          <div class="deadline">
+            <span class="deadline-label">Édition en cours de constitution</span>
+            <span class="deadline-date">jusqu’au 1 juin 2026</span>
+          </div>
+          <p>
+            Certaines expertises peuvent aussi trouver leur place dans une conversation collective lorsqu’elles éclairent un mouvement plus large que leur seule pratique.
+          </p>
+          <a class="link" href="les-batisseurs.html">Voir les autres séries</a>
+        </div>
+
+        <div class="card">
+          <span class="pill">Les Architectes</span>
+          <h3>Construire un champion européen dans un marché en recomposition</h3>
+          <div class="deadline">
+            <span class="deadline-label">Édition en cours de constitution</span>
+            <span class="deadline-date">jusqu’au 1 juillet 2026</span>
+          </div>
+          <p>
+            Certaines trajectoires d’experts ou de cabinets demandent un traitement plus approfondi lorsqu’il s’agit moins d’un sujet que d’un cap, d’une doctrine d’intervention ou d’un positionnement de marché.
+          </p>
+          <a class="link" href="les-architectes.html">Voir les autres séries</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <h2>Des expertises différentes, une même exigence</h2>
+      <p class="measure">
+        Un avocat, un consultant, un économiste ou un spécialiste du financement ne prennent pas la parole pour les mêmes raisons. Mais la question de fond reste la même : qu’est-ce que cette expertise permet réellement de comprendre ?
+      </p>
+
+      <div class="grid-4">
+        <div class="card">
+          <span class="pill">Avocats</span>
+          <h3>Rendre une mutation réglementaire lisible</h3>
+          <p>
+            Expliquer ce qu’un changement de norme, de doctrine ou d’interprétation produit réellement sur les organisations, les opérations ou les secteurs.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="pill">Consultants</span>
+          <h3>Apporter une lecture utile</h3>
+          <p>
+            Faire apparaître un mécanisme, une méthode ou une lecture de marché qui reste souvent trop abstraite ou trop jargonisée.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="pill">Économistes</span>
+          <h3>Mettre des ordres de grandeur</h3>
+          <p>
+            Éclairer un sujet par des tendances, des arbitrages, des effets de structure et une lecture plus rigoureuse du réel.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="pill">Finance</span>
+          <h3>Éclairer un mécanisme, pas vendre un produit</h3>
+          <p>
+            Dette, capital, M&A, restructuring, financement de croissance : rendre un sujet financier intelligible sans basculer dans la logique commerciale.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <h2>Ce qu’un expert doit chercher dans une émission</h2>
+      <p class="measure">
+        Une émission utile n’est pas d’abord un support de notoriété. C’est un cadre qui permet de situer une expertise, d’en montrer l’utilité et de la relier à un sujet concret.
+      </p>
+      <p class="measure">
+        Lorsqu’elle est bien pensée, elle peut faire apparaître une lecture, crédibiliser un positionnement, ouvrir un débat utile ou stabiliser une parole plus claire dans un environnement concurrentiel.
+      </p>
+    </section>
+
+    <section class="section section-soft-3">
+      <h2>Quelques situations typiques</h2>
+      <p class="measure">
+        Avec un objectif constant : rendre une expertise plus intelligible, plus crédible et plus défendable.
+      </p>
+
+      <div class="grid-4">
+        <div class="card">
+          <span class="pill">Réglementation</span>
+          <h3>Expliquer ce qui change vraiment</h3>
+          <p>
+            Faire comprendre à quelles conditions une évolution réglementaire modifie concrètement les pratiques d’un secteur.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="pill">Marché</span>
+          <h3>Donner une lecture d’ensemble</h3>
+          <p>
+            Sortir du commentaire ponctuel pour éclairer une recomposition de marché, une concentration, une mutation sectorielle.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="pill">Finance</span>
+          <h3>Rendre un mécanisme lisible</h3>
+          <p>
+            Expliquer dette, capital, financement de croissance, restructuration ou arbitrage d’opération dans une langue compréhensible.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="pill">Méthode</span>
+          <h3>Montrer ce qu’une expertise apporte</h3>
+          <p>
+            Faire apparaître une façon de lire, de traiter ou de résoudre un sujet complexe sans tomber dans la démonstration publicitaire.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft-2">
+      <h2>Quand le sujet dépasse le cabinet ou la pratique</h2>
+      <p class="measure">
+        Une émission utile ne commence pas seulement par un expert. Elle commence par un problème, un changement, une tension ou un mécanisme plus large.
+      </p>
+      <p class="measure">
+        C’est ce déplacement qui permet d’éviter l’autopromotion et de tenir une parole plus claire, plus utile et plus crédible.
+      </p>
+    </section>
+
+    <section class="section section-white">
+      <h2>Dans certains cas, d’autres cadres peuvent être plus justes</h2>
+      <p class="measure">
+        Les Éclaireurs constitue le cadre naturel de cette page. Mais selon le sujet, certaines expertises peuvent parfois relever d’une conversation collective ou d’un traitement plus approfondi.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="pill">Les Bâtisseurs</span>
+          <h3>Quand l’expertise éclaire un mouvement collectif</h3>
+          <p>
+            Si le sujet permet de comprendre une transformation de filière, de marché, d’industrie ou de territoire, un cadre collectif peut devenir plus pertinent.
+          </p>
+          <a class="link" href="les-batisseurs.html">Voir le cadre</a>
+        </div>
+
+        <div class="card featured">
+          <span class="pill">Les Architectes</span>
+          <h3>Quand la trajectoire demande plus de profondeur</h3>
+          <p>
+            Si le sujet réside moins dans l’expertise elle-même que dans une trajectoire, un positionnement ou une logique d’action, un traitement plus approfondi peut s’imposer.
+          </p>
+          <a class="link" href="les-architectes.html">Voir le cadre</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <h2>Un travail compatible avec des structures d’expertise</h2>
+      <p class="measure">
+        Le travail s’adapte à la réalité d’un cabinet, d’un expert indépendant, d’une boutique spécialisée ou d’une équipe resserrée. L’objectif reste simple : clarifier la parole, éviter l’improvisation et tenir une ligne lisible.
+      </p>
+    </section>
+
+    <section class="section section-white">
+      <h2>Notre ligne</h2>
+      <p class="measure">
+        L’objectif n’est pas le thought leadership générique. Au contraire : parler utile, précis, compréhensible. Une émission réussie aide un expert à mieux prendre place dans une conversation économique, sans surjeu ni simplification abusive.
+      </p>
+      <p class="measure" style="color:var(--muted);margin-top:-6px;">
+        Cette approche n’est pas adaptée aux discours purement promotionnels ni à la vente de produits.
+      </p>
+    </section>
+
+    <section class="final" id="contact">
+      <h2>Vérifier le bon cadre éditorial</h2>
+      <p>
+        Un échange confidentiel permet d’analyser votre situation, d’évaluer le niveau d’exposition approprié et de déterminer si votre sujet relève des Éclaireurs, d’une conversation collective ou d’un traitement plus approfondi.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="formulaire-candidature.html">Demander une évaluation</a>
+      </div>
+      <p style="margin-top:16px;font-size:14px;opacity:.82;">
+        Lorsque nécessaire, un accord de confidentialité peut être formalisé en amont de toute analyse approfondie.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="footer-title">EN PLATEAU</p>
+          <p>
+            EN PLATEAU organise des séries éditoriales avec des médias économiques nationaux.
+          </p>
+          <p>
+            Trois cadres éditoriaux : <strong>Les Éclaireurs</strong>, éclairage expert sur l’économie réelle ; <strong>Les Bâtisseurs</strong>, conversation économique à plusieurs voix ; et <strong>Les Architectes</strong>, parcours consacré à une trajectoire et à sa logique d’action.
+          </p>
+        </div>
+
+        <div>
+          <p class="footer-title">Séries</p>
+          <ul>
+            <li><a href="les-batisseurs.html">Les Bâtisseurs</a></li>
+            <li><a href="les-architectes.html">Les Architectes</a></li>
+            <li><a href="formulaire-candidature.html">Demander une évaluation</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-title">Contextes</p>
+          <ul>
+            <li><a href="entrepreneurs.html">Entrepreneurs</a></li>
+            <li><a href="entreprises.html">Entreprises</a></li>
+            <li><a href="secteur-public.html">Décideurs publics</a></li>
+            <li><a href="experts.html">Experts</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-title">EN PLATEAU</p>
+          <ul>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© EN PLATEAU — 2026</p>
+        <p>Séries éditoriales · Médias économiques · Conversations économiques · Parcours médiatiques</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    (function(){
+      const burger = document.getElementById('burger');
+      const mobileNav = document.getElementById('mobileNav');
+      const mobileContextesBtn = document.getElementById('mobileContextesBtn');
+      const mobileContextesSubmenu = document.getElementById('mobileContextesSubmenu');
+
+      if (burger && mobileNav) {
+        burger.addEventListener('click', function(){
+          const open = mobileNav.style.display === 'block';
+          mobileNav.style.display = open ? 'none' : 'block';
+          burger.setAttribute('aria-expanded', open ? 'false' : 'true');
+        });
+      }
+
+      if (mobileContextesBtn && mobileContextesSubmenu) {
+        mobileContextesBtn.addEventListener('click', function(){
+          const open = mobileContextesSubmenu.style.display === 'block';
+          mobileContextesSubmenu.style.display = open ? 'none' : 'block';
+          mobileContextesBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
+
+          const chevron = mobileContextesBtn.querySelector('.chevron');
+          if (chevron) {
+            chevron.style.transform = open ? 'rotate(0deg)' : 'rotate(180deg)';
+          }
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
