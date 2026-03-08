@@ -4,1026 +4,1189 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>EN PLATEAU — Grands comptes | Groupes, filières, souveraineté industrielle</title>
+  <title>EN PLATEAU — Participer</title>
   <meta
     name="description"
-    content="EN PLATEAU accompagne les grands comptes, groupes et organisations à forte exposition via deux formats éditoriaux : série thématique et série dirigeant. Cadrage, préparation, émission et valorisation durable."
+    content="Participer à une série éditoriale EN PLATEAU : cadre de sélection, approche directe, préparation éditoriale et possibilité de soumettre une trajectoire, une perspective ou un éclairage au comité éditorial."
   />
   <meta
     name="keywords"
-    content="grands comptes, groupes, grandes entreprises, émission économique, média, prise de parole, stratégie média, cadrage éditorial, préparation interview, communication dirigeant, validation juridique, gouvernance, géopolitique, transition énergétique, territoires, filières, EN PLATEAU"
+    content="EN PLATEAU, participer, comité éditorial, Les Éclaireurs, Les Bâtisseurs, Les Architectes, trajectoire, perspective, éclairage, participation éditoriale"
   />
-  <link rel="canonical" href="https://enplateau.fr/grands-comptes.html" />
+  <link rel="canonical" href="https://enplateau.fr/participer.html" />
 
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0B1F3A" />
+  <meta name="theme-color" content="#0F2747" />
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="EN PLATEAU" />
-  <meta property="og:title" content="EN PLATEAU — Grands comptes | Groupes, filières, souveraineté industrielle" />
+  <meta property="og:title" content="EN PLATEAU — Participer" />
   <meta
     property="og:description"
-    content="Deux formats éditoriaux pour les grands comptes : une série thématique pour situer l’organisation dans une transformation collective, ou une série dirigeant pour déployer une trajectoire, une vision ou une logique d’action."
+    content="Une participation s’inscrit dans un cadre éditorial défini, une logique de sélection et une préparation en amont."
   />
-  <meta property="og:url" content="https://enplateau.fr/grands-comptes.html" />
-  <meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp" />
+  <meta property="og:url" content="https://enplateau.fr/participer.html" />
+  <meta property="og:image" content="https://enplateau.fr/assets/og-cover.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="EN PLATEAU — Grands comptes | Groupes, filières, souveraineté industrielle" />
+  <meta name="twitter:title" content="EN PLATEAU — Participer" />
   <meta
     name="twitter:description"
-    content="Série éditoriale ou série dirigeant : EN PLATEAU structure les prises de parole des grands comptes et groupes dans des médias économiques."
+    content="Cadre de participation, approche directe et soumission éditoriale au comité."
   />
-  <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp" />
+  <meta name="twitter:image" content="https://enplateau.fr/assets/og-cover.jpg" />
 
   <style>
     :root{
-      --ink:#0B0F19;
-      --slate:#2B3340;
-      --muted:#5B6472;
-      --line:#E7EAF0;
-      --sig:#0B1F3A;
-      --sig-2:#112B52;
-      --soft:#F7F9FC;
-      --max:1040px;
-      --bg:#ffffff;
+      --bg:#F6F4EF;
+      --surface:#FFFFFF;
+      --surface-alt:#EEF2F5;
+      --ink:#0D1526;
+      --navy:#0F2747;
+      --navy-2:#17355D;
+      --muted:#5D6778;
+      --line:#D9DEE6;
+      --line-strong:#C9D1DC;
+      --accent:#A67C52;
+      --max:1180px;
+      --radius-xl:30px;
+      --radius-lg:24px;
+      --radius-md:18px;
+      --shadow:0 12px 34px rgba(16,24,40,.07);
+      --serif:Georgia,"Times New Roman",Times,serif;
+      --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      line-height:1.7;
-      color:var(--slate);
+      font-family:var(--sans);
+      color:var(--ink);
       background:var(--bg);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
 
-    a{color:inherit;text-decoration:none}
+    a{color:inherit}
+    img{max-width:100%;display:block}
 
-    .container{
-      max-width:var(--max);
+    .wrap{
+      width:min(var(--max), calc(100% - 40px));
       margin:0 auto;
-      padding:34px 22px 110px;
     }
 
-    .header-wrap{
+    /* Header */
+    .site-header{
       position:sticky;
       top:0;
       z-index:50;
-      background:rgba(255,255,255,.92);
-      backdrop-filter:saturate(140%) blur(10px);
-      border-bottom:1px solid var(--line);
+      background:rgba(246,244,239,.94);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(15,39,71,.08);
     }
 
-    .header{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:12px 22px;
+    .header-inner{
+      min-height:84px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:14px;
+      gap:24px;
     }
 
     .brand{
       display:flex;
       align-items:center;
-      gap:10px;
+      gap:16px;
+      text-decoration:none;
     }
 
     .brand-mark{
-      width:34px;
-      height:34px;
-      border-radius:10px;
-      background:var(--sig);
-      display:inline-block;
-      flex:0 0 auto;
+      width:56px;
+      height:56px;
+      border-radius:16px;
+      background:var(--navy);
+      flex:0 0 56px;
     }
 
     .brand-name{
       font-weight:900;
-      letter-spacing:-.02em;
-      color:var(--ink);
+      letter-spacing:-.03em;
+      font-size:2rem;
+      line-height:1;
+      color:#09111f;
     }
 
     .nav{
-      display:none;
-      gap:18px;
+      display:flex;
       align-items:center;
+      gap:24px;
     }
 
-    .nav-item{
+    .nav a{
+      text-decoration:none;
+      color:#2A3342;
+      font-size:.98rem;
+      font-weight:700;
+    }
+
+    .nav a:hover,
+    .nav a.active{
+      color:var(--navy);
+    }
+
+    .nav-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 20px;
+      border-radius:999px;
+      border:1px solid rgba(15,39,71,.16);
+      background:#fff;
+      font-weight:800;
+    }
+
+    .menu-btn{
+      display:none;
+      min-height:52px;
+      padding:0 18px;
+      border-radius:16px;
+      border:1px solid rgba(15,39,71,.12);
+      background:#fff;
+      font-weight:800;
+      font-size:1rem;
+    }
+
+    /* Hero */
+    .hero{
+      padding:64px 0 34px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0)),
+        var(--bg);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: minmax(0,1.12fr) minmax(360px,.88fr);
+      gap:34px;
+      align-items:stretch;
+    }
+
+    .hero-copy{
+      padding:18px 0 0;
+    }
+
+    .eyebrow{
+      margin:0 0 14px;
+      color:#5C6675;
+      font-size:.86rem;
+      font-weight:900;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+    }
+
+    .hero h1{
+      margin:0 0 18px;
+      font-family:var(--serif);
+      font-size:clamp(2.6rem, 6vw, 4.7rem);
+      line-height:.96;
+      letter-spacing:-.045em;
+      color:#0B1322;
+      max-width:11ch;
+    }
+
+    .hero-lead{
+      margin:0;
+      max-width:62ch;
+      font-size:1.14rem;
+      line-height:1.82;
+      color:#4E5868;
+    }
+
+    .hero-card{
       position:relative;
+      min-height:460px;
+      border-radius:var(--radius-xl);
+      overflow:hidden;
+      background:
+        linear-gradient(180deg, rgba(10,20,38,.04), rgba(10,20,38,.32)),
+        url("assets/img/plateau-participer.jpg") center/cover no-repeat;
+      box-shadow:var(--shadow);
     }
 
-    .nav-item::after{
+    .hero-card::after{
       content:"";
       position:absolute;
-      left:0;
-      right:0;
-      top:100%;
-      height:14px;
+      inset:0;
+      background:linear-gradient(180deg, rgba(14,34,59,.02) 0%, rgba(14,34,59,.18) 52%, rgba(14,34,59,.7) 100%);
     }
 
-    .nav > a,
-    .nav-trigger{
-      font-size:14px;
-      color:var(--muted);
-      font-weight:750;
-      padding:10px 10px;
-      border-radius:999px;
-      background:none;
-      border:none;
-      cursor:pointer;
-      font-family:inherit;
-      display:inline-flex;
-      align-items:center;
-    }
-
-    .nav > a:hover,
-    .nav-trigger:hover,
-    .nav > a.active,
-    .nav-trigger.active{
-      color:var(--ink);
-      background:#f5f7fb;
-    }
-
-    .dropdown{
+    .hero-card-badge{
       position:absolute;
-      top:calc(100% + 10px);
-      left:0;
-      min-width:240px;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      box-shadow:0 18px 40px rgba(0,0,0,.08);
-      padding:10px;
-      display:none;
-    }
-
-    .dropdown a{
-      display:block;
-      padding:10px 12px;
-      border-radius:12px;
-      color:var(--muted);
-      font-size:14px;
-      font-weight:700;
-      white-space:nowrap;
-    }
-
-    .dropdown a:hover,
-    .dropdown a.active{
-      background:#f5f7fb;
-      color:var(--ink);
-    }
-
-    .nav-item:hover .dropdown,
-    .nav-item:focus-within .dropdown{
-      display:block;
-    }
-
-    .chevron{
-      font-size:12px;
-      margin-left:6px;
-      opacity:.55;
-      transition:transform .2s ease;
-      line-height:1;
-    }
-
-    .nav-item:hover .nav-trigger .chevron,
-    .nav-item:focus-within .nav-trigger .chevron{
-      transform:rotate(180deg);
-    }
-
-    .burger{
-      border:1px solid var(--line);
-      background:#fff;
-      border-radius:12px;
-      padding:10px 12px;
-      font-weight:800;
-      color:var(--ink);
-      cursor:pointer;
-    }
-
-    .mobile{
-      display:none;
-      border-top:1px solid var(--line);
-    }
-
-    .mobile a,
-    .mobile button{
-      display:flex;
+      left:22px;
+      top:22px;
+      z-index:2;
+      display:inline-flex;
       align-items:center;
-      justify-content:space-between;
-      width:100%;
-      padding:14px 22px;
-      color:var(--muted);
-      font-weight:750;
-      background:none;
-      border:none;
-      text-align:left;
-      font-family:inherit;
-      font-size:15px;
-      cursor:pointer;
+      gap:10px;
+      min-height:40px;
+      padding:0 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.88);
+      color:var(--navy);
+      font-weight:800;
+      font-size:.92rem;
+      backdrop-filter:blur(8px);
     }
 
-    .mobile a:hover,
-    .mobile button:hover{
-      background:#f5f7fb;
-      color:var(--ink);
-    }
-
-    .mobile-submenu{
-      display:none;
-      border-top:1px solid #f1f3f7;
-      background:#fbfcfe;
-    }
-
-    .mobile-submenu a{
-      padding-left:38px;
-      font-weight:700;
-      font-size:14px;
-      justify-content:flex-start;
-    }
-
-    @media(min-width:900px){
-      .nav{display:flex}
-      .burger{display:none}
-      .mobile{display:none !important}
-    }
-
-    h1{
-      font-size:clamp(32px,6vw,52px);
-      line-height:1.05;
-      margin:0 0 14px;
+    .hero-card-copy{
+      position:absolute;
+      left:24px;
+      right:24px;
+      bottom:24px;
+      z-index:2;
       color:#fff;
-      font-weight:900;
-      letter-spacing:-0.03em;
     }
 
-    h2{
-      font-size:clamp(24px,4vw,36px);
-      line-height:1.12;
-      margin:0 0 18px;
-      color:var(--ink);
-      font-weight:850;
-      letter-spacing:-0.02em;
-    }
-
-    h3{
-      font-size:20px;
-      margin:0 0 10px;
-      color:var(--ink);
-      font-weight:760;
-    }
-
-    p{margin:0 0 18px}
-    p strong{font-weight:650}
-
-    .hero{
-      background:linear-gradient(135deg, var(--sig), var(--sig-2));
-      color:#fff;
-      border-radius:28px;
-      padding:58px 24px 48px;
-      margin:26px 0 34px;
-      text-align:center;
-    }
-
-    .hero .kicker{
-      font-size:13px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      opacity:.78;
-      margin-bottom:10px;
-    }
-
-    .hero .subhead{
-      max-width:820px;
-      margin:0 auto 14px;
-      font-size:16px;
-      font-weight:700;
-      opacity:.92;
-    }
-
-    .hero .lead{
-      max-width:860px;
-      margin:0 auto 0;
-      opacity:.9;
-      font-size:16px;
-    }
-
-    .hero-image{
+    .hero-card-copy strong{
       display:block;
-      max-width:100%;
-      height:auto;
-      margin:28px auto 0;
-      border-radius:18px;
+      margin:0 0 8px;
+      font-size:1.24rem;
+      line-height:1.3;
     }
 
+    .hero-card-copy p{
+      margin:0;
+      color:rgba(255,255,255,.9);
+      font-size:.99rem;
+      line-height:1.65;
+    }
+
+    /* Intro strip */
+    .intro-strip{
+      padding:18px 0 0;
+    }
+
+    .intro-panel{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:26px;
+      padding:28px 30px;
+      border:1px solid rgba(15,39,71,.10);
+      border-radius:26px;
+      background:#fff;
+      box-shadow:0 8px 22px rgba(17,24,39,.04);
+    }
+
+    .intro-panel h2{
+      margin:0 0 10px;
+      font-size:1.36rem;
+      line-height:1.25;
+      letter-spacing:-.02em;
+      color:#0F1F38;
+    }
+
+    .intro-panel p{
+      margin:0;
+      color:#566173;
+      font-size:1.03rem;
+      line-height:1.78;
+    }
+
+    .intro-side{
+      padding-left:18px;
+      border-left:1px solid var(--line);
+    }
+
+    .intro-side strong{
+      display:block;
+      margin:0 0 8px;
+      color:#0E213D;
+      font-size:1rem;
+      line-height:1.45;
+    }
+
+    .intro-side span{
+      display:block;
+      color:#647084;
+      font-size:.98rem;
+      line-height:1.7;
+    }
+
+    /* Sections */
     .section{
-      margin-bottom:72px;
-      text-align:center;
+      padding:72px 0;
     }
 
-    .measure{
-      max-width:900px;
-      margin-left:auto;
-      margin-right:auto;
+    .section-alt{
+      background:var(--surface-alt);
+      border-top:1px solid rgba(15,39,71,.06);
+      border-bottom:1px solid rgba(15,39,71,.06);
     }
 
-    .grid-2{
-      display:grid;
-      gap:22px;
-      margin-top:22px;
+    .section-head{
+      max-width:860px;
+      margin:0 0 34px;
     }
 
-    .grid-3{
-      display:grid;
-      gap:22px;
-      margin-top:12px;
-    }
-
-    .grid-4{
-      display:grid;
-      gap:22px;
-      margin-top:24px;
-    }
-
-    @media(min-width:900px){
-      .grid-2{grid-template-columns:repeat(2,1fr)}
-      .grid-3{grid-template-columns:repeat(3,1fr)}
-      .grid-4{grid-template-columns:repeat(4,1fr)}
-    }
-
-    .card{
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:24px;
-      background:#fff;
-      text-align:left;
-    }
-
-    .card.featured{
-      box-shadow:0 18px 40px rgba(0,0,0,.06);
-      border:1px solid rgba(11,31,58,.18);
-    }
-
-    .card p{
-      font-size:14px;
-      color:var(--muted);
-      margin:0 0 14px;
-    }
-
-    .pill{
-      display:inline-block;
-      font-size:12px;
-      font-weight:850;
-      border:1px solid var(--line);
-      padding:8px 10px;
-      border-radius:999px;
-      color:var(--muted);
-      background:#fff;
-      margin-bottom:10px;
-    }
-
-    .deadline{
-      display:inline-block;
-      margin-top:4px;
-      margin-bottom:14px;
-      font-size:13px;
-      font-weight:800;
-      color:var(--sig);
-      background:#EEF4FB;
-      border:1px solid #D9E4F3;
-      padding:8px 10px;
-      border-radius:999px;
-    }
-
-    .card a.link{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      margin-top:14px;
-      font-size:14px;
-      font-weight:750;
-      color:var(--ink);
-      text-decoration:none;
-    }
-
-    .card a.link::after{
-      content:"→";
-      font-weight:900;
-      opacity:.55;
-      transform:translateX(0);
-      transition:transform .15s ease, opacity .15s ease;
-    }
-
-    .card a.link:hover{text-decoration:underline}
-    .card a.link:hover::after{
-      opacity:.9;
-      transform:translateX(2px);
-    }
-
-    .media-logos{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      align-items:center;
-      gap:70px;
-      margin:6px 0 0;
-    }
-
-    .media-logos img{
-      height:80px;
-      max-width:180px;
-      width:auto;
-      opacity:.9;
-      transition:opacity .2s ease, transform .2s ease;
-    }
-
-    .media-logos img:hover{
-      opacity:1;
-      transform:translateY(-2px);
-    }
-
-    .cta{
-      margin-top:22px;
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-
-    .btn{
-      padding:14px 20px;
-      border-radius:999px;
-      font-weight:800;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      border:1px solid transparent;
-    }
-
-    .btn-primary{
-      background:#fff;
-      color:var(--sig);
-    }
-
-    .btn-secondary{
-      background:transparent;
-      border-color:#D8E1EF;
-      color:var(--ink);
-    }
-
-    .mid-cta{
-      background:var(--soft);
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:30px 24px;
-      text-align:center;
-    }
-
-    .final{
-      background:linear-gradient(135deg, var(--sig), var(--sig-2));
-      color:#fff;
-      border-radius:28px;
-      padding:58px 24px;
-      text-align:center;
-    }
-
-    .final h2{color:#fff}
-
-    .footer{
-      margin-top:72px;
-      border-top:1px solid var(--line);
-      padding:34px 0 0;
-    }
-
-    .footer-grid{
-      display:grid;
-      gap:28px;
-    }
-
-    @media(min-width:900px){
-      .footer-grid{
-        grid-template-columns:1.5fr 1fr 1fr 1fr;
-      }
-    }
-
-    .footer-brand{
-      max-width:420px;
-    }
-
-    .footer-title{
-      font-size:14px;
-      font-weight:900;
-      color:var(--ink);
+    .section-kicker{
       margin:0 0 10px;
+      color:#5C6675;
+      font-size:.84rem;
+      font-weight:900;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+    }
+
+    .section-title{
+      margin:0 0 14px;
+      font-family:var(--serif);
+      font-size:clamp(2rem, 4vw, 3.5rem);
+      line-height:1.02;
+      letter-spacing:-.04em;
+      color:#0C1526;
+    }
+
+    .section-desc{
+      margin:0;
+      max-width:65ch;
+      color:#596476;
+      font-size:1.08rem;
+      line-height:1.82;
+    }
+
+    /* Contacted */
+    .contacted-grid{
+      display:grid;
+      grid-template-columns: minmax(0,.92fr) minmax(0,1.08fr);
+      gap:28px;
+      align-items:start;
+    }
+
+    .contacted-panel,
+    .steps-panel{
+      background:#fff;
+      border:1px solid rgba(15,39,71,.10);
+      border-radius:28px;
+      box-shadow:0 10px 26px rgba(17,24,39,.05);
+    }
+
+    .contacted-panel{
+      padding:30px;
+    }
+
+    .contacted-panel h3,
+    .steps-panel h3,
+    .path-card h3,
+    .committee-card h3,
+    .submit-card h3{
+      margin:0 0 14px;
+      font-size:1.44rem;
+      line-height:1.2;
+      letter-spacing:-.02em;
+      color:#0E1C33;
+    }
+
+    .contacted-panel p,
+    .steps-panel p,
+    .committee-card p,
+    .submit-card p,
+    .path-card p{
+      margin:0 0 16px;
+      color:#5A6575;
+      font-size:1.03rem;
+      line-height:1.82;
+    }
+
+    .point-list{
+      margin:22px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:14px;
+    }
+
+    .point-list li{
+      display:grid;
+      grid-template-columns:22px 1fr;
+      gap:12px;
+      align-items:start;
+      color:#334053;
+      font-size:1rem;
+      line-height:1.7;
+    }
+
+    .point-list li::before{
+      content:"";
+      width:10px;
+      height:10px;
+      margin-top:.5em;
+      border-radius:999px;
+      background:var(--navy);
+      display:block;
+    }
+
+    .steps-panel{
+      padding:0;
+      overflow:hidden;
+    }
+
+    .steps-head{
+      padding:24px 26px 18px;
+      background:linear-gradient(180deg, rgba(15,39,71,.03), rgba(15,39,71,0));
+      border-bottom:1px solid var(--line);
+    }
+
+    .steps-body{
+      padding:10px 18px 18px;
+    }
+
+    .step{
+      display:grid;
+      grid-template-columns:56px 1fr;
+      gap:18px;
+      padding:18px 8px;
+      border-bottom:1px solid rgba(15,39,71,.08);
+    }
+
+    .step:last-child{
+      border-bottom:none;
+    }
+
+    .step-num{
+      width:56px;
+      height:56px;
+      border-radius:18px;
+      background:var(--navy);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      font-size:1.08rem;
+    }
+
+    .step h4{
+      margin:2px 0 8px;
+      font-size:1.08rem;
+      line-height:1.3;
+      color:#0F1F38;
       letter-spacing:-.01em;
     }
 
-    .footer p,
-    .footer li,
-    .footer a{
-      font-size:14px;
-      color:var(--muted);
-    }
-
-    .footer ul{
-      list-style:none;
-      padding:0;
+    .step p{
       margin:0;
+      color:#607084;
+      font-size:.99rem;
+      line-height:1.72;
     }
 
-    .footer li{
-      margin:0 0 8px;
+    /* Unsolicited / paths */
+    .paths-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:24px;
+      align-items:stretch;
+      margin-top:28px;
     }
 
-    .footer a:hover{
-      color:var(--ink);
-      text-decoration:underline;
+    .path-card{
+      background:#fff;
+      border:1px solid rgba(15,39,71,.10);
+      border-radius:26px;
+      padding:28px 26px;
+      box-shadow:0 10px 26px rgba(17,24,39,.04);
+    }
+
+    .path-label{
+      margin:0 0 14px;
+      color:#0F2747;
+      font-size:.86rem;
+      font-weight:900;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+    }
+
+    .path-rule{
+      width:100%;
+      height:3px;
+      border-radius:999px;
+      background:var(--navy);
+      margin:0 0 18px;
+    }
+
+    .path-card h3{
+      font-family:var(--serif);
+      font-size:2.25rem;
+      line-height:1;
+      letter-spacing:-.04em;
+      margin-bottom:14px;
+    }
+
+    .path-card p:last-child{
+      margin-bottom:0;
+    }
+
+    /* Committee */
+    .committee-layout{
+      display:grid;
+      grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
+      gap:28px;
+      align-items:start;
+    }
+
+    .committee-card,
+    .submit-card{
+      background:#fff;
+      border:1px solid rgba(15,39,71,.10);
+      border-radius:28px;
+      padding:30px;
+      box-shadow:0 10px 26px rgba(17,24,39,.04);
+    }
+
+    .criteria{
+      display:grid;
+      gap:14px;
+      margin-top:20px;
+    }
+
+    .criterion{
+      padding:16px 18px;
+      border:1px solid rgba(15,39,71,.08);
+      border-radius:18px;
+      background:#F8FAFC;
+    }
+
+    .criterion strong{
+      display:block;
+      margin:0 0 6px;
+      color:#10213B;
+      font-size:1rem;
+      line-height:1.35;
+    }
+
+    .criterion span{
+      display:block;
+      color:#627084;
+      font-size:.97rem;
+      line-height:1.68;
+    }
+
+    .submit-card{
+      background:linear-gradient(180deg, #0F2747 0%, #143257 100%);
+      color:#fff;
+      border-color:transparent;
+      box-shadow:0 18px 40px rgba(15,39,71,.22);
+    }
+
+    .submit-card .section-kicker,
+    .submit-card p,
+    .submit-card li{
+      color:rgba(255,255,255,.9);
+    }
+
+    .submit-card h3{
+      color:#fff;
+    }
+
+    .submit-list{
+      margin:22px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:14px;
+    }
+
+    .submit-list li{
+      display:grid;
+      grid-template-columns:22px 1fr;
+      gap:12px;
+      align-items:start;
+      font-size:1rem;
+      line-height:1.7;
+    }
+
+    .submit-list li::before{
+      content:"";
+      width:10px;
+      height:10px;
+      margin-top:.52em;
+      border-radius:999px;
+      background:#fff;
+      display:block;
+    }
+
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:26px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:56px;
+      padding:0 24px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:800;
+      font-size:1rem;
+      transition:transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn-dark{
+      background:var(--navy);
+      color:#fff;
+      border:1px solid var(--navy);
+    }
+
+    .btn-light{
+      background:#fff;
+      color:var(--navy);
+      border:1px solid #fff;
+    }
+
+    .btn-outline{
+      background:transparent;
+      color:var(--navy);
+      border:1px solid rgba(15,39,71,.18);
+    }
+
+    .btn-outline-light{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.45);
+    }
+
+    /* Footer */
+    .site-footer{
+      padding:34px 0 48px;
+      background:#F1EEE7;
+      border-top:1px solid rgba(15,39,71,.08);
+    }
+
+    .footer-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:30px;
+      padding:12px 0 18px;
+    }
+
+    .footer-brand{
+      max-width:460px;
+    }
+
+    .footer-brand .brand{
+      margin-bottom:14px;
+    }
+
+    .footer-text{
+      margin:0;
+      color:#5F6A7B;
+      font-size:.98rem;
+      line-height:1.72;
+    }
+
+    .footer-nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px 22px;
+      align-items:center;
+      justify-content:flex-end;
+    }
+
+    .footer-nav a{
+      color:#314055;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.96rem;
+    }
+
+    .footer-nav a:hover{
+      color:var(--navy);
     }
 
     .footer-bottom{
-      margin-top:28px;
       padding-top:18px;
-      border-top:1px solid var(--line);
+      border-top:1px solid rgba(15,39,71,.08);
       display:flex;
-      flex-wrap:wrap;
-      gap:12px;
       justify-content:space-between;
-      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+      color:#6A7484;
+      font-size:.92rem;
     }
 
-    .footer-bottom p{
-      margin:0;
-      font-size:13px;
-      color:var(--muted);
+    /* Responsive */
+    @media (max-width: 1100px){
+      .hero-grid,
+      .contacted-grid,
+      .committee-layout,
+      .intro-panel{
+        grid-template-columns:1fr;
+      }
+
+      .intro-side{
+        padding-left:0;
+        border-left:none;
+        border-top:1px solid var(--line);
+        padding-top:18px;
+      }
+
+      .paths-grid{
+        grid-template-columns:1fr;
+      }
     }
 
-    #medias{margin-bottom:12px}
+    @media (max-width: 860px){
+      .nav{display:none}
+      .menu-btn{display:inline-flex;align-items:center;justify-content:center}
+
+      .hero{
+        padding-top:42px;
+      }
+
+      .hero-card{
+        min-height:340px;
+      }
+
+      .section{
+        padding:58px 0;
+      }
+
+      .intro-panel,
+      .contacted-panel,
+      .committee-card,
+      .submit-card{
+        padding:24px 22px;
+      }
+
+      .steps-head{
+        padding:22px 22px 16px;
+      }
+
+      .steps-body{
+        padding:8px 14px 16px;
+      }
+
+      .step{
+        grid-template-columns:48px 1fr;
+        gap:14px;
+      }
+
+      .step-num{
+        width:48px;
+        height:48px;
+        border-radius:15px;
+      }
+
+      .footer-top{
+        flex-direction:column;
+      }
+
+      .footer-nav{
+        justify-content:flex-start;
+      }
+    }
+
+    @media (max-width: 640px){
+      .wrap{
+        width:min(var(--max), calc(100% - 28px));
+      }
+
+      .header-inner{
+        min-height:78px;
+      }
+
+      .brand-name{
+        font-size:1.7rem;
+      }
+
+      .brand-mark{
+        width:48px;
+        height:48px;
+        border-radius:14px;
+        flex-basis:48px;
+      }
+
+      .hero h1{
+        max-width:none;
+      }
+
+      .hero-lead,
+      .section-desc,
+      .contacted-panel p,
+      .steps-panel p,
+      .committee-card p,
+      .submit-card p,
+      .path-card p{
+        font-size:1rem;
+        line-height:1.75;
+      }
+
+      .path-card h3{
+        font-size:2rem;
+      }
+
+      .cta-row{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .btn{
+        width:100%;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <div class="header-wrap">
-    <header class="header" aria-label="Navigation principale">
-      <a class="brand" href="index.html" aria-label="EN PLATEAU — Accueil">
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="EN PLATEAU — retour à l’accueil">
         <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-name">EN&nbsp;PLATEAU</span>
+        <span class="brand-name">EN PLATEAU</span>
       </a>
 
-      <nav class="nav" aria-label="Navigation">
-        <a href="les-batisseurs.html">Les Bâtisseurs</a>
-        <a href="les-architectes.html">Les Architectes</a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="series.html">Séries éditoriales</a>
+        <a href="experts.html">Experts</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="participer.html" class="active">Participer</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </nav>
 
-        <div class="nav-item">
-          <button class="nav-trigger active" type="button" aria-haspopup="true" aria-expanded="false">
-            Contextes <span class="chevron">▾</span>
-          </button>
-          <div class="dropdown" aria-label="Sous-menu Contextes">
-            <a href="entrepreneurs.html">Entrepreneurs</a>
-            <a href="entreprises.html">Entreprises</a>
-            <a href="grands-comptes.html" class="active" aria-current="page">Grands comptes</a>
-            <a href="secteur-public.html">Décideurs publics</a>
-            <a href="associations.html">Dirigeants associatifs</a>
+      <button class="menu-btn" type="button" aria-label="Ouvrir le menu">Menu</button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Participer à une série éditoriale</p>
+          <h1>Un cadre de participation, pas un appel à candidatures</h1>
+          <p class="hero-lead">
+            Une participation à EN PLATEAU s’inscrit dans un cadre éditorial défini,
+            une logique de sélection et un travail de préparation en amont. Certaines
+            conversations sont constituées par approche directe. D’autres peuvent, dans
+            certains cas, accueillir une trajectoire, une perspective ou un éclairage
+            signalés en amont au comité éditorial.
+          </p>
+        </div>
+
+        <div class="hero-card" role="img" aria-label="Cadre éditorial et préparation des prises de parole EN PLATEAU">
+          <div class="hero-card-badge">Cadre éditorial &amp; préparation en amont</div>
+          <div class="hero-card-copy">
+            <strong>Une série ne se rejoint pas comme une plateforme ouverte.</strong>
+            <p>
+              Chaque prise de parole s’inscrit dans une cohérence de sujet, de format,
+              de calendrier et de sélection éditoriale.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-strip">
+      <div class="wrap">
+        <div class="intro-panel">
+          <div>
+            <h2>La programmation n’est pas publique et ne repose pas sur une inscription libre</h2>
+            <p>
+              EN PLATEAU ne fonctionne ni comme un annuaire, ni comme une plateforme
+              ouverte de candidatures. Les conversations sont structurées autour de
+              dossiers éditoriaux en préparation, selon un nombre limité de positions,
+              de trajectoires ou de contributions jugées pertinentes.
+            </p>
+          </div>
+          <div class="intro-side">
+            <strong>Deux cas de figure seulement :</strong>
+            <span>
+              soit vous avez déjà été approché directement dans le cadre d’un dossier
+              en cours ; soit vous souhaitez signaler en amont une contribution possible,
+              qui sera examinée sans engagement par le comité éditorial.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="contacted-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Approche directe</p>
+          <h2 class="section-title" id="contacted-title">Vous avez été contacté par EN PLATEAU</h2>
+          <p class="section-desc">
+            Certaines éditions sont constituées par approche directe, en fonction d’un sujet,
+            d’un angle ou d’une trajectoire jugés pertinents pour une série en préparation.
+            Dans ce cas, la participation ne consiste pas à “candidater”, mais à entrer dans
+            un cadre de travail précis.
+          </p>
+        </div>
+
+        <div class="contacted-grid">
+          <div class="contacted-panel">
+            <h3>Ce que recouvre une participation</h3>
+            <p>
+              Lorsqu’une organisation, un expert ou un dirigeant est approché, la participation
+              s’inscrit dans une logique de structuration éditoriale. Il ne s’agit pas uniquement
+              d’intervenir à l’écran, mais de clarifier le sens de la prise de parole et son
+              positionnement dans l’ensemble du dossier.
+            </p>
+
+            <ul class="point-list">
+              <li>clarification du sujet, de l’angle ou de la trajectoire retenue ;</li>
+              <li>préparation éditoriale en amont de l’intervention ;</li>
+              <li>mise en cohérence avec le format retenu : Éclaireurs, Bâtisseurs ou Architectes ;</li>
+              <li>organisation pratique du tournage ou de l’enregistrement ;</li>
+              <li>valorisation et réutilisation des contenus après diffusion.</li>
+            </ul>
+          </div>
+
+          <div class="steps-panel">
+            <div class="steps-head">
+              <h3>Le déroulé de participation</h3>
+              <p>
+                Une participation validée passe généralement par une séquence de cadrage,
+                de préparation puis d’intervention, avant toute diffusion et activation.
+              </p>
+            </div>
+
+            <div class="steps-body">
+              <div class="step">
+                <div class="step-num">01</div>
+                <div>
+                  <h4>Premier échange de cadrage</h4>
+                  <p>
+                    Vérification de la pertinence du profil, du sujet ou de la trajectoire
+                    au regard du dossier éditorial en cours.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-num">02</div>
+                <div>
+                  <h4>Préparation éditoriale</h4>
+                  <p>
+                    Clarification du positionnement, des messages structurants, des points
+                    sensibles et du rôle exact de l’intervention dans la série.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-num">03</div>
+                <div>
+                  <h4>Intervention et production</h4>
+                  <p>
+                    Participation à la conversation, à l’entretien ou au parcours selon le format
+                    retenu et les modalités éditoriales définies en amont.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-num">04</div>
+                <div>
+                  <h4>Valorisation post-diffusion</h4>
+                  <p>
+                    Réutilisation encadrée des contenus, activation narrative et intégration
+                    dans une logique plus large d’exposition et de crédibilité.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <a href="a-propos.html">À propos</a>
-      </nav>
-
-      <button class="burger" id="burger" aria-expanded="false" aria-controls="mobileNav">Menu</button>
-    </header>
-
-    <div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
-      <a href="les-batisseurs.html">Les Bâtisseurs</a>
-      <a href="les-architectes.html">Les Architectes</a>
-
-      <button type="button" id="mobileContextesBtn" aria-expanded="false" aria-controls="mobileContextesSubmenu">
-        <span>Contextes</span>
-        <span class="chevron">▾</span>
-      </button>
-      <div class="mobile-submenu" id="mobileContextesSubmenu">
-        <a href="entrepreneurs.html">Entrepreneurs</a>
-        <a href="entreprises.html">Entreprises</a>
-        <a href="grands-comptes.html" aria-current="page">Grands comptes</a>
-        <a href="secteur-public.html">Décideurs publics</a>
-        <a href="associations.html">Dirigeants associatifs</a>
-      </div>
-
-      <a href="a-propos.html">À propos</a>
-    </div>
-  </div>
-
-  <div class="container">
-
-    <section class="hero">
-      <div class="kicker">Grands comptes</div>
-      <h1>Tenir une ligne claire sous forte exposition.</h1>
-      <p class="subhead">Pour les groupes et organisations qui doivent parler géopolitique, territoires, filières, investissements, transition énergétique ou arbitrages sensibles dans un cadre exigeant.</p>
-      <p class="lead">
-        Pour un grand compte, la vraie question n’est pas seulement faut-il prendre la parole, mais dans quel cadre ce sujet sera le plus lisible, le plus crédible et le plus utile.
-      </p>
-      <img class="hero-image" src="images/en-plateau-og-1200x630.webp" alt="EN PLATEAU — Grands comptes | Groupes, filières, souveraineté industrielle">
-    </section>
-
-    <section class="section" id="medias">
-      <p style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;">
-        Nos émissions prennent place dans ces environnements médias
-      </p>
-
-      <div class="media-logos">
-        <img src="images/bfm-business.svg" alt="BFM Business">
-        <img src="images/le-figaro.svg" alt="Le Figaro">
-        <img src="images/la-tribune.svg" alt="La Tribune">
-        <img src="images/forbes.svg" alt="Forbes">
       </div>
     </section>
 
-    <section class="section">
-      <h2>Deux formats éditoriaux pour les grands comptes</h2>
-      <p class="measure">
-        Selon votre sujet, votre moment et votre niveau d’exposition, EN PLATEAU peut structurer votre prise de parole dans une <strong>série thématique</strong> ou dans une <strong>série dirigeant</strong>.
-      </p>
-
-      <div class="grid-2">
-        <div class="card featured">
-          <span class="pill">Série éditoriale</span>
-          <h3>Inscrire l’organisation dans une transformation collective</h3>
-          <p>
-            Lorsque votre sujet éclaire une dynamique plus large que votre seule organisation — souveraineté industrielle, transition énergétique, géopolitique, filières stratégiques, territoires — il peut trouver sa place dans une série éditoriale comme <strong>Les Bâtisseurs</strong>.
+    <section class="section section-alt" aria-labelledby="unsolicited-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Soumission éditoriale</p>
+          <h2 class="section-title" id="unsolicited-title">Vous n’avez pas été approché à ce stade</h2>
+          <p class="section-desc">
+            La programmation d’EN PLATEAU n’est pas ouverte sur un principe d’inscription libre.
+            Il reste néanmoins possible, dans certains cas, de faire connaître en amont une
+            contribution susceptible de nourrir l’un des dossiers éditoriaux en préparation.
           </p>
-          <p>
-            La logique n’est pas de parler seulement de vous, mais de situer votre rôle dans une transformation économique plus large.
+        </div>
+
+        <div class="paths-grid">
+          <article class="path-card">
+            <p class="path-label">Les Éclaireurs</p>
+            <div class="path-rule"></div>
+            <h3>Un éclairage</h3>
+            <p>
+              Pour signaler une expertise, une lecture, un mécanisme ou une recomposition
+              susceptible d’éclairer un sujet en cours de structuration.
+            </p>
+            <p>
+              Ce cadre concerne les interventions qui rendent lisible une transformation
+              économique, industrielle, réglementaire, financière ou territoriale.
+            </p>
+          </article>
+
+          <article class="path-card">
+            <p class="path-label">Les Bâtisseurs</p>
+            <div class="path-rule"></div>
+            <h3>Une perspective</h3>
+            <p>
+              Pour faire connaître un point de vue, une position stratégique ou une contribution
+              de terrain pouvant enrichir une conversation collective.
+            </p>
+            <p>
+              Ce cadre s’adresse aux organisations dont l’expérience, l’action ou la lecture
+              peuvent renforcer l’intelligence d’un sujet traité à plusieurs voix.
+            </p>
+          </article>
+
+          <article class="path-card">
+            <p class="path-label">Les Architectes</p>
+            <div class="path-rule"></div>
+            <h3>Une trajectoire</h3>
+            <p>
+              Pour soumettre un parcours singulier susceptible de justifier un traitement
+              éditorial approfondi autour d’une transformation, d’une croissance ou d’un
+              repositionnement.
+            </p>
+            <p>
+              Ce cadre concerne les trajectoires suffisamment structurées pour soutenir
+              une exploration plus approfondie.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="committee-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Comité éditorial</p>
+          <h2 class="section-title" id="committee-title">Aucune intégration automatique</h2>
+          <p class="section-desc">
+            Le fait de transmettre une trajectoire, une perspective ou un éclairage ne vaut ni
+            validation, ni intégration automatique dans une série. Toute contribution est examinée
+            librement par le comité éditorial.
           </p>
-          <a class="link" href="les-batisseurs.html">Découvrir Les Bâtisseurs</a>
         </div>
 
-        <div class="card">
-          <span class="pill">Série dirigeant</span>
-          <h3>Déployer une trajectoire, une vision, une logique d’action</h3>
-          <p>
-            Certaines situations appellent un traitement plus approfondi : arbitrages industriels, gouvernance, repositionnement stratégique, responsabilité d’organisation, lecture sectorielle ou cohérence d’ensemble.
-          </p>
-          <p>
-            Dans ce cas, un format comme <strong>Les Architectes</strong> permet d’aborder plusieurs dimensions d’une même trajectoire.
-          </p>
-          <a class="link" href="les-architectes.html">Découvrir Les Architectes</a>
-        </div>
-      </div>
-    </section>
+        <div class="committee-layout">
+          <div class="committee-card">
+            <h3>Ce qui est évalué</h3>
+            <p>
+              Le comité éditorial apprécie la pertinence d’une contribution au regard des dossiers
+              réellement en préparation, du calendrier et de la cohérence d’ensemble de la programmation.
+            </p>
 
-    <section class="section" id="cibles">
-      <h2>Des contextes différents. Une même exigence.</h2>
-      <p class="measure">
-        Adapter le cadre, le ton et la préparation à la réalité d’un groupe ou d’une organisation à forte exposition, avec des enjeux de validation, de réputation et de cohérence multi-acteurs.
-      </p>
+            <div class="criteria">
+              <div class="criterion">
+                <strong>Pertinence du sujet</strong>
+                <span>
+                  Adéquation avec les thèmes, séries et dossiers actuellement travaillés.
+                </span>
+              </div>
 
-      <div class="grid-4">
-        <div class="card">
-          <span class="pill">Géopolitique / risques</span>
-          <h3>Parler juste sous tension</h3>
-          <p>Chaînes d’approvisionnement, marchés, conformité, zones sensibles : réduire le risque d’interprétation et préparer les questions difficiles.</p>
-          <a class="link" href="#micro-cas">Voir des exemples</a>
-        </div>
+              <div class="criterion">
+                <strong>Singularité de la contribution</strong>
+                <span>
+                  Caractère distinctif de la trajectoire, de la perspective ou de l’éclairage proposé.
+                </span>
+              </div>
 
-        <div class="card">
-          <span class="pill">Territoires / filières</span>
-          <h3>Articuler implantation et souveraineté</h3>
-          <p>Emplois, sites, ancrage local, partenariats publics : situer l’entreprise dans un récit de filière et de territoire.</p>
-          <a class="link" href="#micro-cas">Voir des exemples</a>
-        </div>
+              <div class="criterion">
+                <strong>Valeur éditoriale</strong>
+                <span>
+                  Capacité à enrichir une conversation, à rendre un enjeu plus lisible ou à ouvrir un angle utile.
+                </span>
+              </div>
 
-        <div class="card">
-          <span class="pill">Transition énergétique</span>
-          <h3>Rendre les arbitrages compréhensibles</h3>
-          <p>Prix, investissements, calendrier, contraintes réglementaires : éclairer sans promettre plus que ce qui peut être tenu.</p>
-          <a class="link" href="#micro-cas">Voir des exemples</a>
-        </div>
+              <div class="criterion">
+                <strong>Cohérence de programmation</strong>
+                <span>
+                  Compatibilité avec le rythme, les formats et les arbitrages de la programmation en cours.
+                </span>
+              </div>
+            </div>
+          </div>
 
-        <div class="card">
-          <span class="pill">Validation interne</span>
-          <h3>Sécuriser un moment exposé</h3>
-          <p>Communication, juridique, direction, affaires publiques : préparer un amont sans friction inutile et tenir une ligne commune.</p>
-          <a class="link" href="#micro-cas">Voir des exemples</a>
-        </div>
-      </div>
-    </section>
+          <div class="submit-card">
+            <p class="section-kicker">Transmission en amont</p>
+            <h3>Soumettre une perspective, une trajectoire ou un éclairage</h3>
+            <p>
+              Si vous n’avez pas été approché directement, vous pouvez néanmoins transmettre
+              un élément au comité éditorial. Cette transmission n’ouvre aucun droit particulier
+              et n’implique pas qu’un retour soit systématiquement formulé.
+            </p>
 
-    <section class="section" aria-label="Pourquoi passer préparer réutiliser">
-      <h2>Pourquoi une émission devient stratégique</h2>
+            <ul class="submit-list">
+              <li>une trajectoire susceptible de relever des Architectes ;</li>
+              <li>une perspective pouvant nourrir les Bâtisseurs ;</li>
+              <li>un éclairage expert relevant des Éclaireurs.</li>
+            </ul>
 
-      <div class="grid-3">
-        <div class="card">
-          <span class="pill">Passer</span>
-          <h3>Pourquoi et comment gagner en visibilité ?</h3>
-          <p>Accéder à des médias économiques nationaux.</p>
-          <p>Donner une visibilité stratégique à votre trajectoire et à vos arbitrages.</p>
-          <p>Installer votre organisation dans les conversations de votre secteur, de vos filières et de vos territoires d’implantation.</p>
-        </div>
+            <p>
+              Seules les contributions jugées réellement pertinentes peuvent donner lieu à une
+              prise de contact ou à un échange ultérieur.
+            </p>
 
-        <div class="card featured">
-          <span class="pill">Préparer</span>
-          <h3>Pourquoi et comment préparer une émission ?</h3>
-          <p>Une phrase mal calibrée peut devenir un angle éditorial, politique ou réputationnel.</p>
-          <p>Une séquence bien cadrée crédibilise un positionnement et sécurise une parole de gouvernance.</p>
-          <p>Une intervention bien préparée transforme l’exposition en levier stratégique au lieu de la subir.</p>
-        </div>
-
-        <div class="card">
-          <span class="pill">Réutiliser</span>
-          <h3>Pourquoi et comment réutiliser cette émission ?</h3>
-          <p>Une émission devient un actif de communication durable.</p>
-          <p>Elle peut nourrir votre communication corporate, institutionnelle, RH et affaires publiques.</p>
-          <p>Elle alimente votre écosystème : investisseurs, partenaires, territoires, filières, recrutement, influence.</p>
+            <div class="cta-row">
+              <a class="btn btn-light" href="contact.html#contact-form">Soumettre au comité éditorial</a>
+              <a class="btn btn-outline-light" href="a-propos.html">Comprendre le cadre</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Quand la parole engage plus que la communication</h2>
-      <p class="measure">
-        Pour un grand compte, une émission utile ne consiste pas à prendre la parole de plus. Elle engage une lecture du marché, une posture de gouvernance, des arbitrages industriels, des territoires et parfois des sujets sensibles.
-      </p>
-      <p class="measure">
-        L’enjeu est de rendre le sujet intelligible avant de parler de soi. C’est ce qui permet de tenir une parole claire, vérifiable et défendable dans un cadre éditorial exigeant.
-      </p>
-    </section>
+  </main>
 
-    <section class="section" id="serie-en-cours">
-      <h2>Quand un grand compte relève d’une série éditoriale</h2>
-      <p class="measure">
-        Une série éditoriale est pertinente lorsque votre sujet permet d’éclairer une dynamique plus large : souveraineté, filière, transition, relocalisation, géopolitique, industrie ou territoire.
-      </p>
-
-      <div class="grid-2">
-        <div class="card featured">
-          <span class="pill">Exemple de série ouverte</span>
-          <h3>Les Bâtisseurs — édition 2026</h3>
-          <div class="deadline">Clôture des candidatures : 15 avril 2026</div>
-          <p><strong>Souveraineté industrielle & relocalisation en Auvergne-Rhône-Alpes</strong></p>
-          <p>
-            Une série consacrée aux organisations qui contribuent concrètement à la réindustrialisation, à la relocalisation et au renforcement productif du territoire.
-          </p>
-          <p><strong>Maximum : 4 organisations sélectionnées.</strong></p>
-          <a class="link" href="les-batisseurs.html">Voir la série</a>
-        </div>
-
-        <div class="card">
-          <span class="pill">Quand choisir ce cadre</span>
-          <h3>L’organisation éclaire plus qu’elle-même</h3>
-          <p>
-            Si votre sujet permet de comprendre une évolution plus large que votre seule organisation, la série éditoriale est souvent le bon cadre.
-          </p>
-          <p>
-            Elle permet de gagner en crédibilité en vous situant dans une dynamique collective intelligible.
-          </p>
-          <a class="link" href="formulaire-candidature.html">Proposer une candidature</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Quand un grand compte relève d’un format plus approfondi</h2>
-      <p class="measure">
-        Certaines situations ne relèvent pas d’un angle collectif mais d’une trajectoire à déployer : gouvernance, arbitrages, repositionnement stratégique, logique d’investissement, responsabilité d’organisation ou cohérence d’un cap.
-      </p>
-
-      <div class="grid-2">
-        <div class="card">
-          <span class="pill">Format approfondi</span>
-          <h3>Déployer une logique d’action</h3>
-          <p>
-            Lorsqu’une simple séquence ne suffit pas à rendre votre sujet lisible, un format comme <strong>Les Architectes</strong> permet d’aborder plusieurs dimensions d’une même trajectoire.
-          </p>
-          <a class="link" href="les-architectes.html">Voir le format</a>
-        </div>
-
-        <div class="card featured">
-          <span class="pill">Direction / gouvernance / groupes</span>
-          <h3>Tenir une parole de cap</h3>
-          <p>
-            Clarifier une vision, expliquer des arbitrages, rendre lisible une stratégie ou défendre une logique d’action : c’est là que la série dirigeant prend tout son sens.
-          </p>
-          <a class="link" href="formulaire-candidature.html">Étudier mon cas</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="micro-cas">
-      <h2>Exemples concrets de situations</h2>
-      <p class="measure">
-        Avec un objectif constant : produire une parole lisible, maîtrisée et utile, même dans des environnements complexes.
-      </p>
-
-      <div class="grid-3">
-        <div class="card">
-          <span class="pill">Géopolitique & risques</span>
-          <h3>Impact géopolitique sur l’organisation</h3>
-          <p>Chaîne d’approvisionnement, marchés, conformité, zones sous tension : préparer une parole qui éclaire sans ouvrir de lecture erronée.</p>
-        </div>
-
-        <div class="card featured">
-          <span class="pill">Territoires / filières</span>
-          <h3>Positionnement territoires & filières</h3>
-          <p>Implantations, emplois, souveraineté, partenariats publics : mettre en contexte avant le focus entreprise et aligner siège, sites et partenaires.</p>
-        </div>
-
-        <div class="card">
-          <span class="pill">Transition énergétique</span>
-          <h3>Arbitrages et trajectoire</h3>
-          <p>Prix, investissements, contraintes réglementaires, calendrier : rendre les arbitrages compréhensibles sans langue de bois ni autopromotion hors-sol.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="mid-cta">
-        <h2 style="margin-bottom:10px;">Une prise de parole utile commence par un bon cadrage</h2>
-        <p class="measure">
-          Toutes les organisations n’ont pas besoin du même niveau d’exposition, ni du même registre de parole. Un échange préalable permet de déterminer si le sujet est mûr, pertinent et défendable.
-        </p>
-        <div class="cta">
-          <a class="btn btn-secondary" href="formulaire-candidature.html">Étudier mon cas</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="situations">
-      <h2>Trois situations où l’émission devient stratégique</h2>
-      <p class="measure" style="color:var(--muted);">
-        La même émission peut servir des objectifs différents : sécuriser une parole sous tension, articuler une stratégie de territoire ou rendre des arbitrages industriels compréhensibles. Le point commun : ne pas improviser.
-      </p>
-
-      <div class="grid-3">
-        <div class="card">
-          <span class="pill">Risque / exposition</span>
-          <h3>Réduire le risque d’interprétation</h3>
-          <p>Préparer une parole sur des sujets géopolitiques, réglementaires ou réputationnels pour éviter le contresens et tenir une ligne claire.</p>
-        </div>
-
-        <div class="card">
-          <span class="pill">Filière / territoire</span>
-          <h3>Inscrire l’entreprise dans un récit plus large</h3>
-          <p>Parler implantation, emplois, souveraineté et écosystème en articulant les enjeux de filière, de territoire et d’entreprise.</p>
-        </div>
-
-        <div class="card">
-          <span class="pill">Arbitrages / gouvernance</span>
-          <h3>Éclairer sans sur-promettre</h3>
-          <p>Rendre compréhensibles des choix complexes en restant concret, mesuré et crédible dans un environnement exigeant.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="architecturesequence">
-      <h2>Comment se construit une émission ?</h2>
-      <p class="measure">
-        Une émission articule préparation, réalisation et réutilisation. Elle transforme une prise de parole en contenu utile, réexploitable et cohérent avec vos autres prises de parole.
-      </p>
-
-      <div class="grid-3">
-        <div class="card featured">
-          <span class="pill">1 — Amont</span>
-          <h3>Structurer</h3>
-          <p>Clarifier les messages, les preuves, les points sensibles et les angles avant toute exposition publique.</p>
-        </div>
-
-        <div class="card">
-          <span class="pill">2 — Émission</span>
-          <h3>Rendre intelligible</h3>
-          <p>Partir du contexte marché, filière, territoire ou réglementation, puis situer l’organisation avec clarté, précision et cohérence.</p>
-        </div>
-
-        <div class="card">
-          <span class="pill">3 — Aval</span>
-          <h3>Réutiliser</h3>
-          <p>Transformer l’émission en actifs : extraits, citations, kit d’usage interne et externe, diffusion cohérente.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Une même entrée : la candidature</h2>
-      <p class="measure">
-        Qu’il s’agisse d’une participation à une série éditoriale ou de l’examen d’un format plus approfondi, la première étape reste la même : comprendre votre sujet, votre moment, votre objectif et le bon niveau d’exposition.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>Un travail compatible avec vos organisations</h2>
-      <p class="measure">
-        Le travail s’inscrit dans vos circuits de validation : communication, juridique, direction, affaires publiques, relations institutionnelles, agences. L’objectif est simple : sécuriser l’amont, réduire la friction inutile et tenir une ligne lisible.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>Notre ligne</h2>
-      <p class="measure">
-        L’objectif n’est pas d’ajouter de la communication. Au contraire : parler vrai, utile, compréhensible, dans le respect du cadre éditorial du média et des contraintes propres aux organisations exposées.
-      </p>
-      <p class="measure" style="color:var(--muted);margin-top:-6px;">
-        Cette approche n’est pas adaptée aux communications purement promotionnelles ni aux prises de parole déconnectées des enjeux réels.
-      </p>
-    </section>
-
-    <section class="final" id="contact">
-      <h2>Proposer une candidature</h2>
-      <p>
-        Un échange confidentiel permet de qualifier le sujet, le niveau d’exposition, le format pertinent et le cadre de préparation adapté.
-      </p>
-      <div class="cta">
-        <a href="formulaire-candidature.html" class="btn btn-primary">Accéder au formulaire</a>
-      </div>
-      <p style="margin-top:16px;font-size:14px;opacity:.82;">
-        Lorsque nécessaire, un accord de confidentialité peut être formalisé en amont de toute analyse approfondie.
-      </p>
-    </section>
-
-    <footer class="footer">
-      <div class="footer-grid">
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
         <div class="footer-brand">
-          <p class="footer-title">EN PLATEAU</p>
-          <p>
-            EN PLATEAU structure des prises de parole dans des médias économiques nationaux.
-            L’activité articule cadrage éditorial, préparation stratégique, émission et valorisation durable des contenus.
+          <a class="brand" href="index.html" aria-label="EN PLATEAU — retour à l’accueil">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span class="brand-name">EN PLATEAU</span>
+          </a>
+          <p class="footer-text">
+            EN PLATEAU structure des prises de parole dans un cadre éditorial clair,
+            sélectif et préparé en amont, au croisement de la production, du récit
+            et de la valorisation.
           </p>
-          <p>
-            Deux formats éditoriaux : <strong>Les Bâtisseurs</strong>, série éditoriale thématique, et <strong>Les Architectes</strong>, série consacrée à une trajectoire et à sa logique d’action.
-          </p>
         </div>
 
-        <div>
-          <p class="footer-title">Séries</p>
-          <ul>
-            <li><a href="les-batisseurs.html">Les Bâtisseurs</a></li>
-            <li><a href="les-architectes.html">Les Architectes</a></li>
-            <li><a href="formulaire-candidature.html">Proposer une candidature</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="footer-title">Contextes</p>
-          <ul>
-            <li><a href="entrepreneurs.html">Entrepreneurs</a></li>
-            <li><a href="entreprises.html">Entreprises</a></li>
-            <li><a href="grands-comptes.html">Grands comptes</a></li>
-            <li><a href="secteur-public.html">Décideurs publics</a></li>
-            <li><a href="associations.html">Dirigeants associatifs</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="footer-title">EN PLATEAU</p>
-          <ul>
-            <li><a href="a-propos.html">À propos</a></li>
-            <li><a href="mentions-legales.html">Mentions légales</a></li>
-            <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
-          </ul>
-        </div>
+        <nav class="footer-nav" aria-label="Navigation de pied de page">
+          <a href="index.html">Accueil</a>
+          <a href="series.html">Séries éditoriales</a>
+          <a href="experts.html">Experts</a>
+          <a href="a-propos.html">À propos</a>
+          <a href="participer.html">Participer</a>
+          <a href="contact.html">Contact</a>
+        </nav>
       </div>
 
       <div class="footer-bottom">
-        <p>© EN PLATEAU — 2026</p>
-        <p>Prises de parole stratégiques · Médias économiques · Grands comptes · Cadrage éditorial</p>
+        <span>© EN PLATEAU</span>
+        <span>Cadre éditorial, préparation, production et activation</span>
       </div>
-    </footer>
-
-  </div>
-
-  <script>
-    (function(){
-      const burger = document.getElementById('burger');
-      const mobileNav = document.getElementById('mobileNav');
-      const mobileContextesBtn = document.getElementById('mobileContextesBtn');
-      const mobileContextesSubmenu = document.getElementById('mobileContextesSubmenu');
-
-      if (burger && mobileNav) {
-        burger.addEventListener('click', function(){
-          const open = mobileNav.style.display === 'block';
-          mobileNav.style.display = open ? 'none' : 'block';
-          burger.setAttribute('aria-expanded', open ? 'false' : 'true');
-        });
-      }
-
-      if (mobileContextesBtn && mobileContextesSubmenu) {
-        mobileContextesBtn.addEventListener('click', function(){
-          const open = mobileContextesSubmenu.style.display === 'block';
-          mobileContextesSubmenu.style.display = open ? 'none' : 'block';
-          mobileContextesBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
-
-          const chevron = mobileContextesBtn.querySelector('.chevron');
-          if (chevron) {
-            chevron.style.transform = open ? 'rotate(0deg)' : 'rotate(180deg)';
-          }
-        });
-      }
-    })();
-  </script>
+    </div>
+  </footer>
 
 </body>
 </html>
