@@ -1,990 +1,197 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>EN PLATEAU — À propos</title>
-  <meta
-    name="description"
-    content="EN PLATEAU organise des séries éditoriales avec des médias économiques nationaux. Une structure conçue pour préparer la parole, clarifier une trajectoire et inscrire une prise de parole dans un cadre plus lisible, plus crédible et plus durable."
-  />
-  <meta
-    name="keywords"
-    content="EN PLATEAU, à propos, séries éditoriales, médias économiques, prise de parole stratégique, Les Bâtisseurs, Les Architectes, trajectoire, vision, arbitrages"
-  />
-  <link rel="canonical" href="https://enplateau.fr/a-propos.html" />
+<title>EN PLATEAU — À propos</title>
 
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0F2747" />
+<meta name="description" content="EN PLATEAU conçoit et structure des conversations économiques destinées à être produites et diffusées dans des formats audiovisuels en partenariat avec des médias." />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="fr_FR" />
-  <meta property="og:site_name" content="EN PLATEAU" />
-  <meta property="og:title" content="EN PLATEAU — À propos" />
-  <meta
-    property="og:description"
-    content="EN PLATEAU organise des séries éditoriales avec des médias économiques nationaux pour structurer une prise de parole, clarifier une trajectoire et inscrire les contenus dans la durée."
-  />
-  <meta property="og:url" content="https://enplateau.fr/a-propos.html" />
-  <meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp" />
+<link rel="canonical" href="https://enplateau.fr/a-propos.html" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="EN PLATEAU — À propos" />
-  <meta
-    name="twitter:description"
-    content="Pourquoi EN PLATEAU existe, pourquoi Les Bâtisseurs et Les Architectes ont été lancés, et quelle vision guide ce travail."
-  />
-  <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp" />
+<meta name="robots" content="index,follow" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&display=swap" rel="stylesheet">
+<meta property="og:type" content="website" />
+<meta property="og:title" content="EN PLATEAU — À propos" />
+<meta property="og:description" content="EN PLATEAU conçoit et structure des conversations économiques." />
+<meta property="og:url" content="https://enplateau.fr/a-propos.html" />
 
-  <style>
-    :root{
-      --ink:#0B0F19;
-      --slate:#2B3340;
-      --muted:#5B6472;
-      --line:#E3E7EC;
-      --line-2:#D7DEE6;
-      --sig:#0F2747;
-      --sig-2:#163558;
-      --soft:#F5F6F7;
-      --soft-2:#F2F4F6;
-      --soft-3:#EEF2F5;
-      --warm:#F8F7F4;
-      --max:1080px;
-      --bg:#ffffff;
-    }
+<meta name="twitter:card" content="summary_large_image" />
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+<link rel="alternate" type="application/rss+xml" title="EN PLATEAU RSS" href="https://enplateau.fr/rss.xml" />
 
-    body{
-      margin:0;
-      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-      line-height:1.7;
-      color:var(--slate);
-      background:var(--bg);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      text-rendering:optimizeLegibility;
-    }
-
-    a{color:inherit;text-decoration:none}
-
-    .container{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:0 24px 110px;
-    }
-
-    .header-wrap{
-      position:sticky;
-      top:0;
-      z-index:50;
-      background:rgba(255,255,255,.96);
-      backdrop-filter:saturate(130%) blur(8px);
-      border-bottom:1px solid rgba(11,15,25,.06);
-    }
-
-    .header{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:14px 24px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-
-    .brand-mark{
-      width:32px;
-      height:32px;
-      border-radius:8px;
-      background:var(--sig);
-      display:inline-block;
-      flex:0 0 auto;
-    }
-
-    .brand-name{
-      font-weight:900;
-      letter-spacing:-.02em;
-      color:var(--ink);
-      font-size:15px;
-    }
-
-    .nav{
-      display:none;
-      gap:22px;
-      align-items:center;
-    }
-
-    .nav-item{
-      position:relative;
-    }
-
-    .nav-item::after{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      top:100%;
-      height:14px;
-    }
-
-    .nav > a,
-    .nav-trigger{
-      font-size:14px;
-      color:var(--muted);
-      font-weight:700;
-      padding:8px 0;
-      background:none;
-      border:none;
-      cursor:pointer;
-      font-family:inherit;
-      display:inline-flex;
-      align-items:center;
-      position:relative;
-    }
-
-    .nav > a::after,
-    .nav-trigger::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-2px;
-      width:0;
-      height:1px;
-      background:var(--ink);
-      transition:width .18s ease;
-      opacity:.8;
-    }
-
-    .nav > a:hover,
-    .nav-trigger:hover,
-    .nav > a.active,
-    .nav-trigger.active{
-      color:var(--ink);
-    }
-
-    .nav > a:hover::after,
-    .nav-trigger:hover::after,
-    .nav > a.active::after,
-    .nav-trigger.active::after{
-      width:100%;
-    }
-
-    .dropdown{
-      position:absolute;
-      top:calc(100% + 12px);
-      left:0;
-      min-width:250px;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:10px;
-      box-shadow:0 10px 24px rgba(13,21,32,.06);
-      padding:10px;
-      display:none;
-    }
-
-    .dropdown a{
-      display:block;
-      padding:10px 12px;
-      border-radius:8px;
-      color:var(--muted);
-      font-size:14px;
-      font-weight:700;
-      white-space:nowrap;
-    }
-
-    .dropdown a:hover,
-    .dropdown a.active{
-      background:#F6F8FA;
-      color:var(--ink);
-    }
-
-    .nav-item:hover .dropdown,
-    .nav-item:focus-within .dropdown{
-      display:block;
-    }
-
-    .chevron{
-      font-size:12px;
-      margin-left:6px;
-      opacity:.5;
-      transition:transform .2s ease;
-      line-height:1;
-    }
-
-    .nav-item:hover .nav-trigger .chevron,
-    .nav-item:focus-within .nav-trigger .chevron{
-      transform:rotate(180deg);
-    }
-
-    .burger{
-      border:1px solid var(--line);
-      background:#fff;
-      border-radius:8px;
-      padding:10px 12px;
-      font-weight:800;
-      color:var(--ink);
-      cursor:pointer;
-    }
-
-    .mobile{
-      display:none;
-      border-top:1px solid var(--line);
-    }
-
-    .mobile a,
-    .mobile button{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      width:100%;
-      padding:14px 24px;
-      color:var(--muted);
-      font-weight:750;
-      background:none;
-      border:none;
-      text-align:left;
-      font-family:inherit;
-      font-size:15px;
-      cursor:pointer;
-    }
-
-    .mobile a:hover,
-    .mobile button:hover{
-      background:#F6F8FA;
-      color:var(--ink);
-    }
-
-    .mobile-submenu{
-      display:none;
-      border-top:1px solid #F1F3F6;
-      background:#FBFCFD;
-    }
-
-    .mobile-submenu a{
-      padding-left:40px;
-      font-weight:700;
-      font-size:14px;
-      justify-content:flex-start;
-    }
-
-    @media(min-width:900px){
-      .nav{display:flex}
-      .burger{display:none}
-      .mobile{display:none !important}
-    }
-
-    h1{
-      font-family:"Bitter",serif;
-      font-size:clamp(34px,5.4vw,54px);
-      line-height:1.04;
-      margin:0 0 14px;
-      color:#fff;
-      font-weight:700;
-      letter-spacing:-0.02em;
-    }
-
-    h2{
-      font-family:"Bitter",serif;
-      font-size:clamp(26px,4vw,40px);
-      line-height:1.08;
-      margin:0 0 18px;
-      color:var(--ink);
-      font-weight:700;
-      letter-spacing:-0.012em;
-    }
-
-    h3{
-      font-family:"Bitter",serif;
-      font-size:22px;
-      line-height:1.18;
-      margin:0 0 10px;
-      color:var(--ink);
-      font-weight:600;
-      letter-spacing:-0.006em;
-    }
-
-    p{margin:0 0 18px}
-    p strong{font-weight:650}
-
-    .hero{
-      background:var(--sig);
-      color:#fff;
-      border-radius:16px;
-      padding:68px 34px 52px;
-      margin:26px 0 28px;
-      text-align:center;
-      box-shadow:none;
-    }
-
-    .hero .kicker{
-      font-size:12px;
-      letter-spacing:.28em;
-      text-transform:uppercase;
-      opacity:.76;
-      margin-bottom:14px;
-      font-weight:800;
-    }
-
-    .hero .subhead{
-      max-width:760px;
-      margin:0 auto 14px;
-      font-size:18px;
-      line-height:1.42;
-      font-weight:700;
-      opacity:.95;
-    }
-
-    .hero .lead{
-      max-width:760px;
-      margin:10px auto 0;
-      opacity:.78;
-      font-size:14px;
-      line-height:1.62;
-      font-weight:500;
-    }
-
-    .section{
-      margin:0 0 22px;
-      padding:44px 26px;
-      border-radius:14px;
-      text-align:center;
-      border:1px solid var(--line);
-    }
-
-    .section-white{background:#fff;}
-    .section-soft{background:var(--soft);}
-    .section-soft-2{background:var(--soft-2);}
-    .section-soft-3{background:var(--soft-3);}
-    .section-warm{background:var(--warm);}
-
-    .measure{
-      max-width:900px;
-      margin-left:auto;
-      margin-right:auto;
-    }
-
-    .grid-2{
-      display:grid;
-      gap:22px;
-      margin-top:22px;
-    }
-
-    .grid-3{
-      display:grid;
-      gap:22px;
-      margin-top:14px;
-    }
-
-    @media(min-width:900px){
-      .grid-2{grid-template-columns:repeat(2,1fr)}
-      .grid-3{grid-template-columns:repeat(3,1fr)}
-    }
-
-    .card{
-      border:1px solid var(--line);
-      border-radius:10px;
-      padding:22px;
-      background:#fff;
-      text-align:left;
-      box-shadow:none;
-      display:flex;
-      flex-direction:column;
-    }
-
-    .card.featured{
-      border:1px solid var(--line-2);
-    }
-
-    .card p{
-      flex-grow:1;
-      font-size:14px;
-      line-height:1.72;
-      color:var(--muted);
-      margin:0 0 14px;
-    }
-
-    .pill{
-      display:inline-block;
-      padding:0 0 8px;
-      font-size:11px;
-      font-weight:800;
-      letter-spacing:.07em;
-      text-transform:uppercase;
-      color:#0B1F3A;
-      border-bottom:2px solid #0B1F3A;
-      background:none;
-      border-radius:0;
-      margin-bottom:14px;
-    }
-
-    .media-logos{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      align-items:flex-end;
-      gap:56px;
-      margin:6px 0 0;
-    }
-
-    .media-logos img{
-      height:74px;
-      max-width:170px;
-      width:auto;
-      opacity:.92;
-      transition:opacity .2s ease, transform .2s ease;
-    }
-
-    .media-logos img:hover{
-      opacity:1;
-      transform:translateY(-2px);
-    }
-
-    #medias{
-      margin-top:-8px;
-      margin-bottom:22px;
-      padding-top:28px;
-      padding-bottom:24px;
-    }
-
-    .media-kicker{
-      font-size:12px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--muted);
-      margin-bottom:18px;
-    }
-
-    .media-stack{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:6px;
-    }
-
-    .cta{
-      margin-top:22px;
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-
-    .btn{
-      padding:12px 18px;
-      border-radius:999px;
-      font-weight:800;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      border:1px solid transparent;
-      transition:transform .18s ease, background .18s ease;
-      font-size:14px;
-    }
-
-    .btn:hover{
-      transform:translateY(-1px);
-    }
-
-    .btn-primary{
-      background:#fff;
-      color:var(--sig);
-    }
-
-    .btn-secondary{
-      background:transparent;
-      border-color:#D8E1EF;
-      color:var(--ink);
-    }
-
-    .btn-secondary:hover{
-      background:#fff;
-    }
-
-    .final{
-      background:var(--sig);
-      color:#fff;
-      border-radius:16px;
-      padding:48px 24px;
-      text-align:center;
-      border:none;
-    }
-
-    .final h2{
-      color:#fff;
-      margin-bottom:14px;
-    }
-
-    .final p{
-      max-width:760px;
-      margin:0 auto 16px;
-    }
-
-    .footer{
-      margin-top:66px;
-      border-top:1px solid var(--line);
-      padding:34px 0 0;
-    }
-
-    .footer-grid{
-      display:grid;
-      gap:30px;
-    }
-
-    @media(min-width:900px){
-      .footer-grid{
-        grid-template-columns:1.7fr 1fr 1fr 1fr;
-      }
-    }
-
-    .footer-brand{
-      max-width:460px;
-    }
-
-    .footer-title{
-      font-size:12px;
-      font-weight:900;
-      color:var(--ink);
-      margin:0 0 12px;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-    }
-
-    .footer p,
-    .footer li,
-    .footer a{
-      font-size:14px;
-      color:var(--muted);
-    }
-
-    .footer ul{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
-
-    .footer li{
-      margin:0 0 8px;
-    }
-
-    .footer a:hover{
-      color:var(--ink);
-      text-decoration:underline;
-    }
-
-    .footer-bottom{
-      margin-top:30px;
-      padding-top:18px;
-      border-top:1px solid var(--line);
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      justify-content:space-between;
-      align-items:center;
-    }
-
-    .footer-bottom p{
-      margin:0;
-      font-size:12px;
-      color:var(--muted);
-      letter-spacing:.01em;
-    }
-
-    @media(max-width:700px){
-      .container{
-        padding:0 16px 88px;
-      }
-
-      .header{
-        padding:12px 16px;
-      }
-
-      .hero{
-        padding:54px 20px 40px;
-        border-radius:14px;
-      }
-
-      .hero .subhead{
-        font-size:16px;
-      }
-
-      .hero .lead{
-        font-size:15px;
-        line-height:1.65;
-      }
-
-      .section{
-        padding:36px 18px;
-        border-radius:12px;
-      }
-
-      .final{
-        border-radius:14px;
-      }
-
-      .card{
-        border-radius:10px;
-      }
-
-      .media-logos{
-        gap:30px;
-      }
-
-      .media-logos img{
-        height:64px;
-        max-width:160px;
-      }
-    }
-  </style>
+<link rel="stylesheet" href="a-propos.css" />
 </head>
+
 <body>
 
-  <div class="header-wrap">
-    <header class="header" aria-label="Navigation principale">
-      <a class="brand" href="index.html" aria-label="EN PLATEAU — Accueil">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-name">EN&nbsp;PLATEAU</span>
-      </a>
+<header class="header">
+<div class="container header-inner">
 
-      <nav class="nav" aria-label="Navigation">
-        <a href="les-eclaireurs.html">Les Éclaireurs</a>
-        <a href="les-batisseurs.html">Les Bâtisseurs</a>
-        <a href="les-architectes.html">Les Architectes</a>
+<div class="logo">
+<a href="index.html">EN PLATEAU</a>
+</div>
 
-        <div class="nav-item">
-          <button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">
-            Contextes <span class="chevron">▾</span>
-          </button>
-          <div class="dropdown" aria-label="Sous-menu Contextes">
-            <a href="experts.html">Experts</a>
-            <a href="entrepreneurs.html">Entrepreneurs</a>
-            <a href="entreprises.html">Entreprises</a>
-            <a href="secteur-public.html">Décideurs publics</a>
-          </div>
-        </div>
+<nav class="nav">
+<a href="index.html">Accueil</a>
+<a href="les-eclaireurs.html">Les Éclaireurs</a>
+<a href="les-batisseurs.html">Les Bâtisseurs</a>
+<a href="les-architectes.html">Les Architectes</a>
+<a href="experts.html">Experts</a>
+<a class="active" href="a-propos.html">À propos</a>
+</nav>
 
-        <a class="active" href="a-propos.html" aria-current="page">À propos</a>
-      </nav>
+</div>
+</header>
 
-      <button class="burger" id="burger" aria-expanded="false" aria-controls="mobileNav">Menu</button>
-    </header>
+<main>
 
-    <div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
-      <a href="les-eclaireurs.html">Les Éclaireurs</a>
-      <a href="les-batisseurs.html">Les Bâtisseurs</a>
-      <a href="les-architectes.html">Les Architectes</a>
+<section class="hero">
+<div class="container">
 
-      <button type="button" id="mobileContextesBtn" aria-expanded="false" aria-controls="mobileContextesSubmenu">
-        <span>Contextes</span>
-        <span class="chevron">▾</span>
-      </button>
-      <div class="mobile-submenu" id="mobileContextesSubmenu">
-        <a href="experts.html">Experts</a>
-        <a href="entrepreneurs.html">Entrepreneurs</a>
-        <a href="entreprises.html">Entreprises</a>
-        <a href="secteur-public.html">Décideurs publics</a>
-      </div>
+<h1>Organiser les conversations qui comptent</h1>
 
-      <a href="a-propos.html" aria-current="page">À propos</a>
-    </div>
-  </div>
+<p class="hero-text">
+EN PLATEAU conçoit et structure des conversations économiques destinées à être produites et diffusées dans des formats audiovisuels en partenariat avec des médias.
+</p>
 
-  <div class="container">
+</div>
+</section>
 
-    <section class="hero">
-      <div class="kicker">À propos</div>
-      <h1>La parole n’est pas un détail de communication</h1>
-      <p class="subhead">
-        Elle engage une vision, un cadre, une responsabilité et une manière d’entrer dans l’espace public.
-      </p>
-      <p class="lead">
-        EN PLATEAU a été conçu pour les situations où la prise de parole ne peut pas être traitée comme une simple opération de visibilité.
-      </p>
-    </section>
+<section class="section">
+<div class="container">
 
-    <section class="section section-white" id="medias">
-      <div class="media-stack">
-        <p class="media-kicker">
-          Les formats s’inscrivent dans des environnements éditoriaux reconnus.
-        </p>
+<h2>Une économie saturée de parole</h2>
 
-        <div class="media-logos">
-          <img src="images/bfm-business.svg" alt="BFM Business">
-          <img src="images/le-figaro.svg" alt="Le Figaro">
-          <img src="images/la-tribune.svg" alt="La Tribune">
-          <img src="images/forbes.svg" alt="Forbes">
-        </div>
-      </div>
-    </section>
+<div class="grid">
 
-    <section class="section section-warm">
-      <h2>Pourquoi EN PLATEAU existe</h2>
-      <p class="measure">
-        Trop de prises de parole sont encore pensées comme des apparitions à obtenir, et non comme des constructions à préparer.
-      </p>
-      <p class="measure">
-        Or une intervention ne vaut pas seulement par le média qui l’accueille. Elle vaut par le cadre dans lequel elle s’inscrit, par la clarté de ce qu’elle rend lisible, par la justesse des mots employés, et par la capacité à prolonger cette parole dans le temps.
-      </p>
-      <p class="measure">
-        EN PLATEAU est né de cette conviction : une prise de parole sérieuse ne se résume ni à une invitation obtenue, ni à un passage à l’écran, ni à une mise en avant ponctuelle. Elle demande un travail de structuration, de hiérarchie et de cohérence.
-      </p>
-    </section>
+<p>
+L’économie contemporaine produit une quantité considérable d’informations, d’analyses et de prises de parole. Pourtant, les conversations qui permettent réellement de comprendre les transformations en cours restent relativement rares.
+</p>
 
-    <section class="section section-soft-3">
-      <h2>Ce que nous cherchons à corriger</h2>
+<p>
+C’est de ce constat qu’est né EN PLATEAU. L’objectif n’est pas d’ajouter une parole de plus mais de créer un cadre permettant d’organiser des conversations économiques plus lisibles et plus structurées.
+</p>
 
-      <div class="grid-3">
-        <div class="card">
-          <span class="pill">Confusion</span>
-          <h3>La visibilité ne suffit pas</h3>
-          <p>
-            Une parole exposée sans angle solide peut produire de la présence, mais peu de compréhension.
-          </p>
-        </div>
+</div>
 
-        <div class="card featured">
-          <span class="pill">Dispersion</span>
-          <h3>Une prise de parole isolée s’épuise vite</h3>
-          <p>
-            Lorsqu’elle n’est pas pensée dans un ensemble, elle laisse rarement une lecture durable de l’organisation, de sa trajectoire ou de son rôle.
-          </p>
-        </div>
+</div>
+</section>
 
-        <div class="card">
-          <span class="pill">Affaiblissement</span>
-          <h3>Les mots mal cadrés coûtent plus qu’ils ne rapportent</h3>
-          <p>
-            Ils brouillent une vision, fragilisent une position et exposent inutilement des arbitrages qui auraient dû être clarifiés en amont.
-          </p>
-        </div>
-      </div>
-    </section>
+<section class="section alt">
+<div class="container">
 
-    <section class="section section-soft">
-      <h2>Pourquoi lancer Les Bâtisseurs et Les Architectes</h2>
-      <p class="measure">
-        Tous les sujets ne relèvent pas du même cadre éditorial. Certaines prises de parole gagnent à être replacées dans une conversation économique collective. D’autres exigent au contraire un traitement plus approfondi, centré sur une trajectoire, une logique d’action ou un cap.
-      </p>
-      <p class="measure">
-        C’est pour répondre à cette différence de nature qu’EN PLATEAU a structuré deux formats distincts, complémentaires, mais non interchangeables.
-      </p>
+<h2>Un dispositif en amont des émissions</h2>
 
-      <div class="grid-2">
-        <div class="card">
-          <span class="pill">Les Bâtisseurs</span>
-          <h3>Faire apparaître une transformation à plusieurs voix</h3>
-          <p>
-            Les Bâtisseurs a été lancé pour les sujets qui ne se comprennent vraiment qu’à travers plusieurs trajectoires : filières, réindustrialisation, souveraineté, transformation des entreprises, recomposition d’un secteur.
-          </p>
-          <p>
-            Le format permet de construire une lecture collective d’un enjeu économique, sans réduire chaque organisation à une simple séquence de visibilité.
-          </p>
-        </div>
+<div class="grid">
 
-        <div class="card featured">
-          <span class="pill">Les Architectes</span>
-          <h3>Donner à une trajectoire le temps et la profondeur qu’elle exige</h3>
-          <p>
-            Les Architectes a été lancé pour les situations où une organisation ou un dirigeant ne peut pas être lu correctement à travers une seule intervention.
-          </p>
-          <p>
-            Le format permet d’explorer plusieurs dimensions d’un même cap : vision, arbitrages, responsabilités, tensions, cohérence d’ensemble.
-          </p>
-        </div>
-      </div>
-    </section>
+<p>
+EN PLATEAU n’est pas un média et ne produit pas directement les émissions. L’initiative intervient en amont afin de structurer certaines conversations économiques avant leur production et leur diffusion.
+</p>
 
-    <section class="section section-white">
-      <h2>Notre conviction sur le poids des mots</h2>
-      <p class="measure">
-        Les mots n’habillent pas simplement une stratégie. Ils en révèlent la qualité, les ambiguïtés, les angles morts et parfois les contradictions.
-      </p>
-      <p class="measure">
-        Un mot trop faible atténue un enjeu. Un mot trop fort décrédibilise une position. Un mot imprécis brouille une lecture. Un mot mal placé peut déplacer le centre de gravité d’un message.
-      </p>
-      <p class="measure">
-        C’est pourquoi EN PLATEAU accorde autant d’importance au cadrage qu’à l’exposition elle-même. Il ne s’agit pas d’orner un discours, mais de trouver une formulation juste, soutenable, intelligible et cohérente avec la réalité du sujet.
-      </p>
-    </section>
+<p>
+Les conversations sont ensuite produites par des sociétés spécialisées et diffusées dans des formats audiovisuels existants, animés par des journalistes et intégrés dans l’écosystème médiatique.
+</p>
 
-    <section class="section section-soft-2">
-      <h2>Ce que nous ne faisons pas</h2>
+</div>
 
-      <div class="grid-3">
-        <div class="card">
-          <span class="pill">Pas une agence RP</span>
-          <h3>Nous ne vendons pas de la présence pour elle-même</h3>
-          <p>
-            L’enjeu n’est pas de multiplier les apparitions, mais d’inscrire une parole dans un cadre lisible et crédible.
-          </p>
-        </div>
+</div>
+</section>
 
-        <div class="card">
-          <span class="pill">Pas une agence de communication</span>
-          <h3>Nous ne produisons pas un discours générique</h3>
-          <p>
-            Chaque sujet demande un niveau de précision, de retenue et de hiérarchie qui dépasse les logiques de langage standardisé.
-          </p>
-        </div>
+<section class="section">
+<div class="container">
 
-        <div class="card featured">
-          <span class="pill">Pas un studio audiovisuel</span>
-          <h3>La production n’est pas le point de départ</h3>
-          <p>
-            L’image compte, mais elle vient après le cadrage. Ce qui nous intéresse d’abord, c’est la logique éditoriale de la parole.
-          </p>
-        </div>
-      </div>
-    </section>
+<h2>Trois séries éditoriales</h2>
 
-    <section class="section section-warm">
-      <h2>Ce que nous faisons</h2>
-      <p class="measure">
-        EN PLATEAU organise des séries éditoriales avec des médias économiques nationaux pour aider une organisation à prendre place dans un cadre plus juste, plus solide et plus durable.
-      </p>
+<div class="cards">
 
-      <div class="grid-3">
-        <div class="card">
-          <span class="pill">Cadre</span>
-          <h3>Structurer la parole</h3>
-          <p>
-            Clarifier un angle, hiérarchiser les messages, mettre au jour la logique d’un sujet et le bon niveau d’exposition.
-          </p>
-        </div>
+<div class="card">
+<h3>Les Éclaireurs</h3>
+<p>
+Une conversation consacrée à un sujet précis : transformation sectorielle, innovation technologique ou évolution réglementaire.
+</p>
+</div>
 
-        <div class="card featured">
-          <span class="pill">Série</span>
-          <h3>Choisir le bon format</h3>
-          <p>
-            Déterminer si le sujet relève d’une conversation économique à plusieurs voix ou d’un parcours médiatique plus approfondi.
-          </p>
-        </div>
+<div class="card">
+<h3>Les Bâtisseurs</h3>
+<p>
+Une conversation collective réunissant plusieurs intervenants afin de confronter différentes visions de l’économie réelle.
+</p>
+</div>
 
-        <div class="card">
-          <span class="pill">Durée</span>
-          <h3>Inscrire les contenus dans le temps</h3>
-          <p>
-            Faire en sorte qu’une émission ne s’arrête pas à sa diffusion, mais devienne un actif réutilisable dans la durée.
-          </p>
-        </div>
-      </div>
-    </section>
+<div class="card">
+<h3>Les Architectes</h3>
+<p>
+Un dialogue approfondi consacré à la trajectoire d’un dirigeant ou d’une entreprise.
+</p>
+</div>
 
-    <section class="section section-soft-3">
-      <h2>Notre ligne</h2>
-      <p class="measure">
-        Nous croyons à une parole sobre, préparée, précise et tenue.
-      </p>
-      <p class="measure">
-        Nous croyons qu’un cadre éditorial sérieux protège mieux qu’il n’enferme, parce qu’il oblige à clarifier ce qui mérite réellement d’être dit.
-      </p>
-      <p class="measure">
-        Nous croyons enfin qu’une prise de parole utile n’est ni un exercice d’image, ni une posture, mais une manière de rendre une trajectoire, une responsabilité ou une transformation plus intelligible.
-      </p>
-    </section>
+</div>
 
-    <section class="final" id="contact">
-      <h2>Vérifier le bon cadre éditorial</h2>
-      <p>
-        Un échange confidentiel permet d’évaluer si votre sujet relève d’une conversation économique, d’un parcours médiatique approfondi, ou d’un autre niveau de structuration préalable.
-      </p>
-      <div class="cta">
-        <a class="btn btn-primary" href="formulaire-candidature.html">Demander une évaluation</a>
-      </div>
-    </section>
+</div>
+</section>
 
-    <footer class="footer">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <p class="footer-title">EN PLATEAU</p>
-          <p>
-            EN PLATEAU organise des séries éditoriales avec des médias économiques nationaux.
-          </p>
-          <p>
-            Trois cadres éditoriaux : <strong>Les Éclaireurs</strong>, éclairage expert sur l’économie réelle ; <strong>Les Bâtisseurs</strong>, conversation économique à plusieurs voix ; et <strong>Les Architectes</strong>, parcours consacré à une trajectoire et à sa logique d’action.
-          </p>
-        </div>
+<section class="section alt">
+<div class="container">
 
-        <div>
-          <p class="footer-title">Séries</p>
-          <ul>
-            <li><a href="les-eclaireurs.html">Les Éclaireurs</a></li>
-            <li><a href="les-batisseurs.html">Les Bâtisseurs</a></li>
-            <li><a href="les-architectes.html">Les Architectes</a></li>
-          </ul>
-        </div>
+<h2>Une saison éditoriale</h2>
 
-        <div>
-          <p class="footer-title">Contextes</p>
-          <ul>
-            <li><a href="experts.html">Experts</a></li>
-            <li><a href="entrepreneurs.html">Entrepreneurs</a></li>
-            <li><a href="entreprises.html">Entreprises</a></li>
-            <li><a href="secteur-public.html">Décideurs publics</a></li>
-          </ul>
-        </div>
+<div class="grid">
 
-        <div>
-          <p class="footer-title">EN PLATEAU</p>
-          <ul>
-            <li><a class="active" href="a-propos.html" aria-current="page">À propos</a></li>
-            <li><a href="mentions-legales.html">Mentions légales</a></li>
-            <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
-          </ul>
-        </div>
-      </div>
+<p>
+Les conversations EN PLATEAU s’inscrivent dans une logique de saison éditoriale réunissant un nombre limité d’intervenants.
+</p>
 
-      <div class="footer-bottom">
-        <p>© EN PLATEAU — 2026</p>
-        <p>Séries éditoriales · Médias économiques · Conversations économiques · Parcours médiatiques</p>
-      </div>
-    </footer>
+<p>
+Des rencontres organisées à Paris peuvent prolonger ces échanges dans un cadre plus informel entre dirigeants, experts et partenaires.
+</p>
 
-  </div>
+</div>
 
-  <script>
-    (function(){
-      const burger = document.getElementById('burger');
-      const mobileNav = document.getElementById('mobileNav');
-      const mobileContextesBtn = document.getElementById('mobileContextesBtn');
-      const mobileContextesSubmenu = document.getElementById('mobileContextesSubmenu');
+</div>
+</section>
 
-      if (burger && mobileNav) {
-        burger.addEventListener('click', function(){
-          const open = mobileNav.style.display === 'block';
-          mobileNav.style.display = open ? 'none' : 'block';
-          burger.setAttribute('aria-expanded', open ? 'false' : 'true');
-        });
-      }
+<section class="section">
+<div class="container">
 
-      if (mobileContextesBtn && mobileContextesSubmenu) {
-        mobileContextesBtn.addEventListener('click', function(){
-          const open = mobileContextesSubmenu.style.display === 'block';
-          mobileContextesSubmenu.style.display = open ? 'none' : 'block';
-          mobileContextesBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
+<h2>Participation</h2>
 
-          const chevron = mobileContextesBtn.querySelector('.chevron');
-          if (chevron) {
-            chevron.style.transform = open ? 'rotate(0deg)' : 'rotate(180deg)';
-          }
-        });
-      }
-    })();
-  </script>
+<p>
+La participation aux conversations EN PLATEAU se fait principalement par approche directe lorsque l’analyse d’un dirigeant, d’un expert ou d’un investisseur apparaît pertinente pour éclairer une transformation économique.
+</p>
+
+<p>
+Certaines organisations peuvent également être accompagnées par un mandataire qualifié — agence de relations publiques ou cabinet de conseil — afin d’évaluer la pertinence d’une participation.
+</p>
+
+<p>
+EN PLATEAU reste toutefois attentif aux suggestions de sujets susceptibles d’apporter un éclairage utile sur l’économie réelle.
+</p>
+
+<a class="button" href="participer.html">Suggérer un sujet</a>
+
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="container footer-inner">
+
+<div>
+<strong>EN PLATEAU</strong><br>
+Conversations économiques
+</div>
+
+<div class="footer-links">
+<a href="index.html">Accueil</a>
+<a href="a-propos.html">À propos</a>
+<a href="participer.html">Participer</a>
+</div>
+
+</div>
+</footer>
 
 </body>
 </html>
