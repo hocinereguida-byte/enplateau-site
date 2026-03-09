@@ -7,11 +7,11 @@
   <title>EN PLATEAU — Participer</title>
   <meta
     name="description"
-    content="Participer à une série éditoriale EN PLATEAU : cadre de sélection, approche directe, préparation éditoriale et possibilité de soumettre une trajectoire, une perspective ou un éclairage au comité éditorial."
+    content="Participer à une série éditoriale EN PLATEAU : cadre de sélection, approche directe, préparation éditoriale et possibilité de signaler une trajectoire, une contribution ou un éclairage au comité éditorial."
   />
   <meta
     name="keywords"
-    content="EN PLATEAU, participer, comité éditorial, Les Éclaireurs, Les Bâtisseurs, Les Architectes, trajectoire, perspective, éclairage, participation éditoriale"
+    content="EN PLATEAU, participer, comité éditorial, Les Éclaireurs, Les Bâtisseurs, Les Architectes, trajectoire, contribution, éclairage, participation éditoriale"
   />
   <link rel="canonical" href="https://enplateau.fr/participer.html" />
 
@@ -27,1166 +27,282 @@
     content="Une participation s’inscrit dans un cadre éditorial défini, une logique de sélection et une préparation en amont."
   />
   <meta property="og:url" content="https://enplateau.fr/participer.html" />
-  <meta property="og:image" content="https://enplateau.fr/assets/og-cover.jpg" />
+  <meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="EN PLATEAU — Participer" />
   <meta
     name="twitter:description"
-    content="Cadre de participation, approche directe et soumission éditoriale au comité."
+    content="Cadre de participation, approche directe et signalement éditorial au comité."
   />
-  <meta name="twitter:image" content="https://enplateau.fr/assets/og-cover.jpg" />
-
-  <style>
-    :root{
-      --bg:#F6F4EF;
-      --surface:#FFFFFF;
-      --surface-alt:#EEF2F5;
-      --ink:#0D1526;
-      --navy:#0F2747;
-      --navy-2:#17355D;
-      --muted:#5D6778;
-      --line:#D9DEE6;
-      --line-strong:#C9D1DC;
-      --accent:#A67C52;
-      --max:1180px;
-      --radius-xl:30px;
-      --radius-lg:24px;
-      --radius-md:18px;
-      --shadow:0 12px 34px rgba(16,24,40,.07);
-      --serif:Georgia,"Times New Roman",Times,serif;
-      --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:var(--sans);
-      color:var(--ink);
-      background:var(--bg);
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-    }
-
-    a{color:inherit}
-    img{max-width:100%;display:block}
-
-    .wrap{
-      width:min(var(--max), calc(100% - 40px));
-      margin:0 auto;
-    }
-
-    /* Header */
-    .site-header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      background:rgba(246,244,239,.94);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(15,39,71,.08);
-    }
-
-    .header-inner{
-      min-height:84px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:24px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      text-decoration:none;
-    }
-
-    .brand-mark{
-      width:56px;
-      height:56px;
-      border-radius:16px;
-      background:var(--navy);
-      flex:0 0 56px;
-    }
-
-    .brand-name{
-      font-weight:900;
-      letter-spacing:-.03em;
-      font-size:2rem;
-      line-height:1;
-      color:#09111f;
-    }
-
-    .nav{
-      display:flex;
-      align-items:center;
-      gap:24px;
-    }
-
-    .nav a{
-      text-decoration:none;
-      color:#2A3342;
-      font-size:.98rem;
-      font-weight:700;
-    }
-
-    .nav a:hover,
-    .nav a.active{
-      color:var(--navy);
-    }
-
-    .nav-cta{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:48px;
-      padding:0 20px;
-      border-radius:999px;
-      border:1px solid rgba(15,39,71,.16);
-      background:#fff;
-      font-weight:800;
-    }
-
-    .menu-btn{
-      display:none;
-      min-height:52px;
-      padding:0 18px;
-      border-radius:16px;
-      border:1px solid rgba(15,39,71,.12);
-      background:#fff;
-      font-weight:800;
-      font-size:1rem;
-    }
-
-    /* Hero */
-    .hero{
-      padding:64px 0 34px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0)),
-        var(--bg);
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns: minmax(0,1.12fr) minmax(360px,.88fr);
-      gap:34px;
-      align-items:stretch;
-    }
-
-    .hero-copy{
-      padding:18px 0 0;
-    }
-
-    .eyebrow{
-      margin:0 0 14px;
-      color:#5C6675;
-      font-size:.86rem;
-      font-weight:900;
-      letter-spacing:.11em;
-      text-transform:uppercase;
-    }
-
-    .hero h1{
-      margin:0 0 18px;
-      font-family:var(--serif);
-      font-size:clamp(2.6rem, 6vw, 4.7rem);
-      line-height:.96;
-      letter-spacing:-.045em;
-      color:#0B1322;
-      max-width:11ch;
-    }
-
-    .hero-lead{
-      margin:0;
-      max-width:62ch;
-      font-size:1.14rem;
-      line-height:1.82;
-      color:#4E5868;
-    }
-
-    .hero-card{
-      position:relative;
-      min-height:460px;
-      border-radius:var(--radius-xl);
-      overflow:hidden;
-      background:
-        linear-gradient(180deg, rgba(10,20,38,.04), rgba(10,20,38,.32)),
-        url("assets/img/plateau-participer.jpg") center/cover no-repeat;
-      box-shadow:var(--shadow);
-    }
-
-    .hero-card::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg, rgba(14,34,59,.02) 0%, rgba(14,34,59,.18) 52%, rgba(14,34,59,.7) 100%);
-    }
-
-    .hero-card-badge{
-      position:absolute;
-      left:22px;
-      top:22px;
-      z-index:2;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      min-height:40px;
-      padding:0 14px;
-      border-radius:999px;
-      background:rgba(255,255,255,.88);
-      color:var(--navy);
-      font-weight:800;
-      font-size:.92rem;
-      backdrop-filter:blur(8px);
-    }
-
-    .hero-card-copy{
-      position:absolute;
-      left:24px;
-      right:24px;
-      bottom:24px;
-      z-index:2;
-      color:#fff;
-    }
-
-    .hero-card-copy strong{
-      display:block;
-      margin:0 0 8px;
-      font-size:1.24rem;
-      line-height:1.3;
-    }
-
-    .hero-card-copy p{
-      margin:0;
-      color:rgba(255,255,255,.9);
-      font-size:.99rem;
-      line-height:1.65;
-    }
-
-    /* Intro strip */
-    .intro-strip{
-      padding:18px 0 0;
-    }
-
-    .intro-panel{
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:26px;
-      padding:28px 30px;
-      border:1px solid rgba(15,39,71,.10);
-      border-radius:26px;
-      background:#fff;
-      box-shadow:0 8px 22px rgba(17,24,39,.04);
-    }
-
-    .intro-panel h2{
-      margin:0 0 10px;
-      font-size:1.36rem;
-      line-height:1.25;
-      letter-spacing:-.02em;
-      color:#0F1F38;
-    }
-
-    .intro-panel p{
-      margin:0;
-      color:#566173;
-      font-size:1.03rem;
-      line-height:1.78;
-    }
-
-    .intro-side{
-      padding-left:18px;
-      border-left:1px solid var(--line);
-    }
-
-    .intro-side strong{
-      display:block;
-      margin:0 0 8px;
-      color:#0E213D;
-      font-size:1rem;
-      line-height:1.45;
-    }
-
-    .intro-side span{
-      display:block;
-      color:#647084;
-      font-size:.98rem;
-      line-height:1.7;
-    }
-
-    /* Sections */
-    .section{
-      padding:72px 0;
-    }
-
-    .section-alt{
-      background:var(--surface-alt);
-      border-top:1px solid rgba(15,39,71,.06);
-      border-bottom:1px solid rgba(15,39,71,.06);
-    }
-
-    .section-head{
-      max-width:860px;
-      margin:0 0 34px;
-    }
-
-    .section-kicker{
-      margin:0 0 10px;
-      color:#5C6675;
-      font-size:.84rem;
-      font-weight:900;
-      letter-spacing:.1em;
-      text-transform:uppercase;
-    }
-
-    .section-title{
-      margin:0 0 14px;
-      font-family:var(--serif);
-      font-size:clamp(2rem, 4vw, 3.5rem);
-      line-height:1.02;
-      letter-spacing:-.04em;
-      color:#0C1526;
-    }
-
-    .section-desc{
-      margin:0;
-      max-width:65ch;
-      color:#596476;
-      font-size:1.08rem;
-      line-height:1.82;
-    }
-
-    /* Contacted */
-    .contacted-grid{
-      display:grid;
-      grid-template-columns: minmax(0,.92fr) minmax(0,1.08fr);
-      gap:28px;
-      align-items:start;
-    }
-
-    .contacted-panel,
-    .steps-panel{
-      background:#fff;
-      border:1px solid rgba(15,39,71,.10);
-      border-radius:28px;
-      box-shadow:0 10px 26px rgba(17,24,39,.05);
-    }
-
-    .contacted-panel{
-      padding:30px;
-    }
-
-    .contacted-panel h3,
-    .steps-panel h3,
-    .path-card h3,
-    .committee-card h3,
-    .submit-card h3{
-      margin:0 0 14px;
-      font-size:1.44rem;
-      line-height:1.2;
-      letter-spacing:-.02em;
-      color:#0E1C33;
-    }
-
-    .contacted-panel p,
-    .steps-panel p,
-    .committee-card p,
-    .submit-card p,
-    .path-card p{
-      margin:0 0 16px;
-      color:#5A6575;
-      font-size:1.03rem;
-      line-height:1.82;
-    }
-
-    .point-list{
-      margin:22px 0 0;
-      padding:0;
-      list-style:none;
-      display:grid;
-      gap:14px;
-    }
-
-    .point-list li{
-      display:grid;
-      grid-template-columns:22px 1fr;
-      gap:12px;
-      align-items:start;
-      color:#334053;
-      font-size:1rem;
-      line-height:1.7;
-    }
-
-    .point-list li::before{
-      content:"";
-      width:10px;
-      height:10px;
-      margin-top:.5em;
-      border-radius:999px;
-      background:var(--navy);
-      display:block;
-    }
-
-    .steps-panel{
-      padding:0;
-      overflow:hidden;
-    }
-
-    .steps-head{
-      padding:24px 26px 18px;
-      background:linear-gradient(180deg, rgba(15,39,71,.03), rgba(15,39,71,0));
-      border-bottom:1px solid var(--line);
-    }
-
-    .steps-body{
-      padding:10px 18px 18px;
-    }
-
-    .step{
-      display:grid;
-      grid-template-columns:56px 1fr;
-      gap:18px;
-      padding:18px 8px;
-      border-bottom:1px solid rgba(15,39,71,.08);
-    }
-
-    .step:last-child{
-      border-bottom:none;
-    }
-
-    .step-num{
-      width:56px;
-      height:56px;
-      border-radius:18px;
-      background:var(--navy);
-      color:#fff;
-      display:grid;
-      place-items:center;
-      font-weight:900;
-      font-size:1.08rem;
-    }
-
-    .step h4{
-      margin:2px 0 8px;
-      font-size:1.08rem;
-      line-height:1.3;
-      color:#0F1F38;
-      letter-spacing:-.01em;
-    }
-
-    .step p{
-      margin:0;
-      color:#607084;
-      font-size:.99rem;
-      line-height:1.72;
-    }
-
-    /* Unsolicited / paths */
-    .paths-grid{
-      display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:24px;
-      align-items:stretch;
-      margin-top:28px;
-    }
-
-    .path-card{
-      background:#fff;
-      border:1px solid rgba(15,39,71,.10);
-      border-radius:26px;
-      padding:28px 26px;
-      box-shadow:0 10px 26px rgba(17,24,39,.04);
-    }
-
-    .path-label{
-      margin:0 0 14px;
-      color:#0F2747;
-      font-size:.86rem;
-      font-weight:900;
-      letter-spacing:.09em;
-      text-transform:uppercase;
-    }
-
-    .path-rule{
-      width:100%;
-      height:3px;
-      border-radius:999px;
-      background:var(--navy);
-      margin:0 0 18px;
-    }
-
-    .path-card h3{
-      font-family:var(--serif);
-      font-size:2.25rem;
-      line-height:1;
-      letter-spacing:-.04em;
-      margin-bottom:14px;
-    }
-
-    .path-card p:last-child{
-      margin-bottom:0;
-    }
-
-    /* Committee */
-    .committee-layout{
-      display:grid;
-      grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
-      gap:28px;
-      align-items:start;
-    }
-
-    .committee-card,
-    .submit-card{
-      background:#fff;
-      border:1px solid rgba(15,39,71,.10);
-      border-radius:28px;
-      padding:30px;
-      box-shadow:0 10px 26px rgba(17,24,39,.04);
-    }
-
-    .criteria{
-      display:grid;
-      gap:14px;
-      margin-top:20px;
-    }
-
-    .criterion{
-      padding:16px 18px;
-      border:1px solid rgba(15,39,71,.08);
-      border-radius:18px;
-      background:#F8FAFC;
-    }
-
-    .criterion strong{
-      display:block;
-      margin:0 0 6px;
-      color:#10213B;
-      font-size:1rem;
-      line-height:1.35;
-    }
-
-    .criterion span{
-      display:block;
-      color:#627084;
-      font-size:.97rem;
-      line-height:1.68;
-    }
-
-    .submit-card{
-      background:linear-gradient(180deg, #0F2747 0%, #143257 100%);
-      color:#fff;
-      border-color:transparent;
-      box-shadow:0 18px 40px rgba(15,39,71,.22);
-    }
-
-    .submit-card .section-kicker,
-    .submit-card p,
-    .submit-card li{
-      color:rgba(255,255,255,.9);
-    }
-
-    .submit-card h3{
-      color:#fff;
-    }
-
-    .submit-list{
-      margin:22px 0 0;
-      padding:0;
-      list-style:none;
-      display:grid;
-      gap:14px;
-    }
-
-    .submit-list li{
-      display:grid;
-      grid-template-columns:22px 1fr;
-      gap:12px;
-      align-items:start;
-      font-size:1rem;
-      line-height:1.7;
-    }
-
-    .submit-list li::before{
-      content:"";
-      width:10px;
-      height:10px;
-      margin-top:.52em;
-      border-radius:999px;
-      background:#fff;
-      display:block;
-    }
-
-    .cta-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-top:26px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:56px;
-      padding:0 24px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:800;
-      font-size:1rem;
-      transition:transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
-    }
-
-    .btn:hover{
-      transform:translateY(-1px);
-    }
-
-    .btn-dark{
-      background:var(--navy);
-      color:#fff;
-      border:1px solid var(--navy);
-    }
-
-    .btn-light{
-      background:#fff;
-      color:var(--navy);
-      border:1px solid #fff;
-    }
-
-    .btn-outline{
-      background:transparent;
-      color:var(--navy);
-      border:1px solid rgba(15,39,71,.18);
-    }
-
-    .btn-outline-light{
-      background:transparent;
-      color:#fff;
-      border:1px solid rgba(255,255,255,.45);
-    }
-
-    /* Footer */
-    .site-footer{
-      padding:34px 0 48px;
-      background:#F1EEE7;
-      border-top:1px solid rgba(15,39,71,.08);
-    }
-
-    .footer-top{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      gap:30px;
-      padding:12px 0 18px;
-    }
-
-    .footer-brand{
-      max-width:460px;
-    }
-
-    .footer-brand .brand{
-      margin-bottom:14px;
-    }
-
-    .footer-text{
-      margin:0;
-      color:#5F6A7B;
-      font-size:.98rem;
-      line-height:1.72;
-    }
-
-    .footer-nav{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px 22px;
-      align-items:center;
-      justify-content:flex-end;
-    }
-
-    .footer-nav a{
-      color:#314055;
-      text-decoration:none;
-      font-weight:700;
-      font-size:.96rem;
-    }
-
-    .footer-nav a:hover{
-      color:var(--navy);
-    }
-
-    .footer-bottom{
-      padding-top:18px;
-      border-top:1px solid rgba(15,39,71,.08);
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      flex-wrap:wrap;
-      color:#6A7484;
-      font-size:.92rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 1100px){
-      .hero-grid,
-      .contacted-grid,
-      .committee-layout,
-      .intro-panel{
-        grid-template-columns:1fr;
-      }
-
-      .intro-side{
-        padding-left:0;
-        border-left:none;
-        border-top:1px solid var(--line);
-        padding-top:18px;
-      }
-
-      .paths-grid{
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media (max-width: 860px){
-      .nav{display:none}
-      .menu-btn{display:inline-flex;align-items:center;justify-content:center}
-
-      .hero{
-        padding-top:42px;
-      }
-
-      .hero-card{
-        min-height:340px;
-      }
-
-      .section{
-        padding:58px 0;
-      }
-
-      .intro-panel,
-      .contacted-panel,
-      .committee-card,
-      .submit-card{
-        padding:24px 22px;
-      }
-
-      .steps-head{
-        padding:22px 22px 16px;
-      }
-
-      .steps-body{
-        padding:8px 14px 16px;
-      }
-
-      .step{
-        grid-template-columns:48px 1fr;
-        gap:14px;
-      }
-
-      .step-num{
-        width:48px;
-        height:48px;
-        border-radius:15px;
-      }
-
-      .footer-top{
-        flex-direction:column;
-      }
-
-      .footer-nav{
-        justify-content:flex-start;
-      }
-    }
-
-    @media (max-width: 640px){
-      .wrap{
-        width:min(var(--max), calc(100% - 28px));
-      }
-
-      .header-inner{
-        min-height:78px;
-      }
-
-      .brand-name{
-        font-size:1.7rem;
-      }
-
-      .brand-mark{
-        width:48px;
-        height:48px;
-        border-radius:14px;
-        flex-basis:48px;
-      }
-
-      .hero h1{
-        max-width:none;
-      }
-
-      .hero-lead,
-      .section-desc,
-      .contacted-panel p,
-      .steps-panel p,
-      .committee-card p,
-      .submit-card p,
-      .path-card p{
-        font-size:1rem;
-        line-height:1.75;
-      }
-
-      .path-card h3{
-        font-size:2rem;
-      }
-
-      .cta-row{
-        flex-direction:column;
-        align-items:stretch;
-      }
-
-      .btn{
-        width:100%;
-      }
-    }
-  </style>
+  <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/participer.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="index.html" aria-label="EN PLATEAU — retour à l’accueil">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-name">EN PLATEAU</span>
-      </a>
+  <div id="site-header"></div>
+  <div id="site-mobile-menu"></div>
 
-      <nav class="nav" aria-label="Navigation principale">
-        <a href="index.html">Accueil</a>
-        <a href="series.html">Séries éditoriales</a>
-        <a href="experts.html">Experts</a>
-        <a href="a-propos.html">À propos</a>
-        <a href="participer.html" class="active">Participer</a>
-        <a href="contact.html" class="nav-cta">Contact</a>
-      </nav>
-
-      <button class="menu-btn" type="button" aria-label="Ouvrir le menu">Menu</button>
-    </div>
-  </header>
-
-  <main>
+  <main class="container">
 
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Participer à une série éditoriale</p>
-          <h1>Un cadre de participation, pas un appel à candidatures</h1>
-          <p class="hero-lead">
-            Une participation à EN PLATEAU s’inscrit dans un cadre éditorial défini,
-            une logique de sélection et un travail de préparation en amont. Certaines
-            conversations sont constituées par approche directe. D’autres peuvent, dans
-            certains cas, accueillir une trajectoire, une perspective ou un éclairage
-            signalés en amont au comité éditorial.
-          </p>
-        </div>
-
-        <div class="hero-card" role="img" aria-label="Cadre éditorial et préparation des prises de parole EN PLATEAU">
-          <div class="hero-card-badge">Cadre éditorial &amp; préparation en amont</div>
-          <div class="hero-card-copy">
-            <strong>Une série ne se rejoint pas comme une plateforme ouverte.</strong>
-            <p>
-              Chaque prise de parole s’inscrit dans une cohérence de sujet, de format,
-              de calendrier et de sélection éditoriale.
-            </p>
-          </div>
-        </div>
-      </div>
+      <div class="kicker">Participer</div>
+      <h1>Un cadre éditorial, pas une inscription libre</h1>
+      <p class="subhead">
+        Une participation à EN PLATEAU ne relève ni d’un annuaire, ni d’une plateforme ouverte. Elle s’inscrit dans un cadre éditorial précis, une logique de sélection et une préparation en amont.
+      </p>
+      <p class="lead">
+        Certaines conversations sont constituées par approche directe. Dans d’autres cas, il reste possible de signaler une trajectoire, une contribution ou un éclairage au comité éditorial, sans garantie d’intégration ni de réponse systématique.
+      </p>
     </section>
 
-    <section class="intro-strip">
-      <div class="wrap">
-        <div class="intro-panel">
-          <div>
-            <h2>La programmation n’est pas publique et ne repose pas sur une inscription libre</h2>
-            <p>
-              EN PLATEAU ne fonctionne ni comme un annuaire, ni comme une plateforme
-              ouverte de candidatures. Les conversations sont structurées autour de
-              dossiers éditoriaux en préparation, selon un nombre limité de positions,
-              de trajectoires ou de contributions jugées pertinentes.
-            </p>
-          </div>
-          <div class="intro-side">
-            <strong>Deux cas de figure seulement :</strong>
-            <span>
-              soit vous avez déjà été approché directement dans le cadre d’un dossier
-              en cours ; soit vous souhaitez signaler en amont une contribution possible,
-              qui sera examinée sans engagement par le comité éditorial.
-            </span>
-          </div>
-        </div>
+    <section class="section section-white intro-panel">
+      <div class="intro-main">
+        <p class="eyebrow">Principe général</p>
+        <h2>La programmation n’est pas publique et ne repose pas sur un appel à candidatures</h2>
+        <p>
+          EN PLATEAU ne fonctionne pas comme une place de marché éditoriale. Les conversations sont structurées autour de sujets, de transformations ou de trajectoires en cours de préparation, selon un nombre limité de positions et d’interventions jugées pertinentes.
+        </p>
       </div>
+
+      <aside class="intro-aside">
+        <strong>Deux cas de figure seulement</strong>
+        <p>
+          Soit vous avez déjà été approché directement dans le cadre d’une série en préparation. Soit vous souhaitez signaler en amont une contribution susceptible d’intéresser le comité éditorial.
+        </p>
+      </aside>
     </section>
 
-    <section class="section" aria-labelledby="contacted-title">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="section-kicker">Approche directe</p>
-          <h2 class="section-title" id="contacted-title">Vous avez été contacté par EN PLATEAU</h2>
-          <p class="section-desc">
-            Certaines éditions sont constituées par approche directe, en fonction d’un sujet,
-            d’un angle ou d’une trajectoire jugés pertinents pour une série en préparation.
-            Dans ce cas, la participation ne consiste pas à “candidater”, mais à entrer dans
-            un cadre de travail précis.
+    <section class="section section-soft">
+      <div class="section-head">
+        <p class="section-kicker">Approche directe</p>
+        <h2>Vous avez été approché par EN PLATEAU</h2>
+        <p class="section-desc">
+          Lorsqu’une organisation, un expert ou un dirigeant est contacté, la participation ne consiste pas à “rejoindre un programme”, mais à entrer dans un cadre de travail précis.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card featured">
+          <span class="pill">Ce que cela implique</span>
+          <h3>Une participation ne se réduit pas à une apparition</h3>
+          <p>
+            Une intervention validée s’inscrit dans une logique de structuration éditoriale. Il ne s’agit pas uniquement de prendre la parole, mais de clarifier sa place dans un dossier, un angle ou une trajectoire.
           </p>
-        </div>
+          <ul class="list">
+            <li>clarification du sujet, de l’angle ou de la trajectoire retenue ;</li>
+            <li>préparation éditoriale en amont de l’intervention ;</li>
+            <li>mise en cohérence avec le format retenu ;</li>
+            <li>organisation de la séquence de production ;</li>
+            <li>réutilisation encadrée des contenus après diffusion.</li>
+          </ul>
+        </article>
 
-        <div class="contacted-grid">
-          <div class="contacted-panel">
-            <h3>Ce que recouvre une participation</h3>
-            <p>
-              Lorsqu’une organisation, un expert ou un dirigeant est approché, la participation
-              s’inscrit dans une logique de structuration éditoriale. Il ne s’agit pas uniquement
-              d’intervenir à l’écran, mais de clarifier le sens de la prise de parole et son
-              positionnement dans l’ensemble du dossier.
-            </p>
-
-            <ul class="point-list">
-              <li>clarification du sujet, de l’angle ou de la trajectoire retenue ;</li>
-              <li>préparation éditoriale en amont de l’intervention ;</li>
-              <li>mise en cohérence avec le format retenu : Éclaireurs, Bâtisseurs ou Architectes ;</li>
-              <li>organisation pratique du tournage ou de l’enregistrement ;</li>
-              <li>valorisation et réutilisation des contenus après diffusion.</li>
-            </ul>
-          </div>
-
-          <div class="steps-panel">
-            <div class="steps-head">
-              <h3>Le déroulé de participation</h3>
-              <p>
-                Une participation validée passe généralement par une séquence de cadrage,
-                de préparation puis d’intervention, avant toute diffusion et activation.
-              </p>
+        <article class="card process-card">
+          <span class="pill">Déroulé</span>
+          <h3>Le déroulé de participation</h3>
+          <div class="process">
+            <div class="process-step">
+              <div class="process-num">01</div>
+              <div>
+                <strong>Premier échange de cadrage</strong>
+                <p>Vérification de la pertinence du profil, du sujet ou de la trajectoire au regard de la programmation en cours.</p>
+              </div>
             </div>
 
-            <div class="steps-body">
-              <div class="step">
-                <div class="step-num">01</div>
-                <div>
-                  <h4>Premier échange de cadrage</h4>
-                  <p>
-                    Vérification de la pertinence du profil, du sujet ou de la trajectoire
-                    au regard du dossier éditorial en cours.
-                  </p>
-                </div>
+            <div class="process-step">
+              <div class="process-num">02</div>
+              <div>
+                <strong>Préparation éditoriale</strong>
+                <p>Clarification du positionnement, des messages structurants, des points sensibles et du rôle exact de l’intervention.</p>
               </div>
+            </div>
 
-              <div class="step">
-                <div class="step-num">02</div>
-                <div>
-                  <h4>Préparation éditoriale</h4>
-                  <p>
-                    Clarification du positionnement, des messages structurants, des points
-                    sensibles et du rôle exact de l’intervention dans la série.
-                  </p>
-                </div>
+            <div class="process-step">
+              <div class="process-num">03</div>
+              <div>
+                <strong>Production</strong>
+                <p>Participation à la conversation, à l’entretien ou au parcours selon le cadre éditorial retenu.</p>
               </div>
+            </div>
 
-              <div class="step">
-                <div class="step-num">03</div>
-                <div>
-                  <h4>Intervention et production</h4>
-                  <p>
-                    Participation à la conversation, à l’entretien ou au parcours selon le format
-                    retenu et les modalités éditoriales définies en amont.
-                  </p>
-                </div>
-              </div>
-
-              <div class="step">
-                <div class="step-num">04</div>
-                <div>
-                  <h4>Valorisation post-diffusion</h4>
-                  <p>
-                    Réutilisation encadrée des contenus, activation narrative et intégration
-                    dans une logique plus large d’exposition et de crédibilité.
-                  </p>
-                </div>
+            <div class="process-step">
+              <div class="process-num">04</div>
+              <div>
+                <strong>Activation</strong>
+                <p>Réutilisation des contenus dans une logique plus large de lisibilité, de crédibilité et de valorisation durable.</p>
               </div>
             </div>
           </div>
-        </div>
-
+        </article>
       </div>
     </section>
 
-    <section class="section section-alt" aria-labelledby="unsolicited-title">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="section-kicker">Soumission éditoriale</p>
-          <h2 class="section-title" id="unsolicited-title">Vous n’avez pas été approché à ce stade</h2>
-          <p class="section-desc">
-            La programmation d’EN PLATEAU n’est pas ouverte sur un principe d’inscription libre.
-            Il reste néanmoins possible, dans certains cas, de faire connaître en amont une
-            contribution susceptible de nourrir l’un des dossiers éditoriaux en préparation.
+    <section class="section section-white">
+      <div class="section-head">
+        <p class="section-kicker">Signalement éditorial</p>
+        <h2>Vous n’avez pas été approché à ce stade</h2>
+        <p class="section-desc">
+          La programmation n’est pas ouverte à l’inscription libre. Il reste néanmoins possible, dans certains cas, de signaler en amont une contribution susceptible de nourrir l’un des cadres éditoriaux en préparation.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card featured">
+          <span class="pill">Les Éclaireurs</span>
+          <h3>Un éclairage</h3>
+          <p>
+            Pour signaler une expertise, une lecture, un mécanisme ou une recomposition susceptible d’éclairer un sujet en cours de structuration.
           </p>
-        </div>
+          <p>
+            Ce cadre concerne les interventions qui rendent lisible une transformation économique, réglementaire, technique, financière ou sectorielle.
+          </p>
+          <a class="link" href="les-eclaireurs.html">Voir le cadre des Éclaireurs</a>
+        </article>
 
-        <div class="paths-grid">
-          <article class="path-card">
-            <p class="path-label">Les Éclaireurs</p>
-            <div class="path-rule"></div>
-            <h3>Un éclairage</h3>
-            <p>
-              Pour signaler une expertise, une lecture, un mécanisme ou une recomposition
-              susceptible d’éclairer un sujet en cours de structuration.
-            </p>
-            <p>
-              Ce cadre concerne les interventions qui rendent lisible une transformation
-              économique, industrielle, réglementaire, financière ou territoriale.
-            </p>
-          </article>
+        <article class="card">
+          <span class="pill">Les Bâtisseurs</span>
+          <h3>Une contribution</h3>
+          <p>
+            Pour faire connaître une position, une expérience ou une contribution de terrain pouvant enrichir une conversation collective à plusieurs voix.
+          </p>
+          <p>
+            Ce cadre concerne les organisations ou acteurs dont la place permet d’éclairer une transformation plus large qu’eux-mêmes.
+          </p>
+          <a class="link" href="les-batisseurs.html">Voir le cadre des Bâtisseurs</a>
+        </article>
 
-          <article class="path-card">
-            <p class="path-label">Les Bâtisseurs</p>
-            <div class="path-rule"></div>
-            <h3>Une perspective</h3>
-            <p>
-              Pour faire connaître un point de vue, une position stratégique ou une contribution
-              de terrain pouvant enrichir une conversation collective.
-            </p>
-            <p>
-              Ce cadre s’adresse aux organisations dont l’expérience, l’action ou la lecture
-              peuvent renforcer l’intelligence d’un sujet traité à plusieurs voix.
-            </p>
-          </article>
-
-          <article class="path-card">
-            <p class="path-label">Les Architectes</p>
-            <div class="path-rule"></div>
-            <h3>Une trajectoire</h3>
-            <p>
-              Pour soumettre un parcours singulier susceptible de justifier un traitement
-              éditorial approfondi autour d’une transformation, d’une croissance ou d’un
-              repositionnement.
-            </p>
-            <p>
-              Ce cadre concerne les trajectoires suffisamment structurées pour soutenir
-              une exploration plus approfondie.
-            </p>
-          </article>
-        </div>
+        <article class="card">
+          <span class="pill">Les Architectes</span>
+          <h3>Une trajectoire</h3>
+          <p>
+            Pour signaler un parcours singulier susceptible de justifier un traitement plus approfondi autour d’une stratégie, d’une transformation ou d’une logique d’action.
+          </p>
+          <p>
+            Ce cadre concerne les trajectoires suffisamment structurées pour soutenir plusieurs angles éditoriaux complémentaires.
+          </p>
+          <a class="link" href="les-architectes.html">Voir le cadre des Architectes</a>
+        </article>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="committee-title">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="section-kicker">Comité éditorial</p>
-          <h2 class="section-title" id="committee-title">Aucune intégration automatique</h2>
-          <p class="section-desc">
-            Le fait de transmettre une trajectoire, une perspective ou un éclairage ne vaut ni
-            validation, ni intégration automatique dans une série. Toute contribution est examinée
-            librement par le comité éditorial.
+    <section class="section section-soft-2">
+      <div class="section-head">
+        <p class="section-kicker">Comité éditorial</p>
+        <h2>Aucune intégration automatique</h2>
+        <p class="section-desc">
+          Le fait de transmettre une trajectoire, une contribution ou un éclairage ne vaut ni validation, ni intégration automatique dans une série. Toute proposition est appréciée librement au regard de la programmation réelle.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <span class="pill">Éléments examinés</span>
+          <h3>Ce qui est évalué</h3>
+
+          <div class="criteria">
+            <div class="criterion">
+              <strong>Pertinence du sujet</strong>
+              <span>Adéquation avec les thèmes, séries et conversations réellement en préparation.</span>
+            </div>
+
+            <div class="criterion">
+              <strong>Singularité de la proposition</strong>
+              <span>Caractère distinctif de la trajectoire, de la contribution ou de l’éclairage signalé.</span>
+            </div>
+
+            <div class="criterion">
+              <strong>Valeur éditoriale</strong>
+              <span>Capacité à enrichir une conversation, à rendre un enjeu plus lisible ou à ouvrir un angle utile.</span>
+            </div>
+
+            <div class="criterion">
+              <strong>Cohérence de programmation</strong>
+              <span>Compatibilité avec le rythme, le calendrier, les formats et les arbitrages déjà en cours.</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card submit-card featured">
+          <span class="pill">Transmission en amont</span>
+          <h3>Soumettre au comité éditorial</h3>
+          <p>
+            Si vous n’avez pas été approché directement, vous pouvez néanmoins transmettre un élément au comité éditorial. Cette transmission n’ouvre aucun droit particulier et n’implique pas qu’un retour soit systématiquement formulé.
           </p>
-        </div>
 
-        <div class="committee-layout">
-          <div class="committee-card">
-            <h3>Ce qui est évalué</h3>
-            <p>
-              Le comité éditorial apprécie la pertinence d’une contribution au regard des dossiers
-              réellement en préparation, du calendrier et de la cohérence d’ensemble de la programmation.
-            </p>
+          <ul class="list">
+            <li>une trajectoire susceptible de relever des Architectes ;</li>
+            <li>une contribution pouvant nourrir les Bâtisseurs ;</li>
+            <li>un éclairage expert relevant des Éclaireurs.</li>
+          </ul>
 
-            <div class="criteria">
-              <div class="criterion">
-                <strong>Pertinence du sujet</strong>
-                <span>
-                  Adéquation avec les thèmes, séries et dossiers actuellement travaillés.
-                </span>
-              </div>
+          <p>
+            Seules les propositions jugées réellement pertinentes peuvent donner lieu à une prise de contact ou à un échange ultérieur.
+          </p>
 
-              <div class="criterion">
-                <strong>Singularité de la contribution</strong>
-                <span>
-                  Caractère distinctif de la trajectoire, de la perspective ou de l’éclairage proposé.
-                </span>
-              </div>
-
-              <div class="criterion">
-                <strong>Valeur éditoriale</strong>
-                <span>
-                  Capacité à enrichir une conversation, à rendre un enjeu plus lisible ou à ouvrir un angle utile.
-                </span>
-              </div>
-
-              <div class="criterion">
-                <strong>Cohérence de programmation</strong>
-                <span>
-                  Compatibilité avec le rythme, les formats et les arbitrages de la programmation en cours.
-                </span>
-              </div>
-            </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="formulaire-candidature.html">Soumettre au comité éditorial</a>
+            <a class="btn btn-secondary" href="a-propos.html">Comprendre le cadre</a>
           </div>
+        </article>
+      </div>
+    </section>
 
-          <div class="submit-card">
-            <p class="section-kicker">Transmission en amont</p>
-            <h3>Soumettre une perspective, une trajectoire ou un éclairage</h3>
-            <p>
-              Si vous n’avez pas été approché directement, vous pouvez néanmoins transmettre
-              un élément au comité éditorial. Cette transmission n’ouvre aucun droit particulier
-              et n’implique pas qu’un retour soit systématiquement formulé.
-            </p>
+    <section class="section section-white">
+      <div class="section-head">
+        <p class="section-kicker">Notre ligne</p>
+        <h2>Une participation n’est pertinente que si elle renforce la lisibilité d’un sujet</h2>
+        <p class="section-desc">
+          L’objectif n’est ni l’accumulation de présences, ni l’ouverture indifférenciée, ni la simple exposition. Une participation n’a de sens que si elle s’inscrit dans une composition éditoriale claire, limitée et exigeante.
+        </p>
+      </div>
 
-            <ul class="submit-list">
-              <li>une trajectoire susceptible de relever des Architectes ;</li>
-              <li>une perspective pouvant nourrir les Bâtisseurs ;</li>
-              <li>un éclairage expert relevant des Éclaireurs.</li>
-            </ul>
+      <div class="grid-3">
+        <article class="card">
+          <span class="pill">Sélection</span>
+          <h3>Un nombre limité de positions</h3>
+          <p>Chaque série repose sur un nombre restreint de trajectoires, de contributions ou d’éclairages retenus pour leur valeur réelle.</p>
+        </article>
 
-            <p>
-              Seules les contributions jugées réellement pertinentes peuvent donner lieu à une
-              prise de contact ou à un échange ultérieur.
-            </p>
+        <article class="card featured">
+          <span class="pill">Préparation</span>
+          <h3>Une parole structurée en amont</h3>
+          <p>Une intervention utile se prépare. Le cadrage en amont fait partie intégrante de la qualité éditoriale du dispositif.</p>
+        </article>
 
-            <div class="cta-row">
-              <a class="btn btn-light" href="contact.html#contact-form">Soumettre au comité éditorial</a>
-              <a class="btn btn-outline-light" href="a-propos.html">Comprendre le cadre</a>
-            </div>
-          </div>
-        </div>
+        <article class="card">
+          <span class="pill">Cohérence</span>
+          <h3>Un cadre avant tout</h3>
+          <p>Ce n’est pas la seule visibilité qui compte, mais la justesse du format, du moment et de la place occupée dans la programmation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="final" id="contact">
+      <h2>Faire connaître une proposition</h2>
+      <p>
+        Vous pouvez transmettre une trajectoire, une contribution ou un éclairage au comité éditorial si vous estimez qu’il ou elle peut nourrir l’une des séries en préparation.
+      </p>
+      <p>
+        La programmation de la saison 2026–2027 est constituée prioritairement par approche directe et n’est pas ouverte à une inscription libre.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="formulaire-candidature.html">Soumettre au comité éditorial</a>
+        <a class="btn btn-secondary" href="a-propos.html">À propos d’EN PLATEAU</a>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a class="brand" href="index.html" aria-label="EN PLATEAU — retour à l’accueil">
-            <span class="brand-mark" aria-hidden="true"></span>
-            <span class="brand-name">EN PLATEAU</span>
-          </a>
-          <p class="footer-text">
-            EN PLATEAU structure des prises de parole dans un cadre éditorial clair,
-            sélectif et préparé en amont, au croisement de la production, du récit
-            et de la valorisation.
-          </p>
-        </div>
+  <div id="site-footer"></div>
 
-        <nav class="footer-nav" aria-label="Navigation de pied de page">
-          <a href="index.html">Accueil</a>
-          <a href="series.html">Séries éditoriales</a>
-          <a href="experts.html">Experts</a>
-          <a href="a-propos.html">À propos</a>
-          <a href="participer.html">Participer</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© EN PLATEAU</span>
-        <span>Cadre éditorial, préparation, production et activation</span>
-      </div>
-    </div>
-  </footer>
-
+  <script src="assets/js/layout.js"></script>
 </body>
 </html>
