@@ -1,20 +1,40 @@
-<div class="mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
+<nav id="mobile-menu" class="mobile-menu">
 
-  <button type="button" id="mobileSeriesBtn" aria-expanded="false" aria-controls="mobileSeriesSubmenu">
-    <span>Séries éditoriales</span>
+  <!-- CONTEXTES -->
+
+  <button class="mobile-dropdown-trigger" data-target="mobile-contextes">
+    Contextes
     <span class="chevron">▾</span>
   </button>
 
-  <div class="mobile-submenu" id="mobileSeriesSubmenu">
+  <div class="mobile-submenu" id="mobile-contextes">
+
+    <a href="experts.html">Experts</a>
+    <a href="entrepreneurs.html">Entrepreneurs</a>
+    <a href="entreprises.html">Dirigeants d’entreprise</a>
+    <a href="secteur-public.html">Décideurs publics</a>
+    <a href="associations.html">Dirigeants associatifs</a>
+
+  </div>
+
+
+  <!-- SERIES EDITORIALES -->
+
+  <button class="mobile-dropdown-trigger" data-target="mobile-series">
+    Séries éditoriales
+    <span class="chevron">▾</span>
+  </button>
+
+  <div class="mobile-submenu" id="mobile-series">
+
     <a href="les-eclaireurs.html">Les Éclaireurs</a>
     <a href="les-batisseurs.html">Les Bâtisseurs</a>
     <a href="les-architectes.html">Les Architectes</a>
-  </div>
 
-  <a href="participer.html">Participer</a>
+  </div>
 
   <a href="a-propos.html">À propos</a>
 
-  <a href="formulaire-candidature.html">Proposer un sujet</a>
+  <a href="participer.html">Participer</a>
 
-</div>
+</nav>
