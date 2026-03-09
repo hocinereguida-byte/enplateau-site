@@ -141,8 +141,15 @@ NAVIGATION DESKTOP
 }
 
 .nav-link:hover::after,
-.nav-trigger:hover::after{
+.nav-trigger:hover::after,
+.nav-link.active::after,
+.nav-trigger.active::after{
   width:100%;
+}
+
+.nav-link.active,
+.nav-trigger.active{
+  color:var(--navy);
 }
 
 .nav-cta{
@@ -190,7 +197,8 @@ DROPDOWN
   transition:transform .18s ease;
 }
 
-.nav-item:hover .chevron{
+.nav-item:hover .chevron,
+.nav-item:focus-within .chevron{
   transform:rotate(180deg);
 }
 
@@ -208,7 +216,8 @@ DROPDOWN
   display:none;
 }
 
-.nav-item:hover .dropdown{
+.nav-item:hover .dropdown,
+.nav-item:focus-within .dropdown{
   display:block;
 }
 
@@ -340,22 +349,14 @@ RESPONSIVE
     display:block;
   }
 
-  .mobile{
-    display:block;
-  }
-
   .footer-grid{
     grid-template-columns:1fr;
   }
-
 }
-
-/* cacher la baseline sur mobile */
 
 @media(max-width:640px){
 
   .brand-tag{
     display:none;
   }
-
 }
