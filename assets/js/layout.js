@@ -20,34 +20,34 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadPartial("#site-footer", "partials/footer.html");
 
   const burger = document.getElementById("burger");
-  const mobileNav = document.getElementById("mobileNav");
-  const mobileSeriesBtn = document.getElementById("mobileSeriesBtn");
-  const mobileSeriesSubmenu = document.getElementById("mobileSeriesSubmenu");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-  if (burger && mobileNav) {
+  if (burger && mobileMenu) {
     burger.addEventListener("click", () => {
-      const isOpen = mobileNav.style.display === "block";
-      mobileNav.style.display = isOpen ? "none" : "block";
+      const isOpen = mobileMenu.style.display === "block";
+      mobileMenu.style.display = isOpen ? "none" : "block";
       burger.setAttribute("aria-expanded", String(!isOpen));
     });
   }
 
-  if (mobileSeriesBtn && mobileSeriesSubmenu) {
-    mobileSeriesBtn.addEventListener("click", () => {
-      const isOpen = mobileSeriesSubmenu.style.display === "block";
-      mobileSeriesSubmenu.style.display = isOpen ? "none" : "block";
-      mobileSeriesBtn.setAttribute("aria-expanded", String(!isOpen));
+  const mobileDropdownTriggers = document.querySelectorAll(".mobile-dropdown-trigger");
 
-      const chevron = mobileSeriesBtn.querySelector(".chevron");
-      if (chevron) {
-        chevron.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
-      }
+  mobileDropdownTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const targetId = trigger.getAttribute("data-target");
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      const isOpen = target.style.display === "block";
+      target.style.display = isOpen ? "none" : "block";
+      trigger.classList.toggle("is-open", !isOpen);
+      trigger.setAttribute("aria-expanded", String(!isOpen));
     });
-  }
+  });
 
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-  document.querySelectorAll("a[href]").forEach((link) => {
+  document.querySelectorAll('a[href]').forEach((link) => {
     const href = link.getAttribute("href");
     if (!href) return;
 
@@ -57,17 +57,29 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
+  const contextPages = [
+    "experts.html",
+    "entrepreneurs.html",
+    "entreprises.html",
+    "secteur-public.html",
+    "associations.html"
+  ];
+
   const seriesPages = [
     "les-eclaireurs.html",
     "les-batisseurs.html",
     "les-architectes.html"
   ];
 
-  if (seriesPages.includes(currentPage)) {
-    document.querySelectorAll(".nav-trigger").forEach((trigger) => {
-      if (trigger.textContent.includes("Séries éditoriales")) {
-        trigger.classList.add("active");
-      }
-    });
-  }
+  document.querySelectorAll(".nav-trigger").forEach((trigger) => {
+    const label = trigger.textContent.trim();
+
+    if (label.includes("Contextes") && contextPages.includes(currentPage)) {
+      trigger.classList.add("active");
+    }
+
+    if (label.includes("Séries éditoriales") && seriesPages.includes(currentPage)) {
+      trigger.classList.add("active");
+    }
+  });
 });
