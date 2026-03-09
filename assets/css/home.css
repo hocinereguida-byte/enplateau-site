@@ -73,8 +73,7 @@ p{margin:0 0 18px}
   margin:28px 0 68px;
   padding:78px 30px 62px;
   border-radius:18px;
-  background:
-    linear-gradient(180deg, rgba(15,39,71,0.98), rgba(16,44,78,0.98));
+  background:linear-gradient(180deg, rgba(15,39,71,0.98), rgba(16,44,78,0.98));
   color:#fff;
   text-align:center;
   position:relative;
@@ -132,8 +131,10 @@ p{margin:0 0 18px}
 
 .section-head{
   margin-bottom:22px;
+  text-align:center;
 }
 
+.section-head .eyebrow,
 .section-head h2{
   text-align:center;
 }
@@ -162,6 +163,17 @@ p{margin:0 0 18px}
 
 .section-intro .section-head{
   margin-bottom:24px;
+  text-align:center;
+}
+
+.section-intro .eyebrow{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.section-intro h2{
+  text-align:center;
 }
 
 .section-intro .editorial-copy{
@@ -453,13 +465,15 @@ a.link:hover::after{
 
 .split-block{
   display:grid;
-  grid-template-columns:1.3fr .9fr;
-  gap:44px;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
   border-top:1px solid var(--line);
   padding-top:26px;
+  align-items:start;
 }
 
 .split-main{
+  max-width:100%;
   text-align:left;
 }
 
@@ -471,7 +485,7 @@ a.link:hover::after{
 
 .split-notes{
   display:grid;
-  gap:16px;
+  gap:14px;
 }
 
 .note-item{
