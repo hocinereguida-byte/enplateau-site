@@ -1,6 +1,5 @@
 .hero{
-  margin:28px 0 0;
-  padding:110px 34px 84px;
+  padding:0;
   border-radius:0;
 }
 
@@ -181,7 +180,7 @@
 
 @media(min-width:900px){
   .principles{
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(5,1fr);
   }
 }
 
@@ -385,7 +384,6 @@
 
   .hero{
     margin-top:22px;
-    padding:78px 20px 62px;
   }
 
   .hero-rule{
