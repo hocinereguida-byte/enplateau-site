@@ -1,1 +1,285 @@
+/* ==========================================
+EN PLATEAU — EDITORIAL CORE
+Styles communs à toutes les pages éditoriales
+========================================== */
 
+:root{
+  --ink:#0B0F19;
+  --slate:#2B3340;
+  --muted:#5B6472;
+  --line:#E3E7EC;
+  --line-2:#D7DEE6;
+
+  --sig:#0F2747;
+  --sig-2:#163558;
+
+  --soft:#F5F6F7;
+  --soft-2:#F2F4F6;
+  --soft-3:#EEF2F5;
+  --warm:#F8F7F4;
+
+  --max:1180px;
+  --bg:#ffffff;
+}
+
+/* =========================
+BASE
+========================= */
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  line-height:1.75;
+  color:var(--slate);
+  background:var(--bg);
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 24px 110px;
+}
+
+/* =========================
+TYPOGRAPHY
+========================= */
+
+h1,h2,h3{
+  font-family:"Bitter",serif;
+  color:var(--ink);
+  font-weight:700;
+  letter-spacing:-0.02em;
+}
+
+h1{
+  font-size:clamp(36px,5.6vw,56px);
+  line-height:1.02;
+  margin:0 0 16px;
+}
+
+h2{
+  font-size:clamp(28px,4vw,42px);
+  line-height:1.08;
+  margin:0 0 20px;
+}
+
+h3{
+  font-size:22px;
+  line-height:1.18;
+  margin:0 0 10px;
+}
+
+p{
+  margin:0 0 18px;
+  font-size:16px;
+  line-height:1.78;
+}
+
+.measure{
+  max-width:760px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+  background:linear-gradient(180deg,var(--sig),#102C4E);
+  color:#fff;
+  border-radius:18px;
+  padding:80px 34px 60px;
+  margin:28px 0 32px;
+  text-align:center;
+}
+
+.hero-inner{
+  max-width:760px;
+  margin:0 auto;
+}
+
+.hero .kicker{
+  font-size:12px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  opacity:.8;
+  margin-bottom:14px;
+  font-weight:800;
+}
+
+.hero .subhead{
+  max-width:700px;
+  margin:0 auto;
+  font-size:20px;
+  line-height:1.45;
+  font-weight:600;
+  opacity:.96;
+}
+
+/* =========================
+SECTIONS
+========================= */
+
+.section{
+  margin:0 0 26px;
+  padding:48px 32px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  text-align:center;
+}
+
+.section-white{background:#fff}
+.section-soft{background:var(--soft)}
+.section-soft-2{background:var(--soft-2)}
+.section-soft-3{background:var(--soft-3)}
+.section-warm{background:var(--warm)}
+
+/* =========================
+GRIDS
+========================= */
+
+.grid-2,
+.grid-3,
+.grid-4{
+  display:grid;
+  gap:24px;
+  margin-top:26px;
+}
+
+@media(min-width:900px){
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-4{grid-template-columns:repeat(4,1fr)}
+}
+
+/* =========================
+CARDS
+========================= */
+
+.card{
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:26px;
+  background:#fff;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+}
+
+.card.featured{
+  border:1px solid var(--line-2);
+}
+
+.card p{
+  flex-grow:1;
+  font-size:15px;
+  line-height:1.75;
+  color:var(--muted);
+}
+
+/* =========================
+PILLS
+========================= */
+
+.pill{
+  display:inline-block;
+  padding:0 0 10px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  border-bottom:1px solid var(--ink);
+  margin-bottom:16px;
+}
+
+/* =========================
+LINKS
+========================= */
+
+a.link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:auto;
+  font-size:14px;
+  font-weight:800;
+}
+
+a.link::after{
+  content:"→";
+  opacity:.55;
+  transition:transform .15s ease;
+}
+
+a.link:hover{
+  text-decoration:underline;
+}
+
+a.link:hover::after{
+  transform:translateX(2px);
+}
+
+/* =========================
+CTA
+========================= */
+
+.cta{
+  margin-top:26px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.btn{
+  padding:12px 20px;
+  border-radius:999px;
+  font-weight:800;
+  border:1px solid transparent;
+  font-size:14px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.btn-primary{
+  background:#fff;
+  color:var(--sig);
+}
+
+.btn-secondary{
+  border-color:#D8E1EF;
+}
+
+/* =========================
+FINAL BLOCK
+========================= */
+
+.final{
+  background:var(--sig);
+  color:#fff;
+  border-radius:18px;
+  padding:54px 28px;
+  text-align:center;
+  border:none;
+  margin-top:30px;
+}
+
+.final h2{
+  color:#fff;
+}
+
+.final p{
+  max-width:720px;
+  margin:0 auto 16px;
+  }
