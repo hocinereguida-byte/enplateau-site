@@ -4,6 +4,49 @@ Styles spécifiques aux pages de séries éditoriales
 (Les Éclaireurs, Les Bâtisseurs, Les Architectes)
 ====================================================== */
 
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+  margin:28px 0 0;
+}
+
+.hero-inner{
+  max-width:760px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.hero-rule{
+  width:100%;
+  max-width:760px;
+  height:1px;
+  margin:42px auto 0;
+  background:rgba(255,255,255,.24);
+}
+
+/* =========================
+HERO HIGHLIGHT
+========================= */
+
+.hero-highlight{
+  background:#fff;
+  text-align:center;
+  border-top:1px solid #E6E6E6;
+  padding:30px 28px 36px;
+}
+
+.hero-highlight p{
+  max-width:640px;
+  margin:0 auto;
+  font-size:17px;
+  line-height:1.68;
+  color:var(--slate);
+}
+
+
 /* =========================
 SECTION MEDIAS
 ========================= */
@@ -27,6 +70,7 @@ SECTION MEDIAS
   color:var(--muted);
   text-align:center;
 }
+
 
 /* =========================
 LOGOS MEDIAS
@@ -54,6 +98,7 @@ LOGOS MEDIAS
   transform:translateY(-2px);
 }
 
+
 /* =========================
 CONTAINER PLUS ÉTROIT
 ========================= */
@@ -64,11 +109,30 @@ CONTAINER PLUS ÉTROIT
   margin-right:auto;
 }
 
+
 /* =========================
 RESPONSIVE
 ========================= */
 
 @media(max-width:700px){
+
+  .hero{
+    margin-top:22px;
+  }
+
+  .hero-rule{
+    margin-top:34px;
+  }
+
+  .hero-highlight{
+    padding:26px 24px 32px;
+  }
+
+  .hero-highlight p{
+    max-width:26rem;
+    font-size:16px;
+    line-height:1.6;
+  }
 
   .media-logos{
     gap:30px;
@@ -79,4 +143,4 @@ RESPONSIVE
     max-width:160px;
   }
 
-}
+    }
