@@ -1,1 +1,82 @@
+/* ======================================================
+EN PLATEAU — SERIES
+Styles spécifiques aux pages de séries éditoriales
+(Les Éclaireurs, Les Bâtisseurs, Les Architectes)
+====================================================== */
 
+/* =========================
+SECTION MEDIAS
+========================= */
+
+.section-white#medias,
+#medias.section-white{
+  margin-top:-8px;
+  padding-top:28px;
+  padding-bottom:24px;
+}
+
+.media-stack{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+}
+
+.media-kicker{
+  margin-bottom:18px;
+  color:var(--muted);
+  text-align:center;
+}
+
+/* =========================
+LOGOS MEDIAS
+========================= */
+
+.media-logos{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:flex-end;
+  gap:56px;
+  margin:6px 0 0;
+}
+
+.media-logos img{
+  height:74px;
+  max-width:170px;
+  width:auto;
+  opacity:.92;
+  transition:opacity .2s ease, transform .2s ease;
+}
+
+.media-logos img:hover{
+  opacity:1;
+  transform:translateY(-2px);
+}
+
+/* =========================
+CONTAINER PLUS ÉTROIT
+========================= */
+
+.narrow{
+  max-width:760px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:700px){
+
+  .media-logos{
+    gap:30px;
+  }
+
+  .media-logos img{
+    height:64px;
+    max-width:160px;
+  }
+
+}
