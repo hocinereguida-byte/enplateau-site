@@ -1,46 +1,52 @@
-<header class="header" aria-label="Navigation principale">
+<div class="header-wrap">
+  <header class="header">
+    <a class="brand" href="index.html" aria-label="EN PLATEAU — Accueil">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">EN PLATEAU</span>
+    </a>
 
-  <a class="brand" href="index.html" aria-label="EN PLATEAU — Accueil">
-    <span class="brand-mark" aria-hidden="true"></span>
-    <span class="brand-name">EN&nbsp;PLATEAU</span>
-  </a>
-
-  <nav class="nav" aria-label="Navigation principale">
-
-    <div class="nav-item">
-      <button class="nav-trigger" type="button" aria-haspopup="true">
-        Contextes <span class="chevron">▾</span>
-      </button>
-
-      <div class="dropdown">
-        <a href="experts.html">Experts</a>
-        <a href="entrepreneurs.html">Entrepreneurs</a>
-        <a href="entreprises.html">Dirigeants d’entreprise</a>
-        <a href="secteur-public.html">Décideurs publics</a>
-        <a href="associations.html">Dirigeants associatifs</a>
+    <nav class="nav" aria-label="Navigation principale">
+      <div class="nav-item">
+        <button class="nav-trigger" type="button" aria-expanded="false">
+          Séries éditoriales
+          <span class="chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown" role="menu">
+          <a href="les-eclaireurs.html">Les Éclaireurs</a>
+          <a href="les-batisseurs.html">Les Bâtisseurs</a>
+          <a href="les-architectes.html">Les Architectes</a>
+        </div>
       </div>
-    </div>
 
-    <div class="nav-item">
-      <button class="nav-trigger" type="button" aria-haspopup="true">
-        Séries éditoriales <span class="chevron">▾</span>
-      </button>
-
-      <div class="dropdown">
-        <a href="les-eclaireurs.html">Les Éclaireurs</a>
-        <a href="les-batisseurs.html">Les Bâtisseurs</a>
-        <a href="les-architectes.html">Les Architectes</a>
+      <div class="nav-item">
+        <button class="nav-trigger" type="button" aria-expanded="false">
+          Contextes
+          <span class="chevron" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown" role="menu">
+          <a href="experts.html">Experts</a>
+          <a href="entrepreneurs.html">Entrepreneurs</a>
+          <a href="entreprises.html">Dirigeants d’entreprise</a>
+          <a href="secteur-public.html">Décideurs publics</a>
+          <a href="associations.html">Dirigeants associatifs</a>
+        </div>
       </div>
-    </div>
 
-    <a href="cercle.html">Cercle</a>
-    <a href="a-propos.html">À propos</a>
-    <a href="participer.html">Participer</a>
+      <a href="medias-journalistes.html">Médias &amp; journalistes</a>
+      <a href="cercle.html">Le Cercle</a>
+      <a href="participer.html">Participer</a>
+      <a href="a-propos.html">À propos</a>
+    </nav>
 
-  </nav>
-
-  <button class="burger" id="burger" aria-expanded="false" aria-controls="mobile-menu">
-    Menu
-  </button>
-
-</header>
+    <button
+      id="burger"
+      class="burger"
+      type="button"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      Menu
+    </button>
+  </header>
+      </div>
