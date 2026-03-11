@@ -58,55 +58,6 @@ Bloc médias + villes
 
 
 /* =========================
-MEDIA STACK
-========================= */
-
-.media-stack{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:8px;
-  margin-bottom:14px;
-}
-
-.media-kicker{
-  color:var(--muted);
-  margin-bottom:20px;
-  font-size:12px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
-
-
-/* =========================
-LOGOS MEDIAS
-4 logos sur une ligne
-========================= */
-
-.media-logos{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:nowrap;
-  gap:34px;
-  margin:6px 0 10px;
-}
-
-.media-logos img{
-  height:32px;
-  width:auto;
-  max-width:none;
-  opacity:.92;
-  transition:opacity .2s ease, transform .2s ease;
-}
-
-.media-logos img:hover{
-  opacity:1;
-  transform:translateY(-2px);
-}
-
-
-/* =========================
 VILLES
 ========================= */
 
@@ -312,19 +263,6 @@ RESPONSIVE
   .hero-highlight{
     margin:26px auto 56px;
     padding:0 16px;
-  }
-
-  .media-kicker{
-    font-size:11px;
-    margin-bottom:16px;
-  }
-
-  .media-logos{
-    gap:20px;
-  }
-
-  .media-logos img{
-    height:26px;
   }
 
   .hero-places{
