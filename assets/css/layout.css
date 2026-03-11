@@ -1,6 +1,6 @@
 /* ======================================================
 EN PLATEAU — LAYOUT GLOBAL
-Header / Navigation / Footer
+Header / Navigation / Footer / Shared UI blocks
 ====================================================== */
 
 :root{
@@ -310,6 +310,52 @@ MOBILE MENU
 }
 
 /* =========================
+SHARED MEDIA ENVIRONMENT
+Bloc commun réutilisable sur plusieurs pages
+========================= */
+
+.media-stack{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+}
+
+.media-kicker{
+  color:var(--muted);
+  margin:0 0 20px;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  text-align:center;
+}
+
+.media-logos{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:nowrap;
+  gap:30px;
+  width:100%;
+  max-width:720px;
+  margin:16px auto 22px;
+  padding:0 18px;
+}
+
+.media-logos img{
+  height:54px;
+  width:auto;
+  max-width:none;
+  opacity:.92;
+  transition:opacity .2s ease, transform .2s ease;
+}
+
+.media-logos img:hover{
+  opacity:1;
+  transform:translateY(-2px);
+}
+
+/* =========================
 FOOTER
 ========================= */
 
@@ -407,6 +453,24 @@ RESPONSIVE
 
   .mobile-menu{
     display:none !important;
+  }
+}
+
+@media (max-width:700px){
+
+  .media-kicker{
+    font-size:11px;
+    margin-bottom:16px;
+  }
+
+  .media-logos{
+    gap:18px;
+    max-width:100%;
+    padding:0 10px;
+  }
+
+  .media-logos img{
+    height:40px;
   }
 }
 
