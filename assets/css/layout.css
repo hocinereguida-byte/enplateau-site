@@ -331,13 +331,13 @@ Bloc commun réutilisable sur plusieurs pages
 }
 
 .media-logos{
-  display:flex;
-  justify-content:center;
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0, 1fr));
   align-items:center;
-  flex-wrap:nowrap;
+  justify-items:center;
   gap:30px;
   width:100%;
-  max-width:720px;
+  max-width:900px;
   margin:16px auto 22px;
   padding:0 18px;
 }
@@ -345,7 +345,7 @@ Bloc commun réutilisable sur plusieurs pages
 .media-logos img{
   height:54px;
   width:auto;
-  max-width:none;
+  max-width:100%;
   opacity:.92;
   transition:opacity .2s ease, transform .2s ease;
 }
@@ -464,9 +464,10 @@ RESPONSIVE
   }
 
   .media-logos{
-    gap:18px;
-    max-width:100%;
-    padding:0 10px;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:22px 26px;
+    max-width:420px;
+    padding:0 12px;
   }
 
   .media-logos img{
