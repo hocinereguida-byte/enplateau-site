@@ -128,27 +128,8 @@
   border-bottom:1px solid var(--line);
 }
 
-.media-kicker{
-  margin:0 0 24px;
-  color:var(--muted);
-  text-align:center;
-}
-
-.media-logos{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  align-items:center;
-  gap:36px 44px;
-}
-
-.media-logos img{
-  height:54px;
-  max-width:150px;
-  width:auto;
-  opacity:.92;
-  filter:grayscale(8%);
-}
+/* .media-kicker, .media-logos et .media-logos img
+   sont désormais gérés globalement dans layout.css */
 
 .cards-large{
   margin-top:34px;
@@ -428,15 +409,6 @@
   .principle p,
   .final p{
     font-size:15px;
-  }
-
-  .media-logos{
-    gap:24px 26px;
-  }
-
-  .media-logos img{
-    height:42px;
-    max-width:120px;
   }
 
   .final{
