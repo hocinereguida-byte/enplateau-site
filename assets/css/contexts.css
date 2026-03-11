@@ -84,47 +84,6 @@ HERO HIGHLIGHT
 
 
 /* =========================
-BLOC MÉDIAS DANS HERO HIGHLIGHT
-========================= */
-
-.media-stack{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:6px;
-  margin-bottom:12px;
-}
-
-.media-kicker{
-  margin:0 0 18px;
-  color:var(--muted);
-  text-align:center;
-}
-
-.media-logos{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  align-items:flex-end;
-  gap:44px;
-  margin:6px 0 0;
-}
-
-.media-logos img{
-  height:68px;
-  max-width:165px;
-  width:auto;
-  opacity:.92;
-  transition:opacity .2s ease, transform .2s ease;
-}
-
-.media-logos img:hover{
-  opacity:1;
-  transform:translateY(-2px);
-}
-
-
-/* =========================
 TITRES DE SECTIONS
 ========================= */
 
@@ -217,23 +176,6 @@ RESPONSIVE
     margin:18px auto 14px;
     font-size:12px;
     letter-spacing:.14em;
-  }
-
-  .media-stack{
-    margin-bottom:10px;
-  }
-
-  .media-kicker{
-    margin-bottom:16px;
-  }
-
-  .media-logos{
-    gap:24px 26px;
-  }
-
-  .media-logos img{
-    height:42px;
-    max-width:120px;
   }
 
 }
