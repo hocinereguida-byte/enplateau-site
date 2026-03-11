@@ -4,6 +4,30 @@ Styles spécifiques aux pages de contextes
 (experts, entrepreneurs, entreprises, secteur public, associations)
 ====================================================== */
 
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+  margin:28px 0 0;
+}
+
+.hero-inner{
+  max-width:760px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.hero-rule{
+  width:100%;
+  max-width:760px;
+  height:1px;
+  margin:42px auto 0;
+  background:rgba(255,255,255,.24);
+}
+
+
 /* =========================
 KICKER / EYEBROW
 ========================= */
@@ -20,6 +44,86 @@ KICKER / EYEBROW
   text-align:center;
 }
 
+
+/* =========================
+HERO HIGHLIGHT
+========================= */
+
+.hero-highlight{
+  background:#fff;
+  text-align:center;
+  border-top:1px solid #E6E6E6;
+  padding:30px 28px 38px;
+}
+
+.hero-highlight.has-cta{
+  padding-bottom:44px;
+}
+
+.hero-highlight.no-cta{
+  padding-bottom:34px;
+}
+
+.hero-highlight p{
+  max-width:640px;
+  margin:0 auto;
+  font-size:17px;
+  line-height:1.68;
+  color:var(--slate);
+}
+
+.hero-places{
+  margin:22px auto 18px;
+  font-size:13px;
+  line-height:1.5;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+
+/* =========================
+BLOC MÉDIAS DANS HERO HIGHLIGHT
+========================= */
+
+.media-stack{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  margin-bottom:12px;
+}
+
+.media-kicker{
+  margin:0 0 18px;
+  color:var(--muted);
+  text-align:center;
+}
+
+.media-logos{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:flex-end;
+  gap:44px;
+  margin:6px 0 0;
+}
+
+.media-logos img{
+  height:68px;
+  max-width:165px;
+  width:auto;
+  opacity:.92;
+  transition:opacity .2s ease, transform .2s ease;
+}
+
+.media-logos img:hover{
+  opacity:1;
+  transform:translateY(-2px);
+}
+
+
 /* =========================
 TITRES DE SECTIONS
 ========================= */
@@ -27,6 +131,7 @@ TITRES DE SECTIONS
 .section h2{
   text-align:center;
 }
+
 
 /* =========================
 STATLINE
@@ -62,6 +167,7 @@ STATLINE
   line-height:1.45;
 }
 
+
 /* =========================
 SECTION PRINCIPES
 ========================= */
@@ -69,6 +175,7 @@ SECTION PRINCIPES
 .section-principle{
   background:linear-gradient(180deg,#F6F8FB,#EEF2F7);
 }
+
 
 /* =========================
 RESPONSIVE
@@ -78,6 +185,55 @@ RESPONSIVE
 
   .statline{
     grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:700px){
+
+  .hero{
+    margin-top:22px;
+  }
+
+  .hero-rule{
+    margin-top:34px;
+  }
+
+  .hero-highlight{
+    padding:26px 24px 32px;
+  }
+
+  .hero-highlight.has-cta{
+    padding-bottom:38px;
+  }
+
+  .hero-highlight p{
+    max-width:26rem;
+    font-size:16px;
+    line-height:1.6;
+  }
+
+  .hero-places{
+    margin:18px auto 14px;
+    font-size:12px;
+    letter-spacing:.14em;
+  }
+
+  .media-stack{
+    margin-bottom:10px;
+  }
+
+  .media-kicker{
+    margin-bottom:16px;
+  }
+
+  .media-logos{
+    gap:24px 26px;
+  }
+
+  .media-logos img{
+    height:42px;
+    max-width:120px;
   }
 
 }
