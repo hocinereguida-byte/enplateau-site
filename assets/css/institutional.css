@@ -4,6 +4,7 @@ Styles spécifiques aux pages institutionnelles
 (a-propos, participer, le cercle, emissions partenaires)
 ====================================================== */
 
+
 /* =========================
 SECTION HEAD
 ========================= */
@@ -27,6 +28,82 @@ SECTION HEAD
   line-height:1.8;
 }
 
+
+/* =========================
+HERO HIGHLIGHT
+Bloc médias + villes
+========================= */
+
+.hero-highlight{
+  max-width:820px;
+  margin:32px auto 64px;
+  text-align:center;
+}
+
+.hero-highlight p{
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.8;
+}
+
+
+/* =========================
+MEDIA STACK
+========================= */
+
+.media-stack{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+}
+
+.media-kicker{
+  color:var(--muted);
+  margin-bottom:18px;
+}
+
+
+/* =========================
+LOGOS MEDIAS
+========================= */
+
+.media-logos{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:flex-end;
+  gap:56px;
+  margin:10px 0 6px;
+}
+
+.media-logos img{
+  height:72px;
+  max-width:170px;
+  width:auto;
+  opacity:.92;
+  transition:opacity .2s ease, transform .2s ease;
+}
+
+.media-logos img:hover{
+  opacity:1;
+  transform:translateY(-2px);
+}
+
+
+/* =========================
+VILLES
+========================= */
+
+.hero-places{
+  margin:18px 0 10px;
+  font-size:14px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--sig);
+}
+
+
 /* =========================
 EDITORIAL COPY
 ========================= */
@@ -36,6 +113,7 @@ EDITORIAL COPY
   border-bottom:1px solid var(--line);
   padding:28px 0 10px;
 }
+
 
 /* =========================
 LISTES
@@ -68,6 +146,7 @@ LISTES
   background:var(--sig);
   display:block;
 }
+
 
 /* =========================
 PROCESS
@@ -115,6 +194,7 @@ PROCESS
   margin:0;
 }
 
+
 /* =========================
 CRITERIA
 ========================= */
@@ -147,6 +227,7 @@ CRITERIA
   line-height:1.7;
 }
 
+
 /* =========================
 SUBMIT CARD
 ========================= */
@@ -171,6 +252,7 @@ SUBMIT CARD
   color:rgba(255,255,255,.92);
 }
 
+
 /* =========================
 LIGHT LIST
 ========================= */
@@ -182,6 +264,7 @@ LIGHT LIST
 .light-list li::before{
   background:#fff;
 }
+
 
 /* =========================
 RESPONSIVE
@@ -196,6 +279,18 @@ RESPONSIVE
     line-height:1.74;
   }
 
+  .media-logos{
+    gap:28px;
+  }
+
+  .media-logos img{
+    height:60px;
+  }
+
+  .hero-highlight{
+    margin:26px auto 52px;
+  }
+
   .process-step{
     grid-template-columns:42px 1fr;
     gap:12px;
@@ -208,4 +303,4 @@ RESPONSIVE
     font-size:14px;
   }
 
-  }
+}
