@@ -27,6 +27,16 @@ HERO
   background:rgba(255,255,255,.24);
 }
 
+.series-strap{
+  margin:4px auto 14px;
+  font-size:14px;
+  line-height:1.5;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:none;
+  color:rgba(255,255,255,.82);
+}
+
 
 /* =========================
 HERO HIGHLIGHT
@@ -67,7 +77,7 @@ HERO HIGHLIGHT
 
 
 /* =========================
-SECTION MEDIAS DANS HERO HIGHLIGHT
+BLOC MÉDIAS DANS HERO HIGHLIGHT
 ========================= */
 
 .media-stack{
@@ -119,7 +129,7 @@ CONTAINER PLUS ÉTROIT
 
 
 /* =========================
-MISE EN FORME DES SECTIONS SERIES
+SECTIONS SERIES
 ========================= */
 
 .section h2{
@@ -144,6 +154,12 @@ RESPONSIVE
 
   .hero-rule{
     margin-top:34px;
+  }
+
+  .series-strap{
+    margin:2px auto 12px;
+    font-size:13px;
+    line-height:1.45;
   }
 
   .hero-highlight{
