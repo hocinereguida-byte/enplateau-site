@@ -72,7 +72,7 @@ MEDIA STACK
 .media-kicker{
   color:var(--muted);
   margin-bottom:20px;
-  font-size:13px;
+  font-size:12px;
   letter-spacing:.08em;
   text-transform:uppercase;
 }
@@ -80,21 +80,22 @@ MEDIA STACK
 
 /* =========================
 LOGOS MEDIAS
+4 logos sur une ligne
 ========================= */
 
 .media-logos{
   display:flex;
-  flex-wrap:wrap;
   justify-content:center;
-  align-items:flex-end;
-  gap:60px;
+  align-items:center;
+  flex-wrap:nowrap;
+  gap:34px;
   margin:6px 0 10px;
 }
 
 .media-logos img{
-  height:72px;
-  max-width:170px;
+  height:32px;
   width:auto;
+  max-width:none;
   opacity:.92;
   transition:opacity .2s ease, transform .2s ease;
 }
@@ -308,22 +309,32 @@ RESPONSIVE
     line-height:1.74;
   }
 
-  .media-logos{
-    gap:28px;
-  }
-
-  .media-logos img{
-    height:60px;
-  }
-
   .hero-highlight{
     margin:26px auto 56px;
     padding:0 16px;
   }
 
+  .media-kicker{
+    font-size:11px;
+    margin-bottom:16px;
+  }
+
+  .media-logos{
+    gap:20px;
+  }
+
+  .media-logos img{
+    height:26px;
+  }
+
   .hero-places{
     font-size:12px;
     letter-spacing:.14em;
+  }
+
+  .hero-access{
+    font-size:11px;
+    letter-spacing:.07em;
   }
 
   .process-step{
@@ -338,4 +349,4 @@ RESPONSIVE
     font-size:14px;
   }
 
-                               }
+}
