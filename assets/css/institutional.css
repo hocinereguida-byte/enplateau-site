@@ -141,39 +141,12 @@ PROOF BLOCK
 
 
 /* =========================
-HERO HIGHLIGHT / CIRCLE INTRO
+SECTION SPACING
 ========================= */
 
-.hero-highlight{
-  max-width:860px;
-  margin:30px auto 62px;
-  text-align:center;
-}
-
-.hero-highlight-tight{
-  margin-top:26px;
-}
-
-.hero-highlight-copy{
-  max-width:680px;
-  margin:0 auto;
-  text-align:left;
-}
-
-.hero-highlight p{
-  color:var(--muted);
-  font-size:16px;
-  line-height:1.76;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-.hero-highlight-copy p{
-  margin:0;
-}
-
-.hero-highlight-copy p + p{
-  margin-top:14px;
+.section-corpus-intro{
+  padding-top:66px;
+  padding-bottom:66px;
 }
 
 .section-circle-intro{
@@ -266,6 +239,14 @@ CARDS
 
 .card p{
   margin:0 0 16px;
+}
+
+.card-accent{
+  margin:0 0 10px;
+  font-size:16px;
+  line-height:1.5;
+  color:#5a6778;
+  font-weight:800;
 }
 
 
@@ -491,13 +472,12 @@ RESPONSIVE
 
   .section-text,
   .measure,
-  .hero-highlight-copy,
   .hero-places{
     max-width:100%;
   }
 
   .section-text p,
-  .hero-highlight p{
+  .section-intro{
     font-size:17px;
     line-height:1.72;
   }
@@ -506,11 +486,7 @@ RESPONSIVE
     padding:34px 20px 6px;
   }
 
-  .hero-highlight{
-    margin:22px auto 48px;
-    padding:0 16px;
-  }
-
+  .section-corpus-intro,
   .section-circle-intro{
     padding-top:56px;
     padding-bottom:56px;
