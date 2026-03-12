@@ -449,7 +449,62 @@ RESPONSIVE
   .card,
   .context-item{
     padding:22px;
-  }
+  }/* ======================================================
+MEDIA ENVIRONMENT — PREMIUM ALIGNMENT
+====================================================== */
+
+.media-stack{
+  max-width:760px;
+  margin:0 auto 20px;
+  text-align:center;
+}
+
+/* titre */
+.media-kicker{
+  font-size:14px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:26px;
+}
+
+/* logos sur une ligne */
+.media-logos{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:34px;
+  flex-wrap:nowrap;
+  margin-bottom:22px;
+}
+
+/* taille logos plus premium */
+.media-logos img{
+  height:22px;
+  width:auto;
+  opacity:.85;
+  filter:grayscale(100%);
+  transition:opacity .25s ease;
+}
+
+.media-logos img:hover{
+  opacity:1;
+}
+
+/* villes */
+.hero-places{
+  font-size:12px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin:14px 0 20px;
+}
+
+/* paragraphe */
+.hero-highlight p{
+  max-width:600px;
+  margin:0 auto;
+}
 
   .cta{
     flex-direction:column;
@@ -461,3 +516,5 @@ RESPONSIVE
   }
 
 }
+
+
