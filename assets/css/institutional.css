@@ -1,7 +1,7 @@
 /* ======================================================
 EN PLATEAU — INSTITUTIONAL
 Styles spécifiques aux pages institutionnelles
-(a-propos, participer, le cercle, emissions partenaires)
+(a-propos, participer, le cercle, emissions partenaires, dispositif)
 ====================================================== */
 
 
@@ -11,13 +11,16 @@ SECTION HEAD
 
 .section-head{
   max-width:860px;
-  margin:0 auto 32px;
+  margin:0 auto 18px;
+}
+
+.section-head.centered{
   text-align:center;
 }
 
 .section-kicker{
   color:var(--muted);
-  margin-bottom:14px;
+  margin:0 0 12px;
   letter-spacing:.12em;
   text-transform:uppercase;
   font-size:12px;
@@ -33,26 +36,70 @@ SECTION HEAD
 
 
 /* =========================
+SECTION TEXT
+Paragraphes alignés à gauche
+dans un bloc centré
+========================= */
+
+.section-text{
+  max-width:680px;
+  margin:0 auto;
+  text-align:left;
+}
+
+.section-text p{
+  margin:0;
+  color:var(--slate);
+  font-size:18px;
+  line-height:1.78;
+}
+
+.section-text p + p{
+  margin-top:16px;
+}
+
+.measure{
+  max-width:680px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:left;
+}
+
+
+/* =========================
 HERO HIGHLIGHT
-Bloc médias + villes
+Bloc sous héros
 ========================= */
 
 .hero-highlight{
   max-width:860px;
-  margin:36px auto 72px;
+  margin:30px auto 62px;
   text-align:center;
+}
+
+.hero-highlight-tight{
+  margin-top:26px;
+}
+
+.hero-highlight-copy{
+  max-width:680px;
+  margin:0 auto;
+  text-align:left;
 }
 
 .hero-highlight p{
   color:var(--muted);
-  font-size:15px;
-  line-height:1.8;
-  max-width:720px;
+  font-size:16px;
+  line-height:1.76;
   margin-left:auto;
   margin-right:auto;
 }
 
-.hero-highlight p + p{
+.hero-highlight-copy p{
+  margin:0;
+}
+
+.hero-highlight-copy p + p{
   margin-top:14px;
 }
 
@@ -62,12 +109,14 @@ VILLES
 ========================= */
 
 .hero-places{
-  margin:20px 0 10px;
+  max-width:680px;
+  margin:0 auto 18px;
   font-size:13px;
   letter-spacing:.16em;
   text-transform:uppercase;
   color:var(--sig);
-  font-weight:600;
+  font-weight:700;
+  text-align:left;
 }
 
 
@@ -130,13 +179,36 @@ LISTES
 
 
 /* =========================
+CARDS
+========================= */
+
+.cards-spaced{
+  margin-top:28px;
+}
+
+.card .pill{
+  display:inline-block;
+  margin-bottom:14px;
+}
+
+.card h3{
+  margin:0 0 14px;
+}
+
+.card p{
+  margin:0 0 16px;
+}
+
+
+/* =========================
 PROCESS
 ========================= */
 
 .process{
+  max-width:760px;
+  margin:28px auto 0;
   display:grid;
-  gap:14px;
-  margin-top:8px;
+  gap:12px;
 }
 
 .process-step{
@@ -173,6 +245,9 @@ PROCESS
 
 .process-step p{
   margin:0;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.72;
 }
 
 
@@ -181,13 +256,14 @@ CRITERIA
 ========================= */
 
 .criteria{
+  max-width:760px;
+  margin:28px auto 0;
   display:grid;
   gap:14px;
-  margin-top:8px;
 }
 
 .criterion{
-  padding:16px 18px;
+  padding:18px 20px;
   border:1px solid rgba(15,39,71,.08);
   border-radius:18px;
   background:#F8FAFC;
@@ -205,7 +281,7 @@ CRITERIA
   display:block;
   color:#627084;
   font-size:14px;
-  line-height:1.7;
+  line-height:1.72;
 }
 
 
@@ -248,10 +324,24 @@ LIGHT LIST
 
 
 /* =========================
+CTA
+========================= */
+
+.cta-centered{
+  justify-content:center;
+  margin-top:28px;
+}
+
+
+/* =========================
 RESPONSIVE
 ========================= */
 
 @media(max-width:700px){
+
+  .section-head{
+    margin-bottom:16px;
+  }
 
   .hero .lead,
   .section-desc,
@@ -260,12 +350,26 @@ RESPONSIVE
     line-height:1.74;
   }
 
+  .section-text,
+  .measure,
+  .hero-highlight-copy,
+  .hero-places{
+    max-width:100%;
+  }
+
+  .section-text p,
+  .hero-highlight p{
+    font-size:17px;
+    line-height:1.72;
+  }
+
   .hero-highlight{
-    margin:26px auto 56px;
+    margin:22px auto 48px;
     padding:0 16px;
   }
 
   .hero-places{
+    margin-bottom:16px;
     font-size:12px;
     letter-spacing:.14em;
   }
@@ -273,6 +377,14 @@ RESPONSIVE
   .hero-access{
     font-size:11px;
     letter-spacing:.07em;
+  }
+
+  .cards-spaced{
+    margin-top:24px;
+  }
+
+  .process{
+    margin-top:24px;
   }
 
   .process-step{
@@ -285,6 +397,10 @@ RESPONSIVE
     height:42px;
     border-radius:12px;
     font-size:14px;
+  }
+
+  .criteria{
+    margin-top:24px;
   }
 
 }
