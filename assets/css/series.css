@@ -23,7 +23,7 @@ HERO
   width:100%;
   max-width:760px;
   height:1px;
-  margin:42px auto 0;
+  margin:38px auto 0;
   background:rgba(255,255,255,.24);
 }
 
@@ -46,7 +46,7 @@ HERO HIGHLIGHT
   background:#fff;
   text-align:center;
   border-top:1px solid #E6E6E6;
-  padding:30px 28px 38px;
+  padding:36px 28px 40px;
 }
 
 .hero-highlight.has-cta{
@@ -61,18 +61,57 @@ HERO HIGHLIGHT
   max-width:640px;
   margin:0 auto;
   font-size:17px;
-  line-height:1.68;
+  line-height:1.66;
   color:var(--slate);
 }
 
 .hero-places{
-  margin:22px auto 18px;
-  font-size:13px;
+  margin:14px auto 20px;
+  font-size:12px;
   line-height:1.5;
   font-weight:800;
-  letter-spacing:.16em;
+  letter-spacing:.28em;
   text-transform:uppercase;
   color:var(--muted);
+}
+
+
+/* =========================
+BLOC MEDIAS DANS LES SERIES
+on s'aligne sur le rendu premium
+========================= */
+
+.hero-highlight .media-stack{
+  max-width:900px;
+  margin:0 auto 8px;
+}
+
+.hero-highlight .media-kicker{
+  margin:0 0 24px;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.hero-highlight .media-logos{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:nowrap;
+  gap:26px;
+  width:100%;
+  max-width:760px;
+  margin:0 auto 18px;
+  padding:0;
+}
+
+.hero-highlight .media-logos img{
+  height:20px;
+  width:auto;
+  max-width:100%;
+  opacity:.88;
+  filter:grayscale(100%);
 }
 
 
@@ -112,7 +151,7 @@ RESPONSIVE
   }
 
   .hero-rule{
-    margin-top:34px;
+    margin-top:32px;
   }
 
   .series-strap{
@@ -122,23 +161,43 @@ RESPONSIVE
   }
 
   .hero-highlight{
-    padding:26px 24px 32px;
+    padding:30px 20px 34px;
   }
 
   .hero-highlight.has-cta{
     padding-bottom:38px;
   }
 
+  .hero-highlight.no-cta{
+    padding-bottom:30px;
+  }
+
   .hero-highlight p{
-    max-width:26rem;
+    max-width:30rem;
     font-size:16px;
     line-height:1.6;
   }
 
   .hero-places{
-    margin:18px auto 14px;
-    font-size:12px;
-    letter-spacing:.14em;
+    margin:12px auto 18px;
+    font-size:11px;
+    letter-spacing:.18em;
+  }
+
+  .hero-highlight .media-kicker{
+    margin-bottom:20px;
+    font-size:11px;
+    letter-spacing:.15em;
+  }
+
+  .hero-highlight .media-logos{
+    gap:14px;
+    max-width:100%;
+    margin-bottom:16px;
+  }
+
+  .hero-highlight .media-logos img{
+    height:16px;
   }
 
 }
