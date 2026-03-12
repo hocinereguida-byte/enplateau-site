@@ -99,7 +99,7 @@ EN PLATEAU — INSTITUTIONAL
 }
 
 .proof-block{
-  padding:40px 20px 8px;
+  padding:38px 20px 8px;
   border-bottom:1px solid var(--line);
 }
 
@@ -107,13 +107,9 @@ EN PLATEAU — INSTITUTIONAL
   margin-top:8px;
 }
 
-.media-logos{
-  margin-top:24px;
-}
-
 .proof-link-wrap{
   text-align:center;
-  margin:30px 0 0;
+  margin:22px 0 0;
 }
 
 .section-corpus-intro{
@@ -128,13 +124,13 @@ EN PLATEAU — INSTITUTIONAL
 
 .hero-places{
   max-width:680px;
-  margin:0 auto 18px;
-  font-size:13px;
-  letter-spacing:.16em;
+  margin:14px auto 20px;
+  font-size:12px;
+  letter-spacing:.28em;
   text-transform:uppercase;
-  color:var(--sig);
-  font-weight:700;
-  text-align:left;
+  color:var(--muted);
+  font-weight:800;
+  text-align:center;
 }
 
 .hero-places-standalone{
@@ -362,8 +358,6 @@ EN PLATEAU — INSTITUTIONAL
   text-decoration:none;
 }
 
-/* on laisse editorial.css gérer les couleurs globales des boutons */
-
 @media(max-width:980px){
   .device-grid{
     grid-template-columns:repeat(2,1fr);
@@ -428,9 +422,9 @@ EN PLATEAU — INSTITUTIONAL
   }
 
   .hero-places{
-    margin-bottom:16px;
-    font-size:12px;
-    letter-spacing:.14em;
+    margin-bottom:18px;
+    font-size:11px;
+    letter-spacing:.18em;
   }
 
   .hero-places-standalone{
