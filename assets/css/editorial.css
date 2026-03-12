@@ -509,6 +509,7 @@ MEDIA ENVIRONMENT — PREMIUM ALIGNMENT
   .cta{
     flex-direction:column;
     align-items:stretch;
+    
   }
 
   .btn{
@@ -517,4 +518,26 @@ MEDIA ENVIRONMENT — PREMIUM ALIGNMENT
 
 }
 
+/* ======================================================
+HOME INTRO
+====================================================== */
 
+.home-intro{
+  max-width:720px;
+  margin:80px auto 70px;
+  text-align:center;
+}
+
+.home-intro h2{
+  font-family:"Bitter",serif;
+  font-size:34px;
+  line-height:1.25;
+  margin-bottom:20px;
+  color:var(--ink);
+}
+
+.home-intro p{
+  font-size:18px;
+  line-height:1.7;
+  color:var(--slate);
+}
