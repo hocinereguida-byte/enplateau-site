@@ -18,6 +18,10 @@ SECTION HEAD
   text-align:center;
 }
 
+.section-head.compact{
+  margin-bottom:12px;
+}
+
 .section-kicker{
   color:var(--muted);
   margin:0 0 12px;
@@ -37,8 +41,6 @@ SECTION HEAD
 
 /* =========================
 SECTION TEXT
-Paragraphes alignés à gauche
-dans un bloc centré
 ========================= */
 
 .section-text{
@@ -67,8 +69,79 @@ dans un bloc centré
 
 
 /* =========================
-HERO HIGHLIGHT
-Bloc sous héros
+HELPERS
+========================= */
+
+.centered-text{
+  text-align:center;
+}
+
+.narrow{
+  max-width:620px;
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.hero-institutional .hero-inner{
+  padding-top:12px;
+  padding-bottom:6px;
+}
+
+.hero-institutional .kicker{
+  margin-top:18px;
+  margin-bottom:18px;
+}
+
+.hero-institutional h1{
+  max-width:920px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.hero-institutional .subhead{
+  max-width:760px;
+  margin-top:22px;
+}
+
+.hero-note-light{
+  max-width:760px;
+  margin:20px auto 0;
+  font-size:15px;
+  line-height:1.7;
+  color:rgba(255,255,255,.76);
+  text-align:center;
+  font-weight:600;
+}
+
+
+/* =========================
+PROOF BLOCK
+========================= */
+
+.proof-block{
+  padding:40px 20px 8px;
+  border-bottom:1px solid var(--line);
+}
+
+.institutional-proof{
+  margin-top:8px;
+}
+
+.media-logos{
+  margin-top:24px;
+}
+
+.proof-link-wrap{
+  text-align:center;
+  margin:30px 0 0;
+}
+
+
+/* =========================
+HERO HIGHLIGHT / CIRCLE INTRO
 ========================= */
 
 .hero-highlight{
@@ -103,6 +176,11 @@ Bloc sous héros
   margin-top:14px;
 }
 
+.section-circle-intro{
+  padding-top:66px;
+  padding-bottom:66px;
+}
+
 
 /* =========================
 VILLES
@@ -119,18 +197,9 @@ VILLES
   text-align:left;
 }
 
-
-/* =========================
-ACCES / SELECTION
-========================= */
-
-.hero-access{
-  margin-top:14px;
-  font-size:12px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--sig);
-  opacity:.8;
+.hero-places-standalone{
+  margin-top:22px;
+  margin-bottom:0;
 }
 
 
@@ -197,6 +266,50 @@ CARDS
 
 .card p{
   margin:0 0 16px;
+}
+
+
+/* =========================
+DEVICE GRID
+========================= */
+
+.device-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+  margin-top:28px;
+}
+
+.device-step-card{
+  padding-top:14px;
+  border-top:1px solid var(--line);
+  text-align:left;
+}
+
+.device-num{
+  display:inline-block;
+  margin-bottom:12px;
+  font-size:12px;
+  line-height:1;
+  font-weight:800;
+  letter-spacing:.14em;
+  color:#6B7482;
+}
+
+.device-step-card h3{
+  margin:0 0 10px;
+  font-family:"Inter",system-ui,sans-serif;
+  font-size:20px;
+  line-height:1.22;
+  letter-spacing:-.02em;
+  color:var(--ink);
+}
+
+.device-step-card p{
+  margin:0;
+  font-size:15px;
+  line-height:1.72;
+  color:var(--muted);
 }
 
 
@@ -337,6 +450,12 @@ CTA
 RESPONSIVE
 ========================= */
 
+@media(max-width:980px){
+  .device-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
 @media(max-width:700px){
 
   .section-head{
@@ -348,6 +467,26 @@ RESPONSIVE
   .card p{
     font-size:15px;
     line-height:1.74;
+  }
+
+  .hero-institutional .kicker{
+    margin-top:16px;
+    margin-bottom:16px;
+  }
+
+  .hero-institutional h1{
+    font-size:clamp(30px,7vw,42px);
+    line-height:1.06;
+  }
+
+  .hero-institutional .subhead{
+    margin-top:18px;
+  }
+
+  .hero-note-light{
+    margin-top:18px;
+    font-size:14px;
+    line-height:1.64;
   }
 
   .section-text,
@@ -363,9 +502,18 @@ RESPONSIVE
     line-height:1.72;
   }
 
+  .proof-block{
+    padding:34px 20px 6px;
+  }
+
   .hero-highlight{
     margin:22px auto 48px;
     padding:0 16px;
+  }
+
+  .section-circle-intro{
+    padding-top:56px;
+    padding-bottom:56px;
   }
 
   .hero-places{
@@ -374,13 +522,23 @@ RESPONSIVE
     letter-spacing:.14em;
   }
 
-  .hero-access{
-    font-size:11px;
-    letter-spacing:.07em;
+  .hero-places-standalone{
+    margin-top:20px;
+    margin-bottom:0;
   }
 
   .cards-spaced{
     margin-top:24px;
+  }
+
+  .device-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+    margin-top:24px;
+  }
+
+  .device-step-card h3{
+    font-size:18px;
   }
 
   .process{
@@ -402,5 +560,4 @@ RESPONSIVE
   .criteria{
     margin-top:24px;
   }
-
 }
