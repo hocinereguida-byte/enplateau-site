@@ -20,3 +20,36 @@ HOME INTRO
   line-height:1.7;
   color:var(--muted);
 }
+/* =========================
+LOGOS MEDIAS MOBILE
+========================= */
+
+.media-logos{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-top:24px;
+}
+
+.media-logos img{
+  height:18px;
+  opacity:.85;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  .media-logos{
+    justify-content:space-between;
+    gap:10px;
+    margin-top:18px;
+  }
+
+  .media-logos img{
+    height:16px;
+  }
+
+}
