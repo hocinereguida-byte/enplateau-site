@@ -11,10 +11,10 @@
   --soft-3:#EEF2F5;
   --warm:#F8F7F4;
   --paper:#FBFBFA;
+  --bg:#ffffff;
   --max:1180px;
   --content:760px;
   --title:720px;
-  --bg:#ffffff;
 }
 
 *{
@@ -166,7 +166,7 @@ HERO HIGHLIGHT
   background:#fff;
   text-align:center;
   border-top:1px solid #E6E6E6;
-  padding:32px 28px 40px;
+  padding:40px 28px 44px;
 }
 
 .hero-highlight p{
@@ -315,7 +315,7 @@ a.link:hover::after{
 }
 
 /* -------------------------
-CTA
+CTA / BOUTONS
 ------------------------- */
 
 .cta{
@@ -392,6 +392,61 @@ FINAL BLOCK
 }
 
 /* -------------------------
+MEDIA ENVIRONMENT — PREMIUM
+------------------------- */
+
+.media-stack{
+  max-width:760px;
+  margin:0 auto 20px;
+  text-align:center;
+}
+
+.media-kicker{
+  color:var(--muted);
+  margin:0 0 26px;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  text-align:center;
+}
+
+.media-logos{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:34px;
+  flex-wrap:nowrap;
+  width:100%;
+  max-width:900px;
+  margin:0 auto 22px;
+  padding:0 8px;
+}
+
+.media-logos img{
+  height:22px;
+  width:auto;
+  max-width:100%;
+  opacity:.88;
+  filter:grayscale(100%);
+  transition:opacity .2s ease, transform .2s ease;
+}
+
+.media-logos img:hover{
+  opacity:1;
+  transform:translateY(-1px);
+}
+
+.hero-places{
+  margin:14px auto 20px;
+  font-size:12px;
+  line-height:1.5;
+  font-weight:800;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+/* -------------------------
 RESPONSIVE
 ------------------------- */
 
@@ -433,13 +488,13 @@ RESPONSIVE
   }
 
   .hero-highlight{
-    padding:28px 24px 34px;
+    padding:34px 20px 38px;
   }
 
   .hero-highlight p{
-    max-width:26rem;
+    max-width:30rem;
     font-size:16px;
-    line-height:1.6;
+    line-height:1.62;
   }
 
   .section{
@@ -449,95 +504,36 @@ RESPONSIVE
   .card,
   .context-item{
     padding:22px;
-  }/* ======================================================
-MEDIA ENVIRONMENT — PREMIUM ALIGNMENT
-====================================================== */
-
-.media-stack{
-  max-width:760px;
-  margin:0 auto 20px;
-  text-align:center;
-}
-
-/* titre */
-.media-kicker{
-  font-size:14px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin-bottom:26px;
-}
-
-/* logos sur une ligne */
-.media-logos{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:34px;
-  flex-wrap:nowrap;
-  margin-bottom:22px;
-}
-
-/* taille logos plus premium */
-.media-logos img{
-  height:22px;
-  width:auto;
-  opacity:.85;
-  filter:grayscale(100%);
-  transition:opacity .25s ease;
-}
-
-.media-logos img:hover{
-  opacity:1;
-}
-
-/* villes */
-.hero-places{
-  font-size:12px;
-  letter-spacing:.28em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin:14px 0 20px;
-}
-
-/* paragraphe */
-.hero-highlight p{
-  max-width:600px;
-  margin:0 auto;
-}
+  }
 
   .cta{
     flex-direction:column;
     align-items:stretch;
-    
   }
 
   .btn{
     width:100%;
   }
 
-}
+  .media-kicker{
+    font-size:11px;
+    margin-bottom:20px;
+    letter-spacing:.15em;
+  }
 
-/* ======================================================
-HOME INTRO
-====================================================== */
+  .media-logos{
+    gap:18px;
+    padding:0;
+  }
 
-.home-intro{
-  max-width:720px;
-  margin:80px auto 70px;
-  text-align:center;
-}
+  .media-logos img{
+    height:16px;
+  }
 
-.home-intro h2{
-  font-family:"Bitter",serif;
-  font-size:34px;
-  line-height:1.25;
-  margin-bottom:20px;
-  color:var(--ink);
-}
+  .hero-places{
+    margin:12px auto 18px;
+    font-size:11px;
+    letter-spacing:.18em;
+  }
 
-.home-intro p{
-  font-size:18px;
-  line-height:1.7;
-  color:var(--slate);
 }
