@@ -17,9 +17,13 @@
   --bg:#ffffff;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
@@ -331,7 +335,9 @@ CTA
   border-radius:999px;
   font-size:14px;
   font-weight:800;
+  line-height:1.2;
   transition:transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+  text-decoration:none;
 }
 
 .btn:hover{
@@ -339,14 +345,27 @@ CTA
 }
 
 .btn-primary{
-  background:#fff;
-  color:var(--sig);
+  background:var(--sig);
+  color:#fff;
+  border-color:var(--sig);
+}
+
+.btn-primary:hover{
+  background:var(--sig-2);
+  border-color:var(--sig-2);
+  color:#fff;
 }
 
 .btn-secondary{
-  background:transparent;
-  border:1px solid #D8E1EF;
-  color:var(--ink);
+  background:#fff;
+  border:1px solid var(--line);
+  color:var(--sig);
+}
+
+.btn-secondary:hover{
+  background:#F5F7FA;
+  border-color:var(--line-2);
+  color:var(--sig);
 }
 
 /* -------------------------
