@@ -1,918 +1,227 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>En Plateau — Demande de note détaillée</title>
-  <meta
-    name="description"
-    content="Accédez à la note détaillée En Plateau via un formulaire de demande confidentiel. Réservé aux dirigeants, mandataires qualifiés et structures sélectionnées."
-  />
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0F2747" />
 
-  <style>
-    :root{
-      --ink:#0B0F19;
-      --slate:#2B3340;
-      --muted:#667085;
-      --line:#E4E7EC;
-      --paper:#FBFBFA;
-      --soft:#F6F7F8;
-      --sig:#0F2747;
-      --sig-2:#163558;
-      --accent:#C7A86B;
-      --ok:#157347;
-      --danger:#B42318;
-      --max:1180px;
-      --content:760px;
-      --radius:18px;
-      --shadow:0 18px 50px rgba(15,39,71,.08);
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>En Plateau — Médias et journalistes</title>
+
+<meta
+name="description"
+content="Les conversations En Plateau prennent place dans plusieurs environnements éditoriaux économiques reconnus, avec des journalistes identifiés pour la qualité de leur cadre d’échange."
+>
+
+<meta
+name="keywords"
+content="En Plateau, médias, journalistes, environnements éditoriaux, BFM Business, La Tribune, Le Figaro, Forbes"
+>
+
+<link rel="canonical" href="https://enplateau.fr/medias-et-journalistes.html">
+
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0F2747">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="En Plateau">
+<meta property="og:title" content="En Plateau — Médias et journalistes">
+<meta
+property="og:description"
+content="Des environnements éditoriaux et des journalistes retenus pour certaines conversations économiques structurées par En Plateau."
+>
+<meta property="og:url" content="https://enplateau.fr/medias-et-journalistes.html">
+<meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="En Plateau — Médias et journalistes">
+<meta
+name="twitter:description"
+content="Des environnements médiatiques et des journalistes retenus pour certaines conversations économiques En Plateau."
+>
+<meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/editorial.css">
+<link rel="stylesheet" href="assets/css/institutional.css">
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-      color:var(--slate);
-      background:
-        linear-gradient(180deg, #0F2747 0%, #14304F 28%, #F7F7F5 28%, #FBFBFA 100%);
-      line-height:1.65;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-
-    .wrap{
-      width:min(calc(100% - 32px), var(--max));
-      margin:0 auto;
-    }
-
-    .topbar{
-      padding:18px 0;
-      color:#fff;
-    }
-
-    .topbar-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-    }
-
-    .brand{
-      font-size:18px;
-      font-weight:800;
-      letter-spacing:.01em;
-    }
-
-    .back-link{
-      font-size:14px;
-      color:rgba(255,255,255,.84);
-    }
-
-    .hero{
-      padding:34px 0 30px;
-      color:#fff;
-    }
-
-    .hero-inner{
-      max-width:760px;
-      margin:0 auto;
-      text-align:center;
-    }
-
-    .eyebrow{
-      display:inline-block;
-      padding:8px 12px;
-      border:1px solid rgba(255,255,255,.18);
-      border-radius:999px;
-      font-size:12px;
-      font-weight:800;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:rgba(255,255,255,.82);
-      background:rgba(255,255,255,.06);
-    }
-
-    .hero h1{
-      margin:18px 0 12px;
-      font-size:clamp(34px,4.8vw,54px);
-      line-height:1.08;
-      letter-spacing:-.03em;
-      color:#fff;
-    }
-
-    .hero p{
-      max-width:680px;
-      margin:0 auto;
-      font-size:18px;
-      color:rgba(255,255,255,.86);
-    }
-
-    .page{
-      padding:10px 0 56px;
-    }
-
-    .layout{
-      display:grid;
-      grid-template-columns: 1.05fr .72fr;
-      gap:28px;
-      align-items:start;
-    }
-
-    .card,
-    .side-card{
-      background:#fff;
-      border:1px solid rgba(15,39,71,.08);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-    }
-
-    .card{
-      overflow:hidden;
-    }
-
-    .card-head{
-      padding:26px 28px 18px;
-      border-bottom:1px solid var(--line);
-      background:linear-gradient(180deg,#fff 0%, #FBFCFD 100%);
-    }
-
-    .card-title{
-      margin:0 0 8px;
-      font-size:24px;
-      line-height:1.2;
-      color:var(--ink);
-      letter-spacing:-.02em;
-    }
-
-    .card-subtitle{
-      margin:0;
-      color:var(--muted);
-      font-size:15px;
-    }
-
-    .progress{
-      margin-top:18px;
-    }
-
-    .progress-top{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      margin-bottom:10px;
-      font-size:13px;
-      color:var(--muted);
-      font-weight:700;
-    }
-
-    .progress-track{
-      height:8px;
-      border-radius:999px;
-      background:#EEF2F5;
-      overflow:hidden;
-    }
-
-    .progress-bar{
-      height:100%;
-      width:25%;
-      border-radius:999px;
-      background:linear-gradient(90deg,var(--sig),var(--accent));
-      transition:width .28s ease;
-    }
-
-    .form-wrap{
-      padding:10px 28px 28px;
-    }
-
-    .step{
-      display:none;
-      animation:fade .22s ease;
-    }
-
-    .step.active{
-      display:block;
-    }
-
-    @keyframes fade{
-      from{opacity:0;transform:translateY(6px)}
-      to{opacity:1;transform:none}
-    }
-
-    .step h2{
-      margin:10px 0 8px;
-      font-size:21px;
-      line-height:1.25;
-      letter-spacing:-.02em;
-      color:var(--ink);
-    }
-
-    .step-intro{
-      margin:0 0 22px;
-      color:var(--muted);
-      font-size:15px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
-    }
-
-    .field{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      margin-bottom:16px;
-    }
-
-    .field.full{
-      grid-column:1 / -1;
-    }
-
-    label{
-      font-size:14px;
-      font-weight:700;
-      color:var(--ink);
-    }
-
-    .hint{
-      font-weight:500;
-      color:var(--muted);
-      font-size:12px;
-    }
-
-    input, select, textarea{
-      width:100%;
-      border:1px solid #D8DEE6;
-      background:#fff;
-      color:var(--ink);
-      border-radius:14px;
-      padding:14px 15px;
-      font:inherit;
-      transition:border-color .2s ease, box-shadow .2s ease;
-    }
-
-    textarea{
-      min-height:120px;
-      resize:vertical;
-    }
-
-    input:focus, select:focus, textarea:focus{
-      outline:none;
-      border-color:#8AA2BF;
-      box-shadow:0 0 0 4px rgba(15,39,71,.08);
-    }
-
-    .choices{
-      display:grid;
-      gap:12px;
-    }
-
-    .choice{
-      position:relative;
-    }
-
-    .choice input{
-      position:absolute;
-      inset:0;
-      opacity:0;
-      cursor:pointer;
-    }
-
-    .choice-card{
-      border:1px solid #D8DEE6;
-      border-radius:16px;
-      padding:15px 16px;
-      background:#fff;
-      transition:border-color .2s ease, box-shadow .2s ease, transform .15s ease;
-    }
-
-    .choice input:checked + .choice-card{
-      border-color:var(--sig);
-      box-shadow:0 0 0 4px rgba(15,39,71,.08);
-      transform:translateY(-1px);
-    }
-
-    .choice-title{
-      display:block;
-      font-weight:800;
-      color:var(--ink);
-      margin-bottom:4px;
-    }
-
-    .choice-desc{
-      display:block;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.5;
-    }
-
-    .inline-check{
-      display:flex;
-      align-items:flex-start;
-      gap:10px;
-      margin:10px 0 0;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .inline-check input{
-      width:18px;
-      height:18px;
-      margin-top:2px;
-      accent-color:var(--sig);
-    }
-
-    .actions{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      margin-top:26px;
-      padding-top:18px;
-      border-top:1px solid var(--line);
-    }
-
-    .btn{
-      appearance:none;
-      border:none;
-      border-radius:999px;
-      padding:13px 20px;
-      font:inherit;
-      font-weight:800;
-      letter-spacing:.01em;
-      cursor:pointer;
-      transition:transform .15s ease, opacity .15s ease, box-shadow .2s ease;
-    }
-
-    .btn:hover{transform:translateY(-1px)}
-    .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
-
-    .btn-primary{
-      background:var(--sig);
-      color:#fff;
-      box-shadow:0 10px 24px rgba(15,39,71,.18);
-    }
-
-    .btn-secondary{
-      background:#EEF2F5;
-      color:var(--ink);
-    }
-
-    .btn-submit{
-      background:linear-gradient(135deg,var(--sig),var(--sig-2));
-      color:#fff;
-      box-shadow:0 10px 24px rgba(15,39,71,.18);
-    }
-
-    .error{
-      margin-top:6px;
-      color:var(--danger);
-      font-size:13px;
-      display:none;
-    }
-
-    .field.invalid .error{
-      display:block;
-    }
-
-    .field.invalid input,
-    .field.invalid select,
-    .field.invalid textarea{
-      border-color:#D92D20;
-      box-shadow:0 0 0 4px rgba(217,45,32,.08);
-    }
-
-    .side-stack{
-      display:grid;
-      gap:20px;
-    }
-
-    .side-card{
-      padding:22px 22px 20px;
-    }
-
-    .side-card h3{
-      margin:0 0 12px;
-      font-size:18px;
-      color:var(--ink);
-      letter-spacing:-.02em;
-    }
-
-    .side-card p,
-    .side-card li{
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.65;
-      margin:0;
-    }
-
-    .side-list{
-      margin:0;
-      padding-left:18px;
-      display:grid;
-      gap:8px;
-    }
-
-    .pill-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:12px;
-    }
-
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      border:1px solid #E3E8EF;
-      background:#FAFBFC;
-      color:var(--slate);
-      border-radius:999px;
-      padding:8px 12px;
-      font-size:12px;
-      font-weight:700;
-    }
-
-    .success{
-      display:none;
-      padding:26px;
-      border-top:1px solid var(--line);
-      background:#FCFFFD;
-    }
-
-    .success.active{
-      display:block;
-    }
-
-    .success-box{
-      border:1px solid #CFE9D7;
-      background:#F3FBF6;
-      border-radius:18px;
-      padding:18px;
-    }
-
-    .success-box h3{
-      margin:0 0 8px;
-      color:#0F5132;
-      font-size:20px;
-    }
-
-    .success-box p{
-      margin:0;
-      color:#21573B;
-      font-size:15px;
-    }
-
-    .small-note{
-      margin-top:12px;
-      color:var(--muted);
-      font-size:12px;
-    }
-
-    @media (max-width: 980px){
-      .layout{
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media (max-width: 700px){
-      body{
-        background:linear-gradient(180deg, #0F2747 0%, #14304F 19%, #F7F7F5 19%, #FBFBFA 100%);
-      }
-
-      .hero{
-        padding:24px 0 20px;
-      }
-
-      .hero p{
-        font-size:16px;
-      }
-
-      .card-head,
-      .form-wrap,
-      .side-card{
-        padding-left:18px;
-        padding-right:18px;
-      }
-
-      .grid{
-        grid-template-columns:1fr;
-      }
-
-      .actions{
-        flex-direction:column-reverse;
-      }
-
-      .btn{
-        width:100%;
-      }
-    }
-  </style>
 </head>
+
+
 <body>
-  <header class="topbar">
-    <div class="wrap topbar-inner">
-      <a href="index.html" class="brand">En Plateau</a>
-      <a href="index.html" class="back-link">← Retour au site</a>
+
+<div id="site-header"></div>
+<div id="site-mobile-menu"></div>
+
+
+<main class="container">
+
+
+<!-- HERO -->
+
+<section class="hero hero-institutional">
+
+  <div class="hero-inner">
+
+    <div class="season-badge">
+      Saison inaugurale — septembre 2026
     </div>
-  </header>
 
-  <section class="hero">
-    <div class="wrap">
-      <div class="hero-inner">
-        <span class="eyebrow">Accès réservé</span>
-        <h1>Demander la note détaillée</h1>
-        <p>
-          Ce formulaire permet d’accéder à des informations complémentaires, à des privilèges de mise en relation
-          et à des éléments réservés aux profils en affinité avec l’écosystème En Plateau.
-        </p>
-      </div>
+    <div class="kicker">
+      Médias et journalistes
     </div>
-  </section>
 
-  <main class="page">
-    <div class="wrap">
-      <div class="layout">
-        <section class="card">
-          <div class="card-head">
-            <h2 class="card-title">Formulaire d’accès</h2>
-            <p class="card-subtitle">
-              Quelques informations suffisent. Le parcours est volontairement court, confidentiel et conçu pour être complété rapidement.
-            </p>
+    <h1>
+      Des cadres éditoriaux reconnus
+    </h1>
 
-            <div class="progress">
-              <div class="progress-top">
-                <span id="stepLabel">Étape 1 sur 4</span>
-                <span id="stepPercent">25%</span>
-              </div>
-              <div class="progress-track">
-                <div class="progress-bar" id="progressBar"></div>
-              </div>
-            </div>
-          </div>
+    <p class="subhead">
+      Certaines conversations En Plateau prennent place dans des environnements médiatiques identifiés.
+    </p>
 
-          <form id="multistepForm" class="form-wrap" novalidate>
-            <!-- STEP 1 -->
-            <div class="step active" data-step="1">
-              <h2>Votre profil</h2>
-              <p class="step-intro">
-                Nous adaptons l’accès aux contenus et aux privilèges selon la nature de votre structure et votre rôle.
-              </p>
+    <div class="hero-rule" aria-hidden="true"></div>
 
-              <div class="grid">
-                <div class="field">
-                  <label for="prenom">Prénom</label>
-                  <input type="text" id="prenom" name="prenom" required />
-                  <div class="error">Merci de renseigner votre prénom.</div>
-                </div>
+  </div>
 
-                <div class="field">
-                  <label for="nom">Nom</label>
-                  <input type="text" id="nom" name="nom" required />
-                  <div class="error">Merci de renseigner votre nom.</div>
-                </div>
+</section>
 
-                <div class="field">
-                  <label for="email">Email professionnel</label>
-                  <input type="email" id="email" name="email" required />
-                  <div class="error">Merci de renseigner un email valide.</div>
-                </div>
 
-                <div class="field">
-                  <label for="telephone">Téléphone</label>
-                  <input type="tel" id="telephone" name="telephone" />
-                </div>
+<!-- INTRO -->
 
-                <div class="field">
-                  <label for="fonction">Fonction</label>
-                  <input type="text" id="fonction" name="fonction" required />
-                  <div class="error">Merci de préciser votre fonction.</div>
-                </div>
+<section class="section section-white">
 
-                <div class="field">
-                  <label for="organisation">Organisation</label>
-                  <input type="text" id="organisation" name="organisation" required />
-                  <div class="error">Merci de renseigner votre organisation.</div>
-                </div>
-              </div>
-            </div>
+  <div class="section-head">
 
-            <!-- STEP 2 -->
-            <div class="step" data-step="2">
-              <h2>Votre intérêt principal</h2>
-              <p class="step-intro">
-                Sélectionnez la raison principale de votre demande. Cela nous permet d’orienter la bonne réponse.
-              </p>
+    <h2>
+      Des environnements éditoriaux retenus avec exigence
+    </h2>
 
-              <div class="choices">
-                <label class="choice">
-                  <input type="radio" name="interet" value="participer-serie" required />
-                  <span class="choice-card">
-                    <span class="choice-title">Participer à une série éditoriale</span>
-                    <span class="choice-desc">Explorer une contribution potentielle dans l’un des formats En Plateau.</span>
-                  </span>
-                </label>
+    <p class="section-intro narrow centered-text">
+      Les conversations prennent place dans des cadres journalistiques identifiés, retenus pour leur capacité à éclairer certaines transformations économiques.
+    </p>
 
-                <label class="choice">
-                  <input type="radio" name="interet" value="recevoir-note" required />
-                  <span class="choice-card">
-                    <span class="choice-title">Recevoir la note détaillée</span>
-                    <span class="choice-desc">Accéder au document de présentation approfondi du dispositif et de ses privilèges.</span>
-                  </span>
-                </label>
+  </div>
 
-                <label class="choice">
-                  <input type="radio" name="interet" value="partenariat" required />
-                  <span class="choice-card">
-                    <span class="choice-title">Étudier un partenariat</span>
-                    <span class="choice-desc">Identifier une logique de coopération éditoriale, institutionnelle ou stratégique.</span>
-                  </span>
-                </label>
-              </div>
+  <div class="section-text">
 
-              <div class="field full" style="margin-top:16px;">
-                <label for="serie">Série ou univers qui vous intéresse le plus</label>
-                <select id="serie" name="serie" required>
-                  <option value="">Sélectionner</option>
-                  <option value="eclaireurs">Les Éclaireurs</option>
-                  <option value="batisseurs">Les Bâtisseurs</option>
-                  <option value="architectes">Les Architectes</option>
-                  <option value="a-determiner">À déterminer</option>
-                </select>
-                <div class="error">Merci de sélectionner une option.</div>
-              </div>
-            </div>
+    <p>
+      Il ne s’agit ni d’un annuaire, ni d’un accès libre aux médias. Les environnements présentés correspondent aux cadres retenus pour certaines conversations lorsque le sujet, la trajectoire ou la contribution le justifient.
+    </p>
 
-            <!-- STEP 3 -->
-            <div class="step" data-step="3">
-              <h2>Votre contexte</h2>
-              <p class="step-intro">
-                Quelques éléments de cadrage nous permettent d’évaluer rapidement la pertinence de votre demande.
-              </p>
+  </div>
 
-              <div class="grid">
-                <div class="field full">
-                  <label for="enjeu">Quel est votre enjeu principal aujourd’hui ?</label>
-                  <textarea id="enjeu" name="enjeu" required placeholder="Ex. structurer une prise de parole, valoriser une trajectoire, préparer une exposition médiatique, ouvrir une séquence de rencontres qualifiées..."></textarea>
-                  <div class="error">Merci de préciser votre enjeu principal.</div>
-                </div>
+</section>
 
-                <div class="field full">
-                  <label for="pourquoi">Pourquoi souhaitez-vous accéder à cette note détaillée / à ces privilèges ?</label>
-                  <textarea id="pourquoi" name="pourquoi" required placeholder="Expliquez en quelques lignes ce que vous recherchez concrètement."></textarea>
-                  <div class="error">Merci de préciser votre demande.</div>
-                </div>
 
-                <div class="field">
-                  <label for="zone">Zone d’intérêt principale</label>
-                  <select id="zone" name="zone" required>
-                    <option value="">Sélectionner</option>
-                    <option value="paris">Paris</option>
-                    <option value="bruxelles">Bruxelles</option>
-                    <option value="geneve">Genève</option>
-                    <option value="multi-sites">Plusieurs places</option>
-                  </select>
-                  <div class="error">Merci de sélectionner une zone.</div>
-                </div>
+<!-- CADRE EDITORIAL -->
 
-                <div class="field">
-                  <label for="tempo">Horizon souhaité</label>
-                  <select id="tempo" name="tempo" required>
-                    <option value="">Sélectionner</option>
-                    <option value="immediat">Immédiat</option>
-                    <option value="3-mois">Sous 3 mois</option>
-                    <option value="6-mois">Sous 6 mois</option>
-                    <option value="exploratoire">Exploratoire</option>
-                  </select>
-                  <div class="error">Merci de sélectionner un horizon.</div>
-                </div>
-              </div>
-            </div>
+<section class="section section-soft">
 
-            <!-- STEP 4 -->
-            <div class="step" data-step="4">
-              <h2>Validation finale</h2>
-              <p class="step-intro">
-                Dernière étape. Votre demande restera confidentielle et fera l’objet d’un examen ciblé.
-              </p>
+  <div class="section-head">
 
-              <div class="grid">
-                <div class="field full">
-                  <label for="linkedin">Lien LinkedIn ou site de votre organisation</label>
-                  <input type="url" id="linkedin" name="linkedin" placeholder="https://..." required />
-                  <div class="error">Merci de renseigner un lien valide.</div>
-                </div>
+    <p class="section-kicker">Cadre éditorial</p>
 
-                <div class="field full">
-                  <label for="complement">Élément complémentaire utile</label>
-                  <textarea id="complement" name="complement" placeholder="Vous pouvez ajouter une précision sur votre profil, votre actualité ou votre intérêt."></textarea>
-                </div>
-              </div>
+    <h2>
+      Des environnements principaux pour certaines conversations
+    </h2>
 
-              <label class="inline-check">
-                <input type="checkbox" id="consent" name="consent" required />
-                <span>
-                  J’accepte d’être recontacté dans le cadre de ma demande et confirme l’exactitude des informations transmises.
-                </span>
-              </label>
-            </div>
+    <p class="section-desc">
+      Les médias et journalistes présentés correspondent aux cadres principaux mobilisés pour certaines conversations En Plateau. Leur sélection répond à une logique de cohérence éditoriale et de lisibilité du sujet.
+    </p>
 
-            <div class="actions">
-              <button type="button" class="btn btn-secondary" id="prevBtn" disabled>Retour</button>
-              <button type="button" class="btn btn-primary" id="nextBtn">Continuer</button>
-              <button type="submit" class="btn btn-submit" id="submitBtn" style="display:none;">Envoyer la demande</button>
-            </div>
-          </form>
+  </div>
 
-          <div class="success" id="successBlock">
-            <div class="success-box">
-              <h3>Demande transmise</h3>
-              <p>
-                Merci. Votre demande a bien été enregistrée. Si votre profil correspond au cadre d’accès,
-                vous pourrez recevoir la note détaillée ou être recontacté pour la suite.
-              </p>
-            </div>
-            <p class="small-note">
-              Pensez à connecter ici votre vrai traitement d’envoi (Formspree, Netlify Forms, Zapier, Make, HubSpot, Brevo ou script serveur).
-            </p>
-          </div>
-        </section>
+  <div class="editorial-copy measure">
 
-        <aside class="side-stack">
-          <div class="side-card">
-            <h3>Pourquoi ce formulaire fonctionne bien</h3>
-            <ul class="side-list">
-              <li>Parcours en 4 étapes courtes, sans effet tunnel brutal.</li>
-              <li>Promesse claire : accès à des privilèges et à une note détaillée.</li>
-              <li>Sélectif sans être dissuasif.</li>
-              <li>Compatible mobile et remplissable rapidement.</li>
-            </ul>
-          </div>
+    <p class="lead">
+      Une conversation éditoriale ne juxtapose pas des interventions. Elle construit une lecture progressive d’un sujet à travers plusieurs environnements médiatiques.
+    </p>
 
-          <div class="side-card">
-            <h3>Privilèges évoqués</h3>
-            <p>Vous pouvez personnaliser ce bloc selon votre promesse réelle :</p>
-            <div class="pill-row">
-              <span class="pill">Note détaillée</span>
-              <span class="pill">Accès prioritaire</span>
-              <span class="pill">Mise en relation</span>
-              <span class="pill">Préqualification</span>
-              <span class="pill">Informations réservées</span>
-            </div>
-          </div>
-
-          <div class="side-card">
-            <h3>Conseil de conversion</h3>
-            <p>
-              Gardez le mot <strong>privilèges</strong> si vous voulez renforcer le sentiment d’accès réservé.
-              Si vous souhaitez un ton plus institutionnel, remplacez-le par :
-              <em>accès réservé</em>, <em>accès prioritaire</em> ou <em>accès à la note détaillée</em>.
-            </p>
-          </div>
-        </aside>
-      </div>
+    <div class="editorial-note">
+      <p>
+        Selon les thèmes et les conversations en préparation, d’autres environnements peuvent être associés. Les cadres présentés ici constituent toutefois le socle principal de certaines conversations En Plateau.
+      </p>
     </div>
-  </main>
 
-  <script>
-    const form = document.getElementById("multistepForm");
-    const steps = [...document.querySelectorAll(".step")];
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const submitBtn = document.getElementById("submitBtn");
-    const progressBar = document.getElementById("progressBar");
-    const stepLabel = document.getElementById("stepLabel");
-    const stepPercent = document.getElementById("stepPercent");
-    const successBlock = document.getElementById("successBlock");
+  </div>
 
-    let currentStep = 0;
+</section>
 
-    function updateStepUI() {
-      steps.forEach((step, index) => {
-        step.classList.toggle("active", index === currentStep);
-      });
 
-      const total = steps.length;
-      const humanStep = currentStep + 1;
-      const percent = Math.round((humanStep / total) * 100);
+<!-- MEDIAS -->
 
-      stepLabel.textContent = `Étape ${humanStep} sur ${total}`;
-      stepPercent.textContent = `${percent}%`;
-      progressBar.style.width = `${percent}%`;
+<section class="section section-white">
 
-      prevBtn.disabled = currentStep === 0;
-      nextBtn.style.display = currentStep === total - 1 ? "none" : "inline-flex";
-      submitBtn.style.display = currentStep === total - 1 ? "inline-flex" : "none";
-    }
+  <div class="section-head">
 
-    function getCurrentStepFields() {
-      const activeStep = steps[currentStep];
-      return [...activeStep.querySelectorAll("input, select, textarea")].filter(el => {
-        if (el.type === "hidden") return false;
-        if (el.type === "radio") {
-          return el.name && activeStep.querySelector(`input[name="${el.name}"]`);
-        }
-        return true;
-      });
-    }
+    <p class="section-kicker">Médias</p>
 
-    function clearInvalid(stepEl) {
-      stepEl.querySelectorAll(".field").forEach(field => field.classList.remove("invalid"));
-    }
+    <h2>
+      Des environnements médiatiques reconnus
+    </h2>
 
-    function markInvalid(input) {
-      const field = input.closest(".field");
-      if (field) field.classList.add("invalid");
-    }
+    <p class="section-desc">
+      Chaque média conserve son identité propre et sa ligne éditoriale. En Plateau retient ces environnements lorsqu’ils permettent d’inscrire certaines conversations dans un cadre journalistique lisible.
+    </p>
 
-    function validateCurrentStep() {
-      const activeStep = steps[currentStep];
-      clearInvalid(activeStep);
-      let valid = true;
+  </div>
 
-      const requiredFields = [...activeStep.querySelectorAll("[required]")];
+</section>
 
-      const radioNames = new Set();
-      requiredFields.forEach(input => {
-        if (input.type === "radio") radioNames.add(input.name);
-      });
 
-      radioNames.forEach(name => {
-        const group = [...activeStep.querySelectorAll(`input[name="${name}"]`)];
-        const checked = group.some(r => r.checked);
-        if (!checked) {
-          valid = false;
-          const firstChoice = group[0].closest(".field") || group[0].closest(".choices");
-          if (firstChoice && firstChoice.previousElementSibling?.classList?.contains("error")) {
-            firstChoice.previousElementSibling.style.display = "block";
-          }
-        }
-      });
+<!-- JOURNALISTES -->
 
-      requiredFields.forEach(input => {
-        if (input.type === "radio") return;
-        if (input.type === "checkbox") {
-          if (!input.checked) valid = false;
-          return;
-        }
+<section class="section section-soft-3">
 
-        const value = input.value.trim();
-        let fieldOk = true;
+  <div class="section-head">
 
-        if (!value) fieldOk = false;
-        if (fieldOk && input.type === "email") fieldOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-        if (fieldOk && input.type === "url") {
-          try { new URL(value); } catch(e) { fieldOk = false; }
-        }
+    <p class="section-kicker">Journalistes</p>
 
-        if (!fieldOk) {
-          valid = false;
-          markInvalid(input);
-        }
-      });
+    <h2>
+      Des journalistes identifiés pour la qualité du cadre d’échange
+    </h2>
 
-      return valid;
-    }
+    <p class="section-desc">
+      Les conversations prennent place avec des journalistes dont le travail permet d’inscrire les échanges dans un cadre économique reconnu.
+    </p>
 
-    nextBtn.addEventListener("click", () => {
-      if (!validateCurrentStep()) return;
-      currentStep++;
-      updateStepUI();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+  </div>
 
-    prevBtn.addEventListener("click", () => {
-      if (currentStep > 0) {
-        currentStep--;
-        updateStepUI();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    });
+</section>
 
-    form.addEventListener("input", (e) => {
-      const field = e.target.closest(".field");
-      if (field) field.classList.remove("invalid");
-    });
 
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!validateCurrentStep()) return;
+<!-- CTA FINAL -->
 
-      // Ici vous brancherez votre vrai endpoint.
-      // Exemple possible :
-      // fetch("https://formspree.io/f/XXXXX", { method:"POST", body:new FormData(form), headers:{ "Accept":"application/json" } })
+<section class="final">
 
-      form.style.display = "none";
-      successBlock.classList.add("active");
-      successBlock.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+  <h2>
+    Comprendre le cadre avant toute demande
+  </h2>
 
-    updateStepUI();
-  </script>
+  <p>
+    Les conversations En Plateau obéissent à leur propre logique de sélection. Leur intégration se fait principalement par approche directe ou via un intermédiaire qualifié.
+  </p>
+
+  <div class="cta">
+    <a class="btn btn-primary" href="participer.html">Voir les règles de participation</a>
+    <a class="btn btn-secondary" href="a-propos.html">Comprendre le positionnement</a>
+  </div>
+
+</section>
+
+
+</main>
+
+
+<div id="site-footer"></div>
+
+<script src="assets/js/layout.js"></script>
+
 </body>
 </html>
