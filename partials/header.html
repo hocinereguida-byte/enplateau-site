@@ -1,71 +1,54 @@
-<div class="header-wrap">
-  <header class="header">
-    <a class="brand" href="index.html" aria-label="En Plateau — Accueil">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-name">EN PLATEAU</span>
+<header class="site-header">
+
+  <div class="header-inner container">
+
+    <a class="logo" href="index.html">
+      <img src="images/logo-en-plateau.svg" alt="En Plateau">
     </a>
 
-    <nav class="nav" aria-label="Navigation principale">
+    <nav class="main-nav" aria-label="Navigation principale">
 
-      <a href="dispositif.html">Le dispositif</a>
+      <ul>
 
-      <a href="medias-journalistes.html">Médias &amp; journalistes</a>
+        <li>
+          <a href="corpus.html">Corpus</a>
+        </li>
 
-      <div class="nav-item">
-        <button class="nav-trigger" type="button" aria-expanded="false">
-          Séries éditoriales
-          <span class="chevron" aria-hidden="true">▾</span>
-        </button>
+        <li class="has-dropdown">
+          <a href="#">Séries</a>
 
-        <div class="dropdown" role="menu">
-          <a href="les-eclaireurs.html">Les Éclaireurs</a>
-          <a href="les-batisseurs.html">Les Bâtisseurs</a>
-          <a href="les-architectes.html">Les Architectes</a>
-        </div>
-      </div>
+          <ul class="dropdown">
+            <li><a href="les-eclaireurs.html">Les Éclaireurs</a></li>
+            <li><a href="les-batisseurs.html">Les Bâtisseurs</a></li>
+            <li><a href="les-architectes.html">Les Architectes</a></li>
+          </ul>
 
-      <a href="cercle.html">Le Cercle</a>
+        </li>
 
-      <a href="participer.html">Participer</a>
+        <li>
+          <a href="cercle.html">Le Cercle</a>
+        </li>
 
-      <div class="nav-item">
-        <button class="nav-trigger" type="button" aria-expanded="false">
-          Regards
-          <span class="chevron" aria-hidden="true">▾</span>
-        </button>
+        <li>
+          <a href="medias-journalistes.html">Médias</a>
+        </li>
 
-        <div class="dropdown" role="menu">
+        <li>
+          <a href="participer.html">Participer</a>
+        </li>
 
-          <div class="dropdown-group-label">Acteurs économiques</div>
-          <a href="entrepreneurs.html">Entrepreneurs</a>
-          <a href="entreprises.html">Entreprises</a>
-          <a href="investisseurs.html">Investisseurs</a>
-
-          <div class="dropdown-group-label">Cadres de lecture</div>
-          <a href="expertises.html">Expertises</a>
-          <a href="chercheurs.html">Chercheurs</a>
-          <a href="decideurs-publics.html">Décideurs publics</a>
-
-          <div class="dropdown-group-label">Ancrages et impacts</div>
-          <a href="territoires.html">Territoires</a>
-          <a href="associations.html">Associations</a>
-
-        </div>
-      </div>
-
-      <a href="a-propos.html">À propos</a>
+      </ul>
 
     </nav>
 
-    <button
-      id="burger"
-      class="burger"
-      type="button"
-      aria-label="Ouvrir le menu"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      Menu
-    </button>
-  </header>
-</div>
+    <div class="header-cta">
+
+      <a class="btn btn-primary" href="demande-note-detaillee.html">
+        Recevoir la programmation
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
