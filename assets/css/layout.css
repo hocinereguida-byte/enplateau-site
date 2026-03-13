@@ -476,6 +476,7 @@ RESPONSIVE
 }
 
 @media (max-width:640px){
+  
 
   .header{
     padding:12px 16px;
@@ -485,4 +486,14 @@ RESPONSIVE
   .brand-name{
     font-size:13px;
   }
+}
+
+.footer-signature{
+font-family:"Bitter",serif;
+font-weight:600;
+font-size:15px;
+line-height:1.6;
+margin:12px 0 16px 0;
+color:#e6edf5;
+opacity:0.9;
 }
