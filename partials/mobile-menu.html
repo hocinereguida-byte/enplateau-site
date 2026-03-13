@@ -1,45 +1,31 @@
-<div class="mobile-menu">
+<div id="mobile-menu" class="mobile-menu" aria-label="Navigation mobile">
 
-  <nav aria-label="Navigation mobile">
+  <a href="corpus.html">Corpus</a>
 
-    <ul>
+  <button
+    class="mobile-dropdown-trigger"
+    type="button"
+    data-target="mobile-series"
+    aria-expanded="false"
+  >
+    <span>Séries</span>
+    <span class="chevron" aria-hidden="true">▾</span>
+  </button>
 
-      <li>
-        <a href="corpus.html">Corpus</a>
-      </li>
+  <div id="mobile-series" class="mobile-submenu">
+    <a href="les-eclaireurs.html">Les Éclaireurs</a>
+    <a href="les-batisseurs.html">Les Bâtisseurs</a>
+    <a href="les-architectes.html">Les Architectes</a>
+  </div>
 
-      <li>
-        <a href="les-eclaireurs.html">Les Éclaireurs</a>
-      </li>
+  <a href="cercle.html">Le Cercle</a>
 
-      <li>
-        <a href="les-batisseurs.html">Les Bâtisseurs</a>
-      </li>
+  <a href="medias-journalistes.html">Médias</a>
 
-      <li>
-        <a href="les-architectes.html">Les Architectes</a>
-      </li>
+  <a href="participer.html">Participer</a>
 
-      <li>
-        <a href="cercle.html">Le Cercle</a>
-      </li>
-
-      <li>
-        <a href="medias-journalistes.html">Médias</a>
-      </li>
-
-      <li>
-        <a href="participer.html">Participer</a>
-      </li>
-
-      <li class="mobile-cta">
-        <a class="btn btn-primary" href="demande-note-detaillee.html">
-          Recevoir la programmation éditoriale
-        </a>
-      </li>
-
-    </ul>
-
-  </nav>
+  <a class="mobile-cta-link" href="demande-note-detaillee.html">
+    Recevoir la programmation éditoriale
+  </a>
 
 </div>
