@@ -57,14 +57,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  const contextPages = [
-    "experts.html",
-    "entrepreneurs.html",
-    "entreprises.html",
-    "secteur-public.html",
-    "associations.html"
-  ];
-
   const seriesPages = [
     "les-eclaireurs.html",
     "les-batisseurs.html",
@@ -74,11 +66,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.querySelectorAll(".nav-trigger").forEach((trigger) => {
     const label = trigger.textContent.trim();
 
-    if (label.includes("Contextes") && contextPages.includes(currentPage)) {
-      trigger.classList.add("active");
-    }
-
-    if (label.includes("Séries éditoriales") && seriesPages.includes(currentPage)) {
+    if (label.includes("Séries") && seriesPages.includes(currentPage)) {
       trigger.classList.add("active");
     }
   });
