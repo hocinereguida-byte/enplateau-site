@@ -1,237 +1,813 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>EN PLATEAU — Conversations économiques</title>
-
+  <title>EN PLATEAU — Conversations économiques européennes</title>
   <meta
     name="description"
-    content="Des dirigeants, investisseurs et acteurs publics européens réunis dans des émissions économiques et dans des rencontres à Paris, Bruxelles et Genève.">
+    content="EN PLATEAU organise des conversations économiques réunissant dirigeants, investisseurs et acteurs publics européens dans des environnements médiatiques partenaires et lors de rencontres entre pairs à Paris, Bruxelles et Genève."
+  />
+  <meta
+    name="keywords"
+    content="EN PLATEAU, conversations économiques, économie réelle, dirigeants, investisseurs, acteurs publics, Paris, Bruxelles, Genève, médias économiques"
+  />
+  <link rel="canonical" href="https://enplateau.fr/" />
 
-  <link rel="canonical" href="https://enplateau.fr/">
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0F2747" />
 
-  <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0F2747">
-
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:site_name" content="EN PLATEAU">
-  <meta property="og:title" content="EN PLATEAU — Conversations économiques">
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="EN PLATEAU — Conversations économiques européennes" />
   <meta
     property="og:description"
-    content="Des dirigeants, investisseurs et acteurs publics européens réunis dans des émissions économiques et dans des rencontres à Paris, Bruxelles et Genève.">
-  <meta property="og:url" content="https://enplateau.fr/">
-  <meta property="og:image" content="https://enplateau.fr/images/en-plateau-social.webp">
+    content="Des conversations économiques réunissant dirigeants, investisseurs et acteurs publics européens dans des environnements médiatiques partenaires et lors de rencontres entre pairs."
+  />
+  <meta property="og:url" content="https://enplateau.fr/" />
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="EN PLATEAU — Conversations économiques">
-  <meta
-    name="twitter:description"
-    content="Des dirigeants, investisseurs et acteurs publics européens réunis dans des émissions économiques et dans des rencontres à Paris, Bruxelles et Genève.">
-  <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-social.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="layout.css" />
+  <link rel="stylesheet" href="home.css" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .hero-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      margin:0 0 1rem;
+      padding:.45rem .8rem;
+      border:1px solid rgba(15,39,71,.14);
+      border-radius:999px;
+      background:#f6f8fb;
+      color:#163558;
+      font-size:.9rem;
+      font-weight:600;
+      letter-spacing:.01em;
+    }
 
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/editorial.css">
-  <link rel="stylesheet" href="assets/css/home.css">
+    .home-credibility{
+      padding:0 0 1.25rem;
+      margin-top:-1rem;
+    }
+
+    .home-credibility .inner{
+      max-width:1180px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    .credibility-card{
+      background:#f8f9fb;
+      border:1px solid #e3e7ec;
+      border-radius:22px;
+      padding:28px 28px 24px;
+      box-shadow:0 12px 32px rgba(11,15,25,.04);
+    }
+
+    .credibility-label{
+      display:inline-block;
+      margin:0 0 12px;
+      font-size:.82rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#5b6472;
+    }
+
+    .credibility-card p{
+      margin:0;
+      font-size:1.05rem;
+      line-height:1.8;
+      color:#2b3340;
+    }
+
+    .logo-note{
+      max-width:760px;
+      margin:0 auto 1.75rem;
+      text-align:center;
+      color:#5b6472;
+    }
+
+    .logos-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:16px;
+      align-items:stretch;
+    }
+
+    .logo-box{
+      min-height:90px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid #e3e7ec;
+      border-radius:18px;
+      background:#fff;
+      padding:18px;
+      text-align:center;
+      font-weight:700;
+      color:#163558;
+      box-shadow:0 8px 24px rgba(11,15,25,.03);
+    }
+
+    .series-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:22px;
+    }
+
+    .series-card{
+      background:#fff;
+      border:1px solid #e3e7ec;
+      border-radius:22px;
+      padding:28px;
+      box-shadow:0 10px 28px rgba(11,15,25,.04);
+    }
+
+    .series-card .eyebrow{
+      display:inline-block;
+      margin-bottom:12px;
+      font-size:.8rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#5b6472;
+      font-weight:700;
+    }
+
+    .series-card h3{
+      margin:0 0 12px;
+      font-size:1.45rem;
+      line-height:1.2;
+      color:#0b0f19;
+    }
+
+    .series-card p{
+      margin:0 0 16px;
+      color:#2b3340;
+    }
+
+    .series-card ul{
+      margin:0;
+      padding-left:18px;
+      color:#5b6472;
+    }
+
+    .series-card li + li{
+      margin-top:8px;
+    }
+
+    .season-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:26px;
+      align-items:start;
+    }
+
+    .season-card,
+    .initiative-card,
+    .contribute-card{
+      background:#fff;
+      border:1px solid #e3e7ec;
+      border-radius:22px;
+      padding:30px;
+      box-shadow:0 10px 28px rgba(11,15,25,.04);
+    }
+
+    .season-stats{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin-top:20px;
+    }
+
+    .stat-box{
+      padding:18px 16px;
+      background:#f8f9fb;
+      border:1px solid #e8edf2;
+      border-radius:18px;
+      text-align:left;
+    }
+
+    .stat-box strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:1.35rem;
+      line-height:1;
+      color:#0f2747;
+    }
+
+    .stat-box span{
+      font-size:.94rem;
+      color:#5b6472;
+    }
+
+    .season-timeline{
+      display:grid;
+      gap:14px;
+    }
+
+    .timeline-item{
+      border:1px solid #e8edf2;
+      border-radius:18px;
+      padding:16px 18px;
+      background:#f8f9fb;
+    }
+
+    .timeline-item strong{
+      display:block;
+      margin-bottom:6px;
+      color:#0b0f19;
+    }
+
+    .timeline-item p{
+      margin:0;
+      color:#5b6472;
+    }
+
+    .participants-strip{
+      margin-top:24px;
+      padding-top:24px;
+      border-top:1px solid #e8edf2;
+    }
+
+    .participants-strip p{
+      margin:0;
+      color:#2b3340;
+    }
+
+    .initiative-card p,
+    .contribute-card p,
+    .season-card p{
+      color:#2b3340;
+      line-height:1.8;
+    }
+
+    .initiative-meta{
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid #e8edf2;
+      color:#5b6472;
+      font-size:.95rem;
+    }
+
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .btn-primary{
+      background:#0f2747;
+      color:#fff;
+      border:1px solid #0f2747;
+    }
+
+    .btn-primary:hover{
+      background:#163558;
+      border-color:#163558;
+    }
+
+    .btn-secondary{
+      background:#fff;
+      color:#0f2747;
+      border:1px solid #d7dee6;
+    }
+
+    .btn-secondary:hover{
+      background:#f8f9fb;
+    }
+
+    .section{
+      padding:72px 0;
+    }
+
+    .section.alt{
+      background:#fbfbfa;
+    }
+
+    .container{
+      max-width:1180px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    .section-head{
+      max-width:760px;
+      margin:0 auto 34px;
+      text-align:center;
+    }
+
+    .section-head.left{
+      margin:0 0 28px;
+      text-align:left;
+    }
+
+    .section-head .eyebrow{
+      display:inline-block;
+      margin-bottom:12px;
+      font-size:.82rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#5b6472;
+    }
+
+    .section-head h2{
+      margin:0 0 14px;
+      font-size:clamp(2rem,3vw,3rem);
+      line-height:1.12;
+      color:#0b0f19;
+    }
+
+    .section-head p{
+      margin:0;
+      color:#5b6472;
+      line-height:1.8;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(227,231,236,.9);
+    }
+
+    .site-header .bar{
+      max-width:1180px;
+      margin:0 auto;
+      padding:16px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:#0b0f19;
+      font-weight:800;
+      letter-spacing:.02em;
+    }
+
+    .brand-mark{
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      background:#0f2747;
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-size:.9rem;
+      font-weight:800;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      flex-wrap:wrap;
+    }
+
+    .nav a{
+      color:#2b3340;
+      text-decoration:none;
+      font-weight:600;
+      font-size:.96rem;
+    }
+
+    .nav a:hover{
+      color:#0f2747;
+    }
+
+    .hero{
+      padding:82px 0 56px;
+      background:
+        radial-gradient(circle at top left, rgba(15,39,71,.06), transparent 36%),
+        linear-gradient(180deg, #fbfbfa 0%, #ffffff 78%);
+    }
+
+    .hero .wrap{
+      max-width:1180px;
+      margin:0 auto;
+      padding:0 20px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:34px;
+      align-items:end;
+    }
+
+    .hero h1{
+      margin:0 0 18px;
+      max-width:820px;
+      font-size:clamp(2.5rem,5vw,4.9rem);
+      line-height:.98;
+      letter-spacing:-.035em;
+      color:#0b0f19;
+    }
+
+    .hero p.lead{
+      max-width:700px;
+      margin:0;
+      font-size:1.14rem;
+      line-height:1.9;
+      color:#2b3340;
+    }
+
+    .hero aside{
+      background:#fff;
+      border:1px solid #e3e7ec;
+      border-radius:24px;
+      padding:26px;
+      box-shadow:0 14px 36px rgba(11,15,25,.05);
+    }
+
+    .hero aside .label{
+      display:inline-block;
+      margin-bottom:12px;
+      font-size:.8rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#5b6472;
+    }
+
+    .hero aside p{
+      margin:0;
+      color:#2b3340;
+      line-height:1.8;
+    }
+
+    .site-footer{
+      border-top:1px solid #e3e7ec;
+      background:#fbfbfa;
+    }
+
+    .site-footer .inner{
+      max-width:1180px;
+      margin:0 auto;
+      padding:28px 20px 34px;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      color:#5b6472;
+      font-size:.95rem;
+    }
+
+    .site-footer a{
+      color:#2b3340;
+      text-decoration:none;
+    }
+
+    .site-footer a:hover{
+      color:#0f2747;
+    }
+
+    @media (max-width: 980px){
+      .hero .wrap,
+      .season-grid,
+      .series-grid{
+        grid-template-columns:1fr;
+      }
+
+      .logos-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+
+    @media (max-width: 640px){
+      .nav{
+        display:none;
+      }
+
+      .hero{
+        padding:64px 0 42px;
+      }
+
+      .hero h1{
+        font-size:clamp(2.1rem,11vw,3.2rem);
+      }
+
+      .season-stats{
+        grid-template-columns:1fr;
+      }
+
+      .logos-grid{
+        grid-template-columns:1fr;
+      }
+
+      .credibility-card,
+      .series-card,
+      .season-card,
+      .initiative-card,
+      .contribute-card,
+      .hero aside{
+        padding:22px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-  <div id="site-header"></div>
-  <div id="site-mobile-menu"></div>
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="index.html" aria-label="Accueil EN PLATEAU">
+        <span class="brand-mark">EP</span>
+        <span>EN PLATEAU</span>
+      </a>
 
-  <main class="container">
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="saison-inaugurale.html">Saison inaugurale</a>
+        <a href="medias-journalistes.html">Médias & journalistes</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="hero hero-editorial">
-      <div class="hero-inner">
+  <main>
 
-        <div class="season-badge">
-          Saison inaugurale — septembre 2026
-        </div>
-
-        <h1>
-          Les conversations qui façonnent l’économie ne sont pas toutes publiques.
-        </h1>
-
-        <p class="subhead">
-          Dirigeants, investisseurs et acteurs publics européens réunis dans des émissions économiques et dans des rencontres à Paris, Bruxelles et Genève.
-        </p>
-
-        <div class="hero-links" aria-label="Accès rapides">
-          <a class="hero-link hero-link-primary" href="participer.html">Signaler une contribution</a>
-          <a class="hero-link hero-link-secondary" href="participer.html">Comprendre le cadre</a>
-        </div>
-
-        <div class="hero-rule" aria-hidden="true"></div>
-
-      </div>
-    </section>
-
-    <section class="proof-block">
-      <div class="media-stack">
-        <p class="media-kicker">
-          Environnements éditoriaux
-        </p>
-
-        <div class="media-logos">
-          <img src="images/bfm-business.svg" alt="BFM Business">
-          <img src="images/la-tribune.svg" alt="La Tribune">
-          <img src="images/forbes.svg" alt="Forbes">
-          <img src="images/le-figaro.svg" alt="Le Figaro">
-        </div>
-      </div>
-    </section>
-
-    <section class="home-intro">
-      <h2>
-        Ceux qui façonnent l’économie réelle
-      </h2>
-
-      <p>
-        Les conversations En Plateau réunissent dirigeants, investisseurs et acteurs publics autour de transformations économiques qui redessinent les secteurs, les filières et les territoires.
-      </p>
-
-      <p>
-        Chaque saison compose progressivement un ensemble de conversations économiques pensé pour articuler prises de parole publiques, formats plus confidentiels et rencontres entre mondes qui se croisent rarement dans un même cadre.
-      </p>
-    </section>
-
-    <section class="section section-soft">
-      <div class="section-head centered">
-        <h2>Trois séries éditoriales</h2>
-        <p class="section-intro narrow">
-          Chaque série propose une lecture distincte de l’économie réelle à travers des trajectoires, des angles et des formats complémentaires.
-        </p>
-      </div>
-
-      <div class="grid-3">
-        <article class="card">
-          <span class="pill">Série</span>
-          <h3>Les Éclaireurs</h3>
-          <p>
-            Quatre intervenants, quatre émissions. Une transformation rendue plus lisible à travers plusieurs regards complémentaires.
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <div class="hero-kicker">Saison inaugurale — septembre 2026</div>
+          <h1>Les conversations qui façonnent l’économie ne sont pas toutes publiques.</h1>
+          <p class="lead">
+            EN PLATEAU organise des conversations économiques réunissant dirigeants,
+            investisseurs et acteurs publics européens dans des environnements médiatiques
+            partenaires et lors de rencontres entre pairs à Paris, Bruxelles et Genève.
           </p>
-          <a class="link" href="les-eclaireurs.html">Découvrir la série</a>
-        </article>
 
-        <article class="card featured">
-          <span class="pill">Série</span>
-          <h3>Les Bâtisseurs</h3>
-          <p>
-            Quatre intervenants, deux prises de parole chacun dans deux médias différents. Un même sujet exploré à plusieurs voix.
-          </p>
-          <a class="link" href="les-batisseurs.html">Découvrir la série</a>
-        </article>
+          <div class="cta-row">
+            <a class="btn-primary" href="saison-inaugurale.html">Découvrir la saison inaugurale</a>
+            <a class="btn-secondary" href="a-propos.html">Comprendre l’initiative</a>
+          </div>
+        </div>
 
-        <article class="card">
-          <span class="pill">Série</span>
-          <h3>Les Architectes</h3>
+        <aside>
+          <span class="label">Ligne éditoriale</span>
           <p>
-            Deux intervenants, quatre prises de parole chacun. Le cadre le plus approfondi du programme éditorial.
+            EN PLATEAU ne cherche pas à produire des prises de parole promotionnelles.
+            Le projet vise à réunir des voix capables d’éclairer leur secteur, leur époque
+            et les transformations concrètes de l’économie réelle.
           </p>
-          <a class="link" href="les-architectes.html">Découvrir la série</a>
-        </article>
+        </aside>
       </div>
     </section>
 
-    <section class="section section-white positions-section">
-      <div class="section-head centered">
-        <h2>Une saison éditoriale structurée</h2>
-        <p class="section-intro narrow">
-          La saison inaugurale se constitue actuellement. 24 positions éditoriales sont ouvertes en France, en Belgique et en Suisse pour les premières séries en cours de construction.
-        </p>
-      </div>
-
-      <div class="positions-structure">
-        <div class="structure-number">
-          <span class="big">24</span>
-          <span class="label">positions éditoriales ouvertes</span>
-        </div>
-
-        <div class="structure-breakdown">
-          <span>France</span>
-          <span>Belgique</span>
-          <span>Suisse</span>
+    <section class="home-credibility" aria-label="Crédibilité du dispositif">
+      <div class="inner">
+        <div class="credibility-card">
+          <span class="credibility-label">Un dispositif éditorial en cours de constitution</span>
+          <p>
+            Les trois premières séries de la saison inaugurale d’EN PLATEAU réuniront
+            <strong>24 dirigeants, investisseurs et acteurs publics européens</strong>
+            autour de conversations consacrées aux transformations de l’économie réelle.
+            Les contributions sont actuellement en cours de constitution pour un lancement
+            éditorial en <strong>septembre 2026</strong>. Ces conversations prendront place
+            dans des environnements médiatiques partenaires ainsi que lors de
+            <strong>rencontres entre pairs à Paris, Bruxelles et Genève</strong>.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft timeline-shell">
-      <div class="timeline-header">
-        <h2>Lancement de la saison inaugurale</h2>
-      </div>
-
-      <div class="timeline-list">
-
-        <article class="timeline-step">
-          <span class="timeline-date">2025</span>
-          <h3>Réflexion sur la vision</h3>
-          <p>
-            Définition de la raison d’être d’EN PLATEAU et conception d’un dispositif réunissant dirigeants, investisseurs, décideurs publics et acteurs de la société civile dans des formats de conversation publics et confidentiels.
+    <section class="section alt" aria-labelledby="media-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Environnements éditoriaux</span>
+          <h2 id="media-title">Des conversations inscrites dans des cadres médiatiques reconnus.</h2>
+          <p class="logo-note">
+            EN PLATEAU prend place dans des environnements éditoriaux économiques
+            et professionnels à forte exigence de lecture, de format et de crédibilité.
           </p>
-        </article>
+        </div>
 
-        <article class="timeline-step">
-          <span class="timeline-date">Premier trimestre 2026</span>
-          <h3>Cadrage éditorial et partenariats médias</h3>
-          <p>
-            Définition des thématiques, cadrage des sujets et articulation des angles des premières séries, en lien avec les environnements éditoriaux partenaires.
-          </p>
-        </article>
-
-        <article class="timeline-step timeline-step-open">
-          <span class="timeline-date">15 mars – 30 avril 2026</span>
-          <div class="timeline-badge">Positions ouvertes</div>
-          <h3>Constitution des positions</h3>
-          <p>
-            Identification des contributions et constitution des plateaux pour les premières conversations. 24 positions éditoriales sont actuellement ouvertes en France, en Belgique et en Suisse.
-          </p>
-        </article>
-
-        <article class="timeline-step">
-          <span class="timeline-date">Mai – juin 2026</span>
-          <h3>Préparation et tournages</h3>
-          <p>
-            Préparation des prises de parole et réalisation des émissions dans les environnements éditoriaux retenus.
-          </p>
-        </article>
-
-        <article class="timeline-step timeline-step-launch">
-          <span class="timeline-date">Septembre 2026</span>
-          <h3>Lancement</h3>
-          <p>
-            Diffusion des premières conversations et ouverture officielle de la saison inaugurale.
-          </p>
-        </article>
-
+        <div class="logos-grid">
+          <div class="logo-box">BFM Business</div>
+          <div class="logo-box">La Tribune</div>
+          <div class="logo-box">Forbes</div>
+          <div class="logo-box">Le Figaro</div>
+        </div>
       </div>
     </section>
 
-    <section class="final">
-      <h2>Comprendre le cadre avant toute demande</h2>
+    <section class="section" aria-labelledby="series-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Trois séries éditoriales</span>
+          <h2 id="series-title">Trois manières d’éclairer l’économie réelle.</h2>
+          <p>
+            La saison inaugurale s’organise autour de trois séries complémentaires,
+            pensées pour accueillir des prises de parole distinctes selon la nature des
+            trajectoires, des responsabilités et des lectures économiques proposées.
+          </p>
+        </div>
 
-      <p>
-        Les conversations En Plateau sont constituées principalement par approche directe. Il reste toutefois possible de porter une contribution à connaissance du comité éditorial.
-      </p>
+        <div class="series-grid">
+          <article class="series-card">
+            <span class="eyebrow">Série 01</span>
+            <h3>Les Éclaireurs</h3>
+            <p>
+              Une série consacrée aux dirigeants, investisseurs et responsables dont la parole
+              permet d’éclairer un secteur, une dynamique ou une mutation de fond.
+            </p>
+            <ul>
+              <li>Lecture sectorielle et prospective</li>
+              <li>Capacité de mise en perspective</li>
+              <li>Voix repères de l’économie contemporaine</li>
+            </ul>
+          </article>
 
-      <div class="cta">
-        <a class="btn btn-primary" href="participer.html">Signaler une contribution</a>
-        <a class="btn btn-secondary" href="a-propos.html">Comprendre le positionnement</a>
+          <article class="series-card">
+            <span class="eyebrow">Série 02</span>
+            <h3>Les Bâtisseurs</h3>
+            <p>
+              Deux émissions dans deux médias différents pour explorer deux angles d’un même sujet,
+              à partir d’acteurs engagés dans la construction concrète de l’économie.
+            </p>
+            <ul>
+              <li>Double lecture d’un même enjeu</li>
+              <li>Approche opérationnelle et stratégique</li>
+              <li>Profils au cœur de la transformation</li>
+            </ul>
+          </article>
+
+          <article class="series-card">
+            <span class="eyebrow">Série 03</span>
+            <h3>Les Architectes</h3>
+            <p>
+              Une série dédiée aux décideurs et concepteurs de cadres, d’alliances ou de trajectoires
+              qui structurent durablement l’économie européenne.
+            </p>
+            <ul>
+              <li>Vision, gouvernance et structuration</li>
+              <li>Paroles de haut niveau</li>
+              <li>Lecture des architectures économiques à venir</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" aria-labelledby="season-title">
+      <div class="container">
+        <div class="section-head left">
+          <span class="eyebrow">Saison inaugurale 2026–2027</span>
+          <h2 id="season-title">Un cadre éditorial limité, structuré et sélectif.</h2>
+          <p>
+            La première saison a été pensée comme un dispositif resserré, afin de privilégier
+            la cohérence éditoriale, la qualité des échanges et la crédibilité des premiers participants.
+          </p>
+        </div>
+
+        <div class="season-grid">
+          <div class="season-card">
+            <p>
+              EN PLATEAU n’a pas vocation à ouvrir indistinctement ses formats. La saison inaugurale
+              repose sur un nombre limité de positions éditoriales, constituées par approche directe,
+              en fonction de la pertinence des profils, des sujets et des trajectoires.
+            </p>
+
+            <div class="season-stats">
+              <div class="stat-box">
+                <strong>24</strong>
+                <span>positions éditoriales</span>
+              </div>
+              <div class="stat-box">
+                <strong>3</strong>
+                <span>séries inaugurales</span>
+              </div>
+              <div class="stat-box">
+                <strong>3</strong>
+                <span>villes de rencontres</span>
+              </div>
+            </div>
+
+            <div class="participants-strip">
+              <p>
+                Les conversations réuniront des <strong>dirigeants d’entreprises, investisseurs,
+                responsables publics et experts</strong> engagés dans les transformations
+                de l’économie européenne.
+              </p>
+            </div>
+          </div>
+
+          <div class="season-card">
+            <div class="season-timeline">
+              <div class="timeline-item">
+                <strong>Printemps 2026</strong>
+                <p>Constitution des premières positions éditoriales et identification des profils prioritaires.</p>
+              </div>
+              <div class="timeline-item">
+                <strong>Été 2026</strong>
+                <p>Validation progressive des contributions, cadrage éditorial et organisation des tournages.</p>
+              </div>
+              <div class="timeline-item">
+                <strong>Septembre 2026</strong>
+                <p>Lancement de la saison inaugurale dans les médias partenaires et dans les rencontres entre pairs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="contribution-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Contribution</span>
+          <h2 id="contribution-title">Une constitution par approche directe.</h2>
+          <p>
+            Les conversations EN PLATEAU sont constituées principalement par approche directe.
+            Chaque contribution est pensée en fonction d’un angle, d’un niveau de lecture
+            et d’une cohérence d’ensemble avec la série concernée.
+          </p>
+        </div>
+
+        <div class="contribute-card">
+          <p>
+            Le projet n’est pas conçu comme une plateforme ouverte ou un simple dispositif de visibilité.
+            Il repose sur une sélection éditoriale resserrée et sur une logique de composition.
+            Lorsqu’un profil est approché, c’est parce qu’il paraît pouvoir contribuer utilement à la qualité
+            d’une conversation, à la lecture d’un sujet ou à la constitution d’un cadre plus large.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn-primary" href="contact.html">Prendre contact</a>
+            <a class="btn-secondary" href="saison-inaugurale.html">Voir la logique de la saison</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" aria-labelledby="initiative-title">
+      <div class="container">
+        <div class="initiative-card">
+          <div class="section-head left" style="margin-bottom:0;">
+            <span class="eyebrow">L’initiative</span>
+            <h2 id="initiative-title">Un projet éditorial indépendant.</h2>
+          </div>
+
+          <p>
+            EN PLATEAU est une initiative éditoriale indépendante portée par <strong>Hocine Reguida</strong>.
+            Le projet vise à organiser des conversations économiques réunissant dirigeants,
+            investisseurs et décideurs publics autour des transformations de l’économie réelle,
+            dans des cadres médiatiques et relationnels conçus pour favoriser la qualité des échanges.
+          </p>
+
+          <div class="initiative-meta">
+            Le dispositif s’appuie sur des partenariats éditoriaux et audiovisuels pour produire
+            les conversations de la saison inaugurale.
+          </div>
+
+          <div class="cta-row">
+            <a class="btn-secondary" href="a-propos.html">Découvrir l’initiative</a>
+          </div>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <div id="site-footer"></div>
+  <footer class="site-footer">
+    <div class="inner">
+      <div>© EN PLATEAU — Conversations économiques européennes</div>
+      <div>
+        <a href="a-propos.html">À propos</a> ·
+        <a href="medias-journalistes.html">Médias & journalistes</a> ·
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
 
-  <script src="assets/js/layout.js"></script>
 </body>
 </html>
