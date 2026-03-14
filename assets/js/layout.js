@@ -19,6 +19,32 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadPartial("#site-mobile-menu", "partials/mobile-menu.html");
   await loadPartial("#site-footer", "partials/footer.html");
 
+  const burger = document.getElementById("burger");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (burger && mobileMenu) {
+    burger.addEventListener("click", () => {
+      const isOpen = mobileMenu.style.display === "block";
+      mobileMenu.style.display = isOpen ? "none" : "block";
+      burger.setAttribute("aria-expanded", String(!isOpen));
+    });
+  }
+
+  const mobileDropdownTriggers = document.querySelectorAll(".mobile-dropdown-trigger");
+
+  mobileDropdownTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const targetId = trigger.getAttribute("data-target");
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      const isOpen = target.style.display === "block";
+      target.style.display = isOpen ? "none" : "block";
+      trigger.classList.toggle("is-open", !isOpen);
+      trigger.setAttribute("aria-expanded", String(!isOpen));
+    });
+  });
+
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
   document.querySelectorAll('a[href]').forEach((link) => {
@@ -31,40 +57,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  const burger = document.getElementById("burger");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  if (burger && mobileMenu) {
-    burger.addEventListener("click", () => {
-      const isOpen = mobileMenu.classList.contains("is-open");
-      mobileMenu.classList.toggle("is-open", !isOpen);
-      burger.setAttribute("aria-expanded", String(!isOpen));
-    });
-  }
-
-  const mobileDropdownTrigger = document.querySelector(".mobile-dropdown-trigger");
-  const mobileSubmenu = document.querySelector(".mobile-submenu");
-
-  if (mobileDropdownTrigger && mobileSubmenu) {
-    mobileDropdownTrigger.addEventListener("click", () => {
-      const isOpen = mobileSubmenu.classList.contains("is-open");
-      mobileSubmenu.classList.toggle("is-open", !isOpen);
-      mobileDropdownTrigger.setAttribute("aria-expanded", String(!isOpen));
-    });
-  }
-
-  document.addEventListener("click", (event) => {
-    const clickedInsideHeader = event.target.closest(".header-wrap");
-    const clickedInsideMobileMenu = event.target.closest("#mobile-menu");
-
-    if (!clickedInsideHeader && !clickedInsideMobileMenu && mobileMenu) {
-      mobileMenu.classList.remove("is-open");
-      if (burger) {
-        burger.setAttribute("aria-expanded", "false");
-      }
-    }
-  });
-
   const seriesPages = [
     "les-eclaireurs.html",
     "les-batisseurs.html",
@@ -73,6 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   document.querySelectorAll(".nav-trigger").forEach((trigger) => {
     const label = trigger.textContent.trim();
+
     if (label.includes("Séries") && seriesPages.includes(currentPage)) {
       trigger.classList.add("active");
     }
