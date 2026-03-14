@@ -31,6 +31,40 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
+  const burger = document.getElementById("burger");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (burger && mobileMenu) {
+    burger.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.contains("is-open");
+      mobileMenu.classList.toggle("is-open", !isOpen);
+      burger.setAttribute("aria-expanded", String(!isOpen));
+    });
+  }
+
+  const mobileDropdownTrigger = document.querySelector(".mobile-dropdown-trigger");
+  const mobileSubmenu = document.querySelector(".mobile-submenu");
+
+  if (mobileDropdownTrigger && mobileSubmenu) {
+    mobileDropdownTrigger.addEventListener("click", () => {
+      const isOpen = mobileSubmenu.classList.contains("is-open");
+      mobileSubmenu.classList.toggle("is-open", !isOpen);
+      mobileDropdownTrigger.setAttribute("aria-expanded", String(!isOpen));
+    });
+  }
+
+  document.addEventListener("click", (event) => {
+    const clickedInsideHeader = event.target.closest(".header-wrap");
+    const clickedInsideMobileMenu = event.target.closest("#mobile-menu");
+
+    if (!clickedInsideHeader && !clickedInsideMobileMenu && mobileMenu) {
+      mobileMenu.classList.remove("is-open");
+      if (burger) {
+        burger.setAttribute("aria-expanded", "false");
+      }
+    }
+  });
+
   const seriesPages = [
     "les-eclaireurs.html",
     "les-batisseurs.html",
@@ -41,31 +75,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const label = trigger.textContent.trim();
     if (label.includes("Séries") && seriesPages.includes(currentPage)) {
       trigger.classList.add("active");
-    }
-  });
-
-  document.addEventListener("click", (event) => {
-    const burger = event.target.closest("#burger");
-    const mobileTrigger = event.target.closest(".mobile-dropdown-trigger");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    if (burger && mobileMenu) {
-      const isOpen = mobileMenu.classList.contains("is-open");
-      mobileMenu.classList.toggle("is-open", !isOpen);
-      burger.setAttribute("aria-expanded", String(!isOpen));
-      return;
-    }
-
-    if (mobileTrigger) {
-      const targetId = mobileTrigger.getAttribute("data-target");
-      const target = document.getElementById(targetId);
-      if (!target) return;
-
-      const isOpen = target.classList.contains("is-open");
-      target.classList.toggle("is-open", !isOpen);
-      mobileTrigger.classList.toggle("is-open", !isOpen);
-      mobileTrigger.setAttribute("aria-expanded", String(!isOpen));
-      return;
     }
   });
 });
