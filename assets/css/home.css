@@ -93,10 +93,6 @@ SECTION HEAD
   text-align:center;
 }
 
-.section-head.compact{
-  margin-bottom:12px;
-}
-
 .section-intro{
   margin:0 auto;
   font-size:18px;
@@ -106,6 +102,26 @@ SECTION HEAD
 
 .section-intro.narrow{
   max-width:620px;
+}
+
+/* -------------------------
+TEXT BLOCKS
+------------------------- */
+
+.section-text-block{
+  max-width:760px;
+  margin:0 auto;
+}
+
+.section-text-block p{
+  margin:0;
+  font-size:18px;
+  line-height:1.8;
+  color:var(--slate);
+}
+
+.section-text-block p + p{
+  margin-top:18px;
 }
 
 /* -------------------------
@@ -318,6 +334,12 @@ RESPONSIVE
 
   .media-logos img{
     height:20px;
+  }
+
+  .section-intro,
+  .section-text-block p{
+    font-size:17px;
+    line-height:1.74;
   }
 
   .positions-section,
