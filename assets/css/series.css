@@ -4,131 +4,185 @@ Styles spécifiques aux pages de séries éditoriales
 (Les Éclaireurs, Les Bâtisseurs, Les Architectes)
 ====================================================== */
 
-
-/* =========================
+/* -------------------------
 HERO
-========================= */
+------------------------- */
 
 .hero{
   margin:28px 0 0;
 }
 
-.hero-inner{
-  max-width:760px;
+.hero.hero-editorial .hero-inner{
+  max-width:none;
   margin:0 auto;
-  text-align:center;
+  padding:60px 28px 70px;
+  text-align:left;
 }
 
-.hero-rule{
-  width:100%;
-  max-width:760px;
-  height:1px;
-  margin:38px auto 0;
-  background:rgba(255,255,255,.24);
-}
-
-.series-strap{
-  margin:4px auto 14px;
-  font-size:14px;
-  line-height:1.5;
+.series-kicker{
+  margin:0 0 18px;
+  font-size:11px;
+  line-height:1.4;
   font-weight:800;
-  letter-spacing:.06em;
-  text-transform:none;
-  color:rgba(255,255,255,.82);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.80);
 }
 
-
-/* =========================
-HERO HIGHLIGHT
-========================= */
-
-.hero-highlight{
-  background:#fff;
-  text-align:center;
-  border-top:1px solid #E6E6E6;
-  padding:36px 28px 40px;
+.hero.hero-editorial h1{
+  max-width:18ch;
+  margin:0 0 16px;
 }
 
-.hero-highlight.has-cta{
-  padding-bottom:44px;
-}
-
-.hero-highlight.no-cta{
-  padding-bottom:34px;
-}
-
-.hero-highlight p{
-  max-width:640px;
-  margin:0 auto;
+.hero.hero-editorial .subhead{
+  max-width:620px;
+  margin:0 0 18px;
   font-size:17px;
-  line-height:1.66;
+  line-height:1.68;
+  font-weight:500;
+  color:rgba(255,255,255,.92);
+}
+
+.hero.hero-editorial .hero-rule{
+  width:100%;
+  max-width:120px;
+  height:1px;
+  margin:30px 0 0;
+  background:rgba(255,255,255,.18);
+}
+
+/* -------------------------
+INTRO SERIES
+------------------------- */
+
+.series-intro{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  margin:28px 0 26px;
+  padding:56px 32px;
+  text-align:left;
+}
+
+.series-intro h2{
+  max-width:760px;
+  margin:0 0 18px;
+}
+
+.series-intro p{
+  max-width:760px;
+  margin:0;
+  font-size:18px;
+  line-height:1.78;
   color:var(--slate);
 }
 
-.hero-places{
-  margin:14px auto 20px;
-  font-size:12px;
-  line-height:1.5;
-  font-weight:800;
-  letter-spacing:.28em;
-  text-transform:uppercase;
+.series-intro p + p{
+  margin-top:18px;
+}
+
+/* -------------------------
+PREUVE / MÉDIAS
+------------------------- */
+
+.proof-block{
+  background:#fff;
+  text-align:center;
+  padding:26px 20px 14px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:28px;
+}
+
+.media-stack{
+  max-width:760px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.media-kicker{
   color:var(--muted);
-}
-
-
-/* =========================
-BLOC MEDIAS DANS LES SERIES
-on s'aligne sur le rendu premium
-========================= */
-
-.hero-highlight .media-stack{
-  max-width:900px;
-  margin:0 auto 8px;
-}
-
-.hero-highlight .media-kicker{
-  margin:0 0 24px;
+  margin:0 0 22px;
   font-size:12px;
   letter-spacing:.18em;
   text-transform:uppercase;
-  color:var(--muted);
+  text-align:center;
 }
 
-.hero-highlight .media-logos{
+.media-logos{
   display:flex;
   justify-content:center;
   align-items:center;
+  gap:36px;
   flex-wrap:nowrap;
-  gap:26px;
   width:100%;
   max-width:760px;
-  margin:0 auto 18px;
+  margin:0 auto;
   padding:0;
 }
 
-.hero-highlight .media-logos img{
-  height:20px;
+.media-logos img{
+  height:26px;
   width:auto;
   max-width:100%;
-  opacity:.88;
-  filter:grayscale(100%);
+  opacity:.9;
+  filter:none;
+  transition:opacity .2s ease, transform .2s ease;
 }
 
-
-/* =========================
-CONTAINER PLUS ÉTROIT
-========================= */
-
-.narrow{
-  max-width:760px;
-  margin-left:auto;
-  margin-right:auto;
+.media-logos img:hover{
+  opacity:1;
+  transform:translateY(-1px);
 }
 
+/* -------------------------
+SECTION HEAD
+------------------------- */
 
-/* =========================
+.section-head{
+  margin:0 0 18px;
+}
+
+.section-head.centered{
+  text-align:center;
+}
+
+.section-intro{
+  margin:0 auto;
+  font-size:18px;
+  line-height:1.7;
+  color:var(--ink);
+  font-weight:500;
+  text-align:center;
+}
+
+.section-intro.narrow{
+  max-width:560px;
+}
+
+/* -------------------------
+TEXT BLOCKS
+------------------------- */
+
+.section-text-block{
+  max-width:640px;
+  margin:30px auto 0;
+  text-align:center;
+}
+
+.section-text-block p{
+  margin:0;
+  font-size:16px;
+  line-height:1.8;
+  color:var(--slate);
+}
+
+.section-text-block p + p{
+  margin-top:16px;
+}
+
+/* -------------------------
 SECTIONS SERIES
-========================= */
+------------------------- */
 
 .section h2{
   text-align:center;
@@ -139,10 +193,19 @@ SECTIONS SERIES
   text-align:left;
 }
 
-
-/* =========================
+/* -------------------------
 RESPONSIVE
-========================= */
+------------------------- */
+
+@media(max-width:820px){
+
+  .grid-2,
+  .grid-3,
+  .grid-4{
+    grid-template-columns:1fr;
+  }
+
+}
 
 @media(max-width:700px){
 
@@ -150,54 +213,90 @@ RESPONSIVE
     margin-top:22px;
   }
 
-  .hero-rule{
-    margin-top:32px;
+  .hero.hero-editorial .hero-inner{
+    padding:40px 22px 46px;
   }
 
-  .series-strap{
-    margin:2px auto 12px;
-    font-size:13px;
-    line-height:1.45;
+  .hero.hero-editorial h1{
+    font-size:clamp(32px,8vw,42px);
+    max-width:18ch;
+    line-height:1.12;
+    margin-bottom:18px;
   }
 
-  .hero-highlight{
-    padding:30px 20px 34px;
+  .hero.hero-editorial .subhead{
+    font-size:15px;
+    line-height:1.68;
+    max-width:25rem;
   }
 
-  .hero-highlight.has-cta{
-    padding-bottom:38px;
+  .hero.hero-editorial .hero-rule{
+    margin-top:30px;
   }
 
-  .hero-highlight.no-cta{
-    padding-bottom:30px;
+  .series-kicker{
+    margin:0 0 14px;
+    font-size:10px;
+    line-height:1.4;
+    letter-spacing:.16em;
   }
 
-  .hero-highlight p{
-    max-width:30rem;
-    font-size:16px;
-    line-height:1.6;
+  .series-intro{
+    margin:24px 0 24px;
+    padding:38px 20px;
   }
 
-  .hero-places{
-    margin:12px auto 18px;
-    font-size:11px;
-    letter-spacing:.18em;
-  }
-
-  .hero-highlight .media-kicker{
-    margin-bottom:20px;
-    font-size:11px;
-    letter-spacing:.15em;
-  }
-
-  .hero-highlight .media-logos{
-    gap:14px;
-    max-width:100%;
+  .series-intro h2{
     margin-bottom:16px;
+    max-width:none;
   }
 
-  .hero-highlight .media-logos img{
-    height:16px;
+  .series-intro p{
+    max-width:none;
+    font-size:17px;
+    line-height:1.74;
   }
 
+  .proof-block{
+    padding:22px 20px 10px;
+    margin-bottom:20px;
+  }
+
+  .media-kicker{
+    margin-bottom:18px;
+    font-size:11px;
+    letter-spacing:.16em;
+  }
+
+  .media-logos{
+    gap:22px;
+    max-width:100%;
+  }
+
+  .media-logos img{
+    height:20px;
+  }
+
+  .section-intro{
+    font-size:17px;
+    line-height:1.68;
+  }
+
+  .section-intro.narrow{
+    max-width:100%;
+  }
+
+  .section-text-block{
+    max-width:100%;
+    margin:24px auto 0;
+  }
+
+  .section-text-block p{
+    font-size:15px;
+    line-height:1.76;
+  }
+
+  .section-text-block p + p{
+    margin-top:14px;
+  }
 }
