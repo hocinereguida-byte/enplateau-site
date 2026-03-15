@@ -1,268 +1,519 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+/* ======================================================
+EN PLATEAU — SERIES
+Styles spécifiques aux pages de séries éditoriales
+(Les Éclaireurs, Les Bâtisseurs, Les Architectes)
+====================================================== */
 
-  <title>En Plateau — La série éditoriale Les Éclaireurs</title>
+/* -------------------------
+HERO
+------------------------- */
 
-  <meta
-    name="description"
-    content="La série éditoriale Les Éclaireurs structure une conversation économique à travers 1 sujet, 4 angles, 4 intervenants et 4 médias dans le cadre de la saison inaugurale d’En Plateau.">
+.hero{
+  margin:28px 0 0;
+}
 
-  <meta
-    name="keywords"
-    content="En Plateau, Les Éclaireurs, série éditoriale, conseil stratégique, avocats d'affaires, banques d'affaires, fonds d'investissement, économie réelle">
+.hero.hero-editorial .hero-inner{
+  max-width:none;
+  margin:0 auto;
+  padding:60px 28px 70px;
+  text-align:left;
+}
 
-  <link rel="canonical" href="https://enplateau.fr/les-eclaireurs.html">
+.series-kicker{
+  margin:0 0 18px;
+  font-size:11px;
+  line-height:1.4;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.80);
+}
 
-  <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0F2747">
+.hero.hero-editorial h1{
+  max-width:14ch;
+  margin:0 0 18px;
+}
 
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:site_name" content="En Plateau">
-  <meta property="og:title" content="En Plateau — La série éditoriale Les Éclaireurs">
-  <meta
-    property="og:description"
-    content="1 conversation, 4 angles, 4 intervenants, 4 médias : la série éditoriale Les Éclaireurs éclaire une transformation économique à travers plusieurs prises de parole et des rencontres entre pairs.">
-  <meta property="og:url" content="https://enplateau.fr/les-eclaireurs.html">
-  <meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
+.hero.hero-editorial .subhead{
+  max-width:640px;
+  margin:0 0 18px;
+  font-size:17px;
+  line-height:1.7;
+  font-weight:500;
+  color:rgba(255,255,255,.92);
+}
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="En Plateau — La série éditoriale Les Éclaireurs">
-  <meta
-    name="twitter:description"
-    content="La série éditoriale Les Éclaireurs organise une conversation économique à travers quatre angles, quatre intervenants et quatre environnements éditoriaux.">
-  <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
+.hero.hero-editorial .hero-rule{
+  width:100%;
+  max-width:120px;
+  height:1px;
+  margin:30px 0 0;
+  background:rgba(255,255,255,.18);
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+/* -------------------------
+PREUVE / MÉDIAS
+------------------------- */
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&display=swap" rel="stylesheet">
+.proof-block{
+  background:#fff;
+  text-align:center;
+  padding:26px 20px 14px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:28px;
+}
 
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/editorial.css">
-  <link rel="stylesheet" href="assets/css/series.css">
-</head>
+.media-stack{
+  max-width:760px;
+  margin:0 auto;
+  text-align:center;
+}
 
-<body>
+.media-kicker{
+  color:var(--muted);
+  margin:0 0 22px;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  text-align:center;
+}
 
-  <div id="site-header"></div>
-  <div id="site-mobile-menu"></div>
+.media-logos{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:36px;
+  flex-wrap:nowrap;
+  width:100%;
+  max-width:760px;
+  margin:0 auto;
+  padding:0;
+}
 
-  <main class="container">
+.media-logos img{
+  height:26px;
+  width:auto;
+  max-width:100%;
+  opacity:.9;
+  filter:none;
+  transition:opacity .2s ease, transform .2s ease;
+}
 
-    <!-- HERO -->
+.media-logos img:hover{
+  opacity:1;
+  transform:translateY(-1px);
+}
 
-    <section class="hero hero-editorial">
-      <div class="hero-inner">
+/* -------------------------
+INTRO SERIES
+------------------------- */
 
-        <div class="season-badge">
-          Saison inaugurale — septembre 2026
-        </div>
+.series-intro{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  margin:28px 0 26px;
+  padding:56px 32px;
+  text-align:left;
+}
 
-        <div class="series-kicker">
-          La série éditoriale Les Éclaireurs
-        </div>
+.series-intro h2{
+  max-width:760px;
+  margin:0 0 18px;
+}
 
-        <h1>
-          1 conversation. 4 angles. 4 intervenants. 4 médias.
-        </h1>
+.series-intro p{
+  max-width:760px;
+  margin:0;
+  font-size:18px;
+  line-height:1.78;
+  color:var(--slate);
+}
 
-        <p class="subhead">
-          La série éditoriale Les Éclaireurs réunit des acteurs du conseil, du droit et de la finance dont la parole éclaire une transformation économique précise.
-        </p>
+.series-intro p + p{
+  margin-top:18px;
+}
 
-        <div class="hero-links" aria-label="Accès rapides">
-          <a class="hero-link hero-link-primary" href="participer.html">Recevoir la présentation détaillée</a>
-          <a class="hero-link hero-link-secondary" href="a-propos.html">Comprendre le positionnement</a>
-        </div>
+/* -------------------------
+SECTION HEAD
+------------------------- */
 
-        <div class="hero-rule" aria-hidden="true"></div>
+.section-head{
+  margin:0 0 18px;
+}
 
-      </div>
-    </section>
+.section-head.centered{
+  text-align:center;
+}
 
-    <!-- MÉDIAS -->
+.section-intro{
+  margin:0 auto;
+  font-size:18px;
+  line-height:1.7;
+  color:var(--ink);
+  font-weight:500;
+  text-align:center;
+}
 
-    <section class="proof-block">
-      <div class="media-stack">
-        <p class="media-kicker">
-          Des conversations dans des environnements éditoriaux
-        </p>
+.section-intro.narrow{
+  max-width:560px;
+}
 
-        <div class="media-logos">
-          <img src="images/bfm-business.svg" alt="BFM Business">
-          <img src="images/la-tribune.svg" alt="La Tribune">
-          <img src="images/forbes.svg" alt="Forbes">
-          <img src="images/le-figaro.svg" alt="Le Figaro">
-        </div>
-      </div>
-    </section>
+/* -------------------------
+TEXT BLOCKS
+------------------------- */
 
-    <!-- DOUBLE CADRE DE CONVERSATION -->
+.section-text-block{
+  max-width:640px;
+  margin:30px auto 0;
+  text-align:center;
+}
 
-    <section class="section section-soft">
-      <div class="section-head centered">
-        <h2>Un double cadre de conversation</h2>
-        <p class="section-intro narrow">
-          Une prise de parole éditoriale dans les médias, puis une prise de parole en physique entre pairs.
-        </p>
-      </div>
+.section-text-block p{
+  margin:0;
+  font-size:16px;
+  line-height:1.8;
+  color:var(--slate);
+}
 
-      <div class="conversation-frame">
-        <p>
-          Les interventions de la série Les Éclaireurs prennent d’abord la forme de prises de parole enregistrées en studio, dans plusieurs environnements éditoriaux.
-        </p>
+.section-text-block p + p{
+  margin-top:16px;
+}
 
-        <p>
-          Elles trouvent ensuite un second niveau d’expression lors de rencontres organisées à Paris, Bruxelles ou Genève, réunissant un nombre limité d’acteurs économiques invités.
-        </p>
+/* -------------------------
+CONVERSATION FRAME
+------------------------- */
 
-        <p>
-          À cette occasion, les intervenants échangent directement entre pairs, avec des questions-réponses et des discussions approfondies autour des transformations abordées dans la série.
-        </p>
+.conversation-frame{
+  max-width:640px;
+  margin:30px auto 0;
+  text-align:center;
+}
 
-        <p>
-          Les émissions sont ensuite diffusées.
-        </p>
-      </div>
-    </section>
+.conversation-frame p{
+  margin:0;
+  font-size:16px;
+  line-height:1.8;
+  color:var(--slate);
+}
 
-    <!-- PRINCIPE DE LA SÉRIE -->
+.conversation-frame p + p{
+  margin-top:16px;
+}
 
-    <section class="series-intro">
-      <h2>
-        Le principe de la série
-      </h2>
+/* -------------------------
+CONVERSATION EN PRÉPARATION
+------------------------- */
 
-      <p>
-        Chaque conversation de la série Les Éclaireurs est construite autour d’un sujet précis, exploré à travers quatre angles complémentaires et porté par quatre intervenants dans quatre médias distincts.
-      </p>
+.conversation-block{
+  max-width:760px;
+  margin:0 auto;
+}
 
-      <p>
-        L’objectif n’est pas de juxtaposer des prises de parole, mais d’organiser une lecture plus nette d’une transformation économique à travers plusieurs conversations éditoriales.
-      </p>
-    </section>
+.conversation-title{
+  max-width:660px;
+  margin:0 auto 18px;
+  font-family:"Bitter",serif;
+  font-size:clamp(26px,4vw,38px);
+  line-height:1.08;
+  letter-spacing:-0.025em;
+  color:var(--ink);
+  text-align:center;
+}
 
-    <!-- CONVERSATION EN PRÉPARATION -->
+.conversation-problem{
+  max-width:620px;
+  margin:0 auto 18px;
+  font-size:17px;
+  line-height:1.74;
+  color:var(--slate);
+  text-align:center;
+}
 
-    <section class="section section-soft-3">
-      <div class="section-head centered">
-        <h2>Conversation en préparation</h2>
-        <p class="section-intro narrow">
-          Un exemple de conversation actuellement en cours de structuration dans la série Les Éclaireurs.
-        </p>
-      </div>
+.conversation-status{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin:0 auto 30px;
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(15,39,71,.08);
+  color:var(--sig);
+  font-size:11px;
+  line-height:1.2;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
 
-      <div class="conversation-block">
-        <h3 class="conversation-title">
-          Intelligence artificielle, gouvernance et transformation des organisations
-        </h3>
+.conversation-status::before{
+  content:"";
+  width:7px;
+  height:7px;
+  border-radius:999px;
+  background:var(--sig);
+  display:inline-block;
+}
 
-        <p class="conversation-problem">
-          Comment l’intelligence artificielle transforme les décisions stratégiques, les cadres juridiques et les arbitrages d’investissement des organisations européennes.
-        </p>
+.angle-list{
+  display:grid;
+  gap:24px;
+  margin-top:0;
+}
 
-        <p class="conversation-status">
-          Positions actuellement ouvertes — sélection éditoriale finalisée le 30 avril.
-        </p>
+@media(min-width:900px){
+  .angle-list{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
 
-        <div class="angle-list">
+.angle-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:26px;
+  text-align:left;
+}
 
-          <article class="angle-card">
-            <span class="angle-media">BFM Business</span>
-            <h3>Transformation technologique</h3>
-            <p>
-              Impact opérationnel de l’intelligence artificielle sur les organisations et les stratégies d’innovation.
-            </p>
-            <p class="angle-actors">
-              <strong>Acteurs pressentis :</strong> associés de cabinets de conseil spécialisés en transformation technologique.
-            </p>
-          </article>
+.angle-media{
+  display:inline-block;
+  margin:0 0 14px;
+  padding:0 0 8px;
+  border-bottom:1px solid var(--ink);
+  font-size:11px;
+  line-height:1.4;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--ink);
+}
 
-          <article class="angle-card">
-            <span class="angle-media">Le Figaro</span>
-            <h3>Gouvernance et droit</h3>
-            <p>
-              Cadre juridique, responsabilité et gouvernance de l’intelligence artificielle.
-            </p>
-            <p class="angle-actors">
-              <strong>Acteurs pressentis :</strong> associés de cabinets d’avocats d’affaires internationaux.
-            </p>
-          </article>
+.angle-card h3{
+  margin:0 0 12px;
+  font-size:22px;
+  line-height:1.14;
+}
 
-          <article class="angle-card">
-            <span class="angle-media">La Tribune</span>
-            <h3>Transformation des marchés</h3>
-            <p>
-              Effets de l’intelligence artificielle sur les modèles économiques et les dynamiques sectorielles.
-            </p>
-            <p class="angle-actors">
-              <strong>Acteurs pressentis :</strong> associés de cabinets de conseil stratégique ou analystes sectoriels.
-            </p>
-          </article>
+.angle-card p{
+  margin:0 0 14px;
+  font-size:15px;
+  line-height:1.74;
+  color:var(--muted);
+}
 
-          <article class="angle-card">
-            <span class="angle-media">Forbes</span>
-            <h3>Capital et stratégie</h3>
-            <p>
-              Impact sur les décisions d’investissement et les stratégies de croissance.
-            </p>
-            <p class="angle-actors">
-              <strong>Acteurs pressentis :</strong> banquiers d’affaires ou associés de fonds d’investissement.
-            </p>
-          </article>
+.angle-actors{
+  margin:0;
+  font-size:14px;
+  line-height:1.7;
+  color:var(--ink);
+}
 
-        </div>
-      </div>
-    </section>
+.angle-actors strong{
+  font-weight:800;
+  color:var(--ink);
+}
 
-    <!-- AUTRES SÉRIES -->
+/* -------------------------
+SECTIONS SERIES
+------------------------- */
 
-    <section class="section section-white">
-      <div class="section-head centered">
-        <h2>Autres conversations en préparation</h2>
-        <p class="section-intro narrow">
-          La série Les Éclaireurs fait partie d’un programme éditorial plus large actuellement en cours de constitution.
-        </p>
-      </div>
+.section h2{
+  text-align:center;
+}
 
-      <div class="section-text-block">
-        <p>
-          D’autres séries sont en préparation autour de transformations économiques majeures.
-        </p>
+.section .measure,
+.section .narrow{
+  text-align:left;
+}
 
-        <p>
-          La présentation détaillée permet de découvrir les conversations en préparation, les angles retenus, les environnements éditoriaux associés et le cadre de participation.
-        </p>
-      </div>
-    </section>
+/* -------------------------
+FINAL
+------------------------- */
 
-    <!-- CTA FINAL -->
+.final .final-intro{
+  max-width:640px;
+  margin:0 auto 20px;
+  font-size:17px;
+  line-height:1.76;
+  color:rgba(255,255,255,.92);
+}
 
-    <section class="final">
-      <h2>Recevoir la présentation détaillée</h2>
+.final .final-intro + .final-intro{
+  margin-top:-4px;
+}
 
-      <p class="final-intro">
-        Si vous avez été approché dans le cadre d’une conversation relevant de la série Les Éclaireurs, vous pouvez demander la présentation détaillée correspondante.
-      </p>
+.final .cta{
+  margin-top:28px;
+}
 
-      <p class="final-intro">
-        Cette présentation permet notamment de découvrir la conversation mentionnée sur cette page ainsi que les autres séries actuellement en préparation.
-      </p>
+/* -------------------------
+RESPONSIVE
+------------------------- */
 
-      <div class="cta">
-        <a class="btn btn-primary" href="participer.html">Recevoir la présentation détaillée</a>
-      </div>
-    </section>
+@media(max-width:820px){
 
-  </main>
+  .grid-2,
+  .grid-3,
+  .grid-4{
+    grid-template-columns:1fr;
+  }
+}
 
-  <div id="site-footer"></div>
+@media(max-width:700px){
 
-  <script src="assets/js/layout.js"></script>
-</body>
-</html>
+  .hero{
+    margin-top:22px;
+  }
+
+  .hero.hero-editorial .hero-inner{
+    padding:40px 22px 46px;
+  }
+
+  .hero.hero-editorial h1{
+    font-size:clamp(32px,8vw,42px);
+    max-width:13ch;
+    line-height:1.1;
+    margin-bottom:18px;
+  }
+
+  .hero.hero-editorial .subhead{
+    font-size:15px;
+    line-height:1.68;
+    max-width:25rem;
+  }
+
+  .hero.hero-editorial .hero-rule{
+    margin-top:30px;
+  }
+
+  .series-kicker{
+    margin:0 0 14px;
+    font-size:10px;
+    line-height:1.4;
+    letter-spacing:.16em;
+  }
+
+  .proof-block{
+    padding:22px 20px 10px;
+    margin-bottom:20px;
+  }
+
+  .media-kicker{
+    margin-bottom:18px;
+    font-size:11px;
+    letter-spacing:.16em;
+  }
+
+  .media-logos{
+    gap:22px;
+    max-width:100%;
+  }
+
+  .media-logos img{
+    height:20px;
+  }
+
+  .series-intro{
+    margin:24px 0 24px;
+    padding:38px 20px;
+  }
+
+  .series-intro h2{
+    margin-bottom:16px;
+    max-width:none;
+  }
+
+  .series-intro p{
+    max-width:none;
+    font-size:17px;
+    line-height:1.74;
+  }
+
+  .section-intro{
+    font-size:17px;
+    line-height:1.68;
+  }
+
+  .section-intro.narrow{
+    max-width:100%;
+  }
+
+  .section-text-block{
+    max-width:100%;
+    margin:24px auto 0;
+  }
+
+  .section-text-block p{
+    font-size:15px;
+    line-height:1.76;
+  }
+
+  .section-text-block p + p{
+    margin-top:14px;
+  }
+
+  .conversation-frame{
+    max-width:100%;
+    margin:24px auto 0;
+  }
+
+  .conversation-frame p{
+    font-size:15px;
+    line-height:1.76;
+  }
+
+  .conversation-frame p + p{
+    margin-top:14px;
+  }
+
+  .conversation-title{
+    max-width:100%;
+    margin-bottom:14px;
+    font-size:clamp(24px,7vw,32px);
+    line-height:1.1;
+  }
+
+  .conversation-problem{
+    max-width:100%;
+    margin-bottom:14px;
+    font-size:16px;
+    line-height:1.72;
+  }
+
+  .conversation-status{
+    margin-bottom:24px;
+    font-size:10px;
+    letter-spacing:.11em;
+  }
+
+  .angle-list{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .angle-card{
+    padding:22px;
+  }
+
+  .angle-card h3{
+    font-size:20px;
+    line-height:1.16;
+  }
+
+  .angle-card p{
+    font-size:15px;
+    line-height:1.72;
+  }
+
+  .angle-actors{
+    font-size:14px;
+    line-height:1.66;
+  }
+
+  .final .final-intro{
+    max-width:100%;
+    font-size:15px;
+    line-height:1.72;
+    margin-bottom:18px;
+  }
+}
