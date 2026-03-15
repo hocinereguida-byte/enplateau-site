@@ -181,6 +181,118 @@ TEXT BLOCKS
 }
 
 /* -------------------------
+LISTES ÉDITORIALES
+------------------------- */
+
+.editorial-list{
+  max-width:640px;
+  margin:24px auto 0;
+  padding:0;
+  list-style:none;
+  text-align:center;
+}
+
+.editorial-list li{
+  margin:0;
+  padding:10px 0;
+  font-size:16px;
+  line-height:1.7;
+  color:var(--slate);
+  border-top:1px solid var(--line);
+}
+
+.editorial-list li:last-child{
+  border-bottom:1px solid var(--line);
+}
+
+/* -------------------------
+CONVERSATION EN PRÉPARATION
+------------------------- */
+
+.conversation-block{
+  max-width:760px;
+  margin:0 auto;
+}
+
+.conversation-title{
+  max-width:760px;
+  margin:0 auto 18px;
+  font-family:"Bitter",serif;
+  font-size:clamp(28px,4vw,40px);
+  line-height:1.08;
+  letter-spacing:-0.02em;
+  color:var(--ink);
+  text-align:center;
+}
+
+.conversation-problem{
+  max-width:640px;
+  margin:0 auto 34px;
+  font-size:17px;
+  line-height:1.78;
+  color:var(--slate);
+  text-align:center;
+}
+
+.angle-list{
+  display:grid;
+  gap:24px;
+  margin-top:24px;
+}
+
+@media(min-width:900px){
+  .angle-list{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+.angle-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:26px;
+  text-align:left;
+}
+
+.angle-card h3{
+  margin:0 0 10px;
+  font-size:24px;
+  line-height:1.12;
+}
+
+.angle-media{
+  display:inline-block;
+  margin:0 0 14px;
+  padding:0 0 8px;
+  border-bottom:1px solid var(--ink);
+  font-size:11px;
+  line-height:1.4;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--ink);
+}
+
+.angle-card p{
+  margin:0 0 14px;
+  font-size:15px;
+  line-height:1.75;
+  color:var(--muted);
+}
+
+.angle-actors{
+  margin:0;
+  font-size:14px;
+  line-height:1.7;
+  color:var(--ink);
+}
+
+.angle-actors strong{
+  font-weight:800;
+  color:var(--ink);
+}
+
+/* -------------------------
 SECTIONS SERIES
 ------------------------- */
 
@@ -194,6 +306,47 @@ SECTIONS SERIES
 }
 
 /* -------------------------
+DOUBLE CADRE DE CONVERSATION
+------------------------- */
+
+.conversation-frame{
+  max-width:640px;
+  margin:30px auto 0;
+  text-align:center;
+}
+
+.conversation-frame p{
+  margin:0;
+  font-size:16px;
+  line-height:1.8;
+  color:var(--slate);
+}
+
+.conversation-frame p + p{
+  margin-top:16px;
+}
+
+/* -------------------------
+CTA FINAL ÉDITORIAL
+------------------------- */
+
+.final .final-intro{
+  max-width:640px;
+  margin:0 auto 24px;
+  font-size:17px;
+  line-height:1.76;
+  color:rgba(255,255,255,.92);
+}
+
+.final .final-intro + .final-intro{
+  margin-top:-6px;
+}
+
+.final .cta{
+  margin-top:28px;
+}
+
+/* -------------------------
 RESPONSIVE
 ------------------------- */
 
@@ -204,7 +357,6 @@ RESPONSIVE
   .grid-4{
     grid-template-columns:1fr;
   }
-
 }
 
 @media(max-width:700px){
@@ -298,5 +450,75 @@ RESPONSIVE
 
   .section-text-block p + p{
     margin-top:14px;
+  }
+
+  .editorial-list{
+    max-width:100%;
+    margin-top:20px;
+  }
+
+  .editorial-list li{
+    font-size:15px;
+    line-height:1.68;
+    padding:9px 0;
+  }
+
+  .conversation-title{
+    font-size:clamp(24px,7vw,32px);
+    line-height:1.12;
+    margin-bottom:16px;
+  }
+
+  .conversation-problem{
+    max-width:100%;
+    margin-bottom:26px;
+    font-size:16px;
+    line-height:1.72;
+  }
+
+  .angle-list{
+    grid-template-columns:1fr;
+    gap:18px;
+    margin-top:20px;
+  }
+
+  .angle-card{
+    padding:22px;
+  }
+
+  .angle-card h3{
+    font-size:21px;
+    line-height:1.16;
+  }
+
+  .angle-card p{
+    font-size:15px;
+    line-height:1.72;
+  }
+
+  .angle-actors{
+    font-size:14px;
+    line-height:1.66;
+  }
+
+  .conversation-frame{
+    max-width:100%;
+    margin:24px auto 0;
+  }
+
+  .conversation-frame p{
+    font-size:15px;
+    line-height:1.76;
+  }
+
+  .conversation-frame p + p{
+    margin-top:14px;
+  }
+
+  .final .final-intro{
+    max-width:100%;
+    font-size:15px;
+    line-height:1.72;
+    margin-bottom:18px;
   }
 }
