@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="En Plateau réunit dirigeants, investisseurs, experts et décideurs publics autour de conversations économiques consacrées aux grandes transformations de l’économie réelle en France, Belgique, Suisse et Luxembourg."
+    content="En Plateau réunit dirigeants, investisseurs, experts, responsables associatifs et décideurs publics autour de conversations économiques consacrées aux grandes transformations de l’économie réelle en France, Belgique, Suisse et Luxembourg."
   >
 
   <link rel="canonical" href="https://enplateau.fr/">
@@ -22,7 +22,7 @@
   <meta property="og:title" content="En Plateau — Conversations économiques">
   <meta
     property="og:description"
-    content="En Plateau réunit dirigeants, investisseurs, experts et décideurs publics autour de conversations économiques consacrées aux grandes transformations de l’économie réelle en France, Belgique, Suisse et Luxembourg."
+    content="En Plateau réunit dirigeants, investisseurs, experts, responsables associatifs et décideurs publics autour de conversations économiques consacrées aux grandes transformations de l’économie réelle en France, Belgique, Suisse et Luxembourg."
   >
   <meta property="og:url" content="https://enplateau.fr/">
   <meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
@@ -31,7 +31,7 @@
   <meta name="twitter:title" content="En Plateau — Conversations économiques">
   <meta
     name="twitter:description"
-    content="En Plateau réunit dirigeants, investisseurs, experts et décideurs publics autour de conversations économiques consacrées aux grandes transformations de l’économie réelle en France, Belgique, Suisse et Luxembourg."
+    content="En Plateau réunit dirigeants, investisseurs, experts, responsables associatifs et décideurs publics autour de conversations économiques consacrées aux grandes transformations de l’économie réelle en France, Belgique, Suisse et Luxembourg."
   >
   <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
 
@@ -62,6 +62,18 @@
 
     .home-conversations .card p{
       margin-bottom:0;
+    }
+
+    .home-conversations .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .home-conversations .pill::before{
+      content:"Série";
+      font-size:.78em;
+      opacity:.8;
     }
 
     .founder-home p:last-child{
@@ -127,7 +139,7 @@
         </h1>
 
         <p class="subhead">
-          Des dirigeants, investisseurs, experts et décideurs publics réunis dans un programme de conversations économiques francophones consacré aux grandes transformations de l’économie réelle.
+          Des dirigeants, investisseurs, experts, responsables associatifs et décideurs publics réunis dans un programme de conversations économiques francophones consacré aux grandes transformations de l’économie réelle.
         </p>
 
         <p class="hero-note">
@@ -135,7 +147,7 @@
         </p>
 
         <div class="hero-links" aria-label="Accès rapides">
-          <a class="hero-link hero-link-primary" href="participer.html">Recevoir la présentation détaillée</a>
+          <a class="hero-link hero-link-primary" href="participer.html#approche">Recevoir la présentation détaillée</a>
           <a class="hero-link hero-link-secondary" href="participer.html#signaler">Signaler une contribution</a>
         </div>
 
@@ -186,7 +198,7 @@
             <li>Transformation des systèmes de services</li>
             <li>Souveraineté économique et régulation</li>
           </ul>
-          <a class="link" href="les-architectes.html">Découvrir la série Architectes</a>
+          <a class="link" href="les-architectes.html#conversation-ia">Découvrir la conversation</a>
         </article>
 
         <article class="card">
@@ -201,7 +213,7 @@
             <li>Technologies industrielles et équipements</li>
             <li>Logistique et circulation des biens</li>
           </ul>
-          <a class="link" href="les-batisseurs.html">Découvrir la série Bâtisseurs</a>
+          <a class="link" href="les-batisseurs.html#conversation-reindustrialiser">Découvrir la conversation</a>
         </article>
 
         <article class="card">
@@ -216,7 +228,7 @@
             <li>Innovation médicale</li>
             <li>Financement de la santé</li>
           </ul>
-          <a class="link" href="les-eclaireurs.html">Découvrir la série Éclaireurs</a>
+          <a class="link" href="les-eclaireurs.html#conversation-sante">Découvrir la conversation</a>
         </article>
 
         <article class="card featured">
@@ -231,7 +243,7 @@
             <li>Financement des infrastructures</li>
             <li>Souveraineté énergétique européenne</li>
           </ul>
-          <a class="link" href="les-architectes.html">Découvrir la série Architectes</a>
+          <a class="link" href="les-architectes.html#conversation-energie">Découvrir la conversation</a>
         </article>
 
         <article class="card">
@@ -246,7 +258,7 @@
             <li>Technologies logistiques et pilotage</li>
             <li>Résilience des chaînes d’approvisionnement</li>
           </ul>
-          <a class="link" href="les-batisseurs.html">Découvrir la série Bâtisseurs</a>
+          <a class="link" href="les-batisseurs.html#conversation-logistique">Découvrir la conversation</a>
         </article>
 
         <article class="card">
@@ -261,7 +273,7 @@
             <li>Investissement et innovation</li>
             <li>Gouvernance financière</li>
           </ul>
-          <a class="link" href="les-eclaireurs.html">Découvrir la série Éclaireurs</a>
+          <a class="link" href="les-eclaireurs.html#conversation-financement">Découvrir la conversation</a>
         </article>
 
       </div>
@@ -347,27 +359,15 @@
 
       <div class="section-text-block narrow founder-home">
         <p>
-          En Plateau est une initiative fondée par <strong>Hocine Reguida</strong>.
+          Les grandes transformations de notre société deviennent plus lisibles lorsque l’on réunit ceux qui les vivent et que l’on fait dialoguer leurs points de vue.
         </p>
 
         <p>
-          Son parcours hybride entre startup, digital, ONG et développement territorial l’a conduit à s’intéresser aux transformations économiques contemporaines et à la manière dont elles sont interprétées depuis des positions très différentes dans l’économie réelle.
+          En Plateau applique cette intuition au domaine de l’économie, à travers des conversations structurées, des prises de parole médiatiques et des rencontres entre pairs.
         </p>
 
         <p>
-          Avec l’initiative <strong>GlobalOps</strong>, il avait déjà exploré l’idée de confronter les lectures de la presse mondiale face à un même événement. En Plateau prolonge cette intuition dans le champ économique en organisant des conversations structurées entre dirigeants, experts, investisseurs et décideurs publics.
-        </p>
-
-        <p>
-          La saison inaugurale 2026-2027 marque le lancement de ce dispositif. Les conversations sont conçues en partenariat avec des sociétés de production déjà liées à plusieurs médias économiques, ainsi qu’avec des acteurs de l’événementiel pour l’organisation des rencontres entre pairs.
-        </p>
-
-        <p>
-          Le rôle du fondateur consiste à structurer éditorialement le programme, à identifier les transformations économiques qui méritent d’être explorées et à repérer les intervenants les plus pertinents pour en éclairer les différents angles.
-        </p>
-
-        <p>
-          L’ambition est de couvrir progressivement les principales dimensions de l’économie réelle — ce qui est visible comme ce qui l’est moins — à travers des conversations capables de rendre intelligibles les dynamiques économiques contemporaines.
+          Le projet est porté par Hocine Reguida, dont le parcours l’a conduit à évoluer dans des environnements très différents — technologies de l’information, médias financiers, publicité, production audiovisuelle, e-commerce, ONG, solidarité internationale, action sociale et développement territorial — au contact de logiques économiques, politiques et sociales souvent analysées séparément.
         </p>
 
         <p class="proof-link-wrap">
@@ -385,7 +385,7 @@
 
       <div class="section-text-block">
         <p>
-          Les premières conversations réunissent progressivement des dirigeants d’entreprises industrielles, des investisseurs, des associés de cabinets internationaux et des décideurs publics impliqués dans les grandes transformations économiques.
+          Les premières conversations réunissent progressivement des dirigeants d’entreprises industrielles, des investisseurs, des associés de cabinets internationaux, des experts sectoriels, des responsables associatifs et des décideurs publics impliqués dans les grandes transformations économiques.
         </p>
 
         <p>
@@ -419,7 +419,7 @@
         </p>
 
         <p>
-          Une invitation peut être pertinente lorsque l’expérience, la responsabilité ou la trajectoire d’un dirigeant, d’un investisseur, d’un expert ou d’un décideur public permet d’apporter un angle de lecture structurant sur le thème abordé.
+          Une invitation peut être pertinente lorsque l’expérience, la responsabilité ou la trajectoire d’un dirigeant, d’un investisseur, d’un expert, d’un responsable associatif ou d’un décideur public permet d’apporter un angle de lecture structurant sur le thème abordé.
         </p>
 
         <p>
@@ -448,7 +448,7 @@
           </div>
 
           <div class="cta">
-            <a class="btn btn-primary" href="participer.html">
+            <a class="btn btn-primary" href="participer.html#approche">
               Recevoir la présentation détaillée
             </a>
           </div>
