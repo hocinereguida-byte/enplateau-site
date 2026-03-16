@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (burger && mobileMenu) {
     burger.addEventListener("click", () => {
-      const isOpen = mobileMenu.style.display === "block";
-      mobileMenu.style.display = isOpen ? "none" : "block";
+      const isOpen = mobileMenu.classList.contains("is-open");
+      mobileMenu.classList.toggle("is-open", !isOpen);
       burger.setAttribute("aria-expanded", String(!isOpen));
     });
   }
@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       const target = document.getElementById(targetId);
       if (!target) return;
 
-      const isOpen = target.style.display === "block";
-      target.style.display = isOpen ? "none" : "block";
+      const isOpen = target.classList.contains("is-open");
+      target.classList.toggle("is-open", !isOpen);
       trigger.classList.toggle("is-open", !isOpen);
       trigger.setAttribute("aria-expanded", String(!isOpen));
     });
