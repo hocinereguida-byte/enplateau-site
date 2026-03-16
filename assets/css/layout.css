@@ -145,41 +145,30 @@ HEADER / NAV
 .brand{
   display:inline-flex;
   align-items:center;
-  gap:14px;
   flex-shrink:0;
   min-width:0;
 }
 
 .brand-logo{
-  width:38px;
-  height:38px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
+  width:auto;
+  height:44px;
   flex-shrink:0;
 }
 
 .brand-logo img{
-  width:100%;
+  display:block;
+  width:auto;
   height:100%;
+  max-width:none;
   object-fit:contain;
 }
 
+.brand-name,
 .brand-mark{
-  width:18px;
-  height:18px;
-  border-radius:999px;
-  background:linear-gradient(180deg,var(--sig),var(--sig-2));
-  box-shadow:0 0 0 10px rgba(15,39,71,.06);
-  flex-shrink:0;
-}
-
-.brand-name{
-  font-size:15px;
-  font-weight:800;
-  letter-spacing:.12em;
-  color:var(--sig);
-  white-space:nowrap;
+  display:none;
 }
 
 .nav{
@@ -1231,12 +1220,6 @@ RESPONSIVE
   }
 
   .brand-logo{
-    width:34px;
-    height:34px;
-  }
-
-  .brand-name{
-    font-size:14px;
-    letter-spacing:.1em;
+    height:38px;
   }
 }
