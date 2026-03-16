@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  const seriesPages = [
+  const collectivePages = [
     "les-eclaireurs.html",
     "les-batisseurs.html",
     "les-architectes.html"
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.querySelectorAll(".nav-trigger").forEach((trigger) => {
     const label = trigger.textContent.trim();
 
-    if (label.includes("Séries") && seriesPages.includes(currentPage)) {
+    if (label.includes("Réflexion collective") && collectivePages.includes(currentPage)) {
       trigger.classList.add("active");
     }
   });
