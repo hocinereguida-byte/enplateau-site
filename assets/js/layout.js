@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   document.querySelectorAll(".nav-trigger").forEach((trigger) => {
     const label = trigger.textContent.trim();
-
     if (label.includes("Réflexion collective") && collectivePages.includes(currentPage)) {
       trigger.classList.add("active");
     }
@@ -74,7 +73,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   document.querySelectorAll(".mobile-section-trigger").forEach((trigger) => {
     const label = trigger.textContent.trim();
-
     if (label.includes("Réflexion collective") && collectivePages.includes(currentPage)) {
       trigger.classList.add("active");
       const targetId = trigger.getAttribute("data-target");
