@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const isOpen = mobileMenu.classList.contains("is-open");
       mobileMenu.classList.toggle("is-open", !isOpen);
       burger.setAttribute("aria-expanded", String(!isOpen));
+      document.body.classList.toggle("menu-open", !isOpen);
     });
   }
 
@@ -68,6 +69,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (label.includes("Réflexion collective") && collectivePages.includes(currentPage)) {
       trigger.classList.add("active");
+    }
+  });
+
+  document.querySelectorAll(".mobile-section-trigger").forEach((trigger) => {
+    const label = trigger.textContent.trim();
+
+    if (label.includes("Réflexion collective") && collectivePages.includes(currentPage)) {
+      trigger.classList.add("active");
+      const targetId = trigger.getAttribute("data-target");
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.classList.add("is-open");
+        trigger.classList.add("is-open");
+        trigger.setAttribute("aria-expanded", "true");
+      }
     }
   });
 });
