@@ -1,5 +1,7 @@
 /* ======================================================
 EN PLATEAU — INSTITUTIONAL
+Pages institutionnelles :
+À propos / Participer / Médias & journalistes / Cercle
 ====================================================== */
 
 .section-head{
@@ -18,9 +20,11 @@ EN PLATEAU — INSTITUTIONAL
 .section-kicker{
   color:var(--muted);
   margin:0 0 12px;
-  letter-spacing:.12em;
+  letter-spacing:.16em;
   text-transform:uppercase;
-  font-size:12px;
+  font-size:11px;
+  line-height:1.4;
+  font-weight:800;
 }
 
 .section-desc{
@@ -28,7 +32,7 @@ EN PLATEAU — INSTITUTIONAL
   margin:0 auto;
   color:var(--muted);
   font-size:15px;
-  line-height:1.8;
+  line-height:1.82;
 }
 
 .section-text{
@@ -40,8 +44,8 @@ EN PLATEAU — INSTITUTIONAL
 .section-text p{
   margin:0;
   color:var(--slate);
-  font-size:18px;
-  line-height:1.78;
+  font-size:17px;
+  line-height:1.84;
 }
 
 .section-text p + p{
@@ -53,6 +57,8 @@ EN PLATEAU — INSTITUTIONAL
   margin-left:auto;
   margin-right:auto;
   text-align:left;
+  font-size:16px;
+  line-height:1.84;
 }
 
 .centered-text{
@@ -63,9 +69,13 @@ EN PLATEAU — INSTITUTIONAL
   max-width:620px;
 }
 
+/* -------------------------
+HERO INSTITUTIONAL
+------------------------- */
+
 .hero-institutional .hero-inner{
-  padding-top:12px;
-  padding-bottom:6px;
+  padding-top:14px;
+  padding-bottom:18px;
 }
 
 .hero-institutional .kicker{
@@ -88,18 +98,26 @@ EN PLATEAU — INSTITUTIONAL
   max-width:760px;
   margin:20px auto 0;
   font-size:15px;
-  line-height:1.7;
+  line-height:1.72;
   color:rgba(255,255,255,.76);
   text-align:center;
   font-weight:600;
 }
 
 .hero-explainer-institutional{
-  padding:30px 20px 6px;
+  padding:30px 20px 8px;
 }
 
+.hero-explainer-institutional .section-text{
+  text-align:center;
+}
+
+/* -------------------------
+PROOF BLOCK
+------------------------- */
+
 .proof-block{
-  padding:38px 20px 8px;
+  padding:34px 20px 10px;
   border-bottom:1px solid var(--line);
 }
 
@@ -111,6 +129,10 @@ EN PLATEAU — INSTITUTIONAL
   text-align:center;
   margin:22px 0 0;
 }
+
+/* -------------------------
+INTRO SECTIONS
+------------------------- */
 
 .section-corpus-intro{
   padding-top:66px;
@@ -138,11 +160,41 @@ EN PLATEAU — INSTITUTIONAL
   margin-bottom:0;
 }
 
+/* -------------------------
+EDITORIAL COPY
+------------------------- */
+
 .editorial-copy{
+  max-width:760px;
+  margin:0 auto;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
-  padding:28px 0 10px;
+  padding:28px 0 12px;
 }
+
+.editorial-copy .lead{
+  margin:0 0 18px;
+  font-size:18px;
+  line-height:1.78;
+  color:var(--ink);
+  font-weight:500;
+}
+
+.editorial-note{
+  max-width:680px;
+  margin:0 auto;
+}
+
+.editorial-note p{
+  margin:0;
+  font-size:15px;
+  line-height:1.82;
+  color:var(--muted);
+}
+
+/* -------------------------
+SPACING HELPERS
+------------------------- */
 
 .cards-spaced{
   margin-top:28px;
@@ -164,10 +216,14 @@ EN PLATEAU — INSTITUTIONAL
 .card-accent{
   margin:0 0 10px;
   font-size:16px;
-  line-height:1.5;
+  line-height:1.54;
   color:#5a6778;
   font-weight:800;
 }
+
+/* -------------------------
+DEVICE GRID
+------------------------- */
 
 .device-grid{
   display:grid;
@@ -177,7 +233,7 @@ EN PLATEAU — INSTITUTIONAL
 }
 
 .device-step-card{
-  padding-top:14px;
+  padding-top:16px;
   border-top:1px solid var(--line);
   text-align:left;
 }
@@ -185,10 +241,11 @@ EN PLATEAU — INSTITUTIONAL
 .device-num{
   display:inline-block;
   margin-bottom:12px;
-  font-size:12px;
+  font-size:11px;
   line-height:1;
   font-weight:800;
   letter-spacing:.14em;
+  text-transform:uppercase;
   color:#6B7482;
 }
 
@@ -196,7 +253,7 @@ EN PLATEAU — INSTITUTIONAL
   margin:0 0 10px;
   font-family:"Inter",system-ui,sans-serif;
   font-size:20px;
-  line-height:1.22;
+  line-height:1.24;
   letter-spacing:-.02em;
   color:var(--ink);
 }
@@ -204,9 +261,13 @@ EN PLATEAU — INSTITUTIONAL
 .device-step-card p{
   margin:0;
   font-size:15px;
-  line-height:1.72;
+  line-height:1.76;
   color:var(--muted);
 }
+
+/* -------------------------
+CRITERIA
+------------------------- */
 
 .criteria{
   max-width:760px;
@@ -220,6 +281,13 @@ EN PLATEAU — INSTITUTIONAL
   border:1px solid rgba(15,39,71,.08);
   border-radius:18px;
   background:#F8FAFC;
+  transition:border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.criterion:hover{
+  border-color:rgba(15,39,71,.16);
+  transform:translateY(-1px);
+  box-shadow:0 16px 40px rgba(11,15,25,.05);
 }
 
 .criterion strong{
@@ -227,15 +295,19 @@ EN PLATEAU — INSTITUTIONAL
   margin:0 0 6px;
   color:#10213B;
   font-size:15px;
-  line-height:1.35;
+  line-height:1.4;
 }
 
 .criterion span{
   display:block;
   color:#627084;
   font-size:14px;
-  line-height:1.72;
+  line-height:1.74;
 }
+
+/* -------------------------
+POSITIONS
+------------------------- */
 
 .positions-section{
   padding-top:72px;
@@ -255,6 +327,13 @@ EN PLATEAU — INSTITUTIONAL
   border-radius:0;
   background:#fff;
   text-align:left;
+  transition:border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.position-card:hover{
+  border-color:rgba(15,39,71,.16);
+  transform:translateY(-1px);
+  box-shadow:0 16px 40px rgba(11,15,25,.05);
 }
 
 .position-card.featured{
@@ -265,7 +344,7 @@ EN PLATEAU — INSTITUTIONAL
 .position-count{
   display:inline-block;
   margin-bottom:14px;
-  font-size:13px;
+  font-size:12px;
   line-height:1;
   font-weight:800;
   letter-spacing:.12em;
@@ -277,7 +356,7 @@ EN PLATEAU — INSTITUTIONAL
   margin:0 0 12px;
   font-family:"Inter",system-ui,sans-serif;
   font-size:22px;
-  line-height:1.18;
+  line-height:1.2;
   letter-spacing:-.02em;
   color:var(--ink);
 }
@@ -285,7 +364,7 @@ EN PLATEAU — INSTITUTIONAL
 .position-card p{
   margin:0 0 14px;
   font-size:15px;
-  line-height:1.72;
+  line-height:1.76;
   color:var(--slate);
 }
 
@@ -294,7 +373,13 @@ EN PLATEAU — INSTITUTIONAL
   border-top:1px solid var(--line);
   font-weight:700;
   color:var(--sig);
+  font-size:14px;
+  line-height:1.7;
 }
+
+/* -------------------------
+TIMELINE
+------------------------- */
 
 .timeline-section{
   max-width:100%;
@@ -313,6 +398,13 @@ EN PLATEAU — INSTITUTIONAL
   border:1px solid var(--line);
   border-radius:0;
   text-align:left;
+  transition:border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.timeline-step:hover{
+  border-color:rgba(15,39,71,.16);
+  transform:translateY(-1px);
+  box-shadow:0 16px 40px rgba(11,15,25,.05);
 }
 
 .timeline-step.featured{
@@ -322,7 +414,7 @@ EN PLATEAU — INSTITUTIONAL
 
 .timeline-date{
   display:block;
-  font-size:12px;
+  font-size:11px;
   line-height:1;
   font-weight:800;
   letter-spacing:.12em;
@@ -335,7 +427,7 @@ EN PLATEAU — INSTITUTIONAL
   margin:0 0 10px;
   font-family:"Inter",system-ui,sans-serif;
   font-size:20px;
-  line-height:1.22;
+  line-height:1.24;
   letter-spacing:-.02em;
   color:var(--ink);
 }
@@ -343,9 +435,13 @@ EN PLATEAU — INSTITUTIONAL
 .timeline-step p{
   margin:0;
   font-size:15px;
-  line-height:1.68;
+  line-height:1.72;
   color:var(--muted);
 }
+
+/* -------------------------
+CTA
+------------------------- */
 
 .cta-centered{
   justify-content:center;
@@ -357,6 +453,24 @@ EN PLATEAU — INSTITUTIONAL
 .btn:visited{
   text-decoration:none;
 }
+
+/* -------------------------
+SPECIAL TEXT BLOCKS
+------------------------- */
+
+.section-text + .cta,
+.measure + .cta,
+.measure + .proof-link-wrap{
+  margin-top:28px;
+}
+
+.measure + .measure{
+  margin-top:16px;
+}
+
+/* -------------------------
+RESPONSIVE
+------------------------- */
 
 @media(max-width:980px){
   .device-grid{
@@ -382,7 +496,7 @@ EN PLATEAU — INSTITUTIONAL
 
   .hero-institutional h1{
     font-size:clamp(30px,7vw,42px);
-    line-height:1.06;
+    line-height:1.08;
   }
 
   .hero-institutional .subhead{
@@ -396,7 +510,7 @@ EN PLATEAU — INSTITUTIONAL
   }
 
   .hero-explainer-institutional{
-    padding:24px 16px 2px;
+    padding:24px 16px 4px;
   }
 
   .section-text,
@@ -406,13 +520,18 @@ EN PLATEAU — INSTITUTIONAL
   }
 
   .section-text p,
+  .measure{
+    font-size:16px;
+    line-height:1.8;
+  }
+
   .section-intro{
     font-size:17px;
-    line-height:1.72;
+    line-height:1.68;
   }
 
   .proof-block{
-    padding:34px 20px 6px;
+    padding:26px 20px 10px;
   }
 
   .section-corpus-intro,
@@ -459,5 +578,25 @@ EN PLATEAU — INSTITUTIONAL
 
   .criteria{
     margin-top:24px;
+  }
+
+  .criterion{
+    padding:16px 18px;
+    border-radius:16px;
+  }
+
+  .editorial-copy{
+    padding:24px 0 10px;
+  }
+
+  .editorial-copy .lead{
+    font-size:17px;
+    line-height:1.74;
+  }
+
+  .editorial-note p,
+  .section-desc{
+    font-size:14px;
+    line-height:1.76;
   }
 }
