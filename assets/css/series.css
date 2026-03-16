@@ -9,13 +9,13 @@ HERO
 ------------------------- */
 
 .hero{
-  margin:28px 0 0;
+  margin:30px 0 0;
 }
 
 .hero.hero-editorial .hero-inner{
   max-width:none;
   margin:0 auto;
-  padding:60px 28px 70px;
+  padding:68px 34px 76px;
   text-align:left;
 }
 
@@ -40,9 +40,9 @@ HERO
 }
 
 .hero.hero-editorial .subhead{
-  max-width:640px;
+  max-width:700px;
   margin:0 0 18px;
-  font-size:17px;
+  font-size:18px;
   line-height:1.7;
   font-weight:500;
   color:rgba(255,255,255,.92);
@@ -50,10 +50,48 @@ HERO
 
 .hero.hero-editorial .hero-rule{
   width:100%;
-  max-width:120px;
+  max-width:126px;
   height:1px;
-  margin:30px 0 0;
-  background:rgba(255,255,255,.18);
+  margin:32px 0 0;
+  background:linear-gradient(90deg, rgba(201,169,106,.95), rgba(255,255,255,.18));
+}
+
+/* -------------------------
+NAVIGATION INTERNE
+------------------------- */
+
+.series-nav{
+  margin:18px 0 28px;
+}
+
+.series-nav-inner{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:14px 18px;
+  padding:16px 20px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+}
+
+.series-nav-label{
+  font-size:11px;
+  line-height:1.4;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.series-nav-inner a{
+  font-size:14px;
+  font-weight:700;
+  color:var(--sig);
+}
+
+.series-nav-inner a:hover{
+  text-decoration:underline;
 }
 
 /* -------------------------
@@ -63,7 +101,7 @@ PREUVE / MÉDIAS
 .proof-block{
   background:#fff;
   text-align:center;
-  padding:26px 20px 14px;
+  padding:30px 20px 14px;
   border-bottom:1px solid var(--line);
   margin-bottom:28px;
 }
@@ -77,7 +115,8 @@ PREUVE / MÉDIAS
 .media-kicker{
   color:var(--muted);
   margin:0 0 22px;
-  font-size:12px;
+  font-size:11px;
+  font-weight:800;
   letter-spacing:.18em;
   text-transform:uppercase;
   text-align:center;
@@ -87,26 +126,27 @@ PREUVE / MÉDIAS
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:36px;
+  gap:30px;
   flex-wrap:nowrap;
   width:100%;
-  max-width:760px;
+  max-width:860px;
   margin:0 auto;
-  padding:0;
+  padding:0 8px;
 }
 
 .media-logos img{
-  height:26px;
+  height:22px;
   width:auto;
   max-width:100%;
-  opacity:.9;
-  filter:none;
-  transition:opacity .2s ease, transform .2s ease;
+  opacity:.88;
+  filter:grayscale(100%);
+  transition:opacity .2s ease, transform .2s ease, filter .2s ease;
 }
 
 .media-logos img:hover{
   opacity:1;
   transform:translateY(-1px);
+  filter:grayscale(0%);
 }
 
 /* -------------------------
@@ -124,7 +164,7 @@ SECTION HEAD
 .section-intro{
   margin:0 auto;
   font-size:18px;
-  line-height:1.7;
+  line-height:1.76;
   color:var(--ink);
   font-weight:500;
   text-align:center;
@@ -139,7 +179,7 @@ TEXT BLOCKS
 ------------------------- */
 
 .section-text-block{
-  max-width:640px;
+  max-width:680px;
   margin:30px auto 0;
   text-align:center;
 }
@@ -147,7 +187,7 @@ TEXT BLOCKS
 .section-text-block p{
   margin:0;
   font-size:16px;
-  line-height:1.8;
+  line-height:1.84;
   color:var(--slate);
 }
 
@@ -175,20 +215,27 @@ CADRE DE LA SÉRIE
   background:#fff;
   border:1px solid var(--line);
   border-radius:12px;
-  padding:26px;
+  padding:28px;
   text-align:left;
+  transition:border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.frame-card:hover{
+  border-color:rgba(15,39,71,.16);
+  transform:translateY(-1px);
+  box-shadow:0 16px 40px rgba(11,15,25,.05);
 }
 
 .frame-card.featured{
-  background:#f8fafc;
-  border-color:#d9e0e8;
+  background:#fff;
+  border-color:rgba(15,39,71,.12);
 }
 
 .frame-card-label{
   display:inline-block;
   margin:0 0 14px;
   padding:0 0 8px;
-  border-bottom:1px solid var(--ink);
+  border-bottom:1px solid var(--accent);
   font-size:11px;
   line-height:1.4;
   font-weight:800;
@@ -200,13 +247,13 @@ CADRE DE LA SÉRIE
 .frame-card h3{
   margin:0 0 12px;
   font-size:24px;
-  line-height:1.12;
+  line-height:1.14;
 }
 
 .frame-card p{
   margin:0;
   font-size:15px;
-  line-height:1.74;
+  line-height:1.78;
   color:var(--muted);
 }
 
@@ -215,13 +262,13 @@ CONVERSATION EN PRÉPARATION
 ------------------------- */
 
 .conversation-shell{
-  max-width:900px;
+  max-width:920px;
   margin:0 auto;
 }
 
 .conversation-eyebrow{
   margin:0 0 16px;
-  font-size:12px;
+  font-size:11px;
   line-height:1.4;
   font-weight:800;
   letter-spacing:.16em;
@@ -231,10 +278,10 @@ CONVERSATION EN PRÉPARATION
 }
 
 .conversation-main-title{
-  max-width:720px;
+  max-width:760px;
   margin:0 auto 18px;
   font-family:"Bitter",serif;
-  font-size:clamp(28px,4.3vw,44px);
+  font-size:clamp(30px,4.3vw,46px);
   line-height:1.08;
   letter-spacing:-0.025em;
   color:var(--ink);
@@ -242,10 +289,10 @@ CONVERSATION EN PRÉPARATION
 }
 
 .conversation-main-intro{
-  max-width:680px;
+  max-width:700px;
   margin:0 auto 18px;
   font-size:18px;
-  line-height:1.72;
+  line-height:1.76;
   color:var(--slate);
   text-align:center;
 }
@@ -297,15 +344,22 @@ CONVERSATION EN PRÉPARATION
   background:#fff;
   border:1px solid var(--line);
   border-radius:12px;
-  padding:26px;
+  padding:28px;
   text-align:left;
+  transition:border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.angle-card:hover{
+  border-color:rgba(15,39,71,.16);
+  transform:translateY(-1px);
+  box-shadow:0 16px 40px rgba(11,15,25,.05);
 }
 
 .angle-media{
   display:inline-block;
   margin:0 0 14px;
   padding:0 0 8px;
-  border-bottom:1px solid var(--ink);
+  border-bottom:1px solid var(--accent);
   font-size:11px;
   line-height:1.4;
   font-weight:800;
@@ -317,20 +371,20 @@ CONVERSATION EN PRÉPARATION
 .angle-card h3{
   margin:0 0 12px;
   font-size:22px;
-  line-height:1.14;
+  line-height:1.16;
 }
 
 .angle-card p{
   margin:0 0 14px;
   font-size:15px;
-  line-height:1.74;
+  line-height:1.78;
   color:var(--muted);
 }
 
 .angle-actors{
   margin:0;
   font-size:14px;
-  line-height:1.7;
+  line-height:1.72;
   color:var(--ink);
 }
 
@@ -344,10 +398,10 @@ FINAL
 ------------------------- */
 
 .final .final-intro{
-  max-width:640px;
+  max-width:680px;
   margin:0 auto 20px;
   font-size:17px;
-  line-height:1.76;
+  line-height:1.8;
   color:rgba(255,255,255,.92);
 }
 
@@ -381,7 +435,7 @@ DEUX ACCÈS / CTA
   justify-content:space-between;
   min-height:100%;
   border-radius:18px;
-  padding:28px 24px;
+  padding:30px 26px;
   text-align:left;
   box-shadow:none;
 }
@@ -420,7 +474,7 @@ DEUX ACCÈS / CTA
 .series-access-card h3{
   margin:0;
   font-size:24px;
-  line-height:1.14;
+  line-height:1.16;
 }
 
 .series-access-card.is-primary h3{
@@ -434,7 +488,7 @@ DEUX ACCÈS / CTA
 .series-access-body p{
   margin:0 0 14px;
   font-size:15px;
-  line-height:1.74;
+  line-height:1.78;
 }
 
 .series-access-card.is-primary .series-access-body p{
@@ -483,6 +537,23 @@ DEUX ACCÈS / CTA
 }
 
 /* -------------------------
+CARTES GÉNÉRIQUES DES CONVERSATIONS
+------------------------- */
+
+.grid-2 .card,
+.grid-3 .card,
+.grid-4 .card{
+  background:#fff;
+}
+
+.grid-2 .card.featured,
+.grid-3 .card.featured,
+.grid-4 .card.featured{
+  background:#fff;
+  border-color:rgba(15,39,71,.12);
+}
+
+/* -------------------------
 RESPONSIVE
 ------------------------- */
 
@@ -493,6 +564,15 @@ RESPONSIVE
   .grid-4{
     grid-template-columns:1fr;
   }
+
+  .media-logos{
+    gap:18px;
+    flex-wrap:wrap;
+  }
+
+  .series-nav-inner{
+    gap:10px 14px;
+  }
 }
 
 @media(max-width:700px){
@@ -502,24 +582,24 @@ RESPONSIVE
   }
 
   .hero.hero-editorial .hero-inner{
-    padding:40px 22px 46px;
+    padding:42px 22px 48px;
   }
 
   .hero.hero-editorial h1{
-    font-size:clamp(32px,8vw,42px);
+    font-size:clamp(32px,8vw,44px);
     max-width:none;
-    line-height:1.04;
+    line-height:1.08;
     margin-bottom:18px;
   }
 
   .hero.hero-editorial h1 span{
-    white-space:nowrap;
+    white-space:normal;
   }
 
   .hero.hero-editorial .subhead{
-    font-size:15px;
+    font-size:16px;
     line-height:1.68;
-    max-width:25rem;
+    max-width:26rem;
   }
 
   .hero.hero-editorial .hero-rule{
@@ -533,8 +613,16 @@ RESPONSIVE
     letter-spacing:.16em;
   }
 
+  .series-nav{
+    margin:16px 0 22px;
+  }
+
+  .series-nav-inner{
+    padding:14px 16px;
+  }
+
   .proof-block{
-    padding:22px 20px 10px;
+    padding:24px 20px 10px;
     margin-bottom:20px;
   }
 
@@ -545,12 +633,13 @@ RESPONSIVE
   }
 
   .media-logos{
-    gap:22px;
+    gap:18px;
     max-width:100%;
+    padding:0;
   }
 
   .media-logos img{
-    height:20px;
+    height:18px;
   }
 
   .section-intro{
@@ -593,26 +682,26 @@ RESPONSIVE
 
   .frame-card p{
     font-size:15px;
-    line-height:1.72;
+    line-height:1.74;
   }
 
   .conversation-eyebrow{
-    font-size:11px;
+    font-size:10px;
     margin-bottom:12px;
   }
 
   .conversation-main-title{
     max-width:100%;
     margin-bottom:14px;
-    font-size:clamp(24px,7vw,33px);
-    line-height:1.1;
+    font-size:clamp(24px,7vw,34px);
+    line-height:1.12;
   }
 
   .conversation-main-intro{
     max-width:100%;
     margin-bottom:14px;
     font-size:16px;
-    line-height:1.72;
+    line-height:1.74;
   }
 
   .conversation-status-wrap{
@@ -640,18 +729,18 @@ RESPONSIVE
 
   .angle-card p{
     font-size:15px;
-    line-height:1.72;
+    line-height:1.74;
   }
 
   .angle-actors{
     font-size:14px;
-    line-height:1.66;
+    line-height:1.68;
   }
 
   .final .final-intro{
     max-width:100%;
     font-size:15px;
-    line-height:1.72;
+    line-height:1.74;
     margin-bottom:18px;
   }
 
@@ -678,7 +767,7 @@ RESPONSIVE
 
   .series-access-body p{
     font-size:15px;
-    line-height:1.72;
+    line-height:1.74;
   }
 
   .series-access-card .cta{
