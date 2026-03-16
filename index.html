@@ -44,6 +44,53 @@
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/editorial.css">
   <link rel="stylesheet" href="assets/css/home.css">
+
+  <style>
+    .home-conversations .card-list{
+      margin:16px 0 0;
+      padding-left:18px;
+    }
+
+    .home-conversations .card-list li{
+      margin-bottom:6px;
+    }
+
+    .final.final-home{
+      background:#0F2747;
+      color:#fff;
+    }
+
+    .final.final-home h2,
+    .final.final-home h3,
+    .final.final-home p,
+    .final.final-home .series-access-kicker,
+    .final.final-home .series-access-body,
+    .final.final-home .series-access-head{
+      color:#fff;
+    }
+
+    .final.final-home .series-access-card{
+      border:1px solid rgba(255,255,255,0.16);
+      background:rgba(255,255,255,0.04);
+      color:#fff;
+    }
+
+    .final.final-home .series-access-card.is-secondary{
+      background:rgba(255,255,255,0.02);
+    }
+
+    .final.final-home .btn.btn-primary,
+    .final.final-home .btn.btn-secondary{
+      background:#fff !important;
+      color:#0F2747 !important;
+      border:1px solid #fff !important;
+    }
+
+    .final.final-home .btn.btn-primary:hover,
+    .final.final-home .btn.btn-secondary:hover{
+      opacity:.92;
+    }
+  </style>
 </head>
 
 <body>
@@ -52,8 +99,6 @@
   <div id="site-mobile-menu"></div>
 
   <main class="container">
-
-    <!-- HERO -->
 
     <section class="hero hero-editorial">
       <div class="hero-inner">
@@ -84,7 +129,146 @@
       </div>
     </section>
 
-    <!-- POURQUOI CES CONVERSATIONS -->
+    <section class="proof-block">
+      <div class="media-stack">
+        <p class="media-kicker">
+          Des conversations déployées dans des environnements éditoriaux économiques reconnus
+        </p>
+
+        <div class="media-logos">
+          <img src="images/bfm-business.svg" alt="BFM Business">
+          <img src="images/la-tribune.svg" alt="La Tribune">
+          <img src="images/forbes.svg" alt="Forbes">
+          <img src="images/le-figaro.svg" alt="Le Figaro">
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft home-conversations">
+      <div class="section-head centered">
+        <p class="section-kicker">Conversations en préparation</p>
+        <h2>Les Architectes</h2>
+        <p class="section-intro narrow">
+          Conversations consacrées aux transformations systémiques de l’économie contemporaine.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card featured">
+          <span class="pill">Les Architectes</span>
+          <h3>L’intelligence artificielle, nouvelle infrastructure de l’économie</h3>
+          <p>
+            Une conversation systémique sur la manière dont l’intelligence artificielle transforme les systèmes productifs, les systèmes de décision et l’organisation des services.
+          </p>
+          <ul class="card-list">
+            <li>Transformation des systèmes productifs</li>
+            <li>Transformation des systèmes de décision</li>
+            <li>Transformation des systèmes de services</li>
+            <li>Souveraineté économique et régulation</li>
+          </ul>
+          <a class="link" href="les-architectes.html">Découvrir la série Architectes</a>
+        </article>
+
+        <article class="card">
+          <span class="pill">Les Architectes</span>
+          <h3>L’énergie, infrastructure stratégique de la compétitivité européenne</h3>
+          <p>
+            Une conversation sur la manière dont les choix énergétiques redessinent la compétitivité des entreprises et l’équilibre industriel européen.
+          </p>
+          <ul class="card-list">
+            <li>Compétitivité industrielle et coût de l’énergie</li>
+            <li>Transformation des systèmes énergétiques</li>
+            <li>Financement des infrastructures</li>
+            <li>Souveraineté énergétique européenne</li>
+          </ul>
+          <a class="link" href="les-architectes.html">Découvrir la série Architectes</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-white home-conversations">
+      <div class="section-head centered">
+        <p class="section-kicker">Conversations en préparation</p>
+        <h2>Les Bâtisseurs</h2>
+        <p class="section-intro narrow">
+          Conversations construites à partir de plusieurs positions concrètes dans une chaîne de valeur.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card featured">
+          <span class="pill">Les Bâtisseurs</span>
+          <h3>Réindustrialiser l’Europe</h3>
+          <p>
+            Une conversation sur les conditions productives de la réindustrialisation européenne à partir de quatre positions concrètes dans la chaîne de valeur.
+          </p>
+          <ul class="card-list">
+            <li>Industrie et compétitivité productive</li>
+            <li>Chimie et matériaux stratégiques</li>
+            <li>Technologies industrielles et équipements</li>
+            <li>Logistique et circulation des biens</li>
+          </ul>
+          <a class="link" href="les-batisseurs.html">Découvrir la série Bâtisseurs</a>
+        </article>
+
+        <article class="card">
+          <span class="pill">Les Bâtisseurs</span>
+          <h3>Transformer les chaînes logistiques européennes</h3>
+          <p>
+            Une conversation sur la transformation des chaînes logistiques, industrielles et technologiques dans l’économie européenne.
+          </p>
+          <ul class="card-list">
+            <li>Infrastructure logistique et transport</li>
+            <li>Relocalisation et géographies industrielles</li>
+            <li>Technologies logistiques et pilotage</li>
+            <li>Résilience des chaînes d’approvisionnement</li>
+          </ul>
+          <a class="link" href="les-batisseurs.html">Découvrir la série Bâtisseurs</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-soft-3 home-conversations">
+      <div class="section-head centered">
+        <p class="section-kicker">Conversations en préparation</p>
+        <h2>Les Éclaireurs</h2>
+        <p class="section-intro narrow">
+          Quatre expertises différentes pour éclairer un même enjeu structurant.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card featured">
+          <span class="pill">Les Éclaireurs</span>
+          <h3>Repenser les systèmes de santé européens</h3>
+          <p>
+            Une conversation sur l’évolution des systèmes de santé face aux transformations démographiques, médicales, organisationnelles et budgétaires.
+          </p>
+          <ul class="card-list">
+            <li>Soutenabilité des systèmes de santé</li>
+            <li>Organisation hospitalière</li>
+            <li>Innovation médicale</li>
+            <li>Financement de la santé</li>
+          </ul>
+          <a class="link" href="les-eclaireurs.html">Découvrir la série Éclaireurs</a>
+        </article>
+
+        <article class="card">
+          <span class="pill">Les Éclaireurs</span>
+          <h3>Financer les grandes transformations de l’économie européenne</h3>
+          <p>
+            Une conversation sur les mécanismes financiers permettant de soutenir les grandes transformations industrielles, énergétiques et productives.
+          </p>
+          <ul class="card-list">
+            <li>Stratégies financières des entreprises</li>
+            <li>Banques d’affaires et restructurations</li>
+            <li>Investissement et innovation</li>
+            <li>Gouvernance financière</li>
+          </ul>
+          <a class="link" href="les-eclaireurs.html">Découvrir la série Éclaireurs</a>
+        </article>
+      </div>
+    </section>
 
     <section class="section section-white">
       <div class="section-head centered">
@@ -108,178 +292,6 @@
         </p>
       </div>
     </section>
-
-    <!-- MÉDIAS -->
-
-    <section class="proof-block">
-      <div class="media-stack">
-        <p class="media-kicker">
-          Des conversations déployées dans des environnements éditoriaux économiques reconnus
-        </p>
-
-        <div class="media-logos">
-          <img src="images/bfm-business.svg" alt="BFM Business">
-          <img src="images/la-tribune.svg" alt="La Tribune">
-          <img src="images/forbes.svg" alt="Forbes">
-          <img src="images/le-figaro.svg" alt="Le Figaro">
-        </div>
-      </div>
-    </section>
-
-    <!-- BLOC FONDATEUR COURT -->
-
-    <section class="section section-soft">
-      <div class="section-head centered">
-        <p class="section-kicker">L’initiative</p>
-        <h2>À l’origine d’En Plateau</h2>
-      </div>
-
-      <div class="section-text-block narrow">
-        <p>
-          En Plateau est une initiative fondée par <strong>Hocine Reguida</strong>.
-        </p>
-
-        <p>
-          Son parcours entre startup, digital, ONG et développement territorial l’a conduit à s’intéresser aux transformations de l’économie réelle et à la manière dont elles sont interprétées depuis des positions très différentes.
-        </p>
-
-        <p>
-          En Plateau est né de cette réflexion : structurer des conversations économiques capables d’éclairer ces transformations à travers plusieurs angles et plusieurs environnements éditoriaux.
-        </p>
-
-        <p class="proof-link-wrap">
-          <a class="link" href="a-propos.html">En savoir plus sur l’initiative</a>
-        </p>
-      </div>
-    </section>
-
-    <!-- MINI-BLOC ARCHITECTES -->
-
-    <section class="section section-soft-3">
-      <div class="section-head centered">
-        <p class="section-kicker">Conversation en préparation</p>
-        <h2>Série Architectes</h2>
-      </div>
-
-      <div class="grid-1">
-        <article class="card featured">
-          <span class="pill">Les Architectes</span>
-          <h3>L’intelligence artificielle, nouvelle infrastructure de l’économie</h3>
-          <p>
-            Une conversation systémique sur la manière dont l’intelligence artificielle transforme les systèmes productifs, les systèmes de décision et l’organisation des services.
-          </p>
-
-          <ul class="card-list">
-            <li>Transformation des systèmes productifs</li>
-            <li>Transformation des systèmes de décision</li>
-            <li>Transformation des systèmes de services</li>
-            <li>Souveraineté économique et régulation</li>
-          </ul>
-
-          <a class="link" href="les-architectes.html#suggerer-contribution">Découvrir la série Architectes</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- TROIS SÉRIES -->
-
-    <section class="section section-white">
-      <div class="section-head centered">
-        <h2>Trois séries éditoriales</h2>
-        <p class="section-intro narrow">
-          Trois cadres distincts pour organiser des conversations économiques selon trois logiques de lecture complémentaires.
-        </p>
-      </div>
-
-      <div class="grid-3">
-        <article class="card">
-          <span class="pill">Série</span>
-          <h3>Les Éclaireurs</h3>
-          <p>
-            Un enjeu structurant, quatre expertises, quatre angles, quatre environnements éditoriaux.
-          </p>
-          <a class="link" href="les-eclaireurs.html">Découvrir la série</a>
-        </article>
-
-        <article class="card featured">
-          <span class="pill">Série</span>
-          <h3>Les Bâtisseurs</h3>
-          <p>
-            Une conversation construite à partir de plusieurs positions concrètes dans une chaîne de valeur.
-          </p>
-          <a class="link" href="les-batisseurs.html">Découvrir la série</a>
-        </article>
-
-        <article class="card">
-          <span class="pill">Série</span>
-          <h3>Les Architectes</h3>
-          <p>
-            Le cadre le plus approfondi du programme, consacré aux transformations systémiques.
-          </p>
-          <a class="link" href="les-architectes.html">Découvrir la série</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- MINI-BLOC BÂTISSEURS -->
-
-    <section class="section section-soft">
-      <div class="section-head centered">
-        <p class="section-kicker">Conversation en préparation</p>
-        <h2>Série Bâtisseurs</h2>
-      </div>
-
-      <div class="grid-1">
-        <article class="card featured">
-          <span class="pill">Les Bâtisseurs</span>
-          <h3>Réindustrialiser l’Europe</h3>
-          <p>
-            Une conversation sur les conditions productives de la réindustrialisation européenne à partir de quatre positions concrètes dans la chaîne de valeur.
-          </p>
-
-          <ul class="card-list">
-            <li>Industrie et compétitivité productive</li>
-            <li>Chimie et matériaux stratégiques</li>
-            <li>Technologies industrielles et équipements</li>
-            <li>Logistique et circulation des biens</li>
-          </ul>
-
-          <a class="link" href="les-batisseurs.html">Découvrir la série Bâtisseurs</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- SAISON INAUGURALE -->
-
-    <section class="section section-white positions-section">
-      <div class="section-head centered">
-        <h2>Premières conversations en cours de constitution</h2>
-        <p class="section-intro narrow">
-          Seize positions éditoriales sont actuellement ouvertes pour les premières conversations : deux conversations Éclaireurs, une conversation Bâtisseurs et une conversation Architectes.
-        </p>
-      </div>
-
-      <div class="positions-structure">
-        <div class="structure-number">
-          <span class="big">16</span>
-          <span class="label">positions éditoriales ouvertes</span>
-        </div>
-
-        <div class="structure-breakdown">
-          <span>France</span>
-          <span>Belgique</span>
-          <span>Suisse</span>
-        </div>
-      </div>
-
-      <div class="section-text-block narrow" style="margin-top:28px;">
-        <p>
-          La saison inaugurale réunira au maximum <strong>44 intervenants</strong>, selon un rythme volontairement sélectif de constitution des conversations.
-        </p>
-      </div>
-    </section>
-
-    <!-- LE DISPOSITIF -->
 
     <section class="section section-soft">
       <div class="section-head centered">
@@ -324,37 +336,44 @@
       </div>
     </section>
 
-    <!-- MINI-BLOC ÉCLAIREURS -->
-
-    <section class="section section-soft-3">
+    <section class="section section-white">
       <div class="section-head centered">
-        <p class="section-kicker">Conversation en préparation</p>
-        <h2>Série Éclaireurs</h2>
+        <p class="section-kicker">L’initiative</p>
+        <h2>À l’origine d’En Plateau</h2>
       </div>
 
-      <div class="grid-1">
-        <article class="card featured">
-          <span class="pill">Les Éclaireurs</span>
-          <h3>Repenser les systèmes de santé européens</h3>
-          <p>
-            Une conversation sur l’évolution des systèmes de santé face aux transformations démographiques, médicales, organisationnelles et budgétaires.
-          </p>
+      <div class="section-text-block narrow">
+        <p>
+          En Plateau est une initiative fondée par <strong>Hocine Reguida</strong>.
+        </p>
 
-          <ul class="card-list">
-            <li>Soutenabilité économique des systèmes de santé</li>
-            <li>Organisation et efficacité des systèmes hospitaliers</li>
-            <li>Innovation médicale et transformation des soins</li>
-            <li>Investissement et financement de la santé</li>
-          </ul>
+        <p>
+          Son parcours hybride entre startup, digital, ONG et développement territorial l’a conduit à s’intéresser aux transformations économiques contemporaines et à la manière dont elles sont interprétées depuis des positions très différentes dans l’économie réelle.
+        </p>
 
-          <a class="link" href="les-eclaireurs.html">Découvrir la série Éclaireurs</a>
-        </article>
+        <p>
+          Avec l’initiative <strong>GlobalOps</strong>, il avait déjà exploré l’idée de confronter les lectures de la presse mondiale face à un même événement. En Plateau prolonge cette intuition dans le champ économique en organisant des conversations structurées entre dirigeants, experts et décideurs.
+        </p>
+
+        <p>
+          La saison inaugurale 2026-2027 marque le lancement de ce dispositif. Les conversations sont conçues en partenariat avec des sociétés de production déjà liées à plusieurs médias économiques, ainsi qu’avec des acteurs de l’événementiel pour l’organisation des rencontres entre pairs.
+        </p>
+
+        <p>
+          Le rôle du fondateur consiste à structurer éditorialement le programme, à identifier les transformations économiques qui méritent d’être explorées et à repérer les intervenants les plus pertinents pour en éclairer les différents angles.
+        </p>
+
+        <p>
+          L’ambition est de couvrir progressivement l’ensemble de l’économie réelle — ce qui est visible comme ce qui l’est moins — à travers des conversations capables de rendre intelligibles les dynamiques économiques contemporaines.
+        </p>
+
+        <p class="proof-link-wrap">
+          <a class="link" href="a-propos.html">En savoir plus sur l’initiative</a>
+        </p>
       </div>
     </section>
 
-    <!-- CONSTITUTION DES CONVERSATIONS -->
-
-    <section class="section section-white">
+    <section class="section section-soft">
       <div class="section-head centered">
         <h2>Constitution des conversations</h2>
       </div>
@@ -378,9 +397,7 @@
       </div>
     </section>
 
-    <!-- DANS QUELS CAS INTERVENIR -->
-
-    <section class="section section-soft">
+    <section class="section section-white">
       <div class="section-head centered">
         <h2>Dans quels cas intervenir</h2>
       </div>
@@ -400,9 +417,7 @@
       </div>
     </section>
 
-    <!-- FINAL -->
-
-    <section class="final">
+    <section class="final final-home">
       <h2>Deux façons d’entrer dans le programme</h2>
 
       <div class="series-access-grid">
@@ -415,7 +430,7 @@
 
           <div class="series-access-body">
             <p>
-              Vous pouvez demander à recevoir la présentation détaillée du programme et des premières conversations actuellement en cours de constitution.
+              Vous pouvez demander à recevoir la présentation détaillée du programme et des conversations actuellement en cours de constitution.
             </p>
           </div>
 
@@ -429,7 +444,7 @@
         <article class="series-access-card is-secondary" id="suggerer-contribution">
           <div class="series-access-head">
             <p class="series-access-kicker">Accès 2</p>
-            <h3>Vous n’avez pas été approché</h3>
+            <h3>Signaler une contribution</h3>
           </div>
 
           <div class="series-access-body">
