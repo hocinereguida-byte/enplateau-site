@@ -1,506 +1,273 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>En Plateau — Conversations économiques</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta
-    name="description"
-    content="En Plateau réunit dirigeants, investisseurs, experts, responsables associatifs et décideurs publics autour de conversations économiques consacrées aux grandes transformations de l’économie réelle en Europe."
-  >
+<title>En Plateau — Conversations économiques entre dirigeants européens</title>
 
-  <link rel="canonical" href="https://enplateau.fr/">
+<meta name="description" content="EN PLATEAU réunit dirigeants, investisseurs, experts et décideurs publics autour de conversations économiques structurées, de rencontres à huis clos et d’une diffusion éditoriale à forte portée stratégique.">
 
-  <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0F2747">
+<link rel="canonical" href="https://enplateau.fr/">
 
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:site_name" content="En Plateau">
-  <meta property="og:title" content="En Plateau — Conversations économiques">
-  <meta
-    property="og:description"
-    content="En Plateau réunit dirigeants, investisseurs, experts, responsables associatifs et décideurs publics autour de conversations économiques consacrées aux grandes transformations de l’économie réelle en Europe."
-  >
-  <meta property="og:url" content="https://enplateau.fr/">
-  <meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0F2747">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="En Plateau — Conversations économiques">
-  <meta
-    name="twitter:description"
-    content="En Plateau réunit dirigeants, investisseurs, experts, responsables associatifs et décideurs publics autour de conversations économiques consacrées aux grandes transformations de l’économie réelle en Europe."
-  >
-  <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="En Plateau">
+<meta property="og:title" content="En Plateau — Conversations économiques entre dirigeants européens">
+<meta property="og:description" content="Un dispositif éditorial structuré pour rendre lisibles les transformations de l’économie réelle à partir de lectures, d’arbitrages et de décisions situées.">
+<meta property="og:url" content="https://enplateau.fr/">
+<meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="En Plateau — Conversations économiques entre dirigeants européens">
+<meta name="twitter:description" content="Des conversations économiques structurées, des rencontres à huis clos et une diffusion éditoriale pensée comme un actif stratégique durable.">
+<meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/editorial.css">
-  <link rel="stylesheet" href="assets/css/home.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    .home-conversations .card-list{
-      margin:16px 0 0;
-      padding-left:18px;
-    }
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/editorial.css">
+<link rel="stylesheet" href="assets/css/home.css">
 
-    .home-conversations .card-list li{
-      margin-bottom:6px;
-    }
-
-    .home-conversations .card .link{
-      display:inline-block;
-      margin-top:18px;
-    }
-
-    .home-conversations .card p{
-      margin-bottom:0;
-    }
-
-    .home-conversations .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-    }
-
-    .home-conversations .pill::before{
-      content:"Série";
-      font-size:.78em;
-      opacity:.8;
-    }
-
-    .founder-home p:last-child{
-      margin-bottom:0;
-    }
-
-    .home-note-inline{
-      max-width:780px;
-      margin:0 auto;
-      text-align:center;
-    }
-
-    .home-note-inline p:last-child{
-      margin-bottom:0;
-    }
-
-    .season-positions{
-      margin-top:18px;
-      font-size:.98rem;
-      opacity:.92;
-    }
-
-    .final.final-home{
-      background:#0F2747;
-      color:#fff;
-    }
-
-    .final.final-home h2,
-    .final.final-home h3,
-    .final.final-home p,
-    .final.final-home .series-access-kicker,
-    .final.final-home .series-access-body,
-    .final.final-home .series-access-head{
-      color:#fff;
-    }
-
-    .final.final-home .series-access-card{
-      border:1px solid rgba(255,255,255,0.16);
-      background:rgba(255,255,255,0.04);
-      color:#fff;
-    }
-
-    .final.final-home .series-access-card.is-secondary{
-      background:rgba(255,255,255,0.02);
-    }
-
-    .final.final-home .btn.btn-primary,
-    .final.final-home .btn.btn-secondary{
-      background:#fff !important;
-      color:#0F2747 !important;
-      border:1px solid #fff !important;
-    }
-
-    .final.final-home .btn.btn-primary:hover,
-    .final.final-home .btn.btn-secondary:hover{
-      opacity:.92;
-    }
-  </style>
 </head>
 
 <body>
 
-  <div id="site-header"></div>
-  <div id="site-mobile-menu"></div>
+<div id="site-header"></div>
+<div id="site-mobile-menu"></div>
 
-  <main class="container">
+<main class="container">
 
-    <!-- HERO -->
+  <!-- HERO -->
 
-    <section class="hero hero-editorial">
-      <div class="hero-inner">
+  <section class="hero hero-home" id="hero-home">
 
-        <div class="season-badge">
-          Saison inaugurale — 2026–2027
+    <div class="hero-inner">
+
+      <p class="hero-kicker">Conversations économiques entre dirigeants européens</p>
+
+      <h1>
+        <span>Des prises de parole qui comptent.</span><br>
+        <span>Des conversations qui les replacent dans un ensemble.</span><br>
+        <span>Une lecture construite de l’économie réelle.</span>
+      </h1>
+
+      <p class="subhead">
+        EN PLATEAU réunit dirigeants, investisseurs, experts et décideurs publics autour de transformations en cours, dans un cadre éditorial structuré où les contributions prennent leur pleine portée par leur mise en relation.
+      </p>
+
+      <p class="hero-note">
+        Une parole isolée informe. Replacée dans un ensemble de lectures, d’arbitrages et de décisions, elle devient plus lisible et plus utile.
+      </p>
+
+      <div class="hero-links">
+        <a class="hero-link hero-link-primary" href="participer.html#approche">
+          Recevoir la présentation
+        </a>
+        <a class="hero-link hero-link-secondary" href="#series-editoriales">
+          Découvrir les séries
+        </a>
+      </div>
+
+      <div class="hero-rule"></div>
+
+    </div>
+
+  </section>
+
+  <!-- PROPOSITION DE VALEUR -->
+
+  <section class="section section-white" id="proposition-valeur">
+
+    <div class="section-head centered">
+      <h2>Ce qu’est EN PLATEAU</h2>
+    </div>
+
+    <div class="section-text-block narrow">
+      <p>
+        EN PLATEAU n’additionne pas des interventions. Le dispositif construit des conversations où plusieurs contributions, replacées les unes par rapport aux autres, permettent de mieux lire des transformations à l’œuvre dans l’économie réelle.
+      </p>
+
+      <p>
+        Chaque série repose sur un cadre précis : des intervenants identifiés pour ce qu’ils voient, décident ou structurent ; une préparation éditoriale en amont ; une mise en relation des prises de parole ; et des rencontres à huis clos pensées comme des moments de clarification entre pairs.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- SERIES -->
+
+  <section class="section section-soft" id="series-editoriales">
+
+    <div class="section-head centered">
+      <h2>Trois séries éditoriales</h2>
+      <p class="section-intro narrow">
+        Trois registres distincts pour explorer les transformations de l’économie réelle : ce qui devient lisible, ce qui se construit et ce qui structure durablement les systèmes.
+      </p>
+    </div>
+
+    <div class="grid-3 home-series-grid">
+
+      <article class="card home-series-card">
+        <p class="series-card-kicker">Les Éclaireurs</p>
+        <h3>Rendre une transformation lisible</h3>
+        <p>
+          Des lectures complémentaires issues de positions différentes dans l’économie réelle, articulées pour faire apparaître la structure d’un phénomène en cours.
+        </p>
+        <div class="cta-inline">
+          <a href="les-eclaireurs.html">Découvrir la série</a>
         </div>
+      </article>
 
-        <h1>
-          Conversations économiques entre dirigeants, investisseurs, experts et décideurs publics.
-        </h1>
-
-        <p class="subhead">
-          Un programme éditorial consacré aux grandes transformations de l’économie réelle en Europe.
+      <article class="card home-series-card featured">
+        <p class="series-card-kicker">Les Bâtisseurs</p>
+        <h3>Montrer comment elle se construit réellement</h3>
+        <p>
+          Des décisions situées, des arbitrages concrets et des rôles complémentaires dans la chaîne de valeur pour faire apparaître la dynamique réelle d’une transformation.
         </p>
-
-        <p class="hero-note">
-          La saison inaugurale réunit un nombre volontairement limité d’intervenants issus principalement des écosystèmes économiques de France, de Belgique, de Suisse et du Luxembourg.
-        </p>
-
-        <div class="hero-links" aria-label="Accès rapides">
-          <a class="hero-link hero-link-primary" href="participer.html#approche">Recevoir la présentation détaillée</a>
-          <a class="hero-link hero-link-secondary" href="participer.html#signaler">Signaler une contribution</a>
+        <div class="cta-inline">
+          <a href="les-batisseurs.html">Découvrir la série</a>
         </div>
+      </article>
 
-        <div class="hero-rule" aria-hidden="true"></div>
-
-      </div>
-    </section>
-
-    <!-- MESSAGE DE RECONNAISSANCE -->
-
-    <section class="section section-white" style="padding-top:42px;padding-bottom:42px;">
-      <div class="home-note-inline">
+      <article class="card home-series-card">
+        <p class="series-card-kicker">Les Architectes</p>
+        <h3>Structurer une lecture systémique</h3>
         <p>
-          Si vous avez été contacté au sujet du programme, c’est que votre expérience peut éclairer l’une des conversations de la saison.
+          Des contributions capables de relier secteurs, normes, infrastructures et puissances d’action pour donner forme à une compréhension plus large des transformations.
         </p>
-      </div>
-    </section>
-
-    <!-- CRÉDIBILITÉ MÉDIAS -->
-
-    <section class="proof-block">
-      <div class="media-stack">
-        <p class="media-kicker">
-          Certaines conversations sont réalisées avec des sociétés de production déjà présentes dans plusieurs environnements éditoriaux économiques.
-        </p>
-
-        <div class="media-logos">
-          <img src="images/bfm-business.svg" alt="BFM Business">
-          <img src="images/la-tribune.svg" alt="La Tribune">
-          <img src="images/forbes.svg" alt="Forbes">
-          <img src="images/le-figaro.svg" alt="Le Figaro">
+        <div class="cta-inline">
+          <a href="les-architectes.html">Découvrir la série</a>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <!-- CONVERSATIONS EN PRÉPARATION -->
+    </div>
 
-    <section class="section section-soft home-conversations">
-      <div class="section-head centered">
-        <p class="section-kicker">Conversations en préparation</p>
-        <h2>Les premières conversations de la saison</h2>
-        <p class="section-intro narrow">
-          Six conversations structurent actuellement le lancement du programme.
+  </section>
+
+  <!-- GEOGRAPHIE DES CONVERSATIONS -->
+
+  <section class="section-editorial-geo" id="geographie-conversations">
+    <div class="container">
+
+      <div class="editorial-block">
+        <p class="kicker">Une géographie des conversations</p>
+
+        <h2 class="section-title">
+          Une trajectoire, pas une suite de rendez-vous.
+        </h2>
+
+        <p class="section-intro">
+          Les lieux ne sont pas un décor. Ils donnent à chaque étape sa fonction, sa tonalité et son niveau d’exigence.
+          EN PLATEAU construit une progression, où chaque conversation trouve sa juste place.
         </p>
       </div>
 
-      <div class="grid-2">
+      <div class="geo-editorial-list">
 
-        <article class="card featured">
-          <span class="pill">Les Architectes</span>
-          <h3>L’intelligence artificielle, nouvelle infrastructure de l’économie</h3>
-          <p>
-            Une conversation systémique sur la manière dont l’intelligence artificielle transforme les systèmes productifs, les systèmes de décision et l’organisation des services.
-          </p>
-          <ul class="card-list">
-            <li>Transformation des systèmes productifs</li>
-            <li>Transformation des systèmes de décision</li>
-            <li>Transformation des systèmes de services</li>
-            <li>Souveraineté économique et régulation</li>
-          </ul>
-          <a class="link" href="les-architectes.html#conversation-ia">Découvrir la conversation</a>
-        </article>
-
-        <article class="card">
-          <span class="pill">Les Bâtisseurs</span>
-          <h3>Réindustrialiser l’Europe</h3>
-          <p>
-            Une conversation sur les conditions productives de la réindustrialisation européenne à partir de plusieurs positions concrètes dans la chaîne de valeur.
-          </p>
-          <ul class="card-list">
-            <li>Industrie et compétitivité productive</li>
-            <li>Chimie et matériaux stratégiques</li>
-            <li>Technologies industrielles et équipements</li>
-            <li>Logistique et circulation des biens</li>
-          </ul>
-          <a class="link" href="les-batisseurs.html#conversation-reindustrialiser">Découvrir la conversation</a>
-        </article>
-
-        <article class="card">
-          <span class="pill">Les Éclaireurs</span>
-          <h3>Repenser les systèmes de santé européens</h3>
-          <p>
-            Une conversation sur l’évolution des systèmes de santé face aux transformations démographiques, médicales, organisationnelles et budgétaires.
-          </p>
-          <ul class="card-list">
-            <li>Soutenabilité des systèmes de santé</li>
-            <li>Organisation hospitalière</li>
-            <li>Innovation médicale</li>
-            <li>Financement de la santé</li>
-          </ul>
-          <a class="link" href="les-eclaireurs.html#conversation-sante">Découvrir la conversation</a>
-        </article>
-
-        <article class="card featured">
-          <span class="pill">Les Architectes</span>
-          <h3>L’énergie, infrastructure stratégique de la compétitivité européenne</h3>
-          <p>
-            Une conversation sur la manière dont les choix énergétiques redessinent la compétitivité des entreprises et l’équilibre industriel européen.
-          </p>
-          <ul class="card-list">
-            <li>Compétitivité industrielle et coût de l’énergie</li>
-            <li>Transformation des systèmes énergétiques</li>
-            <li>Financement des infrastructures</li>
-            <li>Souveraineté énergétique européenne</li>
-          </ul>
-          <a class="link" href="les-architectes.html#conversation-energie">Découvrir la conversation</a>
-        </article>
-
-        <article class="card">
-          <span class="pill">Les Bâtisseurs</span>
-          <h3>Transformer les chaînes logistiques européennes</h3>
-          <p>
-            Une conversation sur la transformation des chaînes logistiques, industrielles et technologiques dans l’économie européenne.
-          </p>
-          <ul class="card-list">
-            <li>Infrastructure logistique et transport</li>
-            <li>Relocalisation et géographies industrielles</li>
-            <li>Technologies logistiques et pilotage</li>
-            <li>Résilience des chaînes d’approvisionnement</li>
-          </ul>
-          <a class="link" href="les-batisseurs.html#conversation-logistique">Découvrir la conversation</a>
-        </article>
-
-        <article class="card">
-          <span class="pill">Les Éclaireurs</span>
-          <h3>Financer les grandes transformations de l’économie européenne</h3>
-          <p>
-            Une conversation sur les mécanismes financiers permettant de soutenir les grandes transformations industrielles, énergétiques et productives.
-          </p>
-          <ul class="card-list">
-            <li>Stratégies financières des entreprises</li>
-            <li>Banques d’affaires et restructurations</li>
-            <li>Investissement et innovation</li>
-            <li>Gouvernance financière</li>
-          </ul>
-          <a class="link" href="les-eclaireurs.html#conversation-financement">Découvrir la conversation</a>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- LE DISPOSITIF -->
-
-    <section class="section section-white">
-      <div class="section-head centered">
-        <h2>Le dispositif</h2>
-        <p class="section-intro narrow">
-          Les conversations En Plateau reposent sur un dispositif éditorial en quatre temps.
-        </p>
-      </div>
-
-      <div class="grid-4">
-        <article class="card">
-          <span class="pill">Étape 1</span>
-          <h3>Préparer la conversation</h3>
-          <p>
-            Chaque contribution s’inscrit dans un travail éditorial préalable permettant de structurer une prise de parole claire, située et utile.
-          </p>
-        </article>
-
-        <article class="card">
-          <span class="pill">Étape 2</span>
-          <h3>Produire les prises de parole</h3>
-          <p>
-            Les intervenants contribuent à la conversation à travers plusieurs prises de parole réalisées dans différents environnements éditoriaux économiques.
-          </p>
-        </article>
-
-        <article class="card featured">
-          <span class="pill">Étape 3</span>
-          <h3>Réunir les acteurs</h3>
-          <p>
-            Les participants se retrouvent ensuite lors de rencontres organisées à Paris, Bruxelles ou Genève, dans un cadre permettant d’échanger entre pairs autour des sujets abordés.
-          </p>
-        </article>
-
-        <article class="card">
-          <span class="pill">Étape 4</span>
-          <h3>Diffuser et activer les contenus</h3>
-          <p>
-            Les contenus produits dans ce cadre sont ensuite diffusés et peuvent être mobilisés dans l’écosystème professionnel des participants.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- TERRITOIRE -->
-
-    <section class="section section-soft">
-      <div class="section-head centered">
-        <h2>Paris, Bruxelles, Genève</h2>
-        <p class="section-intro narrow">
-          Trois villes qui relient économie productive, régulation européenne et finance internationale.
-        </p>
-      </div>
-
-      <div class="section-text-block">
-        <p>
-          En Plateau se développe dans un espace européen reliant principalement Paris, Bruxelles et Genève. Ces trois villes occupent chacune une position particulière dans l’organisation de l’économie européenne et internationale.
-        </p>
-
-        <p>
-          Le programme s’adresse principalement aux écosystèmes économiques de France, de Belgique, de Suisse et du Luxembourg, tout en restant ouvert aux autres espaces européens lorsque leur contribution éclaire utilement une conversation.
-        </p>
-
-        <p class="proof-link-wrap">
-          <a class="link" href="territoire.html">Découvrir le territoire du programme</a>
-        </p>
-      </div>
-    </section>
-
-    <!-- POURQUOI CES CONVERSATIONS -->
-
-    <section class="section section-white">
-      <div class="section-head centered">
-        <h2>Pourquoi ces conversations</h2>
-        <p class="section-intro narrow">
-          Une initiative éditoriale conçue pour rendre plus lisibles les transformations de l’économie réelle en Europe.
-        </p>
-      </div>
-
-      <div class="section-text-block">
-        <p>
-          L’économie européenne traverse une période de transformation profonde : recomposition industrielle, transition énergétique, révolution technologique, nouvelles rivalités économiques.
-        </p>
-
-        <p>
-          Comprendre ces mutations exige de croiser les regards de ceux qui produisent, investissent, conseillent, régulent et transforment l’économie réelle.
-        </p>
-
-        <p>
-          En Plateau organise ces lectures à travers des conversations structurées, pensées pour documenter progressivement les transformations de l’économie réelle.
-        </p>
-      </div>
-    </section>
-
-    <!-- FONDATEUR -->
-
-    <section class="section section-soft">
-      <div class="section-head centered">
-        <p class="section-kicker">L’initiative</p>
-        <h2>À l’origine d’En Plateau</h2>
-      </div>
-
-      <div class="section-text-block narrow founder-home">
-        <p>
-          Les grandes transformations de notre société deviennent plus lisibles lorsque l’on réunit ceux qui les vivent et que l’on fait dialoguer leurs points de vue.
-        </p>
-
-        <p>
-          En Plateau applique cette intuition au domaine de l’économie, à travers des conversations structurées, des prises de parole médiatiques et des rencontres entre pairs.
-        </p>
-
-        <p>
-          Le projet est porté par Hocine Reguida, dont le parcours l’a conduit à évoluer dans des environnements très différents — technologies de l’information, médias financiers, publicité, production audiovisuelle, e-commerce, ONG, solidarité internationale, action sociale et développement territorial — au contact de logiques économiques, politiques et sociales souvent analysées séparément.
-        </p>
-
-        <p class="proof-link-wrap">
-          <a class="link" href="a-propos.html">En savoir plus sur l’initiative</a>
-        </p>
-      </div>
-    </section>
-
-    <!-- CONSTITUTION -->
-
-    <section class="section section-white">
-      <div class="section-head centered">
-        <h2>Constitution des conversations</h2>
-      </div>
-
-      <div class="section-text-block">
-        <p>
-          Les premières conversations réunissent progressivement des dirigeants d’entreprises, des investisseurs, des associés de cabinets internationaux, des experts, des responsables associatifs et des décideurs publics impliqués dans les grandes transformations économiques.
-        </p>
-
-        <p>
-          La majorité des intervenants participant aux conversations En Plateau sont identifiés et invités directement à la suite d’un travail éditorial visant à repérer des trajectoires, des responsabilités et des expériences particulièrement pertinentes au regard du thème abordé.
-        </p>
-
-        <p>
-          Toute participation aux conversations En Plateau doit être validée par le comité éditorial.
-        </p>
-      </div>
-    </section>
-
-    <!-- FINAL -->
-
-    <section class="final final-home">
-      <h2>Deux façons d’entrer dans le programme</h2>
-
-      <div class="series-access-grid">
-
-        <article class="series-access-card is-primary">
-          <div class="series-access-head">
-            <p class="series-access-kicker">Accès 1</p>
-            <h3>Vous avez été approché</h3>
-          </div>
-
-          <div class="series-access-body">
+        <div class="geo-line">
+          <div class="geo-place">Paris</div>
+          <div class="geo-content">
+            <h3>Décider</h3>
             <p>
-              Vous pouvez demander à recevoir la présentation détaillée du programme et des conversations actuellement en cours de constitution.
+              Un cadre où la parole engage et où les arbitrages trouvent leur juste gravité.
             </p>
           </div>
+        </div>
 
-          <div class="cta">
-            <a class="btn btn-primary" href="participer.html#approche">
-              Recevoir la présentation détaillée
-            </a>
-          </div>
-        </article>
-
-        <article class="series-access-card is-secondary">
-          <div class="series-access-head">
-            <p class="series-access-kicker">Accès 2</p>
-            <h3>Signaler une contribution</h3>
-          </div>
-
-          <div class="series-access-body">
+        <div class="geo-line">
+          <div class="geo-place">Bruxelles</div>
+          <div class="geo-content">
+            <h3>Structurer</h3>
             <p>
-              Il reste possible de signaler une contribution si celle-ci permet réellement d’éclairer une conversation en préparation.
+              Un espace pour ordonner les lectures, relier les enjeux et construire un cadre commun.
             </p>
           </div>
+        </div>
 
-          <div class="cta">
-            <a class="btn btn-secondary" href="participer.html#signaler">
-              Signaler une contribution
-            </a>
+        <div class="geo-line">
+          <div class="geo-place">Genève</div>
+          <div class="geo-content">
+            <h3>Préciser</h3>
+            <p>
+              Un registre plus resserré, où la discrétion renforce la qualité des échanges.
+            </p>
           </div>
-        </article>
+        </div>
+
+        <div class="geo-line">
+          <div class="geo-place">Un lieu final</div>
+          <div class="geo-content">
+            <h3>Mettre en perspective</h3>
+            <p>
+              Non pour conclure, mais pour relire ensemble ce que ces voix permettent de mieux comprendre.
+            </p>
+          </div>
+        </div>
 
       </div>
-    </section>
 
-  </main>
+      <div class="geo-note">
+        <p>
+          Une parole ne prend pas la même portée selon le lieu qui l’accueille.
+        </p>
+      </div>
 
-  <div id="site-footer"></div>
+    </div>
+  </section>
 
-  <script src="assets/js/layout.js"></script>
+  <!-- MEDIAS -->
+
+  <section class="proof-block" id="medias-partenaires">
+
+    <div class="media-stack">
+
+      <p class="media-kicker">
+        Des conversations déployées dans des environnements éditoriaux économiques reconnus
+      </p>
+
+      <div class="media-logos">
+        <img src="images/bfm-business.svg" alt="BFM Business">
+        <img src="images/la-tribune.svg" alt="La Tribune">
+        <img src="images/forbes.svg" alt="Forbes">
+        <img src="images/le-figaro.svg" alt="Le Figaro">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA FINAL -->
+
+  <section class="final" id="entrer-dans-le-programme">
+
+    <h2>Recevoir la présentation d’EN PLATEAU</h2>
+
+    <p>
+      La présentation détaille le cadre général du dispositif, les séries éditoriales, les conversations en préparation et les modalités de participation.
+    </p>
+
+    <div class="cta">
+      <a class="btn btn-primary" href="participer.html#approche">
+        Recevoir la présentation
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script src="assets/js/layout.js"></script>
+
 </body>
 </html>
