@@ -2,40 +2,165 @@
 <html lang="fr">
 <head>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>En Plateau — La série éditoriale Les Architectes</title>
+  <title>En Plateau — La série éditoriale Les Architectes</title>
 
-<meta name="description" content="La série éditoriale Les Architectes explore les transformations systémiques qui redessinent l’économie contemporaine.">
+  <meta name="description" content="La série éditoriale Les Architectes explore les transformations systémiques qui redessinent l’économie contemporaine.">
 
-<link rel="canonical" href="https://enplateau.fr/les-architectes.html">
+  <link rel="canonical" href="https://enplateau.fr/les-architectes.html">
 
-<meta name="robots" content="index,follow">
-<meta name="theme-color" content="#0F2747">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0F2747">
 
-<meta property="og:type" content="website">
-<meta property="og:locale" content="fr_FR">
-<meta property="og:site_name" content="En Plateau">
-<meta property="og:title" content="En Plateau — La série éditoriale Les Architectes">
-<meta property="og:description" content="Des conversations consacrées aux transformations systémiques de l’économie contemporaine.">
-<meta property="og:url" content="https://enplateau.fr/les-architectes.html">
-<meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="En Plateau">
+  <meta property="og:title" content="En Plateau — La série éditoriale Les Architectes">
+  <meta property="og:description" content="Des conversations consacrées aux transformations systémiques de l’économie contemporaine.">
+  <meta property="og:url" content="https://enplateau.fr/les-architectes.html">
+  <meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="En Plateau — La série éditoriale Les Architectes">
-<meta name="twitter:description" content="Des conversations consacrées aux transformations systémiques de l’économie contemporaine.">
-<meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="En Plateau — La série éditoriale Les Architectes">
+  <meta name="twitter:description" content="Des conversations consacrées aux transformations systémiques de l’économie contemporaine.">
+  <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
 
-<link rel="stylesheet" href="assets/css/layout.css">
-<link rel="stylesheet" href="assets/css/editorial.css">
-<link rel="stylesheet" href="assets/css/series.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/editorial.css">
+  <link rel="stylesheet" href="assets/css/series.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    .conversation-block{
+      margin-top:56px;
+    }
+
+    .conversation-block:first-of-type{
+      margin-top:0;
+    }
+
+    .conversation-head{
+      max-width:900px;
+      margin:0 auto 26px;
+    }
+
+    .conversation-meta{
+      margin:0 0 8px;
+      font-size:.82rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#5B6472;
+    }
+
+    .conversation-head h3{
+      margin:0 0 12px;
+      font-size:clamp(1.7rem,2.8vw,2.35rem);
+      line-height:1.16;
+      color:#0F2747;
+    }
+
+    .conversation-intro{
+      margin:0;
+      max-width:780px;
+      font-size:1.03rem;
+      line-height:1.82;
+      color:#2B3340;
+    }
+
+    .angles-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:24px;
+      margin-top:28px;
+    }
+
+    .angle-card{
+      background:#fff;
+      border:1px solid #E3E7EC;
+      border-radius:18px;
+      padding:24px;
+    }
+
+    .angle-label{
+      display:block;
+      margin:0 0 10px;
+      font-size:.8rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#5B6472;
+    }
+
+    .angle-card h4{
+      margin:0 0 10px;
+      font-size:1.16rem;
+      line-height:1.3;
+      color:#0B0F19;
+    }
+
+    .angle-card p{
+      margin:0;
+      color:#44505F;
+      line-height:1.75;
+    }
+
+    .angle-meta,
+    .angle-media{
+      margin-top:12px !important;
+      font-size:.96rem;
+      line-height:1.7;
+      color:#5B6472 !important;
+    }
+
+    .event-box{
+      margin-top:24px;
+      background:#F8F7F4;
+      border:1px solid #E3E7EC;
+      border-radius:20px;
+      padding:28px;
+    }
+
+    .event-kicker{
+      margin:0 0 10px;
+      font-size:.8rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#5B6472;
+    }
+
+    .event-box h4{
+      margin:0 0 10px;
+      font-size:1.28rem;
+      line-height:1.25;
+      color:#0F2747;
+    }
+
+    .event-box p{
+      margin:0;
+      color:#2B3340;
+      line-height:1.8;
+    }
+
+    .conversation-note{
+      max-width:840px;
+      margin:22px auto 0;
+      font-size:.98rem;
+      line-height:1.8;
+      color:#44505F;
+    }
+
+    @media (max-width: 820px){
+      .angles-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
 
 </head>
 
@@ -46,363 +171,384 @@
 
 <main class="container">
 
-<!-- HERO -->
+  <!-- HERO -->
+  <section class="hero hero-editorial" id="hero-architectes">
+    <div class="hero-inner">
 
-<section class="hero hero-editorial" id="serie-architectes">
+      <div class="season-badge">Saison inaugurale — septembre 2026</div>
 
-  <div class="hero-inner">
+      <div class="series-kicker">La série éditoriale Les Architectes</div>
 
-    <div class="season-badge">
-      Saison inaugurale — septembre 2026
+      <h1>
+        <span>Les grandes transformations</span><br>
+        <span>qui redessinent l’économie.</span>
+      </h1>
+
+      <p class="subhead">
+        La série Les Architectes explore les transformations systémiques qui structurent l’économie contemporaine : transitions technologiques, énergétiques, industrielles et institutionnelles.
+      </p>
+
+      <p class="hero-note">
+        Certaines transformations ne se comprennent pas seulement par leurs effets visibles, mais par les structures, les cadres et les systèmes qui les organisent.
+      </p>
+
+      <p class="hero-note" style="margin-top:10px;">
+        Les conversations visibles à ce stade correspondent aux premières séquences rendues publiques dans la constitution de la saison.
+      </p>
+
+      <div class="hero-links">
+        <a class="hero-link hero-link-primary" href="participer.html#approche">
+          Recevoir la présentation détaillée
+        </a>
+        <a class="hero-link hero-link-secondary" href="index.html">
+          Découvrir le programme
+        </a>
+      </div>
+
+      <div class="hero-rule"></div>
+
+    </div>
+  </section>
+
+  <!-- POURQUOI VOUS -->
+  <section class="section section-white" id="pourquoi-vous-architectes">
+    <div class="section-head centered">
+      <h2>Pourquoi vous avez été contacté</h2>
     </div>
 
-    <div class="series-kicker">
-      La série éditoriale Les Architectes
+    <div class="section-text-block">
+      <p>
+        Si vous avez été contacté au sujet des Architectes, c’est qu’une position que vous occupez permet de relier plusieurs dimensions d’une même transformation : entreprise, infrastructure, financement, régulation, politique publique ou architecture sectorielle.
+      </p>
+
+      <p>
+        Dans EN PLATEAU, la distinction entre Éclaireurs, Bâtisseurs et Architectes ne repose pas sur le format ou le nombre d’interventions, mais sur la fonction occupée dans l’économie réelle et dans la lecture du sujet.
+      </p>
+
+      <p>
+        Une contribution n’est pas retenue pour ajouter une analyse de plus, mais lorsqu’elle permet d’éclairer les cadres, dépendances, structures ou conditions de possibilité qui organisent la transformation étudiée.
+      </p>
+    </div>
+  </section>
+
+  <!-- CADRE -->
+  <section class="section section-soft" id="cadre-architectes">
+    <div class="section-head centered">
+      <h2>Le cadre de la série</h2>
     </div>
 
-    <h1>
-      <span>Les grandes transformations</span><br>
-      <span>qui redessinent l’économie.</span>
-    </h1>
+    <div class="series-frame-grid">
 
-    <p class="subhead">
-      La série Les Architectes explore les transformations systémiques qui structurent l’économie contemporaine : transitions technologiques, énergétiques, industrielles et institutionnelles.
+      <article class="frame-card">
+        <span class="frame-card-label">Le sujet</span>
+        <h3>Des transformations systémiques</h3>
+        <p>
+          Chaque conversation porte sur une transformation dont les effets dépassent un secteur isolé et se déploient à l’échelle de plusieurs systèmes économiques, industriels, technologiques ou institutionnels.
+        </p>
+      </article>
+
+      <article class="frame-card">
+        <span class="frame-card-label">Les contributions</span>
+        <h3>Des lectures à plusieurs niveaux</h3>
+        <p>
+          Les intervenants sont retenus pour leur capacité à relier plusieurs niveaux d’analyse : entreprise, régulation, infrastructure, financement, politique publique ou architecture sectorielle.
+        </p>
+      </article>
+
+      <article class="frame-card">
+        <span class="frame-card-label">Les structures</span>
+        <h3>Des systèmes qui organisent le réel</h3>
+        <p>
+          Chaque contribution aide à rendre visibles des cadres, dépendances, normes, rapports de force ou conditions de possibilité sans lesquels une transformation ne peut être pleinement comprise.
+        </p>
+      </article>
+
+      <article class="frame-card featured">
+        <span class="frame-card-label">L’ensemble</span>
+        <h3>Une lecture systémique construite</h3>
+        <p>
+          La mise en relation des contributions ne produit pas un simple échange d’analyses. Elle permet de construire une lecture d’ensemble des systèmes en transformation.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ROLE -->
+  <section class="section section-white" id="role-architecte">
+    <div class="section-head centered">
+      <h2>Le rôle de l’Architecte</h2>
+    </div>
+
+    <div class="grid-3">
+
+      <article class="card">
+        <span class="pill">Structure</span>
+        <p>Rendre visibles les cadres, dépendances et infrastructures qui conditionnent une transformation économique.</p>
+      </article>
+
+      <article class="card">
+        <span class="pill">Articulation</span>
+        <p>Relier plusieurs niveaux d’analyse : entreprise, régulation, financement, technologie, politique publique ou système sectoriel.</p>
+      </article>
+
+      <article class="card">
+        <span class="pill">Système</span>
+        <p>Montrer comment une transformation s’organise à travers des règles, des rapports de force, des standards ou des dépendances structurantes.</p>
+      </article>
+
+    </div>
+
+    <div class="section-text-block" style="margin-top:32px;">
+      <p>
+        L’Architecte n’intervient pas pour commenter un secteur depuis l’extérieur, mais pour rendre lisible la manière dont plusieurs systèmes s’articulent et produisent des effets réels dans l’économie.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONVERSATIONS -->
+  <section class="section section-soft-2" id="conversations-architectes">
+    <div class="section-head centered">
+      <h2>Conversations actuellement rendues visibles</h2>
+      <p class="section-intro narrow">
+        Ces conversations correspondent aux premières séquences publiques de la série. D’autres ne sont partagées qu’avec les acteurs directement concernés par leur préparation.
+      </p>
+    </div>
+
+    <!-- Conversation 1 -->
+    <div class="conversation-block">
+      <div class="conversation-head">
+        <p class="conversation-meta">Conversation 1 — Les Architectes</p>
+        <h3>Intelligence artificielle et économie réelle</h3>
+        <p class="conversation-intro">
+          Une conversation consacrée à la manière dont l’intelligence artificielle redéfinit les capacités d’innovation, les systèmes de décision, les organisations et les cadres de gouvernance dans l’économie réelle.
+        </p>
+      </div>
+
+      <div class="angles-grid">
+        <article class="angle-card">
+          <span class="angle-label">Angle 1</span>
+          <h4>Infrastructure technologique</h4>
+          <p>
+            Capacités de calcul, infrastructures numériques, couches technologiques, dépendances critiques et conditions matérielles de diffusion de l’IA.
+          </p>
+          <p class="angle-meta">
+            Acteurs pressentis : direction innovation, direction technologique, fondateurs, présidence, responsables d’infrastructures ou membres de COMEX.
+          </p>
+          <p class="angle-media">
+            Ce prisme pourra être abordé dans le cadre de l’émission <strong>Business Inside</strong>, avec <strong>Jean-Marc Sylvestre</strong>.
+          </p>
+        </article>
+
+        <article class="angle-card">
+          <span class="angle-label">Angle 2</span>
+          <h4>Transformation des organisations</h4>
+          <p>
+            Intégration dans les processus, évolution des modes de décision, effets sur les structures de travail et recomposition des organisations économiques.
+          </p>
+          <p class="angle-meta">
+            Acteurs pressentis : direction générale, direction transformation, direction des opérations, direction stratégie, membres de COMEX.
+          </p>
+          <p class="angle-media">
+            Ce prisme pourra être abordé dans le cadre de l’émission <strong>Grand Angle</strong> (<strong>BFM Business</strong>), avec <strong>Christophe Pallée</strong>.
+          </p>
+        </article>
+
+        <article class="angle-card">
+          <span class="angle-label">Angle 3</span>
+          <h4>Allocation du capital et modèles de croissance</h4>
+          <p>
+            Structuration de l’investissement, valorisation des entreprises, priorités de financement et émergence de nouveaux modèles économiques.
+          </p>
+          <p class="angle-meta">
+            Acteurs pressentis : private equity, venture capital, direction investissement, direction financière, finance d’entreprise, présidence.
+          </p>
+          <p class="angle-media">
+            Ce prisme pourra être abordé dans le cadre de l’émission <strong>Focus Business</strong>, avec <strong>Thierry Cabannes</strong>.
+          </p>
+        </article>
+
+        <article class="angle-card">
+          <span class="angle-label">Angle 4</span>
+          <h4>Régulation et gouvernance</h4>
+          <p>
+            Encadrement public, normes, souveraineté technologique, rapports de force réglementaires et conditions de gouvernance de l’IA à l’échelle européenne.
+          </p>
+          <p class="angle-meta">
+            Acteurs pressentis : décideurs publics de haut niveau, direction affaires publiques, direction stratégie, associés, responsables de practice, institutions ou opérateurs stratégiques.
+          </p>
+          <p class="angle-media">
+            Ce prisme pourra être abordé dans le cadre de l’émission <strong>La Tribune Business</strong>, avec <strong>Gilles Leclerc</strong>.
+          </p>
+        </article>
+      </div>
+
+      <div class="event-box">
+        <p class="event-kicker">Intervenants</p>
+        <h4>Fonctions concernées</h4>
+        <p>
+          Dirigeants, fondateurs, présidents, membres de comité exécutif ou tout porte-parole occupant une fonction de structuration, de régulation, d’investissement, de gouvernance ou de pilotage directement liée au sujet traité.
+        </p>
+      </div>
+
+      <div class="event-box" style="margin-top:16px;">
+        <p class="event-kicker">Événement associé</p>
+        <h4>Piloter les flux et transformer les systèmes de décision — Genève, novembre 2026</h4>
+        <p>
+          Les quatre angles de la conversation sont d’abord abordés dans des cadres éditoriaux distincts, puis réunis dans un échange entre intervenants à l’occasion de l’événement associé.
+        </p>
+      </div>
+
+      <p class="conversation-note">
+        Chaque intervenant est positionné sur un angle spécifique de la conversation. Les angles présentés ici correspondent aux premiers axes retenus à ce stade de sa construction.
+      </p>
+    </div>
+
+    <!-- Conversation 2 -->
+    <div class="conversation-block">
+      <div class="conversation-head">
+        <p class="conversation-meta">Conversation 2 — Les Architectes</p>
+        <h3>Financer les transformations de l’économie européenne</h3>
+        <p class="conversation-intro">
+          Une conversation consacrée aux cadres de financement, aux logiques d’allocation du capital, aux conditions de soutenabilité et aux mécanismes de gouvernance qui orientent les grandes transformations économiques européennes.
+        </p>
+      </div>
+
+      <div class="angles-grid">
+        <article class="angle-card">
+          <span class="angle-label">Angle 1</span>
+          <h4>Structures de financement</h4>
+          <p>
+            Mécanismes, instruments et architectures de financement mobilisés pour soutenir les transformations industrielles, énergétiques, technologiques et productives.
+          </p>
+          <p class="angle-meta">
+            Acteurs pressentis : banque d’affaires, direction financière, finance d’entreprise, investisseurs institutionnels, private equity, membres de COMEX.
+          </p>
+          <p class="angle-media">
+            Ce prisme pourra être abordé dans le cadre de l’émission <strong>Focus Business</strong>, avec <strong>Thierry Cabannes</strong>.
+          </p>
+        </article>
+
+        <article class="angle-card">
+          <span class="angle-label">Angle 2</span>
+          <h4>Allocation du capital</h4>
+          <p>
+            Hiérarchisation des priorités, logique d’investissement, arbitrages entre rendement, résilience, souveraineté et transformation de long terme.
+          </p>
+          <p class="angle-meta">
+            Acteurs pressentis : direction investissement, private equity, venture capital, présidence, direction générale, direction stratégie.
+          </p>
+          <p class="angle-media">
+            Ce prisme pourra être abordé dans le cadre de l’émission <strong>Grand Angle</strong> (<strong>BFM Business</strong>), avec <strong>Christophe Pallée</strong>.
+          </p>
+        </article>
+
+        <article class="angle-card">
+          <span class="angle-label">Angle 3</span>
+          <h4>Cadres publics et régulation</h4>
+          <p>
+            Politiques d’incitation, normes, règles européennes, arbitrages publics et conditions institutionnelles de structuration des investissements.
+          </p>
+          <p class="angle-meta">
+            Acteurs pressentis : décideurs publics de haut niveau, institutions, direction affaires publiques, associés, responsables de practice, stratégie institutionnelle.
+          </p>
+          <p class="angle-media">
+            Ce prisme pourra être abordé dans le cadre de l’émission <strong>La Tribune Business</strong>, avec <strong>Gilles Leclerc</strong>.
+          </p>
+        </article>
+
+        <article class="angle-card">
+          <span class="angle-label">Angle 4</span>
+          <h4>Transformation et effets systémiques</h4>
+          <p>
+            Manière dont les choix de financement redessinent les équilibres de marché, les capacités productives, les dépendances et la structure de l’économie réelle.
+          </p>
+          <p class="angle-meta">
+            Acteurs pressentis : direction générale, direction stratégie, associés, responsables de transformation, présidence, opérateurs stratégiques.
+          </p>
+          <p class="angle-media">
+            Ce prisme pourra être abordé dans le cadre de l’émission <strong>Business Inside</strong>, avec <strong>Jean-Marc Sylvestre</strong>.
+          </p>
+        </article>
+      </div>
+
+      <div class="event-box">
+        <p class="event-kicker">Intervenants</p>
+        <h4>Fonctions concernées</h4>
+        <p>
+          Dirigeants, fondateurs, présidents, membres de comité exécutif ou tout porte-parole disposant d’une responsabilité ou d’une lecture structurante sur les cadres de financement, de régulation, d’investissement ou de gouvernance liés au sujet.
+        </p>
+      </div>
+
+      <div class="event-box" style="margin-top:16px;">
+        <p class="event-kicker">Événement associé</p>
+        <h4>Financer, organiser et soutenir les systèmes essentiels — Bruxelles, octobre 2026</h4>
+        <p>
+          Les angles de la conversation sont d’abord traités dans quatre cadres éditoriaux distincts, puis prolongés dans un échange entre intervenants réunis autour du même sujet.
+        </p>
+      </div>
+
+      <p class="conversation-note">
+        Chaque angle correspond à un point d’entrée précis dans la conversation. L’invitation n’intervient pas sur le thème seul, mais sur la place qu’une fonction de structuration ou de gouvernance peut y occuper.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- PROGRAMME -->
+  <section class="section section-white" id="programme-architectes">
+    <div class="section-head centered">
+      <h2>Le programme</h2>
+    </div>
+
+    <div class="section-text-block">
+      <ul class="card-list">
+        <li>une prise de parole construite autour d’un angle précis</li>
+        <li>un déploiement dans plusieurs cadres éditoriaux identifiés</li>
+        <li>une rencontre à huis clos entre intervenants, permettant des échanges directs</li>
+        <li>une diffusion inscrite dans une construction éditoriale commune</li>
+      </ul>
+
+      <p>
+        Chaque participant intervient à travers une prise de parole unique, intégrée dans une construction collective plus large.
+      </p>
+
+      <p>
+        Certaines contributions peuvent donner lieu à des prolongements dans des cadres qui ne sont pas systématiquement publics.
+      </p>
+    </div>
+  </section>
+
+  <!-- RARETE -->
+  <section class="section section-soft" id="selection-architectes">
+    <div class="section-head centered">
+      <h2>Un nombre volontairement limité de contributions</h2>
+    </div>
+
+    <div class="section-text-block">
+      <p>
+        Chaque conversation réunit un nombre restreint d’intervenants, retenus pour leur capacité à relier plusieurs niveaux d’analyse, la singularité de leur position et la portée de la lecture qu’ils rendent possible.
+      </p>
+
+      <p>
+        Chaque angle est attribué au fil de la constitution de la conversation. Une fois confirmé, il n’est pas dupliqué dans la même séquence.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="final" id="entrer-architectes">
+    <h2>Recevoir la présentation détaillée</h2>
+    <p>
+      La présentation précise les sujets partagés à ce stade, les angles retenus, les cadres éditoriaux mobilisés et la place qu’une fonction de structuration, de gouvernance ou de régulation pourrait y occuper.
     </p>
 
-    <p class="hero-note">
-      Certaines transformations ne se comprennent pas seulement par leurs effets visibles, mais par les structures, les cadres et les systèmes qui les organisent.
-    </p>
-
-    <p class="hero-note" style="margin-top:10px;">
-      Toutes les conversations en préparation ne sont pas rendues publiques au même stade de leur constitution.
-    </p>
-
-    <div class="hero-links">
-
-      <a class="hero-link hero-link-primary" href="participer.html#approche">
+    <div class="cta">
+      <a class="btn btn-primary" href="participer.html#approche">
         Recevoir la présentation détaillée
       </a>
-
-      <a class="hero-link hero-link-secondary" href="index.html">
-        Découvrir le programme
-      </a>
-
     </div>
-
-    <div class="hero-rule"></div>
-
-  </div>
-
-</section>
-
-<!-- NAVIGATION INTERNE -->
-
-<section class="series-nav">
-
-  <div class="series-nav-inner">
-
-    <span class="series-nav-label">Conversations</span>
-
-    <a href="#conversation-ia">
-      Intelligence artificielle
-    </a>
-
-    <a href="#conversation-energie">
-      Transition énergétique
-    </a>
-
-  </div>
-
-</section>
-
-<!-- CADRE -->
-
-<section class="section section-soft" id="cadre-architectes">
-
-  <div class="section-head centered">
-
-    <h2>Le cadre de la série</h2>
-
-    <p class="section-intro narrow">
-      Les Architectes proposent une lecture transversale des transformations les plus structurantes de l’économie contemporaine.
-    </p>
-
-  </div>
-
-  <div class="series-frame-grid">
-
-    <article class="frame-card">
-      <span class="frame-card-label">Le sujet</span>
-      <h3>Des transformations systémiques</h3>
-      <p>
-        Chaque conversation porte sur une transformation dont les effets dépassent un secteur isolé et se déploient à l’échelle de plusieurs systèmes économiques, industriels, technologiques ou institutionnels.
-      </p>
-    </article>
-
-    <article class="frame-card">
-      <span class="frame-card-label">Les contributions</span>
-      <h3>Des lectures à plusieurs niveaux</h3>
-      <p>
-        Les intervenants sont retenus pour leur capacité à relier plusieurs niveaux d’analyse : entreprise, régulation, infrastructure, financement, politique publique ou architecture sectorielle.
-      </p>
-    </article>
-
-    <article class="frame-card">
-      <span class="frame-card-label">Les structures</span>
-      <h3>Des systèmes qui organisent le réel</h3>
-      <p>
-        Chaque contribution aide à rendre visibles des cadres, dépendances, normes, rapports de force ou conditions de possibilité sans lesquels une transformation ne peut être pleinement comprise.
-      </p>
-    </article>
-
-    <article class="frame-card featured">
-      <span class="frame-card-label">Le déploiement</span>
-      <h3>Une lecture systémique construite</h3>
-      <p>
-        La mise en relation des contributions ne produit pas un simple échange d’analyses. Elle permet de construire une lecture d’ensemble des systèmes en transformation.
-      </p>
-    </article>
-
-  </div>
-
-</section>
-
-<!-- PARTICIPATION -->
-
-<section class="section section-white" id="participation-architectes">
-
-  <div class="section-head centered">
-    <h2>La place des intervenants dans la série</h2>
-  </div>
-
-  <div class="section-text-block">
-
-    <p>
-      Dans la série Les Architectes, les intervenants ne sont pas invités pour commenter un secteur depuis l’extérieur, mais parce qu’ils occupent une position permettant de relier plusieurs dimensions d’une même transformation.
-    </p>
-
-    <p>
-      La distinction entre Éclaireurs, Bâtisseurs et Architectes ne repose pas sur le format ou le nombre d’interventions, mais sur la fonction occupée dans l’économie réelle et dans la lecture du sujet.
-    </p>
-
-    <p>
-      Chaque participant intervient à travers une prise de parole unique, inscrite dans une construction éditoriale collective plus large.
-    </p>
-
-    <p>
-      Certaines contributions sont examinées dans le cadre d’échanges restreints associant plusieurs regards afin d’en apprécier la justesse, la portée et la place dans l’ensemble.
-    </p>
-
-  </div>
-
-</section>
-
-<!-- CONVERSATION IA -->
-
-<section class="section section-soft-3" id="conversation-ia">
-
-  <div class="section-head centered">
-
-    <h2>Intelligence artificielle et économie réelle</h2>
-
-    <p class="section-intro narrow">
-      Comment l’intelligence artificielle transforme les organisations économiques, les modèles productifs et les systèmes de décision.
-    </p>
-
-  </div>
-
-  <div class="grid-2">
-
-    <article class="card featured">
-      <h3>Technologies</h3>
-      <p>
-        Comment l’intelligence artificielle transforme les capacités d’innovation, les infrastructures numériques et les modèles technologiques.
-      </p>
-    </article>
-
-    <article class="card">
-      <h3>Entreprise</h3>
-      <p>
-        Comment les organisations intègrent l’intelligence artificielle dans leurs processus opérationnels, leurs arbitrages et leurs systèmes de décision.
-      </p>
-    </article>
-
-    <article class="card">
-      <h3>Investissement</h3>
-      <p>
-        Comment les investisseurs évaluent, financent et structurent le développement des entreprises technologiques.
-      </p>
-    </article>
-
-    <article class="card">
-      <h3>Régulation</h3>
-      <p>
-        Comment les pouvoirs publics et les institutions encadrent le développement de l’intelligence artificielle et ses effets sur l’économie réelle.
-      </p>
-    </article>
-
-  </div>
-
-</section>
-
-<!-- CONVERSATION ENERGIE -->
-
-<section class="section section-soft-3" id="conversation-energie">
-
-  <div class="section-head centered">
-
-    <h2>La transition énergétique européenne</h2>
-
-    <p class="section-intro narrow">
-      Comment les transformations énergétiques redessinent les équilibres industriels, les infrastructures et les conditions de compétitivité du continent.
-    </p>
-
-  </div>
-
-  <div class="grid-2">
-
-    <article class="card featured">
-      <h3>Industrie énergétique</h3>
-      <p>
-        Comment les entreprises énergétiques réorganisent leurs stratégies face à la transition énergétique et à la recomposition des systèmes de production.
-      </p>
-    </article>
-
-    <article class="card">
-      <h3>Financement</h3>
-      <p>
-        Comment les investissements nécessaires à la transition énergétique sont structurés et arbitrés dans le temps long.
-      </p>
-    </article>
-
-    <article class="card">
-      <h3>Technologies</h3>
-      <p>
-        Comment les innovations énergétiques transforment les infrastructures, les chaînes de valeur et les modèles économiques.
-      </p>
-    </article>
-
-    <article class="card">
-      <h3>Politiques publiques</h3>
-      <p>
-        Comment les États et les institutions européennes pilotent la transition énergétique, ses dépendances et ses cadres de gouvernance.
-      </p>
-    </article>
-
-  </div>
-
-</section>
-
-<!-- CONVERSATIONS -->
-
-<section class="section section-white" id="conversations-architectes">
-
-  <div class="section-head centered">
-    <h2>Conversations en préparation</h2>
-    <p class="section-intro narrow">
-      Certaines conversations sont rendues visibles dès leur phase de constitution. D’autres ne sont partagées qu’avec les acteurs directement concernés par leur préparation.
-    </p>
-  </div>
-
-  <div class="grid-2">
-
-    <article class="card featured">
-      <h3>Intelligence artificielle et économie réelle</h3>
-      <p>
-        Comment l’intelligence artificielle transforme les capacités d’innovation, les systèmes de décision, les cadres de régulation et les modèles d’organisation.
-      </p>
-    </article>
-
-    <article class="card">
-      <h3>La transition énergétique européenne</h3>
-      <p>
-        Comment les systèmes énergétiques redessinent les infrastructures, la compétitivité industrielle et les dépendances stratégiques du continent.
-      </p>
-    </article>
-
-    <article class="card">
-      <h3>Financer les transformations de l’économie européenne</h3>
-      <p>
-        Comment l’allocation du capital, les logiques de financement et les cadres de régulation orientent les grandes transformations économiques.
-      </p>
-    </article>
-
-    <article class="card featured">
-      <h3>Souveraineté économique et dépendances critiques</h3>
-      <p>
-        Comment les dépendances, les normes, les infrastructures et les rapports de force redessinent les marges de décision économique en Europe.
-      </p>
-    </article>
-
-  </div>
-
-</section>
-
-<!-- PROGRAMME -->
-
-<section class="section section-soft" id="programme-architectes">
-
-  <div class="section-head centered">
-    <h2>Le programme</h2>
-  </div>
-
-  <div class="section-text-block">
-    <ul class="card-list">
-      <li>une prise de parole construite autour d’un angle précis</li>
-      <li>une rencontre à huis clos entre intervenants, permettant des échanges directs</li>
-      <li>une diffusion inscrite dans une construction éditoriale commune</li>
-    </ul>
-
-    <p>
-      Chaque participant intervient à travers une prise de parole unique, intégrée dans une construction systémique plus large.
-    </p>
-
-    <p>
-      Certaines contributions peuvent donner lieu à des prolongements dans des cadres qui ne sont pas systématiquement publics.
-    </p>
-  </div>
-
-</section>
-
-<!-- RARETE -->
-
-<section class="section section-white" id="selection-architectes">
-
-  <div class="section-head centered">
-    <h2>Un nombre volontairement limité de contributions</h2>
-  </div>
-
-  <div class="section-text-block">
-
-    <p>
-      Chaque conversation réunit un nombre restreint d’intervenants, retenus pour leur capacité à relier plusieurs niveaux d’analyse, la singularité de leur position et la portée de la lecture qu’ils rendent possible.
-    </p>
-
-    <p>
-      Certaines contributions sont examinées dans le cadre d’échanges restreints associant plusieurs regards afin d’en apprécier la cohérence, la densité et la place dans la conversation.
-    </p>
-
-  </div>
-
-</section>
-
-<!-- FINAL -->
-
-<section class="final" id="entrer-architectes">
-
-  <h2>Recevoir la présentation détaillée</h2>
-
-  <p>
-    La présentation précise les sujets partagés à ce stade, les angles retenus et la manière dont une contribution peut prendre place dans la conversation.
-  </p>
-
-  <div class="cta">
-    <a class="btn btn-primary" href="participer.html#approche">
-      Recevoir la présentation détaillée
-    </a>
-  </div>
-
-</section>
+  </section>
 
 </main>
 
@@ -411,4 +557,4 @@
 <script src="assets/js/layout.js"></script>
 
 </body>
-  </html>
+</html>
