@@ -54,6 +54,98 @@ content="Les conversations En Plateau se déploient à Paris, Bruxelles et Genè
 <link rel="stylesheet" href="assets/css/editorial.css">
 <link rel="stylesheet" href="assets/css/contexts.css">
 
+<style>
+  .territory-event{
+    margin-top:56px;
+  }
+
+  .territory-event:first-of-type{
+    margin-top:0;
+  }
+
+  .territory-event-head{
+    max-width:820px;
+    margin:0 auto 28px;
+  }
+
+  .territory-event-meta{
+    margin:0 0 10px;
+    font-size:.82rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:#5B6472;
+  }
+
+  .territory-event-head h3{
+    margin:0 0 12px;
+    font-size:clamp(1.8rem,3vw,2.35rem);
+    line-height:1.15;
+    color:#0F2747;
+  }
+
+  .territory-event-intro{
+    margin:0;
+    max-width:760px;
+    font-size:1.02rem;
+    line-height:1.8;
+    color:#2B3340;
+  }
+
+  .territory-conversations{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px;
+    margin-top:28px;
+  }
+
+  .territory-card{
+    background:#fff;
+    border:1px solid #E3E7EC;
+    border-radius:18px;
+    padding:24px;
+  }
+
+  .territory-card.featured{
+    border-color:#CBD5E1;
+    box-shadow:0 10px 24px rgba(15,39,71,0.06);
+  }
+
+  .territory-card h4{
+    margin:10px 0 12px;
+    font-size:1.22rem;
+    line-height:1.28;
+    color:#0B0F19;
+  }
+
+  .territory-card p{
+    margin:0;
+    color:#44505F;
+    line-height:1.75;
+  }
+
+  .territory-angle-list{
+    margin:14px 0 0;
+    padding-left:18px;
+  }
+
+  .territory-angle-list li{
+    margin-bottom:6px;
+    color:#44505F;
+    line-height:1.7;
+  }
+
+  .territory-link{
+    display:inline-block;
+    margin-top:18px;
+  }
+
+  @media (max-width: 820px){
+    .territory-conversations{
+      grid-template-columns:1fr;
+    }
+  }
+</style>
+
 </head>
 
 <body>
@@ -120,121 +212,148 @@ content="Les conversations En Plateau se déploient à Paris, Bruxelles et Genè
 </section>
 
 <!-- PARIS -->
-
 <section class="section section-soft-3" id="territoire-paris">
 
-  <div class="section-head centered">
-    <p class="section-kicker">Paris — septembre 2026</p>
-    <h2>Produire dans un environnement contraint</h2>
-    <p class="section-intro narrow">
-      Deux conversations consacrées aux conditions concrètes de production dans une économie européenne soumise à des tensions industrielles, énergétiques et stratégiques.
-    </p>
-  </div>
-
-  <div class="grid-2">
-
-    <article class="card featured">
-      <span class="pill">Les Bâtisseurs</span>
-      <h3>Souveraineté industrielle</h3>
-      <p>
-        Comment l’Europe peut renforcer ses capacités productives dans un contexte de dépendances, de contraintes industrielles et de recomposition stratégique.
+  <div class="territory-event">
+    <div class="territory-event-head">
+      <p class="territory-event-meta">Paris — septembre 2026</p>
+      <h3>Produire dans un environnement contraint</h3>
+      <p class="territory-event-intro">
+        Deux conversations consacrées aux conditions concrètes de production dans une économie européenne soumise à des tensions industrielles, énergétiques et stratégiques.
       </p>
-    </article>
+    </div>
 
-    <article class="card">
-      <span class="pill">Les Bâtisseurs</span>
-      <h3>Énergie et compétitivité productive</h3>
-      <p>
-        Comment les entreprises arbitrent entre décarbonation, compétitivité, coût de l’énergie et transformation de l’appareil productif.
-      </p>
-    </article>
+    <div class="territory-conversations">
 
-  </div>
+      <article class="territory-card featured">
+        <span class="pill">Les Bâtisseurs</span>
+        <h4>Souveraineté industrielle</h4>
+        <p>
+          Comment l’Europe peut renforcer ses capacités productives dans un contexte de dépendances, de contraintes industrielles et de recomposition stratégique.
+        </p>
+        <ul class="territory-angle-list">
+          <li>Capacité productive</li>
+          <li>Arbitrage stratégique</li>
+          <li>Investissement industriel</li>
+          <li>Cadres et contraintes de mise en œuvre</li>
+        </ul>
+        <a class="territory-link link" href="les-batisseurs.html">Découvrir la conversation</a>
+      </article>
 
-  <div class="section-text" style="margin-top:28px;">
-    <p class="measure">
-      Paris accueille ici un premier temps de gravité, centré sur la production, la contrainte et les arbitrages qui conditionnent les capacités industrielles.
-    </p>
+      <article class="territory-card">
+        <span class="pill">Les Bâtisseurs</span>
+        <h4>Énergie et compétitivité productive</h4>
+        <p>
+          Comment les entreprises arbitrent entre décarbonation, compétitivité, coût de l’énergie et transformation de l’appareil productif.
+        </p>
+        <ul class="territory-angle-list">
+          <li>Compétitivité industrielle</li>
+          <li>Transformation des sites</li>
+          <li>Investissement et temporalité</li>
+          <li>Cadre énergétique et dépendances</li>
+        </ul>
+        <a class="territory-link link" href="les-batisseurs.html">Découvrir la conversation</a>
+      </article>
+
+    </div>
   </div>
 
 </section>
 
 <!-- BRUXELLES -->
-
 <section class="section section-soft" id="territoire-bruxelles">
 
-  <div class="section-head centered">
-    <p class="section-kicker">Bruxelles — octobre 2026</p>
-    <h2>Financer, organiser et soutenir les systèmes essentiels</h2>
-    <p class="section-intro narrow">
-      Deux conversations consacrées aux conditions de soutenabilité, d’organisation et de financement des grands systèmes dont dépend la transformation économique européenne.
-    </p>
-  </div>
-
-  <div class="grid-2">
-
-    <article class="card featured">
-      <span class="pill">Les Éclaireurs</span>
-      <h3>Repenser les systèmes de santé européens</h3>
-      <p>
-        Comment les systèmes de santé évoluent sous l’effet des contraintes démographiques, budgétaires, technologiques et institutionnelles.
+  <div class="territory-event">
+    <div class="territory-event-head">
+      <p class="territory-event-meta">Bruxelles — octobre 2026</p>
+      <h3>Financer, organiser et soutenir les systèmes essentiels</h3>
+      <p class="territory-event-intro">
+        Deux conversations consacrées aux conditions de soutenabilité, d’organisation et de financement des grands systèmes dont dépend la transformation économique européenne.
       </p>
-    </article>
+    </div>
 
-    <article class="card">
-      <span class="pill">Les Architectes</span>
-      <h3>Financer les transformations de l’économie européenne</h3>
-      <p>
-        Comment les mécanismes de financement, les logiques d’allocation du capital et les cadres de régulation orientent les grandes transformations de l’économie européenne.
-      </p>
-    </article>
+    <div class="territory-conversations">
 
-  </div>
+      <article class="territory-card featured">
+        <span class="pill">Les Éclaireurs</span>
+        <h4>Repenser les systèmes de santé européens</h4>
+        <p>
+          Comment les systèmes de santé évoluent sous l’effet des contraintes démographiques, budgétaires, technologiques et institutionnelles.
+        </p>
+        <ul class="territory-angle-list">
+          <li>Soutenabilité du système</li>
+          <li>Organisation hospitalière</li>
+          <li>Innovation médicale</li>
+          <li>Financement de la santé</li>
+        </ul>
+        <a class="territory-link link" href="les-eclaireurs.html">Découvrir la conversation</a>
+      </article>
 
-  <div class="section-text" style="margin-top:28px;">
-    <p class="measure">
-      Bruxelles accueille un temps de structuration, où les systèmes essentiels sont abordés à travers leurs conditions de financement, d’organisation et de soutenabilité.
-    </p>
+      <article class="territory-card">
+        <span class="pill">Les Architectes</span>
+        <h4>Financer les transformations de l’économie européenne</h4>
+        <p>
+          Comment les mécanismes de financement, les logiques d’allocation du capital et les cadres de régulation orientent les grandes transformations de l’économie européenne.
+        </p>
+        <ul class="territory-angle-list">
+          <li>Structures de financement</li>
+          <li>Allocation du capital</li>
+          <li>Cadres publics et régulation</li>
+          <li>Transformation et effets systémiques</li>
+        </ul>
+        <a class="territory-link link" href="les-architectes.html">Découvrir la conversation</a>
+      </article>
+
+    </div>
   </div>
 
 </section>
 
 <!-- GENEVE -->
-
 <section class="section section-soft-3" id="territoire-geneve">
 
-  <div class="section-head centered">
-    <p class="section-kicker">Genève — novembre 2026</p>
-    <h2>Piloter les flux et transformer les systèmes de décision</h2>
-    <p class="section-intro narrow">
-      Deux conversations consacrées à la circulation, à la coordination et aux nouveaux systèmes de décision qui redessinent l’économie réelle.
-    </p>
-  </div>
-
-  <div class="grid-2">
-
-    <article class="card featured">
-      <span class="pill">Les Bâtisseurs</span>
-      <h3>Transformer les chaînes logistiques</h3>
-      <p>
-        Comment les entreprises réorganisent leurs flux, leurs approvisionnements et leurs arbitrages opérationnels dans un contexte de tension globale.
+  <div class="territory-event">
+    <div class="territory-event-head">
+      <p class="territory-event-meta">Genève — novembre 2026</p>
+      <h3>Piloter les flux et transformer les systèmes de décision</h3>
+      <p class="territory-event-intro">
+        Deux conversations consacrées à la circulation, à la coordination et aux nouveaux systèmes de décision qui redessinent l’économie réelle.
       </p>
-    </article>
+    </div>
 
-    <article class="card">
-      <span class="pill">Les Architectes</span>
-      <h3>Intelligence artificielle et systèmes de décision</h3>
-      <p>
-        Comment l’intelligence artificielle redéfinit les systèmes de décision, les organisations et les rapports entre technologie, gouvernance et performance.
-      </p>
-    </article>
+    <div class="territory-conversations">
 
-  </div>
+      <article class="territory-card featured">
+        <span class="pill">Les Bâtisseurs</span>
+        <h4>Transformer les chaînes logistiques</h4>
+        <p>
+          Comment les entreprises réorganisent leurs flux, leurs approvisionnements et leurs arbitrages opérationnels dans un contexte de tension globale.
+        </p>
+        <ul class="territory-angle-list">
+          <li>Organisation des flux</li>
+          <li>Arbitrages de supply chain</li>
+          <li>Investissement logistique</li>
+          <li>Résilience opérationnelle</li>
+        </ul>
+        <a class="territory-link link" href="les-batisseurs.html">Découvrir la conversation</a>
+      </article>
 
-  <div class="section-text" style="margin-top:28px;">
-    <p class="measure">
-      Genève accueille un temps plus resserré, consacré aux flux, aux coordinations et aux structures de décision qui relient désormais technologie, gouvernance et économie réelle.
-    </p>
+      <article class="territory-card">
+        <span class="pill">Les Architectes</span>
+        <h4>Intelligence artificielle et économie réelle</h4>
+        <p>
+          Comment l’intelligence artificielle redéfinit les systèmes de décision, les organisations et les rapports entre technologie, gouvernance et performance.
+        </p>
+        <ul class="territory-angle-list">
+          <li>Infrastructure technologique</li>
+          <li>Transformation des organisations</li>
+          <li>Allocation du capital et modèles de croissance</li>
+          <li>Régulation et gouvernance</li>
+        </ul>
+        <a class="territory-link link" href="les-architectes.html">Découvrir la conversation</a>
+      </article>
+
+    </div>
   </div>
 
 </section>
