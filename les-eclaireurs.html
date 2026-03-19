@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="La série éditoriale Les Éclaireurs réunit plusieurs lectures complémentaires de l’économie réelle pour rendre une transformation en cours plus lisible."
+    content="La série éditoriale Les Éclaireurs réunit des lectures situées et complémentaires de l’économie réelle afin de rendre une transformation en cours plus lisible."
   />
 
   <link rel="canonical" href="https://enplateau.fr/les-eclaireurs.html" />
@@ -22,7 +22,7 @@
   <meta property="og:title" content="En Plateau — La série éditoriale Les Éclaireurs" />
   <meta
     property="og:description"
-    content="La série éditoriale Les Éclaireurs réunit plusieurs lectures complémentaires de l’économie réelle pour rendre une transformation en cours plus lisible."
+    content="La série éditoriale Les Éclaireurs réunit des lectures situées et complémentaires de l’économie réelle afin d’éclairer un même phénomène en cours de transformation."
   />
   <meta property="og:url" content="https://enplateau.fr/les-eclaireurs.html" />
   <meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp" />
@@ -31,7 +31,7 @@
   <meta name="twitter:title" content="En Plateau — La série éditoriale Les Éclaireurs" />
   <meta
     name="twitter:description"
-    content="La série éditoriale Les Éclaireurs réunit plusieurs lectures complémentaires de l’économie réelle pour rendre une transformation en cours plus lisible."
+    content="La série éditoriale Les Éclaireurs réunit des lectures situées et complémentaires de l’économie réelle afin d’éclairer un même phénomène en cours de transformation."
   />
   <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp" />
 
@@ -47,7 +47,7 @@
 
   <style>
     .conversation-block{
-      margin-top:56px;
+      margin-top:60px;
     }
 
     .conversation-block:first-of-type{
@@ -55,8 +55,8 @@
     }
 
     .conversation-head{
-      max-width:900px;
-      margin:0 auto 26px;
+      max-width:920px;
+      margin:0 auto 28px;
     }
 
     .conversation-meta{
@@ -68,38 +68,38 @@
     }
 
     .conversation-head h3{
-      margin:0 0 12px;
-      font-size:clamp(1.7rem,2.8vw,2.35rem);
-      line-height:1.16;
+      margin:0 0 14px;
+      font-size:clamp(1.8rem,2.8vw,2.45rem);
+      line-height:1.12;
       color:#0F2747;
     }
 
     .conversation-intro{
       margin:0;
-      max-width:780px;
-      font-size:1.03rem;
-      line-height:1.82;
+      max-width:800px;
+      font-size:1.02rem;
+      line-height:1.84;
       color:#2B3340;
     }
 
     .angles-grid{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:24px;
+      gap:22px;
       margin-top:28px;
     }
 
     .angle-card{
       background:#fff;
-      border:1px solid #E3E7EC;
-      border-radius:18px;
-      padding:24px;
+      border:1px solid rgba(15,39,71,.12);
+      border-radius:10px;
+      padding:22px 22px 20px;
     }
 
     .angle-label{
       display:block;
       margin:0 0 10px;
-      font-size:.8rem;
+      font-size:.79rem;
       letter-spacing:.12em;
       text-transform:uppercase;
       color:#5B6472;
@@ -107,9 +107,9 @@
 
     .angle-card h4{
       margin:0 0 10px;
-      font-size:1.16rem;
-      line-height:1.3;
-      color:#0B0F19;
+      font-size:1.13rem;
+      line-height:1.28;
+      color:#0B1220;
     }
 
     .angle-card p{
@@ -118,20 +118,46 @@
       line-height:1.75;
     }
 
-    .angle-meta,
-    .angle-media{
+    .angle-meta{
       margin-top:12px !important;
-      font-size:.96rem;
-      line-height:1.7;
-      color:#5B6472 !important;
+      padding-top:12px;
+      border-top:1px solid rgba(15,39,71,.08);
+      font-size:.95rem;
+      color:#5F6B7A !important;
+    }
+
+    .conversation-sequences{
+      margin-top:22px;
+      padding:20px 22px;
+      border-top:1px solid rgba(15,39,71,.10);
+      border-bottom:1px solid rgba(15,39,71,.10);
+    }
+
+    .conversation-sequences-title{
+      margin:0 0 10px;
+      font-size:.8rem;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#5B6472;
+    }
+
+    .conversation-sequences p{
+      margin:0;
+      color:#44505F;
+      line-height:1.8;
     }
 
     .event-box{
-      margin-top:24px;
+      margin-top:20px;
       background:#F8F7F4;
-      border:1px solid #E3E7EC;
-      border-radius:20px;
-      padding:28px;
+      border:1px solid rgba(15,39,71,.10);
+      border-radius:14px;
+      padding:24px;
+    }
+
+    .event-box + .event-box{
+      margin-top:16px;
     }
 
     .event-kicker{
@@ -144,8 +170,8 @@
 
     .event-box h4{
       margin:0 0 10px;
-      font-size:1.28rem;
-      line-height:1.25;
+      font-size:1.2rem;
+      line-height:1.24;
       color:#0F2747;
     }
 
@@ -156,14 +182,19 @@
     }
 
     .conversation-note{
-      max-width:840px;
-      margin:22px auto 0;
-      font-size:.98rem;
+      max-width:860px;
+      margin:20px auto 0;
+      font-size:.97rem;
       line-height:1.8;
       color:#44505F;
     }
 
-    @media (max-width: 820px){
+    .section-text-block.narrower{
+      max-width:860px;
+      margin:0 auto;
+    }
+
+    @media (max-width: 860px){
       .angles-grid{
         grid-template-columns:1fr;
       }
@@ -188,16 +219,16 @@
 
       <h1>
         <span>Une transformation en cours.</span><br>
-        <span>Plusieurs lectures complémentaires.</span><br>
-        <span>Un phénomène rendu plus lisible.</span>
+        <span>Des lectures situées.</span><br>
+        <span>Une même réalité rendue plus lisible.</span>
       </h1>
 
       <p class="subhead">
-        La série Les Éclaireurs réunit des lectures complémentaires issues de positions différentes dans l’économie réelle, afin de rendre une transformation en cours plus intelligible.
+        Les Éclaireurs réunissent des lectures complémentaires issues de positions différentes dans l’économie réelle, afin d’éclairer un même phénomène en cours de transformation.
       </p>
 
       <p class="hero-note">
-        Une transformation devient lisible lorsqu’elle est éclairée depuis plusieurs angles, portés par des acteurs situés différemment.
+        Une transformation devient plus lisible lorsqu’elle est observée depuis plusieurs points d’entrée, portés par des acteurs différemment situés.
       </p>
 
       <p class="hero-note" style="margin-top:10px;">
@@ -206,7 +237,7 @@
 
       <div class="hero-links">
         <a class="hero-link hero-link-primary" href="participer.html#approche">
-          Recevoir la présentation
+          Recevoir la présentation détaillée
         </a>
         <a class="hero-link hero-link-secondary" href="index.html">
           Découvrir le programme
@@ -224,13 +255,13 @@
       <h2>Pourquoi vous avez été contacté</h2>
     </div>
 
-    <div class="section-text-block">
+    <div class="section-text-block narrower">
       <p>
-        Si vous avez été contacté au sujet des Éclaireurs, c’est qu’une lecture que vous portez — depuis l’endroit où vous agissez dans l’économie réelle — peut éclairer un angle spécifique d’une transformation en cours.
+        Si vous avez été contacté au sujet des Éclaireurs, c’est qu’une lecture que vous portez — depuis la fonction que vous occupez, le secteur dans lequel vous évoluez ou les décisions que vous contribuez à éclairer — peut apporter un point de vue utile sur un angle spécifique d’une transformation en cours.
       </p>
 
       <p>
-        Dans EN PLATEAU, la distinction entre Éclaireurs, Bâtisseurs et Architectes ne repose pas sur le format ou le nombre d’interventions, mais sur la fonction occupée dans la lecture du réel.
+        Dans EN PLATEAU, la distinction entre Éclaireurs, Bâtisseurs et Architectes ne repose ni sur le format ni sur le nombre d’interventions, mais sur la fonction occupée dans la lecture du réel.
       </p>
 
       <p>
@@ -251,23 +282,23 @@
         <span class="frame-card-label">Le sujet</span>
         <h3>Une transformation en cours</h3>
         <p>
-          Chaque conversation porte sur un phénomène qui redessine progressivement un secteur, un système d’organisation ou une chaîne de valeur.
+          Chaque conversation porte sur un phénomène qui redessine progressivement un secteur, une organisation, un système d’action ou un équilibre économique.
         </p>
       </article>
 
       <article class="frame-card">
         <span class="frame-card-label">Les lectures</span>
-        <h3>Des points d’entrée complémentaires</h3>
+        <h3>Des lectures situées</h3>
         <p>
-          Plusieurs intervenants apportent chacun une lecture issue de leur expérience, depuis des positions différentes dans l’économie réelle.
+          Les intervenants apportent des lectures issues de positions différentes dans l’économie réelle, chacune révélant une partie spécifique du phénomène étudié.
         </p>
       </article>
 
       <article class="frame-card">
         <span class="frame-card-label">Les angles</span>
-        <h3>Des dimensions distinctes d’un même sujet</h3>
+        <h3>Des dimensions d’un même sujet</h3>
         <p>
-          Chaque contribution éclaire une dimension spécifique du sujet. C’est leur articulation qui rend la transformation plus lisible.
+          Chaque contribution éclaire une dimension précise du phénomène étudié. C’est leur articulation qui rend l’ensemble plus intelligible.
         </p>
       </article>
 
@@ -275,7 +306,7 @@
         <span class="frame-card-label">L’ensemble</span>
         <h3>Une construction éditoriale commune</h3>
         <p>
-          Chaque prise de parole s’inscrit dans une construction commune, déployée dans plusieurs cadres éditoriaux puis prolongée, selon les cas, dans un échange entre intervenants.
+          Chaque prise de parole s’inscrit dans une conversation déjà structurée, puis se prolonge dans une architecture éditoriale plus large.
         </p>
       </article>
 
@@ -285,31 +316,31 @@
   <!-- ROLE -->
   <section class="section section-white" id="role-eclaireur">
     <div class="section-head centered">
-      <h2>Le rôle de l’Éclaireur</h2>
+      <h2>La fonction de l’Éclaireur</h2>
     </div>
 
     <div class="grid-3">
 
       <article class="card">
         <span class="pill">Lecture</span>
-        <p>Apporter une lecture d’un phénomène émergent à partir d’une expérience réelle.</p>
+        <p>Apporter un point de vue situé sur un phénomène en cours de transformation.</p>
       </article>
 
       <article class="card">
-        <span class="pill">Ancrage</span>
-        <p>Éclairer un sujet depuis l’endroit où l’on agit, observe ou structure dans l’économie réelle.</p>
+        <span class="pill">Position</span>
+        <p>Éclairer un sujet depuis la place que l’on occupe réellement dans l’économie.</p>
       </article>
 
       <article class="card">
-        <span class="pill">Perspective</span>
-        <p>Mettre en regard des évolutions encore en cours de structuration afin d’en faire apparaître les lignes de force.</p>
+        <span class="pill">Éclairage</span>
+        <p>Rendre une même réalité plus lisible lorsqu’elle est mise en regard d’autres lectures complémentaires.</p>
       </article>
 
     </div>
 
-    <div class="section-text-block" style="margin-top:32px;">
+    <div class="section-text-block narrower" style="margin-top:32px;">
       <p>
-        L’Éclaireur n’intervient pas pour commenter de l’extérieur, mais pour rendre plus intelligible un phénomène à partir d’une position effectivement située.
+        L’Éclaireur n’intervient pas pour commenter de l’extérieur, mais pour rendre un phénomène plus intelligible à partir d’une position effectivement située.
       </p>
     </div>
   </section>
@@ -329,7 +360,7 @@
         <p class="conversation-meta">Conversation 1 — Les Éclaireurs</p>
         <h3>Repenser les systèmes de santé européens</h3>
         <p class="conversation-intro">
-          Une conversation consacrée aux conditions de soutenabilité, d’organisation et de transformation des systèmes de santé dans un environnement européen marqué par les tensions démographiques, budgétaires, technologiques et institutionnelles.
+          Cette conversation ne vise pas à produire une analyse unique, mais à croiser plusieurs lectures situées d’un même phénomène : la transformation des systèmes de santé européens sous l’effet de tensions démographiques, budgétaires, technologiques et institutionnelles.
         </p>
       </div>
 
@@ -338,13 +369,10 @@
           <span class="angle-label">Angle 1</span>
           <h4>Soutenabilité du système</h4>
           <p>
-            Lecture des tensions structurelles qui pèsent sur la capacité du système à maintenir dans le temps son niveau de service, de couverture et de cohérence.
+            Lecture des tensions économiques, démographiques et organisationnelles qui pèsent sur la capacité du système à maintenir dans le temps son niveau de service, de couverture et de cohérence.
           </p>
           <p class="angle-meta">
             Acteurs pressentis : direction générale, direction stratégie, économistes de la santé, direction d’institution ou d’opérateur structurant.
-          </p>
-          <p class="angle-media">
-            Ce prisme pourra être abordé dans le cadre de l’émission <strong>Grand Angle</strong> (<strong>BFM Business</strong>), avec <strong>Christophe Pallée</strong>.
           </p>
         </article>
 
@@ -357,9 +385,6 @@
           <p class="angle-meta">
             Acteurs pressentis : direction hospitalière, direction des opérations, membres de comité exécutif, responsables de transformation.
           </p>
-          <p class="angle-media">
-            Ce prisme pourra être abordé dans le cadre de l’émission <strong>La Tribune Business</strong>, avec <strong>Gilles Leclerc</strong>.
-          </p>
         </article>
 
         <article class="angle-card">
@@ -371,44 +396,45 @@
           <p class="angle-meta">
             Acteurs pressentis : direction innovation, direction médicale, fondateurs, présidents, responsables de développement ou membres de COMEX.
           </p>
-          <p class="angle-media">
-            Ce prisme pourra être abordé dans le cadre de l’émission <strong>Business Inside</strong>, avec <strong>Jean-Marc Sylvestre</strong>.
-          </p>
         </article>
 
         <article class="angle-card">
           <span class="angle-label">Angle 4</span>
           <h4>Financement de la santé</h4>
           <p>
-            Allocation des ressources, arbitrages budgétaires, logique d’investissement et cadre de financement des transformations du système.
+            Lecture des arbitrages publics et privés, des logiques d’allocation des ressources et de leurs effets sur l’évolution du système.
           </p>
           <p class="angle-meta">
             Acteurs pressentis : direction financière, direction investissement, private equity santé, finance d’entreprise, décideurs publics de haut niveau.
           </p>
-          <p class="angle-media">
-            Ce prisme pourra être abordé dans le cadre de l’émission <strong>Focus Business</strong>, avec <strong>Thierry Cabannes</strong>.
-          </p>
         </article>
+      </div>
+
+      <div class="conversation-sequences">
+        <p class="conversation-sequences-title">Séquences éditoriales associées</p>
+        <p>
+          Les angles retenus sont ensuite déployés dans plusieurs séquences éditoriales inscrites dans des environnements économiques et médiatiques identifiés — notamment BFM Business, La Tribune, Le Figaro et Forbes — selon la nature de la lecture retenue.
+        </p>
       </div>
 
       <div class="event-box">
         <p class="event-kicker">Intervenants</p>
         <h4>Fonctions concernées</h4>
         <p>
-          Dirigeants, fondateurs, présidents, membres de comité exécutif ou tout porte-parole occupant une fonction de décision, de structuration ou d’arbitrage directement liée au sujet traité.
+          Dirigeants, fondateurs, présidents, membres de comité exécutif ou tout porte-parole disposant d’une lecture située, utile et crédible du phénomène traité.
         </p>
       </div>
 
-      <div class="event-box" style="margin-top:16px;">
+      <div class="event-box">
         <p class="event-kicker">Événement associé</p>
         <h4>Financer, organiser et soutenir les systèmes essentiels — Bruxelles, octobre 2026</h4>
         <p>
-          Les quatre angles de la conversation sont d’abord abordés dans des cadres éditoriaux distincts, puis réunis dans un échange entre intervenants à l’occasion de l’événement associé.
+          Les lectures portées dans les séquences éditoriales sont ensuite prolongées dans un échange entre intervenants réunis autour de la même conversation.
         </p>
       </div>
 
       <p class="conversation-note">
-        Chaque intervenant est positionné sur un angle spécifique de la conversation. Les angles présentés ici correspondent aux premiers axes retenus à ce stade de sa construction.
+        Chaque intervenant est positionné sur un angle précis de la conversation. Les angles présentés ici correspondent aux premiers axes retenus à ce stade de sa constitution.
       </p>
     </div>
 
@@ -416,103 +442,98 @@
     <div class="conversation-block">
       <div class="conversation-head">
         <p class="conversation-meta">Conversation 2 — Les Éclaireurs</p>
-        <h3>Financer les grandes transformations de l’économie européenne</h3>
+        <h3>Financer la transformation : lectures croisées</h3>
         <p class="conversation-intro">
-          Une conversation consacrée aux conditions de financement des grandes transformations économiques : allocation du capital, arbitrages stratégiques, soutenabilité des investissements et cadres de décision.
+          Cette conversation ne vise pas à décrire un système de financement comme un tout clos, mais à croiser plusieurs lectures situées d’un même phénomène : la manière dont les grandes transformations économiques se financent, se hiérarchisent et se rendent soutenables.
         </p>
       </div>
 
       <div class="angles-grid">
         <article class="angle-card">
           <span class="angle-label">Angle 1</span>
-          <h4>Stratégies financières des entreprises</h4>
+          <h4>Lecture entreprise</h4>
           <p>
-            Comment les entreprises hiérarchisent leurs besoins de financement et arbitrent entre croissance, transformation, résilience et compétitivité.
+            Comment les entreprises lisent leurs besoins de financement, hiérarchisent leurs priorités et arbitrent entre croissance, transformation, résilience et compétitivité.
           </p>
           <p class="angle-meta">
-            Acteurs pressentis : direction générale, direction financière, membres de COMEX, direction stratégie.
-          </p>
-          <p class="angle-media">
-            Ce prisme pourra être abordé dans le cadre de l’émission <strong>Grand Angle</strong> (<strong>BFM Business</strong>), avec <strong>Christophe Pallée</strong>.
+            Acteurs pressentis : direction générale, direction financière, direction stratégie, membres de COMEX.
           </p>
         </article>
 
         <article class="angle-card">
           <span class="angle-label">Angle 2</span>
-          <h4>Banques d’affaires et restructurations</h4>
+          <h4>Lecture investisseur</h4>
           <p>
-            Lecture des grands mouvements de financement, de recomposition et d’arbitrage dans un contexte économique instable.
+            Comment les investisseurs évaluent les trajectoires de transformation, les risques associés et les conditions de soutenabilité des engagements.
           </p>
           <p class="angle-meta">
-            Acteurs pressentis : managing directors, associés, banque d’affaires, financement d’entreprise, advisory.
-          </p>
-          <p class="angle-media">
-            Ce prisme pourra être abordé dans le cadre de l’émission <strong>Focus Business</strong>, avec <strong>Thierry Cabannes</strong>.
+            Acteurs pressentis : private equity, venture capital, directions d’investissement, investisseurs institutionnels.
           </p>
         </article>
 
         <article class="angle-card">
           <span class="angle-label">Angle 3</span>
-          <h4>Investissement et innovation</h4>
+          <h4>Lecture conseil et intermédiation</h4>
           <p>
-            Rôle de l’investissement dans l’émergence, l’accélération et la structuration des transformations technologiques et industrielles.
+            Comment les acteurs de l’intermédiation lisent les recompositions du financement, les besoins des organisations et les nouvelles attentes des marchés.
           </p>
           <p class="angle-meta">
-            Acteurs pressentis : private equity, venture capital, direction investissement, innovation, fondateurs ou présidents.
-          </p>
-          <p class="angle-media">
-            Ce prisme pourra être abordé dans le cadre de l’émission <strong>Business Inside</strong>, avec <strong>Jean-Marc Sylvestre</strong>.
+            Acteurs pressentis : banque d’affaires, associés, managing directors, responsables de practices, advisory.
           </p>
         </article>
 
         <article class="angle-card">
           <span class="angle-label">Angle 4</span>
-          <h4>Gouvernance financière</h4>
+          <h4>Lecture publique et institutionnelle</h4>
           <p>
-            Cadres de décision, pilotage de la transformation, logique de gouvernance et articulation entre intérêts privés et cadres publics.
+            Comment les décideurs publics ou institutionnels lisent les conditions de financement des transformations et leurs effets sur l’économie réelle.
           </p>
           <p class="angle-meta">
-            Acteurs pressentis : présidence, direction générale, direction financière, investisseurs institutionnels, décideurs publics de haut niveau.
-          </p>
-          <p class="angle-media">
-            Ce prisme pourra être abordé dans le cadre de l’émission <strong>La Tribune Business</strong>, avec <strong>Gilles Leclerc</strong>.
+            Acteurs pressentis : décideurs publics de haut niveau, institutions, affaires publiques, directions stratégie ou régulation.
           </p>
         </article>
+      </div>
+
+      <div class="conversation-sequences">
+        <p class="conversation-sequences-title">Séquences éditoriales associées</p>
+        <p>
+          Les angles retenus sont ensuite déployés dans plusieurs séquences éditoriales inscrites dans des environnements économiques et médiatiques identifiés — notamment BFM Business, La Tribune, Le Figaro et Forbes — selon la nature de la lecture retenue.
+        </p>
       </div>
 
       <div class="event-box">
         <p class="event-kicker">Intervenants</p>
         <h4>Fonctions concernées</h4>
         <p>
-          Dirigeants, fondateurs, présidents, membres de comité exécutif ou tout porte-parole disposant d’une lecture pertinente sur les logiques de financement, d’investissement ou de gouvernance liées au sujet.
+          Dirigeants, fondateurs, présidents, membres de comité exécutif ou tout porte-parole disposant d’une lecture située, complémentaire et crédible des nouvelles logiques de financement.
         </p>
       </div>
 
-      <div class="event-box" style="margin-top:16px;">
+      <div class="event-box">
         <p class="event-kicker">Événement associé</p>
         <h4>Financer, organiser et soutenir les systèmes essentiels — Bruxelles, octobre 2026</h4>
         <p>
-          Les angles de la conversation sont d’abord traités dans quatre cadres éditoriaux distincts, puis prolongés dans un échange entre intervenants réunis autour du même sujet.
+          Les lectures portées dans les séquences éditoriales sont ensuite rapprochées dans un échange commun, afin de rendre plus lisible le phénomène étudié.
         </p>
       </div>
 
       <p class="conversation-note">
-        Chaque angle correspond à un point d’entrée précis dans la conversation. L’invitation n’intervient pas sur le sujet seul, mais sur la place qu’une lecture particulière peut y occuper.
+        Ici, l’enjeu n’est pas d’exposer une architecture du financement comme un système clos, mais de croiser plusieurs lectures situées d’un même phénomène de transformation.
       </p>
     </div>
 
   </section>
 
-  <!-- PROGRAMME -->
+  <!-- PARTICIPATION -->
   <section class="section section-white" id="programme-eclaireurs">
     <div class="section-head centered">
-      <h2>Le programme</h2>
+      <h2>Ce que comprend la participation</h2>
     </div>
 
-    <div class="section-text-block">
+    <div class="section-text-block narrower">
       <ul class="card-list">
         <li>une prise de parole construite autour d’un angle précis</li>
-        <li>un déploiement dans plusieurs cadres éditoriaux identifiés</li>
+        <li>un déploiement dans plusieurs séquences éditoriales distinctes</li>
         <li>une rencontre à huis clos entre intervenants, permettant des échanges directs</li>
         <li>une diffusion inscrite dans une construction éditoriale commune</li>
       </ul>
@@ -533,9 +554,9 @@
       <h2>Un nombre volontairement limité de contributions</h2>
     </div>
 
-    <div class="section-text-block">
+    <div class="section-text-block narrower">
       <p>
-        Chaque conversation réunit un nombre restreint d’intervenants, retenus pour la justesse de leur lecture du phénomène étudié, la singularité de leur angle et la complémentarité de leur position dans l’ensemble.
+        Chaque conversation réunit un nombre restreint d’intervenants, retenus pour la justesse de leur lecture, la singularité de leur point d’entrée et la complémentarité de leur position dans l’ensemble.
       </p>
 
       <p>
@@ -548,12 +569,12 @@
   <section class="final" id="entrer-eclaireurs">
     <h2>Recevoir la présentation de la conversation</h2>
     <p>
-      La présentation précise les sujets partagés à ce stade, les angles retenus, les cadres éditoriaux mobilisés et la place que votre lecture pourrait y occuper.
+      La présentation précise les sujets partagés à ce stade, les angles retenus et la place qu’une lecture située pourrait y occuper.
     </p>
 
     <div class="cta">
       <a class="btn btn-primary" href="participer.html#approche">
-        Recevoir la présentation
+        Recevoir la présentation de la conversation
       </a>
     </div>
   </section>
