@@ -1,361 +1,262 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>En Plateau — Le Cercle</title>
+<title>En Plateau — Conversations économiques</title>
 
-<meta
-name="description"
-content="Le Cercle En Plateau prolonge certaines conversations économiques engagées dans les séries éditoriales en réunissant, dans un format restreint, certains intervenants à Paris, Genève et Bruxelles."
-/>
-
-<meta
-name="keywords"
-content="En Plateau, Cercle, conversations économiques, dirigeants, experts, investisseurs, Paris, Genève, Bruxelles"
-/>
-
-<link rel="canonical" href="https://enplateau.fr/cercle.html" />
-
-<meta name="robots" content="index,follow" />
-<meta name="theme-color" content="#0F2747" />
-
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="fr_FR" />
-<meta property="og:site_name" content="En Plateau" />
-<meta property="og:title" content="En Plateau — Le Cercle" />
-
-<meta
-property="og:description"
-content="Certaines conversations engagées dans les séries éditoriales En Plateau se prolongent dans un cadre restreint à Paris, Genève et Bruxelles."
-/>
-
-<meta property="og:url" content="https://enplateau.fr/cercle.html" />
-<meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="En Plateau — Le Cercle" />
-
-<meta
-name="twitter:description"
-content="Le Cercle En Plateau prolonge certaines conversations économiques engagées dans les séries éditoriales."
-/>
-
-<meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="assets/css/layout.css">
-<link rel="stylesheet" href="assets/css/editorial.css">
-<link rel="stylesheet" href="assets/css/institutional.css">
+<style>
+:root{
+  --blue-dark:#0F2747;
+  --light:#F7F9FC;
+  --white:#FFFFFF;
+  --text:#1A1A1A;
+  --muted:#6B7280;
+  --accent:#FF6A00;
+}
 
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui;background:var(--white);color:var(--text);line-height:1.7}
+h1,h2,h3{font-family:Bitter,serif}
+
+/* HEADER */
+header{
+  position:sticky;top:0;z-index:1000;
+  background:var(--white);
+  border-bottom:1px solid #eee;
+  padding:18px 24px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+
+.logo{font-weight:700;color:var(--blue-dark)}
+
+nav{display:flex;gap:24px}
+nav a{text-decoration:none;color:var(--text);font-weight:500}
+
+/* HERO */
+.hero{
+  background:var(--blue-dark);
+  color:var(--white);
+  padding:120px 24px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:38px;
+  max-width:900px;
+  margin:0 auto 24px;
+}
+
+.hero p{
+  max-width:720px;
+  margin:0 auto 12px;
+  color:#d1d5db;
+}
+
+.cta{
+  display:inline-block;
+  margin-top:24px;
+  padding:12px 20px;
+  border:1px solid var(--accent);
+  color:var(--accent);
+  text-decoration:none;
+}
+
+.cta:hover{background:var(--accent);color:#fff}
+
+/* SECTIONS */
+section{padding:90px 24px}
+.container{max-width:900px;margin:0 auto}
+
+h2{margin-bottom:16px;font-size:28px}
+
+.divider{
+  width:50px;height:2px;background:var(--accent);
+  margin:20px 0 30px;
+}
+
+/* TEXT BLOCK */
+.text-block p{
+  margin-bottom:18px;
+  color:var(--text);
+}
+
+/* SIMPLE LIST (remplace les cards) */
+.simple-list{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.simple-list h3{
+  font-size:18px;
+}
+
+/* DARK SECTION */
+.dark{
+  background:var(--blue-dark);
+  color:#fff;
+}
+
+.dark p{color:#d1d5db}
+
+/* FOOTER */
+footer{
+  background:var(--blue-dark);
+  color:#aaa;
+  text-align:center;
+  padding:40px 20px;
+}
+</style>
 </head>
 
 <body>
 
-<div id="site-header"></div>
-<div id="site-mobile-menu"></div>
-
-<main class="container">
-
-  <section class="hero hero-institutional" aria-labelledby="hero-title">
-    <div class="hero-inner">
-
-      <div class="season-badge">Saison inaugurale — septembre 2026</div>
-
-      <div class="kicker">Le Cercle</div>
-
-      <h1 id="hero-title">
-        Quand certaines conversations vont plus loin.
-      </h1>
-
-      <p class="subhead">
-        Un prolongement entre pairs des séries éditoriales En Plateau.
-      </p>
-
-      <p class="hero-note hero-note-light">
-        Les premières rencontres du Cercle accompagneront la saison inaugurale de septembre à juin.
-      </p>
-
-      <div class="hero-rule" aria-hidden="true"></div>
-
-    </div>
-  </section>
-
-  <section class="hero-explainer hero-explainer-institutional">
-    <div class="section-text">
-      <p>
-        Le Cercle En Plateau n’est ni un club autonome ni un événement généraliste. Il prolonge certaines conversations engagées dans les séries éditoriales en réunissant, dans un format resserré, une partie des intervenants et quelques invités pertinents.
-      </p>
-    </div>
-  </section>
-
-  <section class="proof-block institutional-proof">
-
-    <div class="section-head centered compact">
-      <h2>Des conversations d’abord ancrées dans des environnements éditoriaux reconnus</h2>
-      <p class="section-intro narrow centered-text">
-        Le Cercle prolonge certaines conversations initiées dans les médias.
-      </p>
-    </div>
-
-    <div class="media-logos">
-      <img src="images/bfm-business.svg" alt="BFM Business">
-      <img src="images/le-figaro.svg" alt="Le Figaro">
-      <img src="images/la-tribune.svg" alt="La Tribune">
-      <img src="images/forbes.svg" alt="Forbes">
-    </div>
-
-  </section>
-
-  <section class="section section-circle-intro">
-
-    <div class="section-head centered">
-      <p class="section-kicker">Trois villes</p>
-      <h2>Paris, Bruxelles et Genève</h2>
-    </div>
-
-    <div class="section-text">
-      <p>
-        Les rencontres du Cercle prennent place dans trois capitales économiques et institutionnelles où se croisent décisions économiques, dynamiques industrielles, cadres réglementaires et stratégies d’influence.
-      </p>
-    </div>
-
-    <p class="hero-places hero-places-standalone">Paris · Bruxelles · Genève</p>
-
-  </section>
-
-  <section class="section section-white">
-
-    <div class="section-head centered">
-      <p class="section-kicker">Principe</p>
-      <h2>La continuité d’une contribution éditoriale</h2>
-      <p class="section-desc">
-        Le Cercle intervient dans le prolongement de certaines conversations déjà engagées dans les séries En Plateau.
-      </p>
-    </div>
-
-    <div class="section-text">
-      <p>
-        La participation au Cercle ne repose ni sur une logique d’adhésion ni sur une sociabilité de réseau. Elle intervient généralement à la suite d’une contribution éditoriale située dans une série En Plateau.
-      </p>
-
-      <p>
-        Ce cadre permet de transformer une intervention médiatique ponctuelle en conversation plus approfondie entre acteurs confrontés à des transformations économiques, industrielles, financières ou institutionnelles communes.
-      </p>
-    </div>
-
-  </section>
-
-  <section class="section section-soft">
-
-    <div class="section-head centered">
-      <p class="section-kicker">Architecture éditoriale</p>
-      <h2>Contribution, conversation, cercle</h2>
-      <p class="section-desc">
-        Le Cercle s’inscrit dans la continuité naturelle du dispositif éditorial En Plateau.
-      </p>
-    </div>
-
-    <div class="grid-3">
-
-      <article class="card">
-        <h3>Contribution éditoriale</h3>
-        <p>
-          Les séries éditoriales permettent à certains dirigeants, experts, investisseurs ou responsables publics d’éclairer une transformation économique.
-        </p>
-      </article>
-
-      <article class="card featured">
-        <h3>Conversation médiatique</h3>
-        <p>
-          Les émissions situent ces contributions dans une conversation économique plus large, structurée autour d’un sujet, d’angles et d’un cadre éditorial précis.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Prolongement du Cercle</h3>
-        <p>
-          Certaines discussions se poursuivent ensuite dans un format plus direct réunissant une partie des intervenants et quelques invités pertinents.
-        </p>
-      </article>
-
-    </div>
-
-  </section>
-
-  <section class="section section-soft-3">
-
-    <div class="section-head centered">
-      <p class="section-kicker">Accès</p>
-      <h2>Un accès lié à la série à laquelle on contribue</h2>
-      <p class="section-desc">
-        Le Cercle ne fonctionne pas comme un espace indistinct. Les modalités d’accès dépendent du rôle occupé dans le dispositif éditorial.
-      </p>
-    </div>
-
-    <div class="grid-3">
-
-      <article class="card">
-        <span class="pill">Les Éclaireurs</span>
-        <h3>Un accès ciblé</h3>
-        <p>
-          Chaque Éclaireur prend part à une rencontre du Cercle consacrée à la conversation à laquelle il a contribué.
-        </p>
-        <p>
-          Il peut également convier une personne de son choix lorsque celle-ci peut utilement contribuer à la discussion.
-        </p>
-      </article>
-
-      <article class="card featured">
-        <span class="pill">Les Bâtisseurs</span>
-        <h3>Un accès élargi</h3>
-        <p>
-          Chaque Bâtisseur prend part à la rencontre du Cercle liée à sa conversation et peut, selon la configuration de la saison, être convié à une autre rencontre pertinente.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="pill">Les Architectes</span>
-        <h3>Un accès complet</h3>
-        <p>
-          Les Architectes ont accès à l’ensemble des rencontres du Cercle organisées dans le cadre de la saison inaugurale.
-        </p>
-      </article>
-
-    </div>
-
-  </section>
-
-  <section class="section section-white">
-
-    <div class="section-head centered">
-      <p class="section-kicker">Format</p>
-      <h2>Un format volontairement resserré</h2>
-      <p class="section-desc">
-        Les rencontres du Cercle privilégient la qualité des échanges plutôt qu’une logique d’événement.
-      </p>
-    </div>
-
-    <div class="grid-3">
-
-      <article class="card">
-        <h3>Conversation structurée</h3>
-        <p>
-          Un sujet économique est posé collectivement afin d’ouvrir une discussion approfondie entre participants déjà impliqués dans les conversations de la saison.
-        </p>
-      </article>
-
-      <article class="card featured">
-        <h3>Échanges entre pairs</h3>
-        <p>
-          Les rencontres réunissent dirigeants, experts, investisseurs, responsables publics et, selon les sujets, quelques personnalités du monde académique, scientifique ou intellectuel.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Cadre restreint</h3>
-        <p>
-          Les rencontres réunissent généralement entre 30 et 40 participants maximum afin de préserver la qualité, la densité et la liberté des échanges.
-        </p>
-      </article>
-
-    </div>
-
-  </section>
-
-  <section class="section section-soft">
-
-    <div class="section-head centered">
-      <p class="section-kicker">Temporalité</p>
-      <h2>Un cycle de rencontres de septembre à juin</h2>
-      <p class="section-desc">
-        Le Cercle accompagne le déploiement de la saison inaugurale.
-      </p>
-    </div>
-
-    <div class="section-text">
-      <p>
-        La saison inaugurale d’En Plateau est officiellement lancée en septembre. Les rencontres du Cercle se déploient ensuite de septembre à juin afin de prolonger, entre pairs, certaines conversations initiées dans les séries éditoriales.
-      </p>
-
-      <p>
-        Seules quelques rencontres sont organisées au cours de l’année afin de préserver la cohérence du dispositif, la qualité des échanges et le caractère sélectif de cet espace de dialogue.
-      </p>
-    </div>
-
-  </section>
-
-  <section class="section section-white">
-
-    <div class="section-head centered">
-      <p class="section-kicker">Trois villes</p>
-      <h2>Trois ancrages complémentaires</h2>
-      <p class="section-desc">
-        Chaque ville apporte une tonalité particulière aux conversations du Cercle.
-      </p>
-    </div>
-
-    <div class="grid-3">
-
-      <article class="card">
-        <h3>Paris</h3>
-        <p>
-          Rencontres consacrées aux grandes transformations économiques, industrielles et institutionnelles qui traversent l’économie française et européenne.
-        </p>
-      </article>
-
-      <article class="card featured">
-        <h3>Genève</h3>
-        <p>
-          Échanges ouverts sur les dynamiques économiques internationales, les logiques de gouvernance et les équilibres globaux.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Bruxelles</h3>
-        <p>
-          Conversations autour des politiques européennes, des cadres réglementaires et de leurs effets sur les filières économiques.
-        </p>
-      </article>
-
-    </div>
-
-  </section>
-
-  <section class="final">
-
-    <div class="final-inner">
-      <div class="final-kicker">Prolongements</div>
-
-      <h2>Prolonger certaines conversations</h2>
-
-      <p>
-        La participation au Cercle intervient principalement dans le prolongement des séries éditoriales En Plateau.
-      </p>
-
-      <p>
-        À l’occasion de la saison inaugurale, les premières rencontres accompagneront la structuration progressive de cet espace de dialogue entre pairs.
-      </p>
-
-      <div class="cta">
-        <a class="btn btn-primary" href="participer.html">Participer aux conversations</a>
-        <a class="btn btn-secondary" href="les-eclaireurs.html">Découvrir les séries éditoriales</a>
+<header>
+  <div class="logo">En Plateau</div>
+  <nav>
+    <a href="#">Accueil</a>
+    <a href="#">Séries</a>
+    <a href="#">Rencontres</a>
+    <a href="#">À propos</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Les médias ne sont qu’un point d’entrée. La conversation commence ailleurs.</h1>
+
+  <p>En Plateau structure des conversations économiques entre acteurs directement impliqués dans les transformations de l’économie réelle.</p>
+
+  <p>La valeur ne se limite pas à l’antenne. Elle se construit dans la préparation des prises de parole, la mise en regard des positions et les échanges entre pairs.</p>
+
+  <a href="#" class="cta">Accéder au dossier</a>
+</section>
+
+<!-- OU COMMENCE -->
+<section>
+  <div class="container">
+    <h2>Là où la conversation commence</h2>
+    <div class="divider"></div>
+
+    <div class="simple-list">
+      <div>
+        <h3>Préparer la lecture</h3>
+        <p>Clarifier ce qui mérite d’être dit, et depuis quel point du réel.</p>
+      </div>
+
+      <div>
+        <h3>Mettre les positions en regard</h3>
+        <p>Faire apparaître ce qu’un sujet devient lorsqu’il est lu depuis plusieurs responsabilités.</p>
+      </div>
+
+      <div>
+        <h3>Prolonger la conversation</h3>
+        <p>Créer les conditions d’un échange plus direct entre acteurs concernés.</p>
       </div>
     </div>
+  </div>
+</section>
 
-  </section>
+<!-- POURQUOI -->
+<section class="dark">
+  <div class="container text-block">
+    <h2>Pourquoi En Plateau</h2>
+    <div class="divider"></div>
 
-</main>
+    <p>L’économie européenne traverse une période de transformation profonde : recomposition industrielle, transition énergétique, révolution technologique et nouvelles rivalités économiques.</p>
 
-<div id="site-footer"></div>
+    <p>Comprendre ces mutations exige de croiser les lectures de ceux qui observent, de ceux qui décident et de ceux qui structurent les cadres.</p>
 
-<script src="assets/js/layout.js"></script>
+    <p>En Plateau organise cette mise en regard. La parole n’y est ni promotionnelle ni isolée : elle s’inscrit dans une architecture permettant de rendre un phénomène plus lisible.</p>
+
+    <p>Une prise de parole isolée a une portée limitée. C’est leur articulation qui révèle leur cohérence.</p>
+  </div>
+</section>
+
+<!-- SERIES -->
+<section>
+  <div class="container">
+    <h2>Trois séries, trois fonctions</h2>
+    <div class="divider"></div>
+
+    <div class="simple-list">
+      <div>
+        <h3>Les Éclaireurs — rendre lisible</h3>
+        <p>Des lectures complémentaires pour comprendre un phénomène depuis différentes positions.</p>
+      </div>
+
+      <div>
+        <h3>Les Bâtisseurs — engager le réel</h3>
+        <p>Des décisions situées, des arbitrages concrets, des responsabilités engagées.</p>
+      </div>
+
+      <div>
+        <h3>Les Architectes — structurer les cadres</h3>
+        <p>Des positions capables de relier systèmes, règles et dépendances.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAISON -->
+<section class="dark">
+  <div class="container text-block">
+    <h2>Saison inaugurale</h2>
+    <div class="divider"></div>
+
+    <p>Trois rencontres, six conversations.</p>
+
+    <p>De septembre à novembre 2026, EN PLATEAU structure ses premiers échanges autour de trois temps complémentaires, chacun organisé autour de deux conversations.</p>
+
+    <p>Chaque rencontre prolonge des prises de parole déjà construites et réunit les intervenants autour des angles qu’ils portent.</p>
+  </div>
+</section>
+
+<!-- DISPOSITIF -->
+<section>
+  <div class="container">
+    <h2>Quatre temps du dispositif</h2>
+    <div class="divider"></div>
+
+    <div class="simple-list">
+      <div>
+        <h3>Préparer la prise de parole</h3>
+      </div>
+      <div>
+        <h3>Produire l’intervention</h3>
+      </div>
+      <div>
+        <h3>Confronter les positions</h3>
+      </div>
+      <div>
+        <h3>Faire circuler la lecture</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="dark">
+  <div class="container text-block">
+    <h2>Entrer dans le programme</h2>
+    <div class="divider"></div>
+
+    <p>Les contributions sont identifiées et construites dans une logique éditoriale cohérente, à partir de trajectoires, de responsabilités et de positions dans l’économie réelle.</p>
+
+    <p>Une partie des conversations est partagée publiquement. D’autres sont construites dans un cadre plus restreint.</p>
+
+    <a href="#" class="cta">Accéder au dossier</a>
+  </div>
+</section>
+
+<footer>
+  © En Plateau — 2026
+</footer>
 
 </body>
 </html>
