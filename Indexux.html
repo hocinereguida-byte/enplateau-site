@@ -1,273 +1,807 @@
 <!doctype html>
+
 <html lang="fr">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Votre Projet — Accueil</title>
+  <meta name="description" content="Site institutionnel premium, sobre et éditorial, inspiré des grands sites d'analyse économique internationale." />
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef3f9;
+      --text: #0f1728;
+      --muted: #5b6678;
+      --line: #d9e2ee;
+      --accent: #0f2747;
+      --accent-2: #1e4f8a;
+      --max: 1280px;
+      --radius: 18px;
+      --shadow: 0 14px 40px rgba(15, 39, 71, 0.08);
+    }* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+}
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
 
-<title>En Plateau — Conversations économiques entre dirigeants européens</title>
+.container {
+  width: min(calc(100% - 32px), var(--max));
+  margin: 0 auto;
+}
 
-<meta name="description" content="EN PLATEAU réunit dirigeants, investisseurs, experts et décideurs publics autour de conversations économiques structurées, de rencontres à huis clos et d’une diffusion éditoriale à forte portée stratégique.">
+.topbar {
+  background: var(--accent);
+  color: white;
+  font-size: 0.92rem;
+  padding: 10px 0;
+}
 
-<link rel="canonical" href="https://enplateau.fr/">
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-<meta name="robots" content="index,follow">
-<meta name="theme-color" content="#0F2747">
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(15,39,71,0.08);
+}
 
-<meta property="og:type" content="website">
-<meta property="og:locale" content="fr_FR">
-<meta property="og:site_name" content="En Plateau">
-<meta property="og:title" content="En Plateau — Conversations économiques entre dirigeants européens">
-<meta property="og:description" content="Un dispositif éditorial structuré pour rendre lisibles les transformations de l’économie réelle à partir de lectures, d’arbitrages et de décisions situées.">
-<meta property="og:url" content="https://enplateau.fr/">
-<meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
+.nav-inner {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="En Plateau — Conversations économiques entre dirigeants européens">
-<meta name="twitter:description" content="Des conversations économiques structurées, des rencontres à huis clos et une diffusion éditoriale pensée comme un actif stratégique durable.">
-<meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+.brand-mark {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-2);
+  font-weight: 700;
+}
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&display=swap" rel="stylesheet">
+.brand-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
 
-<link rel="stylesheet" href="assets/css/layout.css">
-<link rel="stylesheet" href="assets/css/editorial.css">
-<link rel="stylesheet" href="assets/css/home.css">
+.nav-links {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.96rem;
+}
 
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--accent);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover { background: #14345f; }
+
+.btn-secondary {
+  border-color: var(--line);
+  background: white;
+  color: var(--accent);
+}
+
+.hero {
+  padding: 56px 0 28px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 26px;
+  align-items: stretch;
+}
+
+.hero-main,
+.hero-side {
+  background: linear-gradient(180deg, #ffffff 0%, #f3f7fc 100%);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+}
+
+.hero-main {
+  padding: 40px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--accent-2);
+  margin-bottom: 18px;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: var(--accent-2);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  max-width: 9.5ch;
+}
+
+.hero-lead {
+  font-size: 1.12rem;
+  color: var(--muted);
+  max-width: 62ch;
+  margin: 22px 0 0;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.metric {
+  background: rgba(255,255,255,0.75);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.metric strong {
+  display: block;
+  font-size: 1.65rem;
+  letter-spacing: -0.04em;
+  margin-bottom: 6px;
+}
+
+.metric span {
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.hero-side {
+  padding: 24px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 18px;
+}
+
+.feature-card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #17375f 0%, #0f2747 100%);
+  color: white;
+  min-height: 300px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  position: relative;
+}
+
+.feature-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,0.22), transparent 35%),
+    linear-gradient(135deg, transparent 20%, rgba(255,255,255,0.08) 100%);
+  pointer-events: none;
+}
+
+.feature-card small {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.feature-card h2 {
+  margin: 10px 0 8px;
+  font-size: 1.7rem;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card p {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  opacity: 0.92;
+}
+
+.mini-list {
+  display: grid;
+  gap: 12px;
+}
+
+.mini-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.mini-item strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+
+.mini-item span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+section {
+  padding: 28px 0;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.section-head p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+.topics-grid,
+.cards-grid,
+.insights-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.topics-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.topic {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 24px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.topic:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.topic-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-2);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.topic h3 {
+  margin: 14px 0 10px;
+  font-size: 1.3rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.topic p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.cards-grid {
+  grid-template-columns: 1.2fr 0.8fr 0.8fr;
+}
+
+.story-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 39, 71, 0.04);
+}
+
+.story-media {
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #dce8f7 0%, #a5c0e5 100%);
+}
+
+.story-body {
+  padding: 22px;
+}
+
+.story-label {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-bottom: 14px;
+}
+
+.story-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.45rem;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.story-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.insights-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.insight {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 22px;
+}
+
+.insight time {
+  display: block;
+  color: var(--accent-2);
+  font-size: 0.84rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.insight h3 {
+  margin: 0 0 10px;
+  font-size: 1.18rem;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.insight p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.newsletter {
+  padding: 36px;
+  background: linear-gradient(135deg, #0f2747 0%, #1c487d 100%);
+  color: white;
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.newsletter-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.newsletter h2 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.newsletter p {
+  margin: 0;
+  max-width: 58ch;
+  opacity: 0.92;
+}
+
+.newsletter-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  background: rgba(255,255,255,0.08);
+  padding: 12px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.newsletter-form input {
+  min-height: 48px;
+  border: 0;
+  border-radius: 12px;
+  padding: 0 14px;
+  font: inherit;
+}
+
+footer {
+  padding: 34px 0 48px;
+  color: var(--muted);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1100px) {
+  .hero-grid,
+  .cards-grid,
+  .newsletter-grid,
+  .topics-grid,
+  .insights-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cards-grid > :first-child,
+  .hero-main,
+  .newsletter-grid > :first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .nav-inner,
+  .topbar-inner,
+  .section-head,
+  .footer-grid,
+  .newsletter-form,
+  .hero-metrics,
+  .hero-grid,
+  .cards-grid,
+  .topics-grid,
+  .insights-grid,
+  .newsletter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-inner,
+  .topbar-inner,
+  .footer-grid {
+    display: grid;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .hero-main {
+    padding: 28px;
+    min-height: auto;
+  }
+
+  .hero-side,
+  .newsletter {
+    padding: 22px;
+  }
+
+  h1 {
+    max-width: none;
+  }
+}
+
+  </style>
 </head>
-
 <body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div>Une plateforme éditoriale internationale au service des grandes transformations.</div>
+      <div>Analyses · Dialogues · Décideurs</div>
+    </div>
+  </div>  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="brand" aria-label="Retour à l'accueil">
+        <span class="brand-mark">Votre organisation</span>
+        <span class="brand-name">Global Dialogue Platform</span>
+      </a><nav class="nav-links" aria-label="Navigation principale">
+    <a href="#themes">Thèmes</a>
+    <a href="#highlights">Highlights</a>
+    <a href="#insights">Insights</a>
+    <a href="#newsletter">Newsletter</a>
+    <a href="#" class="btn btn-primary">Nous contacter</a>
+  </nav>
+</div>
 
-<div id="site-header"></div>
-<div id="site-mobile-menu"></div>
+  </header>  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="hero-main">
+          <div>
+            <div class="eyebrow">Plateforme éditoriale</div>
+            <h1>Relier les décideurs aux grands enjeux du monde.</h1>
+            <p class="hero-lead">
+              Une page d’accueil pensée dans un registre institutionnel premium : hiérarchie nette,
+              grands titres, blocs éditoriaux, cartes thématiques et lecture fluide, dans l’esprit
+              des grandes plateformes internationales d’analyse économique.
+            </p>
+            <div class="hero-actions">
+              <a href="#highlights" class="btn btn-primary">Découvrir les contenus</a>
+              <a href="#themes" class="btn btn-secondary">Explorer les thèmes</a>
+            </div>
+          </div><div class="hero-metrics">
+        <div class="metric">
+          <strong>12</strong>
+          <span>axes stratégiques éditorialisés</span>
+        </div>
+        <div class="metric">
+          <strong>40+</strong>
+          <span>conversations et analyses à venir</span>
+        </div>
+        <div class="metric">
+          <strong>Europe</strong>
+          <span>ancrage premium et international</span>
+        </div>
+      </div>
+    </article>
 
-<main class="container">
-
-  <!-- HERO -->
-
-  <section class="hero hero-home" id="hero-home">
-
-    <div class="hero-inner">
-
-      <p class="hero-kicker">Conversations économiques entre dirigeants européens</p>
-
-      <h1>
-        <span>Des prises de parole qui comptent.</span><br>
-        <span>Des conversations qui les replacent dans un ensemble.</span><br>
-        <span>Une lecture construite de l’économie réelle.</span>
-      </h1>
-
-      <p class="subhead">
-        EN PLATEAU réunit dirigeants, investisseurs, experts et décideurs publics autour de transformations en cours, dans un cadre éditorial structuré où les contributions prennent leur pleine portée par leur mise en relation.
-      </p>
-
-      <p class="hero-note">
-        Une parole isolée informe. Replacée dans un ensemble de lectures, d’arbitrages et de décisions, elle devient plus lisible et plus utile.
-      </p>
-
-      <div class="hero-links">
-        <a class="hero-link hero-link-primary" href="participer.html#approche">
-          Recevoir la présentation
-        </a>
-        <a class="hero-link hero-link-secondary" href="#series-editoriales">
-          Découvrir les séries
-        </a>
+    <aside class="hero-side">
+      <div class="feature-card">
+        <small>À la une</small>
+        <h2>Comment structurer une page d’accueil de référence</h2>
+        <p>Architecture éditoriale, blocs thématiques, signaux de crédibilité et sobriété institutionnelle.</p>
       </div>
 
-      <div class="hero-rule"></div>
+      <div class="mini-list">
+        <div class="mini-item">
+          <strong>Focus</strong>
+          <span>Mettre en avant 3 à 6 sujets prioritaires dès la page d’accueil.</span>
+        </div>
+        <div class="mini-item">
+          <strong>Format</strong>
+          <span>Cartes, sections éditoriales, rubriques et articles premium.</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
 
-    </div>
-
-  </section>
-
-  <!-- PROPOSITION DE VALEUR -->
-
-  <section class="section section-white" id="proposition-valeur">
-
-    <div class="section-head centered">
-      <h2>Ce qu’est EN PLATEAU</h2>
-    </div>
-
-    <div class="section-text-block narrow">
+<section id="themes">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Thèmes stratégiques</h2>
+      </div>
       <p>
-        EN PLATEAU n’additionne pas des interventions. Le dispositif construit des conversations où plusieurs contributions, replacées les unes par rapport aux autres, permettent de mieux lire des transformations à l’œuvre dans l’économie réelle.
-      </p>
-
-      <p>
-        Chaque série repose sur un cadre précis : des intervenants identifiés pour ce qu’ils voient, décident ou structurent ; une préparation éditoriale en amont ; une mise en relation des prises de parole ; et des rencontres à huis clos pensées comme des moments de clarification entre pairs.
+        Une grille de lecture structurée en grands ensembles, pour donner une impression de densité,
+        d’autorité et de navigation claire dès les premiers écrans.
       </p>
     </div>
 
-  </section>
+    <div class="topics-grid">
+      <article class="topic">
+        <div>
+          <div class="topic-kicker">01</div>
+          <h3>Industrie & compétitivité</h3>
+          <p>Transformation productive, souveraineté, relocalisations, efficacité opérationnelle.</p>
+        </div>
+        <a href="#">En savoir plus →</a>
+      </article>
 
-  <!-- SERIES -->
+      <article class="topic">
+        <div>
+          <div class="topic-kicker">02</div>
+          <h3>Finance & investissement</h3>
+          <p>Capital, private equity, financement de la croissance et lecture des cycles.</p>
+        </div>
+        <a href="#">En savoir plus →</a>
+      </article>
 
-  <section class="section section-soft" id="series-editoriales">
+      <article class="topic">
+        <div>
+          <div class="topic-kicker">03</div>
+          <h3>Technologies & IA</h3>
+          <p>Innovation appliquée, usages métier, infrastructures et régulation.</p>
+        </div>
+        <a href="#">En savoir plus →</a>
+      </article>
 
-    <div class="section-head centered">
-      <h2>Trois séries éditoriales</h2>
-      <p class="section-intro narrow">
-        Trois registres distincts pour explorer les transformations de l’économie réelle : ce qui devient lisible, ce qui se construit et ce qui structure durablement les systèmes.
-      </p>
+      <article class="topic">
+        <div>
+          <div class="topic-kicker">04</div>
+          <h3>Énergie & transitions</h3>
+          <p>Décarbonation, infrastructures, arbitrages industriels et trajectoires réalistes.</p>
+        </div>
+        <a href="#">En savoir plus →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="highlights">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Highlights</h2>
+      </div>
+      <p>Un premier niveau de contenus mis en scène comme des objets éditoriaux premium.</p>
     </div>
 
-    <div class="grid-3 home-series-grid">
-
-      <article class="card home-series-card">
-        <p class="series-card-kicker">Les Éclaireurs</p>
-        <h3>Rendre une transformation lisible</h3>
-        <p>
-          Des lectures complémentaires issues de positions différentes dans l’économie réelle, articulées pour faire apparaître la structure d’un phénomène en cours.
-        </p>
-        <div class="cta-inline">
-          <a href="les-eclaireurs.html">Découvrir la série</a>
+    <div class="cards-grid">
+      <article class="story-card">
+        <div class="story-media"></div>
+        <div class="story-body">
+          <span class="story-label">Analyse</span>
+          <h3>Réinventer la prise de parole économique dans des environnements saturés</h3>
+          <p>Une approche plus stratégique, plus sobre et plus crédible que la simple logique de visibilité.</p>
         </div>
       </article>
 
-      <article class="card home-series-card featured">
-        <p class="series-card-kicker">Les Bâtisseurs</p>
-        <h3>Montrer comment elle se construit réellement</h3>
-        <p>
-          Des décisions situées, des arbitrages concrets et des rôles complémentaires dans la chaîne de valeur pour faire apparaître la dynamique réelle d’une transformation.
-        </p>
-        <div class="cta-inline">
-          <a href="les-batisseurs.html">Découvrir la série</a>
+      <article class="story-card">
+        <div class="story-media"></div>
+        <div class="story-body">
+          <span class="story-label">Conversation</span>
+          <h3>Penser les chaînes de valeur à l’échelle européenne</h3>
+          <p>Relier les décisions industrielles aux contraintes financières, humaines et réglementaires.</p>
         </div>
       </article>
 
-      <article class="card home-series-card">
-        <p class="series-card-kicker">Les Architectes</p>
-        <h3>Structurer une lecture systémique</h3>
-        <p>
-          Des contributions capables de relier secteurs, normes, infrastructures et puissances d’action pour donner forme à une compréhension plus large des transformations.
-        </p>
-        <div class="cta-inline">
-          <a href="les-architectes.html">Découvrir la série</a>
+      <article class="story-card">
+        <div class="story-media"></div>
+        <div class="story-body">
+          <span class="story-label">Report</span>
+          <h3>Pourquoi l’autorité visuelle compte autant que le contenu</h3>
+          <p>Hiérarchie, respiration, cohérence et cadrage : les vraies bases d’un site premium.</p>
         </div>
       </article>
+    </div>
+  </div>
+</section>
 
+<section id="insights">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Latest insights</h2>
+      </div>
+      <p>Une zone pensée pour publier régulièrement des articles, analyses ou interviews.</p>
     </div>
 
-  </section>
+    <div class="insights-grid">
+      <article class="insight">
+        <time datetime="2026-03-19">19 mars 2026</time>
+        <h3>Comment hiérarchiser une home institutionnelle sans la surcharger</h3>
+        <p>Le bon équilibre entre densité éditoriale, lisibilité et prestige repose d’abord sur la structure.</p>
+      </article>
 
-  <!-- GEOGRAPHIE DES CONVERSATIONS -->
+      <article class="insight">
+        <time datetime="2026-03-18">18 mars 2026</time>
+        <h3>Créer un langage visuel crédible sans copier un grand média international</h3>
+        <p>Il faut reprendre des principes : grille, blancs, rythme, iconographie, et non dupliquer une identité.</p>
+      </article>
 
-  <section class="section-editorial-geo" id="geographie-conversations">
-    <div class="container">
-
-      <div class="editorial-block">
-        <p class="kicker">Une géographie des conversations</p>
-
-        <h2 class="section-title">
-          Une trajectoire, pas une suite de rendez-vous.
-        </h2>
-
-        <p class="section-intro">
-          Les lieux ne sont pas un décor. Ils donnent à chaque étape sa fonction, sa tonalité et son niveau d’exigence.
-          EN PLATEAU construit une progression, où chaque conversation trouve sa juste place.
-        </p>
-      </div>
-
-      <div class="geo-editorial-list">
-
-        <div class="geo-line">
-          <div class="geo-place">Paris</div>
-          <div class="geo-content">
-            <h3>Décider</h3>
-            <p>
-              Un cadre où la parole engage et où les arbitrages trouvent leur juste gravité.
-            </p>
-          </div>
-        </div>
-
-        <div class="geo-line">
-          <div class="geo-place">Bruxelles</div>
-          <div class="geo-content">
-            <h3>Structurer</h3>
-            <p>
-              Un espace pour ordonner les lectures, relier les enjeux et construire un cadre commun.
-            </p>
-          </div>
-        </div>
-
-        <div class="geo-line">
-          <div class="geo-place">Genève</div>
-          <div class="geo-content">
-            <h3>Préciser</h3>
-            <p>
-              Un registre plus resserré, où la discrétion renforce la qualité des échanges.
-            </p>
-          </div>
-        </div>
-
-        <div class="geo-line">
-          <div class="geo-place">Un lieu final</div>
-          <div class="geo-content">
-            <h3>Mettre en perspective</h3>
-            <p>
-              Non pour conclure, mais pour relire ensemble ce que ces voix permettent de mieux comprendre.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="geo-note">
-        <p>
-          Une parole ne prend pas la même portée selon le lieu qui l’accueille.
-        </p>
-      </div>
-
+      <article class="insight">
+        <time datetime="2026-03-17">17 mars 2026</time>
+        <h3>Pourquoi commencer par GitHub Pages avant un serveur définitif</h3>
+        <p>Parce que cela permet de prototyper, tester, versionner et corriger vite avant la mise en production.</p>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- MEDIAS -->
+<section id="newsletter">
+  <div class="container">
+    <div class="newsletter">
+      <div class="newsletter-grid">
+        <div>
+          <div class="eyebrow" style="color:#c7d8f0; margin-bottom:12px;">Newsletter</div>
+          <h2>Recevoir les analyses qui comptent.</h2>
+          <p>Ajoutez ici votre formulaire Brevo, Mailchimp ou Formspree pour capter les abonnés dès la version GitHub Pages.</p>
+        </div>
 
-  <section class="proof-block" id="medias-partenaires">
-
-    <div class="media-stack">
-
-      <p class="media-kicker">
-        Des conversations déployées dans des environnements éditoriaux économiques reconnus
-      </p>
-
-      <div class="media-logos">
-        <img src="images/bfm-business.svg" alt="BFM Business">
-        <img src="images/la-tribune.svg" alt="La Tribune">
-        <img src="images/forbes.svg" alt="Forbes">
-        <img src="images/le-figaro.svg" alt="Le Figaro">
+        <form class="newsletter-form">
+          <input type="email" placeholder="Votre adresse email" aria-label="Votre adresse email" />
+          <button class="btn btn-primary" type="submit">S’inscrire</button>
+        </form>
       </div>
-
     </div>
+  </div>
+</section>
 
-  </section>
-
-  <!-- CTA FINAL -->
-
-  <section class="final" id="entrer-dans-le-programme">
-
-    <h2>Recevoir la présentation d’EN PLATEAU</h2>
-
-    <p>
-      La présentation détaille le cadre général du dispositif, les séries éditoriales, les conversations en préparation et les modalités de participation.
-    </p>
-
-    <div class="cta">
-      <a class="btn btn-primary" href="participer.html#approche">
-        Recevoir la présentation
-      </a>
+  </main>  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Global Dialogue Platform</strong><br />
+        Architecture éditoriale, analyses et conversations à haute valeur.
+      </div>
+      <div class="footer-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Contact</a>
+        <a href="#">LinkedIn</a>
+      </div>
     </div>
-
-  </section>
-
-</main>
-
-<div id="site-footer"></div>
-
-<script src="assets/js/layout.js"></script>
-
+  </footer>
 </body>
 </html>
