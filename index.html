@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="En Plateau structure des conversations économiques entre acteurs directement engagés dans les transformations de l’économie réelle."
+    content="En Plateau structure des conversations économiques entre acteurs directement impliqués dans les transformations de l’économie réelle."
   >
 
   <link rel="canonical" href="https://enplateau.fr/">
@@ -22,7 +22,7 @@
   <meta property="og:title" content="En Plateau — Conversations économiques">
   <meta
     property="og:description"
-    content="En Plateau structure des conversations économiques entre acteurs directement engagés dans les transformations de l’économie réelle."
+    content="En Plateau structure des conversations économiques entre acteurs directement impliqués dans les transformations de l’économie réelle."
   >
   <meta property="og:url" content="https://enplateau.fr/">
   <meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
@@ -31,7 +31,7 @@
   <meta name="twitter:title" content="En Plateau — Conversations économiques">
   <meta
     name="twitter:description"
-    content="En Plateau structure des conversations économiques entre acteurs directement engagés dans les transformations de l’économie réelle."
+    content="En Plateau structure des conversations économiques entre acteurs directement impliqués dans les transformations de l’économie réelle."
   >
   <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
 
@@ -46,151 +46,32 @@
   <link rel="stylesheet" href="assets/css/home.css">
 
   <style>
-    .editorial-note{
-      max-width:760px;
-      margin:20px auto 0;
-      font-size:.9rem;
-      line-height:1.6;
-      color:#6B7280;
+    .home-conversations .card .link{
+      display:inline-block;
+      margin-top:18px;
     }
 
-    .home-series-grid{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:24px;
+    .home-conversations .card p{
+      margin-bottom:0;
     }
 
-    .home-series-card{
-      padding:28px 26px;
-      border:1px solid rgba(15,39,71,.12);
-      border-radius:14px;
-      background:#fff;
-    }
-
-    .home-series-card.featured{
-      border-color:rgba(15,39,71,.22);
-      box-shadow:0 10px 24px rgba(15,39,71,.05);
-    }
-
-    .home-series-card .pill,
-    .home-season-card .pill,
-    .home-device-card .pill{
-      display:inline-flex;
-      align-items:center;
-      min-height:30px;
-      padding:5px 12px;
-      border-radius:999px;
-      background:#EEF3F8;
-      color:#0F2747;
-      font-size:.8rem;
-      font-weight:700;
-      letter-spacing:.04em;
-    }
-
-    .home-series-card h3,
-    .home-season-card h3,
-    .home-device-card h3{
-      margin:16px 0 12px;
-      color:#0B1220;
-      line-height:1.2;
-    }
-
-    .home-series-card p,
-    .home-season-card p,
-    .home-device-card p{
-      margin:0;
-      color:#44505F;
-      line-height:1.8;
-    }
-
-    .home-series-card .link,
-    .home-season-link,
-    .home-inline-link{
+    .home-conversations .pill,
+    .home-series .pill,
+    .home-editorial-frames .pill{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      margin-top:18px;
-      text-decoration:none;
-      font-weight:700;
     }
 
-    .home-series-card .link::after,
-    .home-season-link::after,
-    .home-inline-link::after{
-      content:"→";
-      transform:translateY(-1px);
+    .home-conversations .pill::before,
+    .home-series .pill::before{
+      content:"Série";
+      font-size:.78em;
+      opacity:.8;
     }
 
-    .home-season-grid{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:24px;
-      margin-top:6px;
-    }
-
-    .home-season-card{
-      padding:28px 26px;
-      border:1px solid rgba(15,39,71,.12);
-      border-radius:14px;
-      background:#fff;
-    }
-
-    .home-season-card.featured{
-      border-color:rgba(15,39,71,.22);
-      box-shadow:0 10px 24px rgba(15,39,71,.05);
-    }
-
-    .home-season-meta{
-      margin:0 0 8px;
-      font-size:.82rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:#5F6B7A;
-    }
-
-    .home-season-list{
-      margin:18px 0 0;
-      padding:0;
-      list-style:none;
-      border-top:1px solid rgba(15,39,71,.09);
-    }
-
-    .home-season-list li{
-      padding:11px 0;
-      border-bottom:1px solid rgba(15,39,71,.09);
-      color:#465467;
-      line-height:1.65;
-    }
-
-    .home-proof{
-      max-width:780px;
-      margin:24px auto 0;
-      color:#44505F;
-      line-height:1.8;
-      font-size:.98rem;
-    }
-
-    .home-device-grid{
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:20px;
-    }
-
-    .home-device-card{
-      padding:24px 22px;
-      border-top:1px solid rgba(15,39,71,.20);
-    }
-
-    .home-device-card h3{
-      font-size:1.08rem;
-      margin-top:14px;
-    }
-
-    .home-origin .section-text-block,
-    .home-intro .section-text-block,
-    .home-construction .section-text-block{
-      max-width:840px;
-      margin:0 auto;
+    .founder-home p:last-child{
+      margin-bottom:0;
     }
 
     .final.final-home{
@@ -229,25 +110,91 @@
       opacity:.92;
     }
 
-    @media (max-width: 980px){
-      .home-series-grid,
-      .home-season-grid{
-        grid-template-columns:1fr;
-      }
-
-      .home-device-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
+    .season-event{
+      margin-top:56px;
     }
 
-    @media (max-width: 680px){
-      .home-device-grid{
-        grid-template-columns:1fr;
-      }
+    .season-event:first-of-type{
+      margin-top:0;
+    }
 
-      .home-series-card,
-      .home-season-card{
-        padding:22px 20px;
+    .season-event-head{
+      max-width:780px;
+      margin:0 auto 28px;
+    }
+
+    .season-event-meta{
+      margin:0 0 10px;
+      font-size:.82rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#5B6472;
+    }
+
+    .season-event-head h3{
+      margin:0 0 12px;
+      font-size:clamp(1.8rem,3vw,2.4rem);
+      line-height:1.15;
+      color:#0F2747;
+    }
+
+    .season-event-intro{
+      margin:0;
+      font-size:1.02rem;
+      line-height:1.8;
+      color:#2B3340;
+      max-width:720px;
+    }
+
+    .season-event .card h4{
+      margin:10px 0 10px;
+      font-size:1.3rem;
+      line-height:1.25;
+      color:#0B0F19;
+    }
+
+    .editorial-frames-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:24px;
+    }
+
+    .editorial-frame-meta{
+      margin:0 0 8px;
+      font-size:.84rem;
+      line-height:1.5;
+      color:#5B6472;
+    }
+
+    .editorial-frame-meta strong{
+      color:#0F2747;
+      font-weight:600;
+    }
+
+    .home-signal-note{
+      max-width:760px;
+      margin:28px auto 0;
+      font-size:0.98rem;
+      line-height:1.8;
+      color:#44505F;
+    }
+
+    .home-section-text{
+      max-width:820px;
+      margin:0 auto;
+    }
+
+    .home-proof{
+      max-width:820px;
+      margin:28px auto 0;
+      font-size:.98rem;
+      line-height:1.8;
+      color:#44505F;
+    }
+
+    @media (max-width: 820px){
+      .editorial-frames-grid{
+        grid-template-columns:1fr;
       }
     }
   </style>
@@ -269,11 +216,11 @@
         </div>
 
         <h1>
-          Les conversations qui façonnent l’économie ne sont pas toutes publiques.
+          Les transformations économiques deviennent lisibles lorsque les positions sont mises en regard.
         </h1>
 
         <p class="subhead">
-          En Plateau structure des conversations économiques entre acteurs directement engagés dans les transformations de l’économie réelle.
+          En Plateau structure des conversations économiques entre acteurs directement impliqués dans les transformations de l’économie réelle.
         </p>
 
         <p class="hero-note">
@@ -281,8 +228,8 @@
         </p>
 
         <div class="hero-links" aria-label="Accès rapides">
-          <a class="hero-link hero-link-primary" href="participer.html#approche">Recevoir le dossier</a>
-          <a class="hero-link hero-link-secondary" href="dispositif.html">Comprendre le dispositif</a>
+          <a class="hero-link hero-link-primary" href="participer.html#approche">Accéder au dossier</a>
+          <a class="hero-link hero-link-secondary" href="a-propos.html">Comprendre le dispositif</a>
         </div>
 
         <div class="hero-rule" aria-hidden="true"></div>
@@ -290,48 +237,99 @@
       </div>
     </section>
 
-    <!-- POURQUOI -->
-    <section class="section section-white home-intro" id="pourquoi-en-plateau">
+    <!-- CADRES EDITORIAUX -->
+    <section class="section section-white home-editorial-frames" id="cadres-editoriaux">
       <div class="section-head centered">
-        <p class="section-kicker">Pourquoi En Plateau</p>
-        <h2>Structurer des lectures situées</h2>
+        <p class="section-kicker">Cadres éditoriaux retenus</p>
+        <h2>Des émissions identifiées, conduites par des journalistes reconnus</h2>
         <p class="section-intro narrow">
-          Les grandes transformations économiques deviennent plus lisibles lorsque l’on met en regard ceux qui les observent, ceux qui les engagent et ceux qui en structurent les cadres.
+          Certaines conversations prennent place dans des formats précis, chacun apportant un angle de lecture spécifique. Le cadre journalistique compte autant que le sujet lui-même.
         </p>
       </div>
 
-      <div class="section-text-block">
+      <div class="editorial-frames-grid">
+        <article class="card featured">
+          <h3>Grand Angle</h3>
+          <p class="editorial-frame-meta"><strong>Journaliste :</strong> Christophe Pallée</p>
+          <p class="editorial-frame-meta"><strong>Prisme :</strong> investissement industriel</p>
+          <p>
+            Un format court permettant de situer rapidement une contribution dans les transformations économiques et productives en cours.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>La Tribune Business</h3>
+          <p class="editorial-frame-meta"><strong>Journaliste :</strong> Gilles Leclerc</p>
+          <p class="editorial-frame-meta"><strong>Prisme :</strong> relocalisation territoriale</p>
+          <p>
+            Un cadre attentif aux filières, aux territoires et aux dynamiques sectorielles de moyen terme.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Focus Business</h3>
+          <p class="editorial-frame-meta"><strong>Journaliste :</strong> Thierry Cabannes</p>
+          <p class="editorial-frame-meta"><strong>Prisme :</strong> structuration financière</p>
+          <p>
+            Un environnement permettant de relier les enjeux d’entreprise aux cadres plus larges de décision économique.
+          </p>
+        </article>
+
+        <article class="card featured">
+          <h3>Business Inside</h3>
+          <p class="editorial-frame-meta"><strong>Journaliste :</strong> Jean-Marc Sylvestre</p>
+          <p class="editorial-frame-meta"><strong>Prisme :</strong> innovation technologique</p>
+          <p>
+            Un format particulièrement cohérent lorsque la conversation porte sur l’innovation, les trajectoires d’entreprise et les arbitrages de transformation.
+          </p>
+        </article>
+      </div>
+
+      <p class="home-signal-note">
+        Tous les cadres de la saison ne sont pas nécessairement rendus publics à ce stade. Certaines conversations ne sont présentées qu’aux acteurs directement concernés par leur construction.
+      </p>
+    </section>
+
+    <!-- POURQUOI -->
+    <section class="section section-soft" id="pourquoi-ces-conversations">
+      <div class="section-head centered">
+        <h2>Pourquoi En Plateau</h2>
+        <p class="section-intro narrow">
+          Une initiative éditoriale conçue pour rendre plus lisibles les transformations de l’économie réelle à partir de lectures situées.
+        </p>
+      </div>
+
+      <div class="section-text-block home-section-text">
         <p>
           L’économie européenne traverse une période de transformation profonde : recomposition industrielle, transition énergétique, révolution technologique, nouvelles rivalités économiques.
         </p>
 
         <p>
-          En Plateau a été conçu pour organiser ces lectures dispersées et construire progressivement un corpus de conversations capable d’éclairer l’économie réelle à partir de positions effectivement situées.
+          Comprendre ces mutations exige de croiser les lectures de ceux qui les observent, de ceux qui prennent les décisions qui les façonnent, et de ceux qui en structurent les cadres.
         </p>
 
         <p>
-          Chaque contribution s’inscrit dans un cadre éditorial exigeant, où la parole n’est ni promotionnelle ni isolée, mais située, confrontée et mise en perspective.
+          En Plateau a été conçu pour organiser cette mise en regard. La parole n’y est ni promotionnelle ni isolée : elle s’inscrit dans une architecture permettant de rendre un phénomène plus lisible.
         </p>
 
-        <p class="editorial-note">
-          Chaque conversation se prolonge en plusieurs séquences éditoriales, inscrites dans des environnements économiques et médiatiques identifiés — notamment BFM Business, La Tribune, Le Figaro et Forbes.
+        <p>
+          Une prise de parole isolée n’a qu’une portée limitée. C’est leur mise en relation, leur confrontation et leur articulation qui permettent d’en révéler la cohérence.
         </p>
       </div>
     </section>
 
-    <!-- TROIS SERIES -->
-    <section class="section section-soft" id="series-en-plateau">
+    <!-- SERIES -->
+    <section class="section section-white home-series" id="series-en-plateau">
       <div class="section-head centered">
-        <p class="section-kicker">Architecture éditoriale</p>
         <h2>Trois séries, trois fonctions dans la lecture du réel</h2>
         <p class="section-intro narrow">
           La distinction entre Éclaireurs, Bâtisseurs et Architectes ne repose pas sur le format ou le nombre d’interventions, mais sur la fonction occupée dans l’économie réelle et dans la lecture du sujet.
         </p>
       </div>
 
-      <div class="home-series-grid">
+      <div class="grid-3">
 
-        <article class="home-series-card">
+        <article class="card">
           <span class="pill">Les Éclaireurs</span>
           <h3>Rendre lisible</h3>
           <p>
@@ -340,7 +338,7 @@
           <a class="link" href="les-eclaireurs.html">Consulter la série</a>
         </article>
 
-        <article class="home-series-card featured">
+        <article class="card featured">
           <span class="pill">Les Bâtisseurs</span>
           <h3>Engager le réel</h3>
           <p>
@@ -349,7 +347,7 @@
           <a class="link" href="les-batisseurs.html">Consulter la série</a>
         </article>
 
-        <article class="home-series-card">
+        <article class="card">
           <span class="pill">Les Architectes</span>
           <h3>Structurer les cadres</h3>
           <p>
@@ -361,158 +359,206 @@
       </div>
     </section>
 
-    <!-- SAISON INAUGURALE -->
-    <section class="section section-white" id="saison-inaugurale">
+    <!-- SAISON -->
+    <section class="section section-soft home-conversations" id="saison-inaugurale">
       <div class="section-head centered">
         <p class="section-kicker">Saison inaugurale</p>
-        <h2>Trois villes, trois temps de saison</h2>
+        <h2>Trois rencontres, six conversations</h2>
         <p class="section-intro narrow">
           De septembre à novembre 2026, EN PLATEAU structure les premiers temps de sa saison inaugurale autour de trois rencontres, chacune articulée autour de deux conversations complémentaires.
         </p>
       </div>
 
-      <div class="home-season-grid">
-
-        <article class="home-season-card">
-          <p class="home-season-meta">Paris — septembre 2026</p>
+      <section class="season-event">
+        <div class="season-event-head">
+          <p class="season-event-meta">Paris — septembre 2026</p>
           <h3>Produire dans un environnement contraint</h3>
-          <p>
-            Premier temps de la saison, consacré aux conditions concrètes de production dans une économie européenne soumise à des tensions industrielles, énergétiques et stratégiques.
+          <p class="season-event-intro">
+            Deux conversations consacrées aux conditions concrètes de production dans une économie européenne soumise à des tensions industrielles, énergétiques et stratégiques.
           </p>
-          <ul class="home-season-list">
-            <li>Souveraineté industrielle</li>
-            <li>Énergie et compétitivité productive</li>
-          </ul>
-        </article>
+        </div>
 
-        <article class="home-season-card featured">
-          <p class="home-season-meta">Bruxelles — octobre 2026</p>
+        <div class="grid-2">
+          <article class="card featured">
+            <span class="pill">Les Bâtisseurs</span>
+            <h4>Souveraineté industrielle</h4>
+            <p>
+              Comment l’Europe peut renforcer ses capacités productives dans un contexte de dépendances, de contraintes industrielles et de recomposition stratégique.
+            </p>
+            <a class="link" href="les-batisseurs.html">Consulter la série</a>
+          </article>
+
+          <article class="card">
+            <span class="pill">Les Bâtisseurs</span>
+            <h4>Énergie et compétitivité productive</h4>
+            <p>
+              Comment les entreprises arbitrent entre décarbonation, compétitivité, coût de l’énergie et transformation de l’appareil productif.
+            </p>
+            <a class="link" href="les-batisseurs.html">Consulter la série</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="season-event">
+        <div class="season-event-head">
+          <p class="season-event-meta">Bruxelles — octobre 2026</p>
           <h3>Financer, organiser et soutenir les systèmes essentiels</h3>
-          <p>
-            Deuxième temps de la saison, consacré aux conditions de soutenabilité, d’organisation et de financement des grands systèmes dont dépend la transformation économique européenne.
+          <p class="season-event-intro">
+            Deux conversations consacrées aux conditions de soutenabilité, d’organisation et de financement des grands systèmes dont dépend la transformation économique européenne.
           </p>
-          <ul class="home-season-list">
-            <li>Repenser les systèmes de santé européens</li>
-            <li>Financer les transformations de l’économie européenne</li>
-          </ul>
-        </article>
+        </div>
 
-        <article class="home-season-card">
-          <p class="home-season-meta">Genève — novembre 2026</p>
+        <div class="grid-2">
+          <article class="card featured">
+            <span class="pill">Les Éclaireurs</span>
+            <h4>Repenser les systèmes de santé européens</h4>
+            <p>
+              Comment les systèmes de santé évoluent sous l’effet des contraintes démographiques, budgétaires, technologiques et institutionnelles.
+            </p>
+            <a class="link" href="les-eclaireurs.html">Consulter la série</a>
+          </article>
+
+          <article class="card">
+            <span class="pill">Les Architectes</span>
+            <h4>Financer les transformations de l’économie européenne</h4>
+            <p>
+              Comment les mécanismes de financement, les logiques d’allocation du capital et les cadres de régulation orientent les grandes transformations de l’économie européenne.
+            </p>
+            <a class="link" href="les-architectes.html">Consulter la série</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="season-event">
+        <div class="season-event-head">
+          <p class="season-event-meta">Genève — novembre 2026</p>
           <h3>Piloter les flux et transformer les systèmes de décision</h3>
-          <p>
-            Troisième temps de la saison, consacré à la circulation, à la coordination et aux nouveaux systèmes de décision qui redessinent l’économie réelle.
+          <p class="season-event-intro">
+            Deux conversations consacrées à la circulation, à la coordination et aux nouveaux systèmes de décision qui redessinent l’économie réelle.
           </p>
-          <ul class="home-season-list">
-            <li>Transformer les chaînes logistiques</li>
-            <li>Intelligence artificielle et économie réelle</li>
-          </ul>
-        </article>
+        </div>
 
-      </div>
+        <div class="grid-2">
+          <article class="card featured">
+            <span class="pill">Les Bâtisseurs</span>
+            <h4>Transformer les chaînes logistiques</h4>
+            <p>
+              Comment les entreprises réorganisent leurs flux, leurs approvisionnements et leurs arbitrages opérationnels dans un contexte de tension globale.
+            </p>
+            <a class="link" href="les-batisseurs.html">Consulter la série</a>
+          </article>
+
+          <article class="card">
+            <span class="pill">Les Architectes</span>
+            <h4>Intelligence artificielle et systèmes de décision</h4>
+            <p>
+              Comment l’intelligence artificielle redéfinit les systèmes de décision, les organisations et les rapports entre technologie, gouvernance et performance.
+            </p>
+            <a class="link" href="les-architectes.html">Consulter la série</a>
+          </article>
+        </div>
+      </section>
 
       <p class="home-proof">
-        Toutes les conversations en préparation ne sont pas rendues publiques. Certaines ne sont partagées qu’avec les acteurs directement concernés par leur constitution.
+        Chaque rencontre prolonge des prises de parole déjà construites et réunit les intervenants autour des angles respectifs qu’ils portent dans la série.
       </p>
 
-      <div class="section-text-block" style="max-width:840px;margin:26px auto 0;">
-        <a class="home-inline-link link" href="territoires.html">Consulter la géographie éditoriale</a>
-      </div>
+      <p class="home-signal-note">
+        Certaines configurations de la saison ne sont pas rendues publiques à ce stade. D’autres ne sont partagées qu’avec les acteurs directement concernés par leur constitution.
+      </p>
+
+      <p class="proof-link-wrap" style="text-align:center; margin-top:18px;">
+        <a class="link" href="territoires.html">Consulter les rencontres de la saison</a>
+      </p>
     </section>
 
     <!-- DISPOSITIF -->
-    <section class="section section-soft" id="dispositif-home">
+    <section class="section section-white" id="dispositif-home">
       <div class="section-head centered">
-        <p class="section-kicker">Le dispositif</p>
-        <h2>Quatre lignes de construction</h2>
+        <h2>Quatre temps du dispositif</h2>
         <p class="section-intro narrow">
-          Chaque conversation prend place dans un dispositif éditorial structuré, appelé à se déployer dans le temps.
+          Les conversations En Plateau reposent sur une intervention unique, inscrite dans une construction éditoriale collective appelée à se déployer dans le temps.
         </p>
       </div>
 
-      <div class="home-device-grid">
-        <article class="home-device-card">
-          <span class="pill">01</span>
-          <h3>Préparation éditoriale</h3>
+      <div class="grid-4">
+        <article class="card">
+          <span class="pill">Temps 1</span>
+          <h3>Préparer la prise de parole</h3>
           <p>
-            Chaque contribution s’inscrit dans un travail préalable permettant de structurer une parole claire, située et utile.
+            Chaque contribution s’inscrit dans un travail éditorial préalable permettant de structurer une lecture claire, située et utile.
           </p>
         </article>
 
-        <article class="home-device-card">
-          <span class="pill">02</span>
-          <h3>Intervention située</h3>
+        <article class="card">
+          <span class="pill">Temps 2</span>
+          <h3>Produire l’intervention</h3>
           <p>
-            Chaque intervenant contribue à travers une prise de parole construite dans un cadre éditorial identifié.
+            Chaque intervenant contribue à la conversation à travers une prise de parole construite dans un environnement éditorial identifié.
           </p>
         </article>
 
-        <article class="home-device-card">
-          <span class="pill">03</span>
-          <h3>Rencontre entre pairs</h3>
+        <article class="card featured">
+          <span class="pill">Temps 3</span>
+          <h3>Confronter les positions</h3>
           <p>
-            Les participants se retrouvent ensuite dans un cadre permettant d’échanger autour des sujets abordés.
+            Les intervenants se retrouvent ensuite lors des rencontres de la saison, où ils confrontent leurs positions à partir des angles construits en amont.
           </p>
         </article>
 
-        <article class="home-device-card">
-          <span class="pill">04</span>
-          <h3>Circulation des lectures</h3>
+        <article class="card">
+          <span class="pill">Temps 4</span>
+          <h3>Faire circuler la lecture</h3>
           <p>
-            Les contributions produites dans ce cadre peuvent ensuite trouver leur place dans les écosystèmes où elles continuent d’agir.
+            Les contributions produites dans ce cadre sont ensuite réinscrites dans une diffusion plus large, au sein des écosystèmes où elles continuent d’agir.
           </p>
         </article>
       </div>
-
-      <p class="home-proof">
-        Certaines prises de parole donnent lieu à des prolongements dans des cadres qui ne sont pas systématiquement publics.
-      </p>
     </section>
 
     <!-- ORIGINE -->
-    <section class="section section-white home-origin" id="initiative-home">
+    <section class="section section-soft" id="initiative-home">
       <div class="section-head centered">
-        <p class="section-kicker">L’initiative</p>
-        <h2>À l’origine d’En Plateau</h2>
+        <p class="section-kicker">À l’origine d’En Plateau</p>
+        <h2>Une même intuition, portée dans le temps</h2>
       </div>
 
-      <div class="section-text-block">
+      <div class="section-text-block narrow founder-home">
         <p>
-          Les grandes transformations deviennent plus lisibles lorsque l’on réunit ceux qui les vivent et que l’on met en regard leurs lectures.
+          En Plateau s’inscrit dans une même intuition : une transformation devient plus lisible lorsque l’on met en relation des lectures issues de positions différentes dans le réel.
         </p>
 
         <p>
-          En Plateau applique cette intuition au domaine de l’économie, à travers des conversations structurées, des prises de parole éditoriales et des rencontres entre pairs.
+          Le dispositif transpose cette logique au champ de l’économie, à travers des conversations structurées, des prises de parole éditoriales et des rencontres entre pairs.
         </p>
 
         <p>
           Le projet est porté par Hocine Reguida et se développe comme une première séquence d’un dispositif appelé à se constituer dans la durée.
         </p>
 
-        <p style="margin-top:18px;">
-          <a class="home-inline-link link" href="a-propos.html">En savoir plus sur l’initiative</a>
+        <p class="proof-link-wrap">
+          <a class="link" href="a-propos.html">En savoir plus sur le dispositif</a>
         </p>
       </div>
     </section>
 
     <!-- CONSTITUTION -->
-    <section class="section section-soft home-construction" id="constitution-home">
+    <section class="section section-white" id="constitution-home">
       <div class="section-head centered">
-        <p class="section-kicker">Constitution</p>
-        <h2>Des conversations en cours de structuration</h2>
+        <h2>Constitution des conversations</h2>
       </div>
 
       <div class="section-text-block">
         <p>
-          Les premières conversations réunissent progressivement des dirigeants d’entreprises industrielles, des investisseurs, des associés de cabinets internationaux, des experts sectoriels, des responsables associatifs et des décideurs publics impliqués dans les grandes transformations économiques.
+          Les premières conversations réunissent progressivement des dirigeants d’entreprises industrielles, des investisseurs, des associés de cabinets internationaux, des experts sectoriels et des décideurs publics impliqués dans les grandes transformations économiques.
         </p>
 
         <p>
-          La majorité des contributions sont identifiées et approchées à la suite d’un travail éditorial visant à repérer des trajectoires, des responsabilités et des expériences particulièrement pertinentes au regard du thème abordé.
+          La majorité des contributions participant aux conversations En Plateau sont identifiées et approchées à la suite d’un travail éditorial visant à repérer des trajectoires, des responsabilités et des expériences particulièrement pertinentes au regard du thème abordé.
         </p>
 
         <p>
-          Certaines contributions sont examinées dans le cadre d’échanges restreints associant plusieurs regards — éditoriaux, économiques et sectoriels — afin d’en apprécier la cohérence d’ensemble.
+          Certaines contributions sont examinées dans un cadre de lecture restreint associant plusieurs regards — éditoriaux, économiques et sectoriels — afin d’en apprécier la cohérence d’ensemble.
         </p>
       </div>
     </section>
@@ -531,13 +577,13 @@
 
           <div class="series-access-body">
             <p>
-              Vous pouvez demander à recevoir la présentation détaillée du programme et, le cas échéant, des conversations actuellement partagées dans le cadre de leur constitution.
+              Vous pouvez demander à accéder au dossier du programme et, le cas échéant, des conversations actuellement partagées dans le cadre de leur constitution.
             </p>
           </div>
 
           <div class="cta">
             <a class="btn btn-primary" href="participer.html#approche">
-              Recevoir le dossier
+              Accéder au dossier
             </a>
           </div>
         </article>
@@ -556,7 +602,7 @@
 
           <div class="cta">
             <a class="btn btn-secondary" href="participer.html#signaler">
-              Comprendre le cadre
+              Voir le cadre de participation
             </a>
           </div>
         </article>
