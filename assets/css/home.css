@@ -1,6 +1,6 @@
 /* ======================================================
 HOME PAGE STYLES — EN PLATEAU
-Refonte éditoriale compatible avec le HTML actuel
+Version éditoriale / revue / programme
 ====================================================== */
 
 /* -------------------------
@@ -16,6 +16,15 @@ HERO HOME
 
 #hero-home .subhead{
   max-width:720px;
+}
+
+#hero-home .hero-projection{
+  max-width:720px;
+  margin:16px 0 0;
+  font-size:16px;
+  line-height:1.78;
+  font-weight:500;
+  color:rgba(255,255,255,.92);
 }
 
 #hero-home .hero-note{
@@ -53,17 +62,12 @@ SECTION 1 — OÙ COMMENCE LA CONVERSATION
 }
 
 #ou-commence-la-conversation .card.featured{
-  padding-left:18px;
+  border-top:2px solid var(--accent);
+  padding-top:17px;
 }
 
 #ou-commence-la-conversation .card.featured::after{
-  content:"";
-  position:absolute;
-  top:18px;
-  left:0;
-  bottom:0;
-  width:1px;
-  background:linear-gradient(180deg, rgba(201,169,106,.9), rgba(201,169,106,0));
+  display:none;
 }
 
 #ou-commence-la-conversation .card h3{
@@ -114,17 +118,12 @@ SÉRIES
 }
 
 .home-series .card.featured{
-  padding-left:18px;
+  border-top:2px solid var(--accent);
+  padding-top:17px;
 }
 
 .home-series .card.featured::after{
-  content:"";
-  position:absolute;
-  top:18px;
-  left:0;
-  bottom:0;
-  width:1px;
-  background:linear-gradient(180deg, rgba(201,169,106,.9), rgba(201,169,106,0));
+  display:none;
 }
 
 .home-series .pill,
@@ -222,17 +221,12 @@ SAISON
 }
 
 .home-conversations .card.featured{
-  padding-left:18px;
+  border-top:2px solid var(--accent);
+  padding-top:17px;
 }
 
 .home-conversations .card.featured::after{
-  content:"";
-  position:absolute;
-  top:18px;
-  left:0;
-  bottom:0;
-  width:1px;
-  background:linear-gradient(180deg, rgba(201,169,106,.9), rgba(201,169,106,0));
+  display:none;
 }
 
 .season-event .card h4{
@@ -292,17 +286,12 @@ DISPOSITIF
 }
 
 #dispositif-home .card.featured{
-  padding-left:16px;
+  border-top:2px solid var(--accent);
+  padding-top:17px;
 }
 
 #dispositif-home .card.featured::after{
-  content:"";
-  position:absolute;
-  top:18px;
-  left:0;
-  bottom:0;
-  width:1px;
-  background:linear-gradient(180deg, rgba(201,169,106,.9), rgba(201,169,106,0));
+  display:none;
 }
 
 /* -------------------------
@@ -330,6 +319,11 @@ CADRES ÉDITORIAUX
   width:38px;
   height:1px;
   background:rgba(201,169,106,.92);
+}
+
+.home-editorial-frames .card.featured{
+  border-top:2px solid var(--accent);
+  padding-top:17px;
 }
 
 .home-editorial-frames .card.featured h3{
@@ -485,13 +479,6 @@ RESPONSIVE
   .series-access-grid{
     grid-template-columns:1fr;
   }
-
-  #ou-commence-la-conversation .card.featured,
-  .home-series .card.featured,
-  .home-conversations .card.featured,
-  #dispositif-home .card.featured{
-    padding-left:12px;
-  }
 }
 
 @media (max-width: 700px){
@@ -504,20 +491,6 @@ RESPONSIVE
   .home-conversations .grid-2,
   #dispositif-home .grid-4{
     gap:26px;
-  }
-
-  #ou-commence-la-conversation .card.featured,
-  .home-series .card.featured,
-  .home-conversations .card.featured,
-  #dispositif-home .card.featured{
-    padding-left:0;
-  }
-
-  #ou-commence-la-conversation .card.featured::after,
-  .home-series .card.featured::after,
-  .home-conversations .card.featured::after,
-  #dispositif-home .card.featured::after{
-    display:none;
   }
 
   #pourquoi-ces-conversations .section-text-block,
