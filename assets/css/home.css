@@ -260,6 +260,85 @@
 }
 
 /* =========================
+   INTEGRATED EDITORIAL BLOCKS
+   ========================= */
+
+.integrated-editorial-block {
+  max-width: 980px;
+  padding: 32px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(15, 39, 71, 0.08);
+  box-shadow: 0 10px 28px rgba(15, 39, 71, 0.05);
+}
+
+.integrated-editorial-block h2 {
+  margin: 0 0 14px;
+  font-family: Bitter, Georgia, serif;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  line-height: 1.08;
+  color: #0f2747;
+}
+
+.integrated-intro {
+  margin: 0;
+  max-width: 64ch;
+  font-size: 1.06rem;
+  line-height: 1.7;
+  color: rgba(15, 39, 71, 0.8);
+}
+
+.integrated-divider {
+  width: 100%;
+  height: 2px;
+  margin: 20px 0 22px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.integrated-text p {
+  margin: 0 0 16px;
+  line-height: 1.78;
+  color: var(--muted);
+}
+
+.integrated-text p:last-child {
+  margin-bottom: 0;
+}
+
+.integrated-editorial-block-light {
+  background: #ffffff;
+}
+
+/* =========================
+   EDITORIAL READING BLOCK
+   ========================= */
+
+.editorial-reading-block {
+  max-width: 980px;
+  padding: 30px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(15, 39, 71, 0.08);
+}
+
+.editorial-reading-block p {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: all 0.6s ease;
+}
+
+.editorial-reading-block p.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.editorial-reading-block p:first-child {
+  font-size: 1.1rem;
+  color: var(--blue-dark);
+  font-weight: 500;
+}
+
+/* =========================
    SAISON
    ========================= */
 
@@ -295,6 +374,33 @@
   margin: 0;
 }
 
+.season-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #ffffff;
+  opacity: 0.84;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.season-link span {
+  transition: transform 0.25s ease;
+}
+
+.season-link:hover {
+  opacity: 1;
+}
+
+.season-link:hover span {
+  transform: translateX(4px);
+}
+
 .home-proof,
 .home-signal-note {
   margin-top: 22px;
@@ -315,6 +421,33 @@
   font-size: 0.95rem;
   margin-bottom: 6px;
   color: var(--muted);
+}
+
+.editorial-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--blue-dark);
+  opacity: 0.78;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.editorial-link span {
+  transition: transform 0.25s ease;
+}
+
+.editorial-link:hover {
+  opacity: 1;
+}
+
+.editorial-link:hover span {
+  transform: translateX(4px);
 }
 
 /* =========================
@@ -496,6 +629,11 @@
 
   .tab-panel-main h3 {
     font-size: clamp(1.45rem, 7vw, 2rem);
+  }
+
+  .integrated-editorial-block,
+  .editorial-reading-block {
+    padding: 24px 20px;
   }
 
   .season-event h3 {
