@@ -26,49 +26,33 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function closeMobileMenu() {
     if (!mobileMenu || !burger) return;
-    mobileMenu.classList.remove("is-open");
+    mobileMenu.classList.remove("open");
     burger.setAttribute("aria-expanded", "false");
     document.body.classList.remove("menu-open");
   }
 
   function openMobileMenu() {
     if (!mobileMenu || !burger) return;
-    mobileMenu.classList.add("is-open");
+    mobileMenu.classList.add("open");
     burger.setAttribute("aria-expanded", "true");
     document.body.classList.add("menu-open");
   }
 
   if (burger && mobileMenu) {
     burger.addEventListener("click", () => {
-      const isOpen = mobileMenu.classList.contains("is-open");
-      if (isOpen) {
-        closeMobileMenu();
-      } else {
-        openMobileMenu();
-      }
+      const isOpen = mobileMenu.classList.contains("open");
+      if (isOpen) closeMobileMenu();
+      else openMobileMenu();
     });
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        closeMobileMenu();
-      }
+      if (event.key === "Escape") closeMobileMenu();
     });
 
-    document.addEventListener("click", (event) => {
-      const clickInsideMenu = mobileMenu.contains(event.target);
-      const clickOnBurger = burger.contains(event.target);
-      if (!clickInsideMenu && !clickOnBurger) {
-        closeMobileMenu();
-      }
+    document.querySelectorAll("#mobile-menu a").forEach((link) => {
+      link.addEventListener("click", () => closeMobileMenu());
     });
   }
-
-  const mobileLinks = document.querySelectorAll("#mobile-menu a");
-  mobileLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      closeMobileMenu();
-    });
-  });
 
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
@@ -80,7 +64,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       href.startsWith("http://") ||
       href.startsWith("https://") ||
       href.startsWith("mailto:") ||
-      href.startsWith("tel:")
+      href.startsWith("tel:") ||
+      href.startsWith("#")
     ) {
       return;
     }
