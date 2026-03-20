@@ -1,27 +1,54 @@
-<div class="header-wrap">
-  <header class="header">
+<header class="site-header">
+  <div class="site-header__inner">
 
-    <button
-      id="burger"
-      class="burger"
-      type="button"
-      aria-label="Ouvrir le menu"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <span></span><span></span><span></span>
-    </button>
+    <div class="site-header__left">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
 
-    <a class="brand brand-centered" href="index.html" aria-label="En Plateau — Accueil">
-      <span class="brand-logo">
-        <img src="images/Logo_en_plateau.svg" alt="En Plateau">
-      </span>
-      <span class="brand-baseline">Conversations économiques</span>
-    </a>
+    <div class="site-header__center">
+      <a href="index.html" class="site-brand" aria-label="Retour à l’accueil En Plateau">
+        <span class="site-brand__title">En Plateau</span>
+        <span class="site-brand__baseline">Conversations économiques</span>
+      </a>
 
-    <a class="header-cta-link" href="participer.html#signaler">
-      Cadre de participation
-    </a>
+      <nav class="desktop-editorial-nav" aria-label="Navigation principale">
+        <a href="les-batisseurs.html" class="desktop-editorial-nav__link" data-nav="series">
+          <span class="desktop-editorial-nav__eyebrow">Entrer par</span>
+          <span class="desktop-editorial-nav__label">Explorer les séries</span>
+        </a>
 
-  </header>
-</div>
+        <a href="rencontres.html" class="desktop-editorial-nav__link" data-nav="rencontres">
+          <span class="desktop-editorial-nav__eyebrow">Entrer par</span>
+          <span class="desktop-editorial-nav__label">Participer aux rencontres</span>
+        </a>
+
+        <a href="medias-journalistes.html" class="desktop-editorial-nav__link" data-nav="medias">
+          <span class="desktop-editorial-nav__eyebrow">Entrer par</span>
+          <span class="desktop-editorial-nav__label">Comprendre les médias</span>
+        </a>
+
+        <a href="a-propos.html" class="desktop-editorial-nav__link" data-nav="apropos">
+          <span class="desktop-editorial-nav__eyebrow">Entrer par</span>
+          <span class="desktop-editorial-nav__label">Découvrir l’approche</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="site-header__right">
+      <a href="participer.html" class="site-header__cta">
+        Cadre de participation
+      </a>
+    </div>
+
+  </div>
+</header>
