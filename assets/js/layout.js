@@ -31,21 +31,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
-  const mobileDropdownTriggers = document.querySelectorAll(".mobile-dropdown-trigger");
-
-  mobileDropdownTriggers.forEach((trigger) => {
-    trigger.addEventListener("click", () => {
-      const targetId = trigger.getAttribute("data-target");
-      const target = document.getElementById(targetId);
-      if (!target) return;
-
-      const isOpen = target.classList.contains("is-open");
-      target.classList.toggle("is-open", !isOpen);
-      trigger.classList.toggle("is-open", !isOpen);
-      trigger.setAttribute("aria-expanded", String(!isOpen));
-    });
-  });
-
   const mobileLinks = document.querySelectorAll("#mobile-menu a");
   mobileLinks.forEach((link) => {
     link.addEventListener("click", () => {
@@ -62,36 +47,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     const href = link.getAttribute("href");
     if (!href) return;
 
-    if (href === currentPage) {
+    const normalizedHref = href.split("#")[0];
+    if (normalizedHref === currentPage) {
       link.classList.add("active");
       link.setAttribute("aria-current", "page");
-    }
-  });
-
-  const collectivePages = [
-    "les-eclaireurs.html",
-    "les-batisseurs.html",
-    "les-architectes.html"
-  ];
-
-  document.querySelectorAll(".nav-trigger").forEach((trigger) => {
-    const label = trigger.textContent.trim();
-    if (label.includes("Réflexion collective") && collectivePages.includes(currentPage)) {
-      trigger.classList.add("active");
-    }
-  });
-
-  document.querySelectorAll(".mobile-section-trigger").forEach((trigger) => {
-    const label = trigger.textContent.trim();
-    if (label.includes("Réflexion collective") && collectivePages.includes(currentPage)) {
-      trigger.classList.add("active");
-      const targetId = trigger.getAttribute("data-target");
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.classList.add("is-open");
-        trigger.classList.add("is-open");
-        trigger.setAttribute("aria-expanded", "true");
-      }
     }
   });
 });
