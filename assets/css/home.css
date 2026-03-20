@@ -52,19 +52,6 @@
   margin: 0 0 22px;
 }
 
-.hero .hero-projection {
-  font-size: 1.06rem;
-  font-weight: 600;
-  max-width: 60ch;
-  margin: 0 0 14px;
-}
-
-.hero .hero-note {
-  color: rgba(255, 255, 255, 0.74);
-  max-width: 60ch;
-  margin: 0 0 26px;
-}
-
 .hero-links {
   display: flex;
   gap: 14px;
@@ -137,19 +124,139 @@
   color: rgba(255, 255, 255, 0.92);
 }
 
-/* Carte 1 */
 .hero-panel-primary {
   background: rgba(22, 41, 68, 0.82);
 }
 
-/* Carte 2 */
 .hero-note-card-editorial {
   background: rgba(34, 52, 78, 0.78);
 }
 
-/* Carte 3 */
 .hero-note-card-collective {
   background: rgba(47, 64, 90, 0.76);
+}
+
+/* =========================
+   TABS SECTION
+   ========================= */
+
+.tabs-section {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.tabs-section-head {
+  margin-bottom: 28px;
+}
+
+.tabs-shell {
+  border-radius: 28px;
+  background: linear-gradient(180deg, #f6f4ee 0%, #f0ede6 100%);
+  border: 1px solid rgba(15, 39, 71, 0.08);
+  box-shadow: 0 12px 36px rgba(15, 39, 71, 0.06);
+  overflow: hidden;
+}
+
+.tabs-nav {
+  display: flex;
+  gap: 10px;
+  padding: 18px;
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(15, 39, 71, 0.08);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.tab-button {
+  border: 0;
+  background: transparent;
+  color: rgba(15, 39, 71, 0.74);
+  padding: 14px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.tab-button.is-active {
+  background: #ffffff;
+  color: #0f2747;
+  box-shadow: 0 4px 14px rgba(15, 39, 71, 0.08);
+}
+
+.tabs-panels {
+  padding: 28px;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.is-active {
+  display: block;
+}
+
+.tab-panel-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.tab-panel-main,
+.tab-panel-side {
+  min-width: 0;
+}
+
+.tab-panel-kicker {
+  margin: 0 0 10px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.tab-panel-main h3 {
+  margin: 0 0 14px;
+  font-family: Bitter, Georgia, serif;
+  font-size: clamp(1.7rem, 2.6vw, 2.4rem);
+  line-height: 1.12;
+  color: #0f2747;
+}
+
+.tab-panel-main p {
+  margin: 0 0 14px;
+  line-height: 1.75;
+  color: rgba(15, 39, 71, 0.82);
+}
+
+.tab-panel-side {
+  display: grid;
+  gap: 16px;
+}
+
+.tab-mini-card {
+  padding: 18px 18px 20px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 39, 71, 0.08);
+}
+
+.tab-mini-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.tab-mini-card p {
+  margin: 0;
+  line-height: 1.6;
+  color: rgba(15, 39, 71, 0.8);
 }
 
 /* =========================
@@ -355,6 +462,31 @@
   .hero-note-card p {
     font-size: 0.95rem;
     line-height: 1.6;
+  }
+
+  .tabs-shell {
+    border-radius: 22px;
+  }
+
+  .tabs-nav {
+    padding: 14px;
+    gap: 8px;
+  }
+
+  .tab-button {
+    padding: 12px 16px;
+  }
+
+  .tabs-panels {
+    padding: 20px;
+  }
+
+  .tab-panel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-panel-main h3 {
+    font-size: clamp(1.45rem, 7vw, 2rem);
   }
 
   .season-event h3 {
