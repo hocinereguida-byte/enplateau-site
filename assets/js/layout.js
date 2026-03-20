@@ -21,15 +21,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadPartial("#site-mobile-menu", "partials/mobile-menu.html");
   await loadPartial("#site-footer", "partials/footer.html");
 
-  const burger =
-    document.getElementById("burger") ||
-    document.querySelector(".burger") ||
-    document.querySelector("[data-menu-toggle]");
-
-  const mobileMenu =
-    document.getElementById("mobile-menu") ||
-    document.querySelector(".mobile-menu") ||
-    document.querySelector("#site-mobile-menu > *");
+  const burger = document.getElementById("burger");
+  const mobileMenu = document.getElementById("mobile-menu");
 
   function closeMobileMenu() {
     if (!mobileMenu || !burger) return;
@@ -46,10 +39,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   if (burger && mobileMenu) {
-    if (!burger.hasAttribute("aria-expanded")) {
-      burger.setAttribute("aria-expanded", "false");
-    }
-
     burger.addEventListener("click", () => {
       const isOpen = mobileMenu.classList.contains("is-open");
       if (isOpen) {
@@ -74,28 +63,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
-  const mobileLinks = document.querySelectorAll("#mobile-menu a, .mobile-menu a");
+  const mobileLinks = document.querySelectorAll("#mobile-menu a");
   mobileLinks.forEach((link) => {
     link.addEventListener("click", () => {
       closeMobileMenu();
-    });
-  });
-
-  const mobileTriggers = document.querySelectorAll(
-    ".mobile-dropdown-trigger, .mobile-section-trigger"
-  );
-
-  mobileTriggers.forEach((trigger) => {
-    trigger.addEventListener("click", () => {
-      const targetId = trigger.getAttribute("data-target");
-      if (!targetId) return;
-
-      const submenu = document.getElementById(targetId);
-      if (!submenu) return;
-
-      const isOpen = submenu.classList.contains("is-open");
-      submenu.classList.toggle("is-open", !isOpen);
-      trigger.setAttribute("aria-expanded", String(!isOpen));
     });
   });
 
@@ -115,7 +86,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const normalizedHref = href.split("#")[0].trim();
-
     if (!normalizedHref) return;
 
     if (normalizedHref === currentPage) {
