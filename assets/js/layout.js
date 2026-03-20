@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const burger = document.getElementById("burger");
   const mobileMenu = document.getElementById("mobile-menu");
+  const closeButton = document.querySelector(".mobile-menu-close");
 
   function closeMobileMenu() {
     if (!mobileMenu || !burger) return;
@@ -44,6 +45,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (isOpen) closeMobileMenu();
       else openMobileMenu();
     });
+
+    if (closeButton) {
+      closeButton.addEventListener("click", closeMobileMenu);
+    }
 
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") closeMobileMenu();
