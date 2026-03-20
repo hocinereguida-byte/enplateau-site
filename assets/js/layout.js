@@ -46,9 +46,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });
 
+  const mobileLinks = document.querySelectorAll("#mobile-menu a");
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (!mobileMenu || !burger) return;
+      mobileMenu.classList.remove("is-open");
+      burger.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    });
+  });
+
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-  document.querySelectorAll('a[href]').forEach((link) => {
+  document.querySelectorAll("a[href]").forEach((link) => {
     const href = link.getAttribute("href");
     if (!href) return;
 
