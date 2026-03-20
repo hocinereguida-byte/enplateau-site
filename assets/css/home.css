@@ -114,12 +114,9 @@
   padding: 22px;
   text-align: left;
   min-height: 100%;
-  border: 1px solid rgba(15, 39, 71, 0.06);
-  box-shadow: 0 8px 22px rgba(15, 39, 71, 0.05);
-}
-
-.hero-panel-primary {
-  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 10px 28px rgba(7, 20, 38, 0.20);
+  backdrop-filter: blur(10px);
 }
 
 .hero-panel-kicker,
@@ -129,7 +126,7 @@
   letter-spacing: 0.12em;
   font-weight: 800;
   margin-bottom: 10px;
-  color: var(--accent);
+  color: #ff8b2b;
 }
 
 .hero-panel p,
@@ -137,15 +134,22 @@
   margin: 0;
   line-height: 1.55;
   font-size: 0.96rem;
-  color: #20344d;
+  color: rgba(255, 255, 255, 0.92);
 }
 
+/* Carte 1 */
+.hero-panel-primary {
+  background: rgba(22, 41, 68, 0.82);
+}
+
+/* Carte 2 */
 .hero-note-card-editorial {
-  background: #f3f4f6;
+  background: rgba(34, 52, 78, 0.78);
 }
 
+/* Carte 3 */
 .hero-note-card-collective {
-  background: #e8ebef;
+  background: rgba(47, 64, 90, 0.76);
 }
 
 /* =========================
@@ -331,6 +335,26 @@
 
   .hero-aside {
     grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .hero-panel,
+  .hero-note-card {
+    border-radius: 18px;
+    padding: 24px 20px;
+    box-shadow: 0 12px 26px rgba(6, 18, 34, 0.18);
+  }
+
+  .hero-panel-kicker,
+  .hero-note-card .eyebrow {
+    font-size: 0.7rem;
+    margin-bottom: 12px;
+  }
+
+  .hero-panel p,
+  .hero-note-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
   .season-event h3 {
