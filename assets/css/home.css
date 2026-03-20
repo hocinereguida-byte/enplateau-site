@@ -96,6 +96,10 @@
   background:var(--off-2);
 }
 
+.section-white{
+  background:#fff;
+}
+
 .section-final{
   padding-bottom:96px;
 }
@@ -148,10 +152,6 @@
   color:var(--muted);
 }
 
-.section-dark .item-label{
-  color:#cbd5e1;
-}
-
 .stack-list{
   display:flex;
   flex-direction:column;
@@ -195,23 +195,14 @@
   color:var(--accent);
 }
 
-.arrow-link-light{
-  color:#ffffff;
-}
-
-.section-note,
-.section-note-light{
+.section-note{
   margin-top:26px;
   font-size:15px;
   line-height:1.8;
   color:var(--muted);
 }
 
-.section-note-light{
-  color:#dbe4ef;
-}
-
-/* EVENTS */
+/* RENCONTRES */
 
 .event-list{
   display:flex;
@@ -224,47 +215,59 @@
   grid-template-columns:1fr 1.1fr;
   gap:34px;
   align-items:start;
+  background:#fff;
+  border:1px solid var(--line);
+  padding:22px;
+}
+
+.event-kicker{
+  grid-column:1 / -1;
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin:0 0 2px;
+}
+
+.event-visual{
+  background:#fff;
+  border:1px solid var(--line);
+  padding:12px;
 }
 
 .event-visual img{
   width:100%;
-  aspect-ratio:16/10;
+  aspect-ratio:16/9;
   object-fit:cover;
   display:block;
-}
-
-.event-meta{
-  margin:0 0 8px;
-  font-size:13px;
-  font-weight:800;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:#cbd5e1;
 }
 
 .event-content h3{
   font-size:clamp(24px,2.8vw,36px);
   line-height:1.16;
   margin:0 0 12px;
+  color:var(--text);
 }
 
 .event-intro{
   margin:0 0 18px;
   font-size:16px;
   line-height:1.82;
-  color:#dbe4ef;
+  color:var(--text);
 }
 
 .conversation-block{
   margin-top:20px;
   padding-top:16px;
-  border-top:1px solid rgba(255,255,255,.14);
+  border-top:1px solid rgba(24,24,27,.10);
 }
 
 .conversation-block h4{
   font-size:22px;
   line-height:1.24;
   margin:0 0 8px;
+  color:var(--text);
 }
 
 .angles-list{
@@ -281,7 +284,7 @@
   padding-left:18px;
   font-size:15px;
   line-height:1.72;
-  color:#dbe4ef;
+  color:var(--muted);
 }
 
 .angles-list li::before{
@@ -292,7 +295,7 @@
   font-weight:700;
 }
 
-/* MEDIA */
+/* ÉMISSIONS */
 
 .media-list{
   display:flex;
@@ -305,8 +308,24 @@
   grid-template-columns:180px 1fr;
   gap:22px;
   align-items:start;
-  padding-top:18px;
+  padding-top:24px;
   border-top:1px solid var(--line);
+}
+
+.media-kicker{
+  grid-column:1 / -1;
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin:0 0 2px;
+}
+
+.media-thumb{
+  background:#fff;
+  border:1px solid var(--line);
+  padding:10px;
 }
 
 .media-thumb img{
@@ -316,10 +335,8 @@
   display:block;
 }
 
-.media-copy h3{
-  font-size:22px;
-  line-height:1.24;
-  margin:0 0 8px;
+.media-copy{
+  padding-top:2px;
 }
 
 .media-meta{
@@ -397,10 +414,6 @@
   .media-item{
     grid-template-columns:1fr;
   }
-
-  .event-block{
-    display:grid;
-  }
 }
 
 @media(max-width:700px){
@@ -425,5 +438,14 @@
 
   .event-content h3{
     font-size:26px;
+  }
+
+  .event-block{
+    padding:18px;
+  }
+
+  .event-visual,
+  .media-thumb{
+    padding:8px;
   }
 }
