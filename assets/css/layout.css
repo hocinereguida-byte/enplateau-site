@@ -48,9 +48,9 @@ body{
 }
 
 img{
+  display:block;
   max-width:100%;
   height:auto;
-  display:block;
 }
 
 a{
@@ -125,7 +125,11 @@ p, li{
   align-items:center;
   justify-content:center;
   font-weight:700;
-  transition:opacity .2s ease, border-color .2s ease, background-color .2s ease, color .2s ease;
+  transition:
+    opacity .2s ease,
+    border-color .2s ease,
+    background-color .2s ease,
+    color .2s ease;
 }
 
 .btn:hover,
@@ -147,10 +151,7 @@ p, li{
   padding-bottom:2px;
 }
 
-/* ---------------------------------------------------------
-   Header / Footer mounts
-   Le JS injecte le contenu ici
---------------------------------------------------------- */
+/* Mount points */
 
 #site-header,
 #site-mobile-menu,
@@ -158,9 +159,7 @@ p, li{
   width:100%;
 }
 
-/* ---------------------------------------------------------
-   Hero éditorial commun
---------------------------------------------------------- */
+/* Hero éditorial commun */
 
 .hero{
   position:relative;
@@ -217,9 +216,7 @@ p, li{
   background:rgba(255,255,255,.18);
 }
 
-/* ---------------------------------------------------------
-   Sections communes
---------------------------------------------------------- */
+/* Sections communes */
 
 .section{
   padding:84px 0;
@@ -293,9 +290,7 @@ p, li{
   color:#dbe4ef;
 }
 
-/* ---------------------------------------------------------
-   Cartes communes
---------------------------------------------------------- */
+/* Cartes communes */
 
 .card{
   background:#fff;
@@ -319,9 +314,7 @@ p, li{
   color:var(--muted);
 }
 
-/* ---------------------------------------------------------
-   Final commun
---------------------------------------------------------- */
+/* Final commun */
 
 .final{
   background:var(--blue-dark);
@@ -350,9 +343,7 @@ p, li{
   margin-top:24px;
 }
 
-/* ---------------------------------------------------------
-   Responsive
---------------------------------------------------------- */
+/* Responsive */
 
 @media (max-width:700px){
   .container,
