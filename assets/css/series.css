@@ -2,7 +2,91 @@
 EN PLATEAU — SERIES
 Styles spécifiques aux pages de séries éditoriales
 (Les Éclaireurs, Les Bâtisseurs, Les Architectes)
+Version adaptée à la nouvelle structure HTML
 ====================================================== */
+
+/* -------------------------
+BASE
+------------------------- */
+
+.section{
+  padding:84px 0;
+}
+
+.section-white{
+  background:#fff;
+}
+
+.section-soft{
+  background:var(--off);
+}
+
+.section-soft-2{
+  background:var(--off-2);
+}
+
+.centered{
+  text-align:center;
+}
+
+.narrow{
+  max-width:820px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.section-head{
+  max-width:1080px;
+  margin:0 auto 34px;
+  padding:0 24px;
+}
+
+.section-head.centered{
+  text-align:center;
+}
+
+.section-head h2{
+  margin:0 0 14px;
+  font-size:clamp(30px,3.4vw,46px);
+  line-height:1.12;
+  letter-spacing:-0.02em;
+  color:var(--ink);
+}
+
+.section-intro{
+  margin:0 auto;
+  font-size:18px;
+  line-height:1.76;
+  color:var(--ink);
+  font-weight:500;
+  text-align:center;
+}
+
+.section-intro.narrow{
+  max-width:560px;
+}
+
+.section-text-block{
+  max-width:680px;
+  margin:30px auto 0;
+  padding:0 24px;
+  text-align:center;
+}
+
+.section-text-block.narrower{
+  max-width:860px;
+}
+
+.section-text-block p{
+  margin:0;
+  font-size:16px;
+  line-height:1.84;
+  color:var(--slate);
+}
+
+.section-text-block p + p{
+  margin-top:16px;
+}
 
 /* -------------------------
 HERO
@@ -46,6 +130,14 @@ HERO
   line-height:1.7;
   font-weight:500;
   color:rgba(255,255,255,.92);
+}
+
+.hero-note{
+  max-width:820px;
+  margin:18px 0 0;
+  font-size:15px;
+  line-height:1.82;
+  color:#c7d3df;
 }
 
 .hero.hero-editorial .hero-rule{
@@ -150,52 +242,6 @@ PREUVE / MÉDIAS
 }
 
 /* -------------------------
-SECTION HEAD
-------------------------- */
-
-.section-head{
-  margin:0 0 18px;
-}
-
-.section-head.centered{
-  text-align:center;
-}
-
-.section-intro{
-  margin:0 auto;
-  font-size:18px;
-  line-height:1.76;
-  color:var(--ink);
-  font-weight:500;
-  text-align:center;
-}
-
-.section-intro.narrow{
-  max-width:560px;
-}
-
-/* -------------------------
-TEXT BLOCKS
-------------------------- */
-
-.section-text-block{
-  max-width:680px;
-  margin:30px auto 0;
-  text-align:center;
-}
-
-.section-text-block p{
-  margin:0;
-  font-size:16px;
-  line-height:1.84;
-  color:var(--slate);
-}
-
-.section-text-block p + p{
-  margin-top:16px;
-}
-
-/* -------------------------
 CADRE DE LA SÉRIE
 ------------------------- */
 
@@ -203,6 +249,10 @@ CADRE DE LA SÉRIE
   display:grid;
   gap:24px;
   margin-top:28px;
+  max-width:1120px;
+  margin-left:auto;
+  margin-right:auto;
+  padding:0 24px;
 }
 
 @media(min-width:900px){
@@ -248,6 +298,7 @@ CADRE DE LA SÉRIE
   margin:0 0 12px;
   font-size:24px;
   line-height:1.14;
+  color:var(--ink);
 }
 
 .frame-card p{
@@ -255,6 +306,250 @@ CADRE DE LA SÉRIE
   font-size:15px;
   line-height:1.78;
   color:var(--muted);
+}
+
+/* -------------------------
+GRILLES GÉNÉRIQUES
+------------------------- */
+
+.grid-2,
+.grid-3,
+.grid-4{
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 24px;
+  display:grid;
+  gap:24px;
+}
+
+.grid-2{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.grid-3{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+
+.grid-4{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+
+.grid-2 .card,
+.grid-3 .card,
+.grid-4 .card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:26px 22px 22px;
+}
+
+.grid-2 .card.featured,
+.grid-3 .card.featured,
+.grid-4 .card.featured{
+  background:#fff;
+  border-color:rgba(15,39,71,.12);
+}
+
+.pill{
+  display:inline-block;
+  margin:0 0 14px;
+  font-size:11px;
+  line-height:1.4;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.grid-2 .card h3,
+.grid-3 .card h3,
+.grid-4 .card h3{
+  margin:0 0 12px;
+  font-size:22px;
+  line-height:1.16;
+  color:var(--ink);
+}
+
+.grid-2 .card p,
+.grid-3 .card p,
+.grid-4 .card p{
+  margin:0;
+  font-size:15px;
+  line-height:1.78;
+  color:var(--muted);
+}
+
+/* -------------------------
+CONVERSATIONS
+------------------------- */
+
+.conversation-wrap{
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+.conversation-block{
+  margin-top:60px;
+}
+
+.conversation-block:first-of-type{
+  margin-top:0;
+}
+
+.conversation-head{
+  max-width:920px;
+  margin:0 auto 28px;
+}
+
+.conversation-meta{
+  margin:0 0 8px;
+  font-size:11px;
+  line-height:1.4;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.conversation-head h3{
+  margin:0 0 14px;
+  font-size:clamp(30px,4vw,42px);
+  line-height:1.12;
+  letter-spacing:-0.02em;
+  color:#0F2747;
+}
+
+.conversation-intro{
+  margin:0;
+  max-width:860px;
+  font-size:16px;
+  line-height:1.84;
+  color:#2B3340;
+}
+
+.angles-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+  margin-top:28px;
+}
+
+.angle-card{
+  background:#fff;
+  border:1px solid rgba(15,39,71,.12);
+  border-radius:12px;
+  padding:22px 22px 20px;
+  text-align:left;
+  transition:border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.angle-card:hover{
+  border-color:rgba(15,39,71,.16);
+  transform:translateY(-1px);
+  box-shadow:0 16px 40px rgba(11,15,25,.05);
+}
+
+.angle-label{
+  display:block;
+  margin:0 0 10px;
+  font-size:11px;
+  line-height:1.4;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.angle-card h4{
+  margin:0 0 10px;
+  font-size:20px;
+  line-height:1.28;
+  color:#0B1220;
+}
+
+.angle-card p{
+  margin:0;
+  color:#44505F;
+  line-height:1.75;
+  font-size:15px;
+}
+
+.angle-meta{
+  margin-top:12px !important;
+  padding-top:12px;
+  border-top:1px solid rgba(15,39,71,.08);
+  font-size:14px !important;
+  color:#5F6B7A !important;
+}
+
+.conversation-sequences{
+  margin-top:22px;
+  padding:20px 22px;
+  border-top:1px solid rgba(15,39,71,.10);
+  border-bottom:1px solid rgba(15,39,71,.10);
+  background:rgba(255,255,255,.56);
+}
+
+.conversation-sequences-title{
+  margin:0 0 10px;
+  font-size:11px;
+  line-height:1.4;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.conversation-sequences p{
+  margin:0;
+  color:#44505F;
+  line-height:1.8;
+  font-size:15px;
+}
+
+.event-box{
+  margin-top:20px;
+  background:#F8F7F4;
+  border:1px solid rgba(15,39,71,.10);
+  border-radius:14px;
+  padding:24px;
+}
+
+.event-box + .event-box{
+  margin-top:16px;
+}
+
+.event-kicker{
+  margin:0 0 10px;
+  font-size:11px;
+  line-height:1.4;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.event-box h4{
+  margin:0 0 10px;
+  font-size:22px;
+  line-height:1.24;
+  color:#0F2747;
+}
+
+.event-box p{
+  margin:0;
+  color:#2B3340;
+  line-height:1.8;
+  font-size:15px;
+}
+
+.conversation-note{
+  max-width:860px;
+  margin:20px auto 0;
+  font-size:15px;
+  line-height:1.8;
+  color:#44505F;
 }
 
 /* -------------------------
@@ -340,21 +635,6 @@ CONVERSATION EN PRÉPARATION
   }
 }
 
-.angle-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:28px;
-  text-align:left;
-  transition:border-color .18s ease, transform .18s ease, box-shadow .18s ease;
-}
-
-.angle-card:hover{
-  border-color:rgba(15,39,71,.16);
-  transform:translateY(-1px);
-  box-shadow:0 16px 40px rgba(11,15,25,.05);
-}
-
 .angle-media{
   display:inline-block;
   margin:0 0 14px;
@@ -374,13 +654,6 @@ CONVERSATION EN PRÉPARATION
   line-height:1.16;
 }
 
-.angle-card p{
-  margin:0 0 14px;
-  font-size:15px;
-  line-height:1.78;
-  color:var(--muted);
-}
-
 .angle-actors{
   margin:0;
   font-size:14px;
@@ -394,8 +667,60 @@ CONVERSATION EN PRÉPARATION
 }
 
 /* -------------------------
+LISTES
+------------------------- */
+
+.card-list{
+  margin:0 0 22px;
+  padding:0;
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.card-list li{
+  position:relative;
+  padding-left:18px;
+  font-size:16px;
+  line-height:1.8;
+  color:var(--ink);
+}
+
+.card-list li::before{
+  content:"→";
+  position:absolute;
+  left:0;
+  color:var(--accent);
+  font-weight:700;
+}
+
+/* -------------------------
 FINAL
 ------------------------- */
+
+.final{
+  background:var(--blue-dark);
+  color:#fff;
+  padding:84px 24px 96px;
+  text-align:center;
+}
+
+.final h2{
+  max-width:920px;
+  margin:0 auto 16px;
+  font-size:clamp(32px,3.4vw,44px);
+  line-height:1.14;
+  color:#fff;
+}
+
+.final p{
+  max-width:760px;
+  margin:0 auto 22px;
+  font-size:16px;
+  line-height:1.84;
+  color:#dbe4ef;
+}
 
 .final .final-intro{
   max-width:680px;
@@ -537,34 +862,42 @@ DEUX ACCÈS / CTA
 }
 
 /* -------------------------
-CARTES GÉNÉRIQUES DES CONVERSATIONS
+BOUTONS
 ------------------------- */
 
-.grid-2 .card,
-.grid-3 .card,
-.grid-4 .card{
-  background:#fff;
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-weight:700;
+  padding-bottom:2px;
 }
 
-.grid-2 .card.featured,
-.grid-3 .card.featured,
-.grid-4 .card.featured{
-  background:#fff;
-  border-color:rgba(15,39,71,.12);
+.btn-primary{
+  color:var(--accent);
+  border-bottom:1px solid var(--accent);
+}
+
+.btn-secondary{
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.32);
 }
 
 /* -------------------------
 RESPONSIVE
 ------------------------- */
 
-@media(max-width:820px){
-
+@media(max-width:980px){
   .grid-2,
   .grid-3,
-  .grid-4{
+  .grid-4,
+  .angles-grid{
     grid-template-columns:1fr;
   }
+}
 
+@media(max-width:820px){
   .media-logos{
     gap:18px;
     flex-wrap:wrap;
@@ -576,6 +909,10 @@ RESPONSIVE
 }
 
 @media(max-width:700px){
+
+  .section{
+    padding:62px 0;
+  }
 
   .hero{
     margin-top:22px;
@@ -642,6 +979,11 @@ RESPONSIVE
     height:18px;
   }
 
+  .section-head{
+    padding:0 18px;
+    margin-bottom:26px;
+  }
+
   .section-intro{
     font-size:17px;
     line-height:1.68;
@@ -654,6 +996,7 @@ RESPONSIVE
   .section-text-block{
     max-width:100%;
     margin:24px auto 0;
+    padding:0 18px;
   }
 
   .section-text-block p{
@@ -669,6 +1012,7 @@ RESPONSIVE
     grid-template-columns:1fr;
     gap:18px;
     margin-top:24px;
+    padding:0 18px;
   }
 
   .frame-card{
@@ -683,6 +1027,14 @@ RESPONSIVE
   .frame-card p{
     font-size:15px;
     line-height:1.74;
+  }
+
+  .conversation-wrap,
+  .grid-2,
+  .grid-3,
+  .grid-4{
+    padding-left:18px;
+    padding-right:18px;
   }
 
   .conversation-eyebrow{
@@ -722,7 +1074,8 @@ RESPONSIVE
     padding:22px;
   }
 
-  .angle-card h3{
+  .angle-card h3,
+  .angle-card h4{
     font-size:20px;
     line-height:1.16;
   }
@@ -735,6 +1088,18 @@ RESPONSIVE
   .angle-actors{
     font-size:14px;
     line-height:1.68;
+  }
+
+  .event-box{
+    padding:20px 18px;
+  }
+
+  .event-box h4{
+    font-size:20px;
+  }
+
+  .final{
+    padding:68px 18px 82px;
   }
 
   .final .final-intro{
