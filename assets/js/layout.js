@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  document.body.classList.add("has-fixed-mobile-header");
-
   async function loadPartial(selector, filePath) {
     const target = document.querySelector(selector);
     if (!target) return null;
