@@ -47,9 +47,6 @@ button {
   --ep-border: rgba(15, 39, 71, 0.08);
   --ep-border-strong: rgba(15, 39, 71, 0.16);
   --ep-shadow: 0 10px 30px rgba(15, 39, 71, 0.08);
-  --ep-radius-sm: 12px;
-  --ep-radius-md: 16px;
-  --ep-radius-lg: 22px;
   --ep-container: 1440px;
 
   /* Variables utilisées par home.css */
@@ -77,13 +74,21 @@ main {
 }
 
 /* =========================
+   WRAPPER STICKY
+   ========================= */
+
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+}
+
+/* =========================
    HEADER
    ========================= */
 
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  position: relative;
   background: rgba(247, 246, 242, 0.96);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--ep-border);
@@ -93,10 +98,10 @@ main {
   width: min(var(--ep-container), calc(100% - 24px));
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 32px 1fr 96px;
+  grid-template-columns: 34px 1fr 110px;
   align-items: center;
   column-gap: 12px;
-  min-height: 86px;
+  min-height: 82px;
   padding: 8px 0;
 }
 
@@ -129,8 +134,8 @@ main {
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -167,22 +172,22 @@ main {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 0;
   color: var(--ep-navy);
   min-width: 0;
 }
 
 .site-brand__logo {
-  width: 160px;
+  width: 170px;
   height: auto;
 }
 
 .site-brand__baseline {
-  font-size: 0.72rem;
-  line-height: 1.05;
+  display: none;
+  font-size: 0.95rem;
+  line-height: 1.1;
   font-weight: 500;
   color: rgba(15, 39, 71, 0.88);
-  text-align: center;
 }
 
 /* =========================
@@ -194,7 +199,7 @@ main {
   align-items: center;
   justify-content: center;
   min-height: 40px;
-  width: 96px;
+  width: 110px;
   padding: 6px 8px;
   border: 1px solid var(--ep-orange);
   border-radius: 8px;
@@ -263,7 +268,7 @@ main {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1200;
+  z-index: 2200;
   width: min(92vw, 420px);
   height: 100dvh;
   padding: 20px 18px 28px;
@@ -406,9 +411,9 @@ main {
 @media (min-width: 1024px) {
   .site-header__inner {
     width: min(var(--ep-container), calc(100% - 56px));
-    min-height: 104px;
-    grid-template-columns: 320px 1fr;
-    column-gap: 30px;
+    min-height: 92px;
+    grid-template-columns: 300px 1fr;
+    column-gap: 28px;
     padding: 0;
   }
 
@@ -426,18 +431,17 @@ main {
 
   .site-brand {
     align-items: flex-start;
-    gap: 8px;
+    gap: 6px;
   }
 
   .site-brand__logo {
-    width: 250px;
+    width: 215px;
   }
 
   .site-brand__baseline {
-    font-size: 0.96rem;
-    line-height: 1.15;
+    display: block;
     text-align: left;
-    padding-left: 4px;
+    padding-left: 2px;
   }
 
   .site-header__right {
@@ -510,11 +514,11 @@ main {
 
 @media (min-width: 1360px) {
   .site-header__inner {
-    grid-template-columns: 340px 1fr;
+    grid-template-columns: 320px 1fr;
   }
 
   .site-brand__logo {
-    width: 265px;
+    width: 228px;
   }
 
   .desktop-editorial-nav__link {
