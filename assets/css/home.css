@@ -3,7 +3,7 @@
    ========================= */
 
 .hero {
-  background: linear-gradient(135deg, #0A1930 0%, #0F2747 58%, #1C437A 100%);
+  background: #262a33;
   color: var(--white);
   padding: 96px 0 80px;
 }
@@ -26,13 +26,13 @@
 .season-badge {
   display: inline-block;
   padding: 8px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.20);
+  border: 1px solid rgba(255, 241, 229, 0.24);
   border-radius: 999px;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 800;
-  color: #fff;
+  color: #fff1e5;
   margin-bottom: 22px;
 }
 
@@ -42,13 +42,14 @@
   line-height: 1.08;
   max-width: 22ch;
   margin: 0 0 22px;
+  color: #fff1e5;
 }
 
 .hero .subhead {
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.65;
   max-width: 58ch;
-  color: rgba(255, 255, 255, 0.84);
+  color: rgba(255, 241, 229, 0.82);
   margin: 0 0 22px;
 }
 
@@ -64,25 +65,25 @@
   align-items: center;
   justify-content: center;
   padding: 13px 18px;
-  border-radius: 999px;
+  border-radius: 6px;
   font-weight: 700;
   text-decoration: none;
 }
 
 .hero-link-primary {
-  background: var(--white);
-  color: var(--blue-dark);
+  background: #fff1e5;
+  color: #262a33;
 }
 
 .hero-link-secondary {
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: #fff;
+  border: 1px solid rgba(255, 241, 229, 0.24);
+  color: #fff1e5;
 }
 
 .hero-rule {
   width: 120px;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent), transparent);
+  background: linear-gradient(90deg, var(--ep-burgundy), transparent);
   margin-top: 28px;
 }
 
@@ -97,13 +98,12 @@
 
 .hero-panel,
 .hero-note-card {
-  border-radius: 14px;
+  border-radius: 10px;
   padding: 22px;
   text-align: left;
   min-height: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  box-shadow: 0 10px 28px rgba(7, 20, 38, 0.20);
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 241, 229, 0.10);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
 }
 
 .hero-panel-kicker,
@@ -113,27 +113,35 @@
   letter-spacing: 0.12em;
   font-weight: 800;
   margin-bottom: 10px;
-  color: #ff8b2b;
+  color: #f2c1b0;
 }
 
 .hero-panel p,
 .hero-note-card p {
   margin: 0;
-  line-height: 1.55;
+  line-height: 1.6;
   font-size: 0.96rem;
-  color: rgba(255, 255, 255, 0.92);
 }
 
 .hero-panel-primary {
-  background: rgba(22, 41, 68, 0.82);
+  background: rgba(255, 241, 229, 0.08);
+}
+
+.hero-panel-primary p {
+  color: rgba(255, 241, 229, 0.92);
 }
 
 .hero-note-card-editorial {
-  background: rgba(34, 52, 78, 0.78);
+  background: #f6e9dc;
 }
 
 .hero-note-card-collective {
-  background: rgba(47, 64, 90, 0.76);
+  background: #fff7f0;
+}
+
+.hero-note-card-editorial p,
+.hero-note-card-collective p {
+  color: rgba(38, 42, 51, 0.82);
 }
 
 /* =========================
@@ -150,10 +158,10 @@
 }
 
 .tabs-shell {
-  border-radius: 28px;
-  background: linear-gradient(180deg, #f6f4ee 0%, #f0ede6 100%);
-  border: 1px solid rgba(15, 39, 71, 0.08);
-  box-shadow: 0 12px 36px rgba(15, 39, 71, 0.06);
+  border-radius: 16px;
+  background: #f6e9dc;
+  border: 1px solid rgba(38, 42, 51, 0.10);
+  box-shadow: 0 12px 36px rgba(38, 42, 51, 0.06);
   overflow: hidden;
 }
 
@@ -162,14 +170,14 @@
   gap: 10px;
   padding: 18px;
   overflow-x: auto;
-  border-bottom: 1px solid rgba(15, 39, 71, 0.08);
-  background: rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(38, 42, 51, 0.08);
+  background: rgba(255, 247, 240, 0.72);
 }
 
 .tab-button {
   border: 0;
   background: transparent;
-  color: rgba(15, 39, 71, 0.74);
+  color: rgba(38, 42, 51, 0.74);
   padding: 14px 18px;
   border-radius: 999px;
   font-weight: 700;
@@ -179,9 +187,9 @@
 }
 
 .tab-button.is-active {
-  background: #ffffff;
-  color: #0f2747;
-  box-shadow: 0 4px 14px rgba(15, 39, 71, 0.08);
+  background: #fffaf5;
+  color: #262a33;
+  box-shadow: 0 4px 14px rgba(38, 42, 51, 0.08);
 }
 
 .tabs-panels {
@@ -214,7 +222,7 @@
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-weight: 800;
-  color: var(--accent);
+  color: var(--ep-burgundy);
 }
 
 .tab-panel-main h3 {
@@ -222,13 +230,13 @@
   font-family: Bitter, Georgia, serif;
   font-size: clamp(1.7rem, 2.6vw, 2.4rem);
   line-height: 1.12;
-  color: #0f2747;
+  color: #262a33;
 }
 
 .tab-panel-main p {
   margin: 0 0 14px;
-  line-height: 1.75;
-  color: rgba(15, 39, 71, 0.82);
+  line-height: 1.78;
+  color: rgba(38, 42, 51, 0.82);
 }
 
 .tab-panel-side {
@@ -238,9 +246,9 @@
 
 .tab-mini-card {
   padding: 18px 18px 20px;
-  border-radius: 18px;
-  background: #ffffff;
-  border: 1px solid rgba(15, 39, 71, 0.08);
+  border-radius: 10px;
+  background: #fffaf5;
+  border: 1px solid rgba(38, 42, 51, 0.08);
 }
 
 .tab-mini-label {
@@ -250,13 +258,13 @@
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-weight: 800;
-  color: var(--accent);
+  color: var(--ep-burgundy);
 }
 
 .tab-mini-card p {
   margin: 0;
-  line-height: 1.6;
-  color: rgba(15, 39, 71, 0.8);
+  line-height: 1.65;
+  color: rgba(38, 42, 51, 0.8);
 }
 
 /* =========================
@@ -266,10 +274,10 @@
 .integrated-editorial-block {
   max-width: 980px;
   padding: 32px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(15, 39, 71, 0.08);
-  box-shadow: 0 10px 28px rgba(15, 39, 71, 0.05);
+  border-radius: 16px;
+  background: rgba(255, 247, 240, 0.82);
+  border: 1px solid rgba(38, 42, 51, 0.08);
+  box-shadow: 0 10px 28px rgba(38, 42, 51, 0.05);
 }
 
 .integrated-editorial-block h2 {
@@ -277,27 +285,27 @@
   font-family: Bitter, Georgia, serif;
   font-size: clamp(1.9rem, 3vw, 2.8rem);
   line-height: 1.08;
-  color: #0f2747;
+  color: #262a33;
 }
 
 .integrated-intro {
   margin: 0;
   max-width: 64ch;
   font-size: 1.06rem;
-  line-height: 1.7;
-  color: rgba(15, 39, 71, 0.8);
+  line-height: 1.72;
+  color: rgba(38, 42, 51, 0.82);
 }
 
 .integrated-divider {
   width: 100%;
   height: 2px;
   margin: 20px 0 22px;
-  background: linear-gradient(90deg, var(--accent), transparent);
+  background: linear-gradient(90deg, var(--ep-burgundy), transparent);
 }
 
 .integrated-text p {
   margin: 0 0 16px;
-  line-height: 1.78;
+  line-height: 1.8;
   color: var(--muted);
 }
 
@@ -306,7 +314,7 @@
 }
 
 .integrated-editorial-block-light {
-  background: #ffffff;
+  background: #fffaf5;
 }
 
 /* =========================
@@ -316,9 +324,9 @@
 .editorial-reading-block {
   max-width: 980px;
   padding: 30px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.62);
-  border: 1px solid rgba(15, 39, 71, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 247, 240, 0.82);
+  border: 1px solid rgba(38, 42, 51, 0.08);
 }
 
 .editorial-reading-block p {
@@ -334,7 +342,7 @@
 
 .editorial-reading-block p:first-child {
   font-size: 1.1rem;
-  color: var(--blue-dark);
+  color: #262a33;
   font-weight: 500;
 }
 
@@ -344,9 +352,9 @@
 
 .season-event {
   padding: 30px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  background: rgba(255, 241, 229, 0.08);
+  border: 1px solid rgba(255, 241, 229, 0.10);
 }
 
 .season-event + .season-event {
@@ -357,20 +365,23 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #ffb27a;
+  color: #f2c1b0;
   font-weight: 800;
   margin-bottom: 10px;
 }
 
 .season-event h3 {
+  font-family: Bitter, Georgia, serif;
   font-size: 1.9rem;
+  line-height: 1.1;
   margin: 0 0 12px;
   max-width: 16ch;
+  color: #fff1e5;
 }
 
 .season-event-intro {
   max-width: 72ch;
-  color: rgba(255, 255, 255, 0.80);
+  color: rgba(255, 241, 229, 0.80);
   margin: 0;
 }
 
@@ -380,10 +391,10 @@
   gap: 6px;
   margin-top: 16px;
   padding-top: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 241, 229, 0.12);
   font-weight: 600;
   font-size: 0.95rem;
-  color: #ffffff;
+  color: #fff1e5;
   opacity: 0.84;
   text-decoration: none;
   transition: all 0.25s ease;
@@ -404,7 +415,7 @@
 .home-proof,
 .home-signal-note {
   margin-top: 22px;
-  color: rgba(255, 255, 255, 0.74);
+  color: rgba(255, 241, 229, 0.74);
 }
 
 /* =========================
@@ -429,11 +440,11 @@
   gap: 6px;
   margin-top: 14px;
   padding-top: 12px;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-top: 1px solid rgba(38, 42, 51, 0.06);
   font-weight: 600;
   font-size: 0.92rem;
-  color: var(--blue-dark);
-  opacity: 0.78;
+  color: var(--ep-teal);
+  opacity: 0.82;
   text-decoration: none;
   transition: all 0.25s ease;
 }
@@ -444,6 +455,7 @@
 
 .editorial-link:hover {
   opacity: 1;
+  color: var(--ep-teal-dark);
 }
 
 .editorial-link:hover span {
@@ -455,11 +467,15 @@
    ========================= */
 
 .final-panel {
-  background: linear-gradient(135deg, #0A1930 0%, #0F2747 58%, #1C437A 100%);
-  color: #fff;
+  background: #262a33;
+  color: #fff1e5;
   padding: 36px;
-  border-radius: 28px;
+  border-radius: 16px;
   box-shadow: var(--shadow);
+}
+
+.final-panel .section-head h2 {
+  color: #fff1e5;
 }
 
 .series-access-grid {
@@ -471,27 +487,32 @@
 
 .series-access-card {
   padding: 24px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 241, 229, 0.14);
+  background: rgba(255, 241, 229, 0.06);
 }
 
 .series-access-kicker {
   font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #ffb27a;
+  color: #f2c1b0;
   font-weight: 800;
   margin-bottom: 8px;
 }
 
 .series-access-head h3 {
   margin: 0 0 12px;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.7rem;
+  line-height: 1.12;
+  color: #fff1e5;
 }
 
 .series-access-body p {
-  color: rgba(255, 255, 255, 0.84);
+  color: rgba(255, 241, 229, 0.84);
   margin: 0;
+  line-height: 1.68;
 }
 
 .cta-wrap {
@@ -503,19 +524,19 @@
   align-items: center;
   justify-content: center;
   padding: 12px 18px;
-  border-radius: 999px;
+  border-radius: 6px;
   font-weight: 700;
   text-decoration: none;
 }
 
 .btn-primary {
-  background: #fff;
-  color: var(--blue-dark);
+  background: #fff1e5;
+  color: #262a33;
 }
 
 .btn-secondary {
-  border: 1px solid var(--accent);
-  color: var(--accent);
+  border: 1px solid var(--ep-teal);
+  color: var(--ep-teal);
 }
 
 .proof-link-wrap {
@@ -580,9 +601,9 @@
 
   .hero-panel,
   .hero-note-card {
-    border-radius: 18px;
+    border-radius: 12px;
     padding: 24px 20px;
-    box-shadow: 0 12px 26px rgba(6, 18, 34, 0.18);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
   }
 
   .hero-panel-kicker,
@@ -598,7 +619,7 @@
   }
 
   .tabs-shell {
-    border-radius: 22px;
+    border-radius: 14px;
   }
 
   .tabs-nav {
