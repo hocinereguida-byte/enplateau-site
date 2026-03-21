@@ -3,7 +3,7 @@
    ========================= */
 
 .hero {
-  background: #0b1f19;
+  background: linear-gradient(135deg, #241b17 0%, #1c1512 100%);
   color: var(--white);
   padding: 96px 0 80px;
 }
@@ -26,13 +26,13 @@
 .season-badge {
   display: inline-block;
   padding: 8px 14px;
-  border: 1px solid rgba(243, 247, 244, 0.22);
-  border-radius: 3px;
+  border: 1px solid rgba(245, 243, 241, 0.22);
+  border-radius: 2px;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 800;
-  color: #f3f7f4;
+  color: #f5f3f1;
   margin-bottom: 22px;
 }
 
@@ -42,14 +42,14 @@
   line-height: 1.08;
   max-width: 22ch;
   margin: 0 0 22px;
-  color: #f3f7f4;
+  color: #f5f3f1;
 }
 
 .hero .subhead {
   font-size: 1.2rem;
   line-height: 1.74;
   max-width: 58ch;
-  color: rgba(243, 247, 244, 0.84);
+  color: rgba(245, 243, 241, 0.84);
   margin: 0 0 22px;
 }
 
@@ -65,26 +65,19 @@
   align-items: center;
   justify-content: center;
   padding: 11px 16px;
-  border-radius: 3px;
+  border-radius: 2px;
   font-weight: 700;
   text-decoration: none;
 }
 
 .hero-link-primary {
-  background: #f3f7f4;
-  color: #0b1f19;
+  background: #f5f3f1;
+  color: #241b17;
 }
 
 .hero-link-secondary {
-  border: 1px solid rgba(243, 247, 244, 0.22);
-  color: #f3f7f4;
-}
-
-.hero-rule {
-  width: 64px;
-  height: 1px;
-  background: rgba(200, 116, 51, 0.55);
-  margin-top: 28px;
+  border: 1px solid rgba(245, 243, 241, 0.22);
+  color: #f5f3f1;
 }
 
 .hero-aside {
@@ -96,61 +89,58 @@
   align-items: stretch;
 }
 
-.hero-panel,
-.hero-note-card {
-  border-radius: 3px;
+.hero-card {
+  border-radius: 2px;
   padding: 22px;
   text-align: left;
   min-height: 100%;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
 }
 
-.hero-panel-kicker,
-.hero-note-card .eyebrow {
+.hero-card-kicker {
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-weight: 800;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
 }
 
-.hero-panel p,
-.hero-note-card p {
+.hero-card p:last-child {
   margin: 0;
   line-height: 1.7;
   font-size: 0.98rem;
 }
 
-.hero-panel-primary {
-  background: rgba(243, 247, 244, 0.06);
-  border: 1px solid rgba(243, 247, 244, 0.10);
+.hero-card-dark {
+  background: rgba(245, 243, 241, 0.06);
+  border: 1px solid rgba(245, 243, 241, 0.10);
 }
 
-.hero-panel-primary .hero-panel-kicker {
+.hero-card-dark .hero-card-kicker {
   color: #c87433;
 }
 
-.hero-panel-primary p {
-  color: rgba(243, 247, 244, 0.92);
+.hero-card-dark p:last-child {
+  color: rgba(245, 243, 241, 0.92);
 }
 
-.hero-note-card-editorial {
+.hero-card-light {
   background: #edf3ef;
   border: 1px solid rgba(26, 33, 30, 0.08);
 }
 
-.hero-note-card-collective {
+.hero-card-soft {
   background: #e2eae4;
   border: 1px solid rgba(26, 33, 30, 0.08);
 }
 
-.hero-note-card-editorial .eyebrow,
-.hero-note-card-collective .eyebrow {
+.hero-card-light .hero-card-kicker,
+.hero-card-soft .hero-card-kicker {
   color: #c87433;
 }
 
-.hero-note-card-editorial p,
-.hero-note-card-collective p {
+.hero-card-light p:last-child,
+.hero-card-soft p:last-child {
   color: rgba(26, 33, 30, 0.86);
 }
 
@@ -168,7 +158,7 @@
 }
 
 .tabs-shell {
-  border-radius: 4px;
+  border-radius: 2px;
   background: #f7fbf8;
   border: 1px solid rgba(26, 33, 30, 0.10);
   box-shadow: 0 12px 36px rgba(26, 33, 30, 0.05);
@@ -189,7 +179,7 @@
   background: rgba(255, 255, 255, 0.72);
   color: rgba(26, 33, 30, 0.82);
   padding: 12px 14px;
-  border-radius: 3px;
+  border-radius: 2px;
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
@@ -197,9 +187,9 @@
 }
 
 .tab-button.is-active {
-  background: #0b1f19;
-  color: #f3f7f4;
-  border-color: #0b1f19;
+  background: #241b17;
+  color: #f5f3f1;
+  border-color: #241b17;
 }
 
 .tabs-panels {
@@ -257,7 +247,7 @@
 
 .tab-mini-card {
   padding: 18px 18px 20px;
-  border-radius: 3px;
+  border-radius: 2px;
   background: #ffffff;
   border: 1px solid rgba(26, 33, 30, 0.08);
 }
@@ -285,7 +275,7 @@
 .integrated-editorial-block {
   max-width: 980px;
   padding: 32px;
-  border-radius: 4px;
+  border-radius: 2px;
   background: rgba(248, 251, 248, 0.94);
   border: 1px solid rgba(26, 33, 30, 0.08);
   box-shadow: 0 10px 28px rgba(26, 33, 30, 0.04);
@@ -336,7 +326,7 @@
 .editorial-reading-block {
   max-width: 980px;
   padding: 30px;
-  border-radius: 4px;
+  border-radius: 2px;
   background: rgba(248, 251, 248, 0.9);
   border: 1px solid rgba(26, 33, 30, 0.08);
 }
@@ -364,9 +354,9 @@
 
 .season-event {
   padding: 30px;
-  border-radius: 3px;
-  background: rgba(243, 247, 244, 0.06);
-  border: 1px solid rgba(243, 247, 244, 0.10);
+  border-radius: 2px;
+  background: rgba(245, 243, 241, 0.05);
+  border: 1px solid rgba(245, 243, 241, 0.10);
 }
 
 .season-event + .season-event {
@@ -377,7 +367,7 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #cad7d0;
+  color: #d7c9bf;
   font-weight: 800;
   margin-bottom: 10px;
 }
@@ -388,12 +378,12 @@
   line-height: 1.1;
   margin: 0 0 12px;
   max-width: 16ch;
-  color: #f3f7f4;
+  color: #f5f3f1;
 }
 
 .season-event-intro {
   max-width: 72ch;
-  color: rgba(243, 247, 244, 0.82);
+  color: rgba(245, 243, 241, 0.82);
   margin: 0;
 }
 
@@ -403,10 +393,10 @@
   gap: 6px;
   margin-top: 16px;
   padding-top: 12px;
-  border-top: 1px solid rgba(243, 247, 244, 0.12);
+  border-top: 1px solid rgba(245, 243, 241, 0.12);
   font-weight: 600;
   font-size: 0.95rem;
-  color: #f3f7f4;
+  color: #f5f3f1;
   opacity: 0.88;
   text-decoration: none;
   transition: all 0.25s ease;
@@ -430,7 +420,7 @@
 }
 
 section.dark .home-proof {
-  color: rgba(243, 247, 244, 0.74);
+  color: rgba(245, 243, 241, 0.74);
 }
 
 #cadres-editoriaux .home-signal-note {
@@ -486,15 +476,15 @@ section.dark .home-proof {
    ========================= */
 
 .final-panel {
-  background: #0b1f19;
-  color: #f3f7f4;
+  background: #241b17;
+  color: #f5f3f1;
   padding: 36px;
-  border-radius: 4px;
+  border-radius: 2px;
   box-shadow: var(--shadow);
 }
 
 .final-panel .section-head h2 {
-  color: #f3f7f4;
+  color: #f5f3f1;
 }
 
 .series-access-grid {
@@ -506,16 +496,16 @@ section.dark .home-proof {
 
 .series-access-card {
   padding: 24px;
-  border-radius: 3px;
-  border: 1px solid rgba(243, 247, 244, 0.14);
-  background: rgba(243, 247, 244, 0.06);
+  border-radius: 2px;
+  border: 1px solid rgba(245, 243, 241, 0.14);
+  background: rgba(245, 243, 241, 0.05);
 }
 
 .series-access-kicker {
   font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #cad7d0;
+  color: #d7c9bf;
   font-weight: 800;
   margin-bottom: 8px;
 }
@@ -525,11 +515,11 @@ section.dark .home-proof {
   font-family: Bitter, Georgia, serif;
   font-size: 1.65rem;
   line-height: 1.14;
-  color: #f3f7f4;
+  color: #f5f3f1;
 }
 
 .series-access-body p {
-  color: rgba(243, 247, 244, 0.84);
+  color: rgba(245, 243, 241, 0.84);
   margin: 0;
   line-height: 1.76;
 }
@@ -543,19 +533,19 @@ section.dark .home-proof {
   align-items: center;
   justify-content: center;
   padding: 11px 16px;
-  border-radius: 3px;
+  border-radius: 2px;
   font-weight: 700;
   text-decoration: none;
 }
 
 .btn-primary {
-  background: #f3f7f4;
-  color: #0b1f19;
+  background: #f5f3f1;
+  color: #241b17;
 }
 
 .btn-secondary {
-  border: 1px solid #cad7d0;
-  color: #f3f7f4;
+  border: 1px solid #d7c9bf;
+  color: #f5f3f1;
 }
 
 .proof-link-wrap {
@@ -618,27 +608,24 @@ section.dark .home-proof {
     max-width: 100%;
   }
 
-  .hero-panel,
-  .hero-note-card {
-    border-radius: 3px;
+  .hero-card {
+    border-radius: 2px;
     padding: 24px 20px;
-    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.14);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
   }
 
-  .hero-panel-kicker,
-  .hero-note-card .eyebrow {
+  .hero-card-kicker {
     font-size: 0.7rem;
     margin-bottom: 12px;
   }
 
-  .hero-panel p,
-  .hero-note-card p {
+  .hero-card p:last-child {
     font-size: 0.95rem;
     line-height: 1.68;
   }
 
   .tabs-shell {
-    border-radius: 3px;
+    border-radius: 2px;
   }
 
   .tabs-nav {
