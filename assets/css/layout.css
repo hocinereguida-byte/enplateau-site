@@ -1,28 +1,28 @@
 :root{
-  --ft-paper:#f6f1e8;
-  --ft-paper-2:#efe7db;
-  --ft-ink:#1a1a1a;
-  --ft-ink-soft:#5f584f;
-  --ft-line:#cfc6b8;
+  --paper:#f6f1e8;
+  --paper-2:#efe7db;
+  --ink:#161616;
+  --ink-soft:#5f594f;
+  --line:#d3cbbf;
 
-  --ft-dark:#0d0d0d;
-  --ft-dark-2:#161616;
-  --ft-light-on-dark:#f3eee6;
-  --ft-soft-on-dark:rgba(243,238,230,.76);
-  --ft-line-dark:rgba(243,238,230,.14);
+  --dark:#0e0e0e;
+  --dark-2:#171717;
+  --light-on-dark:#f3eee6;
+  --soft-on-dark:rgba(243,238,230,.74);
+  --line-dark:rgba(243,238,230,.14);
 
-  --ft-accent:#0f2747;
+  --accent:#0f2747;
 
-  --page-max:1480px;
-  --content-max:860px;
+  --page-max:1360px;
+  --content-max:780px;
 
   --space-1:8px;
   --space-2:14px;
   --space-3:22px;
   --space-4:34px;
   --space-5:52px;
-  --space-6:84px;
-  --space-7:124px;
+  --space-6:78px;
+  --space-7:112px;
 
   --serif: Georgia, "Times New Roman", Times, serif;
   --sans: Arial, Helvetica, sans-serif;
@@ -38,8 +38,8 @@ html{
 
 body{
   margin:0;
-  background:var(--ft-paper);
-  color:var(--ft-ink);
+  background:var(--paper);
+  color:var(--ink);
   font-family:var(--serif);
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
@@ -56,7 +56,7 @@ img{
 }
 
 .container{
-  width:min(calc(100% - 36px), var(--page-max));
+  width:min(calc(100% - 34px), var(--page-max));
   margin:0 auto;
 }
 
@@ -69,14 +69,14 @@ img{
   top:0;
   z-index:1000;
   background:rgba(246,241,232,.96);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--ft-line);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
 }
 
 .header-inner{
   min-height:74px;
   display:grid;
-  grid-template-columns:260px 1fr;
+  grid-template-columns:240px 1fr;
   align-items:center;
   gap:24px;
 }
@@ -94,45 +94,55 @@ img{
   display:flex;
   justify-content:flex-end;
   align-items:center;
-  gap:22px;
+  gap:20px;
   flex-wrap:wrap;
 }
 
 .nav a{
   font-family:var(--sans);
   font-size:12px;
-  font-weight:600;
+  font-weight:700;
   letter-spacing:.08em;
   text-transform:uppercase;
-  color:var(--ft-ink-soft);
+  color:var(--ink-soft);
   transition:color .2s ease;
 }
 
 .nav a:hover{
-  color:var(--ft-ink);
+  color:var(--ink);
 }
 
 /* =========================
-   SECTIONS
+   BASE SECTION
    ========================= */
 
 .section{
   position:relative;
   padding:var(--space-7) 0;
-  border-top:1px solid var(--ft-line);
-  background:var(--ft-paper);
-  color:var(--ft-ink);
+  border-top:1px solid var(--line);
+  background:var(--paper);
+  color:var(--ink);
 }
 
 .section-light{
-  background:var(--ft-paper);
-  color:var(--ft-ink);
+  background:var(--paper);
+  color:var(--ink);
 }
 
 .section-dark{
-  background:var(--ft-dark);
-  color:var(--ft-light-on-dark);
-  border-top:1px solid var(--ft-line-dark);
+  background:var(--dark);
+  color:var(--light-on-dark);
+  border-top:1px solid var(--line-dark);
+}
+
+.section .container{
+  display:grid;
+  grid-template-columns:170px minmax(0, 820px) 1fr;
+  gap:30px;
+}
+
+.section .container > *{
+  grid-column:2 / 3;
 }
 
 .section-dark p,
@@ -140,22 +150,7 @@ img{
 .section-dark .note,
 .section-dark .micro,
 .section-dark .kicker{
-  color:var(--ft-soft-on-dark);
-}
-
-/* inner editorial grid */
-.section .container{
-  display:grid;
-  grid-template-columns:160px minmax(0, 1fr) 200px;
-  gap:28px;
-}
-
-.section .container > *{
-  grid-column:2 / 3;
-}
-
-.hero .container > *{
-  grid-column:2 / 3;
+  color:var(--soft-on-dark);
 }
 
 /* =========================
@@ -169,57 +164,56 @@ img{
   font-weight:700;
   letter-spacing:.18em;
   text-transform:uppercase;
-  color:var(--ft-ink-soft);
+  color:var(--ink-soft);
 }
 
 h1{
   margin:0;
-  max-width:11ch;
-  font-size:clamp(3.3rem, 7vw, 6.9rem);
-  line-height:.93;
-  letter-spacing:-.07em;
+  max-width:10ch;
+  font-size:clamp(3rem, 7vw, 6.1rem);
+  line-height:.95;
+  letter-spacing:-.065em;
   font-weight:700;
 }
 
 h2{
   margin:0 0 18px;
   max-width:12ch;
-  font-size:clamp(2.3rem, 4.3vw, 4.4rem);
-  line-height:.98;
-  letter-spacing:-.055em;
+  font-size:clamp(2.3rem, 4.2vw, 4rem);
+  line-height:1;
+  letter-spacing:-.05em;
   font-weight:700;
 }
 
 p{
-  margin:0 0 18px;
-  max-width:60ch;
-  font-size:1.12rem;
+  margin:0 0 16px;
+  max-width:58ch;
+  font-size:1.08rem;
   line-height:1.72;
 }
 
 .intro{
-  max-width:38ch;
-  font-size:1.42rem;
-  line-height:1.35;
-  color:var(--ft-ink);
-  margin-top:28px;
+  margin-top:26px;
+  max-width:36ch;
+  font-size:1.28rem;
+  line-height:1.38;
+  color:var(--ink);
 }
 
 .note{
-  max-width:54ch;
-  font-size:1rem;
-  line-height:1.62;
-  color:var(--ft-ink-soft);
+  max-width:52ch;
+  font-size:.98rem;
+  line-height:1.6;
+  color:var(--ink-soft);
 }
 
 .micro{
   margin-top:4px;
-  max-width:48ch;
+  max-width:46ch;
   font-family:var(--sans);
   font-size:12px;
   line-height:1.6;
-  letter-spacing:.01em;
-  color:var(--ft-ink-soft);
+  color:var(--ink-soft);
 }
 
 /* =========================
@@ -227,18 +221,22 @@ p{
    ========================= */
 
 .hero{
-  padding-top:110px;
-  padding-bottom:96px;
+  padding-top:96px;
+  padding-bottom:92px;
   border-top:none;
 }
 
 .hero .container{
-  grid-template-columns:160px minmax(0, 1fr) 240px;
+  grid-template-columns:170px minmax(0, 760px) minmax(180px, 1fr);
   align-items:end;
 }
 
+.hero .container > *{
+  grid-column:2 / 3;
+}
+
 .hero h1{
-  margin-bottom:34px;
+  margin-bottom:30px;
 }
 
 .hero .intro{
@@ -247,18 +245,18 @@ p{
 }
 
 .hero .note{
-  margin-top:26px;
+  margin-top:22px;
 }
 
 .hero .micro{
-  margin-top:14px;
+  margin-top:12px;
 }
 
 .links{
   display:flex;
   flex-wrap:wrap;
-  gap:30px;
-  margin-top:34px;
+  gap:28px;
+  margin-top:32px;
 }
 
 .links a{
@@ -272,23 +270,31 @@ p{
   text-transform:uppercase;
 }
 
-/* subtle right rail */
-.hero::after{
-  content:"";
-  position:absolute;
-  top:110px;
-  bottom:96px;
-  left:calc(50% + min(648px, 44vw));
-  width:1px;
-  background:var(--ft-line);
-  opacity:.9;
+/* =========================
+   SECTION LABELS GENERATED
+   ========================= */
+
+#selection h2::before,
+#cadres h2::before,
+#positions h2::before,
+#rencontres h2::before,
+#dispositif h2::before,
+#acces h2::before{
+  display:block;
+  margin-bottom:18px;
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
 }
 
-@media (max-width: 1320px){
-  .hero::after{
-    display:none;
-  }
-}
+#selection h2::before{ content:"Sélection"; color:var(--soft-on-dark); }
+#cadres h2::before{ content:"Cadres"; color:var(--ink-soft); }
+#positions h2::before{ content:"Positions"; color:var(--ink-soft); }
+#rencontres h2::before{ content:"Rencontres"; color:var(--ink-soft); }
+#dispositif h2::before{ content:"Dispositif"; color:var(--soft-on-dark); }
+#acces h2::before{ content:"Accès"; color:var(--ink-soft); }
 
 /* =========================
    DIVIDERS
@@ -296,116 +302,104 @@ p{
 
 .divider{
   height:1px;
-  background:var(--ft-line);
-  margin:38px 0 36px;
   width:100%;
+  background:var(--line);
+  margin:32px 0 30px;
 }
 
 .section-dark .divider{
-  background:var(--ft-line-dark);
+  background:var(--line-dark);
 }
 
 /* =========================
-   FT-LIKE STATEMENT RHYTHM
+   POSITIONING OF TEXT
    ========================= */
 
-.section:not(.hero) h2 + .intro{
+/* every section gets a clear top rhythm */
+.section h2 + .intro{
+  margin-bottom:28px;
+}
+
+/* sections without intro remain compact */
+.section h2 + p:not(.intro){
+  margin-top:6px;
+}
+
+/* body paragraphs are grouped in a calmer reading column */
+.section p:not(.kicker):not(.intro):not(.note):not(.micro){
+  max-width:56ch;
+}
+
+/* darker sections get slightly more breathing space */
+.section-dark .divider{
+  margin-top:34px;
   margin-bottom:34px;
 }
 
-.section-dark .divider + p,
-.section-light .divider + p{
-  margin-top:0;
-}
-
-.section p + p{
-  margin-top:8px;
+/* hero links separated from notes */
+.hero .links{
+  margin-top:34px;
 }
 
 /* =========================
-   SPECIAL TREATMENT PER BLOCK
+   SPECIFIC BLOCK TUNING
    ========================= */
 
-/* Selection */
+/* Selection: stronger sectional feeling */
+#selection{
+  padding-top:118px;
+  padding-bottom:112px;
+}
+
 #selection .container{
-  grid-template-columns:160px minmax(0, 1fr) 240px;
+  grid-template-columns:170px minmax(0, 780px) 1fr;
 }
 
-#selection h2::before{
-  content:"Sélection";
-  display:block;
-  margin-bottom:18px;
-  font-family:var(--sans);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--ft-soft-on-dark);
+#selection p{
+  max-width:57ch;
 }
 
-/* Cadres */
-#cadres h2::before{
-  content:"Cadres";
-  display:block;
-  margin-bottom:18px;
-  font-family:var(--sans);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--ft-ink-soft);
+/* Cadres: more compact */
+#cadres{
+  padding-top:96px;
+  padding-bottom:96px;
 }
 
-/* Positions */
-#positions h2::before{
-  content:"Positions";
-  display:block;
-  margin-bottom:18px;
-  font-family:var(--sans);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--ft-ink-soft);
+/* Positions: make this section feel like a hinge */
+#positions{
+  padding-top:104px;
+  padding-bottom:100px;
 }
 
-/* Rencontres */
-#rencontres h2::before{
-  content:"Rencontres";
-  display:block;
-  margin-bottom:18px;
-  font-family:var(--sans);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--ft-ink-soft);
+#positions .intro{
+  max-width:40ch;
 }
 
-/* Dispositif */
-#dispositif h2::before{
-  content:"Dispositif";
-  display:block;
-  margin-bottom:18px;
-  font-family:var(--sans);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--ft-soft-on-dark);
+/* Transition block stronger */
+.section-dark:not(#selection):not(#dispositif){
+  background:var(--dark);
 }
 
-/* Accès */
-#acces h2::before{
-  content:"Accès";
-  display:block;
-  margin-bottom:18px;
-  font-family:var(--sans);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--ft-ink-soft);
+/* Rencontres slightly more open */
+#rencontres{
+  padding-top:102px;
+  padding-bottom:102px;
+}
+
+/* Dispositif more concise and formal */
+#dispositif{
+  padding-top:110px;
+  padding-bottom:106px;
+}
+
+#dispositif .note{
+  max-width:48ch;
+}
+
+/* Access acts as a closing section */
+#acces{
+  padding-top:104px;
+  padding-bottom:112px;
 }
 
 /* =========================
@@ -414,15 +408,15 @@ p{
 
 .footer{
   background:#0a0a0a;
-  color:var(--ft-light-on-dark);
-  border-top:1px solid var(--ft-line-dark);
-  padding:48px 0 56px;
+  color:var(--light-on-dark);
+  border-top:1px solid var(--line-dark);
+  padding:42px 0 52px;
 }
 
 .footer .container{
   display:grid;
-  grid-template-columns:160px minmax(0,1fr) 200px;
-  gap:28px;
+  grid-template-columns:170px minmax(0, 820px) 1fr;
+  gap:30px;
 }
 
 .footer .container > *{
@@ -434,9 +428,10 @@ p{
   max-width:none;
   font-family:var(--sans);
   font-size:12px;
-  letter-spacing:.08em;
+  font-weight:700;
+  letter-spacing:.1em;
   text-transform:uppercase;
-  color:var(--ft-soft-on-dark);
+  color:var(--soft-on-dark);
 }
 
 /* =========================
@@ -464,11 +459,21 @@ p{
 
   .nav{
     justify-content:flex-start;
-    gap:16px;
+    gap:14px 16px;
   }
 
   .section,
   .hero{
+    padding-top:84px;
+    padding-bottom:84px;
+  }
+
+  #selection,
+  #cadres,
+  #positions,
+  #rencontres,
+  #dispositif,
+  #acces{
     padding-top:84px;
     padding-bottom:84px;
   }
@@ -487,33 +492,30 @@ p{
     font-size:13px;
   }
 
-  .nav{
-    gap:12px 14px;
-  }
-
   .nav a{
     font-size:11px;
   }
 
   h1{
-    font-size:clamp(2.8rem, 13vw, 4.7rem);
-    max-width:8.8ch;
+    font-size:clamp(2.7rem, 12vw, 4.6rem);
+    max-width:8.6ch;
     line-height:.97;
   }
 
   h2{
-    font-size:clamp(2rem, 10vw, 3.3rem);
+    font-size:clamp(2rem, 9vw, 3.1rem);
     max-width:10ch;
   }
 
   p{
-    font-size:1.04rem;
+    font-size:1.02rem;
     line-height:1.68;
   }
 
   .intro{
-    font-size:1.18rem;
+    font-size:1.15rem;
     max-width:28ch;
+    line-height:1.42;
   }
 
   .links{
@@ -528,6 +530,6 @@ p{
   }
 
   .divider{
-    margin:28px 0;
+    margin:26px 0;
   }
 }
