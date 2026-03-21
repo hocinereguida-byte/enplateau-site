@@ -461,21 +461,14 @@ strong{
 .site-brand{
   display:inline-flex;
   align-items:center;
-  gap:12px;
+  justify-self:start;
   text-decoration:none;
   color:var(--ep-navy);
-  font-weight:800;
-  letter-spacing:-0.02em;
 }
 
 .site-brand img{
   height:38px;
   width:auto;
-}
-
-.site-brand-text{
-  white-space:nowrap;
-  font-size:1rem;
 }
 
 .site-nav{
@@ -523,6 +516,7 @@ strong{
   font-size:1.1rem;
   align-items:center;
   justify-content:center;
+  justify-self:end;
   cursor:pointer;
 }
 
@@ -753,12 +747,17 @@ strong{
     grid-template-columns:auto 1fr auto;
   }
 
+  .site-brand{
+    justify-self:start;
+  }
+
   .site-nav{
     display:none;
   }
 
   .site-nav-toggle{
     display:inline-flex;
+    justify-self:end;
   }
 
   .site-header-inner .btn{
@@ -827,10 +826,6 @@ strong{
 
   .site-brand img{
     height:32px;
-  }
-
-  .site-brand-text{
-    font-size:0.94rem;
   }
 
   .footer-grid{
