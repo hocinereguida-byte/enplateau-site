@@ -40,10 +40,7 @@ function markActiveLinks() {
   desktopLinks.forEach((link) => {
     const href = link.getAttribute("href");
 
-    if (
-      (href === "les-batisseurs.html" && isSeriesPage) ||
-      href === pathname
-    ) {
+    if ((href === "les-batisseurs.html" && isSeriesPage) || href === pathname) {
       link.classList.add("is-active");
     }
   });
@@ -69,12 +66,14 @@ function bindMobileMenu() {
 
   const openMenu = () => {
     toggle.setAttribute("aria-expanded", "true");
+    mobileMenu.setAttribute("aria-hidden", "false");
     mobileMenu.classList.add("is-open");
     document.body.style.overflow = "hidden";
   };
 
   const closeMenu = () => {
     toggle.setAttribute("aria-expanded", "false");
+    mobileMenu.setAttribute("aria-hidden", "true");
     mobileMenu.classList.remove("is-open");
     document.body.style.overflow = "";
   };
@@ -95,6 +94,12 @@ function bindMobileMenu() {
 
   mobileLinks.forEach((link) => {
     link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
   });
 
   window.addEventListener("resize", function () {
