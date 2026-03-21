@@ -1,30 +1,59 @@
 <header class="site-header">
-  <div class="site-header-inner">
+  <div class="site-header__inner">
 
-    <a href="index.html" class="site-brand" aria-label="Accueil En Plateau">
-      <img src="images/Logo_en_plateau.svg" alt="En Plateau">
-    </a>
+    <!-- MENU TOGGLE MOBILE -->
+    <div class="site-header__left">
+      <button class="menu-toggle" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
 
-    <nav class="site-nav" aria-label="Navigation principale">
-      <a href="les-batisseurs.html">Explorer les séries</a>
-      <a href="rencontres.html">Participer aux rencontres</a>
-      <a href="medias-journalistes.html">Prendre la parole</a>
-      <a href="a-propos.html">Comprendre le dispositif</a>
-    </nav>
+    <!-- LOGO -->
+    <div class="site-header__center">
+      <a href="index.html" class="site-brand">
+        <img src="images/logo-en-plateau.svg" alt="En Plateau" class="site-brand__logo">
+      </a>
+    </div>
 
-    <a href="participer.html#approche" class="btn btn-primary">
-      Recevoir le dossier
-    </a>
+    <!-- CTA -->
+    <div class="site-header__right">
+      <a href="participer.html" class="site-header__cta site-header__cta--mobile">
+        Accéder
+      </a>
+    </div>
 
-    <button
-      class="site-nav-toggle"
-      type="button"
-      aria-label="Ouvrir le menu"
-      aria-controls="mobile-menu"
-      aria-expanded="false"
-    >
-      ☰
-    </button>
+    <!-- NAV DESKTOP -->
+    <div class="site-header__nav-row">
+      <nav class="desktop-editorial-nav">
+
+        <a href="les-eclaireurs.html" class="desktop-editorial-nav__link">
+          <span class="desktop-editorial-nav__label">Les Éclaireurs</span>
+        </a>
+
+        <a href="les-batisseurs.html" class="desktop-editorial-nav__link">
+          <span class="desktop-editorial-nav__label">Les Bâtisseurs</span>
+        </a>
+
+        <a href="les-architectes.html" class="desktop-editorial-nav__link">
+          <span class="desktop-editorial-nav__label">Les Architectes</span>
+        </a>
+
+        <a href="rencontres.html" class="desktop-editorial-nav__link">
+          <span class="desktop-editorial-nav__label">Rencontres</span>
+        </a>
+
+        <a href="a-propos.html" class="desktop-editorial-nav__link">
+          <span class="desktop-editorial-nav__label">À propos</span>
+        </a>
+
+      </nav>
+
+      <a href="participer.html" class="site-header__cta">
+        Accéder
+      </a>
+    </div>
 
   </div>
 </header>
