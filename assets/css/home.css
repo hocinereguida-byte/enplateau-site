@@ -2,12 +2,8 @@
 
 #hero-home{
   background:
-    radial-gradient(circle at top right, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 36%),
+    radial-gradient(circle at top right, rgba(255,255,255,0.78) 0%, rgba(255,255,255,0) 36%),
     linear-gradient(180deg, var(--ep-blue-soft) 0%, var(--ep-blue-soft-2) 100%);
-}
-
-#hero-home .hero-grid{
-  grid-template-columns:minmax(0, 1fr);
 }
 
 #hero-home h1{
@@ -22,8 +18,7 @@
   max-width:760px;
 }
 
-#pourquoi-vous-home .text-block,
-#pourquoi-vous-home .section-text-block{
+#pourquoi-vous-home .text-block{
   max-width:780px;
 }
 
@@ -50,7 +45,7 @@
 }
 
 #pourquoi-en-plateau .side-statement{
-  background:linear-gradient(180deg, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.7) 100%);
+  background:linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.74) 100%);
 }
 
 #pourquoi-en-plateau .text-block{
@@ -63,11 +58,6 @@
 
 #series-en-plateau .card p{
   margin-bottom:18px;
-}
-
-#saison-inaugurale{
-  background:
-    linear-gradient(180deg, var(--ep-navy) 0%, var(--ep-navy-3) 100%);
 }
 
 #saison-inaugurale .section-head{
@@ -128,25 +118,8 @@
   margin:0 auto;
 }
 
-#constitution-home .text-block{
-  max-width:820px;
-  margin:0 auto;
-}
-
-#initiative-home .side-statement{
-  background:linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.76) 100%);
-}
-
-#initiative-home .text-block{
-  max-width:760px;
-}
-
 #entrer-dans-le-programme{
   background:var(--ep-blue-soft);
-}
-
-#entrer-dans-le-programme .final-panel{
-  background:linear-gradient(180deg, #FCFEFF 0%, #F1F6FB 100%);
 }
 
 #entrer-dans-le-programme .section-head{
