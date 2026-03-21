@@ -156,36 +156,32 @@
 }
 
 /* =========================
-   WHY CONTACTED
+   POURQUOI VOUS — ÉDITORIAL
    ========================= */
 
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-  margin-top: 34px;
+.why-editorial-list {
+  max-width: 760px;
+  margin: 34px auto 0;
+  border-top: 1px solid var(--ep-border);
 }
 
-.why-card {
-  padding: 24px;
-  background: rgba(248, 246, 242, 0.96);
-  border: 1px solid var(--ep-border);
-  border-radius: 2px;
-  box-shadow: var(--ep-shadow);
+.why-editorial-item {
+  padding: 22px 0 20px;
+  border-bottom: 1px solid var(--ep-border);
 }
 
-.why-card h3 {
-  margin: 0 0 10px;
+.why-editorial-item h3 {
+  margin: 0 0 8px;
   font-family: Bitter, Georgia, serif;
-  font-size: 1.32rem;
+  font-size: 1.28rem;
   line-height: 1.16;
   color: #1a120f;
 }
 
-.why-card p {
+.why-editorial-item p {
   margin: 0;
   color: var(--ep-text-muted);
-  line-height: 1.72;
+  line-height: 1.76;
 }
 
 /* =========================
@@ -278,58 +274,71 @@
 }
 
 /* =========================
-   DISPOSITIF
+   DISPOSITIF — SEMI-CARDS
    ========================= */
 
-.dispositif-grid {
+.dispositif-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 24px;
   margin-top: 34px;
+}
+
+.dispositif-step {
+  padding: 22px 0 20px;
+  border-top: 1px solid var(--ep-border);
+}
+
+.dispositif-step h3 {
+  margin: 0 0 10px;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.28rem;
+  line-height: 1.16;
+  color: #1a120f;
+}
+
+.dispositif-step p {
+  margin: 0;
+  line-height: 1.74;
+  color: var(--ep-text-muted);
+}
+
+.dispositif-step--featured {
+  padding-left: 18px;
+  border-left: 2px solid rgba(181, 106, 54, 0.42);
 }
 
 /* =========================
    POURQUOI EN PLATEAU
    ========================= */
 
-.why-ep-grid {
+.why-ep-editorial {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
-  gap: 28px;
+  gap: 36px;
   align-items: start;
 }
 
-.side-statement--strong {
-  background: rgba(248, 246, 242, 0.96);
-  border: 1px solid var(--ep-border);
-  box-shadow: var(--ep-shadow);
-}
-
-.why-ep-body {
-  display: block;
-}
-
-.why-ep-list {
-  display: grid;
-  gap: 18px;
-}
-
-.why-ep-item {
-  padding: 22px 22px 20px;
-  background: rgba(248, 246, 242, 0.84);
-  border: 1px solid var(--ep-border);
-  border-radius: 2px;
-}
-
-.why-ep-item h4 {
-  margin: 0 0 10px;
+.why-ep-statement h3 {
+  margin: 0;
   font-family: Bitter, Georgia, serif;
-  font-size: 1.18rem;
+  font-size: 1.62rem;
   line-height: 1.18;
   color: #18110f;
 }
 
-.why-ep-item p {
-  margin: 0;
-  line-height: 1.72;
+.why-ep-text {
+  max-width: 44ch;
+}
+
+.why-ep-text p {
+  margin: 0 0 16px;
+  line-height: 1.82;
   color: var(--ep-text-muted);
+}
+
+.why-ep-text p:last-child {
+  margin-bottom: 0;
 }
 
 /* =========================
@@ -340,66 +349,76 @@
   padding: 76px 0;
 }
 
-/* =========================
-   CADRES ÉDITORIAUX
-   ========================= */
-
-.editorial-frames-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 34px;
+.series-grid .card {
+  background: rgba(248, 246, 242, 0.82);
 }
 
-.editorial-frame-meta {
+/* =========================
+   CADRES ÉDITORIAUX — LISTE
+   ========================= */
+
+.frames-list {
+  max-width: 900px;
+  margin: 34px auto 0;
+  border-top: 1px solid var(--ep-border);
+}
+
+.frame-row {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 22px;
+  padding: 22px 0 20px;
+  border-bottom: 1px solid var(--ep-border);
+}
+
+.frame-row-head h3 {
   margin: 0 0 6px;
-  font-size: 0.92rem;
-  line-height: 1.55;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.24rem;
+  line-height: 1.16;
+  color: #18110f;
+}
+
+.frame-row-meta {
+  margin: 0;
+  font-size: 0.9rem;
   color: var(--ep-text-soft);
+  line-height: 1.55;
+}
+
+.frame-row > p {
+  margin: 0;
+  line-height: 1.74;
+  color: var(--ep-text-muted);
 }
 
 /* =========================
-   ACCESS SECTION
+   ACCÈS — 1 FORT / 1 SOBRE
    ========================= */
 
-.access-grid {
+.access-editorial {
   display: grid;
-  grid-template-columns: 1.18fr 1fr;
-  gap: 28px;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 32px;
   margin-top: 34px;
+  align-items: start;
 }
 
-.access-card {
+.access-primary {
   padding: 28px;
+  border: 1px solid rgba(181, 106, 54, 0.28);
   border-radius: 2px;
-  border: 1px solid var(--ep-border);
-  background: rgba(248, 246, 242, 0.96);
-  box-shadow: var(--ep-shadow);
-}
-
-.access-card--primary {
-  border-color: rgba(181, 106, 54, 0.28);
   background: linear-gradient(
     180deg,
     rgba(181, 106, 54, 0.07),
-    rgba(248, 246, 242, 0.98)
+    rgba(248, 246, 242, 0.96)
   );
+  box-shadow: var(--ep-shadow);
 }
 
-.access-card--primary h3 {
-  font-size: 1.56rem;
-}
-
-.access-card--secondary {
-  opacity: 0.94;
-}
-
-.access-card--secondary h3 {
-  font-size: 1.32rem;
-}
-
-.access-head {
-  margin-bottom: 14px;
+.access-secondary {
+  padding: 8px 0 0;
+  border-top: 1px solid var(--ep-border);
 }
 
 .access-tag {
@@ -412,21 +431,27 @@
   color: var(--ep-copper);
 }
 
-.access-head h3 {
-  margin: 0;
+.access-primary h3,
+.access-secondary h3 {
+  margin: 0 0 10px;
   font-family: Bitter, Georgia, serif;
-  color: var(--ep-text);
   line-height: 1.16;
+  color: var(--ep-text);
 }
 
-.access-text {
-  margin: 0;
-  line-height: 1.72;
+.access-primary h3 {
+  font-size: 1.54rem;
+}
+
+.access-secondary h3 {
+  font-size: 1.26rem;
+}
+
+.access-primary p,
+.access-secondary p {
+  margin: 0 0 16px;
+  line-height: 1.74;
   color: var(--ep-text-muted);
-}
-
-.access-cta {
-  margin-top: 22px;
 }
 
 .access-link {
@@ -449,29 +474,17 @@
 }
 
 /* =========================
-   GENERIC DARK OVERRIDES
-   ========================= */
-
-.home-section--dark {
-  position: relative;
-  background:
-    radial-gradient(circle at 85% 16%, rgba(181, 106, 54, 0.12), transparent 35%),
-    linear-gradient(180deg, var(--ep-brown) 0%, var(--ep-brown-deep) 100%);
-  color: #f5f1ec;
-}
-
-/* =========================
    RESPONSIVE
    ========================= */
 
 @media (max-width: 1100px) {
-  .why-grid,
-  .editorial-frames-grid {
+  .why-ep-editorial,
+  .access-editorial,
+  .frame-row {
     grid-template-columns: 1fr;
   }
 
-  .access-grid,
-  .why-ep-grid {
+  .dispositif-steps {
     grid-template-columns: 1fr;
   }
 }
@@ -515,15 +528,17 @@
     padding: 62px 0;
   }
 
-  .why-grid {
-    gap: 18px;
+  .why-editorial-list {
     margin-top: 28px;
   }
 
-  .why-card,
-  .access-card,
-  .why-ep-item {
-    padding: 22px;
+  .why-editorial-item,
+  .dispositif-step,
+  .frame-row,
+  .access-primary,
+  .access-secondary {
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
 
   .rencontres-timeline {
@@ -543,5 +558,20 @@
 
   .section-footnote {
     font-size: 0.88rem;
+  }
+
+  .why-ep-statement h3 {
+    font-size: 1.42rem;
+  }
+
+  .why-editorial-item h3,
+  .dispositif-step h3,
+  .frame-row-head h3,
+  .access-secondary h3 {
+    font-size: 1.18rem;
+  }
+
+  .access-primary h3 {
+    font-size: 1.38rem;
   }
 }
