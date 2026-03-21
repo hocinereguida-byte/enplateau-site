@@ -509,3 +509,135 @@
     padding: 22px;
   }
 }
+/* =========================
+   RENCONTRES — PREMIUM
+   ========================= */
+
+.section-rencontres {
+  padding: 96px 0;
+}
+
+.section-head--centered {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* =========================
+   TIMELINE
+   ========================= */
+
+.rencontres-timeline {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  position: relative;
+}
+
+/* ligne verticale subtile */
+.rencontres-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255,255,255,0.08);
+}
+
+/* =========================
+   ITEM
+   ========================= */
+
+.rencontre-item {
+  display: block;
+  padding-left: 24px;
+  position: relative;
+  text-decoration: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* point timeline */
+.rencontre-item::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background: #c87433;
+  border-radius: 50%;
+}
+
+/* hover premium */
+.rencontre-item:hover {
+  transform: translateX(6px);
+  opacity: 0.85;
+}
+
+/* =========================
+   TEXTES
+   ========================= */
+
+.rencontre-date {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 6px;
+  letter-spacing: 0.04em;
+}
+
+.rencontre-item h3 {
+  margin: 0;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.rencontres-footer {
+  margin-top: 64px;
+  max-width: 520px;
+}
+
+.rencontres-note {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.rencontres-link {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rencontres-link:hover {
+  color: #c87433;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+
+  .section-rencontres {
+    padding: 72px 0;
+  }
+
+  .rencontres-timeline {
+    gap: 28px;
+  }
+
+  .rencontre-item h3 {
+    font-size: 1.3rem;
+  }
+
+}
