@@ -1,22 +1,38 @@
-/* HOME ONLY */
+/* HOME ONLY — VERSION BLEU + BRUN */
+
+:root{
+  --ep-blue-soft:#eef3f8;
+  --ep-blue-soft-2:#e3ebf3;
+  --ep-blue-accent:#5f7fa3;
+  --ep-blue-strong:#2f4f6f;
+
+  --ep-brown:#2a1f1b;
+  --ep-brown-soft:#5a463f;
+}
+
+/* HERO */
 
 #hero-home{
   background:
-    radial-gradient(circle at top right, rgba(255,255,255,0.78) 0%, rgba(255,255,255,0) 36%),
     linear-gradient(180deg, var(--ep-blue-soft) 0%, var(--ep-blue-soft-2) 100%);
 }
 
 #hero-home h1{
   max-width:13ch;
+  color:var(--ep-brown);
 }
 
 #hero-home .subhead{
   max-width:760px;
+  color:var(--ep-brown-soft);
 }
 
 #hero-home .hero-note{
   max-width:760px;
+  color:var(--ep-brown-soft);
 }
+
+/* POURQUOI */
 
 #pourquoi-vous-home .text-block{
   max-width:780px;
@@ -25,6 +41,8 @@
 #pourquoi-vous-home .section-intro{
   max-width:720px;
 }
+
+/* CADRES */
 
 #cadres-editoriaux .editorial-frames-grid{
   display:grid;
@@ -36,21 +54,25 @@
   margin:0 0 8px;
   font-size:0.92rem;
   line-height:1.65;
-  color:var(--ep-text-soft);
+  color:var(--ep-brown-soft);
 }
 
 .editorial-frame-meta strong{
-  color:var(--ep-text);
-  font-weight:700;
+  color:var(--ep-brown);
 }
 
+/* POURQUOI EN PLATEAU */
+
 #pourquoi-en-plateau .side-statement{
-  background:linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.74) 100%);
+  background:var(--ep-blue-soft);
+  border:1px solid rgba(0,0,0,0.06);
 }
 
 #pourquoi-en-plateau .text-block{
   max-width:760px;
 }
+
+/* SÉRIES */
 
 #series-en-plateau .card{
   min-height:100%;
@@ -59,6 +81,8 @@
 #series-en-plateau .card p{
   margin-bottom:18px;
 }
+
+/* RENCONTRES */
 
 #saison-inaugurale .section-head{
   max-width:860px;
@@ -101,22 +125,34 @@
   color:rgba(255,255,255,0.78);
 }
 
-#saison-inaugurale .proof-link-wrap{
-  text-align:center;
+/* LIENS (TRÈS IMPORTANT) */
+
+a,
+.link{
+  color:var(--ep-brown);
+  text-decoration:underline;
+  text-underline-offset:3px;
 }
 
-#saison-inaugurale .link{
-  color:#fff;
+a:hover{
+  color:var(--ep-blue-accent);
 }
 
-#saison-inaugurale .link:hover{
-  color:rgba(255,255,255,0.78);
+/* CTA — STYLE ÉDITORIAL */
+
+.hero-link.primary{
+  background:none;
+  border:1px solid var(--ep-brown);
+  color:var(--ep-brown);
 }
 
-#quatre-temps-du-dispositif .text-block{
-  max-width:780px;
-  margin:0 auto;
+.hero-link.secondary{
+  background:none;
+  border:none;
+  color:var(--ep-brown-soft);
 }
+
+/* FINAL */
 
 #entrer-dans-le-programme{
   background:var(--ep-blue-soft);
@@ -141,6 +177,8 @@
 #entrer-dans-le-programme .series-access-body p{
   margin-bottom:0;
 }
+
+/* RESPONSIVE */
 
 @media (max-width: 920px){
   #cadres-editoriaux .editorial-frames-grid{
