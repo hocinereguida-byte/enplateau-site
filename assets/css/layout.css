@@ -45,29 +45,27 @@ button {
   --ep-white: #ffffff;
 
   --ep-text: #1a211e;
-  --ep-text-soft: #5a463f;
+  --ep-text-soft: #544c49;
   --ep-text-muted: rgba(26, 33, 30, 0.72);
 
   --ep-blue-soft: #eef3f8;
   --ep-blue-soft-2: #e3ebf3;
-  --ep-blue-accent: #5f7fa3;
-  --ep-blue-strong: #2f4f6f;
+  --ep-blue-accent: #607fa2;
+  --ep-blue-strong: #365571;
 
   --ep-brown: #2a1f1b;
   --ep-brown-soft: #5a463f;
 
   --ep-orange-micro: #c87433;
-
   --ep-border: rgba(26, 33, 30, 0.10);
   --ep-border-strong: rgba(26, 33, 30, 0.18);
   --ep-shadow: 0 10px 30px rgba(26, 33, 30, 0.07);
 
   --ep-container: 1440px;
 
-  /* Compatibilité avec home.css */
   --white: #ffffff;
   --blue-dark: #1a211e;
-  --accent: #2f4f6f;
+  --accent: #365571;
   --shadow: 0 10px 30px rgba(26, 33, 30, 0.07);
   --text: #1a211e;
   --muted: rgba(26, 33, 30, 0.72);
@@ -255,8 +253,8 @@ main {
 }
 
 .desktop-editorial-nav__link.is-active {
-  background: rgba(95, 127, 163, 0.10);
-  border-color: rgba(95, 127, 163, 0.22);
+  background: rgba(96, 127, 162, 0.10);
+  border-color: rgba(96, 127, 162, 0.22);
   box-shadow: 0 8px 20px rgba(26, 33, 30, 0.03);
 }
 
@@ -456,7 +454,8 @@ section.dark {
   color: #d7c9bf;
 }
 
-.section-head h2 {
+.section-head h2,
+section h2 {
   margin: 0 0 14px;
   font-family: Bitter, Georgia, serif;
   font-size: clamp(1.8rem, 3vw, 3rem);
@@ -464,7 +463,8 @@ section.dark {
   color: var(--ep-text);
 }
 
-section.dark .section-head h2 {
+section.dark .section-head h2,
+section.dark h2 {
   color: #f5f3f1;
 }
 
@@ -520,7 +520,7 @@ section.dark .section-intro {
 .card.featured,
 .card.primary {
   background: #fdfefe;
-  border-color: rgba(95, 127, 163, 0.16);
+  border-color: rgba(96, 127, 162, 0.16);
 }
 
 .card h3 {
@@ -543,7 +543,7 @@ section.dark .section-intro {
   margin-bottom: 14px;
   padding: 8px 12px;
   border-radius: 2px;
-  background: rgba(95, 127, 163, 0.08);
+  background: rgba(96, 127, 162, 0.08);
   color: var(--ep-text);
   font-size: 0.78rem;
   font-weight: 800;
@@ -561,6 +561,14 @@ section.dark .section-intro {
 
 .link:hover {
   color: var(--ep-blue-accent);
+}
+
+.link-on-dark {
+  color: #f5f3f1;
+}
+
+.link-on-dark:hover {
+  color: #d7c9bf;
 }
 
 /* =========================
@@ -591,7 +599,9 @@ section.dark .section-intro {
   color: #101814;
 }
 
-.text-block p {
+.text-block p,
+.reading-block p,
+.integrated-text p {
   margin: 0 0 16px;
   line-height: 1.82;
   color: var(--ep-text-muted);
@@ -676,7 +686,7 @@ section.dark .section-intro {
 
   .desktop-editorial-nav__link:hover {
     background: #fdfefe;
-    border-color: rgba(95, 127, 163, 0.28);
+    border-color: rgba(96, 127, 162, 0.28);
     transform: translateY(-1px);
     box-shadow: 0 8px 20px rgba(26, 33, 30, 0.04);
   }
