@@ -29,36 +29,26 @@ function getCurrentPage() {
 function markActiveLinks() {
   const pathname = getCurrentPage();
 
-  const isSeriesPage =
-    pathname === "les-batisseurs.html" ||
-    pathname === "les-eclaireurs.html" ||
-    pathname === "les-architectes.html";
-
-  const desktopLinks = document.querySelectorAll(".desktop-editorial-nav__link");
+  const desktopLinks = document.querySelectorAll(".site-nav a");
   const mobileLinks = document.querySelectorAll(".mobile-top-link");
 
   desktopLinks.forEach((link) => {
     const href = link.getAttribute("href");
-
-    if (
-      (href === "les-batisseurs.html" && isSeriesPage) ||
-      href === pathname
-    ) {
-      link.classList.add("is-active");
+    if (href === pathname) {
+      link.setAttribute("aria-current", "page");
     }
   });
 
   mobileLinks.forEach((link) => {
     const href = link.getAttribute("href");
-
     if (href === pathname) {
-      link.classList.add("is-active");
+      link.setAttribute("aria-current", "page");
     }
   });
 }
 
 function bindMobileMenu() {
-  const toggle = document.querySelector(".menu-toggle");
+  const toggle = document.querySelector(".site-nav-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
   const closeButton = document.querySelector(".mobile-menu-close");
   const mobileLinks = document.querySelectorAll(".mobile-top-link");
@@ -81,7 +71,6 @@ function bindMobileMenu() {
 
   toggle.addEventListener("click", function () {
     const expanded = toggle.getAttribute("aria-expanded") === "true";
-
     if (expanded) {
       closeMenu();
     } else {
@@ -95,6 +84,12 @@ function bindMobileMenu() {
 
   mobileLinks.forEach((link) => {
     link.addEventListener("click", closeMenu);
+  });
+
+  mobileMenu.addEventListener("click", function (event) {
+    if (event.target === mobileMenu) {
+      closeMenu();
+    }
   });
 
   window.addEventListener("resize", function () {
