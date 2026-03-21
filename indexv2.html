@@ -1,294 +1,1270 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>En Plateau</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>En Plateau — Maison de conversation</title>
+  <meta
+    name="description"
+    content="En Plateau structure des conversations entre dirigeants, investisseurs et décideurs engagés dans les transformations de l’économie européenne."
+  >
 
-<style>
-:root{
-  --bg-light:#f6f1e8;
-  --bg-dark:#0f0f0f;
-  --text-light:#161616;
-  --text-dark:#f2eee6;
-  --muted-light:#6a645c;
-  --muted-dark:rgba(242,238,230,.65);
-  --line-light:#d9d1c6;
-  --line-dark:rgba(242,238,230,.12);
-  --max:1000px;
-}
+  <style>
+    :root{
+      --bg:#f6f1e8;
+      --bg-soft:#efe7db;
+      --paper:#fbf8f2;
+      --ink:#141414;
+      --ink-soft:#5e584f;
+      --line:#d4ccbf;
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: Georgia, serif;
-  background:var(--bg-light);
-  color:var(--text-light);
-  line-height:1.6;
-}
+      --bg-dark:#111111;
+      --bg-dark-2:#171717;
+      --ink-dark:#f3eee6;
+      --ink-dark-soft:rgba(243,238,230,.72);
+      --line-dark:rgba(243,238,230,.14);
 
-.container{
-  width:min(100% - 40px, var(--max));
-  margin:auto;
-}
+      --accent:#0f2747;
 
-header{
-  border-bottom:1px solid var(--line-light);
-  padding:20px 0;
-  font-family: Arial, sans-serif;
-  font-size:14px;
-}
+      --max-page:1360px;
+      --max-text:760px;
 
-nav{
-  display:flex;
-  gap:24px;
-}
+      --space-1:12px;
+      --space-2:20px;
+      --space-3:32px;
+      --space-4:48px;
+      --space-5:72px;
+      --space-6:110px;
 
-nav a{
-  text-decoration:none;
-  color:inherit;
-}
+      --serif: Georgia, "Times New Roman", Times, serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
 
-section{
-  padding:80px 0;
-  border-top:1px solid var(--line-light);
-}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:var(--serif);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
 
-.section-dark{
-  background:var(--bg-dark);
-  color:var(--text-dark);
-  border-color:var(--line-dark);
-}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
 
-.section-dark p{
-  color:var(--muted-dark);
-}
+    .page{
+      min-height:100vh;
+    }
 
-h1{
-  font-size:clamp(2.5rem, 7vw, 5rem);
-  line-height:1.05;
-  margin:0;
-}
+    .wrap{
+      width:min(calc(100% - 40px), var(--max-page));
+      margin:0 auto;
+    }
 
-h2{
-  font-size:2.2rem;
-  margin:0 0 20px;
-}
+    .grid{
+      display:grid;
+      grid-template-columns: 180px minmax(0, 1fr) 220px;
+      gap:32px;
+    }
 
-p{
-  max-width:60ch;
-  margin:0 0 16px;
-}
+    .grid-main{
+      grid-column:2 / 3;
+      min-width:0;
+    }
 
-.small{
-  font-size:.95rem;
-  color:var(--muted-light);
-}
+    .grid-side-left{
+      grid-column:1 / 2;
+      min-width:0;
+    }
 
-.section-dark .small{
-  color:var(--muted-dark);
-}
+    .grid-side-right{
+      grid-column:3 / 4;
+      min-width:0;
+    }
 
-.block{
-  max-width:700px;
-}
+    /* Header */
 
-hr{
-  border:none;
-  border-top:1px solid var(--line-light);
-  margin:40px 0;
-}
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(246,241,232,.94);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
 
-.section-dark hr{
-  border-color:var(--line-dark);
-}
+    .header-inner{
+      min-height:74px;
+      display:grid;
+      grid-template-columns:220px 1fr auto;
+      align-items:center;
+      gap:24px;
+    }
 
-footer{
-  background:#0f0f0f;
-  color:#f2eee6;
-  padding:60px 0;
-  font-size:14px;
-}
-</style>
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:3px;
+    }
+
+    .brand-mark{
+      font-family:var(--sans);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    .brand-sub{
+      font-family:var(--sans);
+      font-size:11px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+    }
+
+    .main-nav{
+      display:flex;
+      justify-content:center;
+      gap:28px;
+      font-family:var(--sans);
+      font-size:13px;
+      letter-spacing:.03em;
+    }
+
+    .main-nav a{
+      color:var(--ink-soft);
+      transition:.2s ease;
+    }
+
+    .main-nav a:hover{
+      color:var(--ink);
+    }
+
+    .header-link{
+      font-family:var(--sans);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      border-left:1px solid var(--line);
+      padding-left:18px;
+    }
+
+    .menu-toggle{
+      display:none;
+      background:none;
+      border:1px solid var(--line);
+      color:var(--ink);
+      font-family:var(--sans);
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:10px 12px;
+    }
+
+    .mobile-menu{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.28);
+      opacity:0;
+      visibility:hidden;
+      transition:.2s ease;
+      z-index:1200;
+    }
+
+    .mobile-menu.is-open{
+      opacity:1;
+      visibility:visible;
+    }
+
+    .mobile-panel{
+      position:absolute;
+      top:0;
+      right:0;
+      width:min(92vw, 360px);
+      height:100%;
+      background:var(--bg);
+      border-left:1px solid var(--line);
+      padding:22px;
+      transform:translateX(100%);
+      transition:.2s ease;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .mobile-menu.is-open .mobile-panel{
+      transform:translateX(0);
+    }
+
+    .mobile-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid var(--line);
+      padding-bottom:14px;
+      font-family:var(--sans);
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .mobile-close{
+      background:none;
+      border:1px solid var(--line);
+      width:36px;
+      height:36px;
+      font-size:18px;
+      cursor:pointer;
+    }
+
+    .mobile-links{
+      display:grid;
+      gap:0;
+    }
+
+    .mobile-links a{
+      padding:16px 0;
+      border-bottom:1px solid var(--line);
+      font-family:var(--sans);
+      font-size:15px;
+    }
+
+    /* Sections */
+
+    .section{
+      position:relative;
+      padding:var(--space-6) 0;
+      border-top:1px solid var(--line);
+      background:var(--bg);
+      color:var(--ink);
+    }
+
+    .section-dark{
+      background:var(--bg-dark);
+      color:var(--ink-dark);
+      border-top:1px solid var(--line-dark);
+    }
+
+    .section-dark .section-rule,
+    .section-dark .body-rule,
+    .section-dark .mini-rule,
+    .section-dark .mast-separator{
+      border-color:var(--line-dark);
+    }
+
+    .section-dark .section-label,
+    .section-dark .section-intro,
+    .section-dark .note,
+    .section-dark .body-text,
+    .section-dark .side-note,
+    .section-dark .meta-text{
+      color:var(--ink-dark-soft);
+    }
+
+    .section-head{
+      margin-bottom:var(--space-4);
+    }
+
+    .section-label{
+      margin:0 0 14px;
+      font-family:var(--sans);
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+    }
+
+    .section-title{
+      margin:0;
+      max-width:11ch;
+      font-size:clamp(2.2rem, 4vw, 4.6rem);
+      line-height:0.98;
+      letter-spacing:-.045em;
+      font-weight:700;
+    }
+
+    .hero-title{
+      max-width:11ch;
+      font-size:clamp(3.3rem, 7.2vw, 7rem);
+      line-height:0.94;
+      letter-spacing:-.06em;
+      margin:0;
+    }
+
+    .section-intro{
+      margin:0;
+      max-width:36ch;
+      font-size:1.08rem;
+      line-height:1.65;
+      color:var(--ink-soft);
+    }
+
+    .body-text{
+      margin:0 0 18px;
+      max-width:54ch;
+      font-size:1.12rem;
+      line-height:1.68;
+      color:var(--ink);
+    }
+
+    .note{
+      margin:0;
+      max-width:52ch;
+      font-size:.98rem;
+      line-height:1.55;
+      color:var(--ink-soft);
+    }
+
+    .meta-text{
+      margin:0;
+      font-family:var(--sans);
+      font-size:12px;
+      line-height:1.6;
+      color:var(--ink-soft);
+      letter-spacing:.02em;
+    }
+
+    .section-rule{
+      border:0;
+      border-top:1px solid var(--line);
+      margin:0 0 var(--space-4);
+    }
+
+    .body-rule{
+      border:0;
+      border-top:1px solid var(--line);
+      margin:28px 0 28px;
+      width:100%;
+    }
+
+    .mini-rule{
+      border:0;
+      border-top:1px solid var(--line);
+      margin:22px 0;
+      width:100%;
+    }
+
+    /* Hero */
+
+    .hero{
+      padding-top:84px;
+      padding-bottom:88px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 180px minmax(0, 1fr) 260px;
+      gap:32px;
+      align-items:end;
+    }
+
+    .hero-main{
+      grid-column:2 / 3;
+    }
+
+    .hero-side{
+      grid-column:3 / 4;
+      align-self:stretch;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding-left:18px;
+      border-left:1px solid var(--line);
+    }
+
+    .hero-dark .hero-side{
+      border-left-color:var(--line-dark);
+    }
+
+    .hero-sub{
+      margin:28px 0 0;
+      max-width:24ch;
+      font-size:1.45rem;
+      line-height:1.3;
+    }
+
+    .hero-notes{
+      margin-top:26px;
+      display:grid;
+      gap:10px;
+    }
+
+    .text-link{
+      display:inline-block;
+      font-family:var(--sans);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding-top:12px;
+      border-top:1px solid currentColor;
+      width:max-content;
+      margin-right:24px;
+    }
+
+    .hero-actions{
+      margin-top:34px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:26px;
+    }
+
+    /* Editorial blocks */
+
+    .statement-list{
+      display:grid;
+      gap:0;
+      border-top:1px solid var(--line);
+    }
+
+    .section-dark .statement-list{
+      border-top-color:var(--line-dark);
+    }
+
+    .statement{
+      display:grid;
+      grid-template-columns: 1fr 220px;
+      gap:32px;
+      padding:22px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .section-dark .statement{
+      border-bottom-color:var(--line-dark);
+    }
+
+    .statement p{
+      margin:0;
+      max-width:58ch;
+      font-size:1.08rem;
+      line-height:1.66;
+    }
+
+    .statement small{
+      display:block;
+      font-family:var(--sans);
+      font-size:12px;
+      color:var(--ink-soft);
+      line-height:1.6;
+    }
+
+    .section-dark .statement small{
+      color:var(--ink-dark-soft);
+    }
+
+    .positions{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .section-dark .positions{
+      border-top-color:var(--line-dark);
+      border-bottom-color:var(--line-dark);
+    }
+
+    .position{
+      padding:26px 22px 28px 0;
+      border-right:1px solid var(--line);
+      min-height:220px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .position:last-child{
+      border-right:none;
+    }
+
+    .section-dark .position{
+      border-right-color:var(--line-dark);
+    }
+
+    .position-index{
+      font-family:var(--sans);
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+      margin-bottom:18px;
+    }
+
+    .section-dark .position-index{
+      color:var(--ink-dark-soft);
+    }
+
+    .position h3{
+      margin:0 0 16px;
+      font-size:1.7rem;
+      line-height:1.06;
+      letter-spacing:-.03em;
+    }
+
+    .position p{
+      margin:0;
+      max-width:28ch;
+      font-size:1rem;
+      line-height:1.62;
+      color:var(--ink-soft);
+    }
+
+    .section-dark .position p{
+      color:var(--ink-dark-soft);
+    }
+
+    /* Rencontre cities */
+
+    .city-row{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:0;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      margin-top:14px;
+    }
+
+    .section-dark .city-row{
+      border-top-color:var(--line-dark);
+      border-bottom-color:var(--line-dark);
+    }
+
+    .city{
+      padding:26px 0 24px;
+      border-right:1px solid var(--line);
+      font-size:1.8rem;
+      line-height:1.05;
+      letter-spacing:-.03em;
+    }
+
+    .city:last-child{
+      border-right:none;
+    }
+
+    .section-dark .city{
+      border-right-color:var(--line-dark);
+    }
+
+    /* Four times */
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:0;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      margin-top:18px;
+    }
+
+    .section-dark .steps{
+      border-top-color:var(--line-dark);
+      border-bottom-color:var(--line-dark);
+    }
+
+    .step{
+      padding:22px 18px 22px 0;
+      border-right:1px solid var(--line);
+    }
+
+    .step:last-child{
+      border-right:none;
+    }
+
+    .section-dark .step{
+      border-right-color:var(--line-dark);
+    }
+
+    .step-num{
+      display:block;
+      margin-bottom:12px;
+      font-family:var(--sans);
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--ink-soft);
+    }
+
+    .section-dark .step-num{
+      color:var(--ink-dark-soft);
+    }
+
+    .step-title{
+      margin:0 0 10px;
+      font-size:1.25rem;
+      line-height:1.14;
+    }
+
+    .step p{
+      margin:0;
+      font-size:.98rem;
+      line-height:1.58;
+      color:var(--ink-soft);
+    }
+
+    .section-dark .step p{
+      color:var(--ink-dark-soft);
+    }
+
+    /* Access */
+
+    .access-line{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:32px;
+      border-top:1px solid var(--line);
+      padding-top:26px;
+      align-items:start;
+    }
+
+    .section-dark .access-line{
+      border-top-color:var(--line-dark);
+    }
+
+    .access-block{
+      padding-right:20px;
+    }
+
+    .access-title{
+      margin:0 0 14px;
+      font-size:1.8rem;
+      line-height:1.05;
+      letter-spacing:-.03em;
+    }
+
+    .access-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:28px;
+      margin-top:18px;
+    }
+
+    /* Footer */
+
+    .site-footer{
+      background:#0b0b0b;
+      color:var(--ink-dark);
+      border-top:1px solid var(--line-dark);
+      padding:54px 0 34px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap:32px;
+    }
+
+    .footer-title{
+      margin:0 0 14px;
+      font-family:var(--sans);
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--ink-dark-soft);
+    }
+
+    .footer-copy,
+    .footer-links a,
+    .footer-meta{
+      margin:0;
+      color:var(--ink-dark-soft);
+      font-size:.98rem;
+      line-height:1.7;
+    }
+
+    .footer-links{
+      display:grid;
+      gap:10px;
+    }
+
+    .footer-bottom{
+      margin-top:28px;
+      padding-top:18px;
+      border-top:1px solid var(--line-dark);
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      font-family:var(--sans);
+      font-size:11px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--ink-dark-soft);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 1100px){
+      .grid,
+      .hero-grid{
+        grid-template-columns: 1fr;
+      }
+
+      .grid-main,
+      .grid-side-left,
+      .grid-side-right,
+      .hero-main,
+      .hero-side{
+        grid-column:auto;
+      }
+
+      .hero-side{
+        border-left:none;
+        padding-left:0;
+        padding-top:18px;
+        border-top:1px solid var(--line);
+      }
+
+      .section-dark .hero-side{
+        border-top-color:var(--line-dark);
+      }
+
+      .positions,
+      .steps,
+      .footer-grid,
+      .access-line,
+      .statement,
+      .city-row{
+        grid-template-columns:1fr;
+      }
+
+      .position,
+      .step,
+      .city{
+        border-right:none;
+        border-bottom:1px solid var(--line);
+      }
+
+      .section-dark .position,
+      .section-dark .step,
+      .section-dark .city{
+        border-bottom-color:var(--line-dark);
+      }
+
+      .position:last-child,
+      .step:last-child,
+      .city:last-child{
+        border-bottom:none;
+      }
+    }
+
+    @media (max-width: 860px){
+      .main-nav,
+      .header-link{
+        display:none;
+      }
+
+      .menu-toggle{
+        display:inline-block;
+        justify-self:end;
+      }
+
+      .header-inner{
+        grid-template-columns:1fr auto;
+      }
+
+      .section{
+        padding:78px 0;
+      }
+
+      .hero{
+        padding-top:64px;
+        padding-bottom:70px;
+      }
+
+      .hero-actions,
+      .access-links{
+        flex-direction:column;
+        gap:14px;
+      }
+
+      .section-title{
+        max-width:none;
+      }
+
+      .hero-title{
+        max-width:10ch;
+      }
+    }
+
+    @media (max-width: 560px){
+      .wrap{
+        width:min(calc(100% - 24px), var(--max-page));
+      }
+
+      .hero-title{
+        font-size:clamp(2.6rem, 12vw, 4.2rem);
+        max-width:9ch;
+      }
+
+      .hero-sub{
+        font-size:1.16rem;
+      }
+
+      .section-title{
+        font-size:clamp(2rem, 8vw, 3rem);
+      }
+
+      .body-text,
+      .statement p{
+        font-size:1.03rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="page">
 
-<header>
-  <div class="container">
-    <nav>
-      <a href="#">EN PLATEAU</a>
-      <a href="#">Cadres</a>
-      <a href="#">Séries</a>
-      <a href="#">Rencontres</a>
-      <a href="#">Dispositif</a>
-      <a href="#">Accès</a>
-    </nav>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="#top" aria-label="En Plateau">
+          <span class="brand-mark">EN PLATEAU</span>
+          <span class="brand-sub">Maison de conversation</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Navigation principale">
+          <a href="#selection">Pourquoi vous</a>
+          <a href="#cadres">Cadres</a>
+          <a href="#positions">Positions</a>
+          <a href="#rencontres">Rencontres</a>
+          <a href="#dispositif">Dispositif</a>
+        </nav>
+
+        <a class="header-link" href="#acces">Accès</a>
+
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu">
+          Menu
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-panel">
+        <div class="mobile-top">
+          <span>Navigation</span>
+          <button class="mobile-close" id="menuClose" type="button" aria-label="Fermer">×</button>
+        </div>
+        <nav class="mobile-links" aria-label="Navigation mobile">
+          <a href="#selection">Pourquoi vous</a>
+          <a href="#cadres">Cadres</a>
+          <a href="#positions">Positions</a>
+          <a href="#rencontres">Rencontres</a>
+          <a href="#dispositif">Dispositif</a>
+          <a href="#acces">Accès</a>
+        </nav>
+      </div>
+    </div>
+
+    <main id="top">
+
+      <!-- HERO -->
+      <section class="section hero">
+        <div class="wrap hero-grid">
+          <div class="hero-main">
+            <p class="section-label">Dispositif éditorial européen</p>
+
+            <h1 class="hero-title">
+              Certaines conversations qui structurent l’économie ne se tiennent pas en public.
+            </h1>
+
+            <p class="hero-sub">
+              En Plateau structure des conversations entre dirigeants, investisseurs et décideurs engagés dans les transformations de l’économie européenne.
+            </p>
+
+            <div class="hero-notes">
+              <p class="note">
+                Une partie des conversations en cours de constitution n’est partagée qu’avec les acteurs directement concernés.
+              </p>
+              <p class="meta-text">
+                La plupart des accès font suite à une prise de contact directe.
+              </p>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#acces" class="text-link">Recevoir le dossier</a>
+              <a href="#dispositif" class="text-link">Comprendre le dispositif</a>
+            </div>
+          </div>
+
+          <aside class="hero-side">
+            <p class="section-label">Maison de conversation</p>
+            <p class="body-text">
+              Une architecture éditoriale pensée pour accueillir des lectures situées, organiser leur mise en regard et inscrire certaines prises de parole dans la durée.
+            </p>
+            <hr class="mini-rule">
+            <p class="meta-text">
+              France · Belgique · Suisse · Luxembourg
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- POURQUOI VOUS -->
+      <section class="section section-dark" id="selection">
+        <div class="wrap grid">
+          <div class="grid-main">
+            <div class="section-head">
+              <p class="section-label">Sélection</p>
+              <h2 class="section-title">Pourquoi vous avez été contacté</h2>
+            </div>
+
+            <p class="section-intro">
+              Une prise de contact ne signifie pas qu’une place est ouverte, mais qu’une position peut éclairer un angle précis.
+            </p>
+
+            <hr class="body-rule">
+
+            <div class="statement-list">
+              <div class="statement">
+                <p>Les contributions sont identifiées à partir d’une lecture des écosystèmes économiques, financiers et institutionnels.</p>
+                <small>Lecture des positions</small>
+              </div>
+
+              <div class="statement">
+                <p>Pour chaque angle, un nombre limité de positions est pertinent. Une fois attribué, un angle n’est pas dupliqué.</p>
+                <small>Rareté structurée</small>
+              </div>
+
+              <div class="statement">
+                <p>Les conversations sont construites à l’échelle européenne, entre la France, la Belgique, la Suisse et le Luxembourg.</p>
+                <small>Espace de circulation</small>
+              </div>
+
+              <div class="statement">
+                <p>Une contribution est retenue lorsqu’elle occupe une place juste dans une lecture en cours de structuration.</p>
+                <small>Justesse avant volume</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CADRES -->
+      <section class="section" id="cadres">
+        <div class="wrap grid">
+          <div class="grid-side-left">
+            <p class="section-label">Cadres</p>
+          </div>
+
+          <div class="grid-main">
+            <div class="section-head">
+              <h2 class="section-title">Des cadres éditoriaux identifiés</h2>
+            </div>
+
+            <p class="body-text">
+              Les médias ne constituent pas le cœur du dispositif. Ils offrent des points d’entrée situés.
+            </p>
+
+            <hr class="body-rule">
+
+            <p class="note">
+              Ces formats permettent d’inscrire la parole dans des cadres maîtrisés, compatibles avec les enjeux de responsabilité des dirigeants.
+            </p>
+          </div>
+
+          <div class="grid-side-right">
+            <p class="side-note meta-text">
+              La forme ne précède pas le propos. Elle le tient.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- POURQUOI -->
+      <section class="section section-dark" id="pourquoi">
+        <div class="wrap grid">
+          <div class="grid-main">
+            <div class="section-head">
+              <p class="section-label">Colonne vertébrale</p>
+              <h2 class="section-title">Rendre les transformations plus lisibles</h2>
+            </div>
+
+            <p class="body-text">
+              Les transformations de l’économie réelle ne se lisent pas depuis un seul point de vue.
+            </p>
+
+            <p class="body-text">
+              Elles exigent de croiser des lectures situées : observer, décider, structurer.
+            </p>
+
+            <p class="body-text">
+              En Plateau organise cette mise en regard.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- POSITIONS -->
+      <section class="section" id="positions">
+        <div class="wrap grid">
+          <div class="grid-main">
+            <div class="section-head">
+              <p class="section-label">Positions</p>
+              <h2 class="section-title">Trois positions dans l’économie. Une même réalité.</h2>
+            </div>
+
+            <p class="section-intro">
+              La distinction repose sur la place occupée dans l’économie et dans la lecture du sujet.
+            </p>
+
+            <hr class="body-rule">
+
+            <div class="positions">
+              <article class="position">
+                <div>
+                  <p class="position-index">01</p>
+                  <h3>Observer</h3>
+                </div>
+                <p>Lire les recompositions, situer les lignes de fond, rendre visibles les déplacements en cours.</p>
+              </article>
+
+              <article class="position">
+                <div>
+                  <p class="position-index">02</p>
+                  <h3>Décider</h3>
+                </div>
+                <p>Porter une responsabilité, arbitrer, financer, transformer, inscrire des choix dans le réel.</p>
+              </article>
+
+              <article class="position">
+                <div>
+                  <p class="position-index">03</p>
+                  <h3>Structurer</h3>
+                </div>
+                <p>Donner forme à des mouvements plus larges, construire un cadre, relier les positions entre elles.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRANSITION -->
+      <section class="section section-dark" id="transition">
+        <div class="wrap grid">
+          <div class="grid-main">
+            <div class="section-head">
+              <p class="section-label">Prolongement</p>
+              <h2 class="section-title">Des prises de parole qui se prolongent</h2>
+            </div>
+
+            <p class="section-intro">
+              Les rencontres prolongent des conversations déjà engagées.
+            </p>
+
+            <hr class="body-rule">
+
+            <p class="body-text">Chaque intervention est construite à partir d’un angle précis.</p>
+            <p class="body-text">Les rencontres mettent ces lectures en regard.</p>
+            <p class="body-text">Elles prolongent une architecture existante.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RENCONTRES -->
+      <section class="section" id="rencontres">
+        <div class="wrap grid">
+          <div class="grid-main">
+            <div class="section-head">
+              <p class="section-label">Rencontres</p>
+              <h2 class="section-title">Paris, Bruxelles, Genève</h2>
+            </div>
+
+            <p class="section-intro">
+              Trois rencontres dans un espace économique européen.
+            </p>
+
+            <div class="city-row">
+              <div class="city">Paris</div>
+              <div class="city">Bruxelles</div>
+              <div class="city">Genève</div>
+            </div>
+
+            <hr class="body-rule">
+
+            <p class="body-text">
+              Chaque rencontre réunit des intervenants autour des angles qu’ils portent.
+            </p>
+
+            <p class="note">
+              Certaines conversations ne sont pas rendues publiques.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DISPOSITIF -->
+      <section class="section section-dark" id="dispositif">
+        <div class="wrap grid">
+          <div class="grid-main">
+            <div class="section-head">
+              <p class="section-label">Dispositif</p>
+              <h2 class="section-title">Quatre temps</h2>
+            </div>
+
+            <p class="section-intro">
+              Une intervention, inscrite dans une construction éditoriale.
+            </p>
+
+            <div class="steps">
+              <article class="step">
+                <span class="step-num">01</span>
+                <h3 class="step-title">Identifier</h3>
+                <p>Repérer la position, l’angle et la justesse de contribution.</p>
+              </article>
+
+              <article class="step">
+                <span class="step-num">02</span>
+                <h3 class="step-title">Préparer</h3>
+                <p>Structurer le propos, sécuriser le cadre, travailler en amont.</p>
+              </article>
+
+              <article class="step">
+                <span class="step-num">03</span>
+                <h3 class="step-title">Intervenir</h3>
+                <p>Inscrire la parole dans un format, un moment et une lecture.</p>
+              </article>
+
+              <article class="step">
+                <span class="step-num">04</span>
+                <h3 class="step-title">Prolonger</h3>
+                <p>Mettre en regard, relier, prolonger la conversation.</p>
+              </article>
+            </div>
+
+            <hr class="body-rule">
+
+            <p class="note">
+              Le dirigeant valide. La préparation est assurée en amont.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACCES -->
+      <section class="section" id="acces">
+        <div class="wrap grid">
+          <div class="grid-main">
+            <div class="section-head">
+              <p class="section-label">Accès</p>
+              <h2 class="section-title">Entrer dans la maison</h2>
+            </div>
+
+            <p class="section-intro">
+              Deux niveaux d’entrée, selon que vous souhaitez comprendre le cadre ou examiner une participation.
+            </p>
+
+            <div class="access-line">
+              <div class="access-block">
+                <h3 class="access-title">Recevoir le dossier</h3>
+                <p class="body-text">
+                  Pour examiner le cadre, les formats, les logiques de contribution et la structuration en cours.
+                </p>
+                <div class="access-links">
+                  <a href="mailto:contact@enplateau.fr?subject=Demande%20de%20dossier%20—%20En%20Plateau" class="text-link">Demander le dossier</a>
+                </div>
+              </div>
+
+              <div class="access-block">
+                <h3 class="access-title">Comprendre le dispositif</h3>
+                <p class="body-text">
+                  Pour parcourir la logique éditoriale, le positionnement général et la manière dont les conversations sont construites.
+                </p>
+                <div class="access-links">
+                  <a href="#cadres" class="text-link">Lire le cadre</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <p class="footer-title">En Plateau</p>
+            <p class="footer-copy">
+              Une maison de conversation pour organiser des lectures situées de l’économie européenne et inscrire certaines prises de parole dans la durée.
+            </p>
+          </div>
+
+          <div>
+            <p class="footer-title">Navigation</p>
+            <div class="footer-links">
+              <a href="#selection">Pourquoi vous</a>
+              <a href="#cadres">Cadres</a>
+              <a href="#positions">Positions</a>
+              <a href="#rencontres">Rencontres</a>
+              <a href="#dispositif">Dispositif</a>
+            </div>
+          </div>
+
+          <div>
+            <p class="footer-title">Contact</p>
+            <p class="footer-meta">
+              Prise de contact directe<br>
+              contact@enplateau.fr
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>En Plateau</span>
+          <span>Maison de conversation</span>
+          <span>Europe francophone</span>
+        </div>
+      </div>
+    </footer>
+
   </div>
-</header>
 
-<!-- HERO -->
-<section>
-  <div class="container block">
-    <p class="small">Dispositif éditorial européen</p>
+  <script>
+    (function () {
+      const menu = document.getElementById('mobileMenu');
+      const toggle = document.getElementById('menuToggle');
+      const closeBtn = document.getElementById('menuClose');
+      const links = menu.querySelectorAll('a');
 
-    <h1>
-      Certaines conversations qui structurent l’économie ne se tiennent pas en public.
-    </h1>
+      function openMenu() {
+        menu.classList.add('is-open');
+        menu.setAttribute('aria-hidden', 'false');
+        toggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
 
-    <p>
-      En Plateau structure des conversations entre dirigeants, investisseurs et décideurs engagés dans les transformations de l’économie européenne.
-    </p>
+      function closeMenu() {
+        menu.classList.remove('is-open');
+        menu.setAttribute('aria-hidden', 'true');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
 
-    <p class="small">
-      Une partie des conversations en cours de constitution n’est partagée qu’avec les acteurs directement concernés.
-    </p>
+      if (toggle) toggle.addEventListener('click', openMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
 
-    <p class="small">
-      La plupart des accès font suite à une prise de contact directe.
-    </p>
-  </div>
-</section>
+      menu.addEventListener('click', function(e){
+        if (e.target === menu) closeMenu();
+      });
 
-<!-- POURQUOI VOUS -->
-<section class="section-dark">
-  <div class="container block">
-    <h2>Pourquoi vous avez été contacté</h2>
+      links.forEach(function(link){
+        link.addEventListener('click', closeMenu);
+      });
 
-    <p>
-      Une prise de contact ne signifie pas qu’une place est ouverte, mais qu’une position peut éclairer un angle précis.
-    </p>
-
-    <hr>
-
-    <p>Les contributions sont identifiées à partir d’une lecture des écosystèmes économiques, financiers et institutionnels.</p>
-
-    <p>Pour chaque angle, un nombre limité de positions est pertinent. Une fois attribué, un angle n’est pas dupliqué.</p>
-
-    <p>Les conversations sont construites à l’échelle européenne, entre la France, la Belgique, la Suisse et le Luxembourg.</p>
-
-    <p>Une contribution est retenue lorsqu’elle occupe une place juste dans une lecture en cours de structuration.</p>
-  </div>
-</section>
-
-<!-- CADRES -->
-<section>
-  <div class="container block">
-    <h2>Des cadres éditoriaux identifiés</h2>
-
-    <p>
-      Les médias ne constituent pas le cœur du dispositif. Ils offrent des points d’entrée situés.
-    </p>
-
-    <hr>
-
-    <p class="small">
-      Ces formats permettent d’inscrire la parole dans des cadres maîtrisés, compatibles avec les enjeux de responsabilité des dirigeants.
-    </p>
-  </div>
-</section>
-
-<!-- POURQUOI -->
-<section class="section-dark">
-  <div class="container block">
-    <h2>Rendre les transformations plus lisibles</h2>
-
-    <p>
-      Les transformations de l’économie réelle ne se lisent pas depuis un seul point de vue.
-    </p>
-
-    <p>
-      Elles exigent de croiser des lectures situées : observer, décider, structurer.
-    </p>
-
-    <p>
-      En Plateau organise cette mise en regard.
-    </p>
-  </div>
-</section>
-
-<!-- POSITIONS -->
-<section>
-  <div class="container block">
-    <h2>Trois positions dans l’économie. Une même réalité.</h2>
-
-    <p class="small">
-      La distinction repose sur la place occupée dans l’économie et dans la lecture du sujet.
-    </p>
-  </div>
-</section>
-
-<!-- TRANSITION -->
-<section class="section-dark">
-  <div class="container block">
-    <h2>Des prises de parole qui se prolongent</h2>
-
-    <p>
-      Les rencontres prolongent des conversations déjà engagées.
-    </p>
-
-    <hr>
-
-    <p>Chaque intervention est construite à partir d’un angle précis.</p>
-    <p>Les rencontres mettent ces lectures en regard.</p>
-    <p>Elles prolongent une architecture existante.</p>
-  </div>
-</section>
-
-<!-- RENCONTRES -->
-<section>
-  <div class="container block">
-    <h2>Paris, Bruxelles, Genève</h2>
-
-    <p>
-      Trois rencontres dans un espace économique européen.
-    </p>
-
-    <hr>
-
-    <p>
-      Chaque rencontre réunit des intervenants autour des angles qu’ils portent.
-    </p>
-
-    <p class="small">
-      Certaines conversations ne sont pas rendues publiques.
-    </p>
-  </div>
-</section>
-
-<!-- DISPOSITIF -->
-<section class="section-dark">
-  <div class="container block">
-    <h2>Quatre temps</h2>
-
-    <p>
-      Une intervention, inscrite dans une construction éditoriale.
-    </p>
-
-    <hr>
-
-    <p class="small">
-      Le dirigeant valide. La préparation est assurée en amont.
-    </p>
-  </div>
-</section>
-
-<!-- ACCÈS -->
-<section>
-  <div class="container block">
-    <h2>Accès</h2>
-
-    <p>
-      Deux niveaux d’entrée, selon que vous souhaitez comprendre ou examiner une participation.
-    </p>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <p>En Plateau — Conversations économiques européennes</p>
-  </div>
-</footer>
-
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+          closeMenu();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
