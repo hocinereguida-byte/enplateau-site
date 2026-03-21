@@ -45,8 +45,8 @@ button {
   --ep-white: #ffffff;
   --ep-ink: #1a211e;
   --ep-ink-soft: #55605b;
-  --ep-green-deep: #0b1f19;
-  --ep-green-deep-2: #102721;
+  --ep-brown-deep: #241b17;
+  --ep-brown-deep-2: #1c1512;
   --ep-green-mid: #18362d;
   --ep-green-link: #2d5a4d;
   --ep-green-link-hover: #21443a;
@@ -205,7 +205,7 @@ main {
   width: 112px;
   padding: 6px 8px;
   border: 1px solid var(--ep-green-mid);
-  border-radius: 3px;
+  border-radius: 2px;
   font-size: 0.68rem;
   line-height: 1.08;
   font-weight: 600;
@@ -321,7 +321,7 @@ main {
   width: 42px;
   height: 42px;
   border: 1px solid var(--ep-ink);
-  border-radius: 3px;
+  border-radius: 2px;
   background: var(--ep-ink);
   color: #ffffff;
   cursor: pointer;
@@ -347,7 +347,7 @@ main {
    ========================= */
 
 .footer {
-  background: #0b1f19;
+  background: #241b17;
   color: rgba(255, 255, 255, 0.88);
   padding: 54px 16px 24px;
   margin-top: 0;
@@ -367,7 +367,7 @@ main {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-weight: 800;
-  color: #cad7d0;
+  color: #d7c9bf;
 }
 
 .footer p {
@@ -426,8 +426,8 @@ section.soft {
 }
 
 section.dark {
-  background: #0b1f19;
-  color: #f3f7f4;
+  background: #241b17;
+  color: #f5f3f1;
 }
 
 .section-head {
@@ -444,7 +444,7 @@ section.dark {
 }
 
 .section-kicker-dark {
-  color: #cad7d0;
+  color: #d7c9bf;
 }
 
 .section-head h2 {
@@ -456,7 +456,7 @@ section.dark {
 }
 
 section.dark .section-head h2 {
-  color: #f3f7f4;
+  color: #f5f3f1;
 }
 
 .section-intro {
@@ -467,14 +467,14 @@ section.dark .section-head h2 {
 }
 
 section.dark .section-intro {
-  color: rgba(243, 247, 244, 0.82);
+  color: rgba(245, 243, 241, 0.82);
 }
 
 .divider {
   width: 64px;
   height: 1px;
   margin-top: 18px;
-  background: rgba(24, 54, 45, 0.42);
+  background: rgba(200, 116, 51, 0.55);
 }
 
 /* =========================
@@ -496,7 +496,7 @@ section.dark .section-intro {
 
 .card {
   padding: 24px;
-  border-radius: 3px;
+  border-radius: 2px;
   background: rgba(248, 251, 248, 0.96);
   border: 1px solid var(--ep-border);
   box-shadow: var(--ep-shadow);
@@ -526,7 +526,7 @@ section.dark .section-intro {
   display: inline-block;
   margin-bottom: 14px;
   padding: 8px 12px;
-  border-radius: 3px;
+  border-radius: 2px;
   background: rgba(26, 33, 30, 0.05);
   color: var(--ep-ink);
   font-size: 0.78rem;
@@ -539,10 +539,12 @@ section.dark .section-intro {
   color: var(--ep-green-link);
   font-weight: 700;
   text-decoration: none;
+  border-bottom: 1px solid rgba(45, 90, 77, 0.35);
 }
 
 .link:hover {
   color: var(--ep-green-link-hover);
+  border-bottom-color: var(--ep-green-link-hover);
 }
 
 /* =========================
@@ -559,7 +561,7 @@ section.dark .section-intro {
 .side-statement,
 .side-statement-light {
   padding: 26px;
-  border-radius: 3px;
+  border-radius: 2px;
   background: rgba(248, 251, 248, 0.84);
   border: 1px solid var(--ep-border);
 }
@@ -647,7 +649,7 @@ section.dark .section-intro {
     min-height: 42px;
     padding: 0 16px;
     border: 1px solid var(--ep-border);
-    border-radius: 3px;
+    border-radius: 2px;
     background: rgba(248, 251, 248, 0.78);
     transition:
       border-color 0.25s ease,
@@ -675,7 +677,7 @@ section.dark .section-intro {
     min-height: 42px;
     width: auto;
     padding: 0 16px;
-    border-radius: 3px;
+    border-radius: 2px;
     font-size: 0.86rem;
     line-height: 1.05;
     white-space: nowrap;
@@ -704,10 +706,6 @@ section.dark .section-intro {
     font-size: 0.88rem;
   }
 }
-
-/* =========================
-   TABLET / MOBILE
-   ========================= */
 
 @media (max-width: 1023px) {
   .desktop-editorial-nav,
