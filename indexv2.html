@@ -8,101 +8,956 @@
     name="description"
     content="En Plateau structure des conversations entre dirigeants, investisseurs et décideurs engagés dans les transformations de l’économie européenne."
   >
+
+  <style>
+    :root{
+      --bg:#f6f1e8;
+      --surface:#fbf8f2;
+      --surface-2:#f1eadf;
+      --text:#161616;
+      --muted:#5f5a52;
+      --line:#d8d0c4;
+      --line-strong:#b9ae9d;
+      --accent:#0f2747;
+      --accent-soft:#e7edf6;
+      --max:1200px;
+      --radius:18px;
+      --shadow:0 18px 40px rgba(0,0,0,.06);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+
+    .container{
+      width:min(calc(100% - 32px), var(--max));
+      margin-inline:auto;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(10px);
+      background:rgba(246,241,232,.92);
+      border-bottom:1px solid rgba(216,208,196,.85);
+    }
+
+    .header-inner{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    .brand-mark{
+      width:36px;
+      height:36px;
+      border:1px solid var(--text);
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      font-size:12px;
+      letter-spacing:.16em;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .brand-text{
+      min-width:0;
+    }
+
+    .brand-title{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:14px;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin:0 0 2px 0;
+    }
+
+    .brand-subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size:12px;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height:1.3;
+    }
+
+    .nav-desktop{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:14px;
+    }
+
+    .nav-desktop a{
+      color:var(--muted);
+      transition:.2s ease;
+      position:relative;
+      padding:4px 0;
+    }
+
+    .nav-desktop a:hover{color:var(--text)}
+
+    .nav-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:44px;
+      padding:0 18px;
+      border:1px solid var(--text);
+      border-radius:999px;
+      color:var(--text)!important;
+      font-weight:600;
+    }
+
+    .nav-cta:hover{
+      background:var(--text);
+      color:var(--bg)!important;
+    }
+
+    .menu-toggle{
+      display:none;
+      border:1px solid var(--line-strong);
+      background:transparent;
+      color:var(--text);
+      border-radius:999px;
+      min-height:46px;
+      padding:0 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:14px;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .mobile-menu{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.28);
+      opacity:0;
+      visibility:hidden;
+      transition:.25s ease;
+      z-index:1200;
+    }
+
+    .mobile-menu.is-open{
+      opacity:1;
+      visibility:visible;
+    }
+
+    .mobile-menu-panel{
+      position:absolute;
+      top:0;
+      right:0;
+      width:min(92vw, 380px);
+      height:100%;
+      background:var(--surface);
+      border-left:1px solid var(--line);
+      box-shadow:-12px 0 30px rgba(0,0,0,.08);
+      padding:24px;
+      transform:translateX(100%);
+      transition:.25s ease;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .mobile-menu.is-open .mobile-menu-panel{
+      transform:translateX(0);
+    }
+
+    .mobile-menu-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding-bottom:18px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:20px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .mobile-close{
+      border:1px solid var(--line-strong);
+      background:transparent;
+      border-radius:999px;
+      width:42px;
+      height:42px;
+      font-size:20px;
+      cursor:pointer;
+    }
+
+    .mobile-links{
+      display:grid;
+      gap:10px;
+      margin-bottom:24px;
+    }
+
+    .mobile-links a{
+      padding:14px 0;
+      border-bottom:1px solid var(--line);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:16px;
+      color:var(--text);
+    }
+
+    .mobile-actions{
+      margin-top:auto;
+      display:grid;
+      gap:10px;
+    }
+
+    .button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:50px;
+      padding:0 20px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:14px;
+      font-weight:600;
+      letter-spacing:.01em;
+      transition:.22s ease;
+      cursor:pointer;
+    }
+
+    .button-primary{
+      background:var(--text);
+      color:var(--bg);
+      border-color:var(--text);
+    }
+
+    .button-primary:hover{
+      transform:translateY(-1px);
+      box-shadow:var(--shadow);
+    }
+
+    .button-secondary{
+      background:transparent;
+      color:var(--text);
+      border-color:var(--line-strong);
+    }
+
+    .button-secondary:hover{
+      border-color:var(--text);
+      background:rgba(0,0,0,.03);
+    }
+
+    .hero{
+      padding:72px 0 54px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0, 1.2fr) minmax(280px, .8fr);
+      gap:56px;
+      align-items:end;
+    }
+
+    .eyebrow{
+      margin:0 0 20px 0;
+      color:var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(3rem, 8vw, 6.4rem);
+      line-height:.98;
+      letter-spacing:-.045em;
+      max-width:10ch;
+      font-weight:700;
+    }
+
+    .hero-subhead{
+      margin:28px 0 0 0;
+      font-size:clamp(1.2rem, 2.3vw, 1.7rem);
+      line-height:1.32;
+      max-width:19ch;
+      color:#232323;
+    }
+
+    .hero-note{
+      margin:22px 0 0 0;
+      font-size:1.03rem;
+      line-height:1.5;
+      color:var(--muted);
+      max-width:55ch;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:30px;
+    }
+
+    .hero-micro-note{
+      margin:16px 0 0 0;
+      color:var(--muted);
+      font-size:.96rem;
+      line-height:1.45;
+      max-width:46ch;
+    }
+
+    .hero-aside{
+      background:linear-gradient(180deg, rgba(255,255,255,.48), rgba(255,255,255,.18));
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      align-self:stretch;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:420px;
+    }
+
+    .hero-aside-top{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      align-items:flex-start;
+    }
+
+    .hero-aside-label{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin:0 0 12px 0;
+    }
+
+    .hero-aside-title{
+      margin:0;
+      font-size:1.6rem;
+      line-height:1.1;
+    }
+
+    .hero-aside-badge{
+      border:1px solid var(--line-strong);
+      border-radius:999px;
+      padding:8px 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:12px;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    .hero-aside-copy{
+      margin:20px 0 0 0;
+      color:var(--muted);
+      font-size:1rem;
+      line-height:1.6;
+      max-width:36ch;
+    }
+
+    .hero-metrics{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:30px;
+    }
+
+    .metric{
+      border-top:1px solid var(--line);
+      padding-top:14px;
+    }
+
+    .metric strong{
+      display:block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+
+    .metric span{
+      display:block;
+      font-size:1.1rem;
+      line-height:1.35;
+    }
+
+    .section{
+      padding:72px 0;
+      border-top:1px solid var(--line);
+    }
+
+    .section-heading{
+      display:grid;
+      grid-template-columns:minmax(0, 1.1fr) minmax(240px, .9fr);
+      gap:40px;
+      align-items:end;
+      margin-bottom:34px;
+    }
+
+    .section-kicker{
+      margin:0 0 12px 0;
+      color:var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    h2{
+      margin:0;
+      font-size:clamp(2rem, 4vw, 3.5rem);
+      line-height:1.02;
+      letter-spacing:-.035em;
+      max-width:12ch;
+    }
+
+    .section-intro{
+      margin:0;
+      color:var(--muted);
+      font-size:1.06rem;
+      line-height:1.65;
+      max-width:44ch;
+      justify-self:end;
+    }
+
+    .text-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:26px 34px;
+    }
+
+    .text-card{
+      padding:24px 0 0;
+      border-top:1px solid var(--line);
+    }
+
+    .text-card p{
+      margin:0;
+      font-size:1.08rem;
+      line-height:1.6;
+    }
+
+    .formats-grid,
+    .series-grid,
+    .access-grid,
+    .footer-grid{
+      display:grid;
+      gap:22px;
+    }
+
+    .formats-grid{
+      grid-template-columns:repeat(3, minmax(0,1fr));
+    }
+
+    .card{
+      background:rgba(255,255,255,.34);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:0 10px 24px rgba(0,0,0,.03);
+    }
+
+    .card h3{
+      margin:0 0 14px 0;
+      font-size:1.5rem;
+      line-height:1.08;
+      letter-spacing:-.02em;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:1rem;
+      line-height:1.6;
+    }
+
+    .section-note{
+      margin:24px 0 0 0;
+      max-width:76ch;
+      color:var(--muted);
+      font-size:1rem;
+      line-height:1.6;
+    }
+
+    .positioning{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:26px;
+    }
+
+    .positioning .panel{
+      padding:28px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:rgba(255,255,255,.22);
+    }
+
+    .panel p{
+      margin:0 0 16px 0;
+      font-size:1.08rem;
+      line-height:1.62;
+    }
+
+    .panel p:last-child{margin-bottom:0}
+
+    .series-grid{
+      grid-template-columns:repeat(3, minmax(0,1fr));
+    }
+
+    .series-card{
+      display:flex;
+      flex-direction:column;
+      min-height:280px;
+    }
+
+    .series-label{
+      margin:0 0 18px 0;
+      color:var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .series-card p{
+      margin-top:auto;
+    }
+
+    .meetings-box{
+      background:linear-gradient(180deg, rgba(255,255,255,.36), rgba(255,255,255,.14));
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .meetings-box p{
+      margin:0 0 16px 0;
+      font-size:1.1rem;
+      line-height:1.62;
+    }
+
+    .meetings-box p:last-child{
+      margin-bottom:0;
+      color:var(--muted);
+    }
+
+    .dispositif-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:24px;
+    }
+
+    .access-grid{
+      grid-template-columns:1.15fr .85fr;
+      align-items:stretch;
+    }
+
+    .access-card{
+      border-radius:28px;
+      padding:30px;
+      border:1px solid var(--line);
+      min-height:300px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .access-card-primary{
+      background:var(--text);
+      color:var(--bg);
+      border-color:var(--text);
+    }
+
+    .access-card-primary p,
+    .access-card-primary .access-label{
+      color:rgba(246,241,232,.8);
+    }
+
+    .access-card-secondary{
+      background:rgba(255,255,255,.3);
+    }
+
+    .access-label{
+      margin:0 0 14px 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:12px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .access-card h3{
+      margin:0 0 14px 0;
+      font-size:2rem;
+      line-height:1.04;
+      letter-spacing:-.03em;
+    }
+
+    .access-card p{
+      margin:0 0 22px 0;
+      font-size:1.05rem;
+      line-height:1.6;
+    }
+
+    .access-card .button{
+      align-self:flex-start;
+    }
+
+    .access-card-primary .button-primary{
+      background:var(--bg);
+      color:var(--text);
+      border-color:var(--bg);
+    }
+
+    .access-card-primary .button-primary:hover{
+      background:#fff;
+      border-color:#fff;
+    }
+
+    .site-footer{
+      border-top:1px solid var(--line);
+      padding:56px 0 34px;
+      background:rgba(255,255,255,.14);
+    }
+
+    .footer-grid{
+      grid-template-columns:1.2fr .8fr .8fr;
+    }
+
+    .footer-title{
+      margin:0 0 14px 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .footer-copy,
+    .footer-links a,
+    .footer-meta{
+      color:var(--muted);
+      font-size:.98rem;
+      line-height:1.65;
+    }
+
+    .footer-links{
+      display:grid;
+      gap:10px;
+    }
+
+    .footer-links a:hover{
+      color:var(--text);
+    }
+
+    .footer-bottom{
+      margin-top:34px;
+      padding-top:22px;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:12px;
+      letter-spacing:.04em;
+    }
+
+    @media (max-width: 1080px){
+      .hero-grid,
+      .section-heading,
+      .formats-grid,
+      .series-grid,
+      .positioning,
+      .dispositif-grid,
+      .access-grid,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .section-intro{
+        justify-self:start;
+      }
+
+      h1{
+        max-width:11ch;
+      }
+
+      .hero-aside{
+        min-height:auto;
+      }
+    }
+
+    @media (max-width: 840px){
+      .nav-desktop{display:none}
+      .menu-toggle{display:inline-flex;align-items:center;justify-content:center}
+      .hero{padding:46px 0 38px}
+      .section{padding:54px 0}
+      .text-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+      }
+      .hero-actions{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .button{
+        width:100%;
+        justify-content:center;
+      }
+      .access-card .button{
+        width:100%;
+        align-self:stretch;
+      }
+      h1{
+        font-size:clamp(2.8rem, 12vw, 4.6rem);
+        max-width:9ch;
+      }
+      h2{
+        max-width:none;
+      }
+    }
+
+    @media (max-width: 520px){
+      .container{
+        width:min(calc(100% - 22px), var(--max));
+      }
+
+      .header-inner{
+        min-height:70px;
+      }
+
+      .brand-mark{
+        width:30px;
+        height:30px;
+        font-size:10px;
+      }
+
+      .brand-title{
+        font-size:12px;
+      }
+
+      .brand-subtitle{
+        display:none;
+      }
+
+      .hero-subhead{
+        font-size:1.16rem;
+      }
+
+      .hero-note,
+      .hero-micro-note,
+      .section-intro,
+      .text-card p,
+      .panel p,
+      .card p,
+      .meetings-box p,
+      .access-card p{
+        font-size:1rem;
+      }
+
+      .hero-aside,
+      .meetings-box,
+      .card,
+      .panel,
+      .access-card{
+        padding:22px;
+        border-radius:20px;
+      }
+
+      .footer-bottom{
+        font-size:11px;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <header class="site-header">
-    <div class="container">
-      <a href="/" class="site-brand" aria-label="En Plateau">
-        EN PLATEAU
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="En Plateau">
+        <div class="brand-mark">EP</div>
+        <div class="brand-text">
+          <p class="brand-title">En Plateau</p>
+          <p class="brand-subtitle">Dispositif éditorial européen</p>
+        </div>
       </a>
 
-      <nav class="site-nav" aria-label="Navigation principale">
-        <a href="#cadres-editoriaux">Cadres éditoriaux</a>
+      <nav class="nav-desktop" aria-label="Navigation principale">
+        <a href="#cadres">Cadres éditoriaux</a>
+        <a href="#series">Séries</a>
+        <a href="#rencontres">Rencontres</a>
+        <a href="#dispositif">Dispositif</a>
+        <a href="#acces" class="nav-cta">Recevoir le dossier</a>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" id="menuToggle">
+        Menu
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-top">
+        <strong>Navigation</strong>
+        <button class="mobile-close" type="button" aria-label="Fermer le menu" id="menuClose">×</button>
+      </div>
+
+      <nav class="mobile-links" aria-label="Navigation mobile">
+        <a href="#cadres">Cadres éditoriaux</a>
         <a href="#series">Séries</a>
         <a href="#rencontres">Rencontres</a>
         <a href="#dispositif">Dispositif</a>
         <a href="#acces">Accès</a>
       </nav>
+
+      <div class="mobile-actions">
+        <a class="button button-primary" href="#acces">Recevoir le dossier</a>
+        <a class="button button-secondary" href="#dispositif">Comprendre le dispositif</a>
+      </div>
     </div>
-  </header>
+  </div>
 
-  <main>
+  <main id="top">
 
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero">
       <div class="container">
-        <div class="hero-inner">
-          <p class="eyebrow">Dispositif éditorial européen</p>
+        <div class="hero-grid">
+          <div class="hero-main">
+            <p class="eyebrow">Dispositif éditorial européen</p>
 
-          <h1 id="hero-title">
-            Certaines conversations qui structurent l’économie ne se tiennent pas en public.
-          </h1>
+            <h1>
+              Certaines conversations qui structurent l’économie ne se tiennent pas en public.
+            </h1>
 
-          <p class="hero-subhead">
-            En Plateau structure des conversations entre dirigeants, investisseurs et décideurs engagés dans les transformations de l’économie européenne.
-          </p>
+            <p class="hero-subhead">
+              En Plateau structure des conversations entre dirigeants, investisseurs et décideurs engagés dans les transformations de l’économie européenne.
+            </p>
 
-          <p class="hero-note">
-            Une partie des conversations en cours de constitution n’est partagée qu’avec les acteurs concernés.
-          </p>
+            <p class="hero-note">
+              Une partie des conversations en cours de constitution n’est partagée qu’avec les acteurs concernés.
+            </p>
 
-          <div class="hero-actions">
-            <a href="participer.html#approche" class="button button-primary">
-              Recevoir le dossier
-            </a>
-            <a href="a-propos.html" class="button button-secondary">
-              Comprendre le dispositif
-            </a>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#acces">Recevoir le dossier</a>
+              <a class="button button-secondary" href="#dispositif">Comprendre le dispositif</a>
+            </div>
+
+            <p class="hero-micro-note">
+              La plupart des accès font suite à une prise de contact directe.
+            </p>
           </div>
 
-          <p class="hero-micro-note">
-            La plupart des accès font suite à une prise de contact directe.
-          </p>
+          <aside class="hero-aside" aria-label="Résumé du dispositif">
+            <div>
+              <div class="hero-aside-top">
+                <div>
+                  <p class="hero-aside-label">En constitution</p>
+                  <h2 class="hero-aside-title">Un cadre éditorial pensé pour les positions qui comptent.</h2>
+                </div>
+                <div class="hero-aside-badge">Europe francophone</div>
+              </div>
+
+              <p class="hero-aside-copy">
+                Le dispositif relie des angles, des formats et des contributions situées à partir des places réellement occupées dans l’économie, la finance et la décision publique.
+              </p>
+            </div>
+
+            <div class="hero-metrics">
+              <div class="metric">
+                <strong>Formats</strong>
+                <span>Entretiens, dialogues croisés, conversations situées</span>
+              </div>
+              <div class="metric">
+                <strong>Périmètre</strong>
+                <span>France, Belgique, Suisse, Luxembourg</span>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
 
-    <!-- POURQUOI VOUS AVEZ ÉTÉ CONTACTÉ -->
-    <section class="section section-introductive" id="pourquoi-vous-home" aria-labelledby="pourquoi-vous-title">
+    <section class="section" id="selection">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Sélection</p>
-          <h2 id="pourquoi-vous-title">Pourquoi vous avez été contacté</h2>
+          <div>
+            <p class="section-kicker">Sélection</p>
+            <h2>Pourquoi vous avez été contacté</h2>
+          </div>
           <p class="section-intro">
             Une prise de contact ne signifie pas qu’une place est ouverte, mais qu’une position que vous occupez peut éclairer un angle précis.
           </p>
         </div>
 
-        <div class="text-block">
-          <p>
-            Les contributions sont identifiées à partir d’une lecture des écosystèmes économiques, financiers et institutionnels.
-          </p>
-          <p>
-            Pour chaque angle, un nombre restreint de positions est pertinent. Une fois attribué, un angle n’est pas dupliqué.
-          </p>
-          <p>
-            Les conversations sont construites à l’échelle européenne, en reliant la France, la Belgique, la Suisse et le Luxembourg.
-          </p>
-          <p>
-            Une contribution est retenue lorsqu’elle occupe une place juste dans une lecture en cours de structuration.
-          </p>
+        <div class="text-grid">
+          <div class="text-card">
+            <p>
+              Les contributions sont identifiées à partir d’une lecture des écosystèmes économiques, financiers et institutionnels.
+            </p>
+          </div>
+          <div class="text-card">
+            <p>
+              Pour chaque angle, un nombre restreint de positions est pertinent. Une fois attribué, un angle n’est pas dupliqué.
+            </p>
+          </div>
+          <div class="text-card">
+            <p>
+              Les conversations sont construites à l’échelle européenne, en reliant la France, la Belgique, la Suisse et le Luxembourg.
+            </p>
+          </div>
+          <div class="text-card">
+            <p>
+              Une contribution est retenue lorsqu’elle occupe une place juste dans une lecture en cours de structuration.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CADRES ÉDITORIAUX -->
-    <section class="section" id="cadres-editoriaux" aria-labelledby="cadres-title">
+    <section class="section" id="cadres">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Cadres</p>
-          <h2 id="cadres-title">Cadres éditoriaux</h2>
+          <div>
+            <p class="section-kicker">Cadres</p>
+            <h2>Cadres éditoriaux</h2>
+          </div>
           <p class="section-intro">
             Des formats conçus pour inscrire la parole dans des cadres lisibles, exigeants et compatibles avec les responsabilités portées par les dirigeants.
           </p>
         </div>
 
-        <div class="cards cards-3">
+        <div class="formats-grid">
           <article class="card">
             <h3>Entretiens éditoriaux</h3>
             <p>
@@ -131,16 +986,20 @@
       </div>
     </section>
 
-    <!-- POURQUOI EN PLATEAU -->
-    <section class="section" id="pourquoi-en-plateau" aria-labelledby="pourquoi-en-plateau-title">
+    <section class="section" id="pourquoi">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Positionnement</p>
-          <h2 id="pourquoi-en-plateau-title">Pourquoi En Plateau</h2>
+          <div>
+            <p class="section-kicker">Positionnement</p>
+            <h2>Pourquoi En Plateau</h2>
+          </div>
+          <p class="section-intro">
+            Un dispositif qui ne cherche pas à ouvrir largement la parole, mais à lui donner un cadre juste, situé et durable.
+          </p>
         </div>
 
-        <div class="text-block two-columns">
-          <div>
+        <div class="positioning">
+          <div class="panel">
             <p>
               En Plateau n’est ni un média généraliste, ni une simple plateforme de visibilité.
             </p>
@@ -148,7 +1007,8 @@
               Le dispositif organise des conversations à partir des places réellement occupées dans l’économie, et non à partir de prises de parole génériques.
             </p>
           </div>
-          <div>
+
+          <div class="panel">
             <p>
               L’objectif n’est pas de commenter l’actualité, mais de structurer des lectures qui aident à comprendre les transformations en cours.
             </p>
@@ -160,86 +1020,89 @@
       </div>
     </section>
 
-    <!-- LES SÉRIES -->
-    <section class="section" id="series" aria-labelledby="series-title">
+    <section class="section" id="series">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Séries</p>
-          <h2 id="series-title">Les séries</h2>
+          <div>
+            <p class="section-kicker">Séries</p>
+            <h2>Les séries</h2>
+          </div>
           <p class="section-intro">
             Trois fonctions dans la lecture des transformations en cours. La distinction repose sur la place occupée dans l’économie et dans la structuration du sujet.
           </p>
         </div>
 
-        <div class="series-list">
-          <article class="series-item">
-            <header class="series-header">
+        <div class="series-grid">
+          <article class="card series-card">
+            <div>
+              <p class="series-label">Observation</p>
               <h3>Les Éclaireurs</h3>
-            </header>
-            <div class="series-body">
-              <p>
-                Des lectures qui rendent visibles les lignes de fond, les recompositions et les signaux faibles à partir d’une position d’observation ou d’analyse.
-              </p>
             </div>
+            <p>
+              Des lectures qui rendent visibles les lignes de fond, les recompositions et les signaux faibles à partir d’une position d’observation ou d’analyse.
+            </p>
           </article>
 
-          <article class="series-item">
-            <header class="series-header">
+          <article class="card series-card">
+            <div>
+              <p class="series-label">Transformation</p>
               <h3>Les Bâtisseurs</h3>
-            </header>
-            <div class="series-body">
-              <p>
-                Des contributions portées par celles et ceux qui construisent, financent, transforment ou arbitrent dans l’économie réelle.
-              </p>
             </div>
+            <p>
+              Des contributions portées par celles et ceux qui construisent, financent, transforment ou arbitrent dans l’économie réelle.
+            </p>
           </article>
 
-          <article class="series-item">
-            <header class="series-header">
+          <article class="card series-card">
+            <div>
+              <p class="series-label">Structuration</p>
               <h3>Les Architectes</h3>
-            </header>
-            <div class="series-body">
-              <p>
-                Des interventions où la parole éclaire la structuration plus large d’un secteur, d’un cadre d’action ou d’un mouvement de fond.
-              </p>
             </div>
+            <p>
+              Des interventions où la parole éclaire la structuration plus large d’un secteur, d’un cadre d’action ou d’un mouvement de fond.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- RENCONTRES -->
-    <section class="section" id="rencontres" aria-labelledby="rencontres-title">
+    <section class="section" id="rencontres">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Rencontres</p>
-          <h2 id="rencontres-title">Les rencontres</h2>
+          <div>
+            <p class="section-kicker">Rencontres</p>
+            <h2>Les rencontres</h2>
+          </div>
           <p class="section-intro">
             Des formats plus resserrés, pensés pour prolonger les prises de parole dans un cadre de confrontation directe entre acteurs concernés.
           </p>
         </div>
 
-        <div class="text-block">
-          <p class="home-proof">
+        <div class="meetings-box">
+          <p>
             Chaque rencontre prolonge des prises de parole préparées en amont et réunit les intervenants autour des angles qu’ils portent.
           </p>
-          <p class="home-signal-note">
+          <p>
             Certaines conversations ne sont pas rendues publiques à ce stade et ne sont accessibles qu’aux acteurs concernés.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- DISPOSITIF -->
-    <section class="section" id="dispositif" aria-labelledby="dispositif-title">
+    <section class="section" id="dispositif">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Organisation</p>
-          <h2 id="dispositif-title">Le dispositif</h2>
+          <div>
+            <p class="section-kicker">Organisation</p>
+            <h2>Le dispositif</h2>
+          </div>
+          <p class="section-intro">
+            Une préparation éditoriale conçue pour respecter les contraintes d’agenda, de responsabilité et de confidentialité propres aux fonctions dirigeantes.
+          </p>
         </div>
 
-        <div class="text-block two-columns">
-          <div>
+        <div class="dispositif-grid">
+          <div class="panel">
             <p>
               Chaque intervention est préparée à partir d’un angle défini, d’un contexte de publication et d’un cadre de lecture précis.
             </p>
@@ -247,24 +1110,26 @@
               Le travail éditorial consiste à clarifier le propos, situer la contribution et organiser sa mise en exposition.
             </p>
           </div>
-          <div>
+
+          <div class="panel">
             <p>
               Le dirigeant intervient principalement en validation. La préparation est assurée en amont avec ses équipes.
             </p>
             <p>
-              Le niveau d’implication est calibré pour respecter les contraintes d’agenda, de responsabilité et de confidentialité.
+              Le niveau d’implication est calibré pour respecter la nature des responsabilités exercées et la sensibilité des sujets abordés.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ACCÈS -->
-    <section class="section section-access" id="acces" aria-labelledby="acces-title">
+    <section class="section" id="acces">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Accès</p>
-          <h2 id="acces-title">Entrer dans le dispositif</h2>
+          <div>
+            <p class="section-kicker">Accès</p>
+            <h2>Entrer dans le dispositif</h2>
+          </div>
           <p class="section-intro">
             Deux niveaux d’entrée, selon que vous souhaitez évaluer la logique du dispositif ou examiner une participation possible.
           </p>
@@ -272,25 +1137,25 @@
 
         <div class="access-grid">
           <article class="access-card access-card-primary">
-            <p class="access-label">Accès principal</p>
-            <h3>Recevoir le dossier</h3>
-            <p>
-              Pour examiner le cadre, les formats, les logiques de contribution et la structuration en cours.
-            </p>
-            <a href="participer.html#approche" class="button button-primary">
-              Recevoir le dossier
-            </a>
+            <div>
+              <p class="access-label">Accès principal</p>
+              <h3>Recevoir le dossier</h3>
+              <p>
+                Pour examiner le cadre, les formats, les logiques de contribution et la structuration en cours.
+              </p>
+            </div>
+            <a class="button button-primary" href="mailto:contact@enplateau.fr?subject=Demande%20de%20dossier%20—%20En%20Plateau">Recevoir le dossier</a>
           </article>
 
           <article class="access-card access-card-secondary">
-            <p class="access-label">Accès secondaire</p>
-            <h3>Comprendre le dispositif</h3>
-            <p>
-              Pour consulter la logique éditoriale, le positionnement général et la philosophie d’ensemble.
-            </p>
-            <a href="a-propos.html" class="button button-secondary">
-              Aller à la page À propos
-            </a>
+            <div>
+              <p class="access-label">Accès secondaire</p>
+              <h3>Comprendre le dispositif</h3>
+              <p>
+                Pour consulter la logique éditoriale, le positionnement général et la philosophie d’ensemble avant prise de contact.
+              </p>
+            </div>
+            <a class="button button-secondary" href="#pourquoi">Comprendre le dispositif</a>
           </article>
         </div>
       </div>
@@ -300,9 +1165,79 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>En Plateau — dispositif éditorial de conversations économiques</p>
+      <div class="footer-grid">
+        <div>
+          <p class="footer-title">En Plateau</p>
+          <p class="footer-copy">
+            Dispositif éditorial européen structurant des conversations entre dirigeants, investisseurs et décideurs engagés dans les transformations de l’économie.
+          </p>
+        </div>
+
+        <div>
+          <p class="footer-title">Navigation</p>
+          <div class="footer-links">
+            <a href="#cadres">Cadres éditoriaux</a>
+            <a href="#series">Séries</a>
+            <a href="#rencontres">Rencontres</a>
+            <a href="#dispositif">Dispositif</a>
+            <a href="#acces">Accès</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-title">Contact</p>
+          <p class="footer-meta">
+            Prise de contact sur invitation ou par échange direct.<br>
+            contact@enplateau.fr
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© En Plateau</span>
+        <span>Conversations économiques · Europe francophone</span>
+      </div>
     </div>
   </footer>
 
+  <script>
+    (function () {
+      const menu = document.getElementById('mobile-menu');
+      const toggle = document.getElementById('menuToggle');
+      const closeBtn = document.getElementById('menuClose');
+      const links = menu.querySelectorAll('a');
+
+      function openMenu() {
+        menu.classList.add('is-open');
+        menu.setAttribute('aria-hidden', 'false');
+        toggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        menu.classList.remove('is-open');
+        menu.setAttribute('aria-hidden', 'true');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      toggle.addEventListener('click', openMenu);
+      closeBtn.addEventListener('click', closeMenu);
+
+      menu.addEventListener('click', function(e){
+        if(e.target === menu){ closeMenu(); }
+      });
+
+      links.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape' && menu.classList.contains('is-open')){
+          closeMenu();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
