@@ -1,94 +1,114 @@
-(function () {
-  "use strict";
+async function loadPartial(selector, path) {
+  const mountPoint = document.querySelector(selector);
 
-  async function loadPartials() {
-    const includeNodes = document.querySelectorAll("[data-include]");
-    const jobs = Array.from(includeNodes).map(async (node) => {
-      const file = node.getAttribute("data-include");
-      if (!file) return;
+  if (!mountPoint) return null;
 
-      try {
-        const response = await fetch(file, { cache: "no-cache" });
-        if (!response.ok) {
-          throw new Error(`Impossible de charger ${file} (${response.status})`);
-        }
+  try {
+    const response = await fetch(path, { cache: "no-cache" });
 
-        const html = await response.text();
-        node.outerHTML = html;
-      } catch (error) {
-        console.error(error);
-      }
-    });
-
-    await Promise.all(jobs);
-  }
-
-  function initMobileMenu() {
-    const menu = document.getElementById("mobile-menu");
-    const toggle = document.querySelector("[data-menu-toggle]");
-    const closeButtons = document.querySelectorAll("[data-menu-close]");
-    const menuLinks = menu ? menu.querySelectorAll("a") : [];
-
-    if (!menu || !toggle) return;
-
-    function openMenu() {
-      menu.classList.add("is-open");
-      menu.setAttribute("aria-hidden", "false");
-      toggle.setAttribute("aria-expanded", "true");
-      document.body.classList.add("menu-open");
+    if (!response.ok) {
+      throw new Error(`Impossible de charger ${path} (${response.status})`);
     }
 
-    function closeMenu() {
-      menu.classList.remove("is-open");
-      menu.setAttribute("aria-hidden", "true");
-      toggle.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("menu-open");
+    const html = await response.text();
+    mountPoint.innerHTML = html;
+    return mountPoint;
+  } catch (error) {
+    console.error(`[loadPartial] ${error.message}`);
+    return null;
+  }
+}
+
+function getCurrentPage() {
+  const pathname = window.location.pathname.split("/").pop();
+  return pathname && pathname.length ? pathname : "index.html";
+}
+
+function normalizeHref(href) {
+  if (!href) return "";
+  return href.split("#")[0].split("?")[0].replace(/^\//, "");
+}
+
+function markActiveLinks() {
+  const currentPage = getCurrentPage();
+  const allLinks = document.querySelectorAll(".site-nav a, .mobile-top-link");
+
+  allLinks.forEach((link) => {
+    const href = normalizeHref(link.getAttribute("href"));
+
+    if (href === currentPage) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
     }
+  });
+}
 
-    toggle.addEventListener("click", function () {
-      const expanded = toggle.getAttribute("aria-expanded") === "true";
-      if (expanded) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
+function bindMobileMenu() {
+  const toggle = document.querySelector(".site-nav-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const closeButton = document.querySelector(".mobile-menu-close");
+  const mobileLinks = document.querySelectorAll(".mobile-top-link");
 
-    closeButtons.forEach(function (button) {
-      button.addEventListener("click", closeMenu);
-    });
+  if (!toggle || !mobileMenu) return;
 
-    menuLinks.forEach(function (link) {
-      link.addEventListener("click", closeMenu);
-    });
+  const firstFocusable = closeButton || mobileLinks[0] || mobileMenu;
 
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && menu.classList.contains("is-open")) {
-        closeMenu();
-      }
-    });
+  const openMenu = () => {
+    toggle.setAttribute("aria-expanded", "true");
+    mobileMenu.classList.add("is-open");
+    mobileMenu.setAttribute("aria-hidden", "false");
+    document.body.classList.add("menu-open");
+    firstFocusable.focus();
+  };
+
+  const closeMenu = () => {
+    toggle.setAttribute("aria-expanded", "false");
+    mobileMenu.classList.remove("is-open");
+    mobileMenu.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("menu-open");
+    toggle.focus();
+  };
+
+  toggle.addEventListener("click", () => {
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    expanded ? closeMenu() : openMenu();
+  });
+
+  if (closeButton) {
+    closeButton.addEventListener("click", closeMenu);
   }
 
-  function setActiveNav() {
-    const currentPath = window.location.pathname.split("/").pop() || "index.html";
-    const navLinks = document.querySelectorAll(".main-nav a, .mobile-menu-nav a, .footer-nav a");
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
 
-    navLinks.forEach(function (link) {
-      const href = link.getAttribute("href");
-      if (!href) return;
+  mobileMenu.addEventListener("click", (event) => {
+    if (event.target === mobileMenu) {
+      closeMenu();
+    }
+  });
 
-      const linkPath = href.split("/").pop();
-      if (linkPath === currentPath) {
-        link.classList.add("is-active");
-      }
-    });
-  }
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && mobileMenu.classList.contains("is-open")) {
+      closeMenu();
+    }
+  });
 
-  async function initLayout() {
-    await loadPartials();
-    initMobileMenu();
-    setActiveNav();
-  }
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1024 && mobileMenu.classList.contains("is-open")) {
+      closeMenu();
+    }
+  });
+}
 
-  document.addEventListener("DOMContentLoaded", initLayout);
-})();
+document.addEventListener("DOMContentLoaded", async () => {
+  await Promise.all([
+    loadPartial("#site-header", "partials/header.html"),
+    loadPartial("#site-mobile-menu", "partials/mobile-menu.html"),
+    loadPartial("#site-footer", "partials/footer.html")
+  ]);
+
+  markActiveLinks();
+  bindMobileMenu();
+});
