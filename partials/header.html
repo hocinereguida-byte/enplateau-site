@@ -1,55 +1,31 @@
 <header class="site-header">
-  <div class="site-header__inner">
+  <div class="site-header-inner">
 
-    <div class="site-header__left">
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-label="Ouvrir le menu"
-        aria-controls="mobile-menu"
-        aria-expanded="false"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
+    <a href="index.html" class="site-brand" aria-label="Accueil En Plateau">
+      <img src="images/Logo_en_plateau.svg" alt="En Plateau">
+      <span class="site-brand-text">EN PLATEAU</span>
+    </a>
 
-    <div class="site-header__center">
-      <a href="index.html" class="site-brand" aria-label="Retour à l’accueil En Plateau">
-        <img
-          class="site-brand__logo"
-          src="images/Logo_en_plateau.svg"
-          alt="En Plateau"
-        >
-      </a>
-    </div>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="les-batisseurs.html">Explorer les séries</a>
+      <a href="rencontres.html">Participer aux rencontres</a>
+      <a href="medias-journalistes.html">Prendre la parole</a>
+      <a href="a-propos.html">Comprendre le dispositif</a>
+    </nav>
 
-    <div class="site-header__right">
-      <nav class="desktop-editorial-nav" aria-label="Navigation principale">
+    <a href="participer.html#approche" class="btn btn-primary">
+      Recevoir le dossier
+    </a>
 
-        <a href="les-batisseurs.html" class="desktop-editorial-nav__link">
-          <span class="desktop-editorial-nav__label">Explorer les séries</span>
-        </a>
-
-        <a href="rencontres.html" class="desktop-editorial-nav__link">
-          <span class="desktop-editorial-nav__label">Participer à une rencontre</span>
-        </a>
-
-        <a href="medias-journalistes.html" class="desktop-editorial-nav__link">
-          <span class="desktop-editorial-nav__label">Médias</span>
-        </a>
-
-        <a href="a-propos.html" class="desktop-editorial-nav__link">
-          <span class="desktop-editorial-nav__label">Découvrir l’approche</span>
-        </a>
-
-      </nav>
-
-      <a href="participer.html" class="site-header__cta">
-        Cadre de participation
-      </a>
-    </div>
+    <button
+      class="site-nav-toggle"
+      type="button"
+      aria-label="Ouvrir le menu"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
 
   </div>
 </header>
