@@ -195,8 +195,9 @@ main {
 }
 
 .site-brand__logo {
-  width: 170px;
+  width: 118px;
   height: auto;
+  display: block;
 }
 
 .site-brand__title {
@@ -653,6 +654,10 @@ section.dark .section-intro {
     justify-content: center;
   }
 
+  .site-brand__logo {
+    width: 172px;
+  }
+
   .site-brand__title {
     font-size: 1.35rem;
     line-height: 0.95;
@@ -731,6 +736,10 @@ section.dark .section-intro {
 @media (min-width: 1360px) {
   .site-header__inner {
     grid-template-columns: 280px 1fr auto;
+  }
+
+  .site-brand__logo {
+    width: 184px;
   }
 
   .site-brand__title {
