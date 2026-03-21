@@ -3,450 +3,206 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+
   <title>En Plateau — Maison de conversation</title>
-  <meta
-    name="description"
+
+  <meta name="description"
     content="En Plateau structure des conversations entre dirigeants, investisseurs et décideurs engagés dans les transformations de l’économie européenne."
   >
-  <link rel="stylesheet" href="layout.css">
+
+  <!-- LIAISON CSS CORRECTE -->
+  <link rel="stylesheet" href="assets/css/layout.css?v=1">
 </head>
+
 <body>
-  <div class="page">
 
-    <header class="site-header">
-      <div class="wrap header-inner">
-        <a class="brand" href="#top" aria-label="En Plateau">
-          <span class="brand-mark">EN PLATEAU</span>
-          <span class="brand-sub">Maison de conversation</span>
-        </a>
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">EN PLATEAU</div>
 
-        <nav class="main-nav" aria-label="Navigation principale">
-          <a href="#selection">Pourquoi vous</a>
-          <a href="#cadres">Cadres</a>
-          <a href="#positions">Positions</a>
-          <a href="#rencontres">Rencontres</a>
-          <a href="#dispositif">Dispositif</a>
-        </nav>
+    <nav class="nav">
+      <a href="#selection">Pourquoi vous</a>
+      <a href="#cadres">Cadres</a>
+      <a href="#positions">Positions</a>
+      <a href="#rencontres">Rencontres</a>
+      <a href="#dispositif">Dispositif</a>
+      <a href="#acces">Accès</a>
+    </nav>
+  </div>
+</header>
 
-        <a class="header-link" href="#acces">Accès</a>
+<!-- HERO -->
+<section class="section section-light hero">
+  <div class="container">
 
-        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu">
-          Menu
-        </button>
-      </div>
-    </header>
+    <p class="kicker">Dispositif éditorial européen</p>
 
-    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-      <div class="mobile-panel">
-        <div class="mobile-top">
-          <span>Navigation</span>
-          <button class="mobile-close" id="menuClose" type="button" aria-label="Fermer">×</button>
-        </div>
-        <nav class="mobile-links" aria-label="Navigation mobile">
-          <a href="#selection">Pourquoi vous</a>
-          <a href="#cadres">Cadres</a>
-          <a href="#positions">Positions</a>
-          <a href="#rencontres">Rencontres</a>
-          <a href="#dispositif">Dispositif</a>
-          <a href="#acces">Accès</a>
-        </nav>
-      </div>
+    <h1>
+      Certaines conversations qui structurent l’économie ne se tiennent pas en public.
+    </h1>
+
+    <p class="intro">
+      En Plateau structure des conversations entre dirigeants, investisseurs et décideurs engagés dans les transformations de l’économie européenne.
+    </p>
+
+    <p class="note">
+      Une partie des conversations en cours de constitution n’est partagée qu’avec les acteurs directement concernés.
+    </p>
+
+    <p class="micro">
+      La plupart des accès font suite à une prise de contact directe.
+    </p>
+
+    <div class="links">
+      <a href="#acces">Recevoir le dossier</a>
+      <a href="#dispositif">Comprendre le dispositif</a>
     </div>
 
-    <main id="top">
+  </div>
+</section>
 
-      <section class="section hero">
-        <div class="wrap hero-grid">
-          <div class="hero-main">
-            <p class="section-label">Dispositif éditorial européen</p>
+<!-- POURQUOI -->
+<section class="section section-dark" id="selection">
+  <div class="container">
 
-            <h1 class="hero-title">
-              Certaines conversations qui structurent l’économie ne se tiennent pas en public.
-            </h1>
+    <h2>Pourquoi vous avez été contacté</h2>
 
-            <p class="hero-sub">
-              En Plateau structure des conversations entre dirigeants, investisseurs et décideurs engagés dans les transformations de l’économie européenne.
-            </p>
+    <p class="intro">
+      Une prise de contact ne signifie pas qu’une place est ouverte, mais qu’une position peut éclairer un angle précis.
+    </p>
 
-            <div class="hero-notes">
-              <p class="note">
-                Une partie des conversations en cours de constitution n’est partagée qu’avec les acteurs directement concernés.
-              </p>
-              <p class="meta-text">
-                La plupart des accès font suite à une prise de contact directe.
-              </p>
-            </div>
+    <div class="divider"></div>
 
-            <div class="hero-actions">
-              <a href="#acces" class="text-link">Recevoir le dossier</a>
-              <a href="#dispositif" class="text-link">Comprendre le dispositif</a>
-            </div>
-          </div>
-
-          <aside class="hero-side">
-            <p class="section-label">Maison de conversation</p>
-            <p class="body-text">
-              Une architecture éditoriale pensée pour accueillir des lectures situées, organiser leur mise en regard et inscrire certaines prises de parole dans la durée.
-            </p>
-            <hr class="mini-rule">
-            <p class="meta-text">
-              France · Belgique · Suisse · Luxembourg
-            </p>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section section-dark" id="selection">
-        <div class="wrap grid">
-          <div class="grid-main">
-            <div class="section-head">
-              <p class="section-label">Sélection</p>
-              <h2 class="section-title">Pourquoi vous avez été contacté</h2>
-            </div>
-
-            <p class="section-intro">
-              Une prise de contact ne signifie pas qu’une place est ouverte, mais qu’une position peut éclairer un angle précis.
-            </p>
-
-            <hr class="body-rule">
-
-            <div class="statement-list">
-              <div class="statement">
-                <p>Les contributions sont identifiées à partir d’une lecture des écosystèmes économiques, financiers et institutionnels.</p>
-                <small>Lecture des positions</small>
-              </div>
-
-              <div class="statement">
-                <p>Pour chaque angle, un nombre limité de positions est pertinent. Une fois attribué, un angle n’est pas dupliqué.</p>
-                <small>Rareté structurée</small>
-              </div>
-
-              <div class="statement">
-                <p>Les conversations sont construites à l’échelle européenne, entre la France, la Belgique, la Suisse et le Luxembourg.</p>
-                <small>Espace de circulation</small>
-              </div>
-
-              <div class="statement">
-                <p>Une contribution est retenue lorsqu’elle occupe une place juste dans une lecture en cours de structuration.</p>
-                <small>Justesse avant volume</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="cadres">
-        <div class="wrap grid">
-          <div class="grid-side-left">
-            <p class="section-label">Cadres</p>
-          </div>
-
-          <div class="grid-main">
-            <div class="section-head">
-              <h2 class="section-title">Des cadres éditoriaux identifiés</h2>
-            </div>
-
-            <p class="body-text">
-              Les médias ne constituent pas le cœur du dispositif. Ils offrent des points d’entrée situés.
-            </p>
-
-            <hr class="body-rule">
-
-            <p class="note">
-              Ces formats permettent d’inscrire la parole dans des cadres maîtrisés, compatibles avec les enjeux de responsabilité des dirigeants.
-            </p>
-          </div>
-
-          <div class="grid-side-right">
-            <p class="side-note meta-text">
-              La forme ne précède pas le propos. Elle le tient.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-dark" id="pourquoi">
-        <div class="wrap grid">
-          <div class="grid-main">
-            <div class="section-head">
-              <p class="section-label">Colonne vertébrale</p>
-              <h2 class="section-title">Rendre les transformations plus lisibles</h2>
-            </div>
-
-            <p class="body-text">
-              Les transformations de l’économie réelle ne se lisent pas depuis un seul point de vue.
-            </p>
-
-            <p class="body-text">
-              Elles exigent de croiser des lectures situées : observer, décider, structurer.
-            </p>
-
-            <p class="body-text">
-              En Plateau organise cette mise en regard.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="positions">
-        <div class="wrap grid">
-          <div class="grid-main">
-            <div class="section-head">
-              <p class="section-label">Positions</p>
-              <h2 class="section-title">Trois positions dans l’économie. Une même réalité.</h2>
-            </div>
-
-            <p class="section-intro">
-              La distinction repose sur la place occupée dans l’économie et dans la lecture du sujet.
-            </p>
-
-            <hr class="body-rule">
-
-            <div class="positions">
-              <article class="position">
-                <div>
-                  <p class="position-index">01</p>
-                  <h3>Observer</h3>
-                </div>
-                <p>Lire les recompositions, situer les lignes de fond, rendre visibles les déplacements en cours.</p>
-              </article>
-
-              <article class="position">
-                <div>
-                  <p class="position-index">02</p>
-                  <h3>Décider</h3>
-                </div>
-                <p>Porter une responsabilité, arbitrer, financer, transformer, inscrire des choix dans le réel.</p>
-              </article>
-
-              <article class="position">
-                <div>
-                  <p class="position-index">03</p>
-                  <h3>Structurer</h3>
-                </div>
-                <p>Donner forme à des mouvements plus larges, construire un cadre, relier les positions entre elles.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-dark" id="transition">
-        <div class="wrap grid">
-          <div class="grid-main">
-            <div class="section-head">
-              <p class="section-label">Prolongement</p>
-              <h2 class="section-title">Des prises de parole qui se prolongent</h2>
-            </div>
-
-            <p class="section-intro">
-              Les rencontres prolongent des conversations déjà engagées.
-            </p>
-
-            <hr class="body-rule">
-
-            <p class="body-text">Chaque intervention est construite à partir d’un angle précis.</p>
-            <p class="body-text">Les rencontres mettent ces lectures en regard.</p>
-            <p class="body-text">Elles prolongent une architecture existante.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="rencontres">
-        <div class="wrap grid">
-          <div class="grid-main">
-            <div class="section-head">
-              <p class="section-label">Rencontres</p>
-              <h2 class="section-title">Paris, Bruxelles, Genève</h2>
-            </div>
-
-            <p class="section-intro">
-              Trois rencontres dans un espace économique européen.
-            </p>
-
-            <div class="city-row">
-              <div class="city">Paris</div>
-              <div class="city">Bruxelles</div>
-              <div class="city">Genève</div>
-            </div>
-
-            <hr class="body-rule">
-
-            <p class="body-text">
-              Chaque rencontre réunit des intervenants autour des angles qu’ils portent.
-            </p>
-
-            <p class="note">
-              Certaines conversations ne sont pas rendues publiques.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-dark" id="dispositif">
-        <div class="wrap grid">
-          <div class="grid-main">
-            <div class="section-head">
-              <p class="section-label">Dispositif</p>
-              <h2 class="section-title">Quatre temps</h2>
-            </div>
-
-            <p class="section-intro">
-              Une intervention, inscrite dans une construction éditoriale.
-            </p>
-
-            <div class="steps">
-              <article class="step">
-                <span class="step-num">01</span>
-                <h3 class="step-title">Identifier</h3>
-                <p>Repérer la position, l’angle et la justesse de contribution.</p>
-              </article>
-
-              <article class="step">
-                <span class="step-num">02</span>
-                <h3 class="step-title">Préparer</h3>
-                <p>Structurer le propos, sécuriser le cadre, travailler en amont.</p>
-              </article>
-
-              <article class="step">
-                <span class="step-num">03</span>
-                <h3 class="step-title">Intervenir</h3>
-                <p>Inscrire la parole dans un format, un moment et une lecture.</p>
-              </article>
-
-              <article class="step">
-                <span class="step-num">04</span>
-                <h3 class="step-title">Prolonger</h3>
-                <p>Mettre en regard, relier, prolonger la conversation.</p>
-              </article>
-            </div>
-
-            <hr class="body-rule">
-
-            <p class="note">
-              Le dirigeant valide. La préparation est assurée en amont.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="acces">
-        <div class="wrap grid">
-          <div class="grid-main">
-            <div class="section-head">
-              <p class="section-label">Accès</p>
-              <h2 class="section-title">Entrer dans la maison</h2>
-            </div>
-
-            <p class="section-intro">
-              Deux niveaux d’entrée, selon que vous souhaitez comprendre le cadre ou examiner une participation.
-            </p>
-
-            <div class="access-line">
-              <div class="access-block">
-                <h3 class="access-title">Recevoir le dossier</h3>
-                <p class="body-text">
-                  Pour examiner le cadre, les formats, les logiques de contribution et la structuration en cours.
-                </p>
-                <div class="access-links">
-                  <a href="mailto:contact@enplateau.fr?subject=Demande%20de%20dossier%20—%20En%20Plateau" class="text-link">Demander le dossier</a>
-                </div>
-              </div>
-
-              <div class="access-block">
-                <h3 class="access-title">Comprendre le dispositif</h3>
-                <p class="body-text">
-                  Pour parcourir la logique éditoriale, le positionnement général et la manière dont les conversations sont construites.
-                </p>
-                <div class="access-links">
-                  <a href="#cadres" class="text-link">Lire le cadre</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <footer class="site-footer">
-      <div class="wrap">
-        <div class="footer-grid">
-          <div>
-            <p class="footer-title">En Plateau</p>
-            <p class="footer-copy">
-              Une maison de conversation pour organiser des lectures situées de l’économie européenne et inscrire certaines prises de parole dans la durée.
-            </p>
-          </div>
-
-          <div>
-            <p class="footer-title">Navigation</p>
-            <div class="footer-links">
-              <a href="#selection">Pourquoi vous</a>
-              <a href="#cadres">Cadres</a>
-              <a href="#positions">Positions</a>
-              <a href="#rencontres">Rencontres</a>
-              <a href="#dispositif">Dispositif</a>
-            </div>
-          </div>
-
-          <div>
-            <p class="footer-title">Contact</p>
-            <p class="footer-meta">
-              Prise de contact directe<br>
-              contact@enplateau.fr
-            </p>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <span>En Plateau</span>
-          <span>Maison de conversation</span>
-          <span>Europe francophone</span>
-        </div>
-      </div>
-    </footer>
+    <p>Les contributions sont identifiées à partir d’une lecture des écosystèmes économiques, financiers et institutionnels.</p>
+    <p>Pour chaque angle, un nombre limité de positions est pertinent. Une fois attribué, un angle n’est pas dupliqué.</p>
+    <p>Les conversations sont construites à l’échelle européenne, entre la France, la Belgique, la Suisse et le Luxembourg.</p>
+    <p>Une contribution est retenue lorsqu’elle occupe une place juste dans une lecture en cours de structuration.</p>
 
   </div>
+</section>
 
-  <script>
-    (function () {
-      const menu = document.getElementById('mobileMenu');
-      const toggle = document.getElementById('menuToggle');
-      const closeBtn = document.getElementById('menuClose');
-      const links = menu.querySelectorAll('a');
+<!-- CADRES -->
+<section class="section section-light" id="cadres">
+  <div class="container">
 
-      function openMenu() {
-        menu.classList.add('is-open');
-        menu.setAttribute('aria-hidden', 'false');
-        toggle.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-      }
+    <h2>Des cadres éditoriaux identifiés</h2>
 
-      function closeMenu() {
-        menu.classList.remove('is-open');
-        menu.setAttribute('aria-hidden', 'true');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
+    <p>
+      Les médias ne constituent pas le cœur du dispositif. Ils offrent des points d’entrée situés.
+    </p>
 
-      if (toggle) toggle.addEventListener('click', openMenu);
-      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    <div class="divider"></div>
 
-      menu.addEventListener('click', function(e){
-        if (e.target === menu) closeMenu();
-      });
+    <p class="note">
+      Ces formats permettent d’inscrire la parole dans des cadres maîtrisés, compatibles avec les enjeux de responsabilité des dirigeants.
+    </p>
 
-      links.forEach(function(link){
-        link.addEventListener('click', closeMenu);
-      });
+  </div>
+</section>
 
-      document.addEventListener('keydown', function(e){
-        if (e.key === 'Escape' && menu.classList.contains('is-open')) {
-          closeMenu();
-        }
-      });
-    })();
-  </script>
+<!-- POURQUOI EN PLATEAU -->
+<section class="section section-dark">
+  <div class="container">
+
+    <h2>Rendre les transformations plus lisibles</h2>
+
+    <p>Les transformations de l’économie réelle ne se lisent pas depuis un seul point de vue.</p>
+    <p>Elles exigent de croiser des lectures situées : observer, décider, structurer.</p>
+    <p>En Plateau organise cette mise en regard.</p>
+
+  </div>
+</section>
+
+<!-- POSITIONS -->
+<section class="section section-light" id="positions">
+  <div class="container">
+
+    <h2>Trois positions dans l’économie. Une même réalité.</h2>
+
+    <p class="intro">
+      La distinction repose sur la place occupée dans l’économie et dans la lecture du sujet.
+    </p>
+
+  </div>
+</section>
+
+<!-- TRANSITION -->
+<section class="section section-dark">
+  <div class="container">
+
+    <h2>Des prises de parole qui se prolongent</h2>
+
+    <p class="intro">
+      Les rencontres prolongent des conversations déjà engagées.
+    </p>
+
+    <div class="divider"></div>
+
+    <p>Chaque intervention est construite à partir d’un angle précis.</p>
+    <p>Les rencontres mettent ces lectures en regard.</p>
+    <p>Elles prolongent une architecture existante.</p>
+
+  </div>
+</section>
+
+<!-- RENCONTRES -->
+<section class="section section-light" id="rencontres">
+  <div class="container">
+
+    <h2>Paris, Bruxelles, Genève</h2>
+
+    <p class="intro">
+      Trois rencontres dans un espace économique européen.
+    </p>
+
+    <div class="divider"></div>
+
+    <p>Chaque rencontre réunit des intervenants autour des angles qu’ils portent.</p>
+
+    <p class="note">
+      Certaines conversations ne sont pas rendues publiques.
+    </p>
+
+  </div>
+</section>
+
+<!-- DISPOSITIF -->
+<section class="section section-dark" id="dispositif">
+  <div class="container">
+
+    <h2>Quatre temps</h2>
+
+    <p class="intro">
+      Une intervention, inscrite dans une construction éditoriale.
+    </p>
+
+    <div class="divider"></div>
+
+    <p class="note">
+      Le dirigeant valide. La préparation est assurée en amont.
+    </p>
+
+  </div>
+</section>
+
+<!-- ACCES -->
+<section class="section section-light" id="acces">
+  <div class="container">
+
+    <h2>Accès</h2>
+
+    <p>
+      Deux niveaux d’entrée, selon que vous souhaitez comprendre ou examiner une participation.
+    </p>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>En Plateau — Maison de conversation</p>
+  </div>
+</footer>
+
 </body>
 </html>
