@@ -1,124 +1,94 @@
-async function loadPartial(selector, path) {
-  const mountPoint = document.querySelector(selector);
+(function () {
+  "use strict";
 
-  if (!mountPoint) {
-    return null;
+  async function loadPartials() {
+    const includeNodes = document.querySelectorAll("[data-include]");
+    const jobs = Array.from(includeNodes).map(async (node) => {
+      const file = node.getAttribute("data-include");
+      if (!file) return;
+
+      try {
+        const response = await fetch(file, { cache: "no-cache" });
+        if (!response.ok) {
+          throw new Error(`Impossible de charger ${file} (${response.status})`);
+        }
+
+        const html = await response.text();
+        node.outerHTML = html;
+      } catch (error) {
+        console.error(error);
+      }
+    });
+
+    await Promise.all(jobs);
   }
 
-  try {
-    const response = await fetch(path, { cache: "no-cache" });
+  function initMobileMenu() {
+    const menu = document.getElementById("mobile-menu");
+    const toggle = document.querySelector("[data-menu-toggle]");
+    const closeButtons = document.querySelectorAll("[data-menu-close]");
+    const menuLinks = menu ? menu.querySelectorAll("a") : [];
 
-    if (!response.ok) {
-      throw new Error(`Impossible de charger ${path}`);
+    if (!menu || !toggle) return;
+
+    function openMenu() {
+      menu.classList.add("is-open");
+      menu.setAttribute("aria-hidden", "false");
+      toggle.setAttribute("aria-expanded", "true");
+      document.body.classList.add("menu-open");
     }
 
-    const html = await response.text();
-    mountPoint.innerHTML = html;
-    return mountPoint;
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
-}
-
-function getCurrentPage() {
-  const pathname = window.location.pathname.split("/").pop();
-  return pathname && pathname.length ? pathname : "index.html";
-}
-
-function markActiveLinks() {
-  const pathname = getCurrentPage();
-
-  const isSeriesPage =
-    pathname === "les-batisseurs.html" ||
-    pathname === "les-eclaireurs.html" ||
-    pathname === "les-architectes.html";
-
-  const desktopLinks = document.querySelectorAll(".desktop-editorial-nav__link");
-  const mobileLinks = document.querySelectorAll(".mobile-top-link");
-
-  desktopLinks.forEach((link) => {
-    const href = link.getAttribute("href");
-
-    if (
-      (href === "les-batisseurs.html" && isSeriesPage) ||
-      href === pathname
-    ) {
-      link.classList.add("is-active");
-      link.setAttribute("aria-current", "page");
+    function closeMenu() {
+      menu.classList.remove("is-open");
+      menu.setAttribute("aria-hidden", "true");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
     }
-  });
 
-  mobileLinks.forEach((link) => {
-    const href = link.getAttribute("href");
+    toggle.addEventListener("click", function () {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      if (expanded) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
 
-    if (href === pathname) {
-      link.classList.add("is-active");
-      link.setAttribute("aria-current", "page");
-    }
-  });
-}
+    closeButtons.forEach(function (button) {
+      button.addEventListener("click", closeMenu);
+    });
 
-function bindMobileMenu() {
-  const toggle = document.querySelector(".menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const closeButton = document.querySelector(".mobile-menu-close");
-  const mobileLinks = document.querySelectorAll(".mobile-top-link");
+    menuLinks.forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
 
-  if (!toggle || !mobileMenu) {
-    return;
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && menu.classList.contains("is-open")) {
+        closeMenu();
+      }
+    });
   }
 
-  const openMenu = () => {
-    toggle.setAttribute("aria-expanded", "true");
-    mobileMenu.classList.add("is-open");
-    document.body.style.overflow = "hidden";
-  };
+  function setActiveNav() {
+    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+    const navLinks = document.querySelectorAll(".main-nav a, .mobile-menu-nav a, .footer-nav a");
 
-  const closeMenu = () => {
-    toggle.setAttribute("aria-expanded", "false");
-    mobileMenu.classList.remove("is-open");
-    document.body.style.overflow = "";
-  };
+    navLinks.forEach(function (link) {
+      const href = link.getAttribute("href");
+      if (!href) return;
 
-  toggle.addEventListener("click", function () {
-    const expanded = toggle.getAttribute("aria-expanded") === "true";
-
-    if (expanded) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
-  });
-
-  if (closeButton) {
-    closeButton.addEventListener("click", closeMenu);
+      const linkPath = href.split("/").pop();
+      if (linkPath === currentPath) {
+        link.classList.add("is-active");
+      }
+    });
   }
 
-  mobileLinks.forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
+  async function initLayout() {
+    await loadPartials();
+    initMobileMenu();
+    setActiveNav();
+  }
 
-  mobileMenu.addEventListener("click", function (event) {
-    if (event.target === mobileMenu) {
-      closeMenu();
-    }
-  });
-
-  window.addEventListener("resize", function () {
-    if (window.innerWidth >= 1024) {
-      closeMenu();
-    }
-  });
-}
-
-document.addEventListener("DOMContentLoaded", async function () {
-  await Promise.all([
-    loadPartial("#site-header", "partials/header.html"),
-    loadPartial("#site-mobile-menu", "partials/mobile-menu.html"),
-    loadPartial("#site-footer", "partials/footer.html")
-  ]);
-
-  markActiveLinks();
-  bindMobileMenu();
-});
+  document.addEventListener("DOMContentLoaded", initLayout);
+})();
