@@ -1,197 +1,449 @@
-/* HOME ONLY — VERSION BLEU + BRUN */
+/* =========================
+   HERO
+   ========================= */
 
-:root{
-  --ep-blue-soft:#eef3f8;
-  --ep-blue-soft-2:#e3ebf3;
-  --ep-blue-accent:#5f7fa3;
-  --ep-blue-strong:#2f4f6f;
-
-  --ep-brown:#2a1f1b;
-  --ep-brown-soft:#5a463f;
-}
-
-/* HERO */
-
-#hero-home{
+#hero-home {
   background:
-    linear-gradient(180deg, var(--ep-blue-soft) 0%, var(--ep-blue-soft-2) 100%);
+    linear-gradient(
+      rgba(238, 243, 248, 0.94),
+      rgba(227, 235, 243, 0.96)
+    );
 }
 
-#hero-home h1{
-  max-width:13ch;
-  color:var(--ep-brown);
+.hero {
+  padding: 72px 0 72px;
 }
 
-#hero-home .subhead{
-  max-width:760px;
-  color:var(--ep-brown-soft);
+.hero-grid {
+  display: block;
 }
 
-#hero-home .hero-note{
-  max-width:760px;
-  color:var(--ep-brown-soft);
+.hero-main {
+  max-width: 920px;
 }
 
-/* POURQUOI */
-
-#pourquoi-vous-home .text-block{
-  max-width:780px;
+.season-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: rgba(42, 31, 27, 0.06);
+  color: var(--ep-brown);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 28px;
 }
 
-#pourquoi-vous-home .section-intro{
-  max-width:720px;
+.hero h1 {
+  max-width: 12ch;
+  margin: 0 0 26px;
+  font-family: Bitter, Georgia, serif;
+  font-size: clamp(3rem, 8vw, 5.6rem);
+  line-height: 0.96;
+  color: var(--ep-text);
 }
 
-/* CADRES */
-
-#cadres-editoriaux .editorial-frames-grid{
-  display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
-  gap:24px;
+.hero .subhead {
+  max-width: 820px;
+  margin: 0 0 18px;
+  font-size: clamp(1.22rem, 2vw, 1.6rem);
+  line-height: 1.65;
+  color: var(--ep-text);
 }
 
-.editorial-frame-meta{
-  margin:0 0 8px;
-  font-size:0.92rem;
-  line-height:1.65;
-  color:var(--ep-brown-soft);
+.hero .hero-note {
+  max-width: 820px;
+  margin: 0 0 24px;
+  font-size: 1.02rem;
+  line-height: 1.76;
+  color: var(--ep-text-soft);
 }
 
-.editorial-frame-meta strong{
-  color:var(--ep-brown);
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  margin-top: 26px;
 }
 
-/* POURQUOI EN PLATEAU */
-
-#pourquoi-en-plateau .side-statement{
-  background:var(--ep-blue-soft);
-  border:1px solid rgba(0,0,0,0.06);
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.04rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
 
-#pourquoi-en-plateau .text-block{
-  max-width:760px;
+.hero-link::after {
+  content: "→";
+  font-size: 0.95em;
 }
 
-/* SÉRIES */
-
-#series-en-plateau .card{
-  min-height:100%;
+.hero-link-primary {
+  color: var(--ep-brown);
 }
 
-#series-en-plateau .card p{
-  margin-bottom:18px;
+.hero-link-secondary {
+  color: var(--ep-text-soft);
 }
 
-/* RENCONTRES */
-
-#saison-inaugurale .section-head{
-  max-width:860px;
+.hero-link:hover {
+  opacity: 0.65;
 }
 
-#saison-inaugurale .divider{
-  background:rgba(255,255,255,0.18);
+/* =========================
+   INTRO BLOCK
+   ========================= */
+
+.section-intro-block {
+  padding-top: 44px;
+  padding-bottom: 34px;
 }
 
-#saison-inaugurale .season-event{
-  padding:24px 0 26px;
-  border-top:1px solid rgba(255,255,255,0.1);
+.narrow-head {
+  max-width: 840px;
 }
 
-#saison-inaugurale .season-event:last-of-type{
-  border-bottom:1px solid rgba(255,255,255,0.1);
+/* =========================
+   READING BLOCKS
+   ========================= */
+
+.reading-block {
+  padding-top: 42px;
+  padding-bottom: 42px;
 }
 
-#saison-inaugurale .season-event-meta{
-  color:rgba(255,255,255,0.72);
-  margin-bottom:8px;
-  font-size:0.82rem;
-  letter-spacing:0.1em;
-  text-transform:uppercase;
+.narrow-copy {
+  max-width: 900px;
 }
 
-#saison-inaugurale .season-event h3{
-  color:#fff;
-  margin-bottom:10px;
+.reading-block h3 {
+  margin: 0 0 18px;
+  font-family: Bitter, Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.06;
+  color: var(--ep-text);
 }
 
-#saison-inaugurale .season-event-intro{
-  color:rgba(255,255,255,0.82);
-  max-width:760px;
-  margin-bottom:0;
+.reading-block p:last-child {
+  margin-bottom: 0;
 }
 
-#saison-inaugurale .home-proof,
-#saison-inaugurale .home-signal-note{
-  color:rgba(255,255,255,0.78);
+/* =========================
+   INTEGRATED BLOCK
+   ========================= */
+
+.integrated-editorial-block {
+  max-width: 980px;
+  padding: 34px 34px 30px;
+  border-radius: 2px;
+  background: rgba(248, 251, 253, 0.92);
+  border: 1px solid var(--ep-border);
+  box-shadow: var(--ep-shadow);
 }
 
-/* LIENS (TRÈS IMPORTANT) */
-
-a,
-.link{
-  color:var(--ep-brown);
-  text-decoration:underline;
-  text-underline-offset:3px;
+.integrated-editorial-block h2 {
+  margin: 0 0 14px;
+  max-width: 18ch;
 }
 
-a:hover{
-  color:var(--ep-blue-accent);
+.integrated-intro {
+  margin: 0;
+  max-width: 68ch;
+  font-size: 1.08rem;
+  line-height: 1.78;
+  color: var(--ep-text-soft);
 }
 
-/* CTA — STYLE ÉDITORIAL */
-
-.hero-link.primary{
-  background:none;
-  border:1px solid var(--ep-brown);
-  color:var(--ep-brown);
+.integrated-divider {
+  width: 64px;
+  height: 1px;
+  margin: 22px 0;
+  background: rgba(200, 116, 51, 0.55);
 }
 
-.hero-link.secondary{
-  background:none;
-  border:none;
-  color:var(--ep-brown-soft);
+.integrated-text p:last-child {
+  margin-bottom: 0;
 }
 
-/* FINAL */
+/* =========================
+   SERIES
+   ========================= */
 
-#entrer-dans-le-programme{
-  background:var(--ep-blue-soft);
+#series-en-plateau .card {
+  min-height: 100%;
 }
 
-#entrer-dans-le-programme .section-head{
-  margin-bottom:20px;
+#series-en-plateau .card p {
+  margin-bottom: 18px;
 }
 
-#entrer-dans-le-programme .series-access-grid{
-  margin-top:22px;
+/* =========================
+   SAISON
+   ========================= */
+
+#saison-inaugurale .section-head {
+  max-width: 860px;
 }
 
-#entrer-dans-le-programme .series-access-card{
-  min-height:100%;
+#saison-inaugurale .divider {
+  background: rgba(255, 255, 255, 0.18);
 }
 
-#entrer-dans-le-programme .series-access-head h3{
-  margin-bottom:10px;
+.season-event {
+  padding: 26px 0 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
 }
 
-#entrer-dans-le-programme .series-access-body p{
-  margin-bottom:0;
+.season-event:last-of-type {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 }
 
-/* RESPONSIVE */
+.season-event-meta {
+  margin: 0 0 8px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.74);
+}
 
-@media (max-width: 920px){
-  #cadres-editoriaux .editorial-frames-grid{
-    grid-template-columns:1fr;
+.season-event h3 {
+  margin: 0 0 10px;
+  max-width: 16ch;
+  font-family: Bitter, Georgia, serif;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  line-height: 1.05;
+  color: #ffffff;
+}
+
+.season-event-intro {
+  max-width: 760px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.season-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.season-link:hover {
+  opacity: 0.72;
+}
+
+.home-proof,
+.home-signal-note {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.proof-link-wrap {
+  margin-top: 18px;
+}
+
+/* =========================
+   EDITORIAL FRAMES
+   ========================= */
+
+#cadres-editoriaux .editorial-frames-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.editorial-frame-meta {
+  margin: 0 0 8px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--ep-text-soft);
+}
+
+.editorial-frame-meta strong {
+  color: var(--ep-text);
+  font-weight: 700;
+}
+
+.editorial-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  color: var(--ep-brown);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.editorial-link:hover {
+  opacity: 0.7;
+  color: var(--ep-blue-accent);
+}
+
+/* =========================
+   FINAL PANEL
+   ========================= */
+
+#entrer-dans-le-programme {
+  background: var(--ep-blue-soft);
+}
+
+.final-panel {
+  background: linear-gradient(180deg, #2a1f1b 0%, #342722 100%);
+  color: #f5f3f1;
+  padding: 34px;
+  border-radius: 2px;
+  box-shadow: var(--ep-shadow);
+}
+
+.final-panel .section-head {
+  margin-bottom: 20px;
+}
+
+.final-panel .section-head h2 {
+  color: #ffffff;
+}
+
+.series-access-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 22px;
+}
+
+.series-access-card {
+  min-height: 100%;
+  padding: 24px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.series-access-kicker {
+  margin: 0 0 8px;
+  font-size: 0.76rem;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d7c9bf;
+  font-weight: 700;
+}
+
+.series-access-head h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+}
+
+.series-access-body p {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.cta-wrap {
+  margin-top: 18px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.btn::after {
+  content: "→";
+}
+
+.btn:hover {
+  opacity: 0.72;
+}
+
+.btn-primary,
+.btn-secondary {
+  color: #ffffff;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 920px) {
+  #cadres-editoriaux .editorial-frames-grid,
+  .series-access-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 680px){
-  #hero-home h1{
-    max-width:100%;
+@media (max-width: 680px) {
+  .hero {
+    padding-top: 52px;
+    padding-bottom: 56px;
   }
 
-  #saison-inaugurale .season-event{
-    padding:20px 0 22px;
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(2.7rem, 12vw, 4.3rem);
+    line-height: 0.98;
+  }
+
+  .hero .subhead {
+    font-size: 1.1rem;
+  }
+
+  .hero .hero-note {
+    font-size: 1rem;
+  }
+
+  .hero-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .reading-block {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+
+  .reading-block h3 {
+    font-size: clamp(1.7rem, 9vw, 2.4rem);
+  }
+
+  .integrated-editorial-block,
+  .final-panel {
+    padding: 24px 20px;
+  }
+
+  .season-event {
+    padding: 20px 0 22px;
+  }
+
+  .season-event h3 {
+    max-width: 100%;
+    font-size: clamp(1.7rem, 9vw, 2.2rem);
   }
 }
