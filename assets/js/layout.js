@@ -1,94 +1,120 @@
-document.addEventListener("DOMContentLoaded", () => {
+async function loadPartial(selector, path) {
+const mountPoint = document.querySelector(selector);
 
-  /* =========================
-     HEADER LOAD (si externalisé)
-     ========================= */
+if (!mountPoint) {
+return null;
+}
 
-  const headerContainer = document.getElementById("site-header");
-  const mobileMenuContainer = document.getElementById("site-mobile-menu");
+try {
+const response = await fetch(path, { cache: "no-cache" });
 
-  // Si tu charges header/footer en AJAX, sinon ignoré
-  if (headerContainer && headerContainer.children.length === 0) {
-    fetch("partials/header.html")
-      .then(res => res.text())
-      .then(html => {
-        headerContainer.innerHTML = html;
-        initMenu(); // important après injection
-      });
-  } else {
-    initMenu();
-  }
+if (!response.ok) {  
+  throw new Error(`Impossible de charger ${path}`);  
+}  
 
-  /* =========================
-     MENU MOBILE
-     ========================= */
+const html = await response.text();  
+mountPoint.innerHTML = html;  
+return mountPoint;
 
-  function initMenu() {
+} catch (error) {
+console.error(error);
+return null;
+}
+}
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const mobileMenu = document.querySelector(".mobile-menu");
-    const menuClose = document.querySelector(".mobile-menu-close");
+function getCurrentPage() {
+const pathname = window.location.pathname.split("/").pop();
+return pathname && pathname.length ? pathname : "index.html";
+}
 
-    if (!menuToggle || !mobileMenu) return;
+function markActiveLinks() {
+const pathname = getCurrentPage();
 
-    function openMenu() {
-      mobileMenu.classList.add("is-open");
-      menuToggle.setAttribute("aria-expanded", "true");
-      document.body.style.overflow = "hidden";
-    }
+const isSeriesPage =
+pathname === "les-batisseurs.html" ||
+pathname === "les-eclaireurs.html" ||
+pathname === "les-architectes.html";
 
-    function closeMenu() {
-      mobileMenu.classList.remove("is-open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
-    }
+const desktopLinks = document.querySelectorAll(".desktop-editorial-nav__link");
+const mobileLinks = document.querySelectorAll(".mobile-top-link");
 
-    menuToggle.addEventListener("click", () => {
-      const isOpen = mobileMenu.classList.contains("is-open");
-      isOpen ? closeMenu() : openMenu();
-    });
+desktopLinks.forEach((link) => {
+const href = link.getAttribute("href");
 
-    if (menuClose) {
-      menuClose.addEventListener("click", closeMenu);
-    }
+if (  
+  (href === "les-batisseurs.html" && isSeriesPage) ||  
+  href === pathname  
+) {  
+  link.classList.add("is-active");  
+}
 
-    // Fermer si clic en dehors
-    document.addEventListener("click", (e) => {
-      if (!mobileMenu.classList.contains("is-open")) return;
+});
 
-      if (
-        !mobileMenu.contains(e.target) &&
-        !menuToggle.contains(e.target)
-      ) {
-        closeMenu();
-      }
-    });
+mobileLinks.forEach((link) => {
+const href = link.getAttribute("href");
 
-    // Fermer avec ESC
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
-    });
+if (href === pathname) {  
+  link.classList.add("is-active");  
+}
 
-    // Fermer quand on clique sur un lien
-    mobileMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", closeMenu);
-    });
-  }
+});
+}
 
-  /* =========================
-     ACTIVE LINK (MENU)
-     ========================= */
+function bindMobileMenu() {
+const toggle = document.querySelector(".menu-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+const closeButton = document.querySelector(".mobile-menu-close");
+const mobileLinks = document.querySelectorAll(".mobile-top-link");
 
-  const currentPath = window.location.pathname.split("/").pop();
+if (!toggle || !mobileMenu) {
+return;
+}
 
-  document.querySelectorAll("a[href]").forEach(link => {
-    const href = link.getAttribute("href");
+const openMenu = () => {
+toggle.setAttribute("aria-expanded", "true");
+mobileMenu.classList.add("is-open");
+document.body.style.overflow = "hidden";
+};
 
-    if (!href || href.startsWith("#")) return;
+const closeMenu = () => {
+toggle.setAttribute("aria-expanded", "false");
+mobileMenu.classList.remove("is-open");
+document.body.style.overflow = "";
+};
 
-    if (href === currentPath) {
-      link.classList.add("is-active");
-    }
-  });
+toggle.addEventListener("click", function () {
+const expanded = toggle.getAttribute("aria-expanded") === "true";
 
+if (expanded) {  
+  closeMenu();  
+} else {  
+  openMenu();  
+}
+
+});
+
+if (closeButton) {
+closeButton.addEventListener("click", closeMenu);
+}
+
+mobileLinks.forEach((link) => {
+link.addEventListener("click", closeMenu);
+});
+
+window.addEventListener("resize", function () {
+if (window.innerWidth >= 1024) {
+closeMenu();
+}
+});
+}
+
+document.addEventListener("DOMContentLoaded", async function () {
+await Promise.all([
+loadPartial("#site-header", "partials/header.html"),
+loadPartial("#site-mobile-menu", "partials/mobile-menu.html"),
+loadPartial("#site-footer", "partials/footer.html")
+]);
+
+markActiveLinks();
+bindMobileMenu();
 });
