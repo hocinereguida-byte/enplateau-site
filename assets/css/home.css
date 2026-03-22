@@ -67,14 +67,6 @@
   margin-right: 0;
 }
 
-.hero-inner--left .hero-title {
-  max-width: 11.5ch;
-}
-
-.hero-inner--left .hero-subtitle {
-  max-width: 34ch;
-}
-
 .hero-inner--left .hero-actions {
   justify-content: flex-start;
 }
@@ -86,7 +78,7 @@
 
 .hero-kicker {
   display: block;
-  margin: 0 auto 22px;
+  margin: 0 0 22px;
   font-size: 0.76rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -95,10 +87,10 @@
 }
 
 .hero-title {
-  margin: 0 auto 24px;
-  max-width: 12ch;
+  margin: 0 0 24px;
+  max-width: 13.5ch;
   font-family: Bitter, Georgia, serif;
-  font-size: clamp(2.9rem, 7vw, 5.8rem);
+  font-size: clamp(3rem, 6.2vw, 5.8rem);
   line-height: 0.95;
   letter-spacing: -0.045em;
   color: #f5f1ec;
@@ -106,16 +98,17 @@
 }
 
 .hero-subtitle {
-  max-width: 35ch;
-  margin: 0 auto;
+  max-width: 34ch;
+  margin: 0;
   font-size: clamp(1.04rem, 1.8vw, 1.28rem);
   line-height: 1.74;
   color: rgba(245, 241, 236, 0.84);
+  text-wrap: pretty;
 }
 
 .hero-actions {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   gap: 22px;
@@ -147,19 +140,21 @@
 }
 
 .hero-meta {
-  margin: 26px auto 0;
+  margin: 26px 0 0;
   max-width: 42ch;
   font-size: 0.88rem;
   line-height: 1.64;
   color: rgba(245, 241, 236, 0.68);
+  text-wrap: pretty;
 }
 
 .hero-note {
-  margin: 14px auto 0;
+  margin: 14px 0 0;
   max-width: 44ch;
   font-size: 0.84rem;
   line-height: 1.62;
   color: rgba(245, 241, 236, 0.58);
+  text-wrap: pretty;
 }
 
 /* =========================
@@ -187,18 +182,21 @@
 
 .why-editorial-item h3 {
   margin: 0 0 8px;
+  max-width: 20ch;
   font-family: Bitter, Georgia, serif;
   font-size: 1.28rem;
   line-height: 1.12;
   letter-spacing: -0.02em;
   color: #1a120f;
+  text-wrap: balance;
 }
 
 .why-editorial-item p {
-  margin: 0;
+  max-width: var(--ep-copy);
+  margin: 6px 0 0;
   color: var(--ep-text-muted);
   line-height: 1.78;
-  max-width: 64ch;
+  text-wrap: pretty;
 }
 
 /* =========================
@@ -221,11 +219,13 @@
 
 .frame-row-head h3 {
   margin: 0 0 6px;
+  max-width: 16ch;
   font-family: Bitter, Georgia, serif;
   font-size: 1.24rem;
   line-height: 1.12;
   letter-spacing: -0.02em;
   color: #18110f;
+  text-wrap: balance;
 }
 
 .frame-row-meta {
@@ -236,9 +236,11 @@
 }
 
 .frame-row > p {
+  max-width: var(--ep-copy);
   margin: 0;
   line-height: 1.76;
   color: var(--ep-text-muted);
+  text-wrap: pretty;
 }
 
 /* =========================
@@ -305,20 +307,22 @@
 
 .rencontre-item h3 {
   margin: 0 0 12px;
-  max-width: 22ch;
+  max-width: 20ch;
   font-family: Bitter, Georgia, serif;
   font-size: clamp(1.52rem, 3.4vw, 2.18rem);
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: #ffffff;
+  text-wrap: balance;
 }
 
 .rencontre-item p {
+  max-width: 58ch;
   margin: 0;
-  max-width: 62ch;
   font-size: 1rem;
   line-height: 1.74;
   color: rgba(245, 241, 236, 0.78);
+  text-wrap: pretty;
 }
 
 .rencontres-footer {
@@ -331,6 +335,7 @@
   font-size: 0.82rem;
   line-height: 1.62;
   color: rgba(255, 255, 255, 0.54);
+  text-wrap: pretty;
 }
 
 .rencontres-link {
@@ -365,17 +370,21 @@
 
 .dispositif-step h3 {
   margin: 0 0 10px;
+  max-width: 18ch;
   font-family: Bitter, Georgia, serif;
   font-size: 1.28rem;
   line-height: 1.12;
   letter-spacing: -0.02em;
   color: #1a120f;
+  text-wrap: balance;
 }
 
 .dispositif-step p {
-  margin: 0;
+  max-width: var(--ep-copy);
+  margin: 6px 0 0;
   line-height: 1.76;
   color: var(--ep-text-muted);
+  text-wrap: pretty;
 }
 
 .dispositif-step--featured {
@@ -396,12 +405,13 @@
 
 .why-ep-statement h3 {
   margin: 0;
-  max-width: 18ch;
+  max-width: 16ch;
   font-family: Bitter, Georgia, serif;
   font-size: 1.72rem;
   line-height: 1.12;
   letter-spacing: -0.025em;
   color: #18110f;
+  text-wrap: balance;
 }
 
 .why-ep-text {
@@ -409,9 +419,11 @@
 }
 
 .why-ep-text p {
+  max-width: var(--ep-copy);
   margin: 0 0 16px;
   line-height: 1.84;
   color: var(--ep-text-muted);
+  text-wrap: pretty;
 }
 
 .why-ep-text p:last-child {
@@ -440,7 +452,7 @@
 }
 
 .series-grid .card h3 {
-  max-width: 14ch;
+  max-width: 13ch;
 }
 
 .series-grid .link {
@@ -490,10 +502,12 @@
 .access-primary h3,
 .access-secondary h3 {
   margin: 0 0 10px;
+  max-width: 16ch;
   font-family: Bitter, Georgia, serif;
   line-height: 1.12;
   letter-spacing: -0.02em;
   color: var(--ep-text);
+  text-wrap: balance;
 }
 
 .access-primary h3 {
@@ -506,10 +520,11 @@
 
 .access-primary p,
 .access-secondary p {
-  margin: 0 0 16px;
   max-width: 42ch;
+  margin: 0 0 16px;
   line-height: 1.76;
   color: var(--ep-text-muted);
+  text-wrap: pretty;
 }
 
 .access-link {
@@ -561,8 +576,8 @@
   }
 
   .hero-title {
-    max-width: 12.5ch;
-    font-size: clamp(3.2rem, 6vw, 6.25rem);
+    max-width: 14ch;
+    font-size: clamp(3.4rem, 5.4vw, 6.2rem);
   }
 
   .hero-subtitle {
@@ -623,7 +638,8 @@
   }
 
   .hero-title {
-    font-size: clamp(3rem, 6.6vw, 5.9rem);
+    max-width: 13.5ch;
+    font-size: clamp(2.9rem, 5.8vw, 5.4rem);
   }
 
   .hero-subtitle {
@@ -645,7 +661,7 @@
   }
 
   .hero-title {
-    max-width: 12ch;
+    max-width: 13.5ch;
     font-size: clamp(2.55rem, 6.4vw, 5rem);
     line-height: 0.96;
   }
@@ -702,8 +718,8 @@
   }
 
   .hero-title {
-    max-width: 12ch;
-    font-size: clamp(2.35rem, 6.8vw, 4.35rem);
+    max-width: 14ch;
+    font-size: clamp(2.5rem, 6vw, 4.3rem);
     line-height: 0.97;
     margin-bottom: 20px;
   }
@@ -773,8 +789,8 @@
   }
 
   .hero-title {
-    max-width: 11.8ch;
-    font-size: clamp(2.08rem, 8.4vw, 3.45rem);
+    max-width: 14ch;
+    font-size: clamp(2.15rem, 7vw, 3.3rem);
     line-height: 0.98;
     letter-spacing: -0.04em;
     margin-bottom: 18px;
@@ -902,9 +918,9 @@
   }
 
   .hero-title {
-    max-width: 11.8ch;
-    font-size: clamp(1.88rem, 8vw, 3rem);
-    line-height: 1;
+    max-width: 14ch;
+    font-size: clamp(1.9rem, 8.2vw, 2.8rem);
+    line-height: 0.99;
     letter-spacing: -0.038em;
     margin-bottom: 16px;
   }
@@ -1025,9 +1041,9 @@
   }
 
   .hero-title {
-    max-width: 12.2ch;
-    font-size: clamp(1.72rem, 7.4vw, 2.65rem);
-    line-height: 1.01;
+    max-width: 13.8ch;
+    font-size: clamp(1.72rem, 8vw, 2.45rem);
+    line-height: 1;
   }
 
   .hero-subtitle {
