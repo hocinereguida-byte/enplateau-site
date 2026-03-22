@@ -1,41 +1,54 @@
 <header class="site-header">
   <div class="site-header__inner">
+
+    <!-- LEFT : MENU + LOGO -->
     <div class="site-header__left">
-      <a href="index.html" class="site-brand" aria-label="En Plateau — Accueil">
-        <img src="assets/images/logo-en-plateau.svg" alt="En Plateau" class="site-brand__logo">
-      </a>
-    </div>
 
-    <div class="site-header__center">
-      <nav class="desktop-editorial-nav" aria-label="Navigation principale">
-        <a href="programme.html" class="desktop-editorial-nav__link">
-          <span class="desktop-editorial-nav__label">Programme</span>
-        </a>
-        <a href="positions.html" class="desktop-editorial-nav__link">
-          <span class="desktop-editorial-nav__label">Positions</span>
-        </a>
-        <a href="rencontres.html" class="desktop-editorial-nav__link">
-          <span class="desktop-editorial-nav__label">Rencontres</span>
-        </a>
-        <a href="participer.html" class="desktop-editorial-nav__link">
-          <span class="desktop-editorial-nav__label">Participer</span>
-        </a>
-      </nav>
-    </div>
-
-    <div class="site-header__right">
-      <a href="participer.html#approche" class="site-header__cta">Recevoir le dossier</a>
-
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        aria-label="Ouvrir le menu">
+      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
+
+      <a href="index.html" class="site-brand">
+        <img 
+          src="/enplateau-site/images/Logo_en_plateau.svg" 
+          alt="En Plateau"
+          class="site-brand__logo"
+        >
+      </a>
+
     </div>
+
+    <!-- CENTER : NAV DESKTOP -->
+    <div class="site-header__center">
+      <nav class="desktop-editorial-nav">
+
+        <a href="programme.html" class="desktop-editorial-nav__link">
+          <span class="desktop-editorial-nav__label">Programme</span>
+        </a>
+
+        <a href="positions.html" class="desktop-editorial-nav__link">
+          <span class="desktop-editorial-nav__label">Positions</span>
+        </a>
+
+        <a href="rencontres.html" class="desktop-editorial-nav__link">
+          <span class="desktop-editorial-nav__label">Rencontres</span>
+        </a>
+
+        <a href="participer.html" class="desktop-editorial-nav__link">
+          <span class="desktop-editorial-nav__label">Participer</span>
+        </a>
+
+      </nav>
+    </div>
+
+    <!-- RIGHT : CTA -->
+    <div class="site-header__right">
+      <a href="participer.html" class="site-header__cta">
+        Recevoir le dossier
+      </a>
+    </div>
+
   </div>
 </header>
