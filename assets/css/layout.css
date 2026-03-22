@@ -87,6 +87,7 @@ button {
 
   --ep-container: 1280px;
   --ep-reading: 760px;
+  --ep-copy: 60ch;
 }
 
 /* =========================
@@ -587,6 +588,7 @@ section.dark {
 
 .section-head h2 {
   margin: 0 0 16px;
+  max-width: 18ch;
   font-family: Bitter, Georgia, serif;
   font-size: clamp(2rem, 2.6vw, 3.1rem);
   line-height: 1.02;
@@ -594,15 +596,21 @@ section.dark {
   color: var(--ep-text);
 }
 
+.section-head--centered h2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 section.dark .section-head h2 {
   color: #f5f1ec;
 }
 
 .section-intro {
-  max-width: 62ch;
+  max-width: 52ch;
   color: var(--ep-text-muted);
   line-height: 1.78;
   font-size: 1rem;
+  text-wrap: pretty;
 }
 
 section.dark .section-intro {
@@ -610,10 +618,12 @@ section.dark .section-intro {
 }
 
 .section-footnote {
+  max-width: var(--ep-copy);
   margin-top: 28px;
   font-size: 0.9rem;
   line-height: 1.72;
   color: var(--ep-text-faint);
+  text-wrap: pretty;
 }
 
 .section-footnote--centered {
@@ -695,18 +705,22 @@ section.dark .section-intro {
 
 .card h3 {
   margin: 0 0 12px;
+  max-width: 15ch;
   font-family: Bitter, Georgia, serif;
   font-size: 1.38rem;
   line-height: 1.12;
   letter-spacing: -0.02em;
   color: #18110f;
+  text-wrap: balance;
 }
 
 .card p {
+  max-width: var(--ep-copy);
   margin: 0;
   color: var(--ep-text-muted);
   line-height: 1.76;
   font-size: 1rem;
+  text-wrap: pretty;
 }
 
 /* =========================
@@ -721,10 +735,12 @@ section.dark .section-intro {
 }
 
 .text-block p {
+  max-width: var(--ep-copy);
   margin: 0 0 16px;
   line-height: 1.82;
   color: var(--ep-text-muted);
   font-size: 1rem;
+  text-wrap: pretty;
 }
 
 .text-block p:last-child {
@@ -754,6 +770,7 @@ section.dark .section-intro {
   :root {
     --ep-container: 1360px;
     --ep-reading: 800px;
+    --ep-copy: 62ch;
   }
 
   body {
@@ -930,11 +947,13 @@ section.dark .section-intro {
   }
 
   .section-head h2 {
+    max-width: 17ch;
     font-size: clamp(1.76rem, 4.2vw, 2.42rem);
     line-height: 1.05;
   }
 
   .section-intro {
+    max-width: 50ch;
     font-size: 0.98rem;
     line-height: 1.74;
   }
@@ -990,12 +1009,14 @@ section.dark .section-intro {
   }
 
   .section-head h2 {
+    max-width: 16ch;
     font-size: clamp(1.62rem, 6vw, 2.16rem);
     line-height: 1.08;
     letter-spacing: -0.025em;
   }
 
   .section-intro {
+    max-width: 46ch;
     font-size: 0.97rem;
     line-height: 1.72;
   }
@@ -1064,11 +1085,13 @@ section.dark .section-intro {
   }
 
   .section-head h2 {
+    max-width: 15ch;
     font-size: clamp(1.5rem, 6.9vw, 1.96rem);
     line-height: 1.09;
   }
 
   .section-intro {
+    max-width: 42ch;
     font-size: 0.95rem;
     line-height: 1.7;
   }
@@ -1126,6 +1149,7 @@ section.dark .section-intro {
   }
 
   .section-head h2 {
+    max-width: 14ch;
     font-size: clamp(1.42rem, 7vw, 1.82rem);
   }
 
