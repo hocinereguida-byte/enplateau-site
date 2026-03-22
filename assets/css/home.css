@@ -503,7 +503,7 @@
 }
 
 /* =========================
-   REVEAL CIBLÉ (si home.js)
+   REVEAL CIBLÉ
    ========================= */
 
 .home-page .section-head.reveal,
@@ -516,22 +516,193 @@
 }
 
 /* =========================
-   RESPONSIVE
+   VERY LARGE DESKTOP
    ========================= */
 
-@media (max-width: 1100px) {
-  .why-ep-editorial,
-  .frame-row,
-  .access-editorial {
-    grid-template-columns: 1fr;
+@media (min-width: 1600px) {
+  .hero {
+    padding: 118px 0 92px;
   }
 
+  .hero-inner {
+    max-width: 920px;
+  }
+
+  .hero-title {
+    max-width: 12.5ch;
+    font-size: clamp(3.2rem, 6vw, 6.25rem);
+  }
+
+  .hero-subtitle {
+    max-width: 38ch;
+    font-size: clamp(1.08rem, 1.6vw, 1.34rem);
+  }
+
+  .hero-meta {
+    max-width: 46ch;
+    font-size: 0.9rem;
+  }
+
+  .hero-note {
+    max-width: 48ch;
+    font-size: 0.85rem;
+  }
+
+  .home-section,
+  .section-rencontres {
+    padding: 96px 0;
+  }
+
+  .why-editorial-list,
+  .frames-list,
+  .dispositif-steps {
+    margin-top: 52px;
+  }
+
+  .why-editorial-item h3,
+  .dispositif-step h3 {
+    font-size: 1.34rem;
+  }
+
+  .frame-row-head h3 {
+    font-size: 1.28rem;
+  }
+
+  .why-ep-statement h3 {
+    font-size: 1.82rem;
+  }
+
+  .access-primary h3 {
+    font-size: 1.58rem;
+  }
+}
+
+/* =========================
+   LARGE DESKTOP
+   ========================= */
+
+@media (min-width: 1281px) and (max-width: 1599px) {
+  .hero {
+    padding: 108px 0 84px;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 6.6vw, 5.9rem);
+  }
+
+  .hero-subtitle {
+    max-width: 36ch;
+  }
+}
+
+/* =========================
+   STANDARD DESKTOP / LAPTOP
+   ========================= */
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .hero {
+    padding: 94px 0 74px;
+  }
+
+  .hero-inner {
+    max-width: 820px;
+  }
+
+  .hero-title {
+    max-width: 12ch;
+    font-size: clamp(2.55rem, 6.4vw, 5rem);
+    line-height: 0.96;
+  }
+
+  .hero-subtitle {
+    max-width: 34ch;
+    font-size: clamp(1rem, 1.7vw, 1.18rem);
+  }
+
+  .hero-actions {
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .hero-meta {
+    margin-top: 24px;
+  }
+
+  .home-section,
+  .section-rencontres {
+    padding: 78px 0;
+  }
+
+  .why-editorial-list,
+  .frames-list,
+  .dispositif-steps {
+    margin-top: 40px;
+  }
+
+  .frame-row {
+    gap: 22px;
+  }
+
+  .access-editorial {
+    gap: 30px;
+  }
+}
+
+/* =========================
+   TABLET LANDSCAPE / SMALL LAPTOP
+   ========================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero {
+    padding: 86px 0 64px;
+  }
+
+  .hero-inner {
+    max-width: 760px;
+  }
+
+  .hero-kicker {
+    margin-bottom: 18px;
+  }
+
+  .hero-title {
+    max-width: 13ch;
+    font-size: clamp(2.35rem, 6.8vw, 4.35rem);
+    line-height: 0.97;
+    margin-bottom: 20px;
+  }
+
+  .hero-subtitle {
+    max-width: 38ch;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .hero-meta,
+  .hero-note {
+    max-width: 40ch;
+  }
+
+  .home-section,
+  .section-rencontres {
+    padding: 68px 0;
+  }
+
+  .why-ep-editorial,
+  .frame-row,
+  .access-editorial,
   .dispositif-steps {
     grid-template-columns: 1fr;
   }
 
   .why-ep-statement h3 {
     max-width: none;
+    font-size: 1.5rem;
   }
 
   .why-ep-text,
@@ -539,51 +710,83 @@
   .access-secondary p {
     max-width: none;
   }
+
+  .rencontre-item h3 {
+    max-width: none;
+    font-size: clamp(1.34rem, 4vw, 1.9rem);
+  }
 }
 
-@media (max-width: 767px) {
+/* =========================
+   MOBILE LARGE
+   ========================= */
+
+@media (min-width: 481px) and (max-width: 767px) {
   .hero {
-    padding: 78px 0 56px;
+    padding: 74px 0 52px;
   }
 
   .hero-kicker {
-    margin-bottom: 18px;
-    font-size: 0.72rem;
+    margin-bottom: 16px;
+    font-size: 0.7rem;
+    letter-spacing: 0.13em;
   }
 
   .hero-title {
-    max-width: 10ch;
-    font-size: clamp(2.3rem, 10.6vw, 4rem);
-    line-height: 0.99;
-    margin-bottom: 20px;
+    max-width: 12ch;
+    font-size: clamp(2.08rem, 8.4vw, 3.45rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+    margin-bottom: 18px;
   }
 
   .hero-subtitle {
-    max-width: 29ch;
-    font-size: 1rem;
-    line-height: 1.74;
+    max-width: 32ch;
+    font-size: 0.98rem;
+    line-height: 1.68;
   }
 
   .hero-actions {
     flex-direction: column;
     gap: 12px;
-    margin-top: 24px;
+    margin-top: 22px;
   }
 
-  .hero-meta,
+  .hero-link-primary,
+  .hero-link-secondary {
+    font-size: 0.94rem;
+  }
+
+  .hero-meta {
+    margin-top: 22px;
+    max-width: 35ch;
+    font-size: 0.85rem;
+    line-height: 1.62;
+  }
+
   .hero-note {
-    max-width: 30ch;
+    margin-top: 12px;
+    max-width: 35ch;
+    font-size: 0.8rem;
+    line-height: 1.6;
   }
 
   .home-section,
   .section-rencontres {
-    padding: 64px 0;
+    padding: 60px 0;
   }
 
   .why-editorial-list,
   .frames-list,
   .dispositif-steps {
-    margin-top: 32px;
+    margin-top: 30px;
+  }
+
+  .why-ep-editorial,
+  .frame-row,
+  .access-editorial,
+  .dispositif-steps {
+    grid-template-columns: 1fr;
   }
 
   .why-editorial-item,
@@ -596,36 +799,210 @@
   }
 
   .rencontres-timeline {
-    gap: 28px;
-    margin-top: 36px;
+    gap: 26px;
+    margin-top: 34px;
   }
 
   .rencontre-item h3 {
     max-width: none;
-    font-size: clamp(1.3rem, 7vw, 1.88rem);
-    line-height: 1.10;
+    font-size: clamp(1.24rem, 6vw, 1.74rem);
+    line-height: 1.1;
   }
 
   .rencontre-item p {
-    font-size: 0.98rem;
+    font-size: 0.96rem;
+    line-height: 1.68;
   }
 
   .rencontres-footer {
-    margin-top: 34px;
+    margin-top: 32px;
   }
 
   .why-ep-statement h3 {
-    font-size: 1.46rem;
+    max-width: none;
+    font-size: 1.38rem;
+  }
+
+  .why-ep-text,
+  .access-primary p,
+  .access-secondary p {
+    max-width: none;
   }
 
   .why-editorial-item h3,
   .dispositif-step h3,
   .frame-row-head h3,
   .access-secondary h3 {
-    font-size: 1.18rem;
+    font-size: 1.14rem;
   }
 
   .access-primary h3 {
-    font-size: 1.34rem;
+    font-size: 1.3rem;
+  }
+}
+
+/* =========================
+   MOBILE STANDARD / SMALL
+   ========================= */
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 68px 0 48px;
+  }
+
+  .hero-kicker {
+    margin-bottom: 14px;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-title {
+    max-width: 12.5ch;
+    font-size: clamp(1.88rem, 8vw, 3rem);
+    line-height: 1;
+    letter-spacing: -0.038em;
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    max-width: 33ch;
+    font-size: 0.95rem;
+    line-height: 1.64;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .hero-link-primary,
+  .hero-link-secondary {
+    font-size: 0.92rem;
+  }
+
+  .hero-meta {
+    margin-top: 20px;
+    max-width: 35ch;
+    font-size: 0.82rem;
+    line-height: 1.58;
+  }
+
+  .hero-note {
+    margin-top: 10px;
+    max-width: 35ch;
+    font-size: 0.78rem;
+    line-height: 1.56;
+  }
+
+  .home-section,
+  .section-rencontres {
+    padding: 56px 0;
+  }
+
+  .why-editorial-list,
+  .frames-list,
+  .dispositif-steps {
+    margin-top: 28px;
+  }
+
+  .why-ep-editorial,
+  .frame-row,
+  .access-editorial,
+  .dispositif-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .why-editorial-item,
+  .frame-row,
+  .dispositif-step,
+  .access-primary,
+  .access-secondary {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .rencontres-timeline {
+    gap: 24px;
+    margin-top: 30px;
+  }
+
+  .rencontre-item {
+    padding-left: 20px;
+  }
+
+  .rencontre-item h3 {
+    max-width: none;
+    font-size: clamp(1.18rem, 6.4vw, 1.58rem);
+    line-height: 1.1;
+  }
+
+  .rencontre-item p {
+    font-size: 0.94rem;
+    line-height: 1.66;
+  }
+
+  .rencontres-footer {
+    margin-top: 28px;
+  }
+
+  .why-ep-statement h3 {
+    max-width: none;
+    font-size: 1.3rem;
+  }
+
+  .why-ep-text,
+  .access-primary p,
+  .access-secondary p {
+    max-width: none;
+  }
+
+  .why-editorial-item h3,
+  .dispositif-step h3,
+  .frame-row-head h3,
+  .access-secondary h3 {
+    font-size: 1.1rem;
+  }
+
+  .access-primary h3 {
+    font-size: 1.24rem;
+  }
+}
+
+/* =========================
+   EXTRA SMALL MOBILE
+   ========================= */
+
+@media (max-width: 360px) {
+  .hero {
+    padding: 64px 0 44px;
+  }
+
+  .hero-title {
+    max-width: 13ch;
+    font-size: clamp(1.72rem, 7.4vw, 2.65rem);
+    line-height: 1.01;
+  }
+
+  .hero-subtitle {
+    max-width: 34ch;
+    font-size: 0.92rem;
+  }
+
+  .hero-meta {
+    font-size: 0.79rem;
+  }
+
+  .hero-note {
+    font-size: 0.75rem;
+  }
+
+  .hero-link-primary,
+  .hero-link-secondary {
+    font-size: 0.9rem;
+  }
+
+  .rencontre-item h3 {
+    font-size: clamp(1.12rem, 6.6vw, 1.44rem);
   }
 }
