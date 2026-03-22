@@ -87,6 +87,7 @@ button {
 
   --ep-container: 1280px;
   --ep-reading: 760px;
+  --ep-reading-wide: 920px;
   --ep-copy: 60ch;
 }
 
@@ -545,12 +546,14 @@ section.dark {
 
 .section-head {
   margin-bottom: 34px;
+  max-width: min(var(--ep-reading), 100%);
 }
 
 .section-head--narrow {
-  max-width: var(--ep-reading);
+  max-width: min(var(--ep-reading), 100%);
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 .section-head--centered {
@@ -588,17 +591,14 @@ section.dark {
 
 .section-head h2 {
   margin: 0 0 16px;
-  max-width: 18ch;
   font-family: Bitter, Georgia, serif;
-  font-size: clamp(2rem, 2.6vw, 3.1rem);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  color: var(--ep-text);
-}
-
-.section-head--centered h2 {
+  font-size: clamp(1.9rem, 3.2vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 22ch;
   margin-left: auto;
   margin-right: auto;
+  color: var(--ep-text);
 }
 
 section.dark .section-head h2 {
@@ -606,7 +606,9 @@ section.dark .section-head h2 {
 }
 
 .section-intro {
-  max-width: 52ch;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
   color: var(--ep-text-muted);
   line-height: 1.78;
   font-size: 1rem;
@@ -769,7 +771,8 @@ section.dark .section-intro {
 @media (min-width: 1600px) {
   :root {
     --ep-container: 1360px;
-    --ep-reading: 800px;
+    --ep-reading: 820px;
+    --ep-reading-wide: 980px;
     --ep-copy: 62ch;
   }
 
@@ -804,11 +807,17 @@ section.dark .section-intro {
     padding: 96px 0;
   }
 
+  .section-head {
+    max-width: var(--ep-reading-wide);
+  }
+
   .section-head h2 {
+    max-width: 24ch;
     font-size: clamp(2.2rem, 2.5vw, 3.35rem);
   }
 
   .section-intro {
+    max-width: 68ch;
     font-size: 1.04rem;
   }
 
