@@ -556,6 +556,16 @@ section.dark {
   text-align: center;
 }
 
+.section-head--centered .section-intro {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-head--centered .divider {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .section-kicker {
   font-size: 0.74rem;
   letter-spacing: 0.14em;
@@ -595,11 +605,6 @@ section.dark .section-head h2 {
   font-size: 1rem;
 }
 
-.section-head--centered .section-intro {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 section.dark .section-intro {
   color: rgba(245, 241, 236, 0.82);
 }
@@ -623,11 +628,6 @@ section.dark .section-intro {
   height: 1px;
   margin-top: 20px;
   background: rgba(181, 106, 54, 0.50);
-}
-
-.section-head--centered .divider {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* =========================
