@@ -6,6 +6,8 @@ async function loadPartial(selector, path) {
   }
 
   try {
+    mountPoint.style.opacity = "0";
+
     const response = await fetch(path, { cache: "no-cache" });
 
     if (!response.ok) {
@@ -14,6 +16,12 @@ async function loadPartial(selector, path) {
 
     const html = await response.text();
     mountPoint.innerHTML = html;
+
+    requestAnimationFrame(() => {
+      mountPoint.style.transition = "opacity 0.35s ease";
+      mountPoint.style.opacity = "1";
+    });
+
     return mountPoint;
   } catch (error) {
     console.error(error);
@@ -35,20 +43,24 @@ function markActiveLinks() {
     pathname === "les-architectes.html";
 
   const desktopLinks = document.querySelectorAll(".desktop-editorial-nav__link");
-  const mobileLinks = document.querySelectorAll(".mobile-top-link");
+  const mobileLinks = document.querySelectorAll(".mobile-top-link, .mobile-secondary-link");
 
   desktopLinks.forEach((link) => {
     const href = link.getAttribute("href");
+    if (!href) return;
 
-    if ((href === "les-batisseurs.html" && isSeriesPage) || href === pathname) {
+    if (href === pathname || (isSeriesPage && href === "positions.html")) {
       link.classList.add("is-active");
     }
   });
 
   mobileLinks.forEach((link) => {
     const href = link.getAttribute("href");
+    if (!href) return;
 
-    if (href === pathname) {
+    const cleanHref = href.split("#")[0];
+
+    if (cleanHref === pathname || (isSeriesPage && cleanHref === "positions.html")) {
       link.classList.add("is-active");
     }
   });
@@ -58,7 +70,7 @@ function bindMobileMenu() {
   const toggle = document.querySelector(".menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
   const closeButton = document.querySelector(".mobile-menu-close");
-  const mobileLinks = document.querySelectorAll(".mobile-top-link");
+  const mobileLinks = document.querySelectorAll(".mobile-top-link, .mobile-secondary-link");
 
   if (!toggle || !mobileMenu) {
     return;
@@ -78,9 +90,8 @@ function bindMobileMenu() {
     document.body.style.overflow = "";
   };
 
-  toggle.addEventListener("click", function () {
+  toggle.addEventListener("click", () => {
     const expanded = toggle.getAttribute("aria-expanded") === "true";
-
     if (expanded) {
       closeMenu();
     } else {
@@ -96,20 +107,39 @@ function bindMobileMenu() {
     link.addEventListener("click", closeMenu);
   });
 
-  document.addEventListener("keydown", function (event) {
+  document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeMenu();
     }
   });
 
-  window.addEventListener("resize", function () {
+  window.addEventListener("resize", () => {
     if (window.innerWidth >= 1024) {
       closeMenu();
     }
   });
 }
 
-document.addEventListener("DOMContentLoaded", async function () {
+function bindHeaderScroll() {
+  const header = document.querySelector(".site-header");
+
+  if (!header) {
+    return;
+  }
+
+  const onScroll = () => {
+    if (window.scrollY > 24) {
+      header.classList.add("is-scrolled");
+    } else {
+      header.classList.remove("is-scrolled");
+    }
+  };
+
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+}
+
+async function initLayout() {
   await Promise.all([
     loadPartial("#site-header", "partials/header.html"),
     loadPartial("#site-mobile-menu", "partials/mobile-menu.html"),
@@ -118,4 +148,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   markActiveLinks();
   bindMobileMenu();
-});
+  bindHeaderScroll();
+}
+
+document.addEventListener("DOMContentLoaded", initLayout);
