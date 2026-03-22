@@ -97,6 +97,7 @@
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
   transition: color 0.25s ease, opacity 0.25s ease;
 }
 
@@ -130,7 +131,7 @@
 }
 
 /* =========================
-   SECTIONS HOME
+   HOME SECTION
    ========================= */
 
 .home-section {
@@ -238,6 +239,7 @@
   position: relative;
   display: block;
   padding-left: 24px;
+  text-decoration: none;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
@@ -252,14 +254,20 @@
   border-radius: 50%;
 }
 
-.rencontre-item:hover {
+.rencontre-item:hover,
+.rencontre-item.is-active {
   transform: translateX(2px);
+  opacity: 0.95;
+}
+
+.rencontre-item:not(.is-active):hover {
   opacity: 0.92;
 }
 
 .rencontre-date {
   margin-bottom: 8px;
   font-size: 0.84rem;
+  letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.60);
 }
 
@@ -269,6 +277,7 @@
   font-family: Bitter, Georgia, serif;
   font-size: clamp(1.52rem, 3.4vw, 2.18rem);
   line-height: 1.05;
+  letter-spacing: -0.02em;
   color: #ffffff;
 }
 
@@ -280,20 +289,230 @@
   color: rgba(245, 241, 236, 0.78);
 }
 
+.rencontres-footer {
+  margin-top: 72px;
+  max-width: 620px;
+}
+
+.rencontres-note {
+  margin: 0 0 16px;
+  font-size: 0.82rem;
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.54);
+}
+
+.rencontres-link {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.rencontres-link:hover {
+  color: #ddc2b1;
+}
+
 /* =========================
    DISPOSITIF
    ========================= */
 
 .dispositif-steps {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px 34px;
   margin-top: 46px;
 }
 
 .dispositif-step {
-  padding: 24px 0;
+  padding: 24px 0 22px;
   border-top: 1px solid var(--ep-border);
+}
+
+.dispositif-step h3 {
+  margin: 0 0 10px;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.28rem;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #1a120f;
+}
+
+.dispositif-step p {
+  margin: 0;
+  line-height: 1.76;
+  color: var(--ep-text-muted);
+}
+
+.dispositif-step--featured {
+  padding-left: 18px;
+  border-left: 1px solid rgba(181, 106, 54, 0.42);
+}
+
+/* =========================
+   POURQUOI EN PLATEAU
+   ========================= */
+
+.why-ep-editorial {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.why-ep-statement h3 {
+  margin: 0;
+  max-width: 18ch;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.72rem;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: #18110f;
+}
+
+.why-ep-text {
+  max-width: 44ch;
+}
+
+.why-ep-text p {
+  margin: 0 0 16px;
+  line-height: 1.84;
+  color: var(--ep-text-muted);
+}
+
+.why-ep-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   POSITIONS
+   ========================= */
+
+.series-grid {
+  gap: 34px;
+}
+
+.series-grid .card {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.series-grid .card.is-muted {
+  opacity: 0.5;
+}
+
+.series-grid .card.featured,
+.series-grid .card.primary {
+  border-top-color: rgba(181, 106, 54, 0.42);
+}
+
+.series-grid .card h3 {
+  max-width: 14ch;
+}
+
+.series-grid .link {
+  margin-top: 18px;
+}
+
+/* =========================
+   ACCÈS
+   ========================= */
+
+.access-editorial {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 38px;
+  margin-top: 40px;
+  align-items: start;
+}
+
+.access-primary,
+.access-secondary {
+  background: transparent;
+  box-shadow: none;
+}
+
+.access-primary {
+  padding: 26px 0 0;
+  border: 0;
+  border-top: 1px solid rgba(181, 106, 54, 0.38);
+  border-radius: 0;
+}
+
+.access-secondary {
+  padding: 26px 0 0;
+  border-top: 1px solid var(--ep-border);
+}
+
+.access-tag {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ep-copper);
+}
+
+.access-primary h3,
+.access-secondary h3 {
+  margin: 0 0 10px;
+  font-family: Bitter, Georgia, serif;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--ep-text);
+}
+
+.access-primary h3 {
+  font-size: 1.5rem;
+}
+
+.access-secondary h3 {
+  font-size: 1.26rem;
+}
+
+.access-primary p,
+.access-secondary p {
+  margin: 0 0 16px;
+  max-width: 42ch;
+  line-height: 1.76;
+  color: var(--ep-text-muted);
+}
+
+.access-link {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.access-link--primary {
+  color: var(--ep-brown);
+}
+
+.access-link--secondary {
+  color: var(--ep-text-soft);
+}
+
+.access-link:hover {
+  color: var(--ep-copper);
+}
+
+/* =========================
+   REVEAL CIBLÉ (si home.js)
+   ========================= */
+
+.home-page .section-head.reveal,
+.home-page .why-editorial-item.reveal,
+.home-page .frame-row.reveal,
+.home-page .dispositif-step.reveal,
+.home-page .rencontre-item.reveal,
+.home-page .series-grid .card.reveal {
+  will-change: opacity, transform;
 }
 
 /* =========================
@@ -301,9 +520,24 @@
    ========================= */
 
 @media (max-width: 1100px) {
+  .why-ep-editorial,
   .frame-row,
+  .access-editorial {
+    grid-template-columns: 1fr;
+  }
+
   .dispositif-steps {
     grid-template-columns: 1fr;
+  }
+
+  .why-ep-statement h3 {
+    max-width: none;
+  }
+
+  .why-ep-text,
+  .access-primary p,
+  .access-secondary p {
+    max-width: none;
   }
 }
 
@@ -312,12 +546,86 @@
     padding: 78px 0 56px;
   }
 
+  .hero-kicker {
+    margin-bottom: 18px;
+    font-size: 0.72rem;
+  }
+
   .hero-title {
-    font-size: clamp(2.3rem, 10vw, 4rem);
+    max-width: 10ch;
+    font-size: clamp(2.3rem, 10.6vw, 4rem);
+    line-height: 0.99;
+    margin-bottom: 20px;
+  }
+
+  .hero-subtitle {
+    max-width: 29ch;
+    font-size: 1rem;
+    line-height: 1.74;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .hero-meta,
+  .hero-note {
+    max-width: 30ch;
   }
 
   .home-section,
   .section-rencontres {
     padding: 64px 0;
+  }
+
+  .why-editorial-list,
+  .frames-list,
+  .dispositif-steps {
+    margin-top: 32px;
+  }
+
+  .why-editorial-item,
+  .frame-row,
+  .dispositif-step,
+  .access-primary,
+  .access-secondary {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .rencontres-timeline {
+    gap: 28px;
+    margin-top: 36px;
+  }
+
+  .rencontre-item h3 {
+    max-width: none;
+    font-size: clamp(1.3rem, 7vw, 1.88rem);
+    line-height: 1.10;
+  }
+
+  .rencontre-item p {
+    font-size: 0.98rem;
+  }
+
+  .rencontres-footer {
+    margin-top: 34px;
+  }
+
+  .why-ep-statement h3 {
+    font-size: 1.46rem;
+  }
+
+  .why-editorial-item h3,
+  .dispositif-step h3,
+  .frame-row-head h3,
+  .access-secondary h3 {
+    font-size: 1.18rem;
+  }
+
+  .access-primary h3 {
+    font-size: 1.34rem;
   }
 }
