@@ -1,27 +1,17 @@
-<header class="site-header">
+<header id="site-header" class="site-header">
+
   <div class="site-header__inner">
 
-    <!-- LEFT : MENU + LOGO -->
+    <!-- LEFT : LOGO -->
     <div class="site-header__left">
-
-      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
       <a href="index.html" class="site-brand">
-        <img 
-          src="/enplateau-site/images/Logo_en_plateau.svg" 
-          alt="En Plateau"
-          class="site-brand__logo"
-        >
+        <img src="images/Logo_en_plateau.svg" alt="En Plateau" class="site-brand__logo">
       </a>
-
     </div>
 
     <!-- CENTER : NAV DESKTOP -->
     <div class="site-header__center">
+
       <nav class="desktop-editorial-nav">
 
         <a href="programme.html" class="desktop-editorial-nav__link">
@@ -41,14 +31,26 @@
         </a>
 
       </nav>
+
     </div>
 
-    <!-- RIGHT : CTA -->
+    <!-- RIGHT -->
     <div class="site-header__right">
-      <a href="participer.html" class="site-header__cta">
+
+      <!-- CTA DESKTOP -->
+      <a href="contact.html" class="site-header__cta">
         Recevoir le dossier
       </a>
+
+      <!-- BURGER -->
+      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
     </div>
 
   </div>
+
 </header>
