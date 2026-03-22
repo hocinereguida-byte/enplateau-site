@@ -1,104 +1,113 @@
-function initRevealOnScroll() {
-  const revealTargets = document.querySelectorAll(
-    [
-      ".home-page .section-head",
-      ".home-page .why-editorial-item",
-      ".home-page .frame-row",
-      ".home-page .dispositif-step",
-      ".home-page .rencontre-item",
-      ".home-page .series-grid .card",
-      ".home-page .access-primary",
-      ".home-page .access-secondary",
-      ".home-page .why-ep-statement",
-      ".home-page .why-ep-text"
-    ].join(", ")
-  );
+function initHomeReveal() {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  if (!revealTargets.length) return;
+  const revealSelectors = [
+    ".hero-kicker",
+    ".hero-title",
+    ".hero-subtitle",
+    ".hero-actions",
+    ".hero-meta",
+    ".hero-note",
+    ".section-head",
+    ".why-editorial-item",
+    ".frame-row",
+    ".rencontre-item",
+    ".dispositif-step",
+    ".why-ep-statement",
+    ".why-ep-text p",
+    ".series-grid .card",
+    ".access-primary",
+    ".access-secondary",
+    ".section-footnote"
+  ];
 
-  revealTargets.forEach((el) => el.classList.add("reveal"));
+  const revealElements = document.querySelectorAll(revealSelectors.join(","));
+
+  if (!revealElements.length) {
+    return;
+  }
+
+  if (prefersReducedMotion) {
+    revealElements.forEach((element) => {
+      element.classList.add("is-visible");
+    });
+    return;
+  }
+
+  revealElements.forEach((element, index) => {
+    element.classList.add("reveal");
+
+    if (
+      element.classList.contains("hero-kicker") ||
+      element.classList.contains("hero-title") ||
+      element.classList.contains("hero-subtitle") ||
+      element.classList.contains("hero-actions") ||
+      element.classList.contains("hero-meta") ||
+      element.classList.contains("hero-note")
+    ) {
+      element.style.transitionDelay = `${Math.min(index * 60, 240)}ms`;
+    }
+  });
 
   const observer = new IntersectionObserver(
-    (entries, obs) => {
+    (entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
-        obs.unobserve(entry.target);
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        const element = entry.target;
+
+        if (!element.classList.contains("is-visible")) {
+          const siblings = Array.from(element.parentElement?.children || []).filter((child) =>
+            child.classList.contains("reveal")
+          );
+
+          const siblingIndex = siblings.indexOf(element);
+          const staggerDelay = siblingIndex > -1 ? Math.min(siblingIndex * 70, 280) : 0;
+
+          if (
+            !element.style.transitionDelay &&
+            !element.classList.contains("hero-kicker") &&
+            !element.classList.contains("hero-title") &&
+            !element.classList.contains("hero-subtitle") &&
+            !element.classList.contains("hero-actions") &&
+            !element.classList.contains("hero-meta") &&
+            !element.classList.contains("hero-note")
+          ) {
+            element.style.transitionDelay = `${staggerDelay}ms`;
+          }
+
+          requestAnimationFrame(() => {
+            element.classList.add("is-visible");
+          });
+        }
+
+        observer.unobserve(element);
       });
     },
     {
-      threshold: 0.12,
+      threshold: 0.14,
       rootMargin: "0px 0px -8% 0px"
     }
   );
 
-  revealTargets.forEach((el) => observer.observe(el));
-}
+  revealElements.forEach((element) => {
+    const rect = element.getBoundingClientRect();
+    const isAlreadyVisible = rect.top < window.innerHeight * 0.92;
 
-function initRencontresFocus() {
-  const items = Array.from(document.querySelectorAll(".home-page .rencontre-item"));
-  if (!items.length) return;
-
-  const clearActive = () => {
-    items.forEach((item) => item.classList.remove("is-active"));
-  };
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-      if (!visible.length) return;
-
-      clearActive();
-      visible[0].target.classList.add("is-active");
-    },
-    {
-      threshold: [0.2, 0.4, 0.6],
-      rootMargin: "-20% 0px -35% 0px"
+    if (isAlreadyVisible) {
+      element.classList.add("is-visible");
+    } else {
+      observer.observe(element);
     }
-  );
-
-  items.forEach((item) => observer.observe(item));
-
-  items.forEach((item) => {
-    item.addEventListener("mouseenter", () => {
-      clearActive();
-      item.classList.add("is-active");
-    });
   });
 }
 
-function initSeriesFocus() {
-  const cards = Array.from(document.querySelectorAll(".home-page .series-grid .card"));
-  if (!cards.length) return;
+document.addEventListener("DOMContentLoaded", () => {
+  if (!document.body.classList.contains("home-page")) {
+    return;
+  }
 
-  const resetCards = () => {
-    cards.forEach((card) => card.classList.remove("is-muted"));
-  };
-
-  cards.forEach((card) => {
-    card.addEventListener("mouseenter", () => {
-      cards.forEach((other) => {
-        if (other !== card) {
-          other.classList.add("is-muted");
-        } else {
-          other.classList.remove("is-muted");
-        }
-      });
-    });
-
-    card.addEventListener("mouseleave", resetCards);
-  });
-}
-
-function initHomePage() {
-  if (!document.body.classList.contains("home-page")) return;
-
-  initRevealOnScroll();
-  initRencontresFocus();
-  initSeriesFocus();
-}
-
-document.addEventListener("DOMContentLoaded", initHomePage);
+  initHomeReveal();
+});
