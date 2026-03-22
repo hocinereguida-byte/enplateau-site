@@ -40,42 +40,23 @@ button {
 
 :root {
   --ep-bg: #eef1ec;
-  --ep-bg-soft: #e6ebe5;
   --ep-paper: #f8f6f2;
-  --ep-white: #ffffff;
 
   --ep-text: #201815;
   --ep-text-soft: #5f4b43;
   --ep-text-muted: rgba(32, 24, 21, 0.72);
 
   --ep-brown: #2c1d18;
-  --ep-brown-deep: #1a120f;
-  --ep-brown-soft: #6a5147;
-
   --ep-copper: #b56a36;
-  --ep-copper-soft: #c88a5d;
-
-  --ep-slate: #667a8c;
-  --ep-slate-soft: #d8e0e4;
 
   --ep-border: rgba(32, 24, 21, 0.10);
-  --ep-border-strong: rgba(32, 24, 21, 0.18);
-
   --ep-shadow: 0 10px 30px rgba(32, 24, 21, 0.07);
-  --ep-shadow-dark: 0 18px 42px rgba(12, 8, 7, 0.18);
 
   --ep-container: 1440px;
-
-  --white: #ffffff;
-  --blue-dark: #201815;
-  --accent: #667a8c;
-  --shadow: 0 10px 30px rgba(32, 24, 21, 0.07);
-  --text: #201815;
-  --muted: rgba(32, 24, 21, 0.72);
 }
 
 /* =========================
-   LAYOUT GLOBAL
+   CONTAINER
    ========================= */
 
 .container {
@@ -103,59 +84,18 @@ button {
   width: min(var(--ep-container), calc(100% - 24px));
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
   min-height: 82px;
 }
 
-.site-header__left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
 /* =========================
-   LOGO FIX (IMPORTANT)
+   LOGO
    ========================= */
-
-.site-brand {
-  display: inline-flex;
-  align-items: center;
-}
 
 .site-brand__logo {
-  display: block;
+  width: 140px;
   height: auto;
-  max-height: 42px;
-  width: auto;
-}
-
-/* Desktop logo */
-@media (min-width: 1024px) {
-  .site-brand__logo {
-    max-height: 56px;
-  }
-}
-
-/* =========================
-   MENU TOGGLE
-   ========================= */
-
-.menu-toggle {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 5px;
-  width: 34px;
-  height: 34px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  width: 24px;
-  height: 2px;
-  background: var(--ep-text);
 }
 
 /* =========================
@@ -166,12 +106,37 @@ button {
   display: none;
 }
 
+@media (min-width: 1024px) {
+  .desktop-editorial-nav {
+    display: flex;
+    gap: 12px;
+  }
+
+  .desktop-editorial-nav__link {
+    padding: 10px 16px;
+    border: 1px solid var(--ep-border);
+    background: var(--ep-paper);
+  }
+
+  .site-header__cta {
+    display: inline-flex;
+  }
+}
+
 /* =========================
-   CTA
+   BURGER
    ========================= */
 
-.site-header__cta {
-  display: none;
+.menu-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--ep-text);
 }
 
 /* =========================
@@ -182,102 +147,36 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  width: min(92vw, 420px);
+  width: 90%;
   height: 100vh;
   background: var(--ep-bg);
   transform: translateX(-100%);
   transition: 0.3s;
-  z-index: 3000;
-  padding: 20px;
 }
 
 .mobile-menu.is-open {
   transform: translateX(0);
 }
 
-.mobile-menu-head {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
 .mobile-top-link {
   display: block;
-  padding: 14px 0;
+  padding: 14px;
   border-bottom: 1px solid var(--ep-border);
-  font-weight: 600;
-}
-
-.mobile-top-link--cta {
-  margin-top: 20px;
-  font-weight: 700;
-  color: var(--ep-brown);
 }
 
 /* =========================
-   FOOTER
+   MOBILE SECONDARY
    ========================= */
 
-.footer {
-  background: var(--ep-brown);
-  color: #fff;
-  padding: 50px 20px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-.footer-title {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  color: #ddc2b1;
-}
-
-.footer a {
-  color: #fff;
-}
-
-.footer-bottom {
+.mobile-secondary {
   margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ep-border);
+}
+
+.mobile-secondary-link {
+  display: block;
+  padding: 10px;
   font-size: 0.9rem;
-}
-
-/* =========================
-   DESKTOP
-   ========================= */
-
-@media (min-width: 1024px) {
-
-  .menu-toggle {
-    display: none;
-  }
-
-  .site-header__inner {
-    grid-template-columns: 240px 1fr auto;
-  }
-
-  .desktop-editorial-nav {
-    display: flex;
-    gap: 12px;
-    justify-content: flex-end;
-  }
-
-  .desktop-editorial-nav__link {
-    padding: 10px 16px;
-    border: 1px solid var(--ep-border);
-    background: #fff;
-  }
-
-  .site-header__cta {
-    display: inline-flex;
-    padding: 10px 16px;
-    border: 1px solid var(--ep-brown);
-  }
-
-  .footer-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  color: var(--ep-text-soft);
 }
