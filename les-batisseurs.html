@@ -2,588 +2,222 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>En Plateau — La série éditoriale Les Bâtisseurs</title>
-
+  <title>Positions — En Plateau</title>
   <meta
     name="description"
-    content="La série éditoriale Les Bâtisseurs réunit des acteurs engagés dans l’économie réelle, dont les décisions et arbitrages rendent plus lisibles les transformations en cours."
+    content="Trois positions pour entrer dans une même lecture du réel : vivre les situations, les comparer, les relier aux cadres de décision."
   >
 
-  <link rel="canonical" href="https://enplateau.fr/les-batisseurs.html">
-
+  <link rel="canonical" href="https://enplateau.fr/positions.html">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0F2747">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="En Plateau">
-  <meta property="og:title" content="En Plateau — La série éditoriale Les Bâtisseurs">
+  <meta property="og:title" content="Positions — En Plateau">
   <meta
     property="og:description"
-    content="Les Bâtisseurs réunissent des acteurs directement engagés dans l’économie réelle, dont les arbitrages et décisions rendent plus lisibles les transformations en cours."
+    content="Trois positions pour entrer dans une même lecture du réel : vivre les situations, les comparer, les relier aux cadres de décision."
   >
-  <meta property="og:url" content="https://enplateau.fr/les-batisseurs.html">
-  <meta property="og:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
+  <meta property="og:url" content="https://enplateau.fr/positions.html">
+  <meta property="og:image" content="https://enplateau.fr/images/en-plateau-social.webp">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="En Plateau — La série éditoriale Les Bâtisseurs">
+  <meta name="twitter:title" content="Positions — En Plateau">
   <meta
     name="twitter:description"
-    content="Les Bâtisseurs réunissent des acteurs directement engagés dans l’économie réelle, dont les arbitrages et décisions rendent plus lisibles les transformations en cours."
+    content="Trois positions pour entrer dans une même lecture du réel : vivre les situations, les comparer, les relier aux cadres de décision."
   >
-  <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-og-1200x630.webp">
+  <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-social.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/editorial.css">
-  <link rel="stylesheet" href="assets/css/series.css">
-
-  <style>
-    .conversation-block{
-      margin-top:60px;
-    }
-
-    .conversation-block:first-of-type{
-      margin-top:0;
-    }
-
-    .conversation-head{
-      max-width:920px;
-      margin:0 auto 28px;
-    }
-
-    .conversation-meta{
-      margin:0 0 8px;
-      font-size:.82rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:#5B6472;
-    }
-
-    .conversation-head h3{
-      margin:0 0 14px;
-      font-size:clamp(1.8rem,2.8vw,2.45rem);
-      line-height:1.12;
-      color:#0F2747;
-    }
-
-    .conversation-intro{
-      margin:0;
-      max-width:800px;
-      font-size:1.02rem;
-      line-height:1.84;
-      color:#2B3340;
-    }
-
-    .angles-grid{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:22px;
-      margin-top:28px;
-    }
-
-    .angle-card{
-      background:#fff;
-      border:1px solid rgba(15,39,71,.12);
-      border-radius:10px;
-      padding:22px 22px 20px;
-    }
-
-    .angle-label{
-      display:block;
-      margin:0 0 10px;
-      font-size:.79rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:#5B6472;
-    }
-
-    .angle-card h4{
-      margin:0 0 10px;
-      font-size:1.13rem;
-      line-height:1.28;
-      color:#0B1220;
-    }
-
-    .angle-card p{
-      margin:0;
-      color:#44505F;
-      line-height:1.75;
-    }
-
-    .angle-meta{
-      margin-top:12px !important;
-      padding-top:12px;
-      border-top:1px solid rgba(15,39,71,.08);
-      font-size:.95rem;
-      color:#5F6B7A !important;
-    }
-
-    .conversation-sequences{
-      margin-top:22px;
-      padding:20px 22px;
-      border-top:1px solid rgba(15,39,71,.10);
-      border-bottom:1px solid rgba(15,39,71,.10);
-    }
-
-    .conversation-sequences-title{
-      margin:0 0 10px;
-      font-size:.8rem;
-      font-weight:700;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:#5B6472;
-    }
-
-    .conversation-sequences p{
-      margin:0;
-      color:#44505F;
-      line-height:1.8;
-    }
-
-    .event-box{
-      margin-top:20px;
-      background:#F8F7F4;
-      border:1px solid rgba(15,39,71,.10);
-      border-radius:14px;
-      padding:24px;
-    }
-
-    .event-box + .event-box{
-      margin-top:16px;
-    }
-
-    .event-kicker{
-      margin:0 0 10px;
-      font-size:.8rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:#5B6472;
-    }
-
-    .event-box h4{
-      margin:0 0 10px;
-      font-size:1.2rem;
-      line-height:1.24;
-      color:#0F2747;
-    }
-
-    .event-box p{
-      margin:0;
-      color:#2B3340;
-      line-height:1.8;
-    }
-
-    .conversation-note{
-      max-width:860px;
-      margin:20px auto 0;
-      font-size:.97rem;
-      line-height:1.8;
-      color:#44505F;
-    }
-
-    .section-text-block.narrower{
-      max-width:860px;
-      margin:0 auto;
-    }
-
-    @media (max-width: 860px){
-      .angles-grid{
-        grid-template-columns:1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/pages.css">
 </head>
+<body class="page-interior">
 
-<body>
+  <div id="site-header"></div>
+  <div id="site-mobile-menu"></div>
 
-<div id="site-header"></div>
-<div id="site-mobile-menu"></div>
+  <main>
 
-<main class="container">
+    <!-- HERO -->
+    <section class="page-hero page-hero--programme">
+      <div class="container">
+        <div class="page-hero-inner page-hero-inner--centered reveal">
+          <div class="page-hero-kicker">Positions</div>
 
-  <!-- HERO -->
-  <section class="hero hero-editorial" id="hero-batisseurs">
-    <div class="hero-inner">
+          <h1 class="page-hero-title">
+            Trois positions pour entrer dans une même lecture du réel.
+          </h1>
 
-      <div class="season-badge">Saison inaugurale — septembre 2026</div>
+          <p class="page-hero-sub">
+            Le programme articule trois positions : vivre les situations, les comparer, les relier aux cadres de décision.
+          </p>
 
-      <div class="series-kicker">La série éditoriale Les Bâtisseurs</div>
-
-      <h1>
-        <span>Une transformation en cours.</span><br>
-        <span>Des acteurs engagés.</span><br>
-        <span>Des décisions qui en dessinent la trajectoire.</span>
-      </h1>
-
-      <p class="subhead">
-        Les Bâtisseurs réunissent des acteurs directement engagés dans l’économie réelle, dont les arbitrages, les contraintes et les décisions rendent plus lisibles les dynamiques concrètes d’une transformation en cours.
-      </p>
-
-      <p class="hero-note">
-        Une transformation s’éclaire différemment lorsqu’elle est observée depuis ceux qui la produisent, la rendent possible, l’équipent ou en supportent les contraintes.
-      </p>
-
-      <p class="hero-note" style="margin-top:10px;">
-        Les conversations visibles à ce stade correspondent aux premières séquences rendues publiques dans la constitution de la saison.
-      </p>
-
-      <div class="hero-links">
-        <a class="hero-link hero-link-primary" href="participer.html#approche">
-          Recevoir le dossier de participation
-        </a>
-        <a class="hero-link hero-link-secondary" href="index.html">
-          Découvrir le programme
-        </a>
+          <p class="page-hero-meta">
+            Il distingue moins des profils que des positions dans une même lecture de l’économie.
+          </p>
+        </div>
       </div>
+    </section>
 
-      <div class="hero-rule"></div>
+    <!-- PRINCIPE -->
+    <section class="light inner-section">
+      <div class="container">
+        <div class="section-head section-head--narrow section-head--centered reveal">
+          <div class="section-kicker">Principe</div>
+          <h2>Trois positions complémentaires</h2>
+          <p class="section-intro">
+            Aucune lecture exploitable de l’économie réelle ne peut reposer sur un seul point de vue.
+          </p>
+          <div class="divider"></div>
+        </div>
 
-    </div>
-  </section>
-
-  <!-- POURQUOI VOUS -->
-  <section class="section section-white" id="pourquoi-vous-batisseurs">
-    <div class="section-head centered">
-      <h2>Pourquoi vous avez été contacté</h2>
-    </div>
-
-    <div class="section-text-block narrower">
-      <p>
-        Si vous avez été contacté au sujet des Bâtisseurs, c’est qu’une décision que vous prenez, une contrainte que vous arbitrez ou une responsabilité que vous portez peut éclairer un angle précis d’une transformation en cours.
-      </p>
-
-      <p>
-        Dans EN PLATEAU, la distinction entre Éclaireurs, Bâtisseurs et Architectes ne repose ni sur le format ni sur le nombre d’interventions, mais sur la fonction occupée dans la lecture du réel.
-      </p>
-
-      <p>
-        Une contribution n’est pas retenue pour illustrer un sujet de façon générale, mais lorsqu’elle permet de rendre lisibles, depuis une position engagée, les arbitrages concrets qui structurent un phénomène déjà à l’œuvre.
-      </p>
-    </div>
-  </section>
-
-  <!-- CADRE -->
-  <section class="section section-soft" id="cadre-batisseurs">
-    <div class="section-head centered">
-      <h2>Le cadre de la série</h2>
-    </div>
-
-    <div class="series-frame-grid">
-
-      <article class="frame-card">
-        <span class="frame-card-label">Le sujet</span>
-        <h3>Une transformation à l’œuvre</h3>
-        <p>
-          Chaque conversation porte sur une transformation déjà engagée dans l’économie réelle, dont les effets se lisent dans les chaînes de valeur, les organisations et les capacités de production.
-        </p>
-      </article>
-
-      <article class="frame-card">
-        <span class="frame-card-label">Les positions</span>
-        <h3>Des places réellement engagées</h3>
-        <p>
-          Les intervenants sont sollicités parce qu’ils occupent des positions depuis lesquelles la transformation se produit, se contraint, s’arbitre ou se met en œuvre.
-        </p>
-      </article>
-
-      <article class="frame-card">
-        <span class="frame-card-label">Les arbitrages</span>
-        <h3>Des décisions situées</h3>
-        <p>
-          Chaque contribution éclaire des choix, des contraintes ou des marges de décision qui ne peuvent être compris hors du contexte réel où ils s’exercent.
-        </p>
-      </article>
-
-      <article class="frame-card featured">
-        <span class="frame-card-label">L’ensemble</span>
-        <h3>Une lecture construite du réel</h3>
-        <p>
-          La mise en relation des contributions fait apparaître les dépendances, les tensions et les dynamiques concrètes qui dessinent la trajectoire d’une transformation.
-        </p>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- FONCTION -->
-  <section class="section section-white" id="fonction-batisseur">
-    <div class="section-head centered">
-      <h2>La fonction du Bâtisseur</h2>
-    </div>
-
-    <div class="grid-3">
-
-      <article class="card">
-        <span class="pill">Décision</span>
-        <p>Prendre ou porter des arbitrages qui engagent concrètement la trajectoire d’une transformation.</p>
-      </article>
-
-      <article class="card">
-        <span class="pill">Engagement</span>
-        <p>Occuper une place depuis laquelle le sujet n’est pas seulement observé, mais réellement traversé.</p>
-      </article>
-
-      <article class="card">
-        <span class="pill">Mise en œuvre</span>
-        <p>Rendre lisibles les contraintes d’exécution, les dépendances et les effets réels des choix effectués.</p>
-      </article>
-
-    </div>
-
-    <div class="section-text-block narrower" style="margin-top:32px;">
-      <p>
-        Le Bâtisseur n’intervient pas pour commenter un phénomène de l’extérieur, mais pour en exposer les conditions concrètes de fabrication, de transformation ou de soutenabilité depuis la place qu’il occupe.
-      </p>
-    </div>
-  </section>
-
-  <!-- CONVERSATIONS -->
-  <section class="section section-soft-2" id="conversations-batisseurs">
-    <div class="section-head centered">
-      <h2>Conversations actuellement rendues visibles</h2>
-      <p class="section-intro narrow">
-        Ces conversations correspondent aux premières séquences publiques de la série. D’autres ne sont partagées qu’avec les acteurs directement concernés par leur préparation.
-      </p>
-    </div>
-
-    <!-- Conversation 1 -->
-    <div class="conversation-block">
-      <div class="conversation-head">
-        <p class="conversation-meta">Conversation 1 — Les Bâtisseurs</p>
-        <h3>Souveraineté industrielle</h3>
-        <p class="conversation-intro">
-          Cette conversation porte sur les conditions concrètes dans lesquelles des acteurs industriels, technologiques, financiers ou institutionnels contribuent à renforcer — ou à contraindre — les capacités productives européennes.
-        </p>
-      </div>
-
-      <div class="angles-grid">
-        <article class="angle-card">
-          <span class="angle-label">Angle 1</span>
-          <h4>Capacité productive</h4>
+        <div class="page-centered-copy reveal">
           <p>
-            Comment les acteurs industriels arbitrent entre maintien, montée en capacité, relocalisation et transformation de leur outil productif.
+            Le programme articule trois positions complémentaires : celles qui apportent les situations, celles qui les mettent en regard et celles qui les relient aux cadres dans lesquels se décident leurs évolutions. Leur mise en regard permet de produire des lectures plus solides, comparables et utiles à la décision.
           </p>
-          <p class="angle-meta">
-            Acteurs pressentis : direction générale, directions industrielles, présidence, directions de site, membres de COMEX.
-          </p>
-        </article>
-
-        <article class="angle-card">
-          <span class="angle-label">Angle 2</span>
-          <h4>Arbitrage stratégique</h4>
           <p>
-            Comment les entreprises hiérarchisent leurs priorités face aux dépendances critiques, aux contraintes de coûts, aux délais et aux incertitudes de marché.
+            Toutes les positions ne sont pas pertinentes dans toutes les lectures en cours.
           </p>
-          <p class="angle-meta">
-            Acteurs pressentis : direction stratégie, directions générales, conseil de direction, directions opérations.
-          </p>
-        </article>
-
-        <article class="angle-card">
-          <span class="angle-label">Angle 3</span>
-          <h4>Investissement industriel</h4>
-          <p>
-            Comment les décisions d’investissement sont rendues possibles, différées ou réorientées selon le contexte productif, énergétique et concurrentiel.
-          </p>
-          <p class="angle-meta">
-            Acteurs pressentis : direction financière, private equity, finance d’entreprise, investisseurs, opérateurs stratégiques.
-          </p>
-        </article>
-
-        <article class="angle-card">
-          <span class="angle-label">Angle 4</span>
-          <h4>Cadres de mise en œuvre</h4>
-          <p>
-            Comment les règles, les délais, les infrastructures et les dépendances concrètes conditionnent la possibilité même de réindustrialiser.
-          </p>
-          <p class="angle-meta">
-            Acteurs pressentis : décideurs publics, opérateurs industriels, directions affaires publiques, directions transformation.
-          </p>
-        </article>
+        </div>
       </div>
+    </section>
 
-      <div class="conversation-sequences">
-        <p class="conversation-sequences-title">Séquences éditoriales associées</p>
-        <p>
-          Les angles retenus sont ensuite déployés dans plusieurs séquences éditoriales inscrites dans des environnements économiques et médiatiques identifiés — notamment BFM Business, La Tribune, Le Figaro et Forbes — selon la nature de la contribution retenue.
+    <!-- TROIS POSITIONS -->
+    <section class="soft inner-section">
+      <div class="container">
+        <div class="section-head section-head--narrow section-head--centered reveal">
+          <div class="section-kicker">Trois positions</div>
+          <h2>Trois manières d’entrer dans une même lecture</h2>
+          <p class="section-intro">
+            Le programme distingue des positions de lecture, non des catégories figées d’acteurs.
+          </p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="programme-positions">
+          <article class="programme-position reveal">
+            <span class="pill">Les Bâtisseurs</span>
+            <h3>Vivent les situations</h3>
+            <p>
+              Acteurs directement engagés dans des transformations concrètes, confrontés à des arbitrages de production, de coûts, de recrutement ou d’implantation, au plus près des situations observées.
+            </p>
+          </article>
+
+          <article class="programme-position reveal">
+            <span class="pill">Les Éclaireurs</span>
+            <h3>Les comparent</h3>
+            <p>
+              Acteurs capables de mettre en regard des situations et d’identifier écarts, convergences et dépendances entre territoires, secteurs ou configurations.
+            </p>
+          </article>
+
+          <article class="programme-position reveal">
+            <span class="pill">Les Architectes</span>
+            <h3>Les relient aux cadres de décision</h3>
+            <p>
+              Acteurs impliqués dans le financement, la régulation ou les cadres stratégiques à partir desquels ces situations évoluent.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISE EN REGARD -->
+    <section class="light inner-section">
+      <div class="container">
+        <div class="section-head section-head--narrow section-head--centered reveal">
+          <div class="section-kicker">Apports</div>
+          <h2>Ce que leur mise en regard rend possible</h2>
+          <p class="section-intro">
+            Aucune position ne suffit seule à produire une lecture exploitable.
+          </p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="programme-value">
+          <article class="programme-value__item reveal">
+            <h3>Faire remonter le réel</h3>
+            <p>
+              Des situations concrètes deviennent formulables, comparables et exploitables.
+            </p>
+          </article>
+
+          <article class="programme-value__item reveal">
+            <h3>Comparer et rendre lisible</h3>
+            <p>
+              Des réalités dispersées sont mises en regard pour faire apparaître écarts, convergences et dépendances.
+            </p>
+          </article>
+
+          <article class="programme-value__item reveal">
+            <h3>Relier à la décision</h3>
+            <p>
+              Ces lectures éclairent des arbitrages concrets d’investissement, d’organisation et d’orientation.
+            </p>
+          </article>
+        </div>
+
+        <p class="section-footnote section-footnote--centered reveal">
+          Ces positions ne sont pas des rôles figés. Une même organisation peut contribuer depuis plusieurs d’entre elles, selon la situation observée, le cadre mobilisé et le niveau de lecture retenu.
+        </p>
+
+        <p class="section-footnote section-footnote--centered reveal">
+          Certaines lectures réunissent déjà ces trois positions autour de transformations en cours.
         </p>
       </div>
+    </section>
 
-      <div class="event-box">
-        <p class="event-kicker">Intervenants</p>
-        <h4>Fonctions concernées</h4>
-        <p>
-          Dirigeants, présidents, fondateurs, membres de comité exécutif ou tout porte-parole occupant une fonction de décision, d’arbitrage ou de mise en œuvre directement liée au phénomène traité.
+    <!-- ACCÈS -->
+    <section class="soft inner-section">
+      <div class="container">
+        <div class="section-head section-head--narrow section-head--centered reveal">
+          <div class="section-kicker">Accès</div>
+          <h2>Accéder au programme depuis votre position</h2>
+          <p class="section-intro">
+            Si vous vous reconnaissez dans l’une de ces positions, la question n’est pas d’adhérer à un dispositif, mais de voir à quelles lectures en cours vous pouvez utilement contribuer.
+          </p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="programme-access">
+          <article class="programme-access__item reveal">
+            <h3>Signaler une contribution</h3>
+            <p>
+              Porter à connaissance une situation, une tension ou une trajectoire susceptible d’éclairer une lecture en cours.
+            </p>
+            <a href="participer.html#signaler" class="link">Proposer une contribution</a>
+          </article>
+
+          <article class="programme-access__item reveal">
+            <h3>Recevoir le dossier</h3>
+            <p>
+              Accéder aux lectures ouvertes, aux angles en cours de structuration et aux modalités de participation selon votre position.
+            </p>
+            <a href="participer.html#approche" class="link">Recevoir le dossier</a>
+          </article>
+        </div>
+
+        <p class="section-footnote section-footnote--centered reveal">
+          L’accès n’est pas automatique et fait l’objet d’un examen au cas par cas.
         </p>
       </div>
+    </section>
 
-      <div class="event-box">
-        <p class="event-kicker">Événement associé</p>
-        <h4>Produire dans un environnement contraint — Paris, septembre 2026</h4>
-        <p>
-          Les contributions portées dans les séquences éditoriales sont ensuite prolongées dans un échange entre intervenants réunis autour de la même conversation.
-        </p>
-      </div>
+  </main>
 
-      <p class="conversation-note">
-        Chaque intervenant est positionné sur un angle précis de la conversation. Les angles présentés ici correspondent aux premiers axes retenus à ce stade de sa constitution.
-      </p>
-    </div>
+  <div id="site-footer"></div>
 
-    <!-- Conversation 2 -->
-    <div class="conversation-block">
-      <div class="conversation-head">
-        <p class="conversation-meta">Conversation 2 — Les Bâtisseurs</p>
-        <h3>Énergie et compétitivité productive</h3>
-        <p class="conversation-intro">
-          Cette conversation porte sur la manière dont les acteurs de l’économie réelle arbitrent entre coût de l’énergie, décarbonation, transformation des sites, investissement et maintien de la compétitivité productive.
-        </p>
-      </div>
-
-      <div class="angles-grid">
-        <article class="angle-card">
-          <span class="angle-label">Angle 1</span>
-          <h4>Compétitivité industrielle</h4>
-          <p>
-            Comment les entreprises arbitrent entre pression concurrentielle, coût de l’énergie et maintien de leur base productive.
-          </p>
-          <p class="angle-meta">
-            Acteurs pressentis : direction générale, direction industrielle, directions de site, présidence, directions opérations.
-          </p>
-        </article>
-
-        <article class="angle-card">
-          <span class="angle-label">Angle 2</span>
-          <h4>Transformation des sites</h4>
-          <p>
-            Comment les choix de modernisation, d’adaptation ou de décarbonation se traduisent concrètement dans les outils de production.
-          </p>
-          <p class="angle-meta">
-            Acteurs pressentis : directions industrielles, directions techniques, directions de transformation, membres de COMEX.
-          </p>
-        </article>
-
-        <article class="angle-card">
-          <span class="angle-label">Angle 3</span>
-          <h4>Investissement et temporalité</h4>
-          <p>
-            Comment les acteurs arbitrent entre effort d’investissement, visibilité, retour attendu et soutenabilité du temps long.
-          </p>
-          <p class="angle-meta">
-            Acteurs pressentis : direction financière, investisseurs, private equity, finance d’entreprise, présidence.
-          </p>
-        </article>
-
-        <article class="angle-card">
-          <span class="angle-label">Angle 4</span>
-          <h4>Dépendances énergétiques</h4>
-          <p>
-            Comment les cadres d’approvisionnement, les infrastructures et les conditions extérieures pèsent sur les choix de transformation.
-          </p>
-          <p class="angle-meta">
-            Acteurs pressentis : opérateurs énergétiques, industriels intensifs, décideurs publics, directions affaires publiques, directions stratégie.
-          </p>
-        </article>
-      </div>
-
-      <div class="conversation-sequences">
-        <p class="conversation-sequences-title">Séquences éditoriales associées</p>
-        <p>
-          Les angles retenus sont ensuite déployés dans plusieurs séquences éditoriales inscrites dans des environnements économiques et médiatiques identifiés — notamment BFM Business, La Tribune, Le Figaro et Forbes — selon la nature de la contribution retenue.
-        </p>
-      </div>
-
-      <div class="event-box">
-        <p class="event-kicker">Intervenants</p>
-        <h4>Fonctions concernées</h4>
-        <p>
-          Dirigeants, présidents, membres de comité exécutif ou tout porte-parole disposant d’une responsabilité effective dans les arbitrages industriels, énergétiques ou financiers liés au sujet.
-        </p>
-      </div>
-
-      <div class="event-box">
-        <p class="event-kicker">Événement associé</p>
-        <h4>Produire dans un environnement contraint — Paris, septembre 2026</h4>
-        <p>
-          Les contributions portées dans les séquences éditoriales sont ensuite rapprochées dans un échange commun, afin de rendre lisibles les conditions réelles de la transformation étudiée.
-        </p>
-      </div>
-
-      <p class="conversation-note">
-        Ici, l’enjeu n’est pas d’illustrer un sujet de façon théorique, mais de croiser plusieurs décisions situées, contraintes et effectivement engagées dans le réel.
-      </p>
-    </div>
-
-  </section>
-
-  <!-- PARTICIPATION -->
-  <section class="section section-white" id="participation-batisseurs">
-    <div class="section-head centered">
-      <h2>Ce que comprend la participation</h2>
-    </div>
-
-    <div class="section-text-block narrower">
-      <ul class="card-list">
-        <li>une prise de parole construite autour d’un angle précis</li>
-        <li>un déploiement dans plusieurs séquences éditoriales distinctes</li>
-        <li>une rencontre à huis clos entre intervenants, permettant des échanges directs</li>
-        <li>une diffusion inscrite dans une construction éditoriale commune</li>
-      </ul>
-
-      <p>
-        Chaque participant intervient à travers une prise de parole unique, intégrée dans une construction collective plus large.
-      </p>
-
-      <p>
-        Certaines contributions peuvent donner lieu à des prolongements dans des cadres qui ne sont pas systématiquement publics.
-      </p>
-    </div>
-  </section>
-
-  <!-- RARETE -->
-  <section class="section section-soft" id="selection-batisseurs">
-    <div class="section-head centered">
-      <h2>Un nombre volontairement limité de contributions</h2>
-    </div>
-
-    <div class="section-text-block narrower">
-      <p>
-        Chaque conversation réunit un nombre restreint d’intervenants, retenus pour la justesse de leur position, la réalité de leur engagement et la complémentarité de leur place dans l’ensemble.
-      </p>
-
-      <p>
-        Chaque angle est attribué au fil de la constitution de la conversation. Une fois confirmé, il n’est pas dupliqué dans la même séquence.
-      </p>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="final" id="entrer-batisseurs">
-    <h2>Recevoir la présentation de la conversation</h2>
-    <p>
-      La présentation précise les sujets partagés à ce stade, les angles retenus et la place qu’une décision située pourrait y occuper.
-    </p>
-
-    <div class="cta">
-      <a class="btn btn-primary" href="participer.html#approche">
-        Recevoir la présentation de la conversation
-      </a>
-    </div>
-  </section>
-
-</main>
-
-<div id="site-footer"></div>
-
-<script src="assets/js/layout.js"></script>
-
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
