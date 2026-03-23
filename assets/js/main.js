@@ -129,6 +129,33 @@ function initReveal() {
   });
 }
 
+function initConversationToggles() {
+  const toggles = document.querySelectorAll(".conversation-toggle");
+
+  if (!toggles.length) {
+    return;
+  }
+
+  toggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      const panel = toggle.nextElementSibling;
+      const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+
+      toggle.setAttribute("aria-expanded", String(!isExpanded));
+
+      if (panel) {
+        panel.hidden = isExpanded;
+      }
+
+      const label = toggle.querySelector(".conversation-toggle-label");
+      if (label) {
+        label.textContent = isExpanded ? "Voir les 4 angles" : "Masquer les 4 angles";
+      }
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initReveal();
+  initConversationToggles();
 });
