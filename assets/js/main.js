@@ -16,6 +16,7 @@ function initReveal() {
     ".section-head",
     ".why-editorial-item",
     ".frame-row",
+    ".conversation-row",
     ".rencontre-item",
     ".dispositif-step",
     ".why-ep-statement",
@@ -137,19 +138,22 @@ function initConversationToggles() {
   }
 
   toggles.forEach((toggle) => {
+    const panel = toggle.closest(".conversation-row")?.querySelector(".conversation-panel");
+    const label = toggle.querySelector(".conversation-toggle-label");
+
+    if (!panel) {
+      return;
+    }
+
     toggle.addEventListener("click", () => {
-      const panel = toggle.nextElementSibling;
       const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+      const nextState = !isExpanded;
 
-      toggle.setAttribute("aria-expanded", String(!isExpanded));
+      toggle.setAttribute("aria-expanded", String(nextState));
+      panel.hidden = !nextState;
 
-      if (panel) {
-        panel.hidden = isExpanded;
-      }
-
-      const label = toggle.querySelector(".conversation-toggle-label");
       if (label) {
-        label.textContent = isExpanded ? "Voir les 4 angles" : "Masquer les 4 angles";
+        label.textContent = nextState ? "Masquer les 4 angles" : "Voir les 4 angles";
       }
     });
   });
