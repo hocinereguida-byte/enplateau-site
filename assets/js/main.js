@@ -1,4 +1,4 @@
-function initHomeReveal() {
+function initReveal() {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const revealSelectors = [
@@ -8,6 +8,10 @@ function initHomeReveal() {
     ".hero-actions",
     ".hero-meta",
     ".hero-note",
+    ".page-hero-kicker",
+    ".page-hero-title",
+    ".page-hero-sub",
+    ".page-hero-note",
     ".section-head",
     ".why-editorial-item",
     ".frame-row",
@@ -18,7 +22,16 @@ function initHomeReveal() {
     ".series-grid .card",
     ".access-primary",
     ".access-secondary",
-    ".section-footnote"
+    ".section-footnote",
+    ".programme-step",
+    ".season-card",
+    ".programme-list",
+    ".programme-list__item",
+    ".programme-value__item",
+    ".programme-position",
+    ".programme-access__item",
+    ".programme-link-row",
+    ".page-hero-inner"
   ];
 
   const revealElements = document.querySelectorAll(revealSelectors.join(","));
@@ -29,7 +42,7 @@ function initHomeReveal() {
 
   if (prefersReducedMotion) {
     revealElements.forEach((element) => {
-      element.classList.add("is-visible");
+      element.classList.add("reveal", "is-visible");
     });
     return;
   }
@@ -43,7 +56,12 @@ function initHomeReveal() {
       element.classList.contains("hero-subtitle") ||
       element.classList.contains("hero-actions") ||
       element.classList.contains("hero-meta") ||
-      element.classList.contains("hero-note")
+      element.classList.contains("hero-note") ||
+      element.classList.contains("page-hero-kicker") ||
+      element.classList.contains("page-hero-title") ||
+      element.classList.contains("page-hero-sub") ||
+      element.classList.contains("page-hero-note") ||
+      element.classList.contains("page-hero-inner")
     ) {
       element.style.transitionDelay = `${Math.min(index * 60, 240)}ms`;
     }
@@ -52,9 +70,7 @@ function initHomeReveal() {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
+        if (!entry.isIntersecting) return;
 
         const element = entry.target;
 
@@ -73,7 +89,12 @@ function initHomeReveal() {
             !element.classList.contains("hero-subtitle") &&
             !element.classList.contains("hero-actions") &&
             !element.classList.contains("hero-meta") &&
-            !element.classList.contains("hero-note")
+            !element.classList.contains("hero-note") &&
+            !element.classList.contains("page-hero-kicker") &&
+            !element.classList.contains("page-hero-title") &&
+            !element.classList.contains("page-hero-sub") &&
+            !element.classList.contains("page-hero-note") &&
+            !element.classList.contains("page-hero-inner")
           ) {
             element.style.transitionDelay = `${staggerDelay}ms`;
           }
@@ -105,9 +126,5 @@ function initHomeReveal() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (!document.body.classList.contains("home-page")) {
-    return;
-  }
-
-  initHomeReveal();
+  initReveal();
 });
