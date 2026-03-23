@@ -1257,7 +1257,36 @@
   }
 }
 
+@media (max-width: 768px) {
+  .why-editorial-item,
+  .conversation-row,
+  .card,
+  .access-primary,
+  .access-secondary,
+  .rencontre-item {
+    position: relative;
+    padding: 22px 18px 22px 24px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.34);
+  }
 
+  .why-editorial-item::before,
+  .conversation-row::before,
+  .card::before,
+  .access-primary::before,
+  .access-secondary::before,
+  .rencontre-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18px;
+    bottom: 18px;
+    width: 3px;
+    border-radius: 999px;
+    background: var(--ep-brown-soft);
+    opacity: 0.8;
+  }
+}
 
 
 
