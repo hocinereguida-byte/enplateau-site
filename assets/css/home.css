@@ -1104,3 +1104,67 @@
     font-size: clamp(1.12rem, 6.6vw, 1.44rem);
   }
 }
+/* =========================
+   CONVERSATIONS EN COURS
+   ========================= */
+
+.conversation-row {
+  display: block;
+}
+
+.conversation-toggle {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.conversation-toggle .frame-row-head {
+  margin-bottom: 10px;
+}
+
+.conversation-toggle-label {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ep-brown);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.conversation-panel {
+  padding-top: 6px;
+}
+
+.conversation-panel p {
+  margin: 0 0 14px;
+  max-width: var(--ep-copy);
+  line-height: 1.74;
+  color: var(--ep-text-muted);
+  text-wrap: pretty;
+}
+
+.conversation-panel p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .conversation-toggle-label {
+    font-size: 0.9rem;
+  }
+
+  .conversation-panel p {
+    margin-bottom: 12px;
+  }
+}
+
+
+
+
+
+
+
