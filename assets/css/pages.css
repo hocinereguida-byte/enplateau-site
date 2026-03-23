@@ -584,7 +584,63 @@
   .page-hero h1 {
     font-size: clamp(3rem, 4.6vw, 5.4rem);
   }
+@media (max-width: 768px) {
+  .programme-access,
+  .programme-list,
+  .programme-value,
+  .programme-positions,
+  .programme-season,
+  .programme-architecture {
+    gap: 18px;
+  }
 
+  .programme-access__item,
+  .programme-list__item,
+  .programme-value__item,
+  .programme-position,
+  .season-card,
+  .programme-step {
+    position: relative;
+    padding: 22px 18px 22px 24px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.36);
+  }
+
+  .programme-access__item::before,
+  .programme-list__item::before,
+  .programme-value__item::before,
+  .programme-position::before,
+  .season-card::before,
+  .programme-step::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18px;
+    bottom: 18px;
+    width: 3px;
+    border-radius: 999px;
+    background: var(--ep-brown-soft);
+    opacity: 0.8;
+  }
+
+  .programme-access__item h3,
+  .programme-list__item h3,
+  .programme-value__item h3,
+  .programme-position h3,
+  .season-card h3,
+  .programme-step h3 {
+    margin-bottom: 12px;
+  }
+
+  .programme-access__item p,
+  .programme-list__item p,
+  .programme-value__item p,
+  .programme-position p,
+  .season-card p,
+  .programme-step p {
+    margin-bottom: 0;
+  }
+}
   .page-hero-sub {
     max-width: 36ch;
   }
