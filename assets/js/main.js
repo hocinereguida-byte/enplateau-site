@@ -11,6 +11,7 @@ function initReveal() {
     ".page-hero-kicker",
     ".page-hero-title",
     ".page-hero-sub",
+    ".page-hero-meta",
     ".page-hero-note",
     ".section-head",
     ".why-editorial-item",
@@ -31,6 +32,7 @@ function initReveal() {
     ".programme-position",
     ".programme-access__item",
     ".programme-link-row",
+    ".page-centered-copy",
     ".page-hero-inner"
   ];
 
@@ -60,6 +62,7 @@ function initReveal() {
       element.classList.contains("page-hero-kicker") ||
       element.classList.contains("page-hero-title") ||
       element.classList.contains("page-hero-sub") ||
+      element.classList.contains("page-hero-meta") ||
       element.classList.contains("page-hero-note") ||
       element.classList.contains("page-hero-inner")
     ) {
@@ -93,6 +96,7 @@ function initReveal() {
             !element.classList.contains("page-hero-kicker") &&
             !element.classList.contains("page-hero-title") &&
             !element.classList.contains("page-hero-sub") &&
+            !element.classList.contains("page-hero-meta") &&
             !element.classList.contains("page-hero-note") &&
             !element.classList.contains("page-hero-inner")
           ) {
