@@ -17,10 +17,14 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&display=swap" rel="stylesheet">
 
+  <!-- CSS GLOBAL -->
   <link rel="stylesheet" href="assets/css/layout.css">
+
+  <!-- CSS SPÉCIFIQUE PAGE -->
+  <link rel="stylesheet" href="assets/css/pages.css">
 </head>
 
-<body>
+<body class="page-programme">
 
   <div id="site-header"></div>
   <div id="site-mobile-menu"></div>
@@ -28,7 +32,7 @@
   <main>
 
     <!-- HERO -->
-    <section class="light">
+    <section class="light page-hero page-hero--programme">
       <div class="container">
 
         <div class="section-head section-head--narrow">
@@ -51,14 +55,14 @@
     </section>
 
     <!-- ARCHITECTURE -->
-    <section class="light">
+    <section class="light inner-section">
       <div class="container">
 
         <div class="section-head section-head--narrow">
           <h2>Une architecture en trois temps</h2>
         </div>
 
-        <ul class="grid">
+        <ul class="programme-architecture">
           <li><strong>Observer</strong> — à partir de situations concrètes</li>
           <li><strong>Comparer</strong> — entre territoires et configurations</li>
           <li><strong>Structurer</strong> — en lectures utiles à la décision</li>
@@ -68,26 +72,26 @@
     </section>
 
     <!-- SAISON -->
-    <section class="light">
+    <section class="light inner-section">
       <div class="container">
 
         <div class="section-head section-head--narrow">
           <h2>Saison inaugurale</h2>
         </div>
 
-        <div class="grid grid-3">
+        <div class="programme-season">
 
-          <div>
+          <div class="season-card">
             <h3>Lyon — Observer</h3>
             <p>Identifier les transformations à partir de situations concrètes.</p>
           </div>
 
-          <div>
+          <div class="season-card">
             <h3>Lille — Comparer</h3>
             <p>Mettre en regard des configurations territoriales.</p>
           </div>
 
-          <div>
+          <div class="season-card">
             <h3>Paris — Structurer</h3>
             <p>Relier ces lectures aux cadres de décision.</p>
           </div>
@@ -102,14 +106,14 @@
     </section>
 
     <!-- CADRES -->
-    <section class="light">
+    <section class="light inner-section">
       <div class="container">
 
         <div class="section-head section-head--narrow">
           <h2>Cadres de formalisation retenus</h2>
         </div>
 
-        <ul class="grid">
+        <ul class="programme-list">
           <li>Formuler une lecture à partir d’une situation concrète</li>
           <li>Inscrire une dynamique dans un cadre plus large</li>
           <li>Éclairer des enjeux d’investissement et d’organisation</li>
@@ -120,14 +124,14 @@
     </section>
 
     <!-- VALEUR -->
-    <section class="light">
+    <section class="light inner-section">
       <div class="container">
 
         <div class="section-head section-head--narrow">
           <h2>Ce que le programme produit</h2>
         </div>
 
-        <ul class="grid">
+        <ul class="programme-list">
           <li>Des situations rendues comparables</li>
           <li>Des dynamiques mises en regard</li>
           <li>Des arbitrages mieux éclairés</li>
@@ -137,14 +141,14 @@
     </section>
 
     <!-- POSITIONS -->
-    <section class="soft">
+    <section class="soft inner-section">
       <div class="container">
 
         <div class="section-head section-head--narrow">
           <h2>Trois positions dans le programme</h2>
         </div>
 
-        <ul class="grid">
+        <ul class="programme-list">
           <li><strong>Bâtisseurs</strong> — vivent les situations</li>
           <li><strong>Éclaireurs</strong> — les comparent</li>
           <li><strong>Architectes</strong> — les relient aux cadres de décision</li>
@@ -156,7 +160,7 @@
     </section>
 
     <!-- ACCÈS -->
-    <section class="light">
+    <section class="light inner-section">
       <div class="container">
 
         <div class="section-head section-head--narrow">
@@ -167,7 +171,7 @@
           L’accès dépend de la pertinence de la position et de l’état de structuration des lectures en cours.
         </p>
 
-        <div class="grid">
+        <div class="programme-access">
           <a href="participer.html" class="link">Participer</a>
           <a href="participer.html#approche" class="link">Recevoir le dossier</a>
         </div>
