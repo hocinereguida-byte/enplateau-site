@@ -109,4 +109,1105 @@
 .hero-actions {
   display: flex;
   justify-content: flex-start;
-  align-items:
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 32px;
+}
+
+.hero-link-primary,
+.hero-link-secondary {
+  font-size: 0.95rem;
+  line-height: 1.2;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.hero-link-primary {
+  color: #ffffff;
+}
+
+.hero-link-secondary {
+  color: rgba(245, 241, 236, 0.76);
+}
+
+.hero-link-primary:hover,
+.hero-link-secondary:hover {
+  color: #ddc2b1;
+}
+
+.hero-meta {
+  margin: 26px 0 0;
+  max-width: 42ch;
+  font-size: 0.88rem;
+  line-height: 1.64;
+  color: rgba(245, 241, 236, 0.68);
+  text-wrap: pretty;
+}
+
+.hero-note {
+  margin: 14px 0 0;
+  max-width: 44ch;
+  font-size: 0.84rem;
+  line-height: 1.62;
+  color: rgba(245, 241, 236, 0.58);
+  text-wrap: pretty;
+}
+
+/* =========================
+   HOME SECTION
+   ========================= */
+
+.home-section {
+  padding: 88px 0;
+}
+
+/* =========================
+   LISTES ÉDITORIALES
+   ========================= */
+
+.why-editorial-list {
+  max-width: 760px;
+  margin: 46px auto 0;
+  border-top: 1px solid var(--ep-border);
+}
+
+.why-editorial-item {
+  padding: 24px 0 22px;
+  border-bottom: 1px solid var(--ep-border);
+}
+
+.why-editorial-item h3 {
+  margin: 0 0 8px;
+  max-width: 22ch;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.28rem;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #1a120f;
+  text-wrap: balance;
+}
+
+.why-editorial-item p {
+  max-width: var(--ep-copy);
+  margin: 6px 0 0;
+  color: var(--ep-text-muted);
+  line-height: 1.78;
+  text-wrap: pretty;
+}
+
+/* =========================
+   CADRES ÉDITORIAUX
+   ========================= */
+
+.frames-list {
+  max-width: 900px;
+  margin: 46px auto 0;
+  border-top: 1px solid var(--ep-border);
+}
+
+.frame-row {
+  display: grid;
+  grid-template-columns: 0.88fr 1.12fr;
+  gap: 26px;
+  padding: 24px 0 22px;
+  border-bottom: 1px solid var(--ep-border);
+}
+
+.frame-row-head h3 {
+  margin: 0 0 6px;
+  max-width: 18ch;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.24rem;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #18110f;
+  text-wrap: balance;
+}
+
+.frame-row-meta {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ep-text-soft);
+}
+
+.frame-row > p {
+  max-width: var(--ep-copy);
+  margin: 0;
+  line-height: 1.76;
+  color: var(--ep-text-muted);
+  text-wrap: pretty;
+}
+
+/* =========================
+   CONVERSATIONS EN COURS
+   ========================= */
+
+.conversations-list {
+  max-width: 980px;
+}
+
+.conversation-row {
+  display: grid;
+  grid-template-columns: 0.88fr 1.12fr;
+  gap: 26px;
+  padding: 24px 0 22px;
+  border-bottom: 1px solid var(--ep-border);
+}
+
+.conversation-row:first-child {
+  border-top: 1px solid var(--ep-border);
+}
+
+.conversation-toggle {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.conversation-toggle:focus-visible {
+  outline: 1px solid rgba(181, 106, 54, 0.5);
+  outline-offset: 6px;
+}
+
+.conversation-toggle .frame-row-head {
+  margin-bottom: 10px;
+}
+
+.conversation-toggle .frame-row-head h3 {
+  margin: 0 0 6px;
+  max-width: 18ch;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.24rem;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #18110f;
+  text-wrap: balance;
+}
+
+.conversation-toggle .frame-row-meta {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ep-text-soft);
+}
+
+.conversation-toggle-label {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ep-brown);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.conversation-toggle:hover .conversation-toggle-label {
+  color: var(--ep-copper);
+}
+
+.conversation-panel {
+  padding-top: 2px;
+}
+
+.conversation-panel p {
+  margin: 0 0 14px;
+  max-width: var(--ep-copy);
+  line-height: 1.74;
+  color: var(--ep-text-muted);
+  text-wrap: pretty;
+}
+
+.conversation-panel p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   RENCONTRES
+   ========================= */
+
+.section-rencontres {
+  padding: 104px 0;
+}
+
+.rencontres-timeline {
+  position: relative;
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+
+.rencontres-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  bottom: 3px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.rencontre-item {
+  position: relative;
+  display: block;
+  padding-left: 24px;
+  text-decoration: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.rencontre-item::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  background: #c87433;
+  border-radius: 50%;
+}
+
+.rencontre-item:hover,
+.rencontre-item.is-active {
+  transform: translateX(2px);
+  opacity: 0.95;
+}
+
+.rencontre-item:not(.is-active):hover {
+  opacity: 0.92;
+}
+
+.rencontre-date {
+  margin-bottom: 8px;
+  font-size: 0.84rem;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.60);
+}
+
+.rencontre-item h3 {
+  margin: 0 0 12px;
+  max-width: 22ch;
+  font-family: Bitter, Georgia, serif;
+  font-size: clamp(1.52rem, 3.4vw, 2.18rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+.rencontre-item p {
+  max-width: 58ch;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.74;
+  color: rgba(245, 241, 236, 0.78);
+  text-wrap: pretty;
+}
+
+.rencontres-footer {
+  margin-top: 72px;
+  max-width: 620px;
+}
+
+.rencontres-note {
+  margin: 0 0 16px;
+  font-size: 0.82rem;
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.54);
+  text-wrap: pretty;
+}
+
+.rencontres-link {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.rencontres-link:hover {
+  color: #ddc2b1;
+}
+
+/* =========================
+   DISPOSITIF
+   ========================= */
+
+.dispositif-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 34px;
+  margin-top: 46px;
+}
+
+.dispositif-step {
+  padding: 24px 0 22px;
+  border-top: 1px solid var(--ep-border);
+}
+
+.dispositif-step h3 {
+  margin: 0 0 10px;
+  max-width: 18ch;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.28rem;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #1a120f;
+  text-wrap: balance;
+}
+
+.dispositif-step p {
+  max-width: var(--ep-copy);
+  margin: 6px 0 0;
+  line-height: 1.76;
+  color: var(--ep-text-muted);
+  text-wrap: pretty;
+}
+
+.dispositif-step--featured {
+  padding-left: 18px;
+  border-left: 1px solid rgba(181, 106, 54, 0.42);
+}
+
+/* =========================
+   POURQUOI EN PLATEAU
+   ========================= */
+
+.why-ep-editorial {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.why-ep-statement h3 {
+  margin: 0;
+  max-width: 18ch;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.72rem;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: #18110f;
+  text-wrap: balance;
+}
+
+.why-ep-text {
+  max-width: 44ch;
+}
+
+.why-ep-text p {
+  max-width: var(--ep-copy);
+  margin: 0 0 16px;
+  line-height: 1.84;
+  color: var(--ep-text-muted);
+  text-wrap: pretty;
+}
+
+.why-ep-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   POSITIONS
+   ========================= */
+
+.series-grid {
+  gap: 34px;
+}
+
+.series-grid .card {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.series-grid .card.is-muted {
+  opacity: 0.5;
+}
+
+.series-grid .card.featured,
+.series-grid .card.primary {
+  border-top-color: rgba(181, 106, 54, 0.42);
+}
+
+.series-grid .card h3 {
+  max-width: 14ch;
+}
+
+.series-grid .link {
+  margin-top: 18px;
+}
+
+/* =========================
+   ACCÈS
+   ========================= */
+
+.access-editorial {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 38px;
+  margin-top: 40px;
+  align-items: start;
+}
+
+.access-primary,
+.access-secondary {
+  background: transparent;
+  box-shadow: none;
+}
+
+.access-primary {
+  padding: 26px 0 0;
+  border: 0;
+  border-top: 1px solid rgba(181, 106, 54, 0.38);
+  border-radius: 0;
+}
+
+.access-secondary {
+  padding: 26px 0 0;
+  border-top: 1px solid var(--ep-border);
+}
+
+.access-tag {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ep-copper);
+}
+
+.access-primary h3,
+.access-secondary h3 {
+  margin: 0 0 10px;
+  max-width: 16ch;
+  font-family: Bitter, Georgia, serif;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--ep-text);
+  text-wrap: balance;
+}
+
+.access-primary h3 {
+  font-size: 1.5rem;
+}
+
+.access-secondary h3 {
+  font-size: 1.26rem;
+}
+
+.access-primary p,
+.access-secondary p {
+  max-width: 42ch;
+  margin: 0 0 16px;
+  line-height: 1.76;
+  color: var(--ep-text-muted);
+  text-wrap: pretty;
+}
+
+.access-link {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.access-link--primary {
+  color: var(--ep-brown);
+}
+
+.access-link--secondary {
+  color: var(--ep-text-soft);
+}
+
+.access-link:hover {
+  color: var(--ep-copper);
+}
+
+/* =========================
+   REVEAL CIBLÉ
+   ========================= */
+
+.home-page .section-head.reveal,
+.home-page .why-editorial-item.reveal,
+.home-page .frame-row.reveal,
+.home-page .conversation-row.reveal,
+.home-page .dispositif-step.reveal,
+.home-page .rencontre-item.reveal,
+.home-page .series-grid .card.reveal {
+  will-change: opacity, transform;
+}
+
+/* =========================
+   VERY LARGE DESKTOP
+   ========================= */
+
+@media (min-width: 1600px) {
+  .hero {
+    padding: 118px 0 92px;
+  }
+
+  .hero-inner--left {
+    max-width: 1040px;
+  }
+
+  .hero-title {
+    max-width: 26ch;
+    font-size: clamp(3.4rem, 5.4vw, 6.2rem);
+  }
+
+  .hero-subtitle {
+    max-width: 66ch;
+    font-size: clamp(1.08rem, 1.6vw, 1.34rem);
+  }
+
+  .hero-meta {
+    max-width: 46ch;
+    font-size: 0.9rem;
+  }
+
+  .hero-note {
+    max-width: 48ch;
+    font-size: 0.85rem;
+  }
+
+  .home-section,
+  .section-rencontres {
+    padding: 96px 0;
+  }
+
+  .why-editorial-list,
+  .frames-list,
+  .dispositif-steps {
+    margin-top: 52px;
+  }
+
+  .why-editorial-item h3,
+  .dispositif-step h3 {
+    font-size: 1.34rem;
+  }
+
+  .frame-row-head h3,
+  .conversation-toggle .frame-row-head h3 {
+    font-size: 1.28rem;
+  }
+
+  .why-ep-statement h3 {
+    font-size: 1.82rem;
+  }
+
+  .access-primary h3 {
+    font-size: 1.58rem;
+  }
+}
+
+/* =========================
+   LARGE DESKTOP
+   ========================= */
+
+@media (min-width: 1281px) and (max-width: 1599px) {
+  .hero {
+    padding: 108px 0 84px;
+  }
+
+  .hero-inner--left {
+    max-width: 980px;
+  }
+
+  .hero-title {
+    max-width: 24ch;
+    font-size: clamp(2.9rem, 5.8vw, 5.4rem);
+  }
+
+  .hero-subtitle {
+    max-width: 60ch;
+  }
+}
+
+/* =========================
+   STANDARD DESKTOP / LAPTOP
+   ========================= */
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .hero {
+    padding: 94px 0 74px;
+  }
+
+  .hero-inner--left {
+    max-width: 900px;
+  }
+
+  .hero-title {
+    max-width: 22ch;
+    font-size: clamp(2.55rem, 6.4vw, 5rem);
+    line-height: 0.96;
+  }
+
+  .hero-subtitle {
+    max-width: 54ch;
+    font-size: clamp(1rem, 1.7vw, 1.18rem);
+  }
+
+  .hero-actions {
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .hero-meta {
+    margin-top: 24px;
+  }
+
+  .home-section,
+  .section-rencontres {
+    padding: 78px 0;
+  }
+
+  .why-editorial-list,
+  .frames-list,
+  .dispositif-steps {
+    margin-top: 40px;
+  }
+
+  .frame-row,
+  .conversation-row {
+    gap: 22px;
+  }
+
+  .access-editorial {
+    gap: 30px;
+  }
+}
+
+/* =========================
+   TABLET LANDSCAPE / SMALL LAPTOP
+   ========================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero {
+    padding: 80px 0 60px;
+  }
+
+  .hero-inner--left {
+    max-width: 760px;
+  }
+
+  .hero-kicker {
+    margin-bottom: 18px;
+  }
+
+  .hero-title {
+    max-width: 19ch;
+    font-size: clamp(2.3rem, 5.8vw, 4rem);
+    line-height: 0.98;
+    margin-bottom: 20px;
+  }
+
+  .hero-subtitle {
+    max-width: 46ch;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .hero-meta,
+  .hero-note {
+    max-width: 36ch;
+  }
+
+  .home-section,
+  .section-rencontres {
+    padding: 68px 0;
+  }
+
+  .why-ep-editorial,
+  .frame-row,
+  .conversation-row,
+  .access-editorial,
+  .dispositif-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .why-ep-statement h3 {
+    max-width: none;
+    font-size: 1.5rem;
+  }
+
+  .why-ep-text,
+  .access-primary p,
+  .access-secondary p {
+    max-width: none;
+  }
+
+  .rencontre-item h3 {
+    max-width: none;
+    font-size: clamp(1.34rem, 4vw, 1.9rem);
+  }
+}
+
+/* =========================
+   MOBILE LARGE
+   ========================= */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .hero {
+    padding: 70px 0 50px;
+  }
+
+  .hero-inner--left {
+    max-width: 100%;
+  }
+
+  .hero-kicker {
+    margin-bottom: 16px;
+    font-size: 0.7rem;
+    letter-spacing: 0.13em;
+  }
+
+  .hero-title {
+    max-width: 15ch;
+    font-size: clamp(2rem, 6.7vw, 3.05rem);
+    line-height: 0.99;
+    letter-spacing: -0.04em;
+    margin-bottom: 18px;
+  }
+
+  .hero-subtitle {
+    max-width: 100%;
+    font-size: 0.98rem;
+    line-height: 1.68;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .hero-link-primary,
+  .hero-link-secondary {
+    font-size: 0.94rem;
+  }
+
+  .hero-meta {
+    margin-top: 22px;
+    max-width: 100%;
+    font-size: 0.85rem;
+    line-height: 1.62;
+  }
+
+  .hero-note {
+    margin-top: 12px;
+    max-width: 100%;
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .home-section,
+  .section-rencontres {
+    padding: 60px 0;
+  }
+
+  .why-editorial-list,
+  .frames-list,
+  .dispositif-steps {
+    margin-top: 30px;
+  }
+
+  .why-ep-editorial,
+  .frame-row,
+  .conversation-row,
+  .access-editorial,
+  .dispositif-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .why-editorial-item,
+  .frame-row,
+  .conversation-row,
+  .dispositif-step,
+  .access-primary,
+  .access-secondary {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .rencontres-timeline {
+    gap: 26px;
+    margin-top: 34px;
+  }
+
+  .rencontre-item h3 {
+    max-width: none;
+    font-size: clamp(1.24rem, 6vw, 1.74rem);
+    line-height: 1.10;
+  }
+
+  .rencontre-item p {
+    font-size: 0.96rem;
+    line-height: 1.68;
+  }
+
+  .rencontres-footer {
+    margin-top: 32px;
+  }
+
+  .why-ep-statement h3 {
+    max-width: none;
+    font-size: 1.38rem;
+  }
+
+  .why-ep-text,
+  .access-primary p,
+  .access-secondary p {
+    max-width: none;
+  }
+
+  .why-editorial-item h3,
+  .dispositif-step h3,
+  .frame-row-head h3,
+  .conversation-toggle .frame-row-head h3,
+  .access-secondary h3 {
+    font-size: 1.14rem;
+  }
+
+  .access-primary h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* =========================
+   MOBILE STANDARD / SMALL
+   ========================= */
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 64px 0 46px;
+  }
+
+  .hero-inner--left {
+    max-width: 100%;
+  }
+
+  .hero-kicker {
+    margin-bottom: 14px;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-title {
+    max-width: 13.5ch;
+    font-size: clamp(1.82rem, 7.8vw, 2.65rem);
+    line-height: 0.99;
+    letter-spacing: -0.038em;
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    max-width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.64;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .hero-link-primary,
+  .hero-link-secondary {
+    font-size: 0.92rem;
+  }
+
+  .hero-meta {
+    margin-top: 20px;
+    max-width: 100%;
+    font-size: 0.82rem;
+    line-height: 1.58;
+  }
+
+  .hero-note {
+    margin-top: 10px;
+    max-width: 100%;
+    font-size: 0.78rem;
+    line-height: 1.56;
+  }
+
+  .home-section,
+  .section-rencontres {
+    padding: 56px 0;
+  }
+
+  .why-editorial-list,
+  .frames-list,
+  .dispositif-steps {
+    margin-top: 28px;
+  }
+
+  .why-ep-editorial,
+  .frame-row,
+  .conversation-row,
+  .access-editorial,
+  .dispositif-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .why-editorial-item,
+  .frame-row,
+  .conversation-row,
+  .dispositif-step,
+  .access-primary,
+  .access-secondary {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .rencontres-timeline {
+    gap: 24px;
+    margin-top: 30px;
+  }
+
+  .rencontre-item {
+    padding-left: 20px;
+  }
+
+  .rencontre-item h3 {
+    max-width: none;
+    font-size: clamp(1.18rem, 6.4vw, 1.58rem);
+    line-height: 1.10;
+  }
+
+  .rencontre-item p {
+    font-size: 0.94rem;
+    line-height: 1.66;
+  }
+
+  .rencontres-footer {
+    margin-top: 28px;
+  }
+
+  .why-ep-statement h3 {
+    max-width: none;
+    font-size: 1.3rem;
+  }
+
+  .why-ep-text,
+  .access-primary p,
+  .access-secondary p {
+    max-width: none;
+  }
+
+  .why-editorial-item h3,
+  .dispositif-step h3,
+  .frame-row-head h3,
+  .conversation-toggle .frame-row-head h3,
+  .access-secondary h3 {
+    font-size: 1.1rem;
+  }
+
+  .access-primary h3 {
+    font-size: 1.24rem;
+  }
+
+  .conversation-toggle-label {
+    font-size: 0.9rem;
+  }
+
+  .conversation-panel p {
+    margin-bottom: 12px;
+  }
+}
+
+/* =========================
+   MOBILE LANDSCAPE
+   ========================= */
+
+@media (max-width: 932px) and (orientation: landscape) {
+  .hero {
+    padding: 58px 0 38px;
+  }
+
+  .hero-inner--left {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    max-width: 22ch;
+    font-size: clamp(2rem, 4.8vw, 3.4rem);
+    line-height: 0.98;
+  }
+
+  .hero-subtitle {
+    max-width: 62ch;
+    font-size: 0.95rem;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    margin-top: 18px;
+  }
+
+  .hero-meta,
+  .hero-note {
+    max-width: 62ch;
+  }
+}
+
+/* =========================
+   EXTRA SMALL MOBILE
+   ========================= */
+
+@media (max-width: 360px) {
+  .hero {
+    padding: 60px 0 42px;
+  }
+
+  .hero-title {
+    max-width: 12.5ch;
+    font-size: clamp(1.68rem, 7.8vw, 2.35rem);
+    line-height: 1;
+  }
+
+  .hero-subtitle {
+    font-size: 0.92rem;
+  }
+
+  .hero-meta {
+    font-size: 0.79rem;
+  }
+
+  .hero-note {
+    font-size: 0.75rem;
+  }
+
+  .hero-link-primary,
+  .hero-link-secondary {
+    font-size: 0.9rem;
+  }
+
+  .rencontre-item h3 {
+    font-size: clamp(1.12rem, 6.6vw, 1.44rem);
+  }
+}
