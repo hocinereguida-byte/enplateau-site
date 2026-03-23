@@ -1211,3 +1211,33 @@
     font-size: clamp(1.12rem, 6.6vw, 1.44rem);
   }
 }
+
+.conversation-toggle .frame-row-meta + .frame-row-meta {
+  margin-top: 4px;
+}
+
+.conversation-panel em {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--ep-text-soft);
+  font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
