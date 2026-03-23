@@ -14,7 +14,7 @@
 .page-hero {
   position: relative;
   overflow: hidden;
-  padding: 124px 0 98px;
+  padding: 118px 0 94px;
 }
 
 .page-hero--programme {
@@ -48,7 +48,7 @@
 }
 
 .page-hero-inner {
-  max-width: 940px;
+  max-width: 920px;
   margin: 0 auto;
 }
 
@@ -73,28 +73,38 @@
 .page-hero-title,
 .page-hero h1 {
   margin: 0 auto 24px;
-  max-width: 15ch;
+  max-width: 16ch;
   font-family: Bitter, Georgia, serif;
-  font-size: clamp(2.9rem, 5.9vw, 5.5rem);
-  line-height: 0.96;
-  letter-spacing: -0.045em;
+  font-size: clamp(2.7rem, 5.8vw, 5.3rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
   color: #f5f1ec;
   text-wrap: balance;
+  hyphens: auto;
 }
 
 .page-hero-sub,
 .page-hero-intro {
-  max-width: 30ch;
+  max-width: 34ch;
   margin: 0 auto;
-  font-size: clamp(1.06rem, 1.8vw, 1.26rem);
-  line-height: 1.72;
+  font-size: clamp(1.04rem, 1.8vw, 1.24rem);
+  line-height: 1.74;
   color: rgba(245, 241, 236, 0.86);
   text-wrap: pretty;
 }
 
+.page-hero-meta {
+  max-width: 38ch;
+  margin: 18px auto 0;
+  font-size: 0.94rem;
+  line-height: 1.66;
+  color: rgba(245, 241, 236, 0.74);
+  text-wrap: pretty;
+}
+
 .page-hero-note {
-  max-width: 40ch;
-  margin: 24px auto 0;
+  max-width: 42ch;
+  margin: 18px auto 0;
   font-size: 0.88rem;
   line-height: 1.64;
   color: rgba(245, 241, 236, 0.60);
@@ -103,6 +113,7 @@
 
 .page-hero-inner--left .page-hero-title,
 .page-hero-inner--left .page-hero-sub,
+.page-hero-inner--left .page-hero-meta,
 .page-hero-inner--left .page-hero-note,
 .page-hero-inner--left h1 {
   margin-left: 0;
@@ -122,26 +133,69 @@
 }
 
 /* =========================
+   ENTÊTES DE SECTION
+   ========================= */
+
+.section-head {
+  margin-bottom: 34px;
+}
+
+.section-head.section-head--narrow {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-head.section-head--centered {
+  text-align: center;
+}
+
+.section-head h2 {
+  max-width: 22ch;
+  margin-left: auto;
+  margin-right: auto;
+  text-wrap: balance;
+}
+
+.section-head .section-intro {
+  max-width: 62ch;
+  margin-left: auto;
+  margin-right: auto;
+  text-wrap: pretty;
+}
+
+.section-footnote {
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+.section-footnote--centered {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* =========================
    ARCHITECTURE PROGRAMME
    ========================= */
 
 .programme-architecture {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 36px;
-  margin-top: 52px;
+  gap: 34px;
+  margin-top: 50px;
 }
 
 .programme-step {
-  padding: 28px 0 0;
+  padding: 26px 0 0;
   border-top: 1px solid var(--ep-border);
 }
 
 .programme-step__index {
   display: inline-block;
   margin-bottom: 12px;
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 700;
   color: var(--ep-copper);
@@ -150,17 +204,18 @@
 .programme-step h3 {
   margin: 0 0 10px;
   font-family: Bitter, Georgia, serif;
-  font-size: 1.46rem;
-  line-height: 1.08;
+  font-size: 1.42rem;
+  line-height: 1.10;
   letter-spacing: -0.02em;
   color: #18110f;
+  text-wrap: balance;
 }
 
 .programme-step p {
   margin: 0;
-  max-width: 28ch;
   color: var(--ep-text-muted);
   line-height: 1.78;
+  max-width: 28ch;
   text-wrap: pretty;
 }
 
@@ -172,20 +227,19 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 34px;
-  margin-top: 52px;
+  margin-top: 50px;
 }
 
 .season-card {
-  padding: 30px 24px 26px;
-  border: 1px solid rgba(32, 24, 21, 0.10);
-  background: rgba(247, 244, 239, 0.86);
-  box-shadow: 0 8px 24px rgba(32, 24, 21, 0.03);
+  padding: 28px 24px 24px;
+  border: 1px solid var(--ep-border);
+  background: rgba(247, 244, 239, 0.82);
 }
 
 .season-card__meta {
   margin: 0 0 10px;
-  font-size: 0.76rem;
-  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 700;
   color: var(--ep-copper);
@@ -194,10 +248,11 @@
 .season-card h3 {
   margin: 0 0 12px;
   font-family: Bitter, Georgia, serif;
-  font-size: 1.34rem;
-  line-height: 1.08;
+  font-size: 1.38rem;
+  line-height: 1.10;
   letter-spacing: -0.02em;
   color: #18110f;
+  text-wrap: balance;
 }
 
 .season-card p {
@@ -213,7 +268,7 @@
 
 .programme-list {
   max-width: 920px;
-  margin: 46px auto 0;
+  margin: 44px auto 0;
   border-top: 1px solid var(--ep-border);
 }
 
@@ -224,10 +279,9 @@
 
 .programme-list__item h3 {
   margin: 0 0 8px;
-  max-width: 26ch;
   font-family: Bitter, Georgia, serif;
   font-size: 1.24rem;
-  line-height: 1.12;
+  line-height: 1.14;
   letter-spacing: -0.02em;
   color: #18110f;
   text-wrap: balance;
@@ -235,7 +289,7 @@
 
 .programme-list__item p {
   margin: 0;
-  max-width: 58ch;
+  max-width: 62ch;
   color: var(--ep-text-muted);
   line-height: 1.76;
   text-wrap: pretty;
@@ -247,23 +301,24 @@
 
 .programme-value {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 36px;
-  margin-top: 52px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+  margin-top: 50px;
 }
 
 .programme-value__item {
-  padding: 28px 0 0;
-  border-top: 1px solid rgba(181, 106, 54, 0.28);
+  padding: 26px 0 0;
+  border-top: 1px solid var(--ep-border);
 }
 
 .programme-value__item h3 {
   margin: 0 0 10px;
   font-family: Bitter, Georgia, serif;
-  font-size: 1.42rem;
-  line-height: 1.08;
+  font-size: 1.38rem;
+  line-height: 1.10;
   letter-spacing: -0.02em;
   color: #18110f;
+  text-wrap: balance;
 }
 
 .programme-value__item p {
@@ -280,22 +335,23 @@
 .programme-positions {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 36px;
-  margin-top: 52px;
+  gap: 34px;
+  margin-top: 50px;
 }
 
 .programme-position {
-  padding: 26px 0 0;
+  padding: 24px 0 0;
   border-top: 1px solid var(--ep-border);
 }
 
 .programme-position h3 {
   margin: 0 0 10px;
   font-family: Bitter, Georgia, serif;
-  font-size: 1.34rem;
-  line-height: 1.10;
+  font-size: 1.32rem;
+  line-height: 1.12;
   letter-spacing: -0.02em;
   color: #18110f;
+  text-wrap: balance;
 }
 
 .programme-position p {
@@ -306,7 +362,7 @@
 }
 
 .programme-link-row {
-  margin: 32px 0 0;
+  margin: 30px 0 0;
   text-align: center;
 }
 
@@ -316,9 +372,9 @@
 
 .programme-access {
   display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
-  gap: 40px;
-  margin-top: 46px;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 38px;
+  margin-top: 44px;
   align-items: start;
 }
 
@@ -327,23 +383,24 @@
   box-shadow: none;
 }
 
-.programme-access__item:first-child {
-  padding: 28px 0 0;
-  border-top: 1px solid rgba(181, 106, 54, 0.38);
+.programme-access__item:first-child,
+.programme-access__item:last-child {
+  padding: 26px 0 0;
+  border-top: 1px solid var(--ep-border);
 }
 
 .programme-access__item:last-child {
-  padding: 28px 0 0;
-  border-top: 1px solid var(--ep-border);
+  border-top-color: rgba(181, 106, 54, 0.38);
 }
 
 .programme-access__item h3 {
   margin: 0 0 10px;
   font-family: Bitter, Georgia, serif;
-  font-size: 1.42rem;
-  line-height: 1.08;
+  font-size: 1.38rem;
+  line-height: 1.10;
   letter-spacing: -0.02em;
   color: #18110f;
+  text-wrap: balance;
 }
 
 .programme-access__item p {
@@ -368,6 +425,7 @@
   margin: 0 0 16px;
   line-height: 1.8;
   color: var(--ep-text-muted);
+  text-wrap: pretty;
 }
 
 .page-centered-copy p:last-child {
@@ -407,6 +465,10 @@
   .programme-access__item p {
     max-width: none;
   }
+
+  .section-head h2 {
+    max-width: 24ch;
+  }
 }
 
 /* =========================
@@ -437,10 +499,16 @@
     line-height: 1.72;
   }
 
+  .page-hero-meta {
+    max-width: 32ch;
+    font-size: 0.88rem;
+    margin-top: 16px;
+  }
+
   .page-hero-note {
     max-width: 32ch;
     font-size: 0.86rem;
-    margin-top: 18px;
+    margin-top: 16px;
   }
 
   .programme-architecture,
@@ -470,6 +538,10 @@
   .programme-list__item h3 {
     font-size: 1.18rem;
   }
+
+  .section-head h2 {
+    max-width: 18ch;
+  }
 }
 
 /* =========================
@@ -489,6 +561,7 @@
 
   .page-hero-sub,
   .page-hero-intro,
+  .page-hero-meta,
   .page-hero-note {
     max-width: 52ch;
   }
@@ -511,4 +584,13 @@
   .page-hero h1 {
     font-size: clamp(3rem, 4.6vw, 5.4rem);
   }
-} ok ?
+
+  .page-hero-sub {
+    max-width: 36ch;
+  }
+
+  .page-hero-meta,
+  .page-hero-note {
+    max-width: 42ch;
+  }
+}
