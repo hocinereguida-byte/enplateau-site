@@ -650,3 +650,70 @@
     max-width: 42ch;
   }
 }
+@media (max-width: 768px) {
+  .programme-access__item,
+  .programme-list__item,
+  .programme-value__item,
+  .programme-position,
+  .season-card,
+  .programme-step,
+  .conversation-row,
+  .frame-row,
+  .card {
+    position: relative;
+    padding: 22px 18px 22px 24px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.34);
+  }
+
+  .programme-access__item::before,
+  .programme-list__item::before,
+  .programme-value__item::before,
+  .programme-position::before,
+  .season-card::before,
+  .programme-step::before,
+  .conversation-row::before,
+  .frame-row::before,
+  .card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18px;
+    bottom: 18px;
+    width: 3px;
+    border-radius: 999px;
+    background: var(--ep-brown-soft);
+    opacity: 0.8;
+  }
+
+  .programme-access__item + .programme-access__item,
+  .programme-list__item + .programme-list__item,
+  .programme-value__item + .programme-value__item,
+  .programme-position + .programme-position,
+  .season-card + .season-card,
+  .programme-step + .programme-step,
+  .conversation-row + .conversation-row,
+  .frame-row + .frame-row,
+  .card + .card {
+    margin-top: 18px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
