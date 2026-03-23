@@ -1224,7 +1224,38 @@
   color: var(--ep-text-soft);
   font-style: normal;
 }
+@media (max-width: 768px) {
+  .why-editorial-list {
+    gap: 18px;
+  }
 
+  .why-editorial-item {
+    position: relative;
+    padding: 22px 18px 22px 24px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.36);
+  }
+
+  .why-editorial-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18px;
+    bottom: 18px;
+    width: 3px;
+    border-radius: 999px;
+    background: var(--ep-brown-soft);
+    opacity: 0.8;
+  }
+
+  .why-editorial-item h3 {
+    margin-bottom: 12px;
+  }
+
+  .why-editorial-item p {
+    margin-bottom: 0;
+  }
+}
 
 
 
