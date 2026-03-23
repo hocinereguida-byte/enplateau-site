@@ -1,0 +1,368 @@
+/* =========================
+   PAGES INTÉRIEURES — BASE
+   ========================= */
+
+.inner-section {
+  padding: 88px 0;
+}
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 108px 0 88px;
+}
+
+.page-hero--programme {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(181, 106, 54, 0.16), transparent 42%),
+    radial-gradient(circle at 82% 18%, rgba(102, 122, 140, 0.08), transparent 40%),
+    linear-gradient(180deg, #2c1d18 0%, #201612 52%, #17100d 100%);
+  color: #f5f1ec;
+}
+
+.page-hero--programme::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.014) 0,
+      rgba(255, 255, 255, 0.014) 1px,
+      transparent 1px,
+      transparent 100%
+    );
+  background-size: 32px 32px;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.page-hero__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-hero__kicker {
+  margin: 0 0 20px;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(245, 241, 236, 0.68);
+}
+
+.page-hero__title {
+  margin: 0 auto 24px;
+  max-width: 18ch;
+  font-family: Bitter, Georgia, serif;
+  font-size: clamp(2.3rem, 5.8vw, 4.9rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: #f5f1ec;
+  text-wrap: balance;
+}
+
+.page-hero__intro {
+  max-width: 36ch;
+  margin: 0 auto;
+  font-size: clamp(1.02rem, 1.8vw, 1.24rem);
+  line-height: 1.76;
+  color: rgba(245, 241, 236, 0.86);
+  text-wrap: pretty;
+}
+
+.page-hero__note {
+  max-width: 44ch;
+  margin: 20px auto 0;
+  font-size: 0.9rem;
+  line-height: 1.68;
+  color: rgba(245, 241, 236, 0.62);
+  text-wrap: pretty;
+}
+
+/* =========================
+   ARCHITECTURE
+   ========================= */
+
+.programme-architecture {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 42px;
+}
+
+.programme-step {
+  padding-top: 22px;
+  border-top: 1px solid var(--ep-border);
+}
+
+.programme-step__index {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ep-copper);
+}
+
+.programme-step h3 {
+  margin: 0 0 10px;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.36rem;
+  line-height: 1.14;
+  color: #18110f;
+}
+
+.programme-step p {
+  margin: 0;
+  color: var(--ep-text-muted);
+  line-height: 1.76;
+}
+
+/* =========================
+   SAISON
+   ========================= */
+
+.programme-season {
+  position: relative;
+}
+
+.programme-season__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 44px;
+}
+
+.season-card {
+  padding: 24px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.season-card__meta {
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(243, 229, 219, 0.72);
+}
+
+.season-card h3 {
+  margin: 0 0 12px;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.42rem;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.season-card p {
+  margin: 0;
+  color: rgba(245, 241, 236, 0.8);
+  line-height: 1.74;
+}
+
+/* =========================
+   CADRES ÉDITORIAUX
+   ========================= */
+
+.editorial-frames {
+  max-width: 920px;
+  margin: 40px auto 0;
+  border-top: 1px solid var(--ep-border);
+}
+
+.editorial-frame {
+  padding: 24px 0 22px;
+  border-bottom: 1px solid var(--ep-border);
+}
+
+.editorial-frame h3 {
+  margin: 0 0 8px;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.28rem;
+  line-height: 1.16;
+  color: #18110f;
+}
+
+.editorial-frame p {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--ep-text-muted);
+  line-height: 1.76;
+}
+
+/* =========================
+   VALEUR PRODUITE
+   ========================= */
+
+.programme-value {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  margin-top: 42px;
+}
+
+.programme-value__item {
+  padding-top: 22px;
+  border-top: 1px solid var(--ep-border);
+}
+
+.programme-value__item h3 {
+  margin: 0 0 10px;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.3rem;
+  line-height: 1.14;
+  color: #18110f;
+}
+
+.programme-value__item p {
+  margin: 0;
+  color: var(--ep-text-muted);
+  line-height: 1.76;
+}
+
+/* =========================
+   POSITIONS
+   ========================= */
+
+.programme-positions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  margin-top: 42px;
+}
+
+.programme-position {
+  padding-top: 22px;
+  border-top: 1px solid var(--ep-border);
+}
+
+.programme-position h3 {
+  margin: 0 0 10px;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.3rem;
+  line-height: 1.14;
+  color: #18110f;
+}
+
+.programme-position p {
+  margin: 0;
+  color: var(--ep-text-muted);
+  line-height: 1.76;
+}
+
+.programme-link-row {
+  margin: 28px 0 0;
+  text-align: center;
+}
+
+/* =========================
+   ACCÈS
+   ========================= */
+
+.programme-access {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+  margin-top: 40px;
+}
+
+.programme-access__item {
+  padding-top: 22px;
+  border-top: 1px solid var(--ep-border);
+}
+
+.programme-access__item h3 {
+  margin: 0 0 10px;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.34rem;
+  line-height: 1.14;
+  color: #18110f;
+}
+
+.programme-access__item p {
+  margin: 0;
+  max-width: 40ch;
+  color: var(--ep-text-muted);
+  line-height: 1.76;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1100px) {
+  .programme-architecture,
+  .programme-season__grid,
+  .programme-value,
+  .programme-positions,
+  .programme-access {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .inner-section {
+    padding: 64px 0;
+  }
+
+  .page-hero {
+    padding: 82px 0 62px;
+  }
+
+  .page-hero__title {
+    max-width: 14ch;
+    font-size: clamp(2rem, 9vw, 3.4rem);
+    line-height: 1.04;
+  }
+
+  .page-hero__intro {
+    max-width: 30ch;
+    font-size: 1rem;
+    line-height: 1.72;
+  }
+
+  .page-hero__note {
+    max-width: 32ch;
+    font-size: 0.86rem;
+  }
+
+  .programme-architecture,
+  .programme-season__grid,
+  .programme-value,
+  .programme-positions,
+  .programme-access {
+    margin-top: 34px;
+  }
+
+  .programme-step,
+  .season-card,
+  .programme-value__item,
+  .programme-position,
+  .programme-access__item,
+  .editorial-frame {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .programme-step h3,
+  .season-card h3,
+  .programme-value__item h3,
+  .programme-position h3,
+  .programme-access__item h3,
+  .editorial-frame h3 {
+    font-size: 1.18rem;
+  }
+
+  .programme-link-row {
+    text-align: left;
+  }
+}
