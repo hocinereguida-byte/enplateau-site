@@ -1277,9 +1277,31 @@
     margin-bottom: 12px;
   }
 
-  .why-editorial-item p,
+  .why-editorial-item p {
+    margin-bottom: 0;
+  }
+
+  .access-primary,
+  .access-secondary {
+    padding: 24px 22px 24px 42px;
+  }
+
+  .access-primary::before,
+  .access-secondary::before {
+    left: 18px;
+    top: 30px;
+    bottom: 30px;
+    width: 4px;
+    opacity: 0.72;
+  }
+
   .access-primary p,
   .access-secondary p {
-    margin-bottom: 0;
+    margin-bottom: 16px;
+  }
+
+  .access-link {
+    display: inline-block;
+    margin-top: 4px;
   }
 }
