@@ -80,7 +80,11 @@
   letter-spacing: -0.04em;
   color: #f5f1ec;
   text-wrap: balance;
-  hyphens: auto;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .page-hero-sub,
@@ -584,6 +588,21 @@
   .page-hero h1 {
     font-size: clamp(3rem, 4.6vw, 5.4rem);
   }
+
+  .page-hero-sub {
+    max-width: 36ch;
+  }
+
+  .page-hero-meta,
+  .page-hero-note {
+    max-width: 42ch;
+  }
+}
+
+/* =========================
+   RAFFINEMENT MOBILE — BLOCS ÉDITORIAUX
+   ========================= */
+
 @media (max-width: 768px) {
   .programme-access,
   .programme-list,
@@ -594,6 +613,10 @@
     gap: 18px;
   }
 
+  .programme-list {
+    border-top: 0;
+  }
+
   .programme-access__item,
   .programme-list__item,
   .programme-value__item,
@@ -601,9 +624,11 @@
   .season-card,
   .programme-step {
     position: relative;
-    padding: 22px 18px 22px 24px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.36);
+    padding: 24px 20px 24px 34px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.42);
+    border-top: 0;
+    border-bottom: 0;
   }
 
   .programme-access__item::before,
@@ -614,13 +639,13 @@
   .programme-step::before {
     content: "";
     position: absolute;
-    left: 0;
-    top: 18px;
-    bottom: 18px;
-    width: 3px;
+    left: 16px;
+    top: 28px;
+    bottom: 28px;
+    width: 4px;
     border-radius: 999px;
     background: var(--ep-brown-soft);
-    opacity: 0.8;
+    opacity: 0.68;
   }
 
   .programme-access__item h3,
@@ -641,79 +666,30 @@
     margin-bottom: 0;
   }
 }
-  .page-hero-sub {
-    max-width: 36ch;
-  }
 
-  .page-hero-meta,
-  .page-hero-note {
-    max-width: 42ch;
-  }
-}
+/* =========================
+   RAFFINEMENT MOBILE — BLOCS D’ACCÈS
+   ========================= */
+
 @media (max-width: 768px) {
-  .programme-access__item,
-  .programme-list__item,
-  .programme-value__item,
-  .programme-position,
-  .season-card,
-  .programme-step,
-  .conversation-row,
-  .frame-row,
-  .card {
-    position: relative;
-    padding: 22px 18px 22px 24px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.34);
+  .programme-access__item {
+    padding: 24px 20px 24px 36px;
   }
 
-  .programme-access__item::before,
-  .programme-list__item::before,
-  .programme-value__item::before,
-  .programme-position::before,
-  .season-card::before,
-  .programme-step::before,
-  .conversation-row::before,
-  .frame-row::before,
-  .card::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 18px;
-    bottom: 18px;
-    width: 3px;
-    border-radius: 999px;
-    background: var(--ep-brown-soft);
-    opacity: 0.8;
+  .programme-access__item::before {
+    left: 16px;
+    top: 30px;
+    bottom: 30px;
+    width: 4px;
+    opacity: 0.72;
   }
 
-  .programme-access__item + .programme-access__item,
-  .programme-list__item + .programme-list__item,
-  .programme-value__item + .programme-value__item,
-  .programme-position + .programme-position,
-  .season-card + .season-card,
-  .programme-step + .programme-step,
-  .conversation-row + .conversation-row,
-  .frame-row + .frame-row,
-  .card + .card {
-    margin-top: 18px;
+  .programme-access__item p {
+    margin-bottom: 16px;
+  }
+
+  .programme-access__item .link {
+    display: inline-block;
+    margin-top: 4px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
