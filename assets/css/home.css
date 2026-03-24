@@ -1246,8 +1246,7 @@
   .conversation-row,
   .card,
   .access-primary,
-  .access-secondary,
-  .rencontre-item {
+  .access-secondary {
     position: relative;
     padding: 24px 20px 24px 34px;
     border-radius: 18px;
@@ -1258,8 +1257,7 @@
   .conversation-row::before,
   .card::before,
   .access-primary::before,
-  .access-secondary::before,
-  .rencontre-item::before {
+  .access-secondary::before {
     content: "";
     position: absolute;
     left: 16px;
@@ -1303,5 +1301,53 @@
   .access-link {
     display: inline-block;
     margin-top: 4px;
+  }
+
+  .section-rencontres .rencontre-item {
+    position: relative;
+    padding: 24px 22px 24px 42px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  .section-rencontres .rencontre-item::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 30px;
+    bottom: 30px;
+    width: 4px;
+    height: auto;
+    border-radius: 999px;
+    background: rgba(200, 138, 93, 0.72);
+  }
+
+  .section-rencontres .rencontre-date {
+    color: rgba(245, 241, 236, 0.62);
+  }
+
+  .section-rencontres .rencontre-item h3 {
+    color: #f5f1ec;
+  }
+
+  .section-rencontres .rencontre-item p {
+    color: rgba(245, 241, 236, 0.78);
+  }
+
+  .section-rencontres .rencontres-note {
+    color: rgba(245, 241, 236, 0.62);
+  }
+
+  .section-rencontres .rencontres-link,
+  .section-rencontres .link {
+    color: #f5f1ec;
+  }
+
+  .section-rencontres .rencontres-link:hover,
+  .section-rencontres .link:hover {
+    color: #ddc2b1;
   }
 }
