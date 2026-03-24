@@ -53,7 +53,7 @@
 }
 
 .hero-inner--left {
-  text-align: left;
+  text-align: center;
   max-width: min(920px, 100%);
   margin: 0 auto;
 }
@@ -63,17 +63,17 @@
 .hero-inner--left .hero-subtitle,
 .hero-inner--left .hero-meta,
 .hero-inner--left .hero-note {
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-inner--left .hero-actions {
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .hero-inner--left .hero-meta,
 .hero-inner--left .hero-note {
-  text-align: left;
+  text-align: center;
 }
 
 .hero-kicker {
@@ -87,7 +87,7 @@
 }
 
 .hero-title {
-  margin: 0 0 24px;
+  margin: 0 auto 24px;
   max-width: 24ch;
   font-family: Bitter, Georgia, serif;
   font-size: clamp(3rem, 6.2vw, 5.8rem);
@@ -95,11 +95,16 @@
   letter-spacing: -0.045em;
   color: #f5f1ec;
   text-wrap: balance;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .hero-subtitle {
   max-width: 58ch;
-  margin: 0;
+  margin: 0 auto;
   font-size: clamp(1.04rem, 1.8vw, 1.28rem);
   line-height: 1.74;
   color: rgba(245, 241, 236, 0.84);
@@ -108,7 +113,7 @@
 
 .hero-actions {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 22px;
@@ -140,7 +145,7 @@
 }
 
 .hero-meta {
-  margin: 26px 0 0;
+  margin: 26px auto 0;
   max-width: 42ch;
   font-size: 0.88rem;
   line-height: 1.64;
@@ -149,7 +154,7 @@
 }
 
 .hero-note {
-  margin: 14px 0 0;
+  margin: 14px auto 0;
   max-width: 44ch;
   font-size: 0.84rem;
   line-height: 1.62;
@@ -330,6 +335,19 @@
 
 .conversation-panel p:last-child {
   margin-bottom: 0;
+}
+
+.conversation-toggle .frame-row-meta + .frame-row-meta {
+  margin-top: 4px;
+}
+
+.conversation-panel em {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--ep-text-soft);
+  font-style: normal;
 }
 
 /* =========================
@@ -897,7 +915,8 @@
 
   .hero-actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 12px;
     margin-top: 22px;
   }
@@ -1029,7 +1048,8 @@
 
   .hero-actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 12px;
     margin-top: 20px;
   }
@@ -1165,6 +1185,7 @@
   .hero-actions {
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     gap: 16px;
     margin-top: 18px;
   }
@@ -1212,52 +1233,15 @@
   }
 }
 
-.conversation-toggle .frame-row-meta + .frame-row-meta {
-  margin-top: 4px;
-}
+/* =========================
+   RAFFINEMENT MOBILE — BLOCS ÉDITORIAUX
+   ========================= */
 
-.conversation-panel em {
-  display: inline-block;
-  margin-top: 4px;
-  font-size: 0.92rem;
-  line-height: 1.65;
-  color: var(--ep-text-soft);
-  font-style: normal;
-}
 @media (max-width: 768px) {
   .why-editorial-list {
     gap: 18px;
   }
 
-  .why-editorial-item {
-    position: relative;
-    padding: 22px 18px 22px 24px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.36);
-  }
-
-  .why-editorial-item::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 18px;
-    bottom: 18px;
-    width: 3px;
-    border-radius: 999px;
-    background: var(--ep-brown-soft);
-    opacity: 0.8;
-  }
-
-  .why-editorial-item h3 {
-    margin-bottom: 12px;
-  }
-
-  .why-editorial-item p {
-    margin-bottom: 0;
-  }
-}
-
-@media (max-width: 768px) {
   .why-editorial-item,
   .conversation-row,
   .card,
@@ -1265,9 +1249,9 @@
   .access-secondary,
   .rencontre-item {
     position: relative;
-    padding: 22px 18px 22px 24px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.34);
+    padding: 24px 20px 24px 34px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.42);
   }
 
   .why-editorial-item::before,
@@ -1278,26 +1262,24 @@
   .rencontre-item::before {
     content: "";
     position: absolute;
-    left: 0;
-    top: 18px;
-    bottom: 18px;
-    width: 3px;
+    left: 16px;
+    top: 28px;
+    bottom: 28px;
+    width: 4px;
     border-radius: 999px;
     background: var(--ep-brown-soft);
-    opacity: 0.8;
+    opacity: 0.68;
+  }
+
+  .why-editorial-item h3,
+  .access-primary h3,
+  .access-secondary h3 {
+    margin-bottom: 12px;
+  }
+
+  .why-editorial-item p,
+  .access-primary p,
+  .access-secondary p {
+    margin-bottom: 0;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
