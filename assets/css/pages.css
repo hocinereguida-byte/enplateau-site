@@ -657,7 +657,6 @@
     margin-bottom: 12px;
   }
 
-  .programme-access__item p,
   .programme-list__item p,
   .programme-value__item p,
   .programme-position p,
@@ -665,19 +664,13 @@
   .programme-step p {
     margin-bottom: 0;
   }
-}
 
-/* =========================
-   RAFFINEMENT MOBILE — BLOCS D’ACCÈS
-   ========================= */
-
-@media (max-width: 768px) {
   .programme-access__item {
-    padding: 24px 20px 24px 36px;
+    padding: 24px 22px 24px 42px;
   }
 
   .programme-access__item::before {
-    left: 16px;
+    left: 18px;
     top: 30px;
     bottom: 30px;
     width: 4px;
