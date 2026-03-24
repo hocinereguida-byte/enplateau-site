@@ -686,3 +686,13 @@
     margin-top: 4px;
   }
 }
+.cta-prelude {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+
+.cta-context {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
