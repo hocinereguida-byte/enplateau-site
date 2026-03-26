@@ -189,6 +189,53 @@
 }
 
 /* =========================
+   CADRE ÉDITORIAL / LOGOS MÉDIAS
+   ========================= */
+
+#cadre-editorial-home .section-head {
+  margin-bottom: 28px;
+}
+
+#cadre-editorial-home .section-intro {
+  max-width: 58ch;
+}
+
+.media-logos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px 22px;
+  align-items: center;
+  max-width: 920px;
+  margin: 36px auto 0;
+  padding-top: 26px;
+  border-top: 1px solid var(--ep-border);
+}
+
+.media-logos img {
+  width: 100%;
+  max-width: 150px;
+  height: 26px;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0.82;
+  filter: grayscale(100%) contrast(1.02);
+  transition: opacity 0.25s ease, filter 0.25s ease, transform 0.25s ease;
+}
+
+.media-logos img:hover {
+  opacity: 1;
+  filter: grayscale(0%) contrast(1);
+  transform: translateY(-1px);
+}
+
+#cadre-editorial-home .section-footnote {
+  max-width: 54ch;
+  margin: 26px auto 0;
+  text-align: center;
+}
+
+/* =========================
    LISTES ÉDITORIALES
    ========================= */
 
@@ -753,6 +800,15 @@
   .access-primary h3 {
     font-size: 1.58rem;
   }
+
+  .media-logos {
+    max-width: 980px;
+  }
+
+  .media-logos img {
+    max-width: 158px;
+    height: 28px;
+  }
 }
 
 /* =========================
@@ -834,6 +890,16 @@
   .access-editorial {
     gap: 30px;
   }
+
+  .media-logos {
+    max-width: 860px;
+    gap: 16px 18px;
+  }
+
+  .media-logos img {
+    max-width: 138px;
+    height: 24px;
+  }
 }
 
 /* =========================
@@ -907,6 +973,19 @@
   .rencontre-item h3 {
     max-width: none;
     font-size: clamp(1.34rem, 4vw, 1.9rem);
+  }
+
+  .media-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 620px;
+    gap: 18px 20px;
+    margin-top: 32px;
+    padding-top: 22px;
+  }
+
+  .media-logos img {
+    max-width: 146px;
+    height: 24px;
   }
 }
 
@@ -1045,6 +1124,28 @@
 
   .access-primary h3 {
     font-size: 1.3rem;
+  }
+
+  #cadre-editorial-home .section-head {
+    margin-bottom: 22px;
+  }
+
+  .media-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 16px;
+    margin-top: 28px;
+    padding-top: 20px;
+  }
+
+  .media-logos img {
+    max-width: 132px;
+    height: 22px;
+    opacity: 0.9;
+  }
+
+  #cadre-editorial-home .section-footnote {
+    margin-top: 22px;
+    max-width: 42ch;
   }
 }
 
@@ -1196,6 +1297,28 @@
   .conversation-panel p {
     margin-bottom: 12px;
   }
+
+  #cadre-editorial-home .section-head {
+    margin-bottom: 20px;
+  }
+
+  .media-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 14px;
+    margin-top: 26px;
+    padding-top: 18px;
+  }
+
+  .media-logos img {
+    max-width: 120px;
+    height: 20px;
+    opacity: 0.92;
+  }
+
+  #cadre-editorial-home .section-footnote {
+    margin-top: 20px;
+    max-width: 38ch;
+  }
 }
 
 /* =========================
@@ -1270,6 +1393,11 @@
 
   .rencontre-item h3 {
     font-size: clamp(1.12rem, 6.6vw, 1.44rem);
+  }
+
+  .media-logos img {
+    max-width: 108px;
+    height: 18px;
   }
 }
 
