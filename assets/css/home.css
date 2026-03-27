@@ -542,6 +542,7 @@
 .rencontres-footer {
   margin-top: 72px;
   max-width: 720px;
+  text-align: left;
 }
 
 .rencontres-note {
@@ -553,6 +554,7 @@
 }
 
 .rencontres-link {
+  display: inline-block;
   font-size: 0.92rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.82);
@@ -564,6 +566,10 @@
 
 .rencontres-link:hover {
   color: #ddc2b1;
+}
+
+.rencontres-footer .rencontres-link + .rencontres-link {
+  margin-top: 18px;
 }
 
 /* =========================
