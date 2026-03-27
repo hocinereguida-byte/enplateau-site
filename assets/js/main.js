@@ -14,6 +14,7 @@ function initReveal() {
     ".page-hero-sub",
     ".page-hero-meta",
     ".page-hero-note",
+    ".page-hero-inner",
     ".section-head",
     ".why-editorial-item",
     ".frame-row",
@@ -33,10 +34,23 @@ function initReveal() {
     ".programme-position",
     ".programme-access__item",
     ".programme-link-row",
-    ".page-centered-copy"
+    ".page-centered-copy",
+    ".theme-nav",
+    ".theme-block",
+    ".conversations-deadlines"
   ];
 
-  const revealElements = document.querySelectorAll(revealSelectors.join(","));
+  const revealSet = new Set();
+
+  document.querySelectorAll(revealSelectors.join(",")).forEach((element) => {
+    revealSet.add(element);
+  });
+
+  document.querySelectorAll(".reveal").forEach((element) => {
+    revealSet.add(element);
+  });
+
+  const revealElements = Array.from(revealSet);
 
   if (!revealElements.length) {
     return;
@@ -44,7 +58,7 @@ function initReveal() {
 
   if (prefersReducedMotion) {
     revealElements.forEach((element) => {
-      element.classList.add("is-visible");
+      element.classList.add("reveal", "is-visible");
       element.style.transitionDelay = "0ms";
     });
     return;
@@ -66,7 +80,8 @@ function initReveal() {
       element.classList.contains("page-hero-title") ||
       element.classList.contains("page-hero-sub") ||
       element.classList.contains("page-hero-meta") ||
-      element.classList.contains("page-hero-note")
+      element.classList.contains("page-hero-note") ||
+      element.classList.contains("page-hero-inner")
     ) {
       element.style.transitionDelay = `${Math.min(index * 60, 240)}ms`;
     }
@@ -99,7 +114,8 @@ function initReveal() {
             !element.classList.contains("page-hero-title") &&
             !element.classList.contains("page-hero-sub") &&
             !element.classList.contains("page-hero-meta") &&
-            !element.classList.contains("page-hero-note")
+            !element.classList.contains("page-hero-note") &&
+            !element.classList.contains("page-hero-inner")
           ) {
             element.style.transitionDelay = `${staggerDelay}ms`;
           }
