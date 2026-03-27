@@ -1,5 +1,6 @@
 function initReveal() {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const root = document.documentElement;
 
   const revealSelectors = [
     ".hero-kicker",
@@ -27,14 +28,12 @@ function initReveal() {
     ".section-footnote",
     ".programme-step",
     ".season-card",
-    ".programme-list",
     ".programme-list__item",
     ".programme-value__item",
     ".programme-position",
     ".programme-access__item",
     ".programme-link-row",
-    ".page-centered-copy",
-    ".page-hero-inner"
+    ".page-centered-copy"
   ];
 
   const revealElements = document.querySelectorAll(revealSelectors.join(","));
@@ -45,10 +44,13 @@ function initReveal() {
 
   if (prefersReducedMotion) {
     revealElements.forEach((element) => {
-      element.classList.add("reveal", "is-visible");
+      element.classList.add("is-visible");
+      element.style.transitionDelay = "0ms";
     });
     return;
   }
+
+  root.classList.add("reveal-ready");
 
   revealElements.forEach((element, index) => {
     element.classList.add("reveal");
@@ -64,8 +66,7 @@ function initReveal() {
       element.classList.contains("page-hero-title") ||
       element.classList.contains("page-hero-sub") ||
       element.classList.contains("page-hero-meta") ||
-      element.classList.contains("page-hero-note") ||
-      element.classList.contains("page-hero-inner")
+      element.classList.contains("page-hero-note")
     ) {
       element.style.transitionDelay = `${Math.min(index * 60, 240)}ms`;
     }
@@ -98,8 +99,7 @@ function initReveal() {
             !element.classList.contains("page-hero-title") &&
             !element.classList.contains("page-hero-sub") &&
             !element.classList.contains("page-hero-meta") &&
-            !element.classList.contains("page-hero-note") &&
-            !element.classList.contains("page-hero-inner")
+            !element.classList.contains("page-hero-note")
           ) {
             element.style.transitionDelay = `${staggerDelay}ms`;
           }
@@ -160,6 +160,16 @@ function initConversationToggles() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  initReveal();
-  initConversationToggles();
+  try {
+    initReveal();
+  } catch (error) {
+    document.documentElement.classList.remove("reveal-ready");
+    console.error("Reveal init failed:", error);
+  }
+
+  try {
+    initConversationToggles();
+  } catch (error) {
+    console.error("Conversation toggle init failed:", error);
+  }
 });
