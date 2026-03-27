@@ -267,7 +267,7 @@
 
 #cadre-editorial-home .section-footnote {
   max-width: 54ch;
-  margin: 26px auto 0;
+  margin: 22px auto 0;
   text-align: center;
 }
 
@@ -1205,43 +1205,49 @@
     margin-bottom: 22px;
   }
 
+  #cadre-editorial-home .section-intro {
+    max-width: 34ch;
+    font-size: 0.95rem;
+    line-height: 1.58;
+  }
+
   .media-logos-band {
-    margin-top: 28px;
-    padding: 12px;
-    border-radius: 22px;
+    margin-top: 24px;
+    padding: 10px;
+    border-radius: 20px;
   }
 
   .media-logos-band .media-logos {
-    border-radius: 16px;
+    border-radius: 14px;
   }
 
   .media-logo-item {
-    min-height: 84px;
-    padding: 16px 12px;
+    min-height: 74px;
+    padding: 12px 10px;
   }
 
   .media-logo-item--tribune img {
-    max-width: 86px;
-    max-height: 26px;
+    max-width: 82px;
+    max-height: 24px;
   }
 
   .media-logo-item--forbes img {
-    max-width: 116px;
-    max-height: 30px;
+    max-width: 110px;
+    max-height: 28px;
   }
 
   .media-logo-item--figaro img {
-    max-width: 104px;
-    max-height: 20px;
+    max-width: 100px;
+    max-height: 18px;
   }
 
   .media-logo-item--bfm img {
-    max-width: 102px;
-    max-height: 20px;
+    max-width: 98px;
+    max-height: 18px;
   }
 
   #cadre-editorial-home .section-footnote {
-    margin-top: 22px;
+    margin-top: 18px;
     max-width: 42ch;
   }
 }
@@ -1399,43 +1405,49 @@
     margin-bottom: 20px;
   }
 
+  #cadre-editorial-home .section-intro {
+    max-width: 34ch;
+    font-size: 0.95rem;
+    line-height: 1.58;
+  }
+
   .media-logos-band {
-    margin-top: 26px;
-    padding: 10px;
-    border-radius: 20px;
+    margin-top: 22px;
+    padding: 8px;
+    border-radius: 18px;
   }
 
   .media-logos-band .media-logos {
-    border-radius: 14px;
+    border-radius: 12px;
   }
 
   .media-logo-item {
-    min-height: 74px;
-    padding: 14px 10px;
+    min-height: 66px;
+    padding: 10px 8px;
   }
 
   .media-logo-item--tribune img {
-    max-width: 78px;
-    max-height: 24px;
+    max-width: 74px;
+    max-height: 22px;
   }
 
   .media-logo-item--forbes img {
-    max-width: 104px;
-    max-height: 28px;
+    max-width: 98px;
+    max-height: 26px;
   }
 
   .media-logo-item--figaro img {
-    max-width: 96px;
-    max-height: 18px;
+    max-width: 90px;
+    max-height: 17px;
   }
 
   .media-logo-item--bfm img {
-    max-width: 94px;
-    max-height: 18px;
+    max-width: 88px;
+    max-height: 17px;
   }
 
   #cadre-editorial-home .section-footnote {
-    margin-top: 20px;
+    margin-top: 16px;
     max-width: 38ch;
   }
 }
