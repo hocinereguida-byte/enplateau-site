@@ -1,1175 +1,441 @@
-/* =========================
-   PAGES INTÉRIEURES — BASE
-   ========================= */
-
-.page-programme,
-.page-interior {
-  background: var(--ep-bg);
-}
-
-/* =========================
-   HERO INTÉRIEUR
-   ========================= */
-
-.page-hero {
-  position: relative;
-  overflow: hidden;
-  padding: 118px 0 94px;
-}
-
-.page-hero--programme {
-  background:
-    radial-gradient(circle at 18% 12%, rgba(181, 106, 54, 0.18), transparent 42%),
-    radial-gradient(circle at 82% 18%, rgba(102, 122, 140, 0.08), transparent 40%),
-    linear-gradient(180deg, #2c1d18 0%, #201612 52%, #17100d 100%);
-  color: #f5f1ec;
-}
-
-.page-hero--programme::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.012) 0,
-      rgba(255, 255, 255, 0.012) 1px,
-      transparent 1px,
-      transparent 100%
-    );
-  background-size: 32px 32px;
-  opacity: 0.10;
-  pointer-events: none;
-}
-
-.page-hero .container {
-  position: relative;
-  z-index: 2;
-}
-
-.page-hero-inner {
-  max-width: 920px;
-  margin: 0 auto;
-}
-
-.page-hero-inner--centered {
-  text-align: center;
-}
-
-.page-hero-inner--left {
-  text-align: left;
-}
-
-.page-hero-kicker {
-  display: block;
-  margin: 0 0 22px;
-  font-size: 0.76rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: rgba(245, 241, 236, 0.64);
-}
-
-.page-hero-title,
-.page-hero h1 {
-  margin: 0 auto 24px;
-  max-width: 16ch;
-  font-family: Bitter, Georgia, serif;
-  font-size: clamp(2.7rem, 5.8vw, 5.3rem);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
-  color: #f5f1ec;
-  text-wrap: balance;
-  hyphens: none;
-  -webkit-hyphens: none;
-  -ms-hyphens: none;
-  word-break: normal;
-  overflow-wrap: normal;
-}
-
-.page-hero-sub,
-.page-hero-intro {
-  max-width: 36ch;
-  margin: 0 auto;
-  font-size: clamp(1.04rem, 1.8vw, 1.24rem);
-  line-height: 1.74;
-  color: rgba(245, 241, 236, 0.86);
-  text-wrap: pretty;
-}
-
-.page-hero-meta {
-  max-width: 38ch;
-  margin: 18px auto 0;
-  font-size: 0.94rem;
-  line-height: 1.66;
-  color: rgba(245, 241, 236, 0.74);
-  text-wrap: pretty;
-}
-
-.page-hero-note {
-  max-width: 42ch;
-  margin: 18px auto 0;
-  font-size: 0.88rem;
-  line-height: 1.64;
-  color: rgba(245, 241, 236, 0.60);
-  text-wrap: pretty;
-}
-
-.page-hero-inner--left .page-hero-title,
-.page-hero-inner--left .page-hero-sub,
-.page-hero-inner--left .page-hero-meta,
-.page-hero-inner--left .page-hero-note,
-.page-hero-inner--left h1 {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-/* =========================
-   SECTIONS INTÉRIEURES
-   ========================= */
-
-.inner-section {
-  padding: 92px 0;
-}
-
-.inner-section--tight {
-  padding: 76px 0;
-}
-
-/* =========================
-   ENTÊTES DE SECTION
-   ========================= */
-
-.section-head {
-  margin-bottom: 34px;
-}
-
-.section-head.section-head--narrow {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.section-head.section-head--centered {
-  text-align: center;
-}
-
-.section-head h2 {
-  max-width: 22ch;
-  margin-left: auto;
-  margin-right: auto;
-  text-wrap: balance;
-}
-
-.section-head .section-intro {
-  max-width: 62ch;
-  margin-left: auto;
-  margin-right: auto;
-  text-wrap: pretty;
-}
-
-.section-footnote {
-  max-width: 62ch;
-  text-wrap: pretty;
-}
-
-.section-footnote--centered {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-/* =========================
-   CADRE ÉDITORIAL / LOGOS MÉDIAS
-   ========================= */
-
-#cadre-editorial-page .section-head {
-  margin-bottom: 28px;
-}
-
-#cadre-editorial-page .section-intro {
-  max-width: 58ch;
-}
-
-.media-logos-band {
-  max-width: 980px;
-  margin: 36px auto 0;
-  padding: 18px;
-  background: linear-gradient(180deg, #ebe7e2 0%, #e7e3de 100%);
-  border: 1px solid rgba(24, 17, 15, 0.06);
-  border-radius: 28px;
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.55) inset,
-    0 8px 24px rgba(24, 17, 15, 0.035);
-}
-
-.media-logos-band .media-logos {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  align-items: stretch;
-  margin: 0;
-  padding: 1px;
-  background: rgba(24, 17, 15, 0.09);
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.media-logo-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 112px;
-  padding: 22px 24px;
-  background: #f7f5f3;
-}
-
-.media-logos-band .media-logo-item img {
-  display: block;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  object-position: center;
-  opacity: 0.96;
-  filter: grayscale(100%) contrast(1.01);
-}
-
-.media-logo-item--tribune img {
-  max-width: 108px;
-  max-height: 34px;
-}
-
-.media-logo-item--forbes img {
-  max-width: 144px;
-  max-height: 40px;
-}
-
-.media-logo-item--figaro img {
-  max-width: 132px;
-  max-height: 24px;
-}
-
-.media-logo-item--bfm img {
-  max-width: 126px;
-  max-height: 24px;
-}
-
-#cadre-editorial-page .section-footnote {
-  max-width: 54ch;
-  margin: 22px auto 0;
-  text-align: center;
-}
-
-/* =========================
-   BLOCS CENTRÉS
-   ========================= */
-
-.page-centered-copy {
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.page-centered-copy p {
-  margin: 0 0 16px;
-  line-height: 1.8;
-  color: var(--ep-text-muted);
-  text-wrap: pretty;
-}
-
-.page-centered-copy p:last-child {
-  margin-bottom: 0;
-}
-
-/* =========================
-   ARCHITECTURE / NIVEAUX
-   ========================= */
-
-.dispositif-levels {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 34px;
-  margin-top: 50px;
-}
-
-.dispositif-level {
-  padding: 28px 24px 24px;
-  border: 1px solid var(--ep-border);
-  background: rgba(247, 244, 239, 0.82);
-}
-
-.dispositif-level__meta {
-  margin: 0 0 10px;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ep-copper);
-}
-
-.dispositif-level h3 {
-  margin: 0 0 12px;
-  font-family: Bitter, Georgia, serif;
-  font-size: 1.38rem;
-  line-height: 1.10;
-  letter-spacing: -0.02em;
-  color: #18110f;
-  text-wrap: balance;
-}
-
-.dispositif-level p {
-  margin: 0;
-  color: var(--ep-text-muted);
-  line-height: 1.76;
-  text-wrap: pretty;
-}
-
-.programme-architecture {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 34px;
-  margin-top: 50px;
-}
-
-.programme-architecture--4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.programme-step {
-  padding: 26px 0 0;
-  border-top: 1px solid var(--ep-border);
-}
-
-.programme-step__index {
-  display: inline-block;
-  margin-bottom: 12px;
-  font-size: 0.74rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ep-copper);
-}
-
-.programme-step h3 {
-  margin: 0 0 10px;
-  font-family: Bitter, Georgia, serif;
-  font-size: 1.42rem;
-  line-height: 1.10;
-  letter-spacing: -0.02em;
-  color: #18110f;
-  text-wrap: balance;
-}
-
-.programme-step p {
-  margin: 0;
-  color: var(--ep-text-muted);
-  line-height: 1.78;
-  max-width: 28ch;
-  text-wrap: pretty;
-}
-
-/* =========================
-   CE QUE PRODUIT UNE CONVERSATION
-   ========================= */
-
-.programme-season {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 34px;
-  margin-top: 50px;
-}
-
-.season-card {
-  padding: 28px 24px 24px;
-  border: 1px solid var(--ep-border);
-  background: rgba(247, 244, 239, 0.82);
-}
-
-.season-card__meta {
-  margin: 0 0 10px;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ep-copper);
-}
-
-.season-card h3 {
-  margin: 0 0 12px;
-  font-family: Bitter, Georgia, serif;
-  font-size: 1.38rem;
-  line-height: 1.10;
-  letter-spacing: -0.02em;
-  color: #18110f;
-  text-wrap: balance;
-}
-
-.season-card p {
-  margin: 0;
-  color: var(--ep-text-muted);
-  line-height: 1.76;
-  text-wrap: pretty;
-}
-
-/* =========================
-   LISTE ÉDITORIALE
-   ========================= */
-
-.programme-list {
-  max-width: 920px;
-  margin: 44px auto 0;
-  border-top: 1px solid var(--ep-border);
-}
-
-.programme-list__item {
-  padding: 24px 0 22px;
-  border-bottom: 1px solid var(--ep-border);
-}
-
-.programme-list__item h3 {
-  margin: 0 0 8px;
-  font-family: Bitter, Georgia, serif;
-  font-size: 1.24rem;
-  line-height: 1.14;
-  letter-spacing: -0.02em;
-  color: #18110f;
-  text-wrap: balance;
-}
-
-.programme-list__item p {
-  margin: 0;
-  max-width: 62ch;
-  color: var(--ep-text-muted);
-  line-height: 1.76;
-  text-wrap: pretty;
-}
-
-/* =========================
-   VALEUR / POSITIONS
-   ========================= */
-
-.programme-value {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 34px;
-  margin-top: 50px;
-}
-
-.programme-value__item {
-  padding: 26px 0 0;
-  border-top: 1px solid var(--ep-border);
-}
-
-.programme-value__item h3 {
-  margin: 0 0 10px;
-  font-family: Bitter, Georgia, serif;
-  font-size: 1.38rem;
-  line-height: 1.10;
-  letter-spacing: -0.02em;
-  color: #18110f;
-  text-wrap: balance;
-}
-
-.programme-value__item p {
-  margin: 0;
-  color: var(--ep-text-muted);
-  line-height: 1.76;
-  text-wrap: pretty;
-}
-
-.programme-positions {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 34px;
-  margin-top: 50px;
-}
-
-.programme-position {
-  padding: 24px 0 0;
-  border-top: 1px solid var(--ep-border);
-}
-
-.programme-position h3 {
-  margin: 0 0 10px;
-  font-family: Bitter, Georgia, serif;
-  font-size: 1.32rem;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
-  color: #18110f;
-  text-wrap: balance;
-}
-
-.programme-position p {
-  margin: 0;
-  color: var(--ep-text-muted);
-  line-height: 1.76;
-  text-wrap: pretty;
-}
-
-.programme-link-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px 26px;
-  align-items: center;
-  justify-content: center;
-  margin: 30px 0 0;
-}
-
-/* =========================
-   ACCÈS
-   ========================= */
-
-.programme-access {
-  display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
-  gap: 38px;
-  margin-top: 44px;
-  align-items: start;
-}
-
-.programme-access__item {
-  background: transparent;
-  box-shadow: none;
-}
-
-.programme-access__item:first-child,
-.programme-access__item:last-child {
-  padding: 26px 0 0;
-  border-top: 1px solid var(--ep-border);
-}
-
-.programme-access__item:first-child {
-  border-top-color: rgba(181, 106, 54, 0.38);
-}
-
-.programme-access__item h3 {
-  margin: 0 0 10px;
-  font-family: Bitter, Georgia, serif;
-  font-size: 1.38rem;
-  line-height: 1.10;
-  letter-spacing: -0.02em;
-  color: #18110f;
-  text-wrap: balance;
-}
-
-.programme-access__item p {
-  margin: 0 0 16px;
-  max-width: 40ch;
-  color: var(--ep-text-muted);
-  line-height: 1.76;
-  text-wrap: pretty;
-}
-
-/* =========================
-   REVEAL
-   ========================= */
-
-.page-programme .reveal,
-.page-interior .reveal {
-  will-change: opacity, transform;
-}
-
-/* =========================
-   TABLET
-   ========================= */
-
-@media (max-width: 1100px) {
-  .dispositif-levels,
-  .programme-architecture,
-  .programme-architecture--4,
-  .programme-season,
-  .programme-value,
-  .programme-positions,
-  .programme-access {
-    grid-template-columns: 1fr;
-  }
-
-  .programme-link-row {
-    justify-content: center;
-  }
-
-  .programme-step p,
-  .dispositif-level p,
-  .season-card p,
-  .programme-value__item p,
-  .programme-position p,
-  .programme-access__item p {
-    max-width: none;
-  }
-
-  .section-head h2 {
-    max-width: 24ch;
-  }
-}
-
-/* =========================
-   MOBILE
-   ========================= */
-
-@media (max-width: 767px) {
-  .inner-section {
-    padding: 64px 0;
-  }
-
-  .page-hero {
-    padding: 84px 0 62px;
-  }
-
-  .page-hero-title,
-  .page-hero h1 {
-    max-width: 13ch;
-    font-size: clamp(2rem, 8.8vw, 3.6rem);
-    line-height: 1.02;
-    margin-bottom: 20px;
-  }
-
-  .page-hero-sub,
-  .page-hero-intro {
-    max-width: 30ch;
-    font-size: 1rem;
-    line-height: 1.72;
-  }
-
-  .page-hero-meta {
-    max-width: 32ch;
-    font-size: 0.88rem;
-    margin-top: 16px;
-  }
-
-  .page-hero-note {
-    max-width: 32ch;
-    font-size: 0.86rem;
-    margin-top: 16px;
-  }
-
-  .dispositif-levels,
-  .programme-architecture,
-  .programme-season,
-  .programme-value,
-  .programme-positions,
-  .programme-access,
-  .programme-list {
-    margin-top: 34px;
-  }
-
-  .programme-step,
-  .dispositif-level,
-  .season-card,
-  .programme-value__item,
-  .programme-position,
-  .programme-access__item,
-  .programme-list__item {
-    padding-top: 18px;
-    padding-bottom: 18px;
-  }
-
-  .programme-step h3,
-  .dispositif-level h3,
-  .season-card h3,
-  .programme-value__item h3,
-  .programme-position h3,
-  .programme-access__item h3,
-  .programme-list__item h3 {
-    font-size: 1.18rem;
-  }
-
-  .section-head h2 {
-    max-width: 18ch;
-  }
-
-  #cadre-editorial-page .section-intro {
-    max-width: 34ch;
-    font-size: 0.95rem;
-    line-height: 1.58;
-  }
-
-  .media-logos-band {
-    margin-top: 24px;
-    padding: 10px;
-    border-radius: 20px;
-  }
-
-  .media-logos-band .media-logos {
-    border-radius: 14px;
-  }
-
-  .media-logo-item {
-    min-height: 74px;
-    padding: 12px 10px;
-  }
-
-  .media-logo-item--tribune img {
-    max-width: 82px;
-    max-height: 24px;
-  }
-
-  .media-logo-item--forbes img {
-    max-width: 110px;
-    max-height: 28px;
-  }
-
-  .media-logo-item--figaro img {
-    max-width: 100px;
-    max-height: 18px;
-  }
-
-  .media-logo-item--bfm img {
-    max-width: 98px;
-    max-height: 18px;
-  }
-
-  #cadre-editorial-page .section-footnote {
-    margin-top: 18px;
-    max-width: 42ch;
-  }
-}
-
-/* =========================
-   LANDSCAPE MOBILE
-   ========================= */
-
-@media (max-width: 980px) and (orientation: landscape) {
-  .page-hero {
-    padding: 72px 0 54px;
-  }
-
-  .page-hero-title,
-  .page-hero h1 {
-    max-width: 18ch;
-    font-size: clamp(2rem, 4.8vw, 3.5rem);
-  }
-
-  .page-hero-sub,
-  .page-hero-intro,
-  .page-hero-meta,
-  .page-hero-note {
-    max-width: 52ch;
-  }
-}
-
-/* =========================
-   GRANDES RÉSOLUTIONS
-   ========================= */
-
-@media (min-width: 1440px) {
-  .page-hero {
-    padding: 124px 0 96px;
-  }
-
-  .page-hero-inner {
-    max-width: 960px;
-  }
-
-  .page-hero-title,
-  .page-hero h1 {
-    font-size: clamp(3rem, 4.6vw, 5.4rem);
-  }
-
-  .page-hero-sub {
-    max-width: 36ch;
-  }
-
-  .page-hero-meta,
-  .page-hero-note {
-    max-width: 42ch;
-  }
-
-  .media-logos-band {
-    max-width: 1040px;
-    padding: 20px;
-  }
-
-  .media-logo-item {
-    min-height: 118px;
-  }
-}
-
-/* =========================
-   RAFFINEMENT MOBILE — BLOCS ÉDITORIAUX
-   ========================= */
-
-@media (max-width: 768px) {
-  .programme-access,
-  .programme-list,
-  .programme-value,
-  .programme-positions,
-  .programme-season,
-  .programme-architecture,
-  .dispositif-levels {
-    gap: 18px;
-  }
-
-  .programme-list {
-    border-top: 0;
-  }
-
-  .programme-access__item,
-  .programme-list__item,
-  .programme-value__item,
-  .programme-position,
-  .season-card,
-  .dispositif-level,
-  .programme-step {
-    position: relative;
-    padding: 24px 20px 24px 34px;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.42);
-    border-top: 0;
-    border-bottom: 0;
-  }
-
-  .programme-access__item::before,
-  .programme-list__item::before,
-  .programme-value__item::before,
-  .programme-position::before,
-  .season-card::before,
-  .dispositif-level::before,
-  .programme-step::before {
-    content: "";
-    position: absolute;
-    left: 16px;
-    top: 28px;
-    bottom: 28px;
-    width: 4px;
-    border-radius: 999px;
-    background: var(--ep-brown-soft);
-    opacity: 0.68;
-  }
-
-  .programme-access__item h3,
-  .programme-list__item h3,
-  .programme-value__item h3,
-  .programme-position h3,
-  .season-card h3,
-  .dispositif-level h3,
-  .programme-step h3 {
-    margin-bottom: 12px;
-  }
-
-  .programme-list__item p,
-  .programme-value__item p,
-  .programme-position p,
-  .season-card p,
-  .dispositif-level p,
-  .programme-step p {
-    margin-bottom: 0;
-  }
-
-  .programme-access__item {
-    padding: 24px 22px 24px 42px;
-  }
-
-  .programme-access__item::before {
-    left: 18px;
-    top: 30px;
-    bottom: 30px;
-    width: 4px;
-    opacity: 0.72;
-  }
-
-  .programme-access__item p {
-    margin-bottom: 16px;
-  }
-
-  .programme-access__item .link {
-    display: inline-block;
-    margin-top: 4px;
-  }
-}
-
-/* =========================
-   COMPATIBILITÉ
-   ========================= */
-
-.cta-prelude {
-  font-size: 0.9rem;
-  opacity: 0.7;
-  margin-bottom: 6px;
-}
-
-.cta-context {
-  font-size: 0.95rem;
-  margin-bottom: 12px;
-}
-
-/* =========================
-   CONVERSATIONS — REFONTE
-   ========================= */
-
-#hero-conversations,
-#si-vous-avez-ete-approche,
-#principe-conversations,
-#conversations-visibles,
-#autres-angles-thematique,
-#theme-territoires,
-#theme-capital,
-#theme-regles,
-#acces-conversations {
-  scroll-margin-top: 110px;
-}
-
-.conversation-showcase {
-  max-width: 980px;
-  margin: 46px auto 0;
-  display: grid;
-  gap: 34px;
-}
-
-.conversation-visible-card {
-  padding: 30px 28px 28px;
-  border: 1px solid var(--ep-border);
-  background: rgba(247, 244, 239, 0.82);
-}
-
-.conversation-visible-card__meta {
-  margin: 0 0 10px;
-  font-size: 0.74rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ep-copper);
-}
-
-.conversation-visible-card h3 {
-  margin: 0 0 12px;
-  max-width: 18ch;
-  font-family: Bitter, Georgia, serif;
-  font-size: 1.56rem;
-  line-height: 1.08;
-  letter-spacing: -0.024em;
-  color: #18110f;
-  text-wrap: balance;
-}
-
-.conversation-visible-card__intro {
-  max-width: 60ch;
-  margin: 0;
-  color: var(--ep-text-muted);
-  line-height: 1.78;
-  text-wrap: pretty;
-}
-
-.conversation-angle-list {
-  margin-top: 22px;
-  border-top: 1px solid var(--ep-border);
-}
-
-.conversation-angle {
-  padding: 16px 0 14px;
-  border-bottom: 1px solid var(--ep-border-soft);
-}
-
-.conversation-angle:last-child {
-  border-bottom: 0;
-}
-
-.conversation-angle__title,
-.conversation-angle__function,
-.conversation-angle__roles {
-  margin: 0;
-}
-
-.conversation-angle__title {
-  max-width: 56ch;
-  font-weight: 600;
-  color: var(--ep-text);
-  line-height: 1.6;
-  text-wrap: pretty;
-}
-
-.conversation-angle__function {
-  margin-top: 3px;
-  color: var(--ep-text-muted);
-  line-height: 1.7;
-  text-wrap: pretty;
-}
-
-.conversation-angle__roles {
-  margin-top: 5px;
-  font-size: 0.84rem;
-  line-height: 1.62;
-  color: var(--ep-text-faint);
-  text-wrap: pretty;
-}
-
-.conversation-card-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px 26px;
-  align-items: center;
-  margin: 22px 0 0;
-}
-
-.conversation-card-actions .link {
-  margin-top: 0;
-}
-
-#autres-angles-thematique .programme-link-row {
-  max-width: 980px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#autres-angles-thematique .programme-link-row .link {
-  margin-top: 0;
-}
-
-.thematic-block-list {
-  max-width: 980px;
-  margin: 46px auto 0;
-  display: grid;
-  gap: 34px;
-}
-
-.thematic-block {
-  padding: 30px 0 0;
-  border-top: 1px solid var(--ep-border);
-}
-
-.thematic-block__head {
-  max-width: 760px;
-  margin: 0 auto 18px;
-  text-align: center;
-}
-
-.thematic-block__kicker {
-  margin-bottom: 10px;
-  font-size: 0.74rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ep-copper);
-}
-
-.thematic-block h3 {
-  margin: 0 0 10px;
-  font-family: Bitter, Georgia, serif;
-  font-size: 1.52rem;
-  line-height: 1.08;
-  letter-spacing: -0.022em;
-  color: #18110f;
-  text-wrap: balance;
-}
-
-.thematic-block__intro {
-  max-width: 58ch;
-  margin: 0 auto;
-  color: var(--ep-text-muted);
-  line-height: 1.76;
-  text-wrap: pretty;
-}
-
-.thematic-angle-list {
-  max-width: 920px;
-  margin: 26px auto 0;
-  border-top: 1px solid var(--ep-border);
-}
-
-.thematic-angle {
-  padding: 16px 0 14px;
-  border-bottom: 1px solid var(--ep-border);
-}
-
-.thematic-angle__title,
-.thematic-angle__roles {
-  margin: 0;
-}
-
-.thematic-angle__title {
-  max-width: 56ch;
-  font-weight: 600;
-  color: var(--ep-text);
-  line-height: 1.6;
-  text-wrap: pretty;
-}
-
-.thematic-angle__roles {
-  margin-top: 5px;
-  font-size: 0.84rem;
-  line-height: 1.62;
-  color: var(--ep-text-faint);
-  text-wrap: pretty;
-}
-
-@media (max-width: 767px) {
-  .conversation-showcase,
-  .thematic-block-list {
-    margin-top: 34px;
-    gap: 22px;
-  }
-
-  .conversation-visible-card,
-  .thematic-block {
-    position: relative;
-    padding: 24px 20px 24px 34px;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.42);
-    border: 0;
-  }
-
-  .conversation-visible-card::before,
-  .thematic-block::before {
-    content: "";
-    position: absolute;
-    left: 16px;
-    top: 28px;
-    bottom: 28px;
-    width: 4px;
-    border-radius: 999px;
-    background: var(--ep-brown-soft);
-    opacity: 0.68;
-  }
-
-  .conversation-visible-card h3,
-  .thematic-block h3 {
-    max-width: none;
-    font-size: 1.22rem;
-  }
-
-  .conversation-visible-card__intro,
-  .thematic-block__intro,
-  .conversation-angle__title,
-  .conversation-angle__function,
-  .conversation-angle__roles,
-  .thematic-angle__title,
-  .thematic-angle__roles {
-    max-width: none;
-  }
-
-  .thematic-block__head {
-    margin: 0 0 16px;
-    text-align: left;
-  }
-
-  .thematic-block__intro {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .thematic-angle-list,
-  .conversation-angle-list {
-    max-width: none;
-    margin-top: 20px;
-  }
-
-  .conversation-angle__roles,
-  .thematic-angle__roles {
-    font-size: 0.8rem;
-    line-height: 1.56;
-  }
-
-  .conversation-card-actions {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  /* correction affichage mobile des barres marron sur les blocs d'accès */
-  #acces-conversations .programme-access__item::before {
-    display: none;
-  }
-
-  #acces-conversations .programme-access__item {
-    padding-left: 20px;
-  }
-}
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Conversations — En Plateau</title>
+  <meta
+    name="description"
+    content="Les conversations En Plateau structurent le programme autour de sujets traités à quatre angles complémentaires. Cette page rend visibles certaines conversations en cours, sans exposer l’intégralité du programme ni tous les angles déjà repérés."
+  >
+
+  <link rel="canonical" href="https://enplateau.fr/conversations.html">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0F2747">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="En Plateau">
+  <meta property="og:title" content="Conversations — En Plateau">
+  <meta
+    property="og:description"
+    content="Les conversations En Plateau structurent le programme autour de sujets traités à quatre angles complémentaires. Cette page rend visibles certaines conversations en cours, sans exposer l’intégralité du programme ni tous les angles déjà repérés."
+  >
+  <meta property="og:url" content="https://enplateau.fr/conversations.html">
+  <meta property="og:image" content="https://enplateau.fr/images/en-plateau-social.webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Conversations — En Plateau">
+  <meta
+    name="twitter:description"
+    content="Les conversations En Plateau structurent le programme autour de sujets traités à quatre angles complémentaires. Cette page rend visibles certaines conversations en cours, sans exposer l’intégralité du programme ni tous les angles déjà repérés."
+  >
+  <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-social.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body class="page-interior">
+
+  <div id="site-header"></div>
+  <div id="site-mobile-menu"></div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="page-hero page-hero--programme" id="hero-conversations">
+      <div class="container">
+        <div class="page-hero-inner page-hero-inner--centered reveal">
+          <div class="page-hero-kicker">Conversations</div>
+
+          <h1 class="page-hero-title">
+            Assembler des fragments de vérité pour rendre un sujet plus lisible.
+          </h1>
+
+          <p class="page-hero-sub">
+            Chaque conversation En Plateau traite un même sujet à travers quatre angles complémentaires et quatre entretiens distincts. Cette page rend visibles certaines conversations en cours, sans exposer l’intégralité du programme ni tous les angles déjà repérés.
+          </p>
+
+          <p class="page-hero-note">
+            Elle montre d’abord quelques conversations déjà lisibles à ce stade, puis d’autres angles visibles classés par thématique de lecture.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SI VOUS AVEZ ÉTÉ APPROCHÉ -->
+    <section class="light inner-section" id="si-vous-avez-ete-approche">
+      <div class="container">
+        <div class="section-head section-head--narrow section-head--centered reveal">
+          <div class="section-kicker">Si vous avez été approché</div>
+          <h2>Avoir été approché signifie qu’un angle a déjà été identifié</h2>
+          <p class="section-intro">
+            La prise de contact ne repose pas uniquement sur un rang hiérarchique ou un statut. Elle peut tenir à un métier, une expertise, une fonction, une responsabilité opérationnelle ou une capacité d’arbitrage, dès lors qu’ils rendent un angle particulièrement lisible.
+          </p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="programme-value">
+          <article class="programme-value__item reveal">
+            <h3>Une légitimité éditoriale précise</h3>
+            <p>Si vous avez été approché, c’est qu’un angle de lecture a déjà été repéré depuis votre position, même s’il n’apparaît pas dans les conversations rendues visibles ici.</p>
+          </article>
+
+          <article class="programme-value__item reveal">
+            <h3>Une place qui ne dépend pas d’un seul statut</h3>
+            <p>La légitimité peut venir d’un métier, d’une fonction, d’une expertise, d’une responsabilité d’interface ou d’une expérience directe d’un sujet en transformation.</p>
+          </article>
+
+          <article class="programme-value__item reveal">
+            <h3>Un cadrage qui se précise ensuite</h3>
+            <p>Le dossier permet de retrouver le sujet concerné, l’angle déjà identifié, le niveau d’ouverture réel et la manière dont la contribution peut prendre place.</p>
+          </article>
+        </div>
+
+        <p class="section-footnote section-footnote--centered reveal">
+          Si vous ne retrouvez pas votre angle ici, cela ne signifie pas qu’il n’existe pas. Cela signifie simplement qu’il n’est pas rendu public à ce stade.
+        </p>
+      </div>
+    </section>
+
+    <!-- PRINCIPE -->
+    <section class="soft inner-section" id="principe-conversations">
+      <div class="container">
+        <div class="section-head section-head--narrow section-head--centered reveal">
+          <div class="section-kicker">Principe d’une conversation</div>
+          <h2>Une conversation n’est pas un alignement d’interventions</h2>
+          <p class="section-intro">
+            Une conversation En Plateau correspond à un sujet éditorial structuré. Elle organise quatre angles distincts, conçus pour se compléter et rendre un même sujet plus lisible.
+          </p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="programme-architecture">
+          <article class="programme-step reveal">
+            <span class="programme-step__index">01</span>
+            <h3>Un sujet</h3>
+            <p>Chaque conversation part d’une question claire déjà située dans l’économie réelle : produire, aménager, financer, réguler, soigner, former, transmettre, arbitrer.</p>
+          </article>
+
+          <article class="programme-step reveal">
+            <span class="programme-step__index">02</span>
+            <h3>Quatre angles</h3>
+            <p>Le sujet est structuré en quatre angles complémentaires. Chacun éclaire une partie différente du problème, sans répéter ce que les autres rendent déjà visible.</p>
+          </article>
+
+          <article class="programme-step reveal">
+            <span class="programme-step__index">03</span>
+            <h3>Quatre entretiens</h3>
+            <p>Chaque angle donne lieu à un entretien. L’ensemble forme une conversation éditoriale cohérente, plus utile qu’une intervention isolée et plus rigoureuse qu’une addition de points de vue.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONVERSATIONS VISIBLES -->
+    <section class="light inner-section" id="conversations-visibles">
+      <div class="container">
+        <div class="section-head section-head--narrow section-head--centered reveal">
+          <div class="section-kicker">Conversations visibles à ce stade</div>
+          <h2>Quelques conversations déjà suffisamment structurées pour être montrées ici</h2>
+          <p class="section-intro">
+            Cette sélection ne représente pas toute la saison. Elle donne à voir, de manière concrète, comment une conversation se construit : un sujet, quatre angles, plusieurs types de positions concernées.
+          </p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="conversation-showcase">
+
+          <article class="conversation-visible-card reveal" id="conversation-produire-france">
+            <div class="conversation-visible-card__meta">Conversation déjà lisible à ce stade</div>
+            <h3>Peut-on produire en France aujourd’hui&nbsp;?</h3>
+            <p class="conversation-visible-card__intro">
+              Cette conversation met en tension conditions d’exploitation, comparaison internationale, cadres normatifs et engagement du capital autour d’une même question productive.
+            </p>
+
+            <div class="conversation-angle-list">
+              <div class="conversation-angle">
+                <p class="conversation-angle__title">À quelles conditions produire reste viable en France aujourd’hui&nbsp;?</p>
+                <p class="conversation-angle__function">Contraintes et réalités opérationnelles</p>
+                <p class="conversation-angle__roles">Direction industrielle d’ETI/PME – Direction de site – Direction des opérations industrielles</p>
+              </div>
+
+              <div class="conversation-angle">
+                <p class="conversation-angle__title">Comment les conditions de production françaises se comparent aux autres bases industrielles&nbsp;?</p>
+                <p class="conversation-angle__function">Écarts de compétitivité, de coûts et de stabilité</p>
+                <p class="conversation-angle__roles">Associé industrie – Économiste industriel – Fédération industrielle</p>
+              </div>
+
+              <div class="conversation-angle">
+                <p class="conversation-angle__title">Comment les normes, le droit du travail et la fiscalité redéfinissent les marges de manœuvre industrielles&nbsp;?</p>
+                <p class="conversation-angle__function">Cadres juridiques et contraintes structurelles</p>
+                <p class="conversation-angle__roles">Avocat d’affaires (industrie / social / fiscalité de production) – Secrétariat général – Responsable politique industrielle</p>
+              </div>
+
+              <div class="conversation-angle">
+                <p class="conversation-angle__title">Dans quelles conditions investir encore dans l’outil productif en France&nbsp;?</p>
+                <p class="conversation-angle__function">Engagement du capital et arbitrages d’investissement</p>
+                <p class="conversation-angle__roles">Fonds d’investissement industriel – Banque publique d’investissement – Direction stratégie / M&amp;A groupe industriel</p>
+              </div>
+            </div>
+
+            <p class="conversation-card-actions">
+              <a href="recevoir-le-dossier.html" class="link">Accéder au dossier si vous avez été approché</a>
+            </p>
+          </article>
+
+          <article class="conversation-visible-card reveal" id="conversation-soin-accompagnement-travail">
+            <div class="conversation-visible-card__meta">Conversation déjà lisible à ce stade</div>
+            <h3>Comment faire tenir le soin et l’accompagnement avec le travail disponible&nbsp;?</h3>
+            <p class="conversation-visible-card__intro">
+              Cette conversation réinscrit le soin, l’accompagnement, la contrainte budgétaire et l’attractivité territoriale dans une même lecture de l’économie réelle.
+            </p>
+
+            <div class="conversation-angle-list">
+              <div class="conversation-angle">
+                <p class="conversation-angle__title">Comment un établissement fait tenir ses équipes et son activité avec les ressources disponibles&nbsp;?</p>
+                <p class="conversation-angle__function">Arbitrages concrets dans le soin et l’accompagnement</p>
+                <p class="conversation-angle__roles">Direction d’établissement sanitaire – Direction d’EHPAD – Direction d’association gestionnaire / aide à domicile</p>
+              </div>
+
+              <div class="conversation-angle">
+                <p class="conversation-angle__title">Comment le secteur du soin et de l’accompagnement devient un révélateur des tensions du travail&nbsp;?</p>
+                <p class="conversation-angle__function">Le médico-social comme révélateur des fragilités du marché du travail</p>
+                <p class="conversation-angle__roles">Expert santé / médico-social – Observatoire emploi / compétences – Fédération du secteur</p>
+              </div>
+
+              <div class="conversation-angle">
+                <p class="conversation-angle__title">Comment financement public, régulation et organisation du système bornent la capacité d’agir&nbsp;?</p>
+                <p class="conversation-angle__function">Cadres publics, tarification et marges de manœuvre</p>
+                <p class="conversation-angle__roles">Agence publique / ARS – Ministère santé / solidarités – Collectivité / département</p>
+              </div>
+
+              <div class="conversation-angle">
+                <p class="conversation-angle__title">Quels arbitrages deviennent inévitables entre besoin social, contrainte budgétaire et attractivité territoriale&nbsp;?</p>
+                <p class="conversation-angle__function">Soutenabilité du quotidien et arbitrages de long terme</p>
+                <p class="conversation-angle__roles">Banque publique – Investisseur santé / immobilier de santé – Groupe ou réseau médico-social</p>
+              </div>
+            </div>
+
+            <p class="conversation-card-actions">
+              <a href="recevoir-le-dossier.html" class="link">Accéder au dossier si vous avez été approché</a>
+            </p>
+          </article>
+
+          <article class="conversation-visible-card reveal" id="conversation-capacites-economiques">
+            <div class="conversation-visible-card__meta">Conversation déjà lisible à ce stade</div>
+            <h3>Comment se forment, se transmettent et se renouvellent les capacités économiques&nbsp;?</h3>
+            <p class="conversation-visible-card__intro">
+              Cette conversation montre que l’économie réelle tient aussi par les compétences, la recherche, la transmission et les liens entre filières et territoires.
+            </p>
+
+            <div class="conversation-angle-list">
+              <div class="conversation-angle">
+                <p class="conversation-angle__title">Comment se forment les compétences dont l’économie a concrètement besoin&nbsp;?</p>
+                <p class="conversation-angle__function">Formation, orientation et besoins réels des filières</p>
+                <p class="conversation-angle__roles">Direction d’établissement de formation – Responsable relations écoles / compétences – Direction de filière ou d’entreprise</p>
+              </div>
+
+              <div class="conversation-angle">
+                <p class="conversation-angle__title">Comment la recherche publique et privée alimente réellement l’innovation économique&nbsp;?</p>
+                <p class="conversation-angle__function">Production de connaissance, transfert et innovation</p>
+                <p class="conversation-angle__roles">Chercheur / responsable de laboratoire – Direction R&amp;D – Expert innovation / politique de recherche</p>
+              </div>
+
+              <div class="conversation-angle">
+                <p class="conversation-angle__title">Comment les liens entre enseignement, filières et territoires renforcent ou fragilisent les capacités économiques&nbsp;?</p>
+                <p class="conversation-angle__function">Ancrage territorial des compétences et des savoirs</p>
+                <p class="conversation-angle__roles">Établissement d’enseignement supérieur – Réseau de filière – Acteur territorial / agence de développement</p>
+              </div>
+
+              <div class="conversation-angle">
+                <p class="conversation-angle__title">Comment arbitrer entre investissement éducatif, recherche de long terme et contraintes immédiates&nbsp;?</p>
+                <p class="conversation-angle__function">Arbitrages budgétaires, stratégiques et publics</p>
+                <p class="conversation-angle__roles">Ministère enseignement / recherche – Région / collectivité – Banque publique / fonds deeptech / innovation</p>
+              </div>
+            </div>
+
+            <p class="conversation-card-actions">
+              <a href="recevoir-le-dossier.html" class="link">Accéder au dossier si vous avez été approché</a>
+            </p>
+          </article>
+
+        </div>
+
+        <p class="programme-link-row reveal">
+          <a href="positions.html" class="link">Comprendre les positions concernées</a>
+          <a href="#autres-angles-thematique" class="link">Voir d’autres angles visibles à ce stade</a>
+        </p>
+
+        <p class="section-footnote section-footnote--centered reveal">
+          D’autres angles sont déjà visibles à ce stade dans d’autres conversations en cours de structuration. Ils peuvent être explorés plus bas par grande thématique de lecture.
+        </p>
+      </div>
+    </section>
+
+    <!-- AUTRES ANGLES PAR THÉMATIQUE -->
+    <section class="soft inner-section" id="autres-angles-thematique">
+      <div class="container">
+        <div class="section-head section-head--narrow section-head--centered reveal">
+          <div class="section-kicker">Autres angles visibles à ce stade</div>
+          <h2>Explorer d’autres angles par thématique</h2>
+          <p class="section-intro">
+            Les angles ci-dessous prolongent la lecture des conversations visibles ci-dessus. Ils relèvent eux aussi de conversations en cours de structuration, sans exposer l’intégralité des ensembles déjà préparés.
+          </p>
+          <div class="divider"></div>
+        </div>
+
+        <p class="programme-link-row reveal">
+          <a href="#theme-territoires" class="link">Territoires</a>
+          <a href="#theme-capital" class="link">Capital</a>
+          <a href="#theme-regles" class="link">Règles du jeu</a>
+        </p>
+
+        <div class="thematic-block-list">
+
+          <article class="thematic-block reveal" id="theme-territoires">
+            <div class="thematic-block__head">
+              <div class="thematic-block__kicker">Thématique de lecture</div>
+              <h3>Territoires</h3>
+              <p class="thematic-block__intro">
+                Cette thématique fait apparaître des angles liés au foncier, à l’attractivité, à l’aménagement et aux investissements qui structurent durablement les espaces.
+              </p>
+            </div>
+
+            <div class="thematic-angle-list">
+              <div class="thematic-angle">
+                <p class="thematic-angle__title">Comment un territoire arbitre entre attractivité, foncier et sobriété&nbsp;?</p>
+                <p class="thematic-angle__roles">Collectivité / métropole – Aménageur public ou privé – Établissement public foncier</p>
+              </div>
+
+              <div class="thematic-angle">
+                <p class="thematic-angle__title">Comment les dynamiques territoriales redessinent l’économie réelle&nbsp;?</p>
+                <p class="thematic-angle__roles">Géographe économique – Consultant en aménagement / attractivité territoriale – Observatoire territorial</p>
+              </div>
+
+              <div class="thematic-angle">
+                <p class="thematic-angle__title">Comment les cadres publics d’aménagement favorisent ou bloquent certaines trajectoires&nbsp;?</p>
+                <p class="thematic-angle__roles">Responsable aménagement / urbanisme de collectivité – Ministère logement / transition – Établissement public foncier</p>
+              </div>
+
+              <div class="thematic-angle">
+                <p class="thematic-angle__title">Quels investissements structurent réellement un territoire&nbsp;?</p>
+                <p class="thematic-angle__roles">Banque des Territoires / investisseur public – Aménageur majeur – Investisseur territorial / infrastructure</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="thematic-block reveal" id="theme-capital">
+            <div class="thematic-block__head">
+              <div class="thematic-block__kicker">Thématique de lecture</div>
+              <h3>Capital</h3>
+              <p class="thematic-block__intro">
+                Cette thématique fait apparaître des angles liés aux arbitrages d’investissement, aux flux de capital, aux cadres prudentiels et aux centres réels de pouvoir d’allocation.
+              </p>
+            </div>
+
+            <div class="thematic-angle-list">
+              <div class="thematic-angle">
+                <p class="thematic-angle__title">Comment une entreprise arbitre concrètement entre investir, attendre ou renoncer&nbsp;?</p>
+                <p class="thematic-angle__roles">DAF d’ETI / PME – Trésorier ou directeur financement de groupe – DG d’entreprise en croissance ou sous contrainte capex</p>
+              </div>
+
+              <div class="thematic-angle">
+                <p class="thematic-angle__title">Comment les flux de capital se répartissent réellement entre secteurs et profils de risque&nbsp;?</p>
+                <p class="thematic-angle__roles">Banquier d’affaires – Économiste financier – Analyste private equity / dette</p>
+              </div>
+
+              <div class="thematic-angle">
+                <p class="thematic-angle__title">Comment les cadres prudentiels et réglementaires orientent l’allocation&nbsp;?</p>
+                <p class="thematic-angle__roles">Banque centrale / régulateur financier – Banque de financement – Investisseur institutionnel</p>
+              </div>
+
+              <div class="thematic-angle">
+                <p class="thematic-angle__title">Quels acteurs disposent réellement du pouvoir d’allocation&nbsp;?</p>
+                <p class="thematic-angle__roles">Fonds d’investissement – Assureur / investisseur institutionnel – Banque publique d’investissement</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="thematic-block reveal" id="theme-regles">
+            <div class="thematic-block__head">
+              <div class="thematic-block__kicker">Thématique de lecture</div>
+              <h3>Règles du jeu</h3>
+              <p class="thematic-block__intro">
+                Cette thématique fait apparaître des angles liés à la fabrication des normes, au pouvoir normatif effectif et à l’usage stratégique de la règle par les acteurs économiques.
+              </p>
+            </div>
+
+            <div class="thematic-angle-list">
+              <div class="thematic-angle">
+                <p class="thematic-angle__title">Comment une entreprise vit concrètement l’effet des règles sur son activité&nbsp;?</p>
+                <p class="thematic-angle__roles">Responsable affaires publiques – Secrétaire général de groupe – Responsable conformité / stratégie réglementaire</p>
+              </div>
+
+              <div class="thematic-angle">
+                <p class="thematic-angle__title">Comment les normes se fabriquent réellement entre acteurs publics, privés et intermédiaires&nbsp;?</p>
+                <p class="thematic-angle__roles">Politiste économique – Avocat affaires publiques / regulatory – Consultant senior affaires publiques</p>
+              </div>
+
+              <div class="thematic-angle">
+                <p class="thematic-angle__title">Qui dispose du pouvoir normatif effectif entre État, autorités et Europe&nbsp;?</p>
+                <p class="thematic-angle__roles">Haut fonctionnaire – Autorité indépendante – Institution européenne</p>
+              </div>
+
+              <div class="thematic-angle">
+                <p class="thematic-angle__title">Comment les entreprises utilisent la règle comme levier stratégique&nbsp;?</p>
+                <p class="thematic-angle__roles">Directeur affaires publiques de groupe – Avocat d’affaires / regulatory – Cabinet de conseil stratégie / régulation</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCÈS -->
+    <section class="light inner-section" id="acces-conversations">
+      <div class="container">
+        <div class="section-head section-head--narrow section-head--centered reveal">
+          <div class="section-kicker">Accès</div>
+          <h2>Deux points d’entrée selon votre situation</h2>
+          <p class="section-intro">
+            Si vous avez été approché, le dossier permet d’accéder au cadrage détaillé. Si ce n’est pas votre cas, vous pouvez signaler un angle, une situation ou une ligne de lecture susceptible d’éclairer utilement un sujet en structuration.
+          </p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="programme-access">
+          <article class="programme-access__item reveal">
+            <h3>Recevoir le dossier</h3>
+            <p>Retrouver le sujet concerné, l’angle déjà repéré pour votre position et les éléments de cadrage utiles.</p>
+            <a href="recevoir-le-dossier.html" class="link">Recevoir le dossier</a>
+          </article>
+
+          <article class="programme-access__item reveal">
+            <h3>Signaler un angle</h3>
+            <p>Porter à connaissance une situation, une fonction, un métier ou une ligne de lecture susceptible de compléter utilement une conversation en cours de structuration.</p>
+            <a href="proposer-une-contribution.html" class="link">Signaler un angle</a>
+          </article>
+        </div>
+
+        <p class="section-footnote section-footnote--centered reveal">
+          Les éléments les plus détaillés du programme ne sont pas tous publics. Ils sont partagés de manière plus resserrée selon la position du destinataire et l’état réel d’avancement des conversations.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
