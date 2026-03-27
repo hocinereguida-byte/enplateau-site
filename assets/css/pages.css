@@ -891,131 +891,253 @@
   font-size: 0.95rem;
   margin-bottom: 12px;
 }
-   /* =========================
-   CONVERSATIONS — PAGE FINALE
+
+/* =========================
+   CONVERSATIONS — VERSION QUESTIONS STRUCTURANTES
    ========================= */
 
 #hero-conversations,
-#principe-conversations,
-#conversations-en-cours,
-#degre-ouverture,
+#visibilite-conversations,
+#questions-structurantes,
 #si-vous-avez-ete-approche,
 #acces-conversations,
-.programme-list__item[id],
-[id$="-ouverture"] {
+#theme-territoires,
+#theme-capital,
+#theme-regles,
+#theme-production,
+#theme-soin-travail,
+#theme-competences {
   scroll-margin-top: 110px;
 }
 
-#conversations-en-cours .programme-list {
-  max-width: 980px;
-}
-
-#conversations-en-cours .programme-list__item {
-  padding: 28px 0 24px;
-}
-
-#conversations-en-cours .programme-list__item h3 {
-  max-width: 20ch;
-  margin: 0 0 12px;
-  font-size: 1.42rem;
-  line-height: 1.08;
-  letter-spacing: -0.024em;
-}
-
-#conversations-en-cours .programme-list__item > p {
-  max-width: 60ch;
-  margin: 0 0 16px;
-}
-
-.conversation-angle-group {
-  margin-top: 14px;
-}
-
-.conversation-angle-group > p {
-  max-width: var(--ep-copy);
+.conversations-deadlines {
+  max-width: 760px;
+  margin: 24px auto 0;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.72;
+  color: var(--ep-text-faint);
   text-wrap: pretty;
 }
 
-.conversation-angle-group > p:not(.conversation-role-types) {
-  margin: 0 0 2px;
+.conversations-deadlines strong {
+  color: var(--ep-text-soft);
 }
 
-.conversation-role-types {
-  margin: 0 0 14px !important;
-  font-size: 0.84rem !important;
-  line-height: 1.62 !important;
-  color: var(--ep-text-faint) !important;
-  letter-spacing: 0.01em;
-  font-style: normal;
+.theme-nav {
+  margin-top: 34px;
 }
 
-.conversation-angle-group .conversation-role-types:last-child {
-  margin-bottom: 0 !important;
+.theme-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-[id$="-ouverture"] {
-  margin-top: 18px;
-  padding-top: 18px;
+.theme-nav__link {
+  display: inline-block;
+  font-size: 0.92rem;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--ep-brown);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.theme-nav__link:hover {
+  color: var(--ep-copper);
+}
+
+.theme-blocks {
+  max-width: 1080px;
+  margin: 50px auto 0;
+  display: grid;
+  gap: 46px;
+}
+
+.theme-block {
+  padding-top: 30px;
   border-top: 1px solid var(--ep-border);
 }
 
-[id$="-ouverture"] p {
-  max-width: 60ch;
-  margin: 0;
+.theme-block__head {
+  margin-bottom: 22px;
 }
 
-[id$="-ouverture"] strong {
+.theme-block__label {
   display: inline-block;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ep-copper);
+}
+
+.theme-block h3 {
+  margin: 0 0 10px;
+  max-width: 20ch;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.58rem;
+  line-height: 1.08;
+  letter-spacing: -0.024em;
+  color: #18110f;
+  text-wrap: balance;
+}
+
+.theme-block__intro {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--ep-text-muted);
+  line-height: 1.78;
+  text-wrap: pretty;
+}
+
+.angles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 30px;
+}
+
+.angle-card {
+  padding: 24px 22px 22px;
+  border: 1px solid var(--ep-border);
+  background: rgba(247, 244, 239, 0.82);
+}
+
+.angle-card h4 {
+  margin: 0;
+  max-width: 28ch;
+  font-family: Bitter, Georgia, serif;
+  font-size: 1.18rem;
+  line-height: 1.16;
+  letter-spacing: -0.015em;
+  color: #18110f;
+  text-wrap: balance;
+}
+
+.angle-card__readings-title {
+  margin: 16px 0 10px;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ep-text-soft);
+}
+
+.angle-card__readings {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.angle-card__readings li {
+  color: var(--ep-text-muted);
+  line-height: 1.66;
+  text-wrap: pretty;
+}
+
+@media (max-width: 1100px) {
+  .angles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-block h3 {
+    max-width: 24ch;
+  }
 }
 
 @media (max-width: 767px) {
-  #conversations-en-cours .programme-list {
+  .conversations-deadlines {
+    max-width: 42ch;
+    font-size: 0.84rem;
+    line-height: 1.64;
+  }
+
+  .theme-nav {
+    margin-top: 28px;
+  }
+
+  .theme-nav__list {
+    justify-content: center;
+    gap: 10px 16px;
+  }
+
+  .theme-nav__link {
+    font-size: 0.88rem;
+  }
+
+  .theme-blocks {
     margin-top: 34px;
+    gap: 24px;
   }
 
-  #conversations-en-cours .programme-list__item {
+  .theme-block {
+    position: relative;
     padding: 24px 20px 24px 34px;
+    border-top: 0;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.42);
   }
 
-  #conversations-en-cours .programme-list__item h3 {
+  .theme-block::before {
+    content: "";
+    position: absolute;
+    left: 16px;
+    top: 28px;
+    bottom: 28px;
+    width: 4px;
+    border-radius: 999px;
+    background: var(--ep-brown-soft);
+    opacity: 0.68;
+  }
+
+  .theme-block__head {
+    margin-bottom: 18px;
+  }
+
+  .theme-block h3 {
     max-width: none;
-    font-size: 1.22rem;
+    font-size: 1.24rem;
     line-height: 1.1;
   }
 
-  #conversations-en-cours .programme-list__item > p,
-  .conversation-angle-group > p,
-  [id$="-ouverture"] p {
+  .theme-block__intro {
     max-width: none;
   }
 
-  .conversation-role-types {
-    font-size: 0.8rem !important;
-    line-height: 1.56 !important;
+  .angles-grid {
+    gap: 18px;
   }
 
-  [id$="-ouverture"] {
-    margin-top: 16px;
-    padding-top: 16px;
+  .angle-card {
+    padding: 18px 0 0;
+    border: 0;
+    border-top: 1px solid var(--ep-border);
+    background: transparent;
+  }
+
+  .angle-card h4 {
+    max-width: none;
+    font-size: 1.08rem;
+  }
+
+  .angle-card__readings-title {
+    margin-top: 14px;
+    margin-bottom: 8px;
+    font-size: 0.72rem;
+  }
+
+  .angle-card__readings li {
+    font-size: 0.92rem;
+    line-height: 1.6;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
