@@ -1141,3 +1141,140 @@
     line-height: 1.6;
   }
 }
+
+/* =========================
+   CONVERSATIONS — AJUSTEMENTS
+   ========================= */
+
+#angles-par-thematique .section-intro {
+  max-width: 64ch;
+}
+
+#angles-par-thematique .programme-link-row {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#angles-par-thematique .programme-link-row .link {
+  margin-top: 0;
+}
+
+#theme-territoires .section-head,
+#theme-capital .section-head,
+#theme-regles .section-head,
+#theme-production .section-head,
+#theme-soin-travail .section-head,
+#theme-competences .section-head {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#theme-territoires .section-head h2,
+#theme-capital .section-head h2,
+#theme-regles .section-head h2,
+#theme-production .section-head h2,
+#theme-soin-travail .section-head h2,
+#theme-competences .section-head h2 {
+  max-width: 18ch;
+}
+
+#theme-territoires .section-intro,
+#theme-capital .section-intro,
+#theme-regles .section-intro,
+#theme-production .section-intro,
+#theme-soin-travail .section-intro,
+#theme-competences .section-intro {
+  max-width: 60ch;
+}
+
+#theme-territoires .programme-list,
+#theme-capital .programme-list,
+#theme-regles .programme-list,
+#theme-production .programme-list,
+#theme-soin-travail .programme-list,
+#theme-competences .programme-list {
+  max-width: 980px;
+  margin-top: 40px;
+}
+
+#theme-territoires .programme-list__item h3,
+#theme-capital .programme-list__item h3,
+#theme-regles .programme-list__item h3,
+#theme-production .programme-list__item h3,
+#theme-soin-travail .programme-list__item h3,
+#theme-competences .programme-list__item h3 {
+  max-width: 28ch;
+}
+
+#theme-territoires .programme-list__item p,
+#theme-capital .programme-list__item p,
+#theme-regles .programme-list__item p,
+#theme-production .programme-list__item p,
+#theme-soin-travail .programme-list__item p,
+#theme-competences .programme-list__item p {
+  max-width: 62ch;
+}
+
+#theme-territoires,
+#theme-capital,
+#theme-regles,
+#theme-production,
+#theme-soin-travail,
+#theme-competences,
+#si-vous-avez-ete-approche,
+#angles-par-thematique,
+#acces-conversations {
+  scroll-margin-top: 110px;
+}
+
+@media (max-width: 768px) {
+  #theme-territoires .programme-list__item::before,
+  #theme-capital .programme-list__item::before,
+  #theme-regles .programme-list__item::before,
+  #theme-production .programme-list__item::before,
+  #theme-soin-travail .programme-list__item::before,
+  #theme-competences .programme-list__item::before,
+  #acces-conversations .programme-access__item::before {
+    display: none;
+  }
+
+  #theme-territoires .programme-list__item,
+  #theme-capital .programme-list__item,
+  #theme-regles .programme-list__item,
+  #theme-production .programme-list__item,
+  #theme-soin-travail .programme-list__item,
+  #theme-competences .programme-list__item,
+  #acces-conversations .programme-access__item {
+    padding-left: 20px;
+  }
+
+  #theme-territoires .section-head h2,
+  #theme-capital .section-head h2,
+  #theme-regles .section-head h2,
+  #theme-production .section-head h2,
+  #theme-soin-travail .section-head h2,
+  #theme-competences .section-head h2 {
+    max-width: none;
+  }
+
+  #theme-territoires .programme-list__item h3,
+  #theme-capital .programme-list__item h3,
+  #theme-regles .programme-list__item h3,
+  #theme-production .programme-list__item h3,
+  #theme-soin-travail .programme-list__item h3,
+  #theme-competences .programme-list__item h3 {
+    max-width: none;
+  }
+
+  #theme-territoires .programme-list__item p,
+  #theme-capital .programme-list__item p,
+  #theme-regles .programme-list__item p,
+  #theme-production .programme-list__item p,
+  #theme-soin-travail .programme-list__item p,
+  #theme-competences .programme-list__item p {
+    max-width: none;
+  }
+}
