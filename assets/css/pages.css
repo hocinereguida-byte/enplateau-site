@@ -13,7 +13,7 @@
   padding-top: 96px;
   padding-bottom: 82px;
   background: var(--ep-paper-alt);
-  border-bottom: 1px solid rgba(16, 26, 45, 0.06);
+  border-bottom: 1px solid rgba(15, 26, 43, 0.06);
 }
 
 .page-hero-inner {
@@ -21,20 +21,20 @@
 }
 
 .page-hero-kicker {
-  font-family: var(--font-accent);
-  font-size: 11px;
-  letter-spacing: 0.14em;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ep-brown-soft);
+  color: var(--ep-taupe);
   margin-bottom: 18px;
 }
 
 .page-hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  font-size: clamp(2.6rem, 5vw, 4.6rem);
   line-height: 1.02;
-  letter-spacing: -0.018em;
-  font-weight: 700;
+  letter-spacing: -0.022em;
+  font-weight: 600;
   color: var(--ep-ink);
   margin-bottom: 20px;
   text-wrap: balance;
@@ -48,15 +48,18 @@
 }
 
 .page-hero-sub {
-  font-size: 19px;
-  line-height: 1.74;
+  font-family: var(--font-body);
+  font-size: clamp(1.12rem, 1.7vw, 1.38rem);
+  line-height: 1.54;
+  font-weight: 500;
   margin-bottom: 16px;
 }
 
 .page-hero-meta,
 .page-hero-note {
-  font-size: 14px;
-  line-height: 1.66;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.72;
 }
 
 /* ---------- PAGE LAYOUT ---------- */
@@ -76,7 +79,7 @@
 }
 
 .page-sidebar nav {
-  border-top: 1px solid rgba(16, 26, 45, 0.12);
+  border-top: 1px solid rgba(15, 26, 43, 0.12);
   padding-top: 18px;
 }
 
@@ -123,20 +126,23 @@
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3.1rem);
   line-height: 1.06;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
+  font-weight: 600;
   margin-bottom: 18px;
 }
 
 .page-reading h3 {
   font-family: var(--font-display);
-  font-size: 1.35rem;
-  line-height: 1.22;
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  line-height: 1.18;
+  font-weight: 500;
   margin-bottom: 12px;
 }
 
 .page-reading p {
-  font-size: 17px;
-  line-height: 1.8;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.72;
   color: var(--ep-ink-soft);
   margin-bottom: 18px;
 }
@@ -153,7 +159,8 @@
 }
 
 .page-reading li {
-  font-size: 16px;
+  font-family: var(--font-body);
+  font-size: 1rem;
   line-height: 1.72;
   color: var(--ep-ink-soft);
   margin-bottom: 10px;
@@ -167,9 +174,9 @@
 
 .editorial-panel {
   position: relative;
-  padding: 26px 26px 24px 26px;
+  padding: 28px 26px 24px 28px;
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(16, 26, 45, 0.10);
+  border: 1px solid rgba(15, 26, 43, 0.11);
   box-shadow: var(--shadow-soft);
 }
 
@@ -178,9 +185,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
+  width: 5px;
   height: 100%;
-  background: var(--ep-brown-soft);
+  background: var(--ep-brown-line);
 }
 
 .editorial-panel + .editorial-panel {
@@ -195,7 +202,7 @@
   margin-bottom: 0;
 }
 
-/* ---------- DEADLINES / STATUS ---------- */
+/* ---------- DENSE CARDS ---------- */
 
 .conversations-deadlines,
 .theme-block,
@@ -208,9 +215,9 @@
 .season-card {
   position: relative;
   background: rgba(255, 255, 255, 0.68);
-  border: 1px solid rgba(16, 26, 45, 0.10);
+  border: 1px solid rgba(15, 26, 43, 0.11);
   box-shadow: var(--shadow-soft);
-  padding: 24px;
+  padding: 26px;
 }
 
 .conversations-deadlines::before,
@@ -226,7 +233,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
+  width: 5px;
   height: 100%;
   background: var(--ep-bronze);
 }
@@ -234,7 +241,7 @@
 /* ---------- DARK PAGE SECTIONS ---------- */
 
 .page-section-dark {
-  background: var(--ep-blue-deep);
+  background: var(--ep-header-blue);
   color: rgba(255, 255, 255, 0.94);
   padding-top: 84px;
   padding-bottom: 84px;
