@@ -1655,3 +1655,279 @@
     display: inline;
   }
 }
+/* =========================
+   HOME — HARMONISATION AVEC PAGES.CSS
+   ========================= */
+
+/* =========================
+   LARGEURS DE LECTURE
+   ========================= */
+
+.hero-title,
+.hero-subtitle,
+.hero-meta,
+.hero-note,
+.section-head h2,
+.why-editorial-item h3,
+.conversation-visible-card__title,
+.angle-home-card h3,
+.rencontre-item h3,
+.access-primary h3,
+.access-secondary h3 {
+  text-wrap: balance;
+}
+
+.hero-title {
+  max-width: 16ch;
+}
+
+.hero-subtitle {
+  max-width: 30ch;
+}
+
+.hero-meta {
+  max-width: 40ch;
+}
+
+.hero-note {
+  max-width: 44ch;
+}
+
+.section-head h2 {
+  max-width: 26ch;
+}
+
+.why-editorial-item h3 {
+  max-width: 26ch;
+}
+
+.conversation-visible-card__title {
+  max-width: 18ch;
+}
+
+.angle-home-card h3 {
+  max-width: 18ch;
+}
+
+.rencontre-item h3 {
+  max-width: 24ch;
+}
+
+.access-primary h3,
+.access-secondary h3 {
+  max-width: 18ch;
+}
+
+/* =========================
+   BLOCS ÉDITORIAUX CLAIRS
+   ========================= */
+
+.angles-home-grid .card,
+.series-grid .card,
+.why-editorial-item {
+  position: relative;
+  padding: 28px 24px 24px 34px;
+  border: 1px solid var(--ep-border);
+  border-radius: 18px;
+  background: rgba(247, 244, 239, 0.82);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.55) inset,
+    0 6px 18px rgba(24, 17, 15, 0.035);
+}
+
+.angles-home-grid .card::before,
+.series-grid .card::before,
+.why-editorial-item::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 20px;
+  bottom: 20px;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--ep-brown-soft);
+  opacity: 0.68;
+}
+
+.angles-home-grid .card h3,
+.series-grid .card h3,
+.why-editorial-item h3 {
+  margin-top: 0;
+}
+
+.angles-home-grid .card p:last-child,
+.series-grid .card p:last-child,
+.why-editorial-item p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   LISTE ÉDITORIALE HOME
+   ========================= */
+
+.why-editorial-list {
+  display: grid;
+  gap: 22px;
+  border-top: 0;
+}
+
+.why-editorial-item {
+  border-bottom: 0;
+  padding-top: 28px;
+  padding-bottom: 24px;
+}
+
+/* =========================
+   CARDS POSITIONS
+   ========================= */
+
+.series-grid .card {
+  padding-top: 28px;
+}
+
+/* =========================
+   CONVERSATION PREMIUM
+   ========================= */
+
+.conversation-visible-card__intro {
+  max-width: 58ch;
+}
+
+.conversation-angle__title {
+  text-wrap: pretty;
+}
+
+.conversation-angle__function,
+.conversation-angle__roles {
+  max-width: none;
+}
+
+/* =========================
+   LECTURE DE SAISON
+   ========================= */
+
+.rencontre-item h3 {
+  text-wrap: balance;
+}
+
+.rencontre-item p {
+  max-width: 60ch;
+}
+
+/* =========================
+   MOBILE / TABLETTE
+   ========================= */
+
+@media (max-width: 1100px) {
+  .angles-home-grid,
+  .series-grid,
+  .access-editorial {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 980px) and (orientation: landscape) {
+  .hero-title {
+    max-width: 18ch;
+  }
+
+  .hero-subtitle {
+    max-width: 38ch;
+  }
+
+  .hero-meta,
+  .hero-note {
+    max-width: 46ch;
+  }
+
+  .section-head h2 {
+    max-width: 28ch;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-title {
+    max-width: 12ch;
+    line-height: 1.08;
+  }
+
+  .hero-subtitle {
+    max-width: 24ch;
+    line-height: 1.64;
+  }
+
+  .hero-meta {
+    max-width: 30ch;
+  }
+
+  .hero-note {
+    max-width: 32ch;
+  }
+
+  .section-head h2 {
+    max-width: 18ch;
+  }
+
+  .why-editorial-item h3,
+  .angle-home-card h3,
+  .series-grid .card h3,
+  .rencontre-item h3,
+  .access-primary h3,
+  .access-secondary h3 {
+    max-width: none;
+  }
+
+  .why-editorial-list {
+    gap: 18px;
+  }
+
+  .angles-home-grid .card,
+  .series-grid .card,
+  .why-editorial-item {
+    padding: 24px 20px 24px 34px;
+    border-radius: 18px;
+  }
+
+  .angles-home-grid .card::before,
+  .series-grid .card::before,
+  .why-editorial-item::before {
+    left: 16px;
+    top: 22px;
+    bottom: 22px;
+    width: 4px;
+  }
+
+  .conversation-visible-card__title {
+    max-width: 12ch;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    max-width: 10ch;
+  }
+
+  .hero-subtitle {
+    max-width: 20ch;
+  }
+
+  .angles-home-grid .card,
+  .series-grid .card,
+  .why-editorial-item {
+    padding: 22px 18px 22px 30px;
+    border-radius: 16px;
+  }
+
+  .angles-home-grid .card::before,
+  .series-grid .card::before,
+  .why-editorial-item::before {
+    left: 14px;
+    top: 20px;
+    bottom: 20px;
+    width: 3px;
+  }
+
+  .conversation-visible-card__title {
+    max-width: 11ch;
+  }
+}
