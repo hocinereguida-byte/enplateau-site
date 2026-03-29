@@ -724,3 +724,9 @@ button:focus-visible {
     padding-bottom: 22px;
   }
 }
+
+.site-header.is-scrolled {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #e6e8ec;
+}
