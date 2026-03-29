@@ -1895,7 +1895,7 @@
     top: 22px;
     bottom: 22px;
     width: 4px;
-  }
+  }  
 
   .conversation-visible-card__title {
     max-width: 12ch;
@@ -1929,5 +1929,149 @@
 
   .conversation-visible-card__title {
     max-width: 11ch;
+  }
+}
+
+/* =========================
+   HOME — UNIFIER LES BLOCS À PLAT EN CARTES CLAIRES
+   ========================= */
+
+/* 1) Les blocs éditoriaux "Pourquoi cette prise de contact" */
+.why-editorial-list {
+  display: grid;
+  gap: 24px;
+  border-top: 0;
+}
+
+.why-editorial-item {
+  position: relative;
+  padding: 28px 24px 24px 34px;
+  border: 1px solid var(--ep-border);
+  border-radius: 18px;
+  background: rgba(247, 244, 239, 0.82);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.55) inset,
+    0 6px 18px rgba(24, 17, 15, 0.035);
+}
+
+.why-editorial-item::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 20px;
+  bottom: 20px;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--ep-brown-soft);
+  opacity: 0.68;
+}
+
+.why-editorial-item h3 {
+  margin-top: 0;
+  max-width: 26ch;
+}
+
+.why-editorial-item p:last-child {
+  margin-bottom: 0;
+}
+
+/* 2) Les angles visibles : on verrouille aussi la logique carte claire */
+.angles-home-grid .card {
+  position: relative;
+  padding: 28px 24px 24px 34px;
+  border: 1px solid var(--ep-border);
+  border-radius: 18px;
+  background: rgba(247, 244, 239, 0.82);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.55) inset,
+    0 6px 18px rgba(24, 17, 15, 0.035);
+}
+
+.angles-home-grid .card::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 20px;
+  bottom: 20px;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--ep-brown-soft);
+  opacity: 0.68;
+}
+
+.angles-home-grid .card h3 {
+  margin-top: 0;
+  max-width: 22ch;
+}
+
+/* 3) Option : si vous voulez aussi "encager" les rencontres */
+.rencontres-timeline {
+  gap: 24px;
+}
+
+.rencontre-item {
+  padding: 26px 24px 24px 34px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.rencontre-item::before {
+  left: 16px;
+  top: 22px;
+  width: 3px;
+  height: auto;
+  bottom: 22px;
+  border-radius: 999px;
+  background: rgba(200, 116, 51, 0.72);
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 767px) {
+  .why-editorial-list {
+    gap: 18px;
+  }
+
+  .why-editorial-item,
+  .angles-home-grid .card,
+  .rencontre-item {
+    padding: 24px 20px 24px 34px;
+    border-radius: 18px;
+  }
+
+  .why-editorial-item::before,
+  .angles-home-grid .card::before,
+  .rencontre-item::before {
+    left: 16px;
+    top: 22px;
+    bottom: 22px;
+    width: 4px;
+  }
+
+  .why-editorial-item h3,
+  .angles-home-grid .card h3,
+  .rencontre-item h3 {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-editorial-item,
+  .angles-home-grid .card,
+  .rencontre-item {
+    padding: 22px 18px 22px 30px;
+    border-radius: 16px;
+  }
+
+  .why-editorial-item::before,
+  .angles-home-grid .card::before,
+  .rencontre-item::before {
+    left: 14px;
+    top: 20px;
+    bottom: 20px;
+    width: 3px;
   }
 }
