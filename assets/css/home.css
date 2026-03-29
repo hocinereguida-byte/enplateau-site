@@ -2075,3 +2075,66 @@
     width: 3px;
   }
 }
+/* =========================
+   CARDS ÉDITORIALES — STYLE PAGES.CSS (CORRIGÉ)
+   ========================= */
+
+.why-editorial-item {
+  position: relative;
+  padding: 28px 24px 24px 36px;
+
+  /* fond */
+  background: rgba(247, 244, 239, 0.88);
+
+  /* bordure visible mais fine */
+  border: 1px solid rgba(24, 17, 15, 0.08);
+
+  /* arrondi */
+  border-radius: 20px;
+
+  /* léger relief premium */
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 8px 22px rgba(24, 17, 15, 0.04);
+}
+
+/* Liseré vertical (signature) */
+.why-editorial-item::before {
+  content: "";
+  position: absolute;
+
+  left: 16px;
+  top: 24px;
+  bottom: 24px;
+
+  width: 3px;
+  border-radius: 999px;
+
+  /* plus structurant que le brun fade */
+  background: linear-gradient(
+    to bottom,
+    #8b6a43 0%,
+    rgba(139, 106, 67, 0.25) 100%
+  );
+}
+
+/* Titre */
+.why-editorial-item h3 {
+  margin: 0 0 10px;
+  max-width: 26ch;
+}
+
+/* Texte */
+.why-editorial-item p {
+  margin: 0;
+}
+
+/* =========================
+   ESPACEMENT ENTRE LES BLOCS
+   ========================= */
+
+.why-editorial-list {
+  display: grid;
+  gap: 22px;
+  border-top: 0;
+}
