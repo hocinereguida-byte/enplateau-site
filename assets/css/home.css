@@ -1,6 +1,15 @@
 /* =========================================================
-   HOME FINAL — AJUSTEMENTS MINIMAUX
+   EN PLATEAU — HOME CSS
+   Réglages spécifiques à la home page
    ========================================================= */
+
+
+/* ---------- PAGE ---------- */
+
+.home-page {
+  background: #f6f2ea;
+}
+
 
 /* ---------- HERO ---------- */
 
@@ -10,11 +19,6 @@
 
 #hero-home .hero-kicker {
   margin-bottom: 18px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  opacity: 0.9;
 }
 
 #hero-home .hero-title {
@@ -31,17 +35,17 @@
   max-width: 640px;
   margin: 0 0 16px;
   font-size: 1.08rem;
-  line-height: 1.65;
+  line-height: 1.68;
   font-weight: 500;
-  opacity: 0.96;
+  color: rgba(15, 39, 71, 0.92);
 }
 
 #hero-home .hero-meta {
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 0 28px;
   font-size: 0.98rem;
-  line-height: 1.6;
-  opacity: 0.82;
+  line-height: 1.62;
+  color: rgba(15, 39, 71, 0.72);
 }
 
 #hero-home .hero-actions {
@@ -51,45 +55,8 @@
   align-items: center;
 }
 
-#hero-home .hero-link-primary,
-#hero-home .hero-link-secondary {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  font-weight: 600;
-  text-decoration: none;
-}
 
-#hero-home .hero-link-primary {
-  padding: 0 18px;
-  border: 1px solid rgba(15, 39, 71, 0.22);
-  background: rgba(255, 255, 255, 0.72);
-  color: #0f2747;
-  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-}
-
-#hero-home .hero-link-primary:hover {
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(15, 39, 71, 0.38);
-  transform: translateY(-1px);
-}
-
-#hero-home .hero-link-secondary {
-  color: #0f2747;
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
-  text-decoration-thickness: 1px;
-}
-
-
-/* ---------- SECTIONS ---------- */
-
-.home-page .home-section,
-.home-page .inner-section,
-.home-page .section-rencontres {
-  padding-top: 84px;
-  padding-bottom: 84px;
-}
+/* ---------- SECTION HEADS ---------- */
 
 .home-page .section-head {
   margin-bottom: 34px;
@@ -103,15 +70,6 @@
 
 .home-page .section-head--centered {
   text-align: center;
-}
-
-.home-page .section-kicker {
-  margin-bottom: 14px;
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  opacity: 0.78;
 }
 
 .home-page .section-head h2 {
@@ -143,8 +101,8 @@
   max-width: 860px;
   margin: 26px auto 0;
   font-size: 0.95rem;
-  line-height: 1.65;
-  color: rgba(15, 39, 71, 0.75);
+  line-height: 1.66;
+  color: rgba(15, 39, 71, 0.74);
 }
 
 .home-page .section-footnote--centered {
@@ -171,7 +129,8 @@
   margin: 0 0 12px;
   font-family: "Bitter", serif;
   font-size: 1.18rem;
-  line-height: 1.25;
+  line-height: 1.26;
+  letter-spacing: -0.01em;
 }
 
 .why-editorial-item p {
@@ -205,11 +164,11 @@
 .programme-link-row .link:hover,
 .conversation-card-actions .link:hover,
 .section-footnote .link:hover {
-  opacity: 0.75;
+  opacity: 0.72;
 }
 
 
-/* ---------- CONVERSATION PRINCIPALE ---------- */
+/* ---------- CONVERSATIONS ---------- */
 
 .conversation-showcase {
   margin-top: 34px;
@@ -229,7 +188,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  opacity: 0.72;
+  color: rgba(15, 39, 71, 0.72);
 }
 
 .conversation-visible-card__title,
@@ -243,10 +202,10 @@
 
 .conversation-visible-card__intro,
 .conversation-visible-card > p {
-  max-width: 850px;
+  max-width: 860px;
   margin: 0 0 24px;
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.72;
   color: rgba(15, 39, 71, 0.9);
 }
 
@@ -267,6 +226,7 @@
   font-family: "Bitter", serif;
   font-size: 1.02rem;
   line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
 .conversation-angle__function,
@@ -278,7 +238,7 @@
 
 .conversation-angle__function {
   margin-bottom: 10px;
-  color: rgba(15, 39, 71, 0.86);
+  color: rgba(15, 39, 71, 0.88);
 }
 
 .conversation-angle__roles {
@@ -299,17 +259,13 @@
   margin-top: 28px;
 }
 
-.angle-home-card,
-.series-grid .card,
-.grid .card {
+.angle-home-card {
   padding: 26px 24px;
   border: 1px solid rgba(15, 39, 71, 0.1);
   background: rgba(255, 255, 255, 0.78);
 }
 
-.angle-home-card h3,
-.series-grid .card h3,
-.grid .card h3 {
+.angle-home-card h3 {
   margin: 0 0 14px;
   font-family: "Bitter", serif;
   font-size: 1.14rem;
@@ -323,7 +279,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  opacity: 0.72;
+  color: rgba(15, 39, 71, 0.7);
 }
 
 .angle-readings {
@@ -334,6 +290,7 @@
 .angle-readings li {
   margin-bottom: 8px;
   line-height: 1.58;
+  color: rgba(15, 39, 71, 0.88);
 }
 
 
@@ -386,6 +343,12 @@
   margin-top: 28px;
 }
 
+.series-grid .card {
+  padding: 26px 24px;
+  border: 1px solid rgba(15, 39, 71, 0.1);
+  background: rgba(255, 255, 255, 0.78);
+}
+
 .pill {
   display: inline-flex;
   align-items: center;
@@ -393,15 +356,21 @@
   padding: 0 10px;
   margin-bottom: 14px;
   border: 1px solid rgba(15, 39, 71, 0.14);
+  background: rgba(255, 255, 255, 0.72);
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.72);
 }
 
-.series-grid .card p,
-.grid .card p {
+.series-grid .card h3 {
+  margin: 0 0 12px;
+  font-family: "Bitter", serif;
+  font-size: 1.16rem;
+  line-height: 1.28;
+}
+
+.series-grid .card p {
   margin: 0 0 14px;
   font-size: 0.97rem;
   line-height: 1.66;
@@ -430,7 +399,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  opacity: 0.72;
+  color: rgba(15, 39, 71, 0.72);
 }
 
 #lecture-de-saison-home .rencontre-item h3 {
@@ -444,6 +413,7 @@
   margin: 0;
   font-size: 0.96rem;
   line-height: 1.64;
+  color: rgba(15, 39, 71, 0.9);
 }
 
 
@@ -470,7 +440,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  opacity: 0.74;
+  color: rgba(15, 39, 71, 0.74);
 }
 
 .access-primary h3,
@@ -493,20 +463,18 @@
   display: inline-flex;
   align-items: center;
   min-height: 42px;
-  text-decoration: none;
   font-weight: 600;
-}
-
-.access-link--primary,
-.access-link--secondary {
-  color: #0f2747;
   text-decoration: underline;
   text-underline-offset: 0.18em;
   text-decoration-thickness: 1px;
 }
 
+.access-link:hover {
+  opacity: 0.72;
+}
 
-/* ---------- VARIANTES DE FOND ---------- */
+
+/* ---------- FONDS SPÉCIFIQUES ---------- */
 
 .home-section.light,
 .inner-section.light {
@@ -522,33 +490,26 @@
 /* ---------- RESPONSIVE ---------- */
 
 @media (max-width: 1100px) {
-  .conversation-angle-list,
-  #lecture-de-saison-home .rencontres-timeline,
   .why-editorial-list,
   .access-editorial,
-  .media-logos {
+  .media-logos,
+  .conversation-angle-list,
+  #lecture-de-saison-home .rencontres-timeline {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 780px) {
-  .home-page .home-section,
-  .home-page .inner-section,
-  .home-page .section-rencontres {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-
   #hero-home .hero-title {
     font-size: clamp(2rem, 8vw, 3rem);
   }
 
-  .conversation-angle-list,
   .why-editorial-list,
-  .access-editorial,
-  #lecture-de-saison-home .rencontres-timeline,
+  .conversation-angle-list,
   .media-logos,
-  .grid.grid-3 {
+  .grid.grid-3,
+  #lecture-de-saison-home .rencontres-timeline,
+  .access-editorial {
     grid-template-columns: 1fr;
   }
 
