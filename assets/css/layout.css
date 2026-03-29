@@ -1311,3 +1311,24 @@ li {
 .series-grid .card p {
   max-width: 58ch;
 }
+@media (max-width: 768px) {
+
+  .hero-title {
+    max-width: 16ch;
+  }
+
+  .hero-subtitle,
+  .hero-meta,
+  .hero-note {
+    max-width: 32ch;
+  }
+
+  .section-intro {
+    max-width: 34ch;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+  }
+}
