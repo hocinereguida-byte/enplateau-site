@@ -70,20 +70,22 @@
 .hero-kicker {
   display: block;
   margin: 0 0 20px;
-  font-size: 0.76rem;
-  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
   color: rgba(245, 241, 236, 0.64);
 }
 
 .hero-title {
   margin: 0 auto 20px;
   max-width: 12ch;
-  font-family: Bitter, Georgia, serif;
-  font-size: clamp(2.6rem, 6vw, 5.4rem);
-  line-height: 0.96;
-  letter-spacing: -0.042em;
+  font-family: "Spectral", Georgia, serif;
+  font-size: clamp(2.38rem, 5.6vw, 5rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  font-weight: 500;
   color: #f5f1ec;
   text-wrap: balance;
 }
@@ -91,8 +93,10 @@
 .hero-subtitle {
   max-width: 24ch;
   margin: 0 auto;
-  font-size: clamp(1.12rem, 2vw, 1.42rem);
-  line-height: 1.5;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.06rem, 1.9vw, 1.3rem);
+  line-height: 1.62;
+  letter-spacing: -0.003em;
   color: rgba(245, 241, 236, 0.90);
   text-wrap: pretty;
 }
@@ -100,8 +104,10 @@
 .hero-meta {
   margin: 22px auto 0;
   max-width: 34ch;
-  font-size: 0.96rem;
-  line-height: 1.65;
+  font-family: "Inter", sans-serif;
+  font-size: 0.93rem;
+  line-height: 1.66;
+  letter-spacing: -0.002em;
   color: rgba(245, 241, 236, 0.76);
   text-wrap: pretty;
 }
@@ -109,8 +115,10 @@
 .hero-note {
   margin: 16px auto 0;
   max-width: 40ch;
-  font-size: 0.86rem;
-  line-height: 1.68;
+  font-family: "Inter", sans-serif;
+  font-size: 0.83rem;
+  line-height: 1.64;
+  letter-spacing: -0.001em;
   color: rgba(245, 241, 236, 0.64);
   text-wrap: pretty;
 }
@@ -125,9 +133,11 @@
 
 .hero-link-primary,
 .hero-link-secondary {
-  font-size: 0.98rem;
-  line-height: 1.2;
-  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.24;
+  font-weight: 500;
+  letter-spacing: -0.002em;
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
@@ -167,7 +177,10 @@
 
 .page-centered-copy p {
   margin: 0 0 16px;
-  line-height: 1.8;
+  font-family: "Inter", sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.82;
+  letter-spacing: -0.003em;
   color: var(--ep-text-muted);
   text-wrap: pretty;
 }
@@ -211,10 +224,11 @@
 .why-editorial-item h3 {
   margin: 0 0 8px;
   max-width: 22ch;
-  font-family: Bitter, Georgia, serif;
-  font-size: 1.28rem;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+  font-family: "Spectral", Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.22;
+  letter-spacing: -0.014em;
+  font-weight: 500;
   color: #1a120f;
   text-wrap: balance;
 }
@@ -222,8 +236,11 @@
 .why-editorial-item p {
   max-width: var(--ep-copy);
   margin: 6px 0 0;
+  font-family: "Inter", sans-serif;
+  font-size: 0.97rem;
   color: var(--ep-text-muted);
-  line-height: 1.78;
+  line-height: 1.8;
+  letter-spacing: -0.003em;
   text-wrap: pretty;
 }
 
@@ -248,20 +265,22 @@
 
 .conversation-visible-card__meta {
   margin: 0 0 12px;
-  font-size: 0.74rem;
-  letter-spacing: 0.12em;
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   color: rgba(245, 241, 236, 0.60);
 }
 
 .conversation-visible-card__title {
   margin: 0 0 12px;
   max-width: 16ch;
-  font-family: Bitter, Georgia, serif;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  line-height: 1.02;
-  letter-spacing: -0.028em;
+  font-family: "Spectral", Georgia, serif;
+  font-size: clamp(1.72rem, 2.7vw, 2.52rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 500;
   color: #ffffff;
   text-wrap: balance;
 }
@@ -269,8 +288,11 @@
 .conversation-visible-card__intro {
   max-width: 52ch;
   margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 0.97rem;
   color: rgba(245, 241, 236, 0.84);
-  line-height: 1.76;
+  line-height: 1.8;
+  letter-spacing: -0.003em;
   text-wrap: pretty;
 }
 
@@ -294,25 +316,31 @@
 }
 
 .conversation-angle__title {
-  font-family: Bitter, Georgia, serif;
-  font-size: 1.06rem;
-  line-height: 1.34;
-  letter-spacing: -0.01em;
+  font-family: "Spectral", Georgia, serif;
+  font-size: 0.98rem;
+  line-height: 1.42;
+  letter-spacing: -0.008em;
+  font-weight: 500;
   color: #1f1714;
   text-wrap: pretty;
 }
 
 .conversation-angle__function {
   margin-top: 6px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.93rem;
   color: var(--ep-text-muted);
-  line-height: 1.68;
+  line-height: 1.7;
+  letter-spacing: -0.002em;
   text-wrap: pretty;
 }
 
 .conversation-angle__roles {
   margin-top: 8px;
-  font-size: 0.83rem;
-  line-height: 1.62;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.58;
+  letter-spacing: -0.001em;
   color: var(--ep-text-faint);
   text-wrap: pretty;
 }
@@ -353,10 +381,11 @@
 .angle-readings-title {
   margin-top: 14px;
   margin-bottom: 8px;
-  font-size: 0.74rem;
-  letter-spacing: 0.10em;
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--ep-copper);
 }
 
@@ -368,7 +397,10 @@
 
 .angle-readings li {
   margin: 0;
-  line-height: 1.72;
+  font-family: "Inter", sans-serif;
+  font-size: 0.96rem;
+  line-height: 1.74;
+  letter-spacing: -0.002em;
   text-wrap: pretty;
 }
 
@@ -519,18 +551,20 @@
 
 .rencontre-date {
   margin-bottom: 8px;
-  font-size: 0.84rem;
-  letter-spacing: 0.05em;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.60);
 }
 
 .rencontre-item h3 {
   margin: 0 0 12px;
   max-width: 22ch;
-  font-family: Bitter, Georgia, serif;
-  font-size: clamp(1.52rem, 3.4vw, 2.18rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  font-family: "Spectral", Georgia, serif;
+  font-size: clamp(1.34rem, 3vw, 1.92rem);
+  line-height: 1.14;
+  letter-spacing: -0.018em;
+  font-weight: 500;
   color: #ffffff;
   text-wrap: balance;
 }
@@ -538,8 +572,10 @@
 .rencontre-item p {
   max-width: 58ch;
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.74;
+  font-family: "Inter", sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.76;
+  letter-spacing: -0.002em;
   color: rgba(245, 241, 236, 0.78);
   text-wrap: pretty;
 }
@@ -552,16 +588,20 @@
 
 .rencontres-note {
   margin: 0 0 16px;
-  font-size: 0.82rem;
-  line-height: 1.62;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  letter-spacing: -0.001em;
   color: rgba(255, 255, 255, 0.54);
   text-wrap: pretty;
 }
 
 .rencontres-link {
   display: inline-block;
-  font-size: 0.92rem;
-  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.002em;
   color: rgba(255, 255, 255, 0.82);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -606,10 +646,11 @@
 .access-tag {
   display: inline-block;
   margin-bottom: 8px;
-  font-size: 0.74rem;
-  letter-spacing: 0.12em;
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--ep-copper);
 }
 
@@ -617,34 +658,40 @@
 .access-secondary h3 {
   margin: 0 0 10px;
   max-width: 16ch;
-  font-family: Bitter, Georgia, serif;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+  font-family: "Spectral", Georgia, serif;
+  line-height: 1.18;
+  letter-spacing: -0.014em;
+  font-weight: 500;
   color: var(--ep-text);
   text-wrap: balance;
 }
 
 .access-primary h3 {
-  font-size: 1.5rem;
+  font-size: 1.34rem;
 }
 
 .access-secondary h3 {
-  font-size: 1.26rem;
+  font-size: 1.16rem;
 }
 
 .access-primary p,
 .access-secondary p {
   max-width: 42ch;
   margin: 0 0 16px;
-  line-height: 1.76;
+  font-family: "Inter", sans-serif;
+  font-size: 0.97rem;
+  line-height: 1.78;
+  letter-spacing: -0.003em;
   color: var(--ep-text-muted);
   text-wrap: pretty;
 }
 
 .access-link {
   display: inline-block;
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: -0.002em;
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
@@ -689,22 +736,22 @@
 
   .hero-title {
     max-width: 13ch;
-    font-size: clamp(3.25rem, 5.2vw, 6rem);
+    font-size: clamp(2.92rem, 5vw, 5.6rem);
   }
 
   .hero-subtitle {
     max-width: 26ch;
-    font-size: clamp(1.16rem, 1.7vw, 1.5rem);
+    font-size: clamp(1.1rem, 1.6vw, 1.38rem);
   }
 
   .hero-meta {
     max-width: 36ch;
-    font-size: 1rem;
+    font-size: 0.98rem;
   }
 
   .hero-note {
     max-width: 42ch;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
   }
 
   .home-section,
@@ -724,12 +771,12 @@
 
   .hero-title {
     max-width: 12ch;
-    font-size: clamp(2.45rem, 6vw, 4.8rem);
+    font-size: clamp(2.26rem, 5.4vw, 4.4rem);
   }
 
   .hero-subtitle {
     max-width: 26ch;
-    font-size: 1.18rem;
+    font-size: 1.12rem;
   }
 
   .hero-meta {
@@ -758,12 +805,14 @@
 
   .hero-title {
     max-width: 11ch;
-    font-size: clamp(2.2rem, 5.8vw, 4rem);
+    font-size: clamp(2rem, 5.2vw, 3.54rem);
+    line-height: 1.08;
   }
 
   .hero-subtitle {
     max-width: 24ch;
-    font-size: 1.08rem;
+    font-size: 1rem;
+    line-height: 1.64;
   }
 
   .hero-meta,
@@ -809,34 +858,34 @@
 
   .hero-kicker {
     margin-bottom: 16px;
-    font-size: 0.7rem;
+    font-size: 0.68rem;
   }
 
   .hero-title {
     max-width: 10ch;
-    font-size: clamp(2rem, 7vw, 3.2rem);
-    line-height: 0.98;
+    font-size: clamp(1.82rem, 6.4vw, 2.94rem);
+    line-height: 1.1;
     margin-bottom: 16px;
   }
 
   .hero-subtitle {
     max-width: 20ch;
-    font-size: 1.02rem;
-    line-height: 1.52;
+    font-size: 0.98rem;
+    line-height: 1.6;
   }
 
   .hero-meta {
     margin-top: 18px;
     max-width: 28ch;
-    font-size: 0.92rem;
-    line-height: 1.58;
+    font-size: 0.87rem;
+    line-height: 1.6;
   }
 
   .hero-note {
     margin-top: 14px;
     max-width: 32ch;
-    font-size: 0.82rem;
-    line-height: 1.6;
+    font-size: 0.79rem;
+    line-height: 1.58;
   }
 
   .hero-actions {
@@ -865,7 +914,7 @@
 
   .conversation-visible-card__title {
     max-width: 13ch;
-    font-size: 1.7rem;
+    font-size: 1.46rem;
   }
 
   .conversation-angle {
@@ -874,7 +923,7 @@
   }
 
   .conversation-angle__title {
-    font-size: 1rem;
+    font-size: 0.94rem;
   }
 
   .conversation-card-actions {
@@ -899,7 +948,7 @@
   }
 
   .rencontre-item h3 {
-    font-size: clamp(1.24rem, 6vw, 1.74rem);
+    font-size: clamp(1.12rem, 5.2vw, 1.5rem);
   }
 
   .rencontres-footer {
@@ -953,35 +1002,35 @@
 
   .hero-kicker {
     margin-bottom: 14px;
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
   }
 
   .hero-title {
     max-width: 9ch;
-    font-size: clamp(1.78rem, 8vw, 2.8rem);
-    line-height: 1;
+    font-size: clamp(1.58rem, 7.2vw, 2.42rem);
+    line-height: 1.12;
     margin-bottom: 14px;
   }
 
   .hero-subtitle {
     max-width: 18ch;
-    font-size: 0.98rem;
-    line-height: 1.5;
+    font-size: 0.92rem;
+    line-height: 1.58;
   }
 
   .hero-meta {
     margin-top: 16px;
     max-width: 24ch;
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     line-height: 1.56;
   }
 
   .hero-note {
     margin-top: 12px;
     max-width: 28ch;
-    font-size: 0.8rem;
-    line-height: 1.58;
+    font-size: 0.76rem;
+    line-height: 1.54;
   }
 
   .hero-actions {
@@ -992,7 +1041,7 @@
 
   .hero-link-primary,
   .hero-link-secondary {
-    font-size: 0.94rem;
+    font-size: 0.88rem;
   }
 
   .home-section,
@@ -1019,12 +1068,13 @@
 
   .conversation-visible-card__title {
     max-width: 12ch;
-    font-size: 1.56rem;
+    font-size: 1.3rem;
+    line-height: 1.16;
   }
 
   .conversation-visible-card__intro {
-    font-size: 0.95rem;
-    line-height: 1.68;
+    font-size: 0.92rem;
+    line-height: 1.66;
   }
 
   .conversation-angle-list {
@@ -1038,17 +1088,17 @@
   }
 
   .conversation-angle__title {
-    font-size: 0.96rem;
-    line-height: 1.34;
+    font-size: 0.9rem;
+    line-height: 1.38;
   }
 
   .conversation-angle__function {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
   }
 
   .conversation-angle__roles {
-    font-size: 0.78rem;
-    line-height: 1.54;
+    font-size: 0.75rem;
+    line-height: 1.5;
   }
 
   .conversation-card-actions {
@@ -1073,13 +1123,13 @@
   }
 
   .rencontre-item h3 {
-    font-size: clamp(1.18rem, 6.4vw, 1.58rem);
-    line-height: 1.10;
+    font-size: clamp(1.02rem, 5.4vw, 1.34rem);
+    line-height: 1.16;
   }
 
   .rencontre-item p {
-    font-size: 0.94rem;
-    line-height: 1.66;
+    font-size: 0.9rem;
+    line-height: 1.62;
   }
 
   .rencontres-footer {
@@ -1133,7 +1183,7 @@
 
   .hero-title {
     max-width: 14ch;
-    font-size: clamp(1.95rem, 4.8vw, 3.25rem);
+    font-size: clamp(1.72rem, 4.3vw, 2.8rem);
   }
 
   .hero-subtitle {
@@ -1201,20 +1251,22 @@
 
 .conversation-visible-card__meta {
   margin: 0 0 12px;
-  font-size: 0.74rem;
-  letter-spacing: 0.12em;
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   color: rgba(245, 241, 236, 0.62);
 }
 
 .conversation-visible-card__title {
   margin: 0 0 14px;
   max-width: 15ch;
-  font-family: Bitter, Georgia, serif;
-  font-size: clamp(1.86rem, 3vw, 2.9rem);
-  line-height: 1.02;
-  letter-spacing: -0.028em;
+  font-family: "Spectral", Georgia, serif;
+  font-size: clamp(1.78rem, 2.8vw, 2.62rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 500;
   color: #f7f3ee;
   text-wrap: balance;
 }
@@ -1222,8 +1274,11 @@
 .conversation-visible-card__intro {
   max-width: 48ch;
   margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 0.97rem;
   color: rgba(245, 241, 236, 0.84);
-  line-height: 1.76;
+  line-height: 1.8;
+  letter-spacing: -0.003em;
   text-wrap: pretty;
 }
 
@@ -1253,25 +1308,31 @@
 }
 
 .conversation-angle__title {
-  font-family: Bitter, Georgia, serif;
-  font-size: 1.04rem;
-  line-height: 1.34;
-  letter-spacing: -0.01em;
+  font-family: "Spectral", Georgia, serif;
+  font-size: 0.96rem;
+  line-height: 1.42;
+  letter-spacing: -0.008em;
+  font-weight: 500;
   color: #f6f2ed;
   text-wrap: pretty;
 }
 
 .conversation-angle__function {
   margin-top: 7px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.93rem;
   color: rgba(245, 241, 236, 0.78);
   line-height: 1.68;
+  letter-spacing: -0.002em;
   text-wrap: pretty;
 }
 
 .conversation-angle__roles {
   margin-top: 8px;
-  font-size: 0.82rem;
-  line-height: 1.6;
+  font-family: "Inter", sans-serif;
+  font-size: 0.79rem;
+  line-height: 1.56;
+  letter-spacing: -0.001em;
   color: rgba(245, 241, 236, 0.56);
   text-wrap: pretty;
 }
@@ -1343,20 +1404,20 @@
 
   .conversation-visible-card__meta {
     margin-bottom: 10px;
-    font-size: 0.72rem;
-    letter-spacing: 0.11em;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
   }
 
   .conversation-visible-card__title {
     max-width: 10ch;
-    font-size: 1.72rem;
-    line-height: 1.02;
+    font-size: 1.48rem;
+    line-height: 1.1;
     margin-bottom: 12px;
   }
 
   .conversation-visible-card__intro {
     max-width: none;
-    font-size: 0.98rem;
+    font-size: 0.95rem;
     line-height: 1.68;
   }
 
@@ -1372,20 +1433,20 @@
   }
 
   .conversation-angle__title {
-    font-size: 0.98rem;
-    line-height: 1.34;
+    font-size: 0.92rem;
+    line-height: 1.38;
   }
 
   .conversation-angle__function {
     margin-top: 6px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.6;
   }
 
   .conversation-angle__roles {
     margin-top: 8px;
-    font-size: 0.79rem;
-    line-height: 1.54;
+    font-size: 0.76rem;
+    line-height: 1.5;
   }
 
   .conversation-card-actions {
@@ -1424,12 +1485,3 @@
     border-top-color: rgba(181, 106, 54, 0.38);
   }
 }
-
-
-
-
-
-
-
-
-
