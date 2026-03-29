@@ -1646,3 +1646,12 @@
     max-width: 48ch;
   }
 }
+.hero-title--manual span {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .hero-title--manual span {
+    display: inline;
+  }
+}
