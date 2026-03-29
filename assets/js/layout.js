@@ -6,8 +6,6 @@ async function loadPartial(selector, path) {
   }
 
   try {
-    mountPoint.style.opacity = "0";
-
     const response = await fetch(path, { cache: "no-cache" });
 
     if (!response.ok) {
@@ -16,11 +14,6 @@ async function loadPartial(selector, path) {
 
     const html = await response.text();
     mountPoint.innerHTML = html;
-
-    requestAnimationFrame(() => {
-      mountPoint.style.transition = "opacity 0.35s ease";
-      mountPoint.style.opacity = "1";
-    });
 
     return mountPoint;
   } catch (error) {
@@ -108,13 +101,13 @@ function bindMobileMenu() {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
+    if (event.key === "Escape" && mobileMenu.classList.contains("is-open")) {
       closeMenu();
     }
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth >= 1024) {
+    if (window.innerWidth >= 1024 && mobileMenu.classList.contains("is-open")) {
       closeMenu();
     }
   });
@@ -149,6 +142,22 @@ async function initLayout() {
   markActiveLinks();
   bindMobileMenu();
   bindHeaderScroll();
+
+  if (typeof initReveal === "function") {
+    try {
+      initReveal();
+    } catch (error) {
+      console.error("Reveal init failed:", error);
+    }
+  }
+
+  if (typeof initConversationToggles === "function") {
+    try {
+      initConversationToggles();
+    } catch (error) {
+      console.error("Conversation toggle init failed:", error);
+    }
+  }
 }
 
 document.addEventListener("DOMContentLoaded", initLayout);
