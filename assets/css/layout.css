@@ -18,9 +18,10 @@ body {
   overflow-x: hidden;
   background: #eef1ec;
   color: #201815;
-  font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 1.65;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 15.9px;
+  line-height: 1.72;
+  letter-spacing: -0.003em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   padding-top: 78px;
@@ -211,9 +212,10 @@ main {
   border-radius: 0;
   background: transparent;
   box-shadow: none;
-  font-size: 0.95rem;
-  line-height: 1.1;
-  font-weight: 600;
+  font-size: 0.93rem;
+  line-height: 1.12;
+  font-weight: 500;
+  letter-spacing: -0.003em;
   color: var(--ep-text);
   transition: color 0.25s ease, opacity 0.25s ease;
 }
@@ -249,9 +251,10 @@ main {
   border-radius: 0;
   background: transparent;
   color: var(--ep-brown);
-  font-size: 0.92rem;
-  line-height: 1.1;
-  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.12;
+  font-weight: 500;
+  letter-spacing: -0.003em;
   white-space: nowrap;
   transition: color 0.25s ease, opacity 0.25s ease;
 }
@@ -358,9 +361,9 @@ main {
 }
 
 .mobile-menu-title {
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   font-weight: 700;
   color: rgba(32, 24, 21, 0.52);
 }
@@ -395,8 +398,10 @@ main {
   display: block;
   padding: 14px 2px;
   border-bottom: 1px solid rgba(32, 24, 21, 0.08);
-  font-size: 1.02rem;
-  font-weight: 600;
+  font-size: 0.99rem;
+  line-height: 1.38;
+  font-weight: 500;
+  letter-spacing: -0.003em;
   color: var(--ep-text);
   transition: color 0.25s ease, opacity 0.25s ease;
 }
@@ -410,7 +415,7 @@ main {
   margin-top: 18px;
   padding-top: 18px;
   border-top: 1px solid rgba(32, 24, 21, 0.14);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--ep-brown);
 }
 
@@ -423,8 +428,9 @@ main {
 .mobile-secondary-link {
   display: block;
   padding: 8px 2px;
-  font-size: 0.92rem;
-  line-height: 1.5;
+  font-size: 0.89rem;
+  line-height: 1.56;
+  letter-spacing: -0.002em;
   color: var(--ep-text-soft);
   transition: color 0.25s ease, opacity 0.25s ease;
 }
@@ -442,8 +448,9 @@ main {
 
 .mobile-menu-footer p {
   margin: 0;
-  font-size: 0.82rem;
-  line-height: 1.6;
+  font-size: 0.8rem;
+  line-height: 1.62;
+  letter-spacing: -0.001em;
   color: rgba(32, 24, 21, 0.56);
 }
 
@@ -468,18 +475,20 @@ main {
 
 .footer-title {
   margin: 0 0 14px;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   font-weight: 700;
   color: rgba(243, 229, 219, 0.72);
 }
 
 .footer-signature {
   margin: 0 0 12px;
-  font-family: Bitter, Georgia, serif;
-  font-size: 1.08rem;
-  line-height: 1.35;
+  font-family: "Spectral", Georgia, serif;
+  font-size: 1.02rem;
+  line-height: 1.42;
+  letter-spacing: -0.012em;
+  font-weight: 500;
   color: #f3e5db;
 }
 
@@ -490,8 +499,9 @@ main {
 
 .footer p {
   margin: 0 0 14px;
-  font-size: 0.94rem;
-  line-height: 1.72;
+  font-size: 0.92rem;
+  line-height: 1.74;
+  letter-spacing: -0.002em;
 }
 
 .footer ul {
@@ -522,8 +532,9 @@ main {
 
 .footer-bottom p {
   margin: 0;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   line-height: 1.6;
+  letter-spacing: -0.001em;
   color: rgba(255, 255, 255, 0.64);
 }
 
@@ -577,8 +588,8 @@ section.dark {
 }
 
 .section-kicker {
-  font-size: 0.74rem;
-  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 700;
   color: var(--ep-copper);
@@ -597,11 +608,12 @@ section.dark {
 
 .section-head h2 {
   margin: 0 0 16px;
-  font-family: Bitter, Georgia, serif;
-  font-size: clamp(1.9rem, 3.2vw, 3rem);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  max-width: 22ch;
+  font-family: "Spectral", Georgia, serif;
+  font-size: clamp(1.82rem, 3vw, 2.72rem);
+  line-height: 1.14;
+  letter-spacing: -0.018em;
+  font-weight: 500;
+  max-width: 24ch;
   margin-left: auto;
   margin-right: auto;
   color: var(--ep-text);
@@ -616,8 +628,9 @@ section.dark .section-head h2 {
   margin-left: auto;
   margin-right: auto;
   color: var(--ep-text-muted);
-  line-height: 1.78;
-  font-size: 1rem;
+  line-height: 1.82;
+  font-size: 0.98rem;
+  letter-spacing: -0.003em;
   text-wrap: pretty;
 }
 
@@ -628,8 +641,9 @@ section.dark .section-intro {
 .section-footnote {
   max-width: var(--ep-copy);
   margin-top: 28px;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   line-height: 1.72;
+  letter-spacing: -0.001em;
   color: var(--ep-text-faint);
   text-wrap: pretty;
 }
@@ -673,8 +687,9 @@ section.dark .section-intro {
   display: inline-block;
   margin-top: 16px;
   color: var(--ep-brown);
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 0.93rem;
+  font-weight: 500;
+  letter-spacing: -0.002em;
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
@@ -692,9 +707,9 @@ section.dark .section-intro {
   border-radius: 0;
   background: transparent;
   color: var(--ep-copper);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.10em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -713,11 +728,12 @@ section.dark .section-intro {
 
 .card h3 {
   margin: 0 0 12px;
-  max-width: 15ch;
-  font-family: Bitter, Georgia, serif;
-  font-size: 1.38rem;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+  max-width: 18ch;
+  font-family: "Spectral", Georgia, serif;
+  font-size: 1.22rem;
+  line-height: 1.22;
+  letter-spacing: -0.014em;
+  font-weight: 500;
   color: #18110f;
   text-wrap: balance;
 }
@@ -726,8 +742,9 @@ section.dark .section-intro {
   max-width: var(--ep-copy);
   margin: 0;
   color: var(--ep-text-muted);
-  line-height: 1.76;
-  font-size: 1rem;
+  line-height: 1.8;
+  font-size: 0.98rem;
+  letter-spacing: -0.003em;
   text-wrap: pretty;
 }
 
@@ -743,7 +760,8 @@ section.dark .section-intro {
   margin: 0 0 16px;
   line-height: 1.82;
   color: var(--ep-text-muted);
-  font-size: 1rem;
+  font-size: 0.98rem;
+  letter-spacing: -0.003em;
   text-wrap: pretty;
 }
 
@@ -785,7 +803,8 @@ html.reveal-ready .reveal.is-visible {
   }
 
   body {
-    font-size: 16.5px;
+    font-size: 16.3px;
+    line-height: 1.74;
     padding-top: 88px;
   }
 
@@ -808,12 +827,12 @@ html.reveal-ready .reveal.is-visible {
   }
 
   .desktop-editorial-nav__link {
-    font-size: 0.98rem;
+    font-size: 0.96rem;
   }
 
   .site-header__cta {
     display: inline-flex;
-    font-size: 0.95rem;
+    font-size: 0.93rem;
   }
 
   .menu-toggle {
@@ -832,12 +851,12 @@ html.reveal-ready .reveal.is-visible {
 
   .section-head h2 {
     max-width: 24ch;
-    font-size: clamp(2.2rem, 2.5vw, 3.35rem);
+    font-size: clamp(2.04rem, 2.5vw, 3.08rem);
   }
 
   .section-intro {
     max-width: 68ch;
-    font-size: 1.04rem;
+    font-size: 1.02rem;
   }
 
   .footer-grid {
@@ -913,12 +932,12 @@ html.reveal-ready .reveal.is-visible {
   }
 
   .desktop-editorial-nav__link {
-    font-size: 0.92rem;
+    font-size: 0.9rem;
   }
 
   .site-header__cta {
     display: inline-flex;
-    font-size: 0.89rem;
+    font-size: 0.87rem;
   }
 
   .menu-toggle {
@@ -932,11 +951,11 @@ html.reveal-ready .reveal.is-visible {
   }
 
   .section-head h2 {
-    font-size: clamp(1.9rem, 2.7vw, 2.8rem);
+    font-size: clamp(1.8rem, 2.7vw, 2.58rem);
   }
 
   .section-intro {
-    font-size: 0.99rem;
+    font-size: 0.97rem;
   }
 
   .footer-grid {
@@ -951,7 +970,8 @@ html.reveal-ready .reveal.is-visible {
 
 @media (min-width: 768px) and (max-width: 1023px) {
   body {
-    font-size: 15.75px;
+    font-size: 15.5px;
+    line-height: 1.7;
     padding-top: 72px;
   }
 
@@ -984,15 +1004,15 @@ html.reveal-ready .reveal.is-visible {
   }
 
   .section-head h2 {
-    max-width: 17ch;
-    font-size: clamp(1.76rem, 4.2vw, 2.42rem);
-    line-height: 1.05;
+    max-width: 18ch;
+    font-size: clamp(1.66rem, 4vw, 2.24rem);
+    line-height: 1.16;
   }
 
   .section-intro {
     max-width: 50ch;
-    font-size: 0.98rem;
-    line-height: 1.74;
+    font-size: 0.96rem;
+    line-height: 1.76;
   }
 
   .footer-grid {
@@ -1014,7 +1034,8 @@ html.reveal-ready .reveal.is-visible {
 
 @media (min-width: 481px) and (max-width: 767px) {
   body {
-    font-size: 15.5px;
+    font-size: 15.1px;
+    line-height: 1.68;
     padding-top: 70px;
   }
 
@@ -1056,20 +1077,20 @@ html.reveal-ready .reveal.is-visible {
   }
 
   .section-head h2 {
-    max-width: 16ch;
-    font-size: clamp(1.62rem, 6vw, 2.16rem);
-    line-height: 1.08;
-    letter-spacing: -0.025em;
+    max-width: 17ch;
+    font-size: clamp(1.5rem, 6vw, 1.94rem);
+    line-height: 1.18;
+    letter-spacing: -0.016em;
   }
 
   .section-intro {
     max-width: 46ch;
-    font-size: 0.97rem;
-    line-height: 1.72;
+    font-size: 0.94rem;
+    line-height: 1.74;
   }
 
   .section-footnote {
-    font-size: 0.86rem;
+    font-size: 0.84rem;
     line-height: 1.68;
   }
 
@@ -1100,7 +1121,8 @@ html.reveal-ready .reveal.is-visible {
 
 @media (max-width: 480px) {
   body {
-    font-size: 15px;
+    font-size: 14.8px;
+    line-height: 1.66;
     padding-top: 68px;
   }
 
@@ -1142,19 +1164,19 @@ html.reveal-ready .reveal.is-visible {
   }
 
   .section-head h2 {
-    max-width: 15ch;
-    font-size: clamp(1.5rem, 6.9vw, 1.96rem);
-    line-height: 1.09;
+    max-width: 16ch;
+    font-size: clamp(1.42rem, 6.9vw, 1.82rem);
+    line-height: 1.2;
   }
 
   .section-intro {
     max-width: 42ch;
-    font-size: 0.95rem;
-    line-height: 1.7;
+    font-size: 0.92rem;
+    line-height: 1.72;
   }
 
   .section-footnote {
-    font-size: 0.84rem;
+    font-size: 0.82rem;
     line-height: 1.66;
   }
 
@@ -1222,7 +1244,7 @@ html.reveal-ready .reveal.is-visible {
 
 @media (max-width: 360px) {
   body {
-    font-size: 14.75px;
+    font-size: 14.55px;
   }
 
   .site-brand__logo {
@@ -1235,19 +1257,19 @@ html.reveal-ready .reveal.is-visible {
   }
 
   .mobile-top-link {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
   }
 
   .mobile-secondary-link {
-    font-size: 0.88rem;
+    font-size: 0.86rem;
   }
 
   .section-head h2 {
-    max-width: 14ch;
-    font-size: clamp(1.42rem, 7vw, 1.82rem);
+    max-width: 15ch;
+    font-size: clamp(1.34rem, 7vw, 1.72rem);
   }
 
   .section-intro {
-    font-size: 0.93rem;
+    font-size: 0.9rem;
   }
 }
