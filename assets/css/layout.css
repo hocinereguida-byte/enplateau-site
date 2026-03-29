@@ -1273,3 +1273,83 @@ html.reveal-ready .reveal.is-visible {
     font-size: 0.9rem;
   }
 }
+/* =========================
+   TYPO — LARGEUR DE LECTURE ET PASSAGES À LA LIGNE
+   ========================= */
+
+.section-head h2,
+.card h3,
+.why-editorial-item h3,
+.rencontre-item h3,
+.conversation-visible-card__title,
+.hero-title {
+  text-wrap: balance;
+}
+
+.section-head h2 {
+  max-width: 28ch;
+}
+
+.card h3 {
+  max-width: 22ch;
+}
+
+/* Bloc éditorial clair */
+.why-editorial-item h3 {
+  max-width: 26ch;
+}
+
+/* Timeline / rencontres */
+.rencontre-item h3 {
+  max-width: 24ch;
+}
+
+/* Conversations premium */
+.conversation-visible-card__title {
+  max-width: 18ch;
+}
+
+@media (max-width: 767px) {
+  .section-head h2 {
+    max-width: 20ch;
+    line-height: 1.18;
+  }
+
+  .card h3 {
+    max-width: 18ch;
+    line-height: 1.22;
+  }
+
+  .why-editorial-item h3 {
+    max-width: 18ch;
+    line-height: 1.22;
+  }
+
+  .rencontre-item h3 {
+    max-width: 18ch;
+    line-height: 1.18;
+  }
+
+  .conversation-visible-card__title {
+    max-width: 14ch;
+    line-height: 1.16;
+  }
+}
+
+@media (max-width: 932px) and (orientation: landscape) {
+  .section-head h2 {
+    max-width: 26ch;
+  }
+
+  .why-editorial-item h3 {
+    max-width: 24ch;
+  }
+
+  .rencontre-item h3 {
+    max-width: 22ch;
+  }
+
+  .conversation-visible-card__title {
+    max-width: 18ch;
+  }
+}
