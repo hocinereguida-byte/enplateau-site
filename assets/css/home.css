@@ -1,6 +1,7 @@
 /* =========================================================
    EN PLATEAU — HOME.CSS
    Direction : FT inspiré + contraste noir / anthracite / gris
+   Sections claires, contrastes ciblés
    ========================================================= */
 
 /* ---------- BASE HOME ---------- */
@@ -251,10 +252,31 @@
   line-height: 1.76;
 }
 
-/* variante plus contrastée utilisable dans certaines étapes */
-.four-step.box--dark,
-.four-step.box--mid {
-  border-right-color: rgba(255, 255, 255, 0.12);
+/* version noire ciblée pour la section dispositif */
+.four-step-frame--dark {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.four-step-frame--dark .four-step {
+  background: #111111;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.four-step-frame--dark .four-step:last-child {
+  border-right: 0;
+}
+
+.four-step-frame--dark .four-step__index {
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.four-step-frame--dark .four-step h3 {
+  color: #ffffff;
+}
+
+.four-step-frame--dark .four-step p {
+  color: rgba(255, 255, 255, 0.76);
 }
 
 /* ---------- EXIGENCES ---------- */
@@ -308,7 +330,7 @@
 /* ---------- CADRE ÉDITORIAL ---------- */
 
 #cadre-editorial-home {
-  background: var(--ep-charcoal);
+  background: var(--ep-paper);
 }
 
 .cadre-copy {
@@ -320,7 +342,7 @@
 
 .cadre-copy p {
   margin: 0;
-  color: inherit;
+  color: var(--ep-ink-soft);
   font-size: 1rem;
   line-height: 1.78;
 }
@@ -332,8 +354,8 @@
 .media-logos {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border: 1px solid var(--ep-dark-line);
-  background: transparent;
+  border: 1px solid var(--ep-line);
+  background: rgba(255, 250, 244, 0.72);
 }
 
 .media-logo-item {
@@ -342,8 +364,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid var(--ep-dark-line);
-  background: rgba(255, 255, 255, 0.02);
+  border-right: 1px solid var(--ep-line);
+  background: rgba(255, 250, 244, 0.72);
 }
 
 .media-logo-item:last-child {
@@ -354,8 +376,8 @@
   max-width: 130px;
   max-height: 34px;
   object-fit: contain;
-  opacity: 0.9;
-  filter: grayscale(100%) brightness(1.7);
+  opacity: 0.82;
+  filter: grayscale(100%);
 }
 
 .cadre-note {
@@ -364,27 +386,29 @@
   text-align: center;
   font-size: 13px;
   line-height: 1.7;
+  color: var(--ep-ink-muted);
 }
 
 /* ---------- CONVERSATION ---------- */
 
 #conversation-home {
-  background: var(--ep-black-soft);
+  background: var(--ep-paper);
 }
 
 .conversation-shell {
-  border: 1px solid var(--ep-dark-line);
-  background: transparent;
+  border: 1px solid var(--ep-line);
+  background: rgba(255, 250, 244, 0.72);
 }
 
 .conversation-shell__top {
   padding: 30px 30px 22px;
-  border-bottom: 1px solid var(--ep-dark-line);
-  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--ep-line);
+  background: rgba(255, 250, 244, 0.72);
 }
 
 .conversation-shell__meta {
   margin-bottom: 12px;
+  color: var(--ep-accent);
 }
 
 .conversation-shell__title {
@@ -396,6 +420,7 @@
 
 .conversation-shell__intro {
   max-width: 900px;
+  color: var(--ep-ink-soft);
   font-size: 1.02rem;
   line-height: 1.78;
   margin-bottom: 0;
@@ -409,9 +434,9 @@
 .conversation-angle-card {
   position: relative;
   padding: 28px 24px 22px;
-  border-right: 1px solid var(--ep-dark-line);
-  border-top: 1px solid var(--ep-dark-line);
-  background: rgba(255, 255, 255, 0.02);
+  border-right: 1px solid var(--ep-line);
+  border-top: 1px solid var(--ep-line);
+  background: rgba(255, 250, 244, 0.72);
 }
 
 .conversation-angle-card:nth-child(2n) {
@@ -426,20 +451,84 @@
 
 .conversation-angle-card__function {
   margin-bottom: 10px;
+  color: var(--ep-ink-soft);
   font-size: 1rem;
   line-height: 1.76;
 }
 
 .conversation-angle-card__roles {
   margin: 0;
+  color: var(--ep-ink-muted);
   font-size: 14px;
   line-height: 1.7;
 }
 
 .conversation-links {
   padding: 18px 30px 22px;
-  border-top: 1px solid var(--ep-dark-line);
-  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--ep-line);
+  background: rgba(255, 250, 244, 0.72);
+}
+
+/* version noire ciblée pour le tableau conversation */
+.conversation-shell--dark {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.conversation-shell--dark .conversation-shell__top {
+  background: #111111;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.conversation-shell--dark .conversation-shell__meta {
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.conversation-shell--dark .conversation-shell__title {
+  color: #ffffff;
+}
+
+.conversation-shell--dark .conversation-shell__intro {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.conversation-shell--dark .conversation-angle-card {
+  background: #1a1a1a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.conversation-shell--dark .conversation-angle-card:nth-child(2n) {
+  border-right: 0;
+}
+
+.conversation-shell--dark .conversation-angle-card h3 {
+  color: #ffffff;
+}
+
+.conversation-shell--dark .conversation-angle-card__function {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.conversation-shell--dark .conversation-angle-card__roles {
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.conversation-shell--dark .conversation-links {
+  background: #111111;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.conversation-shell--dark .link {
+  color: #f4e9dc;
+}
+
+.conversation-shell--dark .link::after {
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.conversation-shell--dark .link:hover::after {
+  background: rgba(255, 255, 255, 0.88);
 }
 
 /* ---------- THÈMES ---------- */
@@ -532,12 +621,14 @@
   font-size: 1.34rem;
   line-height: 1.2;
   margin-bottom: 14px;
+  color: var(--ep-ink);
 }
 
 .doctrine-panel p {
   font-size: 1rem;
   line-height: 1.78;
   margin: 0;
+  color: var(--ep-ink-soft);
 }
 
 .doctrine-links {
@@ -660,6 +751,10 @@
     border-top: 1px solid var(--ep-line);
   }
 
+  .four-step-frame--dark .four-step:nth-child(n+3) {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
   .media-logos {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -669,7 +764,7 @@
   }
 
   .media-logo-item:nth-child(-n+2) {
-    border-bottom: 1px solid var(--ep-dark-line);
+    border-bottom: 1px solid var(--ep-line);
   }
 
   .theme-preview-grid,
@@ -705,9 +800,19 @@
     border-bottom: 0;
   }
 
-  #conversation-home .conversation-angle-card,
-  #lecture-saison-home .lecture-step,
-  #cadre-editorial-home .media-logo-item {
+  .four-step-frame--dark .four-step {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .four-step-frame--dark .four-step:last-child {
+    border-bottom: 0;
+  }
+
+  #lecture-saison-home .lecture-step {
+    border-right: 0;
+  }
+
+  .conversation-shell--dark .conversation-angle-card {
     border-right: 0;
   }
 }
