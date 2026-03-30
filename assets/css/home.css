@@ -1,6 +1,6 @@
 /* =========================================================
    EN PLATEAU — HOME.CSS
-   Direction : presse économique chaude, structurée, éditoriale
+   Direction : FT inspiré + contraste noir / anthracite / gris
    ========================================================= */
 
 /* ---------- BASE HOME ---------- */
@@ -251,6 +251,12 @@
   line-height: 1.76;
 }
 
+/* variante plus contrastée utilisable dans certaines étapes */
+.four-step.box--dark,
+.four-step.box--mid {
+  border-right-color: rgba(255, 255, 255, 0.12);
+}
+
 /* ---------- EXIGENCES ---------- */
 
 .split-note-grid {
@@ -302,7 +308,7 @@
 /* ---------- CADRE ÉDITORIAL ---------- */
 
 #cadre-editorial-home {
-  background: var(--ep-paper);
+  background: var(--ep-charcoal);
 }
 
 .cadre-copy {
@@ -314,7 +320,7 @@
 
 .cadre-copy p {
   margin: 0;
-  color: var(--ep-ink-soft);
+  color: inherit;
   font-size: 1rem;
   line-height: 1.78;
 }
@@ -326,8 +332,8 @@
 .media-logos {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border: 1px solid var(--ep-line);
-  background: rgba(255, 250, 244, 0.72);
+  border: 1px solid var(--ep-dark-line);
+  background: transparent;
 }
 
 .media-logo-item {
@@ -336,8 +342,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid var(--ep-line);
-  background: rgba(255, 250, 244, 0.72);
+  border-right: 1px solid var(--ep-dark-line);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .media-logo-item:last-child {
@@ -348,8 +354,8 @@
   max-width: 130px;
   max-height: 34px;
   object-fit: contain;
-  opacity: 0.82;
-  filter: grayscale(100%);
+  opacity: 0.9;
+  filter: grayscale(100%) brightness(1.7);
 }
 
 .cadre-note {
@@ -358,25 +364,27 @@
   text-align: center;
   font-size: 13px;
   line-height: 1.7;
-  color: var(--ep-ink-muted);
 }
 
 /* ---------- CONVERSATION ---------- */
 
+#conversation-home {
+  background: var(--ep-black-soft);
+}
+
 .conversation-shell {
-  border: 1px solid var(--ep-line);
-  background: rgba(255, 250, 244, 0.72);
+  border: 1px solid var(--ep-dark-line);
+  background: transparent;
 }
 
 .conversation-shell__top {
   padding: 30px 30px 22px;
-  border-bottom: 1px solid var(--ep-line);
-  background: rgba(255, 250, 244, 0.72);
+  border-bottom: 1px solid var(--ep-dark-line);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .conversation-shell__meta {
   margin-bottom: 12px;
-  color: var(--ep-accent);
 }
 
 .conversation-shell__title {
@@ -388,7 +396,6 @@
 
 .conversation-shell__intro {
   max-width: 900px;
-  color: var(--ep-ink-soft);
   font-size: 1.02rem;
   line-height: 1.78;
   margin-bottom: 0;
@@ -402,9 +409,9 @@
 .conversation-angle-card {
   position: relative;
   padding: 28px 24px 22px;
-  border-right: 1px solid var(--ep-line);
-  border-top: 1px solid var(--ep-line);
-  background: rgba(255, 250, 244, 0.72);
+  border-right: 1px solid var(--ep-dark-line);
+  border-top: 1px solid var(--ep-dark-line);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .conversation-angle-card:nth-child(2n) {
@@ -419,22 +426,20 @@
 
 .conversation-angle-card__function {
   margin-bottom: 10px;
-  color: var(--ep-ink-soft);
   font-size: 1rem;
   line-height: 1.76;
 }
 
 .conversation-angle-card__roles {
   margin: 0;
-  color: var(--ep-ink-muted);
   font-size: 14px;
   line-height: 1.7;
 }
 
 .conversation-links {
   padding: 18px 30px 22px;
-  border-top: 1px solid var(--ep-line);
-  background: rgba(255, 250, 244, 0.72);
+  border-top: 1px solid var(--ep-dark-line);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 /* ---------- THÈMES ---------- */
@@ -527,14 +532,12 @@
   font-size: 1.34rem;
   line-height: 1.2;
   margin-bottom: 14px;
-  color: var(--ep-ink);
 }
 
 .doctrine-panel p {
   font-size: 1rem;
   line-height: 1.78;
   margin: 0;
-  color: var(--ep-ink-soft);
 }
 
 .doctrine-links {
@@ -544,18 +547,22 @@
 
 /* ---------- LECTURE DE SAISON ---------- */
 
+#lecture-saison-home {
+  background: var(--ep-charcoal);
+}
+
 .lecture-frame {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border: 1px solid var(--ep-line);
-  background: rgba(255, 250, 244, 0.72);
+  border: 1px solid var(--ep-dark-line);
+  background: transparent;
 }
 
 .lecture-step {
   position: relative;
   padding: 30px 24px 24px;
-  border-right: 1px solid var(--ep-line);
-  background: rgba(255, 250, 244, 0.72);
+  border-right: 1px solid var(--ep-dark-line);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .lecture-step:last-child {
@@ -570,7 +577,6 @@
 
 .lecture-step p {
   margin: 0;
-  color: var(--ep-ink-soft);
   font-size: 1rem;
   line-height: 1.76;
 }
@@ -581,7 +587,6 @@
   text-align: center;
   font-size: 13px;
   line-height: 1.7;
-  color: var(--ep-ink-muted);
 }
 
 /* ---------- ACCÈS ---------- */
@@ -618,6 +623,28 @@
   color: var(--ep-ink-muted);
 }
 
+/* ---------- DARK SECTION STRUCTURE HELPERS ---------- */
+
+.home-section--dark .three-col-frame,
+.home-section--dark .four-step-frame,
+.home-section--dark .lecture-frame,
+.home-section--dark .conversation-shell,
+.home-section--dark .media-logos {
+  background: transparent;
+  border-color: var(--ep-dark-line);
+}
+
+.home-section--dark .three-col-frame .card,
+.home-section--dark .four-step,
+.home-section--dark .lecture-step,
+.home-section--dark .conversation-angle-card,
+.home-section--dark .media-logo-item,
+.home-section--dark .conversation-shell__top,
+.home-section--dark .conversation-links {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: var(--ep-dark-line);
+}
+
 /* ---------- RESPONSIVE ---------- */
 
 @media (max-width: 1180px) {
@@ -642,7 +669,7 @@
   }
 
   .media-logo-item:nth-child(-n+2) {
-    border-bottom: 1px solid var(--ep-line);
+    border-bottom: 1px solid var(--ep-dark-line);
   }
 
   .theme-preview-grid,
@@ -676,6 +703,12 @@
   .lecture-step:last-child,
   .four-step:last-child {
     border-bottom: 0;
+  }
+
+  #conversation-home .conversation-angle-card,
+  #lecture-saison-home .lecture-step,
+  #cadre-editorial-home .media-logo-item {
+    border-right: 0;
   }
 }
 
