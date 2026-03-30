@@ -1,7 +1,7 @@
 /* =========================================================
    EN PLATEAU — LAYOUT.CSS
    Base globale / header / footer / typo / composants
-   Direction : plus institutionnelle, contrastée, sans serif
+   Version nettoyée sans barres bleues sur les cartes
    ========================================================= */
 
 :root {
@@ -348,14 +348,9 @@ h4 {
   padding: 30px 24px 24px;
 }
 
+/* suppression de la barre bleue supérieure générique */
 .card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--ep-navy);
+  display: none;
 }
 
 .card h3 {
@@ -425,7 +420,7 @@ h4 {
   line-height: 1;
   font-weight: 700;
   letter-spacing: -0.04em;
-  color: #fffff;
+  color: #ffffff;
   white-space: nowrap;
 }
 
