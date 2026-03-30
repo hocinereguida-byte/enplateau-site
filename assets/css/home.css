@@ -829,6 +829,7 @@
 
 /* 10. bloc Accès : un peu plus ferme visuellement */
 .access-grid .card {
+
   border-width: 1px;
 }
 
@@ -837,4 +838,41 @@
   .home-page .home-section::before {
     width: min(calc(100% - 32px), var(--container));
   }
+}
+/* variations subtiles sur les lignes de 3 blocs */
+
+#pourquoi-vous-home .three-col-frame .card:nth-child(1) {
+  background: #ffffff;
+}
+
+#pourquoi-vous-home .three-col-frame .card:nth-child(2) {
+  background: #fcfaf7;
+}
+
+#pourquoi-vous-home .three-col-frame .card:nth-child(3) {
+  background: #eaf1f8;
+}
+
+#selection-home .selection-grid .card:nth-child(1) {
+  background: #fcfaf7;
+}
+
+#selection-home .selection-grid .card:nth-child(2) {
+  background: #ffffff;
+}
+
+#selection-home .selection-grid .card:nth-child(3) {
+  background: #f3f6fa;
+}
+
+#themes-home .theme-preview-grid .card:nth-child(1) {
+  background: #ffffff;
+}
+
+#themes-home .theme-preview-grid .card:nth-child(2) {
+  background: #f3f6fa;
+}
+
+#themes-home .theme-preview-grid .card:nth-child(3) {
+  background: #eaf1f8;
 }
