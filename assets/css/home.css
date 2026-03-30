@@ -727,7 +727,7 @@
   .cadre-note,
   .selection-subnote,
   .lecture-note,
-  .access-note {
+  .access-note { 
     text-align: left;
   }
 
@@ -735,5 +735,106 @@
   .conversation-links {
     padding-left: 20px;
     padding-right: 20px;
+  }
+}
+/* ---------- PATCH V3 / HOME ---------- */
+
+/* 1. séparateurs de sections plus visibles */
+.home-page .home-section::before {
+  height: 2px;
+  background: rgba(16, 40, 69, 0.22);
+}
+
+/* hero mieux rattaché au reste */
+#hero-home {
+  border-bottom: 2px solid rgba(16, 40, 69, 0.22);
+}
+
+/* 2. bordures des grands blocs plus présentes */
+.statut-block,
+.three-col-frame,
+.four-step-frame,
+.conversation-shell,
+.media-logos,
+.lecture-frame,
+.theme-nav,
+.doctrine-panel,
+.pull-quote,
+.selection-grid .card,
+.access-grid .card {
+  border-color: rgba(16, 40, 69, 0.18);
+}
+
+.statut-item,
+.three-col-frame .card,
+.four-step,
+.conversation-angle-card,
+.media-logo-item,
+.lecture-step {
+  border-color: rgba(16, 40, 69, 0.18);
+}
+
+/* 3. suppression des dernières barres marron verticales */
+.selection-grid .card::before,
+.access-grid .card::before {
+  display: none;
+}
+
+/* 4. si vous voulez garder un accent visuel,
+   on le passe en filet supérieur discret sur certains blocs */
+.selection-grid .card,
+.access-grid .card,
+.theme-preview-card {
+  box-shadow: inset 0 2px 0 rgba(16, 40, 69, 0.16);
+}
+
+/* 5. bloc Eclaireur : un peu plus institutionnel */
+.statut-block {
+  border-width: 1px;
+}
+
+.statut-block__header,
+.statut-note {
+  border-color: rgba(16, 40, 69, 0.18);
+}
+
+/* 6. cadre éditorial : bande logos plus nette */
+.media-logos {
+  border-width: 1px;
+}
+
+.media-logo-item {
+  min-height: 112px;
+}
+
+/* 7. conversation : meilleur maintien visuel */
+.conversation-shell__top,
+.conversation-links {
+  border-color: rgba(16, 40, 69, 0.18);
+}
+
+/* 8. navigation thématique : plus Brookings dans l’esprit */
+.theme-nav {
+  border-top: 2px solid rgba(16, 40, 69, 0.18);
+  border-bottom: 1px solid rgba(16, 40, 69, 0.18);
+}
+
+/* 9. lecture de saison : mieux tenue */
+.lecture-note,
+.selection-subnote,
+.cadre-note,
+.access-note {
+  color: #667085;
+}
+
+/* 10. bloc Accès : un peu plus ferme visuellement */
+.access-grid .card {
+  border-width: 1px;
+}
+
+/* 11. responsive */
+@media (max-width: 780px) {
+  .home-page .home-section::before {
+    width: min(calc(100% - 32px), var(--container));
   }
 }
