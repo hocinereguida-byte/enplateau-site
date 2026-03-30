@@ -1,17 +1,17 @@
 /* =========================================================
    EN PLATEAU — HOME.CSS
-   Home V3
-   Direction : plus contrastée, plus charpentée, moins SaaS
+   Version nettoyée
+   Fonds blancs / structure légère / sans grosses barres bleues
    ========================================================= */
 
 /* ---------- BASE HOME ---------- */
 
 .home-page {
-  background: var(--ep-paper);
+  background: #fffdfa;
 }
 
 .home-page .home-section {
-  background: var(--ep-paper);
+  background: #fffdfa;
 }
 
 .home-page .home-section::before {
@@ -20,9 +20,9 @@
   top: 0;
   left: 50%;
   width: min(calc(100% - 56px), var(--container));
-  height: 3px;
+  height: 2px;
   transform: translateX(-50%);
-  background: rgba(16, 52, 91, 0.30);
+  background: rgba(16, 52, 91, 0.16);
 }
 
 .home-page .section-head h2,
@@ -36,11 +36,11 @@
 /* ---------- HERO ---------- */
 
 #hero-home {
-  background: var(--ep-paper);
+  background: #fffdfa;
   color: var(--ep-ink);
   padding-top: 84px;
   padding-bottom: 72px;
-  border-bottom: 3px solid rgba(16, 52, 91, 0.30);
+  border-bottom: 2px solid rgba(16, 52, 91, 0.16);
 }
 
 #hero-home::before {
@@ -104,7 +104,7 @@
 #hero-home .hero-links-inline a::after {
   content: "·";
   margin-left: 18px;
-  color: rgba(16, 52, 91, 0.28);
+  color: rgba(16, 52, 91, 0.22);
 }
 
 #hero-home .hero-links-inline a:last-child::after {
@@ -119,28 +119,28 @@
 
 .statut-block {
   border: 1px solid var(--ep-line);
-  background: var(--ep-white);
+  background: #ffffff;
 }
 
 .statut-block__header {
   padding: 28px 28px 22px;
   border-bottom: 1px solid var(--ep-line);
-  background: var(--ep-navy-deep);
+  background: #ffffff;
 }
 
 .statut-block__header .section-kicker {
-  color: rgba(255, 255, 255, 0.70);
+  color: #7a6750;
 }
 
 .statut-block__header h2 {
   margin-bottom: 14px;
-  color: #ffffff;
+  color: var(--ep-ink);
 }
 
 .statut-block__header p {
   max-width: 860px;
   margin-bottom: 0;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--ep-ink-soft);
   font-size: 1rem;
   line-height: 1.74;
 }
@@ -151,16 +151,8 @@
 }
 
 .statut-item {
-  padding: 24px 24px 24px 24px;
+  padding: 24px;
   border-right: 1px solid var(--ep-line);
-  background: var(--ep-white);
-}
-
-.statut-item:nth-child(2) {
-  background: #fbf8f3;
-}
-
-.statut-item:nth-child(3) {
   background: #ffffff;
 }
 
@@ -187,7 +179,7 @@
   font-size: 13px;
   line-height: 1.68;
   color: var(--ep-ink-muted);
-  background: #fbf8f3;
+  background: #ffffff;
 }
 
 /* ---------- TRAMES 3 BLOCS ---------- */
@@ -196,43 +188,29 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border: 1px solid var(--ep-line);
-  background: var(--ep-white);
+  background: #ffffff;
 }
 
 .three-col-frame .card {
   border: 0;
   border-right: 1px solid var(--ep-line);
+  background: #ffffff;
 }
 
 .three-col-frame .card:last-child {
   border-right: 0;
 }
 
-/* pourquoi vous */
-#pourquoi-vous-home .three-col-frame .card:nth-child(1) {
-  background: var(--ep-white);
-}
-#pourquoi-vous-home .three-col-frame .card:nth-child(2) {
-  background: #fbf8f3;
-}
-#pourquoi-vous-home .three-col-frame .card:nth-child(3) {
-  background: var(--ep-white);
-}
-
-/* ce que cela demande */
-#exigences-home .three-col-frame .card:nth-child(1) {
-  background: var(--ep-white);
-}
-#exigences-home .three-col-frame .card:nth-child(2) {
-  background: #fbf8f3;
-}
-#exigences-home .three-col-frame .card:nth-child(3) {
-  background: var(--ep-white);
-}
-
-#exigences-home .three-col-frame .card::before,
-#pourquoi-vous-home .three-col-frame .card::before {
-  background: var(--ep-navy);
+/* on neutralise toute barre supérieure sur les cartes de la home */
+.three-col-frame .card::before,
+.selection-grid .card::before,
+.theme-preview-card::before,
+.access-grid .card::before,
+.four-step::before,
+.lecture-step::before,
+.conversation-angle-card::before,
+.statut-item::before {
+  display: none !important;
 }
 
 /* ---------- 4 ÉTAPES ---------- */
@@ -241,32 +219,18 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   border: 1px solid var(--ep-line);
-  background: var(--ep-white);
+  background: #ffffff;
 }
 
 .four-step {
   position: relative;
   padding: 30px 24px 24px;
   border-right: 1px solid var(--ep-line);
-  background: var(--ep-white);
-}
-
-.four-step::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--ep-navy);
+  background: #ffffff;
 }
 
 .four-step:last-child {
   border-right: 0;
-}
-
-.four-step:nth-child(4) {
-  background: #fbf8f3;
 }
 
 .four-step__index {
@@ -299,18 +263,18 @@
 .pull-quote {
   border: 1px solid var(--ep-line);
   padding: 30px 26px 24px;
-  background: var(--ep-navy);
+  background: #ffffff;
 }
 
 .pull-quote h3 {
   font-size: 1.28rem;
   line-height: 1.2;
   margin-bottom: 14px;
-  color: #ffffff;
+  color: var(--ep-ink);
 }
 
 .pull-quote p {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--ep-ink-soft);
   font-size: 1rem;
   line-height: 1.76;
   margin: 0;
@@ -324,18 +288,8 @@
   gap: 20px;
 }
 
-#selection-home .selection-grid .card:nth-child(1) {
-  background: var(--ep-white);
-}
-#selection-home .selection-grid .card:nth-child(2) {
-  background: #fbf8f3;
-}
-#selection-home .selection-grid .card:nth-child(3) {
-  background: var(--ep-white);
-}
-
-#selection-home .selection-grid .card::before {
-  background: var(--ep-navy);
+#selection-home .selection-grid .card {
+  background: #ffffff;
 }
 
 .selection-subnote {
@@ -349,7 +303,7 @@
 /* ---------- CADRE ÉDITORIAL ---------- */
 
 #cadre-editorial-home {
-  background: var(--ep-paper);
+  background: #fffdfa;
 }
 
 .cadre-copy {
@@ -370,7 +324,6 @@
   margin-top: 28px;
 }
 
-/* très important : matière blanche */
 .media-logos {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -412,13 +365,13 @@
 
 .conversation-shell {
   border: 1px solid var(--ep-line);
-  background: var(--ep-white);
+  background: #ffffff;
 }
 
 .conversation-shell__top {
   padding: 30px 30px 22px;
   border-bottom: 1px solid var(--ep-line);
-  background: var(--ep-white);
+  background: #ffffff;
 }
 
 .conversation-shell__meta {
@@ -451,26 +404,11 @@
   padding: 28px 24px 22px;
   border-right: 1px solid var(--ep-line);
   border-top: 1px solid var(--ep-line);
-  background: var(--ep-white);
-}
-
-.conversation-angle-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--ep-ochre);
+  background: #ffffff;
 }
 
 .conversation-angle-card:nth-child(2n) {
   border-right: 0;
-}
-
-.conversation-angle-card:nth-child(2),
-.conversation-angle-card:nth-child(4) {
-  background: #fbf8f3;
 }
 
 .conversation-angle-card h3 {
@@ -496,13 +434,13 @@
 .conversation-links {
   padding: 18px 30px 22px;
   border-top: 1px solid var(--ep-line);
-  background: #fbf8f3;
+  background: #ffffff;
 }
 
 /* ---------- THÈMES ---------- */
 
 .theme-nav {
-  border-top: 2px solid var(--ep-line-strong);
+  border-top: 1px solid var(--ep-line);
   border-bottom: 1px solid var(--ep-line);
   padding: 14px 0;
   background: transparent;
@@ -551,19 +489,7 @@
 }
 
 .theme-preview-card {
-  background: var(--ep-white);
-}
-
-.theme-preview-card:nth-child(2) {
-  background: #fbf8f3;
-}
-
-.theme-preview-card:nth-child(3) {
-  background: var(--ep-white);
-}
-
-.theme-preview-card::before {
-  background: var(--ep-ochre);
+  background: #ffffff;
 }
 
 .theme-preview-card h3 {
@@ -594,43 +520,21 @@
 .doctrine-panel {
   border: 1px solid var(--ep-line);
   padding: 30px 26px 24px;
-  background: var(--ep-white);
-}
-
-.doctrine-panel:first-child {
-  background: var(--ep-white);
-}
-
-.doctrine-panel:last-child {
-  background: var(--ep-navy);
+  background: #ffffff;
 }
 
 .doctrine-panel h3 {
   font-size: 1.34rem;
   line-height: 1.2;
   margin-bottom: 14px;
-}
-
-.doctrine-panel:first-child h3 {
   color: var(--ep-ink);
-}
-
-.doctrine-panel:last-child h3 {
-  color: #ffffff;
 }
 
 .doctrine-panel p {
   font-size: 1rem;
   line-height: 1.76;
   margin: 0;
-}
-
-.doctrine-panel:first-child p {
   color: var(--ep-ink-soft);
-}
-
-.doctrine-panel:last-child p {
-  color: rgba(255, 255, 255, 0.88);
 }
 
 .doctrine-links {
@@ -644,32 +548,18 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border: 1px solid var(--ep-line);
-  background: var(--ep-white);
+  background: #ffffff;
 }
 
 .lecture-step {
   position: relative;
   padding: 30px 24px 24px;
   border-right: 1px solid var(--ep-line);
-  background: var(--ep-white);
-}
-
-.lecture-step::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--ep-navy);
+  background: #ffffff;
 }
 
 .lecture-step:last-child {
   border-right: 0;
-}
-
-.lecture-step:nth-child(2) {
-  background: #fbf8f3;
 }
 
 .lecture-step h3 {
@@ -704,42 +594,19 @@
 
 .access-grid .card {
   min-height: 100%;
+  background: #ffffff;
 }
 
-.access-grid .card:first-child {
-  background: var(--ep-white);
-}
-
-.access-grid .card:last-child {
-  background: var(--ep-navy);
-}
-
-.access-grid .card:first-child h3 {
+.access-grid .card h3 {
   color: var(--ep-ink);
 }
 
-.access-grid .card:last-child h3 {
-  color: #ffffff;
-}
-
-.access-grid .card:first-child p {
+.access-grid .card p {
   color: var(--ep-ink-soft);
 }
 
-.access-grid .card:last-child p {
-  color: rgba(255, 255, 255, 0.88);
-}
-
-.access-grid .card:first-child::before {
-  background: var(--ep-ochre);
-}
-
-.access-grid .card:last-child::before {
-  background: var(--ep-ochre);
-}
-
-.access-grid .card:last-child .link {
-  color: #ffffff;
+.access-grid .card .link {
+  color: var(--ep-ink);
 }
 
 .access-note {
@@ -798,19 +665,17 @@
 
   .statut-item,
   .three-col-frame .card,
-  .lecture-step {
+  .lecture-step,
+  .four-step {
     border-right: 0;
     border-bottom: 1px solid var(--ep-line);
   }
 
   .statut-item:last-child,
   .three-col-frame .card:last-child,
-  .lecture-step:last-child {
+  .lecture-step:last-child,
+  .four-step:last-child {
     border-bottom: 0;
-  }
-
-  .access-grid .card:last-child {
-    background: var(--ep-navy);
   }
 }
 
@@ -868,334 +733,3 @@
     padding-right: 20px;
   }
 }
-/* =========================================================
-   PATCH CHARPENTE — HOME
-   Objectif : structure forte, cadres, masses, contrastes
-   ========================================================= */
-
-/* 1. séparation franche entre sections */
-.home-page .home-section::before {
-  height: 4px;
-  background: #10345b;
-}
-
-#hero-home {
-  border-bottom: 4px solid #10345b;
-}
-
-/* 2. logotype texte bien blanc */
-.site-brand__wordmark {
-  color: #ffffff !important;
-}
-
-/* 3. fond général clair, pas pastel */
-#eclaireur-home,
-#pourquoi-vous-home,
-#dispositif-home,
-#exigences-home,
-#selection-home,
-#cadre-editorial-home,
-#conversation-home,
-#themes-home,
-#doctrine-home,
-#lecture-saison-home,
-#acces-home {
-  background: #f7f4ee;
-}
-
-/* 4. toutes les grandes structures deviennent des cadres francs */
-.statut-block,
-.three-col-frame,
-.four-step-frame,
-.conversation-shell,
-.media-logos,
-.lecture-frame,
-.theme-nav,
-.selection-grid,
-.theme-preview-grid,
-.access-grid {
-  border: 2px solid #10345b;
-  background: #ffffff;
-}
-
-/* 5. on supprime l'effet "cartes flottantes espacées" là où il faut de la charpente */
-.selection-grid,
-.theme-preview-grid,
-.access-grid {
-  gap: 0;
-}
-
-/* 6. cartes blanches, découpées par des traits, avec un bandeau bleu supérieur */
-.three-col-frame .card,
-.selection-grid .card,
-.theme-preview-card,
-.access-grid .card,
-.four-step,
-.lecture-step,
-.conversation-angle-card,
-.statut-item {
-  background: #ffffff !important;
-  border-right: 1px solid rgba(16, 52, 91, 0.22);
-  border-bottom: 0;
-  box-shadow: none;
-}
-
-.three-col-frame .card:last-child,
-.selection-grid .card:last-child,
-.theme-preview-card:last-child,
-.access-grid .card:last-child,
-.four-step:last-child,
-.lecture-step:last-child,
-.statut-item:last-child {
-  border-right: 0;
-}
-
-.three-col-frame .card::before,
-.selection-grid .card::before,
-.theme-preview-card::before,
-.access-grid .card::before,
-.four-step::before,
-.lecture-step::before,
-.conversation-angle-card::before,
-.statut-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: #10345b;
-}
-
-/* 7. bloc Éclaireur : vrai bloc fort */
-.statut-block__header {
-  background: #10345b;
-  border-bottom: 2px solid #10345b;
-}
-
-.statut-block__header .section-kicker,
-.statut-block__header h2,
-.statut-block__header p {
-  color: #ffffff;
-}
-
-.statut-note {
-  background: #ffffff;
-  border-top: 1px solid rgba(16, 52, 91, 0.22);
-}
-
-/* 8. pull-quote : on en fait un vrai contrepoint fort */
-.pull-quote {
-  background: #10345b !important;
-  border: 2px solid #10345b;
-  box-shadow: none;
-}
-
-.pull-quote h3,
-.pull-quote p {
-  color: #ffffff !important;
-}
-
-/* 9. doctrine : une carte blanche, une carte bleue */
-.doctrine-panel:first-child {
-  background: #ffffff !important;
-  border: 2px solid #10345b;
-}
-
-.doctrine-panel:last-child {
-  background: #10345b !important;
-  border: 2px solid #10345b;
-}
-
-.doctrine-panel:last-child h3,
-.doctrine-panel:last-child p {
-  color: #ffffff !important;
-}
-
-/* 10. accès : même logique, une blanche, une bleue */
-.access-grid .card:first-child {
-  background: #ffffff !important;
-}
-
-.access-grid .card:last-child {
-  background: #10345b !important;
-}
-
-.access-grid .card:last-child h3,
-.access-grid .card:last-child p,
-.access-grid .card:last-child .link {
-  color: #ffffff !important;
-}
-
-.access-grid .card:last-child .link::after {
-  background: rgba(194, 154, 87, 0.95);
-}
-
-/* 11. navigation thématique : vraie bande structurante */
-.theme-nav {
-  background: #10345b;
-  padding: 18px 24px;
-}
-
-.theme-nav__link {
-  color: #ffffff;
-}
-
-.theme-nav__link::after {
-  background: transparent;
-}
-
-.theme-nav__link:hover::after {
-  background: rgba(194, 154, 87, 0.95);
-}
-
-/* 12. section logos : impérativement blanche */
-.media-logos,
-.media-logo-item {
-  background: #ffffff !important;
-}
-
-/* 13. conversation visible : renforcer la structure */
-.conversation-shell__top,
-.conversation-links {
-  background: #ffffff;
-}
-
-.conversation-links {
-  border-top: 2px solid #10345b;
-}
-
-/* 14. titres de section : plus charpentés par une ligne basse discrète */
-.home-page .section-head {
-  padding-bottom: 18px;
-  border-bottom: 1px solid rgba(16, 52, 91, 0.18);
-}
-
-/* 15. responsive */
-@media (max-width: 1080px) {
-  .selection-grid,
-  .theme-preview-grid,
-  .access-grid,
-  .three-col-frame,
-  .statut-grid,
-  .lecture-frame {
-    gap: 0;
-  }
-
-  .three-col-frame .card,
-  .selection-grid .card,
-  .theme-preview-card,
-  .access-grid .card,
-  .statut-item,
-  .lecture-step {
-    border-right: 0;
-    border-bottom: 1px solid rgba(16, 52, 91, 0.22);
-  }
-
-  .three-col-frame .card:last-child,
-  .selection-grid .card:last-child,
-  .theme-preview-card:last-child,
-  .access-grid .card:last-child,
-  .statut-item:last-child,
-  .lecture-step:last-child {
-    border-bottom: 0;     
-  }
-}
-/* =========================================================
-   ROLLBACK BLANC — HOME
-   Retour à une base blanche propre et stable
-   À AJOUTER À LA FIN DE HOME.CSS
-   ========================================================= */
-
-/* 1. fond général */
-.home-page,
-.home-page .home-section,
-#hero-home,
-#eclaireur-home,
-#pourquoi-vous-home,
-#dispositif-home,
-#exigences-home,
-#selection-home,
-#cadre-editorial-home,
-#conversation-home,
-#themes-home,
-#doctrine-home,
-#lecture-saison-home,
-#acces-home {
-  background: #fffdfa !important;
-}
-
-/* 2. séparateurs de sections : fins et sobres */
-.home-page .home-section::before {
-  height: 2px !important;
-  background: rgba(16, 52, 91, 0.18) !important;
-}
-
-#hero-home {
-  border-bottom: 2px solid rgba(16, 52, 91, 0.18) !important;
-}
-
-/* 3. toutes les grandes structures redeviennent blanches */
-.statut-block,
-.three-col-frame,
-.four-step-frame,
-.conversation-shell,
-.media-logos,
-.lecture-frame,
-.theme-nav,
-.selection-grid,
-.theme-preview-grid,
-.access-grid,
-.doctrine-panel,
-.pull-quote,
-.selection-grid .card,
-.theme-preview-card,
-.access-grid .card,
-.four-step,
-.lecture-step,
-.conversation-angle-card,
-.statut-item,
-.media-logo-item,
-.conversation-shell__top,
-.conversation-links,
-.statut-note {
-  background: #ffffff !important;
-  box-shadow: none !important;
-}
-
-/* 4. on neutralise tous les aplats bleus */
-.statut-block__header,
-.pull-quote,
-.doctrine-panel:last-child,
-.access-grid .card:last-child,
-.theme-nav {
-  background: #ffffff !important;
-}
-
-/* 5. et on remet les textes foncés partout */
-.statut-block__header .section-kicker,
-.statut-block__header h2,
-.statut-block__header p,
-.pull-quote h3,
-.pull-quote p,
-.doctrine-panel:last-child h3,
-.doctrine-panel:last-child p,
-.access-grid .card:last-child h3,
-.access-grid .card:last-child p,
-.access-grid .card:last-child .link,
-.theme-nav__link {
-  color: var(--ep-ink) !important;
-}
-
-/* 6. liens du bloc accès droit redeviennent normaux */
-.access-grid .card:last-child .link::after,
-.theme-nav__link:hover::after {
-  background: rgba(194, 154,
-
-
-
-
-
-
-
-
