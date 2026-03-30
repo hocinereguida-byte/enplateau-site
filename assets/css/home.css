@@ -1098,9 +1098,101 @@
   .access-grid .card:last-child,
   .statut-item:last-child,
   .lecture-step:last-child {
-    border-bottom: 0;
+    border-bottom: 0;     
   }
 }
+/* =========================================================
+   ROLLBACK BLANC — HOME
+   Retour à une base blanche propre et stable
+   À AJOUTER À LA FIN DE HOME.CSS
+   ========================================================= */
+
+/* 1. fond général */
+.home-page,
+.home-page .home-section,
+#hero-home,
+#eclaireur-home,
+#pourquoi-vous-home,
+#dispositif-home,
+#exigences-home,
+#selection-home,
+#cadre-editorial-home,
+#conversation-home,
+#themes-home,
+#doctrine-home,
+#lecture-saison-home,
+#acces-home {
+  background: #fffdfa !important;
+}
+
+/* 2. séparateurs de sections : fins et sobres */
+.home-page .home-section::before {
+  height: 2px !important;
+  background: rgba(16, 52, 91, 0.18) !important;
+}
+
+#hero-home {
+  border-bottom: 2px solid rgba(16, 52, 91, 0.18) !important;
+}
+
+/* 3. toutes les grandes structures redeviennent blanches */
+.statut-block,
+.three-col-frame,
+.four-step-frame,
+.conversation-shell,
+.media-logos,
+.lecture-frame,
+.theme-nav,
+.selection-grid,
+.theme-preview-grid,
+.access-grid,
+.doctrine-panel,
+.pull-quote,
+.selection-grid .card,
+.theme-preview-card,
+.access-grid .card,
+.four-step,
+.lecture-step,
+.conversation-angle-card,
+.statut-item,
+.media-logo-item,
+.conversation-shell__top,
+.conversation-links,
+.statut-note {
+  background: #ffffff !important;
+  box-shadow: none !important;
+}
+
+/* 4. on neutralise tous les aplats bleus */
+.statut-block__header,
+.pull-quote,
+.doctrine-panel:last-child,
+.access-grid .card:last-child,
+.theme-nav {
+  background: #ffffff !important;
+}
+
+/* 5. et on remet les textes foncés partout */
+.statut-block__header .section-kicker,
+.statut-block__header h2,
+.statut-block__header p,
+.pull-quote h3,
+.pull-quote p,
+.doctrine-panel:last-child h3,
+.doctrine-panel:last-child p,
+.access-grid .card:last-child h3,
+.access-grid .card:last-child p,
+.access-grid .card:last-child .link,
+.theme-nav__link {
+  color: var(--ep-ink) !important;
+}
+
+/* 6. liens du bloc accès droit redeviennent normaux */
+.access-grid .card:last-child .link::after,
+.theme-nav__link:hover::after {
+  background: rgba(194, 154,
+
+
 
 
 
