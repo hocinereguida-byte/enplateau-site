@@ -1,35 +1,32 @@
 /* =========================================================
    EN PLATEAU — LAYOUT.CSS
-   Base globale / header / footer / typo / composants
-   Version nettoyée sans barres bleues sur les cartes
+   Direction : éditoriale chaude, inspirée presse économique
    ========================================================= */
 
 :root {
-  --ep-ink: #132235;
-  --ep-ink-soft: #46566b;
-  --ep-ink-muted: #66768a;
+  --ep-ink: #1f1a17;
+  --ep-ink-soft: #4f4640;
+  --ep-ink-muted: #756a63;
 
-  --ep-paper: #f7f4ee;
-  --ep-paper-soft: #fbf8f3;
-  --ep-white: #ffffff;
+  --ep-paper: #f4e9dc;
+  --ep-paper-soft: #f8efe5;
+  --ep-white: #fffaf4;
 
-  --ep-navy: #10345b;
-  --ep-navy-deep: #0b2746;
-  --ep-navy-soft: #1b4878;
+  --ep-accent: #7b3326;
+  --ep-accent-soft: #9a5241;
+  --ep-accent-deep: #5d241b;
 
-  --ep-ochre: #c29a57;
-  --ep-ochre-deep: #ab8545;
+  --ep-line: rgba(82, 62, 49, 0.16);
+  --ep-line-strong: rgba(82, 62, 49, 0.26);
 
-  --ep-line: rgba(16, 52, 91, 0.18);
-  --ep-line-strong: rgba(16, 52, 91, 0.28);
-
-  --font-display: "IBM Plex Sans", sans-serif;
-  --font-body: "IBM Plex Sans", sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", "Georgia", serif;
+  --font-body: "Lora", "Georgia", serif;
+  --font-ui: "IBM Plex Sans", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
 
   --container: 1280px;
   --container-reading: 860px;
-  --header-height: 88px;
+  --header-height: 84px;
 
   --space-1: 8px;
   --space-2: 12px;
@@ -65,7 +62,7 @@ body {
   color: var(--ep-ink);
   font-family: var(--font-body);
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.74;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -110,7 +107,7 @@ h6 {
 }
 
 ::selection {
-  background: rgba(194, 154, 87, 0.18);
+  background: rgba(123, 51, 38, 0.14);
 }
 
 /* ---------- CONTAINERS ---------- */
@@ -149,8 +146,8 @@ h4 {
 .lecture-step h3,
 .conversation-angle-card h3 {
   font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.035em;
+  font-weight: 600;
+  letter-spacing: -0.022em;
 }
 
 .hero-kicker,
@@ -162,22 +159,22 @@ h4 {
 .site-header__cta,
 .four-step__index,
 .conversation-shell__meta {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
 }
 
 .hero-title {
-  font-size: clamp(2.8rem, 5vw, 4.35rem);
-  line-height: 0.98;
+  font-size: clamp(3rem, 5vw, 4.65rem);
+  line-height: 0.95;
   text-wrap: balance;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .hero-subtitle {
-  font-size: clamp(1.08rem, 1.45vw, 1.28rem);
-  line-height: 1.62;
-  font-weight: 500;
+  font-size: clamp(1.08rem, 1.32vw, 1.22rem);
+  line-height: 1.7;
+  font-weight: 400;
   color: var(--ep-ink-soft);
   margin-bottom: 16px;
 }
@@ -206,21 +203,21 @@ h4 {
   font-size: 12px;
   line-height: 1.3;
   font-weight: 500;
-  color: #7a6750;
+  color: var(--ep-accent);
 }
 
 .section-intro {
   max-width: 860px;
-  font-size: clamp(1.02rem, 1.3vw, 1.18rem);
-  line-height: 1.68;
-  font-weight: 500;
+  font-size: clamp(1.02rem, 1.18vw, 1.14rem);
+  line-height: 1.74;
+  font-weight: 400;
   color: var(--ep-ink-soft);
 }
 
 .section-footnote {
   max-width: 920px;
   font-size: 14px;
-  line-height: 1.72;
+  line-height: 1.74;
   color: var(--ep-ink-muted);
 }
 
@@ -233,7 +230,7 @@ h4 {
 .page-centered-copy p {
   color: var(--ep-ink-soft);
   font-size: 1rem;
-  line-height: 1.76;
+  line-height: 1.78;
 }
 
 /* ---------- LINKS ---------- */
@@ -258,9 +255,9 @@ h4 {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -3px;
-  height: 2px;
-  background: rgba(194, 154, 87, 0.9);
+  bottom: -2px;
+  height: 1px;
+  background: rgba(123, 51, 38, 0.52);
   transition: background var(--transition-fast);
 }
 
@@ -269,7 +266,7 @@ h4 {
 .hero-link:hover::after,
 .footer-col a:hover::after,
 .site-header__cta:hover::after {
-  background: var(--ep-ochre-deep);
+  background: var(--ep-accent);
 }
 
 /* ---------- BUTTON ROWS ---------- */
@@ -328,10 +325,10 @@ h4 {
 }
 
 .divider {
-  width: 46px;
-  height: 3px;
+  width: 42px;
+  height: 2px;
   margin-top: 18px;
-  background: var(--ep-ochre);
+  background: rgba(123, 51, 38, 0.78);
 }
 
 .section-head--centered .divider {
@@ -343,12 +340,11 @@ h4 {
 
 .card {
   position: relative;
-  background: var(--ep-white);
+  background: rgba(255, 250, 244, 0.7);
   border: 1px solid var(--ep-line);
-  padding: 30px 24px 24px;
+  padding: 28px 24px 22px;
 }
 
-/* suppression de la barre bleue supérieure générique */
 .card::before {
   display: none;
 }
@@ -362,7 +358,7 @@ h4 {
 .card p {
   color: var(--ep-ink-soft);
   font-size: 1rem;
-  line-height: 1.72;
+  line-height: 1.76;
   margin-bottom: 0;
 }
 
@@ -372,13 +368,13 @@ h4 {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(11, 39, 70, 0.985);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(10px);
+  background: rgba(244, 233, 220, 0.96);
+  border-bottom: 1px solid var(--ep-line);
+  backdrop-filter: blur(8px);
 }
 
 .site-header.is-scrolled {
-  background: rgba(11, 39, 70, 0.992);
+  background: rgba(244, 233, 220, 0.985);
 }
 
 .site-header__inner {
@@ -402,7 +398,6 @@ h4 {
   gap: 18px;
 }
 
-/* logotype texte */
 .site-brand {
   min-height: 62px;
   max-width: none;
@@ -416,11 +411,11 @@ h4 {
 .site-brand__wordmark {
   display: inline-block;
   font-family: var(--font-display);
-  font-size: 2.1rem;
+  font-size: 2rem;
   line-height: 1;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--ep-ink);
   white-space: nowrap;
 }
 
@@ -440,9 +435,10 @@ h4 {
   display: inline-flex;
   min-height: 42px;
   align-items: center;
-  font-size: 12px;
+  font-family: var(--font-ui);
+  font-size: 11px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(31, 26, 23, 0.82);
 }
 
 .desktop-editorial-nav__link::after {
@@ -451,26 +447,27 @@ h4 {
   left: 0;
   right: 0;
   bottom: 8px;
-  height: 2px;
+  height: 1px;
   background: transparent;
   transition: background var(--transition-fast);
 }
 
 .desktop-editorial-nav__link:hover,
 .desktop-editorial-nav__link.is-active {
-  color: #ffffff;
+  color: var(--ep-ink);
 }
 
 .desktop-editorial-nav__link:hover::after,
 .desktop-editorial-nav__link.is-active::after {
-  background: rgba(194, 154, 87, 0.95);
+  background: rgba(123, 51, 38, 0.66);
 }
 
 .site-header__cta {
   position: relative;
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.98);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ep-ink);
 }
 
 .menu-toggle {
@@ -478,7 +475,7 @@ h4 {
   width: 42px;
   height: 42px;
   padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid var(--ep-line);
   background: transparent;
   cursor: pointer;
   position: relative;
@@ -489,7 +486,7 @@ h4 {
   left: 11px;
   right: 11px;
   height: 2px;
-  background: #ffffff;
+  background: var(--ep-ink);
   transition: all var(--transition-base);
 }
 
@@ -517,8 +514,8 @@ h4 {
   z-index: 1200;
   display: none;
   overflow-y: auto;
-  background: rgba(11, 39, 70, 0.992);
-  color: rgba(255, 255, 255, 0.96);
+  background: rgba(244, 233, 220, 0.99);
+  color: var(--ep-ink);
   padding: 20px 22px 32px;
 }
 
@@ -542,24 +539,24 @@ h4 {
   min-height: 60px;
   padding-bottom: 18px;
   margin-bottom: 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid var(--ep-line);
 }
 
 .mobile-menu-title {
   font-family: var(--font-display);
   font-size: 1.48rem;
   line-height: 1;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  color: #f5f1e9;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--ep-ink);
 }
 
 .mobile-menu-close {
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid var(--ep-line);
   background: transparent;
-  color: #ffffff;
+  color: var(--ep-ink);
   cursor: pointer;
 }
 
@@ -573,7 +570,7 @@ h4 {
 .mobile-secondary {
   margin-top: 18px;
   padding-top: 18px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid var(--ep-line);
 }
 
 .mobile-top-link,
@@ -582,22 +579,23 @@ h4 {
   align-items: center;
   min-height: 46px;
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--ep-ink-soft);
 }
 
 .mobile-top-link--cta {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  color: var(--ep-ink);
 }
 
 /* ---------- FOOTER ---------- */
 
 .footer {
-  background: linear-gradient(180deg, #0d2746 0%, #0a1f38 100%);
-  color: #e8eef5;
-  border-top: 1px solid rgba(230, 237, 245, 0.16);
+  background: #efe2d3;
+  color: var(--ep-ink);
+  border-top: 1px solid var(--ep-line);
   padding: 56px 0 0;
 }
 
@@ -615,13 +613,13 @@ h4 {
 
 .footer-title {
   margin-bottom: 12px;
-  color: rgba(194, 154, 87, 0.96);
+  color: var(--ep-accent);
 }
 
 .footer-signature {
   font-size: 1.02rem;
   line-height: 1.42;
-  color: #f5f7fb;
+  color: var(--ep-ink);
   margin-bottom: 10px;
 }
 
@@ -629,7 +627,7 @@ h4 {
 .footer li {
   font-size: 14px;
   line-height: 1.72;
-  color: #c0ccd8;
+  color: var(--ep-ink-soft);
 }
 
 .footer-col ul {
@@ -643,21 +641,21 @@ h4 {
 }
 
 .footer-col a {
-  color: #e8eef5;
+  color: var(--ep-ink);
 }
 
 .footer-bottom {
   width: min(calc(100% - 44px), var(--container));
   margin: 30px auto 0;
   padding: 16px 0 20px;
-  border-top: 1px solid rgba(230, 237, 245, 0.10);
+  border-top: 1px solid var(--ep-line);
 }
 
 .footer-bottom p {
   margin: 0;
   font-size: 12px;
   line-height: 1.6;
-  color: #94a5b7;
+  color: var(--ep-ink-muted);
 }
 
 /* ---------- REVEAL ---------- */
@@ -685,7 +683,7 @@ html:not(.reveal-ready) .reveal {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid rgba(194, 154, 87, 0.58);
+  outline: 2px solid rgba(123, 51, 38, 0.42);
   outline-offset: 2px;
 }
 
@@ -736,8 +734,8 @@ button:focus-visible {
   }
 
   .hero-title {
-    font-size: clamp(2.2rem, 8.8vw, 3.2rem);
-    line-height: 1.02;
+    font-size: clamp(2.25rem, 8.8vw, 3.25rem);
+    line-height: 1.01;
   }
 
   .section-head h2 {
