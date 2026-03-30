@@ -1,7 +1,10 @@
 /* =========================================================
    EN PLATEAU — PAGES.CSS
-   Base pour pages intérieures / navigation dense / blocs éditoriaux
+   Pages intérieures / navigation dense / blocs éditoriaux
+   Direction alignée sur layout.css + home.css
    ========================================================= */
+
+/* ---------- PAGE HERO ---------- */
 
 .page-hero,
 .page-intro,
@@ -12,8 +15,8 @@
 .page-hero {
   padding-top: 96px;
   padding-bottom: 82px;
-  background: var(--ep-paper-alt);
-  border-bottom: 1px solid rgba(15, 26, 43, 0.06);
+  background: var(--ep-paper);
+  border-bottom: 1px solid var(--ep-line);
 }
 
 .page-hero-inner {
@@ -21,11 +24,11 @@
 }
 
 .page-hero-kicker {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
   font-size: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ep-taupe);
+  color: var(--ep-accent);
   margin-bottom: 18px;
 }
 
@@ -49,9 +52,9 @@
 
 .page-hero-sub {
   font-family: var(--font-body);
-  font-size: clamp(1.12rem, 1.7vw, 1.38rem);
-  line-height: 1.54;
-  font-weight: 500;
+  font-size: clamp(1.12rem, 1.7vw, 1.34rem);
+  line-height: 1.62;
+  font-weight: 400;
   margin-bottom: 16px;
 }
 
@@ -59,7 +62,11 @@
 .page-hero-note {
   font-family: var(--font-body);
   font-size: 1rem;
-  line-height: 1.72;
+  line-height: 1.74;
+}
+
+.page-hero-note {
+  color: var(--ep-ink-muted);
 }
 
 /* ---------- PAGE LAYOUT ---------- */
@@ -79,7 +86,7 @@
 }
 
 .page-sidebar nav {
-  border-top: 1px solid rgba(15, 26, 43, 0.12);
+  border-top: 1px solid var(--ep-line);
   padding-top: 18px;
 }
 
@@ -97,9 +104,11 @@
   display: inline-flex;
   align-items: center;
   min-height: 34px;
-  font-size: 14px;
+  font-family: var(--font-ui);
+  font-size: 13px;
   line-height: 1.5;
   color: var(--ep-ink-soft);
+  transition: color var(--transition-fast);
 }
 
 .page-sidebar a:hover,
@@ -109,7 +118,7 @@
 
 .page-sidebar a.is-active {
   padding-left: 10px;
-  border-left: 2px solid var(--ep-bronze);
+  border-left: 2px solid var(--ep-accent);
 }
 
 /* ---------- READING CONTENT ---------- */
@@ -129,6 +138,7 @@
   letter-spacing: -0.02em;
   font-weight: 600;
   margin-bottom: 18px;
+  color: var(--ep-ink);
 }
 
 .page-reading h3 {
@@ -137,17 +147,19 @@
   line-height: 1.18;
   font-weight: 500;
   margin-bottom: 12px;
+  color: var(--ep-ink);
 }
 
 .page-reading p {
   font-family: var(--font-body);
   font-size: 1rem;
-  line-height: 1.72;
+  line-height: 1.74;
   color: var(--ep-ink-soft);
   margin-bottom: 18px;
 }
 
-.page-reading .editorial-paragraph strong {
+.page-reading .editorial-paragraph strong,
+.page-reading p strong {
   color: var(--ep-ink);
   font-weight: 600;
 }
@@ -161,23 +173,22 @@
 .page-reading li {
   font-family: var(--font-body);
   font-size: 1rem;
-  line-height: 1.72;
+  line-height: 1.74;
   color: var(--ep-ink-soft);
   margin-bottom: 10px;
 }
 
 .page-reading li::marker {
-  color: var(--ep-bronze);
+  color: var(--ep-accent);
 }
 
-/* ---------- DENSE EDITORIAL BLOCKS ---------- */
+/* ---------- EDITORIAL PANELS ---------- */
 
 .editorial-panel {
   position: relative;
   padding: 28px 26px 24px 28px;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(15, 26, 43, 0.11);
-  box-shadow: var(--shadow-soft);
+  background: rgba(255, 250, 244, 0.72);
+  border: 1px solid var(--ep-line);
 }
 
 .editorial-panel::before {
@@ -185,9 +196,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 5px;
+  width: 4px;
   height: 100%;
-  background: var(--ep-brown-line);
+  background: rgba(123, 51, 38, 0.72);
 }
 
 .editorial-panel + .editorial-panel {
@@ -202,7 +213,7 @@
   margin-bottom: 0;
 }
 
-/* ---------- DENSE CARDS ---------- */
+/* ---------- DENSE CARDS / MODULES ---------- */
 
 .conversations-deadlines,
 .theme-block,
@@ -214,9 +225,8 @@
 .programme-list__item,
 .season-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.68);
-  border: 1px solid rgba(15, 26, 43, 0.11);
-  box-shadow: var(--shadow-soft);
+  background: rgba(255, 250, 244, 0.68);
+  border: 1px solid var(--ep-line);
   padding: 26px;
 }
 
@@ -233,40 +243,182 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 5px;
+  width: 4px;
   height: 100%;
-  background: var(--ep-bronze);
+  background: rgba(123, 51, 38, 0.72);
+}
+
+/* ---------- BLACK / DARK MODULE VARIANTS ---------- */
+
+.editorial-panel--dark,
+.conversations-deadlines--dark,
+.theme-block--dark,
+.theme-nav--dark,
+.programme-step--dark,
+.programme-value__item--dark,
+.programme-position--dark,
+.programme-access__item--dark,
+.programme-list__item--dark,
+.season-card--dark {
+  background: #111111;
+  border-color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.editorial-panel--dark::before,
+.conversations-deadlines--dark::before,
+.theme-block--dark::before,
+.theme-nav--dark::before,
+.programme-step--dark::before,
+.programme-value__item--dark::before,
+.programme-position--dark::before,
+.programme-access__item--dark::before,
+.programme-list__item--dark::before,
+.season-card--dark::before {
+  background: rgba(240, 200, 187, 0.72);
+}
+
+.editorial-panel--dark h2,
+.editorial-panel--dark h3,
+.conversations-deadlines--dark h2,
+.conversations-deadlines--dark h3,
+.theme-block--dark h2,
+.theme-block--dark h3,
+.theme-nav--dark h2,
+.theme-nav--dark h3,
+.programme-step--dark h2,
+.programme-step--dark h3,
+.programme-value__item--dark h2,
+.programme-value__item--dark h3,
+.programme-position--dark h2,
+.programme-position--dark h3,
+.programme-access__item--dark h2,
+.programme-access__item--dark h3,
+.programme-list__item--dark h2,
+.programme-list__item--dark h3,
+.season-card--dark h2,
+.season-card--dark h3 {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.editorial-panel--dark p,
+.editorial-panel--dark li,
+.conversations-deadlines--dark p,
+.conversations-deadlines--dark li,
+.theme-block--dark p,
+.theme-block--dark li,
+.theme-nav--dark p,
+.theme-nav--dark li,
+.programme-step--dark p,
+.programme-step--dark li,
+.programme-value__item--dark p,
+.programme-value__item--dark li,
+.programme-position--dark p,
+.programme-position--dark li,
+.programme-access__item--dark p,
+.programme-access__item--dark li,
+.programme-list__item--dark p,
+.programme-list__item--dark li,
+.season-card--dark p,
+.season-card--dark li {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.editorial-panel--dark a,
+.conversations-deadlines--dark a,
+.theme-block--dark a,
+.theme-nav--dark a,
+.programme-step--dark a,
+.programme-value__item--dark a,
+.programme-position--dark a,
+.programme-access__item--dark a,
+.programme-list__item--dark a,
+.season-card--dark a {
+  color: rgba(255, 255, 255, 0.94);
 }
 
 /* ---------- DARK PAGE SECTIONS ---------- */
 
 .page-section-dark {
-  background: var(--ep-header-blue);
+  background: var(--ep-charcoal);
   color: rgba(255, 255, 255, 0.94);
   padding-top: 84px;
   padding-bottom: 84px;
 }
 
 .page-section-dark h2,
-.page-section-dark h3,
+.page-section-dark h3 {
+  color: rgba(255, 255, 255, 0.96);
+}
+
 .page-section-dark p,
 .page-section-dark li,
 .page-section-dark a {
-  color: inherit;
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .page-section-dark .editorial-panel,
 .page-section-dark .programme-step,
-.page-section-dark .season-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: none;
+.page-section-dark .season-card,
+.page-section-dark .theme-block,
+.page-section-dark .programme-position,
+.page-section-dark .programme-access__item,
+.page-section-dark .programme-list__item,
+.page-section-dark .programme-value__item,
+.page-section-dark .conversations-deadlines {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.10);
 }
 
 .page-section-dark .editorial-panel::before,
 .page-section-dark .programme-step::before,
-.page-section-dark .season-card::before {
-  background: var(--ep-bronze);
+.page-section-dark .season-card::before,
+.page-section-dark .theme-block::before,
+.page-section-dark .programme-position::before,
+.page-section-dark .programme-access__item::before,
+.page-section-dark .programme-list__item::before,
+.page-section-dark .programme-value__item::before,
+.page-section-dark .conversations-deadlines::before {
+  background: rgba(240, 200, 187, 0.72);
+}
+
+/* ---------- LINK ROWS / MICRO NAV ---------- */
+
+.page-links-row,
+.page-actions-row,
+.page-inline-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  align-items: center;
+}
+
+.page-links-row {
+  margin-top: 24px;
+}
+
+/* ---------- TABLES / LISTS WHEN PRESENT ---------- */
+
+.page-reading table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+.page-reading th,
+.page-reading td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--ep-line);
+}
+
+.page-reading th {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ep-accent);
 }
 
 /* ---------- RESPONSIVE ---------- */
@@ -289,7 +441,31 @@
     padding-bottom: 68px;
   }
 
-  .page-reading p {
+  .page-hero-title {
+    font-size: clamp(2.2rem, 8vw, 3.4rem);
+    line-height: 1.03;
+  }
+
+  .page-hero-sub {
+    font-size: 1.06rem;
+    line-height: 1.66;
+  }
+
+  .page-reading p,
+  .page-reading li {
     font-size: 16px;
+  }
+
+  .editorial-panel,
+  .conversations-deadlines,
+  .theme-block,
+  .theme-nav,
+  .programme-step,
+  .programme-value__item,
+  .programme-position,
+  .programme-access__item,
+  .programme-list__item,
+  .season-card {
+    padding: 22px 20px;
   }
 }
