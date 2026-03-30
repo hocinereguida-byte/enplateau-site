@@ -1,17 +1,17 @@
 /* =========================================================
    EN PLATEAU — HOME.CSS
-   Home V2
-   Blanc structuré, séparateurs visibles, maillage interne fort
+   Home V3
+   Direction : plus contrastée, plus charpentée, moins SaaS
    ========================================================= */
 
 /* ---------- BASE HOME ---------- */
 
 .home-page {
-  background: #fffdfa;
+  background: var(--ep-paper);
 }
 
 .home-page .home-section {
-  background: #fffdfa;
+  background: var(--ep-paper);
 }
 
 .home-page .home-section::before {
@@ -20,9 +20,9 @@
   top: 0;
   left: 50%;
   width: min(calc(100% - 56px), var(--container));
-  height: 1px;
+  height: 3px;
   transform: translateX(-50%);
-  background: rgba(16, 24, 39, 0.12);
+  background: rgba(16, 52, 91, 0.30);
 }
 
 .home-page .section-head h2,
@@ -36,10 +36,11 @@
 /* ---------- HERO ---------- */
 
 #hero-home {
-  background: #fffdfa;
+  background: var(--ep-paper);
   color: var(--ep-ink);
   padding-top: 84px;
   padding-bottom: 72px;
+  border-bottom: 3px solid rgba(16, 52, 91, 0.30);
 }
 
 #hero-home::before {
@@ -51,7 +52,7 @@
 }
 
 #hero-home .hero-kicker {
-  color: var(--ep-taupe);
+  color: #7a6750;
   margin-bottom: 18px;
 }
 
@@ -61,27 +62,28 @@
 }
 
 #hero-home .hero-subtitle {
-  max-width: 760px;
+  max-width: 790px;
   color: var(--ep-ink-soft);
 }
 
 #hero-home .hero-meta {
-  max-width: 760px;
+  max-width: 780px;
   margin-bottom: 12px;
 }
 
 #hero-home .hero-note {
-  max-width: 760px;
-  margin-top: 8px;
+  max-width: 800px;
+  margin-top: 10px;
   margin-bottom: 28px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(16, 24, 39, 0.10);
+  padding-top: 16px;
+  border-top: 1px solid var(--ep-line);
   font-size: 14px;
-  line-height: 1.68;
+  line-height: 1.7;
+  color: var(--ep-ink-muted);
 }
 
 #hero-home .hero-actions {
-  gap: 14px 22px;
+  gap: 14px 24px;
   margin-top: 6px;
 }
 
@@ -102,53 +104,45 @@
 #hero-home .hero-links-inline a::after {
   content: "·";
   margin-left: 18px;
-  color: rgba(16, 24, 39, 0.22);
+  color: rgba(16, 52, 91, 0.28);
 }
 
 #hero-home .hero-links-inline a:last-child::after {
   display: none;
 }
 
-/* ---------- INTRO STRIP ---------- */
-
-#eclaireur-home,
-#pourquoi-vous-home,
-#dispositif-home,
-#exigences-home,
-#selection-home,
-#cadre-editorial-home,
-#conversation-home,
-#themes-home,
-#doctrine-home,
-#lecture-saison-home,
-#acces-home {
-  position: relative;
-}
+/* ---------- STATUT / ÉCLAIREUR ---------- */
 
 #eclaireur-home {
   padding-top: 68px;
 }
 
 .statut-block {
-  border: 1px solid rgba(16, 24, 39, 0.14);
-  background: #fff;
+  border: 1px solid var(--ep-line);
+  background: var(--ep-white);
 }
 
 .statut-block__header {
-  padding: 28px 28px 20px;
-  border-bottom: 1px solid rgba(16, 24, 39, 0.14);
+  padding: 28px 28px 22px;
+  border-bottom: 1px solid var(--ep-line);
+  background: var(--ep-navy-deep);
+}
+
+.statut-block__header .section-kicker {
+  color: rgba(255, 255, 255, 0.70);
 }
 
 .statut-block__header h2 {
   margin-bottom: 14px;
+  color: #ffffff;
 }
 
 .statut-block__header p {
-  max-width: 820px;
+  max-width: 860px;
   margin-bottom: 0;
-  color: var(--ep-ink-soft);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 1rem;
-  line-height: 1.72;
+  line-height: 1.74;
 }
 
 .statut-grid {
@@ -158,7 +152,16 @@
 
 .statut-item {
   padding: 24px 24px 24px 24px;
-  border-right: 1px solid rgba(16, 24, 39, 0.14);
+  border-right: 1px solid var(--ep-line);
+  background: var(--ep-white);
+}
+
+.statut-item:nth-child(2) {
+  background: #fbf8f3;
+}
+
+.statut-item:nth-child(3) {
+  background: #ffffff;
 }
 
 .statut-item:last-child {
@@ -166,94 +169,122 @@
 }
 
 .statut-item h3 {
-  font-family: var(--font-display);
-  font-size: 1.16rem;
-  line-height: 1.22;
+  font-size: 1.2rem;
+  line-height: 1.2;
   margin-bottom: 10px;
 }
 
 .statut-item p {
   margin: 0;
   color: var(--ep-ink-soft);
-  font-size: 0.98rem;
+  font-size: 1rem;
   line-height: 1.72;
 }
 
 .statut-note {
   padding: 16px 28px 22px;
-  border-top: 1px solid rgba(16, 24, 39, 0.14);
+  border-top: 1px solid var(--ep-line);
   font-size: 13px;
   line-height: 1.68;
   color: var(--ep-ink-muted);
+  background: #fbf8f3;
 }
 
-/* ---------- POURQUOI VOUS ---------- */
-
-#pourquoi-vous-home .section-head {
-  margin-bottom: 30px;
-}
+/* ---------- TRAMES 3 BLOCS ---------- */
 
 .three-col-frame {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border: 1px solid rgba(16, 24, 39, 0.14);
-  background: #fff;
+  border: 1px solid var(--ep-line);
+  background: var(--ep-white);
 }
 
 .three-col-frame .card {
   border: 0;
-  border-right: 1px solid rgba(16, 24, 39, 0.14);
+  border-right: 1px solid var(--ep-line);
 }
 
 .three-col-frame .card:last-child {
   border-right: 0;
 }
 
-/* ---------- DISPOSITIF ---------- */
-
-#dispositif-home .section-head {
-  margin-bottom: 30px;
+/* pourquoi vous */
+#pourquoi-vous-home .three-col-frame .card:nth-child(1) {
+  background: var(--ep-white);
 }
+#pourquoi-vous-home .three-col-frame .card:nth-child(2) {
+  background: #fbf8f3;
+}
+#pourquoi-vous-home .three-col-frame .card:nth-child(3) {
+  background: var(--ep-white);
+}
+
+/* ce que cela demande */
+#exigences-home .three-col-frame .card:nth-child(1) {
+  background: var(--ep-white);
+}
+#exigences-home .three-col-frame .card:nth-child(2) {
+  background: #fbf8f3;
+}
+#exigences-home .three-col-frame .card:nth-child(3) {
+  background: var(--ep-white);
+}
+
+#exigences-home .three-col-frame .card::before,
+#pourquoi-vous-home .three-col-frame .card::before {
+  background: var(--ep-navy);
+}
+
+/* ---------- 4 ÉTAPES ---------- */
 
 .four-step-frame {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border: 1px solid rgba(16, 24, 39, 0.14);
-  background: #fff;
+  border: 1px solid var(--ep-line);
+  background: var(--ep-white);
 }
 
 .four-step {
   position: relative;
-  padding: 28px 24px 24px;
-  border-right: 1px solid rgba(16, 24, 39, 0.14);
+  padding: 30px 24px 24px;
+  border-right: 1px solid var(--ep-line);
+  background: var(--ep-white);
+}
+
+.four-step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--ep-navy);
 }
 
 .four-step:last-child {
   border-right: 0;
 }
 
+.four-step:nth-child(4) {
+  background: #fbf8f3;
+}
+
 .four-step__index {
   display: inline-block;
   margin-bottom: 14px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  line-height: 1.3;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ep-bronze);
+  color: var(--ep-ochre-deep);
 }
 
 .four-step h3 {
-  font-family: var(--font-display);
-  font-size: 1.18rem;
-  line-height: 1.2;
+  font-size: 1.24rem;
+  line-height: 1.18;
   margin-bottom: 10px;
 }
 
 .four-step p {
   margin: 0;
   color: var(--ep-ink-soft);
-  font-size: 0.98rem;
+  font-size: 1rem;
   line-height: 1.72;
 }
 
@@ -261,35 +292,31 @@
 
 .split-note-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1.12fr 0.88fr;
   gap: 24px;
 }
 
-.split-note-grid .card {
-  min-height: 100%;
-}
-
 .pull-quote {
-  border: 1px solid rgba(16, 24, 39, 0.14);
-  background: #fff;
-  padding: 28px 26px 24px;
+  border: 1px solid var(--ep-line);
+  padding: 30px 26px 24px;
+  background: var(--ep-navy);
 }
 
 .pull-quote h3 {
-  font-family: var(--font-display);
-  font-size: 1.26rem;
-  line-height: 1.22;
+  font-size: 1.28rem;
+  line-height: 1.2;
   margin-bottom: 14px;
+  color: #ffffff;
 }
 
 .pull-quote p {
-  color: var(--ep-ink-soft);
-  font-size: 0.98rem;
-  line-height: 1.74;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1rem;
+  line-height: 1.76;
   margin: 0;
 }
 
-/* ---------- SELECTION ---------- */
+/* ---------- SÉLECTION ---------- */
 
 .selection-grid {
   display: grid;
@@ -297,8 +324,18 @@
   gap: 20px;
 }
 
-.selection-grid .card::before {
-  background: var(--ep-bronze);
+#selection-home .selection-grid .card:nth-child(1) {
+  background: var(--ep-white);
+}
+#selection-home .selection-grid .card:nth-child(2) {
+  background: #fbf8f3;
+}
+#selection-home .selection-grid .card:nth-child(3) {
+  background: var(--ep-white);
+}
+
+#selection-home .selection-grid .card::before {
+  background: var(--ep-navy);
 }
 
 .selection-subnote {
@@ -309,10 +346,10 @@
   color: var(--ep-ink-muted);
 }
 
-/* ---------- CADRE EDITORIAL ---------- */
+/* ---------- CADRE ÉDITORIAL ---------- */
 
-#cadre-editorial-home .section-head {
-  margin-bottom: 28px;
+#cadre-editorial-home {
+  background: var(--ep-paper);
 }
 
 .cadre-copy {
@@ -325,28 +362,30 @@
 .cadre-copy p {
   margin: 0;
   color: var(--ep-ink-soft);
-  font-size: 0.98rem;
-  line-height: 1.74;
+  font-size: 1rem;
+  line-height: 1.76;
 }
 
 .media-logos-band {
   margin-top: 28px;
 }
 
+/* très important : matière blanche */
 .media-logos {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border: 1px solid rgba(16, 24, 39, 0.14);
-  background: #fff;
+  border: 1px solid var(--ep-line);
+  background: #ffffff;
 }
 
 .media-logo-item {
-  min-height: 108px;
+  min-height: 116px;
   padding: 24px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid rgba(16, 24, 39, 0.14);
+  border-right: 1px solid var(--ep-line);
+  background: #ffffff;
 }
 
 .media-logo-item:last-child {
@@ -357,7 +396,7 @@
   max-width: 130px;
   max-height: 34px;
   object-fit: contain;
-  opacity: 0.96;
+  opacity: 0.97;
 }
 
 .cadre-note {
@@ -372,38 +411,33 @@
 /* ---------- CONVERSATION ---------- */
 
 .conversation-shell {
-  border: 1px solid rgba(16, 24, 39, 0.14);
-  background: #fff;
+  border: 1px solid var(--ep-line);
+  background: var(--ep-white);
 }
 
 .conversation-shell__top {
   padding: 30px 30px 22px;
-  border-bottom: 1px solid rgba(16, 24, 39, 0.14);
+  border-bottom: 1px solid var(--ep-line);
+  background: var(--ep-white);
 }
 
 .conversation-shell__meta {
   margin-bottom: 12px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  line-height: 1.3;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ep-taupe);
+  color: #7a6750;
 }
 
 .conversation-shell__title {
-  font-family: var(--font-display);
-  font-size: clamp(1.55rem, 2.2vw, 2rem);
-  line-height: 1.08;
+  font-size: clamp(1.7rem, 2.3vw, 2.3rem);
+  line-height: 1.06;
   margin-bottom: 14px;
   text-wrap: balance;
 }
 
 .conversation-shell__intro {
-  max-width: 860px;
+  max-width: 900px;
   color: var(--ep-ink-soft);
-  font-size: 1rem;
-  line-height: 1.74;
+  font-size: 1.02rem;
+  line-height: 1.76;
   margin-bottom: 0;
 }
 
@@ -413,26 +447,42 @@
 }
 
 .conversation-angle-card {
-  padding: 24px 24px 22px;
-  border-right: 1px solid rgba(16, 24, 39, 0.14);
-  border-top: 1px solid rgba(16, 24, 39, 0.14);
+  position: relative;
+  padding: 28px 24px 22px;
+  border-right: 1px solid var(--ep-line);
+  border-top: 1px solid var(--ep-line);
+  background: var(--ep-white);
+}
+
+.conversation-angle-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--ep-ochre);
 }
 
 .conversation-angle-card:nth-child(2n) {
   border-right: 0;
 }
 
+.conversation-angle-card:nth-child(2),
+.conversation-angle-card:nth-child(4) {
+  background: #fbf8f3;
+}
+
 .conversation-angle-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.12rem;
-  line-height: 1.22;
+  font-size: 1.24rem;
+  line-height: 1.2;
   margin-bottom: 10px;
 }
 
 .conversation-angle-card__function {
   margin-bottom: 10px;
   color: var(--ep-ink-soft);
-  font-size: 0.98rem;
+  font-size: 1rem;
   line-height: 1.72;
 }
 
@@ -445,15 +495,17 @@
 
 .conversation-links {
   padding: 18px 30px 22px;
-  border-top: 1px solid rgba(16, 24, 39, 0.14);
+  border-top: 1px solid var(--ep-line);
+  background: #fbf8f3;
 }
 
-/* ---------- THEMES ---------- */
+/* ---------- THÈMES ---------- */
 
 .theme-nav {
-  border-top: 1px solid rgba(16, 24, 39, 0.14);
-  border-bottom: 1px solid rgba(16, 24, 39, 0.14);
+  border-top: 2px solid var(--ep-line-strong);
+  border-bottom: 1px solid var(--ep-line);
   padding: 14px 0;
+  background: transparent;
 }
 
 .theme-nav__list {
@@ -488,7 +540,7 @@
 }
 
 .theme-nav__link:hover::after {
-  background: rgba(168, 132, 73, 0.8);
+  background: rgba(194, 154, 87, 0.9);
 }
 
 .theme-preview-grid {
@@ -496,6 +548,22 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+}
+
+.theme-preview-card {
+  background: var(--ep-white);
+}
+
+.theme-preview-card:nth-child(2) {
+  background: #fbf8f3;
+}
+
+.theme-preview-card:nth-child(3) {
+  background: var(--ep-white);
+}
+
+.theme-preview-card::before {
+  background: var(--ep-ochre);
 }
 
 .theme-preview-card h3 {
@@ -515,10 +583,6 @@
   position: relative;
 }
 
-.theme-preview-card__links a:hover {
-  color: var(--ep-ink-soft);
-}
-
 /* ---------- DOCTRINE ---------- */
 
 .doctrine-grid {
@@ -528,23 +592,45 @@
 }
 
 .doctrine-panel {
-  border: 1px solid rgba(16, 24, 39, 0.14);
-  background: #fff;
-  padding: 28px 26px 24px;
+  border: 1px solid var(--ep-line);
+  padding: 30px 26px 24px;
+  background: var(--ep-white);
+}
+
+.doctrine-panel:first-child {
+  background: var(--ep-white);
+}
+
+.doctrine-panel:last-child {
+  background: var(--ep-navy);
 }
 
 .doctrine-panel h3 {
-  font-family: var(--font-display);
-  font-size: 1.24rem;
-  line-height: 1.22;
+  font-size: 1.34rem;
+  line-height: 1.2;
   margin-bottom: 14px;
 }
 
+.doctrine-panel:first-child h3 {
+  color: var(--ep-ink);
+}
+
+.doctrine-panel:last-child h3 {
+  color: #ffffff;
+}
+
 .doctrine-panel p {
-  color: var(--ep-ink-soft);
-  font-size: 0.98rem;
-  line-height: 1.74;
+  font-size: 1rem;
+  line-height: 1.76;
   margin: 0;
+}
+
+.doctrine-panel:first-child p {
+  color: var(--ep-ink-soft);
+}
+
+.doctrine-panel:last-child p {
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .doctrine-links {
@@ -557,35 +643,50 @@
 .lecture-frame {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border: 1px solid rgba(16, 24, 39, 0.14);
-  background: #fff;
+  border: 1px solid var(--ep-line);
+  background: var(--ep-white);
 }
 
 .lecture-step {
-  padding: 28px 24px 24px;
-  border-right: 1px solid rgba(16, 24, 39, 0.14);
+  position: relative;
+  padding: 30px 24px 24px;
+  border-right: 1px solid var(--ep-line);
+  background: var(--ep-white);
+}
+
+.lecture-step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--ep-navy);
 }
 
 .lecture-step:last-child {
   border-right: 0;
 }
 
+.lecture-step:nth-child(2) {
+  background: #fbf8f3;
+}
+
 .lecture-step h3 {
-  font-family: var(--font-display);
-  font-size: 1.18rem;
-  line-height: 1.22;
+  font-size: 1.24rem;
+  line-height: 1.2;
   margin-bottom: 10px;
 }
 
 .lecture-step p {
   margin: 0;
   color: var(--ep-ink-soft);
-  font-size: 0.98rem;
+  font-size: 1rem;
   line-height: 1.72;
 }
 
 .lecture-note {
-  max-width: 880px;
+  max-width: 900px;
   margin: 18px auto 0;
   text-align: center;
   font-size: 13px;
@@ -593,7 +694,7 @@
   color: var(--ep-ink-muted);
 }
 
-/* ---------- ACCES ---------- */
+/* ---------- ACCÈS ---------- */
 
 .access-grid {
   display: grid;
@@ -605,24 +706,44 @@
   min-height: 100%;
 }
 
-.access-grid .card:nth-child(1)::before {
-  background: var(--ep-bronze);
+.access-grid .card:first-child {
+  background: var(--ep-white);
 }
 
-.access-grid .card:nth-child(2)::before {
-  background: var(--ep-brown-line);
+.access-grid .card:last-child {
+  background: var(--ep-navy);
 }
 
-.access-grid .card h3 {
-  margin-bottom: 12px;
+.access-grid .card:first-child h3 {
+  color: var(--ep-ink);
 }
 
-.access-grid .card p {
-  margin-bottom: 18px;
+.access-grid .card:last-child h3 {
+  color: #ffffff;
+}
+
+.access-grid .card:first-child p {
+  color: var(--ep-ink-soft);
+}
+
+.access-grid .card:last-child p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.access-grid .card:first-child::before {
+  background: var(--ep-ochre);
+}
+
+.access-grid .card:last-child::before {
+  background: var(--ep-ochre);
+}
+
+.access-grid .card:last-child .link {
+  color: #ffffff;
 }
 
 .access-note {
-  max-width: 900px;
+  max-width: 920px;
   margin: 18px auto 0;
   text-align: center;
   font-size: 13px;
@@ -642,7 +763,7 @@
   }
 
   .four-step:nth-child(n+3) {
-    border-top: 1px solid rgba(16, 24, 39, 0.14);
+    border-top: 1px solid var(--ep-line);
   }
 
   .media-logos {
@@ -654,7 +775,7 @@
   }
 
   .media-logo-item:nth-child(-n+2) {
-    border-bottom: 1px solid rgba(16, 24, 39, 0.14);
+    border-bottom: 1px solid var(--ep-line);
   }
 
   .theme-preview-grid,
@@ -679,13 +800,17 @@
   .three-col-frame .card,
   .lecture-step {
     border-right: 0;
-    border-bottom: 1px solid rgba(16, 24, 39, 0.14);
+    border-bottom: 1px solid var(--ep-line);
   }
 
   .statut-item:last-child,
   .three-col-frame .card:last-child,
   .lecture-step:last-child {
     border-bottom: 0;
+  }
+
+  .access-grid .card:last-child {
+    background: var(--ep-navy);
   }
 }
 
@@ -727,7 +852,7 @@
   .cadre-note,
   .selection-subnote,
   .lecture-note,
-  .access-note { 
+  .access-note {
     text-align: left;
   }
 
@@ -736,143 +861,10 @@
     padding-left: 20px;
     padding-right: 20px;
   }
-}
-/* ---------- PATCH V3 / HOME ---------- */
 
-/* 1. séparateurs de sections plus visibles */
-.home-page .home-section::before {
-  height: 2px;
-  background: rgba(16, 40, 69, 0.22);
-}
-
-/* hero mieux rattaché au reste */
-#hero-home {
-  border-bottom: 2px solid rgba(16, 40, 69, 0.22);
-}
-
-/* 2. bordures des grands blocs plus présentes */
-.statut-block,
-.three-col-frame,
-.four-step-frame,
-.conversation-shell,
-.media-logos,
-.lecture-frame,
-.theme-nav,
-.doctrine-panel,
-.pull-quote,
-.selection-grid .card,
-.access-grid .card {
-  border-color: rgba(16, 40, 69, 0.18);
-}
-
-.statut-item,
-.three-col-frame .card,
-.four-step,
-.conversation-angle-card,
-.media-logo-item,
-.lecture-step {
-  border-color: rgba(16, 40, 69, 0.18);
-}
-
-/* 3. suppression des dernières barres marron verticales */
-.selection-grid .card::before,
-.access-grid .card::before {
-  display: none;
-}
-
-/* 4. si vous voulez garder un accent visuel,
-   on le passe en filet supérieur discret sur certains blocs */
-.selection-grid .card,
-.access-grid .card,
-.theme-preview-card {
-  box-shadow: inset 0 2px 0 rgba(16, 40, 69, 0.16);
-}
-
-/* 5. bloc Eclaireur : un peu plus institutionnel */
-.statut-block {
-  border-width: 1px;
-}
-
-.statut-block__header,
-.statut-note {
-  border-color: rgba(16, 40, 69, 0.18);
-}
-
-/* 6. cadre éditorial : bande logos plus nette */
-.media-logos {
-  border-width: 1px;
-}
-
-.media-logo-item {
-  min-height: 112px;
-}
-
-/* 7. conversation : meilleur maintien visuel */
-.conversation-shell__top,
-.conversation-links {
-  border-color: rgba(16, 40, 69, 0.18);
-}
-
-/* 8. navigation thématique : plus Brookings dans l’esprit */
-.theme-nav {
-  border-top: 2px solid rgba(16, 40, 69, 0.18);
-  border-bottom: 1px solid rgba(16, 40, 69, 0.18);
-}
-
-/* 9. lecture de saison : mieux tenue */
-.lecture-note,
-.selection-subnote,
-.cadre-note,
-.access-note {
-  color: #667085;
-}
-
-/* 10. bloc Accès : un peu plus ferme visuellement */
-.access-grid .card {
-
-  border-width: 1px;
-}
-
-/* 11. responsive */
-@media (max-width: 780px) {
-  .home-page .home-section::before {
-    width: min(calc(100% - 32px), var(--container));
+  .statut-block__header,
+  .statut-note {
+    padding-left: 20px;
+    padding-right: 20px;
   }
-}
-/* variations subtiles sur les lignes de 3 blocs */
-
-#pourquoi-vous-home .three-col-frame .card:nth-child(1) {
-  background: #ffffff;
-}
-
-#pourquoi-vous-home .three-col-frame .card:nth-child(2) {
-  background: #fcfaf7;
-}
-
-#pourquoi-vous-home .three-col-frame .card:nth-child(3) {
-  background: #eaf1f8;
-}
-
-#selection-home .selection-grid .card:nth-child(1) {
-  background: #fcfaf7;
-}
-
-#selection-home .selection-grid .card:nth-child(2) {
-  background: #ffffff;
-}
-
-#selection-home .selection-grid .card:nth-child(3) {
-  background: #f3f6fa;
-}
-
-#themes-home .theme-preview-grid .card:nth-child(1) {
-  background: #ffffff;
-}
-
-#themes-home .theme-preview-grid .card:nth-child(2) {
-  background: #f3f6fa;
-}
-
-#themes-home .theme-preview-grid .card:nth-child(3) {
-  background: #eaf1f8;
 }
