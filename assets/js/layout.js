@@ -1,16 +1,11 @@
 async function loadPartial(selector, path) {
   const mountPoint = document.querySelector(selector);
 
-  if (!mountPoint) {
-    return null;
-  }
+  if (!mountPoint) return null;
 
   try {
     const response = await fetch(path, { cache: "no-cache" });
-
-    if (!response.ok) {
-      throw new Error(`Impossible de charger ${path}`);
-    }
+    if (!response.ok) throw new Error(`Impossible de charger ${path}`);
 
     const html = await response.text();
     mountPoint.innerHTML = html;
@@ -19,21 +14,6 @@ async function loadPartial(selector, path) {
   } catch (error) {
     console.error(error);
     return null;
-  }
-}
-
-async function loadCookieBanner() {
-  try {
-    const response = await fetch("partials/cookie-banner.html", { cache: "no-cache" });
-
-    if (!response.ok) {
-      throw new Error("Impossible de charger partials/cookie-banner.html");
-    }
-
-    const html = await response.text();
-    document.body.insertAdjacentHTML("beforeend", html);
-  } catch (error) {
-    console.error(error);
   }
 }
 
@@ -50,10 +30,7 @@ function markActiveLinks() {
     pathname === "les-eclaireurs.html" ||
     pathname === "les-architectes.html";
 
-  const desktopLinks = document.querySelectorAll(".desktop-editorial-nav__link");
-  const mobileLinks = document.querySelectorAll(".mobile-top-link, .mobile-secondary-link");
-
-  desktopLinks.forEach((link) => {
+  document.querySelectorAll(".desktop-editorial-nav__link").forEach((link) => {
     const href = link.getAttribute("href");
     if (!href) return;
 
@@ -62,7 +39,7 @@ function markActiveLinks() {
     }
   });
 
-  mobileLinks.forEach((link) => {
+  document.querySelectorAll(".mobile-top-link, .mobile-secondary-link").forEach((link) => {
     const href = link.getAttribute("href");
     if (!href) return;
 
@@ -77,112 +54,149 @@ function markActiveLinks() {
 function bindMobileMenu() {
   const toggle = document.querySelector(".menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
-  const closeButton = document.querySelector(".mobile-menu-close");
-  const mobileLinks = document.querySelectorAll(".mobile-top-link, .mobile-secondary-link");
 
-  if (!toggle || !mobileMenu) {
-    return;
-  }
+  if (!toggle || !mobileMenu) return;
 
   const openMenu = () => {
     toggle.setAttribute("aria-expanded", "true");
-    mobileMenu.setAttribute("aria-hidden", "false");
     mobileMenu.classList.add("is-open");
     document.body.style.overflow = "hidden";
   };
 
   const closeMenu = () => {
     toggle.setAttribute("aria-expanded", "false");
-    mobileMenu.setAttribute("aria-hidden", "true");
     mobileMenu.classList.remove("is-open");
     document.body.style.overflow = "";
   };
 
   toggle.addEventListener("click", () => {
     const expanded = toggle.getAttribute("aria-expanded") === "true";
-    if (expanded) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
-  });
-
-  if (closeButton) {
-    closeButton.addEventListener("click", closeMenu);
-  }
-
-  mobileLinks.forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && mobileMenu.classList.contains("is-open")) {
-      closeMenu();
-    }
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 1024 && mobileMenu.classList.contains("is-open")) {
-      closeMenu();
-    }
+    expanded ? closeMenu() : openMenu();
   });
 }
 
 function bindHeaderScroll() {
   const header = document.querySelector(".site-header");
-
-  if (!header) {
-    return;
-  }
+  if (!header) return;
 
   const onScroll = () => {
-    if (window.scrollY > 24) {
-      header.classList.add("is-scrolled");
-    } else {
-      header.classList.remove("is-scrolled");
-    }
+    header.classList.toggle("is-scrolled", window.scrollY > 24);
   };
 
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 }
 
+/* =========================
+   COOKIE SYSTEM
+========================= */
+
+function initCookies() {
+  const STORAGE_KEY = "enplateau_cookie_preferences_v1";
+
+  const overlay = document.getElementById("cookie-overlay");
+  const modal = document.getElementById("cookie-modal");
+
+  if (!overlay || !modal) return;
+
+  const customizePanel = document.getElementById("cookie-customize-panel");
+  const analyticsToggle = document.getElementById("cookie-analytics");
+
+  const acceptBtn = document.getElementById("cookie-accept");
+  const refuseBtn = document.getElementById("cookie-refuse");
+  const customizeBtn = document.getElementById("cookie-customize");
+
+  function savePreferences(p) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(p));
+  }
+
+  function getPreferences() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY));
+    } catch {
+      return null;
+    }
+  }
+
+  function hide() {
+    overlay.hidden = true;
+    modal.hidden = true;
+    document.documentElement.classList.remove("cookies-open");
+    document.body.classList.remove("cookies-open");
+  }
+
+  function show() {
+    overlay.hidden = false;
+    modal.hidden = false;
+    document.documentElement.classList.add("cookies-open");
+    document.body.classList.add("cookies-open");
+  }
+
+  function apply(p) {
+    if (!p) return;
+
+    if (p.analytics) {
+      console.log("GA activé");
+      // 👉 ici tu pourras injecter Google Analytics plus tard
+    }
+  }
+
+  function setConsent(p) {
+    savePreferences(p);
+    apply(p);
+    hide();
+  }
+
+  customizeBtn?.addEventListener("click", () => {
+    const isHidden = customizePanel.hidden;
+    customizePanel.hidden = !isHidden;
+    customizeBtn.textContent = isHidden ? "Masquer les options" : "Personnaliser";
+  });
+
+  acceptBtn?.addEventListener("click", () => {
+    const analytics = !customizePanel.hidden && analyticsToggle
+      ? analyticsToggle.checked
+      : true;
+
+    setConsent({
+      necessary: true,
+      analytics,
+      updatedAt: new Date().toISOString()
+    });
+  });
+
+  refuseBtn?.addEventListener("click", () => {
+    setConsent({
+      necessary: true,
+      analytics: false
+    });
+  });
+
+  window.openCookiePreferences = function () {
+    show();
+    customizePanel.hidden = false;
+  };
+
+  const existing = getPreferences();
+
+  if (!existing) show();
+  else apply(existing);
+}
+
+/* ========================= */
+
 async function initLayout() {
   await Promise.all([
     loadPartial("#site-header", "partials/header.html"),
     loadPartial("#site-mobile-menu", "partials/mobile-menu.html"),
-    loadPartial("#site-footer", "partials/footer.html")
+    loadPartial("#site-footer", "partials/footer.html"),
+    loadPartial("#cookie-container", "partials/cookies.html") // 🔥 AJOUT
   ]);
-
-  await loadCookieBanner();
 
   markActiveLinks();
   bindMobileMenu();
   bindHeaderScroll();
-
-  if (typeof initReveal === "function") {
-    try {
-      initReveal();
-    } catch (error) {
-      console.error("Reveal init failed:", error);
-    }
-  }
-
-  if (typeof initConversationToggles === "function") {
-    try {
-      initConversationToggles();
-    } catch (error) {
-      console.error("Conversation toggle init failed:", error);
-    }
-  }
-
-  if (typeof initCookieBanner === "function") {
-    try {
-      initCookieBanner();
-    } catch (error) {
-      console.error("Cookie banner init failed:", error);
-    }
-  }
+  initCookies(); // 🔥 AJOUT
 }
 
 document.addEventListener("DOMContentLoaded", initLayout);
