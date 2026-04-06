@@ -1,7 +1,7 @@
 /* =========================================================
    EN PLATEAU — HOME.CSS
    Direction : éditorial premium, sobre, non-SaaS
-   Hero resserré, cartes plus sèches, rythme plus dense
+   Hero clair + séquences sombres structurantes
    ========================================================= */
 
 /* ---------- BASE HOME ---------- */
@@ -129,7 +129,27 @@
   display: none;
 }
 
-/* ---------- STATUT / ÉCLAIREUR (laissé compatible si encore présent) ---------- */
+/* ---------- INTRO SOMBRE ---------- */
+
+#intro-en-plateau {
+  background: #111111;
+}
+
+#intro-en-plateau::before {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#intro-en-plateau .section-head h2,
+#intro-en-plateau .section-intro,
+#intro-en-plateau .section-footnote {
+  color: #ffffff;
+}
+
+#intro-en-plateau .section-intro {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* ---------- STATUT / ÉCLAIREUR (compatibilité) ---------- */
 
 #eclaireur-home {
   padding-top: 56px;
@@ -298,33 +318,6 @@
   line-height: 1.68;
 }
 
-/* version noire ciblée pour la section dispositif */
-.four-step-frame--dark {
-  background: #111111;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.four-step-frame--dark .four-step {
-  background: #111111;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.four-step-frame--dark .four-step:last-child {
-  border-right: 0;
-}
-
-.four-step-frame--dark .four-step__index {
-  color: rgba(255, 255, 255, 0.56);
-}
-
-.four-step-frame--dark .four-step h3 {
-  color: #ffffff;
-}
-
-.four-step-frame--dark .four-step p {
-  color: rgba(255, 255, 255, 0.76);
-}
-
 /* ---------- EXIGENCES ---------- */
 
 .split-note-grid {
@@ -431,6 +424,54 @@
   color: var(--ep-ink-muted);
 }
 
+/* ---------- CONVERSATIONS SOMBRES ---------- */
+
+#conversations-home {
+  background: #111111;
+}
+
+#conversations-home::before {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#conversations-home .section-head h2,
+#conversations-home .section-intro,
+#conversations-home .section-footnote,
+#conversations-home .selection-subnote {
+  color: #ffffff;
+}
+
+#conversations-home .section-intro,
+#conversations-home .selection-subnote {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+#conversations-home .theme-preview-card {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#conversations-home .theme-preview-card h3 {
+  color: #ffffff;
+}
+
+#conversations-home .theme-preview-card p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+#conversations-home .theme-preview-card__links a,
+#conversations-home .programme-link-row .link {
+  color: #f4e9dc;
+}
+
+#conversations-home .link::after {
+  background: rgba(255, 255, 255, 0.34);
+}
+
+#conversations-home .link:hover::after {
+  background: rgba(255, 255, 255, 0.88);
+}
+
 /* ---------- CONVERSATION ---------- */
 
 #conversation-home {
@@ -511,69 +552,7 @@
   background: rgba(255, 250, 244, 0.58);
 }
 
-/* version noire ciblée pour le tableau conversation */
-.conversation-shell--dark {
-  background: #111111;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.conversation-shell--dark .conversation-shell__top {
-  background: #111111;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.conversation-shell--dark .conversation-shell__meta {
-  color: rgba(255, 255, 255, 0.56);
-}
-
-.conversation-shell--dark .conversation-shell__title {
-  color: #ffffff;
-}
-
-.conversation-shell--dark .conversation-shell__intro {
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.conversation-shell--dark .conversation-angle-card {
-  background: #1a1a1a;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.conversation-shell--dark .conversation-angle-card:nth-child(2n) {
-  border-right: 0;
-}
-
-.conversation-shell--dark .conversation-angle-card h3 {
-  color: #ffffff;
-}
-
-.conversation-shell--dark .conversation-angle-card__function {
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.conversation-shell--dark .conversation-angle-card__roles {
-  color: rgba(255, 255, 255, 0.56);
-}
-
-.conversation-shell--dark .conversation-links {
-  background: #111111;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.conversation-shell--dark .link {
-  color: #f4e9dc;
-}
-
-.conversation-shell--dark .link::after {
-  background: rgba(255, 255, 255, 0.34);
-}
-
-.conversation-shell--dark .link:hover::after {
-  background: rgba(255, 255, 255, 0.88);
-}
-
-/* ---------- THÈMES / CONVERSATIONS SUR LA HOME ---------- */
+/* ---------- THÈMES / CARTES ---------- */
 
 .theme-nav {
   border-top: 1px solid var(--ep-line);
@@ -683,46 +662,59 @@
   justify-content: center;
 }
 
-/* ---------- LECTURE DE SAISON ---------- */
+/* ---------- VALEUR SOMBRE ---------- */
 
-#lecture-saison-home {
+#valeur-home {
   background: var(--ep-charcoal);
 }
 
-.lecture-frame {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border: 1px solid var(--ep-dark-line);
+#valeur-home::before {
+  background: var(--ep-dark-line);
+}
+
+#valeur-home .section-head h2,
+#valeur-home .section-intro,
+#valeur-home .section-footnote {
+  color: #ffffff;
+}
+
+#valeur-home .section-intro,
+#valeur-home .section-footnote {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+#valeur-home .three-col-frame {
   background: transparent;
+  border-color: var(--ep-dark-line);
 }
 
-.lecture-step {
-  position: relative;
-  padding: 24px 20px 18px;
-  border-right: 1px solid var(--ep-dark-line);
+#valeur-home .three-col-frame .card {
   background: rgba(255, 255, 255, 0.02);
+  border-right: 1px solid var(--ep-dark-line);
 }
 
-.lecture-step:last-child {
+#valeur-home .three-col-frame .card:last-child {
   border-right: 0;
 }
 
-.lecture-step h3 {
-  font-size: 1.12rem;
-  line-height: 1.18;
-  margin-bottom: 8px;
+#valeur-home .card h3 {
+  color: #ffffff;
 }
 
-.lecture-step p {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.68;
+#valeur-home .card p {
+  color: rgba(255, 255, 255, 0.78);
 }
 
-.lecture-note {
-  max-width: 840px;
-  margin: 14px auto 0;
-  text-align: center;
+#valeur-home .link {
+  color: #f4e9dc;
+}
+
+#valeur-home .link::after {
+  background: rgba(255, 255, 255, 0.34);
+}
+
+#valeur-home .link:hover::after {
+  background: rgba(255, 255, 255, 0.88);
 }
 
 /* ---------- ACCÈS ---------- */
@@ -755,28 +747,6 @@
   margin: 14px auto 0;
   text-align: center;
   color: var(--ep-ink-muted);
-}
-
-/* ---------- DARK SECTION STRUCTURE HELPERS ---------- */
-
-.home-section--dark .three-col-frame,
-.home-section--dark .four-step-frame,
-.home-section--dark .lecture-frame,
-.home-section--dark .conversation-shell,
-.home-section--dark .media-logos {
-  background: transparent;
-  border-color: var(--ep-dark-line);
-}
-
-.home-section--dark .three-col-frame .card,
-.home-section--dark .four-step,
-.home-section--dark .lecture-step,
-.home-section--dark .conversation-angle-card,
-.home-section--dark .media-logo-item,
-.home-section--dark .conversation-shell__top,
-.home-section--dark .conversation-links {
-  background: rgba(255, 255, 255, 0.02);
-  border-color: var(--ep-dark-line);
 }
 
 /* ---------- PETITS BLOCS TEXTE COURT ---------- */
@@ -817,10 +787,6 @@
     border-top: 1px solid var(--ep-line);
   }
 
-  .four-step-frame--dark .four-step:nth-child(n+3) {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
   .media-logos {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -837,7 +803,6 @@
 @media (max-width: 1080px) {
   .statut-grid,
   .three-col-frame,
-  .lecture-frame,
   .selection-grid,
   .doctrine-grid,
   .access-grid,
@@ -848,7 +813,6 @@
 
   .statut-item,
   .three-col-frame .card,
-  .lecture-step,
   .four-step,
   .theme-preview-card {
     border-right: 0;
@@ -857,26 +821,18 @@
 
   .statut-item:last-child,
   .three-col-frame .card:last-child,
-  .lecture-step:last-child,
   .four-step:last-child,
   .theme-preview-card:last-child {
     border-bottom: 0;
   }
 
-  .four-step-frame--dark .four-step {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  #valeur-home .three-col-frame .card {
+    border-right: 0;
+    border-bottom: 1px solid var(--ep-dark-line);
   }
 
-  .four-step-frame--dark .four-step:last-child {
+  #valeur-home .three-col-frame .card:last-child {
     border-bottom: 0;
-  }
-
-  #lecture-saison-home .lecture-step {
-    border-right: 0;
-  }
-
-  .conversation-shell--dark .conversation-angle-card {
-    border-right: 0;
   }
 }
 
@@ -908,14 +864,6 @@
     display: none;
   }
 
-  .conversation-angle-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .conversation-angle-card {
-    border-right: 0;
-  }
-
   .theme-nav__list {
     justify-content: flex-start;
   }
@@ -926,15 +874,8 @@
   .cadre-copy,
   .cadre-note,
   .selection-subnote,
-  .lecture-note,
   .access-note {
     text-align: left;
-  }
-
-  .conversation-shell__top,
-  .conversation-links {
-    padding-left: 18px;
-    padding-right: 18px;
   }
 
   .statut-block__header,
