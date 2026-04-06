@@ -1209,9 +1209,174 @@
   #dispositif-content .page-sidebar a:hover,
   #dispositif-content .page-sidebar a.is-active {
     color: var(--ep-ink);
+
+
   }
 
   #dispositif-content .page-sidebar a.is-active {
+    padding-left: 0;
+    border-left: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+/* =========================================================
+   DOSSIER PAGE SPECIFIC
+   ========================================================= */
+
+#hero-dossier .page-hero-inner {
+  max-width: 980px;
+}
+
+#dossier-content {
+  background: var(--ep-paper);
+}
+
+/* ---------- MENU LATÉRAL DOSSIER ---------- */
+
+#dossier-content .page-sidebar {
+  background: rgba(255, 250, 244, 0.78);
+  border: 1px solid var(--ep-line);
+  padding: 18px 16px;
+}
+
+#dossier-content .page-sidebar nav {
+  border-top: 0;
+  padding-top: 0;
+}
+
+#dossier-content .page-sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+
+#dossier-content .page-sidebar li + li {
+  margin-top: 6px;
+}
+
+#dossier-content .page-sidebar a {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  max-width: none;
+  padding-left: 10px;
+  color: var(--ep-ink-soft);
+}
+
+#dossier-content .page-sidebar a:hover {
+  color: var(--ep-ink);
+}
+
+#dossier-content .page-sidebar a.is-active {
+  color: var(--ep-ink);
+  font-weight: 600;
+  border-left: 2px solid var(--ep-accent);
+  padding-left: 12px;
+}
+
+/* ---------- PRINCIPE ---------- */
+
+#principe-dossier .editorial-panel {
+  margin-top: 8px;
+}
+
+#principe-dossier .programme-link-row {
+  margin-top: 24px;
+}
+
+/* ---------- CE QUE LE DOSSIER PERMET ---------- */
+
+#ce-que-le-dossier-permet .programme-value {
+  margin-top: 8px;
+}
+
+/* hiérarchie douce (gris progressif) */
+#ce-que-le-dossier-permet .programme-value__item:nth-child(1) h3 {
+  color: rgba(20, 20, 20, 0.55);
+}
+
+#ce-que-le-dossier-permet .programme-value__item:nth-child(2) h3 {
+  color: rgba(20, 20, 20, 0.72);
+}
+
+#ce-que-le-dossier-permet .programme-value__item:nth-child(3) h3 {
+  color: rgba(20, 20, 20, 0.85);
+}
+
+#ce-que-le-dossier-permet .programme-value__item:nth-child(4) h3 {
+  color: rgba(20, 20, 20, 0.96);
+}
+
+/* ---------- CADRE ---------- */
+
+#ce-que-cela-ne-signifie-pas .programme-list {
+  margin-top: 8px;
+}
+
+/* ---------- SI NON APPROCHÉ ---------- */
+
+#si-vous-n-avez-pas-ete-approche .editorial-panel {
+  margin-top: 8px;
+}
+
+#si-vous-n-avez-pas-ete-approche .programme-link-row {
+  margin-top: 20px;
+}
+
+/* ---------- ACCÈS FINAL ---------- */
+
+#acces-dossier .programme-access {
+  margin-top: 8px;
+}
+
+#acces-dossier .programme-access__item {
+  background: rgba(255, 250, 244, 0.78);
+}
+
+#acces-dossier .programme-access__item h3 {
+  margin-bottom: 12px;
+}
+
+#acces-dossier .programme-access__item .link {
+  display: inline-flex;
+  margin-top: 8px;
+}
+
+#acces-dossier .section-footnote {
+  margin-top: 24px;
+}
+
+/* ---------- SCROLL OFFSET ---------- */
+
+#principe-dossier,
+#ce-que-le-dossier-permet,
+#ce-que-cela-ne-signifie-pas,
+#si-vous-n-avez-pas-ete-approche,
+#acces-dossier {
+  scroll-margin-top: 110px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1023px) {
+
+  #dossier-content .page-sidebar {
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+
+  #dossier-content .page-sidebar a {
+    color: var(--ep-ink-soft);
+    padding-left: 0;
+  }
+
+  #dossier-content .page-sidebar a:hover,
+  #dossier-content .page-sidebar a.is-active {
+    color: var(--ep-ink);
+  }
+
+  #dossier-content .page-sidebar a.is-active {
     padding-left: 0;
     border-left: 0;
     text-decoration: underline;
