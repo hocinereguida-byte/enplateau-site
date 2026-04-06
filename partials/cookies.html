@@ -12,17 +12,23 @@
       des cookies de mesure d’audience.
     </p>
 
-    <div id="cookie-customize-panel" hidden>
-      <label>
-        <input id="cookie-analytics" type="checkbox">
-        Activer Google Analytics
-      </label>
+    <div id="cookie-customize-panel" class="cookie-modal__panel" hidden>
+      <div class="cookie-toggle">
+        <div>
+          <div class="cookie-toggle__label">Mesure d’audience</div>
+          <div class="cookie-toggle__help">Permet d’activer Google Analytics.</div>
+        </div>
+        <label class="switch" aria-label="Activer Google Analytics">
+          <input id="cookie-analytics" type="checkbox">
+          <span class="switch__slider"></span>
+        </label>
+      </div>
     </div>
 
     <div class="cookie-modal__actions">
-      <button id="cookie-refuse" type="button">Refuser</button>
-      <button id="cookie-customize" type="button">Personnaliser</button>
-      <button id="cookie-accept" type="button">Accepter</button>
+      <button id="cookie-refuse" class="cookie-btn cookie-btn--ghost" type="button">Refuser</button>
+      <button id="cookie-customize" class="cookie-btn cookie-btn--secondary" type="button">Personnaliser</button>
+      <button id="cookie-accept" class="cookie-btn cookie-btn--primary" type="button">Accepter</button>
     </div>
 
   </div>
