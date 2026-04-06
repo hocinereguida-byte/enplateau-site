@@ -280,15 +280,16 @@ async function initLayout() {
   bindHeaderScroll();
   initCookies();
 
-  if (typeof initReveal === "function") {
-    try {
-      initReveal();
-    } catch (error) {
-      console.error("Reveal init failed:", error);
-    }
-  }
+  //if (typeof initReveal === "function") {
+  //  try {
+  //    initReveal();
+   // } catch (error) {
+   //   console.error("Reveal init failed:", error);
+  //  }
+ // }
 
   if (typeof initConversationToggles === "function") {
+    
     try {
       initConversationToggles();
     } catch (error) {
@@ -298,3 +299,5 @@ async function initLayout() {
 }
 
 document.addEventListener("DOMContentLoaded", initLayout);
+
+
