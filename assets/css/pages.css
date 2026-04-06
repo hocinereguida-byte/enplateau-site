@@ -1383,3 +1383,190 @@
     text-underline-offset: 3px;
   }
 }
+
+/* =========================================================
+   CHARTE ÉDITORIALE PAGE SPECIFIC
+   ========================================================= */
+
+#hero-charte-editoriale .page-hero-inner {
+  max-width: 980px;
+}
+
+#charte-content {
+  background: var(--ep-paper);
+}
+
+/* ---------- MENU LATÉRAL CHARTE ---------- */
+
+#charte-content .page-sidebar {
+  background: rgba(255, 250, 244, 0.78);
+  border: 1px solid var(--ep-line);
+  padding: 18px 16px;
+}
+
+#charte-content .page-sidebar nav {
+  border-top: 0;
+  padding-top: 0;
+}
+
+#charte-content .page-sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+
+#charte-content .page-sidebar li + li {
+  margin-top: 6px;
+}
+
+#charte-content .page-sidebar a {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  max-width: none;
+  padding-left: 10px;
+  color: var(--ep-ink-soft);
+}
+
+#charte-content .page-sidebar a:hover {
+  color: var(--ep-ink);
+}
+
+#charte-content .page-sidebar a.is-active {
+  color: var(--ep-ink);
+  font-weight: 600;
+  border-left: 2px solid var(--ep-accent);
+  padding-left: 12px;
+}
+
+/* ---------- RÔLE ---------- */
+
+#role-charte .editorial-panel {
+  margin-top: 8px;
+}
+
+/* ---------- SÉLECTION ---------- */
+
+#ce-qui-guide-la-selection .programme-list {
+  margin-top: 8px;
+}
+
+/* Hiérarchie douce sur les critères */
+#ce-qui-guide-la-selection .programme-list__item:nth-child(1) h3 {
+  color: rgba(20, 20, 20, 0.52);
+}
+
+#ce-qui-guide-la-selection .programme-list__item:nth-child(2) h3 {
+  color: rgba(20, 20, 20, 0.66);
+}
+
+#ce-qui-guide-la-selection .programme-list__item:nth-child(3) h3 {
+  color: rgba(20, 20, 20, 0.78);
+}
+
+#ce-qui-guide-la-selection .programme-list__item:nth-child(4) h3 {
+  color: rgba(20, 20, 20, 0.9);
+}
+
+#ce-qui-guide-la-selection .programme-list__item:nth-child(5) h3 {
+  color: rgba(20, 20, 20, 0.96);
+}
+
+/* ---------- CE QU’EN PLATEAU RECHERCHE ---------- */
+
+#ce-qu-en-plateau-recherche .programme-value {
+  margin-top: 8px;
+}
+
+#ce-qu-en-plateau-recherche .editorial-panel {
+  margin-top: 18px;
+}
+
+/* ---------- CADRE DES ÉMISSIONS ---------- */
+
+#cadre-des-emissions .editorial-panel {
+  margin-top: 8px;
+}
+
+/* ---------- CE QU’EN PLATEAU NE RECHERCHE PAS ---------- */
+
+#ce-qu-en-plateau-ne-recherche-pas .programme-list {
+  margin-top: 8px;
+}
+
+/* ---------- ÉVOLUTION DU CADRE ---------- */
+
+#cadre-appele-a-evoluer .editorial-panel {
+  margin-top: 8px;
+}
+
+/* ---------- ACCÈS ---------- */
+
+#acces-charte-editoriale .programme-access {
+  margin-top: 8px;
+}
+
+#acces-charte-editoriale .programme-access__item {
+  background: rgba(255, 250, 244, 0.78);
+}
+
+#acces-charte-editoriale .programme-access__item h3 {
+  margin-bottom: 12px;
+}
+
+#acces-charte-editoriale .programme-access__item .link {
+  display: inline-flex;
+  margin-top: 8px;
+}
+
+#acces-charte-editoriale .programme-link-row {
+  margin-top: 24px;
+}
+
+/* ---------- SCROLL OFFSET ---------- */
+
+#role-charte,
+#ce-qui-guide-la-selection,
+#ce-qu-en-plateau-recherche,
+#cadre-des-emissions,
+#ce-qu-en-plateau-ne-recherche-pas,
+#cadre-appele-a-evoluer,
+#acces-charte-editoriale {
+  scroll-margin-top: 110px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1023px) {
+  #charte-content .page-sidebar {
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+
+  #charte-content .page-sidebar a {
+    color: var(--ep-ink-soft);
+    padding-left: 0;
+  }
+
+  #charte-content .page-sidebar a:hover,
+  #charte-content .page-sidebar a.is-active {
+    color: var(--ep-ink);
+  }
+
+  #charte-content .page-sidebar a.is-active {
+    padding-left: 0;
+    border-left: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
