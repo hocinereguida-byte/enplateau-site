@@ -1,0 +1,61 @@
+<div id="cookie-overlay" class="cookie-overlay" hidden></div>
+
+<div id="cookie-modal" class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-title" aria-describedby="cookie-desc" hidden>
+  <div class="cookie-modal__inner">
+    <div class="cookie-modal__kicker">Préférences de confidentialité</div>
+
+    <h2 id="cookie-title" class="cookie-modal__title">
+      Ce site utilise des cookies
+    </h2>
+
+    <p id="cookie-desc" class="cookie-modal__text">
+      En Plateau utilise des cookies nécessaires au fonctionnement du site et, avec votre accord,
+      des cookies de mesure d’audience pour mieux comprendre la consultation des pages et améliorer
+      l’expérience de lecture.
+    </p>
+
+    <p class="cookie-modal__text cookie-modal__text--small">
+      Vous pouvez accepter, refuser ou personnaliser vos choix à tout moment.
+      Pour en savoir plus, consultez la
+      <a href="/politique-de-confidentialite.html" class="cookie-modal__link">politique de confidentialité</a>.
+    </p>
+
+    <div id="cookie-customize-panel" class="cookie-modal__panel" hidden>
+      <div class="cookie-toggle">
+        <div>
+          <div class="cookie-toggle__label">Cookies nécessaires</div>
+          <div class="cookie-toggle__help">Toujours actifs. Ils permettent le fonctionnement normal du site.</div>
+        </div>
+        <label class="switch switch--disabled" aria-label="Cookies nécessaires activés">
+          <input type="checkbox" checked disabled>
+          <span class="switch__slider"></span>
+        </label>
+      </div>
+
+      <div class="cookie-toggle">
+        <div>
+          <div class="cookie-toggle__label">Mesure d’audience</div>
+          <div class="cookie-toggle__help">Permet d’activer Google Analytics pour mesurer l’usage du site.</div>
+        </div>
+        <label class="switch" aria-label="Activer la mesure d’audience">
+          <input id="cookie-analytics" type="checkbox">
+          <span class="switch__slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="cookie-modal__actions">
+      <button id="cookie-refuse" class="cookie-btn cookie-btn--ghost" type="button">
+        Refuser
+      </button>
+
+      <button id="cookie-customize" class="cookie-btn cookie-btn--secondary" type="button">
+        Personnaliser
+      </button>
+
+      <button id="cookie-accept" class="cookie-btn cookie-btn--primary" type="button">
+        Accepter
+      </button>
+    </div>
+  </div>
+</div>
