@@ -179,3 +179,128 @@ function initConversationToggles() {
     });
   });
 }
+
+function initCookieBanner() {
+  const STORAGE_KEY = "enplateau_cookie_preferences_v1";
+
+  const overlay = document.getElementById("cookie-overlay");
+  const modal = document.getElementById("cookie-modal");
+  const customizePanel = document.getElementById("cookie-customize-panel");
+  const analyticsToggle = document.getElementById("cookie-analytics");
+
+  const acceptBtn = document.getElementById("cookie-accept");
+  const refuseBtn = document.getElementById("cookie-refuse");
+  const customizeBtn = document.getElementById("cookie-customize");
+
+  if (!overlay || !modal || !acceptBtn || !refuseBtn || !customizeBtn) {
+    return;
+  }
+
+  function savePreferences(preferences) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(preferences));
+  }
+
+  function getPreferences() {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+
+    try {
+      return JSON.parse(raw);
+    } catch {
+      return null;
+    }
+  }
+
+  function hideBanner() {
+    overlay.hidden = true;
+    modal.hidden = true;
+    document.documentElement.classList.remove("cookies-open");
+    document.body.classList.remove("cookies-open");
+  }
+
+  function showBanner() {
+    overlay.hidden = false;
+    modal.hidden = false;
+    document.documentElement.classList.add("cookies-open");
+    document.body.classList.add("cookies-open");
+  }
+
+  function applyPreferences(preferences) {
+    if (!preferences) return;
+
+    if (preferences.analytics) {
+      console.log("Analytics accepté");
+      /* Exemple futur :
+      if (!window.gaLoaded) {
+        const script = document.createElement("script");
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX";
+        script.async = true;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+
+        gtag("js", new Date());
+        gtag("config", "G-XXXXXXX");
+
+        window.gaLoaded = true;
+      }
+      */
+    } else {
+      console.log("Analytics refusé");
+    }
+  }
+
+  function setConsent(preferences) {
+    savePreferences(preferences);
+    applyPreferences(preferences);
+    hideBanner();
+  }
+
+  customizeBtn.addEventListener("click", function () {
+    const isHidden = customizePanel.hidden;
+    customizePanel.hidden = !isHidden;
+    customizeBtn.textContent = isHidden ? "Masquer les options" : "Personnaliser";
+  });
+
+  refuseBtn.addEventListener("click", function () {
+    setConsent({
+      necessary: true,
+      analytics: false,
+      updatedAt: new Date().toISOString()
+    });
+  });
+
+  acceptBtn.addEventListener("click", function () {
+    setConsent({
+      necessary: true,
+      analytics: !customizePanel.hidden && analyticsToggle ? !!analyticsToggle.checked : true,
+      updatedAt: new Date().toISOString()
+    });
+  });
+
+  if (analyticsToggle) {
+    analyticsToggle.checked = false;
+  }
+
+  const existing = getPreferences();
+
+  if (!existing) {
+    showBanner();
+  } else {
+    applyPreferences(existing);
+  }
+
+  window.openCookiePreferences = function () {
+    const current = getPreferences();
+
+    if (analyticsToggle && current) {
+      analyticsToggle.checked = !!current.analytics;
+    }
+
+    customizePanel.hidden = false;
+    customizeBtn.textContent = "Masquer les options";
+    showBanner();
+  };
+}
