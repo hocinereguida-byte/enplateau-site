@@ -22,6 +22,21 @@ async function loadPartial(selector, path) {
   }
 }
 
+async function loadCookieBanner() {
+  try {
+    const response = await fetch("partials/cookie-banner.html", { cache: "no-cache" });
+
+    if (!response.ok) {
+      throw new Error("Impossible de charger partials/cookie-banner.html");
+    }
+
+    const html = await response.text();
+    document.body.insertAdjacentHTML("beforeend", html);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 function getCurrentPage() {
   const pathname = window.location.pathname.split("/").pop();
   return pathname && pathname.length ? pathname : "index.html";
@@ -139,6 +154,8 @@ async function initLayout() {
     loadPartial("#site-footer", "partials/footer.html")
   ]);
 
+  await loadCookieBanner();
+
   markActiveLinks();
   bindMobileMenu();
   bindHeaderScroll();
@@ -156,6 +173,14 @@ async function initLayout() {
       initConversationToggles();
     } catch (error) {
       console.error("Conversation toggle init failed:", error);
+    }
+  }
+
+  if (typeof initCookieBanner === "function") {
+    try {
+      initCookieBanner();
+    } catch (error) {
+      console.error("Cookie banner init failed:", error);
     }
   }
 }
