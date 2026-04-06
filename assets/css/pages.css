@@ -563,12 +563,46 @@
   background: var(--ep-paper);
 }
 
+/* menu intérieur sombre */
+#positions-cycle-content .page-sidebar {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px 16px;
+}
+
 #positions-cycle-content .page-sidebar nav {
-  border-top: 1px solid rgba(102, 77, 59, 0.16);
+  border-top: 0;
+  padding-top: 0;
+}
+
+#positions-cycle-content .page-sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+
+#positions-cycle-content .page-sidebar li + li {
+  margin-top: 6px;
 }
 
 #positions-cycle-content .page-sidebar a {
-  max-width: 210px;
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  max-width: none;
+  padding-left: 10px;
+  color: rgba(255, 255, 255, 0.74);
+  opacity: 1;
+}
+
+#positions-cycle-content .page-sidebar a:hover {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+#positions-cycle-content .page-sidebar a.is-active {
+  color: #ffffff;
+  font-weight: 600;
+  border-left: 2px solid rgba(240, 200, 187, 0.9);
+  padding-left: 12px;
 }
 
 #comment-lire .editorial-panel {
@@ -613,7 +647,9 @@
 #collectivites .section-head,
 #entreprises .section-head,
 #bet .section-head,
-#juridique .section-head {
+#juridique .section-head,
+#amenageurs .section-head,
+#acteurs-publics .section-head {
   margin-bottom: 24px;
 }
 
@@ -623,7 +659,9 @@
 #collectivites .programme-position,
 #entreprises .programme-position,
 #bet .programme-position,
-#juridique .programme-position {
+#juridique .programme-position,
+#amenageurs .programme-position,
+#acteurs-publics .programme-position {
   margin-bottom: 18px;
 }
 
@@ -633,7 +671,9 @@
 #collectivites .programme-value,
 #entreprises .programme-value,
 #bet .programme-value,
-#juridique .programme-value {
+#juridique .programme-value,
+#amenageurs .programme-value,
+#acteurs-publics .programme-value {
   margin-bottom: 18px;
 }
 
@@ -643,22 +683,10 @@
 #collectivites .programme-list,
 #entreprises .programme-list,
 #bet .programme-list,
-#juridique .programme-list {
+#juridique .programme-list,
+#amenageurs .programme-list,
+#acteurs-publics .programme-list {
   margin-top: 0;
-}
-
-/* sidebar plus premium */
-#positions-cycle-content .page-sidebar a {
-  max-width: 210px;
-  opacity: 0.92;
-}
-
-#positions-cycle-content .page-sidebar a:hover {
-  opacity: 1;
-}
-
-#positions-cycle-content .page-sidebar a.is-active {
-  font-weight: 600;
 }
 
 /* scroll offset */
@@ -669,10 +697,15 @@
 #entreprises,
 #bet,
 #juridique,
+#amenageurs,
+#acteurs-publics,
 #restitution-cycle,
 #rarete-cycle,
 #acces-final,
-#comment-lire {
+#comment-lire,
+#lecture-finale,
+#mise-en-relation,
+#conditions-cycle {
   scroll-margin-top: 110px;
 }
 
@@ -712,6 +745,12 @@
     padding-top: 0;
   }
 
+  #positions-cycle-content .page-sidebar {
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+
   .page-sidebar nav {
     border-top: 0;
     padding-top: 0;
@@ -734,6 +773,15 @@
     font-size: 12px;
     padding: 0;
     max-width: none;
+  }
+
+  #positions-cycle-content .page-sidebar a {
+    color: var(--ep-ink-soft);
+  }
+
+  #positions-cycle-content .page-sidebar a:hover,
+  #positions-cycle-content .page-sidebar a.is-active {
+    color: var(--ep-ink);
   }
 
   .page-sidebar a.is-active {
