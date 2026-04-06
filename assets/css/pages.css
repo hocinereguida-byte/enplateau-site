@@ -1022,9 +1022,196 @@
   #conversations-content .page-sidebar a:hover,
   #conversations-content .page-sidebar a.is-active {
     color: var(--ep-ink);
+
+
+
   }
 
   #conversations-content .page-sidebar a.is-active {
+    padding-left: 0;
+    border-left: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+/* =========================================================
+   DISPOSITIF PAGE SPECIFIC
+   À ajouter en bas de pages.css
+   ========================================================= */
+
+#hero-dispositif .page-hero-inner {
+  max-width: 980px;
+}
+
+#dispositif-content {
+  background: var(--ep-paper);
+}
+
+/* ---------- MENU LATÉRAL DISPOSITIF ---------- */
+
+#dispositif-content .page-sidebar {
+  background: rgba(255, 250, 244, 0.78);
+  border: 1px solid var(--ep-line);
+  padding: 18px 16px;
+}
+
+#dispositif-content .page-sidebar nav {
+  border-top: 0;
+  padding-top: 0;
+}
+
+#dispositif-content .page-sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+
+#dispositif-content .page-sidebar li + li {
+  margin-top: 6px;
+}
+
+#dispositif-content .page-sidebar a {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  max-width: none;
+  padding-left: 10px;
+  color: var(--ep-ink-soft);
+  opacity: 1;
+}
+
+#dispositif-content .page-sidebar a:hover {
+  color: var(--ep-ink);
+}
+
+#dispositif-content .page-sidebar a.is-active {
+  color: var(--ep-ink);
+  font-weight: 600;
+  border-left: 2px solid var(--ep-accent);
+  padding-left: 12px;
+}
+
+/* ---------- CADRE / LOGOS ---------- */
+
+#cadre-dispositif .media-logos-band {
+  margin-top: 8px;
+}
+
+#cadre-dispositif .section-footnote {
+  margin-top: 24px;
+}
+
+/* ---------- DÉROULÉ ---------- */
+
+#comment-ca-marche .programme-list {
+  margin-top: 8px;
+}
+
+#comment-ca-marche .programme-list__item h3 {
+  letter-spacing: -0.01em;
+}
+
+/* ---------- MOBILISATION ---------- */
+
+#ce-que-cela-demande .programme-value {
+  margin-top: 8px;
+}
+
+#ce-que-cela-demande .section-footnote {
+  margin-top: 24px;
+}
+
+/* ---------- ARCHITECTURE ---------- */
+
+#architecture-dispositif .programme-season {
+  margin-top: 8px;
+}
+
+/* progression grise des 3 niveaux */
+#architecture-dispositif .programme-season article:nth-child(1) h3 {
+  color: rgba(20, 20, 20, 0.5);
+}
+
+#architecture-dispositif .programme-season article:nth-child(2) h3 {
+  color: rgba(20, 20, 20, 0.72);
+}
+
+#architecture-dispositif .programme-season article:nth-child(3) h3 {
+  color: rgba(20, 20, 20, 0.96);
+}
+
+#architecture-dispositif .programme-season article h3 {
+  transition: color 0.22s ease;
+}
+
+#architecture-dispositif .programme-season article:hover h3 {
+  color: var(--ep-ink);
+}
+
+#architecture-dispositif .programme-link-row {
+  justify-content: flex-start;
+}
+
+/* ---------- PRINCIPE ---------- */
+
+#principe-dispositif .editorial-panel {
+  margin-top: 8px;
+}
+
+/* ---------- ACCÈS ---------- */
+
+#acces-dispositif .programme-access {
+  margin-top: 8px;
+}
+
+#acces-dispositif .programme-access__item {
+  background: rgba(255, 250, 244, 0.78);
+}
+
+#acces-dispositif .programme-access__item h3 {
+  margin-bottom: 12px;
+}
+
+#acces-dispositif .programme-access__item .link {
+  display: inline-flex;
+  margin-top: 8px;
+}
+
+#acces-dispositif .section-footnote {
+  margin-top: 24px;
+}
+
+/* ---------- SCROLL OFFSET ---------- */
+
+#cadre-dispositif,
+#comment-ca-marche,
+#ce-que-cela-demande,
+#architecture-dispositif,
+#principe-dispositif,
+#acces-dispositif {
+  scroll-margin-top: 110px;
+}
+
+/* ---------- RESPONSIVE DISPOSITIF ---------- */
+
+@media (max-width: 1023px) {
+  #dispositif-content .page-sidebar {
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+
+  #dispositif-content .page-sidebar a {
+    color: var(--ep-ink-soft);
+    padding-left: 0;
+  }
+
+  #dispositif-content .page-sidebar a:hover,
+  #dispositif-content .page-sidebar a.is-active {
+    color: var(--ep-ink);
+  }
+
+  #dispositif-content .page-sidebar a.is-active {
     padding-left: 0;
     border-left: 0;
     text-decoration: underline;
