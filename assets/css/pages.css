@@ -856,3 +856,178 @@
     margin-right: 0;
   }
 }
+
+/* =========================================================
+   CONVERSATIONS PAGE SPECIFIC
+   À ajouter en bas de pages.css
+   ========================================================= */
+
+#hero-conversations .page-hero-inner {
+  max-width: 980px;
+}
+
+#conversations-content {
+  background: var(--ep-paper);
+}
+
+/* ---------- MENU LATÉRAL CONVERSATIONS ---------- */
+
+#conversations-content .page-sidebar {
+  background: rgba(255, 250, 244, 0.78);
+  border: 1px solid var(--ep-line);
+  padding: 18px 16px;
+}
+
+#conversations-content .page-sidebar nav {
+  border-top: 0;
+  padding-top: 0;
+}
+
+#conversations-content .page-sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+
+#conversations-content .page-sidebar li + li {
+  margin-top: 6px;
+}
+
+#conversations-content .page-sidebar a {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  max-width: none;
+  padding-left: 10px;
+  color: var(--ep-ink-soft);
+  opacity: 1;
+}
+
+#conversations-content .page-sidebar a:hover {
+  color: var(--ep-ink);
+}
+
+#conversations-content .page-sidebar a.is-active {
+  color: var(--ep-ink);
+  font-weight: 600;
+  border-left: 2px solid var(--ep-accent);
+  padding-left: 12px;
+}
+
+/* ---------- HIERARCHIE VISUELLE DES CONVERSATIONS ---------- */
+
+#conversation-1 h2 {
+  color: rgba(20, 20, 20, 0.42);
+}
+
+#conversation-2 h2 {
+  color: rgba(20, 20, 20, 0.62);
+}
+
+#conversation-3 h2 {
+  color: rgba(20, 20, 20, 0.8);
+}
+
+#conversation-4 h2 {
+  color: rgba(20, 20, 20, 0.96);
+}
+
+#conversation-1 h2,
+#conversation-2 h2,
+#conversation-3 h2,
+#conversation-4 h2 {
+  transition: color 0.22s ease;
+}
+
+#conversation-1:hover h2,
+#conversation-2:hover h2,
+#conversation-3:hover h2,
+#conversation-4:hover h2 {
+  color: var(--ep-ink);
+}
+
+/* ---------- BLOCS CONVERSATIONS ---------- */
+
+#conversation-1 .programme-position,
+#conversation-2 .programme-position,
+#conversation-3 .programme-position,
+#conversation-4 .programme-position {
+  margin-bottom: 0;
+}
+
+#conversation-1 .programme-position p:last-child,
+#conversation-2 .programme-position p:last-child,
+#conversation-3 .programme-position p:last-child,
+#conversation-4 .programme-position p:last-child {
+  margin-bottom: 0;
+}
+
+#conversation-1 .section-head,
+#conversation-2 .section-head,
+#conversation-3 .section-head,
+#conversation-4 .section-head {
+  margin-bottom: 24px;
+}
+
+/* bloc intro plus posé */
+#principe-cycle .editorial-panel + .editorial-panel {
+  margin-top: 18px;
+}
+
+/* accès dossier / matière / CTA */
+#angles-complets .editorial-panel,
+#matiere-produite .editorial-panel {
+  background: rgba(255, 250, 244, 0.78);
+}
+
+#entrer-cycle .programme-access__item {
+  background: rgba(255, 250, 244, 0.78);
+}
+
+#entrer-cycle .programme-access__item h3 {
+  margin-bottom: 12px;
+}
+
+#entrer-cycle .programme-access__item .link {
+  display: inline-flex;
+  margin-top: 8px;
+}
+
+/* ---------- SCROLL OFFSET ---------- */
+
+#principe-cycle,
+#conversation-1,
+#conversation-2,
+#conversation-3,
+#conversation-4,
+#angles-complets,
+#matiere-produite,
+#entrer-cycle {
+  scroll-margin-top: 110px;
+}
+
+/* ---------- RESPONSIVE CONVERSATIONS ---------- */
+
+@media (max-width: 1023px) {
+  #conversations-content .page-sidebar {
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+
+  #conversations-content .page-sidebar a {
+    color: var(--ep-ink-soft);
+    padding-left: 0;
+  }
+
+  #conversations-content .page-sidebar a:hover,
+  #conversations-content .page-sidebar a.is-active {
+    color: var(--ep-ink);
+  }
+
+  #conversations-content .page-sidebar a.is-active {
+    padding-left: 0;
+    border-left: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
