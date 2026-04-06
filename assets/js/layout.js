@@ -116,6 +116,9 @@ function bindHeaderScroll() {
 ========================= */
 
 function initCookies() {
+  if (window.__cookiesInitialized) return;
+  window.__cookiesInitialized = true;
+
   const STORAGE_KEY = "enplateau_cookie_preferences_v1";
 
   const overlay = document.getElementById("cookie-overlay");
@@ -137,12 +140,6 @@ function initCookies() {
   ) {
     return;
   }
-
-  /* évite toute double initialisation */
-  if (modal.dataset.cookiesInitialized === "true") {
-    return;
-  }
-  modal.dataset.cookiesInitialized = "true";
 
   function savePreferences(preferences) {
     try {
@@ -188,7 +185,7 @@ function initCookies() {
 
     if (preferences.analytics) {
       console.log("Analytics accepté");
-      // Intégration future GA si nécessaire
+      // Intégration future Google Analytics ici si besoin
     } else {
       console.log("Analytics refusé");
     }
@@ -268,6 +265,9 @@ function initCookies() {
 /* ========================= */
 
 async function initLayout() {
+  if (window.__layoutInitialized) return;
+  window.__layoutInitialized = true;
+
   await Promise.all([
     loadPartial("#site-header", "partials/header.html"),
     loadPartial("#site-mobile-menu", "partials/mobile-menu.html"),
@@ -280,16 +280,15 @@ async function initLayout() {
   bindHeaderScroll();
   initCookies();
 
-  //if (typeof initReveal === "function") {
-  //  try {
-  //    initReveal();
-   // } catch (error) {
-   //   console.error("Reveal init failed:", error);
-  //  }
- // }
+  if (typeof initReveal === "function") {
+    try {
+      initReveal();
+    } catch (error) {
+      console.error("Reveal init failed:", error);
+    }
+  }
 
   if (typeof initConversationToggles === "function") {
-    
     try {
       initConversationToggles();
     } catch (error) {
@@ -299,5 +298,3 @@ async function initLayout() {
 }
 
 document.addEventListener("DOMContentLoaded", initLayout);
-
-
