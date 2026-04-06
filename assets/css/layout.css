@@ -939,6 +939,15 @@ button:focus-visible {
    Pop-up de consentement + lien footer
    ========================================================= */
 
+[hidden] {
+  display: none !important;
+}
+
+.cookie-overlay[hidden],
+.cookie-modal[hidden] {
+  display: none !important;
+}
+
 html.cookies-open,
 body.cookies-open {
   overflow: hidden;
