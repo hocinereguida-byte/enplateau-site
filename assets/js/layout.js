@@ -138,6 +138,12 @@ function initCookies() {
     return;
   }
 
+  /* évite toute double initialisation */
+  if (modal.dataset.cookiesInitialized === "true") {
+    return;
+  }
+  modal.dataset.cookiesInitialized = "true";
+
   function savePreferences(preferences) {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(preferences));
@@ -234,6 +240,8 @@ function initCookies() {
 
     if (analyticsToggle && current) {
       analyticsToggle.checked = !!current.analytics;
+    } else if (analyticsToggle) {
+      analyticsToggle.checked = false;
     }
 
     customizePanel.hidden = false;
@@ -243,17 +251,17 @@ function initCookies() {
 
   const existing = getPreferences();
 
-  if (!existing) {
-    if (analyticsToggle) {
-      analyticsToggle.checked = false;
-    }
-    showBanner();
-  } else {
+  if (existing && existing.necessary === true) {
     if (analyticsToggle) {
       analyticsToggle.checked = !!existing.analytics;
     }
     applyPreferences(existing);
     hideBanner();
+  } else {
+    if (analyticsToggle) {
+      analyticsToggle.checked = false;
+    }
+    showBanner();
   }
 }
 
