@@ -2,6 +2,7 @@
    EN PLATEAU — PAGES.CSS
    Pages intérieures / navigation dense / blocs éditoriaux
    Direction alignée sur layout.css + home.css
+   Version ajustée pour la page Positions du cycle
    ========================================================= */
 
 /* ---------- PAGE HERO ---------- */
@@ -69,6 +70,12 @@
   color: var(--ep-ink-muted);
 }
 
+.page-hero-note strong,
+.page-hero-meta strong,
+.page-hero-sub strong {
+  color: var(--ep-ink);
+}
+
 /* ---------- PAGE LAYOUT ---------- */
 
 .page-shell {
@@ -108,7 +115,7 @@
   font-size: 13px;
   line-height: 1.5;
   color: var(--ep-ink-soft);
-  transition: color var(--transition-fast);
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
 }
 
 .page-sidebar a:hover,
@@ -129,6 +136,10 @@
 
 .page-reading {
   max-width: 860px;
+}
+
+.page-reading > .page-section:first-child {
+  padding-top: 0;
 }
 
 .page-reading h2 {
@@ -182,6 +193,68 @@
   color: var(--ep-accent);
 }
 
+/* ---------- SECTION HEADERS ---------- */
+
+.section-head {
+  margin-bottom: 28px;
+}
+
+.section-head--narrow {
+  max-width: 840px;
+}
+
+.section-head--centered {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.section-kicker {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ep-accent);
+  margin-bottom: 14px;
+}
+
+.section-intro {
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.76;
+  color: var(--ep-ink-soft);
+}
+
+.section-footnote {
+  max-width: 820px;
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.72;
+  color: var(--ep-ink-muted);
+}
+
+.section-footnote strong {
+  color: var(--ep-ink);
+}
+
+.divider {
+  width: 72px;
+  height: 1px;
+  background: var(--ep-line);
+  margin: 22px auto 0;
+}
+
+/* ---------- PAGE SECTION SPACING ---------- */
+
+.page-section {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.page-reading .page-section + .page-section {
+  border-top: 1px solid rgba(102, 77, 59, 0.08);
+}
+
 /* ---------- EDITORIAL PANELS ---------- */
 
 .editorial-panel {
@@ -211,6 +284,37 @@
 
 .editorial-panel p:last-child {
   margin-bottom: 0;
+}
+
+/* ---------- MODULE GRIDS ---------- */
+
+.programme-season,
+.programme-value,
+.programme-positions,
+.programme-access,
+.programme-list {
+  display: grid;
+  gap: 18px;
+}
+
+.programme-season {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.programme-value {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.programme-positions {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.programme-access {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.programme-list {
+  grid-template-columns: 1fr 1fr;
 }
 
 /* ---------- DENSE CARDS / MODULES ---------- */
@@ -246,6 +350,32 @@
   width: 4px;
   height: 100%;
   background: rgba(123, 51, 38, 0.72);
+}
+
+.programme-position h3,
+.programme-value__item h3,
+.programme-list__item h3,
+.programme-access__item h3,
+.season-card h3 {
+  margin-bottom: 10px;
+}
+
+.programme-position p:last-child,
+.programme-value__item p:last-child,
+.programme-list__item p:last-child,
+.programme-access__item p:last-child,
+.season-card p:last-child {
+  margin-bottom: 0;
+}
+
+.season-card__meta {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ep-accent);
+  margin-bottom: 10px;
 }
 
 /* ---------- BLACK / DARK MODULE VARIANTS ---------- */
@@ -382,22 +512,24 @@
   background: rgba(240, 200, 187, 0.72);
 }
 
-/* ---------- LINK ROWS / MICRO NAV ---------- */
+/* ---------- LINKS / MICRO NAV ---------- */
 
 .page-links-row,
 .page-actions-row,
-.page-inline-nav {
+.page-inline-nav,
+.programme-link-row {
   display: flex;
   flex-wrap: wrap;
   gap: 14px 24px;
   align-items: center;
 }
 
-.page-links-row {
+.page-links-row,
+.programme-link-row {
   margin-top: 24px;
 }
 
-/* ---------- TABLES / LISTS WHEN PRESENT ---------- */
+/* ---------- TABLES ---------- */
 
 .page-reading table {
   width: 100%;
@@ -421,7 +553,77 @@
   color: var(--ep-accent);
 }
 
+/* ---------- POSITIONS PAGE SPECIFIC ---------- */
+
+#hero-positions-cycle .page-hero-inner {
+  max-width: 980px;
+}
+
+#positions-cycle-content {
+  background: var(--ep-paper);
+}
+
+#positions-cycle-content .page-sidebar nav {
+  border-top: 1px solid rgba(102, 77, 59, 0.16);
+}
+
+#positions-cycle-content .page-sidebar a {
+  max-width: 210px;
+}
+
+#comment-lire .editorial-panel {
+  margin-top: 8px;
+}
+
+#restitution-cycle .programme-season,
+#rarete-cycle .programme-list {
+  margin-top: 10px;
+}
+
+#acces-final .programme-access {
+  margin-top: 6px;
+}
+
+#acces-final .section-footnote {
+  margin-top: 24px;
+}
+
+/* bloc “où vous êtes attendu” un peu plus fort */
+.page-reading .programme-position:first-of-type h3 {
+  margin-bottom: 12px;
+}
+
+.page-reading .programme-position:first-of-type p + p {
+  margin-top: 8px;
+}
+
+/* allègement visuel des sections personas */
+#promoteurs,
+#banques,
+#investisseurs,
+#collectivites,
+#entreprises,
+#bet,
+#juridique {
+  scroll-margin-top: 110px;
+}
+
+#restitution-cycle,
+#rarete-cycle,
+#acces-final,
+#comment-lire {
+  scroll-margin-top: 110px;
+}
+
 /* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1180px) {
+  .programme-season,
+  .programme-value,
+  .programme-positions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
 @media (max-width: 1023px) {
   .page-shell {
@@ -432,6 +634,45 @@
   .page-sidebar {
     position: static;
     top: auto;
+    padding-top: 0;
+  }
+
+  .page-sidebar nav {
+    border-top: 0;
+    padding-top: 0;
+    border-bottom: 1px solid var(--ep-line);
+    padding-bottom: 16px;
+  }
+
+  .page-sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+  }
+
+  .page-sidebar li + li {
+    margin-top: 0;
+  }
+
+  .page-sidebar a {
+    min-height: auto;
+    font-size: 12px;
+    padding: 0;
+  }
+
+  .page-sidebar a.is-active {
+    padding-left: 0;
+    border-left: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .programme-season,
+  .programme-value,
+  .programme-positions,
+  .programme-access,
+  .programme-list {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -467,5 +708,27 @@
   .programme-list__item,
   .season-card {
     padding: 22px 20px;
+  }
+
+  .page-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .section-head--centered,
+  .section-head--narrow {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .divider {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .section-footnote {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
