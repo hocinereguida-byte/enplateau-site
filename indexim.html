@@ -1,850 +1,302 @@
 <!doctype html>
-
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>En Plateau — Comprendre comment les décisions se prennent</title>
-  <meta name="description" content="En Plateau permet de mieux comprendre comment les décisions se prennent entre les acteurs qui conditionnent un projet, en donnant accès à ce qu’ils voient chacun depuis leur position.">
-  <style>
-    :root {
-      --blue-900: #0f1c2e;
-      --blue-800: #16304f;
-      --blue-700: #214d7d;
-      --blue-600: #3c6ea5;
-      --paper: #f7f8fb;
-      --paper-2: #eef2f7;
-      --ink: #101828;
-      --ink-soft: #526072;
-      --ink-faint: #7b8794;
-      --line: rgba(16,24,40,.10);
-      --line-light: rgba(255,255,255,.14);
-      --panel-dark: rgba(255,255,255,.06);
-      --panel-dark-2: rgba(255,255,255,.04);
-      --panel-light: rgba(255,255,255,.78);
-      --max: 1320px;
-      --radius: 8px;
-      --shadow-soft: 0 18px 45px rgba(10, 20, 40, .10);
-      --shadow-dark: 0 20px 55px rgba(0, 0, 0, .18);
-      --font-display: "Fraunces", Georgia, serif;
-      --font-text: Inter, "IBM Plex Sans", system-ui, sans-serif;
-    }* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>En Plateau — Comprendre comment les décisions se prennent</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
 body {
-  margin: 0;
-  font-family: var(--font-text);
-  color: var(--ink);
-  background: var(--paper);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  margin:0;
+  font-family: 'Inter', sans-serif;
+  color:#111;
+  background:#fff;
 }
 
-a { color: inherit; text-decoration: none; }
-
-.site-shell {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(180deg, #f9fbfd 0%, #f4f6fa 100%);
+h1,h2,h3 {
+  font-family:'Fraunces', serif;
+  margin:0 0 16px;
 }
 
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(18px);
-  background: rgba(247,248,251,.76);
-  border-bottom: 1px solid rgba(16,24,40,.08);
+section {
+  padding:100px 8%;
 }
 
-.topbar-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 16px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.brand {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  flex: 0 0 auto;
-}
-
-.brand-name {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: -.02em;
-}
-
-.brand-sub {
-  font-size: .68rem;
-  color: var(--ink-faint);
-  letter-spacing: .10em;
-  text-transform: uppercase;
-}
-
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 18px;
-  font-size: .86rem;
-  color: var(--ink-soft);
-}
-
-.nav a:hover,
-.nav a:focus-visible { color: var(--ink); }
-
-.nav-cta {
-  font-size: .84rem;
-  color: var(--blue-700);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding-bottom: 2px;
-  border-bottom: 1px solid rgba(33,77,125,.28);
-}
-
-.nav-cta::after { content: "→"; opacity: .7; }
-
-section { position: relative; z-index: 1; }
-
-.theme-blue {
-  color: white;
-  background:
-    radial-gradient(circle at 18% 20%, rgba(255,255,255,.10), transparent 20%),
-    linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 38%, var(--blue-700) 72%, var(--blue-600) 100%);
-}
-
-.theme-light {
-  color: var(--ink);
-  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
-}
-
-.container {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 28px;
-}
-
-.eyebrow,
-.hero-context-card small,
-.quote-card strong,
-.conversation-card small,
-.position-card small,
-.step small,
-.value-card small,
-.access-card small {
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  font-size: .62rem;
-}
-
-.theme-blue .eyebrow,
-.theme-blue .hero-context-card small,
-.theme-blue .quote-card strong,
-.theme-blue .conversation-card small,
-.theme-blue .position-card small,
-.theme-blue .step small,
-.theme-blue .value-card small,
-.theme-blue .access-card small {
-  color: rgba(255,255,255,.66);
-}
-
-.theme-light .eyebrow,
-.theme-light .hero-context-card small,
-.theme-light .quote-card strong,
-.theme-light .conversation-card small,
-.theme-light .position-card small,
-.theme-light .step small,
-.theme-light .value-card small,
-.theme-light .access-card small {
-  color: var(--ink-faint);
-}
-
-h1, h2, h3 {
-  margin: 0;
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -.035em;
-}
-
-h1 {
-  font-size: clamp(2.4rem, 5vw, 4.7rem);
-  line-height: 1.02;
-  max-width: 13ch;
-}
-
-h2 {
-  font-size: clamp(2rem, 4vw, 3.55rem);
-  line-height: 1.06;
-}
-
-h3 {
-  font-size: 1rem;
-  line-height: 1.22;
-}
-
-p,
-.section-copy,
-.positions-premium-head p,
-.access-note,
-.full-bleed-panel p,
-.hero-context-card p,
-.hero-helper-note,
-.conversation-card p,
-.position-card p,
-.step p,
-.value-card p,
-.access-card p,
-.why-columns p,
-.quote-card p {
-  font-size: .84rem;
-  line-height: 1.72;
-  margin: 0;
-}
-
+/* HERO */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 68px 0 56px;
+  background: linear-gradient(135deg,#0f2a44,#1c4b7a);
+  color:white;
 }
 
 .hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(360px, .82fr);
-  gap: 54px;
-  align-items: center;
+  display:grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap:60px;
+  align-items:center;
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 18px;
+.hero h1 {
+  font-size: clamp(42px,6vw,72px);
+  line-height:1.1;
 }
 
-.eyebrow::before {
-  content: "";
-  width: 34px;
-  height: 1px;
-  background: currentColor;
-  opacity: .7;
+.hero p {
+  font-size:16px;
+  opacity:0.9;
 }
 
-.hero-lead {
-  margin-top: 14px;
-  max-width: 42rem;
-  font-size: .96rem;
-  line-height: 1.58;
-  color: rgba(255,255,255,.82);
+.hero-right {
+  font-size:14px;
+  line-height:1.6;
 }
 
-.hero-actions {
-  margin-top: 22px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  font-size: .84rem;
+/* TITRES CENTRÉS */
+.center {
+  text-align:center;
+  max-width:800px;
+  margin:auto;
 }
 
-.text-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding-bottom: 2px;
-  border-bottom: 1px solid rgba(255,255,255,.34);
-  color: rgba(255,255,255,.94);
+/* CONVERSATIONS */
+.conversations {
+  background: linear-gradient(135deg,#0f2a44,#1c4b7a);
+  color:white;
 }
 
-.text-link::after { content: "→"; opacity: .7; }
-
-.hero-side {
-  display: grid;
-  gap: 14px;
-  align-self: center;
+.conv-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  margin-top:40px;
 }
 
-.hero-context-card,
-.quote-card,
-.conversation-card,
-.position-card,
-.step,
-.access-card,
-.value-card,
-.full-bleed-panel,
-.hero-bottom-band {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  align-items: start;
+.card {
+  padding:20px;
 }
 
-.hero-helper-block {
-  display: grid;
-  gap: 10px;
+.card h3 {
+  font-size:20px;
 }
 
-.hero-helper-title {
-  font-family: var(--font-display);
-  font-size: 1.08rem;
-  line-height: 1.2;
-  letter-spacing: -.03em;
+.card p {
+  font-size:13px;
 }
 
-.chapter { padding: 98px 0; }
-
-.section-center-head,
-.positions-premium-head,
-.value-head,
-.access-head {
-  max-width: 1080px;
-  margin: 0 auto 34px;
-  text-align: center;
+/* POSITIONS */
+.positions-grid {
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:20px;
+  margin-top:40px;
 }
 
-.section-center-head h2,
-.positions-premium-head h2,
-.value-head h2,
-.access-head h2 {
-  max-width: 18ch;
-  margin: 0 auto;
+.positions-grid div {
+  font-size:14px;
 }
 
-.section-center-head p,
-.positions-premium-head p,
-.value-head p,
-.access-head p {
-  max-width: 760px;
-  margin: 16px auto 0;
+/* DISPOSITIF */
+.dispositif-grid {
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:30px;
+  margin-top:40px;
 }
 
-.quote-grid,
-.grid-3,
-.positions-grid,
-.conversations-right,
-.steps-right,
-.access-layout,
-.why-columns {
-  display: grid;
-  gap: 16px;
+/* VALEUR */
+.valeur {
+  background: linear-gradient(135deg,#0f2a44,#1c4b7a);
+  color:white;
 }
 
-.quote-grid,
-.access-layout,
-.why-columns { grid-template-columns: repeat(2, minmax(0,1fr)); }
-.grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-.positions-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
-.conversations-right { grid-template-columns: repeat(2, minmax(0,1fr)); }
-.steps-right { grid-template-columns: repeat(2, minmax(0,1fr)); }
-
-.quote-card {
-  text-align: center;
-  padding: 18px 20px;
-  max-width: 460px;
-  margin: 0 auto;
+/* ACCES */
+.acces-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  margin-top:40px;
 }
 
-.quote-card p { font-size: .78rem; }
-.quote-card strong { margin-top: 12px; }
-
-.conversations-layout,
-.steps-layout {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 46px;
-  align-items: start;
+.acces-grid .card {
+  border:1px solid #ddd;
 }
+</style>
 
-.conversations-left,
-.steps-left {
-  position: sticky;
-  top: 92px;
-  align-self: start;
-}
-
-.conversations-left h2,
-.steps-left h2 {
-  max-width: 13ch;
-}
-
-.section-copy { margin-top: 16px; }
-.section-copy p + p { margin-top: 10px; }
-
-.conversation-card,
-.step { padding: 18px; }
-
-.conversation-card h3,
-.position-card h3,
-.step h3,
-.value-card h3,
-.access-card h3 {
-  margin: 8px 0 8px;
-}
-
-.conversation-card p {
-  font-size: .76rem;
-  line-height: 1.62;
-}
-
-.conversation-card a,
-.position-card a,
-.access-card a,
-.inline-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 12px;
-  font-size: .72rem;
-  padding-bottom: 2px;
-  border-bottom: 1px solid currentColor;
-}
-
-.conversation-card a::after,
-.position-card a::after,
-.access-card a::after,
-.inline-link::after { content: "→"; opacity: .7; }
-
-.territory-band {
-  margin-top: 24px;
-  text-align: center;
-  padding: 22px 24px;
-  max-width: 980px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.territories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px 22px;
-  margin-top: 14px;
-  font-size: .72rem;
-  letter-spacing: .04em;
-}
-
-.tag { padding: 0; }
-
-.positions-premium-head h2 { max-width: 22ch; }
-
-.positions-grid .position-card { min-height: 212px; }
-.position-card { padding: 18px; }
-.position-card p { font-size: .76rem; }
-.position-card a { font-size: .68rem; }
-
-.full-bleed-panel {
-  margin: 24px auto 0;
-  text-align: center;
-  max-width: 940px;
-}
-
-.why-block {
-  max-width: 1120px;
-  margin: 0 auto 34px;
-  text-align: center;
-}
-
-.why-block h2 {
-  max-width: 18ch;
-  margin: 0 auto 22px;
-  font-size: clamp(2rem, 4vw, 3.55rem);
-}
-
-.why-columns {
-  max-width: 980px;
-  margin: 0 auto;
-  align-items: start;
-}
-
-.why-columns-left {
-  border-left: 2px solid rgba(16,24,40,.18);
-  padding-left: 22px;
-}
-
-.theme-blue .why-columns-left { border-left-color: rgba(255,255,255,.20); }
-
-.value-head h2,
-.access-head h2 { max-width: 16ch; }
-
-.value-card,
-.access-card { padding: 20px; }
-
-.access-card.primary {
-  background: linear-gradient(180deg, #173457 0%, #214d7d 100%);
-  color: white;
-  border: 1px solid rgba(255,255,255,.16);
-}
-
-.access-card.primary p,
-.access-card.primary small { color: rgba(255,255,255,.78); }
-
-.access-card.secondary {
-  background: rgba(255,255,255,.9);
-  color: var(--ink);
-  border: 1px solid var(--line);
-}
-
-.access-card.secondary p,
-.access-card.secondary small { color: var(--ink-soft); }
-
-.access-note {
-  text-align: center;
-  margin-top: 20px;
-}
-
-footer {
-  padding: 28px 0 50px;
-  color: var(--ink-faint);
-  font-size: .78rem;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .7s ease, transform .7s ease;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 1120px) {
-  .hero-grid,
-  .conversations-layout,
-  .steps-layout,
-  .why-columns {
-    grid-template-columns: 1fr;
-  }
-
-  .conversations-left,
-  .steps-left { position: static; }
-
-  .hero-bottom-band,
-  .positions-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-
-  .why-columns-left { border-left: 0; padding-left: 0; }
-}
-
-@media (max-width: 860px) {
-  .nav { display: none; }
-
-  .hero {
-    min-height: auto;
-    padding-top: 54px;
-  }
-
-  .quote-grid,
-  .grid-3,
-  .positions-grid,
-  .conversations-right,
-  .steps-right,
-  .access-layout,
-  .hero-bottom-band,
-  .why-columns {
-    grid-template-columns: 1fr;
-  }
-
-  .section-center-head h2,
-  .positions-premium-head h2,
-  .value-head h2,
-  .access-head h2,
-  .why-block h2,
-  .conversations-left h2,
-  .steps-left h2,
-  h1 {
-    max-width: none;
-  }
-
-  .chapter { padding: 80px 0; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-}
-
-  </style>
 </head>
+
 <body>
-  <div class="site-shell">
-    <header class="topbar">
-      <div class="topbar-inner">
-        <a href="#hero" class="brand" aria-label="En Plateau, retour en haut de page">
-          <span class="brand-name">En Plateau</span>
-          <span class="brand-sub">Cycle Atlas</span>
-        </a><nav class="nav" aria-label="Navigation principale">
-      <a href="#intro">Pourquoi</a>
-      <a href="#conversations">Conversations</a>
-      <a href="#positions">Positions</a>
-      <a href="#dispositif">Dispositif</a>
-      <a href="#valeur">Valeur</a>
-      <a href="#acces">Accès</a>
-    </nav>
 
-    <a href="recevoir-le-dossier.html" class="nav-cta">Recevoir le dossier</a>
-  </div>
-</header>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
 
-<main>
+    <div>
+      <h1>48 positions. Plusieurs décideurs. Un même exercice.</h1>
 
-<!-- HERO --><section class="hero theme-blue" id="hero">
-  <div class="container">
-    <div class="hero-grid"><div class="reveal">
-    <div class="eyebrow">En Plateau</div>
+      <p><strong>Chacun intervient depuis sa position. Aucun ne voit la même chose.</strong><br>
+      C’est leur mise en regard qui rend les décisions plus lisibles.</p>
 
-    <h1>48 positions. Plusieurs décideurs. Un même exercice.</h1>
-
-    <p class="hero-lead">
-      <strong>Chacun intervient depuis sa position. Aucun ne voit la même chose.</strong><br>
-      C’est leur mise en regard qui rend les décisions plus lisibles.
-    </p>
-
-    <div class="hero-actions">
-      <a href="recevoir-le-dossier.html" class="text-link">Recevoir le dossier</a>
-      <a href="#conversations" class="text-link">Voir les conversations</a>
+      <p>Recevoir le dossier — Voir les conversations</p>
     </div>
-  </div>
 
-  <div class="hero-side reveal">
-    <div class="hero-context-card">
+    <div class="hero-right">
+      <p><strong>Cycle Atlas — Arbitrages des opérations immobilières</strong></p>
 
-      <small>En cours</small>
-      <div class="context-title">Cycle Atlas — Arbitrages des opérations immobilières</div>
+      <p>Composition en cours jusqu’au 30 mai.<br>
+      Le cycle réunit des dizaines de décideurs publics et privés.</p>
 
-      <p>
-        Composition en cours jusqu’au <strong>30 mai</strong>.<br>
-        Le cycle réunit des décideurs publics et privés là où se jouent concrètement les arbitrages.
-      </p>
+      <p><strong>4 conversations · 48 positions</strong><br>
+      Répartis sur 8 fonctions de la chaîne de valeur de la construction et de la transformation immobilière.</p>
 
-      <div class="hero-context-subblock">
-        <div class="hero-context-subtitle">4 conversations · 48 positions</div>
-        <p>
-          Des dizaines de décideurs publics et privés, répartis sur 8 fonctions de la chaîne de valeur de la construction et de la transformation immobilière.
-        </p>
-      </div>
-
-      <div class="hero-context-subblock">
-        <div class="hero-context-subtitle">Ce que le dispositif change</div>
-        <p>
-          Les contributions sont rapprochées pour rendre visibles les écarts, les dépendances et les arbitrages réels.
-        </p>
-      </div>
-
+      <p>Les contributions sont rapprochées pour rendre visibles les écarts, les dépendances et les arbitrages réels.</p>
     </div>
-  </div>
-
-</div>
 
   </div>
-</section><!-- INTRO --><section class="chapter theme-light" id="intro">
-  <div class="container">
-    <div class="section-center-head reveal"><h2>Ce que chacun voit séparément ne suffit pas à comprendre</h2>
+</section>
 
-  <p>
-    Chaque acteur voit une partie du réel : financement, production, chantier, droit, aménagement, décision publique.
-  </p>
+<!-- INTRO -->
+<section>
+  <div class="center">
+    <h2>Ce que chacun voit séparément ne suffit pas à comprendre</h2>
 
-  <p>
-    Ce sont les écarts entre ces lectures qui expliquent certains blocages, certains arbitrages — et certains projets qui ne tiennent plus.
-  </p>
+    <p>Chaque acteur voit une partie du réel : financement, production, chantier, droit, aménagement, décision publique.</p>
 
-</div>
-
-<div class="quote-grid reveal">
-
-  <div class="quote-card">
-    <p>
-      Un projet peut sembler tenable depuis un tableur, fragile depuis le chantier, encore défendable juridiquement, et déjà compromis du point de vue commercial.
-    </p>
-    <strong>Une même opération, plusieurs réalités</strong>
+    <p>Ce sont les écarts entre ces lectures qui expliquent certains blocages, certains arbitrages — et certains projets qui ne tiennent plus.</p>
   </div>
+</section>
 
-  <div class="quote-card">
-    <p>
-      Le sujet n’est pas seulement ce que chacun dit. Le sujet est ce qui devient visible quand on rapproche des positions qui ne se parlent pas assez.
-    </p>
-    <strong>Principe de lecture</strong>
-  </div>
-
-</div>
-
-  </div>
-</section><!-- CONVERSATIONS --><section class="chapter theme-blue" id="conversations">
-  <div class="container"><div class="conversations-layout reveal">
-
-  <div class="conversations-left">
-
+<!-- CONVERSATIONS -->
+<section class="conversations">
+  <div class="center">
     <h2>4 conversations pour comprendre où les projets tiennent — et où ils basculent</h2>
 
-    <div class="section-copy">
-      <p>
-        Le cycle s’organise autour de <strong>4 conversations</strong> et <strong>48 positions</strong>.
-      </p>
+    <p>Le cycle s’organise autour de 4 conversations et 48 positions.</p>
+  </div>
 
-      <p>
-        Des décideurs interviennent sur un même sujet depuis leur position. Leur mise en regard fait apparaître ce qui se joue réellement.
-      </p>
+  <div class="conv-grid">
+
+    <div class="card">
+      <h3>À quel moment un projet ne tient plus ?</h3>
+      <p>Quand l’équilibre économique bascule sans être encore assumé.</p>
+    </div>
+
+    <div class="card">
+      <h3>Jusqu’où peut-on produire ?</h3>
+      <p>Quand produire reste possible, mais ne tient plus durablement.</p>
+    </div>
+
+    <div class="card">
+      <h3>Transformer ou reconstruire ?</h3>
+      <p>Quand conserver coûte plus qu’il ne rapporte réellement.</p>
+    </div>
+
+    <div class="card">
+      <h3>Qui fait avancer — ou fait basculer — un projet ?</h3>
+      <p>Quand la décision, le risque et la responsabilité ne coïncident plus.</p>
     </div>
 
   </div>
 
-  <div class="conversations-right">
-
-    <article class="conversation-card">
-      <small>Conversation 1</small>
-      <h3>À quel moment un projet ne tient plus ?</h3>
-      <p>Quand l’équilibre économique bascule sans être encore assumé.</p>
-    </article>
-
-    <article class="conversation-card">
-      <small>Conversation 2</small>
-      <h3>Jusqu’où peut-on produire ?</h3>
-      <p>Quand produire reste possible, mais ne tient plus durablement.</p>
-    </article>
-
-    <article class="conversation-card">
-      <small>Conversation 3</small>
-      <h3>Transformer ou reconstruire ?</h3>
-      <p>Quand conserver coûte plus qu’il ne rapporte réellement.</p>
-    </article>
-
-    <article class="conversation-card">
-      <small>Conversation 4</small>
-      <h3>Qui fait avancer — ou fait basculer — un projet ?</h3>
-      <p>Quand la décision, le risque et la responsabilité ne coïncident plus.</p>
-    </article>
-
-  </div>
-
-</div>
-
-<div class="full-bleed-panel territory-band reveal">
-  <p>
-    Chaque conversation est lue selon plusieurs contextes : zones tendues, territoires en croissance, territoires en reconversion.
+  <p style="text-align:center;margin-top:40px;font-size:13px;">
+    Zones tendues · territoires en croissance · territoires en reconversion
   </p>
-</div>
+</section>
 
+<!-- POSITIONS -->
+<section>
+  <div class="center">
+    <h2>Vous n’occupez pas la même place — mais vous conditionnez la décision</h2>
+
+    <p>Chaque position éclaire une partie du projet. Aucune ne maîtrise l’ensemble, mais chacune en influence l’issue.</p>
   </div>
-</section><!-- POSITIONS --><section class="chapter theme-light" id="positions">
-  <div class="container"><div class="positions-premium-head reveal">
-  <h2>Vous n’occupez pas la même place — mais vous conditionnez la décision</h2>
 
-  <p>
-    Chaque position éclaire une partie du projet. Aucune ne maîtrise l’ensemble, mais chacune en influence l’issue.
+  <div class="positions-grid">
+    <div>Collectivités</div>
+    <div>Promoteurs</div>
+    <div>Banques</div>
+    <div>Investisseurs</div>
+    <div>Bureaux d’études</div>
+    <div>Entreprises</div>
+  </div>
+
+  <p style="text-align:center;margin-top:40px;font-size:13px;">
+    Aucune de ces positions ne suffit seule
   </p>
-</div>
+</section>
+
+<!-- DISPOSITIF -->
+<section class="valeur">
+  <div class="center">
+    <h2>Un exercice commun, structuré</h2>
+
+    <p>Chaque acteur intervient depuis sa position, sur un angle précis.</p>
+  </div>
+
+  <div class="dispositif-grid">
+    <div class="card">
+      <h3>Prendre position</h3>
+      <p>Chaque intervention part d’un rôle réel.</p>
+    </div>
+
+    <div class="card">
+      <h3>Contribuer</h3>
+      <p>L’entretien est individuel et préparé.</p>
+    </div>
+
+    <div class="card">
+      <h3>Rapprocher</h3>
+      <p>Les positions sont mises en relation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VALEUR -->
+<section>
+  <div class="center">
+    <h2>Ce que cela permet réellement</h2>
+  </div>
+
+  <div class="dispositif-grid">
+    <div class="card">
+      <h3>Voir ce que les autres voient</h3>
+      <p>Accéder à d’autres lectures.</p>
+    </div>
+
+    <div class="card">
+      <h3>Mieux situer les décisions</h3>
+      <p>Comprendre où elles se prennent.</p>
+    </div>
+
+    <div class="card">
+      <h3>Comprendre les bascules</h3>
+      <p>Identifier les points de rupture.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ACCES -->
+<section>
+  <div class="center">
+    <h2>Entrer dans le cycle</h2>
+  </div>
+
+  <div class="acces-grid">
+
+    <div class="card">
+      <h3>Votre position a été identifiée</h3>
+      <p>Voir ce qui est structuré et ouvert.</p>
+    </div>
+
+    <div class="card">
+      <h3>Proposer une contribution</h3>
+      <p>Signaler une situation pertinente.</p>
+    </div>
 
   </div>
-</section><!-- DISPOSITIF --><section class="chapter theme-blue" id="dispositif">
-  <div class="container"><div class="section-center-head reveal">
 
-  <h2>Un exercice commun, structuré</h2>
+</section>
 
-  <p>Chaque acteur intervient depuis sa position, sur un angle précis.</p>
-
-  <p>
-    Les contributions sont rapprochées pour faire apparaître les écarts, les dépendances et les arbitrages réels.
-  </p>
-
-</div>
-
-<div class="grid-3 reveal">
-
-  <article class="value-card">
-    <h3>Prendre position</h3>
-    <p>Chaque intervention part d’un rôle réel dans la chaîne de décision.</p>
-  </article>
-
-  <article class="value-card">
-    <h3>Contribuer</h3>
-    <p>L’entretien est individuel, préparé et conduit dans un cadre crédible.</p>
-  </article>
-
-  <article class="value-card">
-    <h3>Rapprocher</h3>
-    <p>Les positions sont mises en relation pour rendre visibles les arbitrages.</p>
-  </article>
-
-</div>
-
-  </div>
-</section><!-- VALEUR --><section class="chapter theme-light" id="valeur">
-  <div class="container"><div class="value-head reveal">
-  <h2>Ce que cela permet réellement</h2>
-</div>
-
-<div class="grid-3 reveal">
-
-  <article class="value-card">
-    <h3>Voir ce que les autres acteurs voient</h3>
-    <p>Accéder à des lectures différentes du même projet.</p>
-  </article>
-
-  <article class="value-card">
-    <h3>Mieux situer les décisions</h3>
-    <p>Comprendre où les arbitrages se prennent réellement.</p>
-  </article>
-
-  <article class="value-card">
-    <h3>Comprendre ce qui tient — et ce qui ne tient plus</h3>
-    <p>Faire apparaître les écarts et les points de bascule.</p>
-  </article>
-
-</div>
-
-  </div>
-</section><!-- ACCES --><section class="chapter theme-light" id="acces">
-  <div class="container"><div class="access-head reveal">
-  <h2>Entrer dans le cycle</h2>
-</div>
-
-<div class="access-layout reveal">
-
-  <article class="access-card primary">
-    <h3>Votre position a été identifiée</h3>
-    <p>
-      Le dossier permet de voir ce qui est déjà structuré, ce qui reste ouvert et si votre position peut encore compter.
-    </p>
-    <a href="recevoir-le-dossier.html">Recevoir le dossier</a>
-  </article>
-
-  <article class="access-card secondary">
-    <h3>Aucune prise de contact n’a encore été engagée</h3>
-    <p>
-      Vous pouvez signaler une position ou une situation susceptible d’éclairer une conversation en cours.
-    </p>
-    <a href="proposer-une-contribution.html">Signaler une contribution</a>
-  </article>
-
-</div>
-
-<p class="access-note reveal">
-  Ce que les acteurs voient séparément devient plus lisible lorsqu’on rapproche leurs positions.
-</p>
-
-  </div>
-</section></main><footer>
-  <div class="container">
-    En Plateau — one page immersive de travail, construite à partir du contenu textuel fourni.
-  </div>
-</footer>
-
-  </div>  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('is-visible');
-      });
-    }, { threshold: 0.14 });
-
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-  </script></body>
-      </html>
+</body>
+  </html>
