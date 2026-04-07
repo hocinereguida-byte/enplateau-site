@@ -281,89 +281,6 @@ p,
 .value-card,
 .full-bleed-panel,
 .hero-bottom-band {
-  border-radius: var(--radius);
-}
-
-.theme-blue .hero-context-card,
-.theme-blue .quote-card,
-.theme-blue .conversation-card,
-.theme-blue .position-card,
-.theme-blue .step,
-.theme-blue .access-card,
-.theme-blue .value-card,
-.theme-blue .full-bleed-panel,
-.theme-blue .hero-bottom-band {
-  background: linear-gradient(180deg, var(--panel-dark) 0%, var(--panel-dark-2) 100%);
-  border: 1px solid var(--line-light);
-  box-shadow: var(--shadow-dark);
-}
-
-.theme-light .hero-context-card,
-.theme-light .quote-card,
-.theme-light .conversation-card,
-.theme-light .position-card,
-.theme-light .step,
-.theme-light .access-card,
-.theme-light .value-card,
-.theme-light .full-bleed-panel,
-.theme-light .hero-bottom-band {
-  background: var(--panel-light);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-soft);
-}
-
-.hero-context-card,
-.quote-card,
-.conversation-card,
-.position-card,
-.step,
-.access-card,
-.value-card,
-.full-bleed-panel,
-.hero-bottom-band {
-  padding: 22px;
-}
-
-.hero-context-card { display: grid; gap: 10px; }
-
-.context-title {
-  font-family: var(--font-display);
-  font-size: 1.22rem;
-  line-height: 1.16;
-  letter-spacing: -.03em;
-}
-
-.theme-blue .hero-context-card p,
-.theme-blue .hero-helper-note,
-.theme-blue .section-copy,
-.theme-blue .full-bleed-panel p,
-.theme-blue .conversation-card p,
-.theme-blue .position-card p,
-.theme-blue .step p,
-.theme-blue .value-card p,
-.theme-blue .access-card p,
-.theme-blue .access-note,
-.theme-blue .why-columns p,
-.theme-blue .quote-card p { color: rgba(255,255,255,.78); }
-
-.theme-light .hero-context-card p,
-.theme-light .hero-helper-note,
-.theme-light .section-copy,
-.theme-light .full-bleed-panel p,
-.theme-light .conversation-card p,
-.theme-light .position-card p,
-.theme-light .step p,
-.theme-light .value-card p,
-.theme-light .access-card p,
-.theme-light .access-note,
-.theme-light .why-columns p,
-.theme-light .quote-card p { color: var(--ink-soft); }
-
-.hero-bottom {
-  margin-top: 30px;
-}
-
-.hero-bottom-band {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
@@ -678,303 +595,244 @@ footer {
 </header>
 
 <main>
-  <section class="hero theme-blue" id="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="reveal">
-          <div class="eyebrow">En Plateau</div>
-          <h1>Comprendre comment les décisions se prennent</h1>
-          <p class="hero-lead"><strong>Parce que vous accédez à ce que les autres acteurs voient — et à ce que votre position ne permet pas de voir seule.</strong></p>
-          <div class="hero-actions">
-            <a href="recevoir-le-dossier.html" class="text-link">Recevoir le dossier</a>
-            <a href="#conversations" class="text-link">Voir les conversations</a>
-          </div>
-        </div>
 
-        <div class="hero-side reveal">
-          <div class="hero-context-card">
-            <small>En cours</small>
-            <div class="context-title">Cycle Atlas — Arbitrages des opérations immobilières</div>
-            <p>Composition en cours jusqu’au <strong>30 mai</strong>. Le cycle réunit des positions issues de la production, du financement, du cadre public, du juridique et de l’ingénierie, là où se jouent concrètement les arbitrages des projets.</p>
-          </div>
-        </div>
-      </div>
+<!-- HERO --><section class="hero theme-blue" id="hero">
+  <div class="container">
+    <div class="hero-grid"><div class="reveal">
+    <div class="eyebrow">En Plateau</div>
 
-      <div class="hero-bottom reveal">
-        <div class="hero-bottom-band">
-          <div class="hero-helper-block">
-            <div class="hero-helper-title">4 points d’entrée et 4 conversations structurantes</div>
-            <p class="hero-helper-note">Le cycle s’organise autour de quatre entrées qui permettent d’observer comment un projet tient, se déplace ou bascule selon la place occupée dans la décision.</p>
-          </div>
+    <h1>48 positions. Plusieurs décideurs. Un même exercice.</h1>
 
-          <div class="hero-helper-block">
-            <div class="hero-helper-title">Ce que le dispositif change</div>
-            <p class="hero-helper-note">Vous accédez à une lecture où financement, droit, production, ingénierie, cadre public et exécution deviennent lisibles dans leurs dépendances réelles.</p>
-          </div>
-        </div>
-      </div>
+    <p class="hero-lead">
+      <strong>Chacun intervient depuis sa position. Aucun ne voit la même chose.</strong><br>
+      C’est leur mise en regard qui rend les décisions plus lisibles.
+    </p>
+
+    <div class="hero-actions">
+      <a href="recevoir-le-dossier.html" class="text-link">Recevoir le dossier</a>
+      <a href="#conversations" class="text-link">Voir les conversations</a>
     </div>
-  </section>
+  </div>
 
-  <section class="chapter theme-light" id="intro">
-    <div class="container">
-      <div class="section-center-head reveal">
-        <h2>Les décisions ne se prennent jamais seules</h2>
-        <p>Chaque acteur voit une partie du réel : le financement, la production, le chantier, le droit, l’aménagement ou la décision publique. Ce qui bloque un projet pour l’un n’apparaît pas toujours au même moment pour l’autre. En Plateau rapproche ces lectures pour rendre visibles les écarts, les dépendances et les points de bascule.</p>
+  <div class="hero-side reveal">
+    <div class="hero-context-card">
+
+      <small>En cours</small>
+      <div class="context-title">Cycle Atlas — Arbitrages des opérations immobilières</div>
+
+      <p>
+        Composition en cours jusqu’au <strong>30 mai</strong>.<br>
+        Le cycle réunit des décideurs publics et privés là où se jouent concrètement les arbitrages.
+      </p>
+
+      <div class="hero-context-subblock">
+        <div class="hero-context-subtitle">4 conversations · 48 positions</div>
+        <p>
+          Des dizaines de décideurs publics et privés, répartis sur 8 fonctions de la chaîne de valeur de la construction et de la transformation immobilière.
+        </p>
       </div>
 
-      <div class="quote-grid reveal">
-        <div class="quote-card">
-          <p>Un projet peut sembler tenable depuis un tableur, fragile depuis le chantier, encore défendable juridiquement, et déjà compromis du point de vue commercial.</p>
-          <strong>Une même opération, plusieurs réalités</strong>
-        </div>
-        <div class="quote-card">
-          <p>Le sujet n’est pas seulement ce que chacun dit. Le sujet est ce qui devient visible quand on rapproche des positions qui ne se parlent pas assez, ou pas au bon moment.</p>
-          <strong>Principe de lecture</strong>
-        </div>
+      <div class="hero-context-subblock">
+        <div class="hero-context-subtitle">Ce que le dispositif change</div>
+        <p>
+          Les contributions sont rapprochées pour rendre visibles les écarts, les dépendances et les arbitrages réels.
+        </p>
       </div>
+
     </div>
-  </section>
+  </div>
 
-  <section class="chapter theme-blue" id="conversations">
-    <div class="container">
-      <div class="conversations-layout reveal">
-        <div class="conversations-left">
-          <h2>4 conversations pour comprendre où les projets tiennent — et où ils basculent</h2>
-          <div class="section-copy">
-            <p>Le cycle s’organise autour de quatre conversations structurantes. Chacune part d’un problème réel et fait apparaître une tension décisive à partir de positions différentes et complémentaires.</p>
-            <p>Chaque conversation est observée à travers plusieurs réalités territoriales.</p>
-          </div>
-        </div>
+</div>
 
-        <div class="conversations-right">
-          <article class="conversation-card">
-            <small>Conversation 1</small>
-            <h3>À quel moment un projet ne tient plus ?</h3>
-            <p>Quand l’équilibre économique bascule sans être encore assumé.</p>
-            <a href="conversations.html#conversation-1">En savoir plus</a>
-          </article>
+  </div>
+</section><!-- INTRO --><section class="chapter theme-light" id="intro">
+  <div class="container">
+    <div class="section-center-head reveal"><h2>Ce que chacun voit séparément ne suffit pas à comprendre</h2>
 
-          <article class="conversation-card">
-            <small>Conversation 2</small>
-            <h3>Jusqu’où peut-on produire ?</h3>
-            <p>Quand produire reste possible, mais ne tient plus durablement.</p>
-            <a href="conversations.html#conversation-2">En savoir plus</a>
-          </article>
+  <p>
+    Chaque acteur voit une partie du réel : financement, production, chantier, droit, aménagement, décision publique.
+  </p>
 
-          <article class="conversation-card">
-            <small>Conversation 3</small>
-            <h3>Transformer ou reconstruire ?</h3>
-            <p>Quand conserver coûte plus qu’il ne rapporte réellement.</p>
-            <a href="conversations.html#conversation-3">En savoir plus</a>
-          </article>
+  <p>
+    Ce sont les écarts entre ces lectures qui expliquent certains blocages, certains arbitrages — et certains projets qui ne tiennent plus.
+  </p>
 
-          <article class="conversation-card">
-            <small>Conversation 4</small>
-            <h3>Qui fait avancer — ou fait basculer — un projet ?</h3>
-            <p>Quand la décision, le risque et la responsabilité ne coïncident plus.</p>
-            <a href="conversations.html#conversation-4">En savoir plus</a>
-          </article>
-        </div>
-      </div>
+</div>
 
-      <div class="full-bleed-panel territory-band reveal">
-        <p>Chaque conversation est lue selon plusieurs contextes : <strong>zones tendues</strong>, <strong>territoires en croissance</strong>, <strong>territoires en reconversion</strong>. Ce n’est pas un décor. C’est ce qui modifie la manière dont un arbitrage se formule, se reporte ou s’impose.</p>
-        <div class="territories">
-          <span class="tag">Zones tendues</span>
-          <span class="tag">Territoires en croissance</span>
-          <span class="tag">Territoires en reconversion</span>
-        </div>
-      </div>
+<div class="quote-grid reveal">
+
+  <div class="quote-card">
+    <p>
+      Un projet peut sembler tenable depuis un tableur, fragile depuis le chantier, encore défendable juridiquement, et déjà compromis du point de vue commercial.
+    </p>
+    <strong>Une même opération, plusieurs réalités</strong>
+  </div>
+
+  <div class="quote-card">
+    <p>
+      Le sujet n’est pas seulement ce que chacun dit. Le sujet est ce qui devient visible quand on rapproche des positions qui ne se parlent pas assez.
+    </p>
+    <strong>Principe de lecture</strong>
+  </div>
+
+</div>
+
+  </div>
+</section><!-- CONVERSATIONS --><section class="chapter theme-blue" id="conversations">
+  <div class="container"><div class="conversations-layout reveal">
+
+  <div class="conversations-left">
+
+    <h2>4 conversations pour comprendre où les projets tiennent — et où ils basculent</h2>
+
+    <div class="section-copy">
+      <p>
+        Le cycle s’organise autour de <strong>4 conversations</strong> et <strong>48 positions</strong>.
+      </p>
+
+      <p>
+        Des décideurs interviennent sur un même sujet depuis leur position. Leur mise en regard fait apparaître ce qui se joue réellement.
+      </p>
     </div>
-  </section>
 
-  <section class="chapter theme-light" id="positions">
-    <div class="container">
-      <div class="positions-premium-head reveal">
-        <h2>Vous n’occupez pas la même place dans la décision — mais vous en conditionnez l’issue</h2>
-        <p>Chaque position éclaire une partie du projet. Ici, les rôles apparaissent comme des places réelles dans la décision.</p>
-      </div>
+  </div>
 
-      <div class="positions-grid reveal">
-        <article class="position-card">
-          <small>Cadre public</small>
-          <h3>Collectivités</h3>
-          <p>Vous fixez le cadre dans lequel un projet peut, ou non, devenir acceptable et réalisable.</p>
-          <a href="positions.html#acteurs-publics">Accéder à votre position</a>
-        </article>
+  <div class="conversations-right">
 
-        <article class="position-card">
-          <small>Cadre de possibilité</small>
-          <h3>Aménageurs</h3>
-          <p>Vous créez les conditions à partir desquelles un projet peut réellement prendre forme.</p>
-          <a href="positions.html#amenageurs">Accéder à votre position</a>
-        </article>
+    <article class="conversation-card">
+      <small>Conversation 1</small>
+      <h3>À quel moment un projet ne tient plus ?</h3>
+      <p>Quand l’équilibre économique bascule sans être encore assumé.</p>
+    </article>
 
-        <article class="position-card">
-          <small>Qualification du risque</small>
-          <h3>Juristes &amp; avocats</h3>
-          <p>Vous qualifiez ce qui est possible, ce qui expose au risque et ce qui devient bloquant.</p>
-          <a href="positions.html#juridique">Accéder à votre position</a>
-        </article>
+    <article class="conversation-card">
+      <small>Conversation 2</small>
+      <h3>Jusqu’où peut-on produire ?</h3>
+      <p>Quand produire reste possible, mais ne tient plus durablement.</p>
+    </article>
 
-        <article class="position-card">
-          <small>Arbitrage opérationnel</small>
-          <h3>Promoteurs</h3>
-          <p>Vous arbitrez le lancement, le maintien ou l’arrêt d’une opération.</p>
-          <a href="positions.html#promoteurs">Accéder à votre position</a>
-        </article>
+    <article class="conversation-card">
+      <small>Conversation 3</small>
+      <h3>Transformer ou reconstruire ?</h3>
+      <p>Quand conserver coûte plus qu’il ne rapporte réellement.</p>
+    </article>
 
-        <article class="position-card">
-          <small>Condition de financement</small>
-          <h3>Banques</h3>
-          <p>Vous déterminez si un projet peut encore être financé dans des conditions acceptables.</p>
-          <a href="positions.html#banques">Accéder à votre position</a>
-        </article>
+    <article class="conversation-card">
+      <small>Conversation 4</small>
+      <h3>Qui fait avancer — ou fait basculer — un projet ?</h3>
+      <p>Quand la décision, le risque et la responsabilité ne coïncident plus.</p>
+    </article>
 
-        <article class="position-card">
-          <small>Arbitrage capital / risque</small>
-          <h3>Investisseurs</h3>
-          <p>Vous arbitrez l’engagement du capital, la rentabilité attendue et le niveau de risque supportable.</p>
-          <a href="positions.html#investisseurs">Accéder à votre position</a>
-        </article>
+  </div>
 
-        <article class="position-card">
-          <small>Objectivation technique</small>
-          <h3>Bureaux d’études &amp; ingénieries</h3>
-          <p>Vous objectivez ce qui tient réellement, techniquement, économiquement et dans le temps.</p>
-          <a href="positions.html#bet">Accéder à votre position</a>
-        </article>
+</div>
 
-        <article class="position-card">
-          <small>Épreuve du terrain</small>
-          <h3>Entreprises de construction</h3>
-          <p>Vous révélez ce que le projet devient réellement une fois confronté au terrain.</p>
-          <a href="positions.html#entreprises">Accéder à votre position</a>
-        </article>
-      </div>
+<div class="full-bleed-panel territory-band reveal">
+  <p>
+    Chaque conversation est lue selon plusieurs contextes : zones tendues, territoires en croissance, territoires en reconversion.
+  </p>
+</div>
 
-      <div class="full-bleed-panel reveal">
-        <p>Aucune de ces positions ne suffit seule. Ce qui compte n’est pas seulement le point de vue de chacun, mais la manière dont ces points de vue se conditionnent et parfois se contredisent.</p>
-        <a href="positions.html" class="inline-link">Voir toutes les positions</a>
-      </div>
-    </div>
-  </section>
+  </div>
+</section><!-- POSITIONS --><section class="chapter theme-light" id="positions">
+  <div class="container"><div class="positions-premium-head reveal">
+  <h2>Vous n’occupez pas la même place — mais vous conditionnez la décision</h2>
 
-  <section class="chapter theme-blue" id="dispositif">
-    <div class="container">
-      <div class="steps-layout reveal">
-        <div class="steps-left">
-          <h2>Un dispositif conçu pour produire plus qu’une simple prise de parole</h2>
-          <div class="section-copy">
-            <p><strong>Le cycle Atlas constitue aujourd’hui le premier dispositif développé par En Plateau.</strong></p>
-            <p>Il prépare des entretiens à partir d’angles précis. Chaque contribution est ensuite rapprochée d’autres positions pour rendre visibles des arbitrages, des dépendances et des écarts de lecture. D’autres cycles pourront ensuite être développés sur d’autres terrains de décision.</p>
-          </div>
-        </div>
+  <p>
+    Chaque position éclaire une partie du projet. Aucune ne maîtrise l’ensemble, mais chacune en influence l’issue.
+  </p>
+</div>
 
-        <div class="steps-right">
-          <article class="step">
-            <small>Préparer</small>
-            <h3>Cadrer l’angle avant la prise de parole</h3>
-            <p>L’angle est préparé en amont pour rendre la contribution précise, utile et sans exposition inutile.</p>
-          </article>
+  </div>
+</section><!-- DISPOSITIF --><section class="chapter theme-blue" id="dispositif">
+  <div class="container"><div class="section-center-head reveal">
 
-          <article class="step">
-            <small>Contribuer</small>
-            <h3>Faire intervenir une position, pas un discours générique</h3>
-            <p>L’entretien est individuel, court, préparé et conduit dans un cadre crédible.</p>
-          </article>
+  <h2>Un exercice commun, structuré</h2>
 
-          <article class="step">
-            <small>Rapprocher</small>
-            <h3>Mettre les lectures en tension utile</h3>
-            <p>La contribution est mise en relation avec d’autres positions pour faire apparaître ce qui conditionne réellement les décisions.</p>
-          </article>
+  <p>Chaque acteur intervient depuis sa position, sur un angle précis.</p>
 
-          <article class="step">
-            <small>Finalité</small>
-            <h3>Produire un matériau lisible et comparable</h3>
-            <p>Le principe n’est pas d’accumuler des interventions, mais de produire un matériau utile à la compréhension des arbitrages réels.</p>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
+  <p>
+    Les contributions sont rapprochées pour faire apparaître les écarts, les dépendances et les arbitrages réels.
+  </p>
 
-  <section class="chapter theme-light" id="pourquoi">
-    <div class="container">
-      <div class="why-block reveal">
-        <h2>Pourquoi commencer par les arbitrages des opérations immobilières ?</h2>
-        <div class="why-columns">
-          <div class="why-columns-left">
-            <p>La production et la transformation d’opérations immobilières — logement, tertiaire, locaux d’activité — concentrent, dans un même réel, des arbitrages entre financement, production, droit, régulation, usages et décision publique.</p>
-          </div>
-          <div>
-            <p>Ce champ rend visibles, sur des situations concrètes, des tensions qui restent souvent dispersées ailleurs. C’est ce qui en fait le bon point de départ pour ouvrir le cycle Atlas porté par En Plateau.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+</div>
 
-  <section class="chapter theme-blue" id="valeur">
-    <div class="container">
-      <div class="value-head reveal">
-        <h2>Ce que le cycle permet réellement</h2>
-        <p>Le bénéfice n’est pas seulement informationnel. Il est stratégique : mieux situer les arbitrages, mieux comprendre les dépendances et réduire les angles morts.</p>
-      </div>
+<div class="grid-3 reveal">
 
-      <div class="grid-3 reveal">
-        <article class="value-card">
-          <small>Valeur 1</small>
-          <h3>Voir ce que votre position ne voit pas seule</h3>
-          <p>Comprendre ce que d’autres acteurs perçoivent du même projet, du même blocage ou du même risque.</p>
-        </article>
+  <article class="value-card">
+    <h3>Prendre position</h3>
+    <p>Chaque intervention part d’un rôle réel dans la chaîne de décision.</p>
+  </article>
 
-        <article class="value-card">
-          <small>Valeur 2</small>
-          <h3>Mieux situer les décisions</h3>
-          <p>Voir où les arbitrages se prennent réellement et de quoi ils dépendent.</p>
-        </article>
+  <article class="value-card">
+    <h3>Contribuer</h3>
+    <p>L’entretien est individuel, préparé et conduit dans un cadre crédible.</p>
+  </article>
 
-        <article class="value-card">
-          <small>Valeur 3</small>
-          <h3>Réduire les angles morts</h3>
-          <p>Faire apparaître les écarts de lecture, les signaux faibles et les risques mal situés.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+  <article class="value-card">
+    <h3>Rapprocher</h3>
+    <p>Les positions sont mises en relation pour rendre visibles les arbitrages.</p>
+  </article>
 
-  <section class="chapter theme-light" id="acces">
-    <div class="container">
-      <div class="access-head reveal">
-        <h2>Entrer dans le cycle</h2>
-        <p>L’accès est présenté ici de manière directe : soit votre position a déjà été identifiée, soit vous souhaitez signaler une contribution utile à une conversation en cours.</p>
-      </div>
+</div>
 
-      <div class="access-layout reveal">
-        <article class="access-card primary">
-          <small>Accès 1</small>
-          <h3>Votre position a été identifiée</h3>
-          <p>Le dossier permet de voir ce qui est déjà structuré, ce qui reste ouvert et si votre position peut encore compter.</p>
-          <a href="recevoir-le-dossier.html">Recevoir le dossier</a>
-        </article>
+  </div>
+</section><!-- VALEUR --><section class="chapter theme-light" id="valeur">
+  <div class="container"><div class="value-head reveal">
+  <h2>Ce que cela permet réellement</h2>
+</div>
 
-        <article class="access-card secondary">
-          <small>Accès 2</small>
-          <h3>Aucune prise de contact n’a encore été engagée</h3>
-          <p>Vous pouvez signaler une position, une situation ou un arbitrage susceptible d’éclairer utilement une conversation.</p>
-          <a href="proposer-une-contribution.html">Signaler une contribution</a>
-        </article>
-      </div>
+<div class="grid-3 reveal">
 
-      <p class="access-note reveal">Ce que les acteurs voient séparément devient plus lisible lorsqu’on rapproche leurs positions.</p>
-    </div>
-  </section>
-</main>
+  <article class="value-card">
+    <h3>Voir ce que les autres acteurs voient</h3>
+    <p>Accéder à des lectures différentes du même projet.</p>
+  </article>
 
-<footer>
+  <article class="value-card">
+    <h3>Mieux situer les décisions</h3>
+    <p>Comprendre où les arbitrages se prennent réellement.</p>
+  </article>
+
+  <article class="value-card">
+    <h3>Comprendre ce qui tient — et ce qui ne tient plus</h3>
+    <p>Faire apparaître les écarts et les points de bascule.</p>
+  </article>
+
+</div>
+
+  </div>
+</section><!-- ACCES --><section class="chapter theme-light" id="acces">
+  <div class="container"><div class="access-head reveal">
+  <h2>Entrer dans le cycle</h2>
+</div>
+
+<div class="access-layout reveal">
+
+  <article class="access-card primary">
+    <h3>Votre position a été identifiée</h3>
+    <p>
+      Le dossier permet de voir ce qui est déjà structuré, ce qui reste ouvert et si votre position peut encore compter.
+    </p>
+    <a href="recevoir-le-dossier.html">Recevoir le dossier</a>
+  </article>
+
+  <article class="access-card secondary">
+    <h3>Aucune prise de contact n’a encore été engagée</h3>
+    <p>
+      Vous pouvez signaler une position ou une situation susceptible d’éclairer une conversation en cours.
+    </p>
+    <a href="proposer-une-contribution.html">Signaler une contribution</a>
+  </article>
+
+</div>
+
+<p class="access-note reveal">
+  Ce que les acteurs voient séparément devient plus lisible lorsqu’on rapproche leurs positions.
+</p>
+
+  </div>
+</section></main><footer>
   <div class="container">
     En Plateau — one page immersive de travail, construite à partir du contenu textuel fourni.
   </div>
@@ -989,4 +847,4 @@ footer {
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
   </script></body>
-</html>
+      </html>
