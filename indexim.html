@@ -375,6 +375,37 @@ h1 {
 }
 
 .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+
+.conversations-layout {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.conversations-left h2 {
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  max-width: 12ch;
+}
+
+.conversations-right {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 16px;
+}
+
+.conversations-right .conversation-card {
+  padding: 20px;
+}
+
+.conversations-right .conversation-card h3 {
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.conversations-right .conversation-card p {
+  font-size: .9rem;
+}
 .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
 .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
 
@@ -500,6 +531,38 @@ h1 {
   gap: 18px;
 }
 
+.positions-premium-head {
+  max-width: 980px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.positions-premium-head h2 {
+  font-size: clamp(2.35rem, 4.6vw, 4.9rem);
+  max-width: 14ch;
+  margin: 0 auto;
+  line-height: 1.02;
+}
+
+.positions-premium-head p {
+  margin: 22px auto 0;
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.positions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.positions-grid .position-card {
+  min-height: 260px;
+}
+
 .steps-layout {
   display: grid;
   grid-template-columns: repeat(3, minmax(0,1fr));
@@ -556,20 +619,25 @@ footer {
 }
 
 @media (max-width: 1100px) {
-  .hero-grid,
-  .section-head,
-  .positions-layout {
+  .conversations-layout {
     grid-template-columns: 1fr;
   }
 
+  .conversations-right,
   .hero-bottom,
-  .grid-4 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .grid-4,
+  .positions-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 
   .grid-4 { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 
 @media (max-width: 860px) {
+  .conversations-right,
+  .positions-grid {
+    grid-template-columns: 1fr;
+  }
+
   .nav {
     display: none;
   }
@@ -708,42 +776,48 @@ footer {
 
   <section class="chapter" id="conversations">
     <div class="container">
-      <div class="section-head reveal">
-        <h2>Quatre conversations pour comprendre où les projets tiennent — et où ils basculent</h2>
-        <div class="section-copy">
-          <p>Le cycle s’organise autour de quatre conversations structurantes. Chacune part d’un problème réel et fait apparaître une tension décisive à partir de positions différentes et complémentaires.</p>
-          <p>Chaque conversation est observée à travers plusieurs réalités territoriales.</p>
+      <div class="conversations-layout reveal">
+
+        <div class="conversations-left">
+          <h2>Quatre conversations pour comprendre où les projets tiennent — et où ils basculent</h2>
+
+          <div class="section-copy">
+            <p>Le cycle s’organise autour de quatre conversations structurantes. Chacune part d’un problème réel et fait apparaître une tension décisive à partir de positions différentes et complémentaires.</p>
+
+            <p>Chaque conversation est observée à travers plusieurs réalités territoriales.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="grid-2 reveal">
-        <article class="conversation-card">
-          <small>Conversation 1</small>
-          <h3>À quel moment un projet ne tient plus ?</h3>
-          <p>Quand l’équilibre économique bascule sans être encore assumé.</p>
-          <a href="conversations.html#conversation-1">En savoir plus</a>
-        </article>
+        <div class="conversations-right">
+          <article class="conversation-card">
+            <small>Conversation 1</small>
+            <h3>À quel moment un projet ne tient plus ?</h3>
+            <p>Quand l’équilibre économique bascule sans être encore assumé.</p>
+            <a href="conversations.html#conversation-1">En savoir plus</a>
+          </article>
 
-        <article class="conversation-card">
-          <small>Conversation 2</small>
-          <h3>Jusqu’où peut-on produire ?</h3>
-          <p>Quand produire reste possible, mais ne tient plus durablement.</p>
-          <a href="conversations.html#conversation-2">En savoir plus</a>
-        </article>
+          <article class="conversation-card">
+            <small>Conversation 2</small>
+            <h3>Jusqu’où peut-on produire ?</h3>
+            <p>Quand produire reste possible, mais ne tient plus durablement.</p>
+            <a href="conversations.html#conversation-2">En savoir plus</a>
+          </article>
 
-        <article class="conversation-card">
-          <small>Conversation 3</small>
-          <h3>Transformer ou reconstruire ?</h3>
-          <p>Quand conserver coûte plus qu’il ne rapporte réellement.</p>
-          <a href="conversations.html#conversation-3">En savoir plus</a>
-        </article>
+          <article class="conversation-card">
+            <small>Conversation 3</small>
+            <h3>Transformer ou reconstruire ?</h3>
+            <p>Quand conserver coûte plus qu’il ne rapporte réellement.</p>
+            <a href="conversations.html#conversation-3">En savoir plus</a>
+          </article>
 
-        <article class="conversation-card">
-          <small>Conversation 4</small>
-          <h3>Qui fait avancer — ou fait basculer — un projet ?</h3>
-          <p>Quand la décision, le risque et la responsabilité ne coïncident plus.</p>
-          <a href="conversations.html#conversation-4">En savoir plus</a>
-        </article>
+          <article class="conversation-card">
+            <small>Conversation 4</small>
+            <h3>Qui fait avancer — ou fait basculer — un projet ?</h3>
+            <p>Quand la décision, le risque et la responsabilité ne coïncident plus.</p>
+            <a href="conversations.html#conversation-4">En savoir plus</a>
+          </article>
+        </div>
+
       </div>
 
       <div class="full-bleed-panel reveal">
@@ -759,73 +833,67 @@ footer {
 
   <section class="chapter" id="positions">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="positions-premium-head reveal">
         <h2>Vous n’occupez pas la même place dans la décision — mais vous en conditionnez l’issue</h2>
-        <div class="section-copy">
-          <p>Chaque position éclaire une partie du projet. Ici, les rôles ne sont pas rangés comme des catégories abstraites. Ils apparaissent comme des places réelles dans la décision.</p>
-        </div>
+        <p>Chaque position éclaire une partie du projet. Ici, les rôles ne sont pas rangés comme des catégories abstraites. Ils apparaissent comme des places réelles dans la décision.</p>
       </div>
 
-      <div class="positions-layout reveal">
-        <div class="positions-stack">
-          <article class="position-card">
-            <small>Cadre public</small>
-            <h3>Collectivités</h3>
-            <p>Vous fixez le cadre dans lequel un projet peut, ou non, devenir acceptable et réalisable.</p>
-            <a href="positions.html#acteurs-publics">Accéder à votre position</a>
-          </article>
+      <div class="positions-grid reveal">
+        <article class="position-card">
+          <small>Cadre public</small>
+          <h3>Collectivités</h3>
+          <p>Vous fixez le cadre dans lequel un projet peut, ou non, devenir acceptable et réalisable.</p>
+          <a href="positions.html#acteurs-publics">Accéder à votre position</a>
+        </article>
 
-          <article class="position-card">
-            <small>Cadre de possibilité</small>
-            <h3>Aménageurs</h3>
-            <p>Vous créez les conditions à partir desquelles un projet peut réellement prendre forme.</p>
-            <a href="positions.html#amenageurs">Accéder à votre position</a>
-          </article>
+        <article class="position-card">
+          <small>Cadre de possibilité</small>
+          <h3>Aménageurs</h3>
+          <p>Vous créez les conditions à partir desquelles un projet peut réellement prendre forme.</p>
+          <a href="positions.html#amenageurs">Accéder à votre position</a>
+        </article>
 
-          <article class="position-card">
-            <small>Qualification du risque</small>
-            <h3>Juristes &amp; avocats</h3>
-            <p>Vous qualifiez ce qui est possible, ce qui expose au risque et ce qui devient bloquant.</p>
-            <a href="positions.html#juridique">Accéder à votre position</a>
-          </article>
+        <article class="position-card">
+          <small>Qualification du risque</small>
+          <h3>Juristes &amp; avocats</h3>
+          <p>Vous qualifiez ce qui est possible, ce qui expose au risque et ce qui devient bloquant.</p>
+          <a href="positions.html#juridique">Accéder à votre position</a>
+        </article>
 
-          <article class="position-card">
-            <small>Arbitrage opérationnel</small>
-            <h3>Promoteurs</h3>
-            <p>Vous arbitrez le lancement, le maintien ou l’arrêt d’une opération.</p>
-            <a href="positions.html#promoteurs">Accéder à votre position</a>
-          </article>
-        </div>
+        <article class="position-card">
+          <small>Arbitrage opérationnel</small>
+          <h3>Promoteurs</h3>
+          <p>Vous arbitrez le lancement, le maintien ou l’arrêt d’une opération.</p>
+          <a href="positions.html#promoteurs">Accéder à votre position</a>
+        </article>
 
-        <div class="positions-stack">
-          <article class="position-card">
-            <small>Condition de financement</small>
-            <h3>Banques</h3>
-            <p>Vous déterminez si un projet peut encore être financé dans des conditions acceptables.</p>
-            <a href="positions.html#banques">Accéder à votre position</a>
-          </article>
+        <article class="position-card">
+          <small>Condition de financement</small>
+          <h3>Banques</h3>
+          <p>Vous déterminez si un projet peut encore être financé dans des conditions acceptables.</p>
+          <a href="positions.html#banques">Accéder à votre position</a>
+        </article>
 
-          <article class="position-card">
-            <small>Arbitrage capital / risque</small>
-            <h3>Investisseurs</h3>
-            <p>Vous arbitrez l’engagement du capital, la rentabilité attendue et le niveau de risque supportable.</p>
-            <a href="positions.html#investisseurs">Accéder à votre position</a>
-          </article>
+        <article class="position-card">
+          <small>Arbitrage capital / risque</small>
+          <h3>Investisseurs</h3>
+          <p>Vous arbitrez l’engagement du capital, la rentabilité attendue et le niveau de risque supportable.</p>
+          <a href="positions.html#investisseurs">Accéder à votre position</a>
+        </article>
 
-          <article class="position-card">
-            <small>Objectivation technique</small>
-            <h3>Bureaux d’études &amp; ingénieries</h3>
-            <p>Vous objectivez ce qui tient réellement, techniquement, économiquement et dans le temps.</p>
-            <a href="positions.html#bet">Accéder à votre position</a>
-          </article>
+        <article class="position-card">
+          <small>Objectivation technique</small>
+          <h3>Bureaux d’études &amp; ingénieries</h3>
+          <p>Vous objectivez ce qui tient réellement, techniquement, économiquement et dans le temps.</p>
+          <a href="positions.html#bet">Accéder à votre position</a>
+        </article>
 
-          <article class="position-card">
-            <small>Épreuve du terrain</small>
-            <h3>Entreprises de construction</h3>
-            <p>Vous révélez ce que le projet devient réellement une fois confronté au terrain.</p>
-            <a href="positions.html#entreprises">Accéder à votre position</a>
-          </article>
-        </div>
+        <article class="position-card">
+          <small>Épreuve du terrain</small>
+          <h3>Entreprises de construction</h3>
+          <p>Vous révélez ce que le projet devient réellement une fois confronté au terrain.</p>
+          <a href="positions.html#entreprises">Accéder à votre position</a>
+        </article>
       </div>
 
       <div class="full-bleed-panel reveal">
@@ -970,4 +1038,4 @@ footer {
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
   </script></body>
-        </html>
+  </html>
