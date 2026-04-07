@@ -42,6 +42,65 @@
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/home.css">
   <link rel="stylesheet" href="assets/css/pages.css">
+
+  <style>
+    .positions-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      margin-top: 36px;
+    }
+
+    .position-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr 2fr;
+      gap: 20px 28px;
+      align-items: start;
+      padding-top: 18px;
+      border-top: 1px solid var(--ep-line);
+    }
+
+    .position-role h3 {
+      margin-bottom: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+      line-height: 1.15;
+      color: var(--ep-ink);
+    }
+
+    .position-content {
+      text-align: right;
+    }
+
+    .position-content p {
+      margin-bottom: 10px;
+      color: var(--ep-ink-soft);
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    @media (max-width: 980px) {
+      .position-row {
+        grid-template-columns: 1fr 1.4fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .positions-rows {
+        gap: 28px;
+      }
+
+      .position-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding-top: 16px;
+      }
+
+      .position-content {
+        text-align: left;
+      }
+    }
+  </style>
 </head>
 
 <body class="home-page">
@@ -61,7 +120,8 @@
           </h1>
 
           <p class="hero-subtitle">
-            En Plateau permet d'y accéder - et de comprendre ce qui oriente réellement les arbitrages.          </p>
+            En Plateau permet d'y accéder - et de comprendre ce qui oriente réellement les arbitrages.
+          </p>
 
           <p class="hero-meta">
             Cycle en cours : <strong>Atlas : Production & transformation des espaces d'habitation et d'activité</strong>.
@@ -160,56 +220,90 @@
     <section class="home-section" id="positions-home">
       <div class="container">
         <div class="section-head section-head--centered reveal">
-          <h2>Des positions différentes, une même réalité</h2>
+          <h2>Vous n’occupez pas la même place dans la décision — mais vous la conditionnez</h2>
           <p class="section-intro">
-            Les acteurs n’occupent pas la même place dans la décision. Mais leurs arbitrages conditionnent ensemble ce qu’il est encore possible de construire, de transformer ou de financer.
+            Chaque position éclaire une partie du réel. Accédez à celle qui correspond à votre rôle.
           </p>
         </div>
 
-        <div class="three-col-frame dark-cards reveal">
-          <article class="card card--dark">
-            <h3>Collectivités</h3>
-            <p>Définissent le cadre : règles, foncier, équilibres territoriaux.</p>
-          </article>
+        <div class="positions-rows">
 
-          <article class="card card--dark">
-            <h3>Aménageurs</h3>
-            <p>Structurent les conditions de possibilité des opérations.</p>
-          </article>
+          <div class="position-row reveal">
+            <div class="position-role">
+              <h3>Collectivités</h3>
+            </div>
+            <div class="position-content">
+              <p>Vous définissez le cadre dans lequel un projet peut — ou non — exister.</p>
+              <a href="positions.html#acteurs-publics" class="link">Accéder à votre position</a>
+            </div>
 
-          <article class="card card--dark">
-            <h3>Promoteurs</h3>
-            <p>Font tenir une opération dans un bilan et un calendrier.</p>
-          </article>
+            <div class="position-role">
+              <h3>Aménageurs</h3>
+            </div>
+            <div class="position-content">
+              <p>Vous créez les conditions à partir desquelles un projet devient possible.</p>
+              <a href="positions.html#amenageurs" class="link">Accéder à votre position</a>
+            </div>
+          </div>
 
-          <article class="card card--dark">
-            <h3>Banques</h3>
-            <p>Déterminent si un projet peut être financé… ou non.</p>
-          </article>
+          <div class="position-row reveal">
+            <div class="position-role">
+              <h3>Juristes &amp; avocats</h3>
+            </div>
+            <div class="position-content">
+              <p>Vous qualifiez ce qui est possible, risqué ou bloquant.</p>
+              <a href="positions.html#juridique" class="link">Accéder à votre position</a>
+            </div>
 
-          <article class="card card--dark">
-            <h3>Investisseurs</h3>
-            <p>Arbitrent la soutenabilité économique et le niveau de risque.</p>
-          </article>
+            <div class="position-role">
+              <h3>Promoteurs</h3>
+            </div>
+            <div class="position-content">
+              <p>Vous décidez de lancer, maintenir ou arrêter une opération.</p>
+              <a href="positions.html#promoteurs" class="link">Accéder à votre position</a>
+            </div>
+          </div>
 
-          <article class="card card--dark">
-            <h3>Bureaux d’études &amp; ingénieries</h3>
-            <p>Objectivent contraintes, coûts et faisabilité réelle.</p>
-          </article>
+          <div class="position-row reveal">
+            <div class="position-role">
+              <h3>Banques</h3>
+            </div>
+            <div class="position-content">
+              <p>Vous déterminez si un projet peut être financé — ou non.</p>
+              <a href="positions.html#banques" class="link">Accéder à votre position</a>
+            </div>
 
-          <article class="card card--dark">
-            <h3>Entreprises de construction</h3>
-            <p>Révèlent ce que les projets deviennent réellement sur le terrain.</p>
-          </article>
+            <div class="position-role">
+              <h3>Investisseurs</h3>
+            </div>
+            <div class="position-content">
+              <p>Vous arbitrez l’engagement du capital et le niveau de risque acceptable.</p>
+              <a href="positions.html#investisseurs" class="link">Accéder à votre position</a>
+            </div>
+          </div>
 
-          <article class="card card--dark">
-            <h3>Avocats &amp; juristes</h3>
-            <p>Qualifient les marges de manœuvre et les points de bascule.</p>
-          </article>
+          <div class="position-row reveal">
+            <div class="position-role">
+              <h3>Bureaux d’études &amp; ingénieries</h3>
+            </div>
+            <div class="position-content">
+              <p>Vous objectivez ce qui tient réellement — techniquement et économiquement.</p>
+              <a href="positions.html#bet" class="link">Accéder à votre position</a>
+            </div>
+
+            <div class="position-role">
+              <h3>Entreprises de construction</h3>
+            </div>
+            <div class="position-content">
+              <p>Vous révélez ce que le projet devient réellement sur le terrain.</p>
+              <a href="positions.html#entreprises" class="link">Accéder à votre position</a>
+            </div>
+          </div>
+
         </div>
 
         <p class="programme-link-row reveal">
-          <a href="positions.html" class="link">Voir les positions</a>
+          <a href="positions.html" class="link">Voir toutes les positions</a>
         </p>
       </div>
     </section>
@@ -338,4 +432,4 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/layout.js"></script>
 </body>
-  </html>
+          </html>
