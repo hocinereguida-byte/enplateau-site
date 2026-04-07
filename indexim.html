@@ -8,32 +8,36 @@
   <meta name="description" content="En Plateau permet de mieux comprendre comment les décisions se prennent entre les acteurs qui conditionnent un projet, en donnant accès à ce qu’ils voient chacun depuis leur position.">
   <style>
     :root {
-      --bg: #0b0b0c;
-      --bg-soft: #111112;
-      --paper: #f4f1ea;
-      --paper-soft: #ece7dd;
-      --panel-dark: rgba(255,255,255,.045);
-      --panel-light: rgba(17,17,18,.045);
-      --line-dark: rgba(255,255,255,.12);
-      --line-light: rgba(17,17,18,.12);
-      --text-dark: #f3f1eb;
-      --text-light: #161616;
-      --muted-dark: rgba(243,241,235,.72);
-      --muted-light: rgba(22,22,22,.68);
-      --dim-dark: rgba(243,241,235,.48);
-      --dim-light: rgba(22,22,22,.45);
-      --accent: #b89a72;
-      --max: 1280px;
-      --radius: 22px;
-      --shadow: 0 22px 60px rgba(0,0,0,.16);
+      --blue-900: #0f1c2e;
+      --blue-800: #16304f;
+      --blue-700: #214d7d;
+      --blue-600: #3c6ea5;
+      --paper: #f7f8fb;
+      --paper-2: #eef2f7;
+      --ink: #101828;
+      --ink-soft: #526072;
+      --ink-faint: #7b8794;
+      --line: rgba(16,24,40,.10);
+      --line-light: rgba(255,255,255,.14);
+      --panel-dark: rgba(255,255,255,.06);
+      --panel-dark-2: rgba(255,255,255,.04);
+      --panel-light: rgba(255,255,255,.78);
+      --max: 1320px;
+      --radius: 8px;
+      --shadow-soft: 0 18px 45px rgba(10, 20, 40, .10);
+      --shadow-dark: 0 20px 55px rgba(0, 0, 0, .18);
+      --font-display: "Fraunces", Georgia, serif;
+      --font-text: Inter, "IBM Plex Sans", system-ui, sans-serif;
     }* { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text-dark);
+  font-family: var(--font-text);
+  color: var(--ink);
+  background: var(--paper);
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -41,10 +45,7 @@ a { color: inherit; text-decoration: none; }
 .site-shell {
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(circle at top left, rgba(184,154,114,.08), transparent 28%),
-    radial-gradient(circle at 80% 12%, rgba(79,99,136,.08), transparent 20%),
-    linear-gradient(180deg, #080808 0%, #0b0b0c 40%, #0a0a0a 100%);
+  background: linear-gradient(180deg, #f9fbfd 0%, #f4f6fa 100%);
 }
 
 .topbar {
@@ -52,14 +53,14 @@ a { color: inherit; text-decoration: none; }
   top: 0;
   z-index: 50;
   backdrop-filter: blur(18px);
-  background: rgba(11,11,12,.74);
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: rgba(247,248,251,.76);
+  border-bottom: 1px solid rgba(16,24,40,.08);
 }
 
 .topbar-inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 18px 24px;
+  padding: 16px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -74,15 +75,16 @@ a { color: inherit; text-decoration: none; }
 }
 
 .brand-name {
-  font-size: 1.02rem;
-  font-weight: 700;
-  letter-spacing: -.03em;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -.02em;
 }
 
 .brand-sub {
-  font-size: .74rem;
-  color: var(--dim-dark);
-  letter-spacing: .08em;
+  font-size: .68rem;
+  color: var(--ink-faint);
+  letter-spacing: .10em;
   text-transform: uppercase;
 }
 
@@ -91,106 +93,142 @@ a { color: inherit; text-decoration: none; }
   flex-wrap: wrap;
   justify-content: center;
   gap: 18px;
-  font-size: .9rem;
-  color: var(--muted-dark);
+  font-size: .86rem;
+  color: var(--ink-soft);
 }
 
 .nav a:hover,
-.nav a:focus-visible { color: var(--text-dark); }
+.nav a:focus-visible { color: var(--ink); }
 
 .nav-cta {
-  font-size: .9rem;
-  color: var(--text-dark);
+  font-size: .84rem;
+  color: var(--blue-700);
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(33,77,125,.28);
 }
 
-.nav-cta::after { content: "→"; opacity: .65; }
+.nav-cta::after { content: "→"; opacity: .7; }
 
 section { position: relative; z-index: 1; }
 
-.theme-dark {
-  color: var(--text-dark);
-  background: transparent;
+.theme-blue {
+  color: white;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255,255,255,.10), transparent 20%),
+    linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 38%, var(--blue-700) 72%, var(--blue-600) 100%);
 }
 
 .theme-light {
-  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-soft) 100%);
-  color: var(--text-light);
-}
-
-.theme-light .section-copy,
-.theme-light .positions-premium-head p,
-.theme-light .full-bleed-panel p,
-.theme-light .access-note,
-.theme-light .quote-card p,
-.theme-light .conversation-card p,
-.theme-light .position-card p,
-.theme-light .step p,
-.theme-light .value-card p,
-.theme-light .access-card p,
-.theme-light .hero-helper-note,
-.theme-light .tagline-list {
-  color: var(--muted-light);
-}
-
-.theme-light .eyebrow,
-.theme-light small,
-.theme-light .tag {
-  color: var(--dim-light);
-}
-
-.theme-light .quote-card,
-.theme-light .conversation-card,
-.theme-light .position-card,
-.theme-light .step,
-.theme-light .value-card,
-.theme-light .access-card,
-.theme-light .full-bleed-panel,
-.theme-light .hero-context-card {
-  background: rgba(255,255,255,.62);
-  border: 1px solid rgba(17,17,18,.08);
-  box-shadow: 0 16px 40px rgba(0,0,0,.06);
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
 }
 
 .container {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 28px;
+}
+
+.eyebrow,
+.hero-context-card small,
+.quote-card strong,
+.conversation-card small,
+.position-card small,
+.step small,
+.value-card small,
+.access-card small {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .62rem;
+}
+
+.theme-blue .eyebrow,
+.theme-blue .hero-context-card small,
+.theme-blue .quote-card strong,
+.theme-blue .conversation-card small,
+.theme-blue .position-card small,
+.theme-blue .step small,
+.theme-blue .value-card small,
+.theme-blue .access-card small {
+  color: rgba(255,255,255,.66);
+}
+
+.theme-light .eyebrow,
+.theme-light .hero-context-card small,
+.theme-light .quote-card strong,
+.theme-light .conversation-card small,
+.theme-light .position-card small,
+.theme-light .step small,
+.theme-light .value-card small,
+.theme-light .access-card small {
+  color: var(--ink-faint);
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -.035em;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5vw, 4.7rem);
+  line-height: 1.02;
+  max-width: 13ch;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.55rem);
+  line-height: 1.06;
+}
+
+h3 {
+  font-size: 1rem;
+  line-height: 1.22;
+}
+
+p,
+.section-copy,
+.positions-premium-head p,
+.access-note,
+.full-bleed-panel p,
+.hero-context-card p,
+.hero-helper-note,
+.conversation-card p,
+.position-card p,
+.step p,
+.value-card p,
+.access-card p,
+.why-columns p,
+.quote-card p {
+  font-size: .84rem;
+  line-height: 1.72;
+  margin: 0;
 }
 
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 70px 0 60px;
+  padding: 68px 0 56px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
-  gap: 46px;
+  grid-template-columns: minmax(0, 1.18fr) minmax(360px, .82fr);
+  gap: 54px;
   align-items: center;
-}
-
-.hero-bottom {
-  margin-top: 34px;
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 22px;
-  align-items: start;
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: .16em;
-  font-size: .7rem;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .eyebrow::before {
@@ -201,40 +239,29 @@ section { position: relative; z-index: 1; }
   opacity: .7;
 }
 
-h1, h2, h3 {
-  margin: 0;
-  letter-spacing: -.04em;
-  line-height: 1.02;
-  font-weight: 650;
-}
-
-h1 {
-  font-size: clamp(2.25rem, 4.6vw, 4.8rem);
-  max-width: 10ch;
-}
-
 .hero-lead {
-  margin: 16px 0 0;
+  margin-top: 14px;
   max-width: 42rem;
-  font-size: clamp(.98rem, 1.4vw, 1.14rem);
-  line-height: 1.55;
-  color: var(--muted-dark);
+  font-size: .96rem;
+  line-height: 1.58;
+  color: rgba(255,255,255,.82);
 }
 
 .hero-actions {
-  margin-top: 24px;
+  margin-top: 22px;
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
-  font-size: .95rem;
+  font-size: .84rem;
 }
 
 .text-link {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding-bottom: 3px;
-  border-bottom: 1px solid currentColor;
+  gap: 8px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(255,255,255,.34);
+  color: rgba(255,255,255,.94);
 }
 
 .text-link::after { content: "→"; opacity: .7; }
@@ -252,11 +279,37 @@ h1 {
 .step,
 .access-card,
 .value-card,
-.full-bleed-panel {
-  background: var(--panel-dark);
-  border: 1px solid rgba(255,255,255,.08);
+.full-bleed-panel,
+.hero-bottom-band {
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+}
+
+.theme-blue .hero-context-card,
+.theme-blue .quote-card,
+.theme-blue .conversation-card,
+.theme-blue .position-card,
+.theme-blue .step,
+.theme-blue .access-card,
+.theme-blue .value-card,
+.theme-blue .full-bleed-panel,
+.theme-blue .hero-bottom-band {
+  background: linear-gradient(180deg, var(--panel-dark) 0%, var(--panel-dark-2) 100%);
+  border: 1px solid var(--line-light);
+  box-shadow: var(--shadow-dark);
+}
+
+.theme-light .hero-context-card,
+.theme-light .quote-card,
+.theme-light .conversation-card,
+.theme-light .position-card,
+.theme-light .step,
+.theme-light .access-card,
+.theme-light .value-card,
+.theme-light .full-bleed-panel,
+.theme-light .hero-bottom-band {
+  background: var(--panel-light);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
 }
 
 .hero-context-card,
@@ -266,178 +319,162 @@ h1 {
 .step,
 .access-card,
 .value-card,
-.full-bleed-panel { padding: 24px; }
-
-.hero-context-card { display: grid; gap: 12px; }
-
-.hero-context-card small,
-.quote-card strong,
-.conversation-card small,
-.position-card small,
-.step small,
-.value-card small,
-.access-card small {
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  font-size: .66rem;
-  color: var(--dim-dark);
+.full-bleed-panel,
+.hero-bottom-band {
+  padding: 22px;
 }
 
-.hero-context-card p,
-.quote-card p,
-.conversation-card p,
-.position-card p,
-.step p,
-.value-card p,
-.access-card p,
-.full-bleed-panel p,
-.section-copy,
-.positions-premium-head p,
-.access-note,
-.tagline-list {
-  font-size: .92rem;
-  line-height: 1.72;
-  color: var(--muted-dark);
-}
+.hero-context-card { display: grid; gap: 10px; }
 
-.hero-context-card .context-title {
-  font-size: 1.3rem;
-  line-height: 1.18;
+.context-title {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  line-height: 1.16;
   letter-spacing: -.03em;
-  font-weight: 600;
+}
+
+.theme-blue .hero-context-card p,
+.theme-blue .hero-helper-note,
+.theme-blue .section-copy,
+.theme-blue .full-bleed-panel p,
+.theme-blue .conversation-card p,
+.theme-blue .position-card p,
+.theme-blue .step p,
+.theme-blue .value-card p,
+.theme-blue .access-card p,
+.theme-blue .access-note,
+.theme-blue .why-columns p,
+.theme-blue .quote-card p { color: rgba(255,255,255,.78); }
+
+.theme-light .hero-context-card p,
+.theme-light .hero-helper-note,
+.theme-light .section-copy,
+.theme-light .full-bleed-panel p,
+.theme-light .conversation-card p,
+.theme-light .position-card p,
+.theme-light .step p,
+.theme-light .value-card p,
+.theme-light .access-card p,
+.theme-light .access-note,
+.theme-light .why-columns p,
+.theme-light .quote-card p { color: var(--ink-soft); }
+
+.hero-bottom {
+  margin-top: 30px;
+}
+
+.hero-bottom-band {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
 }
 
 .hero-helper-block {
   display: grid;
   gap: 10px;
-  align-content: start;
 }
 
 .hero-helper-title {
-  font-size: 1.15rem;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
   line-height: 1.2;
   letter-spacing: -.03em;
-  font-weight: 600;
 }
 
-.hero-helper-note {
-  max-width: 62rem;
-  font-size: .96rem;
-  line-height: 1.78;
-  color: var(--muted-dark);
-}
+.chapter { padding: 98px 0; }
 
-.scroll-cue {
-  margin-top: 28px;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--dim-dark);
-  font-size: .78rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.scroll-cue::after {
-  content: "";
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.16);
-  background: linear-gradient(180deg, transparent, rgba(255,255,255,.06));
-}
-
-.chapter { padding: 104px 0; }
-.chapter + .chapter { border-top: 1px solid rgba(255,255,255,.05); }
-.theme-light.chapter + .theme-light.chapter,
-.theme-light + .theme-light { border-top: 1px solid rgba(17,17,18,.06); }
-
-.section-head {
-  display: grid;
-  grid-template-columns: minmax(0, .92fr) minmax(280px, .86fr);
-  gap: 34px;
-  align-items: start;
-  margin-bottom: 38px;
-}
-
-.section-head h2,
-.positions-premium-head h2,
-.section-center-head h2,
-.conversations-left h2 {
-  font-size: clamp(2rem, 4vw, 4rem);
-}
-
-.section-center-head {
-  max-width: 980px;
+.section-center-head,
+.positions-premium-head,
+.value-head,
+.access-head {
+  max-width: 1080px;
   margin: 0 auto 34px;
   text-align: center;
 }
 
-.section-center-head h2 {
-  max-width: 14ch;
+.section-center-head h2,
+.positions-premium-head h2,
+.value-head h2,
+.access-head h2 {
+  max-width: 18ch;
   margin: 0 auto;
 }
 
-.section-center-head p {
+.section-center-head p,
+.positions-premium-head p,
+.value-head p,
+.access-head p {
   max-width: 760px;
-  margin: 18px auto 0;
-  font-size: .94rem;
-  line-height: 1.75;
-  color: inherit;
+  margin: 16px auto 0;
 }
 
 .quote-grid,
-.grid-2,
 .grid-3,
 .positions-grid,
 .conversations-right,
 .steps-right,
-.access-layout {
+.access-layout,
+.why-columns {
   display: grid;
   gap: 16px;
 }
 
 .quote-grid,
-.grid-2,
-.access-layout { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.access-layout,
+.why-columns { grid-template-columns: repeat(2, minmax(0,1fr)); }
 .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
 .positions-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
 .conversations-right { grid-template-columns: repeat(2, minmax(0,1fr)); }
-.steps-right { grid-template-columns: repeat(2, minmax(0,1fr)); align-content: start; }
+.steps-right { grid-template-columns: repeat(2, minmax(0,1fr)); }
 
-.quote-card p { margin: 0; }
-.quote-card strong { margin-top: 14px; }
+.quote-card {
+  text-align: center;
+  padding: 18px 20px;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.quote-card p { font-size: .78rem; }
+.quote-card strong { margin-top: 12px; }
 
 .conversations-layout,
 .steps-layout {
   display: grid;
-  grid-template-columns: 1.02fr .98fr;
-  gap: 42px;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 46px;
   align-items: start;
 }
 
 .conversations-left,
 .steps-left {
   position: sticky;
-  top: 96px;
+  top: 92px;
   align-self: start;
 }
 
 .conversations-left h2,
-.steps-left h2 { max-width: 11ch; }
+.steps-left h2 {
+  max-width: 13ch;
+}
 
-.conversations-right .conversation-card,
-.steps-right .step { padding: 20px; }
+.section-copy { margin-top: 16px; }
+.section-copy p + p { margin-top: 10px; }
+
+.conversation-card,
+.step { padding: 18px; }
 
 .conversation-card h3,
 .position-card h3,
 .step h3,
 .value-card h3,
 .access-card h3 {
-  font-size: 1.08rem;
-  line-height: 1.22;
-  margin: 8px 0 10px;
+  margin: 8px 0 8px;
+}
+
+.conversation-card p {
+  font-size: .76rem;
+  line-height: 1.62;
 }
 
 .conversation-card a,
@@ -446,11 +483,11 @@ h1 {
 .inline-link {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 14px;
-  font-size: .9rem;
-  border-bottom: 1px solid currentColor;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: .72rem;
   padding-bottom: 2px;
+  border-bottom: 1px solid currentColor;
 }
 
 .conversation-card a::after,
@@ -459,100 +496,97 @@ h1 {
 .inline-link::after { content: "→"; opacity: .7; }
 
 .territory-band {
+  margin-top: 24px;
   text-align: center;
-  padding: 28px 24px;
-}
-
-.territory-band p {
-  max-width: 68rem;
-  margin: 0 auto;
+  padding: 22px 24px;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .territories {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 18px 28px;
-  margin-top: 18px;
-  font-size: .88rem;
+  gap: 12px 22px;
+  margin-top: 14px;
+  font-size: .72rem;
   letter-spacing: .04em;
-  color: inherit;
 }
 
-.tag {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  border-radius: 0;
-}
+.tag { padding: 0; }
 
-.positions-premium-head {
-  max-width: 1120px;
-  margin: 0 auto 38px;
-  text-align: center;
-}
+.positions-premium-head h2 { max-width: 22ch; }
 
-.positions-premium-head h2 {
-  max-width: 18ch;
-  margin: 0 auto;
-  line-height: 1.08;
-}
-
-.positions-premium-head p {
-  margin: 18px auto 0;
-  max-width: 760px;
-}
-
-.positions-grid .position-card { min-height: 230px; }
+.positions-grid .position-card { min-height: 212px; }
+.position-card { padding: 18px; }
+.position-card p { font-size: .76rem; }
+.position-card a { font-size: .68rem; }
 
 .full-bleed-panel {
-  margin-top: 24px;
+  margin: 24px auto 0;
+  text-align: center;
+  max-width: 940px;
+}
+
+.why-block {
+  max-width: 1120px;
+  margin: 0 auto 34px;
   text-align: center;
 }
 
-.full-bleed-panel p { max-width: 68rem; margin: 0 auto; }
+.why-block h2 {
+  max-width: 18ch;
+  margin: 0 auto 22px;
+  font-size: clamp(2rem, 4vw, 3.55rem);
+}
 
-.why-block,
-.value-head,
-.access-head {
+.why-columns {
   max-width: 980px;
-  margin: 0 auto 36px;
-  text-align: center;
+  margin: 0 auto;
+  align-items: start;
 }
+
+.why-columns-left {
+  border-left: 2px solid rgba(16,24,40,.18);
+  padding-left: 22px;
+}
+
+.theme-blue .why-columns-left { border-left-color: rgba(255,255,255,.20); }
 
 .value-head h2,
-.access-head h2,
-.why-block h2 {
-  max-width: 15ch;
-  margin: 0 auto;
-}
+.access-head h2 { max-width: 16ch; }
 
-.value-head p,
-.access-head p,
-.why-block p {
-  max-width: 760px;
-  margin: 18px auto 0;
-  font-size: .94rem;
-  line-height: 1.76;
-  color: inherit;
-}
-
-.value-card { min-height: 210px; }
+.value-card,
+.access-card { padding: 20px; }
 
 .access-card.primary {
-  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-  border-color: rgba(255,255,255,.16);
+  background: linear-gradient(180deg, #173457 0%, #214d7d 100%);
+  color: white;
+  border: 1px solid rgba(255,255,255,.16);
 }
 
-.theme-light .access-card.primary {
-  background: linear-gradient(180deg, rgba(17,17,18,.08), rgba(17,17,18,.03));
-  border-color: rgba(17,17,18,.18);
+.access-card.primary p,
+.access-card.primary small { color: rgba(255,255,255,.78); }
+
+.access-card.secondary {
+  background: rgba(255,255,255,.9);
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.access-card.secondary p,
+.access-card.secondary small { color: var(--ink-soft); }
+
+.access-note {
+  text-align: center;
+  margin-top: 20px;
 }
 
 footer {
   padding: 28px 0 50px;
-  color: var(--dim-dark);
-  font-size: .84rem;
+  color: var(--ink-faint);
+  font-size: .78rem;
 }
 
 .reveal {
@@ -566,21 +600,21 @@ footer {
   transform: translateY(0);
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1120px) {
   .hero-grid,
   .conversations-layout,
   .steps-layout,
-  .section-head {
+  .why-columns {
     grid-template-columns: 1fr;
   }
 
   .conversations-left,
-  .steps-left {
-    position: static;
-  }
+  .steps-left { position: static; }
 
-  .hero-bottom,
+  .hero-bottom-band,
   .positions-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+
+  .why-columns-left { border-left: 0; padding-left: 0; }
 }
 
 @media (max-width: 860px) {
@@ -588,30 +622,32 @@ footer {
 
   .hero {
     min-height: auto;
-    padding-top: 56px;
+    padding-top: 54px;
   }
 
-  .hero-bottom,
   .quote-grid,
-  .grid-2,
   .grid-3,
   .positions-grid,
   .conversations-right,
   .steps-right,
-  .access-layout {
+  .access-layout,
+  .hero-bottom-band,
+  .why-columns {
     grid-template-columns: 1fr;
   }
 
-  h1,
+  .section-center-head h2,
+  .positions-premium-head h2,
+  .value-head h2,
+  .access-head h2,
+  .why-block h2,
   .conversations-left h2,
   .steps-left h2,
-  .positions-premium-head h2,
-  .section-center-head h2,
-  .why-block h2,
-  .value-head h2,
-  .access-head h2 { max-width: none; }
+  h1 {
+    max-width: none;
+  }
 
-  .chapter { padding: 84px 0; }
+  .chapter { padding: 80px 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -642,7 +678,7 @@ footer {
 </header>
 
 <main>
-  <section class="hero theme-dark" id="hero">
+  <section class="hero theme-blue" id="hero">
     <div class="container">
       <div class="hero-grid">
         <div class="reveal">
@@ -653,7 +689,6 @@ footer {
             <a href="recevoir-le-dossier.html" class="text-link">Recevoir le dossier</a>
             <a href="#conversations" class="text-link">Voir les conversations</a>
           </div>
-          <div class="scroll-cue">Explorer le cycle</div>
         </div>
 
         <div class="hero-side reveal">
@@ -666,14 +701,16 @@ footer {
       </div>
 
       <div class="hero-bottom reveal">
-        <div class="hero-helper-block">
-          <div class="hero-helper-title">4 points d’entrée et 4 conversations structurantes</div>
-          <p class="hero-helper-note">Le cycle s’organise autour de quatre entrées qui permettent d’observer comment un projet tient, se déplace ou bascule selon la place occupée dans la décision.</p>
-        </div>
+        <div class="hero-bottom-band">
+          <div class="hero-helper-block">
+            <div class="hero-helper-title">4 points d’entrée et 4 conversations structurantes</div>
+            <p class="hero-helper-note">Le cycle s’organise autour de quatre entrées qui permettent d’observer comment un projet tient, se déplace ou bascule selon la place occupée dans la décision.</p>
+          </div>
 
-        <div class="hero-helper-block">
-          <div class="hero-helper-title">Ce que le dispositif change</div>
-          <p class="hero-helper-note">Vous n’abordez plus le sujet depuis un seul angle. Vous accédez à une lecture où financement, droit, production, ingénierie, cadre public et exécution deviennent lisibles dans leurs dépendances réelles.</p>
+          <div class="hero-helper-block">
+            <div class="hero-helper-title">Ce que le dispositif change</div>
+            <p class="hero-helper-note">Vous accédez à une lecture où financement, droit, production, ingénierie, cadre public et exécution deviennent lisibles dans leurs dépendances réelles.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -699,7 +736,7 @@ footer {
     </div>
   </section>
 
-  <section class="chapter theme-dark" id="conversations">
+  <section class="chapter theme-blue" id="conversations">
     <div class="container">
       <div class="conversations-layout reveal">
         <div class="conversations-left">
@@ -756,7 +793,7 @@ footer {
     <div class="container">
       <div class="positions-premium-head reveal">
         <h2>Vous n’occupez pas la même place dans la décision — mais vous en conditionnez l’issue</h2>
-        <p>Chaque position éclaire une partie du projet. Ici, les rôles ne sont pas rangés comme des catégories abstraites. Ils apparaissent comme des places réelles dans la décision.</p>
+        <p>Chaque position éclaire une partie du projet. Ici, les rôles apparaissent comme des places réelles dans la décision.</p>
       </div>
 
       <div class="positions-grid reveal">
@@ -818,13 +855,13 @@ footer {
       </div>
 
       <div class="full-bleed-panel reveal">
-        <p>Aucune de ces positions ne suffit seule. Ce qui compte n’est pas seulement le point de vue de chacun, mais <strong>la manière dont ces points de vue se conditionnent</strong> et parfois se contredisent.</p>
+        <p>Aucune de ces positions ne suffit seule. Ce qui compte n’est pas seulement le point de vue de chacun, mais la manière dont ces points de vue se conditionnent et parfois se contredisent.</p>
         <a href="positions.html" class="inline-link">Voir toutes les positions</a>
       </div>
     </div>
   </section>
 
-  <section class="chapter theme-dark" id="dispositif">
+  <section class="chapter theme-blue" id="dispositif">
     <div class="container">
       <div class="steps-layout reveal">
         <div class="steps-left">
@@ -868,13 +905,19 @@ footer {
     <div class="container">
       <div class="why-block reveal">
         <h2>Pourquoi commencer par les arbitrages des opérations immobilières ?</h2>
-        <p>La production et la transformation d’opérations immobilières — logement, tertiaire, locaux d’activité — concentrent, dans un même réel, des arbitrages entre financement, production, droit, régulation, usages et décision publique.</p>
-        <p>Ce champ rend visibles, sur des situations concrètes, des tensions qui restent souvent dispersées ailleurs. C’est ce qui en fait le bon point de départ pour ouvrir le cycle Atlas porté par En Plateau.</p>
+        <div class="why-columns">
+          <div class="why-columns-left">
+            <p>La production et la transformation d’opérations immobilières — logement, tertiaire, locaux d’activité — concentrent, dans un même réel, des arbitrages entre financement, production, droit, régulation, usages et décision publique.</p>
+          </div>
+          <div>
+            <p>Ce champ rend visibles, sur des situations concrètes, des tensions qui restent souvent dispersées ailleurs. C’est ce qui en fait le bon point de départ pour ouvrir le cycle Atlas porté par En Plateau.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="chapter theme-dark" id="valeur">
+  <section class="chapter theme-blue" id="valeur">
     <div class="container">
       <div class="value-head reveal">
         <h2>Ce que le cycle permet réellement</h2>
@@ -946,4 +989,4 @@ footer {
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
   </script></body>
-  </html>
+</html>
