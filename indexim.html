@@ -8,28 +8,31 @@
   <meta name="description" content="En Plateau permet de mieux comprendre comment les décisions se prennent entre les acteurs qui conditionnent un projet, en donnant accès à ce qu’ils voient chacun depuis leur position.">
   <style>
     :root {
-      --bg: #090909;
-      --bg-soft: #101010;
-      --panel: rgba(255,255,255,.04);
-      --panel-strong: rgba(255,255,255,.07);
-      --line: rgba(255,255,255,.14);
-      --text: #f3f1eb;
-      --muted: rgba(243,241,235,.72);
-      --dim: rgba(243,241,235,.5);
-      --accent: #d9c4a3;
+      --bg: #0b0b0c;
+      --bg-soft: #111112;
+      --paper: #f4f1ea;
+      --paper-soft: #ece7dd;
+      --panel-dark: rgba(255,255,255,.045);
+      --panel-light: rgba(17,17,18,.045);
+      --line-dark: rgba(255,255,255,.12);
+      --line-light: rgba(17,17,18,.12);
+      --text-dark: #f3f1eb;
+      --text-light: #161616;
+      --muted-dark: rgba(243,241,235,.72);
+      --muted-light: rgba(22,22,22,.68);
+      --dim-dark: rgba(243,241,235,.48);
+      --dim-light: rgba(22,22,22,.45);
+      --accent: #b89a72;
       --max: 1280px;
-      --radius: 24px;
-      --shadow: 0 20px 60px rgba(0,0,0,.28);
+      --radius: 22px;
+      --shadow: 0 22px 60px rgba(0,0,0,.16);
     }* { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: Inter, "IBM Plex Sans", system-ui, sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(217,196,163,.08), transparent 28%),
-    radial-gradient(circle at 80% 20%, rgba(120,120,255,.08), transparent 20%),
-    linear-gradient(180deg, #070707 0%, #0b0b0c 42%, #0a0a0a 100%);
-  color: var(--text);
+  background: var(--bg);
+  color: var(--text-dark);
   line-height: 1.5;
 }
 
@@ -38,40 +41,18 @@ a { color: inherit; text-decoration: none; }
 .site-shell {
   position: relative;
   overflow: hidden;
-}
-
-.site-shell::before,
-.site-shell::after {
-  content: "";
-  position: fixed;
-  inset: auto;
-  width: 42vw;
-  height: 42vw;
-  border-radius: 50%;
-  filter: blur(90px);
-  opacity: .12;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.site-shell::before {
-  top: -10vw;
-  left: -10vw;
-  background: #294b7a;
-}
-
-.site-shell::after {
-  right: -12vw;
-  top: 18vh;
-  background: #7a4f29;
+  background:
+    radial-gradient(circle at top left, rgba(184,154,114,.08), transparent 28%),
+    radial-gradient(circle at 80% 12%, rgba(79,99,136,.08), transparent 20%),
+    linear-gradient(180deg, #080808 0%, #0b0b0c 40%, #0a0a0a 100%);
 }
 
 .topbar {
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 50;
   backdrop-filter: blur(18px);
-  background: rgba(9,9,9,.72);
+  background: rgba(11,11,12,.74);
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
@@ -93,14 +74,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 .brand-name {
-  font-size: 1.1rem;
+  font-size: 1.02rem;
   font-weight: 700;
   letter-spacing: -.03em;
 }
 
 .brand-sub {
-  font-size: .8rem;
-  color: var(--dim);
+  font-size: .74rem;
+  color: var(--dim-dark);
   letter-spacing: .08em;
   text-transform: uppercase;
 }
@@ -110,26 +91,67 @@ a { color: inherit; text-decoration: none; }
   flex-wrap: wrap;
   justify-content: center;
   gap: 18px;
-  font-size: .94rem;
-  color: var(--muted);
+  font-size: .9rem;
+  color: var(--muted-dark);
 }
 
 .nav a:hover,
-.nav a:focus-visible {
-  color: var(--text);
-}
+.nav a:focus-visible { color: var(--text-dark); }
 
 .nav-cta {
-  padding: 12px 18px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255,255,255,.03);
-  font-size: .92rem;
+  font-size: .9rem;
+  color: var(--text-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
-section {
-  position: relative;
-  z-index: 1;
+.nav-cta::after { content: "→"; opacity: .65; }
+
+section { position: relative; z-index: 1; }
+
+.theme-dark {
+  color: var(--text-dark);
+  background: transparent;
+}
+
+.theme-light {
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-soft) 100%);
+  color: var(--text-light);
+}
+
+.theme-light .section-copy,
+.theme-light .positions-premium-head p,
+.theme-light .full-bleed-panel p,
+.theme-light .access-note,
+.theme-light .quote-card p,
+.theme-light .conversation-card p,
+.theme-light .position-card p,
+.theme-light .step p,
+.theme-light .value-card p,
+.theme-light .access-card p,
+.theme-light .hero-helper-note,
+.theme-light .tagline-list {
+  color: var(--muted-light);
+}
+
+.theme-light .eyebrow,
+.theme-light small,
+.theme-light .tag {
+  color: var(--dim-light);
+}
+
+.theme-light .quote-card,
+.theme-light .conversation-card,
+.theme-light .position-card,
+.theme-light .step,
+.theme-light .value-card,
+.theme-light .access-card,
+.theme-light .full-bleed-panel,
+.theme-light .hero-context-card {
+  background: rgba(255,255,255,.62);
+  border: 1px solid rgba(17,17,18,.08);
+  box-shadow: 0 16px 40px rgba(0,0,0,.06);
 }
 
 .container {
@@ -147,17 +169,17 @@ section {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
-  gap: 40px;
-  align-items: end;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+  gap: 46px;
+  align-items: center;
 }
 
 .hero-bottom {
-  margin-top: 28px;
+  margin-top: 34px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
-  gap: 16px;
-  align-items: stretch;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 22px;
+  align-items: start;
 }
 
 .eyebrow {
@@ -167,8 +189,8 @@ section {
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: .16em;
-  font-size: .75rem;
-  margin-bottom: 24px;
+  font-size: .7rem;
+  margin-bottom: 20px;
 }
 
 .eyebrow::before {
@@ -182,57 +204,40 @@ section {
 h1, h2, h3 {
   margin: 0;
   letter-spacing: -.04em;
-  line-height: .98;
+  line-height: 1.02;
   font-weight: 650;
 }
 
 h1 {
-  font-size: clamp(2.4rem, 5.8vw, 5.6rem);
-  max-width: 9.5ch;
+  font-size: clamp(2.25rem, 4.6vw, 4.8rem);
+  max-width: 10ch;
 }
 
 .hero-lead {
-  margin: 20px 0 0;
+  margin: 16px 0 0;
   max-width: 42rem;
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
-  line-height: 1.5;
-  color: var(--muted);
+  font-size: clamp(.98rem, 1.4vw, 1.14rem);
+  line-height: 1.55;
+  color: var(--muted-dark);
 }
-
-.hero-lead strong { color: var(--text); font-weight: 600; } color: var(--text); font-weight: 600; }
 
 .hero-actions {
-  margin-top: 28px;
+  margin-top: 24px;
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-}
-
-.button,
-.button-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50px;
-  padding: 0 20px;
-  border-radius: 999px;
-  transition: .25s ease;
+  gap: 18px;
   font-size: .95rem;
 }
 
-.button {
-  background: var(--text);
-  color: #111;
-  font-weight: 600;
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid currentColor;
 }
 
-.button:hover { transform: translateY(-1px); }
-
-.button-secondary {
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,.03);
-  color: var(--text);
-}
+.text-link::after { content: "→"; opacity: .7; }
 
 .hero-side {
   display: grid;
@@ -240,221 +245,199 @@ h1 {
   align-self: center;
 }
 
-.hero-context-card {
-  min-height: 100%;
-  display: grid;
-  align-content: center;
-  gap: 12px;
-}
-
-.hero-context-card p + p {
-  margin-top: 0;
-}
-
-.stat-card,
-.glass-card,
+.hero-context-card,
 .quote-card,
 .conversation-card,
 .position-card,
 .step,
 .access-card,
-.value-card {
-  background: var(--panel);
+.value-card,
+.full-bleed-panel {
+  background: var(--panel-dark);
   border: 1px solid rgba(255,255,255,.08);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
 
-.glass-card {
-  padding: 22px;
-}
+.hero-context-card,
+.quote-card,
+.conversation-card,
+.position-card,
+.step,
+.access-card,
+.value-card,
+.full-bleed-panel { padding: 24px; }
 
-.glass-card small,
-.stat-card small,
-.step small,
-.position-card small,
+.hero-context-card { display: grid; gap: 12px; }
+
+.hero-context-card small,
+.quote-card strong,
 .conversation-card small,
-.value-card small {
+.position-card small,
+.step small,
+.value-card small,
+.access-card small {
   display: block;
   text-transform: uppercase;
   letter-spacing: .14em;
-  font-size: .7rem;
-  color: var(--dim);
-  margin-bottom: 10px;
+  font-size: .66rem;
+  color: var(--dim-dark);
 }
 
-.glass-card p,
-.stat-card p,
+.hero-context-card p,
 .quote-card p,
-.position-card p,
 .conversation-card p,
+.position-card p,
 .step p,
+.value-card p,
 .access-card p,
-.value-card p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.7;
+.full-bleed-panel p,
+.section-copy,
+.positions-premium-head p,
+.access-note,
+.tagline-list {
+  font-size: .92rem;
+  line-height: 1.72;
+  color: var(--muted-dark);
 }
 
-.stat-card {
-  padding: 26px 24px;
+.hero-context-card .context-title {
+  font-size: 1.3rem;
+  line-height: 1.18;
+  letter-spacing: -.03em;
+  font-weight: 600;
+}
+
+.hero-helper-block {
   display: grid;
-  gap: 8px;
-  height: 100%;
+  gap: 10px;
+  align-content: start;
 }
 
-.stat-card strong {
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1;
-  letter-spacing: -.05em;
+.hero-helper-title {
+  font-size: 1.15rem;
+  line-height: 1.2;
+  letter-spacing: -.03em;
+  font-weight: 600;
+}
+
+.hero-helper-note {
+  max-width: 62rem;
+  font-size: .96rem;
+  line-height: 1.78;
+  color: var(--muted-dark);
 }
 
 .scroll-cue {
-  margin-top: 34px;
+  margin-top: 28px;
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: var(--dim);
-  font-size: .85rem;
+  color: var(--dim-dark);
+  font-size: .78rem;
   letter-spacing: .1em;
   text-transform: uppercase;
 }
 
 .scroll-cue::after {
   content: "";
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,.16);
   background: linear-gradient(180deg, transparent, rgba(255,255,255,.06));
 }
 
-.chapter {
-  padding: 110px 0;
-}
-
-.chapter + .chapter {
-  border-top: 1px solid rgba(255,255,255,.06);
-}
+.chapter { padding: 104px 0; }
+.chapter + .chapter { border-top: 1px solid rgba(255,255,255,.05); }
+.theme-light.chapter + .theme-light.chapter,
+.theme-light + .theme-light { border-top: 1px solid rgba(17,17,18,.06); }
 
 .section-head {
   display: grid;
-  grid-template-columns: minmax(0, .9fr) minmax(280px, .8fr);
-  gap: 32px;
+  grid-template-columns: minmax(0, .92fr) minmax(280px, .86fr);
+  gap: 34px;
   align-items: start;
-  margin-bottom: 42px;
+  margin-bottom: 38px;
 }
 
-.section-head h2 {
-  font-size: clamp(2rem, 4.8vw, 4.4rem);
-  max-width: 11ch;
-}
-
-.section-copy {
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.8;
-  max-width: 52rem;
-}
-
-.section-copy p { margin: 0 0 16px; }
-
-.immersive-band {
-  padding: 34px;
-  border-radius: 32px;
-  background:
-    linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
-    linear-gradient(180deg, rgba(47,80,116,.18), rgba(0,0,0,0));
-  border: 1px solid rgba(255,255,255,.08);
-  box-shadow: var(--shadow);
-}
-
-.grid-2, .grid-3, .grid-4 {
-  display: grid;
-  gap: 20px;
-}
-
-.grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
-
-.conversations-layout {
-  display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: 40px;
-  align-items: start;
-}
-
+.section-head h2,
+.positions-premium-head h2,
+.section-center-head h2,
 .conversations-left h2 {
-  font-size: clamp(2.4rem, 5vw, 4.8rem);
-  max-width: 12ch;
+  font-size: clamp(2rem, 4vw, 4rem);
 }
 
-.conversations-right {
+.section-center-head {
+  max-width: 980px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.section-center-head h2 {
+  max-width: 14ch;
+  margin: 0 auto;
+}
+
+.section-center-head p {
+  max-width: 760px;
+  margin: 18px auto 0;
+  font-size: .94rem;
+  line-height: 1.75;
+  color: inherit;
+}
+
+.quote-grid,
+.grid-2,
+.grid-3,
+.positions-grid,
+.conversations-right,
+.steps-right,
+.access-layout {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
   gap: 16px;
 }
 
-.conversations-right .conversation-card {
-  padding: 20px;
-}
-
-.conversations-right .conversation-card h3 {
-  font-size: 1.1rem;
-  line-height: 1.2;
-}
-
-.conversations-right .conversation-card p {
-  font-size: .9rem;
-}
+.quote-grid,
+.grid-2,
+.access-layout { grid-template-columns: repeat(2, minmax(0,1fr)); }
 .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-.grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+.positions-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+.conversations-right { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.steps-right { grid-template-columns: repeat(2, minmax(0,1fr)); align-content: start; }
 
-.quote-card {
-  padding: 28px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+.quote-card p { margin: 0; }
+.quote-card strong { margin-top: 14px; }
+
+.conversations-layout,
+.steps-layout {
+  display: grid;
+  grid-template-columns: 1.02fr .98fr;
+  gap: 42px;
+  align-items: start;
 }
 
-.quote-card strong {
-  display: block;
-  margin-top: 16px;
-  font-size: .82rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--dim);
-  font-weight: 600;
+.conversations-left,
+.steps-left {
+  position: sticky;
+  top: 96px;
+  align-self: start;
 }
 
-.conversation-card,
-.position-card,
-.step,
-.access-card,
-.value-card {
-  padding: 26px;
-  position: relative;
-  overflow: hidden;
-}
+.conversations-left h2,
+.steps-left h2 { max-width: 11ch; }
 
-.conversation-card::before,
-.position-card::before,
-.step::before,
-.access-card::before,
-.value-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,.04), transparent 50%);
-  pointer-events: none;
-}
+.conversations-right .conversation-card,
+.steps-right .step { padding: 20px; }
 
 .conversation-card h3,
 .position-card h3,
 .step h3,
-.access-card h3,
-.value-card h3 {
-  font-size: 1.4rem;
-  line-height: 1.08;
-  margin-bottom: 12px;
+.value-card h3,
+.access-card h3 {
+  font-size: 1.08rem;
+  line-height: 1.22;
+  margin: 8px 0 10px;
 }
 
 .conversation-card a,
@@ -464,147 +447,112 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-top: 16px;
-  color: var(--text);
-  font-size: .95rem;
+  margin-top: 14px;
+  font-size: .9rem;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
 }
 
 .conversation-card a::after,
 .position-card a::after,
 .access-card a::after,
-.inline-link::after {
-  content: "→";
-  opacity: .7;
-  transition: transform .2s ease;
+.inline-link::after { content: "→"; opacity: .7; }
+
+.territory-band {
+  text-align: center;
+  padding: 28px 24px;
 }
 
-.conversation-card a:hover::after,
-.position-card a:hover::after,
-.access-card a:hover::after,
-.inline-link:hover::after {
-  transform: translateX(3px);
-}
-
-.full-bleed-panel {
-  margin-top: 24px;
-  padding: 30px;
-  border-radius: 28px;
-  border: 1px solid rgba(255,255,255,.08);
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.04), rgba(255,255,255,.015)),
-    radial-gradient(circle at 85% 20%, rgba(217,196,163,.12), transparent 25%);
-}
-
-.full-bleed-panel p {
-  margin: 0;
-  max-width: 64rem;
-  color: var(--muted);
-  font-size: 1.08rem;
-  line-height: 1.8;
+.territory-band p {
+  max-width: 68rem;
+  margin: 0 auto;
 }
 
 .territories {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 22px;
+  justify-content: center;
+  gap: 18px 28px;
+  margin-top: 18px;
+  font-size: .88rem;
+  letter-spacing: .04em;
+  color: inherit;
 }
 
 .tag {
-  padding: 10px 14px;
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 999px;
-  color: var(--muted);
-  font-size: .9rem;
-  background: rgba(255,255,255,.03);
-}
-
-.positions-layout {
-  display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: 20px;
-  align-items: start;
-}
-
-.positions-stack {
-  display: grid;
-  gap: 18px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
 }
 
 .positions-premium-head {
-  max-width: 980px;
-  margin: 0 auto 42px;
+  max-width: 1120px;
+  margin: 0 auto 38px;
   text-align: center;
 }
 
 .positions-premium-head h2 {
-  font-size: clamp(2.35rem, 4.6vw, 4.9rem);
-  max-width: 14ch;
+  max-width: 18ch;
   margin: 0 auto;
-  line-height: 1.02;
+  line-height: 1.08;
 }
 
 .positions-premium-head p {
-  margin: 22px auto 0;
+  margin: 18px auto 0;
   max-width: 760px;
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.8;
 }
 
-.positions-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
-  gap: 18px;
-  align-items: stretch;
+.positions-grid .position-card { min-height: 230px; }
+
+.full-bleed-panel {
+  margin-top: 24px;
+  text-align: center;
 }
 
-.positions-grid .position-card {
-  min-height: 260px;
+.full-bleed-panel p { max-width: 68rem; margin: 0 auto; }
+
+.why-block,
+.value-head,
+.access-head {
+  max-width: 980px;
+  margin: 0 auto 36px;
+  text-align: center;
 }
 
-.steps-layout {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
-  gap: 20px;
-  counter-reset: step;
+.value-head h2,
+.access-head h2,
+.why-block h2 {
+  max-width: 15ch;
+  margin: 0 auto;
 }
 
-.step {
-  min-height: 220px;
+.value-head p,
+.access-head p,
+.why-block p {
+  max-width: 760px;
+  margin: 18px auto 0;
+  font-size: .94rem;
+  line-height: 1.76;
+  color: inherit;
 }
 
-.step-number {
-  font-size: 2.8rem;
-  line-height: 1;
-  letter-spacing: -.06em;
-  color: rgba(243,241,235,.22);
-  margin-bottom: 14px;
-  font-weight: 700;
+.value-card { min-height: 210px; }
+
+.access-card.primary {
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+  border-color: rgba(255,255,255,.16);
 }
 
-.value-card {
-  min-height: 240px;
-}
-
-.access-layout {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: 20px;
-  margin-top: 10px;
-}
-
-.access-note {
-  margin-top: 28px;
-  color: var(--dim);
-  font-size: .98rem;
-  max-width: 52rem;
+.theme-light .access-card.primary {
+  background: linear-gradient(180deg, rgba(17,17,18,.08), rgba(17,17,18,.03));
+  border-color: rgba(17,17,18,.18);
 }
 
 footer {
   padding: 28px 0 50px;
-  color: var(--dim);
-  font-size: .9rem;
+  color: var(--dim-dark);
+  font-size: .84rem;
 }
 
 .reveal {
@@ -619,63 +567,51 @@ footer {
 }
 
 @media (max-width: 1100px) {
-  .conversations-layout {
+  .hero-grid,
+  .conversations-layout,
+  .steps-layout,
+  .section-head {
     grid-template-columns: 1fr;
   }
 
-  .conversations-right,
+  .conversations-left,
+  .steps-left {
+    position: static;
+  }
+
   .hero-bottom,
-  .grid-4,
   .positions-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 
-  .grid-4 { grid-template-columns: repeat(2, minmax(0,1fr)); }
-}
-
 @media (max-width: 860px) {
-  .conversations-right,
-  .positions-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .nav {
-    display: none;
-  }
-
-  .grid-2,
-  .grid-3,
-  .grid-4,
-  .steps-layout,
-  .access-layout,
-  .hero-bottom {
-    grid-template-columns: 1fr;
-  }
+  .nav { display: none; }
 
   .hero {
     min-height: auto;
     padding-top: 56px;
   }
 
-  h1 {
-    max-width: 12ch;
+  .hero-bottom,
+  .quote-grid,
+  .grid-2,
+  .grid-3,
+  .positions-grid,
+  .conversations-right,
+  .steps-right,
+  .access-layout {
+    grid-template-columns: 1fr;
   }
 
-  .chapter {
-    padding: 88px 0;
-  }
+  h1,
+  .conversations-left h2,
+  .steps-left h2,
+  .positions-premium-head h2,
+  .section-center-head h2,
+  .why-block h2,
+  .value-head h2,
+  .access-head h2 { max-width: none; }
 
-  .immersive-band,
-  .full-bleed-panel,
-  .conversation-card,
-  .position-card,
-  .step,
-  .access-card,
-  .value-card,
-  .quote-card,
-  .glass-card,
-  .stat-card {
-    border-radius: 22px;
-  }
+  .chapter { padding: 84px 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -706,7 +642,7 @@ footer {
 </header>
 
 <main>
-  <section class="hero" id="hero">
+  <section class="hero theme-dark" id="hero">
     <div class="container">
       <div class="hero-grid">
         <div class="reveal">
@@ -714,76 +650,62 @@ footer {
           <h1>Comprendre comment les décisions se prennent</h1>
           <p class="hero-lead"><strong>Parce que vous accédez à ce que les autres acteurs voient — et à ce que votre position ne permet pas de voir seule.</strong></p>
           <div class="hero-actions">
-            <a href="recevoir-le-dossier.html" class="button">Recevoir le dossier</a>
-            <a href="#conversations" class="button-secondary">Voir les conversations</a>
+            <a href="recevoir-le-dossier.html" class="text-link">Recevoir le dossier</a>
+            <a href="#conversations" class="text-link">Voir les conversations</a>
           </div>
           <div class="scroll-cue">Explorer le cycle</div>
         </div>
 
         <div class="hero-side reveal">
-          <div class="glass-card hero-context-card">
+          <div class="hero-context-card">
             <small>En cours</small>
-            <p><strong>Cycle Atlas — Arbitrages des opérations immobilières</strong>.</p>
+            <div class="context-title">Cycle Atlas — Arbitrages des opérations immobilières</div>
             <p>Composition en cours jusqu’au <strong>30 mai</strong>. Le cycle réunit des positions issues de la production, du financement, du cadre public, du juridique et de l’ingénierie, là où se jouent concrètement les arbitrages des projets.</p>
           </div>
         </div>
       </div>
 
       <div class="hero-bottom reveal">
-        <div class="stat-card">
-          <small>Point d’entrée</small>
-          <strong>4</strong>
-          <p>conversations structurantes pour comprendre où les projets tiennent, se déplacent ou basculent.</p>
+        <div class="hero-helper-block">
+          <div class="hero-helper-title">4 points d’entrée et 4 conversations structurantes</div>
+          <p class="hero-helper-note">Le cycle s’organise autour de quatre entrées qui permettent d’observer comment un projet tient, se déplace ou bascule selon la place occupée dans la décision.</p>
         </div>
 
-        <div class="glass-card">
-          <small>Ce que le dispositif change</small>
-          <p>Vous ne regardez plus uniquement votre propre angle. Vous entrez dans une lecture où financement, droit, production, ingénierie, cadre public et exécution apparaissent ensemble.</p>
-        </div>
-
-        <div class="glass-card">
-          <small>Logique du site</small>
-          <p>Ici, le contenu n’est pas présenté comme un catalogue. Il est séquencé comme une progression : l’effet d’abord, la réalité ensuite, le mécanisme ensuite, l’accès enfin.</p>
+        <div class="hero-helper-block">
+          <div class="hero-helper-title">Ce que le dispositif change</div>
+          <p class="hero-helper-note">Vous n’abordez plus le sujet depuis un seul angle. Vous accédez à une lecture où financement, droit, production, ingénierie, cadre public et exécution deviennent lisibles dans leurs dépendances réelles.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="chapter" id="intro">
+  <section class="chapter theme-light" id="intro">
     <div class="container">
-      <div class="section-head reveal">
-        <h2>Les décisions ne se prennent jamais seul</h2>
-        <div class="section-copy">
-          <p>Chaque acteur voit une partie du réel : le financement, la production, le chantier, le droit, l’aménagement ou la décision publique.</p>
-          <p>Ce qui bloque un projet pour l’un n’apparaît pas toujours au même moment pour l’autre. En Plateau rapproche ces lectures pour rendre visibles les écarts, les dépendances et les points de bascule.</p>
-        </div>
+      <div class="section-center-head reveal">
+        <h2>Les décisions ne se prennent jamais seules</h2>
+        <p>Chaque acteur voit une partie du réel : le financement, la production, le chantier, le droit, l’aménagement ou la décision publique. Ce qui bloque un projet pour l’un n’apparaît pas toujours au même moment pour l’autre. En Plateau rapproche ces lectures pour rendre visibles les écarts, les dépendances et les points de bascule.</p>
       </div>
 
-      <div class="immersive-band reveal">
-        <div class="grid-2">
-          <div class="quote-card">
-            <p>Un projet peut sembler tenable depuis un tableur, fragile depuis le chantier, encore défendable juridiquement, et déjà compromis du point de vue commercial.</p>
-            <strong>Une même opération, plusieurs réalités</strong>
-          </div>
-          <div class="quote-card">
-            <p>Le sujet n’est pas seulement ce que chacun dit. Le sujet est ce qui devient visible quand on rapproche des positions qui ne se parlent pas assez, ou pas au bon moment.</p>
-            <strong>Principe de lecture</strong>
-          </div>
+      <div class="quote-grid reveal">
+        <div class="quote-card">
+          <p>Un projet peut sembler tenable depuis un tableur, fragile depuis le chantier, encore défendable juridiquement, et déjà compromis du point de vue commercial.</p>
+          <strong>Une même opération, plusieurs réalités</strong>
+        </div>
+        <div class="quote-card">
+          <p>Le sujet n’est pas seulement ce que chacun dit. Le sujet est ce qui devient visible quand on rapproche des positions qui ne se parlent pas assez, ou pas au bon moment.</p>
+          <strong>Principe de lecture</strong>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="chapter" id="conversations">
+  <section class="chapter theme-dark" id="conversations">
     <div class="container">
       <div class="conversations-layout reveal">
-
         <div class="conversations-left">
-          <h2>Quatre conversations pour comprendre où les projets tiennent — et où ils basculent</h2>
-
+          <h2>4 conversations pour comprendre où les projets tiennent — et où ils basculent</h2>
           <div class="section-copy">
             <p>Le cycle s’organise autour de quatre conversations structurantes. Chacune part d’un problème réel et fait apparaître une tension décisive à partir de positions différentes et complémentaires.</p>
-
             <p>Chaque conversation est observée à travers plusieurs réalités territoriales.</p>
           </div>
         </div>
@@ -817,10 +739,9 @@ footer {
             <a href="conversations.html#conversation-4">En savoir plus</a>
           </article>
         </div>
-
       </div>
 
-      <div class="full-bleed-panel reveal">
+      <div class="full-bleed-panel territory-band reveal">
         <p>Chaque conversation est lue selon plusieurs contextes : <strong>zones tendues</strong>, <strong>territoires en croissance</strong>, <strong>territoires en reconversion</strong>. Ce n’est pas un décor. C’est ce qui modifie la manière dont un arbitrage se formule, se reporte ou s’impose.</p>
         <div class="territories">
           <span class="tag">Zones tendues</span>
@@ -831,7 +752,7 @@ footer {
     </div>
   </section>
 
-  <section class="chapter" id="positions">
+  <section class="chapter theme-light" id="positions">
     <div class="container">
       <div class="positions-premium-head reveal">
         <h2>Vous n’occupez pas la même place dans la décision — mais vous en conditionnez l’issue</h2>
@@ -903,72 +824,61 @@ footer {
     </div>
   </section>
 
-  <section class="chapter" id="dispositif">
+  <section class="chapter theme-dark" id="dispositif">
     <div class="container">
-      <div class="section-head reveal">
-        <h2>Un dispositif conçu pour produire plus qu’une simple prise de parole</h2>
-        <div class="section-copy">
-          <p><strong>Le cycle Atlas constitue aujourd’hui le premier dispositif développé par En Plateau.</strong></p>
-          <p>Il prépare des entretiens à partir d’angles précis. Chaque contribution est ensuite rapprochée d’autres positions pour rendre visibles des arbitrages, des dépendances et des écarts de lecture. D’autres cycles pourront ensuite être développés sur d’autres terrains de décision.</p>
-        </div>
-      </div>
-
       <div class="steps-layout reveal">
-        <article class="step">
-          <div class="step-number">01</div>
-          <small>Préparer</small>
-          <h3>Cadrer l’angle avant la prise de parole</h3>
-          <p>L’angle est préparé en amont pour rendre la contribution précise, utile et sans exposition inutile.</p>
-        </article>
+        <div class="steps-left">
+          <h2>Un dispositif conçu pour produire plus qu’une simple prise de parole</h2>
+          <div class="section-copy">
+            <p><strong>Le cycle Atlas constitue aujourd’hui le premier dispositif développé par En Plateau.</strong></p>
+            <p>Il prépare des entretiens à partir d’angles précis. Chaque contribution est ensuite rapprochée d’autres positions pour rendre visibles des arbitrages, des dépendances et des écarts de lecture. D’autres cycles pourront ensuite être développés sur d’autres terrains de décision.</p>
+          </div>
+        </div>
 
-        <article class="step">
-          <div class="step-number">02</div>
-          <small>Contribuer</small>
-          <h3>Faire intervenir une position, pas un discours générique</h3>
-          <p>L’entretien est individuel, court, préparé et conduit dans un cadre crédible.</p>
-        </article>
+        <div class="steps-right">
+          <article class="step">
+            <small>Préparer</small>
+            <h3>Cadrer l’angle avant la prise de parole</h3>
+            <p>L’angle est préparé en amont pour rendre la contribution précise, utile et sans exposition inutile.</p>
+          </article>
 
-        <article class="step">
-          <div class="step-number">03</div>
-          <small>Rapprocher</small>
-          <h3>Mettre les lectures en tension utile</h3>
-          <p>La contribution est mise en relation avec d’autres positions pour faire apparaître ce qui conditionne réellement les décisions.</p>
-        </article>
-      </div>
+          <article class="step">
+            <small>Contribuer</small>
+            <h3>Faire intervenir une position, pas un discours générique</h3>
+            <p>L’entretien est individuel, court, préparé et conduit dans un cadre crédible.</p>
+          </article>
 
-      <div class="full-bleed-panel reveal">
-        <p>Le principe n’est pas d’accumuler des interventions. Le principe est de produire un matériau lisible, comparable et utile à la compréhension des arbitrages réels.</p>
-        <a href="dispositif.html" class="inline-link">Comprendre le dispositif</a>
+          <article class="step">
+            <small>Rapprocher</small>
+            <h3>Mettre les lectures en tension utile</h3>
+            <p>La contribution est mise en relation avec d’autres positions pour faire apparaître ce qui conditionne réellement les décisions.</p>
+          </article>
+
+          <article class="step">
+            <small>Finalité</small>
+            <h3>Produire un matériau lisible et comparable</h3>
+            <p>Le principe n’est pas d’accumuler des interventions, mais de produire un matériau utile à la compréhension des arbitrages réels.</p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="chapter" id="pourquoi">
+  <section class="chapter theme-light" id="pourquoi">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="why-block reveal">
         <h2>Pourquoi commencer par les arbitrages des opérations immobilières ?</h2>
-        <div class="section-copy">
-          <p>La production et la transformation d’opérations immobilières — logement, tertiaire, locaux d’activité — concentrent, dans un même réel, des arbitrages entre financement, production, droit, régulation, usages et décision publique.</p>
-          <p>Ce champ rend visibles, sur des situations concrètes, des tensions qui restent souvent dispersées ailleurs. C’est ce qui en fait le bon point de départ pour ouvrir le cycle Atlas porté par En Plateau.</p>
-        </div>
-      </div>
-
-      <div class="immersive-band reveal">
-        <div class="quote-card">
-          <p>Ici, presque tout se rencontre : coût, risque, temporalité, acceptabilité, exécution, droit, usages, arbitrages publics et soutenabilité économique. C’est donc un terrain particulièrement fécond pour montrer comment une décision se forme — ou se défait.</p>
-          <strong>Pourquoi ce premier terrain</strong>
-        </div>
+        <p>La production et la transformation d’opérations immobilières — logement, tertiaire, locaux d’activité — concentrent, dans un même réel, des arbitrages entre financement, production, droit, régulation, usages et décision publique.</p>
+        <p>Ce champ rend visibles, sur des situations concrètes, des tensions qui restent souvent dispersées ailleurs. C’est ce qui en fait le bon point de départ pour ouvrir le cycle Atlas porté par En Plateau.</p>
       </div>
     </div>
   </section>
 
-  <section class="chapter" id="valeur">
+  <section class="chapter theme-dark" id="valeur">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="value-head reveal">
         <h2>Ce que le cycle permet réellement</h2>
-        <div class="section-copy">
-          <p>Le bénéfice n’est pas seulement informationnel. Il est stratégique : mieux situer les arbitrages, mieux comprendre les dépendances et réduire les angles morts.</p>
-        </div>
+        <p>Le bénéfice n’est pas seulement informationnel. Il est stratégique : mieux situer les arbitrages, mieux comprendre les dépendances et réduire les angles morts.</p>
       </div>
 
       <div class="grid-3 reveal">
@@ -993,24 +903,22 @@ footer {
     </div>
   </section>
 
-  <section class="chapter" id="acces">
+  <section class="chapter theme-light" id="acces">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="access-head reveal">
         <h2>Entrer dans le cycle</h2>
-        <div class="section-copy">
-          <p>L’accès est présenté ici de manière directe : soit votre position a déjà été identifiée, soit vous souhaitez signaler une contribution utile à une conversation en cours.</p>
-        </div>
+        <p>L’accès est présenté ici de manière directe : soit votre position a déjà été identifiée, soit vous souhaitez signaler une contribution utile à une conversation en cours.</p>
       </div>
 
       <div class="access-layout reveal">
-        <article class="access-card">
+        <article class="access-card primary">
           <small>Accès 1</small>
           <h3>Votre position a été identifiée</h3>
           <p>Le dossier permet de voir ce qui est déjà structuré, ce qui reste ouvert et si votre position peut encore compter.</p>
           <a href="recevoir-le-dossier.html">Recevoir le dossier</a>
         </article>
 
-        <article class="access-card">
+        <article class="access-card secondary">
           <small>Accès 2</small>
           <h3>Aucune prise de contact n’a encore été engagée</h3>
           <p>Vous pouvez signaler une position, une situation ou un arbitrage susceptible d’éclairer utilement une conversation.</p>
