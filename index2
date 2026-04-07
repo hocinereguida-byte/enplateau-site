@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>En Plateau — Accéder à ce que les autres acteurs voient</title>
+
+  <meta name="description" content="En Plateau rapproche des points de vue issus de l’économie réelle pour faire apparaître les arbitrages, les écarts d’appréciation et les conditions réelles de décision.">
+
+  <link rel="canonical" href="https://enplateau.fr/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0F2747">
+
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+</head>
+
+<body class="home-page">
+
+<div id="site-header"></div>
+<div id="site-mobile-menu"></div>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="hero-home">
+  <div class="container">
+    <div class="hero-inner reveal">
+
+      <div class="hero-kicker">En Plateau</div>
+
+      <h1 class="hero-title">
+        Chaque acteur voit une partie de ce qui se joue.<br>
+        Rarement l’ensemble.
+      </h1>
+
+      <p class="hero-subtitle">
+        Les décisions reposent sur des situations partagées, mais fragmentées entre production, financement, régulation et usages.
+        En Plateau rapproche ces points de vue pour rendre ce qui se joue réellement plus lisible.
+      </p>
+
+      <p class="hero-meta">
+        Des contributions préparées, produites dans un cadre exigeant, puis mises en regard pour faire apparaître les arbitrages réels.
+      </p>
+
+      <p class="hero-note">
+        Le cadre de diffusion compte. Mais la valeur tient surtout à ce que les contributions permettent de comprendre et d’activer ensuite.
+      </p>
+
+      <div class="hero-actions">
+        <a href="conversations.html" class="link">Voir les conversations</a>
+        <a href="recevoir-le-dossier.html" class="link">Accéder au dossier</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CADRE MEDIA -->
+<section class="home-section" id="cadre-media">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="section-kicker">Cadre</div>
+      <h2>Un cadre exigeant pour produire des contributions solides</h2>
+      <p class="section-intro">
+        Les interventions sont réalisées dans un cadre professionnel, avec des journalistes identifiés,
+        dans le cadre de partenariats de production avec des médias économiques reconnus.
+      </p>
+    </div>
+
+    <div class="media-logos-band reveal" style="display:flex;gap:40px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:20px;">
+      <img src="images/logo-bfm-business.png" alt="BFM Business" style="height:28px;">
+      <img src="images/logo-la-tribune.png" alt="La Tribune" style="height:28px;">
+      <img src="images/logo-le-figaro.png" alt="Le Figaro" style="height:28px;">
+      <img src="images/logo-forbes.png" alt="Forbes" style="height:28px;">
+    </div>
+
+    <p class="section-footnote reveal">
+      Ces formats ne relèvent pas des rédactions. Ils constituent un cadre de production et d’incarnation, au service d’un travail de fond.
+    </p>
+
+  </div>
+</section>
+
+<!-- VALEUR -->
+<section class="home-section home-section--dark" id="valeur-home">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="section-kicker">Ce que cela permet</div>
+      <h2>Transformer une prise de parole en actif stratégique</h2>
+    </div>
+
+    <div class="three-col-frame">
+
+      <div class="card card--dark reveal">
+        <h3>Sortir d’une lecture isolée</h3>
+        <p>
+          Chaque contribution est replacée dans un ensemble plus large,
+          permettant de situer ses décisions face à d’autres logiques d’acteurs.
+        </p>
+      </div>
+
+      <div class="card card--dark reveal">
+        <h3>Accéder à une vision élargie</h3>
+        <p>
+          Les intervenants accèdent à une compréhension plus complète que ce qui est visible publiquement.
+        </p>
+      </div>
+
+      <div class="card card--dark reveal">
+        <h3>Disposer d’une matière réutilisable</h3>
+        <p>
+          Les contenus produits deviennent des actifs activables dans leur écosystème :
+          communication, réseau, positionnement.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ASYMETRIE -->
+<section class="home-section" id="asymetrie">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="section-kicker">Accès</div>
+      <h2>Tout le monde voit une partie. Les intervenants accèdent à l’ensemble.</h2>
+    </div>
+
+    <div class="page-centered-copy reveal">
+      <p>
+        Les contenus sont diffusés de manière fragmentée, à travers différentes émissions et formats.
+      </p>
+      <p>
+        Les intervenants accèdent à une mise en relation de ces contributions,
+        leur permettant de voir ce que les autres acteurs ne voient pas.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONVERSATIONS -->
+<section class="home-section" id="conversations-home">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="section-kicker">Conversations</div>
+      <h2>Des situations structurées pour éviter la redondance</h2>
+      <p class="section-intro">
+        Chaque conversation est construite autour d’un point de tension réel,
+        avec des angles complémentaires portés par différents acteurs.
+      </p>
+    </div>
+
+    <div class="programme-link-row">
+      <a href="conversations.html" class="link">Voir les conversations</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SCALABLE -->
+<section class="home-section" id="cycle">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="section-kicker">Cycle</div>
+      <h2>Un premier cycle, appelé à s’étendre</h2>
+    </div>
+
+    <div class="page-centered-copy reveal">
+      <p>
+        Le cycle actuel porte sur la production et la transformation des espaces d’habitation et d’activité.
+      </p>
+      <p>
+        D’autres cycles pourront être ouverts sur d’autres secteurs,
+        selon les mêmes principes de structuration et de mise en regard.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ACCES -->
+<section class="home-section" id="acces">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="section-kicker">Entrer dans le dispositif</div>
+      <h2>Deux points d’entrée</h2>
+    </div>
+
+    <div class="access-grid">
+
+      <div class="card reveal">
+        <h3>Accéder au dossier</h3>
+        <p>
+          Comprendre les conversations en cours et les points d’entrée encore pertinents.
+        </p>
+        <a href="recevoir-le-dossier.html" class="link">Accéder</a>
+      </div>
+
+      <div class="card reveal">
+        <h3>Signaler une contribution</h3>
+        <p>
+          Porter à connaissance une situation ou un éclairage utile.
+        </p>
+        <a href="proposer-une-contribution.html" class="link">Signaler</a>
+      </div>
+
+    </div>
+
+    <p class="access-note reveal">
+      Le site permet de comprendre. Le dossier permet de vérifier si cela vous concerne réellement.
+    </p>
+
+  </div>
+</section>
+
+</main>
+
+<div id="site-footer"></div>
+<div id="cookie-container"></div>
+
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
