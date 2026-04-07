@@ -147,9 +147,17 @@ section {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
   gap: 40px;
   align-items: end;
+}
+
+.hero-bottom {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 16px;
+  align-items: stretch;
 }
 
 .eyebrow {
@@ -179,22 +187,22 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: clamp(3rem, 7vw, 6.6rem);
-  max-width: 10.5ch;
+  font-size: clamp(2.4rem, 5.8vw, 5.6rem);
+  max-width: 9.5ch;
 }
 
 .hero-lead {
-  margin: 26px 0 0;
-  max-width: 52rem;
-  font-size: clamp(1.1rem, 2vw, 1.45rem);
-  line-height: 1.55;
+  margin: 20px 0 0;
+  max-width: 42rem;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  line-height: 1.5;
   color: var(--muted);
 }
 
-.hero-lead strong { color: var(--text); font-weight: 600; }
+.hero-lead strong { color: var(--text); font-weight: 600; } color: var(--text); font-weight: 600; }
 
 .hero-actions {
-  margin-top: 34px;
+  margin-top: 28px;
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
@@ -229,6 +237,18 @@ h1 {
 .hero-side {
   display: grid;
   gap: 14px;
+  align-self: center;
+}
+
+.hero-context-card {
+  min-height: 100%;
+  display: grid;
+  align-content: center;
+  gap: 12px;
+}
+
+.hero-context-card p + p {
+  margin-top: 0;
 }
 
 .stat-card,
@@ -280,6 +300,7 @@ h1 {
   padding: 26px 24px;
   display: grid;
   gap: 8px;
+  height: 100%;
 }
 
 .stat-card strong {
@@ -541,6 +562,10 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .hero-bottom,
+  .grid-4 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
   .grid-4 { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 
@@ -553,7 +578,8 @@ footer {
   .grid-3,
   .grid-4,
   .steps-layout,
-  .access-layout {
+  .access-layout,
+  .hero-bottom {
     grid-template-columns: 1fr;
   }
 
@@ -619,7 +645,6 @@ footer {
           <div class="eyebrow">En Plateau</div>
           <h1>Comprendre comment les décisions se prennent</h1>
           <p class="hero-lead"><strong>Parce que vous accédez à ce que les autres acteurs voient — et à ce que votre position ne permet pas de voir seule.</strong></p>
-          <p class="hero-lead">En cours : <strong>Cycle Atlas — Arbitrages des opérations immobilières</strong>. Composition en cours jusqu’au <strong>30 mai</strong>. Le cycle réunit des positions issues de la production, du financement, du cadre public, du juridique et de l’ingénierie, là où se jouent concrètement les arbitrages des projets.</p>
           <div class="hero-actions">
             <a href="recevoir-le-dossier.html" class="button">Recevoir le dossier</a>
             <a href="#conversations" class="button-secondary">Voir les conversations</a>
@@ -628,21 +653,29 @@ footer {
         </div>
 
         <div class="hero-side reveal">
-          <div class="stat-card">
-            <small>Point d’entrée</small>
-            <strong>4</strong>
-            <p>conversations structurantes pour comprendre où les projets tiennent, se déplacent ou basculent.</p>
+          <div class="glass-card hero-context-card">
+            <small>En cours</small>
+            <p><strong>Cycle Atlas — Arbitrages des opérations immobilières</strong>.</p>
+            <p>Composition en cours jusqu’au <strong>30 mai</strong>. Le cycle réunit des positions issues de la production, du financement, du cadre public, du juridique et de l’ingénierie, là où se jouent concrètement les arbitrages des projets.</p>
           </div>
+        </div>
+      </div>
 
-          <div class="glass-card">
-            <small>Ce que le dispositif change</small>
-            <p>Vous ne regardez plus uniquement votre propre angle. Vous entrez dans une lecture où financement, droit, production, ingénierie, cadre public et exécution apparaissent ensemble.</p>
-          </div>
+      <div class="hero-bottom reveal">
+        <div class="stat-card">
+          <small>Point d’entrée</small>
+          <strong>4</strong>
+          <p>conversations structurantes pour comprendre où les projets tiennent, se déplacent ou basculent.</p>
+        </div>
 
-          <div class="glass-card">
-            <small>Logique du site</small>
-            <p>Ici, le contenu n’est pas présenté comme un catalogue. Il est séquencé comme une progression : l’effet d’abord, la réalité ensuite, le mécanisme ensuite, l’accès enfin.</p>
-          </div>
+        <div class="glass-card">
+          <small>Ce que le dispositif change</small>
+          <p>Vous ne regardez plus uniquement votre propre angle. Vous entrez dans une lecture où financement, droit, production, ingénierie, cadre public et exécution apparaissent ensemble.</p>
+        </div>
+
+        <div class="glass-card">
+          <small>Logique du site</small>
+          <p>Ici, le contenu n’est pas présenté comme un catalogue. Il est séquencé comme une progression : l’effet d’abord, la réalité ensuite, le mécanisme ensuite, l’accès enfin.</p>
         </div>
       </div>
     </div>
@@ -937,4 +970,4 @@ footer {
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
   </script></body>
-</html>
+        </html>
