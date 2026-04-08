@@ -42,65 +42,6 @@
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/home.css">
   <link rel="stylesheet" href="assets/css/pages.css">
-
-  <style>
-    .positions-rows {
-      display: flex;
-      flex-direction: column;
-      gap: 36px;
-      margin-top: 36px;
-    }
-
-    .position-row {
-      display: grid;
-      grid-template-columns: 1fr 2fr 1fr 2fr;
-      gap: 20px 28px;
-      align-items: start;
-      padding-top: 18px;
-      border-top: 1px solid var(--ep-line);
-    }
-
-    .position-role h3 {
-      margin-bottom: 0;
-      font-family: var(--font-display);
-      font-size: clamp(1.15rem, 1.5vw, 1.35rem);
-      line-height: 1.15;
-      color: var(--ep-ink);
-    }
-
-    .position-content {
-      text-align: right;
-    }
-
-    .position-content p {
-      margin-bottom: 10px;
-      color: var(--ep-ink-soft);
-      font-size: 1rem;
-      line-height: 1.72;
-    }
-
-    @media (max-width: 980px) {
-      .position-row {
-        grid-template-columns: 1fr 1.4fr;
-      }
-    }
-
-    @media (max-width: 700px) {
-      .positions-rows {
-        gap: 28px;
-      }
-
-      .position-row {
-        grid-template-columns: 1fr;
-        gap: 10px;
-        padding-top: 16px;
-      }
-
-      .position-content {
-        text-align: left;
-      }
-    }
-  </style>
 </head>
 
 <body class="home-page">
@@ -109,39 +50,46 @@
 
   <main>
 
-  
     <!-- HERO -->
     <section class="hero" id="hero-home">
       <div class="container">
-        <div class="hero-inner reveal">
-          <div class="hero-kicker">En Plateau</div>
+        <div class="hero-inner">
+          <div class="hero-home-grid">
 
-          <h1 class="hero-title">
-  Production Immobilière :<br>4 conversations<br>48 positions<br> 1 même exercice</h1>
+            <div class="hero-home-main reveal">
+              <div class="hero-kicker">En Plateau</div>
 
-                        <p class="hero-subtitle">
-            <strong>            Selon l'endroit où vous êtes, vous ne voyez pas la même chose - et vos décisions ne produisent pas les même effets.
-<strong>
-          </p>
+              <h1 class="hero-title">
+                Production Immobilière :<br>4 conversations<br>48 positions<br>1 même exercice
+              </h1>
 
-          <p class="hero-subtitle">
-            Ce cycle vous permet de situer votre position face à celles dont dépend réellement un projet : Investissement, Production, financement, cadre public, juridique, ingénierie. Vous êtes mobilisés là où se décident concrètement les projets.
-          </p>
+              <p class="hero-subtitle">
+                <strong>Selon l'endroit où vous êtes, vous ne voyez pas la même chose - et vos décisions ne produisent pas les même effets.</strong>
+              </p>
 
-          <p class="hero-note">
-            Composition en cours jusqu’au <strong>30 mai</strong>.
-          </p>
+              <p class="hero-note">
+                Composition en cours jusqu’au <strong>30 mai</strong>.
+              </p>
 
-          <div class="hero-actions" aria-label="Accès rapides">
-            <a href="recevoir-le-dossier.html" class="link">Recevoir le dossier</a>
-            <a href="#conversations-home" class="link">Voir les conversations</a>
+              <div class="hero-actions" aria-label="Accès rapides">
+                <a href="recevoir-le-dossier.html" class="link">Recevoir le dossier</a>
+                <a href="#conversations-home" class="link">Voir les conversations</a>
+              </div>
+            </div>
+
+            <aside class="hero-home-side reveal" aria-label="Cadre de lecture du cycle">
+              <p class="hero-side-text">
+                Ce cycle vous permet de situer votre position face à celles dont dépend réellement un projet : Investissement, Production, financement, cadre public, juridique, ingénierie. Vous êtes mobilisés là où se décident concrètement les projets.
+              </p>
+            </aside>
+
           </div>
-              
         </div>
       </div>
     </section>
-   <!-- CYCLES ATLAS -->
-    <section class="home-section" id="pourquoi-cycle">
+
+    <!-- CYCLES ATLAS -->
+    <section class="home-section home-section--dark" id="pourquoi-cycle">
       <div class="container">
         <div class="section-head section-head--centered reveal">
           <h2>Pourquoi commencer par<br> les arbitrages des opérations immobilières ?</h2>
@@ -161,9 +109,8 @@
       </div>
     </section>
 
-              
     <!-- INTRO -->
-    <section class="home-section home-section--dark" id="intro-en-plateau">
+    <section class="home-section" id="intro-en-plateau">
       <div class="container">
         <div class="section-head section-head--centered reveal">
           <h2>Ce que chacun voit séparément<br> ne suffit pas à comprendre</h2>
@@ -173,7 +120,7 @@
           </p>
 
           <p class="section-intro">
-            En Plateau rapproche ces points de vue pour faire apparaître ce qui se joue réellement entre eux :<br><br> <strong>Ce qui tient, ce qui ne tient plus, ce qui ralentit, ce qui bascule, et où se situe réellement la décision.</strong>
+            En Plateau rapproche ces points de vue pour faire apparaître ce qui se joue réellement entre eux :<br><br><strong>Ce qui tient, ce qui ne tient plus, ce qui ralentit, ce qui bascule, et où se situe réellement la décision.</strong>
           </p>
         </div>
       </div>
@@ -190,7 +137,7 @@
           </p>
 
           <p class="section-intro">
-           Chaque conversation est lue selon plusieurs contextes : zones tendues, territoires en croissance, territoires en reconversion.
+            Chaque conversation est lue selon plusieurs contextes : zones tendues, territoires en croissance, territoires en reconversion.
           </p>
         </div>
 
@@ -240,79 +187,55 @@
           </p>
         </div>
 
-        <div class="positions-rows">
+        <div class="positions-grid reveal">
 
-          <div class="position-row reveal">
-            <div class="position-role">
-              <h3>Collectivités</h3>
-            </div>
-            <div class="position-content">
-              <p>Vous définissez le cadre dans lequel un projet peut — ou non — exister.</p>
-              <a href="positions.html#acteurs-publics" class="link">Accéder à votre position</a>
-            </div>
+          <article class="position-card">
+            <h3>Collectivités</h3>
+            <p>Vous définissez le cadre dans lequel un projet peut — ou non — exister.</p>
+            <a href="positions.html#acteurs-publics" class="link">Accéder à votre position</a>
+          </article>
 
-            <div class="position-role">
-              <h3>Aménageurs</h3>
-            </div>
-            <div class="position-content">
-              <p>Vous créez les conditions à partir desquelles un projet devient possible.</p>
-              <a href="positions.html#amenageurs" class="link">Accéder à votre position</a>
-            </div>
-          </div>
+          <article class="position-card">
+            <h3>Aménageurs</h3>
+            <p>Vous créez les conditions à partir desquelles un projet devient possible.</p>
+            <a href="positions.html#amenageurs" class="link">Accéder à votre position</a>
+          </article>
 
-          <div class="position-row reveal">
-            <div class="position-role">
-              <h3>Juristes &amp; avocats</h3>
-            </div>
-            <div class="position-content">
-              <p>Vous qualifiez ce qui est possible, risqué ou bloquant.</p>
-              <a href="positions.html#juridique" class="link">Accéder à votre position</a>
-            </div>
+          <article class="position-card">
+            <h3>Juristes &amp; avocats</h3>
+            <p>Vous qualifiez ce qui est possible, risqué ou bloquant.</p>
+            <a href="positions.html#juridique" class="link">Accéder à votre position</a>
+          </article>
 
-            <div class="position-role">
-              <h3>Promoteurs</h3>
-            </div>
-            <div class="position-content">
-              <p>Vous décidez de lancer, maintenir ou arrêter une opération.</p>
-              <a href="positions.html#promoteurs" class="link">Accéder à votre position</a>
-            </div>
-          </div>
+          <article class="position-card">
+            <h3>Promoteurs</h3>
+            <p>Vous décidez de lancer, maintenir ou arrêter une opération.</p>
+            <a href="positions.html#promoteurs" class="link">Accéder à votre position</a>
+          </article>
 
-          <div class="position-row reveal">
-            <div class="position-role">
-              <h3>Banques</h3>
-            </div>
-            <div class="position-content">
-              <p>Vous déterminez si un projet peut être financé — ou non.</p>
-              <a href="positions.html#banques" class="link">Accéder à votre position</a>
-            </div>
+          <article class="position-card">
+            <h3>Banques</h3>
+            <p>Vous déterminez si un projet peut être financé — ou non.</p>
+            <a href="positions.html#banques" class="link">Accéder à votre position</a>
+          </article>
 
-            <div class="position-role">
-              <h3>Investisseurs</h3>
-            </div>
-            <div class="position-content">
-              <p>Vous arbitrez l’engagement du capital et le niveau de risque acceptable.</p>
-              <a href="positions.html#investisseurs" class="link">Accéder à votre position</a>
-            </div>
-          </div>
+          <article class="position-card">
+            <h3>Investisseurs</h3>
+            <p>Vous arbitrez l’engagement du capital et le niveau de risque acceptable.</p>
+            <a href="positions.html#investisseurs" class="link">Accéder à votre position</a>
+          </article>
 
-          <div class="position-row reveal">
-            <div class="position-role">
-              <h3>Bureaux d’études &amp; ingénieries</h3>
-            </div>
-            <div class="position-content">
-              <p>Vous objectivez ce qui tient réellement — techniquement et économiquement.</p>
-              <a href="positions.html#bet" class="link">Accéder à votre position</a>
-            </div>
+          <article class="position-card">
+            <h3>Bureaux d’études &amp; ingénieries</h3>
+            <p>Vous objectivez ce qui tient réellement — techniquement et économiquement.</p>
+            <a href="positions.html#bet" class="link">Accéder à votre position</a>
+          </article>
 
-            <div class="position-role">
-              <h3>Entreprises de construction</h3>
-            </div>
-            <div class="position-content">
-              <p>Vous révélez ce que le projet devient réellement sur le terrain.</p>
-              <a href="positions.html#entreprises" class="link">Accéder à votre position</a>
-            </div>
-          </div>
+          <article class="position-card">
+            <h3>Entreprises de construction</h3>
+            <p>Vous révélez ce que le projet devient réellement sur le terrain.</p>
+            <a href="positions.html#entreprises" class="link">Accéder à votre position</a>
+          </article>
 
         </div>
 
@@ -330,16 +253,14 @@
 
           <p class="section-intro">
             <strong>Chaque décideur intervient depuis sa position, sur un angle précis</strong>
-
           </p>
 
           <p class="section-intro">
-Les contributions sont rapprochées pour faire apparaitre les écarts, les dépendances et les arbitrages.
-
+            Les contributions sont rapprochées pour faire apparaitre les écarts, les dépendances et les arbitrages.
           </p>
         </div>
 
-        <div class="three-col-frame dark-cards reveal">
+        <div class="four-col-frame reveal">
           <article class="card card--dark">
             <h3>Prendre position</h3>
             <p>Chaque décideur formule une position claire depuis un rôle réel dans la chaîne de décision</p>
@@ -354,9 +275,8 @@ Les contributions sont rapprochées pour faire apparaitre les écarts, les dépe
             <h3>Rapprocher</h3>
             <p>Les positions sont mises en relation pour rendre visibles les arbitrages, tensions et écarts de lecture.</p>
           </article>
-        </div>
 
-                  <article class="card card--dark">
+          <article class="card card--dark">
             <h3>Appuyez vos démarches</h3>
             <p>Les contributions produites peuvent être réutilisées pour éclairer vos partenaires, appuyer vos positions et nourrir vos échanges.</p>
           </article>
@@ -383,13 +303,11 @@ Les contributions sont rapprochées pour faire apparaitre les écarts, les dépe
 
           <article class="card card--dark">
             <h3>Mieux situer les décisions</h3>
-            <br>
             <p>Voir où se prennent réellement les arbitrages et ce qui les conditionne.</p>
           </article>
 
           <article class="card card--dark">
             <h3>Décider avec plus de justesse</h3>
-            <br>
             <p>Mieux situer vos décisions face à celles des autres acteurs dont elles dépendent</p>
           </article>
         </div>
@@ -409,7 +327,7 @@ Les contributions sont rapprochées pour faire apparaitre les écarts, les dépe
             <p>
               Le dossier permet d’approfondir les conversations en cours et leurs points d’entrée.
             </p>
-            <br><a href="recevoir-le-dossier.html" class="link">Recevoir le dossier</a>
+            <a href="recevoir-le-dossier.html" class="link">Recevoir le dossier</a>
           </article>
 
           <article class="card">
@@ -435,4 +353,4 @@ Les contributions sont rapprochées pour faire apparaitre les écarts, les dépe
   <script src="assets/js/main.js"></script>
   <script src="assets/js/layout.js"></script>
 </body>
-          </html>
+  </html>
