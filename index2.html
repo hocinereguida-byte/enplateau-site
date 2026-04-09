@@ -1,194 +1,769 @@
 <!doctype html>
+
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schéma circulaire — En Plateau</title>
+  <style>
+    :root {
+      --bg: #f6f1eb;
+      --panel: rgba(255,250,244,.78);
+      --ink: #181512;
+      --muted: #6b625a;
+      --line: rgba(24,21,18,.14);
+      --accent: #7b3326;
+      --accent-soft: rgba(123,51,38,.10);
+      --dark: #121212;
+      --shadow: 0 14px 40px rgba(24, 21, 18, 0.08);
+      --r: 290px;
+    }* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top, rgba(123,51,38,.06), transparent 28%),
+    var(--bg);
+}
 
-  <title>En Plateau — Accéder à ce que les autres acteurs voient</title>
+.page {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 28px;
+  padding: 28px;
+}
 
-  <link rel="stylesheet" href="/assets/css/layout.css">
-  <link rel="stylesheet" href="/assets/css/home.css">
+.hero {
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  gap: 10px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: .98;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  max-width: 12ch;
+}
+
+.intro {
+  margin: 0;
+  max-width: 70ch;
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 1.02rem;
+}
+
+.layout {
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(560px, 1.12fr) minmax(320px, .88fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.viz-card,
+.detail-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.viz-card {
+  padding: 26px;
+  min-height: 760px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.detail-card {
+  padding: 24px;
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 18px;
+}
+
+.scene {
+  position: relative;
+  width: min(100%, 760px);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+}
+
+.ring {
+  position: absolute;
+  width: calc(var(--r) * 2 + 180px);
+  height: calc(var(--r) * 2 + 180px);
+  border-radius: 50%;
+  border: 1px dashed rgba(24,21,18,.12);
+  animation: pulse 5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,100% { transform: scale(1); opacity: .85; }
+  50% { transform: scale(1.015); opacity: 1; }
+}
+
+.center-node {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #1a1a1a, #111);
+  color: #fffaf4;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px;
+  box-shadow: 0 24px 60px rgba(18,18,18,.25);
+  position: relative;
+  z-index: 3;
+}
+
+.center-node h2 {
+  margin: 0 0 10px;
+  font-size: 1.3rem;
+  line-height: 1.1;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+.center-node p {
+  margin: 0;
+  font-size: .94rem;
+  line-height: 1.55;
+  color: rgba(255,250,244,.8);
+}
+
+svg.links {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  z-index: 1;
+}
+
+.link-line {
+  fill: none;
+  stroke: rgba(24,21,18,.12);
+  stroke-width: 1.7;
+  transition: stroke .25s ease, stroke-width .25s ease, opacity .25s ease;
+}
+
+.link-line.active {
+  stroke: rgba(123,51,38,.62);
+  stroke-width: 2.5;
+  opacity: 1;
+}
+
+.link-line.dim {
+  opacity: .25;
+}
+
+.actor {
+  position: absolute;
+  width: 170px;
+  min-height: 110px;
+  padding: 14px 14px 12px;
+  border-radius: 20px;
+  background: rgba(255,250,244,.92);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 28px rgba(24,21,18,.08);
+  cursor: pointer;
+  z-index: 2;
+  display: grid;
+  gap: 8px;
+  transform: translate(-50%, -50%);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+}
+
+.actor:hover,
+.actor.active {
+  transform: translate(-50%, -50%) translateY(-4px);
+  box-shadow: 0 18px 34px rgba(24,21,18,.12);
+  border-color: rgba(123,51,38,.34);
+  background: #fffdf9;
+}
+
+.actor-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: start;
+}
+
+.actor h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.actor-state {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 14px;
+  flex: 0 0 auto;
+}
+
+.actor-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: .87rem;
+  line-height: 1.45;
+}
+
+.actor-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.mini-btn {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.mini-btn:hover,
+.mini-btn.active {
+  border-color: rgba(123,51,38,.35);
+  color: var(--accent);
+  background: rgba(123,51,38,.06);
+}
+
+.detail-top {
+  display: grid;
+  gap: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.detail-kicker {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.detail-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-title h2 {
+  margin: 0;
+  font-size: 1.65rem;
+  line-height: 1.05;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+.detail-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.toggle {
+  display: inline-flex;
+  width: fit-content;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255,255,255,.7);
+}
+
+.toggle button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 10px 14px;
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--muted);
+  transition: all .2s ease;
+}
+
+.toggle button.active {
+  background: rgba(123,51,38,.1);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.detail-content {
+  display: grid;
+  gap: 16px;
+}
+
+.detail-box {
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.56);
+  border-radius: 18px;
+}
+
+.detail-box h4 {
+  margin: 0 0 10px;
+  font-size: .82rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+}
+
+.detail-box p {
+  margin: 0;
+  line-height: 1.72;
+  color: var(--ink-soft, var(--muted));
+  font-size: .98rem;
+}
+
+.dependencies {
+  display: grid;
+  gap: 10px;
+}
+
+.dep-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: .94rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.dep-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 7px;
+  flex: 0 0 auto;
+}
+
+.closing {
+  margin: 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: .95rem;
+}
+
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .detail-card {
+    position: static;
+  }
+}
+
+@media (max-width: 860px) {
+  .page { padding: 18px; }
+  .viz-card { min-height: unset; padding: 18px; }
+  .scene {
+    aspect-ratio: auto;
+    width: 100%;
+    display: grid;
+    gap: 14px;
+  }
+  .ring, svg.links, .center-node { display: none; }
+  .actor {
+    position: static;
+    transform: none;
+    width: 100%;
+    min-height: unset;
+  }
+  .actor:hover,
+  .actor.active {
+    transform: translateY(-2px);
+  }
+}
+
+  </style>
 </head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="eyebrow">En Plateau — lecture des positions</div>
+      <h1>Chaque acteur décide depuis une position partielle.</h1>
+      <p class="intro">La mise en regard de ces positions rend lisibles les conditions réelles dans lesquelles les décisions tiennent — ou cessent de tenir. Cliquez sur un acteur, puis sur <strong>Aujourd’hui</strong> ou <strong>Avec En Plateau</strong> pour faire apparaître le contenu correspondant.</p>
+    </header><section class="layout">
+  <div class="viz-card">
+    <div class="scene" id="scene">
+      <div class="ring" aria-hidden="true"></div>
+      <svg class="links" viewBox="0 0 760 760" aria-hidden="true">
+        <path class="link-line" data-link="collectivites-promoteurs" d="M190,120 C260,185 300,240 340,305" />
+        <path class="link-line" data-link="amenageurs-promoteurs" d="M130,305 C220,320 280,322 340,340" />
+        <path class="link-line" data-link="juristes-promoteurs" d="M190,585 C250,525 300,470 340,415" />
+        <path class="link-line" data-link="banques-promoteurs" d="M570,120 C520,200 470,255 420,305" />
+        <path class="link-line" data-link="investisseurs-promoteurs" d="M630,305 C555,320 500,325 420,340" />
+        <path class="link-line" data-link="bet-promoteurs" d="M570,585 C515,520 470,468 420,415" />
+        <path class="link-line" data-link="entreprises-promoteurs" d="M380,645 C380,555 380,500 380,455" />
+        <path class="link-line" data-link="collectivites-amenageurs" d="M190,120 C140,165 120,220 118,270" />
+        <path class="link-line" data-link="banques-investisseurs" d="M570,120 C620,165 642,220 642,270" />
+        <path class="link-line" data-link="entreprises-bet" d="M380,645 C455,640 510,626 548,600" />
+      </svg>
 
-<body class="home-page">
-
-<div id="site-header"></div>
-<div id="site-mobile-menu"></div>
-
-<main>
-
-  <!-- HERO -->
-  <section id="hero-home" class="hero">
-    <div class="container">
-      <div class="hero-inner">
-
-        <div class="hero-kicker">Dispositif éditorial</div>
-
-        <h1 class="hero-title">
-          Vous intervenez une fois. <br>
-          Vous accédez à bien plus.
-        </h1>
-
-        <p class="hero-subtitle">
-          Chaque contribution est individuelle.  
-          La valeur vient de ce que les autres acteurs apportent,
-          et de la manière dont ces contributions se répondent.
-        </p>
-
-        <p class="hero-meta">
-          Un dispositif conçu pour des décideurs dont les choix
-          se conditionnent mutuellement.
-        </p>
-
-        <p class="hero-note">
-          Le site présente une vue d’ensemble.  
-          Le détail des conversations et des contributions
-          fait l’objet d’un accès réservé.
-        </p>
-
-        <div class="hero-actions">
-          <a href="recevoir-le-dossier.html" class="link">Accéder au dossier</a>
+      <div class="center-node">
+        <div>
+          <h2>Une opération</h2>
+          <p>Ce qui tient, ce qui devient fragile, et ce qui bascule dans la chaîne de décision.</p>
         </div>
+      </div>
 
+      <button class="actor active" data-actor="collectivites" style="left: 190px; top: 120px;">
+        <div class="actor-title">
+          <h3>Collectivités</h3>
+          <span class="actor-state">🏛️</span>
+        </div>
+        <p class="actor-sub">Cadre public, rythme, faisabilité.</p>
+        <div class="actor-actions">
+          <span class="mini-btn active">Aujourd’hui</span>
+          <span class="mini-btn">En Plateau</span>
+        </div>
+      </button>
+
+      <button class="actor" data-actor="banques" style="left: 570px; top: 120px;">
+        <div class="actor-title">
+          <h3>Banques</h3>
+          <span class="actor-state">💰</span>
+        </div>
+        <p class="actor-sub">Finançabilité, risque, montage.</p>
+        <div class="actor-actions">
+          <span class="mini-btn active">Aujourd’hui</span>
+          <span class="mini-btn">En Plateau</span>
+        </div>
+      </button>
+
+      <button class="actor" data-actor="amenageurs" style="left: 130px; top: 305px;">
+        <div class="actor-title">
+          <h3>Aménageurs</h3>
+          <span class="actor-state">🏗️</span>
+        </div>
+        <p class="actor-sub">Conditions d’émergence du projet.</p>
+        <div class="actor-actions">
+          <span class="mini-btn active">Aujourd’hui</span>
+          <span class="mini-btn">En Plateau</span>
+        </div>
+      </button>
+
+      <button class="actor" data-actor="investisseurs" style="left: 630px; top: 305px;">
+        <div class="actor-title">
+          <h3>Investisseurs</h3>
+          <span class="actor-state">📈</span>
+        </div>
+        <p class="actor-sub">Valeur, exécution, correction.</p>
+        <div class="actor-actions">
+          <span class="mini-btn active">Aujourd’hui</span>
+          <span class="mini-btn">En Plateau</span>
+        </div>
+      </button>
+
+      <button class="actor" data-actor="juristes" style="left: 190px; top: 585px;">
+        <div class="actor-title">
+          <h3>Juristes & avocats</h3>
+          <span class="actor-state">⚖️</span>
+        </div>
+        <p class="actor-sub">Équilibre juridique, blocage, traduction.</p>
+        <div class="actor-actions">
+          <span class="mini-btn active">Aujourd’hui</span>
+          <span class="mini-btn">En Plateau</span>
+        </div>
+      </button>
+
+      <button class="actor" data-actor="bet" style="left: 570px; top: 585px;">
+        <div class="actor-title">
+          <h3>BET & ingénieries</h3>
+          <span class="actor-state">🧠</span>
+        </div>
+        <p class="actor-sub">Cohérence technique sous contraintes.</p>
+        <div class="actor-actions">
+          <span class="mini-btn active">Aujourd’hui</span>
+          <span class="mini-btn">En Plateau</span>
+        </div>
+      </button>
+
+      <button class="actor" data-actor="promoteurs" style="left: 380px; top: 360px; width: 190px; min-height: 122px; z-index: 4;">
+        <div class="actor-title">
+          <h3>Promoteurs</h3>
+          <span class="actor-state">🏢</span>
+        </div>
+        <p class="actor-sub">Point de convergence des contraintes.</p>
+        <div class="actor-actions">
+          <span class="mini-btn active">Aujourd’hui</span>
+          <span class="mini-btn">En Plateau</span>
+        </div>
+      </button>
+
+      <button class="actor" data-actor="entreprises" style="left: 380px; top: 645px;">
+        <div class="actor-title">
+          <h3>Entreprises</h3>
+          <span class="actor-state">🧱</span>
+        </div>
+        <p class="actor-sub">Irréversibilité, exécution, terrain.</p>
+        <div class="actor-actions">
+          <span class="mini-btn active">Aujourd’hui</span>
+          <span class="mini-btn">En Plateau</span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <aside class="detail-card" id="detailCard">
+    <div class="detail-top">
+      <div class="detail-kicker">Lecture de position</div>
+      <div class="detail-title">
+        <span class="detail-pill" id="detailIcon">🏛️</span>
+        <h2 id="detailName">Collectivités</h2>
+      </div>
+      <div class="toggle" aria-label="Basculer le contenu">
+        <button class="active" data-mode="today">Aujourd’hui</button>
+        <button data-mode="plateau">Avec En Plateau</button>
       </div>
     </div>
-  </section>
 
-  <!-- RÉALITÉ / SECTEUR -->
-  <section class="home-section">
-    <div class="container">
-
-      <div class="section-head section-head--centered">
-        <div class="section-kicker">Premier cycle</div>
-        <h2>Un terrain réel, des décisions interdépendantes</h2>
-
-        <p class="section-intro">
-          Le premier cycle est consacré à la production et à la transformation
-          des logements et des espaces d’activité.
-        </p>
+    <div class="detail-content">
+      <div class="detail-box">
+        <h4 id="boxTitle">Aujourd’hui</h4>
+        <p id="boxText"></p>
       </div>
 
-      <div class="page-centered-copy">
-        <p>
-          Promoteurs, banques, investisseurs, entreprises de travaux,
-          collectivités, bureaux d’études :
-          autant d’acteurs dont les décisions se croisent et se conditionnent.
-        </p>
-
-        <p>
-          Ce que chacun voit séparément reste partiel.
-          C’est leur mise en regard qui rend certaines situations plus lisibles.
-        </p>
+      <div class="detail-box">
+        <h4>Dépend de / conditionne</h4>
+        <div class="dependencies" id="dependencies"></div>
       </div>
 
+      <p class="closing">Chaque acteur décide depuis une position partielle. La mise en regard de ces positions rend lisibles les conditions réelles dans lesquelles les décisions tiennent — ou cessent de tenir.</p>
     </div>
-  </section>
+  </aside>
+</section>
 
-  <!-- CASTING -->
-  <section class="home-section home-section--dark">
-    <div class="container">
+  </div>  <script>
+    const data = {
+      collectivites: {
+        icon: '🏛️',
+        today: "Les décisions publiques structurent les projets, mais leurs effets réels dépendent de la manière dont elles sont appropriées par les autres acteurs.",
+        plateau: "Vous accédez à une lecture des situations où le cadre devient déterminant — ou insuffisant — dans la réalisation des opérations.",
+        deps: [
+          "Conditionne le rythme et la faisabilité du projet.",
+          "Dépend de l’appropriation réelle du cadre par les autres acteurs.",
+          "Interagit fortement avec les aménageurs et les promoteurs."
+        ],
+        links: ['collectivites-promoteurs','collectivites-amenageurs']
+      },
+      banques: {
+        icon: '💰',
+        today: "Les décisions de financement reposent sur une lecture partielle du projet, construite à partir d’informations hétérogènes et non synchronisées.",
+        plateau: "Vous accédez à une lecture des points où les opérations deviennent fragiles, et à ce qui, dans la chaîne d’acteurs, conditionne réellement leur finançabilité.",
+        deps: [
+          "Dépend de la lisibilité du risque et du montage.",
+          "Conditionne directement la possibilité de lancement.",
+          "Interagit avec promoteurs et investisseurs sur les seuils de tenue."
+        ],
+        links: ['banques-promoteurs','banques-investisseurs']
+      },
+      amenageurs: {
+        icon: '🏗️',
+        today: "Les équilibres d’opération reposent sur des interactions multiples, dont les effets ne sont visibles que partiellement.",
+        plateau: "Vous identifiez comment les décisions prises à chaque niveau influencent l’ensemble, et à quel moment ces équilibres se dégradent.",
+        deps: [
+          "Dépend des équilibres publics, fonciers et économiques en amont.",
+          "Conditionne la possibilité même d’émergence du projet.",
+          "Fait le lien entre territoire, cadre et opération."
+        ],
+        links: ['amenageurs-promoteurs','collectivites-amenageurs']
+      },
+      investisseurs: {
+        icon: '📈',
+        today: "Les arbitrages s’appuient sur des équilibres projetés, sans visibilité complète sur les conditions réelles d’exécution.",
+        plateau: "Vous identifiez les mécanismes qui dégradent la valeur en cours d’opération, et les moments où ces dégradations deviennent difficiles à corriger.",
+        deps: [
+          "Dépend d’une lecture fiable des conditions d’exécution.",
+          "Conditionne le capital engagé et le niveau de risque supporté.",
+          "Interagit avec banques et promoteurs sur la tenue réelle de l’opération."
+        ],
+        links: ['investisseurs-promoteurs','banques-investisseurs']
+      },
+      juristes: {
+        icon: '⚖️',
+        today: "Les montages juridiques traduisent des arbitrages, sans toujours rendre visibles les rapports de contrainte qui les sous-tendent.",
+        plateau: "Vous identifiez les situations où le droit devient un point d’équilibre — ou de blocage — dans la chaîne de décision.",
+        deps: [
+          "Dépend des arbitrages déjà posés en amont.",
+          "Conditionne la sécurisation ou le blocage du projet.",
+          "Révèle parfois trop tard les tensions sous-jacentes."
+        ],
+        links: ['juristes-promoteurs']
+      },
+      bet: {
+        icon: '🧠',
+        today: "Les choix techniques sont élaborés dans un cadre contraint, mais sans toujours intégrer les logiques économiques et décisionnelles des autres acteurs.",
+        plateau: "Vous identifiez les situations où la cohérence technique est remise en cause par des arbitrages externes, et les conditions dans lesquelles cela se produit.",
+        deps: [
+          "Dépend des choix économiques et calendaires faits en amont.",
+          "Conditionne la cohérence technique et la faisabilité réelle.",
+          "Interagit fortement avec entreprises et promoteurs."
+        ],
+        links: ['bet-promoteurs','entreprises-bet']
+      },
+      promoteurs: {
+        icon: '🏢',
+        today: "Les décisions sont prises dans un environnement où les contraintes des autres acteurs sont connues, mais rarement mises en regard.",
+        plateau: "Vous accédez à une lecture des situations où les projets cessent de tenir, et des arbitrages qui y conduisent.",
+        deps: [
+          "Dépend du financement, du cadre public et des conditions de production.",
+          "Conditionne l’engagement du capital, la réalisation et le rythme de l’opération.",
+          "Point de convergence des tensions du système."
+        ],
+        links: ['collectivites-promoteurs','amenageurs-promoteurs','juristes-promoteurs','banques-promoteurs','investisseurs-promoteurs','bet-promoteurs','entreprises-promoteurs']
+      },
+      entreprises: {
+        icon: '🧱',
+        today: "L’exécution révèle des contraintes issues de décisions prises en amont, sans que leur logique soit toujours lisible.",
+        plateau: "Vous accédez à une lecture des arbitrages qui produisent ces situations, et des points où ils deviennent irréversibles sur le terrain.",
+        deps: [
+          "Dépend des décisions amont et de leur cohérence réelle.",
+          "Conditionne la faisabilité concrète et la tenue terrain.",
+          "Révèle les points d’irréversibilité de l’opération."
+        ],
+        links: ['entreprises-promoteurs','entreprises-bet']
+      }
+    };
 
-      <div class="section-head section-head--centered">
-        <div class="section-kicker">Sélection</div>
-        <h2>Une position identifiée, pas une participation ouverte</h2>
-      </div>
+    let currentActor = 'collectivites';
+    let currentMode = 'today';
 
-      <div class="page-centered-copy">
-        <p>
-          Les interventions ne sont pas ouvertes.
-          Chaque contribution correspond à une position précise,
-          identifiée en amont dans une conversation structurée.
-        </p>
+    const actorButtons = document.querySelectorAll('.actor');
+    const toggleButtons = document.querySelectorAll('.toggle button');
+    const detailName = document.getElementById('detailName');
+    const detailIcon = document.getElementById('detailIcon');
+    const boxTitle = document.getElementById('boxTitle');
+    const boxText = document.getElementById('boxText');
+    const dependencies = document.getElementById('dependencies');
+    const allLines = document.querySelectorAll('.link-line');
 
-        <p>
-          Vous êtes sollicité non pour participer en général,
-          mais pour intervenir depuis un point de vue spécifique.
-        </p>
-      </div>
+    function render() {
+      const item = data[currentActor];
+      detailName.textContent = currentActor === 'bet' ? 'Bureaux d’études & ingénieries' : actorLabel(currentActor);
+      detailIcon.textContent = item.icon;
+      boxTitle.textContent = currentMode === 'today' ? 'Aujourd’hui' : 'Avec En Plateau';
+      boxText.textContent = item[currentMode];
 
-    </div>
-  </section>
+      dependencies.innerHTML = '';
+      item.deps.forEach(text => {
+        const row = document.createElement('div');
+        row.className = 'dep-item';
+        row.innerHTML = `<span class="dep-dot"></span><span>${text}</span>`;
+        dependencies.appendChild(row);
+      });
 
-  <!-- MÉCANIQUE (SUGGÉRÉE, PAS DÉTAILLÉE) -->
-  <section class="home-section">
-    <div class="container">
+      actorButtons.forEach(btn => {
+        const active = btn.dataset.actor === currentActor;
+        btn.classList.toggle('active', active);
+        const chips = btn.querySelectorAll('.mini-btn');
+        chips[0].classList.toggle('active', currentMode === 'today');
+        chips[1].classList.toggle('active', currentMode === 'plateau');
+      });
 
-      <div class="section-head section-head--centered">
-        <div class="section-kicker">Dispositif</div>
-        <h2>Un ensemble structuré, pas un format isolé</h2>
-      </div>
+      toggleButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.mode === currentMode);
+      });
 
-      <div class="page-centered-copy">
-        <p>
-          Chaque intervention est préparée,
-          inscrite dans un cadre exigeant,
-          puis mise en relation avec d’autres contributions.
-        </p>
+      allLines.forEach(line => {
+        const active = item.links.includes(line.dataset.link);
+        line.classList.toggle('active', active);
+        line.classList.toggle('dim', !active);
+      });
+    }
 
-        <p>
-          Ce n’est pas un format unique qui fait la valeur,
-          mais l’articulation de l’ensemble.
-        </p>
-      </div>
+    function actorLabel(key) {
+      const labels = {
+        collectivites: 'Collectivités',
+        banques: 'Banques',
+        amenageurs: 'Aménageurs',
+        investisseurs: 'Investisseurs',
+        juristes: 'Juristes & avocats',
+        bet: 'Bureaux d’études & ingénieries',
+        promoteurs: 'Promoteurs',
+        entreprises: 'Entreprises de construction'
+      };
+      return labels[key] || key;
+    }
 
-    </div>
-  </section>
+    actorButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        currentActor = btn.dataset.actor;
+        render();
+      });
+      const chips = btn.querySelectorAll('.mini-btn');
+      chips[0].addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentActor = btn.dataset.actor;
+        currentMode = 'today';
+        render();
+      });
+      chips[1].addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentActor = btn.dataset.actor;
+        currentMode = 'plateau';
+        render();
+      });
+    });
 
-  <!-- VALEUR (COMPRÉHENSION = CONSÉQUENCE, PAS PROMESSE) -->
-  <section class="home-section home-section--dark">
-    <div class="container">
+    toggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentMode = btn.dataset.mode;
+        render();
+      });
+    });
 
-      <div class="section-head section-head--centered">
-        <div class="section-kicker">Effet</div>
-        <h2>Ce que cela rend possible</h2>
-      </div>
-
-      <div class="page-centered-copy">
-        <p>
-          Ce que chacun perçoit isolément devient plus lisible
-          une fois rapproché.
-        </p>
-
-        <p>
-          Cela permet de mieux situer ses décisions
-          face à celles des autres acteurs dont elles dépendent.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="home-section">
-    <div class="container">
-
-      <div class="section-head section-head--centered">
-        <h2>Accéder au dispositif complet</h2>
-
-        <p class="section-intro">
-          Le dossier présente les conversations en cours,
-          les positions identifiées et les modalités d’intervention.
-        </p>
-      </div>
-
-      <div class="programme-link-row">
-        <a href="recevoir-le-dossier.html" class="link">Accéder au dossier</a>
-      </div>
-
-      <p class="section-footnote">
-        Le détail des contributions et de leur articulation n’est pas public.
-      </p>
-
-    </div>
-  </section>
-
-</main>
-
-<div id="site-footer"></div>
-<div id="cookie-container"></div>
-
-<script src="/assets/js/layout.js"></script>
-<script src="/assets/js/main.js"></script>
-
-</body>
-</html>
+    render();
+  </script></body>
+  </html>
