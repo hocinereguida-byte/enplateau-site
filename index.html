@@ -1,324 +1,303 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>En Plateau — Accéder à ce que les autres acteurs voient</title>
-  <meta
-    name="description"
-    content="En Plateau rapproche des points de vue qui se croisent peu dans l’économie réelle pour faire apparaître des arbitrages, des écarts d’appréciation et des conditions réelles de décision."
-  >
-  <link rel="canonical" href="https://enplateau.fr/">
-  <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#111111">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" href="/images/favicon-en-plateau.svg" type="image/svg+xml">
-  <link rel="icon" href="/images/Favenplateau.png" type="image/png" sizes="96x96">
-  <link rel="apple-touch-icon" href="/images/Favenplateau.png">
+<title>En Plateau — Comprendre ce qui fait tenir ou basculer une opération</title>
 
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:site_name" content="En Plateau">
-  <meta property="og:title" content="En Plateau — Accéder à ce que les autres acteurs voient">
-  <meta
-    property="og:description"
-    content="En Plateau rapproche des points de vue qui se croisent peu dans l’économie réelle pour faire apparaître des arbitrages, des écarts d’appréciation et des conditions réelles de décision."
-  >
-  <meta property="og:url" content="https://enplateau.fr/">
-  <meta property="og:image" content="https://enplateau.fr/images/en-plateau-social.webp">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="En Plateau — Accéder à ce que les autres acteurs voient">
-  <meta
-    name="twitter:description"
-    content="En Plateau rapproche des points de vue qui se croisent peu dans l’économie réelle pour faire apparaître des arbitrages, des écarts d’appréciation et des conditions réelles de décision."
-  >
-  <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-social.webp">
+<style>
 
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Lora:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+/* =========================
+BASE
+========================= */
 
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/home.css">
-  <link rel="stylesheet" href="assets/css/pages.css">
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: #f4e9dc;
+  color: #1f1a17;
+  line-height: 1.6;
+}
+
+.container {
+  width: min(1100px, 90%);
+  margin: auto;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero {
+  padding: 80px 0;
+}
+
+.hero h1 {
+  font-family: Fraunces, serif;
+  font-size: 48px;
+  line-height: 1.05;
+  max-width: 700px;
+}
+
+.hero p {
+  max-width: 600px;
+  color: #4f4640;
+}
+
+.hero-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.hero-actions a {
+  text-decoration: none;
+  border-bottom: 1px solid #7b3326;
+  font-weight: 500;
+}
+
+/* =========================
+BAND
+========================= */
+
+.band {
+  background: #111;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.band h2 {
+  font-family: Fraunces;
+  font-size: 28px;
+}
+
+/* =========================
+BLOCKS
+========================= */
+
+.section {
+  padding: 70px 0;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2,1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3,1fr);
+}
+
+.card {
+  background: #fffaf4;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 22px;
+}
+
+.card h3 {
+  font-family: Fraunces;
+  font-size: 20px;
+}
+
+/* =========================
+VALUE BLOCK
+========================= */
+
+.value {
+  border-left: 4px solid #7b3326;
+  padding-left: 20px;
+}
+
+/* =========================
+FOOT CTA
+========================= */
+
+.cta {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.cta a {
+  font-size: 18px;
+  border-bottom: 2px solid #7b3326;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+}
+
+</style>
 </head>
 
-<body class="home-page">
-  <div id="site-header"></div>
-  <div id="site-mobile-menu"></div>
+<body>
 
-  <main>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
 
-    <!-- HERO -->
-    <section class="hero" id="hero-home">
-      <div class="container">
-        <div class="hero-home-grid">
+    <p style="color:#7b3326; font-weight:600;">Cycle Atlas — Arbitrages immobiliers</p>
 
-          <div class="hero-home-main reveal">
-            <div class="hero-home-main__inner">
-              <div class="hero-kicker">Cycle Atlas — Arbitrages des opérations immobilières</div>
+    <h1>
+      Les décisions ne reposent jamais sur une seule vision.<br>
+      Elles tiennent — ou basculent — dans leur mise en regard.
+    </h1>
 
-              <h1 class="hero-title">
-                Les décisions ne reposent jamais sur une seule vision.
-              </h1>
+    <p>
+      Vous décidez avec une partie des informations.  
+      Ce dispositif vous permet de voir ce que les autres acteurs voient — et où les projets tiennent ou se bloquent réellement.
+    </p>
 
-              <p class="hero-subtitle">
-                Chaque acteur voit une partie du réel. Ce sont leurs écarts qui font — ou défont — une décision.
-              </p>
+    <div class="hero-actions">
+      <a href="#">Recevoir le dossier</a>
+      <a href="#">Comprendre votre position</a>
+    </div>
 
-              <p class="hero-note">
-                42 à 48 décideurs mobilisés répartis sur 8 métiers<br>
-                Composition en cours jusqu’au <strong>15 juin</strong>
-              </p>
+  </div>
+</section>
 
-              <div class="hero-actions" aria-label="Accès rapides">
-                <a href="recevoir-le-dossier.html" class="link">Recevoir le dossier</a>
-                <a href="#angles-home" class="link">Voir les angles</a>
-              </div>
-            </div>
-          </div>
+<!-- CE QUE C’EST -->
+<section class="section">
+  <div class="container grid grid-2">
 
-          <aside class="hero-home-side reveal" aria-label="Repères du cycle">
-            <div class="hero-side-figures">
-              <div class="hero-side-figure">
-                <span class="hero-side-figure__value">4</span>
-                <span class="hero-side-figure__label">conversations</span>
-              </div>
+    <div>
+      <h2>Ce que chacun voit séparément ne suffit pas</h2>
+    </div>
 
-              <div class="hero-side-figure">
-                <span class="hero-side-figure__value">48</span>
-                <span class="hero-side-figure__label">positions</span>
-              </div>
+    <div>
+      <p>
+        Chaque acteur intervient depuis sa position : financement, production, juridique, technique.
+      </p>
+      <p>
+        Ces visions ne coïncident pas toujours — et c’est là que les projets se tendent, ralentissent ou basculent.
+      </p>
+      <p class="value">
+        En Plateau met ces lectures en regard pour rendre visibles les dépendances et les moments critiques.
+      </p>
+    </div>
 
-              <div class="hero-side-figure">
-                <span class="hero-side-figure__value">1</span>
-                <span class="hero-side-figure__label">lecture structurée</span>
-              </div>
-            </div>
-          </aside>
+  </div>
+</section>
 
-        </div>
+<!-- CE QUE CA APPORTE -->
+<section class="section" style="background:#fff;">
+  <div class="container">
+
+    <h2 style="text-align:center;">Ce que cela vous apporte</h2>
+
+    <div class="grid grid-3" style="margin-top:30px;">
+
+      <div class="card">
+        <h3>Identifier les points de blocage</h3>
+        <p>Voir où une opération devient fragile — et pourquoi.</p>
       </div>
-    </section>
 
-    <!-- CREDIBILITE -->
-    <section class="home-section home-section--credibility" id="credibilite-home">
-      <div class="container">
-        <div class="credibility-block reveal">
-          <p class="credibility-text">
-            Les entretiens sont réalisés dans des environnements médiatiques reconnus, en partenariat avec Scribeo Media, afin de garantir des échanges exigeants conduits par des journalistes expérimentés.
-            L’enjeu n’est pas la visibilité, mais la qualité des prises de parole.
-          </p>
-
-          <div class="credibility-logos" aria-label="Environnements médiatiques reconnus">
-            <span class="credibility-logo">La Tribune</span>
-            <span class="credibility-logo">BFM Business</span>
-            <span class="credibility-logo">Le Figaro</span>
-            <span class="credibility-logo">Forbes</span>
-          </div>
-        </div>
+      <div class="card">
+        <h3>Lire les autres acteurs</h3>
+        <p>Comprendre comment ils interprètent la même situation.</p>
       </div>
-    </section>
 
-    <!-- ANGLES -->
-    <section class="home-section" id="angles-home">
-      <div class="container">
-        <div class="section-head section-head--centered reveal section-head--plain">
-          <h2>Quelques angles déjà ouverts</h2>
-
-          <p class="section-intro">
-            Des points d’entrée concrets sur lesquels un banquier, un avocat, un promoteur, un acteur public, un bureau d’études ou une entreprise peuvent se reconnaître.
-          </p>
-        </div>
-
-        <div class="angles-grid reveal">
-
-          <article class="angle-card">
-            <div class="angle-card__top">
-              <span class="angle-card__context">Équilibre économique</span>
-              <span class="angle-card__badge">Zone tendue</span>
-            </div>
-
-            <h3>À quel moment le prix de sortie n’est plus finançable&nbsp;?</h3>
-
-            <p class="angle-card__actor">Banque / financement</p>
-
-            <a href="conversations.html#conversation-1" class="link angle-card__link">Voir la conversation associée</a>
-          </article>
-
-          <article class="angle-card">
-            <div class="angle-card__top">
-              <span class="angle-card__context">Capacité à produire</span>
-              <span class="angle-card__badge">Zone en croissance</span>
-            </div>
-
-            <h3>Jusqu’où peut-on interpréter les règles pour produire&nbsp;?</h3>
-
-            <p class="angle-card__actor">Avocat / juridique</p>
-
-            <a href="conversations.html#conversation-2" class="link angle-card__link">Voir la conversation associée</a>
-          </article>
-
-          <article class="angle-card">
-            <div class="angle-card__top">
-              <span class="angle-card__context">Transformation du bâti</span>
-              <span class="angle-card__badge">Territoire en reconversion</span>
-            </div>
-
-            <h3>À quel moment la transformation devient techniquement incohérente&nbsp;?</h3>
-
-            <p class="angle-card__actor">BET / ingénierie</p>
-
-            <a href="conversations.html#conversation-3" class="link angle-card__link">Voir la conversation associée</a>
-          </article>
-
-          <article class="angle-card">
-            <div class="angle-card__top">
-              <span class="angle-card__context">Décision &amp; risque</span>
-              <span class="angle-card__badge">Zone tendue</span>
-            </div>
-
-            <h3>À quel moment le financement bloque un projet&nbsp;?</h3>
-
-            <p class="angle-card__actor">Banque / investisseur</p>
-
-            <a href="conversations.html#conversation-4" class="link angle-card__link">Voir la conversation associée</a>
-          </article>
-
-        </div>
-
-        <p class="section-footnote section-footnote--center reveal">
-          Ces angles donnent un aperçu du type de situations traitées. La structure complète des conversations et leurs déclinaisons restent réservées au dossier.
-        </p>
-
-        <p class="programme-link-row reveal">
-          <a href="conversations.html" class="link">Voir les conversations</a>
-        </p>
+      <div class="card">
+        <h3>Mieux arbitrer</h3>
+        <p>Savoir ce qui dépend réellement de vous — et ce qui ne dépend pas de vous.</p>
       </div>
-    </section>
 
-    <!-- ACTEURS -->
-    <section class="home-section home-section--actors" id="positions-home">
-      <div class="container">
-        <div class="section-head section-head--centered reveal section-head--plain">
-          <h2>Chaque acteur voit une partie du réel</h2>
+    </div>
 
-          <p class="section-intro">
-            Financement, cadre public, droit, production, exécution : chacun décide depuis sa position, avec une lecture partielle de l’opération.
-          </p>
-        </div>
+  </div>
+</section>
 
-        <div class="actors-grid reveal">
-          <article class="actor-card">
-            <h3>Collectivités</h3>
-            <p>Cadre, rythme, faisabilité</p>
-          </article>
+<!-- FORMAT -->
+<section class="section">
+  <div class="container grid grid-2">
 
-          <article class="actor-card">
-            <h3>Banques</h3>
-            <p>Finançabilité, risque, montage</p>
-          </article>
+    <div>
+      <h2>Un format simple, directement exploitable</h2>
+    </div>
 
-          <article class="actor-card actor-card--featured">
-            <h3>Promoteurs</h3>
-            <p>Point de convergence des contraintes</p>
-          </article>
+    <div>
+      <p><strong>Vous intervenez une fois, sur un angle précis.</strong></p>
+      <p>Entretien préparé, tourné dans un cadre média reconnu.</p>
+      <p class="value">Format court, réutilisable dans vos échanges et votre communication.</p>
+    </div>
 
-          <article class="actor-card">
-            <h3>Investisseurs</h3>
-            <p>Valeur, exécution, correction</p>
-          </article>
+  </div>
+</section>
 
-          <article class="actor-card">
-            <h3>Aménageurs</h3>
-            <p>Émergence, foncier, équilibre</p>
-          </article>
+<!-- DOUBLE VALEUR -->
+<section class="band">
+  <div class="container">
+    <h2>Deux niveaux de valeur</h2>
+  </div>
+</section>
 
-          <article class="actor-card">
-            <h3>Juristes &amp; avocats</h3>
-            <p>Traduction, sécurisation, blocage</p>
-          </article>
+<section class="section">
+  <div class="container grid grid-2">
 
-          <article class="actor-card">
-            <h3>BET &amp; ingénieries</h3>
-            <p>Cohérence technique sous contraintes</p>
-          </article>
+    <div class="card">
+      <h3>Visibilité maîtrisée</h3>
+      <p>Une prise de parole cadrée, crédible, réutilisable.</p>
+    </div>
 
-          <article class="actor-card">
-            <h3>Entreprises</h3>
-            <p>Exécution, terrain, irréversibilité</p>
-          </article>
-        </div>
+    <div class="card">
+      <h3>Lecture du secteur</h3>
+      <p>Accès aux autres contributions et compréhension des écarts entre acteurs.</p>
+    </div>
 
-        <p class="actors-summary reveal">
-          Ce que ces positions ne montrent pas seules apparaît lorsqu’elles sont mises en regard.
-        </p>
+  </div>
+</section>
+
+<!-- PAR ACTEUR -->
+<section class="section" style="background:#fff;">
+  <div class="container">
+
+    <h2 style="text-align:center;">Selon votre position</h2>
+
+    <div class="grid grid-3" style="margin-top:30px;">
+
+      <div class="card">
+        <h3>Banque / Investisseur</h3>
+        <p>Identifier où un projet ne tient plus et mieux qualifier le risque réel.</p>
       </div>
-    </section>
 
-    <!-- VALEUR / LIVRABLES -->
-    <section class="home-section home-section--value" id="valeur-home">
-      <div class="container">
-        <div class="section-head section-head--centered reveal section-head--plain">
-          <h2>Ce que vous accédez réellement</h2>
-
-          <p class="section-intro">
-            Une lecture structurée de ce qui tient, se dégrade ou bascule dans les opérations — et de la manière dont les acteurs se conditionnent entre eux.
-          </p>
-        </div>
-
-        <div class="value-lines reveal">
-          <article class="value-line">
-            <h3>Où une opération tient — ou bascule réellement</h3>
-          </article>
-
-          <article class="value-line">
-            <h3>Pourquoi les acteurs ne se lisent pas de la même manière</h3>
-          </article>
-
-          <article class="value-line">
-            <h3>Ce qui dépend de vous — et ce qui dépend des autres</h3>
-          </article>
-        </div>
-
-        <p class="programme-link-row reveal">
-          <a href="dispositif.html" class="link">Comprendre le dispositif</a>
-        </p>
+      <div class="card">
+        <h3>Promoteur</h3>
+        <p>Comprendre quand une opération bascule et pourquoi.</p>
       </div>
-    </section>
 
-    <!-- ACCES -->
-    <section class="home-section home-section--access" id="acces-home">
-      <div class="container">
-        <div class="section-head section-head--centered reveal section-head--plain">
-          <h2>Le nombre de positions est limité</h2>
-        </div>
-
-        <div class="access-grid reveal">
-          <article class="access-card access-card--primary">
-            <h3>Votre position a été identifiée</h3>
-            <p>Chaque contribution correspond à une place précise dans une conversation structurée.</p>
-            <a href="recevoir-le-dossier.html" class="link">Recevoir le dossier</a>
-          </article>
-
-          <article class="access-card">
-            <h3>Vous souhaitez proposer une contribution</h3>
-            <p>Vous pouvez signaler une position, une situation ou un arbitrage pertinent.</p>
-            <a href="proposer-une-contribution.html" class="link">Signaler une contribution</a>
-          </article>
-        </div>
-
-        <p class="access-note reveal">
-          Les contributions sont visibles. Ce qu’elles produisent ensemble ne se voit qu’une fois rapprochées.
-        </p>
+      <div class="card">
+        <h3>Entreprise / BET</h3>
+        <p>Identifier les incohérences terrain et leurs causes.</p>
       </div>
-    </section>
 
-  </main>
+    </div>
 
-  <div id="site-footer"></div>
-  <div id="cookie-container"></div>
+  </div>
+</section>
 
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/layout.js"></script>
+<!-- CTA FINAL -->
+<section class="cta">
+  <div class="container">
+    <a href="#">Recevoir le dossier</a>
+  </div>
+</section>
+
 </body>
-  </html>
+</html>
