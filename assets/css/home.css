@@ -351,6 +351,12 @@
   text-align: center;
 }
 
+.section-head--angles {
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ---------- CONVERSATIONS ---------- */
 
 .selection-grid {
@@ -425,10 +431,9 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 0;
   min-height: 100%;
   padding: 22px 22px 20px;
-  background: linear-gradient(180deg, rgba(255, 251, 246, 0.92) 0%, rgba(255, 248, 241, 0.82) 100%);
+  background: linear-gradient(180deg, rgba(255, 251, 246, 0.96) 0%, rgba(255, 248, 241, 0.88) 100%);
   border: 1px solid rgba(82, 62, 49, 0.14);
   box-shadow: 0 10px 28px rgba(17, 17, 17, 0.04);
 }
@@ -439,16 +444,17 @@
 
 .conversation-meta-top {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 16px;
 }
 
-.conversation-meta-label {
+.conversation-context {
+  display: inline-block;
   font-size: 11px;
-  line-height: 1.2;
-  letter-spacing: 0.08em;
+  line-height: 1.35;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ep-ink-muted);
   font-weight: 600;
@@ -486,19 +492,17 @@
   border-color: rgba(86, 92, 59, 0.18);
 }
 
-.conversation-card--angle h3 {
-  margin-bottom: 12px;
-}
-
-.conversation-angle-main {
+.conversation-card--angle .conversation-angle-main {
   margin: 0 0 18px;
   color: var(--ep-ink);
-  font-size: 1.04rem;
-  line-height: 1.6;
-  font-weight: 500;
+  font-size: clamp(1.18rem, 1.55vw, 1.34rem);
+  line-height: 1.34;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 
-.conversation-actor {
+.conversation-card--angle .conversation-actor {
   margin: auto 0 14px;
   padding-top: 14px;
   border-top: 1px solid rgba(82, 62, 49, 0.12);
@@ -507,7 +511,7 @@
   line-height: 1.6;
 }
 
-.conversation-actor span {
+.conversation-card--angle .conversation-actor span {
   display: block;
   margin-bottom: 4px;
   font-size: 11px;
@@ -904,12 +908,12 @@
     font-size: 10px;
   }
 
-  .conversation-angle-main {
-    font-size: 0.98rem;
-    line-height: 1.58;
+  .conversation-card--angle .conversation-angle-main {
+    font-size: 1.04rem;
+    line-height: 1.42;
   }
 
-  .conversation-actor {
+  .conversation-card--angle .conversation-actor {
     margin-top: 6px;
   }
    }
