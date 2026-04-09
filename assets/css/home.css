@@ -625,3 +625,87 @@
     text-align: left;
   }
 }
+/* ---------- CREDIBILITE ---------- */
+
+.home-section--credibility {
+  padding-top: 34px;
+  padding-bottom: 34px;
+  background: var(--ep-paper);
+}
+
+.home-section--credibility::before {
+  display: none;
+}
+
+.credibility-block {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  display: grid;
+  gap: 14px;
+}
+
+.credibility-text {
+  margin: 0;
+  color: var(--ep-ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.credibility-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 22px;
+}
+
+.credibility-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  color: var(--ep-ink-muted);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.credibility-note {
+  margin: 0;
+  color: var(--ep-ink-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ---------- EMPHASE DISPOSITIF / VALEUR ---------- */
+
+.dispositif-card--featured {
+  background: rgba(249, 242, 235, 0.95);
+  border-color: rgba(82, 62, 49, 0.22);
+}
+
+.value-block--emphasis {
+  background: rgba(249, 242, 235, 0.95);
+  border-color: rgba(82, 62, 49, 0.24);
+}
+
+/* ---------- MOBILE CREDIBILITE ---------- */
+
+@media (max-width: 780px) {
+  .home-section--credibility {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+
+  .credibility-block,
+  .credibility-text,
+  .credibility-note {
+    text-align: left;
+  }
+
+  .credibility-logos {
+    justify-content: flex-start;
+    gap: 10px 16px;
+  }
+}
