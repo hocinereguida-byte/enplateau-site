@@ -160,8 +160,8 @@
 /* ---------- CREDIBILITE ---------- */
 
 .home-section--credibility {
-  padding-top: 34px;
-  padding-bottom: 34px;
+  padding-top: 56px;
+  padding-bottom: 56px;
   background: var(--ep-paper);
 }
 
@@ -174,13 +174,14 @@
   margin: 0 auto;
   text-align: center;
   display: grid;
-  gap: 14px;
+  gap: 18px;
 }
 
 .credibility-text {
-  margin: 0;
+  max-width: 760px;
+  margin: 0 auto;
   color: var(--ep-ink-soft);
-  font-size: 0.98rem;
+  font-size: 1rem;
   line-height: 1.7;
 }
 
@@ -189,29 +190,31 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 18px 28px;
+  gap: 24px 36px;
+  margin-top: 4px;
 }
 
 .credibility-logo-img {
   display: block;
-  height: 18px;
+  height: 28px;
   width: auto;
-  max-width: 140px;
-  opacity: 0.72;
+  max-width: 160px;
+  opacity: 0.82;
   filter: grayscale(100%);
   transition: opacity 0.2s ease, filter 0.2s ease;
 }
 
 .credibility-logo-img:hover {
-  opacity: 0.92;
+  opacity: 1;
   filter: grayscale(100%);
 }
 
 .credibility-note {
-  margin: 0;
+  max-width: 760px;
+  margin: 0 auto;
   color: var(--ep-ink-muted);
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* ---------- SPLIT SECTIONS ---------- */
@@ -795,12 +798,12 @@
 
   .credibility-logos {
     justify-content: flex-start;
-    gap: 14px 20px;
+    gap: 16px 22px;
   }
 
   .credibility-logo-img {
-    height: 16px;
-    max-width: 120px;
+    height: 22px;
+    max-width: 132px;
   }
 
   .positions-editorial-grid {
@@ -825,113 +828,4 @@
   .access-entry {
     padding: 20px 18px 18px;
   }
-}
-
-/* ===== Section crédibilité — version premium ===== */
-
-.home-section--credibility {
-  padding: 96px 0 88px;
-}
-
-.credibility-block {
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0 24px;
-}
-
-.credibility-text {
-  max-width: 900px;
-  margin: 0 auto 28px;
-  font-family: "Fraunces", serif;
-  font-size: clamp(2rem, 3.6vw, 3.4rem);
-  line-height: 1.06;
-  letter-spacing: -0.03em;
-  color: #161616;
-}
-
-.credibility-text strong {
-  font-weight: 600;
-}
-
-.credibility-logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 28px 44px;
-  max-width: 920px;
-  margin: 0 auto 28px;
-  padding: 28px 0 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.credibility-logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 34px;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 1.05rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: rgba(22, 22, 22, 0.82);
-  white-space: nowrap;
-}
-
-/* Si tu utilises de vraies images logo */
-.credibility-logo img {
-  display: block;
-  max-height: 28px;
-  width: auto;
-  max-width: 150px;
-  object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.9;
-}
-
-.credibility-note {
-  max-width: 760px;
-  margin: 0 auto;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 0.98rem;
-  line-height: 1.6;
-  color: rgba(22, 22, 22, 0.62);
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .home-section--credibility {
-    padding: 72px 0 68px;
-  }
-
-  .credibility-text {
-    margin-bottom: 24px;
-    font-size: clamp(1.8rem, 7vw, 2.7rem);
-    line-height: 1.1;
-  }
-
-  .credibility-logos {
-    gap: 20px 28px;
-    padding-top: 22px;
-  }
-
-  .credibility-logo {
-    font-size: 0.98rem;
-  }
-
-  .credibility-logo img {
-    max-height: 24px;
-    max-width: 128px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
+   }
