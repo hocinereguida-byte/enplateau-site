@@ -1,6 +1,6 @@
 /* =========================================================
    EN PLATEAU — HOME.CSS
-   Version corrigée et consolidée
+   Version consolidée finale
    Direction : éditorial premium, sobre, contrasté
    ========================================================= */
 
@@ -118,10 +118,11 @@
 }
 
 .hero-side-panel {
-  background: rgba(255, 250, 244, 0.82);
+  background: rgba(255, 250, 244, 0.86);
   border: 1px solid var(--ep-line-strong);
   padding: 24px 24px 22px;
   position: relative;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.035);
 }
 
 .hero-side-panel::before {
@@ -159,10 +160,17 @@
 
 /* ---------- CREDIBILITE ---------- */
 
+#credibilite-home {
+  background: #ffffff;
+}
+
+#credibilite-home::before {
+  background: rgba(17, 17, 17, 0.08);
+}
+
 .home-section--credibility {
   padding-top: 56px;
   padding-bottom: 56px;
-  background: var(--ep-paper);
 }
 
 .home-section--credibility::before {
@@ -222,16 +230,23 @@
 .home-section--split {
   padding-top: 0;
   padding-bottom: 0;
-  background: transparent;
+  background: transparent !important;
 }
 
 .home-section--split::before {
   display: none;
 }
 
+.home-section--split .container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
 .split-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  width: 100%;
   min-height: 440px;
 }
 
@@ -243,10 +258,12 @@
 .split-panel--dark {
   position: relative;
   overflow: hidden;
-  background: #111111;
+  background:
+    radial-gradient(circle at 24% 30%, rgba(255,255,255,0.04), transparent 38%),
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03)),
+    #111111;
   color: #fffaf4;
   align-items: center;
-  box-shadow: inset 0 0 80px rgba(255, 255, 255, 0.02);
 }
 
 .split-panel--dark::before {
@@ -256,19 +273,7 @@
   top: 60px;
   width: 80px;
   height: 2px;
-  background: rgba(255, 255, 255, 0.38);
-}
-
-.split-panel--dark::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 30% 40%,
-    rgba(255, 255, 255, 0.04),
-    transparent 60%
-  );
-  pointer-events: none;
+  background: rgba(255, 255, 255, 0.34);
 }
 
 .split-panel--light {
@@ -292,26 +297,87 @@
 }
 
 .split-copy {
-  max-width: 560px;
+  max-width: 500px;
 }
 
-.split-copy p {
-  margin: 0 0 16px;
+/* composition corrigée — bloc 1 */
+
+.split-copy--structured {
+  display: grid;
+  gap: 18px;
+}
+
+.split-copy--structured p {
+  margin: 0;
+  padding: 0 0 18px;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.10);
   color: var(--ep-ink-soft);
   font-size: 1rem;
-  line-height: 1.7;
-  text-align: left;
+  line-height: 1.72;
 }
 
-.split-copy p:last-child {
-  margin-bottom: 0;
+.split-copy--structured p:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
-.split-copy strong {
+.split-copy--structured strong {
   display: block;
-  margin-bottom: 6px;
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  line-height: 1.16;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ep-ink);
+}
+
+/* composition corrigée — bloc 2 */
+
+.split-copy--questions {
+  max-width: 520px;
+}
+
+.split-copy-intro {
+  margin: 0 0 18px;
+}
+
+.split-copy-intro strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.18;
   font-weight: 600;
   color: var(--ep-ink);
+}
+
+.decision-questions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.decision-questions li {
+  position: relative;
+  padding: 14px 16px 14px 22px;
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  color: var(--ep-ink);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.decision-questions li::before {
+  content: "—";
+  position: absolute;
+  left: 10px;
+  top: 14px;
+  color: rgba(17, 17, 17, 0.48);
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
 .split-section--title-left .split-panel--dark {
@@ -325,59 +391,6 @@
 
 .split-section--title-right .split-panel--light {
   padding-right: 72px;
-}
-
-/* versions enrichies */
-
-.split-copy--structured p {
-  margin: 0 0 22px;
-}
-
-.split-copy--structured p:last-child {
-  margin-bottom: 0;
-}
-
-.split-copy--structured strong {
-  display: inline-block;
-  margin-bottom: 4px;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--ep-accent);
-}
-
-.split-copy--questions {
-  max-width: 520px;
-}
-
-.split-copy-intro {
-  margin-bottom: 18px;
-}
-
-.decision-questions {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 14px;
-}
-
-.decision-questions li {
-  position: relative;
-  padding-left: 18px;
-  color: var(--ep-ink-soft);
-  font-size: 1rem;
-  line-height: 1.65;
-}
-
-.decision-questions li::before {
-  content: "";
-  position: absolute;
-  top: 0.72em;
-  left: 0;
-  width: 7px;
-  height: 1px;
-  background: var(--ep-accent);
 }
 
 /* ---------- CONVERSATIONS ---------- */
@@ -461,7 +474,11 @@
 /* ---------- POSITIONS ---------- */
 
 #positions-home {
-  background: var(--ep-paper);
+  background: #ffffff;
+}
+
+#positions-home::before {
+  background: rgba(17, 17, 17, 0.08);
 }
 
 .positions-editorial-grid {
@@ -475,9 +492,9 @@
 .position-editorial-item {
   position: relative;
   padding: 24px 24px 20px 22px;
-  border: 1px solid var(--ep-line);
-  background: rgba(255, 250, 244, 0.78);
-  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+  border: 1px solid rgba(123, 51, 38, 0.12);
+  background: #f7ebe4;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
 }
 
 .position-editorial-item::before {
@@ -487,15 +504,16 @@
   bottom: 18px;
   left: 0;
   width: 4px;
-  background: #111111;
-  opacity: 0.25;
+  background: #7b3326;
+  opacity: 0.72;
   transition: opacity 0.28s ease;
 }
 
 .position-editorial-item:hover {
   transform: translateY(-3px);
-  border-color: var(--ep-line-strong);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.05);
+  border-color: rgba(123, 51, 38, 0.28);
+  background: #f3e3da;
+  box-shadow: 0 12px 26px rgba(17, 17, 17, 0.06);
 }
 
 .position-editorial-item:hover::before {
@@ -520,13 +538,13 @@
   font-size: 11px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--ep-ink-muted);
+  color: rgba(17, 17, 17, 0.62);
 }
 
 .position-editorial-item .link {
   display: inline-block;
   margin-top: 2px;
-  opacity: 0.78;
+  opacity: 0.82;
   transition: opacity 0.2s ease;
 }
 
@@ -611,7 +629,11 @@
 /* ---------- VALEUR ---------- */
 
 #valeur-home {
-  background: var(--ep-paper);
+  background: #ffffff;
+}
+
+#valeur-home::before {
+  background: rgba(17, 17, 17, 0.08);
 }
 
 .value-stack {
@@ -628,8 +650,8 @@
   gap: 18px;
   align-items: start;
   padding: 26px 26px 24px;
-  background: rgba(255, 250, 244, 0.74);
-  border: 1px solid var(--ep-line);
+  background: #f7ebe4;
+  border: 1px solid rgba(123, 51, 38, 0.12);
 }
 
 .value-block::before {
@@ -639,17 +661,13 @@
   left: 0;
   width: 5px;
   height: 100%;
-  background: rgba(123, 51, 38, 0.78);
+  background: #7b3326;
 }
 
-.value-block--primary {
-  background: rgba(249, 242, 235, 0.95);
-  border-color: rgba(82, 62, 49, 0.22);
-}
-
+.value-block--primary,
 .value-block--emphasis {
-  background: rgba(249, 242, 235, 0.95);
-  border-color: rgba(82, 62, 49, 0.24);
+  background: #f3e3da;
+  border-color: rgba(123, 51, 38, 0.18);
 }
 
 .value-index {
@@ -932,186 +950,3 @@
     padding: 20px 18px 18px;
   }
    }
-
-/* =========================================================
-   EN PLATEAU — RELIEF / MATIÈRE
-   À coller en fin de home.css
-   ========================================================= */
-
-/* ---------- 1. FOND GÉNÉRAL : plus vivant ---------- */
-
-.home-page {
-  background:
-    linear-gradient(to bottom, rgba(255,255,255,0.14), rgba(255,255,255,0) 220px),
-    var(--ep-paper);
-}
-
-.home-page .home-section {
-  background:
-    linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,255,255,0) 140px),
-    var(--ep-paper);
-}
-
-.home-page .home-section:nth-of-type(even) {
-  background:
-    linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0) 140px),
-    var(--ep-paper-soft);
-}
-
-/* ---------- 2. BLOCS CLAIRS : vraie matière ---------- */
-
-.conversation-card,
-.position-editorial-item,
-.dispositif-card,
-.value-block,
-.access-entry,
-.hero-side-panel {
-  background:
-    linear-gradient(to bottom, rgba(255,255,255,0.58), rgba(255,255,255,0.18)),
-    rgba(255, 250, 244, 0.88);
-  border: 1px solid rgba(17, 17, 17, 0.10);
-  box-shadow:
-    0 1px 0 rgba(255,255,255,0.55) inset,
-    0 10px 24px rgba(17,17,17,0.035);
-  backdrop-filter: blur(1px);
-}
-
-/* états hover plus lisibles */
-.conversation-card:hover,
-.position-editorial-item:hover,
-.dispositif-card:hover,
-.access-entry:hover {
-  border-color: rgba(17,17,17,0.22);
-  box-shadow:
-    0 1px 0 rgba(255,255,255,0.62) inset,
-    0 16px 34px rgba(17,17,17,0.06);
-}
-
-/* ---------- 3. CARTES PLUS “TENUES” ---------- */
-
-.conversation-card::before,
-.dispositif-card::before,
-.access-entry--primary::before {
-  box-shadow: 1px 0 0 rgba(255,255,255,0.18);
-}
-
-.position-editorial-item::before {
-  opacity: 0.9;
-  box-shadow: 1px 0 0 rgba(255,255,255,0.16);
-}
-
-/* ---------- 4. BLOCS NOIRS : profondeur premium ---------- */
-
-.split-panel--dark {
-  background:
-    radial-gradient(circle at 22% 28%, rgba(255,255,255,0.05), transparent 38%),
-    radial-gradient(circle at 80% 72%, rgba(255,255,255,0.03), transparent 44%),
-    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04)),
-    #111111;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.06),
-    inset 0 0 90px rgba(255,255,255,0.015),
-    0 16px 36px rgba(0,0,0,0.10);
-}
-
-.split-panel--dark .split-title {
-  text-shadow: 0 1px 0 rgba(255,255,255,0.05);
-}
-
-/* ---------- 5. SECTION POSITIONS : moins fade ---------- */
-
-.position-editorial-item {
-  background:
-    linear-gradient(to bottom, rgba(255,255,255,0.72), rgba(255,255,255,0.38)),
-    rgba(255, 250, 244, 0.82);
-  border-color: rgba(17,17,17,0.12);
-}
-
-.position-editorial-item h3 {
-  color: #171310;
-}
-
-.position-editorial-link {
-  color: rgba(17,17,17,0.62);
-}
-
-/* ---------- 6. SECTION ACCÈS : hiérarchie plus visible ---------- */
-
-.access-entry--primary {
-  background:
-    linear-gradient(to bottom, rgba(255,255,255,0.70), rgba(255,255,255,0.28)),
-    rgba(249, 242, 235, 0.98);
-  box-shadow:
-    0 1px 0 rgba(255,255,255,0.62) inset,
-    0 14px 30px rgba(17,17,17,0.05);
-}
-
-.access-entry--secondary {
-  background:
-    linear-gradient(to bottom, rgba(255,255,255,0.42), rgba(255,255,255,0.12)),
-    rgba(255, 250, 244, 0.56);
-  box-shadow:
-    0 1px 0 rgba(255,255,255,0.42) inset,
-    0 8px 18px rgba(17,17,17,0.025);
-}
-
-/* ---------- 7. VALEUR : rendre les blocs plus “premium” ---------- */
-
-.value-block {
-  background:
-    linear-gradient(to bottom, rgba(255,255,255,0.66), rgba(255,255,255,0.24)),
-    rgba(255, 250, 244, 0.84);
-}
-
-.value-block--primary,
-.value-block--emphasis,
-.dispositif-card--featured {
-  background:
-    linear-gradient(to bottom, rgba(255,255,255,0.72), rgba(255,255,255,0.30)),
-    rgba(249, 242, 235, 0.98);
-  border-color: rgba(17,17,17,0.14);
-  box-shadow:
-    0 1px 0 rgba(255,255,255,0.64) inset,
-    0 14px 30px rgba(17,17,17,0.045);
-}
-
-/* ---------- 8. PETIT BOOST GLOBAL SUR LES TITRES DE BLOCS ---------- */
-
-.conversation-card h3,
-.position-editorial-item h3,
-.dispositif-card h3,
-.value-body h3,
-.access-entry h3 {
-  text-wrap: balance;
-}
-
-/* ---------- 9. MOBILE : garder le relief sans alourdir ---------- */
-
-@media (max-width: 780px) {
-  .conversation-card,
-  .position-editorial-item,
-  .dispositif-card,
-  .value-block,
-  .access-entry,
-  .hero-side-panel {
-    box-shadow:
-      0 1px 0 rgba(255,255,255,0.52) inset,
-      0 8px 18px rgba(17,17,17,0.03);
-  }
-
-  .split-panel--dark {
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.05),
-      inset 0 0 60px rgba(255,255,255,0.01),
-      0 10px 24px rgba(0,0,0,0.08);
-  }
-}
-
-
-
-
-
-
-
-
-
