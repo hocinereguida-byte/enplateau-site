@@ -197,12 +197,19 @@
 }
 
 #credibilite-home::after {
-  display: none;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 14px;
+  background: var(--ep-divider-grey);
+  pointer-events: none;
 }
 
 .home-section--credibility {
-  padding-top: 84px;
-  padding-bottom: 84px;
+  padding-top: 108px;
+  padding-bottom: 112px;
 }
 
 .home-section--credibility::before {
@@ -231,7 +238,7 @@
   justify-content: center;
   align-items: center;
   gap: 24px 36px;
-  margin-top: 4px;
+  margin-top: 8px;
 }
 
 .credibility-logo-img {
@@ -251,7 +258,7 @@
 
 .credibility-note {
   max-width: 760px;
-  margin: 0 auto;
+  margin: 8px auto 0;
   color: var(--ep-ink-muted);
   font-size: 12px;
   line-height: 1.65;
@@ -260,9 +267,9 @@
 /* ---------- SPLIT SECTIONS ---------- */
 
 .home-section--split {
-  padding-top: 0;
-  padding-bottom: 0;
-  background: transparent !important;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background: var(--ep-divider-grey) !important;
 }
 
 .home-section--split::before,
@@ -280,38 +287,7 @@
 #intro-en-plateau {
   position: relative;
   margin: 0;
-}
-
-#pourquoi-cycle {
-  background: transparent !important;
-}
-
-#intro-en-plateau {
-  background: #ffffff !important;
-}
-
-/* bandes grises sur les splits : haut + bas */
-#pourquoi-cycle::before,
-#pourquoi-cycle::after,
-#intro-en-plateau::before,
-#intro-en-plateau::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 14px;
-  background: var(--ep-divider-grey);
-  pointer-events: none;
-}
-
-#pourquoi-cycle::before,
-#intro-en-plateau::before {
-  top: 0;
-}
-
-#pourquoi-cycle::after,
-#intro-en-plateau::after {
-  bottom: 0;
+  background: var(--ep-divider-grey) !important;
 }
 
 #pourquoi-cycle + #intro-en-plateau {
@@ -322,16 +298,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  min-height: 520px;
+  min-height: 560px;
 }
 
 #intro-en-plateau .split-section {
-  min-height: 580px;
+  min-height: 620px;
   background: #ffffff;
 }
 
 .split-panel {
-  padding: 62px 58px;
+  padding: 72px 58px;
   display: flex;
 }
 
@@ -366,8 +342,9 @@
   background: var(--ep-paper);
   color: var(--ep-ink);
   align-items: center;
-  border-top: 1px solid rgba(17,17,17,0.05);
-  border-bottom: 1px solid rgba(17,17,17,0.10);
+  box-shadow:
+    inset 0 1px 0 rgba(17,17,17,0.05),
+    inset 0 -1px 0 rgba(17,17,17,0.10);
 }
 
 #intro-en-plateau .split-panel--light {
@@ -495,8 +472,8 @@
 
 #conversations-home {
   background: var(--ep-paper);
-  padding-top: 112px;
-  padding-bottom: 112px;
+  padding-top: 124px;
+  padding-bottom: 124px;
 }
 
 .selection-grid {
@@ -576,8 +553,8 @@
 
 #positions-home {
   background: #ffffff;
-  padding-top: 112px;
-  padding-bottom: 112px;
+  padding-top: 124px;
+  padding-bottom: 124px;
 }
 
 #positions-home::before {
@@ -659,8 +636,8 @@
 
 #dispositif-home {
   background: var(--ep-paper);
-  padding-top: 112px;
-  padding-bottom: 112px;
+  padding-top: 124px;
+  padding-bottom: 124px;
 }
 
 .dispositif-grid {
@@ -735,8 +712,8 @@
 
 #valeur-home {
   background: #ffffff;
-  padding-top: 112px;
-  padding-bottom: 112px;
+  padding-top: 124px;
+  padding-bottom: 124px;
 }
 
 #valeur-home::before {
@@ -805,8 +782,8 @@
 
 #acces-home {
   background: var(--ep-paper);
-  padding-top: 104px;
-  padding-bottom: 104px;
+  padding-top: 116px;
+  padding-bottom: 116px;
 }
 
 .access-entry-grid {
@@ -921,18 +898,18 @@
   #dispositif-home,
   #valeur-home,
   #acces-home {
-    padding-top: 88px;
-    padding-bottom: 88px;
+    padding-top: 96px;
+    padding-bottom: 96px;
   }
 
   .home-section--credibility {
-    padding-top: 92px;
-    padding-bottom: 92px;
+    padding-top: 104px;
+    padding-bottom: 104px;
   }
 
   .split-section,
   #intro-en-plateau .split-section {
-    min-height: 0;
+    min-height: auto;
   }
 
   .split-panel {
@@ -972,10 +949,7 @@
   }
 
   #credibilite-home::before,
-  #pourquoi-cycle::before,
-  #pourquoi-cycle::after,
-  #intro-en-plateau::before,
-  #intro-en-plateau::after {
+  #credibilite-home::after {
     height: 12px;
   }
 
@@ -990,8 +964,8 @@
   }
 
   .home-section--credibility {
-    padding-top: 76px;
-    padding-bottom: 76px;
+    padding-top: 84px;
+    padding-bottom: 88px;
   }
 
   #hero-home {
@@ -1001,6 +975,11 @@
 
   #hero-home .hero-inner {
     max-width: 100%;
+  }
+
+  .home-section--split {
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
   .split-panel {
