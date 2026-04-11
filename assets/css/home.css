@@ -38,9 +38,8 @@
   content: "";
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(calc(100% - 56px), var(--container));
+  left: 0;
+  width: 100%;
   height: 14px;
   background: var(--ep-divider-grey);
   pointer-events: none;
@@ -188,12 +187,22 @@
 }
 
 #credibilite-home::before {
-  background: rgba(17, 17, 17, 0.08);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 14px;
+  background: var(--ep-divider-grey);
+}
+
+#credibilite-home::after {
+  display: none;
 }
 
 .home-section--credibility {
-  padding-top: 56px;
-  padding-bottom: 56px;
+  padding-top: 84px;
+  padding-bottom: 84px;
 }
 
 .home-section--credibility::before {
@@ -269,8 +278,28 @@
 
 #pourquoi-cycle,
 #intro-en-plateau {
-  background: transparent !important;
+  position: relative;
   margin: 0;
+}
+
+#pourquoi-cycle {
+  background: transparent !important;
+}
+
+#intro-en-plateau {
+  background: #ffffff !important;
+}
+
+#pourquoi-cycle::after,
+#intro-en-plateau::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 14px;
+  background: var(--ep-divider-grey);
+  pointer-events: none;
 }
 
 #pourquoi-cycle + #intro-en-plateau {
@@ -281,7 +310,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  min-height: 440px;
+  min-height: 520px;
+}
+
+#intro-en-plateau .split-section {
+  min-height: 580px;
+  background: #ffffff;
 }
 
 .split-panel {
@@ -744,10 +778,6 @@
   background: var(--ep-paper);
 }
 
-#acces-home::after {
-  background: var(--ep-divider-grey);
-}
-
 .access-entry-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.85fr);
@@ -858,6 +888,10 @@
     min-height: 0;
   }
 
+  #intro-en-plateau .split-section {
+    min-height: 0;
+  }
+
   .split-panel {
     padding: 48px 38px;
   }
@@ -890,13 +924,24 @@
   }
 
   .home-page .home-section::after {
-    width: min(calc(100% - 32px), var(--container));
+    width: 100%;
+    height: 12px;
+  }
+
+  #credibilite-home::before,
+  #pourquoi-cycle::after,
+  #intro-en-plateau::after {
     height: 12px;
   }
 
   .home-page .home-section {
     padding-top: 56px;
     padding-bottom: 56px;
+  }
+
+  .home-section--credibility {
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
 
   #hero-home {
