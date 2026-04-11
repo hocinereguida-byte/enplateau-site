@@ -1,7 +1,7 @@
 /* =========================================================
 EN PLATEAU — LAYOUT.CSS
-Direction : FT inspiré + contraste renforcé pour site sans photo
-Header/footer noirs, fond papier, contrastes ciblés
+Socle harmonisé home + pages intérieures
+Direction : éditorial premium, sobre, contrasté
 ========================================================= */
 
 :root {
@@ -76,8 +76,8 @@ body {
   background: var(--ep-paper);
   color: var(--ep-ink);
   font-family: var(--font-body);
-  font-size: 18px;
-  line-height: 1.74;
+  font-size: 17px;
+  line-height: 1.72;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -180,32 +180,32 @@ h4 {
 }
 
 .hero-title {
-  font-size: clamp(3rem, 5vw, 4.65rem);
-  line-height: 0.95;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 0.96;
   text-wrap: balance;
   margin-bottom: 18px;
 }
 
 .hero-subtitle {
-  font-size: clamp(1.08rem, 1.32vw, 1.22rem);
-  line-height: 1.7;
+  font-size: clamp(1.02rem, 1.22vw, 1.14rem);
+  line-height: 1.68;
   font-weight: 400;
   color: var(--ep-ink-soft);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .hero-meta,
 .hero-note {
-  font-size: 0.98rem;
-  line-height: 1.74;
+  font-size: 0.95rem;
+  line-height: 1.72;
   color: var(--ep-ink-muted);
 }
 
 .section-head h2 {
-  font-size: clamp(2.15rem, 3vw, 3rem);
+  font-size: clamp(2.1rem, 2.8vw, 2.85rem);
   line-height: 1.06;
   text-wrap: balance;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .section-kicker,
@@ -223,16 +223,16 @@ h4 {
 
 .section-intro {
   max-width: 860px;
-  font-size: clamp(1.02rem, 1.18vw, 1.14rem);
-  line-height: 1.74;
+  font-size: clamp(0.98rem, 1.08vw, 1.08rem);
+  line-height: 1.72;
   font-weight: 400;
   color: var(--ep-ink-soft);
 }
 
 .section-footnote {
   max-width: 920px;
-  font-size: 14px;
-  line-height: 1.74;
+  font-size: 13px;
+  line-height: 1.68;
   color: var(--ep-ink-muted);
 }
 
@@ -244,8 +244,8 @@ h4 {
 
 .page-centered-copy p {
   color: var(--ep-ink-soft);
-  font-size: 1rem;
-  line-height: 1.78;
+  font-size: 0.96rem;
+  line-height: 1.74;
 }
 
 /* ---------- LINKS ---------- */
@@ -273,7 +273,7 @@ h4 {
   bottom: -2px;
   height: 1px;
   background: rgba(123, 51, 38, 0.52);
-  transition: background var(--transition-fast);
+  transition: background var(--transition-fast), height var(--transition-fast);
 }
 
 .link:hover::after,
@@ -282,6 +282,19 @@ h4 {
 .footer-col a:hover::after,
 .site-header__cta:hover::after {
   background: var(--ep-accent);
+}
+
+.link--primary {
+  font-weight: 600;
+}
+
+.link--primary::after {
+  height: 2px;
+  background: var(--ep-accent);
+}
+
+.link--secondary {
+  opacity: 0.72;
 }
 
 /* ---------- BUTTON ROWS ---------- */
@@ -325,7 +338,7 @@ h4 {
   max-width: 1040px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
 .section-head--centered,
@@ -365,15 +378,15 @@ h4 {
 }
 
 .card h3 {
-  font-size: clamp(1.3rem, 1.7vw, 1.55rem);
-  line-height: 1.18;
-  margin-bottom: 12px;
+  font-size: clamp(1.24rem, 1.55vw, 1.46rem);
+  line-height: 1.16;
+  margin-bottom: 10px;
 }
 
 .card p {
   color: var(--ep-ink-soft);
-  font-size: 1rem;
-  line-height: 1.76;
+  font-size: 0.96rem;
+  line-height: 1.72;
   margin-bottom: 0;
 }
 
@@ -779,8 +792,8 @@ h4 {
 }
 
 .footer-signature {
-  font-size: 1.02rem;
-  line-height: 1.42;
+  font-size: 1rem;
+  line-height: 1.4;
   color: #fffaf4;
   margin-bottom: 10px;
 }
@@ -788,7 +801,7 @@ h4 {
 .footer p,
 .footer li {
   font-size: 14px;
-  line-height: 1.72;
+  line-height: 1.68;
   color: rgba(255, 255, 255, 0.68);
 }
 
@@ -909,7 +922,7 @@ button:focus-visible {
   }
 
   .section-head h2 {
-    font-size: clamp(1.95rem, 6.8vw, 2.4rem);
+    font-size: clamp(1.95rem, 6.6vw, 2.3rem);
   }
 
   .programme-link-row,
@@ -937,7 +950,7 @@ button:focus-visible {
 /* =========================================================
    COOKIES
    Pop-up de consentement + lien footer
-   ========================================================= */
+========================================================= */
 
 [hidden] {
   display: none !important;
@@ -1041,14 +1054,14 @@ body.cookies-open {
 
 .cookie-modal__text {
   font-family: var(--font-body);
-  font-size: 0.98rem;
-  line-height: 1.72;
+  font-size: 0.95rem;
+  line-height: 1.7;
   color: var(--ep-ink-soft);
   margin-bottom: 12px;
 }
 
 .cookie-modal__text--small {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--ep-ink-muted);
 }
 
@@ -1100,8 +1113,8 @@ body.cookies-open {
 }
 
 .cookie-toggle__help {
-  font-size: 0.92rem;
-  line-height: 1.65;
+  font-size: 0.9rem;
+  line-height: 1.62;
   color: var(--ep-ink-soft);
 }
 
@@ -1234,4 +1247,4 @@ body.cookies-open {
     width: 100%;
     justify-content: center;
   }
-}
+  }
