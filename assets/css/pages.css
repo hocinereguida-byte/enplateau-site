@@ -1,8 +1,7 @@
 /* =========================================================
    EN PLATEAU — PAGES.CSS
-   Pages intérieures / navigation dense / blocs éditoriaux
-   Direction alignée sur layout.css + home.css
-   Version mise à jour pour la page Positions du cycle
+   Pages intérieures harmonisées avec home.css
+   Direction : éditorial premium, sobre, contrasté
    ========================================================= */
 
 /* ---------- PAGE HERO ---------- */
@@ -14,14 +13,14 @@
 }
 
 .page-hero {
-  padding-top: 96px;
-  padding-bottom: 82px;
+  padding-top: 88px;
+  padding-bottom: 76px;
   background: var(--ep-paper);
   border-bottom: 1px solid var(--ep-line);
 }
 
 .page-hero-inner {
-  max-width: 1080px;
+  max-width: 980px;
 }
 
 .page-hero-kicker {
@@ -30,18 +29,19 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ep-accent);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .page-hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 5vw, 4.6rem);
-  line-height: 1.02;
-  letter-spacing: -0.022em;
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
   font-weight: 600;
   color: var(--ep-ink);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   text-wrap: balance;
+  max-width: 860px;
 }
 
 .page-hero-sub,
@@ -53,8 +53,8 @@
 
 .page-hero-sub {
   font-family: var(--font-body);
-  font-size: clamp(1.12rem, 1.7vw, 1.34rem);
-  line-height: 1.62;
+  font-size: clamp(1.05rem, 1.3vw, 1.18rem);
+  line-height: 1.7;
   font-weight: 400;
   margin-bottom: 16px;
 }
@@ -62,11 +62,15 @@
 .page-hero-meta,
 .page-hero-note {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 0.98rem;
   line-height: 1.74;
 }
 
 .page-hero-note {
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--ep-line);
   color: var(--ep-ink-muted);
 }
 
@@ -144,7 +148,7 @@
 
 .page-reading h2 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.06;
   letter-spacing: -0.02em;
   font-weight: 600;
@@ -154,7 +158,7 @@
 
 .page-reading h3 {
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  font-size: clamp(1.18rem, 1.7vw, 1.42rem);
   line-height: 1.18;
   font-weight: 500;
   margin-bottom: 12px;
@@ -251,6 +255,14 @@
   padding-bottom: 72px;
 }
 
+.page-reading > .page-section:nth-child(odd) {
+  background: var(--ep-paper);
+}
+
+.page-reading > .page-section:nth-child(even) {
+  background: var(--ep-paper-soft);
+}
+
 .page-reading .page-section + .page-section {
   border-top: 1px solid rgba(102, 77, 59, 0.08);
 }
@@ -260,7 +272,7 @@
 .editorial-panel {
   position: relative;
   padding: 28px 26px 24px 28px;
-  background: rgba(255, 250, 244, 0.72);
+  background: rgba(255, 250, 244, 0.82);
   border: 1px solid var(--ep-line);
 }
 
@@ -275,7 +287,7 @@
 }
 
 .editorial-panel + .editorial-panel {
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
 .editorial-panel h3 {
@@ -329,7 +341,7 @@
 .programme-list__item,
 .season-card {
   position: relative;
-  background: rgba(255, 250, 244, 0.68);
+  background: rgba(255, 250, 244, 0.72);
   border: 1px solid var(--ep-line);
   padding: 26px;
 }
@@ -529,6 +541,22 @@
   margin-top: 24px;
 }
 
+/* ---------- CTA PRIORITAIRE ---------- */
+
+.link--primary {
+  font-weight: 600;
+  position: relative;
+}
+
+.link--primary::after {
+  height: 2px;
+  background: var(--ep-accent);
+}
+
+.link--secondary {
+  opacity: 0.7;
+}
+
 /* ---------- TABLES ---------- */
 
 .page-reading table {
@@ -622,7 +650,6 @@
   margin-top: 24px;
 }
 
-/* bloc "situations" plus fort */
 .page-reading .programme-position:first-of-type {
   background: rgba(249, 242, 235, 0.92);
   border-color: rgba(102, 77, 59, 0.18);
@@ -640,7 +667,6 @@
   margin-top: 8px;
 }
 
-/* hiérarchie plus nette sur les sections acteurs */
 #promoteurs .section-head,
 #banques .section-head,
 #investisseurs .section-head,
@@ -689,7 +715,6 @@
   margin-top: 0;
 }
 
-/* scroll offset */
 #promoteurs,
 #banques,
 #investisseurs,
@@ -709,7 +734,6 @@
   scroll-margin-top: 110px;
 }
 
-/* CTA final plus net */
 #acces-final .programme-access__item {
   background: rgba(255, 250, 244, 0.78);
 }
@@ -723,144 +747,7 @@
   margin-top: 8px;
 }
 
-/* ---------- RESPONSIVE ---------- */
-
-@media (max-width: 1180px) {
-  .programme-season,
-  .programme-value,
-  .programme-positions {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 1023px) {
-  .page-shell {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .page-sidebar {
-    position: static;
-    top: auto;
-    padding-top: 0;
-  }
-
-  #positions-cycle-content .page-sidebar {
-    background: transparent;
-    border: 0;
-    padding: 0;
-  }
-
-  .page-sidebar nav {
-    border-top: 0;
-    padding-top: 0;
-    border-bottom: 1px solid var(--ep-line);
-    padding-bottom: 16px;
-  }
-
-  .page-sidebar ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 14px;
-  }
-
-  .page-sidebar li + li {
-    margin-top: 0;
-  }
-
-  .page-sidebar a {
-    min-height: auto;
-    font-size: 12px;
-    padding: 0;
-    max-width: none;
-  }
-
-  #positions-cycle-content .page-sidebar a {
-    color: var(--ep-ink-soft);
-  }
-
-  #positions-cycle-content .page-sidebar a:hover,
-  #positions-cycle-content .page-sidebar a.is-active {
-    color: var(--ep-ink);
-  }
-
-  .page-sidebar a.is-active {
-    padding-left: 0;
-    border-left: 0;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-
-  .programme-season,
-  .programme-value,
-  .programme-positions,
-  .programme-access,
-  .programme-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 780px) {
-  .page-hero {
-    padding-top: 82px;
-    padding-bottom: 68px;
-  }
-
-  .page-hero-title {
-    font-size: clamp(2.2rem, 8vw, 3.4rem);
-    line-height: 1.03;
-  }
-
-  .page-hero-sub {
-    font-size: 1.06rem;
-    line-height: 1.66;
-  }
-
-  .page-reading p,
-  .page-reading li {
-    font-size: 16px;
-  }
-
-  .editorial-panel,
-  .conversations-deadlines,
-  .theme-block,
-  .theme-nav,
-  .programme-step,
-  .programme-value__item,
-  .programme-position,
-  .programme-access__item,
-  .programme-list__item,
-  .season-card {
-    padding: 22px 20px;
-  }
-
-  .page-section {
-    padding-top: 56px;
-    padding-bottom: 56px;
-  }
-
-  .section-head--centered,
-  .section-head--narrow {
-    text-align: left;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .divider {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .section-footnote {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-/* =========================================================
-   CONVERSATIONS PAGE SPECIFIC
-   À ajouter en bas de pages.css
-   ========================================================= */
+/* ---------- CONVERSATIONS PAGE SPECIFIC ---------- */
 
 #hero-conversations .page-hero-inner {
   max-width: 980px;
@@ -870,8 +757,7 @@
   background: var(--ep-paper);
 }
 
-/* ---------- MENU LATÉRAL CONVERSATIONS ---------- */
-
+/* menu latéral conversations */
 #conversations-content .page-sidebar {
   background: rgba(255, 250, 244, 0.78);
   border: 1px solid var(--ep-line);
@@ -913,18 +799,17 @@
   padding-left: 12px;
 }
 
-/* ---------- HIERARCHIE VISUELLE DES CONVERSATIONS ---------- */
-
+/* hiérarchie visuelle douce des conversations */
 #conversation-1 h2 {
-  color: rgba(20, 20, 20, 0.42);
+  color: rgba(20, 20, 20, 0.46);
 }
 
 #conversation-2 h2 {
-  color: rgba(20, 20, 20, 0.62);
+  color: rgba(20, 20, 20, 0.64);
 }
 
 #conversation-3 h2 {
-  color: rgba(20, 20, 20, 0.8);
+  color: rgba(20, 20, 20, 0.82);
 }
 
 #conversation-4 h2 {
@@ -944,8 +829,6 @@
 #conversation-4:hover h2 {
   color: var(--ep-ink);
 }
-
-/* ---------- BLOCS CONVERSATIONS ---------- */
 
 #conversation-1 .programme-position,
 #conversation-2 .programme-position,
@@ -968,12 +851,10 @@
   margin-bottom: 24px;
 }
 
-/* bloc intro plus posé */
 #principe-cycle .editorial-panel + .editorial-panel {
   margin-top: 18px;
 }
 
-/* accès dossier / matière / CTA */
 #angles-complets .editorial-panel,
 #matiere-produite .editorial-panel {
   background: rgba(255, 250, 244, 0.78);
@@ -992,8 +873,6 @@
   margin-top: 8px;
 }
 
-/* ---------- SCROLL OFFSET ---------- */
-
 #principe-cycle,
 #conversation-1,
 #conversation-2,
@@ -1005,40 +884,7 @@
   scroll-margin-top: 110px;
 }
 
-/* ---------- RESPONSIVE CONVERSATIONS ---------- */
-
-@media (max-width: 1023px) {
-  #conversations-content .page-sidebar {
-    background: transparent;
-    border: 0;
-    padding: 0;
-  }
-
-  #conversations-content .page-sidebar a {
-    color: var(--ep-ink-soft);
-    padding-left: 0;
-  }
-
-  #conversations-content .page-sidebar a:hover,
-  #conversations-content .page-sidebar a.is-active {
-    color: var(--ep-ink);
-
-
-
-  }
-
-  #conversations-content .page-sidebar a.is-active {
-    padding-left: 0;
-    border-left: 0;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-}
-
-/* =========================================================
-   DISPOSITIF PAGE SPECIFIC
-   À ajouter en bas de pages.css
-   ========================================================= */
+/* ---------- DISPOSITIF PAGE SPECIFIC ---------- */
 
 #hero-dispositif .page-hero-inner {
   max-width: 980px;
@@ -1047,8 +893,6 @@
 #dispositif-content {
   background: var(--ep-paper);
 }
-
-/* ---------- MENU LATÉRAL DISPOSITIF ---------- */
 
 #dispositif-content .page-sidebar {
   background: rgba(255, 250, 244, 0.78);
@@ -1091,8 +935,6 @@
   padding-left: 12px;
 }
 
-/* ---------- CADRE / LOGOS ---------- */
-
 #cadre-dispositif .media-logos-band {
   margin-top: 8px;
 }
@@ -1100,8 +942,6 @@
 #cadre-dispositif .section-footnote {
   margin-top: 24px;
 }
-
-/* ---------- DÉROULÉ ---------- */
 
 #comment-ca-marche .programme-list {
   margin-top: 8px;
@@ -1111,8 +951,6 @@
   letter-spacing: -0.01em;
 }
 
-/* ---------- MOBILISATION ---------- */
-
 #ce-que-cela-demande .programme-value {
   margin-top: 8px;
 }
@@ -1121,13 +959,10 @@
   margin-top: 24px;
 }
 
-/* ---------- ARCHITECTURE ---------- */
-
 #architecture-dispositif .programme-season {
   margin-top: 8px;
 }
 
-/* progression grise des 3 niveaux */
 #architecture-dispositif .programme-season article:nth-child(1) h3 {
   color: rgba(20, 20, 20, 0.5);
 }
@@ -1152,13 +987,9 @@
   justify-content: flex-start;
 }
 
-/* ---------- PRINCIPE ---------- */
-
 #principe-dispositif .editorial-panel {
   margin-top: 8px;
 }
-
-/* ---------- ACCÈS ---------- */
 
 #acces-dispositif .programme-access {
   margin-top: 8px;
@@ -1181,8 +1012,6 @@
   margin-top: 24px;
 }
 
-/* ---------- SCROLL OFFSET ---------- */
-
 #cadre-dispositif,
 #comment-ca-marche,
 #ce-que-cela-demande,
@@ -1192,37 +1021,7 @@
   scroll-margin-top: 110px;
 }
 
-/* ---------- RESPONSIVE DISPOSITIF ---------- */
-
-@media (max-width: 1023px) {
-  #dispositif-content .page-sidebar {
-    background: transparent;
-    border: 0;
-    padding: 0;
-  }
-
-  #dispositif-content .page-sidebar a {
-    color: var(--ep-ink-soft);
-    padding-left: 0;
-  }
-
-  #dispositif-content .page-sidebar a:hover,
-  #dispositif-content .page-sidebar a.is-active {
-    color: var(--ep-ink);
-
-
-  }
-
-  #dispositif-content .page-sidebar a.is-active {
-    padding-left: 0;
-    border-left: 0;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-}
-/* =========================================================
-   DOSSIER PAGE SPECIFIC
-   ========================================================= */
+/* ---------- DOSSIER PAGE SPECIFIC ---------- */
 
 #hero-dossier .page-hero-inner {
   max-width: 980px;
@@ -1231,8 +1030,6 @@
 #dossier-content {
   background: var(--ep-paper);
 }
-
-/* ---------- MENU LATÉRAL DOSSIER ---------- */
 
 #dossier-content .page-sidebar {
   background: rgba(255, 250, 244, 0.78);
@@ -1274,8 +1071,6 @@
   padding-left: 12px;
 }
 
-/* ---------- PRINCIPE ---------- */
-
 #principe-dossier .editorial-panel {
   margin-top: 8px;
 }
@@ -1284,13 +1079,10 @@
   margin-top: 24px;
 }
 
-/* ---------- CE QUE LE DOSSIER PERMET ---------- */
-
 #ce-que-le-dossier-permet .programme-value {
   margin-top: 8px;
 }
 
-/* hiérarchie douce (gris progressif) */
 #ce-que-le-dossier-permet .programme-value__item:nth-child(1) h3 {
   color: rgba(20, 20, 20, 0.55);
 }
@@ -1307,13 +1099,9 @@
   color: rgba(20, 20, 20, 0.96);
 }
 
-/* ---------- CADRE ---------- */
-
 #ce-que-cela-ne-signifie-pas .programme-list {
   margin-top: 8px;
 }
-
-/* ---------- SI NON APPROCHÉ ---------- */
 
 #si-vous-n-avez-pas-ete-approche .editorial-panel {
   margin-top: 8px;
@@ -1322,8 +1110,6 @@
 #si-vous-n-avez-pas-ete-approche .programme-link-row {
   margin-top: 20px;
 }
-
-/* ---------- ACCÈS FINAL ---------- */
 
 #acces-dossier .programme-access {
   margin-top: 8px;
@@ -1346,8 +1132,6 @@
   margin-top: 24px;
 }
 
-/* ---------- SCROLL OFFSET ---------- */
-
 #principe-dossier,
 #ce-que-le-dossier-permet,
 #ce-que-cela-ne-signifie-pas,
@@ -1356,37 +1140,7 @@
   scroll-margin-top: 110px;
 }
 
-/* ---------- RESPONSIVE ---------- */
-
-@media (max-width: 1023px) {
-
-  #dossier-content .page-sidebar {
-    background: transparent;
-    border: 0;
-    padding: 0;
-  }
-
-  #dossier-content .page-sidebar a {
-    color: var(--ep-ink-soft);
-    padding-left: 0;
-  }
-
-  #dossier-content .page-sidebar a:hover,
-  #dossier-content .page-sidebar a.is-active {
-    color: var(--ep-ink);
-  }
-
-  #dossier-content .page-sidebar a.is-active {
-    padding-left: 0;
-    border-left: 0;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-}
-
-/* =========================================================
-   CHARTE ÉDITORIALE PAGE SPECIFIC
-   ========================================================= */
+/* ---------- CHARTE ÉDITORIALE PAGE SPECIFIC ---------- */
 
 #hero-charte-editoriale .page-hero-inner {
   max-width: 980px;
@@ -1395,8 +1149,6 @@
 #charte-content {
   background: var(--ep-paper);
 }
-
-/* ---------- MENU LATÉRAL CHARTE ---------- */
 
 #charte-content .page-sidebar {
   background: rgba(255, 250, 244, 0.78);
@@ -1438,19 +1190,14 @@
   padding-left: 12px;
 }
 
-/* ---------- RÔLE ---------- */
-
 #role-charte .editorial-panel {
   margin-top: 8px;
 }
-
-/* ---------- SÉLECTION ---------- */
 
 #ce-qui-guide-la-selection .programme-list {
   margin-top: 8px;
 }
 
-/* Hiérarchie douce sur les critères */
 #ce-qui-guide-la-selection .programme-list__item:nth-child(1) h3 {
   color: rgba(20, 20, 20, 0.52);
 }
@@ -1471,8 +1218,6 @@
   color: rgba(20, 20, 20, 0.96);
 }
 
-/* ---------- CE QU’EN PLATEAU RECHERCHE ---------- */
-
 #ce-qu-en-plateau-recherche .programme-value {
   margin-top: 8px;
 }
@@ -1481,25 +1226,17 @@
   margin-top: 18px;
 }
 
-/* ---------- CADRE DES ÉMISSIONS ---------- */
-
 #cadre-des-emissions .editorial-panel {
   margin-top: 8px;
 }
-
-/* ---------- CE QU’EN PLATEAU NE RECHERCHE PAS ---------- */
 
 #ce-qu-en-plateau-ne-recherche-pas .programme-list {
   margin-top: 8px;
 }
 
-/* ---------- ÉVOLUTION DU CADRE ---------- */
-
 #cadre-appele-a-evoluer .editorial-panel {
   margin-top: 8px;
 }
-
-/* ---------- ACCÈS ---------- */
 
 #acces-charte-editoriale .programme-access {
   margin-top: 8px;
@@ -1522,8 +1259,6 @@
   margin-top: 24px;
 }
 
-/* ---------- SCROLL OFFSET ---------- */
-
 #role-charte,
 #ce-qui-guide-la-selection,
 #ce-qu-en-plateau-recherche,
@@ -1536,37 +1271,150 @@
 
 /* ---------- RESPONSIVE ---------- */
 
+@media (max-width: 1180px) {
+  .programme-season,
+  .programme-value,
+  .programme-positions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 1023px) {
+  .page-shell {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .page-sidebar {
+    position: static;
+    top: auto;
+    padding-top: 0;
+  }
+
+  #positions-cycle-content .page-sidebar,
+  #conversations-content .page-sidebar,
+  #dispositif-content .page-sidebar,
+  #dossier-content .page-sidebar,
   #charte-content .page-sidebar {
     background: transparent;
     border: 0;
     padding: 0;
   }
 
-  #charte-content .page-sidebar a {
-    color: var(--ep-ink-soft);
-    padding-left: 0;
+  .page-sidebar nav {
+    border-top: 0;
+    padding-top: 0;
+    border-bottom: 1px solid var(--ep-line);
+    padding-bottom: 16px;
   }
 
+  .page-sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+  }
+
+  .page-sidebar li + li {
+    margin-top: 0;
+  }
+
+  .page-sidebar a,
+  #positions-cycle-content .page-sidebar a,
+  #conversations-content .page-sidebar a,
+  #dispositif-content .page-sidebar a,
+  #dossier-content .page-sidebar a,
+  #charte-content .page-sidebar a {
+    min-height: auto;
+    font-size: 12px;
+    padding: 0;
+    max-width: none;
+    color: var(--ep-ink-soft);
+  }
+
+  .page-sidebar a:hover,
+  .page-sidebar a.is-active,
+  #positions-cycle-content .page-sidebar a:hover,
+  #positions-cycle-content .page-sidebar a.is-active,
+  #conversations-content .page-sidebar a:hover,
+  #conversations-content .page-sidebar a.is-active,
+  #dispositif-content .page-sidebar a:hover,
+  #dispositif-content .page-sidebar a.is-active,
+  #dossier-content .page-sidebar a:hover,
+  #dossier-content .page-sidebar a.is-active,
   #charte-content .page-sidebar a:hover,
   #charte-content .page-sidebar a.is-active {
     color: var(--ep-ink);
   }
 
-  #charte-content .page-sidebar a.is-active {
+  .page-sidebar a.is-active {
     padding-left: 0;
     border-left: 0;
     text-decoration: underline;
     text-underline-offset: 3px;
   }
+
+  .programme-season,
+  .programme-value,
+  .programme-positions,
+  .programme-access,
+  .programme-list {
+    grid-template-columns: 1fr;
+  }
 }
 
+@media (max-width: 780px) {
+  .page-hero {
+    padding-top: 76px;
+    padding-bottom: 62px;
+  }
 
+  .page-hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.05;
+  }
 
+  .page-hero-sub {
+    font-size: 1.02rem;
+    line-height: 1.68;
+  }
 
+  .page-reading p,
+  .page-reading li {
+    font-size: 16px;
+  }
 
+  .editorial-panel,
+  .conversations-deadlines,
+  .theme-block,
+  .theme-nav,
+  .programme-step,
+  .programme-value__item,
+  .programme-position,
+  .programme-access__item,
+  .programme-list__item,
+  .season-card {
+    padding: 22px 20px;
+  }
 
+  .page-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
 
+  .section-head--centered,
+  .section-head--narrow {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
 
+  .divider {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
-
+  .section-footnote {
+    margin-left: 0;
+    margin-right: 0;
+  }
+   }
