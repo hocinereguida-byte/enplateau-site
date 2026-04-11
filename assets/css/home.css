@@ -1100,6 +1100,7 @@
   }
 }
 
+
 @media (max-width: 640px) {
   .hero-side-panel {
     padding: 20px 20px 18px;
@@ -1109,3 +1110,33 @@
     padding: 20px 18px 18px;
   }
    }
+#site-header,
+#site-mobile-menu,
+#site-footer {
+  display: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
