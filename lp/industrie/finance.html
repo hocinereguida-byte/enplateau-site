@@ -7,7 +7,7 @@
   <title>Finance / corporate finance / restructuring — Industrie & transformation des territoires | En Plateau</title>
   <meta
     name="description"
-    content="Landing page privée En Plateau pour les cabinets de finance, corporate finance et restructuring intervenant sur les bascules industrielles."
+    content="Landing page ciblée En Plateau pour les cabinets de finance, corporate finance et restructuring intervenant sur les bascules industrielles."
   >
 
   <link rel="canonical" href="https://enplateau.fr/lp/industrie-finance-cycle.html">
@@ -95,15 +95,36 @@
       opacity: 0.84;
     }
 
-    .landing-micro-note {
-      margin-top: 10px;
-      font-size: 0.92rem;
-      line-height: 1.55;
-      opacity: 0.82;
-    }
-
     .landing-compact-links {
       margin-top: 18px;
+    }
+
+    .mobile-only { display: none; }
+    .desktop-only { display: block; }
+
+    .landing-summary {
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 16px;
+      margin-top: 14px;
+    }
+
+    .landing-summary summary {
+      cursor: pointer;
+      font-weight: 600;
+      list-style: none;
+    }
+
+    .landing-summary summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .landing-summary-body {
+      margin-top: 12px;
+    }
+
+    .landing-stack {
+      display: grid;
+      gap: 14px;
     }
 
     @media (max-width: 640px) {
@@ -111,6 +132,9 @@
       .landing-footer-inner {
         align-items: flex-start;
       }
+
+      .mobile-only { display: block; }
+      .desktop-only { display: none; }
     }
   </style>
 </head>
@@ -133,7 +157,8 @@
 
   <main>
 
-    <section class="page-hero page-hero--programme" id="hero-landing-finance-industrie">
+    <!-- HERO DESKTOP -->
+    <section class="page-hero page-hero--programme desktop-only" id="hero-landing-finance-industrie-desktop">
       <div class="container">
         <div class="page-hero-inner">
           <div class="page-hero-kicker">Industrie & transformation des territoires</div>
@@ -161,12 +186,42 @@
       </div>
     </section>
 
+    <!-- HERO MOBILE -->
+    <section class="page-hero page-hero--programme mobile-only" id="hero-landing-finance-industrie-mobile">
+      <div class="container">
+        <div class="page-hero-inner">
+          <div class="page-hero-kicker">Industrie & transformation des territoires</div>
+
+          <h1 class="page-hero-title">
+            Votre lecture de la finançabilité a-t-elle sa place dans ce cycle ?
+          </h1>
+
+          <p class="page-hero-sub">
+            Corporate finance, dette, restructuring.
+          </p>
+
+          <p class="page-hero-note">
+            Activités en croissance, sous pression ou à reconfigurer.
+          </p>
+
+          <p class="programme-link-row">
+            <a href="/demander-un-echange-editorial.html" class="link link--primary">Demander un échange de 15 min</a>
+          </p>
+
+          <p class="section-footnote">
+            Confidentiel · sans engagement
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section class="page-section">
       <div class="container">
         <div class="page-reading">
 
+          <!-- REASSURANCE -->
           <section class="page-section">
-            <div class="programme-access">
+            <div class="programme-access desktop-only">
               <article class="programme-access__item">
                 <h3>Pas de concurrence frontale sur le même angle</h3>
                 <p>
@@ -181,15 +236,28 @@
                 </p>
               </article>
             </div>
+
+            <div class="landing-stack mobile-only">
+              <div class="programme-position">
+                <h3>Pas de concurrence frontale sur le même angle</h3>
+                <p>Votre lecture prend place aux côtés d’acteurs complémentaires : stratégie, opérations, juridique / réglementaire.</p>
+              </div>
+
+              <div class="programme-position">
+                <h3>Un échange court pour vérifier le bon point d’entrée</h3>
+                <p>Le premier échange sert simplement à voir si votre fonction a une place naturelle dans ce cycle.</p>
+              </div>
+            </div>
           </section>
 
+          <!-- PROCESS -->
           <section class="page-section">
             <div class="section-head section-head--narrow">
               <div class="section-kicker">Comment cela se passe</div>
               <h2>Un premier échange court, puis un cadrage resserré</h2>
             </div>
 
-            <div class="programme-list">
+            <div class="programme-list desktop-only">
               <article class="programme-list__item">
                 <h3>1 — On vérifie le bon point d’entrée</h3>
                 <p>Conversation, contexte et angle pressenti.</p>
@@ -205,14 +273,35 @@
                 <p>Avec une logique éditoriale structurée et une activation possible ensuite.</p>
               </article>
             </div>
+
+            <div class="programme-value mobile-only">
+              <article class="programme-value__item">
+                <h3>1 — Vérifier le bon angle</h3>
+                <p>Conversation, contexte et point d’entrée.</p>
+              </article>
+
+              <article class="programme-value__item">
+                <h3>2 — Cadrer la prise de position</h3>
+                <p>Sans dossier client ni exposition inutile.</p>
+              </article>
+
+              <article class="programme-value__item">
+                <h3>3 — Produire dans un cadre préparé</h3>
+                <p>Avec une logique éditoriale structurée.</p>
+              </article>
+            </div>
           </section>
 
+          <!-- CADRE -->
           <section class="page-section">
             <div class="section-head section-head--narrow">
-              <div class="section-kicker">Crédibilité</div>
-              <h2>Un cadre de production déjà identifiable</h2>
-              <p class="section-intro">
-                Les prises de position sont préparées en amont et produites dans des environnements éditoriaux reconnus, avec une logique de cadrage, d’entretien et d’activation.
+              <div class="section-kicker">Cadre</div>
+              <h2>L’enjeu n’est pas la visibilité, mais la portée de votre position.</h2>
+              <p class="section-intro desktop-only">
+                En Plateau prépare et structure des prises de position destinées à être exprimées dans des formats audiovisuels réalisés par des sociétés de production partenaires et diffusés dans des cadres médiatiques identifiés.
+              </p>
+              <p class="section-intro mobile-only">
+                Une prise de position préparée en amont, produite dans un cadre identifiable, puis activée dans l’écosystème professionnel.
               </p>
             </div>
 
@@ -232,13 +321,23 @@
                 </div>
               </div>
             </div>
+
+            <div class="editorial-panel desktop-only">
+              <p>
+                Ce cadre permet d’aborder des sujets sensibles ou complexes dans des conditions préparées en amont, avec un niveau d’exigence compatible avec la prise de parole de professionnels exposés.
+              </p>
+              <p>
+                L’enjeu n’est pas de faire voir une position de plus. Il est de produire une parole située, tenue et réutilisable, capable d’éclairer des arbitrages réels dans l’écosystème professionnel.
+              </p>
+            </div>
           </section>
 
+          <!-- CONTEXTES -->
           <section class="page-section">
             <div class="section-head section-head--narrow">
               <div class="section-kicker">Les 3 contextes</div>
               <h2>Le cycle aborde les mêmes bascules dans trois régimes de situation</h2>
-              <p class="section-intro">
+              <p class="section-intro desktop-only">
                 Une même question peut se poser dans des entreprises qui changent d’échelle, dans des activités sous pression, ou dans des modèles qui doivent être redessinés.
               </p>
             </div>
@@ -246,12 +345,12 @@
             <div class="programme-value">
               <article class="programme-value__item">
                 <h3>Montée en capacité</h3>
-                <p>Quand l’enjeu est d’absorber une croissance, un investissement ou un changement d’échelle sans perdre la maîtrise du modèle.</p>
+                <p>Absorber croissance, investissement ou changement d’échelle sans perdre la maîtrise du modèle.</p>
               </article>
 
               <article class="programme-value__item">
                 <h3>Compression économique</h3>
-                <p>Quand la pression sur les coûts, la marge, la trésorerie ou la chaîne productive change la nature des arbitrages.</p>
+                <p>Quand la pression sur les coûts, la marge ou la trésorerie change la nature des arbitrages.</p>
               </article>
 
               <article class="programme-value__item">
@@ -261,7 +360,8 @@
             </div>
           </section>
 
-          <section class="page-section">
+          <!-- ENTREES DESKTOP -->
+          <section class="page-section desktop-only">
             <div class="section-head section-head--narrow">
               <div class="section-kicker">Votre fonction dans ce cycle</div>
               <h2>Plusieurs points d’entrée naturels pour une lecture finance</h2>
@@ -271,7 +371,7 @@
             </div>
           </section>
 
-          <section class="page-section" id="conv-1-finance">
+          <section class="page-section desktop-only" id="conv-1-finance-desktop">
             <div class="section-head section-head--narrow">
               <div class="section-kicker">Conversation 1</div>
               <h2>À partir de quand une activité industrielle cesse-t-elle de tenir économiquement ?</h2>
@@ -302,7 +402,7 @@
             </p>
           </section>
 
-          <section class="page-section" id="conv-3-finance">
+          <section class="page-section desktop-only" id="conv-3-finance-desktop">
             <div class="section-head section-head--narrow">
               <div class="section-kicker">Conversation 3</div>
               <h2>Qu’est-ce qui transforme réellement un outil productif — et qu’est-ce qui relève du récit ?</h2>
@@ -333,7 +433,7 @@
             </p>
           </section>
 
-          <section class="page-section" id="conv-4-finance">
+          <section class="page-section desktop-only" id="conv-4-finance-desktop">
             <div class="section-head section-head--narrow">
               <div class="section-kicker">Conversation 4</div>
               <h2>Qui rend une transformation industrielle finançable — et qui porte réellement le risque ?</h2>
@@ -364,13 +464,52 @@
             </p>
           </section>
 
+          <!-- ENTREES MOBILE -->
+          <section class="page-section mobile-only">
+            <div class="section-head section-head--narrow">
+              <div class="section-kicker">Vos points d’entrée naturels</div>
+              <h2>Trois conversations où une lecture finance peut entrer</h2>
+            </div>
+
+            <details class="landing-summary">
+              <summary>Conversation 1 — Tenue économique</summary>
+              <div class="landing-summary-body">
+                <p><strong>Point d’entrée :</strong> à partir de quel seuil une activité cesse-t-elle d’être transformable dans son cadre actuel ?</p>
+                <p><strong>Montée en capacité :</strong> un projet de croissance cesse-t-il d’être finançable tel qu’il est posé ?</p>
+                <p><strong>Compression :</strong> quand un dossier sous pression change-t-il de catégorie ?</p>
+                <p><strong>Reconfiguration :</strong> quand le maintien du cadre existant empêche-t-il une transformation crédible ?</p>
+              </div>
+            </details>
+
+            <details class="landing-summary">
+              <summary>Conversation 3 — Crédibilité d’une transformation</summary>
+              <div class="landing-summary-body">
+                <p><strong>Point d’entrée :</strong> à partir de quel niveau de CAPEX, de délai et de visibilité une transformation cesse-t-elle d’être crédible ?</p>
+                <p><strong>Montée en capacité :</strong> quand un projet devient-il trop lourd, trop lent ou trop risqué ?</p>
+                <p><strong>Compression :</strong> quand un investissement ne se justifie-t-il plus ?</p>
+                <p><strong>Reconfiguration :</strong> quand faut-il redéfinir l’outil à conserver ?</p>
+              </div>
+            </details>
+
+            <details class="landing-summary">
+              <summary>Conversation 4 — Finançabilité et portage du risque</summary>
+              <div class="landing-summary-body">
+                <p><strong>Point d’entrée :</strong> à partir de quand un projet industriel passe-t-il de souhaitable à finançable ?</p>
+                <p><strong>Montée en capacité :</strong> qu’est-ce qui transforme une ambition en projet finançable ?</p>
+                <p><strong>Compression :</strong> qu’est-ce qui reste encore finançable ?</p>
+                <p><strong>Reconfiguration :</strong> à quelles conditions un redéploiement peut-il encore être porté ?</p>
+              </div>
+            </details>
+          </section>
+
+          <!-- VALUE -->
           <section class="page-section">
             <div class="section-head section-head--narrow">
               <div class="section-kicker">Ce que votre contribution permet</div>
               <h2>Une prise de position située, réutilisable et non redondante</h2>
             </div>
 
-            <div class="programme-season">
+            <div class="programme-season desktop-only">
               <article class="season-card">
                 <div class="season-card__meta">Effet 1</div>
                 <h3>Rendre plus lisible le seuil de bascule</h3>
@@ -389,8 +528,26 @@
                 <p>Nourrir des échanges avec dirigeants, partenaires, financeurs, conseils ou écosystèmes professionnels sur des arbitrages déjà rencontrés dans la pratique.</p>
               </article>
             </div>
+
+            <div class="programme-value mobile-only">
+              <article class="programme-value__item">
+                <h3>Rendre le seuil de bascule plus lisible</h3>
+                <p>Montrer quand une activité cesse d’être simplement sous pression.</p>
+              </article>
+
+              <article class="programme-value__item">
+                <h3>Distinguer ajustement et reconfiguration</h3>
+                <p>Faire apparaître ce qui relève d’un ajustement temporaire et ce qui change de catégorie.</p>
+              </article>
+
+              <article class="programme-value__item">
+                <h3>Produire une lecture activable</h3>
+                <p>Nourrir des échanges de haut niveau dans votre écosystème professionnel.</p>
+              </article>
+            </div>
           </section>
 
+          <!-- FAQ -->
           <section class="page-section">
             <div class="section-head section-head--narrow">
               <div class="section-kicker">FAQ rapide</div>
@@ -415,12 +572,16 @@
             </div>
           </section>
 
+          <!-- CTA FINAL -->
           <section class="page-section">
             <div class="section-head section-head--narrow">
               <div class="section-kicker">Accès</div>
               <h2>Vous accompagnez ce type de bascule ?</h2>
-              <p class="section-intro">
+              <p class="section-intro desktop-only">
                 Un échange permet de vérifier si ce cycle recoupe réellement les situations que vous accompagnez, et sous quel point d’entrée votre lecture serait la plus pertinente.
+              </p>
+              <p class="section-intro mobile-only">
+                Un échange permet de vérifier rapidement si votre lecture a une place naturelle dans ce cycle.
               </p>
             </div>
 
@@ -433,7 +594,7 @@
                 <a href="/demander-un-echange-editorial.html" class="link link--primary">Demander un échange de 15 min</a>
               </article>
 
-              <article class="programme-access__item">
+              <article class="programme-access__item desktop-only">
                 <h3>Voir le cycle complet</h3>
                 <p>
                   Revenir à l’ensemble des conversations du cycle Industrie & transformation des territoires.
@@ -442,7 +603,7 @@
               </article>
             </div>
 
-            <div class="landing-compact-links">
+            <div class="landing-compact-links desktop-only">
               <p class="programme-link-row">
                 <a href="/positions/industrie.html" class="link">Voir les positions</a>
                 <a href="/dispositif.html" class="link">Comprendre le dispositif</a>
@@ -476,4 +637,4 @@
   </footer>
 
 </body>
-            </html>
+                </html>
