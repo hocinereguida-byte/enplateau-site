@@ -161,7 +161,7 @@
         </a>
 
         <div class="programme-link-row">
-          <a href="/demander-un-echange-editorial.html?src=lp-industrie-finance" class="link link--primary">Demander un échange de 15 min</a>
+          <a href="/demander-un-echange-editorial.html?src=lp-industrie-finance&cta=header" class="link link--primary">Demander un échange de 15 min</a>
         </div>
       </div>
     </div>
@@ -184,11 +184,11 @@
           </p>
 
           <p class="page-hero-note">
-            Un échange de 15 min permet de vérifier s’il existe un point d’entrée naturel pour votre pratique.
+            Un échange de 15 min permet de vérifier s’il existe un point d’entrée naturel.
           </p>
 
           <p class="programme-link-row">
-            <a href="/demander-un-echange-editorial.html?src=lp-industrie-finance" class="link link--primary">Demander un échange de 15 min</a>
+            <a href="/demander-un-echange-editorial.html?src=lp-industrie-finance&cta=hero" class="link link--primary">Demander un échange de 15 min</a>
           </p>
 
           <p class="section-footnote">
@@ -216,11 +216,11 @@
           </p>
 
           <p class="page-hero-note">
-            Un échange court permet de vérifier s’il existe un point d’entrée naturel.
+            Un échange de 15 min permet de vérifier s’il existe un point d’entrée naturel.
           </p>
 
           <p class="programme-link-row">
-            <a href="/demander-un-echange-editorial.html?src=lp-industrie-finance" class="link link--primary">Demander un échange de 15 min</a>
+            <a href="/demander-un-echange-editorial.html?src=lp-industrie-finance&cta=hero" class="link link--primary">Demander un échange de 15 min</a>
           </p>
 
           <p class="section-footnote">
@@ -322,7 +322,7 @@
               </p>
             </div>
 
-            <details class="landing-summary" open>
+            <details class="landing-summary" id="entry-conv-1">
               <summary>
                 <strong>Conversation 1 — Tenue économique</strong><br>
                 À partir de quel seuil une activité cesse-t-elle d’être transformable dans son cadre actuel ?
@@ -506,7 +506,7 @@
                 <p>
                   Vérifier si votre position peut utilement éclairer l’une des conversations du cycle.
                 </p>
-                <a href="/demander-un-echange-editorial.html?src=lp-industrie-finance" class="link link--primary">Demander un échange de 15 min</a>
+                <a href="/demander-un-echange-editorial.html?src=lp-industrie-finance&cta=footer" class="link link--primary">Demander un échange de 15 min</a>
               </article>
             </div>
 
@@ -542,5 +542,18 @@
     </div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var firstDetails = document.getElementById('entry-conv-1');
+      if (!firstDetails) return;
+
+      if (window.matchMedia('(min-width: 641px)').matches) {
+        firstDetails.setAttribute('open', 'open');
+      } else {
+        firstDetails.removeAttribute('open');
+      }
+    });
+  </script>
+
 </body>
-</html>
+                    </html>
