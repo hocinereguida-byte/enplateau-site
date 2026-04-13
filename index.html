@@ -44,6 +44,70 @@
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/home.css">
   <link rel="stylesheet" href="assets/css/pages.css">
+
+  <style>
+    .hero-access-note {
+      margin-top: 14px;
+      max-width: 640px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      opacity: 0.82;
+    }
+
+    .hero-side-group + .hero-side-group {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-side-links {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .cycles-grid,
+    .positions-cycle-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .cycle-entry-card,
+    .position-cycle-card {
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 24px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .cycle-entry-card h3,
+    .position-cycle-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .cycle-entry-links,
+    .position-cycle-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .access-cta-note {
+      margin-top: 12px;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      opacity: 0.82;
+    }
+
+    @media (max-width: 820px) {
+      .cycles-grid,
+      .positions-cycle-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body class="home-page">
@@ -74,22 +138,52 @@
               </p>
 
               <div class="hero-actions reveal" aria-label="Accès rapides">
-                <a href="recevoir-le-dossier.html" class="link">Accéder au dossier</a>
-                <a href="#positions-home" class="link">Sujets en lien avec votre position</a>
+                <a href="demander-un-echange-editorial.html" class="link">Demander un échange éditorial</a>
+                <a href="#cycles-home" class="link">Voir les cycles en cours</a>
               </div>
+
+              <p class="hero-access-note reveal">
+                L’échange éditorial est réservé aux personnes déjà identifiées et sollicitées. Les autres peuvent signaler une contribution.
+              </p>
             </div>
 
-            <aside class="hero-home-side reveal" aria-label="Cadre de lecture du cycle">
+            <aside class="hero-home-side reveal" aria-label="Cadre de lecture des cycles">
               <div class="hero-side-panel">
                 <p class="hero-side-text">
-                  <strong>En cours : Logement & fabrique des territoires</strong>
+                  <strong>En cours : deux cycles éditoriaux</strong>
                 </p>
-                <p class="hero-side-text">
-                  Un cycle consacré à des situations où les arbitrages se jouent souvent entre financement, droit, marché, exécution et territoires.
-                </p>
-                <p class="hero-note">
-                  Angles morts · points de tension · arbitrages sous contrainte
-                </p>
+
+                <div class="hero-side-group">
+                  <p class="hero-side-text">
+                    <strong>Logement &amp; fabrique des territoires</strong>
+                  </p>
+                  <p class="hero-side-text">
+                    Un cycle consacré aux situations où les arbitrages se jouent entre financement, droit, marché, exécution et territoires.
+                  </p>
+                  <p class="hero-note">
+                    Points de bascule · tensions d’opération · arbitrages sous contrainte
+                  </p>
+                  <div class="hero-side-links">
+                    <a href="conversations-logement.html" class="link">Voir les conversations</a>
+                    <a href="positions-logement.html" class="link">Voir les positions</a>
+                  </div>
+                </div>
+
+                <div class="hero-side-group">
+                  <p class="hero-side-text">
+                    <strong>Industrie &amp; transformation des territoires</strong>
+                  </p>
+                  <p class="hero-side-text">
+                    Un cycle consacré aux situations où les décisions se jouent entre compétitivité, dépendances, transformation productive et allocation du risque.
+                  </p>
+                  <p class="hero-note">
+                    Seuils de bascule · dépendances · arbitrages de transformation
+                  </p>
+                  <div class="hero-side-links">
+                    <a href="conversations/industrie.html" class="link">Voir les conversations</a>
+                    <a href="positions/industrie.html" class="link">Voir les positions</a>
+                  </div>
+                </div>
               </div>
             </aside>
 
@@ -192,48 +286,42 @@
       </div>
     </section>
 
-    <!-- CONVERSATIONS -->
-    <section class="home-section" id="conversations-home">
+    <!-- CYCLES -->
+    <section class="home-section" id="cycles-home">
       <div class="container">
         <div class="section-head section-head--centered reveal">
-          <h2>Quatre conversations pour entrer là où les décisions se jouent.</h2>
+          <h2>Deux cycles pour entrer là où les décisions se jouent.</h2>
           <p class="section-intro">
-            Chaque conversation prend appui sur un point de bascule réel, là où plusieurs lectures se croisent sans se recouvrir complètement.
+            Chaque cycle ouvre un ensemble de conversations construites à partir de points de bascule réels, là où plusieurs lectures se croisent sans se recouvrir complètement.
           </p>
         </div>
 
-        <div class="selection-grid reveal">
-          <article class="conversation-card">
-            <h3>À quel moment un projet ne tient plus&nbsp;?</h3>
-            <p>Quand l’équilibre financier tient encore dans les tableaux, mais ne tient plus complètement dans la réalité du projet.</p>
-            <a href="conversations.html#conversation-1" class="link conversation-link">Entrer dans la conversation</a>
+        <div class="cycles-grid reveal">
+          <article class="cycle-entry-card">
+            <h3>Logement &amp; fabrique des territoires</h3>
+            <p>Des situations où un projet tient encore dans les tableaux, mais se tend déjà dans ses arbitrages entre financement, droit, marché, exécution et territoire.</p>
+            <div class="cycle-entry-links">
+              <a href="conversations-logement.html" class="link">Voir les conversations</a>
+              <a href="positions-logement.html" class="link">Voir les positions</a>
+            </div>
           </article>
 
-          <article class="conversation-card">
-            <h3>Jusqu’où peut-on produire&nbsp;?</h3>
-            <p>Quand le territoire, la règle et l’acceptabilité redéfinissent ce qu’un projet peut réellement devenir.</p>
-            <a href="conversations.html#conversation-2" class="link conversation-link">Entrer dans la conversation</a>
-          </article>
-
-          <article class="conversation-card">
-            <h3>Transformer ou reconstruire&nbsp;?</h3>
-            <p>Quand le coût, l’usage, le délai et le cadre déplacent la décision qui paraissait évidente au départ.</p>
-            <a href="conversations.html#conversation-3" class="link conversation-link">Entrer dans la conversation</a>
-          </article>
-
-          <article class="conversation-card">
-            <h3>Qui fait avancer — ou basculer — un projet&nbsp;?</h3>
-            <p>Quand la décision circule entre plusieurs acteurs, sans toujours se laisser attribuer clairement.</p>
-            <a href="conversations.html#conversation-4" class="link conversation-link">Entrer dans la conversation</a>
+          <article class="cycle-entry-card">
+            <h3>Industrie &amp; transformation des territoires</h3>
+            <p>Des situations où une activité continue d’avancer alors même que ses équilibres se déplacent entre compétitivité, chaîne productive, transformation et allocation du risque.</p>
+            <div class="cycle-entry-links">
+              <a href="conversations/industrie.html" class="link">Voir les conversations</a>
+              <a href="positions/industrie.html" class="link">Voir les positions</a>
+            </div>
           </article>
         </div>
 
         <p class="selection-subnote reveal">
-          Le site donne à voir les points d’entrée du cycle. Le détail des contributions, des situations et des modalités d’intervention figure dans le dossier.
+          Le site donne à voir les points d’entrée des cycles en cours. Leur structure détaillée et la pertinence d’un point d’entrée sont abordées dans le cadre d’un échange éditorial.
         </p>
 
         <p class="programme-link-row reveal">
-          <a href="conversations.html" class="link">Voir l’ensemble des conversations</a>
+          <a href="#cycles-home" class="link">Voir les cycles en cours</a>
         </p>
       </div>
     </section>
@@ -247,45 +335,25 @@
             Toutes les décisions ne sont pas prises par ceux qui les portent officiellement. Certaines positions sécurisent, qualifient, rendent possible, objectivent ou orientent ce que les autres peuvent réellement faire.
           </p>
           <p class="section-intro">
-            Ce cycle donne à voir ces positions sans les réduire à des métiers, ni à une seule place dans l’organigramme.
+            Les cycles en cours donnent à voir ces positions sans les réduire à des métiers, ni à une seule place dans l’organigramme.
           </p>
         </div>
 
-        <div class="positions-editorial-grid reveal">
-          <article class="position-editorial-item">
-            <h3>Sécuriser les décisions</h3>
-            <p>Vous intervenez là où un projet peut devenir possible, se retarder ou se bloquer selon le cadre dans lequel il évolue.</p>
-            <a href="positions.html#securiser-decisions" class="link position-editorial-link">Explorer cette position</a>
+        <div class="positions-cycle-grid reveal">
+          <article class="position-cycle-card">
+            <h3>Positions — Logement</h3>
+            <p>Des positions depuis lesquelles les arbitrages réels du logement deviennent plus lisibles : sécurité juridique, montage, financement, faisabilité, marché, capital.</p>
+            <div class="position-cycle-links">
+              <a href="positions-logement.html" class="link">Voir les positions logement</a>
+            </div>
           </article>
 
-          <article class="position-editorial-item">
-            <h3>Éclairer les arbitrages</h3>
-            <p>Vous aidez à lire les situations, à qualifier les choix et à rendre visibles des équilibres que les acteurs exposés ne formulent pas toujours eux-mêmes.</p>
-            <a href="positions.html#eclairer-arbitrages" class="link position-editorial-link">Explorer cette position</a>
-          </article>
-
-          <article class="position-editorial-item">
-            <h3>Qualifier ce qui tient — ou ne tient plus</h3>
-            <p>Vous intervenez au moment où un projet tient encore, se fragilise ou cesse d’être soutenable.</p>
-            <a href="positions.html#rendre-soutenable" class="link position-editorial-link">Explorer cette position</a>
-          </article>
-
-          <article class="position-editorial-item">
-            <h3>Objectiver ce qui tient réellement</h3>
-            <p>Vous confrontez les hypothèses au réel, là où beaucoup d’arbitrages reposent encore sur des équilibres incertains.</p>
-            <a href="positions.html#objectiver-equilibres" class="link position-editorial-link">Explorer cette position</a>
-          </article>
-
-          <article class="position-editorial-item">
-            <h3>Confronter au marché</h3>
-            <p>Vous mesurez ce qui peut encore s’absorber, se vendre, se défendre — ou non — dans la réalité de la demande.</p>
-            <a href="positions.html#confronter-marche" class="link position-editorial-link">Explorer cette position</a>
-          </article>
-
-          <article class="position-editorial-item">
-            <h3>Engager le capital</h3>
-            <p>Vous prenez position à partir d’une lecture du risque, du calendrier, du marché et de l’exécution des projets.</p>
-            <a href="positions.html#engager-capital" class="link position-editorial-link">Explorer cette position</a>
+          <article class="position-cycle-card">
+            <h3>Positions — Industrie</h3>
+            <p>Des positions depuis lesquelles les arbitrages réels de l’industrie deviennent plus lisibles : stratégie, opérations, financement, cadre réglementaire, chaîne productive, risque.</p>
+            <div class="position-cycle-links">
+              <a href="positions/industrie.html" class="link">Voir les positions industrie</a>
+            </div>
           </article>
         </div>
 
@@ -294,7 +362,7 @@
         </p>
 
         <p class="programme-link-row reveal">
-          <a href="positions.html" class="link">Voir l’ensemble des positions</a>
+          <a href="#positions-home" class="link">Voir les positions par cycle</a>
         </p>
       </div>
     </section>
@@ -383,28 +451,31 @@
     <section class="home-section" id="acces-home">
       <div class="container">
         <div class="section-head section-head--centered reveal">
-          <h2>Entrer dans le cycle</h2>
+          <h2>Entrer dans le dispositif</h2>
           <p class="section-intro">
-            Le dossier est adressé aux personnes déjà identifiées et contactées. Les acteurs non contactés peuvent signaler la pertinence de leur intervention.
+            Les échanges sont ouverts aux personnes déjà identifiées ou aux acteurs qui souhaitent signaler la pertinence de leur position dans l’un des cycles en cours.
           </p>
         </div>
 
         <div class="access-entry-grid">
           <article class="access-entry access-entry--primary reveal">
             <h3>Vous avez déjà été contacté</h3>
-            <p>Le dossier est réservé aux personnes dont la position a déjà été identifiée dans le travail éditorial en cours.</p>
-            <a href="recevoir-le-dossier.html" class="link">Recevoir le dossier</a>
+            <p>L’échange éditorial est réservé aux personnes dont la position a déjà été identifiée dans le travail éditorial en cours.</p>
+            <a href="demander-un-echange-editorial.html" class="link">Demander un échange éditorial</a>
+            <p class="access-cta-note">
+              L’échange éditorial est réservé aux personnes déjà identifiées et sollicitées. Les autres peuvent signaler une contribution.
+            </p>
           </article>
 
           <article class="access-entry access-entry--secondary reveal">
             <h3>Vous n’avez pas été contacté</h3>
-            <p>Vous pouvez signaler la pertinence de votre intervention sur l’un des sujets du cycle. Chaque signalement est examiné au regard du travail éditorial en cours.</p>
-            <a href="proposer-une-contribution.html" class="link">Signaler votre intervention</a>
+            <p>Vous pouvez signaler la pertinence de votre intervention sur l’un des sujets ou cycles en cours. Chaque signalement est examiné au regard du travail éditorial engagé.</p>
+            <a href="proposer-une-contribution.html" class="link">Signaler une contribution</a>
           </article>
         </div>
 
         <p class="access-note reveal">
-          Les positions visibles sur le site ne valent pas ouverture générale. Elles donnent à voir les types d’intervention que le cycle cherche à mettre en regard.
+          Les positions visibles sur le site ne valent pas ouverture générale. Elles donnent à voir les types d’intervention que les cycles en cours cherchent à mettre en regard.
         </p>
       </div>
     </section>
@@ -417,4 +488,4 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/layout.js"></script>
 </body>
-</html>
+  </html>
