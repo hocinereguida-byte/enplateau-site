@@ -1,6 +1,7 @@
 /* =========================================================
 EN PLATEAU — LAYOUT.CSS
 Socle typographique et visuel verrouillé
+Mise à jour — hiérarchie éditoriale conservée
 Direction : éditorial premium, sobre, contrasté
 ========================================================= */
 
@@ -240,6 +241,16 @@ h4 {
   color: var(--ep-ink-muted);
 }
 
+.micro-footnote,
+.hero-footnote,
+.legal-footnote {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--ep-ink-muted);
+}
+
 .page-centered-copy {
   max-width: 860px;
   margin-left: auto;
@@ -300,6 +311,13 @@ h4 {
 
 .link--secondary {
   opacity: 0.72;
+}
+
+.link--micro {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* ---------- BUTTON ROWS ---------- */
