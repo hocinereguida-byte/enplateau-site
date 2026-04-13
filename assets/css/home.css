@@ -1136,3 +1136,275 @@
     padding: 20px 18px 18px;
   }
    }
+
+/* =========================================================
+   HOME — OVERRIDE TYPO FORTE
+   À coller tout en bas de home.css
+   ========================================================= */
+
+/* ---------- HERO ---------- */
+
+#hero-home .hero-title {
+  font-size: clamp(3.4rem, 5.4vw, 4.9rem) !important;
+  line-height: 0.94 !important;
+  margin-bottom: 14px !important;
+}
+
+#hero-home .hero-subtitle {
+  font-size: 0.96rem !important;
+  line-height: 1.58 !important;
+  max-width: 540px !important;
+}
+
+#hero-home .hero-home-main .hero-note {
+  font-size: 0.7rem !important;
+  line-height: 1.46 !important;
+  max-width: 520px !important;
+}
+
+#hero-home .hero-actions .hero-link,
+#hero-home .hero-actions .link,
+#hero-home .hero-actions a {
+  font-family: var(--font-ui) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.hero-side-panel {
+  padding: 16px 18px 16px !important;
+}
+
+.hero-side-panel::before {
+  top: 16px !important;
+  height: 58px !important;
+  width: 3px !important;
+}
+
+.hero-side-text {
+  font-size: 0.78rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 6px !important;
+}
+
+.hero-side-panel .hero-note {
+  font-size: 0.68rem !important;
+  line-height: 1.46 !important;
+  margin-top: 10px !important;
+}
+
+/* ---------- TITRES / CHAPEAUX DE SECTION ---------- */
+
+.home-page .section-head h2 {
+  font-size: clamp(2.35rem, 3.2vw, 3.15rem) !important;
+  line-height: 1.02 !important;
+  margin-bottom: 12px !important;
+}
+
+.home-page .section-intro {
+  font-size: 0.9rem !important;
+  line-height: 1.58 !important;
+  max-width: 720px !important;
+}
+
+.home-page .section-footnote {
+  font-size: 0.74rem !important;
+  line-height: 1.5 !important;
+  max-width: 760px !important;
+}
+
+/* ---------- SPLIT SECTIONS ---------- */
+
+.split-title {
+  font-size: clamp(2.4rem, 3.9vw, 4rem) !important;
+  line-height: 0.98 !important;
+  max-width: 420px !important;
+}
+
+.split-copy--structured strong,
+.split-copy-intro strong {
+  font-size: 1.34rem !important;
+  line-height: 1.08 !important;
+  margin-bottom: 8px !important;
+}
+
+.split-copy--structured p {
+  font-size: 0.82rem !important;
+  line-height: 1.5 !important;
+}
+
+.decision-questions li {
+  font-size: 0.84rem !important;
+  line-height: 1.48 !important;
+}
+
+/* ---------- CONVERSATIONS ---------- */
+
+.conversation-card {
+  padding: 30px 24px 20px !important;
+}
+
+.conversation-card h3 {
+  font-size: clamp(1.42rem, 1.95vw, 1.72rem) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 8px !important;
+}
+
+.conversation-card p {
+  font-size: 0.8rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 10px !important;
+}
+
+.conversation-link {
+  font-size: 9px !important;
+  letter-spacing: 0.09em !important;
+}
+
+/* ---------- POSITIONS ---------- */
+
+.position-editorial-item {
+  padding: 30px 24px 20px 22px !important;
+}
+
+.position-editorial-item h3 {
+  font-size: clamp(1.38rem, 1.9vw, 1.68rem) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 8px !important;
+}
+
+.position-editorial-item p {
+  font-size: 0.8rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 10px !important;
+}
+
+.position-editorial-item .link,
+.position-editorial-link {
+  font-size: 9px !important;
+  letter-spacing: 0.09em !important;
+  text-transform: uppercase !important;
+}
+
+/* ---------- DISPOSITIF ---------- */
+
+.dispositif-copy .section-head h2 {
+  font-size: clamp(2.35rem, 3.1vw, 3rem) !important;
+  line-height: 1.02 !important;
+}
+
+.dispositif-copy .section-intro {
+  font-size: 0.88rem !important;
+  line-height: 1.56 !important;
+}
+
+.dispositif-card h3 {
+  font-size: clamp(1.18rem, 1.45vw, 1.34rem) !important;
+  line-height: 1.08 !important;
+}
+
+.dispositif-card p {
+  font-size: 0.82rem !important;
+  line-height: 1.5 !important;
+}
+
+/* ---------- VALEUR ---------- */
+
+.value-body h3 {
+  font-size: clamp(1.18rem, 1.42vw, 1.34rem) !important;
+  line-height: 1.08 !important;
+}
+
+.value-body p {
+  font-size: 0.84rem !important;
+  line-height: 1.54 !important;
+}
+
+.value-index {
+  font-size: 10px !important;
+}
+
+/* ---------- ACCÈS ---------- */
+
+.access-entry {
+  padding: 30px 24px 20px !important;
+}
+
+.access-entry h3 {
+  font-size: clamp(1.32rem, 1.8vw, 1.58rem) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 8px !important;
+}
+
+.access-entry p {
+  font-size: 0.8rem !important;
+  line-height: 1.48 !important;
+  margin-bottom: 10px !important;
+}
+
+.access-entry--primary h3 {
+  font-size: clamp(1.42rem, 1.95vw, 1.72rem) !important;
+}
+
+.access-entry--primary p {
+  font-size: 0.82rem !important;
+}
+
+.access-entry--secondary h3 {
+  font-size: clamp(1.08rem, 1.35vw, 1.22rem) !important;
+}
+
+.access-entry--secondary p {
+  font-size: 0.76rem !important;
+}
+
+.access-note {
+  font-size: 0.72rem !important;
+  line-height: 1.48 !important;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 780px) {
+  #hero-home .hero-title {
+    font-size: clamp(2.55rem, 8.9vw, 3.4rem) !important;
+    line-height: 0.98 !important;
+  }
+
+  .home-page .section-head h2,
+  .dispositif-copy .section-head h2 {
+    font-size: clamp(2rem, 6.8vw, 2.45rem) !important;
+  }
+
+  .split-title {
+    font-size: clamp(2.1rem, 8vw, 3rem) !important;
+    line-height: 1 !important;
+  }
+
+  .conversation-card h3,
+  .position-editorial-item h3,
+  .access-entry h3 {
+    font-size: 1.28rem !important;
+    line-height: 1.06 !important;
+  }
+
+  .conversation-card p,
+  .position-editorial-item p,
+  .access-entry p,
+  .split-copy--structured p,
+  .decision-questions li {
+    font-size: 0.82rem !important;
+  }
+
+  #hero-home .hero-actions .hero-link,
+  #hero-home .hero-actions .link,
+  #hero-home .hero-actions a,
+  .conversation-link,
+  .position-editorial-item .link,
+  .position-editorial-link {
+    font-size: 9px !important;
+  }
+}
