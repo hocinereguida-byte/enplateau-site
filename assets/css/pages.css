@@ -96,6 +96,7 @@
 /* ---------- PAGE LAYOUT ---------- */
 
 .page-shell {
+  position: relative;
   display: grid;
   grid-template-columns: 260px minmax(0, 1fr);
   gap: 48px;
@@ -107,6 +108,7 @@
   top: 122px;
   align-self: start;
   padding-top: 8px;
+  z-index: 30;
 }
 
 .page-sidebar nav {
@@ -148,11 +150,15 @@
 /* ---------- READING CONTENT ---------- */
 
 .page-content {
+  position: relative;
   min-width: 0;
+  z-index: 1;
 }
 
 .page-reading {
+  position: relative;
   max-width: 860px;
+  z-index: 1;
 }
 
 .page-reading > .page-section:first-child {
@@ -277,6 +283,7 @@
   position: relative;
   z-index: 0;
   background: transparent !important;
+  overflow: visible;
 }
 
 .page-reading > .page-section::before {
@@ -727,10 +734,13 @@
 }
 
 #positions-cycle-content {
-  background: var(--ep-paper);
+  background: transparent;
 }
 
+/* menu intérieur sombre */
 #positions-cycle-content .page-sidebar {
+  position: sticky;
+  z-index: 30;
   background: #111111;
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 18px 16px;
@@ -887,15 +897,19 @@
 
 /* ---------- CONVERSATIONS PAGE SPECIFIC ---------- */
 
-#hero-conversations .page-hero-inner {
+#hero-conversations .page-hero-inner,
+#hero-conversations-industrie .page-hero-inner {
   max-width: 980px;
 }
 
 #conversations-content {
-  background: var(--ep-paper);
+  background: transparent;
 }
 
+/* menu latéral conversations */
 #conversations-content .page-sidebar {
+  position: sticky;
+  z-index: 30;
   background: rgba(255, 250, 244, 0.78);
   border: 1px solid var(--ep-line);
   padding: 18px 16px;
@@ -936,6 +950,7 @@
   padding-left: 12px;
 }
 
+/* hiérarchie visuelle douce des conversations */
 #conversation-1 h2 {
   color: rgba(20, 20, 20, 0.46);
 }
@@ -1031,6 +1046,8 @@
 }
 
 #dispositif-content .page-sidebar {
+  position: sticky;
+  z-index: 30;
   background: rgba(255, 250, 244, 0.78);
   border: 1px solid var(--ep-line);
   padding: 18px 16px;
@@ -1182,6 +1199,8 @@
 }
 
 #dossier-content .page-sidebar {
+  position: sticky;
+  z-index: 30;
   background: rgba(255, 250, 244, 0.78);
   border: 1px solid var(--ep-line);
   padding: 18px 16px;
@@ -1301,6 +1320,8 @@
 }
 
 #charte-content .page-sidebar {
+  position: sticky;
+  z-index: 30;
   background: rgba(255, 250, 244, 0.78);
   border: 1px solid var(--ep-line);
   padding: 18px 16px;
@@ -1400,222 +1421,4 @@
   margin-bottom: 12px;
 }
 
-#acces-charte-editoriale .programme-access__item .link {
-  display: inline-flex;
-  margin-top: 8px;
-}
-
-#acces-charte-editoriale .programme-link-row {
-  margin-top: 24px;
-}
-
-#role-charte,
-#ce-qui-guide-la-selection,
-#ce-qu-en-plateau-recherche,
-#cadre-des-emissions,
-#ce-qu-en-plateau-ne-recherche-pas,
-#cadre-appele-a-evoluer,
-#acces-charte-editoriale {
-  scroll-margin-top: 110px;
-}
-
-/* ---------- RESPONSIVE ---------- */
-
-@media (max-width: 1180px) {
-  .programme-season,
-  .programme-value,
-  .programme-positions {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 1023px) {
-  .page-shell {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .page-sidebar {
-    position: static;
-    top: auto;
-    padding-top: 0;
-  }
-
-  #positions-cycle-content .page-sidebar,
-  #conversations-content .page-sidebar,
-  #dispositif-content .page-sidebar,
-  #dossier-content .page-sidebar,
-  #charte-content .page-sidebar {
-    background: transparent;
-    border: 0;
-    padding: 0;
-  }
-
-  .page-sidebar nav {
-    border-top: 0;
-    padding-top: 0;
-    border-bottom: 1px solid var(--ep-line);
-    padding-bottom: 16px;
-  }
-
-  .page-sidebar ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 14px;
-  }
-
-  .page-sidebar li + li {
-    margin-top: 0;
-  }
-
-  .page-sidebar a,
-  #positions-cycle-content .page-sidebar a,
-  #conversations-content .page-sidebar a,
-  #dispositif-content .page-sidebar a,
-  #dossier-content .page-sidebar a,
-  #charte-content .page-sidebar a {
-    min-height: auto;
-    font-size: 12px;
-    padding: 0;
-    max-width: none;
-    color: var(--ep-ink-soft);
-  }
-
-  .page-sidebar a:hover,
-  .page-sidebar a.is-active,
-  #positions-cycle-content .page-sidebar a:hover,
-  #positions-cycle-content .page-sidebar a.is-active,
-  #conversations-content .page-sidebar a:hover,
-  #conversations-content .page-sidebar a.is-active,
-  #dispositif-content .page-sidebar a:hover,
-  #dispositif-content .page-sidebar a.is-active,
-  #dossier-content .page-sidebar a:hover,
-  #dossier-content .page-sidebar a.is-active,
-  #charte-content .page-sidebar a:hover,
-  #charte-content .page-sidebar a.is-active {
-    color: var(--ep-ink);
-  }
-
-  .page-sidebar a.is-active {
-    padding-left: 0;
-    border-left: 0;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-
-  .programme-season,
-  .programme-value,
-  .programme-positions,
-  .programme-access,
-  .programme-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 780px) {
-  .page-hero {
-    padding-top: 76px;
-    padding-bottom: 62px;
-  }
-
-  .page-hero-title {
-    font-size: clamp(2.4rem, 8.2vw, 3.35rem);
-    line-height: 1;
-  }
-
-  .page-hero-sub {
-    font-size: 0.98rem;
-    line-height: 1.62;
-  }
-
-  .page-hero-note {
-    font-size: 0.8rem;
-    line-height: 1.54;
-  }
-
-  .page-reading h2 {
-    font-size: clamp(1.9rem, 6.4vw, 2.2rem);
-  }
-
-  .page-reading h3 {
-    font-size: 1.12rem;
-    line-height: 1.1;
-  }
-
-  .page-reading p,
-  .page-reading li {
-    font-size: 0.9rem;
-    line-height: 1.58;
-  }
-
-  .section-intro {
-    font-size: 0.95rem;
-    line-height: 1.62;
-  }
-
-  .section-footnote {
-    font-size: 0.78rem;
-    line-height: 1.56;
-  }
-
-  .editorial-panel,
-  .conversations-deadlines,
-  .theme-block,
-  .theme-nav,
-  .programme-step,
-  .programme-value__item,
-  .programme-position,
-  .programme-access__item,
-  .programme-list__item,
-  .season-card {
-    padding: 22px 20px;
-  }
-
-  .credibility-logos,
-  .media-logos {
-    justify-content: flex-start;
-    gap: 16px 22px;
-  }
-
-  .credibility-logo-img,
-  .media-logo-item img {
-    height: 22px;
-    max-width: 132px;
-  }
-
-  #cadre-dispositif {
-    padding-top: 76px;
-    padding-bottom: 76px;
-  }
-
-  #cadre-dispositif .section-head,
-  #cadre-dispositif .section-head h2,
-  #cadre-dispositif .credibility-text,
-  #cadre-dispositif .credibility-note {
-    text-align: left;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .page-section {
-    padding-top: 56px;
-    padding-bottom: 56px;
-  }
-
-  .section-head--centered,
-  .section-head--narrow {
-    text-align: left;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .divider {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .section-footnote {
-    margin-left: 0;
-    margin-right: 0;
-  }
-   }
+#acces-charte-editoriale .programme-access__item .link
