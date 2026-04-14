@@ -1,4 +1,107 @@
 /* =========================================================
+   DISPOSITIF — CRÉDIBILITÉ COMME SUR LA HOME
+   ========================================================= */
+
+#cadre-dispositif {
+  background: #ffffff !important;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.page-reading > #cadre-dispositif {
+  background: #ffffff !important;
+}
+
+#cadre-dispositif .section-head {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+#cadre-dispositif .section-head h2,
+#cadre-dispositif .credibility-text,
+#cadre-dispositif .credibility-note {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#cadre-dispositif .credibility-block {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  display: grid;
+  gap: 18px;
+}
+
+#cadre-dispositif .credibility-text {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--ep-ink-soft);
+  font-size: 0.93rem;
+  line-height: 1.66;
+}
+
+#cadre-dispositif .credibility-logos {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px 36px;
+  margin-top: 4px;
+}
+
+#cadre-dispositif .credibility-logo-img {
+  display: block;
+  width: auto !important;
+  height: 28px !important;
+  max-width: 160px !important;
+  object-fit: contain;
+  opacity: 0.82;
+  filter: grayscale(100%);
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+#cadre-dispositif .credibility-logo-img:hover {
+  opacity: 1;
+  filter: grayscale(100%);
+}
+
+#cadre-dispositif .credibility-note {
+  max-width: 780px;
+  margin: 0 auto;
+  color: var(--ep-ink-muted);
+  font-size: 0.8rem;
+  line-height: 1.62;
+}
+
+@media (max-width: 780px) {
+  #cadre-dispositif {
+    padding-top: 76px;
+    padding-bottom: 76px;
+  }
+
+  #cadre-dispositif .section-head,
+  #cadre-dispositif .section-head h2,
+  #cadre-dispositif .credibility-text,
+  #cadre-dispositif .credibility-note {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #cadre-dispositif .credibility-logos {
+    justify-content: flex-start;
+    gap: 16px 22px;
+  }
+
+  #cadre-dispositif .credibility-logo-img {
+    height: 22px !important;
+    max-width: 132px !important;
+  }
+}/* =========================================================
    EN PLATEAU — PAGES.CSS
    Pages intérieures harmonisées avec layout.css + home.css
    Direction : éditorial premium, sobre, contrasté
@@ -1511,3 +1614,107 @@
     margin-right: 0;
   }
    }
+/* =========================================================
+   DISPOSITIF — CRÉDIBILITÉ COMME SUR LA HOME
+   ========================================================= */
+
+#cadre-dispositif {
+  background: #ffffff !important;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.page-reading > #cadre-dispositif {
+  background: #ffffff !important;
+}
+
+#cadre-dispositif .section-head {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+#cadre-dispositif .section-head h2,
+#cadre-dispositif .credibility-text,
+#cadre-dispositif .credibility-note {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#cadre-dispositif .credibility-block {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  display: grid;
+  gap: 18px;
+}
+
+#cadre-dispositif .credibility-text {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--ep-ink-soft);
+  font-size: 0.93rem;
+  line-height: 1.66;
+}
+
+#cadre-dispositif .credibility-logos {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px 36px;
+  margin-top: 4px;
+}
+
+#cadre-dispositif .credibility-logo-img {
+  display: block;
+  width: auto !important;
+  height: 28px !important;
+  max-width: 160px !important;
+  object-fit: contain;
+  opacity: 0.82;
+  filter: grayscale(100%);
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+#cadre-dispositif .credibility-logo-img:hover {
+  opacity: 1;
+  filter: grayscale(100%);
+}
+
+#cadre-dispositif .credibility-note {
+  max-width: 780px;
+  margin: 0 auto;
+  color: var(--ep-ink-muted);
+  font-size: 0.8rem;
+  line-height: 1.62;
+}
+
+@media (max-width: 780px) {
+  #cadre-dispositif {
+    padding-top: 76px;
+    padding-bottom: 76px;
+  }
+
+  #cadre-dispositif .section-head,
+  #cadre-dispositif .section-head h2,
+  #cadre-dispositif .credibility-text,
+  #cadre-dispositif .credibility-note {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #cadre-dispositif .credibility-logos {
+    justify-content: flex-start;
+    gap: 16px 22px;
+  }
+
+  #cadre-dispositif .credibility-logo-img {
+    height: 22px !important;
+    max-width: 132px !important;
+  }
+}
