@@ -1,107 +1,4 @@
 /* =========================================================
-   DISPOSITIF — CRÉDIBILITÉ COMME SUR LA HOME
-   ========================================================= */
-
-#cadre-dispositif {
-  background: #ffffff !important;
-  padding-top: 96px;
-  padding-bottom: 96px;
-}
-
-.page-reading > #cadre-dispositif {
-  background: #ffffff !important;
-}
-
-#cadre-dispositif .section-head {
-  max-width: 1040px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 26px;
-  text-align: center;
-}
-
-#cadre-dispositif .section-head h2,
-#cadre-dispositif .credibility-text,
-#cadre-dispositif .credibility-note {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-#cadre-dispositif .credibility-block {
-  max-width: 980px;
-  margin: 0 auto;
-  text-align: center;
-  display: grid;
-  gap: 18px;
-}
-
-#cadre-dispositif .credibility-text {
-  max-width: 760px;
-  margin: 0 auto;
-  color: var(--ep-ink-soft);
-  font-size: 0.93rem;
-  line-height: 1.66;
-}
-
-#cadre-dispositif .credibility-logos {
-  display: flex !important;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 24px 36px;
-  margin-top: 4px;
-}
-
-#cadre-dispositif .credibility-logo-img {
-  display: block;
-  width: auto !important;
-  height: 28px !important;
-  max-width: 160px !important;
-  object-fit: contain;
-  opacity: 0.82;
-  filter: grayscale(100%);
-  transition: opacity 0.2s ease, filter 0.2s ease;
-}
-
-#cadre-dispositif .credibility-logo-img:hover {
-  opacity: 1;
-  filter: grayscale(100%);
-}
-
-#cadre-dispositif .credibility-note {
-  max-width: 780px;
-  margin: 0 auto;
-  color: var(--ep-ink-muted);
-  font-size: 0.8rem;
-  line-height: 1.62;
-}
-
-@media (max-width: 780px) {
-  #cadre-dispositif {
-    padding-top: 76px;
-    padding-bottom: 76px;
-  }
-
-  #cadre-dispositif .section-head,
-  #cadre-dispositif .section-head h2,
-  #cadre-dispositif .credibility-text,
-  #cadre-dispositif .credibility-note {
-    text-align: left;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  #cadre-dispositif .credibility-logos {
-    justify-content: flex-start;
-    gap: 16px 22px;
-  }
-
-  #cadre-dispositif .credibility-logo-img {
-    height: 22px !important;
-    max-width: 132px !important;
-  }
-}/* =========================================================
    EN PLATEAU — PAGES.CSS
    Pages intérieures harmonisées avec layout.css + home.css
    Direction : éditorial premium, sobre, contrasté
@@ -369,7 +266,7 @@
   margin: 22px auto 0;
 }
 
-/* ---------- PAGE SECTION SPACING ---------- */
+/* ---------- PAGE SECTION SPACING + ALTERNANCE ---------- */
 
 .page-section {
   padding-top: 68px;
@@ -381,7 +278,7 @@
 }
 
 .page-reading > .page-section:nth-child(even) {
-  background: var(--ep-paper-soft);
+  background: #ffffff;
 }
 
 .page-reading .page-section + .page-section {
@@ -419,7 +316,58 @@
   margin-bottom: 0;
 }
 
-/* ---------- MEDIA BAND / CREDIBILITY ---------- */
+/* ---------- HOME-LIKE CREDIBILITY BLOCK FOR INTERIOR PAGES ---------- */
+
+.credibility-block {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  display: grid;
+  gap: 18px;
+}
+
+.credibility-text {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--ep-ink-soft);
+  font-size: 0.93rem;
+  line-height: 1.66;
+}
+
+.credibility-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px 36px;
+  margin-top: 4px;
+}
+
+.credibility-logo-img {
+  display: block;
+  width: auto;
+  height: 28px;
+  max-width: 160px;
+  object-fit: contain;
+  opacity: 0.82;
+  filter: grayscale(100%);
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.credibility-logo-img:hover {
+  opacity: 1;
+  filter: grayscale(100%);
+}
+
+.credibility-note {
+  max-width: 780px;
+  margin: 0 auto;
+  color: var(--ep-ink-muted);
+  font-size: 0.8rem;
+  line-height: 1.62;
+}
+
+/* ---------- MEDIA BAND / LEGACY ---------- */
 
 .media-logos-band {
   max-width: 980px;
@@ -752,7 +700,6 @@
   background: var(--ep-paper);
 }
 
-/* menu intérieur sombre */
 #positions-cycle-content .page-sidebar {
   background: #111111;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -918,7 +865,6 @@
   background: var(--ep-paper);
 }
 
-/* menu latéral conversations */
 #conversations-content .page-sidebar {
   background: rgba(255, 250, 244, 0.78);
   border: 1px solid var(--ep-line);
@@ -960,7 +906,6 @@
   padding-left: 12px;
 }
 
-/* hiérarchie visuelle douce des conversations */
 #conversation-1 h2 {
   color: rgba(20, 20, 20, 0.46);
 }
@@ -1096,12 +1041,79 @@
   padding-left: 12px;
 }
 
-#cadre-dispositif .media-logos-band {
-  margin-top: 8px;
+#cadre-dispositif {
+  background: #ffffff !important;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
-#cadre-dispositif .section-footnote {
-  margin-top: 24px;
+.page-reading > #cadre-dispositif {
+  background: #ffffff !important;
+}
+
+#cadre-dispositif .section-head {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+#cadre-dispositif .section-head h2,
+#cadre-dispositif .credibility-text,
+#cadre-dispositif .credibility-note {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#cadre-dispositif .credibility-block {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  display: grid;
+  gap: 18px;
+}
+
+#cadre-dispositif .credibility-text {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--ep-ink-soft);
+  font-size: 0.93rem;
+  line-height: 1.66;
+}
+
+#cadre-dispositif .credibility-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px 36px;
+  margin-top: 4px;
+}
+
+#cadre-dispositif .credibility-logo-img {
+  display: block;
+  width: auto;
+  height: 28px;
+  max-width: 160px;
+  object-fit: contain;
+  opacity: 0.82;
+  filter: grayscale(100%);
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+#cadre-dispositif .credibility-logo-img:hover {
+  opacity: 1;
+  filter: grayscale(100%);
+}
+
+#cadre-dispositif .credibility-note {
+  max-width: 780px;
+  margin: 0 auto;
+  color: var(--ep-ink-muted);
+  font-size: 0.8rem;
+  line-height: 1.62;
 }
 
 #comment-ca-marche .programme-list {
@@ -1178,7 +1190,8 @@
 #ce-que-cela-demande,
 #architecture-dispositif,
 #principe-dispositif,
-#acces-dispositif {
+#acces-dispositif,
+#finalite-dispositif {
   scroll-margin-top: 110px;
 }
 
@@ -1582,14 +1595,30 @@
     padding: 22px 20px;
   }
 
+  .credibility-logos,
   .media-logos {
     justify-content: flex-start;
     gap: 16px 22px;
   }
 
+  .credibility-logo-img,
   .media-logo-item img {
     height: 22px;
     max-width: 132px;
+  }
+
+  #cadre-dispositif {
+    padding-top: 76px;
+    padding-bottom: 76px;
+  }
+
+  #cadre-dispositif .section-head,
+  #cadre-dispositif .section-head h2,
+  #cadre-dispositif .credibility-text,
+  #cadre-dispositif .credibility-note {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .page-section {
@@ -1612,109 +1641,5 @@
   .section-footnote {
     margin-left: 0;
     margin-right: 0;
-  }
-   }
-/* =========================================================
-   DISPOSITIF — CRÉDIBILITÉ COMME SUR LA HOME
-   ========================================================= */
-
-#cadre-dispositif {
-  background: #ffffff !important;
-  padding-top: 96px;
-  padding-bottom: 96px;
-}
-
-.page-reading > #cadre-dispositif {
-  background: #ffffff !important;
-}
-
-#cadre-dispositif .section-head {
-  max-width: 1040px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 26px;
-  text-align: center;
-}
-
-#cadre-dispositif .section-head h2,
-#cadre-dispositif .credibility-text,
-#cadre-dispositif .credibility-note {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-#cadre-dispositif .credibility-block {
-  max-width: 980px;
-  margin: 0 auto;
-  text-align: center;
-  display: grid;
-  gap: 18px;
-}
-
-#cadre-dispositif .credibility-text {
-  max-width: 760px;
-  margin: 0 auto;
-  color: var(--ep-ink-soft);
-  font-size: 0.93rem;
-  line-height: 1.66;
-}
-
-#cadre-dispositif .credibility-logos {
-  display: flex !important;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 24px 36px;
-  margin-top: 4px;
-}
-
-#cadre-dispositif .credibility-logo-img {
-  display: block;
-  width: auto !important;
-  height: 28px !important;
-  max-width: 160px !important;
-  object-fit: contain;
-  opacity: 0.82;
-  filter: grayscale(100%);
-  transition: opacity 0.2s ease, filter 0.2s ease;
-}
-
-#cadre-dispositif .credibility-logo-img:hover {
-  opacity: 1;
-  filter: grayscale(100%);
-}
-
-#cadre-dispositif .credibility-note {
-  max-width: 780px;
-  margin: 0 auto;
-  color: var(--ep-ink-muted);
-  font-size: 0.8rem;
-  line-height: 1.62;
-}
-
-@media (max-width: 780px) {
-  #cadre-dispositif {
-    padding-top: 76px;
-    padding-bottom: 76px;
-  }
-
-  #cadre-dispositif .section-head,
-  #cadre-dispositif .section-head h2,
-  #cadre-dispositif .credibility-text,
-  #cadre-dispositif .credibility-note {
-    text-align: left;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  #cadre-dispositif .credibility-logos {
-    justify-content: flex-start;
-    gap: 16px 22px;
-  }
-
-  #cadre-dispositif .credibility-logo-img {
-    height: 22px !important;
-    max-width: 132px !important;
   }
 }
