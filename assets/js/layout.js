@@ -269,10 +269,10 @@ async function initLayout() {
   window.__layoutInitialized = true;
 
   await Promise.all([
-    loadPartial("#site-header", "partials/header.html"),
-    loadPartial("#site-mobile-menu", "partials/mobile-menu.html"),
-    loadPartial("#site-footer", "partials/footer.html"),
-    loadPartial("#cookie-container", "partials/cookies.html")
+    loadPartial("#site-header", "/partials/header.html"),
+    loadPartial("#site-mobile-menu", "/partials/mobile-menu.html"),
+    loadPartial("#site-footer", "/partials/footer.html"),
+    loadPartial("#cookie-container", "/partials/cookies.html")
   ]);
 
   markActiveLinks();
