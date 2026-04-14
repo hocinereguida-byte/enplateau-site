@@ -4,6 +4,7 @@
    Direction : éditorial premium, sobre, contrasté
    ========================================================= */
 
+html,
 body.page-interior {
   overflow-x: hidden;
 }
@@ -1441,6 +1442,62 @@ body.page-interior {
   scroll-margin-top: 110px;
 }
 
+/* ---------- HUB CONVERSATIONS ---------- */
+
+#conversations-hub-content {
+  overflow-x: clip;
+}
+
+#conversations-hub-content .page-reading {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 0;
+}
+
+#conversations-hub-content .section-head {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#conversations-hub-content .section-head h2,
+#conversations-hub-content .section-intro,
+#conversations-hub-content .section-footnote {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#conversations-hub-content .editorial-panel {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#conversations-hub-content .programme-link-row {
+  justify-content: center;
+}
+
+#conversations-hub-content .programme-list,
+#conversations-hub-content .programme-access {
+  min-width: 0;
+}
+
+#conversations-hub-content .programme-list__item,
+#conversations-hub-content .programme-access__item,
+#conversations-hub-content .editorial-panel {
+  min-width: 0;
+}
+
+#conversations-hub-content h2,
+#conversations-hub-content h3,
+#conversations-hub-content p,
+#conversations-hub-content a {
+  overflow-wrap: anywhere;
+}
+
 /* ---------- RESPONSIVE ---------- */
 
 @media (max-width: 1180px) {
@@ -1619,6 +1676,23 @@ body.page-interior {
     text-align: left;
     margin-left: 0;
     margin-right: 0;
+  }
+
+  #conversations-hub-content .section-head,
+  #conversations-hub-content .section-head h2,
+  #conversations-hub-content .section-intro,
+  #conversations-hub-content .section-footnote {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #conversations-hub-content .editorial-panel {
+    max-width: none;
+  }
+
+  #conversations-hub-content .programme-link-row {
+    justify-content: flex-start;
   }
 
   .page-section {
