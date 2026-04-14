@@ -1498,6 +1498,64 @@ body.page-interior {
   overflow-wrap: anywhere;
 }
 
+/* ---------- HUB POSITIONS ---------- */
+
+#positions-hub-content {
+  overflow-x: clip;
+}
+
+#positions-hub-content .page-reading {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 0;
+}
+
+#positions-hub-content .section-head {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#positions-hub-content .section-head h2,
+#positions-hub-content .section-intro,
+#positions-hub-content .section-footnote {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#positions-hub-content .editorial-panel {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#positions-hub-content .programme-link-row {
+  justify-content: center;
+}
+
+#positions-hub-content .programme-list,
+#positions-hub-content .programme-value,
+#positions-hub-content .programme-access {
+  min-width: 0;
+}
+
+#positions-hub-content .programme-list__item,
+#positions-hub-content .programme-value__item,
+#positions-hub-content .programme-access__item,
+#positions-hub-content .editorial-panel {
+  min-width: 0;
+}
+
+#positions-hub-content h2,
+#positions-hub-content h3,
+#positions-hub-content p,
+#positions-hub-content a {
+  overflow-wrap: anywhere;
+}
+
 /* ---------- RESPONSIVE ---------- */
 
 @media (max-width: 1180px) {
@@ -1681,17 +1739,23 @@ body.page-interior {
   #conversations-hub-content .section-head,
   #conversations-hub-content .section-head h2,
   #conversations-hub-content .section-intro,
-  #conversations-hub-content .section-footnote {
+  #conversations-hub-content .section-footnote,
+  #positions-hub-content .section-head,
+  #positions-hub-content .section-head h2,
+  #positions-hub-content .section-intro,
+  #positions-hub-content .section-footnote {
     text-align: left;
     margin-left: 0;
     margin-right: 0;
   }
 
-  #conversations-hub-content .editorial-panel {
+  #conversations-hub-content .editorial-panel,
+  #positions-hub-content .editorial-panel {
     max-width: none;
   }
 
-  #conversations-hub-content .programme-link-row {
+  #conversations-hub-content .programme-link-row,
+  #positions-hub-content .programme-link-row {
     justify-content: flex-start;
   }
 
@@ -1716,4 +1780,4 @@ body.page-interior {
     margin-left: 0;
     margin-right: 0;
   }
-   }
+}
