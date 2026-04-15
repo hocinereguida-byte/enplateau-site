@@ -176,6 +176,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  const cycleCodes = {
+    "Logement - production & transformation immobilière": "LOG",
+    "Industrie - fabrication & transformation": "IND"
+  };
+
   const form = document.getElementById("editorial-intake-form");
   const cycleSelect = document.getElementById("cycle-select");
   const selectionBlocksContainer = document.getElementById("selection-blocks");
@@ -219,6 +224,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getCurrentCycle() {
     return cycleSelect.value.trim();
+  }
+
+  function getConversationCode(cycle, conversation) {
+    const conversations = Object.keys(editorialData[cycle] || {});
+    const index = conversations.indexOf(conversation);
+    return index >= 0 ? `C${index + 1}` : "C?";
+  }
+
+  function getContextCode(cycle, conversation, context) {
+    const contexts = Object.keys(editorialData[cycle]?.[conversation] || {});
+    const index = contexts.indexOf(context);
+    return index >= 0 ? `T${index + 1}` : "T?";
+  }
+
+  function getAngleCode(cycle, conversation, context, angle) {
+    const angles = editorialData[cycle]?.[conversation]?.[context] || [];
+    const index = angles.indexOf(angle);
+    return index >= 0 ? `A${index + 1}` : "A?";
   }
 
   function createBlock(index) {
@@ -397,6 +420,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function addBlock() {
     const cycle = getCurrentCycle();
+
     if (!cycle) {
       setFeedback("Choisissez d’abord un cycle.");
       cycleSelect.focus();
@@ -420,10 +444,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getSelections() {
     const blocks = selectionBlocksContainer.querySelectorAll(".editorial-selection-block");
+
     return Array.from(blocks).map((block) => {
       const conversation = block.querySelector(".conversation-select")?.value.trim() || "";
       const context = block.querySelector(".context-select")?.value.trim() || "";
       const angle = block.querySelector(".angle-select")?.value.trim() || "";
+
       return { conversation, context, angle };
     });
   }
@@ -448,17 +474,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function formatSummary(cycle, selections) {
-    const lines = [];
-    lines.push(`Cycle : ${cycle}`);
-    lines.push("");
+    const cycleCode = cycleCodes[cycle] || cycle;
+    const lines = [`Cycle: ${cycleCode}`];
 
     selections.forEach((item, idx) => {
-      lines.push(`${idx + 1}. Conversation : ${item.conversation}`);
-      lines.push(`   Contexte : ${item.context}`);
-      lines.push(`   Angle : ${item.angle}`);
-      if (idx < selections.length - 1) {
-        lines.push("");
-      }
+      const conversationCode = getConversationCode(cycle, item.conversation);
+      const contextCode = getContextCode(cycle, item.conversation, item.context);
+      const angleCode = getAngleCode(cycle, item.conversation, item.context, item.angle);
+
+      lines.push(`${idx + 1}. ${conversationCode}-${contextCode}-${angleCode}`);
     });
 
     return lines.join("\n");
@@ -490,6 +514,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const summary = formatSummary(cycle, selections);
     const url = new URL(CAL_BOOKING_URL);
+
     url.searchParams.set(CAL_FIELD_IDENTIFIER, summary);
 
     window.location.href = url.toString();
