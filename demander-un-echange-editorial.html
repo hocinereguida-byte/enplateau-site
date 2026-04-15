@@ -72,8 +72,7 @@
           </p>
 
           <p class="programme-link-row">
-            <!-- Remplacer ce lien par votre outil de prise de rendez-vous -->
-            <a href="/prendre-rendez-vous.html" class="link link--primary">Prendre rendez-vous</a>
+            <a href="#formulaire-echange-editorial" class="link link--primary">Prendre rendez-vous</a>
             <a href="/proposer-une-contribution.html" class="link">Signaler une contribution</a>
           </p>
 
@@ -269,7 +268,7 @@
                     <p>
                       L’échange permet d’aller plus loin sur un point d’entrée déjà identifié, de préciser la conversation la plus naturelle et de vérifier si une suite mérite d’être engagée.
                     </p>
-                    <a href="/prendre-rendez-vous.html" class="link link--primary">Prendre rendez-vous</a>
+                    <a href="#formulaire-echange-editorial" class="link link--primary">Prendre rendez-vous</a>
                   </article>
 
                   <article class="programme-access__item">
@@ -326,7 +325,7 @@
                     <p>
                       Qualifier la pertinence d’une position, identifier la conversation la plus naturelle et vérifier si une suite mérite d’être engagée.
                     </p>
-                    <a href="/prendre-rendez-vous.html" class="link link--primary">Prendre rendez-vous</a>
+                    <a href="#formulaire-echange-editorial" class="link link--primary">Prendre rendez-vous</a>
                   </article>
 
                   <article class="programme-access__item">
@@ -336,6 +335,54 @@
                     </p>
                     <a href="/proposer-une-contribution.html" class="link">Signaler une contribution</a>
                   </article>
+                </div>
+
+                <div class="editorial-intake" id="formulaire-echange-editorial">
+                  <div class="section-head section-head--narrow">
+                    <div class="section-kicker">Sélection</div>
+                    <h2>Choisir le bon point d’entrée avant la réservation</h2>
+                    <p class="section-intro">
+                      Sélectionnez d’abord le cycle, puis la conversation et l’angle concernés. Vous serez ensuite redirigé vers le calendrier de réservation.
+                    </p>
+                  </div>
+
+                  <form id="editorial-intake-form" class="editorial-intake-form" novalidate>
+                    <div class="editorial-intake-grid">
+
+                      <div class="editorial-field">
+                        <label for="cycle-select">Cycle</label>
+                        <select id="cycle-select" name="cycle" required>
+                          <option value="">Choisir un cycle</option>
+                        </select>
+                      </div>
+
+                      <div class="editorial-field">
+                        <label for="conversation-select">Conversation</label>
+                        <select id="conversation-select" name="conversation" required disabled>
+                          <option value="">Choisir d’abord un cycle</option>
+                        </select>
+                      </div>
+
+                      <div class="editorial-field">
+                        <label for="angle-select">Angle</label>
+                        <select id="angle-select" name="angle" required disabled>
+                          <option value="">Choisir d’abord une conversation</option>
+                        </select>
+                      </div>
+
+                    </div>
+
+                    <div class="editorial-intake-actions">
+                      <button type="submit" class="link link--primary editorial-intake-submit">
+                        Continuer vers la réservation
+                      </button>
+                      <p class="editorial-intake-note">
+                        Vous choisirez ensuite un créneau de 15 minutes dans le calendrier.
+                      </p>
+                    </div>
+
+                    <div id="editorial-intake-feedback" class="editorial-intake-feedback" aria-live="polite"></div>
+                  </form>
                 </div>
 
                 <p class="section-footnote">
@@ -357,5 +404,6 @@
 
   <script src="/assets/js/layout.js"></script>
   <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/echange-editorial-form.js"></script>
 </body>
-    </html>
+                  </html>
