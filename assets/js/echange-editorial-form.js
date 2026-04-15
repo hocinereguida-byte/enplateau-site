@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const CAL_BOOKING_URL = "https://cal.com/en-plateau/echange-editorial-15-min";
   const CAL_FIELD_IDENTIFIER = "selection_editoriale";
+  const CAL_FIELD_MAX_LENGTH = 1000;
 
   const editorialData = {
     "Logement - production & transformation immobilière": {
@@ -242,6 +243,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const angles = editorialData[cycle]?.[conversation]?.[context] || [];
     const index = angles.indexOf(angle);
     return index >= 0 ? `A${index + 1}` : "A?";
+  }
+
+  function hasDuplicateSelections(selections) {
+    const seen = new Set();
+
+    for (const item of selections) {
+      const key = `${item.conversation}|||${item.context}|||${item.angle}`;
+      if (seen.has(key)) {
+        return true;
+      }
+      seen.add(key);
+    }
+
+    return false;
   }
 
   function createBlock(index) {
@@ -512,9 +527,19 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const summary = formatSummary(cycle, selections);
-    const url = new URL(CAL_BOOKING_URL);
+    if (hasDuplicateSelections(selections)) {
+      setFeedback("Une même sélection ne peut pas être ajoutée deux fois.");
+      return;
+    }
 
+    const summary = formatSummary(cycle, selections);
+
+    if (summary.length > CAL_FIELD_MAX_LENGTH) {
+      setFeedback("La sélection est trop longue pour être transmise au calendrier. Réduisez le nombre de sélections.");
+      return;
+    }
+
+    const url = new URL(CAL_BOOKING_URL);
     url.searchParams.set(CAL_FIELD_IDENTIFIER, summary);
 
     window.location.href = url.toString();
