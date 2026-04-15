@@ -1781,3 +1781,247 @@ body.page-interior {
     margin-right: 0;
   }
 }
+/* =========================================================
+   DEMANDER UN ÉCHANGE — FORMULAIRE CONDITIONNEL
+   ========================================================= */
+
+#echange-editorial-content,
+#principe-echange,
+#ce-que-lechange-permet,
+#cadre-echange,
+#a-qui-sadresse-lechange,
+#apres-lechange,
+#selon-votre-situation,
+#ce-que-lechange-ne-demande-pas,
+#avant-daller-plus-loin {
+  scroll-margin-top: 110px;
+}
+
+#echange-editorial-content {
+  background: transparent;
+}
+
+#echange-editorial-content .page-sidebar {
+  position: sticky;
+  z-index: 60;
+  background: rgba(255, 250, 244, 0.78);
+  border: 1px solid var(--ep-line);
+  padding: 18px 16px;
+}
+
+#echange-editorial-content .page-sidebar nav {
+  border-top: 0;
+  padding-top: 0;
+}
+
+#echange-editorial-content .page-sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+
+#echange-editorial-content .page-sidebar li + li {
+  margin-top: 6px;
+}
+
+#echange-editorial-content .page-sidebar a {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  max-width: none;
+  padding-left: 10px;
+  color: var(--ep-ink-soft);
+  opacity: 1;
+}
+
+#echange-editorial-content .page-sidebar a:hover {
+  color: var(--ep-ink);
+}
+
+#echange-editorial-content .page-sidebar a.is-active {
+  color: var(--ep-ink);
+  font-weight: 600;
+  border-left: 2px solid var(--ep-accent);
+  padding-left: 12px;
+}
+
+#avant-daller-plus-loin .programme-access {
+  margin-top: 8px;
+}
+
+#avant-daller-plus-loin .programme-access__item {
+  background: rgba(255, 250, 244, 0.78);
+}
+
+#avant-daller-plus-loin .programme-access__item h3 {
+  margin-bottom: 12px;
+}
+
+#avant-daller-plus-loin .programme-access__item .link {
+  display: inline-flex;
+  margin-top: 8px;
+}
+
+.editorial-intake {
+  margin-top: 28px;
+  padding: 30px 28px;
+  background: rgba(255, 250, 244, 0.78);
+  border: 1px solid var(--ep-line);
+  position: relative;
+}
+
+.editorial-intake::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: rgba(123, 51, 38, 0.72);
+}
+
+.editorial-intake-form {
+  margin-top: 10px;
+}
+
+.editorial-intake-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.editorial-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.editorial-field label {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ep-accent);
+}
+
+.editorial-field select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  min-height: 52px;
+  width: 100%;
+  padding: 0 14px;
+  border: 1px solid var(--ep-line);
+  background: #ffffff;
+  color: var(--ep-ink);
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.editorial-field select:focus {
+  outline: none;
+  border-color: rgba(123, 51, 38, 0.55);
+  box-shadow: 0 0 0 3px rgba(123, 51, 38, 0.10);
+}
+
+.editorial-field select:disabled {
+  background: #f5f3f0;
+  color: var(--ep-ink-muted);
+  cursor: not-allowed;
+}
+
+.editorial-intake-actions {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+  align-items: start;
+}
+
+.editorial-intake-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: fit-content;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.editorial-intake-note {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.58;
+  color: var(--ep-ink-muted);
+}
+
+.editorial-intake-feedback {
+  min-height: 20px;
+  margin-top: 10px;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #8b3d2f;
+}
+
+@media (max-width: 1023px) {
+  #echange-editorial-content .page-sidebar {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    z-index: auto;
+  }
+
+  #echange-editorial-content .page-sidebar a {
+    min-height: auto;
+    font-size: 12px;
+    padding: 0;
+    max-width: none;
+    color: var(--ep-ink-soft);
+  }
+
+  #echange-editorial-content .page-sidebar a:hover,
+  #echange-editorial-content .page-sidebar a.is-active {
+    color: var(--ep-ink);
+  }
+
+  #echange-editorial-content .page-sidebar a.is-active {
+    padding-left: 0;
+    border-left: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .editorial-intake-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 780px) {
+  .editorial-intake {
+    padding: 22px 20px;
+  }
+
+  .editorial-field select {
+    min-height: 50px;
+    font-size: 0.92rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
