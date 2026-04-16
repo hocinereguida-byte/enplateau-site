@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const WORKER_ENDPOINT = "https://enplateau-etape1.hocine-reguida.workers.dev";
   const CAL_BOOKING_URL = "https://cal.com/en-plateau/echange-editorial-15-min";
   const CAL_FIELD_IDENTIFIER = "selection_editoriale";
   const CAL_FIELD_MAX_LENGTH = 1000;
+  const CONTACT_STORAGE_KEY = "enplateau_editorial_contact_v1";
 
   const editorialData = {
     "Logement - production & transformation immobilière": {
@@ -177,7 +179,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  const form = document.getElementById("editorial-intake-form");
+  const contactForm = document.getElementById("editorial-contact-form");
+  const organisationInput = document.getElementById("organisation-input");
+  const activityInput = document.getElementById("activity-input");
+  const firstNameInput = document.getElementById("first-name-input");
+  const lastNameInput = document.getElementById("last-name-input");
+  const emailInput = document.getElementById("email-input");
+  const phoneInput = document.getElementById("phone-input");
+  const contactSubmitButton = document.getElementById("editorial-contact-submit");
+  const contactFeedback = document.getElementById("editorial-contact-feedback");
+  const selectionStage = document.getElementById("editorial-selection-stage");
+  const contactConfirmation = document.getElementById("editorial-contact-confirmation");
+
+  const selectionForm = document.getElementById("editorial-intake-form");
   const cycleCards = document.getElementById("cycle-cards");
   const conversationStage = document.getElementById("conversation-stage");
   const conversationCards = document.getElementById("conversation-cards");
@@ -186,10 +200,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const summaryLead = document.getElementById("editorial-selection-summary-lead");
   const summaryLines = document.getElementById("editorial-selection-summary-lines");
   const resetSelectionButton = document.getElementById("reset-selection-button");
-  const feedback = document.getElementById("editorial-intake-feedback");
+  const selectionFeedback = document.getElementById("editorial-intake-feedback");
 
   if (
-    !form ||
+    !contactForm ||
+    !organisationInput ||
+    !activityInput ||
+    !firstNameInput ||
+    !lastNameInput ||
+    !emailInput ||
+    !contactSubmitButton ||
+    !contactFeedback ||
+    !selectionStage ||
+    !contactConfirmation ||
+    !selectionForm ||
     !cycleCards ||
     !conversationStage ||
     !conversationCards ||
@@ -198,20 +222,33 @@ document.addEventListener("DOMContentLoaded", () => {
     !summaryLead ||
     !summaryLines ||
     !resetSelectionButton ||
-    !feedback
+    !selectionFeedback
   ) {
     return;
   }
 
   const state = {
+    contact: {
+      organisation: "",
+      activity: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: ""
+    },
+    contactValidated: false,
     cycle: "",
     conversations: [],
     contexts: {},
     angles: {}
   };
 
-  function setFeedback(message = "") {
-    feedback.textContent = message;
+  function setContactFeedback(message = "") {
+    contactFeedback.textContent = message;
+  }
+
+  function setSelectionFeedback(message = "") {
+    selectionFeedback.textContent = message;
   }
 
   function getCycleShortLabel(cycle) {
@@ -232,12 +269,121 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 0);
   }
 
-  function resetState(keepCycle = false) {
-    const preservedCycle = keepCycle ? state.cycle : "";
-    state.cycle = preservedCycle;
-    state.conversations = [];
-    state.contexts = {};
-    state.angles = {};
+  function saveContactState() {
+    try {
+      sessionStorage.setItem(CONTACT_STORAGE_KEY, JSON.stringify(state.contact));
+    } catch (error) {
+      console.warn("Impossible d'enregistrer l'étape contact en sessionStorage.", error);
+    }
+  }
+
+  function restoreContactState() {
+    try {
+      const raw = sessionStorage.getItem(CONTACT_STORAGE_KEY);
+      if (!raw) return false;
+
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== "object") return false;
+
+      state.contact = {
+        organisation: parsed.organisation || "",
+        activity: parsed.activity || "",
+        firstName: parsed.firstName || "",
+        lastName: parsed.lastName || "",
+        email: parsed.email || "",
+        phone: parsed.phone || ""
+      };
+
+      organisationInput.value = state.contact.organisation;
+      activityInput.value = state.contact.activity;
+      firstNameInput.value = state.contact.firstName;
+      lastNameInput.value = state.contact.lastName;
+      emailInput.value = state.contact.email;
+      phoneInput.value = state.contact.phone;
+
+      state.contactValidated = Boolean(
+        state.contact.organisation &&
+        state.contact.activity &&
+        state.contact.firstName &&
+        state.contact.lastName &&
+        state.contact.email
+      );
+
+      return state.contactValidated;
+    } catch (error) {
+      console.warn("Impossible de restaurer l'étape contact depuis sessionStorage.", error);
+      return false;
+    }
+  }
+
+  function showSelectionStage() {
+    selectionStage.hidden = false;
+    renderContactConfirmation();
+  }
+
+  function hideSelectionStage() {
+    selectionStage.hidden = true;
+  }
+
+  function renderContactConfirmation() {
+    if (!state.contactValidated) {
+      contactConfirmation.innerHTML = "";
+      return;
+    }
+
+    contactConfirmation.innerHTML = `
+      <strong>Demande confirmée :</strong> ${escapeHtml(state.contact.firstName)} ${escapeHtml(state.contact.lastName)}
+      <span> · ${escapeHtml(state.contact.organisation)} · ${escapeHtml(state.contact.activity)}</span>
+    `;
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function updateContactStateFromInputs() {
+    state.contact.organisation = organisationInput.value.trim();
+    state.contact.activity = activityInput.value.trim();
+    state.contact.firstName = firstNameInput.value.trim();
+    state.contact.lastName = lastNameInput.value.trim();
+    state.contact.email = emailInput.value.trim();
+    state.contact.phone = phoneInput.value.trim();
+  }
+
+  function validateContactStep() {
+    updateContactStateFromInputs();
+
+    if (!state.contact.organisation) {
+      return "Renseignez votre organisation / structure.";
+    }
+
+    if (!state.contact.activity) {
+      return "Renseignez votre domaine d’activité.";
+    }
+
+    if (!state.contact.firstName) {
+      return "Renseignez votre prénom.";
+    }
+
+    if (!state.contact.lastName) {
+      return "Renseignez votre nom.";
+    }
+
+    if (!state.contact.email) {
+      return "Renseignez votre email professionnel.";
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(state.contact.email)) {
+      return "Renseignez un email valide.";
+    }
+
+    return "";
   }
 
   function renderCycleCards() {
@@ -395,11 +541,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function updateUI() {
+  function updateSelectionUI() {
+    renderContactConfirmation();
     renderCycleCards();
     renderConversationCards();
     renderConversationDetails();
     renderSummary();
+  }
+
+  function resetSelectionState(keepCycle = false) {
+    const preservedCycle = keepCycle ? state.cycle : "";
+    state.cycle = preservedCycle;
+    state.conversations = [];
+    state.contexts = {};
+    state.angles = {};
   }
 
   function toggleConversation(conversation) {
@@ -457,7 +612,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const lines = [
       `Cycle : ${cycleLabel}`,
-      `${conversationCount} conversation${conversationCount > 1 ? "s" : ""} · ${angleCount} angle${angleCount > 1 ? "s" : ""}`
+      `${conversationCount} conversation${conversationCount > 1 ? "s" : ""} · ${angleCount} angle${angleCount > 1 ? "s" : ""}`,
+      `Intervenant : ${state.contact.firstName} ${state.contact.lastName} — ${state.contact.organisation}`
     ];
 
     state.conversations.forEach((conversation, index) => {
@@ -519,6 +675,60 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  async function submitContactStep() {
+    const validationMessage = validateContactStep();
+    if (validationMessage) {
+      setContactFeedback(validationMessage);
+      return;
+    }
+
+    setContactFeedback("");
+    contactSubmitButton.disabled = true;
+    contactSubmitButton.textContent = "Enregistrement en cours…";
+
+    try {
+      const response = await fetch(WORKER_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          firstName: state.contact.firstName,
+          lastName: state.contact.lastName,
+          email: state.contact.email,
+          organisation: state.contact.organisation,
+          role: state.contact.activity,
+          phone: state.contact.phone
+        })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.ok) {
+        setContactFeedback(data.message || "Impossible d’enregistrer vos coordonnées pour le moment.");
+        return;
+      }
+
+      state.contactValidated = true;
+      saveContactState();
+      showSelectionStage();
+      updateSelectionUI();
+      setContactFeedback("");
+      selectionStage.scrollIntoView({ behavior: "smooth", block: "start" });
+    } catch (error) {
+      setContactFeedback("Impossible de joindre le service de confirmation pour le moment.");
+      console.error(error);
+    } finally {
+      contactSubmitButton.disabled = false;
+      contactSubmitButton.textContent = "Sélectionner les sujets sur lesquels vous souhaitez intervenir";
+    }
+  }
+
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    await submitContactStep();
+  });
+
   cycleCards.addEventListener("click", (event) => {
     const button = event.target.closest("[data-cycle]");
     if (!button) return;
@@ -528,11 +738,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (state.cycle !== nextCycle) {
       state.cycle = nextCycle;
-      resetState(true);
+      resetSelectionState(true);
     }
 
-    setFeedback("");
-    updateUI();
+    setSelectionFeedback("");
+    updateSelectionUI();
   });
 
   conversationCards.addEventListener("click", (event) => {
@@ -543,8 +753,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!conversation) return;
 
     toggleConversation(conversation);
-    setFeedback("");
-    updateUI();
+    setSelectionFeedback("");
+    updateSelectionUI();
   });
 
   conversationDetails.addEventListener("click", (event) => {
@@ -558,8 +768,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (conversation && context) {
         state.contexts[conversation] = context;
         state.angles[conversation] = [];
-        setFeedback("");
-        updateUI();
+        setSelectionFeedback("");
+        updateSelectionUI();
       }
       return;
     }
@@ -570,31 +780,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (conversation && angle) {
         toggleAngle(conversation, angle);
-        setFeedback("");
-        updateUI();
+        setSelectionFeedback("");
+        updateSelectionUI();
       }
     }
   });
 
   resetSelectionButton.addEventListener("click", () => {
-    resetState();
-    setFeedback("");
-    updateUI();
+    resetSelectionState();
+    setSelectionFeedback("");
+    updateSelectionUI();
   });
 
-  form.addEventListener("submit", (event) => {
+  selectionForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const validationMessage = validateSelection();
     if (validationMessage) {
-      setFeedback(validationMessage);
+      setSelectionFeedback(validationMessage);
       return;
     }
 
     const summary = buildReadableSummary();
 
     if (summary.length > CAL_FIELD_MAX_LENGTH) {
-      setFeedback("La sélection est trop longue pour être transmise au calendrier. Réduisez le nombre de conversations ou d’angles sélectionnés.");
+      setSelectionFeedback("La sélection est trop longue pour être transmise au calendrier. Réduisez le nombre de conversations ou d’angles sélectionnés.");
       return;
     }
 
@@ -604,6 +814,14 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = url.toString();
   });
 
+  const restored = restoreContactState();
   applyPrefillFromUrl();
-  updateUI();
+
+  if (restored) {
+    showSelectionStage();
+  } else {
+    hideSelectionStage();
+  }
+
+  updateSelectionUI();
 });
