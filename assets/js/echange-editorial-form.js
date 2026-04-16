@@ -177,365 +177,424 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  const cycleCodes = {
-    "Logement - production & transformation immobilière": "LOG",
-    "Industrie - fabrication & transformation": "IND"
-  };
-
   const form = document.getElementById("editorial-intake-form");
-  const cycleSelect = document.getElementById("cycle-select");
-  const selectionBlocksContainer = document.getElementById("selection-blocks");
-  const addSelectionButton = document.getElementById("add-selection-button");
+  const cycleCards = document.getElementById("cycle-cards");
+  const conversationStage = document.getElementById("conversation-stage");
+  const conversationCards = document.getElementById("conversation-cards");
+  const conversationDetails = document.getElementById("conversation-details");
+  const summaryStage = document.getElementById("summary-stage");
+  const summaryLead = document.getElementById("editorial-selection-summary-lead");
+  const summaryLines = document.getElementById("editorial-selection-summary-lines");
+  const resetSelectionButton = document.getElementById("reset-selection-button");
   const feedback = document.getElementById("editorial-intake-feedback");
 
-  if (!form || !cycleSelect || !selectionBlocksContainer || !addSelectionButton || !feedback) {
+  if (
+    !form ||
+    !cycleCards ||
+    !conversationStage ||
+    !conversationCards ||
+    !conversationDetails ||
+    !summaryStage ||
+    !summaryLead ||
+    !summaryLines ||
+    !resetSelectionButton ||
+    !feedback
+  ) {
     return;
   }
+
+  const state = {
+    cycle: "",
+    conversations: [],
+    contexts: {},
+    angles: {}
+  };
 
   function setFeedback(message = "") {
     feedback.textContent = message;
   }
 
-  function makeOption(value, label = value) {
-    const option = document.createElement("option");
-    option.value = value;
-    option.textContent = label;
-    return option;
+  function getCycleShortLabel(cycle) {
+    if (cycle.startsWith("Logement")) return "Logement";
+    if (cycle.startsWith("Industrie")) return "Industrie";
+    return cycle;
   }
 
-  function resetSelect(select, placeholder) {
-    select.innerHTML = "";
-    select.appendChild(makeOption("", placeholder));
-    select.value = "";
+  function shortText(text, max = 96) {
+    if (!text) return "";
+    if (text.length <= max) return text;
+    return `${text.slice(0, max - 1).trim()}…`;
   }
 
-  function fillSelect(select, values, placeholder) {
-    resetSelect(select, placeholder);
-    values.forEach((value) => {
-      select.appendChild(makeOption(value));
-    });
+  function getSelectedAnglesCount() {
+    return state.conversations.reduce((sum, conversation) => {
+      return sum + ((state.angles[conversation] || []).length);
+    }, 0);
   }
 
-  function populateCycles() {
-    resetSelect(cycleSelect, "Choisir un cycle");
+  function resetState(keepCycle = false) {
+    const preservedCycle = keepCycle ? state.cycle : "";
+    state.cycle = preservedCycle;
+    state.conversations = [];
+    state.contexts = {};
+    state.angles = {};
+  }
+
+  function renderCycleCards() {
+    cycleCards.innerHTML = "";
+
     Object.keys(editorialData).forEach((cycle) => {
-      cycleSelect.appendChild(makeOption(cycle));
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `editorial-choice-card ${state.cycle === cycle ? "is-selected" : ""}`;
+      button.dataset.cycle = cycle;
+      button.setAttribute("aria-pressed", state.cycle === cycle ? "true" : "false");
+
+      button.innerHTML = `
+        <span class="editorial-choice-card__eyebrow">Cycle</span>
+        <span class="editorial-choice-card__title">${getCycleShortLabel(cycle)}</span>
+        <span class="editorial-choice-card__meta">${cycle.replace(/^Logement\s-\s|^Industrie\s-\s/, "")}</span>
+      `;
+
+      cycleCards.appendChild(button);
     });
   }
 
-  function getCurrentCycle() {
-    return cycleSelect.value.trim();
-  }
-
-  function getConversationCode(cycle, conversation) {
-    const conversations = Object.keys(editorialData[cycle] || {});
-    const index = conversations.indexOf(conversation);
-    return index >= 0 ? `C${index + 1}` : "C?";
-  }
-
-  function getContextCode(cycle, conversation, context) {
-    const contexts = Object.keys(editorialData[cycle]?.[conversation] || {});
-    const index = contexts.indexOf(context);
-    return index >= 0 ? `T${index + 1}` : "T?";
-  }
-
-  function getAngleCode(cycle, conversation, context, angle) {
-    const angles = editorialData[cycle]?.[conversation]?.[context] || [];
-    const index = angles.indexOf(angle);
-    return index >= 0 ? `A${index + 1}` : "A?";
-  }
-
-  function hasDuplicateSelections(selections) {
-    const seen = new Set();
-
-    for (const item of selections) {
-      const key = `${item.conversation}|||${item.context}|||${item.angle}`;
-      if (seen.has(key)) {
-        return true;
-      }
-      seen.add(key);
-    }
-
-    return false;
-  }
-
-  function createBlock(index) {
-    const block = document.createElement("div");
-    block.className = "editorial-selection-block";
-    block.dataset.index = String(index);
-
-    block.innerHTML = `
-      <div class="editorial-selection-block__head">
-        <h3 class="editorial-selection-block__title">Sélection <span>${index + 1}</span></h3>
-        <button type="button" class="editorial-selection-block__remove" aria-label="Supprimer cette sélection">
-          Supprimer
-        </button>
-      </div>
-
-      <div class="editorial-intake-grid editorial-intake-grid--stacked">
-        <div class="editorial-field">
-          <label>Conversation</label>
-          <select class="conversation-select" required disabled>
-            <option value="">Choisir d’abord un cycle</option>
-          </select>
-        </div>
-
-        <div class="editorial-field">
-          <label>Contexte</label>
-          <select class="context-select" required disabled>
-            <option value="">Choisir d’abord une conversation</option>
-          </select>
-        </div>
-
-        <div class="editorial-field">
-          <label>Angle</label>
-          <select class="angle-select" required disabled>
-            <option value="">Choisir d’abord un contexte</option>
-          </select>
-        </div>
-      </div>
-    `;
-
-    const conversationSelect = block.querySelector(".conversation-select");
-    const contextSelect = block.querySelector(".context-select");
-    const angleSelect = block.querySelector(".angle-select");
-    const removeButton = block.querySelector(".editorial-selection-block__remove");
-
-    conversationSelect.addEventListener("change", () => {
-      const cycle = getCurrentCycle();
-      const conversation = conversationSelect.value;
-
-      resetSelect(contextSelect, "Choisir d’abord une conversation");
-      resetSelect(angleSelect, "Choisir d’abord un contexte");
-      contextSelect.disabled = true;
-      angleSelect.disabled = true;
-
-      if (!cycle || !conversation || !editorialData[cycle]?.[conversation]) {
-        return;
-      }
-
-      fillSelect(
-        contextSelect,
-        Object.keys(editorialData[cycle][conversation]),
-        "Choisir un contexte"
-      );
-      contextSelect.disabled = false;
-    });
-
-    contextSelect.addEventListener("change", () => {
-      const cycle = getCurrentCycle();
-      const conversation = conversationSelect.value;
-      const context = contextSelect.value;
-
-      resetSelect(angleSelect, "Choisir d’abord un contexte");
-      angleSelect.disabled = true;
-
-      if (!cycle || !conversation || !context || !editorialData[cycle]?.[conversation]?.[context]) {
-        return;
-      }
-
-      fillSelect(
-        angleSelect,
-        editorialData[cycle][conversation][context],
-        "Choisir un angle"
-      );
-      angleSelect.disabled = false;
-    });
-
-    removeButton.addEventListener("click", () => {
-      const allBlocks = selectionBlocksContainer.querySelectorAll(".editorial-selection-block");
-      if (allBlocks.length <= 1) {
-        setFeedback("Au moins une sélection doit être conservée.");
-        return;
-      }
-
-      block.remove();
-      renumberBlocks();
-      setFeedback("");
-    });
-
-    return block;
-  }
-
-  function renumberBlocks() {
-    const blocks = selectionBlocksContainer.querySelectorAll(".editorial-selection-block");
-    blocks.forEach((block, idx) => {
-      block.dataset.index = String(idx);
-      const titleNumber = block.querySelector(".editorial-selection-block__title span");
-      if (titleNumber) {
-        titleNumber.textContent = String(idx + 1);
-      }
-    });
-  }
-
-  function populateConversationSelects() {
-    const cycle = getCurrentCycle();
-    const blocks = selectionBlocksContainer.querySelectorAll(".editorial-selection-block");
-
-    blocks.forEach((block) => {
-      const conversationSelect = block.querySelector(".conversation-select");
-      const contextSelect = block.querySelector(".context-select");
-      const angleSelect = block.querySelector(".angle-select");
-
-      const previousConversation = conversationSelect.value;
-      const previousContext = contextSelect.value;
-      const previousAngle = angleSelect.value;
-
-      resetSelect(contextSelect, "Choisir d’abord une conversation");
-      resetSelect(angleSelect, "Choisir d’abord un contexte");
-      contextSelect.disabled = true;
-      angleSelect.disabled = true;
-
-      if (!cycle || !editorialData[cycle]) {
-        resetSelect(conversationSelect, "Choisir d’abord un cycle");
-        conversationSelect.disabled = true;
-        return;
-      }
-
-      fillSelect(
-        conversationSelect,
-        Object.keys(editorialData[cycle]),
-        "Choisir une conversation"
-      );
-      conversationSelect.disabled = false;
-
-      if (previousConversation && editorialData[cycle][previousConversation]) {
-        conversationSelect.value = previousConversation;
-
-        fillSelect(
-          contextSelect,
-          Object.keys(editorialData[cycle][previousConversation]),
-          "Choisir un contexte"
-        );
-        contextSelect.disabled = false;
-
-        if (
-          previousContext &&
-          editorialData[cycle][previousConversation][previousContext]
-        ) {
-          contextSelect.value = previousContext;
-
-          fillSelect(
-            angleSelect,
-            editorialData[cycle][previousConversation][previousContext],
-            "Choisir un angle"
-          );
-          angleSelect.disabled = false;
-
-          if (
-            previousAngle &&
-            editorialData[cycle][previousConversation][previousContext].includes(previousAngle)
-          ) {
-            angleSelect.value = previousAngle;
-          }
-        }
-      }
-    });
-  }
-
-  function addBlock() {
-    const cycle = getCurrentCycle();
-
-    if (!cycle) {
-      setFeedback("Choisissez d’abord un cycle.");
-      cycleSelect.focus();
+  function renderConversationCards() {
+    if (!state.cycle) {
+      conversationStage.hidden = true;
+      conversationCards.innerHTML = "";
       return;
     }
 
-    const index = selectionBlocksContainer.querySelectorAll(".editorial-selection-block").length;
-    const block = createBlock(index);
-    selectionBlocksContainer.appendChild(block);
-    populateConversationSelects();
-    setFeedback("");
-  }
+    conversationStage.hidden = false;
+    conversationCards.innerHTML = "";
 
-  function ensureAtLeastOneBlock() {
-    if (!selectionBlocksContainer.querySelector(".editorial-selection-block")) {
-      selectionBlocksContainer.appendChild(createBlock(0));
-    }
-    populateConversationSelects();
-    renumberBlocks();
-  }
+    Object.keys(editorialData[state.cycle]).forEach((conversation) => {
+      const isSelected = state.conversations.includes(conversation);
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `editorial-choice-card ${isSelected ? "is-selected" : ""}`;
+      button.dataset.conversation = conversation;
+      button.setAttribute("aria-pressed", isSelected ? "true" : "false");
 
-  function getSelections() {
-    const blocks = selectionBlocksContainer.querySelectorAll(".editorial-selection-block");
+      button.innerHTML = `
+        <span class="editorial-choice-card__eyebrow">Conversation</span>
+        <span class="editorial-choice-card__title">${conversation}</span>
+        <span class="editorial-choice-card__meta">${isSelected ? "Sélectionnée" : "Cliquer pour sélectionner"}</span>
+      `;
 
-    return Array.from(blocks).map((block) => {
-      const conversation = block.querySelector(".conversation-select")?.value.trim() || "";
-      const context = block.querySelector(".context-select")?.value.trim() || "";
-      const angle = block.querySelector(".angle-select")?.value.trim() || "";
-
-      return { conversation, context, angle };
+      conversationCards.appendChild(button);
     });
   }
 
-  function validateSelections(cycle, selections) {
-    if (!cycle) {
-      return "Choisissez un cycle avant de continuer.";
+  function renderConversationDetails() {
+    conversationDetails.innerHTML = "";
+
+    state.conversations.forEach((conversation) => {
+      const contextOptions = Object.keys(editorialData[state.cycle][conversation]);
+      const selectedContext = state.contexts[conversation] || "";
+      const angleOptions = selectedContext ? editorialData[state.cycle][conversation][selectedContext] : [];
+      const selectedAngles = state.angles[conversation] || [];
+
+      const card = document.createElement("section");
+      card.className = "editorial-config-card";
+      card.dataset.conversationPanel = conversation;
+
+      const contextButtons = contextOptions.map((context) => {
+        const selected = selectedContext === context;
+        return `
+          <button
+            type="button"
+            class="editorial-chip ${selected ? "is-selected" : ""}"
+            data-context="${context}"
+            data-conversation="${conversation}"
+            aria-pressed="${selected ? "true" : "false"}"
+          >
+            ${context}
+          </button>
+        `;
+      }).join("");
+
+      const angleButtons = angleOptions.length
+        ? angleOptions.map((angle) => {
+            const selected = selectedAngles.includes(angle);
+            return `
+              <button
+                type="button"
+                class="editorial-chip editorial-chip--angle ${selected ? "is-selected" : ""}"
+                data-angle="${angle}"
+                data-conversation="${conversation}"
+                aria-pressed="${selected ? "true" : "false"}"
+              >
+                ${angle}
+              </button>
+            `;
+          }).join("")
+        : `<p class="editorial-note">Choisissez d’abord un contexte pour afficher les angles.</p>`;
+
+      card.innerHTML = `
+        <div class="editorial-config-card__head">
+          <h3>${conversation}</h3>
+          <p>Précisez le contexte le plus pertinent, puis sélectionnez un ou plusieurs angles.</p>
+        </div>
+
+        <div class="editorial-config-row">
+          <span class="editorial-config-row__label">Contexte</span>
+          <div class="editorial-chip-list">
+            ${contextButtons}
+          </div>
+        </div>
+
+        <div class="editorial-config-row">
+          <span class="editorial-config-row__label">Angle(s) concerné(s)</span>
+          <div class="editorial-chip-list">
+            ${angleButtons}
+          </div>
+        </div>
+      `;
+
+      conversationDetails.appendChild(card);
+    });
+  }
+
+  function renderSummary() {
+    const conversationCount = state.conversations.length;
+    const angleCount = getSelectedAnglesCount();
+
+    if (!state.cycle || conversationCount === 0) {
+      summaryStage.hidden = true;
+      summaryLead.textContent = "";
+      summaryLines.innerHTML = "";
+      return;
     }
 
-    if (!selections.length) {
-      return "Ajoutez au moins une sélection.";
+    summaryStage.hidden = false;
+    summaryLead.textContent = `${getCycleShortLabel(state.cycle)} · ${conversationCount} conversation${conversationCount > 1 ? "s" : ""} · ${angleCount} angle${angleCount > 1 ? "s" : ""}`;
+
+    summaryLines.innerHTML = "";
+
+    state.conversations.forEach((conversation) => {
+      const selectedContext = state.contexts[conversation] || "Contexte à préciser";
+      const selectedAngles = state.angles[conversation] || [];
+
+      let angleMeta = "Angle à préciser";
+      if (selectedAngles.length === 1) {
+        angleMeta = shortText(selectedAngles[0], 110);
+      } else if (selectedAngles.length > 1) {
+        angleMeta = `${selectedAngles.length} angles sélectionnés`;
+      }
+
+      const line = document.createElement("div");
+      line.className = "editorial-summary-line";
+      line.innerHTML = `
+        <span class="editorial-summary-line__title">${conversation}</span>
+        <span class="editorial-summary-line__meta">${selectedContext} — ${angleMeta}</span>
+      `;
+      summaryLines.appendChild(line);
+    });
+  }
+
+  function updateUI() {
+    renderCycleCards();
+    renderConversationCards();
+    renderConversationDetails();
+    renderSummary();
+  }
+
+  function toggleConversation(conversation) {
+    const index = state.conversations.indexOf(conversation);
+
+    if (index >= 0) {
+      state.conversations.splice(index, 1);
+      delete state.contexts[conversation];
+      delete state.angles[conversation];
+    } else {
+      state.conversations.push(conversation);
+    }
+  }
+
+  function toggleAngle(conversation, angle) {
+    if (!state.angles[conversation]) {
+      state.angles[conversation] = [];
     }
 
-    for (let i = 0; i < selections.length; i += 1) {
-      const item = selections[i];
-      if (!item.conversation || !item.context || !item.angle) {
-        return `Complétez entièrement la sélection ${i + 1}.`;
+    const existingIndex = state.angles[conversation].indexOf(angle);
+
+    if (existingIndex >= 0) {
+      state.angles[conversation].splice(existingIndex, 1);
+    } else {
+      state.angles[conversation].push(angle);
+    }
+  }
+
+  function validateSelection() {
+    if (!state.cycle) {
+      return "Choisissez d’abord un cycle.";
+    }
+
+    if (!state.conversations.length) {
+      return "Sélectionnez au moins une conversation.";
+    }
+
+    for (const conversation of state.conversations) {
+      if (!state.contexts[conversation]) {
+        return `Choisissez un contexte pour la conversation « ${conversation} ».`;
+      }
+
+      if (!state.angles[conversation] || !state.angles[conversation].length) {
+        return `Sélectionnez au moins un angle pour la conversation « ${conversation} ».`;
       }
     }
 
     return "";
   }
 
-  function formatSummary(cycle, selections) {
-    const cycleCode = cycleCodes[cycle] || cycle;
-    const lines = [`Cycle: ${cycleCode}`];
+  function buildReadableSummary() {
+    const cycleLabel = getCycleShortLabel(state.cycle);
+    const conversationCount = state.conversations.length;
+    const angleCount = getSelectedAnglesCount();
 
-    selections.forEach((item, idx) => {
-      const conversationCode = getConversationCode(cycle, item.conversation);
-      const contextCode = getContextCode(cycle, item.conversation, item.context);
-      const angleCode = getAngleCode(cycle, item.conversation, item.context, item.angle);
+    const lines = [
+      `Cycle : ${cycleLabel}`,
+      `${conversationCount} conversation${conversationCount > 1 ? "s" : ""} · ${angleCount} angle${angleCount > 1 ? "s" : ""}`
+    ];
 
-      lines.push(`${idx + 1}. ${conversationCode}-${contextCode}-${angleCode}`);
+    state.conversations.forEach((conversation, index) => {
+      const context = state.contexts[conversation];
+      const angles = state.angles[conversation] || [];
+
+      let anglePart = "Angle à préciser";
+      if (angles.length === 1) {
+        anglePart = shortText(angles[0], 120);
+      } else if (angles.length > 1) {
+        anglePart = `${angles.length} angles sélectionnés`;
+      }
+
+      lines.push(`${index + 1}. ${conversation} — ${context} — ${anglePart}`);
     });
 
     return lines.join("\n");
   }
 
-  populateCycles();
-  ensureAtLeastOneBlock();
+  function applyPrefillFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const cycleParam = params.get("cycle");
+    const conversationParam = params.get("conversation");
 
-  cycleSelect.addEventListener("change", () => {
-    populateConversationSelects();
+    if (cycleParam) {
+      const cycleMatch = Object.keys(editorialData).find((cycle) => {
+        const normalized = cycle.toLowerCase();
+        return (
+          normalized.includes(cycleParam.toLowerCase()) ||
+          getCycleShortLabel(cycle).toLowerCase() === cycleParam.toLowerCase()
+        );
+      });
+
+      if (cycleMatch) {
+        state.cycle = cycleMatch;
+      }
+    }
+
+    if (state.cycle && conversationParam) {
+      const requested = conversationParam.split(",").map((item) => item.trim()).filter(Boolean);
+      const available = Object.keys(editorialData[state.cycle]);
+
+      requested.forEach((item) => {
+        let foundConversation = "";
+
+        if (/^C\d+$/i.test(item)) {
+          const index = Number(item.slice(1)) - 1;
+          if (available[index]) {
+            foundConversation = available[index];
+          }
+        } else {
+          foundConversation = available.find((conversation) => conversation.toLowerCase() === item.toLowerCase()) || "";
+        }
+
+        if (foundConversation && !state.conversations.includes(foundConversation)) {
+          state.conversations.push(foundConversation);
+        }
+      });
+    }
+  }
+
+  cycleCards.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-cycle]");
+    if (!button) return;
+
+    const nextCycle = button.dataset.cycle;
+    if (!nextCycle) return;
+
+    if (state.cycle !== nextCycle) {
+      state.cycle = nextCycle;
+      resetState(true);
+    }
+
     setFeedback("");
+    updateUI();
   });
 
-  addSelectionButton.addEventListener("click", () => {
-    addBlock();
+  conversationCards.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-conversation]");
+    if (!button) return;
+
+    const conversation = button.dataset.conversation;
+    if (!conversation) return;
+
+    toggleConversation(conversation);
+    setFeedback("");
+    updateUI();
+  });
+
+  conversationDetails.addEventListener("click", (event) => {
+    const contextButton = event.target.closest("[data-context]");
+    const angleButton = event.target.closest("[data-angle]");
+
+    if (contextButton) {
+      const conversation = contextButton.dataset.conversation;
+      const context = contextButton.dataset.context;
+
+      if (conversation && context) {
+        state.contexts[conversation] = context;
+        state.angles[conversation] = [];
+        setFeedback("");
+        updateUI();
+      }
+      return;
+    }
+
+    if (angleButton) {
+      const conversation = angleButton.dataset.conversation;
+      const angle = angleButton.dataset.angle;
+
+      if (conversation && angle) {
+        toggleAngle(conversation, angle);
+        setFeedback("");
+        updateUI();
+      }
+    }
+  });
+
+  resetSelectionButton.addEventListener("click", () => {
+    resetState();
+    setFeedback("");
+    updateUI();
   });
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const cycle = getCurrentCycle();
-    const selections = getSelections();
-    const validationMessage = validateSelections(cycle, selections);
-
+    const validationMessage = validateSelection();
     if (validationMessage) {
       setFeedback(validationMessage);
       return;
     }
 
-    if (hasDuplicateSelections(selections)) {
-      setFeedback("Une même sélection ne peut pas être ajoutée deux fois.");
-      return;
-    }
-
-    const summary = formatSummary(cycle, selections);
+    const summary = buildReadableSummary();
 
     if (summary.length > CAL_FIELD_MAX_LENGTH) {
-      setFeedback("La sélection est trop longue pour être transmise au calendrier. Réduisez le nombre de sélections.");
+      setFeedback("La sélection est trop longue pour être transmise au calendrier. Réduisez le nombre de conversations ou d’angles sélectionnés.");
       return;
     }
 
@@ -544,4 +603,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.location.href = url.toString();
   });
+
+  applyPrefillFromUrl();
+  updateUI();
 });
