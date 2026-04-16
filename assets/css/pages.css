@@ -2442,20 +2442,216 @@ body.page-interior {
    }
 
 
+/* =========================================================
+   DEMANDER UN ÉCHANGE — V3 CONTACT + SUJETS
+   ========================================================= */
 
+.editorial-stage[hidden] {
+  display: none !important;
+}
 
+.editorial-stage--open {
+  margin-top: 6px;
+}
 
+.editorial-stage--nested {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
 
+.editorial-stage__subhead {
+  max-width: 760px;
+  margin: 0 0 18px;
+}
 
+.editorial-stage__subhead h4 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  line-height: 1.12;
+  font-weight: 600;
+  color: var(--ep-ink);
+}
 
+.editorial-stage__subhead p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.58;
+  color: var(--ep-ink-soft);
+}
 
+.editorial-contact-form {
+  margin-top: 10px;
+  display: grid;
+  gap: 18px;
+}
 
+.editorial-form-panel {
+  position: relative;
+  padding: 22px 20px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--ep-line);
+}
 
+.editorial-form-panel__head {
+  margin-bottom: 16px;
+}
 
+.editorial-form-panel__head h4 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 1.04rem;
+  line-height: 1.12;
+  font-weight: 600;
+  color: var(--ep-ink);
+}
 
+.editorial-form-panel__head p {
+  margin: 0;
+  color: var(--ep-ink-soft);
+}
 
+.editorial-contact-grid {
+  display: grid;
+  gap: 18px;
+}
 
+.editorial-contact-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 
+.editorial-field input {
+  appearance: none;
+  -webkit-appearance: none;
+  min-height: 52px;
+  width: 100%;
+  padding: 0 14px;
+  border: 1px solid var(--ep-line);
+  background: #ffffff;
+  color: var(--ep-ink);
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  border-radius: 0;
+  box-shadow: none;
+}
 
+.editorial-field input:focus {
+  outline: none;
+  border-color: rgba(123, 51, 38, 0.55);
+  box-shadow: 0 0 0 3px rgba(123, 51, 38, 0.10);
+}
 
+.editorial-contact-confirmation {
+  margin-bottom: 18px;
+  padding: 16px 18px;
+  border: 1px solid rgba(123, 51, 38, 0.22);
+  background: rgba(255, 247, 241, 0.96);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ep-ink);
+}
 
+.editorial-contact-confirmation span {
+  color: var(--ep-ink-soft);
+}
+
+.editorial-button {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 18px;
+  border: 1px solid var(--ep-accent);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.editorial-button:hover {
+  transform: translateY(-1px);
+}
+
+.editorial-button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+  transform: none;
+}
+
+.editorial-button--primary {
+  background: var(--ep-accent);
+  color: var(--ep-white);
+  border-color: var(--ep-accent);
+}
+
+.editorial-button--primary:hover {
+  opacity: 0.94;
+}
+
+.editorial-button--secondary {
+  background: transparent;
+  color: var(--ep-ink);
+  border-color: rgba(123, 51, 38, 0.28);
+}
+
+.editorial-actions--contact {
+  margin-top: 6px;
+}
+
+.editorial-primary-submit {
+  width: fit-content;
+}
+
+.editorial-choice-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(102, 77, 59, 0.18);
+  box-shadow: 0 8px 24px rgba(31, 26, 23, 0.04);
+}
+
+.editorial-choice-card.is-selected {
+  border-color: rgba(123, 51, 38, 0.72);
+  background: rgba(255, 247, 241, 0.98);
+  box-shadow: 0 10px 28px rgba(31, 26, 23, 0.08);
+}
+
+.editorial-choice-card__meta {
+  color: var(--ep-ink-soft);
+}
+
+.editorial-chip {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.editorial-summary-card {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 1023px) {
+  .editorial-contact-grid--2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 780px) {
+  .editorial-form-panel,
+  .editorial-contact-confirmation {
+    padding: 18px 16px;
+  }
+
+  .editorial-button {
+    width: 100%;
+  }
+
+  .editorial-primary-submit {
+    width: 100%;
+  }
+}
