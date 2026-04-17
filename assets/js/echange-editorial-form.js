@@ -3,7 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const CAL_BOOKING_URL = "https://cal.com/en-plateau/echange-editorial-15-min";
   const CAL_FIELD_IDENTIFIER = "selection_editoriale";
   const CAL_FIELD_MAX_LENGTH = 1000;
-  const WIZARD_STORAGE_KEY = "enplateau_editorial_wizard_v2";
+  const WIZARD_STORAGE_KEY = "enplateau_editorial_wizard_v3";
+  const LEGACY_STORAGE_KEYS = [
+    "enplateau_editorial_wizard_v2",
+    "enplateau_editorial_contact_v1"
+  ];
 
   const STEP_TITLES = {
     1: "Coordonnées professionnelles",
@@ -15,6 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const rawEditorialSource = window.EN_PLATEAU_EDITORIAL_DATA;
+
+  const wizardRoot = document.getElementById("editorial-wizard");
+  const wizardAnchor = document.getElementById("formulaire-echange-editorial");
 
   const contactForm = document.getElementById("editorial-contact-form");
   const organisationInput = document.getElementById("organisation-input");
@@ -56,6 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (
     !rawEditorialSource ||
     !Array.isArray(rawEditorialSource.cycles) ||
+    !wizardRoot ||
+    !wizardAnchor ||
     !contactForm ||
     !organisationInput ||
     !activityInput ||
@@ -169,12 +178,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .replaceAll("'", "&#039;");
   }
 
-  function shortText(text, max = 96) {
-    if (!text) return "";
-    if (text.length <= max) return text;
-    return `${text.slice(0, max - 1).trim()}…`;
-  }
-
   function pluralize(count, singular, plural) {
     return count > 1 ? plural : singular;
   }
@@ -192,6 +195,10 @@ document.addEventListener("DOMContentLoaded", () => {
       step5Feedback,
       finalFeedback
     ].forEach((node) => setFeedback(node, ""));
+  }
+
+  function scrollWizardToTop() {
+    wizardAnchor.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function getCycleByCode(cycleCode) {
@@ -240,6 +247,17 @@ document.addEventListener("DOMContentLoaded", () => {
     phoneInput.value = state.contact.phone;
   }
 
+  function removeLegacyStorage() {
+    LEGACY_STORAGE_KEYS.forEach((key) => {
+      try {
+        localStorage.removeItem(key);
+        sessionStorage.removeItem(key);
+      } catch (error) {
+        console.warn(`Impossible de supprimer le stockage hérité ${key}.`, error);
+      }
+    });
+  }
+
   function saveWizardState() {
     try {
       localStorage.setItem(WIZARD_STORAGE_KEY, JSON.stringify(state));
@@ -252,6 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const raw = localStorage.getItem(WIZARD_STORAGE_KEY);
       if (!raw) return;
+
       const parsed = JSON.parse(raw);
       if (!parsed || typeof parsed !== "object") return;
 
@@ -292,12 +311,18 @@ document.addEventListener("DOMContentLoaded", () => {
     state.contexts = {};
     state.angles = {};
 
-    hydrateInputsFromState();
     contactForm.reset();
-    localStorage.removeItem(WIZARD_STORAGE_KEY);
+    hydrateInputsFromState();
     clearAllFeedbacks();
+
+    try {
+      localStorage.removeItem(WIZARD_STORAGE_KEY);
+    } catch (error) {
+      console.warn("Impossible de supprimer l'état du wizard.", error);
+    }
+
     updateUI();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollWizardToTop();
   }
 
   function getSelectedAnglesCount() {
@@ -481,7 +506,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const cycle = getCurrentCycle();
     conversationCards.innerHTML = "";
 
-    if (!cycle) return;
+    if (!cycle) {
+      conversationCards.innerHTML = `<p class="editorial-note">Choisissez d’abord un cycle.</p>`;
+      return;
+    }
 
     cycle.conversations.forEach((conversation) => {
       const isSelected = state.conversations.includes(conversation.code);
@@ -501,6 +529,64 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function buildContextStepIntro(cycle) {
+    if (!cycle) return "";
+
+    if (cycle.code === "LOG") {
+      return `
+        <section class="editorial-config-card">
+          <div class="editorial-config-card__head">
+            <h3>Comment lire les contextes territoriaux</h3>
+            <p>
+              La production et la transformation immobilières ne se lisent pas de la même manière selon les territoires.
+              Merci de sélectionner, pour chaque conversation retenue, le contexte qui correspond le mieux à la réalité de vos interventions.
+            </p>
+          </div>
+          <div class="editorial-config-row">
+            <span class="editorial-config-row__label">Repères</span>
+            <p class="editorial-note">
+              <strong>Territoires en tension</strong> : marchés très sollicités, pression foncière, rareté, acceptabilité plus sensible.
+            </p>
+            <p class="editorial-note">
+              <strong>Territoires en croissance</strong> : marchés en développement, montée progressive des usages, des équipements et de la profondeur de marché.
+            </p>
+            <p class="editorial-note">
+              <strong>Territoires en reconversion</strong> : marchés marqués par la requalification, le redéploiement, la remise à niveau ou la dépendance à des soutiens externes.
+            </p>
+          </div>
+        </section>
+      `;
+    }
+
+    if (cycle.code === "IND") {
+      return `
+        <section class="editorial-config-card">
+          <div class="editorial-config-card__head">
+            <h3>Comment lire les contextes industriels</h3>
+            <p>
+              Une même tension industrielle ne se formule pas de la même manière selon que l’activité est en montée,
+              en ajustement ou en réinvention. Merci de sélectionner le contexte qui correspond le mieux à votre expérience.
+            </p>
+          </div>
+          <div class="editorial-config-row">
+            <span class="editorial-config-row__label">Repères</span>
+            <p class="editorial-note">
+              <strong>Croissance sous tension</strong> : hausse d’activité, montée en cadence, besoins d’industrialisation, saturation de certains maillons.
+            </p>
+            <p class="editorial-note">
+              <strong>Adaptation sous contrainte</strong> : pression sur les marges, arbitrages défensifs, maintien de l’activité sous contraintes multiples.
+            </p>
+            <p class="editorial-note">
+              <strong>Réinvention sous crise</strong> : redéploiement, repositionnement, rupture de modèle ou transformation profonde de l’outil.
+            </p>
+          </div>
+        </section>
+      `;
+    }
+
+    return "";
+  }
+
   function renderContextSelectionPanels() {
     const cycle = getCurrentCycle();
     contextSelectionPanels.innerHTML = "";
@@ -508,6 +594,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!cycle || !state.conversations.length) {
       contextSelectionPanels.innerHTML = `<p class="editorial-note">Sélectionnez d’abord une ou plusieurs conversations.</p>`;
       return;
+    }
+
+    const introHtml = buildContextStepIntro(cycle);
+    if (introHtml) {
+      contextSelectionPanels.insertAdjacentHTML("beforeend", introHtml);
     }
 
     state.conversations.forEach((conversationCode) => {
@@ -789,6 +880,14 @@ document.addEventListener("DOMContentLoaded", () => {
     input.addEventListener("input", markContactAsDirty);
   });
 
+  async function parseJsonSafely(response) {
+    try {
+      return await response.json();
+    } catch (error) {
+      return null;
+    }
+  }
+
   async function submitContactStep() {
     const validationMessage = validateContactStep();
     if (validationMessage) {
@@ -816,10 +915,10 @@ document.addEventListener("DOMContentLoaded", () => {
         })
       });
 
-      const data = await response.json();
+      const data = await parseJsonSafely(response);
 
-      if (!response.ok || !data.ok) {
-        setFeedback(contactFeedback, data.message || "Impossible d’enregistrer vos coordonnées pour le moment.");
+      if (!response.ok || !data || !data.ok) {
+        setFeedback(contactFeedback, data?.message || "Impossible d’enregistrer vos coordonnées pour le moment.");
         return false;
       }
 
@@ -845,7 +944,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!ok) return;
       state.currentStep = 2;
       updateUI();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      scrollWizardToTop();
       return;
     }
 
@@ -884,16 +983,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (state.currentStep < 6) {
       state.currentStep += 1;
       updateUI();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      scrollWizardToTop();
     }
   }
 
   function goToPreviousStep() {
     clearAllFeedbacks();
+
     if (state.currentStep > 1) {
       state.currentStep -= 1;
       updateUI();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      scrollWizardToTop();
     }
   }
 
@@ -937,7 +1037,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  async function submitFinalSelection() {
+  function submitFinalSelection() {
     clearAllFeedbacks();
 
     const step5Message = validateStep5();
@@ -1013,11 +1113,9 @@ document.addEventListener("DOMContentLoaded", () => {
     await goToNextStep();
   });
   submitButton.addEventListener("click", submitFinalSelection);
+  resetButton.addEventListener("click", resetWizardState);
 
-  resetButton.addEventListener("click", () => {
-    resetWizardState();
-  });
-
+  removeLegacyStorage();
   restoreWizardState();
   applyPrefillFromUrl();
   clampCurrentStep();
