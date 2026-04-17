@@ -3,7 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const CAL_BOOKING_URL = "https://cal.com/en-plateau/echange-editorial-15-min";
   const CAL_FIELD_IDENTIFIER = "selection_editoriale";
   const CAL_FIELD_MAX_LENGTH = 1000;
-  const CONTACT_STORAGE_KEY = "enplateau_editorial_contact_v1";
+  const WIZARD_STORAGE_KEY = "enplateau_editorial_wizard_v2";
+
+  const STEP_TITLES = {
+    1: "Coordonnées professionnelles",
+    2: "Cycle",
+    3: "Conversation",
+    4: "Contexte",
+    5: "Angles",
+    6: "Récapitulatif"
+  };
+
+  const rawEditorialSource = window.EN_PLATEAU_EDITORIAL_DATA;
 
   const contactForm = document.getElementById("editorial-contact-form");
   const organisationInput = document.getElementById("organisation-input");
@@ -12,52 +23,68 @@ document.addEventListener("DOMContentLoaded", () => {
   const lastNameInput = document.getElementById("last-name-input");
   const emailInput = document.getElementById("email-input");
   const phoneInput = document.getElementById("phone-input");
-  const contactSubmitButton = document.getElementById("editorial-contact-submit");
-  const contactFeedback = document.getElementById("editorial-contact-feedback");
-  const selectionStage = document.getElementById("editorial-selection-stage");
+
+  const progressLabel = document.getElementById("editorial-progress-label");
+  const progressTitle = document.getElementById("editorial-progress-title");
+  const progressBarFill = document.getElementById("editorial-progress-bar-fill");
+  const progressSteps = document.getElementById("editorial-progress-steps");
+
   const contactConfirmation = document.getElementById("editorial-contact-confirmation");
 
-  const selectionForm = document.getElementById("editorial-intake-form");
   const cycleCards = document.getElementById("cycle-cards");
-  const conversationStage = document.getElementById("conversation-stage");
   const conversationCards = document.getElementById("conversation-cards");
-  const conversationDetails = document.getElementById("conversation-details");
-  const summaryStage = document.getElementById("summary-stage");
+  const contextSelectionPanels = document.getElementById("context-selection-panels");
+  const angleSelectionPanels = document.getElementById("angle-selection-panels");
+
   const summaryLead = document.getElementById("editorial-selection-summary-lead");
   const summaryLines = document.getElementById("editorial-selection-summary-lines");
-  const resetSelectionButton = document.getElementById("reset-selection-button");
-  const selectionFeedback = document.getElementById("editorial-intake-feedback");
+
+  const prevButton = document.getElementById("editorial-step-prev");
+  const nextButton = document.getElementById("editorial-step-next");
+  const submitButton = document.getElementById("editorial-step-submit");
+  const resetButton = document.getElementById("reset-selection-button");
+
+  const contactFeedback = document.getElementById("editorial-contact-feedback");
+  const step2Feedback = document.getElementById("editorial-step-2-feedback");
+  const step3Feedback = document.getElementById("editorial-step-3-feedback");
+  const step4Feedback = document.getElementById("editorial-step-4-feedback");
+  const step5Feedback = document.getElementById("editorial-step-5-feedback");
+  const finalFeedback = document.getElementById("editorial-intake-feedback");
+
+  const stepElements = Array.from(document.querySelectorAll(".editorial-step"));
 
   if (
+    !rawEditorialSource ||
+    !Array.isArray(rawEditorialSource.cycles) ||
     !contactForm ||
     !organisationInput ||
     !activityInput ||
     !firstNameInput ||
     !lastNameInput ||
     !emailInput ||
-    !contactSubmitButton ||
-    !contactFeedback ||
-    !selectionStage ||
+    !progressLabel ||
+    !progressTitle ||
+    !progressBarFill ||
+    !progressSteps ||
     !contactConfirmation ||
-    !selectionForm ||
     !cycleCards ||
-    !conversationStage ||
     !conversationCards ||
-    !conversationDetails ||
-    !summaryStage ||
+    !contextSelectionPanels ||
+    !angleSelectionPanels ||
     !summaryLead ||
     !summaryLines ||
-    !resetSelectionButton ||
-    !selectionFeedback
+    !prevButton ||
+    !nextButton ||
+    !submitButton ||
+    !resetButton ||
+    !contactFeedback ||
+    !step2Feedback ||
+    !step3Feedback ||
+    !step4Feedback ||
+    !step5Feedback ||
+    !finalFeedback ||
+    !stepElements.length
   ) {
-    return;
-  }
-
-  const rawEditorialSource = window.EN_PLATEAU_EDITORIAL_DATA;
-
-  if (!rawEditorialSource || !Array.isArray(rawEditorialSource.cycles)) {
-    selectionFeedback.textContent =
-      "Les données éditoriales ne sont pas disponibles. Vérifiez le chargement de /assets/js/data/editorial-data.js avant echange-editorial-form.js.";
     return;
   }
 
@@ -117,6 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const state = {
+    currentStep: 1,
     contact: {
       organisation: "",
       activity: "",
@@ -141,14 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .replaceAll("'", "&#039;");
   }
 
-  function setContactFeedback(message = "") {
-    contactFeedback.textContent = message;
-  }
-
-  function setSelectionFeedback(message = "") {
-    selectionFeedback.textContent = message;
-  }
-
   function shortText(text, max = 96) {
     if (!text) return "";
     if (text.length <= max) return text;
@@ -159,17 +179,19 @@ document.addEventListener("DOMContentLoaded", () => {
     return count > 1 ? plural : singular;
   }
 
-  function getSelectedAnglesCount() {
-    return state.conversations.reduce((sum, conversationCode) => {
-      return sum + ((state.angles[conversationCode] || []).length);
-    }, 0);
+  function setFeedback(node, message = "") {
+    if (node) node.textContent = message;
   }
 
-  function getCycleShortLabel(cycle) {
-    if (!cycle) return "";
-    if (cycle.code === "LOG") return "Logement";
-    if (cycle.code === "IND") return "Industrie";
-    return cycle.label || cycle.code || "";
+  function clearAllFeedbacks() {
+    [
+      contactFeedback,
+      step2Feedback,
+      step3Feedback,
+      step4Feedback,
+      step5Feedback,
+      finalFeedback
+    ].forEach((node) => setFeedback(node, ""));
   }
 
   function getCycleByCode(cycleCode) {
@@ -197,76 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function formatProfiles(angle) {
     const profiles = Array.isArray(angle.profiles) ? angle.profiles.filter(Boolean) : [];
-    if (!profiles.length) return "";
     return profiles.join(" · ");
-  }
-
-  function saveContactState() {
-    try {
-      sessionStorage.setItem(CONTACT_STORAGE_KEY, JSON.stringify(state.contact));
-    } catch (error) {
-      console.warn("Impossible d'enregistrer l'étape contact en sessionStorage.", error);
-    }
-  }
-
-  function restoreContactState() {
-    try {
-      const raw = sessionStorage.getItem(CONTACT_STORAGE_KEY);
-      if (!raw) return false;
-
-      const parsed = JSON.parse(raw);
-      if (!parsed || typeof parsed !== "object") return false;
-
-      state.contact = {
-        organisation: parsed.organisation || "",
-        activity: parsed.activity || "",
-        firstName: parsed.firstName || "",
-        lastName: parsed.lastName || "",
-        email: parsed.email || "",
-        phone: parsed.phone || ""
-      };
-
-      organisationInput.value = state.contact.organisation;
-      activityInput.value = state.contact.activity;
-      firstNameInput.value = state.contact.firstName;
-      lastNameInput.value = state.contact.lastName;
-      emailInput.value = state.contact.email;
-      phoneInput.value = state.contact.phone;
-
-      state.contactValidated = Boolean(
-        state.contact.organisation &&
-        state.contact.activity &&
-        state.contact.firstName &&
-        state.contact.lastName &&
-        state.contact.email
-      );
-
-      return state.contactValidated;
-    } catch (error) {
-      console.warn("Impossible de restaurer l'étape contact depuis sessionStorage.", error);
-      return false;
-    }
-  }
-
-  function showSelectionStage() {
-    selectionStage.hidden = false;
-    renderContactConfirmation();
-  }
-
-  function hideSelectionStage() {
-    selectionStage.hidden = true;
-  }
-
-  function renderContactConfirmation() {
-    if (!state.contactValidated) {
-      contactConfirmation.innerHTML = "";
-      return;
-    }
-
-    contactConfirmation.innerHTML = `
-      <strong>Demande confirmée :</strong> ${escapeHtml(state.contact.firstName)} ${escapeHtml(state.contact.lastName)}
-      <span> · ${escapeHtml(state.contact.organisation)} · ${escapeHtml(state.contact.activity)}</span>
-    `;
   }
 
   function updateContactStateFromInputs() {
@@ -278,25 +231,96 @@ document.addEventListener("DOMContentLoaded", () => {
     state.contact.phone = phoneInput.value.trim();
   }
 
+  function hydrateInputsFromState() {
+    organisationInput.value = state.contact.organisation;
+    activityInput.value = state.contact.activity;
+    firstNameInput.value = state.contact.firstName;
+    lastNameInput.value = state.contact.lastName;
+    emailInput.value = state.contact.email;
+    phoneInput.value = state.contact.phone;
+  }
+
+  function saveWizardState() {
+    try {
+      localStorage.setItem(WIZARD_STORAGE_KEY, JSON.stringify(state));
+    } catch (error) {
+      console.warn("Impossible d'enregistrer l'état du wizard.", error);
+    }
+  }
+
+  function restoreWizardState() {
+    try {
+      const raw = localStorage.getItem(WIZARD_STORAGE_KEY);
+      if (!raw) return;
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== "object") return;
+
+      state.currentStep = Number(parsed.currentStep) || 1;
+      state.contact = {
+        organisation: parsed.contact?.organisation || "",
+        activity: parsed.contact?.activity || "",
+        firstName: parsed.contact?.firstName || "",
+        lastName: parsed.contact?.lastName || "",
+        email: parsed.contact?.email || "",
+        phone: parsed.contact?.phone || ""
+      };
+      state.contactValidated = Boolean(parsed.contactValidated);
+      state.cycle = parsed.cycle || "";
+      state.conversations = Array.isArray(parsed.conversations) ? parsed.conversations : [];
+      state.contexts = parsed.contexts && typeof parsed.contexts === "object" ? parsed.contexts : {};
+      state.angles = parsed.angles && typeof parsed.angles === "object" ? parsed.angles : {};
+
+      hydrateInputsFromState();
+    } catch (error) {
+      console.warn("Impossible de restaurer l'état du wizard.", error);
+    }
+  }
+
+  function resetWizardState() {
+    state.currentStep = 1;
+    state.contact = {
+      organisation: "",
+      activity: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: ""
+    };
+    state.contactValidated = false;
+    state.cycle = "";
+    state.conversations = [];
+    state.contexts = {};
+    state.angles = {};
+
+    hydrateInputsFromState();
+    contactForm.reset();
+    localStorage.removeItem(WIZARD_STORAGE_KEY);
+    clearAllFeedbacks();
+    updateUI();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function getSelectedAnglesCount() {
+    return state.conversations.reduce((sum, conversationCode) => {
+      return sum + ((state.angles[conversationCode] || []).length);
+    }, 0);
+  }
+
   function validateContactStep() {
     updateContactStateFromInputs();
 
     if (!state.contact.organisation) {
       return "Renseignez votre organisation / structure.";
     }
-
     if (!state.contact.activity) {
       return "Renseignez votre domaine d’activité.";
     }
-
     if (!state.contact.firstName) {
       return "Renseignez votre prénom.";
     }
-
     if (!state.contact.lastName) {
       return "Renseignez votre nom.";
     }
-
     if (!state.contact.email) {
       return "Renseignez votre email professionnel.";
     }
@@ -309,37 +333,126 @@ document.addEventListener("DOMContentLoaded", () => {
     return "";
   }
 
-  function resetSelectionState(keepCycle = false) {
-    const preservedCycle = keepCycle ? state.cycle : "";
-    state.cycle = preservedCycle;
-    state.conversations = [];
-    state.contexts = {};
-    state.angles = {};
+  function validateStep2() {
+    return state.cycle ? "" : "Choisissez un cycle.";
   }
 
-  function toggleConversation(conversationCode) {
-    const index = state.conversations.indexOf(conversationCode);
+  function validateStep3() {
+    return state.conversations.length ? "" : "Sélectionnez au moins une conversation.";
+  }
 
-    if (index >= 0) {
-      state.conversations.splice(index, 1);
-      delete state.contexts[conversationCode];
-      delete state.angles[conversationCode];
-    } else {
-      state.conversations.push(conversationCode);
+  function validateStep4() {
+    const cycle = getCurrentCycle();
+    if (!cycle) return "Choisissez d’abord un cycle.";
+
+    for (const conversationCode of state.conversations) {
+      const conversation = getConversationByCode(cycle, conversationCode);
+      const selectedContext = getContextByCode(conversation, state.contexts[conversationCode] || "");
+      if (!selectedContext) {
+        return `Choisissez un contexte pour « ${conversation?.title || conversationCode} ».`;
+      }
+    }
+
+    return "";
+  }
+
+  function validateStep5() {
+    const cycle = getCurrentCycle();
+    if (!cycle) return "Choisissez d’abord un cycle.";
+
+    for (const conversationCode of state.conversations) {
+      const conversation = getConversationByCode(cycle, conversationCode);
+      const context = getContextByCode(conversation, state.contexts[conversationCode] || "");
+
+      if (!context) {
+        return `Choisissez un contexte pour « ${conversation?.title || conversationCode} ».`;
+      }
+
+      if (!state.angles[conversationCode] || !state.angles[conversationCode].length) {
+        return `Sélectionnez au moins un angle pour « ${conversation?.title || conversationCode} ».`;
+      }
+    }
+
+    return "";
+  }
+
+  function getMaxAccessibleStep() {
+    if (!state.contactValidated) return 1;
+    if (!state.cycle) return 2;
+    if (!state.conversations.length) return 3;
+
+    const step4Validation = validateStep4();
+    if (step4Validation) return 4;
+
+    const step5Validation = validateStep5();
+    if (step5Validation) return 5;
+
+    return 6;
+  }
+
+  function clampCurrentStep() {
+    const maxStep = getMaxAccessibleStep();
+    if (state.currentStep > maxStep) {
+      state.currentStep = maxStep;
+    }
+    if (state.currentStep < 1) {
+      state.currentStep = 1;
     }
   }
 
-  function toggleAngle(conversationCode, fullCode) {
-    if (!state.angles[conversationCode]) {
-      state.angles[conversationCode] = [];
+  function renderContactConfirmation() {
+    const shouldShow = state.contactValidated && state.currentStep > 1;
+
+    if (!shouldShow) {
+      contactConfirmation.hidden = true;
+      contactConfirmation.innerHTML = "";
+      return;
     }
 
-    const existingIndex = state.angles[conversationCode].indexOf(fullCode);
+    contactConfirmation.hidden = false;
+    contactConfirmation.innerHTML = `
+      <strong>Demande confirmée :</strong> ${escapeHtml(state.contact.firstName)} ${escapeHtml(state.contact.lastName)}
+      <span> · ${escapeHtml(state.contact.organisation)} · ${escapeHtml(state.contact.activity)}</span>
+    `;
+  }
 
-    if (existingIndex >= 0) {
-      state.angles[conversationCode].splice(existingIndex, 1);
+  function renderProgress() {
+    progressLabel.textContent = `Étape ${state.currentStep} sur 6`;
+    progressTitle.textContent = STEP_TITLES[state.currentStep] || "";
+    progressBarFill.style.width = `${(state.currentStep / 6) * 100}%`;
+
+    const items = Array.from(progressSteps.querySelectorAll("li"));
+    items.forEach((item, index) => {
+      const stepNumber = index + 1;
+      item.classList.remove("is-current", "is-complete");
+
+      if (stepNumber < state.currentStep) {
+        item.classList.add("is-complete");
+      } else if (stepNumber === state.currentStep) {
+        item.classList.add("is-current");
+      }
+    });
+  }
+
+  function renderStepsVisibility() {
+    stepElements.forEach((stepElement) => {
+      const stepNumber = Number(stepElement.dataset.step);
+      const isActive = stepNumber === state.currentStep;
+
+      stepElement.hidden = !isActive;
+      stepElement.classList.toggle("is-active", isActive);
+    });
+  }
+
+  function renderFooterButtons() {
+    prevButton.disabled = state.currentStep === 1;
+
+    if (state.currentStep === 6) {
+      nextButton.hidden = true;
+      submitButton.hidden = false;
     } else {
-      state.angles[conversationCode].push(fullCode);
+      nextButton.hidden = false;
+      submitButton.hidden = true;
     }
   }
 
@@ -366,15 +479,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderConversationCards() {
     const cycle = getCurrentCycle();
-
-    if (!cycle) {
-      conversationStage.hidden = true;
-      conversationCards.innerHTML = "";
-      return;
-    }
-
-    conversationStage.hidden = false;
     conversationCards.innerHTML = "";
+
+    if (!cycle) return;
 
     cycle.conversations.forEach((conversation) => {
       const isSelected = state.conversations.includes(conversation.code);
@@ -394,34 +501,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function renderConversationDetails() {
-    conversationDetails.innerHTML = "";
-
+  function renderContextSelectionPanels() {
     const cycle = getCurrentCycle();
-    if (!cycle) return;
+    contextSelectionPanels.innerHTML = "";
+
+    if (!cycle || !state.conversations.length) {
+      contextSelectionPanels.innerHTML = `<p class="editorial-note">Sélectionnez d’abord une ou plusieurs conversations.</p>`;
+      return;
+    }
 
     state.conversations.forEach((conversationCode) => {
       const conversation = getConversationByCode(cycle, conversationCode);
       if (!conversation) return;
 
       const selectedContextCode = state.contexts[conversationCode] || "";
-      const selectedContext = getContextByCode(conversation, selectedContextCode);
-      const angleOptions = selectedContext ? selectedContext.angles : [];
-      const selectedAngles = state.angles[conversationCode] || [];
-
-      const card = document.createElement("section");
-      card.className = "editorial-config-card";
-      card.dataset.conversationPanel = conversation.code;
 
       const contextButtons = conversation.contexts.map((context) => {
-        const selected = selectedContextCode === context.code;
+        const isSelected = selectedContextCode === context.code;
         return `
           <button
             type="button"
-            class="editorial-chip ${selected ? "is-selected" : ""}"
+            class="editorial-chip ${isSelected ? "is-selected" : ""}"
             data-context="${escapeHtml(context.code)}"
             data-conversation="${escapeHtml(conversation.code)}"
-            aria-pressed="${selected ? "true" : "false"}"
+            aria-pressed="${isSelected ? "true" : "false"}"
             title="${escapeHtml(context.description)}"
           >
             ${escapeHtml(context.label)}
@@ -429,26 +532,10 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
       }).join("");
 
-      const angleButtons = angleOptions.length
-        ? angleOptions.map((angle) => {
-            const selected = selectedAngles.includes(angle.fullCode);
-            const profilesText = formatProfiles(angle);
-            return `
-              <button
-                type="button"
-                class="editorial-chip editorial-chip--angle ${selected ? "is-selected" : ""}"
-                data-angle="${escapeHtml(angle.fullCode)}"
-                data-conversation="${escapeHtml(conversation.code)}"
-                aria-pressed="${selected ? "true" : "false"}"
-                title="${escapeHtml(angle.motherAngle)}"
-              >
-                ${escapeHtml(angle.question)}
-                ${profilesText ? `<br><small>Profils concernés : ${escapeHtml(profilesText)}</small>` : ""}
-              </button>
-            `;
-          }).join("")
-        : `<p class="editorial-note">Choisissez d’abord un contexte pour afficher les angles.</p>`;
+      const selectedContext = getContextByCode(conversation, selectedContextCode);
 
+      const card = document.createElement("section");
+      card.className = "editorial-config-card";
       card.innerHTML = `
         <div class="editorial-config-card__head">
           <h3>${escapeHtml(conversation.title)}</h3>
@@ -462,6 +549,68 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           ${selectedContext ? `<p class="editorial-note">${escapeHtml(selectedContext.description)}</p>` : ""}
         </div>
+      `;
+
+      contextSelectionPanels.appendChild(card);
+    });
+  }
+
+  function renderAngleSelectionPanels() {
+    const cycle = getCurrentCycle();
+    angleSelectionPanels.innerHTML = "";
+
+    if (!cycle || !state.conversations.length) {
+      angleSelectionPanels.innerHTML = `<p class="editorial-note">Sélectionnez d’abord une ou plusieurs conversations.</p>`;
+      return;
+    }
+
+    state.conversations.forEach((conversationCode) => {
+      const conversation = getConversationByCode(cycle, conversationCode);
+      const selectedContext = getContextByCode(conversation, state.contexts[conversationCode] || "");
+
+      if (!conversation) return;
+
+      const card = document.createElement("section");
+      card.className = "editorial-config-card";
+
+      if (!selectedContext) {
+        card.innerHTML = `
+          <div class="editorial-config-card__head">
+            <h3>${escapeHtml(conversation.title)}</h3>
+            <p>${escapeHtml(conversation.tension)}</p>
+          </div>
+          <p class="editorial-note">Choisissez d’abord un contexte à l’étape précédente.</p>
+        `;
+        angleSelectionPanels.appendChild(card);
+        return;
+      }
+
+      const selectedAngles = state.angles[conversationCode] || [];
+
+      const angleButtons = selectedContext.angles.map((angle) => {
+        const isSelected = selectedAngles.includes(angle.fullCode);
+        const profilesText = formatProfiles(angle);
+
+        return `
+          <button
+            type="button"
+            class="editorial-chip editorial-chip--angle ${isSelected ? "is-selected" : ""}"
+            data-angle="${escapeHtml(angle.fullCode)}"
+            data-conversation="${escapeHtml(conversation.code)}"
+            aria-pressed="${isSelected ? "true" : "false"}"
+            title="${escapeHtml(angle.motherAngle)}"
+          >
+            ${escapeHtml(angle.question)}
+            ${profilesText ? `<small>Profils concernés : ${escapeHtml(profilesText)}</small>` : ""}
+          </button>
+        `;
+      }).join("");
+
+      card.innerHTML = `
+        <div class="editorial-config-card__head">
+          <h3>${escapeHtml(conversation.title)}</h3>
+          <p>${escapeHtml(selectedContext.label)} — ${escapeHtml(selectedContext.description)}</p>
+        </div>
 
         <div class="editorial-config-row">
           <span class="editorial-config-row__label">Angle(s) concerné(s)</span>
@@ -471,7 +620,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
 
-      conversationDetails.appendChild(card);
+      angleSelectionPanels.appendChild(card);
     });
   }
 
@@ -480,17 +629,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const conversationCount = state.conversations.length;
     const angleCount = getSelectedAnglesCount();
 
-    if (!cycle || conversationCount === 0) {
-      summaryStage.hidden = true;
+    if (!cycle || !conversationCount) {
       summaryLead.textContent = "";
       summaryLines.innerHTML = "";
       return;
     }
 
-    summaryStage.hidden = false;
     summaryLead.textContent = `${cycle.label} · ${conversationCount} ${pluralize(conversationCount, "conversation", "conversations")} · ${angleCount} ${pluralize(angleCount, "angle", "angles")}`;
 
-    summaryLines.innerHTML = "";
+    const lines = [];
+
+    lines.push(`
+      <div class="editorial-summary-line">
+        <span class="editorial-summary-line__title">${escapeHtml(state.contact.firstName)} ${escapeHtml(state.contact.lastName)}</span>
+        <span class="editorial-summary-line__meta">${escapeHtml(state.contact.organisation)} — ${escapeHtml(state.contact.activity)}</span>
+      </div>
+    `);
 
     state.conversations.forEach((conversationCode) => {
       const conversation = getConversationByCode(cycle, conversationCode);
@@ -501,60 +655,36 @@ document.addEventListener("DOMContentLoaded", () => {
         .map((fullCode) => getAngleByFullCode(selectedContext, fullCode))
         .filter(Boolean);
 
-      let angleMeta = "Angle à préciser";
-      if (selectedAngles.length === 1) {
-        angleMeta = shortText(selectedAngles[0].question, 110);
-      } else if (selectedAngles.length > 1) {
-        angleMeta = `${selectedAngles.length} angles sélectionnés`;
-      }
+      const anglesHtml = selectedAngles.length
+        ? selectedAngles.map((angle) => {
+            return `<div class="editorial-summary-line__meta">• ${escapeHtml(angle.question)}</div>`;
+          }).join("")
+        : `<div class="editorial-summary-line__meta">Aucun angle sélectionné</div>`;
 
-      const line = document.createElement("div");
-      line.className = "editorial-summary-line";
-      line.innerHTML = `
-        <span class="editorial-summary-line__title">${escapeHtml(conversation.title)}</span>
-        <span class="editorial-summary-line__meta">${escapeHtml(selectedContext ? selectedContext.label : "Contexte à préciser")} — ${escapeHtml(angleMeta)}</span>
-      `;
-      summaryLines.appendChild(line);
+      lines.push(`
+        <div class="editorial-summary-line">
+          <span class="editorial-summary-line__title">${escapeHtml(conversation.title)}</span>
+          <span class="editorial-summary-line__meta">${escapeHtml(selectedContext ? selectedContext.label : "Contexte à préciser")}</span>
+          ${anglesHtml}
+        </div>
+      `);
     });
+
+    summaryLines.innerHTML = lines.join("");
   }
 
-  function updateSelectionUI() {
+  function updateUI() {
+    clampCurrentStep();
     renderContactConfirmation();
+    renderProgress();
+    renderStepsVisibility();
+    renderFooterButtons();
     renderCycleCards();
     renderConversationCards();
-    renderConversationDetails();
+    renderContextSelectionPanels();
+    renderAngleSelectionPanels();
     renderSummary();
-  }
-
-  function validateSelection() {
-    const cycle = getCurrentCycle();
-
-    if (!cycle) {
-      return "Choisissez d’abord un cycle.";
-    }
-
-    if (!state.conversations.length) {
-      return "Sélectionnez au moins une conversation.";
-    }
-
-    for (const conversationCode of state.conversations) {
-      const conversation = getConversationByCode(cycle, conversationCode);
-
-      if (!conversation) {
-        return "Une conversation sélectionnée est introuvable.";
-      }
-
-      const selectedContext = getContextByCode(conversation, state.contexts[conversationCode] || "");
-      if (!selectedContext) {
-        return `Choisissez un contexte pour la conversation « ${conversation.title} ».`;
-      }
-
-      if (!state.angles[conversationCode] || !state.angles[conversationCode].length) {
-        return `Sélectionnez au moins un angle pour la conversation « ${conversation.title} ».`;
-      }
-    }
-
-    return "";
+    saveWizardState();
   }
 
   function buildReadableSummary() {
@@ -567,8 +697,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const lines = [
       `Cycle : ${cycle.label}`,
       `${conversationCount} ${pluralize(conversationCount, "conversation", "conversations")} · ${angleCount} ${pluralize(angleCount, "angle", "angles")}`,
-      `Intervenant : ${state.contact.firstName} ${state.contact.lastName} — ${state.contact.organisation}`
-    ];
+      `Intervenant : ${state.contact.firstName} ${state.contact.lastName} — ${state.contact.organisation}`,
+      `Fonction / activité : ${state.contact.activity}`,
+      `Email : ${state.contact.email}`,
+      state.contact.phone ? `Téléphone : ${state.contact.phone}` : ""
+    ].filter(Boolean);
 
     state.conversations.forEach((conversationCode, index) => {
       const conversation = getConversationByCode(cycle, conversationCode);
@@ -595,14 +728,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const cycleParam = params.get("cycle");
     const conversationParam = params.get("conversation");
 
-    if (cycleParam) {
+    if (cycleParam && !state.cycle) {
       const normalizedCycleParam = cycleParam.trim().toLowerCase();
 
       const cycleMatch = editorialSource.cycles.find((cycle) => {
         return (
           cycle.code.toLowerCase() === normalizedCycleParam ||
           cycle.label.toLowerCase() === normalizedCycleParam ||
-          getCycleShortLabel(cycle).toLowerCase() === normalizedCycleParam ||
           cycle.label.toLowerCase().includes(normalizedCycleParam)
         );
       });
@@ -612,7 +744,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    if (state.cycle && conversationParam) {
+    if (state.cycle && conversationParam && !state.conversations.length) {
       const cycle = getCurrentCycle();
       if (!cycle) return;
 
@@ -627,9 +759,9 @@ document.addEventListener("DOMContentLoaded", () => {
             (conversation) => conversation.code.toLowerCase() === normalizedItem
           ) || null;
         } else {
-          foundConversation = cycle.conversations.find((conversation) => {
-            return conversation.title.toLowerCase() === normalizedItem;
-          }) || null;
+          foundConversation = cycle.conversations.find(
+            (conversation) => conversation.title.toLowerCase() === normalizedItem
+          ) || null;
         }
 
         if (foundConversation && !state.conversations.includes(foundConversation.code)) {
@@ -639,16 +771,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function markContactAsDirty() {
+    if (state.contactValidated) {
+      state.contactValidated = false;
+      saveWizardState();
+    }
+  }
+
+  [
+    organisationInput,
+    activityInput,
+    firstNameInput,
+    lastNameInput,
+    emailInput,
+    phoneInput
+  ].forEach((input) => {
+    input.addEventListener("input", markContactAsDirty);
+  });
+
   async function submitContactStep() {
     const validationMessage = validateContactStep();
     if (validationMessage) {
-      setContactFeedback(validationMessage);
-      return;
+      setFeedback(contactFeedback, validationMessage);
+      return false;
     }
 
-    setContactFeedback("");
-    contactSubmitButton.disabled = true;
-    contactSubmitButton.textContent = "Enregistrement en cours…";
+    setFeedback(contactFeedback, "");
+    nextButton.disabled = true;
+    nextButton.textContent = "Enregistrement…";
 
     try {
       const response = await fetch(WORKER_ENDPOINT, {
@@ -669,122 +819,207 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await response.json();
 
       if (!response.ok || !data.ok) {
-        setContactFeedback(data.message || "Impossible d’enregistrer vos coordonnées pour le moment.");
-        return;
+        setFeedback(contactFeedback, data.message || "Impossible d’enregistrer vos coordonnées pour le moment.");
+        return false;
       }
 
       state.contactValidated = true;
-      saveContactState();
-      showSelectionStage();
-      updateSelectionUI();
-      setContactFeedback("");
-      selectionStage.scrollIntoView({ behavior: "smooth", block: "start" });
+      setFeedback(contactFeedback, "");
+      return true;
     } catch (error) {
-      setContactFeedback("Impossible de joindre le service de confirmation pour le moment.");
       console.error(error);
+      setFeedback(contactFeedback, "Impossible de joindre le service de confirmation pour le moment.");
+      return false;
     } finally {
-      contactSubmitButton.disabled = false;
-      contactSubmitButton.textContent = "Sélectionner les sujets sur lesquels vous souhaitez intervenir";
+      nextButton.disabled = false;
+      nextButton.textContent = "Continuer";
+      saveWizardState();
     }
   }
 
-  contactForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    await submitContactStep();
-  });
+  async function goToNextStep() {
+    clearAllFeedbacks();
 
-  cycleCards.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-cycle]");
-    if (!button) return;
-
-    const nextCycleCode = button.dataset.cycle;
-    if (!nextCycleCode) return;
-
-    if (state.cycle !== nextCycleCode) {
-      state.cycle = nextCycleCode;
-      resetSelectionState(true);
-    }
-
-    setSelectionFeedback("");
-    updateSelectionUI();
-  });
-
-  conversationCards.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-conversation]");
-    if (!button) return;
-
-    const conversationCode = button.dataset.conversation;
-    if (!conversationCode) return;
-
-    toggleConversation(conversationCode);
-    setSelectionFeedback("");
-    updateSelectionUI();
-  });
-
-  conversationDetails.addEventListener("click", (event) => {
-    const contextButton = event.target.closest("[data-context]");
-    const angleButton = event.target.closest("[data-angle]");
-
-    if (contextButton) {
-      const conversationCode = contextButton.dataset.conversation;
-      const contextCode = contextButton.dataset.context;
-
-      if (conversationCode && contextCode) {
-        state.contexts[conversationCode] = contextCode;
-        state.angles[conversationCode] = [];
-        setSelectionFeedback("");
-        updateSelectionUI();
-      }
+    if (state.currentStep === 1) {
+      const ok = await submitContactStep();
+      if (!ok) return;
+      state.currentStep = 2;
+      updateUI();
+      window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
-    if (angleButton) {
-      const conversationCode = angleButton.dataset.conversation;
-      const fullCode = angleButton.dataset.angle;
-
-      if (conversationCode && fullCode) {
-        toggleAngle(conversationCode, fullCode);
-        setSelectionFeedback("");
-        updateSelectionUI();
+    if (state.currentStep === 2) {
+      const message = validateStep2();
+      if (message) {
+        setFeedback(step2Feedback, message);
+        return;
       }
     }
-  });
 
-  resetSelectionButton.addEventListener("click", () => {
-    resetSelectionState();
-    setSelectionFeedback("");
-    updateSelectionUI();
-  });
+    if (state.currentStep === 3) {
+      const message = validateStep3();
+      if (message) {
+        setFeedback(step3Feedback, message);
+        return;
+      }
+    }
 
-  selectionForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+    if (state.currentStep === 4) {
+      const message = validateStep4();
+      if (message) {
+        setFeedback(step4Feedback, message);
+        return;
+      }
+    }
 
-    const validationMessage = validateSelection();
-    if (validationMessage) {
-      setSelectionFeedback(validationMessage);
+    if (state.currentStep === 5) {
+      const message = validateStep5();
+      if (message) {
+        setFeedback(step5Feedback, message);
+        return;
+      }
+    }
+
+    if (state.currentStep < 6) {
+      state.currentStep += 1;
+      updateUI();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
+
+  function goToPreviousStep() {
+    clearAllFeedbacks();
+    if (state.currentStep > 1) {
+      state.currentStep -= 1;
+      updateUI();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
+
+  function changeCycle(nextCycleCode) {
+    if (state.cycle !== nextCycleCode) {
+      state.cycle = nextCycleCode;
+      state.conversations = [];
+      state.contexts = {};
+      state.angles = {};
+    }
+  }
+
+  function toggleConversation(conversationCode) {
+    const index = state.conversations.indexOf(conversationCode);
+
+    if (index >= 0) {
+      state.conversations.splice(index, 1);
+      delete state.contexts[conversationCode];
+      delete state.angles[conversationCode];
+    } else {
+      state.conversations.push(conversationCode);
+    }
+  }
+
+  function setContextForConversation(conversationCode, contextCode) {
+    state.contexts[conversationCode] = contextCode;
+    state.angles[conversationCode] = [];
+  }
+
+  function toggleAngle(conversationCode, fullCode) {
+    if (!state.angles[conversationCode]) {
+      state.angles[conversationCode] = [];
+    }
+
+    const existingIndex = state.angles[conversationCode].indexOf(fullCode);
+
+    if (existingIndex >= 0) {
+      state.angles[conversationCode].splice(existingIndex, 1);
+    } else {
+      state.angles[conversationCode].push(fullCode);
+    }
+  }
+
+  async function submitFinalSelection() {
+    clearAllFeedbacks();
+
+    const step5Message = validateStep5();
+    if (step5Message) {
+      setFeedback(finalFeedback, step5Message);
       return;
     }
 
     const summary = buildReadableSummary();
 
     if (summary.length > CAL_FIELD_MAX_LENGTH) {
-      setSelectionFeedback("La sélection est trop longue pour être transmise au calendrier. Réduisez le nombre de conversations ou d’angles sélectionnés.");
+      setFeedback(finalFeedback, "La sélection est trop longue pour être transmise au calendrier. Réduisez le nombre de conversations ou d’angles sélectionnés.");
       return;
     }
 
     const url = new URL(CAL_BOOKING_URL);
     url.searchParams.set(CAL_FIELD_IDENTIFIER, summary);
     window.location.href = url.toString();
-  });
-
-  const restored = restoreContactState();
-  applyPrefillFromUrl();
-
-  if (restored) {
-    showSelectionStage();
-  } else {
-    hideSelectionStage();
   }
 
-  updateSelectionUI();
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (state.currentStep !== 1) return;
+    await goToNextStep();
+  });
+
+  cycleCards.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-cycle]");
+    if (!button) return;
+
+    changeCycle(button.dataset.cycle || "");
+    clearAllFeedbacks();
+    updateUI();
+  });
+
+  conversationCards.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-conversation]");
+    if (!button) return;
+
+    toggleConversation(button.dataset.conversation || "");
+    clearAllFeedbacks();
+    updateUI();
+  });
+
+  contextSelectionPanels.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-context]");
+    if (!button) return;
+
+    const conversationCode = button.dataset.conversation || "";
+    const contextCode = button.dataset.context || "";
+    if (!conversationCode || !contextCode) return;
+
+    setContextForConversation(conversationCode, contextCode);
+    clearAllFeedbacks();
+    updateUI();
+  });
+
+  angleSelectionPanels.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-angle]");
+    if (!button) return;
+
+    const conversationCode = button.dataset.conversation || "";
+    const fullCode = button.dataset.angle || "";
+    if (!conversationCode || !fullCode) return;
+
+    toggleAngle(conversationCode, fullCode);
+    clearAllFeedbacks();
+    updateUI();
+  });
+
+  prevButton.addEventListener("click", goToPreviousStep);
+  nextButton.addEventListener("click", async () => {
+    await goToNextStep();
+  });
+  submitButton.addEventListener("click", submitFinalSelection);
+
+  resetButton.addEventListener("click", () => {
+    resetWizardState();
+  });
+
+  restoreWizardState();
+  applyPrefillFromUrl();
+  clampCurrentStep();
+  updateUI();
 });
