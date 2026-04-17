@@ -3,8 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const CAL_BOOKING_URL = "https://cal.com/en-plateau/echange-editorial-15-min";
   const CAL_FIELD_IDENTIFIER = "selection_editoriale";
   const CAL_FIELD_MAX_LENGTH = 1000;
-  const WIZARD_STORAGE_KEY = "enplateau_editorial_wizard_v3";
+
+  const WIZARD_STORAGE_KEY = "enplateau_editorial_wizard_v4";
   const LEGACY_STORAGE_KEYS = [
+    "enplateau_editorial_wizard_v3",
     "enplateau_editorial_wizard_v2",
     "enplateau_editorial_contact_v1"
   ];
@@ -140,7 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
       label: cycle.label || "",
       sourceLabel: cycle.sourceLabel || "",
       description: cycle.description || "",
-      contexts: Array.isArray(cycle.contexts) ? cycle.contexts.map(normalizeContext) : [],
       conversations: Array.isArray(cycle.conversations)
         ? cycle.conversations.map(normalizeConversation)
         : []
@@ -536,23 +537,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
         <section class="editorial-config-card">
           <div class="editorial-config-card__head">
-            <h3>Comment lire les contextes territoriaux</h3>
+            <h3>Repère rapide</h3>
             <p>
-              La production et la transformation immobilières ne se lisent pas de la même manière selon les territoires.
-              Merci de sélectionner, pour chaque conversation retenue, le contexte qui correspond le mieux à la réalité de vos interventions.
+              Choisissez le contexte qui se rapproche le plus de la réalité de vos interventions.
             </p>
           </div>
           <div class="editorial-config-row">
-            <span class="editorial-config-row__label">Repères</span>
-            <p class="editorial-note">
-              <strong>Territoires en tension</strong> : marchés très sollicités, pression foncière, rareté, acceptabilité plus sensible.
-            </p>
-            <p class="editorial-note">
-              <strong>Territoires en croissance</strong> : marchés en développement, montée progressive des usages, des équipements et de la profondeur de marché.
-            </p>
-            <p class="editorial-note">
-              <strong>Territoires en reconversion</strong> : marchés marqués par la requalification, le redéploiement, la remise à niveau ou la dépendance à des soutiens externes.
-            </p>
+            <span class="editorial-config-row__label">Contexte</span>
+            <p class="editorial-note"><strong>Tension</strong> : rareté, pression foncière, acceptabilité plus sensible.</p>
+            <p class="editorial-note"><strong>Croissance</strong> : développement progressif, équipements et marché en structuration.</p>
+            <p class="editorial-note"><strong>Reconversion</strong> : requalification, redéploiement, dépendance à des soutiens ou à une remise à niveau.</p>
           </div>
         </section>
       `;
@@ -562,23 +556,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
         <section class="editorial-config-card">
           <div class="editorial-config-card__head">
-            <h3>Comment lire les contextes industriels</h3>
+            <h3>Repère rapide</h3>
             <p>
-              Une même tension industrielle ne se formule pas de la même manière selon que l’activité est en montée,
-              en ajustement ou en réinvention. Merci de sélectionner le contexte qui correspond le mieux à votre expérience.
+              Choisissez le contexte qui correspond le mieux à la situation industrielle que vous connaissez réellement.
             </p>
           </div>
           <div class="editorial-config-row">
-            <span class="editorial-config-row__label">Repères</span>
-            <p class="editorial-note">
-              <strong>Croissance sous tension</strong> : hausse d’activité, montée en cadence, besoins d’industrialisation, saturation de certains maillons.
-            </p>
-            <p class="editorial-note">
-              <strong>Adaptation sous contrainte</strong> : pression sur les marges, arbitrages défensifs, maintien de l’activité sous contraintes multiples.
-            </p>
-            <p class="editorial-note">
-              <strong>Réinvention sous crise</strong> : redéploiement, repositionnement, rupture de modèle ou transformation profonde de l’outil.
-            </p>
+            <span class="editorial-config-row__label">Contexte</span>
+            <p class="editorial-note"><strong>Croissance sous tension</strong> : montée en activité, saturation, besoin de passer un cap.</p>
+            <p class="editorial-note"><strong>Adaptation sous contrainte</strong> : arbitrages défensifs, pression sur marges et continuité.</p>
+            <p class="editorial-note"><strong>Réinvention sous crise</strong> : redéploiement, repositionnement, transformation profonde.</p>
           </div>
         </section>
       `;
