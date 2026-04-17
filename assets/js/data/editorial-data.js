@@ -378,6 +378,355 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ]
         },
 
+        {
+          "code": "C3",
+          "title": "Transformer ou reconstruire ?",
+          "tension": "Valeur de transformation affichée vs faisabilité réelle de la mutation",
+          "description": "Quatre angles pour arbitrer entre transformation, reconstruction ou renonciation, selon la réalité technique, économique, foncière et assurantielle du site.",
+          "contexts": [
+            {
+              "code": "TEN",
+              "label": "Territoires en tension",
+              "description": "Dans les territoires en tension, la rareté du foncier et la pression à produire coexistent avec des limites fortes de densité, d’acceptabilité et de soutenabilité.",
+              "angles": [
+                {
+                  "code": "A09",
+                  "fullCode": "LOG-C3-TEN-A09",
+                  "motherAngle": "À partir de quand la transformation d’un actif ou d’un site n’est-elle plus techniquement ou économiquement crédible ?",
+                  "question": "À partir de quand la transformation devient-elle moins crédible qu’elle n’en a l’air dans un site dense, occupé ou fortement normé ?",
+                  "primaryProfile": "BET / ingénierie / faisabilité de transformation",
+                  "alternateProfile": "Asset strategy / redéveloppement",
+                  "profiles": [
+                    "BET / ingénierie / faisabilité de transformation",
+                    "Asset strategy / redéveloppement"
+                  ]
+                },
+                {
+                  "code": "A10",
+                  "fullCode": "LOG-C3-TEN-A10",
+                  "motherAngle": "Quels surcoûts ou aléas font basculer l’arbitrage vers la reconstruction ou la renonciation ?",
+                  "question": "Quels aléas de structure, de voisinage, d’occupation ou de site dense font-ils basculer la transformation hors d’un coût acceptable ?",
+                  "primaryProfile": "Économie de projet / cost management",
+                  "alternateProfile": "BET / structure / site complexe",
+                  "profiles": [
+                    "Économie de projet / cost management",
+                    "BET / structure / site complexe"
+                  ]
+                },
+                {
+                  "code": "A11",
+                  "fullCode": "LOG-C3-TEN-A11",
+                  "motherAngle": "À quelles conditions l’occupation, la propriété fragmentée ou l’usage existant rendent-ils la transformation beaucoup plus difficile qu’annoncé ?",
+                  "question": "À quelles conditions la copropriété, l’occupation, l’exploitation en place ou la fragmentation des droits rendent-elles la transformation presque irréaliste ?",
+                  "primaryProfile": "Foncier / copropriété / propriété fragmentée",
+                  "alternateProfile": "Juridique immobilier / montage d’opération",
+                  "profiles": [
+                    "Foncier / copropriété / propriété fragmentée",
+                    "Juridique immobilier / montage d’opération"
+                  ]
+                },
+                {
+                  "code": "A12",
+                  "fullCode": "LOG-C3-TEN-A12",
+                  "motherAngle": "À partir de quand la transformation elle-même devient-elle difficile à sécuriser techniquement, juridiquement ou assurantiellement ?",
+                  "question": "À partir de quand l’environnement technique, juridique ou assurantiel d’un site dense fait-il de la transformation un exercice presque inassurable ou difficilement sécurisable ?",
+                  "primaryProfile": "Assurance / risk management / audit de risque",
+                  "alternateProfile": "Juridique immobilier / BET",
+                  "profiles": [
+                    "Assurance / risk management / audit de risque",
+                    "Juridique immobilier / BET"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": "CRO",
+              "label": "Territoires en croissance",
+              "description": "Dans les territoires en croissance, le projet doit se caler sur la maturité réelle du marché, des usages et des équipements, sans aller plus vite que le territoire.",
+              "angles": [
+                {
+                  "code": "A09",
+                  "fullCode": "LOG-C3-CRO-A09",
+                  "motherAngle": "À partir de quand la transformation d’un actif ou d’un site n’est-elle plus techniquement ou économiquement crédible ?",
+                  "question": "À partir de quand transformer un actif existant devient-il moins pertinent qu’une reconstruction ou qu’un redéploiement plus rapide et mieux calibré ?",
+                  "primaryProfile": "Asset strategy / redéveloppement",
+                  "alternateProfile": "Programmation / développement",
+                  "profiles": [
+                    "Asset strategy / redéveloppement",
+                    "Programmation / développement"
+                  ]
+                },
+                {
+                  "code": "A10",
+                  "fullCode": "LOG-C3-CRO-A10",
+                  "motherAngle": "Quels surcoûts ou aléas font basculer l’arbitrage vers la reconstruction ou la renonciation ?",
+                  "question": "Quels surcoûts de phasage, de maintien d’activité, d’adaptation ou de remise à niveau font-ils perdre à la transformation son avantage apparent ?",
+                  "primaryProfile": "Économie de projet / AMO de transformation",
+                  "alternateProfile": "Conduite d’opération / OPC",
+                  "profiles": [
+                    "Économie de projet / AMO de transformation",
+                    "Conduite d’opération / OPC"
+                  ]
+                },
+                {
+                  "code": "A11",
+                  "fullCode": "LOG-C3-CRO-A11",
+                  "motherAngle": "À quelles conditions l’occupation, la propriété fragmentée ou l’usage existant rendent-ils la transformation beaucoup plus difficile qu’annoncé ?",
+                  "question": "À partir de quand la pluralité d’usages, de propriétaires ou de temporalités d’occupation empêche-t-elle de transformer au rythme voulu ?",
+                  "primaryProfile": "Foncier / montages / propriété fragmentée",
+                  "alternateProfile": "Programmation / exploitation / asset management",
+                  "profiles": [
+                    "Foncier / montages / propriété fragmentée",
+                    "Programmation / exploitation / asset management"
+                  ]
+                },
+                {
+                  "code": "A12",
+                  "fullCode": "LOG-C3-CRO-A12",
+                  "motherAngle": "À partir de quand la transformation elle-même devient-elle difficile à sécuriser techniquement, juridiquement ou assurantiellement ?",
+                  "question": "À partir de quand les interfaces, les responsabilités, le phasage ou le maintien d’usage font-ils de la sécurisation du projet le vrai sujet ?",
+                  "primaryProfile": "Conduite d’opération / OPC / chaîne de réalisation",
+                  "alternateProfile": "Assurance / risk management / juridique",
+                  "profiles": [
+                    "Conduite d’opération / OPC / chaîne de réalisation",
+                    "Assurance / risk management / juridique"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": "REC",
+              "label": "Territoires en reconversion",
+              "description": "Dans les territoires en reconversion, la faisabilité dépend souvent d’un temps long, d’un portage patient et d’une capacité à traiter les passifs techniques, fonciers et symboliques.",
+              "angles": [
+                {
+                  "code": "A09",
+                  "fullCode": "LOG-C3-REC-A09",
+                  "motherAngle": "À partir de quand la transformation d’un actif ou d’un site n’est-elle plus techniquement ou économiquement crédible ?",
+                  "question": "À partir de quand l’état du site, son passif technique ou environnemental et son marché cible rendent-ils la transformation très difficile à soutenir ?",
+                  "primaryProfile": "Sites complexes / dépollution / réhabilitation lourde",
+                  "alternateProfile": "Asset strategy / redéveloppement",
+                  "profiles": [
+                    "Sites complexes / dépollution / réhabilitation lourde",
+                    "Asset strategy / redéveloppement"
+                  ]
+                },
+                {
+                  "code": "A10",
+                  "fullCode": "LOG-C3-REC-A10",
+                  "motherAngle": "Quels surcoûts ou aléas font basculer l’arbitrage vers la reconstruction ou la renonciation ?",
+                  "question": "Quels aléas de dépollution, de désamiantage, de réseaux, de démolition partielle ou de traitement patrimonial font-ils basculer la décision ?",
+                  "primaryProfile": "Sites complexes / cost management / ingénierie technique",
+                  "alternateProfile": "Patrimoine / réhabilitation / AMO",
+                  "profiles": [
+                    "Sites complexes / cost management / ingénierie technique",
+                    "Patrimoine / réhabilitation / AMO"
+                  ]
+                },
+                {
+                  "code": "A11",
+                  "fullCode": "LOG-C3-REC-A11",
+                  "motherAngle": "À quelles conditions l’occupation, la propriété fragmentée ou l’usage existant rendent-ils la transformation beaucoup plus difficile qu’annoncé ?",
+                  "question": "À partir de quand l’enchevêtrement de propriétaires, d’occupations résiduelles, de vacance et de statuts publics/privés bloque-t-il la mutation du site ?",
+                  "primaryProfile": "Foncier / montages / propriété fragmentée",
+                  "alternateProfile": "Redéveloppement / stratégie territoriale",
+                  "profiles": [
+                    "Foncier / montages / propriété fragmentée",
+                    "Redéveloppement / stratégie territoriale"
+                  ]
+                },
+                {
+                  "code": "A12",
+                  "fullCode": "LOG-C3-REC-A12",
+                  "motherAngle": "À partir de quand la transformation elle-même devient-elle difficile à sécuriser techniquement, juridiquement ou assurantiellement ?",
+                  "question": "À partir de quand la transformation d’un site complexe n’est-elle plus freinée par l’idée du projet, mais par l’impossibilité de le sécuriser techniquement, juridiquement et assurantiellement ?",
+                  "primaryProfile": "Assurance / risk management / audit de risque",
+                  "alternateProfile": "Juridique immobilier / sites complexes",
+                  "profiles": [
+                    "Assurance / risk management / audit de risque",
+                    "Juridique immobilier / sites complexes"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "C4",
+          "title": "Qu’est-ce qui permet encore à une opération de se faire ?",
+          "tension": "Intention de projet vs conditions réelles de décision, de portage et d’exécution",
+          "description": "Quatre angles pour identifier ce qui permet encore à une opération de devenir opérante, tenable et exécutable malgré la fragmentation des décisions et des risques.",
+          "contexts": [
+            {
+              "code": "TEN",
+              "label": "Territoires en tension",
+              "description": "Dans les territoires en tension, la rareté du foncier et la pression à produire coexistent avec des limites fortes de densité, d’acceptabilité et de soutenabilité.",
+              "angles": [
+                {
+                  "code": "A13",
+                  "fullCode": "LOG-C4-TEN-A13",
+                  "motherAngle": "À partir de quand l’empilement des décideurs, valideurs, financeurs et partenaires empêche-t-il qu’une décision devienne réellement opérante ?",
+                  "question": "À partir de quand la multiplication des valideurs — collectivité, financeurs, copropriétaires, riverains, opérateurs — empêche-t-elle qu’une décision se traduise en acte ?",
+                  "primaryProfile": "AMO / programmation / montage d’opération",
+                  "alternateProfile": "Juridique / urbanisme / concertation",
+                  "profiles": [
+                    "AMO / programmation / montage d’opération",
+                    "Juridique / urbanisme / concertation"
+                  ]
+                },
+                {
+                  "code": "A14",
+                  "fullCode": "LOG-C4-TEN-A14",
+                  "motherAngle": "À partir de quand le partage des risques au niveau de l’opération ne produit-il plus de sécurité collective, mais une dilution qui fragilise le portage du projet ?",
+                  "question": "À partir de quand la répartition des risques entre opérateur, investisseur, entreprises, assureurs et collectivités ne protège-t-elle plus l’opération, mais la rend-elle plus incertaine ?",
+                  "primaryProfile": "Assurance / risk management / montage contractuel",
+                  "alternateProfile": "Investissement / opérateur / juridique",
+                  "profiles": [
+                    "Assurance / risk management / montage contractuel",
+                    "Investissement / opérateur / juridique"
+                  ]
+                },
+                {
+                  "code": "A15",
+                  "fullCode": "LOG-C4-TEN-A15",
+                  "motherAngle": "À quelles conditions le portage dans le temps — phasage, attente, immobilisation du capital — reste-t-il encore soutenable ?",
+                  "question": "À quelles conditions le portage foncier, les délais de recours, l’attente réglementaire ou l’immobilisation du capital restent-ils encore soutenables ?",
+                  "primaryProfile": "Conseil financement / investissement immobilier",
+                  "alternateProfile": "Portage foncier / asset strategy",
+                  "profiles": [
+                    "Conseil financement / investissement immobilier",
+                    "Portage foncier / asset strategy"
+                  ]
+                },
+                {
+                  "code": "A16",
+                  "fullCode": "LOG-C4-TEN-A16",
+                  "motherAngle": "À partir de quand la chaîne de réalisation — entreprises, interfaces, disponibilité, assurances, exécution — devient-elle le vrai facteur limitant ?",
+                  "question": "À partir de quand la rareté des entreprises, la complexité des interfaces, les contraintes logistiques ou assurantielles deviennent-elles le vrai verrou du projet ?",
+                  "primaryProfile": "Conduite d’opération / OPC / chaîne de réalisation",
+                  "alternateProfile": "Assurance chantier / entreprises / MOEX",
+                  "profiles": [
+                    "Conduite d’opération / OPC / chaîne de réalisation",
+                    "Assurance chantier / entreprises / MOEX"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": "CRO",
+              "label": "Territoires en croissance",
+              "description": "Dans les territoires en croissance, le projet doit se caler sur la maturité réelle du marché, des usages et des équipements, sans aller plus vite que le territoire.",
+              "angles": [
+                {
+                  "code": "A13",
+                  "fullCode": "LOG-C4-CRO-A13",
+                  "motherAngle": "À partir de quand l’empilement des décideurs, valideurs, financeurs et partenaires empêche-t-il qu’une décision devienne réellement opérante ?",
+                  "question": "À partir de quand la multiplication des parties prenantes ralentit-elle le projet au point de désynchroniser décision, marché et équipements ?",
+                  "primaryProfile": "AMO / programmation / coordination territoriale",
+                  "alternateProfile": "Développement / stratégie territoriale",
+                  "profiles": [
+                    "AMO / programmation / coordination territoriale",
+                    "Développement / stratégie territoriale"
+                  ]
+                },
+                {
+                  "code": "A14",
+                  "fullCode": "LOG-C4-CRO-A14",
+                  "motherAngle": "À partir de quand le partage des risques au niveau de l’opération ne produit-il plus de sécurité collective, mais une dilution qui fragilise le portage du projet ?",
+                  "question": "À partir de quand le partage du risque sur le phasage, les équipements ou les investissements préparatoires fragilise-t-il l’exécution réelle du projet ?",
+                  "primaryProfile": "Ingénierie financière / montage d’opération",
+                  "alternateProfile": "AMO / développement / opérateur",
+                  "profiles": [
+                    "Ingénierie financière / montage d’opération",
+                    "AMO / développement / opérateur"
+                  ]
+                },
+                {
+                  "code": "A15",
+                  "fullCode": "LOG-C4-CRO-A15",
+                  "motherAngle": "À quelles conditions le portage dans le temps — phasage, attente, immobilisation du capital — reste-t-il encore soutenable ?",
+                  "question": "À quelles conditions un phasage long, l’attente de maturité du marché ou la montée progressive des équipements restent-ils compatibles avec la tenue du projet ?",
+                  "primaryProfile": "Portage / programmation / investissement",
+                  "alternateProfile": "Conseil marché / développement territorial",
+                  "profiles": [
+                    "Portage / programmation / investissement",
+                    "Conseil marché / développement territorial"
+                  ]
+                },
+                {
+                  "code": "A16",
+                  "fullCode": "LOG-C4-CRO-A16",
+                  "motherAngle": "À partir de quand la chaîne de réalisation — entreprises, interfaces, disponibilité, assurances, exécution — devient-elle le vrai facteur limitant ?",
+                  "question": "À partir de quand la capacité des entreprises, la coordination des chantiers et le séquencement avec les équipements du territoire empêchent-ils d’exécuter au rythme prévu ?",
+                  "primaryProfile": "Conduite d’opération / OPC / coordination de projet",
+                  "alternateProfile": "AMO / ingénierie urbaine / entreprises",
+                  "profiles": [
+                    "Conduite d’opération / OPC / coordination de projet",
+                    "AMO / ingénierie urbaine / entreprises"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": "REC",
+              "label": "Territoires en reconversion",
+              "description": "Dans les territoires en reconversion, la faisabilité dépend souvent d’un temps long, d’un portage patient et d’une capacité à traiter les passifs techniques, fonciers et symboliques.",
+              "angles": [
+                {
+                  "code": "A13",
+                  "fullCode": "LOG-C4-REC-A13",
+                  "motherAngle": "À partir de quand l’empilement des décideurs, valideurs, financeurs et partenaires empêche-t-il qu’une décision devienne réellement opérante ?",
+                  "question": "À partir de quand un projet exige-t-il un tel alignement public-privé, foncier, financier et politique que l’absence d’un seul maillon bloque tout le reste ?",
+                  "primaryProfile": "AMO de reconversion / stratégie territoriale",
+                  "alternateProfile": "Portage / ingénierie financière mixte",
+                  "profiles": [
+                    "AMO de reconversion / stratégie territoriale",
+                    "Portage / ingénierie financière mixte"
+                  ]
+                },
+                {
+                  "code": "A14",
+                  "fullCode": "LOG-C4-REC-A14",
+                  "motherAngle": "À partir de quand le partage des risques au niveau de l’opération ne produit-il plus de sécurité collective, mais une dilution qui fragilise le portage du projet ?",
+                  "question": "À partir de quand la dispersion des risques entre aides publiques, portage foncier, dépollution, exploitation future et opérateurs rend-elle l’opération presque impossible à verrouiller ?",
+                  "primaryProfile": "Ingénierie financière mixte / risk management",
+                  "alternateProfile": "Portage / redéveloppement / opérateur",
+                  "profiles": [
+                    "Ingénierie financière mixte / risk management",
+                    "Portage / redéveloppement / opérateur"
+                  ]
+                },
+                {
+                  "code": "A15",
+                  "fullCode": "LOG-C4-REC-A15",
+                  "motherAngle": "À quelles conditions le portage dans le temps — phasage, attente, immobilisation du capital — reste-t-il encore soutenable ?",
+                  "question": "À quelles conditions un portage long — foncier, dépollution, requalification, reprogrammation — peut-il encore être tenu sans épuiser le projet ?",
+                  "primaryProfile": "Portage / redéveloppement / ingénierie financière mixte",
+                  "alternateProfile": "Stratégie territoriale / AMO",
+                  "profiles": [
+                    "Portage / redéveloppement / ingénierie financière mixte",
+                    "Stratégie territoriale / AMO"
+                  ]
+                },
+                {
+                  "code": "A16",
+                  "fullCode": "LOG-C4-REC-A16",
+                  "motherAngle": "À partir de quand la chaîne de réalisation — entreprises, interfaces, disponibilité, assurances, exécution — devient-elle le vrai facteur limitant ?",
+                  "question": "À partir de quand la transformation exige-t-elle des compétences d’exécution, de dépollution ou de réhabilitation si spécifiques que la chaîne de réalisation devient elle-même le point de bascule ?",
+                  "primaryProfile": "Conduite d’opération / réhabilitation lourde / sites complexes",
+                  "alternateProfile": "Entreprises spécialisées / assurance / dépollution",
+                  "profiles": [
+                    "Conduite d’opération / réhabilitation lourde / sites complexes",
+                    "Entreprises spécialisées / assurance / dépollution"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
 
 
 
