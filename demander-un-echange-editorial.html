@@ -63,18 +63,18 @@
           </h1>
 
           <p class="page-hero-sub">
-            Si vous avez été approché sur LinkedIn pour éclairer un angle ou une conversation du cycle, renseignez d’abord vos coordonnées professionnelles, puis confirmez les sujets sur lesquels vous souhaitez intervenir avant de choisir un créneau.
+            Ce parcours vous permet de confirmer vos coordonnées, de préciser le cycle, la conversation, le contexte et les angles qui correspondent à votre pratique, puis de choisir un créneau de 15 minutes.
           </p>
 
           <ul class="page-hero-facts" aria-label="Informations clés">
+            <li>6 étapes</li>
             <li>15 min</li>
             <li>Confidentiel</li>
             <li>Sans engagement</li>
-            <li>Sans dossier à préparer</li>
           </ul>
 
           <p class="programme-link-row">
-            <a href="#formulaire-echange-editorial" class="link link--primary">Confirmer ma demande</a>
+            <a href="#formulaire-echange-editorial" class="link link--primary">Commencer le parcours</a>
             <a href="/proposer-une-contribution.html" class="link">Vous n’avez pas été sollicité ? Signaler une contribution</a>
           </p>
 
@@ -82,209 +82,214 @@
       </div>
     </section>
 
-    <section class="page-section" id="echange-editorial-content">
+    <section class="page-section" id="echange-form-section">
       <div class="container">
         <div class="page-content echange-page-content">
           <div class="page-reading echange-page-reading">
 
-            <section class="page-section" id="echange-benefits">
+            <div class="editorial-qualifier editorial-qualifier--wizard" id="formulaire-echange-editorial">
               <div class="section-head section-head--narrow">
-                <div class="section-kicker">Avant réservation</div>
-                <h2>Ce que cette confirmation permet de vérifier</h2>
+                <div class="section-kicker">Confirmation</div>
+                <h2>Confirmer votre demande avant de choisir un créneau</h2>
                 <p class="section-intro">
-                  Cette page n’a pas vocation à vous faire redécouvrir tout le dispositif, mais à confirmer proprement le sujet sur lequel vous souhaitez échanger.
+                  Le parcours se fait étape par étape. Une seule étape est affichée à la fois.
                 </p>
               </div>
 
-              <div class="programme-list">
-                <article class="programme-list__item">
-                  <h3>Confirmer votre demande</h3>
-                  <p>Renseigner vos coordonnées professionnelles avant affichage des sujets d’échange.</p>
-                </article>
+              <div class="editorial-wizard" id="editorial-wizard">
 
-                <article class="programme-list__item">
-                  <h3>Retrouver le bon point d’entrée</h3>
-                  <p>Identifier la conversation ou l’angle qui vous paraît le plus pertinent au regard de la sollicitation reçue.</p>
-                </article>
-
-                <article class="programme-list__item">
-                  <h3>Préciser le sujet de l’échange</h3>
-                  <p>Confirmer le cycle, le contexte et le ou les angles sur lesquels vous souhaitez intervenir.</p>
-                </article>
-
-                <article class="programme-list__item">
-                  <h3>Passer ensuite à l’agenda</h3>
-                  <p>Une fois votre sujet confirmé, vous pourrez choisir directement un créneau de 15 minutes.</p>
-                </article>
-              </div>
-            </section>
-
-            <section class="page-section" id="echange-fit">
-              <div class="section-head section-head--narrow">
-                <div class="section-kicker">Cadre</div>
-                <h2>Cette page est réservée aux personnes déjà sollicitées</h2>
-                <p class="section-intro">
-                  Elle concerne les personnes approchées en amont sur LinkedIn ou par message direct pour un échange éditorial.
-                </p>
-              </div>
-
-              <div class="programme-access">
-                <article class="programme-access__item">
-                  <h3>Cette page est faite pour vous si</h3>
-                  <p>Vous avez été sollicité pour éclairer un angle, une conversation ou un point d’entrée du cycle.</p>
-                  <p>Vous souhaitez confirmer le sujet le plus pertinent avant réservation.</p>
-                </article>
-
-                <article class="programme-access__item">
-                  <h3>Dans les autres cas</h3>
-                  <p>Si vous n’avez pas été sollicité, le bon point d’entrée n’est pas cette page mais le formulaire <strong>Signaler une contribution</strong>.</p>
-                </article>
-              </div>
-            </section>
-
-            <section class="page-section" id="echange-form-section">
-              <div class="editorial-qualifier" id="formulaire-echange-editorial">
-                <div class="section-head section-head--narrow">
-                  <div class="section-kicker">Confirmation</div>
-                  <h2>Confirmer votre demande avant de choisir un créneau</h2>
-                  <p class="section-intro">
-                    Renseignez d’abord vos coordonnées professionnelles. Vous pourrez ensuite sélectionner les sujets sur lesquels vous souhaitez intervenir.
-                  </p>
-                </div>
-
-                <!-- ÉTAPE 1 -->
-                <section id="editorial-contact-stage" class="editorial-stage editorial-stage--open">
-                  <div class="editorial-stage__head">
-                    <h3>1. Renseigner vos coordonnées professionnelles</h3>
-                    <p>Cette première étape permet de confirmer votre demande avant affichage des sujets d’échange.</p>
+                <div class="editorial-wizard__progress" aria-label="Progression du parcours">
+                  <div class="editorial-progress-topline">
+                    <span id="editorial-progress-label" class="editorial-progress-label">Étape 1 sur 6</span>
+                    <span id="editorial-progress-title" class="editorial-progress-title">Coordonnées professionnelles</span>
                   </div>
 
-                  <form id="editorial-contact-form" class="editorial-contact-form" novalidate>
-                    <div class="editorial-form-panel">
-                      <div class="editorial-form-panel__head">
-                        <h4>Votre structure</h4>
-                        <p>Renseignez d’abord votre organisation et votre domaine d’activité.</p>
-                      </div>
+                  <div class="editorial-progress-bar" aria-hidden="true">
+                    <span id="editorial-progress-bar-fill" class="editorial-progress-bar__fill"></span>
+                  </div>
 
-                      <div class="editorial-contact-grid editorial-contact-grid--2">
-                        <div class="editorial-field">
-                          <label for="organisation-input">Organisation / structure</label>
-                          <input id="organisation-input" name="organisation" type="text" autocomplete="organization" required>
-                        </div>
+                  <ol class="editorial-progress-steps" id="editorial-progress-steps">
+                    <li class="is-current">Coordonnées</li>
+                    <li>Cycle</li>
+                    <li>Conversation</li>
+                    <li>Contexte</li>
+                    <li>Angles</li>
+                    <li>Récapitulatif</li>
+                  </ol>
+                </div>
 
-                        <div class="editorial-field">
-                          <label for="activity-input">Domaine d’activité</label>
-                          <input id="activity-input" name="activity" type="text" autocomplete="organization-title" required>
-                        </div>
-                      </div>
+                <div id="editorial-contact-confirmation" class="editorial-contact-confirmation" hidden></div>
+
+                <div class="editorial-wizard__steps">
+
+                  <!-- STEP 1 -->
+                  <section id="editorial-step-1" class="editorial-step is-active" data-step="1" aria-labelledby="editorial-step-1-title">
+                    <div class="editorial-stage__head">
+                      <h3 id="editorial-step-1-title">1. Renseigner vos coordonnées professionnelles</h3>
+                      <p>Cette première étape permet de confirmer votre demande avant d’afficher les sujets d’échange.</p>
                     </div>
 
-                    <div class="editorial-form-panel">
-                      <div class="editorial-form-panel__head">
-                        <h4>Votre contact</h4>
-                        <p>Ces informations permettent de rattacher votre demande à votre prise de contact.</p>
-                      </div>
-
-                      <div class="editorial-contact-grid editorial-contact-grid--2">
-                        <div class="editorial-field">
-                          <label for="first-name-input">Prénom</label>
-                          <input id="first-name-input" name="firstName" type="text" autocomplete="given-name" required>
+                    <form id="editorial-contact-form" class="editorial-contact-form" novalidate>
+                      <div class="editorial-form-panel">
+                        <div class="editorial-form-panel__head">
+                          <h4>Votre structure</h4>
+                          <p>Renseignez d’abord votre organisation et votre domaine d’activité.</p>
                         </div>
 
-                        <div class="editorial-field">
-                          <label for="last-name-input">Nom</label>
-                          <input id="last-name-input" name="lastName" type="text" autocomplete="family-name" required>
-                        </div>
+                        <div class="editorial-contact-grid editorial-contact-grid--2">
+                          <div class="editorial-field">
+                            <label for="organisation-input">Organisation / structure</label>
+                            <input id="organisation-input" name="organisation" type="text" autocomplete="organization" required>
+                          </div>
 
-                        <div class="editorial-field">
-                          <label for="email-input">Email professionnel</label>
-                          <input id="email-input" name="email" type="email" autocomplete="email" required>
-                        </div>
-
-                        <div class="editorial-field">
-                          <label for="phone-input">Téléphone</label>
-                          <input id="phone-input" name="phone" type="tel" autocomplete="tel">
+                          <div class="editorial-field">
+                            <label for="activity-input">Domaine d’activité</label>
+                            <input id="activity-input" name="activity" type="text" autocomplete="organization-title" required>
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div class="editorial-actions editorial-actions--contact">
-                      <button type="submit" id="editorial-contact-submit" class="editorial-button editorial-button--primary">
-                        Sélectionner les sujets sur lesquels vous souhaitez intervenir
-                      </button>
+                      <div class="editorial-form-panel">
+                        <div class="editorial-form-panel__head">
+                          <h4>Votre contact</h4>
+                          <p>Ces informations permettent de rattacher votre demande à votre prise de contact.</p>
+                        </div>
 
-                      <p class="editorial-note">
-                        Vos coordonnées sont enregistrées avant affichage des sujets.
-                      </p>
+                        <div class="editorial-contact-grid editorial-contact-grid--2">
+                          <div class="editorial-field">
+                            <label for="first-name-input">Prénom</label>
+                            <input id="first-name-input" name="firstName" type="text" autocomplete="given-name" required>
+                          </div>
+
+                          <div class="editorial-field">
+                            <label for="last-name-input">Nom</label>
+                            <input id="last-name-input" name="lastName" type="text" autocomplete="family-name" required>
+                          </div>
+
+                          <div class="editorial-field">
+                            <label for="email-input">Email professionnel</label>
+                            <input id="email-input" name="email" type="email" autocomplete="email" required>
+                          </div>
+
+                          <div class="editorial-field">
+                            <label for="phone-input">Téléphone</label>
+                            <input id="phone-input" name="phone" type="tel" autocomplete="tel">
+                          </div>
+                        </div>
+                      </div>
 
                       <div id="editorial-contact-feedback" class="editorial-intake-feedback" aria-live="polite"></div>
-                    </div>
-                  </form>
-                </section>
+                    </form>
+                  </section>
 
-                <!-- ÉTAPE 2 -->
-                <section id="editorial-selection-stage" class="editorial-stage" hidden>
-                  <div id="editorial-contact-confirmation" class="editorial-contact-confirmation"></div>
-
-                  <form id="editorial-intake-form" class="editorial-qualifier-form" novalidate>
-
-                    <section class="editorial-stage editorial-stage--nested">
-                      <div class="editorial-stage__head">
-                        <h3>2. Sélectionner les sujets sur lesquels vous souhaitez intervenir</h3>
-                        <p>Confirmez maintenant le cycle, puis la ou les conversations qui vous paraissent les plus pertinentes au regard de la sollicitation reçue.</p>
-                      </div>
-
-                      <div class="editorial-stage__subhead">
-                        <h4>Cycle de conversation qui vous concerne</h4>
-                        <p>Le cycle Logement et le cycle Industrie regroupent chacun 4 conversations structurantes. Sélectionnez celui qui correspond le mieux au sujet sur lequel vous souhaitez intervenir.</p>
-                      </div>
-
-                      <div id="cycle-cards" class="editorial-card-grid editorial-card-grid--2"></div>
-                    </section>
-
-                    <section id="conversation-stage" class="editorial-stage editorial-stage--nested" hidden>
-                      <div class="editorial-stage__subhead">
-                        <h4>Conversation(s) concernée(s)</h4>
-                        <p>Merci d’en sélectionner une ou plusieurs.</p>
-                      </div>
-
-                      <div id="conversation-cards" class="editorial-card-grid editorial-card-grid--2"></div>
-                    </section>
-
-                    <div id="conversation-details" class="editorial-conversation-details"></div>
-
-                    <section id="summary-stage" class="editorial-stage editorial-stage--summary" hidden>
-                      <div class="editorial-stage__subhead">
-                        <h4>Votre sélection</h4>
-                        <p>Vérifiez rapidement les sujets retenus avant d’ouvrir l’agenda.</p>
-                      </div>
-
-                      <div class="editorial-summary-card">
-                        <div id="editorial-selection-summary-lead" class="editorial-summary-card__lead"></div>
-                        <div id="editorial-selection-summary-lines" class="editorial-summary-card__lines"></div>
-                      </div>
-                    </section>
-
-                    <div class="editorial-actions">
-                      <button type="submit" class="editorial-button editorial-button--primary editorial-primary-submit">
-                        Choisir un créneau de 15 min
-                      </button>
-
-                      <button type="button" id="reset-selection-button" class="editorial-button editorial-button--secondary">
-                        Réinitialiser la sélection
-                      </button>
-
-                      <p class="editorial-note">
-                        Vous accéderez ensuite directement à l’agenda de réservation.
+                  <!-- STEP 2 -->
+                  <section id="editorial-step-2" class="editorial-step" data-step="2" hidden aria-labelledby="editorial-step-2-title">
+                    <div class="editorial-stage__head">
+                      <h3 id="editorial-step-2-title">2. Sélectionner le cycle concerné</h3>
+                      <p>
+                        Les deux cycles ne recouvrent pas les mêmes chaînes de décision. Choisissez celui qui correspond à la réalité du sujet sur lequel vous souhaitez intervenir.
                       </p>
-
-                      <div id="editorial-intake-feedback" class="editorial-intake-feedback" aria-live="polite"></div>
                     </div>
 
-                  </form>
-                </section>
+                    <div id="cycle-cards" class="editorial-card-grid editorial-card-grid--2"></div>
+
+                    <div id="editorial-step-2-feedback" class="editorial-intake-feedback" aria-live="polite"></div>
+                  </section>
+
+                  <!-- STEP 3 -->
+                  <section id="editorial-step-3" class="editorial-step" data-step="3" hidden aria-labelledby="editorial-step-3-title">
+                    <div class="editorial-stage__head">
+                      <h3 id="editorial-step-3-title">3. Sélectionner la ou les conversations concernées</h3>
+                      <p>
+                        Une conversation correspond à un ensemble de <strong>quatre émissions individuelles</strong> mises en regard pour éclairer un même sujet sous plusieurs lectures complémentaires.
+                      </p>
+                    </div>
+
+                    <div id="conversation-cards" class="editorial-card-grid editorial-card-grid--2"></div>
+
+                    <div id="editorial-step-3-feedback" class="editorial-intake-feedback" aria-live="polite"></div>
+                  </section>
+
+                  <!-- STEP 4 -->
+                  <section id="editorial-step-4" class="editorial-step" data-step="4" hidden aria-labelledby="editorial-step-4-title">
+                    <div class="editorial-stage__head">
+                      <h3 id="editorial-step-4-title">4. Préciser le contexte</h3>
+                      <p>
+                        Une même conversation ne se lit pas de la même manière selon les territoires. Sélectionnez, pour chaque conversation retenue, le contexte qui correspond le mieux à la réalité de vos interventions.
+                      </p>
+                    </div>
+
+                    <div id="context-selection-panels" class="editorial-conversation-details"></div>
+
+                    <div id="editorial-step-4-feedback" class="editorial-intake-feedback" aria-live="polite"></div>
+                  </section>
+
+                  <!-- STEP 5 -->
+                  <section id="editorial-step-5" class="editorial-step" data-step="5" hidden aria-labelledby="editorial-step-5-title">
+                    <div class="editorial-stage__head">
+                      <h3 id="editorial-step-5-title">5. Sélectionner les angles</h3>
+                      <p>
+                        Choisissez maintenant les angles sur lesquels vous souhaitez intervenir. Les profils pressentis sont indiqués pour mieux situer le type de lecture attendu.
+                      </p>
+                    </div>
+
+                    <div id="angle-selection-panels" class="editorial-conversation-details"></div>
+
+                    <div id="editorial-step-5-feedback" class="editorial-intake-feedback" aria-live="polite"></div>
+                  </section>
+
+                  <!-- STEP 6 -->
+                  <section id="editorial-step-6" class="editorial-step" data-step="6" hidden aria-labelledby="editorial-step-6-title">
+                    <div class="editorial-stage__head">
+                      <h3 id="editorial-step-6-title">6. Vérifier votre sélection puis choisir un créneau</h3>
+                      <p>Relisez votre demande avant d’ouvrir l’agenda.</p>
+                    </div>
+
+                    <div class="editorial-summary-card">
+                      <div id="editorial-selection-summary-lead" class="editorial-summary-card__lead"></div>
+                      <div id="editorial-selection-summary-lines" class="editorial-summary-card__lines"></div>
+                    </div>
+
+                    <div class="editorial-agenda-shell" id="editorial-agenda-shell">
+                      <div class="editorial-agenda-shell__head">
+                        <h4>Agenda</h4>
+                        <p>La version finale affichera ici l’agenda intégré. En attendant, le bouton de validation peut encore ouvrir Cal.com.</p>
+                      </div>
+
+                      <div id="editorial-cal-embed" class="editorial-cal-embed">
+                        <p class="editorial-note">Zone réservée à l’agenda embedded.</p>
+                      </div>
+                    </div>
+
+                    <div id="editorial-intake-feedback" class="editorial-intake-feedback" aria-live="polite"></div>
+                  </section>
+
+                </div>
+
+                <div class="editorial-wizard__footer">
+                  <div class="editorial-wizard__footer-left">
+                    <button type="button" id="editorial-step-prev" class="editorial-button editorial-button--secondary" disabled>
+                      Retour
+                    </button>
+                  </div>
+
+                  <div class="editorial-wizard__footer-right">
+                    <button type="button" id="reset-selection-button" class="editorial-button editorial-button--ghost">
+                      Réinitialiser
+                    </button>
+
+                    <button type="button" id="editorial-step-next" class="editorial-button editorial-button--primary">
+                      Continuer
+                    </button>
+
+                    <button type="button" id="editorial-step-submit" class="editorial-button editorial-button--primary" hidden>
+                      Choisir un créneau de 15 min
+                    </button>
+                  </div>
+                </div>
+
               </div>
-            </section>
+            </div>
 
             <section class="page-section" id="echange-faq">
               <div class="section-head section-head--narrow">
@@ -326,7 +331,7 @@
 
   <script src="/assets/js/layout.js"></script>
   <script src="/assets/js/main.js"></script>
-  <script src="/assets/js/data/editorial-data.js?v=20260417-2"></script>
-  <script src="/assets/js/echange-editorial-form.js?v=20260417-2"></script>
+  <script src="/assets/js/data/editorial-data.js?v=20260417-5"></script>
+  <script src="/assets/js/echange-editorial-form.js?v=20260417-5"></script>
 </body>
-  </html>
+                      </html>
