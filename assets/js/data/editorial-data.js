@@ -724,8 +724,377 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             }
           ]
         }
-      ]
+      ]   
     },
+    {
+      "code": "IND",
+      "label": "Industrie & transformation des territoires",
+      "sourceLabel": "Industrie",
+      "description": "Ce cycle regroupe des conversations structurantes sur les conditions réelles de soutenabilité, de transformation et de redéploiement de l’activité industrielle.",
+      "contexts": [
+        {
+          "code": "GS",
+          "label": "Croissance sous tension",
+          "description": "Dans un contexte de croissance sous tension, l’activité progresse mais révèle en même temps des fragilités de cadence, d’organisation, de systèmes, de ressources ou d’ancrage territorial."
+        },
+        {
+          "code": "AC",
+          "label": "Adaptation sous contrainte",
+          "description": "Dans un contexte d’adaptation sous contrainte, l’enjeu n’est plus d’accélérer mais de tenir, d’ajuster et de préserver les marges de manœuvre sans dégrader irréversiblement l’outil."
+        },
+        {
+          "code": "RC",
+          "label": "Réinvention sous crise",
+          "description": "Dans un contexte de réinvention sous crise, la continuité de l’activité ne peut plus être pensée comme un simple ajustement : elle suppose une rupture de modèle, de périmètre, de process ou de géographie productive."
+        }
+      ],
+      "conversations": [
+        {
+          "code": "C1",
+          "title": "À quel moment produire ne tient plus ?",
+          "tension": "Continuité de production vs dégradation réelle de la soutenabilité économique",
+          "description": "Quatre angles pour identifier le moment où la continuité apparente de la production masque une dégradation devenue économiquement, techniquement ou temporellement non tenable.",
+          "contexts": [
+            {
+              "code": "GS",
+              "label": "Croissance sous tension",
+              "description": "Dans un contexte de croissance sous tension, l’activité progresse mais révèle en même temps des fragilités de cadence, d’organisation, de systèmes, de ressources ou d’ancrage territorial.",
+              "angles": [
+                {
+                  "code": "A01",
+                  "fullCode": "IND-C1-GS-A01",
+                  "motherAngle": "À partir de quand la production détruit-elle de la marge sans que cela apparaisse immédiatement ?",
+                  "question": "À partir de quand la hausse d’activité masque-t-elle une destruction de marge liée aux surcoûts de montée en cadence, aux non-qualités ou aux désorganisations ?",
+                  "primaryProfile": "Corporate finance / contrôle de gestion industriel",
+                  "alternateProfile": "Opérations / performance industrielle",
+                  "profiles": [
+                    "Corporate finance / contrôle de gestion industriel",
+                    "Opérations / performance industrielle"
+                  ]
+                },
+                {
+                  "code": "A02",
+                  "fullCode": "IND-C1-GS-A02",
+                  "motherAngle": "Quels arbitrages de cadence, de stock, de qualité ou de maintenance permettent encore de tenir — mais abîment la suite ?",
+                  "question": "Quels arbitrages de cadence, de stocks tampons, de maintenance différée ou de tolérance qualité permettent d’absorber la demande, mais désorganisent l’outil à moyen terme ?",
+                  "primaryProfile": "Opérations / supply chain / excellence opérationnelle",
+                  "alternateProfile": "Organisation industrielle / lean / modèle opératoire",
+                  "profiles": [
+                    "Opérations / supply chain / excellence opérationnelle",
+                    "Organisation industrielle / lean / modèle opératoire"
+                  ]
+                },
+                {
+                  "code": "A03",
+                  "fullCode": "IND-C1-GS-A03",
+                  "motherAngle": "À partir de quand la dette technologique ou la vétusté de l’outil rendent-elles la production non tenable ?",
+                  "question": "À partir de quand un outil saturé, mal interfacé ou insuffisamment modernisé empêche-t-il de franchir un cap de volume, de qualité ou de fiabilité ?",
+                  "primaryProfile": "Technologie industrielle / automatisation / OT-IT",
+                  "alternateProfile": "PMO industriel / direction technique",
+                  "profiles": [
+                    "Technologie industrielle / automatisation / OT-IT",
+                    "PMO industriel / direction technique"
+                  ]
+                },
+                {
+                  "code": "A04",
+                  "fullCode": "IND-C1-GS-A04",
+                  "motherAngle": "À partir de quand le temps nécessaire pour réinvestir, adapter ou redéployer l’outil devient-il incompatible avec le temps disponible pour tenir l’activité ?",
+                  "question": "À partir de quand le délai nécessaire pour recruter, équiper, industrialiser ou sécuriser la montée en capacité devient-il trop long par rapport au rythme imposé par la demande ?",
+                  "primaryProfile": "PMO / exécution de transformation industrielle",
+                  "alternateProfile": "Corporate finance / CAPEX / investissement industriel",
+                  "profiles": [
+                    "PMO / exécution de transformation industrielle",
+                    "Corporate finance / CAPEX / investissement industriel"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": "AC",
+              "label": "Adaptation sous contrainte",
+              "description": "Dans un contexte d’adaptation sous contrainte, l’enjeu n’est plus d’accélérer mais de tenir, d’ajuster et de préserver les marges de manœuvre sans dégrader irréversiblement l’outil.",
+              "angles": [
+                {
+                  "code": "A01",
+                  "fullCode": "IND-C1-AC-A01",
+                  "motherAngle": "À partir de quand la production détruit-elle de la marge sans que cela apparaisse immédiatement ?",
+                  "question": "À partir de quand les ajustements défensifs sur les volumes, les achats, les équipes ou la maintenance maintiennent-ils l’activité au prix d’une érosion invisible de la marge ?",
+                  "primaryProfile": "Corporate finance / restructuring / contrôle de gestion",
+                  "alternateProfile": "Opérations / performance industrielle",
+                  "profiles": [
+                    "Corporate finance / restructuring / contrôle de gestion",
+                    "Opérations / performance industrielle"
+                  ]
+                },
+                {
+                  "code": "A02",
+                  "fullCode": "IND-C1-AC-A02",
+                  "motherAngle": "Quels arbitrages de cadence, de stock, de qualité ou de maintenance permettent encore de tenir — mais abîment la suite ?",
+                  "question": "Quels arbitrages défensifs sur les rythmes, les stocks, la qualité ou la maintenance permettent encore de produire, mais dégradent la robustesse future du site ?",
+                  "primaryProfile": "Opérations / supply chain / excellence opérationnelle",
+                  "alternateProfile": "Organisation industrielle / lean / modèle opératoire",
+                  "profiles": [
+                    "Opérations / supply chain / excellence opérationnelle",
+                    "Organisation industrielle / lean / modèle opératoire"
+                  ]
+                },
+                {
+                  "code": "A03",
+                  "fullCode": "IND-C1-AC-A03",
+                  "motherAngle": "À partir de quand la dette technologique ou la vétusté de l’outil rendent-elles la production non tenable ?",
+                  "question": "À partir de quand le vieillissement de l’outil oblige-t-il à des compromis de plus en plus coûteux pour maintenir la production ?",
+                  "primaryProfile": "Technologie industrielle / maintenance / modernisation d’outil",
+                  "alternateProfile": "Direction industrielle / performance de site",
+                  "profiles": [
+                    "Technologie industrielle / maintenance / modernisation d’outil",
+                    "Direction industrielle / performance de site"
+                  ]
+                },
+                {
+                  "code": "A04",
+                  "fullCode": "IND-C1-AC-A04",
+                  "motherAngle": "À partir de quand le temps nécessaire pour réinvestir, adapter ou redéployer l’outil devient-il incompatible avec le temps disponible pour tenir l’activité ?",
+                  "question": "À partir de quand le temps nécessaire pour adapter l’outil, réorganiser la production ou sécuriser les arbitrages devient-il plus long que la capacité réelle de l’activité à tenir ?",
+                  "primaryProfile": "PMO / turnaround / exécution de transformation",
+                  "alternateProfile": "Corporate finance / CAPEX / restructuring",
+                  "profiles": [
+                    "PMO / turnaround / exécution de transformation",
+                    "Corporate finance / CAPEX / restructuring"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": "RC",
+              "label": "Réinvention sous crise",
+              "description": "Dans un contexte de réinvention sous crise, la continuité de l’activité ne peut plus être pensée comme un simple ajustement : elle suppose une rupture de modèle, de périmètre, de process ou de géographie productive.",
+              "angles": [
+                {
+                  "code": "A01",
+                  "fullCode": "IND-C1-RC-A01",
+                  "motherAngle": "À partir de quand la production détruit-elle de la marge sans que cela apparaisse immédiatement ?",
+                  "question": "À partir de quand la production ne détruit-elle plus seulement de la marge, mais révèle-t-elle une activité devenue structurellement non tenable ?",
+                  "primaryProfile": "Corporate finance / restructuring / turnaround",
+                  "alternateProfile": "Stratégie industrielle / redéploiement",
+                  "profiles": [
+                    "Corporate finance / restructuring / turnaround",
+                    "Stratégie industrielle / redéploiement"
+                  ]
+                },
+                {
+                  "code": "A02",
+                  "fullCode": "IND-C1-RC-A02",
+                  "motherAngle": "Quels arbitrages de cadence, de stock, de qualité ou de maintenance permettent encore de tenir — mais abîment la suite ?",
+                  "question": "À partir de quand ces arbitrages ne relèvent-ils plus d’un pilotage serré, mais d’un maintien artificiel qui reporte une décision de rupture ?",
+                  "primaryProfile": "Turnaround / direction industrielle / restructuration",
+                  "alternateProfile": "Opérations / performance industrielle",
+                  "profiles": [
+                    "Turnaround / direction industrielle / restructuration",
+                    "Opérations / performance industrielle"
+                  ]
+                },
+                {
+                  "code": "A03",
+                  "fullCode": "IND-C1-RC-A03",
+                  "motherAngle": "À partir de quand la dette technologique ou la vétusté de l’outil rendent-elles la production non tenable ?",
+                  "question": "À partir de quand la dette technologique ne permet-elle plus une remise à niveau progressive, mais impose-t-elle une fermeture partielle, un saut d’investissement ou un changement de périmètre ?",
+                  "primaryProfile": "Technologie industrielle / stratégie d’outil / CAPEX",
+                  "alternateProfile": "Corporate finance / restructuring / site industriel",
+                  "profiles": [
+                    "Technologie industrielle / stratégie d’outil / CAPEX",
+                    "Corporate finance / restructuring / site industriel"
+                  ]
+                },
+                {
+                  "code": "A04",
+                  "fullCode": "IND-C1-RC-A04",
+                  "motherAngle": "À partir de quand le temps nécessaire pour réinvestir, adapter ou redéployer l’outil devient-il incompatible avec le temps disponible pour tenir l’activité ?",
+                  "question": "À partir de quand le délai requis pour redéployer, reconvertir ou refonder l’outil dépasse-t-il le temps économique, social ou financier encore disponible ?",
+                  "primaryProfile": "PMO / redéploiement / transformation industrielle",
+                  "alternateProfile": "Corporate finance / turnaround / site selection",
+                  "profiles": [
+                    "PMO / redéploiement / transformation industrielle",
+                    "Corporate finance / turnaround / site selection"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "C2",
+          "title": "Où se situent les dépendances qui font basculer la production ?",
+          "tension": "Autonomie affichée vs vulnérabilités réelles de la chaîne de valeur",
+          "description": "Quatre angles pour identifier où se logent les dépendances critiques — fournisseurs, filière, cadre externe ou systèmes — qui rendent la production vulnérable.",
+          "contexts": [
+            {
+              "code": "GS",
+              "label": "Croissance sous tension",
+              "description": "Dans un contexte de croissance sous tension, l’activité progresse mais révèle en même temps des fragilités de cadence, d’organisation, de systèmes, de ressources ou d’ancrage territorial.",
+              "angles": [
+                {
+                  "code": "A05",
+                  "fullCode": "IND-C2-GS-A05",
+                  "motherAngle": "À partir de quand une dépendance fournisseur ou logistique cesse-t-elle d’être pilotable ?",
+                  "question": "À partir de quand l’augmentation des volumes révèle-t-elle une dépendance fournisseur ou logistique que l’organisation ne maîtrise plus vraiment ?",
+                  "primaryProfile": "Opérations / supply chain / achats",
+                  "alternateProfile": "Stratégie industrielle / filière",
+                  "profiles": [
+                    "Opérations / supply chain / achats",
+                    "Stratégie industrielle / filière"
+                  ]
+                },
+                {
+                  "code": "A06",
+                  "fullCode": "IND-C2-GS-A06",
+                  "motherAngle": "Quelles dépendances de filière, de segment ou de spécialisation industrielle fragilisent la capacité à produire, même indépendamment de la performance commerciale immédiate ?",
+                  "question": "À partir de quand une spécialisation trop étroite ou un positionnement de filière trop dépendant limite-t-il la capacité à capter durablement la croissance ?",
+                  "primaryProfile": "Stratégie industrielle / filière / compétitivité",
+                  "alternateProfile": "Pricing B2B / portefeuille clients / business model",
+                  "profiles": [
+                    "Stratégie industrielle / filière / compétitivité",
+                    "Pricing B2B / portefeuille clients / business model"
+                  ]
+                },
+                {
+                  "code": "A07",
+                  "fullCode": "IND-C2-GS-A07",
+                  "motherAngle": "Quand le cadre commercial, réglementaire ou géopolitique déstabilise-t-il la continuité industrielle ?",
+                  "question": "À partir de quand l’ouverture commerciale, les normes ou les contraintes export cessent-elles d’être un simple paramètre de croissance pour devenir un risque de désorganisation ?",
+                  "primaryProfile": "Affaires publiques / commerce international / contrôle export",
+                  "alternateProfile": "Juridique / contrats / conformité industrielle",
+                  "profiles": [
+                    "Affaires publiques / commerce international / contrôle export",
+                    "Juridique / contrats / conformité industrielle"
+                  ]
+                },
+                {
+                  "code": "A08",
+                  "fullCode": "IND-C2-GS-A08",
+                  "motherAngle": "À partir de quand la dépendance aux systèmes, logiciels, automatismes ou intégrateurs devient-elle critique ?",
+                  "question": "À partir de quand la montée en charge révèle-t-elle que l’architecture des systèmes, automatismes ou intégrations n’est plus à l’échelle de l’activité ?",
+                  "primaryProfile": "Technologie industrielle / OT-IT / automatisation",
+                  "alternateProfile": "Intégration systèmes / direction industrielle",
+                  "profiles": [
+                    "Technologie industrielle / OT-IT / automatisation",
+                    "Intégration systèmes / direction industrielle"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": "AC",
+              "label": "Adaptation sous contrainte",
+              "description": "Dans un contexte d’adaptation sous contrainte, l’enjeu n’est plus d’accélérer mais de tenir, d’ajuster et de préserver les marges de manœuvre sans dégrader irréversiblement l’outil.",
+              "angles": [
+                {
+                  "code": "A05",
+                  "fullCode": "IND-C2-AC-A05",
+                  "motherAngle": "À partir de quand une dépendance fournisseur ou logistique cesse-t-elle d’être pilotable ?",
+                  "question": "À partir de quand la réduction des marges de manœuvre rend-elle une dépendance amont ou logistique trop risquée pour rester pilotée à coût acceptable ?",
+                  "primaryProfile": "Opérations / supply chain / achats",
+                  "alternateProfile": "Turnaround / compétitivité industrielle",
+                  "profiles": [
+                    "Opérations / supply chain / achats",
+                    "Turnaround / compétitivité industrielle"
+                  ]
+                },
+                {
+                  "code": "A06",
+                  "fullCode": "IND-C2-AC-A06",
+                  "motherAngle": "Quelles dépendances de filière, de segment ou de spécialisation industrielle fragilisent la capacité à produire, même indépendamment de la performance commerciale immédiate ?",
+                  "question": "Quelles dépendances de filière ou de segment empêchent-elles d’ajuster l’activité sans dégrader la position future de l’entreprise ?",
+                  "primaryProfile": "Stratégie industrielle / filière / compétitivité",
+                  "alternateProfile": "Corporate finance / repositionnement",
+                  "profiles": [
+                    "Stratégie industrielle / filière / compétitivité",
+                    "Corporate finance / repositionnement"
+                  ]
+                },
+                {
+                  "code": "A07",
+                  "fullCode": "IND-C2-AC-A07",
+                  "motherAngle": "Quand le cadre commercial, réglementaire ou géopolitique déstabilise-t-il la continuité industrielle ?",
+                  "question": "Quand les règles commerciales, sociales, douanières ou réglementaires empêchent-elles de continuer à ajuster l’activité sans rupture de continuité ?",
+                  "primaryProfile": "Juridique / commerce international / social industriel",
+                  "alternateProfile": "Affaires publiques / conformité / export",
+                  "profiles": [
+                    "Juridique / commerce international / social industriel",
+                    "Affaires publiques / conformité / export"
+                  ]
+                },
+                {
+                  "code": "A08",
+                  "fullCode": "IND-C2-AC-A08",
+                  "motherAngle": "À partir de quand la dépendance aux systèmes, logiciels, automatismes ou intégrateurs devient-elle critique ?",
+                  "question": "À partir de quand la dépendance à des systèmes vieillissants, propriétaires ou mal intégrés empêche-t-elle d’ajuster rapidement l’outil ?",
+                  "primaryProfile": "Technologie industrielle / systèmes / OT-IT",
+                  "alternateProfile": "Direction industrielle / intégration / automatisation",
+                  "profiles": [
+                    "Technologie industrielle / systèmes / OT-IT",
+                    "Direction industrielle / intégration / automatisation"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": "RC",
+              "label": "Réinvention sous crise",
+              "description": "Dans un contexte de réinvention sous crise, la continuité de l’activité ne peut plus être pensée comme un simple ajustement : elle suppose une rupture de modèle, de périmètre, de process ou de géographie productive.",
+              "angles": [
+                {
+                  "code": "A05",
+                  "fullCode": "IND-C2-RC-A05",
+                  "motherAngle": "À partir de quand une dépendance fournisseur ou logistique cesse-t-elle d’être pilotable ?",
+                  "question": "À partir de quand une dépendance critique impose-t-elle non plus une sécurisation, mais une relocalisation, une substitution ou un changement de modèle d’approvisionnement ?",
+                  "primaryProfile": "Supply chain stratégique / achats / redéploiement",
+                  "alternateProfile": "Stratégie industrielle / site selection",
+                  "profiles": [
+                    "Supply chain stratégique / achats / redéploiement",
+                    "Stratégie industrielle / site selection"
+                  ]
+                },
+                {
+                  "code": "A06",
+                  "fullCode": "IND-C2-RC-A06",
+                  "motherAngle": "Quelles dépendances de filière, de segment ou de spécialisation industrielle fragilisent la capacité à produire, même indépendamment de la performance commerciale immédiate ?",
+                  "question": "À partir de quand la dépendance à une filière, à une spécialisation ou à un segment condamne-t-elle toute adaptation partielle et impose-t-elle un repositionnement ?",
+                  "primaryProfile": "Stratégie industrielle / filière / repositionnement",
+                  "alternateProfile": "Corporate finance / restructuring / business model",
+                  "profiles": [
+                    "Stratégie industrielle / filière / repositionnement",
+                    "Corporate finance / restructuring / business model"
+                  ]
+                },
+                {
+                  "code": "A07",
+                  "fullCode": "IND-C2-RC-A07",
+                  "motherAngle": "Quand le cadre commercial, réglementaire ou géopolitique déstabilise-t-il la continuité industrielle ?",
+                  "question": "À partir de quand un changement de cadre géopolitique ou réglementaire rend-il caduque une partie du modèle industriel ou de la géographie productive ?",
+                  "primaryProfile": "Affaires publiques / géopolitique / contrôle export",
+                  "alternateProfile": "Juridique / stratégie industrielle / commerce international",
+                  "profiles": [
+                    "Affaires publiques / géopolitique / contrôle export",
+                    "Juridique / stratégie industrielle / commerce international"
+                  ]
+                },
+                {
+                  "code": "A08",
+                  "fullCode": "IND-C2-RC-A08",
+                  "motherAngle": "À partir de quand la dépendance aux systèmes, logiciels, automatismes ou intégrateurs devient-elle critique ?",
+                  "question": "À partir de quand la dépendance technique à un logiciel, un fournisseur d’automatisme ou un intégrateur bloque-t-elle toute réinvention du site ou du process ?",
+                  "primaryProfile": "Technologie industrielle / automatisation / systèmes critiques",
+                  "alternateProfile": "PMO / transformation industrielle / intégration",
+                  "profiles": [
+                    "Technologie industrielle / automatisation / systèmes critiques",
+                    "PMO / transformation industrielle / intégration"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
 
 
 
