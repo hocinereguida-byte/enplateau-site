@@ -1096,6 +1096,356 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ]
         },
 
+{
+          "code": "C3",
+          "title": "Qu’est-ce qui transforme réellement un outil productif ?",
+          "tension": "Modernisation affichée vs transformation effective de la performance industrielle",
+          "description": "Quatre angles pour distinguer ce qui modernise seulement le discours de ce qui transforme réellement la performance, l’architecture opératoire, les capacités humaines et le process industriel.",
+          "contexts": [
+            {
+              "code": "GS",
+              "label": "Croissance sous tension",
+              "description": "Dans un contexte de croissance sous tension, l’activité progresse mais révèle en même temps des fragilités de cadence, d’organisation, de systèmes, de ressources ou d’ancrage territorial.",
+              "angles": [
+                {
+                  "code": "A09",
+                  "fullCode": "IND-C3-GS-A09",
+                  "motherAngle": "Qu’est-ce qui transforme réellement un outil : automatisation, digitalisation ou réorganisation du process ?",
+                  "question": "Qu’est-ce qui permet réellement de franchir un cap de volume ou de qualité : automatiser, digitaliser davantage, ou redessiner le process ?",
+                  "primaryProfile": "Technologie industrielle / automatisation / OT-IT",
+                  "alternateProfile": "Organisation industrielle / lean / modèle opératoire",
+                  "profiles": [
+                    "Technologie industrielle / automatisation / OT-IT",
+                    "Organisation industrielle / lean / modèle opératoire"
+                  ]
+                },
+                {
+                  "code": "A10",
+                  "fullCode": "IND-C3-GS-A10",
+                  "motherAngle": "À partir de quand l’architecture opératoire — flux, interfaces, séquencement, pilotage — limite-t-elle davantage la performance que la technologie elle-même ?",
+                  "question": "À partir de quand la vraie limite n’est-elle plus technologique, mais opératoire : flux, interfaces, standardisation, séquencement, pilotage ?",
+                  "primaryProfile": "Organisation industrielle / lean / modèle opératoire",
+                  "alternateProfile": "Opérations / supply chain / excellence opérationnelle",
+                  "profiles": [
+                    "Organisation industrielle / lean / modèle opératoire",
+                    "Opérations / supply chain / excellence opérationnelle"
+                  ]
+                },
+                {
+                  "code": "A11",
+                  "fullCode": "IND-C3-GS-A11",
+                  "motherAngle": "À partir de quand les exigences de qualité, de sécurité et de compétences deviennent-elles le facteur limitant de la montée en capacité ou du maintien de l’outil ?",
+                  "question": "À partir de quand la montée en capacité bute-t-elle moins sur la machine que sur la qualité, la sécurité, la formation et la maîtrise des gestes critiques ?",
+                  "primaryProfile": "QHSE / certification / conformité industrielle",
+                  "alternateProfile": "RH / compétences / transformation du travail",
+                  "profiles": [
+                    "QHSE / certification / conformité industrielle",
+                    "RH / compétences / transformation du travail"
+                  ]
+                },
+                {
+                  "code": "A12",
+                  "fullCode": "IND-C3-GS-A12",
+                  "motherAngle": "À partir de quand la décarbonation cesse-t-elle d’être un chantier de conformité ou de coût pour devenir le moteur d’une réécriture du process, de l’outil ou du mix produit ?",
+                  "question": "À partir de quand la croissance impose-t-elle de décarboner autrement, non plus à la marge, mais en repensant le process, les utilités ou le mix produit ?",
+                  "primaryProfile": "Énergie / décarbonation / utilités",
+                  "alternateProfile": "Technologie industrielle / transformation de process",
+                  "profiles": [
+                    "Énergie / décarbonation / utilités",
+                    "Technologie industrielle / transformation de process"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": "AC",
+              "label": "Adaptation sous contrainte",
+              "description": "Dans un contexte d’adaptation sous contrainte, l’enjeu n’est plus d’accélérer mais de tenir, d’ajuster et de préserver les marges de manœuvre sans dégrader irréversiblement l’outil.",
+              "angles": [
+                {
+                  "code": "A09",
+                  "fullCode": "IND-C3-AC-A09",
+                  "motherAngle": "Qu’est-ce qui transforme réellement un outil : automatisation, digitalisation ou réorganisation du process ?",
+                  "question": "Dans un contexte de marges serrées, qu’est-ce qui transforme encore réellement l’outil : un investissement technologique ciblé ou une recomposition plus frugale du process ?",
+                  "primaryProfile": "Technologie industrielle / investissements ciblés / OT-IT",
+                  "alternateProfile": "Organisation industrielle / lean / redéploiement opératoire",
+                  "profiles": [
+                    "Technologie industrielle / investissements ciblés / OT-IT",
+                    "Organisation industrielle / lean / redéploiement opératoire"
+                  ]
+                },
+                {
+                  "code": "A10",
+                  "fullCode": "IND-C3-AC-A10",
+                  "motherAngle": "À partir de quand l’architecture opératoire — flux, interfaces, séquencement, pilotage — limite-t-elle davantage la performance que la technologie elle-même ?",
+                  "question": "À partir de quand de nouveaux outils ne compensent-ils plus une architecture opératoire devenue trop rigide, trop fragmentée ou trop lente ?",
+                  "primaryProfile": "Organisation industrielle / modèle opératoire",
+                  "alternateProfile": "Technologie industrielle / intégration systèmes",
+                  "profiles": [
+                    "Organisation industrielle / modèle opératoire",
+                    "Technologie industrielle / intégration systèmes"
+                  ]
+                },
+                {
+                  "code": "A11",
+                  "fullCode": "IND-C3-AC-A11",
+                  "motherAngle": "À partir de quand les exigences de qualité, de sécurité et de compétences deviennent-elles le facteur limitant de la montée en capacité ou du maintien de l’outil ?",
+                  "question": "À partir de quand les exigences de qualité, de sécurité ou de conformité empêchent-elles de continuer à ajuster l’outil sans remettre en cause la tenue de l’activité ?",
+                  "primaryProfile": "QHSE / conformité / certification",
+                  "alternateProfile": "RH / compétences / maintien de l’outil",
+                  "profiles": [
+                    "QHSE / conformité / certification",
+                    "RH / compétences / maintien de l’outil"
+                  ]
+                },
+                {
+                  "code": "A12",
+                  "fullCode": "IND-C3-AC-A12",
+                  "motherAngle": "À partir de quand la décarbonation cesse-t-elle d’être un chantier de conformité ou de coût pour devenir le moteur d’une réécriture du process, de l’outil ou du mix produit ?",
+                  "question": "À partir de quand la décarbonation ne peut-elle plus être traitée comme une contrainte de coût ou de conformité, parce qu’elle rebat les conditions mêmes de compétitivité et d’investissement ?",
+                  "primaryProfile": "Énergie / décarbonation / compétitivité industrielle",
+                  "alternateProfile": "Corporate finance / CAPEX / transformation de process",
+                  "profiles": [
+                    "Énergie / décarbonation / compétitivité industrielle",
+                    "Corporate finance / CAPEX / transformation de process"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": "RC",
+              "label": "Réinvention sous crise",
+              "description": "Dans un contexte de réinvention sous crise, la continuité de l’activité ne peut plus être pensée comme un simple ajustement : elle suppose une rupture de modèle, de périmètre, de process ou de géographie productive.",
+              "angles": [
+                {
+                  "code": "A09",
+                  "fullCode": "IND-C3-RC-A09",
+                  "motherAngle": "Qu’est-ce qui transforme réellement un outil : automatisation, digitalisation ou réorganisation du process ?",
+                  "question": "À partir de quand la transformation de l’outil ne passe-t-elle plus par l’amélioration incrémentale, mais par une rupture de process ou de système de production ?",
+                  "primaryProfile": "Technologie industrielle / transformation de process / automatisation",
+                  "alternateProfile": "Stratégie industrielle / réinvention du modèle opératoire",
+                  "profiles": [
+                    "Technologie industrielle / transformation de process / automatisation",
+                    "Stratégie industrielle / réinvention du modèle opératoire"
+                  ]
+                },
+                {
+                  "code": "A10",
+                  "fullCode": "IND-C3-RC-A10",
+                  "motherAngle": "À partir de quand l’architecture opératoire — flux, interfaces, séquencement, pilotage — limite-t-elle davantage la performance que la technologie elle-même ?",
+                  "question": "À partir de quand la crise révèle-t-elle que le vrai sujet n’est plus l’outil, mais l’architecture même de l’organisation productive ?",
+                  "primaryProfile": "Organisation industrielle / redesign opératoire",
+                  "alternateProfile": "PMO / transformation industrielle / turnaround",
+                  "profiles": [
+                    "Organisation industrielle / redesign opératoire",
+                    "PMO / transformation industrielle / turnaround"
+                  ]
+                },
+                {
+                  "code": "A11",
+                  "fullCode": "IND-C3-RC-A11",
+                  "motherAngle": "À partir de quand les exigences de qualité, de sécurité et de compétences deviennent-elles le facteur limitant de la montée en capacité ou du maintien de l’outil ?",
+                  "question": "À partir de quand l’écart entre les compétences disponibles, les exigences de sûreté et les standards de production bloque-t-il toute tentative de redressement ou de transformation ?",
+                  "primaryProfile": "RH / compétences critiques / transformation du travail",
+                  "alternateProfile": "QHSE / sûreté / standards industriels",
+                  "profiles": [
+                    "RH / compétences critiques / transformation du travail",
+                    "QHSE / sûreté / standards industriels"
+                  ]
+                },
+                {
+                  "code": "A12",
+                  "fullCode": "IND-C3-RC-A12",
+                  "motherAngle": "À partir de quand la décarbonation cesse-t-elle d’être un chantier de conformité ou de coût pour devenir le moteur d’une réécriture du process, de l’outil ou du mix produit ?",
+                  "question": "À partir de quand la contrainte carbone impose-t-elle une réécriture du process, de l’outil, de l’offre ou même de la vocation industrielle du site ?",
+                  "primaryProfile": "Énergie / décarbonation / stratégie industrielle",
+                  "alternateProfile": "Corporate finance / transformation / redéploiement de site",
+                  "profiles": [
+                    "Énergie / décarbonation / stratégie industrielle",
+                    "Corporate finance / transformation / redéploiement de site"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "C4",
+          "title": "Qu’est-ce qui empêche une trajectoire industrielle de tenir ?",
+          "tension": "Performance interne vs conditions réelles de soutenabilité de l’activité",
+          "description": "Quatre angles pour lire ce qui empêche une trajectoire industrielle de tenir durablement : capacités humaines, utilités, structure commerciale et conditions territoriales de maintien ou de redéploiement.",
+          "contexts": [
+            {
+              "code": "GS",
+              "label": "Croissance sous tension",
+              "description": "Dans un contexte de croissance sous tension, l’activité progresse mais révèle en même temps des fragilités de cadence, d’organisation, de systèmes, de ressources ou d’ancrage territorial.",
+              "angles": [
+                {
+                  "code": "A13",
+                  "fullCode": "IND-C4-GS-A13",
+                  "motherAngle": "À partir de quand les compétences critiques, les conditions de travail et la capacité humaine à tenir l’activité empêchent-elles de transformer — ou même de faire tourner — l’outil ?",
+                  "question": "À partir de quand la croissance révèle-t-elle une incapacité à recruter, transmettre, stabiliser ou faire monter en compétence au rythme nécessaire ?",
+                  "primaryProfile": "RH / compétences / transformation du travail",
+                  "alternateProfile": "Organisation industrielle / management de site",
+                  "profiles": [
+                    "RH / compétences / transformation du travail",
+                    "Organisation industrielle / management de site"
+                  ]
+                },
+                {
+                  "code": "A14",
+                  "fullCode": "IND-C4-GS-A14",
+                  "motherAngle": "Quand l’énergie, l’eau, les utilités ou la décarbonation cessent-elles d’être un poste de coût pour devenir un arbitrage de maintien, d’investissement ou de localisation ?",
+                  "question": "À partir de quand l’accès à l’énergie, à l’eau, aux utilités ou aux capacités réseaux devient-il le vrai verrou d’une montée en capacité ?",
+                  "primaryProfile": "Énergie / utilités / décarbonation",
+                  "alternateProfile": "Implantation / site selection / stratégie territoriale industrielle",
+                  "profiles": [
+                    "Énergie / utilités / décarbonation",
+                    "Implantation / site selection / stratégie territoriale industrielle"
+                  ]
+                },
+                {
+                  "code": "A15",
+                  "fullCode": "IND-C4-GS-A15",
+                  "motherAngle": "À partir de quand la structure de clientèle et le pouvoir de négociation empêchent-ils de répercuter, de préserver la marge ou de financer l’adaptation ?",
+                  "question": "À partir de quand la croissance du carnet révèle-t-elle une fragilité commerciale : incapacité à sélectionner, à répercuter ou à défendre ses conditions économiques ?",
+                  "primaryProfile": "Pricing B2B / structure commerciale / portefeuille clients",
+                  "alternateProfile": "Corporate finance / compétitivité / business model",
+                  "profiles": [
+                    "Pricing B2B / structure commerciale / portefeuille clients",
+                    "Corporate finance / compétitivité / business model"
+                  ]
+                },
+                {
+                  "code": "A16",
+                  "fullCode": "IND-C4-GS-A16",
+                  "motherAngle": "À quelles conditions un territoire permet-il encore de maintenir, d’étendre ou de redéployer une activité industrielle ?",
+                  "question": "À quelles conditions un territoire permet-il encore d’accompagner une montée en capacité : foncier, réseaux, logistique, main-d’œuvre, acceptabilité ?",
+                  "primaryProfile": "Implantation / site selection / stratégie territoriale industrielle",
+                  "alternateProfile": "Affaires publiques / développement territorial industriel",
+                  "profiles": [
+                    "Implantation / site selection / stratégie territoriale industrielle",
+                    "Affaires publiques / développement territorial industriel"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": "AC",
+              "label": "Adaptation sous contrainte",
+              "description": "Dans un contexte d’adaptation sous contrainte, l’enjeu n’est plus d’accélérer mais de tenir, d’ajuster et de préserver les marges de manœuvre sans dégrader irréversiblement l’outil.",
+              "angles": [
+                {
+                  "code": "A13",
+                  "fullCode": "IND-C4-AC-A13",
+                  "motherAngle": "À partir de quand les compétences critiques, les conditions de travail et la capacité humaine à tenir l’activité empêchent-elles de transformer — ou même de faire tourner — l’outil ?",
+                  "question": "À partir de quand les tensions sur les effectifs, les savoir-faire, les conditions de travail et l’organisation empêchent-elles de continuer à ajuster l’activité sans perte de maîtrise ?",
+                  "primaryProfile": "RH / compétences / maintien d’activité",
+                  "alternateProfile": "Organisation industrielle / management / transformation du travail",
+                  "profiles": [
+                    "RH / compétences / maintien d’activité",
+                    "Organisation industrielle / management / transformation du travail"
+                  ]
+                },
+                {
+                  "code": "A14",
+                  "fullCode": "IND-C4-AC-A14",
+                  "motherAngle": "Quand l’énergie, l’eau, les utilités ou la décarbonation cessent-elles d’être un poste de coût pour devenir un arbitrage de maintien, d’investissement ou de localisation ?",
+                  "question": "À partir de quand les coûts d’énergie, d’eau ou de conformité environnementale empêchent-ils l’entreprise d’ajuster son activité sans dégrader sa compétitivité ?",
+                  "primaryProfile": "Énergie / décarbonation / utilités",
+                  "alternateProfile": "Corporate finance / compétitivité industrielle",
+                  "profiles": [
+                    "Énergie / décarbonation / utilités",
+                    "Corporate finance / compétitivité industrielle"
+                  ]
+                },
+                {
+                  "code": "A15",
+                  "fullCode": "IND-C4-AC-A15",
+                  "motherAngle": "À partir de quand la structure de clientèle et le pouvoir de négociation empêchent-ils de répercuter, de préserver la marge ou de financer l’adaptation ?",
+                  "question": "À partir de quand la pression des clients ou donneurs d’ordre empêche-t-elle de préserver la marge minimale nécessaire pour maintenir ou adapter l’outil ?",
+                  "primaryProfile": "Pricing B2B / négociation / structure de clientèle",
+                  "alternateProfile": "Corporate finance / turnaround / business model",
+                  "profiles": [
+                    "Pricing B2B / négociation / structure de clientèle",
+                    "Corporate finance / turnaround / business model"
+                  ]
+                },
+                {
+                  "code": "A16",
+                  "fullCode": "IND-C4-AC-A16",
+                  "motherAngle": "À quelles conditions un territoire permet-il encore de maintenir, d’étendre ou de redéployer une activité industrielle ?",
+                  "question": "À partir de quand un territoire n’offre-t-il plus les conditions suffisantes pour continuer à ajuster ou maintenir une activité sans surcoûts croissants ?",
+                  "primaryProfile": "Implantation / ancrage territorial / compétitivité de site",
+                  "alternateProfile": "Affaires publiques / développement économique / stratégie industrielle",
+                  "profiles": [
+                    "Implantation / ancrage territorial / compétitivité de site",
+                    "Affaires publiques / développement économique / stratégie industrielle"
+                  ]
+                }
+              ]
+            },
+            {
+              "code": "RC",
+              "label": "Réinvention sous crise",
+              "description": "Dans un contexte de réinvention sous crise, la continuité de l’activité ne peut plus être pensée comme un simple ajustement : elle suppose une rupture de modèle, de périmètre, de process ou de géographie productive.",
+              "angles": [
+                {
+                  "code": "A13",
+                  "fullCode": "IND-C4-RC-A13",
+                  "motherAngle": "À partir de quand les compétences critiques, les conditions de travail et la capacité humaine à tenir l’activité empêchent-elles de transformer — ou même de faire tourner — l’outil ?",
+                  "question": "À partir de quand l’absence de compétences critiques ou la rigidité de l’organisation rendent-elles impossible toute trajectoire de redressement ou de transformation ?",
+                  "primaryProfile": "RH / compétences critiques / redressement industriel",
+                  "alternateProfile": "Organisation industrielle / turnaround / management de transformation",
+                  "profiles": [
+                    "RH / compétences critiques / redressement industriel",
+                    "Organisation industrielle / turnaround / management de transformation"
+                  ]
+                },
+                {
+                  "code": "A14",
+                  "fullCode": "IND-C4-RC-A14",
+                  "motherAngle": "Quand l’énergie, l’eau, les utilités ou la décarbonation cessent-elles d’être un poste de coût pour devenir un arbitrage de maintien, d’investissement ou de localisation ?",
+                  "question": "À partir de quand les contraintes énergétiques, hydriques ou climatiques imposent-elles un arbitrage de localisation, de fermeture partielle ou de transformation profonde du site ?",
+                  "primaryProfile": "Énergie / utilités / stratégie de site",
+                  "alternateProfile": "Implantation / redéploiement industriel / site selection",
+                  "profiles": [
+                    "Énergie / utilités / stratégie de site",
+                    "Implantation / redéploiement industriel / site selection"
+                  ]
+                },
+                {
+                  "code": "A15",
+                  "fullCode": "IND-C4-RC-A15",
+                  "motherAngle": "À partir de quand la structure de clientèle et le pouvoir de négociation empêchent-ils de répercuter, de préserver la marge ou de financer l’adaptation ?",
+                  "question": "À partir de quand la structure commerciale condamne-t-elle toute adaptation partielle et impose-t-elle un changement de marché, de portefeuille, de partenariat ou de position dans la chaîne de valeur ?",
+                  "primaryProfile": "Pricing B2B / portefeuille clients / repositionnement",
+                  "alternateProfile": "Stratégie industrielle / business model / corporate finance",
+                  "profiles": [
+                    "Pricing B2B / portefeuille clients / repositionnement",
+                    "Stratégie industrielle / business model / corporate finance"
+                  ]
+                },
+                {
+                  "code": "A16",
+                  "fullCode": "IND-C4-RC-A16",
+                  "motherAngle": "À quelles conditions un territoire permet-il encore de maintenir, d’étendre ou de redéployer une activité industrielle ?",
+                  "question": "À quelles conditions un territoire peut-il encore porter un redéploiement industriel, une reconversion partielle ou une nouvelle trajectoire de site ?",
+                  "primaryProfile": "Implantation / redéploiement / stratégie territoriale industrielle",
+                  "alternateProfile": "Affaires publiques / développement territorial / reconversion",
+                  "profiles": [
+                    "Implantation / redéploiement / stratégie territoriale industrielle",
+                    "Affaires publiques / développement territorial / reconversion"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
 
 
 
