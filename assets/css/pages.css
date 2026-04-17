@@ -1,22 +1,24 @@
 /* =========================================================
-   DEMANDER UN ÉCHANGE — V4 MULTI-STEP WIZARD
+   DEMANDER UN ÉCHANGE — V5 MULTI-STEP WIZARD
    À coller tout en bas de pages.css
    ========================================================= */
 
 .editorial-qualifier--wizard {
   padding: 34px 30px;
+  min-height: calc(100vh - 140px);
 }
 
 .editorial-wizard {
   display: grid;
   gap: 28px;
+  min-height: calc(100vh - 260px);
 }
 
 .editorial-wizard__progress {
   display: grid;
   gap: 14px;
   padding: 18px 18px 16px;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.88);
   border: 1px solid var(--ep-line);
 }
 
@@ -125,11 +127,12 @@
 
 .editorial-wizard__steps {
   position: relative;
+  min-height: calc(100vh - 520px);
 }
 
 .editorial-step {
   display: none;
-  min-height: 420px;
+  min-height: calc(100vh - 560px);
 }
 
 .editorial-step.is-active {
@@ -560,6 +563,19 @@
 }
 
 @media (max-width: 1023px) {
+  .editorial-qualifier--wizard {
+    min-height: auto;
+  }
+
+  .editorial-wizard {
+    min-height: auto;
+  }
+
+  .editorial-wizard__steps,
+  .editorial-step {
+    min-height: auto;
+  }
+
   .editorial-progress-steps {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -604,10 +620,6 @@
 
   .editorial-progress-steps {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .editorial-step {
-    min-height: auto;
   }
 
   .editorial-chip-list {
