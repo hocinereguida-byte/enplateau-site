@@ -1,3 +1,5 @@
+Voici le HTML complet réordonné :
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -238,8 +240,20 @@
       color: var(--ep-ink-soft);
     }
 
+    .landing-reassurance-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr 1fr;
+    }
+
     .mobile-only { display: none; }
     .desktop-only { display: block; }
+
+    @media (max-width: 1023px) {
+      .landing-reassurance-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
     @media (max-width: 780px) {
       .landing-angle-card {
@@ -288,11 +302,11 @@
           </h1>
 
           <p class="page-hero-sub">
-            Pour les <strong>cabinets de corporate finance, dette et restructuring</strong>, mais aussi pour les <strong>directions financières d’industriels</strong>, lorsque la lecture portée depuis la finance éclaire un point de bascule dans une activité industrielle <strong>en croissance</strong>, <strong>sous pression</strong> ou <strong>en reconfiguration</strong>.
+            Pour les <strong>cabinets de corporate finance, dette et restructuring</strong>, mais aussi pour les <strong>directions financières d’industriels</strong>, lorsque la lecture portée depuis la finance éclaire une activité <strong>en croissance</strong>, <strong>sous pression</strong> ou <strong>en reconfiguration</strong>.
           </p>
 
           <p class="page-hero-note">
-            Un échange de 15 min permet de vérifier si votre lecture recoupe l’un des angles actuellement ouverts dans une conversation déjà structurée.
+            En 15 minutes, nous vérifions si votre lecture correspond à un angle encore ouvert — de façon confidentielle, sans exposer de cas client et sans engagement à ce stade.
           </p>
 
           <p class="programme-link-row">
@@ -300,7 +314,7 @@
           </p>
 
           <p class="section-footnote">
-            Confidentiel · sans engagement · pour vérifier la pertinence d’un point d’entrée réel
+            Certaines positions se ferment au fil de la composition éditoriale.
           </p>
           <p class="landing-micro-proof">
             Aucun cas client à exposer · aucun engagement à ce stade · simple qualification éditoriale
@@ -324,7 +338,7 @@
           </p>
 
           <p class="page-hero-note">
-            Un échange de 15 min permet de vérifier si votre lecture recoupe un angle réellement ouvert.
+            En 15 minutes, nous vérifions si votre lecture correspond à un angle encore ouvert, sans exposer de cas client et sans engagement à ce stade.
           </p>
 
           <p class="programme-link-row">
@@ -332,7 +346,7 @@
           </p>
 
           <p class="section-footnote">
-            Confidentiel · sans engagement
+            Certaines positions se ferment au fil de la composition éditoriale.
           </p>
           <p class="landing-micro-proof">
             Aucun cas client à exposer · simple qualification éditoriale
@@ -345,164 +359,33 @@
       <div class="container">
         <div class="page-reading">
 
-          <!-- CONVERSATION OUVERTE -->
-          <section class="page-section" id="conversation-ouverte">
+          <!-- REASSURANCE IMMEDIATE -->
+          <section class="page-section">
             <div class="section-head section-head--narrow">
-              <div class="section-kicker">Conversation actuellement ouverte</div>
-              <h2>À quel moment produire ne tient plus&nbsp;?</h2>
-              <p class="section-intro">
-                Cette conversation cherche à faire apparaître le moment où une activité continue encore, alors même que ses équilibres économiques, opérationnels, stratégiques ou réglementaires se dégradent déjà. Quatre angles complémentaires la structurent. La lecture finance y a une place nette, mais elle s’inscrit dans une composition plus large.
-              </p>
+              <div class="section-kicker">Avant de réserver</div>
+              <h2>Ce que cet échange implique — et ce qu’il n’implique pas</h2>
             </div>
 
-            <div class="landing-angle-stack">
-
-              <!-- ANGLE PRIORITAIRE FINANCE -->
-              <article class="landing-angle-card landing-angle-card--priority">
-                <div class="landing-angle-tag">Lecture finance attendue en priorité sur cet angle</div>
-                <h3>Angle 1 — À partir de quand une activité ne tient plus économiquement&nbsp;?</h3>
-                <p class="landing-angle-intro">
-                  Le point où produire reste encore possible en apparence, mais cesse d’être tenable dans son cadre économique, financier ou de portage actuel.
-                </p>
-
-                <p><strong>Acteurs attendus :</strong> cabinet de corporate finance industrielle · cabinet de conseil en dette · cabinet de restructuring / situations spéciales · DAF industriel · directeur financement · responsable haut de bilan / financement de transformation.</p>
-
-                <div class="landing-angle-meta">
-                  <p><strong>Émission pressentie :</strong> Business Inside</p>
-                  <p><strong>Média :</strong> Forbes</p>
-                  <p><strong>Journaliste :</strong> Jean-Marc Sylvestre</p>
-                </div>
-
-                <details class="landing-context-details" id="finance-angle-details">
-                  <summary>Variations selon les contextes industriels</summary>
-                  <div class="landing-context-body">
-                    <div class="landing-context-item">
-                      <h4>Activité en croissance</h4>
-                      <p>À partir de quel niveau d’investissement, de complexité ou de besoin de financement une trajectoire de croissance cesse-t-elle d’être tenable dans son cadre initial&nbsp;?</p>
-                    </div>
-                    <div class="landing-context-item">
-                      <h4>Activité sous pression</h4>
-                      <p>À partir de quand la dégradation des marges, des coûts ou de la visibilité n’est-elle plus un simple sujet d’ajustement, mais un sujet de bascule du modèle&nbsp;?</p>
-                    </div>
-                    <div class="landing-context-item">
-                      <h4>Activité en reconfiguration</h4>
-                      <p>À partir de quand le maintien du périmètre existant empêche-t-il toute transformation crédible et impose-t-il une recomposition plus profonde&nbsp;?</p>
-                    </div>
-                  </div>
-                </details>
+            <div class="landing-reassurance-grid">
+              <article class="programme-list__item">
+                <h3>Pas de cas client à exposer</h3>
+                <p>Vous n’avez pas besoin d’entrer dans un dossier identifiable pour vérifier la pertinence de votre lecture.</p>
               </article>
 
-              <!-- ANGLE OPERATIONS -->
-              <article class="landing-angle-card">
-                <h3>Angle 2 — Quels arbitrages d’exécution dégradent une activité en voulant la faire tenir&nbsp;?</h3>
-                <p class="landing-angle-intro">
-                  Le moment où la continuité de production est maintenue au prix de compromis croissants sur la capacité, la qualité, les flux, les délais ou l’organisation.
-                </p>
-
-                <p><strong>Acteurs attendus :</strong> cabinet de performance industrielle · conseil en organisation industrielle · cabinet opérations / excellence opérationnelle · directeur industriel · directeur des opérations · responsable supply chain.</p>
-
-                <div class="landing-angle-meta">
-                  <p><strong>Émission pressentie :</strong> Focus Business</p>
-                  <p><strong>Média :</strong> BFM Business</p>
-                  <p><strong>Journaliste :</strong> Thierry Cabannes</p>
-                </div>
-
-                <details class="landing-context-details">
-                  <summary>Variations selon les contextes industriels</summary>
-                  <div class="landing-context-body">
-                    <div class="landing-context-item">
-                      <h4>Activité en croissance</h4>
-                      <p>Quels arbitrages sur la capacité, les flux, les délais ou la qualité commencent à fragiliser la trajectoire au moment même où l’activité accélère&nbsp;?</p>
-                    </div>
-                    <div class="landing-context-item">
-                      <h4>Activité sous pression</h4>
-                      <p>Quels compromis opérationnels permettent encore de produire à court terme, mais dégradent structurellement la robustesse de l’activité&nbsp;?</p>
-                    </div>
-                    <div class="landing-context-item">
-                      <h4>Activité en reconfiguration</h4>
-                      <p>Quels choix de continuité, de recentrage ou de maintien de l’outil empêchent en réalité la transformation d’aboutir proprement&nbsp;?</p>
-                    </div>
-                  </div>
-                </details>
+              <article class="programme-list__item">
+                <h3>Aucun engagement à ce stade</h3>
+                <p>Le rendez-vous sert uniquement à qualifier un point d’entrée éventuel.</p>
               </article>
 
-              <!-- ANGLE STRATEGIE -->
-              <article class="landing-angle-card">
-                <h3>Angle 3 — À partir de quand le problème ne tient plus à la conjoncture, mais à la place occupée dans la filière&nbsp;?</h3>
-                <p class="landing-angle-intro">
-                  Le point où la fragilité d’une activité ne relève plus seulement d’un accident, mais d’un positionnement devenu difficile à tenir dans la chaîne de valeur.
-                </p>
-
-                <p><strong>Acteurs attendus :</strong> cabinet de stratégie industrielle · cabinet compétitivité / filière · cabinet transformation / redéploiement · direction stratégie · direction générale industrielle · conseil en intelligence économique ou analyse de filière.</p>
-
-                <div class="landing-angle-meta">
-                  <p><strong>Émission pressentie :</strong> La Tribune Business</p>
-                  <p><strong>Média :</strong> La Tribune</p>
-                  <p><strong>Journaliste :</strong> Gilles Leclerc</p>
-                </div>
-
-                <details class="landing-context-details">
-                  <summary>Variations selon les contextes industriels</summary>
-                  <div class="landing-context-body">
-                    <div class="landing-context-item">
-                      <h4>Activité en croissance</h4>
-                      <p>À partir de quand une montée en puissance se heurte-t-elle à une dépendance de filière, de client, d’approvisionnement ou de sous-traitance qui en change la nature&nbsp;?</p>
-                    </div>
-                    <div class="landing-context-item">
-                      <h4>Activité sous pression</h4>
-                      <p>À partir de quand la fragilité d’une activité ne vient-elle plus seulement des coûts ou des volumes, mais de la place qu’elle occupe dans la chaîne de valeur&nbsp;?</p>
-                    </div>
-                    <div class="landing-context-item">
-                      <h4>Activité en reconfiguration</h4>
-                      <p>À partir de quand une activité ne peut-elle plus être sauvée telle quelle, parce que le problème tient à son positionnement même dans la filière&nbsp;?</p>
-                    </div>
-                  </div>
-                </details>
+              <article class="programme-list__item">
+                <h3>Pas de concurrence frontale avec un profil équivalent</h3>
+                <p>Sur un même angle, une seule lecture de type finance est retenue.</p>
               </article>
 
-              <!-- ANGLE CADRE -->
-              <article class="landing-angle-card">
-                <h3>Angle 4 — Quand le cadre cesse-t-il d’encadrer une activité pour devenir un facteur de bascule&nbsp;?</h3>
-                <p class="landing-angle-intro">
-                  Le moment où le cadre social, fiscal, réglementaire ou normatif ne constitue plus un arrière-plan, mais devient une composante décisive de la tenue de l’activité.
-                </p>
-
-                <p><strong>Acteurs attendus :</strong> cabinet juridique / réglementaire · cabinet affaires publiques / conformité · cabinet fiscal · direction juridique · direction fiscale · direction financière confrontée au cadre normatif de la transformation.</p>
-
-                <div class="landing-angle-meta">
-                  <p><strong>Émission pressentie :</strong> Grand Angle</p>
-                  <p><strong>Média :</strong> Le Figaro</p>
-                  <p><strong>Journaliste :</strong> Christophe Pallée</p>
-                </div>
-
-                <details class="landing-context-details">
-                  <summary>Variations selon les contextes industriels</summary>
-                  <div class="landing-context-body">
-                    <div class="landing-context-item">
-                      <h4>Activité en croissance</h4>
-                      <p>À partir de quand les contraintes réglementaires, sociales, fiscales ou normatives ralentissent-elles une trajectoire au point d’en modifier la soutenabilité&nbsp;?</p>
-                    </div>
-                    <div class="landing-context-item">
-                      <h4>Activité sous pression</h4>
-                      <p>À partir de quand le cadre cesse-t-il d’être un simple paramètre de conformité pour devenir un facteur direct de fragilisation ou de décrochage&nbsp;?</p>
-                    </div>
-                    <div class="landing-context-item">
-                      <h4>Activité en reconfiguration</h4>
-                      <p>À partir de quand la transformation d’une activité se heurte-t-elle à un cadre qui empêche le redéploiement d’être porté dans sa forme initiale&nbsp;?</p>
-                    </div>
-                  </div>
-                </details>
+              <article class="programme-list__item">
+                <h3>Un échange uniquement pour vérifier la pertinence éditoriale</h3>
+                <p>L’objectif n’est pas de vous faire entrer de force dans un dispositif, mais de vérifier s’il existe une place naturelle.</p>
               </article>
-
-            </div>
-
-            <div class="editorial-panel" style="margin-top:24px;">
-              <p>
-                D’autres conversations du cycle <strong>Industrie & transformation des territoires</strong> peuvent également mobiliser une lecture finance. Elles ne sont pas rendues publiques à ce stade, mais peuvent être évoquées dans le cadre de l’échange éditorial si elles recoupent plus naturellement votre pratique.
-              </p>
-              <p>
-                Les affectations éditoriales indiquées ici correspondent à la logique de traitement actuellement retenue. Elles peuvent être ajustées en fonction de la composition finale de la conversation.
-              </p>
             </div>
           </section>
 
@@ -523,11 +406,197 @@
                 <h3>Cette page est moins adaptée si</h3>
                 <ul class="landing-list">
                   <li>Votre intervention n’est pas directement liée à un angle de décision financier ou de portage de transformation</li>
-                  <li>Votre positionnement reste trop transversal pour être rattaché à une bascule précise</li>
+                  <li>Votre lecture reste trop générale pour être rattachée à une bascule précise de la conversation</li>
                   <li>Votre attente porte d’abord sur de la visibilité, plutôt que sur une contribution située</li>
                   <li>Votre lecture ne porte ni sur le financement, ni sur la soutenabilité, ni sur les conditions de portage d’une activité ou d’une transformation</li>
                 </ul>
               </article>
+            </div>
+          </section>
+
+          <!-- EN 15 MIN -->
+          <section class="page-section">
+            <div class="section-head section-head--narrow">
+              <div class="section-kicker">En 15 min</div>
+              <h2>Nous vérifions très concrètement</h2>
+            </div>
+
+            <div class="programme-list">
+              <article class="programme-list__item">
+                <h3>Votre pratique recoupe-t-elle réellement l’un des angles ouverts ?</h3>
+                <p>Nous vérifions si votre lecture a une place naturelle dans la composition éditoriale actuellement ouverte.</p>
+              </article>
+
+              <article class="programme-list__item">
+                <h3>Quel angle est le plus naturel pour vous ?</h3>
+                <p>Nous identifions le bon point d’entrée selon les situations que vous accompagnez ou que vous portez depuis la finance.</p>
+              </article>
+
+              <article class="programme-list__item">
+                <h3>Un cadrage plus précis mérite-t-il d’être poursuivi ?</h3>
+                <p>L’échange ne vise pas à engager trop tôt, mais à vérifier rapidement si une suite a réellement du sens.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- CONVERSATION OUVERTE -->
+          <section class="page-section" id="conversation-ouverte">
+            <div class="section-head section-head--narrow">
+              <div class="section-kicker">Conversation actuellement ouverte</div>
+              <h2>À quel moment produire ne tient plus ?</h2>
+              <p class="section-intro">
+                Cette conversation cherche à faire apparaître le moment où une activité continue encore, alors même que ses équilibres économiques, opérationnels, stratégiques ou réglementaires se dégradent déjà. Quatre angles complémentaires la structurent. La lecture finance y a une place nette, mais elle s’inscrit dans une composition plus large.
+              </p>
+            </div>
+
+            <div class="landing-angle-stack">
+
+              <!-- ANGLE PRIORITAIRE FINANCE -->
+              <article class="landing-angle-card landing-angle-card--priority">
+                <div class="landing-angle-tag">Lecture finance attendue en priorité sur cet angle</div>
+                <h3>Angle 1 — À partir de quand une activité ne tient plus économiquement ?</h3>
+                <p class="landing-angle-intro">
+                  Le point où produire reste encore possible en apparence, mais cesse d’être tenable dans son cadre économique, financier ou de portage actuel.
+                </p>
+
+                <p><strong>Acteurs attendus :</strong> cabinet de corporate finance industrielle · cabinet de conseil en dette · cabinet de restructuring / situations spéciales · DAF industriel · directeur financement · responsable haut de bilan / financement de transformation.</p>
+
+                <div class="landing-angle-meta">
+                  <p><strong>Émission pressentie :</strong> Business Inside</p>
+                  <p><strong>Média :</strong> Forbes</p>
+                  <p><strong>Journaliste :</strong> Jean-Marc Sylvestre</p>
+                </div>
+
+                <details class="landing-context-details" id="finance-angle-details">
+                  <summary>Variations selon les contextes industriels</summary>
+                  <div class="landing-context-body">
+                    <div class="landing-context-item">
+                      <h4>Activité en croissance</h4>
+                      <p>À partir de quel niveau d’investissement, de complexité ou de besoin de financement une trajectoire de croissance cesse-t-elle d’être tenable dans son cadre initial ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité sous pression</h4>
+                      <p>À partir de quand la dégradation des marges, des coûts ou de la visibilité n’est-elle plus un simple sujet d’ajustement, mais un sujet de bascule du modèle ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité en reconfiguration</h4>
+                      <p>À partir de quand le maintien du périmètre existant empêche-t-il toute transformation crédible et impose-t-il une recomposition plus profonde ?</p>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+              <!-- ANGLE OPERATIONS -->
+              <article class="landing-angle-card">
+                <h3>Angle 2 — Quels arbitrages d’exécution dégradent une activité en voulant la faire tenir ?</h3>
+                <p class="landing-angle-intro">
+                  Le moment où la continuité de production est maintenue au prix de compromis croissants sur la capacité, la qualité, les flux, les délais ou l’organisation.
+                </p>
+
+                <p><strong>Acteurs attendus :</strong> cabinet de performance industrielle · conseil en organisation industrielle · cabinet opérations / excellence opérationnelle · directeur industriel · directeur des opérations · responsable supply chain.</p>
+
+                <div class="landing-angle-meta">
+                  <p><strong>Émission pressentie :</strong> Focus Business</p>
+                  <p><strong>Média :</strong> BFM Business</p>
+                  <p><strong>Journaliste :</strong> Thierry Cabannes</p>
+                </div>
+
+                <details class="landing-context-details">
+                  <summary>Variations selon les contextes industriels</summary>
+                  <div class="landing-context-body">
+                    <div class="landing-context-item">
+                      <h4>Activité en croissance</h4>
+                      <p>Quels arbitrages sur la capacité, les flux, les délais ou la qualité commencent à fragiliser la trajectoire au moment même où l’activité accélère ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité sous pression</h4>
+                      <p>Quels compromis opérationnels permettent encore de produire à court terme, mais dégradent structurellement la robustesse de l’activité ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité en reconfiguration</h4>
+                      <p>Quels choix de continuité, de recentrage ou de maintien de l’outil empêchent en réalité la transformation d’aboutir proprement ?</p>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+              <!-- ANGLE STRATEGIE -->
+              <article class="landing-angle-card">
+                <h3>Angle 3 — À partir de quand le problème ne tient plus à la conjoncture, mais à la place occupée dans la filière ?</h3>
+                <p class="landing-angle-intro">
+                  Le point où la fragilité d’une activité ne relève plus seulement d’un accident, mais d’un positionnement devenu difficile à tenir dans la chaîne de valeur.
+                </p>
+
+                <p><strong>Acteurs attendus :</strong> cabinet de stratégie industrielle · cabinet compétitivité / filière · cabinet transformation / redéploiement · direction stratégie · direction générale industrielle · conseil en intelligence économique ou analyse de filière.</p>
+
+                <div class="landing-angle-meta">
+                  <p><strong>Émission pressentie :</strong> La Tribune Business</p>
+                  <p><strong>Média :</strong> La Tribune</p>
+                  <p><strong>Journaliste :</strong> Gilles Leclerc</p>
+                </div>
+
+                <details class="landing-context-details">
+                  <summary>Variations selon les contextes industriels</summary>
+                  <div class="landing-context-body">
+                    <div class="landing-context-item">
+                      <h4>Activité en croissance</h4>
+                      <p>À partir de quand une montée en puissance se heurte-t-elle à une dépendance de filière, de client, d’approvisionnement ou de sous-traitance qui en change la nature ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité sous pression</h4>
+                      <p>À partir de quand la fragilité d’une activité ne vient-elle plus seulement des coûts ou des volumes, mais de la place qu’elle occupe dans la chaîne de valeur ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité en reconfiguration</h4>
+                      <p>À partir de quand une activité ne peut-elle plus être sauvée telle quelle, parce que le problème tient à son positionnement même dans la filière ?</p>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+              <!-- ANGLE CADRE -->
+              <article class="landing-angle-card">
+                <h3>Angle 4 — Quand le cadre cesse-t-il d’encadrer une activité pour devenir un facteur de bascule ?</h3>
+                <p class="landing-angle-intro">
+                  Le moment où le cadre social, fiscal, réglementaire ou normatif ne constitue plus un arrière-plan, mais devient une composante décisive de la tenue de l’activité.
+                </p>
+
+                <p><strong>Acteurs attendus :</strong> cabinet juridique / réglementaire · cabinet affaires publiques / conformité · cabinet fiscal · direction juridique · direction fiscale · direction financière confrontée au cadre normatif de la transformation.</p>
+
+                <div class="landing-angle-meta">
+                  <p><strong>Émission pressentie :</strong> Grand Angle</p>
+                  <p><strong>Média :</strong> Le Figaro</p>
+                  <p><strong>Journaliste :</strong> Christophe Pallée</p>
+                </div>
+
+                <details class="landing-context-details">
+                  <summary>Variations selon les contextes industriels</summary>
+                  <div class="landing-context-body">
+                    <div class="landing-context-item">
+                      <h4>Activité en croissance</h4>
+                      <p>À partir de quand les contraintes réglementaires, sociales, fiscales ou normatives ralentissent-elles une trajectoire au point d’en modifier la soutenabilité ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité sous pression</h4>
+                      <p>À partir de quand le cadre cesse-t-il d’être un simple paramètre de conformité pour devenir un facteur direct de fragilisation ou de décrochage ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité en reconfiguration</h4>
+                      <p>À partir de quand la transformation d’une activité se heurte-t-elle à un cadre qui empêche le redéploiement d’être porté dans sa forme initiale ?</p>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+            </div>
+
+            <div class="editorial-panel" style="margin-top:24px;">
+              <p>
+                D’autres conversations du cycle <strong>Industrie & transformation des territoires</strong> peuvent également mobiliser une lecture finance. Elles ne sont pas rendues publiques à ce stade, mais peuvent être évoquées dans le cadre de l’échange éditorial si elles recoupent plus naturellement votre pratique.
+              </p>
+              <p>
+                Les affectations éditoriales indiquées ici correspondent à la logique de traitement actuellement retenue. Elles peuvent être ajustées en fonction de la composition finale de la conversation.
+              </p>
             </div>
           </section>
 
@@ -560,31 +629,6 @@
             </div>
           </section>
 
-          <!-- EN 15 MIN -->
-          <section class="page-section">
-            <div class="section-head section-head--narrow">
-              <div class="section-kicker">En 15 min</div>
-              <h2>Nous vérifions très concrètement</h2>
-            </div>
-
-            <div class="programme-list">
-              <article class="programme-list__item">
-                <h3>Votre pratique recoupe-t-elle réellement l’un des angles ouverts&nbsp;?</h3>
-                <p>Nous vérifions si votre lecture a une place naturelle dans la composition éditoriale actuellement ouverte.</p>
-              </article>
-
-              <article class="programme-list__item">
-                <h3>Quel angle est le plus naturel pour vous&nbsp;?</h3>
-                <p>Nous identifions le bon point d’entrée selon les situations que vous accompagnez ou que vous portez depuis la finance.</p>
-              </article>
-
-              <article class="programme-list__item">
-                <h3>Un cadrage plus précis mérite-t-il d’être poursuivi&nbsp;?</h3>
-                <p>L’échange ne vise pas à engager trop tôt, mais à qualifier rapidement la pertinence d’une suite.</p>
-              </article>
-            </div>
-          </section>
-
           <!-- APRES L'ECHANGE -->
           <section class="page-section">
             <div class="section-head section-head--narrow">
@@ -600,27 +644,7 @@
                 Si c’est le cas, une note de positionnement vous est adressée. Elle précise l’angle pressenti, la logique de mise en regard et le cadre dans lequel une suite peut être envisagée.
               </p>
               <p>
-                <strong>Aucun engagement n’est demandé avant cette étape.</strong>
-              </p>
-            </div>
-          </section>
-
-          <!-- METHODE -->
-          <section class="page-section">
-            <div class="section-head section-head--narrow">
-              <div class="section-kicker">Méthode</div>
-              <h2>Chaque angle est préparé sous plusieurs dimensions de lecture</h2>
-            </div>
-
-            <div class="editorial-panel">
-              <p>
-                Chaque angle n’est pas traité comme un simple sujet de prise de parole. Il est préparé sous plusieurs dimensions : <strong>contexte de transformation</strong>, <strong>acteurs concernés</strong>, <strong>arbitrages</strong>, <strong>risques et opportunités</strong>, <strong>échelles d’analyse</strong> et <strong>vision</strong>.
-              </p>
-              <p>
-                L’échange éditorial permet de vérifier quelles dimensions ont vocation à être portées dans l’émission, et lesquelles relèvent plutôt du prolongement écrit ou analytique.
-              </p>
-              <p>
-                Ce cadrage permet de traiter des sujets sensibles sans les réduire à un cas isolé ni à une lecture accusatoire.
+                <strong>Aucun engagement n’est demandé avant cette analyse interne et, le cas échéant, l’envoi d’une note de positionnement.</strong>
               </p>
             </div>
           </section>
@@ -674,19 +698,39 @@
 
             <div class="programme-list">
               <article class="programme-list__item">
-                <h3>Faut-il parler d’un cas client ou d’un dossier identifiable&nbsp;?</h3>
+                <h3>Faut-il parler d’un cas client ou d’un dossier identifiable ?</h3>
                 <p>Non. L’enjeu n’est pas d’exposer une situation confidentielle ni de détailler un cas reconnaissable.</p>
               </article>
 
               <article class="programme-list__item">
-                <h3>Faut-il défendre une doctrine générale&nbsp;?</h3>
+                <h3>Faut-il défendre une doctrine générale ?</h3>
                 <p>Non. Il s’agit d’apporter une lecture située, utile et exploitable sur des arbitrages réellement rencontrés.</p>
               </article>
 
               <article class="programme-list__item">
-                <h3>Faut-il préparer seul la prise de parole&nbsp;?</h3>
+                <h3>Faut-il préparer seul la prise de parole ?</h3>
                 <p>Non. Le cadrage éditorial est préparé en amont pour sécuriser l’angle, la conversation et le niveau d’exposition.</p>
               </article>
+            </div>
+          </section>
+
+          <!-- METHODE -->
+          <section class="page-section">
+            <div class="section-head section-head--narrow">
+              <div class="section-kicker">Comment l’angle est travaillé</div>
+              <h2>Une préparation éditoriale structurée, sans parole verrouillée</h2>
+            </div>
+
+            <div class="editorial-panel">
+              <p>
+                Chaque angle n’est pas traité comme un simple sujet de prise de parole. Il est préparé sous plusieurs dimensions : <strong>contexte de transformation</strong>, <strong>acteurs concernés</strong>, <strong>arbitrages</strong>, <strong>risques et opportunités</strong>, <strong>échelles d’analyse</strong> et <strong>vision</strong>.
+              </p>
+              <p>
+                L’échange éditorial permet de vérifier quelles dimensions ont vocation à être portées dans l’émission, et lesquelles relèvent plutôt du prolongement écrit ou analytique.
+              </p>
+              <p>
+                Ce cadrage permet de traiter des sujets sensibles sans les réduire à un cas isolé ni à une lecture accusatoire.
+              </p>
             </div>
           </section>
 
@@ -694,7 +738,7 @@
           <section class="page-section">
             <div class="section-head section-head--narrow">
               <div class="section-kicker">Accès</div>
-              <h2>Vous accompagnez — ou portez — ce type de bascule&nbsp;?</h2>
+              <h2>Vous accompagnez — ou portez — ce type de bascule ?</h2>
               <p class="section-intro desktop-only">
                 Un échange permet de vérifier si cette conversation recoupe réellement les situations que vous accompagnez ou que vous portez depuis la finance, et sous quel angle votre lecture serait la plus pertinente.
               </p>
@@ -714,7 +758,7 @@
             </div>
 
             <p class="section-footnote">
-              Cycle 2026–2027 · Les positions se ferment au fil de la composition éditoriale ; lorsqu’un angle est confirmé, il n’est plus ouvert à une lecture de même nature.
+              Cycle 2026–2027 · Les positions se ferment au fil de la composition éditoriale. Lorsqu’un angle est confirmé, il n’est plus ouvert à une lecture de même nature.
             </p>
           </section>
 
@@ -760,8 +804,9 @@
 
       syncFinanceDetails();
 
-      if (typeof window.matchMedia('(min-width: 641px)').addEventListener === 'function') {
-        window.matchMedia('(min-width: 641px)').addEventListener('change', syncFinanceDetails);
+      var mq = window.matchMedia('(min-width: 641px)');
+      if (typeof mq.addEventListener === 'function') {
+        mq.addEventListener('change', syncFinanceDetails);
       } else {
         window.addEventListener('resize', syncFinanceDetails);
       }
@@ -769,4 +814,4 @@
   </script>
 
 </body>
-                </html>
+                      </html>
