@@ -7,7 +7,7 @@
   <title>Opérations / performance industrielle — Industrie & transformation des territoires | En Plateau</title>
   <meta
     name="description"
-    content="Landing page ciblée En Plateau pour les cabinets d’excellence opérationnelle, lean, supply chain et transformation industrielle intervenant sur les bascules industrielles."
+    content="Landing page ciblée En Plateau pour les cabinets d’excellence opérationnelle, lean, supply chain et transformation industrielle, ainsi que pour les fonctions opérations chez l’industriel, intervenant sur les bascules industrielles."
   >
 
   <link rel="canonical" href="https://enplateau.fr/lp/industrie-operations-cycle.html">
@@ -23,7 +23,7 @@
   <meta property="og:title" content="Opérations / performance industrielle — Industrie & transformation des territoires | En Plateau">
   <meta
     property="og:description"
-    content="Une porte d’entrée ciblée pour les cabinets intervenant sur les arbitrages opérationnels, la performance et la transformation des activités industrielles."
+    content="Une porte d’entrée ciblée pour les lectures opérations sur une conversation industrielle actuellement ouverte."
   >
   <meta property="og:url" content="https://enplateau.fr/lp/industrie-operations-cycle.html">
   <meta property="og:image" content="https://enplateau.fr/images/en-plateau-social.webp">
@@ -32,7 +32,7 @@
   <meta name="twitter:title" content="Opérations / performance industrielle — Industrie & transformation des territoires | En Plateau">
   <meta
     name="twitter:description"
-    content="Une porte d’entrée ciblée pour les cabinets intervenant sur les arbitrages opérationnels, la performance et la transformation des activités industrielles."
+    content="Une porte d’entrée ciblée pour les lectures opérations sur une conversation industrielle actuellement ouverte."
   >
   <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-social.webp">
 
@@ -88,43 +88,18 @@
       opacity: 0.82;
     }
 
-    .landing-inline-note {
-      margin-top: 8px;
-      font-size: 0.95rem;
-      line-height: 1.55;
-      opacity: 0.84;
-    }
-
-    .landing-compact-links {
-      margin-top: 18px;
-    }
-
-    .landing-summary {
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 16px;
-      margin-top: 14px;
-    }
-
-    .landing-summary summary {
-      cursor: pointer;
-      font-weight: 600;
-      line-height: 1.5;
-      list-style: none;
-    }
-
-    .landing-summary summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .landing-summary-body {
-      margin-top: 14px;
-    }
-
     .landing-micro-proof {
       margin-top: 10px;
       font-size: 0.92rem;
       line-height: 1.55;
       opacity: 0.82;
+    }
+
+    .landing-inline-note {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      line-height: 1.58;
+      color: var(--ep-ink-muted);
     }
 
     .landing-list {
@@ -136,8 +111,153 @@
       margin-top: 0.55rem;
     }
 
+    .landing-compact-links {
+      margin-top: 18px;
+    }
+
+    .landing-angle-stack {
+      display: grid;
+      gap: 20px;
+      margin-top: 14px;
+    }
+
+    .landing-angle-card {
+      position: relative;
+      background: rgba(255, 250, 244, 0.78);
+      border: 1px solid var(--ep-line);
+      padding: 26px 24px 22px;
+    }
+
+    .landing-angle-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: rgba(123, 51, 38, 0.68);
+    }
+
+    .landing-angle-card--priority {
+      background: rgba(249, 242, 235, 0.98);
+      border-color: rgba(123, 51, 38, 0.22);
+      box-shadow: 0 10px 24px rgba(17, 17, 17, 0.05);
+    }
+
+    .landing-angle-card--priority::before {
+      width: 6px;
+      background: var(--ep-accent);
+    }
+
+    .landing-angle-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 10px;
+      margin-bottom: 12px;
+      background: rgba(123, 51, 38, 0.08);
+      border: 1px solid rgba(123, 51, 38, 0.18);
+      font-family: var(--font-ui);
+      font-size: 10px;
+      line-height: 1.3;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ep-accent);
+    }
+
+    .landing-angle-card h3 {
+      margin: 0 0 10px;
+    }
+
+    .landing-angle-intro {
+      margin-bottom: 14px;
+      font-size: 0.92rem;
+      line-height: 1.62;
+      color: var(--ep-ink-soft);
+    }
+
+    .landing-angle-meta {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(82, 62, 49, 0.14);
+      display: grid;
+      gap: 8px;
+    }
+
+    .landing-angle-meta p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.58;
+    }
+
+    .landing-context-details {
+      margin-top: 16px;
+      border-top: 1px solid rgba(82, 62, 49, 0.14);
+      padding-top: 14px;
+    }
+
+    .landing-context-details summary {
+      cursor: pointer;
+      list-style: none;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      line-height: 1.4;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ep-accent);
+    }
+
+    .landing-context-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .landing-context-body {
+      margin-top: 14px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .landing-context-item {
+      border-left: 2px solid rgba(123, 51, 38, 0.22);
+      padding-left: 14px;
+    }
+
+    .landing-context-item h4 {
+      margin: 0 0 6px;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      line-height: 1.12;
+      font-weight: 600;
+      color: var(--ep-ink);
+    }
+
+    .landing-context-item p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--ep-ink-soft);
+    }
+
+    .landing-reassurance-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr 1fr;
+    }
+
     .mobile-only { display: none; }
     .desktop-only { display: block; }
+
+    @media (max-width: 1023px) {
+      .landing-reassurance-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .landing-angle-card {
+        padding: 22px 20px 18px;
+      }
+    }
 
     @media (max-width: 640px) {
       .landing-header-inner,
@@ -161,7 +281,7 @@
         </a>
 
         <div class="programme-link-row">
-          <a href="/demander-un-echange-editorial.html?src=lp-industrie-operations&cta=header" class="link link--primary">Demander un échange de 15 min</a>
+          <a href="/demander-un-echange-editorial.html?src=lp-industrie-operations&cta=header" class="link link--primary">Prendre rendez-vous</a>
         </div>
       </div>
     </div>
@@ -176,23 +296,27 @@
           <div class="page-hero-kicker">Industrie & transformation des territoires</div>
 
           <h1 class="page-hero-title">
-            Votre lecture opérationnelle des bascules industrielles a-t-elle sa place dans ce cycle ?
+            Votre lecture opérations a-t-elle sa place dans cette conversation industrielle ?
           </h1>
 
           <p class="page-hero-sub">
-            Pour les cabinets d’<strong>excellence opérationnelle</strong>, de <strong>lean management</strong>, de <strong>supply chain</strong>, d’<strong>organisation industrielle</strong> ou de <strong>transformation des opérations</strong>, sur des activités en <strong>croissance</strong>, <strong>sous pression</strong> ou <strong>à reconfigurer</strong>.
+            Pour les <strong>cabinets d’excellence opérationnelle, lean, supply chain, organisation industrielle et transformation des opérations</strong>, mais aussi pour les <strong>directions industrielles, directions des opérations et responsables supply</strong>, lorsque la lecture portée depuis l’exécution éclaire une activité <strong>en croissance</strong>, <strong>sous pression</strong> ou <strong>en reconfiguration</strong>.
           </p>
 
           <p class="page-hero-note">
-            Un échange de 15 min permet de vérifier s’il existe un point d’entrée naturel pour votre pratique.
+            En 15 minutes, nous vérifions si votre lecture correspond à un angle encore ouvert — de façon confidentielle, sans exposer de site, de client ni de cas identifiable, et sans engagement à ce stade.
+          </p>
+
+          <p class="landing-inline-note">
+            L’échange permet de vérifier si votre lecture a une place naturelle dans une conversation déjà ouverte, entre émission et article associé.
           </p>
 
           <p class="programme-link-row">
-            <a href="/demander-un-echange-editorial.html?src=lp-industrie-operations&cta=hero" class="link link--primary">Demander un échange de 15 min</a>
+            <a href="/demander-un-echange-editorial.html?src=lp-industrie-operations&cta=hero" class="link link--primary">Prendre rendez-vous</a>
           </p>
 
           <p class="section-footnote">
-            Confidentiel · sans engagement · pour vérifier la pertinence du point d’entrée
+            Certaines positions se ferment au fil de la composition éditoriale.
           </p>
           <p class="landing-micro-proof">
             Aucun site ni client à exposer · aucun engagement à ce stade · simple qualification éditoriale
@@ -208,23 +332,27 @@
           <div class="page-hero-kicker">Industrie & transformation des territoires</div>
 
           <h1 class="page-hero-title">
-            Votre lecture opérationnelle des bascules industrielles a-t-elle sa place dans ce cycle ?
+            Votre lecture opérations a-t-elle sa place dans cette conversation industrielle ?
           </h1>
 
           <p class="page-hero-sub">
-            Performance, lean, supply chain, transformation industrielle.
+            Performance, lean, supply chain, transformation industrielle, direction des opérations.
           </p>
 
           <p class="page-hero-note">
-            Un échange de 15 min permet de vérifier s’il existe un point d’entrée naturel.
+            En 15 minutes, nous vérifions si votre lecture correspond à un angle encore ouvert, sans exposer de site, de client ni de cas identifiable, et sans engagement à ce stade.
+          </p>
+
+          <p class="landing-inline-note">
+            L’échange permet de vérifier si votre lecture a une place naturelle dans une conversation déjà ouverte, entre émission et article associé.
           </p>
 
           <p class="programme-link-row">
-            <a href="/demander-un-echange-editorial.html?src=lp-industrie-operations&cta=hero" class="link link--primary">Demander un échange de 15 min</a>
+            <a href="/demander-un-echange-editorial.html?src=lp-industrie-operations&cta=hero" class="link link--primary">Prendre rendez-vous</a>
           </p>
 
           <p class="section-footnote">
-            Confidentiel · sans engagement
+            Certaines positions se ferment au fil de la composition éditoriale.
           </p>
           <p class="landing-micro-proof">
             Aucun site ni client à exposer · simple qualification éditoriale
@@ -237,53 +365,64 @@
       <div class="container">
         <div class="page-reading">
 
+          <!-- REASSURANCE IMMEDIATE -->
+          <section class="page-section">
+            <div class="section-head section-head--narrow">
+              <div class="section-kicker">Avant de réserver</div>
+              <h2>Ce que cet échange implique — et ce qu’il n’implique pas</h2>
+            </div>
+
+            <div class="landing-reassurance-grid">
+              <article class="programme-list__item">
+                <h3>Pas de site ni de client à exposer</h3>
+                <p>Vous n’avez pas besoin d’entrer dans un cas identifiable pour vérifier la pertinence de votre lecture.</p>
+              </article>
+
+              <article class="programme-list__item">
+                <h3>Aucun engagement à ce stade</h3>
+                <p>Le rendez-vous sert uniquement à qualifier un point d’entrée éventuel.</p>
+              </article>
+
+              <article class="programme-list__item">
+                <h3>Pas de concurrence frontale avec un profil équivalent</h3>
+                <p>Sur un même angle, une seule lecture de type opérations est retenue.</p>
+              </article>
+
+              <article class="programme-list__item">
+                <h3>Un échange uniquement pour vérifier la pertinence éditoriale</h3>
+                <p>L’objectif n’est pas de vous faire entrer de force dans un dispositif, mais de vérifier s’il existe une place naturelle.</p>
+              </article>
+            </div>
+
+            <div class="editorial-panel" style="margin-top:24px;">
+              <p>
+                Il ne s’agit pas de vous demander une parole exhaustive sur toute la situation, mais d’identifier le point où votre lecture opérations éclaire réellement la bascule.
+              </p>
+            </div>
+          </section>
+
           <!-- POUR QUI / MOINS ADAPTEE SI -->
           <section class="page-section">
             <div class="programme-access">
               <article class="programme-access__item">
                 <h3>Cette page s’adresse plutôt à</h3>
                 <ul class="landing-list">
-                  <li>Cabinets d’excellence opérationnelle, lean management ou amélioration de performance</li>
-                  <li>Cabinets intervenant sur supply chain, achats, planning, sourcing ou robustesse d’exécution</li>
-                  <li>Profils traitant des arbitrages de cadence, qualité, maintenance, organisation ou capacité</li>
-                  <li>Cabinets accompagnant croissance, tension, transformation ou redéploiement industriel</li>
+                  <li>Cabinets d’excellence opérationnelle, lean management, amélioration de performance ou transformation industrielle</li>
+                  <li>Cabinets intervenant sur supply chain, achats, planning, sourcing, robustesse d’exécution ou organisation industrielle</li>
+                  <li>Directions industrielles, directions des opérations, responsables supply chain, responsables transformation ou performance au sein d’industriels</li>
+                  <li>Profils confrontés à des arbitrages de cadence, qualité, maintenance, capacité, planification ou robustesse du système productif</li>
                 </ul>
               </article>
 
               <article class="programme-access__item">
                 <h3>Cette page est moins adaptée si</h3>
                 <ul class="landing-list">
-                  <li>Votre intervention n’est pas directement liée à un arbitrage d’exécution ou de performance</li>
-                  <li>Votre positionnement reste trop général pour être rattaché à une bascule opérationnelle précise</li>
-                  <li>Votre attente porte d’abord sur de la visibilité plutôt que sur une contribution située</li>
+                  <li>Votre intervention n’est pas directement liée à un arbitrage d’exécution, de robustesse ou de performance industrielle</li>
+                  <li>Votre lecture reste trop générale pour être rattachée à une bascule précise de la conversation</li>
+                  <li>Votre attente porte d’abord sur de la visibilité, plutôt que sur une contribution située</li>
+                  <li>Votre lecture ne porte ni sur les conditions réelles d’exécution, ni sur les arbitrages opérationnels qui font tenir — ou décrocher — l’activité</li>
                 </ul>
               </article>
-            </div>
-          </section>
-
-          <!-- REASSURANCE -->
-          <section class="page-section">
-            <div class="programme-access desktop-only">
-              <article class="programme-access__item">
-                <h3>Pas de concurrence frontale sur le même angle</h3>
-                <p>
-                  Votre lecture opérationnelle ne prend pas place face à un autre acteur du même champ sur le même angle, mais aux côtés d’acteurs complémentaires : stratégie, juridique / réglementaire, financement, investissement.
-                </p>
-              </article>
-
-              <article class="programme-access__item">
-                <h3>Une conversation composée, pas un plateau concurrentiel</h3>
-                <p>
-                  Chaque angle est porté par une lecture distincte. L’enjeu n’est pas de juxtaposer des cabinets semblables, mais de rendre une même bascule plus lisible depuis plusieurs dimensions non redondantes.
-                </p>
-              </article>
-            </div>
-
-            <div class="programme-position mobile-only">
-              <h3>Pas de concurrence frontale sur le même angle</h3>
-              <p>
-                Votre lecture prend place aux côtés d’acteurs complémentaires : stratégie, juridique / réglementaire, financement, investissement.
-              </p>
             </div>
           </section>
 
@@ -296,130 +435,239 @@
 
             <div class="programme-list">
               <article class="programme-list__item">
-                <h3>Votre pratique recoupe-t-elle réellement l’un des angles du cycle ?</h3>
-                <p>Nous vérifions si votre lecture a une place naturelle dans la composition éditoriale.</p>
+                <h3>Votre pratique recoupe-t-elle réellement l’un des angles ouverts ?</h3>
+                <p>Nous vérifions si votre lecture a une place naturelle dans la composition éditoriale actuellement ouverte.</p>
               </article>
 
               <article class="programme-list__item">
-                <h3>Quelle conversation serait la plus naturelle ?</h3>
-                <p>Nous identifions le bon point d’entrée selon les situations que vous accompagnez.</p>
+                <h3>Quel angle est le plus naturel pour vous ?</h3>
+                <p>Nous identifions le bon point d’entrée selon les situations que vous accompagnez ou que vous portez depuis l’exécution.</p>
               </article>
 
               <article class="programme-list__item">
-                <h3>Un cadrage plus précis mérite-t-il d’être poursuivi ?</h3>
-                <p>L’échange ne vise pas à engager trop tôt, mais à qualifier rapidement la pertinence.</p>
+                <h3>Quelles dimensions relèvent le plus naturellement de vous — et ce qui tient mieux dans l’émission ou dans l’article associé ?</h3>
+                <p>Nous vérifions ce que votre lecture peut porter avec le plus de justesse, sans vous tirer vers une parole trop large ou trop abstraite.</p>
               </article>
             </div>
           </section>
 
-          <!-- POINTS D'ENTREE NATURELS -->
-          <section class="page-section">
+          <!-- CONVERSATION OUVERTE -->
+          <section class="page-section" id="conversation-ouverte">
             <div class="section-head section-head--narrow">
-              <div class="section-kicker">Vos points d’entrée naturels</div>
-              <h2>Trois conversations où une lecture opérationnelle peut trouver sa place</h2>
+              <div class="section-kicker">Conversation actuellement ouverte</div>
+              <h2>À quel moment produire ne tient plus ?</h2>
               <p class="section-intro">
-                Le moment où l’exécution, la robustesse du système et les arbitrages de performance cessent d’être de simples variables d’ajustement pour devenir des paramètres structurants de la décision. Cliquez pour voir les déclinaisons par contexte.
+                Cette conversation cherche à faire apparaître le moment où une activité continue encore, alors même que ses équilibres économiques, opérationnels, stratégiques ou réglementaires se dégradent déjà. Quatre angles complémentaires la structurent. La lecture opérations y a une place nette, mais elle s’inscrit dans une composition plus large.
               </p>
             </div>
 
-            <details class="landing-summary" id="entry-conv-1">
-              <summary>
-                <strong>Conversation 1 — Tenue économique</strong><br>
-                Quels arbitrages opérationnels permettent réellement de tenir une activité — et lesquels la fragilisent en voulant la préserver ?
-              </summary>
-              <div class="landing-summary-body">
-                <div class="programme-list">
-                  <article class="programme-list__item">
-                    <h3>Capacité à absorber</h3>
-                    <p>Quels arbitrages de cadence, de stock, de qualité ou d’organisation permettent d’absorber la croissance sans casser l’outil ?</p>
-                  </article>
+            <div class="landing-angle-stack">
 
-                  <article class="programme-list__item">
-                    <h3>Performance sous pression</h3>
-                    <p>Quels arbitrages de coûts, de maintenance, de planning ou de sourcing restaurent de la marge — et lesquels détruisent la performance à moyen terme ?</p>
-                  </article>
+              <!-- ANGLE OPERATIONS PRIORITAIRE -->
+              <article class="landing-angle-card landing-angle-card--priority">
+                <div class="landing-angle-tag">Lecture opérations attendue en priorité sur cet angle</div>
+                <h3>Angle 2 — Quels arbitrages d’exécution dégradent une activité en voulant la faire tenir ?</h3>
+                <p class="landing-angle-intro">
+                  Le moment où la continuité de production est maintenue au prix de compromis croissants sur la capacité, la qualité, les flux, les délais, la maintenance ou l’organisation.
+                </p>
 
-                  <article class="programme-list__item">
-                    <h3>Base productive à préserver</h3>
-                    <p>Quels arbitrages permettent encore de maintenir une base productive crédible avant redéploiement, cession ou recentrage ?</p>
-                  </article>
+                <p><strong>Acteurs attendus :</strong> cabinet d’excellence opérationnelle · cabinet lean / supply chain · cabinet transformation des opérations · directeur industriel · directeur des opérations · responsable supply chain · responsable performance industrielle.</p>
+
+                <div class="landing-angle-meta">
+                  <p><strong>Émission pressentie :</strong> Focus Business</p>
+                  <p><strong>Média :</strong> BFM Business</p>
+                  <p><strong>Journaliste :</strong> Thierry Cabannes</p>
                 </div>
 
-                <p class="landing-inline-note">
-                  Acteurs pressentis : cabinets d’excellence opérationnelle · cabinets lean / supply · cabinets de transformation industrielle · cabinets spécialisés amélioration de performance.
+                <details class="landing-context-details" id="operations-angle-details">
+                  <summary>Variations selon les contextes industriels</summary>
+                  <div class="landing-context-body">
+                    <div class="landing-context-item">
+                      <h4>Activité en croissance</h4>
+                      <p>Quels arbitrages sur la capacité, les flux, les délais, les stocks ou la qualité commencent à fragiliser la trajectoire au moment même où l’activité accélère ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité sous pression</h4>
+                      <p>Quels compromis opérationnels permettent encore de produire à court terme, mais dégradent structurellement la robustesse, la maintenance ou la performance du système ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité en reconfiguration</h4>
+                      <p>Quels choix de continuité, de recentrage ou de maintien de l’outil empêchent en réalité la transformation d’aboutir proprement ?</p>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+              <!-- ANGLE FINANCE -->
+              <article class="landing-angle-card">
+                <h3>Angle 1 — À partir de quand une activité ne tient plus économiquement ?</h3>
+                <p class="landing-angle-intro">
+                  Le point où produire reste encore possible en apparence, mais cesse d’être tenable dans son cadre économique, financier ou de portage actuel.
                 </p>
 
-                <p class="landing-inline-note">
-                  Cette lecture prend place aux côtés de lectures complémentaires : stratégie / compétitivité · juridique / réglementaire · financement / restructuring.
-                </p>
-              </div>
-            </details>
+                <p><strong>Acteurs attendus :</strong> cabinet de corporate finance industrielle · cabinet de conseil en dette · cabinet de restructuring / situations spéciales · DAF industriel · directeur financement · responsable haut de bilan / financement de transformation.</p>
 
-            <details class="landing-summary">
-              <summary>
-                <strong>Conversation 2 — Dépendances de chaîne productive</strong><br>
-                Relocaliser, multisourcer, stocker, simplifier la chaîne : quel arbitrage tient vraiment quand on passe du principe à l’exécution ?
-              </summary>
-              <div class="landing-summary-body">
-                <div class="programme-list">
-                  <article class="programme-list__item">
-                    <h3>Capacité à absorber</h3>
-                    <p>Quel arbitrage permet de sécuriser une croissance sans figer l’activité dans une structure de coûts trop lourde ?</p>
-                  </article>
-
-                  <article class="programme-list__item">
-                    <h3>Performance sous pression</h3>
-                    <p>Quel arbitrage protège réellement la continuité sans annuler les gains recherchés sur la marge ?</p>
-                  </article>
-
-                  <article class="programme-list__item">
-                    <h3>Base productive à préserver</h3>
-                    <p>Quel arbitrage permet encore de préserver une base productive viable quand il n’est plus possible de tout maintenir ?</p>
-                  </article>
+                <div class="landing-angle-meta">
+                  <p><strong>Émission pressentie :</strong> Business Inside</p>
+                  <p><strong>Média :</strong> Forbes</p>
+                  <p><strong>Journaliste :</strong> Jean-Marc Sylvestre</p>
                 </div>
 
-                <p class="landing-inline-note">
-                  Acteurs pressentis : cabinets supply chain · cabinets achats · cabinets de transformation des opérations · cabinets spécialisés résilience industrielle.
+                <details class="landing-context-details">
+                  <summary>Variations selon les contextes industriels</summary>
+                  <div class="landing-context-body">
+                    <div class="landing-context-item">
+                      <h4>Activité en croissance</h4>
+                      <p>À partir de quel niveau d’investissement, de complexité ou de besoin de financement une trajectoire de croissance cesse-t-elle d’être tenable dans son cadre initial ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité sous pression</h4>
+                      <p>À partir de quand la dégradation des marges, des coûts ou de la visibilité n’est-elle plus un simple sujet d’ajustement, mais un sujet de bascule du modèle ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité en reconfiguration</h4>
+                      <p>À partir de quand le maintien du périmètre existant empêche-t-il toute transformation crédible et impose-t-il une recomposition plus profonde ?</p>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+              <!-- ANGLE STRATEGIE -->
+              <article class="landing-angle-card">
+                <h3>Angle 3 — À partir de quand le problème ne tient plus à la conjoncture, mais à la place occupée dans la filière ?</h3>
+                <p class="landing-angle-intro">
+                  Le point où la fragilité d’une activité ne relève plus seulement d’un accident, mais d’un positionnement devenu difficile à tenir dans la chaîne de valeur.
                 </p>
 
-                <p class="landing-inline-note">
-                  Cette lecture prend place aux côtés de lectures complémentaires : stratégie de filière · commerce international / douane · financement de transformation.
-                </p>
-              </div>
-            </details>
+                <p><strong>Acteurs attendus :</strong> cabinet de stratégie industrielle · cabinet compétitivité / filière · cabinet transformation / redéploiement · direction stratégie · direction générale industrielle · conseil en intelligence économique ou analyse de filière.</p>
 
-            <details class="landing-summary">
-              <summary>
-                <strong>Conversation 3 — Transformation productive</strong><br>
-                Quel arbitrage productif crée encore de la valeur au point de bascule ?
-              </summary>
-              <div class="landing-summary-body">
-                <div class="programme-list">
-                  <article class="programme-list__item">
-                    <h3>Capacité à absorber</h3>
-                    <p>Faut-il d’abord automatiser, recruter, standardiser ou replanifier pour absorber une hausse de volume ?</p>
-                  </article>
-
-                  <article class="programme-list__item">
-                    <h3>Performance sous pression</h3>
-                    <p>Quel arbitrage entre automatisation, réorganisation et qualité permet de restaurer de la performance sans casser l’exécution ?</p>
-                  </article>
-
-                  <article class="programme-list__item">
-                    <h3>Base productive à préserver</h3>
-                    <p>Quel arbitrage permet de conserver un noyau industriel crédible quand tout ne peut plus être modernisé en même temps ?</p>
-                  </article>
+                <div class="landing-angle-meta">
+                  <p><strong>Émission pressentie :</strong> La Tribune Business</p>
+                  <p><strong>Média :</strong> La Tribune</p>
+                  <p><strong>Journaliste :</strong> Gilles Leclerc</p>
                 </div>
 
-                <p class="landing-inline-note">
-                  Acteurs pressentis : cabinets d’excellence opérationnelle · cabinets lean management · cabinets d’organisation industrielle · cabinets spécialisés transformation des compétences.
+                <details class="landing-context-details">
+                  <summary>Variations selon les contextes industriels</summary>
+                  <div class="landing-context-body">
+                    <div class="landing-context-item">
+                      <h4>Activité en croissance</h4>
+                      <p>À partir de quand une montée en puissance se heurte-t-elle à une dépendance de filière, de client, d’approvisionnement ou de sous-traitance qui en change la nature ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité sous pression</h4>
+                      <p>À partir de quand la fragilité d’une activité ne vient-elle plus seulement des coûts ou des volumes, mais de la place qu’elle occupe dans la chaîne de valeur ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité en reconfiguration</h4>
+                      <p>À partir de quand une activité ne peut-elle plus être sauvée telle quelle, parce que le problème tient à son positionnement même dans la filière ?</p>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+              <!-- ANGLE CADRE -->
+              <article class="landing-angle-card">
+                <h3>Angle 4 — Quand le cadre cesse-t-il d’encadrer une activité pour devenir un facteur de bascule ?</h3>
+                <p class="landing-angle-intro">
+                  Le moment où le cadre social, fiscal, réglementaire ou normatif ne constitue plus un arrière-plan, mais devient une composante décisive de la tenue de l’activité.
                 </p>
 
-                <p class="landing-inline-note">
-                  Cette lecture prend place aux côtés de lectures complémentaires : industrie 4.0 / investissement · conformité / sécurité · financement de l’outil productif.
+                <p><strong>Acteurs attendus :</strong> cabinet juridique / réglementaire · cabinet affaires publiques / conformité · cabinet fiscal · direction juridique · direction fiscale · direction financière confrontée au cadre normatif de la transformation.</p>
+
+                <div class="landing-angle-meta">
+                  <p><strong>Émission pressentie :</strong> Grand Angle</p>
+                  <p><strong>Média :</strong> Le Figaro</p>
+                  <p><strong>Journaliste :</strong> Christophe Pallée</p>
+                </div>
+
+                <details class="landing-context-details">
+                  <summary>Variations selon les contextes industriels</summary>
+                  <div class="landing-context-body">
+                    <div class="landing-context-item">
+                      <h4>Activité en croissance</h4>
+                      <p>À partir de quand les contraintes réglementaires, sociales, fiscales ou normatives ralentissent-elles une trajectoire au point d’en modifier la soutenabilité ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité sous pression</h4>
+                      <p>À partir de quand le cadre cesse-t-il d’être un simple paramètre de conformité pour devenir un facteur direct de fragilisation ou de décrochage ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité en reconfiguration</h4>
+                      <p>À partir de quand la transformation d’une activité se heurte-t-elle à un cadre qui empêche le redéploiement d’être porté dans sa forme initiale ?</p>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+            </div>
+
+            <div class="editorial-panel" style="margin-top:24px;">
+              <p>
+                Il existe également une autre conversation prioritaire du cycle : <strong>« Où se situent les dépendances qui font basculer la production ? »</strong>
+              </p>
+              <p>
+                Une lecture opérations peut aussi y être mobilisée, en particulier pour éclairer l’angle suivant : <strong>« Relocaliser, multisourcer, stocker, simplifier la chaîne : quel arbitrage tient vraiment quand on passe du principe à l’exécution ? »</strong>
+              </p>
+              <p>
+                Cette possibilité peut être évoquée dans le cadre de l’échange éditorial.
+              </p>
+              <p>
+                Les affectations éditoriales indiquées ici correspondent à la logique de traitement actuellement retenue. Elles peuvent être ajustées en fonction de la composition finale de la conversation.
+              </p>
+            </div>
+          </section>
+
+          <!-- REASSURANCE -->
+          <section class="page-section">
+            <div class="programme-access desktop-only">
+              <article class="programme-access__item">
+                <h3>Pas de concurrence frontale sur le même angle</h3>
+                <p>
+                  Votre lecture n’a pas vocation à être mise en concurrence frontale avec une autre position strictement équivalente, qu’elle soit portée depuis le conseil ou depuis l’entreprise.
                 </p>
-              </div>
-            </details>
+                <p>
+                  Sur un même angle, une seule lecture de type opérations est retenue. L’enjeu est de mettre en regard des lectures complémentaires, pas d’opposer des profils semblables.
+                </p>
+              </article>
+
+              <article class="programme-access__item">
+                <h3>Une conversation composée, pas un plateau concurrentiel</h3>
+                <p>
+                  Chaque angle est porté par une lecture distincte. L’objectif n’est pas d’aligner des profils équivalents, mais de rendre une même bascule plus lisible depuis plusieurs dimensions non redondantes.
+                </p>
+              </article>
+            </div>
+
+            <div class="programme-position mobile-only">
+              <h3>Pas de concurrence frontale sur le même angle</h3>
+              <p>
+                Sur un même angle, une seule lecture de type opérations est retenue. Votre lecture prend place aux côtés d’acteurs complémentaires : finance, stratégie, juridique / réglementaire.
+              </p>
+            </div>
+          </section>
+
+          <!-- APRES L'ECHANGE -->
+          <section class="page-section">
+            <div class="section-head section-head--narrow">
+              <div class="section-kicker">Suite</div>
+              <h2>Ce qui se passe après l’échange</h2>
+            </div>
+
+            <div class="editorial-panel">
+              <p>
+                À l’issue de ce premier échange, une analyse éditoriale interne permet de vérifier si votre lecture correspond à un point d’entrée encore disponible dans le cycle, qu’elle soit portée depuis le conseil ou depuis l’entreprise elle-même.
+              </p>
+              <p>
+                Si c’est le cas, une note de positionnement vous est adressée. Elle précise l’angle pressenti, la logique de mise en regard et le cadre dans lequel une suite peut être envisagée.
+              </p>
+              <p>
+                Si la lecture paraît juste, la suite consiste à préciser l’angle, la place de votre contribution dans la conversation, et la répartition la plus naturelle entre émission et article associé.
+              </p>
+              <p>
+                <strong>Aucun engagement n’est demandé avant cette analyse interne et, le cas échéant, l’envoi d’une note de positionnement.</strong>
+              </p>
+            </div>
           </section>
 
           <!-- CADRE -->
@@ -428,7 +676,7 @@
               <div class="section-kicker">Cadre</div>
               <h2>L’enjeu n’est pas la visibilité, mais la portée de votre position.</h2>
               <p class="section-intro desktop-only">
-                En Plateau prépare et structure des prises de position destinées à être exprimées dans des formats audiovisuels réalisés par des sociétés de production partenaires et diffusés dans des cadres médiatiques identifiés.
+                En Plateau prépare et structure des prises de position destinées à être exprimées dans des formats audiovisuels réalisés avec des sociétés de production partenaires et diffusés dans des cadres médiatiques clairement identifiés.
               </p>
               <p class="section-intro mobile-only">
                 Une prise de position préparée en amont, produite dans un cadre identifiable, puis activée dans l’écosystème professionnel.
@@ -454,10 +702,10 @@
 
             <div class="editorial-panel">
               <p>
-                Les prises de position sont préparées en amont et produites dans des environnements médiatiques identifiés, selon les formats et configurations retenus.
+                Les prises de position sont préparées en amont et produites dans des environnements médiatiques clairement identifiés, selon les formats et configurations retenus.
               </p>
               <p class="desktop-only">
-                Le cadre de diffusion est identifié ; il n’implique ni improvisation, ni exposition non préparée.
+                Le cadre de diffusion est défini à l’avance ; il n’implique ni improvisation, ni exposition non préparée.
               </p>
             </div>
           </section>
@@ -466,24 +714,47 @@
           <section class="page-section">
             <div class="section-head section-head--narrow">
               <div class="section-kicker">FAQ rapide</div>
-              <h2>Les principales objections levées tout de suite</h2>
+              <h2>Les questions qui reviennent le plus</h2>
             </div>
 
             <div class="programme-list">
               <article class="programme-list__item">
-                <h3>Faut-il parler d’un site ou d’un client identifiable ?</h3>
-                <p>Non. L’enjeu n’est pas d’exposer une situation confidentielle ni de détailler un cas identifiable.</p>
+                <h3>Faut-il parler d’un site, d’un client ou d’un cas identifiable ?</h3>
+                <p>Non. L’enjeu n’est pas d’exposer une situation confidentielle ni de détailler un cas reconnaissable.</p>
               </article>
 
               <article class="programme-list__item">
-                <h3>Faut-il produire un discours général de méthode ?</h3>
-                <p>Non. Il s’agit d’apporter une lecture située des arbitrages d’exécution, de robustesse et de performance réellement rencontrés.</p>
+                <h3>Faut-il défendre une méthode générale ?</h3>
+                <p>Non. Il s’agit d’apporter une lecture située, utile et exploitable sur des arbitrages d’exécution, de robustesse et de performance réellement rencontrés.</p>
               </article>
 
               <article class="programme-list__item">
                 <h3>Faut-il préparer seul la prise de parole ?</h3>
-                <p>Non. Le cadrage éditorial est préparé en amont pour sécuriser la conversation et le bon point d’entrée.</p>
+                <p>Non. Le cadrage éditorial est préparé en amont pour sécuriser l’angle, la conversation et le niveau d’exposition.</p>
               </article>
+            </div>
+          </section>
+
+          <!-- METHODE -->
+          <section class="page-section">
+            <div class="section-head section-head--narrow">
+              <div class="section-kicker">Comment l’angle est travaillé</div>
+              <h2>Une préparation éditoriale structurée, sans parole verrouillée</h2>
+            </div>
+
+            <div class="editorial-panel">
+              <p>
+                Chaque angle n’est pas traité comme un simple sujet de prise de parole. Il est préparé sous plusieurs dimensions : <strong>contexte de transformation</strong>, <strong>acteurs concernés</strong>, <strong>arbitrages</strong>, <strong>risques et opportunités</strong>, <strong>échelles d’analyse</strong> et <strong>vision</strong>.
+              </p>
+              <p>
+                L’enjeu n’est pas de tout faire tenir dans un seul format, mais de répartir justement ce qui relève de l’émission, de l’article associé et du bon niveau d’échelle.
+              </p>
+              <p>
+                L’échange éditorial permet de vérifier quelles dimensions ont vocation à être portées dans l’émission, et lesquelles relèvent plutôt du prolongement écrit ou analytique.
+              </p>
+              <p>
+                Ce cadrage permet de traiter des sujets sensibles sans les réduire à un cas isolé ni à une lecture accusatoire.
+              </p>
             </div>
           </section>
 
@@ -491,27 +762,27 @@
           <section class="page-section">
             <div class="section-head section-head--narrow">
               <div class="section-kicker">Accès</div>
-              <h2>Vous intervenez sur ce type de bascule ?</h2>
+              <h2>Vous accompagnez — ou portez — ce type de bascule ?</h2>
               <p class="section-intro desktop-only">
-                Un échange permet de vérifier si ce cycle recoupe réellement les situations que vous accompagnez, et sous quel point d’entrée votre lecture serait la plus pertinente.
+                Un échange permet de vérifier si cette conversation recoupe réellement les situations que vous accompagnez ou que vous portez depuis l’exécution, et sous quel angle votre lecture serait la plus pertinente.
               </p>
               <p class="section-intro mobile-only">
-                Un échange permet de vérifier rapidement si votre lecture a une place naturelle dans ce cycle.
+                Un échange permet de vérifier rapidement si votre lecture a une place naturelle dans cette conversation.
               </p>
             </div>
 
             <div class="programme-access">
               <article class="programme-access__item">
-                <h3>Demander un échange de 15 min</h3>
+                <h3>Prendre rendez-vous</h3>
                 <p>
-                  Vérifier si votre position peut utilement éclairer l’une des conversations du cycle.
+                  Vérifier si votre position peut utilement éclairer l’un des angles actuellement ouverts dans la conversation.
                 </p>
-                <a href="/demander-un-echange-editorial.html?src=lp-industrie-operations&cta=footer" class="link link--primary">Demander un échange de 15 min</a>
+                <a href="/demander-un-echange-editorial.html?src=lp-industrie-operations&cta=footer" class="link link--primary">Prendre rendez-vous</a>
               </article>
             </div>
 
             <p class="section-footnote">
-              Cette page constitue une porte d’entrée ciblée et n’a pas vocation à exposer publiquement l’ensemble de la structure du cycle.
+              Cycle 2026–2027 · Les positions se ferment au fil de la composition éditoriale. Lorsqu’un angle est confirmé, il n’est plus ouvert à une lecture de même nature.
             </p>
           </section>
 
@@ -544,28 +815,27 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var firstDetails = document.getElementById('entry-conv-1');
-      if (!firstDetails) return;
+      var operationsDetails = document.getElementById('operations-angle-details');
+      if (!operationsDetails) return;
 
-      var mq = window.matchMedia('(min-width: 641px)');
-
-      function syncDetailsState(e) {
-        if (e.matches) {
-          firstDetails.setAttribute('open', 'open');
+      function syncOperationsDetails() {
+        if (window.matchMedia('(min-width: 641px)').matches) {
+          operationsDetails.setAttribute('open', 'open');
         } else {
-          firstDetails.removeAttribute('open');
+          operationsDetails.removeAttribute('open');
         }
       }
 
-      syncDetailsState(mq);
+      syncOperationsDetails();
 
+      var mq = window.matchMedia('(min-width: 641px)');
       if (typeof mq.addEventListener === 'function') {
-        mq.addEventListener('change', syncDetailsState);
-      } else if (typeof mq.addListener === 'function') {
-        mq.addListener(syncDetailsState);
+        mq.addEventListener('change', syncOperationsDetails);
+      } else {
+        window.addEventListener('resize', syncOperationsDetails);
       }
     });
   </script>
 
 </body>
-</html>
+            </html>
