@@ -7,7 +7,7 @@
   <title>Commerce international / douane / conformité export — Industrie & transformation des territoires | En Plateau</title>
   <meta
     name="description"
-    content="Landing page ciblée En Plateau pour les cabinets d’avocats et de conseil intervenant en douane, commerce international, conformité export et réglementation des échanges."
+    content="Landing page ciblée En Plateau pour les cabinets d’avocats et de conseil intervenant en douane, commerce international, conformité export et réglementation des échanges, ainsi que pour les fonctions internes concernées chez l’industriel."
   >
 
   <link rel="canonical" href="https://enplateau.fr/lp/industrie-commerce-international-cycle.html">
@@ -23,7 +23,7 @@
   <meta property="og:title" content="Commerce international / douane / conformité export — Industrie & transformation des territoires | En Plateau">
   <meta
     property="og:description"
-    content="Une porte d’entrée ciblée pour les cabinets intervenant sur les règles commerciales, douanières, européennes et de conformité export qui influencent les arbitrages industriels."
+    content="Une porte d’entrée ciblée pour les lectures commerce international, douane et conformité export sur une conversation industrielle actuellement ouverte."
   >
   <meta property="og:url" content="https://enplateau.fr/lp/industrie-commerce-international-cycle.html">
   <meta property="og:image" content="https://enplateau.fr/images/en-plateau-social.webp">
@@ -32,7 +32,7 @@
   <meta name="twitter:title" content="Commerce international / douane / conformité export — Industrie & transformation des territoires | En Plateau">
   <meta
     name="twitter:description"
-    content="Une porte d’entrée ciblée pour les cabinets intervenant sur les règles commerciales, douanières, européennes et de conformité export qui influencent les arbitrages industriels."
+    content="Une porte d’entrée ciblée pour les lectures commerce international, douane et conformité export sur une conversation industrielle actuellement ouverte."
   >
   <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-social.webp">
 
@@ -88,43 +88,18 @@
       opacity: 0.82;
     }
 
-    .landing-inline-note {
-      margin-top: 8px;
-      font-size: 0.95rem;
-      line-height: 1.55;
-      opacity: 0.84;
-    }
-
-    .landing-compact-links {
-      margin-top: 18px;
-    }
-
-    .landing-summary {
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 16px;
-      margin-top: 14px;
-    }
-
-    .landing-summary summary {
-      cursor: pointer;
-      font-weight: 600;
-      line-height: 1.5;
-      list-style: none;
-    }
-
-    .landing-summary summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .landing-summary-body {
-      margin-top: 14px;
-    }
-
     .landing-micro-proof {
       margin-top: 10px;
       font-size: 0.92rem;
       line-height: 1.55;
       opacity: 0.82;
+    }
+
+    .landing-inline-note {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      line-height: 1.58;
+      color: var(--ep-ink-muted);
     }
 
     .landing-list {
@@ -136,8 +111,153 @@
       margin-top: 0.55rem;
     }
 
+    .landing-compact-links {
+      margin-top: 18px;
+    }
+
+    .landing-angle-stack {
+      display: grid;
+      gap: 20px;
+      margin-top: 14px;
+    }
+
+    .landing-angle-card {
+      position: relative;
+      background: rgba(255, 250, 244, 0.78);
+      border: 1px solid var(--ep-line);
+      padding: 26px 24px 22px;
+    }
+
+    .landing-angle-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: rgba(123, 51, 38, 0.68);
+    }
+
+    .landing-angle-card--priority {
+      background: rgba(249, 242, 235, 0.98);
+      border-color: rgba(123, 51, 38, 0.22);
+      box-shadow: 0 10px 24px rgba(17, 17, 17, 0.05);
+    }
+
+    .landing-angle-card--priority::before {
+      width: 6px;
+      background: var(--ep-accent);
+    }
+
+    .landing-angle-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 10px;
+      margin-bottom: 12px;
+      background: rgba(123, 51, 38, 0.08);
+      border: 1px solid rgba(123, 51, 38, 0.18);
+      font-family: var(--font-ui);
+      font-size: 10px;
+      line-height: 1.3;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ep-accent);
+    }
+
+    .landing-angle-card h3 {
+      margin: 0 0 10px;
+    }
+
+    .landing-angle-intro {
+      margin-bottom: 14px;
+      font-size: 0.92rem;
+      line-height: 1.62;
+      color: var(--ep-ink-soft);
+    }
+
+    .landing-angle-meta {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(82, 62, 49, 0.14);
+      display: grid;
+      gap: 8px;
+    }
+
+    .landing-angle-meta p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.58;
+    }
+
+    .landing-context-details {
+      margin-top: 16px;
+      border-top: 1px solid rgba(82, 62, 49, 0.14);
+      padding-top: 14px;
+    }
+
+    .landing-context-details summary {
+      cursor: pointer;
+      list-style: none;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      line-height: 1.4;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ep-accent);
+    }
+
+    .landing-context-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .landing-context-body {
+      margin-top: 14px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .landing-context-item {
+      border-left: 2px solid rgba(123, 51, 38, 0.22);
+      padding-left: 14px;
+    }
+
+    .landing-context-item h4 {
+      margin: 0 0 6px;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      line-height: 1.12;
+      font-weight: 600;
+      color: var(--ep-ink);
+    }
+
+    .landing-context-item p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--ep-ink-soft);
+    }
+
+    .landing-reassurance-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr 1fr;
+    }
+
     .mobile-only { display: none; }
     .desktop-only { display: block; }
+
+    @media (max-width: 1023px) {
+      .landing-reassurance-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .landing-angle-card {
+        padding: 22px 20px 18px;
+      }
+    }
 
     @media (max-width: 640px) {
       .landing-header-inner,
@@ -161,7 +281,7 @@
         </a>
 
         <div class="programme-link-row">
-          <a href="/demander-un-echange-editorial.html?src=lp-industrie-commerce-international&cta=header" class="link link--primary">Demander un échange de 15 min</a>
+          <a href="/demander-un-echange-editorial.html?src=lp-industrie-commerce-international&cta=header" class="link link--primary">Prendre rendez-vous</a>
         </div>
       </div>
     </div>
@@ -176,23 +296,27 @@
           <div class="page-hero-kicker">Industrie & transformation des territoires</div>
 
           <h1 class="page-hero-title">
-            Votre lecture des bascules industrielles à l’international a-t-elle sa place dans ce cycle ?
+            Votre lecture des échanges internationaux a-t-elle sa place dans cette conversation industrielle ?
           </h1>
 
           <p class="page-hero-sub">
-            Pour les cabinets d’avocats et de conseil intervenant en <strong>douane</strong>, <strong>commerce international</strong>, <strong>conformité export</strong>, <strong>droit économique européen</strong> ou <strong>réglementation des échanges</strong>, sur des entreprises en <strong>croissance</strong>, <strong>sous pression</strong> ou <strong>à reconfigurer</strong>.
+            Pour les <strong>cabinets d’avocats et de conseil intervenant en douane, commerce international, conformité export, contrôle des échanges et réglementation des flux</strong>, mais aussi pour les <strong>directions douane, conformité, commerce international ou affaires réglementaires</strong> chez l’industriel, lorsque cette lecture éclaire une activité <strong>en croissance</strong>, <strong>sous pression</strong> ou <strong>en reconfiguration</strong>.
           </p>
 
           <p class="page-hero-note">
-            Un échange de 15 min permet de vérifier s’il existe un point d’entrée naturel pour votre pratique.
+            En 15 minutes, nous vérifions si votre lecture correspond à un angle encore ouvert — de façon confidentielle, sans exposer de client ni de cas identifiable, et sans engagement à ce stade.
+          </p>
+
+          <p class="landing-inline-note">
+            L’échange permet de vérifier si votre lecture a une place naturelle dans une conversation déjà ouverte, entre émission et article associé.
           </p>
 
           <p class="programme-link-row">
-            <a href="/demander-un-echange-editorial.html?src=lp-industrie-commerce-international&cta=hero" class="link link--primary">Demander un échange de 15 min</a>
+            <a href="/demander-un-echange-editorial.html?src=lp-industrie-commerce-international&cta=hero" class="link link--primary">Prendre rendez-vous</a>
           </p>
 
           <p class="section-footnote">
-            Confidentiel · sans engagement · pour vérifier la pertinence du point d’entrée
+            Certaines positions se ferment au fil de la composition éditoriale.
           </p>
           <p class="landing-micro-proof">
             Aucun client ni cas à exposer · aucun engagement à ce stade · simple qualification éditoriale
@@ -208,23 +332,27 @@
           <div class="page-hero-kicker">Industrie & transformation des territoires</div>
 
           <h1 class="page-hero-title">
-            Votre lecture des bascules industrielles à l’international a-t-elle sa place dans ce cycle ?
+            Votre lecture des échanges internationaux a-t-elle sa place dans cette conversation industrielle ?
           </h1>
 
           <p class="page-hero-sub">
-            Douane, commerce international, conformité export.
+            Douane, commerce international, conformité export, réglementation des flux.
           </p>
 
           <p class="page-hero-note">
-            Un échange de 15 min permet de vérifier s’il existe un point d’entrée naturel.
+            En 15 minutes, nous vérifions si votre lecture correspond à un angle encore ouvert, sans exposer de client ni de cas identifiable, et sans engagement à ce stade.
+          </p>
+
+          <p class="landing-inline-note">
+            L’échange permet de vérifier si votre lecture a une place naturelle dans une conversation déjà ouverte, entre émission et article associé.
           </p>
 
           <p class="programme-link-row">
-            <a href="/demander-un-echange-editorial.html?src=lp-industrie-commerce-international&cta=hero" class="link link--primary">Demander un échange de 15 min</a>
+            <a href="/demander-un-echange-editorial.html?src=lp-industrie-commerce-international&cta=hero" class="link link--primary">Prendre rendez-vous</a>
           </p>
 
           <p class="section-footnote">
-            Confidentiel · sans engagement
+            Certaines positions se ferment au fil de la composition éditoriale.
           </p>
           <p class="landing-micro-proof">
             Aucun client ni cas à exposer · simple qualification éditoriale
@@ -237,16 +365,52 @@
       <div class="container">
         <div class="page-reading">
 
+          <!-- REASSURANCE IMMEDIATE -->
+          <section class="page-section">
+            <div class="section-head section-head--narrow">
+              <div class="section-kicker">Avant de réserver</div>
+              <h2>Ce que cet échange implique — et ce qu’il n’implique pas</h2>
+            </div>
+
+            <div class="landing-reassurance-grid">
+              <article class="programme-list__item">
+                <h3>Pas de client ni de cas à exposer</h3>
+                <p>Vous n’avez pas besoin d’entrer dans un cas identifiable pour vérifier la pertinence de votre lecture.</p>
+              </article>
+
+              <article class="programme-list__item">
+                <h3>Aucun engagement à ce stade</h3>
+                <p>Le rendez-vous sert uniquement à qualifier un point d’entrée éventuel.</p>
+              </article>
+
+              <article class="programme-list__item">
+                <h3>Pas de concurrence frontale avec un profil équivalent</h3>
+                <p>Sur un même angle, une seule lecture de type commerce international / douane / conformité export est retenue.</p>
+              </article>
+
+              <article class="programme-list__item">
+                <h3>Un échange uniquement pour vérifier la pertinence éditoriale</h3>
+                <p>L’objectif n’est pas de vous faire entrer de force dans un dispositif, mais de vérifier s’il existe une place naturelle.</p>
+              </article>
+            </div>
+
+            <div class="editorial-panel" style="margin-top:24px;">
+              <p>
+                Il ne s’agit pas de vous demander une parole exhaustive sur tout le cadre juridique de l’activité, mais d’identifier le point où votre lecture des échanges, des flux et de leur encadrement éclaire réellement la bascule industrielle.
+              </p>
+            </div>
+          </section>
+
           <!-- POUR QUI / MOINS ADAPTEE SI -->
           <section class="page-section">
             <div class="programme-access">
               <article class="programme-access__item">
                 <h3>Cette page s’adresse plutôt à</h3>
                 <ul class="landing-list">
-                  <li>Cabinets d’avocats en douane, commerce international ou droit économique européen</li>
-                  <li>Cabinets intervenant en conformité export, contrôle des échanges ou réglementation des flux</li>
-                  <li>Profils travaillant sur les contraintes import/export, les droits, normes, contrôles ou règles européennes</li>
-                  <li>Cabinets accompagnant croissance, tension, reconfiguration de chaîne ou redéploiement industriel</li>
+                  <li>Cabinets d’avocats en douane, commerce international, contrôle des échanges ou réglementation des flux</li>
+                  <li>Cabinets intervenant en conformité export, sanctions, accès marché ou sécurité réglementaire des opérations internationales</li>
+                  <li>Directions douane, conformité export, commerce international, affaires réglementaires ou accès marché au sein d’industriels</li>
+                  <li>Profils travaillant sur les contraintes import/export, les droits, normes, contrôles, obligations documentaires ou restrictions applicables aux échanges</li>
                 </ul>
               </article>
 
@@ -255,35 +419,10 @@
                 <ul class="landing-list">
                   <li>Votre intervention n’est pas directement liée aux règles encadrant les échanges, les flux ou l’accès aux marchés</li>
                   <li>Votre positionnement reste trop général pour être rattaché à une bascule précise de chaîne ou de compétitivité</li>
-                  <li>Votre attente porte d’abord sur de la visibilité plutôt que sur une contribution située</li>
+                  <li>Votre attente porte d’abord sur de la visibilité, plutôt que sur une contribution située</li>
+                  <li>Votre lecture relève davantage du cadre réglementaire général de l’activité industrielle que des règles propres aux échanges internationaux</li>
                 </ul>
               </article>
-            </div>
-          </section>
-
-          <!-- REASSURANCE -->
-          <section class="page-section">
-            <div class="programme-access desktop-only">
-              <article class="programme-access__item">
-                <h3>Pas de concurrence frontale sur le même angle</h3>
-                <p>
-                  Votre lecture commerce international / douane / conformité export ne prend pas place face à un autre acteur du même champ sur le même angle, mais aux côtés d’acteurs complémentaires : stratégie, supply chain, financement, compétitivité.
-                </p>
-              </article>
-
-              <article class="programme-access__item">
-                <h3>Une conversation composée, pas un plateau concurrentiel</h3>
-                <p>
-                  Chaque angle est porté par une lecture distincte. L’enjeu n’est pas de juxtaposer des expertises semblables, mais de rendre une même bascule plus lisible depuis plusieurs dimensions non redondantes.
-                </p>
-              </article>
-            </div>
-
-            <div class="programme-position mobile-only">
-              <h3>Pas de concurrence frontale sur le même angle</h3>
-              <p>
-                Votre lecture prend place aux côtés d’acteurs complémentaires : stratégie, supply chain, financement, compétitivité.
-              </p>
             </div>
           </section>
 
@@ -296,130 +435,233 @@
 
             <div class="programme-list">
               <article class="programme-list__item">
-                <h3>Votre pratique recoupe-t-elle réellement l’un des angles du cycle ?</h3>
-                <p>Nous vérifions si votre lecture a une place naturelle dans la composition éditoriale.</p>
+                <h3>Votre pratique recoupe-t-elle réellement l’un des angles ouverts ?</h3>
+                <p>Nous vérifions si votre lecture a une place naturelle dans la composition éditoriale actuellement ouverte.</p>
               </article>
 
               <article class="programme-list__item">
-                <h3>Quelle conversation serait la plus naturelle ?</h3>
-                <p>Nous identifions le bon point d’entrée selon les situations que vous accompagnez.</p>
+                <h3>Quel angle est le plus naturel pour vous ?</h3>
+                <p>Nous identifions le bon point d’entrée selon les situations que vous accompagnez ou que vous portez depuis les échanges internationaux et leur encadrement.</p>
               </article>
 
               <article class="programme-list__item">
-                <h3>Un cadrage plus précis mérite-t-il d’être poursuivi ?</h3>
-                <p>L’échange ne vise pas à engager trop tôt, mais à qualifier rapidement la pertinence.</p>
+                <h3>Quelles dimensions relèvent le plus naturellement de vous — et ce qui tient mieux dans l’émission ou dans l’article associé ?</h3>
+                <p>Nous vérifions ce que votre lecture peut porter avec le plus de justesse, sans vous tirer vers une parole trop large ou trop abstraite.</p>
               </article>
             </div>
           </section>
 
-          <!-- POINTS D'ENTREE NATURELS -->
-          <section class="page-section">
+          <!-- CONVERSATION OUVERTE -->
+          <section class="page-section" id="conversation-ouverte">
             <div class="section-head section-head--narrow">
-              <div class="section-kicker">Vos points d’entrée naturels</div>
-              <h2>Trois conversations où une lecture internationale / douanière peut trouver sa place</h2>
+              <div class="section-kicker">Conversation actuellement ouverte</div>
+              <h2>Où se situent les dépendances qui font basculer la production ?</h2>
               <p class="section-intro">
-                Le moment où les règles commerciales, douanières, européennes ou de conformité export cessent d’être un simple cadre d’application pour devenir des paramètres structurants de la décision industrielle. Cliquez pour voir les déclinaisons par contexte.
+                Cette conversation cherche à faire apparaître les dépendances que l’entreprise voit mal lorsqu’elle raisonne seule : dépendances de filière, de chaîne de valeur, de sourcing, de cadre commercial ou de portage financier. Quatre angles complémentaires la structurent. La lecture commerce international / douane / conformité export y a une place nette, mais elle s’inscrit dans une composition plus large.
               </p>
             </div>
 
-            <details class="landing-summary" id="entry-conv-1">
-              <summary>
-                <strong>Conversation 2 — Dépendances de chaîne productive</strong><br>
-                Quand les règles commerciales, douanières ou européennes protègent-elles une chaîne — et quand la mettent-elles sous tension ?
-              </summary>
-              <div class="landing-summary-body">
-                <div class="programme-list">
-                  <article class="programme-list__item">
-                    <h3>Croissance à sécuriser</h3>
-                    <p>À quel moment les règles du commerce international ralentissent-elles une montée de capacité plus qu’elles ne la sécurisent ?</p>
-                  </article>
+            <div class="landing-angle-stack">
 
-                  <article class="programme-list__item">
-                    <h3>Modèle sous contrainte</h3>
-                    <p>Quand les normes, droits, contrôles ou contraintes import/export accentuent-ils une pression déjà forte sur la rentabilité ?</p>
-                  </article>
+              <!-- ANGLE STRATEGIE -->
+              <article class="landing-angle-card">
+                <h3>Angle 1 — Qu’est-ce qu’une lecture de filière révèle que l’entreprise seule voit mal au moment d’arbitrer ?</h3>
+                <p class="landing-angle-intro">
+                  Le moment où une difficulté apparente de l’entreprise relève en réalité d’une asymétrie de chaîne de valeur, d’une dépendance de filière ou d’une position concurrentielle devenue fragile.
+                </p>
 
-                  <article class="programme-list__item">
-                    <h3>Chaîne à reconfigurer</h3>
-                    <p>Quand le cadre juridique devient-il un verrou supplémentaire dans une filière déjà en perte de solidité ou de lisibilité ?</p>
-                  </article>
+                <p><strong>Acteurs attendus :</strong> cabinet de stratégie industrielle · cabinet de compétitivité · cabinet d’analyse de filière · cabinet d’intelligence économique · direction stratégie · direction générale industrielle.</p>
+
+                <div class="landing-angle-meta">
+                  <p><strong>Émission pressentie :</strong> La Tribune Business</p>
+                  <p><strong>Média :</strong> La Tribune</p>
+                  <p><strong>Journaliste :</strong> Gilles Leclerc</p>
                 </div>
 
-                <p class="landing-inline-note">
-                  Acteurs pressentis : cabinets d’avocats douane / commerce international · cabinets conformité export · cabinets droit économique européen · cabinets de conseil réglementaire spécialisé.
+                <details class="landing-context-details">
+                  <summary>Variations selon les contextes industriels</summary>
+                  <div class="landing-context-body">
+                    <div class="landing-context-item">
+                      <h4>Activité en croissance</h4>
+                      <p>Quelles dépendances de filière, d’approvisionnement, de client ou de sous-traitance freinent une trajectoire d’expansion avant même qu’elles n’apparaissent pleinement dans les comptes ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité sous pression</h4>
+                      <p>Quelles asymétries de chaîne de valeur expliquent qu’une activité paraisse encore tenir alors que sa position concurrentielle se dégrade déjà ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité en reconfiguration</h4>
+                      <p>Qu’est-ce qu’une lecture de filière permet de voir sur la perte de pouvoir de négociation, l’érosion du rôle industriel ou la nécessité de redessiner la place occupée dans l’écosystème ?</p>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+              <!-- ANGLE OPERATIONS -->
+              <article class="landing-angle-card">
+                <h3>Angle 2 — Relocaliser, multisourcer, stocker, simplifier la chaîne : quel arbitrage tient vraiment quand on passe du principe à l’exécution ?</h3>
+                <p class="landing-angle-intro">
+                  Le moment où un arbitrage présenté comme évident se heurte à la réalité des flux, de la capacité, des délais, des coûts ou de la robustesse du système productif.
                 </p>
 
-                <p class="landing-inline-note">
-                  Cette lecture prend place aux côtés de lectures complémentaires : supply chain / achats · stratégie de filière · financement de transformation.
-                </p>
-              </div>
-            </details>
+                <p><strong>Acteurs attendus :</strong> cabinet supply chain · cabinet achats · cabinet transformation des opérations · cabinet excellence opérationnelle · directeur industriel · responsable supply chain.</p>
 
-            <details class="landing-summary">
-              <summary>
-                <strong>Conversation 1 — Tenue économique</strong><br>
-                À quel moment le cadre fiscal ou réglementaire lié aux échanges commence-t-il à peser structurellement sur la compétitivité ?
-              </summary>
-              <div class="landing-summary-body">
-                <div class="programme-list">
-                  <article class="programme-list__item">
-                    <h3>Croissance à sécuriser</h3>
-                    <p>À quel moment certaines obligations fiscales, normatives ou documentaires ralentissent-elles l’industrialisation plus qu’elles ne la sécurisent ?</p>
-                  </article>
-
-                  <article class="programme-list__item">
-                    <h3>Modèle sous contrainte</h3>
-                    <p>Quand les coûts liés aux échanges, à la conformité ou aux régimes applicables aggravent-ils une perte de compétitivité déjà installée ?</p>
-                  </article>
-
-                  <article class="programme-list__item">
-                    <h3>Chaîne à reconfigurer</h3>
-                    <p>À partir de quand le cadre des flux ou des marchés rend-il nécessaire un redessin plus profond du périmètre ou du modèle ?</p>
-                  </article>
+                <div class="landing-angle-meta">
+                  <p><strong>Émission pressentie :</strong> Focus Business</p>
+                  <p><strong>Média :</strong> BFM Business</p>
+                  <p><strong>Journaliste :</strong> Thierry Cabannes</p>
                 </div>
 
-                <p class="landing-inline-note">
-                  Acteurs pressentis : cabinets droit fiscal des échanges · cabinets droit économique · cabinets de conseil réglementaire appliqué à la compétitivité · cabinets conformité internationale.
+                <details class="landing-context-details">
+                  <summary>Variations selon les contextes industriels</summary>
+                  <div class="landing-context-body">
+                    <div class="landing-context-item">
+                      <h4>Activité en croissance</h4>
+                      <p>Quel arbitrage permet de sécuriser la montée en charge sans figer l’activité dans une structure trop lourde ou trop rigide ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité sous pression</h4>
+                      <p>Quel arbitrage protège réellement la continuité sans annuler les gains recherchés sur la marge, la qualité ou les délais ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité en reconfiguration</h4>
+                      <p>Quel arbitrage permet encore de préserver une base productive viable quand il n’est plus possible de tout maintenir à l’identique ?</p>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+              <!-- ANGLE FINANCE -->
+              <article class="landing-angle-card">
+                <h3>Angle 3 — À quelles conditions une dépendance de chaîne reste-t-elle finançable ou investissable ?</h3>
+                <p class="landing-angle-intro">
+                  Le moment où une dépendance industrielle ne pose plus seulement un problème de pilotage, mais devient un problème de portage financier, de visibilité ou d’investissabilité.
                 </p>
 
-                <p class="landing-inline-note">
-                  Cette lecture prend place aux côtés de lectures complémentaires : stratégie / compétitivité · opérations / performance · financement / investissement.
-                </p>
-              </div>
-            </details>
+                <p><strong>Acteurs attendus :</strong> cabinet de corporate finance · cabinet dette / financement · cabinet de restructuring · DAF industriel · direction financement · direction investissement.</p>
 
-            <details class="landing-summary">
-              <summary>
-                <strong>Conversation 4 — Investissement et décision</strong><br>
-                Quand le cadre public, fiscal, douanier ou réglementaire facilite-t-il vraiment l’investissement — et quand bloque-t-il la décision ?
-              </summary>
-              <div class="landing-summary-body">
-                <div class="programme-list">
-                  <article class="programme-list__item">
-                    <h3>Croissance à sécuriser</h3>
-                    <p>Quelles règles accélèrent réellement l’investissement productif internationalisé et lesquelles en allongent le cycle de décision ?</p>
-                  </article>
-
-                  <article class="programme-list__item">
-                    <h3>Modèle sous contrainte</h3>
-                    <p>Quand les régimes applicables, aides, normes ou contraintes commerciales compensent-ils réellement une pression économique — et quand restent-ils périphériques ?</p>
-                  </article>
-
-                  <article class="programme-list__item">
-                    <h3>Chaîne à reconfigurer</h3>
-                    <p>Quand l’environnement réglementaire ou douanier aide-t-il réellement à la reconfiguration, et quand ajoute-t-il un verrou supplémentaire à une transition déjà fragile ?</p>
-                  </article>
+                <div class="landing-angle-meta">
+                  <p><strong>Émission pressentie :</strong> Business Inside</p>
+                  <p><strong>Média :</strong> Forbes</p>
+                  <p><strong>Journaliste :</strong> Jean-Marc Sylvestre</p>
                 </div>
 
-                <p class="landing-inline-note">
-                  Acteurs pressentis : cabinets fiscalistes internationaux · cabinets droit public économique · cabinets aides publiques / aides d’État · cabinets spécialisés réglementation des échanges et investissements.
+                <details class="landing-context-details">
+                  <summary>Variations selon les contextes industriels</summary>
+                  <div class="landing-context-body">
+                    <div class="landing-context-item">
+                      <h4>Activité en croissance</h4>
+                      <p>À partir de quand une dépendance d’approvisionnement, de sous-traitance ou de chaîne de valeur pèse-t-elle sur la crédibilité financière d’une trajectoire de croissance ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité sous pression</h4>
+                      <p>À partir de quand le risque de dépendance neutralise-t-il tout projet de redressement, de refinancement ou d’investissement complémentaire ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité en reconfiguration</h4>
+                      <p>À quelles conditions une activité dépendante peut-elle encore être portée financièrement lorsqu’il faut redessiner son périmètre ou ses appuis critiques ?</p>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+              <!-- ANGLE COMMERCE INTERNATIONAL PRIORITAIRE -->
+              <article class="landing-angle-card landing-angle-card--priority">
+                <div class="landing-angle-tag">Lecture commerce international / douane / conformité export attendue en priorité sur cet angle</div>
+                <h3>Angle 4 — Quand le cadre commercial, douanier ou réglementaire transforme-t-il une dépendance en fragilité stratégique ?</h3>
+                <p class="landing-angle-intro">
+                  Le moment où le cadre extérieur ne constitue plus un simple environnement, mais vient requalifier la dépendance elle-même : accès au marché, normes, douane, conformité, restrictions ou règles commerciales.
                 </p>
 
-                <p class="landing-inline-note">
-                  Cette lecture prend place aux côtés de lectures complémentaires : corporate finance · ingénierie financière · gouvernance / allocation du risque.
+                <p><strong>Acteurs attendus :</strong> avocat douane · avocat commerce international · cabinet conformité export · cabinet contrôle des échanges · direction douane · direction conformité export · direction affaires réglementaires.</p>
+
+                <div class="landing-angle-meta">
+                  <p><strong>Émission pressentie :</strong> Grand Angle</p>
+                  <p><strong>Média :</strong> Le Figaro</p>
+                  <p><strong>Journaliste :</strong> Christophe Pallée</p>
+                </div>
+
+                <details class="landing-context-details" id="commerce-angle-details">
+                  <summary>Variations selon les contextes industriels</summary>
+                  <div class="landing-context-body">
+                    <div class="landing-context-item">
+                      <h4>Activité en croissance</h4>
+                      <p>À partir de quand les contraintes commerciales, douanières, documentaires ou réglementaires ralentissent-elles une trajectoire au point d’en modifier la soutenabilité ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité sous pression</h4>
+                      <p>À partir de quand les droits, contrôles, restrictions, normes ou contraintes d’accès marché transforment-ils une dépendance tolérable en fragilité stratégique majeure ?</p>
+                    </div>
+                    <div class="landing-context-item">
+                      <h4>Activité en reconfiguration</h4>
+                      <p>À partir de quand la transformation d’une activité dépendante se heurte-t-elle à un cadre des échanges qui empêche le redéploiement dans sa forme initiale ?</p>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+            </div>
+
+            <div class="editorial-panel" style="margin-top:24px;">
+              <p>
+                D’autres conversations du cycle peuvent également mobiliser une lecture commerce international / douane / conformité export. Elles pourront être évoquées dans le cadre de l’échange éditorial si elles recoupent plus naturellement votre pratique.
+              </p>
+              <p>
+                Les affectations éditoriales indiquées ici correspondent à la logique de traitement actuellement retenue. Elles peuvent être ajustées en fonction de la composition finale de la conversation.
+              </p>
+            </div>
+          </section>
+
+          <!-- REASSURANCE -->
+          <section class="page-section">
+            <div class="programme-access desktop-only">
+              <article class="programme-access__item">
+                <h3>Pas de concurrence frontale sur le même angle</h3>
+                <p>
+                  Votre lecture n’a pas vocation à être mise en concurrence frontale avec une autre position strictement équivalente, qu’elle soit portée depuis le conseil ou depuis l’entreprise.
                 </p>
-              </div>
-            </details>
+                <p>
+                  Sur un même angle, une seule lecture de type commerce international / douane / conformité export est retenue. L’enjeu est de mettre en regard des lectures complémentaires, pas d’opposer des profils semblables.
+                </p>
+              </article>
+
+              <article class="programme-access__item">
+                <h3>Une conversation composée, pas un plateau concurrentiel</h3>
+                <p>
+                  Chaque angle est porté par une lecture distincte. L’objectif n’est pas d’aligner des profils équivalents, mais de rendre une même bascule plus lisible depuis plusieurs dimensions non redondantes.
+                </p>
+              </article>
+            </div>
+
+            <div class="programme-position mobile-only">
+              <h3>Pas de concurrence frontale sur le même angle</h3>
+              <p>
+                Sur un même angle, une seule lecture de type commerce international / douane / conformité export est retenue. Votre lecture prend place aux côtés d’acteurs complémentaires : stratégie, opérations, finance.
+              </p>
+            </div>
+          </section>
+
+          <!-- APRES L'ECHANGE -->
+          <section class="page-section">
+            <div class="section-head section-head--narrow">
+              <div class="section-kicker">Suite</div>
+              <h2>Ce qui se passe après l’échange</h2>
+            </div>
+
+            <div class="editorial-panel">
+              <p>
+                À l’issue de ce premier échange, une analyse éditoriale interne permet de vérifier si votre lecture correspond à un point d’entrée encore disponible dans le cycle, qu’elle soit portée depuis le conseil ou depuis l’entreprise elle-même.
+              </p>
+              <p>
+                Si c’est le cas, une note de positionnement vous est adressée. Elle précise l’angle pressenti, la logique de mise en regard et le cadre dans lequel une suite peut être envisagée.
+              </p>
+              <p>
+                Si la lecture paraît juste, la suite consiste à préciser l’angle, la place de votre contribution dans la conversation, et la répartition la plus naturelle entre émission et article associé.
+              </p>
+              <p>
+                <strong>Aucun engagement n’est demandé avant cette analyse interne et, le cas échéant, l’envoi d’une note de positionnement.</strong>
+              </p>
+            </div>
           </section>
 
           <!-- CADRE -->
@@ -428,7 +670,7 @@
               <div class="section-kicker">Cadre</div>
               <h2>L’enjeu n’est pas la visibilité, mais la portée de votre position.</h2>
               <p class="section-intro desktop-only">
-                En Plateau prépare et structure des prises de position destinées à être exprimées dans des formats audiovisuels réalisés par des sociétés de production partenaires et diffusés dans des cadres médiatiques identifiés.
+                En Plateau prépare et structure des prises de position destinées à être exprimées dans des formats audiovisuels réalisés avec des sociétés de production partenaires et diffusés dans des cadres médiatiques clairement identifiés.
               </p>
               <p class="section-intro mobile-only">
                 Une prise de position préparée en amont, produite dans un cadre identifiable, puis activée dans l’écosystème professionnel.
@@ -454,10 +696,10 @@
 
             <div class="editorial-panel">
               <p>
-                Les prises de position sont préparées en amont et produites dans des environnements médiatiques identifiés, selon les formats et configurations retenus.
+                Les prises de position sont préparées en amont et produites dans des environnements médiatiques clairement identifiés, selon les formats et configurations retenus.
               </p>
               <p class="desktop-only">
-                Le cadre de diffusion est identifié ; il n’implique ni improvisation, ni exposition non préparée.
+                Le cadre de diffusion est défini à l’avance ; il n’implique ni improvisation, ni exposition non préparée.
               </p>
             </div>
           </section>
@@ -466,24 +708,47 @@
           <section class="page-section">
             <div class="section-head section-head--narrow">
               <div class="section-kicker">FAQ rapide</div>
-              <h2>Les principales objections levées tout de suite</h2>
+              <h2>Les questions qui reviennent le plus</h2>
             </div>
 
             <div class="programme-list">
               <article class="programme-list__item">
-                <h3>Faut-il parler d’un client identifiable ?</h3>
-                <p>Non. L’enjeu n’est pas d’exposer une situation confidentielle ni de détailler un cas identifiable.</p>
+                <h3>Faut-il parler d’un client ou d’un cas identifiable ?</h3>
+                <p>Non. L’enjeu n’est pas d’exposer une situation confidentielle ni de détailler un cas reconnaissable.</p>
               </article>
 
               <article class="programme-list__item">
                 <h3>Faut-il produire un commentaire technique pur ?</h3>
-                <p>Non. Il s’agit d’apporter une lecture située des règles qui influencent concrètement les flux, la compétitivité et la décision industrielle.</p>
+                <p>Non. Il s’agit d’apporter une lecture située, utile et exploitable sur les règles qui influencent concrètement les flux, l’accès au marché et la dépendance de chaîne.</p>
               </article>
 
               <article class="programme-list__item">
                 <h3>Faut-il préparer seul la prise de parole ?</h3>
-                <p>Non. Le cadrage éditorial est préparé en amont pour sécuriser la conversation et le bon point d’entrée.</p>
+                <p>Non. Le cadrage éditorial est préparé en amont pour sécuriser l’angle, la conversation et le niveau d’exposition.</p>
               </article>
+            </div>
+          </section>
+
+          <!-- METHODE -->
+          <section class="page-section">
+            <div class="section-head section-head--narrow">
+              <div class="section-kicker">Comment l’angle est travaillé</div>
+              <h2>Une préparation éditoriale structurée, sans parole verrouillée</h2>
+            </div>
+
+            <div class="editorial-panel">
+              <p>
+                Chaque angle n’est pas traité comme un simple sujet de prise de parole. Il est préparé sous plusieurs dimensions : <strong>contexte de transformation</strong>, <strong>acteurs concernés</strong>, <strong>arbitrages</strong>, <strong>risques et opportunités</strong>, <strong>échelles d’analyse</strong> et <strong>vision</strong>.
+              </p>
+              <p>
+                L’enjeu n’est pas de tout faire tenir dans un seul format, mais de répartir justement ce qui relève de l’émission, de l’article associé et du bon niveau d’échelle.
+              </p>
+              <p>
+                L’échange éditorial permet de vérifier quelles dimensions ont vocation à être portées dans l’émission, et lesquelles relèvent plutôt du prolongement écrit ou analytique.
+              </p>
+              <p>
+                Ce cadrage permet de traiter des sujets sensibles sans les réduire à un cas isolé ni à une lecture accusatoire.
+              </p>
             </div>
           </section>
 
@@ -491,27 +756,27 @@
           <section class="page-section">
             <div class="section-head section-head--narrow">
               <div class="section-kicker">Accès</div>
-              <h2>Vous intervenez sur ce type de bascule ?</h2>
+              <h2>Vous accompagnez — ou portez — ce type de bascule ?</h2>
               <p class="section-intro desktop-only">
-                Un échange permet de vérifier si ce cycle recoupe réellement les situations que vous accompagnez, et sous quel point d’entrée votre lecture serait la plus pertinente.
+                Un échange permet de vérifier si cette conversation recoupe réellement les situations que vous accompagnez ou que vous portez depuis les échanges internationaux, et sous quel angle votre lecture serait la plus pertinente.
               </p>
               <p class="section-intro mobile-only">
-                Un échange permet de vérifier rapidement si votre lecture a une place naturelle dans ce cycle.
+                Un échange permet de vérifier rapidement si votre lecture a une place naturelle dans cette conversation.
               </p>
             </div>
 
             <div class="programme-access">
               <article class="programme-access__item">
-                <h3>Demander un échange de 15 min</h3>
+                <h3>Prendre rendez-vous</h3>
                 <p>
-                  Vérifier si votre position peut utilement éclairer l’une des conversations du cycle.
+                  Vérifier si votre position peut utilement éclairer l’un des angles actuellement ouverts dans la conversation.
                 </p>
-                <a href="/demander-un-echange-editorial.html?src=lp-industrie-commerce-international&cta=footer" class="link link--primary">Demander un échange de 15 min</a>
+                <a href="/demander-un-echange-editorial.html?src=lp-industrie-commerce-international&cta=footer" class="link link--primary">Prendre rendez-vous</a>
               </article>
             </div>
 
             <p class="section-footnote">
-              Cette page constitue une porte d’entrée ciblée et n’a pas vocation à exposer publiquement l’ensemble de la structure du cycle.
+              Cycle 2026–2027 · Les positions se ferment au fil de la composition éditoriale. Lorsqu’un angle est confirmé, il n’est plus ouvert à une lecture de même nature.
             </p>
           </section>
 
@@ -544,28 +809,27 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var firstDetails = document.getElementById('entry-conv-1');
-      if (!firstDetails) return;
+      var commerceDetails = document.getElementById('commerce-angle-details');
+      if (!commerceDetails) return;
 
-      var mq = window.matchMedia('(min-width: 641px)');
-
-      function syncDetailsState(e) {
-        if (e.matches) {
-          firstDetails.setAttribute('open', 'open');
+      function syncCommerceDetails() {
+        if (window.matchMedia('(min-width: 641px)').matches) {
+          commerceDetails.setAttribute('open', 'open');
         } else {
-          firstDetails.removeAttribute('open');
+          commerceDetails.removeAttribute('open');
         }
       }
 
-      syncDetailsState(mq);
+      syncCommerceDetails();
 
+      var mq = window.matchMedia('(min-width: 641px)');
       if (typeof mq.addEventListener === 'function') {
-        mq.addEventListener('change', syncDetailsState);
-      } else if (typeof mq.addListener === 'function') {
-        mq.addListener(syncDetailsState);
+        mq.addEventListener('change', syncCommerceDetails);
+      } else {
+        window.addEventListener('resize', syncCommerceDetails);
       }
     });
   </script>
 
 </body>
-</html>
+                      </html>
