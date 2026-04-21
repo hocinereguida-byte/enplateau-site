@@ -3,893 +3,404 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>En Plateau — Comprendre comment les décisions se prennent</title>
-  <meta name="description" content="En Plateau permet de mieux comprendre comment les décisions se prennent entre les acteurs qui conditionnent un projet, en donnant accès à ce qu’ils voient chacun depuis leur position.">
-  <style>
-    :root {
-      --blue-900: #0f1c2e;
-      --blue-800: #16304f;
-      --blue-700: #214d7d;
-      --blue-600: #3c6ea5;
-      --paper: #f7f8fb;
-      --paper-2: #eef2f7;
-      --ink: #101828;
-      --ink-soft: #526072;
-      --ink-faint: #7b8794;
-      --line: rgba(16,24,40,.10);
-      --line-light: rgba(255,255,255,.14);
-      --panel-dark: rgba(255,255,255,.06);
-      --panel-dark-2: rgba(255,255,255,.04);
-      --panel-light: rgba(255,255,255,.78);
-      --max: 1320px;
-      --radius: 8px;
-      --shadow-soft: 0 18px 45px rgba(10, 20, 40, .10);
-      --shadow-dark: 0 20px 55px rgba(0, 0, 0, .18);
-      --font-display: "Fraunces", Georgia, serif;
-      --font-text: Inter, "IBM Plex Sans", system-ui, sans-serif;
-    }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: var(--font-text);
-      color: var(--ink);
-      background: var(--paper);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .site-shell {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(180deg, #f9fbfd 0%, #f4f6fa 100%);
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(18px);
-      background: rgba(247,248,251,.76);
-      border-bottom: 1px solid rgba(16,24,40,.08);
-    }
-
-    .topbar-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 16px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      flex: 0 0 auto;
-    }
-
-    .brand-name {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: -.02em;
-    }
-
-    .brand-sub {
-      font-size: .68rem;
-      color: var(--ink-faint);
-      letter-spacing: .10em;
-      text-transform: uppercase;
-    }
-
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 18px;
-      font-size: .86rem;
-      color: var(--ink-soft);
-    }
-
-    .nav a:hover,
-    .nav a:focus-visible { color: var(--ink); }
-
-    .nav-cta {
-      font-size: .84rem;
-      color: var(--blue-700);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding-bottom: 2px;
-      border-bottom: 1px solid rgba(33,77,125,.28);
-    }
-
-    .nav-cta::after { content: "→"; opacity: .7; }
-
-    section { position: relative; z-index: 1; }
-
-    .theme-blue {
-      color: white;
-      background:
-        radial-gradient(circle at 18% 20%, rgba(255,255,255,.10), transparent 20%),
-        linear-gradient(135deg, var(--blue-900) 0%, var(--blue-800) 38%, var(--blue-700) 72%, var(--blue-600) 100%);
-    }
-
-    .theme-light {
-      color: var(--ink);
-      background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
-    }
-
-    .container {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    .eyebrow,
-    .hero-context-card small,
-    .quote-card strong,
-    .conversation-card small,
-    .position-card small,
-    .step small,
-    .value-card small,
-    .access-card small {
-      display: block;
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      font-size: .62rem;
-    }
-
-    .theme-blue .eyebrow,
-    .theme-blue .hero-context-card small,
-    .theme-blue .quote-card strong,
-    .theme-blue .conversation-card small,
-    .theme-blue .position-card small,
-    .theme-blue .step small,
-    .theme-blue .value-card small,
-    .theme-blue .access-card small {
-      color: rgba(255,255,255,.66);
-    }
-
-    .theme-light .eyebrow,
-    .theme-light .hero-context-card small,
-    .theme-light .quote-card strong,
-    .theme-light .conversation-card small,
-    .theme-light .position-card small,
-    .theme-light .step small,
-    .theme-light .value-card small,
-    .theme-light .access-card small {
-      color: var(--ink-faint);
-    }
-
-    h1, h2, h3 {
-      margin: 0;
-      font-family: var(--font-display);
-      font-weight: 600;
-      letter-spacing: -.035em;
-    }
-
-    h1 {
-      font-size: clamp(2.4rem, 5vw, 4.7rem);
-      line-height: 1.02;
-      max-width: 13ch;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 4vw, 3.55rem);
-      line-height: 1.06;
-    }
-
-    h3 {
-      font-size: 1rem;
-      line-height: 1.22;
-    }
-
-    p,
-    .section-copy,
-    .positions-premium-head p,
-    .access-note,
-    .full-bleed-panel p,
-    .hero-context-card p,
-    .hero-helper-note,
-    .conversation-card p,
-    .position-card p,
-    .step p,
-    .value-card p,
-    .access-card p,
-    .why-columns p,
-    .quote-card p {
-      font-size: .84rem;
-      line-height: 1.72;
-      margin: 0;
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 68px 0 56px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.18fr) minmax(360px, .82fr);
-      gap: 54px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 34px;
-      height: 1px;
-      background: currentColor;
-      opacity: .7;
-    }
-
-    .hero-lead {
-      margin-top: 14px;
-      max-width: 42rem;
-      font-size: .96rem;
-      line-height: 1.58;
-      color: rgba(255,255,255,.82);
-    }
-
-    .hero-actions {
-      margin-top: 22px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      font-size: .84rem;
-    }
-
-    .text-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding-bottom: 2px;
-      border-bottom: 1px solid rgba(255,255,255,.34);
-      color: rgba(255,255,255,.94);
-    }
-
-    .text-link::after { content: "→"; opacity: .7; }
-
-    .hero-side {
-      display: grid;
-      gap: 14px;
-      align-self: center;
-    }
-
-    .hero-context-card,
-    .quote-card,
-    .conversation-card,
-    .position-card,
-    .step,
-    .access-card,
-    .value-card,
-    .full-bleed-panel,
-    .hero-bottom-band {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      align-items: start;
-    }
-
-    .hero-helper-block {
-      display: grid;
-      gap: 10px;
-    }
-
-    .hero-helper-title {
-      font-family: var(--font-display);
-      font-size: 1.08rem;
-      line-height: 1.2;
-      letter-spacing: -.03em;
-    }
-
-    .chapter { padding: 98px 0; }
-
-    .section-center-head,
-    .positions-premium-head,
-    .value-head,
-    .access-head {
-      max-width: 1080px;
-      margin: 0 auto 34px;
-      text-align: center;
-    }
-
-    .section-center-head h2,
-    .positions-premium-head h2,
-    .value-head h2,
-    .access-head h2 {
-      max-width: 18ch;
-      margin: 0 auto;
-    }
-
-    .section-center-head p,
-    .positions-premium-head p,
-    .value-head p,
-    .access-head p {
-      max-width: 760px;
-      margin: 16px auto 0;
-    }
-
-    .quote-grid,
-    .grid-3,
-    .positions-grid,
-    .conversations-right,
-    .steps-right,
-    .access-layout,
-    .why-columns {
-      display: grid;
-      gap: 16px;
-    }
-
-    .quote-grid,
-    .access-layout,
-    .why-columns { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .positions-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
-    .conversations-right { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .steps-right { grid-template-columns: repeat(2, minmax(0,1fr)); }
-
-    .quote-card {
-      text-align: center;
-      padding: 18px 20px;
-      max-width: 460px;
-      margin: 0 auto;
-    }
-
-    .quote-card p { font-size: .78rem; }
-    .quote-card strong { margin-top: 12px; }
-
-    .conversations-layout,
-    .steps-layout {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 46px;
-      align-items: start;
-    }
-
-    .conversations-left,
-    .steps-left {
-      position: sticky;
-      top: 92px;
-      align-self: start;
-    }
-
-    .conversations-left h2,
-    .steps-left h2 {
-      max-width: 13ch;
-    }
-
-    .section-copy { margin-top: 16px; }
-    .section-copy p + p { margin-top: 10px; }
-
-    .conversation-card,
-    .step { padding: 18px; }
-
-    .conversation-card h3,
-    .position-card h3,
-    .step h3,
-    .value-card h3,
-    .access-card h3 {
-      margin: 8px 0 8px;
-    }
-
-    .conversation-card p {
-      font-size: .76rem;
-      line-height: 1.62;
-    }
-
-    .conversation-card a,
-    .position-card a,
-    .access-card a,
-    .inline-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 12px;
-      font-size: .72rem;
-      padding-bottom: 2px;
-      border-bottom: 1px solid currentColor;
-    }
-
-    .conversation-card a::after,
-    .position-card a::after,
-    .access-card a::after,
-    .inline-link::after { content: "→"; opacity: .7; }
-
-    .territory-band {
-      margin-top: 24px;
-      text-align: center;
-      padding: 22px 24px;
-      max-width: 980px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .territories {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px 22px;
-      margin-top: 14px;
-      font-size: .72rem;
-      letter-spacing: .04em;
-    }
-
-    .tag { padding: 0; }
-
-    .positions-premium-head h2 { max-width: 22ch; }
-
-    .positions-grid .position-card { min-height: 212px; }
-    .position-card { padding: 18px; }
-    .position-card p { font-size: .76rem; }
-    .position-card a { font-size: .68rem; }
-
-    .full-bleed-panel {
-      margin: 24px auto 0;
-      text-align: center;
-      max-width: 940px;
-    }
-
-    .why-block {
-      max-width: 1120px;
-      margin: 0 auto 34px;
-      text-align: center;
-    }
-
-    .why-block h2 {
-      max-width: 18ch;
-      margin: 0 auto 22px;
-      font-size: clamp(2rem, 4vw, 3.55rem);
-    }
-
-    .why-columns {
-      max-width: 980px;
-      margin: 0 auto;
-      align-items: start;
-    }
-
-    .why-columns-left {
-      border-left: 2px solid rgba(16,24,40,.18);
-      padding-left: 22px;
-    }
-
-    .theme-blue .why-columns-left { border-left-color: rgba(255,255,255,.20); }
-
-    .value-head h2,
-    .access-head h2 { max-width: 16ch; }
-
-    .value-card,
-    .access-card { padding: 20px; }
-
-    .access-card.primary {
-      background: linear-gradient(180deg, #173457 0%, #214d7d 100%);
-      color: white;
-      border: 1px solid rgba(255,255,255,.16);
-    }
-
-    .access-card.primary p,
-    .access-card.primary small { color: rgba(255,255,255,.78); }
-
-    .access-card.secondary {
-      background: rgba(255,255,255,.9);
-      color: var(--ink);
-      border: 1px solid var(--line);
-    }
-
-    .access-card.secondary p,
-    .access-card.secondary small { color: var(--ink-soft); }
-
-    .access-note {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    footer {
-      padding: 28px 0 50px;
-      color: var(--ink-faint);
-      font-size: .78rem;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 1120px) {
-      .hero-grid,
-      .conversations-layout,
-      .steps-layout,
-      .why-columns {
-        grid-template-columns: 1fr;
-      }
-
-      .conversations-left,
-      .steps-left { position: static; }
-
-      .hero-bottom-band,
-      .positions-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-
-      .why-columns-left { border-left: 0; padding-left: 0; }
-    }
-
-    @media (max-width: 860px) {
-      .nav { display: none; }
-
-      .hero {
-        min-height: auto;
-        padding-top: 54px;
-      }
-
-      .quote-grid,
-      .grid-3,
-      .positions-grid,
-      .conversations-right,
-      .steps-right,
-      .access-layout,
-      .hero-bottom-band,
-      .why-columns {
-        grid-template-columns: 1fr;
-      }
-
-      .section-center-head h2,
-      .positions-premium-head h2,
-      .value-head h2,
-      .access-head h2,
-      .why-block h2,
-      .conversations-left h2,
-      .steps-left h2,
-      h1 {
-        max-width: none;
-      }
-
-      .chapter { padding: 80px 0; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .reveal { opacity: 1; transform: none; transition: none; }
-    }
-  </style>
+  <title>En Plateau — Faire émerger une parole économique utile</title>
+  <meta
+    name="description"
+    content="En Plateau prépare des prises de parole à partir d’angles précis, de tensions réelles et d’arbitrages concrets, pour éclairer ce qui se transforme dans les organisations, les filières et les territoires."
+  >
+
+  <link rel="canonical" href="https://enplateau.fr/index.html">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#111111">
+
+  <link rel="icon" href="/images/favicon-en-plateau.svg" type="image/svg+xml">
+  <link rel="icon" href="/images/Favenplateau.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/images/Favenplateau.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="En Plateau">
+  <meta property="og:title" content="En Plateau — Faire émerger une parole économique utile">
+  <meta
+    property="og:description"
+    content="En Plateau prépare des prises de parole à partir d’angles précis, de tensions réelles et d’arbitrages concrets, pour éclairer ce qui se transforme dans les organisations, les filières et les territoires."
+  >
+  <meta property="og:url" content="https://enplateau.fr/">
+  <meta property="og:image" content="https://enplateau.fr/images/en-plateau-social.webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="En Plateau — Faire émerger une parole économique utile">
+  <meta
+    name="twitter:description"
+    content="En Plateau prépare des prises de parole à partir d’angles précis, de tensions réelles et d’arbitrages concrets, pour éclairer ce qui se transforme dans les organisations, les filières et les territoires."
+  >
+  <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-social.webp">
+
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Lora:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
 </head>
-<body>
-  <div class="site-shell">
-    <header class="topbar">
-      <div class="topbar-inner">
-        <a href="#hero" class="brand" aria-label="En Plateau, retour en haut de page">
-          <span class="brand-name">En Plateau</span>
-          <span class="brand-sub">Cycle Atlas</span>
-        </a>
 
-        <nav class="nav" aria-label="Navigation principale">
-          <a href="#intro">Pourquoi</a>
-          <a href="#conversations">Conversations</a>
-          <a href="#positions">Positions</a>
-          <a href="#dispositif">Dispositif</a>
-          <a href="#valeur">Valeur</a>
-          <a href="#acces">Accès</a>
-        </nav>
+<body class="home-page">
+  <div id="site-header"></div>
+  <div id="site-mobile-menu"></div>
 
-        <a href="recevoir-le-dossier.html" class="nav-cta">Recevoir le dossier</a>
-      </div>
-    </header>
+  <main>
 
-    <main>
-
-<!-- HERO -->
-<section class="hero theme-blue" id="hero">
-  <div class="container">
-    <div class="hero-grid">
-
-      <div class="reveal">
-        <div class="eyebrow">En Plateau</div>
-
-        <h1>Immobilier : <br>4 conversations.<br> 48 positions.<br> Un même exercice.</h1>
-
-        <p class="hero-lead">
-          <strong>Banques, Investisseurs, Avocats, Promoteurs, Aménageurs, Constructeurs, BTE, AMO, Collectivités<br>Chaque décideur intervient depuis sa position. Aucun ne voit la même chose.</strong><br>
-          C’est leur mise en regard qui rend les décisions plus lisibles.
-        </p>
-
-        <div class="hero-actions">
-          <a href="recevoir-le-dossier.html" class="text-link">Recevoir le dossier</a>
-          <a href="#conversations" class="text-link">Voir les conversations</a>
-        </div>
-      </div>
-
-      <div class="hero-side reveal">
-        <div class="hero-context-card">
-
-          <small>En cours</small>
-          <div class="context-title">Cycle Atlas — Arbitrages des opérations immobilières</div>
-
-          <p>
-            Composition en cours jusqu’au <strong>30 mai</strong>.<br>
-            Le cycle réunit des décideurs publics et privés là où se jouent concrètement les arbitrages.
-          </p>
-
-          <div class="hero-context-subblock">
-            <div class="hero-context-subtitle">4 conversations · 48 positions</div>
-            <p>
-              Des dizaines de décideurs publics et privés, répartis sur 8 fonctions de la chaîne de valeur de la construction et de la transformation immobilière.
-            </p>
-          </div>
-
-          <div class="hero-context-subblock">
-            <div class="hero-context-subtitle">Ce que le dispositif change</div>
-            <p>
-              Les contributions sont rapprochées pour rendre visibles les écarts, les dépendances et les arbitrages réels.
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- INTRO -->
-<section class="chapter theme-light" id="intro">
-  <div class="container">
-    <div class="section-center-head reveal">
-
-      <h2>Ce que chacun voit séparément ne suffit pas à comprendre</h2>
-
-      <p>
-        Chaque acteur voit une partie du réel : financement, production, chantier, droit, aménagement, décision publique.
-      </p>
-
-      <p>
-        Ce sont les écarts entre ces lectures qui expliquent certains blocages, certains arbitrages — et certains projets qui ne tiennent plus.
-      </p>
-
-    </div>
-
-    <div class="quote-grid reveal">
-
-      <div class="quote-card">
-        <p>
-          Un projet peut sembler tenable depuis un tableur, fragile depuis le chantier, encore défendable juridiquement, et déjà compromis du point de vue commercial.
-        </p>
-        <strong>Une même opération, plusieurs réalités</strong>
-      </div>
-
-      <div class="quote-card">
-        <p>
-          Le sujet n’est pas seulement ce que chacun dit. Le sujet est ce qui devient visible quand on rapproche des positions qui ne se parlent pas assez.
-        </p>
-        <strong>Principe de lecture</strong>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- CONVERSATIONS -->
-<section class="chapter theme-blue" id="conversations">
-  <div class="container">
-
-    <div class="conversations-layout reveal">
-
-      <div class="conversations-left">
-
-        <h2>4 conversations pour comprendre où les projets tiennent — et où ils basculent</h2>
-
-        <div class="section-copy">
-          <p>
-            Le cycle s’organise autour de <strong>4 conversations</strong> et <strong>48 positions</strong>.
-          </p>
-
-          <p>
-            Des décideurs interviennent sur un même sujet depuis leur position. Leur mise en regard fait apparaître ce qui se joue réellement.
-          </p>
-        </div>
-
-      </div>
-
-      <div class="conversations-right">
-
-        <article class="conversation-card">
-          <small>Conversation 1</small>
-          <h3>À quel moment un projet ne tient plus ?</h3>
-          <p>Quand l’équilibre économique bascule sans être encore assumé.</p>
-        </article>
-
-        <article class="conversation-card">
-          <small>Conversation 2</small>
-          <h3>Jusqu’où peut-on produire ?</h3>
-          <p>Quand produire reste possible, mais ne tient plus durablement.</p>
-        </article>
-
-        <article class="conversation-card">
-          <small>Conversation 3</small>
-          <h3>Transformer ou reconstruire ?</h3>
-          <p>Quand conserver coûte plus qu’il ne rapporte réellement.</p>
-        </article>
-
-        <article class="conversation-card">
-          <small>Conversation 4</small>
-          <h3>Qui fait avancer — ou fait basculer — un projet ?</h3>
-          <p>Quand la décision, le risque et la responsabilité ne coïncident plus.</p>
-        </article>
-
-      </div>
-
-    </div>
-
-    <div class="full-bleed-panel territory-band reveal">
-      <p>
-        Chaque conversation est lue selon plusieurs contextes : zones tendues, territoires en croissance, territoires en reconversion.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- POSITIONS -->
-<section class="chapter theme-light" id="positions">
-  <div class="container">
-
-    <div class="positions-premium-head reveal">
-      <h2>Vous n’occupez pas la même place — mais vous conditionnez la décision</h2>
-
-      <p>
-        Chaque position éclaire une partie du projet. Aucune ne maîtrise l’ensemble, mais chacune en influence l’issue.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- DISPOSITIF -->
-<section class="chapter theme-blue" id="dispositif">
-  <div class="container">
-
-    <div class="section-center-head reveal">
-
-      <h2>Un exercice commun, structuré</h2>
-
-      <p>Chaque acteur intervient depuis sa position, sur un angle précis.</p>
-
-      <p>
-        Les contributions sont rapprochées pour faire apparaître les écarts, les dépendances et les arbitrages réels.
-      </p>
-
-    </div>
-
-    <div class="grid-3 reveal">
-
-      <article class="value-card">
-        <h3>Prendre position</h3>
-        <p>Chaque intervention part d’un rôle réel dans la chaîne de décision.</p>
-      </article>
-
-      <article class="value-card">
-        <h3>Contribuer</h3>
-        <p>L’entretien est individuel, préparé et conduit dans un cadre crédible.</p>
-      </article>
-
-      <article class="value-card">
-        <h3>Rapprocher</h3>
-        <p>Les positions sont mises en relation pour rendre visibles les arbitrages.</p>
-      </article>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- VALEUR -->
-<section class="chapter theme-light" id="valeur">
-  <div class="container">
-
-    <div class="value-head reveal">
-      <h2>Ce que cela permet réellement</h2>
-    </div>
-
-    <div class="grid-3 reveal">
-
-      <article class="value-card">
-        <h3>Voir ce que les autres acteurs voient</h3>
-        <p>Accéder à des lectures différentes du même projet.</p>
-      </article>
-
-      <article class="value-card">
-        <h3>Mieux situer les décisions</h3>
-        <p>Comprendre où les arbitrages se prennent réellement.</p>
-      </article>
-
-      <article class="value-card">
-        <h3>Comprendre ce qui tient — et ce qui ne tient plus</h3>
-        <p>Faire apparaître les écarts et les points de bascule.</p>
-      </article>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ACCES -->
-<section class="chapter theme-light" id="acces">
-  <div class="container">
-
-    <div class="access-head reveal">
-      <h2>Entrer dans le cycle</h2>
-    </div>
-
-    <div class="access-layout reveal">
-
-      <article class="access-card primary">
-        <h3>Votre position a été identifiée</h3>
-        <p>
-          Le dossier permet de voir ce qui est déjà structuré, ce qui reste ouvert et si votre position peut encore compter.
-        </p>
-        <a href="recevoir-le-dossier.html">Recevoir le dossier</a>
-      </article>
-
-      <article class="access-card secondary">
-        <h3>Aucune prise de contact n’a encore été engagée</h3>
-        <p>
-          Vous pouvez signaler une position ou une situation susceptible d’éclairer une conversation en cours.
-        </p>
-        <a href="proposer-une-contribution.html">Signaler une contribution</a>
-      </article>
-
-    </div>
-
-    <p class="access-note reveal">
-      Ce que les acteurs voient séparément devient plus lisible lorsqu’on rapproche leurs positions.
-    </p>
-
-  </div>
-</section>
-
-</main>
-
-    <footer>
+    <!-- HERO -->
+    <section class="hero" id="hero-home">
       <div class="container">
-        En Plateau — one page immersive de travail, construite à partir du contenu textuel fourni.
+        <div class="hero-inner">
+          <div class="hero-home-grid">
+
+            <div class="hero-home-main">
+              <div class="hero-kicker reveal">Prises de parole économiques · Conversations En Plateau</div>
+
+              <h1 class="hero-title reveal">
+                Faire émerger<br> une parole utile.
+              </h1>
+
+              <p class="hero-subtitle reveal">
+                <strong>En Plateau prépare des prises de parole à partir d’un angle précis, d’une tension réelle et d’un arbitrage concret, pour éclairer ce qui se transforme dans les organisations, les filières et les territoires.</strong>
+              </p>
+
+              <p class="hero-note reveal">
+                Si vous avez été contacté sur LinkedIn, ce n’est pas pour “occuper un format”, mais parce que votre position peut aider à rendre une situation plus lisible, plus située et plus utile à d’autres décideurs.
+              </p>
+
+              <div class="hero-actions reveal" aria-label="Accès rapides">
+                <a href="demander-un-echange-editorial.html" class="link">Demander un échange éditorial</a>
+                <a href="#cycles-home" class="link">Explorer les cycles en cours</a>
+              </div>
+
+              <p class="hero-access-note reveal">
+                L’échange éditorial permet de vérifier la pertinence de votre angle, la portée de votre lecture et les conditions d’une intervention juste. Si vous n’avez pas été contacté, vous pouvez toutefois signaler une contribution.
+              </p>
+            </div>
+
+            <aside class="hero-home-side reveal" aria-label="Cadre de lecture des cycles">
+              <div class="hero-side-panel">
+                <p class="hero-side-text">
+                  <strong>En cours : deux cycles éditoriaux</strong>
+                </p>
+
+                <div class="hero-side-group">
+                  <p class="hero-side-text">
+                    <strong>Logement &amp; fabrique des territoires</strong>
+                  </p>
+                  <p class="hero-side-text">
+                    Un cycle consacré aux situations où les arbitrages se tendent entre financement, droit, marché, exécution et territoire.
+                  </p>
+                  <div class="hero-side-links">
+                    <a href="conversations/logement.html" class="link">Explorer les conversations</a>
+                    <a href="positions/logement.html" class="link">Explorer les positions</a>
+                  </div>
+                </div>
+
+                <div class="hero-side-group">
+                  <p class="hero-side-text">
+                    <strong>Industrie &amp; transformation des territoires</strong>
+                  </p>
+                  <p class="hero-side-text">
+                    Un cycle consacré aux situations où les décisions se jouent entre compétitivité, dépendances, transformation productive et allocation du risque.
+                  </p>
+                  <div class="hero-side-links">
+                    <a href="conversations/industrie.html" class="link">Explorer les conversations</a>
+                    <a href="positions/industrie.html" class="link">Explorer les positions</a>
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+          </div>
+        </div>
       </div>
-    </footer>
-  </div>
+    </section>
 
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('is-visible');
-      });
-    }, { threshold: 0.14 });
+    <!-- CREDIBILITE -->
+    <section class="home-section home-section--credibility" id="credibilite-home">
+      <div class="container">
+        <div class="section-head section-head--centered reveal">
+          <h2>L’enjeu n’est pas d’ajouter de la parole, mais de mieux faire comprendre ce qui bascule réellement.</h2>
+        </div>
 
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-  </script>
+        <div class="credibility-block reveal">
+          <p class="credibility-text">
+            En Plateau cadre des prises de parole destinées à être exprimées dans des formats audiovisuels animés par des journalistes économiques, pour rendre plus lisibles des sujets sensibles, techniques ou structurants.
+          </p>
+
+          <div class="credibility-logos" aria-label="Environnements médiatiques reconnus">
+            <img src="images/la-tribune.svg" alt="La Tribune" class="credibility-logo-img">
+            <img src="images/bfm-business.svg" alt="BFM Business" class="credibility-logo-img">
+            <img src="images/le-figaro.svg" alt="Le Figaro" class="credibility-logo-img">
+            <img src="images/forbes.svg" alt="Forbes" class="credibility-logo-img">
+          </div>
+
+          <p class="credibility-note">
+            Les formats sont réalisés avec des sociétés de production partenaires et diffusés dans des cadres médiatiques clairement identifiés. La préparation éditoriale en amont permet de tenir une parole utile, lisible et tenable publiquement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPLIT 1 -->
+    <section class="home-section home-section--split" id="pourquoi-cycle">
+      <div class="container">
+        <div class="split-section split-section--title-left">
+          <div class="split-panel split-panel--dark reveal">
+            <h2 class="split-title">
+              Vous intervenez là où une parole générique ne suffit plus.
+            </h2>
+          </div>
+
+          <div class="split-panel split-panel--light reveal">
+            <div class="split-copy split-copy--structured">
+              <p>
+                <strong>Des sujets visibles, mais encore mal lus.</strong><br>
+                Beaucoup de prises de parole décrivent des transformations sans faire apparaître clairement la tension, le point de bascule ni les arbitrages qu’elles imposent.
+              </p>
+
+              <p>
+                <strong>Un cadrage éditorial pour rendre une lecture exploitable.</strong><br>
+                Votre intervention est préparée en amont pour partir d’un angle précis, situer ce qui se tend réellement et faire émerger une lecture utile, sans simplification excessive ni surexposition.
+              </p>
+
+              <p>
+                <strong>Une parole qui gagne en portée par la mise en regard.</strong><br>
+                Votre lecture apparaît aux côtés d’autres positions relevant du droit, du financement, de la stratégie, de l’exécution ou du territoire, elles aussi confrontées aux mêmes tensions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPLIT 2 -->
+    <section class="home-section home-section--split" id="intro-en-plateau">
+      <div class="container">
+        <div class="split-section split-section--title-right">
+          <div class="split-panel split-panel--light reveal">
+            <div class="split-copy">
+
+              <p>
+                <strong>Ce sont souvent des situations déjà connues des acteurs.</strong><br>
+                Une activité se développe, un projet avance, une transformation s’accélère, puis les équilibres habituels ne suffisent plus tout à fait pour décider comme avant.
+              </p>
+
+              <p>
+                <strong>Le sujet n’est pas seulement ce qui change, mais ce que ce changement oblige à arbitrer.</strong><br>
+                Les tensions peuvent se situer entre financement, cadre, marché, exécution, chaîne productive, rythme de transformation ou allocation du risque.
+              </p>
+
+              <p>
+                <strong>C’est là que la parole devient utile.</strong><br>
+                Non pour commenter de loin, mais pour aider à comprendre à partir de quand une situation change de nature, qui elle affecte réellement, et ce qu’elle oblige à décider.
+              </p>
+
+            </div>
+          </div>
+
+          <div class="split-panel split-panel--dark reveal">
+            <h2 class="split-title">
+              C’est là que les décisions changent de nature.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CYCLES -->
+    <section class="home-section" id="cycles-home">
+      <div class="container">
+        <div class="section-head section-head--centered reveal">
+          <h2>Deux cycles pour lire ce qui se transforme réellement.</h2>
+          <p class="section-intro">
+            Chaque cycle ouvre un ensemble de conversations construites à partir de points de bascule réels, où plusieurs lectures se croisent sans jamais se confondre.
+          </p>
+        </div>
+
+        <div class="cycles-grid reveal">
+          <article class="cycle-entry-card">
+            <h3>Logement &amp; fabrique des territoires</h3>
+            <p>Des situations où un projet tient encore en apparence, mais où ses arbitrages se tendent déjà entre financement, droit, marché, exécution et territoire.</p>
+            <div class="cycle-entry-links">
+              <a href="conversations/logement.html" class="link">Explorer les conversations</a>
+              <a href="positions/logement.html" class="link">Explorer les positions</a>
+            </div>
+          </article>
+
+          <article class="cycle-entry-card">
+            <h3>Industrie &amp; transformation des territoires</h3>
+            <p>Des situations où l’activité se poursuit, mais où ses arbitrages se tendent déjà entre compétitivité, chaîne productive, transformation, dépendances et allocation du risque.</p>
+            <div class="cycle-entry-links">
+              <a href="conversations/industrie.html" class="link">Explorer les conversations</a>
+              <a href="positions/industrie.html" class="link">Explorer les positions</a>
+            </div>
+          </article>
+        </div>
+
+        <p class="selection-subnote reveal">
+          Le site permet de comprendre la logique des cycles en cours. La pertinence d’un point d’entrée, d’un angle ou d’une intervention se travaille ensuite dans le cadre d’un échange éditorial.
+        </p>
+      </div>
+    </section>
+
+    <!-- POSITIONS -->
+    <section class="home-section" id="positions-home">
+      <div class="container">
+        <div class="section-head section-head--centered reveal">
+          <h2>Des positions qui rendent les arbitrages plus lisibles</h2>
+          <p class="section-intro">
+            Toutes les décisions ne sont pas prises par ceux qui les portent officiellement. Certaines positions sécurisent, qualifient, rendent possible, objectivent ou orientent ce que les autres peuvent réellement faire. Les cycles en cours donnent à voir ces positions sans les réduire à un métier ni à une place unique dans l’organigramme.
+          </p>
+        </div>
+
+        <div class="positions-cycle-grid reveal">
+          <article class="position-cycle-card">
+            <h3>Positions — Opérations immobilières</h3>
+            <p>Des positions depuis lesquelles les arbitrages réels deviennent plus lisibles : sécurité juridique, montage, financement, faisabilité, marché, capital, exécution.</p>
+            <div class="position-cycle-links">
+              <a href="positions/logement.html" class="link">Explorer les positions - Opérations immobilières</a>
+            </div>
+          </article>
+
+          <article class="position-cycle-card">
+            <h3>Positions — Industrie</h3>
+            <p>Des positions qui rendent plus lisibles les arbitrages réels de l’industrie : stratégie, opérations, financement, cadre réglementaire, chaîne productive, dépendances, risque.</p>
+            <div class="position-cycle-links">
+              <a href="positions/industrie.html" class="link">Explorer les positions - Industrie</a>
+            </div>
+          </article>
+        </div>
+
+        <p class="selection-subnote reveal">
+          Aucune de ces positions ne décide seule. Chacune éclaire, infléchit ou rend possible ce que les autres peuvent réellement décider.
+        </p>
+      </div>
+    </section>
+
+    <!-- DISPOSITIF -->
+    <section class="home-section" id="dispositif-home">
+      <div class="container">
+        <div class="dispositif-grid">
+          <div class="dispositif-copy reveal">
+            <div class="section-head section-head--left">
+              <h2>Un dispositif de cadrage, pas un simple format d’expression</h2>
+              <p class="section-intro">
+                Votre contribution est préparée en amont, tenue dans un cadre éditorial précis, puis produite dans des conditions qui permettent d’en prolonger la portée.
+              </p>
+            </div>
+          </div>
+
+          <div class="dispositif-cards reveal">
+            <article class="dispositif-card">
+              <h3>Partir d’un angle précis</h3>
+              <p>Chaque intervention est cadrée à partir d’une situation identifiable, d’une tension réelle et d’un point de bascule que votre position permet d’éclairer.</p>
+            </article>
+
+            <article class="dispositif-card">
+              <h3>Préparer une parole tenable publiquement</h3>
+              <p>Le travail éditorial permet de rendre votre lecture plus claire, plus située et plus utile, sans vous pousser vers une parole artificielle ou surexposée.</p>
+            </article>
+
+            <article class="dispositif-card dispositif-card--featured">
+              <h3>Produire une lecture qui reste exploitable</h3>
+              <p>L’émission courte et son prolongement écrit permettent de conserver une trace structurée de votre lecture, réutilisable dans votre écosystème professionnel.</p>
+            </article>
+
+            <article class="dispositif-card">
+              <h3>Mettre les positions en regard</h3>
+              <p>Votre intervention reste singulière, mais elle gagne en portée lorsqu’elle apparaît aux côtés d’autres lectures engagées sur les mêmes tensions et les mêmes arbitrages.</p>
+            </article>
+          </div>
+        </div>
+
+        <p class="programme-link-row reveal">
+          <a href="dispositif.html" class="link">Découvrir le dispositif</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- VALEUR -->
+    <section class="home-section" id="valeur-home">
+      <div class="container">
+        <div class="section-head section-head--centered reveal">
+          <h2>Ce que votre intervention peut réellement produire</h2>
+          <p class="section-intro">
+            Une prise de parole bien préparée ne modifie pas seulement ce qui est dit. Elle modifie aussi la manière dont votre position est comprise, retenue et sollicitée dans votre écosystème professionnel.
+          </p>
+        </div>
+
+        <div class="value-stack">
+          <article class="value-block value-block--primary reveal">
+            <div class="value-index">01</div>
+            <div class="value-body">
+              <h3>Rendre votre position plus lisible</h3>
+              <p>Votre contribution aide à comprendre à quel moment votre lecture devient décisive : ce qu’elle sécurise, ce qu’elle qualifie, ce qu’elle rend possible ou ce qu’elle permet d’arbitrer autrement.</p>
+            </div>
+          </article>
+
+          <article class="value-block reveal">
+            <div class="value-index">02</div>
+            <div class="value-body">
+              <h3>Différencier votre parole</h3>
+              <p>Dans un univers où beaucoup de prises de parole se ressemblent, votre lecture devient plus située, plus identifiable et plus difficile à confondre avec une expertise générique.</p>
+            </div>
+          </article>
+
+          <article class="value-block value-block--emphasis reveal">
+            <div class="value-index">03</div>
+            <div class="value-body">
+              <h3>Ouvrir des échanges plus qualifiés</h3>
+              <p>La prise de parole réalisée peut ensuite nourrir des prises de contact, des recommandations et des rapprochements plus cohérents avec votre positionnement réel et les sujets sur lesquels vous souhaitez être attendu.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCES -->
+    <section class="home-section" id="acces-home">
+      <div class="container">
+        <div class="section-head section-head--centered reveal">
+          <h2>Accéder au dispositif</h2>
+          <p class="section-intro">
+            Les échanges sont ouverts aux personnes déjà identifiées, ainsi qu’aux acteurs qui souhaitent signaler la pertinence de leur position dans l’un des cycles en cours.
+          </p>
+        </div>
+
+        <div class="access-entry-grid">
+          <article class="access-entry access-entry--primary reveal">
+            <h3>Vous avez déjà été contacté</h3>
+            <p>Cet échange permet de qualifier la justesse de votre position, la portée possible de votre lecture et les conditions d’une intervention éditorialement solide.</p>
+            <a href="demander-un-echange-editorial.html" class="link">Demander un échange éditorial</a>
+            <p class="access-cta-note">
+              L’échange éditorial ne vaut pas engagement automatique. Il sert à vérifier la pertinence de l’angle, la qualité de la lecture et les conditions de préparation.
+            </p>
+          </article>
+
+          <article class="access-entry access-entry--secondary reveal">
+            <h3>Vous n’avez pas été contacté</h3>
+            <p>Vous pouvez signaler la pertinence de votre intervention sur l’un des sujets ou cycles en cours. Chaque signalement est examiné au regard du travail éditorial engagé.</p>
+            <a href="proposer-une-contribution.html" class="link">Signaler une contribution</a>
+          </article>
+        </div>
+
+        <p class="access-note reveal">
+          Les positions visibles sur le site ne valent pas ouverture générale. Elles donnent à comprendre les types de lectures, de tensions et d’interventions que les cycles en cours cherchent à mettre en regard.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="cookie-container"></div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/layout.js"></script>
 </body>
-</html>
+                </html>
