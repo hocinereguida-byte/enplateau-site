@@ -1,310 +1,1270 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>En Plateau — Une parole qui passe à l’écran</title>
+  <title>En Plateau — Faire émerger une parole qui compte</title>
+  <meta
+    name="description"
+    content="En Plateau prépare des prises de parole à partir de tensions réelles, de points de bascule identifiables et d’arbitrages concrets, pour éclairer ce qui se transforme dans les organisations, les filières et les territoires."
+  >
 
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --bg-soft:#121820;
+      --bg-panel:#161e28;
+      --line-dark:rgba(255,255,255,.10);
+      --line-dark-strong:rgba(255,255,255,.18);
 
-/* RESET */
-body{
-  margin:0;
-  font-family:Inter,sans-serif;
-  background:#0a0d12;
-  color:#fff;
-}
+      --paper:#ffffff;
+      --paper-soft:#f4f7fb;
+      --line-light:rgba(15,23,34,.10);
 
-/* CONTAINER */
-.container{
-  width:min(1200px, calc(100% - 40px));
-  margin:auto;
-}
+      --text:#f4f7fb;
+      --text-soft:rgba(244,247,251,.78);
+      --text-muted:rgba(244,247,251,.56);
 
-/* TYPO */
-h1,h2,h3{
-  font-family:Fraunces, serif;
-  margin:0;
-}
+      --ink:#111827;
+      --ink-soft:#425064;
+      --ink-muted:#66758a;
 
-p{
-  line-height:1.7;
-}
+      --accent:#7db8ff;
+      --accent-soft:#b9d7ff;
+      --accent-glow:rgba(125,184,255,.22);
 
-/* HEADER */
-header{
-  position:sticky;
-  top:0;
-  background:rgba(0,0,0,0.7);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid rgba(255,255,255,0.1);
-}
+      --font-display:"Fraunces", serif;
+      --font-ui:"Inter", sans-serif;
 
-header .container{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  height:80px;
-}
+      --container:1280px;
+      --radius-xl:28px;
+      --radius-lg:22px;
+      --radius-md:16px;
+      --shadow-dark:0 20px 60px rgba(0,0,0,.30);
+      --shadow-light:0 20px 50px rgba(15,23,34,.08);
+    }
 
-.logo{
-  font-size:1.6rem;
-  font-weight:600;
-}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--font-ui);
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
 
-nav{
-  display:flex;
-  gap:20px;
-  font-size:12px;
-  text-transform:uppercase;
-}
+    img{display:block;max-width:100%;height:auto}
+    a{text-decoration:none;color:inherit}
+    p,h1,h2,h3,h4{margin-top:0}
 
-/* HERO (NOIR) */
-.hero{
-  padding:80px 0;
-}
+    .container{
+      width:min(calc(100% - 40px), var(--container));
+      margin:0 auto;
+    }
 
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.1fr 1fr;
-  gap:40px;
-}
+    .section{
+      padding:88px 0;
+      position:relative;
+    }
 
-.hero h1{
-  font-size:4rem;
-  line-height:0.9;
-}
+    .section-dark{
+      background:
+        radial-gradient(circle at 82% 14%, rgba(125,184,255,.10), transparent 22%),
+        radial-gradient(circle at 18% 18%, rgba(255,255,255,.04), transparent 20%),
+        linear-gradient(180deg, #0b0f14, #0e141b);
+      color:var(--text);
+    }
 
-.hero p{
-  color:#cfd6df;
-}
+    .section-light{
+      background:var(--paper);
+      color:var(--ink);
+      border-top:1px solid var(--line-light);
+      border-bottom:1px solid var(--line-light);
+    }
 
-.hero img{
-  width:100%;
-  height:500px;
-  object-fit:cover;
-  border-radius:20px;
-}
+    .section-head{
+      max-width:900px;
+      margin:0 auto 34px;
+      text-align:center;
+    }
 
-/* SECTION BLANCHE */
-.section-white{
-  background:#ffffff;
-  color:#111;
-  padding:80px 0;
-}
+    .section-head h2{
+      font-family:var(--font-display);
+      font-size:clamp(2.1rem, 3.8vw, 3.8rem);
+      line-height:.98;
+      letter-spacing:-.04em;
+      margin-bottom:14px;
+    }
 
-.section-white p{
-  color:#444;
-}
+    .section-dark .section-head h2{color:#fff}
+    .section-light .section-head h2{color:var(--ink)}
 
-.section-white h2{
-  color:#111;
-}
+    .section-intro{
+      max-width:820px;
+      margin:0 auto;
+      font-size:1rem;
+      line-height:1.74;
+    }
 
-/* GRID IMAGE TEXTE */
-.grid-2{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:center;
-}
+    .section-dark .section-intro{color:var(--text-soft)}
+    .section-light .section-intro{color:var(--ink-soft)}
 
-.grid-2 img{
-  width:100%;
-  border-radius:20px;
-}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:16px;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+    }
 
-/* CARDS */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
+    .section-dark .eyebrow{color:var(--accent-soft)}
+    .section-light .eyebrow{color:#5377a8}
 
-.card{
-  padding:24px;
-  border-radius:16px;
-  background:#111;
-  border:1px solid rgba(255,255,255,0.1);
-}
+    .eyebrow::before{
+      content:"";
+      width:40px;
+      height:1px;
+      background:currentColor;
+      opacity:.55;
+    }
 
-.section-white .card{
-  background:#f5f5f5;
-  border:none;
-}
+    /* HEADER */
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(16px);
+      background:rgba(8,11,16,.72);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
 
-/* CTA */
-.cta{
-  padding:20px;
-  border-radius:40px;
-  background:#2a6fff;
-  color:white;
-  display:inline-block;
-  margin-top:20px;
-}
+    .site-header__inner{
+      width:min(calc(100% - 40px), var(--container));
+      margin:0 auto;
+      min-height:82px;
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      gap:28px;
+      align-items:center;
+    }
 
-/* FOOTER */
-footer{
-  padding:40px 0;
-  text-align:center;
-  color:#aaa;
-}
+    .brand{
+      display:inline-flex;
+      align-items:center;
+      gap:14px;
+    }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  .hero-grid,.grid-2,.cards{
-    grid-template-columns:1fr;
-  }
+    .brand-mark{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.14);
+      background:
+        radial-gradient(circle at 35% 35%, rgba(255,255,255,.18), transparent 36%),
+        linear-gradient(145deg, rgba(125,184,255,.24), rgba(125,184,255,.08));
+      position:relative;
+    }
 
-  .hero h1{
-    font-size:2.5rem;
-  }
-}
+    .brand-mark::after{
+      content:"";
+      position:absolute;
+      inset:10px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.18);
+    }
 
-</style>
+    .brand-wordmark{
+      font-family:var(--font-display);
+      font-size:1.9rem;
+      line-height:1;
+      font-weight:600;
+      letter-spacing:-.04em;
+      color:#fff;
+    }
+
+    .nav{
+      display:flex;
+      justify-content:center;
+      gap:28px;
+      flex-wrap:wrap;
+    }
+
+    .nav a{
+      min-height:42px;
+      display:inline-flex;
+      align-items:center;
+      position:relative;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--text-soft);
+    }
+
+    .nav a::after{
+      content:"";
+      position:absolute;
+      left:0;right:0;bottom:8px;
+      height:1px;
+      background:transparent;
+      transition:.18s ease;
+    }
+
+    .nav a:hover{color:#fff}
+    .nav a:hover::after{background:rgba(255,255,255,.72)}
+
+    .header-actions{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      transition:.18s ease;
+    }
+
+    .btn-primary{
+      color:#fff;
+      border-color:rgba(255,255,255,.10);
+      background:linear-gradient(135deg, rgba(125,184,255,.22), rgba(125,184,255,.14));
+      box-shadow:0 10px 30px var(--accent-glow);
+    }
+
+    .btn-primary:hover{transform:translateY(-1px)}
+
+    .btn-secondary{
+      color:var(--text-soft);
+      border-color:rgba(255,255,255,.12);
+      background:rgba(255,255,255,.02);
+    }
+
+    .btn-secondary:hover{
+      color:#fff;
+      border-color:rgba(255,255,255,.24);
+    }
+
+    /* HERO */
+    .hero{
+      padding:54px 0 78px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0, 1.05fr) minmax(360px, .95fr);
+      gap:34px;
+      align-items:stretch;
+    }
+
+    .hero-copy{
+      padding:24px 0 8px;
+      max-width:760px;
+    }
+
+    .hero-copy h1{
+      font-family:var(--font-display);
+      font-size:clamp(3rem, 6vw, 5.8rem);
+      line-height:.9;
+      letter-spacing:-.05em;
+      margin-bottom:20px;
+      max-width:11ch;
+      color:#fff;
+    }
+
+    .hero-subtitle{
+      font-size:clamp(1.04rem, 1.35vw, 1.22rem);
+      line-height:1.74;
+      color:var(--text-soft);
+      max-width:760px;
+      margin-bottom:16px;
+    }
+
+    .hero-subtitle strong{color:#fff}
+
+    .hero-note{
+      max-width:720px;
+      font-size:.95rem;
+      line-height:1.7;
+      color:var(--text-muted);
+      margin-bottom:24px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:18px;
+    }
+
+    .proof-strip{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      list-style:none;
+      padding:0;
+      margin:0 0 16px;
+    }
+
+    .proof-strip li{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      color:var(--text-soft);
+    }
+
+    .hero-foot{
+      font-size:.78rem;
+      line-height:1.6;
+      color:var(--text-muted);
+      max-width:760px;
+    }
+
+    /* PHOTO PLACEHOLDERS */
+    .photo-card{
+      position:relative;
+      border-radius:30px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:var(--shadow-dark);
+      background:
+        linear-gradient(180deg, rgba(11,15,20,.18), rgba(11,15,20,.78)),
+        linear-gradient(135deg, #243244 0%, #16202c 45%, #0e141b 100%);
+      min-height:640px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+    }
+
+    .photo-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 78% 22%, rgba(125,184,255,.26), transparent 18%),
+        radial-gradient(circle at 22% 20%, rgba(255,255,255,.10), transparent 16%);
+      pointer-events:none;
+    }
+
+    .photo-badge{
+      position:absolute;
+      top:20px;
+      left:20px;
+      z-index:2;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(8,11,16,.58);
+      color:#fff;
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      backdrop-filter:blur(10px);
+    }
+
+    .photo-fill{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:30px;
+      text-align:center;
+      color:rgba(255,255,255,.92);
+      font-family:var(--font-display);
+      font-size:2rem;
+      line-height:1;
+      letter-spacing:-.03em;
+      z-index:1;
+    }
+
+    .photo-fill span{
+      display:block;
+      max-width:12ch;
+    }
+
+    .photo-caption{
+      position:relative;
+      z-index:2;
+      padding:24px;
+      display:grid;
+      gap:14px;
+      background:linear-gradient(180deg, transparent, rgba(8,11,16,.76));
+    }
+
+    .caption-card{
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.14);
+      background:linear-gradient(180deg, rgba(15,21,29,.70), rgba(15,21,29,.86));
+      backdrop-filter:blur(12px);
+      padding:18px;
+    }
+
+    .caption-kicker{
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      color:var(--accent-soft);
+      margin-bottom:8px;
+    }
+
+    .caption-title{
+      font-family:var(--font-display);
+      font-size:1.5rem;
+      line-height:1.02;
+      letter-spacing:-.03em;
+      color:#fff;
+      margin-bottom:8px;
+    }
+
+    .caption-text{
+      font-size:.9rem;
+      line-height:1.62;
+      color:var(--text-soft);
+      margin:0;
+    }
+
+    .meta-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+    }
+
+    .meta-box{
+      padding:14px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+    }
+
+    .meta-label{
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--accent-soft);
+      margin-bottom:6px;
+    }
+
+    .meta-value{
+      font-size:.88rem;
+      line-height:1.45;
+      color:#fff;
+    }
+
+    /* LOGO BAND */
+    .logo-band{
+      padding:26px 0 34px;
+      background:#0d1218;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .logo-band__inner{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:26px;
+      align-items:center;
+    }
+
+    .logo-band__copy{
+      font-size:.9rem;
+      line-height:1.68;
+      color:var(--text-soft);
+    }
+
+    .logos{
+      display:flex;
+      flex-wrap:wrap;
+      gap:28px 42px;
+      justify-content:flex-end;
+      align-items:center;
+    }
+
+    .logo-item{
+      height:28px;
+      min-width:110px;
+      padding:0 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:13px;
+      font-weight:600;
+      color:rgba(255,255,255,.78);
+      letter-spacing:.01em;
+    }
+
+    /* SPLIT */
+    .split-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:26px;
+      align-items:stretch;
+    }
+
+    .panel-dark{
+      border-radius:30px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(circle at 22% 18%, rgba(255,255,255,.06), transparent 16%),
+        linear-gradient(180deg, #141c25, #0f151c);
+      box-shadow:var(--shadow-dark);
+      padding:38px;
+      display:flex;
+      align-items:center;
+    }
+
+    .panel-dark h2{
+      font-family:var(--font-display);
+      font-size:clamp(2.2rem, 3.6vw, 3.8rem);
+      line-height:.96;
+      letter-spacing:-.04em;
+      color:#fff;
+      max-width:10ch;
+    }
+
+    .panel-light{
+      border-radius:30px;
+      background:var(--paper);
+      border:1px solid var(--line-light);
+      box-shadow:var(--shadow-light);
+      padding:38px;
+      color:var(--ink);
+      display:flex;
+      align-items:center;
+    }
+
+    .structured-copy{
+      display:grid;
+      gap:22px;
+    }
+
+    .structured-copy p{
+      margin:0;
+      padding-bottom:18px;
+      border-bottom:1px solid rgba(17,24,39,.10);
+      font-size:.95rem;
+      line-height:1.7;
+      color:var(--ink-soft);
+    }
+
+    .structured-copy p:last-child{
+      padding-bottom:0;
+      border-bottom:0;
+    }
+
+    .structured-copy strong{
+      display:block;
+      margin-bottom:7px;
+      font-family:var(--font-display);
+      font-size:1.16rem;
+      line-height:1.12;
+      letter-spacing:-.01em;
+      color:var(--ink);
+    }
+
+    /* IMAGE + COPY */
+    .media-grid{
+      display:grid;
+      grid-template-columns:minmax(0, .92fr) minmax(0, 1.08fr);
+      gap:28px;
+      align-items:stretch;
+    }
+
+    .media-box{
+      border-radius:28px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:var(--shadow-dark);
+      min-height:540px;
+      background:
+        linear-gradient(180deg, rgba(10,14,21,.12), rgba(10,14,21,.70)),
+        linear-gradient(135deg, #28374b 0%, #15202b 48%, #0d1218 100%);
+      position:relative;
+    }
+
+    .media-box::after{
+      content:"PHOTO BIDON / INTERVIEW / JOURNALISTE / PLATEAU";
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:30px;
+      font-family:var(--font-display);
+      font-size:2rem;
+      line-height:1;
+      letter-spacing:-.03em;
+      color:rgba(255,255,255,.9);
+    }
+
+    .media-copy{
+      padding:10px 0;
+    }
+
+    .media-copy h2{
+      font-family:var(--font-display);
+      font-size:clamp(2.2rem, 3.4vw, 3.4rem);
+      line-height:.98;
+      letter-spacing:-.04em;
+      color:#fff;
+      margin-bottom:16px;
+    }
+
+    .media-copy p{
+      font-size:.98rem;
+      line-height:1.74;
+      color:var(--text-soft);
+      margin-bottom:16px;
+      max-width:64ch;
+    }
+
+    /* CARDS LIGHT */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:20px;
+    }
+
+    .card-light{
+      border-radius:24px;
+      background:#fff;
+      border:1px solid var(--line-light);
+      box-shadow:var(--shadow-light);
+      padding:26px 22px 22px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card-light::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:4px;
+      height:100%;
+      background:linear-gradient(180deg, #8db8ff, #4c82d6);
+    }
+
+    .card-index{
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#5377a8;
+      margin-bottom:12px;
+    }
+
+    .card-light h3{
+      font-family:var(--font-display);
+      font-size:1.18rem;
+      line-height:1.1;
+      letter-spacing:-.02em;
+      color:var(--ink);
+      margin-bottom:10px;
+    }
+
+    .card-light p{
+      margin:0;
+      font-size:.92rem;
+      line-height:1.66;
+      color:var(--ink-soft);
+    }
+
+    /* CYCLES */
+    .cycles-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:22px;
+    }
+
+    .cycle-card{
+      border-radius:26px;
+      background:#fff;
+      border:1px solid var(--line-light);
+      box-shadow:var(--shadow-light);
+      overflow:hidden;
+    }
+
+    .cycle-photo{
+      height:220px;
+      position:relative;
+      background:
+        linear-gradient(180deg, rgba(17,24,39,.06), rgba(17,24,39,.30)),
+        linear-gradient(135deg, #dce9fb 0%, #c8d9ef 100%);
+      border-bottom:1px solid var(--line-light);
+    }
+
+    .cycle-photo::after{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:24px;
+      font-family:var(--font-display);
+      font-size:1.7rem;
+      line-height:1.02;
+      letter-spacing:-.03em;
+      color:#1d2b3c;
+    }
+
+    .cycle-card:first-child .cycle-photo::after{
+      content:"PHOTO BIDON / LOGEMENT / TERRITOIRE";
+    }
+
+    .cycle-card:last-child .cycle-photo::after{
+      content:"PHOTO BIDON / INDUSTRIE / TRANSFORMATION";
+    }
+
+    .cycle-body{
+      padding:24px;
+    }
+
+    .cycle-label{
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#5377a8;
+      margin-bottom:10px;
+    }
+
+    .cycle-body h3{
+      font-family:var(--font-display);
+      font-size:1.32rem;
+      line-height:1.08;
+      letter-spacing:-.02em;
+      color:var(--ink);
+      margin-bottom:10px;
+    }
+
+    .cycle-body p{
+      margin:0 0 16px;
+      font-size:.94rem;
+      line-height:1.68;
+      color:var(--ink-soft);
+    }
+
+    .link-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+
+    .text-link{
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#355785;
+    }
+
+    .text-link::after{
+      content:"";
+      position:absolute;
+      left:0;right:0;bottom:-2px;
+      height:1px;
+      background:rgba(53,87,133,.34);
+    }
+
+    /* ACCESS */
+    .access-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:22px;
+    }
+
+    .access-primary,
+    .access-secondary{
+      border-radius:28px;
+      padding:28px;
+    }
+
+    .access-primary{
+      border:1px solid var(--line-light);
+      background:
+        linear-gradient(135deg, rgba(125,184,255,.10), rgba(255,255,255,.96));
+      box-shadow:var(--shadow-light);
+    }
+
+    .access-secondary{
+      border:1px solid var(--line-light);
+      background:#fff;
+      box-shadow:var(--shadow-light);
+    }
+
+    .access-primary h3,
+    .access-secondary h3{
+      font-family:var(--font-display);
+      font-size:1.34rem;
+      line-height:1.08;
+      letter-spacing:-.02em;
+      color:var(--ink);
+      margin-bottom:10px;
+    }
+
+    .access-primary p,
+    .access-secondary p{
+      margin:0 0 18px;
+      font-size:.95rem;
+      line-height:1.72;
+      color:var(--ink-soft);
+    }
+
+    .micro{
+      margin-top:16px !important;
+      font-size:.8rem !important;
+      line-height:1.6 !important;
+      color:var(--ink-muted) !important;
+    }
+
+    .btn-light{
+      color:#fff;
+      background:#111827;
+      border:1px solid #111827;
+      box-shadow:none;
+    }
+
+    .btn-light:hover{transform:translateY(-1px)}
+
+    /* FOOTER */
+    .footer{
+      padding:34px 0 56px;
+      background:#0b0f14;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .footer-copy{
+      font-size:.88rem;
+      line-height:1.6;
+      color:var(--text-muted);
+    }
+
+    .footer-links{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a{
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--text-soft);
+    }
+
+    @media (max-width: 1100px){
+      .hero-grid,
+      .split-grid,
+      .media-grid,
+      .logo-band__inner,
+      .access-grid{
+        grid-template-columns:1fr;
+      }
+
+      .nav{display:none}
+      .site-header__inner{grid-template-columns:auto 1fr}
+      .header-actions{justify-content:flex-end}
+      .cards{grid-template-columns:repeat(2, 1fr)}
+    }
+
+    @media (max-width: 900px){
+      .meta-grid,
+      .cycles-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 720px){
+      .container,
+      .site-header__inner{
+        width:min(calc(100% - 24px), var(--container));
+      }
+
+      .hero{padding:30px 0 56px}
+      .hero-copy h1{
+        font-size:clamp(2.4rem, 11vw, 3.8rem);
+        max-width:100%;
+      }
+
+      .photo-card,
+      .media-box{min-height:460px}
+
+      .cards{grid-template-columns:1fr}
+
+      .hero-actions{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .btn{width:100%}
+      .proof-strip li{width:100%}
+      .header-actions .btn-secondary{display:none}
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-  <div class="container">
-    <div class="logo">En Plateau</div>
-    <nav>
-      <span>Dispositif</span>
-      <span>Cycles</span>
-      <span>Accès</span>
-    </nav>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="#" class="brand" aria-label="En Plateau">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-wordmark">En Plateau</span>
+      </a>
 
-<!-- HERO NOIR -->
-<section class="hero">
-  <div class="container hero-grid">
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#dispositif">Dispositif</a>
+        <a href="#valeur">Valeur</a>
+        <a href="#cycles">Cycles</a>
+        <a href="#acces">Accès</a>
+      </nav>
 
-    <div>
-      <h1>Une parole qui passe à l’écran.</h1>
-
-      <p>
-        <strong>En Plateau prépare des prises de parole à partir de tensions réelles, de points de bascule identifiables et d’arbitrages concrets, puis les inscrit dans des formats audiovisuels incarnés, conduits par des journalistes.</strong>
-      </p>
-
-      <p>
-        Si vous avez été contacté, ce n’est pas pour occuper un format. C’est parce que votre position peut aider à rendre une situation plus lisible, plus située et plus utile.
-      </p>
-
-      <a class="cta">Demander un échange éditorial</a>
-    </div>
-
-    <img src="https://images.unsplash.com/photo-1581091870627-3c9a7e7c8c4f?q=80&w=1200" alt="plateau tv">
-
-  </div>
-</section>
-
-<!-- SECTION BLANCHE (TON FOND) -->
-<section class="section-white">
-  <div class="container">
-
-    <h2>Il ne s’agit pas de parler davantage, mais de mieux faire apparaître ce qui bascule réellement.</h2>
-
-    <p>
-      En Plateau cadre des prises de parole destinées à être exprimées dans des formats audiovisuels animés par des journalistes économiques, afin de rendre plus lisibles des sujets sensibles, techniques ou structurants.
-    </p>
-
-  </div>
-</section>
-
-<!-- IMAGE + TEXTE -->
-<section class="hero">
-  <div class="container grid-2">
-
-    <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?q=80&w=1200">
-
-    <div>
-      <h2>Une lecture préparée, pas une parole improvisée</h2>
-
-      <p>
-        Votre intervention est cadrée à partir d’un angle précis, pour rendre visible ce qui se joue réellement, sans simplification excessive.
-      </p>
-
-      <p>
-        Votre lecture prend davantage de valeur lorsqu’elle apparaît aux côtés d’autres positions engagées sur les mêmes tensions.
-      </p>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- SECTION BLANCHE CARDS -->
-<section class="section-white">
-  <div class="container">
-
-    <h2>Un dispositif éditorial conçu pour faire tenir une parole exigeante</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>Partir d’un angle précis</h3>
-        <p>Chaque intervention est cadrée à partir d’une situation identifiable.</p>
+      <div class="header-actions">
+        <a href="#cycles" class="btn btn-secondary">Explorer</a>
+        <a href="#acces" class="btn btn-primary">Demander un échange</a>
       </div>
-
-      <div class="card">
-        <h3>Préparer une parole tenable</h3>
-        <p>Le travail éditorial permet de rendre votre lecture plus claire.</p>
-      </div>
-
-      <div class="card">
-        <h3>Produire une lecture exploitable</h3>
-        <p>L’émission permet de conserver une trace structurée.</p>
-      </div>
-
     </div>
+  </header>
 
-  </div>
-</section>
+  <main>
 
-<!-- SECTION NOIR IMAGE -->
-<section class="hero">
-  <div class="container grid-2">
+    <!-- HERO -->
+    <section class="hero section-dark">
+      <div class="container">
+        <div class="hero-grid">
 
-    <div>
-      <h2>C’est là que les décisions changent de nature</h2>
+          <div class="hero-copy">
+            <div class="eyebrow">Prises de parole économiques · cadre audiovisuel</div>
 
-      <p>
-        Les tensions peuvent se situer entre financement, cadre, marché, exécution, chaîne productive ou allocation du risque.
-      </p>
+            <h1>Faire émerger une parole qui compte.</h1>
 
-      <p>
-        C’est à ce moment-là qu’une parole bien située devient décisive.
-      </p>
+            <p class="hero-subtitle">
+              <strong>En Plateau prépare des prises de parole à partir de tensions réelles, de points de bascule identifiables et d’arbitrages concrets, puis les inscrit dans des formats audiovisuels incarnés, conduits par des journalistes, pour éclairer ce qui se transforme dans les organisations, les filières et les territoires.</strong>
+            </p>
+
+            <p class="hero-note">
+              Si vous avez été contacté sur LinkedIn, ce n’est pas pour occuper un format. C’est parce que votre position peut aider à rendre une situation plus lisible, plus située et plus utile à d’autres acteurs de décision.
+            </p>
+
+            <div class="hero-actions">
+              <a href="demander-un-echange-editorial.html" class="btn btn-primary">Demander un échange éditorial</a>
+              <a href="#cycles" class="btn btn-secondary">Explorer les cycles en cours</a>
+            </div>
+
+            <ul class="proof-strip">
+              <li>Angles préparés en amont</li>
+              <li>Formats audiovisuels courts</li>
+              <li>Journalistes économiques</li>
+              <li>Prolongement éditorial</li>
+            </ul>
+
+            <p class="hero-foot">
+              L’échange éditorial permet de qualifier la justesse de l’angle, la portée de votre lecture et les conditions d’une intervention solide. Si vous n’avez pas été contacté, vous pouvez toutefois signaler une contribution.
+            </p>
+          </div>
+
+          <div class="photo-card">
+            <div class="photo-badge">Visuel maquette</div>
+            <div class="photo-fill">
+              <span>PHOTO BIDON / PLATEAU TV / INTERVIEW / LUMIÈRE / CAMÉRA</span>
+            </div>
+            <div class="photo-caption">
+              <div class="caption-card">
+                <div class="caption-kicker">Ce que le visuel doit faire comprendre</div>
+                <div class="caption-title">Ici, la parole est destinée à passer à l’écran.</div>
+                <p class="caption-text">
+                  Remplacer ce bloc par une vraie photo de plateau, d’interview ou de journaliste suffira à faire basculer très fortement la perception du site.
+                </p>
+              </div>
+              <div class="meta-grid">
+                <div class="meta-box">
+                  <div class="meta-label">cadre</div>
+                  <div class="meta-value">Journaliste + préparation éditoriale</div>
+                </div>
+                <div class="meta-box">
+                  <div class="meta-label">forme</div>
+                  <div class="meta-value">Émission courte + captation soignée</div>
+                </div>
+                <div class="meta-box">
+                  <div class="meta-label">portée</div>
+                  <div class="meta-value">Diffusion + trace réutilisable</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGOS -->
+    <section class="logo-band">
+      <div class="container">
+        <div class="logo-band__inner">
+          <div class="logo-band__copy">
+            Des prises de parole destinées à être exprimées dans des formats audiovisuels animés par des journalistes économiques, afin de rendre plus lisibles des sujets sensibles, techniques ou structurants.
+          </div>
+          <div class="logos">
+            <div class="logo-item">La Tribune</div>
+            <div class="logo-item">BFM Business</div>
+            <div class="logo-item">Le Figaro</div>
+            <div class="logo-item">Forbes</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPLIT 1 -->
+    <section class="section section-light" id="dispositif">
+      <div class="container">
+        <div class="split-grid">
+          <div class="panel-dark">
+            <h2>Vous intervenez là où une expertise générique ne suffit plus.</h2>
+          </div>
+          <div class="panel-light">
+            <div class="structured-copy">
+              <p>
+                <strong>Des sujets commentés, mais encore mal lus.</strong>
+                Beaucoup de prises de parole décrivent une transformation. Peu font apparaître clairement la tension, le point de bascule et l’arbitrage qu’elle impose.
+              </p>
+              <p>
+                <strong>Une lecture préparée, pas une parole improvisée.</strong>
+                Votre intervention est cadrée à partir d’un angle précis, pour rendre visible ce qui se joue réellement, sans simplification excessive, sans surjeu, sans surexposition inutile.
+              </p>
+              <p>
+                <strong>Une portée renforcée par la mise en regard.</strong>
+                Votre lecture prend davantage de valeur lorsqu’elle apparaît aux côtés d’autres positions engagées sur les mêmes tensions : financement, droit, stratégie, exécution, industrie, territoire.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDIA + VRAI FOND -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="media-grid">
+          <div class="media-box"></div>
+          <div class="media-copy">
+            <div class="eyebrow">Pourquoi la forme compte</div>
+            <h2>Il ne s’agit pas de parler davantage, mais de mieux faire apparaître ce qui bascule réellement.</h2>
+            <p>
+              En Plateau cadre des prises de parole destinées à être exprimées dans des formats audiovisuels animés par des journalistes économiques, afin de rendre plus lisibles des sujets sensibles, techniques ou structurants.
+            </p>
+            <p>
+              Le travail en amont vise une parole tenable publiquement, lisible éditorialement et utile au-delà du seul moment de diffusion.
+            </p>
+            <p>
+              Autrement dit : le fond reste exigeant, mais la forme doit faire comprendre immédiatement qu’il s’agit d’un dispositif conçu pour l’écran.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISPOSITIF CARDS -->
+    <section class="section section-light" id="valeur">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Dispositif</div>
+          <h2>Un dispositif éditorial conçu pour faire tenir une parole exigeante</h2>
+          <p class="section-intro">
+            Votre contribution est préparée en amont, tenue dans un cadre éditorial précis, puis produite dans des conditions qui permettent d’en prolonger la portée.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card-light">
+            <div class="card-index">01</div>
+            <h3>Partir d’un angle précis</h3>
+            <p>Chaque intervention est cadrée à partir d’une situation identifiable, d’une tension réelle et d’un point de bascule que votre position permet d’éclairer.</p>
+          </article>
+
+          <article class="card-light">
+            <div class="card-index">02</div>
+            <h3>Préparer une parole tenable publiquement</h3>
+            <p>Le travail éditorial permet de rendre votre lecture plus claire, plus située et plus utile, sans vous pousser vers une parole artificielle ou surexposée.</p>
+          </article>
+
+          <article class="card-light">
+            <div class="card-index">03</div>
+            <h3>Produire une lecture qui reste exploitable</h3>
+            <p>L’émission courte et son prolongement écrit permettent de conserver une trace structurée de votre lecture, réutilisable dans votre écosystème professionnel.</p>
+          </article>
+
+          <article class="card-light">
+            <div class="card-index">04</div>
+            <h3>Mettre les positions en regard</h3>
+            <p>Votre intervention reste singulière, mais elle gagne en portée lorsqu’elle apparaît aux côtés d’autres lectures engagées sur les mêmes tensions et les mêmes arbitrages.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPLIT 2 -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="split-grid">
+          <div class="panel-light">
+            <div class="structured-copy">
+              <p>
+                <strong>Les situations que nous travaillons sont rarement théoriques.</strong>
+                Une activité se développe, un projet avance, une transformation s’accélère, puis les équilibres habituels cessent de suffire pour décider comme avant.
+              </p>
+              <p>
+                <strong>Le sujet n’est pas seulement ce qui change, mais ce que ce changement oblige à arbitrer.</strong>
+                Les tensions peuvent se situer entre financement, cadre, marché, exécution, chaîne productive, rythme de transformation ou allocation du risque.
+              </p>
+              <p>
+                <strong>C’est à ce moment-là qu’une parole bien située devient décisive.</strong>
+                Non pour commenter de loin, mais pour aider à comprendre à partir de quand une situation change de nature, qui elle affecte réellement, et ce qu’elle oblige à décider.
+              </p>
+            </div>
+          </div>
+          <div class="panel-dark">
+            <h2>C’est là que les décisions changent de nature.</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CYCLES -->
+    <section class="section section-light" id="cycles">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Cycles éditoriaux</div>
+          <h2>Deux cycles pour lire ce qui se transforme réellement</h2>
+          <p class="section-intro">
+            Chaque cycle ouvre un ensemble de conversations construites à partir de points de bascule réels, où plusieurs lectures se croisent sans jamais se confondre.
+          </p>
+        </div>
+
+        <div class="cycles-grid">
+          <article class="cycle-card">
+            <div class="cycle-photo"></div>
+            <div class="cycle-body">
+              <div class="cycle-label">Cycle en cours</div>
+              <h3>Logement &amp; fabrique des territoires</h3>
+              <p>Des situations où un projet tient encore en apparence, mais où ses arbitrages se tendent déjà entre financement, droit, marché, exécution et territoire.</p>
+              <div class="link-row">
+                <a href="conversations/logement.html" class="text-link">Explorer les conversations</a>
+                <a href="positions/logement.html" class="text-link">Explorer les positions</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="cycle-card">
+            <div class="cycle-photo"></div>
+            <div class="cycle-body">
+              <div class="cycle-label">Cycle en cours</div>
+              <h3>Industrie &amp; transformation des territoires</h3>
+              <p>Des situations où l’activité se poursuit, mais où ses arbitrages se tendent déjà entre compétitivité, chaîne productive, transformation, dépendances et allocation du risque.</p>
+              <div class="link-row">
+                <a href="conversations/industrie.html" class="text-link">Explorer les conversations</a>
+                <a href="positions/industrie.html" class="text-link">Explorer les positions</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCES -->
+    <section class="section section-light" id="acces">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Accès</div>
+          <h2>Accéder au dispositif</h2>
+          <p class="section-intro">
+            Les échanges sont ouverts aux personnes déjà identifiées, ainsi qu’aux acteurs qui souhaitent signaler la pertinence de leur position dans l’un des cycles en cours.
+          </p>
+        </div>
+
+        <div class="access-grid">
+          <div class="access-primary">
+            <h3>Vous avez déjà été contacté</h3>
+            <p>
+              Cet échange permet de vérifier la justesse de votre angle, la portée réelle de votre lecture et les conditions d’une intervention crédible, utile et tenable.
+            </p>
+            <a href="demander-un-echange-editorial.html" class="btn btn-light">Demander un échange éditorial</a>
+            <p class="micro">
+              L’échange éditorial ne vaut pas engagement automatique. Il sert à vérifier la pertinence de l’angle, la qualité de la lecture et les conditions de préparation.
+            </p>
+          </div>
+
+          <div class="access-secondary">
+            <h3>Vous n’avez pas été contacté</h3>
+            <p>
+              Vous pouvez signaler la pertinence de votre lecture sur l’un des sujets ou cycles en cours. Chaque signalement est examiné au regard du travail éditorial engagé.
+            </p>
+            <a href="proposer-une-contribution.html" class="btn btn-light">Signaler une contribution</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-copy">
+          En Plateau — dispositif éditorial et audiovisuel pour prises de parole économiques.
+        </div>
+        <div class="footer-links">
+          <a href="#dispositif">Dispositif</a>
+          <a href="#cycles">Cycles</a>
+          <a href="#acces">Accès</a>
+        </div>
+      </div>
     </div>
-
-    <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200">
-
-  </div>
-</section>
-
-<!-- SECTION BLANCHE CTA -->
-<section class="section-white">
-  <div class="container">
-
-    <h2>Accéder au dispositif</h2>
-
-    <p>
-      Les échanges sont ouverts aux personnes déjà identifiées, ainsi qu’aux acteurs souhaitant signaler une contribution.
-    </p>
-
-    <a class="cta">Demander un échange éditorial</a>
-
-  </div>
-</section>
-
-<footer>
-  En Plateau — dispositif éditorial & audiovisuel
-</footer>
+  </footer>
 
 </body>
 </html>
