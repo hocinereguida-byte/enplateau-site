@@ -4,178 +4,171 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>En Plateau — Faire émerger une parole qui compte</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Lora:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:"Lora",serif;
-  background:#ffffff;
+/* BASE */
+body {
+  margin:0;
+  font-family:'IBM Plex Sans', sans-serif;
+  background:#fff;
   color:#111;
-  line-height:1.6;
-}
-
-/* CONTAINER */
-.container{
-  width:min(1200px,90%);
-  margin:auto;
 }
 
 /* HEADER */
-.header{
-  position:fixed;
-  top:0;
+header {
+  position:absolute;
   width:100%;
-  background:#000;
-  color:#fff;
-  z-index:1000;
-  padding:20px 0;
-}
-
-.header-inner{
+  top:0;
+  padding:20px 40px;
   display:flex;
   justify-content:space-between;
-  align-items:center;
+  color:#fff;
+  z-index:10;
 }
 
-.logo{
-  font-family:"Fraunces",serif;
-  font-size:28px;
-}
-
-.nav{
-  display:flex;
-  gap:30px;
-  font-family:"IBM Plex Sans";
+header a {
+  color:#fff;
+  text-decoration:none;
+  margin-left:20px;
   font-size:12px;
   letter-spacing:.1em;
-  text-transform:uppercase;
 }
 
-.nav a{
-  color:#ccc;
-  text-decoration:none;
+.header-cta {
+  border:1px solid #fff;
+  padding:8px 14px;
 }
 
-.nav a:hover{
-  color:#fff;
-}
-
-/* HERO TV STYLE */
-.hero{
-  height:100vh;
+/* HERO */
+.hero {
+  height:90vh;
+  background:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') center/cover;
+  position:relative;
   display:flex;
   align-items:center;
-  position:relative;
-  color:#fff;
-  background:url("https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1600") center/cover;
 }
 
-.hero::after{
+.hero::after {
   content:"";
   position:absolute;
   inset:0;
   background:rgba(0,0,0,0.65);
 }
 
-.hero-content{
+.hero-content {
   position:relative;
   z-index:2;
   max-width:700px;
-}
-
-.hero h1{
-  font-family:"Fraunces";
-  font-size:56px;
-  line-height:1;
-  margin-bottom:20px;
-}
-
-.hero p{
-  font-size:18px;
-  opacity:.9;
-}
-
-/* SECTIONS */
-.section{
-  padding:100px 0;
-}
-
-.section-dark{
-  background:#000;
+  margin-left:80px;
   color:#fff;
 }
 
-.section-light{
-  background:#fff;
-}
-
-/* GRID */
-.grid-2{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
-}
-
-/* IMAGES */
-.image{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-}
-
-/* TEXT */
-h2{
-  font-family:"Fraunces";
-  font-size:36px;
+.hero h1 {
+  font-family:'Playfair Display';
+  font-size:64px;
+  line-height:1.05;
   margin-bottom:20px;
 }
 
-p{
-  font-size:16px;
+.hero p {
+  font-size:18px;
+  opacity:.85;
+  margin-bottom:30px;
 }
 
-/* CARDS */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
-}
-
-.card{
-  padding:30px;
-  border:1px solid #ddd;
+.hero button {
   background:#fff;
+  color:#000;
+  padding:14px 22px;
+  border:none;
+  font-weight:600;
 }
 
-.section-dark .card{
-  background:#111;
-  border-color:#333;
+/* SPLIT */
+.split {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:600px;
 }
 
-/* MEDIA LOGOS */
-.media{
+.split-left {
+  background:#000;
+  color:#fff;
   display:flex;
-  gap:40px;
-  justify-content:center;
   align-items:center;
-  margin-top:40px;
-  opacity:.7;
+  padding:60px;
 }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  .grid-2{
-    grid-template-columns:1fr;
-  }
-  .hero h1{
-    font-size:38px;
-  }
+.split-left h2 {
+  font-family:'Playfair Display';
+  font-size:48px;
+}
+
+.split-right {
+  padding:60px;
+}
+
+.split-block {
+  margin-bottom:30px;
+  padding-bottom:20px;
+  border-bottom:1px solid #eee;
+}
+
+.split-block h3 {
+  font-family:'Playfair Display';
+  font-size:22px;
+  margin-bottom:8px;
+}
+
+.split-block p {
+  font-size:14px;
+  color:#555;
+}
+
+/* CYCLES */
+.cycles {
+  padding:100px 60px;
+  background:#f8f8f8;
+}
+
+.cycles h2 {
+  text-align:center;
+  font-family:'Playfair Display';
+  font-size:40px;
+  margin-bottom:20px;
+}
+
+.cycles-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  margin-top:50px;
+}
+
+.cycle {
+  background:#fff;
+  padding:40px;
+  border:1px solid #eee;
+}
+
+.cycle h3 {
+  font-family:'Playfair Display';
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.cycle p {
+  font-size:14px;
+  color:#555;
+}
+
+.cycle a {
+  display:inline-block;
+  margin-top:15px;
+  font-size:12px;
+  letter-spacing:.1em;
 }
 
 </style>
@@ -183,345 +176,71 @@ p{
 
 <body>
 
-<header class="header">
-  <div class="container header-inner">
-    <div class="logo">En Plateau</div>
-    <nav class="nav">
-      <a href="#">Conversations</a>
-      <a href="#">Positions</a>
-      <a href="#">Dispositif</a>
-    </nav>
+<header>
+  <div>En Plateau</div>
+  <div>
+    <a href="#">Conversations</a>
+    <a href="#">Positions</a>
+    <a href="#" class="header-cta">Échange éditorial</a>
   </div>
 </header>
-  <main>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <p style="font-family:'IBM Plex Sans';font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;opacity:.85;">
-          Prises de parole économiques · Conversations En Plateau
-        </p>
-
-        <h1>
-          Faire émerger<br> une parole qui compte.
-        </h1>
-
-        <p style="margin-bottom:22px;">
-          <strong>En Plateau prépare des prises de parole à partir de tensions réelles, de points de bascule identifiables et d’arbitrages concrets, pour éclairer ce qui se transforme dans les organisations, les filières et les territoires.</strong>
-        </p>
-
-        <p style="margin-bottom:26px;">
-          Si vous avez été contacté sur LinkedIn, ce n’est pas pour occuper un format. C’est parce que votre position peut aider à rendre une situation plus lisible, plus située et plus utile à d’autres acteurs de décision.
-        </p>
-
-        <a href="demander-un-echange-editorial.html" style="display:inline-block;padding:14px 22px;background:#fff;color:#000;text-decoration:none;font-family:'IBM Plex Sans';font-size:12px;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;font-weight:600;">
-          Demander un échange éditorial
-        </a>
-
-        <p style="margin-top:20px;font-size:13px;opacity:.8;max-width:640px;">
-          L’échange éditorial permet de qualifier la justesse de l’angle, la portée de votre lecture et les conditions d’une intervention solide. Si vous n’avez pas été contacté, vous pouvez toutefois signaler une contribution.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CYCLES HERO SECONDARY -->
-  <section class="section section-light">
-    <div class="container">
-      <div class="grid-2">
-        <div>
-          <h2>En cours : deux cycles éditoriaux</h2>
-          <div style="display:grid;gap:28px;margin-top:28px;">
-
-            <div>
-              <h3 style="font-family:'Fraunces';font-size:26px;margin-bottom:10px;">Logement &amp; fabrique des territoires</h3>
-              <p style="margin-bottom:12px;">Des situations où les arbitrages se tendent entre financement, droit, marché, exécution et territoire.</p>
-              <p style="font-family:'IBM Plex Sans';font-size:12px;letter-spacing:.1em;text-transform:uppercase;">
-                <a href="conversations/logement.html" style="color:#111;text-decoration:none;margin-right:18px;">Explorer les conversations</a>
-                <a href="positions/logement.html" style="color:#111;text-decoration:none;">Explorer les positions</a>
-              </p>
-            </div>
-
-            <div>
-              <h3 style="font-family:'Fraunces';font-size:26px;margin-bottom:10px;">Industrie &amp; transformation des territoires</h3>
-              <p style="margin-bottom:12px;">Des situations où les décisions se jouent entre compétitivité, dépendances, transformation productive et allocation du risque.</p>
-              <p style="font-family:'IBM Plex Sans';font-size:12px;letter-spacing:.1em;text-transform:uppercase;">
-                <a href="conversations/industrie.html" style="color:#111;text-decoration:none;margin-right:18px;">Explorer les conversations</a>
-                <a href="positions/industrie.html" style="color:#111;text-decoration:none;">Explorer les positions</a>
-              </p>
-            </div>
-
-          </div>
-        </div>
-
-        <div>
-          <img class="image" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1400" alt="photo bidon plateau ou interview" style="border-radius:20px;">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CREDIBILITE -->
-  <section class="section section-dark">
-    <div class="container">
-      <div style="max-width:900px;margin:auto;text-align:center;">
-        <h2>Il ne s’agit pas de parler davantage, mais de mieux faire apparaître ce qui bascule réellement.</h2>
-
-        <p style="max-width:760px;margin:22px auto 0;opacity:.86;">
-          En Plateau cadre des prises de parole destinées à être exprimées dans des formats audiovisuels animés par des journalistes économiques, afin de rendre plus lisibles des sujets sensibles, techniques ou structurants.
-        </p>
-
-        <div class="media">
-          <span>La Tribune</span>
-          <span>BFM Business</span>
-          <span>Le Figaro</span>
-          <span>Forbes</span>
-        </div>
-
-        <p style="max-width:780px;margin:22px auto 0;opacity:.7;font-size:14px;">
-          Les formats sont réalisés avec des sociétés de production partenaires et diffusés dans des cadres médiatiques clairement identifiés. Le travail en amont vise une parole tenable publiquement, lisible éditorialement et utile au-delà du seul moment de diffusion.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SPLIT 1 -->
-  <section class="section section-light">
-    <div class="container">
-      <div class="grid-2">
-        <div style="background:#000;color:#fff;padding:50px;border-radius:20px;">
-          <h2 style="color:#fff;">Vous intervenez là où une expertise générique ne suffit plus.</h2>
-        </div>
-
-        <div>
-          <p style="margin-bottom:24px;">
-            <strong style="display:block;font-family:'Fraunces';font-size:24px;margin-bottom:8px;">Des sujets commentés, mais encore mal lus.</strong>
-            Beaucoup de prises de parole décrivent une transformation. Peu font apparaître clairement la tension, le point de bascule et l’arbitrage qu’elle impose.
-          </p>
-
-          <p style="margin-bottom:24px;">
-            <strong style="display:block;font-family:'Fraunces';font-size:24px;margin-bottom:8px;">Une lecture préparée, pas une parole improvisée.</strong>
-            Votre intervention est cadrée à partir d’un angle précis, pour rendre visible ce qui se joue réellement, sans simplification excessive, sans surjeu, sans surexposition inutile.
-          </p>
-
-          <p>
-            <strong style="display:block;font-family:'Fraunces';font-size:24px;margin-bottom:8px;">Une portée renforcée par la mise en regard.</strong>
-            Votre lecture prend davantage de valeur lorsqu’elle apparaît aux côtés d’autres positions engagées sur les mêmes tensions : financement, droit, stratégie, exécution, industrie, territoire.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SPLIT 2 -->
-  <section class="section section-dark">
-    <div class="container">
-      <div class="grid-2">
-        <div>
-          <img class="image" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1400" alt="photo bidon tournage ou réunion" style="border-radius:20px;">
-        </div>
-
-        <div style="display:flex;align-items:center;">
-          <div>
-            <h2 style="margin-bottom:24px;">C’est là que les décisions changent de nature.</h2>
-
-            <p style="margin-bottom:20px;">
-              <strong style="display:block;font-family:'Fraunces';font-size:24px;margin-bottom:8px;color:#fff;">Les situations que nous travaillons sont rarement théoriques.</strong>
-              Une activité se développe, un projet avance, une transformation s’accélère, puis les équilibres habituels cessent de suffire pour décider comme avant.
-            </p>
-
-            <p style="margin-bottom:20px;">
-              <strong style="display:block;font-family:'Fraunces';font-size:24px;margin-bottom:8px;color:#fff;">Le sujet n’est pas seulement ce qui change, mais ce que ce changement oblige à arbitrer.</strong>
-              Les tensions peuvent se situer entre financement, cadre, marché, exécution, chaîne productive, rythme de transformation ou allocation du risque.
-            </p>
-
-            <p>
-              <strong style="display:block;font-family:'Fraunces';font-size:24px;margin-bottom:8px;color:#fff;">C’est à ce moment-là qu’une parole bien située devient décisive.</strong>
-              Non pour commenter de loin, mais pour aider à comprendre à partir de quand une situation change de nature, qui elle affecte réellement, et ce qu’elle oblige à décider.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CYCLES -->
-  <section class="section section-light" id="cycles-home">
-    <div class="container">
-      <div style="max-width:900px;margin:auto;text-align:center;">
-        <h2>Deux cycles pour lire ce qui se transforme réellement.</h2>
-        <p style="max-width:760px;margin:18px auto 0;">
-          Chaque cycle ouvre un ensemble de conversations construites à partir de points de bascule réels, où plusieurs lectures se croisent sans jamais se confondre.
-        </p>
-      </div>
-
-      <div class="cards" style="margin-top:40px;">
-        <article class="card">
-          <h3 style="font-family:'Fraunces';font-size:26px;margin-bottom:10px;">Logement &amp; fabrique des territoires</h3>
-          <p style="margin-bottom:14px;">Des situations où un projet tient encore en apparence, mais où ses arbitrages se tendent déjà entre financement, droit, marché, exécution et territoire.</p>
-          <p style="font-family:'IBM Plex Sans';font-size:12px;letter-spacing:.1em;text-transform:uppercase;">
-            <a href="conversations/logement.html" style="color:#111;text-decoration:none;margin-right:18px;">Explorer les conversations</a>
-            <a href="positions/logement.html" style="color:#111;text-decoration:none;">Explorer les positions</a>
-          </p>
-        </article>
-
-        <article class="card">
-          <h3 style="font-family:'Fraunces';font-size:26px;margin-bottom:10px;">Industrie &amp; transformation des territoires</h3>
-          <p style="margin-bottom:14px;">Des situations où l’activité se poursuit, mais où ses arbitrages se tendent déjà entre compétitivité, chaîne productive, transformation, dépendances et allocation du risque.</p>
-          <p style="font-family:'IBM Plex Sans';font-size:12px;letter-spacing:.1em;text-transform:uppercase;">
-            <a href="conversations/industrie.html" style="color:#111;text-decoration:none;margin-right:18px;">Explorer les conversations</a>
-            <a href="positions/industrie.html" style="color:#111;text-decoration:none;">Explorer les positions</a>
-          </p>
-        </article>
-      </div>
-
-      <p style="max-width:820px;margin:22px auto 0;text-align:center;font-size:14px;color:#666;">
-        Le site permet de comprendre la logique des cycles en cours. La pertinence d’un point d’entrée, d’un angle ou d’une intervention se travaille ensuite dans le cadre d’un échange éditorial.
-      </p>
-    </div>
-  </section>
-
-  <!-- POSITIONS -->
-  <section class="section section-dark" id="positions-home">
-    <div class="container">
-      <div style="max-width:900px;margin:auto;text-align:center;">
-        <h2>Des positions qui rendent les arbitrages plus lisibles</h2>
-        <p style="max-width:820px;margin:18px auto 0;opacity:.82;">
-          Toutes les décisions ne sont pas prises par ceux qui les portent officiellement. Certaines positions sécurisent, qualifient, rendent possible, objectivent ou orientent ce que les autres peuvent réellement faire. Les cycles en cours donnent à voir ces positions sans les réduire à un métier ni à une place unique dans l’organigramme.
-        </p>
-      </div>
-
-      <div class="cards" style="margin-top:40px;">
-        <article class="card">
-          <h3 style="font-family:'Fraunces';font-size:26px;margin-bottom:10px;">Positions — Opérations immobilières</h3>
-          <p style="margin-bottom:14px;">Des positions depuis lesquelles les arbitrages réels deviennent plus lisibles : sécurité juridique, montage, financement, faisabilité, marché, capital, exécution.</p>
-          <p style="font-family:'IBM Plex Sans';font-size:12px;letter-spacing:.1em;text-transform:uppercase;">
-            <a href="positions/logement.html" style="color:#fff;text-decoration:none;">Explorer les positions - Opérations immobilières</a>
-          </p>
-        </article>
-
-        <article class="card">
-          <h3 style="font-family:'Fraunces';font-size:26px;margin-bottom:10px;">Positions — Industrie</h3>
-          <p style="margin-bottom:14px;">Des positions qui rendent plus lisibles les arbitrages réels de l’industrie : stratégie, opérations, financement, cadre réglementaire, chaîne productive, dépendances, risque.</p>
-          <p style="font-family:'IBM Plex Sans';font-size:12px;letter-spacing:.1em;text-transform:uppercase;">
-            <a href="positions/industrie.html" style="color:#fff;text-decoration:none;">Explorer les positions - Industrie</a>
-          </p>
-        </article>
-      </div>
-
-      <p style="max-width:820px;margin:22px auto 0;text-align:center;font-size:14px;opacity:.68;">
-        Aucune de ces positions ne décide seule. Chacune éclaire, infléchit ou rend possible ce que les autres peuvent réellement décider.
-      </p>
-    </div>
-  </section>
-
-  <!-- DISPOSITIF -->
-  <section class="section section-light" id="dispositif-home">
-    <div class="container">
-      <div class="grid-2">
-        <div>
-          <h2>Un dispositif éditorial conçu pour faire tenir une parole exigeante</h2>
-          <p style="margin-top:16px;">
-            Votre contribution est préparée en amont, tenue dans un cadre éditorial précis, puis produite dans des conditions qui permettent d’en prolonger la portée.
-          </p>
-        </div>
-
-        <div class="cards" style="grid-template-columns:1fr 1fr;">
-          <article class="card">
-            <h3 style="font-family:'Fraunces';font-size:22px;margin-bottom:10px;">Partir d’un angle précis</h3>
-            <p>Chaque intervention est cadrée à partir d’une situation identifiable, d’une tension réelle et d’un point de bascule que votre position permet d’éclairer.</p>
-          </article>
-
-          <article class="card">
-            <h3 style="font-family:'Fraunces';font-size:22px;margin-bottom:10px;">Préparer une parole tenable publiquement</h3>
-            <p>Le travail éditorial permet de rendre votre lecture plus claire, plus située et plus utile, sans vous pousser vers une parole artificielle ou surexposée.</p>
-          </article>
-
-          <article class="card">
-            <h3 style="font-family:'Fraunces';font-size:22px;margin-bottom:10px;">Produire une lecture qui reste exploitable</h3>
-            <p>L’émission courte et son prolongement écrit permettent de conserver une trace structurée de votre lecture, réutilisable dans votre écosystème professionnel.</p>
-          </article>
-
-          <article class="card">
-            <h3 style="font-family:'Fraunces';font-size:22px;margin-bottom:10px;">Mettre les positions en regard</h3>
-            <p>Votre intervention reste singulière, mais elle gagne en portée lorsqu’elle apparaît aux côtés d’autres lectures engagées sur les mêmes tensions et les mêmes arbitrages.</p>
-          </article>
-        </div>
-      </div>
-
-      <p style="margin-top:28px;text-align:center;font-family:'IBM Plex Sans';font-size:12px;letter-spacing:.1em;text-transform:uppercase;">
-        <a href="dispositif.html" style="color:#111;text-decoration:none;">Découvrir le dispositif</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- VALEUR -->
-  <section class="section section-light" id="valeur-home" style="background:#f7f7f7;">
-    <div class="container">
-      <div style="max-width:900px;margin:auto;text-align:center;">
-        <h2>Ce que votre prise de parole peut réellement changer</h2>
-        <p style="max-width:760px;margin:18px auto 0;">
-          Une prise de parole bien préparée ne modifie pas seulement ce qui est dit. Elle modifie aussi la manière dont votre position est comprise, retenue et sollicitée dans votre écosystème professionnel.
-        </p>
-      </div>
-
-      <div style="display:grid;gap:20px;max-width:980px;margin:40px auto 0;">
-        <article class="card">
-          <h3 style="font-family:'Fraunces';font-size:24px;margin-bottom:10px;">01 — Rendre votre position plus lisible</h3>
-          <p>Votre contribution aide à comprendre à quel moment votre lecture devient décisive : ce qu’elle sécurise, ce qu’elle qualifie, ce qu’elle rend possible ou ce qu’elle permet d’arbitrer autrement.</p>
-        </article>
-
-        <article class="card">
-          <h3 style="font-family:'Fraunces';font-size:24px;margin-bottom:10px;">02 — Différencier votre parole</h3>
-          <p>Dans un univers où beaucoup de prises de parole se ressemblent, votre lecture devient plus située, plus identifiable et plus difficile à confondre avec une expertise générique.</p>
-        </article>
-
-        <article class="card">
-          <h3 style="font-family:'Fraunces';font-size:24px;margin-bottom:10px;">03 — Ouvrir des échanges plus qualifiés</h3>
-          <p>La prise de parole réalisée peut ensuite nourrir des prises de contact, des recommandations et des rapprochements plus cohérents avec votre positionnement réel et les sujets sur lesquels vous souhaitez être attendu.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ACCES -->
-  <section class="section section-light" id="acces-home">
-    <div class="container">
-      <div style="max-width:900px;margin:auto;text-align:center;">
-        <h2>Accéder au dispositif</h2>
-        <p style="max-width:760px;margin:18px auto 0;">
-          Les échanges sont ouverts aux personnes déjà identifiées, ainsi qu’aux acteurs qui souhaitent signaler la pertinence de leur position dans l’un des cycles en cours.
-        </p>
-      </div>
-
-      <div class="grid-2" style="margin-top:40px;">
-        <article class="card">
-          <h3 style="font-family:'Fraunces';font-size:26px;margin-bottom:10px;">Vous avez déjà été contacté</h3>
-          <p style="margin-bottom:16px;">Cet échange permet de vérifier la justesse de votre angle, la portée réelle de votre lecture et les conditions d’une intervention crédible, utile et tenable.</p>
-          <a href="demander-un-echange-editorial.html" style="display:inline-block;padding:12px 18px;background:#111;color:#fff;text-decoration:none;border-radius:999px;font-family:'IBM Plex Sans';font-size:12px;letter-spacing:.1em;text-transform:uppercase;">Demander un échange éditorial</a>
-          <p style="margin-top:16px;font-size:14px;color:#666;">L’échange éditorial ne vaut pas engagement automatique. Il sert à vérifier la pertinence de l’angle, la qualité de la lecture et les conditions de préparation.</p>
-        </article>
-
-        <article class="card">
-          <h3 style="font-family:'Fraunces';font-size:26px;margin-bottom:10px;">Vous n’avez pas été contacté</h3>
-          <p style="margin-bottom:16px;">Vous pouvez signaler la pertinence de votre lecture sur l’un des sujets ou cycles en cours. Chaque signalement est examiné au regard du travail éditorial engagé.</p>
-          <a href="proposer-une-contribution.html" style="display:inline-block;padding:12px 18px;background:#111;color:#fff;text-decoration:none;border-radius:999px;font-family:'IBM Plex Sans';font-size:12px;letter-spacing:.1em;text-transform:uppercase;">Signaler une contribution</a>
-        </article>
-      </div>
-
-      <p style="max-width:820px;margin:22px auto 0;text-align:center;font-size:14px;color:#666;">
-        Les positions visibles sur le site ne valent pas ouverture générale. Elles donnent à comprendre les types de lectures, de tensions et d’interventions que les cycles en cours cherchent à mettre en regard.
-      </p>
-    </div>
-        </section>
-    </main>
-
-<footer style="background:#000;color:#aaa;padding:40px 0;text-align:center;font-family:'IBM Plex Sans';font-size:12px;letter-spacing:.08em;text-transform:uppercase;">
-  <div class="container">
-    En Plateau — dispositif éditorial et audiovisuel
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Faire émerger une parole qui compte.</h1>
+    <p>
+      En Plateau prépare des prises de parole à partir de tensions réelles,
+      pour éclairer ce qui se transforme dans les organisations et les territoires.
+    </p>
+    <button>Demander un échange éditorial</button>
   </div>
-</footer>
+</section>
+
+<!-- SPLIT -->
+<section class="split">
+  <div class="split-left">
+    <h2>Vous intervenez là où une expertise générique ne suffit plus.</h2>
+  </div>
+
+  <div class="split-right">
+    <div class="split-block">
+      <h3>Des sujets commentés, mais encore mal lus</h3>
+      <p>Peu de prises de parole rendent visible la tension réelle.</p>
+    </div>
+
+    <div class="split-block">
+      <h3>Une lecture préparée</h3>
+      <p>Votre intervention est cadrée pour éclairer ce qui se joue réellement.</p>
+    </div>
+
+    <div class="split-block">
+      <h3>Une portée renforcée</h3>
+      <p>Votre lecture prend de la valeur en étant mise en regard.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CYCLES -->
+<section class="cycles">
+  <h2>Deux cycles pour lire ce qui se transforme réellement</h2>
+
+  <div class="cycles-grid">
+
+    <div class="cycle">
+      <h3>Logement & territoires</h3>
+      <p>Des situations où les arbitrages se tendent entre financement, droit et exécution.</p>
+      <a href="#">Explorer →</a>
+    </div>
+
+    <div class="cycle">
+      <h3>Industrie & transformation</h3>
+      <p>Des situations où les décisions se jouent entre compétitivité et dépendances.</p>
+      <a href="#">Explorer →</a>
+    </div>
+
+  </div>
+</section>
 
 </body>
 </html>
