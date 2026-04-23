@@ -1235,6 +1235,314 @@
         padding-top:0;
       }
     }
+    /* =========================================================
+   CORRECTIONS FINALES — HOME INDEX2
+   ========================================================= */
+
+
+/* 1. HERO — supprimer l’effet rectangle sombre derrière le titre
+   TROUVER dans .hero::after ou .hero::before tout fond trop rectangulaire
+   REMPLACER / AJOUTER :
+*/
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.68) 0%,
+    rgba(0,0,0,0.42) 42%,
+    rgba(0,0,0,0.18) 72%,
+    rgba(0,0,0,0.38) 100%
+  );
+  z-index: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 72% 54%, rgba(120,150,210,.18), transparent 34%),
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.04), transparent 20%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* 2. SECTION “VOUS INTERVENEZ…” — image fissures plus sombre
+   TROUVER :
+   .split-dark { ... background:url('images/dispositif-miroir-brise.jpg') ... }
+   REMPLACER par :
+*/
+
+#pourquoi-cycle .split-dark {
+  position: relative;
+  overflow: hidden;
+  background: url("images/bascule-sol-fissures.jpg") center/cover no-repeat !important;
+}
+
+#pourquoi-cycle .split-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,0.82) 0%,
+      rgba(0,0,0,0.68) 48%,
+      rgba(0,0,0,0.56) 100%
+    );
+  z-index: 1;
+}
+
+#pourquoi-cycle .split-dark h2 {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* 3. SECTION “C’EST LÀ QUE LES DÉCISIONS…” — remplacer le fond chaise/faisceau par l’allumette
+   TROUVER dans la section #intro-en-plateau :
+   images/faisceau-lumiere.jpg
+   REMPLACER par :
+   images/allumette-flamme.jpg
+*/
+
+#intro-en-plateau .abstract-visual {
+  position: relative;
+  background: #05080c !important;
+}
+
+#intro-en-plateau .abstract-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/allumette-flamme.jpg") center/cover no-repeat;
+  opacity: .62;
+  filter: grayscale(8%) contrast(122%) brightness(.66);
+  z-index: 0;
+}
+
+#intro-en-plateau .abstract-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 52% 42%,
+      rgba(255,170,80,.26),
+      transparent 34%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.78) 0%,
+      rgba(0,0,0,.44) 48%,
+      rgba(0,0,0,.74) 100%
+    );
+  z-index: 1;
+}
+
+
+/* 4. CYCLES — harmoniser les couleurs chantier / industrie
+   TROUVER :
+   .cycle-visual { ... }
+   REMPLACER / AJOUTER :
+*/
+
+.cycle-visual {
+  height: 250px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(78%) contrast(112%) brightness(.74);
+}
+
+.cycle-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10,13,18,.06),
+      rgba(10,13,18,.42)
+    ),
+    rgba(18,32,48,.20);
+}
+
+.cycle-card:nth-child(2) .cycle-visual {
+  filter: grayscale(88%) contrast(116%) brightness(.70);
+}
+
+
+/* 5. POSITIONS — assombrir les deux box et le paragraphe d’intro
+   TROUVER :
+   .position-card { ... }
+   REMPLACER par :
+*/
+
+.position-card {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,10,18,.88),
+      rgba(5,10,18,.76)
+    );
+  border: 1px solid rgba(255,255,255,.16);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 22px 60px rgba(0,0,0,.34);
+}
+
+.position-card::after {
+  background: rgba(0,0,0,.46);
+}
+
+#positions-home .section-intro {
+  background: rgba(3,7,12,.48);
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 18px;
+  backdrop-filter: blur(5px);
+}
+
+
+/* 6. DISPOSITIF — miroir uniquement sur la partie gauche
+   TROUVER :
+   .dispositif-shell::before { background:url("images/dispositif-miroir-brise.jpg") center/cover no-repeat; ... }
+   REMPLACER par :
+*/
+
+.dispositif-shell::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48%;
+  height: 100%;
+  background: url("images/dispositif-miroir-brise.jpg") center/cover no-repeat;
+  opacity: .18;
+  filter: grayscale(100%) contrast(112%) brightness(.92);
+  z-index: 0;
+}
+
+.dispositif-shell::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 58%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,.72) 0%,
+    rgba(255,255,255,.38) 45%,
+    rgba(255,255,255,0) 100%
+  );
+  z-index: 0;
+}
+
+.dispositif-shell .container {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* 7. IMPACT — passer en section très foncée + remonter la goutte
+   TROUVER :
+   .impact-shell::before { ... background: linear-gradient(...), url("images/impact-onde-eau.jpg") ... }
+   REMPLACER par :
+*/
+
+.impact-shell {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,8,12,.86),
+      rgba(5,8,12,.94)
+    ),
+    url("images/impact-onde-eau.jpg") center 34% / cover no-repeat;
+  color: #fff;
+}
+
+.impact-shell::before,
+.impact-shell::after {
+  display: none;
+}
+
+.impact-shell .section-head h2 {
+  color: #fff;
+}
+
+.impact-shell .section-intro {
+  color: rgba(255,255,255,.76);
+}
+
+.impact-shell .value-block {
+  background: rgba(5,10,18,.78);
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 22px 60px rgba(0,0,0,.30);
+}
+
+.impact-shell .value-body h3 {
+  color: #fff;
+}
+
+.impact-shell .value-body p {
+  color: rgba(255,255,255,.76);
+}
+
+.impact-shell .value-index {
+  color: #9fc3ff;
+}
+
+
+/* 8. ACCÈS — ne presque rien toucher
+   GARDER la section telle quelle.
+   Juste vérifier que l’image reste subtile :
+*/
+
+.access-shell::before {
+  opacity: .10;
+  filter: grayscale(100%) contrast(112%) brightness(.95);
+}
+
+
+/* 9. Nettoyage important — supprimer les anciennes références image
+   CHERCHER dans le HTML/CSS :
+   images/faisceau-lumiere.jpg
+   images/chaise.jpg
+   images/dispositif-miroir-brise.jpg dans #pourquoi-cycle
+   REMPLACER selon les cas :
+   - #intro-en-plateau => images/allumette-flamme.jpg
+   - #pourquoi-cycle => images/bascule-sol-fissures.jpg
+   - dispositif uniquement => images/dispositif-miroir-brise.jpg
+*/
+
+
+/* 10. Forcer une meilleure lisibilité globale des textes sur fond sombre */
+
+.section-dark p,
+.hero-note,
+.hero-access-note {
+  color: rgba(255,255,255,.72);
+}
+
+.section-dark h2,
+.section-dark h3,
+.hero-title {
+  text-shadow: 0 8px 30px rgba(0,0,0,.28);
+}
   </style>
 </head>
 <body>
