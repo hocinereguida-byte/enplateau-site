@@ -1543,6 +1543,41 @@
 .hero-title {
   text-shadow: 0 8px 30px rgba(0,0,0,.28);
 }
+    /* 1. IMPACT — déplacer la goutte hors du texte et la rendre visible */
+
+.impact-shell {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,8,12,.82),
+      rgba(5,8,12,.92)
+    ),
+    url("images/impact-onde-eau.jpg") center 22% / cover no-repeat;
+}
+
+/* Si la goutte reste derrière le titre, tester ensuite :
+   center 16%
+*/
+
+
+/* 2. DISPOSITIF — supprimer la coupure nette du miroir */
+
+.dispositif-shell::before {
+  width: 62%;
+  opacity: .20;
+  background: url("images/dispositif-miroir-brise.jpg") left center / cover no-repeat;
+}
+
+.dispositif-shell::after {
+  width: 72%;
+  background: linear-gradient(
+    90deg,
+    rgba(245,247,250,.10) 0%,
+    rgba(245,247,250,.35) 35%,
+    rgba(245,247,250,.72) 62%,
+    rgba(245,247,250,1) 100%
+  );
+}
   </style>
 </head>
 <body>
