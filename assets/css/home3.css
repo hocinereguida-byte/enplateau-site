@@ -1,6 +1,5 @@
 :root {
   --h3-bg: #0a0d12;
-  --h3-bg-soft: #10151c;
   --h3-paper: #ffffff;
   --h3-paper-soft: #f5f7fa;
   --h3-ink: #111827;
@@ -9,14 +8,43 @@
   --h3-text: #f8fafc;
   --h3-text-soft: rgba(248,250,252,.82);
   --h3-text-muted: rgba(248,250,252,.58);
-  --h3-line-dark: rgba(255,255,255,.10);
   --h3-line-light: rgba(17,24,39,.10);
-  --h3-accent: #8fb7ff;
   --h3-accent-soft: #b8d0ff;
   --h3-container: 1240px;
   --h3-shadow-dark: 0 24px 70px rgba(0,0,0,.32);
   --h3-shadow-light: 0 18px 46px rgba(15,23,42,.08);
 }
+
+/* HEADER / FOOTER */
+
+.site-header {
+  background: rgba(8,11,16,.94) !important;
+  border-bottom: 1px solid rgba(255,255,255,.14) !important;
+}
+
+.site-brand__wordmark {
+  font-size: 2.05rem !important;
+}
+
+.desktop-editorial-nav__link,
+.site-header__cta {
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+}
+
+.footer {
+  padding-top: 72px !important;
+}
+
+.footer p,
+.footer li,
+.footer-col a,
+.footer-col .link-button {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+/* BASE */
 
 .home-page-3 main {
   font-family: "IBM Plex Sans", sans-serif;
@@ -116,9 +144,10 @@
 
 .home3-note {
   max-width: 760px;
-  font-size: .78rem;
-  line-height: 1.64;
+  font-size: .70rem !important;
+  line-height: 1.55;
   color: var(--h3-text-muted);
+  opacity: .72;
 }
 
 .home3-subnote {
@@ -133,6 +162,8 @@
 .home3-subnote.dark {
   color: var(--h3-text-muted);
 }
+
+/* LIENS GÉNÉRIQUES */
 
 .home3-actions,
 .home3-side-links,
@@ -246,8 +277,25 @@
   margin-bottom: 18px;
 }
 
-.home3-actions a:first-child {
-  color: #fff;
+.home3-hero .home3-actions a:first-child {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: #ffffff !important;
+  border: 1px solid #ffffff !important;
+  color: #111827 !important;
+  box-shadow: 0 14px 34px rgba(0,0,0,.26);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.home3-hero .home3-actions a:first-child::after {
+  display: none !important;
 }
 
 .home3-actions a:last-child {
@@ -334,6 +382,12 @@
   font-size: 1rem;
   line-height: 1.8;
   color: var(--h3-text-soft);
+}
+
+.home3-credibility .home3-note {
+  font-size: .70rem !important;
+  line-height: 1.55 !important;
+  opacity: .72 !important;
 }
 
 .home3-film {
@@ -432,6 +486,8 @@
   line-height: .94;
   letter-spacing: -.035em;
   font-weight: 600;
+  color: #ffffff !important;
+  text-shadow: 0 10px 34px rgba(0,0,0,.45);
   max-width: 10ch;
   margin: 0;
 }
@@ -496,6 +552,16 @@
     linear-gradient(90deg, rgba(0,0,0,.78), rgba(0,0,0,.50)),
     url("../../images/allumette-flamme.jpg") center/cover no-repeat;
   filter: grayscale(8%) contrast(122%) brightness(.72);
+}
+
+.home3-decision-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 52% 38%, rgba(255,180,80,.42), rgba(255,120,40,.16) 24%, transparent 44%),
+    linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.36));
+  pointer-events: none;
 }
 
 .home3-decision-copy {
@@ -652,7 +718,7 @@
   left: 0;
   width: 4px;
   height: 100%;
-  background: linear-gradient(180deg, var(--h3-accent), var(--h3-accent-soft));
+  background: linear-gradient(180deg, #8fb7ff, #b8d0ff);
 }
 
 .home3-position-grid h3 {
@@ -736,9 +802,9 @@
 
 .home3-dispositif-cards article {
   border-radius: 24px;
-  background: rgba(255,255,255,.88);
+  background: #ffffff !important;
   backdrop-filter: blur(10px);
-  border: 1px solid var(--h3-line-light);
+  border: 1px solid rgba(17,24,39,.10) !important;
   box-shadow: var(--h3-shadow-light);
   padding: 26px 22px 22px;
   position: relative;
@@ -901,9 +967,47 @@
   color: var(--h3-ink-soft);
 }
 
-.home3-access-grid a {
-  display: inline-flex;
-  color: var(--h3-ink);
+.home3-access-grid article:first-child a {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: #111827 !important;
+  border: 1px solid #111827 !important;
+  color: #ffffff !important;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.home3-access-grid article:first-child a::after {
+  display: none !important;
+}
+
+.home3-access-grid article:nth-child(2) a {
+  display: inline-flex !important;
+  min-height: auto;
+  padding: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  border: none !important;
+  color: #355785 !important;
+  box-shadow: none;
+}
+
+.home3-access-grid article:nth-child(2) a::after {
+  display: block !important;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 1px;
+  background: rgba(53,87,133,.34);
+  opacity: 1;
 }
 
 .home3-note-light {
@@ -982,376 +1086,4 @@
   .home3-values span {
     padding-top: 0;
   }
-   }
-/* =========================================================
-   CORRECTIONS FINES HOME3
-   ========================================================= */
-
-/* 1. Crédibilité — footnote plus petite */
-#credibilite-home .cred-note,
-#credibilite-home .credibility-note,
-#credibilite-home .home3-note {
-  font-size: 0.70rem;
-  line-height: 1.55;
-  opacity: 0.72;
-}
-
-/* 2. Fissures — titre bien blanc */
-#pourquoi-cycle .split-dark h2,
-#pourquoi-cycle .home3-split-title h2,
-#pourquoi-cycle .split-title {
-  color: #ffffff !important;
-  text-shadow: 0 10px 34px rgba(0,0,0,.45);
-}
-
-/* 3. Allumette — halo lumineux autour de la flamme */
-#intro-en-plateau .abstract-visual::after,
-#intro-en-plateau .home3-decision-visual::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(
-      circle at 52% 42%,
-      rgba(255, 170, 80, 0.34),
-      rgba(255, 120, 40, 0.12) 24%,
-      transparent 42%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,.22),
-      rgba(0,0,0,.50)
-    );
-  pointer-events: none;
-}
-
-/* 4. Accès — CTA en boutons noirs comme index2 */
-#acces-home .btn-dark,
-#acces-home .access-card a,
-#acces-home .home3-access-grid a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 0 20px;
-  border-radius: 999px;
-  background: #111827;
-  border: 1px solid #111827;
-  color: #ffffff !important;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-#acces-home .btn-dark::after,
-#acces-home .access-card a::after,
-#acces-home .home3-access-grid a::after {
-  display: none;
-}
-
-/* =========================================================
-   AJUSTEMENTS HOME3 — HEADER / FOOTER / CTA / DISPOSITIF
-   ========================================================= */
-
-/* HEADER plus statutaire */
-.site-header {
-  background: rgba(8, 11, 16, 0.94) !important;
-  border-bottom: 1px solid rgba(255,255,255,.14) !important;
-}
-
-.site-brand__wordmark {
-  font-size: 2.05rem !important;
-  letter-spacing: -0.035em;
-}
-
-.desktop-editorial-nav__link,
-.site-header__cta {
-  font-size: 11.5px !important;
-  font-weight: 600 !important;
-  opacity: 1;
-}
-
-/* FOOTER plus statutaire */
-.footer {
-  padding-top: 72px !important;
-  padding-bottom: 36px !important;
-}
-
-.footer-signature {
-  font-size: 1.18rem !important;
-  line-height: 1.45 !important;
-}
-
-.footer-title {
-  font-size: 12px !important;
-  color: rgba(244,233,220,.86) !important;
-}
-
-.footer p,
-.footer li,
-.footer-col a,
-.footer-col .link-button {
-  font-size: 14px !important;
-  line-height: 1.7 !important;
-}
-
-/* HERO — bouton blanc pour “Demander un échange éditorial” */
-#hero-home .hero-actions .link:first-child {
-  min-height: 46px;
-  padding: 0 20px;
-  border-radius: 999px;
-  background: #ffffff;
-  color: #111827 !important;
-  font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  box-shadow: 0 14px 34px rgba(0,0,0,.22);
-}
-
-#hero-home .hero-actions .link:first-child::after {
-  display: none;
-}
-
-/* HERO — second CTA reste lien discret */
-#hero-home .hero-actions .link:nth-child(2) {
-  color: rgba(255,255,255,.78) !important;
-}
-
-/* DISPOSITIF — cartes blanches, pas rose clair */
-#dispositif-home .dispositif-card {
-  background: rgba(255,255,255,.94) !important;
-  border-color: rgba(17,24,39,.10) !important;
-}
-
-#dispositif-home .dispositif-card h3 {
-  color: #111827 !important;
-}
-
-#dispositif-home .dispositif-card p {
-  color: #4b5563 !important;
-}
-
-/* ACCÈS — CTA principal noir conservé */
-#acces-home .access-entry--primary .link,
-#acces-home .access-card.primary .btn-dark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  padding: 0 20px;
-  border-radius: 999px;
-  background: #111827;
-  color: #ffffff !important;
-  font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-
-#acces-home .access-entry--primary .link::after {
-  display: none;
-}
-
-/* ACCÈS — “Signaler une contribution” en lien discret, pas bouton */
-#acces-home .access-entry--secondary .link,
-#acces-home .access-card:not(.primary) .btn-dark {
-  display: inline-flex;
-  min-height: auto;
-  padding: 0;
-  border-radius: 0;
-  background: transparent !important;
-  border: 0 !important;
-  color: #355785 !important;
-  box-shadow: none !important;
-  font-family: var(--font-ui);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-
-#acces-home .access-entry--secondary .link::after,
-#acces-home .access-card:not(.primary) .btn-dark::after {
-  display: block;
-  background: rgba(53,87,133,.34);
-}
-
-
-/* =========================================================
-   OVERRIDES STRICTS INDEX3 — CTA / DISPOSITIF / ACCÈS
-   À placer tout à la fin de home3.css
-   ========================================================= */
-
-/* HERO — bouton blanc réel */
-.hero .hero-actions a,
-.hero .hero-actions .btn-primary {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-height: 48px !important;
-  padding: 0 22px !important;
-  border-radius: 999px !important;
-  background: #ffffff !important;
-  border: 1px solid #ffffff !important;
-  color: #111827 !important;
-  box-shadow: 0 14px 34px rgba(0,0,0,.26) !important;
-  font-family: "IBM Plex Sans", sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: .14em !important;
-  text-transform: uppercase !important;
-  text-decoration: none !important;
-}
-
-.hero .hero-actions a::after,
-.hero .hero-actions .btn-primary::after {
-  display: none !important;
-}
-
-/* DISPOSITIF — cartes vraiment blanches */
-#dispositif-home .dispositif-card {
-  background: rgba(255,255,255,.96) !important;
-  background-color: #ffffff !important;
-  border: 1px solid rgba(17,24,39,.10) !important;
-}
-
-#dispositif-home .dispositif-card h3 {
-  color: #111827 !important;
-}
-
-#dispositif-home .dispositif-card p {
-  color: #4b5563 !important;
-}
-
-/* ACCÈS — CTA principal noir */
-#acces-home .access-card.primary a,
-#acces-home .access-card.primary .btn-dark {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-height: 48px !important;
-  padding: 0 22px !important;
-  border-radius: 999px !important;
-  background: #111827 !important;
-  border: 1px solid #111827 !important;
-  color: #ffffff !important;
-  box-shadow: none !important;
-  font-family: "IBM Plex Sans", sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: .14em !important;
-  text-transform: uppercase !important;
-  text-decoration: none !important;
-}
-
-/* ACCÈS — CTA secondaire en simple lien */
-#acces-home .access-card:not(.primary) a,
-#acces-home .access-card:not(.primary) .btn-dark {
-  display: inline-flex !important;
-  min-height: auto !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  border: 0 !important;
-  color: #355785 !important;
-  box-shadow: none !important;
-  font-family: "IBM Plex Sans", sans-serif !important;
-  font-size: 10px !important;
-  font-weight: 700 !important;
-  letter-spacing: .12em !important;
-  text-transform: uppercase !important;
-  text-decoration: none !important;
-}
-
-#acces-home .access-card:not(.primary) a::after {
-  content: "" !important;
-  position: absolute !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: -2px !important;
-  height: 1px !important;
-  background: rgba(53,87,133,.34) !important;
-}
-
-/* =========================================================
-   FIX FINAL HOME3 — OVERRIDES QUI FORCENT LES CHANGEMENTS
-   ========================================================= */
-
-/* HERO — bouton blanc */
-.home3-hero .home3-actions a:first-child {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-height: 48px !important;
-  padding: 0 22px !important;
-  border-radius: 999px !important;
-  background: #ffffff !important;
-  border: 1px solid #ffffff !important;
-  color: #111827 !important;
-  box-shadow: 0 14px 34px rgba(0,0,0,.26) !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: .14em !important;
-  text-transform: uppercase !important;
-}
-
-.home3-hero .home3-actions a:first-child::after {
-  display: none !important;
-}
-
-/* DISPOSITIF — cartes blanches */
-.home3-dispositif-cards article {
-  background: #ffffff !important;
-  border-color: rgba(17,24,39,.10) !important;
-}
-
-/* ACCÈS — CTA principal noir */
-.home3-access-grid article:first-child a {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-height: 48px !important;
-  padding: 0 22px !important;
-  border-radius: 999px !important;
-  background: #111827 !important;
-  border: 1px solid #111827 !important;
-  color: #ffffff !important;
-}
-
-.home3-access-grid article:first-child a::after {
-  display: none !important;
-}
-
-/* ACCÈS — CTA secondaire en lien */
-.home3-access-grid article:nth-child(2) a {
-  display: inline-flex !important;
-  padding: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  color: #355785 !important;
-}
-
-.home3-access-grid article:nth-child(2) a::after {
-  display: block !important;
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -3px;
-  height: 1px;
-  background: rgba(53,87,133,.34);
-}
-
-/* CRÉDIBILITÉ — footnote */
-.home3-credibility .home3-note {
-  font-size: .70rem !important;
-  opacity: .72 !important;
-}
-
-
+                                                  }
