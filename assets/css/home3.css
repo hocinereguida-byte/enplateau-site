@@ -1052,4 +1052,134 @@
   display: none;
 }
 
+/* =========================================================
+   AJUSTEMENTS HOME3 — HEADER / FOOTER / CTA / DISPOSITIF
+   ========================================================= */
+
+/* HEADER plus statutaire */
+.site-header {
+  background: rgba(8, 11, 16, 0.94) !important;
+  border-bottom: 1px solid rgba(255,255,255,.14) !important;
+}
+
+.site-brand__wordmark {
+  font-size: 2.05rem !important;
+  letter-spacing: -0.035em;
+}
+
+.desktop-editorial-nav__link,
+.site-header__cta {
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  opacity: 1;
+}
+
+/* FOOTER plus statutaire */
+.footer {
+  padding-top: 72px !important;
+  padding-bottom: 36px !important;
+}
+
+.footer-signature {
+  font-size: 1.18rem !important;
+  line-height: 1.45 !important;
+}
+
+.footer-title {
+  font-size: 12px !important;
+  color: rgba(244,233,220,.86) !important;
+}
+
+.footer p,
+.footer li,
+.footer-col a,
+.footer-col .link-button {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+/* HERO — bouton blanc pour “Demander un échange éditorial” */
+#hero-home .hero-actions .link:first-child {
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #111827 !important;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  box-shadow: 0 14px 34px rgba(0,0,0,.22);
+}
+
+#hero-home .hero-actions .link:first-child::after {
+  display: none;
+}
+
+/* HERO — second CTA reste lien discret */
+#hero-home .hero-actions .link:nth-child(2) {
+  color: rgba(255,255,255,.78) !important;
+}
+
+/* DISPOSITIF — cartes blanches, pas rose clair */
+#dispositif-home .dispositif-card {
+  background: rgba(255,255,255,.94) !important;
+  border-color: rgba(17,24,39,.10) !important;
+}
+
+#dispositif-home .dispositif-card h3 {
+  color: #111827 !important;
+}
+
+#dispositif-home .dispositif-card p {
+  color: #4b5563 !important;
+}
+
+/* ACCÈS — CTA principal noir conservé */
+#acces-home .access-entry--primary .link,
+#acces-home .access-card.primary .btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: #111827;
+  color: #ffffff !important;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+#acces-home .access-entry--primary .link::after {
+  display: none;
+}
+
+/* ACCÈS — “Signaler une contribution” en lien discret, pas bouton */
+#acces-home .access-entry--secondary .link,
+#acces-home .access-card:not(.primary) .btn-dark {
+  display: inline-flex;
+  min-height: auto;
+  padding: 0;
+  border-radius: 0;
+  background: transparent !important;
+  border: 0 !important;
+  color: #355785 !important;
+  box-shadow: none !important;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+#acces-home .access-entry--secondary .link::after,
+#acces-home .access-card:not(.primary) .btn-dark::after {
+  display: block;
+  background: rgba(53,87,133,.34);
+}
+
 
