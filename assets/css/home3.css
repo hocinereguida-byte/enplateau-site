@@ -1279,4 +1279,79 @@
   background: rgba(53,87,133,.34) !important;
 }
 
+/* =========================================================
+   FIX FINAL HOME3 — OVERRIDES QUI FORCENT LES CHANGEMENTS
+   ========================================================= */
+
+/* HERO — bouton blanc */
+.home3-hero .home3-actions a:first-child {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 48px !important;
+  padding: 0 22px !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  border: 1px solid #ffffff !important;
+  color: #111827 !important;
+  box-shadow: 0 14px 34px rgba(0,0,0,.26) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: .14em !important;
+  text-transform: uppercase !important;
+}
+
+.home3-hero .home3-actions a:first-child::after {
+  display: none !important;
+}
+
+/* DISPOSITIF — cartes blanches */
+.home3-dispositif-cards article {
+  background: #ffffff !important;
+  border-color: rgba(17,24,39,.10) !important;
+}
+
+/* ACCÈS — CTA principal noir */
+.home3-access-grid article:first-child a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 48px !important;
+  padding: 0 22px !important;
+  border-radius: 999px !important;
+  background: #111827 !important;
+  border: 1px solid #111827 !important;
+  color: #ffffff !important;
+}
+
+.home3-access-grid article:first-child a::after {
+  display: none !important;
+}
+
+/* ACCÈS — CTA secondaire en lien */
+.home3-access-grid article:nth-child(2) a {
+  display: inline-flex !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  color: #355785 !important;
+}
+
+.home3-access-grid article:nth-child(2) a::after {
+  display: block !important;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 1px;
+  background: rgba(53,87,133,.34);
+}
+
+/* CRÉDIBILITÉ — footnote */
+.home3-credibility .home3-note {
+  font-size: .70rem !important;
+  opacity: .72 !important;
+}
+
 
