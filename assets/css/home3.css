@@ -983,3 +983,73 @@
     padding-top: 0;
   }
    }
+/* =========================================================
+   CORRECTIONS FINES HOME3
+   ========================================================= */
+
+/* 1. Crédibilité — footnote plus petite */
+#credibilite-home .cred-note,
+#credibilite-home .credibility-note,
+#credibilite-home .home3-note {
+  font-size: 0.70rem;
+  line-height: 1.55;
+  opacity: 0.72;
+}
+
+/* 2. Fissures — titre bien blanc */
+#pourquoi-cycle .split-dark h2,
+#pourquoi-cycle .home3-split-title h2,
+#pourquoi-cycle .split-title {
+  color: #ffffff !important;
+  text-shadow: 0 10px 34px rgba(0,0,0,.45);
+}
+
+/* 3. Allumette — halo lumineux autour de la flamme */
+#intro-en-plateau .abstract-visual::after,
+#intro-en-plateau .home3-decision-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 52% 42%,
+      rgba(255, 170, 80, 0.34),
+      rgba(255, 120, 40, 0.12) 24%,
+      transparent 42%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.22),
+      rgba(0,0,0,.50)
+    );
+  pointer-events: none;
+}
+
+/* 4. Accès — CTA en boutons noirs comme index2 */
+#acces-home .btn-dark,
+#acces-home .access-card a,
+#acces-home .home3-access-grid a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: #111827;
+  border: 1px solid #111827;
+  color: #ffffff !important;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+#acces-home .btn-dark::after,
+#acces-home .access-card a::after,
+#acces-home .home3-access-grid a::after {
+  display: none;
+}
+
+
