@@ -1400,3 +1400,55 @@ body.page-interior-3 .container {
 .page-conv3-industrie .conv3-mt {
   margin-top: 26px !important;
 }
+/* =========================================================
+   CORRECTIF TAILLE — logement3.html uniquement
+========================================================= */
+
+.page-v3-conversations-logement .page-hero {
+  min-height: auto !important;
+  padding: 82px 0 66px !important;
+}
+
+.page-v3-conversations-logement .page-hero-title {
+  font-size: clamp(2.55rem, 4.6vw, 4.7rem) !important;
+  line-height: .95 !important;
+  max-width: 13ch !important;
+}
+
+.page-v3-conversations-logement .page-hero-sub {
+  font-size: .98rem !important;
+  line-height: 1.65 !important;
+  max-width: 760px !important;
+}
+
+.page-v3-conversations-logement .page-section {
+  padding-top: 72px !important;
+  padding-bottom: 72px !important;
+}
+
+.page-v3-conversations-logement .page-reading h2,
+.page-v3-conversations-logement .section-head h2 {
+  font-size: clamp(2rem, 3vw, 3.3rem) !important;
+  line-height: 1 !important;
+}
+
+.page-v3-conversations-logement .section-intro,
+.page-v3-conversations-logement .page-reading p,
+.page-v3-conversations-logement .page-reading li {
+  font-size: .9rem !important;
+  line-height: 1.6 !important;
+}
+
+.page-v3-conversations-logement .editorial-panel,
+.page-v3-conversations-logement .programme-position,
+.page-v3-conversations-logement .programme-access__item {
+  padding: 22px !important;
+}
+
+.page-v3-conversations-logement .page-shell {
+  gap: 34px !important;
+}
+
+.page-v3-conversations-logement .page-sidebar {
+  top: 108px !important;
+}
