@@ -1401,38 +1401,90 @@ body.page-interior-3 .container {
   margin-top: 26px !important;
 }
 /* =========================================================
-   CORRECTIF TAILLE — logement3.html uniquement
+   CORRECTIF LOGEMENT3 — structure ancienne + proportions V3
 ========================================================= */
 
 .page-v3-conversations-logement .page-hero {
-  min-height: auto !important;
-  padding: 82px 0 66px !important;
+  padding: 96px 0 78px !important;
 }
 
 .page-v3-conversations-logement .page-hero-title {
-  font-size: clamp(2.55rem, 4.6vw, 4.7rem) !important;
-  line-height: .95 !important;
-  max-width: 13ch !important;
+  font-size: clamp(2.9rem, 5.2vw, 5.2rem) !important;
+  line-height: .94 !important;
+  max-width: 980px !important;
 }
 
 .page-v3-conversations-logement .page-hero-sub {
-  font-size: .98rem !important;
-  line-height: 1.65 !important;
-  max-width: 760px !important;
+  max-width: 860px !important;
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
 }
 
-.page-v3-conversations-logement .page-section {
+.page-v3-conversations-logement .page-shell {
+  display: grid !important;
+  grid-template-columns: 260px minmax(0, 1fr) !important;
+  gap: 48px !important;
+  align-items: start !important;
+}
+
+.page-v3-conversations-logement .page-sidebar {
+  position: sticky !important;
+  top: 110px !important;
   padding-top: 72px !important;
-  padding-bottom: 72px !important;
+}
+
+.page-v3-conversations-logement .page-sidebar ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.page-v3-conversations-logement .page-sidebar li + li {
+  margin-top: 8px !important;
+}
+
+.page-v3-conversations-logement .page-sidebar a {
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+  color: var(--p3-ink-soft) !important;
+}
+
+.page-v3-conversations-logement .page-content {
+  min-width: 0 !important;
+}
+
+.page-v3-conversations-logement .page-reading {
+  max-width: 900px !important;
+}
+
+.page-v3-conversations-logement .page-reading > .page-section {
+  padding: 72px 0 !important;
+}
+
+.page-v3-conversations-logement .section-head {
+  text-align: left !important;
+  margin: 0 0 28px !important;
+}
+
+.page-v3-conversations-logement .section-kicker {
+  justify-content: flex-start !important;
 }
 
 .page-v3-conversations-logement .page-reading h2,
 .page-v3-conversations-logement .section-head h2 {
-  font-size: clamp(2rem, 3vw, 3.3rem) !important;
+  font-size: clamp(2rem, 3vw, 3.2rem) !important;
   line-height: 1 !important;
+  text-align: left !important;
 }
 
-.page-v3-conversations-logement .section-intro,
+.page-v3-conversations-logement .section-intro {
+  margin: 0 !important;
+  max-width: 820px !important;
+  font-size: .94rem !important;
+  line-height: 1.65 !important;
+  text-align: left !important;
+}
+
 .page-v3-conversations-logement .page-reading p,
 .page-v3-conversations-logement .page-reading li {
   font-size: .9rem !important;
@@ -1442,13 +1494,27 @@ body.page-interior-3 .container {
 .page-v3-conversations-logement .editorial-panel,
 .page-v3-conversations-logement .programme-position,
 .page-v3-conversations-logement .programme-access__item {
-  padding: 22px !important;
+  padding: 24px !important;
+  border-radius: 22px !important;
 }
 
-.page-v3-conversations-logement .page-shell {
-  gap: 34px !important;
+.page-v3-conversations-logement .programme-access {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 22px !important;
 }
 
-.page-v3-conversations-logement .page-sidebar {
-  top: 108px !important;
+@media (max-width: 1023px) {
+  .page-v3-conversations-logement .page-shell {
+    grid-template-columns: 1fr !important;
+  }
+
+  .page-v3-conversations-logement .page-sidebar {
+    position: static !important;
+    padding-top: 0 !important;
+  }
+
+  .page-v3-conversations-logement .programme-access {
+    grid-template-columns: 1fr !important;
+  }
 }
