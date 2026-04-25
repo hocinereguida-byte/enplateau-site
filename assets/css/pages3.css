@@ -1313,3 +1313,90 @@ body.page-interior-3 .container {
     grid-template-columns: 1fr;
   }
   }
+/* =========================================================
+   CORRECTIF TAILLE — industrie3.html uniquement
+========================================================= */
+
+.page-conv3-industrie .conv3-hero {
+  min-height: auto !important;
+}
+
+.page-conv3-industrie .conv3-hero-grid {
+  padding: 82px 0 66px !important;
+  align-items: center !important;
+}
+
+.page-conv3-industrie .conv3-hero h1 {
+  font-size: clamp(2.55rem, 4.6vw, 4.7rem) !important;
+  line-height: .95 !important;
+  max-width: 13ch !important;
+}
+
+.page-conv3-industrie .conv3-section {
+  padding: 76px 0 !important;
+}
+
+.page-conv3-industrie .conv3-split-title {
+  min-height: 350px !important;
+  padding: 36px !important;
+}
+
+.page-conv3-industrie .conv3-split-title h2 {
+  font-size: clamp(2rem, 3.1vw, 3.2rem) !important;
+  line-height: .98 !important;
+  max-width: 12ch !important;
+}
+
+.page-conv3-industrie .conv3-split-copy {
+  padding: 30px !important;
+}
+
+.page-conv3-industrie .conv3-split-copy > div {
+  padding-bottom: 14px !important;
+  margin-bottom: 14px !important;
+}
+
+.page-conv3-industrie .conv3-decision-visual {
+  min-height: 390px !important;
+}
+
+.page-conv3-industrie .conv3-decision-copy h2,
+.page-conv3-industrie .conv3-head h2,
+.page-conv3-industrie .conv3-dispositif h2 {
+  font-size: clamp(2rem, 3vw, 3.3rem) !important;
+  line-height: 1 !important;
+}
+
+.page-conv3-industrie .conv3-decision-copy > div:not(.conv3-kicker) {
+  padding-bottom: 14px !important;
+  margin-bottom: 14px !important;
+}
+
+.page-conv3-industrie .conv3-decision-copy h3,
+.page-conv3-industrie .conv3-split-copy h3,
+.page-conv3-industrie .conv3-position-grid h3 {
+  font-size: 1.18rem !important;
+}
+
+.page-conv3-industrie .conv3-decision-copy p,
+.page-conv3-industrie .conv3-split-copy p,
+.page-conv3-industrie .conv3-cycle-body p,
+.page-conv3-industrie .conv3-position-grid p,
+.page-conv3-industrie .conv3-dispositif p {
+  font-size: .9rem !important;
+  line-height: 1.6 !important;
+}
+
+.page-conv3-industrie .conv3-cycle-img {
+  height: 190px !important;
+}
+
+.page-conv3-industrie .conv3-cycle-body,
+.page-conv3-industrie .conv3-position-grid article,
+.page-conv3-industrie .conv3-dispositif-cards article {
+  padding: 22px !important;
+}
+
+.page-conv3-industrie .conv3-mt {
+  margin-top: 26px !important;
+}
