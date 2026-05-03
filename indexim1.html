@@ -4,195 +4,212 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>En Plateau — Architecte de Positions Stratégiques | Saison Inaugurale</title>
-  <meta name="description" content="En Plateau orchestre la rencontre entre l'expertise des organisations et la puissance des cadres médiatiques référents.">
+  <title>En Plateau — Architecte Éditorial | Saison Inaugurale 2024-2025</title>
+  <meta name="description" content="Le nouveau théâtre de l'autorité économique. En Plateau orchestre la rencontre entre expertise métier et puissance média.">
 
-  <link rel="canonical" href="https://enplateau.fr/index3.html">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="theme-color" content="#111111">
-
-  <link rel="icon" href="/images/favicon-en-plateau.svg" type="image/svg+xml">
-  <link rel="icon" href="/images/Favenplateau.png" type="image/png" sizes="96x96">
-  <link rel="apple-touch-icon" href="/images/Favenplateau.png">
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
+  <!-- Polices : Playfair pour l'autorité, IBM Plex pour le côté technique/ingénierie -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/home3.css">
+  
+  <style>
+    :root {
+      --gold: #c5a059;
+      --dark: #111111;
+      --light: #f9f9f9;
+      --gray: #222222;
+    }
+
+    body { font-family: 'IBM Plex Sans', sans-serif; background: var(--light); color: var(--dark); margin: 0; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Hero Section */
+    .hero { background: var(--dark); color: white; padding: 100px 0; position: relative; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 400px; gap: 60px; align-items: center; }
+    .kicker { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; font-weight: 600; margin-bottom: 20px; }
+    .hero h1 { font-size: 4rem; line-height: 1.1; margin: 0 0 30px 0; }
+    .hero-lead { font-size: 1.4rem; line-height: 1.6; font-weight: 300; margin-bottom: 30px; opacity: 0.9; }
+    
+    .countdown-box { 
+      background: var(--gray); border: 1px solid var(--gold); padding: 40px; text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .countdown-timer { font-family: 'Playfair Display'; font-size: 3.5rem; color: var(--gold); margin: 10px 0; }
+    
+    .btn-primary { background: var(--gold); color: white; padding: 18px 35px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; }
+    .btn-primary:hover { background: #b08e4d; transform: translateY(-2px); }
+
+    /* Section Manifeste */
+    .section-manifeste { padding: 100px 0; border-bottom: 1px solid #eee; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+    .split h2 { font-size: 2.5rem; margin-top: 0; }
+    .split p { font-size: 1.2rem; line-height: 1.8; color: #444; }
+
+    /* Section Cycles (Programmation) */
+    .section-cycles { padding: 100px 0; background: #1a1a1a; color: white; }
+    .head-center { text-align: center; max-width: 800px; margin: 0 auto 60px; }
+    .cycle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .cycle-card { 
+      background: var(--gray); padding: 50px; border-top: 4px solid var(--gold);
+      transition: 0.3s; 
+    }
+    .cycle-card:hover { background: #2a2a2a; }
+    .status { font-size: 0.8rem; text-transform: uppercase; color: var(--gold); margin-bottom: 15px; display: block; }
+    .cycle-card h3 { font-size: 2rem; margin-bottom: 20px; }
+    .topics { list-style: none; padding: 0; margin: 20px 0; color: #aaa; }
+    .topics li { margin-bottom: 10px; font-style: italic; }
+
+    /* Section Méthode (Sécurité) */
+    .section-methode { padding: 100px 0; text-align: center; }
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 60px; }
+    .step-num { font-family: 'Playfair Display'; font-size: 3rem; color: #eee; margin-bottom: -20px; position: relative; z-index: 1; }
+    .step h4 { position: relative; z-index: 2; font-size: 1.3rem; margin-bottom: 15px; }
+    .step p { font-size: 0.95rem; color: #666; line-height: 1.6; }
+
+    /* CTA Final */
+    .section-cta { padding: 100px 0; background: var(--gold); color: white; text-align: center; }
+    .section-cta h2 { font-size: 3rem; margin-bottom: 30px; }
+
+    @media (max-width: 900px) {
+      .hero-grid, .split, .cycle-grid, .steps-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.8rem; }
+    }
+  </style>
 </head>
 
-<body class="home-page home-page-3">
-  <div id="site-header"></div>
-  <div id="site-mobile-menu"></div>
+<body>
 
   <main>
 
-    <section class="home3-hero" id="hero-home">
-      <div class="home3-container">
-        <div class="home3-hero-grid">
-          <div class="home3-hero-copy">
-            <div class="home3-kicker">Architecte Éditorial · Saison Inaugurale 2024-2025</div>
-
-            <h1>Édifiez votre thèse au cœur du débat économique.</h1>
-
-            <p class="home3-hero-lead">
-              <strong>En Plateau structure la parole stratégique des organisations pour la projeter dans les cadres médiatiques les plus exigeants. Une ingénierie de positionnement pour transformer l'expertise en actif réputationnel.</strong>
+    <!-- HERO : L'ANNONCE DE LA SAISON -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="kicker">Architecte Éditorial · Saison Inaugurale 2024-2025</div>
+            <h1>Le nouveau théâtre de l'autorité économique.</h1>
+            <p class="hero-lead">
+              En Plateau prépare le lancement de ses premiers cycles stratégiques. Un dispositif de précision pour transformer l'expertise des organisations en thèses de référence, portées par la puissance des grands médias économiques.
             </p>
-
-            <p class="home3-hero-note">
-              Nous ouvrons la programmation de notre Saison Inaugurale. Ce dispositif n'est pas un espace de diffusion libre, mais un cadre sélectif où chaque intervention est bâtie pour devenir une référence dans son écosystème.
-            </p>
-
-            <div class="home3-actions">
-              <a href="demander-un-echange-editorial.html">Candidater à la Saison Inaugurale</a>
+            <div style="margin-top: 40px;">
+              <a href="demander-un-echange-editorial.html" class="btn-primary">Candidater à la Saison 01</a>
             </div>
-
-            <p class="home3-hero-small">
-              L'accès au dispositif est soumis à un échange éditorial. Nous validons ensemble la solidité de votre lecture avant de l'ancrer dans le temps long du débat public.
-            </p>
           </div>
 
-          <aside class="home3-hero-side">
-            <div class="home3-side-panel">
-              <div class="home3-side-title">Programmation des Cycles</div>
-
-              <div class="home3-side-group">
-                <h3>Logement &amp; fabrique des territoires</h3>
-                <p>Cycle ouvert — 4 thèses en cours de modélisation. Comment sécuriser la viabilité des modèles urbains ?</p>
-                <div class="home3-side-links">
-                  <a href="conversations/logement.html">Consulter les thèses</a>
-                  <a href="positions/logement.html">Rejoindre le cycle</a>
-                </div>
-              </div>
-
-              <div class="home3-side-group">
-                <h3>Industrie &amp; transformation productive</h3>
-                <p>Cycle ouvert — Décrypter les points de bascule entre compétitivité et souveraineté réelle.</p>
-                <div class="home3-side-links">
-                  <a href="conversations/industrie.html">Consulter les thèses</a>
-                  <a href="positions/industrie.html">Rejoindre le cycle</a>
-                </div>
-              </div>
+          <aside class="hero-side">
+            <div class="countdown-box">
+              <div class="status" style="color: white; opacity: 0.6;">Inauguration des plateaux</div>
+              <div class="countdown-timer">Jan. 25</div>
+              <p style="font-size: 0.9rem; margin-top: 20px; line-height: 1.4;">
+                <strong>8 places restantes</strong> pour les cycles Logement et Industrie.
+              </p>
             </div>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="home3-section home3-dark home3-credibility" id="credibilite-home">
-      <div class="home3-container">
-        <div class="home3-credibility-grid">
+    <!-- MANIFESTE : LE "POURQUOI" POUR LES DEUX PUBLICS -->
+    <section class="section-manifeste">
+      <div class="container">
+        <div class="split">
           <div>
-            <h2>Le prestige du cadre média, la maîtrise de l'architecte.</h2>
-            <p>
-              En Plateau s'appuie sur des partenaires médias référents (La Tribune, BFM Business, Forbes) pour offrir à vos thèses la puissance de diffusion qu'elles méritent.
-            </p>
-            <p class="home3-note">
-              Notre rôle d'architecte garantit un exercice sécurisé : une préparation rigoureuse face à des journalistes experts, un amont éditorial maîtrisé et un droit de regard final avant toute diffusion.
-            </p>
+            <h2>Une architecture de parole pour les temps complexes.</h2>
           </div>
-
-          <div class="home3-film" aria-label="Émissions de référence">
-            <div class="home3-film-track">
-              <div><img src="images/emission-1.jpg" alt="Émission 1"></div>
-              <div><img src="images/emission-2.jpg" alt="Émission 2"></div>
-              <div><img src="images/emission-3.jpg" alt="Émission 3"></div>
-              <div><img src="images/emission-4.jpg" alt="Émission 4"></div>
-              <!-- Duplicate for loop -->
-              <div><img src="images/emission-1.jpg" alt=""></div>
-              <div><img src="images/emission-2.jpg" alt=""></div>
-              <div><img src="images/emission-3.jpg" alt=""></div>
-              <div><img src="images/emission-4.jpg" alt=""></div>
-            </div>
+          <div>
+            <p>Le public cherche de la clarté. Les dirigeants ont besoin de sécurité. En Plateau est l'architecte qui réconcilie ces deux exigences au cœur du débat public.</p>
+            <p><strong>Pour le spectateur :</strong> Une source d'intelligence brute, où les thèses économiques sont décryptées sans artifice publicitaire.</p>
+            <p><strong>Pour l'intervenant :</strong> Un cadre d'exception pour graver sa vision dans la durée, soutenu par une ingénierie qui élimine le risque médiatique.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="home3-section home3-light" id="pourquoi-cycle">
-      <div class="home3-container">
-        <div class="home3-split">
-          <div class="home3-split-title home3-fissures">
-            <h2>Une structure pour donner du poids à ce qui est juste.</h2>
-          </div>
-
-          <div class="home3-split-copy">
-            <div>
-              <h3>Thèses consolidées.</h3>
-              <p>Nous ne produisons pas de contenu, nous bâtissons des thèses. Chaque intervention est modélisée pour résister à la confrontation et devenir un standard de lecture.</p>
-            </div>
-            <div>
-              <h3>Exercice souverain.</h3>
-              <p>Le cadre journalistique apporte la légitimité ; notre préparation apporte la sécurité. Le dirigeant porte la voix de son organisation avec une maîtrise totale des angles d'attaque.</p>
-            </div>
-            <div>
-              <h3>Effet de constellation.</h3>
-              <p>Votre prise de parole gagne en autorité en s'inscrivant dans une saison cohérente, aux côtés d'autres leaders d'opinion du secteur.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="home3-section home3-dark" id="intro-en-plateau">
-      <div class="home3-container">
-        <div class="home3-decision-grid">
-          <div class="home3-decision-visual"></div>
-
-          <div class="home3-decision-copy">
-            <h2>La sécurité comme fondement de l'audace stratégique.</h2>
-
-            <div>
-              <h3>L'ingénierie du "Question-Réponse".</h3>
-              <p>Nous anticipons les points de tension. La préparation en plateau permet de transformer chaque relance journalistique en une opportunité de réaffirmer votre thèse.</p>
-            </div>
-
-            <div>
-              <h3>Un cadre professionnel et exigeant.</h3>
-              <p>L'interview par un journaliste rompu aux enjeux économiques garantit une perception de haute valeur ajoutée, loin des formats promotionnels classiques.</p>
-            </div>
-
-            <div>
-              <h3>Intégrité garantie.</h3>
-              <p>Parce que votre position engage l'organisation, le dispositif En Plateau inclut un droit de regard systématique pour assurer la stricte conformité du message.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ... Suite de la page maintenue avec la même cohérence "Saison" et "Thèse" ... -->
-
-    <section class="home3-section home3-light home3-access" id="acces-home">
-      <div class="home3-container">
-        <div class="home3-head">
-          <h2>Rejoindre l'architecture En Plateau</h2>
-          <p>La Saison Inaugurale est ouverte aux organisations prêtes à structurer leur parole publique pour éclairer les arbitrages de leur filière.</p>
+    <!-- PROGRAMMATION : LES CYCLES OUVERTS -->
+    <section class="section-cycles" id="cycles">
+      <div class="container">
+        <div class="head-center">
+          <div class="kicker">Programmation en cours</div>
+          <h2>Deux cycles stratégiques pour initier la Saison.</h2>
+          <p>Nous avons sélectionné les deux secteurs où la tension entre les modèles historiques et les nouvelles réalités est la plus vive.</p>
         </div>
 
-        <div class="home3-access-grid">
-          <article>
-            <h3>Accès Intervenants</h3>
-            <p>Initiez un échange éditorial pour valider votre place dans l'un de nos cycles stratégiques et préparer votre intervention sécurisée.</p>
-            <a href="demander-un-echange-editorial.html">Candidater à la Saison</a>
-            <p class="home3-note-light">Dispositif réservé aux décideurs et organisations souhaitant indexer une thèse économique forte.</p>
+        <div class="cycle-grid">
+          <!-- Cycle Logement -->
+          <article class="cycle-card">
+            <span class="status">Cycle ouvert aux contributions</span>
+            <h3>Logement : La Fabrique des Territoires sous tension</h3>
+            <p>Modéliser la sortie de crise : foncier, nouveaux financements et impératifs de régénération.</p>
+            <ul class="topics">
+              <li>• "La fin du modèle de promotion classique ?"</li>
+              <li>• "Le foncier comme actif de souveraineté."</li>
+            </ul>
+            <a href="cycle-logement.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">Explorer le dossier de cycle →</a>
           </article>
 
-          <article>
-            <h3>Accès Public</h3>
-            <p>Consultez les thèses déjà indexées et suivez les conversations qui dessinent les nouvelles trajectoires de l'économie réelle.</p>
-            <a href="positions/index.html">Consulter le Stock de Positions</a>
+          <!-- Cycle Industrie -->
+          <article class="cycle-card">
+            <span class="status">Cycle ouvert aux contributions</span>
+            <h3>Industrie : Le défi de la souveraineté réelle</h3>
+            <p>Arbitrer entre compétitivité globale et décarbonation locale : le prix de l'indépendance productive.</p>
+            <ul class="topics">
+              <li>• "Supply-chain : le coût de la résilience."</li>
+              <li>• "Relocalisation : du discours à l'usine."</li>
+            </ul>
+            <a href="cycle-industrie.html" style="color: var(--gold); text-decoration: none; font-weight: 600;">Explorer le dossier de cycle →</a>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- METHODE : RASSURER L'INTERVENANT -->
+    <section class="section-methode">
+      <div class="container">
+        <div class="kicker" style="color: var(--dark);">L'Ingénierie En Plateau</div>
+        <h2>Une parole souveraine et maîtrisée.</h2>
+        <div class="steps-grid">
+          <div class="step">
+            <div class="step-num">01</div>
+            <h4>Diagnostic</h4>
+            <p>Nous isolons avec vous l'angle stratégique qui fera de votre intervention un standard de lecture pour le secteur.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <h4>Modélisation</h4>
+            <p>Préparation rigoureuse à l'exercice du plateau et anticipation des relances pour une parole "blindée".</p>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <h4>Capture</h4>
+            <p>Enregistrement dans les conditions du direct avec des journalistes experts des enjeux économiques.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <h4>Indexation</h4>
+            <p>Droit de regard final et diffusion multicanale pour inscrire votre thèse dans le temps long.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section-cta">
+      <div class="container">
+        <h2>Prêt à édifier votre thèse ?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9;">
+          Rejoignez la Saison Inaugurale et fixez les nouvelles règles de votre marché.
+        </p>
+        <a href="demander-un-echange-editorial.html" class="btn-primary" style="background: var(--dark);">Solliciter un échange éditorial</a>
       </div>
     </section>
 
   </main>
 
-  <div id="site-footer"></div>
-  <div id="cookie-container"></div>
+  <footer style="padding: 50px 0; text-align: center; font-size: 0.8rem; color: #999;">
+    &copy; 2024 En Plateau — Architecte de Positions Stratégiques.
+  </footer>
 
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/layout.js"></script>
 </body>
 </html>
