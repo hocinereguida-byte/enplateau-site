@@ -4,1786 +4,194 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>En Plateau — Faire émerger une parole qui compte</title>
-  <meta
-    name="description"
-    content="En Plateau prépare des prises de parole à partir de tensions réelles, de points de bascule identifiables et d’arbitrages concrets, pour éclairer ce qui se transforme dans les organisations, les filières et les territoires."
-  >
+  <title>En Plateau — Rendre lisibles les arbitrages qui transforment l'économie</title>
+  <meta name="description" content="En Plateau prépare des prises de parole à partir de tensions réelles, de points de bascule identifiables et d’arbitrages concrets, pour éclairer ce qui se transforme réellement.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="canonical" href="https://enplateau.fr/index.html">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#111111">
+
+  <link rel="icon" href="/images/favicon-en-plateau.svg" type="image/svg+xml">
+  <link rel="icon" href="/images/Favenplateau.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/images/Favenplateau.png">
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#0a0d12;
-      --bg-soft:#10151c;
-      --panel:#121922;
-      --panel-soft:#18212c;
-
-      --paper:#ffffff;
-      --paper-soft:#f5f7fa;
-
-      --ink:#111827;
-      --ink-soft:#4b5563;
-      --ink-muted:#6b7280;
-
-      --text:#f8fafc;
-      --text-soft:rgba(248,250,252,.82);
-      --text-muted:rgba(248,250,252,.58);
-
-      --line-dark:rgba(255,255,255,.08);
-      --line-dark-strong:rgba(255,255,255,.14);
-      --line-light:rgba(17,24,39,.10);
-      --line-light-strong:rgba(17,24,39,.16);
-
-      --accent:#8fb7ff;
-      --accent-soft:#b8d0ff;
-
-      --container:1240px;
-      --radius-xl:30px;
-      --radius-lg:22px;
-      --radius-md:16px;
-      --shadow-dark:0 24px 70px rgba(0,0,0,.32);
-      --shadow-light:0 18px 46px rgba(15,23,42,.08);
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      background:var(--paper);
-      color:var(--ink);
-      font-family:"IBM Plex Sans",sans-serif;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-    }
-
-    a{text-decoration:none;color:inherit}
-    img{display:block;max-width:100%;height:auto}
-    h1,h2,h3,h4,p{margin-top:0}
-
-    .container{
-      width:min(calc(100% - 40px), var(--container));
-      margin:0 auto;
-    }
-
-    .section{
-      position:relative;
-      padding:96px 0;
-    }
-
-    .section-dark{
-      background:
-        radial-gradient(circle at 82% 12%, rgba(143,183,255,.08), transparent 20%),
-        radial-gradient(circle at 18% 14%, rgba(255,255,255,.03), transparent 18%),
-        linear-gradient(180deg, #0a0d12 0%, #0d1218 100%);
-      color:var(--text);
-    }
-
-    .section-light{
-      background:var(--paper);
-      color:var(--ink);
-    }
-
-    .section-light.alt{
-      background:var(--paper-soft);
-    }
-
-    .section-head{
-      max-width:920px;
-      margin:0 auto 38px;
-      text-align:center;
-      position:relative;
-      z-index:2;
-    }
-
-    .section-kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      margin-bottom:14px;
-      font-size:11px;
-      font-weight:600;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-    }
-
-    .section-dark .section-kicker{color:var(--accent-soft)}
-    .section-light .section-kicker{color:#5d7aa8}
-
-    .section-kicker::before{
-      content:"";
-      width:42px;
-      height:1px;
-      background:currentColor;
-      opacity:.45;
-    }
-
-    .section-head h2{
-      font-family:"Playfair Display",serif;
-      font-size:clamp(2.2rem, 3.6vw, 4.05rem);
-      line-height:.98;
-      letter-spacing:-.03em;
-      font-weight:600;
-      margin-bottom:14px;
-    }
-
-    .section-dark .section-head h2{color:#fff}
-    .section-light .section-head h2{color:var(--ink)}
-
-    .section-intro{
-      max-width:820px;
-      margin:0 auto;
-      font-size:1rem;
-      line-height:1.8;
-    }
-
-    .section-dark .section-intro{color:var(--text-soft)}
-    .section-light .section-intro{color:var(--ink-soft)}
-
-    .micro-note{
-      font-size:.78rem;
-      line-height:1.64;
-    }
-
-    /* Header */
-    .site-header{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      backdrop-filter:blur(14px);
-      background:rgba(8,11,16,.78);
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-
-    .site-header__inner{
-      width:min(calc(100% - 40px), var(--container));
-      min-height:82px;
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:auto 1fr auto;
-      gap:28px;
-      align-items:center;
-    }
-
-    .brand{
-      font-family:"Playfair Display",serif;
-      font-size:1.86rem;
-      line-height:1;
-      letter-spacing:-.03em;
-      font-weight:600;
-      color:#fff;
-    }
-
-    .nav{
-      display:flex;
-      justify-content:center;
-      gap:28px;
-      flex-wrap:wrap;
-    }
-
-    .nav a{
-      min-height:42px;
-      display:inline-flex;
-      align-items:center;
-      position:relative;
-      font-size:11px;
-      font-weight:600;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:var(--text-soft);
-    }
-
-    .nav a::after{
-      content:"";
-      position:absolute;
-      left:0; right:0; bottom:8px;
-      height:1px;
-      background:transparent;
-      transition:.18s ease;
-    }
-
-    .nav a:hover{color:#fff}
-    .nav a:hover::after{background:rgba(255,255,255,.7)}
-
-    .header-cta{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:44px;
-      padding:0 16px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(255,255,255,.04);
-      color:#fff;
-      font-size:11px;
-      font-weight:600;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-    }
-
-    /* Hero */
-    .hero{
-      position:relative;
-      min-height:94vh;
-      display:flex;
-      align-items:center;
-      overflow:hidden;
-      background:
-        linear-gradient(90deg, rgba(8,11,16,.88) 0%, rgba(8,11,16,.74) 42%, rgba(8,11,16,.56) 100%),
-        url("images/hero-plateau-neon.jpg") center/cover no-repeat;
-      color:#fff;
-    }
-
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(circle at 76% 18%, rgba(143,183,255,.12), transparent 18%),
-        radial-gradient(circle at 24% 22%, rgba(255,255,255,.05), transparent 16%);
-      pointer-events:none;
-    }
-
-    .hero-inner{
-      width:min(calc(100% - 40px), var(--container));
-      margin:0 auto;
-      padding:110px 0 86px;
-      position:relative;
-      z-index:2;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:minmax(0, 1.04fr) minmax(320px, .96fr);
-      gap:34px;
-      align-items:end;
-    }
-
-    .hero-copy{
-      max-width:760px;
-    }
-
-    .hero-kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      margin-bottom:16px;
-      font-size:11px;
-      font-weight:600;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:var(--accent-soft);
-    }
-
-    .hero-kicker::before{
-      content:"";
-      width:42px;
-      height:1px;
-      background:currentColor;
-      opacity:.45;
-    }
-
-    .hero-title{
-      font-family:"Playfair Display",serif;
-      font-size:clamp(3.15rem, 6vw, 6rem);
-      line-height:.9;
-      letter-spacing:-.04em;
-      font-weight:600;
-      color:#fff;
-      margin-bottom:18px;
-      max-width:11ch;
-    }
-
-    .hero-subtitle{
-      font-size:clamp(1.05rem, 1.34vw, 1.18rem);
-      line-height:1.8;
-      color:var(--text-soft);
-      max-width:760px;
-      margin-bottom:16px;
-    }
-
-    .hero-subtitle strong{color:#fff}
-
-    .hero-note{
-      font-size:.95rem;
-      line-height:1.74;
-      color:var(--text-muted);
-      max-width:700px;
-      margin-bottom:24px;
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-bottom:18px;
-    }
-
-    .btn-primary,
-    .btn-dark{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:48px;
-      padding:0 20px;
-      border-radius:999px;
-      font-size:11px;
-      font-weight:600;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-    }
-
-    .btn-primary{
-      background:#fff;
-      color:#111827;
-      border:1px solid #fff;
-      box-shadow:0 12px 28px rgba(0,0,0,.16);
-    }
-
-    .btn-dark{
-      background:#111827;
-      color:#fff;
-      border:1px solid #111827;
-    }
-
-    .hero-access-note{
-      max-width:720px;
-      font-size:.78rem;
-      line-height:1.64;
-      color:var(--text-muted);
-    }
-
-    .hero-side{
-      justify-self:end;
-      width:100%;
-      max-width:430px;
-    }
-
-    .hero-side-panel{
-      border-radius:26px;
-      border:1px solid rgba(255,255,255,.12);
-      background:linear-gradient(180deg, rgba(18,24,32,.76), rgba(18,24,32,.88));
-      backdrop-filter:blur(12px);
-      box-shadow:var(--shadow-dark);
-      overflow:hidden;
-    }
-
-    .hero-side-head{
-      padding:22px 22px 18px;
-      border-bottom:1px solid rgba(255,255,255,.08);
-      font-family:"Playfair Display",serif;
-      font-size:1.24rem;
-      line-height:1.06;
-      color:#fff;
-      font-weight:600;
-    }
-
-    .hero-side-group{
-      padding:20px 22px;
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-
-    .hero-side-group:last-child{border-bottom:0}
-
-    .hero-side-group h3{
-      font-family:"Playfair Display",serif;
-      font-size:1.16rem;
-      line-height:1.08;
-      letter-spacing:-.02em;
-      font-weight:600;
-      color:#fff;
-      margin-bottom:8px;
-    }
-
-    .hero-side-group p{
-      font-size:.88rem;
-      line-height:1.62;
-      color:var(--text-soft);
-      margin-bottom:12px;
-    }
-
-    .hero-side-links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px 14px;
-    }
-
-    .hero-side-links a{
-      position:relative;
-      font-size:10px;
-      font-weight:600;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--accent-soft);
-    }
-
-    .hero-side-links a::after{
-      content:"";
-      position:absolute;
-      left:0; right:0; bottom:-2px;
-      height:1px;
-      background:rgba(184,208,255,.34);
-    }
-
-    /* Credibility with film strip */
-    .credibilite{
-      overflow:hidden;
-    }
-
-    .credibilite-inner{
-      display:grid;
-      grid-template-columns:minmax(0, .95fr) 340px;
-      gap:44px;
-      align-items:center;
-    }
-
-    .credibilite-copy{
-      max-width:820px;
-    }
-
-    .credibilite-copy .section-head{
-      text-align:left;
-      max-width:none;
-      margin:0 0 22px;
-    }
-
-    .credibilite-copy .section-intro{
-      max-width:none;
-      margin:0 0 18px;
-    }
-
-    .cred-note{
-      max-width:760px;
-      font-size:.78rem;
-      line-height:1.64;
-      color:var(--text-muted);
-    }
-
-    .credibilite-film{
-      position:relative;
-      height:520px;
-      overflow:hidden;
-      border-radius:24px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      box-shadow:var(--shadow-dark);
-    }
-
-    .credibilite-film::before,
-    .credibilite-film::after{
-      content:"";
-      position:absolute;
-      left:0; right:0;
-      height:72px;
-      z-index:3;
-      pointer-events:none;
-    }
-
-    .credibilite-film::before{
-      top:0;
-      background:linear-gradient(180deg, rgba(10,13,18,1), rgba(10,13,18,0));
-    }
-
-    .credibilite-film::after{
-      bottom:0;
-      background:linear-gradient(0deg, rgba(10,13,18,1), rgba(10,13,18,0));
-    }
-
-    .film-track{
-      display:flex;
-      flex-direction:column;
-      gap:16px;
-      padding:18px;
-      animation:scrollFilm 28s linear infinite;
-    }
-
-    .film-card{
-      position:relative;
-      border-radius:16px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
-      background:#000;
-      aspect-ratio: 16 / 9;
-    }
-
-    .film-card img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      opacity:.48;
-      filter:grayscale(22%) contrast(108%) brightness(.74) blur(.4px);
-    }
-
-    .film-card::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,.18);
-    }
-
-    @keyframes scrollFilm {
-      0%   { transform: translateY(0); }
-      100% { transform: translateY(-50%); }
-    }
-
-    /* Generic overlay section backgrounds */
-    .section-overlay-bg{
-      overflow:hidden;
-    }
-
-    .section-overlay-bg::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background-position:center;
-      background-size:cover;
-      background-repeat:no-repeat;
-      opacity:.22;
-      filter:grayscale(20%) contrast(108%) brightness(.72);
-      z-index:0;
-    }
-
-    .section-overlay-bg .container,
-    .section-overlay-bg .section-head,
-    .section-overlay-bg .content-layer{
-      position:relative;
-      z-index:2;
-    }
-
-    /* Split */
-    .split-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:26px;
-      align-items:stretch;
-    }
-
-    .split-dark{
-      border-radius:28px;
-      background:#0d1117;
-      color:#fff;
-      padding:44px;
-      display:flex;
-      align-items:center;
-      box-shadow:var(--shadow-dark);
-      min-height:430px;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .split-dark::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.22), rgba(0,0,0,.42));
-      z-index:1;
-    }
-
-    .split-dark h2{
-      position:relative;
-      z-index:2;
-      font-family:"Playfair Display",serif;
-      font-size:clamp(2.5rem, 4vw, 4.2rem);
-      line-height:.94;
-      letter-spacing:-.035em;
-      font-weight:600;
-      max-width:10ch;
-      margin:0;
-    }
-
-    .split-light{
-      border-radius:28px;
-      background:#fff;
-      border:1px solid var(--line-light);
-      box-shadow:var(--shadow-light);
-      padding:38px;
-      display:flex;
-      align-items:center;
-    }
-
-    .structured-copy{
-      width:100%;
-    }
-
-    .structured-block{
-      padding:0 0 20px;
-      margin:0 0 20px;
-      border-bottom:1px solid rgba(17,24,39,.10);
-    }
-
-    .structured-block:last-child{
-      padding-bottom:0;
-      margin-bottom:0;
-      border-bottom:0;
-    }
-
-    .structured-block h3{
-      font-family:"Playfair Display",serif;
-      font-size:1.38rem;
-      line-height:1.08;
-      letter-spacing:-.02em;
-      font-weight:600;
-      color:var(--ink);
-      margin-bottom:8px;
-    }
-
-    .structured-block p{
-      margin:0;
-      font-size:.95rem;
-      line-height:1.72;
-      color:var(--ink-soft);
-    }
-
-    /* Dark content block with abstract bg */
-    .abstract-grid{
-      display:grid;
-      grid-template-columns:minmax(0, .92fr) minmax(0, 1.08fr);
-      gap:28px;
-      align-items:stretch;
-    }
-
-    .abstract-visual{
-      min-height:560px;
-      border-radius:28px;
-      overflow:hidden;
-      position:relative;
-      box-shadow:var(--shadow-dark);
-      background:#0a0d12;
-    }
-
-    .abstract-visual::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
-      opacity:.48;
-      filter:grayscale(10%) contrast(110%) brightness(.7);
-    }
-
-    .abstract-visual::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.26), rgba(0,0,0,.48));
-    }
-
-    .abstract-copy{
-      display:flex;
-      align-items:center;
-    }
-
-    .abstract-copy-inner{
-      width:100%;
-    }
-
-    .abstract-copy-inner h2{
-      font-family:"Playfair Display",serif;
-      font-size:clamp(2.35rem, 3.6vw, 4rem);
-      line-height:.96;
-      letter-spacing:-.03em;
-      font-weight:600;
-      color:#fff;
-      margin-bottom:22px;
-    }
-
-    .abstract-copy-block{
-      padding:0 0 18px;
-      margin:0 0 18px;
-      border-bottom:1px solid rgba(255,255,255,.10);
-    }
-
-    .abstract-copy-block:last-child{
-      padding-bottom:0;
-      margin-bottom:0;
-      border-bottom:0;
-    }
-
-    .abstract-copy-block h3{
-      font-family:"Playfair Display",serif;
-      font-size:1.34rem;
-      line-height:1.08;
-      font-weight:600;
-      color:#fff;
-      margin-bottom:8px;
-    }
-
-    .abstract-copy-block p{
-      margin:0;
-      font-size:.95rem;
-      line-height:1.72;
-      color:var(--text-soft);
-    }
-
-    /* Cycles */
-    .cycles-grid{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:24px;
-    }
-
-    .cycle-card{
-      border-radius:28px;
-      background:#fff;
-      border:1px solid var(--line-light);
-      box-shadow:var(--shadow-light);
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      min-height:100%;
-    }
-
-    .cycle-visual{
-      height:250px;
-      position:relative;
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
-    }
-
-    .cycle-visual::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg, rgba(16,24,40,.10), rgba(16,24,40,.34));
-    }
-
-    .cycle-body{
-      padding:26px 24px 24px;
-      display:flex;
-      flex-direction:column;
-      flex:1;
-    }
-
-    .cycle-label{
-      font-size:10px;
-      font-weight:600;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:#5d7aa8;
-      margin-bottom:10px;
-    }
-
-    .cycle-body h3{
-      font-family:"Playfair Display",serif;
-      font-size:1.56rem;
-      line-height:1.06;
-      letter-spacing:-.02em;
-      font-weight:600;
-      color:var(--ink);
-      margin-bottom:10px;
-      min-height:3.2em;
-    }
-
-    .cycle-body p{
-      margin:0 0 18px;
-      font-size:.95rem;
-      line-height:1.72;
-      color:var(--ink-soft);
-      flex:1;
-    }
-
-    .cycle-links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px 16px;
-      margin-top:auto;
-    }
-
-    .cycle-links a,
-    .text-link{
-      position:relative;
-      font-size:10px;
-      font-weight:600;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-    }
-
-    .cycle-links a,
-    .text-link.light-link{color:#355785}
-    .text-link.dark-link{color:var(--accent-soft)}
-
-    .cycle-links a::after,
-    .text-link::after{
-      content:"";
-      position:absolute;
-      left:0; right:0; bottom:-2px;
-      height:1px;
-    }
-
-    .cycle-links a::after,
-    .text-link.light-link::after{background:rgba(53,87,133,.34)}
-    .text-link.dark-link::after{background:rgba(184,208,255,.34)}
-
-    .selection-subnote{
-      max-width:820px;
-      margin:24px auto 0;
-      text-align:center;
-      font-size:.8rem;
-      line-height:1.64;
-      color:var(--ink-muted);
-    }
-
-    /* Positions */
-    .position-grid{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:24px;
-    }
-
-    .position-card{
-      border-radius:26px;
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      box-shadow:var(--shadow-dark);
-      padding:28px 24px 24px;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .position-card::before{
-      content:"";
-      position:absolute;
-      top:0;
-      left:0;
-      width:4px;
-      height:100%;
-      background:linear-gradient(180deg, var(--accent), var(--accent-soft));
-      z-index:2;
-    }
-
-    .position-card::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,.24);
-      z-index:0;
-    }
-
-    .position-card-content{
-      position:relative;
-      z-index:2;
-    }
-
-    .position-card h3{
-      font-family:"Playfair Display",serif;
-      font-size:1.48rem;
-      line-height:1.06;
-      letter-spacing:-.02em;
-      font-weight:600;
-      color:#fff;
-      margin-bottom:10px;
-    }
-
-    .position-card p{
-      margin:0 0 14px;
-      font-size:.94rem;
-      line-height:1.7;
-      color:var(--text-soft);
-    }
-
-    /* Dispositif */
-    .dispositif-shell{
-      position:relative;
-      overflow:hidden;
-    }
-
-    .dispositif-shell::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:url("images/dispositif-miroir-brise.jpg") center/cover no-repeat;
-      opacity:.12;
-      filter:grayscale(100%) contrast(110%) brightness(.92);
-      z-index:0;
-    }
-
-    .dispositif-grid{
-      position:relative;
-      z-index:2;
-      display:grid;
-      grid-template-columns:minmax(280px, .92fr) minmax(0, 1.08fr);
-      gap:30px;
-      align-items:start;
-    }
-
-    .dispositif-copy h2{
-      font-family:"Playfair Display",serif;
-      font-size:clamp(2.25rem, 3.4vw, 3.6rem);
-      line-height:.98;
-      letter-spacing:-.03em;
-      font-weight:600;
-      color:var(--ink);
-      margin-bottom:14px;
-    }
-
-    .dispositif-copy p{
-      margin:0;
-      font-size:1rem;
-      line-height:1.8;
-      color:var(--ink-soft);
-      max-width:540px;
-    }
-
-    .dispositif-cards{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:20px;
-    }
-
-    .dispositif-card{
-      border-radius:24px;
-      background:rgba(255,255,255,.88);
-      backdrop-filter:blur(10px);
-      border:1px solid var(--line-light);
-      box-shadow:var(--shadow-light);
-      padding:26px 22px 22px;
-      position:relative;
-    }
-
-    .dispositif-card::before{
-      content:"";
-      position:absolute;
-      top:0;
-      left:0;
-      width:4px;
-      height:100%;
-      background:linear-gradient(180deg, #8db8ff, #4c82d6);
-    }
-
-    .dispositif-card h3{
-      font-family:"Playfair Display",serif;
-      font-size:1.28rem;
-      line-height:1.08;
-      letter-spacing:-.02em;
-      font-weight:600;
-      color:var(--ink);
-      margin-bottom:10px;
-    }
-
-    .dispositif-card p{
-      margin:0;
-      font-size:.93rem;
-      line-height:1.72;
-      color:var(--ink-soft);
-    }
-
-    .programme-link-row{
-      position:relative;
-      z-index:2;
-      text-align:center;
-      margin-top:26px;
-    }
-
-    /* Impact */
-    .impact-shell{
-      position:relative;
-      overflow:hidden;
-    }
-
-    .impact-shell::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.72) 0%, rgba(255,255,255,.86) 100%),
-        url("images/impact-onde-eau.jpg") center/cover no-repeat;
-      z-index:0;
-    }
-
-    .impact-shell::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      box-shadow: inset 0 0 120px rgba(255,255,255,.25);
-      z-index:0;
-      pointer-events:none;
-    }
-
-    .impact-shell .container{
-      position:relative;
-      z-index:2;
-    }
-
-    .value-stack{
-      max-width:980px;
-      margin:0 auto;
-      display:grid;
-      gap:20px;
-    }
-
-    .value-block{
-      border-radius:24px;
-      background:rgba(255,255,255,.90);
-      border:1px solid rgba(17,24,39,.08);
-      box-shadow:var(--shadow-light);
-      padding:28px 26px 24px;
-      display:grid;
-      grid-template-columns:72px minmax(0, 1fr);
-      gap:18px;
-      align-items:start;
-      position:relative;
-    }
-
-    .value-block::before{
-      content:"";
-      position:absolute;
-      top:0;
-      left:0;
-      width:4px;
-      height:100%;
-      background:linear-gradient(180deg, #8db8ff, #4c82d6);
-    }
-
-    .value-index{
-      font-size:10px;
-      font-weight:600;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:#5d7aa8;
-      padding-top:6px;
-    }
-
-    .value-body h3{
-      font-family:"Playfair Display",serif;
-      font-size:1.34rem;
-      line-height:1.08;
-      letter-spacing:-.02em;
-      font-weight:600;
-      color:var(--ink);
-      margin-bottom:8px;
-    }
-
-    .value-body p{
-      margin:0;
-      font-size:.94rem;
-      line-height:1.72;
-      color:var(--ink-soft);
-    }
-
-    /* Access */
-    .access-shell{
-      position:relative;
-      overflow:hidden;
-    }
-
-    .access-shell::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:url("images/acces-escalier-graphique.jpg") center/cover no-repeat;
-      opacity:.10;
-      filter:grayscale(100%) contrast(112%) brightness(.95);
-      z-index:0;
-    }
-
-    .access-shell .container{
-      position:relative;
-      z-index:2;
-    }
-
-    .access-grid{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:22px;
-    }
-
-    .access-card{
-      border-radius:28px;
-      padding:28px;
-      box-shadow:var(--shadow-light);
-      border:1px solid var(--line-light);
-      background:rgba(255,255,255,.92);
-      backdrop-filter:blur(10px);
-      min-height:100%;
-    }
-
-    .access-card.primary{
-      background:linear-gradient(135deg, rgba(143,183,255,.12), rgba(255,255,255,.95));
-    }
-
-    .access-card h3{
-      font-family:"Playfair Display",serif;
-      font-size:1.46rem;
-      line-height:1.08;
-      letter-spacing:-.02em;
-      font-weight:600;
-      color:var(--ink);
-      margin-bottom:10px;
-    }
-
-    .access-card p{
-      margin:0 0 18px;
-      font-size:.95rem;
-      line-height:1.74;
-      color:var(--ink-soft);
-    }
-
-    /* Footer */
-    .footer{
-      background:#0b0f14;
-      border-top:1px solid rgba(255,255,255,.06);
-      padding:36px 0 56px;
-    }
-
-    .footer-inner{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-
-    .footer-copy{
-      font-size:.86rem;
-      line-height:1.6;
-      color:var(--text-muted);
-    }
-
-    .footer-links{
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .footer-links a{
-      font-size:11px;
-      font-weight:600;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--text-soft);
-    }
-
-    @media (max-width: 1100px){
-      .hero-grid,
-      .credibilite-inner,
-      .split-grid,
-      .abstract-grid,
-      .dispositif-grid,
-      .access-grid{
-        grid-template-columns:1fr;
-      }
-
-      .hero-side{
-        justify-self:start;
-        max-width:none;
-      }
-
-      .nav{display:none}
-
-      .cycles-grid,
-      .position-grid{
-        grid-template-columns:1fr;
-      }
-
-      .dispositif-cards{
-        grid-template-columns:repeat(2, 1fr);
-      }
-
-      .credibilite-film{
-        height:420px;
-      }
-    }
-
-    @media (max-width: 760px){
-      .container,
-      .site-header__inner,
-      .hero-inner{
-        width:min(calc(100% - 24px), var(--container));
-      }
-
-      .section{padding:72px 0}
-      .hero{min-height:auto}
-      .hero-inner{padding:94px 0 56px}
-
-      .hero-title{
-        font-size:clamp(2.4rem, 11vw, 4rem);
-        max-width:100%;
-      }
-
-      .hero-actions{
-        display:grid;
-        grid-template-columns:1fr;
-      }
-
-      .btn-primary,
-      .btn-dark,
-      .header-cta{
-        width:100%;
-      }
-
-      .site-header__inner{
-        grid-template-columns:1fr auto;
-        gap:16px;
-      }
-
-      .brand{font-size:1.56rem}
-
-      .dispositif-cards{
-        grid-template-columns:1fr;
-      }
-
-      .value-block{
-        grid-template-columns:1fr;
-        gap:10px;
-      }
-
-      .value-index{
-        padding-top:0;
-      }
-    }
-    /* =========================================================
-   CORRECTIONS FINALES — HOME INDEX2
-   ========================================================= */
-
-
-/* 1. HERO — supprimer l’effet rectangle sombre derrière le titre
-   TROUVER dans .hero::after ou .hero::before tout fond trop rectangulaire
-   REMPLACER / AJOUTER :
-*/
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0,0,0,0.68) 0%,
-    rgba(0,0,0,0.42) 42%,
-    rgba(0,0,0,0.18) 72%,
-    rgba(0,0,0,0.38) 100%
-  );
-  z-index: 1;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 72% 54%, rgba(120,150,210,.18), transparent 34%),
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,.04), transparent 20%);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 2;
-}
-
-
-/* 2. SECTION “VOUS INTERVENEZ…” — image fissures plus sombre
-   TROUVER :
-   .split-dark { ... background:url('images/dispositif-miroir-brise.jpg') ... }
-   REMPLACER par :
-*/
-
-#pourquoi-cycle .split-dark {
-  position: relative;
-  overflow: hidden;
-  background: url("images/bascule-sol-fissures.jpg") center/cover no-repeat !important;
-}
-
-#pourquoi-cycle .split-dark::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0,0,0,0.82) 0%,
-      rgba(0,0,0,0.68) 48%,
-      rgba(0,0,0,0.56) 100%
-    );
-  z-index: 1;
-}
-
-#pourquoi-cycle .split-dark h2 {
-  position: relative;
-  z-index: 2;
-}
-
-
-/* 3. SECTION “C’EST LÀ QUE LES DÉCISIONS…” — remplacer le fond chaise/faisceau par l’allumette
-   TROUVER dans la section #intro-en-plateau :
-   images/faisceau-lumiere.jpg
-   REMPLACER par :
-   images/allumette-flamme.jpg
-*/
-
-#intro-en-plateau .abstract-visual {
-  position: relative;
-  background: #05080c !important;
-}
-
-#intro-en-plateau .abstract-visual::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("images/allumette-flamme.jpg") center/cover no-repeat;
-  opacity: .62;
-  filter: grayscale(8%) contrast(122%) brightness(.66);
-  z-index: 0;
-}
-
-#intro-en-plateau .abstract-visual::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(
-      circle at 52% 42%,
-      rgba(255,170,80,.26),
-      transparent 34%
-    ),
-    linear-gradient(
-      90deg,
-      rgba(0,0,0,.78) 0%,
-      rgba(0,0,0,.44) 48%,
-      rgba(0,0,0,.74) 100%
-    );
-  z-index: 1;
-}
-
-
-/* 4. CYCLES — harmoniser les couleurs chantier / industrie
-   TROUVER :
-   .cycle-visual { ... }
-   REMPLACER / AJOUTER :
-*/
-
-.cycle-visual {
-  height: 250px;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: grayscale(78%) contrast(112%) brightness(.74);
-}
-
-.cycle-visual::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(10,13,18,.06),
-      rgba(10,13,18,.42)
-    ),
-    rgba(18,32,48,.20);
-}
-
-.cycle-card:nth-child(2) .cycle-visual {
-  filter: grayscale(88%) contrast(116%) brightness(.70);
-}
-
-
-/* 5. POSITIONS — assombrir les deux box et le paragraphe d’intro
-   TROUVER :
-   .position-card { ... }
-   REMPLACER par :
-*/
-
-.position-card {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(5,10,18,.88),
-      rgba(5,10,18,.76)
-    );
-  border: 1px solid rgba(255,255,255,.16);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 22px 60px rgba(0,0,0,.34);
-}
-
-.position-card::after {
-  background: rgba(0,0,0,.46);
-}
-
-#positions-home .section-intro {
-  background: rgba(3,7,12,.48);
-  display: inline-block;
-  padding: 14px 24px;
-  border-radius: 18px;
-  backdrop-filter: blur(5px);
-}
-
-
-/* 6. DISPOSITIF — miroir uniquement sur la partie gauche
-   TROUVER :
-   .dispositif-shell::before { background:url("images/dispositif-miroir-brise.jpg") center/cover no-repeat; ... }
-   REMPLACER par :
-*/
-
-.dispositif-shell::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 48%;
-  height: 100%;
-  background: url("images/dispositif-miroir-brise.jpg") center/cover no-repeat;
-  opacity: .18;
-  filter: grayscale(100%) contrast(112%) brightness(.92);
-  z-index: 0;
-}
-
-.dispositif-shell::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 58%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(255,255,255,.72) 0%,
-    rgba(255,255,255,.38) 45%,
-    rgba(255,255,255,0) 100%
-  );
-  z-index: 0;
-}
-
-.dispositif-shell .container {
-  position: relative;
-  z-index: 1;
-}
-
-
-/* 7. IMPACT — passer en section très foncée + remonter la goutte
-   TROUVER :
-   .impact-shell::before { ... background: linear-gradient(...), url("images/impact-onde-eau.jpg") ... }
-   REMPLACER par :
-*/
-
-.impact-shell {
-  position: relative;
-  overflow: hidden;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(5,8,12,.86),
-      rgba(5,8,12,.94)
-    ),
-    url("images/impact-onde-eau.jpg") center 34% / cover no-repeat;
-  color: #fff;
-}
-
-.impact-shell::before,
-.impact-shell::after {
-  display: none;
-}
-
-.impact-shell .section-head h2 {
-  color: #fff;
-}
-
-.impact-shell .section-intro {
-  color: rgba(255,255,255,.76);
-}
-
-.impact-shell .value-block {
-  background: rgba(5,10,18,.78);
-  border: 1px solid rgba(255,255,255,.14);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 22px 60px rgba(0,0,0,.30);
-}
-
-.impact-shell .value-body h3 {
-  color: #fff;
-}
-
-.impact-shell .value-body p {
-  color: rgba(255,255,255,.76);
-}
-
-.impact-shell .value-index {
-  color: #9fc3ff;
-}
-
-
-/* 8. ACCÈS — ne presque rien toucher
-   GARDER la section telle quelle.
-   Juste vérifier que l’image reste subtile :
-*/
-
-.access-shell::before {
-  opacity: .10;
-  filter: grayscale(100%) contrast(112%) brightness(.95);
-}
-
-
-/* 9. Nettoyage important — supprimer les anciennes références image
-   CHERCHER dans le HTML/CSS :
-   images/faisceau-lumiere.jpg
-   images/chaise.jpg
-   images/dispositif-miroir-brise.jpg dans #pourquoi-cycle
-   REMPLACER selon les cas :
-   - #intro-en-plateau => images/allumette-flamme.jpg
-   - #pourquoi-cycle => images/bascule-sol-fissures.jpg
-   - dispositif uniquement => images/dispositif-miroir-brise.jpg
-*/
-
-
-/* 10. Forcer une meilleure lisibilité globale des textes sur fond sombre */
-
-.section-dark p,
-.hero-note,
-.hero-access-note {
-  color: rgba(255,255,255,.72);
-}
-
-.section-dark h2,
-.section-dark h3,
-.hero-title {
-  text-shadow: 0 8px 30px rgba(0,0,0,.28);
-}
-    /* 1. IMPACT — déplacer la goutte hors du texte et la rendre visible */
-
-.impact-shell {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(5,8,12,.82),
-      rgba(5,8,12,.92)
-    ),
-    url("images/impact-onde-eau.jpg") center 22% / cover no-repeat;
-}
-
-/* Si la goutte reste derrière le titre, tester ensuite :
-   center 16%
-*/
-
-
-/* 2. DISPOSITIF — supprimer la coupure nette du miroir */
-
-.dispositif-shell::before {
-  width: 62%;
-  opacity: .20;
-  background: url("images/dispositif-miroir-brise.jpg") left center / cover no-repeat;
-}
-
-.dispositif-shell::after {
-  width: 72%;
-  background: linear-gradient(
-    90deg,
-    rgba(245,247,250,.10) 0%,
-    rgba(245,247,250,.35) 35%,
-    rgba(245,247,250,.72) 62%,
-    rgba(245,247,250,1) 100%
-  );
-}
-  </style>
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/home.css">
 </head>
-<body>
 
-  <header class="site-header">
-    <div class="site-header__inner">
-      <div class="brand">En Plateau</div>
-
-      <nav class="nav">
-        <a href="#cycles-home">Conversations</a>
-        <a href="#positions-home">Positions</a>
-        <a href="#dispositif-home">Dispositif</a>
-      </nav>
-
-      <a href="demander-un-echange-editorial.html" class="header-cta">Échange éditorial</a>
-    </div>
-  </header>
+<body class="home-page home-page">
+  <div id="site-header"></div>
+  <div id="site-mobile-menu"></div>
 
   <main>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-grid">
+    <section class="home-hero" id="hero-home">
+      <div class="home-container">
+        <div class="home-hero-grid">
+          <div class="home-hero-copy">
+            <div class="home-kicker">Prises de parole économiques · Conversations En Plateau</div>
 
-          <div class="hero-copy">
-            <div class="hero-kicker">Prises de parole économiques · Conversations En Plateau</div>
+            <h1>Rendre lisibles les arbitrages qui transforment l'économie.</h1>
 
-            <h1 class="hero-title">Faire émerger une parole qui compte.</h1>
-
-            <p class="hero-subtitle">
-              <strong>En Plateau prépare des prises de parole à partir de tensions réelles, de points de bascule identifiables et d’arbitrages concrets, pour éclairer ce qui se transforme dans les organisations, les filières et les territoires.</strong>
+            <p class="home-hero-lead">
+              <strong>Ce qui bascule réellement ne se lit pas depuis une seule position.</strong>
             </p>
 
-            <p class="hero-note">
+            <p class="home-hero-lead">
+              En Plateau est un cycle d'indexation de lectures stratégiques. Nous réunissons des acteurs qui vivent les mêmes tensions depuis des positions différentes pour en extraire une vision système. Chaque angle est attribué à un seul profil — pour que la mise en regard soit réelle, et la lecture irremplaçable.
+            </p>
+
+            <p class="home-hero-note">
               Si vous avez été contacté sur LinkedIn, ce n’est pas pour occuper un format. C’est parce que votre position peut aider à rendre une situation plus lisible, plus située et plus utile à d’autres acteurs de décision.
             </p>
 
-            <div class="hero-actions">
-              <a href="demander-un-echange-editorial.html" class="btn-primary">Demander un échange éditorial</a>
+            <div class="home-actions">
+              <a href="demander-un-echange-editorial.html">Soumettre une position pour examen</a>
             </div>
 
-            <p class="hero-access-note">
-              L’échange éditorial permet de qualifier la justesse de l’angle, la portée de votre lecture et les conditions d’une intervention solide. Si vous n’avez pas été contacté, vous pouvez toutefois signaler une contribution.
+            <p class="home-hero-small">
+              L’échange éditorial permet de qualifier la justesse de l’angle, la portée de votre lecture et d'établir une Note de Synthèse structurée. Si vous n’avez pas été contacté, vous pouvez toutefois signaler une contribution.
             </p>
           </div>
 
-          <aside class="hero-side">
-            <div class="hero-side-panel">
-              <div class="hero-side-head">En cours : deux cycles éditoriaux</div>
+          <aside class="home-hero-side">
+            <div class="home-side-panel">
+              <div class="home-side-title">En cours : deux cycles éditoriaux</div>
 
-              <div class="hero-side-group">
+              <div class="home-side-group">
                 <h3>Logement &amp; fabrique des territoires</h3>
                 <p>Des situations où les arbitrages se tendent entre financement, droit, marché, exécution et territoire.</p>
-                <div class="hero-side-links">
+                <div class="home-side-links">
                   <a href="conversations/logement.html">Explorer les conversations</a>
                   <a href="positions/logement.html">Explorer les positions</a>
                 </div>
               </div>
 
-              <div class="hero-side-group">
+              <div class="home-side-group">
                 <h3>Industrie &amp; transformation des territoires</h3>
                 <p>Des situations où les décisions se jouent entre compétitivité, dépendances, transformation productive et allocation du risque.</p>
-                <div class="hero-side-links">
+                <div class="home-side-links">
                   <a href="conversations/industrie.html">Explorer les conversations</a>
                   <a href="positions/industrie.html">Explorer les positions</a>
                 </div>
               </div>
             </div>
           </aside>
-
         </div>
       </div>
     </section>
 
-    <!-- CREDIBILITE -->
-    <section class="section section-dark credibilite" id="credibilite-home">
-      <div class="container">
-        <div class="credibilite-inner">
-
-          <div class="credibilite-copy">
-            <div class="section-head" style="text-align:left;max-width:none;margin:0 0 22px;">
-              <h2>Il ne s’agit pas de parler davantage, mais de mieux faire apparaître ce qui bascule réellement.</h2>
-            </div>
-
-            <p class="section-intro" style="max-width:none;margin:0 0 18px;">
+    <section class="home-section home-dark home-credibility" id="credibilite-home">
+      <div class="home-container">
+        <div class="home-credibility-grid">
+          <div>
+            <h2>Il ne s’agit pas de parler davantage, mais de fixer ce qui bascule réellement.</h2>
+            <p>
               En Plateau cadre des prises de parole destinées à être exprimées dans des formats audiovisuels animés par des journalistes économiques, afin de rendre plus lisibles des sujets sensibles, techniques ou structurants.
             </p>
-
-            <p class="cred-note">
-              Les formats sont réalisés avec des sociétés de production partenaires et diffusés dans des cadres médiatiques clairement identifiés. Le travail en amont vise une parole tenable publiquement, lisible éditorialement et utile au-delà du seul moment de diffusion.
+            <p class="home-note">
+              Le cadre d'intervention préserve la confidentialité des données sensibles : vous parlez depuis une position sectorielle pour éclairer une problématique, pas pour livrer des informations corporate internes.
             </p>
           </div>
 
-          <div class="credibilite-film" aria-label="Émissions de référence">
-            <div class="film-track">
-              <div class="film-card"><img src="images/emission-1.jpg" alt="Émission 1"></div>
-              <div class="film-card"><img src="images/emission-2.jpg" alt="Émission 2"></div>
-              <div class="film-card"><img src="images/emission-3.jpg" alt="Émission 3"></div>
-              <div class="film-card"><img src="images/emission-4.jpg" alt="Émission 4"></div>
-
-              <div class="film-card"><img src="images/emission-1.jpg" alt=""></div>
-              <div class="film-card"><img src="images/emission-2.jpg" alt=""></div>
-              <div class="film-card"><img src="images/emission-3.jpg" alt=""></div>
-              <div class="film-card"><img src="images/emission-4.jpg" alt=""></div>
+          <div class="home-film" aria-label="Émissions de référence">
+            <div class="home-film-track">
+              <div><img src="images/emission-1.jpg" alt="Émission 1"></div>
+              <div><img src="images/emission-2.jpg" alt="Émission 2"></div>
+              <div><img src="images/emission-3.jpg" alt="Émission 3"></div>
+              <div><img src="images/emission-4.jpg" alt="Émission 4"></div>
+              <div><img src="images/emission-1.jpg" alt=""></div>
+              <div><img src="images/emission-2.jpg" alt=""></div>
+              <div><img src="images/emission-3.jpg" alt=""></div>
+              <div><img src="images/emission-4.jpg" alt=""></div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- POURQUOI -->
-    <section class="section section-light" id="pourquoi-cycle">
-      <div class="container">
-        <div class="split-grid">
-          <div class="split-dark" style="background:url('images/bascule-sol-fissures.jpg') center/cover no-repeat;">
+    <section class="home-section home-light" id="pourquoi-cycle">
+      <div class="home-container">
+        <div class="home-split">
+          <div class="home-split-title home-fissures">
             <h2>Vous intervenez là où une expertise générique ne suffit plus.</h2>
           </div>
 
-          <div class="split-light">
-            <div class="structured-copy">
-              <div class="structured-block">
-                <h3>Des sujets commentés, mais encore mal lus.</h3>
-                <p>Beaucoup de prises de parole décrivent une transformation. Peu font apparaître clairement la tension, le point de bascule et l’arbitrage qu’elle impose.</p>
-              </div>
-
-              <div class="structured-block">
-                <h3>Une lecture préparée, pas une parole improvisée.</h3>
-                <p>Votre intervention est cadrée à partir d’un angle précis, pour rendre visible ce qui se joue réellement, sans simplification excessive, sans surjeu, sans surexposition inutile.</p>
-              </div>
-
-              <div class="structured-block">
-                <h3>Une portée renforcée par la mise en regard.</h3>
-                <p>Votre lecture prend davantage de valeur lorsqu’elle apparaît aux côtés d’autres positions engagées sur les mêmes tensions : financement, droit, stratégie, exécution, industrie, territoire.</p>
-              </div>
+          <div class="home-split-copy">
+            <div>
+              <h3>Des sujets commentés, mais mal lus.</h3>
+              <p>Beaucoup de prises de parole décrivent une transformation. Peu font apparaître clairement la tension, le point de bascule et l’arbitrage réel qu’elle impose aux dirigeants.</p>
+            </div>
+            <div>
+              <h3>Une épreuve de cohérence.</h3>
+              <p>Votre intervention est cadrée à partir d’un angle précis pour rendre visible ce qui se joue réellement, sans simplification marketing, sans surjeu, et sans surexposition inutile.</p>
+            </div>
+            <div>
+              <h3>Une valeur de référentiel.</h3>
+              <p>Votre lecture prend sa pleine valeur lorsqu’elle est mise en regard d’autres positions engagées sur les mêmes tensions : financement, droit, stratégie, exécution, industrie.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- DECISIONS -->
-    <section class="section section-dark" id="intro-en-plateau">
-      <div class="container">
-        <div class="abstract-grid">
-          <div class="abstract-visual" style="background:#0a0d12;">
-            <div style="position:absolute;inset:0;background:url('images/faisceau-lumiere.jpg') center/cover no-repeat;opacity:.38;filter:blur(1px) grayscale(12%) contrast(110%) brightness(.76);"></div>
-            <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.38), rgba(0,0,0,.52));"></div>
-          </div>
+    <section class="home-section home-dark" id="intro-en-plateau">
+      <div class="home-container">
+        <div class="home-decision-grid">
+          <div class="home-decision-visual"></div>
 
-          <div class="abstract-copy">
-            <div class="abstract-copy-inner">
-              <h2>C’est là que les décisions changent de nature.</h2>
+          <div class="home-decision-copy">
+            <h2>C’est là que les décisions changent de nature.</h2>
 
-              <div class="abstract-copy-block">
-                <h3>Les situations que nous travaillons sont rarement théoriques.</h3>
-                <p>Une activité se développe, un projet avance, une transformation s’accélère, puis les équilibres habituels cessent de suffire pour décider comme avant.</p>
-              </div>
+            <div>
+              <h3>Des situations de tension concrètes.</h3>
+              <p>Une activité se développe, un projet avance, une transformation s’accélère, puis les équilibres habituels cessent de suffire pour décider comme avant.</p>
+            </div>
 
-              <div class="abstract-copy-block">
-                <h3>Le sujet n’est pas seulement ce qui change, mais ce que ce changement oblige à arbitrer.</h3>
-                <p>Les tensions peuvent se situer entre financement, cadre, marché, exécution, chaîne productive, rythme de transformation ou allocation du risque.</p>
-              </div>
+            <div>
+              <h3>Le sujet : ce que le changement oblige à arbitrer.</h3>
+              <p>Les tensions se situent entre financement, cadre réglementaire, marché, exécution, chaîne productive ou allocation du risque industriel.</p>
+            </div>
 
-              <div class="abstract-copy-block">
-                <h3>C’est à ce moment-là qu’une parole bien située devient décisive.</h3>
-                <p>Non pour commenter de loin, mais pour aider à comprendre à partir de quand une situation change de nature, qui elle affecte réellement, et ce qu’elle oblige à décider.</p>
-              </div>
+            <div>
+              <h3>Une parole située pour aider à décider.</h3>
+              <p>L'objectif n'est pas de commenter de loin, mais d'aider à comprendre à partir de quand une situation change de nature, qui elle affecte, et ce qu’elle oblige à trancher.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CYCLES -->
-    <section class="section section-light" id="cycles-home">
-      <div class="container">
-        <div class="section-head">
+    <section class="home-section home-light" id="cycles-home">
+      <div class="home-container">
+        <div class="home-head">
           <h2>Deux cycles pour lire ce qui se transforme réellement.</h2>
-          <p class="section-intro">
-            Chaque cycle ouvre un ensemble de conversations construites à partir de points de bascule réels, où plusieurs lectures se croisent sans jamais se confondre.
-          </p>
+          <p>Chaque cycle ouvre un ensemble de conversations construites à partir de points de bascule réels, où plusieurs lectures se croisent sans jamais se confondre.</p>
         </div>
 
-        <div class="cycles-grid">
-          <article class="cycle-card">
-            <div class="cycle-visual" style="background-image:url('images/cycle-logement-chantier.jpg');"></div>
-            <div class="cycle-body">
-              <div class="cycle-label">Cycle en cours</div>
+        <div class="home-cycles">
+          <article>
+            <div class="home-cycle-img home-cycle-logement"></div>
+            <div class="home-cycle-body">
+              <span>Cycle en cours</span>
               <h3>Logement &amp; fabrique des territoires</h3>
-              <p>Des situations où un projet tient encore en apparence, mais où ses arbitrages se tendent déjà entre financement, droit, marché, exécution et territoire.</p>
-              <div class="cycle-links">
+              <p>Des situations où un projet tient encore en apparence, mais où ses arbitrages se tendent déjà entre financement, droit, marché et exécution.</p>
+              <div>
                 <a href="conversations/logement.html">Explorer les conversations</a>
                 <a href="positions/logement.html">Explorer les positions</a>
               </div>
             </div>
           </article>
 
-          <article class="cycle-card">
-            <div class="cycle-visual" style="background-image:url('images/cycle-industrie-hightech.jpg');"></div>
-            <div class="cycle-body">
-              <div class="cycle-label">Cycle en cours</div>
+          <article>
+            <div class="home-cycle-img home-cycle-industrie"></div>
+            <div class="home-cycle-body">
+              <span>Cycle en cours</span>
               <h3>Industrie &amp; transformation des territoires</h3>
-              <p>Des situations où l’activité se poursuit, mais où ses arbitrages se tendent déjà entre compétitivité, chaîne productive, transformation, dépendances et allocation du risque.</p>
-              <div class="cycle-links">
+              <p>Des situations où l’activité se poursuit, mais où les décisions se tendent entre compétitivité, transformation productive et allocation du risque.</p>
+              <div>
                 <a href="conversations/industrie.html">Explorer les conversations</a>
                 <a href="positions/industrie.html">Explorer les positions</a>
               </div>
@@ -1791,175 +199,102 @@
           </article>
         </div>
 
-        <p class="selection-subnote">
-          Le site permet de comprendre la logique des cycles en cours. La pertinence d’un point d’entrée, d’un angle ou d’une intervention se travaille ensuite dans le cadre d’un échange éditorial.
-        </p>
+        <p class="home-subnote">L’indexation d’une position est soumise à sa complémentarité avec les cycles en cours. La pertinence d’une intervention se travaille exclusivement dans le cadre d’un échange éditorial.</p>
       </div>
     </section>
 
-    <!-- POSITIONS -->
-    <section class="section section-dark section-overlay-bg" id="positions-home" style="background:
-      linear-gradient(180deg, rgba(10,13,18,.94), rgba(10,13,18,.96)),
-      linear-gradient(180deg, #0a0d12 0%, #0d1218 100%);">
-      <div style="position:absolute;inset:0;background:url('images/positions-echequier.jpg') center/cover no-repeat;opacity:.14;filter:grayscale(100%) contrast(112%) brightness(.8);"></div>
-
-      <div class="container">
-        <div class="section-head">
+    <section class="home-section home-dark home-positions" id="positions-home">
+      <div class="home-container">
+        <div class="home-head">
           <h2>Des positions qui rendent les arbitrages plus lisibles</h2>
-          <p class="section-intro">
-            Toutes les décisions ne sont pas prises par ceux qui les portent officiellement. Certaines positions sécurisent, qualifient, rendent possible, objectivent ou orientent ce que les autres peuvent réellement faire. Les cycles en cours donnent à voir ces positions sans les réduire à un métier ni à une place unique dans l’organigramme.
-          </p>
+          <p>Toutes les décisions ne sont pas prises par ceux qui les portent officiellement. Certaines positions sécurisent, qualifient, ou orientent ce que les autres peuvent réellement faire. Nous indexons ces positions stratégiques.</p>
         </div>
 
-        <div class="position-grid">
-          <article class="position-card">
-            <div class="position-card-content">
-              <h3>Positions — Opérations immobilières</h3>
-              <p>Des positions depuis lesquelles les arbitrages réels deviennent plus lisibles : sécurité juridique, montage, financement, faisabilité, marché, capital, exécution.</p>
-              <a href="positions/logement.html" class="text-link dark-link">Explorer les positions - Opérations immobilières</a>
-            </div>
+        <div class="home-position-grid">
+          <article>
+            <h3>Positions — Opérations immobilières</h3>
+            <p>Sécurité juridique, montage financier, faisabilité technique, capital, exécution territoriale.</p>
+            <a href="positions/logement.html">Explorer les positions indexées</a>
           </article>
 
-          <article class="position-card">
-            <div class="position-card-content">
-              <h3>Positions — Industrie</h3>
-              <p>Des positions qui rendent plus lisibles les arbitrages réels de l’industrie : stratégie, opérations, financement, cadre réglementaire, chaîne productive, dépendances, risque.</p>
-              <a href="positions/industrie.html" class="text-link dark-link">Explorer les positions - Industrie</a>
-            </div>
+          <article>
+            <h3>Positions — Industrie</h3>
+            <p>Stratégie industrielle, opérations, financement, cadre réglementaire, chaîne productive, risque.</p>
+            <a href="positions/industrie.html">Explorer les positions indexées</a>
           </article>
         </div>
 
-        <p class="selection-subnote" style="color:var(--text-muted);">
-          Aucune de ces positions ne décide seule. Chacune éclaire, infléchit ou rend possible ce que les autres peuvent réellement décider.
-        </p>
+        <p class="home-subnote dark">Aucune de ces positions ne décide seule. Chacune éclaire, infléchit ou rend possible ce que les autres peuvent réellement décider.</p>
       </div>
     </section>
 
-    <!-- DISPOSITIF -->
-    <section class="section section-light alt dispositif-shell" id="dispositif-home">
-      <div class="container">
-        <div class="dispositif-grid">
-          <div class="dispositif-copy">
-            <h2>Un dispositif éditorial conçu pour faire tenir une parole exigeante</h2>
-            <p>
-              Votre contribution est préparée en amont, tenue dans un cadre éditorial précis, puis produite dans des conditions qui permettent d’en prolonger la portée.
-            </p>
+    <section class="home-section home-light home-dispositif" id="dispositif-home">
+      <div class="home-container">
+        <div class="home-dispositif-grid">
+          <div>
+            <h2>Un protocole d'indexation pour une parole de haut niveau</h2>
+            <p>Votre contribution est isolée, stabilisée puis produite dans des conditions qui permettent d’en fixer l'autorité stratégique.</p>
           </div>
 
-          <div class="dispositif-cards">
-            <article class="dispositif-card">
-              <h3>Partir d’un angle précis</h3>
-              <p>Chaque intervention est cadrée à partir d’une situation identifiable, d’une tension réelle et d’un point de bascule que votre position permet d’éclairer.</p>
-            </article>
-
-            <article class="dispositif-card">
-              <h3>Préparer une parole tenable publiquement</h3>
-              <p>Le travail éditorial permet de rendre votre lecture plus claire, plus située et plus utile, sans vous pousser vers une parole artificielle ou surexposée.</p>
-            </article>
-
-            <article class="dispositif-card">
-              <h3>Produire une lecture qui reste exploitable</h3>
-              <p>L’émission courte et son prolongement écrit permettent de conserver une trace structurée de votre lecture, réutilisable dans votre écosystème professionnel.</p>
-            </article>
-
-            <article class="dispositif-card">
-              <h3>Mettre les positions en regard</h3>
-              <p>Votre intervention reste singulière, mais elle gagne en portée lorsqu’elle apparaît aux côtés d’autres lectures engagées sur les mêmes tensions et les mêmes arbitrages.</p>
-            </article>
+          <div class="home-dispositif-cards">
+            <article><h3>Identifier la tension motrice</h3><p>Chaque intervention est isolée à partir d’une tension réelle (réglementaire, technique ou financière) où votre lecture devient nécessaire pour comprendre la situation.</p></article>
+            <article><h3>Épreuve de cohérence éditoriale</h3><p>Un échange approfondi pour stabiliser votre message. L'objectif est une parole située, capable de résister à la contradiction et utile au débat d'idées.</p></article>
+            <article><h3>Note de synthèse et fixation</h3><p>La captation est doublée d'une synthèse structurée. Vous disposez d'un actif intellectuel pérenne, trace écrite et structurée de votre autorité sur le sujet.</p></article>
+            <article><h3>Mise en cohérence du corpus</h3><p>Votre intervention complète un échiquier de décisions. Elle gagne en portée en étant mise en regard avec d'autres lectures engagées sur les mêmes arbitrages.</p></article>
           </div>
         </div>
 
-        <p class="programme-link-row">
-          <a href="dispositif.html" class="text-link light-link">Découvrir le dispositif</a>
-        </p>
+        <p class="home-center-link"><a href="dispositif.html">Découvrir le protocole complet</a></p>
       </div>
     </section>
 
-    <!-- IMPACT -->
-    <section class="section section-light impact-shell" id="valeur-home">
-      <div class="container">
-        <div class="section-head">
-          <h2>Ce que votre prise de parole peut réellement changer</h2>
-          <p class="section-intro">
-            Une prise de parole bien préparée ne modifie pas seulement ce qui est dit. Elle modifie aussi la manière dont votre position est comprise, retenue et sollicitée dans votre écosystème professionnel.
-          </p>
+    <section class="home-section home-dark home-impact" id="valeur-home">
+      <div class="home-container">
+        <div class="home-head">
+          <h2>Ce que votre indexation modifie réellement</h2>
+          <p>Une prise de parole bien préparée ne modifie pas seulement ce qui est dit. Elle modifie la manière dont votre position est comprise et sollicitée par vos pairs.</p>
         </div>
 
-        <div class="value-stack">
-          <article class="value-block">
-            <div class="value-index">01</div>
-            <div class="value-body">
-              <h3>Rendre votre position plus lisible</h3>
-              <p>Votre contribution aide à comprendre à quel moment votre lecture devient décisive : ce qu’elle sécurise, ce qu’elle qualifie, ce qu’elle rend possible ou ce qu’elle permet d’arbitrer autrement.</p>
-            </div>
-          </article>
-
-          <article class="value-block">
-            <div class="value-index">02</div>
-            <div class="value-body">
-              <h3>Différencier votre parole</h3>
-              <p>Dans un univers où beaucoup de prises de parole se ressemblent, votre lecture devient plus située, plus identifiable et plus difficile à confondre avec une expertise générique.</p>
-            </div>
-          </article>
-
-          <article class="value-block">
-            <div class="value-index">03</div>
-            <div class="value-body">
-              <h3>Ouvrir des échanges plus qualifiés</h3>
-              <p>La prise de parole réalisée peut ensuite nourrir des prises de contact, des recommandations et des rapprochements plus cohérents avec votre positionnement réel et les sujets sur lesquels vous souhaitez être attendu.</p>
-            </div>
-          </article>
+        <div class="home-values">
+          <article><span>01</span><div><h3>Sanctuariser votre périmètre d'arbitrage</h3><p>Votre contribution aide à comprendre à quel moment votre lecture devient décisive : ce qu’elle sécurise, qualifie ou rend possible pour le système.</p></div></article>
+          <article><span>02</span><div><h3>Qualifier votre écosystème de sollicitation</h3><p>La synthèse réalisée devient un outil de dialogue avec vos partenaires, investisseurs ou régulateurs pour objectiver les conditions de votre action.</p></div></article>
+          <article><span>03</span><div><h3>Différencier la substance de l'image</h3><p>Votre lecture devient plus située et identifiable, impossible à confondre avec une expertise générique ou une parole de marque sans profondeur.</p></div></article>
         </div>
       </div>
     </section>
 
-    <!-- ACCES -->
-    <section class="section section-light access-shell" id="acces-home">
-      <div class="container">
-        <div class="section-head">
-          <h2>Accéder au dispositif</h2>
-          <p class="section-intro">
-            Les échanges sont ouverts aux personnes déjà identifiées, ainsi qu’aux acteurs qui souhaitent signaler la pertinence de leur position dans l’un des cycles en cours.
-          </p>
+    <section class="home-section home-light home-access" id="acces-home">
+      <div class="home-container">
+        <div class="home-head">
+          <h2>Accéder au répertoire</h2>
+          <p>Les échanges sont réservés aux personnes déjà identifiées ou aux acteurs capables de documenter la pertinence de leur position dans les cycles en cours.</p>
         </div>
 
-        <div class="access-grid">
-          <article class="access-card primary">
+        <div class="home-access-grid">
+          <article>
             <h3>Vous avez déjà été contacté</h3>
-            <p>Cet échange permet de vérifier la justesse de votre angle, la portée réelle de votre lecture et les conditions d’une intervention crédible, utile et tenable.</p>
-            <a href="demander-un-echange-editorial.html" class="btn-dark">Demander un échange éditorial</a>
-            <p class="micro-note" style="margin-top:16px;color:var(--ink-muted);">
-              L’échange éditorial ne vaut pas engagement automatique. Il sert à vérifier la pertinence de l’angle, la qualité de la lecture et les conditions de préparation.
-            </p>
+            <p>Cet échange permet de vérifier la justesse de l’angle, la portée réelle de votre lecture et la faisabilité d'une intervention utile au corpus.</p>
+            <a href="demander-un-echange-editorial.html">Soumettre votre position</a>
+            <p class="home-note-light">L’échange éditorial ne vaut pas indexation automatique. Il sert à valider la solidité de la lecture et sa complémentarité avec les positions déjà fixées.</p>
           </article>
 
-          <article class="access-card">
+          <article>
             <h3>Vous n’avez pas été contacté</h3>
-            <p>Vous pouvez signaler la pertinence de votre lecture sur l’un des sujets ou cycles en cours. Chaque signalement est examiné au regard du travail éditorial engagé.</p>
-            <a href="proposer-une-contribution.html" class="btn-dark">Signaler une contribution</a>
+            <p>Vous pouvez signaler la pertinence de votre lecture sur un point de bascule identifié. Chaque signalement est examiné au regard de l'exigence du cycle.</p>
+            <a href="proposer-une-contribution.html">Signaler une contribution</a>
           </article>
         </div>
 
-        <p class="selection-subnote">
-          Les positions visibles sur le site ne valent pas ouverture générale. Elles donnent à comprendre les types de lectures, de tensions et d’interventions que les cycles en cours cherchent à mettre en regard.
-        </p>
+        <p class="home-subnote">Le répertoire En Plateau ne constitue pas un espace publicitaire, mais un corpus de lectures stratégiques sélectionnées pour leur utilité réciproque.</p>
       </div>
     </section>
 
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-copy">En Plateau — dispositif éditorial et audiovisuel</div>
-        <div class="footer-links">
-          <a href="#cycles-home">Conversations</a>
-          <a href="#positions-home">Positions</a>
-          <a href="#dispositif-home">Dispositif</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
+  <div id="cookie-container"></div>
 
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/layout.js"></script>
 </body>
 </html>
