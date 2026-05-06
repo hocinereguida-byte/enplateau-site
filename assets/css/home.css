@@ -1243,4 +1243,43 @@
     display: none;
   }
 }
+/* Correctifs hero premium */
 
+.home-hero-title-nowrap {
+  white-space: nowrap;
+}
+
+/* CTA angle droit, moins SaaS */
+.home-hero .home-actions a:first-child,
+.home-hero-side .home-actions a:first-child,
+.home-solicited-card a {
+  border-radius: 4px !important;
+}
+
+/* CTA du cartouche aligné à droite */
+.home-hero-side .home-actions,
+.home-solicited-card .home-actions {
+  justify-content: flex-end !important;
+}
+
+/* Hiérarchie typo du cartouche à droite */
+.home-hero-side h3,
+.home-solicited-card h3 {
+  font-size: 1.24rem !important;
+  line-height: 1.1 !important;
+  margin-bottom: 10px !important;
+}
+
+.home-hero-side p,
+.home-solicited-card p {
+  font-size: .84rem !important;
+  line-height: 1.62 !important;
+  color: rgba(248,250,252,.68) !important;
+}
+
+/* Le petit texte sous le cartouche encore plus discret */
+.home-hero-side .home-hero-small {
+  font-size: .72rem !important;
+  line-height: 1.55 !important;
+  color: rgba(248,250,252,.48) !important;
+}
