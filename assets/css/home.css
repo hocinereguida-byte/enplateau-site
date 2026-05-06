@@ -448,7 +448,7 @@
 
 @keyframes homeScrollFilm {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-32%); }
+  100% { transform: translateY(-20%); }
 }
 
 /* SPLIT */
