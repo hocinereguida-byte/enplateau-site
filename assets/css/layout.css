@@ -143,6 +143,30 @@ h6 {
 
 /* ---------- TYPO ---------- */
 
+body,
+p,
+li,
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+}
+
+button,
+.site-header,
+.desktop-editorial-nav,
+.site-header__cta,
+.mobile-top-link,
+.mobile-secondary-link,
+.footer-title,
+.card-label,
+.small-caps,
+.cookie-btn,
+.cookie-modal__kicker,
+.cookie-toggle__label {
+  font-family: var(--font-ui);
+}
+
 h1,
 h2,
 h3,
@@ -503,7 +527,7 @@ h4 {
 }
 
 .card--dark h3,
-.panel--dark h3,
+panel--dark h3,
 .box--dark h3 {
   color: var(--ep-dark-text);
 }
@@ -1208,6 +1232,9 @@ body.cookies-open {
 }
 
 .cookie-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 44px;
   padding: 0 16px;
   border: 1px solid var(--ep-line-strong);
