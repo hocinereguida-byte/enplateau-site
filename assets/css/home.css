@@ -1,4 +1,4 @@
-:root {
+:root { 
   --h3-bg: #0a0d12;
   --h3-paper: #ffffff;
   --h3-paper-soft: #f5f7fa;
@@ -47,7 +47,7 @@
 /* BASE */
 
 .home-page main {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: var(--font-body);
   background: var(--h3-paper);
 }
 
@@ -83,6 +83,7 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 16px;
+  font-family: var(--font-ui);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: .14em;
@@ -109,7 +110,7 @@
 .home-head h2,
 .home-credibility h2,
 .home-dispositif h2 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: clamp(2.2rem, 3.6vw, 4.05rem);
   line-height: .98;
   letter-spacing: -.03em;
@@ -182,6 +183,7 @@
 .home-hero-contact-card a,
 .home-hero-sollicite a {
   position: relative;
+  font-family: var(--font-ui);
   font-size: 10px;
   font-weight: 600;
   letter-spacing: .12em;
@@ -248,7 +250,7 @@
 }
 
 .home-hero h1 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: clamp(3.15rem, 5.55vw, 5.55rem);
   line-height: .9;
   letter-spacing: -.04em;
@@ -267,21 +269,6 @@
   margin-bottom: 14px;
 }
 
-.home-hero-lead strong {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 1.28rem;
-  line-height: 1.42;
-  color: #ffffff;
-  font-weight: 700;
-}
-
-.home-hero-text {
-  font-size: .95rem;
-  line-height: 1.72;
-  color: rgba(248,250,252,.74);
-  max-width: 690px;
-}
 .home-hero-lead strong {
   display: block;
   margin-bottom: 10px;
@@ -332,17 +319,44 @@
 
 .home-hero-card h2 {
   margin: 0 0 10px;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: 1.25rem;
   line-height: 1.1;
   color: #fff;
 }
 
+.home-hero-card h3 {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: #fff;
+}
+
 .home-hero-card p {
   margin: 0 0 18px;
-  font-size: .84rem;
-  line-height: 1.58;
+  font-size: .86rem;
+  line-height: 1.6;
   color: rgba(248,250,252,.76);
+}
+
+.home-hero-card a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 2px !important;
+  background: #ffffff;
+  color: #111827;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.home-hero-card a::after {
+  display: none !important;
 }
 
 .home-actions--card {
@@ -361,6 +375,7 @@
   border: 1px solid #ffffff !important;
   color: #111827 !important;
   box-shadow: 0 14px 34px rgba(0,0,0,.26);
+  font-family: var(--font-ui);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .14em;
@@ -377,6 +392,14 @@
   line-height: 1.55;
   color: rgba(248,250,252,.50);
 }
+
+.home-hero-small--right {
+  margin-top: 14px;
+  font-size: .72rem;
+  line-height: 1.55;
+  color: rgba(248,250,252,.50);
+}
+
 /* SIDE PANEL */
 
 .home-side-panel {
@@ -391,7 +414,7 @@
 .home-side-title {
   padding: 22px 22px 18px;
   border-bottom: 1px solid rgba(255,255,255,.08);
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: 1.24rem;
   line-height: 1.06;
   color: #fff;
@@ -408,7 +431,7 @@
 }
 
 .home-side-group h3 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: 1.16rem;
   line-height: 1.08;
   letter-spacing: -.02em;
@@ -547,7 +570,7 @@
 .home-split-title h2 {
   position: relative;
   z-index: 2;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: clamp(2.5rem, 4vw, 4.2rem);
   line-height: .94;
   letter-spacing: -.035em;
@@ -582,7 +605,7 @@
 }
 
 .home-split-copy h3 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: 1.38rem;
   line-height: 1.08;
   letter-spacing: -.02em;
@@ -637,7 +660,7 @@
 }
 
 .home-decision-copy h2 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: clamp(2.35rem, 3.6vw, 4rem);
   line-height: .96;
   letter-spacing: -.03em;
@@ -659,7 +682,7 @@
 }
 
 .home-decision-copy h3 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: 1.34rem;
   line-height: 1.08;
   font-weight: 600;
@@ -715,6 +738,7 @@
 
 .home-cycle-body span {
   display: block;
+  font-family: var(--font-ui);
   font-size: 10px;
   font-weight: 600;
   letter-spacing: .14em;
@@ -724,7 +748,7 @@
 }
 
 .home-cycle-body h3 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: 1.56rem;
   line-height: 1.06;
   letter-spacing: -.02em;
@@ -788,7 +812,7 @@
 }
 
 .home-position-grid h3 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: 1.48rem;
   line-height: 1.06;
   letter-spacing: -.02em;
@@ -887,7 +911,7 @@
 }
 
 .home-dispositif-cards h3 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: 1.28rem;
   line-height: 1.08;
   letter-spacing: -.02em;
@@ -952,6 +976,7 @@
 }
 
 .home-values span {
+  font-family: var(--font-ui);
   font-size: 10px;
   font-weight: 600;
   letter-spacing: .14em;
@@ -961,7 +986,7 @@
 }
 
 .home-values h3 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: 1.34rem;
   line-height: 1.08;
   letter-spacing: -.02em;
@@ -1017,7 +1042,7 @@
 }
 
 .home-access-grid h3 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: 1.46rem;
   line-height: 1.08;
   letter-spacing: -.02em;
@@ -1160,52 +1185,4 @@
   .home-values span {
     padding-top: 0;
   }
-}
-.home-hero-card {
-  margin-top: 18px;
-  padding: 24px 26px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(8,13,22,.74);
-  backdrop-filter: blur(10px);
-}
-
-.home-hero-card h3 {
-  margin: 0 0 10px;
-  font-family: "Playfair Display", serif;
-  font-size: 1.25rem;
-  color: #fff;
-}
-
-.home-hero-card p {
-  margin: 0 0 18px;
-  font-size: .86rem;
-  line-height: 1.6;
-  color: rgba(248,250,252,.76);
-}
-
-.home-hero-card a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 20px;
-  border-radius: 2px !important;
-  background: #ffffff;
-  color: #111827;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-
-.home-hero-card a::after {
-  display: none !important;
-}
-
-.home-hero-small--right {
-  margin-top: 14px;
-  font-size: .72rem;
-  line-height: 1.55;
-  color: rgba(248,250,252,.50);
 }
