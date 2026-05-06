@@ -1094,16 +1094,32 @@
     padding-top: 0;
   }
   }
-/* Correctif hero — remontée titre + hiérarchie texte */
+/* Correctif hero — équilibre texte / pellicule desktop */
 
 @media (min-width: 1101px) {
+  .home-hero {
+    min-height: 92vh !important;
+  }
+
   .home-hero-grid {
-    align-items: start !important;
+    align-items: center !important;
     padding-top: 82px !important;
+    padding-bottom: 72px !important;
   }
 
   .home-hero-copy {
-    padding-top: 22px !important;
+    padding-top: 0 !important;
+  }
+
+  .home-hero-side {
+    align-self: center !important;
+    transform: translateY(-18px) !important;
+  }
+
+  .home-hero .home-film {
+    height: 500px !important;
+    max-width: 430px !important;
+    margin-left: auto !important;
   }
 
   .home-hero h1 {
@@ -1120,7 +1136,6 @@
     max-width: 520px !important;
     font-size: 1rem !important;
     line-height: 1.45 !important;
-    letter-spacing: .01em !important;
     color: #ffffff !important;
   }
 
@@ -1129,7 +1144,6 @@
     font-size: .88rem !important;
     line-height: 1.72 !important;
     color: rgba(248,250,252,.72) !important;
-    margin-top: 8px !important;
     margin-bottom: 18px !important;
   }
 
@@ -1138,9 +1152,5 @@
     font-size: .82rem !important;
     line-height: 1.62 !important;
     color: rgba(248,250,252,.56) !important;
-  }
-
-  .home-hero-side {
-    transform: translateY(-72px) !important;
   }
 }
