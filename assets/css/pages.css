@@ -1523,7 +1523,7 @@ body.page-interior-3 .container {
 
 /* =========================================================
    CORRECTIFS COMMUNS — DESIGN FIGÉ
-   Pages encore en ancien design + grilles 3 blocs
+   Anciennes pages + sections 3 blocs + splits
 ========================================================= */
 
 /* Pages internes encore servies par l’ancien socle */
@@ -1667,6 +1667,35 @@ body:not(.home-page) main > .home-section--dark:not(:first-child) p {
   background: #ffffff !important;
 }
 
+/* Textes déjà placés dans un split image/texte : suppression du faux encadré gris + barre bleue */
+.page-interior-3 .page3-split-copy .editorial-panel,
+.page-interior-3 .conv3-split-copy .editorial-panel,
+.page-interior-3 .home-split-copy .editorial-panel,
+.page-interior-3 .page3-split-copy .programme-list__item,
+.page-interior-3 .conv3-split-copy .programme-list__item,
+.page-interior-3 .home-split-copy .programme-list__item {
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.page-interior-3 .page3-split-copy .editorial-panel::before,
+.page-interior-3 .conv3-split-copy .editorial-panel::before,
+.page-interior-3 .home-split-copy .editorial-panel::before,
+.page-interior-3 .page3-split-copy .programme-list__item::before,
+.page-interior-3 .conv3-split-copy .programme-list__item::before,
+.page-interior-3 .home-split-copy .programme-list__item::before {
+  display: none !important;
+}
+
+.page-interior-3 .page3-split-copy .editorial-panel p,
+.page-interior-3 .conv3-split-copy .editorial-panel p,
+.page-interior-3 .home-split-copy .editorial-panel p {
+  color: var(--p3-ink-soft) !important;
+}
+
 /* Les traits bleus restent des accents de bloc, pas des fonds de section */
 .page-interior-3 .editorial-panel::before,
 .page-interior-3 .programme-list__item::before,
@@ -1679,24 +1708,24 @@ body:not(.home-page) main > .home-section--dark:not(:first-child) p {
   background: var(--p3-accent) !important;
 }
 
-/* Grilles à 3 blocs : éviter l’effet bloc manquant */
-.page-interior-3 .programme-list > :nth-child(3):last-child,
-.page-interior-3 .programme-access > :nth-child(3):last-child,
-.page-interior-3 .page3-card-grid > :nth-child(3):last-child,
-.page-interior-3 .conv3-cycles > :nth-child(3):last-child,
-.page-interior-3 .conv3-position-grid > :nth-child(3):last-child,
-.page-interior-3 .conv3-dispositif-cards > :nth-child(3):last-child,
-.page-interior-3 .home-cycles > :nth-child(3):last-child,
-.page-interior-3 .home-position-grid > :nth-child(3):last-child,
-.page-interior-3 .home-dispositif-cards > :nth-child(3):last-child,
-.page-interior-3 .home-values > :nth-child(3):last-child,
-body:not(.home-page) .programme-list > :nth-child(3):last-child,
-body:not(.home-page) .programme-access > :nth-child(3):last-child,
-body:not(.home-page) .page3-card-grid > :nth-child(3):last-child,
-body:not(.home-page) .conv3-cycles > :nth-child(3):last-child,
-body:not(.home-page) .conv3-position-grid > :nth-child(3):last-child,
-body:not(.home-page) .conv3-dispositif-cards > :nth-child(3):last-child {
-  grid-column: 1 / -1;
+/* Grilles à 3 blocs : 3 colonnes sur une seule ligne en desktop */
+.page-interior-3 .programme-list:has(> :nth-child(3):last-child),
+.page-interior-3 .programme-access:has(> :nth-child(3):last-child),
+.page-interior-3 .page3-card-grid:has(> :nth-child(3):last-child),
+.page-interior-3 .conv3-cycles:has(> :nth-child(3):last-child),
+.page-interior-3 .conv3-position-grid:has(> :nth-child(3):last-child),
+.page-interior-3 .conv3-dispositif-cards:has(> :nth-child(3):last-child),
+.page-interior-3 .home-cycles:has(> :nth-child(3):last-child),
+.page-interior-3 .home-position-grid:has(> :nth-child(3):last-child),
+.page-interior-3 .home-dispositif-cards:has(> :nth-child(3):last-child),
+.page-interior-3 .home-values:has(> :nth-child(3):last-child),
+body:not(.home-page) .programme-list:has(> :nth-child(3):last-child),
+body:not(.home-page) .programme-access:has(> :nth-child(3):last-child),
+body:not(.home-page) .page3-card-grid:has(> :nth-child(3):last-child),
+body:not(.home-page) .conv3-cycles:has(> :nth-child(3):last-child),
+body:not(.home-page) .conv3-position-grid:has(> :nth-child(3):last-child),
+body:not(.home-page) .conv3-dispositif-cards:has(> :nth-child(3):last-child) {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
 }
 
 .page-interior-3 .programme-list > :nth-child(3):last-child,
@@ -1709,7 +1738,83 @@ body:not(.home-page) .conv3-dispositif-cards > :nth-child(3):last-child {
 .page-interior-3 .home-position-grid > :nth-child(3):last-child,
 .page-interior-3 .home-dispositif-cards > :nth-child(3):last-child,
 .page-interior-3 .home-values > :nth-child(3):last-child {
+  grid-column: auto !important;
   max-width: none;
+}
+
+/* Positions : CTA industrie prioritaire, logement secondaire */
+body.page-positions .page-hero .programme-link-row a[href*="industrie"],
+body.page-interior-3.page-positions .page-hero .programme-link-row a[href*="industrie"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  background: var(--p3-accent) !important;
+  border: 1px solid var(--p3-accent) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+body.page-positions .page-hero .programme-link-row a[href*="industrie"]::after,
+body.page-interior-3.page-positions .page-hero .programme-link-row a[href*="industrie"]::after {
+  display: none !important;
+}
+
+body.page-positions .page-hero .programme-link-row a[href*="logement"],
+body.page-interior-3.page-positions .page-hero .programme-link-row a[href*="logement"] {
+  background: transparent !important;
+  border: 0 !important;
+  color: var(--p3-accent-soft) !important;
+  box-shadow: none !important;
+}
+
+/* Positions industrie : présentation alignée sur logement, mais sur fond blanc */
+body.page-positions #positions-industrie,
+body.page-interior-3.page-positions #positions-industrie,
+body.page-positions #industrie,
+body.page-interior-3.page-positions #industrie {
+  background: #ffffff !important;
+  color: var(--p3-ink) !important;
+}
+
+body.page-positions #positions-industrie h2,
+body.page-positions #positions-industrie h3,
+body.page-interior-3.page-positions #positions-industrie h2,
+body.page-interior-3.page-positions #positions-industrie h3,
+body.page-positions #industrie h2,
+body.page-positions #industrie h3,
+body.page-interior-3.page-positions #industrie h2,
+body.page-interior-3.page-positions #industrie h3 {
+  color: var(--p3-ink) !important;
+}
+
+body.page-positions #positions-industrie p,
+body.page-interior-3.page-positions #positions-industrie p,
+body.page-positions #industrie p,
+body.page-interior-3.page-positions #industrie p {
+  color: var(--p3-ink-soft) !important;
+}
+
+@media (max-width: 1023px) {
+  .page-interior-3 .programme-list:has(> :nth-child(3):last-child),
+  .page-interior-3 .programme-access:has(> :nth-child(3):last-child),
+  .page-interior-3 .page3-card-grid:has(> :nth-child(3):last-child),
+  .page-interior-3 .conv3-cycles:has(> :nth-child(3):last-child),
+  .page-interior-3 .conv3-position-grid:has(> :nth-child(3):last-child),
+  .page-interior-3 .conv3-dispositif-cards:has(> :nth-child(3):last-child),
+  .page-interior-3 .home-cycles:has(> :nth-child(3):last-child),
+  .page-interior-3 .home-position-grid:has(> :nth-child(3):last-child),
+  .page-interior-3 .home-dispositif-cards:has(> :nth-child(3):last-child),
+  .page-interior-3 .home-values:has(> :nth-child(3):last-child),
+  body:not(.home-page) .programme-list:has(> :nth-child(3):last-child),
+  body:not(.home-page) .programme-access:has(> :nth-child(3):last-child),
+  body:not(.home-page) .page3-card-grid:has(> :nth-child(3):last-child),
+  body:not(.home-page) .conv3-cycles:has(> :nth-child(3):last-child),
+  body:not(.home-page) .conv3-position-grid:has(> :nth-child(3):last-child),
+  body:not(.home-page) .conv3-dispositif-cards:has(> :nth-child(3):last-child) {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 @media (max-width: 780px) {
@@ -1727,4 +1832,3 @@ body:not(.home-page) .conv3-dispositif-cards > :nth-child(3):last-child {
     font-size: clamp(2.4rem, 11vw, 4rem);
   }
 }
-
