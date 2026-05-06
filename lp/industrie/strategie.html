@@ -421,19 +421,19 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2px;
-      background: var(--line);
+      background: rgba(255,255,255,0.06);
     }
     .audience-card {
-      background: var(--bg-light);
+      background: #1c1916;
       padding: 36px 32px;
     }
-    .audience-card--no { background: #f0e8df; }
+    .audience-card--no { background: #161412; }
     .audience-card h3 {
       font-family: var(--font-display);
       font-size: 1.05rem;
       font-weight: 600;
       margin-bottom: 20px;
-      color: var(--ink);
+      color: #f0ece6;
     }
     .audience-list {
       list-style: none;
@@ -446,7 +446,7 @@
       gap: 10px;
       font-size: 0.9rem;
       line-height: 1.62;
-      color: var(--ink-soft);
+      color: rgba(240,236,230,0.62);
     }
     .audience-list li::before {
       content: '→';
@@ -456,7 +456,7 @@
       font-size: 0.82rem;
       margin-top: 2px;
     }
-    .audience-list--no li::before { content: '×'; color: var(--ink-muted); }
+    .audience-list--no li::before { content: '×'; color: rgba(240,236,230,0.28); }
 
     .panel {
       background: rgba(176,141,87,0.06);
@@ -481,11 +481,11 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
-      background: rgba(255,255,255,0.06);
+      background: var(--line);
       margin-top: 40px;
     }
     .value-card {
-      background: #1c1916;
+      background: #ffffff;
       padding: 32px 28px;
       border-bottom: 2px solid transparent;
       transition: border-color 0.2s;
@@ -495,20 +495,20 @@
       font-family: var(--font-mono);
       font-size: 0.65rem;
       letter-spacing: 0.1em;
-      color: var(--accent);
+      color: var(--ink-muted);
       margin-bottom: 14px;
     }
     .value-card h3 {
       font-family: var(--font-display);
       font-size: 1.05rem;
       font-weight: 600;
-      color: #f0ece6;
+      color: var(--ink);
       margin-bottom: 10px;
       line-height: 1.3;
     }
     .value-card p {
       font-size: 0.88rem;
-      color: rgba(240,236,230,0.52);
+      color: var(--ink-soft);
       line-height: 1.65;
     }
 
@@ -637,7 +637,7 @@
     .conv-panel-angle {
       padding: 24px 32px;
       border-bottom: 1px solid var(--line);
-      background: var(--bg-light);
+      background: #ffffff;
     }
 
     .conv-panel-angle-label {
@@ -1229,12 +1229,12 @@
     </section>
 
     <!-- ══ VALEUR INTERVENANT ════════════════════════════════════════════ -->
-    <section class="section section--dark" aria-labelledby="valeur-titre">
+    <section class="section section--warm" aria-labelledby="valeur-titre">
       <div class="container">
         <div class="section-head">
-          <div class="kicker kicker--faint">Ce que vous y gagnez</div>
-          <h2 class="display display--light" id="valeur-titre">Être parmi ceux qui fixent le récit — pas parmi ceux qui le subissent</h2>
-          <p class="section-intro section-intro--light">
+          <div class="kicker">Ce que vous y gagnez</div>
+          <h2 class="display" id="valeur-titre">Être parmi ceux qui fixent le récit — pas parmi ceux qui le subissent</h2>
+          <p class="section-intro">
             Sur les sujets qui structurent l'industrie, les lectures de référence se constituent maintenant. Ceux qui les portent en premier choisissent leur angle. Les autres commentent.
           </p>
         </div>
@@ -1265,11 +1265,11 @@
     </section>
 
     <!-- ══ POUR QUI ═══════════════════════════════════════════════════════ -->
-    <section class="section section--white" aria-labelledby="pourqui-titre">
+    <section class="section section--dark" aria-labelledby="pourqui-titre">
       <div class="container">
         <div class="section-head">
-          <div class="kicker">Pertinence</div>
-          <h2 class="display" id="pourqui-titre">Cette conversation vous est-elle destinée ?</h2>
+          <div class="kicker kicker--faint">Pertinence</div>
+          <h2 class="display display--light" id="pourqui-titre">Cette conversation vous est-elle destinée ?</h2>
         </div>
 
         <div class="audience-grid">
@@ -1294,7 +1294,7 @@
           </div>
         </div>
 
-        <div class="panel">
+        <div class="panel panel--dark">
           <p>Il ne s'agit pas d'une parole exhaustive sur toute la situation industrielle. L'enjeu est d'identifier le point précis où votre lecture éclaire une bascule que les autres acteurs dans la conversation ne peuvent pas voir de leur position.</p>
         </div>
       </div>
@@ -1607,7 +1607,7 @@
       <div class="container">
         <div class="section-head">
           <div class="kicker kicker--faint">Préparation éditoriale</div>
-          <h2 class="display display--light" id="dimensions-titre">Beaucoup arrivent<br>avec une conviction.<br><em style="color:rgba(240,236,230,0.55);">Ils repartent avec une position.</em></h2>
+          <h2 class="display display--light" id="dimensions-titre">Beaucoup arrivent avec une conviction. <em style="color:rgba(240,236,230,0.55);">Ils repartent avec une position.</em></h2>
           <p class="section-intro section-intro--light">
             La préparation éditoriale n'est pas un briefing. C'est un travail de clarification que la plupart des intervenants n'auraient pas fait seuls — pas par manque de compétence, mais parce qu'il faut un interlocuteur qui pose les bonnes questions dans le bon ordre. En Plateau travaille chaque angle sous six dimensions. Ce travail produit quelque chose que l'intervenant n'avait souvent pas encore formulé : une lecture précise, défendable, irremplaçable depuis sa position.
           </p>
