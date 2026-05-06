@@ -95,6 +95,8 @@
     .kicker--center { justify-content: center; }
 
     /* ══ DISPLAY HEADINGS ══════════════════════════════════════════════ */
+    .section-head { margin-bottom: 40px; }
+
     h2.display {
       font-family: var(--font-display);
       font-size: clamp(1.55rem, 2.8vw, 2.35rem);
@@ -110,7 +112,7 @@
       font-size: 1rem;
       line-height: 1.72;
       color: var(--ink-soft);
-      max-width: 640px;
+      max-width: 100%;
     }
     .section-intro--light { color: var(--ink-light); }
 
@@ -516,7 +518,7 @@
       grid-template-columns: 1fr 2fr;
       gap: 0;
       border: 1px solid var(--line);
-      background: var(--line);
+      background: #ffffff;
     }
 
     /* ── Colonne navigation gauche ── */
@@ -531,7 +533,7 @@
       display: flex;
       gap: 0;
       align-items: stretch;
-      background: var(--bg-light);
+      background: #ffffff;
       border: none;
       cursor: pointer;
       text-align: left;
@@ -539,8 +541,8 @@
       transition: background 0.18s;
       position: relative;
     }
-    .conv-nav-item:hover { background: #f0ebe4; }
-    .conv-nav-item.is-active { background: #fff; }
+    .conv-nav-item:hover { background: #f5f0ea; }
+    .conv-nav-item.is-active { background: #ffffff; }
 
     .conv-nav-color {
       width: 4px;
@@ -1231,7 +1233,7 @@
       <div class="container">
         <div class="section-head">
           <div class="kicker kicker--faint">Ce que vous y gagnez</div>
-          <h2 class="display display--light" id="valeur-titre">Être parmi ceux qui fixent<br>le récit — pas parmi ceux<br>qui le subissent</h2>
+          <h2 class="display display--light" id="valeur-titre">Être parmi ceux qui fixent le récit — pas parmi ceux qui le subissent</h2>
           <p class="section-intro section-intro--light">
             Sur les sujets qui structurent l'industrie, les lectures de référence se constituent maintenant. Ceux qui les portent en premier choisissent leur angle. Les autres commentent.
           </p>
@@ -1638,7 +1640,7 @@
           </div>
         </div>
 
-        <div class="panel panel--dark" style="margin-top:32px; max-width:720px;">
+        <div class="panel panel--dark" style="margin-top:32px;">
           <p>Ce travail ne substitue pas votre lecture — il lui donne sa forme la plus utile. L'intervenant reste l'auteur de sa position. En Plateau est l'architecte du cadre qui la rend audible, défendable et durable.</p>
         </div>
       </div>
