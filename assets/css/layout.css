@@ -35,8 +35,8 @@ Direction : éditorial premium, sobre, contrasté
   --ep-dark-text-soft: rgba(255, 255, 255, 0.78);
   --ep-dark-text-muted: rgba(255, 255, 255, 0.58);
 
-  --font-display: "Fraunces", "Iowan Old Style", "Georgia", serif;
-  --font-body: "Lora", "Georgia", serif;
+  --font-display: "Playfair Display", "Georgia", serif;
+  --font-body: "IBM Plex Sans", sans-serif;
   --font-ui: "IBM Plex Sans", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
 
@@ -153,17 +153,10 @@ select {
 }
 
 button,
-.site-header,
-.desktop-editorial-nav,
 .site-header__cta,
 .mobile-top-link,
 .mobile-secondary-link,
-.footer-title,
-.card-label,
-.small-caps,
-.cookie-btn,
-.cookie-modal__kicker,
-.cookie-toggle__label {
+.cookie-btn {
   font-family: var(--font-ui);
 }
 
@@ -188,7 +181,7 @@ h4 {
 .conversation-angle-card h3 {
   font-family: var(--font-display);
   font-weight: 600;
-  letter-spacing: -0.024em;
+  letter-spacing: -0.015em;
 }
 
 .hero-kicker,
@@ -197,40 +190,46 @@ h4 {
 .footer-title,
 .small-caps,
 .desktop-editorial-nav__link,
-.site-header__cta,
 .four-step__index,
 .conversation-shell__meta {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.site-header__cta {
   font-family: var(--font-ui);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
 }
 
 .hero-title {
-  font-size: clamp(3rem, 4.9vw, 4.4rem);
-  line-height: 0.96;
+  font-size: clamp(2rem, 3.7vw, 3.1rem);
+  line-height: 1.11;
   text-wrap: balance;
   margin-bottom: 18px;
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 1.18vw, 1.12rem);
-  line-height: 1.66;
+  font-size: clamp(1rem, 1.18vw, 1.05rem);
+  line-height: 1.72;
   font-weight: 400;
-  letter-spacing: -0.005em;
+  letter-spacing: 0;
   color: var(--ep-ink-soft);
   margin-bottom: 14px;
 }
 
 .hero-meta,
 .hero-note {
-  font-size: 0.92rem;
-  line-height: 1.68;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  line-height: 1.55;
   color: var(--ep-ink-muted);
 }
 
 .section-head h2 {
-  font-size: clamp(2.05rem, 2.75vw, 2.75rem);
-  line-height: 1.05;
+  font-size: clamp(1.55rem, 2.75vw, 2.35rem);
+  line-height: 1.17;
   text-wrap: balance;
   margin-bottom: 14px;
 }
@@ -242,7 +241,7 @@ h4 {
 .small-caps,
 .four-step__index,
 .conversation-shell__meta {
-  font-size: 12px;
+  font-size: 0.68rem;
   line-height: 1.3;
   font-weight: 500;
   color: var(--ep-accent);
@@ -250,26 +249,27 @@ h4 {
 
 .section-intro {
   max-width: 860px;
-  font-size: clamp(0.95rem, 1.02vw, 1.04rem);
-  line-height: 1.68;
-  letter-spacing: -0.003em;
+  font-size: clamp(1rem, 1.02vw, 1.05rem);
+  line-height: 1.72;
+  letter-spacing: 0;
   font-weight: 400;
   color: var(--ep-ink-soft);
 }
 
 .section-footnote {
   max-width: 920px;
-  font-size: 13px;
-  line-height: 1.64;
-  letter-spacing: 0;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
   color: var(--ep-ink-muted);
 }
 
 .micro-footnote,
 .hero-footnote,
 .legal-footnote {
-  font-family: var(--font-ui);
-  font-size: 11px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
   line-height: 1.5;
   letter-spacing: 0.01em;
   color: var(--ep-ink-muted);
@@ -283,9 +283,9 @@ h4 {
 
 .page-centered-copy p {
   color: var(--ep-ink-soft);
-  font-size: 0.94rem;
-  line-height: 1.7;
-  letter-spacing: -0.002em;
+  font-size: 0.93rem;
+  line-height: 1.65;
+  letter-spacing: 0;
 }
 
 /* ---------- LINKS ---------- */
@@ -338,9 +338,9 @@ h4 {
 }
 
 .link--micro {
-  font-family: var(--font-ui);
-  font-size: 10px;
-  letter-spacing: 0.08em;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -425,17 +425,17 @@ h4 {
 }
 
 .card h3 {
-  font-size: clamp(1.2rem, 1.45vw, 1.34rem);
-  line-height: 1.14;
-  letter-spacing: -0.018em;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 1.3;
+  letter-spacing: 0;
   margin-bottom: 10px;
 }
 
 .card p {
   color: var(--ep-ink-soft);
   font-size: 0.9rem;
-  line-height: 1.64;
-  letter-spacing: -0.001em;
+  line-height: 1.65;
+  letter-spacing: 0;
   margin-bottom: 0;
 }
 
@@ -527,7 +527,7 @@ h4 {
 }
 
 .card--dark h3,
-panel--dark h3,
+.panel--dark h3,
 .box--dark h3 {
   color: var(--ep-dark-text);
 }
@@ -649,8 +649,8 @@ panel--dark h3,
   display: inline-flex;
   min-height: 42px;
   align-items: center;
-  font-family: var(--font-ui);
-  font-size: 11px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   color: rgba(244, 233, 220, 0.78);
@@ -680,9 +680,9 @@ panel--dark h3,
 .site-header__cta {
   position: relative;
   font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   color: #fffaf4;
 }
 
@@ -811,8 +811,8 @@ panel--dark h3,
 
 .mobile-top-link--cta {
   font-family: var(--font-ui);
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #fffaf4;
 }
@@ -888,7 +888,8 @@ panel--dark h3,
 
 .footer-bottom p {
   margin: 0;
-  font-size: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.48);
 }
@@ -969,12 +970,12 @@ button:focus-visible {
   }
 
   .hero-title {
-    font-size: clamp(2.2rem, 8.4vw, 3.15rem);
-    line-height: 1.01;
+    font-size: clamp(2rem, 8.4vw, 3.1rem);
+    line-height: 1.11;
   }
 
   .section-head h2 {
-    font-size: clamp(1.9rem, 6.4vw, 2.2rem);
+    font-size: clamp(1.55rem, 6.4vw, 2.35rem);
   }
 
   .programme-link-row,
@@ -1084,11 +1085,11 @@ body.cookies-open {
 }
 
 .cookie-modal__kicker {
-  font-family: var(--font-ui);
-  font-size: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
   line-height: 1.3;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ep-accent);
   margin-bottom: 12px;
@@ -1096,9 +1097,9 @@ body.cookies-open {
 
 .cookie-modal__title {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.3vw, 1.92rem);
-  line-height: 1.06;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.55rem, 2.3vw, 2.35rem);
+  line-height: 1.17;
+  letter-spacing: -0.01em;
   font-weight: 600;
   color: var(--ep-ink);
   margin-bottom: 14px;
@@ -1106,8 +1107,8 @@ body.cookies-open {
 
 .cookie-modal__text {
   font-family: var(--font-body);
-  font-size: 0.92rem;
-  line-height: 1.68;
+  font-size: 0.93rem;
+  line-height: 1.65;
   color: var(--ep-ink-soft);
   margin-bottom: 12px;
 }
@@ -1156,10 +1157,12 @@ body.cookies-open {
 }
 
 .cookie-toggle__label {
-  font-family: var(--font-ui);
-  font-size: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
   line-height: 1.4;
   font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--ep-ink);
   margin-bottom: 4px;
 }
@@ -1241,10 +1244,10 @@ body.cookies-open {
   background: transparent;
   color: var(--ep-ink);
   font-family: var(--font-ui);
-  font-size: 12px;
+  font-size: 0.88rem;
   line-height: 1;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   cursor: pointer;
   transition:
