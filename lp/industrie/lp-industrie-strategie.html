@@ -1,0 +1,1150 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Stratégie industrielle — Cycle Industrie & transformation des territoires | En Plateau</title>
+  <meta name="description" content="Votre lecture stratégique a une place précise dans une conversation industrielle ouverte. En 15 minutes, nous vérifions si votre angle est encore disponible.">
+
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── TOKENS (calqués sur home.css) ─────────────────────────────── */
+    :root {
+      --ink:          #111111;
+      --ink-soft:     #3a3330;
+      --ink-muted:    #6b6259;
+      --bg-light:     #faf8f5;
+      --bg-dark:      #111111;
+      --accent:       #7b3326;
+      --accent-warm:  #a04030;
+      --line:         rgba(82,62,49,0.14);
+      --line-light:   rgba(255,255,255,0.09);
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'IBM Plex Sans', system-ui, sans-serif;
+      --font-mono:    'IBM Plex Mono', monospace;
+
+      --r: 0px;
+      --max-w: 1120px;
+      --gutter: clamp(20px, 5vw, 48px);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--bg-light);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── LAYOUT HELPERS ─────────────────────────────────────────────── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    .section { padding: clamp(56px, 8vw, 96px) 0; }
+    .section--dark { background: var(--bg-dark); color: #f0ece6; }
+    .section--warm { background: #f5ede4; }
+    .section--white { background: #ffffff; }
+
+    /* ─── NAV ─────────────────────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(17,17,17,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line-light);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #f0ece6;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-brand-dot {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .nav-brand-dot svg { width: 12px; height: 12px; fill: #fff; }
+
+    .nav-cycle {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(240,236,230,0.5);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.88rem;
+      padding: 9px 20px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover { background: var(--accent-warm); }
+
+    /* ─── HERO ────────────────────────────────────────────────────────── */
+    .hero {
+      background: var(--bg-dark);
+      color: #f0ece6;
+      padding: clamp(64px, 10vw, 112px) 0 clamp(48px, 7vw, 80px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(123,51,38,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(123,51,38,0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(240,236,230,0.55);
+      margin-bottom: 24px;
+    }
+
+    .hero-kicker::before {
+      content: '';
+      display: block;
+      width: 24px; height: 1px;
+      background: var(--accent);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      color: #f0ece6;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: rgba(240,236,230,0.72);
+    }
+
+    .hero-lead {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(240,236,230,0.72);
+      max-width: 560px;
+      margin-bottom: 16px;
+    }
+
+    .hero-lead strong {
+      color: #f0ece6;
+      font-weight: 500;
+    }
+
+    .hero-note {
+      margin-top: 28px;
+      font-size: 0.88rem;
+      color: rgba(240,236,230,0.45);
+      font-family: var(--font-mono);
+      line-height: 1.6;
+    }
+
+    /* Hero card */
+    .hero-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 32px 28px;
+      position: relative;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: var(--accent);
+    }
+
+    .hero-card-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .hero-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #f0ece6;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .hero-card p {
+      font-size: 0.9rem;
+      color: rgba(240,236,230,0.65);
+      line-height: 1.65;
+      margin-bottom: 22px;
+    }
+
+    .hero-card-cta {
+      display: block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 13px 20px;
+      transition: background 0.2s;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-card-cta:hover { background: var(--accent-warm); }
+
+    .hero-card-reassurance {
+      margin-top: 14px;
+      font-size: 0.78rem;
+      color: rgba(240,236,230,0.38);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* ─── SECTION HEADS ─────────────────────────────────────────────── */
+    .section-head { margin-bottom: 48px; }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .kicker::before {
+      content: '';
+      display: block;
+      width: 20px; height: 1px;
+      background: currentColor;
+    }
+
+    .kicker--light { color: rgba(240,236,230,0.5); }
+    .kicker--light::before { background: var(--accent); }
+
+    h2.display {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    h2.display--light { color: #f0ece6; }
+
+    .section-intro {
+      margin-top: 16px;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 640px;
+    }
+
+    .section-intro--light { color: rgba(240,236,230,0.65); }
+
+    /* ─── POUR QUI ────────────────────────────────────────────────────── */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--line);
+    }
+
+    .audience-card {
+      background: var(--bg-light);
+      padding: 36px 32px;
+    }
+
+    .audience-card--no {
+      background: #f5ede4;
+    }
+
+    .audience-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--ink);
+    }
+
+    .audience-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .audience-list li {
+      display: flex;
+      gap: 10px;
+      font-size: 0.93rem;
+      line-height: 1.6;
+      color: var(--ink-soft);
+    }
+
+    .audience-list li::before {
+      content: '→';
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 1px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+    }
+
+    .audience-list--no li::before {
+      content: '×';
+      color: var(--ink-muted);
+    }
+
+    /* ─── CONVERSATIONS / ANGLES ─────────────────────────────────────── */
+    .conversation-intro {
+      padding: 32px 0 0;
+      border-top: 1px solid var(--line-light);
+      margin-bottom: 40px;
+    }
+
+    .conversation-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #f0ece6;
+      margin-bottom: 10px;
+    }
+
+    .conversation-desc {
+      font-size: 0.92rem;
+      color: rgba(240,236,230,0.6);
+      line-height: 1.65;
+      max-width: 680px;
+    }
+
+    .angles-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .angle-row {
+      display: grid;
+      grid-template-columns: 56px 1fr auto;
+      gap: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.2s;
+    }
+
+    .angle-row:last-child { border-bottom: none; }
+
+    .angle-row--priority {
+      background: rgba(123,51,38,0.12);
+      border-left: 3px solid var(--accent);
+    }
+
+    .angle-row:not(.angle-row--priority):hover {
+      background: rgba(255,255,255,0.03);
+    }
+
+    .angle-num {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 24px 0 24px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: rgba(240,236,230,0.25);
+      letter-spacing: 0.06em;
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .angle-body {
+      padding: 24px 28px;
+    }
+
+    .angle-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(123,51,38,0.15);
+      padding: 3px 8px;
+      margin-bottom: 10px;
+    }
+
+    .angle-q {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f0ece6;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .angle-desc {
+      font-size: 0.88rem;
+      color: rgba(240,236,230,0.55);
+      line-height: 1.65;
+    }
+
+    .angle-desc strong {
+      color: rgba(240,236,230,0.75);
+      font-weight: 500;
+    }
+
+    .angle-meta {
+      padding: 24px 20px 24px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-start;
+      gap: 6px;
+      min-width: 140px;
+      border-left: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .angle-media {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: rgba(240,236,230,0.35);
+      text-align: right;
+      line-height: 1.5;
+    }
+
+    /* Contextes (accordion) */
+    .angle-contexts {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .ctx-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 14px 16px;
+    }
+
+    .ctx-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(240,236,230,0.35);
+      margin-bottom: 6px;
+    }
+
+    .ctx-text {
+      font-size: 0.83rem;
+      color: rgba(240,236,230,0.58);
+      line-height: 1.6;
+    }
+
+    /* ─── PROCESSUS ──────────────────────────────────────────────────── */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--line);
+    }
+
+    .process-step {
+      background: var(--bg-light);
+      padding: 36px 28px;
+      position: relative;
+    }
+
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(123,51,38,0.12);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .process-step h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .process-step p {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      line-height: 1.65;
+    }
+
+    /* ─── GARANTIES ──────────────────────────────────────────────────── */
+    .guarantees-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .guarantee {
+      border-left: 2px solid var(--line);
+      padding-left: 20px;
+    }
+
+    .guarantee--accent { border-left-color: var(--accent); }
+
+    .guarantee h3 {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .guarantee p {
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+      line-height: 1.65;
+    }
+
+    /* ─── PANEL (encadré éditorial) ─────────────────────────────────── */
+    .panel {
+      background: rgba(123,51,38,0.06);
+      border: 1px solid rgba(123,51,38,0.15);
+      border-left: 3px solid var(--accent);
+      padding: 24px 28px;
+      margin-top: 32px;
+    }
+
+    .panel p { font-size: 0.93rem; color: var(--ink-soft); line-height: 1.7; }
+    .panel p + p { margin-top: 10px; }
+
+    .panel--dark {
+      background: rgba(123,51,38,0.1);
+      border-color: rgba(123,51,38,0.3);
+    }
+
+    .panel--dark p { color: rgba(240,236,230,0.7); }
+
+    /* ─── FAQ ────────────────────────────────────────────────────────── */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--line);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+      padding: 24px 28px;
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-item h3 {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      line-height: 1.65;
+    }
+
+    /* ─── CTA FINAL ──────────────────────────────────────────────────── */
+    .cta-block {
+      text-align: center;
+      padding: clamp(56px, 8vw, 96px) 0;
+      background: var(--bg-dark);
+      color: #f0ece6;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-block::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(123,51,38,0.22) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .cta-block-inner { position: relative; max-width: 640px; margin: 0 auto; }
+
+    .cta-block h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1.2;
+      color: #f0ece6;
+      margin-bottom: 16px;
+    }
+
+    .cta-block p {
+      font-size: 1rem;
+      color: rgba(240,236,230,0.62);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 16px 36px;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-warm);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .cta-footnote {
+      margin-top: 20px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: rgba(240,236,230,0.32);
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────────────── */
+    .footer {
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: rgba(240,236,230,0.5);
+      text-decoration: none;
+    }
+
+    .footer-dot {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: rgba(123,51,38,0.5);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      color: rgba(240,236,230,0.32);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: rgba(240,236,230,0.6); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-card { max-width: 480px; }
+      .audience-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .angle-row { grid-template-columns: 40px 1fr; }
+      .angle-meta { display: none; }
+      .angle-contexts { grid-template-columns: 1fr; }
+      .guarantees-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.75rem; }
+      .nav-cycle { display: none; }
+      .angle-body { padding: 18px 16px; }
+    }
+
+    /* ─── UTILITY ────────────────────────────────────────────────────── */
+    .mt-8  { margin-top: 8px; }
+    .mt-16 { margin-top: 16px; }
+    .mt-24 { margin-top: 24px; }
+    .mt-32 { margin-top: 32px; }
+    .mt-48 { margin-top: 48px; }
+
+    .media-band {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 20px 0;
+      border-top: 1px solid var(--line-light);
+      border-bottom: 1px solid var(--line-light);
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .media-band-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(240,236,230,0.3);
+      white-space: nowrap;
+    }
+
+    .media-names {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .media-name {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: rgba(240,236,230,0.25);
+      letter-spacing: 0.02em;
+    }
+
+    .media-name--sep::before {
+      content: '·';
+      margin-right: 20px;
+      color: rgba(240,236,230,0.1);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ══════════════════════════════════════════════════════════ -->
+  <nav class="nav" aria-label="Navigation principale">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/" class="nav-brand">
+          <div class="nav-brand-dot">
+            <svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="5"/></svg>
+          </div>
+          En Plateau
+        </a>
+        <span class="nav-cycle">Cycle Industrie · Stratégie</span>
+        <a href="/demander-un-echange-editorial.html?src=lp-industrie-strategie&cta=nav" class="nav-cta">
+          Réserver un échange
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══ HERO ══════════════════════════════════════════════════════ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-inner">
+
+          <!-- Copy -->
+          <div>
+            <div class="hero-kicker">Cycle Industrie &amp; transformation des territoires</div>
+            <h1 id="hero-title">
+              Votre lecture stratégique<br>
+              <em>éclaire-t-elle les dépendances</em><br>
+              qui font basculer l'industrie ?
+            </h1>
+            <p class="hero-lead">
+              Pour les <strong>cabinets de stratégie industrielle, compétitivité, filière et intelligence économique</strong> — mais aussi pour les <strong>directions stratégie et directions générales industrielles</strong> — une place précise est ouverte dans une conversation éditoriale en cours.
+            </p>
+            <p class="hero-lead">
+              L'enjeu n'est pas la visibilité. C'est de faire apparaître <strong>ce que l'entreprise ne voit pas seule</strong> : les dépendances de chaîne de valeur, les asymétries de filière, les seuils de compétitivité qui précèdent la bascule.
+            </p>
+            <p class="hero-note">
+              Aucun client ni cas identifiable à exposer &nbsp;·&nbsp; Aucun engagement à ce stade &nbsp;·&nbsp; 15 minutes pour qualifier l'angle
+            </p>
+          </div>
+
+          <!-- Card -->
+          <div>
+            <div class="hero-card">
+              <div class="hero-card-label">Échange éditorial · Qualification d'angle</div>
+              <h3>Votre lecture a-t-elle une place dans cette conversation ?</h3>
+              <p>En 15 minutes, nous vérifions si votre angle de lecture correspond à une position encore ouverte — sans exposer de client, sans engagement, en toute confidentialité.</p>
+              <a href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-strategie&cta=hero-card" class="hero-card-cta">
+                Réserver le créneau →
+              </a>
+              <p class="hero-card-reassurance">Certaines positions se ferment au fil de la composition éditoriale.</p>
+            </div>
+
+            <div class="media-band" aria-label="Environnements médiatiques">
+              <span class="media-band-label">Cadre médiatique</span>
+              <div class="media-names">
+                <span class="media-name">La Tribune</span>
+                <span class="media-name media-name--sep">BFM Business</span>
+                <span class="media-name media-name--sep">Forbes</span>
+                <span class="media-name media-name--sep">Le Figaro</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ POUR QUI ═══════════════════════════════════════════════════ -->
+    <section class="section section--white" aria-labelledby="pourquoi-titre">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Pertinence</div>
+          <h2 class="display" id="pourquoi-titre">Cette conversation s'adresse-t-elle à vous ?</h2>
+        </div>
+
+        <div class="audience-grid">
+          <div class="audience-card">
+            <h3>Oui, si vous portez ce type de lecture</h3>
+            <ul class="audience-list">
+              <li>Cabinet de stratégie industrielle, de compétitivité ou d'analyse de filière</li>
+              <li>Cabinet intervenant sur les dépendances de chaîne de valeur, le positionnement concurrentiel ou l'intelligence économique</li>
+              <li>Direction stratégie ou direction générale industrielle portant une lecture depuis la filière</li>
+              <li>Profil travaillant sur les seuils de compétitivité, les dépendances structurelles ou le pouvoir de négociation</li>
+              <li>Cabinet intervenant sur les bascules industrielles en croissance, sous pression ou en reconfiguration</li>
+            </ul>
+          </div>
+          <div class="audience-card audience-card--no">
+            <h3>Moins adapté si</h3>
+            <ul class="audience-list audience-list--no">
+              <li>Votre intervention n'est pas rattachée à un angle de décision stratégique ou de filière précis</li>
+              <li>Votre positionnement reste trop généraliste pour être lié à une bascule identifiable</li>
+              <li>Votre attente porte d'abord sur de la visibilité médiatique plutôt que sur une contribution éditoriale située</li>
+              <li>Votre lecture ne porte ni sur les dépendances structurelles ni sur les conditions de compétitivité d'une activité</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel mt-32">
+          <p>Il ne s'agit pas d'une parole exhaustive sur toute la situation industrielle, mais d'identifier le point précis où votre lecture éclaire réellement la bascule — ce que l'entreprise ne voit pas seule depuis sa propre position.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CONVERSATION OUVERTE ═══════════════════════════════════════ -->
+    <section class="section section--dark" aria-labelledby="conversation-titre">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="kicker kicker--light">Conversation actuellement ouverte</div>
+          <h2 class="display display--light" id="conversation-titre">Où se situent les dépendances<br>qui deviennent des points de bascule ?</h2>
+          <p class="section-intro section-intro--light">
+            Cette conversation cherche à faire apparaître les dépendances que l'entreprise voit mal lorsqu'elle raisonne seule : dépendances de filière, de chaîne de valeur, de sourcing, de cadre commercial ou de portage financier. Quatre angles la structurent. La lecture stratégique y occupe une place centrale.
+          </p>
+        </div>
+
+        <!-- Angle 1 — PRIORITAIRE -->
+        <div class="mt-48">
+          <div class="conversation-intro">
+            <div class="conversation-title">Conversation C2 — Dépendances &amp; points de bascule</div>
+            <div class="conversation-desc">Trois contextes de déclinaison : croissance sous tension (CST) · adaptation sous contrainte (ASC) · réinvention sous crise (RSS)</div>
+          </div>
+
+          <div class="angles-stack">
+
+            <!-- Angle stratégie — PRIORITAIRE -->
+            <div class="angle-row angle-row--priority">
+              <div class="angle-num">01</div>
+              <div class="angle-body">
+                <div class="angle-tag">Lecture stratégie — position prioritaire</div>
+                <div class="angle-q">Qu'est-ce qu'une lecture de filière révèle que l'entreprise seule voit mal au moment d'arbitrer ?</div>
+                <div class="angle-desc mt-8">
+                  Le moment où une difficulté apparente relève en réalité d'une <strong>asymétrie de chaîne de valeur</strong>, d'une <strong>dépendance de filière</strong> ou d'une <strong>position concurrentielle devenue fragile</strong>.
+                </div>
+                <div class="angle-contexts mt-16">
+                  <div class="ctx-card">
+                    <div class="ctx-label">CST · Croissance</div>
+                    <div class="ctx-text">Quelles dépendances freinent une trajectoire d'expansion avant même d'apparaître dans les comptes ?</div>
+                  </div>
+                  <div class="ctx-card">
+                    <div class="ctx-label">ASC · Sous pression</div>
+                    <div class="ctx-text">Quelles asymétries expliquent qu'une activité paraisse tenir alors que sa position se dégrade déjà ?</div>
+                  </div>
+                  <div class="ctx-card">
+                    <div class="ctx-label">RSS · Reconfiguration</div>
+                    <div class="ctx-text">Que révèle la filière sur la perte de pouvoir de négociation ou la nécessité de redessiner la place dans l'écosystème ?</div>
+                  </div>
+                </div>
+              </div>
+              <div class="angle-meta">
+                <div class="angle-media">La Tribune Business<br><span style="opacity:.5">Gilles Leclerc</span></div>
+              </div>
+            </div>
+
+            <!-- Angle opérations -->
+            <div class="angle-row">
+              <div class="angle-num">02</div>
+              <div class="angle-body">
+                <div class="angle-tag">Lecture opérations</div>
+                <div class="angle-q">Relocaliser, multisourcer, stocker : quel arbitrage tient vraiment quand on passe du principe à l'exécution ?</div>
+                <div class="angle-desc mt-8">
+                  Le moment où un arbitrage présenté comme évident se heurte à la réalité des flux, des délais et de la robustesse du système productif. <strong>Acteurs attendus :</strong> cabinet supply chain · achats · opérations · directeur industriel.
+                </div>
+              </div>
+              <div class="angle-meta">
+                <div class="angle-media">BFM Business<br><span style="opacity:.5">Focus Business</span></div>
+              </div>
+            </div>
+
+            <!-- Angle finance -->
+            <div class="angle-row">
+              <div class="angle-num">03</div>
+              <div class="angle-body">
+                <div class="angle-tag">Lecture finance</div>
+                <div class="angle-q">À quelles conditions une dépendance de chaîne reste-t-elle finançable ou investissable ?</div>
+                <div class="angle-desc mt-8">
+                  Le moment où une dépendance industrielle devient un problème de portage financier, de visibilité ou d'investissabilité. <strong>Acteurs attendus :</strong> cabinet corporate finance · dette · restructuring · DAF industriel.
+                </div>
+              </div>
+              <div class="angle-meta">
+                <div class="angle-media">Forbes<br><span style="opacity:.5">Business Inside</span></div>
+              </div>
+            </div>
+
+            <!-- Angle cadre -->
+            <div class="angle-row">
+              <div class="angle-num">04</div>
+              <div class="angle-body">
+                <div class="angle-tag">Lecture cadre &amp; réglementaire</div>
+                <div class="angle-q">Quand le cadre commercial, douanier ou réglementaire transforme-t-il une dépendance en fragilité stratégique ?</div>
+                <div class="angle-desc mt-8">
+                  Le moment où le cadre extérieur ne constitue plus un environnement mais vient requalifier la dépendance elle-même. <strong>Acteurs attendus :</strong> cabinet commerce international · douane · affaires publiques · direction juridique.
+                </div>
+              </div>
+              <div class="angle-meta">
+                <div class="angle-media">Le Figaro<br><span style="opacity:.5">Grand Angle</span></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="panel panel--dark mt-32">
+          <p>Sur un même angle, une seule lecture de type stratégie est retenue. Il n'y a pas de mise en concurrence frontale avec un profil équivalent : l'enjeu est de mettre en regard des lectures complémentaires, pas d'opposer des positions similaires.</p>
+          <p>Une deuxième conversation prioritaire du cycle est également ouverte : <strong>« À partir de quand produire davantage oblige-t-il à arbitrer autrement ? »</strong> — une lecture stratégie y a également sa place. Cette possibilité peut être évoquée lors de l'échange.</p>
+        </div>
+
+        <div class="mt-48" style="text-align:center;">
+          <a href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-strategie&cta=mid-page" class="btn-primary">
+            Vérifier si mon angle est disponible
+            <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ COMMENT ÇA SE PASSE ════════════════════════════════════════ -->
+    <section class="section" aria-labelledby="processus-titre">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Déroulement</div>
+          <h2 class="display" id="processus-titre">Ce qui se passe en 3 étapes</h2>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">01</div>
+            <h3>L'échange de qualification (15 min)</h3>
+            <p>Nous vérifions si votre lecture stratégique correspond à un angle encore disponible dans la composition éditoriale. Aucun client ni cas identifiable à exposer. Aucun engagement à ce stade.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">02</div>
+            <h3>La note de positionnement</h3>
+            <p>Si votre lecture trouve une place naturelle, une note interne vous est adressée. Elle précise l'angle pressenti, la logique de mise en regard avec les autres lectures et le cadre envisagé.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">03</div>
+            <h3>La préparation éditoriale</h3>
+            <p>Votre angle est préparé sous plusieurs dimensions : contexte de transformation, arbitrages, risques et opportunités. Aucune parole improvisée — le cadrage sécurise l'angle et le niveau d'exposition.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ GARANTIES ══════════════════════════════════════════════════ -->
+    <section class="section section--warm" aria-labelledby="garanties-titre">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Avant de réserver</div>
+          <h2 class="display" id="garanties-titre">Ce que cet échange implique — et ce qu'il n'implique pas</h2>
+        </div>
+
+        <div class="guarantees-grid">
+          <div class="guarantee guarantee--accent">
+            <h3>Pas de client ni de cas à exposer</h3>
+            <p>Vous n'avez pas besoin d'entrer dans une situation identifiable pour vérifier la pertinence de votre lecture. L'échange porte sur votre angle, pas sur vos mandats en cours.</p>
+          </div>
+          <div class="guarantee guarantee--accent">
+            <h3>Aucun engagement à ce stade</h3>
+            <p>Le rendez-vous sert uniquement à qualifier la pertinence d'un point d'entrée éventuel. Il ne vaut pas confirmation de participation ni obligation de suite.</p>
+          </div>
+          <div class="guarantee">
+            <h3>Pas de concurrence frontale</h3>
+            <p>Sur un même angle, une seule lecture de type stratégie est retenue. L'objectif est de mettre en regard des positions complémentaires — filière, opérations, finance, cadre — pas d'opposer des profils équivalents.</p>
+          </div>
+          <div class="guarantee">
+            <h3>Une parole préparée, pas improvisée</h3>
+            <p>Le cadrage éditorial est construit en amont pour sécuriser l'angle, la conversation et le niveau d'exposition. Vous ne préparez pas seul votre intervention.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FAQ ════════════════════════════════════════════════════════ -->
+    <section class="section section--white" aria-labelledby="faq-titre">
+      <div class="container" style="max-width: 760px;">
+        <div class="section-head">
+          <div class="kicker">Questions fréquentes</div>
+          <h2 class="display" id="faq-titre">Ce qu'on nous demande le plus</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>Faut-il parler d'un client ou d'un cas identifiable ?</h3>
+            <p>Non. L'enjeu n'est pas d'exposer une situation confidentielle. Votre lecture doit porter sur des mécanismes réels — seuils de compétitivité, dépendances de filière, asymétries de chaîne — sans nécessiter de nommer un client ou un mandat.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Faut-il défendre une doctrine générale sur l'industrie ?</h3>
+            <p>Non. Il s'agit d'une lecture <em>située</em> : utile, exploitable, ancrée dans des situations réellement rencontrées. Une doctrine trop abstraite ou trop large n'a pas de place naturelle dans la composition.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Est-ce que mon cabinet sera mis en concurrence avec un autre ?</h3>
+            <p>Sur votre angle de lecture, non. Un seul profil de type stratégie est retenu par angle. Votre lecture apparaît aux côtés de lectures complémentaires (opérations, finance, cadre) — pas en face d'un profil similaire.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Combien de temps faut-il prévoir ?</h3>
+            <p>L'échange de qualification dure 15 minutes. Si votre lecture trouve une place, la préparation éditoriale se fait en amont de l'enregistrement — elle prend généralement 2 à 3 échanges sur quelques semaines.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA FINAL ══════════════════════════════════════════════════ -->
+    <div class="cta-block" id="reserver">
+      <div class="container">
+        <div class="cta-block-inner">
+          <div class="kicker kicker--light" style="justify-content:center; margin-bottom:20px;">Accès · Cycle Industrie</div>
+          <h2>Votre lecture stratégique a-t-elle sa place dans cette conversation ?</h2>
+          <p>Un échange de 15 minutes pour vérifier si votre angle de lecture correspond à une position encore ouverte — sans exposer de client, sans engagement, en toute confidentialité.</p>
+          <a href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-strategie&cta=cta-final" class="btn-primary">
+            Réserver l'échange éditorial
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <p class="cta-footnote">Cycle 2026–2027 · Les positions stratégie se ferment au fil de la composition éditoriale</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
+  <footer class="footer" aria-label="Pied de page">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-brand">
+          <div class="footer-dot"></div>
+          En Plateau
+        </a>
+        <nav class="footer-links" aria-label="Liens secondaires">
+          <a href="/conversations/industrie.html">Cycle complet</a>
+          <a href="/positions/industrie.html">Les positions</a>
+          <a href="/dispositif.html">Le dispositif</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
