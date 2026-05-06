@@ -1087,3 +1087,34 @@
     padding-top: 0;
   }
                                                   }
+/* Correctif hero — pellicule visible dès l'arrivée desktop */
+
+.home-hero-grid {
+  align-items: center;
+}
+
+.home-hero-side {
+  align-self: center;
+  transform: translateY(-32px);
+}
+
+.home-hero .home-film {
+  height: 500px;
+  max-width: 430px;
+  margin-left: auto;
+}
+
+.home-hero .home-film-track {
+  animation: homeScrollFilm 24s linear infinite;
+}
+
+@media (max-width: 1100px) {
+  .home-hero-side {
+    transform: none;
+  }
+
+  .home-hero .home-film {
+    max-width: none;
+    margin-left: 0;
+  }
+}
