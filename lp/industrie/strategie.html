@@ -33,6 +33,12 @@
       --ink-light:  rgba(240,236,230,0.72);
       --ink-faint:  rgba(240,236,230,0.38);
 
+      /* Couleurs conversations — 4 teintes neutres, famille pierre */
+      --c1: #7a8a82;   /* vert-gris ardoise — production, flux */
+      --c2: #8a7f74;   /* gris-pierre — chaînes, dépendances */
+      --c3: #6b7a8a;   /* bleu-gris acier — outil, infrastructure */
+      --c4: #8a7a6b;   /* brun-sable — durée, trajectoire */
+
       --font-display: 'Playfair Display', Georgia, serif;
       --font-body:    'IBM Plex Sans', system-ui, sans-serif;
       --font-mono:    'IBM Plex Mono', monospace;
@@ -504,107 +510,144 @@
       line-height: 1.65;
     }
 
-    /* ══ CONVERSATIONS ══════════════════════════════════════════════════ */
-    .conv-stack { display: flex; flex-direction: column; gap: 4px; }
-
-    .conv-block {
-      border: 1px solid var(--line);
-      overflow: hidden;
-      background: #fff;
-    }
-
-    .conv-header {
+    /* ══ CONVERSATIONS — LAYOUT 1/3 + 2/3 ═════════════════════════════ */
+    .conv-layout {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 16px;
-      align-items: center;
-      padding: 24px 28px;
-      cursor: pointer;
-      user-select: none;
-      background: var(--bg-light);
-      transition: background 0.2s;
+      grid-template-columns: 1fr 2fr;
+      gap: 0;
+      border: 1px solid var(--line);
+      background: var(--line);
     }
-    .conv-header:hover { background: #f0ebe4; }
 
-    .conv-header-left { display: flex; flex-direction: column; gap: 6px; }
+    /* ── Colonne navigation gauche ── */
+    .conv-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--line);
+    }
 
-    .conv-num {
+    .conv-nav-item {
+      display: flex;
+      gap: 0;
+      align-items: stretch;
+      background: var(--bg-light);
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      padding: 0;
+      transition: background 0.18s;
+      position: relative;
+    }
+    .conv-nav-item:hover { background: #f0ebe4; }
+    .conv-nav-item.is-active { background: #fff; }
+
+    .conv-nav-color {
+      width: 4px;
+      flex-shrink: 0;
+      transition: width 0.18s;
+    }
+    .conv-nav-item.is-active .conv-nav-color { width: 6px; }
+
+    .conv-nav-body {
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+
+    .conv-nav-num {
       font-family: var(--font-mono);
-      font-size: 0.62rem;
+      font-size: 0.6rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--ink-muted);
     }
-    .conv-title {
+
+    .conv-nav-title {
       font-family: var(--font-display);
-      font-size: 1.1rem;
+      font-size: 0.88rem;
       font-weight: 600;
+      line-height: 1.35;
       color: var(--ink);
-      line-height: 1.3;
     }
-    .conv-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+    .conv-nav-item:not(.is-active) .conv-nav-title { color: var(--ink-muted); }
+
+    .conv-nav-tags {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      margin-top: 2px;
+    }
+    .conv-nav-tags span {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      background: rgba(82,62,49,0.06);
+      border: 1px solid var(--line);
+      padding: 2px 6px;
+    }
+    .conv-nav-item.is-active .conv-nav-tags span {
+      color: var(--ink-soft);
+    }
+
+    /* ── Colonne contenu droite ── */
+    .conv-content {
+      background: #fff;
+      position: relative;
+    }
+
+    .conv-panel { display: none; }
+    .conv-panel.is-active { display: block; }
+
+    .conv-panel-header {
+      padding: 28px 32px 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .conv-panel-num {
       font-family: var(--font-mono);
       font-size: 0.62rem;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--ink-soft);
-      background: rgba(82,62,49,0.07);
-      padding: 4px 10px;
-      border: 1px solid var(--line);
-      margin-top: 4px;
-      width: fit-content;
-    }
-    .conv-toggle {
-      width: 28px; height: 28px;
-      border: 1px solid var(--line);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      font-size: 1.1rem;
-      color: var(--ink-muted);
-      font-family: var(--font-mono);
-      transition: all 0.2s;
-    }
-    .conv-block.is-open .conv-toggle {
-      color: var(--ink-soft);
-      border-color: rgba(82,62,49,0.3);
-      transform: rotate(45deg);
+      margin-bottom: 10px;
     }
 
-    .conv-body {
-      display: none;
-      border-top: 1px solid var(--line);
+    .conv-panel-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 12px;
     }
-    .conv-block.is-open .conv-body { display: block; }
 
-    /* Description de la conversation */
-    .conv-desc {
-      padding: 20px 28px;
-      font-size: 0.9rem;
+    .conv-panel-desc {
+      font-size: 0.88rem;
       color: var(--ink-muted);
       line-height: 1.68;
-      border-bottom: 1px solid var(--line);
-      max-width: 760px;
     }
 
-    /* Angle stratégie */
-    .angle-strat {
-      padding: 24px 28px;
+    /* Angle stratégique */
+    .conv-panel-angle {
+      padding: 24px 32px;
       border-bottom: 1px solid var(--line);
-      border-left: 3px solid var(--ink-soft);
-      background: #faf8f5;
+      background: var(--bg-light);
     }
-    .angle-strat-label {
+
+    .conv-panel-angle-label {
       font-family: var(--font-mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--ink-muted);
       margin-bottom: 10px;
     }
-    .angle-strat-q {
+
+    .conv-panel-angle-q {
       font-family: var(--font-display);
       font-size: 1rem;
       font-weight: 600;
@@ -612,59 +655,21 @@
       line-height: 1.35;
       margin-bottom: 10px;
     }
-    .angle-strat-desc {
-      font-size: 0.88rem;
+
+    .conv-panel-angle-desc {
+      font-size: 0.87rem;
       color: var(--ink-soft);
       line-height: 1.65;
-      max-width: 680px;
-      margin-bottom: 16px;
+      max-width: 600px;
     }
 
     /* Acteurs */
-    .actors-block { margin-bottom: 16px; }
-    .actors-label {
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      margin-bottom: 8px;
-    }
-    .actors-you {
-      font-size: 0.88rem;
-      color: var(--ink-soft);
-      font-weight: 500;
-      margin-bottom: 6px;
-    }
-    .actors-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .actor-chip {
-      font-size: 0.78rem;
-      color: var(--ink-soft);
-      background: rgba(82,62,49,0.06);
-      border: 1px solid var(--line);
-      padding: 3px 9px;
-      font-family: var(--font-body);
-    }
-
-    /* 3 contextes */
-    .contexts-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-top: 16px;
+    .conv-actors {
+      margin-top: 18px;
       padding-top: 16px;
       border-top: 1px solid var(--line);
     }
-    .ctx {
-      background: #fff;
-      border: 1px solid var(--line);
-      padding: 14px 16px;
-    }
-    .ctx-head {
+    .conv-actors-label {
       font-family: var(--font-mono);
       font-size: 0.6rem;
       letter-spacing: 0.1em;
@@ -672,99 +677,171 @@
       color: var(--ink-muted);
       margin-bottom: 6px;
     }
-    .ctx-text {
+    .conv-actors-you {
+      font-size: 0.87rem;
+      color: var(--ink-soft);
+      font-weight: 500;
+      margin-bottom: 10px;
+      line-height: 1.55;
+    }
+    .conv-actors-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .conv-actors-chips span {
+      font-size: 0.76rem;
+      color: var(--ink-soft);
+      background: rgba(82,62,49,0.05);
+      border: 1px solid var(--line);
+      padding: 3px 8px;
+    }
+
+    /* 3 contextes */
+    .conv-contexts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+    .conv-ctx {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-top: 2px solid transparent; /* couleur injectée inline */
+      padding: 12px 14px;
+    }
+    .conv-ctx-head {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 6px;
+    }
+    .conv-ctx-text {
       font-size: 0.82rem;
       color: var(--ink-soft);
       line-height: 1.6;
     }
 
-    /* Média */
-    .angle-media-row {
-      padding: 12px 28px;
+    /* Footer panneau */
+    .conv-panel-footer {
       display: flex;
       align-items: center;
-      gap: 10px;
-      background: #f5f2ee;
+      justify-content: space-between;
+      padding: 12px 32px;
+      background: #faf8f5;
       border-bottom: 1px solid var(--line);
+      gap: 16px;
+      flex-wrap: wrap;
     }
-    .angle-media-label {
+    .conv-panel-media {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .conv-media-label {
       font-family: var(--font-mono);
       font-size: 0.6rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--ink-muted);
     }
-    .angle-media-name {
+    .conv-media-name {
       font-family: var(--font-display);
       font-size: 0.88rem;
       font-weight: 600;
       color: var(--ink-soft);
     }
-    .angle-media-show {
+    .conv-media-show {
       font-size: 0.8rem;
       color: var(--ink-muted);
     }
 
-    /* Autres angles (accordéon secondaire) */
-    .other-angles-toggle {
-      padding: 14px 28px;
+    /* Toggle autres lectures */
+    .conv-other-toggle {
+      background: none;
+      border: none;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      border-top: 1px solid var(--line);
-      user-select: none;
-      transition: color 0.2s, background 0.2s;
-      background: #faf8f5;
-    }
-    .other-angles-toggle:hover { color: var(--ink-soft); background: #f0ebe4; }
-    .other-angles-toggle::before {
-      content: '+';
-      width: 18px; height: 18px;
-      border: 1px solid var(--line);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.9rem;
-      flex-shrink: 0;
-      text-align: center;
-      line-height: 18px;
-    }
-    .other-angles-body { display: none; }
-    .other-angles-body.is-open { display: block; }
-
-    .sub-angle {
-      padding: 18px 28px;
-      border-top: 1px solid var(--line);
-      display: grid;
-      grid-template-columns: 130px 1fr auto;
-      gap: 16px;
-      align-items: start;
-      background: #fff;
-    }
-    .sub-angle-type {
       font-family: var(--font-mono);
       font-size: 0.62rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0;
+      transition: color 0.18s;
+    }
+    .conv-other-toggle::before {
+      content: '+';
+      width: 16px; height: 16px;
+      border: 1px solid var(--line);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      transition: transform 0.18s;
+    }
+    .conv-other-toggle.is-open::before { transform: rotate(45deg); }
+    .conv-other-toggle:hover { color: var(--ink-soft); }
+
+    /* Autres lectures */
+    .conv-other-body { display: none; }
+    .conv-other-body.is-open { display: block; }
+
+    .conv-sub {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 14px;
+      padding: 14px 32px;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+      background: #fff;
+    }
+    .conv-sub:last-child { border-bottom: none; }
+    .conv-sub-type {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--ink-muted);
       padding-top: 2px;
     }
-    .sub-angle-q {
-      font-size: 0.88rem;
+    .conv-sub-q {
+      font-size: 0.86rem;
       color: var(--ink-soft);
       line-height: 1.6;
     }
-    .sub-angle-media {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      color: var(--ink-muted);
-      text-align: right;
-      white-space: nowrap;
-      padding-top: 2px;
+
+    /* Mobile conversations */
+    @media (max-width: 860px) {
+      .conv-layout {
+        grid-template-columns: 1fr;
+      }
+      .conv-nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+      }
+      .conv-nav-item { border-bottom: none; }
+      .conv-nav-color { width: 100%; height: 3px; }
+      .conv-nav-item.is-active .conv-nav-color { width: 100%; height: 5px; }
+      .conv-nav-body { padding: 14px 14px; }
+      .conv-nav-title { font-size: 0.8rem; }
+      .conv-contexts { grid-template-columns: 1fr; }
+      .conv-panel-header,
+      .conv-panel-angle,
+      .conv-panel-footer { padding-left: 20px; padding-right: 20px; }
+      .conv-sub { padding-left: 20px; padding-right: 20px; grid-template-columns: 1fr; gap: 4px; }
+    }
+
+    @media (max-width: 560px) {
+      .conv-nav { grid-template-columns: 1fr; }
     }
 
     /* ══ PROCESSUS ══════════════════════════════════════════════════════ */
@@ -1228,335 +1305,287 @@
           <div class="kicker">Conversations ouvertes</div>
           <h2 class="display" id="conversations-titre">Quatre conversations — une lecture stratégique attendue dans chacune</h2>
           <p class="section-intro">
-            Chaque conversation est déclinée dans trois contextes distincts : <strong>croissance sous tension</strong>, <strong>adaptation sous contrainte</strong>, <strong>réinvention sous crise</strong>. Pourquoi trois contextes ? Parce que la même question ne se pose pas de la même façon — et n'appelle pas la même lecture — selon que l'entreprise est en expansion, en résistance ou en rupture. Sur chaque conversation et chaque contexte, une seule position stratégique est disponible : soit un conseil, soit un décideur industriel. Pas les deux.
+            Chaque conversation est déclinée dans trois contextes distincts : <strong>croissance sous tension</strong>, <strong>adaptation sous contrainte</strong>, <strong>réinvention sous crise</strong>. Sur chaque conversation et chaque contexte, une seule position stratégique est disponible — conseil ou décideur industriel, pas les deux.
           </p>
         </div>
 
-        <div class="conv-stack mt-40" id="convStack">
+        <!-- ── LAYOUT CONVERSATIONS ──────────────────────────────────── -->
+        <div class="conv-layout mt-40" id="convLayout">
 
-          <!-- ── C1 ── -->
-          <div class="conv-block is-open">
-            <div class="conv-header" role="button" tabindex="0" aria-expanded="true">
-              <div class="conv-header-left">
-                <div class="conv-num">Conversation 1 sur 4</div>
-                <div class="conv-title">À partir de quand produire davantage oblige-t-il à arbitrer autrement ?</div>
-                <div class="conv-tag">Lecture stratégique attendue</div>
+          <!-- Colonne gauche : navigation -->
+          <nav class="conv-nav" aria-label="Conversations">
+
+            <button class="conv-nav-item is-active" data-conv="c1" aria-selected="true">
+              <div class="conv-nav-color" style="background: var(--c1);"></div>
+              <div class="conv-nav-body">
+                <div class="conv-nav-num">01</div>
+                <div class="conv-nav-title">Produire davantage oblige-t-il à arbitrer autrement ?</div>
+                <div class="conv-nav-tags">
+                  <span>Croissance</span><span>Contrainte</span><span>Crise</span>
+                </div>
               </div>
-              <div class="conv-toggle">+</div>
+            </button>
+
+            <button class="conv-nav-item" data-conv="c2" aria-selected="false">
+              <div class="conv-nav-color" style="background: var(--c2);"></div>
+              <div class="conv-nav-body">
+                <div class="conv-nav-num">02</div>
+                <div class="conv-nav-title">Où se situent les dépendances qui deviennent des points de bascule ?</div>
+                <div class="conv-nav-tags">
+                  <span>Croissance</span><span>Contrainte</span><span>Crise</span>
+                </div>
+              </div>
+            </button>
+
+            <button class="conv-nav-item" data-conv="c3" aria-selected="false">
+              <div class="conv-nav-color" style="background: var(--c3);"></div>
+              <div class="conv-nav-body">
+                <div class="conv-nav-num">03</div>
+                <div class="conv-nav-title">Jusqu'où un outil industriel peut-il évoluer sans se transformer en profondeur ?</div>
+                <div class="conv-nav-tags">
+                  <span>Croissance</span><span>Contrainte</span><span>Crise</span>
+                </div>
+              </div>
+            </button>
+
+            <button class="conv-nav-item" data-conv="c4" aria-selected="false">
+              <div class="conv-nav-color" style="background: var(--c4);"></div>
+              <div class="conv-nav-body">
+                <div class="conv-nav-num">04</div>
+                <div class="conv-nav-title">Qu'est-ce qui fait qu'une trajectoire industrielle tient — ou doit être réarbitrée ?</div>
+                <div class="conv-nav-tags">
+                  <span>Croissance</span><span>Contrainte</span><span>Crise</span>
+                </div>
+              </div>
+            </button>
+
+          </nav>
+
+          <!-- Colonne droite : contenu -->
+          <div class="conv-content">
+
+            <!-- ── PANNEAU C1 ── -->
+            <div class="conv-panel is-active" id="c1" data-color="var(--c1)">
+              <div class="conv-panel-header" style="border-top: 3px solid var(--c1);">
+                <div class="conv-panel-num" style="color: var(--c1);">Conversation 01</div>
+                <h3 class="conv-panel-title">Produire davantage : à quel moment le volume devient-il l'ennemi de la marge — et comment les meilleurs arbitrent-ils ?</h3>
+                <p class="conv-panel-desc">La croissance industrielle met sous tension les marges, la qualité, les équipes, les stocks et l'outil. Cette conversation interroge le moment où produire davantage cesse d'être un objectif commercial pour devenir un sujet d'arbitrage industriel.</p>
+              </div>
+
+              <div class="conv-panel-angle">
+                <div class="conv-panel-angle-label">Lecture stratégique — 1 position par contexte</div>
+                <div class="conv-panel-angle-q">Croissance industrielle : à quel moment faut-il arbitrer autrement — et comment ?</div>
+                <p class="conv-panel-angle-desc">La croissance révèle des tensions moins visibles : marges comprimées, qualité plus difficile à tenir, organisation saturée. Votre lecture porte sur le mécanisme — pas sur votre entreprise.</p>
+
+                <div class="conv-actors">
+                  <div class="conv-actors-label">Vous — c'est-à-dire</div>
+                  <div class="conv-actors-you">Décideur industriel ayant piloté cette tension depuis l'intérieur, ou conseil l'ayant accompagnée depuis la stratégie.</div>
+                  <div class="conv-actors-chips">
+                    <span>DG industriel</span><span>Directeur stratégie</span><span>Cabinet stratégie industrielle</span><span>Cabinet compétitivité</span><span>Cabinet analyse de filière</span>
+                  </div>
+                </div>
+
+                <div class="conv-contexts">
+                  <div class="conv-ctx" style="border-top-color: var(--c1);">
+                    <div class="conv-ctx-head">Croissance sous tension</div>
+                    <div class="conv-ctx-text">Croissance industrielle : à quel moment le volume devient-il l'ennemi de la marge — et comment les meilleurs arbitrent-ils ?</div>
+                  </div>
+                  <div class="conv-ctx" style="border-top-color: var(--c1);">
+                    <div class="conv-ctx-head">Adaptation sous contrainte</div>
+                    <div class="conv-ctx-text">Quand l'activité résiste mais s'abîme : comment distinguer un ajustement qui tient d'un ajustement qui creuse ?</div>
+                  </div>
+                  <div class="conv-ctx" style="border-top-color: var(--c1);">
+                    <div class="conv-ctx-head">Réinvention sous crise</div>
+                    <div class="conv-ctx-text">À quel moment faut-il arrêter de corriger le modèle et décider de le changer — et qui doit prendre cette décision ?</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="conv-panel-footer">
+                <div class="conv-panel-media">
+                  <span class="conv-media-label">Émission pressentie</span>
+                  <span class="conv-media-name">La Tribune Business</span>
+                  <span class="conv-media-show">· Gilles Leclerc</span>
+                </div>
+                <button class="conv-other-toggle" aria-expanded="false">
+                  Voir les autres lectures de cette conversation
+                </button>
+              </div>
+
+              <div class="conv-other-body">
+                <div class="conv-sub"><span class="conv-sub-type">Opérationnelle</span><span class="conv-sub-q">Quels arbitrages de cadence, de stocks, de maintenance ou de qualité permettent d'absorber la demande tout en préservant la performance industrielle ?</span></div>
+                <div class="conv-sub"><span class="conv-sub-type">Technologique</span><span class="conv-sub-q">À partir de quand l'architecture de l'outil limite-t-elle la capacité à franchir un cap de volume, de qualité ou de fiabilité ?</span></div>
+                <div class="conv-sub"><span class="conv-sub-type">RH / compétences</span><span class="conv-sub-q">À partir de quand le délai nécessaire pour recruter, équiper et industrialiser devient-il incompatible avec le rythme de la demande ?</span></div>
+              </div>
             </div>
 
-            <div class="conv-body">
-              <div class="conv-desc">
-                La croissance industrielle met sous tension les marges, la qualité, les équipes, les stocks et l'outil. Cette conversation interroge le moment où produire davantage cesse d'être un objectif commercial pour devenir un sujet d'arbitrage industriel.
+            <!-- ── PANNEAU C2 ── -->
+            <div class="conv-panel" id="c2" data-color="var(--c2)">
+              <div class="conv-panel-header" style="border-top: 3px solid var(--c2);">
+                <div class="conv-panel-num" style="color: var(--c2);">Conversation 02</div>
+                <h3 class="conv-panel-title">Dépendances industrielles : comment identifier celles qui freinent avant qu'elles ne bloquent ?</h3>
+                <p class="conv-panel-desc">Une trajectoire industrielle repose sur des fournisseurs, des filières, des règles, des marchés et des systèmes. Tant que ces dépendances fonctionnent, elles restent invisibles. Cette conversation cherche à identifier celles qui deviennent des points de bascule.</p>
               </div>
 
-              <!-- Angle stratégie -->
-              <div class="angle-strat">
-                <div class="angle-strat-label">Lecture stratégique — 1 position par contexte, 3 contextes</div>
-                <div class="angle-strat-q">À partir de quand la hausse d'activité met-elle sous tension les conditions de marge, de qualité et d'organisation au point d'obliger à arbitrer autrement ?</div>
-                <div class="angle-strat-desc">
-                  La croissance révèle des tensions moins visibles : marges comprimées, qualité plus difficile à tenir, organisation saturée. Le point de bascule : à partir de quand chaque volume supplémentaire dégrade-t-il plus l'organisation qu'il ne renforce l'activité ?
-                </div>
+              <div class="conv-panel-angle">
+                <div class="conv-panel-angle-label">Lecture stratégique — 1 position par contexte</div>
+                <div class="conv-panel-angle-q">Dépendances industrielles : comment identifier celles qui freinent la trajectoire avant qu'elles ne la bloquent ?</div>
+                <p class="conv-panel-angle-desc">Le moment où une difficulté apparente relève d'une asymétrie de chaîne de valeur ou d'une dépendance de filière que seule une lecture transversale permet de voir.</p>
 
-                <div class="actors-block">
-                  <div class="actors-label">Vous — c'est-à-dire</div>
-                  <div class="actors-you">Décideur industriel ayant piloté cette tension depuis l'intérieur, ou conseil l'ayant accompagnée depuis la stratégie.</div>
-                  <div class="actors-list">
-                    <span class="actor-chip">DG industriel</span>
-                    <span class="actor-chip">Directeur stratégie</span>
-                    <span class="actor-chip">Cabinet stratégie industrielle</span>
-                    <span class="actor-chip">Cabinet compétitivité</span>
-                    <span class="actor-chip">Cabinet analyse de filière</span>
+                <div class="conv-actors">
+                  <div class="conv-actors-label">Vous — c'est-à-dire</div>
+                  <div class="conv-actors-you">Décideur industriel ayant navigué ces dépendances depuis l'intérieur, ou conseil ayant accompagné ce type de lecture de filière.</div>
+                  <div class="conv-actors-chips">
+                    <span>Directeur stratégie</span><span>DG industriel</span><span>Cabinet stratégie industrielle</span><span>Cabinet intelligence économique</span><span>Cabinet filière / chaîne de valeur</span>
                   </div>
                 </div>
 
-                <div class="contexts-grid">
-                  <div class="ctx">
-                    <div class="ctx-head">Croissance sous tension</div>
-                    <div class="ctx-text">À partir de quand la hausse d'activité révèle-t-elle des fragilités de marge, de qualité ou d'organisation que la croissance seule masquait ?</div>
+                <div class="conv-contexts">
+                  <div class="conv-ctx" style="border-top-color: var(--c2);">
+                    <div class="conv-ctx-head">Croissance sous tension</div>
+                    <div class="conv-ctx-text">Dépendances industrielles : comment identifier celles qui freinent la croissance avant qu'elles ne la bloquent ?</div>
                   </div>
-                  <div class="ctx">
-                    <div class="ctx-head">Adaptation sous contrainte</div>
-                    <div class="ctx-text">À partir de quand les ajustements sur les volumes, les équipes et la maintenance fragilisent-ils progressivement l'équilibre économique ?</div>
+                  <div class="conv-ctx" style="border-top-color: var(--c2);">
+                    <div class="conv-ctx-head">Adaptation sous contrainte</div>
+                    <div class="conv-ctx-text">Sous contrainte, quelles dépendances lâcher, lesquelles protéger — et à quel prix sur la position future dans la filière ?</div>
                   </div>
-                  <div class="ctx">
-                    <div class="ctx-head">Réinvention sous crise</div>
-                    <div class="ctx-text">À partir de quand la production révèle-t-elle un écart durable entre le modèle existant et les conditions de sa soutenabilité ?</div>
+                  <div class="conv-ctx" style="border-top-color: var(--c2);">
+                    <div class="conv-ctx-head">Réinvention sous crise</div>
+                    <div class="conv-ctx-text">Relocaliser, substituer, changer de modèle : comment savoir quand la dépendance est devenue un problème stratégique qui ne se résout plus opérationnellement ?</div>
                   </div>
                 </div>
               </div>
 
-              <div class="angle-media-row">
-                <span class="angle-media-label">Émission pressentie</span>
-                <span class="angle-media-name">La Tribune Business</span>
-                <span class="angle-media-show">· animée par Gilles Leclerc</span>
+              <div class="conv-panel-footer">
+                <div class="conv-panel-media">
+                  <span class="conv-media-label">Émission pressentie</span>
+                  <span class="conv-media-name">La Tribune Business</span>
+                  <span class="conv-media-show">· Gilles Leclerc</span>
+                </div>
+                <button class="conv-other-toggle" aria-expanded="false">
+                  Voir les autres lectures de cette conversation
+                </button>
               </div>
 
-              <!-- Autres angles -->
-              <div class="other-angles-toggle" role="button" tabindex="0" aria-expanded="false">
-                Voir les autres lectures de cette conversation
-              </div>
-              <div class="other-angles-body">
-                <div class="sub-angle">
-                  <div class="sub-angle-type">Lecture opérationnelle</div>
-                  <div class="sub-angle-q">Quels arbitrages de cadence, de stocks, de maintenance ou de qualité permettent d'absorber la demande tout en préservant la performance industrielle ?</div>
-                  <div class="sub-angle-media">La Tribune Business</div>
-                </div>
-                <div class="sub-angle">
-                  <div class="sub-angle-type">Lecture technologique</div>
-                  <div class="sub-angle-q">À partir de quand l'architecture de l'outil limite-t-elle la capacité à franchir un cap de volume, de qualité ou de fiabilité ?</div>
-                  <div class="sub-angle-media">La Tribune Business</div>
-                </div>
-                <div class="sub-angle">
-                  <div class="sub-angle-type">Lecture RH / compétences</div>
-                  <div class="sub-angle-q">À partir de quand le délai nécessaire pour recruter, équiper et industrialiser devient-il incompatible avec le rythme de la demande ?</div>
-                  <div class="sub-angle-media">La Tribune Business</div>
-                </div>
+              <div class="conv-other-body">
+                <div class="conv-sub"><span class="conv-sub-type">Financière</span><span class="conv-sub-q">À partir de quand la réduction des marges de manœuvre rend-elle une dépendance amont trop risquée pour rester pilotée à coût acceptable ?</span></div>
+                <div class="conv-sub"><span class="conv-sub-type">Juridique / réglementaire</span><span class="conv-sub-q">À partir de quand les règles commerciales, douanières ou réglementaires limitent-elles la capacité à ajuster l'activité sans rupture de continuité ?</span></div>
+                <div class="conv-sub"><span class="conv-sub-type">Technologique</span><span class="conv-sub-q">À partir de quand les interfaces entre systèmes, sites ou métiers deviennent-elles un facteur déterminant de performance et de pilotage ?</span></div>
               </div>
             </div>
-          </div>
 
-          <!-- ── C2 ── -->
-          <div class="conv-block">
-            <div class="conv-header" role="button" tabindex="0" aria-expanded="false">
-              <div class="conv-header-left">
-                <div class="conv-num">Conversation 2 sur 4</div>
-                <div class="conv-title">Où se situent les dépendances qui deviennent des points de bascule ?</div>
-                <div class="conv-tag">Lecture stratégique attendue</div>
+            <!-- ── PANNEAU C3 ── -->
+            <div class="conv-panel" id="c3" data-color="var(--c3)">
+              <div class="conv-panel-header" style="border-top: 3px solid var(--c3);">
+                <div class="conv-panel-num" style="color: var(--c3);">Conversation 03</div>
+                <h3 class="conv-panel-title">Investir dans l'outil ou composer avec ses limites : comment poser le bon diagnostic avant que le choix ne disparaisse ?</h3>
+                <p class="conv-panel-desc">Il y a un moment où optimiser l'outil existant ne suffit plus — où la logique d'adaptation atteint ses limites et où une transformation plus profonde devient inévitable. Cette conversation cherche ce seuil.</p>
               </div>
-              <div class="conv-toggle">+</div>
+
+              <div class="conv-panel-angle">
+                <div class="conv-panel-angle-label">Lecture stratégique — 1 position par contexte</div>
+                <div class="conv-panel-angle-q">Investir dans l'outil ou composer avec ses limites : comment les industriels arbitrent-ils ce seuil ?</div>
+                <p class="conv-panel-angle-desc">Le moment où les choix d'investissement et de périmètre ne relèvent plus d'une logique d'amélioration, mais d'une décision de positionnement industriel à moyen terme.</p>
+
+                <div class="conv-actors">
+                  <div class="conv-actors-label">Vous — c'est-à-dire</div>
+                  <div class="conv-actors-you">Décideur ayant arbitré une transformation d'outil industriel, ou conseil accompagnant ce type de rupture depuis la stratégie.</div>
+                  <div class="conv-actors-chips">
+                    <span>DG industriel</span><span>Directeur industriel</span><span>Cabinet stratégie industrielle</span><span>Cabinet transformation</span><span>Cabinet compétitivité</span>
+                  </div>
+                </div>
+
+                <div class="conv-contexts">
+                  <div class="conv-ctx" style="border-top-color: var(--c3);">
+                    <div class="conv-ctx-head">Croissance sous tension</div>
+                    <div class="conv-ctx-text">Investir dans l'outil ou composer avec ses limites : comment identifier les signaux qui ne trompent pas avant que le choix ne disparaisse ?</div>
+                  </div>
+                  <div class="conv-ctx" style="border-top-color: var(--c3);">
+                    <div class="conv-ctx-head">Adaptation sous contrainte</div>
+                    <div class="conv-ctx-text">Un outil qui vieillit sous contrainte : prolonger, rénover, remplacer — comment poser le bon diagnostic ?</div>
+                  </div>
+                  <div class="conv-ctx" style="border-top-color: var(--c3);">
+                    <div class="conv-ctx-head">Réinvention sous crise</div>
+                    <div class="conv-ctx-text">Dette technologique industrielle : comment transformer une contrainte accumulée en décision assumée plutôt qu'en rupture subie ?</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="conv-panel-footer">
+                <div class="conv-panel-media">
+                  <span class="conv-media-label">Émission pressentie</span>
+                  <span class="conv-media-name">BFM Business</span>
+                  <span class="conv-media-show">· Focus Business</span>
+                </div>
+                <button class="conv-other-toggle" aria-expanded="false">
+                  Voir les autres lectures de cette conversation
+                </button>
+              </div>
+
+              <div class="conv-other-body">
+                <div class="conv-sub"><span class="conv-sub-type">Opérationnelle</span><span class="conv-sub-q">Quels arbitrages permettent de maintenir l'activité lorsque les marges de manœuvre sur qualité, maintenance et périmètre se resserrent ?</span></div>
+                <div class="conv-sub"><span class="conv-sub-type">Financière</span><span class="conv-sub-q">À partir de quand la dette technologique bloque-t-elle toute adaptation crédible et force-t-elle une décision de financement ou de restructuration ?</span></div>
+                <div class="conv-sub"><span class="conv-sub-type">Territoriale</span><span class="conv-sub-q">À partir de quand le délai requis pour reconvertir l'outil dépasse-t-il le temps économique, social et financier encore disponible ?</span></div>
+              </div>
             </div>
 
-            <div class="conv-body">
-              <div class="conv-desc">
-                Une trajectoire industrielle repose sur des fournisseurs, des filières, des règles, des marchés et des systèmes. Tant que ces dépendances fonctionnent, elles restent invisibles. Cette conversation cherche à identifier celles qui deviennent des points de bascule.
+            <!-- ── PANNEAU C4 ── -->
+            <div class="conv-panel" id="c4" data-color="var(--c4)">
+              <div class="conv-panel-header" style="border-top: 3px solid var(--c4);">
+                <div class="conv-panel-num" style="color: var(--c4);">Conversation 04</div>
+                <h3 class="conv-panel-title">Croissance et positionnement de filière : comment savoir si on grandit dans la bonne direction ?</h3>
+                <p class="conv-panel-desc">Certaines trajectoires industrielles tiennent — d'autres s'effritent sans que personne n'en décide clairement. Cette conversation cherche à identifier les conditions réelles de la soutenabilité d'une trajectoire, et les signaux qui précèdent la nécessité de la réarbitrer.</p>
               </div>
 
-              <div class="angle-strat">
-                <div class="angle-strat-label">Lecture stratégique — 1 position par contexte, 3 contextes</div>
-                <div class="angle-strat-q">Qu'est-ce qu'une lecture de filière révèle que l'entreprise seule voit mal au moment d'arbitrer ?</div>
-                <div class="angle-strat-desc">
-                  Le moment où une difficulté apparente relève en réalité d'une asymétrie de chaîne de valeur, d'une dépendance de filière ou d'une position concurrentielle fragilisée — que seule une lecture transversale permet de voir.
-                </div>
+              <div class="conv-panel-angle">
+                <div class="conv-panel-angle-label">Lecture stratégique — 1 position par contexte</div>
+                <div class="conv-panel-angle-q">Trajectoire industrielle : comment savoir si on grandit dans la bonne direction — ou simplement plus vite vers le même mur ?</div>
+                <p class="conv-panel-angle-desc">Le moment où les difficultés d'une activité cessent de relever d'un ajustement tactique pour révéler un problème de positionnement dans l'écosystème industriel.</p>
 
-                <div class="actors-block">
-                  <div class="actors-label">Vous — c'est-à-dire</div>
-                  <div class="actors-you">Décideur industriel ayant navigué ces dépendances depuis l'intérieur, ou conseil ayant accompagné ce type de lecture de filière.</div>
-                  <div class="actors-list">
-                    <span class="actor-chip">Directeur stratégie</span>
-                    <span class="actor-chip">DG industriel</span>
-                    <span class="actor-chip">Cabinet stratégie industrielle</span>
-                    <span class="actor-chip">Cabinet intelligence économique</span>
-                    <span class="actor-chip">Cabinet filière / chaîne de valeur</span>
+                <div class="conv-actors">
+                  <div class="conv-actors-label">Vous — c'est-à-dire</div>
+                  <div class="conv-actors-you">Décideur industriel ayant été confronté à ce moment de réarbitrage, ou conseil ayant accompagné des trajectoires industrielles à ce type de carrefour.</div>
+                  <div class="conv-actors-chips">
+                    <span>DG industriel</span><span>Directeur développement</span><span>Cabinet stratégie industrielle</span><span>Cabinet intelligence économique</span><span>Cabinet filière</span>
                   </div>
                 </div>
 
-                <div class="contexts-grid">
-                  <div class="ctx">
-                    <div class="ctx-head">Croissance sous tension</div>
-                    <div class="ctx-text">À partir de quand l'augmentation des volumes révèle-t-elle une dépendance fournisseur ou logistique que l'organisation ne maîtrise plus pleinement ?</div>
+                <div class="conv-contexts">
+                  <div class="conv-ctx" style="border-top-color: var(--c4);">
+                    <div class="conv-ctx-head">Croissance sous tension</div>
+                    <div class="conv-ctx-text">Croissance et positionnement de filière : comment savoir si on grandit dans la bonne direction — ou simplement plus vite vers le même mur ?</div>
                   </div>
-                  <div class="ctx">
-                    <div class="ctx-head">Adaptation sous contrainte</div>
-                    <div class="ctx-text">Quelles dépendances de filière limitent la capacité à ajuster l'activité sans fragiliser la position future dans la chaîne de valeur ?</div>
+                  <div class="conv-ctx" style="border-top-color: var(--c4);">
+                    <div class="conv-ctx-head">Adaptation sous contrainte</div>
+                    <div class="conv-ctx-text">Tenir une trajectoire sous pression : jusqu'où les ajustements suffisent-ils, et comment décider que le moment du réarbitrage est arrivé ?</div>
                   </div>
-                  <div class="ctx">
-                    <div class="ctx-head">Réinvention sous crise</div>
-                    <div class="ctx-text">À partir de quand une dépendance critique impose-t-elle une relocalisation, une substitution ou un changement de modèle d'approvisionnement ?</div>
+                  <div class="conv-ctx" style="border-top-color: var(--c4);">
+                    <div class="conv-ctx-head">Réinvention sous crise</div>
+                    <div class="conv-ctx-text">Transformation industrielle : comment poser le diagnostic qui distingue une entreprise qui se réinvente de celle qui retarde l'inévitable ?</div>
                   </div>
                 </div>
               </div>
 
-              <div class="angle-media-row">
-                <span class="angle-media-label">Émission pressentie</span>
-                <span class="angle-media-name">La Tribune Business</span>
-                <span class="angle-media-show">· animée par Gilles Leclerc</span>
+              <div class="conv-panel-footer">
+                <div class="conv-panel-media">
+                  <span class="conv-media-label">Émission pressentie</span>
+                  <span class="conv-media-name">BFM Business</span>
+                  <span class="conv-media-show">· Focus Business</span>
+                </div>
+                <button class="conv-other-toggle" aria-expanded="false">
+                  Voir les autres lectures de cette conversation
+                </button>
               </div>
 
-              <div class="other-angles-toggle" role="button" tabindex="0" aria-expanded="false">
-                Voir les autres lectures de cette conversation
-              </div>
-              <div class="other-angles-body">
-                <div class="sub-angle">
-                  <div class="sub-angle-type">Lecture financière</div>
-                  <div class="sub-angle-q">À partir de quand la réduction des marges de manœuvre rend-elle une dépendance amont trop risquée pour rester pilotée à coût acceptable ?</div>
-                  <div class="sub-angle-media">La Tribune Business</div>
-                </div>
-                <div class="sub-angle">
-                  <div class="sub-angle-type">Lecture juridique / réglementaire</div>
-                  <div class="sub-angle-q">À partir de quand les règles commerciales, douanières ou réglementaires limitent-elles la capacité à ajuster l'activité sans rupture de continuité ?</div>
-                  <div class="sub-angle-media">La Tribune Business</div>
-                </div>
-                <div class="sub-angle">
-                  <div class="sub-angle-type">Lecture technologique</div>
-                  <div class="sub-angle-q">À partir de quand les interfaces entre systèmes, sites ou métiers deviennent-elles un facteur déterminant de performance et de pilotage ?</div>
-                  <div class="sub-angle-media">La Tribune Business</div>
-                </div>
+              <div class="conv-other-body">
+                <div class="conv-sub"><span class="conv-sub-type">Financière</span><span class="conv-sub-q">À partir de quand les conditions de portage financier d'une trajectoire industrielle cessent-elles d'être soutenables sans une décision de réarbitrage ?</span></div>
+                <div class="conv-sub"><span class="conv-sub-type">Réglementaire</span><span class="conv-sub-q">À partir de quand le cadre commercial, douanier ou réglementaire transforme-t-il une fragilité locale en contrainte structurelle sur la trajectoire ?</span></div>
+                <div class="conv-sub"><span class="conv-sub-type">Territoriale</span><span class="conv-sub-q">À partir de quand le territoire cesse-t-il d'être un facteur de stabilité pour devenir lui-même un paramètre de la décision de transformation ?</span></div>
               </div>
             </div>
-          </div>
 
-          <!-- ── C3 ── -->
-          <div class="conv-block">
-            <div class="conv-header" role="button" tabindex="0" aria-expanded="false">
-              <div class="conv-header-left">
-                <div class="conv-num">Conversation 3 sur 4</div>
-                <div class="conv-title">Jusqu'où un outil industriel peut-il évoluer sans se transformer en profondeur ?</div>
-                <div class="conv-tag">Lecture stratégique attendue</div>
-              </div>
-              <div class="conv-toggle">+</div>
-            </div>
-
-            <div class="conv-body">
-              <div class="conv-desc">
-                Il y a un moment où optimiser l'outil existant ne suffit plus — où la logique d'adaptation atteint ses limites et où une transformation plus profonde devient inévitable. Cette conversation cherche ce seuil.
-              </div>
-
-              <div class="angle-strat">
-                <div class="angle-strat-label">Lecture stratégique — 1 position par contexte, 3 contextes</div>
-                <div class="angle-strat-q">À partir de quand la logique d'optimisation de l'outil révèle-t-elle un écart stratégique que les seuls arbitrages opérationnels ne peuvent plus combler ?</div>
-                <div class="angle-strat-desc">
-                  Le moment où les choix d'investissement, de périmètre et d'organisation ne relèvent plus d'une logique d'amélioration, mais d'une décision de positionnement industriel à moyen terme.
-                </div>
-
-                <div class="actors-block">
-                  <div class="actors-label">Vous — c'est-à-dire</div>
-                  <div class="actors-you">Décideur ayant arbitré une transformation d'outil industriel, ou conseil accompagnant ce type de rupture depuis la stratégie.</div>
-                  <div class="actors-list">
-                    <span class="actor-chip">DG industriel</span>
-                    <span class="actor-chip">Directeur industriel</span>
-                    <span class="actor-chip">Cabinet stratégie industrielle</span>
-                    <span class="actor-chip">Cabinet transformation</span>
-                    <span class="actor-chip">Cabinet compétitivité</span>
-                  </div>
-                </div>
-
-                <div class="contexts-grid">
-                  <div class="ctx">
-                    <div class="ctx-head">Croissance sous tension</div>
-                    <div class="ctx-text">À partir de quand l'architecture de l'outil empêche de franchir un cap de volume ou de qualité, et impose une décision d'investissement stratégique ?</div>
-                  </div>
-                  <div class="ctx">
-                    <div class="ctx-head">Adaptation sous contrainte</div>
-                    <div class="ctx-text">À partir de quand le vieillissement de l'outil impose des compromis de plus en plus coûteux — et devient lui-même un risque stratégique ?</div>
-                  </div>
-                  <div class="ctx">
-                    <div class="ctx-head">Réinvention sous crise</div>
-                    <div class="ctx-text">À partir de quand la dette technologique impose un saut d'investissement ou un changement de périmètre qui ne peut plus être différé ?</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="angle-media-row">
-                <span class="angle-media-label">Émission pressentie</span>
-                <span class="angle-media-name">BFM Business</span>
-                <span class="angle-media-show">· Focus Business</span>
-              </div>
-
-              <div class="other-angles-toggle" role="button" tabindex="0" aria-expanded="false">
-                Voir les autres lectures de cette conversation
-              </div>
-              <div class="other-angles-body">
-                <div class="sub-angle">
-                  <div class="sub-angle-type">Lecture opérationnelle</div>
-                  <div class="sub-angle-q">Quels arbitrages permettent de maintenir l'activité lorsque les marges de manœuvre sur qualité, maintenance et périmètre se resserrent ?</div>
-                  <div class="sub-angle-media">BFM Business</div>
-                </div>
-                <div class="sub-angle">
-                  <div class="sub-angle-type">Lecture financière</div>
-                  <div class="sub-angle-q">À partir de quand la dette technologique bloque-t-elle toute adaptation crédible et force-t-elle une décision de financement ou de restructuration ?</div>
-                  <div class="sub-angle-media">BFM Business</div>
-                </div>
-                <div class="sub-angle">
-                  <div class="sub-angle-type">Lecture territoriale</div>
-                  <div class="sub-angle-q">À partir de quand le délai requis pour reconvertir l'outil dépasse-t-il le temps économique, social et financier encore disponible ?</div>
-                  <div class="sub-angle-media">BFM Business</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ── C4 ── -->
-          <div class="conv-block">
-            <div class="conv-header" role="button" tabindex="0" aria-expanded="false">
-              <div class="conv-header-left">
-                <div class="conv-num">Conversation 4 sur 4</div>
-                <div class="conv-title">Qu'est-ce qui fait qu'une trajectoire industrielle tient — ou doit être réarbitrée ?</div>
-                <div class="conv-tag">Lecture stratégique attendue</div>
-              </div>
-              <div class="conv-toggle">+</div>
-            </div>
-
-            <div class="conv-body">
-              <div class="conv-desc">
-                Certaines trajectoires industrielles tiennent — d'autres s'effritent sans que personne n'en décide clairement. Cette conversation cherche à identifier les conditions réelles de la soutenabilité d'une trajectoire, et les signaux qui précèdent la nécessité de la réarbitrer.
-              </div>
-
-              <div class="angle-strat">
-                <div class="angle-strat-label">Lecture stratégique — 1 position par contexte, 3 contextes</div>
-                <div class="angle-strat-q">À partir de quand le problème ne tient plus à la conjoncture, mais à la place occupée dans la filière ?</div>
-                <div class="angle-strat-desc">
-                  Le moment où les difficultés d'une activité cessent de relever d'un ajustement tactique pour révéler un problème de positionnement dans l'écosystème industriel — que ni l'opérationnel ni le financier ne peuvent résoudre seuls.
-                </div>
-
-                <div class="actors-block">
-                  <div class="actors-label">Vous — c'est-à-dire</div>
-                  <div class="actors-you">Décideur industriel ayant été confronté à ce moment de réarbitrage, ou conseil ayant accompagné des trajectoires industrielles à ce type de carrefour.</div>
-                  <div class="actors-list">
-                    <span class="actor-chip">DG industriel</span>
-                    <span class="actor-chip">Directeur développement</span>
-                    <span class="actor-chip">Cabinet stratégie industrielle</span>
-                    <span class="actor-chip">Cabinet intelligence économique</span>
-                    <span class="actor-chip">Cabinet filière</span>
-                  </div>
-                </div>
-
-                <div class="contexts-grid">
-                  <div class="ctx">
-                    <div class="ctx-head">Croissance sous tension</div>
-                    <div class="ctx-text">À partir de quand une trajectoire en croissance révèle-t-elle un problème de positionnement dans la filière que la croissance seule ne résoudra pas ?</div>
-                  </div>
-                  <div class="ctx">
-                    <div class="ctx-head">Adaptation sous contrainte</div>
-                    <div class="ctx-text">À partir de quand les ajustements ne permettent plus de tenir la trajectoire — et à quoi ressemble une réarbitrage stratégique à ce stade ?</div>
-                  </div>
-                  <div class="ctx">
-                    <div class="ctx-head">Réinvention sous crise</div>
-                    <div class="ctx-text">À partir de quand faut-il cesser de corriger l'existant pour accepter qu'une transformation plus profonde du modèle est devenue nécessaire ?</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="angle-media-row">
-                <span class="angle-media-label">Émission pressentie</span>
-                <span class="angle-media-name">BFM Business</span>
-                <span class="angle-media-show">· Focus Business</span>
-              </div>
-
-              <div class="other-angles-toggle" role="button" tabindex="0" aria-expanded="false">
-                Voir les autres lectures de cette conversation
-              </div>
-              <div class="other-angles-body">
-                <div class="sub-angle">
-                  <div class="sub-angle-type">Lecture financière</div>
-                  <div class="sub-angle-q">À partir de quand les conditions de portage financier d'une trajectoire industrielle cessent-elles d'être soutenables sans une décision de réarbitrage ?</div>
-                  <div class="sub-angle-media">BFM Business</div>
-                </div>
-                <div class="sub-angle">
-                  <div class="sub-angle-type">Lecture réglementaire</div>
-                  <div class="sub-angle-q">À partir de quand le cadre commercial, douanier ou réglementaire transforme-t-il une fragilité locale en contrainte structurelle sur la trajectoire ?</div>
-                  <div class="sub-angle-media">BFM Business</div>
-                </div>
-                <div class="sub-angle">
-                  <div class="sub-angle-type">Lecture territoriale</div>
-                  <div class="sub-angle-q">À partir de quand le territoire cesse-t-il d'être un facteur de stabilité pour devenir lui-même un paramètre de la décision de transformation ?</div>
-                  <div class="sub-angle-media">BFM Business</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
+          </div><!-- /conv-content -->
+        </div><!-- /conv-layout -->
 
         <div class="panel mt-32" style="border-left-color: var(--ink-soft);">
           <p>Sur chaque conversation, dans chaque contexte, une seule position de lecture stratégique est disponible — qu'elle soit portée par un décideur industriel ou par un conseil. Il n'y a pas de mise en concurrence entre profils équivalents au sein d'un même angle contextualisé. Les affectations médiatiques indiquées correspondent à la logique de traitement actuellement retenue et peuvent être ajustées lors du comité éditorial.</p>
@@ -1569,6 +1598,7 @@
         </div>
       </div>
     </section>
+
 
     <!-- ══ 6 DIMENSIONS ══════════════════════════════════════════════════ -->
     <section class="section section--dark" aria-labelledby="dimensions-titre">
