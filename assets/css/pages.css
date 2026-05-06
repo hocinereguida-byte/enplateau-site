@@ -1520,3 +1520,211 @@ body.page-interior-3 .container {
 .page-conv3-logement .conv3-cycle-logement-img {
   background-image: url("../../images/cycle-logement-chantier.jpg");
 }
+
+/* =========================================================
+   CORRECTIFS COMMUNS — DESIGN FIGÉ
+   Pages encore en ancien design + grilles 3 blocs
+========================================================= */
+
+/* Pages internes encore servies par l’ancien socle */
+body:not(.home-page) main > .inner-section:first-child,
+body:not(.home-page) main > .hero:first-child {
+  position: relative;
+  overflow: hidden;
+  padding: 118px 0 96px;
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.94) 0%, rgba(17,17,17,.80) 48%, rgba(17,17,17,.62) 100%),
+    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
+  color: var(--p3-text);
+  border-bottom: 1px solid var(--p3-line-dark);
+}
+
+body:not(.home-page) main > .inner-section:first-child::after,
+body:not(.home-page) main > .hero:first-child::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.28));
+  pointer-events: none;
+}
+
+body:not(.home-page) main > .inner-section:first-child > .container,
+body:not(.home-page) main > .hero:first-child > .container,
+body:not(.home-page) main > .inner-section:first-child > .container-reading,
+body:not(.home-page) main > .hero:first-child > .container-reading {
+  position: relative;
+  z-index: 2;
+}
+
+body:not(.home-page) main > .inner-section:first-child h1,
+body:not(.home-page) main > .hero:first-child h1,
+body:not(.home-page) main > .inner-section:first-child .hero-title,
+body:not(.home-page) main > .hero:first-child .hero-title,
+body:not(.home-page) main > .inner-section:first-child .page-hero-title,
+body:not(.home-page) main > .hero:first-child .page-hero-title {
+  max-width: 900px;
+  margin: 0 0 18px;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.6vw, 3.1rem);
+  line-height: 1.11;
+  letter-spacing: -.015em;
+  font-weight: 600;
+  color: var(--p3-text);
+  text-wrap: balance;
+}
+
+body:not(.home-page) main > .inner-section:first-child h2,
+body:not(.home-page) main > .hero:first-child h2 {
+  color: var(--p3-text);
+}
+
+body:not(.home-page) main > .inner-section:first-child p,
+body:not(.home-page) main > .hero:first-child p,
+body:not(.home-page) main > .inner-section:first-child .hero-subtitle,
+body:not(.home-page) main > .hero:first-child .hero-subtitle,
+body:not(.home-page) main > .inner-section:first-child .page-hero-sub,
+body:not(.home-page) main > .hero:first-child .page-hero-sub {
+  max-width: 860px;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.18vw, 1.05rem);
+  line-height: 1.72;
+  color: var(--p3-text-soft);
+}
+
+body:not(.home-page) main > .inner-section:first-child .section-kicker,
+body:not(.home-page) main > .hero:first-child .section-kicker,
+body:not(.home-page) main > .inner-section:first-child .hero-kicker,
+body:not(.home-page) main > .hero:first-child .hero-kicker,
+body:not(.home-page) main > .inner-section:first-child .page-hero-kicker,
+body:not(.home-page) main > .hero:first-child .page-hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--p3-accent-soft);
+}
+
+body:not(.home-page) main > .inner-section:first-child .section-kicker::before,
+body:not(.home-page) main > .hero:first-child .section-kicker::before,
+body:not(.home-page) main > .inner-section:first-child .hero-kicker::before,
+body:not(.home-page) main > .hero:first-child .hero-kicker::before,
+body:not(.home-page) main > .inner-section:first-child .page-hero-kicker::before,
+body:not(.home-page) main > .hero:first-child .page-hero-kicker::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  opacity: .75;
+}
+
+body:not(.home-page) main > .inner-section:not(:first-child),
+body:not(.home-page) main > .home-section:not(:first-child) {
+  background: var(--p3-paper);
+  color: var(--p3-ink);
+}
+
+body:not(.home-page) main > .inner-section--dark:not(:first-child),
+body:not(.home-page) main > .home-section--dark:not(:first-child) {
+  background: #111111;
+  color: var(--p3-text);
+}
+
+body:not(.home-page) main > .inner-section--dark:not(:first-child) h2,
+body:not(.home-page) main > .inner-section--dark:not(:first-child) h3,
+body:not(.home-page) main > .home-section--dark:not(:first-child) h2,
+body:not(.home-page) main > .home-section--dark:not(:first-child) h3 {
+  color: var(--p3-text);
+}
+
+body:not(.home-page) main > .inner-section--dark:not(:first-child) p,
+body:not(.home-page) main > .home-section--dark:not(:first-child) p {
+  color: var(--p3-text-soft);
+}
+
+/* Suppression des fonds bleus ou fonds partiels sur sections deux colonnes */
+.page-interior-3 .page3-split,
+.page-interior-3 .conv3-split,
+.page-interior-3 .conv3-decision-grid,
+.page-interior-3 .home-split,
+.page-interior-3 .home-decision-grid {
+  background: transparent !important;
+}
+
+.page-interior-3 .page3-split-copy,
+.page-interior-3 .conv3-split-copy,
+.page-interior-3 .home-split-copy {
+  background: #ffffff !important;
+}
+
+.page-interior-3 .page3-section-light .page3-split,
+.page-interior-3 .conv3-light .conv3-split,
+.page-interior-3 .home-light .home-split {
+  background: #ffffff !important;
+}
+
+/* Les traits bleus restent des accents de bloc, pas des fonds de section */
+.page-interior-3 .editorial-panel::before,
+.page-interior-3 .programme-list__item::before,
+.page-interior-3 .programme-access__item::before,
+.page-interior-3 .conv3-position-grid article::before,
+.page-interior-3 .conv3-dispositif-cards article::before,
+.page-interior-3 .home-position-grid article::before,
+.page-interior-3 .home-dispositif-cards article::before,
+.page-interior-3 .home-values article::before {
+  background: var(--p3-accent) !important;
+}
+
+/* Grilles à 3 blocs : éviter l’effet bloc manquant */
+.page-interior-3 .programme-list > :nth-child(3):last-child,
+.page-interior-3 .programme-access > :nth-child(3):last-child,
+.page-interior-3 .page3-card-grid > :nth-child(3):last-child,
+.page-interior-3 .conv3-cycles > :nth-child(3):last-child,
+.page-interior-3 .conv3-position-grid > :nth-child(3):last-child,
+.page-interior-3 .conv3-dispositif-cards > :nth-child(3):last-child,
+.page-interior-3 .home-cycles > :nth-child(3):last-child,
+.page-interior-3 .home-position-grid > :nth-child(3):last-child,
+.page-interior-3 .home-dispositif-cards > :nth-child(3):last-child,
+.page-interior-3 .home-values > :nth-child(3):last-child,
+body:not(.home-page) .programme-list > :nth-child(3):last-child,
+body:not(.home-page) .programme-access > :nth-child(3):last-child,
+body:not(.home-page) .page3-card-grid > :nth-child(3):last-child,
+body:not(.home-page) .conv3-cycles > :nth-child(3):last-child,
+body:not(.home-page) .conv3-position-grid > :nth-child(3):last-child,
+body:not(.home-page) .conv3-dispositif-cards > :nth-child(3):last-child {
+  grid-column: 1 / -1;
+}
+
+.page-interior-3 .programme-list > :nth-child(3):last-child,
+.page-interior-3 .programme-access > :nth-child(3):last-child,
+.page-interior-3 .page3-card-grid > :nth-child(3):last-child,
+.page-interior-3 .conv3-cycles > :nth-child(3):last-child,
+.page-interior-3 .conv3-position-grid > :nth-child(3):last-child,
+.page-interior-3 .conv3-dispositif-cards > :nth-child(3):last-child,
+.page-interior-3 .home-cycles > :nth-child(3):last-child,
+.page-interior-3 .home-position-grid > :nth-child(3):last-child,
+.page-interior-3 .home-dispositif-cards > :nth-child(3):last-child,
+.page-interior-3 .home-values > :nth-child(3):last-child {
+  max-width: none;
+}
+
+@media (max-width: 780px) {
+  body:not(.home-page) main > .inner-section:first-child,
+  body:not(.home-page) main > .hero:first-child {
+    padding: 92px 0 62px;
+  }
+
+  body:not(.home-page) main > .inner-section:first-child h1,
+  body:not(.home-page) main > .hero:first-child h1,
+  body:not(.home-page) main > .inner-section:first-child .hero-title,
+  body:not(.home-page) main > .hero:first-child .hero-title,
+  body:not(.home-page) main > .inner-section:first-child .page-hero-title,
+  body:not(.home-page) main > .hero:first-child .page-hero-title {
+    font-size: clamp(2.4rem, 11vw, 4rem);
+  }
+}
+
