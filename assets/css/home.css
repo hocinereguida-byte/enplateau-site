@@ -1176,3 +1176,51 @@
     padding-top: 0;
   }
 }
+.home-hero-card {
+  margin-top: 18px;
+  padding: 24px 26px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(8,13,22,.74);
+  backdrop-filter: blur(10px);
+}
+
+.home-hero-card h3 {
+  margin: 0 0 10px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.home-hero-card p {
+  margin: 0 0 18px;
+  font-size: .86rem;
+  line-height: 1.6;
+  color: rgba(248,250,252,.76);
+}
+
+.home-hero-card a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 2px !important;
+  background: #ffffff;
+  color: #111827;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.home-hero-card a::after {
+  display: none !important;
+}
+
+.home-hero-small--right {
+  margin-top: 14px;
+  font-size: .72rem;
+  line-height: 1.55;
+  color: rgba(248,250,252,.50);
+}
