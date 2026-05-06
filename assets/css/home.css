@@ -1094,3 +1094,53 @@
     padding-top: 0;
   }
   }
+/* Correctif hero — remontée titre + hiérarchie texte */
+
+@media (min-width: 1101px) {
+  .home-hero-grid {
+    align-items: start !important;
+    padding-top: 82px !important;
+  }
+
+  .home-hero-copy {
+    padding-top: 22px !important;
+  }
+
+  .home-hero h1 {
+    margin-bottom: 24px !important;
+  }
+
+  .home-hero-lead {
+    max-width: 640px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .home-hero-lead strong {
+    display: block !important;
+    max-width: 520px !important;
+    font-size: 1rem !important;
+    line-height: 1.45 !important;
+    letter-spacing: .01em !important;
+    color: #ffffff !important;
+  }
+
+  .home-hero-copy > .home-hero-lead:nth-of-type(2) {
+    max-width: 600px !important;
+    font-size: .88rem !important;
+    line-height: 1.72 !important;
+    color: rgba(248,250,252,.72) !important;
+    margin-top: 8px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .home-hero-note {
+    max-width: 600px !important;
+    font-size: .82rem !important;
+    line-height: 1.62 !important;
+    color: rgba(248,250,252,.56) !important;
+  }
+
+  .home-hero-side {
+    transform: translateY(-72px) !important;
+  }
+}
