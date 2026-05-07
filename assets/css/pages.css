@@ -1832,6 +1832,97 @@ body.page-interior-3.page-positions #industrie p {
     font-size: clamp(2.4rem, 11vw, 4rem);
   }
 }
+/* =========================================================
+   PAGE DISPOSITIF — IMAGES / OVERLAYS
+========================================================= */
+
+body.page-dispositif #hero-dispositif {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.94) 0%, rgba(17,17,17,.80) 48%, rgba(17,17,17,.62) 100%),
+    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
+}
+
+body.page-dispositif .page3-split {
+  gap: clamp(28px, 4vw, 52px) !important;
+  background: transparent !important;
+}
+
+body.page-dispositif .page3-split-copy {
+  padding: clamp(28px, 4vw, 48px) !important;
+  background: #ffffff !important;
+}
+
+body.page-dispositif .page3-split-visual {
+  min-height: 520px;
+}
+
+body.page-dispositif .page3-section-light .section-kicker {
+  color: var(--p3-accent-deep) !important;
+}
+
+body.page-dispositif .page3-section-light .section-kicker::before {
+  opacity: 1;
+}
+
+body.page-dispositif #finalite-dispositif .page3-split-visual {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.72), rgba(17,17,17,.32)),
+    url("../../images/dispositif/noeud-routier-finalite.jpg.jpg") center/cover no-repeat;
+}
+
+body.page-dispositif #cadre-dispositif {
+  background:
+    linear-gradient(180deg, rgba(17,17,17,.94), rgba(17,17,17,.97)),
+    url("../../images/dispositif/beton-cadre.jpg") center/cover no-repeat;
+}
+
+body.page-dispositif #comment-ca-marche {
+  background:
+    linear-gradient(180deg, rgba(17,17,17,.88), rgba(17,17,17,.94)),
+    url("../../images/dispositif/deroule-dunes.jpg") center/cover no-repeat !important;
+}
+
+body.page-dispositif #ce-que-cela-demande .page3-split-visual {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.68), rgba(17,17,17,.30)),
+    url("../../images/dispositif/horlogerie-mobilisation.jpg.jpg") center/cover no-repeat;
+}
+
+body.page-dispositif #principe-dispositif {
+  background:
+    linear-gradient(180deg, rgba(17,17,17,.94), rgba(17,17,17,.97)),
+    url("../../images/dispositif/prisme-principe.jpg") center/cover no-repeat;
+}
+
+body.page-dispositif #architecture-dispositif::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../../images/dispositif/sedimentation-architecture.jpg") center/cover no-repeat;
+  opacity: .06;
+  filter: grayscale(100%) contrast(112%) brightness(.95);
+  pointer-events: none;
+}
+
+body.page-dispositif #architecture-dispositif .container {
+  position: relative;
+  z-index: 2;
+}
+
+body.page-dispositif #acces-dispositif::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../../images/dispositif/colonnes-acces.jpg") center/cover no-repeat;
+  opacity: .06;
+  filter: grayscale(100%) contrast(112%) brightness(.95);
+  pointer-events: none;
+}
+
+body.page-dispositif #acces-dispositif .container {
+  position: relative;
+  z-index: 2;
+}
 
 
 
