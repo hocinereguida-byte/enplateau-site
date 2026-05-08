@@ -2172,7 +2172,26 @@ body.page-a-propos #portage .page3-split-visual {
     background-position: center 18%;
   }
 }
+/* =========================================================
+   PAGE POSITIONS — HERO TEXTE SUR PAVÉ SOMBRE
+========================================================= */
 
+body.page-positions #hero-positions-hub .page-hero-inner {
+  max-width: 980px;
+  padding: clamp(28px, 4vw, 46px);
+  background: rgba(17,17,17,.62);
+  border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(6px);
+}
+
+body.page-positions #hero-positions-hub .page-hero-note {
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,.14);
+}
+
+body.page-positions #hero-positions-hub .programme-link-row {
+  margin-top: 26px;
+}
 
 
 
