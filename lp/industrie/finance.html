@@ -194,7 +194,7 @@
     }
   </style>
 </head>
-<body>
+<body data-landing="finance">
   <div class="urgency-banner" role="banner">
     <p>Comité éditorial : <strong>15 juin 2026</strong> — Les échanges de qualification doivent avoir lieu suffisamment en amont pour permettre l'élaboration du dossier de positionnement</p>
   </div>
@@ -221,16 +221,13 @@
             <h1 id="hero-title"></h1>
             <p class="hero-lead" id="heroLead"></p>
             <div class="hero-profiles" id="heroProfiles"></div>
-            <p class="hero-note">
-              Aucun chiffre confidentiel à exposer &nbsp;·&nbsp; Aucun dossier sensible à commenter &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>
-              Collaboration possible avec services juridique, communication ou corporate de votre organisation
-            </p>
+            <p class="hero-note" id="heroNote"></p>
           </div>
 
           <div class="hero-card">
             <div class="hero-card-label">Échange éditorial · Qualification d'angle</div>
-            <h3>Votre lecture financière a-t-elle sa place dans l'une de ces conversations ?</h3>
-            <p>En 15 minutes, nous vérifions si votre angle correspond à une position encore disponible — sans exposer vos chiffres, vos marges ou vos dossiers internes.</p>
+            <h3 id="heroCardTitle"></h3>
+            <p id="heroCardText"></p>
             <a id="heroCta" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-finance&cta=hero" class="btn-primary">Réserver l'échange éditorial</a>
             <div class="hero-deadline">Les échanges doivent précéder suffisamment le comité éditorial<br>Comité éditorial : 15 juin 2026</div>
             <p class="hero-card-foot">Certaines positions se ferment au fil de la composition éditoriale</p>
@@ -254,31 +251,10 @@
       <div class="container">
         <div class="section-head">
           <div class="kicker kicker--faint">Pertinence</div>
-          <h2 class="display display--light" id="pourqui-titre">Cette lecture financière vous est-elle destinée ?</h2>
+          <h2 class="display display--light" id="pourqui-titre"></h2>
         </div>
-        <div class="audience-grid">
-          <div class="audience-card">
-            <h3>Vous portez probablement une lecture pertinente si…</h3>
-            <ul class="audience-list">
-              <li>Vous savez relier marges de manœuvre, investissement, coûts différés et décisions industrielles réelles.</li>
-              <li>Vous êtes DAF, CFO, dirigeant, conseil finance, restructuring, corporate finance, investisseur ou responsable exposé aux arbitrages économiques industriels.</li>
-              <li>Votre lecture porte sur des seuils : dette technologique, dépendance devenue coûteuse, CAPEX différé, coûts énergie/eau/conformité, soutenabilité d'un outil.</li>
-              <li>Vous pouvez éclairer un mécanisme sans exposer de chiffres, de comptes internes, de clients ou de dossiers confidentiels.</li>
-            </ul>
-          </div>
-          <div class="audience-card audience-card--no">
-            <h3>Moins adapté si…</h3>
-            <ul class="audience-list audience-list--no">
-              <li>Votre approche porte surtout sur du reporting, de la conformité comptable ou une lecture financière déconnectée de l'outil industriel.</li>
-              <li>Vous cherchez d'abord une visibilité promotionnelle plutôt qu'une contribution éditoriale située.</li>
-              <li>Vous souhaitez présenter des résultats, une méthode propriétaire ou une offre commerciale plutôt qu'éclairer un arbitrage industriel.</li>
-              <li>Votre lecture ne relie pas les chiffres à des décisions : investir, différer, transformer, redéployer, céder ou renoncer.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="panel panel--dark">
-          <p>La lecture financière ne consiste pas à commenter des chiffres. Elle consiste à identifier le moment où les équilibres économiques obligent l'industrie à arbitrer autrement.</p>
-        </div>
+        <div class="audience-grid" id="audienceGrid"></div>
+        <div class="panel panel--dark" id="audiencePanel"></div>
       </div>
     </section>
 
@@ -286,8 +262,8 @@
       <div class="container">
         <div class="section-head">
           <div class="kicker">Conversations ouvertes</div>
-          <h2 class="display" id="conversations-titre">Les angles où la lecture financière devient décisive</h2>
-          <p class="section-intro">La lecture financière intervient là où les conditions économiques changent la nature de la décision industrielle : maintenir, investir, différer, transformer, redéployer ou renoncer. Chaque position porte sur un mécanisme à éclairer, sans exposition de chiffres confidentiels ni de dossiers internes.</p>
+          <h2 class="display" id="conversations-titre"></h2>
+          <p class="section-intro" id="conversationsIntro"></p>
         </div>
 
         <div class="conv-layout mt-40" id="convLayout">
@@ -295,9 +271,7 @@
           <div class="conv-content" id="convContent"></div>
         </div>
 
-        <div class="panel">
-          <p>Ces positions ne demandent pas de commenter une situation particulière. Elles proposent d’éclairer des seuils, des signaux faibles et des arbitrages économiques qui se répètent dans les trajectoires industrielles.</p>
-        </div>
+        <div class="panel" id="conversationsPanel"></div>
 
         <div style="margin-top:40px;text-align:center;">
           <a id="midCta" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-finance&cta=mid-conv" class="btn-primary btn-primary--large" style="display:inline-flex;background:var(--ink);color:#f0ece6;">Réserver un échange éditorial</a>
@@ -309,8 +283,8 @@
       <div class="container">
         <div class="section-head">
           <div class="kicker kicker--faint">Préparation éditoriale</div>
-          <h2 class="display display--light" id="dimensions-titre">Beaucoup arrivent avec une lecture financière. <em style="color:rgba(240,236,230,0.55);">Ils repartent avec une position.</em></h2>
-          <p class="section-intro section-intro--light">La préparation éditoriale transforme une expertise souvent technique en lecture située : compréhensible, défendable, utile pour les dirigeants industriels, financeurs, conseils, équipes internes et partenaires de transformation.</p>
+          <h2 class="display display--light" id="dimensions-titre"></h2>
+          <p class="section-intro section-intro--light" id="dimensionsIntro"></p>
         </div>
       </div>
     </section>
@@ -321,12 +295,7 @@
           <div class="kicker">Déroulement</div>
           <h2 class="display" id="processus-titre">De l'échange éditorial à la prise de parole</h2>
         </div>
-        <div class="process-row">
-          <div class="process-step"><div class="step-num">01</div><h3>L'échange de qualification</h3><p>15 minutes pour vérifier si votre lecture correspond à un angle disponible. Aucun chiffre ni dossier sensible à exposer.</p><div class="process-deadline">À planifier en amont du comité éditorial</div></div>
-          <div class="process-step"><div class="step-num">02</div><h3>Le dossier de positionnement</h3><p>Si l'angle est retenu, un dossier complet vous est adressé : angle précis, logique de mise en regard, modalités d'intervention, format émission et article associé.</p></div>
-          <div class="process-step"><div class="step-num">03</div><h3>Le comité éditorial</h3><p>Le 15 juin, le comité éditorial examine les dossiers de positionnement et valide la composition finale. Vous êtes informé avant tout engagement.</p><div class="process-deadline">Comité : 15 juin 2026</div></div>
-          <div class="process-step"><div class="step-num">04</div><h3>La préparation &amp; la production</h3><p>En Plateau travaille avec vous pour transformer votre lecture financière en position claire, non intrusive et publiquement défendable.</p></div>
-        </div>
+        <div class="process-row" id="processRow"></div>
       </div>
     </section>
 
@@ -336,12 +305,7 @@
           <div class="kicker">Ce que cet échange implique</div>
           <h2 class="display" id="garanties-titre">Et ce qu'il n'implique pas</h2>
         </div>
-        <div class="guarantees-grid">
-          <div class="guarantee guarantee--accent"><h3>Aucun chiffre confidentiel à exposer</h3><p>L'échange porte sur les mécanismes d'arbitrage économique, pas sur vos comptes, vos marges, vos coûts internes ou vos dossiers de financement.</p></div>
-          <div class="guarantee guarantee--accent"><h3>Aucun engagement avant le dossier de positionnement</h3><p>Vous ne vous engagez pas lors de l'échange éditorial. L'engagement intervient après réception du dossier et validation par le comité éditorial.</p></div>
-          <div class="guarantee"><h3>Pas de commentaire de situation financière</h3><p>La contribution ne consiste pas à commenter votre entreprise ou un client. Elle vise à rendre lisibles des seuils économiques et industriels.</p></div>
-          <div class="guarantee"><h3>Une parole préparée avec vos équipes si nécessaire</h3><p>La préparation peut intégrer vos contraintes de communication, juridiques, corporate ou de confidentialité.</p></div>
-        </div>
+        <div class="guarantees-grid" id="guaranteesGrid"></div>
       </div>
     </section>
 
@@ -351,12 +315,7 @@
           <div class="kicker">Questions</div>
           <h2 class="display" id="faq-titre">Ce qu'on nous demande</h2>
         </div>
-        <div class="faq-list">
-          <div class="faq-item"><h3>Faut-il exposer des chiffres confidentiels ?</h3><p>Non. La contribution porte sur les mécanismes d'arbitrage : ce qui change dans la décision industrielle lorsque les équilibres économiques ne permettent plus de tenir comme avant.</p></div>
-          <div class="faq-item"><h3>La lecture financière doit-elle venir d'un DAF ?</h3><p>Pas nécessairement. Elle peut venir d'un DAF, d'un dirigeant, d'un conseil, d'un investisseur, d'un profil corporate finance ou d'un acteur industriel capable de relier finance et décision.</p></div>
-          <div class="faq-item"><h3>S'agit-il d'une prise de parole sur la performance financière ?</h3><p>Non. Il ne s'agit pas de présenter une performance, mais d'éclairer les conditions économiques d'un arbitrage industriel : investir, différer, transformer, redéployer, céder ou renoncer.</p></div>
-          <div class="faq-item"><h3>Faut-il arriver avec une position déjà construite ?</h3><p>Non. La préparation éditoriale sert précisément à transformer une conviction ou une expertise en position claire, située et défendable.</p></div>
-        </div>
+        <div class="faq-list" id="faqList"></div>
       </div>
     </section>
 
@@ -364,11 +323,11 @@
       <div class="container">
         <div class="cta-inner">
           <div class="kicker kicker--faint kicker--center" style="margin-bottom:20px;">Accès · Cycle Industrie 2026–2027</div>
-          <h2 id="cta-titre">Votre lecture financière peut éclairer ce que les chiffres seuls ne disent pas.</h2>
-          <p>Un échange de 15 minutes — sans exposer de chiffres, sans engagement — pour vérifier si votre angle a une place dans cette conversation avant la fermeture des positions.</p>
-          <div class="cta-deadline-box"><span>Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale</span></div>
+          <h2 id="cta-titre"></h2>
+          <p id="ctaText"></p>
+          <div class="cta-deadline-box"><span id="ctaDeadline"></span></div>
           <a id="footerCta" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-finance&cta=footer" class="btn-primary btn-primary--large" style="display:inline-flex;">Réserver l'échange éditorial</a>
-          <p class="cta-footnote">Les positions financières se ferment au fil de la composition éditoriale · Page non indexée</p>
+          <p class="cta-footnote" id="ctaFootnote"></p>
         </div>
       </div>
     </section>
@@ -391,7 +350,7 @@
   <script src="/assets/js/editorial-data-industrie-test.js"></script>
   <script>
     (function() {
-      var slug = 'finance';
+      var slug = document.body.getAttribute('data-landing') || (location.pathname.split('/').pop() || '').replace('.html', '') || 'finance';
       var data = window.EN_PLATEAU_EDITORIAL_DATA;
       var api = window.EN_PLATEAU_EDITORIAL;
 
@@ -401,8 +360,92 @@
       }
 
       var config = data.landingPages[slug];
+      if (!config) {
+        console.warn('Configuration de landing page introuvable pour le slug : ' + slug);
+        return;
+      }
+
       var reading = data.readingTypes[config.readingType];
       var panels = api.getLandingConversationPanels(slug);
+      var cycle = api.getCycle(config.cycleCode);
+
+      function lowerFirst(value) {
+        value = String(value || '');
+        return value.charAt(0).toLowerCase() + value.slice(1);
+      }
+
+      function readingName() {
+        return lowerFirst(reading.label || 'lecture');
+      }
+
+      function listHtml(items, modifierClass) {
+        return '<ul class="audience-list' + (modifierClass ? ' ' + modifierClass : '') + '">' +
+          (items || []).map(function(item) { return '<li>' + esc(item) + '</li>'; }).join('') +
+        '</ul>';
+      }
+
+      function paragraphHtml(text) {
+        return text ? '<p>' + esc(text) + '</p>' : '';
+      }
+
+      var dynamicCopy = config.copy || {};
+      var audience = dynamicCopy.audience || {
+        title: 'Cette ' + readingName() + ' vous est-elle destinée ?',
+        yesTitle: 'Vous portez probablement une lecture pertinente si…',
+        noTitle: 'Moins adapté si…',
+        yesItems: [
+          'Vous savez relier marges de manœuvre, investissement, coûts différés et décisions industrielles réelles.',
+          'Vous êtes DAF, CFO, dirigeant, conseil finance, restructuring, corporate finance, investisseur ou responsable exposé aux arbitrages économiques industriels.',
+          'Votre lecture porte sur des seuils : dette technologique, dépendance devenue coûteuse, CAPEX différé, coûts énergie/eau/conformité, soutenabilité d’un outil.',
+          'Vous pouvez éclairer un mécanisme sans exposer de chiffres, de comptes internes, de clients ou de dossiers confidentiels.'
+        ],
+        noItems: [
+          'Votre approche porte surtout sur du reporting, de la conformité comptable ou une lecture financière déconnectée de l’outil industriel.',
+          'Vous cherchez d’abord une visibilité promotionnelle plutôt qu’une contribution éditoriale située.',
+          'Vous souhaitez présenter des résultats, une méthode propriétaire ou une offre commerciale plutôt qu’éclairer un arbitrage industriel.',
+          'Votre lecture ne relie pas les chiffres à des décisions : investir, différer, transformer, redéployer, céder ou renoncer.'
+        ],
+        panel: 'La ' + readingName() + ' ne consiste pas à commenter des chiffres. Elle consiste à identifier le moment où les équilibres économiques obligent l’industrie à arbitrer autrement.'
+      };
+
+      var conversationsCopy = dynamicCopy.conversations || {
+        title: 'Les angles où la ' + readingName() + ' devient décisive',
+        intro: 'La ' + readingName() + ' intervient là où les conditions économiques changent la nature de la décision industrielle : maintenir, investir, différer, transformer, redéployer ou renoncer. Chaque position porte sur un mécanisme à éclairer, sans exposition de chiffres confidentiels ni de dossiers internes.',
+        panel: 'Ces positions ne demandent pas de commenter une situation particulière. Elles proposent d’éclairer des seuils, des signaux faibles et des arbitrages économiques qui se répètent dans les trajectoires industrielles.'
+      };
+
+      var preparation = dynamicCopy.preparation || {
+        titleHtml: 'Beaucoup arrivent avec une ' + readingName() + '. <em style="color:rgba(240,236,230,0.55);">Ils repartent avec une position.</em>',
+        intro: 'La préparation éditoriale transforme une expertise souvent technique en lecture située : compréhensible, défendable, utile pour les dirigeants industriels, financeurs, conseils, équipes internes et partenaires de transformation.'
+      };
+
+      var process = dynamicCopy.process || [
+        { num: '01', title: 'L’échange de qualification', text: '15 minutes pour vérifier si votre lecture correspond à un angle disponible. Aucun chiffre ni dossier sensible à exposer.', deadline: 'À planifier en amont du comité éditorial' },
+        { num: '02', title: 'Le dossier de positionnement', text: 'Si l’angle est retenu, un dossier complet vous est adressé : angle précis, logique de mise en regard, modalités d’intervention, format émission et article associé.' },
+        { num: '03', title: 'Le comité éditorial', text: 'Le 15 juin, le comité éditorial examine les dossiers de positionnement et valide la composition finale. Vous êtes informé avant tout engagement.', deadline: 'Comité : 15 juin 2026' },
+        { num: '04', title: 'La préparation & la production', text: 'En Plateau travaille avec vous pour transformer votre ' + readingName() + ' en position claire, non intrusive et publiquement défendable.' }
+      ];
+
+      var guarantees = dynamicCopy.guarantees || [
+        { accent: true, title: 'Aucun chiffre confidentiel à exposer', text: 'L’échange porte sur les mécanismes d’arbitrage économique, pas sur vos comptes, vos marges, vos coûts internes ou vos dossiers de financement.' },
+        { accent: true, title: 'Aucun engagement avant le dossier de positionnement', text: 'Vous ne vous engagez pas lors de l’échange éditorial. L’engagement intervient après réception du dossier et validation par le comité éditorial.' },
+        { title: 'Pas de commentaire de situation financière', text: 'La contribution ne consiste pas à commenter votre entreprise ou un client. Elle vise à rendre lisibles des seuils économiques et industriels.' },
+        { title: 'Une parole préparée avec vos équipes si nécessaire', text: 'La préparation peut intégrer vos contraintes de communication, juridiques, corporate ou de confidentialité.' }
+      ];
+
+      var faq = dynamicCopy.faq || [
+        { question: 'Faut-il exposer des chiffres confidentiels ?', answer: 'Non. La contribution porte sur les mécanismes d’arbitrage : ce qui change dans la décision industrielle lorsque les équilibres économiques ne permettent plus de tenir comme avant.' },
+        { question: 'La lecture financière doit-elle venir d’un DAF ?', answer: 'Pas nécessairement. Elle peut venir d’un DAF, d’un dirigeant, d’un conseil, d’un investisseur, d’un profil corporate finance ou d’un acteur industriel capable de relier finance et décision.' },
+        { question: 'S’agit-il d’une prise de parole sur la performance financière ?', answer: 'Non. Il ne s’agit pas de présenter une performance, mais d’éclairer les conditions économiques d’un arbitrage industriel : investir, différer, transformer, redéployer, céder ou renoncer.' },
+        { question: 'Faut-il arriver avec une position déjà construite ?', answer: 'Non. La préparation éditoriale sert précisément à transformer une conviction ou une expertise en position claire, située et défendable.' }
+      ];
+
+      var cta = dynamicCopy.cta || {
+        title: 'Votre ' + readingName() + ' peut éclairer ce que les chiffres seuls ne disent pas.',
+        text: 'Un échange de 15 minutes — sans exposer de chiffres, sans engagement — pour vérifier si votre angle a une place dans cette conversation avant la fermeture des positions.',
+        deadline: 'Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale',
+        footnote: 'Les positions ' + (reading.slug || 'éditoriales') + ' se ferment au fil de la composition éditoriale · Page non indexée'
+      };
 
       function esc(value) {
         return String(value || '').replace(/[&<>"]/g, function(char) {
@@ -428,11 +471,52 @@
       var meta = document.getElementById('pageDescription');
       if (meta) meta.setAttribute('content', config.metaDescription);
 
-      setText('navCycle', config.navLabel);
-      setHtml('hero-title', config.heroTitleHtml);
-      setText('heroLead', config.heroLead);
+      setText('navCycle', config.navLabel || (cycle.label + ' · ' + reading.label));
+      setHtml('hero-title', config.heroTitleHtml || ('Votre ' + readingName() + '<br><em>fait apparaître</em><br>ce que l’industrie<br>ne voit pas seule.'));
+      setText('heroLead', config.heroLead || reading.positioning || '');
       setText('valeur-titre', config.valueSection.title);
       setText('valueIntro', config.valueSection.intro);
+      setText('pourqui-titre', audience.title);
+      setText('conversations-titre', conversationsCopy.title);
+      setText('conversationsIntro', conversationsCopy.intro);
+      setHtml('conversationsPanel', paragraphHtml(conversationsCopy.panel));
+      setHtml('dimensions-titre', preparation.titleHtml);
+      setText('dimensionsIntro', preparation.intro);
+      setText('cta-titre', cta.title);
+      setText('ctaText', cta.text);
+      setText('ctaDeadline', cta.deadline);
+      setText('ctaFootnote', cta.footnote);
+      setText('heroCardTitle', dynamicCopy.heroCardTitle || ('Votre ' + readingName() + ' a-t-elle sa place dans l’une de ces conversations ?'));
+      setText('heroCardText', dynamicCopy.heroCardText || 'En 15 minutes, nous vérifions si votre angle correspond à une position encore disponible — en toute confidentialité.');
+      setHtml('heroNote', (dynamicCopy.heroNoteHtml || 'Aucun chiffre confidentiel à exposer &nbsp;·&nbsp; Aucun dossier sensible à commenter &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Collaboration possible avec services juridique, communication ou corporate de votre organisation'));
+
+      var audienceGrid = document.getElementById('audienceGrid');
+      if (audienceGrid) {
+        audienceGrid.innerHTML = '<div class="audience-card"><h3>' + esc(audience.yesTitle) + '</h3>' + listHtml(audience.yesItems) + '</div>' +
+          '<div class="audience-card audience-card--no"><h3>' + esc(audience.noTitle) + '</h3>' + listHtml(audience.noItems, 'audience-list--no') + '</div>';
+      }
+      setHtml('audiencePanel', paragraphHtml(audience.panel));
+
+      var processRow = document.getElementById('processRow');
+      if (processRow) {
+        processRow.innerHTML = process.map(function(step) {
+          return '<div class="process-step"><div class="step-num">' + esc(step.num) + '</div><h3>' + esc(step.title) + '</h3><p>' + esc(step.text) + '</p>' + (step.deadline ? '<div class="process-deadline">' + esc(step.deadline) + '</div>' : '') + '</div>';
+        }).join('');
+      }
+
+      var guaranteesGrid = document.getElementById('guaranteesGrid');
+      if (guaranteesGrid) {
+        guaranteesGrid.innerHTML = guarantees.map(function(item) {
+          return '<div class="guarantee' + (item.accent ? ' guarantee--accent' : '') + '"><h3>' + esc(item.title) + '</h3><p>' + esc(item.text) + '</p></div>';
+        }).join('');
+      }
+
+      var faqList = document.getElementById('faqList');
+      if (faqList) {
+        faqList.innerHTML = faq.map(function(item) {
+          return '<div class="faq-item"><h3>' + esc(item.question) + '</h3><p>' + esc(item.answer) + '</p></div>';
+        }).join('');
+      }
 
       ['navCta', 'heroCta', 'midCta', 'footerCta'].forEach(function(id) {
         var el = document.getElementById(id);
