@@ -1,6 +1,6 @@
 /*
   En Plateau — Référentiel éditorial centralisé
-  V2 dynamique : cycle Industrie · lectures stratégique et financière
+  V4 dynamique : cycle Industrie · lectures stratégique et financière · hiérarchie par angles
 
   Usage prévu :
   - landing page Lecture stratégique
@@ -16,13 +16,13 @@
 */
 
 window.EN_PLATEAU_EDITORIAL_DATA = {
-  version: "2026-05-08-v2-landing-dynamique",
+  version: "2026-05-08-v4-hierarchie-angles-lecture",
   status: "test",
   sourceDocument: "programme_editorial_industrie.docx",
   scope: {
     cycle: "IND",
     includedReadings: ["STRATEGIQUE", "FINANCIERE"],
-    note: "Référentiel test limité aux lectures stratégique et financière. Les autres lectures seront ajoutées après validation du modèle."
+    note: "Référentiel test limité aux lectures stratégique et financière. Cette V4 ajoute un affichage hiérarchisé : angles de la lecture cible en priorité, lectures complémentaires en version courte par conversation. Les autres lectures pourront être ajoutées sur le même modèle."
   },
 
   notes: {
@@ -811,3 +811,1089 @@ window.EN_PLATEAU_EDITORIAL = (function(data) {
     getFormOptions: getFormOptions
   };
 })(window.EN_PLATEAU_EDITORIAL_DATA);
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   V3 — Formats courts et fiches longues intervenants
+   Ces contenus enrichissent les angles existants sans modifier les codes CRM.
+═══════════════════════════════════════════════════════════════════════ */
+(function(data) {
+  if (!data || !data.cycles) return;
+
+  var angleContentExtensions = {
+  "IND-C1-GS-A01": {
+    "formatCourt": {
+      "titrePublicCourt": "Quand produire plus commence-t-il à fragiliser la marge, la qualité et l’organisation ?",
+      "usage": "Titre court pour landing page, page Conversations et sélection d’angle."
+    },
+    "formatLongIntervenant": {
+      "titre": "Fiche intervenant — Croissance, marge, qualité et organisation",
+      "chapeau": "Votre intervention permettrait d’analyser le moment où la hausse d’activité cesse d’être seulement une opportunité commerciale pour devenir un sujet d’arbitrage industriel. Le cœur de l’échange porte sur les tensions qui apparaissent entre volumes, marge, qualité, délais, organisation, investissements et capacité réelle de montée en charge.",
+      "dimensions": [
+        {
+          "key": "transformation",
+          "title": "Transformation en cours / contexte",
+          "text": "Identifier ce que la hausse d’activité transforme réellement : volumes, délais, qualité attendue, coûts, organisation et besoins d’investissement."
+        },
+        {
+          "key": "acteurs",
+          "title": "Acteurs impactés",
+          "text": "Montrer comment la croissance affecte la production, la qualité, la maintenance, les achats, la supply chain, la direction financière, les clients et parfois le territoire."
+        },
+        {
+          "key": "arbitrages",
+          "title": "Arbitrages & décisions",
+          "text": "Éclairer les choix à faire : accepter ou sélectionner les commandes, préserver la marge, investir, renforcer les équipes, augmenter les cadences ou ralentir volontairement la croissance."
+        },
+        {
+          "key": "defis",
+          "title": "Défis & opportunités",
+          "text": "Distinguer le risque d’une croissance subie — qualité dégradée, délais tendus, équipes saturées — et l’opportunité de structurer plus solidement le modèle industriel."
+        },
+        {
+          "key": "vision",
+          "title": "Vision attendue",
+          "text": "Apporter une grille de lecture sur les signaux qui indiquent qu’une croissance cesse de renforcer l’activité et commence à la fragiliser."
+        },
+        {
+          "key": "echelle",
+          "title": "Échelle pertinente",
+          "text": "Situer le verrou au bon niveau : site, entreprise, chaîne de valeur, bassin d’emploi, marché ou conditions territoriales."
+        }
+      ],
+      "momentBascule": "Le basculement intervient lorsque chaque volume supplémentaire commence à dégrader la marge, la qualité, les délais ou l’équilibre organisationnel plus qu’il ne renforce l’activité.",
+      "tensionCentrale": "Croître vite sans dégrader la marge, la qualité, les délais ni l’équilibre organisationnel.",
+      "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
+    }
+  },
+  "IND-C1-RC-A01": {
+    "formatCourt": {
+      "titrePublicCourt": "Quand faut-il arrêter de corriger le modèle et décider de le changer ?",
+      "usage": "Titre court pour landing page, page Conversations et sélection d’angle."
+    },
+    "formatLongIntervenant": {
+      "titre": "Fiche intervenant — Modèle opérationnel devenu non soutenable",
+      "chapeau": "Votre intervention viserait à éclairer le moment où les écarts répétés de coûts, délais, qualité, capacité ou organisation révèlent une limite plus profonde du modèle opérationnel. La discussion ne porte pas sur une crise particulière, mais sur la manière de reconnaître qu’un modèle ne peut plus être seulement corrigé.",
+      "dimensions": [
+        {
+          "key": "transformation",
+          "title": "Transformation en cours / contexte",
+          "text": "Qualifier ce qui a changé : crise de coûts, délais qui dérivent, qualité plus difficile à tenir, organisation qui compense, outil qui n’absorbe plus."
+        },
+        {
+          "key": "acteurs",
+          "title": "Acteurs impactés",
+          "text": "Identifier les acteurs concernés : direction générale, production, finance, équipes terrain, clients, fournisseurs, partenaires sociaux, financeurs ou territoire."
+        },
+        {
+          "key": "arbitrages",
+          "title": "Arbitrages & décisions",
+          "text": "Éclairer les décisions possibles : corriger, investir, changer de périmètre, transformer l’outil, repositionner l’activité ou renoncer à certains équilibres passés."
+        },
+        {
+          "key": "defis",
+          "title": "Défis & opportunités",
+          "text": "Montrer les risques d’une correction permanente et l’opportunité d’un réarbitrage plus lisible, plus assumé et plus soutenable."
+        },
+        {
+          "key": "vision",
+          "title": "Vision attendue",
+          "text": "Apporter une lecture sur les signaux qui distinguent une difficulté conjoncturelle d’une fragilité structurelle du modèle."
+        },
+        {
+          "key": "echelle",
+          "title": "Échelle pertinente",
+          "text": "Situer l’analyse à l’échelle du site, de l’entreprise, du modèle opérationnel, de la filière ou du territoire qui porte encore la trajectoire."
+        }
+      ],
+      "momentBascule": "Le basculement intervient lorsque les écarts répétés ne relèvent plus d’un réglage, mais révèlent que le modèle existant produit lui-même ses fragilités.",
+      "tensionCentrale": "Corriger l’existant ou reconnaître que le modèle doit être repensé.",
+      "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
+    }
+  },
+  "IND-C2-GS-A05": {
+    "formatCourt": {
+      "titrePublicCourt": "Comment repérer les dépendances qui freinent la croissance avant qu’elles ne la bloquent ?",
+      "usage": "Titre court pour landing page, page Conversations et sélection d’angle."
+    },
+    "formatLongIntervenant": {
+      "titre": "Fiche intervenant — Dépendance fournisseur ou logistique révélée par la croissance",
+      "chapeau": "Votre intervention permettrait d’éclairer comment l’augmentation des volumes révèle des dépendances fournisseurs, matières, composants ou logistiques qui restaient peu visibles tant que l’activité était stable. Le sujet consiste à comprendre quand une dépendance efficace devient une vulnérabilité stratégique.",
+      "dimensions": [
+        {
+          "key": "transformation",
+          "title": "Transformation en cours / contexte",
+          "text": "Décrire le passage d’une dépendance invisible à une dépendance structurante lorsque les volumes augmentent et que les flux sont testés."
+        },
+        {
+          "key": "acteurs",
+          "title": "Acteurs impactés",
+          "text": "Identifier les acteurs touchés : achats, fournisseurs critiques, logisticiens, supply chain, production, clients, direction industrielle et parfois filière territoriale."
+        },
+        {
+          "key": "arbitrages",
+          "title": "Arbitrages & décisions",
+          "text": "Éclairer les arbitrages : sécuriser, diversifier, internaliser, relocaliser, contractualiser différemment ou accepter un coût plus élevé de maîtrise."
+        },
+        {
+          "key": "defis",
+          "title": "Défis & opportunités",
+          "text": "Mettre en regard les risques de blocage, de coût ou de délai et l’opportunité de renforcer la résilience avant la rupture."
+        },
+        {
+          "key": "vision",
+          "title": "Vision attendue",
+          "text": "Apporter une lecture des signaux faibles : dépendance unique, délai d’approvisionnement, fragilité logistique, absence d’alternative ou pouvoir de négociation réduit."
+        },
+        {
+          "key": "echelle",
+          "title": "Échelle pertinente",
+          "text": "Situer le sujet à l’échelle du fournisseur, de la chaîne de valeur, de la filière, du site ou du territoire logistique."
+        }
+      ],
+      "momentBascule": "Le basculement intervient lorsque la dépendance ne se contente plus d’accompagner la croissance, mais commence à déterminer ce qu’il est réellement possible de produire, livrer ou promettre.",
+      "tensionCentrale": "Croître grâce à des dépendances efficaces sans devenir prisonnier de leur fragilité.",
+      "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
+    }
+  },
+  "IND-C2-AC-A06": {
+    "formatCourt": {
+      "titrePublicCourt": "Sous contrainte, quelles dépendances faut-il protéger, transformer ou abandonner ?",
+      "usage": "Titre court pour landing page, page Conversations et sélection d’angle."
+    },
+    "formatLongIntervenant": {
+      "titre": "Fiche intervenant — Dépendances de filière et position future dans la chaîne de valeur",
+      "chapeau": "Votre intervention permettrait d’analyser comment certaines dépendances de filière ou de segment limitent la capacité à ajuster l’activité sans fragiliser la position future dans la chaîne de valeur. L’enjeu est de distinguer l’adaptation utile du court terme et l’affaiblissement stratégique de long terme.",
+      "dimensions": [
+        {
+          "key": "transformation",
+          "title": "Transformation en cours / contexte",
+          "text": "Qualifier le contexte de contrainte : marges réduites, ajustements de volumes, dépendances de segment, choix de clients ou de partenaires."
+        },
+        {
+          "key": "acteurs",
+          "title": "Acteurs impactés",
+          "text": "Identifier les acteurs impactés : direction stratégie, commerce, production, achats, clients donneurs d’ordre, partenaires de filière et investisseurs."
+        },
+        {
+          "key": "arbitrages",
+          "title": "Arbitrages & décisions",
+          "text": "Éclairer les décisions : réduire, maintenir, diversifier, repositionner, préserver un savoir-faire ou abandonner une dépendance devenue trop coûteuse."
+        },
+        {
+          "key": "defis",
+          "title": "Défis & opportunités",
+          "text": "Montrer le risque de perdre une position future et l’opportunité de réarbitrer plus tôt la place dans la chaîne de valeur."
+        },
+        {
+          "key": "vision",
+          "title": "Vision attendue",
+          "text": "Apporter une lecture sur ce qui fonde réellement la position stratégique : segment, expertise, accès marché, relation donneur d’ordre, capacité industrielle ou territoire."
+        },
+        {
+          "key": "echelle",
+          "title": "Échelle pertinente",
+          "text": "Situer la décision à l’échelle de l’entreprise, de la filière, du portefeuille d’activités, du segment ou de la chaîne de valeur."
+        }
+      ],
+      "momentBascule": "Le basculement intervient lorsque l’ajustement qui protège le court terme commence à affaiblir la position future dans la filière.",
+      "tensionCentrale": "S’adapter sans perdre ce qui fonde la place stratégique dans la filière.",
+      "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
+    }
+  },
+  "IND-C2-RC-A05": {
+    "formatCourt": {
+      "titrePublicCourt": "Quand une dépendance oblige-t-elle à changer de modèle plutôt qu’à mieux la piloter ?",
+      "usage": "Titre court pour landing page, page Conversations et sélection d’angle."
+    },
+    "formatLongIntervenant": {
+      "titre": "Fiche intervenant — Dépendance critique et changement de modèle d’approvisionnement",
+      "chapeau": "Votre intervention viserait à éclairer le moment où une dépendance critique ne peut plus seulement être sécurisée ou diversifiée, mais impose une relocalisation, une substitution ou un changement de modèle d’approvisionnement. La discussion porte sur la frontière entre pilotage du risque et transformation du modèle.",
+      "dimensions": [
+        {
+          "key": "transformation",
+          "title": "Transformation en cours / contexte",
+          "text": "Décrire la transformation de la dépendance : d’un levier d’efficacité à un risque de continuité industrielle."
+        },
+        {
+          "key": "acteurs",
+          "title": "Acteurs impactés",
+          "text": "Identifier les acteurs concernés : achats, supply chain, production, fournisseurs, clients, direction générale, financeurs, acteurs publics ou filière."
+        },
+        {
+          "key": "arbitrages",
+          "title": "Arbitrages & décisions",
+          "text": "Éclairer les arbitrages : conserver un modèle globalisé, diversifier, substituer, relocaliser, constituer des stocks ou accepter un surcoût de résilience."
+        },
+        {
+          "key": "defis",
+          "title": "Défis & opportunités",
+          "text": "Montrer les risques de rupture et l’opportunité de reconstruire une maîtrise plus robuste de l’approvisionnement."
+        },
+        {
+          "key": "vision",
+          "title": "Vision attendue",
+          "text": "Apporter une lecture permettant de distinguer une dépendance encore pilotable d’une dépendance devenue incompatible avec la continuité industrielle."
+        },
+        {
+          "key": "echelle",
+          "title": "Échelle pertinente",
+          "text": "Situer la décision au niveau du site, du groupe, du réseau fournisseurs, de la filière ou de la géographie productive."
+        }
+      ],
+      "momentBascule": "Le basculement intervient lorsque le coût, le délai ou le risque d’une dépendance rend insuffisante toute simple optimisation du pilotage.",
+      "tensionCentrale": "Conserver l’efficacité d’un modèle globalisé ou reconstruire une résilience plus coûteuse mais plus maîtrisable.",
+      "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
+    }
+  },
+  "IND-C3-GS-A12": {
+    "formatCourt": {
+      "titrePublicCourt": "Quand la croissance impose-t-elle de repenser l’outil plutôt que de seulement le décarboner à la marge ?",
+      "usage": "Titre court pour landing page, page Conversations et sélection d’angle."
+    },
+    "formatLongIntervenant": {
+      "titre": "Fiche intervenant — Croissance industrielle et décarbonation de l’outil",
+      "chapeau": "Votre intervention permettrait d’analyser le moment où la croissance industrielle rend insuffisants les gains marginaux de décarbonation. Le sujet porte sur la manière dont les volumes, l’énergie, les matières, les utilités ou le mix produit obligent parfois à repenser le process ou l’outil lui-même.",
+      "dimensions": [
+        {
+          "key": "transformation",
+          "title": "Transformation en cours / contexte",
+          "text": "Qualifier la croissance sous contrainte carbone : besoins accrus en énergie, matières, utilités, capacités et contraintes de trajectoire climat."
+        },
+        {
+          "key": "acteurs",
+          "title": "Acteurs impactés",
+          "text": "Identifier les acteurs impactés : direction industrielle, énergie, process, finance, clients, fournisseurs, régulateurs, investisseurs et territoire."
+        },
+        {
+          "key": "arbitrages",
+          "title": "Arbitrages & décisions",
+          "text": "Éclairer les décisions : optimiser, électrifier, changer d’énergie, redessiner le process, modifier le mix produit ou transformer l’outil."
+        },
+        {
+          "key": "defis",
+          "title": "Défis & opportunités",
+          "text": "Mettre en regard les risques de croissance incompatible avec la trajectoire carbone et l’opportunité de repositionner l’outil sur une base plus soutenable."
+        },
+        {
+          "key": "vision",
+          "title": "Vision attendue",
+          "text": "Apporter une lecture sur les seuils où la décarbonation devient une condition de croissance plutôt qu’un chantier périphérique."
+        },
+        {
+          "key": "echelle",
+          "title": "Échelle pertinente",
+          "text": "Situer l’analyse à l’échelle du site, du process, de l’entreprise, de la filière énergétique ou du territoire industriel."
+        }
+      ],
+      "momentBascule": "Le basculement intervient lorsque les gains marginaux ne suffisent plus à accompagner la croissance sans remettre en cause la trajectoire carbone ou la compétitivité future.",
+      "tensionCentrale": "Croître industriellement tout en transformant réellement les conditions carbone de la production.",
+      "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
+    }
+  },
+  "IND-C3-AC-A12": {
+    "formatCourt": {
+      "titrePublicCourt": "Quand la contrainte carbone redéfinit-elle les conditions de compétitivité ?",
+      "usage": "Titre court pour landing page, page Conversations et sélection d’angle."
+    },
+    "formatLongIntervenant": {
+      "titre": "Fiche intervenant — Décarbonation, compétitivité et investissement",
+      "chapeau": "Votre intervention permettrait d’éclairer comment la décarbonation peut rebattre les conditions de compétitivité, d’investissement et de transformation de l’outil. L’échange porte sur le moment où le carbone cesse d’être un coût additionnel et devient un paramètre central de décision industrielle.",
+      "dimensions": [
+        {
+          "key": "transformation",
+          "title": "Transformation en cours / contexte",
+          "text": "Qualifier le contexte : marges serrées, exigences carbone, CAPEX, utilités, coûts d’énergie, pression client ou réglementaire."
+        },
+        {
+          "key": "acteurs",
+          "title": "Acteurs impactés",
+          "text": "Identifier les acteurs impactés : direction générale, finance, industrie, énergie, clients, investisseurs, équipes process et territoire."
+        },
+        {
+          "key": "arbitrages",
+          "title": "Arbitrages & décisions",
+          "text": "Éclairer les arbitrages : différer, investir, prioriser certains sites, transformer le process, changer de mix produit ou accepter une rupture de compétitivité à court terme."
+        },
+        {
+          "key": "defis",
+          "title": "Défis & opportunités",
+          "text": "Distinguer les risques de perte de compétitivité et les opportunités de différenciation, d’accès marché ou de soutenabilité future."
+        },
+        {
+          "key": "vision",
+          "title": "Vision attendue",
+          "text": "Apporter une lecture des critères qui permettent de dire quand la décarbonation devient une décision stratégique plutôt qu’une contrainte de conformité."
+        },
+        {
+          "key": "echelle",
+          "title": "Échelle pertinente",
+          "text": "Situer la décision à l’échelle du site, du portefeuille industriel, de la filière, du marché client ou de la chaîne de valeur."
+        }
+      ],
+      "momentBascule": "Le basculement intervient lorsque la contrainte carbone modifie les conditions mêmes de compétitivité et rend insuffisants les arbitrages habituels de coût ou d’investissement.",
+      "tensionCentrale": "Rester compétitif aujourd’hui tout en investissant dans une trajectoire carbone soutenable.",
+      "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
+    }
+  },
+  "IND-C4-GS-A15": {
+    "formatCourt": {
+      "titrePublicCourt": "Comment savoir si l’on grandit dans la bonne direction — ou plus vite vers la fragilité ?",
+      "usage": "Titre court pour landing page, page Conversations et sélection d’angle."
+    },
+    "formatLongIntervenant": {
+      "titre": "Fiche intervenant — Carnet de commandes, marge et qualité de croissance",
+      "chapeau": "Votre intervention permettrait d’éclairer comment un carnet de commandes en croissance peut masquer une fragilité commerciale : commandes qui consomment la capacité, marges difficiles à défendre, coûts insuffisamment répercutés ou trajectoire de transformation retardée.",
+      "dimensions": [
+        {
+          "key": "transformation",
+          "title": "Transformation en cours / contexte",
+          "text": "Qualifier ce que révèle la croissance commerciale : volumes, mix de commandes, conditions économiques, pression délai, marge et capacité industrielle mobilisée."
+        },
+        {
+          "key": "acteurs",
+          "title": "Acteurs impactés",
+          "text": "Identifier les acteurs concernés : direction commerciale, direction générale, production, finance, clients, donneurs d’ordre, supply chain et équipes de pilotage."
+        },
+        {
+          "key": "arbitrages",
+          "title": "Arbitrages & décisions",
+          "text": "Éclairer les décisions : sélectionner certaines commandes, répercuter les coûts, défendre les conditions économiques, refuser une croissance destructrice ou repositionner l’offre."
+        },
+        {
+          "key": "defis",
+          "title": "Défis & opportunités",
+          "text": "Montrer le risque d’un carnet rempli mais destructeur de marge et l’opportunité de construire une croissance plus sélective et plus robuste."
+        },
+        {
+          "key": "vision",
+          "title": "Vision attendue",
+          "text": "Apporter une lecture des signaux qui distinguent une croissance bien positionnée d’une croissance qui fragilise la trajectoire."
+        },
+        {
+          "key": "echelle",
+          "title": "Échelle pertinente",
+          "text": "Situer l’analyse au niveau du carnet, du portefeuille clients, de l’outil industriel, du modèle économique ou de la chaîne de valeur."
+        }
+      ],
+      "momentBascule": "Le basculement intervient lorsque la croissance du carnet commence à consommer plus de marge, de capacité ou de souplesse qu’elle n’en crée.",
+      "tensionCentrale": "Remplir le carnet sans accepter une croissance qui consomme la marge et la capacité industrielle.",
+      "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
+    }
+  },
+  "IND-C4-AC-A15": {
+    "formatCourt": {
+      "titrePublicCourt": "Quand la pression commerciale empêche-t-elle toute adaptation viable ?",
+      "usage": "Titre court pour landing page, page Conversations et sélection d’angle."
+    },
+    "formatLongIntervenant": {
+      "titre": "Fiche intervenant — Pression donneurs d’ordre et capacité d’adaptation",
+      "chapeau": "Votre intervention permettrait d’analyser comment la pression des clients ou donneurs d’ordre sur les prix, les délais ou les conditions contractuelles peut limiter la marge nécessaire au maintien ou à l’adaptation de l’outil. Le sujet porte sur la capacité à financer l’adaptation lorsque la relation commerciale absorbe les marges de manœuvre.",
+      "dimensions": [
+        {
+          "key": "transformation",
+          "title": "Transformation en cours / contexte",
+          "text": "Qualifier le contexte de pression commerciale : prix, délais, exigences contractuelles, dépendance client, coûts non répercutés ou volumes contraints."
+        },
+        {
+          "key": "acteurs",
+          "title": "Acteurs impactés",
+          "text": "Identifier les acteurs touchés : clients, donneurs d’ordre, direction commerciale, finance, production, achats, direction générale et filière."
+        },
+        {
+          "key": "arbitrages",
+          "title": "Arbitrages & décisions",
+          "text": "Éclairer les arbitrages : servir le client, renégocier, sélectionner, réduire le périmètre, investir malgré tout ou changer de position dans la chaîne de valeur."
+        },
+        {
+          "key": "defis",
+          "title": "Défis & opportunités",
+          "text": "Montrer les risques d’une adaptation impossible faute de marge et les opportunités d’une relation commerciale mieux rééquilibrée."
+        },
+        {
+          "key": "vision",
+          "title": "Vision attendue",
+          "text": "Apporter une lecture sur le moment où la pression client cesse d’être une contrainte commerciale et devient un obstacle industriel."
+        },
+        {
+          "key": "echelle",
+          "title": "Échelle pertinente",
+          "text": "Situer l’analyse à l’échelle du client, du portefeuille, de la filière, du site industriel ou de la chaîne de valeur."
+        }
+      ],
+      "momentBascule": "Le basculement intervient lorsque la pression commerciale empêche de préserver la marge nécessaire pour maintenir, investir ou transformer l’outil.",
+      "tensionCentrale": "Servir les clients sans perdre la marge nécessaire pour maintenir et transformer l’outil.",
+      "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
+    }
+  },
+  "IND-C4-RC-A15": {
+    "formatCourt": {
+      "titrePublicCourt": "Quand le modèle commercial devient-il incompatible avec l’outil ou la trajectoire industrielle ?",
+      "usage": "Titre court pour landing page, page Conversations et sélection d’angle."
+    },
+    "formatLongIntervenant": {
+      "titre": "Fiche intervenant — Structure commerciale et repositionnement industriel",
+      "chapeau": "Votre intervention permettrait d’éclairer le moment où la structure commerciale impose un changement de marché, de portefeuille, de partenariat ou de position dans la chaîne de valeur. L’échange porte sur les situations où mieux vendre ou mieux négocier ne suffit plus : c’est la place même de l’entreprise ou du site qui doit être réinterrogée.",
+      "dimensions": [
+        {
+          "key": "transformation",
+          "title": "Transformation en cours / contexte",
+          "text": "Qualifier la crise de positionnement : marchés moins porteurs, portefeuille trop fragile, pression clients, inadéquation entre offre, outil et marge."
+        },
+        {
+          "key": "acteurs",
+          "title": "Acteurs impactés",
+          "text": "Identifier les acteurs impactés : direction générale, commerce, finance, production, partenaires, clients, investisseurs, filière et territoire."
+        },
+        {
+          "key": "arbitrages",
+          "title": "Arbitrages & décisions",
+          "text": "Éclairer les décisions : changer de marché, modifier le portefeuille, nouer un partenariat, céder, intégrer, spécialiser ou repositionner l’activité."
+        },
+        {
+          "key": "defis",
+          "title": "Défis & opportunités",
+          "text": "Mettre en regard le risque de rester prisonnier de marchés non viables et l’opportunité de reconstruire une trajectoire plus soutenable."
+        },
+        {
+          "key": "vision",
+          "title": "Vision attendue",
+          "text": "Apporter une lecture du moment où la question n’est plus commerciale, mais stratégique et industrielle."
+        },
+        {
+          "key": "echelle",
+          "title": "Échelle pertinente",
+          "text": "Situer la décision à l’échelle de l’entreprise, du site, du portefeuille, de la filière, du marché ou de la chaîne de valeur."
+        }
+      ],
+      "momentBascule": "Le basculement intervient lorsque le modèle commercial existant devient incompatible avec la capacité industrielle, la marge ou la trajectoire future.",
+      "tensionCentrale": "Conserver les marchés existants ou changer de position pour préserver la viabilité industrielle.",
+      "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
+    }
+  },
+  "IND-C1-AC-A01": {
+    "formatCourt": {
+      "titrePublicCourt": "Quand les ajustements économiques qui permettent de tenir commencent-ils à fragiliser l’avenir ?",
+      "usage": "Titre court pour landing page, page Conversations et sélection d’angle."
+    },
+    "formatLongIntervenant": {
+      "titre": "Fiche intervenant — Ajustements économiques et soutenabilité future",
+      "chapeau": "Votre intervention permettrait d’éclairer comment les ajustements sur volumes, achats, investissements, équipes ou maintenance permettent de tenir l’activité tout en fragilisant progressivement l’équilibre économique. La discussion porte sur la frontière entre adaptation utile et destruction différée de valeur.",
+      "dimensions": [
+        {
+          "key": "transformation",
+          "title": "Transformation en cours / contexte",
+          "text": "Qualifier le contexte économique : marges réduites, coûts à absorber, investissements différés, activité maintenue au prix d’ajustements répétés."
+        },
+        {
+          "key": "acteurs",
+          "title": "Acteurs impactés",
+          "text": "Identifier les acteurs concernés : direction financière, direction industrielle, achats, maintenance, production, équipes, clients, financeurs ou actionnaires."
+        },
+        {
+          "key": "arbitrages",
+          "title": "Arbitrages & décisions",
+          "text": "Éclairer les décisions : différer, réduire, préserver la trésorerie, maintenir la capacité, arbitrer un CAPEX ou accepter une transformation plus coûteuse."
+        },
+        {
+          "key": "defis",
+          "title": "Défis & opportunités",
+          "text": "Distinguer le risque de déplacer la contrainte et l’opportunité de rendre visibles les conditions économiques réelles de la soutenabilité."
+        },
+        {
+          "key": "vision",
+          "title": "Vision attendue",
+          "text": "Apporter une lecture du seuil où l’ajustement cesse de protéger l’activité et commence à affaiblir sa trajectoire future."
+        },
+        {
+          "key": "echelle",
+          "title": "Échelle pertinente",
+          "text": "Situer l’analyse à l’échelle du site, du compte d’exploitation industriel, de l’entreprise, du portefeuille ou de la trajectoire d’investissement."
+        }
+      ],
+      "momentBascule": "Le basculement intervient lorsque les économies ou reports qui permettent de tenir détruisent davantage de valeur future qu’ils n’en préservent à court terme.",
+      "tensionCentrale": "Maintenir l’activité aujourd’hui sans affaiblir les conditions de sa soutenabilité future.",
+      "securisation": "L’échange ne suppose pas de livrer des chiffres, marges, budgets, contrats, coûts internes ou dossiers confidentiels. Il s’agit d’éclairer les mécanismes économiques qui rendent certains arbitrages industriels nécessaires."
+    }
+  },
+  "IND-C1-RC-A03": {
+    "formatCourt": {
+      "titrePublicCourt": "Quand une dette technologique devient-elle une décision de transformation ?",
+      "usage": "Titre court pour landing page, page Conversations et sélection d’angle."
+    },
+    "formatLongIntervenant": {
+      "titre": "Fiche intervenant — Dette technologique et saut d’investissement",
+      "chapeau": "Votre intervention viserait à analyser comment une dette technologique accumulée — systèmes hétérogènes, automatismes dépassés, équipements difficiles à maintenir — peut finir par imposer un saut d’investissement, un changement de périmètre ou une transformation profonde de l’outil.",
+      "dimensions": [
+        {
+          "key": "transformation",
+          "title": "Transformation en cours / contexte",
+          "text": "Qualifier la dette accumulée : obsolescence, interfaces fragiles, maintenance coûteuse, systèmes hétérogènes, CAPEX différé ou perte d’adaptabilité."
+        },
+        {
+          "key": "acteurs",
+          "title": "Acteurs impactés",
+          "text": "Identifier les acteurs impactés : finance, industrie, maintenance, systèmes, production, direction générale, investisseurs, clients et équipes terrain."
+        },
+        {
+          "key": "arbitrages",
+          "title": "Arbitrages & décisions",
+          "text": "Éclairer les arbitrages : reporter, investir, transformer, céder, changer de périmètre ou accepter une rupture technologique."
+        },
+        {
+          "key": "defis",
+          "title": "Défis & opportunités",
+          "text": "Mettre en regard le risque de blocage progressif et l’opportunité de transformer l’outil avant que l’adaptation ne devienne impossible."
+        },
+        {
+          "key": "vision",
+          "title": "Vision attendue",
+          "text": "Apporter une lecture du moment où un retard d’investissement cesse d’être gérable et devient un verrou stratégique."
+        },
+        {
+          "key": "echelle",
+          "title": "Échelle pertinente",
+          "text": "Situer la décision à l’échelle de l’équipement, du système, du site, du portefeuille industriel ou de la trajectoire CAPEX."
+        }
+      ],
+      "momentBascule": "Le basculement intervient lorsque la dette technologique bloque toute adaptation crédible ou rend le coût du maintien supérieur à celui d’une transformation assumée.",
+      "tensionCentrale": "Reporter l’investissement ou accepter une rupture technologique devenue nécessaire.",
+      "securisation": "L’échange ne suppose pas de livrer des chiffres, marges, budgets, contrats, coûts internes ou dossiers confidentiels. Il s’agit d’éclairer les mécanismes économiques qui rendent certains arbitrages industriels nécessaires."
+    }
+  },
+  "IND-C2-AC-A05": {
+    "formatCourt": {
+      "titrePublicCourt": "Quand une dépendance amont ou logistique devient-elle économiquement intenable ?",
+      "usage": "Titre court pour landing page, page Conversations et sélection d’angle."
+    },
+    "formatLongIntervenant": {
+      "titre": "Fiche intervenant — Dépendance amont/logistique devenue trop coûteuse",
+      "chapeau": "Votre intervention permettrait d’éclairer comment une dépendance amont ou logistique reste acceptable tant que les marges de manœuvre existent, puis devient trop risquée ou trop coûteuse lorsque ces marges se réduisent. Le sujet porte sur le coût réel de pilotage d’une dépendance.",
+      "dimensions": [
+        {
+          "key": "transformation",
+          "title": "Transformation en cours / contexte",
+          "text": "Qualifier la dépendance : fournisseur, matière, composant, transport, flux, stock, délai, volatilité ou pouvoir de négociation."
+        },
+        {
+          "key": "acteurs",
+          "title": "Acteurs impactés",
+          "text": "Identifier les acteurs touchés : achats, supply chain, finance, production, fournisseurs, clients, direction industrielle et logistique."
+        },
+        {
+          "key": "arbitrages",
+          "title": "Arbitrages & décisions",
+          "text": "Éclairer les arbitrages : sécuriser, diversifier, stocker, renégocier, internaliser, substituer ou accepter un coût de maîtrise plus élevé."
+        },
+        {
+          "key": "defis",
+          "title": "Défis & opportunités",
+          "text": "Montrer le risque d’une dépendance devenue trop coûteuse et l’opportunité de reconstruire une résilience économiquement défendable."
+        },
+        {
+          "key": "vision",
+          "title": "Vision attendue",
+          "text": "Apporter une lecture du seuil où une dépendance cesse d’être un levier d’efficacité et devient un risque économique."
+        },
+        {
+          "key": "echelle",
+          "title": "Échelle pertinente",
+          "text": "Situer l’analyse à l’échelle du fournisseur, de la supply chain, du site, de la filière ou du compte d’exploitation industriel."
+        }
+      ],
+      "momentBascule": "Le basculement intervient lorsque le coût de pilotage, de sécurisation ou de contournement d’une dépendance devient incompatible avec l’équilibre économique de l’activité.",
+      "tensionCentrale": "Préserver l’efficacité d’une dépendance sans subir son coût croissant.",
+      "securisation": "L’échange ne suppose pas de livrer des chiffres, marges, budgets, contrats, coûts internes ou dossiers confidentiels. Il s’agit d’éclairer les mécanismes économiques qui rendent certains arbitrages industriels nécessaires."
+    }
+  },
+  "IND-C3-AC-A09": {
+    "formatCourt": {
+      "titrePublicCourt": "Quand transformer avec peu de moyens reste-t-il crédible — et quand cela ne suffit-il plus ?",
+      "usage": "Titre court pour landing page, page Conversations et sélection d’angle."
+    },
+    "formatLongIntervenant": {
+      "titre": "Fiche intervenant — Transformer l’outil avec des marges serrées",
+      "chapeau": "Votre intervention permettrait d’analyser ce qui transforme réellement un outil industriel lorsque les marges sont serrées : investissement ciblé, recomposition frugale du process, simplification, priorisation ou transformation plus profonde. L’enjeu est de distinguer l’amélioration utile de la correction insuffisante.",
+      "dimensions": [
+        {
+          "key": "transformation",
+          "title": "Transformation en cours / contexte",
+          "text": "Qualifier le contexte : marges contraintes, CAPEX limité, outil à faire évoluer, process à simplifier, performance à maintenir."
+        },
+        {
+          "key": "acteurs",
+          "title": "Acteurs impactés",
+          "text": "Identifier les acteurs concernés : finance, direction industrielle, production, maintenance, process, qualité, équipes opérationnelles et direction générale."
+        },
+        {
+          "key": "arbitrages",
+          "title": "Arbitrages & décisions",
+          "text": "Éclairer les arbitrages : investir peu mais juste, recomposer le process, prioriser un équipement, reporter, transformer plus fortement ou renoncer à certains objectifs."
+        },
+        {
+          "key": "defis",
+          "title": "Défis & opportunités",
+          "text": "Mettre en regard le risque de petits ajustements insuffisants et l’opportunité d’une transformation ciblée, frugale mais réellement structurante."
+        },
+        {
+          "key": "vision",
+          "title": "Vision attendue",
+          "text": "Apporter une lecture du moment où l’amélioration frugale ne suffit plus à changer la trajectoire industrielle."
+        },
+        {
+          "key": "echelle",
+          "title": "Échelle pertinente",
+          "text": "Situer la décision à l’échelle de l’atelier, du process, de l’outil, du site ou de la trajectoire d’investissement."
+        }
+      ],
+      "momentBascule": "Le basculement intervient lorsque les améliorations ciblées ne modifient plus la capacité réelle de l’outil à tenir ou à évoluer.",
+      "tensionCentrale": "Transformer avec peu de moyens sans se limiter à des corrections insuffisantes.",
+      "securisation": "L’échange ne suppose pas de livrer des chiffres, marges, budgets, contrats, coûts internes ou dossiers confidentiels. Il s’agit d’éclairer les mécanismes économiques qui rendent certains arbitrages industriels nécessaires."
+    }
+  },
+  "IND-C4-AC-A14": {
+    "formatCourt": {
+      "titrePublicCourt": "Quand les coûts de ressources deviennent-ils des paramètres de transformation industrielle ?",
+      "usage": "Titre court pour landing page, page Conversations et sélection d’angle."
+    },
+    "formatLongIntervenant": {
+      "titre": "Fiche intervenant — Coûts énergie, eau, conformité et compétitivité",
+      "chapeau": "Votre intervention permettrait d’éclairer comment les coûts d’énergie, d’eau ou de conformité environnementale cessent d’être de simples surcoûts absorbables et deviennent des paramètres structurants de compétitivité, d’investissement ou de transformation industrielle.",
+      "dimensions": [
+        {
+          "key": "transformation",
+          "title": "Transformation en cours / contexte",
+          "text": "Qualifier le contexte : hausse des coûts de ressources, exigences de conformité, accès à l’eau ou à l’énergie, compétitivité sous contrainte."
+        },
+        {
+          "key": "acteurs",
+          "title": "Acteurs impactés",
+          "text": "Identifier les acteurs impactés : finance, industrie, énergie, environnement, production, clients, régulateurs, territoire et investisseurs."
+        },
+        {
+          "key": "arbitrages",
+          "title": "Arbitrages & décisions",
+          "text": "Éclairer les décisions : absorber, répercuter, investir, réduire l’activité, transformer l’outil, changer de process ou réarbitrer la localisation."
+        },
+        {
+          "key": "defis",
+          "title": "Défis & opportunités",
+          "text": "Montrer le risque d’une compétitivité dégradée et l’opportunité de faire des ressources un levier de transformation plus robuste."
+        },
+        {
+          "key": "vision",
+          "title": "Vision attendue",
+          "text": "Apporter une lecture du seuil où les coûts de ressources changent la nature de la décision industrielle."
+        },
+        {
+          "key": "echelle",
+          "title": "Échelle pertinente",
+          "text": "Situer l’analyse à l’échelle du site, du process, de la facture énergétique, du territoire, de la filière ou de la trajectoire d’investissement."
+        }
+      ],
+      "momentBascule": "Le basculement intervient lorsque les coûts de ressources ou de conformité ne peuvent plus être absorbés sans dégrader la compétitivité ou retarder la transformation.",
+      "tensionCentrale": "Absorber les surcoûts pour préserver la compétitivité à court terme ou investir dans la transformation.",
+      "securisation": "L’échange ne suppose pas de livrer des chiffres, marges, budgets, contrats, coûts internes ou dossiers confidentiels. Il s’agit d’éclairer les mécanismes économiques qui rendent certains arbitrages industriels nécessaires."
+    }
+  }
+};
+
+  data.notes.formulationLevels = [
+    "questionEditoriale",
+    "questionPublique",
+    "questionActivation",
+    "formatCourt",
+    "formatLongIntervenant"
+  ];
+  data.notes.intervenantLongFormat = "Chaque angle peut maintenant contenir un formatCourt et un formatLongIntervenant avec chapeau, 6 dimensions, moment de bascule, tension centrale et phrase de sécurisation.";
+
+  data.cycles.forEach(function(cycle) {
+    if (!cycle.angles) return;
+    cycle.angles.forEach(function(angle) {
+      var extension = angleContentExtensions[angle.crmCode];
+      if (!extension) return;
+      angle.formatCourt = extension.formatCourt;
+      angle.formatLongIntervenant = extension.formatLongIntervenant;
+    });
+  });
+})(window.EN_PLATEAU_EDITORIAL_DATA);
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Renderer landing pages — V4 hiérarchisée par angle de lecture
+
+   Principe :
+   - La landing page d'une lecture met d'abord en avant les angles de CETTE lecture.
+   - Chaque angle cible est rendu comme une fiche détaillée.
+   - Les autres lectures prévues dans la même conversation sont montrées en version courte,
+     comme contexte éditorial complémentaire, sans prendre le dessus sur la lecture cible.
+   - Le bloc reste compatible avec le template HTML V2 : ids navCycle, hero-title,
+     heroLead, heroProfiles, valueGrid, convNav, convContent, etc.
+═══════════════════════════════════════════════════════════════════════ */
+window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
+  if (!data || !api) return { renderLanding: function() { return false; } };
+
+  function esc(value) {
+    return String(value == null ? '' : value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function byId(id) { return document.getElementById(id); }
+  function setText(id, value) { var el = byId(id); if (el) el.textContent = value || ''; }
+  function setHtml(id, value) { var el = byId(id); if (el) el.innerHTML = value || ''; }
+
+  function safeId(value) {
+    return String(value || '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
+
+  function lowerFirst(value) {
+    value = String(value || '');
+    return value.charAt(0).toLowerCase() + value.slice(1);
+  }
+
+  function readingName(reading) {
+    return lowerFirst((reading && reading.label) || 'lecture');
+  }
+
+  function getReadingLabel(type) {
+    var reading = data.readingTypes && data.readingTypes[type];
+    return reading ? reading.label : String(type || '').replace(/_/g, ' ');
+  }
+
+  function getReadingShort(type) {
+    var reading = data.readingTypes && data.readingTypes[type];
+    return reading ? reading.shortLabel : String(type || '').replace(/_/g, ' ');
+  }
+
+  function getCycleAngles(cycleCode) {
+    var cycle = api.getCycle(cycleCode);
+    return cycle && cycle.angles ? cycle.angles.slice() : [];
+  }
+
+  function getLandingAngles(slug) {
+    var config = data.landingPages[slug];
+    if (!config) return [];
+    return api.getAnglesByLanding(slug).map(function(angle) {
+      return {
+        angle: angle,
+        conversation: api.getConversation(config.cycleCode, angle.conversationCode),
+        context: api.getContext(config.cycleCode, angle.contextCode)
+      };
+    });
+  }
+
+  function getComplementaryAngles(config, conversationCode, currentReadingType) {
+    return getCycleAngles(config.cycleCode).filter(function(angle) {
+      return angle.conversationCode === conversationCode && angle.typeLecture !== currentReadingType;
+    });
+  }
+
+  function groupByReading(angles) {
+    var grouped = {};
+    angles.forEach(function(angle) {
+      if (!grouped[angle.typeLecture]) grouped[angle.typeLecture] = [];
+      grouped[angle.typeLecture].push(angle);
+    });
+    return grouped;
+  }
+
+  function contextTag(config, contextCode) {
+    var context = api.getContext(config.cycleCode, contextCode);
+    return context ? context.label : contextCode;
+  }
+
+  function angleTitle(angle) {
+    return (angle.formatCourt && angle.formatCourt.titrePublicCourt) || angle.questionPublique || angle.questionEditoriale || angle.crmCode;
+  }
+
+  function paragraph(text) {
+    return text ? '<p>' + esc(text) + '</p>' : '';
+  }
+
+  function calUrl(reading, cta) {
+    var source = (reading && reading.calSource) || 'lp-industrie';
+    return 'https://cal.com/en-plateau/echange-editorial?src=' + encodeURIComponent(source) + '&cta=' + encodeURIComponent(cta);
+  }
+
+  function setCtas(reading) {
+    [
+      ['navCta', 'nav'],
+      ['heroCta', 'hero'],
+      ['midCta', 'mid-conv'],
+      ['footerCta', 'footer']
+    ].forEach(function(pair) {
+      var el = byId(pair[0]);
+      if (el) el.setAttribute('href', calUrl(reading, pair[1]));
+    });
+  }
+
+  function renderProfiles(config) {
+    var el = byId('heroProfiles');
+    if (!el) return;
+    el.innerHTML = (config.heroProfiles || []).map(function(profile) {
+      return '<div class="hero-profile">' +
+        '<div class="hero-profile-label">' + esc(profile.label) + '</div>' +
+        '<p>' + esc(profile.text) + '</p>' +
+      '</div>';
+    }).join('');
+  }
+
+  function renderValueSection(config) {
+    if (!config.valueSection) return;
+    setText('valeur-titre', config.valueSection.title);
+    setText('valueIntro', config.valueSection.intro);
+    var el = byId('valueGrid');
+    if (!el) return;
+    el.innerHTML = (config.valueSection.cards || []).map(function(card) {
+      return '<div class="value-card">' +
+        '<div class="value-num">' + esc(card.label) + '</div>' +
+        '<h3>' + esc(card.title) + '</h3>' +
+        '<p>' + esc(card.text) + '</p>' +
+      '</div>';
+    }).join('');
+  }
+
+  function renderAudience(config, reading) {
+    var copy = (config.copy && config.copy.audience) || {
+      title: 'Cette ' + readingName(reading) + ' vous est-elle destinée ?',
+      yesTitle: 'Vous portez probablement une lecture pertinente si…',
+      noTitle: 'Moins adapté si…',
+      yesItems: [],
+      noItems: [],
+      panel: ''
+    };
+    setText('pourqui-titre', copy.title);
+    var el = byId('audienceGrid');
+    if (el) {
+      el.innerHTML = '<div class="audience-card"><h3>' + esc(copy.yesTitle) + '</h3><ul class="audience-list">' +
+        (copy.yesItems || []).map(function(item) { return '<li>' + esc(item) + '</li>'; }).join('') +
+      '</ul></div>' +
+      '<div class="audience-card audience-card--no"><h3>' + esc(copy.noTitle) + '</h3><ul class="audience-list audience-list--no">' +
+        (copy.noItems || []).map(function(item) { return '<li>' + esc(item) + '</li>'; }).join('') +
+      '</ul></div>';
+    }
+    setHtml('audiencePanel', paragraph(copy.panel));
+  }
+
+  function renderComplementaryReadings(config, conversationCode, currentReadingType) {
+    var complementaries = getComplementaryAngles(config, conversationCode, currentReadingType);
+    if (!complementaries.length) return '';
+
+    var grouped = groupByReading(complementaries);
+    var blocks = Object.keys(grouped).map(function(type) {
+      var items = grouped[type].map(function(angle) {
+        return '<li><span class="angle-meta-label">' + esc(contextTag(config, angle.contextCode)) + '</span><br>' +
+          '<span class="angle-meta-text">' + esc(angleTitle(angle)) + '</span></li>';
+      }).join('');
+
+      return '<div class="angle-meta-card">' +
+        '<div class="angle-meta-label">' + esc(getReadingLabel(type)) + '</div>' +
+        '<ul style="list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:8px;">' + items + '</ul>' +
+      '</div>';
+    }).join('');
+
+    return '<div class="angle-meta" style="margin-top:20px;">' +
+      '<div class="angle-meta-card" style="grid-column:1/-1;background:#fff;">' +
+        '<div class="angle-meta-label">Lectures complémentaires prévues dans cette conversation</div>' +
+        '<div class="angle-meta-text">Ces lectures sont indiquées pour situer la composition éditoriale. Elles ne sont pas développées ici : la page reste centrée sur la lecture cible.</div>' +
+      '</div>' +
+      blocks +
+    '</div>';
+  }
+
+  function renderLongDetails(angle) {
+    var long = angle.formatLongIntervenant || {};
+    var dimensions = long.dimensions || [];
+    if (!long.chapeau && !dimensions.length && !long.momentBascule && !long.tensionCentrale && !long.securisation) return '';
+
+    var dimsHtml = dimensions.length ? '<div class="angle-meta" style="grid-template-columns:repeat(2,1fr);">' + dimensions.map(function(dim) {
+      return '<div class="angle-meta-card"><div class="angle-meta-label">' + esc(dim.title) + '</div><div class="angle-meta-text">' + esc(dim.text) + '</div></div>';
+    }).join('') + '</div>' : '';
+
+    return '<details class="angle-long-details" style="margin-top:20px;border:1px solid var(--line);background:#faf8f5;padding:16px 18px;">' +
+      '<summary style="cursor:pointer;font-family:var(--font-mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);">Voir la fiche intervenant détaillée</summary>' +
+      (long.chapeau ? '<p class="finance-angle-desc" style="margin-top:16px;max-width:760px;">' + esc(long.chapeau) + '</p>' : '') +
+      dimsHtml +
+      (long.momentBascule || long.tensionCentrale ? '<div class="angle-meta" style="margin-top:18px;">' +
+        '<div class="angle-meta-card"><div class="angle-meta-label">Moment de bascule</div><div class="angle-meta-text">' + esc(long.momentBascule || angle.pointBascule || '') + '</div></div>' +
+        '<div class="angle-meta-card"><div class="angle-meta-label">Tension centrale</div><div class="angle-meta-text">' + esc(long.tensionCentrale || angle.tensionArbitrage || '') + '</div></div>' +
+      '</div>' : '') +
+      (long.securisation ? '<div class="panel" style="margin-top:18px;"><p>' + esc(long.securisation) + '</p></div>' : '') +
+    '</details>';
+  }
+
+  function renderAnglePanel(item, index, config, reading) {
+    var angle = item.angle;
+    var conversation = item.conversation || { code: angle.conversationCode, title: angle.conversationCode };
+    var context = item.context || { label: angle.contextCode };
+    var active = index === 0 ? ' is-active' : '';
+    var panelId = 'angle-' + safeId(angle.crmCode);
+
+    return '<div class="conv-panel' + active + '" id="' + panelId + '">' +
+      '<div class="conv-panel-header" style="border-top:3px solid var(--c' + esc((conversation.code || 'C1').replace('C','')) + ');">' +
+        '<div class="conv-panel-num">' + esc(reading.label) + ' · ' + esc(context.label) + ' · ' + esc(angle.crmCode) + '</div>' +
+        '<h3 class="conv-panel-title">' + esc(angleTitle(angle)) + '</h3>' +
+        '<p class="conv-panel-desc">' + esc(conversation.landingTitle || conversation.title || '') + '</p>' +
+      '</div>' +
+      '<div class="finance-angle">' +
+        '<div class="finance-angle-label">Angle cible de la page · fiche détaillée</div>' +
+        '<div class="finance-angle-q">' + esc(angle.questionPublique || angle.questionEditoriale || '') + '</div>' +
+        '<p class="finance-angle-desc">' + esc(angle.questionActivation || angle.introMecanisme || '') + '</p>' +
+        '<div class="angle-meta">' +
+          '<div class="angle-meta-card"><div class="angle-meta-label">Point de bascule</div><div class="angle-meta-text">' + esc(angle.pointBascule || '') + '</div></div>' +
+          '<div class="angle-meta-card"><div class="angle-meta-label">Tension / arbitrage</div><div class="angle-meta-text">' + esc(angle.tensionArbitrage || '') + '</div></div>' +
+        '</div>' +
+        '<div class="angle-chips">' + (angle.primaryProfiles || []).map(function(profile) { return '<span>' + esc(profile) + '</span>'; }).join('') + '</div>' +
+        renderLongDetails(angle) +
+        renderComplementaryReadings(config, angle.conversationCode, config.readingType) +
+      '</div>' +
+    '</div>';
+  }
+
+  function renderAngleNavItem(item, index) {
+    var angle = item.angle;
+    var conversation = item.conversation || { code: angle.conversationCode, title: angle.conversationCode };
+    var context = item.context || { label: angle.contextCode };
+    var active = index === 0 ? ' is-active' : '';
+    var panelId = 'angle-' + safeId(angle.crmCode);
+    var cnum = String(conversation.code || 'C1').replace('C','');
+
+    return '<button class="conv-nav-item' + active + '" data-conv="' + esc(panelId) + '" aria-selected="' + (index === 0 ? 'true' : 'false') + '">' +
+      '<div class="conv-nav-color" style="background:var(--c' + esc(cnum) + ');"></div>' +
+      '<div class="conv-nav-body">' +
+        '<div class="conv-nav-num">' + esc(conversation.code) + ' · ' + esc(context.label) + '</div>' +
+        '<div class="conv-nav-title">' + esc(angleTitle(angle)) + '</div>' +
+        '<div class="conv-nav-tags"><span>' + esc(angle.crmCode) + '</span></div>' +
+      '</div>' +
+    '</button>';
+  }
+
+  function attachConversationSwitch() {
+    var navItems = document.querySelectorAll('.conv-nav-item');
+    var panels = document.querySelectorAll('.conv-panel');
+    navItems.forEach(function(item) {
+      item.addEventListener('click', function() {
+        var target = this.dataset.conv;
+        navItems.forEach(function(n) {
+          n.classList.remove('is-active');
+          n.setAttribute('aria-selected', 'false');
+        });
+        panels.forEach(function(p) { p.classList.remove('is-active'); });
+        this.classList.add('is-active');
+        this.setAttribute('aria-selected', 'true');
+        var targetPanel = document.getElementById(target);
+        if (targetPanel) targetPanel.classList.add('is-active');
+      });
+    });
+  }
+
+  function renderConversations(slug, config, reading) {
+    var angles = getLandingAngles(slug);
+    var convCopy = (config.copy && config.copy.conversations) || {};
+
+    setText('conversations-titre', convCopy.title || ('Les angles où la ' + readingName(reading) + ' devient décisive'));
+    setText('conversationsIntro', convCopy.intro || 'Chaque angle présenté ci-dessous correspond à une position éditoriale précise de cette lecture dans le cycle.');
+    setHtml('conversationsPanel', paragraph(convCopy.panel || 'Les autres lectures prévues dans la même conversation sont indiquées en complément, sans être détaillées sur cette page.'));
+
+    var nav = byId('convNav');
+    if (nav) nav.innerHTML = angles.map(renderAngleNavItem).join('');
+
+    var content = byId('convContent');
+    if (content) content.innerHTML = angles.map(function(item, index) {
+      return renderAnglePanel(item, index, config, reading);
+    }).join('');
+
+    attachConversationSwitch();
+  }
+
+  function renderProcess(config) {
+    var process = config.copy && config.copy.process;
+    var el = byId('processRow');
+    if (!el || !process) return;
+    el.innerHTML = process.map(function(step) {
+      return '<div class="process-step"><div class="step-num">' + esc(step.num) + '</div><h3>' + esc(step.title) + '</h3><p>' + esc(step.text) + '</p>' + (step.deadline ? '<div class="process-deadline">' + esc(step.deadline) + '</div>' : '') + '</div>';
+    }).join('');
+  }
+
+  function renderGuarantees(config) {
+    var guarantees = config.copy && config.copy.guarantees;
+    var el = byId('guaranteesGrid');
+    if (!el || !guarantees) return;
+    el.innerHTML = guarantees.map(function(item) {
+      return '<div class="guarantee' + (item.accent ? ' guarantee--accent' : '') + '"><h3>' + esc(item.title) + '</h3><p>' + esc(item.text) + '</p></div>';
+    }).join('');
+  }
+
+  function renderFaq(config) {
+    var faq = config.copy && config.copy.faq;
+    var el = byId('faqList');
+    if (!el || !faq) return;
+    el.innerHTML = faq.map(function(item) {
+      return '<div class="faq-item"><h3>' + esc(item.question) + '</h3><p>' + esc(item.answer) + '</p></div>';
+    }).join('');
+  }
+
+  function renderCta(config) {
+    var cta = config.copy && config.copy.cta;
+    if (!cta) return;
+    setText('cta-titre', cta.title);
+    setText('ctaText', cta.text);
+    setText('ctaDeadline', cta.deadline);
+    setText('ctaFootnote', cta.footnote);
+  }
+
+  function renderLanding(slug) {
+    if (!slug || !data.landingPages || !data.landingPages[slug]) return false;
+
+    var config = data.landingPages[slug];
+    var reading = data.readingTypes[config.readingType];
+    var cycle = api.getCycle(config.cycleCode);
+    var copy = config.copy || {};
+
+    document.title = config.title || document.title;
+    var meta = document.querySelector('meta[name="description"]');
+    if (meta && config.metaDescription) meta.setAttribute('content', config.metaDescription);
+
+    setText('navCycle', config.navLabel || ((cycle && cycle.label ? cycle.label : '') + ' · ' + (reading ? reading.label : '')));
+    setHtml('hero-title', config.heroTitleHtml || '');
+    setText('heroLead', config.heroLead || (reading && reading.positioning) || '');
+    setHtml('heroNote', copy.heroNoteHtml || '');
+    setText('heroCardTitle', copy.heroCardTitle || ('Votre ' + readingName(reading) + ' a-t-elle sa place dans l’une de ces conversations ?'));
+    setText('heroCardText', copy.heroCardText || 'En 15 minutes, nous vérifions si votre angle correspond à une position encore disponible — en toute confidentialité.');
+
+    setCtas(reading);
+    renderProfiles(config);
+    renderValueSection(config);
+    renderAudience(config, reading);
+    renderConversations(slug, config, reading);
+    setHtml('dimensions-titre', copy.preparation && copy.preparation.titleHtml || '');
+    setText('dimensionsIntro', copy.preparation && copy.preparation.intro || '');
+    renderProcess(config);
+    renderGuarantees(config);
+    renderFaq(config);
+    renderCta(config);
+
+    return true;
+  }
+
+  function autoRender() {
+    var slug = document.body && document.body.getAttribute('data-landing');
+    if (slug) renderLanding(slug);
+  }
+
+  if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', autoRender);
+    } else {
+      autoRender();
+    }
+  }
+
+  return { renderLanding: renderLanding };
+})(window.EN_PLATEAU_EDITORIAL_DATA, window.EN_PLATEAU_EDITORIAL);
