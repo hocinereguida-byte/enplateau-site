@@ -1,6 +1,6 @@
 /*
   En Plateau — Référentiel éditorial centralisé
-  V7 dynamique : cycle Industrie · lectures stratégique et financière · volet angle structuré contextualisé
+  V11 dynamique : cycle Industrie · lectures stratégique, financière et juridique / réglementaire
 
   Usage prévu :
   - landing page Lecture stratégique
@@ -16,7 +16,7 @@
 */
 
 window.EN_PLATEAU_EDITORIAL_DATA = {
-  version: "2026-05-08-v7-volet-angle-contextualise",
+  version: "2026-05-08-v11-juridique-reglementaire",
   status: "test",
   sourceDocument: "programme_editorial_industrie.docx",
   scope: {
@@ -3039,6 +3039,327 @@ window.EN_PLATEAU_EDITORIAL = (function(data) {
   data.version = '2026-05-08-v10-complementaires-contexte-verrouille';
   data.notes.complementaryRule = 'Les lectures complémentaires d’une fiche angle sont les 3 autres angles de la même conversation contextualisée : même conversationCode, même contextCode, crmCode différent.';
   data.notes.noVousInComplementaryActors = true;
+})(window.EN_PLATEAU_EDITORIAL_DATA);
+
+/* ════════
+/* ═══════════════════════════════════════════════════════════════════════
+   V11 — Landing page juridique / réglementaire
+
+   Ajouts :
+   - lecture juridique / réglementaire activable par data-landing="juridique" ;
+   - seulement 4 positions juridiques / réglementaires ouvertes sur tout le cycle Industrie ;
+   - contenus dynamiques dédiés à la proposition de valeur juridique ;
+   - enrichissement des 4 angles juridiques du cycle Industrie.
+═══════════════════════════════════════════════════════════════════════ */
+(function(data) {
+  if (!data || !data.cycles) return;
+
+  data.version = "2026-05-08-v11-juridique-reglementaire";
+  data.scope.includedReadings = ["STRATEGIQUE", "FINANCIERE", "JURIDIQUE_REGLEMENTAIRE"];
+  data.scope.note = "Référentiel dynamique pour les landing pages stratégie, finance et juridique / réglementaire. La lecture juridique / réglementaire est volontairement rare : 4 positions seulement sur l’ensemble du cycle Industrie.";
+
+  if (!data.notes) data.notes = {};
+  data.notes.legalScarcityRule = "Seulement 4 positions avec lecture juridique / réglementaire sont ouvertes sur l’ensemble du cycle Industrie.";
+  data.notes.legalLandingSlug = "juridique";
+
+  data.readingTypes.JURIDIQUE_REGLEMENTAIRE = {
+    code: "JURIDIQUE_REGLEMENTAIRE",
+    label: "Lecture juridique / réglementaire",
+    slug: "juridique",
+    shortLabel: "Juridique / réglementaire",
+    landingSlug: "industrie/juridique",
+    calSource: "lp-industrie-juridique",
+    positioning: "Identifier le moment où le cadre juridique, réglementaire, normatif ou géopolitique cesse d’être un arrière-plan et devient un facteur de bascule industrielle.",
+    activationLine: "Vous n’êtes pas attendu sur un dossier, un contentieux ou une doctrine générale. Vous êtes attendu sur votre capacité à lire le moment où le cadre modifie la décision industrielle."
+  };
+
+  data.landingPages.juridique = {
+    cycleCode: "IND",
+    readingType: "JURIDIQUE_REGLEMENTAIRE",
+    title: "Lecture juridique / réglementaire — Cycle Industrie & transformation des territoires | En Plateau",
+    metaDescription: "Seulement 4 positions avec lecture juridique / réglementaire sont ouvertes sur l’ensemble du cycle Industrie, pour éclairer les moments où le cadre juridique, réglementaire ou normatif devient un facteur de bascule industrielle.",
+    navLabel: "Cycle Industrie · Lecture juridique / réglementaire",
+    heroTitleHtml: "Votre lecture<br><em>sécurise</em><br>les arbitrages industriels<br>que le cadre transforme.",
+    heroLead: "Sur tout le cycle Industrie, seules 4 positions sont ouvertes à une lecture juridique / réglementaire. Elles concernent les moments où le cadre — contrats, conformité, droit social, normes, export, responsabilité, qualité ou sécurité — cesse d’être un arrière-plan et devient un facteur de bascule industrielle.",
+    heroProfiles: [
+      {
+        label: "Direction juridique · Compliance",
+        text: "Vous lisez les contrats, responsabilités, obligations réglementaires, normes, sanctions, export control ou cadres sociaux comme des conditions réelles de continuité industrielle."
+      },
+      {
+        label: "Avocat · Conseil réglementaire",
+        text: "Vous accompagnez des industriels lorsque le cadre juridique, normatif ou géopolitique modifie ce qui peut encore être produit, vendu, transformé, transféré ou sécurisé."
+      }
+    ],
+    valueSection: {
+      title: "Faire reconnaître le juridique comme lecture de décision industrielle — pas comme simple contrainte de conformité",
+      intro: "Dans l’industrie, le cadre juridique, réglementaire ou normatif reste souvent invisible tant qu’il permet encore d’agir. Il devient décisif lorsqu’il modifie les conditions de continuité, d’ajustement, d’exportation, de transformation ou de redéploiement. Cette prise de parole permet de rendre visible cette fonction d’arbitrage, sans exposer de dossier sensible, de contentieux ou de situation identifiable.",
+      cards: [
+        {
+          label: "Rareté éditoriale",
+          title: "Prendre place sur l’une des 4 positions juridiques ouvertes dans le cycle Industrie",
+          text: "La lecture juridique / réglementaire n’est pas attendue partout. Elle est ouverte uniquement sur 4 positions du cycle Industrie, là où le cadre change réellement la nature de la décision industrielle. Cette rareté donne plus de poids à la contribution : elle n’est pas noyée dans une série de prises de parole juridiques génériques."
+        },
+        {
+          label: "Direction juridique · Compliance · Export control",
+          title: "Rendre visible votre rôle dans la continuité industrielle",
+          text: "Vous n’intervenez pas seulement pour sécuriser une décision déjà prise. Vous voyez le moment où sanctions, export control, contrats, responsabilité, conformité ou exigences réglementaires changent ce qu’une entreprise industrielle peut encore produire, vendre, transférer ou transformer. Une prise de parole préparée rend visible cette fonction stratégique, sans exposer de dossier interne."
+        },
+        {
+          label: "Avocats · Droit des affaires · Social · Compliance",
+          title: "Sortir du commentaire juridique pour porter une lecture de bascule",
+          text: "Vos clients ne cherchent pas seulement une expertise juridique. Ils cherchent à comprendre à quel moment un cadre social, contractuel, réglementaire ou de responsabilité change la nature de leur décision. Une lecture éditoriale bien cadrée permet de faire reconnaître cette capacité d’anticipation, sans plaider un dossier, sans commenter un contentieux, sans faire de promotion de cabinet."
+        },
+        {
+          label: "QHSE · Certification · Normes · Sécurité",
+          title: "Montrer que la conformité peut devenir un verrou — ou un levier — de transformation",
+          text: "Qualité, sécurité, certification, conformité machine, exigences environnementales ou standards industriels ne sont pas seulement des obligations techniques. Dans certains contextes, ils déterminent la capacité réelle à ajuster l’outil, maintenir l’activité ou transformer un site. Cette prise de parole permet de montrer où la norme devient une condition de soutenabilité industrielle."
+        },
+        {
+          label: "Affaires réglementaires · Géopolitique · Risques externes",
+          title: "Relier le cadre externe aux décisions de filière, de marché et de géographie productive",
+          text: "Un changement de règles, de sanctions, de contraintes export, de normes ou d’environnement géopolitique peut rendre fragile une dépendance, un marché, un approvisionnement ou une implantation. Votre lecture permet de montrer quand le cadre externe cesse d’être un paramètre périphérique et devient une variable centrale de modèle industriel."
+        }
+      ]
+    },
+    copy: {
+      heroNoteHtml: "Seulement 4 positions juridiques / réglementaires sur tout le cycle Industrie &nbsp;·&nbsp; Aucun dossier sensible à exposer &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Collaboration possible avec communication, direction juridique, conformité ou affaires publiques",
+      heroCardTitle: "Votre lecture correspond-elle à l’une des 4 positions juridiques ouvertes ?",
+      heroCardText: "En 15 minutes, nous vérifions si votre lecture du cadre juridique, réglementaire ou normatif correspond à une position encore disponible — sans dossier à exposer et sans engagement.",
+      audience: {
+        title: "Cette lecture juridique / réglementaire vous est-elle destinée ?",
+        yesTitle: "Vous portez probablement une lecture pertinente si…",
+        noTitle: "Moins adapté si…",
+        yesItems: [
+          "Vous savez relier contrats, conformité, droit social, normes, export control, responsabilité ou sécurité à des décisions industrielles concrètes.",
+          "Vous êtes avocat, directeur juridique, responsable conformité, affaires réglementaires, QHSE, certification, export control, affaires publiques ou conseil spécialisé.",
+          "Votre lecture porte sur des seuils : règle qui ralentit, cadre qui bloque, conformité qui limite l’ajustement, changement réglementaire qui oblige à revoir un modèle.",
+          "Vous pouvez éclairer un mécanisme sans exposer de contentieux, de client, de dossier interne ni de situation confidentielle."
+        ],
+        noItems: [
+          "Votre intervention relève surtout du contentieux pur ex post, sans lecture sur les arbitrages amont.",
+          "Votre positionnement reste trop général pour être relié à une bascule industrielle précise.",
+          "Vous cherchez d’abord une visibilité promotionnelle plutôt qu’une contribution éditoriale située.",
+          "Votre lecture ne relie pas le cadre juridique, réglementaire ou normatif à des décisions concrètes : tenir, ajuster, exporter, transformer, transférer, sécuriser ou renoncer."
+        ],
+        panel: "La lecture juridique / réglementaire ne consiste pas à produire une doctrine générale. Elle consiste à identifier le moment où le cadre modifie réellement ce qu’une entreprise industrielle peut décider, maintenir ou transformer."
+      },
+      conversations: {
+        title: "Les 4 positions où la lecture juridique / réglementaire devient décisive",
+        intro: "Seulement 4 positions avec lecture juridique / réglementaire sont ouvertes sur l’ensemble du cycle Industrie. Elles couvrent les situations où le cadre — normes, contrats, conformité, export, droit social, responsabilité, qualité ou sécurité — devient une variable centrale de continuité, d’ajustement ou de transformation industrielle.",
+        panel: "Une seule lecture juridique / réglementaire est retenue par position contextualisée. Lorsqu’une position est confirmée, elle n’a pas vocation à être doublée par une lecture juridique équivalente."
+      },
+      preparation: {
+        titleHtml: "Beaucoup arrivent avec une lecture juridique. <em style=\"color:rgba(240,236,230,0.55);\">Ils repartent avec une position d’arbitrage.</em>",
+        intro: "La préparation éditoriale transforme une expertise juridique, réglementaire ou normative en lecture située : claire, défendable, utile pour les dirigeants industriels, directions juridiques, conseils, équipes conformité, partenaires publics et acteurs de transformation."
+      },
+      dimensions: [
+        { num: "01", title: "Transformation en cours / contexte", text: "Ancrer votre lecture dans le mouvement réel : croissance, contrainte, crise, redéploiement, conformité ou changement de cadre externe." },
+        { num: "02", title: "Acteurs concernés", text: "Préciser qui le cadre affecte réellement : direction générale, juridique, conformité, opérations, clients, fournisseurs, salariés, autorités, financeurs ou territoire." },
+        { num: "03", title: "Arbitrages", text: "Rendre explicites les choix : sécuriser, différer, transformer, contractualiser autrement, renoncer, réorganiser ou changer de périmètre." },
+        { num: "04", title: "Défis & opportunités", text: "Montrer à la fois ce que le cadre contraint et ce qu’il permet de clarifier, protéger ou rendre plus soutenable." },
+        { num: "05", title: "Vision", text: "Formuler ce que votre pratique vous permet d’affirmer sur le moment où le juridique devient une lecture de décision industrielle." },
+        { num: "06", title: "Échelle d’analyse", text: "Situer votre lecture à la bonne échelle : site, groupe, filière, marché, chaîne de valeur, géographie productive ou cadre réglementaire." }
+      ],
+      dimensionsPanel: "Ce travail ne remplace pas votre expertise : il la rend audible dans un cadre éditorial. En Plateau vous accompagne pour clarifier votre position, sécuriser le niveau d’exposition et éviter toute confusion avec une prise de parole sur un dossier identifiable.",
+      process: [
+        {
+          num: "01",
+          title: "L’échange de qualification",
+          text: "15 minutes pour vérifier si votre lecture correspond à l’une des 4 positions juridiques / réglementaires ouvertes. Aucun dossier, client ou contentieux à exposer.",
+          deadline: "À planifier en amont du comité éditorial"
+        },
+        {
+          num: "02",
+          title: "Le dossier de positionnement",
+          text: "Si l’angle est retenu, un dossier complet vous est adressé : angle précis, logique de mise en regard, modalités d’intervention, format émission et article associé."
+        },
+        {
+          num: "03",
+          title: "Le comité éditorial",
+          text: "Le comité éditorial examine les dossiers de positionnement et valide la composition finale. Vous êtes informé avant tout engagement.",
+          deadline: "Comité éditorial : 15 juin 2026"
+        },
+        {
+          num: "04",
+          title: "La préparation & la production",
+          text: "En Plateau travaille avec vous pour transformer votre lecture juridique / réglementaire en position claire, non intrusive et publiquement défendable."
+        }
+      ],
+      guarantees: [
+        {
+          accent: true,
+          title: "Aucun dossier ni contentieux à exposer",
+          text: "L’échange porte sur les mécanismes d’arbitrage, pas sur un client, un dossier, une procédure, un contentieux ou une situation confidentielle."
+        },
+        {
+          accent: true,
+          title: "Seulement 4 positions juridiques sur le cycle Industrie",
+          text: "La lecture juridique / réglementaire est volontairement limitée aux angles où le cadre devient réellement décisif. Une position confirmée n’a pas vocation à être doublée par une lecture équivalente."
+        },
+        {
+          title: "Pas de doctrine juridique générale attendue",
+          text: "La contribution vise une lecture située : le moment où le cadre juridique, réglementaire ou normatif change la nature d’une décision industrielle."
+        },
+        {
+          title: "Une parole préparée avec vos équipes si nécessaire",
+          text: "La préparation peut intégrer vos contraintes de communication, de confidentialité, de conformité, d’affaires publiques ou de validation interne."
+        }
+      ],
+      faq: [
+        {
+          question: "Faut-il parler d’un dossier ou d’un contentieux identifiable ?",
+          answer: "Non. L’enjeu n’est pas d’exposer une situation confidentielle ni de détailler un cas reconnaissable. La contribution porte sur les mécanismes qui font basculer une décision industrielle."
+        },
+        {
+          question: "Pourquoi seulement 4 positions juridiques / réglementaires ?",
+          answer: "Parce que la lecture juridique n’est pas attendue partout dans le cycle. Elle est ouverte seulement lorsque le cadre devient un facteur direct de continuité, d’ajustement, de transformation ou de redéploiement industriel."
+        },
+        {
+          question: "La lecture doit-elle venir d’un avocat ?",
+          answer: "Pas nécessairement. Elle peut venir d’un avocat, d’une direction juridique, d’un responsable conformité, export control, QHSE, affaires réglementaires, affaires publiques ou d’un conseil spécialisé."
+        },
+        {
+          question: "Faut-il arriver avec une position déjà construite ?",
+          answer: "Non. La préparation éditoriale sert précisément à transformer une expertise ou une conviction en position claire, située et défendable publiquement."
+        }
+      ],
+      cta: {
+        title: "Votre lecture juridique peut éclairer un arbitrage industriel que le cadre transforme.",
+        text: "Un échange de 15 minutes — sans exposer de dossier, sans engagement — pour vérifier si votre lecture correspond à l’une des 4 positions juridiques / réglementaires encore ouvertes dans le cycle Industrie.",
+        deadline: "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
+        footnote: "Seulement 4 positions juridiques / réglementaires sur le cycle Industrie · Page non indexée"
+      }
+    }
+  };
+
+  var legalExtensions = {
+    "IND-C2-GS-A07": {
+      primaryProfiles: ["Direction juridique", "Conformité / compliance", "Export control", "Affaires réglementaires", "Avocat contrats / commerce international", "Affaires publiques"],
+      formatCourt: {
+        titrePublicCourt: "À partir de quand la règle devient-elle un facteur de continuité ou de rupture ?",
+        usage: "Titre court pour landing page juridique."
+      },
+      questionActivation: "Vous n’êtes pas attendu sur un dossier export, un contrat, une certification ou une situation interne. Vous êtes attendu sur votre capacité à lire le moment où normes, douanes, export control, sanctions, certifications ou contraintes réglementaires cessent d’être de simples paramètres et modifient réellement la continuité industrielle.",
+      pointBascule: "À partir de quand la règle devient-elle un facteur de continuité ou de rupture ?",
+      tensionArbitrage: "S’ouvrir à de nouveaux marchés sans exposer la continuité industrielle à des cadres mal maîtrisés.",
+      formatLongIntervenant: {
+        titre: "Fiche intervenant — Ouverture commerciale, normes et continuité industrielle",
+        chapeau: "Votre intervention permettrait d’éclairer le moment où l’ouverture commerciale, les normes, les certifications, les contrôles export ou les contraintes géopolitiques deviennent des facteurs structurants de continuité industrielle. Le sujet ne porte pas sur un dossier export particulier, mais sur la manière dont le cadre modifie ce qu’une entreprise peut réellement produire, vendre, certifier ou livrer.",
+        dimensions: [
+          { key: "transformation", title: "Transformation en cours / contexte", text: "Qualifier l’ouverture industrielle : nouveaux marchés, nouvelles normes, certification, douanes, export control, sanctions ou contraintes de conformité." },
+          { key: "acteurs", title: "Acteurs impactés", text: "Identifier les acteurs concernés : juridique, conformité, commerce international, affaires publiques, direction générale, production, clients, fournisseurs et autorités." },
+          { key: "arbitrages", title: "Arbitrages & décisions", text: "Éclairer les décisions : exporter ou différer, certifier, adapter l’offre, sécuriser les flux, revoir certains contrats ou renoncer à un marché trop exposé." },
+          { key: "defis", title: "Défis & opportunités", text: "Montrer le risque de croissance mal sécurisée et l’opportunité d’un cadre mieux maîtrisé pour soutenir la trajectoire industrielle." },
+          { key: "vision", title: "Vision attendue", text: "Apporter une lecture du moment où la règle cesse d’être un paramètre de conformité et devient une condition de continuité industrielle." },
+          { key: "echelle", title: "Échelle pertinente", text: "Situer l’analyse à l’échelle du marché, de la chaîne de valeur, du groupe, de la filière ou de la géographie commerciale." }
+        ],
+        momentBascule: "Le basculement intervient lorsque le cadre normatif, commercial ou réglementaire conditionne directement la capacité à produire, certifier, vendre ou livrer.",
+        tensionCentrale: "S’ouvrir à de nouveaux marchés sans exposer la continuité industrielle à des cadres mal maîtrisés.",
+        securisation: "L’échange ne suppose pas de commenter un dossier export, un contrat, une certification ou une situation interne. Il s’agit d’éclairer un mécanisme juridique et réglementaire à partir de votre pratique."
+      },
+      landingPages: ["juridique"]
+    },
+
+    "IND-C2-AC-A07": {
+      primaryProfiles: ["Direction juridique", "Droit social industriel", "Conformité / compliance", "Affaires réglementaires", "Avocat droit social / contrats", "Secrétariat général"],
+      formatCourt: {
+        titrePublicCourt: "Quand la règle empêche-t-elle d’ajuster sans rupture ?",
+        usage: "Titre court pour landing page juridique."
+      },
+      questionActivation: "Vous n’êtes pas attendu sur un plan social, un contrat, un contentieux ou une situation interne. Vous êtes attendu sur votre capacité à lire le moment où règles commerciales, sociales, douanières ou réglementaires rendent certains ajustements trop longs, trop coûteux ou trop risqués pour préserver la continuité industrielle.",
+      pointBascule: "Quand la règle empêche-t-elle d’ajuster sans rupture ?",
+      tensionArbitrage: "Adapter vite l’activité sans sortir du cadre réglementaire ni rompre la continuité.",
+      formatLongIntervenant: {
+        titre: "Fiche intervenant — Règles commerciales, sociales, douanières et ajustement industriel",
+        chapeau: "Votre intervention permettrait d’analyser le moment où l’entreprise doit s’adapter, mais ne dispose plus d’un espace de décision totalement libre. Les règles sociales, commerciales, douanières, contractuelles ou réglementaires peuvent rendre certains ajustements plus lents, plus coûteux ou plus risqués que prévu.",
+        dimensions: [
+          { key: "transformation", title: "Transformation en cours / contexte", text: "Qualifier l’adaptation sous contrainte : marges réduites, activité à maintenir, contrats à renégocier, organisation à ajuster, cadre social ou réglementaire à respecter." },
+          { key: "acteurs", title: "Acteurs impactés", text: "Identifier les acteurs concernés : direction générale, juridique, RH, conformité, opérations, clients, fournisseurs, salariés, autorités et partenaires sociaux." },
+          { key: "arbitrages", title: "Arbitrages & décisions", text: "Éclairer les décisions : ajuster, différer, renégocier, réorganiser, réduire un périmètre, sécuriser juridiquement ou accepter une transformation plus lente." },
+          { key: "defis", title: "Défis & opportunités", text: "Distinguer le risque d’un ajustement impossible sans rupture et l’opportunité d’un cadre mieux anticipé pour préserver la continuité." },
+          { key: "vision", title: "Vision attendue", text: "Apporter une lecture du moment où la contrainte juridique cesse d’encadrer l’adaptation et en change la nature." },
+          { key: "echelle", title: "Échelle pertinente", text: "Situer l’analyse à l’échelle du site, de l’entreprise, de la chaîne contractuelle, du cadre social ou du marché concerné." }
+        ],
+        momentBascule: "Le basculement intervient lorsque les règles à respecter rendent l’ajustement trop long, trop coûteux ou trop risqué pour préserver la continuité industrielle.",
+        tensionCentrale: "Adapter vite l’activité sans sortir du cadre réglementaire ni rompre la continuité.",
+        securisation: "L’échange ne suppose pas de commenter un plan social, un contrat, un contentieux ou une situation interne. Il s’agit d’éclairer la façon dont le cadre transforme les marges d’ajustement."
+      },
+      landingPages: ["juridique"]
+    },
+
+    "IND-C2-RC-A07": {
+      primaryProfiles: ["Direction juridique groupe", "Export control", "Sanctions / conformité internationale", "Affaires publiques", "Intelligence économique", "Avocat réglementation / commerce international"],
+      formatCourt: {
+        titrePublicCourt: "Quand le cadre externe rend-il le modèle industriel obsolète ?",
+        usage: "Titre court pour landing page juridique."
+      },
+      questionActivation: "Vous n’êtes pas attendu sur un dossier géopolitique, une sanction, un client ou une décision interne. Vous êtes attendu sur votre capacité à lire le moment où un changement de cadre réglementaire ou géopolitique rend caduc un marché, une dépendance, une implantation ou une géographie productive.",
+      pointBascule: "Quand le cadre externe rend-il le modèle industriel obsolète ?",
+      tensionArbitrage: "Préserver la continuité industrielle tout en changeant de géographie ou de cadre d’opération.",
+      formatLongIntervenant: {
+        titre: "Fiche intervenant — Changement de cadre géopolitique, réglementaire et modèle industriel",
+        chapeau: "Votre intervention viserait à éclairer le moment où un changement de cadre géopolitique, réglementaire, commercial ou de sanctions ne se traite plus comme une contrainte externe, mais oblige à réinterroger le modèle industriel, les marchés adressés, les dépendances ou la géographie productive.",
+        dimensions: [
+          { key: "transformation", title: "Transformation en cours / contexte", text: "Qualifier la rupture de cadre : sanctions, contrôle export, changement réglementaire, instabilité géopolitique, marché fermé ou géographie productive fragilisée." },
+          { key: "acteurs", title: "Acteurs impactés", text: "Identifier les acteurs concernés : direction générale, juridique, conformité, affaires publiques, supply chain, commerce, partenaires, clients, fournisseurs et autorités." },
+          { key: "arbitrages", title: "Arbitrages & décisions", text: "Éclairer les décisions : changer de marché, relocaliser, substituer, modifier une chaîne d’approvisionnement, revoir les contrats, interrompre ou redéployer une activité." },
+          { key: "defis", title: "Défis & opportunités", text: "Mettre en regard le risque d’un modèle devenu caduc et l’opportunité de reconstruire une trajectoire plus robuste." },
+          { key: "vision", title: "Vision attendue", text: "Apporter une lecture du moment où le cadre externe cesse d’être un risque à gérer et devient une variable centrale de modèle industriel." },
+          { key: "echelle", title: "Échelle pertinente", text: "Situer la décision à l’échelle du groupe, de la filière, du marché, de la chaîne de valeur ou de la géographie productive." }
+        ],
+        momentBascule: "Le basculement intervient lorsque le cadre géopolitique ou réglementaire rend insuffisants les ajustements habituels et impose de revoir le modèle industriel lui-même.",
+        tensionCentrale: "Préserver la continuité industrielle tout en changeant de géographie ou de cadre d’opération.",
+        securisation: "L’échange ne suppose pas de commenter un dossier géopolitique, une sanction, un client ou une décision interne. Il s’agit d’éclairer la façon dont un changement de cadre transforme le modèle industriel."
+      },
+      landingPages: ["juridique"]
+    },
+
+    "IND-C3-AC-A11": {
+      primaryProfiles: ["QHSE", "Conformité industrielle", "Certification", "Qualité / sécurité", "Avocat réglementation industrielle", "Bureau de contrôle / certification"],
+      formatCourt: {
+        titrePublicCourt: "À partir de quand les exigences empêchent-elles toute adaptation simple ?",
+        usage: "Titre court pour landing page juridique."
+      },
+      questionActivation: "Vous n’êtes pas attendu sur un audit, un incident, une certification ou un dossier interne. Vous êtes attendu sur votre capacité à lire le moment où les exigences de qualité, sécurité ou conformité protègent l’activité, mais limitent aussi les ajustements possibles et obligent à réinterroger la tenue de l’outil.",
+      pointBascule: "À partir de quand les exigences empêchent-elles toute adaptation simple ?",
+      tensionArbitrage: "Ajuster l’outil sans compromettre la qualité, la sécurité ou la conformité.",
+      formatLongIntervenant: {
+        titre: "Fiche intervenant — Qualité, sécurité, conformité et capacité d’adaptation de l’outil",
+        chapeau: "Votre intervention permettrait d’éclairer le moment où les exigences de qualité, sécurité, conformité, certification ou standards industriels cessent d’être de simples contraintes de maîtrise et deviennent le facteur qui limite la capacité réelle d’adaptation de l’outil.",
+        dimensions: [
+          { key: "transformation", title: "Transformation en cours / contexte", text: "Qualifier l’adaptation sous contrainte : outil à ajuster, process à maintenir, exigences qualité, sécurité, conformité, certification ou audit." },
+          { key: "acteurs", title: "Acteurs impactés", text: "Identifier les acteurs concernés : QHSE, production, maintenance, direction industrielle, juridique, conformité, clients, certificateurs, autorités et équipes terrain." },
+          { key: "arbitrages", title: "Arbitrages & décisions", text: "Éclairer les décisions : maintenir, adapter, requalifier, certifier, investir, limiter certains changements ou transformer plus profondément le process." },
+          { key: "defis", title: "Défis & opportunités", text: "Montrer le risque d’un outil trop contraint pour s’adapter et l’opportunité de transformer la conformité en levier de robustesse." },
+          { key: "vision", title: "Vision attendue", text: "Apporter une lecture du moment où l’exigence protège l’activité mais empêche les ajustements simples." },
+          { key: "echelle", title: "Échelle pertinente", text: "Situer l’analyse à l’échelle de l’atelier, du process, du site, du standard industriel, du client ou du cadre réglementaire." }
+        ],
+        momentBascule: "Le basculement intervient lorsque les exigences qualité, sécurité ou conformité empêchent les ajustements simples et obligent à repenser l’outil ou le process.",
+        tensionCentrale: "Ajuster l’outil sans compromettre la qualité, la sécurité ou la conformité.",
+        securisation: "L’échange ne suppose pas de commenter un audit, un incident, une certification ou un dossier interne. Il s’agit d’éclairer le rôle du cadre qualité, sécurité ou conformité dans la décision industrielle."
+      },
+      landingPages: ["juridique"]
+    }
+  };
+
+  var cycle = data.cycles.find(function(item) { return item.code === "IND"; });
+  if (!cycle || !cycle.angles) return;
+
+  cycle.angles.forEach(function(angle) {
+    var extension = legalExtensions[angle.crmCode];
+    if (!extension) return;
+
+    angle.typeLecture = "JURIDIQUE_REGLEMENTAIRE";
+    angle.showInForm = true;
+    angle.landingPages = extension.landingPages;
+    angle.primaryProfiles = extension.primaryProfiles;
+    angle.formatCourt = extension.formatCourt;
+    angle.questionActivation = extension.questionActivation;
+    angle.pointBascule = extension.pointBascule;
+    angle.tensionArbitrage = extension.tensionArbitrage;
+    angle.formatLongIntervenant = extension.formatLongIntervenant;
+  });
 })(window.EN_PLATEAU_EDITORIAL_DATA);
 
 /* ═══════════════════════════════════════════════════════════════════════
