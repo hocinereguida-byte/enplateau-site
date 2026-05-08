@@ -1519,15 +1519,13 @@ window.EN_PLATEAU_EDITORIAL = (function(data) {
 })(window.EN_PLATEAU_EDITORIAL_DATA);
 
 /* ═══════════════════════════════════════════════════════════════════════
-   Renderer landing pages — V7 volet angle structuré contextualisé
+   Renderer landing pages — V8 lisibilité des angles
 
-   Principe :
-   - La landing page d'une lecture met d'abord en avant les angles de CETTE lecture.
-   - Chaque angle cible est rendu comme une fiche détaillée.
-   - Les autres lectures prévues dans la même conversation sont montrées en version courte,
-     comme contexte éditorial complémentaire, sans prendre le dessus sur la lecture cible.
-   - Le bloc reste compatible avec le template HTML V2 : ids navCycle, hero-title,
-     heroLead, heroProfiles, valueGrid, convNav, convContent, etc.
+   Objectif :
+   - clarifier la fonction de la colonne de gauche et de la colonne de droite ;
+   - rendre explicites le titre de conversation, l’angle attendu et le rôle
+     des blocs éditoriaux ;
+   - alléger la lecture sans casser l’automatisation.
 ═══════════════════════════════════════════════════════════════════════ */
 window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
   if (!data || !api) return { renderLanding: function() { return false; } };
@@ -1566,11 +1564,6 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
     return reading ? reading.label : String(type || '').replace(/_/g, ' ');
   }
 
-  function getReadingShort(type) {
-    var reading = data.readingTypes && data.readingTypes[type];
-    return reading ? reading.shortLabel : String(type || '').replace(/_/g, ' ');
-  }
-
   function getCycleAngles(cycleCode) {
     var cycle = api.getCycle(cycleCode);
     return cycle && cycle.angles ? cycle.angles.slice() : [];
@@ -1588,24 +1581,13 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
     });
   }
 
-  function getComplementaryAngles(config, currentAngle, currentReadingType) {
+  function getComplementaryAngles(config, currentAngle) {
     if (!currentAngle) return [];
 
     return getCycleAngles(config.cycleCode).filter(function(angle) {
       return angle.conversationCode === currentAngle.conversationCode &&
-        angle.contextCode === currentAngle.contextCode &&
-        angle.typeLecture !== currentReadingType &&
         angle.crmCode !== currentAngle.crmCode;
     }).slice(0, 3);
-  }
-
-  function groupByReading(angles) {
-    var grouped = {};
-    angles.forEach(function(angle) {
-      if (!grouped[angle.typeLecture]) grouped[angle.typeLecture] = [];
-      grouped[angle.typeLecture].push(angle);
-    });
-    return grouped;
   }
 
   function contextTag(config, contextCode) {
@@ -1619,6 +1601,14 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
 
   function paragraph(text) {
     return text ? '<p>' + esc(text) + '</p>' : '';
+  }
+
+  function cleanLongTitle(value) {
+    return String(value || '').replace(/^Fiche intervenant\s*[—-]\s*/i, '').trim();
+  }
+
+  function mergedGuidanceText() {
+    return 'Votre intervention n’a pas pour objet de commenter une situation interne, un client, un mandat ou une décision confidentielle. Elle vise à éclairer, à partir de votre expérience et de votre position d’observation, des seuils, des signaux faibles et des arbitrages qui se répètent dans les trajectoires industrielles.';
   }
 
   function calUrl(reading, cta) {
@@ -1686,24 +1676,24 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
     setHtml('audiencePanel', paragraph(copy.panel));
   }
 
-  function renderComplementaryReadings(config, currentAngle, currentReadingType) {
-    var complementaries = getComplementaryAngles(config, currentAngle, currentReadingType);
+  function renderComplementaryReadings(config, currentAngle) {
+    var complementaries = getComplementaryAngles(config, currentAngle);
     if (!complementaries.length) return '';
 
     var items = complementaries.map(function(angle) {
       var profiles = (angle.primaryProfiles || []).join(', ');
       return '<div class="angle-complementary-item">' +
-        '<div class="angle-meta-label">' + esc(getReadingLabel(angle.typeLecture)) + '</div>' +
+        '<div class="angle-meta-label">' + esc(contextTag(config, angle.contextCode) + ' · ' + getReadingLabel(angle.typeLecture)) + '</div>' +
         '<div class="angle-complementary-title">' + esc(angleTitle(angle)) + '</div>' +
         (profiles ? '<div class="angle-meta-text"><strong>Acteurs pressentis :</strong> Vous, ' + esc(profiles) + '</div>' : '') +
       '</div>';
     }).join('');
 
     return '<details class="angle-complementary-details">' +
-      '<summary>Voir les lectures complémentaires prévues dans cette conversation contextualisée</summary>' +
+      '<summary>Voir les autres angles de cette conversation</summary>' +
       '<div class="angle-complementary-body">' +
-        '<div class="angle-meta-label">Lectures complémentaires prévues dans cette conversation contextualisée</div>' +
-        '<p class="angle-meta-text angle-complementary-intro">Ces lectures sont indiquées pour situer la composition éditoriale.</p>' +
+        '<div class="angle-meta-label">Autres angles prévus dans cette même conversation</div>' +
+        '<p class="angle-meta-text angle-complementary-intro">Ces autres angles sont indiqués pour situer la composition éditoriale, sans concurrencer l’angle présenté ici.</p>' +
         items +
       '</div>' +
     '</details>';
@@ -1714,8 +1704,8 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
     var dimensions = long.dimensions || [];
     var bascule = long.momentBascule || angle.pointBascule || '';
     var tension = long.tensionCentrale || angle.tensionArbitrage || '';
+    var cleanTitle = cleanLongTitle(long.titre || '');
 
-    var titleHtml = '<div class="angle-meta-label angle-long-title">' + esc(long.titre || 'Fiche intervenant détaillée') + '</div>';
     var activationHtml = angle.questionActivation ? '<p class="finance-angle-desc angle-main-copy">' + esc(angle.questionActivation) + '</p>' : '';
     var chapeauHtml = long.chapeau ? '<p class="finance-angle-desc angle-main-copy">' + esc(long.chapeau) + '</p>' : (angle.introMecanisme ? '<p class="finance-angle-desc angle-main-copy">' + esc(angle.introMecanisme) + '</p>' : '');
 
@@ -1729,12 +1719,22 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
     }).join('') + '</div>' : '';
 
     return '<div class="angle-long-details">' +
-      titleHtml +
-      activationHtml +
-      chapeauHtml +
-      pointTensionHtml +
-      dimsHtml +
-      (long.securisation ? '<div class="panel angle-security-panel"><p>' + esc(long.securisation) + '</p></div>' : '') +
+      '<div class="angle-section">' +
+        '<div class="angle-section-label">Ce que votre intervention permettra d’éclairer</div>' +
+        (cleanTitle ? '<div class="angle-section-title">' + esc(cleanTitle) + '</div>' : '') +
+        activationHtml +
+        chapeauHtml +
+      '</div>' +
+      ((bascule || tension) ? '<div class="angle-section">' +
+        '<div class="angle-section-label">Ce que cet angle cherche à faire apparaître</div>' +
+        pointTensionHtml +
+      '</div>' : '') +
+      (dimensions.length ? '<div class="angle-section">' +
+        '<div class="angle-section-label">Votre intervention sera préparée autour de 6 dimensions</div>' +
+        '<p class="angle-section-intro">En Plateau vous accompagne pour clarifier votre position sur ce sujet et l’exprimer publiquement, sans exposer de situation confidentielle.</p>' +
+        dimsHtml +
+      '</div>' : '') +
+      '<div class="panel angle-security-panel"><p>' + esc(mergedGuidanceText()) + '</p></div>' +
     '</div>';
   }
 
@@ -1744,20 +1744,21 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
     var context = item.context || { label: angle.contextCode };
     var active = index === 0 ? ' is-active' : '';
     var panelId = 'angle-' + safeId(angle.crmCode || String(index));
-    var cnum = String(conversation.code || 'C1').replace('C','');
+    var cnum = String(conversation.code || 'C1').replace('C', '');
     var profiles = (angle.primaryProfiles || []).join(', ');
 
     return '<div class="conv-panel' + active + '" id="' + panelId + '">' +
       '<div class="conv-panel-header" style="border-top:3px solid var(--c' + esc(cnum) + ');">' +
+        '<div class="conv-panel-overline">Conversation</div>' +
         '<h3 class="conv-panel-title">' + esc(conversation.landingTitle || conversation.title || '') + '</h3>' +
-        '<p class="conv-panel-desc">' + esc(context.label) + ' · ' + esc(reading.label) + '</p>' +
+        '<p class="conv-panel-desc"><strong>Contexte :</strong> ' + esc(context.label) + ' &nbsp;·&nbsp; <strong>Lecture attendue :</strong> ' + esc(reading.label) + '</p>' +
       '</div>' +
       '<div class="finance-angle">' +
-        '<div class="finance-angle-label">Angle de la lecture</div>' +
+        '<div class="finance-angle-label finance-angle-label--accent">Voici l’angle sur lequel votre lecture est attendue</div>' +
         '<div class="finance-angle-q">' + esc(angleTitle(angle)) + '</div>' +
-        (profiles ? '<p class="angle-meta-text" style="margin-top:12px;"><strong>Acteurs pressentis :</strong> Vous, ' + esc(profiles) + '</p>' : '') +
+        (profiles ? '<p class="angle-profiles"><strong>Acteurs pressentis :</strong> Vous, ' + esc(profiles) + '</p>' : '') +
         renderLongDetails(angle) +
-        renderComplementaryReadings(config, angle, config.readingType) +
+        renderComplementaryReadings(config, angle) +
       '</div>' +
     '</div>';
   }
@@ -1768,14 +1769,12 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
     var context = item.context || { label: angle.contextCode };
     var active = index === 0 ? ' is-active' : '';
     var panelId = 'angle-' + safeId(angle.crmCode || String(index));
-    var cnum = String(conversation.code || 'C1').replace('C','');
 
     return '<button class="conv-nav-item' + active + '" data-conv="' + esc(panelId) + '" aria-selected="' + (index === 0 ? 'true' : 'false') + '">' +
-      '<div class="conv-nav-color" style="background:var(--c' + esc(cnum) + ');"></div>' +
+      '<div class="conv-nav-color"></div>' +
       '<div class="conv-nav-body">' +
-        '<div class="conv-nav-num">' + esc(conversation.code) + ' · ' + esc(context.label) + '</div>' +
+        '<div class="conv-nav-num">' + esc((conversation.code || '') + ' · ' + context.label) + '</div>' +
         '<div class="conv-nav-title">' + esc(angleTitle(angle)) + '</div>' +
-        '<div class="conv-nav-tags"><span>' + esc(getReadingShort(angle.typeLecture)) + '</span></div>' +
       '</div>' +
     '</button>';
   }
@@ -1805,7 +1804,6 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
 
     setText('conversations-titre', convCopy.title || ('Les angles où la ' + readingName(reading) + ' devient décisive'));
     setText('conversationsIntro', convCopy.intro || 'Chaque angle présenté ci-dessous correspond à une position éditoriale précise de cette lecture dans le cycle.');
-    setHtml('conversationsPanel', paragraph(convCopy.panel || 'Les autres lectures prévues dans la même conversation sont indiquées en complément, sans être détaillées sur cette page.'));
 
     var nav = byId('convNav');
     if (nav) nav.innerHTML = angles.map(renderAngleNavItem).join('');
@@ -1814,6 +1812,17 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
     if (content) content.innerHTML = angles.map(function(item, index) {
       return renderAnglePanel(item, index, config, reading);
     }).join('');
+
+    var panel = byId('conversationsPanel');
+    if (panel) {
+      if (convCopy.panel) {
+        panel.style.display = '';
+        panel.innerHTML = paragraph(convCopy.panel);
+      } else {
+        panel.style.display = 'none';
+        panel.innerHTML = '';
+      }
+    }
 
     attachConversationSwitch();
   }
