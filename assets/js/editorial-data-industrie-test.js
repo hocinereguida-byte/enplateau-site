@@ -1,6 +1,6 @@
 /*
   En Plateau — Référentiel éditorial centralisé
-  V4 dynamique : cycle Industrie · lectures stratégique et financière · hiérarchie par angles
+  V6 dynamique : cycle Industrie · lectures stratégique et financière · volet angle structuré
 
   Usage prévu :
   - landing page Lecture stratégique
@@ -16,13 +16,13 @@
 */
 
 window.EN_PLATEAU_EDITORIAL_DATA = {
-  version: "2026-05-08-v4-hierarchie-angles-lecture",
+  version: "2026-05-08-v5-titre-court-sans-codes",
   status: "test",
   sourceDocument: "programme_editorial_industrie.docx",
   scope: {
     cycle: "IND",
     includedReadings: ["STRATEGIQUE", "FINANCIERE"],
-    note: "Référentiel test limité aux lectures stratégique et financière. Cette V4 ajoute un affichage hiérarchisé : angles de la lecture cible en priorité, lectures complémentaires en version courte par conversation. Les autres lectures pourront être ajoutées sur le même modèle."
+    note: "Référentiel test limité aux lectures stratégique et financière. Cette V6 stabilise le volet de droite : conversation, contexte, lecture, angle court, acteurs pressentis, activation, fiche détaillée visible et lectures complémentaires repliables."
   },
 
   notes: {
@@ -1609,7 +1609,7 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
   }
 
   function angleTitle(angle) {
-    return (angle.formatCourt && angle.formatCourt.titrePublicCourt) || angle.questionPublique || angle.questionEditoriale || angle.crmCode;
+    return (angle.formatCourt && angle.formatCourt.titrePublicCourt) || angle.questionPublique || 'Angle éditorial';
   }
 
   function paragraph(text) {
@@ -1685,47 +1685,55 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
     var complementaries = getComplementaryAngles(config, conversationCode, currentReadingType);
     if (!complementaries.length) return '';
 
-    var grouped = groupByReading(complementaries);
-    var blocks = Object.keys(grouped).map(function(type) {
-      var items = grouped[type].map(function(angle) {
-        return '<li><span class="angle-meta-label">' + esc(contextTag(config, angle.contextCode)) + '</span><br>' +
-          '<span class="angle-meta-text">' + esc(angleTitle(angle)) + '</span></li>';
-      }).join('');
-
-      return '<div class="angle-meta-card">' +
-        '<div class="angle-meta-label">' + esc(getReadingLabel(type)) + '</div>' +
-        '<ul style="list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:8px;">' + items + '</ul>' +
+    var items = complementaries.map(function(angle) {
+      var profiles = (angle.primaryProfiles || []).join(', ');
+      return '<div style="padding:16px 0;border-top:1px solid var(--line);">' +
+        '<div class="angle-meta-label">' + esc(getReadingLabel(angle.typeLecture)) + ' · ' + esc(contextTag(config, angle.contextCode)) + '</div>' +
+        '<div class="angle-meta-text" style="font-family:var(--font-display);font-size:1rem;line-height:1.35;color:var(--ink);margin-top:6px;">' + esc(angleTitle(angle)) + '</div>' +
+        (profiles ? '<div class="angle-meta-text" style="margin-top:8px;"><strong>Acteurs pressentis :</strong> Vous, ' + esc(profiles) + '</div>' : '') +
       '</div>';
     }).join('');
 
-    return '<div class="angle-meta" style="margin-top:20px;">' +
-      '<div class="angle-meta-card" style="grid-column:1/-1;background:#fff;">' +
+    return '<details class="angle-complementary-details" style="margin-top:26px;border:1px solid var(--line);background:#fff;padding:18px 20px;">' +
+      '<summary style="cursor:pointer;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);">Voir les lectures complémentaires prévues dans cette conversation</summary>' +
+      '<div style="margin-top:18px;">' +
         '<div class="angle-meta-label">Lectures complémentaires prévues dans cette conversation</div>' +
-        '<div class="angle-meta-text">Ces lectures sont indiquées pour situer la composition éditoriale. Elles ne sont pas développées ici : la page reste centrée sur la lecture cible.</div>' +
+        '<p class="angle-meta-text" style="margin-top:8px;max-width:760px;">Ces lectures sont indiquées pour situer la composition éditoriale.</p>' +
+        items +
       '</div>' +
-      blocks +
-    '</div>';
+    '</details>';
   }
 
   function renderLongDetails(angle) {
     var long = angle.formatLongIntervenant || {};
     var dimensions = long.dimensions || [];
-    if (!long.chapeau && !dimensions.length && !long.momentBascule && !long.tensionCentrale && !long.securisation) return '';
 
-    var dimsHtml = dimensions.length ? '<div class="angle-meta" style="grid-template-columns:repeat(2,1fr);">' + dimensions.map(function(dim) {
+    var activationHtml = angle.questionActivation ? '<p class="finance-angle-desc" style="max-width:760px;margin-top:18px;">' + esc(angle.questionActivation) + '</p>' : '';
+    var chapeauHtml = long.chapeau ? '<p class="finance-angle-desc" style="max-width:760px;margin-top:18px;">' + esc(long.chapeau) + '</p>' : (angle.introMecanisme ? '<p class="finance-angle-desc" style="max-width:760px;margin-top:18px;">' + esc(angle.introMecanisme) + '</p>' : '');
+
+    var pointTensionHtml = '<div class="angle-meta" style="margin-top:22px;">' +
+      '<div class="angle-meta-card"><div class="angle-meta-label">Point de bascule</div><div class="angle-meta-text">' + esc(angle.pointBascule || '') + '</div></div>' +
+      '<div class="angle-meta-card"><div class="angle-meta-label">Tension / arbitrage</div><div class="angle-meta-text">' + esc(angle.tensionArbitrage || '') + '</div></div>' +
+    '</div>';
+
+    var dimsHtml = dimensions.length ? '<div class="angle-meta" style="grid-template-columns:repeat(2,1fr);margin-top:18px;">' + dimensions.map(function(dim) {
       return '<div class="angle-meta-card"><div class="angle-meta-label">' + esc(dim.title) + '</div><div class="angle-meta-text">' + esc(dim.text) + '</div></div>';
     }).join('') + '</div>' : '';
 
-    return '<details class="angle-long-details" style="margin-top:20px;border:1px solid var(--line);background:#faf8f5;padding:16px 18px;">' +
-      '<summary style="cursor:pointer;font-family:var(--font-mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);">Voir la fiche intervenant détaillée</summary>' +
-      (long.chapeau ? '<p class="finance-angle-desc" style="margin-top:16px;max-width:760px;">' + esc(long.chapeau) + '</p>' : '') +
+    var finalHtml = (long.momentBascule || long.tensionCentrale) ? '<div class="angle-meta" style="margin-top:18px;">' +
+      '<div class="angle-meta-card"><div class="angle-meta-label">Moment de bascule</div><div class="angle-meta-text">' + esc(long.momentBascule || angle.pointBascule || '') + '</div></div>' +
+      '<div class="angle-meta-card"><div class="angle-meta-label">Tension centrale</div><div class="angle-meta-text">' + esc(long.tensionCentrale || angle.tensionArbitrage || '') + '</div></div>' +
+    '</div>' : '';
+
+    return '<div class="angle-long-details" style="margin-top:0;">' +
+      activationHtml +
+      chapeauHtml +
+      '<div class="angle-meta-label" style="margin-top:24px;">Fiche intervenant détaillée</div>' +
+      pointTensionHtml +
       dimsHtml +
-      (long.momentBascule || long.tensionCentrale ? '<div class="angle-meta" style="margin-top:18px;">' +
-        '<div class="angle-meta-card"><div class="angle-meta-label">Moment de bascule</div><div class="angle-meta-text">' + esc(long.momentBascule || angle.pointBascule || '') + '</div></div>' +
-        '<div class="angle-meta-card"><div class="angle-meta-label">Tension centrale</div><div class="angle-meta-text">' + esc(long.tensionCentrale || angle.tensionArbitrage || '') + '</div></div>' +
-      '</div>' : '') +
+      finalHtml +
       (long.securisation ? '<div class="panel" style="margin-top:18px;"><p>' + esc(long.securisation) + '</p></div>' : '') +
-    '</details>';
+    '</div>';
   }
 
   function renderAnglePanel(item, index, config, reading) {
@@ -1733,23 +1741,19 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
     var conversation = item.conversation || { code: angle.conversationCode, title: angle.conversationCode };
     var context = item.context || { label: angle.contextCode };
     var active = index === 0 ? ' is-active' : '';
-    var panelId = 'angle-' + safeId(angle.crmCode);
+    var panelId = 'angle-' + safeId(angle.crmCode || String(index));
+    var cnum = String(conversation.code || 'C1').replace('C','');
+    var profiles = (angle.primaryProfiles || []).join(', ');
 
     return '<div class="conv-panel' + active + '" id="' + panelId + '">' +
-      '<div class="conv-panel-header" style="border-top:3px solid var(--c' + esc((conversation.code || 'C1').replace('C','')) + ');">' +
-        '<div class="conv-panel-num">' + esc(reading.label) + ' · ' + esc(context.label) + ' · ' + esc(angle.crmCode) + '</div>' +
-        '<h3 class="conv-panel-title">' + esc(angleTitle(angle)) + '</h3>' +
-        '<p class="conv-panel-desc">' + esc(conversation.landingTitle || conversation.title || '') + '</p>' +
+      '<div class="conv-panel-header" style="border-top:3px solid var(--c' + esc(cnum) + ');">' +
+        '<h3 class="conv-panel-title">' + esc(conversation.landingTitle || conversation.title || '') + '</h3>' +
+        '<p class="conv-panel-desc">' + esc(context.label) + ' · ' + esc(reading.label) + '</p>' +
       '</div>' +
       '<div class="finance-angle">' +
-        '<div class="finance-angle-label">Angle cible de la page · fiche détaillée</div>' +
-        '<div class="finance-angle-q">' + esc(angle.questionPublique || angle.questionEditoriale || '') + '</div>' +
-        '<p class="finance-angle-desc">' + esc(angle.questionActivation || angle.introMecanisme || '') + '</p>' +
-        '<div class="angle-meta">' +
-          '<div class="angle-meta-card"><div class="angle-meta-label">Point de bascule</div><div class="angle-meta-text">' + esc(angle.pointBascule || '') + '</div></div>' +
-          '<div class="angle-meta-card"><div class="angle-meta-label">Tension / arbitrage</div><div class="angle-meta-text">' + esc(angle.tensionArbitrage || '') + '</div></div>' +
-        '</div>' +
-        '<div class="angle-chips">' + (angle.primaryProfiles || []).map(function(profile) { return '<span>' + esc(profile) + '</span>'; }).join('') + '</div>' +
+        '<div class="finance-angle-label">Angle de la lecture</div>' +
+        '<div class="finance-angle-q">' + esc(angleTitle(angle)) + '</div>' +
+        (profiles ? '<p class="angle-meta-text" style="margin-top:12px;"><strong>Acteurs pressentis :</strong> Vous, ' + esc(profiles) + '</p>' : '') +
         renderLongDetails(angle) +
         renderComplementaryReadings(config, angle.conversationCode, config.readingType) +
       '</div>' +
@@ -1761,7 +1765,7 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
     var conversation = item.conversation || { code: angle.conversationCode, title: angle.conversationCode };
     var context = item.context || { label: angle.contextCode };
     var active = index === 0 ? ' is-active' : '';
-    var panelId = 'angle-' + safeId(angle.crmCode);
+    var panelId = 'angle-' + safeId(angle.crmCode || String(index));
     var cnum = String(conversation.code || 'C1').replace('C','');
 
     return '<button class="conv-nav-item' + active + '" data-conv="' + esc(panelId) + '" aria-selected="' + (index === 0 ? 'true' : 'false') + '">' +
@@ -1769,7 +1773,7 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
       '<div class="conv-nav-body">' +
         '<div class="conv-nav-num">' + esc(conversation.code) + ' · ' + esc(context.label) + '</div>' +
         '<div class="conv-nav-title">' + esc(angleTitle(angle)) + '</div>' +
-        '<div class="conv-nav-tags"><span>' + esc(angle.crmCode) + '</span></div>' +
+        '<div class="conv-nav-tags"><span>' + esc(getReadingShort(angle.typeLecture)) + '</span></div>' +
       '</div>' +
     '</button>';
   }
