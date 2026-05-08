@@ -2022,7 +2022,89 @@ body.page-conversations #voir-aussi-les-positions {
     linear-gradient(180deg, rgba(17,17,17,.92), rgba(17,17,17,.96)),
     url("../../images/conversations/positions.jpg") center/cover no-repeat !important;
 }
+/* =========================================================
+   PAGE À PROPOS — IMAGES / OVERLAYS
+========================================================= */
 
+body.page-a-propos #constat .page3-split-visual {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.70), rgba(17,17,17,.30)),
+    url("../../images/a-propos/constat-a-propos.jpg") center/cover no-repeat;
+}
+
+body.page-a-propos #pourquoi-en-plateau {
+  background:
+    linear-gradient(180deg, rgba(17,17,17,.92), rgba(17,17,17,.96)),
+    url("../../images/a-propos/pourquoi-en-plateau-telescope.jpg") center/cover no-repeat;
+}
+
+body.page-a-propos .page3-visual-a-propos-cycles {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.70), rgba(17,17,17,.30)),
+    url("../../images/conversations/cycle-logement.jpg") center/cover no-repeat;
+}
+
+body.page-a-propos #positionnement {
+  background:
+    linear-gradient(180deg, rgba(17,17,17,.92), rgba(17,17,17,.96)),
+    url("../../images/a-propos/ovni-ni-agence.jpg") center/cover no-repeat;
+}
+
+body.page-a-propos #portage .page3-split-visual {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.70), rgba(17,17,17,.30)),
+    url("../../images/a-propos/hocine-reguida.jpg") center/cover no-repeat;
+}
+
+
+/* =========================================================
+   PAGE POSITIONS — IMAGES / OVERLAYS
+========================================================= */
+
+body.page-positions #hero-positions-hub {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.94) 0%, rgba(17,17,17,.80) 48%, rgba(17,17,17,.62) 100%),
+    url("../../images/positions/hero.jpg") center/cover no-repeat;
+}
+
+body.page-positions #point-de-depart-positions .page3-split-visual {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.72), rgba(17,17,17,.32)),
+    url("../../images/positions/pivot-point-depart.jpg") center/cover no-repeat;
+}
+
+body.page-positions #cycle-logement-positions-hub {
+  background:
+    linear-gradient(180deg, rgba(17,17,17,.92), rgba(17,17,17,.96)),
+    url("../../images/positions/urbanisation-cycle-logement.jpg") center/cover no-repeat;
+}
+
+body.page-positions #cycle-industrie-positions-hub .page3-split-visual {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.70), rgba(17,17,17,.30)),
+    url("../../images/positions/cycle_industrie.jpg") center/cover no-repeat;
+}
+
+body.page-positions #ce-que-cela-rend-visible {
+  background:
+    linear-gradient(180deg, rgba(17,17,17,.92), rgba(17,17,17,.96)),
+    url("../../images/positions/visibilite.jpg") center/cover no-repeat;
+}
+
+body.page-positions #voir-aussi-les-conversations::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../../images/positions/bibliotheque-conversations.jpg") center/cover no-repeat;
+  opacity: .06;
+  filter: grayscale(100%) contrast(112%) brightness(.95);
+  pointer-events: none;
+}
+
+body.page-positions #voir-aussi-les-conversations .container {
+  position: relative;
+  z-index: 2;
+}
 
 
 
