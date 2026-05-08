@@ -1,7 +1,7 @@
-/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages */
+/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V13 */
 
 window.EN_PLATEAU_EDITORIAL_DATA = {
-  "version": "2026-05-08-v12-gabarit-unique-strategie-finance-juridique",
+  "version": "2026-05-08-v13-complementaires-contextuels-complets",
   "status": "test",
   "sourceDocument": "programme_editorial_industrie.docx",
   "scope": {
@@ -25,7 +25,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
       "formatLongIntervenant"
     ],
     "displayRule": "Les pages publiques n'affichent pas les codes CRM internes. La colonne gauche et le titre principal de l'angle utilisent formatCourt.titrePublicCourt.",
-    "complementaryRule": "Les lectures complémentaires affichées sont limitées à la même conversation et au même contexte, en excluant la lecture cible."
+    "complementaryRule": "Les lectures complémentaires sont verrouillées par angle : même conversation, même contexte, lecture différente, maximum trois lectures complémentaires pertinentes. Le renderer lit complementaryCodes en priorité et n'infère plus depuis une conversation entière."
   },
   "readingTypes": {
     "STRATEGIQUE": {
@@ -50,10 +50,55 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
       "code": "JURIDIQUE",
       "label": "Lecture juridique / réglementaire",
       "slug": "juridique",
-      "shortLabel": "Juridique",
+      "shortLabel": "Juridique / réglementaire",
       "landingSlug": "industrie/juridique",
       "calSource": "lp-industrie-juridique",
       "positioning": "Éclairer les moments où le cadre juridique, réglementaire, normatif ou de responsabilité devient un facteur de bascule industrielle."
+    },
+    "OPERATIONNELLE": {
+      "code": "OPERATIONNELLE",
+      "label": "Lecture opérationnelle",
+      "slug": "operations",
+      "shortLabel": "Opérationnelle",
+      "landingSlug": "industrie/operations",
+      "calSource": "lp-industrie-operations",
+      "positioning": "Éclairer les arbitrages de capacité, qualité, flux, maintenance et organisation qui rendent une trajectoire industrielle tenable ou fragile."
+    },
+    "TECHNOLOGIQUE": {
+      "code": "TECHNOLOGIQUE",
+      "label": "Lecture technologique / systèmes",
+      "slug": "technologie",
+      "shortLabel": "Technologique / systèmes",
+      "landingSlug": "industrie/technologie",
+      "calSource": "lp-industrie-technologie",
+      "positioning": "Éclairer les seuils où l’architecture de l’outil, des systèmes ou des interfaces limite la trajectoire industrielle."
+    },
+    "RH_COMPETENCES": {
+      "code": "RH_COMPETENCES",
+      "label": "Lecture RH / compétences",
+      "slug": "rh-competences",
+      "shortLabel": "RH / compétences",
+      "landingSlug": "industrie/rh-competences",
+      "calSource": "lp-industrie-rh",
+      "positioning": "Éclairer les contraintes de recrutement, compétences, organisation du travail et temps d’adaptation qui conditionnent la trajectoire industrielle."
+    },
+    "TERRITORIALE": {
+      "code": "TERRITORIALE",
+      "label": "Lecture territoriale",
+      "slug": "territoires",
+      "shortLabel": "Territoriale",
+      "landingSlug": "industrie/territoires",
+      "calSource": "lp-industrie-territoires",
+      "positioning": "Éclairer les conditions territoriales qui rendent une trajectoire industrielle tenable, fragile ou impossible."
+    },
+    "ENERGIE_RESSOURCES": {
+      "code": "ENERGIE_RESSOURCES",
+      "label": "Lecture énergie / ressources / décarbonation",
+      "slug": "energie-ressources",
+      "shortLabel": "Énergie / ressources",
+      "landingSlug": "industrie/energie-ressources",
+      "calSource": "lp-industrie-energie",
+      "positioning": "Éclairer les seuils où énergie, eau, ressources, utilités ou carbone changent la nature de la décision industrielle."
     }
   },
   "cycles": [
@@ -180,7 +225,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "À partir de quand chaque volume supplémentaire dégrade-t-il plus l'organisation qu'il ne renforce l'activité ?",
             "tensionCentrale": "Croître vite sans dégrader la marge, la qualité, les délais ni l'équilibre organisationnel.",
             "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C1-GS-A02",
+            "IND-C1-GS-A03",
+            "IND-C1-GS-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A01",
@@ -249,7 +300,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "À partir de quand le modèle existant devient-il irréversible dans ses fragilités ?",
             "tensionCentrale": "Corriger l'existant ou reconnaître que le modèle doit être repensé.",
             "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C1-RC-A03",
+            "IND-C1-RC-A02",
+            "IND-C1-RC-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A05",
@@ -318,7 +375,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "À partir de quand un fournisseur ou un flux logistique devient-il un point de blocage de la croissance ?",
             "tensionCentrale": "Croître grâce à des dépendances efficaces sans devenir prisonnier de leur fragilité.",
             "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C2-GS-A03",
+            "IND-C2-GS-A04",
+            "IND-C2-GS-A02"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A06",
@@ -387,7 +450,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "À partir de quand l'ajustement fragilise-t-il la position future dans la chaîne de valeur ?",
             "tensionCentrale": "S'adapter sans perdre ce qui fonde la place stratégique dans la filière.",
             "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C2-AC-A05",
+            "IND-C2-AC-J02",
+            "IND-C2-AC-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A05",
@@ -456,7 +525,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "Quand une dépendance devient-elle inacceptable pour la continuité industrielle ?",
             "tensionCentrale": "Conserver l'efficacité d'un modèle globalisé ou reconstruire une résilience plus coûteuse mais plus maîtrisable.",
             "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C2-RC-A03",
+            "IND-C2-RC-A04",
+            "IND-C2-RC-A02"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A12",
@@ -525,7 +600,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "À partir de quand la décarbonation impose-t-elle de repenser l'outil plutôt que de l'optimiser ?",
             "tensionCentrale": "Croître industriellement tout en transformant réellement les conditions carbone de la production.",
             "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C3-GS-A02",
+            "IND-C3-GS-A01",
+            "IND-C3-GS-A03"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A12",
@@ -594,7 +675,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "À partir de quand la contrainte carbone redéfinit-elle les conditions de compétitivité ?",
             "tensionCentrale": "Rester compétitif aujourd'hui tout en investissant dans une trajectoire carbone soutenable.",
             "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C3-AC-A09",
+            "IND-C3-AC-A02",
+            "IND-C3-AC-J03"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A15",
@@ -663,7 +750,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "À partir de quand la croissance fragilise-t-elle la capacité à défendre ses marges ?",
             "tensionCentrale": "Remplir le carnet sans accepter une croissance qui consomme la marge et la capacité industrielle.",
             "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C4-GS-A02",
+            "IND-C4-GS-A01",
+            "IND-C4-GS-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A15",
@@ -732,7 +825,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "À partir de quand la pression commerciale empêche-t-elle toute adaptation viable ?",
             "tensionCentrale": "Servir les clients sans perdre la marge nécessaire pour maintenir et transformer l'outil.",
             "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C4-AC-A14",
+            "IND-C4-AC-J04",
+            "IND-C4-AC-A01"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A15",
@@ -801,7 +900,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "Quand le modèle commercial devient-il incompatible avec l'outil ou la trajectoire industrielle ?",
             "tensionCentrale": "Conserver les marchés existants ou changer de position pour préserver la viabilité industrielle.",
             "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C4-RC-A01",
+            "IND-C4-RC-A04",
+            "IND-C4-RC-A02"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A01",
@@ -870,7 +975,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "À partir de quand l'adaptation détruit-elle plus de valeur qu'elle n'en préserve ?",
             "tensionCentrale": "Maintenir l'activité aujourd'hui sans affaiblir les conditions de sa soutenabilité future.",
             "securisation": "L’échange ne suppose pas de livrer des chiffres, marges, budgets, contrats, coûts internes ou dossiers confidentiels. Il s’agit d’éclairer les mécanismes économiques qui rendent certains arbitrages industriels nécessaires."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C1-AC-A02",
+            "IND-C1-AC-J01",
+            "IND-C1-AC-A03"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A03",
@@ -939,7 +1050,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "À partir de quand la dette technologique bloque-t-elle toute adaptation crédible ?",
             "tensionCentrale": "Reporter l'investissement ou accepter une rupture technologique devenue nécessaire.",
             "securisation": "L’échange ne suppose pas de livrer des chiffres, marges, budgets, contrats, coûts internes ou dossiers confidentiels. Il s’agit d’éclairer les mécanismes économiques qui rendent certains arbitrages industriels nécessaires."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C1-RC-A01",
+            "IND-C1-RC-A02",
+            "IND-C1-RC-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A05",
@@ -1008,7 +1125,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "Quand la dépendance devient-elle financièrement ou opérationnellement intenable ?",
             "tensionCentrale": "Préserver l'efficacité d'une dépendance sans subir son coût croissant.",
             "securisation": "L’échange ne suppose pas de livrer des chiffres, marges, budgets, contrats, coûts internes ou dossiers confidentiels. Il s’agit d’éclairer les mécanismes économiques qui rendent certains arbitrages industriels nécessaires."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C2-AC-A06",
+            "IND-C2-AC-J02",
+            "IND-C2-AC-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A09",
@@ -1077,7 +1200,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "À partir de quand l'amélioration frugale ne suffit-elle plus ?",
             "tensionCentrale": "Transformer avec peu de moyens sans se limiter à des corrections insuffisantes.",
             "securisation": "L’échange ne suppose pas de livrer des chiffres, marges, budgets, contrats, coûts internes ou dossiers confidentiels. Il s’agit d’éclairer les mécanismes économiques qui rendent certains arbitrages industriels nécessaires."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C3-AC-A12",
+            "IND-C3-AC-A02",
+            "IND-C3-AC-J03"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A14",
@@ -1146,7 +1275,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "À partir de quand les coûts rendent-ils l'activité difficilement ajustable ?",
             "tensionCentrale": "Absorber les surcoûts pour préserver la compétitivité à court terme ou investir dans la transformation.",
             "securisation": "L’échange ne suppose pas de livrer des chiffres, marges, budgets, contrats, coûts internes ou dossiers confidentiels. Il s’agit d’éclairer les mécanismes économiques qui rendent certains arbitrages industriels nécessaires."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C4-AC-A15",
+            "IND-C4-AC-J04",
+            "IND-C4-AC-A01"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "J01",
@@ -1216,7 +1351,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "À partir de quand le cadre transforme-t-il une difficulté économique en point de bascule industriel ?",
             "tensionCentrale": "Sécuriser l’ajustement sans masquer le moment où le cadre impose de réarbitrer.",
             "securisation": "L’échange ne suppose pas de commenter un dossier, un contentieux, un client ou une situation identifiable. Il s’agit d’éclairer le rôle du cadre juridique, réglementaire ou normatif dans une décision industrielle."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C1-AC-A01",
+            "IND-C1-AC-A02",
+            "IND-C1-AC-A03"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "J02",
@@ -1286,7 +1427,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "À partir de quand la dépendance devient-elle juridiquement structurante pour la trajectoire industrielle ?",
             "tensionCentrale": "S’adapter dans la filière sans laisser le cadre contractuel ou réglementaire fragiliser la position future.",
             "securisation": "L’échange ne suppose pas de commenter un dossier, un contentieux, un client ou une situation identifiable. Il s’agit d’éclairer le rôle du cadre juridique, réglementaire ou normatif dans une décision industrielle."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C2-AC-A05",
+            "IND-C2-AC-A06",
+            "IND-C2-AC-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "J03",
@@ -1356,7 +1503,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "À partir de quand le cadre juridique ou réglementaire modifie-t-il le chemin de transformation de l’outil ?",
             "tensionCentrale": "Transformer l’outil sans sous-estimer le cadre qui rend la décision possible, risquée ou impossible.",
             "securisation": "L’échange ne suppose pas de commenter un dossier, un contentieux, un client ou une situation identifiable. Il s’agit d’éclairer le rôle du cadre juridique, réglementaire ou normatif dans une décision industrielle."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C3-AC-A09",
+            "IND-C3-AC-A12",
+            "IND-C3-AC-A02"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "J04",
@@ -1426,7 +1579,819 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "momentBascule": "À partir de quand le cadre environnemental ou réglementaire rend-il la trajectoire difficilement ajustable ?",
             "tensionCentrale": "Préserver l’activité sans ignorer le moment où le cadre environnemental ou réglementaire impose de transformer.",
             "securisation": "L’échange ne suppose pas de commenter un dossier, un contentieux, un client ou une situation identifiable. Il s’agit d’éclairer le rôle du cadre juridique, réglementaire ou normatif dans une décision industrielle."
-          }
+          },
+          "complementaryCodes": [
+            "IND-C4-AC-A14",
+            "IND-C4-AC-A15",
+            "IND-C4-AC-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A02",
+          "crmCode": "IND-C1-GS-A02",
+          "programmeCode": "IND-C1-CST-02",
+          "conversationCode": "C1",
+          "contextCode": "GS",
+          "typeLecture": "OPERATIONNELLE",
+          "questionEditoriale": "Quels arbitrages de cadence, de stocks, de maintenance ou de qualité permettent d'absorber la demande tout en mettant sous tension l'organisation industrielle à moyen terme ?",
+          "questionPublique": "Quels arbitrages de cadence, de stocks, de maintenance ou de qualité permettent d'absorber la demande tout en mettant sous tension l'organisation industrielle à moyen terme ?",
+          "questionActivation": "Lorsque la demande augmente, l'entreprise peut absorber une partie de la croissance en jouant sur les cadences, les stocks, les plannings, la maintenance ou les contrôles qualité. Ces leviers permettent de répondre rapidement au marché, mais chacun porte un coût différé.",
+          "introMecanisme": "Lorsque la demande augmente, l'entreprise peut absorber une partie de la croissance en jouant sur les cadences, les stocks, les plannings, la maintenance ou les contrôles qualité. Ces leviers permettent de répondre rapidement au marché, mais chacun porte un coût différé.",
+          "formatCourt": {
+            "titrePublicCourt": "Quels arbitrages de cadence, de stocks, de maintenance ou de qualité permettent d'absorber la demande tout en mettant sous tension l'organisation industrielle à moyen terme ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Direction industrielle",
+            "Direction des opérations",
+            "Excellence opérationnelle",
+            "Supply chain",
+            "Performance industrielle"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A03",
+          "crmCode": "IND-C1-GS-A03",
+          "programmeCode": "IND-C1-CST-03",
+          "conversationCode": "C1",
+          "contextCode": "GS",
+          "typeLecture": "TECHNOLOGIQUE",
+          "questionEditoriale": "À partir de quand l'architecture de l'outil limite-t-elle la capacité à franchir un cap de volume, de qualité ou de fiabilité ?",
+          "questionPublique": "À partir de quand l'architecture de l'outil limite-t-elle la capacité à franchir un cap de volume, de qualité ou de fiabilité ?",
+          "questionActivation": "Un outil industriel peut accompagner une croissance pendant un certain temps. Mais l'architecture initiale finit parfois par imposer ses limites : organisation des lignes, capacité des machines, interfaces numériques, contraintes de maintenance ou standards de qualité.",
+          "introMecanisme": "Un outil industriel peut accompagner une croissance pendant un certain temps. Mais l'architecture initiale finit parfois par imposer ses limites : organisation des lignes, capacité des machines, interfaces numériques, contraintes de maintenance ou standards de qualité.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand l'architecture de l'outil limite-t-elle la capacité à franchir un cap de volume, de qualité ou de fiabilité ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Architecture systèmes industriels",
+            "Automatisation industrielle",
+            "DSI industriel",
+            "Transformation digitale industrielle",
+            "Maintenance / outil"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A04",
+          "crmCode": "IND-C1-GS-A04",
+          "programmeCode": "IND-C1-CST-04",
+          "conversationCode": "C1",
+          "contextCode": "GS",
+          "typeLecture": "RH_COMPETENCES",
+          "questionEditoriale": "À partir de quand le délai nécessaire pour recruter, équiper, industrialiser ou sécuriser la montée en capacité devient-il incompatible avec le rythme de la demande ?",
+          "questionPublique": "À partir de quand le délai nécessaire pour recruter, équiper, industrialiser ou sécuriser la montée en capacité devient-il incompatible avec le rythme de la demande ?",
+          "questionActivation": "La croissance industrielle dépend aussi du temps nécessaire pour recruter, former, équiper, qualifier, industrialiser et sécuriser la montée en capacité. Or le marché peut accélérer plus vite que l'organisation ne sait se transformer.",
+          "introMecanisme": "La croissance industrielle dépend aussi du temps nécessaire pour recruter, former, équiper, qualifier, industrialiser et sécuriser la montée en capacité. Or le marché peut accélérer plus vite que l'organisation ne sait se transformer.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand le délai nécessaire pour recruter, équiper, industrialiser ou sécuriser la montée en capacité devient-il incompatible avec le rythme de la demande ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "DRH industriel",
+            "Responsable compétences",
+            "Formation industrielle",
+            "Organisation du travail",
+            "Dialogue social"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A02",
+          "crmCode": "IND-C1-AC-A02",
+          "programmeCode": "IND-C1-ASC-02",
+          "conversationCode": "C1",
+          "contextCode": "AC",
+          "typeLecture": "OPERATIONNELLE",
+          "questionEditoriale": "Quels arbitrages permettent de maintenir l'activité lorsque les marges de manœuvre sur volumes, qualité, maintenance ou périmètre se resserrent ?",
+          "questionPublique": "Quels arbitrages permettent de maintenir l'activité lorsque les marges de manœuvre sur volumes, qualité, maintenance ou périmètre se resserrent ?",
+          "questionActivation": "Dans un contexte contraint, maintenir l'activité suppose souvent de choisir entre des options imparfaites. Réduire certains volumes peut préserver la marge mais fragiliser la relation client. Reporter la maintenance peut libérer de la capacité mais accroître le risque industriel.",
+          "introMecanisme": "Dans un contexte contraint, maintenir l'activité suppose souvent de choisir entre des options imparfaites. Réduire certains volumes peut préserver la marge mais fragiliser la relation client. Reporter la maintenance peut libérer de la capacité mais accroître le risque industriel.",
+          "formatCourt": {
+            "titrePublicCourt": "Quels arbitrages permettent de maintenir l'activité lorsque les marges de manœuvre sur volumes, qualité, maintenance ou périmètre se resserrent ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Direction industrielle",
+            "Direction des opérations",
+            "Excellence opérationnelle",
+            "Supply chain",
+            "Performance industrielle"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A03",
+          "crmCode": "IND-C1-AC-A03",
+          "programmeCode": "IND-C1-ASC-03",
+          "conversationCode": "C1",
+          "contextCode": "AC",
+          "typeLecture": "TECHNOLOGIQUE",
+          "questionEditoriale": "À partir de quand le vieillissement de l'outil impose-t-il des compromis de plus en plus coûteux pour maintenir la production ?",
+          "questionPublique": "À partir de quand le vieillissement de l'outil impose-t-il des compromis de plus en plus coûteux pour maintenir la production ?",
+          "questionActivation": "Un outil vieillissant peut rester productif lorsqu'il est bien entretenu. Mais en contexte de contrainte, ce vieillissement devient plus difficile à absorber : les pannes coûtent davantage, les pièces se raréfient, la maintenance prend plus de place.",
+          "introMecanisme": "Un outil vieillissant peut rester productif lorsqu'il est bien entretenu. Mais en contexte de contrainte, ce vieillissement devient plus difficile à absorber : les pannes coûtent davantage, les pièces se raréfient, la maintenance prend plus de place.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand le vieillissement de l'outil impose-t-il des compromis de plus en plus coûteux pour maintenir la production ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Architecture systèmes industriels",
+            "Automatisation industrielle",
+            "DSI industriel",
+            "Transformation digitale industrielle",
+            "Maintenance / outil"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A04",
+          "crmCode": "IND-C1-AC-A04",
+          "programmeCode": "IND-C1-ASC-04",
+          "conversationCode": "C1",
+          "contextCode": "AC",
+          "typeLecture": "RH_COMPETENCES",
+          "questionEditoriale": "À partir de quand le temps nécessaire pour adapter l'outil ou réorganiser la production dépasse-t-il la capacité réelle de l'activité à tenir ?",
+          "questionPublique": "À partir de quand le temps nécessaire pour adapter l'outil ou réorganiser la production dépasse-t-il la capacité réelle de l'activité à tenir ?",
+          "questionActivation": "S'adapter prend du temps : reconfigurer un atelier, redéployer des équipes, qualifier un nouveau process. Mais lorsque les contraintes s'intensifient, l'entreprise ne dispose pas toujours de ce temps.",
+          "introMecanisme": "S'adapter prend du temps : reconfigurer un atelier, redéployer des équipes, qualifier un nouveau process. Mais lorsque les contraintes s'intensifient, l'entreprise ne dispose pas toujours de ce temps.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand le temps nécessaire pour adapter l'outil ou réorganiser la production dépasse-t-il la capacité réelle de l'activité à tenir ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "DRH industriel",
+            "Responsable compétences",
+            "Formation industrielle",
+            "Organisation du travail",
+            "Dialogue social"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A02",
+          "crmCode": "IND-C1-RC-A02",
+          "programmeCode": "IND-C1-RSS-02",
+          "conversationCode": "C1",
+          "contextCode": "RC",
+          "typeLecture": "OPERATIONNELLE",
+          "questionEditoriale": "À partir de quand le maintien de l'activité appelle-t-il une décision de transformation plutôt qu'une simple adaptation opérationnelle ?",
+          "questionPublique": "À partir de quand le maintien de l'activité appelle-t-il une décision de transformation plutôt qu'une simple adaptation opérationnelle ?",
+          "questionActivation": "En situation de crise, continuer à produire peut donner l'impression que l'activité tient encore. Pourtant, ce maintien apparent peut masquer une perte de rationalité : coûts excessifs, efforts disproportionnés, désorganisation chronique.",
+          "introMecanisme": "En situation de crise, continuer à produire peut donner l'impression que l'activité tient encore. Pourtant, ce maintien apparent peut masquer une perte de rationalité : coûts excessifs, efforts disproportionnés, désorganisation chronique.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand le maintien de l'activité appelle-t-il une décision de transformation plutôt qu'une simple adaptation opérationnelle ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Direction industrielle",
+            "Direction des opérations",
+            "Excellence opérationnelle",
+            "Supply chain",
+            "Performance industrielle"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A04",
+          "crmCode": "IND-C1-RC-A04",
+          "programmeCode": "IND-C1-RSS-04",
+          "conversationCode": "C1",
+          "contextCode": "RC",
+          "typeLecture": "TERRITORIALE",
+          "questionEditoriale": "À partir de quand le délai requis pour redéployer, reconvertir ou refonder l'outil dépasse-t-il le temps économique, social ou financier encore disponible ?",
+          "questionPublique": "À partir de quand le délai requis pour redéployer, reconvertir ou refonder l'outil dépasse-t-il le temps économique, social ou financier encore disponible ?",
+          "questionActivation": "Réinventer un outil industriel suppose du temps : diagnostiquer, investir, reconvertir, former, négocier, sécuriser les financements et accompagner les impacts sociaux. Mais en période de crise, ce temps peut manquer.",
+          "introMecanisme": "Réinventer un outil industriel suppose du temps : diagnostiquer, investir, reconvertir, former, négocier, sécuriser les financements et accompagner les impacts sociaux. Mais en période de crise, ce temps peut manquer.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand le délai requis pour redéployer, reconvertir ou refonder l'outil dépasse-t-il le temps économique, social ou financier encore disponible ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Développement économique territorial",
+            "Collectivité / territoire industriel",
+            "Aménagement / foncier",
+            "Écosystème local",
+            "Acteur public"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A02",
+          "crmCode": "IND-C2-GS-A02",
+          "programmeCode": "IND-C2-CST-02",
+          "conversationCode": "C2",
+          "contextCode": "GS",
+          "typeLecture": "TERRITORIALE",
+          "questionEditoriale": "À partir de quand une spécialisation de filière ou de segment limite-t-elle la capacité à capter durablement la croissance ?",
+          "questionPublique": "À partir de quand une spécialisation de filière ou de segment limite-t-elle la capacité à capter durablement la croissance ?",
+          "questionActivation": "La spécialisation peut constituer un avantage puissant. Mais elle peut aussi devenir une dépendance lorsque la croissance exige de changer d'échelle, de diversifier les débouchés ou de répondre à des attentes nouvelles.",
+          "introMecanisme": "La spécialisation peut constituer un avantage puissant. Mais elle peut aussi devenir une dépendance lorsque la croissance exige de changer d'échelle, de diversifier les débouchés ou de répondre à des attentes nouvelles.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand une spécialisation de filière ou de segment limite-t-elle la capacité à capter durablement la croissance ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Développement économique territorial",
+            "Collectivité / territoire industriel",
+            "Aménagement / foncier",
+            "Écosystème local",
+            "Acteur public"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A03",
+          "crmCode": "IND-C2-GS-A03",
+          "programmeCode": "IND-C2-CST-03",
+          "conversationCode": "C2",
+          "contextCode": "GS",
+          "typeLecture": "JURIDIQUE",
+          "questionEditoriale": "À partir de quand l'ouverture commerciale, les normes ou les contraintes export deviennent-elles un facteur structurant de continuité industrielle ?",
+          "questionPublique": "À partir de quand l'ouverture commerciale, les normes ou les contraintes export deviennent-elles un facteur structurant de continuité industrielle ?",
+          "questionActivation": "La croissance industrielle passe souvent par de nouveaux marchés. Mais cette ouverture introduit aussi des règles : normes, douanes, certifications, contrôles export, contraintes géopolitiques.",
+          "introMecanisme": "La croissance industrielle passe souvent par de nouveaux marchés. Mais cette ouverture introduit aussi des règles : normes, douanes, certifications, contrôles export, contraintes géopolitiques.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand l'ouverture commerciale, les normes ou les contraintes export deviennent-elles un facteur structurant de continuité industrielle ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Avocat droit des affaires",
+            "Avocat contrats industriels",
+            "Avocat environnement / ICPE",
+            "Direction juridique",
+            "Conformité / affaires réglementaires"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A04",
+          "crmCode": "IND-C2-GS-A04",
+          "programmeCode": "IND-C2-CST-04",
+          "conversationCode": "C2",
+          "contextCode": "GS",
+          "typeLecture": "TECHNOLOGIQUE",
+          "questionEditoriale": "À partir de quand la montée en charge révèle-t-elle que l'architecture des systèmes, automatismes ou intégrations n'est plus à l'échelle de l'activité ?",
+          "questionPublique": "À partir de quand la montée en charge révèle-t-elle que l'architecture des systèmes, automatismes ou intégrations n'est plus à l'échelle de l'activité ?",
+          "questionActivation": "La croissance industrielle repose de plus en plus sur des systèmes. Tant que l'activité reste stable, une architecture imparfaite peut fonctionner. Mais lorsque les volumes augmentent, les limites apparaissent.",
+          "introMecanisme": "La croissance industrielle repose de plus en plus sur des systèmes. Tant que l'activité reste stable, une architecture imparfaite peut fonctionner. Mais lorsque les volumes augmentent, les limites apparaissent.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand la montée en charge révèle-t-elle que l'architecture des systèmes, automatismes ou intégrations n'est plus à l'échelle de l'activité ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Architecture systèmes industriels",
+            "Automatisation industrielle",
+            "DSI industriel",
+            "Transformation digitale industrielle",
+            "Maintenance / outil"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A04",
+          "crmCode": "IND-C2-AC-A04",
+          "programmeCode": "IND-C2-ASC-04",
+          "conversationCode": "C2",
+          "contextCode": "AC",
+          "typeLecture": "TECHNOLOGIQUE",
+          "questionEditoriale": "À partir de quand les interfaces entre systèmes, sites ou métiers deviennent-elles un facteur déterminant de performance et de pilotage ?",
+          "questionPublique": "À partir de quand les interfaces entre systèmes, sites ou métiers deviennent-elles un facteur déterminant de performance et de pilotage ?",
+          "questionActivation": "En contexte contraint, la performance dépend moins de la puissance de chaque outil que de la qualité des interfaces entre eux. Lorsque ces interfaces sont fragmentées, l'entreprise perd du temps, de la visibilité et de la capacité d'arbitrage.",
+          "introMecanisme": "En contexte contraint, la performance dépend moins de la puissance de chaque outil que de la qualité des interfaces entre eux. Lorsque ces interfaces sont fragmentées, l'entreprise perd du temps, de la visibilité et de la capacité d'arbitrage.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand les interfaces entre systèmes, sites ou métiers deviennent-elles un facteur déterminant de performance et de pilotage ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Architecture systèmes industriels",
+            "Automatisation industrielle",
+            "DSI industriel",
+            "Transformation digitale industrielle",
+            "Maintenance / outil"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A02",
+          "crmCode": "IND-C2-RC-A02",
+          "programmeCode": "IND-C2-RSS-02",
+          "conversationCode": "C2",
+          "contextCode": "RC",
+          "typeLecture": "TERRITORIALE",
+          "questionEditoriale": "À partir de quand la dépendance à une filière, une spécialisation ou un segment impose-t-elle un repositionnement plutôt qu'une adaptation partielle ?",
+          "questionPublique": "À partir de quand la dépendance à une filière, une spécialisation ou un segment impose-t-elle un repositionnement plutôt qu'une adaptation partielle ?",
+          "questionActivation": "Certaines entreprises tiennent leur trajectoire d'une spécialisation forte. Mais lorsque cette base se fragilise, il faut envisager un repositionnement plus profond : nouveaux marchés, nouveaux partenaires, nouvelle place dans l'écosystème.",
+          "introMecanisme": "Certaines entreprises tiennent leur trajectoire d'une spécialisation forte. Mais lorsque cette base se fragilise, il faut envisager un repositionnement plus profond : nouveaux marchés, nouveaux partenaires, nouvelle place dans l'écosystème.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand la dépendance à une filière, une spécialisation ou un segment impose-t-elle un repositionnement plutôt qu'une adaptation partielle ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Développement économique territorial",
+            "Collectivité / territoire industriel",
+            "Aménagement / foncier",
+            "Écosystème local",
+            "Acteur public"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A03",
+          "crmCode": "IND-C2-RC-A03",
+          "programmeCode": "IND-C2-RSS-03",
+          "conversationCode": "C2",
+          "contextCode": "RC",
+          "typeLecture": "JURIDIQUE",
+          "questionEditoriale": "À partir de quand un changement de cadre géopolitique ou réglementaire oblige-t-il à réinterroger le modèle industriel ou la géographie productive ?",
+          "questionPublique": "À partir de quand un changement de cadre géopolitique ou réglementaire oblige-t-il à réinterroger le modèle industriel ou la géographie productive ?",
+          "questionActivation": "Un modèle industriel repose sur une certaine stabilité du cadre dans lequel il opère. Lorsqu'un choc géopolitique ou réglementaire modifie ce cadre, c'est parfois la géographie de la production qui doit être repensée.",
+          "introMecanisme": "Un modèle industriel repose sur une certaine stabilité du cadre dans lequel il opère. Lorsqu'un choc géopolitique ou réglementaire modifie ce cadre, c'est parfois la géographie de la production qui doit être repensée.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand un changement de cadre géopolitique ou réglementaire oblige-t-il à réinterroger le modèle industriel ou la géographie productive ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Avocat droit des affaires",
+            "Avocat contrats industriels",
+            "Avocat environnement / ICPE",
+            "Direction juridique",
+            "Conformité / affaires réglementaires"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A04",
+          "crmCode": "IND-C2-RC-A04",
+          "programmeCode": "IND-C2-RSS-04",
+          "conversationCode": "C2",
+          "contextCode": "RC",
+          "typeLecture": "TECHNOLOGIQUE",
+          "questionEditoriale": "À partir de quand l'architecture des systèmes oblige-t-elle à arbitrer entre adaptation progressive et refonte plus structurante ?",
+          "questionPublique": "À partir de quand l'architecture des systèmes oblige-t-elle à arbitrer entre adaptation progressive et refonte plus structurante ?",
+          "questionActivation": "Quand l'architecture des systèmes devient trop fragmentée, les adaptations par petites touches peuvent finir par complexifier encore davantage le système. En période de crise, la question devient plus radicale.",
+          "introMecanisme": "Quand l'architecture des systèmes devient trop fragmentée, les adaptations par petites touches peuvent finir par complexifier encore davantage le système. En période de crise, la question devient plus radicale.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand l'architecture des systèmes oblige-t-elle à arbitrer entre adaptation progressive et refonte plus structurante ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Architecture systèmes industriels",
+            "Automatisation industrielle",
+            "DSI industriel",
+            "Transformation digitale industrielle",
+            "Maintenance / outil"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A01",
+          "crmCode": "IND-C3-GS-A01",
+          "programmeCode": "IND-C3-CST-01",
+          "conversationCode": "C3",
+          "contextCode": "GS",
+          "typeLecture": "TECHNOLOGIQUE",
+          "questionEditoriale": "Qu'est-ce qui permet réellement de franchir un cap de volume ou de qualité : automatiser, digitaliser davantage ou redessiner le process ?",
+          "questionPublique": "Qu'est-ce qui permet réellement de franchir un cap de volume ou de qualité : automatiser, digitaliser davantage ou redessiner le process ?",
+          "questionActivation": "Face à la croissance, l'investissement technologique apparaît souvent comme une réponse naturelle. Mais la technologie ne règle pas toujours les limites profondes d'un outil industriel. Dans certains cas, le vrai sujet réside dans le process lui-même.",
+          "introMecanisme": "Face à la croissance, l'investissement technologique apparaît souvent comme une réponse naturelle. Mais la technologie ne règle pas toujours les limites profondes d'un outil industriel. Dans certains cas, le vrai sujet réside dans le process lui-même.",
+          "formatCourt": {
+            "titrePublicCourt": "Qu'est-ce qui permet réellement de franchir un cap de volume ou de qualité : automatiser, digitaliser davantage ou redessiner le process ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Architecture systèmes industriels",
+            "Automatisation industrielle",
+            "DSI industriel",
+            "Transformation digitale industrielle",
+            "Maintenance / outil"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A02",
+          "crmCode": "IND-C3-GS-A02",
+          "programmeCode": "IND-C3-CST-02",
+          "conversationCode": "C3",
+          "contextCode": "GS",
+          "typeLecture": "OPERATIONNELLE",
+          "questionEditoriale": "À partir de quand la vraie limite n'est-elle plus technologique, mais opératoire : coordination des flux, séquencement, pilotage et interfaces ?",
+          "questionPublique": "À partir de quand la vraie limite n'est-elle plus technologique, mais opératoire : coordination des flux, séquencement, pilotage et interfaces ?",
+          "questionActivation": "Dans une phase de croissance, on cherche souvent la limite du côté des machines. Pourtant, le blocage peut venir d'ailleurs : coordination des flux, séquencement, pilotage des priorités, interfaces entre métiers.",
+          "introMecanisme": "Dans une phase de croissance, on cherche souvent la limite du côté des machines. Pourtant, le blocage peut venir d'ailleurs : coordination des flux, séquencement, pilotage des priorités, interfaces entre métiers.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand la vraie limite n'est-elle plus technologique, mais opératoire : coordination des flux, séquencement, pilotage et interfaces ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Direction industrielle",
+            "Direction des opérations",
+            "Excellence opérationnelle",
+            "Supply chain",
+            "Performance industrielle"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A03",
+          "crmCode": "IND-C3-GS-A03",
+          "programmeCode": "IND-C3-CST-03",
+          "conversationCode": "C3",
+          "contextCode": "GS",
+          "typeLecture": "RH_COMPETENCES",
+          "questionEditoriale": "À partir de quand la montée en capacité bute-t-elle moins sur la machine que sur la qualité, la sécurité, la formation et la maîtrise des gestes critiques ?",
+          "questionPublique": "À partir de quand la montée en capacité bute-t-elle moins sur la machine que sur la qualité, la sécurité, la formation et la maîtrise des gestes critiques ?",
+          "questionActivation": "Produire davantage ne consiste pas seulement à augmenter les cadences. Il faut préserver la qualité, maîtriser les gestes critiques, former les équipes, sécuriser les opérations et garantir la conformité.",
+          "introMecanisme": "Produire davantage ne consiste pas seulement à augmenter les cadences. Il faut préserver la qualité, maîtriser les gestes critiques, former les équipes, sécuriser les opérations et garantir la conformité.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand la montée en capacité bute-t-elle moins sur la machine que sur la qualité, la sécurité, la formation et la maîtrise des gestes critiques ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "DRH industriel",
+            "Responsable compétences",
+            "Formation industrielle",
+            "Organisation du travail",
+            "Dialogue social"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A02",
+          "crmCode": "IND-C3-AC-A02",
+          "programmeCode": "IND-C3-ASC-02",
+          "conversationCode": "C3",
+          "contextCode": "AC",
+          "typeLecture": "OPERATIONNELLE",
+          "questionEditoriale": "À partir de quand de nouveaux outils ne compensent-ils plus une architecture opératoire devenue trop rigide, fragmentée ou lente ?",
+          "questionPublique": "À partir de quand de nouveaux outils ne compensent-ils plus une architecture opératoire devenue trop rigide, fragmentée ou lente ?",
+          "questionActivation": "Ajouter un nouvel outil peut donner l'impression de résoudre une difficulté. Mais lorsque l'architecture opératoire est trop rigide ou fragmentée, ces ajouts peuvent simplement déplacer la complexité.",
+          "introMecanisme": "Ajouter un nouvel outil peut donner l'impression de résoudre une difficulté. Mais lorsque l'architecture opératoire est trop rigide ou fragmentée, ces ajouts peuvent simplement déplacer la complexité.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand de nouveaux outils ne compensent-ils plus une architecture opératoire devenue trop rigide, fragmentée ou lente ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Direction industrielle",
+            "Direction des opérations",
+            "Excellence opérationnelle",
+            "Supply chain",
+            "Performance industrielle"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A01",
+          "crmCode": "IND-C3-RC-A01",
+          "programmeCode": "IND-C3-RSS-01",
+          "conversationCode": "C3",
+          "contextCode": "RC",
+          "typeLecture": "TECHNOLOGIQUE",
+          "questionEditoriale": "À partir de quand la transformation de l'outil ne passe-t-elle plus par l'amélioration incrémentale, mais par une rupture de process ou de système de production ?",
+          "questionPublique": "À partir de quand la transformation de l'outil ne passe-t-elle plus par l'amélioration incrémentale, mais par une rupture de process ou de système de production ?",
+          "questionActivation": "L'amélioration incrémentale permet souvent de prolonger la performance d'un outil. Mais certaines crises révèlent que l'outil doit changer de logique. Les process, les flux, les équipements ou même le modèle de production peuvent devoir être repensés.",
+          "introMecanisme": "L'amélioration incrémentale permet souvent de prolonger la performance d'un outil. Mais certaines crises révèlent que l'outil doit changer de logique. Les process, les flux, les équipements ou même le modèle de production peuvent devoir être repensés.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand la transformation de l'outil ne passe-t-elle plus par l'amélioration incrémentale, mais par une rupture de process ou de système de production ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Architecture systèmes industriels",
+            "Automatisation industrielle",
+            "DSI industriel",
+            "Transformation digitale industrielle",
+            "Maintenance / outil"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A02",
+          "crmCode": "IND-C3-RC-A02",
+          "programmeCode": "IND-C3-RSS-02",
+          "conversationCode": "C3",
+          "contextCode": "RC",
+          "typeLecture": "OPERATIONNELLE",
+          "questionEditoriale": "À partir de quand la crise révèle-t-elle que le vrai sujet n'est plus l'outil, mais l'architecture même du système productif et de son pilotage ?",
+          "questionPublique": "À partir de quand la crise révèle-t-elle que le vrai sujet n'est plus l'outil, mais l'architecture même du système productif et de son pilotage ?",
+          "questionActivation": "Une crise industrielle révèle parfois un problème plus profond : l'architecture du système productif, la manière dont les décisions sont prises, dont les flux sont pilotés, dont les métiers coopèrent.",
+          "introMecanisme": "Une crise industrielle révèle parfois un problème plus profond : l'architecture du système productif, la manière dont les décisions sont prises, dont les flux sont pilotés, dont les métiers coopèrent.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand la crise révèle-t-elle que le vrai sujet n'est plus l'outil, mais l'architecture même du système productif et de son pilotage ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Direction industrielle",
+            "Direction des opérations",
+            "Excellence opérationnelle",
+            "Supply chain",
+            "Performance industrielle"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A03",
+          "crmCode": "IND-C3-RC-A03",
+          "programmeCode": "IND-C3-RSS-03",
+          "conversationCode": "C3",
+          "contextCode": "RC",
+          "typeLecture": "RH_COMPETENCES",
+          "questionEditoriale": "À partir de quand l'écart entre compétences disponibles, exigences de sûreté et standards de production impose-t-il une transformation plus profonde ?",
+          "questionPublique": "À partir de quand l'écart entre compétences disponibles, exigences de sûreté et standards de production impose-t-il une transformation plus profonde ?",
+          "questionActivation": "Une crise peut révéler un écart difficile à combler entre ce que l'activité exige et ce que l'organisation peut mobiliser. Lorsque cet écart devient trop important, il faut repenser l'organisation, les standards ou le périmètre de l'activité.",
+          "introMecanisme": "Une crise peut révéler un écart difficile à combler entre ce que l'activité exige et ce que l'organisation peut mobiliser. Lorsque cet écart devient trop important, il faut repenser l'organisation, les standards ou le périmètre de l'activité.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand l'écart entre compétences disponibles, exigences de sûreté et standards de production impose-t-il une transformation plus profonde ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "DRH industriel",
+            "Responsable compétences",
+            "Formation industrielle",
+            "Organisation du travail",
+            "Dialogue social"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A04",
+          "crmCode": "IND-C3-RC-A04",
+          "programmeCode": "IND-C3-RSS-04",
+          "conversationCode": "C3",
+          "contextCode": "RC",
+          "typeLecture": "ENERGIE_RESSOURCES",
+          "questionEditoriale": "À partir de quand la contrainte carbone impose-t-elle une réécriture du process, de l'outil, de l'offre ou de la vocation industrielle du site ?",
+          "questionPublique": "À partir de quand la contrainte carbone impose-t-elle une réécriture du process, de l'outil, de l'offre ou de la vocation industrielle du site ?",
+          "questionActivation": "Lorsqu'elle devient critique, la contrainte carbone ne se limite plus à la réduction progressive des émissions. Elle peut remettre en cause le process, l'outil, l'offre ou même la vocation industrielle d'un site.",
+          "introMecanisme": "Lorsqu'elle devient critique, la contrainte carbone ne se limite plus à la réduction progressive des émissions. Elle peut remettre en cause le process, l'outil, l'offre ou même la vocation industrielle d'un site.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand la contrainte carbone impose-t-elle une réécriture du process, de l'outil, de l'offre ou de la vocation industrielle du site ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Énergie / utilités",
+            "Décarbonation industrielle",
+            "Ressources",
+            "Direction environnement",
+            "Transition énergétique"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A01",
+          "crmCode": "IND-C4-GS-A01",
+          "programmeCode": "IND-C4-CST-01",
+          "conversationCode": "C4",
+          "contextCode": "GS",
+          "typeLecture": "RH_COMPETENCES",
+          "questionEditoriale": "À partir de quand la croissance révèle-t-elle un seuil critique en matière de recrutement, transmission, stabilisation ou montée en compétence ?",
+          "questionPublique": "À partir de quand la croissance révèle-t-elle un seuil critique en matière de recrutement, transmission, stabilisation ou montée en compétence ?",
+          "questionActivation": "Une trajectoire industrielle tient aussi par les personnes capables de faire fonctionner, transmettre, stabiliser et faire évoluer l'activité. Lorsque la croissance accélère, les besoins humains deviennent plus visibles.",
+          "introMecanisme": "Une trajectoire industrielle tient aussi par les personnes capables de faire fonctionner, transmettre, stabiliser et faire évoluer l'activité. Lorsque la croissance accélère, les besoins humains deviennent plus visibles.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand la croissance révèle-t-elle un seuil critique en matière de recrutement, transmission, stabilisation ou montée en compétence ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "DRH industriel",
+            "Responsable compétences",
+            "Formation industrielle",
+            "Organisation du travail",
+            "Dialogue social"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A02",
+          "crmCode": "IND-C4-GS-A02",
+          "programmeCode": "IND-C4-CST-02",
+          "conversationCode": "C4",
+          "contextCode": "GS",
+          "typeLecture": "OPERATIONNELLE",
+          "questionEditoriale": "À partir de quand l'accès à l'énergie, à l'eau, aux utilités ou aux capacités réseaux devient-il le véritable verrou d'une montée en capacité ?",
+          "questionPublique": "À partir de quand l'accès à l'énergie, à l'eau, aux utilités ou aux capacités réseaux devient-il le véritable verrou d'une montée en capacité ?",
+          "questionActivation": "La croissance industrielle suppose des ressources physiques : énergie, eau, chaleur, raccordements, capacités réseaux. Ces ressources peuvent devenir le premier verrou de développement lorsque l'activité augmente.",
+          "introMecanisme": "La croissance industrielle suppose des ressources physiques : énergie, eau, chaleur, raccordements, capacités réseaux. Ces ressources peuvent devenir le premier verrou de développement lorsque l'activité augmente.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand l'accès à l'énergie, à l'eau, aux utilités ou aux capacités réseaux devient-il le véritable verrou d'une montée en capacité ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Direction industrielle",
+            "Direction des opérations",
+            "Excellence opérationnelle",
+            "Supply chain",
+            "Performance industrielle"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A04",
+          "crmCode": "IND-C4-GS-A04",
+          "programmeCode": "IND-C4-CST-04",
+          "conversationCode": "C4",
+          "contextCode": "GS",
+          "typeLecture": "TERRITORIALE",
+          "questionEditoriale": "À quelles conditions un territoire permet-il encore d'accompagner une montée en capacité : foncier, réseaux, logistique, main-d'œuvre, acceptabilité ?",
+          "questionPublique": "À quelles conditions un territoire permet-il encore d'accompagner une montée en capacité : foncier, réseaux, logistique, main-d'œuvre, acceptabilité ?",
+          "questionActivation": "Une entreprise industrielle ne croît jamais seule : elle dépend d'un territoire, de ses infrastructures, de son foncier, de ses réseaux et de son bassin d'emploi. Lorsque la croissance s'accélère, ces conditions territoriales deviennent déterminantes.",
+          "introMecanisme": "Une entreprise industrielle ne croît jamais seule : elle dépend d'un territoire, de ses infrastructures, de son foncier, de ses réseaux et de son bassin d'emploi. Lorsque la croissance s'accélère, ces conditions territoriales deviennent déterminantes.",
+          "formatCourt": {
+            "titrePublicCourt": "À quelles conditions un territoire permet-il encore d'accompagner une montée en capacité : foncier, réseaux, logistique, main-d'œuvre, acceptabilité ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Développement économique territorial",
+            "Collectivité / territoire industriel",
+            "Aménagement / foncier",
+            "Écosystème local",
+            "Acteur public"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A01",
+          "crmCode": "IND-C4-AC-A01",
+          "programmeCode": "IND-C4-ASC-01",
+          "conversationCode": "C4",
+          "contextCode": "AC",
+          "typeLecture": "RH_COMPETENCES",
+          "questionEditoriale": "À partir de quand les tensions sur les effectifs, les savoir-faire, les conditions de travail ou l'organisation limitent-elles la capacité à ajuster l'activité ?",
+          "questionPublique": "À partir de quand les tensions sur les effectifs, les savoir-faire, les conditions de travail ou l'organisation limitent-elles la capacité à ajuster l'activité ?",
+          "questionActivation": "En contexte contraint, les organisations industrielles demandent souvent beaucoup aux équipes. Mais lorsque les effectifs, les compétences ou les conditions de travail sont trop tendus, l'activité ne peut plus s'adapter sans fragiliser ceux qui la portent.",
+          "introMecanisme": "En contexte contraint, les organisations industrielles demandent souvent beaucoup aux équipes. Mais lorsque les effectifs, les compétences ou les conditions de travail sont trop tendus, l'activité ne peut plus s'adapter sans fragiliser ceux qui la portent.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand les tensions sur les effectifs, les savoir-faire, les conditions de travail ou l'organisation limitent-elles la capacité à ajuster l'activité ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "DRH industriel",
+            "Responsable compétences",
+            "Formation industrielle",
+            "Organisation du travail",
+            "Dialogue social"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A04",
+          "crmCode": "IND-C4-AC-A04",
+          "programmeCode": "IND-C4-ASC-04",
+          "conversationCode": "C4",
+          "contextCode": "AC",
+          "typeLecture": "TERRITORIALE",
+          "questionEditoriale": "À partir de quand un territoire n'offre-t-il plus les conditions suffisantes pour maintenir ou ajuster une activité sans surcoûts croissants ?",
+          "questionPublique": "À partir de quand un territoire n'offre-t-il plus les conditions suffisantes pour maintenir ou ajuster une activité sans surcoûts croissants ?",
+          "questionActivation": "Un territoire peut soutenir une activité industrielle par ses infrastructures, ses compétences, ses réseaux, ses services. Mais lorsque les contraintes s'accumulent, il peut aussi devenir plus coûteux d'y maintenir l'activité.",
+          "introMecanisme": "Un territoire peut soutenir une activité industrielle par ses infrastructures, ses compétences, ses réseaux, ses services. Mais lorsque les contraintes s'accumulent, il peut aussi devenir plus coûteux d'y maintenir l'activité.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand un territoire n'offre-t-il plus les conditions suffisantes pour maintenir ou ajuster une activité sans surcoûts croissants ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Développement économique territorial",
+            "Collectivité / territoire industriel",
+            "Aménagement / foncier",
+            "Écosystème local",
+            "Acteur public"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A01",
+          "crmCode": "IND-C4-RC-A01",
+          "programmeCode": "IND-C4-RSS-01",
+          "conversationCode": "C4",
+          "contextCode": "RC",
+          "typeLecture": "RH_COMPETENCES",
+          "questionEditoriale": "À partir de quand les compétences critiques, les conditions de travail ou l'organisation deviennent-elles un facteur de bascule dans une trajectoire de transformation ?",
+          "questionPublique": "À partir de quand les compétences critiques, les conditions de travail ou l'organisation deviennent-elles un facteur de bascule dans une trajectoire de transformation ?",
+          "questionActivation": "Transformer une trajectoire industrielle suppose de mobiliser des compétences, de faire évoluer les organisations et de maintenir l'engagement des équipes. En situation de crise, ces dimensions peuvent devenir décisives.",
+          "introMecanisme": "Transformer une trajectoire industrielle suppose de mobiliser des compétences, de faire évoluer les organisations et de maintenir l'engagement des équipes. En situation de crise, ces dimensions peuvent devenir décisives.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand les compétences critiques, les conditions de travail ou l'organisation deviennent-elles un facteur de bascule dans une trajectoire de transformation ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "DRH industriel",
+            "Responsable compétences",
+            "Formation industrielle",
+            "Organisation du travail",
+            "Dialogue social"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A02",
+          "crmCode": "IND-C4-RC-A02",
+          "programmeCode": "IND-C4-RSS-02",
+          "conversationCode": "C4",
+          "contextCode": "RC",
+          "typeLecture": "ENERGIE_RESSOURCES",
+          "questionEditoriale": "À partir de quand les contraintes énergétiques, hydriques ou climatiques imposent-elles un arbitrage de localisation, de transformation ou de redéploiement du site ?",
+          "questionPublique": "À partir de quand les contraintes énergétiques, hydriques ou climatiques imposent-elles un arbitrage de localisation, de transformation ou de redéploiement du site ?",
+          "questionActivation": "Lorsque l'énergie devient trop coûteuse ou indisponible, lorsque l'eau manque ou que les risques climatiques augmentent, la question peut devenir existentielle pour un site industriel. Il ne s'agit plus seulement d'adapter l'outil.",
+          "introMecanisme": "Lorsque l'énergie devient trop coûteuse ou indisponible, lorsque l'eau manque ou que les risques climatiques augmentent, la question peut devenir existentielle pour un site industriel. Il ne s'agit plus seulement d'adapter l'outil.",
+          "formatCourt": {
+            "titrePublicCourt": "À partir de quand les contraintes énergétiques, hydriques ou climatiques imposent-elles un arbitrage de localisation, de transformation ou de redéploiement du site ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Énergie / utilités",
+            "Décarbonation industrielle",
+            "Ressources",
+            "Direction environnement",
+            "Transition énergétique"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
+        },
+        {
+          "code": "A04",
+          "crmCode": "IND-C4-RC-A04",
+          "programmeCode": "IND-C4-RSS-04",
+          "conversationCode": "C4",
+          "contextCode": "RC",
+          "typeLecture": "TERRITORIALE",
+          "questionEditoriale": "À quelles conditions un territoire peut-il encore porter un redéploiement industriel, une reconversion partielle ou une nouvelle trajectoire de site ?",
+          "questionPublique": "À quelles conditions un territoire peut-il encore porter un redéploiement industriel, une reconversion partielle ou une nouvelle trajectoire de site ?",
+          "questionActivation": "Lorsqu'un site industriel doit se transformer, le territoire devient un acteur décisif. Il peut faciliter un redéploiement, accompagner une reconversion ou attirer de nouveaux investisseurs. Mais il peut aussi manquer de foncier, d'infrastructures ou de moyens.",
+          "introMecanisme": "Lorsqu'un site industriel doit se transformer, le territoire devient un acteur décisif. Il peut faciliter un redéploiement, accompagner une reconversion ou attirer de nouveaux investisseurs. Mais il peut aussi manquer de foncier, d'infrastructures ou de moyens.",
+          "formatCourt": {
+            "titrePublicCourt": "À quelles conditions un territoire peut-il encore porter un redéploiement industriel, une reconversion partielle ou une nouvelle trajectoire de site ?",
+            "usage": "Titre court source pour lectures complémentaires."
+          },
+          "primaryProfiles": [
+            "Développement économique territorial",
+            "Collectivité / territoire industriel",
+            "Aménagement / foncier",
+            "Écosystème local",
+            "Acteur public"
+          ],
+          "showInConversationPage": true,
+          "showInForm": false,
+          "isComplementaryStub": true
         }
       ]
     }
@@ -2091,11 +3056,30 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
   }
 
   function getComplementaryAngles(config, angle) {
-    return api.getAngles(config.cycleCode).filter(function(candidate) {
+    var all = api.getAngles(config.cycleCode);
+    var byCode = {};
+    all.forEach(function(candidate) {
+      if (candidate.crmCode) byCode[candidate.crmCode] = candidate;
+    });
+
+    if (angle.complementaryCodes && angle.complementaryCodes.length) {
+      return angle.complementaryCodes.map(function(code) {
+        return byCode[code];
+      }).filter(function(candidate) {
+        return candidate &&
+          candidate.conversationCode === angle.conversationCode &&
+          candidate.contextCode === angle.contextCode &&
+          candidate.typeLecture !== angle.typeLecture &&
+          candidate.crmCode !== angle.crmCode;
+      });
+    }
+
+    return all.filter(function(candidate) {
       return candidate.conversationCode === angle.conversationCode &&
              candidate.contextCode === angle.contextCode &&
-             candidate.typeLecture !== config.readingType;
-    });
+             candidate.typeLecture !== angle.typeLecture &&
+             candidate.crmCode !== angle.crmCode;
+    }).slice(0, 3);
   }
 
   function renderProfiles(config) {
