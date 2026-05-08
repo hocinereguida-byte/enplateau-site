@@ -1923,7 +1923,105 @@ body.page-dispositif #acces-dispositif .container {
   position: relative;
   z-index: 2;
 }
+/* =========================================================
+   PAGE DISPOSITIF — AJUSTEMENT HERO
+========================================================= */
 
+body.page-dispositif #hero-dispositif {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.94) 0%, rgba(17,17,17,.80) 48%, rgba(17,17,17,.62) 100%),
+    url("../../images/dispositif/beton-cadre.jpg") center/cover no-repeat;
+}
+
+
+/* =========================================================
+   PAGE CONVERSATIONS — IMAGES / OVERLAYS
+========================================================= */
+
+body.page-conversations #hero-conversations-hub {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.94) 0%, rgba(17,17,17,.80) 48%, rgba(17,17,17,.62) 100%),
+    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
+}
+
+body.page-conversations .page3-split {
+  gap: clamp(28px, 4vw, 52px) !important;
+  background: transparent !important;
+}
+
+body.page-conversations .page3-split-copy {
+  padding: clamp(28px, 4vw, 48px) !important;
+  background: #ffffff !important;
+}
+
+body.page-conversations .page3-split-visual {
+  min-height: 520px;
+}
+
+body.page-conversations .page3-section-light .section-kicker {
+  color: var(--p3-accent-deep) !important;
+}
+
+body.page-conversations .page3-section-light .section-kicker::before {
+  opacity: 1;
+}
+
+body.page-conversations #point-de-depart-conversations .page3-split-visual {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.72), rgba(17,17,17,.32)),
+    url("../../images/conversations/point-depart-porte.jpg") center/cover no-repeat;
+}
+
+body.page-conversations #a-qui-parlent-les-conversations {
+  background:
+    linear-gradient(180deg, rgba(17,17,17,.92), rgba(17,17,17,.96)),
+    url("../../images/conversations/decision-publics-concernes.jpg") center/cover no-repeat;
+}
+
+body.page-conversations #cycle-logement-hub .page3-split-visual {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.66), rgba(17,17,17,.28)),
+    url("../../images/conversations/cycle-logement.jpg") center/cover no-repeat;
+}
+
+body.page-conversations #cycle-industrie-hub {
+  background:
+    linear-gradient(180deg, rgba(17,17,17,.92), rgba(17,17,17,.96)),
+    url("../../images/conversations/section-cycle-industrie.jpg") center/cover no-repeat !important;
+}
+
+body.page-conversations #cycle-industrie-hub .page3-split-copy {
+  background: rgba(17,17,17,.78) !important;
+  backdrop-filter: blur(8px);
+}
+
+body.page-conversations #cycle-industrie-hub .page3-split-copy h2,
+body.page-conversations #cycle-industrie-hub .page3-split-copy p {
+  color: var(--p3-text) !important;
+}
+
+body.page-conversations #cycle-industrie-hub .page3-split-copy .editorial-panel,
+body.page-conversations #cycle-industrie-hub .page3-split-copy .editorial-panel p {
+  color: var(--p3-text-soft) !important;
+}
+
+body.page-conversations #cycle-industrie-hub .page3-split-visual {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.68), rgba(17,17,17,.30)),
+    url("../../images/conversations/section-cycle-industrie.jpg") center/cover no-repeat;
+}
+
+body.page-conversations #ce-que-cela-montre .page3-split-visual {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.66), rgba(17,17,17,.28)),
+    url("../../images/conversations/visible.jpg") center/cover no-repeat;
+}
+
+body.page-conversations #voir-aussi-les-positions {
+  background:
+    linear-gradient(180deg, rgba(17,17,17,.92), rgba(17,17,17,.96)),
+    url("../../images/conversations/positions.jpg") center/cover no-repeat !important;
+}
 
 
 
