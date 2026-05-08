@@ -2105,6 +2105,73 @@ body.page-positions #voir-aussi-les-conversations .container {
   position: relative;
   z-index: 2;
 }
+/* =========================================================
+   PAGE À PROPOS — CORRECTIFS IMAGES / MARGES
+========================================================= */
+
+body.page-a-propos .page3-split {
+  gap: clamp(28px, 4vw, 52px) !important;
+  background: transparent !important;
+}
+
+body.page-a-propos .page3-split-copy {
+  padding: clamp(32px, 4vw, 52px) !important;
+  background: #ffffff !important;
+}
+
+body.page-a-propos .page3-split-visual {
+  min-height: 520px;
+}
+
+body.page-a-propos .page3-section-light .section-kicker {
+  color: var(--p3-accent-deep) !important;
+}
+
+body.page-a-propos .page3-section-light .section-kicker::before {
+  opacity: 1;
+}
+
+/* Constat */
+body.page-a-propos #constat .page3-split-visual {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.58), rgba(17,17,17,.18)),
+    url("../../images/a-propos/constat-a-propos.jpg") center/cover no-repeat;
+}
+
+/* Pourquoi En Plateau */
+body.page-a-propos #pourquoi-en-plateau {
+  background:
+    linear-gradient(180deg, rgba(17,17,17,.90), rgba(17,17,17,.96)),
+    url("../../images/a-propos/pourquoi-en-plateau-telescope.jpg") center/cover no-repeat !important;
+}
+
+/* Deux cycles */
+body.page-a-propos .page3-visual-a-propos-cycles {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.58), rgba(17,17,17,.18)),
+    url("../../images/conversations/cycle-logement.jpg") center/cover no-repeat;
+}
+
+/* Positionnement */
+body.page-a-propos #positionnement {
+  background:
+    linear-gradient(180deg, rgba(17,17,17,.90), rgba(17,17,17,.96)),
+    url("../../images/a-propos/ovni-ni-agence.jpg") center/cover no-repeat;
+}
+
+/* Portage — portrait non tronqué */
+body.page-a-propos #portage .page3-split-visual {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.52), rgba(17,17,17,.18)),
+    url("../../images/a-propos/hocine-reguida.jpg") center 28% / cover no-repeat;
+}
+
+/* Sur grand écran, on cadre mieux le visage */
+@media (min-width: 1024px) {
+  body.page-a-propos #portage .page3-split-visual {
+    background-position: center 18%;
+  }
+}
 
 
 
