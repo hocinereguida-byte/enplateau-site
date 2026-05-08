@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title id="pageTitle">Lecture financière — Cycle Industrie & transformation des territoires | En Plateau</title>
-  <meta id="pageDescription" name="description" content="Une place précise pour éclairer les arbitrages économiques qui rendent une transformation industrielle nécessaire — sans exposer de chiffres confidentiels.">
+  <title id="pageTitle">Lecture stratégique — Cycle Industrie & transformation des territoires | En Plateau</title>
+  <meta id="pageDescription" name="description" content="Une place précise dans une conversation industrielle ouverte — que vous soyez conseil ou décideur industriel. Comité éditorial : 15 juin 2026.">
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -130,10 +130,16 @@
     .conv-panel-num { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
     .conv-panel-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; line-height: 1.3; color: var(--ink); margin-bottom: 12px; }
     .conv-panel-desc { font-size: 0.88rem; color: var(--ink-muted); line-height: 1.68; }
+
+    .landing-angle,
     .finance-angle { padding: 24px 32px; border-bottom: 1px solid var(--line); background: #fff; }
+    .landing-angle-label,
     .finance-angle-label { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 10px; }
+    .landing-angle-q,
     .finance-angle-q { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: 10px; }
+    .landing-angle-desc,
     .finance-angle-desc { font-size: 0.87rem; color: var(--ink-soft); line-height: 1.65; max-width: 660px; }
+
     .angle-meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
     .angle-meta-card { border: 1px solid var(--line); padding: 12px 14px; background: #faf8f5; }
     .angle-meta-label { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 5px; }
@@ -150,6 +156,12 @@
     .process-step h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.3; }
     .process-step p { font-size: 0.87rem; color: var(--ink-muted); line-height: 1.65; }
     .process-deadline { margin-top: 12px; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); border-top: 1px solid var(--line); padding-top: 10px; }
+
+    .dims-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,0.05); margin-top: 40px; }
+    .dim-card { background: #191614; padding: 24px 22px; display: flex; gap: 14px; align-items: flex-start; }
+    .dim-num { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--accent); flex-shrink: 0; padding-top: 3px; }
+    .dim-text { font-size: 0.88rem; color: rgba(240,236,230,0.58); line-height: 1.6; }
+    .dim-text strong { display: block; color: rgba(240,236,230,0.8); font-weight: 500; margin-bottom: 3px; font-size: 0.9rem; }
 
     .guarantees-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 40px; }
     .guarantee { border-left: 2px solid var(--line); padding-left: 20px; }
@@ -170,6 +182,7 @@
     .cta-deadline-box { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--accent-line); padding: 10px 18px; margin-bottom: 28px; background: var(--accent-dim); }
     .cta-deadline-box span { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
     .cta-footnote { margin-top: 20px; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; color: rgba(240,236,230,0.25); }
+
     .footer { background: #0b0a08; border-top: 1px solid rgba(255,255,255,0.05); padding: 26px 0; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .footer-brand { display: flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 0.88rem; color: rgba(240,236,230,0.4); }
@@ -185,15 +198,18 @@
       .conv-nav { display: grid; grid-template-columns: repeat(2, 1fr); }
       .conv-nav-color { width: 100%; height: 3px; }
       .conv-nav-item.is-active .conv-nav-color { width: 100%; height: 5px; }
+      .dims-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 680px) {
-      .hero-profiles, .audience-grid, .guarantees-grid, .process-row, .angle-meta { grid-template-columns: 1fr; }
+      .hero-profiles, .audience-grid, .guarantees-grid, .process-row, .angle-meta, .dims-grid { grid-template-columns: 1fr; }
       .conv-nav { grid-template-columns: 1fr; }
       .nav-cycle { display: none; }
     }
   </style>
 </head>
+
+<!-- Pour dupliquer cette page : changez seulement la valeur de data-landing selon le slug configuré dans le JS. -->
 <body data-landing="strategie">
   <div class="urgency-banner" role="banner">
     <p>Comité éditorial : <strong>15 juin 2026</strong> — Les échanges de qualification doivent avoir lieu suffisamment en amont pour permettre l'élaboration du dossier de positionnement</p>
@@ -206,8 +222,8 @@
           <div class="nav-brand-mark"><span></span></div>
           En Plateau
         </a>
-        <span class="nav-cycle" id="navCycle">Cycle Industrie · Lecture financière</span>
-        <a id="navCta" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-finance&cta=nav" class="nav-cta">Réserver un échange</a>
+        <span class="nav-cycle" id="navCycle">Cycle Industrie · Lecture stratégique</span>
+        <a id="navCta" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-strategie&cta=nav" class="nav-cta">Réserver un échange</a>
       </div>
     </div>
   </nav>
@@ -217,7 +233,7 @@
       <div class="container">
         <div class="hero-inner">
           <div>
-            <div class="hero-kicker">Cycle Industrie &amp; transformation des territoires</div>
+            <div class="hero-kicker" id="heroKicker">Cycle Industrie &amp; transformation des territoires</div>
             <h1 id="hero-title"></h1>
             <p class="hero-lead" id="heroLead"></p>
             <div class="hero-profiles" id="heroProfiles"></div>
@@ -225,12 +241,12 @@
           </div>
 
           <div class="hero-card">
-            <div class="hero-card-label">Échange éditorial · Qualification d'angle</div>
+            <div class="hero-card-label" id="heroCardLabel">Échange éditorial · Qualification d'angle</div>
             <h3 id="heroCardTitle"></h3>
             <p id="heroCardText"></p>
-            <a id="heroCta" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-finance&cta=hero" class="btn-primary">Réserver l'échange éditorial</a>
-            <div class="hero-deadline">Les échanges doivent précéder suffisamment le comité éditorial<br>Comité éditorial : 15 juin 2026</div>
-            <p class="hero-card-foot">Certaines positions se ferment au fil de la composition éditoriale</p>
+            <a id="heroCta" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-strategie&cta=hero" class="btn-primary">Réserver l'échange éditorial</a>
+            <div class="hero-deadline" id="heroDeadline">Les échanges doivent précéder suffisamment le comité éditorial<br>Comité éditorial : 15 juin 2026</div>
+            <p class="hero-card-foot" id="heroCardFoot">Certaines positions se ferment au fil de la composition éditoriale</p>
           </div>
         </div>
       </div>
@@ -266,7 +282,7 @@
           <p class="section-intro" id="conversationsIntro"></p>
         </div>
 
-        <div class="conv-layout mt-40" id="convLayout">
+        <div class="conv-layout" id="convLayout">
           <nav class="conv-nav" id="convNav" aria-label="Conversations"></nav>
           <div class="conv-content" id="convContent"></div>
         </div>
@@ -274,7 +290,7 @@
         <div class="panel" id="conversationsPanel"></div>
 
         <div style="margin-top:40px;text-align:center;">
-          <a id="midCta" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-finance&cta=mid-conv" class="btn-primary btn-primary--large" style="display:inline-flex;background:var(--ink);color:#f0ece6;">Réserver un échange éditorial</a>
+          <a id="midCta" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-strategie&cta=mid-conv" class="btn-primary btn-primary--large" style="display:inline-flex;background:var(--ink);color:#f0ece6;">Réserver un échange éditorial</a>
         </div>
       </div>
     </section>
@@ -286,6 +302,8 @@
           <h2 class="display display--light" id="dimensions-titre"></h2>
           <p class="section-intro section-intro--light" id="dimensionsIntro"></p>
         </div>
+        <div id="dimensionsGrid"></div>
+        <div class="panel panel--dark" id="dimensionsPanel" style="display:none;"></div>
       </div>
     </section>
 
@@ -326,7 +344,7 @@
           <h2 id="cta-titre"></h2>
           <p id="ctaText"></p>
           <div class="cta-deadline-box"><span id="ctaDeadline"></span></div>
-          <a id="footerCta" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-finance&cta=footer" class="btn-primary btn-primary--large" style="display:inline-flex;">Réserver l'échange éditorial</a>
+          <a id="footerCta" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-strategie&cta=footer" class="btn-primary btn-primary--large" style="display:inline-flex;">Réserver l'échange éditorial</a>
           <p class="cta-footnote" id="ctaFootnote"></p>
         </div>
       </div>
@@ -346,269 +364,6 @@
     </div>
   </footer>
 
-  <!-- À placer en production avant cette page : /assets/js/editorial-data-industrie-test.js -->
-  <script src="/assets/js/editorial-data-industrie-test.js"></script>
-  <script>
-    (function() {
-      var slug = document.body.getAttribute('data-landing') || (location.pathname.split('/').pop() || '').replace('.html', '') || 'finance';
-      var data = window.EN_PLATEAU_EDITORIAL_DATA;
-      var api = window.EN_PLATEAU_EDITORIAL;
-
-      if (!data || !api) {
-        console.warn('Référentiel éditorial non chargé. Vérifiez /assets/js/editorial-data-industrie-test.js');
-        return;
-      }
-
-      var config = data.landingPages[slug];
-      if (!config) {
-        console.warn('Configuration de landing page introuvable pour le slug : ' + slug);
-        return;
-      }
-
-      var reading = data.readingTypes[config.readingType];
-      var panels = api.getLandingConversationPanels(slug);
-      var cycle = api.getCycle(config.cycleCode);
-
-      function lowerFirst(value) {
-        value = String(value || '');
-        return value.charAt(0).toLowerCase() + value.slice(1);
-      }
-
-      function readingName() {
-        return lowerFirst(reading.label || 'lecture');
-      }
-
-      function listHtml(items, modifierClass) {
-        return '<ul class="audience-list' + (modifierClass ? ' ' + modifierClass : '') + '">' +
-          (items || []).map(function(item) { return '<li>' + esc(item) + '</li>'; }).join('') +
-        '</ul>';
-      }
-
-      function paragraphHtml(text) {
-        return text ? '<p>' + esc(text) + '</p>' : '';
-      }
-
-      var dynamicCopy = config.copy || {};
-      var audience = dynamicCopy.audience || {
-        title: 'Cette ' + readingName() + ' vous est-elle destinée ?',
-        yesTitle: 'Vous portez probablement une lecture pertinente si…',
-        noTitle: 'Moins adapté si…',
-        yesItems: [
-          'Vous savez relier marges de manœuvre, investissement, coûts différés et décisions industrielles réelles.',
-          'Vous êtes DAF, CFO, dirigeant, conseil finance, restructuring, corporate finance, investisseur ou responsable exposé aux arbitrages économiques industriels.',
-          'Votre lecture porte sur des seuils : dette technologique, dépendance devenue coûteuse, CAPEX différé, coûts énergie/eau/conformité, soutenabilité d’un outil.',
-          'Vous pouvez éclairer un mécanisme sans exposer de chiffres, de comptes internes, de clients ou de dossiers confidentiels.'
-        ],
-        noItems: [
-          'Votre approche porte surtout sur du reporting, de la conformité comptable ou une lecture financière déconnectée de l’outil industriel.',
-          'Vous cherchez d’abord une visibilité promotionnelle plutôt qu’une contribution éditoriale située.',
-          'Vous souhaitez présenter des résultats, une méthode propriétaire ou une offre commerciale plutôt qu’éclairer un arbitrage industriel.',
-          'Votre lecture ne relie pas les chiffres à des décisions : investir, différer, transformer, redéployer, céder ou renoncer.'
-        ],
-        panel: 'La ' + readingName() + ' ne consiste pas à commenter des chiffres. Elle consiste à identifier le moment où les équilibres économiques obligent l’industrie à arbitrer autrement.'
-      };
-
-      var conversationsCopy = dynamicCopy.conversations || {
-        title: 'Les angles où la ' + readingName() + ' devient décisive',
-        intro: 'La ' + readingName() + ' intervient là où les conditions économiques changent la nature de la décision industrielle : maintenir, investir, différer, transformer, redéployer ou renoncer. Chaque position porte sur un mécanisme à éclairer, sans exposition de chiffres confidentiels ni de dossiers internes.',
-        panel: 'Ces positions ne demandent pas de commenter une situation particulière. Elles proposent d’éclairer des seuils, des signaux faibles et des arbitrages économiques qui se répètent dans les trajectoires industrielles.'
-      };
-
-      var preparation = dynamicCopy.preparation || {
-        titleHtml: 'Beaucoup arrivent avec une ' + readingName() + '. <em style="color:rgba(240,236,230,0.55);">Ils repartent avec une position.</em>',
-        intro: 'La préparation éditoriale transforme une expertise souvent technique en lecture située : compréhensible, défendable, utile pour les dirigeants industriels, financeurs, conseils, équipes internes et partenaires de transformation.'
-      };
-
-      var process = dynamicCopy.process || [
-        { num: '01', title: 'L’échange de qualification', text: '15 minutes pour vérifier si votre lecture correspond à un angle disponible. Aucun chiffre ni dossier sensible à exposer.', deadline: 'À planifier en amont du comité éditorial' },
-        { num: '02', title: 'Le dossier de positionnement', text: 'Si l’angle est retenu, un dossier complet vous est adressé : angle précis, logique de mise en regard, modalités d’intervention, format émission et article associé.' },
-        { num: '03', title: 'Le comité éditorial', text: 'Le 15 juin, le comité éditorial examine les dossiers de positionnement et valide la composition finale. Vous êtes informé avant tout engagement.', deadline: 'Comité : 15 juin 2026' },
-        { num: '04', title: 'La préparation & la production', text: 'En Plateau travaille avec vous pour transformer votre ' + readingName() + ' en position claire, non intrusive et publiquement défendable.' }
-      ];
-
-      var guarantees = dynamicCopy.guarantees || [
-        { accent: true, title: 'Aucun chiffre confidentiel à exposer', text: 'L’échange porte sur les mécanismes d’arbitrage économique, pas sur vos comptes, vos marges, vos coûts internes ou vos dossiers de financement.' },
-        { accent: true, title: 'Aucun engagement avant le dossier de positionnement', text: 'Vous ne vous engagez pas lors de l’échange éditorial. L’engagement intervient après réception du dossier et validation par le comité éditorial.' },
-        { title: 'Pas de commentaire de situation financière', text: 'La contribution ne consiste pas à commenter votre entreprise ou un client. Elle vise à rendre lisibles des seuils économiques et industriels.' },
-        { title: 'Une parole préparée avec vos équipes si nécessaire', text: 'La préparation peut intégrer vos contraintes de communication, juridiques, corporate ou de confidentialité.' }
-      ];
-
-      var faq = dynamicCopy.faq || [
-        { question: 'Faut-il exposer des chiffres confidentiels ?', answer: 'Non. La contribution porte sur les mécanismes d’arbitrage : ce qui change dans la décision industrielle lorsque les équilibres économiques ne permettent plus de tenir comme avant.' },
-        { question: 'La lecture financière doit-elle venir d’un DAF ?', answer: 'Pas nécessairement. Elle peut venir d’un DAF, d’un dirigeant, d’un conseil, d’un investisseur, d’un profil corporate finance ou d’un acteur industriel capable de relier finance et décision.' },
-        { question: 'S’agit-il d’une prise de parole sur la performance financière ?', answer: 'Non. Il ne s’agit pas de présenter une performance, mais d’éclairer les conditions économiques d’un arbitrage industriel : investir, différer, transformer, redéployer, céder ou renoncer.' },
-        { question: 'Faut-il arriver avec une position déjà construite ?', answer: 'Non. La préparation éditoriale sert précisément à transformer une conviction ou une expertise en position claire, située et défendable.' }
-      ];
-
-      var cta = dynamicCopy.cta || {
-        title: 'Votre ' + readingName() + ' peut éclairer ce que les chiffres seuls ne disent pas.',
-        text: 'Un échange de 15 minutes — sans exposer de chiffres, sans engagement — pour vérifier si votre angle a une place dans cette conversation avant la fermeture des positions.',
-        deadline: 'Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale',
-        footnote: 'Les positions ' + (reading.slug || 'éditoriales') + ' se ferment au fil de la composition éditoriale · Page non indexée'
-      };
-
-      function esc(value) {
-        return String(value || '').replace(/[&<>"]/g, function(char) {
-          return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[char];
-        });
-      }
-
-      function setText(id, value) {
-        var el = document.getElementById(id);
-        if (el) el.textContent = value || '';
-      }
-
-      function setHtml(id, value) {
-        var el = document.getElementById(id);
-        if (el) el.innerHTML = value || '';
-      }
-
-      function calUrl(cta) {
-        return 'https://cal.com/en-plateau/echange-editorial?src=' + encodeURIComponent(reading.calSource) + '&cta=' + encodeURIComponent(cta);
-      }
-
-      document.title = config.title;
-      var meta = document.getElementById('pageDescription');
-      if (meta) meta.setAttribute('content', config.metaDescription);
-
-      setText('navCycle', config.navLabel || (cycle.label + ' · ' + reading.label));
-      setHtml('hero-title', config.heroTitleHtml || ('Votre ' + readingName() + '<br><em>fait apparaître</em><br>ce que l’industrie<br>ne voit pas seule.'));
-      setText('heroLead', config.heroLead || reading.positioning || '');
-      setText('valeur-titre', config.valueSection.title);
-      setText('valueIntro', config.valueSection.intro);
-      setText('pourqui-titre', audience.title);
-      setText('conversations-titre', conversationsCopy.title);
-      setText('conversationsIntro', conversationsCopy.intro);
-      setHtml('conversationsPanel', paragraphHtml(conversationsCopy.panel));
-      setHtml('dimensions-titre', preparation.titleHtml);
-      setText('dimensionsIntro', preparation.intro);
-      setText('cta-titre', cta.title);
-      setText('ctaText', cta.text);
-      setText('ctaDeadline', cta.deadline);
-      setText('ctaFootnote', cta.footnote);
-      setText('heroCardTitle', dynamicCopy.heroCardTitle || ('Votre ' + readingName() + ' a-t-elle sa place dans l’une de ces conversations ?'));
-      setText('heroCardText', dynamicCopy.heroCardText || 'En 15 minutes, nous vérifions si votre angle correspond à une position encore disponible — en toute confidentialité.');
-      setHtml('heroNote', (dynamicCopy.heroNoteHtml || 'Aucun chiffre confidentiel à exposer &nbsp;·&nbsp; Aucun dossier sensible à commenter &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Collaboration possible avec services juridique, communication ou corporate de votre organisation'));
-
-      var audienceGrid = document.getElementById('audienceGrid');
-      if (audienceGrid) {
-        audienceGrid.innerHTML = '<div class="audience-card"><h3>' + esc(audience.yesTitle) + '</h3>' + listHtml(audience.yesItems) + '</div>' +
-          '<div class="audience-card audience-card--no"><h3>' + esc(audience.noTitle) + '</h3>' + listHtml(audience.noItems, 'audience-list--no') + '</div>';
-      }
-      setHtml('audiencePanel', paragraphHtml(audience.panel));
-
-      var processRow = document.getElementById('processRow');
-      if (processRow) {
-        processRow.innerHTML = process.map(function(step) {
-          return '<div class="process-step"><div class="step-num">' + esc(step.num) + '</div><h3>' + esc(step.title) + '</h3><p>' + esc(step.text) + '</p>' + (step.deadline ? '<div class="process-deadline">' + esc(step.deadline) + '</div>' : '') + '</div>';
-        }).join('');
-      }
-
-      var guaranteesGrid = document.getElementById('guaranteesGrid');
-      if (guaranteesGrid) {
-        guaranteesGrid.innerHTML = guarantees.map(function(item) {
-          return '<div class="guarantee' + (item.accent ? ' guarantee--accent' : '') + '"><h3>' + esc(item.title) + '</h3><p>' + esc(item.text) + '</p></div>';
-        }).join('');
-      }
-
-      var faqList = document.getElementById('faqList');
-      if (faqList) {
-        faqList.innerHTML = faq.map(function(item) {
-          return '<div class="faq-item"><h3>' + esc(item.question) + '</h3><p>' + esc(item.answer) + '</p></div>';
-        }).join('');
-      }
-
-      ['navCta', 'heroCta', 'midCta', 'footerCta'].forEach(function(id) {
-        var el = document.getElementById(id);
-        if (!el) return;
-        var cta = id.replace('Cta', '').replace('nav', 'nav').replace('hero', 'hero').replace('mid', 'mid-conv').replace('footer', 'footer');
-        if (id === 'midCta') cta = 'mid-conv';
-        if (id === 'footerCta') cta = 'footer';
-        if (id === 'navCta') cta = 'nav';
-        if (id === 'heroCta') cta = 'hero';
-        el.setAttribute('href', calUrl(cta));
-      });
-
-      var heroProfiles = document.getElementById('heroProfiles');
-      heroProfiles.innerHTML = config.heroProfiles.map(function(profile) {
-        return '<div class="hero-profile">' +
-          '<div class="hero-profile-label">' + esc(profile.label) + '</div>' +
-          '<p>' + esc(profile.text) + '</p>' +
-        '</div>';
-      }).join('');
-
-      var valueGrid = document.getElementById('valueGrid');
-      valueGrid.innerHTML = config.valueSection.cards.map(function(card) {
-        return '<div class="value-card">' +
-          '<div class="value-num">' + esc(card.label) + '</div>' +
-          '<h3>' + esc(card.title) + '</h3>' +
-          '<p>' + esc(card.text) + '</p>' +
-        '</div>';
-      }).join('');
-
-      var convNav = document.getElementById('convNav');
-      var convContent = document.getElementById('convContent');
-      var colors = { C1: 'var(--c1)', C2: 'var(--c2)', C3: 'var(--c3)', C4: 'var(--c4)' };
-
-      convNav.innerHTML = panels.map(function(panel, index) {
-        var active = index === 0 ? ' is-active' : '';
-        var conversation = panel.conversation;
-        var contextLabels = panel.angles.map(function(item) { return item.context.label.replace(' sous ', ' '); });
-        return '<button class="conv-nav-item' + active + '" data-conv="' + esc(conversation.code) + '" aria-selected="' + (index === 0 ? 'true' : 'false') + '">' +
-          '<div class="conv-nav-color" style="background:' + colors[conversation.code] + ';"></div>' +
-          '<div class="conv-nav-body">' +
-            '<div class="conv-nav-num">' + esc(conversation.code.replace('C', '0')) + '</div>' +
-            '<div class="conv-nav-title">' + esc(conversation.title) + '</div>' +
-            '<div class="conv-nav-tags">' + contextLabels.map(function(label) { return '<span>' + esc(label) + '</span>'; }).join('') + '</div>' +
-          '</div>' +
-        '</button>';
-      }).join('');
-
-      convContent.innerHTML = panels.map(function(panel, index) {
-        var conversation = panel.conversation;
-        var active = index === 0 ? ' is-active' : '';
-        var angleBlocks = panel.angles.map(function(item) {
-          var angle = item.angle;
-          var context = item.context;
-          return '<div class="finance-angle">' +
-            '<div class="finance-angle-label">' + esc(reading.label) + ' · ' + esc(context.label) + ' · ' + esc(angle.crmCode) + '</div>' +
-            '<div class="finance-angle-q">' + esc(angle.questionPublique) + '</div>' +
-            '<p class="finance-angle-desc">' + esc(angle.questionActivation) + '</p>' +
-            '<div class="angle-meta">' +
-              '<div class="angle-meta-card"><div class="angle-meta-label">Point de bascule</div><div class="angle-meta-text">' + esc(angle.pointBascule) + '</div></div>' +
-              '<div class="angle-meta-card"><div class="angle-meta-label">Tension / arbitrage</div><div class="angle-meta-text">' + esc(angle.tensionArbitrage) + '</div></div>' +
-            '</div>' +
-            '<div class="angle-chips">' + angle.primaryProfiles.map(function(profile) { return '<span>' + esc(profile) + '</span>'; }).join('') + '</div>' +
-          '</div>';
-        }).join('');
-
-        return '<div class="conv-panel' + active + '" id="' + esc(conversation.code) + '" data-color="' + colors[conversation.code] + '">' +
-          '<div class="conv-panel-header" style="border-top:3px solid ' + colors[conversation.code] + ';">' +
-            '<div class="conv-panel-num" style="color:' + colors[conversation.code] + ';">Conversation ' + esc(conversation.code.replace('C', '0')) + '</div>' +
-            '<h3 class="conv-panel-title">' + esc(conversation.landingTitle || conversation.title) + '</h3>' +
-            '<p class="conv-panel-desc">' + esc(conversation.description) + '</p>' +
-          '</div>' +
-          angleBlocks +
-        '</div>';
-      }).join('');
-
-      document.querySelectorAll('.conv-nav-item').forEach(function(item) {
-        item.addEventListener('click', function() {
-          var target = this.dataset.conv;
-          document.querySelectorAll('.conv-nav-item').forEach(function(navItem) {
-            navItem.classList.remove('is-active');
-            navItem.setAttribute('aria-selected', 'false');
-          });
-          document.querySelectorAll('.conv-panel').forEach(function(panel) {
-            panel.classList.remove('is-active');
-          });
-          this.classList.add('is-active');
-          this.setAttribute('aria-selected', 'true');
-          var targetPanel = document.getElementById(target);
-          if (targetPanel) targetPanel.classList.add('is-active');
-        });
-      });
-    })();
-  </script>
+  <script src="/assets/js/editorial-data-industrie-test.js?v=5"></script>
 </body>
 </html>
