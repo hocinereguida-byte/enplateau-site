@@ -1,7 +1,7 @@
-/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V13 */
+/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V14 opérations */
 
 window.EN_PLATEAU_EDITORIAL_DATA = {
-  "version": "2026-05-08-v13-complementaires-contextuels-complets",
+  "version": "2026-05-09-v14-operations",
   "status": "test",
   "sourceDocument": "programme_editorial_industrie.docx",
   "scope": {
@@ -9,9 +9,10 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
     "includedReadings": [
       "STRATEGIQUE",
       "FINANCIERE",
-      "JURIDIQUE"
+      "JURIDIQUE",
+      "OPERATIONNELLE"
     ],
-    "note": "Référentiel test pour gabarit unique de landing page. Les landing pages sont pilotées par body[data-landing]."
+    "note": "Référentiel test pour gabarit unique de landing page. Les landing pages sont pilotées par body[data-landing]. Version enrichie avec la lecture opérationnelle."
   },
   "notes": {
     "stableCodesRequired": true,
@@ -1610,8 +1611,57 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Performance industrielle"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
+          "showInForm": true,
+          "landingPages": [
+            "operations"
+          ],
+          "pointBascule": "À partir de quand les leviers d’absorption opérationnelle créent-ils plus de tension différée qu’ils ne résolvent de pression immédiate ?",
+          "tensionArbitrage": "Répondre à la demande sans fragiliser la qualité, la maintenance, les flux ni l’équilibre organisationnel.",
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Cadence, stocks, maintenance et qualité sous croissance",
+            "chapeau": "Votre intervention permettrait d’éclairer les arbitrages qui absorbent la hausse de demande tout en pouvant déplacer la tension vers l’organisation, la maintenance, les stocks, la qualité ou les équipes.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change réellement dans la situation : volume, cadence, outil, ressources, flux, organisation, niveau de contrainte et moment où la décision change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, production, maintenance, qualité, supply chain, achats, équipes terrain, clients, fournisseurs ou partenaires."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : tenir, ajuster, prioriser, sécuriser, investir, standardiser, différer, transformer ou renoncer."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : robustesse accrue, organisation plus lisible, outil mieux sécurisé ou trajectoire mieux assumée."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que l’expérience opérationnelle permet de reconnaître avant que la saturation, la dérive ou le blocage ne deviennent évidents."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer l’analyse à la bonne échelle : ligne, atelier, site, réseau d’usines, chaîne de valeur, fournisseur critique ou trajectoire d’entreprise."
+              }
+            ],
+            "momentBascule": "À partir de quand les leviers d’absorption opérationnelle créent-ils plus de tension différée qu’ils ne résolvent de pression immédiate ?",
+            "tensionCentrale": "Répondre à la demande sans fragiliser la qualité, la maintenance, les flux ni l’équilibre organisationnel.",
+            "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un fournisseur, un site ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C1-GS-A01",
+            "IND-C1-GS-A03",
+            "IND-C1-GS-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A03",
@@ -1688,8 +1738,57 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Performance industrielle"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
+          "showInForm": true,
+          "landingPages": [
+            "operations"
+          ],
+          "pointBascule": "À partir de quand tenir l’activité revient-il à déplacer la contrainte plutôt qu’à la résoudre ?",
+          "tensionArbitrage": "Maintenir la continuité industrielle sans accumuler des compromis qui fragilisent l’outil ou l’organisation.",
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Maintien d’activité sous marges de manœuvre réduites",
+            "chapeau": "Votre intervention permettrait d’analyser les arbitrages qui permettent de maintenir l’activité lorsque les volumes, la qualité, la maintenance ou les délais ne peuvent plus être ajustés sans coût opérationnel.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change réellement dans la situation : volume, cadence, outil, ressources, flux, organisation, niveau de contrainte et moment où la décision change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, production, maintenance, qualité, supply chain, achats, équipes terrain, clients, fournisseurs ou partenaires."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : tenir, ajuster, prioriser, sécuriser, investir, standardiser, différer, transformer ou renoncer."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : robustesse accrue, organisation plus lisible, outil mieux sécurisé ou trajectoire mieux assumée."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que l’expérience opérationnelle permet de reconnaître avant que la saturation, la dérive ou le blocage ne deviennent évidents."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer l’analyse à la bonne échelle : ligne, atelier, site, réseau d’usines, chaîne de valeur, fournisseur critique ou trajectoire d’entreprise."
+              }
+            ],
+            "momentBascule": "À partir de quand tenir l’activité revient-il à déplacer la contrainte plutôt qu’à la résoudre ?",
+            "tensionCentrale": "Maintenir la continuité industrielle sans accumuler des compromis qui fragilisent l’outil ou l’organisation.",
+            "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un fournisseur, un site ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C1-AC-A01",
+            "IND-C1-AC-J01",
+            "IND-C1-AC-A03"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A03",
@@ -1766,8 +1865,57 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Performance industrielle"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
+          "showInForm": true,
+          "landingPages": [
+            "operations"
+          ],
+          "pointBascule": "À partir de quand l’adaptation opérationnelle devient-elle insuffisante pour préserver la trajectoire ?",
+          "tensionArbitrage": "Continuer à compenser ou reconnaître que le système de production doit changer de logique.",
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — De l’adaptation opérationnelle à la transformation",
+            "chapeau": "Votre intervention viserait à éclairer le moment où les ajustements opérationnels ne suffisent plus et où la continuité industrielle appelle une transformation de l’organisation, des flux ou de l’outil.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change réellement dans la situation : volume, cadence, outil, ressources, flux, organisation, niveau de contrainte et moment où la décision change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, production, maintenance, qualité, supply chain, achats, équipes terrain, clients, fournisseurs ou partenaires."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : tenir, ajuster, prioriser, sécuriser, investir, standardiser, différer, transformer ou renoncer."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : robustesse accrue, organisation plus lisible, outil mieux sécurisé ou trajectoire mieux assumée."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que l’expérience opérationnelle permet de reconnaître avant que la saturation, la dérive ou le blocage ne deviennent évidents."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer l’analyse à la bonne échelle : ligne, atelier, site, réseau d’usines, chaîne de valeur, fournisseur critique ou trajectoire d’entreprise."
+              }
+            ],
+            "momentBascule": "À partir de quand l’adaptation opérationnelle devient-elle insuffisante pour préserver la trajectoire ?",
+            "tensionCentrale": "Continuer à compenser ou reconnaître que le système de production doit changer de logique.",
+            "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un fournisseur, un site ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C1-RC-A01",
+            "IND-C1-RC-A03",
+            "IND-C1-RC-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A04",
@@ -2026,8 +2174,57 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Performance industrielle"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
+          "showInForm": true,
+          "landingPages": [
+            "operations"
+          ],
+          "pointBascule": "À partir de quand la coordination opératoire devient-elle le véritable verrou de la montée en capacité ?",
+          "tensionArbitrage": "Investir ou équiper davantage sans résoudre l’architecture réelle des flux et de l’exécution.",
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Coordination des flux et architecture opératoire",
+            "chapeau": "Votre intervention permettrait d’éclairer les situations où la limite de croissance n’est plus d’abord technologique, mais opératoire : flux, séquencement, interfaces, coordination ou capacité à stabiliser l’exécution.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change réellement dans la situation : volume, cadence, outil, ressources, flux, organisation, niveau de contrainte et moment où la décision change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, production, maintenance, qualité, supply chain, achats, équipes terrain, clients, fournisseurs ou partenaires."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : tenir, ajuster, prioriser, sécuriser, investir, standardiser, différer, transformer ou renoncer."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : robustesse accrue, organisation plus lisible, outil mieux sécurisé ou trajectoire mieux assumée."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que l’expérience opérationnelle permet de reconnaître avant que la saturation, la dérive ou le blocage ne deviennent évidents."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer l’analyse à la bonne échelle : ligne, atelier, site, réseau d’usines, chaîne de valeur, fournisseur critique ou trajectoire d’entreprise."
+              }
+            ],
+            "momentBascule": "À partir de quand la coordination opératoire devient-elle le véritable verrou de la montée en capacité ?",
+            "tensionCentrale": "Investir ou équiper davantage sans résoudre l’architecture réelle des flux et de l’exécution.",
+            "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un fournisseur, un site ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C3-GS-A12",
+            "IND-C3-GS-A01",
+            "IND-C3-GS-A03"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A03",
@@ -2078,8 +2275,57 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Performance industrielle"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
+          "showInForm": true,
+          "landingPages": [
+            "operations"
+          ],
+          "pointBascule": "À partir de quand l’ajout d’outils ne compense-t-il plus les limites de l’architecture opératoire ?",
+          "tensionArbitrage": "Moderniser l’outil sans transformer les interfaces, routines, flux et modes de coordination qui conditionnent sa performance.",
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Outils nouveaux et architecture opératoire rigide",
+            "chapeau": "Votre intervention permettrait d’analyser le moment où de nouveaux outils ne compensent plus une organisation trop fragmentée, rigide ou difficile à stabiliser opérationnellement.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change réellement dans la situation : volume, cadence, outil, ressources, flux, organisation, niveau de contrainte et moment où la décision change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, production, maintenance, qualité, supply chain, achats, équipes terrain, clients, fournisseurs ou partenaires."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : tenir, ajuster, prioriser, sécuriser, investir, standardiser, différer, transformer ou renoncer."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : robustesse accrue, organisation plus lisible, outil mieux sécurisé ou trajectoire mieux assumée."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que l’expérience opérationnelle permet de reconnaître avant que la saturation, la dérive ou le blocage ne deviennent évidents."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer l’analyse à la bonne échelle : ligne, atelier, site, réseau d’usines, chaîne de valeur, fournisseur critique ou trajectoire d’entreprise."
+              }
+            ],
+            "momentBascule": "À partir de quand l’ajout d’outils ne compense-t-il plus les limites de l’architecture opératoire ?",
+            "tensionCentrale": "Moderniser l’outil sans transformer les interfaces, routines, flux et modes de coordination qui conditionnent sa performance.",
+            "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un fournisseur, un site ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C3-AC-A12",
+            "IND-C3-AC-A09",
+            "IND-C3-AC-J03"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A01",
@@ -2130,8 +2376,57 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Performance industrielle"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
+          "showInForm": true,
+          "landingPages": [
+            "operations"
+          ],
+          "pointBascule": "À partir de quand la crise révèle-t-elle que le système productif doit être repensé plutôt que seulement réparé ?",
+          "tensionArbitrage": "Restaurer l’exécution à court terme ou refondre les conditions opérationnelles qui rendent la trajectoire tenable.",
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Crise et refonte du système productif",
+            "chapeau": "Votre intervention viserait à éclairer les crises où le sujet n’est plus seulement l’outil industriel, mais l’architecture même du système productif : flux, coordination, standards, interfaces et capacité de décision.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change réellement dans la situation : volume, cadence, outil, ressources, flux, organisation, niveau de contrainte et moment où la décision change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, production, maintenance, qualité, supply chain, achats, équipes terrain, clients, fournisseurs ou partenaires."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : tenir, ajuster, prioriser, sécuriser, investir, standardiser, différer, transformer ou renoncer."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : robustesse accrue, organisation plus lisible, outil mieux sécurisé ou trajectoire mieux assumée."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que l’expérience opérationnelle permet de reconnaître avant que la saturation, la dérive ou le blocage ne deviennent évidents."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer l’analyse à la bonne échelle : ligne, atelier, site, réseau d’usines, chaîne de valeur, fournisseur critique ou trajectoire d’entreprise."
+              }
+            ],
+            "momentBascule": "À partir de quand la crise révèle-t-elle que le système productif doit être repensé plutôt que seulement réparé ?",
+            "tensionCentrale": "Restaurer l’exécution à court terme ou refondre les conditions opérationnelles qui rendent la trajectoire tenable.",
+            "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un fournisseur, un site ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C3-RC-A01",
+            "IND-C3-RC-A03",
+            "IND-C3-RC-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A03",
@@ -2234,8 +2529,57 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Performance industrielle"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
+          "showInForm": true,
+          "landingPages": [
+            "operations"
+          ],
+          "pointBascule": "À partir de quand les ressources physiques deviennent-elles le vrai plafond de capacité ?",
+          "tensionArbitrage": "Croître industriellement sans ignorer les limites concrètes d’énergie, d’eau, d’utilités, de raccordement ou de réseau.",
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Ressources physiques et verrou de capacité",
+            "chapeau": "Votre intervention permettrait d’éclairer les situations où l’accès à l’énergie, l’eau, les utilités ou les capacités réseaux devient le verrou opérationnel d’une trajectoire industrielle.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change réellement dans la situation : volume, cadence, outil, ressources, flux, organisation, niveau de contrainte et moment où la décision change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, production, maintenance, qualité, supply chain, achats, équipes terrain, clients, fournisseurs ou partenaires."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : tenir, ajuster, prioriser, sécuriser, investir, standardiser, différer, transformer ou renoncer."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : robustesse accrue, organisation plus lisible, outil mieux sécurisé ou trajectoire mieux assumée."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que l’expérience opérationnelle permet de reconnaître avant que la saturation, la dérive ou le blocage ne deviennent évidents."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer l’analyse à la bonne échelle : ligne, atelier, site, réseau d’usines, chaîne de valeur, fournisseur critique ou trajectoire d’entreprise."
+              }
+            ],
+            "momentBascule": "À partir de quand les ressources physiques deviennent-elles le vrai plafond de capacité ?",
+            "tensionCentrale": "Croître industriellement sans ignorer les limites concrètes d’énergie, d’eau, d’utilités, de raccordement ou de réseau.",
+            "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un fournisseur, un site ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C4-GS-A15",
+            "IND-C4-GS-A01",
+            "IND-C4-GS-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A04",
@@ -2940,6 +3284,190 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "text": "Un échange de 15 minutes — sans exposer de dossier, sans engagement — pour vérifier si votre angle a une place dans l’une des 4 positions juridiques ouvertes.",
           "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
           "footnote": "Les positions juridiques se ferment au fil de la composition éditoriale · Page non indexée"
+        }
+      }
+    },
+    "operations": {
+      "cycleCode": "IND",
+      "readingType": "OPERATIONNELLE",
+      "title": "Lecture opérationnelle — Cycle Industrie & transformation des territoires | En Plateau",
+      "metaDescription": "Une place précise pour éclairer les arbitrages opérationnels qui rendent une trajectoire industrielle tenable, fragile ou à réarbitrer — sans exposer de situation interne.",
+      "navLabel": "Cycle Industrie · Lecture opérationnelle",
+      "heroTitleHtml": "Votre lecture<br><em>rend visible</em><br>ce qui fait tenir<br>l'industrie réelle.",
+      "heroLead": "Certaines trajectoires industrielles ne se comprennent pas seulement depuis la stratégie, la finance ou le droit. Elles se lisent dans les arbitrages de capacité, de flux, de qualité, de maintenance, de supply chain et d’organisation.",
+      "heroProfiles": [
+        {
+          "label": "Directions industrielles & opérations",
+          "text": "Vous pilotez ou avez piloté des arbitrages de capacité, qualité, cadence, maintenance, flux, organisation ou transformation de sites industriels."
+        },
+        {
+          "label": "Conseil & transformation industrielle",
+          "text": "Vous accompagnez des industriels sur la performance, l’excellence opérationnelle, la supply chain, la robustesse des organisations ou la transformation de l’outil."
+        }
+      ],
+      "valueSection": {
+        "title": "Faire reconnaître ce qui rend une trajectoire industrielle réellement tenable",
+        "intro": "Une lecture opérationnelle ne consiste pas à exposer une situation interne. Elle permet de montrer comment une entreprise lit, pilote et sécurise ses contraintes industrielles, tout en donnant aux fonctions opérationnelles une place plus juste dans la compréhension des transformations en cours.",
+        "cards": [
+          {
+            "label": "ETI · Grand groupe industriel",
+            "title": "Montrer que l’outil industriel est piloté avec lucidité",
+            "text": "Cette prise de parole permet de rendre visibles les arbitrages qui font tenir une trajectoire industrielle : capacité, maintenance, qualité, flux, délais, ressources et organisation. Elle valorise une lecture opérationnelle de haut niveau tout en rassurant partenaires, clients, financeurs ou acteurs institutionnels sur la capacité de l’entreprise à comprendre ses propres tensions industrielles."
+          },
+          {
+            "label": "Supply chain · Achats · Flux",
+            "title": "Faire apparaître les dépendances réellement pilotées",
+            "text": "Cette lecture permet de montrer comment les dépendances fournisseurs, matières, stocks, délais, transport ou continuité industrielle sont identifiées, hiérarchisées et pilotées. Elle donne de la visibilité à des fonctions souvent décisives dans la robustesse réelle de l’organisation, tout en montrant que les vulnérabilités opérationnelles ne sont pas subies mais analysées avec méthode."
+          },
+          {
+            "label": "Cabinet de conseil · Transformation industrielle",
+            "title": "Démontrer une compréhension concrète des arbitrages industriels",
+            "text": "Cette intervention permet de montrer une lecture située des contraintes industrielles réelles : soutenabilité opérationnelle, adaptation des outils, tensions de capacité, robustesse des process, organisation sous contrainte. Elle valorise une expertise capable de dépasser les discours généraux de transformation pour éclairer les mécanismes qui se répètent dans les trajectoires industrielles."
+          },
+          {
+            "label": "Excellence opérationnelle · Qualité · Maintenance",
+            "title": "Valoriser les fonctions qui sécurisent la transformation dans la durée",
+            "text": "Cette lecture montre que la robustesse industrielle ne repose pas uniquement sur la stratégie ou l’investissement, mais aussi sur les standards, la maintenance, la qualité, les routines, la fiabilité de l’outil et la stabilité des organisations. Elle valorise des fonctions qui rendent les transformations réellement tenables, tout en montrant que l’entreprise sait identifier ce qui tient, ce qui dérive et ce qui doit être réarbitré."
+          }
+        ]
+      },
+      "copy": {
+        "positionsCountNote": "39 positions avec lecture opérationnelle sont ouvertes dans le cycle Industrie.",
+        "rarityBlock": {
+          "kicker": "Rareté éditoriale",
+          "title": "39 positions avec lecture opérationnelle sont ouvertes dans le cycle Industrie.",
+          "text": "Chaque position correspond à un angle contextualisé. Lorsqu’une position est validée, elle n’est plus ouverte à une lecture opérationnelle équivalente."
+        },
+        "heroNoteHtml": "Aucun chiffre interne à exposer &nbsp;·&nbsp; Aucun dossier sensible à commenter &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Préparation possible avec les équipes communication, juridique ou corporate de votre organisation",
+        "heroCardTitle": "Votre lecture opérationnelle a-t-elle sa place dans l’une de ces conversations ?",
+        "heroCardText": "En 15 minutes, nous vérifions si votre lecture correspond à une position encore disponible — sans exposer de situation interne, de chiffre confidentiel ou de dossier identifiable.",
+        "audience": {
+          "title": "Cette lecture opérationnelle vous est-elle destinée ?",
+          "yesTitle": "Vous portez probablement une lecture pertinente si…",
+          "noTitle": "Moins adapté si…",
+          "yesItems": [
+            "Vous savez relier cadence, qualité, maintenance, flux, supply chain, ressources ou organisation à des arbitrages industriels réels.",
+            "Vous êtes directeur industriel, directeur des opérations, responsable de site, supply chain, performance industrielle, qualité, maintenance, excellence opérationnelle ou conseil en transformation industrielle.",
+            "Votre lecture porte sur des seuils : outil qui sature, flux qui fragilisent, dépendance qui bloque, organisation qui compense, qualité qui devient plus difficile à tenir.",
+            "Vous pouvez éclairer un mécanisme industriel sans exposer de chiffre interne, de situation sensible ou de cas identifiable."
+          ],
+          "noItems": [
+            "Votre contribution vise surtout à présenter une méthode, une offre ou une solution.",
+            "Votre lecture reste trop générale pour être rattachée à un arbitrage opérationnel précis.",
+            "Vous souhaitez commenter une situation interne identifiable ou un dossier confidentiel.",
+            "Votre approche ne relie pas les contraintes de terrain aux décisions industrielles qui en découlent."
+          ],
+          "panel": "La lecture opérationnelle ne consiste pas à raconter le fonctionnement interne d’un site ou d’une entreprise. Elle consiste à éclairer les mécanismes qui rendent une trajectoire industrielle tenable, fragile ou à réarbitrer."
+        },
+        "conversations": {
+          "title": "Les angles où la lecture opérationnelle devient décisive",
+          "intro": "La page met d’abord en avant les angles opérationnels ouverts. Les lectures complémentaires ne s’affichent que lorsqu’elles appartiennent à la même conversation et au même contexte.",
+          "panel": "Ces positions ne demandent pas de commenter une situation particulière ; elles proposent d’éclairer les arbitrages concrets qui se répètent dans les trajectoires industrielles."
+        },
+        "preparation": {
+          "titleHtml": "Beaucoup arrivent avec une expérience opérationnelle. <em style=\"color:rgba(240,236,230,0.55);\">Ils repartent avec une lecture publiquement défendable.</em>",
+          "intro": "La préparation éditoriale transforme une expérience industrielle, une pratique de pilotage ou une expertise de transformation en lecture située : claire, non intrusive et utile pour d’autres décideurs."
+        },
+        "dimensions": [
+          {
+            "num": "01",
+            "title": "Transformation en cours / contexte",
+            "text": "Qualifier ce qui change concrètement : montée en charge, saturation, dépendance, contrainte de ressources, outil à adapter ou organisation qui atteint ses limites."
+          },
+          {
+            "num": "02",
+            "title": "Acteurs concernés",
+            "text": "Identifier les acteurs impactés : direction industrielle, production, maintenance, qualité, supply chain, achats, équipes terrain, clients, fournisseurs ou partenaires."
+          },
+          {
+            "num": "03",
+            "title": "Arbitrages opérationnels",
+            "text": "Rendre visibles les choix réels : tenir la cadence, préserver la qualité, sécuriser les flux, investir, différer, standardiser, transformer ou renoncer."
+          },
+          {
+            "num": "04",
+            "title": "Défis & opportunités",
+            "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : robustesse accrue, organisation plus lisible, outil mieux sécurisé ou trajectoire mieux assumée."
+          },
+          {
+            "num": "05",
+            "title": "Vision attendue",
+            "text": "Formuler une lecture située de ce que l’expérience opérationnelle permet de reconnaître avant que la saturation, la dérive ou le blocage ne deviennent évidents."
+          },
+          {
+            "num": "06",
+            "title": "Échelle d’analyse",
+            "text": "Situer la lecture à la bonne échelle : ligne, site, organisation industrielle, chaîne de valeur, réseau d’usines, fournisseur critique ou trajectoire d’entreprise."
+          }
+        ],
+        "dimensionsPanel": "Ce travail ne vous demande pas d’exposer votre organisation. Il donne une forme claire à ce que votre position vous a appris à reconnaître.",
+        "process": [
+          {
+            "num": "01",
+            "title": "L'échange de qualification",
+            "text": "15 minutes pour vérifier si votre lecture correspond à un angle disponible. Aucun chiffre interne, dossier sensible ou cas identifiable à exposer.",
+            "deadline": "À planifier en amont du comité éditorial"
+          },
+          {
+            "num": "02",
+            "title": "Le dossier de positionnement",
+            "text": "Si l’angle est retenu, un dossier complet vous est adressé : angle précis, logique de mise en regard, modalités d’intervention, format émission et article associé."
+          },
+          {
+            "num": "03",
+            "title": "Le comité éditorial",
+            "text": "Le 15 juin, le comité éditorial examine les dossiers de positionnement et valide la composition finale. Vous êtes informé avant tout engagement.",
+            "deadline": "Comité : 15 juin 2026"
+          },
+          {
+            "num": "04",
+            "title": "La préparation & la production",
+            "text": "En Plateau travaille avec vous, et avec vos équipes communication, juridique ou corporate si nécessaire, pour transformer votre lecture en position claire, non intrusive et publiquement défendable."
+          }
+        ],
+        "guarantees": [
+          {
+            "accent": true,
+            "title": "Aucune situation interne à exposer",
+            "text": "L’échange porte sur les mécanismes d’arbitrage opérationnel, pas sur un site, un client, un fournisseur ou une décision identifiable."
+          },
+          {
+            "accent": true,
+            "title": "Aucun engagement avant le dossier de positionnement",
+            "text": "Vous ne vous engagez pas lors de l’échange éditorial. La position proposée est qualifiée avant toute validation."
+          },
+          {
+            "title": "Pas de retour d’expérience promotionnel attendu",
+            "text": "La contribution vise une lecture située des contraintes industrielles, non une présentation d’entreprise, de méthode ou de solution."
+          },
+          {
+            "title": "Une parole préparée avec vos équipes si nécessaire",
+            "text": "La préparation peut intégrer vos contraintes de communication, juridiques, corporate ou de confidentialité."
+          }
+        ],
+        "faq": [
+          {
+            "question": "Faut-il parler d’un site, d’un client ou d’un fournisseur identifiable ?",
+            "answer": "Non. L’enjeu n’est pas d’exposer une situation interne, mais d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation."
+          },
+          {
+            "question": "Cette lecture est-elle réservée aux directeurs industriels ?",
+            "answer": "Non. Elle peut être portée par des directions industrielles, opérations, supply chain, qualité, maintenance, excellence opérationnelle, performance industrielle ou par des conseils spécialisés."
+          },
+          {
+            "question": "Peut-on préparer l’intervention avec les équipes communication ou juridiques ?",
+            "answer": "Oui. La prise de parole peut être préparée avec les équipes communication, juridique ou corporate afin de garantir un niveau d’exposition maîtrisé."
+          },
+          {
+            "question": "Faut-il arriver avec une position déjà formulée ?",
+            "answer": "Non. L’échange éditorial sert précisément à vérifier l’angle, puis à transformer votre lecture opérationnelle en position claire, défendable et non intrusive."
+          }
+        ],
+        "cta": {
+          "title": "Votre lecture opérationnelle peut éclairer ce qui fait tenir — ou fragilise — une trajectoire industrielle.",
+          "text": "Un échange de 15 minutes — sans exposer de chiffre interne, sans dossier sensible, sans engagement — pour vérifier si votre angle a une place dans l’une des 39 positions opérationnelles ouvertes.",
+          "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
+          "footnote": "Les positions opérationnelles se ferment au fil de la composition éditoriale · Page non indexée"
         }
       }
     }
