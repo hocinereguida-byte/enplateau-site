@@ -2192,6 +2192,35 @@ body.page-positions #hero-positions-hub .page-hero-note {
 body.page-positions #hero-positions-hub .programme-link-row {
   margin-top: 26px;
 }
+/* =========================================================
+   PAGE À PROPOS — PORTAGE
+========================================================= */
 
+body.page-a-propos #portage .a-propos-role {
+  margin: -6px 0 22px;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  line-height: 1.55;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--p3-accent-deep);
+}
+
+body.page-a-propos #portage .page3-split-copy strong {
+  font-weight: 600;
+  color: var(--p3-ink);
+}
+
+body.page-a-propos #portage .page3-visual-portage {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.46), rgba(17,17,17,.18)),
+    url("../../images/a-propos/hocine-reguida.jpg") center 18% / cover no-repeat;
+  filter: grayscale(100%) contrast(108%) brightness(.78);
+}
+
+body.page-a-propos #portage .programme-link-row {
+  justify-content: flex-start;
+  margin-top: 28px;
+}
 
 
