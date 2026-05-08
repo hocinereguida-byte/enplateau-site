@@ -3332,11 +3332,11 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         ]
       },
       "copy": {
-        "positionsCountNote": "39 positions avec lecture opérationnelle sont ouvertes dans le cycle Industrie.",
+        "positionsCountNote": "7 positions avec lecture opérationnelle sont ouvertes dans le cycle Industrie.",
         "rarityBlock": {
           "kicker": "Rareté éditoriale",
-          "title": "39 positions avec lecture opérationnelle sont ouvertes dans le cycle Industrie.",
-          "text": "Chaque position correspond à un angle contextualisé. Lorsqu’une position est validée, elle n’est plus ouverte à une lecture opérationnelle équivalente."
+          "title": "7 positions avec lecture opérationnelle sont ouvertes dans le cycle Industrie.",
+          "text": "Chaque position correspond à un angle contextualisé. Une position opérationnelle ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
         },
         "heroNoteHtml": "Aucun chiffre interne à exposer &nbsp;·&nbsp; Aucun dossier sensible à commenter &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Préparation possible avec les équipes communication, juridique ou corporate de votre organisation",
         "heroCardTitle": "Votre lecture opérationnelle a-t-elle sa place dans l’une de ces conversations ?",
@@ -3465,7 +3465,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         ],
         "cta": {
           "title": "Votre lecture opérationnelle peut éclairer ce qui fait tenir — ou fragilise — une trajectoire industrielle.",
-          "text": "Un échange de 15 minutes — sans exposer de chiffre interne, sans dossier sensible, sans engagement — pour vérifier si votre angle a une place dans l’une des 39 positions opérationnelles ouvertes.",
+          "text": "Un échange de 15 minutes — sans exposer de chiffre interne, sans dossier sensible, sans engagement — pour vérifier si votre angle a une place dans l’une des 7 positions opérationnelles ouvertes.",
           "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
           "footnote": "Les positions opérationnelles se ferment au fil de la composition éditoriale · Page non indexée"
         }
