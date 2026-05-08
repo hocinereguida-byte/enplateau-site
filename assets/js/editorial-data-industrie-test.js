@@ -2943,27 +2943,27 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
       ],
       "valueSection": {
         "title": "Faire reconnaître la finance comme lecture d'arbitrage industriel — pas comme simple commentaire de chiffres",
-        "intro": "La prise de parole financière devient utile lorsqu'elle éclaire les mécanismes qui obligent une entreprise industrielle à choisir.",
+        "intro": "La prise de parole financière devient utile lorsqu'elle éclaire les mécanismes qui obligent une entreprise industrielle à choisir, tout en renforçant la crédibilité économique de l’organisation auprès de ses investisseurs, banquiers, fournisseurs, partenaires et acteurs institutionnels.",
         "cards": [
           {
-            "label": "DAF · CFO",
-            "title": "Faire reconnaître votre rôle dans les arbitrages qui tiennent réellement la trajectoire industrielle",
-            "text": "Une prise de parole préparée rend visible cette fonction d’arbitrage, sans exposer vos chiffres internes."
+            "label": "DAF · CFO · Direction financière",
+            "title": "Rendre lisible la qualité du pilotage économique",
+            "text": "Cette prise de parole permet de montrer que l’entreprise sait lire ses marges de manœuvre, ses coûts différés, ses besoins d’investissement et ses seuils de soutenabilité. Elle valorise le rôle de la fonction financière dans les arbitrages industriels, tout en donnant aux investisseurs, banquiers, fournisseurs ou partenaires une lecture plus solide de la manière dont la trajectoire est pilotée."
           },
           {
-            "label": "ETI sous contrainte",
-            "title": "Reprendre la maîtrise du récit économique avant qu'il ne soit lu à votre place",
-            "text": "Une lecture cadrée permet de montrer ce qui relève d’un pilotage assumé."
+            "label": "ETI · Groupe industriel sous contrainte",
+            "title": "Rassurer sur la capacité à arbitrer sans subir",
+            "text": "Dans une trajectoire industrielle tendue, une lecture financière bien préparée peut montrer que les choix économiques ne sont pas seulement défensifs, mais hiérarchisés, assumés et reliés à une vision industrielle. Elle valorise la capacité de l’entreprise à expliquer ce qui doit être sécurisé, différé, investi ou transformé, sans exposer de chiffres internes ni de dossier sensible."
           },
           {
-            "label": "Cabinet finance",
-            "title": "Créer un signal éditorial que vos prospects reconnaissent",
-            "text": "Une lecture financière bien cadrée crée une reconnaissance immédiate, sans discours promotionnel."
+            "label": "Conseil finance · Restructuring · Investissement",
+            "title": "Démontrer une lecture financière réellement connectée à l’industrie",
+            "text": "Pour un cabinet ou un profil conseil, cette contribution montre une capacité à dépasser l’analyse financière abstraite pour éclairer les décisions industrielles concrètes : CAPEX, dette technologique, dépendances, coûts de ressources, compétitivité, transformation ou repositionnement. Elle renforce la crédibilité de l’expertise auprès de dirigeants et partenaires qui cherchent une lecture financière reliée au réel industriel."
           },
           {
-            "label": "Profil senior",
-            "title": "Construire une trace publique de votre capacité à relier finance et décision industrielle",
-            "text": "Votre valeur tient à votre capacité à comprendre ce qu’un chiffre oblige à décider."
+            "label": "Profil senior · Gouvernance · Investisseur",
+            "title": "Installer une parole financière utile aux décisions de long terme",
+            "text": "Cette prise de parole permet de construire une trace publique maîtrisée d’une capacité à relier finance, stratégie industrielle et soutenabilité. Elle sert à la fois l’organisation, en montrant que ses arbitrages économiques peuvent être expliqués sans divulguer d’informations sensibles, et la personne, en valorisant une lecture senior capable de rendre intelligibles les décisions difficiles."
           }
         ]
       },
@@ -3125,27 +3125,27 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
       ],
       "valueSection": {
         "title": "Faire reconnaître le juridique comme lecture d’arbitrage industriel — pas comme simple validation de conformité",
-        "intro": "La lecture juridique devient décisive lorsqu’elle éclaire le moment où le cadre cesse d’être un arrière-plan et devient une condition de la décision industrielle.",
+        "intro": "La lecture juridique devient décisive lorsqu’elle éclaire le moment où le cadre cesse d’être un arrière-plan et devient une condition de la décision industrielle, tout en montrant que l’organisation sait sécuriser ses choix sans exposer de dossier sensible.",
         "cards": [
           {
-            "label": "Cabinet d’avocats",
-            "title": "Montrer votre capacité à sécuriser des décisions industrielles complexes",
-            "text": "La contribution rend visible votre lecture des bascules sans exposer de dossier, de client ou de contentieux identifiable."
+            "label": "Cabinet d’avocats · Conseil juridique",
+            "title": "Montrer une capacité à sécuriser des décisions industrielles complexes",
+            "text": "Cette contribution rend visible une lecture juridique utile aux arbitrages industriels : contrats, responsabilités, droit social, environnement, conformité ou réorganisation. Elle valorise l’expertise du cabinet sans exposer de client, de contentieux ou de dossier identifiable, tout en montrant aux dirigeants, investisseurs, partenaires ou institutions que le cadre juridique peut éclairer la décision avant qu’elle ne devienne bloquante."
           },
           {
-            "label": "Direction juridique",
-            "title": "Faire reconnaître le rôle du juridique en amont des décisions industrielles",
-            "text": "Votre lecture montre comment le cadre contractuel, social, réglementaire ou environnemental structure les choix avant qu’ils ne deviennent irréversibles."
+            "label": "Direction juridique · Groupe industriel · ETI",
+            "title": "Faire reconnaître le rôle du juridique en amont des décisions",
+            "text": "Cette prise de parole permet de montrer que l’entreprise ne traite pas le juridique comme une validation finale, mais comme une lecture intégrée aux arbitrages industriels. Elle valorise la fonction juridique en amont des décisions sensibles, tout en rassurant partenaires, donneurs d’ordre, financeurs ou acteurs institutionnels sur la capacité de l’organisation à sécuriser sa trajectoire."
           },
           {
-            "label": "Compliance · Affaires réglementaires",
-            "title": "Transformer la contrainte en lecture stratégique de la trajectoire",
-            "text": "Une parole préparée permet d’éclairer le moment où normes, autorisations ou obligations deviennent des paramètres de transformation."
+            "label": "Compliance · Affaires réglementaires · Normes",
+            "title": "Transformer la contrainte en lecture stratégique de trajectoire",
+            "text": "Cette lecture permet d’éclairer le moment où normes, autorisations, obligations de conformité ou cadres réglementaires deviennent des paramètres structurants de la transformation industrielle. Elle valorise les fonctions conformité et affaires réglementaires, tout en montrant que l’entreprise sait anticiper les contraintes qui peuvent modifier ses investissements, ses marchés, ses responsabilités ou ses conditions d’exploitation."
           },
           {
-            "label": "Profil senior",
-            "title": "Construire une trace publique maîtrisée sur un sujet sensible",
-            "text": "La prise de parole est cadrée, non intrusive et compatible avec des contraintes juridiques, communication ou corporate."
+            "label": "Profil senior · Juridique · Corporate",
+            "title": "Construire une parole publique maîtrisée sur un sujet sensible",
+            "text": "Cette intervention permet de formuler une lecture juridique solide sans commenter de dossier, de contentieux ou de situation identifiable. Elle sert l’organisation en montrant que ses décisions peuvent être sécurisées et expliquées à un niveau maîtrisé, et elle valorise la personne en faisant apparaître une capacité à relier droit, risque, responsabilité et décision industrielle."
           }
         ]
       },
