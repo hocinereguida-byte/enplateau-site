@@ -111,46 +111,57 @@
     .audience-list li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-family: var(--font-mono); font-size: 0.82rem; margin-top: 2px; }
     .audience-list--no li::before { content: '×'; color: rgba(240,236,230,0.28); }
 
-    .conv-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 0; border: 1px solid var(--line); background: #fff; }
+    .conv-layout { display: grid; grid-template-columns: minmax(300px, 1fr) 2fr; gap: 0; border: 1px solid var(--line); background: #fff; }
+    .conv-col { display: flex; flex-direction: column; min-width: 0; }
+    .conv-col--nav { background: #faf8f5; border-right: 1px solid var(--line); }
+    .conv-col-head { padding: 16px 18px; background: #f3eee7; border-bottom: 1px solid var(--line); }
+    .conv-col-head--accent { background: #111; }
+    .conv-col-kicker { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 6px; }
+    .conv-col-title { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--ink); line-height: 1.3; }
+    .conv-col-head--accent .conv-col-kicker,
+    .conv-col-head--accent .conv-col-title { color: #f0ece6; }
     .conv-nav { display: flex; flex-direction: column; gap: 1px; background: var(--line); }
     .conv-nav-item { display: flex; align-items: stretch; background: #fff; border: none; cursor: pointer; text-align: left; padding: 0; transition: background 0.18s; }
     .conv-nav-item:hover { background: #f5f0ea; }
     .conv-nav-item.is-active { background: #fff; }
-    .conv-nav-color { width: 4px; flex-shrink: 0; transition: width 0.18s; }
+    .conv-nav-color { width: 4px; flex-shrink: 0; background: var(--accent-line); transition: width 0.18s; }
     .conv-nav-item.is-active .conv-nav-color { width: 6px; }
     .conv-nav-body { padding: 20px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
     .conv-nav-num { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); }
-    .conv-nav-title { font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
-    .conv-nav-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 2px; }
-    .conv-nav-tags span { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); background: rgba(82,62,49,0.06); border: 1px solid var(--line); padding: 2px 6px; }
-    .conv-content { background: #fff; }
+    .conv-nav-title { font-family: var(--font-display); font-size: 0.92rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
+    .conv-content { background: #fff; min-height: 100%; }
     .conv-panel { display: none; }
     .conv-panel.is-active { display: block; }
-    .conv-panel-header { padding: 28px 32px 24px; border-bottom: 1px solid var(--line); }
-    .conv-panel-num { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
-    .conv-panel-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; line-height: 1.3; color: var(--ink); margin-bottom: 12px; }
+    .conv-panel-header { padding: 26px 32px 22px; border-bottom: 1px solid var(--line); background: #fff; }
+    .conv-panel-overline { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 10px; }
+    .conv-panel-title { font-family: var(--font-display); font-size: 1.16rem; font-weight: 600; line-height: 1.3; color: var(--ink); margin-bottom: 12px; }
     .conv-panel-desc { font-size: 0.88rem; color: var(--ink-muted); line-height: 1.68; }
+    .conv-panel-desc strong { color: var(--ink); }
 
     .landing-angle,
-    .finance-angle { padding: 24px 32px; border-bottom: 1px solid var(--line); background: #fff; }
+    .finance-angle { padding: 24px 32px 30px; border-bottom: 1px solid var(--line); background: #fff; }
     .landing-angle-label,
-    .finance-angle-label { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 10px; }
+    .finance-angle-label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 10px; }
+    .finance-angle-label--accent { color: var(--accent); }
     .landing-angle-q,
-    .finance-angle-q { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: 10px; }
+    .finance-angle-q { font-family: var(--font-display); font-size: 1.08rem; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: 10px; }
     .landing-angle-desc,
-    .finance-angle-desc { font-size: 0.87rem; color: var(--ink-soft); line-height: 1.65; max-width: 660px; }
-
+    .finance-angle-desc { font-size: 0.87rem; color: var(--ink-soft); line-height: 1.65; max-width: 760px; }
+    .angle-profiles { margin-top: 12px; font-size: 0.86rem; color: var(--ink-soft); line-height: 1.6; }
+    .angle-section { margin-top: 24px; }
+    .angle-section:first-child { margin-top: 18px; }
+    .angle-section-label { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 10px; }
+    .angle-section-title { font-family: var(--font-display); font-size: 0.98rem; font-weight: 600; line-height: 1.35; color: var(--ink); margin-bottom: 12px; }
+    .angle-section-intro { font-size: 0.87rem; color: var(--ink-soft); line-height: 1.65; max-width: 760px; margin-bottom: 14px; }
     .angle-meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
     .angle-meta-card { border: 1px solid var(--line); padding: 12px 14px; background: #faf8f5; }
     .angle-meta-label { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 5px; }
     .angle-meta-text { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.6; }
-    .angle-long-title { margin-top: 24px; }
-    .angle-main-copy { max-width: 760px; margin-top: 18px; }
+    .angle-main-copy { max-width: 760px; margin-top: 14px; }
     .angle-pair-grid,
-    .angle-dimensions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
-    .angle-pair-grid { margin-top: 22px; }
-    .angle-security-panel { margin-top: 18px; }
-    .angle-complementary-details { margin-top: 26px; border: 1px solid var(--line); background: #fff; padding: 18px 20px; }
+    .angle-dimensions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 14px; }
+    .angle-security-panel { margin-top: 22px; }
+    .angle-complementary-details { margin-top: 28px; border: 1px solid var(--line); background: #faf8f5; padding: 18px 20px; }
     .angle-complementary-details summary { cursor: pointer; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); }
     .angle-complementary-body { margin-top: 18px; }
     .angle-complementary-intro { margin-top: 8px; max-width: 760px; }
@@ -207,7 +218,8 @@
       .value-grid { grid-template-columns: 1fr; }
       .process-row { grid-template-columns: 1fr 1fr; }
       .conv-layout { grid-template-columns: 1fr; }
-      .conv-nav { display: grid; grid-template-columns: repeat(2, 1fr); }
+      .conv-col--nav { border-right: none; border-bottom: 1px solid var(--line); }
+      .conv-nav { display: grid; grid-template-columns: 1fr; }
       .conv-nav-color { width: 100%; height: 3px; }
       .conv-nav-item.is-active .conv-nav-color { width: 100%; height: 5px; }
       .dims-grid { grid-template-columns: 1fr 1fr; }
@@ -295,11 +307,23 @@
         </div>
 
         <div class="conv-layout" id="convLayout">
-          <nav class="conv-nav" id="convNav" aria-label="Conversations"></nav>
-          <div class="conv-content" id="convContent"></div>
+          <div class="conv-col conv-col--nav">
+            <div class="conv-col-head">
+              <div class="conv-col-kicker">Colonne de gauche</div>
+              <div class="conv-col-title">Angles ouverts dans cette lecture</div>
+            </div>
+            <nav class="conv-nav" id="convNav" aria-label="Angles ouverts"></nav>
+          </div>
+          <div class="conv-col conv-col--content">
+            <div class="conv-col-head conv-col-head--accent">
+              <div class="conv-col-kicker">Colonne de droite</div>
+              <div class="conv-col-title">Détail de l’angle sélectionné</div>
+            </div>
+            <div class="conv-content" id="convContent"></div>
+          </div>
         </div>
 
-        <div class="panel" id="conversationsPanel"></div>
+        <div class="panel" id="conversationsPanel" style="display:none;"></div>
 
         <div style="margin-top:40px;text-align:center;">
           <a id="midCta" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-strategie&cta=mid-conv" class="btn-primary btn-primary--large" style="display:inline-flex;background:var(--ink);color:#f0ece6;">Réserver un échange éditorial</a>
@@ -376,6 +400,6 @@
     </div>
   </footer>
 
-  <script src="/assets/js/editorial-data-industrie-test.js?v=7"></script>
+  <script src="/assets/js/editorial-data-industrie-test.js?v=8"></script>
 </body>
 </html>
