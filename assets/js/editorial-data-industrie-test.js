@@ -1,11 +1,11 @@
 /*
   En Plateau — Référentiel éditorial centralisé
-  Test limité : Cycle Industrie · Lectures stratégique et financière
+  V2 dynamique : cycle Industrie · lectures stratégique et financière
 
   Usage prévu :
-  - page Conversations Industrie
   - landing page Lecture stratégique
   - landing page Lecture financière
+  - base technique réutilisable pour les autres lectures
   - formulaire de qualification / signalement
 
   Principe :
@@ -16,7 +16,7 @@
 */
 
 window.EN_PLATEAU_EDITORIAL_DATA = {
-  version: "2026-05-07-test-strategie-finance",
+  version: "2026-05-08-v2-landing-dynamique",
   status: "test",
   sourceDocument: "programme_editorial_industrie.docx",
   scope: {
@@ -119,9 +119,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
       ],
 
       angles: [
-        /* ═══════════════════════════════════════════════════════════════
-           LECTURE STRATÉGIQUE
-        ═══════════════════════════════════════════════════════════════ */
+        /* Lecture stratégique */
         {
           code: "A01",
           crmCode: "IND-C1-GS-A01",
@@ -303,9 +301,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           showInForm: true
         },
 
-        /* ═══════════════════════════════════════════════════════════════
-           LECTURE FINANCIÈRE
-        ═══════════════════════════════════════════════════════════════ */
+        /* Lecture financière */
         {
           code: "A01",
           crmCode: "IND-C1-AC-A01",
@@ -444,6 +440,113 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             text: "Changement de poste, levée de fonds, entrée au board, recrutement de profils seniors : votre lecture sur un sujet précis crée un capital de réputation personnel, transférable, qui existe indépendamment de votre organisation actuelle."
           }
         ]
+      },
+      copy: {
+        heroNoteHtml: "Aucun client ni cas identifiable à exposer &nbsp;·&nbsp; Aucun dossier sensible à commenter &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Collaboration possible avec services juridique, communication ou corporate de votre organisation",
+        audience: {
+          title: "Cette lecture stratégique vous est-elle destinée ?",
+          yesTitle: "Vous portez probablement une lecture pertinente si…",
+          noTitle: "Moins adapté si…",
+          yesItems: [
+            "Vous savez relier compétitivité, dépendances, trajectoire industrielle et décisions réelles.",
+            "Vous êtes DG, directeur stratégie, directeur industriel, conseil en stratégie industrielle, compétitivité, filière ou transformation.",
+            "Votre lecture porte sur des seuils : croissance qui fragilise, dépendance qui bascule, outil à transformer, trajectoire à réarbitrer.",
+            "Vous pouvez éclairer un mécanisme sans exposer de client, de dossier interne ou de situation confidentielle."
+          ],
+          noItems: [
+            "Votre approche reste trop générale pour être reliée à une bascule industrielle précise.",
+            "Vous cherchez d'abord une visibilité promotionnelle plutôt qu'une contribution éditoriale située.",
+            "Vous souhaitez présenter une offre, une méthode ou une organisation plutôt qu'éclairer un arbitrage industriel.",
+            "Votre lecture ne relie pas les signaux stratégiques à des décisions concrètes : tenir, investir, transformer, repositionner, relocaliser ou renoncer."
+          ],
+          panel: "La lecture stratégique ne consiste pas à commenter l'industrie en général. Elle consiste à identifier le moment où une trajectoire change de nature et oblige les acteurs à arbitrer autrement."
+        },
+        conversations: {
+          title: "Les angles où la lecture stratégique devient décisive",
+          intro: "La lecture stratégique intervient là où une trajectoire industrielle change de nature : croissance qui fragilise, dépendance qui bascule, outil qui ne peut plus seulement être optimisé, modèle commercial ou positionnement qui doit être réarbitré.",
+          panel: "Ces positions ne demandent pas de commenter une situation particulière. Elles proposent d'éclairer des seuils, des signaux faibles et des arbitrages qui se répètent dans les trajectoires industrielles."
+        },
+        preparation: {
+          titleHtml: "Beaucoup arrivent avec une lecture stratégique. <em style=\"color:rgba(240,236,230,0.55);\">Ils repartent avec une position.</em>",
+          intro: "La préparation éditoriale transforme une expertise, une expérience de décision ou une analyse de filière en lecture située : claire, défendable, utile pour les dirigeants industriels, conseils, investisseurs, équipes internes et partenaires de transformation."
+        },
+        dimensions: [
+          { num: "01", title: "Transformation en cours / contexte", text: "Ancrer votre lecture dans le mouvement réel : ce qui bascule dans l'industrie en ce moment, et pourquoi ce sujet devient décisif maintenant." },
+          { num: "02", title: "Acteurs concernés", text: "Préciser qui cette bascule affecte réellement, et depuis quelle position votre lecture éclaire ce que les autres ne peuvent pas voir." },
+          { num: "03", title: "Arbitrages", text: "Rendre explicites les choix réels : ce qu'on gagne, ce qu'on cède, et à partir de quand la nature de l'arbitrage change." },
+          { num: "04", title: "Défis & opportunités", text: "Articuler les deux faces de la bascule : ce qu'elle menace et ce qu'elle ouvre, pour éviter une lecture à sens unique." },
+          { num: "05", title: "Vision", text: "Formuler le parti pris : ce que votre expérience ou votre analyse permet d'affirmer sur la direction juste et les conditions qui la rendent tenable." },
+          { num: "06", title: "Échelle d'analyse", text: "Situer votre lecture à la bonne échelle : entreprise, filière, territoire, secteur ou chaîne de valeur." }
+        ],
+        dimensionsPanel: "Ce travail ne substitue pas votre lecture : il lui donne sa forme la plus utile. L'intervenant reste l'auteur de sa position. En Plateau est l'architecte du cadre qui la rend audible, défendable et durable.",
+        process: [
+          {
+            num: "01",
+            title: "L'échange de qualification",
+            text: "15 minutes pour vérifier si votre lecture correspond à un angle disponible. Aucun client, cas interne ou dossier sensible à exposer.",
+            deadline: "À planifier en amont du comité éditorial"
+          },
+          {
+            num: "02",
+            title: "Le dossier de positionnement",
+            text: "Si l'angle est retenu, un dossier complet vous est adressé : angle précis, logique de mise en regard, modalités d'intervention, format émission et article associé."
+          },
+          {
+            num: "03",
+            title: "Le comité éditorial",
+            text: "Le 15 juin, le comité éditorial examine les dossiers de positionnement et valide la composition finale. Vous êtes informé avant tout engagement.",
+            deadline: "Comité : 15 juin 2026"
+          },
+          {
+            num: "04",
+            title: "La préparation & la production",
+            text: "En Plateau travaille avec vous pour transformer votre lecture stratégique en position claire, non intrusive et publiquement défendable."
+          }
+        ],
+        guarantees: [
+          {
+            accent: true,
+            title: "Aucun client ni cas identifiable à exposer",
+            text: "L'échange porte sur les mécanismes d'arbitrage stratégique, pas sur un mandat, une entreprise, un client ou une situation confidentielle."
+          },
+          {
+            accent: true,
+            title: "Aucun engagement avant le dossier de positionnement",
+            text: "Vous ne vous engagez pas lors de l'échange éditorial. L'engagement intervient après réception du dossier et validation par le comité éditorial."
+          },
+          {
+            title: "Pas de doctrine générale attendue",
+            text: "La contribution ne consiste pas à produire un discours global sur l'industrie. Elle vise une lecture située, rattachée à un angle et à un contexte précis."
+          },
+          {
+            title: "Une parole préparée avec vos équipes si nécessaire",
+            text: "La préparation peut intégrer vos contraintes de communication, juridiques, corporate ou de confidentialité."
+          }
+        ],
+        faq: [
+          {
+            question: "Dois-je intervenir sur toutes les conversations ?",
+            answer: "Non. Une seule conversation suffit, parfois même un seul contexte au sein d'une conversation. L'échange éditorial sert précisément à identifier l'angle où votre lecture est la plus forte."
+          },
+          {
+            question: "Faut-il défendre une doctrine générale sur l'industrie ?",
+            answer: "Non. Il s'agit d'une lecture située : ancrée dans des arbitrages réels, utile pour les acteurs qui les traversent. Une lecture trop abstraite ou trop généraliste n'a pas de place naturelle dans la composition."
+          },
+          {
+            question: "Est-ce ouvert aux décideurs industriels comme aux cabinets de conseil ?",
+            answer: "Oui. Un décideur industriel apporte une expérience de décision depuis l'intérieur. Un conseil spécialisé apporte une lecture transversale construite auprès de plusieurs situations. Ces deux lectures peuvent être pertinentes, selon l'angle."
+          },
+          {
+            question: "Faut-il arriver avec une position déjà construite ?",
+            answer: "Non. La préparation éditoriale sert précisément à transformer une conviction, une expérience ou une expertise en position claire, située et défendable."
+          }
+        ],
+        cta: {
+          title: "Votre lecture stratégique peut éclairer ce que les trajectoires industrielles ne disent pas d'elles-mêmes.",
+          text: "Un échange de 15 minutes — sans exposer de client, sans engagement — pour vérifier si votre angle a une place dans cette conversation avant la fermeture des positions.",
+          deadline: "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
+          footnote: "Les positions stratégiques se ferment au fil de la composition éditoriale · Page non indexée"
+        }
       }
     },
 
@@ -491,12 +594,104 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           }
         ]
       },
-      guarantees: [
-        "Aucun chiffre confidentiel à exposer",
-        "Aucun compte interne ni dossier sensible à commenter",
-        "La contribution porte sur les mécanismes d'arbitrage, pas sur un reporting financier",
-        "Préparation possible avec communication, juridique ou corporate"
-      ]
+      copy: {
+        heroNoteHtml: "Aucun chiffre confidentiel à exposer &nbsp;·&nbsp; Aucun dossier sensible à commenter &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Collaboration possible avec services juridique, communication ou corporate de votre organisation",
+        audience: {
+          title: "Cette lecture financière vous est-elle destinée ?",
+          yesTitle: "Vous portez probablement une lecture pertinente si…",
+          noTitle: "Moins adapté si…",
+          yesItems: [
+            "Vous savez relier marges de manœuvre, investissement, coûts différés et décisions industrielles réelles.",
+            "Vous êtes DAF, CFO, dirigeant, conseil finance, restructuring, corporate finance, investisseur ou responsable exposé aux arbitrages économiques industriels.",
+            "Votre lecture porte sur des seuils : dette technologique, dépendance devenue coûteuse, CAPEX différé, coûts énergie/eau/conformité, soutenabilité d'un outil.",
+            "Vous pouvez éclairer un mécanisme sans exposer de chiffres, de comptes internes, de clients ou de dossiers confidentiels."
+          ],
+          noItems: [
+            "Votre approche porte surtout sur du reporting, de la conformité comptable ou une lecture financière déconnectée de l'outil industriel.",
+            "Vous cherchez d'abord une visibilité promotionnelle plutôt qu'une contribution éditoriale située.",
+            "Vous souhaitez présenter des résultats, une méthode propriétaire ou une offre commerciale plutôt qu'éclairer un arbitrage industriel.",
+            "Votre lecture ne relie pas les chiffres à des décisions : investir, différer, transformer, redéployer, céder ou renoncer."
+          ],
+          panel: "La lecture financière ne consiste pas à commenter des chiffres. Elle consiste à identifier le moment où les équilibres économiques obligent l'industrie à arbitrer autrement."
+        },
+        conversations: {
+          title: "Les angles où la lecture financière devient décisive",
+          intro: "La lecture financière intervient là où les conditions économiques changent la nature de la décision industrielle : maintenir, investir, différer, transformer, redéployer ou renoncer. Chaque position porte sur un mécanisme à éclairer, sans exposition de chiffres confidentiels ni de dossiers internes.",
+          panel: "Ces positions ne demandent pas de commenter une situation particulière. Elles proposent d'éclairer des seuils, des signaux faibles et des arbitrages économiques qui se répètent dans les trajectoires industrielles."
+        },
+        preparation: {
+          titleHtml: "Beaucoup arrivent avec une lecture financière. <em style=\"color:rgba(240,236,230,0.55);\">Ils repartent avec une position.</em>",
+          intro: "La préparation éditoriale transforme une expertise souvent technique en lecture située : compréhensible, défendable, utile pour les dirigeants industriels, financeurs, conseils, équipes internes et partenaires de transformation."
+        },
+        process: [
+          {
+            num: "01",
+            title: "L'échange de qualification",
+            text: "15 minutes pour vérifier si votre lecture correspond à un angle disponible. Aucun chiffre ni dossier sensible à exposer.",
+            deadline: "À planifier en amont du comité éditorial"
+          },
+          {
+            num: "02",
+            title: "Le dossier de positionnement",
+            text: "Si l'angle est retenu, un dossier complet vous est adressé : angle précis, logique de mise en regard, modalités d'intervention, format émission et article associé."
+          },
+          {
+            num: "03",
+            title: "Le comité éditorial",
+            text: "Le 15 juin, le comité éditorial examine les dossiers de positionnement et valide la composition finale. Vous êtes informé avant tout engagement.",
+            deadline: "Comité : 15 juin 2026"
+          },
+          {
+            num: "04",
+            title: "La préparation & la production",
+            text: "En Plateau travaille avec vous pour transformer votre lecture financière en position claire, non intrusive et publiquement défendable."
+          }
+        ],
+        guarantees: [
+          {
+            accent: true,
+            title: "Aucun chiffre confidentiel à exposer",
+            text: "L'échange porte sur les mécanismes d'arbitrage économique, pas sur vos comptes, vos marges, vos coûts internes ou vos dossiers de financement."
+          },
+          {
+            accent: true,
+            title: "Aucun engagement avant le dossier de positionnement",
+            text: "Vous ne vous engagez pas lors de l'échange éditorial. L'engagement intervient après réception du dossier et validation par le comité éditorial."
+          },
+          {
+            title: "Pas de commentaire de situation financière",
+            text: "La contribution ne consiste pas à commenter votre entreprise ou un client. Elle vise à rendre lisibles des seuils économiques et industriels."
+          },
+          {
+            title: "Une parole préparée avec vos équipes si nécessaire",
+            text: "La préparation peut intégrer vos contraintes de communication, juridiques, corporate ou de confidentialité."
+          }
+        ],
+        faq: [
+          {
+            question: "Faut-il exposer des chiffres confidentiels ?",
+            answer: "Non. La contribution porte sur les mécanismes d'arbitrage : ce qui change dans la décision industrielle lorsque les équilibres économiques ne permettent plus de tenir comme avant."
+          },
+          {
+            question: "La lecture financière doit-elle venir d'un DAF ?",
+            answer: "Pas nécessairement. Elle peut venir d'un DAF, d'un dirigeant, d'un conseil, d'un investisseur, d'un profil corporate finance ou d'un acteur industriel capable de relier finance et décision."
+          },
+          {
+            question: "S'agit-il d'une prise de parole sur la performance financière ?",
+            answer: "Non. Il ne s'agit pas de présenter une performance, mais d'éclairer les conditions économiques d'un arbitrage industriel : investir, différer, transformer, redéployer, céder ou renoncer."
+          },
+          {
+            question: "Faut-il arriver avec une position déjà construite ?",
+            answer: "Non. La préparation éditoriale sert précisément à transformer une conviction ou une expertise en position claire, située et défendable."
+          }
+        ],
+        cta: {
+          title: "Votre lecture financière peut éclairer ce que les chiffres seuls ne disent pas.",
+          text: "Un échange de 15 minutes — sans exposer de chiffres, sans engagement — pour vérifier si votre angle a une place dans cette conversation avant la fermeture des positions.",
+          deadline: "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
+          footnote: "Les positions financières se ferment au fil de la composition éditoriale · Page non indexée"
+        }
+      }
     }
   }
 };
@@ -530,7 +725,7 @@ window.EN_PLATEAU_EDITORIAL = (function(data) {
 
   function getAngles(cycleCode) {
     var cycle = getCycle(cycleCode);
-    return cycle ? cycle.angles.slice() : [];
+    return cycle && cycle.angles ? cycle.angles.slice() : [];
   }
 
   function getAnglesByReading(cycleCode, readingType) {
@@ -542,7 +737,9 @@ window.EN_PLATEAU_EDITORIAL = (function(data) {
   function getAnglesByLanding(slug) {
     var config = data.landingPages[slug];
     if (!config) return [];
-    return getAnglesByReading(config.cycleCode, config.readingType);
+    return getAnglesByReading(config.cycleCode, config.readingType).filter(function(angle) {
+      return !angle.landingPages || angle.landingPages.indexOf(slug) !== -1;
+    });
   }
 
   function getAnglesByConversation(cycleCode, conversationCode, readingType) {
@@ -556,6 +753,8 @@ window.EN_PLATEAU_EDITORIAL = (function(data) {
     if (!config) return [];
 
     var cycle = getCycle(config.cycleCode);
+    if (!cycle) return [];
+
     var angles = getAnglesByLanding(slug);
 
     return cycle.conversations.map(function(conversation) {
@@ -589,7 +788,7 @@ window.EN_PLATEAU_EDITORIAL = (function(data) {
 
         return {
           value: angle.crmCode,
-          label: angle.crmCode + " · " + reading.shortLabel + " · " + conversation.title + " · " + context.label,
+          label: angle.crmCode + " · " + (reading ? reading.shortLabel : angle.typeLecture) + " · " + (conversation ? conversation.title : angle.conversationCode) + " · " + (context ? context.label : angle.contextCode),
           question: angle.questionPublique,
           typeLecture: angle.typeLecture,
           conversationCode: angle.conversationCode,
