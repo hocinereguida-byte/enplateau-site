@@ -3036,13 +3036,13 @@ window.EN_PLATEAU_EDITORIAL = (function(data) {
     cycle.angles.push(sourceAngle);
   });
 
-  data.version = '2026-05-08-v9-complementaires-meme-contexte';
+  data.version = '2026-05-08-v10-complementaires-contexte-verrouille';
   data.notes.complementaryRule = 'Les lectures complémentaires d’une fiche angle sont les 3 autres angles de la même conversation contextualisée : même conversationCode, même contextCode, crmCode différent.';
   data.notes.noVousInComplementaryActors = true;
 })(window.EN_PLATEAU_EDITORIAL_DATA);
 
 /* ═══════════════════════════════════════════════════════════════════════
-   Renderer landing pages — V8 lisibilité des angles
+   Renderer landing pages — V10 complémentarités verrouillées par contexte
 
    Objectif :
    - clarifier la fonction de la colonne de gauche et de la colonne de droite ;
@@ -3413,6 +3413,7 @@ window.EN_PLATEAU_LANDING_RENDERER = (function(data, api) {
 
   function renderLanding(slug) {
     if (!slug || !data.landingPages || !data.landingPages[slug]) return false;
+    if (document && document.body) document.body.setAttribute('data-renderer-version', data.version || 'v10');
 
     var config = data.landingPages[slug];
     var reading = data.readingTypes[config.readingType];
