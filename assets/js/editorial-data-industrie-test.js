@@ -10,7 +10,8 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
       "STRATEGIQUE",
       "FINANCIERE",
       "JURIDIQUE",
-      "OPERATIONNELLE"
+      "OPERATIONNELLE",
+      "RH_COMPETENCES"
     ],
     "note": "Référentiel test pour gabarit unique de landing page. Les landing pages sont pilotées par body[data-landing]. Version enrichie avec la lecture opérationnelle."
   },
@@ -77,10 +78,10 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
     "RH_COMPETENCES": {
       "code": "RH_COMPETENCES",
       "label": "Lecture RH / compétences",
-      "slug": "rh-competences",
+      "slug": "emploi-competences",
       "shortLabel": "RH / compétences",
-      "landingSlug": "industrie/rh-competences",
-      "calSource": "lp-industrie-rh",
+      "landingSlug": "industrie/emploi-competences",
+      "calSource": "lp-industrie-emploi-competences",
       "positioning": "Éclairer les contraintes de recrutement, compétences, organisation du travail et temps d’adaptation qui conditionnent la trajectoire industrielle."
     },
     "TERRITORIALE": {
@@ -180,7 +181,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Cabinet compétitivité"
           ],
           "landingPages": [
-            "strategie"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -255,7 +256,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Conseil transformation"
           ],
           "landingPages": [
-            "strategie"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -330,7 +331,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Cabinet intelligence économique"
           ],
           "landingPages": [
-            "strategie"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -405,7 +406,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Direction générale"
           ],
           "landingPages": [
-            "strategie"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -480,7 +481,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Redéploiement"
           ],
           "landingPages": [
-            "strategie"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -555,7 +556,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Conseil stratégie industrielle"
           ],
           "landingPages": [
-            "strategie"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -630,7 +631,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Conseil compétitivité industrielle"
           ],
           "landingPages": [
-            "strategie"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -705,7 +706,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Business model industriel"
           ],
           "landingPages": [
-            "strategie"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -780,7 +781,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Business model industriel"
           ],
           "landingPages": [
-            "strategie"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -855,7 +856,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Repositionnement"
           ],
           "landingPages": [
-            "strategie"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -930,7 +931,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Direction générale"
           ],
           "landingPages": [
-            "finance"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -1005,7 +1006,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Stratégie d'outil industriel"
           ],
           "landingPages": [
-            "finance"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -1080,7 +1081,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Compétitivité industrielle"
           ],
           "landingPages": [
-            "finance"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -1155,7 +1156,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Restructuring opérationnel"
           ],
           "landingPages": [
-            "finance"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -1230,7 +1231,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Décarbonation / utilités"
           ],
           "landingPages": [
-            "finance"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -1306,7 +1307,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Secrétariat général"
           ],
           "landingPages": [
-            "juridique"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -1382,7 +1383,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Conseil risques industriels"
           ],
           "landingPages": [
-            "juridique"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -1458,7 +1459,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Secrétariat général"
           ],
           "landingPages": [
-            "juridique"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -1534,7 +1535,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Conseil risques"
           ],
           "landingPages": [
-            "juridique"
+            "emploi-competences"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -1613,7 +1614,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInConversationPage": true,
           "showInForm": true,
           "landingPages": [
-            "operations"
+            "emploi-competences"
           ],
           "pointBascule": "À partir de quand les leviers d’absorption opérationnelle créent-ils plus de tension différée qu’ils ne résolvent de pression immédiate ?",
           "tensionArbitrage": "Répondre à la demande sans fragiliser la qualité, la maintenance, les flux ni l’équilibre organisationnel.",
@@ -1740,7 +1741,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInConversationPage": true,
           "showInForm": true,
           "landingPages": [
-            "operations"
+            "emploi-competences"
           ],
           "pointBascule": "À partir de quand tenir l’activité revient-il à déplacer la contrainte plutôt qu’à la résoudre ?",
           "tensionArbitrage": "Maintenir la continuité industrielle sans accumuler des compromis qui fragilisent l’outil ou l’organisation.",
@@ -1867,7 +1868,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInConversationPage": true,
           "showInForm": true,
           "landingPages": [
-            "operations"
+            "emploi-competences"
           ],
           "pointBascule": "À partir de quand l’adaptation opérationnelle devient-elle insuffisante pour préserver la trajectoire ?",
           "tensionArbitrage": "Continuer à compenser ou reconnaître que le système de production doit changer de logique.",
@@ -2176,7 +2177,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInConversationPage": true,
           "showInForm": true,
           "landingPages": [
-            "operations"
+            "emploi-competences"
           ],
           "pointBascule": "À partir de quand la coordination opératoire devient-elle le véritable verrou de la montée en capacité ?",
           "tensionArbitrage": "Investir ou équiper davantage sans résoudre l’architecture réelle des flux et de l’exécution.",
@@ -2277,7 +2278,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInConversationPage": true,
           "showInForm": true,
           "landingPages": [
-            "operations"
+            "emploi-competences"
           ],
           "pointBascule": "À partir de quand l’ajout d’outils ne compense-t-il plus les limites de l’architecture opératoire ?",
           "tensionArbitrage": "Moderniser l’outil sans transformer les interfaces, routines, flux et modes de coordination qui conditionnent sa performance.",
@@ -2378,7 +2379,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInConversationPage": true,
           "showInForm": true,
           "landingPages": [
-            "operations"
+            "emploi-competences"
           ],
           "pointBascule": "À partir de quand la crise révèle-t-elle que le système productif doit être repensé plutôt que seulement réparé ?",
           "tensionArbitrage": "Restaurer l’exécution à court terme ou refondre les conditions opérationnelles qui rendent la trajectoire tenable.",
@@ -2478,6 +2479,9 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "showInConversationPage": true,
           "showInForm": false,
+          "landingPages": [
+            "emploi-competences"
+          ],
           "isComplementaryStub": true
         },
         {
@@ -2531,7 +2535,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInConversationPage": true,
           "showInForm": true,
           "landingPages": [
-            "operations"
+            "emploi-competences"
           ],
           "pointBascule": "À partir de quand les ressources physiques deviennent-elles le vrai plafond de capacité ?",
           "tensionArbitrage": "Croître industriellement sans ignorer les limites concrètes d’énergie, d’eau, d’utilités, de raccordement ou de réseau.",
@@ -2657,6 +2661,9 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "showInConversationPage": true,
           "showInForm": false,
+          "landingPages": [
+            "emploi-competences"
+          ],
           "isComplementaryStub": true
         },
         {
@@ -3468,6 +3475,191 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "text": "Un échange de 15 minutes — sans exposer de chiffre interne, sans dossier sensible, sans engagement — pour vérifier si votre angle a une place dans l’une des 7 positions opérationnelles ouvertes.",
           "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
           "footnote": "Les positions opérationnelles se ferment au fil de la composition éditoriale · Page non indexée"
+        }
+      }
+    }
+  
+    ,"emploi-competences": {
+      "cycleCode": "IND",
+      "readingType": "RH_COMPETENCES",
+      "title": "Lecture emploi & compétences — Cycle Industrie & transformation des territoires | En Plateau",
+      "metaDescription": "Une place précise pour éclairer les tensions d’emploi, de compétences, de transmission, d’organisation du travail et de soutenabilité humaine dans les trajectoires industrielles.",
+      "navLabel": "Cycle Industrie · Lecture emploi & compétences",
+      "heroTitleHtml": "Votre lecture<br><em>éclaire</em><br>ce qui fait tenir<br>les compétences industrielles.",
+      "heroLead": "Certaines trajectoires industrielles ne se jouent pas seulement dans l’outil, l’investissement ou la stratégie. Elles se jouent aussi dans la capacité à recruter, transmettre, adapter les métiers, sécuriser les gestes et faire tenir les collectifs de travail.",
+      "heroProfiles": [
+        {
+          "label": "RH · Compétences · Transformation du travail",
+          "text": "Vous éclairez les tensions de recrutement, de transmission, de montée en compétence, d’organisation du travail ou de soutenabilité humaine."
+        },
+        {
+          "label": "Conseil · Formation · Droit social",
+          "text": "Vous accompagnez des industriels sur les compétences, les métiers, les transformations sociales, la sécurité, la formation, la certification ou les réorganisations."
+        }
+      ],
+      "valueSection": {
+        "title": "Faire reconnaître les compétences comme condition réelle de la trajectoire industrielle",
+        "intro": "Une lecture emploi & compétences ne consiste pas à parler de RH de manière générale. Elle permet de montrer comment les tensions de recrutement, de transmission, d’organisation du travail, de sécurité, de formation ou de droit social deviennent des conditions concrètes de décision industrielle.",
+        "cards": [
+          {
+            "label": "DRH · Transformation · Groupe industriel",
+            "title": "Montrer que la trajectoire industrielle tient aussi par les compétences",
+            "text": "Cette prise de parole permet de montrer que la trajectoire industrielle ne repose pas seulement sur l’outil, l’investissement ou la stratégie, mais aussi sur la capacité à recruter, former, transmettre, organiser et faire tenir les collectifs de travail. Elle valorise le rôle RH ou transformation comme une fonction d’arbitrage industriel à part entière, tout en rassurant partenaires, investisseurs ou institutions sur la capacité de l’entreprise à sécuriser les compétences nécessaires à sa trajectoire."
+          },
+          {
+            "label": "Cabinet RH · Organisation · Transformation",
+            "title": "Démontrer une expertise connectée aux contraintes industrielles",
+            "text": "Cette lecture permet de montrer une expertise réellement connectée aux contraintes industrielles : montée en charge, adaptation des métiers, organisation sous tension, transmission des savoir-faire, transformation du travail. Elle valorise une capacité de conseil qui ne reste pas théorique, mais éclaire les mécanismes humains qui conditionnent la robustesse industrielle."
+          },
+          {
+            "label": "Formation · QHSE · Certification · Gestes métiers",
+            "title": "Rendre visibles les conditions concrètes de montée en compétence",
+            "text": "Cette prise de parole permet de rendre visibles les conditions concrètes de montée en compétence : gestes métiers, culture sécurité, qualité, conformité, standards, apprentissage et fiabilisation des pratiques. Elle valorise les fonctions qui sécurisent la transformation dans le réel du travail, tout en montrant que l’entreprise ou l’organisation sait anticiper les risques liés à la compétence, à la sécurité et à la maîtrise opérationnelle."
+          },
+          {
+            "label": "Droit social · Restructuration · Sécurisation",
+            "title": "Éclairer les transformations sensibles sans exposer de dossier",
+            "text": "Cette lecture permet d’éclairer les moments où la transformation industrielle rencontre les limites du droit social, des collectifs, des réorganisations ou de la soutenabilité humaine. Elle valorise une expertise capable de sécuriser des trajectoires sensibles sans exposer de dossier identifiable, tout en montrant que l’entreprise sait traiter les enjeux humains et sociaux comme des conditions de décision industrielle."
+          }
+        ]
+      },
+      "copy": {
+        "positionsCountNote": "7 positions avec lecture emploi & compétences sont ouvertes dans le cycle Industrie.",
+        "rarityBlock": {
+          "kicker": "Rareté éditoriale",
+          "title": "7 positions avec lecture emploi & compétences sont ouvertes dans le cycle Industrie.",
+          "text": "Chaque position correspond à un angle contextualisé. Une position emploi & compétences ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
+        },
+        "heroNoteHtml": "Aucun dossier social identifiable à exposer &nbsp;·&nbsp; Aucun chiffre interne à communiquer &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Préparation possible avec les équipes communication, juridique, RH ou corporate de votre organisation",
+        "heroCardTitle": "Votre lecture emploi & compétences a-t-elle sa place dans l’une de ces conversations ?",
+        "heroCardText": "En 15 minutes, nous vérifions si votre lecture correspond à une position encore disponible — sans exposer de dossier interne, de situation sociale identifiable ou d’information confidentielle.",
+        "audience": {
+          "title": "Cette lecture emploi & compétences vous est-elle destinée ?",
+          "yesTitle": "Vous portez probablement une lecture pertinente si…",
+          "noTitle": "Moins adapté si…",
+          "yesItems": [
+            "Vous savez relier recrutement, compétences, transmission, formation, organisation du travail ou droit social à des arbitrages industriels réels.",
+            "Vous êtes DRH, direction transformation, responsable compétences, QHSE, formation, organisation, conseil RH, conseil en transformation, droit social ou restructuration.",
+            "Votre lecture porte sur des seuils : compétences qui manquent, métiers qui évoluent, collectifs qui compensent, organisations qui saturent, sécurité ou qualité qui deviennent plus difficiles à tenir.",
+            "Vous pouvez éclairer un mécanisme d’emploi, de compétences ou de travail sans exposer de dossier interne, de situation sociale identifiable ou de chiffre confidentiel."
+          ],
+          "noItems": [
+            "Votre contribution vise surtout à présenter une politique RH, une marque employeur ou une offre de formation.",
+            "Votre lecture reste trop générale pour être rattachée à un arbitrage industriel précis.",
+            "Vous souhaitez commenter une situation sociale interne, un plan ou un dossier identifiable.",
+            "Votre approche ne relie pas les enjeux humains aux décisions industrielles qui en découlent."
+          ],
+          "panel": "La lecture emploi & compétences ne consiste pas à raconter une politique RH. Elle consiste à éclairer les mécanismes humains, sociaux et organisationnels qui rendent une trajectoire industrielle tenable, fragile ou à réarbitrer."
+        },
+        "conversations": {
+          "title": "Les angles où l’emploi et les compétences deviennent décisifs",
+          "intro": "La page met d’abord en avant les angles emploi & compétences ouverts. Les lectures complémentaires ne s’affichent que lorsqu’elles appartiennent à la même conversation et au même contexte.",
+          "panel": "Ces positions ne demandent pas de commenter une situation sociale particulière ; elles proposent d’éclairer les arbitrages humains, métiers et organisationnels qui se répètent dans les trajectoires industrielles."
+        },
+        "preparation": {
+          "titleHtml": "Beaucoup arrivent avec une expérience RH, sociale ou organisationnelle. <em style=\"color:rgba(240,236,230,0.55);\">Ils repartent avec une lecture industrielle défendable.</em>",
+          "intro": "La préparation éditoriale transforme une expérience de direction RH, de transformation, de formation, de conseil ou de droit social en lecture située : claire, non intrusive et utile pour d’autres décideurs industriels."
+        },
+        "dimensions": [
+          {
+            "num": "01",
+            "title": "Transformation en cours / contexte",
+            "text": "Qualifier ce qui change concrètement : montée en charge, pénurie de compétences, transformation des métiers, transmission difficile, réorganisation ou soutenabilité du travail."
+          },
+          {
+            "num": "02",
+            "title": "Acteurs concernés",
+            "text": "Identifier les acteurs impactés : salariés, managers, RH, production, maintenance, qualité, QHSE, formation, direction industrielle, partenaires sociaux, fournisseurs ou territoire."
+          },
+          {
+            "num": "03",
+            "title": "Arbitrages emploi & compétences",
+            "text": "Rendre visibles les choix réels : recruter, former, transmettre, automatiser, réorganiser, externaliser, sécuriser, ralentir, accélérer ou transformer les métiers."
+          },
+          {
+            "num": "04",
+            "title": "Défis & opportunités",
+            "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : compétences mieux sécurisées, collectifs plus robustes, métiers mieux adaptés ou trajectoire sociale plus lisible."
+          },
+          {
+            "num": "05",
+            "title": "Vision attendue",
+            "text": "Formuler une lecture située de ce que l’expérience RH, sociale, formation ou conseil permet de reconnaître avant que la tension humaine ne devienne un blocage industriel."
+          },
+          {
+            "num": "06",
+            "title": "Échelle d’analyse",
+            "text": "Situer la lecture à la bonne échelle : poste, atelier, site, bassin d’emploi, entreprise, filière, chaîne de sous-traitance, territoire ou trajectoire industrielle."
+          }
+        ],
+        "dimensionsPanel": "Ce travail ne vous demande pas d’exposer votre organisation. Il donne une forme claire à ce que votre position vous a appris à reconnaître dans les tensions d’emploi, de compétences et d’organisation du travail.",
+        "process": [
+          {
+            "num": "01",
+            "title": "L'échange de qualification",
+            "text": "15 minutes pour vérifier si votre lecture correspond à un angle disponible. Aucun dossier social identifiable, chiffre interne ou situation sensible à exposer.",
+            "deadline": "À planifier en amont du comité éditorial"
+          },
+          {
+            "num": "02",
+            "title": "Le dossier de positionnement",
+            "text": "Si l’angle est retenu, un dossier complet vous est adressé : angle précis, logique de mise en regard, modalités d’intervention, format émission et article associé."
+          },
+          {
+            "num": "03",
+            "title": "Le comité éditorial",
+            "text": "Le 15 juin, le comité éditorial examine les dossiers de positionnement et valide la composition finale. Vous êtes informé avant tout engagement.",
+            "deadline": "Comité : 15 juin 2026"
+          },
+          {
+            "num": "04",
+            "title": "La préparation & la production",
+            "text": "En Plateau travaille avec vous, et avec vos équipes communication, juridique, RH ou corporate si nécessaire, pour transformer votre lecture en position claire, non intrusive et publiquement défendable."
+          }
+        ],
+        "guarantees": [
+          {
+            "accent": true,
+            "title": "Aucun dossier social identifiable à exposer",
+            "text": "L’échange porte sur les mécanismes d’emploi, de compétences et d’organisation du travail, pas sur un plan, un site, une négociation ou une situation interne identifiable."
+          },
+          {
+            "accent": true,
+            "title": "Aucun engagement avant le dossier de positionnement",
+            "text": "Vous ne vous engagez pas lors de l’échange éditorial. La position proposée est qualifiée avant toute validation."
+          },
+          {
+            "title": "Pas de discours marque employeur attendu",
+            "text": "La contribution vise une lecture située des contraintes humaines et organisationnelles de l’industrie, non une présentation RH, une méthode ou une offre."
+          },
+          {
+            "title": "Une parole préparée avec vos équipes si nécessaire",
+            "text": "La préparation peut intégrer vos contraintes RH, communication, juridiques, corporate ou de confidentialité."
+          }
+        ],
+        "faq": [
+          {
+            "question": "Faut-il parler d’un plan social, d’un site ou d’une situation interne identifiable ?",
+            "answer": "Non. L’enjeu n’est pas d’exposer une situation sensible, mais d’éclairer un mécanisme d’emploi, de compétences ou d’organisation du travail à partir de votre expérience."
+          },
+          {
+            "question": "Cette lecture est-elle réservée aux DRH ?",
+            "answer": "Non. Elle peut être portée par des directions RH, transformation, formation, QHSE, compétences, organisation, conseil RH, conseil en transformation, droit social ou restructuration."
+          },
+          {
+            "question": "Peut-on préparer l’intervention avec les équipes communication, RH ou juridiques ?",
+            "answer": "Oui. La prise de parole peut être préparée avec les équipes communication, RH, juridique ou corporate afin de garantir un niveau d’exposition maîtrisé."
+          },
+          {
+            "question": "Faut-il arriver avec une position déjà formulée ?",
+            "answer": "Non. L’échange éditorial sert précisément à vérifier l’angle, puis à transformer votre lecture en position claire, défendable et non intrusive."
+          }
+        ],
+        "cta": {
+          "title": "Votre lecture emploi & compétences peut éclairer ce qui fait tenir — ou fragilise — une trajectoire industrielle.",
+          "text": "Un échange de 15 minutes — sans exposer de dossier social, sans situation identifiable, sans engagement — pour vérifier si votre angle a une place dans l’une des 7 positions emploi & compétences ouvertes.",
+          "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
+          "footnote": "Les positions emploi & compétences se ferment au fil de la composition éditoriale · Page non indexée"
         }
       }
     }
