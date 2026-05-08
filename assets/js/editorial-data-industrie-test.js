@@ -1,7 +1,7 @@
-/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V14 opérations */
+/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V16 opérations + emploi-compétences complet */
 
 window.EN_PLATEAU_EDITORIAL_DATA = {
-  "version": "2026-05-09-v14-operations",
+  "version": "2026-05-09-v16-emploi-competences-complet",
   "status": "test",
   "sourceDocument": "programme_editorial_industrie.docx",
   "scope": {
@@ -1614,7 +1614,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInConversationPage": true,
           "showInForm": true,
           "landingPages": [
-            "emploi-competences"
+            "operations"
           ],
           "pointBascule": "À partir de quand les leviers d’absorption opérationnelle créent-ils plus de tension différée qu’ils ne résolvent de pression immédiate ?",
           "tensionArbitrage": "Répondre à la demande sans fragiliser la qualité, la maintenance, les flux ni l’équilibre organisationnel.",
@@ -1690,7 +1690,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInForm": false,
           "isComplementaryStub": true
         },
-        {
+                {
           "code": "A04",
           "crmCode": "IND-C1-GS-A04",
           "programmeCode": "IND-C1-CST-04",
@@ -1699,23 +1699,72 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "typeLecture": "RH_COMPETENCES",
           "questionEditoriale": "À partir de quand le délai nécessaire pour recruter, équiper, industrialiser ou sécuriser la montée en capacité devient-il incompatible avec le rythme de la demande ?",
           "questionPublique": "À partir de quand le délai nécessaire pour recruter, équiper, industrialiser ou sécuriser la montée en capacité devient-il incompatible avec le rythme de la demande ?",
-          "questionActivation": "La croissance industrielle dépend aussi du temps nécessaire pour recruter, former, équiper, qualifier, industrialiser et sécuriser la montée en capacité. Or le marché peut accélérer plus vite que l'organisation ne sait se transformer.",
+          "questionActivation": "La croissance industrielle dépend aussi du temps nécessaire pour recruter, former, équiper, qualifier, industrialiser et sécuriser la montée en capacité. Vous n’êtes pas attendu sur vos effectifs ou vos plans internes, mais sur votre lecture du moment où le temps humain et organisationnel devient incompatible avec le rythme du marché.",
           "introMecanisme": "La croissance industrielle dépend aussi du temps nécessaire pour recruter, former, équiper, qualifier, industrialiser et sécuriser la montée en capacité. Or le marché peut accélérer plus vite que l'organisation ne sait se transformer.",
-          "formatCourt": {
-            "titrePublicCourt": "À partir de quand le délai nécessaire pour recruter, équiper, industrialiser ou sécuriser la montée en capacité devient-il incompatible avec le rythme de la demande ?",
-            "usage": "Titre court source pour lectures complémentaires."
-          },
+          "pointBascule": "À partir de quand le temps nécessaire pour monter en capacité devient-il incompatible avec l'opportunité commerciale ?",
+          "tensionArbitrage": "Répondre vite au marché sans brûler les étapes humaines, techniques et industrielles.",
           "primaryProfiles": [
-            "DRH industriel",
-            "Responsable compétences",
-            "Formation industrielle",
-            "Organisation du travail",
-            "Dialogue social"
+                    "DRH industriel",
+                    "Responsable compétences",
+                    "Formation industrielle",
+                    "Organisation du travail",
+                    "Dialogue social"
+          ],
+          "landingPages": [
+                    "emploi-competences"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
-        },
+          "showInForm": true,
+          "formatCourt": {
+                    "titrePublicCourt": "Quand le temps de recrutement et de qualification devient-il incompatible avec le rythme de la demande ?",
+                    "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+                    "titre": "Fiche intervenant — Recrutement, qualification et montée en capacité",
+                    "chapeau": "Votre intervention permettrait d’éclairer le moment où la croissance industrielle se heurte au temps nécessaire pour recruter, former, équiper, qualifier et sécuriser les compétences indispensables.",
+                    "dimensions": [
+                              {
+                                        "key": "transformation",
+                                        "title": "Transformation en cours / contexte",
+                                        "text": "Qualifier ce qui change concrètement : croissance de la demande, délai de recrutement, formation, qualification, industrialisation et sécurisation de la montée en capacité, intensité de la contrainte, rythme de transformation attendu et moment où la situation change de nature."
+                              },
+                              {
+                                        "key": "acteurs",
+                                        "title": "Acteurs impactés",
+                                        "text": "Identifier les acteurs concernés par la bascule : direction RH, direction industrielle, responsables compétences, formation, managers de production, équipes terrain, QHSE, maintenance et partenaires de recrutement ou de formation."
+                              },
+                              {
+                                        "key": "arbitrages",
+                                        "title": "Arbitrages & décisions",
+                                        "text": "Rendre visibles les choix à effectuer : accélérer ou temporiser, recruter ou former, industrialiser plus vite ou sécuriser les gestes, équiper les équipes ou préserver la qualité de la montée en capacité."
+                              },
+                              {
+                                        "key": "defis",
+                                        "title": "Défis & opportunités",
+                                        "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : compétences mieux sécurisées, organisation plus robuste, métiers mieux adaptés ou trajectoire industrielle mieux assumée."
+                              },
+                              {
+                                        "key": "vision",
+                                        "title": "Vision attendue",
+                                        "text": "Formuler une lecture située de ce que votre expérience RH, sociale, formation, QHSE, organisation ou conseil permet de reconnaître avant que la tension humaine ne devienne un blocage industriel."
+                              },
+                              {
+                                        "key": "echelle",
+                                        "title": "Échelle pertinente",
+                                        "text": "Situer la lecture à la bonne échelle : poste, atelier, site, bassin d’emploi, entreprise, filière ou trajectoire de croissance."
+                              }
+                    ],
+                    "momentBascule": "À partir de quand le temps nécessaire pour monter en capacité devient-il incompatible avec l'opportunité commerciale ?",
+                    "tensionCentrale": "Répondre vite au marché sans brûler les étapes humaines, techniques et industrielles.",
+                    "securisation": "L’échange ne suppose pas de commenter une situation interne, un plan social, un site, un accord, un client, un fournisseur ou une décision confidentielle. Il s’agit d’éclairer un mécanisme d’emploi, de compétences ou d’organisation du travail à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, RH, juridique ou corporate."
+          },
+          "complementaryCodes": [
+                    "IND-C1-GS-A01",
+                    "IND-C1-GS-A02",
+                    "IND-C1-GS-A03"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+},
         {
           "code": "A02",
           "crmCode": "IND-C1-AC-A02",
@@ -1741,7 +1790,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInConversationPage": true,
           "showInForm": true,
           "landingPages": [
-            "emploi-competences"
+            "operations"
           ],
           "pointBascule": "À partir de quand tenir l’activité revient-il à déplacer la contrainte plutôt qu’à la résoudre ?",
           "tensionArbitrage": "Maintenir la continuité industrielle sans accumuler des compromis qui fragilisent l’outil ou l’organisation.",
@@ -1817,7 +1866,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInForm": false,
           "isComplementaryStub": true
         },
-        {
+                {
           "code": "A04",
           "crmCode": "IND-C1-AC-A04",
           "programmeCode": "IND-C1-ASC-04",
@@ -1826,23 +1875,72 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "typeLecture": "RH_COMPETENCES",
           "questionEditoriale": "À partir de quand le temps nécessaire pour adapter l'outil ou réorganiser la production dépasse-t-il la capacité réelle de l'activité à tenir ?",
           "questionPublique": "À partir de quand le temps nécessaire pour adapter l'outil ou réorganiser la production dépasse-t-il la capacité réelle de l'activité à tenir ?",
-          "questionActivation": "S'adapter prend du temps : reconfigurer un atelier, redéployer des équipes, qualifier un nouveau process. Mais lorsque les contraintes s'intensifient, l'entreprise ne dispose pas toujours de ce temps.",
+          "questionActivation": "S'adapter prend du temps : reconfigurer un atelier, redéployer des équipes, qualifier un nouveau process. Vous n’êtes pas attendu sur une réorganisation interne, mais sur votre capacité à éclairer le seuil où le temps d’adaptation devient plus long que le temps réellement disponible pour maintenir l’activité.",
           "introMecanisme": "S'adapter prend du temps : reconfigurer un atelier, redéployer des équipes, qualifier un nouveau process. Mais lorsque les contraintes s'intensifient, l'entreprise ne dispose pas toujours de ce temps.",
-          "formatCourt": {
-            "titrePublicCourt": "À partir de quand le temps nécessaire pour adapter l'outil ou réorganiser la production dépasse-t-il la capacité réelle de l'activité à tenir ?",
-            "usage": "Titre court source pour lectures complémentaires."
-          },
+          "pointBascule": "À partir de quand le temps nécessaire pour s'adapter dépasse-t-il le temps disponible pour survivre ?",
+          "tensionArbitrage": "Transformer assez vite sans déstabiliser l'activité qui doit continuer à fonctionner.",
           "primaryProfiles": [
-            "DRH industriel",
-            "Responsable compétences",
-            "Formation industrielle",
-            "Organisation du travail",
-            "Dialogue social"
+                    "DRH industriel",
+                    "Responsable organisation",
+                    "Direction transformation",
+                    "Responsable compétences",
+                    "Conseil RH industriel"
+          ],
+          "landingPages": [
+                    "emploi-competences"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
-        },
+          "showInForm": true,
+          "formatCourt": {
+                    "titrePublicCourt": "Quand le temps nécessaire pour adapter l’outil dépasse-t-il la capacité réelle de l’activité à tenir ?",
+                    "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+                    "titre": "Fiche intervenant — Temps d’adaptation, réorganisation et continuité d’activité",
+                    "chapeau": "Votre intervention permettrait d’analyser le moment où le délai nécessaire pour adapter l’outil, qualifier les équipes ou réorganiser la production devient incompatible avec la continuité de l’activité.",
+                    "dimensions": [
+                              {
+                                        "key": "transformation",
+                                        "title": "Transformation en cours / contexte",
+                                        "text": "Qualifier ce qui change concrètement : adaptation de l’outil, réorganisation de la production, redéploiement des équipes et qualification d’un nouveau process sous contrainte, intensité de la contrainte, rythme de transformation attendu et moment où la situation change de nature."
+                              },
+                              {
+                                        "key": "acteurs",
+                                        "title": "Acteurs impactés",
+                                        "text": "Identifier les acteurs concernés par la bascule : direction RH, direction industrielle, managers, équipes de production, formation, maintenance, qualité, partenaires sociaux et fonctions support."
+                              },
+                              {
+                                        "key": "arbitrages",
+                                        "title": "Arbitrages & décisions",
+                                        "text": "Rendre visibles les choix à effectuer : maintenir l’activité ou ralentir pour sécuriser, redéployer ou spécialiser, former ou recruter, ajuster les équipes ou transformer l’organisation."
+                              },
+                              {
+                                        "key": "defis",
+                                        "title": "Défis & opportunités",
+                                        "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : compétences mieux sécurisées, organisation plus robuste, métiers mieux adaptés ou trajectoire industrielle mieux assumée."
+                              },
+                              {
+                                        "key": "vision",
+                                        "title": "Vision attendue",
+                                        "text": "Formuler une lecture située de ce que votre expérience RH, sociale, formation, QHSE, organisation ou conseil permet de reconnaître avant que la tension humaine ne devienne un blocage industriel."
+                              },
+                              {
+                                        "key": "echelle",
+                                        "title": "Échelle pertinente",
+                                        "text": "Situer la lecture à la bonne échelle : atelier, ligne, site, organisation industrielle, collectif de travail ou entreprise."
+                              }
+                    ],
+                    "momentBascule": "À partir de quand le temps nécessaire pour s'adapter dépasse-t-il le temps disponible pour survivre ?",
+                    "tensionCentrale": "Transformer assez vite sans déstabiliser l'activité qui doit continuer à fonctionner.",
+                    "securisation": "L’échange ne suppose pas de commenter une situation interne, un plan social, un site, un accord, un client, un fournisseur ou une décision confidentielle. Il s’agit d’éclairer un mécanisme d’emploi, de compétences ou d’organisation du travail à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, RH, juridique ou corporate."
+          },
+          "complementaryCodes": [
+                    "IND-C1-AC-A01",
+                    "IND-C1-AC-A02",
+                    "IND-C1-AC-A03"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+},
         {
           "code": "A02",
           "crmCode": "IND-C1-RC-A02",
@@ -1868,7 +1966,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInConversationPage": true,
           "showInForm": true,
           "landingPages": [
-            "emploi-competences"
+            "operations"
           ],
           "pointBascule": "À partir de quand l’adaptation opérationnelle devient-elle insuffisante pour préserver la trajectoire ?",
           "tensionArbitrage": "Continuer à compenser ou reconnaître que le système de production doit changer de logique.",
@@ -2177,7 +2275,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInConversationPage": true,
           "showInForm": true,
           "landingPages": [
-            "emploi-competences"
+            "operations"
           ],
           "pointBascule": "À partir de quand la coordination opératoire devient-elle le véritable verrou de la montée en capacité ?",
           "tensionArbitrage": "Investir ou équiper davantage sans résoudre l’architecture réelle des flux et de l’exécution.",
@@ -2227,7 +2325,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
-        {
+                {
           "code": "A03",
           "crmCode": "IND-C3-GS-A03",
           "programmeCode": "IND-C3-CST-03",
@@ -2236,23 +2334,72 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "typeLecture": "RH_COMPETENCES",
           "questionEditoriale": "À partir de quand la montée en capacité bute-t-elle moins sur la machine que sur la qualité, la sécurité, la formation et la maîtrise des gestes critiques ?",
           "questionPublique": "À partir de quand la montée en capacité bute-t-elle moins sur la machine que sur la qualité, la sécurité, la formation et la maîtrise des gestes critiques ?",
-          "questionActivation": "Produire davantage ne consiste pas seulement à augmenter les cadences. Il faut préserver la qualité, maîtriser les gestes critiques, former les équipes, sécuriser les opérations et garantir la conformité.",
+          "questionActivation": "Produire davantage ne consiste pas seulement à augmenter les cadences. Vous n’êtes pas attendu sur une situation interne de qualité ou de sécurité, mais sur votre lecture du moment où la performance dépend moins des équipements que de la maîtrise des gestes, de la formation, de la conformité et de la culture sécurité.",
           "introMecanisme": "Produire davantage ne consiste pas seulement à augmenter les cadences. Il faut préserver la qualité, maîtriser les gestes critiques, former les équipes, sécuriser les opérations et garantir la conformité.",
-          "formatCourt": {
-            "titrePublicCourt": "À partir de quand la montée en capacité bute-t-elle moins sur la machine que sur la qualité, la sécurité, la formation et la maîtrise des gestes critiques ?",
-            "usage": "Titre court source pour lectures complémentaires."
-          },
+          "pointBascule": "À partir de quand la performance dépend-elle davantage des compétences que des équipements ?",
+          "tensionArbitrage": "Monter en capacité sans dégrader la maîtrise des gestes, la qualité et la sécurité.",
           "primaryProfiles": [
-            "DRH industriel",
-            "Responsable compétences",
-            "Formation industrielle",
-            "Organisation du travail",
-            "Dialogue social"
+                    "QHSE industriel",
+                    "Responsable formation",
+                    "Responsable compétences",
+                    "Qualité industrielle",
+                    "Direction industrielle / RH"
+          ],
+          "landingPages": [
+                    "emploi-competences"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
-        },
+          "showInForm": true,
+          "formatCourt": {
+                    "titrePublicCourt": "Quand la montée en capacité bute-t-elle sur la formation, la sécurité et la maîtrise des gestes ?",
+                    "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+                    "titre": "Fiche intervenant — Formation, sécurité, qualité et gestes critiques",
+                    "chapeau": "Votre intervention permettrait d’éclairer le seuil où la montée en capacité ne dépend plus seulement des machines, mais de la qualité, de la sécurité, de la formation et de la maîtrise des gestes critiques.",
+                    "dimensions": [
+                              {
+                                        "key": "transformation",
+                                        "title": "Transformation en cours / contexte",
+                                        "text": "Qualifier ce qui change concrètement : montée en capacité, exigences de qualité, sécurité, formation, conformité et maîtrise des gestes critiques, intensité de la contrainte, rythme de transformation attendu et moment où la situation change de nature."
+                              },
+                              {
+                                        "key": "acteurs",
+                                        "title": "Acteurs impactés",
+                                        "text": "Identifier les acteurs concernés par la bascule : QHSE, qualité, production, formation, managers de proximité, équipes terrain, direction industrielle, RH et maintenance."
+                              },
+                              {
+                                        "key": "arbitrages",
+                                        "title": "Arbitrages & décisions",
+                                        "text": "Rendre visibles les choix à effectuer : accélérer ou sécuriser, standardiser ou adapter, former avant de produire plus, préserver la qualité ou absorber la demande."
+                              },
+                              {
+                                        "key": "defis",
+                                        "title": "Défis & opportunités",
+                                        "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : compétences mieux sécurisées, organisation plus robuste, métiers mieux adaptés ou trajectoire industrielle mieux assumée."
+                              },
+                              {
+                                        "key": "vision",
+                                        "title": "Vision attendue",
+                                        "text": "Formuler une lecture située de ce que votre expérience RH, sociale, formation, QHSE, organisation ou conseil permet de reconnaître avant que la tension humaine ne devienne un blocage industriel."
+                              },
+                              {
+                                        "key": "echelle",
+                                        "title": "Échelle pertinente",
+                                        "text": "Situer la lecture à la bonne échelle : poste, geste métier, ligne, atelier, site, système qualité ou trajectoire de montée en capacité."
+                              }
+                    ],
+                    "momentBascule": "À partir de quand la performance dépend-elle davantage des compétences que des équipements ?",
+                    "tensionCentrale": "Monter en capacité sans dégrader la maîtrise des gestes, la qualité et la sécurité.",
+                    "securisation": "L’échange ne suppose pas de commenter une situation interne, un plan social, un site, un accord, un client, un fournisseur ou une décision confidentielle. Il s’agit d’éclairer un mécanisme d’emploi, de compétences ou d’organisation du travail à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, RH, juridique ou corporate."
+          },
+          "complementaryCodes": [
+                    "IND-C3-GS-A01",
+                    "IND-C3-GS-A02",
+                    "IND-C3-GS-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+},
         {
           "code": "A02",
           "crmCode": "IND-C3-AC-A02",
@@ -2278,7 +2425,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInConversationPage": true,
           "showInForm": true,
           "landingPages": [
-            "emploi-competences"
+            "operations"
           ],
           "pointBascule": "À partir de quand l’ajout d’outils ne compense-t-il plus les limites de l’architecture opératoire ?",
           "tensionArbitrage": "Moderniser l’outil sans transformer les interfaces, routines, flux et modes de coordination qui conditionnent sa performance.",
@@ -2379,7 +2526,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInConversationPage": true,
           "showInForm": true,
           "landingPages": [
-            "emploi-competences"
+            "operations"
           ],
           "pointBascule": "À partir de quand la crise révèle-t-elle que le système productif doit être repensé plutôt que seulement réparé ?",
           "tensionArbitrage": "Restaurer l’exécution à court terme ou refondre les conditions opérationnelles qui rendent la trajectoire tenable.",
@@ -2429,7 +2576,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
-        {
+                {
           "code": "A03",
           "crmCode": "IND-C3-RC-A03",
           "programmeCode": "IND-C3-RSS-03",
@@ -2438,23 +2585,72 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "typeLecture": "RH_COMPETENCES",
           "questionEditoriale": "À partir de quand l'écart entre compétences disponibles, exigences de sûreté et standards de production impose-t-il une transformation plus profonde ?",
           "questionPublique": "À partir de quand l'écart entre compétences disponibles, exigences de sûreté et standards de production impose-t-il une transformation plus profonde ?",
-          "questionActivation": "Une crise peut révéler un écart difficile à combler entre ce que l'activité exige et ce que l'organisation peut mobiliser. Lorsque cet écart devient trop important, il faut repenser l'organisation, les standards ou le périmètre de l'activité.",
+          "questionActivation": "Une crise peut révéler un écart difficile à combler entre ce que l’activité exige et ce que l’organisation peut mobiliser. Vous n’êtes pas attendu sur un incident, une non-conformité ou une situation sensible, mais sur votre lecture du seuil où l’écart de compétences, de sûreté ou de standards oblige à transformer plus profondément l’organisation.",
           "introMecanisme": "Une crise peut révéler un écart difficile à combler entre ce que l'activité exige et ce que l'organisation peut mobiliser. Lorsque cet écart devient trop important, il faut repenser l'organisation, les standards ou le périmètre de l'activité.",
-          "formatCourt": {
-            "titrePublicCourt": "À partir de quand l'écart entre compétences disponibles, exigences de sûreté et standards de production impose-t-il une transformation plus profonde ?",
-            "usage": "Titre court source pour lectures complémentaires."
-          },
+          "pointBascule": "Quand l'activité n'est-elle plus tenable humainement ou réglementairement ?",
+          "tensionArbitrage": "Maintenir l'activité sans dépasser les limites de compétence, sûreté et conformité.",
           "primaryProfiles": [
-            "DRH industriel",
-            "Responsable compétences",
-            "Formation industrielle",
-            "Organisation du travail",
-            "Dialogue social"
+                    "QHSE / sûreté",
+                    "DRH industriel",
+                    "Droit social",
+                    "Responsable conformité",
+                    "Conseil transformation industrielle"
+          ],
+          "landingPages": [
+                    "emploi-competences"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
-        },
+          "showInForm": true,
+          "formatCourt": {
+                    "titrePublicCourt": "Quand l’écart entre compétences disponibles et exigences de sûreté impose-t-il une transformation profonde ?",
+                    "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+                    "titre": "Fiche intervenant — Compétences disponibles, sûreté et standards de production",
+                    "chapeau": "Votre intervention permettrait d’analyser le moment où l’écart entre compétences disponibles, exigences de sûreté et standards de production ne peut plus être absorbé par des ajustements ordinaires.",
+                    "dimensions": [
+                              {
+                                        "key": "transformation",
+                                        "title": "Transformation en cours / contexte",
+                                        "text": "Qualifier ce qui change concrètement : crise industrielle, écart de compétences, exigences de sûreté, standards de production, conformité et limites humaines de l’activité, intensité de la contrainte, rythme de transformation attendu et moment où la situation change de nature."
+                              },
+                              {
+                                        "key": "acteurs",
+                                        "title": "Acteurs impactés",
+                                        "text": "Identifier les acteurs concernés par la bascule : direction RH, QHSE, sûreté, production, qualité, direction industrielle, juridique, managers, équipes terrain et partenaires sociaux."
+                              },
+                              {
+                                        "key": "arbitrages",
+                                        "title": "Arbitrages & décisions",
+                                        "text": "Rendre visibles les choix à effectuer : maintenir ou transformer, sécuriser ou réduire, requalifier ou repositionner, revoir les standards, le périmètre ou l’organisation."
+                              },
+                              {
+                                        "key": "defis",
+                                        "title": "Défis & opportunités",
+                                        "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : compétences mieux sécurisées, organisation plus robuste, métiers mieux adaptés ou trajectoire industrielle mieux assumée."
+                              },
+                              {
+                                        "key": "vision",
+                                        "title": "Vision attendue",
+                                        "text": "Formuler une lecture située de ce que votre expérience RH, sociale, formation, QHSE, organisation ou conseil permet de reconnaître avant que la tension humaine ne devienne un blocage industriel."
+                              },
+                              {
+                                        "key": "echelle",
+                                        "title": "Échelle pertinente",
+                                        "text": "Situer la lecture à la bonne échelle : poste critique, atelier, site, système de sûreté, organisation industrielle ou périmètre d’activité."
+                              }
+                    ],
+                    "momentBascule": "Quand l'activité n'est-elle plus tenable humainement ou réglementairement ?",
+                    "tensionCentrale": "Maintenir l'activité sans dépasser les limites de compétence, sûreté et conformité.",
+                    "securisation": "L’échange ne suppose pas de commenter une situation interne, un plan social, un site, un accord, un client, un fournisseur ou une décision confidentielle. Il s’agit d’éclairer un mécanisme d’emploi, de compétences ou d’organisation du travail à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, RH, juridique ou corporate."
+          },
+          "complementaryCodes": [
+                    "IND-C3-RC-A01",
+                    "IND-C3-RC-A02",
+                    "IND-C3-RC-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+},
         {
           "code": "A04",
           "crmCode": "IND-C3-RC-A04",
@@ -2484,7 +2680,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "isComplementaryStub": true
         },
-        {
+                {
           "code": "A01",
           "crmCode": "IND-C4-GS-A01",
           "programmeCode": "IND-C4-CST-01",
@@ -2493,23 +2689,72 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "typeLecture": "RH_COMPETENCES",
           "questionEditoriale": "À partir de quand la croissance révèle-t-elle un seuil critique en matière de recrutement, transmission, stabilisation ou montée en compétence ?",
           "questionPublique": "À partir de quand la croissance révèle-t-elle un seuil critique en matière de recrutement, transmission, stabilisation ou montée en compétence ?",
-          "questionActivation": "Une trajectoire industrielle tient aussi par les personnes capables de faire fonctionner, transmettre, stabiliser et faire évoluer l'activité. Lorsque la croissance accélère, les besoins humains deviennent plus visibles.",
+          "questionActivation": "Une trajectoire industrielle tient aussi par les personnes capables de faire fonctionner, transmettre, stabiliser et faire évoluer l’activité. Vous n’êtes pas attendu sur vos données RH, mais sur votre lecture du moment où le recrutement, la transmission ou la montée en compétence deviennent le principal verrou de la trajectoire.",
           "introMecanisme": "Une trajectoire industrielle tient aussi par les personnes capables de faire fonctionner, transmettre, stabiliser et faire évoluer l'activité. Lorsque la croissance accélère, les besoins humains deviennent plus visibles.",
-          "formatCourt": {
-            "titrePublicCourt": "À partir de quand la croissance révèle-t-elle un seuil critique en matière de recrutement, transmission, stabilisation ou montée en compétence ?",
-            "usage": "Titre court source pour lectures complémentaires."
-          },
+          "pointBascule": "À partir de quand le facteur humain devient-il le principal verrou de la trajectoire industrielle ?",
+          "tensionArbitrage": "Monter en capacité sans dépasser les capacités de recrutement, de formation et de transmission.",
           "primaryProfiles": [
-            "DRH industriel",
-            "Responsable compétences",
-            "Formation industrielle",
-            "Organisation du travail",
-            "Dialogue social"
+                    "DRH industriel",
+                    "Responsable recrutement",
+                    "Responsable formation",
+                    "OPCO / compétences",
+                    "Conseil RH industriel"
+          ],
+          "landingPages": [
+                    "emploi-competences"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
-        },
+          "showInForm": true,
+          "formatCourt": {
+                    "titrePublicCourt": "Quand le facteur humain devient-il le principal verrou de la trajectoire industrielle ?",
+                    "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+                    "titre": "Fiche intervenant — Recrutement, transmission et montée en compétence",
+                    "chapeau": "Votre intervention permettrait d’éclairer le seuil où la croissance industrielle révèle une limite critique en matière de recrutement, transmission, stabilisation ou montée en compétence.",
+                    "dimensions": [
+                              {
+                                        "key": "transformation",
+                                        "title": "Transformation en cours / contexte",
+                                        "text": "Qualifier ce qui change concrètement : croissance industrielle, recrutement, transmission des savoir-faire, stabilisation des équipes et montée en compétence, intensité de la contrainte, rythme de transformation attendu et moment où la situation change de nature."
+                              },
+                              {
+                                        "key": "acteurs",
+                                        "title": "Acteurs impactés",
+                                        "text": "Identifier les acteurs concernés par la bascule : DRH, managers, production, formation, maintenance, qualité, opérateurs, bassin d’emploi, organismes de formation et partenaires institutionnels."
+                              },
+                              {
+                                        "key": "arbitrages",
+                                        "title": "Arbitrages & décisions",
+                                        "text": "Rendre visibles les choix à effectuer : recruter ou former, stabiliser ou accélérer, transmettre ou standardiser, développer l’activité ou préserver la capacité humaine disponible."
+                              },
+                              {
+                                        "key": "defis",
+                                        "title": "Défis & opportunités",
+                                        "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : compétences mieux sécurisées, organisation plus robuste, métiers mieux adaptés ou trajectoire industrielle mieux assumée."
+                              },
+                              {
+                                        "key": "vision",
+                                        "title": "Vision attendue",
+                                        "text": "Formuler une lecture située de ce que votre expérience RH, sociale, formation, QHSE, organisation ou conseil permet de reconnaître avant que la tension humaine ne devienne un blocage industriel."
+                              },
+                              {
+                                        "key": "echelle",
+                                        "title": "Échelle pertinente",
+                                        "text": "Situer la lecture à la bonne échelle : site, bassin d’emploi, entreprise, filière, métier critique ou territoire industriel."
+                              }
+                    ],
+                    "momentBascule": "À partir de quand le facteur humain devient-il le principal verrou de la trajectoire industrielle ?",
+                    "tensionCentrale": "Monter en capacité sans dépasser les capacités de recrutement, de formation et de transmission.",
+                    "securisation": "L’échange ne suppose pas de commenter une situation interne, un plan social, un site, un accord, un client, un fournisseur ou une décision confidentielle. Il s’agit d’éclairer un mécanisme d’emploi, de compétences ou d’organisation du travail à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, RH, juridique ou corporate."
+          },
+          "complementaryCodes": [
+                    "IND-C4-GS-A02",
+                    "IND-C4-GS-A03",
+                    "IND-C4-GS-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+},
         {
           "code": "A02",
           "crmCode": "IND-C4-GS-A02",
@@ -2535,7 +2780,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInConversationPage": true,
           "showInForm": true,
           "landingPages": [
-            "emploi-competences"
+            "operations"
           ],
           "pointBascule": "À partir de quand les ressources physiques deviennent-elles le vrai plafond de capacité ?",
           "tensionArbitrage": "Croître industriellement sans ignorer les limites concrètes d’énergie, d’eau, d’utilités, de raccordement ou de réseau.",
@@ -2611,7 +2856,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInForm": false,
           "isComplementaryStub": true
         },
-        {
+                {
           "code": "A01",
           "crmCode": "IND-C4-AC-A01",
           "programmeCode": "IND-C4-ASC-01",
@@ -2620,23 +2865,72 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "typeLecture": "RH_COMPETENCES",
           "questionEditoriale": "À partir de quand les tensions sur les effectifs, les savoir-faire, les conditions de travail ou l'organisation limitent-elles la capacité à ajuster l'activité ?",
           "questionPublique": "À partir de quand les tensions sur les effectifs, les savoir-faire, les conditions de travail ou l'organisation limitent-elles la capacité à ajuster l'activité ?",
-          "questionActivation": "En contexte contraint, les organisations industrielles demandent souvent beaucoup aux équipes. Mais lorsque les effectifs, les compétences ou les conditions de travail sont trop tendus, l'activité ne peut plus s'adapter sans fragiliser ceux qui la portent.",
+          "questionActivation": "En contexte contraint, les organisations industrielles demandent souvent beaucoup aux équipes. Vous n’êtes pas attendu sur une situation sociale interne, mais sur votre lecture du moment où les tensions sur les effectifs, les savoir-faire, les conditions de travail ou l’organisation limitent la capacité réelle d’adaptation.",
           "introMecanisme": "En contexte contraint, les organisations industrielles demandent souvent beaucoup aux équipes. Mais lorsque les effectifs, les compétences ou les conditions de travail sont trop tendus, l'activité ne peut plus s'adapter sans fragiliser ceux qui la portent.",
-          "formatCourt": {
-            "titrePublicCourt": "À partir de quand les tensions sur les effectifs, les savoir-faire, les conditions de travail ou l'organisation limitent-elles la capacité à ajuster l'activité ?",
-            "usage": "Titre court source pour lectures complémentaires."
-          },
+          "pointBascule": "À partir de quand l'organisation humaine ne tient-elle plus ?",
+          "tensionArbitrage": "Maintenir l'activité sans épuiser les équipes ni perdre les savoir-faire.",
           "primaryProfiles": [
-            "DRH industriel",
-            "Responsable compétences",
-            "Formation industrielle",
-            "Organisation du travail",
-            "Dialogue social"
+                    "DRH site",
+                    "Dialogue social",
+                    "Organisation du travail",
+                    "Santé / sécurité",
+                    "Droit social"
+          ],
+          "landingPages": [
+                    "emploi-competences"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
-        },
+          "showInForm": true,
+          "formatCourt": {
+                    "titrePublicCourt": "Quand les tensions sur les effectifs et les savoir-faire limitent-elles l’adaptation de l’activité ?",
+                    "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+                    "titre": "Fiche intervenant — Effectifs, savoir-faire et conditions de travail sous contrainte",
+                    "chapeau": "Votre intervention permettrait d’analyser le moment où les tensions humaines et organisationnelles limitent la capacité à ajuster l’activité sans épuiser les équipes ni perdre les savoir-faire.",
+                    "dimensions": [
+                              {
+                                        "key": "transformation",
+                                        "title": "Transformation en cours / contexte",
+                                        "text": "Qualifier ce qui change concrètement : tensions sur les effectifs, savoir-faire, conditions de travail, organisation et capacité d’adaptation de l’activité, intensité de la contrainte, rythme de transformation attendu et moment où la situation change de nature."
+                              },
+                              {
+                                        "key": "acteurs",
+                                        "title": "Acteurs impactés",
+                                        "text": "Identifier les acteurs concernés par la bascule : salariés, managers, RH, production, santé-sécurité, qualité, partenaires sociaux, direction industrielle et fonctions juridiques."
+                              },
+                              {
+                                        "key": "arbitrages",
+                                        "title": "Arbitrages & décisions",
+                                        "text": "Rendre visibles les choix à effectuer : maintenir ou alléger, réorganiser ou préserver, former ou redéployer, absorber la contrainte ou reconnaître les limites humaines de l’activité."
+                              },
+                              {
+                                        "key": "defis",
+                                        "title": "Défis & opportunités",
+                                        "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : compétences mieux sécurisées, organisation plus robuste, métiers mieux adaptés ou trajectoire industrielle mieux assumée."
+                              },
+                              {
+                                        "key": "vision",
+                                        "title": "Vision attendue",
+                                        "text": "Formuler une lecture située de ce que votre expérience RH, sociale, formation, QHSE, organisation ou conseil permet de reconnaître avant que la tension humaine ne devienne un blocage industriel."
+                              },
+                              {
+                                        "key": "echelle",
+                                        "title": "Échelle pertinente",
+                                        "text": "Situer la lecture à la bonne échelle : atelier, équipe, site, collectif de travail, organisation industrielle ou trajectoire d’adaptation."
+                              }
+                    ],
+                    "momentBascule": "À partir de quand l'organisation humaine ne tient-elle plus ?",
+                    "tensionCentrale": "Maintenir l'activité sans épuiser les équipes ni perdre les savoir-faire.",
+                    "securisation": "L’échange ne suppose pas de commenter une situation interne, un plan social, un site, un accord, un client, un fournisseur ou une décision confidentielle. Il s’agit d’éclairer un mécanisme d’emploi, de compétences ou d’organisation du travail à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, RH, juridique ou corporate."
+          },
+          "complementaryCodes": [
+                    "IND-C4-AC-A02",
+                    "IND-C4-AC-A03",
+                    "IND-C4-AC-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+},
         {
           "code": "A04",
           "crmCode": "IND-C4-AC-A04",
@@ -2666,7 +2960,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "isComplementaryStub": true
         },
-        {
+                {
           "code": "A01",
           "crmCode": "IND-C4-RC-A01",
           "programmeCode": "IND-C4-RSS-01",
@@ -2675,23 +2969,72 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "typeLecture": "RH_COMPETENCES",
           "questionEditoriale": "À partir de quand les compétences critiques, les conditions de travail ou l'organisation deviennent-elles un facteur de bascule dans une trajectoire de transformation ?",
           "questionPublique": "À partir de quand les compétences critiques, les conditions de travail ou l'organisation deviennent-elles un facteur de bascule dans une trajectoire de transformation ?",
-          "questionActivation": "Transformer une trajectoire industrielle suppose de mobiliser des compétences, de faire évoluer les organisations et de maintenir l'engagement des équipes. En situation de crise, ces dimensions peuvent devenir décisives.",
+          "questionActivation": "Transformer une trajectoire industrielle suppose de mobiliser des compétences, de faire évoluer les organisations et de maintenir l’engagement des équipes. Vous n’êtes pas attendu sur un dossier de restructuration, mais sur votre lecture du moment où les compétences critiques et les collectifs conditionnent la survie ou la reconstruction du modèle.",
           "introMecanisme": "Transformer une trajectoire industrielle suppose de mobiliser des compétences, de faire évoluer les organisations et de maintenir l'engagement des équipes. En situation de crise, ces dimensions peuvent devenir décisives.",
-          "formatCourt": {
-            "titrePublicCourt": "À partir de quand les compétences critiques, les conditions de travail ou l'organisation deviennent-elles un facteur de bascule dans une trajectoire de transformation ?",
-            "usage": "Titre court source pour lectures complémentaires."
-          },
+          "pointBascule": "Quand les compétences conditionnent-elles la survie du modèle ?",
+          "tensionArbitrage": "Transformer l'activité sans perdre les savoir-faire et les collectifs nécessaires à la nouvelle trajectoire.",
           "primaryProfiles": [
-            "DRH industriel",
-            "Responsable compétences",
-            "Formation industrielle",
-            "Organisation du travail",
-            "Dialogue social"
+                    "DRH transformation",
+                    "Restructuration",
+                    "Compétences critiques",
+                    "Droit social",
+                    "Conseil organisation"
+          ],
+          "landingPages": [
+                    "emploi-competences"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
-        },
+          "showInForm": true,
+          "formatCourt": {
+                    "titrePublicCourt": "Quand les compétences critiques conditionnent-elles la survie du modèle industriel ?",
+                    "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+                    "titre": "Fiche intervenant — Compétences critiques et trajectoire de transformation",
+                    "chapeau": "Votre intervention permettrait d’éclairer le moment où les compétences critiques, les conditions de travail ou l’organisation deviennent un facteur de bascule dans une trajectoire de transformation.",
+                    "dimensions": [
+                              {
+                                        "key": "transformation",
+                                        "title": "Transformation en cours / contexte",
+                                        "text": "Qualifier ce qui change concrètement : transformation de crise, compétences critiques, conditions de travail, organisation, engagement des équipes et maintien des collectifs, intensité de la contrainte, rythme de transformation attendu et moment où la situation change de nature."
+                              },
+                              {
+                                        "key": "acteurs",
+                                        "title": "Acteurs impactés",
+                                        "text": "Identifier les acteurs concernés par la bascule : direction RH, direction générale, direction industrielle, salariés, managers, partenaires sociaux, juridique, formation et territoire."
+                              },
+                              {
+                                        "key": "arbitrages",
+                                        "title": "Arbitrages & décisions",
+                                        "text": "Rendre visibles les choix à effectuer : transformer ou préserver, repositionner ou transmettre, sécuriser les collectifs, conserver les savoir-faire critiques ou reconstruire une nouvelle trajectoire."
+                              },
+                              {
+                                        "key": "defis",
+                                        "title": "Défis & opportunités",
+                                        "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : compétences mieux sécurisées, organisation plus robuste, métiers mieux adaptés ou trajectoire industrielle mieux assumée."
+                              },
+                              {
+                                        "key": "vision",
+                                        "title": "Vision attendue",
+                                        "text": "Formuler une lecture située de ce que votre expérience RH, sociale, formation, QHSE, organisation ou conseil permet de reconnaître avant que la tension humaine ne devienne un blocage industriel."
+                              },
+                              {
+                                        "key": "echelle",
+                                        "title": "Échelle pertinente",
+                                        "text": "Situer la lecture à la bonne échelle : site, entreprise, collectif de travail, bassin d’emploi, filière ou trajectoire de redéploiement."
+                              }
+                    ],
+                    "momentBascule": "Quand les compétences conditionnent-elles la survie du modèle ?",
+                    "tensionCentrale": "Transformer l'activité sans perdre les savoir-faire et les collectifs nécessaires à la nouvelle trajectoire.",
+                    "securisation": "L’échange ne suppose pas de commenter une situation interne, un plan social, un site, un accord, un client, un fournisseur ou une décision confidentielle. Il s’agit d’éclairer un mécanisme d’emploi, de compétences ou d’organisation du travail à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, RH, juridique ou corporate."
+          },
+          "complementaryCodes": [
+                    "IND-C4-RC-A02",
+                    "IND-C4-RC-A03",
+                    "IND-C4-RC-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+},
         {
           "code": "A02",
           "crmCode": "IND-C4-RC-A02",
