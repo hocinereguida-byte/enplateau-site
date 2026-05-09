@@ -1380,3 +1380,4 @@
   border-color: var(--h3-accent-deep) !important;
   color: #ffffff !important;
 }
+filter: grayscale(100%) contrast(108%) brightness(.82);
