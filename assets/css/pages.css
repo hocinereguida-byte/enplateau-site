@@ -2273,3 +2273,177 @@ filter: grayscale(100%) contrast(108%) brightness(.82);
 .home-film-track img {
   filter: grayscale(100%) contrast(108%) brightness(.78);
 }
+/* =========================================================
+   PAGE DISPOSITIF — CORRECTIFS CIBLÉS
+   Fonds crème + blocs split propres + panneaux sombres lisibles
+========================================================= */
+
+/* 1. Fond clair de la page : blanc crème / blanc cassé, sans dominante rose */
+
+body.page-dispositif.page-interior-3 {
+  --p3-paper: #f8f4ec;
+  --p3-paper-soft: #f3eee6;
+  --p3-line-light: rgba(47, 40, 34, .12);
+}
+
+body.page-dispositif.page-interior-3,
+body.page-dispositif.page-interior-3 main,
+body.page-dispositif .page3-section-light {
+  background: var(--p3-paper) !important;
+}
+
+
+/* 2. Sections Finalité + Mobilisation
+   Suppression de l’effet “cadre blanc brouillon”.
+   Le bloc redevient une composition propre : texte crème + image bord à bord.
+*/
+
+body.page-dispositif #finalite-dispositif .page3-split,
+body.page-dispositif #ce-que-cela-demande .page3-split {
+  gap: 0 !important;
+  align-items: stretch !important;
+  background: #fbf8f2 !important;
+  border: 1px solid rgba(47, 40, 34, .08);
+}
+
+body.page-dispositif #finalite-dispositif .page3-split-copy,
+body.page-dispositif #ce-que-cela-demande .page3-split-copy {
+  background: #fbf8f2 !important;
+  padding: clamp(36px, 5vw, 64px) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body.page-dispositif #finalite-dispositif .page3-split-visual,
+body.page-dispositif #ce-que-cela-demande .page3-split-visual {
+  min-height: clamp(420px, 38vw, 520px) !important;
+  height: auto !important;
+  background-size: cover !important;
+  background-position: center !important;
+  filter: grayscale(100%) contrast(108%) brightness(.78);
+}
+
+body.page-dispositif #finalite-dispositif .page3-split-visual::after,
+body.page-dispositif #ce-que-cela-demande .page3-split-visual::after {
+  background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.34)) !important;
+}
+
+
+/* 3. Sections foncées : Cadre, Déroulé, Principe
+   On garde la photo en fond, mais on ajoute un vrai voile sombre
+   et des panneaux texte sombres semi-transparents.
+*/
+
+body.page-dispositif #cadre-dispositif {
+  background:
+    linear-gradient(180deg, rgba(17,17,17,.82), rgba(17,17,17,.92)),
+    url("../../images/dispositif/beton-cadre.jpg") center/cover no-repeat !important;
+}
+
+body.page-dispositif #comment-ca-marche {
+  background:
+    linear-gradient(180deg, rgba(17,17,17,.82), rgba(17,17,17,.92)),
+    url("../../images/dispositif/deroule-dunes.jpg") center/cover no-repeat !important;
+}
+
+body.page-dispositif #principe-dispositif {
+  background:
+    linear-gradient(180deg, rgba(17,17,17,.82), rgba(17,17,17,.92)),
+    url("../../images/dispositif/prisme-principe.jpg") center/cover no-repeat !important;
+}
+
+body.page-dispositif #cadre-dispositif .container,
+body.page-dispositif #comment-ca-marche .container,
+body.page-dispositif #principe-dispositif .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* 4. Panneaux internes des sections foncées
+   Remplace les blocs blancs par des panneaux graphite lisibles.
+*/
+
+body.page-dispositif #cadre-dispositif .editorial-panel,
+body.page-dispositif #cadre-dispositif .programme-list__item,
+body.page-dispositif #cadre-dispositif .programme-access__item,
+body.page-dispositif #cadre-dispositif .page3-card-grid > *,
+
+body.page-dispositif #comment-ca-marche .editorial-panel,
+body.page-dispositif #comment-ca-marche .programme-list__item,
+body.page-dispositif #comment-ca-marche .programme-access__item,
+body.page-dispositif #comment-ca-marche .page3-card-grid > *,
+
+body.page-dispositif #principe-dispositif .editorial-panel,
+body.page-dispositif #principe-dispositif .programme-list__item,
+body.page-dispositif #principe-dispositif .programme-access__item,
+body.page-dispositif #principe-dispositif .page3-card-grid > * {
+  background: rgba(17,17,17,.58) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(5px);
+  color: var(--p3-text) !important;
+}
+
+
+/* 5. Textes dans ces panneaux */
+
+body.page-dispositif #cadre-dispositif h2,
+body.page-dispositif #cadre-dispositif h3,
+body.page-dispositif #comment-ca-marche h2,
+body.page-dispositif #comment-ca-marche h3,
+body.page-dispositif #principe-dispositif h2,
+body.page-dispositif #principe-dispositif h3 {
+  color: var(--p3-text) !important;
+}
+
+body.page-dispositif #cadre-dispositif p,
+body.page-dispositif #comment-ca-marche p,
+body.page-dispositif #principe-dispositif p {
+  color: rgba(241,238,232,.82) !important;
+}
+
+body.page-dispositif #cadre-dispositif .section-kicker,
+body.page-dispositif #comment-ca-marche .section-kicker,
+body.page-dispositif #principe-dispositif .section-kicker {
+  color: rgba(241,238,232,.72) !important;
+}
+
+body.page-dispositif #cadre-dispositif .section-kicker::before,
+body.page-dispositif #comment-ca-marche .section-kicker::before,
+body.page-dispositif #principe-dispositif .section-kicker::before {
+  background: currentColor !important;
+}
+
+
+/* 6. Liserés des panneaux foncés : plus sobres, pas bleus */
+
+body.page-dispositif #cadre-dispositif .editorial-panel::before,
+body.page-dispositif #cadre-dispositif .programme-list__item::before,
+body.page-dispositif #cadre-dispositif .programme-access__item::before,
+
+body.page-dispositif #comment-ca-marche .editorial-panel::before,
+body.page-dispositif #comment-ca-marche .programme-list__item::before,
+body.page-dispositif #comment-ca-marche .programme-access__item::before,
+
+body.page-dispositif #principe-dispositif .editorial-panel::before,
+body.page-dispositif #principe-dispositif .programme-list__item::before,
+body.page-dispositif #principe-dispositif .programme-access__item::before {
+  background: rgba(241,238,232,.42) !important;
+}
+
+
+/* 7. Responsive : on garde le comportement mobile propre */
+
+@media (max-width: 1023px) {
+  body.page-dispositif #finalite-dispositif .page3-split,
+  body.page-dispositif #ce-que-cela-demande .page3-split {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.page-dispositif #finalite-dispositif .page3-split-visual,
+  body.page-dispositif #ce-que-cela-demande .page3-split-visual {
+    min-height: 360px !important;
+  }
+}
