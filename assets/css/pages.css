@@ -1,26 +1,36 @@
 :root {
   --p3-bg: #111111;
-  --p3-bg-soft: #10151c;
-  --p3-paper: #faf8f5;
-  --p3-paper-soft: #f5ede4;
+  --p3-bg-soft: #101010;
+
+  /* Fonds clairs : ivoire grisé, sans dominante rose */
+  --p3-paper: #f1eee8;
+  --p3-paper-soft: #e8e3da;
+
+  /* Textes */
   --p3-ink: #111111;
-  --p3-ink-soft: #3a3330;
-  --p3-ink-muted: #6b6259;
-  --p3-text: #f0ece6;
-  --p3-text-soft: rgba(240,236,230,.82);
-  --p3-text-muted: rgba(240,236,230,.62);
-  --p3-text-faint: rgba(240,236,230,.44);
+  --p3-ink-soft: #37312d;
+  --p3-ink-muted: #6f665e;
+
+  /* Textes sur fonds sombres */
+  --p3-text: #f1eee8;
+  --p3-text-soft: rgba(241,238,232,.82);
+  --p3-text-muted: rgba(241,238,232,.60);
+  --p3-text-faint: rgba(241,238,232,.42);
+
+  /* Filets */
   --p3-line-dark: rgba(255,255,255,.09);
-  --p3-line-light: rgba(82,62,49,.14);
-  --p3-accent: #5d7aa8;
-  --p3-accent-soft: #b8d0ff;
-  --p3-accent-deep: #355785;
-  --p3-accent-line: rgba(93,122,168,.34);
+  --p3-line-light: rgba(45,38,32,.14);
+
+  /* Accent premium : pierre / graphite, sans bleu ni or */
+  --p3-accent: #5f574f;
+  --p3-accent-soft: #d8d0c4;
+  --p3-accent-deep: #332d28;
+  --p3-accent-line: rgba(95,87,79,.34);
+
   --p3-container: 1120px;
   --p3-shadow-dark: none;
   --p3-shadow-light: none;
 }
-
 /* HEADER / FOOTER */
 
 .site-header {
@@ -2222,5 +2232,36 @@ body.page-a-propos #portage .programme-link-row {
   justify-content: flex-start;
   margin-top: 28px;
 }
+/* =========================================================
+   AJUSTEMENT COLORIMÉTRIQUE PREMIUM — PAGES INTÉRIEURES
+========================================================= */
 
+.page-interior-3 .page3-section-light,
+.page-interior-3 .conv3-light,
+body:not(.home-page) main > .inner-section:not(:first-child),
+body:not(.home-page) main > .home-section:not(:first-child) {
+  background: var(--p3-paper) !important;
+}
+
+.page-interior-3 .editorial-panel,
+.page-interior-3 .programme-list__item,
+.page-interior-3 .programme-access__item,
+.page-interior-3 .conv3-split-copy,
+.page-interior-3 .conv3-cycles article,
+.page-interior-3 .conv3-dispositif-cards article,
+.page-interior-3 .home-split-copy,
+.page-interior-3 .home-dispositif-cards article {
+  background: rgba(250,248,244,.94) !important;
+}
+
+.page-interior-3 .editorial-panel::before,
+.page-interior-3 .programme-list__item::before,
+.page-interior-3 .programme-access__item::before,
+.page-interior-3 .conv3-position-grid article::before,
+.page-interior-3 .conv3-dispositif-cards article::before,
+.page-interior-3 .home-position-grid article::before,
+.page-interior-3 .home-dispositif-cards article::before,
+.page-interior-3 .home-values article::before {
+  background: var(--p3-accent) !important;
+}
 
