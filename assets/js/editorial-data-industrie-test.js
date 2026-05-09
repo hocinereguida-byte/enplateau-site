@@ -1,7 +1,7 @@
-/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V18 fix landing décarbonation énergie soutenabilité */
+/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V19 fix syntax + landing filter */
 
 window.EN_PLATEAU_EDITORIAL_DATA = {
-  "version": "2026-05-09-v18-decarbonation-landing-fix",
+  "version": "2026-05-09-v19-syntax-filter-fix",
   "status": "test",
   "sourceDocument": "programme_editorial_industrie.docx",
   "scope": {
@@ -3369,7 +3369,6 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         }
       }
     },
-    ,
     "decarbonation-energie-soutenabilite": {
       "cycleCode": "IND",
       "readingType": "ENERGIE_RESSOURCES",
@@ -3558,7 +3557,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "footnote": "Les positions décarbonation, énergie & soutenabilité se ferment au fil de la composition éditoriale · Page non indexée"
         }
       }
-    }
+    },
     "finance": {
       "cycleCode": "IND",
       "readingType": "FINANCIERE",
@@ -4318,9 +4317,7 @@ window.EN_PLATEAU_EDITORIAL = (function(data) {
   function getAnglesByLanding(slug) {
     var config = data.landingPages && data.landingPages[slug];
     if (!config) return [];
-    return getAnglesByReading(config.cycleCode, config.readingType).filter(function(angle) {
-      return !angle.landingPages || angle.landingPages.indexOf(slug) !== -1;
-    });
+    return getAnglesByReading(config.cycleCode, config.readingType);
   }
   return {
     data: data,
