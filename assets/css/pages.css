@@ -2264,4 +2264,5 @@ body:not(.home-page) main > .home-section:not(:first-child) {
 .page-interior-3 .home-values article::before {
   background: var(--p3-accent) !important;
 }
+filter: grayscale(100%) contrast(108%) brightness(.82);
 
