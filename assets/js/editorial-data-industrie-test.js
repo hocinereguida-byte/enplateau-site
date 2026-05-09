@@ -1,7 +1,7 @@
-/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V22 complémentarités complètes */
+/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V23 technologie systèmes */
 
 window.EN_PLATEAU_EDITORIAL_DATA = {
-  "version": "2026-05-09-v22-complementarites-completes",
+  "version": "2026-05-09-v23-technologie-systemes",
   "status": "test",
   "sourceDocument": "programme_editorial_industrie.docx",
   "scope": {
@@ -12,9 +12,10 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
       "JURIDIQUE",
       "OPERATIONNELLE",
       "RH_COMPETENCES",
-      "ENERGIE_RESSOURCES"
+      "ENERGIE_RESSOURCES",
+      "TECHNOLOGIQUE"
     ],
-    "note": "Référentiel test pour gabarit unique de landing page. Les landing pages sont pilotées par body[data-landing]. Version enrichie avec la lecture opérationnelle."
+    "note": "Référentiel test pour gabarit unique de landing page. Version enrichie avec les lectures opérationnelle, emploi-compétences, ressources industrielles et technologie-systèmes."
   },
   "notes": {
     "stableCodesRequired": true,
@@ -69,12 +70,12 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
     },
     "TECHNOLOGIQUE": {
       "code": "TECHNOLOGIQUE",
-      "label": "Lecture technologique / systèmes",
-      "slug": "technologie",
-      "shortLabel": "Technologique / systèmes",
-      "landingSlug": "industrie/technologie",
-      "calSource": "lp-industrie-technologie",
-      "positioning": "Éclairer les seuils où l’architecture de l’outil, des systèmes ou des interfaces limite la trajectoire industrielle."
+      "label": "Lecture technologie & systèmes",
+      "slug": "technologie-systemes",
+      "shortLabel": "Technologie & systèmes",
+      "landingSlug": "industrie/technologie-systemes",
+      "calSource": "lp-industrie-technologie-systemes",
+      "positioning": "Éclairer les seuils où systèmes, automatismes, données, interfaces ou architecture technique deviennent des conditions concrètes de décision industrielle."
     },
     "RH_COMPETENCES": {
       "code": "RH_COMPETENCES",
@@ -1674,22 +1675,71 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "typeLecture": "TECHNOLOGIQUE",
           "questionEditoriale": "À partir de quand l'architecture de l'outil limite-t-elle la capacité à franchir un cap de volume, de qualité ou de fiabilité ?",
           "questionPublique": "À partir de quand l'architecture de l'outil limite-t-elle la capacité à franchir un cap de volume, de qualité ou de fiabilité ?",
-          "questionActivation": "Un outil industriel peut accompagner une croissance pendant un certain temps. Mais l'architecture initiale finit parfois par imposer ses limites : organisation des lignes, capacité des machines, interfaces numériques, contraintes de maintenance ou standards de qualité.",
+          "questionActivation": "La croissance peut fonctionner un temps avec l’architecture existante. Mais les limites finissent parfois par apparaître : lignes, machines, interfaces numériques, maintenance, standards de qualité. Vous n’êtes pas attendu sur une architecture interne, mais sur votre lecture du seuil où l’outil et ses systèmes empêchent de franchir un cap.",
           "introMecanisme": "Un outil industriel peut accompagner une croissance pendant un certain temps. Mais l'architecture initiale finit parfois par imposer ses limites : organisation des lignes, capacité des machines, interfaces numériques, contraintes de maintenance ou standards de qualité.",
-          "formatCourt": {
-            "titrePublicCourt": "À partir de quand l'architecture de l'outil limite-t-elle la capacité à franchir un cap de volume, de qualité ou de fiabilité ?",
-            "usage": "Titre court source pour lectures complémentaires."
-          },
+          "pointBascule": "À partir de quand l'outil existant empêche-t-il de passer un cap de volume, de qualité ou de fiabilité ?",
+          "tensionArbitrage": "Optimiser l'outil existant ou accepter qu'il faille le transformer plus profondément.",
           "primaryProfiles": [
-            "Architecture systèmes industriels",
-            "Automatisation industrielle",
-            "DSI industriel",
-            "Transformation digitale industrielle",
-            "Maintenance / outil"
+            "Architecture industrielle",
+            "Automatisation",
+            "Digital manufacturing",
+            "Maintenance / fiabilité",
+            "Conseil systèmes industriels"
+          ],
+          "landingPages": [
+            "technologie-systemes"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand l’architecture de l’outil empêche-t-elle de franchir un cap de volume, qualité ou fiabilité ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Architecture de l’outil et cap de volume, qualité ou fiabilité",
+            "chapeau": "Votre intervention permettrait d’éclairer le moment où l’architecture de l’outil — lignes, machines, interfaces, maintenance ou standards — limite la capacité à franchir un cap de volume, de qualité ou de fiabilité.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : croissance industrielle, architecture de l’outil, interfaces numériques, capacité machine, maintenance et standards de qualité, niveau de complexité technique, dépendances créées ou révélées et moment où l’architecture devient un facteur de décision."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, production, maintenance, qualité, SI/OT, automatisation, équipes terrain, finance et clients."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : optimiser l’existant ou transformer, automatiser ou redessiner, maintenir ou investir, sécuriser la qualité ou accepter une rupture d’architecture."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : pilotage plus fiable, architecture plus robuste, continuité mieux sécurisée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience systèmes, automatisation, data, OT/IT, ERP, MES ou transformation digitale industrielle permet de reconnaître avant que la complexité ne devienne bloquante."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : ligne, atelier, site, architecture d’outil, système de production ou trajectoire de croissance."
+              }
+            ],
+            "momentBascule": "À partir de quand l'outil existant empêche-t-il de passer un cap de volume, de qualité ou de fiabilité ?",
+            "tensionCentrale": "Optimiser l'outil existant ou accepter qu'il faille le transformer plus profondément.",
+            "securisation": "L’échange ne suppose pas de commenter une architecture interne, un incident, un fournisseur, un client, un schéma SI/OT, un plan de cybersécurité ou un dossier confidentiel. Il s’agit d’éclairer un mécanisme technologique ou systémique à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique, SI, cybersécurité ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C1-GS-A01",
+            "IND-C1-GS-A02",
+            "IND-C1-GS-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A04",
@@ -3194,6 +3244,306 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "showInConversationPage": true,
           "showInForm": false,
           "isComplementaryStub": true
+        },
+        {
+          "code": "A04",
+          "crmCode": "IND-C2-GS-A08",
+          "programmeCode": "IND-C2-CST-04",
+          "conversationCode": "C2",
+          "contextCode": "GS",
+          "typeLecture": "TECHNOLOGIQUE",
+          "questionEditoriale": "À partir de quand la montée en charge révèle-t-elle que l'architecture des systèmes, automatismes ou intégrations n'est plus à l'échelle de l'activité ?",
+          "questionPublique": "À partir de quand la montée en charge révèle-t-elle que l'architecture des systèmes, automatismes ou intégrations n'est plus à l'échelle de l'activité ?",
+          "questionActivation": "La croissance industrielle repose de plus en plus sur des systèmes. Tant que l’activité reste stable, une architecture imparfaite peut fonctionner. Vous n’êtes pas attendu sur vos schémas internes, mais sur votre lecture du moment où systèmes, automatismes ou intégrations ne sont plus à l’échelle de l’activité.",
+          "introMecanisme": "La croissance industrielle repose de plus en plus sur des systèmes. Tant que l'activité reste stable, une architecture imparfaite peut fonctionner. Mais lorsque les volumes augmentent, les limites apparaissent.",
+          "pointBascule": "À partir de quand l'architecture technique empêche-t-elle de suivre la croissance ?",
+          "tensionArbitrage": "Accroître l'activité sans que les systèmes deviennent le facteur limitant du pilotage.",
+          "primaryProfiles": [
+            "Architecture SI industriel",
+            "ERP / MES",
+            "Automatismes",
+            "Data industrielle",
+            "Conseil transformation digitale industrielle"
+          ],
+          "landingPages": [
+            "technologie-systemes"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand l’architecture des systèmes n’est-elle plus à l’échelle de l’activité ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Systèmes, automatismes et intégrations à l’échelle",
+            "chapeau": "Votre intervention permettrait d’analyser le seuil où la montée en charge révèle que l’architecture des systèmes, automatismes ou intégrations n’est plus dimensionnée pour l’activité.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : montée en charge, architecture des systèmes, automatismes, ERP/MES, intégrations et capacité de pilotage, niveau de complexité technique, dépendances créées ou révélées et moment où l’architecture devient un facteur de décision."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : SI industriel, production, supply chain, maintenance, qualité, data, automatisation, direction industrielle et clients."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : tenir avec l’architecture existante ou refondre, intégrer ou standardiser, automatiser ou simplifier, préserver le pilotage ou accepter une transformation plus structurante."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : pilotage plus fiable, architecture plus robuste, continuité mieux sécurisée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience systèmes, automatisation, data, OT/IT, ERP, MES ou transformation digitale industrielle permet de reconnaître avant que la complexité ne devienne bloquante."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : système, site, réseau d’usines, architecture applicative, chaîne de valeur ou trajectoire de croissance."
+              }
+            ],
+            "momentBascule": "À partir de quand l'architecture technique empêche-t-elle de suivre la croissance ?",
+            "tensionCentrale": "Accroître l'activité sans que les systèmes deviennent le facteur limitant du pilotage.",
+            "securisation": "L’échange ne suppose pas de commenter une architecture interne, un incident, un fournisseur, un client, un schéma SI/OT, un plan de cybersécurité ou un dossier confidentiel. Il s’agit d’éclairer un mécanisme technologique ou systémique à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique, SI, cybersécurité ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C2-GS-A05",
+            "IND-C2-GS-A03",
+            "IND-C2-GS-A02"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A04",
+          "crmCode": "IND-C2-AC-A08",
+          "programmeCode": "IND-C2-ASC-04",
+          "conversationCode": "C2",
+          "contextCode": "AC",
+          "typeLecture": "TECHNOLOGIQUE",
+          "questionEditoriale": "À partir de quand les interfaces entre systèmes, sites ou métiers deviennent-elles un facteur déterminant de performance et de pilotage ?",
+          "questionPublique": "À partir de quand les interfaces entre systèmes, sites ou métiers deviennent-elles un facteur déterminant de performance et de pilotage ?",
+          "questionActivation": "En contexte contraint, la performance dépend moins de la puissance de chaque outil que de la qualité des interfaces entre eux. Vous n’êtes pas attendu sur vos systèmes internes, mais sur votre lecture du moment où les interfaces entre systèmes, sites ou métiers deviennent le principal facteur de performance et de pilotage.",
+          "introMecanisme": "En contexte contraint, la performance dépend moins de la puissance de chaque outil que de la qualité des interfaces entre eux. Lorsque ces interfaces sont fragmentées, l'entreprise perd du temps, de la visibilité et de la capacité d'arbitrage.",
+          "pointBascule": "Quand les interfaces deviennent-elles le principal facteur de risque opérationnel ?",
+          "tensionArbitrage": "Adapter l'activité sans que la fragmentation des systèmes ralentisse ou fausse le pilotage.",
+          "primaryProfiles": [
+            "ERP / MES",
+            "Architecture d’intégration",
+            "Data / pilotage",
+            "Supply chain systems",
+            "Conseil systèmes industriels"
+          ],
+          "landingPages": [
+            "technologie-systemes"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand les interfaces entre systèmes, sites ou métiers deviennent-elles le principal risque de pilotage ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Interfaces, fragmentation et pilotage sous contrainte",
+            "chapeau": "Votre intervention permettrait d’éclairer le moment où la qualité des interfaces entre systèmes, sites ou métiers devient déterminante pour la performance et la capacité d’arbitrage.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : interfaces fragmentées, systèmes métiers, sites, data, visibilité, performance et pilotage sous contrainte, niveau de complexité technique, dépendances créées ou révélées et moment où l’architecture devient un facteur de décision."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : SI industriel, production, supply chain, achats, qualité, data, direction industrielle, finance et équipes métiers."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : corriger les interfaces ou refondre, standardiser ou adapter, intégrer les données, sécuriser le pilotage ou accepter une transformation plus profonde."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : pilotage plus fiable, architecture plus robuste, continuité mieux sécurisée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience systèmes, automatisation, data, OT/IT, ERP, MES ou transformation digitale industrielle permet de reconnaître avant que la complexité ne devienne bloquante."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : interface, système, site, réseau multi-sites, chaîne de décision ou architecture de pilotage."
+              }
+            ],
+            "momentBascule": "Quand les interfaces deviennent-elles le principal facteur de risque opérationnel ?",
+            "tensionCentrale": "Adapter l'activité sans que la fragmentation des systèmes ralentisse ou fausse le pilotage.",
+            "securisation": "L’échange ne suppose pas de commenter une architecture interne, un incident, un fournisseur, un client, un schéma SI/OT, un plan de cybersécurité ou un dossier confidentiel. Il s’agit d’éclairer un mécanisme technologique ou systémique à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique, SI, cybersécurité ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C2-AC-A05",
+            "IND-C2-AC-A06",
+            "IND-C2-AC-J02"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A04",
+          "crmCode": "IND-C2-RC-A08",
+          "programmeCode": "IND-C2-RSS-04",
+          "conversationCode": "C2",
+          "contextCode": "RC",
+          "typeLecture": "TECHNOLOGIQUE",
+          "questionEditoriale": "À partir de quand l'architecture des systèmes oblige-t-elle à arbitrer entre adaptation progressive et refonte plus structurante ?",
+          "questionPublique": "À partir de quand l'architecture des systèmes oblige-t-elle à arbitrer entre adaptation progressive et refonte plus structurante ?",
+          "questionActivation": "Quand l’architecture des systèmes devient trop fragmentée, les adaptations par petites touches peuvent finir par complexifier encore davantage le système. Vous n’êtes pas attendu sur un schéma interne, mais sur votre lecture du moment où il faut arbitrer entre adaptation progressive et refonte structurante.",
+          "introMecanisme": "Quand l'architecture des systèmes devient trop fragmentée, les adaptations par petites touches peuvent finir par complexifier encore davantage le système. En période de crise, la question devient plus radicale.",
+          "pointBascule": "Quand l'architecture empêche-t-elle toute adaptation crédible ?",
+          "tensionArbitrage": "Continuer à corriger l'existant ou accepter une refonte plus coûteuse mais plus structurante.",
+          "primaryProfiles": [
+            "Architecture SI/OT",
+            "Refonte systèmes industriels",
+            "Cybersécurité industrielle",
+            "Data / intégration",
+            "Conseil transformation"
+          ],
+          "landingPages": [
+            "technologie-systemes"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand l’architecture des systèmes impose-t-elle une refonte plutôt qu’une adaptation progressive ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Architecture des systèmes et refonte structurante",
+            "chapeau": "Votre intervention permettrait d’analyser le moment où l’architecture des systèmes ne peut plus être corrigée par petites touches et impose une refonte plus structurante.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : architecture fragmentée, adaptations successives, dette système, crise de pilotage, refonte SI/OT ou intégration structurante, niveau de complexité technique, dépendances créées ou révélées et moment où l’architecture devient un facteur de décision."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, SI, OT, cybersécurité, data, production, supply chain, finance, direction générale et partenaires techniques."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : continuer à corriger ou refondre, sécuriser ou simplifier, intégrer ou découpler, maintenir la continuité ou accepter une transformation plus coûteuse."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : pilotage plus fiable, architecture plus robuste, continuité mieux sécurisée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience systèmes, automatisation, data, OT/IT, ERP, MES ou transformation digitale industrielle permet de reconnaître avant que la complexité ne devienne bloquante."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : architecture SI/OT, réseau de sites, système de production, chaîne de valeur ou modèle industriel."
+              }
+            ],
+            "momentBascule": "Quand l'architecture empêche-t-elle toute adaptation crédible ?",
+            "tensionCentrale": "Continuer à corriger l'existant ou accepter une refonte plus coûteuse mais plus structurante.",
+            "securisation": "L’échange ne suppose pas de commenter une architecture interne, un incident, un fournisseur, un client, un schéma SI/OT, un plan de cybersécurité ou un dossier confidentiel. Il s’agit d’éclairer un mécanisme technologique ou systémique à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique, SI, cybersécurité ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C2-RC-A05",
+            "IND-C2-RC-A02",
+            "IND-C2-RC-A03"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A01",
+          "crmCode": "IND-C3-GS-A09",
+          "programmeCode": "IND-C3-CST-01",
+          "conversationCode": "C3",
+          "contextCode": "GS",
+          "typeLecture": "TECHNOLOGIQUE",
+          "questionEditoriale": "Qu'est-ce qui permet réellement de franchir un cap de volume ou de qualité : automatiser, digitaliser davantage ou redessiner le process ?",
+          "questionPublique": "Qu'est-ce qui permet réellement de franchir un cap de volume ou de qualité : automatiser, digitaliser davantage ou redessiner le process ?",
+          "questionActivation": "Face à la croissance, l’investissement technologique apparaît souvent comme une réponse naturelle. Mais la technologie ne règle pas toujours les limites profondes d’un outil industriel. Vous n’êtes pas attendu sur vos choix d’équipement, mais sur votre lecture du seuil où il faut arbitrer entre automatiser, digitaliser davantage ou redessiner le process.",
+          "introMecanisme": "Face à la croissance, l'investissement technologique apparaît souvent comme une réponse naturelle. Mais la technologie ne règle pas toujours les limites profondes d'un outil industriel. Dans certains cas, le vrai sujet réside dans le process lui-même.",
+          "pointBascule": "À partir de quand ajouter de la technologie ne permet-il plus de franchir un cap ?",
+          "tensionArbitrage": "Automatiser pour accélérer ou redessiner le process pour transformer réellement la capacité.",
+          "primaryProfiles": [
+            "Automatisation industrielle",
+            "Digital manufacturing",
+            "Process engineering",
+            "Direction industrielle",
+            "Conseil technologie industrielle"
+          ],
+          "landingPages": [
+            "technologie-systemes"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand faut-il automatiser, digitaliser davantage ou redessiner le process ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Automatiser, digitaliser ou redessiner le process",
+            "chapeau": "Votre intervention permettrait d’éclairer ce qui permet réellement de franchir un cap de volume ou de qualité : automatiser, digitaliser davantage ou redessiner le process.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : croissance, investissement technologique, automatisation, digitalisation, process, volume, qualité et capacité réelle de transformation, niveau de complexité technique, dépendances créées ou révélées et moment où l’architecture devient un facteur de décision."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, automatisation, process, production, qualité, maintenance, SI/OT, data et finance."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : ajouter de la technologie ou redessiner le process, automatiser ou simplifier, digitaliser ou transformer, investir dans l’outil ou repenser le flux."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : pilotage plus fiable, architecture plus robuste, continuité mieux sécurisée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience systèmes, automatisation, data, OT/IT, ERP, MES ou transformation digitale industrielle permet de reconnaître avant que la complexité ne devienne bloquante."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : process, ligne, atelier, site, système de production ou trajectoire de capacité."
+              }
+            ],
+            "momentBascule": "À partir de quand ajouter de la technologie ne permet-il plus de franchir un cap ?",
+            "tensionCentrale": "Automatiser pour accélérer ou redessiner le process pour transformer réellement la capacité.",
+            "securisation": "L’échange ne suppose pas de commenter une architecture interne, un incident, un fournisseur, un client, un schéma SI/OT, un plan de cybersécurité ou un dossier confidentiel. Il s’agit d’éclairer un mécanisme technologique ou systémique à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique, SI, cybersécurité ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C3-GS-A02",
+            "IND-C3-GS-A03",
+            "IND-C3-GS-A12"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         }
       ]
     }
@@ -4301,6 +4651,200 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "footnote": "Les positions emploi & compétences se ferment au fil de la composition éditoriale · Page non indexée"
         }
       }
+    },
+    "technologie-systemes": {
+      "cycleCode": "IND",
+      "readingType": "TECHNOLOGIQUE",
+      "angleCodes": [
+        "IND-C1-GS-A03",
+        "IND-C2-GS-A08",
+        "IND-C2-AC-A08",
+        "IND-C2-RC-A08",
+        "IND-C3-GS-A09"
+      ],
+      "title": "Lecture technologie & systèmes — Cycle Industrie & transformation des territoires | En Plateau",
+      "metaDescription": "Une place précise pour éclairer les arbitrages systèmes, automatisation, data, ERP, MES, OT/IT, interfaces, cybersécurité et architecture technique dans les trajectoires industrielles.",
+      "navLabel": "Cycle Industrie · Lecture technologie & systèmes",
+      "heroTitleHtml": "Votre lecture<br><em>éclaire</em><br>les systèmes qui font tenir<br>l’industrie réelle.",
+      "heroLead": "Certaines trajectoires industrielles ne se jouent pas seulement dans l’outil physique, l’investissement ou l’organisation. Elles se jouent dans l’architecture des systèmes, les interfaces, l’automatisation, la donnée, le pilotage, l’OT/IT et la capacité à transformer sans ajouter de complexité.",
+      "heroProfiles": [
+        {
+          "label": "Systèmes industriels · OT/IT · Data",
+          "text": "Vous éclairez les arbitrages liés aux interfaces, ERP, MES, automatismes, data industrielle, cybersécurité, pilotage ou architecture de systèmes."
+        },
+        {
+          "label": "Conseil · Ingénierie · Transformation digitale industrielle",
+          "text": "Vous accompagnez des industriels sur la transformation des systèmes, l’automatisation, la performance digitale, l’architecture technique ou la refonte de process."
+        }
+      ],
+      "valueSection": {
+        "title": "Faire reconnaître les systèmes comme conditions réelles de pilotage industriel",
+        "intro": "Une lecture technologie & systèmes ne consiste pas à présenter une solution digitale. Elle permet de montrer comment les systèmes, les interfaces, l’automatisation, la donnée et l’architecture technique deviennent des conditions concrètes de capacité, qualité, fiabilité, continuité et transformation industrielle.",
+        "cards": [
+          {
+            "label": "Cabinet conseil · Ingénierie · Transformation digitale",
+            "title": "Démontrer une expertise réellement connectée à l’industrie",
+            "text": "Cette prise de parole permet de montrer une lecture qui dépasse la transformation digitale générique pour éclairer les arbitrages concrets des systèmes industriels : interfaces, flux, architecture, automatismes, données, pilotage et continuité. Elle valorise une expertise capable de relier technologie et décision industrielle, tout en renforçant la crédibilité du cabinet auprès de dirigeants qui cherchent des lectures situées, non des discours de solution."
+          },
+          {
+            "label": "Groupe industriel · Systèmes · Transformation",
+            "title": "Montrer que la complexité technologique est pilotée",
+            "text": "Cette lecture permet à une organisation industrielle de montrer qu’elle sait traiter les systèmes comme des conditions de pilotage, de fiabilité et de transformation, et non comme de simples fonctions support. Elle valorise les équipes systèmes, digital manufacturing, data, OT/IT ou architecture industrielle, tout en rassurant clients, donneurs d’ordre, investisseurs et partenaires sur la capacité de l’entreprise à maîtriser ses dépendances techniques."
+          },
+          {
+            "label": "ETI industrielle · Industrial tech · Automatisation",
+            "title": "Rendre visible la technologie quand elle transforme vraiment l’outil",
+            "text": "Cette prise de parole permet de montrer comment automatisation, contrôle-commande, capteurs, MES, interfaces ou data peuvent soutenir la capacité, la qualité et la fiabilité — mais aussi créer de nouvelles limites lorsqu’ils sont mal articulés au process. Elle valorise une expertise située, proche de l’outil, des lignes et des flux, tout en montrant que l’entreprise sait distinguer l’ajout technologique utile de la complexité supplémentaire."
+          },
+          {
+            "label": "ERP · MES · Data · OT/IT · Cybersécurité",
+            "title": "Faire reconnaître les dépendances invisibles du pilotage industriel",
+            "text": "Cette lecture permet d’éclairer les points de bascule où les systèmes deviennent un facteur de continuité, de risque ou de transformation : données fiables, interfaces métiers, architecture OT/IT, cybersécurité, intégration inter-sites, pilotage temps réel. Elle valorise les fonctions techniques qui rendent l’activité lisible et pilotable, tout en montrant que l’entreprise sait sécuriser les dépendances invisibles qui conditionnent sa trajectoire."
+          }
+        ]
+      },
+      "copy": {
+        "positionsCountNote": "5 positions avec lecture technologie & systèmes sont ouvertes dans le cycle Industrie.",
+        "rarityBlock": {
+          "kicker": "Rareté éditoriale",
+          "title": "5 positions avec lecture technologie & systèmes sont ouvertes dans le cycle Industrie.",
+          "text": "Chaque position correspond à un angle contextualisé. Une position technologie & systèmes ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
+        },
+        "heroNoteHtml": "Aucune architecture interne à exposer &nbsp;·&nbsp; Aucun incident, schéma SI/OT ou dossier sensible à commenter &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Préparation possible avec les équipes communication, juridique, SI, cybersécurité ou corporate de votre organisation",
+        "heroCardTitle": "Votre lecture technologie & systèmes a-t-elle sa place dans l’une de ces conversations ?",
+        "heroCardText": "En 15 minutes, nous vérifions si votre lecture correspond à une position encore disponible — sans exposer d’architecture interne, de plan SI/OT, de vulnérabilité, d’incident ou de dossier confidentiel.",
+        "audience": {
+          "title": "Cette lecture technologie & systèmes vous est-elle destinée ?",
+          "yesTitle": "Vous portez probablement une lecture pertinente si…",
+          "noTitle": "Moins adapté si…",
+          "yesItems": [
+            "Vous savez relier systèmes, automatismes, interfaces, data, ERP, MES, OT/IT ou cybersécurité à des arbitrages industriels réels.",
+            "Vous êtes direction systèmes industriels, digital manufacturing, architecture industrielle, automatisation, data industrielle, conseil transformation, ingénierie ou cybersécurité industrielle.",
+            "Votre lecture porte sur des seuils : architecture qui limite la croissance, interfaces qui fragmentent le pilotage, dette système, refonte nécessaire, automatisation insuffisante ou complexité devenue risquée.",
+            "Vous pouvez éclairer un mécanisme technologique sans exposer d’architecture interne, de schéma SI/OT, de vulnérabilité, d’incident ou de chiffre confidentiel."
+          ],
+          "noItems": [
+            "Votre contribution vise surtout à présenter une solution, une plateforme, une méthode ou une offre.",
+            "Votre lecture reste trop générale pour être rattachée à un arbitrage industriel précis.",
+            "Vous souhaitez commenter une architecture interne, une faille, un incident ou un plan confidentiel.",
+            "Votre approche ne relie pas les systèmes aux décisions industrielles qui en découlent."
+          ],
+          "panel": "La lecture technologie & systèmes ne consiste pas à raconter une transformation digitale. Elle consiste à éclairer les mécanismes techniques, systémiques et organisationnels qui rendent une trajectoire industrielle tenable, fragile ou à réarbitrer."
+        },
+        "conversations": {
+          "title": "Les angles où les systèmes deviennent décisifs",
+          "intro": "La page met d’abord en avant les angles technologie & systèmes ouverts. Les lectures complémentaires ne s’affichent que lorsqu’elles appartiennent à la même conversation et au même contexte.",
+          "panel": "Ces positions ne demandent pas de commenter une architecture interne ; elles proposent d’éclairer les arbitrages technologiques et systémiques qui se répètent dans les trajectoires industrielles."
+        },
+        "preparation": {
+          "titleHtml": "Beaucoup arrivent avec une expertise systèmes. <em style=\"color:rgba(240,236,230,0.55);\">Ils repartent avec une lecture industrielle défendable.</em>",
+          "intro": "La préparation éditoriale transforme une expertise systèmes, data, automatisation, architecture, OT/IT ou transformation digitale industrielle en lecture située : claire, non intrusive et utile pour d’autres décideurs industriels."
+        },
+        "dimensions": [
+          {
+            "num": "01",
+            "title": "Transformation en cours / contexte",
+            "text": "Qualifier ce qui change concrètement : montée en volume, dette système, fragmentation des interfaces, limites d’automatisation, besoin de refonte, cybersécurité ou pilotage insuffisant."
+          },
+          {
+            "num": "02",
+            "title": "Acteurs concernés",
+            "text": "Identifier les acteurs impactés : direction industrielle, SI, OT, production, maintenance, qualité, supply chain, data, cybersécurité, finance, clients ou partenaires."
+          },
+          {
+            "num": "03",
+            "title": "Arbitrages systèmes",
+            "text": "Rendre visibles les choix réels : optimiser, intégrer, automatiser, refondre, standardiser, sécuriser, connecter les sites, réorganiser les interfaces ou transformer le process."
+          },
+          {
+            "num": "04",
+            "title": "Défis & opportunités",
+            "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : pilotage plus fiable, architecture plus robuste, données mieux exploitables ou transformation mieux sécurisée."
+          },
+          {
+            "num": "05",
+            "title": "Vision attendue",
+            "text": "Formuler une lecture située de ce que votre expérience systèmes permet de reconnaître avant que la complexité technique ne devienne un verrou industriel."
+          },
+          {
+            "num": "06",
+            "title": "Échelle d’analyse",
+            "text": "Situer la lecture à la bonne échelle : ligne, atelier, site, SI industriel, réseau d’usines, chaîne de valeur, architecture OT/IT ou trajectoire d’entreprise."
+          }
+        ],
+        "dimensionsPanel": "Ce travail ne vous demande pas d’exposer votre organisation. Il donne une forme claire à ce que votre position vous a appris à reconnaître dans les contraintes de systèmes, interfaces, data, automatisation et architecture industrielle.",
+        "process": [
+          {
+            "num": "01",
+            "title": "L'échange de qualification",
+            "text": "15 minutes pour vérifier si votre lecture correspond à un angle disponible. Aucun schéma interne, incident, plan SI/OT, vulnérabilité ou dossier sensible à exposer.",
+            "deadline": "À planifier en amont du comité éditorial"
+          },
+          {
+            "num": "02",
+            "title": "Le dossier de positionnement",
+            "text": "Si l’angle est retenu, un dossier complet vous est adressé : angle précis, logique de mise en regard, modalités d’intervention, format émission et article associé."
+          },
+          {
+            "num": "03",
+            "title": "Le comité éditorial",
+            "text": "Le 15 juin, le comité éditorial examine les dossiers de positionnement et valide la composition finale. Vous êtes informé avant tout engagement.",
+            "deadline": "Comité : 15 juin 2026"
+          },
+          {
+            "num": "04",
+            "title": "La préparation & la production",
+            "text": "En Plateau travaille avec vous, et avec vos équipes communication, juridique, SI, cybersécurité ou corporate si nécessaire, pour transformer votre lecture en position claire, non intrusive et publiquement défendable."
+          }
+        ],
+        "guarantees": [
+          {
+            "accent": true,
+            "title": "Aucune architecture interne à exposer",
+            "text": "L’échange porte sur les mécanismes technologiques et systémiques, pas sur un schéma SI/OT, un fournisseur, une faille, un incident ou un plan confidentiel."
+          },
+          {
+            "accent": true,
+            "title": "Aucun engagement avant le dossier de positionnement",
+            "text": "Vous ne vous engagez pas lors de l’échange éditorial. La position proposée est qualifiée avant toute validation."
+          },
+          {
+            "title": "Pas de démonstration de solution attendue",
+            "text": "La contribution vise une lecture située des contraintes technologiques de l’industrie, non une présentation d’outil, de plateforme, de méthode ou d’offre."
+          },
+          {
+            "title": "Une parole préparée avec vos équipes si nécessaire",
+            "text": "La préparation peut intégrer vos contraintes SI, cybersécurité, communication, juridiques, corporate ou de confidentialité."
+          }
+        ],
+        "faq": [
+          {
+            "question": "Faut-il parler d’un système, d’une architecture ou d’un incident identifiable ?",
+            "answer": "Non. L’enjeu n’est pas d’exposer une architecture interne ou un incident, mais d’éclairer un mécanisme technologique ou systémique à partir de votre expérience."
+          },
+          {
+            "question": "Cette lecture est-elle réservée aux DSI ?",
+            "answer": "Non. Elle peut être portée par des directions systèmes industriels, digital manufacturing, automatisation, data industrielle, architecture OT/IT, ingénierie, cybersécurité ou conseil transformation."
+          },
+          {
+            "question": "Peut-on préparer l’intervention avec les équipes communication, SI ou juridiques ?",
+            "answer": "Oui. La prise de parole peut être préparée avec les équipes communication, SI, cybersécurité, juridique ou corporate afin de garantir un niveau d’exposition maîtrisé."
+          },
+          {
+            "question": "Faut-il arriver avec une position déjà formulée ?",
+            "answer": "Non. L’échange éditorial sert précisément à vérifier l’angle, puis à transformer votre lecture en position claire, défendable et non intrusive."
+          }
+        ],
+        "cta": {
+          "title": "Votre lecture des systèmes peut éclairer ce qui rend une trajectoire industrielle pilotable — ou non.",
+          "text": "Un échange de 15 minutes — sans exposer d’architecture interne, sans incident identifiable, sans engagement — pour vérifier si votre angle a une place dans l’une des 5 positions technologie & systèmes ouvertes.",
+          "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
+          "footnote": "Les positions technologie & systèmes se ferment au fil de la composition éditoriale · Page non indexée"
+        }
+      }
+    },
+    "technologie": {
+      "aliasOf": "technologie-systemes"
     }
   }
 };
@@ -4327,6 +4871,16 @@ window.EN_PLATEAU_EDITORIAL = (function(data) {
   function getAnglesByLanding(slug) {
     var config = data.landingPages && data.landingPages[slug];
     if (!config) return [];
+    if (config.aliasOf && data.landingPages[config.aliasOf]) {
+      config = data.landingPages[config.aliasOf];
+    }
+    if (Array.isArray(config.angleCodes) && config.angleCodes.length) {
+      var allowed = {};
+      config.angleCodes.forEach(function(code) { allowed[code] = true; });
+      return getAngles(config.cycleCode).filter(function(angle) {
+        return allowed[angle.crmCode] === true;
+      });
+    }
     return getAnglesByReading(config.cycleCode, config.readingType);
   }
   return {
