@@ -1,7 +1,7 @@
-/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V24 territorial */
+/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V26 consolidation 17 angles */
 
 window.EN_PLATEAU_EDITORIAL_DATA = {
-  "version": "2026-05-09-v24-territorial",
+  "version": "2026-05-09-v26-consolidation-17-angles",
   "status": "test",
   "sourceDocument": "programme_editorial_industrie.docx",
   "scope": {
@@ -184,7 +184,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Cabinet compétitivité"
           ],
           "landingPages": [
-            "emploi-competences"
+            "strategie"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -259,7 +259,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Conseil transformation"
           ],
           "landingPages": [
-            "emploi-competences"
+            "strategie"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -334,7 +334,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Cabinet intelligence économique"
           ],
           "landingPages": [
-            "emploi-competences"
+            "strategie"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -409,7 +409,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Direction générale"
           ],
           "landingPages": [
-            "emploi-competences"
+            "strategie"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -484,7 +484,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Redéploiement"
           ],
           "landingPages": [
-            "emploi-competences"
+            "strategie"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -559,7 +559,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Conseil stratégie industrielle"
           ],
           "landingPages": [
-            "emploi-competences"
+            "strategie"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -634,7 +634,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Conseil compétitivité industrielle"
           ],
           "landingPages": [
-            "emploi-competences"
+            "strategie"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -709,7 +709,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Business model industriel"
           ],
           "landingPages": [
-            "emploi-competences"
+            "strategie"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -784,7 +784,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Business model industriel"
           ],
           "landingPages": [
-            "emploi-competences"
+            "strategie"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -859,7 +859,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Repositionnement"
           ],
           "landingPages": [
-            "emploi-competences"
+            "strategie"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -934,7 +934,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Direction générale"
           ],
           "landingPages": [
-            "emploi-competences"
+            "finance"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -995,66 +995,66 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "conversationCode": "C1",
           "contextCode": "RC",
           "typeLecture": "FINANCIERE",
-          "questionEditoriale": "À partir de quand la dette technologique impose-t-elle un saut d'investissement, un changement de périmètre ou une transformation plus profonde de l'outil ?",
-          "questionPublique": "Quand une dette technologique cesse-t-elle d'être un retard d'investissement pour devenir une décision de transformation ?",
-          "questionActivation": "Vous n'êtes pas attendu sur le montant d'un CAPEX, un plan d'investissement ou un dossier interne. Vous êtes attendu sur votre capacité à lire le moment où une dette technologique ne peut plus être absorbée par des corrections progressives et oblige à arbitrer : investir, changer de périmètre, transformer ou renoncer.",
-          "introMecanisme": "La dette technologique s'accumule souvent silencieusement : systèmes hétérogènes, automatismes dépassés, équipements difficiles à maintenir. En crise, elle peut empêcher toute adaptation rapide.",
-          "pointBascule": "À partir de quand la dette technologique bloque-t-elle toute adaptation crédible ?",
-          "tensionArbitrage": "Reporter l'investissement ou accepter une rupture technologique devenue nécessaire.",
+          "questionEditoriale": "À partir de quand l’organisation opérationnelle révèle-t-elle un écart durable entre le modèle existant et les conditions nécessaires à sa soutenabilité ?",
+          "questionPublique": "À partir de quand l’organisation opérationnelle révèle-t-elle un écart durable entre le modèle existant et les conditions nécessaires à sa soutenabilité ?",
+          "questionActivation": "À partir de quand l’organisation opérationnelle révèle-t-elle un écart durable entre le modèle existant et les conditions nécessaires à sa soutenabilité ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer le moment où l’organisation opérationnelle existante ne suffit plus à rendre la trajectoire industrielle soutenable.",
+          "pointBascule": "À partir de quand l’écart opérationnel n’est-il plus absorbable par des ajustements ordinaires ?",
+          "tensionArbitrage": "Continuer à tenir avec le modèle existant ou accepter une transformation opérationnelle plus profonde.",
           "primaryProfiles": [
-            "Corporate finance",
-            "CAPEX industriel",
-            "Restructuring",
-            "Turnaround",
-            "Stratégie d'outil industriel"
+            "Direction industrielle",
+            "Direction opérations",
+            "Excellence opérationnelle",
+            "Performance industrielle",
+            "Conseil transformation opérationnelle"
           ],
           "landingPages": [
-            "emploi-competences"
+            "finance"
           ],
           "showInConversationPage": true,
           "showInForm": true,
           "formatCourt": {
-            "titrePublicCourt": "Quand une dette technologique devient-elle une décision de transformation ?",
+            "titrePublicCourt": "Quand l’organisation opérationnelle révèle-t-elle un écart durable avec le modèle nécessaire ?",
             "usage": "Titre court affiché sur les landing pages."
           },
           "formatLongIntervenant": {
-            "titre": "Fiche intervenant — Dette technologique et saut d’investissement",
-            "chapeau": "Votre intervention viserait à analyser comment une dette technologique accumulée peut finir par imposer un saut d’investissement, un changement de périmètre ou une transformation profonde de l’outil.",
+            "titre": "Fiche intervenant — Organisation opérationnelle et soutenabilité",
+            "chapeau": "Votre intervention permettrait d’éclairer le moment où l’organisation opérationnelle existante ne suffit plus à rendre la trajectoire industrielle soutenable.",
             "dimensions": [
               {
                 "key": "transformation",
                 "title": "Transformation en cours / contexte",
-                "text": "Qualifier ce qui change réellement dans la situation : contraintes, trajectoire, marges de manœuvre, intensité de la pression et moment où la décision change de nature."
+                "text": "Qualifier ce qui change concrètement : crise de soutenabilité, organisation opérationnelle, modèle existant, conditions de production et capacité à tenir durablement, intensité de la contrainte et moment où la situation change de nature."
               },
               {
                 "key": "acteurs",
                 "title": "Acteurs impactés",
-                "text": "Identifier les acteurs directement concernés par la bascule : direction générale, fonctions métiers, équipes terrain, clients, partenaires, financeurs, filière ou territoire."
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, opérations, production, maintenance, qualité, finance, RH et direction générale."
               },
               {
                 "key": "arbitrages",
                 "title": "Arbitrages & décisions",
-                "text": "Rendre visibles les choix à effectuer : tenir, différer, investir, transformer, sécuriser, repositionner, redéployer ou renoncer."
+                "text": "Rendre visibles les choix à effectuer : maintenir ou transformer, ajuster les flux, revoir l’organisation, repositionner les capacités ou accepter une rupture de modèle opérationnel."
               },
               {
                 "key": "defis",
                 "title": "Défis & opportunités",
-                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir comme trajectoire plus robuste, plus lisible ou mieux assumée."
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
               },
               {
                 "key": "vision",
                 "title": "Vision attendue",
-                "text": "Formuler une lecture située : ce que votre expérience ou votre pratique permet de reconnaître avant que la bascule ne devienne évidente."
+                "text": "Formuler une lecture située de ce que votre expérience opérationnelle permet de reconnaître avant que la tension ne devienne un blocage industriel."
               },
               {
                 "key": "echelle",
                 "title": "Échelle pertinente",
-                "text": "Situer l’analyse à la bonne échelle : site, entreprise, portefeuille, filière, chaîne de valeur, territoire ou cadre de décision."
+                "text": "Situer la lecture à la bonne échelle : site, organisation, atelier, chaîne opérationnelle, entreprise ou trajectoire industrielle."
               }
             ],
-            "momentBascule": "À partir de quand la dette technologique bloque-t-elle toute adaptation crédible ?",
-            "tensionCentrale": "Reporter l'investissement ou accepter une rupture technologique devenue nécessaire.",
-            "securisation": "L’échange ne suppose pas de livrer des chiffres, marges, budgets, contrats, coûts internes ou dossiers confidentiels. Il s’agit d’éclairer les mécanismes économiques qui rendent certains arbitrages industriels nécessaires."
+            "momentBascule": "À partir de quand l’écart opérationnel n’est-il plus absorbable par des ajustements ordinaires ?",
+            "tensionCentrale": "Continuer à tenir avec le modèle existant ou accepter une transformation opérationnelle plus profonde.",
+            "securisation": "L’échange ne suppose pas de commenter un chiffre interne, un client, un fournisseur, un site, un incident ou une situation confidentielle. Il s’agit d’éclairer un mécanisme opérationnel à partir de votre expérience, avec une préparation possible avec les équipes communication, juridique ou corporate."
           },
           "complementaryCodes": [
             "IND-C1-RC-A01",
@@ -1084,7 +1084,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Compétitivité industrielle"
           ],
           "landingPages": [
-            "emploi-competences"
+            "finance"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -1159,7 +1159,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Restructuring opérationnel"
           ],
           "landingPages": [
-            "emploi-competences"
+            "finance"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -1220,71 +1220,71 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "conversationCode": "C4",
           "contextCode": "AC",
           "typeLecture": "FINANCIERE",
-          "questionEditoriale": "À partir de quand les coûts d'énergie, d'eau ou de conformité environnementale limitent-ils la capacité à ajuster l'activité sans dégrader la compétitivité ?",
-          "questionPublique": "Quand les coûts de ressources cessent-ils d'être des surcoûts absorbables pour devenir des paramètres de transformation ?",
-          "questionActivation": "Vous n'êtes pas attendu sur vos coûts d'énergie, d'eau ou de conformité. Vous êtes attendu sur votre capacité à lire le moment où ces coûts cessent d'être de simples variables d'ajustement et deviennent des paramètres structurants de compétitivité, d'investissement ou de transformation industrielle.",
-          "introMecanisme": "Les coûts de l'énergie, de l'eau et de la conformité environnementale pèsent de plus en plus directement sur les équilibres industriels. En contexte contraint, ils réduisent les marges d'action.",
-          "pointBascule": "À partir de quand les coûts rendent-ils l'activité difficilement ajustable ?",
+          "questionEditoriale": "À partir de quand les coûts d’énergie, d’eau ou de conformité environnementale limitent-ils la capacité à ajuster l’activité sans dégrader la compétitivité ?",
+          "questionPublique": "À partir de quand les coûts d’énergie, d’eau ou de conformité environnementale limitent-ils la capacité à ajuster l’activité sans dégrader la compétitivité ?",
+          "questionActivation": "À partir de quand les coûts d’énergie, d’eau ou de conformité environnementale limitent-ils la capacité à ajuster l’activité sans dégrader la compétitivité ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand les coûts rendent-ils l’activité difficilement ajustable ?",
           "tensionArbitrage": "Absorber les surcoûts pour préserver la compétitivité à court terme ou investir dans la transformation.",
           "primaryProfiles": [
-            "DAF / CFO industriel",
-            "Ressources industrielles",
-            "Corporate finance",
-            "Compétitivité industrielle",
-            "Décarbonation / utilités"
+            "Direction industrielle",
+            "Énergie industrielle",
+            "Performance opérationnelle",
+            "Finance / CAPEX",
+            "Conseil énergie / compétitivité"
           ],
           "landingPages": [
-            "emploi-competences"
+            "finance"
           ],
           "showInConversationPage": true,
           "showInForm": true,
           "formatCourt": {
-            "titrePublicCourt": "Quand les coûts de ressources deviennent-ils des paramètres de transformation industrielle ?",
+            "titrePublicCourt": "Quand les coûts de ressources limitent-ils l’adaptation de l’activité ?",
             "usage": "Titre court affiché sur les landing pages."
           },
           "formatLongIntervenant": {
-            "titre": "Fiche intervenant — Coûts énergie, eau, conformité et compétitivité",
-            "chapeau": "Votre intervention permettrait d’éclairer comment les coûts d’énergie, d’eau ou de conformité environnementale cessent d’être de simples surcoûts absorbables et deviennent des paramètres structurants de compétitivité, d’investissement ou de transformation industrielle.",
+            "titre": "Fiche intervenant — Quand les coûts de ressources limitent-ils l’adaptation de l’activité ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
             "dimensions": [
               {
                 "key": "transformation",
                 "title": "Transformation en cours / contexte",
-                "text": "Qualifier ce qui change réellement dans la situation : contraintes, trajectoire, marges de manœuvre, intensité de la pression et moment où la décision change de nature."
+                "text": "Qualifier ce qui change concrètement : coûts énergie, eau, conformité environnementale, marges d’action réduites et compétitivité sous contrainte, intensité de la contrainte et moment où la situation change de nature."
               },
               {
                 "key": "acteurs",
                 "title": "Acteurs impactés",
-                "text": "Identifier les acteurs directement concernés par la bascule : direction générale, fonctions métiers, équipes terrain, clients, partenaires, financeurs, filière ou territoire."
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, énergie, environnement, finance, production, clients, fournisseurs, investisseurs et acteurs institutionnels."
               },
               {
                 "key": "arbitrages",
                 "title": "Arbitrages & décisions",
-                "text": "Rendre visibles les choix à effectuer : tenir, différer, investir, transformer, sécuriser, repositionner, redéployer ou renoncer."
+                "text": "Rendre visibles les choix à effectuer : absorber ou répercuter, investir ou différer, réduire l’activité, transformer les utilités, revoir le modèle économique ou sécuriser la compétitivité."
               },
               {
                 "key": "defis",
                 "title": "Défis & opportunités",
-                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir comme trajectoire plus robuste, plus lisible ou mieux assumée."
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
               },
               {
                 "key": "vision",
                 "title": "Vision attendue",
-                "text": "Formuler une lecture située : ce que votre expérience ou votre pratique permet de reconnaître avant que la bascule ne devienne évidente."
+                "text": "Formuler une lecture située de ce que votre expérience opérationnelle permet de reconnaître avant que la tension ne devienne un blocage industriel."
               },
               {
                 "key": "echelle",
                 "title": "Échelle pertinente",
-                "text": "Situer l’analyse à la bonne échelle : site, entreprise, portefeuille, filière, chaîne de valeur, territoire ou cadre de décision."
+                "text": "Situer la lecture à la bonne échelle : site, structure de coûts, outil, entreprise, filière ou marché."
               }
             ],
-            "momentBascule": "À partir de quand les coûts rendent-ils l'activité difficilement ajustable ?",
+            "momentBascule": "À partir de quand les coûts rendent-ils l’activité difficilement ajustable ?",
             "tensionCentrale": "Absorber les surcoûts pour préserver la compétitivité à court terme ou investir dans la transformation.",
-            "securisation": "L’échange ne suppose pas de livrer des chiffres, marges, budgets, contrats, coûts internes ou dossiers confidentiels. Il s’agit d’éclairer les mécanismes économiques qui rendent certains arbitrages industriels nécessaires."
+            "securisation": "L’échange ne suppose pas de commenter un chiffre interne, un client, un fournisseur, un site, un incident ou une situation confidentielle. Il s’agit d’éclairer un mécanisme opérationnel à partir de votre expérience, avec une préparation possible avec les équipes communication, juridique ou corporate."
           },
           "complementaryCodes": [
+            "IND-C4-AC-A13",
             "IND-C4-AC-A15",
-            "IND-C4-AC-J04",
-            "IND-C4-AC-A01"
+            "IND-C4-AC-A16"
           ],
           "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
@@ -1310,7 +1310,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Secrétariat général"
           ],
           "landingPages": [
-            "emploi-competences"
+            "juridique"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -1386,7 +1386,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Conseil risques industriels"
           ],
           "landingPages": [
-            "emploi-competences"
+            "juridique"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -1462,7 +1462,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Secrétariat général"
           ],
           "landingPages": [
-            "emploi-competences"
+            "juridique"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -1538,7 +1538,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Conseil risques"
           ],
           "landingPages": [
-            "emploi-competences"
+            "juridique"
           ],
           "showInConversationPage": true,
           "showInForm": true,
@@ -1899,24 +1899,73 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "conversationCode": "C1",
           "contextCode": "AC",
           "typeLecture": "TECHNOLOGIQUE",
-          "questionEditoriale": "À partir de quand le vieillissement de l'outil impose-t-il des compromis de plus en plus coûteux pour maintenir la production ?",
-          "questionPublique": "À partir de quand le vieillissement de l'outil impose-t-il des compromis de plus en plus coûteux pour maintenir la production ?",
-          "questionActivation": "Un outil vieillissant peut rester productif lorsqu'il est bien entretenu. Mais en contexte de contrainte, ce vieillissement devient plus difficile à absorber : les pannes coûtent davantage, les pièces se raréfient, la maintenance prend plus de place.",
-          "introMecanisme": "Un outil vieillissant peut rester productif lorsqu'il est bien entretenu. Mais en contexte de contrainte, ce vieillissement devient plus difficile à absorber : les pannes coûtent davantage, les pièces se raréfient, la maintenance prend plus de place.",
-          "formatCourt": {
-            "titrePublicCourt": "À partir de quand le vieillissement de l'outil impose-t-il des compromis de plus en plus coûteux pour maintenir la production ?",
-            "usage": "Titre court source pour lectures complémentaires."
-          },
+          "questionEditoriale": "À partir de quand les systèmes, outils ou interfaces cessent-ils d’accompagner l’adaptation et commencent-ils à la ralentir ?",
+          "questionPublique": "À partir de quand les systèmes, outils ou interfaces cessent-ils d’accompagner l’adaptation et commencent-ils à la ralentir ?",
+          "questionActivation": "À partir de quand les systèmes, outils ou interfaces cessent-ils d’accompagner l’adaptation et commencent-ils à la ralentir ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer le moment où les systèmes ne soutiennent plus l’adaptation industrielle, mais deviennent une contrainte de pilotage et de transformation.",
+          "pointBascule": "À partir de quand les systèmes deviennent-ils un frein à l’adaptation plutôt qu’un support ?",
+          "tensionArbitrage": "Adapter l’activité sans que les outils, interfaces ou données disponibles ne créent de nouvelles rigidités.",
           "primaryProfiles": [
-            "Architecture systèmes industriels",
-            "Automatisation industrielle",
-            "DSI industriel",
-            "Transformation digitale industrielle",
-            "Maintenance / outil"
+            "Architecture SI industriel",
+            "ERP / MES",
+            "Data industrielle",
+            "Digital manufacturing",
+            "Conseil systèmes industriels"
+          ],
+          "landingPages": [
+            "technologie-systemes"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand les systèmes ralentissent-ils l’adaptation de l’activité ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Systèmes et adaptation sous contrainte",
+            "chapeau": "Votre intervention permettrait d’éclairer le moment où les systèmes ne soutiennent plus l’adaptation industrielle, mais deviennent une contrainte de pilotage et de transformation.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : adaptation sous contrainte, systèmes existants, interfaces, données, pilotage et outils devenus rigides, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, SI/OT, production, maintenance, qualité, finance, data et équipes métiers."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : corriger ou refondre, adapter les systèmes, simplifier les interfaces, sécuriser le pilotage ou accepter une transformation plus structurante."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience technologie & systèmes permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : outil, système, site, atelier, réseau multi-sites ou architecture de pilotage."
+              }
+            ],
+            "momentBascule": "À partir de quand les systèmes deviennent-ils un frein à l’adaptation plutôt qu’un support ?",
+            "tensionCentrale": "Adapter l’activité sans que les outils, interfaces ou données disponibles ne créent de nouvelles rigidités.",
+            "securisation": "L’échange ne suppose pas de commenter une architecture interne, un incident, un fournisseur, un client, un schéma SI/OT, un plan de cybersécurité ou un dossier confidentiel. Il s’agit d’éclairer un mécanisme technologique ou systémique à partir de votre expérience, avec une préparation possible avec les équipes communication, juridique, SI, cybersécurité ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C1-AC-A01",
+            "IND-C1-AC-A02",
+            "IND-C1-AC-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         },
         {
           "code": "A04",
@@ -2092,7 +2141,54 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "showInConversationPage": true,
           "showInForm": false,
-          "isComplementaryStub": true
+          "isComplementaryStub": true,
+          "landingPages": [
+            "territorial"
+          ],
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — À partir de quand le délai requis pour redéployer, reconvertir ou refonder l'outil dépasse-t-il le temps économique, social ou financier encore disponible ?",
+            "chapeau": "Réinventer un outil industriel suppose du temps : diagnostiquer, investir, reconvertir, former, négocier, sécuriser les financements et accompagner les impacts sociaux. Mais en période de crise, ce temps peut manquer.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement, la contrainte observée et le moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule et les effets de la décision."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer et leurs conséquences industrielles."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située issue de l’expérience de l’intervenant."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, entreprise, filière, territoire ou trajectoire industrielle."
+              }
+            ],
+            "momentBascule": "",
+            "tensionCentrale": "",
+            "securisation": "L’échange ne suppose pas de commenter un dossier interne, un client, un fournisseur, un chiffre confidentiel ou une situation identifiable."
+          },
+          "complementaryCodes": [
+            "IND-C1-RC-A02",
+            "IND-C1-RC-A01",
+            "IND-C1-RC-A03"
+          ]
         },
         {
           "code": "A02",
@@ -2118,7 +2214,54 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "showInConversationPage": true,
           "showInForm": false,
-          "isComplementaryStub": true
+          "isComplementaryStub": true,
+          "landingPages": [
+            "territorial"
+          ],
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — À partir de quand une spécialisation de filière ou de segment limite-t-elle la capacité à capter durablement la croissance ?",
+            "chapeau": "La spécialisation peut constituer un avantage puissant. Mais elle peut aussi devenir une dépendance lorsque la croissance exige de changer d'échelle, de diversifier les débouchés ou de répondre à des attentes nouvelles.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement, la contrainte observée et le moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule et les effets de la décision."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer et leurs conséquences industrielles."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située issue de l’expérience de l’intervenant."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, entreprise, filière, territoire ou trajectoire industrielle."
+              }
+            ],
+            "momentBascule": "",
+            "tensionCentrale": "",
+            "securisation": "L’échange ne suppose pas de commenter un dossier interne, un client, un fournisseur, un chiffre confidentiel ou une situation identifiable."
+          },
+          "complementaryCodes": [
+            "IND-C2-GS-A03",
+            "IND-C2-GS-A07",
+            "IND-C2-GS-A05"
+          ]
         },
         {
           "code": "A03",
@@ -2150,7 +2293,49 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "IND-C2-GS-A02",
             "IND-C2-GS-A04"
           ],
-          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes.",
+          "landingPages": [
+            "juridique"
+          ],
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — À partir de quand l'ouverture commerciale, les normes ou les contraintes export deviennent-elles un facteur structurant de continuité industrielle ?",
+            "chapeau": "La croissance industrielle passe souvent par de nouveaux marchés. Mais cette ouverture introduit aussi des règles : normes, douanes, certifications, contrôles export, contraintes géopolitiques.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement, la contrainte observée et le moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule et les effets de la décision."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer et leurs conséquences industrielles."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située issue de l’expérience de l’intervenant."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, entreprise, filière, territoire ou trajectoire industrielle."
+              }
+            ],
+            "momentBascule": "",
+            "tensionCentrale": "",
+            "securisation": "L’échange ne suppose pas de commenter un dossier interne, un client, un fournisseur, un chiffre confidentiel ou une situation identifiable."
+          }
         },
         {
           "code": "A04",
@@ -2176,7 +2361,46 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "showInConversationPage": true,
           "showInForm": false,
-          "isComplementaryStub": true
+          "isComplementaryStub": true,
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — À partir de quand la montée en charge révèle-t-elle que l'architecture des systèmes, automatismes ou intégrations n'est plus à l'échelle de l'activité ?",
+            "chapeau": "La croissance industrielle repose de plus en plus sur des systèmes. Tant que l'activité reste stable, une architecture imparfaite peut fonctionner. Mais lorsque les volumes augmentent, les limites apparaissent.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement, la contrainte observée et le moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule et les effets de la décision."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer et leurs conséquences industrielles."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située issue de l’expérience de l’intervenant."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, entreprise, filière, territoire ou trajectoire industrielle."
+              }
+            ],
+            "momentBascule": "",
+            "tensionCentrale": "",
+            "securisation": "L’échange ne suppose pas de commenter un dossier interne, un client, un fournisseur, un chiffre confidentiel ou une situation identifiable."
+          }
         },
         {
           "code": "A04",
@@ -2202,7 +2426,46 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "showInConversationPage": true,
           "showInForm": false,
-          "isComplementaryStub": true
+          "isComplementaryStub": true,
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — À partir de quand les interfaces entre systèmes, sites ou métiers deviennent-elles un facteur déterminant de performance et de pilotage ?",
+            "chapeau": "En contexte contraint, la performance dépend moins de la puissance de chaque outil que de la qualité des interfaces entre eux. Lorsque ces interfaces sont fragmentées, l'entreprise perd du temps, de la visibilité et de la capacité d'arbitrage.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement, la contrainte observée et le moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule et les effets de la décision."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer et leurs conséquences industrielles."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située issue de l’expérience de l’intervenant."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, entreprise, filière, territoire ou trajectoire industrielle."
+              }
+            ],
+            "momentBascule": "",
+            "tensionCentrale": "",
+            "securisation": "L’échange ne suppose pas de commenter un dossier interne, un client, un fournisseur, un chiffre confidentiel ou une situation identifiable."
+          }
         },
         {
           "code": "A02",
@@ -2228,7 +2491,54 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "showInConversationPage": true,
           "showInForm": false,
-          "isComplementaryStub": true
+          "isComplementaryStub": true,
+          "landingPages": [
+            "territorial"
+          ],
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — À partir de quand la dépendance à une filière, une spécialisation ou un segment impose-t-elle un repositionnement plutôt qu'une adaptation partielle ?",
+            "chapeau": "Certaines entreprises tiennent leur trajectoire d'une spécialisation forte. Mais lorsque cette base se fragilise, il faut envisager un repositionnement plus profond : nouveaux marchés, nouveaux partenaires, nouvelle place dans l'écosystème.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement, la contrainte observée et le moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule et les effets de la décision."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer et leurs conséquences industrielles."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située issue de l’expérience de l’intervenant."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, entreprise, filière, territoire ou trajectoire industrielle."
+              }
+            ],
+            "momentBascule": "",
+            "tensionCentrale": "",
+            "securisation": "L’échange ne suppose pas de commenter un dossier interne, un client, un fournisseur, un chiffre confidentiel ou une situation identifiable."
+          },
+          "complementaryCodes": [
+            "IND-C2-RC-A03",
+            "IND-C2-RC-A07",
+            "IND-C2-RC-A05"
+          ]
         },
         {
           "code": "A03",
@@ -2260,7 +2570,49 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "IND-C2-RC-A02",
             "IND-C2-RC-A04"
           ],
-          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes.",
+          "landingPages": [
+            "juridique"
+          ],
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — À partir de quand un changement de cadre géopolitique ou réglementaire oblige-t-il à réinterroger le modèle industriel ou la géographie productive ?",
+            "chapeau": "Un modèle industriel repose sur une certaine stabilité du cadre dans lequel il opère. Lorsqu'un choc géopolitique ou réglementaire modifie ce cadre, c'est parfois la géographie de la production qui doit être repensée.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement, la contrainte observée et le moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule et les effets de la décision."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer et leurs conséquences industrielles."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située issue de l’expérience de l’intervenant."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, entreprise, filière, territoire ou trajectoire industrielle."
+              }
+            ],
+            "momentBascule": "",
+            "tensionCentrale": "",
+            "securisation": "L’échange ne suppose pas de commenter un dossier interne, un client, un fournisseur, un chiffre confidentiel ou une situation identifiable."
+          }
         },
         {
           "code": "A04",
@@ -2286,7 +2638,46 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "showInConversationPage": true,
           "showInForm": false,
-          "isComplementaryStub": true
+          "isComplementaryStub": true,
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — À partir de quand l'architecture des systèmes oblige-t-elle à arbitrer entre adaptation progressive et refonte plus structurante ?",
+            "chapeau": "Quand l'architecture des systèmes devient trop fragmentée, les adaptations par petites touches peuvent finir par complexifier encore davantage le système. En période de crise, la question devient plus radicale.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement, la contrainte observée et le moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule et les effets de la décision."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer et leurs conséquences industrielles."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située issue de l’expérience de l’intervenant."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, entreprise, filière, territoire ou trajectoire industrielle."
+              }
+            ],
+            "momentBascule": "",
+            "tensionCentrale": "",
+            "securisation": "L’échange ne suppose pas de commenter un dossier interne, un client, un fournisseur, un chiffre confidentiel ou une situation identifiable."
+          }
         },
         {
           "code": "A01",
@@ -2312,7 +2703,46 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "showInConversationPage": true,
           "showInForm": false,
-          "isComplementaryStub": true
+          "isComplementaryStub": true,
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Qu'est-ce qui permet réellement de franchir un cap de volume ou de qualité : automatiser, digitaliser davantage ou redessiner le process ?",
+            "chapeau": "Face à la croissance, l'investissement technologique apparaît souvent comme une réponse naturelle. Mais la technologie ne règle pas toujours les limites profondes d'un outil industriel. Dans certains cas, le vrai sujet réside dans le process lui-même.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement, la contrainte observée et le moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule et les effets de la décision."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer et leurs conséquences industrielles."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située issue de l’expérience de l’intervenant."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, entreprise, filière, territoire ou trajectoire industrielle."
+              }
+            ],
+            "momentBascule": "",
+            "tensionCentrale": "",
+            "securisation": "L’échange ne suppose pas de commenter un dossier interne, un client, un fournisseur, un chiffre confidentiel ou une situation identifiable."
+          }
         },
         {
           "code": "A02",
@@ -2563,7 +2993,46 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "showInConversationPage": true,
           "showInForm": false,
-          "isComplementaryStub": true
+          "isComplementaryStub": true,
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — À partir de quand la transformation de l'outil ne passe-t-elle plus par l'amélioration incrémentale, mais par une rupture de process ou de système de production ?",
+            "chapeau": "L'amélioration incrémentale permet souvent de prolonger la performance d'un outil. Mais certaines crises révèlent que l'outil doit changer de logique. Les process, les flux, les équipements ou même le modèle de production peuvent devoir être repensés.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement, la contrainte observée et le moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule et les effets de la décision."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer et leurs conséquences industrielles."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située issue de l’expérience de l’intervenant."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, entreprise, filière, territoire ou trajectoire industrielle."
+              }
+            ],
+            "momentBascule": "",
+            "tensionCentrale": "",
+            "securisation": "L’échange ne suppose pas de commenter un dossier interne, un client, un fournisseur, un chiffre confidentiel ou une situation identifiable."
+          }
         },
         {
           "code": "A02",
@@ -2964,7 +3433,54 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "showInConversationPage": true,
           "showInForm": false,
-          "isComplementaryStub": true
+          "isComplementaryStub": true,
+          "landingPages": [
+            "territorial"
+          ],
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — À quelles conditions un territoire permet-il encore d'accompagner une montée en capacité : foncier, réseaux, logistique, main-d'œuvre, acceptabilité ?",
+            "chapeau": "Une entreprise industrielle ne croît jamais seule : elle dépend d'un territoire, de ses infrastructures, de son foncier, de ses réseaux et de son bassin d'emploi. Lorsque la croissance s'accélère, ces conditions territoriales deviennent déterminantes.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement, la contrainte observée et le moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule et les effets de la décision."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer et leurs conséquences industrielles."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située issue de l’expérience de l’intervenant."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, entreprise, filière, territoire ou trajectoire industrielle."
+              }
+            ],
+            "momentBascule": "",
+            "tensionCentrale": "",
+            "securisation": "L’échange ne suppose pas de commenter un dossier interne, un client, un fournisseur, un chiffre confidentiel ou une situation identifiable."
+          },
+          "complementaryCodes": [
+            "IND-C4-GS-A02",
+            "IND-C4-GS-A14",
+            "IND-C4-GS-A01"
+          ]
         },
         {
           "code": "A01",
@@ -3068,7 +3584,46 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "landingPages": [
             "emploi-competences"
           ],
-          "isComplementaryStub": true
+          "isComplementaryStub": true,
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — À partir de quand un territoire n'offre-t-il plus les conditions suffisantes pour maintenir ou ajuster une activité sans surcoûts croissants ?",
+            "chapeau": "Un territoire peut soutenir une activité industrielle par ses infrastructures, ses compétences, ses réseaux, ses services. Mais lorsque les contraintes s'accumulent, il peut aussi devenir plus coûteux d'y maintenir l'activité.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement, la contrainte observée et le moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule et les effets de la décision."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer et leurs conséquences industrielles."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située issue de l’expérience de l’intervenant."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, entreprise, filière, territoire ou trajectoire industrielle."
+              }
+            ],
+            "momentBascule": "",
+            "tensionCentrale": "",
+            "securisation": "L’échange ne suppose pas de commenter un dossier interne, un client, un fournisseur, un chiffre confidentiel ou une situation identifiable."
+          }
         },
         {
           "code": "A01",
@@ -3244,7 +3799,46 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "showInConversationPage": true,
           "showInForm": false,
-          "isComplementaryStub": true
+          "isComplementaryStub": true,
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — À quelles conditions un territoire peut-il encore porter un redéploiement industriel, une reconversion partielle ou une nouvelle trajectoire de site ?",
+            "chapeau": "Lorsqu'un site industriel doit se transformer, le territoire devient un acteur décisif. Il peut faciliter un redéploiement, accompagner une reconversion ou attirer de nouveaux investisseurs. Mais il peut aussi manquer de foncier, d'infrastructures ou de moyens.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement, la contrainte observée et le moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule et les effets de la décision."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer et leurs conséquences industrielles."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située issue de l’expérience de l’intervenant."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, entreprise, filière, territoire ou trajectoire industrielle."
+              }
+            ],
+            "momentBascule": "",
+            "tensionCentrale": "",
+            "securisation": "L’échange ne suppose pas de commenter un dossier interne, un client, un fournisseur, un chiffre confidentiel ou une situation identifiable."
+          }
         },
         {
           "code": "A04",
@@ -3845,6 +4439,1281 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "IND-C4-RC-A15"
           ],
           "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A06",
+          "crmCode": "IND-C2-GS-A06",
+          "programmeCode": "IND-C2-CST-02",
+          "conversationCode": "C2",
+          "contextCode": "GS",
+          "typeLecture": "OPERATIONNELLE",
+          "questionEditoriale": "À partir de quand une spécialisation de filière ou de segment limite-t-elle la capacité à capter durablement la croissance ?",
+          "questionPublique": "À partir de quand une spécialisation de filière ou de segment limite-t-elle la capacité à capter durablement la croissance ?",
+          "questionActivation": "À partir de quand une spécialisation de filière ou de segment limite-t-elle la capacité à capter durablement la croissance ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand une spécialisation devient-elle un verrou plutôt qu’un avantage ?",
+          "tensionArbitrage": "Profiter d’une spécialisation sans s’enfermer dans une dépendance de filière ou de segment.",
+          "primaryProfiles": [
+            "Direction industrielle",
+            "Direction opérations",
+            "Supply chain",
+            "Direction filière",
+            "Conseil industriel"
+          ],
+          "landingPages": [
+            "operations"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand une spécialisation limite-t-elle la capacité à capter durablement la croissance ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand une spécialisation limite-t-elle la capacité à capter durablement la croissance ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : croissance, spécialisation de filière ou segment, dépendance de marché, capacité industrielle et arbitrages de portefeuille, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, opérations, supply chain, commerce, finance, clients, fournisseurs et partenaires de filière."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : spécialiser ou diversifier, investir dans la capacité, arbitrer les segments, sécuriser les débouchés ou réduire l’exposition."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience opérationnelle permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : segment, filière, site, portefeuille d’activités, chaîne de valeur ou trajectoire commerciale."
+              }
+            ],
+            "momentBascule": "À partir de quand une spécialisation devient-elle un verrou plutôt qu’un avantage ?",
+            "tensionCentrale": "Profiter d’une spécialisation sans s’enfermer dans une dépendance de filière ou de segment.",
+            "securisation": "L’échange ne suppose pas de commenter un chiffre interne, un client, un fournisseur, un site, un incident ou une situation confidentielle. Il s’agit d’éclairer un mécanisme opérationnel à partir de votre expérience, avec une préparation possible avec les équipes communication, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C2-GS-A05",
+            "IND-C2-GS-A08",
+            "IND-C2-GS-A07"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A07",
+          "crmCode": "IND-C2-GS-A07",
+          "programmeCode": "IND-C2-CST-03",
+          "conversationCode": "C2",
+          "contextCode": "GS",
+          "typeLecture": "JURIDIQUE",
+          "questionEditoriale": "À partir de quand l’ouverture commerciale, les normes ou les contraintes export deviennent-elles un facteur structurant de la trajectoire industrielle ?",
+          "questionPublique": "À partir de quand l’ouverture commerciale, les normes ou les contraintes export deviennent-elles un facteur structurant de la trajectoire industrielle ?",
+          "questionActivation": "À partir de quand l’ouverture commerciale, les normes ou les contraintes export deviennent-elles un facteur structurant de la trajectoire industrielle ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand le cadre commercial et réglementaire devient-il un facteur de trajectoire ?",
+          "tensionArbitrage": "Croître à l’international sans sous-estimer les contraintes normatives, commerciales ou réglementaires.",
+          "primaryProfiles": [
+            "Juridique export",
+            "Affaires réglementaires",
+            "Compliance",
+            "Commerce international",
+            "Cabinet d’avocats"
+          ],
+          "landingPages": [
+            "juridique"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand normes, export ou ouverture commerciale structurent-ils la trajectoire industrielle ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand normes, export ou ouverture commerciale structurent-ils la trajectoire industrielle ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : ouverture commerciale, normes, export, conformité, contraintes douanières et trajectoire industrielle, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction juridique, affaires réglementaires, commerce, supply chain, clients, fournisseurs, direction industrielle et partenaires internationaux."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : ouvrir ou sécuriser, standardiser ou adapter, investir dans la conformité, choisir les marchés ou revoir la trajectoire export."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience juridique / réglementaire permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : marché, filière, chaîne d’approvisionnement, pays, entreprise ou trajectoire internationale."
+              }
+            ],
+            "momentBascule": "À partir de quand le cadre commercial et réglementaire devient-il un facteur de trajectoire ?",
+            "tensionCentrale": "Croître à l’international sans sous-estimer les contraintes normatives, commerciales ou réglementaires.",
+            "securisation": "L’échange ne suppose pas de commenter un dossier, un contentieux, un contrat, un client, un site ou une situation confidentielle. Il s’agit d’éclairer un mécanisme juridique, réglementaire ou de conformité à partir de votre expérience, avec une préparation possible avec les équipes communication, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C2-GS-A05",
+            "IND-C2-GS-A06",
+            "IND-C2-GS-A08"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A07",
+          "crmCode": "IND-C2-AC-A07",
+          "programmeCode": "IND-C2-ASC-03",
+          "conversationCode": "C2",
+          "contextCode": "AC",
+          "typeLecture": "JURIDIQUE",
+          "questionEditoriale": "Quand les règles commerciales, sociales, douanières ou réglementaires limitent-elles la capacité à ajuster l’activité sans rupture de continuité ?",
+          "questionPublique": "Quand les règles commerciales, sociales, douanières ou réglementaires limitent-elles la capacité à ajuster l’activité sans rupture de continuité ?",
+          "questionActivation": "Quand les règles commerciales, sociales, douanières ou réglementaires limitent-elles la capacité à ajuster l’activité sans rupture de continuité ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand le cadre réglementaire limite-t-il l’adaptation possible ?",
+          "tensionArbitrage": "Adapter l’activité sans créer de rupture juridique, sociale, douanière ou réglementaire.",
+          "primaryProfiles": [
+            "Juridique réglementaire",
+            "Compliance",
+            "Droit social",
+            "Douanes / export",
+            "Cabinet d’avocats"
+          ],
+          "landingPages": [
+            "juridique"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand les règles limitent-elles l’ajustement de l’activité sans rupture ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand les règles limitent-elles l’ajustement de l’activité sans rupture ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : adaptation sous contrainte, règles commerciales, sociales, douanières, réglementaires et continuité d’activité, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction juridique, conformité, commerce, supply chain, RH, production, clients, fournisseurs et autorités compétentes."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : adapter ou sécuriser, changer de flux, revoir les contrats, préserver la continuité, arbitrer les marchés ou anticiper les risques réglementaires."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience juridique / réglementaire permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : contrat, flux, marché, site, chaîne d’approvisionnement ou organisation industrielle."
+              }
+            ],
+            "momentBascule": "À partir de quand le cadre réglementaire limite-t-il l’adaptation possible ?",
+            "tensionCentrale": "Adapter l’activité sans créer de rupture juridique, sociale, douanière ou réglementaire.",
+            "securisation": "L’échange ne suppose pas de commenter un dossier, un contentieux, un contrat, un client, un site ou une situation confidentielle. Il s’agit d’éclairer un mécanisme juridique, réglementaire ou de conformité à partir de votre expérience, avec une préparation possible avec les équipes communication, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C2-AC-A05",
+            "IND-C2-AC-A06",
+            "IND-C2-AC-A08"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A06",
+          "crmCode": "IND-C2-RC-A06",
+          "programmeCode": "IND-C2-RSS-02",
+          "conversationCode": "C2",
+          "contextCode": "RC",
+          "typeLecture": "OPERATIONNELLE",
+          "questionEditoriale": "À partir de quand la dépendance à une filière, une spécialisation ou un segment impose-t-elle un repositionnement plutôt qu’un simple plan de continuité ?",
+          "questionPublique": "À partir de quand la dépendance à une filière, une spécialisation ou un segment impose-t-elle un repositionnement plutôt qu’un simple plan de continuité ?",
+          "questionActivation": "À partir de quand la dépendance à une filière, une spécialisation ou un segment impose-t-elle un repositionnement plutôt qu’un simple plan de continuité ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand la continuité ne suffit-elle plus face à une dépendance structurante ?",
+          "tensionArbitrage": "Maintenir l’activité ou repositionner le modèle lorsque la dépendance devient trop structurante.",
+          "primaryProfiles": [
+            "Direction industrielle",
+            "Direction opérations",
+            "Supply chain",
+            "Direction stratégie industrielle",
+            "Conseil repositionnement"
+          ],
+          "landingPages": [
+            "operations"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand une dépendance impose-t-elle un repositionnement plutôt qu’un plan de continuité ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand une dépendance impose-t-elle un repositionnement plutôt qu’un plan de continuité ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : dépendance de filière, spécialisation, segment critique, continuité d’activité et repositionnement industriel, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, opérations, supply chain, clients, fournisseurs, finance, stratégie et direction générale."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : continuer ou repositionner, substituer, relocaliser, diversifier, réduire l’exposition ou transformer le modèle opérationnel."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience opérationnelle permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : filière, segment, chaîne d’approvisionnement, entreprise, site ou modèle industriel."
+              }
+            ],
+            "momentBascule": "À partir de quand la continuité ne suffit-elle plus face à une dépendance structurante ?",
+            "tensionCentrale": "Maintenir l’activité ou repositionner le modèle lorsque la dépendance devient trop structurante.",
+            "securisation": "L’échange ne suppose pas de commenter un chiffre interne, un client, un fournisseur, un site, un incident ou une situation confidentielle. Il s’agit d’éclairer un mécanisme opérationnel à partir de votre expérience, avec une préparation possible avec les équipes communication, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C2-RC-A05",
+            "IND-C2-RC-A07",
+            "IND-C2-RC-A08"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A07",
+          "crmCode": "IND-C2-RC-A07",
+          "programmeCode": "IND-C2-RSS-03",
+          "conversationCode": "C2",
+          "contextCode": "RC",
+          "typeLecture": "JURIDIQUE",
+          "questionEditoriale": "À partir de quand un changement de cadre géopolitique ou réglementaire oblige-t-il à réinterroger le modèle industriel ou commercial ?",
+          "questionPublique": "À partir de quand un changement de cadre géopolitique ou réglementaire oblige-t-il à réinterroger le modèle industriel ou commercial ?",
+          "questionActivation": "À partir de quand un changement de cadre géopolitique ou réglementaire oblige-t-il à réinterroger le modèle industriel ou commercial ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand le cadre externe remet-il en cause le modèle industriel ou commercial ?",
+          "tensionArbitrage": "Sécuriser la trajectoire lorsque le cadre géopolitique ou réglementaire modifie les conditions du modèle.",
+          "primaryProfiles": [
+            "Juridique réglementaire",
+            "Compliance",
+            "Affaires publiques",
+            "Commerce international",
+            "Cabinet d’avocats"
+          ],
+          "landingPages": [
+            "juridique"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand un changement géopolitique ou réglementaire oblige-t-il à réinterroger le modèle ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand un changement géopolitique ou réglementaire oblige-t-il à réinterroger le modèle ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : cadre géopolitique, réglementation, export, commerce, conformité et modèle industriel ou commercial, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction juridique, compliance, commerce, supply chain, direction industrielle, clients, fournisseurs, autorités et partenaires internationaux."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : maintenir ou repositionner, sécuriser les contrats, revoir les flux, changer de marché, adapter la conformité ou transformer le modèle commercial."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience juridique / réglementaire permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : pays, marché, filière, contrat, chaîne d’approvisionnement ou trajectoire internationale."
+              }
+            ],
+            "momentBascule": "À partir de quand le cadre externe remet-il en cause le modèle industriel ou commercial ?",
+            "tensionCentrale": "Sécuriser la trajectoire lorsque le cadre géopolitique ou réglementaire modifie les conditions du modèle.",
+            "securisation": "L’échange ne suppose pas de commenter un dossier, un contentieux, un contrat, un client, un site ou une situation confidentielle. Il s’agit d’éclairer un mécanisme juridique, réglementaire ou de conformité à partir de votre expérience, avec une préparation possible avec les équipes communication, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C2-RC-A05",
+            "IND-C2-RC-A06",
+            "IND-C2-RC-A08"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A10",
+          "crmCode": "IND-C3-GS-A10",
+          "programmeCode": "IND-C3-CST-02",
+          "conversationCode": "C3",
+          "contextCode": "GS",
+          "typeLecture": "OPERATIONNELLE",
+          "questionEditoriale": "À partir de quand la vraie limite n’est-elle plus technologique, mais opératoire : coordination des flux, séquencement, pilotage et interfaces ?",
+          "questionPublique": "À partir de quand la vraie limite n’est-elle plus technologique, mais opératoire : coordination des flux, séquencement, pilotage et interfaces ?",
+          "questionActivation": "À partir de quand la vraie limite n’est-elle plus technologique, mais opératoire : coordination des flux, séquencement, pilotage et interfaces ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand ajouter de la technologie ne règle-t-il plus la limite opérationnelle ?",
+          "tensionArbitrage": "Franchir un cap sans confondre solution technologique et transformation réelle des flux.",
+          "primaryProfiles": [
+            "Direction opérations",
+            "Excellence opérationnelle",
+            "Supply chain industrielle",
+            "Performance industrielle",
+            "Conseil transformation"
+          ],
+          "landingPages": [
+            "operations"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand la vraie limite devient-elle opératoire plutôt que technologique ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand la vraie limite devient-elle opératoire plutôt que technologique ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : croissance, coordination des flux, séquencement, pilotage, interfaces et limite opératoire, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : opérations, production, supply chain, maintenance, qualité, SI/OT, data, finance et direction industrielle."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : automatiser ou réorganiser, séquencer, piloter autrement, simplifier les flux, revoir les interfaces ou redessiner le process."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience opérationnelle permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : flux, atelier, ligne, site, système de production ou chaîne de valeur."
+              }
+            ],
+            "momentBascule": "À partir de quand ajouter de la technologie ne règle-t-il plus la limite opérationnelle ?",
+            "tensionCentrale": "Franchir un cap sans confondre solution technologique et transformation réelle des flux.",
+            "securisation": "L’échange ne suppose pas de commenter un chiffre interne, un client, un fournisseur, un site, un incident ou une situation confidentielle. Il s’agit d’éclairer un mécanisme opérationnel à partir de votre expérience, avec une préparation possible avec les équipes communication, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C3-GS-A09",
+            "IND-C3-GS-A11",
+            "IND-C3-GS-A12"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A11",
+          "crmCode": "IND-C3-GS-A11",
+          "programmeCode": "IND-C3-CST-03",
+          "conversationCode": "C3",
+          "contextCode": "GS",
+          "typeLecture": "RH_COMPETENCES",
+          "questionEditoriale": "À partir de quand la montée en capacité bute-t-elle moins sur la machine que sur la qualité, la sécurité, la formation et la maîtrise des gestes critiques ?",
+          "questionPublique": "À partir de quand la montée en capacité bute-t-elle moins sur la machine que sur la qualité, la sécurité, la formation et la maîtrise des gestes critiques ?",
+          "questionActivation": "À partir de quand la montée en capacité bute-t-elle moins sur la machine que sur la qualité, la sécurité, la formation et la maîtrise des gestes critiques ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand la compétence devient-elle la vraie limite de la montée en capacité ?",
+          "tensionArbitrage": "Monter en capacité sans dégrader la maîtrise des gestes, la qualité et la sécurité.",
+          "primaryProfiles": [
+            "QHSE industriel",
+            "Responsable formation",
+            "Responsable compétences",
+            "Qualité industrielle",
+            "Direction industrielle / RH"
+          ],
+          "landingPages": [
+            "emploi-competences"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand la montée en capacité bute-t-elle sur la formation, la sécurité et les gestes critiques ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand la montée en capacité bute-t-elle sur la formation, la sécurité et les gestes critiques ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : montée en capacité, exigences de qualité, sécurité, formation, conformité et maîtrise des gestes critiques, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : QHSE, qualité, production, formation, managers de proximité, équipes terrain, direction industrielle, RH et maintenance."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : accélérer ou sécuriser, standardiser ou adapter, former avant de produire plus, préserver la qualité ou absorber la demande."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience RH / compétences permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : poste, geste métier, ligne, atelier, site, système qualité ou trajectoire de montée en capacité."
+              }
+            ],
+            "momentBascule": "À partir de quand la compétence devient-elle la vraie limite de la montée en capacité ?",
+            "tensionCentrale": "Monter en capacité sans dégrader la maîtrise des gestes, la qualité et la sécurité.",
+            "securisation": "L’échange ne suppose pas de commenter une situation sociale, un plan, un site, un accord ou un dossier confidentiel. Il s’agit d’éclairer un mécanisme d’emploi, de compétences ou d’organisation du travail à partir de votre expérience, avec une préparation possible avec les équipes communication, RH, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C3-GS-A09",
+            "IND-C3-GS-A10",
+            "IND-C3-GS-A12"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A10",
+          "crmCode": "IND-C3-AC-A10",
+          "programmeCode": "IND-C3-ASC-02",
+          "conversationCode": "C3",
+          "contextCode": "AC",
+          "typeLecture": "OPERATIONNELLE",
+          "questionEditoriale": "À partir de quand de nouveaux outils ne compensent-ils plus une architecture opératoire devenue trop rigide, fragmentée ou coûteuse à adapter ?",
+          "questionPublique": "À partir de quand de nouveaux outils ne compensent-ils plus une architecture opératoire devenue trop rigide, fragmentée ou coûteuse à adapter ?",
+          "questionActivation": "À partir de quand de nouveaux outils ne compensent-ils plus une architecture opératoire devenue trop rigide, fragmentée ou coûteuse à adapter ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand l’ajout d’outils ne règle-t-il plus la rigidité opératoire ?",
+          "tensionArbitrage": "Ajouter de nouveaux outils ou transformer l’architecture opératoire devenue trop coûteuse à adapter.",
+          "primaryProfiles": [
+            "Direction opérations",
+            "Excellence opérationnelle",
+            "Process engineering",
+            "Transformation industrielle",
+            "Conseil opérations"
+          ],
+          "landingPages": [
+            "operations"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand de nouveaux outils ne compensent-ils plus une architecture opératoire trop rigide ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand de nouveaux outils ne compensent-ils plus une architecture opératoire trop rigide ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : architecture opératoire rigide, outils ajoutés, fragmentation, coûts d’adaptation et transformation de l’outil, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : opérations, production, maintenance, qualité, SI/OT, finance, direction industrielle et équipes terrain."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : ajouter ou refondre, simplifier l’architecture, réorganiser les flux, investir ou préserver la continuité."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience opérationnelle permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : outil, ligne, process, atelier, site ou architecture opérationnelle."
+              }
+            ],
+            "momentBascule": "À partir de quand l’ajout d’outils ne règle-t-il plus la rigidité opératoire ?",
+            "tensionCentrale": "Ajouter de nouveaux outils ou transformer l’architecture opératoire devenue trop coûteuse à adapter.",
+            "securisation": "L’échange ne suppose pas de commenter un chiffre interne, un client, un fournisseur, un site, un incident ou une situation confidentielle. Il s’agit d’éclairer un mécanisme opérationnel à partir de votre expérience, avec une préparation possible avec les équipes communication, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C3-AC-A09",
+            "IND-C3-AC-A11",
+            "IND-C3-AC-A12"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A11",
+          "crmCode": "IND-C3-AC-A11",
+          "programmeCode": "IND-C3-ASC-03",
+          "conversationCode": "C3",
+          "contextCode": "AC",
+          "typeLecture": "JURIDIQUE",
+          "questionEditoriale": "À partir de quand les exigences de qualité, sécurité ou conformité limitent-elles la capacité à ajuster l’outil sans réinvestissement profond ?",
+          "questionPublique": "À partir de quand les exigences de qualité, sécurité ou conformité limitent-elles la capacité à ajuster l’outil sans réinvestissement profond ?",
+          "questionActivation": "À partir de quand les exigences de qualité, sécurité ou conformité limitent-elles la capacité à ajuster l’outil sans réinvestissement profond ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand la conformité empêche-t-elle les ajustements ordinaires ?",
+          "tensionArbitrage": "Ajuster l’outil sans franchir les limites de qualité, sécurité ou conformité.",
+          "primaryProfiles": [
+            "Juridique conformité",
+            "QHSE réglementaire",
+            "Affaires réglementaires",
+            "Droit industriel",
+            "Cabinet d’avocats"
+          ],
+          "landingPages": [
+            "juridique"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand qualité, sécurité ou conformité imposent-elles un réinvestissement profond ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand qualité, sécurité ou conformité imposent-elles un réinvestissement profond ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : qualité, sécurité, conformité, ajustement de l’outil, réinvestissement et contraintes réglementaires, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : juridique, QHSE, conformité, production, qualité, maintenance, direction industrielle et autorités compétentes."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : adapter ou réinvestir, sécuriser la conformité, revoir le process, maintenir l’activité ou transformer l’outil."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience juridique / réglementaire permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : outil, process, site, standard qualité, cadre réglementaire ou trajectoire d’investissement."
+              }
+            ],
+            "momentBascule": "À partir de quand la conformité empêche-t-elle les ajustements ordinaires ?",
+            "tensionCentrale": "Ajuster l’outil sans franchir les limites de qualité, sécurité ou conformité.",
+            "securisation": "L’échange ne suppose pas de commenter un dossier, un contentieux, un contrat, un client, un site ou une situation confidentielle. Il s’agit d’éclairer un mécanisme juridique, réglementaire ou de conformité à partir de votre expérience, avec une préparation possible avec les équipes communication, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C3-AC-A09",
+            "IND-C3-AC-A10",
+            "IND-C3-AC-A12"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A09",
+          "crmCode": "IND-C3-RC-A09",
+          "programmeCode": "IND-C3-RSS-01",
+          "conversationCode": "C3",
+          "contextCode": "RC",
+          "typeLecture": "OPERATIONNELLE",
+          "questionEditoriale": "À partir de quand la transformation de l’outil ne passe-t-elle plus par l’amélioration incrémentale, mais par une rupture de modèle industriel ?",
+          "questionPublique": "À partir de quand la transformation de l’outil ne passe-t-elle plus par l’amélioration incrémentale, mais par une rupture de modèle industriel ?",
+          "questionActivation": "À partir de quand la transformation de l’outil ne passe-t-elle plus par l’amélioration incrémentale, mais par une rupture de modèle industriel ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand faut-il accepter une rupture de modèle industriel ?",
+          "tensionArbitrage": "Améliorer l’existant ou reconnaître que la transformation exige une rupture opérationnelle.",
+          "primaryProfiles": [
+            "Direction industrielle",
+            "Direction opérations",
+            "Transformation industrielle",
+            "Excellence opérationnelle",
+            "Conseil industriel"
+          ],
+          "landingPages": [
+            "operations"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand l’amélioration incrémentale ne suffit-elle plus à transformer l’outil ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand l’amélioration incrémentale ne suffit-elle plus à transformer l’outil ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : transformation de l’outil, amélioration incrémentale, rupture de modèle industriel et crise opérationnelle, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, opérations, production, maintenance, qualité, finance, RH et direction générale."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : améliorer ou rompre, repositionner les capacités, revoir l’architecture industrielle, investir ou changer de modèle."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience opérationnelle permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : outil, site, process, modèle industriel, entreprise ou filière."
+              }
+            ],
+            "momentBascule": "À partir de quand faut-il accepter une rupture de modèle industriel ?",
+            "tensionCentrale": "Améliorer l’existant ou reconnaître que la transformation exige une rupture opérationnelle.",
+            "securisation": "L’échange ne suppose pas de commenter un chiffre interne, un client, un fournisseur, un site, un incident ou une situation confidentielle. Il s’agit d’éclairer un mécanisme opérationnel à partir de votre expérience, avec une préparation possible avec les équipes communication, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C3-RC-A10",
+            "IND-C3-RC-A11",
+            "IND-C3-RC-A12"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A10",
+          "crmCode": "IND-C3-RC-A10",
+          "programmeCode": "IND-C3-RSS-02",
+          "conversationCode": "C3",
+          "contextCode": "RC",
+          "typeLecture": "TECHNOLOGIQUE",
+          "questionEditoriale": "À partir de quand la crise révèle-t-elle que le vrai sujet n’est plus l’outil, mais l’architecture même du système productif ?",
+          "questionPublique": "À partir de quand la crise révèle-t-elle que le vrai sujet n’est plus l’outil, mais l’architecture même du système productif ?",
+          "questionActivation": "À partir de quand la crise révèle-t-elle que le vrai sujet n’est plus l’outil, mais l’architecture même du système productif ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand l’architecture productive devient-elle le vrai problème ?",
+          "tensionArbitrage": "Traiter un outil en crise ou refonder l’architecture du système productif.",
+          "primaryProfiles": [
+            "Architecture industrielle",
+            "Systèmes industriels",
+            "Digital manufacturing",
+            "Process engineering",
+            "Conseil transformation"
+          ],
+          "landingPages": [
+            "technologie-systemes"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand la crise révèle-t-elle que le sujet est l’architecture du système productif ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand la crise révèle-t-elle que le sujet est l’architecture du système productif ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : crise industrielle, architecture du système productif, outil, systèmes, flux et transformation profonde, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, SI/OT, production, maintenance, qualité, finance, data et direction générale."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : corriger l’outil ou refonder l’architecture, simplifier les flux, revoir les systèmes, transformer le process ou changer de modèle."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience technologie & systèmes permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : système productif, site, process, architecture industrielle, entreprise ou filière."
+              }
+            ],
+            "momentBascule": "À partir de quand l’architecture productive devient-elle le vrai problème ?",
+            "tensionCentrale": "Traiter un outil en crise ou refonder l’architecture du système productif.",
+            "securisation": "L’échange ne suppose pas de commenter une architecture interne, un incident, un fournisseur, un client, un schéma SI/OT, un plan de cybersécurité ou un dossier confidentiel. Il s’agit d’éclairer un mécanisme technologique ou systémique à partir de votre expérience, avec une préparation possible avec les équipes communication, juridique, SI, cybersécurité ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C3-RC-A09",
+            "IND-C3-RC-A11",
+            "IND-C3-RC-A12"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A11",
+          "crmCode": "IND-C3-RC-A11",
+          "programmeCode": "IND-C3-RSS-03",
+          "conversationCode": "C3",
+          "contextCode": "RC",
+          "typeLecture": "RH_COMPETENCES",
+          "questionEditoriale": "À partir de quand l’écart entre compétences disponibles, exigences de sûreté et standards de production impose-t-il une transformation plus profonde ?",
+          "questionPublique": "À partir de quand l’écart entre compétences disponibles, exigences de sûreté et standards de production impose-t-il une transformation plus profonde ?",
+          "questionActivation": "À partir de quand l’écart entre compétences disponibles, exigences de sûreté et standards de production impose-t-il une transformation plus profonde ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand les compétences disponibles ne suffisent-elles plus à tenir les standards exigés ?",
+          "tensionArbitrage": "Maintenir l’activité sans dépasser les limites de compétence, sûreté et conformité.",
+          "primaryProfiles": [
+            "QHSE / sûreté",
+            "DRH industriel",
+            "Droit social",
+            "Responsable conformité",
+            "Conseil transformation industrielle"
+          ],
+          "landingPages": [
+            "emploi-competences"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand l’écart entre compétences disponibles et sûreté impose-t-il une transformation profonde ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand l’écart entre compétences disponibles et sûreté impose-t-il une transformation profonde ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : crise industrielle, écart de compétences, exigences de sûreté, standards de production, conformité et limites humaines de l’activité, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction RH, QHSE, sûreté, production, qualité, direction industrielle, juridique, managers, équipes terrain et partenaires sociaux."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : maintenir ou transformer, sécuriser ou réduire, requalifier ou repositionner, revoir les standards, le périmètre ou l’organisation."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience RH / compétences permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : poste critique, atelier, site, système de sûreté, organisation industrielle ou périmètre d’activité."
+              }
+            ],
+            "momentBascule": "À partir de quand les compétences disponibles ne suffisent-elles plus à tenir les standards exigés ?",
+            "tensionCentrale": "Maintenir l’activité sans dépasser les limites de compétence, sûreté et conformité.",
+            "securisation": "L’échange ne suppose pas de commenter une situation sociale, un plan, un site, un accord ou un dossier confidentiel. Il s’agit d’éclairer un mécanisme d’emploi, de compétences ou d’organisation du travail à partir de votre expérience, avec une préparation possible avec les équipes communication, RH, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C3-RC-A09",
+            "IND-C3-RC-A10",
+            "IND-C3-RC-A12"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A12",
+          "crmCode": "IND-C3-RC-A12",
+          "programmeCode": "IND-C3-RSS-04",
+          "conversationCode": "C3",
+          "contextCode": "RC",
+          "typeLecture": "ENERGIE_RESSOURCES",
+          "questionEditoriale": "À partir de quand la contrainte carbone impose-t-elle une réécriture du process, de l’outil, de l’offre ou de la vocation industrielle du site ?",
+          "questionPublique": "À partir de quand la contrainte carbone impose-t-elle une réécriture du process, de l’outil, de l’offre ou de la vocation industrielle du site ?",
+          "questionActivation": "À partir de quand la contrainte carbone impose-t-elle une réécriture du process, de l’outil, de l’offre ou de la vocation industrielle du site ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand la contrainte carbone remet-elle en cause la vocation industrielle du site ?",
+          "tensionArbitrage": "Décarboner l’activité existante ou redéfinir ce que le site doit produire et représenter.",
+          "primaryProfiles": [
+            "Direction décarbonation",
+            "Direction industrielle exposée",
+            "Énergie / climat industriel",
+            "Transformation de process",
+            "Conseil carbone industriel"
+          ],
+          "landingPages": [
+            "decarbonation-energie-soutenabilite"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand la contrainte carbone oblige-t-elle à réécrire le process, l’outil ou la vocation d’un site ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand la contrainte carbone oblige-t-elle à réécrire le process, l’outil ou la vocation d’un site ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : contrainte carbone critique, process industriel, outil, offre, vocation industrielle du site et trajectoire de transformation, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, énergie, climat, RSE, finance, ingénierie, production, maintenance, clients, financeurs, territoire et autorités compétentes."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : décarboner l’existant ou changer de process, investir ou repositionner, transformer l’offre, redéfinir la vocation du site ou accepter une rupture industrielle."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience ressources industrielles permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : process, site, portefeuille d’activités, entreprise, filière ou territoire industriel."
+              }
+            ],
+            "momentBascule": "À partir de quand la contrainte carbone remet-elle en cause la vocation industrielle du site ?",
+            "tensionCentrale": "Décarboner l’activité existante ou redéfinir ce que le site doit produire et représenter.",
+            "securisation": "L’échange ne suppose pas de commenter un plan carbone interne, un site sensible, un chiffre confidentiel, un client, un fournisseur ou une décision identifiable. Il s’agit d’éclairer un mécanisme énergie, eau, carbone, ressources ou soutenabilité à partir de votre expérience, avec une préparation possible avec les équipes communication, juridique, RSE, finance ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C3-RC-A09",
+            "IND-C3-RC-A10",
+            "IND-C3-RC-A11"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A13",
+          "crmCode": "IND-C4-GS-A13",
+          "programmeCode": "IND-C4-CST-01",
+          "conversationCode": "C4",
+          "contextCode": "GS",
+          "typeLecture": "RH_COMPETENCES",
+          "questionEditoriale": "À partir de quand la croissance révèle-t-elle un seuil critique en matière de recrutement, transmission, stabilisation ou montée en compétence ?",
+          "questionPublique": "À partir de quand la croissance révèle-t-elle un seuil critique en matière de recrutement, transmission, stabilisation ou montée en compétence ?",
+          "questionActivation": "À partir de quand la croissance révèle-t-elle un seuil critique en matière de recrutement, transmission, stabilisation ou montée en compétence ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand le facteur humain devient-il le principal verrou de la trajectoire industrielle ?",
+          "tensionArbitrage": "Monter en capacité sans dépasser les capacités de recrutement, de formation et de transmission.",
+          "primaryProfiles": [
+            "DRH industriel",
+            "Responsable recrutement",
+            "Responsable formation",
+            "OPCO / compétences",
+            "Conseil RH industriel"
+          ],
+          "landingPages": [
+            "emploi-competences"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand le facteur humain devient-il le principal verrou de la trajectoire industrielle ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand le facteur humain devient-il le principal verrou de la trajectoire industrielle ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : croissance industrielle, recrutement, transmission des savoir-faire, stabilisation des équipes et montée en compétence, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : DRH, managers, production, formation, maintenance, qualité, opérateurs, bassin d’emploi, organismes de formation et partenaires institutionnels."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : recruter ou former, stabiliser ou accélérer, transmettre ou standardiser, développer l’activité ou préserver la capacité humaine disponible."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience RH / compétences permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, bassin d’emploi, entreprise, filière, métier critique ou territoire industriel."
+              }
+            ],
+            "momentBascule": "À partir de quand le facteur humain devient-il le principal verrou de la trajectoire industrielle ?",
+            "tensionCentrale": "Monter en capacité sans dépasser les capacités de recrutement, de formation et de transmission.",
+            "securisation": "L’échange ne suppose pas de commenter une situation sociale, un plan, un site, un accord ou un dossier confidentiel. Il s’agit d’éclairer un mécanisme d’emploi, de compétences ou d’organisation du travail à partir de votre expérience, avec une préparation possible avec les équipes communication, RH, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C4-GS-A14",
+            "IND-C4-GS-A15",
+            "IND-C4-GS-A16"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A14",
+          "crmCode": "IND-C4-GS-A14",
+          "programmeCode": "IND-C4-CST-02",
+          "conversationCode": "C4",
+          "contextCode": "GS",
+          "typeLecture": "ENERGIE_RESSOURCES",
+          "questionEditoriale": "À partir de quand l’accès à l’énergie, à l’eau, aux utilités ou aux capacités réseaux devient-il le véritable verrou d’une montée en capacité ?",
+          "questionPublique": "À partir de quand l’accès à l’énergie, à l’eau, aux utilités ou aux capacités réseaux devient-il le véritable verrou d’une montée en capacité ?",
+          "questionActivation": "À partir de quand l’accès à l’énergie, à l’eau, aux utilités ou aux capacités réseaux devient-il le véritable verrou d’une montée en capacité ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand les ressources deviennent-elles le verrou principal de la croissance ?",
+          "tensionArbitrage": "Développer l’activité tout en sécurisant les ressources physiques nécessaires pour produire.",
+          "primaryProfiles": [
+            "Direction énergie",
+            "Utilités industrielles",
+            "Eau / ressources",
+            "Infrastructures industrielles",
+            "Direction de site"
+          ],
+          "landingPages": [
+            "decarbonation-energie-soutenabilite"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand les ressources deviennent-elles le verrou principal de la croissance ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand les ressources deviennent-elles le verrou principal de la croissance ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : croissance, accès à l’énergie, à l’eau, aux utilités, raccordements, réseaux et capacités physiques, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, énergie, utilités, eau, maintenance, production, finance, territoire, fournisseurs et gestionnaires de réseaux."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : développer ou temporiser, sécuriser les ressources, investir dans les utilités, négocier l’accès aux réseaux, adapter la capacité ou revoir la trajectoire."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience ressources industrielles permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, raccordement, réseau, bassin de ressources, territoire, entreprise ou filière."
+              }
+            ],
+            "momentBascule": "À partir de quand les ressources deviennent-elles le verrou principal de la croissance ?",
+            "tensionCentrale": "Développer l’activité tout en sécurisant les ressources physiques nécessaires pour produire.",
+            "securisation": "L’échange ne suppose pas de commenter un plan carbone interne, un site sensible, un chiffre confidentiel, un client, un fournisseur ou une décision identifiable. Il s’agit d’éclairer un mécanisme énergie, eau, carbone, ressources ou soutenabilité à partir de votre expérience, avec une préparation possible avec les équipes communication, juridique, RSE, finance ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C4-GS-A13",
+            "IND-C4-GS-A15",
+            "IND-C4-GS-A16"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A13",
+          "crmCode": "IND-C4-AC-A13",
+          "programmeCode": "IND-C4-ASC-01",
+          "conversationCode": "C4",
+          "contextCode": "AC",
+          "typeLecture": "RH_COMPETENCES",
+          "questionEditoriale": "À partir de quand les tensions sur les effectifs, les savoir-faire, les conditions de travail ou l’organisation limitent-elles la capacité à ajuster l’activité ?",
+          "questionPublique": "À partir de quand les tensions sur les effectifs, les savoir-faire, les conditions de travail ou l’organisation limitent-elles la capacité à ajuster l’activité ?",
+          "questionActivation": "À partir de quand les tensions sur les effectifs, les savoir-faire, les conditions de travail ou l’organisation limitent-elles la capacité à ajuster l’activité ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand l’organisation humaine ne tient-elle plus ?",
+          "tensionArbitrage": "Maintenir l’activité sans épuiser les équipes ni perdre les savoir-faire.",
+          "primaryProfiles": [
+            "DRH site",
+            "Dialogue social",
+            "Organisation du travail",
+            "Santé / sécurité",
+            "Droit social"
+          ],
+          "landingPages": [
+            "emploi-competences"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand les tensions sur les effectifs et les savoir-faire limitent-elles l’adaptation de l’activité ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand les tensions sur les effectifs et les savoir-faire limitent-elles l’adaptation de l’activité ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : tensions sur les effectifs, savoir-faire, conditions de travail, organisation et capacité d’adaptation de l’activité, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : salariés, managers, RH, production, santé-sécurité, qualité, partenaires sociaux, direction industrielle et fonctions juridiques."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : maintenir ou alléger, réorganiser ou préserver, former ou redéployer, absorber la contrainte ou reconnaître les limites humaines de l’activité."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience RH / compétences permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : atelier, équipe, site, collectif de travail, organisation industrielle ou trajectoire d’adaptation."
+              }
+            ],
+            "momentBascule": "À partir de quand l’organisation humaine ne tient-elle plus ?",
+            "tensionCentrale": "Maintenir l’activité sans épuiser les équipes ni perdre les savoir-faire.",
+            "securisation": "L’échange ne suppose pas de commenter une situation sociale, un plan, un site, un accord ou un dossier confidentiel. Il s’agit d’éclairer un mécanisme d’emploi, de compétences ou d’organisation du travail à partir de votre expérience, avec une préparation possible avec les équipes communication, RH, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C4-AC-A14",
+            "IND-C4-AC-A15",
+            "IND-C4-AC-A16"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A13",
+          "crmCode": "IND-C4-RC-A13",
+          "programmeCode": "IND-C4-RSS-01",
+          "conversationCode": "C4",
+          "contextCode": "RC",
+          "typeLecture": "RH_COMPETENCES",
+          "questionEditoriale": "À partir de quand les compétences critiques, les conditions de travail ou l’organisation deviennent-elles un facteur de bascule dans une trajectoire de transformation ?",
+          "questionPublique": "À partir de quand les compétences critiques, les conditions de travail ou l’organisation deviennent-elles un facteur de bascule dans une trajectoire de transformation ?",
+          "questionActivation": "À partir de quand les compétences critiques, les conditions de travail ou l’organisation deviennent-elles un facteur de bascule dans une trajectoire de transformation ?",
+          "introMecanisme": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+          "pointBascule": "À partir de quand les compétences conditionnent-elles la survie du modèle ?",
+          "tensionArbitrage": "Transformer l’activité sans perdre les savoir-faire et les collectifs nécessaires à la nouvelle trajectoire.",
+          "primaryProfiles": [
+            "DRH transformation",
+            "Restructuration",
+            "Compétences critiques",
+            "Droit social",
+            "Conseil organisation"
+          ],
+          "landingPages": [
+            "emploi-competences"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand les compétences critiques conditionnent-elles la survie du modèle industriel ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Quand les compétences critiques conditionnent-elles la survie du modèle industriel ?",
+            "chapeau": "Votre intervention permettrait d’éclairer cet angle sans exposer de dossier interne, de chiffre confidentiel ou de situation identifiable.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : transformation de crise, compétences critiques, conditions de travail, organisation, engagement des équipes et maintien des collectifs, intensité de la contrainte et moment où la situation change de nature."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : direction RH, direction générale, direction industrielle, salariés, managers, partenaires sociaux, juridique, formation et territoire."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : transformer ou préserver, repositionner ou transmettre, sécuriser les collectifs, conserver les savoir-faire critiques ou reconstruire une nouvelle trajectoire."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, décision mieux assumée, organisation mieux préparée ou transformation plus lisible."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience RH / compétences permet de reconnaître avant que la tension ne devienne un blocage industriel."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, entreprise, collectif de travail, bassin d’emploi, filière ou trajectoire de redéploiement."
+              }
+            ],
+            "momentBascule": "À partir de quand les compétences conditionnent-elles la survie du modèle ?",
+            "tensionCentrale": "Transformer l’activité sans perdre les savoir-faire et les collectifs nécessaires à la nouvelle trajectoire.",
+            "securisation": "L’échange ne suppose pas de commenter une situation sociale, un plan, un site, un accord ou un dossier confidentiel. Il s’agit d’éclairer un mécanisme d’emploi, de compétences ou d’organisation du travail à partir de votre expérience, avec une préparation possible avec les équipes communication, RH, juridique ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C4-RC-A14",
+            "IND-C4-RC-A15",
+            "IND-C4-RC-A16"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         }
       ]
     }
@@ -3899,7 +5768,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         "rarityBlock": {
           "kicker": "Rareté éditoriale",
           "title": "10 positions avec lecture stratégique sont ouvertes dans le cycle Industrie.",
-          "text": "Chaque position correspond à un angle contextualisé. Lorsqu’une position est validée, elle n’est plus ouverte à une lecture stratégique équivalente."
+          "text": "Chaque position correspond à un angle contextualisé. Une position avec lecture stratégique ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
         },
         "heroNoteHtml": "Aucun client ni cas identifiable à exposer &nbsp;·&nbsp; Aucun dossier sensible à commenter &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Collaboration possible avec services juridique, communication ou corporate de votre organisation",
         "audience": {
@@ -4030,7 +5899,19 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
           "footnote": "Les positions stratégiques se ferment au fil de la composition éditoriale · Page non indexée"
         }
-      }
+      },
+      "angleCodes": [
+        "IND-C1-GS-A01",
+        "IND-C1-RC-A01",
+        "IND-C2-GS-A05",
+        "IND-C2-AC-A06",
+        "IND-C2-RC-A05",
+        "IND-C3-GS-A12",
+        "IND-C3-AC-A12",
+        "IND-C4-GS-A15",
+        "IND-C4-AC-A15",
+        "IND-C4-RC-A15"
+      ]
     },
     "decarbonation-energie-soutenabilite": {
       "cycleCode": "IND",
@@ -4082,11 +5963,11 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         ]
       },
       "copy": {
-        "positionsCountNote": "4 positions avec lecture ressources industrielles sont ouvertes dans le cycle Industrie.",
+        "positionsCountNote": "5 positions avec lecture ressources industrielles sont ouvertes dans le cycle Industrie.",
         "rarityBlock": {
           "kicker": "Rareté éditoriale",
-          "title": "4 positions avec lecture ressources industrielles sont ouvertes dans le cycle Industrie.",
-          "text": "Chaque position correspond à un angle contextualisé. Une position ressources industrielles ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
+          "title": "5 positions avec lecture ressources industrielles sont ouvertes dans le cycle Industrie.",
+          "text": "Chaque position correspond à un angle contextualisé. Une position avec lecture ressources industrielles ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
         },
         "heroNoteHtml": "Aucun plan carbone confidentiel à exposer &nbsp;·&nbsp; Aucun chiffre interne à communiquer &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Préparation possible avec les équipes communication, juridique, RSE, finance ou corporate de votre organisation",
         "heroCardTitle": "Votre lecture ressources industrielles a-t-elle sa place dans l’une de ces conversations ?",
@@ -4215,11 +6096,18 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         ],
         "cta": {
           "title": "Votre lecture des ressources industrielles peut éclairer ce qui rend une trajectoire industrielle soutenable — ou non.",
-          "text": "Un échange de 15 minutes — sans exposer de plan interne, sans site identifiable, sans engagement — pour vérifier si votre angle a une place dans l’une des 4 positions ressources industrielles ouvertes.",
+          "text": "Un échange de 15 minutes — sans exposer de plan interne, sans site identifiable, sans engagement — pour vérifier si votre angle a une place dans l’une des 5 positions avec lecture ressources industrielles ouvertes.",
           "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
           "footnote": "Les positions ressources industrielles se ferment au fil de la composition éditoriale · Page non indexée"
         }
-      }
+      },
+      "angleCodes": [
+        "IND-C3-RC-A04",
+        "IND-C4-GS-A02",
+        "IND-C4-RC-A02",
+        "IND-C4-GS-A14",
+        "IND-C3-RC-A12"
+      ]
     },
     "finance": {
       "cycleCode": "IND",
@@ -4270,7 +6158,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         "rarityBlock": {
           "kicker": "Rareté éditoriale",
           "title": "5 positions avec lecture financière sont ouvertes dans le cycle Industrie.",
-          "text": "Chaque position financière correspond à un angle contextualisé. Lorsqu’une position est confirmée, elle n’est plus ouverte à une lecture financière équivalente."
+          "text": "Chaque position correspond à un angle contextualisé. Une position avec lecture financière ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
         },
         "heroNoteHtml": "Aucun chiffre confidentiel à exposer &nbsp;·&nbsp; Aucun dossier sensible à commenter &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Collaboration possible avec services juridique, communication ou corporate de votre organisation",
         "audience": {
@@ -4401,7 +6289,14 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
           "footnote": "Les positions financières se ferment au fil de la composition éditoriale · Page non indexée"
         }
-      }
+      },
+      "angleCodes": [
+        "IND-C1-AC-A01",
+        "IND-C1-RC-A03",
+        "IND-C2-AC-A05",
+        "IND-C3-AC-A09",
+        "IND-C4-AC-A14"
+      ]
     },
     "juridique": {
       "cycleCode": "IND",
@@ -4448,11 +6343,11 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         ]
       },
       "copy": {
-        "positionsCountNote": "Seulement 4 positions avec lecture juridique / réglementaire sont ouvertes sur tout le cycle Industrie.",
+        "positionsCountNote": "10 positions avec lecture juridique sont ouvertes dans le cycle Industrie.",
         "rarityBlock": {
           "kicker": "Rareté éditoriale",
-          "title": "Seulement 4 positions avec lecture juridique / réglementaire sont ouvertes sur tout le cycle Industrie.",
-          "text": "Cette rareté est volontaire : la lecture juridique intervient uniquement lorsque le cadre contractuel, social, réglementaire, environnemental ou de responsabilité éclaire réellement une bascule industrielle. Lorsqu’une position est confirmée, elle n’est plus ouverte à une lecture juridique équivalente."
+          "title": "10 positions avec lecture juridique sont ouvertes dans le cycle Industrie.",
+          "text": "Chaque position correspond à un angle contextualisé. Une position avec lecture juridique ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
         },
         "heroNoteHtml": "Aucun dossier ni contentieux à exposer &nbsp;·&nbsp; Aucun cas identifiable à commenter &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Collaboration possible avec services juridique, communication ou corporate de votre organisation",
         "audience": {
@@ -4579,11 +6474,23 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         ],
         "cta": {
           "title": "Votre lecture juridique peut éclairer le moment où le cadre devient décisif.",
-          "text": "Un échange de 15 minutes — sans exposer de dossier, sans engagement — pour vérifier si votre angle a une place dans l’une des 4 positions juridiques ouvertes.",
+          "text": "Un échange de 15 minutes — sans exposer de dossier, sans engagement — pour vérifier si votre angle a une place dans l’une des 10 positions avec lecture juridique ouvertes.",
           "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
           "footnote": "Les positions juridiques se ferment au fil de la composition éditoriale · Page non indexée"
         }
-      }
+      },
+      "angleCodes": [
+        "IND-C1-AC-J01",
+        "IND-C2-AC-J02",
+        "IND-C3-AC-J03",
+        "IND-C4-AC-J04",
+        "IND-C2-GS-A07",
+        "IND-C2-AC-A07",
+        "IND-C2-RC-A07",
+        "IND-C3-AC-A11",
+        "IND-C2-GS-A03",
+        "IND-C2-RC-A03"
+      ]
     },
     "operations": {
       "cycleCode": "IND",
@@ -4630,11 +6537,11 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         ]
       },
       "copy": {
-        "positionsCountNote": "7 positions avec lecture opérationnelle sont ouvertes dans le cycle Industrie.",
+        "positionsCountNote": "11 positions avec lecture opérationnelle sont ouvertes dans le cycle Industrie.",
         "rarityBlock": {
           "kicker": "Rareté éditoriale",
-          "title": "7 positions avec lecture opérationnelle sont ouvertes dans le cycle Industrie.",
-          "text": "Chaque position correspond à un angle contextualisé. Une position opérationnelle ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
+          "title": "11 positions avec lecture opérationnelle sont ouvertes dans le cycle Industrie.",
+          "text": "Chaque position correspond à un angle contextualisé. Une position avec lecture opérationnelle ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
         },
         "heroNoteHtml": "Aucun chiffre interne à exposer &nbsp;·&nbsp; Aucun dossier sensible à commenter &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Préparation possible avec les équipes communication, juridique ou corporate de votre organisation",
         "heroCardTitle": "Votre lecture opérationnelle a-t-elle sa place dans l’une de ces conversations ?",
@@ -4763,11 +6670,24 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         ],
         "cta": {
           "title": "Votre lecture opérationnelle peut éclairer ce qui fait tenir — ou fragilise — une trajectoire industrielle.",
-          "text": "Un échange de 15 minutes — sans exposer de chiffre interne, sans dossier sensible, sans engagement — pour vérifier si votre angle a une place dans l’une des 7 positions opérationnelles ouvertes.",
+          "text": "Un échange de 15 minutes — sans exposer de chiffre interne, sans dossier sensible, sans engagement — pour vérifier si votre angle a une place dans l’une des 11 positions avec lecture opérationnelle ouvertes.",
           "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
           "footnote": "Les positions opérationnelles se ferment au fil de la composition éditoriale · Page non indexée"
         }
-      }
+      },
+      "angleCodes": [
+        "IND-C1-GS-A02",
+        "IND-C1-AC-A02",
+        "IND-C1-RC-A02",
+        "IND-C3-GS-A02",
+        "IND-C3-AC-A02",
+        "IND-C3-RC-A02",
+        "IND-C3-GS-A10",
+        "IND-C3-AC-A10",
+        "IND-C3-RC-A09",
+        "IND-C2-GS-A06",
+        "IND-C2-RC-A06"
+      ]
     },
     "emploi-competences": {
       "cycleCode": "IND",
@@ -4814,11 +6734,11 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         ]
       },
       "copy": {
-        "positionsCountNote": "7 positions avec lecture emploi & compétences sont ouvertes dans le cycle Industrie.",
+        "positionsCountNote": "12 positions avec lecture emploi & compétences sont ouvertes dans le cycle Industrie.",
         "rarityBlock": {
           "kicker": "Rareté éditoriale",
-          "title": "7 positions avec lecture emploi & compétences sont ouvertes dans le cycle Industrie.",
-          "text": "Chaque position correspond à un angle contextualisé. Une position emploi & compétences ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
+          "title": "12 positions avec lecture emploi & compétences sont ouvertes dans le cycle Industrie.",
+          "text": "Chaque position correspond à un angle contextualisé. Une position avec lecture emploi & compétences ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
         },
         "heroNoteHtml": "Aucun dossier social identifiable à exposer &nbsp;·&nbsp; Aucun chiffre interne à communiquer &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Préparation possible avec les équipes communication, juridique, RH ou corporate de votre organisation",
         "heroCardTitle": "Votre lecture emploi & compétences a-t-elle sa place dans l’une de ces conversations ?",
@@ -4947,21 +6867,37 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         ],
         "cta": {
           "title": "Votre lecture emploi & compétences peut éclairer ce qui fait tenir — ou fragilise — une trajectoire industrielle.",
-          "text": "Un échange de 15 minutes — sans exposer de dossier social, sans situation identifiable, sans engagement — pour vérifier si votre angle a une place dans l’une des 7 positions emploi & compétences ouvertes.",
+          "text": "Un échange de 15 minutes — sans exposer de dossier social, sans situation identifiable, sans engagement — pour vérifier si votre angle a une place dans l’une des 12 positions avec lecture emploi & compétences ouvertes.",
           "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
           "footnote": "Les positions emploi & compétences se ferment au fil de la composition éditoriale · Page non indexée"
         }
-      }
+      },
+      "angleCodes": [
+        "IND-C1-GS-A04",
+        "IND-C1-AC-A04",
+        "IND-C3-GS-A03",
+        "IND-C3-RC-A03",
+        "IND-C4-GS-A01",
+        "IND-C4-AC-A01",
+        "IND-C4-RC-A01",
+        "IND-C3-GS-A11",
+        "IND-C3-RC-A11",
+        "IND-C4-GS-A13",
+        "IND-C4-AC-A13",
+        "IND-C4-RC-A13"
+      ]
     },
     "technologie-systemes": {
       "cycleCode": "IND",
       "readingType": "TECHNOLOGIQUE",
       "angleCodes": [
         "IND-C1-GS-A03",
+        "IND-C1-AC-A03",
         "IND-C2-GS-A08",
         "IND-C2-AC-A08",
         "IND-C2-RC-A08",
-        "IND-C3-GS-A09"
+        "IND-C3-GS-A09",
+        "IND-C3-RC-A10"
       ],
       "title": "Lecture technologie & systèmes — Cycle Industrie & transformation des territoires | En Plateau",
       "metaDescription": "Une place précise pour éclairer les arbitrages systèmes, automatisation, data, ERP, MES, OT/IT, interfaces, cybersécurité et architecture technique dans les trajectoires industrielles.",
@@ -5005,11 +6941,11 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         ]
       },
       "copy": {
-        "positionsCountNote": "5 positions avec lecture technologie & systèmes sont ouvertes dans le cycle Industrie.",
+        "positionsCountNote": "7 positions avec lecture technologie & systèmes sont ouvertes dans le cycle Industrie.",
         "rarityBlock": {
           "kicker": "Rareté éditoriale",
-          "title": "5 positions avec lecture technologie & systèmes sont ouvertes dans le cycle Industrie.",
-          "text": "Chaque position correspond à un angle contextualisé. Une position technologie & systèmes ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
+          "title": "7 positions avec lecture technologie & systèmes sont ouvertes dans le cycle Industrie.",
+          "text": "Chaque position correspond à un angle contextualisé. Une position avec lecture technologie & systèmes ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
         },
         "heroNoteHtml": "Aucune architecture interne à exposer &nbsp;·&nbsp; Aucun incident, schéma SI/OT ou dossier sensible à commenter &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Préparation possible avec les équipes communication, juridique, SI, cybersécurité ou corporate de votre organisation",
         "heroCardTitle": "Votre lecture technologie & systèmes a-t-elle sa place dans l’une de ces conversations ?",
@@ -5138,7 +7074,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         ],
         "cta": {
           "title": "Votre lecture des systèmes peut éclairer ce qui rend une trajectoire industrielle pilotable — ou non.",
-          "text": "Un échange de 15 minutes — sans exposer d’architecture interne, sans incident identifiable, sans engagement — pour vérifier si votre angle a une place dans l’une des 5 positions technologie & systèmes ouvertes.",
+          "text": "Un échange de 15 minutes — sans exposer d’architecture interne, sans incident identifiable, sans engagement — pour vérifier si votre angle a une place dans l’une des 7 positions avec lecture technologie & systèmes ouvertes.",
           "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
           "footnote": "Les positions technologie & systèmes se ferment au fil de la composition éditoriale · Page non indexée"
         }
@@ -5151,9 +7087,12 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
       "cycleCode": "IND",
       "readingType": "TERRITORIALE",
       "angleCodes": [
+        "IND-C1-RC-A04",
+        "IND-C2-GS-A02",
+        "IND-C2-RC-A02",
+        "IND-C4-GS-A04",
         "IND-C4-GS-A16",
         "IND-C4-AC-A16",
-        "IND-C4-RC-A14",
         "IND-C4-RC-A16"
       ],
       "title": "Lecture territoriale — Cycle Industrie & transformation des territoires | En Plateau",
@@ -5198,11 +7137,11 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         ]
       },
       "copy": {
-        "positionsCountNote": "4 positions avec lecture territoriale sont ouvertes dans le cycle Industrie.",
+        "positionsCountNote": "7 positions avec lecture territoriale sont ouvertes dans le cycle Industrie.",
         "rarityBlock": {
           "kicker": "Rareté éditoriale",
-          "title": "4 positions avec lecture territoriale sont ouvertes dans le cycle Industrie.",
-          "text": "Chaque position correspond à un angle contextualisé. Une position territoriale ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
+          "title": "7 positions avec lecture territoriale sont ouvertes dans le cycle Industrie.",
+          "text": "Chaque position correspond à un angle contextualisé. Une position avec lecture territoriale ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
         },
         "heroNoteHtml": "Aucun dossier d’implantation à exposer &nbsp;·&nbsp; Aucun site sensible, arbitrage foncier ou échange confidentiel à commenter &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Préparation possible avec les équipes communication, juridique, affaires publiques ou corporate de votre organisation",
         "heroCardTitle": "Votre lecture territoriale a-t-elle sa place dans l’une de ces conversations ?",
@@ -5331,7 +7270,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         ],
         "cta": {
           "title": "Votre lecture territoriale peut éclairer ce qui rend une trajectoire industrielle ancrée — ou fragile.",
-          "text": "Un échange de 15 minutes — sans exposer de dossier territorial, sans site identifiable, sans engagement — pour vérifier si votre angle a une place dans l’une des 4 positions territoriales ouvertes.",
+          "text": "Un échange de 15 minutes — sans exposer de dossier territorial, sans site identifiable, sans engagement — pour vérifier si votre angle a une place dans l’une des 7 positions avec lecture territoriale ouvertes.",
           "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
           "footnote": "Les positions territoriales se ferment au fil de la composition éditoriale · Page non indexée"
         }
