@@ -1214,3 +1214,27 @@
   line-height: 1.55;
   color: var(--h3-text-muted);
 }
+/* Ajustement hero home — remonter la carte de sollicitation */
+
+.home-hero-grid {
+  align-items: center;
+}
+
+.home-hero .home-film {
+  height: clamp(260px, 28vw, 340px) !important;
+  margin-bottom: 12px !important;
+}
+
+.home-hero-card {
+  margin-top: 10px !important;
+  padding: 22px 24px !important;
+}
+
+.home-hero-card p {
+  margin-bottom: 16px !important;
+}
+
+.home-hero-small--right {
+  margin-top: 12px !important;
+  max-width: 430px;
+}
