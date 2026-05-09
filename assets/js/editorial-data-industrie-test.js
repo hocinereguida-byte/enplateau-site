@@ -1,7 +1,7 @@
-/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V19 fix syntax + landing filter */
+/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V21 ressources industrielles — libellés courts */
 
 window.EN_PLATEAU_EDITORIAL_DATA = {
-  "version": "2026-05-09-v19-syntax-filter-fix",
+  "version": "2026-05-09-v21-ressources-industrielles-labels-courts",
   "status": "test",
   "sourceDocument": "programme_editorial_industrie.docx",
   "scope": {
@@ -96,12 +96,12 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
     },
     "ENERGIE_RESSOURCES": {
       "code": "ENERGIE_RESSOURCES",
-      "label": "Lecture énergie / ressources / décarbonation",
+      "label": "Lecture ressources industrielles",
       "slug": "decarbonation-energie-soutenabilite",
-      "shortLabel": "Énergie / ressources",
+      "shortLabel": "Ressources industrielles",
       "landingSlug": "industrie/decarbonation-energie-soutenabilite",
       "calSource": "lp-industrie-decarbonation-energie",
-      "positioning": "Éclairer les seuils où énergie, eau, ressources, utilités ou carbone changent la nature de la décision industrielle."
+      "positioning": "Éclairer les seuils où énergie, eau, ressources, utilités ou carbone deviennent des conditions concrètes de décision industrielle."
     }
   },
   "cycles": [
@@ -1226,7 +1226,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "tensionArbitrage": "Absorber les surcoûts pour préserver la compétitivité à court terme ou investir dans la transformation.",
           "primaryProfiles": [
             "DAF / CFO industriel",
-            "Énergie / ressources",
+            "Ressources industrielles",
             "Corporate finance",
             "Compétitivité industrielle",
             "Décarbonation / utilités"
@@ -3372,10 +3372,10 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
     "decarbonation-energie-soutenabilite": {
       "cycleCode": "IND",
       "readingType": "ENERGIE_RESSOURCES",
-      "title": "Lecture décarbonation, énergie & soutenabilité — Cycle Industrie & transformation des territoires | En Plateau",
-      "metaDescription": "Une place précise pour éclairer les arbitrages énergie, eau, ressources, carbone, utilités, process et soutenabilité physique dans les trajectoires industrielles.",
-      "navLabel": "Cycle Industrie · Lecture décarbonation, énergie & soutenabilité",
-      "heroTitleHtml": "Votre lecture<br><em>éclaire</em><br>les limites physiques<br>de la trajectoire industrielle.",
+      "title": "Lecture ressources industrielles — Cycle Industrie & transformation des territoires | En Plateau",
+      "metaDescription": "Une place précise pour éclairer les arbitrages énergie, eau, carbone, utilités, ressources et soutenabilité physique dans les trajectoires industrielles.",
+      "navLabel": "Cycle Industrie · Lecture ressources industrielles",
+      "heroTitleHtml": "Votre lecture<br><em>éclaire</em><br>les ressources qui rendent<br>l'industrie possible.",
       "heroLead": "Certaines transformations industrielles ne se jouent pas seulement dans la stratégie, la finance ou l’outil. Elles se jouent dans l’accès à l’énergie, à l’eau, aux utilités, aux réseaux, aux ressources et dans la capacité réelle à décarboner sans fragiliser la continuité industrielle.",
       "heroProfiles": [
         {
@@ -3388,8 +3388,8 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         }
       ],
       "valueSection": {
-        "title": "Faire reconnaître l’énergie, l’eau et le carbone comme conditions réelles de décision industrielle",
-        "intro": "Une lecture décarbonation, énergie & soutenabilité ne consiste pas à tenir un discours RSE. Elle permet de montrer comment les contraintes physiques — énergie, eau, utilités, carbone, réseaux, ressources, climat — deviennent des conditions concrètes de continuité, d’investissement, de compétitivité ou de transformation industrielle.",
+        "title": "Faire reconnaître les ressources industrielles comme conditions réelles de décision",
+        "intro": "Une lecture ressources industrielles ne consiste pas à tenir un discours RSE. Elle permet de montrer comment l’énergie, l’eau, le carbone, les utilités, les réseaux et les ressources disponibles deviennent des conditions concrètes de continuité, d’investissement, de compétitivité ou de transformation industrielle.",
         "cards": [
           {
             "label": "Direction industrielle · Site exposé · Industrie intensive",
@@ -3419,17 +3419,17 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         ]
       },
       "copy": {
-        "positionsCountNote": "4 positions avec lecture décarbonation, énergie & soutenabilité sont ouvertes dans le cycle Industrie.",
+        "positionsCountNote": "4 positions avec lecture ressources industrielles sont ouvertes dans le cycle Industrie.",
         "rarityBlock": {
           "kicker": "Rareté éditoriale",
-          "title": "4 positions avec lecture décarbonation, énergie & soutenabilité sont ouvertes dans le cycle Industrie.",
-          "text": "Chaque position correspond à un angle contextualisé. Une position décarbonation, énergie & soutenabilité ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
+          "title": "4 positions avec lecture ressources industrielles sont ouvertes dans le cycle Industrie.",
+          "text": "Chaque position correspond à un angle contextualisé. Une position ressources industrielles ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
         },
         "heroNoteHtml": "Aucun plan carbone confidentiel à exposer &nbsp;·&nbsp; Aucun chiffre interne à communiquer &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Préparation possible avec les équipes communication, juridique, RSE, finance ou corporate de votre organisation",
-        "heroCardTitle": "Votre lecture énergie, carbone ou ressources a-t-elle sa place dans l’une de ces conversations ?",
+        "heroCardTitle": "Votre lecture ressources industrielles a-t-elle sa place dans l’une de ces conversations ?",
         "heroCardText": "En 15 minutes, nous vérifions si votre lecture correspond à une position encore disponible — sans exposer de données internes, de plan confidentiel, de site identifiable ou de décision sensible.",
         "audience": {
-          "title": "Cette lecture décarbonation, énergie & soutenabilité vous est-elle destinée ?",
+          "title": "Cette lecture ressources industrielles vous est-elle destinée ?",
           "yesTitle": "Vous portez probablement une lecture pertinente si…",
           "noTitle": "Moins adapté si…",
           "yesItems": [
@@ -3444,15 +3444,15 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "Vous souhaitez commenter un plan carbone interne, un site identifiable ou une décision confidentielle.",
             "Votre approche ne relie pas les contraintes énergie, eau, carbone ou ressources aux décisions industrielles qui en découlent."
           ],
-          "panel": "La lecture décarbonation, énergie & soutenabilité ne consiste pas à raconter une trajectoire RSE. Elle consiste à éclairer les contraintes physiques qui rendent une trajectoire industrielle tenable, fragile ou à réarbitrer."
+          "panel": "La lecture ressources industrielles ne consiste pas à raconter une trajectoire RSE. Elle consiste à éclairer les contraintes physiques qui rendent une trajectoire industrielle tenable, fragile ou à réarbitrer."
         },
         "conversations": {
-          "title": "Les angles où l’énergie, l’eau, le carbone et les ressources deviennent décisifs",
-          "intro": "La page met d’abord en avant les angles décarbonation, énergie & soutenabilité ouverts. Les lectures complémentaires ne s’affichent que lorsqu’elles appartiennent à la même conversation et au même contexte.",
+          "title": "Les angles où les ressources industrielles deviennent décisives",
+          "intro": "La page met d’abord en avant les angles ressources industrielles ouverts. Les lectures complémentaires ne s’affichent que lorsqu’elles appartiennent à la même conversation et au même contexte.",
           "panel": "Ces positions ne demandent pas de commenter un plan interne ; elles proposent d’éclairer les arbitrages physiques, économiques et industriels qui se répètent dans les trajectoires de transformation."
         },
         "preparation": {
-          "titleHtml": "Beaucoup arrivent avec une expertise énergie, climat ou ressources. <em style=\"color:rgba(240,236,230,0.55);\">Ils repartent avec une lecture industrielle défendable.</em>",
+          "titleHtml": "Beaucoup arrivent avec une expertise des ressources industrielles. <em style=\"color:rgba(240,236,230,0.55);\">Ils repartent avec une lecture industrielle défendable.</em>",
           "intro": "La préparation éditoriale transforme une expertise énergie, carbone, ressources, utilités ou transformation de site en lecture située : claire, non intrusive et utile pour d’autres décideurs industriels."
         },
         "dimensions": [
@@ -3551,10 +3551,10 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           }
         ],
         "cta": {
-          "title": "Votre lecture énergie, carbone ou ressources peut éclairer ce qui rend une trajectoire industrielle soutenable — ou non.",
-          "text": "Un échange de 15 minutes — sans exposer de plan interne, sans site identifiable, sans engagement — pour vérifier si votre angle a une place dans l’une des 4 positions décarbonation, énergie & soutenabilité ouvertes.",
+          "title": "Votre lecture des ressources industrielles peut éclairer ce qui rend une trajectoire industrielle soutenable — ou non.",
+          "text": "Un échange de 15 minutes — sans exposer de plan interne, sans site identifiable, sans engagement — pour vérifier si votre angle a une place dans l’une des 4 positions ressources industrielles ouvertes.",
           "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
-          "footnote": "Les positions décarbonation, énergie & soutenabilité se ferment au fil de la composition éditoriale · Page non indexée"
+          "footnote": "Les positions ressources industrielles se ferment au fil de la composition éditoriale · Page non indexée"
         }
       }
     },
