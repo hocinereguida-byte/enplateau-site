@@ -456,42 +456,66 @@
   height: var(--film-window-height);
   overflow: hidden;
   border-radius: 0;
-  border: 1px solid rgba(255,255,255,.14);
-  background:
-    radial-gradient(circle at 10px 14px, rgba(244,233,220,.72) 0 3px, transparent 3.6px) left top / 24px 30px repeat-y,
-    radial-gradient(circle at calc(100% - 10px) 14px, rgba(244,233,220,.72) 0 3px, transparent 3.6px) right top / 24px 30px repeat-y,
-    linear-gradient(90deg, #050505 0%, #111111 12%, #050505 12%, #050505 88%, #111111 88%, #050505 100%);
+  border: 1px solid rgba(255,255,255,.10);
+  background-color: #080808;
+  background-image:
+    linear-gradient(rgba(255,255,255,.07), rgba(255,255,255,.07)),
+    linear-gradient(rgba(255,255,255,.07), rgba(255,255,255,.07)),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(244,233,220,.16) 0 1px,
+      transparent 1px 34px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(244,233,220,.16) 0 1px,
+      transparent 1px 34px
+    ),
+    linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.01));
+  background-size:
+    1px calc(100% - 24px),
+    1px calc(100% - 24px),
+    5px calc(100% - 36px),
+    5px calc(100% - 36px),
+    100% 100%;
+  background-position:
+    18px 12px,
+    calc(100% - 18px) 12px,
+    9px 18px,
+    calc(100% - 14px) 18px,
+    0 0;
+  background-repeat: no-repeat;
   box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.04),
-    inset 0 0 34px rgba(0,0,0,.92);
+    inset 0 0 0 1px rgba(255,255,255,.025),
+    inset 0 0 28px rgba(0,0,0,.78);
 }
 
 .home-film::before,
 .home-film::after {
   content: "";
   position: absolute;
-  left: 28px;
-  right: 28px;
-  height: 72px;
+  left: 26px;
+  right: 26px;
+  height: 64px;
   z-index: 3;
   pointer-events: none;
 }
 
 .home-film::before {
   top: 0;
-  background: linear-gradient(180deg, rgba(17,17,17,1), rgba(17,17,17,0));
+  background: linear-gradient(180deg, rgba(8,8,8,.96), rgba(8,8,8,0));
 }
 
 .home-film::after {
   bottom: 0;
-  background: linear-gradient(0deg, rgba(17,17,17,1), rgba(17,17,17,0));
+  background: linear-gradient(0deg, rgba(8,8,8,.96), rgba(8,8,8,0));
 }
 
 .home-film-track {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 18px 34px;
+  gap: 8px;
+  padding: 14px 28px;
   animation: homeScrollFilm 36s ease-in-out infinite;
 }
 
@@ -499,12 +523,12 @@
   position: relative;
   border-radius: 0;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.08);
   background: #000;
   aspect-ratio: 16 / 9;
   box-shadow:
-    0 0 0 1px rgba(0,0,0,.82),
-    inset 0 0 18px rgba(0,0,0,.55);
+    0 0 0 1px rgba(0,0,0,.62),
+    inset 0 0 18px rgba(0,0,0,.48);
 }
 
 .home-film-track > div::after {
@@ -512,8 +536,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.48)),
-    linear-gradient(90deg, rgba(0,0,0,.28), transparent 18%, transparent 82%, rgba(0,0,0,.28));
+    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.36)),
+    linear-gradient(90deg, rgba(0,0,0,.24), transparent 20%, transparent 80%, rgba(0,0,0,.24));
   pointer-events: none;
 }
 
@@ -521,8 +545,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: .66;
-  filter: grayscale(100%) contrast(112%) brightness(.72);
+  opacity: .74;
+  filter: grayscale(100%) contrast(110%) brightness(.72);
 }
 
 @keyframes homeScrollFilm {
@@ -531,6 +555,16 @@
     transform: translateY(0);
   }
 
+  42%,
+  58% {
+    transform: translateY(calc((-100% + var(--film-window-height)) / 2));
+  }
+
+  84%,
+  100% {
+    transform: translateY(calc(-100% + var(--film-window-height)));
+  }
+}
   42%,
   58% {
     transform: translateY(calc((-100% + var(--film-window-height)) / 2));
