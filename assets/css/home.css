@@ -1381,3 +1381,11 @@
   color: #ffffff !important;
 }
 filter: grayscale(100%) contrast(108%) brightness(.82);
+/* Noir et blanc global — images de contenu et blocs visuels */
+
+.home-cycle-img,
+.home-decision-visual,
+.home-split-title,
+.home-film-track img {
+  filter: grayscale(100%) contrast(108%) brightness(.78);
+}
