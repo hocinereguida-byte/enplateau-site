@@ -1,7 +1,7 @@
-/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V16 opérations + emploi-compétences complet */
+/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V17 opérations + emploi-compétences + décarbonation énergie soutenabilité */
 
 window.EN_PLATEAU_EDITORIAL_DATA = {
-  "version": "2026-05-09-v16-emploi-competences-complet",
+  "version": "2026-05-09-v17-decarbonation-energie-soutenabilite",
   "status": "test",
   "sourceDocument": "programme_editorial_industrie.docx",
   "scope": {
@@ -11,7 +11,8 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
       "FINANCIERE",
       "JURIDIQUE",
       "OPERATIONNELLE",
-      "RH_COMPETENCES"
+      "RH_COMPETENCES",
+      "ENERGIE_RESSOURCES"
     ],
     "note": "Référentiel test pour gabarit unique de landing page. Les landing pages sont pilotées par body[data-landing]. Version enrichie avec la lecture opérationnelle."
   },
@@ -96,10 +97,10 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
     "ENERGIE_RESSOURCES": {
       "code": "ENERGIE_RESSOURCES",
       "label": "Lecture énergie / ressources / décarbonation",
-      "slug": "energie-ressources",
+      "slug": "decarbonation-energie-soutenabilite",
       "shortLabel": "Énergie / ressources",
-      "landingSlug": "industrie/energie-ressources",
-      "calSource": "lp-industrie-energie",
+      "landingSlug": "industrie/decarbonation-energie-soutenabilite",
+      "calSource": "lp-industrie-decarbonation-energie",
       "positioning": "Éclairer les seuils où énergie, eau, ressources, utilités ou carbone changent la nature de la décision industrielle."
     }
   },
@@ -2651,7 +2652,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
 },
-        {
+                {
           "code": "A04",
           "crmCode": "IND-C3-RC-A04",
           "programmeCode": "IND-C3-RSS-04",
@@ -2660,26 +2661,72 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "typeLecture": "ENERGIE_RESSOURCES",
           "questionEditoriale": "À partir de quand la contrainte carbone impose-t-elle une réécriture du process, de l'outil, de l'offre ou de la vocation industrielle du site ?",
           "questionPublique": "À partir de quand la contrainte carbone impose-t-elle une réécriture du process, de l'outil, de l'offre ou de la vocation industrielle du site ?",
-          "questionActivation": "Lorsqu'elle devient critique, la contrainte carbone ne se limite plus à la réduction progressive des émissions. Elle peut remettre en cause le process, l'outil, l'offre ou même la vocation industrielle d'un site.",
+          "questionActivation": "Lorsqu’elle devient critique, la contrainte carbone ne se limite plus à réduire progressivement les émissions. Vous n’êtes pas attendu sur un plan carbone interne, mais sur votre lecture du moment où elle peut remettre en cause le process, l’outil, l’offre ou même la vocation industrielle d’un site.",
           "introMecanisme": "Lorsqu'elle devient critique, la contrainte carbone ne se limite plus à la réduction progressive des émissions. Elle peut remettre en cause le process, l'outil, l'offre ou même la vocation industrielle d'un site.",
-          "formatCourt": {
-            "titrePublicCourt": "À partir de quand la contrainte carbone impose-t-elle une réécriture du process, de l'outil, de l'offre ou de la vocation industrielle du site ?",
-            "usage": "Titre court source pour lectures complémentaires."
-          },
+          "pointBascule": "Quand la contrainte carbone remet-elle en cause la vocation industrielle du site ?",
+          "tensionArbitrage": "Décarboner l'activité existante ou redéfinir ce que le site doit produire et représenter.",
           "primaryProfiles": [
-            "Énergie / utilités",
-            "Décarbonation industrielle",
-            "Ressources",
-            "Direction environnement",
-            "Transition énergétique"
+                    "Direction décarbonation",
+                    "Direction industrielle exposée",
+                    "Énergie / climat industriel",
+                    "Transformation de process",
+                    "Conseil carbone industriel"
+          ],
+          "landingPages": [
+                    "decarbonation-energie-soutenabilite"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "landingPages": [
-            "emploi-competences"
+          "showInForm": true,
+          "formatCourt": {
+                    "titrePublicCourt": "Quand la contrainte carbone oblige-t-elle à réécrire le process, l’outil ou la vocation d’un site ?",
+                    "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+                    "titre": "Fiche intervenant — Contrainte carbone et vocation industrielle du site",
+                    "chapeau": "Votre intervention permettrait d’éclairer le moment où la contrainte carbone cesse d’être un chantier d’optimisation pour devenir un facteur de redéfinition du process, de l’outil, de l’offre ou de la vocation industrielle du site.",
+                    "dimensions": [
+                              {
+                                        "key": "transformation",
+                                        "title": "Transformation en cours / contexte",
+                                        "text": "Qualifier ce qui change concrètement : contrainte carbone critique, process industriel, outil, offre, vocation industrielle du site et trajectoire de transformation, intensité de la contrainte, marges de manœuvre et moment où la décision change de nature."
+                              },
+                              {
+                                        "key": "acteurs",
+                                        "title": "Acteurs impactés",
+                                        "text": "Identifier les acteurs concernés par la bascule : direction industrielle, énergie, climat, RSE, finance, ingénierie, production, maintenance, clients, financeurs, territoire et autorités compétentes."
+                              },
+                              {
+                                        "key": "arbitrages",
+                                        "title": "Arbitrages & décisions",
+                                        "text": "Rendre visibles les choix à effectuer : décarboner l’existant ou changer de process, investir ou repositionner, transformer l’offre, redéfinir la vocation du site ou accepter une rupture industrielle."
+                              },
+                              {
+                                        "key": "defis",
+                                        "title": "Défis & opportunités",
+                                        "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : continuité mieux sécurisée, trajectoire carbone plus crédible, compétitivité rééquilibrée ou site transformé avec lucidité."
+                              },
+                              {
+                                        "key": "vision",
+                                        "title": "Vision attendue",
+                                        "text": "Formuler une lecture située de ce que votre expérience énergie, carbone, ressources, climat ou transformation industrielle permet de reconnaître avant que la contrainte ne devienne bloquante."
+                              },
+                              {
+                                        "key": "echelle",
+                                        "title": "Échelle pertinente",
+                                        "text": "Situer la lecture à la bonne échelle : process, site, portefeuille d’activités, entreprise, filière ou territoire industriel."
+                              }
+                    ],
+                    "momentBascule": "Quand la contrainte carbone remet-elle en cause la vocation industrielle du site ?",
+                    "tensionCentrale": "Décarboner l'activité existante ou redéfinir ce que le site doit produire et représenter.",
+                    "securisation": "L’échange ne suppose pas de commenter un plan carbone interne, un site sensible, un chiffre confidentiel, un client, un fournisseur ou une décision identifiable. Il s’agit d’éclairer un mécanisme énergie, eau, carbone, ressources ou soutenabilité à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique, RSE, finance ou corporate."
+          },
+          "complementaryCodes": [
+                    "IND-C3-RC-A01",
+                    "IND-C3-RC-A02",
+                    "IND-C3-RC-A03"
           ],
-          "isComplementaryStub": true
-        },
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+},
                 {
           "code": "A01",
           "crmCode": "IND-C4-GS-A01",
@@ -2755,81 +2802,81 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
 },
-        {
+                {
           "code": "A02",
           "crmCode": "IND-C4-GS-A02",
           "programmeCode": "IND-C4-CST-02",
           "conversationCode": "C4",
           "contextCode": "GS",
-          "typeLecture": "OPERATIONNELLE",
+          "typeLecture": "ENERGIE_RESSOURCES",
           "questionEditoriale": "À partir de quand l'accès à l'énergie, à l'eau, aux utilités ou aux capacités réseaux devient-il le véritable verrou d'une montée en capacité ?",
           "questionPublique": "À partir de quand l'accès à l'énergie, à l'eau, aux utilités ou aux capacités réseaux devient-il le véritable verrou d'une montée en capacité ?",
-          "questionActivation": "La croissance industrielle suppose des ressources physiques : énergie, eau, chaleur, raccordements, capacités réseaux. Ces ressources peuvent devenir le premier verrou de développement lorsque l'activité augmente.",
+          "questionActivation": "La croissance industrielle suppose des ressources physiques : énergie, eau, chaleur, raccordements, capacités réseaux. Vous n’êtes pas attendu sur les données internes d’un site, mais sur votre lecture du moment où ces ressources deviennent le premier verrou d’une montée en capacité.",
           "introMecanisme": "La croissance industrielle suppose des ressources physiques : énergie, eau, chaleur, raccordements, capacités réseaux. Ces ressources peuvent devenir le premier verrou de développement lorsque l'activité augmente.",
-          "formatCourt": {
-            "titrePublicCourt": "À partir de quand l'accès à l'énergie, à l'eau, aux utilités ou aux capacités réseaux devient-il le véritable verrou d'une montée en capacité ?",
-            "usage": "Titre court source pour lectures complémentaires."
-          },
+          "pointBascule": "À partir de quand les ressources deviennent-elles le verrou principal de la croissance ?",
+          "tensionArbitrage": "Développer l'activité tout en sécurisant les ressources physiques nécessaires pour produire.",
           "primaryProfiles": [
-            "Direction industrielle",
-            "Direction des opérations",
-            "Excellence opérationnelle",
-            "Supply chain",
-            "Performance industrielle"
+                    "Direction énergie",
+                    "Utilités industrielles",
+                    "Eau / ressources",
+                    "Infrastructures industrielles",
+                    "Direction de site"
+          ],
+          "landingPages": [
+                    "decarbonation-energie-soutenabilite"
           ],
           "showInConversationPage": true,
           "showInForm": true,
-          "landingPages": [
-            "operations"
-          ],
-          "pointBascule": "À partir de quand les ressources physiques deviennent-elles le vrai plafond de capacité ?",
-          "tensionArbitrage": "Croître industriellement sans ignorer les limites concrètes d’énergie, d’eau, d’utilités, de raccordement ou de réseau.",
+          "formatCourt": {
+                    "titrePublicCourt": "Quand l’énergie, l’eau, les utilités ou les réseaux deviennent-ils le verrou de la croissance ?",
+                    "usage": "Titre court affiché sur les landing pages."
+          },
           "formatLongIntervenant": {
-            "titre": "Fiche intervenant — Ressources physiques et verrou de capacité",
-            "chapeau": "Votre intervention permettrait d’éclairer les situations où l’accès à l’énergie, l’eau, les utilités ou les capacités réseaux devient le verrou opérationnel d’une trajectoire industrielle.",
-            "dimensions": [
-              {
-                "key": "transformation",
-                "title": "Transformation en cours / contexte",
-                "text": "Qualifier ce qui change réellement dans la situation : volume, cadence, outil, ressources, flux, organisation, niveau de contrainte et moment où la décision change de nature."
-              },
-              {
-                "key": "acteurs",
-                "title": "Acteurs impactés",
-                "text": "Identifier les acteurs concernés par la bascule : direction industrielle, production, maintenance, qualité, supply chain, achats, équipes terrain, clients, fournisseurs ou partenaires."
-              },
-              {
-                "key": "arbitrages",
-                "title": "Arbitrages & décisions",
-                "text": "Rendre visibles les choix à effectuer : tenir, ajuster, prioriser, sécuriser, investir, standardiser, différer, transformer ou renoncer."
-              },
-              {
-                "key": "defis",
-                "title": "Défis & opportunités",
-                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : robustesse accrue, organisation plus lisible, outil mieux sécurisé ou trajectoire mieux assumée."
-              },
-              {
-                "key": "vision",
-                "title": "Vision attendue",
-                "text": "Formuler une lecture située de ce que l’expérience opérationnelle permet de reconnaître avant que la saturation, la dérive ou le blocage ne deviennent évidents."
-              },
-              {
-                "key": "echelle",
-                "title": "Échelle pertinente",
-                "text": "Situer l’analyse à la bonne échelle : ligne, atelier, site, réseau d’usines, chaîne de valeur, fournisseur critique ou trajectoire d’entreprise."
-              }
-            ],
-            "momentBascule": "À partir de quand les ressources physiques deviennent-elles le vrai plafond de capacité ?",
-            "tensionCentrale": "Croître industriellement sans ignorer les limites concrètes d’énergie, d’eau, d’utilités, de raccordement ou de réseau.",
-            "securisation": "L’échange ne suppose pas de commenter une situation interne, un client, un fournisseur, un site ou une décision confidentielle. Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique ou corporate."
+                    "titre": "Fiche intervenant — Ressources physiques et montée en capacité",
+                    "chapeau": "Votre intervention permettrait d’éclairer le moment où l’accès à l’énergie, à l’eau, aux utilités ou aux capacités réseaux devient le verrou réel d’une montée en capacité.",
+                    "dimensions": [
+                              {
+                                        "key": "transformation",
+                                        "title": "Transformation en cours / contexte",
+                                        "text": "Qualifier ce qui change concrètement : croissance, accès à l’énergie, à l’eau, aux utilités, raccordements, réseaux et capacités physiques, intensité de la contrainte, marges de manœuvre et moment où la décision change de nature."
+                              },
+                              {
+                                        "key": "acteurs",
+                                        "title": "Acteurs impactés",
+                                        "text": "Identifier les acteurs concernés par la bascule : direction industrielle, énergie, utilités, eau, maintenance, production, finance, territoire, fournisseurs et gestionnaires de réseaux."
+                              },
+                              {
+                                        "key": "arbitrages",
+                                        "title": "Arbitrages & décisions",
+                                        "text": "Rendre visibles les choix à effectuer : développer ou temporiser, sécuriser les ressources, investir dans les utilités, négocier l’accès aux réseaux, adapter la capacité ou revoir la trajectoire."
+                              },
+                              {
+                                        "key": "defis",
+                                        "title": "Défis & opportunités",
+                                        "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : continuité mieux sécurisée, trajectoire carbone plus crédible, compétitivité rééquilibrée ou site transformé avec lucidité."
+                              },
+                              {
+                                        "key": "vision",
+                                        "title": "Vision attendue",
+                                        "text": "Formuler une lecture située de ce que votre expérience énergie, carbone, ressources, climat ou transformation industrielle permet de reconnaître avant que la contrainte ne devienne bloquante."
+                              },
+                              {
+                                        "key": "echelle",
+                                        "title": "Échelle pertinente",
+                                        "text": "Situer la lecture à la bonne échelle : site, raccordement, réseau, bassin de ressources, territoire, entreprise ou filière."
+                              }
+                    ],
+                    "momentBascule": "À partir de quand les ressources deviennent-elles le verrou principal de la croissance ?",
+                    "tensionCentrale": "Développer l'activité tout en sécurisant les ressources physiques nécessaires pour produire.",
+                    "securisation": "L’échange ne suppose pas de commenter un plan carbone interne, un site sensible, un chiffre confidentiel, un client, un fournisseur ou une décision identifiable. Il s’agit d’éclairer un mécanisme énergie, eau, carbone, ressources ou soutenabilité à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique, RSE, finance ou corporate."
           },
           "complementaryCodes": [
-            "IND-C4-GS-A15",
-            "IND-C4-GS-A01",
-            "IND-C4-GS-A04"
+                    "IND-C4-GS-A01",
+                    "IND-C4-GS-A03",
+                    "IND-C4-GS-A04"
           ],
           "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
-        },
+},
         {
           "code": "A04",
           "crmCode": "IND-C4-GS-A04",
@@ -3035,7 +3082,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           ],
           "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
 },
-        {
+                {
           "code": "A02",
           "crmCode": "IND-C4-RC-A02",
           "programmeCode": "IND-C4-RSS-02",
@@ -3044,23 +3091,72 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "typeLecture": "ENERGIE_RESSOURCES",
           "questionEditoriale": "À partir de quand les contraintes énergétiques, hydriques ou climatiques imposent-elles un arbitrage de localisation, de transformation ou de redéploiement du site ?",
           "questionPublique": "À partir de quand les contraintes énergétiques, hydriques ou climatiques imposent-elles un arbitrage de localisation, de transformation ou de redéploiement du site ?",
-          "questionActivation": "Lorsque l'énergie devient trop coûteuse ou indisponible, lorsque l'eau manque ou que les risques climatiques augmentent, la question peut devenir existentielle pour un site industriel. Il ne s'agit plus seulement d'adapter l'outil.",
+          "questionActivation": "Lorsque l’énergie devient trop coûteuse ou indisponible, lorsque l’eau manque ou que les risques climatiques augmentent, la question peut devenir existentielle pour un site industriel. Vous n’êtes pas attendu sur un site identifiable, mais sur votre lecture du moment où les contraintes physiques imposent localisation, transformation ou redéploiement.",
           "introMecanisme": "Lorsque l'énergie devient trop coûteuse ou indisponible, lorsque l'eau manque ou que les risques climatiques augmentent, la question peut devenir existentielle pour un site industriel. Il ne s'agit plus seulement d'adapter l'outil.",
-          "formatCourt": {
-            "titrePublicCourt": "À partir de quand les contraintes énergétiques, hydriques ou climatiques imposent-elles un arbitrage de localisation, de transformation ou de redéploiement du site ?",
-            "usage": "Titre court source pour lectures complémentaires."
-          },
+          "pointBascule": "Quand les contraintes rendent-elles le site non viable dans sa configuration actuelle ?",
+          "tensionArbitrage": "Préserver l'ancrage industriel ou déplacer/transformer l'activité pour répondre aux contraintes physiques.",
           "primaryProfiles": [
-            "Énergie / utilités",
-            "Décarbonation industrielle",
-            "Ressources",
-            "Direction environnement",
-            "Transition énergétique"
+                    "Énergie industrielle",
+                    "Eau / ressources",
+                    "Résilience climatique",
+                    "Direction de site",
+                    "Conseil transformation / infrastructures"
+          ],
+          "landingPages": [
+                    "decarbonation-energie-soutenabilite"
           ],
           "showInConversationPage": true,
-          "showInForm": false,
-          "isComplementaryStub": true
-        },
+          "showInForm": true,
+          "formatCourt": {
+                    "titrePublicCourt": "Quand l’énergie, l’eau ou le climat rendent-ils nécessaire de transformer, déplacer ou redéployer un site ?",
+                    "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+                    "titre": "Fiche intervenant — Contraintes énergétiques, hydriques ou climatiques et redéploiement de site",
+                    "chapeau": "Votre intervention permettrait d’analyser le moment où l’énergie, l’eau ou le climat ne sont plus de simples paramètres d’exploitation, mais des facteurs d’arbitrage sur la localisation, la transformation ou le redéploiement d’un site.",
+                    "dimensions": [
+                              {
+                                        "key": "transformation",
+                                        "title": "Transformation en cours / contexte",
+                                        "text": "Qualifier ce qui change concrètement : contraintes énergétiques, hydriques ou climatiques, viabilité du site, localisation, transformation ou redéploiement, intensité de la contrainte, marges de manœuvre et moment où la décision change de nature."
+                              },
+                              {
+                                        "key": "acteurs",
+                                        "title": "Acteurs impactés",
+                                        "text": "Identifier les acteurs concernés par la bascule : direction industrielle, énergie, eau, infrastructures, finance, territoire, salariés, clients, fournisseurs, collectivités et acteurs institutionnels."
+                              },
+                              {
+                                        "key": "arbitrages",
+                                        "title": "Arbitrages & décisions",
+                                        "text": "Rendre visibles les choix à effectuer : préserver l’ancrage ou redéployer, investir ou transformer, réduire l’exposition physique, changer de localisation ou refonder la trajectoire du site."
+                              },
+                              {
+                                        "key": "defis",
+                                        "title": "Défis & opportunités",
+                                        "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : continuité mieux sécurisée, trajectoire carbone plus crédible, compétitivité rééquilibrée ou site transformé avec lucidité."
+                              },
+                              {
+                                        "key": "vision",
+                                        "title": "Vision attendue",
+                                        "text": "Formuler une lecture située de ce que votre expérience énergie, carbone, ressources, climat ou transformation industrielle permet de reconnaître avant que la contrainte ne devienne bloquante."
+                              },
+                              {
+                                        "key": "echelle",
+                                        "title": "Échelle pertinente",
+                                        "text": "Situer la lecture à la bonne échelle : site, bassin de ressources, territoire, réseau d’infrastructures, entreprise ou filière."
+                              }
+                    ],
+                    "momentBascule": "Quand les contraintes rendent-elles le site non viable dans sa configuration actuelle ?",
+                    "tensionCentrale": "Préserver l'ancrage industriel ou déplacer/transformer l'activité pour répondre aux contraintes physiques.",
+                    "securisation": "L’échange ne suppose pas de commenter un plan carbone interne, un site sensible, un chiffre confidentiel, un client, un fournisseur ou une décision identifiable. Il s’agit d’éclairer un mécanisme énergie, eau, carbone, ressources ou soutenabilité à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique, RSE, finance ou corporate."
+          },
+          "complementaryCodes": [
+                    "IND-C4-RC-A01",
+                    "IND-C4-RC-A03",
+                    "IND-C4-RC-A04"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+},
         {
           "code": "A04",
           "crmCode": "IND-C4-RC-A04",
