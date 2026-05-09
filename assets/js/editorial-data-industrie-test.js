@@ -1,7 +1,7 @@
-/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V23 technologie systèmes */
+/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V24 territorial */
 
 window.EN_PLATEAU_EDITORIAL_DATA = {
-  "version": "2026-05-09-v23-technologie-systemes",
+  "version": "2026-05-09-v24-territorial",
   "status": "test",
   "sourceDocument": "programme_editorial_industrie.docx",
   "scope": {
@@ -13,9 +13,10 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
       "OPERATIONNELLE",
       "RH_COMPETENCES",
       "ENERGIE_RESSOURCES",
-      "TECHNOLOGIQUE"
+      "TECHNOLOGIQUE",
+      "TERRITORIALE"
     ],
-    "note": "Référentiel test pour gabarit unique de landing page. Version enrichie avec les lectures opérationnelle, emploi-compétences, ressources industrielles et technologie-systèmes."
+    "note": "Référentiel test pour gabarit unique de landing page. Version enrichie avec les lectures opérationnelle, emploi-compétences, ressources industrielles, technologie-systèmes et territoriale."
   },
   "notes": {
     "stableCodesRequired": true,
@@ -89,11 +90,11 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
     "TERRITORIALE": {
       "code": "TERRITORIALE",
       "label": "Lecture territoriale",
-      "slug": "territoires",
-      "shortLabel": "Territoriale",
-      "landingSlug": "industrie/territoires",
-      "calSource": "lp-industrie-territoires",
-      "positioning": "Éclairer les conditions territoriales qui rendent une trajectoire industrielle tenable, fragile ou impossible."
+      "slug": "territorial",
+      "shortLabel": "Territoires & ancrage",
+      "landingSlug": "industrie/territorial",
+      "calSource": "lp-industrie-territorial",
+      "positioning": "Éclairer les seuils où foncier, réseaux, logistique, acceptabilité, ressources locales ou portage territorial deviennent des conditions concrètes de décision industrielle."
     },
     "ENERGIE_RESSOURCES": {
       "code": "ENERGIE_RESSOURCES",
@@ -3544,6 +3545,306 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "IND-C3-GS-A12"
           ],
           "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A04",
+          "crmCode": "IND-C4-GS-A16",
+          "programmeCode": "IND-C4-CST-04",
+          "conversationCode": "C4",
+          "contextCode": "GS",
+          "typeLecture": "TERRITORIALE",
+          "questionEditoriale": "À quelles conditions un territoire permet-il encore d'accompagner une montée en capacité : foncier, réseaux, logistique, main-d'œuvre, acceptabilité ?",
+          "questionPublique": "À quelles conditions un territoire permet-il encore d'accompagner une montée en capacité : foncier, réseaux, logistique, main-d'œuvre, acceptabilité ?",
+          "questionActivation": "Une entreprise industrielle ne croît jamais seule. Vous n’êtes pas attendu sur un projet d’implantation ou une situation locale identifiable, mais sur votre lecture du moment où foncier, réseaux, logistique, main-d’œuvre ou acceptabilité deviennent les vraies conditions d’une montée en capacité.",
+          "introMecanisme": "Une entreprise industrielle ne croît jamais seule : elle dépend d'un territoire, de ses infrastructures, de son foncier, de ses réseaux et de son bassin d'emploi. Lorsque la croissance s'accélère, ces conditions territoriales deviennent déterminantes.",
+          "pointBascule": "À partir de quand le territoire limite-t-il la croissance industrielle ?",
+          "tensionArbitrage": "Développer l'activité sans dépasser les capacités foncières, sociales, logistiques et infrastructurelles du territoire.",
+          "primaryProfiles": [
+            "Conseil territorial",
+            "Aménagement / foncier",
+            "Opérateur réseaux",
+            "Institution économique",
+            "Direction industrielle exposée"
+          ],
+          "landingPages": [
+            "territorial"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand le territoire permet-il encore d’accompagner une montée en capacité ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Territoire et montée en capacité industrielle",
+            "chapeau": "Votre intervention permettrait d’éclairer les conditions territoriales qui permettent — ou limitent — une montée en capacité : foncier, réseaux, logistique, main-d’œuvre, acceptabilité et portage local.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : croissance industrielle, foncier, réseaux, logistique, main-d’œuvre, acceptabilité et capacité du territoire à accompagner l’activité, conditions d’ancrage concernées et moment où le territoire devient un facteur de décision industrielle."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : entreprise, direction industrielle, collectivités, aménageurs, opérateurs réseaux, bassin d’emploi, financeurs, riverains et acteurs économiques locaux."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : croître ou temporiser, sécuriser le foncier, investir dans les réseaux, adapter la logistique, mobiliser les compétences locales ou traiter l’acceptabilité."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : ancrage sécurisé, redéploiement mieux porté, reconversion crédible ou trajectoire territoriale mieux assumée."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience territoriale, industrielle, infrastructurelle, financière ou juridique permet de reconnaître avant que l’ancrage ne devienne une limite."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, zone d’activité, bassin d’emploi, réseau d’infrastructures, territoire ou trajectoire de croissance."
+              }
+            ],
+            "momentBascule": "À partir de quand le territoire limite-t-il la croissance industrielle ?",
+            "tensionCentrale": "Développer l'activité sans dépasser les capacités foncières, sociales, logistiques et infrastructurelles du territoire.",
+            "securisation": "L’échange ne suppose pas de commenter un dossier d’implantation, une négociation foncière, une décision publique, un site sensible ou une situation confidentielle. Il s’agit d’éclairer un mécanisme territorial à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique, affaires publiques ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C4-GS-A01",
+            "IND-C4-GS-A02",
+            "IND-C4-GS-A15"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A04",
+          "crmCode": "IND-C4-AC-A16",
+          "programmeCode": "IND-C4-ASC-04",
+          "conversationCode": "C4",
+          "contextCode": "AC",
+          "typeLecture": "TERRITORIALE",
+          "questionEditoriale": "À partir de quand un territoire n'offre-t-il plus les conditions suffisantes pour maintenir ou ajuster une activité sans surcoûts croissants ?",
+          "questionPublique": "À partir de quand un territoire n'offre-t-il plus les conditions suffisantes pour maintenir ou ajuster une activité sans surcoûts croissants ?",
+          "questionActivation": "Un territoire peut soutenir une activité industrielle par ses infrastructures, ses compétences, ses réseaux et ses services. Vous n’êtes pas attendu sur un site identifiable, mais sur votre lecture du moment où l’ancrage territorial crée des surcoûts qui limitent l’adaptation.",
+          "introMecanisme": "Un territoire peut soutenir une activité industrielle par ses infrastructures, ses compétences, ses réseaux, ses services. Mais lorsque les contraintes s'accumulent, il peut aussi devenir plus coûteux d'y maintenir l'activité.",
+          "pointBascule": "À partir de quand le territoire devient-il un handicap économique ?",
+          "tensionArbitrage": "Préserver l'ancrage territorial sans supporter des surcoûts qui rendent l'activité fragile.",
+          "primaryProfiles": [
+            "Conseil reconversion",
+            "Financeur territorial",
+            "Infrastructure / réseaux",
+            "Urbanisme / risques",
+            "Direction industrielle"
+          ],
+          "landingPages": [
+            "territorial"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand l’ancrage territorial crée-t-il des surcoûts qui fragilisent l’activité ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Ancrage territorial et surcoûts d’adaptation",
+            "chapeau": "Votre intervention permettrait d’analyser le seuil où les conditions territoriales ne suffisent plus à maintenir ou ajuster une activité sans surcoûts croissants.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : maintien d’activité, surcoûts territoriaux, infrastructures, compétences locales, réseaux, services et adaptation sous contrainte, conditions d’ancrage concernées et moment où le territoire devient un facteur de décision industrielle."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : entreprise, site, salariés, collectivités, financeurs, opérateurs réseaux, clients, fournisseurs, bassin d’emploi et acteurs juridiques."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : préserver l’ancrage ou compenser les surcoûts, investir localement ou réduire l’exposition, ajuster l’activité ou reposer la question de localisation."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : ancrage sécurisé, redéploiement mieux porté, reconversion crédible ou trajectoire territoriale mieux assumée."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience territoriale, industrielle, infrastructurelle, financière ou juridique permet de reconnaître avant que l’ancrage ne devienne une limite."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, territoire, bassin d’emploi, structure de coûts, réseau local ou trajectoire d’adaptation."
+              }
+            ],
+            "momentBascule": "À partir de quand le territoire devient-il un handicap économique ?",
+            "tensionCentrale": "Préserver l'ancrage territorial sans supporter des surcoûts qui rendent l'activité fragile.",
+            "securisation": "L’échange ne suppose pas de commenter un dossier d’implantation, une négociation foncière, une décision publique, un site sensible ou une situation confidentielle. Il s’agit d’éclairer un mécanisme territorial à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique, affaires publiques ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C4-AC-A01",
+            "IND-C4-AC-A14",
+            "IND-C4-AC-A15"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A02",
+          "crmCode": "IND-C4-RC-A14",
+          "programmeCode": "IND-C4-RSS-02",
+          "conversationCode": "C4",
+          "contextCode": "RC",
+          "typeLecture": "TERRITORIALE",
+          "questionEditoriale": "À partir de quand les contraintes énergétiques, hydriques ou climatiques imposent-elles un arbitrage de localisation, de transformation ou de redéploiement du site ?",
+          "questionPublique": "À partir de quand les contraintes énergétiques, hydriques ou climatiques imposent-elles un arbitrage de localisation, de transformation ou de redéploiement du site ?",
+          "questionActivation": "Lorsque l’énergie devient trop coûteuse ou indisponible, lorsque l’eau manque ou que les risques climatiques augmentent, la question peut devenir existentielle pour un site industriel. Vous n’êtes pas attendu sur un site identifiable, mais sur votre lecture du moment où ces contraintes imposent localisation, transformation ou redéploiement.",
+          "introMecanisme": "Lorsque l'énergie devient trop coûteuse ou indisponible, lorsque l'eau manque ou que les risques climatiques augmentent, la question peut devenir existentielle pour un site industriel. Il ne s'agit plus seulement d'adapter l'outil.",
+          "pointBascule": "Quand les contraintes rendent-elles le site non viable dans sa configuration actuelle ?",
+          "tensionArbitrage": "Préserver l'ancrage industriel ou déplacer/transformer l'activité pour répondre aux contraintes physiques.",
+          "primaryProfiles": [
+            "Énergie / ressources",
+            "Infrastructure territoriale",
+            "Conseil transformation de site",
+            "Financeur / opérateur public",
+            "Direction industrielle"
+          ],
+          "landingPages": [
+            "territorial"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand les contraintes physiques imposent-elles localisation, transformation ou redéploiement ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Contraintes physiques et redéploiement territorial",
+            "chapeau": "Votre intervention permettrait d’éclairer le moment où énergie, eau ou climat ne relèvent plus seulement de l’exploitation, mais imposent un arbitrage de localisation, de transformation ou de redéploiement.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : contraintes énergétiques, hydriques ou climatiques, viabilité du site, localisation, transformation et redéploiement, conditions d’ancrage concernées et moment où le territoire devient un facteur de décision industrielle."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : site industriel, direction industrielle, salariés, financeurs, collectivités, opérateurs énergie/eau, clients, fournisseurs et territoire d’accueil."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : préserver l’ancrage ou redéployer, investir ou transformer, réduire l’exposition physique, changer de localisation ou refonder la trajectoire du site."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : ancrage sécurisé, redéploiement mieux porté, reconversion crédible ou trajectoire territoriale mieux assumée."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience territoriale, industrielle, infrastructurelle, financière ou juridique permet de reconnaître avant que l’ancrage ne devienne une limite."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, bassin de ressources, territoire, réseau d’infrastructures, entreprise ou filière."
+              }
+            ],
+            "momentBascule": "Quand les contraintes rendent-elles le site non viable dans sa configuration actuelle ?",
+            "tensionCentrale": "Préserver l'ancrage industriel ou déplacer/transformer l'activité pour répondre aux contraintes physiques.",
+            "securisation": "L’échange ne suppose pas de commenter un dossier d’implantation, une négociation foncière, une décision publique, un site sensible ou une situation confidentielle. Il s’agit d’éclairer un mécanisme territorial à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique, affaires publiques ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C4-RC-A01",
+            "IND-C4-RC-A02",
+            "IND-C4-RC-A15"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
+        },
+        {
+          "code": "A04",
+          "crmCode": "IND-C4-RC-A16",
+          "programmeCode": "IND-C4-RSS-04",
+          "conversationCode": "C4",
+          "contextCode": "RC",
+          "typeLecture": "TERRITORIALE",
+          "questionEditoriale": "À quelles conditions un territoire peut-il encore porter un redéploiement industriel, une reconversion partielle ou une nouvelle trajectoire de site ?",
+          "questionPublique": "À quelles conditions un territoire peut-il encore porter un redéploiement industriel, une reconversion partielle ou une nouvelle trajectoire de site ?",
+          "questionActivation": "Lorsqu’un site industriel doit se transformer, le territoire devient un acteur décisif. Vous n’êtes pas attendu sur un dossier de reconversion, mais sur votre lecture des conditions qui permettent encore de porter un redéploiement, une reconversion partielle ou une nouvelle trajectoire de site.",
+          "introMecanisme": "Lorsqu'un site industriel doit se transformer, le territoire devient un acteur décisif. Il peut faciliter un redéploiement, accompagner une reconversion ou attirer de nouveaux investisseurs. Mais il peut aussi manquer de foncier, d'infrastructures ou de moyens.",
+          "pointBascule": "Quand le territoire devient-il le facteur décisif de transformation ou d'échec ?",
+          "tensionArbitrage": "Reconstruire une trajectoire industrielle sans surestimer les ressources réelles du territoire.",
+          "primaryProfiles": [
+            "Reconversion industrielle",
+            "Développement économique",
+            "Financeur territorial",
+            "Aménagement / foncier",
+            "Juridique / urbanisme"
+          ],
+          "landingPages": [
+            "territorial"
+          ],
+          "showInConversationPage": true,
+          "showInForm": true,
+          "formatCourt": {
+            "titrePublicCourt": "Quand le territoire peut-il encore porter une reconversion ou une nouvelle trajectoire de site ?",
+            "usage": "Titre court affiché sur les landing pages."
+          },
+          "formatLongIntervenant": {
+            "titre": "Fiche intervenant — Reconversion, redéploiement et nouvelle trajectoire de site",
+            "chapeau": "Votre intervention permettrait d’analyser les conditions territoriales qui permettent encore de porter un redéploiement industriel, une reconversion partielle ou une nouvelle trajectoire de site.",
+            "dimensions": [
+              {
+                "key": "transformation",
+                "title": "Transformation en cours / contexte",
+                "text": "Qualifier ce qui change concrètement : transformation de site, redéploiement industriel, reconversion partielle, foncier, infrastructures, investisseurs et capacité réelle du territoire, conditions d’ancrage concernées et moment où le territoire devient un facteur de décision industrielle."
+              },
+              {
+                "key": "acteurs",
+                "title": "Acteurs impactés",
+                "text": "Identifier les acteurs concernés par la bascule : entreprise, salariés, collectivités, aménageurs, financeurs, investisseurs, opérateurs d’infrastructures, juridiques, riverains et acteurs économiques locaux."
+              },
+              {
+                "key": "arbitrages",
+                "title": "Arbitrages & décisions",
+                "text": "Rendre visibles les choix à effectuer : reconvertir ou redéployer, attirer de nouveaux usages, sécuriser le foncier, mobiliser les financements, préserver les compétences ou reconnaître les limites du territoire."
+              },
+              {
+                "key": "defis",
+                "title": "Défis & opportunités",
+                "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : ancrage sécurisé, redéploiement mieux porté, reconversion crédible ou trajectoire territoriale mieux assumée."
+              },
+              {
+                "key": "vision",
+                "title": "Vision attendue",
+                "text": "Formuler une lecture située de ce que votre expérience territoriale, industrielle, infrastructurelle, financière ou juridique permet de reconnaître avant que l’ancrage ne devienne une limite."
+              },
+              {
+                "key": "echelle",
+                "title": "Échelle pertinente",
+                "text": "Situer la lecture à la bonne échelle : site, territoire, foncier, bassin d’emploi, filière, réseau d’acteurs ou trajectoire de reconversion."
+              }
+            ],
+            "momentBascule": "Quand le territoire devient-il le facteur décisif de transformation ou d'échec ?",
+            "tensionCentrale": "Reconstruire une trajectoire industrielle sans surestimer les ressources réelles du territoire.",
+            "securisation": "L’échange ne suppose pas de commenter un dossier d’implantation, une négociation foncière, une décision publique, un site sensible ou une situation confidentielle. Il s’agit d’éclairer un mécanisme territorial à partir de votre expérience et de votre position d’observation, avec une préparation possible avec les équipes communication, juridique, affaires publiques ou corporate."
+          },
+          "complementaryCodes": [
+            "IND-C4-RC-A01",
+            "IND-C4-RC-A02",
+            "IND-C4-RC-A15"
+          ],
+          "complementaryDisplayRule": "Même conversation, même contexte, lecture différente. Liste explicitement verrouillée pour éviter les lectures hors contexte ou concurrentes."
         }
       ]
     }
@@ -4845,6 +5146,202 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
     },
     "technologie": {
       "aliasOf": "technologie-systemes"
+    },
+    "territorial": {
+      "cycleCode": "IND",
+      "readingType": "TERRITORIALE",
+      "angleCodes": [
+        "IND-C4-GS-A16",
+        "IND-C4-AC-A16",
+        "IND-C4-RC-A14",
+        "IND-C4-RC-A16"
+      ],
+      "title": "Lecture territoriale — Cycle Industrie & transformation des territoires | En Plateau",
+      "metaDescription": "Une place précise pour éclairer les arbitrages d’ancrage industriel, foncier, réseaux, infrastructures, acceptabilité, reconversion et redéploiement de sites.",
+      "navLabel": "Cycle Industrie · Lecture territoriale",
+      "heroTitleHtml": "Votre lecture<br><em>éclaire</em><br>les conditions d’ancrage<br>de l’industrie.",
+      "heroLead": "Certaines trajectoires industrielles ne tiennent pas seulement par l’outil, les compétences ou les ressources. Elles tiennent par un territoire : foncier, réseaux, logistique, bassin d’emploi, acceptabilité, portage local, infrastructures et capacité à accompagner l’activité dans la durée.",
+      "heroProfiles": [
+        {
+          "label": "Territoires · Aménagement · Reconversion",
+          "text": "Vous éclairez les conditions d’implantation, de maintien, de redéploiement ou de reconversion industrielle : foncier, réseaux, portage local, acceptabilité, attractivité."
+        },
+        {
+          "label": "Infrastructures · Financeurs · Cadre territorial",
+          "text": "Vous accompagnez des trajectoires industrielles où réseaux, eau, énergie, logistique, urbanisme, financement ou droit territorial deviennent déterminants."
+        }
+      ],
+      "valueSection": {
+        "title": "Faire reconnaître le territoire comme condition réelle de trajectoire industrielle",
+        "intro": "Une lecture territoriale ne consiste pas à parler d’attractivité de manière générale. Elle permet de montrer comment le foncier, les réseaux, les infrastructures, les compétences, les ressources locales, l’acceptabilité ou le portage territorial deviennent des conditions concrètes d’implantation, de maintien ou de transformation industrielle.",
+        "cards": [
+          {
+            "label": "Conseil territorial · Aménagement · Revitalisation",
+            "title": "Relier stratégie industrielle et ingénierie territoriale",
+            "text": "Cette prise de parole permet de montrer que l’implantation, le maintien ou le redéploiement industriel ne se joue pas seulement dans l’usine, mais dans la qualité des conditions territoriales : foncier, réseaux, logistique, acceptabilité, compétences, portage local. Elle valorise une expertise capable de relier stratégie industrielle et ingénierie territoriale, tout en montrant aux entreprises, financeurs et collectivités qu’une trajectoire industrielle ne tient que si son environnement réel est correctement lu."
+          },
+          {
+            "label": "Opérateurs industriels · Infrastructures · Eau · Énergie · Réseaux",
+            "title": "Rendre visibles les dépendances matérielles d’un site",
+            "text": "Cette lecture permet à une entreprise ou un opérateur d’infrastructure de montrer que les contraintes territoriales, énergétiques, hydriques, logistiques ou foncières sont pilotées comme des conditions de continuité industrielle. Elle valorise les fonctions qui rendent visibles les dépendances matérielles d’un site, tout en rassurant partenaires, clients, financeurs ou institutions sur la capacité de l’organisation à anticiper les limites physiques de son ancrage."
+          },
+          {
+            "label": "Financeurs · Institutions économiques · Portage parapublic",
+            "title": "Montrer comment un territoire sécurise une trajectoire industrielle",
+            "text": "Cette prise de parole permet de montrer comment les financeurs, opérateurs publics ou parapublics peuvent sécuriser une trajectoire industrielle sans se limiter à un rôle d’accompagnement général. Elle valorise une lecture capable de relier investissement, foncier, reconversion, attractivité, infrastructures et risque territorial, tout en montrant aux industriels qu’un territoire peut devenir un levier réel de transformation lorsqu’il est porté avec méthode."
+          },
+          {
+            "label": "Juridique · Urbanisme · Risques · Acceptabilité",
+            "title": "Sécuriser les conditions territoriales de la décision industrielle",
+            "text": "Cette lecture permet d’éclairer les moments où le cadre juridique, foncier, environnemental, urbanistique ou social conditionne réellement l’implantation, le maintien ou la reconversion d’un site. Elle valorise une expertise capable de sécuriser des trajectoires sensibles sans exposer de dossier identifiable, tout en montrant que l’entreprise ou le territoire sait traiter les contraintes réglementaires et d’acceptabilité comme des conditions de décision industrielle."
+          }
+        ]
+      },
+      "copy": {
+        "positionsCountNote": "4 positions avec lecture territoriale sont ouvertes dans le cycle Industrie.",
+        "rarityBlock": {
+          "kicker": "Rareté éditoriale",
+          "title": "4 positions avec lecture territoriale sont ouvertes dans le cycle Industrie.",
+          "text": "Chaque position correspond à un angle contextualisé. Une position territoriale ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
+        },
+        "heroNoteHtml": "Aucun dossier d’implantation à exposer &nbsp;·&nbsp; Aucun site sensible, arbitrage foncier ou échange confidentiel à commenter &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Préparation possible avec les équipes communication, juridique, affaires publiques ou corporate de votre organisation",
+        "heroCardTitle": "Votre lecture territoriale a-t-elle sa place dans l’une de ces conversations ?",
+        "heroCardText": "En 15 minutes, nous vérifions si votre lecture correspond à une position encore disponible — sans exposer de dossier d’implantation, de négociation foncière, de décision publique ou de situation confidentielle.",
+        "audience": {
+          "title": "Cette lecture territoriale vous est-elle destinée ?",
+          "yesTitle": "Vous portez probablement une lecture pertinente si…",
+          "noTitle": "Moins adapté si…",
+          "yesItems": [
+            "Vous savez relier foncier, réseaux, logistique, infrastructures, bassin d’emploi, ressources locales ou acceptabilité à des arbitrages industriels réels.",
+            "Vous êtes conseil territorial, opérateur d’infrastructure, financeur, acteur parapublic, expert reconversion, urbanisme, risques, droit territorial ou direction industrielle exposée.",
+            "Votre lecture porte sur des seuils : territoire qui accompagne ou limite la croissance, surcoûts d’ancrage, contraintes de localisation, redéploiement, reconversion ou acceptabilité.",
+            "Vous pouvez éclairer un mécanisme territorial sans exposer de dossier d’implantation, de site sensible, de décision publique ou de négociation confidentielle."
+          ],
+          "noItems": [
+            "Votre contribution vise surtout à promouvoir un territoire, une politique d’attractivité ou une offre d’accompagnement.",
+            "Votre lecture reste trop générale pour être rattachée à un arbitrage industriel précis.",
+            "Vous souhaitez commenter un dossier d’implantation, une décision publique, un projet foncier ou un site identifiable.",
+            "Votre approche ne relie pas les conditions territoriales aux décisions industrielles qui en découlent."
+          ],
+          "panel": "La lecture territoriale ne consiste pas à présenter un territoire. Elle consiste à éclairer les conditions d’ancrage qui rendent une trajectoire industrielle tenable, fragile ou à réarbitrer."
+        },
+        "conversations": {
+          "title": "Les angles où le territoire devient décisif",
+          "intro": "La page met d’abord en avant les angles territoriaux ouverts. Les lectures complémentaires ne s’affichent que lorsqu’elles appartiennent à la même conversation et au même contexte.",
+          "panel": "Ces positions ne demandent pas de commenter un dossier territorial ; elles proposent d’éclairer les arbitrages d’ancrage, de localisation, de maintien ou de redéploiement qui se répètent dans les trajectoires industrielles."
+        },
+        "preparation": {
+          "titleHtml": "Beaucoup arrivent avec une expertise territoriale. <em style=\"color:rgba(240,236,230,0.55);\">Ils repartent avec une lecture industrielle défendable.</em>",
+          "intro": "La préparation éditoriale transforme une expertise territoriale, infrastructurelle, financière, juridique ou industrielle en lecture située : claire, non intrusive et utile pour d’autres décideurs industriels."
+        },
+        "dimensions": [
+          {
+            "num": "01",
+            "title": "Transformation en cours / contexte",
+            "text": "Qualifier ce qui change concrètement : montée en capacité, maintien sous contrainte, redéploiement, reconversion, tension foncière, réseaux, ressources, acceptabilité ou infrastructures."
+          },
+          {
+            "num": "02",
+            "title": "Acteurs concernés",
+            "text": "Identifier les acteurs impactés : entreprise, site, salariés, financeurs, collectivités, aménageurs, opérateurs réseaux, fournisseurs, clients, bassin d’emploi ou riverains."
+          },
+          {
+            "num": "03",
+            "title": "Arbitrages territoriaux",
+            "text": "Rendre visibles les choix réels : s’ancrer, investir, compenser des surcoûts, redéployer, reconvertir, changer de localisation, sécuriser le foncier ou négocier les conditions locales."
+          },
+          {
+            "num": "04",
+            "title": "Défis & opportunités",
+            "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : ancrage mieux sécurisé, territoire plus lisible, trajectoire de site plus crédible ou reconversion mieux portée."
+          },
+          {
+            "num": "05",
+            "title": "Vision attendue",
+            "text": "Formuler une lecture située de ce que votre expérience territoriale permet de reconnaître avant que les conditions d’ancrage ne deviennent un verrou industriel."
+          },
+          {
+            "num": "06",
+            "title": "Échelle d’analyse",
+            "text": "Situer la lecture à la bonne échelle : site, foncier, zone d’activité, bassin d’emploi, territoire, réseau d’infrastructures, filière ou trajectoire de redéploiement."
+          }
+        ],
+        "dimensionsPanel": "Ce travail ne vous demande pas d’exposer votre organisation. Il donne une forme claire à ce que votre position vous a appris à reconnaître dans les contraintes d’ancrage, de localisation, de maintien ou de redéploiement industriel.",
+        "process": [
+          {
+            "num": "01",
+            "title": "L'échange de qualification",
+            "text": "15 minutes pour vérifier si votre lecture correspond à un angle disponible. Aucun dossier d’implantation, site sensible, négociation foncière ou décision publique à exposer.",
+            "deadline": "À planifier en amont du comité éditorial"
+          },
+          {
+            "num": "02",
+            "title": "Le dossier de positionnement",
+            "text": "Si l’angle est retenu, un dossier complet vous est adressé : angle précis, logique de mise en regard, modalités d’intervention, format émission et article associé."
+          },
+          {
+            "num": "03",
+            "title": "Le comité éditorial",
+            "text": "Le 15 juin, le comité éditorial examine les dossiers de positionnement et valide la composition finale. Vous êtes informé avant tout engagement.",
+            "deadline": "Comité : 15 juin 2026"
+          },
+          {
+            "num": "04",
+            "title": "La préparation & la production",
+            "text": "En Plateau travaille avec vous, et avec vos équipes communication, juridique, affaires publiques ou corporate si nécessaire, pour transformer votre lecture en position claire, non intrusive et publiquement défendable."
+          }
+        ],
+        "guarantees": [
+          {
+            "accent": true,
+            "title": "Aucun dossier territorial à exposer",
+            "text": "L’échange porte sur les mécanismes d’ancrage et de redéploiement, pas sur un projet foncier, une négociation, une décision publique ou un site identifiable."
+          },
+          {
+            "accent": true,
+            "title": "Aucun engagement avant le dossier de positionnement",
+            "text": "Vous ne vous engagez pas lors de l’échange éditorial. La position proposée est qualifiée avant toute validation."
+          },
+          {
+            "title": "Pas de discours d’attractivité attendu",
+            "text": "La contribution vise une lecture située des conditions territoriales de l’industrie, non une présentation de territoire, de dispositif ou d’offre d’accompagnement."
+          },
+          {
+            "title": "Une parole préparée avec vos équipes si nécessaire",
+            "text": "La préparation peut intégrer vos contraintes communication, juridiques, affaires publiques, corporate ou de confidentialité."
+          }
+        ],
+        "faq": [
+          {
+            "question": "Faut-il parler d’un projet territorial ou d’un site identifiable ?",
+            "answer": "Non. L’enjeu n’est pas d’exposer un dossier, mais d’éclairer un mécanisme territorial à partir de votre expérience."
+          },
+          {
+            "question": "Cette lecture est-elle réservée aux acteurs publics ?",
+            "answer": "Non. Elle peut être portée par des conseils, opérateurs d’infrastructures, financeurs, acteurs parapublics, experts juridiques, directions industrielles ou spécialistes de la reconversion."
+          },
+          {
+            "question": "Peut-on préparer l’intervention avec les équipes communication, affaires publiques ou juridiques ?",
+            "answer": "Oui. La prise de parole peut être préparée avec les équipes communication, affaires publiques, juridique ou corporate afin de garantir un niveau d’exposition maîtrisé."
+          },
+          {
+            "question": "Faut-il arriver avec une position déjà formulée ?",
+            "answer": "Non. L’échange éditorial sert précisément à vérifier l’angle, puis à transformer votre lecture en position claire, défendable et non intrusive."
+          }
+        ],
+        "cta": {
+          "title": "Votre lecture territoriale peut éclairer ce qui rend une trajectoire industrielle ancrée — ou fragile.",
+          "text": "Un échange de 15 minutes — sans exposer de dossier territorial, sans site identifiable, sans engagement — pour vérifier si votre angle a une place dans l’une des 4 positions territoriales ouvertes.",
+          "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
+          "footnote": "Les positions territoriales se ferment au fil de la composition éditoriale · Page non indexée"
+        }
+      }
+    },
+    "territoires-ancrage": {
+      "aliasOf": "territorial"
+    },
+    "territoriale": {
+      "aliasOf": "territorial"
     }
   }
 };
