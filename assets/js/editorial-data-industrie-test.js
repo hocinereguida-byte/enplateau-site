@@ -1,7 +1,7 @@
-/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V17 opérations + emploi-compétences + décarbonation énergie soutenabilité */
+/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V18 fix landing décarbonation énergie soutenabilité */
 
 window.EN_PLATEAU_EDITORIAL_DATA = {
-  "version": "2026-05-09-v17-decarbonation-energie-soutenabilite",
+  "version": "2026-05-09-v18-decarbonation-landing-fix",
   "status": "test",
   "sourceDocument": "programme_editorial_industrie.docx",
   "scope": {
@@ -3369,6 +3369,196 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         }
       }
     },
+    ,
+    "decarbonation-energie-soutenabilite": {
+      "cycleCode": "IND",
+      "readingType": "ENERGIE_RESSOURCES",
+      "title": "Lecture décarbonation, énergie & soutenabilité — Cycle Industrie & transformation des territoires | En Plateau",
+      "metaDescription": "Une place précise pour éclairer les arbitrages énergie, eau, ressources, carbone, utilités, process et soutenabilité physique dans les trajectoires industrielles.",
+      "navLabel": "Cycle Industrie · Lecture décarbonation, énergie & soutenabilité",
+      "heroTitleHtml": "Votre lecture<br><em>éclaire</em><br>les limites physiques<br>de la trajectoire industrielle.",
+      "heroLead": "Certaines transformations industrielles ne se jouent pas seulement dans la stratégie, la finance ou l’outil. Elles se jouent dans l’accès à l’énergie, à l’eau, aux utilités, aux réseaux, aux ressources et dans la capacité réelle à décarboner sans fragiliser la continuité industrielle.",
+      "heroProfiles": [
+        {
+          "label": "Énergie · Utilités · Ressources industrielles",
+          "text": "Vous éclairez les arbitrages liés à l’énergie, l’eau, les réseaux, les utilités, les ressources physiques, les infrastructures ou la continuité d’exploitation."
+        },
+        {
+          "label": "Décarbonation · Climat · Transformation industrielle",
+          "text": "Vous accompagnez ou pilotez des trajectoires carbone, des transformations de process, des arbitrages CAPEX, des stratégies climat ou des reconversions de sites."
+        }
+      ],
+      "valueSection": {
+        "title": "Faire reconnaître l’énergie, l’eau et le carbone comme conditions réelles de décision industrielle",
+        "intro": "Une lecture décarbonation, énergie & soutenabilité ne consiste pas à tenir un discours RSE. Elle permet de montrer comment les contraintes physiques — énergie, eau, utilités, carbone, réseaux, ressources, climat — deviennent des conditions concrètes de continuité, d’investissement, de compétitivité ou de transformation industrielle.",
+        "cards": [
+          {
+            "label": "Direction industrielle · Site exposé · Industrie intensive",
+            "title": "Montrer que la trajectoire industrielle intègre ses limites physiques",
+            "text": "Cette prise de parole permet de montrer que l’entreprise ne pilote pas seulement des volumes, des investissements ou des marchés, mais aussi les conditions physiques qui rendent l’activité possible : énergie, eau, chaleur, utilités, réseaux, émissions et ressources critiques. Elle valorise une lecture industrielle capable d’arbitrer entre continuité, compétitivité et transformation, tout en rassurant financeurs, clients, partenaires ou institutions sur la capacité de l’organisation à anticiper ses contraintes réelles."
+          },
+          {
+            "label": "Énergie · Utilités · Infrastructures industrielles",
+            "title": "Rendre visibles les ressources qui conditionnent la capacité de production",
+            "text": "Cette lecture permet d’éclairer les moments où l’accès à l’énergie, à l’eau, aux utilités ou aux réseaux devient un verrou de croissance, d’adaptation ou de redéploiement. Elle valorise les fonctions qui sécurisent les ressources invisibles de la production, tout en montrant que l’entreprise sait hiérarchiser les dépendances physiques qui peuvent soutenir, limiter ou fragiliser sa trajectoire industrielle."
+          },
+          {
+            "label": "Décarbonation · Climat · ESG industriel",
+            "title": "Donner une lecture industrielle crédible de la trajectoire carbone",
+            "text": "Cette intervention permet de sortir d’une lecture déclarative de la décarbonation pour montrer les arbitrages concrets qu’elle impose : process, utilités, CAPEX, compétitivité, mix produit, localisation ou vocation industrielle du site. Elle valorise une expertise climat réellement connectée au fonctionnement industriel, tout en renforçant la crédibilité de l’organisation auprès des investisseurs, banques, donneurs d’ordre, partenaires publics ou acteurs de filière."
+          },
+          {
+            "label": "Cabinet spécialisé · Conseil énergie / climat / transformation",
+            "title": "Démontrer une compréhension concrète des arbitrages de soutenabilité",
+            "text": "Pour un cabinet ou un profil conseil, cette contribution permet de montrer une lecture transversale des contraintes énergie, eau, carbone et ressources observées dans plusieurs environnements industriels. Elle valorise une expertise capable de relier diagnostic physique, trajectoire économique et décision industrielle, sans réduire la transition à une méthode, une offre ou une conformité."
+          },
+          {
+            "label": "Eau · Ressources · Résilience de site",
+            "title": "Faire apparaître les conditions matérielles souvent invisibles de la continuité industrielle",
+            "text": "Cette prise de parole rend visibles les dépendances hydriques, climatiques, foncières ou ressources qui peuvent conditionner la viabilité d’un site industriel. Elle valorise les profils capables d’éclairer la soutenabilité physique d’une trajectoire, tout en montrant que l’entreprise ou l’écosystème sait anticiper les risques de disponibilité, de coût, de réglementation ou d’acceptabilité liés aux ressources."
+          }
+        ]
+      },
+      "copy": {
+        "positionsCountNote": "4 positions avec lecture décarbonation, énergie & soutenabilité sont ouvertes dans le cycle Industrie.",
+        "rarityBlock": {
+          "kicker": "Rareté éditoriale",
+          "title": "4 positions avec lecture décarbonation, énergie & soutenabilité sont ouvertes dans le cycle Industrie.",
+          "text": "Chaque position correspond à un angle contextualisé. Une position décarbonation, énergie & soutenabilité ne peut être signée qu’une seule fois : lorsqu’un acteur est retenu sur l’angle, les autres prétendants basculent hors de cette position."
+        },
+        "heroNoteHtml": "Aucun plan carbone confidentiel à exposer &nbsp;·&nbsp; Aucun chiffre interne à communiquer &nbsp;·&nbsp; 15 min pour qualifier votre angle<br>Préparation possible avec les équipes communication, juridique, RSE, finance ou corporate de votre organisation",
+        "heroCardTitle": "Votre lecture énergie, carbone ou ressources a-t-elle sa place dans l’une de ces conversations ?",
+        "heroCardText": "En 15 minutes, nous vérifions si votre lecture correspond à une position encore disponible — sans exposer de données internes, de plan confidentiel, de site identifiable ou de décision sensible.",
+        "audience": {
+          "title": "Cette lecture décarbonation, énergie & soutenabilité vous est-elle destinée ?",
+          "yesTitle": "Vous portez probablement une lecture pertinente si…",
+          "noTitle": "Moins adapté si…",
+          "yesItems": [
+            "Vous savez relier énergie, eau, utilités, carbone, ressources, réseaux ou contraintes climatiques à des arbitrages industriels réels.",
+            "Vous êtes direction énergie, utilités, décarbonation, climat industriel, transformation de process, direction industrielle exposée, conseil énergie / climat ou expert ressources.",
+            "Votre lecture porte sur des seuils : ressources qui deviennent verrou, coûts qui limitent l’adaptation, contrainte carbone qui change la compétitivité, site qui doit être transformé ou redéployé.",
+            "Vous pouvez éclairer un mécanisme de soutenabilité physique sans exposer de plan interne, de chiffre confidentiel, de site sensible ou de situation identifiable."
+          ],
+          "noItems": [
+            "Votre contribution vise surtout à présenter une démarche RSE, une offre, une technologie ou une méthode.",
+            "Votre lecture reste trop générale pour être rattachée à un arbitrage industriel précis.",
+            "Vous souhaitez commenter un plan carbone interne, un site identifiable ou une décision confidentielle.",
+            "Votre approche ne relie pas les contraintes énergie, eau, carbone ou ressources aux décisions industrielles qui en découlent."
+          ],
+          "panel": "La lecture décarbonation, énergie & soutenabilité ne consiste pas à raconter une trajectoire RSE. Elle consiste à éclairer les contraintes physiques qui rendent une trajectoire industrielle tenable, fragile ou à réarbitrer."
+        },
+        "conversations": {
+          "title": "Les angles où l’énergie, l’eau, le carbone et les ressources deviennent décisifs",
+          "intro": "La page met d’abord en avant les angles décarbonation, énergie & soutenabilité ouverts. Les lectures complémentaires ne s’affichent que lorsqu’elles appartiennent à la même conversation et au même contexte.",
+          "panel": "Ces positions ne demandent pas de commenter un plan interne ; elles proposent d’éclairer les arbitrages physiques, économiques et industriels qui se répètent dans les trajectoires de transformation."
+        },
+        "preparation": {
+          "titleHtml": "Beaucoup arrivent avec une expertise énergie, climat ou ressources. <em style=\"color:rgba(240,236,230,0.55);\">Ils repartent avec une lecture industrielle défendable.</em>",
+          "intro": "La préparation éditoriale transforme une expertise énergie, carbone, ressources, utilités ou transformation de site en lecture située : claire, non intrusive et utile pour d’autres décideurs industriels."
+        },
+        "dimensions": [
+          {
+            "num": "01",
+            "title": "Transformation en cours / contexte",
+            "text": "Qualifier ce qui change concrètement : coût ou disponibilité de l’énergie, accès à l’eau, contrainte carbone, utilités, réseaux, ressources, climat ou vocation industrielle du site."
+          },
+          {
+            "num": "02",
+            "title": "Acteurs concernés",
+            "text": "Identifier les acteurs impactés : direction industrielle, énergie, utilités, RSE, finance, production, maintenance, clients, fournisseurs, financeurs, territoire ou acteurs publics."
+          },
+          {
+            "num": "03",
+            "title": "Arbitrages de soutenabilité",
+            "text": "Rendre visibles les choix réels : produire, réduire, investir, électrifier, transformer le process, sécuriser les ressources, relocaliser, redéployer ou changer de trajectoire."
+          },
+          {
+            "num": "04",
+            "title": "Défis & opportunités",
+            "text": "Mettre en regard ce que la situation fragilise et ce qu’elle peut ouvrir : trajectoire plus robuste, compétitivité rééquilibrée, site mieux sécurisé ou transformation assumée."
+          },
+          {
+            "num": "05",
+            "title": "Vision attendue",
+            "text": "Formuler une lecture située de ce que votre expérience énergie, climat, ressources ou transformation industrielle permet de reconnaître avant que la contrainte ne devienne bloquante."
+          },
+          {
+            "num": "06",
+            "title": "Échelle d’analyse",
+            "text": "Situer la lecture à la bonne échelle : process, atelier, site, réseau, bassin de ressources, entreprise, filière, territoire ou trajectoire industrielle."
+          }
+        ],
+        "dimensionsPanel": "Ce travail ne vous demande pas d’exposer votre organisation. Il donne une forme claire à ce que votre position vous a appris à reconnaître dans les contraintes énergie, eau, carbone, ressources et soutenabilité physique.",
+        "process": [
+          {
+            "num": "01",
+            "title": "L'échange de qualification",
+            "text": "15 minutes pour vérifier si votre lecture correspond à un angle disponible. Aucun plan carbone confidentiel, chiffre interne, site sensible ou dossier identifiable à exposer.",
+            "deadline": "À planifier en amont du comité éditorial"
+          },
+          {
+            "num": "02",
+            "title": "Le dossier de positionnement",
+            "text": "Si l’angle est retenu, un dossier complet vous est adressé : angle précis, logique de mise en regard, modalités d’intervention, format émission et article associé."
+          },
+          {
+            "num": "03",
+            "title": "Le comité éditorial",
+            "text": "Le 15 juin, le comité éditorial examine les dossiers de positionnement et valide la composition finale. Vous êtes informé avant tout engagement.",
+            "deadline": "Comité : 15 juin 2026"
+          },
+          {
+            "num": "04",
+            "title": "La préparation & la production",
+            "text": "En Plateau travaille avec vous, et avec vos équipes communication, juridique, RSE, finance ou corporate si nécessaire, pour transformer votre lecture en position claire, non intrusive et publiquement défendable."
+          }
+        ],
+        "guarantees": [
+          {
+            "accent": true,
+            "title": "Aucun plan interne à exposer",
+            "text": "L’échange porte sur les mécanismes d’arbitrage énergie, carbone, eau ou ressources, pas sur un plan confidentiel, un site sensible ou une décision identifiable."
+          },
+          {
+            "accent": true,
+            "title": "Aucun engagement avant le dossier de positionnement",
+            "text": "Vous ne vous engagez pas lors de l’échange éditorial. La position proposée est qualifiée avant toute validation."
+          },
+          {
+            "title": "Pas de discours RSE ou commercial attendu",
+            "text": "La contribution vise une lecture située des contraintes physiques de l’industrie, non une présentation de démarche, d’offre, de technologie ou de solution."
+          },
+          {
+            "title": "Une parole préparée avec vos équipes si nécessaire",
+            "text": "La préparation peut intégrer vos contraintes RSE, finance, communication, juridiques, corporate ou de confidentialité."
+          }
+        ],
+        "faq": [
+          {
+            "question": "Faut-il parler d’un plan carbone ou d’un site identifiable ?",
+            "answer": "Non. L’enjeu n’est pas d’exposer une trajectoire interne, mais d’éclairer un mécanisme énergie, eau, carbone, ressources ou soutenabilité à partir de votre expérience."
+          },
+          {
+            "question": "Cette lecture est-elle réservée aux experts décarbonation ?",
+            "answer": "Non. Elle peut être portée par des directions industrielles exposées, responsables énergie, utilités, eau, ressources, ESG industriel, climat, transformation de process, conseil spécialisé ou ingénierie industrielle."
+          },
+          {
+            "question": "Peut-on préparer l’intervention avec les équipes communication, finance, RSE ou juridiques ?",
+            "answer": "Oui. La prise de parole peut être préparée avec les équipes communication, finance, RSE, juridique ou corporate afin de garantir un niveau d’exposition maîtrisé."
+          },
+          {
+            "question": "Faut-il arriver avec une position déjà formulée ?",
+            "answer": "Non. L’échange éditorial sert précisément à vérifier l’angle, puis à transformer votre lecture en position claire, défendable et non intrusive."
+          }
+        ],
+        "cta": {
+          "title": "Votre lecture énergie, carbone ou ressources peut éclairer ce qui rend une trajectoire industrielle soutenable — ou non.",
+          "text": "Un échange de 15 minutes — sans exposer de plan interne, sans site identifiable, sans engagement — pour vérifier si votre angle a une place dans l’une des 4 positions décarbonation, énergie & soutenabilité ouvertes.",
+          "deadline": "Comité éditorial : 15 juin 2026 · Les échanges précèdent la composition finale",
+          "footnote": "Les positions décarbonation, énergie & soutenabilité se ferment au fil de la composition éditoriale · Page non indexée"
+        }
+      }
+    }
     "finance": {
       "cycleCode": "IND",
       "readingType": "FINANCIERE",
