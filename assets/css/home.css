@@ -1,25 +1,35 @@
 :root { 
   --h3-bg: #0a0d12;
-  --h3-paper: #faf8f5;
-  --h3-paper-soft: #f5ede4;
+
+  /* Fonds clairs : ivoire grisé, sans dominante rose */
+  --h3-paper: #f1eee8;
+  --h3-paper-soft: #e8e3da;
+
+  /* Textes */
   --h3-ink: #111111;
-  --h3-ink-soft: #3a3330;
-  --h3-ink-muted: #6b6259;
-  --h3-text: #f0ece6;
-  --h3-text-soft: rgba(240,236,230,.82);
-  --h3-text-muted: rgba(240,236,230,.62);
-  --h3-text-faint: rgba(240,236,230,.44);
-  --h3-line-light: rgba(82,62,49,.14);
+  --h3-ink-soft: #37312d;
+  --h3-ink-muted: #6f665e;
+
+  /* Textes sur fonds sombres */
+  --h3-text: #f1eee8;
+  --h3-text-soft: rgba(241,238,232,.82);
+  --h3-text-muted: rgba(241,238,232,.60);
+  --h3-text-faint: rgba(241,238,232,.42);
+
+  /* Filets */
+  --h3-line-light: rgba(45,38,32,.14);
   --h3-line-dark: rgba(255,255,255,.09);
-  --h3-accent-soft: #b8d0ff;
-  --h3-accent: #5d7aa8;
-  --h3-accent-deep: #355785;
-  --h3-accent-line: rgba(93,122,168,.34);
+
+  /* Accent premium : pierre / graphite, sans bleu ni or */
+  --h3-accent-soft: #d8d0c4;
+  --h3-accent: #5f574f;
+  --h3-accent-deep: #332d28;
+  --h3-accent-line: rgba(95,87,79,.34);
+
   --h3-container: 1120px;
   --h3-shadow-dark: none;
   --h3-shadow-light: none;
 }
-
 /* HEADER / FOOTER */
 
 .site-header {
@@ -1303,4 +1313,75 @@
 .home-hero-small--right {
   margin-top: 12px !important;
   max-width: 430px;
+}
+/* =========================================================
+   AJUSTEMENT COLORIMÉTRIQUE PREMIUM — HOME
+   Fonds clairs moins rosés, blancs moins bruts, accent non bleu
+========================================================= */
+
+.home-light,
+.home-access {
+  background: var(--h3-paper);
+}
+
+.home-light:nth-of-type(even),
+.home-dispositif {
+  background: var(--h3-paper-soft);
+}
+
+.home-split-copy,
+.home-cycles article,
+.home-access-grid article,
+.home-dispositif-cards article {
+  background: rgba(250,248,244,.94) !important;
+}
+
+.home-access-grid article:first-child {
+  background: linear-gradient(
+    135deg,
+    rgba(95,87,79,.08),
+    rgba(250,248,244,.96)
+  ) !important;
+}
+
+.home-dispositif::after {
+  background: linear-gradient(
+    90deg,
+    rgba(232,227,218,.12) 0%,
+    rgba(232,227,218,.38) 35%,
+    rgba(232,227,218,.74) 62%,
+    rgba(232,227,218,1) 100%
+  );
+}
+
+.home-kicker,
+.home-side-links a,
+.home-cycle-body a,
+.home-position-grid a,
+.home-center-link a,
+.home-access-grid a,
+.home-hero-contact-card a,
+.home-hero-sollicite a {
+  color: var(--h3-accent-deep);
+}
+
+.home-dark .home-kicker,
+.home-hero .home-kicker,
+.home-dark .home-side-links a,
+.home-dark .home-cycle-body a,
+.home-dark .home-position-grid a,
+.home-dark .home-center-link a {
+  color: var(--h3-accent-soft);
+}
+
+.home-values article::before,
+.home-position-grid article::before,
+.home-dispositif-cards article::before {
+  background: var(--h3-accent);
+}
+
+.home-actions--card a {
+  background: var(--h3-accent-deep) !important;
+  border-color: var(--h3-accent-deep) !important;
+  color: #ffffff !important;
 }
