@@ -2447,3 +2447,185 @@ body.page-dispositif #principe-dispositif .programme-access__item::before {
     min-height: 360px !important;
   }
 }
+/* =========================================================
+   PAGES INTÉRIEURES — CORRECTIF GLOBAL HORS DISPOSITIF
+   Fond blanc crème + splits propres + panneaux sombres lisibles
+========================================================= */
+
+/* 1. Palette claire globale des pages intérieures, hors page Dispositif */
+
+body.page-interior-3:not(.page-dispositif) {
+  --p3-paper: #fbf7ef;
+  --p3-paper-soft: #f6f0e7;
+  --p3-line-light: rgba(47, 40, 34, .11);
+  --p3-accent: #5f574f;
+  --p3-accent-soft: #d8d0c4;
+  --p3-accent-deep: #332d28;
+  --p3-accent-line: rgba(95, 87, 79, .34);
+}
+
+body.page-interior-3:not(.page-dispositif),
+body.page-interior-3:not(.page-dispositif) main,
+body.page-interior-3:not(.page-dispositif) .page3-section-light,
+body.page-interior-3:not(.page-dispositif) .conv3-light,
+body.page-interior-3:not(.page-dispositif) .inner-section,
+body.page-interior-3:not(.page-dispositif) .home-section:not(.home-dark):not(.home-positions):not(.home-impact) {
+  background: var(--p3-paper) !important;
+}
+
+
+/* 2. Splits image / texte sur fond clair
+   Supprime le cadre blanc brut et intègre la photo bord à bord.
+*/
+
+body.page-interior-3:not(.page-dispositif) .page3-section-light .page3-split,
+body.page-interior-3:not(.page-dispositif) .conv3-light .conv3-split,
+body.page-interior-3:not(.page-dispositif) .home-light .home-split {
+  gap: 0 !important;
+  align-items: stretch !important;
+  background: #fbf8f2 !important;
+  border: 1px solid rgba(47, 40, 34, .08);
+}
+
+body.page-interior-3:not(.page-dispositif) .page3-section-light .page3-split-copy,
+body.page-interior-3:not(.page-dispositif) .conv3-light .conv3-split-copy,
+body.page-interior-3:not(.page-dispositif) .home-light .home-split-copy {
+  background: #fbf8f2 !important;
+  padding: clamp(36px, 5vw, 64px) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body.page-interior-3:not(.page-dispositif) .page3-section-light .page3-split-visual,
+body.page-interior-3:not(.page-dispositif) .conv3-light .conv3-decision-visual,
+body.page-interior-3:not(.page-dispositif) .home-light .home-decision-visual {
+  min-height: clamp(420px, 38vw, 520px) !important;
+  height: auto !important;
+  background-size: cover !important;
+  background-position: center !important;
+  filter: grayscale(100%) contrast(108%) brightness(.78);
+}
+
+body.page-interior-3:not(.page-dispositif) .page3-section-light .page3-split-visual::after {
+  background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.34)) !important;
+}
+
+
+/* 3. Cartes et panneaux sur fonds clairs
+   Remplace les blancs purs par un blanc cassé mat.
+*/
+
+body.page-interior-3:not(.page-dispositif) .page3-section-light .editorial-panel,
+body.page-interior-3:not(.page-dispositif) .page3-section-light .programme-list__item,
+body.page-interior-3:not(.page-dispositif) .page3-section-light .programme-access__item,
+body.page-interior-3:not(.page-dispositif) .conv3-light .conv3-cycles article,
+body.page-interior-3:not(.page-dispositif) .conv3-light .conv3-dispositif-cards article,
+body.page-interior-3:not(.page-dispositif) .home-light .home-cycles article,
+body.page-interior-3:not(.page-dispositif) .home-light .home-dispositif-cards article,
+body.page-interior-3:not(.page-dispositif) .home-light .home-access-grid article {
+  background: #fbf8f2 !important;
+  border-color: rgba(47, 40, 34, .10) !important;
+}
+
+
+/* 4. Sections sombres avec photo en arrière-plan
+   Ajoute un voile sombre sans modifier les textes.
+*/
+
+body.page-interior-3:not(.page-dispositif) .page3-section-dark,
+body.page-interior-3:not(.page-dispositif) .conv3-dark,
+body.page-interior-3:not(.page-dispositif) .home-dark,
+body.page-interior-3:not(.page-dispositif) .home-positions,
+body.page-interior-3:not(.page-dispositif) .home-impact,
+body.page-interior-3:not(.page-dispositif) .inner-section--dark,
+body.page-interior-3:not(.page-dispositif) .home-section--dark {
+  background-color: #111111 !important;
+  box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, .24);
+}
+
+
+/* 5. Panneaux dans les sections sombres
+   Remplace les blocs blancs par des panneaux graphite semi-transparents.
+*/
+
+body.page-interior-3:not(.page-dispositif) .page3-section-dark .editorial-panel,
+body.page-interior-3:not(.page-dispositif) .page3-section-dark .programme-list__item,
+body.page-interior-3:not(.page-dispositif) .page3-section-dark .programme-access__item,
+body.page-interior-3:not(.page-dispositif) .page3-section-dark .page3-card-grid > *,
+
+body.page-interior-3:not(.page-dispositif) .conv3-dark .editorial-panel,
+body.page-interior-3:not(.page-dispositif) .conv3-dark .programme-list__item,
+body.page-interior-3:not(.page-dispositif) .conv3-dark .programme-access__item,
+body.page-interior-3:not(.page-dispositif) .conv3-dark .conv3-cycles article,
+body.page-interior-3:not(.page-dispositif) .conv3-dark .conv3-position-grid article,
+body.page-interior-3:not(.page-dispositif) .conv3-dark .conv3-dispositif-cards article,
+
+body.page-interior-3:not(.page-dispositif) .home-dark .editorial-panel,
+body.page-interior-3:not(.page-dispositif) .home-dark .programme-list__item,
+body.page-interior-3:not(.page-dispositif) .home-dark .programme-access__item,
+body.page-interior-3:not(.page-dispositif) .home-dark .home-position-grid article,
+body.page-interior-3:not(.page-dispositif) .home-dark .home-values article,
+body.page-interior-3:not(.page-dispositif) .home-positions .home-position-grid article,
+body.page-interior-3:not(.page-dispositif) .home-impact .home-values article {
+  background: rgba(17, 17, 17, .58) !important;
+  border: 1px solid rgba(255, 255, 255, .10) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(5px);
+  color: var(--p3-text) !important;
+}
+
+
+/* 6. Textes dans les panneaux sombres */
+
+body.page-interior-3:not(.page-dispositif) .page3-section-dark h2,
+body.page-interior-3:not(.page-dispositif) .page3-section-dark h3,
+body.page-interior-3:not(.page-dispositif) .conv3-dark h2,
+body.page-interior-3:not(.page-dispositif) .conv3-dark h3,
+body.page-interior-3:not(.page-dispositif) .home-dark h2,
+body.page-interior-3:not(.page-dispositif) .home-dark h3,
+body.page-interior-3:not(.page-dispositif) .home-positions h2,
+body.page-interior-3:not(.page-dispositif) .home-positions h3,
+body.page-interior-3:not(.page-dispositif) .home-impact h2,
+body.page-interior-3:not(.page-dispositif) .home-impact h3 {
+  color: var(--p3-text) !important;
+}
+
+body.page-interior-3:not(.page-dispositif) .page3-section-dark p,
+body.page-interior-3:not(.page-dispositif) .conv3-dark p,
+body.page-interior-3:not(.page-dispositif) .home-dark p,
+body.page-interior-3:not(.page-dispositif) .home-positions p,
+body.page-interior-3:not(.page-dispositif) .home-impact p {
+  color: rgba(241, 238, 232, .82) !important;
+}
+
+
+/* 7. Accents : liserés sobres, non bleus */
+
+body.page-interior-3:not(.page-dispositif) .editorial-panel::before,
+body.page-interior-3:not(.page-dispositif) .programme-list__item::before,
+body.page-interior-3:not(.page-dispositif) .programme-access__item::before,
+body.page-interior-3:not(.page-dispositif) .conv3-position-grid article::before,
+body.page-interior-3:not(.page-dispositif) .conv3-dispositif-cards article::before,
+body.page-interior-3:not(.page-dispositif) .home-position-grid article::before,
+body.page-interior-3:not(.page-dispositif) .home-dispositif-cards article::before,
+body.page-interior-3:not(.page-dispositif) .home-values article::before {
+  background: var(--p3-accent) !important;
+}
+
+
+/* 8. Responsive : les splits restent propres en mobile */
+
+@media (max-width: 1023px) {
+  body.page-interior-3:not(.page-dispositif) .page3-split,
+  body.page-interior-3:not(.page-dispositif) .conv3-split,
+  body.page-interior-3:not(.page-dispositif) .home-split {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.page-interior-3:not(.page-dispositif) .page3-split-visual,
+  body.page-interior-3:not(.page-dispositif) .conv3-decision-visual,
+  body.page-interior-3:not(.page-dispositif) .home-decision-visual {
+    min-height: 360px !important;
+  }
+}
