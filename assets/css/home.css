@@ -2,9 +2,8 @@
   --h3-bg: #0a0d12;
 
   /* Fonds clairs : blanc crème / blanc cassé */
-  --h3-paper: #fffaf3;
---h3-paper-soft: #f8f3ea;
-
+ --h3-paper: var(--ep-paper);
+--h3-paper-soft: var(--ep-paper-soft);
   /* Textes */
   --h3-ink: #111111;
   --h3-ink-soft: #37312d;
