@@ -618,7 +618,7 @@
 
 .home-split-copy {
   border-radius: 0;
-  background: #fff;
+  background: var(--ep-white);
   border: 0;
   box-shadow: var(--h3-shadow-light);
   padding: 38px;
@@ -743,7 +743,7 @@
 
 .home-cycles article {
   border-radius: 0;
-  background: #fff;
+  background: var(--ep-white);
   border: 0;
   box-shadow: var(--h3-shadow-light);
   overflow: hidden;
@@ -931,7 +931,7 @@
 
 .home-dispositif-cards article {
   border-radius: 0;
-  background: #ffffff !important;
+  background: var(--ep-white) !important;
   backdrop-filter: none;
   border: 0 !important;
   box-shadow: var(--h3-shadow-light);
@@ -1074,14 +1074,17 @@
   padding: 28px;
   box-shadow: var(--h3-shadow-light);
   border: 0;
-  background: rgba(255,255,255,.92);
+  background: rgba(255,253,249,.94);
   backdrop-filter: blur(10px);
 }
 
 .home-access-grid article:first-child {
-  background: linear-gradient(135deg, rgba(93,122,168,.10), rgba(255,255,255,.95));
+  background: linear-gradient(
+    135deg,
+    rgba(95, 87, 79, .045),
+    var(--ep-white) 72%
+  );
 }
-
 .home-access-grid h3 {
   font-family: var(--font-display);
   font-size: 1.1rem;
@@ -1307,49 +1310,4 @@
 .home-hero-small--right {
   margin-top: 12px !important;
   max-width: 430px;
-}
-/* =========================================================
-   HOME — FOND CRÈME / BLANC CASSÉ
-   Correction limitée aux fonds clairs et aux encadrés
-========================================================= */
-
-html,
-body.home-page {
-  background: #fffaf3 !important;
-}
-
-.home-page main,
-.home-light,
-.home-access {
-  background: var(--h3-paper) !important;
-}
-
-.home-light:nth-of-type(even),
-.home-dispositif {
-  background: var(--h3-paper-soft) !important;
-}
-
-.home-split-copy,
-.home-cycles article,
-.home-access-grid article,
-.home-dispositif-cards article {
-  background: #fffdf8 !important;
-}
-
-.home-access-grid article:first-child {
-  background: linear-gradient(
-    135deg,
-    rgba(95,87,79,.045),
-    #fffdf8 72%
-  ) !important;
-}
-
-.home-dispositif::after {
-  background: linear-gradient(
-    90deg,
-    rgba(248,243,234,.08) 0%,
-    rgba(248,243,234,.30) 35%,
-    rgba(248,243,234,.72) 62%,
-    rgba(248,243,234,1) 100%
-  ) !important;
 }
