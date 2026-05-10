@@ -10,16 +10,16 @@ Direction : éditorial premium, sobre, contrasté
   --ep-ink-soft: #4f4640;
   --ep-ink-muted: #756a63;
 
-  --ep-paper: #f4e9dc;
-  --ep-paper-soft: #f8efe5;
-  --ep-white: #fffaf4;
+  --ep-paper: #fffaf6;
+--ep-paper-soft: #f8f3ea;
+--ep-white: #fffdf9;
 
   --ep-accent: #7b3326;
   --ep-accent-soft: #9a5241;
   --ep-accent-deep: #5d241b;
 
-  --ep-line: rgba(82, 62, 49, 0.16);
-  --ep-line-strong: rgba(82, 62, 49, 0.26);
+  --ep-line: rgba(47, 40, 34, 0.12);
+--ep-line-strong: rgba(47, 40, 34, 0.20);
 
   --ep-black: #111111;
   --ep-black-soft: #171717;
