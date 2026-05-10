@@ -2666,7 +2666,7 @@ body.page-interior-3:not(.page-dispositif) .home-values article::before {
   top: 0;
   left: 0;
   width: 30%;
-  height: 48%;
+  height: 35%;
   background: rgba(0, 0, 0, .08);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
