@@ -3,7 +3,7 @@
 
   /* Fonds clairs : blanc crème / blanc cassé */
   --h3-paper: #fbf7ef;
-  --h3-paper-soft: #f6efe6;
+--h3-paper-soft: #f6f0e7;
 
   /* Textes */
   --h3-ink: #111111;
@@ -1310,82 +1310,42 @@
   max-width: 430px;
 }
 /* =========================================================
-   AJUSTEMENT COLORIMÉTRIQUE PREMIUM — HOME
-   Fonds clairs moins rosés, blancs moins bruts, accent non bleu
+   HOME — FOND CRÈME / BLANC CASSÉ
+   Correction limitée aux fonds clairs et aux encadrés
 ========================================================= */
 
+.home-page main,
 .home-light,
 .home-access {
-  background: var(--h3-paper);
+  background: var(--h3-paper) !important;
 }
 
 .home-light:nth-of-type(even),
 .home-dispositif {
-  background: var(--h3-paper-soft);
+  background: var(--h3-paper-soft) !important;
 }
 
 .home-split-copy,
 .home-cycles article,
 .home-access-grid article,
 .home-dispositif-cards article {
-  background: rgba(255,252,247,.96) !important;
+  background: #fffaf3 !important;
 }
 
 .home-access-grid article:first-child {
   background: linear-gradient(
     135deg,
     rgba(95,87,79,.06),
-    rgba(255,252,247,.98)
+    #fffaf3 72%
   ) !important;
 }
 
 .home-dispositif::after {
   background: linear-gradient(
     90deg,
-    rgba(246,239,230,.12) 0%,
-    rgba(246,239,230,.38) 35%,
-    rgba(246,239,230,.76) 62%,
-    rgba(246,239,230,1) 100%
-  );
-}
-
-.home-kicker,
-.home-side-links a,
-.home-cycle-body a,
-.home-position-grid a,
-.home-center-link a,
-.home-access-grid a,
-.home-hero-contact-card a,
-.home-hero-sollicite a {
-  color: var(--h3-accent-deep);
-}
-
-.home-dark .home-kicker,
-.home-hero .home-kicker,
-.home-dark .home-side-links a,
-.home-dark .home-cycle-body a,
-.home-dark .home-position-grid a,
-.home-dark .home-center-link a {
-  color: var(--h3-accent-soft);
-}
-
-.home-values article::before,
-.home-position-grid article::before,
-.home-dispositif-cards article::before {
-  background: var(--h3-accent);
-}
-
-.home-actions--card a {
-  background: var(--h3-accent-deep) !important;
-  border-color: var(--h3-accent-deep) !important;
-  color: #ffffff !important;
-}
-filter: grayscale(100%) contrast(108%) brightness(.82);
-/* Noir et blanc global — images de contenu et blocs visuels */
-
-.home-cycle-img,
-.home-decision-visual,
-.home-split-title,
-.home-film-track img {
-  filter: grayscale(100%) contrast(108%) brightness(.78);
+    rgba(246,240,231,.10) 0%,
+    rgba(246,240,231,.34) 35%,
+    rgba(246,240,231,.74) 62%,
+    rgba(246,240,231,1) 100%
+  ) !important;
 }
