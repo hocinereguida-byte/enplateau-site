@@ -2,8 +2,8 @@
   --h3-bg: #0a0d12;
 
   /* Fonds clairs : blanc crème / blanc cassé */
-  --h3-paper: #fbf7ef;
---h3-paper-soft: #f6f0e7;
+  --h3-paper: #fffaf3;
+--h3-paper-soft: #f8f3ea;
 
   /* Textes */
   --h3-ink: #111111;
@@ -1314,6 +1314,11 @@
    Correction limitée aux fonds clairs et aux encadrés
 ========================================================= */
 
+html,
+body.home-page {
+  background: #fffaf3 !important;
+}
+
 .home-page main,
 .home-light,
 .home-access {
@@ -1329,23 +1334,23 @@
 .home-cycles article,
 .home-access-grid article,
 .home-dispositif-cards article {
-  background: #fffaf3 !important;
+  background: #fffdf8 !important;
 }
 
 .home-access-grid article:first-child {
   background: linear-gradient(
     135deg,
-    rgba(95,87,79,.06),
-    #fffaf3 72%
+    rgba(95,87,79,.045),
+    #fffdf8 72%
   ) !important;
 }
 
 .home-dispositif::after {
   background: linear-gradient(
     90deg,
-    rgba(246,240,231,.10) 0%,
-    rgba(246,240,231,.34) 35%,
-    rgba(246,240,231,.74) 62%,
-    rgba(246,240,231,1) 100%
+    rgba(248,243,234,.08) 0%,
+    rgba(248,243,234,.30) 35%,
+    rgba(248,243,234,.72) 62%,
+    rgba(248,243,234,1) 100%
   ) !important;
 }
