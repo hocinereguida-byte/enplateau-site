@@ -2629,3 +2629,43 @@ body.page-interior-3:not(.page-dispositif) .home-values article::before {
     min-height: 360px !important;
   }
 }
+/* =========================================================
+   À PROPOS — PHOTO PORTAGE
+   Camoufler le texte en haut à gauche de la photo
+========================================================= */
+
+.about-portage-visual {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-portage-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      560px 280px at 16% 14%,
+      rgba(0, 0, 0, .60) 0%,
+      rgba(0, 0, 0, .42) 34%,
+      rgba(0, 0, 0, .18) 54%,
+      rgba(0, 0, 0, 0) 76%
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about-portage-visual::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42%;
+  height: 34%;
+  background: rgba(0, 0, 0, .08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom-right-radius: 140px 110px;
+  pointer-events: none;
+  z-index: 2;
+}
