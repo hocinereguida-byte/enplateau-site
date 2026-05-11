@@ -2448,4 +2448,53 @@
     max-width: 100% !important;
   }
 }
+/* =========================================================
+   CORRECTIF MOBILE — FILM HERO
+========================================================= */
+
+@media (max-width: 780px) {
+
+  .home-hero-side {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .home-hero .home-film {
+    --film-window-height: auto !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    height: auto !important;
+    min-height: unset !important;
+    max-height: none !important;
+
+    aspect-ratio: 4 / 5 !important;
+
+    overflow: hidden !important;
+
+    margin: 0 !important;
+  }
+
+  .home-hero .home-film-track,
+  .home-hero .home-film-window,
+  .home-hero .home-film-frame,
+  .home-hero .home-film img,
+  .home-hero .home-film video,
+  .home-hero .home-film picture {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .home-hero-card {
+    position: relative !important;
+    z-index: 5 !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin-top: 18px !important;
+  }
+}
 
