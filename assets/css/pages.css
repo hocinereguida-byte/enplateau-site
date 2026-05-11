@@ -2570,3 +2570,50 @@ body.page-a-propos #portage .page3-visual-portage {
     gap: 18px !important;
   }
 }
+/* =========================================================
+   MOBILE — LARGEUR ÉDITORIALE COHÉRENTE
+========================================================= */
+
+@media (max-width: 780px) {
+
+  body.page-interior-3 .container,
+  body.page-interior-3 .conv3-container,
+  body.page-interior-3 .page-hero-inner,
+  body.page-interior-3 .page3-narrow,
+  body.page-interior-3 .conv3-head {
+    width: min(calc(100% - 44px), 100%) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-interior-3 .programme-list__item,
+  body.page-interior-3 .programme-access__item,
+  body.page-interior-3 .editorial-panel,
+  body.page-interior-3 .conv3-position-grid article,
+  body.page-interior-3 .conv3-dispositif-cards article,
+  body.page-interior-3 .conv3-cycle-body {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  body.page-interior-3 h1,
+  body.page-interior-3 .page-hero-title,
+  body.page-interior-3 .conv3-hero h1 {
+    max-width: 9ch !important;
+  }
+
+  body.page-interior-3 p {
+    max-width: 100% !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
