@@ -2419,3 +2419,33 @@
     min-height: 220px !important;
   }
 }
+
+@media (max-width: 780px) {
+  body.home-page .container,
+  body.home-page .home-container,
+  body.home-page .home-section-head,
+  body.home-page .home-hero-copy,
+  body.home-page .home-hero-side {
+    width: min(calc(100% - 44px), 100%) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.home-page .home-split-copy,
+  body.home-page .home-decision-copy,
+  body.home-page .home-cycle-body,
+  body.home-page .home-position-grid article,
+  body.home-page .home-dispositif-copy,
+  body.home-page .home-dispositif-cards article,
+  body.home-page .home-values article,
+  body.home-page .home-access-grid article,
+  body.home-page .home-hero-card {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  body.home-page p {
+    max-width: 100% !important;
+  }
+}
+
