@@ -2675,3 +2675,59 @@ body.page-conversations-logement .ci-visual {
 body.page-conversations-logement .ci-visual::after {
   background: linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.24)) !important;
 }
+/* =========================================================
+   CORRECTIF COULEURS — SUPPRESSION TEINTE ROSÉE
+   Pages intérieures
+========================================================= */
+
+:root {
+  --p3-paper: #F4F1EC;
+  --p3-paper-soft: #ECE7DF;
+  --p3-accent: #6F6258;
+  --p3-accent-soft: #B8AEA5;
+  --p3-accent-deep: #5C5149;
+}
+
+body.page-interior-3,
+body.page-interior-3 main,
+body:not(.home-page) main > .inner-section:not(:first-child),
+body:not(.home-page) main > .home-section:not(:first-child),
+.page-interior-3 .page3-section-light,
+.page-interior-3 .conv3-light {
+  background: var(--p3-paper) !important;
+}
+
+.page-interior-3 .page3-split-copy,
+.page-interior-3 .conv3-split-copy,
+.page-interior-3 .programme-list__item,
+.page-interior-3 .programme-access__item,
+.page-interior-3 .conv3-cycles article,
+.page-interior-3 .conv3-cycle-body,
+.page-interior-3 .conv3-dispositif-cards article,
+.page-interior-3 .editorial-panel {
+  background: #F8F6F2 !important;
+}
+
+.page-interior-3 .section-kicker,
+.page-interior-3 .page-hero-kicker,
+.page-interior-3 .conv3-kicker,
+.page-interior-3 .conv3-cycle-body span {
+  color: var(--p3-accent-deep) !important;
+}
+
+.page-interior-3 .link--primary,
+.page-interior-3 .page-hero .link--primary,
+.page-interior-3 .page3-section-dark .link--primary,
+.page-interior-3 .conv3-actions a:first-child {
+  background: var(--p3-accent) !important;
+  border-color: var(--p3-accent) !important;
+  color: #fff !important;
+}
+
+.page-interior-3 .programme-list__item::before,
+.page-interior-3 .programme-access__item::before,
+.page-interior-3 .editorial-panel::before,
+.page-interior-3 .conv3-position-grid article::before,
+.page-interior-3 .conv3-dispositif-cards article::before {
+  background: var(--p3-accent) !important;
+}
