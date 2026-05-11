@@ -271,7 +271,7 @@ body.page-interior-3 .container {
 .page-interior-3 .page3-visual-logement {
   background:
     linear-gradient(90deg, rgba(17,17,17,.72), rgba(17,17,17,.34)),
-    url("../../images/cycle-logement-chantier.jpg") center/cover no-repeat;
+    url("../../images/conversations/cycle-logement-chantier.jpg") center/cover no-repeat;
 }
 
 .page-interior-3 .page3-visual-industrie {
@@ -1500,14 +1500,14 @@ body.page-interior-3 .container {
 .page-conv3-logement .conv3-cycle-production-visual {
   background:
     linear-gradient(90deg, rgba(17,17,17,.82), rgba(17,17,17,.56)),
-    url("../../images/cycle-logement-chantier.jpg") center/cover no-repeat;
+    url("../../images/conversations/cycle-logement-chantier.jpg") center/cover no-repeat;
 }
 
 .page-conv3-logement .conv3-visual-logement-projet,
 .page-conv3-logement .conv3-visual-logement-transformation {
   background:
     linear-gradient(90deg, rgba(17,17,17,.78), rgba(17,17,17,.50)),
-    url("../../images/cycle-logement-chantier.jpg") center/cover no-repeat;
+    url("../../images/conversations/cycle-logement-chantier.jpg") center/cover no-repeat;
 }
 
 .page-conv3-logement .conv3-cycle-risque-visual,
@@ -1518,7 +1518,7 @@ body.page-interior-3 .container {
 }
 
 .page-conv3-logement .conv3-cycle-logement-img {
-  background-image: url("../../images/cycle-logement-chantier.jpg");
+  background-image: url("../../images/conversations/cycle-logement-chantier.jpg");
 }
 
 /* =========================================================
