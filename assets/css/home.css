@@ -2282,4 +2282,140 @@
     gap: 18px !important;
   }
 }
+/* =========================================================
+   CORRECTIF MOBILE — HOME
+   Corrige les débordements horizontaux et les grilles desktop
+========================================================= */
 
+@media (max-width: 780px) {
+  body.home-page {
+    overflow-x: hidden;
+  }
+
+  .home-hero {
+    min-height: auto !important;
+    padding: 92px 0 56px !important;
+  }
+
+  .home-hero-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+    padding: 0 !important;
+  }
+
+  .home-hero-copy,
+  .home-hero-side {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-self: stretch !important;
+  }
+
+  .home-hero-title {
+    max-width: 9.5ch !important;
+    font-size: clamp(3.05rem, 15vw, 4.4rem) !important;
+    line-height: .95 !important;
+    letter-spacing: -.045em !important;
+  }
+
+  .home-hero-lead,
+  .home-hero-copy p {
+    max-width: 100% !important;
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .home-hero .home-film {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 260px !important;
+    margin: 0 !important;
+  }
+
+  .home-hero-card {
+    width: 100% !important;
+    margin: 18px 0 0 !important;
+  }
+
+  .home-split,
+  .home-decision-grid,
+  .home-cycles,
+  .home-position-grid,
+  .home-dispositif-grid,
+  .home-dispositif-cards,
+  .home-values,
+  .home-access-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+
+  .home-split-visual,
+  .home-decision-visual {
+    width: 100% !important;
+    min-height: 320px !important;
+  }
+
+  .home-split-copy,
+  .home-decision-copy {
+    width: 100% !important;
+    padding: 28px 22px !important;
+  }
+
+  .home-section h2,
+  .home-split-copy h2,
+  .home-decision-copy h2,
+  .home-section-title {
+    max-width: 100% !important;
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  .home-section h3,
+  .home-split-copy h3,
+  .home-decision-copy h3,
+  .home-values h3,
+  .home-dispositif-cards h3 {
+    font-size: 1.2rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .home-section p,
+  .home-split-copy p,
+  .home-decision-copy p,
+  .home-values p,
+  .home-dispositif-cards p {
+    font-size: .98rem !important;
+    line-height: 1.68 !important;
+  }
+
+  .home-cycle-img {
+    width: 100% !important;
+    min-height: 190px !important;
+  }
+
+  .home-cycle-body,
+  .home-position-grid article,
+  .home-dispositif-cards article,
+  .home-values article,
+  .home-access-grid article {
+    width: 100% !important;
+    padding: 24px 20px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  body.home-page .container,
+  .home-container {
+    width: min(calc(100% - 32px), 100%) !important;
+  }
+
+  .home-hero-title {
+    font-size: clamp(2.8rem, 16vw, 4rem) !important;
+  }
+
+  .home-hero .home-film {
+    min-height: 220px !important;
+  }
+}
