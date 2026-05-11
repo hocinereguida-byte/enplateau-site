@@ -2359,3 +2359,214 @@ body.page-interior-3 #comment-cela-se-passe .page3-split-visual {
     gap: 0 !important;
   }
 }
+/* =========================================================
+   AJUSTEMENT FINAL — PAGES INTÉRIEURES
+   Alignement éditorial avec la home :
+   typo, respiration, blocs séparés, cartes solidaires,
+   filtres N&B moins sombres.
+========================================================= */
+
+:root {
+  --p3-photo-bw-strong: grayscale(100%) contrast(112%) brightness(.88);
+  --p3-photo-bw-balanced: grayscale(100%) contrast(108%) brightness(.92);
+  --p3-photo-bw-faint: grayscale(100%) contrast(110%) brightness(.96);
+}
+
+/* Typographie — hiérarchie plus nette */
+.page-interior-3 .page-hero-title,
+.page-interior-3 .conv3-hero h1,
+body:not(.home-page) main > .inner-section:first-child h1,
+body:not(.home-page) main > .hero:first-child h1,
+body:not(.home-page) main > .inner-section:first-child .hero-title,
+body:not(.home-page) main > .hero:first-child .hero-title {
+  max-width: 12ch !important;
+  font-size: clamp(3rem, 4.6vw, 4.55rem) !important;
+  line-height: .99 !important;
+  letter-spacing: -.04em !important;
+  text-wrap: balance;
+}
+
+.page-interior-3 .page-hero-sub,
+.page-interior-3 .conv3-hero-lead {
+  max-width: 42ch !important;
+  font-size: clamp(1.14rem, 1.35vw, 1.3rem) !important;
+  line-height: 1.5 !important;
+  color: rgba(255,255,255,.92) !important;
+}
+
+.page-interior-3 .page3-split-copy h2,
+.page-interior-3 .page3-narrow h2,
+.page-interior-3 .conv3-split-title h2,
+.page-interior-3 .conv3-decision-copy h2,
+.page-interior-3 .conv3-head h2,
+.page-interior-3 .conv3-dispositif h2 {
+  font-size: clamp(2.05rem, 3.25vw, 3.05rem) !important;
+  line-height: 1.06 !important;
+  letter-spacing: -.035em !important;
+  text-wrap: balance;
+}
+
+.page-interior-3 .programme-list__item h3,
+.page-interior-3 .programme-access__item h3,
+.page-interior-3 .conv3-split-copy h3,
+.page-interior-3 .conv3-decision-copy h3,
+.page-interior-3 .conv3-cycle-body h3,
+.page-interior-3 .conv3-position-grid h3,
+.page-interior-3 .conv3-dispositif-cards h3 {
+  font-size: clamp(1.14rem, 1.35vw, 1.26rem) !important;
+  line-height: 1.24 !important;
+  letter-spacing: -.018em !important;
+  margin-bottom: 13px !important;
+  text-wrap: balance;
+}
+
+.page-interior-3 .page3-split-copy > p,
+.page-interior-3 .page3-narrow > p,
+.page-interior-3 .editorial-panel p,
+.page-interior-3 .programme-list__item p,
+.page-interior-3 .programme-access__item p,
+.page-interior-3 .conv3-split-copy p,
+.page-interior-3 .conv3-decision-copy p,
+.page-interior-3 .conv3-head p,
+.page-interior-3 .conv3-cycle-body p,
+.page-interior-3 .conv3-position-grid p,
+.page-interior-3 .conv3-dispositif p,
+.page-interior-3 .conv3-dispositif-cards p {
+  max-width: 58ch;
+  font-size: .92rem !important;
+  line-height: 1.78 !important;
+}
+
+/* Respiration générale */
+.page-interior-3 .page3-section,
+.page-interior-3 .conv3-section {
+  padding-top: clamp(68px, 8vw, 104px) !important;
+  padding-bottom: clamp(68px, 8vw, 104px) !important;
+}
+
+.page-interior-3 .conv3-head,
+.page-interior-3 .page3-narrow {
+  margin-bottom: clamp(36px, 4.4vw, 54px) !important;
+}
+
+/* Séparation des blocs — éviter l'effet feuille continue */
+.page-interior-3 .programme-list,
+.page-interior-3 .programme-access,
+.page-interior-3 .page3-card-grid,
+.page-interior-3 .conv3-position-grid,
+.page-interior-3 .conv3-dispositif-cards {
+  gap: clamp(18px, 2vw, 28px) !important;
+  background: transparent !important;
+}
+
+.page-interior-3 .programme-list__item,
+.page-interior-3 .programme-access__item,
+.page-interior-3 .conv3-position-grid article,
+.page-interior-3 .conv3-dispositif-cards article {
+  border: 1px solid var(--p3-line-light) !important;
+}
+
+.page-interior-3 .page3-card-grid-dark .programme-list__item,
+.page-interior-3 .page3-card-grid-dark .programme-access__item,
+.page-interior-3 .conv3-position-grid article {
+  border-color: var(--p3-line-dark) !important;
+}
+
+/* Cartes cycles : image + texte solidaires */
+.page-interior-3 .conv3-cycles {
+  gap: clamp(22px, 2.4vw, 34px) !important;
+  background: transparent !important;
+}
+
+.page-interior-3 .conv3-cycles article {
+  border: 1px solid var(--p3-line-light) !important;
+  background: var(--ep-white) !important;
+  overflow: hidden !important;
+}
+
+.page-interior-3 .conv3-cycle-img {
+  margin: 0 !important;
+}
+
+.page-interior-3 .conv3-cycle-body {
+  border-top: 1px solid var(--p3-line-light);
+  background: var(--ep-white);
+  padding: 30px 28px 28px !important;
+}
+
+/* Splits : conserver l'air entre image et texte */
+.page-interior-3 .page3-split,
+.page-interior-3 .conv3-split,
+.page-interior-3 .conv3-decision-grid {
+  gap: clamp(24px, 3vw, 42px) !important;
+  background: transparent !important;
+}
+
+.page-interior-3 .page3-split-copy,
+.page-interior-3 .conv3-split-copy,
+.page-interior-3 .conv3-decision-copy {
+  padding: clamp(36px, 4.4vw, 56px) !important;
+}
+
+/* Filtres photo moins écrasés */
+.page-interior-3 .page3-split-visual,
+.page-interior-3 .conv3-decision-visual,
+.page-interior-3 .conv3-cycle-img,
+.page-interior-3 .conv3-cycle-logement-img,
+.page-interior-3 .conv3-cycle-industrie,
+.page-interior-3 .conv3-cycle-positions,
+.page-interior-3 .conv3-cycle-financement,
+.page-interior-3 .conv3-cycle-dispositif,
+.page-conv3-logement .conv3-cycle-logement-img {
+  filter: var(--p3-photo-bw-strong) !important;
+}
+
+.page-interior-3 .conv3-dispositif::before,
+body.page-dispositif #architecture-dispositif::before,
+body.page-dispositif #acces-dispositif::before,
+body.page-positions #voir-aussi-les-conversations::before {
+  filter: var(--p3-photo-bw-faint) !important;
+}
+
+/* Portrait À propos : ne pas retraiter */
+body.page-a-propos #portage .page3-split-visual,
+body.page-a-propos #portage .page3-visual-portage {
+  filter: none !important;
+}
+
+/* Mobile */
+@media (max-width: 1023px) {
+  .page-interior-3 .programme-list,
+  .page-interior-3 .programme-access,
+  .page-interior-3 .page3-card-grid,
+  .page-interior-3 .conv3-cycles,
+  .page-interior-3 .conv3-position-grid,
+  .page-interior-3 .conv3-dispositif-cards {
+    gap: 18px !important;
+  }
+}
+
+@media (max-width: 780px) {
+  .page-interior-3 .page-hero-title,
+  .page-interior-3 .conv3-hero h1,
+  body:not(.home-page) main > .inner-section:first-child h1,
+  body:not(.home-page) main > .hero:first-child h1 {
+    font-size: clamp(2.45rem, 10.5vw, 3.45rem) !important;
+    max-width: 11.5ch !important;
+  }
+
+  .page-interior-3 .page3-split-copy h2,
+  .page-interior-3 .page3-narrow h2,
+  .page-interior-3 .conv3-split-title h2,
+  .page-interior-3 .conv3-decision-copy h2,
+  .page-interior-3 .conv3-head h2,
+  .page-interior-3 .conv3-dispositif h2 {
+    font-size: clamp(1.85rem, 7vw, 2.45rem) !important;
+  }
+
+  .page-interior-3 .page3-split,
+  .page-interior-3 .conv3-split,
+  .page-interior-3 .conv3-decision-grid {
+    gap: 18px !important;
+  }
+}
