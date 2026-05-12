@@ -1,106 +1,34 @@
 /*
   En Plateau — render-landing.js
-  Rendu complet par défaut de /lp/industrie/contribuer.html?deal=...
-  Objectif MVP : afficher TOUTES les données disponibles pour le deal.
+  Landing one-to-one de conversion
+  Page cible : /lp/industrie/contribuer.html?deal=3970
 */
 
 (function () {
   "use strict";
 
   const Core = window.EnPlateauRenderCore;
-
-  if (!Core) {
-    console.error("render-core.js est manquant ou chargé après render-landing.js.");
-    return;
-  }
-
   const root = document.getElementById("landing-root");
 
-  if (!root) {
-    console.error("Conteneur #landing-root introuvable.");
+  if (!Core || !root) {
+    console.error("render-core.js ou #landing-root introuvable.");
     return;
   }
 
   function safe(value) {
-    return Core.escapeHTML(value);
+    return Core.escapeHTML(value || "");
   }
 
-  function hasValue(value) {
-    if (value === undefined || value === null) return false;
-    if (Array.isArray(value)) return value.length > 0;
-    if (typeof value === "object") return Object.keys(value).length > 0;
-    return String(value).trim() !== "";
+  function text(...values) {
+    return Core.text(...values);
   }
 
-  function valueToText(value) {
-    if (value === undefined || value === null || value === "") return "—";
-    if (Array.isArray(value)) return value.filter(hasValue).map(item => {
-      if (typeof item === "object") return JSON.stringify(item, null, 2);
-      return String(item);
-    }).join("\n");
-    if (typeof value === "object") return JSON.stringify(value, null, 2);
-    return String(value);
-  }
-
-  function card(title, value) {
-    if (!hasValue(value)) return "";
-    return `
-      <article class="lp-card">
-        <h3>${safe(title)}</h3>
-        <p style="white-space: pre-line;">${safe(valueToText(value))}</p>
-      </article>
-    `;
-  }
-
-  function list(items) {
-    const arr = Core.toArray(items).filter(hasValue);
-    if (!arr.length) return "";
-    return `<ul class="lp-list">${arr.map(item => `<li>${safe(valueToText(item))}</li>`).join("")}</ul>`;
-  }
-
-  function objectGrid(title, object, preferredOrder) {
-    if (!object || typeof object !== "object") return "";
-
-    const keys = [
-      ...preferredOrder.filter(key => Object.prototype.hasOwnProperty.call(object, key)),
-      ...Object.keys(object).filter(key => !preferredOrder.includes(key))
-    ].filter(key => hasValue(object[key]));
-
-    if (!keys.length) return "";
-
-    return `
-      <section class="lp-section lp-section-light">
-        <div class="lp-container">
-          <div class="lp-section-head">
-            <span class="lp-label">Données disponibles</span>
-            <h2 class="lp-section-title">${safe(title)}</h2>
-          </div>
-          <div class="lp-grid-3">
-            ${keys.map(key => card(key, object[key])).join("")}
-          </div>
-        </div>
-      </section>
-    `;
-  }
-
-  function rawBlock(title, data) {
-    if (!hasValue(data)) return "";
-    return `
-      <section class="lp-section lp-section-dark">
-        <div class="lp-container">
-          <div class="lp-section-head">
-            <span class="lp-label">Données brutes</span>
-            <h2 class="lp-section-title">${safe(title)}</h2>
-            <p class="lp-section-intro">
-              Bloc de vérification temporaire : il permet de contrôler précisément ce qui est disponible dans le JS pour cet identifiant.
-            </p>
-          </div>
-          <article class="lp-card">
-            <pre style="white-space: pre-wrap; overflow-x: auto; margin: 0; font-size: .84rem; line-height: 1.55;">${safe(JSON.stringify(data, null, 2))}</pre>
-          </article>
-        </div>
-      </section>
-    `;
+  function firstSentence(value, fallback) {
+    const raw = text(value, fallback);
+    if (!raw) return "";
+    const cleaned = raw.replace(/\s+/g, " ").trim();
+    const match = cleaned.match(/^(.{80,260}?[.!?])\s/);
+    return match ? match[1] : cleaned;
   }
 
   function getReadingGain(reading, actorType) {
@@ -110,71 +38,83 @@
     return gains.organisationIndustrielle || gains.organisation || null;
   }
 
-  function getAllOutreach(deal) {
-    const possible = [
-      deal?.outreach,
-      deal?.messages,
-      deal?.linkedin,
-      deal?.emailing,
-      deal?.scriptsLinkedin,
-      deal?.scripts_linkedin
-    ].filter(hasValue);
+  function getLandingPageConfig(reading) {
+    const data = Core.getData();
+    if (!reading || !data?.landingPages) return null;
 
-    const flat = {
-      invitationLinkedin: Core.text(
-        deal?.invitationLinkedin,
-        deal?.invitation_linkedin,
-        deal?.note_invitation_interv,
-        deal?.["invitation_linkedin"],
-        deal?.["message_invitation_linkedin"],
-        deal?.["note_invitation_interv"]
+    const candidates = [
+      reading.slug,
+      reading.code,
+      reading.shortLabel,
+      reading.label
+    ].map(Core.normalize);
+
+    return Object.entries(data.landingPages).find(([key, value]) => {
+      return candidates.includes(Core.normalize(key)) ||
+        candidates.includes(Core.normalize(value?.readingType)) ||
+        candidates.includes(Core.normalize(value?.cycleCode));
+    })?.[1] || null;
+  }
+
+  function getActorTypeLabel(actorType) {
+    return actorType === "cabinet_conseil"
+      ? "Cabinet · Conseil · Expertise"
+      : "Organisation industrielle";
+  }
+
+  function getCTA(deal, reading) {
+    const source = text(reading?.calSource, "lp-industrie-contribution");
+    const defaultHref = `/demander-un-echange-editorial.html?source=${encodeURIComponent(source)}`;
+
+    return {
+      href: text(
+        deal?.ctaUrl,
+        deal?.cta_url,
+        deal?.activation?.ctaUrl,
+        deal?.activation?.cta_url,
+        deal?.landingPageUrl,
+        deal?.landing_page_url,
+        defaultHref
       ),
-      messagePostAcceptation: Core.text(
-        deal?.messagePostAcceptation,
-        deal?.message_post_acceptation,
-        deal?.["message_post_acceptation"]
-      ),
-      relanceLinkedin1: Core.text(
-        deal?.relanceLinkedin1,
-        deal?.relance_1,
-        deal?.relance1,
-        deal?.["relance_1"],
-        deal?.["message_relance_linkedin"]
-      ),
-      relanceLinkedin2: Core.text(
-        deal?.relanceLinkedin2,
-        deal?.relance_2,
-        deal?.relance2,
-        deal?.["relance_2"]
-      ),
-      emailObjet: Core.text(
-        deal?.emailObjet,
-        deal?.email_objet,
-        deal?.objet_email,
-        deal?.["email_1_objet"],
-        deal?.["objet_email"]
-      ),
-      emailCorps: Core.text(
-        deal?.emailCorps,
-        deal?.email_corps,
-        deal?.corps_email,
-        deal?.["email_1_corps"],
-        deal?.["corps_email"]
+      label: text(
+        deal?.ctaLabel,
+        deal?.cta_label,
+        deal?.activation?.ctaLabel,
+        deal?.activation?.cta_label,
+        "Réserver un échange éditorial de cadrage"
       )
     };
+  }
 
-    return { ...flat, sourcesInternes: possible };
+  function renderError(title, body) {
+    root.innerHTML = `
+      <section class="landing-loading">
+        <div class="landing-loading__box">
+          <a class="landing-brand landing-brand--loading" href="/" aria-label="En Plateau — accueil">En Plateau</a>
+          <h1>${safe(title)}</h1>
+          <p>${body}</p>
+        </div>
+      </section>
+    `;
   }
 
   function render(bundle) {
     const { deal, angle, reading, conversation, context } = bundle;
 
     if (!deal) {
-      root.innerHTML = Core.errorHTML(
-        "Deal introuvable",
-        `Aucun deal ne correspond à l’identifiant indiqué dans l’URL.<br><br>
-        Identifiant reçu : <strong>${safe(bundle.dealId || "aucun")}</strong><br><br>
-        Vérifiez que cet ID existe bien dans <strong>editorial-data-industrie-v52-master-casting.js</strong>.`
+      renderError(
+        "Proposition introuvable",
+        `Aucun contenu personnalisé ne correspond à l’identifiant indiqué dans l’URL.<br><br>
+        Identifiant reçu : <strong>${safe(bundle.dealId || "aucun")}</strong>.`
+      );
+      return;
+    }
+
+    if (!angle) {
+      renderError(
+        "Angle éditorial introuvable",
+        `Le deal est reconnu, mais son angle éditorial n’a pas été retrouvé.<br><br>
+        Code angle détecté : <strong>${safe(Core.getAngleCodeFromDeal(deal) || "non renseigné")}</strong>.`
       );
       return;
     }
@@ -182,274 +122,248 @@
     const person = Core.getPerson(deal);
     const organisation = Core.getOrganisation(deal);
     const actorType = Core.getActorType(deal);
+    const actorTypeLabel = getActorTypeLabel(actorType);
     const why = Core.getWhy(deal);
     const gain = getReadingGain(reading, actorType);
-    const outreach = getAllOutreach(deal);
+    const lpConfig = getLandingPageConfig(reading);
+    const cta = getCTA(deal, reading);
 
-    const actorLabel = actorType === "cabinet_conseil" ? "Cabinet · Conseil · Expertise" : "Entreprise / organisation";
+    const readingLabel = text(reading?.label, angle?.typeLecture, deal?.editorialContext?.typeLecture, "Lecture éditoriale");
+    const organisationName = text(organisation.name, deal?.organisation?.effectiveName, deal?.organisation?.name);
+    const personName = text(person.fullName, deal?.person?.effectiveName, deal?.person?.name);
+    const personRole = text(person.role, deal?.person?.effectiveRole, deal?.person?.role);
+    const angleTitle = text(angle.questionPublique, angle.titreAngle, angle.questionEditoriale);
+    const angleShort = text(angle.questionSimple, angle.questionCourte, angleTitle);
+    const pointBascule = text(angle.pointBascule, angle.formatLongIntervenant?.momentBascule, deal?.editorialContext?.typeBascule);
+    const tension = text(angle.tensionArbitrage, angle.formatLongIntervenant?.tensionCentrale, conversation?.tension, deal?.editorialContext?.tensionCentrale);
+    const contextLabel = text(context?.label, angle.contextLabel, deal?.editorialContext?.contexteTitre, deal?.editorialContext?.contexte);
+    const conversationTitle = text(conversation?.title, deal?.editorialContext?.conversation, "Cycle Industrie & transformation des territoires");
 
-    const ctaHref = Core.text(
-      deal?.ctaUrl,
-      deal?.cta_url,
-      deal?.calUrl,
-      deal?.cal_url,
-      deal?.url_landing,
-      deal?.landingPageUrl,
-      deal?.landing_page_url,
-      "/demander-un-echange-editorial.html"
+    const organisationWhy = firstSentence(
+      why.organisation,
+      `${organisationName} a été identifié pour la manière dont son activité expose concrètement aux arbitrages visés par cet angle.`
     );
 
-    const ctaLabel = Core.text(
-      deal?.ctaLabel,
-      deal?.cta_label,
-      deal?.cta_recommande,
-      deal?.["CTA recommandé"],
-      "Demander un échange éditorial"
+    const personWhy = firstSentence(
+      why.person,
+      `${personName} peut porter cette contribution depuis une fonction directement reliée aux décisions que l’angle cherche à rendre visibles.`
     );
 
-    const complementaryCodes = Core.toArray(angle?.complementaryCodes);
-    const complementaryAngles = complementaryCodes.map(code => Core.getAngleByCode(code)).filter(Boolean);
-    const dimensions = Core.toArray(angle?.sixDimensionsAngle || angle?.formatLongIntervenant?.dimensions);
+    const positionWhy = text(
+      why.position,
+      angle.attenduIntervenant,
+      "La position proposée vise à transformer une expérience située en lecture publique claire, utile et maîtrisée."
+    );
+
+    const gainTitle = text(
+      gain?.court,
+      reading?.motivationCentrale,
+      "Transformer une expérience située en position publique crédible."
+    );
+
+    const gainText = Array.isArray(gain?.detail)
+      ? gain.detail.slice(0, 3).join(" ")
+      : text(gain?.detail, reading?.accroche, "La contribution produit un actif éditorial préparé, réutilisable, sans exposer de données internes.");
+
+    const complementaryCodes = Core.toArray(angle.complementaryCodes);
+    const complementaryAngles = complementaryCodes.map(code => Core.getAngleByCode(code)).filter(Boolean).slice(0, 3);
 
     root.innerHTML = `
-      <section class="lp-hero">
-        <div class="lp-container lp-hero-inner">
-          <div>
-            <p class="lp-kicker">En Plateau · Cycle Industrie & transformation des territoires</p>
-            <h1 class="lp-title">${safe(reading?.label || angle?.typeLecture || "Contribution éditoriale personnalisée")}</h1>
-            <p class="lp-subtitle">
-              Rendu complet par défaut du deal <strong>${safe(bundle.dealId || Core.getDealId(deal))}</strong>.
-              Cette page affiche toutes les données disponibles dans le référentiel JS pour contrôler le rendu avant filtrage éditorial.
-            </p>
-
-            <div class="lp-hero-actions">
-              <a class="lp-btn lp-btn-primary" href="${safe(ctaHref)}">${safe(ctaLabel)}</a>
-              <a class="lp-btn" href="#donnees-deal">Voir les données du deal</a>
-            </div>
-          </div>
-
-          <aside class="lp-hero-card">
-            <h2>${safe(organisation.name || "Organisation non renseignée")}</h2>
-            <p>
-              ${safe(person.fullName || "Intervenant non renseigné")}
-              ${person.role ? "<br>" + safe(person.role) : ""}
-              <br><br>
-              Type d’acteur : ${safe(actorLabel)}
-            </p>
-          </aside>
+      <div class="landing-top">
+        <div class="landing-top__inner">
+          <a class="landing-brand" href="/" aria-label="En Plateau — accueil">En Plateau</a>
+          <div class="landing-top__meta">Proposition éditoriale personnalisée</div>
         </div>
+      </div>
 
-        <div class="lp-container">
-          <div class="lp-meta-grid">
-            <div class="lp-meta-item">
-              <span class="lp-meta-label">Deal ID</span>
-              <span class="lp-meta-value">${safe(Core.getDealId(deal) || bundle.dealId)}</span>
+      <section class="landing-hero">
+        <div class="landing-container">
+          <div class="landing-hero__grid">
+            <div>
+              <p class="landing-kicker">Saison inaugurale · Cycle Industrie</p>
+              <h1>
+                Une position<br>
+                éditoriale<br>
+                <em>vous est proposée.</em>
+              </h1>
+
+              <p class="landing-lead">
+                <strong>${safe(organisationName || "Votre organisation")} a été identifiée pour contribuer à une conversation économique en cours de composition.</strong>
+              </p>
+
+              <p class="landing-lead">
+                Cette page présente une proposition ciblée : un angle précis, une lecture attendue,
+                et les raisons pour lesquelles votre position peut éclairer ce sujet publiquement.
+              </p>
+
+              <div class="landing-actions">
+                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
+                <a class="landing-btn landing-btn--ghost" href="#angle-propose">Voir l’angle proposé</a>
+              </div>
+
+              <p class="landing-reassurance">
+                15 minutes · Sans engagement · Objectif : vérifier la pertinence de l’angle avant toute décision.
+              </p>
             </div>
-            <div class="lp-meta-item">
-              <span class="lp-meta-label">Organisation</span>
-              <span class="lp-meta-value">${safe(organisation.name || "—")}</span>
+
+            <aside class="landing-hero__card">
+              <h2>${safe(readingLabel)}</h2>
+              <p>
+                Une contribution ne consiste pas à exposer un cas interne.
+                Elle vise à formuler une lecture située, publiquement tenable, à partir d’une position d’observation légitime.
+              </p>
+
+              <div class="landing-identity">
+                <span>Organisation</span>
+                <strong>${safe(organisationName || "Non renseignée")}</strong>
+              </div>
+
+              <div class="landing-identity">
+                <span>Intervenant pressenti</span>
+                <strong>${safe(personName || "Non renseigné")}${personRole ? "<br>" + safe(personRole) : ""}</strong>
+              </div>
+
+              <div class="landing-identity">
+                <span>Type d’acteur</span>
+                <strong>${safe(actorTypeLabel)}</strong>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="landing-section landing-section--light" id="pourquoi-vous">
+        <div class="landing-container">
+          <div class="landing-split">
+            <div class="landing-split__visual">
+              <h2>Pourquoi cette proposition vous est adressée.</h2>
             </div>
-            <div class="lp-meta-item">
-              <span class="lp-meta-label">Personne</span>
-              <span class="lp-meta-value">${safe(person.fullName || "—")}</span>
-            </div>
-            <div class="lp-meta-item">
-              <span class="lp-meta-label">Angle</span>
-              <span class="lp-meta-value">${safe(Core.getAngleCodeFromDeal(deal) || angle?.code || "—")}</span>
+
+            <div class="landing-split__copy">
+              <div class="landing-point">
+                <h3>Pourquoi votre organisation</h3>
+                <p>${safe(organisationWhy)}</p>
+              </div>
+
+              <div class="landing-point">
+                <h3>Pourquoi votre fonction</h3>
+                <p>${safe(personWhy)}</p>
+              </div>
+
+              <div class="landing-point">
+                <h3>Pourquoi cette position</h3>
+                <p>${safe(positionWhy)}</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="donnees-deal" class="lp-section lp-section-light">
-        <div class="lp-container">
-          <div class="lp-section-head">
-            <span class="lp-label">Synthèse du deal</span>
-            <h2 class="lp-section-title">Toutes les variables principales récupérées.</h2>
+      <section class="landing-section landing-section--dark" id="angle-propose">
+        <div class="landing-container">
+          <div class="landing-head landing-head--left">
+            <p class="landing-kicker">${safe(contextLabel || "Contexte éditorial")}</p>
+            <h2>${safe(angleTitle)}</h2>
+            <p>${safe(text(angle.questionActivation, angle.texteProgramme, angle.introMecanisme, "L’angle vise à rendre visible un mécanisme industriel précis, sans demander à l’intervenant d’exposer une situation confidentielle."))}</p>
           </div>
 
-          <div class="lp-grid-3">
-            ${card("ID deal", Core.getDealId(deal))}
-            ${card("Organisation", organisation.name)}
-            ${card("Type acteur", actorLabel)}
-            ${card("Personne", person.fullName)}
-            ${card("Fonction", person.role)}
-            ${card("LinkedIn", person.linkedin)}
-            ${card("Email", person.email)}
-            ${card("Code angle", Core.getAngleCodeFromDeal(deal))}
-            ${card("Lecture", reading?.label || angle?.typeLecture)}
-            ${card("Conversation", conversation?.title)}
-            ${card("Contexte", context?.label)}
-            ${card("CTA", ctaLabel + " — " + ctaHref)}
-          </div>
-        </div>
-      </section>
+          <div class="landing-grid landing-grid--3">
+            <article class="landing-card">
+              <span class="landing-label">Conversation</span>
+              <h3>${safe(conversationTitle)}</h3>
+              <p>${safe(text(conversation?.narrativeText, conversation?.description, "Une conversation construite pour mettre en regard des lectures complémentaires."))}</p>
+            </article>
 
-      <section class="lp-section lp-section-dark">
-        <div class="lp-container">
-          <div class="lp-section-head">
-            <span class="lp-label">Justifications CRM / éditoriales</span>
-            <h2 class="lp-section-title">Pourquoi cette organisation, cette personne, cette position.</h2>
-          </div>
+            <article class="landing-card">
+              <span class="landing-label">Point de bascule</span>
+              <h3>${safe(text(angleShort, "Le moment où la décision change de nature"))}</h3>
+              <p>${safe(pointBascule)}</p>
+            </article>
 
-          <div class="lp-grid-3">
-            ${card("Pourquoi organisation", why.organisation)}
-            ${card("Pourquoi personne", why.person)}
-            ${card("Pourquoi position", why.position)}
-            ${card("Niveau de confiance", Core.text(deal?.niveauConfiance, deal?.niveau_confiance, deal?.niveau_personnalisation_pourquoi, deal?.["niveau_confiance"], deal?.["niveau_personnalisation_pourquoi"]))}
-            ${card("Validation", Core.text(deal?.validation, deal?.statutValidation, deal?.statut_validation, deal?.["validation"], deal?.["statut_validation"]))}
-            ${card("Vigilance", Core.text(deal?.vigilance, deal?.vigilancePourquoi, deal?.vigilance_pourquoi, deal?.["vigilance_pourquoi"]))}
+            <article class="landing-card">
+              <span class="landing-label">Tension centrale</span>
+              <h3>Ce qui devient difficile à arbitrer</h3>
+              <p>${safe(tension)}</p>
+            </article>
           </div>
         </div>
       </section>
 
-      ${
-        angle
-          ? `<section class="lp-section lp-section-light">
-              <div class="lp-container">
-                <div class="lp-section-head">
-                  <span class="lp-label">Angle éditorial</span>
-                  <h2 class="lp-section-title">${safe(angle.questionPublique || angle.titreAngle || angle.questionEditoriale || angle.code)}</h2>
-                  <p class="lp-section-intro">${safe(angle.questionActivation || angle.texteProgramme || angle.introMecanisme || "")}</p>
-                </div>
+      <section class="landing-section landing-section--light">
+        <div class="landing-container">
+          <div class="landing-head">
+            <p class="landing-kicker">Ce que vous pouvez valoriser</p>
+            <h2>${safe(gainTitle)}</h2>
+            <p>${safe(gainText)}</p>
+          </div>
 
-                <div class="lp-grid-3">
-                  ${card("Code angle", angle.code)}
-                  ${card("Type lecture", angle.typeLecture)}
-                  ${card("Titre angle", angle.titreAngle)}
-                  ${card("Question éditoriale", angle.questionEditoriale)}
-                  ${card("Question publique", angle.questionPublique)}
-                  ${card("Question activation", angle.questionActivation)}
-                  ${card("Intro mécanisme", angle.introMecanisme)}
-                  ${card("Point de bascule", angle.pointBascule)}
-                  ${card("Tension arbitrage", angle.tensionArbitrage)}
-                  ${card("Ce que l’angle rend visible", angle.angleRendVisible)}
-                  ${card("Cela se voit quand", angle.celaSeVoitQuand)}
-                  ${card("Attendu intervenant", angle.attenduIntervenant)}
-                  ${card("Non attendu", angle.nonAttendu)}
-                  ${card("Décisions difficiles", angle.decisionsQuiDeviennentDifficiles)}
-                  ${card("Pourquoi le contexte est pertinent", angle.pourquoiContextePertinent)}
-                  ${card("Profils primaires", angle.primaryProfiles)}
-                </div>
+          <div class="landing-grid landing-grid--3">
+            <article class="landing-card">
+              <span class="landing-label">Pour l’organisation</span>
+              <h3>Une parole utile, préparée et réutilisable.</h3>
+              <p>La contribution permet d’installer une lecture claire d’un arbitrage industriel sans transformer l’intervention en communication promotionnelle.</p>
+            </article>
+
+            <article class="landing-card">
+              <span class="landing-label">Pour la fonction</span>
+              <h3>Une fonction reconnue comme lecture de décision.</h3>
+              <p>La page met en avant ce que votre rôle permet de voir : signaux faibles, seuils, arbitrages et points de bascule.</p>
+            </article>
+
+            <article class="landing-card landing-card--accent">
+              <span class="landing-label">Pour l’intervenant</span>
+              <h3>Une trace professionnelle crédible.</h3>
+              <p>La prise de parole devient un actif éditorial durable, préparé pour être clair, maîtrisé et publiquement tenable.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="landing-section landing-section--dark">
+        <div class="landing-container">
+          <div class="landing-decision">
+            <div class="landing-decision__visual"></div>
+
+            <div class="landing-decision__copy">
+              <h2>Un échange pour cadrer, pas pour engager.</h2>
+
+              <div class="landing-point">
+                <h3>Ce qui est attendu</h3>
+                <p>${safe(text(angle.attenduIntervenant, "Une lecture située du mécanisme, des signaux, des seuils et des arbitrages que votre position permet d’éclairer."))}</p>
               </div>
-            </section>`
-          : `<section class="lp-section lp-section-light">
-              <div class="lp-container">
-                <div class="lp-section-head">
-                  <span class="lp-label">Angle éditorial</span>
-                  <h2 class="lp-section-title">Aucun angle trouvé pour ce deal.</h2>
-                  <p class="lp-section-intro">
-                    Code angle détecté : ${safe(Core.getAngleCodeFromDeal(deal) || "non renseigné")}
-                  </p>
-                </div>
+
+              <div class="landing-point">
+                <h3>Ce qui n’est pas attendu</h3>
+                <p>${safe(text(angle.nonAttendu, "Aucun chiffre confidentiel, cas client, stratégie interne, arbitrage non public ou situation sensible n’est attendu."))}</p>
               </div>
-            </section>`
-      }
 
-      ${
-        reading
-          ? `<section class="lp-section lp-section-dark">
-              <div class="lp-container">
-                <div class="lp-section-head">
-                  <span class="lp-label">Lecture</span>
-                  <h2 class="lp-section-title">${safe(reading.label || reading.code)}</h2>
-                  <p class="lp-section-intro">${safe(reading.positioning || reading.accroche || "")}</p>
-                </div>
-
-                <div class="lp-grid-3">
-                  ${card("Code", reading.code)}
-                  ${card("Label", reading.label)}
-                  ${card("Slug", reading.slug)}
-                  ${card("Landing slug", reading.landingSlug)}
-                  ${card("Cal source", reading.calSource)}
-                  ${card("Positioning", reading.positioning)}
-                  ${card("Motivation centrale", reading.motivationCentrale)}
-                  ${card("Accroche", reading.accroche)}
-                  ${card("Gain type acteur", gain?.court)}
-                  ${card("Détail gain", gain?.detail)}
-                  ${card("Profils intervenant", reading.profilsIntervenant)}
-                  ${card("Gains par profil", reading.gainsParProfil)}
-                </div>
+              <div class="landing-point">
+                <h3>Préparation maîtrisée</h3>
+                <p>L’intervention peut être préparée avec les équipes communication, affaires publiques ou juridiques si nécessaire.</p>
               </div>
-            </section>`
-          : ""
-      }
-
-      ${
-        conversation || context
-          ? `<section class="lp-section lp-section-light">
-              <div class="lp-container">
-                <div class="lp-section-head">
-                  <span class="lp-label">Conversation & contexte</span>
-                  <h2 class="lp-section-title">${safe(conversation?.title || "Conversation non trouvée")}</h2>
-                  <p class="lp-section-intro">${safe(conversation?.description || conversation?.narrativeText || "")}</p>
-                </div>
-
-                <div class="lp-grid-3">
-                  ${card("Conversation code", conversation?.code)}
-                  ${card("Conversation titre", conversation?.title)}
-                  ${card("Conversation tension", conversation?.tension)}
-                  ${card("Conversation description", conversation?.description)}
-                  ${card("Conversation texte narratif", conversation?.narrativeText)}
-                  ${card("Contexte code", context?.code)}
-                  ${card("Contexte label", context?.label)}
-                  ${card("Contexte description", context?.description)}
-                  ${card("Contexte texte narratif", context?.narrativeText)}
-                </div>
-              </div>
-            </section>`
-          : ""
-      }
-
-      ${
-        dimensions.length
-          ? `<section class="lp-section lp-section-dark">
-              <div class="lp-container">
-                <div class="lp-section-head">
-                  <span class="lp-label">Dimensions éditoriales</span>
-                  <h2 class="lp-section-title">Questions et guides disponibles.</h2>
-                </div>
-
-                <div class="lp-grid-3">
-                  ${dimensions.map(dimension => `
-                    <article class="lp-card">
-                      <h3>${safe(dimension.title || dimension.key || "Dimension")}</h3>
-                      <p style="white-space: pre-line;">
-                        ${safe(Core.text(
-                          dimension.question,
-                          dimension.questionSimple,
-                          dimension.text,
-                          dimension.guide
-                        ))}
-                        ${dimension.eviter ? "\n\nÀ éviter : " + safe(dimension.eviter) : ""}
-                      </p>
-                    </article>
-                  `).join("")}
-                </div>
-              </div>
-            </section>`
-          : ""
-      }
+            </div>
+          </div>
+        </div>
+      </section>
 
       ${
         complementaryAngles.length
-          ? `<section class="lp-section lp-section-light">
-              <div class="lp-container">
-                <div class="lp-section-head">
-                  <span class="lp-label">Lectures complémentaires</span>
-                  <h2 class="lp-section-title">Tous les angles complémentaires disponibles.</h2>
+          ? `<section class="landing-section landing-section--light">
+              <div class="landing-container">
+                <div class="landing-head">
+                  <p class="landing-kicker">Mise en regard</p>
+                  <h2>Votre lecture s’inscrit dans une conversation composée.</h2>
+                  <p>Les autres lectures du même contexte permettent de créer une conversation équilibrée : chaque position éclaire un angle différent du même phénomène.</p>
                 </div>
 
-                <div class="lp-grid-3">
-                  ${complementaryAngles.map(otherAngle => {
-                    const cardData = otherAngle.complementaryCard || {};
+                <div class="landing-grid landing-grid--3">
+                  ${complementaryAngles.map(other => {
+                    const card = other.complementaryCard || {};
                     return `
-                      <article class="lp-card">
-                        <h3>${safe(cardData.title || otherAngle.typeLecture || otherAngle.code)}</h3>
-                        <p style="white-space: pre-line;">
-                          ${safe(cardData.headline || otherAngle.questionPublique || otherAngle.titreAngle || "")}
-                          ${cardData.bullets ? "\n\n" + safe(Core.toArray(cardData.bullets).join("\n")) : ""}
-                        </p>
+                      <article class="landing-card">
+                        <span class="landing-label">${safe(card.label || other.typeLecture || "Lecture complémentaire")}</span>
+                        <h3>${safe(card.title || other.questionCourte || other.titreAngle || other.questionPublique || "Lecture complémentaire")}</h3>
+                        <p>${safe(card.headline || other.ceQueCetteLecturePermetDeVoir || other.angleRendVisible || "Une autre lecture du même contexte éditorial.")}</p>
                       </article>
                     `;
                   }).join("")}
@@ -459,47 +373,21 @@
           : ""
       }
 
-      <section class="lp-section lp-section-dark">
-        <div class="lp-container">
-          <div class="lp-section-head">
-            <span class="lp-label">Messages / outreach</span>
-            <h2 class="lp-section-title">Messages personnalisés disponibles dans le deal.</h2>
-            <p class="lp-section-intro">
-              Cette section affiche tout ce qui peut servir ensuite à l’export LinkedIn ou email.
-            </p>
+      <section class="landing-section landing-final">
+        <div class="landing-container">
+          <h2>Vérifier ensemble si cette position est la bonne.</h2>
+          <p>
+            L’échange éditorial sert à confirmer l’angle, la lecture attendue,
+            le niveau de confort de l’intervenant et les conditions de préparation.
+          </p>
+
+          <div class="landing-actions">
+            <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
           </div>
 
-          <div class="lp-grid-3">
-            ${card("Invitation LinkedIn", outreach.invitationLinkedin)}
-            ${card("Message post-acceptation", outreach.messagePostAcceptation)}
-            ${card("Relance LinkedIn 1", outreach.relanceLinkedin1)}
-            ${card("Relance LinkedIn 2", outreach.relanceLinkedin2)}
-            ${card("Objet email", outreach.emailObjet)}
-            ${card("Corps email", outreach.emailCorps)}
-            ${card("Sources outreach internes", outreach.sourcesInternes)}
-          </div>
-        </div>
-      </section>
-
-      ${objectGrid("Toutes les données du deal", deal, [
-        "dealId", "id", "pipedriveDealId", "affaireId", "angleCode", "code_angle",
-        "organisation", "organization", "person", "personne", "typeActeur", "type_acteur",
-        "whyOrganisation", "whyPerson", "whyThisPosition"
-      ])}
-
-      ${rawBlock("Deal brut complet", deal)}
-      ${rawBlock("Angle brut complet", angle)}
-      ${rawBlock("Lecture brute complète", reading)}
-
-      <section class="lp-section lp-section-light">
-        <div class="lp-container">
-          <div class="lp-angle-box">
-            <span class="lp-label">Fin du rendu complet</span>
-            <h2 class="lp-angle-question">Ce rendu sert à vérifier toutes les variables avant de filtrer la landing finale.</h2>
-            <p class="lp-angle-text">
-              Une fois les variables confirmées, on pourra produire une version publique plus sobre qui n’affichera plus les blocs de diagnostic, les données brutes ou les éléments internes.
-            </p>
-          </div>
+          <p class="landing-reassurance">
+            15 minutes · Sans engagement · Pas de dossier sensible à préparer.
+          </p>
         </div>
       </section>
     `;
