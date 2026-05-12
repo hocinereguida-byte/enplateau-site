@@ -1,4 +1,4 @@
-/* En Plateau — Référentiel éditorial centralisé — gabarit unique landing pages — V26 consolidation 17 angles */
+/* En Plateau — Référetiel éditorial centralisé — gabarit unique landing pages — V26 consolidation 17 angles */
 
 window.EN_PLATEAU_EDITORIAL_DATA = {
   "version": "2026-05-09-v26-consolidation-17-angles",
