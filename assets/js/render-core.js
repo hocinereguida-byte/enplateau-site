@@ -1,7 +1,10 @@
 /*
   En Plateau — render-core.js
   Moteur commun de lecture du référentiel éditorial + casting
-  Version MVP — landing + exports LinkedIn
+  Version corrigée — compatible avec :
+  - window.EN_PLATEAU_EDITORIAL_DATA.casting.castings
+  - deals imbriqués organisation/person
+  - ID Pipedrive / Affaire - ID
 */
 
 (function () {
@@ -61,6 +64,13 @@
     return [value];
   };
 
+  Core.arrayFromPossibleSource = function (value) {
+    if (!value) return [];
+    if (Array.isArray(value)) return value;
+    if (typeof value === "object") return Object.values(value);
+    return [];
+  };
+
   Core.getCycle = function (cycleCode) {
     const data = Core.getData();
     const cycles = data?.cycles || [];
@@ -86,10 +96,12 @@
 
   Core.getAngleByCode = function (code) {
     if (!code) return null;
+    const wanted = Core.normalize(code);
+
     return Core.getAngles().find(angle =>
-      Core.normalize(angle.code) === Core.normalize(code) ||
-      Core.normalize(angle.code_angle) === Core.normalize(code) ||
-      Core.normalize(angle.angleCode) === Core.normalize(code)
+      Core.normalize(angle.code) === wanted ||
+      Core.normalize(angle.code_angle) === wanted ||
+      Core.normalize(angle.angleCode) === wanted
     ) || null;
   };
 
@@ -118,6 +130,7 @@
     const cycle = Core.getCycle();
     const conversations = cycle?.conversations || [];
     const code = angle.conversationCode || angle.conversation_code || angle.conversation;
+
     return conversations.find(conv =>
       Core.normalize(conv.code) === Core.normalize(code) ||
       Core.normalize(conv.title) === Core.normalize(code)
@@ -129,6 +142,7 @@
     const cycle = Core.getCycle();
     const contexts = cycle?.contexts || [];
     const code = angle.contextCode || angle.context_code || angle.contexte || angle.context;
+
     return contexts.find(ctx =>
       Core.normalize(ctx.code) === Core.normalize(code) ||
       Core.normalize(ctx.label) === Core.normalize(code)
@@ -140,16 +154,19 @@
     if (!data) return [];
 
     const candidates = [
-      data.castings,
-      data.deals,
-      data.positions,
-      data.crmDeals,
-      data.crm?.deals,
-      data.crm?.castings
+      data?.casting?.castings,
+      data?.casting?.deals,
+      data?.castings,
+      data?.deals,
+      data?.positions,
+      data?.crmDeals,
+      data?.crm?.deals,
+      data?.crm?.castings
     ];
 
     for (const candidate of candidates) {
-      if (Array.isArray(candidate)) return candidate;
+      const arr = Core.arrayFromPossibleSource(candidate);
+      if (arr.length) return arr;
     }
 
     return [];
@@ -162,9 +179,12 @@
       deal?.id,
       deal?.pipedriveDealId,
       deal?.pipedrive_deal_id,
+      deal?.affaireId,
+      deal?.affaire_id,
       deal?.["ID"],
       deal?.["Deal ID"],
       deal?.["Affaire - ID"],
+      deal?.["Affaire – ID"],
       deal?.["Affaire ID"],
       deal?.["ID de l’affaire"],
       deal?.["ID affaire"],
@@ -184,6 +204,7 @@
         deal?.externalId,
         deal?.external_id
       ];
+
       return possibleIds.some(value => Core.normalize(value) === wanted);
     }) || null;
   };
@@ -195,6 +216,10 @@
       deal?.codeAngle,
       deal?.code_angle,
       deal?.code,
+      deal?.position?.angleCode,
+      deal?.position?.angle_code,
+      deal?.editorial?.angleCode,
+      deal?.editorial?.angle_code,
       deal?.["code_angle"],
       deal?.["Affaire - code_angle"],
       deal?.["Affaire – code_angle"],
@@ -208,6 +233,9 @@
       deal?.typeActeur,
       deal?.type_acteur,
       deal?.actorType,
+      deal?.organisation?.typeActeur,
+      deal?.organisation?.type_acteur,
+      deal?.organisation?.type,
       deal?.["type_acteur"],
       deal?.["Type acteur"],
       deal?.["consultant_vs_entreprise"],
@@ -222,7 +250,9 @@
       normalized.includes("cabinet") ||
       normalized.includes("conseil") ||
       normalized.includes("consultant") ||
-      normalized.includes("expertise")
+      normalized.includes("expertise") ||
+      normalized.includes("audit") ||
+      normalized.includes("avocat")
     ) {
       return "cabinet_conseil";
     }
@@ -231,7 +261,13 @@
   };
 
   Core.getPerson = function (deal) {
+    const personObj = deal?.person || deal?.personne || deal?.contact || {};
+
     const fullName = Core.text(
+      personObj.effectiveName,
+      personObj.verifiedName,
+      personObj.name,
+      personObj.fullName,
       deal?.personName,
       deal?.person_name,
       deal?.personne,
@@ -245,6 +281,8 @@
     );
 
     const firstName = Core.text(
+      personObj.firstName,
+      personObj.first_name,
       deal?.firstName,
       deal?.first_name,
       deal?.prenom,
@@ -255,6 +293,8 @@
     );
 
     const lastName = Core.text(
+      personObj.lastName,
+      personObj.last_name,
       deal?.lastName,
       deal?.last_name,
       deal?.nom,
@@ -268,6 +308,11 @@
       firstName,
       lastName,
       role: Core.text(
+        personObj.effectiveRole,
+        personObj.verifiedRole,
+        personObj.role,
+        personObj.title,
+        personObj.jobTitle,
         deal?.role,
         deal?.fonction,
         deal?.poste,
@@ -279,6 +324,11 @@
         deal?.["Personne – Fonction"]
       ),
       linkedin: Core.text(
+        personObj.effectiveLinkedin,
+        personObj.verifiedLinkedin,
+        personObj.linkedin,
+        personObj.linkedinUrl,
+        personObj.linkedin_url,
         deal?.linkedin,
         deal?.linkedinUrl,
         deal?.linkedin_url,
@@ -290,6 +340,9 @@
         deal?.["Personne – LinkedIn"]
       ),
       email: Core.text(
+        personObj.emailWork,
+        personObj.email,
+        personObj.mail,
         deal?.email,
         deal?.mail,
         deal?.["Email"],
@@ -301,8 +354,14 @@
   };
 
   Core.getOrganisation = function (deal) {
+    const orgObj = deal?.organisation || deal?.organization || deal?.entreprise || {};
+
     return {
       name: Core.text(
+        orgObj.effectiveName,
+        orgObj.verifiedName,
+        orgObj.name,
+        orgObj.nom,
         deal?.organisation,
         deal?.organization,
         deal?.organizationName,
@@ -321,8 +380,14 @@
   };
 
   Core.getWhy = function (deal) {
+    const whyObj = deal?.why || deal?.justification || deal?.justifications || {};
+    const editorialObj = deal?.editorial || {};
+
     return {
       organisation: Core.text(
+        whyObj.organisation,
+        whyObj.whyOrganisation,
+        editorialObj.whyOrganisation,
         deal?.whyOrganisation,
         deal?.why_organisation,
         deal?.pourquoiOrganisationEditorial,
@@ -331,6 +396,10 @@
         deal?.["pourquoi_organisation_editorial"]
       ),
       person: Core.text(
+        whyObj.person,
+        whyObj.personne,
+        whyObj.whyPerson,
+        editorialObj.whyPerson,
         deal?.whyPerson,
         deal?.why_person,
         deal?.pourquoiPersonneEditorial,
@@ -339,6 +408,9 @@
         deal?.["pourquoi_personne_editorial"]
       ),
       position: Core.text(
+        whyObj.position,
+        whyObj.whyThisPosition,
+        editorialObj.whyThisPosition,
         deal?.whyThisPosition,
         deal?.why_this_position,
         deal?.pourquoiPositionEditoriale,
@@ -364,6 +436,8 @@
       deal?.typeLecture,
       deal?.type_lecture,
       deal?.lecture,
+      deal?.editorial?.typeLecture,
+      deal?.editorial?.type_lecture,
       deal?.["type_lecture"],
       deal?.["Type lecture"],
       angle?.typeLecture,
