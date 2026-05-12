@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="pageTitle">Position éditoriale Industrie — En Plateau</title>
+  <meta id="pageDesc" name="description" content="Une position éditoriale précise dans le cycle Industrie & transformation des territoires.">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <style>
+    /* Extension limitée à cette landing. Elle reprend les tokens page-interior-3 sans redéfinir la charte. */
+    body.lp-editorial-position .lp-context-bar {
+      border-bottom: 1px solid var(--p3-line-dark);
+      background: rgba(17,17,17,.97);
+      color: var(--p3-text-muted);
+    }
+
+    body.lp-editorial-position .lp-context-bar__inner {
+      width: min(calc(100% - 40px), var(--p3-container));
+      margin: 0 auto;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      font-family: var(--font-mono);
+      font-size: .66rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    body.lp-editorial-position .lp-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: clamp(30px, 5vw, 58px);
+      align-items: start;
+    }
+
+    body.lp-editorial-position .lp-hero-card {
+      margin-top: 8px;
+      padding: 28px 26px;
+      border: 1px solid var(--p3-line-dark);
+      background: rgba(255,255,255,.035);
+      backdrop-filter: blur(8px);
+    }
+
+    body.lp-editorial-position .lp-hero-card h2,
+    body.lp-editorial-position .lp-aside-card h3 {
+      margin: 0 0 10px;
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      line-height: 1.28;
+      font-weight: 600;
+      color: var(--p3-text);
+    }
+
+    body.lp-editorial-position .lp-hero-card p,
+    body.lp-editorial-position .lp-aside-card p {
+      margin: 0 0 18px;
+      font-size: .9rem;
+      line-height: 1.65;
+      color: var(--p3-text-soft);
+    }
+
+    body.lp-editorial-position .lp-meta-list {
+      display: grid;
+      gap: 2px;
+      background: var(--p3-line-light);
+      margin-top: 30px;
+    }
+
+    body.lp-editorial-position .lp-meta-item {
+      padding: 18px 20px;
+      background: rgba(255,255,255,.03);
+    }
+
+    body.lp-editorial-position .lp-meta-item span {
+      display: block;
+      margin-bottom: 4px;
+      font-family: var(--font-mono);
+      font-size: .58rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--p3-accent-soft);
+    }
+
+    body.lp-editorial-position .lp-meta-item strong {
+      display: block;
+      font-weight: 500;
+      font-size: .88rem;
+      line-height: 1.45;
+      color: var(--p3-text-soft);
+    }
+
+    body.lp-editorial-position .lp-position-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+      gap: 2px;
+      background: var(--p3-line-light);
+      margin-top: 34px;
+    }
+
+    body.lp-editorial-position .lp-position-main,
+    body.lp-editorial-position .lp-position-side {
+      background: var(--ep-white);
+      padding: clamp(26px, 4vw, 40px);
+    }
+
+    body.lp-editorial-position .lp-position-side {
+      background: var(--p3-paper-soft);
+    }
+
+    body.lp-editorial-position .lp-large-question {
+      margin: 0 0 18px;
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.4vw, 2rem);
+      font-weight: 600;
+      line-height: 1.18;
+      color: var(--p3-ink);
+      text-wrap: balance;
+    }
+
+    body.lp-editorial-position .lp-body-text {
+      margin: 0 0 20px;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--p3-ink-soft);
+    }
+
+    body.lp-editorial-position .lp-mini-kicker {
+      margin-bottom: 8px;
+      font-family: var(--font-mono);
+      font-size: .62rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--p3-accent-deep);
+    }
+
+    body.lp-editorial-position .lp-signal-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    body.lp-editorial-position .lp-signal-list li {
+      padding-left: 18px;
+      border-left: 2px solid var(--p3-accent);
+      font-size: .92rem;
+      line-height: 1.62;
+      color: var(--p3-ink-soft);
+    }
+
+    body.lp-editorial-position .lp-dark-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2px;
+      background: var(--p3-line-dark);
+      margin-top: 34px;
+    }
+
+    body.lp-editorial-position .lp-dark-card {
+      padding: 28px 24px;
+      background: rgba(255,255,255,.035);
+      border-left: 3px solid var(--p3-accent);
+    }
+
+    body.lp-editorial-position .lp-dark-card h3 {
+      margin: 0 0 10px;
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--p3-text);
+    }
+
+    body.lp-editorial-position .lp-dark-card p,
+    body.lp-editorial-position .lp-dark-card li {
+      font-size: .9rem;
+      line-height: 1.65;
+      color: var(--p3-text-soft);
+    }
+
+    body.lp-editorial-position .lp-dark-card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    body.lp-editorial-position .lp-readings-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 2px;
+      background: var(--p3-line-light);
+      margin-top: 34px;
+    }
+
+    body.lp-editorial-position .lp-reading-card {
+      background: var(--ep-white);
+      padding: 24px 22px;
+      border-left: 3px solid transparent;
+    }
+
+    body.lp-editorial-position .lp-reading-card.is-current {
+      border-left-color: var(--p3-accent);
+      background: var(--p3-paper-soft);
+    }
+
+    body.lp-editorial-position .lp-reading-card span {
+      display: block;
+      margin-bottom: 8px;
+      font-family: var(--font-mono);
+      font-size: .58rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--p3-accent-deep);
+    }
+
+    body.lp-editorial-position .lp-reading-card h3 {
+      margin: 0 0 10px;
+      font-family: var(--font-display);
+      font-size: 1.02rem;
+      line-height: 1.28;
+      font-weight: 600;
+      color: var(--p3-ink);
+    }
+
+    body.lp-editorial-position .lp-reading-card p {
+      margin: 0;
+      font-size: .88rem;
+      line-height: 1.62;
+      color: var(--p3-ink-soft);
+    }
+
+    body.lp-editorial-position .lp-process-row {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 2px;
+      background: var(--p3-line-light);
+      margin-top: 34px;
+    }
+
+    body.lp-editorial-position .lp-process-step {
+      background: var(--ep-white);
+      padding: 24px 18px 22px;
+    }
+
+    body.lp-editorial-position .lp-process-step span {
+      display: block;
+      margin-bottom: 12px;
+      font-family: var(--font-display);
+      font-size: 2rem;
+      line-height: 1;
+      color: rgba(138,127,116,.28);
+    }
+
+    body.lp-editorial-position .lp-process-step h3 {
+      margin: 0 0 8px;
+      font-size: .9rem;
+      line-height: 1.32;
+      color: var(--p3-ink);
+    }
+
+    body.lp-editorial-position .lp-process-step p {
+      margin: 0;
+      font-size: .82rem;
+      line-height: 1.62;
+      color: var(--p3-ink-muted);
+    }
+
+    body.lp-editorial-position .lp-final-cta {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    body.lp-editorial-position .lp-final-cta .programme-link-row {
+      justify-content: center;
+    }
+
+    @media (max-width: 1023px) {
+      body.lp-editorial-position .lp-hero-grid,
+      body.lp-editorial-position .lp-position-grid,
+      body.lp-editorial-position .lp-dark-grid,
+      body.lp-editorial-position .lp-readings-grid {
+        grid-template-columns: 1fr;
+      }
+      body.lp-editorial-position .lp-process-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 780px) {
+      body.lp-editorial-position .lp-context-bar__inner {
+        width: min(calc(100% - 24px), var(--p3-container));
+        display: block;
+      }
+      body.lp-editorial-position .lp-context-bar__inner span + span {
+        display: block;
+        margin-top: 4px;
+      }
+      body.lp-editorial-position .lp-process-row {
+        grid-template-columns: 1fr;
+      }
+      body.lp-editorial-position .lp-final-cta {
+        text-align: left;
+      }
+      body.lp-editorial-position .lp-final-cta .programme-link-row {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body class="page-interior-3 lp-editorial-position" data-angle-default="IND-C1-ASC-02">
+
+  <header class="site-header" role="banner">
+    <div class="container site-header__inner">
+      <a class="site-brand" href="/" aria-label="En Plateau — accueil">
+        <span class="site-brand__wordmark">En Plateau</span>
+      </a>
+
+      <nav class="desktop-editorial-nav" aria-label="Navigation principale">
+        <a class="desktop-editorial-nav__link" href="/conversations.html">Conversations</a>
+        <a class="desktop-editorial-nav__link" href="/positions/industrie.html">Positions</a>
+        <a class="desktop-editorial-nav__link" href="/dispositif.html">Dispositif</a>
+      </nav>
+
+      <a id="headerCta" class="site-header__cta" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-premium&cta=header">Échange éditorial</a>
+    </div>
+  </header>
+
+  <div class="lp-context-bar" aria-label="Contexte éditorial">
+    <div class="lp-context-bar__inner">
+      <span id="lpToplineLeft">Saison inaugurale · Cycle Industrie</span>
+      <span id="lpToplineRight">Position éditoriale ouverte</span>
+    </div>
+  </div>
+
+  <main>
+    <section class="page-hero" aria-labelledby="heroTitle">
+      <div class="container page-hero-inner">
+        <div class="lp-hero-grid">
+          <div>
+            <div id="heroKicker" class="page-hero-kicker">Cycle Industrie & transformation des territoires</div>
+            <h1 id="heroTitle" class="page-hero-title">Quand les arbitrages industriels changent de nature, certaines lectures deviennent structurantes.</h1>
+            <p id="heroSub" class="page-hero-sub">Cette page présente une position éditoriale précise : un angle, un contexte, une lecture attendue. Elle ne vise pas un témoignage corporate, mais une lecture publique préparée, située et tenable.</p>
+            <p id="heroNote" class="page-hero-note">Chaque angle n’accueille qu’une lecture principale. Lorsqu’un intervenant est retenu, la position se ferme pour cette lecture.</p>
+            <div class="programme-link-row">
+              <a id="heroCta" class="link link--primary" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-premium&cta=hero">Demander un échange éditorial</a>
+              <a class="link" href="#position-proposee">Comprendre la position proposée</a>
+            </div>
+          </div>
+
+          <aside class="lp-hero-card" aria-label="Qualification éditoriale">
+            <h2 id="heroCardTitle">Votre lecture a-t-elle sa place ici ?</h2>
+            <p id="heroCardText">Un échange de 15 minutes permet de vérifier l’adéquation entre votre position, l’angle proposé et la composition éditoriale en cours.</p>
+            <a id="heroCardCta" class="link link--primary" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-premium&cta=hero-card">Qualifier l’angle</a>
+            <div class="lp-meta-list" id="heroMeta">
+              <div class="lp-meta-item"><span>Lecture attendue</span><strong>Lecture stratégique</strong></div>
+              <div class="lp-meta-item"><span>Contexte</span><strong>Croissance sous tension</strong></div>
+              <div class="lp-meta-item"><span>Émission</span><strong id="lpEmission">—</strong></div>
+              <div class="lp-meta-item"><span>Média</span><strong id="lpMedia">—</strong></div>
+              <div class="lp-meta-item"><span>Journaliste pressenti</span><strong id="lpJournaliste">—</strong></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="position-proposee" class="page3-section page3-section-light" aria-labelledby="positionTitle">
+      <div class="container">
+        <div class="page3-narrow">
+          <div class="section-kicker">Position proposée</div>
+          <h2 id="positionTitle">L’angle qui vous est proposé</h2>
+          <p id="positionIntro">L’enjeu n’est pas de commenter l’industrie en général. Il s’agit de comprendre un moment précis : celui où une trajectoire commence à exiger d’autres arbitrages.</p>
+        </div>
+
+        <div class="lp-position-grid">
+          <article class="lp-position-main">
+            <div class="lp-mini-kicker" id="angleContextLine">Lecture stratégique · Croissance sous tension</div>
+            <h3 id="angleQuestion" class="lp-large-question">À partir de quand produire plus commence-t-il à fragiliser la trajectoire ?</h3>
+            <p id="angleBody" class="lp-body-text">La croissance masque les tensions qu’elle crée. Le mécanisme est connu — ce qui varie, c’est le moment où on le reconnaît et la façon dont on y répond.</p>
+            <div class="programme-link-row" style="justify-content:flex-start;">
+              <a id="positionCta" class="link link--primary" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-premium&cta=position">Vérifier la pertinence de cette position</a>
+            </div>
+          </article>
+
+          <aside class="lp-position-side">
+            <div class="lp-mini-kicker">Point de bascule</div>
+            <p id="pointBascule" class="lp-body-text">À partir de quand chaque volume supplémentaire dégrade-t-il plus l’organisation qu’il ne renforce l’activité ?</p>
+            <div class="lp-mini-kicker">Tension d’arbitrage</div>
+            <p id="tensionArbitrage" class="lp-body-text">Croître vite sans dégrader la marge, la qualité, les délais ni l’équilibre organisationnel.</p>
+            <div class="lp-mini-kicker">Profils concernés</div>
+            <p id="profilesLine" class="lp-body-text">Direction générale · Direction stratégie · Direction industrielle</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="page3-section page3-section-dark" aria-labelledby="visibleTitle">
+      <div class="container">
+        <div class="page3-narrow">
+          <div class="section-kicker">Ce que la lecture rend visible</div>
+          <h2 id="visibleTitle">Ce que cette position permet de clarifier</h2>
+          <p id="visibleIntro">Une lecture utile ne décrit pas seulement une situation. Elle rend visibles les seuils, les signaux et les décisions qui changent la nature d’une trajectoire industrielle.</p>
+        </div>
+
+        <div class="lp-dark-grid">
+          <article class="lp-dark-card">
+            <h3>Ce qui devient visible</h3>
+            <p id="rendVisible">Le moment où un sujet de volume devient un sujet de gouvernance, de modèle économique et de soutenabilité de trajectoire.</p>
+          </article>
+          <article class="lp-dark-card">
+            <h3>Les signaux à reconnaître</h3>
+            <ul id="signauxList">
+              <li>Les volumes progressent mais les marges se contractent.</li>
+              <li>La qualité devient plus difficile à stabiliser.</li>
+              <li>Les délais sont tenus au prix d’efforts invisibles.</li>
+            </ul>
+          </article>
+          <article class="lp-dark-card">
+            <h3>Les décisions qui se durcissent</h3>
+            <p id="decisionsDifficiles">Choisir entre accélérer et préserver, servir la demande et protéger la marge, investir avant visibilité complète ou attendre.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page3-section page3-section-light" aria-labelledby="reassuranceTitle">
+      <div class="container">
+        <div class="page3-split">
+          <div class="page3-split-copy editorial-panel">
+            <div class="section-kicker">Réassurance</div>
+            <h2 id="reassuranceTitle">Ce que vous n’avez pas à exposer</h2>
+            <p id="nonAttendu">Vous n’êtes pas sollicité pour livrer des chiffres, commenter un client, exposer une stratégie interne ou documenter un dossier sensible. L’échange porte sur une lecture du mécanisme.</p>
+            <p id="securisation">Il s’agit d’éclairer un mécanisme industriel à partir de votre expérience et de votre position d’observation.</p>
+          </div>
+          <div class="page3-split-visual page3-visual-dispositif" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page3-section page3-section-light" aria-labelledby="conversationTitle">
+      <div class="container">
+        <div class="page3-narrow">
+          <div class="section-kicker">Mise en regard</div>
+          <h2 id="conversationTitle">Une position mise en regard avec trois autres lectures</h2>
+          <p id="conversationIntro">La valeur d’EN PLATEAU vient de la composition éditoriale. Votre lecture prend de la force parce qu’elle répond à d’autres lectures complémentaires du même contexte.</p>
+        </div>
+
+        <div id="readingsGrid" class="lp-readings-grid">
+          <article class="lp-reading-card is-current">
+            <span>Votre lecture</span>
+            <h3>Lecture stratégique</h3>
+            <p>Comprendre quand un sujet de volume devient un sujet de gouvernance et de trajectoire.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page3-section page3-section-dark" aria-labelledby="prepareTitle">
+      <div class="container">
+        <div class="page3-narrow">
+          <div class="section-kicker">Préparation éditoriale</div>
+          <h2 id="prepareTitle">Transformer une intuition métier en position publique solide</h2>
+          <p>EN PLATEAU ne se limite pas à produire une émission. Le dispositif prépare une lecture : située, argumentée, sécurisée et suffisamment claire pour être tenue publiquement.</p>
+        </div>
+
+        <div class="programme-list page3-card-grid-dark">
+          <article class="programme-list__item">
+            <h3>Cadrage de la lecture</h3>
+            <p>L’angle, le contexte, le point de bascule et la tension centrale sont clarifiés avant la prise de parole.</p>
+          </article>
+          <article class="programme-list__item">
+            <h3>Préparation maîtrisée</h3>
+            <p>La préparation peut être menée avec les équipes communication, affaires publiques ou juridiques lorsque le sujet l’exige.</p>
+          </article>
+          <article class="programme-list__item">
+            <h3>Journaliste et média pressentis</h3>
+            <p id="journalisteJustification">Le cadrage journalistique est adapté à l’angle, au média pressenti et au niveau de lecture attendu.</p>
+          </article>
+          <article class="programme-list__item">
+            <h3>Double restitution</h3>
+            <p id="doubleRestitutionText">L’émission courte et l’entretien écrit se complètent pour couvrir les dimensions principales sans forcer le propos.</p>
+          </article>
+          <article class="programme-list__item">
+            <h3>Trace durable</h3>
+            <p>La position devient une trace éditoriale stabilisée, réutilisable dans des échanges de direction, de filière, d’institution ou de transformation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page3-section page3-section-light" aria-labelledby="gainsTitle">
+      <div class="container">
+        <div class="page3-narrow">
+          <div class="section-kicker">Portée éditoriale</div>
+          <h2 id="gainsTitle">Une lecture conçue pour durer au-delà de la diffusion</h2>
+          <p>La prise de parole n’est pas conçue comme un contenu isolé. Elle devient une position stabilisée, réutilisable dans des échanges de direction, de filière, d’institution ou de transformation.</p>
+        </div>
+
+        <div id="gainsGrid" class="programme-list">
+          <article class="programme-list__item">
+            <h3>Organisation industrielle</h3>
+            <p>Transformer une expérience de décision industrielle en position publique crédible, préparée et réutilisable.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page3-section page3-section-light" aria-labelledby="processTitle">
+      <div class="container">
+        <div class="page3-narrow">
+          <div class="section-kicker">Déroulé</div>
+          <h2 id="processTitle">De l’échange éditorial à la position publiée</h2>
+          <p>Aucun engagement n’est demandé au premier échange. La position est qualifiée, documentée, préparée puis validée avant diffusion.</p>
+        </div>
+
+        <div class="lp-process-row">
+          <article class="lp-process-step"><span>01</span><h3>Échange éditorial</h3><p>15 minutes pour vérifier si votre lecture correspond à l’angle proposé.</p></article>
+          <article class="lp-process-step"><span>02</span><h3>Note de positionnement</h3><p>Un dossier précise l’angle, la lecture, les modalités et les conditions de contribution.</p></article>
+          <article class="lp-process-step"><span>03</span><h3>Cadrage</h3><p>La lecture est clarifiée autour du point de bascule, des arbitrages et des dimensions utiles.</p></article>
+          <article class="lp-process-step"><span>04</span><h3>Préparation</h3><p>Le propos est préparé avec vos équipes communication ou juridiques si nécessaire.</p></article>
+          <article class="lp-process-step"><span>05</span><h3>Production</h3><p id="processProductionText">Émission filmée et entretien écrit, pensés comme deux formats complémentaires.</p></article>
+          <article class="lp-process-step"><span>06</span><h3>Validation</h3><p>La prise de parole est sécurisée avant mise en circulation éditoriale.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page3-section page3-section-dark" aria-labelledby="finalCtaTitle">
+      <div class="container">
+        <div class="lp-final-cta">
+          <div class="section-kicker">Échange de qualification</div>
+          <h2 id="finalCtaTitle" class="page-hero-title">Vérifier si votre lecture peut occuper cette position</h2>
+          <p id="finalCtaText" class="page-hero-sub">Un échange de 15 minutes permet de vérifier l’adéquation entre votre position, l’angle proposé et la composition éditoriale en cours. Aucun engagement n’est demandé à ce stade.</p>
+          <p id="finalCtaNote" class="page-hero-note">La composition éditoriale évolue au fil des échanges et des positions confirmées.</p>
+          <div class="programme-link-row">
+            <a id="finalCta" class="link link--primary" href="https://cal.com/en-plateau/echange-editorial?src=lp-industrie-premium&cta=final">Demander un échange éditorial de 15 minutes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <a class="site-brand" href="/" aria-label="En Plateau — accueil">
+          <span class="site-brand__wordmark">En Plateau</span>
+        </a>
+        <p>Cycles éditoriaux sur les arbitrages économiques, industriels et territoriaux.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Accès</h3>
+        <ul>
+          <li><a href="/conversations/industrie.html">Cycle Industrie</a></li>
+          <li><a href="/positions/industrie.html">Positions</a></li>
+          <li><a href="/dispositif.html">Dispositif</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/editorial-data-industrie-v50.js?v=50"></script>
+  <script src="/assets/js/landing-industrie-premium.js?v=2"></script>
+</body>
+</html>
