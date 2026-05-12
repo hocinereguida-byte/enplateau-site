@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+
+  <title>En Plateau — Contribution éditoriale</title>
+  <meta name="description" content="Page personnalisée de contribution éditoriale — Cycle Industrie & transformation des territoires." />
+
+  <link rel="stylesheet" href="/assets/css/layout.css" />
+  <link rel="stylesheet" href="/assets/css/pages.css" />
+
+  <style>
+    :root {
+      --lp-max: 1180px;
+      --lp-pad-x: clamp(20px, 4vw, 56px);
+      --lp-section-y: clamp(48px, 7vw, 92px);
+      --lp-border: rgba(255,255,255,.16);
+      --lp-border-light: rgba(20,20,20,.14);
+      --lp-muted-dark: rgba(255,255,255,.72);
+      --lp-muted-light: rgba(20,20,20,.68);
+    }
+
+    body { margin: 0; }
+
+    .lp-dynamic {
+      min-height: 100vh;
+      background: #0d0d0d;
+      color: #f5f2ec;
+    }
+
+    .lp-container {
+      width: min(var(--lp-max), calc(100% - (var(--lp-pad-x) * 2)));
+      margin: 0 auto;
+    }
+
+    .lp-hero {
+      position: relative;
+      padding: clamp(72px, 9vw, 128px) 0 clamp(56px, 7vw, 96px);
+      overflow: hidden;
+      border-bottom: 1px solid var(--lp-border);
+    }
+
+    .lp-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(255,255,255,.16), transparent 32%),
+        linear-gradient(135deg, rgba(255,255,255,.08), transparent 46%),
+        #0d0d0d;
+      opacity: .92;
+      pointer-events: none;
+    }
+
+    .lp-hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+      gap: clamp(32px, 6vw, 82px);
+      align-items: end;
+    }
+
+    .lp-kicker,
+    .lp-label,
+    .lp-tag,
+    .lp-meta-label {
+      font-family: var(--font-mono, "IBM Plex Mono", monospace);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .72rem;
+      line-height: 1.4;
+    }
+
+    .lp-kicker {
+      color: rgba(255,255,255,.68);
+      margin: 0 0 18px;
+    }
+
+    .lp-title {
+      font-family: var(--font-display, "Playfair Display", serif);
+      font-size: clamp(2.35rem, 5.8vw, 5.45rem);
+      font-weight: 500;
+      line-height: .98;
+      letter-spacing: -.045em;
+      margin: 0;
+      max-width: 920px;
+    }
+
+    .lp-subtitle {
+      margin: 28px 0 0;
+      max-width: 760px;
+      color: var(--lp-muted-dark);
+      font-family: var(--font-body, "IBM Plex Sans", sans-serif);
+      font-size: clamp(1.02rem, 1.7vw, 1.28rem);
+      line-height: 1.65;
+    }
+
+    .lp-hero-card {
+      border: 1px solid var(--lp-border);
+      padding: clamp(22px, 3vw, 34px);
+      background: rgba(255,255,255,.035);
+      backdrop-filter: blur(10px);
+    }
+
+    .lp-hero-card h2 {
+      margin: 0 0 14px;
+      font-family: var(--font-display, "Playfair Display", serif);
+      font-size: clamp(1.35rem, 2vw, 1.9rem);
+      font-weight: 500;
+      line-height: 1.18;
+    }
+
+    .lp-hero-card p {
+      margin: 0;
+      color: var(--lp-muted-dark);
+      font-size: .98rem;
+      line-height: 1.65;
+    }
+
+    .lp-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .lp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid rgba(255,255,255,.28);
+      color: #f5f2ec;
+      text-decoration: none;
+      font-family: var(--font-ui, "IBM Plex Sans", sans-serif);
+      font-size: .9rem;
+      line-height: 1;
+      transition: opacity .2s ease, background .2s ease, color .2s ease;
+    }
+
+    .lp-btn:hover { opacity: .82; }
+
+    .lp-btn-primary {
+      background: #f5f2ec;
+      color: #0d0d0d;
+      border-color: #f5f2ec;
+    }
+
+    .lp-section { padding: var(--lp-section-y) 0; }
+
+    .lp-section-light {
+      background: #f5f2ec;
+      color: #111;
+    }
+
+    .lp-section-dark {
+      background: #0d0d0d;
+      color: #f5f2ec;
+      border-top: 1px solid var(--lp-border);
+    }
+
+    .lp-section-head {
+      max-width: 820px;
+      margin-bottom: clamp(28px, 4vw, 48px);
+    }
+
+    .lp-section-head.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .lp-label {
+      display: block;
+      margin-bottom: 14px;
+      color: inherit;
+      opacity: .64;
+    }
+
+    .lp-section-title {
+      margin: 0;
+      font-family: var(--font-display, "Playfair Display", serif);
+      font-size: clamp(2rem, 3.8vw, 3.7rem);
+      font-weight: 500;
+      line-height: 1.04;
+      letter-spacing: -.035em;
+    }
+
+    .lp-section-intro {
+      margin: 20px 0 0;
+      color: var(--lp-muted-light);
+      font-size: clamp(1rem, 1.3vw, 1.14rem);
+      line-height: 1.72;
+    }
+
+    .lp-section-dark .lp-section-intro { color: var(--lp-muted-dark); }
+
+    .lp-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(18px, 3vw, 32px);
+    }
+
+    .lp-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(16px, 2.4vw, 28px);
+    }
+
+    .lp-card {
+      border: 1px solid var(--lp-border-light);
+      padding: clamp(22px, 3vw, 34px);
+      background: rgba(255,255,255,.42);
+    }
+
+    .lp-section-dark .lp-card {
+      border-color: var(--lp-border);
+      background: rgba(255,255,255,.035);
+    }
+
+    .lp-card h3 {
+      margin: 0 0 14px;
+      font-family: var(--font-display, "Playfair Display", serif);
+      font-size: clamp(1.25rem, 1.8vw, 1.7rem);
+      font-weight: 500;
+      line-height: 1.18;
+    }
+
+    .lp-card p {
+      margin: 0;
+      color: var(--lp-muted-light);
+      line-height: 1.68;
+    }
+
+    .lp-section-dark .lp-card p { color: var(--lp-muted-dark); }
+
+    .lp-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--lp-border);
+      margin-top: clamp(32px, 5vw, 64px);
+    }
+
+    .lp-meta-item {
+      padding: 20px;
+      border-right: 1px solid var(--lp-border);
+    }
+
+    .lp-meta-item:last-child { border-right: 0; }
+
+    .lp-meta-label {
+      display: block;
+      color: rgba(255,255,255,.52);
+      margin-bottom: 8px;
+    }
+
+    .lp-meta-value {
+      display: block;
+      font-family: var(--font-body, "IBM Plex Sans", sans-serif);
+      font-size: .98rem;
+      line-height: 1.45;
+      color: #f5f2ec;
+    }
+
+    .lp-angle-box {
+      border-left: 1px solid currentColor;
+      padding-left: clamp(20px, 3vw, 34px);
+      max-width: 900px;
+    }
+
+    .lp-angle-question {
+      margin: 0;
+      font-family: var(--font-display, "Playfair Display", serif);
+      font-size: clamp(1.75rem, 3vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -.025em;
+    }
+
+    .lp-angle-text {
+      margin: 24px 0 0;
+      color: var(--lp-muted-light);
+      font-size: 1.03rem;
+      line-height: 1.78;
+      white-space: pre-line;
+    }
+
+    .lp-section-dark .lp-angle-text { color: var(--lp-muted-dark); }
+
+    .lp-list {
+      display: grid;
+      gap: 14px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .lp-list li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--lp-muted-light);
+      line-height: 1.62;
+    }
+
+    .lp-section-dark .lp-list li { color: var(--lp-muted-dark); }
+
+    .lp-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .72em;
+      width: 7px;
+      height: 7px;
+      border: 1px solid currentColor;
+      transform: rotate(45deg);
+      opacity: .62;
+    }
+
+    .lp-reading-card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .lp-tag {
+      display: inline-flex;
+      width: fit-content;
+      border: 1px solid currentColor;
+      padding: 7px 9px;
+      opacity: .7;
+    }
+
+    .lp-error {
+      min-height: 70vh;
+      display: grid;
+      place-items: center;
+      padding: 40px 20px;
+      background: #0d0d0d;
+      color: #f5f2ec;
+      text-align: center;
+    }
+
+    .lp-error-box {
+      max-width: 760px;
+      border: 1px solid var(--lp-border);
+      padding: clamp(24px, 4vw, 44px);
+    }
+
+    .lp-error h1 {
+      margin: 0 0 14px;
+      font-family: var(--font-display, "Playfair Display", serif);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 500;
+    }
+
+    .lp-error p {
+      margin: 0;
+      color: var(--lp-muted-dark);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .lp-hero-inner,
+      .lp-grid-2,
+      .lp-grid-3 { grid-template-columns: 1fr; }
+
+      .lp-meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .lp-meta-item:nth-child(2) { border-right: 0; }
+
+      .lp-meta-item:nth-child(1),
+      .lp-meta-item:nth-child(2) { border-bottom: 1px solid var(--lp-border); }
+    }
+
+    @media (max-width: 560px) {
+      .lp-container { width: min(var(--lp-max), calc(100% - 36px)); }
+
+      .lp-meta-grid { grid-template-columns: 1fr; }
+
+      .lp-meta-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--lp-border);
+      }
+
+      .lp-meta-item:last-child { border-bottom: 0; }
+
+      .lp-hero-actions { flex-direction: column; }
+
+      .lp-btn { width: 100%; }
+    }
+  </style>
+</head>
+
+<body class="lp-page lp-industrie-page" data-page="industrie-contribuer" data-cycle="industrie">
+  <main id="landing-root" class="lp-dynamic" aria-live="polite">
+    <section class="lp-error">
+      <div class="lp-error-box">
+        <h1>Chargement de la page personnalisée</h1>
+        <p>
+          Si ce message reste affiché, vérifiez que les fichiers JavaScript sont bien chargés
+          et que l’URL contient un identifiant de deal valide, par exemple :
+          <br />
+          <strong>/lp/industrie/contribuer.html?deal=12345</strong>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/js/editorial-data-industrie-v52-master-casting.js"></script>
+  <script src="/assets/js/render-core.js"></script>
+  <script src="/assets/js/render-landing.js"></script>
+
+  <noscript>
+    <section class="lp-error">
+      <div class="lp-error-box">
+        <h1>JavaScript est nécessaire</h1>
+        <p>
+          Cette page utilise un rendu dynamique à partir du référentiel éditorial En Plateau.
+          Activez JavaScript pour afficher la landing personnalisée.
+        </p>
+      </div>
+    </section>
+  </noscript>
+</body>
+</html>
