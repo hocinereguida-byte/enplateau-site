@@ -2953,3 +2953,177 @@ body.page-dispositif .page3-section-dark .page3-split-copy .editorial-panel--dar
     margin-right: 0 !important;
   }
 }
+/* =========================================================
+   CORRECTIF GLOBAL — BLOCS / CENTRAGE / FONDS SOMBRES
+   Pages concernées : conversations, dispositif, positions, à propos
+========================================================= */
+
+/* Têtes de sections centrées sur les sections éditoriales */
+body.page-conversations .page3-narrow,
+body.page-dispositif .page3-narrow,
+body.page-positions .page3-narrow,
+body.page-a-propos .page3-narrow,
+body.page-conversations .conv3-head,
+body.page-dispositif .conv3-head,
+body.page-positions .conv3-head,
+body.page-a-propos .conv3-head {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.page-conversations .section-kicker,
+body.page-dispositif .section-kicker,
+body.page-positions .section-kicker,
+body.page-a-propos .section-kicker,
+body.page-conversations .conv3-kicker,
+body.page-dispositif .conv3-kicker,
+body.page-positions .conv3-kicker,
+body.page-a-propos .conv3-kicker {
+  justify-content: center !important;
+}
+
+/* Blocs éditoriaux sur fond sombre : ne jamais apparaître en pavé blanc */
+body.page-conversations .page3-section-dark .editorial-panel,
+body.page-dispositif .page3-section-dark .editorial-panel,
+body.page-positions .page3-section-dark .editorial-panel,
+body.page-a-propos .page3-section-dark .editorial-panel,
+body.page-conversations .conv3-dark .editorial-panel,
+body.page-dispositif .conv3-dark .editorial-panel,
+body.page-positions .conv3-dark .editorial-panel,
+body.page-a-propos .conv3-dark .editorial-panel {
+  background: rgba(17,17,17,.46) !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  color: var(--p3-text-soft) !important;
+  backdrop-filter: blur(8px);
+}
+
+/* Texte des blocs sombres */
+body.page-conversations .page3-section-dark .editorial-panel p,
+body.page-dispositif .page3-section-dark .editorial-panel p,
+body.page-positions .page3-section-dark .editorial-panel p,
+body.page-a-propos .page3-section-dark .editorial-panel p,
+body.page-conversations .conv3-dark .editorial-panel p,
+body.page-dispositif .conv3-dark .editorial-panel p,
+body.page-positions .conv3-dark .editorial-panel p,
+body.page-a-propos .conv3-dark .editorial-panel p {
+  color: var(--p3-text-soft) !important;
+}
+
+/* Blocs clairs : uniquement sur sections claires */
+body.page-conversations .page3-section-light .editorial-panel,
+body.page-dispositif .page3-section-light .editorial-panel,
+body.page-positions .page3-section-light .editorial-panel,
+body.page-a-propos .page3-section-light .editorial-panel {
+  background: var(--ep-white) !important;
+  border: 1px solid var(--p3-line-light) !important;
+  color: var(--p3-ink) !important;
+}
+
+/* Cartes sur fonds sombres : éviter les pavés blancs illisibles */
+body.page-conversations .page3-section-dark .programme-list__item,
+body.page-conversations .page3-section-dark .programme-access__item,
+body.page-dispositif .page3-section-dark .programme-list__item,
+body.page-dispositif .page3-section-dark .programme-access__item,
+body.page-positions .page3-section-dark .programme-list__item,
+body.page-positions .page3-section-dark .programme-access__item,
+body.page-a-propos .page3-section-dark .programme-list__item,
+body.page-a-propos .page3-section-dark .programme-access__item {
+  background: rgba(17,17,17,.46) !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  color: var(--p3-text) !important;
+  backdrop-filter: blur(8px);
+}
+
+body.page-conversations .page3-section-dark .programme-list__item h3,
+body.page-conversations .page3-section-dark .programme-access__item h3,
+body.page-dispositif .page3-section-dark .programme-list__item h3,
+body.page-dispositif .page3-section-dark .programme-access__item h3,
+body.page-positions .page3-section-dark .programme-list__item h3,
+body.page-positions .page3-section-dark .programme-access__item h3,
+body.page-a-propos .page3-section-dark .programme-list__item h3,
+body.page-a-propos .page3-section-dark .programme-access__item h3 {
+  color: var(--p3-text) !important;
+}
+
+body.page-conversations .page3-section-dark .programme-list__item p,
+body.page-conversations .page3-section-dark .programme-access__item p,
+body.page-dispositif .page3-section-dark .programme-list__item p,
+body.page-dispositif .page3-section-dark .programme-access__item p,
+body.page-positions .page3-section-dark .programme-list__item p,
+body.page-positions .page3-section-dark .programme-access__item p,
+body.page-a-propos .page3-section-dark .programme-list__item p,
+body.page-a-propos .page3-section-dark .programme-access__item p {
+  color: var(--p3-text-soft) !important;
+}
+
+/* Correction du petit bloc sans marge dans les splits sombres */
+body.page-conversations .page3-section-dark .page3-split-copy,
+body.page-dispositif .page3-section-dark .page3-split-copy,
+body.page-positions .page3-section-dark .page3-split-copy,
+body.page-a-propos .page3-section-dark .page3-split-copy {
+  padding: clamp(32px, 4vw, 52px) !important;
+  background: rgba(17,17,17,.56) !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+}
+
+/* Conserver les textes alignés à gauche dans les pavés de contenu */
+body.page-conversations .editorial-panel,
+body.page-dispositif .editorial-panel,
+body.page-positions .editorial-panel,
+body.page-a-propos .editorial-panel,
+body.page-conversations .programme-list__item,
+body.page-dispositif .programme-list__item,
+body.page-positions .programme-list__item,
+body.page-a-propos .programme-list__item,
+body.page-conversations .programme-access__item,
+body.page-dispositif .programme-access__item,
+body.page-positions .programme-access__item,
+body.page-a-propos .programme-access__item {
+  text-align: left !important;
+}
+
+/* Mobile : éviter les blocs collés aux bords */
+@media (max-width: 780px) {
+  body.page-conversations .page3-split-copy,
+  body.page-dispositif .page3-split-copy,
+  body.page-positions .page3-split-copy,
+  body.page-a-propos .page3-split-copy,
+  body.page-conversations .editorial-panel,
+  body.page-dispositif .editorial-panel,
+  body.page-positions .editorial-panel,
+  body.page-a-propos .editorial-panel,
+  body.page-conversations .programme-list__item,
+  body.page-dispositif .programme-list__item,
+  body.page-positions .programme-list__item,
+  body.page-a-propos .programme-list__item,
+  body.page-conversations .programme-access__item,
+  body.page-dispositif .programme-access__item,
+  body.page-positions .programme-access__item,
+  body.page-a-propos .programme-access__item {
+    margin-left: 22px !important;
+    margin-right: 22px !important;
+  }
+
+  body.page-conversations .page3-narrow,
+  body.page-dispositif .page3-narrow,
+  body.page-positions .page3-narrow,
+  body.page-a-propos .page3-narrow,
+  body.page-conversations .conv3-head,
+  body.page-dispositif .conv3-head,
+  body.page-positions .conv3-head,
+  body.page-a-propos .conv3-head {
+    text-align: left !important;
+  }
+
+  body.page-conversations .section-kicker,
+  body.page-dispositif .section-kicker,
+  body.page-positions .section-kicker,
+  body.page-a-propos .section-kicker,
+  body.page-conversations .conv3-kicker,
+  body.page-dispositif .conv3-kicker,
+  body.page-positions .conv3-kicker,
+  body.page-a-propos .conv3-kicker {
+    justify-content: flex-start !important;
+  }
+}
