@@ -2497,4 +2497,34 @@
     margin-top: 18px !important;
   }
 }
+@media (max-width: 780px) {
+  .home-hero .home-film {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .home-film-track {
+    gap: 12px !important;
+  }
+
+  .home-film-frame {
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    min-height: 0 !important;
+  }
+
+  .home-film-frame img,
+  .home-film-frame picture,
+  .home-film-frame video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+}
+
+
+
+
 
