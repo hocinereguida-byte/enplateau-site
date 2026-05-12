@@ -3127,3 +3127,139 @@ body.page-a-propos .programme-access__item {
     justify-content: flex-start !important;
   }
 }
+/* =========================================================
+   CORRECTIF GLOBAL ALIGNEMENTS — TOUTES PAGES INTÉRIEURES
+   Périmètre : pages intérieures, pages profondes, landing pages
+========================================================= */
+
+/* 1. Têtes de section : centrage systématique */
+body:not(.home-page) .page3-narrow,
+body:not(.home-page) .conv3-head,
+body:not(.home-page) .landing-section-head,
+body:not(.home-page) .landing-head,
+body:not(.home-page) .lp-section-head,
+body:not(.home-page) .section-head {
+  max-width: 960px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+/* 2. Titres, sous-titres et paragraphes de tête centrés */
+body:not(.home-page) .page3-narrow h2,
+body:not(.home-page) .page3-narrow p,
+body:not(.home-page) .conv3-head h2,
+body:not(.home-page) .conv3-head p,
+body:not(.home-page) .landing-section-head h2,
+body:not(.home-page) .landing-section-head p,
+body:not(.home-page) .landing-head h2,
+body:not(.home-page) .landing-head p,
+body:not(.home-page) .lp-section-head h2,
+body:not(.home-page) .lp-section-head p,
+body:not(.home-page) .section-head h2,
+body:not(.home-page) .section-head p {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+/* 3. Kickers centrés sur toutes les têtes éditoriales */
+body:not(.home-page) .page3-narrow .section-kicker,
+body:not(.home-page) .conv3-head .conv3-kicker,
+body:not(.home-page) .landing-section-head .section-kicker,
+body:not(.home-page) .landing-head .section-kicker,
+body:not(.home-page) .lp-section-head .section-kicker,
+body:not(.home-page) .section-head .section-kicker,
+body:not(.home-page) .section-kicker.centered,
+body:not(.home-page) .conv3-kicker.centered {
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+/* 4. Les blocs de contenu restent alignés à gauche */
+body:not(.home-page) .editorial-panel,
+body:not(.home-page) .programme-list__item,
+body:not(.home-page) .programme-access__item,
+body:not(.home-page) .conv3-position-grid article,
+body:not(.home-page) .conv3-dispositif-cards article,
+body:not(.home-page) .landing-card,
+body:not(.home-page) .lp-card,
+body:not(.home-page) .step-card,
+body:not(.home-page) .angle-card {
+  text-align: left !important;
+}
+
+/* 5. Paragraphes dans les blocs : marges internes sécurisées */
+body:not(.home-page) .editorial-panel p,
+body:not(.home-page) .programme-list__item p,
+body:not(.home-page) .programme-access__item p,
+body:not(.home-page) .conv3-position-grid article p,
+body:not(.home-page) .conv3-dispositif-cards article p,
+body:not(.home-page) .landing-card p,
+body:not(.home-page) .lp-card p,
+body:not(.home-page) .step-card p,
+body:not(.home-page) .angle-card p {
+  text-align: left !important;
+}
+
+/* 6. CTA centrés quand ils sont sous une tête de section */
+body:not(.home-page) .page3-narrow .programme-link-row,
+body:not(.home-page) .conv3-head .conv3-center-link,
+body:not(.home-page) .landing-section-head .programme-link-row,
+body:not(.home-page) .landing-head .programme-link-row,
+body:not(.home-page) .lp-section-head .programme-link-row,
+body:not(.home-page) .section-head .programme-link-row {
+  justify-content: center !important;
+}
+
+/* 7. Sections sombres : blocs transparents, pas de pavés blancs */
+body:not(.home-page) .page3-section-dark .editorial-panel,
+body:not(.home-page) .conv3-dark .editorial-panel,
+body:not(.home-page) .page3-section-dark .programme-list__item,
+body:not(.home-page) .page3-section-dark .programme-access__item,
+body:not(.home-page) .conv3-dark .programme-list__item,
+body:not(.home-page) .conv3-dark .programme-access__item {
+  background: rgba(17,17,17,.46) !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  color: var(--p3-text-soft) !important;
+  backdrop-filter: blur(8px);
+}
+
+/* 8. Mobile : les têtes restent lisibles, mais plus alignées naturellement */
+@media (max-width: 780px) {
+  body:not(.home-page) .page3-narrow,
+  body:not(.home-page) .conv3-head,
+  body:not(.home-page) .landing-section-head,
+  body:not(.home-page) .landing-head,
+  body:not(.home-page) .lp-section-head,
+  body:not(.home-page) .section-head {
+    width: min(calc(100% - 44px), var(--p3-container)) !important;
+    text-align: left !important;
+  }
+
+  body:not(.home-page) .page3-narrow h2,
+  body:not(.home-page) .page3-narrow p,
+  body:not(.home-page) .conv3-head h2,
+  body:not(.home-page) .conv3-head p,
+  body:not(.home-page) .landing-section-head h2,
+  body:not(.home-page) .landing-section-head p,
+  body:not(.home-page) .landing-head h2,
+  body:not(.home-page) .landing-head p,
+  body:not(.home-page) .lp-section-head h2,
+  body:not(.home-page) .lp-section-head p,
+  body:not(.home-page) .section-head h2,
+  body:not(.home-page) .section-head p {
+    text-align: left !important;
+  }
+
+  body:not(.home-page) .page3-narrow .section-kicker,
+  body:not(.home-page) .conv3-head .conv3-kicker,
+  body:not(.home-page) .landing-section-head .section-kicker,
+  body:not(.home-page) .landing-head .section-kicker,
+  body:not(.home-page) .lp-section-head .section-kicker,
+  body:not(.home-page) .section-head .section-kicker {
+    justify-content: flex-start !important;
+  }
+}
