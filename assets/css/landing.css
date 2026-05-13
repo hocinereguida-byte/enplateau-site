@@ -1,7 +1,14 @@
 /*
   En Plateau — landing.css
+  Version V65.3 — ajouts pour personnalisation narrative
   Gabarit landing one-to-one
   Inspiré de la home, mais isolé pour les pages /lp/industrie/contribuer.html
+
+  Modifications V65.3 (marquées AJOUT V65.3) :
+  - .landing-identity--single  : fusion des 3 blocs identité en 1 ligne éditoriale
+  - .landing-why-narrative      : section "pourquoi vous" en narration continue
+  - Responsive ajusté pour les 2 nouveaux patterns
+  Aucune classe existante n'a été supprimée ni renommée.
 */
 
 :root {
@@ -229,6 +236,45 @@ body.landing-page {
   line-height: 1.45;
 }
 
+/* AJOUT V65.3 — Bloc identité fusionné
+   Remplace les 3 landing-identity par une présentation
+   en une ligne éditoriale. Le strong contient Prénom · Rôle · Organisation
+   séparés par des points médians, ce qui est moins "champ rempli"
+   que trois blocs stacked. Le padding-top du bloc suivant
+   est légèrement réduit pour compenser la disparition du 2e et 3e bloc. */
+
+.landing-identity--single {
+  margin-top: 22px;
+  border-top: 1px solid var(--landing-line-dark);
+  padding-top: 18px;
+}
+
+.landing-identity--single span {
+  display: block;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--landing-text-muted);
+  margin-bottom: 7px;
+}
+
+.landing-identity--single strong {
+  display: block;
+  color: var(--landing-text);
+  font-weight: 500;
+  font-size: .9rem;
+  line-height: 1.5;
+  /* Le séparateur · est injecté en JS, pas en CSS,
+     pour rester accessible et copiable. */
+}
+
+/* AJOUT V65.3 — Séparateur de lecture dans la card hero */
+.landing-identity--single + .landing-identity {
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
 .landing-actions {
   display: flex;
   flex-wrap: wrap;
@@ -379,6 +425,48 @@ body.landing-page {
   flex-direction: column;
   justify-content: center;
 }
+
+/* AJOUT V65.3 — Narration continue "Pourquoi vous"
+   Remplace les 3 landing-point avec h3 par une suite
+   de paragraphes prose. La bordure décorative à gauche
+   crée une hiérarchie visuelle sans titres mécaniques.
+   L'espacement suit la même logique que .landing-point
+   mais sans h3 intermédiaire. */
+
+.landing-why-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.landing-why-narrative p {
+  margin: 0;
+  padding: 20px 0 20px 20px;
+  border-left: 2px solid var(--landing-line);
+  font-size: .97rem;
+  line-height: 1.78;
+  color: var(--landing-ink-soft);
+  position: relative;
+}
+
+.landing-why-narrative p + p {
+  border-top: 1px solid var(--landing-line);
+}
+
+.landing-why-narrative p:first-child {
+  padding-top: 0;
+}
+
+.landing-why-narrative p:last-child {
+  padding-bottom: 0;
+}
+
+/* Le premier paragraphe reçoit un accent discret sur le bord gauche */
+.landing-why-narrative p:first-child {
+  border-left-color: var(--landing-accent);
+}
+
+/* .landing-point reste intact pour les autres sections */
 
 .landing-point {
   padding-bottom: 20px;
@@ -608,6 +696,14 @@ body.landing-page {
   .landing-top__meta {
     display: none;
   }
+
+  /* AJOUT V65.3 — responsive narration why
+     Sur mobile, la colonne visuelle passe en premier,
+     puis la narration. Le border-left reste mais le
+     padding est réduit pour économiser l'espace. */
+  .landing-why-narrative p {
+    padding-left: 14px;
+  }
 }
 
 @media (max-width: 620px) {
@@ -655,4 +751,10 @@ body.landing-page {
   .landing-hero__card {
     padding: 24px;
   }
+
+  /* AJOUT V65.3 — responsive narration why sur petit écran */
+  .landing-why-narrative p {
+    padding-left: 12px;
+    font-size: .93rem;
   }
+}
