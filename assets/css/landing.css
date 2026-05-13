@@ -10,15 +10,15 @@
   --landing-paper: var(--ep-paper, #f4efe6);
   --landing-white: var(--ep-white, #ffffff);
   --landing-ink: var(--ep-ink, #151515);
-  --landing-ink-soft: var(--ep-ink-soft, rgba(17,17,17,.72));
-  --landing-ink-muted: var(--ep-ink-muted, rgba(17,17,17,.56));
+  --landing-ink-soft: rgba(17,17,17,.76);
+  --landing-ink-muted: rgba(17,17,17,.60);
   --landing-text: var(--ep-dark-text, #f6f1e9);
-  --landing-text-soft: var(--ep-dark-text-soft, rgba(246,241,233,.74));
-  --landing-text-muted: var(--ep-dark-text-muted, rgba(246,241,233,.52));
+  --landing-text-soft: rgba(246,241,233,.86);
+  --landing-text-muted: rgba(246,241,233,.68);
   --landing-line: var(--ep-line, rgba(17,17,17,.14));
-  --landing-line-dark: var(--ep-dark-line, rgba(255,255,255,.12));
+  --landing-line-dark: rgba(255,255,255,.18);
   --landing-accent: var(--ep-accent, #6f7f8f);
-  --landing-accent-soft: var(--ep-accent-soft, #a9b4bf);
+  --landing-accent-soft: #c8d2dc;
   --landing-container: 1120px;
 }
 
@@ -171,7 +171,7 @@ body.landing-page {
   max-width: 760px;
   margin: 0 0 14px;
   font-size: clamp(.98rem, 1.25vw, 1.08rem);
-  line-height: 1.72;
+  line-height: 1.76;
   color: var(--landing-text-soft);
 }
 
@@ -185,7 +185,7 @@ body.landing-page {
   width: 100%;
   max-width: 430px;
   border: 1px solid var(--landing-line-dark);
-  background: rgba(255,255,255,.035);
+  background: rgba(255,255,255,.055);
   backdrop-filter: blur(10px);
   padding: 26px;
 }
@@ -202,7 +202,7 @@ body.landing-page {
 .landing-hero__card p {
   margin: 0;
   font-size: .92rem;
-  line-height: 1.65;
+  line-height: 1.72;
   color: var(--landing-text-soft);
 }
 
@@ -406,7 +406,7 @@ body.landing-page {
 .landing-card p {
   margin: 0;
   font-size: .93rem;
-  line-height: 1.65;
+  line-height: 1.72;
 }
 
 .landing-section--light .landing-point p,
@@ -446,7 +446,7 @@ body.landing-page {
 }
 
 .landing-section--dark .landing-card {
-  background: rgba(255,255,255,.035);
+  background: rgba(255,255,255,.055);
   color: var(--landing-text);
   border: 0;
 }
@@ -655,4 +655,4 @@ body.landing-page {
   .landing-hero__card {
     padding: 24px;
   }
-}
+  }
