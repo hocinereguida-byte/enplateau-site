@@ -1,0 +1,1110 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Conversations — Industrie & transformation des territoires | En Plateau</title>
+  <meta
+    name="description"
+    content="Quatre conversations structurantes pour éclairer les conditions de décision, les trajectoires industrielles, les interdépendances, l’outil productif et les territoires."
+  >
+
+  <link rel="canonical" href="https://enplateau.fr/conversations/industrie.html">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#111111">
+
+  <link rel="icon" href="/images/favicon-en-plateau.svg" type="image/svg+xml">
+  <link rel="icon" href="/images/Favenplateau.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/images/Favenplateau.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+
+  <style>
+    body.page-conversations-industrie {
+      background: var(--p3-paper, #faf8f5);
+      color: var(--p3-ink, #111);
+    }
+
+    body.page-conversations-industrie .ci-container {
+      width: min(calc(100% - 40px), var(--p3-container, 1120px));
+      margin: 0 auto;
+    }
+
+    body.page-conversations-industrie .ci-hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(17,17,17,.94) 0%, rgba(17,17,17,.82) 48%, rgba(17,17,17,.66) 100%),
+        url("/images/conversations/section-cycle-industrie.jpg") center/cover no-repeat;
+      color: var(--p3-text, #f0ece6);
+      border-bottom: 1px solid rgba(255,255,255,.09);
+    }
+
+    body.page-conversations-industrie .ci-hero__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, .72fr);
+      gap: clamp(28px, 4vw, 52px);
+      align-items: end;
+      padding: clamp(92px, 11vw, 132px) 0 clamp(68px, 8vw, 96px);
+    }
+
+    body.page-conversations-industrie .ci-hero__copy {
+      max-width: 820px;
+      padding: clamp(28px, 4vw, 42px);
+      background: rgba(0,0,0,.36);
+      border: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(4px);
+    }
+
+    body.page-conversations-industrie .ci-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      font-family: var(--font-mono, "IBM Plex Mono", monospace);
+      font-size: .68rem;
+      font-weight: 400;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--p3-accent-soft, #b8d0ff);
+    }
+
+    body.page-conversations-industrie .ci-kicker::before {
+      content: "";
+      width: 20px;
+      height: 1px;
+      background: currentColor;
+      opacity: .75;
+    }
+
+    body.page-conversations-industrie .ci-hero h1 {
+      max-width: 13ch;
+      margin: 0 0 18px;
+      font-family: var(--font-display, "Playfair Display", serif);
+      font-size: clamp(2.35rem, 5vw, 4.7rem);
+      line-height: 1.05;
+      letter-spacing: -.018em;
+      font-weight: 600;
+      color: var(--p3-text, #f0ece6);
+      text-wrap: balance;
+    }
+
+    body.page-conversations-industrie .ci-hero__lead {
+      max-width: 760px;
+      margin: 0 0 16px;
+      font-size: clamp(1rem, 1.18vw, 1.08rem);
+      line-height: 1.72;
+      color: rgba(240,236,230,.84);
+    }
+
+    body.page-conversations-industrie .ci-hero__note {
+      max-width: 760px;
+      margin: 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.09);
+      font-family: var(--font-mono, "IBM Plex Mono", monospace);
+      font-size: .68rem;
+      line-height: 1.7;
+      color: rgba(240,236,230,.66);
+    }
+
+    body.page-conversations-industrie .ci-hero__side {
+      display: grid;
+      gap: 2px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    body.page-conversations-industrie .ci-hero-card {
+      padding: 24px 22px;
+      background: rgba(0,0,0,.34);
+      backdrop-filter: blur(4px);
+    }
+
+    body.page-conversations-industrie .ci-hero-card h2,
+    body.page-conversations-industrie .ci-hero-card h3 {
+      margin: 0 0 8px;
+      font-family: var(--font-display, "Playfair Display", serif);
+      font-size: 1.08rem;
+      line-height: 1.3;
+      color: var(--p3-text, #f0ece6);
+    }
+
+    body.page-conversations-industrie .ci-hero-card p {
+      margin: 0;
+      font-size: .9rem;
+      line-height: 1.62;
+      color: rgba(240,236,230,.76);
+    }
+
+    body.page-conversations-industrie .ci-section {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(64px, 8vw, 96px) 0;
+    }
+
+    body.page-conversations-industrie .ci-section--light {
+      background: var(--p3-paper, #faf8f5);
+      color: var(--p3-ink, #111);
+    }
+
+    body.page-conversations-industrie .ci-section--white {
+      background: #fff;
+      color: var(--p3-ink, #111);
+    }
+
+    body.page-conversations-industrie .ci-section--dark {
+      background: #111;
+      color: var(--p3-text, #f0ece6);
+    }
+
+    body.page-conversations-industrie .ci-split {
+      display: grid;
+      grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
+      gap: clamp(28px, 4vw, 52px);
+      align-items: stretch;
+    }
+
+    body.page-conversations-industrie .ci-split--reverse {
+      grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr);
+    }
+
+    body.page-conversations-industrie .ci-copy {
+      padding: clamp(30px, 4vw, 48px);
+      background: #fff;
+    }
+
+    body.page-conversations-industrie .ci-section--dark .ci-copy {
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    body.page-conversations-industrie .ci-copy h2,
+    body.page-conversations-industrie .ci-head h2 {
+      margin: 0 0 16px;
+      font-family: var(--font-display, "Playfair Display", serif);
+      font-size: clamp(1.75rem, 3.1vw, 3.15rem);
+      line-height: 1.08;
+      letter-spacing: -.014em;
+      font-weight: 600;
+      color: inherit;
+      text-wrap: balance;
+    }
+
+    body.page-conversations-industrie .ci-copy p,
+    body.page-conversations-industrie .ci-head p {
+      margin: 0 0 18px;
+      font-size: 1rem;
+      line-height: 1.72;
+      color: var(--p3-ink-soft, #3a3330);
+    }
+
+    body.page-conversations-industrie .ci-section--dark .ci-copy p,
+    body.page-conversations-industrie .ci-section--dark .ci-head p {
+      color: rgba(240,236,230,.78);
+    }
+
+    body.page-conversations-industrie .ci-visual {
+      min-height: 430px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body.page-conversations-industrie .ci-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.32));
+      pointer-events: none;
+    }
+
+    body.page-conversations-industrie .ci-visual--principle {
+      background-image:
+        linear-gradient(90deg, rgba(17,17,17,.72), rgba(17,17,17,.24)),
+        url("/images/conversations/section-cycle-industrie.jpg");
+    }
+
+    body.page-conversations-industrie .ci-visual--visibility {
+      background-image:
+        linear-gradient(90deg, rgba(17,17,17,.72), rgba(17,17,17,.24)),
+        url("/images/conversations/visible.jpg");
+    }
+
+    body.page-conversations-industrie .ci-panel {
+      margin-top: 22px;
+      padding: 22px 24px;
+      border-left: 3px solid var(--p3-accent, #5d7aa8);
+      background: rgba(93,122,168,.06);
+    }
+
+    body.page-conversations-industrie .ci-section--dark .ci-panel {
+      background: rgba(255,255,255,.04);
+      border-left-color: var(--p3-accent-soft, #b8d0ff);
+    }
+
+    body.page-conversations-industrie .ci-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    body.page-conversations-industrie .ci-head {
+      max-width: 940px;
+      margin: 0 auto 36px;
+      text-align: center;
+    }
+
+    body.page-conversations-industrie .ci-head .ci-kicker {
+      justify-content: center;
+    }
+
+    body.page-conversations-industrie .ci-contexts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2px;
+      background: rgba(82,62,49,.14);
+      margin-top: 28px;
+    }
+
+    body.page-conversations-industrie .ci-context {
+      padding: 26px 22px;
+      background: #fff;
+      border-left: 3px solid var(--p3-accent, #5d7aa8);
+    }
+
+    body.page-conversations-industrie .ci-context h3 {
+      margin: 0 0 8px;
+      font-family: var(--font-display, "Playfair Display", serif);
+      font-size: 1.1rem;
+      line-height: 1.3;
+      color: var(--p3-ink, #111);
+    }
+
+    body.page-conversations-industrie .ci-context p {
+      margin: 0;
+      font-size: .92rem;
+      line-height: 1.62;
+      color: var(--p3-ink-soft, #3a3330);
+    }
+
+    body.page-conversations-industrie .ci-accordions {
+      display: grid;
+      gap: 2px;
+      background: rgba(82,62,49,.14);
+    }
+
+    body.page-conversations-industrie .ci-conv {
+      background: #fff;
+    }
+
+    body.page-conversations-industrie .ci-conv__header {
+      width: 100%;
+      border: 0;
+      background: #fff;
+      color: var(--p3-ink, #111);
+      padding: 26px 28px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    body.page-conversations-industrie .ci-conv__meta {
+      display: block;
+      margin-bottom: 8px;
+      font-family: var(--font-mono, "IBM Plex Mono", monospace);
+      font-size: .66rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--p3-accent-deep, #355785);
+    }
+
+    body.page-conversations-industrie .ci-conv__title {
+      display: block;
+      max-width: 940px;
+      font-family: var(--font-display, "Playfair Display", serif);
+      font-size: clamp(1.35rem, 2.2vw, 2.1rem);
+      line-height: 1.16;
+      font-weight: 600;
+      letter-spacing: -.01em;
+      color: var(--p3-ink, #111);
+    }
+
+    body.page-conversations-industrie .ci-conv__toggle {
+      font-family: var(--font-display, "Playfair Display", serif);
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--p3-accent-deep, #355785);
+      transition: transform .18s ease;
+    }
+
+    body.page-conversations-industrie .ci-conv.is-open .ci-conv__toggle {
+      transform: rotate(45deg);
+    }
+
+    body.page-conversations-industrie 
+    .ci-conv__control {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      min-width: 74px;
+      color: var(--p3-accent-deep, #355785);
+    }
+
+    .ci-conv__control-label {
+      font-family: var(--font-mono, "IBM Plex Mono", monospace);
+      font-size: .58rem;
+      line-height: 1.2;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: currentColor;
+    }
+
+    .ci-conv__hint {
+      display: none !important;
+    }
+.ci-conv__body {
+      display: none;
+      padding: 0 28px 30px;
+    }
+
+    body.page-conversations-industrie .ci-conv.is-open .ci-conv__body {
+      display: block;
+    }
+
+    body.page-conversations-industrie .ci-conv__intro {
+      max-width: 940px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(82,62,49,.14);
+    }
+
+    body.page-conversations-industrie .ci-conv__intro p {
+      margin: 0 0 12px;
+      font-size: .98rem;
+      line-height: 1.7;
+      color: var(--p3-ink-soft, #3a3330);
+    }
+
+    body.page-conversations-industrie .ci-angle-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2px;
+      margin-top: 24px;
+      background: rgba(82,62,49,.14);
+    }
+
+    body.page-conversations-industrie .ci-angle {
+      position: relative;
+      padding: clamp(26px, 4vw, 38px);
+      background: #faf8f5;
+      border-left: 3px solid var(--p3-accent, #5d7aa8);
+    }
+
+    body.page-conversations-industrie .ci-angle__meta {
+      margin-bottom: 10px;
+      font-family: var(--font-mono, "IBM Plex Mono", monospace);
+      font-size: .62rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--p3-accent-deep, #355785);
+    }
+
+    body.page-conversations-industrie .ci-angle h3 {
+      margin: 0 0 14px;
+      font-family: var(--font-display, "Playfair Display", serif);
+      font-size: clamp(1.22rem, 1.8vw, 1.7rem);
+      line-height: 1.22;
+      color: var(--p3-ink, #111);
+      max-width: 920px;
+    }
+
+    body.page-conversations-industrie .ci-angle p {
+      margin: 0 0 14px;
+      font-size: .94rem;
+      line-height: 1.68;
+      color: var(--p3-ink-soft, #3a3330);
+      max-width: 880px;
+    }
+
+    body.page-conversations-industrie .ci-angle__section {
+      margin-top: 20px;
+    }
+
+    body.page-conversations-industrie .ci-angle__label {
+      margin-bottom: 9px;
+      font-family: var(--font-mono, "IBM Plex Mono", monospace);
+      font-size: .6rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      color: var(--p3-ink-muted, #6b6259);
+    }
+
+    body.page-conversations-industrie .ci-angle__pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2px;
+      background: rgba(82,62,49,.14);
+      margin-top: 14px;
+    }
+
+    body.page-conversations-industrie .ci-angle__pair > div {
+      background: #fff;
+      padding: 16px 18px;
+    }
+
+    body.page-conversations-industrie .ci-angle__pair strong {
+      display: block;
+      margin-bottom: 6px;
+      font-family: var(--font-mono, "IBM Plex Mono", monospace);
+      font-size: .58rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--p3-accent-deep, #355785);
+    }
+
+    body.page-conversations-industrie .ci-dimensions {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2px;
+      background: rgba(82,62,49,.14);
+      margin-top: 14px;
+    }
+
+    body.page-conversations-industrie .ci-dimension {
+      padding: 16px 16px 15px;
+      background: #fff;
+    }
+
+    body.page-conversations-industrie .ci-dimension strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: .92rem;
+      line-height: 1.35;
+      color: var(--p3-ink, #111);
+    }
+
+    body.page-conversations-industrie .ci-dimension span {
+      display: block;
+      font-size: .82rem;
+      line-height: 1.58;
+      color: var(--p3-ink-soft, #3a3330);
+    }
+
+    body.page-conversations-industrie .ci-security {
+      margin-top: 22px;
+      padding: 18px 20px;
+      background: rgba(93,122,168,.06);
+      border-left: 3px solid var(--p3-accent, #5d7aa8);
+      font-size: .9rem;
+      line-height: 1.66;
+      color: var(--p3-ink-soft, #3a3330);
+    }
+
+    body.page-conversations-industrie .ci-conv-cta {
+      margin-top: 28px;
+      padding: 26px 28px;
+      background: #111;
+      color: #f0ece6;
+    }
+
+    body.page-conversations-industrie .ci-conv-cta h3 {
+      margin: 0 0 10px;
+      font-family: var(--font-display, "Playfair Display", serif);
+      font-size: 1.25rem;
+      line-height: 1.3;
+      color: #fff;
+    }
+
+    body.page-conversations-industrie .ci-conv-cta p {
+      margin: 0 0 18px;
+      max-width: 860px;
+      font-size: .94rem;
+      line-height: 1.68;
+      color: rgba(240,236,230,.78);
+    }
+
+    body.page-conversations-industrie .ci-reading-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 2px;
+      background: rgba(255,255,255,.08);
+      margin-top: 30px;
+    }
+
+    body.page-conversations-industrie .ci-reading {
+      padding: 24px 20px;
+      background: rgba(255,255,255,.035);
+      border-left: 3px solid var(--p3-accent, #5d7aa8);
+    }
+
+    body.page-conversations-industrie .ci-reading h3 {
+      margin: 0 0 8px;
+      font-family: var(--font-display, "Playfair Display", serif);
+      font-size: 1.05rem;
+      line-height: 1.3;
+      color: var(--p3-text, #f0ece6);
+    }
+
+    body.page-conversations-industrie .ci-reading p {
+      margin: 0;
+      font-size: .88rem;
+      line-height: 1.6;
+      color: rgba(240,236,230,.76);
+    }
+
+    body.page-conversations-industrie .ci-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px 20px;
+      margin-top: 32px;
+    }
+
+    body.page-conversations-industrie .ci-actions a,
+    body.page-conversations-industrie .ci-conv-cta a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      font-family: var(--font-body, "IBM Plex Sans", sans-serif);
+      font-size: .88rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    body.page-conversations-industrie .ci-actions a:first-child,
+    body.page-conversations-industrie .ci-conv-cta a:first-of-type {
+      background: var(--p3-accent, #5d7aa8);
+      border: 1px solid var(--p3-accent, #5d7aa8);
+      color: #fff;
+    }
+
+    body.page-conversations-industrie .ci-actions a:not(:first-child),
+    body.page-conversations-industrie .ci-conv-cta a:not(:first-of-type) {
+      color: inherit;
+      border-bottom: 1px solid currentColor;
+    }
+
+    body.page-conversations-industrie .ci-loading,
+    body.page-conversations-industrie .ci-error {
+      padding: 28px;
+      background: #fff;
+      border-left: 3px solid var(--p3-accent, #5d7aa8);
+      color: var(--p3-ink-soft, #3a3330);
+    }
+
+
+
+    /* ACCORDÉONS — lisibilité éditoriale */
+    body.page-conversations-industrie .ci-conv__hint {
+      display: block;
+      margin-top: 10px;
+      font-family: var(--font-body, "IBM Plex Sans", sans-serif);
+      font-size: .82rem;
+      line-height: 1.5;
+      font-weight: 600;
+      letter-spacing: .02em;
+      text-transform: none;
+      color: var(--p3-ink-soft, #3a3330);
+    }
+
+    body.page-conversations-industrie .ci-conv__title {
+      font-size: clamp(1.45rem, 2.35vw, 2.22rem);
+      line-height: 1.12;
+    }
+
+    body.page-conversations-industrie .ci-conv__intro {
+      margin-bottom: 22px;
+    }
+
+    body.page-conversations-industrie .ci-conv-cta {
+      margin: 22px 0 24px;
+    }
+
+    body.page-conversations-industrie .ci-conv-cta h3 {
+      font-size: clamp(1.22rem, 1.8vw, 1.55rem);
+      line-height: 1.22;
+    }
+
+    body.page-conversations-industrie .ci-angle-grid {
+      gap: 10px;
+      background: transparent;
+    }
+
+    body.page-conversations-industrie .ci-angle h3 {
+      font-size: clamp(1.28rem, 1.9vw, 1.85rem);
+      line-height: 1.18;
+      margin-bottom: 16px;
+    }
+
+    body.page-conversations-industrie .ci-angle__meta {
+      margin-bottom: 12px;
+      color: var(--p3-accent-deep, #355785);
+    }
+
+    @media (max-width: 1023px) {
+      body.page-conversations-industrie .ci-hero__grid,
+      body.page-conversations-industrie .ci-split,
+      body.page-conversations-industrie .ci-split--reverse,
+      body.page-conversations-industrie .ci-contexts,
+      body.page-conversations-industrie .ci-reading-grid,
+      body.page-conversations-industrie .ci-dimensions,
+      body.page-conversations-industrie .ci-angle__pair {
+        grid-template-columns: 1fr;
+      }
+
+      body.page-conversations-industrie .ci-visual {
+        min-height: 340px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      body.page-conversations-industrie .ci-container {
+        width: min(calc(100% - 24px), var(--p3-container, 1120px));
+      }
+
+      body.page-conversations-industrie .ci-hero__copy,
+      body.page-conversations-industrie .ci-copy,
+      body.page-conversations-industrie .ci-angle {
+        padding: 24px 20px;
+      }
+
+      body.page-conversations-industrie .ci-hero h1 {
+        max-width: 100%;
+        font-size: clamp(2.35rem, 11vw, 3.7rem);
+      }
+
+      body.page-conversations-industrie .ci-conv__header,
+      body.page-conversations-industrie .ci-conv__body {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  
+    /* Correctif accordéon : libellé à droite uniquement */
+    .ci-conv__hint,
+    body.page-conversations-industrie .ci-conv__hint {
+      display: none !important;
+    }
+
+    .ci-conv__control,
+    body.page-conversations-industrie .ci-conv__control {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      min-width: 82px;
+      color: var(--p3-accent-deep, #355785);
+    }
+
+    .ci-conv__control-label,
+    body.page-conversations-industrie .ci-conv__control-label {
+      font-family: var(--font-mono, "IBM Plex Mono", monospace);
+      font-size: .58rem;
+      line-height: 1.2;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: currentColor;
+    }
+  </style>
+</head>
+
+<body class="page-interior page-interior-3 page-conversations-industrie">
+
+  <div id="site-header"></div>
+  <div id="site-mobile-menu"></div>
+
+  <main>
+    <section class="ci-hero" id="hero-conversations-industrie">
+      <div class="ci-container">
+        <div class="ci-hero__grid">
+          <div class="ci-hero__copy">
+    <div class="ci-kicker">Conversations · Industrie</div>
+<h1 id="ciHeroTitle">Industrie &amp; transformation des territoires</h1>
+<p class="ci-hero__lead" id="ciHeroDescription">
+  Un cycle pour éclairer les trajectoires industrielles à partir de leurs conditions réelles :
+  activité, interdépendances, outil productif, ressources, compétences, financement et territoires.
+</p>
+<p class="ci-hero__note" id="ciHeroNote">
+  Les conversations publiques donnent à voir les grandes questions du cycle.
+  L’échange éditorial permet ensuite d’identifier la lecture, l’angle et le niveau de contribution les plus pertinents.
+</p>          </div>
+
+          <aside class="ci-hero__side" id="ciHeroCards" aria-label="Conversations du cycle">
+            <div class="ci-hero-card">
+              <h2>Cycle Industrie</h2>
+              <p>Quatre conversations structurantes, douze angles potentiels par conversation, trois angles publics présentés ici.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="ci-section ci-section--light" id="principe-cycle-industrie">
+      <div class="ci-container">
+        <div class="ci-split">
+          <div class="ci-visual ci-visual--principle" aria-hidden="true"></div>
+
+          <div class="ci-copy">
+            <div class="ci-kicker">Point de départ</div>
+            <h2>Quatre conversations pour lire les conditions qui structurent les trajectoires industrielles.</h2>
+<p>
+  Le cycle Industrie s’organise autour de quatre questions majeures :
+  le pilotage de la croissance, les interdépendances qui structurent les décisions,
+  l’évolution de l’outil productif et la trajectoire industrielle dans la durée.
+</p>
+<p>
+  Chaque conversation est abordée selon plusieurs contextes : croissance à piloter,
+  pilotage en conditions réelles et reconfiguration de trajectoire.
+</p>
+<div class="ci-panel">
+  <p>
+    Le cadre public donne à voir une partie des angles déjà structurés.
+    Les autres lectures se travaillent dans le cadre d’un échange éditorial,
+    selon la position réellement occupée par l’intervenant.
+  </p>
+</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ci-contexts" id="ciContexts"></div>
+      </div>
+    </section>
+
+    <section class="ci-section ci-section--white" id="conversations-dynamiques">
+      <div class="ci-container">
+        <div class="ci-head">
+          <div class="ci-kicker">Conversations ouvertes</div>
+          <h2>Des angles publics pour comprendre la logique des conversations.</h2>
+<p>
+  Chaque conversation présente quelques angles déjà formulés pour donner à lire
+  les questions abordées et les types de lectures attendues,
+  sans exposer l’ensemble du travail éditorial en cours.
+</p>        </div>
+
+        <div class="ci-loading" id="ciLoading">Chargement des conversations…</div>
+        <div class="ci-accordions" id="ciConversations" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="ci-section ci-section--dark" id="lectures-attendues-industrie">
+      <div class="ci-container">
+        <div class="ci-head">
+          <div class="ci-kicker">Lectures attendues</div>
+          <h2>Les positions ne sont pas des métiers : elles rendent des lectures situées visibles.</h2>
+          <p>
+  Chaque lecture éclaire une part différente de la trajectoire industrielle :
+  stratégie, finance, droit, opérations, compétences, technologie, territoire
+  ou ressources industrielles.
+</p>
+        </div>
+
+        <div class="ci-reading-grid" id="ciReadings"></div>
+
+        <div class="ci-actions">
+          <a href="/demander-un-echange-editorial.html">Demander un échange éditorial</a>
+          <a href="/positions/industrie.html">Explorer les positions — Industrie</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ci-section ci-section--light" id="visibilite-cycle-industrie">
+      <div class="ci-container">
+        <div class="ci-split ci-split--reverse">
+          <div class="ci-copy">
+            <div class="ci-kicker">Accès</div>
+            <h2>Préciser un angle suppose un échange éditorial.</h2>
+<p>
+  Le cadre public ne donne pas à voir toute la profondeur du travail en cours.
+  Il préserve l’équilibre de la composition éditoriale et permet d’aborder les lectures
+  encore attendues dans un cadre qualifié.
+</p>
+            <div class="ci-panel">
+              <p>
+  Demander un échange éditorial permet de préciser la place possible d’une lecture,
+  d’identifier un angle pertinent et d’évaluer les conditions d’une éventuelle contribution.
+  Signaler une contribution permet de faire examiner une position ou une situation
+  susceptible d’éclairer le cycle.
+</p>
+            </div>
+            <div class="ci-actions" style="justify-content:flex-start;">
+              <a href="/demander-un-echange-editorial.html">Demander un échange éditorial</a>
+              <a href="/proposer-une-contribution.html">Signaler une contribution</a>
+            </div>
+          </div>
+
+          <div class="ci-visual ci-visual--visibility" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="cookie-container"></div>
+
+  <script src="/assets/js/editorial-data-industrie-v65.js?v=65"></script>
+  <script src="/assets/js/layout.js"></script>
+  <script src="/assets/js/main.js"></script>
+
+  <script>
+    (function() {
+      var data = window.EN_PLATEAU_EDITORIAL_DATA;
+
+      function byId(id) {
+        return document.getElementById(id);
+      }
+
+      function esc(value) {
+        return String(value || "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+      function getCycle() {
+        if (!data || !data.cycles) return null;
+        return data.cycles.find(function(cycle) {
+          return cycle.code === "IND";
+        }) || data.cycles[0];
+      }
+
+      function getReading(type) {
+        return data && data.readingTypes && data.readingTypes[type]
+          ? data.readingTypes[type]
+          : { label: type || "Lecture", shortLabel: type || "Lecture", positioning: "" };
+      }
+
+      function getAngleTitle(angle) {
+        return angle && angle.formatCourt && angle.formatCourt.titrePublicCourt
+          ? angle.formatCourt.titrePublicCourt
+          : (angle.questionPublique || angle.questionEditoriale || "");
+      }
+
+      function getVisibleAngles(cycle) {
+        return (cycle.angles || []).filter(function(angle) {
+          return angle.showInConversationPage !== false;
+        });
+      }
+
+      function getSelectedAnglesForConversation(angles, conversationCode) {
+        var preferredOrder = [
+          "STRATEGIQUE",
+          "FINANCIERE",
+          "OPERATIONNELLE",
+          "JURIDIQUE",
+          "TERRITORIALE",
+          "TECHNOLOGIQUE",
+          "RH_COMPETENCES",
+          "ENERGIE_RESSOURCES"
+        ];
+
+        var convAngles = angles.filter(function(angle) {
+          return angle.conversationCode === conversationCode;
+        });
+
+        var selected = [];
+
+        preferredOrder.forEach(function(readingCode) {
+          if (selected.length >= 3) return;
+          var match = convAngles.find(function(angle) {
+            return angle.typeLecture === readingCode && !selected.includes(angle);
+          });
+          if (match) selected.push(match);
+        });
+
+        convAngles.forEach(function(angle) {
+          if (selected.length < 3 && !selected.includes(angle)) {
+            selected.push(angle);
+          }
+        });
+
+        return selected.slice(0, 3);
+      }
+
+      function renderHero(cycle, angles) {
+        byId("ciHeroTitle").textContent = cycle.label || "Industrie & transformation des territoires";
+        byId("ciHeroDescription").textContent =
+  "Un cycle pour éclairer les trajectoires industrielles à partir de leurs conditions réelles : activité, interdépendances, outil productif, ressources, compétences, financement et territoires.";
+
+byId("ciHeroNote").textContent =
+  "Les conversations publiques donnent à voir les grandes questions du cycle. L’échange éditorial permet ensuite d’identifier la lecture, l’angle et le niveau de contribution les plus pertinents.";
+        byId("ciHeroCards").innerHTML = (cycle.conversations || []).map(function(conv, index) {
+          return '<div class="ci-hero-card">' +
+            '<h3>Conversation ' + (index + 1) + '</h3>' +
+            '<p>' + esc(conv.title || conv.landingTitle || "") + '</p>' +
+          '</div>';
+        }).join("");
+      }
+
+      function renderContexts(cycle) {
+        var contexts = cycle.contexts || [];
+        byId("ciContexts").innerHTML = contexts.map(function(ctx) {
+          return '<article class="ci-context">' +
+            '<h3>' + esc(ctx.label || ctx.code) + '</h3>' +
+            '<p>' + esc(ctx.description || "") + '</p>' +
+          '</article>';
+        }).join("");
+      }
+
+      function renderReadings(angles) {
+        var used = {};
+        angles.forEach(function(angle) {
+          if (angle.typeLecture) used[angle.typeLecture] = true;
+        });
+
+        var readingCodes = Object.keys(used);
+        if (!readingCodes.length && data.readingTypes) {
+          readingCodes = Object.keys(data.readingTypes);
+        }
+
+        byId("ciReadings").innerHTML = readingCodes.map(function(code) {
+          var reading = getReading(code);
+          return '<article class="ci-reading">' +
+            '<h3>' + esc(reading.shortLabel || reading.label || code) + '</h3>' +
+            '<p>' + esc(reading.positioning || "") + '</p>' +
+          '</article>';
+        }).join("");
+      }
+
+function renderDimensions(angle) {
+  return "";
+}
+      function renderAngle(angle) {
+        var reading = getReading(angle.typeLecture);
+        var long = angle.formatLongIntervenant || {};
+        var ctx = angle._contextLabel || angle.contextCode || "";
+        var chapeau = long.chapeau || angle.questionActivation || angle.introMecanisme || "";
+        var moment = long.momentBascule || angle.pointBascule || "";
+        var tension = long.tensionCentrale || angle.tensionArbitrage || "";
+        var securisation = long.securisation || "";
+
+        return '<article class="ci-angle" data-reading="' + esc(angle.typeLecture || "") + '">' +
+          '<div class="ci-angle__meta">' + esc(ctx) + ' · ' + esc(reading.shortLabel || reading.label || angle.typeLecture) + '</div>' +
+          '<h3>' + esc(getAngleTitle(angle)) + '</h3>' +
+          (chapeau ? '<p>' + esc(chapeau) + '</p>' : '') +
+          renderDimensions(angle) +
+          (securisation ? '<div class="ci-security">' + esc(securisation) + '</div>' : '') +
+        '</article>';
+      }
+
+      function renderConversations(cycle, angles) {
+        var contextByCode = {};
+        (cycle.contexts || []).forEach(function(ctx) {
+          contextByCode[ctx.code] = ctx.label || ctx.code;
+        });
+
+        angles.forEach(function(angle) {
+          angle._contextLabel = contextByCode[angle.contextCode] || angle.contextCode || "";
+        });
+
+        var html = (cycle.conversations || []).map(function(conv, index) {
+          var convAngles = getSelectedAnglesForConversation(angles, conv.code);
+
+          var body = convAngles.length
+            ? '<div class="ci-angle-grid">' + convAngles.map(renderAngle).join("") + '</div>'
+            : '<div class="ci-panel"><p>Aucun angle public n’est actuellement affiché pour cette conversation.</p></div>';
+
+          return '<article class="ci-conv">' +
+            '<button class="ci-conv__header" type="button" aria-expanded="false">' +
+              '<span>' +
+                '<span class="ci-conv__meta">Conversation ' + (index + 1) + ' sur ' + (cycle.conversations || []).length + '</span>' +
+                '<span class="ci-conv__title">' + esc(conv.title || conv.landingTitle || "") + '</span>' +
+                '<span class="ci-conv__hint">Voir un exemple d’angles traités dans cette conversation</span>' +
+              '</span>' +
+              '<span class="ci-conv__control"><span class="ci-conv__toggle" aria-hidden="true">+</span><span class="ci-conv__control-label">Voir détail</span></span>' +
+            '</button>' +
+            '<div class="ci-conv__body">' +
+              '<div class="ci-conv__intro">' +
+                (conv.description ? '<p>' + esc(conv.description) + '</p>' : '') +
+                (conv.tension ? '<p><strong>Question travaillée :</strong> ' + esc(conv.tension) + '</p>' : '') +
+              '</div>' +
+              '<div class="ci-conv-cta">' +
+                '<h3>Ici, nous présentons trois angles publics déjà structurés.</h3>' +
+                '<p>Cette conversation peut être approfondie en échange éditorial. L’échange éditorial permet de préciser les lectures encore attendues, les angles pertinents et les conditions d’une éventuelle contribution.</p>' +
+                '<a href="/demander-un-echange-editorial.html">Demander un échange éditorial</a> ' +
+                '<a href="/proposer-une-contribution.html">Signaler une contribution</a>' +
+              '</div>' +
+              body +
+            '</div>' +
+          '</article>';
+        }).join("");
+
+        byId("ciLoading").style.display = "none";
+        byId("ciConversations").innerHTML = html;
+
+        document.querySelectorAll(".ci-conv__header").forEach(function(header) {
+          header.addEventListener("click", function() {
+            var block = header.closest(".ci-conv");
+            var isOpen = block.classList.contains("is-open");
+
+            document.querySelectorAll(".ci-conv").forEach(function(item) {
+              item.classList.remove("is-open");
+              var btn = item.querySelector(".ci-conv__header");
+              if (btn) {
+              btn.setAttribute("aria-expanded", "false");
+              var label = btn.querySelector(".ci-conv__control-label");
+              if (label) label.textContent = "Voir détail";
+            }
+            });
+
+            if (!isOpen) {
+              block.classList.add("is-open");
+              header.setAttribute("aria-expanded", "true");
+              var currentLabel = header.querySelector(".ci-conv__control-label");
+              if (currentLabel) currentLabel.textContent = "Masquer détail";
+              window.requestAnimationFrame(function() {
+                block.scrollIntoView({ behavior: "smooth", block: "start" });
+              });
+            }
+          });
+        });
+      }
+
+      function render() {
+        if (!data) {
+          byId("ciLoading").className = "ci-error";
+          byId("ciLoading").textContent = "Le fichier Industrie n’est pas chargé. Vérifiez le chemin /assets/js/editorial-data-industrie-v65.js.";
+          return;
+        }
+
+        var cycle = getCycle();
+        if (!cycle) {
+          byId("ciLoading").className = "ci-error";
+          byId("ciLoading").textContent = "Aucun cycle Industrie n’a été trouvé.";
+          return;
+        }
+
+        var angles = getVisibleAngles(cycle);
+
+        renderHero(cycle, angles);
+        renderContexts(cycle);
+        renderReadings(angles);
+        renderConversations(cycle, angles);
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", render);
+      } else {
+        render();
+      }
+    })();
+  </script>
+</body>
+</html>
