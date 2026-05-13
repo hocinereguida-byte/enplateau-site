@@ -1,14 +1,17 @@
 /*
   En Plateau — render-landing.js
-  Version V65.4 — émission, rareté, comité de composition
-  Interventions vs V65.3 :
-  1. buildTopMeta         : "Cycle court · Page privée" — tronqué, 1 ligne
-  2. buildHeroKicker      : court, jamais le titre d'angle
-  3. buildEmissionBlock   : vignette B&W + journaliste + média
-                            BFM → emission-1.jpg / Figaro → emission-3.jpg / Tribune → emission-4.jpg
-  4. buildRaritySignal    : "quelques acteurs pressentis · 1 position · comité de composition"
-  5. buildIdentityLine    : intègre émission + rareté sous les blocs identité
-  Aucune classe, ID, chemin CSS/JS ni render-core.js modifiés.
+  Version V65.5
+  Modifications vs V65.4 :
+  - Suppression du bloc .landing-emission dans la carte hero (brouillon, image en couleur)
+  - Nouvelle colonne droite hero : bloc .landing-emission-film (style home, image B&W)
+    + légende journaliste/média sous l'image
+    + carte hero (.landing-hero__card) en dessous
+  - Restructuration du landing-hero__grid : 2 colonnes
+    gauche : titre + lead + CTA
+    droite  : film > légende > carte
+  - buildRaritySignal : texte corrigé
+  - buildIdentityLine : suppression de l'émission (maintenant au-dessus de la carte)
+  Aucune classe HTML existante supprimée. Aucune modification de render-core.js.
 */
 
 (function () {
@@ -51,8 +54,9 @@
       .replace(/\bCroissance sous tension\b/g, "Croissance à piloter")
       .replace(/\bAdaptation sous contrainte\b/g, "Adaptation maîtrisée")
       .replace(/\bRéinvention sous crise\b/g, "Reconfiguration stratégique")
-      .replace(/\bpoint[s]? de bascule\b/gi, (m) => m.startsWith("points") ? "moments de décision" : "moment de décision")
-      .replace(/\bdégrad[eé]?\b/gi, (m) => m === "dégrade" ? "met à l'épreuve" : m === "dégrader" ? "mettre à l'épreuve" : "évolution moins lisible")
+      .replace(/\bpoints? de bascule\b/gi, m => m.startsWith("points") ? "moments de décision" : "moment de décision")
+      .replace(/\bdégrade\b/gi, "met à l'épreuve")
+      .replace(/\bdégrader\b/gi, "mettre à l'épreuve")
       .replace(/\bdégradation\b/gi, "évolution moins lisible")
       .replace(/\bruptures visibles\b/gi, "changements visibles")
       .replace(/\brupture\b/gi, "changement de nature")
@@ -229,9 +233,7 @@
   }
 
   /* ─────────────────────────────────────────────────────────
-     1 — BANDEAU SUPÉRIEUR
-     Format : "[Cycle court] · Page privée" — tronqué à 28 chars.
-     "Page privée" = compréhensible sans jargon technique.
+     BANDEAU — court, 1 ligne, "Page privée"
   ───────────────────────────────────────────────────────── */
   function buildTopMeta(conversationLabel) {
     let label = "Cycle Industrie";
@@ -244,9 +246,7 @@
   }
 
   /* ─────────────────────────────────────────────────────────
-     2 — KICKER HERO
-     "Saison inaugurale · [Conversation courte]"
-     Jamais le titre de l'angle dans le kicker.
+     KICKER HERO — court, sans le titre d'angle
   ───────────────────────────────────────────────────────── */
   function buildHeroKicker(conversationLabel) {
     let label = "Cycle Industrie";
@@ -259,13 +259,10 @@
   }
 
   /* ─────────────────────────────────────────────────────────
-     3 — VIGNETTE ÉMISSION
-     Mapping (corrigé) :
-       BFM Business → /images/emission-1.jpg
-       Le Figaro    → /images/emission-3.jpg
-       La Tribune   → /images/emission-4.jpg
-     Filtre B&W appliqué via .landing-emission__img (CSS).
-     Conditionnel : affiché uniquement si journaliste + media présents.
+     MAPPING MÉDIA → IMAGE
+     BFM Business → /images/emission-1.jpg
+     Le Figaro    → /images/emission-3.jpg
+     La Tribune   → /images/emission-4.jpg
   ───────────────────────────────────────────────────────── */
   function getEmissionImagePath(media) {
     const m = norm(media);
@@ -275,34 +272,44 @@
     return null;
   }
 
-  function buildEmissionBlock(angle) {
+  /* ─────────────────────────────────────────────────────────
+     BLOC FILM ÉMISSION — style home
+     Image unique B&W dans le cadre .landing-film
+     (reprend exactement le CSS .home-film mais en classe
+     .landing-film pour rester dans le namespace landing)
+     + légende journaliste / outlet sous l'image
+  ───────────────────────────────────────────────────────── */
+  function buildFilmBlock(angle) {
     const journaliste = txt(angle?.journaliste, "");
     const emission    = txt(angle?.emission, "");
     const media       = txt(angle?.media, "");
-    if (!journaliste || !media) return "";
+    const imgPath     = media ? getEmissionImagePath(media) : null;
 
-    const imgPath     = getEmissionImagePath(media);
+    if (!imgPath) return "";
+
     const outletLabel = emission ? `${emission} · ${media}` : media;
+    const altLabel    = emission || media;
 
     return `
-      <div class="landing-emission">
-        ${imgPath ? `<div class="landing-emission__thumb">
-          <img src="${safe(imgPath)}" alt="${safe(outletLabel)}"
-               class="landing-emission__img" loading="lazy" width="80" height="52">
-        </div>` : ""}
-        <div class="landing-emission__meta">
-          <span class="landing-emission__label">Entretien avec</span>
-          <strong class="landing-emission__journalist">${safe(journaliste)}</strong>
-          <span class="landing-emission__outlet">${safe(outletLabel)}</span>
+      <div class="landing-film" aria-label="${safe(altLabel)}">
+        <div class="landing-film-track">
+          <div>
+            <img
+              src="${safe(imgPath)}"
+              alt="${safe(altLabel)}"
+              loading="eager"
+            >
+          </div>
         </div>
+      </div>
+      <div class="landing-film-caption">
+        ${journaliste ? `<strong>${safe(journaliste)}</strong>` : ""}
+        <span>${safe(outletLabel)}</span>
       </div>`;
   }
 
   /* ─────────────────────────────────────────────────────────
-     4 — SIGNAL DE RARETÉ
-     Sobre, factuel, non commercial.
-     "quelques acteurs pressentis · 1 position retenue ·
-      comité de composition · 8 lectures disponibles"
+     SIGNAL DE RARETÉ — texte corrigé
   ───────────────────────────────────────────────────────── */
   function buildRaritySignal(readingLabel) {
     const reading = readingLabel || "cette lecture";
@@ -310,21 +317,20 @@
       <div class="landing-rarity">
         <span class="landing-rarity__dot" aria-hidden="true"></span>
         <p>Parmi les quelques acteurs pressentis pour tenir la lecture
-          <strong>${safe(reading)}</strong> —
-          une seule position retenue par le comité de composition,
-          sur 8 lectures disponibles dans ce cycle.</p>
+          <strong>${safe(reading)}</strong> de cette conversation,
+          seule une position sera retenue par le comité éditorial.</p>
       </div>`;
   }
 
   /* ─────────────────────────────────────────────────────────
-     5 — BLOC IDENTITÉ HERO
-     Ordre :
+     BLOC IDENTITÉ HERO (carte)
+     Ordre dans la carte :
        1. Proposition adressée à (nom · rôle · org)
        2. Lecture proposée
-       3. Vignette émission
-       4. Signal de rareté
+       3. Signal de rareté
+     (L'émission est maintenant AU-DESSUS de la carte, pas dedans)
   ───────────────────────────────────────────────────────── */
-  function buildIdentityLine(personName, personRole, organisationName, readingLabel, angle) {
+  function buildIdentityLine(personName, personRole, organisationName, readingLabel) {
     const hasRealName = personName && personName !== "Intervenant pressenti";
     const hasRealOrg  = organisationName && organisationName !== "Votre organisation";
 
@@ -345,12 +351,11 @@
         <strong>${safe(soften(readingLabel)) || "Lecture éditoriale"}</strong>
       </div>
 
-      ${buildEmissionBlock(angle)}
       ${buildRaritySignal(readingLabel)}`;
   }
 
   /* ─────────────────────────────────────────────────────────
-     INTRO HERO — inchangée vs V65.3
+     INTRO HERO
   ───────────────────────────────────────────────────────── */
   function buildHeroIntro(personName, organisationName, heroLead) {
     const hasRealName = personName && personName !== "Intervenant pressenti";
@@ -375,7 +380,7 @@
   }
 
   /* ─────────────────────────────────────────────────────────
-     NARRATION "POURQUOI VOUS" — inchangée vs V65.3
+     NARRATION "POURQUOI VOUS"
   ───────────────────────────────────────────────────────── */
   function buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType) {
     const hasRealOrg  = organisationName && organisationName !== "Votre organisation";
@@ -412,7 +417,7 @@
   }
 
   /* ─────────────────────────────────────────────────────────
-     DG MESSAGE — inchangé vs V65.3
+     DG MESSAGE
   ───────────────────────────────────────────────────────── */
   function buildDGMessage(personaFit, reading, organisationName) {
     const hasRealOrg = organisationName && organisationName !== "Votre organisation";
@@ -524,6 +529,12 @@
       .filter(other => other && norm(other.typeLecture) !== norm(angle.typeLecture))
       .slice(0, 3);
 
+    /* ── COLONNE DROITE HERO ──────────────────────────────
+       1. Bloc film B&W (image émission + légende)
+       2. Carte hero (motivation + identité + rareté)
+    ────────────────────────────────────────────────────── */
+    const filmBlock = buildFilmBlock(angle);
+
     root.innerHTML = `
       <div class="landing-top">
         <div class="landing-top__inner">
@@ -536,6 +547,7 @@
         <div class="landing-container">
           <div class="landing-hero__grid">
 
+            <!-- COLONNE GAUCHE : titre + lead + CTA -->
             <div>
               ${buildHeroKicker(conversationLabel)}
               <h1>${safe(soften(heroTitle))}</h1>
@@ -547,10 +559,14 @@
               <p class="landing-reassurance">15 minutes · sans engagement · pour qualifier l'angle, le périmètre de parole et les conditions de préparation.</p>
             </div>
 
-            <aside class="landing-hero__card">
-              <h2>Pourquoi contribuer&nbsp;?</h2>
-              <p>${safe(shortText(speakerMotivation, 360))}</p>
-              ${buildIdentityLine(personName, personRole, organisationName, readingLabel, angle)}
+            <!-- COLONNE DROITE : film > carte -->
+            <aside class="landing-hero-side">
+              ${filmBlock}
+              <div class="landing-hero__card">
+                <h2>Pourquoi contribuer&nbsp;?</h2>
+                <p>${safe(shortText(speakerMotivation, 300))}</p>
+                ${buildIdentityLine(personName, personRole, organisationName, readingLabel)}
+              </div>
             </aside>
 
           </div>
