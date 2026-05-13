@@ -7,7 +7,7 @@
   <title>Conversations — Industrie & transformation des territoires | En Plateau</title>
   <meta
     name="description"
-    content="4 conversations structurantes, déclinées dans trois contextes, pour rendre lisibles les principales lignes de tension de l’industrie française."
+    content="Quatre conversations structurantes pour éclairer les conditions de décision, les trajectoires industrielles, les interdépendances, l’outil productif et les territoires."
   >
 
   <link rel="canonical" href="https://enplateau.fr/conversations/industrie.html">
@@ -736,12 +736,12 @@
     <div class="ci-kicker">Conversations · Industrie</div>
 <h1 id="ciHeroTitle">Industrie &amp; transformation des territoires</h1>
 <p class="ci-hero__lead" id="ciHeroDescription">
-  Un cycle pour lire les transformations industrielles qui obligent à arbitrer autrement :
-  activité, dépendances, outil productif, ressources, compétences, financement et territoires.
+  Un cycle pour éclairer les trajectoires industrielles à partir de leurs conditions réelles :
+  activité, interdépendances, outil productif, ressources, compétences, financement et territoires.
 </p>
 <p class="ci-hero__note" id="ciHeroNote">
-  Les conversations publiques donnent à voir une partie du travail éditorial en cours.
-  L’échange éditorial permet d’identifier la lecture et l’angle les plus pertinents.
+  Les conversations publiques donnent à voir les grandes questions du cycle.
+  L’échange éditorial permet ensuite d’identifier la lecture, l’angle et le niveau de contribution les plus pertinents.
 </p>          </div>
 
           <aside class="ci-hero__side" id="ciHeroCards" aria-label="Conversations du cycle">
@@ -761,15 +761,15 @@
 
           <div class="ci-copy">
             <div class="ci-kicker">Point de départ</div>
-            <h2>Quatre conversations pour lire les tensions qui traversent l’industrie.</h2>
+            <h2>Quatre conversations pour lire les conditions qui structurent les trajectoires industrielles.</h2>
 <p>
-  Le cycle Industrie s’organise autour de quatre lignes de tension majeures :
-  la tenue de l’activité, les dépendances critiques, la transformation de l’outil
-  et la soutenabilité de la trajectoire.
+  Le cycle Industrie s’organise autour de quatre questions majeures :
+  le pilotage de la croissance, les interdépendances qui structurent les décisions,
+  l’évolution de l’outil productif et la trajectoire industrielle dans la durée.
 </p>
 <p>
-  Chaque conversation est abordée selon plusieurs contextes : croissance sous tension,
-  adaptation sous contrainte et réinvention sous crise.
+  Chaque conversation est abordée selon plusieurs contextes : croissance à piloter,
+  pilotage en conditions réelles et reconfiguration de trajectoire.
 </p>
 <div class="ci-panel">
   <p>
@@ -793,7 +793,7 @@
           <h2>Des angles publics pour comprendre la logique des conversations.</h2>
 <p>
   Chaque conversation présente quelques angles déjà formulés pour donner à lire
-  la nature des tensions abordées et les types de lectures attendues,
+  les questions abordées et les types de lectures attendues,
   sans exposer l’ensemble du travail éditorial en cours.
 </p>        </div>
 
@@ -806,7 +806,7 @@
       <div class="ci-container">
         <div class="ci-head">
           <div class="ci-kicker">Lectures attendues</div>
-          <h2>Les positions ne sont pas des métiers : elles portent des lectures situées.</h2>
+          <h2>Les positions ne sont pas des métiers : elles rendent des lectures situées visibles.</h2>
           <p>
   Chaque lecture éclaire une part différente de la trajectoire industrielle :
   stratégie, finance, droit, opérations, compétences, technologie, territoire
@@ -839,7 +839,7 @@
   Demander un échange éditorial permet de préciser la place possible d’une lecture,
   d’identifier un angle pertinent et d’évaluer les conditions d’une éventuelle contribution.
   Signaler une contribution permet de faire examiner une position ou une situation
-  susceptible d’enrichir le cycle.
+  susceptible d’éclairer le cycle.
 </p>
             </div>
             <div class="ci-actions" style="justify-content:flex-start;">
@@ -857,7 +857,7 @@
   <div id="site-footer"></div>
   <div id="cookie-container"></div>
 
-  <script src="/assets/js/editorial-data-industrie-test.js?v=25"></script>
+  <script src="/assets/js/editorial-data-industrie-v65.js?v=65"></script>
   <script src="/assets/js/layout.js"></script>
   <script src="/assets/js/main.js"></script>
 
@@ -941,10 +941,10 @@
       function renderHero(cycle, angles) {
         byId("ciHeroTitle").textContent = cycle.label || "Industrie & transformation des territoires";
         byId("ciHeroDescription").textContent =
-  "Un cycle pour lire les transformations industrielles qui obligent à arbitrer autrement : activité, dépendances, outil productif, ressources, compétences, financement et territoires.";
+  "Un cycle pour éclairer les trajectoires industrielles à partir de leurs conditions réelles : activité, interdépendances, outil productif, ressources, compétences, financement et territoires.";
 
 byId("ciHeroNote").textContent =
-  "Les conversations publiques donnent à voir une partie du travail éditorial en cours. L’échange éditorial permet d’identifier la lecture et l’angle les plus pertinents.";
+  "Les conversations publiques donnent à voir les grandes questions du cycle. L’échange éditorial permet ensuite d’identifier la lecture, l’angle et le niveau de contribution les plus pertinents.";
         byId("ciHeroCards").innerHTML = (cycle.conversations || []).map(function(conv, index) {
           return '<div class="ci-hero-card">' +
             '<h3>Conversation ' + (index + 1) + '</h3>' +
@@ -1033,10 +1033,10 @@ function renderDimensions(angle) {
             '<div class="ci-conv__body">' +
               '<div class="ci-conv__intro">' +
                 (conv.description ? '<p>' + esc(conv.description) + '</p>' : '') +
-                (conv.tension ? '<p><strong>Tension travaillée :</strong> ' + esc(conv.tension) + '</p>' : '') +
+                (conv.tension ? '<p><strong>Question travaillée :</strong> ' + esc(conv.tension) + '</p>' : '') +
               '</div>' +
               '<div class="ci-conv-cta">' +
-                '<h3>Ici, nous ne vous présentons que 3 angles déjà structurés.</h3>' +
+                '<h3>Ici, nous présentons trois angles publics déjà structurés.</h3>' +
                 '<p>Cette conversation peut être approfondie en échange éditorial. L’échange éditorial permet de préciser les lectures encore attendues, les angles pertinents et les conditions d’une éventuelle contribution.</p>' +
                 '<a href="/demander-un-echange-editorial.html">Demander un échange éditorial</a> ' +
                 '<a href="/proposer-une-contribution.html">Signaler une contribution</a>' +
@@ -1080,7 +1080,7 @@ function renderDimensions(angle) {
       function render() {
         if (!data) {
           byId("ciLoading").className = "ci-error";
-          byId("ciLoading").textContent = "Le fichier Industrie n’est pas chargé. Vérifiez le chemin /assets/js/editorial-data-industrie-test.js?v=25.";
+          byId("ciLoading").textContent = "Le fichier Industrie n’est pas chargé. Vérifiez le chemin /assets/js/editorial-data-industrie-v65.js.";
           return;
         }
 
