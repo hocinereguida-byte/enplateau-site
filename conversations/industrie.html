@@ -857,13 +857,55 @@
   <div id="site-footer"></div>
   <div id="cookie-container"></div>
 
-  <script src="/assets/js/editorial-data-industrie-v65.js?v=65"></script>
+  <script src="/assets/js/editorial-data-industrie-v65.js?v=67"></script>
   <script src="/assets/js/layout.js"></script>
   <script src="/assets/js/main.js"></script>
 
   <script>
     (function() {
       var data = window.EN_PLATEAU_EDITORIAL_DATA;
+
+      var PUBLIC_CONTEXT_LABELS = {
+        "CST": "Croissance à piloter",
+        "GS": "Croissance à piloter",
+        "AC": "Pilotage en conditions réelles",
+        "ASC": "Pilotage en conditions réelles",
+        "RC": "Reconfiguration de trajectoire",
+        "RSS": "Reconfiguration de trajectoire"
+      };
+
+      var PUBLIC_CONTEXT_DESCRIPTIONS = {
+        "CST": "Lorsque la croissance industrielle demande de clarifier les conditions d’exécution, d’investissement, de compétences et d’ancrage.",
+        "GS": "Lorsque la croissance industrielle demande de clarifier les conditions d’exécution, d’investissement, de compétences et d’ancrage.",
+        "AC": "Lorsque la trajectoire doit être pilotée dans des conditions plus exigeantes : marché, coûts, ressources, cadre, territoires.",
+        "ASC": "Lorsque la trajectoire doit être pilotée dans des conditions plus exigeantes : marché, coûts, ressources, cadre, territoires.",
+        "RC": "Lorsque la trajectoire appelle une reconfiguration plus profonde de ses équilibres : outil, ressources, compétences, position et capacité d’avenir.",
+        "RSS": "Lorsque la trajectoire appelle une reconfiguration plus profonde de ses équilibres : outil, ressources, compétences, position et capacité d’avenir."
+      };
+
+      var PUBLIC_CONVERSATIONS = [
+        {
+          title: "Comment piloter la croissance industrielle lorsque chaque arbitrage compte davantage ?",
+          description: "Cette conversation éclaire les moments où la croissance ne se résume plus à produire davantage : elle demande de qualifier les conditions réelles d’exécution, de financement, de compétences, de ressources et d’ancrage.",
+          question: "Comprendre comment une trajectoire de croissance reste lisible, pilotable et utile lorsque les conditions de décision deviennent plus exigeantes."
+        },
+        {
+          title: "Comment rendre lisibles les interdépendances qui structurent une trajectoire industrielle ?",
+          description: "Cette conversation met en regard les dépendances de filière, d’approvisionnement, de compétences, de ressources, de financement ou de territoire qui influencent la manière de produire et de décider.",
+          question: "Comprendre comment certaines interdépendances deviennent des critères de décision, de continuité et de capacité d’avenir."
+        },
+        {
+          title: "Comment faire évoluer l’outil industriel lorsque ses conditions de transformation changent ?",
+          description: "Cette conversation distingue l’évolution réelle de l’outil productif d’une simple adaptation de surface : process, technologie, compétences, standards, investissements, ressources et capacité de pilotage.",
+          question: "Comprendre ce qui permet à un outil industriel d’évoluer réellement lorsque ses conditions techniques, humaines, économiques ou territoriales changent."
+        },
+        {
+          title: "Comment piloter une trajectoire industrielle lorsque ses conditions d’équilibre évoluent ?",
+          description: "Cette conversation regarde la trajectoire industrielle dans son ensemble : ce qui la rend lisible, ce qui la consolide, ce qui appelle des arbitrages plus structurants et ce qui prépare la capacité d’avenir.",
+          question: "Comprendre comment une trajectoire industrielle reste pilotable lorsque ses équilibres stratégiques, financiers, opérationnels, humains, territoriaux ou ressources évoluent."
+        }
+      ];
+
 
       function byId(id) {
         return document.getElementById(id);
@@ -891,10 +933,43 @@
           : { label: type || "Lecture", shortLabel: type || "Lecture", positioning: "" };
       }
 
+      function getContextCode(angle) {
+        return angle && (angle.contextCode || angle.contexteCode || angle.contexte || "");
+      }
+
+      function getPublicContextLabel(code, fallback) {
+        var normalized = String(code || "").toUpperCase();
+        if (PUBLIC_CONTEXT_LABELS[normalized]) return PUBLIC_CONTEXT_LABELS[normalized];
+
+        var label = String(fallback || "");
+        if (/croissance\s+sous\s+tension/i.test(label)) return "Croissance à piloter";
+        if (/adaptation\s+sous\s+contrainte/i.test(label)) return "Pilotage en conditions réelles";
+        if (/réinvention\s+sous\s+crise|reinvention\s+sous\s+crise/i.test(label)) return "Reconfiguration de trajectoire";
+
+        return label || normalized;
+      }
+
+      function getPublicContextDescription(code, fallback) {
+        var normalized = String(code || "").toUpperCase();
+        return PUBLIC_CONTEXT_DESCRIPTIONS[normalized] || fallback || "";
+      }
+
+      function getPublicConversation(conv, index) {
+        return PUBLIC_CONVERSATIONS[index] || {
+          title: conv.title || conv.landingTitle || "",
+          description: conv.description || "",
+          question: conv.tension || ""
+        };
+      }
+
       function getAngleTitle(angle) {
-        return angle && angle.formatCourt && angle.formatCourt.titrePublicCourt
-          ? angle.formatCourt.titrePublicCourt
-          : (angle.questionPublique || angle.questionEditoriale || "");
+        if (angle && angle.anglePublic && angle.anglePublic.titreLanding) return angle.anglePublic.titreLanding;
+        if (angle && angle.public && angle.public.titreLanding) return angle.public.titreLanding;
+        if (angle && angle.activation && angle.activation.titreLanding) return angle.activation.titreLanding;
+        if (angle && angle.questionActivation) return angle.questionActivation;
+        if (angle && angle.questionPublique) return angle.questionPublique;
+        if (angle && angle.formatCourt && angle.formatCourt.titrePublicCourt) return angle.formatCourt.titrePublicCourt;
+        return angle && angle.questionEditoriale ? angle.questionEditoriale : "";
       }
 
       function getVisibleAngles(cycle) {
@@ -912,7 +987,8 @@
           "TERRITORIALE",
           "TECHNOLOGIQUE",
           "RH_COMPETENCES",
-          "ENERGIE_RESSOURCES"
+          "ENERGIE_RESSOURCES",
+          "ENERGIE_RESSOURCES_DECARBONATION"
         ];
 
         var convAngles = angles.filter(function(angle) {
@@ -941,14 +1017,16 @@
       function renderHero(cycle, angles) {
         byId("ciHeroTitle").textContent = cycle.label || "Industrie & transformation des territoires";
         byId("ciHeroDescription").textContent =
-  "Un cycle pour éclairer les trajectoires industrielles à partir de leurs conditions réelles : activité, interdépendances, outil productif, ressources, compétences, financement et territoires.";
+          "Un cycle pour éclairer les trajectoires industrielles à partir de leurs conditions réelles : activité, interdépendances, outil productif, ressources, compétences, financement et territoires.";
 
-byId("ciHeroNote").textContent =
-  "Les conversations publiques donnent à voir les grandes questions du cycle. L’échange éditorial permet ensuite d’identifier la lecture, l’angle et le niveau de contribution les plus pertinents.";
+        byId("ciHeroNote").textContent =
+          "Les conversations publiques donnent à voir les grandes questions du cycle. L’échange éditorial permet ensuite d’identifier la lecture, l’angle et le niveau de contribution les plus pertinents.";
+
         byId("ciHeroCards").innerHTML = (cycle.conversations || []).map(function(conv, index) {
+          var publicConv = getPublicConversation(conv, index);
           return '<div class="ci-hero-card">' +
             '<h3>Conversation ' + (index + 1) + '</h3>' +
-            '<p>' + esc(conv.title || conv.landingTitle || "") + '</p>' +
+            '<p>' + esc(publicConv.title) + '</p>' +
           '</div>';
         }).join("");
       }
@@ -956,9 +1034,11 @@ byId("ciHeroNote").textContent =
       function renderContexts(cycle) {
         var contexts = cycle.contexts || [];
         byId("ciContexts").innerHTML = contexts.map(function(ctx) {
+          var label = getPublicContextLabel(ctx.code, ctx.label || ctx.code);
+          var description = getPublicContextDescription(ctx.code, ctx.description || "");
           return '<article class="ci-context">' +
-            '<h3>' + esc(ctx.label || ctx.code) + '</h3>' +
-            '<p>' + esc(ctx.description || "") + '</p>' +
+            '<h3>' + esc(label) + '</h3>' +
+            '<p>' + esc(description) + '</p>' +
           '</article>';
         }).join("");
       }
@@ -989,11 +1069,10 @@ function renderDimensions(angle) {
       function renderAngle(angle) {
         var reading = getReading(angle.typeLecture);
         var long = angle.formatLongIntervenant || {};
-        var ctx = angle._contextLabel || angle.contextCode || "";
-        var chapeau = long.chapeau || angle.questionActivation || angle.introMecanisme || "";
-        var moment = long.momentBascule || angle.pointBascule || "";
-        var tension = long.tensionCentrale || angle.tensionArbitrage || "";
-        var securisation = long.securisation || "";
+        var publicAngle = angle.anglePublic || {};
+        var ctx = getPublicContextLabel(getContextCode(angle), angle._contextLabel || angle.contextCode || "");
+        var chapeau = publicAngle.accrocheLanding || publicAngle.promesseIntervenant || angle.questionActivation || long.chapeau || angle.introMecanisme || "";
+        var securisation = publicAngle.reassurance || long.securisation || "";
 
         return '<article class="ci-angle" data-reading="' + esc(angle.typeLecture || "") + '">' +
           '<div class="ci-angle__meta">' + esc(ctx) + ' · ' + esc(reading.shortLabel || reading.label || angle.typeLecture) + '</div>' +
@@ -1007,7 +1086,7 @@ function renderDimensions(angle) {
       function renderConversations(cycle, angles) {
         var contextByCode = {};
         (cycle.contexts || []).forEach(function(ctx) {
-          contextByCode[ctx.code] = ctx.label || ctx.code;
+          contextByCode[ctx.code] = getPublicContextLabel(ctx.code, ctx.label || ctx.code);
         });
 
         angles.forEach(function(angle) {
@@ -1025,15 +1104,15 @@ function renderDimensions(angle) {
             '<button class="ci-conv__header" type="button" aria-expanded="false">' +
               '<span>' +
                 '<span class="ci-conv__meta">Conversation ' + (index + 1) + ' sur ' + (cycle.conversations || []).length + '</span>' +
-                '<span class="ci-conv__title">' + esc(conv.title || conv.landingTitle || "") + '</span>' +
+                '<span class="ci-conv__title">' + esc(getPublicConversation(conv, index).title) + '</span>' +
                 '<span class="ci-conv__hint">Voir un exemple d’angles traités dans cette conversation</span>' +
               '</span>' +
               '<span class="ci-conv__control"><span class="ci-conv__toggle" aria-hidden="true">+</span><span class="ci-conv__control-label">Voir détail</span></span>' +
             '</button>' +
             '<div class="ci-conv__body">' +
               '<div class="ci-conv__intro">' +
-                (conv.description ? '<p>' + esc(conv.description) + '</p>' : '') +
-                (conv.tension ? '<p><strong>Question travaillée :</strong> ' + esc(conv.tension) + '</p>' : '') +
+                (getPublicConversation(conv, index).description ? '<p>' + esc(getPublicConversation(conv, index).description) + '</p>' : '') +
+                (getPublicConversation(conv, index).question ? '<p><strong>Question travaillée :</strong> ' + esc(getPublicConversation(conv, index).question) + '</p>' : '') +
               '</div>' +
               '<div class="ci-conv-cta">' +
                 '<h3>Ici, nous présentons trois angles publics déjà structurés.</h3>' +
@@ -1107,4 +1186,4 @@ function renderDimensions(angle) {
     })();
   </script>
 </body>
-</html>
+            </html>
