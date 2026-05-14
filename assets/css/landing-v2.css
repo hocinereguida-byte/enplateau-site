@@ -1,2 +1,151 @@
 /* En Plateau — landing-v2-radical.css */
 :root{--v2-bg:#0d0d0d;--v2-paper:#f3efe7;--v2-ink:#121212;--v2-ink-soft:rgba(18,18,18,.72);--v2-ink-muted:rgba(18,18,18,.52);--v2-text:#f7f2ea;--v2-text-soft:rgba(247,242,234,.82);--v2-text-muted:rgba(247,242,234,.58);--v2-line:rgba(18,18,18,.14);--v2-line-dark:rgba(255,255,255,.16);--v2-accent:#c8d2dc;--v2-container:1180px;--font-display:"Playfair Display",serif;--font-body:"IBM Plex Sans",sans-serif;--font-mono:"IBM Plex Mono",monospace}*{box-sizing:border-box}html{scroll-behavior:smooth}body.landing-v2-page{margin:0;background:var(--v2-bg);color:var(--v2-text);font-family:var(--font-body);text-rendering:geometricPrecision}.v2-container{width:min(calc(100% - 48px),var(--v2-container));margin:0 auto}.v2-top{position:absolute;z-index:20;inset:0 0 auto;height:90px;display:flex;align-items:center;justify-content:space-between;width:min(calc(100% - 48px),var(--v2-container));margin:0 auto;pointer-events:none}.v2-brand{pointer-events:auto;color:var(--v2-text);text-decoration:none;font-family:var(--font-display);font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:600;letter-spacing:-.03em}.v2-brand:before{content:"";display:inline-block;width:28px;height:1px;margin-right:12px;background:currentColor;vertical-align:middle;opacity:.55}.v2-meta{margin:0;max-width:420px;overflow:hidden;color:var(--v2-text-muted);font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;text-overflow:ellipsis}.v2-kicker{display:inline-flex;align-items:center;gap:10px;margin:0 0 16px;color:var(--v2-accent);font-family:var(--font-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase}.v2-kicker:before{content:"";width:20px;height:1px;background:currentColor;opacity:.7}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--font-display);font-weight:600;letter-spacing:-.025em}.v2-hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(90deg,rgba(13,13,13,.97) 0%,rgba(13,13,13,.90) 47%,rgba(13,13,13,.68) 100%),url("../../images/projo-lumiere.jpg") center/cover no-repeat;overflow:hidden}.v2-hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 72% 18%,rgba(255,255,255,.10),transparent 26%),linear-gradient(180deg,transparent 0%,rgba(0,0,0,.24) 100%)}.v2-hero__grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.82fr);gap:clamp(34px,5vw,72px);align-items:center;padding:118px 0 64px}.v2-hero h1{max-width:13.5ch;margin-bottom:18px;font-size:clamp(2.75rem,5vw,5rem);line-height:.99}.v2-scanline{margin:0 0 24px;color:var(--v2-text-soft);font-family:var(--font-mono);font-size:clamp(.78rem,1vw,.92rem);letter-spacing:.08em}.v2-hero__microgrid{display:grid;grid-template-columns:repeat(2,minmax(0,220px));gap:1px;max-width:520px;margin-bottom:20px;background:var(--v2-line-dark)}.v2-hero__microgrid div,.v2-hero__value{background:rgba(255,255,255,.055);border:1px solid transparent;padding:16px 18px}.v2-hero__microgrid span,.v2-hero__value span,.v2-panel-grid span,.v2-why span,.v2-bento span,.v2-process span{display:block;margin-bottom:8px;color:var(--v2-text-muted);font-family:var(--font-mono);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase}.v2-hero__microgrid strong{display:block;color:var(--v2-text);font-size:.98rem;line-height:1.35}.v2-hero__value{max-width:520px;margin-bottom:22px;border-color:var(--v2-line-dark)}.v2-hero__value ul,.v2-panel-grid ul,.v2-why ul{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}.v2-hero__value li,.v2-panel-grid li,.v2-why li{border:1px solid currentColor;padding:6px 9px;color:var(--v2-text-soft);font-size:.82rem;line-height:1}.v2-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}.v2-btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border:1px solid var(--v2-text);text-decoration:none;font-family:var(--font-body);font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}.v2-btn--primary{background:var(--v2-text);color:var(--v2-bg)}.v2-btn--ghost{background:transparent;color:var(--v2-text);border-color:var(--v2-line-dark)}.v2-btn:hover{opacity:.82}.v2-proofline{margin:14px 0 0;color:var(--v2-text-muted);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em}.v2-hero__side{justify-self:end;width:min(100%,430px)}.v2-film{aspect-ratio:16/9;padding:12px 20px;border:1px solid rgba(255,255,255,.10);background:repeating-linear-gradient(to bottom,rgba(255,255,255,.06) 0 1px,transparent 1px 34px),#0a0a0a;box-shadow:inset 0 0 28px rgba(0,0,0,.78)}.v2-film img{width:100%;height:100%;display:block;object-fit:cover;filter:grayscale(100%) contrast(112%) brightness(.64);opacity:.76;border:1px solid rgba(255,255,255,.08)}.v2-caption{margin:0;padding:11px 2px 13px;border-bottom:1px solid var(--v2-line-dark);color:var(--v2-text-muted);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.05em}.v2-caption strong{color:var(--v2-text);font-family:var(--font-body);font-size:.86rem;letter-spacing:0}.v2-position-card{border:1px solid var(--v2-line-dark);border-top:0;background:rgba(255,255,255,.055);backdrop-filter:blur(10px);padding:26px}.v2-card-label{margin-bottom:14px;color:var(--v2-accent);font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}.v2-position-card h2{margin-bottom:24px;font-size:clamp(1.45rem,2vw,1.9rem);line-height:1.12}.v2-position-card dl{margin:0}.v2-position-card div{padding-top:14px;margin-top:14px;border-top:1px solid var(--v2-line-dark)}.v2-position-card dt{margin-bottom:6px;color:var(--v2-text-muted);font-family:var(--font-mono);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase}.v2-position-card dd{margin:0;color:var(--v2-text-soft);font-size:.92rem;line-height:1.45}.v2-card-note{margin:18px 0 0;padding-top:14px;border-top:1px solid var(--v2-line-dark);color:var(--v2-text-muted);font-size:.84rem;line-height:1.55}.v2-section{padding:clamp(62px,8vw,104px) 0}.v2-section--paper{background:var(--v2-paper);color:var(--v2-ink)}.v2-section--dark{background:var(--v2-bg);color:var(--v2-text)}.v2-section-head{max-width:840px;margin:0 auto 38px;text-align:center}.v2-section-head .v2-kicker{justify-content:center}.v2-section-head h2{margin-bottom:12px;font-size:clamp(2rem,4vw,3.4rem);line-height:1.04}.v2-section-head p{max-width:640px;margin:0 auto;color:var(--v2-ink-soft);font-size:1rem;line-height:1.65}.v2-section--dark .v2-section-head p{color:var(--v2-text-soft)}.v2-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--v2-line);border-bottom:0}.v2-tab{min-height:96px;padding:18px;border:0;border-right:1px solid var(--v2-line);background:rgba(255,255,255,.30);color:var(--v2-ink);text-align:left;cursor:pointer}.v2-tab:last-child{border-right:0}.v2-tab span{display:block;margin-bottom:8px;color:var(--v2-ink-muted);font-family:var(--font-mono);font-size:.65rem;letter-spacing:.13em;text-transform:uppercase}.v2-tab strong{display:block;font-family:var(--font-display);font-size:1.1rem;line-height:1.15}.v2-tab.is-active{background:var(--v2-bg);color:var(--v2-text)}.v2-tab.is-active span{color:var(--v2-text-muted)}.v2-active-panel{display:grid;grid-template-columns:260px 1fr;gap:1px;border:1px solid var(--v2-line);background:var(--v2-line)}.v2-active-panel>div{background:var(--v2-bg);color:var(--v2-text);padding:clamp(24px,3vw,34px)}.v2-active-panel h3{margin:0;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.05}.v2-panel-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;padding:0!important;background:var(--v2-line-dark)!important}.v2-panel-grid>div{padding:24px;background:rgba(255,255,255,.055)}.v2-panel-grid strong{display:block;color:var(--v2-text);font-size:1rem;line-height:1.45}.v2-bento,.v2-why,.v2-process,.v2-faq{display:grid;gap:1px;background:var(--v2-line-dark);border:1px solid var(--v2-line-dark)}.v2-bento article,.v2-process article,.v2-faq article{padding:clamp(24px,3vw,34px);background:rgba(255,255,255,.055)}.v2-bento--guarantees{grid-template-columns:repeat(4,minmax(0,1fr))}.v2-bento--guarantees h3,.v2-faq h3,.v2-process h3{margin-bottom:10px;font-size:1.28rem;line-height:1.16}.v2-bento p,.v2-process p,.v2-faq p{margin:0;color:var(--v2-text-soft);font-size:.95rem;line-height:1.6}.v2-section--paper .v2-why,.v2-section--paper .v2-process{background:var(--v2-line);border-color:var(--v2-line)}.v2-section--paper .v2-process article{background:rgba(255,255,255,.45)}.v2-section--paper .v2-process span{color:var(--v2-ink-muted)}.v2-section--paper .v2-process p{color:var(--v2-ink-soft)}.v2-why{grid-template-columns:1.15fr .95fr .9fr;border-color:var(--v2-line);background:var(--v2-line)}.v2-why article{padding:clamp(24px,3vw,36px);background:rgba(255,255,255,.46)}.v2-why__main{background:var(--v2-bg)!important;color:var(--v2-text)}.v2-why span{color:var(--v2-ink-muted)}.v2-why__main span{color:var(--v2-text-muted)}.v2-why h3{margin:0;font-size:clamp(1.6rem,2.6vw,2.35rem);line-height:1.08}.v2-why p{margin:0;color:var(--v2-ink-soft);font-size:1.05rem;line-height:1.55}.v2-why li{color:var(--v2-ink-soft)}.v2-bento--impact{grid-template-columns:repeat(4,minmax(0,1fr))}.v2-bento__large{grid-column:span 2;grid-row:span 2;min-height:280px}.v2-bento__large h3{max-width:10ch;font-size:clamp(2rem,4vw,3.5rem);line-height:.98}.v2-bento__wide{grid-column:span 4;text-align:center}.v2-bento__wide p{color:var(--v2-text);font-family:var(--font-mono);letter-spacing:.10em;text-transform:uppercase}.v2-process{grid-template-columns:repeat(4,minmax(0,1fr));background:var(--v2-line);border-color:var(--v2-line)}.v2-process span{margin-bottom:28px;font-size:.78rem}.v2-faq{grid-template-columns:repeat(2,minmax(0,1fr))}.v2-final{padding:clamp(76px,10vw,130px) 0;background:linear-gradient(90deg,rgba(13,13,13,.95),rgba(13,13,13,.76)),url("../../images/projo-lumiere.jpg") center/cover no-repeat;color:var(--v2-text);text-align:center}.v2-final h2{margin-bottom:12px;font-size:clamp(2.3rem,5vw,4.3rem);line-height:1}.v2-final p{margin:0 0 24px;color:var(--v2-text-soft);font-family:var(--font-mono);font-size:.78rem;letter-spacing:.10em;text-transform:uppercase}@media(max-width:1020px){.v2-hero__grid,.v2-active-panel{grid-template-columns:1fr}.v2-hero__side{justify-self:stretch;width:100%}.v2-tabs,.v2-bento--guarantees,.v2-bento--impact,.v2-process,.v2-why{grid-template-columns:1fr 1fr}.v2-bento__large,.v2-bento__wide{grid-column:span 2}}@media(max-width:680px){.v2-container,.v2-top{width:min(calc(100% - 32px),var(--v2-container))}.v2-top{height:76px}.v2-meta{display:none}.v2-hero{min-height:auto}.v2-hero__grid{padding:104px 0 54px}.v2-hero h1{max-width:11.8ch;font-size:clamp(2.4rem,12vw,3.45rem)}.v2-hero__microgrid,.v2-tabs,.v2-panel-grid,.v2-bento--guarantees,.v2-bento--impact,.v2-process,.v2-why,.v2-faq{grid-template-columns:1fr}.v2-bento__large,.v2-bento__wide{grid-column:auto}.v2-actions{flex-direction:column;align-items:stretch}.v2-btn{width:100%}.v2-section{padding:54px 0}.v2-section-head{margin-bottom:28px}.v2-tab{min-height:78px}}
+/*
+  PATCH — landing-v2-radical.css
+  Correction hero 14/05
+  Objectif :
+  - supprimer le texte sombre sur fond sombre ;
+  - réduire la hauteur perçue du hero ;
+  - réduire la taille du titre ;
+  - rendre CTA + synthèse visibles plus tôt ;
+  - conserver le reste de la page intact.
+*/
+
+/* 1. Hero moins haut, plus lisible */
+body.landing-v2-page .v2-hero {
+  min-height: 86vh;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(13,13,13,.99) 0%, rgba(13,13,13,.94) 48%, rgba(13,13,13,.78) 100%),
+    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
+}
+
+body.landing-v2-page .v2-hero::after {
+  background:
+    radial-gradient(circle at 74% 20%, rgba(255,255,255,.08), transparent 25%),
+    linear-gradient(180deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.38) 100%);
+}
+
+/* 2. Grille hero resserrée */
+body.landing-v2-page .v2-hero__grid {
+  padding-top: 104px;
+  padding-bottom: 42px;
+  align-items: center;
+  gap: clamp(28px, 4vw, 56px);
+}
+
+/* 3. Titre plus compact et plus visible */
+body.landing-v2-page .v2-hero h1 {
+  max-width: 14.5ch;
+  margin-bottom: 16px;
+  color: var(--v2-text) !important;
+  font-size: clamp(2.35rem, 3.65vw, 3.95rem);
+  line-height: 1.02;
+  opacity: 1 !important;
+  text-shadow: 0 2px 20px rgba(0,0,0,.52);
+}
+
+/* 4. Tous les textes du hero repassent clairement en clair */
+body.landing-v2-page .v2-hero,
+body.landing-v2-page .v2-hero p,
+body.landing-v2-page .v2-hero span,
+body.landing-v2-page .v2-hero strong,
+body.landing-v2-page .v2-hero li,
+body.landing-v2-page .v2-hero h1,
+body.landing-v2-page .v2-hero h2,
+body.landing-v2-page .v2-hero dt,
+body.landing-v2-page .v2-hero dd {
+  color: var(--v2-text) !important;
+}
+
+/* 5. Les textes secondaires restent clairs mais différenciés */
+body.landing-v2-page .v2-hero .v2-kicker,
+body.landing-v2-page .v2-hero .v2-card-label,
+body.landing-v2-page .v2-hero__microgrid span,
+body.landing-v2-page .v2-hero__value span,
+body.landing-v2-page .v2-hero .v2-position-card dt {
+  color: var(--v2-accent) !important;
+}
+
+body.landing-v2-page .v2-hero .v2-scanline,
+body.landing-v2-page .v2-hero .v2-proofline,
+body.landing-v2-page .v2-hero .v2-caption,
+body.landing-v2-page .v2-hero .v2-card-note {
+  color: var(--v2-text-soft) !important;
+}
+
+/* 6. Cartes hero plus contrastées */
+body.landing-v2-page .v2-hero__microgrid div,
+body.landing-v2-page .v2-hero__value,
+body.landing-v2-page .v2-position-card {
+  background: rgba(255,255,255,.075);
+  border-color: rgba(255,255,255,.20);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.035);
+}
+
+body.landing-v2-page .v2-hero__value li {
+  color: var(--v2-text) !important;
+  border-color: rgba(255,255,255,.42);
+  background: rgba(0,0,0,.18);
+}
+
+/* 7. Image média légèrement plus lisible sans devenir dominante */
+body.landing-v2-page .v2-film img {
+  filter: grayscale(100%) contrast(116%) brightness(.72);
+  opacity: .82;
+}
+
+/* 8. Carte droite moins haute */
+body.landing-v2-page .v2-position-card {
+  padding: 22px 24px;
+}
+
+body.landing-v2-page .v2-position-card h2 {
+  font-size: clamp(1.2rem, 1.55vw, 1.55rem);
+  line-height: 1.18;
+  margin-bottom: 18px;
+}
+
+body.landing-v2-page .v2-position-card div {
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+body.landing-v2-page .v2-card-note {
+  margin-top: 14px;
+  padding-top: 12px;
+}
+
+/* 9. CTA plus haut, plus net */
+body.landing-v2-page .v2-actions {
+  margin-top: 18px;
+}
+
+body.landing-v2-page .v2-btn--primary {
+  background: #f7f2ea;
+  color: #0d0d0d !important;
+  border-color: #f7f2ea;
+}
+
+body.landing-v2-page .v2-btn--ghost {
+  color: #f7f2ea !important;
+  border-color: rgba(255,255,255,.36);
+}
+
+/* 10. Mobile : hero toujours compact */
+@media (max-width: 680px) {
+  body.landing-v2-page .v2-hero {
+    min-height: auto;
+  }
+
+  body.landing-v2-page .v2-hero__grid {
+    padding-top: 92px;
+    padding-bottom: 42px;
+  }
+
+  body.landing-v2-page .v2-hero h1 {
+    max-width: 12.5ch;
+    font-size: clamp(2.15rem, 10vw, 3rem);
+    line-height: 1.02;
+  }
+}
