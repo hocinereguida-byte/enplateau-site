@@ -1,6 +1,6 @@
 /*
   En Plateau — render-landing.js
-  Version V65.9 conversion-hierarchy
+  Version V65.8 premium-site-grammar
   Modifications vs V65.5 :
   - Suppression du bloc .landing-emission dans la carte hero (brouillon, image en couleur)
   - Nouvelle colonne droite hero : bloc .landing-emission-film (style home, image B&W)
@@ -21,6 +21,7 @@
   "use strict";
 
   const Core = window.EnPlateauRenderCore;
+  const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
   const root = document.getElementById("landing-root");
 
   if (!Core || !root) {
@@ -117,13 +118,60 @@
     return fromData || "Lecture éditoriale";
   }
 
-  function card(label, title, text, accent) {
+  function card(label, title, text, accent, extraClass = "") {
     if (!title && !text) return "";
+    const classes = ["landing-card", accent ? "landing-card--accent" : "", extraClass].filter(Boolean).join(" ");
     return `
-      <article class="landing-card ${accent ? "landing-card--accent" : ""}">
+      <article class="${classes}">
         ${label ? `<span class="landing-label">${safe(label)}</span>` : ""}
         ${title ? `<h3>${safe(soften(title))}</h3>` : ""}
         ${text  ? `<p>${safe(shortText(text, 640))}</p>` : ""}
+      </article>`;
+  }
+
+  function valueLabel(label) {
+    const n = norm(label);
+    if (n.includes("organisation") || n.includes("entreprise") || n.includes("industrielle")) return "Pour votre organisation";
+    if (n.includes("fonction") || n.includes("porteuse")) return "Pour votre fonction";
+    if (n.includes("intervenant") || n.includes("personne") || n.includes("senior")) return "Pour vous";
+    if (n.includes("cabinet") || n.includes("conseil") || n.includes("expertise") || n.includes("avocat")) return "Pour votre expertise";
+    return label || "Portée";
+  }
+
+  function sanitizePersonFragment(value) {
+    let v = soften(value || "");
+    v = v.replace(/^Votre fonction\s+[—-]\s*[^—-]+\s+[—-]\s+vous permet de\s+/i, "Vous pouvez ");
+    v = v.replace(/^Votre fonction\s+[—-]\s*[^—-]+\s+[—-]\s+/i, "");
+    v = v.replace(/^Votre fonction vous permet de\s+/i, "Vous pouvez ");
+    return v;
+  }
+
+  function readingTypeConfig(code) {
+    if (!code) return null;
+    const key = String(code).trim();
+    return DATA?.readingTypes?.[key] || null;
+  }
+
+  function actorLabelsForAngle(angle) {
+    const cfg = readingTypeConfig(angle?.typeLecture);
+    return toArray(cfg?.profilsIntervenant)
+      .map(item => txt(item.label, item.title, item.profil))
+      .filter(Boolean)
+      .slice(0, 3);
+  }
+
+  function buildComplementaryCard(other) {
+    const c = other.complementaryCard || {};
+    const actors = actorLabelsForAngle(other);
+    const label = c.label || other.typeLecture || "Lecture complémentaire";
+    const title = c.title || other.questionCourte || other.titreAngle || other.questionPublique;
+    const text = c.headline || other.ceQueCetteLecturePermetDeVoir || other.angleRendVisible || "Une autre lecture du même contexte éditorial.";
+    return `
+      <article class="landing-card landing-card--complementary">
+        ${actors.length ? `<div class="landing-actors"><span>Acteurs pressentis</span><strong>${safe(actors.join(" · "))}</strong></div>` : ""}
+        ${label ? `<span class="landing-label">${safe(label)}</span>` : ""}
+        ${title ? `<h3>${safe(soften(title))}</h3>` : ""}
+        ${text ? `<p>${safe(shortText(text, 560))}</p>` : ""}
       </article>`;
   }
 
@@ -155,7 +203,7 @@
         ? isCabinetCard(item) || isFunctionCard(item) || isPersonCard(item)
         : !isCabinetCard(item) && (isOrgCard(item) || isFunctionCard(item) || isPersonCard(item))
     );
-    if (filtered.length >= 3) return filtered.slice(0, 3);
+    if (filtered.length >= 3) return filtered.slice(0, 3).map(item => ({ ...item, label: valueLabel(item.label) }));
 
     const gains = toArray(reading?.gainsParProfil).map(item => ({
       label: item.profil, title: item.gain, text: item.detail
@@ -165,11 +213,11 @@
         ? isCabinetCard(item) || isFunctionCard(item) || isPersonCard(item)
         : !isCabinetCard(item) && (isOrgCard(item) || isFunctionCard(item) || isPersonCard(item))
     );
-    if (filtered.length >= 3) return filtered.slice(0, 3);
+    if (filtered.length >= 3) return filtered.slice(0, 3).map(item => ({ ...item, label: valueLabel(item.label) }));
 
     return [
       {
-        label: actorLabel(actorType),
+        label: actorType === "cabinet_conseil" ? "Pour votre expertise" : "Pour votre organisation",
         title: actorType === "cabinet_conseil"
           ? "Installer une parole d'autorité sans vendre directement une offre."
           : "Valoriser une capacité à rendre lisibles les conditions réelles d'une trajectoire industrielle.",
@@ -178,12 +226,12 @@
           : "La contribution permet à l'organisation de montrer sa capacité de lecture sans exposer de chiffre, de site, de client ou de décision interne."
       },
       {
-        label: "Fonction",
+        label: "Pour votre fonction",
         title: "Faire reconnaître ce que votre fonction permet de voir.",
         text: "La prise de parole rend visible une capacité de pilotage, de coordination ou d'arbitrage souvent difficile à expliquer dans un format institutionnel classique."
       },
       {
-        label: "Intervenant",
+        label: "Pour vous",
         title: "Construire une trace professionnelle crédible.",
         text: "L'intervention devient un actif éditorial préparé, durable, réutilisable et aligné avec le niveau d'exposition souhaité."
       }
@@ -201,7 +249,7 @@
       ),
       label: txt(
         deal?.ctaLabel, deal?.cta_label, deal?.activation?.ctaLabel, deal?.activation?.cta_label,
-        "Qualifier cette position — 15 min"
+        "Réserver un échange éditorial de cadrage"
       ),
       title:    "Qualifier cette lecture en échange éditorial",
       text:     txt(pageCTA.text, "15 minutes, sans engagement, pour qualifier l'angle, le périmètre de parole et les conditions de préparation."),
@@ -373,8 +421,8 @@
       <div class="landing-rarity">
         <span class="landing-rarity__dot" aria-hidden="true"></span>
         <p>Plusieurs acteurs peuvent être pressentis pour une même lecture.
-          <strong>Une seule position ${safe(soften(reading))}</strong> sera retenue
-          dans la composition finale, en cohérence avec les autres lectures mises en regard.</p>
+          <strong>Une seule position ${safe(reading)}</strong> sera retenue,
+          en cohérence avec les autres lectures mises en regard, après examen par le comité éditorial.</p>
       </div>`;
   }
 
@@ -417,18 +465,19 @@
     const hasRealOrg = organisationName && organisationName !== "Votre organisation";
     const reading = readingLabel || "cette lecture";
 
-    return `<p class="landing-lead landing-lead--compact">
+    return `<p class="landing-lead">
       <strong>Votre expérience a été identifiée pour éclairer une lecture précise dans une conversation économique En Plateau.</strong>
-      L'échange de 15 minutes permet de vérifier si votre lecture peut trouver sa juste place dans la composition éditoriale${hasRealOrg ? `, depuis ${safe(organisationName)}` : ""}.
+      Cette page vous est adressée dans le cadre d'une composition éditoriale par approche directe : votre fonction, votre expertise ou votre responsabilité peuvent aider à rendre lisibles les arbitrages, les trajectoires et les conditions de décision liés à cet angle.
     </p>
-    <p class="landing-lead landing-lead--compact">
-      Une seule position ${safe(soften(reading))} sera retenue pour cette lecture. Il ne s'agit pas d'une prestation de visibilité, mais d'une position à qualifier dans un cadre éditorial composé par approche directe.
-    </p>`;
+    <p class="landing-lead">
+      Une seule position ${safe(soften(reading))} sera retenue pour cette lecture. L'échange de 15 minutes permet de vérifier si votre angle, votre responsabilité et votre lecture peuvent trouver leur juste place dans la composition éditoriale${hasRealOrg ? ` portée depuis ${safe(organisationName)}` : ""}.
+    </p>
+    ${heroLead ? `<p class="landing-lead">${safe(shortText(heroLead, 360))}</p>` : ""}`;
   }
 
   function buildHeroCardIntro(readingLabel) {
     const reading = readingLabel || "lecture éditoriale";
-    return `Votre lecture a été identifiée comme potentiellement utile à cette conversation. Une seule position ${safe(soften(reading))} sera retenue dans la composition finale.`;
+    return `Cette page privée vous est adressée dans le cadre d'une composition éditoriale par approche directe. Votre lecture a été identifiée comme potentiellement utile à cette conversation. Une seule position ${safe(soften(reading))} sera retenue dans la composition finale.`;
   }
 
   function buildPositionPathSection(readingLabel) {
@@ -466,11 +515,11 @@
 
     const personFragment = (() => {
       if (why.person && hasRealName)
-        return shortText(why.person, 300);
+        return shortText(sanitizePersonFragment(why.person), 300);
       if (hasRealName && personRole)
-        return `Votre fonction — ${personRole} — donne accès à une lecture située : ce qu'elle permet de rendre lisible, de structurer, de sécuriser ou de mettre en perspective dans cette trajectoire.`;
+        return "Votre position donne accès à une lecture située : ce qu'elle permet de rendre lisible, de structurer, de sécuriser ou de mettre en perspective dans cette trajectoire.";
       if (isOperationalRole(personRole) && hasRealName)
-        return `Votre fonction — ${personRole} — place cette lecture au niveau où certains arbitrages concrets se forment : flux, coordination, montée en capacité, stabilité d'exécution.`;
+        return "Votre position place cette lecture au niveau où certains arbitrages concrets se forment : flux, coordination, montée en capacité, stabilité d'exécution.";
       return "";
     })();
 
@@ -502,207 +551,6 @@
         ? `La lecture portée depuis ${organisationName} rend visible ce que d'autres acteurs du cycle ne peuvent pas formuler depuis leur position. C'est précisément ce décalage de point de vue qui lui donne sa portée éditoriale.`
         : "Cette position permet de donner forme à une contribution reconnaissable par les bons interlocuteurs."
     );
-  }
-
-
-
-  /* ─────────────────────────────────────────────────────────
-     SECTIONS OPTIMISÉES CONVERSION / APPROFONDISSEMENT
-  ───────────────────────────────────────────────────────── */
-  function ctaBand(cta, variant = "light") {
-    return `
-      <section class="landing-cta-band landing-cta-band--${safe(variant)}">
-        <div class="landing-container landing-cta-band__inner">
-          <div>
-            <p class="landing-kicker">Échange éditorial</p>
-            <h2>Valider la pertinence de l'angle, sans engagement.</h2>
-            <p>15 minutes pour qualifier la lecture, le périmètre possible et les conditions de préparation.</p>
-          </div>
-          <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
-        </div>
-      </section>`;
-  }
-
-  function buildSafetySection(guarantees, cta) {
-    const items = guarantees.slice(0, 4);
-    return `
-      <section class="landing-section landing-section--light landing-section--safety" id="securite-immediate">
-        <div class="landing-container">
-          <div class="landing-head landing-head--left landing-head--compact">
-            <p class="landing-kicker">Cadre de confiance</p>
-            <h2>Une contribution cadrée, pas improvisée.</h2>
-            <p>Les objections sensibles sont traitées avant toute prise de parole : confidentialité, temps mobilisé, périmètre de l'échange et validation interne éventuelle.</p>
-          </div>
-          <div class="landing-safety-grid">
-            ${items.map((item, index) => `
-              <article class="landing-safety-card">
-                <span class="landing-safety-icon" aria-hidden="true">${["□", "◷", "◇", "⌁"][index] || "□"}</span>
-                <h3>${safe(soften(item.title))}</h3>
-                <p>${safe(shortText(item.text, 260))}</p>
-              </article>`).join("")}
-          </div>
-          <div class="landing-actions landing-actions--section">
-            <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
-            <span class="landing-inline-note">Aucun dossier à préparer · aucune donnée confidentielle attendue</span>
-          </div>
-        </div>
-      </section>`;
-  }
-
-  function buildWhySection(why, organisationName, personName, personRole, positionWhy, actorType) {
-    return `
-      <section class="landing-section landing-section--light" id="pourquoi-vous">
-        <div class="landing-container">
-          <div class="landing-head landing-head--left landing-head--compact">
-            <p class="landing-kicker">Pertinence</p>
-            <h2>Pourquoi cette lecture vous est proposée.</h2>
-            <p>Une position En Plateau ne désigne pas seulement une fonction ou un métier. Elle désigne ce qu'une expérience permet de rendre lisible depuis un endroit précis.</p>
-          </div>
-          <div class="landing-why-card">
-            ${buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType)}
-          </div>
-        </div>
-      </section>`;
-  }
-
-  function buildValueSection(valueCards, landingPage) {
-    return `
-      <section class="landing-section landing-section--dark" id="valeur-contribution">
-        <div class="landing-container">
-          <div class="landing-head landing-head--left landing-head--compact">
-            <p class="landing-kicker">Portée de la position</p>
-            <h2>Ce que produit une contribution En Plateau.</h2>
-            <p>${safe(shortText(txt(landingPage?.valueSection?.intro, "Une contribution bien préparée ne cherche pas seulement à être vue. Elle permet d'installer une lecture, de rendre une trajectoire plus lisible et de créer une trace publique qui continue de travailler dans la durée."), 520))}</p>
-          </div>
-          <div class="landing-grid landing-grid--3 landing-grid--compact">
-            ${valueCards.map((item, i) => card(item.label, item.title, item.text, i === 2)).join("")}
-          </div>
-        </div>
-      </section>`;
-  }
-
-  function buildExperienceAccordionContent(readingLabel) {
-    const reading = readingLabel || "lecture éditoriale";
-    return `
-      <div class="landing-grid landing-grid--3 landing-grid--compact">
-        ${card("Ce que vous apportez", "Une expérience située du sujet", "Votre expérience du sujet, votre responsabilité, vos convictions et votre compréhension des conditions réelles dans lesquelles se construisent les arbitrages industriels.")}
-        ${card("Ce qu'En Plateau structure", "Un angle, une lecture et des arbitrages", "Le contexte, les acteurs concernés, les arbitrages, les défis, la vision et l'échelle permettent de transformer une lecture en contribution préparée.")}
-        ${card("Ce que cela produit", "Une contribution reconnaissable par les bons interlocuteurs", `Une position claire, crédible et mobilisable dans la durée, depuis une ${safe(soften(reading))}, auprès des acteurs qui rencontrent les mêmes arbitrages.`, true)}
-      </div>`;
-  }
-
-  function buildAngleAccordionContent(publicAngle, formulation, angle, conversation, contextLabel, conversationLabel, dgMessage) {
-    return `
-      <div class="landing-head landing-head--left landing-head--compact">
-        <p class="landing-kicker">${safe(contextLabel)}</p>
-        <h3>${safe(soften(txt(publicAngle.titreLanding, formulation.title, angle.questionPublique, angle.titreAngle, angle.questionEditoriale)))}</h3>
-        <p>${safe(shortText(txt(publicAngle.accrocheLanding, formulation.accrocheLanding, angle.questionActivation, angle.texteProgramme, angle.introMecanisme), 620))}</p>
-      </div>
-      <div class="landing-grid landing-grid--3 landing-grid--compact">
-        ${card("Conversation", conversationLabel, txt(conversation?.narrativeText, conversation?.description, "Une conversation construite pour mettre en regard des lectures complémentaires."))}
-        ${card("Ce que votre lecture apporte", "Une position lisible par les décideurs", dgMessage)}
-        ${card("Format", "Une contribution cadrée, pas improvisée", "L'échange éditorial permet de cadrer le sujet, la portée de la lecture et les conditions de préparation avec vos équipes si nécessaire.", true)}
-      </div>`;
-  }
-
-  function getReadingProfiles(typeLecture) {
-    const reading = Core.getReadingByCode(typeLecture) || {};
-    const profiles = toArray(reading.profilsIntervenant)
-      .map(item => txt(item.label, item.title, item.profil))
-      .filter(Boolean);
-    if (profiles.length) return profiles.slice(0, 3);
-
-    const n = norm(typeLecture);
-    if (n.includes("finance")) return ["DAF · CFO · Directions financières", "Conseil finance · investissement"];
-    if (n.includes("jurid")) return ["Directions juridiques · conformité", "Avocats · cabinets spécialisés"];
-    if (n.includes("rh") || n.includes("compet")) return ["RH · compétences · transformation du travail", "Conseil RH · formation · organisation"];
-    if (n.includes("operation")) return ["Directions industrielles & opérations", "Conseil & transformation industrielle"];
-    if (n.includes("territ")) return ["Territoires · aménagement · infrastructures", "Acteurs publics · financeurs · cadre territorial"];
-    if (n.includes("energie") || n.includes("ressource")) return ["Énergie · eau · carbone · matières", "Ingénierie · environnement industriel"];
-    if (n.includes("tech")) return ["Systèmes industriels · OT/IT · data", "Ingénierie · transformation digitale industrielle"];
-    return ["Décideurs industriels", "Conseils spécialisés"];
-  }
-
-  function complementaryCard(other) {
-    const c = other.complementaryCard || {};
-    const profiles = getReadingProfiles(other.typeLecture);
-    const profilesHTML = profiles.length ? `
-      <div class="landing-actors">
-        <span>Acteurs pressentis</span>
-        <p>${profiles.map(safe).join(" · ")}</p>
-      </div>` : "";
-    return `
-      <article class="landing-card landing-card--complementary">
-        <span class="landing-label">${safe(c.label || other.typeLecture || "Lecture complémentaire")}</span>
-        <h3>${safe(soften(c.title || other.questionCourte || other.titreAngle || other.questionPublique || "Lecture complémentaire"))}</h3>
-        <p>${safe(shortText(c.headline || other.ceQueCetteLecturePermetDeVoir || other.angleRendVisible || "Une autre lecture du même contexte éditorial.", 360))}</p>
-        ${profilesHTML}
-      </article>`;
-  }
-
-  function buildComplementaryAccordionContent(complementaryAngles) {
-    if (!complementaryAngles.length) {
-      return `<p>Cette position est pensée dans une composition éditoriale, avec d'autres lectures complémentaires du même sujet.</p>`;
-    }
-    return `
-      <p class="landing-accordion-intro">Votre lecture n'est pas isolée. Elle est appelée à être mise en regard avec d'autres positions complémentaires, portées par des familles d'acteurs pressenties sans nom d'entreprise affiché.</p>
-      <div class="landing-grid landing-grid--3 landing-grid--compact">
-        ${complementaryAngles.map(other => complementaryCard(other)).join("")}
-      </div>`;
-  }
-
-  function buildProcessAccordionContent(processSteps) {
-    return `
-      <div class="landing-grid landing-grid--5 landing-process-grid landing-grid--compact">
-        ${processSteps.map(item => `
-          <article class="landing-card landing-process-card">
-            <span class="landing-label">${safe(item.num || "Étape")}</span>
-            <h3>${safe(soften(item.title))}</h3>
-            <p>${safe(shortText(item.text, 360))}</p>
-            ${item.deadline ? `<p class="landing-process-deadline">${safe(item.deadline)}</p>` : ""}
-          </article>`).join("")}
-      </div>`;
-  }
-
-  function buildFAQAccordionContent(faq) {
-    if (!faq.length) return "";
-    return `<div class="landing-grid landing-grid--2 landing-grid--compact">${faq.map(item => card("", item.question, item.answer)).join("")}</div>`;
-  }
-
-  function buildFurtherDetailsSection(opts) {
-    const { readingLabel, publicAngle, formulation, angle, conversation, contextLabel, conversationLabel, dgMessage, complementaryAngles, processSteps, faq, cta } = opts;
-    return `
-      <section class="landing-section landing-section--light landing-section--accordions" id="aller-plus-loin">
-        <div class="landing-container">
-          <div class="landing-head landing-head--left landing-head--compact">
-            <p class="landing-kicker">Pour aller plus loin</p>
-            <h2>Vous voulez comprendre le cadre éditorial avant de réserver ?</h2>
-            <p>Les éléments ci-dessous permettent d'approfondir la position proposée, la mise en regard, le parcours de préparation et les garanties.</p>
-          </div>
-
-          <div class="landing-accordion-list">
-            <details class="landing-accordion">
-              <summary>Ce que cette position permettrait d'éclairer</summary>
-              <div class="landing-accordion__body">${buildAngleAccordionContent(publicAngle, formulation, angle, conversation, contextLabel, conversationLabel, dgMessage)}</div>
-            </details>
-            <details class="landing-accordion">
-              <summary>Comment En Plateau transforme une expérience en contribution</summary>
-              <div class="landing-accordion__body">${buildExperienceAccordionContent(readingLabel)}</div>
-            </details>
-            <details class="landing-accordion">
-              <summary>Les lectures complémentaires et les acteurs pressentis</summary>
-              <div class="landing-accordion__body">${buildComplementaryAccordionContent(complementaryAngles)}</div>
-            </details>
-            ${processSteps.length ? `<details class="landing-accordion"><summary>Le parcours de cadrage, production et activation</summary><div class="landing-accordion__body">${buildProcessAccordionContent(processSteps)}</div></details>` : ""}
-            ${faq.length ? `<details class="landing-accordion"><summary>Questions fréquentes avant l'échange</summary><div class="landing-accordion__body">${buildFAQAccordionContent(faq)}</div></details>` : ""}
-          </div>
-
-          <div class="landing-actions landing-actions--section">
-            <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
-            <span class="landing-inline-note">L'échange sert uniquement à qualifier la pertinence de la position.</span>
-          </div>
-        </div>
-      </section>`;
   }
 
   /* ─────────────────────────────────────────────────────────
@@ -823,17 +671,19 @@
         <div class="landing-container">
           <div class="landing-hero__grid">
 
+            <!-- COLONNE GAUCHE : titre + lead + CTA -->
             <div>
               ${buildHeroKicker(conversationLabel)}
               <h1>${safe(soften(heroTitle))}</h1>
               ${buildHeroIntro(personName, organisationName, heroLead, readingLabel)}
               <div class="landing-actions">
                 <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
-                <a class="landing-btn landing-btn--ghost" href="#securite-immediate">Voir le cadre</a>
+                <a class="landing-btn landing-btn--ghost" href="#angle-propose">Voir la position proposée</a>
               </div>
-              <p class="landing-reassurance">15 minutes · sans engagement · aucun dossier à préparer · aucune donnée confidentielle attendue.</p>
+              <p class="landing-reassurance">15 minutes · sans engagement · pour qualifier l'angle, le périmètre de parole et les conditions de préparation.</p>
             </div>
 
+            <!-- COLONNE DROITE : film > carte -->
             <aside class="landing-hero-side">
               ${filmBlock}
               <div class="landing-hero__card">
@@ -847,28 +697,125 @@
         </div>
       </section>
 
-      ${buildSafetySection(guarantees, cta)}
+      ${complementaryAngles.length ? `
+        <section class="landing-section landing-section--light" id="mise-en-regard">
+          <div class="landing-container">
+            <div class="landing-head">
+              <p class="landing-kicker">Conversation composée</p>
+              <h2>Une contribution prend sa portée dans l'ensemble.</h2>
+              <p>Votre lecture n'est pas isolée. Elle est mise en regard avec d'autres positions complémentaires pour éclairer la même question depuis plusieurs responsabilités, sans réduire la conversation à un seul métier ni à une seule lecture.</p>
+            </div>
+            <div class="landing-grid landing-grid--3 landing-grid--complementary">
+              ${complementaryAngles.map(other => buildComplementaryCard(other)).join("")}
+            </div>
+          </div>
+        </section>` : ""}
 
-      ${buildWhySection(why, organisationName, personName, personRole, positionWhy, actorType)}
+      <section class="landing-section landing-section--light" id="cadre-confiance">
+        <div class="landing-container">
+          <div class="landing-head">
+            <p class="landing-kicker">Cadre de confiance</p>
+            <h2>Une contribution cadrée, pas improvisée.</h2>
+            <p>Les points sensibles sont traités avant toute prise de parole : confidentialité, temps mobilisé, périmètre de l'échange et validation interne éventuelle.</p>
+          </div>
+          <div class="landing-grid landing-grid--4 landing-trust-grid">
+            ${guarantees.map(item => card("", item.title, item.text, false, "landing-card--trust")).join("")}
+          </div>
+          <div class="landing-inline-cta">
+            <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
+            <p class="landing-reassurance landing-reassurance--light">Aucun dossier à préparer · Aucune donnée confidentielle attendue</p>
+          </div>
+        </div>
+      </section>
 
-      ${buildValueSection(valueCards, landingPage)}
+      <section class="landing-section landing-section--light" id="pourquoi-vous">
+        <div class="landing-container">
+          <div class="landing-head">
+            <p class="landing-kicker">Pertinence</p>
+            <h2>Pourquoi cette lecture vous est proposée.</h2>
+            <p>Une position En Plateau ne désigne pas seulement une fonction ou un métier. Elle désigne ce qu'une expérience permet de rendre lisible depuis un endroit précis.</p>
+          </div>
+          <div class="landing-why-box">
+            ${buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType)}
+          </div>
+        </div>
+      </section>
 
-      ${ctaBand(cta, "dark")}
+      <section class="landing-section landing-section--dark" id="valeur-position">
+        <div class="landing-container">
+          <div class="landing-head">
+            <p class="landing-kicker">Portée de la position</p>
+            <h2>Ce que produit une contribution En Plateau.</h2>
+            <p>${safe(shortText(txt(landingPage?.valueSection?.intro, "Une contribution bien préparée ne cherche pas seulement à être vue. Elle permet d'installer une lecture, de rendre une trajectoire plus lisible et de créer une trace publique qui continue de travailler dans la durée."), 560))}</p>
+          </div>
+          <div class="landing-grid landing-grid--3 landing-grid--value">
+            ${valueCards.map((item) => card(item.label, item.title, item.text)).join("")}
+          </div>
+          <div class="landing-inline-cta landing-inline-cta--dark">
+            <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
+            <p class="landing-reassurance">L'échange sert uniquement à qualifier la pertinence de la position.</p>
+          </div>
+        </div>
+      </section>
 
-      ${buildFurtherDetailsSection({
-        readingLabel,
-        publicAngle,
-        formulation,
-        angle,
-        conversation,
-        contextLabel,
-        conversationLabel,
-        dgMessage,
-        complementaryAngles,
-        processSteps,
-        faq,
-        cta
-      })}
+      <section class="landing-section landing-section--light landing-more-intro" id="cadre-editorial">
+        <div class="landing-container">
+          <div class="landing-head">
+            <p class="landing-kicker">Pour aller plus loin</p>
+            <h2>Vous voulez mieux comprendre le cadre éditorial avant de programmer un échange éditorial&nbsp;?</h2>
+          </div>
+        </div>
+      </section>
+
+      ${buildPositionPathSection(readingLabel)}
+
+      <section class="landing-section landing-section--light" id="angle-propose">
+        <div class="landing-container">
+          <div class="landing-head">
+            <p class="landing-kicker">Ce que cette position permettrait d'éclairer</p>
+            <h2>${safe(soften(txt(publicAngle.titreLanding, formulation.title, angle.questionPublique, angle.titreAngle, angle.questionEditoriale)))}</h2>
+            <p>${safe(shortText(txt(publicAngle.accrocheLanding, formulation.accrocheLanding, angle.questionActivation, angle.texteProgramme, angle.introMecanisme), 680))}</p>
+          </div>
+          <div class="landing-grid landing-grid--3">
+            ${card("Conversation", conversationLabel, txt(conversation?.narrativeText, conversation?.description, "Une conversation construite pour mettre en regard des lectures complémentaires."))}
+            ${card("Votre lecture", "Ce qu'elle rend lisible", dgMessage)}
+            ${card("Préparation", "Un cadrage éditorial maîtrisé", "L'échange permet de préciser le sujet, la portée de la lecture et les conditions de préparation avec vos équipes si nécessaire.")}
+          </div>
+        </div>
+      </section>
+
+      ${processSteps.length ? `
+        <section class="landing-section landing-section--dark landing-section--process">
+          <div class="landing-container">
+            <div class="landing-head">
+              <p class="landing-kicker">Comment cela va se passer</p>
+              <h2>Un parcours clair, sans engagement initial.</h2>
+              <p>L'échange de départ ne vaut pas engagement. Il permet de situer la lecture puis, si la pertinence est confirmée, d'articuler cadrage éditorial, production média et activation de la contribution.</p>
+            </div>
+            <div class="landing-grid landing-grid--4 landing-process-grid">
+              ${processSteps.map(item => `
+                <article class="landing-card landing-process-card">
+                  <span class="landing-label">${safe(item.num || "Étape")}</span>
+                  <h3>${safe(soften(item.title))}</h3>
+                  <p>${safe(shortText(item.text, 420))}</p>
+                  ${item.deadline ? `<p class="landing-process-deadline">${safe(item.deadline)}</p>` : ""}
+                </article>`).join("")}
+            </div>
+          </div>
+        </section>` : ""}
+
+      ${faq.length ? `
+        <section class="landing-section landing-section--dark">
+          <div class="landing-container">
+            <div class="landing-head">
+              <p class="landing-kicker">Questions fréquentes</p>
+              <h2>Les points à clarifier avant l'échange.</h2>
+            </div>
+            <div class="landing-grid landing-grid--2">
+              ${faq.map(item => card("", item.question, item.answer)).join("")}
+            </div>
+          </div>
+        </section>` : ""}
 
       <section class="landing-section landing-final">
         <div class="landing-container">
