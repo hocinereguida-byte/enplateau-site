@@ -338,11 +338,13 @@
 
     if (!imgPath) return "";
 
-    const mediaRef = media
-      ? (media === "Le Figaro" ? "au Figaro" : `à ${media}`)
-      : "au média partenaire";
-    const outletLabel = media ? `entretien économique associé ${mediaRef}` : (emission || "format média");
-    const altLabel    = media ? `Entretien économique associé ${mediaRef}` : (emission || "Format média");
+    // Les trois champs restent dynamiques : journaliste, émission et média.
+    // On affiche l’émission lorsque le référentiel la fournit, pour éviter tout effet de légende générique.
+    const outletParts = [emission, media].filter(Boolean);
+    const outletLabel = outletParts.length ? outletParts.join(" · ") : "format média";
+    const altLabel    = journaliste && outletParts.length
+      ? `Entretien économique avec ${journaliste} · ${outletParts.join(" · ")}`
+      : (outletParts.length ? outletParts.join(" · ") : "Format média");
 
     return `
       <div class="landing-film" aria-label="${safe(altLabel)}">
