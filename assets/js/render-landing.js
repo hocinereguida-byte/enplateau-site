@@ -1,6 +1,6 @@
 /*
   En Plateau — render-landing.js
-  Version V65.6
+  Version V65.7 premium
   Modifications vs V65.5 :
   - Suppression du bloc .landing-emission dans la carte hero (brouillon, image en couleur)
   - Nouvelle colonne droite hero : bloc .landing-emission-film (style home, image B&W)
@@ -71,6 +71,13 @@
       .replace(/\bfacteur limitant\b/gi, "condition décisive")
       .replace(/\bblocage\b/gi, "limite")
       .replace(/\bvulnérabilités?\b/gi, "points sensibles")
+      .replace(/\bpubliquement tenable\b/gi, "lisible par votre écosystème")
+      .replace(/\bprise de parole publique\b/gi, "position éditoriale")
+      .replace(/\bplan social\b/gi, "dossier identifiable")
+      .replace(/\bplans sociaux\b/gi, "dossiers identifiables")
+      .replace(/\bplan de restructuration\b/gi, "dossier de transformation interne")
+      .replace(/\bplans de restructuration\b/gi, "dossiers de transformation interne")
+      .replace(/\brestructurations?\b/gi, "transformations sociales et organisationnelles")
       .replace(/À partir de quand chaque volume supplémentaire met à l'épreuve-t-il plus l'organisation qu'il ne renforce l'activité\s*\?/gi,
         "Quelles conditions rendent une montée en capacité réellement pilotable ?");
   }
@@ -234,28 +241,33 @@
       deadline: item.deadline
     }));
 
-    if (fromData.length) return fromData.slice(0, 4);
+    if (fromData.length) return fromData.slice(0, 5);
 
     return [
       {
         num: "01",
-        title: "L'échange de qualification",
-        text: "15 minutes pour vérifier si la lecture correspond à l'angle proposé. Aucun engagement, aucun dossier sensible à exposer."
+        title: "L'échange éditorial",
+        text: "15 minutes pour vérifier si votre lecture correspond à une position disponible. Aucun engagement, aucun dossier sensible à exposer."
       },
       {
         num: "02",
-        title: "Le dossier de positionnement",
-        text: "Si l'angle paraît pertinent, En Plateau formalise la position proposée : sujet, mise en regard, garanties, format et conditions."
+        title: "La note de positionnement",
+        text: "Si l'angle paraît pertinent, En Plateau formalise la position proposée : valeur éditoriale, mise en regard, garanties, modalités et conditions."
       },
       {
         num: "03",
-        title: "Le comité éditorial",
-        text: "La position est étudiée dans la composition globale du cycle. L'accord sur l'échange ne vaut pas acceptation automatique."
+        title: "La préparation six dimensions",
+        text: "La position est structurée autour du contexte, des acteurs concernés, des arbitrages, des défis, de la vision et de l'échelle."
       },
       {
         num: "04",
-        title: "La préparation éditoriale",
-        text: "Si la position est retenue, la parole est préparée avec l'intervenant et, si nécessaire, avec les équipes communication, juridiques ou affaires publiques."
+        title: "Le tournage et l'article associé",
+        text: "La position est portée dans un format préparé, cadré, non improvisé, avec une articulation possible entre vidéo et entretien écrit."
+      },
+      {
+        num: "05",
+        title: "L'activation éditoriale",
+        text: "Le contenu devient un actif réutilisable pendant 18 mois auprès de votre écosystème : clients, partenaires, institutions, talents, financeurs ou équipes internes."
       }
     ];
   }
@@ -323,8 +335,11 @@
 
     if (!imgPath) return "";
 
-    const outletLabel = emission ? `${emission} · ${media}` : media;
-    const altLabel    = emission || media;
+    const mediaRef = media
+      ? (media === "Le Figaro" ? "au Figaro" : `à ${media}`)
+      : "au média partenaire";
+    const outletLabel = media ? `entretien économique associé ${mediaRef}` : (emission || "format média");
+    const altLabel    = media ? `Entretien économique associé ${mediaRef}` : (emission || "Format média");
 
     return `
       <div class="landing-film" aria-label="${safe(altLabel)}">
@@ -352,9 +367,9 @@
     return `
       <div class="landing-rarity">
         <span class="landing-rarity__dot" aria-hidden="true"></span>
-        <p>Parmi les quelques acteurs pressentis pour tenir la lecture
-          <strong>${safe(reading)}</strong> de cette conversation,
-          seule une position sera retenue par le comité éditorial.</p>
+        <p>Plusieurs acteurs sont pressentis pour cette lecture.
+          <strong>Une seule position ${safe(reading)}</strong> sera retenue dans la conversation,
+          en cohérence avec les autres lectures mises en regard, après examen par le comité éditorial.</p>
       </div>`;
   }
 
@@ -378,12 +393,12 @@
 
     return `
       <div class="landing-identity landing-identity--single">
-        <span>Proposition adressée à</span>
+        <span>Position pressentie pour</span>
         <strong>${parts.join(" · ")}</strong>
       </div>
 
       <div class="landing-identity">
-        <span>Lecture proposée</span>
+        <span>Lecture pressentie</span>
         <strong>${safe(soften(readingLabel)) || "Lecture éditoriale"}</strong>
       </div>
 
@@ -393,26 +408,44 @@
   /* ─────────────────────────────────────────────────────────
      INTRO HERO
   ───────────────────────────────────────────────────────── */
-  function buildHeroIntro(personName, organisationName, heroLead) {
-    const hasRealName = personName && personName !== "Intervenant pressenti";
-    const hasRealOrg  = organisationName && organisationName !== "Votre organisation";
+  function buildHeroIntro(personName, organisationName, heroLead, readingLabel) {
+    const hasRealOrg = organisationName && organisationName !== "Votre organisation";
+    const reading = readingLabel || "cette lecture";
 
-    if (hasRealName && hasRealOrg) {
-      return `<p class="landing-lead">
-        <strong>Cette proposition a été préparée à l'attention de ${safe(personName)},</strong>
-        dans le cadre de la composition du cycle Industrie. La lecture portée depuis
-        ${safe(organisationName)} a été identifiée comme un point d'appui pertinent
-        pour la conversation en cours.
-      </p>
-      <p class="landing-lead">${safe(shortText(heroLead, 480))}</p>`;
-    }
-    if (hasRealOrg) {
-      return `<p class="landing-lead">
-        <strong>${safe(organisationName)} a été identifié pour contribuer à une conversation économique en cours de composition.</strong>
-      </p>
-      <p class="landing-lead">${safe(shortText(heroLead, 480))}</p>`;
-    }
-    return `<p class="landing-lead">${safe(shortText(heroLead, 560))}</p>`;
+    return `<p class="landing-lead">
+      <strong>Vous avez été identifié pour une position précise dans les conversations économiques En Plateau.</strong>
+      Votre expérience du sujet peut éclairer une lecture que nous souhaitons mettre en regard avec d'autres positions complémentaires.
+      En Plateau ne vous propose pas une prestation de visibilité : le dispositif compose un cercle restreint d'intervenants capables de rendre lisibles les arbitrages industriels qui comptent.
+    </p>
+    <p class="landing-lead">
+      Une seule position ${safe(soften(reading))} sera retenue pour cette lecture. L'échange de 15 minutes sert à vérifier si votre expérience peut y trouver sa juste place${hasRealOrg ? ` dans la lecture portée depuis ${safe(organisationName)}` : ""}.
+    </p>
+    ${heroLead ? `<p class="landing-lead">${safe(shortText(heroLead, 360))}</p>` : ""}`;
+  }
+
+  function buildHeroCardIntro(readingLabel) {
+    const reading = readingLabel || "lecture éditoriale";
+    return `Votre lecture a été identifiée comme potentiellement pertinente pour cette conversation. Une seule position ${safe(soften(reading))} sera retenue dans la composition finale.`;
+  }
+
+  function buildPositionPathSection(readingLabel) {
+    const reading = readingLabel || "lecture éditoriale";
+    const intro = `Vous arrivez avec une expérience, des convictions et une lecture du sujet. En Plateau structure cette matière autour de six dimensions — contexte, acteurs concernés, arbitrages, défis, vision et échelle — pour faire émerger une position claire, crédible et utile à votre écosystème.`;
+    return `
+      <section class="landing-section landing-section--dark" id="experience-position">
+        <div class="landing-container">
+          <div class="landing-head">
+            <p class="landing-kicker">De l'expérience à la position</p>
+            <h2>De votre expérience à une position claire.</h2>
+            <p>${safe(intro)}</p>
+          </div>
+          <div class="landing-grid landing-grid--3">
+            ${card("Ce que vous apportez", "Une expérience située du sujet", "Votre expérience, vos convictions, vos signaux faibles et votre compréhension des conditions réelles dans lesquelles se construisent les arbitrages industriels.")}
+            ${card("Ce qu'En Plateau structure", "Une lecture travaillée sous six dimensions", "Le contexte, les acteurs concernés, les arbitrages, les défis, la vision et l'échelle permettent de passer d'une intuition forte à une position claire.")}
+            ${card("Ce que la position valorise", "Une lecture de bâtisseur", `Votre capacité à construire, arbitrer, sécuriser, transmettre ou rendre possible une trajectoire dans un contexte économique complexe, depuis une ${safe(soften(reading))}.`, true)}
+          </div>
+        </div>
+      </section>`;
   }
 
   /* ─────────────────────────────────────────────────────────
@@ -554,7 +587,7 @@
 
     const speakerMotivation = txt(
       personaFit?.speakerPersona?.motivation, reading?.motivationCentrale,
-      "Faire reconnaître une lecture située, utile et publiquement tenable."
+      "Faire reconnaître une lecture claire, crédible et utile à votre écosystème."
     );
 
     const dgMessage  = buildDGMessage(personaFit, reading, organisationName);
@@ -590,10 +623,10 @@
             <div>
               ${buildHeroKicker(conversationLabel)}
               <h1>${safe(soften(heroTitle))}</h1>
-              ${buildHeroIntro(personName, organisationName, heroLead)}
+              ${buildHeroIntro(personName, organisationName, heroLead, readingLabel)}
               <div class="landing-actions">
                 <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
-                <a class="landing-btn landing-btn--ghost" href="#angle-propose">Voir l'angle proposé</a>
+                <a class="landing-btn landing-btn--ghost" href="#angle-propose">Voir la position proposée</a>
               </div>
               <p class="landing-reassurance">15 minutes · sans engagement · pour qualifier l'angle, le périmètre de parole et les conditions de préparation.</p>
             </div>
@@ -602,8 +635,8 @@
             <aside class="landing-hero-side">
               ${filmBlock}
               <div class="landing-hero__card">
-                <h2>Pourquoi contribuer&nbsp;?</h2>
-                <p>${safe(shortText(speakerMotivation, 300))}</p>
+                <h2>Une position à qualifier</h2>
+                <p>${buildHeroCardIntro(readingLabel)}</p>
                 ${buildIdentityLine(personName, personRole, organisationName, readingLabel)}
               </div>
             </aside>
@@ -625,6 +658,8 @@
         </div>
       </section>
 
+      ${buildPositionPathSection(readingLabel)}
+
       <section class="landing-section landing-section--dark" id="angle-propose">
         <div class="landing-container">
           <div class="landing-head landing-head--left">
@@ -634,8 +669,8 @@
           </div>
           <div class="landing-grid landing-grid--3">
             ${card("Conversation", conversationLabel, txt(conversation?.narrativeText, conversation?.description, "Une conversation construite pour mettre en regard des lectures complémentaires."))}
-            ${card("Ce que votre lecture apporte", "Une lecture identifiable par les décideurs", dgMessage)}
-            ${card("Format", "Une position préparée, pas une exposition improvisée", "L'échange éditorial permet de cadrer le sujet, le périmètre de parole et les conditions de préparation avec vos équipes si nécessaire.", true)}
+            ${card("Ce que votre lecture apporte", "Une position lisible par les décideurs", dgMessage)}
+            ${card("Format", "Une position préparée, pas une parole improvisée", "L'échange éditorial permet de cadrer le sujet, le périmètre de parole et les conditions de préparation avec vos équipes si nécessaire.", true)}
           </div>
         </div>
       </section>
@@ -643,8 +678,8 @@
       <section class="landing-section landing-section--light">
         <div class="landing-container">
           <div class="landing-head">
-            <p class="landing-kicker">Ce que produit la contribution</p>
-            <h2>Une contribution utile à l'organisation, à la fonction et à la personne qui la porte.</h2>
+            <p class="landing-kicker">Ce que cette position peut produire</p>
+            <h2>Ce que cette position peut produire pour vous et votre organisation.</h2>
             <p>${safe(shortText(txt(landingPage?.valueSection?.intro, "La contribution produit un actif éditorial préparé, sécurisé et réutilisable."), 520))}</p>
           </div>
           <div class="landing-grid landing-grid--3">
@@ -658,7 +693,7 @@
           <div class="landing-decision">
             <div class="landing-decision__visual"></div>
             <div class="landing-decision__copy">
-              <h2>Ce que l'échange permet de sécuriser.</h2>
+              <h2>Ce qui est sécurisé avant toute prise de parole.</h2>
               ${guarantees.map(item => `
                 <div class="landing-point">
                   <h3>${safe(soften(item.title))}</h3>
@@ -674,8 +709,8 @@
           <div class="landing-container">
             <div class="landing-head">
               <p class="landing-kicker">Mise en regard</p>
-              <h2>Votre lecture s'inscrit dans une conversation composée.</h2>
-              <p>Les autres lectures du même contexte permettent de créer une conversation équilibrée : chaque position éclaire un aspect différent du même phénomène.</p>
+              <h2>Une lecture mise en regard avec d'autres positions.</h2>
+              <p>La valeur du dispositif vient de la composition : chaque position éclaire un aspect différent du même phénomène et renforce la lisibilité de l'ensemble.</p>
             </div>
             <div class="landing-grid landing-grid--3">
               ${complementaryAngles.map(other => {
@@ -694,9 +729,9 @@
         <section class="landing-section landing-section--dark landing-section--process">
           <div class="landing-container">
             <div class="landing-head">
-              <p class="landing-kicker">Après les 15 minutes</p>
-              <h2>Un échange de qualification, pas un engagement.</h2>
-              <p>Le rendez-vous sert uniquement à vérifier la pertinence de la lecture proposée, le périmètre de parole possible et les conditions de préparation.</p>
+              <p class="landing-kicker">Comment cela va se passer</p>
+              <h2>Un parcours clair, sans engagement initial.</h2>
+              <p>L'échange de départ ne vaut pas engagement. Il ouvre, si la pertinence est confirmée, un parcours de cadrage, de préparation, de production et d'activation éditoriale.</p>
             </div>
             <div class="landing-grid landing-grid--4 landing-process-grid">
               ${processSteps.map(item => `
@@ -715,7 +750,7 @@
           <div class="landing-container">
             <div class="landing-head">
               <p class="landing-kicker">Questions fréquentes</p>
-              <h2>Les points de réassurance avant l'échange.</h2>
+              <h2>Les points à clarifier avant l'échange.</h2>
             </div>
             <div class="landing-grid landing-grid--2">
               ${faq.map(item => card("", item.question, item.answer)).join("")}
