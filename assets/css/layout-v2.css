@@ -1,34 +1,32 @@
 
 /* =========================================================
-   EN PLATEAU — LAYOUT V2 DA PREMIUM
-   Direction artistique : noir cinéma / ivoire / verre fumé discret
-   Version corrigée après audit visuel :
-   - hiérarchie typographique stricte
-   - suppression des aplats gris/bleutés
-   - boutons lisibles
-   - encadrés propres, sans zones incohérentes
-   - hero plus éditorial, moins brouillon
+   EN PLATEAU — LAYOUT V2 DA PREMIUM STRICT
+   Règle couleur verrouillée :
+   - Fond sombre : labels gris ivoire / données ivoire clair
+   - Fond clair  : labels brun atténué / données noir chaud
+   - Bouton clair : texte noir obligatoire
+   - Bouton sombre/ghost : texte ivoire obligatoire
    ========================================================= */
 
 :root {
   --ep-black: #050505;
   --ep-black-soft: #0b0a09;
-  --ep-panel: rgba(255, 250, 242, .045);
-  --ep-panel-strong: rgba(255, 250, 242, .065);
-  --ep-panel-deep: rgba(0, 0, 0, .22);
 
   --ep-ivory: #f2ece3;
+  --ep-ivory-label: rgba(242, 236, 227, .52);
   --ep-ivory-soft: rgba(242, 236, 227, .74);
-  --ep-ivory-muted: rgba(242, 236, 227, .50);
-  --ep-ivory-faint: rgba(242, 236, 227, .22);
+  --ep-ivory-muted: rgba(242, 236, 227, .38);
 
   --ep-paper: #f4efe7;
+  --ep-paper-soft: #eee7dc;
+
   --ep-ink: #17120f;
+  --ep-ink-label: rgba(23, 18, 15, .50);
   --ep-ink-soft: rgba(23, 18, 15, .72);
   --ep-ink-muted: rgba(23, 18, 15, .48);
 
-  --ep-line-dark: rgba(242, 236, 227, .115);
-  --ep-line-dark-soft: rgba(242, 236, 227, .075);
+  --ep-line-dark: rgba(242, 236, 227, .105);
+  --ep-line-dark-soft: rgba(242, 236, 227, .07);
   --ep-line-light: rgba(23, 18, 15, .12);
 
   --font-display: "Playfair Display", Georgia, serif;
@@ -65,30 +63,75 @@ body {
 img, svg { display: block; max-width: 100%; height: auto; }
 button, input, textarea, select { font: inherit; }
 a { color: inherit; text-decoration: none; }
-
 p, ul, ol, dl, h1, h2, h3, h4, h5, h6 { margin-top: 0; }
 
-/* CONTRAT COULEUR */
+/* =========================================================
+   CONTRAT COULEUR ABSOLU
+========================================================= */
 
-.v2-hero :is(h1,h2,h3,h4,p,span,strong,li,dt,dd,a),
-.v2-section--dark :is(h1,h2,h3,h4,p,span,strong,li,dt,dd,a),
-.v2-final :is(h1,h2,h3,h4,p,span,strong,li,dt,dd,a),
-.v2-position-card :is(h1,h2,h3,h4,p,span,strong,li,dt,dd,a) {
+/* FOND SOMBRE — contenu principal clair */
+.v2-hero :is(h1,h2,h3,h4,strong,dd,a),
+.v2-section--dark :is(h1,h2,h3,h4,strong,dd,a),
+.v2-final :is(h1,h2,h3,h4,strong,dd,a),
+.v2-position-card :is(h1,h2,h3,h4,strong,dd,a),
+.v2-active-panel > div :is(h1,h2,h3,h4,strong,dd,a),
+.v2-why__main :is(h1,h2,h3,h4,strong,dd,a) {
   color: var(--ep-ivory) !important;
 }
 
+/* FOND SOMBRE — paragraphes et textes secondaires */
+.v2-hero :is(p,li),
+.v2-section--dark :is(p,li),
+.v2-final :is(p,li),
+.v2-position-card :is(p,li),
+.v2-active-panel > div :is(p,li),
+.v2-why__main :is(p,li) {
+  color: var(--ep-ivory-soft) !important;
+}
+
+/* FOND SOMBRE — labels / kickers / métadonnées */
+.v2-hero :is(.v2-kicker,.v2-card-label,dt),
+.v2-hero__microgrid span,
+.v2-hero__value span,
+.v2-position-card dt,
+.v2-section--dark :is(.v2-kicker,.v2-card-label,dt),
+.v2-section--dark .v2-bento span,
+.v2-section--dark .v2-faq span,
+.v2-section--dark .v2-panel-grid span,
+.v2-final :is(.v2-kicker,.v2-card-label,dt),
+.v2-why__main span {
+  color: var(--ep-ivory-label) !important;
+}
+
+/* FOND CLAIR — contenu principal foncé */
 .v2-section--paper,
-.v2-section--paper :is(h1,h2,h3,h4,p,span,strong,li,dt,dd,a),
-.v2-tab:not(.is-active),
-.v2-tab:not(.is-active) :is(span,strong),
-.v2-process article,
-.v2-process article :is(h3,p,span),
-.v2-why article:not(.v2-why__main),
-.v2-why article:not(.v2-why__main) :is(h3,p,span,li) {
+.v2-section--paper :is(h1,h2,h3,h4,strong,dd,a),
+.v2-tab:not(.is-active) :is(strong),
+.v2-process article :is(h3,strong),
+.v2-why article:not(.v2-why__main) :is(h3,strong) {
   color: var(--ep-ink) !important;
 }
 
-/* CONTAINER */
+/* FOND CLAIR — paragraphes et contenus secondaires */
+.v2-section--paper :is(p,li),
+.v2-process article :is(p,li),
+.v2-why article:not(.v2-why__main) :is(p,li) {
+  color: var(--ep-ink-soft) !important;
+}
+
+/* FOND CLAIR — labels */
+.v2-section--paper :is(.v2-kicker,.v2-card-label,dt),
+.v2-section--paper .v2-tab span,
+.v2-section--paper .v2-process span,
+.v2-section--paper .v2-why span,
+.v2-process article span,
+.v2-why article:not(.v2-why__main) span {
+  color: var(--ep-ink-label) !important;
+}
+
+/* =========================================================
+   STRUCTURE
+========================================================= */
 
 .v2-container,
 .container {
@@ -139,7 +182,7 @@ p, ul, ol, dl, h1, h2, h3, h4, h5, h6 { margin-top: 0; }
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: var(--ep-ivory-muted) !important;
+  color: var(--ep-ivory-label) !important;
   font-family: var(--font-mono);
   font-size: .60rem;
   font-weight: 500;
@@ -160,7 +203,6 @@ h1, h2, h3 {
   align-items: center;
   gap: 10px;
   margin: 0 0 14px;
-  color: var(--ep-ivory-muted) !important;
   font-family: var(--font-mono);
   font-size: .60rem;
   font-weight: 500;
@@ -187,7 +229,6 @@ h1, h2, h3 {
 .v2-process span {
   display: block;
   margin: 0 0 8px;
-  color: var(--ep-ivory-muted) !important;
   font-family: var(--font-mono);
   font-size: .58rem;
   font-weight: 600;
@@ -234,7 +275,6 @@ h1, h2, h3 {
 .v2-hero h1 {
   max-width: 13.8ch;
   margin: 0 0 14px;
-  color: var(--ep-ivory) !important;
   font-size: clamp(2.25rem, 3.35vw, 3.55rem);
   line-height: 1.02;
   text-shadow: 0 18px 60px rgba(0,0,0,.75);
@@ -242,14 +282,13 @@ h1, h2, h3 {
 
 .v2-scanline {
   margin: 0 0 22px;
-  color: var(--ep-ivory-soft) !important;
   font-family: var(--font-mono);
   font-size: .72rem;
   font-weight: 500;
   letter-spacing: .105em;
 }
 
-/* BLOCS HERO — version éditoriale sobre */
+/* HERO BLOCS */
 
 .v2-hero__microgrid {
   display: grid;
@@ -271,13 +310,11 @@ h1, h2, h3 {
 
 .v2-hero__microgrid strong {
   display: block;
-  color: var(--ep-ivory) !important;
   font-size: .98rem;
   font-weight: 600;
   line-height: 1.3;
 }
 
-/* pas de gros pavé bleuté : une plaque fumée */
 .v2-hero__value {
   max-width: 520px;
   margin-bottom: 18px;
@@ -304,12 +341,13 @@ h1, h2, h3 {
   border: 1px solid rgba(242,236,227,.12);
   background: rgba(0,0,0,.18);
   padding: 6px 9px;
-  color: var(--ep-ivory-soft) !important;
   font-size: .78rem;
   line-height: 1;
 }
 
-/* BOUTONS */
+/* =========================================================
+   BOUTONS — CONTRASTE VERROUILLÉ
+========================================================= */
 
 .v2-actions {
   display: flex;
@@ -324,7 +362,7 @@ h1, h2, h3 {
   justify-content: center;
   min-height: 44px;
   padding: 0 20px;
-  border: 1px solid var(--ep-line-dark-strong);
+  border: 1px solid var(--ep-line-dark);
   font-family: var(--font-body);
   font-size: .76rem;
   font-weight: 700;
@@ -335,28 +373,42 @@ h1, h2, h3 {
   transition: opacity .18s ease, background .18s ease, border-color .18s ease;
 }
 
-/* correction bouton blanc illisible */
-.v2-btn--primary {
+/* Bouton clair = texte noir toujours */
+.v2-btn--primary,
+.v2-btn.v2-btn--primary,
+a.v2-btn--primary,
+button.v2-btn--primary {
   background: var(--ep-ivory) !important;
-  color: #050505 !important;
+  color: var(--ep-ink) !important;
   border-color: var(--ep-ivory) !important;
 }
 
-.v2-btn--primary * {
-  color: #050505 !important;
+.v2-btn--primary *,
+a.v2-btn--primary *,
+button.v2-btn--primary * {
+  color: var(--ep-ink) !important;
 }
 
-.v2-btn--ghost {
-  background: rgba(255,255,255,.015) !important;
+/* Bouton sombre/ghost = texte ivoire toujours */
+.v2-btn--ghost,
+.v2-btn.v2-btn--ghost,
+a.v2-btn--ghost,
+button.v2-btn--ghost {
+  background: rgba(0,0,0,.22) !important;
   color: var(--ep-ivory) !important;
-  border-color: rgba(242,236,227,.24) !important;
+  border-color: rgba(242,236,227,.26) !important;
+}
+
+.v2-btn--ghost *,
+a.v2-btn--ghost *,
+button.v2-btn--ghost * {
+  color: var(--ep-ivory) !important;
 }
 
 .v2-btn:hover { opacity: .82; }
 
 .v2-proofline {
   margin: 12px 0 0;
-  color: var(--ep-ivory-muted) !important;
   font-family: var(--font-mono);
   font-size: .66rem;
   letter-spacing: .075em;
@@ -393,20 +445,17 @@ h1, h2, h3 {
 .v2-caption {
   margin: 0;
   padding: 12px 2px 14px;
-  color: var(--ep-ivory-muted) !important;
   font-family: var(--font-mono);
   font-size: .66rem;
   letter-spacing: .06em;
 }
 
 .v2-caption strong {
-  color: var(--ep-ivory) !important;
   font-family: var(--font-body);
   font-size: .84rem;
   letter-spacing: 0;
 }
 
-/* carte droite : une fiche éditoriale, pas un panneau SaaS */
 .v2-position-card {
   padding: 22px 24px;
   border: 1px solid var(--ep-line-dark-soft);
@@ -418,7 +467,6 @@ h1, h2, h3 {
 
 .v2-position-card h2 {
   margin: 0 0 18px;
-  color: var(--ep-ivory) !important;
   font-size: clamp(1.16rem, 1.38vw, 1.46rem);
   line-height: 1.18;
 }
@@ -433,7 +481,6 @@ h1, h2, h3 {
 
 .v2-position-card dd {
   margin: 0;
-  color: var(--ep-ivory-soft) !important;
   font-size: .88rem;
   line-height: 1.48;
 }
@@ -442,7 +489,6 @@ h1, h2, h3 {
   margin: 14px 0 0;
   padding-top: 12px;
   border-top: 1px solid var(--ep-line-dark-soft);
-  color: var(--ep-ivory-muted) !important;
   font-size: .82rem;
   line-height: 1.52;
 }
@@ -455,14 +501,12 @@ h1, h2, h3 {
 
 .v2-section--paper {
   background: var(--ep-paper);
-  color: var(--ep-ink) !important;
 }
 
 .v2-section--dark {
   background:
     radial-gradient(circle at 72% 0%, rgba(242,236,227,.035), transparent 32%),
     var(--ep-black);
-  color: var(--ep-ivory) !important;
 }
 
 .v2-section-head {
@@ -512,7 +556,6 @@ h1, h2, h3 {
 .v2-tab span {
   display: block;
   margin: 0 0 8px;
-  color: var(--ep-ink-muted) !important;
   font-family: var(--font-mono);
   font-size: .58rem;
   font-weight: 600;
@@ -531,7 +574,10 @@ h1, h2, h3 {
   background: var(--ep-black);
 }
 
-.v2-tab.is-active span,
+.v2-tab.is-active span {
+  color: var(--ep-ivory-label) !important;
+}
+
 .v2-tab.is-active strong {
   color: var(--ep-ivory) !important;
 }
@@ -576,7 +622,6 @@ h1, h2, h3 {
 
 .v2-panel-grid strong {
   display: block;
-  color: var(--ep-ivory) !important;
   font-size: .98rem;
   line-height: 1.45;
 }
@@ -609,7 +654,6 @@ h1, h2, h3 {
 .v2-bento p,
 .v2-faq p {
   margin: 0;
-  color: var(--ep-ivory-soft) !important;
   font-size: .92rem;
   line-height: 1.58;
 }
@@ -647,7 +691,6 @@ h1, h2, h3 {
   border: 1px solid var(--ep-line-light);
   background: rgba(255,255,255,.46);
   padding: 6px 9px;
-  color: var(--ep-ink-soft) !important;
   font-size: .82rem;
   line-height: 1;
 }
@@ -677,7 +720,6 @@ h1, h2, h3 {
 }
 
 .v2-bento__wide p {
-  color: var(--ep-ivory) !important;
   font-family: var(--font-mono);
   letter-spacing: .10em;
   text-transform: uppercase;
@@ -694,11 +736,6 @@ h1, h2, h3 {
 .v2-process article {
   padding: 28px;
   background: rgba(255,255,255,.44);
-}
-
-.v2-process span {
-  margin-bottom: 26px;
-  color: var(--ep-ink-muted) !important;
 }
 
 /* FAQ */
@@ -726,7 +763,6 @@ h1, h2, h3 {
 
 .v2-final p {
   margin: 0 0 24px;
-  color: var(--ep-ivory-soft) !important;
   font-family: var(--font-mono);
   font-size: .76rem;
   letter-spacing: .10em;
