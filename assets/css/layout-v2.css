@@ -843,3 +843,93 @@ button.v2-btn--ghost * {
   .v2-section-head { margin-bottom: 28px; }
   .v2-tab { min-height: 74px; }
 }
+
+
+/* =========================================================
+   PATCH COULEURS CIBLÉES — HERO
+   Demande :
+   - scanline Flux/CAPEX/etc en gris ivoire atténué
+   - tags + noms/personnes/org en ivoire clair
+   - légende émission structurée : Journaliste / Média uniquement
+========================================================= */
+
+/* Scanline : volontairement secondaire */
+.v2-hero .v2-scanline {
+  color: var(--ep-ivory-label) !important;
+}
+
+/* Tags : données principales, donc ivoire clair */
+.v2-hero .v2-hero__value li,
+.v2-hero .v2-panel-grid li {
+  color: var(--ep-ivory) !important;
+}
+
+/* Données principales des fiches : ivoire clair */
+.v2-hero .v2-position-card dd,
+.v2-hero .v2-position-card dd *,
+.v2-hero .v2-hero__microgrid strong,
+.v2-hero .v2-card-note strong {
+  color: var(--ep-ivory) !important;
+}
+
+/* Légende émission structurée */
+.v2-caption--structured {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--ep-line-dark-soft);
+  border-top: 0;
+  background: rgba(0,0,0,.18);
+  backdrop-filter: blur(10px);
+  font-family: var(--font-body);
+  letter-spacing: 0;
+}
+
+.v2-caption--structured p {
+  margin: 0;
+  padding: 11px 12px 12px;
+  min-width: 0;
+  color: var(--ep-ivory) !important;
+  font-size: .82rem;
+  line-height: 1.35;
+}
+
+.v2-caption--structured p + p {
+  border-left: 1px solid var(--ep-line-dark-soft);
+}
+
+.v2-caption--structured span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ep-ivory-label) !important;
+  font-family: var(--font-mono);
+  font-size: .56rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.v2-caption--structured strong {
+  display: block;
+  overflow: hidden;
+  color: var(--ep-ivory) !important;
+  font-family: var(--font-body);
+  font-size: .88rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+  .v2-caption--structured {
+    grid-template-columns: 1fr;
+  }
+
+  .v2-caption--structured p + p {
+    border-left: 0;
+    border-top: 1px solid var(--ep-line-dark-soft);
+  }
+}
