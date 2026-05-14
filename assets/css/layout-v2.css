@@ -933,3 +933,260 @@ button.v2-btn--ghost * {
     border-top: 1px solid var(--ep-line-dark-soft);
   }
 }
+
+
+/* =========================================================
+   CORRECTION FINALE DEMANDÉE — HERO
+   1) journaliste + média sur une seule ligne
+   2) tags en ivoire clair lisible
+   3) labels gris / valeurs claires
+   4) aucun nom d'émission affiché
+========================================================= */
+
+/* Scanline secondaire : gris ivoire */
+.v2-hero .v2-scanline {
+  color: rgba(242,236,227,.52) !important;
+}
+
+/* Labels : gris ivoire */
+.v2-hero .v2-kicker,
+.v2-hero .v2-card-label,
+.v2-hero .v2-hero__microgrid span,
+.v2-hero .v2-hero__value span,
+.v2-hero .v2-position-card dt,
+.v2-hero .v2-caption--inline span {
+  color: rgba(242,236,227,.52) !important;
+}
+
+/* Valeurs : ivoire clair */
+.v2-hero .v2-hero__microgrid strong,
+.v2-hero .v2-position-card dd,
+.v2-hero .v2-caption--inline strong,
+.v2-hero .v2-position-card h2 {
+  color: #f2ece3 !important;
+}
+
+/* Tags : lisibles, pas gris */
+.v2-hero .v2-hero__value li {
+  color: #f2ece3 !important;
+  background: rgba(242,236,227,.075) !important;
+  border: 1px solid rgba(242,236,227,.30) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.045) !important;
+  font-weight: 500 !important;
+}
+
+/* Ligne journaliste / média : une seule ligne, sans émission */
+.v2-caption--inline {
+  display: flex !important;
+  align-items: baseline !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+  margin: 0 !important;
+  padding: 12px 2px 14px !important;
+  border: 0 !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  font-family: var(--font-body) !important;
+  font-size: .86rem !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0 !important;
+}
+
+.v2-caption--inline span {
+  display: inline !important;
+  margin: 0 !important;
+  font-family: var(--font-mono) !important;
+  font-size: .58rem !important;
+  font-weight: 600 !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+}
+
+.v2-caption--inline strong {
+  display: inline !important;
+  overflow: visible !important;
+  font-family: var(--font-body) !important;
+  font-size: .86rem !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+}
+
+.v2-caption--inline i {
+  color: rgba(242,236,227,.42) !important;
+  font-style: normal !important;
+  margin: 0 2px !important;
+}
+
+/* Neutralisation de l'ancien style structured si encore présent en cache */
+.v2-caption--structured {
+  display: flex !important;
+  align-items: baseline !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.v2-caption--structured p {
+  display: inline !important;
+  padding: 0 !important;
+}
+
+.v2-caption--structured p + p {
+  border: 0 !important;
+}
+
+
+/* =========================================================
+   EXTENSIONS DYNAMIQUES — sections complètes
+========================================================= */
+
+.v2-root { min-height: 100vh; background: var(--ep-black); }
+
+.v2-loading {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 40px 24px;
+  background:
+    linear-gradient(90deg, rgba(5,5,5,.97), rgba(5,5,5,.82)),
+    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
+  color: var(--ep-ivory);
+}
+
+.v2-loading > div {
+  width: min(760px, 100%);
+  border: 1px solid var(--ep-line-dark-soft);
+  background: linear-gradient(180deg, rgba(255,255,255,.038), rgba(255,255,255,.014));
+  padding: clamp(28px, 5vw, 52px);
+}
+
+.v2-loading h1 {
+  margin: 24px 0 12px;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+}
+
+.v2-loading p {
+  color: var(--ep-ivory-soft) !important;
+  margin: 0;
+}
+
+.v2-top {
+  left: 0;
+  right: 0;
+}
+
+.v2-top__inner {
+  width: min(calc(100% - 56px), var(--container));
+  height: 82px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.v2-hero__value li,
+.v2-panel-grid li,
+.v2-why li {
+  color: var(--ep-ivory) !important;
+  background: rgba(242,236,227,.075) !important;
+  border: 1px solid rgba(242,236,227,.30) !important;
+}
+
+.v2-section--paper .v2-why li {
+  color: var(--ep-ink-soft) !important;
+  background: rgba(255,255,255,.46) !important;
+  border-color: var(--ep-line-light) !important;
+}
+
+.v2-tab {
+  appearance: none;
+}
+
+.v2-panel-grid > div {
+  min-height: 140px;
+}
+
+.v2-panel-grid ul {
+  gap: 7px;
+}
+
+.v2-panel-grid li {
+  font-size: .76rem;
+}
+
+.v2-active-panel[hidden] {
+  display: none !important;
+}
+
+.v2-caption--inline {
+  display: flex !important;
+  align-items: baseline !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+  margin: 0 !important;
+  padding: 12px 2px 14px !important;
+  border: 0 !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  font-family: var(--font-body) !important;
+  font-size: .86rem !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0 !important;
+}
+
+.v2-caption--inline span {
+  display: inline !important;
+  margin: 0 !important;
+  color: var(--ep-ivory-label) !important;
+  font-family: var(--font-mono) !important;
+  font-size: .58rem !important;
+  font-weight: 600 !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+}
+
+.v2-caption--inline strong {
+  display: inline !important;
+  color: var(--ep-ivory) !important;
+  font-family: var(--font-body) !important;
+  font-size: .86rem !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+}
+
+.v2-caption--inline i {
+  color: rgba(242,236,227,.42) !important;
+  font-style: normal !important;
+  margin: 0 2px !important;
+}
+
+.v2-cta-band {
+  margin-top: 34px;
+  text-align: center;
+}
+
+.v2-cta-band .v2-actions {
+  justify-content: center;
+}
+
+.v2-process article span {
+  display: block;
+}
+
+.v2-process article h3 {
+  margin-top: 0;
+}
+
+.v2-faq article p {
+  font-weight: 600;
+}
+
+@media (max-width: 680px) {
+  .v2-top__inner {
+    width: min(calc(100% - 32px), var(--container));
+    height: 76px;
+  }
+}
