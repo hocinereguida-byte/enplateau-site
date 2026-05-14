@@ -1,6 +1,6 @@
 /*
   En Plateau — landing.css
-  Version V65.6
+  Version V65.5
   Gabarit landing one-to-one — /lp/industrie/contribuer.html
 
   Modifications V65.5 :
@@ -14,11 +14,6 @@
   - .landing-rarity      : texte mis à jour, style conservé
   - .landing-identity--single : conservé
   - .landing-why-narrative    : conservé
-  Modifications V65.6 :
-  - Lisibilité renforcée sur toutes les sections sombres de la landing.
-  - Hero desktop resserré pour faire remonter les CTA.
-  - Ajout grille 4 colonnes pour la section processus.
-  - Image "Pourquoi vous" remplacée par une image abstraite moins anxiogène.
   Aucune règle existante supprimée.
 */
 
@@ -578,8 +573,8 @@ body.landing-page {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(17,17,17,.90) 0%, rgba(17,17,17,.76) 52%, rgba(17,17,17,.56) 100%),
-    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
+    linear-gradient(90deg, rgba(17,17,17,.88) 0%, rgba(17,17,17,.74) 52%, rgba(17,17,17,.58) 100%),
+    url("../../images/bascule-sol-fissures.jpg") center/cover no-repeat;
 }
 
 .landing-split__visual h2 {
@@ -677,8 +672,6 @@ body.landing-page {
 
 .landing-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .landing-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.landing-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.landing-grid--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 
 .landing-section--dark .landing-grid { background: var(--landing-line-dark); }
 
@@ -728,7 +721,7 @@ body.landing-page {
   min-height: 520px;
   background:
     linear-gradient(90deg, rgba(17,17,17,.82), rgba(17,17,17,.54)),
-    url("../../images/allumette-flamme.jpg") center/cover no-repeat;
+    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
   filter: grayscale(8%) contrast(116%) brightness(.72);
 }
 
@@ -748,36 +741,6 @@ body.landing-page {
   letter-spacing: -.015em;
   font-weight: 600;
   color: var(--landing-text);
-}
-
-/* ── PROCESSUS ────────────────────────────────────────── */
-
-.landing-section--process {
-  border-top: 1px solid var(--landing-line-dark);
-}
-
-.landing-process-grid {
-  align-items: stretch;
-}
-
-.landing-process-card {
-  position: relative;
-  min-height: 250px;
-}
-
-.landing-process-card .landing-label {
-  margin-bottom: 18px;
-}
-
-.landing-process-deadline {
-  margin-top: 18px !important;
-  padding-top: 14px;
-  border-top: 1px solid var(--landing-line-dark);
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem !important;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--landing-text-muted) !important;
 }
 
 /* ── FINAL CTA ────────────────────────────────────────── */
@@ -862,9 +825,7 @@ body.landing-page {
   .landing-split,
   .landing-decision,
   .landing-grid--2,
-  .landing-grid--3,
-  .landing-grid--4,
-  .landing-grid--5 {
+  .landing-grid--3 {
     grid-template-columns: 1fr;
   }
 
@@ -920,58 +881,272 @@ body.landing-page {
   .landing-rarity p { font-size: .76rem; }
 }
 
+
 /* ─────────────────────────────────────────────
-   PATCH V65.6 — LISIBILITÉ + CONVERSION
-   À conserver en fin de fichier pour neutraliser
-   les éventuels héritages de layout.css.
+   PATCH V65.9 — HIÉRARCHIE CONVERSION
+   Haut de page : activation / réassurance / valeur.
+   Bas de page : approfondissement en accordéons.
 ───────────────────────────────────────────── */
 
-body.landing-page .landing-section--dark,
-body.landing-page .landing-section--dark h2,
-body.landing-page .landing-section--dark h3,
-body.landing-page .landing-section--dark strong,
-body.landing-page .landing-section--dark .landing-head h2,
-body.landing-page .landing-section--dark .landing-card h3,
-body.landing-page .landing-section--dark .landing-point h3,
-body.landing-page .landing-decision__copy h2,
-body.landing-page .landing-final h2 {
-  color: var(--landing-text) !important;
+body.landing-page .landing-lead--compact {
+  max-width: 720px;
+  margin-bottom: 12px;
 }
 
-body.landing-page .landing-section--dark p,
-body.landing-page .landing-section--dark .landing-head p,
-body.landing-page .landing-section--dark .landing-card p,
-body.landing-page .landing-section--dark .landing-point p,
-body.landing-page .landing-final p,
-body.landing-page .landing-final .landing-reassurance {
-  color: var(--landing-text-soft) !important;
+body.landing-page .landing-head--compact {
+  margin-bottom: 26px;
 }
 
-body.landing-page .landing-section--dark .landing-label,
-body.landing-page .landing-section--dark .landing-kicker {
-  color: var(--landing-accent-soft) !important;
+body.landing-page .landing-head--compact h2 {
+  max-width: 760px;
 }
 
-body.landing-page .landing-card--accent,
-body.landing-page .landing-card--accent h3,
-body.landing-page .landing-card--accent strong {
-  color: var(--landing-text) !important;
+body.landing-page .landing-section--safety {
+  padding-top: clamp(42px, 5.5vw, 68px);
+  padding-bottom: clamp(42px, 5.5vw, 68px);
 }
 
-body.landing-page .landing-card--accent p {
-  color: var(--landing-text-soft) !important;
+body.landing-page .landing-safety-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--landing-line);
 }
 
-@media (min-width: 981px) {
-  body.landing-page .landing-hero h1 {
-    max-width: 16.5ch;
-    font-size: clamp(2.35rem, 3.8vw, 3.65rem);
-    line-height: 1.04;
+body.landing-page .landing-safety-card {
+  background: var(--landing-white);
+  color: var(--landing-ink);
+  padding: clamp(20px, 2.4vw, 28px);
+  min-height: 190px;
+}
+
+body.landing-page .landing-safety-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 16px;
+  border: 1px solid var(--landing-line);
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .82rem;
+  color: var(--landing-accent);
+}
+
+body.landing-page .landing-safety-card h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: 1.04rem;
+  line-height: 1.3;
+  color: var(--landing-ink);
+}
+
+body.landing-page .landing-safety-card p {
+  margin: 0;
+  font-size: .88rem;
+  line-height: 1.68;
+  color: var(--landing-ink-soft);
+}
+
+body.landing-page .landing-actions--section {
+  margin-top: 26px;
+}
+
+body.landing-page .landing-inline-note {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem;
+  line-height: 1.55;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--landing-ink-muted);
+}
+
+body.landing-page .landing-section--dark .landing-inline-note,
+body.landing-page .landing-cta-band--dark .landing-inline-note {
+  color: var(--landing-text-muted);
+}
+
+body.landing-page .landing-why-card {
+  max-width: 920px;
+  background: var(--landing-white);
+  border: 1px solid var(--landing-line);
+  padding: clamp(26px, 3.6vw, 40px);
+}
+
+body.landing-page .landing-why-card .landing-why-narrative p {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+body.landing-page .landing-grid--compact .landing-card {
+  padding: clamp(22px, 2.4vw, 30px);
+}
+
+body.landing-page .landing-cta-band {
+  padding: clamp(28px, 4vw, 42px) 0;
+  border-top: 1px solid var(--landing-line);
+  border-bottom: 1px solid var(--landing-line);
+}
+
+body.landing-page .landing-cta-band--light {
+  background: var(--landing-paper);
+  color: var(--landing-ink);
+}
+
+body.landing-page .landing-cta-band--dark {
+  background: var(--landing-bg-soft);
+  color: var(--landing-text);
+  border-color: var(--landing-line-dark);
+}
+
+body.landing-page .landing-cta-band__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+}
+
+body.landing-page .landing-cta-band h2 {
+  margin: 0 0 8px;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1.18;
+  color: inherit;
+}
+
+body.landing-page .landing-cta-band p:not(.landing-kicker) {
+  margin: 0;
+  max-width: 680px;
+  font-size: .96rem;
+  line-height: 1.65;
+  color: currentColor;
+  opacity: .78;
+}
+
+body.landing-page .landing-section--accordions {
+  padding-top: clamp(54px, 7vw, 84px);
+}
+
+body.landing-page .landing-accordion-list {
+  border-top: 1px solid var(--landing-line);
+}
+
+body.landing-page .landing-accordion {
+  border-bottom: 1px solid var(--landing-line);
+  background: rgba(255,255,255,.42);
+}
+
+body.landing-page .landing-accordion summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 22px 0;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(1.08rem, 1.7vw, 1.42rem);
+  line-height: 1.3;
+  color: var(--landing-ink);
+}
+
+body.landing-page .landing-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+body.landing-page .landing-accordion summary::after {
+  content: "+";
+  float: right;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: 1rem;
+  color: var(--landing-accent);
+  margin-left: 18px;
+}
+
+body.landing-page .landing-accordion[open] summary::after {
+  content: "–";
+}
+
+body.landing-page .landing-accordion__body {
+  padding: 0 0 28px;
+}
+
+body.landing-page .landing-accordion__body .landing-head {
+  margin-bottom: 20px;
+}
+
+body.landing-page .landing-accordion__body h3 {
+  margin: 0 0 12px;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(1.3rem, 2vw, 1.85rem);
+  line-height: 1.2;
+  color: var(--landing-ink);
+}
+
+body.landing-page .landing-accordion-intro {
+  max-width: 780px;
+  margin: 0 0 22px;
+  color: var(--landing-ink-soft);
+  line-height: 1.72;
+}
+
+body.landing-page .landing-card--complementary {
+  display: flex;
+  flex-direction: column;
+}
+
+body.landing-page .landing-actors {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--landing-line);
+}
+
+body.landing-page .landing-actors span {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .65rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--landing-accent);
+}
+
+body.landing-page .landing-actors p {
+  margin: 0;
+  font-size: .82rem;
+  line-height: 1.55;
+  color: var(--landing-ink-soft);
+}
+
+body.landing-page .landing-grid--5.landing-process-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+/* L'image allumette ne doit plus être utilisée dans la grammaire landing. */
+body.landing-page .landing-decision__visual {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.82), rgba(17,17,17,.54)),
+    url("../../images/projo-lumiere.jpg") center/cover no-repeat !important;
+}
+
+@media (max-width: 1080px) {
+  body.landing-page .landing-safety-grid,
+  body.landing-page .landing-grid--5.landing-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  body.landing-page .landing-safety-grid,
+  body.landing-page .landing-grid--5.landing-process-grid,
+  body.landing-page .landing-cta-band__inner {
+    grid-template-columns: 1fr;
   }
 
-  body.landing-page .landing-hero__grid {
-    align-items: center;
-    padding-top: 112px;
-    padding-bottom: 72px;
+  body.landing-page .landing-cta-band .landing-btn {
+    width: 100%;
+  }
+
+  body.landing-page .landing-inline-note {
+    min-height: auto;
   }
 }
