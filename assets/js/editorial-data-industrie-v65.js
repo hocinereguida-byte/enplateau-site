@@ -273,7 +273,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
       "profilsIntervenant": [
         {
           "label": "Avocats · Cabinets spécialisés",
-          "description": "Vous intervenez sur les contrats industriels, le droit social, l'environnement, la conformité, les restructurations ou les autorisations d'exploiter."
+          "description": "Vous intervenez sur les contrats industriels, le transformations sociales, l'environnement, la conformité, les transformations sociales et organisationnelles ou les autorisations d'exploiter."
         },
         {
           "label": "Directions juridiques · Conformité",
@@ -526,7 +526,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         },
         {
           "label": "Conseil · Formation · Droit social",
-          "description": "Vous accompagnez des industriels sur les compétences, les métiers, les transformations sociales, la formation ou la sécurisation juridique des restructurations."
+          "description": "Vous accompagnez des industriels sur les compétences, les métiers, les transformations sociales, la formation ou la sécurisation juridique des transformations sociales et organisationnelles."
         }
       ],
       "gains": {
@@ -1147,7 +1147,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "titreLanding": "Comment accompagner la montée en capacité par les métiers, les compétences et les collectifs ?",
             "accrocheLanding": "Une montée en capacité ne se décrète pas seulement par des volumes, des machines ou des investissements. Elle repose aussi sur des métiers qui évoluent, des compétences qui se transmettent, des collectifs qui se stabilisent et un temps d’appropriation que l’on ne peut pas comprimer à volonté.",
             "promesseIntervenant": "Votre lecture permettrait de rendre visible le temps humain de la croissance industrielle : formation, transmission, gestes métiers, organisation du travail, sécurité, qualité et capacité des collectifs à accompagner la trajectoire.",
-            "reassurance": "L’intervention ne porte pas sur une situation RH interne, un plan social, une difficulté de recrutement, un conflit, une donnée sociale ou une organisation identifiable. Elle porte sur une lecture de mécanisme : comment les compétences et les collectifs rendent une montée en capacité réellement opérante.",
+            "reassurance": "L’intervention ne porte pas sur une situation interne, un site ou un dossier identifiable. Elle porte sur une lecture de mécanisme : comment les compétences et les collectifs rendent une montée en capacité réellement opérante.",
             "scoreActivation": 0
           },
           "landingPages": [
@@ -1158,7 +1158,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "landing": {
               "title": "Comment accompagner la montée en capacité par les métiers, les compétences et les collectifs ?",
               "shortIntro": "La montée en capacité repose aussi sur les métiers, les compétences, les gestes transmis et les collectifs stabilisés.",
-              "reassurance": "Aucune situation RH interne, conflit, plan social, difficulté de recrutement ou donnée sociale n’est attendu.",
+              "reassurance": "Aucune situation interne, site, dossier identifiable ou donnée sociale n’est attendu.",
               "valueForSpeaker": "Faire reconnaître les compétences comme condition réelle de la croissance industrielle."
             }
           },
@@ -2528,7 +2528,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
               "title": "Comment faire évoluer l’outil industriel quand franchir un cap demande plus qu’un ajout technologique ?",
               "shortIntro": "Comment faire évoluer l’outil industriel quand franchir un cap demande plus qu’un ajout technologique ?",
               "reassurance": "Lecture de mécanisme, sans exposition de situation interne, site, client, fournisseur, donnée ou décision confidentielle.",
-              "valueForSpeaker": "Faire reconnaître une lecture située, utile et publiquement tenable de l’arbitrage industriel."
+              "valueForSpeaker": "Faire reconnaître une lecture située, utile et lisible par votre écosystème de l’arbitrage industriel."
             }
           },
           "activationPersonaFit": {
@@ -2601,7 +2601,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
               "title": "Comment faire évoluer le pilotage opérationnel quand la croissance demande plus que de la capacité technique ?",
               "shortIntro": "Comment faire évoluer le pilotage opérationnel quand la croissance demande plus que de la capacité technique ?",
               "reassurance": "Lecture de mécanisme, sans exposition de situation interne, site, client, fournisseur, donnée ou décision confidentielle.",
-              "valueForSpeaker": "Faire reconnaître une lecture située, utile et publiquement tenable de l’arbitrage industriel."
+              "valueForSpeaker": "Faire reconnaître une lecture située, utile et lisible par votre écosystème de l’arbitrage industriel."
             }
           },
           "activationPersonaFit": {
@@ -2674,7 +2674,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
               "title": "Comment accompagner l’évolution de l’outil industriel par les compétences, les gestes et la maîtrise qualité ?",
               "shortIntro": "Comment accompagner l’évolution de l’outil industriel par les compétences, les gestes et la maîtrise qualité ?",
               "reassurance": "Lecture de mécanisme, sans exposition de situation interne, site, client, fournisseur, donnée ou décision confidentielle.",
-              "valueForSpeaker": "Faire reconnaître une lecture située, utile et publiquement tenable de l’arbitrage industriel."
+              "valueForSpeaker": "Faire reconnaître une lecture située, utile et lisible par votre écosystème de l’arbitrage industriel."
             }
           },
           "activationPersonaFit": {
@@ -2746,7 +2746,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
               "title": "Comment reconnaître le moment où l’amélioration continue ne suffit plus à soutenir la trajectoire industrielle ?",
               "shortIntro": "Comment reconnaître le moment où l’amélioration continue ne suffit plus à soutenir la trajectoire industrielle ?",
               "reassurance": "Lecture de mécanisme, sans exposition de situation interne, site, client, fournisseur, donnée ou décision confidentielle.",
-              "valueForSpeaker": "Faire reconnaître une lecture située, utile et publiquement tenable de l’arbitrage industriel."
+              "valueForSpeaker": "Faire reconnaître une lecture située, utile et lisible par votre écosystème de l’arbitrage industriel."
             }
           },
           "activationPersonaFit": {
@@ -2818,7 +2818,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
               "title": "Comment éclairer les choix financiers lorsque l’évolution progressive de l’outil industriel devient décisive ?",
               "shortIntro": "Comment éclairer les choix financiers lorsque l’évolution progressive de l’outil industriel devient décisive ?",
               "reassurance": "Lecture de mécanisme, sans exposition de situation interne, site, client, fournisseur, donnée ou décision confidentielle.",
-              "valueForSpeaker": "Faire reconnaître une lecture située, utile et publiquement tenable de l’arbitrage industriel."
+              "valueForSpeaker": "Faire reconnaître une lecture située, utile et lisible par votre écosystème de l’arbitrage industriel."
             }
           },
           "activationPersonaFit": {
@@ -2891,7 +2891,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
               "title": "Comment faire évoluer l’outil industriel tout en préservant la maîtrise opérationnelle de l’activité ?",
               "shortIntro": "Comment faire évoluer l’outil industriel tout en préservant la maîtrise opérationnelle de l’activité ?",
               "reassurance": "Lecture de mécanisme, sans exposition de situation interne, site, client, fournisseur, donnée ou décision confidentielle.",
-              "valueForSpeaker": "Faire reconnaître une lecture située, utile et publiquement tenable de l’arbitrage industriel."
+              "valueForSpeaker": "Faire reconnaître une lecture située, utile et lisible par votre écosystème de l’arbitrage industriel."
             }
           },
           "activationPersonaFit": {
@@ -2963,7 +2963,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
               "title": "Comment sécuriser l’évolution de l’outil industriel lorsque qualité, sécurité et conformité deviennent décisives ?",
               "shortIntro": "Comment sécuriser l’évolution de l’outil industriel lorsque qualité, sécurité et conformité deviennent décisives ?",
               "reassurance": "Lecture de mécanisme, sans exposition de situation interne, site, client, fournisseur, donnée ou décision confidentielle.",
-              "valueForSpeaker": "Faire reconnaître une lecture située, utile et publiquement tenable de l’arbitrage industriel."
+              "valueForSpeaker": "Faire reconnaître une lecture située, utile et lisible par votre écosystème de l’arbitrage industriel."
             }
           },
           "activationPersonaFit": {
@@ -3035,7 +3035,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
               "title": "Comment piloter l’évolution de l’outil industriel lorsque les conditions d’investissement et de compétitivité changent ?",
               "shortIntro": "Comment piloter l’évolution de l’outil industriel lorsque les conditions d’investissement et de compétitivité changent ?",
               "reassurance": "Lecture de mécanisme, sans exposition de situation interne, site, client, fournisseur, donnée ou décision confidentielle.",
-              "valueForSpeaker": "Faire reconnaître une lecture située, utile et publiquement tenable de l’arbitrage industriel."
+              "valueForSpeaker": "Faire reconnaître une lecture située, utile et lisible par votre écosystème de l’arbitrage industriel."
             }
           },
           "activationPersonaFit": {
@@ -3108,7 +3108,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
               "title": "Comment reconnaître le moment où l’outil industriel appelle une reconfiguration plus profonde du process ou du système de production ?",
               "shortIntro": "Comment reconnaître le moment où l’outil industriel appelle une reconfiguration plus profonde du process ou du système de production ?",
               "reassurance": "Lecture de mécanisme, sans exposition de situation interne, site, client, fournisseur, donnée ou décision confidentielle.",
-              "valueForSpeaker": "Faire reconnaître une lecture située, utile et publiquement tenable de l’arbitrage industriel."
+              "valueForSpeaker": "Faire reconnaître une lecture située, utile et lisible par votre écosystème de l’arbitrage industriel."
             }
           },
           "activationPersonaFit": {
@@ -3181,7 +3181,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
               "title": "Comment reconnaître le moment où le pilotage opérationnel appelle une reconfiguration plus profonde du système productif ?",
               "shortIntro": "Comment reconnaître le moment où le pilotage opérationnel appelle une reconfiguration plus profonde du système productif ?",
               "reassurance": "Lecture de mécanisme, sans exposition de situation interne, site, client, fournisseur, donnée ou décision confidentielle.",
-              "valueForSpeaker": "Faire reconnaître une lecture située, utile et publiquement tenable de l’arbitrage industriel."
+              "valueForSpeaker": "Faire reconnaître une lecture située, utile et lisible par votre écosystème de l’arbitrage industriel."
             }
           },
           "activationPersonaFit": {
@@ -3254,7 +3254,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
               "title": "Comment accompagner une reconfiguration industrielle par les compétences, les standards et les collectifs de travail ?",
               "shortIntro": "Comment accompagner une reconfiguration industrielle par les compétences, les standards et les collectifs de travail ?",
               "reassurance": "Lecture de mécanisme, sans exposition de situation interne, site, client, fournisseur, donnée ou décision confidentielle.",
-              "valueForSpeaker": "Faire reconnaître une lecture située, utile et publiquement tenable de l’arbitrage industriel."
+              "valueForSpeaker": "Faire reconnaître une lecture située, utile et lisible par votre écosystème de l’arbitrage industriel."
             }
           },
           "activationPersonaFit": {
@@ -3327,7 +3327,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
               "title": "Comment reconnaître le moment où les ressources, l’énergie ou le carbone appellent une reconfiguration plus profonde de l’outil industriel ?",
               "shortIntro": "Comment reconnaître le moment où les ressources, l’énergie ou le carbone appellent une reconfiguration plus profonde de l’outil industriel ?",
               "reassurance": "Lecture de mécanisme, sans exposition de situation interne, site, client, fournisseur, donnée ou décision confidentielle.",
-              "valueForSpeaker": "Faire reconnaître une lecture située, utile et publiquement tenable de l’arbitrage industriel."
+              "valueForSpeaker": "Faire reconnaître une lecture située, utile et lisible par votre écosystème de l’arbitrage industriel."
             }
           },
           "activationPersonaFit": {
@@ -3955,7 +3955,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
             "titreLanding": "Comment reconnaître le moment où une trajectoire industrielle appelle une reconfiguration stratégique plus profonde ?",
             "accrocheLanding": "Certaines trajectoires industrielles peuvent longtemps être ajustées par des décisions successives : optimisation, priorisation, adaptation de l’outil, évolution du portefeuille, repositionnement commercial ou investissement ciblé. Mais certains moments appellent une lecture plus stratégique : ce qui peut encore être prolongé, ce qui doit être réarbitré, et ce qui engage la capacité d’avenir.",
             "promesseIntervenant": "Votre lecture permettrait d’éclairer les critères qui aident à distinguer une trajectoire encore ajustable d’une trajectoire qui appelle une reconfiguration plus profonde de ses équilibres stratégiques.",
-            "reassurance": "L’intervention ne porte pas sur une stratégie interne, un plan de restructuration, une difficulté industrielle, une situation de crise, un site, un client, un partenaire ou une décision confidentielle. Elle porte sur une lecture de mécanisme : comment reconnaître les seuils où une trajectoire industrielle change de nature.",
+            "reassurance": "L’intervention ne porte pas sur une stratégie interne, un dossier de transformation interne, une difficulté industrielle, une situation de crise, un site, un client, un partenaire ou une décision confidentielle. Elle porte sur une lecture de mécanisme : comment reconnaître les seuils où une trajectoire industrielle change de nature.",
             "scoreActivation": 0
           },
           "landingPages": [
@@ -3979,7 +3979,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
               "requiredMessages": [
                 "Aucune stratégie interne exposée",
                 "Aucune situation de crise commentée",
-                "Aucun plan de restructuration ou de redéploiement confidentiel",
+                "Aucun dossier de transformation interne ou de redéploiement confidentiel",
                 "Aucun site, client, partenaire ou cas client identifiable",
                 "Lecture de mécanisme, pas diagnostic sur une organisation",
                 "Activation prioritaire auprès de conseils, experts, directions transformation ou organisations assumant publiquement une reconfiguration"
@@ -4238,13 +4238,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment piloter la montée en volume sans perdre la maîtrise de la trajectoire industrielle ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture stratégique claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture stratégique située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de trajectoire qui structurent les décisions industrielles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -4298,13 +4298,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment garder une trajectoire industrielle évolutive lorsque les systèmes deviennent décisifs dans la montée en capacité ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture technologie & systèmes claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture technologie & systèmes située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les systèmes, données, interfaces et architectures techniques comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -4358,13 +4358,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment piloter la montée en cadence sans perdre la maîtrise de la qualité, des flux et de l’outil ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture opérationnelle claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture opérationnelle située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de capacité, de flux, de qualité et d’organisation qui permettent à l’activité de tenir en conditions réelles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -4418,13 +4418,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment accompagner la montée en capacité par les métiers, les compétences et les collectifs ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture RH / compétences claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture RH / compétences située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître le rôle des compétences, des métiers et des collectifs dans la capacité réelle d’un outil industriel à évoluer."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -4478,13 +4478,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment préserver la capacité d’avenir quand les arbitrages économiques deviennent plus décisifs ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture financière claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture financière située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages économiques qui rendent une trajectoire industrielle soutenable, lisible et pilotable."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -4538,13 +4538,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment piloter l’activité industrielle quand les arbitrages opérationnels deviennent décisifs ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture opérationnelle claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture opérationnelle située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de capacité, de flux, de qualité et d’organisation qui permettent à l’activité de tenir en conditions réelles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -4598,13 +4598,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment garder la maîtrise de l’outil industriel quand les choix de modernisation deviennent décisifs ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture technologie & systèmes claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture technologie & systèmes située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les systèmes, données, interfaces et architectures techniques comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -4658,13 +4658,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment faire évoluer les métiers, les gestes et les collectifs au rythme de la trajectoire industrielle ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture RH / compétences claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture RH / compétences située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître le rôle des compétences, des métiers et des collectifs dans la capacité réelle d’un outil industriel à évoluer."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -4718,13 +4718,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "À quel moment faut-il arrêter de corriger le modèle et décider de le changer ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture stratégique claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture stratégique située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de trajectoire qui structurent les décisions industrielles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -4778,13 +4778,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment reconnaître le moment où la continuité opérationnelle appelle une transformation plus structurante ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture opérationnelle claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture opérationnelle située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de capacité, de flux, de qualité et d’organisation qui permettent à l’activité de tenir en conditions réelles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -4838,13 +4838,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment éclairer les choix d’investissement quand l’évolution de l’outil industriel devient décisive ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture financière claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture financière située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages économiques qui rendent une trajectoire industrielle soutenable, lisible et pilotable."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -4898,13 +4898,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment coordonner le temps industriel, social, financier et territorial d’une reconfiguration ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture territoriale claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture territoriale située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître le territoire, les infrastructures, le foncier et les écosystèmes comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -4958,13 +4958,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "À partir de quand le délai requis pour redéployer, reconvertir ou refonder l’outil dépasse-t-il le temps économique, social ou financier encore disponible ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture territoriale claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture territoriale située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître le territoire, les infrastructures, le foncier et les écosystèmes comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5018,13 +5018,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "À partir de quand une dépendance industrielle devient-elle un risque de trajectoire plutôt qu’un simple point de vigilance ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture stratégique claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture stratégique située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de trajectoire qui structurent les décisions industrielles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5078,13 +5078,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "À partir de quand les dépendances d’écosystème, d’infrastructures ou de filière deviennent-elles elles-mêmes des limites de croissance industrielle ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture territoriale claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture territoriale située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître le territoire, les infrastructures, le foncier et les écosystèmes comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5138,13 +5138,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment reconnaître les dépendances invisibles créées par les architectures numériques, systèmes ou automatismes industriels ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture technologie & systèmes claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture technologie & systèmes située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les systèmes, données, interfaces et architectures techniques comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5198,13 +5198,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment absorber une montée d’activité lorsque les flux, les fournisseurs ou les délais deviennent eux-mêmes des contraintes industrielles ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture opérationnelle claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture opérationnelle située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de capacité, de flux, de qualité et d’organisation qui permettent à l’activité de tenir en conditions réelles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5258,13 +5258,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Quand une dépendance devient-elle plus coûteuse à maintenir qu’à transformer ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture financière claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture financière située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages économiques qui rendent une trajectoire industrielle soutenable, lisible et pilotable."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5318,13 +5318,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "À partir de quand une dépendance industrielle oblige-t-elle à reposer les choix de modèle, de périmètre ou de trajectoire ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture stratégique claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture stratégique située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de trajectoire qui structurent les décisions industrielles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5378,13 +5378,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "À partir de quand les dépendances réglementaires, normatives ou de conformité deviennent-elles des contraintes industrielles majeures ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture juridique / réglementaire claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture juridique / réglementaire située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître le rôle du cadre juridique, réglementaire ou contractuel dans les décisions qui engagent une trajectoire industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5438,13 +5438,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment reconnaître le moment où énergie, eau ou matières deviennent des dépendances structurelles plutôt que des variables d’exploitation ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture ressources industrielles claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture ressources industrielles située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les ressources, l’énergie, l’eau, le carbone ou les infrastructures techniques comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5498,13 +5498,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "À partir de quand une dépendance oblige-t-elle à repenser le modèle industriel lui-même ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture stratégique claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture stratégique située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de trajectoire qui structurent les décisions industrielles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5558,13 +5558,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "À partir de quand une dépendance de filière ou d’écosystème oblige-t-elle à repenser l’ancrage industriel plutôt qu’à simplement sécuriser les flux ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture territoriale claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture territoriale située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître le territoire, les infrastructures, le foncier et les écosystèmes comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5618,13 +5618,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Quand l’organisation passe-t-elle plus de temps à compenser les dépendances qu’à produire réellement ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture opérationnelle claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture opérationnelle située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de capacité, de flux, de qualité et d’organisation qui permettent à l’activité de tenir en conditions réelles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5678,13 +5678,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment transformer une dépendance critique en capacité industrielle plus soutenable ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture ressources industrielles claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture ressources industrielles située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les ressources, l’énergie, l’eau, le carbone ou les infrastructures techniques comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5738,13 +5738,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment faire évoluer l’outil industriel quand franchir un cap demande plus qu’un ajout technologique ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture technologie & systèmes claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture technologie & systèmes située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les systèmes, données, interfaces et architectures techniques comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5798,13 +5798,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment faire évoluer le pilotage opérationnel quand la croissance demande plus que de la capacité technique ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture opérationnelle claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture opérationnelle située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de capacité, de flux, de qualité et d’organisation qui permettent à l’activité de tenir en conditions réelles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5858,13 +5858,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment accompagner l’évolution de l’outil industriel par les compétences, les gestes et la maîtrise qualité ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture RH / compétences claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture RH / compétences située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître le rôle des compétences, des métiers et des collectifs dans la capacité réelle d’un outil industriel à évoluer."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5918,13 +5918,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment reconnaître le moment où l’amélioration continue ne suffit plus à soutenir la trajectoire industrielle ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture stratégique claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture stratégique située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de trajectoire qui structurent les décisions industrielles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -5978,13 +5978,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment éclairer les choix financiers lorsque l’évolution progressive de l’outil industriel devient décisive ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture financière claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture financière située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages économiques qui rendent une trajectoire industrielle soutenable, lisible et pilotable."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6038,13 +6038,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment faire évoluer l’outil industriel tout en préservant la maîtrise opérationnelle de l’activité ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture opérationnelle claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture opérationnelle située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de capacité, de flux, de qualité et d’organisation qui permettent à l’activité de tenir en conditions réelles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6098,13 +6098,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment garder une trajectoire industrielle lisible lorsque systèmes, données et interfaces deviennent décisifs ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture technologie & systèmes claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture technologie & systèmes située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les systèmes, données, interfaces et architectures techniques comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6158,13 +6158,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment reconnaître le moment où énergie, eau, matières ou carbone deviennent des conditions décisives de trajectoire industrielle ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture ressources industrielles claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture ressources industrielles située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les ressources, l’énergie, l’eau, le carbone ou les infrastructures techniques comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6218,13 +6218,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment identifier les seuils où une trajectoire industrielle oblige à arbitrer autrement ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture stratégique claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture stratégique située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de trajectoire qui structurent les décisions industrielles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6278,13 +6278,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment reconnaître le moment où le pilotage opérationnel appelle une reconfiguration plus profonde du système productif ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture opérationnelle claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture opérationnelle située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de capacité, de flux, de qualité et d’organisation qui permettent à l’activité de tenir en conditions réelles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6338,13 +6338,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment garder une trajectoire industrielle lisible lorsque systèmes, données et interfaces deviennent décisifs ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture technologie & systèmes claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture technologie & systèmes située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les systèmes, données, interfaces et architectures techniques comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6398,13 +6398,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment éclairer les conditions territoriales qui rendent une trajectoire industrielle possible, soutenable ou réorientable ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture territoriale claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture territoriale située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître le territoire, les infrastructures, le foncier et les écosystèmes comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6458,13 +6458,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "À partir de quand la transformation de l’outil dépasse-t-elle les seules capacités de l’entreprise ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture territoriale claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture territoriale située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître le territoire, les infrastructures, le foncier et les écosystèmes comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6518,13 +6518,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment identifier les seuils où une trajectoire industrielle oblige à arbitrer autrement ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture stratégique claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture stratégique située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de trajectoire qui structurent les décisions industrielles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6578,13 +6578,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment piloter la croissance lorsque les capacités opérationnelles, les flux et les infrastructures deviennent décisifs ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture opérationnelle claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture opérationnelle située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de capacité, de flux, de qualité et d’organisation qui permettent à l’activité de tenir en conditions réelles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6638,13 +6638,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment rendre lisibles les seuils où compétences, transmission et organisation du travail deviennent décisifs ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture RH / compétences claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture RH / compétences située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître le rôle des compétences, des métiers et des collectifs dans la capacité réelle d’un outil industriel à évoluer."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6698,13 +6698,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment inscrire une trajectoire de croissance industrielle dans des conditions territoriales durables ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture territoriale claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture territoriale située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître le territoire, les infrastructures, le foncier et les écosystèmes comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6758,13 +6758,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment éclairer les arbitrages économiques lorsque la trajectoire industrielle change de nature ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture financière claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture financière située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages économiques qui rendent une trajectoire industrielle soutenable, lisible et pilotable."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6818,13 +6818,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment identifier les seuils où une trajectoire industrielle oblige à arbitrer autrement ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture stratégique claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture stratégique située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de trajectoire qui structurent les décisions industrielles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6878,13 +6878,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment préserver la maîtrise opérationnelle lorsque capacité, flux, qualité et organisation deviennent décisifs ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture opérationnelle claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture opérationnelle située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de capacité, de flux, de qualité et d’organisation qui permettent à l’activité de tenir en conditions réelles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6938,13 +6938,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment reconnaître le moment où énergie, eau, matières ou carbone deviennent des conditions décisives de trajectoire industrielle ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture ressources industrielles claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture ressources industrielles située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les ressources, l’énergie, l’eau, le carbone ou les infrastructures techniques comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -6998,13 +6998,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment reconnaître le moment où une trajectoire industrielle appelle une reconfiguration stratégique plus profonde ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture stratégique claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture stratégique située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les arbitrages de trajectoire qui structurent les décisions industrielles."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -7058,13 +7058,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment reconnaître le moment où énergie, eau, matières ou carbone deviennent des conditions décisives de trajectoire industrielle ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture ressources industrielles claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture ressources industrielles située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître les ressources, l’énergie, l’eau, le carbone ou les infrastructures techniques comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -7118,13 +7118,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment éclairer les conditions territoriales qui rendent une trajectoire industrielle possible, soutenable ou réorientable ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture territoriale claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture territoriale située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître le territoire, les infrastructures, le foncier et les écosystèmes comme des conditions concrètes de décision industrielle."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -7178,13 +7178,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Quand les capacités humaines nécessaires pour tenir la trajectoire industrielle cessent-elles d’être réellement disponibles ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture RH / compétences claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture RH / compétences située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître le rôle des compétences, des métiers et des collectifs dans la capacité réelle d’un outil industriel à évoluer."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -7238,13 +7238,13 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "formulationVariants": {
             "landing": {
               "title": "Comment rendre lisibles les seuils où compétences, transmission et organisation du travail deviennent décisifs ?",
-              "accrocheLanding": "Une proposition de contribution située, préparée et publiquement tenable.",
+              "accrocheLanding": "Une position éditoriale située, préparée et utile à votre écosystème.",
               "promesseIntervenant": "Formuler une lecture RH / compétences claire, utile et non promotionnelle."
             }
           },
           "activationPersonaFit": {
             "speakerPersona": {
-              "motivation": "Faire reconnaître une lecture RH / compétences située, utile et publiquement tenable."
+              "motivation": "Faire reconnaître le rôle des compétences, des métiers et des collectifs dans la capacité réelle d’un outil industriel à évoluer."
             },
             "organizationLayer": {
               "dgReadableMessage": "La contribution permet à l’organisation de rendre lisible une capacité de lecture sur un sujet structurant, sans exposer de données internes."
@@ -7888,11 +7888,11 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
       "metaDescription": "Seulement 4 positions avec lecture juridique / réglementaire sont ouvertes sur l’ensemble du cycle Industrie.",
       "navLabel": "Cycle Industrie · Lecture juridique / réglementaire",
       "heroTitleHtml": "Votre lecture<br><em>sécurise</em><br>les décisions industrielles<br>qui changent de nature.",
-      "heroLead": "Certaines trajectoires industrielles ne basculent pas uniquement pour des raisons économiques ou opérationnelles. Elles changent aussi de nature lorsque contrats, normes, responsabilités, conformité, droit social ou environnement deviennent décisifs.",
+      "heroLead": "Certaines trajectoires industrielles ne basculent pas uniquement pour des raisons économiques ou opérationnelles. Elles changent aussi de nature lorsque contrats, normes, responsabilités, conformité, transformations sociales ou environnement deviennent décisifs.",
       "heroProfiles": [
         {
           "label": "Avocats · Cabinets spécialisés",
-          "text": "Vous intervenez sur les contrats industriels, le droit social, l’environnement, la conformité, les responsabilités ou les réorganisations."
+          "text": "Vous intervenez sur les contrats industriels, le transformations sociales, l’environnement, la conformité, les responsabilités ou les réorganisations."
         },
         {
           "label": "Directions juridiques · Conformité",
@@ -7961,7 +7961,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "yesTitle": "Vous portez probablement une lecture pertinente si…",
           "noTitle": "Moins adapté si…",
           "yesItems": [
-            "Vous intervenez sur les contrats, la conformité, le droit social, l’environnement, les responsabilités ou la sécurisation de décisions industrielles.",
+            "Vous intervenez sur les contrats, la conformité, le transformations sociales, l’environnement, les responsabilités ou la sécurisation de décisions industrielles.",
             "Votre lecture intervient en amont : avant que la difficulté ne devienne contentieuse, bloquante ou irréversible.",
             "Vous savez relier le cadre juridique ou réglementaire à des arbitrages industriels réels.",
             "Vous pouvez éclairer un mécanisme sans exposer de dossier, de client ou de situation identifiable."
@@ -8375,8 +8375,8 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "yesTitle": "Vous portez probablement une lecture pertinente si…",
           "noTitle": "Moins adapté si…",
           "yesItems": [
-            "Vous savez relier recrutement, compétences, transmission, formation, organisation du travail ou droit social à des arbitrages industriels réels.",
-            "Vous êtes DRH, direction transformation, responsable compétences, QHSE, formation, organisation, conseil RH, conseil en transformation, droit social ou restructuration.",
+            "Vous savez relier recrutement, compétences, transmission, formation, organisation du travail ou transformations sociales à des arbitrages industriels réels.",
+            "Vous êtes DRH, direction transformation, responsable compétences, QHSE, formation, organisation, conseil RH, conseil en transformation, transformations sociales et organisationnelles.",
             "Votre lecture porte sur des seuils : compétences qui manquent, métiers qui évoluent, collectifs qui compensent, organisations qui saturent, sécurité ou qualité qui deviennent plus difficiles à tenir.",
             "Vous pouvez éclairer un mécanisme d’emploi, de compétences ou de travail sans exposer de dossier interne, de situation sociale identifiable ou de chiffre confidentiel."
           ],
@@ -8395,7 +8395,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         },
         "preparation": {
           "titleHtml": "Beaucoup arrivent avec une expérience RH, sociale ou organisationnelle. <em style=\"color:rgba(240,236,230,0.55);\">Ils repartent avec une lecture industrielle défendable.</em>",
-          "intro": "La préparation éditoriale transforme une expérience de direction RH, de transformation, de formation, de conseil ou de droit social en lecture située : claire, non intrusive et utile pour d’autres décideurs industriels."
+          "intro": "La préparation éditoriale transforme une expérience de direction RH, de transformation, de formation, de conseil ou de transformations sociales en lecture située : claire, non intrusive et utile pour d’autres décideurs industriels."
         },
         "dimensions": [
           {
@@ -8476,12 +8476,12 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         ],
         "faq": [
           {
-            "question": "Faut-il parler d’un plan social, d’un site ou d’une situation interne identifiable ?",
+            "question": "Faut-il parler d’un dossier identifiable, d’un site ou d’une situation interne identifiable ?",
             "answer": "Non. L’enjeu n’est pas d’exposer une situation sensible, mais d’éclairer un mécanisme d’emploi, de compétences ou d’organisation du travail à partir de votre expérience."
           },
           {
             "question": "Cette lecture est-elle réservée aux DRH ?",
-            "answer": "Non. Elle peut être portée par des directions RH, transformation, formation, QHSE, compétences, organisation, conseil RH, conseil en transformation, droit social ou restructuration."
+            "answer": "Non. Elle peut être portée par des directions RH, transformation, formation, QHSE, compétences, organisation, conseil RH, conseil en transformation, transformations sociales et organisationnelles."
           },
           {
             "question": "Peut-on préparer l’intervention avec les équipes communication, RH ou juridiques ?",
@@ -9684,7 +9684,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "tensionCentrale": "Comment préserver la capacité d’avenir quand les arbitrages économiques deviennent plus décisifs ?"
         },
         "why": {
-          "organisation": "KPMG France reste pertinent comme cabinet de conseil pour une lecture financière sur les tensions de transformation, car ses activités de deal advisory, conseil et performance d’entreprise couvrent les arbitrages de restructuration, de BFR, de coûts différés et de trajectoires d’investissement. En revanche, la ligne ne peut plus être activée sous KPMG si l’intervenant visé est Charles Durand.",
+          "organisation": "KPMG France reste pertinent comme cabinet de conseil pour une lecture financière sur les tensions de transformation, car ses activités de deal advisory, conseil et performance d’entreprise couvrent les arbitrages de transformation sociale et organisationnelle, de BFR, de coûts différés et de trajectoires d’investissement. En revanche, la ligne ne peut plus être activée sous KPMG si l’intervenant visé est Charles Durand.",
           "person": "Votre fonction — Director Deal Advisory, Restructuring, Turnaround & Transformation — vous permet de relier les arbitrages économiques, les investissements et les marges de manœuvre à la trajectoire industrielle.",
           "position": "La position proposée consiste à éclairer, depuis votre lecture financière, la question « Comment préserver la capacité d’avenir quand les arbitrages économiques deviennent plus décisifs ? »."
         },
@@ -11047,7 +11047,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "tensionCentrale": "Comment éclairer les choix d’investissement quand l’évolution de l’outil industriel devient décisive ?"
         },
         "why": {
-          "organisation": "KPMG France est pertinent sur l’angle si l’on recherche une lecture financière des dépendances, coûts cachés, restructurations et arbitrages de transformation. Mais la pertinence de l’organisation ne suffit pas à valider la ligne, car l’intervenant indiqué n’est plus solidement rattaché à KPMG.",
+          "organisation": "KPMG France est pertinent sur l’angle si l’on recherche une lecture financière des dépendances, coûts cachés, transformations sociales et organisationnelles et arbitrages de transformation. Mais la pertinence de l’organisation ne suffit pas à valider la ligne, car l’intervenant indiqué n’est plus solidement rattaché à KPMG.",
           "person": "Votre fonction — Director Deal Advisory, Restructuring, Turnaround & Transformation — vous permet de relier les arbitrages économiques, les investissements et les marges de manœuvre à la trajectoire industrielle.",
           "position": "La position proposée consiste à éclairer, depuis votre lecture financière, la question « Comment éclairer les choix d’investissement quand l’évolution de l’outil industriel devient décisive ? »."
         },
@@ -11106,7 +11106,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         "person": {
           "name": "Céline Appel",
           "fullName": "Céline Appel",
-          "role": "Associée responsable des activités de transactions et restructuration",
+          "role": "Associée responsable des activités de transactions et transformation sociale et organisationnelle",
           "linkedin": "https://fr.linkedin.com/in/celine-appel-a1625b11",
           "id": "1344"
         },
@@ -11121,7 +11121,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         },
         "why": {
           "organisation": "PwC est pertinent comme cabinet de conseil parce que ses métiers (Affaires publiques / contrôle export / influence; Corporate finance / restructuring / CAPEX) le placent en position d’observer plusieurs trajectoires industrielles sans réduire l’analyse à un seul cas. Son échelle d’intervention multi-échelles renforce sa capacité à comparer les situations. Pour l’angle « Quand la dette technique bloque-t-elle l’avenir ? », l’intérêt éditorial est d’apporter une lecture financière fondée sur des mécanismes récurrents, pas sur une offre commerciale.",
-          "person": "Votre fonction — Associée responsable des activités de transactions et restructuration — vous permet de relier les arbitrages économiques, les investissements et les marges de manœuvre à la trajectoire industrielle.",
+          "person": "Votre fonction — Associée responsable des activités de transactions et transformation sociale et organisationnelle — vous permet de relier les arbitrages économiques, les investissements et les marges de manœuvre à la trajectoire industrielle.",
           "position": "La position proposée consiste à éclairer, depuis votre lecture financière, la question « Comment éclairer les choix d’investissement quand l’évolution de l’outil industriel devient décisive ? »."
         },
         "activation": {
@@ -13572,7 +13572,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "tensionCentrale": "À partir de quand une dépendance de filière ou d’écosystème oblige-t-elle à repenser l’ancrage industriel plutôt qu’à simplement sécuriser les flux ?"
         },
         "why": {
-          "organisation": "KPMG peut apporter une lecture territoriale si l’angle est cadré autour des actifs industriels, de la restructuration, du financement de reconversion et des effets sur les territoires. Mais la ligne actuelle ne prouve pas assez le lien personne / lecture territoriale.",
+          "organisation": "KPMG peut apporter une lecture territoriale si l’angle est cadré autour des actifs industriels, de la transformation sociale et organisationnelle, du financement de reconversion et des effets sur les territoires. Mais la ligne actuelle ne prouve pas assez le lien personne / lecture territoriale.",
           "person": "Votre fonction — Reconversion de sites industriels et logistiques, revitalisation territoriale — vous permet de relier les décisions industrielles aux conditions territoriales, foncières, infrastructurelles ou d’ancrage.",
           "position": "La position proposée consiste à éclairer, depuis votre lecture territoriale, la question « À partir de quand une dépendance de filière ou d’écosystème oblige-t-elle à repenser l’ancrage industriel plutôt qu’à simplement sécuriser les flux ? »."
         },
@@ -15485,7 +15485,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         "person": {
           "name": "Céline Appel",
           "fullName": "Céline Appel",
-          "role": "Associée responsable des activités de transactions et restructuration",
+          "role": "Associée responsable des activités de transactions et transformation sociale et organisationnelle",
           "linkedin": "https://fr.linkedin.com/in/celine-appel-a1625b11",
           "id": "1344"
         },
@@ -15500,7 +15500,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         },
         "why": {
           "organisation": "PwC est pertinent comme cabinet de conseil parce que ses métiers (Affaires publiques / contrôle export / influence; Corporate finance / restructuring / CAPEX) le placent en position d’observer plusieurs trajectoires industrielles sans réduire l’analyse à un seul cas. Son échelle d’intervention multi-échelles renforce sa capacité à comparer les situations. Pour l’angle « Quand les équilibres financiers fragilisent-ils la trajectoire ? », l’intérêt éditorial est d’apporter une lecture financière fondée sur des mécanismes récurrents, pas sur une offre commerciale.",
-          "person": "Votre fonction — Associée responsable des activités de transactions et restructuration — vous permet de relier les arbitrages économiques, les investissements et les marges de manœuvre à la trajectoire industrielle.",
+          "person": "Votre fonction — Associée responsable des activités de transactions et transformation sociale et organisationnelle — vous permet de relier les arbitrages économiques, les investissements et les marges de manœuvre à la trajectoire industrielle.",
           "position": "La position proposée consiste à éclairer, depuis votre lecture financière, la question « Comment éclairer les choix financiers lorsque l’évolution progressive de l’outil industriel devient décisive ? »."
         },
         "activation": {
@@ -17241,7 +17241,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "tensionCentrale": "À partir de quand la transformation de l’outil dépasse-t-elle les seules capacités de l’entreprise ?"
         },
         "why": {
-          "organisation": "KPMG est pertinent pour cet angle car le cabinet intervient sur réindustrialisation, ETI, ancrage territorial, restructuration, corporate finance et projets de reconversion impliquant des arbitrages dépassant l’entreprise seule.",
+          "organisation": "KPMG est pertinent pour cet angle car le cabinet intervient sur réindustrialisation, ETI, ancrage territorial, transformation sociale et organisationnelle, corporate finance et projets de reconversion impliquant des arbitrages dépassant l’entreprise seule.",
           "person": "Votre fonction — Reconversion de sites industriels et logistiques, revitalisation territoriale — vous permet de relier les décisions industrielles aux conditions territoriales, foncières, infrastructurelles ou d’ancrage.",
           "position": "La position proposée consiste à éclairer, depuis votre lecture territoriale, la question « À partir de quand la transformation de l’outil dépasse-t-elle les seules capacités de l’entreprise ? »."
         },
@@ -17886,7 +17886,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "tensionCentrale": "Comment rendre lisibles les seuils où compétences, transmission et organisation du travail deviennent décisifs ?"
         },
         "why": {
-          "organisation": "Fromont Briens est un cabinet de référence en droit social, pertinent pour éclairer les tensions RH, sociales, restructurations et transformation des organisations.",
+          "organisation": "Fromont Briens est un cabinet de référence en transformations sociales, pertinent pour éclairer les tensions RH, sociales, transformations sociales et organisationnelles et transformation des organisations.",
           "person": "Votre fonction — Associée — vous permet de montrer comment les compétences, la transmission, l’organisation du travail et les collectifs conditionnent la trajectoire industrielle.",
           "position": "La position proposée consiste à éclairer, depuis votre lecture RH / compétences, la question « Comment rendre lisibles les seuils où compétences, transmission et organisation du travail deviennent décisifs ? »."
         },
@@ -21992,7 +21992,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "tensionCentrale": "Comment préserver la capacité d’avenir quand les arbitrages économiques deviennent plus décisifs ?"
         },
         "why": {
-          "organisation": "KPMG France reste pertinent comme cabinet de conseil pour une lecture financière sur les tensions de transformation, car ses activités de deal advisory, conseil et performance d’entreprise couvrent les arbitrages de restructuration, de BFR, de coûts différés et de trajectoires d’investissement. En revanche, la ligne ne peut plus être activée sous KPMG si l’intervenant visé est Charles Durand.",
+          "organisation": "KPMG France reste pertinent comme cabinet de conseil pour une lecture financière sur les tensions de transformation, car ses activités de deal advisory, conseil et performance d’entreprise couvrent les arbitrages de transformation sociale et organisationnelle, de BFR, de coûts différés et de trajectoires d’investissement. En revanche, la ligne ne peut plus être activée sous KPMG si l’intervenant visé est Charles Durand.",
           "person": "Votre fonction — Director Deal Advisory, Restructuring, Turnaround & Transformation — vous permet de relier les arbitrages économiques, les investissements et les marges de manœuvre à la trajectoire industrielle.",
           "position": "La position proposée consiste à éclairer, depuis votre lecture financière, la question « Comment préserver la capacité d’avenir quand les arbitrages économiques deviennent plus décisifs ? »."
         },
@@ -23355,7 +23355,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "tensionCentrale": "Comment éclairer les choix d’investissement quand l’évolution de l’outil industriel devient décisive ?"
         },
         "why": {
-          "organisation": "KPMG France est pertinent sur l’angle si l’on recherche une lecture financière des dépendances, coûts cachés, restructurations et arbitrages de transformation. Mais la pertinence de l’organisation ne suffit pas à valider la ligne, car l’intervenant indiqué n’est plus solidement rattaché à KPMG.",
+          "organisation": "KPMG France est pertinent sur l’angle si l’on recherche une lecture financière des dépendances, coûts cachés, transformations sociales et organisationnelles et arbitrages de transformation. Mais la pertinence de l’organisation ne suffit pas à valider la ligne, car l’intervenant indiqué n’est plus solidement rattaché à KPMG.",
           "person": "Votre fonction — Director Deal Advisory, Restructuring, Turnaround & Transformation — vous permet de relier les arbitrages économiques, les investissements et les marges de manœuvre à la trajectoire industrielle.",
           "position": "La position proposée consiste à éclairer, depuis votre lecture financière, la question « Comment éclairer les choix d’investissement quand l’évolution de l’outil industriel devient décisive ? »."
         },
@@ -23414,7 +23414,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         "person": {
           "name": "Céline Appel",
           "fullName": "Céline Appel",
-          "role": "Associée responsable des activités de transactions et restructuration",
+          "role": "Associée responsable des activités de transactions et transformation sociale et organisationnelle",
           "linkedin": "https://fr.linkedin.com/in/celine-appel-a1625b11",
           "id": "1344"
         },
@@ -23429,7 +23429,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         },
         "why": {
           "organisation": "PwC est pertinent comme cabinet de conseil parce que ses métiers (Affaires publiques / contrôle export / influence; Corporate finance / restructuring / CAPEX) le placent en position d’observer plusieurs trajectoires industrielles sans réduire l’analyse à un seul cas. Son échelle d’intervention multi-échelles renforce sa capacité à comparer les situations. Pour l’angle « Quand la dette technique bloque-t-elle l’avenir ? », l’intérêt éditorial est d’apporter une lecture financière fondée sur des mécanismes récurrents, pas sur une offre commerciale.",
-          "person": "Votre fonction — Associée responsable des activités de transactions et restructuration — vous permet de relier les arbitrages économiques, les investissements et les marges de manœuvre à la trajectoire industrielle.",
+          "person": "Votre fonction — Associée responsable des activités de transactions et transformation sociale et organisationnelle — vous permet de relier les arbitrages économiques, les investissements et les marges de manœuvre à la trajectoire industrielle.",
           "position": "La position proposée consiste à éclairer, depuis votre lecture financière, la question « Comment éclairer les choix d’investissement quand l’évolution de l’outil industriel devient décisive ? »."
         },
         "activation": {
@@ -25880,7 +25880,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "tensionCentrale": "À partir de quand une dépendance de filière ou d’écosystème oblige-t-elle à repenser l’ancrage industriel plutôt qu’à simplement sécuriser les flux ?"
         },
         "why": {
-          "organisation": "KPMG peut apporter une lecture territoriale si l’angle est cadré autour des actifs industriels, de la restructuration, du financement de reconversion et des effets sur les territoires. Mais la ligne actuelle ne prouve pas assez le lien personne / lecture territoriale.",
+          "organisation": "KPMG peut apporter une lecture territoriale si l’angle est cadré autour des actifs industriels, de la transformation sociale et organisationnelle, du financement de reconversion et des effets sur les territoires. Mais la ligne actuelle ne prouve pas assez le lien personne / lecture territoriale.",
           "person": "Votre fonction — Reconversion de sites industriels et logistiques, revitalisation territoriale — vous permet de relier les décisions industrielles aux conditions territoriales, foncières, infrastructurelles ou d’ancrage.",
           "position": "La position proposée consiste à éclairer, depuis votre lecture territoriale, la question « À partir de quand une dépendance de filière ou d’écosystème oblige-t-elle à repenser l’ancrage industriel plutôt qu’à simplement sécuriser les flux ? »."
         },
@@ -27793,7 +27793,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         "person": {
           "name": "Céline Appel",
           "fullName": "Céline Appel",
-          "role": "Associée responsable des activités de transactions et restructuration",
+          "role": "Associée responsable des activités de transactions et transformation sociale et organisationnelle",
           "linkedin": "https://fr.linkedin.com/in/celine-appel-a1625b11",
           "id": "1344"
         },
@@ -27808,7 +27808,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
         },
         "why": {
           "organisation": "PwC est pertinent comme cabinet de conseil parce que ses métiers (Affaires publiques / contrôle export / influence; Corporate finance / restructuring / CAPEX) le placent en position d’observer plusieurs trajectoires industrielles sans réduire l’analyse à un seul cas. Son échelle d’intervention multi-échelles renforce sa capacité à comparer les situations. Pour l’angle « Quand les équilibres financiers fragilisent-ils la trajectoire ? », l’intérêt éditorial est d’apporter une lecture financière fondée sur des mécanismes récurrents, pas sur une offre commerciale.",
-          "person": "Votre fonction — Associée responsable des activités de transactions et restructuration — vous permet de relier les arbitrages économiques, les investissements et les marges de manœuvre à la trajectoire industrielle.",
+          "person": "Votre fonction — Associée responsable des activités de transactions et transformation sociale et organisationnelle — vous permet de relier les arbitrages économiques, les investissements et les marges de manœuvre à la trajectoire industrielle.",
           "position": "La position proposée consiste à éclairer, depuis votre lecture financière, la question « Comment éclairer les choix financiers lorsque l’évolution progressive de l’outil industriel devient décisive ? »."
         },
         "activation": {
@@ -29549,7 +29549,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "tensionCentrale": "À partir de quand la transformation de l’outil dépasse-t-elle les seules capacités de l’entreprise ?"
         },
         "why": {
-          "organisation": "KPMG est pertinent pour cet angle car le cabinet intervient sur réindustrialisation, ETI, ancrage territorial, restructuration, corporate finance et projets de reconversion impliquant des arbitrages dépassant l’entreprise seule.",
+          "organisation": "KPMG est pertinent pour cet angle car le cabinet intervient sur réindustrialisation, ETI, ancrage territorial, transformation sociale et organisationnelle, corporate finance et projets de reconversion impliquant des arbitrages dépassant l’entreprise seule.",
           "person": "Votre fonction — Reconversion de sites industriels et logistiques, revitalisation territoriale — vous permet de relier les décisions industrielles aux conditions territoriales, foncières, infrastructurelles ou d’ancrage.",
           "position": "La position proposée consiste à éclairer, depuis votre lecture territoriale, la question « À partir de quand la transformation de l’outil dépasse-t-elle les seules capacités de l’entreprise ? »."
         },
@@ -30194,7 +30194,7 @@ window.EN_PLATEAU_EDITORIAL_DATA = {
           "tensionCentrale": "Comment rendre lisibles les seuils où compétences, transmission et organisation du travail deviennent décisifs ?"
         },
         "why": {
-          "organisation": "Fromont Briens est un cabinet de référence en droit social, pertinent pour éclairer les tensions RH, sociales, restructurations et transformation des organisations.",
+          "organisation": "Fromont Briens est un cabinet de référence en transformations sociales, pertinent pour éclairer les tensions RH, sociales, transformations sociales et organisationnelles et transformation des organisations.",
           "person": "Votre fonction — Associée — vous permet de montrer comment les compétences, la transmission, l’organisation du travail et les collectifs conditionnent la trajectoire industrielle.",
           "position": "La position proposée consiste à éclairer, depuis votre lecture RH / compétences, la question « Comment rendre lisibles les seuils où compétences, transmission et organisation du travail deviennent décisifs ? »."
         },
