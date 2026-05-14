@@ -1,6 +1,6 @@
 /*
   En Plateau — landing.css
-  Version V65.5
+  Version V65.6
   Gabarit landing one-to-one — /lp/industrie/contribuer.html
 
   Modifications V65.5 :
@@ -14,6 +14,11 @@
   - .landing-rarity      : texte mis à jour, style conservé
   - .landing-identity--single : conservé
   - .landing-why-narrative    : conservé
+  Modifications V65.6 :
+  - Lisibilité renforcée sur toutes les sections sombres de la landing.
+  - Hero desktop resserré pour faire remonter les CTA.
+  - Ajout grille 4 colonnes pour la section processus.
+  - Image "Pourquoi vous" remplacée par une image abstraite moins anxiogène.
   Aucune règle existante supprimée.
 */
 
@@ -573,8 +578,8 @@ body.landing-page {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(17,17,17,.88) 0%, rgba(17,17,17,.74) 52%, rgba(17,17,17,.58) 100%),
-    url("../../images/bascule-sol-fissures.jpg") center/cover no-repeat;
+    linear-gradient(90deg, rgba(17,17,17,.90) 0%, rgba(17,17,17,.76) 52%, rgba(17,17,17,.56) 100%),
+    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
 }
 
 .landing-split__visual h2 {
@@ -672,6 +677,7 @@ body.landing-page {
 
 .landing-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .landing-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.landing-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
 .landing-section--dark .landing-grid { background: var(--landing-line-dark); }
 
@@ -741,6 +747,36 @@ body.landing-page {
   letter-spacing: -.015em;
   font-weight: 600;
   color: var(--landing-text);
+}
+
+/* ── PROCESSUS ────────────────────────────────────────── */
+
+.landing-section--process {
+  border-top: 1px solid var(--landing-line-dark);
+}
+
+.landing-process-grid {
+  align-items: stretch;
+}
+
+.landing-process-card {
+  position: relative;
+  min-height: 260px;
+}
+
+.landing-process-card .landing-label {
+  margin-bottom: 18px;
+}
+
+.landing-process-deadline {
+  margin-top: 18px !important;
+  padding-top: 14px;
+  border-top: 1px solid var(--landing-line-dark);
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem !important;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--landing-text-muted) !important;
 }
 
 /* ── FINAL CTA ────────────────────────────────────────── */
@@ -825,7 +861,8 @@ body.landing-page {
   .landing-split,
   .landing-decision,
   .landing-grid--2,
-  .landing-grid--3 {
+  .landing-grid--3,
+  .landing-grid--4 {
     grid-template-columns: 1fr;
   }
 
@@ -879,4 +916,60 @@ body.landing-page {
 
   /* Rareté mobile */
   .landing-rarity p { font-size: .76rem; }
+}
+
+/* ─────────────────────────────────────────────
+   PATCH V65.6 — LISIBILITÉ + CONVERSION
+   À conserver en fin de fichier pour neutraliser
+   les éventuels héritages de layout.css.
+───────────────────────────────────────────── */
+
+body.landing-page .landing-section--dark,
+body.landing-page .landing-section--dark h2,
+body.landing-page .landing-section--dark h3,
+body.landing-page .landing-section--dark strong,
+body.landing-page .landing-section--dark .landing-head h2,
+body.landing-page .landing-section--dark .landing-card h3,
+body.landing-page .landing-section--dark .landing-point h3,
+body.landing-page .landing-decision__copy h2,
+body.landing-page .landing-final h2 {
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-section--dark p,
+body.landing-page .landing-section--dark .landing-head p,
+body.landing-page .landing-section--dark .landing-card p,
+body.landing-page .landing-section--dark .landing-point p,
+body.landing-page .landing-final p,
+body.landing-page .landing-final .landing-reassurance {
+  color: var(--landing-text-soft) !important;
+}
+
+body.landing-page .landing-section--dark .landing-label,
+body.landing-page .landing-section--dark .landing-kicker {
+  color: var(--landing-accent-soft) !important;
+}
+
+body.landing-page .landing-card--accent,
+body.landing-page .landing-card--accent h3,
+body.landing-page .landing-card--accent strong {
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-card--accent p {
+  color: var(--landing-text-soft) !important;
+}
+
+@media (min-width: 981px) {
+  body.landing-page .landing-hero h1 {
+    max-width: 16.5ch;
+    font-size: clamp(2.35rem, 3.8vw, 3.65rem);
+    line-height: 1.04;
+  }
+
+  body.landing-page .landing-hero__grid {
+    align-items: center;
+    padding-top: 112px;
+    padding-bottom: 72px;
+  }
 }
