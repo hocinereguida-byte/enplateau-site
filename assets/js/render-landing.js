@@ -1,7 +1,7 @@
 /*
   En Plateau — render-landing.js
-  Version V65.5
-  Modifications vs V65.4 :
+  Version V65.6
+  Modifications vs V65.5 :
   - Suppression du bloc .landing-emission dans la carte hero (brouillon, image en couleur)
   - Nouvelle colonne droite hero : bloc .landing-emission-film (style home, image B&W)
     + légende journaliste/média sous l'image
@@ -99,9 +99,11 @@
       deal?.editorialContext?.typeLecture, deal?.typeLecture, deal?.lecture,
       reading?.label, angle?.typeLecture
     );
-    if (isOperationalRole(personRole) && norm(fromData).includes("strateg")) {
-      return "Lecture opérationnelle / organisation industrielle";
-    }
+
+    // Le type de lecture appartient à l'angle éditorial.
+    // La fonction de la personne peut expliquer la légitimité de la prise de parole,
+    // mais elle ne doit jamais transformer une lecture stratégique, financière,
+    // territoriale, juridique, etc. en lecture opérationnelle.
     return fromData || "Lecture éditoriale";
   }
 
@@ -222,6 +224,40 @@
       if (!key || seen.has(key)) return false;
       seen.add(key); return true;
     }).slice(0, 4);
+  }
+
+  function getProcessSteps(landingPage) {
+    const fromData = toArray(landingPage?.copy?.process || landingPage?.process).map(item => ({
+      num: item.num,
+      title: item.title,
+      text: item.text,
+      deadline: item.deadline
+    }));
+
+    if (fromData.length) return fromData.slice(0, 4);
+
+    return [
+      {
+        num: "01",
+        title: "L'échange de qualification",
+        text: "15 minutes pour vérifier si la lecture correspond à l'angle proposé. Aucun engagement, aucun dossier sensible à exposer."
+      },
+      {
+        num: "02",
+        title: "Le dossier de positionnement",
+        text: "Si l'angle paraît pertinent, En Plateau formalise la position proposée : sujet, mise en regard, garanties, format et conditions."
+      },
+      {
+        num: "03",
+        title: "Le comité éditorial",
+        text: "La position est étudiée dans la composition globale du cycle. L'accord sur l'échange ne vaut pas acceptation automatique."
+      },
+      {
+        num: "04",
+        title: "La préparation éditoriale",
+        text: "Si la position est retenue, la parole est préparée avec l'intervenant et, si nécessaire, avec les équipes communication, juridiques ou affaires publiques."
+      }
+    ];
   }
 
   function getConversationLabel(conversation, deal) {
@@ -393,20 +429,22 @@
         : "L'organisation identifiée permet d'éclairer, depuis une position opérationnelle réelle, les conditions qui rendent une trajectoire industrielle lisible.";
 
     const personFragment = (() => {
-      if (isOperationalRole(personRole) && hasRealName)
-        return `La fonction de ${personName} — ${personRole} — place cette lecture au niveau où les arbitrages concrets se forment : flux, coordination, montée en capacité, stabilité d'exécution.`;
       if (why.person && hasRealName)
-        return shortText(why.person, 280);
+        return shortText(why.person, 300);
       if (hasRealName && personRole)
         return `${personName} est pressenti pour la capacité que sa fonction — ${personRole} — confère à cette lecture : une position légitime, reconnue par ses pairs, non exposante.`;
+      if (isOperationalRole(personRole) && hasRealName)
+        return `La fonction de ${personName} — ${personRole} — place cette lecture au niveau où certains arbitrages concrets se forment : flux, coordination, montée en capacité, stabilité d'exécution.`;
       return "";
     })();
 
-    const positionFragment = positionWhy
-      ? shortText(positionWhy, 260)
-      : actorType === "cabinet_conseil"
-        ? "Cette position éditoriale permet de formuler une lecture utile aux décideurs sans présenter une mission, une méthode ou un cas client."
-        : "Cette position permettrait d'éclairer les conditions qui rendent une montée en capacité réellement pilotable : arbitrer les priorités, coordonner les flux, préserver la lisibilité de la trajectoire.";
+    const positionFragment = why.position
+      ? shortText(why.position, 300)
+      : positionWhy
+        ? shortText(positionWhy, 300)
+        : actorType === "cabinet_conseil"
+          ? "Cette position éditoriale permet de formuler une lecture utile aux décideurs sans présenter une mission, une méthode ou un cas client."
+          : "Cette position permettrait d'éclairer les conditions qui rendent une trajectoire industrielle réellement pilotable : arbitrer les priorités, coordonner les flux, préserver la lisibilité de la trajectoire.";
 
     return `
       <div class="landing-why-narrative">
@@ -520,9 +558,10 @@
     );
 
     const dgMessage  = buildDGMessage(personaFit, reading, organisationName);
-    const valueCards = getValueCards(landingPage, reading, actorType);
-    const guarantees = getGuarantees(publicAngle, landingPage, personaFit);
-    const faq        = toArray(landingPage?.faq).slice(0, 4);
+    const valueCards   = getValueCards(landingPage, reading, actorType);
+    const guarantees   = getGuarantees(publicAngle, landingPage, personaFit);
+    const processSteps = getProcessSteps(landingPage);
+    const faq          = toArray(landingPage?.copy?.faq || landingPage?.faq).slice(0, 4);
 
     const complementaryAngles = toArray(angle.complementaryCodes)
       .map(code => Core.getAngleByCode(code))
@@ -647,6 +686,26 @@
                   c.headline || other.ceQueCetteLecturePermetDeVoir || other.angleRendVisible || "Une autre lecture du même contexte éditorial."
                 );
               }).join("")}
+            </div>
+          </div>
+        </section>` : ""}
+
+      ${processSteps.length ? `
+        <section class="landing-section landing-section--dark landing-section--process">
+          <div class="landing-container">
+            <div class="landing-head">
+              <p class="landing-kicker">Après les 15 minutes</p>
+              <h2>Un échange de qualification, pas un engagement.</h2>
+              <p>Le rendez-vous sert uniquement à vérifier la pertinence de la lecture proposée, le périmètre de parole possible et les conditions de préparation.</p>
+            </div>
+            <div class="landing-grid landing-grid--4 landing-process-grid">
+              ${processSteps.map(item => `
+                <article class="landing-card landing-process-card">
+                  <span class="landing-label">${safe(item.num || "Étape")}</span>
+                  <h3>${safe(soften(item.title))}</h3>
+                  <p>${safe(shortText(item.text, 420))}</p>
+                  ${item.deadline ? `<p class="landing-process-deadline">${safe(item.deadline)}</p>` : ""}
+                </article>`).join("")}
             </div>
           </div>
         </section>` : ""}
