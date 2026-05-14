@@ -678,6 +678,7 @@ body.landing-page {
 .landing-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .landing-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .landing-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.landing-grid--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 
 .landing-section--dark .landing-grid { background: var(--landing-line-dark); }
 
@@ -761,7 +762,7 @@ body.landing-page {
 
 .landing-process-card {
   position: relative;
-  min-height: 260px;
+  min-height: 250px;
 }
 
 .landing-process-card .landing-label {
@@ -862,7 +863,8 @@ body.landing-page {
   .landing-decision,
   .landing-grid--2,
   .landing-grid--3,
-  .landing-grid--4 {
+  .landing-grid--4,
+  .landing-grid--5 {
     grid-template-columns: 1fr;
   }
 
