@@ -1,6 +1,6 @@
 /*
   En Plateau — render-landing.js
-  Version V65.7 premium
+  Version V65.8 premium-site-grammar
   Modifications vs V65.5 :
   - Suppression du bloc .landing-emission dans la carte hero (brouillon, image en couleur)
   - Nouvelle colonne droite hero : bloc .landing-emission-film (style home, image B&W)
@@ -11,7 +11,10 @@
     droite  : film > légende > carte
   - buildRaritySignal : texte corrigé
   - buildIdentityLine : suppression de l'émission (maintenant au-dessus de la carte)
-  Aucune classe HTML existante supprimée. Aucune modification de render-core.js.
+  - V65.8 : alignement renforcé avec la grammaire du site public :
+    lecture située, approche directe, contribution qui prend sa portée,
+    trace publique durable, non-visibilité/prestation.
+  Aucune modification de render-core.js.
 */
 
 (function () {
@@ -367,8 +370,8 @@
     return `
       <div class="landing-rarity">
         <span class="landing-rarity__dot" aria-hidden="true"></span>
-        <p>Plusieurs acteurs sont pressentis pour cette lecture.
-          <strong>Une seule position ${safe(reading)}</strong> sera retenue dans la conversation,
+        <p>Plusieurs acteurs peuvent être pressentis pour une même lecture.
+          <strong>Une seule position ${safe(reading)}</strong> sera retenue,
           en cohérence avec les autres lectures mises en regard, après examen par le comité éditorial.</p>
       </div>`;
   }
@@ -413,36 +416,35 @@
     const reading = readingLabel || "cette lecture";
 
     return `<p class="landing-lead">
-      <strong>Vous avez été identifié pour une position précise dans les conversations économiques En Plateau.</strong>
-      Votre expérience du sujet peut éclairer une lecture que nous souhaitons mettre en regard avec d'autres positions complémentaires.
-      En Plateau ne vous propose pas une prestation de visibilité : le dispositif compose un cercle restreint d'intervenants capables de rendre lisibles les arbitrages industriels qui comptent.
+      <strong>Votre expérience a été identifiée pour éclairer une lecture précise dans une conversation économique En Plateau.</strong>
+      Cette page vous est adressée dans le cadre d'une composition éditoriale par approche directe : votre fonction, votre expertise ou votre responsabilité peuvent aider à rendre lisibles les arbitrages, les trajectoires et les conditions de décision liés à cet angle.
     </p>
     <p class="landing-lead">
-      Une seule position ${safe(soften(reading))} sera retenue pour cette lecture. L'échange de 15 minutes sert à vérifier si votre expérience peut y trouver sa juste place${hasRealOrg ? ` dans la lecture portée depuis ${safe(organisationName)}` : ""}.
+      Une seule position ${safe(soften(reading))} sera retenue pour cette lecture. L'échange de 15 minutes permet de vérifier si votre angle, votre responsabilité et votre lecture peuvent trouver leur juste place dans la composition éditoriale${hasRealOrg ? ` portée depuis ${safe(organisationName)}` : ""}.
     </p>
     ${heroLead ? `<p class="landing-lead">${safe(shortText(heroLead, 360))}</p>` : ""}`;
   }
 
   function buildHeroCardIntro(readingLabel) {
     const reading = readingLabel || "lecture éditoriale";
-    return `Votre lecture a été identifiée comme potentiellement pertinente pour cette conversation. Une seule position ${safe(soften(reading))} sera retenue dans la composition finale.`;
+    return `Cette page privée vous est adressée dans le cadre d'une composition éditoriale par approche directe. Votre lecture a été identifiée comme potentiellement utile à cette conversation. Une seule position ${safe(soften(reading))} sera retenue dans la composition finale.`;
   }
 
   function buildPositionPathSection(readingLabel) {
     const reading = readingLabel || "lecture éditoriale";
-    const intro = `Vous arrivez avec une expérience, des convictions et une lecture du sujet. En Plateau structure cette matière autour de six dimensions — contexte, acteurs concernés, arbitrages, défis, vision et échelle — pour faire émerger une position claire, crédible et utile à votre écosystème.`;
+    const intro = `En Plateau part de votre expérience, de vos convictions et de votre lecture du sujet. Le dispositif structure cette matière autour d'un angle qualifié, de plusieurs dimensions de décision et d'une mise en regard avec d'autres lectures complémentaires.`;
     return `
       <section class="landing-section landing-section--dark" id="experience-position">
         <div class="landing-container">
           <div class="landing-head">
-            <p class="landing-kicker">De l'expérience à la position</p>
-            <h2>De votre expérience à une position claire.</h2>
+            <p class="landing-kicker">Lecture située</p>
+            <h2>De votre expérience à une contribution qui prend sa portée.</h2>
             <p>${safe(intro)}</p>
           </div>
           <div class="landing-grid landing-grid--3">
-            ${card("Ce que vous apportez", "Une expérience située du sujet", "Votre expérience, vos convictions, vos signaux faibles et votre compréhension des conditions réelles dans lesquelles se construisent les arbitrages industriels.")}
-            ${card("Ce qu'En Plateau structure", "Une lecture travaillée sous six dimensions", "Le contexte, les acteurs concernés, les arbitrages, les défis, la vision et l'échelle permettent de passer d'une intuition forte à une position claire.")}
-            ${card("Ce que la position valorise", "Une lecture de bâtisseur", `Votre capacité à construire, arbitrer, sécuriser, transmettre ou rendre possible une trajectoire dans un contexte économique complexe, depuis une ${safe(soften(reading))}.`, true)}
+            ${card("Ce que vous apportez", "Une expérience située du sujet", "Votre expérience du sujet, votre responsabilité, vos convictions et votre compréhension des conditions réelles dans lesquelles se construisent les arbitrages industriels.")}
+            ${card("Ce qu'En Plateau structure", "Un angle, une lecture et des arbitrages", "Le contexte, les acteurs concernés, les arbitrages, les défis, la vision et l'échelle permettent de transformer une lecture en contribution préparée.")}
+            ${card("Ce que cela produit", "Une contribution reconnaissable par les bons interlocuteurs", `Une position claire, crédible et mobilisable dans la durée, depuis une ${safe(soften(reading))}, auprès des acteurs qui rencontrent les mêmes arbitrages.`, true)}
           </div>
         </div>
       </section>`;
@@ -465,9 +467,9 @@
       if (why.person && hasRealName)
         return shortText(why.person, 300);
       if (hasRealName && personRole)
-        return `${personName} est pressenti pour la capacité que sa fonction — ${personRole} — confère à cette lecture : une position légitime, reconnue par ses pairs, non exposante.`;
+        return `Votre fonction — ${personRole} — donne accès à une lecture située : ce qu'elle permet de rendre lisible, de structurer, de sécuriser ou de mettre en perspective dans cette trajectoire.`;
       if (isOperationalRole(personRole) && hasRealName)
-        return `La fonction de ${personName} — ${personRole} — place cette lecture au niveau où certains arbitrages concrets se forment : flux, coordination, montée en capacité, stabilité d'exécution.`;
+        return `Votre fonction — ${personRole} — place cette lecture au niveau où certains arbitrages concrets se forment : flux, coordination, montée en capacité, stabilité d'exécution.`;
       return "";
     })();
 
@@ -496,8 +498,8 @@
       personaFit?.organizationLayer?.dgReadableMessage,
       reading?.motivationCentrale,
       hasRealOrg
-        ? `La lecture portée depuis ${organisationName} rend visible ce que d'autres acteurs du cycle ne peuvent pas formuler depuis leur position. C'est précisément ce décalage de point de vue qui lui donne sa valeur éditoriale.`
-        : "Cette prise de parole valorise une capacité de lecture utile aux décideurs, partenaires et parties prenantes."
+        ? `La lecture portée depuis ${organisationName} rend visible ce que d'autres acteurs du cycle ne peuvent pas formuler depuis leur position. C'est précisément ce décalage de point de vue qui lui donne sa portée éditoriale.`
+        : "Cette position permet de donner forme à une contribution reconnaissable par les bons interlocuteurs."
     );
   }
 
@@ -649,7 +651,7 @@
         <div class="landing-container">
           <div class="landing-split">
             <div class="landing-split__visual">
-              <h2>Pourquoi cette proposition vous est adressée.</h2>
+              <h2>Une position ne désigne pas seulement une fonction ou un métier.</h2>
             </div>
             <div class="landing-split__copy">
               ${buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType)}
@@ -670,7 +672,7 @@
           <div class="landing-grid landing-grid--3">
             ${card("Conversation", conversationLabel, txt(conversation?.narrativeText, conversation?.description, "Une conversation construite pour mettre en regard des lectures complémentaires."))}
             ${card("Ce que votre lecture apporte", "Une position lisible par les décideurs", dgMessage)}
-            ${card("Format", "Une position préparée, pas une parole improvisée", "L'échange éditorial permet de cadrer le sujet, le périmètre de parole et les conditions de préparation avec vos équipes si nécessaire.", true)}
+            ${card("Format", "Une contribution cadrée, pas improvisée", "L'échange éditorial permet de cadrer le sujet, la portée de la lecture et les conditions de préparation avec vos équipes si nécessaire.", true)}
           </div>
         </div>
       </section>
@@ -678,9 +680,9 @@
       <section class="landing-section landing-section--light">
         <div class="landing-container">
           <div class="landing-head">
-            <p class="landing-kicker">Ce que cette position peut produire</p>
-            <h2>Ce que cette position peut produire pour vous et votre organisation.</h2>
-            <p>${safe(shortText(txt(landingPage?.valueSection?.intro, "La contribution produit un actif éditorial préparé, sécurisé et réutilisable."), 520))}</p>
+            <p class="landing-kicker">Portée de la position</p>
+            <h2>Ce que produit une contribution En Plateau.</h2>
+            <p>${safe(shortText(txt(landingPage?.valueSection?.intro, "Une contribution bien préparée ne cherche pas seulement à être vue. Elle permet d'installer une lecture, de rendre une trajectoire plus lisible et de créer une trace publique qui continue de travailler dans la durée."), 560))}</p>
           </div>
           <div class="landing-grid landing-grid--3">
             ${valueCards.map((item, i) => card(item.label, item.title, item.text, i === 2)).join("")}
@@ -693,7 +695,7 @@
           <div class="landing-decision">
             <div class="landing-decision__visual"></div>
             <div class="landing-decision__copy">
-              <h2>Ce qui est sécurisé avant toute prise de parole.</h2>
+              <h2>Une contribution cadrée, pas improvisée.</h2>
               ${guarantees.map(item => `
                 <div class="landing-point">
                   <h3>${safe(soften(item.title))}</h3>
@@ -709,8 +711,8 @@
           <div class="landing-container">
             <div class="landing-head">
               <p class="landing-kicker">Mise en regard</p>
-              <h2>Une lecture mise en regard avec d'autres positions.</h2>
-              <p>La valeur du dispositif vient de la composition : chaque position éclaire un aspect différent du même phénomène et renforce la lisibilité de l'ensemble.</p>
+              <h2>Une contribution prend sa portée dans l'ensemble.</h2>
+              <p>Une position gagne en lisibilité lorsqu'elle est mise en regard avec d'autres lectures complémentaires : elle éclaire une partie de la trajectoire sans réduire la situation à un seul métier ni à une seule lecture.</p>
             </div>
             <div class="landing-grid landing-grid--3">
               ${complementaryAngles.map(other => {
@@ -731,7 +733,7 @@
             <div class="landing-head">
               <p class="landing-kicker">Comment cela va se passer</p>
               <h2>Un parcours clair, sans engagement initial.</h2>
-              <p>L'échange de départ ne vaut pas engagement. Il ouvre, si la pertinence est confirmée, un parcours de cadrage, de préparation, de production et d'activation éditoriale.</p>
+              <p>L'échange de départ ne vaut pas engagement. Il permet de situer la lecture puis, si la pertinence est confirmée, d'articuler cadrage éditorial, production média et activation de la contribution.</p>
             </div>
             <div class="landing-grid landing-grid--4 landing-process-grid">
               ${processSteps.map(item => `
