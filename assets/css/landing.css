@@ -1173,3 +1173,185 @@ body.landing-page #cadre-confiance .landing-card--trust::before {
     min-width: 0;
   }
 }
+
+/* ─────────────────────────────────────────────
+   PATCH CONVERSATION CARDS — Hero allégé + composition
+   - Hero H1 = titre canonique de conversation
+   - Carte position dans le hero
+   - Section conversation immédiatement sous le hero
+   - Cartes composition : acteurs, organisations, média
+───────────────────────────────────────────── */
+
+body.landing-page .landing-hero {
+  min-height: auto;
+}
+
+@media (min-width: 981px) {
+  body.landing-page .landing-hero__grid {
+    grid-template-columns: minmax(0, 1.02fr) minmax(340px, .98fr);
+    align-items: center;
+    padding-top: 118px;
+    padding-bottom: 70px;
+  }
+
+  body.landing-page .landing-hero h1 {
+    max-width: 18.5ch;
+    font-size: clamp(2.12rem, 3.35vw, 3.45rem);
+    line-height: 1.05;
+  }
+}
+
+body.landing-page .landing-lead--compact {
+  margin-top: 10px;
+  max-width: 660px;
+}
+
+body.landing-page .landing-hero-position-card .landing-label {
+  margin-bottom: 12px;
+}
+
+body.landing-page .landing-hero-position-card h3 {
+  margin: 0 0 12px;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  line-height: 1.28;
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-hero-position-card p {
+  font-size: .88rem;
+  line-height: 1.65;
+}
+
+body.landing-page .landing-hero-position-card .landing-identity--single strong {
+  font-size: .86rem;
+}
+
+body.landing-page .landing-conversation-transition {
+  width: min(860px, 100%);
+  margin: -14px auto 30px;
+  padding: 18px 22px;
+  border-top: 1px solid var(--landing-line);
+  border-bottom: 1px solid var(--landing-line);
+  text-align: center;
+}
+
+body.landing-page .landing-conversation-transition p {
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.7;
+  color: var(--landing-ink-soft);
+}
+
+body.landing-page .landing-composition-grid .landing-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 100%;
+}
+
+body.landing-page .landing-card--primary-position {
+  background: var(--landing-bg);
+  color: var(--landing-text);
+}
+
+body.landing-page .landing-card--primary-position h3,
+body.landing-page .landing-card--primary-position strong {
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-card--primary-position p {
+  color: var(--landing-text-soft) !important;
+}
+
+body.landing-page .landing-card--primary-position .landing-label,
+body.landing-page .landing-card--primary-position .landing-actors span,
+body.landing-page .landing-card--primary-position .landing-organisations span,
+body.landing-page .landing-card--primary-position .landing-media-line span {
+  color: var(--landing-accent-soft) !important;
+}
+
+body.landing-page .landing-card--primary-position .landing-actors,
+body.landing-page .landing-card--primary-position .landing-organisations,
+body.landing-page .landing-card--primary-position .landing-media-line {
+  border-bottom-color: var(--landing-line-dark);
+}
+
+body.landing-page .landing-organisations,
+body.landing-page .landing-media-line {
+  margin: 0 0 18px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid var(--landing-line);
+}
+
+body.landing-page .landing-organisations span,
+body.landing-page .landing-media-line span {
+  display: block;
+  margin-bottom: 7px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .66rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--landing-accent);
+}
+
+body.landing-page .landing-organisations strong,
+body.landing-page .landing-media-line strong {
+  display: block;
+  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
+  font-size: .9rem;
+  line-height: 1.52;
+  font-weight: 500;
+  color: var(--landing-ink);
+}
+
+body.landing-page .landing-card-note {
+  margin-top: auto !important;
+  padding-top: 18px;
+  border-top: 1px solid var(--landing-line-dark);
+  font-size: .85rem !important;
+}
+
+body.landing-page .landing-card-note strong {
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .66rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--landing-accent-soft) !important;
+}
+
+body.landing-page .landing-section--dark .landing-organisations,
+body.landing-page .landing-section--dark .landing-media-line {
+  border-bottom-color: var(--landing-line-dark);
+}
+
+body.landing-page .landing-section--dark .landing-organisations span,
+body.landing-page .landing-section--dark .landing-media-line span {
+  color: var(--landing-accent-soft);
+}
+
+body.landing-page .landing-section--dark .landing-organisations strong,
+body.landing-page .landing-section--dark .landing-media-line strong {
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-composition-grid .landing-card h3 {
+  min-height: 0 !important;
+  margin-top: 0;
+}
+
+body.landing-page .landing-composition-grid .landing-label {
+  margin-top: 2px;
+}
+
+@media (max-width: 980px) {
+  body.landing-page .landing-composition-grid .landing-card {
+    display: block;
+  }
+
+  body.landing-page .landing-conversation-transition {
+    margin-top: 0;
+    text-align: left;
+  }
+  }
