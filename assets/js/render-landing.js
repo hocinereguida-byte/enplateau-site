@@ -1,6 +1,6 @@
 /*
   En Plateau — render-landing.js
-  Version V65.8 premium-site-grammar
+  Version V65.9 conversation-cards
   Modifications vs V65.5 :
   - Suppression du bloc .landing-emission dans la carte hero (brouillon, image en couleur)
   - Nouvelle colonne droite hero : bloc .landing-emission-film (style home, image B&W)
@@ -14,7 +14,8 @@
   - V65.8 : alignement renforcé avec la grammaire du site public :
     lecture située, approche directe, contribution qui prend sa portée,
     trace publique durable, non-visibilité/prestation.
-  Aucune modification de render-core.js.
+  - V65.9 : hero allégé sur le titre canonique de conversation ; carte de position dans le hero ; définition de la conversation En Plateau et composition à 4 lectures immédiatement sous le hero.
+  Aucune modification de render-core.js ni du fichier maître.
 */
 
 (function () {
@@ -160,18 +161,84 @@
       .slice(0, 3);
   }
 
-  function buildComplementaryCard(other) {
+  function mediaLineForAngle(item) {
+    const journaliste = txt(item?.journaliste, "");
+    const emission = txt(item?.emission, "");
+    const media = txt(item?.media, "");
+    const outlet = [emission, media].filter(Boolean).join(" · ");
+    if (!journaliste && !outlet) return "";
+    return [journaliste, outlet].filter(Boolean).join(" · ");
+  }
+
+  function castingItems() {
+    return toArray(DATA?.casting?.castings || DATA?.castings || []);
+  }
+
+  function organisationsForAngle(angleCode, limit = 3, excludeOrgName = "") {
+    const exclude = norm(excludeOrgName);
+    const seen = new Set();
+    return castingItems()
+      .filter(item => String(item?.angleCode || "") === String(angleCode || ""))
+      .map(item => txt(item?.organisation?.name, item?.organisationName, item?.orgName))
+      .filter(name => {
+        const key = norm(name);
+        if (!key || (exclude && key === exclude) || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      })
+      .slice(0, limit);
+  }
+
+  function readingDisplay(value) {
+    return soften(String(value || "").replace(/^Lecture\s+/i, "")).trim();
+  }
+
+  function readingPhrase(value) {
+    const r = readingDisplay(value).toLowerCase();
+    return r ? `lecture ${r}` : "lecture éditoriale";
+  }
+
+  function angleTitle(angle, publicAngle = {}, formulation = {}) {
+    return txt(publicAngle.titreLanding, formulation.title, angle?.questionPublique, angle?.titreAngle, angle?.questionEditoriale);
+  }
+
+  function angleDescription(angle, publicAngle = {}, formulation = {}) {
+    return txt(publicAngle.accrocheLanding, formulation.accrocheLanding, angle?.introMecanisme, angle?.texteProgramme, angle?.questionActivation, angle?.ceQueCetteLecturePermetDeVoir);
+  }
+
+  function buildComplementaryCard(other, excludeOrgName = "") {
     const c = other.complementaryCard || {};
     const actors = actorLabelsForAngle(other);
+    const orgs = organisationsForAngle(other.code, 3, excludeOrgName);
+    const media = mediaLineForAngle(other);
     const label = c.label || other.typeLecture || "Lecture complémentaire";
     const title = c.title || other.questionCourte || other.titreAngle || other.questionPublique;
     const text = c.headline || other.ceQueCetteLecturePermetDeVoir || other.angleRendVisible || "Une autre lecture du même contexte éditorial.";
     return `
       <article class="landing-card landing-card--complementary">
         ${actors.length ? `<div class="landing-actors"><span>Acteurs pressentis</span><strong>${safe(actors.join(" · "))}</strong></div>` : ""}
+        ${orgs.length ? `<div class="landing-organisations"><span>Organisations approchées</span><strong>${safe(orgs.join(" · "))}</strong></div>` : ""}
+        ${media ? `<div class="landing-media-line"><span>Format média pressenti</span><strong>${safe(media)}</strong></div>` : ""}
         ${label ? `<span class="landing-label">${safe(label)}</span>` : ""}
         ${title ? `<h3>${safe(soften(title))}</h3>` : ""}
         ${text ? `<p>${safe(shortText(text, 560))}</p>` : ""}
+      </article>`;
+  }
+
+  function buildPrimaryConversationCard(angle, publicAngle, formulation, personName, personRole, organisationName, readingLabel) {
+    const actors = actorLabelsForAngle(angle);
+    const media = mediaLineForAngle(angle);
+    const title = angleTitle(angle, publicAngle, formulation);
+    const text = angleDescription(angle, publicAngle, formulation);
+    return `
+      <article class="landing-card landing-card--primary-position">
+        ${actors.length ? `<div class="landing-actors"><span>Acteurs pressentis</span><strong>${safe(actors.join(" · "))}</strong></div>` : ""}
+        <div class="landing-organisations"><span>Organisation pressentie</span><strong>${safe(organisationName)}</strong></div>
+        ${media ? `<div class="landing-media-line"><span>Format média pressenti</span><strong>${safe(media)}</strong></div>` : ""}
+        <span class="landing-label">Votre position pressentie · ${safe(readingDisplay(readingLabel))}</span>
+        ${title ? `<h3>${safe(soften(title))}</h3>` : ""}
+        ${text ? `<p>${safe(shortText(text, 560))}</p>` : ""}
+        <p class="landing-card-note"><strong>Intervenant pressenti</strong><br>${safe([personName, personRole].filter(Boolean).join(" · "))}</p>
       </article>`;
   }
 
@@ -249,7 +316,7 @@
       ),
       label: txt(
         deal?.ctaLabel, deal?.cta_label, deal?.activation?.ctaLabel, deal?.activation?.cta_label,
-        "Réserver un échange éditorial de cadrage"
+        "Qualifier cette position — 15 min"
       ),
       title:    "Qualifier cette lecture en échange éditorial",
       text:     txt(pageCTA.text, "15 minutes, sans engagement, pour qualifier l'angle, le périmètre de parole et les conditions de préparation."),
@@ -416,13 +483,13 @@
      SIGNAL DE RARETÉ — texte corrigé
   ───────────────────────────────────────────────────────── */
   function buildRaritySignal(readingLabel) {
-    const reading = readingLabel || "cette lecture";
+    const reading = readingDisplay(readingLabel || "cette lecture").toLowerCase();
     return `
       <div class="landing-rarity">
         <span class="landing-rarity__dot" aria-hidden="true"></span>
         <p>Plusieurs acteurs peuvent être pressentis pour une même lecture.
           <strong>Une seule position ${safe(reading)}</strong> sera retenue,
-          en cohérence avec les autres lectures mises en regard, après examen par le comité éditorial.</p>
+          en cohérence avec les autres lectures mises en regard.</p>
       </div>`;
   }
 
@@ -461,23 +528,23 @@
   /* ─────────────────────────────────────────────────────────
      INTRO HERO
   ───────────────────────────────────────────────────────── */
-  function buildHeroIntro(personName, organisationName, heroLead, readingLabel) {
-    const hasRealOrg = organisationName && organisationName !== "Votre organisation";
+  function buildHeroIntro(personRole, organisationName, readingLabel) {
+    const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "votre organisation";
+    const role = personRole ? `votre fonction de <strong>${safe(personRole)}</strong>` : "votre fonction";
     const reading = readingLabel || "cette lecture";
 
     return `<p class="landing-lead">
-      <strong>Votre expérience a été identifiée pour éclairer une lecture précise dans une conversation économique En Plateau.</strong>
-      Cette page vous est adressée dans le cadre d'une composition éditoriale par approche directe : votre fonction, votre expertise ou votre responsabilité peuvent aider à rendre lisibles les arbitrages, les trajectoires et les conditions de décision liés à cet angle.
+      Nous pensons que ${role} chez <strong>${safe(org)}</strong> peut contribuer à la pertinence éditoriale de cette conversation.
+      <strong>${safe(org)}</strong> pourrait y apporter une <strong>${safe(readingPhrase(reading))}</strong> sur les arbitrages que cette conversation cherche à rendre lisibles.
     </p>
-    <p class="landing-lead">
-      Une seule position ${safe(soften(reading))} sera retenue pour cette lecture. L'échange de 15 minutes permet de vérifier si votre angle, votre responsabilité et votre lecture peuvent trouver leur juste place dans la composition éditoriale${hasRealOrg ? ` portée depuis ${safe(organisationName)}` : ""}.
-    </p>
-    ${heroLead ? `<p class="landing-lead">${safe(shortText(heroLead, 360))}</p>` : ""}`;
+    <p class="landing-lead landing-lead--compact">
+      Un échange éditorial de 15 minutes permettrait de vérifier l'intérêt commun de poursuivre, de préciser la position possible et de confirmer les conditions de préparation.
+    </p>`;
   }
 
   function buildHeroCardIntro(readingLabel) {
     const reading = readingLabel || "lecture éditoriale";
-    return `Cette page privée vous est adressée dans le cadre d'une composition éditoriale par approche directe. Votre lecture a été identifiée comme potentiellement utile à cette conversation. Une seule position ${safe(soften(reading))} sera retenue dans la composition finale.`;
+    return `Une seule position ${safe(readingDisplay(reading).toLowerCase())} sera retenue dans cette conversation, en cohérence avec les autres lectures mises en regard.`;
   }
 
   function buildPositionPathSection(readingLabel) {
@@ -620,19 +687,10 @@
     const readingLabel      = displayReadingLabel(reading, angle, deal, personRole);
     const contextLabel      = soften(txt(context?.label, deal?.editorialContext?.contexteTitre, "Contexte éditorial"));
     const conversationLabel = getConversationLabel(conversation, deal);
-
     const heroTitle = txt(
-      publicAngle.titreLanding, formulation.title,
-      landingPage?.heroTitleHtml
-        ? landingPage.heroTitleHtml.replace(/<br\s*\/?>/gi, " ").replace(/<\/?em>/gi, "")
-        : "",
-      "Votre lecture peut éclairer les conditions qui rendent une trajectoire industrielle lisible."
-    );
-
-    const heroLead = txt(
-      publicAngle.accrocheLanding, formulation.accrocheLanding,
-      landingPage?.heroLead, reading?.accroche,
-      "En Plateau compose des conversations économiques à partir de lectures complémentaires, portées par des personnes identifiées pour ce qu'elles permettent de rendre lisible."
+      conversation?.title,
+      conversationLabel,
+      "Cycle Industrie & transformation des territoires"
     );
 
     const positionWhy = txt(publicAngle.promesseIntervenant, formulation.promesseIntervenant, why.position, "");
@@ -675,10 +733,10 @@
             <div>
               ${buildHeroKicker(conversationLabel)}
               <h1>${safe(soften(heroTitle))}</h1>
-              ${buildHeroIntro(personName, organisationName, heroLead, readingLabel)}
+              ${buildHeroIntro(personRole, organisationName, readingLabel)}
               <div class="landing-actions">
                 <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
-                <a class="landing-btn landing-btn--ghost" href="#angle-propose">Voir la position proposée</a>
+                <a class="landing-btn landing-btn--ghost" href="#mise-en-regard">Voir la position proposée</a>
               </div>
               <p class="landing-reassurance">15 minutes · sans engagement · pour qualifier l'angle, le périmètre de parole et les conditions de préparation.</p>
             </div>
@@ -686,10 +744,20 @@
             <!-- COLONNE DROITE : film > carte -->
             <aside class="landing-hero-side">
               ${filmBlock}
-              <div class="landing-hero__card">
-                <h2>Une position à qualifier</h2>
-                <p>${buildHeroCardIntro(readingLabel)}</p>
-                ${buildIdentityLine(personName, personRole, organisationName, readingLabel)}
+              <div class="landing-hero__card landing-hero-position-card">
+                <h2>Position pressentie</h2>
+                <span class="landing-label">${safe(soften(readingLabel))}</span>
+                <h3>${safe(soften(angleTitle(angle, publicAngle, formulation)))}</h3>
+                <p>${safe(shortText(angleDescription(angle, publicAngle, formulation), 380))}</p>
+                <div class="landing-identity landing-identity--single">
+                  <span>Intervenant pressenti</span>
+                  <strong>${safe([personName, personRole].filter(Boolean).join(" · "))}</strong>
+                </div>
+                <div class="landing-identity landing-identity--single">
+                  <span>Organisation</span>
+                  <strong>${safe(organisationName)}</strong>
+                </div>
+                ${buildRaritySignal(readingLabel)}
               </div>
             </aside>
 
@@ -697,19 +765,23 @@
         </div>
       </section>
 
-      ${complementaryAngles.length ? `
-        <section class="landing-section landing-section--light" id="mise-en-regard">
-          <div class="landing-container">
-            <div class="landing-head">
-              <p class="landing-kicker">Conversation composée</p>
-              <h2>Une contribution prend sa portée dans l'ensemble.</h2>
-              <p>Votre lecture n'est pas isolée. Elle est mise en regard avec d'autres positions complémentaires pour éclairer la même question depuis plusieurs responsabilités, sans réduire la conversation à un seul métier ni à une seule lecture.</p>
-            </div>
-            <div class="landing-grid landing-grid--3 landing-grid--complementary">
-              ${complementaryAngles.map(other => buildComplementaryCard(other)).join("")}
-            </div>
+      <section class="landing-section landing-section--light" id="mise-en-regard">
+        <div class="landing-container">
+          <div class="landing-head">
+            <p class="landing-kicker">Conversation composée</p>
+            <h2>Ce qu'En Plateau appelle une conversation.</h2>
+            <p>Une conversation En Plateau n'est pas une table ronde. Chaque intervenant porte individuellement une lecture située, préparée à partir de son expérience, de sa fonction et de l'angle proposé.</p>
+            <p>La valeur de chaque contribution tient à ce qu'elle éclaire. La valeur d'ensemble naît de leur mise en regard&nbsp;: plusieurs positions complémentaires qui permettent de comprendre un même enjeu industriel depuis différentes responsabilités.</p>
           </div>
-        </section>` : ""}
+          <div class="landing-conversation-transition">
+            <p>La position proposée à <strong>${safe(organisationName)}</strong> prendrait donc sa portée aux côtés d'autres lectures appelées à éclairer la même conversation.</p>
+          </div>
+          <div class="landing-grid landing-grid--4 landing-grid--complementary landing-composition-grid">
+            ${buildPrimaryConversationCard(angle, publicAngle, formulation, personName, personRole, organisationName, readingLabel)}
+            ${complementaryAngles.map(other => buildComplementaryCard(other, organisationName)).join("")}
+          </div>
+        </div>
+      </section>
 
       <section class="landing-section landing-section--light" id="cadre-confiance">
         <div class="landing-container">
