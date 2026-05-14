@@ -1,0 +1,149 @@
+/*
+  PATCH — landing-v2-radical.css
+  Correction hero 14/05
+  Objectif :
+  - supprimer le texte sombre sur fond sombre ;
+  - réduire la hauteur perçue du hero ;
+  - réduire la taille du titre ;
+  - rendre CTA + synthèse visibles plus tôt ;
+  - conserver le reste de la page intact.
+*/
+
+/* 1. Hero moins haut, plus lisible */
+body.landing-v2-page .v2-hero {
+  min-height: 86vh;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(13,13,13,.99) 0%, rgba(13,13,13,.94) 48%, rgba(13,13,13,.78) 100%),
+    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
+}
+
+body.landing-v2-page .v2-hero::after {
+  background:
+    radial-gradient(circle at 74% 20%, rgba(255,255,255,.08), transparent 25%),
+    linear-gradient(180deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.38) 100%);
+}
+
+/* 2. Grille hero resserrée */
+body.landing-v2-page .v2-hero__grid {
+  padding-top: 104px;
+  padding-bottom: 42px;
+  align-items: center;
+  gap: clamp(28px, 4vw, 56px);
+}
+
+/* 3. Titre plus compact et plus visible */
+body.landing-v2-page .v2-hero h1 {
+  max-width: 14.5ch;
+  margin-bottom: 16px;
+  color: var(--v2-text) !important;
+  font-size: clamp(2.35rem, 3.65vw, 3.95rem);
+  line-height: 1.02;
+  opacity: 1 !important;
+  text-shadow: 0 2px 20px rgba(0,0,0,.52);
+}
+
+/* 4. Tous les textes du hero repassent clairement en clair */
+body.landing-v2-page .v2-hero,
+body.landing-v2-page .v2-hero p,
+body.landing-v2-page .v2-hero span,
+body.landing-v2-page .v2-hero strong,
+body.landing-v2-page .v2-hero li,
+body.landing-v2-page .v2-hero h1,
+body.landing-v2-page .v2-hero h2,
+body.landing-v2-page .v2-hero dt,
+body.landing-v2-page .v2-hero dd {
+  color: var(--v2-text) !important;
+}
+
+/* 5. Les textes secondaires restent clairs mais différenciés */
+body.landing-v2-page .v2-hero .v2-kicker,
+body.landing-v2-page .v2-hero .v2-card-label,
+body.landing-v2-page .v2-hero__microgrid span,
+body.landing-v2-page .v2-hero__value span,
+body.landing-v2-page .v2-hero .v2-position-card dt {
+  color: var(--v2-accent) !important;
+}
+
+body.landing-v2-page .v2-hero .v2-scanline,
+body.landing-v2-page .v2-hero .v2-proofline,
+body.landing-v2-page .v2-hero .v2-caption,
+body.landing-v2-page .v2-hero .v2-card-note {
+  color: var(--v2-text-soft) !important;
+}
+
+/* 6. Cartes hero plus contrastées */
+body.landing-v2-page .v2-hero__microgrid div,
+body.landing-v2-page .v2-hero__value,
+body.landing-v2-page .v2-position-card {
+  background: rgba(255,255,255,.075);
+  border-color: rgba(255,255,255,.20);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.035);
+}
+
+body.landing-v2-page .v2-hero__value li {
+  color: var(--v2-text) !important;
+  border-color: rgba(255,255,255,.42);
+  background: rgba(0,0,0,.18);
+}
+
+/* 7. Image média légèrement plus lisible sans devenir dominante */
+body.landing-v2-page .v2-film img {
+  filter: grayscale(100%) contrast(116%) brightness(.72);
+  opacity: .82;
+}
+
+/* 8. Carte droite moins haute */
+body.landing-v2-page .v2-position-card {
+  padding: 22px 24px;
+}
+
+body.landing-v2-page .v2-position-card h2 {
+  font-size: clamp(1.2rem, 1.55vw, 1.55rem);
+  line-height: 1.18;
+  margin-bottom: 18px;
+}
+
+body.landing-v2-page .v2-position-card div {
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+body.landing-v2-page .v2-card-note {
+  margin-top: 14px;
+  padding-top: 12px;
+}
+
+/* 9. CTA plus haut, plus net */
+body.landing-v2-page .v2-actions {
+  margin-top: 18px;
+}
+
+body.landing-v2-page .v2-btn--primary {
+  background: #f7f2ea;
+  color: #0d0d0d !important;
+  border-color: #f7f2ea;
+}
+
+body.landing-v2-page .v2-btn--ghost {
+  color: #f7f2ea !important;
+  border-color: rgba(255,255,255,.36);
+}
+
+/* 10. Mobile : hero toujours compact */
+@media (max-width: 680px) {
+  body.landing-v2-page .v2-hero {
+    min-height: auto;
+  }
+
+  body.landing-v2-page .v2-hero__grid {
+    padding-top: 92px;
+    padding-bottom: 42px;
+  }
+
+  body.landing-v2-page .v2-hero h1 {
+    max-width: 12.5ch;
+    font-size: clamp(2.15rem, 10vw, 3rem);
+    line-height: 1.02;
+  }
+}
