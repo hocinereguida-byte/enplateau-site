@@ -841,10 +841,11 @@
 
 
   /* ─────────────────────────────────────────────────────────
-     HERO MINIMAL — Bento éditorial
-     Objectif : faire comprendre en 10 secondes :
-     organisation identifiée, lecture proposée, conversation,
-     média/journaliste, comité, rareté, cadre et CTA.
+     HERO ALLÉGÉ — 20260515-0710
+     Objectif : désirabilité + clarté + faible risque.
+     Le hero ne porte plus toute l'explication du dispositif :
+     la mise en regard, le cadre, la pertinence et les gains
+     sont traités dans les sections qui suivent.
   ───────────────────────────────────────────────────────── */
   function buildHeroMetricCard(label, title, text, modifier = "") {
     if (!title && !text) return "";
@@ -875,41 +876,142 @@
       </div>`;
   }
 
-  function buildHeroMinimalSection(angle, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, cta) {
-    const readingShort = readingDisplay(readingLabel || "lecture éditoriale");
-    const readingLower = readingShort.toLowerCase();
-    const conversationShort = stripConversationCode(conversationLabel || "Conversation En Plateau");
-    const media = mediaLineForAngle(angle);
-    const personLine = [personName, personRole].filter(Boolean).join(" · ");
+  function buildHeroMediaCaption(angle) {
+    const journaliste = txt(angle?.journaliste, "");
+    const emission    = txt(angle?.emission, "");
+    const media       = txt(angle?.media, "");
+    const outlet      = [emission, media].filter(Boolean).join(" · ");
+    if (!journaliste && !outlet) return "";
 
     return `
-      <section class="landing-hero landing-hero--bento-minimal">
+      <div class="landing-hero-media-caption">
+        ${journaliste ? `<strong>${safe(journaliste)}</strong>` : ""}
+        ${outlet ? `<span>${safe(outlet)}</span>` : ""}
+      </div>`;
+  }
+
+  function readingKeyForHero(readingLabel) {
+    const key = norm(readingLabel).replace(/^lecture\s+/, "").trim();
+    if (key.includes("finance")) return "finance";
+    if (key.includes("jurid")) return "juridique";
+    if (key.includes("rh") || key.includes("competence")) return "rh";
+    if (key.includes("operation") || key.includes("production") || key.includes("supply")) return "operationnelle";
+    if (key.includes("energie") || key.includes("ressource") || key.includes("carbone") || key.includes("decarbon")) return "energie";
+    if (key.includes("territoire") || key.includes("territorial")) return "territoriale";
+    if (key.includes("techno") || key.includes("systeme") || key.includes("data") || key.includes("numerique")) return "technologique";
+    if (key.includes("strateg")) return "strategique";
+    return "default";
+  }
+
+  function buildHeroTitle(organisationName, readingLabel) {
+    const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "Votre organisation";
+    const key = readingKeyForHero(readingLabel);
+    const lines = {
+      finance:       `${org} peut rendre visibles les conditions économiques qui rendent une transformation industrielle tenable.`,
+      financiere:    `${org} peut rendre visibles les conditions économiques qui rendent une transformation industrielle tenable.`,
+      juridique:     `${org} peut montrer comment le droit sécurise les arbitrages industriels avant qu’ils ne deviennent des risques.`,
+      operationnelle:`${org} peut faire reconnaître l’exécution industrielle comme le lieu où la transformation se vérifie vraiment.`,
+      rh:            `${org} peut montrer que les compétences et les collectifs conditionnent réellement la transformation industrielle.`,
+      energie:       `${org} peut montrer comment l’énergie, les ressources, le carbone ou les matières deviennent des conditions de continuité industrielle.`,
+      territoriale:  `${org} peut faire reconnaître le territoire comme condition réelle de transformation industrielle.`,
+      technologique: `${org} peut montrer comment les systèmes, les données et les interfaces conditionnent la trajectoire industrielle.`,
+      strategique:   `${org} peut installer une lecture de direction sur les arbitrages qui changent une trajectoire industrielle.`,
+      default:       `${org} peut faire reconnaître une lecture utile dans une conversation stratégique à plusieurs voix.`
+    };
+    return lines[key] || lines.default;
+  }
+
+  function buildHeroLead(angle, readingLabel) {
+    const key = readingKeyForHero(readingLabel);
+    const custom = {
+      finance:       "Une lecture financière sur les choix d’investissement, les marges de manœuvre et les conditions économiques qui rendent une trajectoire industrielle soutenable.",
+      juridique:     "Une lecture juridique sur les cadres, responsabilités et risques qui sécurisent les arbitrages industriels.",
+      operationnelle:"Une lecture opérationnelle sur la qualité, les flux, les priorités et les interfaces métiers qui conditionnent la montée en capacité.",
+      rh:            "Une lecture RH / compétences sur les métiers, les collectifs et les savoir-faire qui rendent la transformation réellement possible.",
+      energie:       "Une lecture énergie / ressources sur l’eau, l’énergie, les matières, le carbone et les conditions de continuité industrielle.",
+      territoriale:  "Une lecture territoriale sur ce qui rend une trajectoire industrielle possible, soutenable ou réorientable : foncier, friches, infrastructures, ancrage et conditions de décision.",
+      technologique: "Une lecture technologique sur les systèmes, les données et les interfaces qui conditionnent la trajectoire industrielle.",
+      strategique:   "Une lecture stratégique sur les arbitrages qui font changer une trajectoire industrielle de nature."
+    };
+
+    return custom[key] || shortText(txt(angle?.anglePublic?.accrocheLanding, angle?.questionActivation, angle?.introMecanisme, angle?.texteProgramme), 240);
+  }
+
+  function buildHeroReadingLine(readingLabel) {
+    const key = readingKeyForHero(readingLabel);
+    const lines = {
+      finance:       "Rendre visibles les conditions économiques d’une trajectoire industrielle tenable.",
+      juridique:     "Sécuriser les arbitrages avant qu’ils ne deviennent des risques.",
+      operationnelle:"Faire reconnaître l’exécution comme lieu réel de transformation.",
+      rh:            "Montrer comment compétences et collectifs conditionnent la transformation.",
+      energie:       "Relier continuité industrielle, ressources, énergie et carbone.",
+      territoriale:  "Faire reconnaître le territoire comme condition réelle de trajectoire industrielle.",
+      technologique: "Rendre visibles les systèmes et interfaces qui conditionnent la trajectoire.",
+      strategique:   "Installer une lecture de direction sur les arbitrages structurants."
+    };
+    return lines[key] || "Faire reconnaître une lecture utile, située et préparée.";
+  }
+
+  function buildHeroAngleKeywords(readingLabel) {
+    const key = readingKeyForHero(readingLabel);
+    const lines = {
+      finance:       "Investissement · CAPEX · soutenabilité",
+      juridique:     "Droit · risques · responsabilités",
+      operationnelle:"Qualité · flux · priorités",
+      rh:            "Métiers · compétences · collectifs",
+      energie:       "Énergie · ressources · continuité",
+      territoriale:  "Foncier · friches · ancrage",
+      technologique: "Systèmes · données · interfaces",
+      strategique:   "Trajectoire · arbitrages · décision"
+    };
+    return lines[key] || "Angle · lecture · arbitrage";
+  }
+
+  function buildHeroAngleLine(angle, readingLabel) {
+    const key = readingKeyForHero(readingLabel);
+    const lines = {
+      finance:       "Les conditions économiques qui rendent une trajectoire industrielle soutenable.",
+      juridique:     "Les cadres qui rendent les décisions industrielles plus robustes.",
+      operationnelle:"Les conditions d’exécution qui rendent une montée en capacité pilotable.",
+      rh:            "Les conditions humaines qui rendent une transformation réellement tenable.",
+      energie:       "Les ressources qui deviennent des conditions de continuité industrielle.",
+      territoriale:  "Les conditions territoriales qui rendent une trajectoire industrielle possible, soutenable ou réorientable.",
+      technologique: "Les systèmes et interfaces qui conditionnent la trajectoire industrielle.",
+      strategique:   "Les arbitrages qui changent la nature d’une trajectoire industrielle."
+    };
+    return lines[key] || shortText(txt(angle?.anglePublic?.accrocheLanding, angle?.questionActivation, angle?.introMecanisme), 180);
+  }
+
+  function buildHeroMinimalSection(angle, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, cta) {
+    const readingShort = readingDisplay(readingLabel || "lecture éditoriale");
+    const mediaCaption = buildHeroMediaCaption(angle);
+
+    return `
+      <section class="landing-hero landing-hero--bento-minimal landing-hero--simplified">
         <div class="landing-container landing-hero-bento-container">
           <div class="landing-hero-bento-grid">
 
             <div class="landing-hero-bento-copy">
-              <p class="landing-hero-eyebrow">Contribution éditoriale personnalisée</p>
-              <h1>${safe(organisationName)} est pressentie pour occuper une lecture ${safe(readingLower)} dans une conversation stratégique à plusieurs voix.</h1>
-              <p class="landing-hero-bento-lead">Une position à qualifier avant comité éditorial. 15 minutes pour vérifier l’angle, le périmètre de parole et l’intérêt commun de poursuivre.</p>
+              <p class="landing-hero-eyebrow">Position éditoriale proposée · Cycle Industrie</p>
+              <h1>${safe(buildHeroTitle(organisationName, readingLabel))}</h1>
+              <p class="landing-hero-bento-lead">${safe(buildHeroLead(angle, readingLabel))}</p>
 
               <div class="landing-hero-bento-actions">
-                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Qualifier cette position — 15 min")}</a>
-                <a class="landing-btn landing-btn--ghost" href="#mise-en-regard">Voir les quatre lectures</a>
+                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Qualifier la position — 15 min")}</a>
+                <a class="landing-btn landing-btn--ghost" href="#mise-en-regard">Voir les lectures pressenties</a>
               </div>
 
-              <p class="landing-hero-bento-proof">Sans engagement · Sans donnée interne · Périmètre préparé</p>
+              <p class="landing-hero-bento-proof">Sans engagement · Aucun dossier sensible · Périmètre préparé</p>
             </div>
 
             <aside class="landing-hero-bento-side">
               ${buildHeroVisual(angle)}
+              ${mediaCaption}
 
-              <div class="landing-hero-metrics landing-hero-metrics--six" aria-label="Repères clés de la proposition éditoriale">
-                ${buildHeroMetricCard("Lecture proposée", readingShort, `1 seule position ${readingLower} disponible`, "landing-hero-metric--accent")}
-                ${buildHeroMetricCard("Conversation", conversationShort, contextLabel || "")}
-                ${buildHeroMetricCard("Pressenti", organisationName, personLine)}
-                ${media ? buildHeroMetricCard("Format média", media, "") : buildHeroMetricCard("Format média", "À préciser", "")}
-                ${buildHeroMetricCard("Comité éditorial", "15 juin", "Soumission possible après échange")}
-                ${buildHeroMetricCard("Cadre", "Aucune donnée interne", "Aucun engagement à ce stade")}
+              <div class="landing-hero-metrics landing-hero-metrics--three" aria-label="Repères clés de la proposition éditoriale">
+                ${buildHeroMetricCard("Lecture proposée", readingShort, buildHeroReadingLine(readingLabel), "landing-hero-metric--accent")}
+                ${buildHeroMetricCard("Ce que cette position éclaire", buildHeroAngleKeywords(readingLabel), buildHeroAngleLine(angle, readingLabel))}
+                ${buildHeroMetricCard("Échange de qualification", "15 minutes", "Vérifier l’angle, le périmètre de parole et l’intérêt de poursuivre.")}
               </div>
             </aside>
 
