@@ -2213,7 +2213,7 @@ body.landing-page .trust-key__details summary::after {
 }
 
 body.landing-page .trust-key__details[open] summary::after {
-  content: " –";
+  content: " -";
 }
 
 body.landing-page .trust-key__details p {
@@ -2574,7 +2574,7 @@ body.landing-page .value-details summary::after {
 }
 
 body.landing-page .value-details[open] summary::after {
-  content: " –";
+  content: " -";
 }
 
 body.landing-page .value-details ul {
@@ -4034,7 +4034,7 @@ body.landing-page .trust-key__deep-list li {
 }
 
 body.landing-page .trust-key__deep-list li::before {
-  content: "—";
+  content: "-";
   position: absolute;
   left: 0;
   color: rgba(246,241,233,.42);
@@ -4215,5 +4215,294 @@ body.landing-page .landing-hero-bento-lead {
 @media (max-width: 760px) {
   body.landing-page .landing-hero--bento-minimal h1 {
     font-size: clamp(2.35rem, 12vw, 3.4rem);
+  }
+}
+
+/* =========================================================
+   REPRISE SECTIONS + CTA — 20260516
+   Correctifs demandés : hero meta en deux lignes, tabs sur une ligne,
+   panneau actif ouvert, cadre 3x2, pertinence espacée, CTA photo.
+   ========================================================= */
+
+body.landing-page .landing-top__meta {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  gap: 4px !important;
+  max-width: 420px !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: initial !important;
+  line-height: 1.35 !important;
+  text-align: right !important;
+}
+
+body.landing-page .landing-top__meta span {
+  display: block !important;
+}
+
+body.landing-page .landing-hero-conversation--kicker strong {
+  text-transform: none !important;
+}
+
+/* Mise en regard : intro centrée, 4 onglets sur une ligne desktop */
+body.landing-page .landing-bento-section--tabs .lpb-head {
+  max-width: 880px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-head h2,
+body.landing-page .landing-bento-section--tabs .lpb-head p {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-tabs {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  align-items: stretch !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-tab-input {
+  position: absolute !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab {
+  display: grid !important;
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 206px !important;
+  margin: 0 !important;
+  padding: 24px 22px !important;
+  overflow: hidden !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab strong {
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
+  font-size: clamp(1.25rem, 1.8vw, 1.75rem) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab small,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab i {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-tab-panels {
+  grid-column: 1 / -1 !important;
+  margin-top: 18px !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-panel {
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, .75fr) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-panel-main h3 {
+  font-size: clamp(1.85rem, 3.1vw, 3.05rem) !important;
+  max-width: 760px !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-panel-context {
+  margin: 18px 0 0 !important;
+  max-width: 720px !important;
+  font-size: .96rem !important;
+  line-height: 1.75 !important;
+  color: rgba(17,17,17,.64) !important;
+}
+
+@media (max-width: 1180px) {
+  body.landing-page .landing-bento-section--tabs .lpb-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  body.landing-page .landing-bento-section--tabs .lpb-tabs {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.landing-page .landing-bento-section--tabs .lpb-reading-panel {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Cadre de confiance : 2 lignes de 3 cartes, respiration, CTA centré */
+body.landing-page #cadre-confiance .trust-keys-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 28px 0 !important;
+  border: 0 !important;
+}
+
+body.landing-page #cadre-confiance .trust-key,
+body.landing-page #cadre-confiance .trust-key:first-child,
+body.landing-page #cadre-confiance .trust-key:last-child {
+  border: 1px solid rgba(255,250,240,.18) !important;
+  border-right: 0 !important;
+}
+
+body.landing-page #cadre-confiance .trust-key:nth-child(3n) {
+  border-right: 1px solid rgba(255,250,240,.18) !important;
+}
+
+body.landing-page #cadre-confiance .trust-key h3 span {
+  display: block !important;
+}
+
+body.landing-page #cadre-confiance .trust-keys-cta {
+  justify-content: center !important;
+  text-align: center !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+body.landing-page #cadre-confiance .trust-keys-cta p {
+  width: 100% !important;
+  text-align: center !important;
+}
+
+@media (max-width: 980px) {
+  body.landing-page #cadre-confiance .trust-keys-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  body.landing-page #cadre-confiance .trust-key:nth-child(3n) {
+    border-right: 0 !important;
+  }
+  body.landing-page #cadre-confiance .trust-key:nth-child(2n) {
+    border-right: 1px solid rgba(255,250,240,.18) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body.landing-page #cadre-confiance .trust-keys-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+  body.landing-page #cadre-confiance .trust-key,
+  body.landing-page #cadre-confiance .trust-key:nth-child(2n),
+  body.landing-page #cadre-confiance .trust-key:nth-child(3n) {
+    border: 1px solid rgba(255,250,240,.18) !important;
+  }
+}
+
+/* Pertinence : espacement entre cartes et tags alignés en bas */
+body.landing-page .landing-why-narrative--positioned {
+  gap: 24px !important;
+  border: 0 !important;
+}
+
+body.landing-page .landing-why-narrative--positioned .landing-why-key,
+body.landing-page .landing-why-narrative--positioned .landing-why-key:first-child {
+  display: flex !important;
+  flex-direction: column !important;
+  border: 1px solid rgba(17,17,17,.14) !important;
+}
+
+body.landing-page .landing-why-narrative--positioned .landing-why-key p {
+  margin-bottom: 26px !important;
+}
+
+body.landing-page .landing-why-tags {
+  margin-top: auto !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  align-items: start !important;
+  gap: 7px !important;
+}
+
+body.landing-page .landing-why-tags span {
+  width: max-content !important;
+  max-width: 100% !important;
+}
+
+/* Gains : libellé ouvert/fermé autonome */
+body.landing-page .value-details .value-details-close {
+  display: none !important;
+}
+
+body.landing-page .value-details[open] .value-details-open {
+  display: none !important;
+}
+
+body.landing-page .value-details[open] .value-details-close {
+  display: inline !important;
+}
+
+/* CTA : photo à gauche, lien secondaire pleine largeur vers Pour aller plus loin */
+body.landing-page .qualification-cta-grid {
+  grid-template-columns: minmax(280px, 420px) minmax(0, 1fr) !important;
+  align-items: stretch !important;
+}
+
+body.landing-page .qualification-cta-signature {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  min-height: 100% !important;
+  border: 1px solid rgba(255,250,240,.16) !important;
+  background: rgba(255,250,240,.025) !important;
+}
+
+body.landing-page .qualification-cta-photo {
+  margin: 0 !important;
+  width: 100% !important;
+  aspect-ratio: 4 / 5 !important;
+  overflow: hidden !important;
+  border-bottom: 1px solid rgba(255,250,240,.16) !important;
+  background: #0a0a0a !important;
+}
+
+body.landing-page .qualification-cta-photo img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  filter: grayscale(1) contrast(1.05) brightness(.86) !important;
+}
+
+body.landing-page .qualification-cta-signature p {
+  margin: 0 !important;
+  padding: 24px 26px !important;
+  color: rgba(255,250,240,.76) !important;
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
+}
+
+body.landing-page .qualification-cta-more-link {
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: clamp(28px, 4vw, 44px) !important;
+  padding-top: 24px !important;
+  border-top: 1px solid rgba(255,250,240,.18) !important;
+  text-align: center !important;
+}
+
+body.landing-page .qualification-cta-more-link a {
+  color: rgba(255,250,240,.82) !important;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
+  font-size: .74rem !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+}
+
+body.landing-page .qualification-cta-more-link a:hover {
+  color: #fffaf0 !important;
+}
+
+@media (max-width: 900px) {
+  body.landing-page .qualification-cta-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.landing-page .qualification-cta-photo {
+    aspect-ratio: 16 / 9 !important;
   }
 }
