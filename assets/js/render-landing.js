@@ -1,12 +1,12 @@
 /*
   En Plateau — render-landing.js
-  BENTO BUILD — 20260515-HERO-MINIMAL-4CARTES
+  BENTO BUILD — 20260515-MISE-EN-REGARD-EDITORIALE
 
   Objet : remplace la section post-hero "Conversation composée" par une section Bento
   "Votre place dans la conversation".
 
   Marqueurs de vérification :
-  - const BENTO_BUILD_20260515_HERO_MINIMAL_4CARTES = true;
+  - const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
   - buildConversationBentoSection(...)
   - <section class="landing-bento-section" id="mise-en-regard">
 
@@ -18,8 +18,8 @@
 (function () {
   "use strict";
 
-  const BENTO_BUILD_20260515_HERO_MINIMAL_4CARTES = true;
-  console.info("En Plateau — render-landing hero aligned + 4 cartes build 20260515-0558 loaded");
+  const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
+  console.info("En Plateau — render-landing mise en regard éditoriale build 20260515-0742 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -259,6 +259,61 @@
     return readingDisplay(value || "Lecture");
   }
 
+  function readingKey(value) {
+    const key = norm(value || "").replace(/^lecture\s+/, "").trim();
+    if (key.includes("territoire") || key.includes("territorial")) return "territoriale";
+    if (key.includes("strateg")) return "strategique";
+    if (key.includes("operation") || key.includes("production") || key.includes("supply")) return "operationnelle";
+    if (key.includes("techno") || key.includes("systeme") || key.includes("data") || key.includes("numerique")) return "technologie";
+    if (key.includes("finance")) return "financiere";
+    if (key.includes("jurid")) return "juridique";
+    if (key.includes("rh") || key.includes("competence")) return "rh";
+    if (key.includes("energie") || key.includes("ressource") || key.includes("carbone")) return "energie";
+    return "default";
+  }
+
+  function readingContributionLine(readingLabel, fallback = "") {
+    const lines = {
+      territoriale: "La lecture des conditions territoriales : foncier, friches, infrastructures, ancrage et décision locale.",
+      strategique: "La lecture de direction : trajectoire, gouvernance et décision industrielle.",
+      operationnelle: "La lecture du réel industriel : flux, qualité, maintenance, coordination et capacité de pilotage.",
+      technologie: "La lecture des architectures techniques : systèmes, données, interfaces et lisibilité de l’action.",
+      financiere: "La lecture économique : investissement, marges de manœuvre, risque et soutenabilité.",
+      juridique: "La lecture de sécurisation : responsabilité, cadre, conformité et arbitrages de risque.",
+      rh: "La lecture des compétences : métiers, collectifs, engagement et capacité de transformation.",
+      energie: "La lecture des ressources : énergie, eau, carbone, matières et conditions de continuité."
+    };
+    return lines[readingKey(readingLabel)] || shortText(fallback, 220) || "Une lecture complémentaire pour éclairer le même moment de transformation industrielle.";
+  }
+
+  function primaryReadingValue(readingLabel, fallback = "") {
+    const lines = {
+      territoriale: "Éclairer les conditions territoriales qui rendent une trajectoire industrielle possible, soutenable ou réorientable.",
+      strategique: "Éclairer le moment où une trajectoire industrielle oblige à arbitrer autrement.",
+      operationnelle: "Éclairer le moment où le pilotage opérationnel révèle une transformation plus profonde.",
+      technologie: "Éclairer quand les systèmes, données et interfaces deviennent décisifs pour la trajectoire industrielle.",
+      financiere: "Éclairer les conditions économiques qui rendent une transformation industrielle tenable.",
+      juridique: "Éclairer comment le cadre juridique sécurise les arbitrages industriels avant qu’ils ne deviennent des risques.",
+      rh: "Éclairer comment les compétences et les collectifs conditionnent réellement la transformation industrielle.",
+      energie: "Éclairer comment l’énergie, l’eau, le carbone ou les matières deviennent des conditions de continuité industrielle."
+    };
+    return lines[readingKey(readingLabel)] || shortText(fallback, 220) || "Éclairer une condition décisive de transformation industrielle depuis une position située.";
+  }
+
+  function readingTags(readingLabel) {
+    const tags = {
+      territoriale: ["Foncier", "Friches", "Infrastructures", "Ancrage"],
+      strategique: ["Trajectoire", "Gouvernance", "Arbitrage", "Décision"],
+      operationnelle: ["Flux", "Qualité", "Maintenance", "Coordination"],
+      technologie: ["Systèmes", "Données", "Interfaces", "Architecture"],
+      financiere: ["Investissement", "Marge", "Risque", "Soutenabilité"],
+      juridique: ["Cadre", "Responsabilité", "Conformité", "Risque"],
+      rh: ["Métiers", "Compétences", "Collectifs", "Engagement"],
+      energie: ["Énergie", "Eau", "Carbone", "Matières"]
+    };
+    return tags[readingKey(readingLabel)] || ["Angle", "Lecture", "Arbitrage", "Trajectoire"];
+  }
+
   function dealItemsForAngle(angleCode, limit = 4, excludeOrgName = "") {
     const exclude = norm(excludeOrgName);
     const seen = new Set();
@@ -315,14 +370,28 @@
       </details>`;
   }
 
+  function readingsSentence(readingLabel, complementaryAngles) {
+    const labels = [readingLabel, ...toArray(complementaryAngles).map(other => readingLabelForAngle(other))]
+      .map(item => shortReadingLabel(item).toLowerCase())
+      .filter(Boolean);
+    const unique = [];
+    labels.forEach(label => {
+      if (!unique.some(existing => norm(existing) === norm(label))) unique.push(label);
+    });
+    if (!unique.length) return "plusieurs lectures complémentaires";
+    if (unique.length === 1) return `une lecture ${unique[0]}`;
+    if (unique.length === 2) return `une lecture ${unique[0]} et une lecture ${unique[1]}`;
+    return unique.slice(0, -1).map(label => `une lecture ${label}`).join(", ") + ` et une lecture ${unique[unique.length - 1]}`;
+  }
+
   function buildBentoPrimaryCard(angle, publicAngle, formulation, personName, personRole, organisationName, readingLabel) {
-    const title = angleTitle(angle, publicAngle, formulation);
     const desc = angleDescription(angle, publicAngle, formulation);
+    const title = angleTitle(angle, publicAngle, formulation);
     const media = mediaLineForAngle(angle);
-    const actors = actorLabelsForAngle(angle);
+    const tags = readingTags(readingLabel);
     const details = `
       ${desc ? `<p>${safe(shortText(desc, 620))}</p>` : ""}
-      ${actors.length ? `<div class="lpb-detail-block"><span>Acteurs pressentis</span><strong>${safe(actors.join(" · "))}</strong></div>` : ""}
+      ${title ? `<div class="lpb-detail-block"><span>Angle complet</span><strong>${safe(soften(title))}</strong></div>` : ""}
       ${media ? `<div class="lpb-detail-block"><span>Émission pressentie</span><strong>${safe(media)}</strong></div>` : ""}
     `;
     return `
@@ -332,12 +401,12 @@
           <span class="lpb-status">Position proposée</span>
         </div>
         <h3>${safe(shortReadingLabel(readingLabel))}</h3>
-        ${title ? `<p class="lpb-angle">${safe(soften(title))}</p>` : ""}
+        <p class="lpb-angle lpb-angle--value">${safe(primaryReadingValue(readingLabel, desc))}</p>
         <div class="lpb-meta-grid">
           <div><span>Organisation</span><strong>${safe(organisationName)}</strong></div>
-          <div><span>Intervenant</span><strong>${safe([personName, personRole].filter(Boolean).join(" · "))}</strong></div>
+          <div><span>Intervenant pressenti</span><strong>${safe([personName, personRole].filter(Boolean).join(" · "))}</strong></div>
         </div>
-        <div class="lpb-tags"><span>Angle limité</span><span>Lecture située</span><span>À qualifier</span></div>
+        <div class="lpb-tags">${tags.map(tag => `<span>${safe(tag)}</span>`).join("")}</div>
         ${bentoDetail("Lire l’angle proposé", details)}
       </article>`;
   }
@@ -352,40 +421,42 @@
     const actors = actorLabelsForAngle(other);
     const deals = dealItemsForAngle(other.code, 4, excludeOrgName);
     const media = mediaLineForAngle(other);
+    const actorRows = compactPeopleList(deals);
     const detail = `
       ${text ? `<p>${safe(shortText(text, 620))}</p>` : ""}
-      ${actors.length ? `<div class="lpb-detail-block"><span>Acteurs pressentis</span><strong>${safe(actors.join(" · "))}</strong></div>` : ""}
-      ${media ? `<div class="lpb-detail-block"><span>Émission pressentie</span><strong>${safe(media)}</strong></div>` : ""}
+      ${actors.length ? `<div class="lpb-detail-block"><span>Profils attendus</span><strong>${safe(actors.join(" · "))}</strong></div>` : ""}
+      <div class="lpb-detail-block"><span>Acteurs pressentis</span><div class="lpb-chip-list lpb-chip-list--people">${actorRows}</div></div>
     `;
     return `
       <article class="lpb-card lpb-card--other">
         <div class="lpb-card-top">
-          <span class="lpb-label">Lecture ${safe(index + 2)}</span>
-          <span class="lpb-status">Complémentaire</span>
+          <span class="lpb-label">Lecture complémentaire</span>
+          <span class="lpb-status">${safe(String(index + 2).padStart(2, "0"))}</span>
         </div>
         <h3>${safe(shortReadingLabel(readingLabel))}</h3>
-        ${title ? `<p class="lpb-angle">${safe(shortText(title, 170))}</p>` : ""}
+        ${title ? `<p class="lpb-angle lpb-angle--question">${safe(shortText(title, 155))}</p>` : ""}
+        <p class="lpb-contribution"><span>Ce qu’elle apporte</span>${safe(readingContributionLine(readingLabel, text))}</p>
         <div class="lpb-mini-section">
           <span>Organisations approchées</span>
           <div class="lpb-chip-list">${compactOrgList(deals)}</div>
         </div>
-        <div class="lpb-mini-section">
-          <span>Acteurs approchés</span>
-          <div class="lpb-chip-list lpb-chip-list--people">${compactPeopleList(deals)}</div>
-        </div>
         ${media ? `<div class="lpb-media"><span>Émission</span><strong>${safe(media)}</strong></div>` : ""}
-        ${bentoDetail("Détail de cette lecture", detail)}
+        ${bentoDetail("Voir les acteurs pressentis", detail)}
       </article>`;
   }
 
   function buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles) {
+    const reading = shortReadingLabel(readingLabel).toLowerCase();
+    const title = `Votre lecture ${reading} prend sa valeur dans une conversation composée.`;
+    const sentence = readingsSentence(readingLabel, complementaryAngles);
     return `
-      <section class="landing-bento-section" id="mise-en-regard" data-bento-build="20260515-4cartes">
+      <section class="landing-bento-section" id="mise-en-regard" data-bento-build="20260515-mise-en-regard-editoriale">
         <div class="landing-container lpb-container">
           <div class="lpb-head">
-            <p class="lpb-kicker">Votre place dans la conversation</p>
-            <h2>Une conversation à plusieurs voix. Une lecture proposée à votre organisation.</h2>
-            <p>Chaque intervenant participe séparément. La valeur naît ensuite de la mise en regard des lectures, des organisations et des angles pressentis.</p>
+            <p class="lpb-kicker">Mise en regard éditoriale</p>
+            <h2>${safe(title)}</h2>
+            <p>Chaque intervenant participe séparément. La valeur naît ensuite de la mise en regard&nbsp;: ${safe(sentence)} éclairent le même moment de transformation industrielle.</p>
+            <p class="lpb-subnote">Il ne s’agit pas d’une table ronde ni d’un débat contradictoire. Chaque contribution est préparée individuellement, puis articulée aux autres lectures pour faire apparaître ce que chacune permet de voir.</p>
           </div>
           <div class="lpb-grid lpb-grid--four-cards">
             ${buildBentoPrimaryCard(angle, publicAngle, formulation, personName, personRole, organisationName, readingLabel)}
