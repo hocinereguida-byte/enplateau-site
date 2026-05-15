@@ -1,4219 +1,2040 @@
 /*
-  En Plateau — landing.css
-  Version V65.6
-  Gabarit landing one-to-one — /lp/industrie/contribuer.html
+  En Plateau — render-landing.js
+  BUILD — 20260515-REPRISE-GLOBALE
 
-  Modifications V65.5 :
-  - .landing-hero__grid : la colonne droite devient .landing-hero-side
-    (align-self: start pour que le contenu s'empile vers le haut)
-  - .landing-film        : reprend exactement le rendu .home-film de la home
-                           (cadre cinématographique, B&W, ombre)
-  - .landing-film-track  : image unique, pas d'animation
-  - .landing-film-caption: légende journaliste + outlet sous l'image
-  - Suppression de .landing-emission (remplacé par .landing-film)
-  - .landing-rarity      : texte mis à jour, style conservé
-  - .landing-identity--single : conservé
-  - .landing-why-narrative    : conservé
-  Modifications V65.6 :
-  - Lisibilité renforcée sur toutes les sections sombres de la landing.
-  - Hero desktop resserré pour faire remonter les CTA.
-  - Ajout grille 4 colonnes pour la section processus.
-  - Image "Pourquoi vous" remplacée par une image abstraite moins anxiogène.
-  Aucune règle existante supprimée.
+  Objet : remplace la section post-hero "Conversation composée" par une section Bento
+  "Votre place dans la conversation".
+
+  Marqueurs de vérification :
+  - const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
+  - buildConversationBentoSection(...)
+  - <section class="landing-bento-section" id="mise-en-regard">
+
+  Ne modifie pas :
+  - editorial-data-industrie-v67.js
+  - render-core.js
 */
 
-:root {
-  --landing-bg: var(--ep-black, #111111);
-  --landing-bg-soft: var(--ep-black-soft, #171717);
-  --landing-paper: var(--ep-paper, #f4efe6);
-  --landing-white: var(--ep-white, #ffffff);
-  --landing-ink: var(--ep-ink, #151515);
-  --landing-ink-soft: rgba(17,17,17,.76);
-  --landing-ink-muted: rgba(17,17,17,.60);
-  --landing-text: var(--ep-dark-text, #f6f1e9);
-  --landing-text-soft: rgba(246,241,233,.86);
-  --landing-text-muted: rgba(246,241,233,.68);
-  --landing-line: var(--ep-line, rgba(17,17,17,.14));
-  --landing-line-dark: rgba(255,255,255,.18);
-  --landing-accent: var(--ep-accent, #6f7f8f);
-  --landing-accent-soft: #c8d2dc;
-  --landing-container: 1120px;
-}
-
-* { box-sizing: border-box; }
-
-body.landing-page {
-  margin: 0;
-  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
-  background: var(--landing-bg);
-  color: var(--landing-text);
-}
-
-.landing-root {
-  min-height: 100vh;
-  background: var(--landing-bg);
-}
-
-.landing-container {
-  width: min(calc(100% - 40px), var(--landing-container));
-  margin: 0 auto;
-}
-
-/* ── BANDEAU ──────────────────────────────────────────── */
-
-.landing-top {
-  position: absolute;
-  z-index: 10;
-  top: 0; left: 0; right: 0;
-  padding: 26px 0;
-  pointer-events: none;
-}
-
-.landing-top__inner {
-  width: min(calc(100% - 40px), var(--landing-container));
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.landing-brand {
-  pointer-events: auto;
-  display: inline-flex;
-  align-items: center;
-  color: var(--landing-text);
-  text-decoration: none;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(1.55rem, 2.5vw, 2.1rem);
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -.025em;
-}
-
-.landing-brand::before {
-  content: "";
-  display: inline-block;
-  width: 28px;
-  height: 1px;
-  margin-right: 12px;
-  background: currentColor;
-  opacity: .62;
-}
-
-.landing-top__meta {
-  pointer-events: none;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--landing-text-muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 360px;
-}
-
-/* ── HERO ─────────────────────────────────────────────── */
-
-.landing-hero {
-  position: relative;
-  min-height: 96vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background:
-    linear-gradient(90deg, rgba(17,17,17,.96) 0%, rgba(17,17,17,.86) 52%, rgba(17,17,17,.65) 100%),
-    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
-  color: var(--landing-text);
-}
-
-.landing-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 76% 24%, rgba(255,255,255,.10), transparent 30%),
-    linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.30));
-  pointer-events: none;
-}
-
-.landing-hero__grid {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
-  gap: clamp(34px, 6vw, 72px);
-  align-items: start; /* MODIF V65.5 : start pour que la col droite s'empile vers le haut */
-  padding: 122px 0 82px;
-}
-
-/* ── COLONNE DROITE HERO : .landing-hero-side ──────────
-   Remplace la colonne aside précédente.
-   Empile verticalement : film > légende > carte.
-   align-self: start pour coller vers le haut de la grille.
-───────────────────────────────────────────────────────── */
-
-.landing-hero-side {
-  justify-self: end;
-  align-self: start;
-  width: 100%;
-  max-width: 430px;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ── BLOC FILM ÉMISSION ─────────────────────────────────
-   Reprend fidèlement .home-film / .home-film-track
-   en namespace .landing-film pour isolation CSS.
-   Image unique, pas d'animation de défilement.
-───────────────────────────────────────────────────────── */
-
-.landing-film {
-  position: relative;
-  width: 100%;
-  /* Hauteur proportionnelle 16/9 */
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.10);
-  background-color: #0d0d0d;
-  /* Cadre cinématographique identique à .home-film */
-  background-image:
-    linear-gradient(rgba(255,255,255,.07), rgba(255,255,255,.07)),
-    linear-gradient(rgba(255,255,255,.07), rgba(255,255,255,.07)),
-    repeating-linear-gradient(
-      to bottom,
-      rgba(255,255,255,.06) 0 1px,
-      transparent 1px 34px
-    ),
-    repeating-linear-gradient(
-      to bottom,
-      rgba(255,255,255,.06) 0 1px,
-      transparent 1px 34px
-    ),
-    linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.01));
-  background-size:
-    1px calc(100% - 24px),
-    1px calc(100% - 24px),
-    5px calc(100% - 36px),
-    5px calc(100% - 36px),
-    100% 100%;
-  background-position:
-    18px 12px,
-    calc(100% - 18px) 12px,
-    9px 18px,
-    calc(100% - 14px) 18px,
-    0 0;
-  background-repeat: no-repeat;
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.025),
-    inset 0 0 28px rgba(0,0,0,.78);
-  margin-bottom: 0;
-}
-
-/* Fondu haut / bas identiques à .home-film */
-.landing-film::before,
-.landing-film::after {
-  content: "";
-  position: absolute;
-  left: 26px; right: 26px;
-  height: 48px;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.landing-film::before {
-  top: 0;
-  background: linear-gradient(180deg, rgba(8,8,8,.92), rgba(8,8,8,0));
-}
-
-.landing-film::after {
-  bottom: 0;
-  background: linear-gradient(0deg, rgba(8,8,8,.92), rgba(8,8,8,0));
-}
-
-.landing-film-track {
-  width: 100%;
-  height: 100%;
-  padding: 12px 20px;
-}
-
-.landing-film-track > div {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.08);
-  background: #0a0a0a;
-  box-shadow:
-    0 0 0 1px rgba(0,0,0,.62),
-    inset 0 0 18px rgba(0,0,0,.48);
-}
-
-.landing-film-track > div::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.32)),
-    linear-gradient(90deg, rgba(0,0,0,.22), transparent 20%, transparent 80%, rgba(0,0,0,.22));
-  pointer-events: none;
-}
-
-.landing-film-track img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  /* Filtre B&W identique à .home-film-track img */
-  opacity: .74;
-  filter: grayscale(100%) contrast(110%) brightness(.72);
-}
-
-/* ── LÉGENDE ÉMISSION ───────────────────────────────────
-   Sous le bloc film, avant la carte.
-   Sobre : journaliste en gras + outlet en mono.
-───────────────────────────────────────────────────────── */
-
-.landing-film-caption {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  padding: 10px 2px 14px;
-  border-bottom: 1px solid var(--landing-line-dark);
-  margin-bottom: 0;
-}
-
-.landing-film-caption strong {
-  color: var(--landing-text);
-  font-size: .9rem;
-  font-weight: 600;
-  line-height: 1.3;
-  white-space: nowrap;
-}
-
-.landing-film-caption span {
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .72rem;
-  letter-spacing: .07em;
-  color: var(--landing-text-muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* ── CARTE HERO ───────────────────────────────────────── */
-
-.landing-hero__card {
-  width: 100%;
-  border: 1px solid var(--landing-line-dark);
-  border-top: 0; /* Fondu avec la légende au-dessus */
-  background: rgba(255,255,255,.055);
-  backdrop-filter: blur(10px);
-  padding: 22px 26px 26px;
-}
-
-.landing-hero__card h2 {
-  margin: 0 0 10px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(1.1rem, 1.6vw, 1.38rem);
-  line-height: 1.25;
-  font-weight: 600;
-  color: var(--landing-text);
-}
-
-.landing-hero__card p {
-  margin: 0;
-  font-size: .88rem;
-  line-height: 1.7;
-  color: var(--landing-text-soft);
-}
-
-/* ── IDENTITÉ ─────────────────────────────────────────── */
-
-.landing-identity {
-  margin-top: 18px;
-  border-top: 1px solid var(--landing-line-dark);
-  padding-top: 15px;
-}
-
-.landing-identity span {
-  display: block;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--landing-text-muted);
-  margin-bottom: 6px;
-}
-
-.landing-identity strong {
-  display: block;
-  color: var(--landing-text);
-  font-weight: 500;
-  line-height: 1.45;
-}
-
-/* Identité fusionnée nom · rôle · org */
-.landing-identity--single {
-  margin-top: 18px;
-  border-top: 1px solid var(--landing-line-dark);
-  padding-top: 15px;
-}
-
-.landing-identity--single span {
-  display: block;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--landing-text-muted);
-  margin-bottom: 6px;
-}
-
-.landing-identity--single strong {
-  display: block;
-  color: var(--landing-text);
-  font-weight: 500;
-  font-size: .86rem;
-  line-height: 1.5;
-}
-
-/* ── SIGNAL DE RARETÉ ────────────────────────────────── */
-
-.landing-rarity {
-  margin-top: 16px;
-  border-top: 1px solid var(--landing-line-dark);
-  padding-top: 14px;
-  display: flex;
-  align-items: flex-start;
-  gap: 9px;
-}
-
-.landing-rarity__dot {
-  flex-shrink: 0;
-  width: 5px;
-  height: 5px;
-  margin-top: 5px;
-  border-radius: 50%;
-  background: var(--landing-accent-soft);
-  opacity: .7;
-}
-
-.landing-rarity p {
-  margin: 0;
-  font-size: .78rem;
-  line-height: 1.62;
-  color: var(--landing-text-muted);
-}
-
-.landing-rarity p strong {
-  color: var(--landing-text-soft);
-  font-weight: 500;
-}
-
-/* ── KICKER / LEAD / ACTIONS ──────────────────────────── */
-
-.landing-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 0 16px;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem;
-  font-weight: 400;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--landing-accent-soft);
-}
-
-.landing-kicker::before {
-  content: "";
-  width: 20px;
-  height: 1px;
-  background: currentColor;
-  opacity: .75;
-}
-
-.landing-hero h1 {
-  max-width: 13.5ch;
-  margin: 0 0 20px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(2.15rem, 4.4vw, 4.15rem);
-  line-height: 1.05;
-  letter-spacing: -.025em;
-  font-weight: 600;
-  color: var(--landing-text);
-}
-
-.landing-hero h1 em {
-  font-style: normal;
-  color: var(--landing-text);
-  white-space: nowrap;
-}
-
-.landing-lead {
-  max-width: 760px;
-  margin: 0 0 14px;
-  font-size: clamp(.98rem, 1.25vw, 1.08rem);
-  line-height: 1.76;
-  color: var(--landing-text-soft);
-}
-
-.landing-lead strong {
-  color: var(--landing-text);
-  font-weight: 500;
-}
-
-.landing-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 16px;
-  align-items: center;
-  margin-top: 28px;
-}
-
-.landing-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  padding: 0 22px;
-  border: 1px solid var(--landing-text);
-  color: var(--landing-bg);
-  background: var(--landing-text);
-  text-decoration: none;
-  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
-  font-size: .84rem;
-  font-weight: 600;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  line-height: 1;
-}
-
-.landing-btn:hover { opacity: .84; }
-
-.landing-btn--ghost {
-  background: transparent;
-  color: var(--landing-text);
-  border-color: rgba(255,255,255,.32);
-}
-
-.landing-reassurance {
-  margin: 14px 0 0;
-  max-width: 600px;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem;
-  line-height: 1.55;
-  color: var(--landing-text-muted);
-}
-
-/* ── SECTIONS ─────────────────────────────────────────── */
-
-.landing-section {
-  position: relative;
-  padding: clamp(58px, 8vw, 96px) 0;
-  overflow: hidden;
-}
-
-.landing-section--light {
-  background: var(--landing-paper);
-  color: var(--landing-ink);
-}
-
-.landing-section--dark {
-  background: var(--landing-bg);
-  color: var(--landing-text);
-}
-
-.landing-section--dark + .landing-section--dark {
-  border-top: 1px solid var(--landing-line-dark);
-}
-
-.landing-head {
-  max-width: 860px;
-  margin: 0 auto 38px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.landing-head--left { margin-left: 0; text-align: left; }
-
-.landing-head h2 {
-  margin: 0 0 14px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(1.65rem, 3vw, 2.55rem);
-  line-height: 1.15;
-  letter-spacing: -.015em;
-  font-weight: 600;
-}
-
-.landing-head p {
-  max-width: 820px;
-  margin: 0 auto;
-  font-size: 1rem;
-  line-height: 1.72;
-}
-
-.landing-head--left p { margin-left: 0; }
-.landing-section--light .landing-head p { color: var(--landing-ink-soft); }
-.landing-section--dark .landing-head p  { color: var(--landing-text-soft); }
-
-/* ── SPLIT ────────────────────────────────────────────── */
-
-.landing-split {
-  display: grid;
-  grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
-  gap: 2px;
-  background: var(--landing-line);
-}
-
-.landing-split__visual {
-  min-height: 430px;
-  color: var(--landing-text);
-  padding: clamp(30px, 4vw, 44px);
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  background:
-    linear-gradient(90deg, rgba(17,17,17,.90) 0%, rgba(17,17,17,.76) 52%, rgba(17,17,17,.56) 100%),
-    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
-}
-
-.landing-split__visual h2 {
-  position: relative;
-  z-index: 2;
-  max-width: 11ch;
-  margin: 0;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(1.65rem, 3vw, 2.55rem);
-  line-height: 1.15;
-  letter-spacing: -.015em;
-  font-weight: 600;
-  color: var(--landing-text);
-}
-
-.landing-split__copy {
-  background: var(--landing-white);
-  padding: clamp(30px, 4vw, 42px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* ── NARRATION "POURQUOI VOUS" ────────────────────────── */
-
-.landing-why-narrative {
-  display: flex;
-  flex-direction: column;
-}
-
-.landing-why-narrative p {
-  margin: 0;
-  padding: 20px 0 20px 18px;
-  border-left: 2px solid var(--landing-line);
-  font-size: .97rem;
-  line-height: 1.78;
-  color: var(--landing-ink-soft);
-}
-
-.landing-why-narrative p + p {
-  border-top: 1px solid var(--landing-line);
-}
-
-.landing-why-narrative p:first-child {
-  padding-top: 0;
-  border-left-color: var(--landing-accent);
-}
-
-.landing-why-narrative p:last-child {
-  padding-bottom: 0;
-}
-
-/* ── POINTS ───────────────────────────────────────────── */
-
-.landing-point {
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--landing-line);
-}
-
-.landing-point:last-child {
-  padding-bottom: 0;
-  margin-bottom: 0;
-  border-bottom: 0;
-}
-
-.landing-point h3,
-.landing-card h3 {
-  margin: 0 0 8px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: 1.12rem;
-  line-height: 1.3;
-  letter-spacing: -.01em;
-  font-weight: 600;
-}
-
-.landing-point p,
-.landing-card p {
-  margin: 0;
-  font-size: .93rem;
-  line-height: 1.72;
-}
-
-.landing-section--light .landing-point p,
-.landing-section--light .landing-card p { color: var(--landing-ink-soft); }
-.landing-section--dark .landing-card p  { color: var(--landing-text-soft); }
-
-/* ── CARDS ────────────────────────────────────────────── */
-
-.landing-grid {
-  display: grid;
-  gap: 2px;
-  background: var(--landing-line);
-}
-
-.landing-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.landing-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.landing-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.landing-grid--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-
-.landing-section--dark .landing-grid { background: var(--landing-line-dark); }
-
-.landing-card {
-  background: var(--landing-white);
-  color: var(--landing-ink);
-  padding: clamp(24px, 3vw, 34px);
-  min-height: 100%;
-}
-
-.landing-section--dark .landing-card {
-  background: rgba(255,255,255,.055);
-  color: var(--landing-text);
-  border: 0;
-}
-
-.landing-label {
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 14px;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .67rem;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  color: var(--landing-accent);
-}
-
-.landing-section--dark .landing-label { color: var(--landing-accent-soft); }
-
-.landing-card--accent {
-  background: var(--landing-bg);
-  color: var(--landing-text);
-}
-
-.landing-card--accent p { color: var(--landing-text-soft) !important; }
-
-/* ── DECISION ─────────────────────────────────────────── */
-
-.landing-decision {
-  display: grid;
-  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
-  gap: 2px;
-  background: rgba(255,255,255,.06);
-}
-
-.landing-decision__visual {
-  min-height: 520px;
-  background:
-    linear-gradient(90deg, rgba(17,17,17,.82), rgba(17,17,17,.54)),
-    url("../../images/allumette-flamme.jpg") center/cover no-repeat;
-  filter: grayscale(8%) contrast(116%) brightness(.72);
-}
-
-.landing-decision__copy {
-  background: var(--landing-bg);
-  padding: clamp(30px, 4vw, 42px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.landing-decision__copy h2 {
-  margin: 0 0 22px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(1.65rem, 3vw, 2.55rem);
-  line-height: 1.15;
-  letter-spacing: -.015em;
-  font-weight: 600;
-  color: var(--landing-text);
-}
-
-/* ── PROCESSUS ────────────────────────────────────────── */
-
-.landing-section--process {
-  border-top: 1px solid var(--landing-line-dark);
-}
-
-.landing-process-grid {
-  align-items: stretch;
-}
-
-.landing-process-card {
-  position: relative;
-  min-height: 250px;
-}
-
-.landing-process-card .landing-label {
-  margin-bottom: 18px;
-}
-
-.landing-process-deadline {
-  margin-top: 18px !important;
-  padding-top: 14px;
-  border-top: 1px solid var(--landing-line-dark);
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem !important;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--landing-text-muted) !important;
-}
-
-/* ── FINAL CTA ────────────────────────────────────────── */
-
-.landing-final {
-  background:
-    linear-gradient(90deg, rgba(17,17,17,.94) 0%, rgba(17,17,17,.82) 55%, rgba(17,17,17,.68) 100%),
-    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
-  color: var(--landing-text);
-  text-align: center;
-}
-
-.landing-final h2 {
-  max-width: 820px;
-  margin: 0 auto 16px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(1.9rem, 3.8vw, 3.25rem);
-  line-height: 1.1;
-  letter-spacing: -.02em;
-  font-weight: 600;
-}
-
-.landing-final p {
-  max-width: 760px;
-  margin: 0 auto;
-  font-size: 1rem;
-  line-height: 1.72;
-  color: var(--landing-text-soft);
-}
-
-.landing-final .landing-actions { justify-content: center; }
-
-/* ── LOADING / ERROR ──────────────────────────────────── */
-
-.landing-loading {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 40px 20px;
-  background:
-    linear-gradient(90deg, rgba(17,17,17,.96), rgba(17,17,17,.78)),
-    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
-  color: var(--landing-text);
-}
-
-.landing-loading__box {
-  width: min(760px, 100%);
-  border: 1px solid var(--landing-line-dark);
-  background: rgba(255,255,255,.035);
-  padding: clamp(28px, 5vw, 52px);
-}
-
-.landing-brand--loading { margin-bottom: 24px; }
-
-.landing-loading h1 {
-  margin: 0 0 14px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.12;
-  font-weight: 600;
-}
-
-.landing-loading p {
-  margin: 0;
-  color: var(--landing-text-soft);
-  line-height: 1.7;
-}
-
-/* ── RESPONSIVE ───────────────────────────────────────── */
-
-@media (max-width: 980px) {
-  .landing-hero__grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Sur mobile, la colonne droite passe en pleine largeur */
-  .landing-hero-side {
-    justify-self: stretch;
-    max-width: none;
-  }
-
-  .landing-split,
-  .landing-decision,
-  .landing-grid--2,
-  .landing-grid--3,
-  .landing-grid--4,
-  .landing-grid--5 {
-    grid-template-columns: 1fr;
-  }
-
-  .landing-hero h1 { max-width: 15ch; }
-
-  .landing-decision__visual,
-  .landing-split__visual { min-height: 320px; }
-
-  .landing-top__meta { display: none; }
-
-  /* Narration why */
-  .landing-why-narrative p { padding-left: 14px; }
-}
-
-@media (max-width: 620px) {
-  .landing-container,
-  .landing-top__inner {
-    width: min(calc(100% - 32px), var(--landing-container));
-  }
-
-  .landing-top  { padding: 20px 0; }
-  .landing-brand { font-size: 1.52rem; }
-  .landing-hero  { min-height: auto; }
-  .landing-hero__grid { padding: 104px 0 58px; }
-  .landing-hero h1 { font-size: clamp(2rem, 11vw, 3rem); }
-
-  .landing-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .landing-btn { width: 100%; }
-  .landing-section { padding: 52px 0; }
-
-  .landing-split__copy,
-  .landing-decision__copy,
-  .landing-card,
-  .landing-hero__card { padding: 24px; }
-
-  /* Film mobile : ratio préservé, cadre maintenu */
-  .landing-film-track { padding: 8px 12px; }
-
-  /* Légende mobile */
-  .landing-film-caption { flex-wrap: wrap; }
-
-  /* Narration why mobile */
-  .landing-why-narrative p {
-    padding-left: 12px;
-    font-size: .93rem;
-  }
-
-  /* Rareté mobile */
-  .landing-rarity p { font-size: .76rem; }
-}
-
-/* ─────────────────────────────────────────────
-   PATCH V65.6 — LISIBILITÉ + CONVERSION
-   À conserver en fin de fichier pour neutraliser
-   les éventuels héritages de layout.css.
-───────────────────────────────────────────── */
-
-body.landing-page .landing-section--dark,
-body.landing-page .landing-section--dark h2,
-body.landing-page .landing-section--dark h3,
-body.landing-page .landing-section--dark strong,
-body.landing-page .landing-section--dark .landing-head h2,
-body.landing-page .landing-section--dark .landing-card h3,
-body.landing-page .landing-section--dark .landing-point h3,
-body.landing-page .landing-decision__copy h2,
-body.landing-page .landing-final h2 {
-  color: var(--landing-text) !important;
-}
-
-body.landing-page .landing-section--dark p,
-body.landing-page .landing-section--dark .landing-head p,
-body.landing-page .landing-section--dark .landing-card p,
-body.landing-page .landing-section--dark .landing-point p,
-body.landing-page .landing-final p,
-body.landing-page .landing-final .landing-reassurance {
-  color: var(--landing-text-soft) !important;
-}
-
-body.landing-page .landing-section--dark .landing-label,
-body.landing-page .landing-section--dark .landing-kicker {
-  color: var(--landing-accent-soft) !important;
-}
-
-body.landing-page .landing-card--accent,
-body.landing-page .landing-card--accent h3,
-body.landing-page .landing-card--accent strong {
-  color: var(--landing-text) !important;
-}
-
-body.landing-page .landing-card--accent p {
-  color: var(--landing-text-soft) !important;
-}
-
-@media (min-width: 981px) {
-  body.landing-page .landing-hero h1 {
-    max-width: 16.5ch;
-    font-size: clamp(2.35rem, 3.8vw, 3.65rem);
-    line-height: 1.04;
-  }
-
-  body.landing-page .landing-hero__grid {
-    align-items: center;
-    padding-top: 112px;
-    padding-bottom: 72px;
-  }
-}
-
-
-/* ─────────────────────────────────────────────
-   PATCH FLOW COMPACT — 14/05
-   Objectif : hiérarchie conversion/conviction,
-   lisibilité dark sections, cartes alignées,
-   mise en regard plus tangible.
-───────────────────────────────────────────── */
-
-body.landing-page .landing-head {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body.landing-page .landing-head .landing-kicker {
-  justify-content: center;
-}
-
-body.landing-page .landing-head--left {
-  text-align: center;
-  margin-left: auto;
-}
-
-body.landing-page .landing-head--left p {
-  margin-left: auto;
-}
-
-body.landing-page .landing-why-box {
-  width: min(920px, 100%);
-  margin: 0 auto;
-  background: var(--landing-white);
-  border: 1px solid var(--landing-line);
-  padding: clamp(22px, 3vw, 36px);
-}
-
-body.landing-page .landing-why-box .landing-why-narrative p {
-  border-left-color: rgba(17,17,17,.18);
-}
-
-body.landing-page .landing-why-box .landing-why-narrative p:first-child {
-  border-left-color: var(--landing-accent);
-}
-
-body.landing-page .landing-inline-cta {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 24px;
-}
-
-body.landing-page .landing-inline-cta .landing-btn {
-  min-width: 250px;
-}
-
-body.landing-page .landing-inline-cta--dark {
-  justify-content: center;
-}
-
-body.landing-page .landing-reassurance--light {
-  color: var(--landing-ink-muted) !important;
-}
-
-body.landing-page .landing-card {
-  display: grid;
-  grid-template-rows: auto minmax(3.25em, auto) 1fr;
-  align-content: start;
-}
-
-body.landing-page .landing-card .landing-label {
-  align-self: start;
-}
-
-body.landing-page .landing-card h3 {
-  align-self: start;
-}
-
-body.landing-page .landing-card p {
-  align-self: start;
-}
-
-body.landing-page .landing-grid--value .landing-card h3,
-body.landing-page .landing-grid--3 .landing-card h3 {
-  min-height: 3.25em;
-}
-
-body.landing-page .landing-grid--complementary .landing-card {
-  grid-template-rows: auto auto minmax(3.25em, auto) 1fr;
-}
-
-body.landing-page .landing-actors {
-  margin: 0 0 18px;
-  padding: 0 0 18px;
-  border-bottom: 1px solid var(--landing-line);
-}
-
-body.landing-page .landing-actors span {
-  display: block;
-  margin-bottom: 7px;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .66rem;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  color: var(--landing-accent);
-}
-
-body.landing-page .landing-actors strong {
-  display: block;
-  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
-  font-size: .93rem;
-  line-height: 1.55;
-  font-weight: 500;
-  color: var(--landing-ink);
-}
-
-body.landing-page .landing-section--dark .landing-actors {
-  border-bottom-color: var(--landing-line-dark);
-}
-
-body.landing-page .landing-section--dark .landing-actors span {
-  color: var(--landing-accent-soft);
-}
-
-body.landing-page .landing-section--dark .landing-actors strong {
-  color: var(--landing-text) !important;
-}
-
-body.landing-page .landing-section--dark .landing-card,
-body.landing-page .landing-section--dark .landing-card--accent,
-body.landing-page .landing-section--dark .landing-process-card {
-  background: rgba(255,255,255,.065);
-  color: var(--landing-text) !important;
-}
-
-body.landing-page .landing-section--dark .landing-card h3,
-body.landing-page .landing-section--dark .landing-card--accent h3,
-body.landing-page .landing-section--dark .landing-card strong {
-  color: var(--landing-text) !important;
-}
-
-body.landing-page .landing-section--dark .landing-card p,
-body.landing-page .landing-section--dark .landing-card--accent p {
-  color: var(--landing-text-soft) !important;
-}
-
-body.landing-page .landing-section--dark .landing-head h2,
-body.landing-page .landing-section--dark .landing-head p,
-body.landing-page .landing-section--dark .landing-kicker,
-body.landing-page .landing-final h2,
-body.landing-page .landing-final p {
-  opacity: 1 !important;
-}
-
-body.landing-page .landing-more-intro {
-  padding-bottom: 22px;
-}
-
-body.landing-page .landing-more-intro + .landing-section {
-  padding-top: 46px;
-}
-
-body.landing-page #cadre-confiance .landing-card--trust {
-  min-height: 245px;
-}
-
-body.landing-page #cadre-confiance .landing-card--trust::before {
-  content: "";
-  width: 22px;
-  height: 22px;
-  margin-bottom: 18px;
-  border: 1px solid var(--landing-line);
-  display: block;
-  background: linear-gradient(135deg, rgba(17,17,17,.06), rgba(17,17,17,.015));
-}
-
-@media (max-width: 980px) {
-  body.landing-page .landing-card,
-  body.landing-page .landing-grid--complementary .landing-card {
-    display: block;
-  }
-
-  body.landing-page .landing-grid--value .landing-card h3,
-  body.landing-page .landing-grid--3 .landing-card h3 {
-    min-height: 0;
-  }
-
-  body.landing-page .landing-inline-cta {
-    align-items: stretch;
-  }
-}
-
-@media (max-width: 620px) {
-  body.landing-page .landing-inline-cta .landing-btn {
-    width: 100%;
-    min-width: 0;
-  }
-}
-
-/* ─────────────────────────────────────────────
-   PATCH CONVERSATION CARDS — Hero allégé + composition
-   - Hero H1 = titre canonique de conversation
-   - Carte position dans le hero
-   - Section conversation immédiatement sous le hero
-   - Cartes composition : acteurs, organisations, média
-───────────────────────────────────────────── */
-
-body.landing-page .landing-hero {
-  min-height: auto;
-}
-
-@media (min-width: 981px) {
-  body.landing-page .landing-hero__grid {
-    grid-template-columns: minmax(0, 1.02fr) minmax(340px, .98fr);
-    align-items: center;
-    padding-top: 118px;
-    padding-bottom: 70px;
-  }
-
-  body.landing-page .landing-hero h1 {
-    max-width: 18.5ch;
-    font-size: clamp(2.12rem, 3.35vw, 3.45rem);
-    line-height: 1.05;
-  }
-}
-
-body.landing-page .landing-lead--compact {
-  margin-top: 10px;
-  max-width: 660px;
-}
-
-body.landing-page .landing-hero-position-card .landing-label {
-  margin-bottom: 12px;
-}
-
-body.landing-page .landing-hero-position-card h3 {
-  margin: 0 0 12px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
-  line-height: 1.28;
-  color: var(--landing-text) !important;
-}
-
-body.landing-page .landing-hero-position-card p {
-  font-size: .88rem;
-  line-height: 1.65;
-}
-
-body.landing-page .landing-hero-position-card .landing-identity--single strong {
-  font-size: .86rem;
-}
-
-body.landing-page .landing-conversation-transition {
-  width: min(860px, 100%);
-  margin: -14px auto 30px;
-  padding: 18px 22px;
-  border-top: 1px solid var(--landing-line);
-  border-bottom: 1px solid var(--landing-line);
-  text-align: center;
-}
-
-body.landing-page .landing-conversation-transition p {
-  margin: 0;
-  font-size: .95rem;
-  line-height: 1.7;
-  color: var(--landing-ink-soft);
-}
-
-body.landing-page .landing-composition-grid .landing-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  min-height: 100%;
-}
-
-body.landing-page .landing-card--primary-position {
-  background: var(--landing-bg);
-  color: var(--landing-text);
-}
-
-body.landing-page .landing-card--primary-position h3,
-body.landing-page .landing-card--primary-position strong {
-  color: var(--landing-text) !important;
-}
-
-body.landing-page .landing-card--primary-position p {
-  color: var(--landing-text-soft) !important;
-}
-
-body.landing-page .landing-card--primary-position .landing-label,
-body.landing-page .landing-card--primary-position .landing-actors span,
-body.landing-page .landing-card--primary-position .landing-organisations span,
-body.landing-page .landing-card--primary-position .landing-media-line span {
-  color: var(--landing-accent-soft) !important;
-}
-
-body.landing-page .landing-card--primary-position .landing-actors,
-body.landing-page .landing-card--primary-position .landing-organisations,
-body.landing-page .landing-card--primary-position .landing-media-line {
-  border-bottom-color: var(--landing-line-dark);
-}
-
-body.landing-page .landing-organisations,
-body.landing-page .landing-media-line {
-  margin: 0 0 18px;
-  padding: 0 0 18px;
-  border-bottom: 1px solid var(--landing-line);
-}
-
-body.landing-page .landing-organisations span,
-body.landing-page .landing-media-line span {
-  display: block;
-  margin-bottom: 7px;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .66rem;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  color: var(--landing-accent);
-}
-
-body.landing-page .landing-organisations strong,
-body.landing-page .landing-media-line strong {
-  display: block;
-  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
-  font-size: .9rem;
-  line-height: 1.52;
-  font-weight: 500;
-  color: var(--landing-ink);
-}
-
-body.landing-page .landing-card-note {
-  margin-top: auto !important;
-  padding-top: 18px;
-  border-top: 1px solid var(--landing-line-dark);
-  font-size: .85rem !important;
-}
-
-body.landing-page .landing-card-note strong {
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .66rem;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  font-weight: 400;
-  color: var(--landing-accent-soft) !important;
-}
-
-body.landing-page .landing-section--dark .landing-organisations,
-body.landing-page .landing-section--dark .landing-media-line {
-  border-bottom-color: var(--landing-line-dark);
-}
-
-body.landing-page .landing-section--dark .landing-organisations span,
-body.landing-page .landing-section--dark .landing-media-line span {
-  color: var(--landing-accent-soft);
-}
-
-body.landing-page .landing-section--dark .landing-organisations strong,
-body.landing-page .landing-section--dark .landing-media-line strong {
-  color: var(--landing-text) !important;
-}
-
-body.landing-page .landing-composition-grid .landing-card h3 {
-  min-height: 0 !important;
-  margin-top: 0;
-}
-
-body.landing-page .landing-composition-grid .landing-label {
-  margin-top: 2px;
-}
-
-@media (max-width: 980px) {
-  body.landing-page .landing-composition-grid .landing-card {
-    display: block;
-  }
-
-  body.landing-page .landing-conversation-transition {
-    margin-top: 0;
-    text-align: left;
-  }
-  }
-/*
-  En Plateau — landing.css
-  Section post-hero Bento 4 cartes — version 20260515-4cartes.
-  Objectif : une seule ligne desktop : votre lecture en crème + 3 lectures complémentaires en noir.
-*/
-
-:root {
-  --lpb-black: #0f0f0f;
-  --lpb-black-2: #151515;
-  --lpb-black-3: #1b1b1b;
-  --lpb-cream: #f3eee4;
-  --lpb-cream-2: #fffaf0;
-  --lpb-ink: #171717;
-  --lpb-muted: rgba(23, 23, 23, .66);
-  --lpb-muted-dark: rgba(243, 238, 228, .70);
-  --lpb-muted-dark-2: rgba(243, 238, 228, .54);
-  --lpb-line: rgba(23, 23, 23, .16);
-  --lpb-line-dark: rgba(243, 238, 228, .22);
-  --lpb-mono: var(--font-mono, "IBM Plex Mono", monospace);
-  --lpb-sans: var(--font-body, "IBM Plex Sans", sans-serif);
-  --lpb-serif: var(--font-display, "Playfair Display", serif);
-}
-
-.landing-bento-section {
-  position: relative;
-  padding: clamp(84px, 9vw, 132px) 0;
-  background:
-    radial-gradient(circle at 12% 12%, rgba(243,238,228,.10), transparent 30%),
-    linear-gradient(180deg, #0f0f0f 0%, #151515 100%);
-  color: var(--lpb-cream);
-  overflow: hidden;
-}
-
-.landing-bento-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(243,238,228,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(243,238,228,.025) 1px, transparent 1px);
-  background-size: 34px 34px;
-  opacity: .28;
-  pointer-events: none;
-}
-
-.lpb-container {
-  position: relative;
-  z-index: 1;
-}
-
-.lpb-head {
-  max-width: 980px;
-  margin: 0 0 clamp(30px, 5vw, 56px);
-}
-
-.lpb-kicker,
-.lpb-label,
-.lpb-status,
-.lpb-meta-grid span,
-.lpb-mini-section > span,
-.lpb-media > span,
-.lpb-detail-block > span,
-.lpb-details summary {
-  font-family: var(--lpb-mono);
-  font-size: .68rem;
-  line-height: 1.25;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-}
-
-.lpb-kicker {
-  margin: 0 0 14px;
-  color: var(--lpb-muted-dark-2);
-}
-
-.lpb-head h2 {
-  margin: 0;
-  max-width: 920px;
-  font-family: var(--lpb-serif);
-  font-size: clamp(2.45rem, 5.6vw, 5rem);
-  line-height: .98;
-  letter-spacing: -.055em;
-  font-weight: 600;
-  color: var(--lpb-cream-2);
-}
-
-.lpb-head p:not(.lpb-kicker) {
-  margin: 22px 0 0;
-  max-width: 690px;
-  font-family: var(--lpb-sans);
-  font-size: clamp(1rem, 1.35vw, 1.15rem);
-  line-height: 1.65;
-  color: var(--lpb-muted-dark);
-}
-
-.lpb-grid {
-  display: grid;
-  gap: 14px;
-  align-items: stretch;
-}
-
-.lpb-grid--four-cards {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.lpb-card {
-  position: relative;
-  min-height: 560px;
-  border: 1px solid var(--lpb-line-dark);
-  border-radius: 0;
-  padding: clamp(18px, 2vw, 26px);
-  background: rgba(255,255,255,.035);
-  box-shadow: 0 24px 80px rgba(0,0,0,.28);
-  overflow: hidden;
-}
-
-.lpb-card::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(243,238,228,.45), transparent);
-  opacity: .34;
-}
-
-/* Carte 1 : votre lecture — crème / ivoire */
-.lpb-card--primary {
-  background: var(--lpb-cream);
-  color: var(--lpb-ink);
-  border-color: rgba(0,0,0,.16);
-  box-shadow: 0 24px 80px rgba(0,0,0,.34);
-}
-
-/* Cartes 2 à 4 : autres lectures — noir */
-.lpb-card--other {
-  background:
-    linear-gradient(180deg, rgba(243,238,228,.055), rgba(243,238,228,.018)),
-    var(--lpb-black-2);
-  color: var(--lpb-cream);
-  border-color: var(--lpb-line-dark);
-}
-
-.lpb-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.lpb-label {
-  color: var(--lpb-muted-dark-2);
-}
-
-.lpb-card--primary .lpb-label,
-.lpb-card--primary .lpb-meta-grid span,
-.lpb-card--primary .lpb-details summary,
-.lpb-card--primary .lpb-detail-block > span {
-  color: rgba(23,23,23,.58);
-}
-
-.lpb-status {
-  display: inline-flex;
-  padding: 7px 9px;
-  border: 1px solid currentColor;
-  color: rgba(243,238,228,.68);
-  white-space: nowrap;
-}
-
-.lpb-card--primary .lpb-status {
-  color: rgba(23,23,23,.62);
-}
-
-.lpb-card h3 {
-  margin: 0;
-  font-family: var(--lpb-serif);
-  font-size: clamp(1.6rem, 2.3vw, 2.55rem);
-  line-height: 1;
-  letter-spacing: -.05em;
-  font-weight: 600;
-  color: inherit;
-}
-
-.lpb-card--primary h3 {
-  font-size: clamp(2rem, 3vw, 3.25rem);
-}
-
-.lpb-angle {
-  margin: 18px 0 0;
-  font-family: var(--lpb-sans);
-  font-size: clamp(.98rem, 1.18vw, 1.1rem);
-  line-height: 1.5;
-  color: var(--lpb-muted-dark);
-}
-
-.lpb-card--primary .lpb-angle {
-  color: rgba(23,23,23,.72);
-}
-
-.lpb-meta-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1px;
-  margin-top: 24px;
-  border: 1px solid var(--lpb-line);
-}
-
-.lpb-meta-grid > div {
-  padding: 13px 14px;
-  background: rgba(0,0,0,.035);
-}
-
-.lpb-meta-grid strong,
-.lpb-mini-section strong,
-.lpb-media strong,
-.lpb-detail-block strong {
-  display: block;
-  font-family: var(--lpb-sans);
-  font-size: .96rem;
-  line-height: 1.45;
-  font-weight: 600;
-  color: inherit;
-}
-
-.lpb-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin-top: 16px;
-}
-
-.lpb-tags span,
-.lpb-chip-list span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 25px;
-  padding: 5px 8px;
-  border: 1px solid currentColor;
-  font-family: var(--lpb-mono);
-  font-size: .68rem;
-  line-height: 1.15;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-}
-
-.lpb-tags span {
-  color: rgba(23,23,23,.68);
-}
-
-.lpb-card--other .lpb-chip-list span {
-  color: rgba(243,238,228,.82);
-  background: rgba(255,255,255,.035);
-}
-
-.lpb-mini-section,
-.lpb-media,
-.lpb-detail-block {
-  margin-top: 20px;
-  padding-top: 17px;
-  border-top: 1px solid var(--lpb-line-dark);
-}
-
-.lpb-card--primary .lpb-detail-block {
-  border-top-color: var(--lpb-line);
-}
-
-.lpb-mini-section > span,
-.lpb-media > span,
-.lpb-detail-block > span {
-  display: block;
-  margin-bottom: 9px;
-  color: var(--lpb-muted-dark-2);
-}
-
-.lpb-chip-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-
-.lpb-chip-list--people span {
-  display: block;
-  width: 100%;
-  text-transform: none;
-  letter-spacing: .01em;
-  font-family: var(--lpb-sans);
-  font-size: .84rem;
-  line-height: 1.28;
-}
-
-.lpb-media strong {
-  font-size: .92rem;
-}
-
-.lpb-muted {
-  opacity: .68;
-}
-
-.lpb-details {
-  margin-top: 22px;
-  padding-top: 15px;
-  border-top: 1px solid currentColor;
-  color: inherit;
-}
-
-.lpb-details summary {
-  cursor: pointer;
-  color: inherit;
-  list-style: none;
-  opacity: .82;
-}
-
-.lpb-details summary::-webkit-details-marker {
-  display: none;
-}
-
-.lpb-details summary::after {
-  content: "+";
-  float: right;
-  font-family: var(--lpb-mono);
-  font-size: 1rem;
-  line-height: .75;
-}
-
-.lpb-details[open] summary::after {
-  content: "−";
-}
-
-.lpb-details > div {
-  margin-top: 15px;
-  font-family: var(--lpb-sans);
-  font-size: .95rem;
-  line-height: 1.6;
-  color: inherit;
-  opacity: .82;
-}
-
-.lpb-details p {
-  margin: 0;
-}
-
-@media (max-width: 1180px) {
-  .lpb-grid--four-cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .lpb-card {
-    min-height: 480px;
-  }
-}
-
-@media (max-width: 760px) {
-  .landing-bento-section {
-    padding: 70px 0;
-  }
-
-  .lpb-head h2 {
-    font-size: clamp(2rem, 12vw, 3.2rem);
-  }
-
-  .lpb-grid--four-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .lpb-card {
-    min-height: auto;
-    padding: 18px;
-  }
-
-  .lpb-card-top {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-/* ─────────────────────────────────────────────
-   HERO MINIMAL BENTO — 20260515
-   Remplace visuellement le hero uniquement.
-   Le reste de la page, dont la section 4 cartes, reste inchangé.
-───────────────────────────────────────────── */
-
-body.landing-page .landing-hero--bento-minimal {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background:
-    radial-gradient(circle at 72% 18%, rgba(255,255,255,.10), transparent 30%),
-    linear-gradient(90deg, rgba(10,10,10,.98) 0%, rgba(12,12,12,.94) 48%, rgba(12,12,12,.84) 100%),
-    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
-  color: var(--landing-text);
-  overflow: hidden;
-}
-
-body.landing-page .landing-hero--bento-minimal::after {
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.42)),
-    radial-gradient(circle at 24% 76%, rgba(255,255,255,.045), transparent 34%);
-}
-
-body.landing-page .landing-hero-bento-container {
-  position: relative;
-  z-index: 2;
-  padding-top: clamp(112px, 13vh, 150px);
-  padding-bottom: clamp(58px, 9vh, 96px);
-}
-
-body.landing-page .landing-hero-bento-grid {
-  display: grid;
-  grid-template-columns: minmax(0, .94fr) minmax(420px, .86fr);
-  gap: clamp(38px, 6vw, 78px);
-  align-items: center;
-}
-
-body.landing-page .landing-hero-bento-copy {
-  max-width: 760px;
-}
-
-body.landing-page .landing-hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin: 0 0 24px;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem;
-  line-height: 1.2;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: rgba(246,241,233,.64);
-}
-
-body.landing-page .landing-hero-eyebrow::before {
-  content: "";
-  width: 28px;
-  height: 1px;
-  background: currentColor;
-  opacity: .74;
-}
-
-body.landing-page .landing-hero--bento-minimal h1 {
-  max-width: 980px !important;
-  margin: 0 0 22px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(2.55rem, 5.6vw, 5.7rem) !important;
-  line-height: .98 !important;
-  letter-spacing: -.045em;
-  font-weight: 600;
-  color: #fffaf0;
-}
-
-body.landing-page .landing-hero-bento-lead {
-  max-width: 690px;
-  margin: 0 0 30px;
-  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
-  font-size: clamp(.98rem, 1.3vw, 1.12rem);
-  line-height: 1.68;
-  color: rgba(246,241,233,.74);
-}
-
-body.landing-page .landing-hero-bento-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
-  margin: 0 0 18px;
-}
-
-body.landing-page .landing-hero-bento-proof {
-  margin: 0;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .72rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: rgba(246,241,233,.58);
-}
-
-body.landing-page .landing-hero-bento-side {
-  position: relative;
-  min-width: 0;
-}
-
-body.landing-page .landing-hero-visual {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  border: 1px solid rgba(246,241,233,.18);
-  background: rgba(255,255,255,.035);
-  box-shadow: 0 26px 70px rgba(0,0,0,.38);
-}
-
-body.landing-page .landing-hero-visual::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.42)),
-    linear-gradient(90deg, rgba(0,0,0,.40), transparent 55%);
-  pointer-events: none;
-}
-
-body.landing-page .landing-hero-visual img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(1) contrast(1.06) brightness(.72);
-  transform: scale(1.015);
-}
-
-body.landing-page .landing-hero-visual--empty {
-  display: flex;
-  align-items: flex-end;
-  min-height: 300px;
-}
-
-body.landing-page .landing-hero-media-tag {
-  position: absolute;
-  z-index: 3;
-  left: 18px;
-  right: 18px;
-  bottom: 18px;
-  padding: 14px 16px;
-  border: 1px solid rgba(246,241,233,.18);
-  background: rgba(10,10,10,.58);
-  backdrop-filter: blur(12px);
-  color: #fffaf0;
-}
-
-body.landing-page .landing-hero-media-tag span,
-body.landing-page .landing-hero-metric span {
-  display: block;
-  margin: 0 0 8px;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .63rem;
-  line-height: 1.1;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(246,241,233,.55);
-}
-
-body.landing-page .landing-hero-media-tag strong,
-body.landing-page .landing-hero-metric strong {
-  display: block;
-  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
-  font-size: .92rem;
-  line-height: 1.35;
-  font-weight: 600;
-  color: #fffaf0;
-}
-
-body.landing-page .landing-hero-media-tag em,
-body.landing-page .landing-hero-metric em {
-  display: block;
-  margin-top: 4px;
-  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
-  font-size: .78rem;
-  line-height: 1.42;
-  font-style: normal;
-  color: rgba(246,241,233,.66);
-}
-
-body.landing-page .landing-hero-metrics {
-  position: relative;
-  z-index: 4;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 9px;
-  margin-top: -28px;
-  padding: 0 16px;
-}
-
-body.landing-page .landing-hero-metric {
-  min-height: 108px;
-  padding: 15px 15px 14px;
-  border: 1px solid rgba(246,241,233,.18);
-  background: rgba(15,15,15,.82);
-  backdrop-filter: blur(14px);
-  color: #fffaf0;
-}
-
-body.landing-page .landing-hero-metric--accent {
-  background: #f3eee4;
-  color: #171717;
-  border-color: rgba(243,238,228,.72);
-}
-
-body.landing-page .landing-hero-metric--accent span,
-body.landing-page .landing-hero-metric--accent em {
-  color: rgba(23,23,23,.58);
-}
-
-body.landing-page .landing-hero-metric--accent strong {
-  color: #171717;
-}
-
-@media (max-width: 1080px) {
-  body.landing-page .landing-hero-bento-grid {
-    grid-template-columns: 1fr;
-  }
-
-  body.landing-page .landing-hero-bento-copy {
-    max-width: 900px;
-  }
-
-  body.landing-page .landing-hero-bento-side {
-    max-width: 760px;
-  }
-}
-
-@media (max-width: 680px) {
-  body.landing-page .landing-hero-bento-container {
-    padding-top: 104px;
-    padding-bottom: 52px;
-  }
-
-  body.landing-page .landing-hero--bento-minimal h1 {
-    font-size: clamp(2.15rem, 12vw, 3.45rem) !important;
-    line-height: 1.02 !important;
-  }
-
-  body.landing-page .landing-hero-bento-lead {
-    font-size: .96rem;
-  }
-
-  body.landing-page .landing-hero-metrics {
-    grid-template-columns: 1fr;
-    margin-top: 10px;
-    padding: 0;
-  }
-
-  body.landing-page .landing-hero-metric {
-    min-height: auto;
-  }
-
-  body.landing-page .landing-hero-media-tag {
-    position: relative;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    margin: -1px 0 0;
-    background: rgba(10,10,10,.92);
-  }
-}
-
-
-/* ─────────────────────────────────────────────────────────
-   CORRECTION HERO — 20260515-0558
-   Objectif : photo et bloc Bento strictement alignés à droite,
-   six boîtes seulement en 2 colonnes x 3 lignes,
-   titre hero réduit pour éviter l'effet trop massif.
-───────────────────────────────────────────────────────── */
-
-body.landing-page .landing-hero-bento-grid {
-  grid-template-columns: minmax(0, .98fr) minmax(390px, .68fr) !important;
-  gap: clamp(34px, 5.4vw, 70px) !important;
-  align-items: center !important;
-}
-
-body.landing-page .landing-hero-bento-side {
-  justify-self: end !important;
-  width: min(100%, 520px) !important;
-  max-width: 520px !important;
-}
-
-body.landing-page .landing-hero-visual {
-  width: 100% !important;
-  aspect-ratio: 16 / 9 !important;
-  box-shadow: 0 24px 64px rgba(0,0,0,.34) !important;
-}
-
-body.landing-page .landing-hero--bento-minimal h1 {
-  max-width: 800px !important;
-  font-size: clamp(2.35rem, 4.45vw, 4.55rem) !important;
-  line-height: 1.02 !important;
-  letter-spacing: -.04em !important;
-}
-
-body.landing-page .landing-hero-bento-lead {
-  max-width: 640px !important;
-}
-
-body.landing-page .landing-hero-metrics,
-body.landing-page .landing-hero-metrics--six {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 10px !important;
-  margin-top: 10px !important;
-  padding: 0 !important;
-  width: 100% !important;
-}
-
-body.landing-page .landing-hero-metric {
-  min-height: 92px !important;
-  padding: 13px 13px 12px !important;
-}
-
-body.landing-page .landing-hero-metric span {
-  margin-bottom: 7px !important;
-  font-size: .59rem !important;
-}
-
-body.landing-page .landing-hero-metric strong {
-  font-size: .84rem !important;
-  line-height: 1.3 !important;
-}
-
-body.landing-page .landing-hero-metric em {
-  font-size: .72rem !important;
-  line-height: 1.34 !important;
-}
-
-body.landing-page .landing-hero-media-tag {
-  display: none !important;
-}
-
-@media (max-width: 1080px) {
-  body.landing-page .landing-hero-bento-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  body.landing-page .landing-hero-bento-side {
-    justify-self: start !important;
-    width: min(100%, 720px) !important;
-    max-width: 720px !important;
-  }
-}
-
-@media (max-width: 680px) {
-  body.landing-page .landing-hero--bento-minimal h1 {
-    font-size: clamp(2.05rem, 10.5vw, 3.15rem) !important;
-    line-height: 1.04 !important;
-  }
-
-  body.landing-page .landing-hero-metrics,
-  body.landing-page .landing-hero-metrics--six {
-    grid-template-columns: 1fr !important;
-    gap: 8px !important;
-  }
-}
-
-
-/* ─────────────────────────────────────────────────────────
-   CADRE DE CONFIANCE — clés typographiques
-   Remplace la logique de cartes explicatives par 4 clés
-   courtes : hors champ / périmètre / validation / engagement.
-───────────────────────────────────────────────────────── */
-
-body.landing-page .landing-trust-keys {
-  background: var(--landing-paper);
-  color: var(--landing-ink);
-  padding-top: clamp(76px, 8vw, 118px);
-  padding-bottom: clamp(68px, 7vw, 104px);
-}
-
-body.landing-page .landing-head--keys {
-  max-width: 880px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-body.landing-page .landing-head--keys h2 {
-  max-width: 820px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body.landing-page .landing-head--keys p {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body.landing-page .trust-keys-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0;
-  margin-top: clamp(42px, 5vw, 64px);
-  border-top: 1px solid rgba(17,17,17,.14);
-  border-bottom: 1px solid rgba(17,17,17,.14);
-}
-
-body.landing-page .trust-key {
-  min-height: 360px;
-  padding: clamp(26px, 3vw, 36px) clamp(20px, 2.4vw, 30px);
-  border-right: 1px solid rgba(17,17,17,.14);
-}
-
-body.landing-page .trust-key:first-child {
-  border-left: 1px solid rgba(17,17,17,.14);
-}
-
-body.landing-page .trust-key__num {
-  display: block;
-  margin-bottom: 18px;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem;
-  line-height: 1;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: rgba(17,17,17,.52);
-}
-
-body.landing-page .trust-key h3 {
-  margin: 0 0 20px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(1.5rem, 2.2vw, 2.25rem);
-  line-height: .98;
-  letter-spacing: -.045em;
-  color: var(--landing-ink);
-}
-
-body.landing-page .trust-key ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-body.landing-page .trust-key li {
-  margin: 0;
-  padding: 8px 0;
-  border-top: 1px solid rgba(17,17,17,.10);
-  font-size: .94rem;
-  line-height: 1.35;
-  color: rgba(17,17,17,.78);
-}
-
-body.landing-page .trust-key li:first-child {
-  border-top: 0;
-}
-
-body.landing-page .trust-key__details {
-  margin-top: 24px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(17,17,17,.18);
-}
-
-body.landing-page .trust-key__details summary {
-  cursor: pointer;
-  list-style: none;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .66rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(17,17,17,.72);
-}
-
-body.landing-page .trust-key__details summary::-webkit-details-marker {
-  display: none;
-}
-
-body.landing-page .trust-key__details summary::after {
-  content: " +";
-  letter-spacing: .04em;
-}
-
-body.landing-page .trust-key__details[open] summary::after {
-  content: " –";
-}
-
-body.landing-page .trust-key__details p {
-  margin: 14px 0 0;
-  font-size: .88rem;
-  line-height: 1.6;
-  color: rgba(17,17,17,.70);
-}
-
-body.landing-page .trust-keys-cta {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  margin-top: 32px;
-  flex-wrap: wrap;
-}
-
-body.landing-page .trust-keys-cta p {
-  margin: 0;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem;
-  letter-spacing: .11em;
-  text-transform: uppercase;
-  color: rgba(17,17,17,.48);
-}
-
-@media (max-width: 1100px) {
-  body.landing-page .trust-keys-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  body.landing-page .trust-key,
-  body.landing-page .trust-key:first-child {
-    border-left: 1px solid rgba(17,17,17,.14);
-  }
-
-  body.landing-page .trust-key:nth-child(2n) {
-    border-right: 1px solid rgba(17,17,17,.14);
-  }
-
-  body.landing-page .trust-key:nth-child(n+3) {
-    border-top: 1px solid rgba(17,17,17,.14);
-  }
-}
-
-@media (max-width: 680px) {
-  body.landing-page .trust-keys-grid {
-    grid-template-columns: 1fr;
-  }
-
-  body.landing-page .trust-key {
-    min-height: 0;
-    border-left: 1px solid rgba(17,17,17,.14);
-    border-right: 1px solid rgba(17,17,17,.14);
-  }
-
-  body.landing-page .trust-key + .trust-key {
-    border-top: 1px solid rgba(17,17,17,.14);
-  }
-
-  body.landing-page .trust-keys-cta {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-}
-
-
-/* ─────────────────────────────────────────────────────────
-   ALTERNANCE FOND CLAIR / FOND FONCÉ + DONNÉES DYNAMIQUES
-   - Cadre de confiance sur fond foncé
-   - Pourquoi cette lecture sur fond clair, en 3 clés dynamiques
-───────────────────────────────────────────────────────── */
-
-body.landing-page .landing-trust-keys {
-  background: var(--landing-bg) !important;
-  color: var(--landing-text) !important;
-}
-
-body.landing-page .landing-trust-keys .landing-kicker,
-body.landing-page .landing-trust-keys .landing-head h2,
-body.landing-page .landing-trust-keys .landing-head p {
-  color: var(--landing-text) !important;
-}
-
-body.landing-page .landing-trust-keys .landing-head p,
-body.landing-page .landing-trust-keys .trust-key li,
-body.landing-page .landing-trust-keys .trust-key__details p,
-body.landing-page .landing-trust-keys .trust-keys-cta p {
-  color: var(--landing-text-soft) !important;
-}
-
-body.landing-page .landing-trust-keys .trust-keys-grid {
-  border-top-color: rgba(246,241,233,.18) !important;
-  border-bottom-color: rgba(246,241,233,.18) !important;
-}
-
-body.landing-page .landing-trust-keys .trust-key,
-body.landing-page .landing-trust-keys .trust-key:first-child {
-  border-color: rgba(246,241,233,.18) !important;
-}
-
-body.landing-page .landing-trust-keys .trust-key__num,
-body.landing-page .landing-trust-keys .trust-key__details summary {
-  color: rgba(246,241,233,.62) !important;
-}
-
-body.landing-page .landing-trust-keys .trust-key h3 {
-  color: var(--landing-text) !important;
-}
-
-body.landing-page .landing-trust-keys .trust-key li,
-body.landing-page .landing-trust-keys .trust-key__details {
-  border-top-color: rgba(246,241,233,.14) !important;
-}
-
-body.landing-page .landing-trust-keys .landing-btn {
-  background: var(--landing-paper) !important;
-  color: var(--landing-ink) !important;
-  border-color: var(--landing-paper) !important;
-}
-
-body.landing-page #pourquoi-vous {
-  background: var(--landing-paper) !important;
-  color: var(--landing-ink) !important;
-}
-
-body.landing-page #pourquoi-vous .landing-head p {
-  color: var(--landing-ink-soft) !important;
-}
-
-body.landing-page .landing-why-box {
-  background: transparent !important;
-  border: 0 !important;
-  padding: 0 !important;
-  width: min(980px, 100%) !important;
-}
-
-body.landing-page .landing-why-narrative--keys {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
-  border-top: 1px solid rgba(17,17,17,.14);
-  border-bottom: 1px solid rgba(17,17,17,.14);
-}
-
-body.landing-page .landing-why-key {
-  padding: clamp(24px, 3vw, 34px) clamp(18px, 2.4vw, 28px);
-  border-right: 1px solid rgba(17,17,17,.14);
-}
-
-body.landing-page .landing-why-key:first-child {
-  border-left: 1px solid rgba(17,17,17,.14);
-}
-
-body.landing-page .landing-why-key span {
-  display: block;
-  margin-bottom: 18px;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem;
-  line-height: 1.1;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: rgba(17,17,17,.50);
-}
-
-body.landing-page .landing-why-key p,
-body.landing-page .landing-why-box .landing-why-narrative--keys p {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  font-size: .96rem;
-  line-height: 1.72;
-  color: rgba(17,17,17,.76) !important;
-}
-
-@media (max-width: 900px) {
-  body.landing-page .landing-why-narrative--keys {
-    grid-template-columns: 1fr;
-  }
-
-  body.landing-page .landing-why-key,
-  body.landing-page .landing-why-key:first-child {
-    border-left: 1px solid rgba(17,17,17,.14);
-    border-right: 1px solid rgba(17,17,17,.14);
-  }
-
-  body.landing-page .landing-why-key + .landing-why-key {
-    border-top: 1px solid rgba(17,17,17,.14);
-  }
-}
-
-/* ─────────────────────────────────────────────────────────
-   CORRECTION ALTERNANCE + VALEUR MINIMALE — 20260515-0638
-   Hero foncé / Conversation claire / Cadre foncé / Pourquoi clair.
-   La section valeur conserve le design sombre, avec gains dynamiques
-   en micro-copy : organisation / fonction / vous.
-───────────────────────────────────────────────────────── */
-
-body.landing-page .landing-bento-section {
-  background: var(--landing-paper, #f4efe6) !important;
-  color: var(--landing-ink, #151515) !important;
-}
-
-body.landing-page .landing-bento-section::before {
-  background-image:
-    linear-gradient(rgba(17,17,17,.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(17,17,17,.020) 1px, transparent 1px) !important;
-  opacity: .45 !important;
-}
-
-body.landing-page .landing-bento-section .lpb-kicker {
-  color: rgba(17,17,17,.48) !important;
-}
-
-body.landing-page .landing-bento-section .lpb-head h2 {
-  color: var(--landing-ink, #151515) !important;
-}
-
-body.landing-page .landing-bento-section .lpb-head p {
-  color: rgba(17,17,17,.68) !important;
-}
-
-body.landing-page .landing-bento-section .lpb-card--primary {
-  background: #f3eee4 !important;
-  color: #171717 !important;
-  border-color: rgba(17,17,17,.20) !important;
-  box-shadow: none !important;
-}
-
-body.landing-page .landing-bento-section .lpb-card--other {
-  background: #111111 !important;
-  color: #fffaf0 !important;
-  border-color: rgba(17,17,17,.88) !important;
-  box-shadow: 0 24px 70px rgba(17,17,17,.18) !important;
-}
-
-body.landing-page .landing-trust-keys {
-  background: #111111 !important;
-  color: #fffaf0 !important;
-}
-
-body.landing-page .landing-trust-keys .landing-kicker,
-body.landing-page .landing-trust-keys .landing-head h2,
-body.landing-page .landing-trust-keys .landing-head p,
-body.landing-page .landing-trust-keys .trust-key h3 {
-  color: #fffaf0 !important;
-}
-
-body.landing-page .landing-trust-keys .trust-key li,
-body.landing-page .landing-trust-keys .trust-key__details p,
-body.landing-page .landing-trust-keys .trust-keys-cta p {
-  color: rgba(255,250,240,.72) !important;
-}
-
-body.landing-page .landing-trust-keys .trust-keys-grid {
-  border-top-color: rgba(255,250,240,.18) !important;
-  border-bottom-color: rgba(255,250,240,.18) !important;
-}
-
-body.landing-page .landing-trust-keys .trust-key,
-body.landing-page .landing-trust-keys .trust-key:first-child {
-  border-color: rgba(255,250,240,.18) !important;
-}
-
-body.landing-page .landing-trust-keys .trust-key li,
-body.landing-page .landing-trust-keys .trust-key__details {
-  border-top-color: rgba(255,250,240,.14) !important;
-}
-
-body.landing-page .landing-trust-keys .trust-key__num,
-body.landing-page .landing-trust-keys .trust-key__details summary {
-  color: rgba(255,250,240,.58) !important;
-}
-
-body.landing-page #pourquoi-vous {
-  background: var(--landing-paper, #f4efe6) !important;
-  color: var(--landing-ink, #151515) !important;
-}
-
-body.landing-page #valeur-position {
-  background: #111111 !important;
-  color: #fffaf0 !important;
-}
-
-body.landing-page #valeur-position .landing-head h2,
-body.landing-page #valeur-position .landing-kicker {
-  color: #fffaf0 !important;
-}
-
-body.landing-page #valeur-position .landing-head p {
-  color: rgba(255,250,240,.72) !important;
-}
-
-body.landing-page .landing-grid--value .landing-value-card {
-  display: flex !important;
-  flex-direction: column !important;
-  min-height: 360px;
-  background: rgba(255,255,255,.035) !important;
-  border-color: rgba(255,250,240,.18) !important;
-}
-
-body.landing-page .landing-value-card .landing-label {
-  color: rgba(255,250,240,.58) !important;
-}
-
-body.landing-page .landing-value-card h3 {
-  min-height: 0 !important;
-  margin-bottom: 18px !important;
-  color: #fffaf0 !important;
-}
-
-body.landing-page .landing-value-card p {
-  color: rgba(255,250,240,.76) !important;
-}
-
-body.landing-page .value-chip-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 22px;
-}
-
-body.landing-page .value-chip-list span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 28px;
-  padding: 6px 9px;
-  border: 1px solid rgba(255,250,240,.20);
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .62rem;
-  line-height: 1;
-  letter-spacing: .11em;
-  text-transform: uppercase;
-  color: rgba(255,250,240,.78);
-}
-
-body.landing-page .value-details {
-  margin-top: auto;
-  padding-top: 22px;
-}
-
-body.landing-page .value-details summary {
-  cursor: pointer;
-  list-style: none;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .64rem;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  color: rgba(255,250,240,.62);
-}
-
-body.landing-page .value-details summary::-webkit-details-marker {
-  display: none;
-}
-
-body.landing-page .value-details summary::after {
-  content: " +";
-}
-
-body.landing-page .value-details[open] summary::after {
-  content: " –";
-}
-
-body.landing-page .value-details ul {
-  list-style: none;
-  margin: 16px 0 0;
-  padding: 0;
-}
-
-body.landing-page .value-details li {
-  padding: 12px 0;
-  border-top: 1px solid rgba(255,250,240,.12);
-}
-
-body.landing-page .value-details li strong {
-  display: block;
-  margin-bottom: 5px;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .62rem;
-  letter-spacing: .11em;
-  text-transform: uppercase;
-  color: rgba(255,250,240,.58);
-}
-
-body.landing-page .value-details li span {
-  display: block;
-  font-size: .88rem;
-  line-height: 1.55;
-  color: rgba(255,250,240,.72);
-}
-
-
-/* ─────────────────────────────────────────────────────────
-   GAINS CIBLÉS — 20260515-0848
-   Section valeur : formulation dynamique côté JS, design conservé.
-───────────────────────────────────────────────────────── */
-
-/* ─────────────────────────────────────────────────────────
-   HERO ALLÉGÉ — 20260515-0710
-   Désirabilité + clarté + faible risque.
-   Le hero ne détaille plus le comité, les garanties complètes
-   ni la mise en regard : ces éléments sont portés par les sections.
-───────────────────────────────────────────────────────── */
-
-body.landing-page .landing-hero--simplified .landing-hero-bento-grid {
-  grid-template-columns: minmax(0, .98fr) minmax(390px, .62fr) !important;
-  gap: clamp(36px, 5.8vw, 82px) !important;
-  align-items: center !important;
-}
-
-body.landing-page .landing-hero--simplified .landing-hero-bento-side {
-  justify-self: end !important;
-  width: min(100%, 500px) !important;
-  max-width: 500px !important;
-}
-
-body.landing-page .landing-hero--simplified h1 {
-  max-width: 780px !important;
-  margin-bottom: 22px !important;
-  font-size: clamp(2.25rem, 4.15vw, 4.15rem) !important;
-  line-height: 1.03 !important;
-  letter-spacing: -.04em !important;
-}
-
-body.landing-page .landing-hero--simplified .landing-hero-bento-lead {
-  max-width: 650px !important;
-  margin-bottom: 28px !important;
-  font-size: clamp(.98rem, 1.22vw, 1.08rem) !important;
-  line-height: 1.66 !important;
-  color: rgba(246,241,233,.76) !important;
-}
-
-body.landing-page .landing-hero--simplified .landing-hero-eyebrow {
-  margin-bottom: 22px !important;
-}
-
-body.landing-page .landing-hero--simplified .landing-hero-visual {
-  width: 100% !important;
-  aspect-ratio: 16 / 9 !important;
-  margin: 0 !important;
-}
-
-body.landing-page .landing-hero-media-caption {
-  width: 100%;
-  margin: 10px 0 0;
-  padding: 12px 14px;
-  border: 1px solid rgba(246,241,233,.16);
-  border-top: 0;
-  background: rgba(12,12,12,.62);
-  color: #fffaf0;
-}
-
-body.landing-page .landing-hero-media-caption strong,
-body.landing-page .landing-hero-media-caption span {
-  display: block;
-}
-
-body.landing-page .landing-hero-media-caption strong {
-  margin: 0 0 3px;
-  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
-  font-size: .86rem;
-  line-height: 1.28;
-  font-weight: 600;
-  color: #fffaf0;
-}
-
-body.landing-page .landing-hero-media-caption span {
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .62rem;
-  line-height: 1.3;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-  color: rgba(246,241,233,.56);
-}
-
-body.landing-page .landing-hero--simplified .landing-hero-metrics,
-body.landing-page .landing-hero--simplified .landing-hero-metrics--three {
-  display: grid !important;
-  grid-template-columns: 1fr !important;
-  gap: 10px !important;
-  width: 100% !important;
-  margin-top: 10px !important;
-  padding: 0 !important;
-}
-
-body.landing-page .landing-hero--simplified .landing-hero-metric {
-  min-height: auto !important;
-  padding: 16px 17px !important;
-}
-
-body.landing-page .landing-hero--simplified .landing-hero-metric span {
-  margin-bottom: 8px !important;
-  font-size: .60rem !important;
-  letter-spacing: .14em !important;
-}
-
-body.landing-page .landing-hero--simplified .landing-hero-metric strong {
-  font-size: clamp(.94rem, 1.08vw, 1.08rem) !important;
-  line-height: 1.25 !important;
-}
-
-body.landing-page .landing-hero--simplified .landing-hero-metric em {
-  margin-top: 7px !important;
-  font-size: .78rem !important;
-  line-height: 1.45 !important;
-}
-
-body.landing-page .landing-hero--simplified .landing-hero-metric--accent {
-  background: #f3eee4 !important;
-  color: #171717 !important;
-  border-color: rgba(243,238,228,.72) !important;
-}
-
-body.landing-page .landing-hero--simplified .landing-hero-bento-proof {
-  color: rgba(246,241,233,.60) !important;
-}
-
-@media (max-width: 1080px) {
-  body.landing-page .landing-hero--simplified .landing-hero-bento-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  body.landing-page .landing-hero--simplified .landing-hero-bento-side {
-    justify-self: start !important;
-    width: min(100%, 720px) !important;
-    max-width: 720px !important;
-  }
-}
-
-@media (max-width: 680px) {
-  body.landing-page .landing-hero--simplified h1 {
-    font-size: clamp(2.05rem, 10.5vw, 3.05rem) !important;
-    line-height: 1.04 !important;
-  }
-
-  body.landing-page .landing-hero-media-caption {
-    padding: 11px 12px;
-  }
-}
-
-
-/* ─────────────────────────────────────────────────────────
-   MISE EN REGARD ÉDITORIALE — 20260515-0742
-   Section post-hero : 4 cartes, densité réduite.
-   Visible : type de lecture, phrase de valeur, organisations, média.
-   Accordéon : acteurs pressentis + détail.
-───────────────────────────────────────────────────────── */
-
-body.landing-page .landing-bento-section {
-  background: var(--landing-paper, #f4efe6) !important;
-  color: var(--landing-ink, #151515) !important;
-  padding: clamp(82px, 8vw, 124px) 0 !important;
-}
-
-body.landing-page .landing-bento-section::before {
-  background-image:
-    linear-gradient(rgba(17,17,17,.023) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(17,17,17,.018) 1px, transparent 1px) !important;
-  background-size: 34px 34px !important;
-  opacity: .42 !important;
-}
-
-body.landing-page .landing-bento-section .lpb-head {
-  max-width: 1060px !important;
-  margin-bottom: clamp(28px, 4vw, 48px) !important;
-}
-
-body.landing-page .landing-bento-section .lpb-kicker {
-  color: rgba(17,17,17,.48) !important;
-}
-
-body.landing-page .landing-bento-section .lpb-head h2 {
-  max-width: 940px !important;
-  color: var(--landing-ink, #151515) !important;
-  font-size: clamp(2.1rem, 4.5vw, 4.2rem) !important;
-  line-height: 1.02 !important;
-  letter-spacing: -.05em !important;
-}
-
-body.landing-page .landing-bento-section .lpb-head p {
-  color: rgba(17,17,17,.70) !important;
-}
-
-body.landing-page .landing-bento-section .lpb-subnote {
-  max-width: 760px !important;
-  margin-top: 14px !important;
-  padding-left: 18px !important;
-  border-left: 1px solid rgba(17,17,17,.22) !important;
-  font-size: .95rem !important;
-  line-height: 1.65 !important;
-  color: rgba(17,17,17,.58) !important;
-}
-
-body.landing-page .landing-bento-section .lpb-grid--four-cards {
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  gap: 14px !important;
-}
-
-body.landing-page .landing-bento-section .lpb-card {
-  min-height: 500px !important;
-  padding: clamp(18px, 1.75vw, 24px) !important;
-  box-shadow: none !important;
-}
-
-body.landing-page .landing-bento-section .lpb-card--primary {
-  background: #f3eee4 !important;
-  color: #171717 !important;
-  border-color: rgba(17,17,17,.22) !important;
-}
-
-body.landing-page .landing-bento-section .lpb-card--other {
-  background:
-    linear-gradient(180deg, rgba(255,250,240,.045), rgba(255,250,240,.014)),
-    #111111 !important;
-  color: #fffaf0 !important;
-  border-color: rgba(17,17,17,.88) !important;
-  box-shadow: 0 24px 70px rgba(17,17,17,.16) !important;
-}
-
-body.landing-page .landing-bento-section .lpb-card h3 {
-  font-size: clamp(1.65rem, 2.15vw, 2.6rem) !important;
-  line-height: 1 !important;
-}
-
-body.landing-page .landing-bento-section .lpb-card--primary h3 {
-  font-size: clamp(2rem, 2.8vw, 3rem) !important;
-}
-
-body.landing-page .landing-bento-section .lpb-angle {
-  margin-top: 18px !important;
-  font-size: .98rem !important;
-  line-height: 1.48 !important;
-}
-
-body.landing-page .landing-bento-section .lpb-angle--value,
-body.landing-page .landing-bento-section .lpb-card--primary .lpb-angle {
-  color: rgba(17,17,17,.74) !important;
-}
-
-body.landing-page .landing-bento-section .lpb-angle--question {
-  min-height: 78px !important;
-  color: rgba(255,250,240,.72) !important;
-}
-
-body.landing-page .landing-bento-section .lpb-contribution {
-  margin: 20px 0 0 !important;
-  padding-top: 16px !important;
-  border-top: 1px solid rgba(255,250,240,.15) !important;
-  font-size: .93rem !important;
-  line-height: 1.52 !important;
-  color: rgba(255,250,240,.74) !important;
-}
-
-body.landing-page .landing-bento-section .lpb-contribution span {
-  display: block !important;
-  margin-bottom: 8px !important;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
-  font-size: .62rem !important;
-  letter-spacing: .15em !important;
-  text-transform: uppercase !important;
-  color: rgba(255,250,240,.48) !important;
-}
-
-body.landing-page .landing-bento-section .lpb-meta-grid {
-  margin-top: 22px !important;
-}
-
-body.landing-page .landing-bento-section .lpb-mini-section,
-body.landing-page .landing-bento-section .lpb-media,
-body.landing-page .landing-bento-section .lpb-detail-block {
-  margin-top: 18px !important;
-  padding-top: 15px !important;
-}
-
-body.landing-page .landing-bento-section .lpb-chip-list {
-  gap: 7px !important;
-}
-
-body.landing-page .landing-bento-section .lpb-chip-list span {
-  font-size: .62rem !important;
-  min-height: 24px !important;
-  padding: 5px 7px !important;
-}
-
-body.landing-page .landing-bento-section .lpb-chip-list--people span {
-  display: block !important;
-  width: 100% !important;
-  font-size: .82rem !important;
-  line-height: 1.35 !important;
-  text-transform: none !important;
-  letter-spacing: .01em !important;
-}
-
-body.landing-page .landing-bento-section .lpb-details {
-  margin-top: 22px !important;
-  padding-top: 15px !important;
-}
-
-body.landing-page .landing-bento-section .lpb-details > div {
-  font-size: .92rem !important;
-  line-height: 1.58 !important;
-}
-
-body.landing-page .landing-bento-section .lpb-card--primary .lpb-details,
-body.landing-page .landing-bento-section .lpb-card--primary .lpb-detail-block {
-  border-color: rgba(17,17,17,.16) !important;
-}
-
-body.landing-page .landing-bento-section .lpb-card--primary .lpb-details summary,
-body.landing-page .landing-bento-section .lpb-card--primary .lpb-detail-block > span,
-body.landing-page .landing-bento-section .lpb-card--primary .lpb-meta-grid span {
-  color: rgba(17,17,17,.54) !important;
-}
-
-@media (max-width: 1180px) {
-  body.landing-page .landing-bento-section .lpb-grid--four-cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-
-  body.landing-page .landing-bento-section .lpb-card {
-    min-height: 430px !important;
-  }
-}
-
-@media (max-width: 760px) {
-  body.landing-page .landing-bento-section .lpb-grid--four-cards {
-    grid-template-columns: 1fr !important;
-  }
-
-  body.landing-page .landing-bento-section .lpb-card {
-    min-height: auto !important;
-  }
-
-  body.landing-page .landing-bento-section .lpb-head h2 {
-    font-size: clamp(2rem, 12vw, 3rem) !important;
-  }
-}
-
-
-/* ─────────────────────────────────────────────────────────
-   CADRE DE CONFIANCE — PAROLE VISIBLE / PÉRIMÈTRE MAÎTRISÉ
-   Mise à jour 20260515-0810
-───────────────────────────────────────────────────────── */
-body.landing-page #cadre-confiance.landing-trust-keys {
-  background: #101010 !important;
-  color: #fffaf0 !important;
-  padding-top: clamp(76px, 9vw, 118px) !important;
-  padding-bottom: clamp(76px, 9vw, 118px) !important;
-}
-
-body.landing-page #cadre-confiance.landing-trust-keys .landing-head--keys {
-  max-width: 840px !important;
-  margin-bottom: clamp(34px, 5vw, 58px) !important;
-}
-
-body.landing-page #cadre-confiance.landing-trust-keys .landing-kicker {
-  color: rgba(255,250,240,.58) !important;
-}
-
-body.landing-page #cadre-confiance.landing-trust-keys .landing-head--keys h2 {
-  color: #fffaf0 !important;
-  font-size: clamp(2rem, 4.8vw, 4.7rem) !important;
-  line-height: .96 !important;
-  letter-spacing: -.045em !important;
-  max-width: 780px !important;
-}
-
-body.landing-page #cadre-confiance.landing-trust-keys .landing-head--keys p {
-  color: rgba(255,250,240,.72) !important;
-  max-width: 720px !important;
-}
-
-body.landing-page #cadre-confiance .trust-keys-grid {
-  display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  border-top: 1px solid rgba(255,250,240,.18) !important;
-  border-bottom: 1px solid rgba(255,250,240,.18) !important;
-}
-
-body.landing-page #cadre-confiance .trust-key,
-body.landing-page #cadre-confiance .trust-key:first-child {
-  padding: clamp(24px, 3.2vw, 38px) clamp(18px, 2.2vw, 28px) !important;
-  border-left: 1px solid rgba(255,250,240,.18) !important;
-  border-right: 0 !important;
-  background: transparent !important;
-}
-
-body.landing-page #cadre-confiance .trust-key:last-child {
-  border-right: 1px solid rgba(255,250,240,.18) !important;
-}
-
-body.landing-page #cadre-confiance .trust-key__num {
-  display: block !important;
-  margin-bottom: 24px !important;
-  color: rgba(255,250,240,.48) !important;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
-  font-size: .72rem !important;
-  letter-spacing: .16em !important;
-}
-
-body.landing-page #cadre-confiance .trust-key h3 {
-  margin: 0 0 22px !important;
-  color: #fffaf0 !important;
-  font-family: var(--font-display, "Playfair Display", serif) !important;
-  font-size: clamp(1.25rem, 1.8vw, 1.85rem) !important;
-  line-height: 1.1 !important;
-  letter-spacing: -.03em !important;
-}
-
-body.landing-page #cadre-confiance .trust-key ul {
-  margin: 0 0 24px !important;
-  padding: 0 !important;
-  list-style: none !important;
-}
-
-body.landing-page #cadre-confiance .trust-key li {
-  padding: 9px 0 !important;
-  border-top: 1px solid rgba(255,250,240,.13) !important;
-  color: rgba(255,250,240,.76) !important;
-  font-size: .94rem !important;
-  line-height: 1.35 !important;
-}
-
-body.landing-page #cadre-confiance .trust-key__details {
-  margin-top: 12px !important;
-  padding-top: 14px !important;
-  border-top: 1px solid rgba(255,250,240,.13) !important;
-}
-
-body.landing-page #cadre-confiance .trust-key__details summary {
-  cursor: pointer !important;
-  color: rgba(255,250,240,.64) !important;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
-  font-size: .70rem !important;
-  letter-spacing: .14em !important;
-  text-transform: uppercase !important;
-}
-
-body.landing-page #cadre-confiance .trust-key__details p {
-  margin: 14px 0 0 !important;
-  color: rgba(255,250,240,.72) !important;
-  font-size: .92rem !important;
-  line-height: 1.65 !important;
-}
-
-body.landing-page #cadre-confiance .trust-keys-cta {
-  margin-top: clamp(30px, 4vw, 48px) !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 18px !important;
-  flex-wrap: wrap !important;
-}
-
-body.landing-page #cadre-confiance .trust-keys-cta .landing-btn {
-  background: #f3eee4 !important;
-  color: #111111 !important;
-  border-color: #f3eee4 !important;
-}
-
-body.landing-page #cadre-confiance .trust-keys-cta p {
-  margin: 0 !important;
-  color: rgba(255,250,240,.64) !important;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
-  font-size: .72rem !important;
-  letter-spacing: .10em !important;
-  text-transform: uppercase !important;
-}
-
-@media (max-width: 980px) {
-  body.landing-page #cadre-confiance .trust-keys-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-
-  body.landing-page #cadre-confiance .trust-key:nth-child(n+3) {
-    border-top: 1px solid rgba(255,250,240,.18) !important;
-  }
-}
-
-@media (max-width: 640px) {
-  body.landing-page #cadre-confiance .trust-keys-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  body.landing-page #cadre-confiance .trust-key,
-  body.landing-page #cadre-confiance .trust-key:first-child,
-  body.landing-page #cadre-confiance .trust-key:last-child {
-    border-left: 1px solid rgba(255,250,240,.18) !important;
-    border-right: 1px solid rgba(255,250,240,.18) !important;
-  }
-
-  body.landing-page #cadre-confiance .trust-key + .trust-key {
-    border-top: 1px solid rgba(255,250,240,.18) !important;
-  }
-
-  body.landing-page #cadre-confiance .trust-keys-cta {
-    align-items: flex-start !important;
-    flex-direction: column !important;
-  }
-}
-
-
-/* ─────────────────────────────────────────────────────────
-   PERTINENCE — 3 NIVEAUX SITUÉS
-   Organisation / position d’observation / lecture proposée
-   20260515-0828
-───────────────────────────────────────────────────────── */
-
-body.landing-page #pourquoi-vous {
-  background: var(--landing-paper) !important;
-  color: var(--landing-ink) !important;
-}
-
-body.landing-page #pourquoi-vous .landing-head h2 {
-  max-width: 920px;
-  color: var(--landing-ink) !important;
-}
-
-body.landing-page #pourquoi-vous .landing-head p {
-  max-width: 760px;
-  color: rgba(17,17,17,.70) !important;
-}
-
-body.landing-page .landing-why-narrative--positioned {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
-  border-top: 1px solid rgba(17,17,17,.14);
-  border-bottom: 1px solid rgba(17,17,17,.14);
-}
-
-body.landing-page .landing-why-narrative--positioned .landing-why-key {
-  min-height: 100%;
-  padding: clamp(26px, 3vw, 38px) clamp(20px, 2.7vw, 32px);
-  border-right: 1px solid rgba(17,17,17,.14);
-  background: rgba(255,255,255,.16);
-}
-
-body.landing-page .landing-why-narrative--positioned .landing-why-key:first-child {
-  border-left: 1px solid rgba(17,17,17,.14);
-}
-
-body.landing-page .landing-why-narrative--positioned .landing-why-key--accent {
-  background: rgba(17,17,17,.035);
-}
-
-body.landing-page .landing-why-narrative--positioned .landing-why-key span:first-child {
-  display: block;
-  margin-bottom: 18px;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem;
-  line-height: 1.1;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: rgba(17,17,17,.50);
-}
-
-body.landing-page .landing-why-narrative--positioned .landing-why-key h3 {
-  margin: 0 0 16px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(1.22rem, 1.8vw, 1.55rem);
-  line-height: 1.15;
-  letter-spacing: -.02em;
-  font-weight: 600;
-  color: var(--landing-ink);
-}
-
-body.landing-page .landing-why-narrative--positioned .landing-why-key p,
-body.landing-page .landing-why-box .landing-why-narrative--positioned p {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  font-size: .96rem;
-  line-height: 1.72;
-  color: rgba(17,17,17,.74) !important;
-}
-
-body.landing-page .landing-why-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 22px;
-}
-
-body.landing-page .landing-why-tags span {
-  display: inline-flex !important;
-  margin: 0 !important;
-  padding: 6px 8px;
-  border: 1px solid rgba(17,17,17,.15);
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .62rem !important;
-  line-height: 1;
-  letter-spacing: .08em !important;
-  text-transform: uppercase;
-  color: rgba(17,17,17,.58) !important;
-  background: rgba(255,255,255,.24);
-}
-
-@media (max-width: 960px) {
-  body.landing-page .landing-why-narrative--positioned {
-    grid-template-columns: 1fr;
-  }
-
-  body.landing-page .landing-why-narrative--positioned .landing-why-key,
-  body.landing-page .landing-why-narrative--positioned .landing-why-key:first-child {
-    border-left: 1px solid rgba(17,17,17,.14);
-    border-right: 1px solid rgba(17,17,17,.14);
-  }
-
-  body.landing-page .landing-why-narrative--positioned .landing-why-key + .landing-why-key {
-    border-top: 1px solid rgba(17,17,17,.14);
-  }
-}
-
-/* ─────────────────────────────────────────────────────────
-   CTA FORT — ÉCHANGE DE QUALIFICATION — 20260515-0915
-   Section de bascule après les gains : valeur comprise,
-   prochaine étape = qualification courte, sans engagement.
-───────────────────────────────────────────────────────── */
-
-body.landing-page .landing-qualification-cta {
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 78% 12%, rgba(255,250,240,.10), transparent 32%),
-    linear-gradient(135deg, #090909 0%, #121212 48%, #0d0d0d 100%) !important;
-  color: #fffaf0 !important;
-  border-top: 1px solid rgba(255,250,240,.14);
-  border-bottom: 1px solid rgba(255,250,240,.12);
-}
-
-body.landing-page .landing-qualification-cta::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(90deg, rgba(255,250,240,.055) 0 1px, transparent 1px) 0 0 / 72px 72px,
-    linear-gradient(180deg, rgba(255,250,240,.045) 0 1px, transparent 1px) 0 0 / 72px 72px;
-  opacity: .22;
-}
-
-body.landing-page .qualification-cta-grid {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
-  gap: clamp(34px, 6vw, 76px);
-  align-items: center;
-}
-
-body.landing-page .qualification-cta-main {
-  max-width: 760px;
-}
-
-body.landing-page .landing-qualification-cta .landing-kicker {
-  color: rgba(255,250,240,.62) !important;
-}
-
-body.landing-page .landing-qualification-cta h2 {
-  margin: 0;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(2.05rem, 4.2vw, 4.45rem);
-  line-height: .98;
-  letter-spacing: -.045em;
-  font-weight: 600;
-  color: #fffaf0 !important;
-}
-
-body.landing-page .landing-qualification-cta .qualification-cta-main > p:not(.landing-kicker):not(.qualification-cta-microcopy) {
-  max-width: 660px;
-  margin: 24px 0 0;
-  font-size: clamp(1rem, 1.35vw, 1.16rem);
-  line-height: 1.7;
-  color: rgba(255,250,240,.78) !important;
-}
-
-body.landing-page .qualification-cta-actions {
-  margin-top: 30px;
-  justify-content: flex-start;
-}
-
-body.landing-page .qualification-cta-microcopy {
-  margin: 16px 0 0 !important;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem !important;
-  letter-spacing: .11em;
-  text-transform: uppercase;
-  color: rgba(255,250,240,.56) !important;
-}
-
-body.landing-page .qualification-cta-proofs {
-  display: grid;
-  gap: 0;
-  border: 1px solid rgba(255,250,240,.18);
-  background: rgba(255,255,255,.035);
-}
-
-body.landing-page .qualification-cta-proofs article {
-  padding: 24px 24px 26px;
-  border-bottom: 1px solid rgba(255,250,240,.14);
-}
-
-body.landing-page .qualification-cta-proofs article:last-child {
-  border-bottom: 0;
-}
-
-body.landing-page .qualification-cta-proofs strong {
-  display: block;
-  margin-bottom: 8px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(1.35rem, 2.2vw, 1.92rem);
-  line-height: 1;
-  font-weight: 600;
-  letter-spacing: -.025em;
-  color: #fffaf0;
-}
-
-body.landing-page .qualification-cta-proofs span {
-  display: block;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .65rem;
-  line-height: 1.55;
-  letter-spacing: .11em;
-  text-transform: uppercase;
-  color: rgba(255,250,240,.58);
-}
-
-@media (max-width: 900px) {
-  body.landing-page .qualification-cta-grid {
-    grid-template-columns: 1fr;
-  }
-
-  body.landing-page .qualification-cta-proofs {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  body.landing-page .qualification-cta-proofs article {
-    border-bottom: 0;
-    border-right: 1px solid rgba(255,250,240,.14);
-  }
-
-  body.landing-page .qualification-cta-proofs article:last-child {
-    border-right: 0;
-  }
-}
-
-@media (max-width: 620px) {
-  body.landing-page .qualification-cta-actions,
-  body.landing-page .qualification-cta-actions .landing-btn {
-    width: 100%;
-  }
-
-  body.landing-page .qualification-cta-proofs {
-    grid-template-columns: 1fr;
-  }
-
-  body.landing-page .qualification-cta-proofs article {
-    border-right: 0;
-    border-bottom: 1px solid rgba(255,250,240,.14);
-  }
-
-  body.landing-page .qualification-cta-proofs article:last-child {
-    border-bottom: 0;
-  }
-}
-
-/* ─────────────────────────────────────────────────────────
-   POUR ALLER PLUS LOIN — bloc structuré + accordéons
-   Version en-savoir-plus-20260515-0938
-───────────────────────────────────────────────────────── */
-
-body.landing-page .landing-more-structured {
-  background: var(--landing-paper);
-  color: var(--landing-ink);
-  padding-top: clamp(74px, 8vw, 116px);
-  padding-bottom: clamp(78px, 8vw, 120px);
-}
-
-body.landing-page .landing-more-structured .landing-kicker {
-  color: rgba(17,17,17,.56);
-}
-
-body.landing-page .landing-more-structured h2,
-body.landing-page .landing-more-structured h3,
-body.landing-page .landing-more-structured h4 {
-  color: var(--landing-ink);
-}
-
-body.landing-page .landing-more-structured p {
-  color: rgba(17,17,17,.72);
-}
-
-body.landing-page .more-hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
-  gap: clamp(34px, 6vw, 76px);
-  align-items: start;
-  padding-bottom: clamp(34px, 5vw, 58px);
-  border-bottom: 1px solid rgba(17,17,17,.14);
-}
-
-body.landing-page .more-hero-grid h2 {
-  margin: 0;
-  max-width: 620px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(2.1rem, 5vw, 4.1rem);
-  line-height: .98;
-  letter-spacing: -.055em;
-}
-
-body.landing-page .more-hero-grid > div:last-child {
-  padding-top: 10px;
-}
-
-body.landing-page .more-hero-grid > div:last-child p {
-  margin: 0 0 18px;
-  max-width: 660px;
-  font-size: clamp(1rem, 1.4vw, 1.12rem);
-  line-height: 1.65;
-}
-
-body.landing-page .more-inline-actions {
-  margin-top: 28px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: center;
-}
-
-body.landing-page .more-text-link {
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .72rem;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-  color: rgba(17,17,17,.70);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(17,17,17,.28);
-  padding-bottom: 3px;
-}
-
-body.landing-page .more-cycle-grid {
-  margin-top: clamp(28px, 5vw, 52px);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  border: 1px solid rgba(17,17,17,.16);
-  background: rgba(255,255,255,.22);
-}
-
-body.landing-page .more-cycle-grid article {
-  padding: clamp(24px, 3vw, 34px);
-  min-height: 230px;
-}
-
-body.landing-page .more-cycle-grid article + article {
-  border-left: 1px solid rgba(17,17,17,.16);
-}
-
-body.landing-page .more-cycle-grid span {
-  display: block;
-  margin-bottom: 20px;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: rgba(17,17,17,.56);
-}
-
-body.landing-page .more-cycle-grid h3 {
-  margin: 0 0 16px;
-  max-width: 440px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(1.45rem, 2.4vw, 2.1rem);
-  line-height: 1.08;
-  letter-spacing: -.035em;
-}
-
-body.landing-page .more-cycle-grid p {
-  margin: 0;
-  max-width: 520px;
-  line-height: 1.7;
-  font-size: .96rem;
-}
-
-body.landing-page .more-accordions {
-  margin-top: clamp(34px, 6vw, 64px);
-  border-top: 1px solid rgba(17,17,17,.18);
-}
-
-body.landing-page .more-accordion {
-  border-bottom: 1px solid rgba(17,17,17,.18);
-}
-
-body.landing-page .more-accordion summary {
-  list-style: none;
-  cursor: pointer;
-  min-height: 78px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-  padding: 24px 0;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
-  line-height: 1.18;
-  letter-spacing: -.025em;
-  color: var(--landing-ink);
-}
-
-body.landing-page .more-accordion summary::-webkit-details-marker {
-  display: none;
-}
-
-body.landing-page .more-accordion summary strong {
-  flex: 0 0 auto;
-  width: 32px;
-  height: 32px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(17,17,17,.18);
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: 1rem;
-  font-weight: 400;
-  color: rgba(17,17,17,.62);
-}
-
-body.landing-page .more-accordion[open] summary strong {
-  transform: rotate(45deg);
-}
-
-body.landing-page .more-accordion__body {
-  padding: 2px 0 clamp(28px, 5vw, 52px);
-}
-
-body.landing-page .more-timeline {
-  display: grid;
-  gap: 0;
-  border: 1px solid rgba(17,17,17,.14);
-  background: rgba(255,255,255,.20);
-}
-
-body.landing-page .more-timeline__item {
-  display: grid;
-  grid-template-columns: 72px minmax(0, 1fr);
-  gap: 22px;
-  padding: 24px;
-  border-bottom: 1px solid rgba(17,17,17,.12);
-}
-
-body.landing-page .more-timeline__item:last-child {
-  border-bottom: 0;
-}
-
-body.landing-page .more-timeline__item > span {
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .78rem;
-  letter-spacing: .10em;
-  color: rgba(17,17,17,.48);
-}
-
-body.landing-page .more-timeline__item p:first-child,
-body.landing-page .more-process-grid span {
-  margin: 0 0 8px;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: rgba(17,17,17,.50);
-}
-
-body.landing-page .more-timeline__item h4,
-body.landing-page .more-process-grid h4,
-body.landing-page .more-faq-grid h4 {
-  margin: 0 0 8px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: 1.28rem;
-  line-height: 1.18;
-  letter-spacing: -.025em;
-}
-
-body.landing-page .more-timeline__item p:last-child,
-body.landing-page .more-process-grid p,
-body.landing-page .more-faq-grid p {
-  margin: 0;
-  line-height: 1.65;
-  font-size: .94rem;
-}
-
-body.landing-page .more-angle-intro {
-  max-width: 850px;
-  margin-bottom: 24px;
-}
-
-body.landing-page .more-angle-intro h4 {
-  margin: 0 0 12px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(1.55rem, 2.6vw, 2.35rem);
-  line-height: 1.08;
-  letter-spacing: -.035em;
-}
-
-body.landing-page .more-angle-intro p,
-body.landing-page .more-reading-def > p {
-  margin: 0;
-  max-width: 840px;
-  line-height: 1.7;
-}
-
-body.landing-page .more-mini-cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
-  border: 1px solid rgba(17,17,17,.14);
-}
-
-body.landing-page .more-mini-cards .landing-card {
-  border: 0;
-  border-right: 1px solid rgba(17,17,17,.12);
-  background: rgba(255,255,255,.18);
-  min-height: 0;
-}
-
-body.landing-page .more-mini-cards .landing-card:last-child {
-  border-right: 0;
-}
-
-body.landing-page .more-mini-cards--compact {
-  margin-top: 24px;
-}
-
-body.landing-page .more-process-grid,
-body.landing-page .more-faq-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  border: 1px solid rgba(17,17,17,.14);
-}
-
-body.landing-page .more-faq-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-body.landing-page .more-process-grid article,
-body.landing-page .more-faq-grid article {
-  padding: 24px;
-  border-right: 1px solid rgba(17,17,17,.12);
-  border-bottom: 1px solid rgba(17,17,17,.12);
-  background: rgba(255,255,255,.18);
-}
-
-body.landing-page .more-process-grid article:nth-child(4n),
-body.landing-page .more-faq-grid article:nth-child(2n) {
-  border-right: 0;
-}
-
-body.landing-page .more-process-grid article:nth-last-child(-n+4),
-body.landing-page .more-faq-grid article:nth-last-child(-n+2) {
-  border-bottom: 0;
-}
-
-body.landing-page .more-note {
-  margin: 18px 0 0;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .72rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: rgba(17,17,17,.52);
-}
-
-body.landing-page .more-final-cta {
-  margin-top: clamp(42px, 7vw, 76px);
-  padding: clamp(32px, 5vw, 56px);
-  background: #111;
-  color: var(--landing-text);
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) auto;
-  gap: clamp(22px, 4vw, 44px);
-  align-items: center;
-}
-
-body.landing-page .more-final-cta h2 {
-  margin: 0;
-  max-width: 760px;
-  color: var(--landing-text);
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(1.9rem, 4vw, 3.5rem);
-  line-height: 1;
-  letter-spacing: -.05em;
-}
-
-body.landing-page .more-final-cta p:first-of-type {
-  margin: 14px 0 0;
-  max-width: 580px;
-  color: rgba(246,241,233,.74);
-  line-height: 1.62;
-}
-
-body.landing-page .more-final-cta p:last-child {
-  grid-column: 1 / -1;
-  margin: 0;
-  padding-top: 18px;
-  border-top: 1px solid rgba(255,255,255,.12);
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .72rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: rgba(246,241,233,.58);
-}
-
-@media (max-width: 980px) {
-  body.landing-page .more-hero-grid,
-  body.landing-page .more-final-cta {
-    grid-template-columns: 1fr;
-  }
-
-  body.landing-page .more-process-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  body.landing-page .more-process-grid article:nth-child(2n),
-  body.landing-page .more-faq-grid article:nth-child(2n) {
-    border-right: 0;
-  }
-
-  body.landing-page .more-process-grid article:nth-last-child(-n+4) {
-    border-bottom: 1px solid rgba(17,17,17,.12);
-  }
-
-  body.landing-page .more-process-grid article:nth-last-child(-n+2) {
-    border-bottom: 0;
-  }
-}
-
-@media (max-width: 760px) {
-  body.landing-page .more-cycle-grid,
-  body.landing-page .more-mini-cards,
-  body.landing-page .more-process-grid,
-  body.landing-page .more-faq-grid {
-    grid-template-columns: 1fr;
-  }
-
-  body.landing-page .more-cycle-grid article + article,
-  body.landing-page .more-mini-cards .landing-card,
-  body.landing-page .more-process-grid article,
-  body.landing-page .more-faq-grid article {
-    border-right: 0;
-    border-left: 0;
-  }
-
-  body.landing-page .more-cycle-grid article + article,
-  body.landing-page .more-mini-cards .landing-card + .landing-card,
-  body.landing-page .more-process-grid article + article,
-  body.landing-page .more-faq-grid article + article {
-    border-top: 1px solid rgba(17,17,17,.12);
-  }
-
-  body.landing-page .more-timeline__item {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  body.landing-page .more-final-cta .landing-btn,
-  body.landing-page .more-inline-actions .landing-btn {
-    width: 100%;
-  }
-}
-
-
-/* ─────────────────────────────────────────────────────────
-   Reprise globale landing — 20260515-0948
-   Objectifs : hero situé, mise en regard en onglets,
-   cadre de confiance profond, gains éditorialisés, CTA humain.
-───────────────────────────────────────────────────────── */
-
-body.landing-page .landing-hero-eyebrow {
-  color: rgba(246,241,233,.68);
-}
-
-body.landing-page .landing-hero-conversation {
-  margin: 0 0 22px;
-  max-width: 640px;
-  display: grid;
-  gap: 8px;
-  color: rgba(246,241,233,.74);
-}
-
-body.landing-page .landing-hero-conversation span {
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: rgba(246,241,233,.52);
-}
-
-body.landing-page .landing-hero-conversation strong {
-  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
-  font-size: .98rem;
-  line-height: 1.55;
-  font-weight: 500;
-  color: rgba(246,241,233,.82);
-}
-
-body.landing-page .landing-bento-section--tabs {
-  background: #f1ece3;
-  color: #151515;
-}
-
-body.landing-page .landing-bento-section--tabs .lpb-head {
-  max-width: 880px;
-}
-
-body.landing-page .landing-bento-section--tabs .lpb-kicker,
-body.landing-page .landing-bento-section--tabs .lpb-head p {
-  color: rgba(21,21,21,.66);
-}
-
-body.landing-page .landing-bento-section--tabs .lpb-head h2 {
-  color: #151515;
-}
-
-.lpb-tabs {
-  margin-top: 38px;
-}
-
-.lpb-tab-input {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.lpb-reading-tab {
-  display: inline-grid;
-  align-content: start;
-  gap: 10px;
-  width: calc(25% - 9px);
-  min-height: 230px;
-  margin: 0 8px 16px 0;
-  padding: 26px 24px;
-  vertical-align: top;
-  cursor: pointer;
-  border: 1px solid rgba(255,255,255,.12);
-  background: #0c0c0c;
-  color: #f4efe8;
-  transition: transform .18s ease, border-color .18s ease, background .18s ease;
-}
-
-.lpb-reading-tab:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255,255,255,.28);
-}
-
-.lpb-reading-tab--primary {
-  background: #ece7df;
-  color: #111;
-  border-color: rgba(17,17,17,.16);
-}
-
-.lpb-reading-tab span {
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .62rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: rgba(244,239,232,.56);
-}
-
-.lpb-reading-tab--primary span {
-  color: rgba(17,17,17,.52);
-}
-
-.lpb-reading-tab strong {
-  display: block;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(1.35rem, 2vw, 1.9rem);
-  line-height: 1.05;
-  font-weight: 600;
-  overflow-wrap: anywhere;
-}
-
-.lpb-reading-tab em,
-.lpb-reading-tab small,
-.lpb-reading-tab i {
-  display: block;
-  font-style: normal;
-  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
-  line-height: 1.45;
-  color: rgba(244,239,232,.68);
-}
-
-.lpb-reading-tab em {
-  font-size: .86rem;
-}
-
-.lpb-reading-tab small {
-  font-size: .78rem;
-}
-
-.lpb-reading-tab i {
-  margin-top: auto;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255,255,255,.12);
-  font-size: .76rem;
-}
-
-.lpb-reading-tab--primary em,
-.lpb-reading-tab--primary small,
-.lpb-reading-tab--primary i {
-  color: rgba(17,17,17,.68);
-  border-top-color: rgba(17,17,17,.16);
-}
-
-.lpb-tab-panels {
-  margin-top: 14px;
-  border: 1px solid rgba(17,17,17,.14);
-  background: rgba(255,255,255,.44);
-}
-
-.lpb-reading-panel {
-  display: none;
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
-  gap: clamp(24px, 4vw, 56px);
-  padding: clamp(28px, 4vw, 48px);
-}
-
-#lpb-reading-0:checked ~ .lpb-tab-panels .lpb-reading-panel--0,
-#lpb-reading-1:checked ~ .lpb-tab-panels .lpb-reading-panel--1,
-#lpb-reading-2:checked ~ .lpb-tab-panels .lpb-reading-panel--2,
-#lpb-reading-3:checked ~ .lpb-tab-panels .lpb-reading-panel--3 {
-  display: grid;
-}
-
-#lpb-reading-0:checked + .lpb-reading-tab,
-#lpb-reading-1:checked + .lpb-reading-tab,
-#lpb-reading-2:checked + .lpb-reading-tab,
-#lpb-reading-3:checked + .lpb-reading-tab {
-  outline: 2px solid rgba(17,17,17,.34);
-  outline-offset: 2px;
-}
-
-.lpb-panel-main h3 {
-  margin: 10px 0 18px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(2rem, 3.8vw, 3.6rem);
-  line-height: 1;
-  font-weight: 600;
-  color: #111;
-}
-
-.lpb-panel-value {
-  max-width: 680px;
-  font-size: 1.03rem;
-  line-height: 1.85;
-  color: rgba(17,17,17,.72);
-}
-
-.lpb-panel-aside {
-  display: grid;
-  gap: 18px;
-  align-content: start;
-}
-
-.lpb-panel-block {
-  padding: 18px 0;
-  border-top: 1px solid rgba(17,17,17,.14);
-}
-
-.lpb-panel-block > span {
-  display: block;
-  margin-bottom: 12px;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .65rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(17,17,17,.48);
-}
-
-.lpb-panel-block strong {
-  color: #151515;
-}
-
-.lpb-details--panel {
-  margin-top: 0;
-  border-top: 1px solid rgba(17,17,17,.14);
-}
-
-.lpb-details--panel summary {
-  color: #111;
-}
-
-body.landing-page .trust-keys-grid--six {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
-}
-
-body.landing-page .trust-keys-grid--six .trust-key {
-  min-height: 100%;
-}
-
-body.landing-page .trust-key__summary {
-  margin: -4px 0 18px;
-  color: rgba(246,241,233,.62);
-  font-size: .9rem;
-  line-height: 1.55;
-}
-
-body.landing-page .trust-key__deep-list {
-  margin: 14px 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 10px;
-}
-
-body.landing-page .trust-key__deep-list li {
-  padding-left: 18px;
-  position: relative;
-  color: rgba(246,241,233,.78);
-  font-size: .88rem;
-  line-height: 1.55;
-}
-
-body.landing-page .trust-key__deep-list li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: rgba(246,241,233,.42);
-}
-
-body.landing-page #valeur-position .landing-head h2 {
-  max-width: 760px;
-}
-
-body.landing-page #valeur-position .landing-head p {
-  max-width: 820px;
-}
-
-body.landing-page .value-chip-list span {
-  text-transform: none;
-  letter-spacing: .04em;
-}
-
-body.landing-page .landing-qualification-cta--final {
-  background: #0a0a0a;
-  color: #f4efe8;
-}
-
-body.landing-page .qualification-cta-grid--split {
-  grid-template-columns: .42fr .58fr;
-  align-items: stretch;
-  gap: clamp(28px, 6vw, 78px);
-}
-
-body.landing-page .qualification-cta-signature {
-  min-height: 420px;
-  padding: clamp(28px, 4vw, 46px);
-  border: 1px solid rgba(255,255,255,.14);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015)),
-    repeating-linear-gradient(135deg, rgba(255,255,255,.035) 0 1px, transparent 1px 12px);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-body.landing-page .qualification-cta-mark {
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(2.4rem, 4vw, 4.4rem);
-  line-height: .95;
-  margin-bottom: auto;
-}
-
-body.landing-page .qualification-cta-signature p {
-  max-width: 360px;
-  color: rgba(246,241,233,.74);
-  line-height: 1.75;
-}
-
-body.landing-page .qualification-cta-signature span {
-  margin-top: 20px;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .68rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(246,241,233,.5);
-}
-
-body.landing-page .qualification-cta-main h2 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  line-height: 1;
-}
-
-body.landing-page .qualification-cta-more {
-  margin-top: 28px;
-  border-top: 1px solid rgba(255,255,255,.18);
-  border-bottom: 1px solid rgba(255,255,255,.18);
-}
-
-body.landing-page .qualification-cta-more summary {
-  padding: 20px 0;
-  cursor: pointer;
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
-  font-size: .72rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: rgba(246,241,233,.76);
-}
-
-body.landing-page .qualification-cta-more summary::-webkit-details-marker {
-  display: none;
-}
-
-body.landing-page .qualification-cta-more summary::after {
-  content: "+";
-  float: right;
-  color: rgba(246,241,233,.62);
-}
-
-body.landing-page .qualification-cta-more[open] summary::after {
-  content: "–";
-}
-
-body.landing-page .qualification-cta-more-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: 24px;
-  padding: 6px 0 28px;
-}
-
-body.landing-page .qualification-cta-more-grid article {
-  border-top: 1px solid rgba(255,255,255,.12);
-  padding-top: 16px;
-}
-
-body.landing-page .qualification-cta-more-grid h3 {
-  margin: 0 0 8px;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: 1.15rem;
-  color: #f4efe8;
-}
-
-body.landing-page .qualification-cta-more-grid p {
-  margin: 0;
-  color: rgba(246,241,233,.7);
-  line-height: 1.7;
-}
-
-@media (max-width: 980px) {
-  .lpb-reading-tab {
-    width: calc(50% - 10px);
-  }
-
-  .lpb-reading-panel {
-    grid-template-columns: 1fr;
-  }
-
-  body.landing-page .trust-keys-grid--six {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  body.landing-page .qualification-cta-grid--split {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-  .lpb-reading-tab {
-    display: block;
-    width: 100%;
-    min-height: auto;
-    margin-right: 0;
-  }
-
-  .lpb-reading-panel {
-    padding: 24px;
-  }
-
-  body.landing-page .trust-keys-grid--six,
-  body.landing-page .qualification-cta-more-grid {
-    grid-template-columns: 1fr;
-  }
-
-  body.landing-page .qualification-cta-signature {
-    min-height: 280px;
-  }
-}
-
-/* Ajustement hero typographique final */
-body.landing-page .landing-hero--bento-minimal h1 {
-  font-size: clamp(3.2rem, 6vw, 5.4rem);
-  line-height: .92;
-  font-weight: 600;
-  color: #f4efe8;
-}
-
-body.landing-page .landing-hero-bento-lead {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: rgba(255,255,255,.74);
-}
-
-@media (max-width: 760px) {
-  body.landing-page .landing-hero--bento-minimal h1 {
-    font-size: clamp(2.35rem, 12vw, 3.4rem);
-  }
-}
+(function () {
+  "use strict";
+
+  const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
+  console.info("En Plateau — render-landing reprise globale build 20260515-0948 loaded");
+
+  const Core = window.EnPlateauRenderCore;
+  const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
+  const root = document.getElementById("landing-root");
+
+  if (!Core || !root) {
+    console.error("En Plateau — render-core.js ou #landing-root introuvable.");
+    return;
+  }
+
+  function safe(v) { return Core.escapeHTML(v || ""); }
+  function txt(...values) { return Core.text(...values); }
+  function toArray(v) { return Core.toArray(v).filter(Boolean); }
+  function norm(v) { return Core.normalize(v || ""); }
+
+
+  function normalizeDisplayName(value) {
+    const raw = String(value || "").replace(/\s+/g, " ").trim();
+    if (!raw) return "";
+    if (raw === "Votre organisation" || raw === "Intervenant pressenti") return raw;
+
+    const keepUpper = new Set([
+      "BFM", "TV", "RH", "DG", "DAF", "DRH", "PDG", "CEO", "CFO", "COMEX",
+      "RSE", "ETI", "PME", "IA", "KEA", "EDF", "SNCF", "CEA", "CNRS", "BPI"
+    ]);
+    const smallWords = new Set(["de", "du", "des", "la", "le", "les", "et", "à", "au", "aux", "d", "l"]);
+
+    function formatToken(token, index) {
+      const clean = token.replace(/[’']/g, "");
+      if (!clean) return token;
+      if (keepUpper.has(clean.toUpperCase())) return clean.toUpperCase();
+      if (/^\d+$/.test(clean)) return token;
+      if (smallWords.has(clean.toLowerCase()) && index > 0) return clean.toLowerCase();
+
+      return token
+        .split(/([\-’'])/)
+        .map(part => {
+          if (/^[\-’']$/.test(part)) return part;
+          if (!part) return part;
+          if (keepUpper.has(part.toUpperCase())) return part.toUpperCase();
+          return part.charAt(0).toUpperCase() + part.slice(1).toLowerCase();
+        })
+        .join("");
+    }
+
+    return raw
+      .split(" ")
+      .map((token, index) => token === "&" ? "&" : formatToken(token, index))
+      .join(" ")
+      .replace(/\bReguida\b/g, "Reguida")
+      .trim();
+  }
+
+  function cleanRole(role, organisationName) {
+    let cleaned = String(role || "").trim();
+    const org = String(organisationName || "").trim();
+    if (!cleaned) return "";
+    if (org) {
+      cleaned = cleaned
+        .replace(new RegExp("\\s*[—–-]\\s*" + org.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\s*$", "i"), "")
+        .replace(new RegExp("\\s+chez\\s+" + org.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\s*$", "i"), "");
+    }
+    return cleaned.trim();
+  }
+
+  function stripConversationCode(value) {
+    return String(value || "")
+      .replace(/^\s*C\d+\s*[—–-]\s*/i, "")
+      .replace(/^\s*IND\s*-\s*C\d+\s*[—–-]\s*/i, "")
+      .trim();
+  }
+
+  function soften(value) {
+    return String(value || "")
+      .replace(/\bCroissance sous tension\b/g, "Croissance à piloter")
+      .replace(/\bAdaptation sous contrainte\b/g, "Adaptation maîtrisée")
+      .replace(/\bRéinvention sous crise\b/g, "Reconfiguration stratégique")
+      .replace(/\bpoints? de bascule\b/gi, m => m.startsWith("points") ? "moments de décision" : "moment de décision")
+      .replace(/\bdégrade\b/gi, "met à l'épreuve")
+      .replace(/\bdégrader\b/gi, "mettre à l'épreuve")
+      .replace(/\bdégradation\b/gi, "évolution moins lisible")
+      .replace(/\bruptures visibles\b/gi, "changements visibles")
+      .replace(/\brupture\b/gi, "changement de nature")
+      .replace(/\bcrise\b/gi, "moment de redéfinition")
+      .replace(/\bcontraintes?\b/gi, "conditions")
+      .replace(/\btensions?\b/gi, "points d'attention")
+      .replace(/\bfragilise\b/gi, "rend moins lisible")
+      .replace(/\bfragiliser\b/gi, "rendre moins lisible")
+      .replace(/\bfragilité\b/gi, "point de vigilance")
+      .replace(/\bfragile\b/gi, "à stabiliser")
+      .replace(/\bplafond\b/gi, "seuil")
+      .replace(/\bfacteur limitant\b/gi, "condition décisive")
+      .replace(/\bblocage\b/gi, "limite")
+      .replace(/\bvulnérabilités?\b/gi, "points sensibles")
+      .replace(/\bpubliquement tenable\b/gi, "lisible par votre écosystème")
+      .replace(/\bprise de parole publique\b/gi, "position éditoriale")
+      .replace(/\bplan social\b/gi, "dossier identifiable")
+      .replace(/\bplans sociaux\b/gi, "dossiers identifiables")
+      .replace(/\bplan de restructuration\b/gi, "dossier de transformation interne")
+      .replace(/\bplans de restructuration\b/gi, "dossiers de transformation interne")
+      .replace(/\brestructurations?\b/gi, "transformations sociales et organisationnelles")
+      .replace(/À partir de quand chaque volume supplémentaire met à l'épreuve-t-il plus l'organisation qu'il ne renforce l'activité\s*\?/gi,
+        "Quelles conditions rendent une montée en capacité réellement pilotable ?");
+  }
+
+  function shortText(value, max = 560) {
+    const cleaned = soften(String(value || "").replace(/\s+/g, " ").trim());
+    if (cleaned.length <= max) return cleaned;
+    const cut = cleaned.slice(0, max);
+    const last = Math.max(cut.lastIndexOf("."), cut.lastIndexOf(";"), cut.lastIndexOf(","));
+    return (last > 180 ? cut.slice(0, last) : cut).trim() + ".";
+  }
+
+  function isOperationalRole(role) {
+    const r = norm(role);
+    return r.includes("industri") || r.includes("supply") || r.includes("operations") ||
+           r.includes("operation") || r.includes("production") || r.includes("qualite") ||
+           r.includes("maintenance") || r.includes("directeur usine") || r.includes("site industriel");
+  }
+
+  function actorLabel(actorType) {
+    return actorType === "cabinet_conseil" ? "Cabinet · Conseil · Expertise" : "Organisation industrielle";
+  }
+
+  function displayReadingLabel(reading, angle, deal, personRole) {
+    const fromData = txt(
+      deal?.editorialContext?.typeLecture, deal?.typeLecture, deal?.lecture,
+      reading?.label, angle?.typeLecture
+    );
+
+    // Le type de lecture appartient à l'angle éditorial.
+    // La fonction de la personne peut expliquer la légitimité de la prise de parole,
+    // mais elle ne doit jamais transformer une lecture stratégique, financière,
+    // territoriale, juridique, etc. en lecture opérationnelle.
+    return fromData || "Lecture éditoriale";
+  }
+
+  function card(label, title, text, accent, extraClass = "") {
+    if (!title && !text) return "";
+    const classes = ["landing-card", accent ? "landing-card--accent" : "", extraClass].filter(Boolean).join(" ");
+    return `
+      <article class="${classes}">
+        ${label ? `<span class="landing-label">${safe(label)}</span>` : ""}
+        ${title ? `<h3>${safe(soften(title))}</h3>` : ""}
+        ${text  ? `<p>${safe(shortText(text, 640))}</p>` : ""}
+      </article>`;
+  }
+
+  function valueLabel(label) {
+    const n = norm(label);
+    if (n.includes("organisation") || n.includes("entreprise") || n.includes("industrielle")) return "Pour votre organisation";
+    if (n.includes("fonction") || n.includes("porteuse")) return "Pour votre fonction";
+    if (n.includes("intervenant") || n.includes("personne") || n.includes("senior")) return "Pour vous";
+    if (n.includes("cabinet") || n.includes("conseil") || n.includes("expertise") || n.includes("avocat")) return "Pour votre organisation";
+    return label || "Portée";
+  }
+
+  function sanitizePersonFragment(value) {
+    let v = soften(value || "");
+    v = v.replace(/^Votre fonction\s+[—-]\s*[^—-]+\s+[—-]\s+vous permet de\s+/i, "Vous pouvez ");
+    v = v.replace(/^Votre fonction\s+[—-]\s*[^—-]+\s+[—-]\s+/i, "");
+    v = v.replace(/^Votre fonction vous permet de\s+/i, "Vous pouvez ");
+    return v;
+  }
+
+  function readingTypeConfig(code) {
+    if (!code) return null;
+    const key = String(code).trim();
+    return DATA?.readingTypes?.[key] || null;
+  }
+
+  function actorLabelsForAngle(angle) {
+    const cfg = readingTypeConfig(angle?.typeLecture);
+    return toArray(cfg?.profilsIntervenant)
+      .map(item => txt(item.label, item.title, item.profil))
+      .filter(Boolean)
+      .slice(0, 3);
+  }
+
+  function mediaLineForAngle(item) {
+    const journaliste = normalizeDisplayName(txt(item?.journaliste, ""));
+    const media = txt(item?.media, "");
+    if (!journaliste && !media) return "";
+    return [journaliste, media].filter(Boolean).join(" · ");
+  }
+
+  function castingItems() {
+    return toArray(DATA?.casting?.castings || DATA?.castings || []);
+  }
+
+  function organisationsForAngle(angleCode, limit = 3, excludeOrgName = "") {
+    const exclude = norm(excludeOrgName);
+    const seen = new Set();
+    return castingItems()
+      .filter(item => String(item?.angleCode || "") === String(angleCode || ""))
+      .map(item => normalizeDisplayName(txt(item?.organisation?.name, item?.organisationName, item?.orgName)))
+      .filter(name => {
+        const key = norm(name);
+        if (!key || (exclude && key === exclude) || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      })
+      .slice(0, limit);
+  }
+
+  function readingDisplay(value) {
+    return soften(String(value || "").replace(/^Lecture\s+/i, "")).trim();
+  }
+
+  function readingPhrase(value) {
+    const r = readingDisplay(value).toLowerCase();
+    return r ? `lecture ${r}` : "lecture éditoriale";
+  }
+
+  function angleTitle(angle, publicAngle = {}, formulation = {}) {
+    return txt(publicAngle.titreLanding, formulation.title, angle?.questionPublique, angle?.titreAngle, angle?.questionEditoriale);
+  }
+
+  function angleDescription(angle, publicAngle = {}, formulation = {}) {
+    return txt(publicAngle.accrocheLanding, formulation.accrocheLanding, angle?.introMecanisme, angle?.texteProgramme, angle?.questionActivation, angle?.ceQueCetteLecturePermetDeVoir);
+  }
+
+  function buildComplementaryCard(other, excludeOrgName = "") {
+    const c = other.complementaryCard || {};
+    const actors = actorLabelsForAngle(other);
+    const orgs = organisationsForAngle(other.code, 3, excludeOrgName);
+    const media = mediaLineForAngle(other);
+    const label = c.label || other.typeLecture || "Lecture complémentaire";
+    const title = c.title || other.questionCourte || other.titreAngle || other.questionPublique;
+    const text = c.headline || other.ceQueCetteLecturePermetDeVoir || other.angleRendVisible || "Une autre lecture du même contexte éditorial.";
+    return `
+      <article class="landing-card landing-card--complementary">
+        ${actors.length ? `<div class="landing-actors"><span>Acteurs pressentis</span><strong>${safe(actors.join(" · "))}</strong></div>` : ""}
+        ${orgs.length ? `<div class="landing-organisations"><span>Organisations approchées</span><strong>${safe(orgs.join(" · "))}</strong></div>` : ""}
+        ${media ? `<div class="landing-media-line"><span>Format média pressenti</span><strong>${safe(media)}</strong></div>` : ""}
+        ${label ? `<span class="landing-label">${safe(label)}</span>` : ""}
+        ${title ? `<h3>${safe(soften(title))}</h3>` : ""}
+        ${text ? `<p>${safe(shortText(text, 560))}</p>` : ""}
+      </article>`;
+  }
+
+  function buildPrimaryConversationCard(angle, publicAngle, formulation, personName, personRole, organisationName, readingLabel) {
+    const actors = actorLabelsForAngle(angle);
+    const media = mediaLineForAngle(angle);
+    const title = angleTitle(angle, publicAngle, formulation);
+    const text = angleDescription(angle, publicAngle, formulation);
+    return `
+      <article class="landing-card landing-card--primary-position">
+        ${actors.length ? `<div class="landing-actors"><span>Acteurs pressentis</span><strong>${safe(actors.join(" · "))}</strong></div>` : ""}
+        <div class="landing-organisations"><span>Organisation pressentie</span><strong>${safe(organisationName)}</strong></div>
+        ${media ? `<div class="landing-media-line"><span>Format média pressenti</span><strong>${safe(media)}</strong></div>` : ""}
+        <span class="landing-label">Votre position pressentie · ${safe(readingDisplay(readingLabel))}</span>
+        ${title ? `<h3>${safe(soften(title))}</h3>` : ""}
+        ${text ? `<p>${safe(shortText(text, 560))}</p>` : ""}
+        <p class="landing-card-note"><strong>Intervenant pressenti</strong><br>${safe([personName, personRole].filter(Boolean).join(" · "))}</p>
+      </article>`;
+  }
+
+
+  /* ─────────────────────────────────────────────────────────
+     SECTION POST-HERO — BENTO conversation / lectures
+     Objectif : rendre immédiatement lisibles la place proposée,
+     les autres lectures, les organisations approchées,
+     les acteurs approchés et le format média de chaque angle.
+  ───────────────────────────────────────────────────────── */
+
+  function readingLabelForAngle(angle) {
+    const cfg = readingTypeConfig(angle?.typeLecture);
+    return txt(cfg?.label, angle?.complementaryCard?.label, angle?.typeLecture, "Lecture complémentaire");
+  }
+
+  function shortReadingLabel(value) {
+    return readingDisplay(value || "Lecture");
+  }
+
+  function readingKey(value) {
+    const key = norm(value || "").replace(/^lecture\s+/, "").trim();
+    if (key.includes("territoire") || key.includes("territorial")) return "territoriale";
+    if (key.includes("strateg")) return "strategique";
+    if (key.includes("operation") || key.includes("production") || key.includes("supply")) return "operationnelle";
+    if (key.includes("techno") || key.includes("systeme") || key.includes("data") || key.includes("numerique")) return "technologie";
+    if (key.includes("finance")) return "financiere";
+    if (key.includes("jurid")) return "juridique";
+    if (key.includes("rh") || key.includes("competence")) return "rh";
+    if (key.includes("energie") || key.includes("ressource") || key.includes("carbone")) return "energie";
+    return "default";
+  }
+
+  function readingContributionLine(readingLabel, fallback = "") {
+    const lines = {
+      territoriale: "La lecture des conditions territoriales : foncier, friches, infrastructures, ancrage et décision locale.",
+      strategique: "La lecture de direction : trajectoire, gouvernance et décision industrielle.",
+      operationnelle: "La lecture du réel industriel : flux, qualité, maintenance, coordination et capacité de pilotage.",
+      technologie: "La lecture des architectures techniques : systèmes, données, interfaces et lisibilité de l’action.",
+      financiere: "La lecture économique : investissement, marges de manœuvre, risque et soutenabilité.",
+      juridique: "La lecture de sécurisation : responsabilité, cadre, conformité et arbitrages de risque.",
+      rh: "La lecture des compétences : métiers, collectifs, engagement et capacité de transformation.",
+      energie: "La lecture des ressources : énergie, eau, carbone, matières et conditions de continuité."
+    };
+    return lines[readingKey(readingLabel)] || shortText(fallback, 220) || "Une lecture complémentaire pour éclairer le même moment de transformation industrielle.";
+  }
+
+  function primaryReadingValue(readingLabel, fallback = "") {
+    const lines = {
+      territoriale: "Éclairer les conditions territoriales qui rendent une trajectoire industrielle possible, soutenable ou réorientable.",
+      strategique: "Éclairer le moment où une trajectoire industrielle oblige à arbitrer autrement.",
+      operationnelle: "Éclairer le moment où le pilotage opérationnel révèle une transformation plus profonde.",
+      technologie: "Éclairer quand les systèmes, données et interfaces deviennent décisifs pour la trajectoire industrielle.",
+      financiere: "Éclairer les conditions économiques qui rendent une transformation industrielle tenable.",
+      juridique: "Éclairer comment le cadre juridique sécurise les arbitrages industriels avant qu’ils ne deviennent des risques.",
+      rh: "Éclairer comment les compétences et les collectifs conditionnent réellement la transformation industrielle.",
+      energie: "Éclairer comment l’énergie, l’eau, le carbone ou les matières deviennent des conditions de continuité industrielle."
+    };
+    return lines[readingKey(readingLabel)] || shortText(fallback, 220) || "Éclairer une condition décisive de transformation industrielle depuis une position située.";
+  }
+
+  function readingTags(readingLabel) {
+    const tags = {
+      territoriale: ["Foncier", "Friches", "Infrastructures", "Ancrage"],
+      strategique: ["Trajectoire", "Gouvernance", "Arbitrage", "Décision"],
+      operationnelle: ["Flux", "Qualité", "Maintenance", "Coordination"],
+      technologie: ["Systèmes", "Données", "Interfaces", "Architecture"],
+      financiere: ["Investissement", "Marge", "Risque", "Soutenabilité"],
+      juridique: ["Cadre", "Responsabilité", "Conformité", "Risque"],
+      rh: ["Métiers", "Compétences", "Collectifs", "Engagement"],
+      energie: ["Énergie", "Eau", "Carbone", "Matières"]
+    };
+    return tags[readingKey(readingLabel)] || ["Angle", "Lecture", "Arbitrage", "Trajectoire"];
+  }
+
+  function dealItemsForAngle(angleCode, limit = 4, excludeOrgName = "") {
+    const exclude = norm(excludeOrgName);
+    const seen = new Set();
+    return castingItems()
+      .filter(item => String(item?.angleCode || "") === String(angleCode || ""))
+      .map(item => {
+        const organisation = normalizeDisplayName(txt(item?.organisation?.name, item?.organisationName, item?.orgName));
+        const person = normalizeDisplayName(txt(item?.person?.fullName, item?.person?.name, item?.personName, item?.name));
+        const role = cleanRole(txt(item?.person?.role, item?.role, item?.personRole), organisation);
+        return { organisation, person, role };
+      })
+      .filter(item => {
+        const orgKey = norm(item.organisation);
+        const personKey = norm(item.person);
+        const key = [orgKey, personKey].filter(Boolean).join("|");
+        if (!key || (exclude && orgKey === exclude) || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      })
+      .slice(0, limit);
+  }
+
+  function listInline(items, fallback = "À qualifier") {
+    const clean = toArray(items).map(item => String(item || "").trim()).filter(Boolean);
+    if (!clean.length) return `<span class="lpb-muted">${safe(fallback)}</span>`;
+    return clean.map(item => `<span>${safe(item)}</span>`).join("");
+  }
+
+  function compactPeopleList(items) {
+    const rows = toArray(items).filter(Boolean).map(item => {
+      const who = [item.person, item.role].filter(Boolean).join(" · ");
+      return who || item.organisation;
+    }).filter(Boolean);
+    return listInline(rows, "Profils en qualification");
+  }
+
+  function compactOrgList(items) {
+    const seen = new Set();
+    const rows = toArray(items).map(item => item.organisation).filter(name => {
+      const key = norm(name);
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+    return listInline(rows, "Organisations en qualification");
+  }
+
+  function bentoDetail(title, body) {
+    if (!body) return "";
+    return `
+      <details class="lpb-details">
+        <summary>${safe(title)}</summary>
+        <div>${body}</div>
+      </details>`;
+  }
+
+  function readingsSentence(readingLabel, complementaryAngles) {
+    const labels = [readingLabel, ...toArray(complementaryAngles).map(other => readingLabelForAngle(other))]
+      .map(item => shortReadingLabel(item).toLowerCase())
+      .filter(Boolean);
+    const unique = [];
+    labels.forEach(label => {
+      if (!unique.some(existing => norm(existing) === norm(label))) unique.push(label);
+    });
+    if (!unique.length) return "plusieurs lectures complémentaires";
+    if (unique.length === 1) return `une lecture ${unique[0]}`;
+    if (unique.length === 2) return `une lecture ${unique[0]} et une lecture ${unique[1]}`;
+    return unique.slice(0, -1).map(label => `une lecture ${label}`).join(", ") + ` et une lecture ${unique[unique.length - 1]}`;
+  }
+
+  function buildConversationTab(item, index, activeIndex) {
+    const checked = index === activeIndex ? " checked" : "";
+    const isPrimary = item.primary;
+    const orgs = item.orgs.slice(0, 3);
+    return `
+      <input class="lpb-tab-input" type="radio" name="lpb-reading-tabs" id="lpb-reading-${index}"${checked}>
+      <label class="lpb-reading-tab ${isPrimary ? "lpb-reading-tab--primary" : ""}" for="lpb-reading-${index}">
+        <span>${safe(isPrimary ? "Votre lecture" : "Lecture complémentaire")}</span>
+        <strong>${safe(shortReadingLabel(item.readingLabel))}</strong>
+        <em>${safe(readingTags(item.readingLabel).slice(0, 3).join(" · "))}</em>
+        <small>${orgs.length ? safe(orgs.join(" · ")) : "Organisations en qualification"}</small>
+        ${item.media ? `<i>${safe(item.media)}</i>` : ""}
+      </label>`;
+  }
+
+  function buildConversationPanel(item, index) {
+    const orgs = item.orgs.slice(0, 3);
+    return `
+      <article class="lpb-reading-panel lpb-reading-panel--${index} ${item.primary ? "lpb-reading-panel--primary" : ""}">
+        <div class="lpb-panel-main">
+          <span class="lpb-label">${safe(item.primary ? "Position proposée" : "Lecture mise en regard")}</span>
+          <h3>${safe(shortReadingLabel(item.readingLabel))}</h3>
+          <p class="lpb-panel-value">${safe(item.primary ? primaryReadingValue(item.readingLabel, item.text) : readingContributionLine(item.readingLabel, item.text))}</p>
+        </div>
+        <div class="lpb-panel-aside">
+          <div class="lpb-panel-block">
+            <span>Organisations approchées</span>
+            <div class="lpb-chip-list">${listInline(orgs, "Organisations en qualification")}</div>
+          </div>
+          ${item.media ? `<div class="lpb-panel-block"><span>Journaliste / média</span><strong>${safe(item.media)}</strong></div>` : ""}
+          <details class="lpb-details lpb-details--panel">
+            <summary>Voir le détail de cette lecture</summary>
+            <div>
+              ${item.title ? `<div class="lpb-detail-block"><span>Angle</span><strong>${safe(shortText(item.title, 240))}</strong></div>` : ""}
+              ${item.text ? `<p>${safe(shortText(item.text, 620))}</p>` : ""}
+              <div class="lpb-detail-block"><span>Rôle dans la conversation</span><strong>${safe(item.primary ? "Lecture proposée à votre organisation" : "Lecture complémentaire dans la composition éditoriale")}</strong></div>
+            </div>
+          </details>
+        </div>
+      </article>`;
+  }
+
+  function buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles) {
+    const reading = shortReadingLabel(readingLabel).toLowerCase();
+    const title = `Votre lecture ${reading} prend sa valeur dans une conversation composée.`;
+    const sentence = readingsSentence(readingLabel, complementaryAngles);
+
+    const primaryItem = {
+      primary: true,
+      readingLabel,
+      title: angleTitle(angle, publicAngle, formulation),
+      text: angleDescription(angle, publicAngle, formulation),
+      orgs: [organisationName].filter(Boolean),
+      media: mediaLineForAngle(angle)
+    };
+
+    const otherItems = complementaryAngles.map(other => {
+      const c = other.complementaryCard || {};
+      const otherPublic = other.anglePublic || other.formulationVariants?.anglePublic || {};
+      const otherFormulation = Core.getFormulationLanding(other) || {};
+      const otherReading = readingLabelForAngle(other);
+      const deals = dealItemsForAngle(other.code, 3, organisationName);
+      return {
+        primary: false,
+        readingLabel: otherReading,
+        title: txt(c.title, otherPublic.titreLanding, otherFormulation.title, other.questionCourte, other.titreAngle, other.questionPublique),
+        text: txt(c.headline, otherPublic.accrocheLanding, otherFormulation.accrocheLanding, other.ceQueCetteLecturePermetDeVoir, other.angleRendVisible),
+        orgs: toArray(deals).map(item => item.organisation).filter(Boolean).slice(0, 3),
+        media: mediaLineForAngle(other)
+      };
+    });
+
+    const items = [primaryItem, ...otherItems].slice(0, 4);
+
+    return `
+      <section class="landing-bento-section landing-bento-section--tabs" id="mise-en-regard" data-bento-build="20260515-reprise-globale">
+        <div class="landing-container lpb-container">
+          <div class="lpb-head">
+            <p class="lpb-kicker">Mise en regard éditoriale</p>
+            <h2>${safe(title)}</h2>
+            <p>Chaque intervenant participe séparément. La valeur naît ensuite de la mise en regard&nbsp;: ${safe(sentence)} éclairent le même moment de transformation industrielle.</p>
+            <p class="lpb-subnote">Il ne s’agit pas d’une table ronde ni d’un débat contradictoire. Chaque contribution est préparée individuellement, puis articulée aux autres lectures.</p>
+          </div>
+
+          <div class="lpb-tabs" aria-label="Les quatre lectures de la conversation">
+            ${items.map((item, index) => buildConversationTab(item, index, 0)).join("")}
+            <div class="lpb-tab-panels">
+              ${items.map((item, index) => buildConversationPanel(item, index)).join("")}
+            </div>
+          </div>
+        </div>
+      </section>`;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     BRANCHEMENT DATA V67 — gainsParProfilV2 + faqV2
+     Ces 4 fonctions sont les seules modifications apportées
+     à V65.9 pour la compatibilité avec le data V67.
+     Aucune autre fonction, aucune section HTML n'est modifiée.
+  ───────────────────────────────────────────────────────── */
+
+  function detectProfilGroupe(actorType) {
+    return actorType === "cabinet_conseil" ? "eclaireur" : "industriel";
+  }
+
+  function detectPersonaType(role, actorType) {
+    const r = norm(role || "");
+    const groupe = detectProfilGroupe(actorType);
+    if (groupe === "eclaireur") {
+      if (r.includes("avocat") || r.includes("counsel")) return "avocat";
+      if (r.includes("ingeni") || r.includes("bureau etude") || r.includes("technique")) return "ingenierie";
+      return "conseil";
+    }
+    if (r.includes("pdg") || r.includes("president") || r.includes("directeur general") || r.includes(" dg ") || r.includes("ceo") || r.includes("chief executive")) return "DG";
+    if (r.includes("daf") || r.includes("directeur financier") || r.includes("directeur finance") || r.includes("cfo") || r.includes("chief financial")) return "DAF";
+    if (r.includes("drh") || r.includes("ressources humaines") || r.includes("directeur rh") || r.includes("chief people") || r.includes("chief human")) return "DRH";
+    if (r.includes("juridique") || r.includes("legal") || r.includes("compliance") || r.includes("conformite") || r.includes("affaires publiques") || r.includes("reglementaire")) return "DIR_JURIDIQUE";
+    if (r.includes("industri") || r.includes("operations") || r.includes("production") || r.includes("supply") || r.includes("usine") || r.includes("manufacturing") || r.includes("amenagement") || r.includes("territoire") || r.includes("energie") || r.includes("ressources") || r.includes("environnement") || r.includes("systeme") || r.includes("numerique") || r.includes("data") || r.includes("technique") || r.includes("maintenance") || r.includes("qualite") || r.includes("logistique")) return "DIR_INDUSTRIEL";
+    return "default";
+  }
+
+  function getReadingType(readingLabel) {
+    const rt = DATA?.readingTypes || {};
+    if (!readingLabel) return null;
+
+    const MAP = {
+      "strategique": "STRATEGIQUE", "lecture strategique": "STRATEGIQUE",
+      "financiere": "FINANCIERE", "lecture financiere": "FINANCIERE",
+      "juridique": "JURIDIQUE", "juridique / reglementaire": "JURIDIQUE", "lecture juridique": "JURIDIQUE",
+      "operationnelle": "OPERATIONNELLE", "operations": "OPERATIONNELLE", "lecture operationnelle": "OPERATIONNELLE",
+      "rh / competences": "RH_COMPETENCES", "rh_competences": "RH_COMPETENCES", "rh competences": "RH_COMPETENCES", "lecture rh / competences": "RH_COMPETENCES",
+      "technologique / systemes": "TECHNOLOGIQUE", "technologique": "TECHNOLOGIQUE", "technologie": "TECHNOLOGIQUE", "systemes": "TECHNOLOGIQUE", "lecture technologique": "TECHNOLOGIQUE",
+      "territoriale": "TERRITORIALE", "territorial": "TERRITORIALE", "lecture territoriale": "TERRITORIALE",
+      "energie / ressources / decarbonation": "ENERGIE_RESSOURCES", "energie / ressources": "ENERGIE_RESSOURCES", "energie_ressources": "ENERGIE_RESSOURCES", "ressources": "ENERGIE_RESSOURCES", "decarbonation": "ENERGIE_RESSOURCES", "lecture energie / ressources / decarbonation": "ENERGIE_RESSOURCES",
+    };
+
+    const rawKey = norm(readingLabel);
+    const key = rawKey.replace(/^lecture\s+/, "").trim();
+    const candidates = [rawKey, key];
+
+    for (const candidate of candidates) {
+      const mapped = MAP[candidate];
+      if (mapped && rt[mapped]) return rt[mapped];
+      if (rt[candidate]) return rt[candidate];
+    }
+
+    if ((key.includes("rh") || key.includes("competence")) && rt.RH_COMPETENCES) return rt.RH_COMPETENCES;
+    if ((key.includes("energie") || key.includes("ressource") || key.includes("carbone") || key.includes("decarbon")) && rt.ENERGIE_RESSOURCES) return rt.ENERGIE_RESSOURCES;
+    if ((key.includes("operation") || key.includes("production") || key.includes("supply")) && rt.OPERATIONNELLE) return rt.OPERATIONNELLE;
+    if ((key.includes("techno") || key.includes("systeme") || key.includes("data") || key.includes("numerique")) && rt.TECHNOLOGIQUE) return rt.TECHNOLOGIQUE;
+    if ((key.includes("territoire") || key.includes("territorial")) && rt.TERRITORIALE) return rt.TERRITORIALE;
+    if (key.includes("jurid") && rt.JURIDIQUE) return rt.JURIDIQUE;
+    if (key.includes("finance") && rt.FINANCIERE) return rt.FINANCIERE;
+    if (key.includes("strateg") && rt.STRATEGIQUE) return rt.STRATEGIQUE;
+
+    return null;
+  }
+
+  const FAQ_UNIVERSELLES_FALLBACK = [
+    { question: "L'échange de 15 minutes vaut-il engagement à participer ?", answer: "Non. L'échange sert uniquement à vérifier si votre lecture correspond à une position disponible. Aucune suite n'est automatique. Vous décidez à chaque étape." },
+    { question: "Faut-il préparer quelque chose avant l'échange ?", answer: "Non. Aucun dossier, aucune présentation n'est attendu. L'échange sert à qualifier votre lecture depuis votre expérience et votre fonction." },
+    { question: "Les équipes communication ou juridiques peuvent-elles être associées à la préparation ?", answer: "Oui. Le périmètre de parole peut être travaillé en amont avec vos équipes communication, affaires publiques, juridiques ou corporate si nécessaire." }
+  ];
+
+  function getFAQ(readingLabel, actorType, personRole, landingPage) {
+    const rtData     = getReadingType(readingLabel);
+    const groupe     = detectProfilGroupe(actorType);
+    const personaKey = detectPersonaType(personRole, actorType);
+    const universelles = toArray(
+      rtData?.faqV2?.universelles?.length ? rtData.faqV2.universelles : FAQ_UNIVERSELLES_FALLBACK
+    );
+    const parPersona = toArray(
+      rtData?.faqV2?.[groupe]?.[personaKey] || rtData?.faqV2?.[groupe]?.default || []
+    );
+    const fromLP = toArray(landingPage?.copy?.faq || landingPage?.faq);
+    const seen = new Set();
+    return [...universelles, ...parPersona, ...fromLP].filter(item => {
+      const key = norm(item.question || "").slice(0, 25);
+      if (!key || seen.has(key)) return false;
+      seen.add(key); return true;
+    }).slice(0, 6);
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     FIN BRANCHEMENT DATA V67
+  ───────────────────────────────────────────────────────── */
+
+  function isCabinetCard(item) {
+    const b = norm([item?.label, item?.title, item?.profil].join(" "));
+    return b.includes("cabinet") || b.includes("conseil") || b.includes("expertise") || b.includes("avocat");
+  }
+  function isOrgCard(item) {
+    const b = norm([item?.label, item?.title, item?.profil].join(" "));
+    return b.includes("organisation") || b.includes("entreprise") || b.includes("industrielle");
+  }
+  function isFunctionCard(item) {
+    const b = norm([item?.label, item?.title, item?.profil].join(" "));
+    return b.includes("fonction") || b.includes("porteuse");
+  }
+  function isPersonCard(item) {
+    const b = norm([item?.label, item?.title, item?.profil].join(" "));
+    return b.includes("intervenant") || b.includes("personne") || b.includes("senior");
+  }
+
+  function gainTagLabel(type) {
+    const key = norm(type || "");
+    if (key.includes("institution")) return "Institutionnel";
+    if (key.includes("strateg")) return "Stratégique";
+    if (key.includes("interne")) return "Interne";
+    if (key.includes("different")) return "Différenciation";
+    if (key.includes("reutil")) return "Réutilisation";
+    if (key.includes("stature")) return "Stature";
+    return soften(type || "Gain");
+  }
+
+  function matchGainItem(item, words) {
+    const hay = norm([item?.type, item?.texte].join(" "));
+    return words.some(word => hay.includes(norm(word)));
+  }
+
+  function pickGainItems(items, groups, max = 3) {
+    const source = toArray(items);
+    const picked = [];
+    const seen = new Set();
+
+    groups.forEach(words => {
+      const found = source.find(item => matchGainItem(item, words));
+      if (found) {
+        const key = norm(found.type || found.texte);
+        if (key && !seen.has(key)) {
+          seen.add(key);
+          picked.push(found);
+        }
+      }
+    });
+
+    source.forEach(item => {
+      if (picked.length >= max) return;
+      const key = norm(item.type || item.texte);
+      if (key && !seen.has(key)) {
+        seen.add(key);
+        picked.push(item);
+      }
+    });
+
+    return picked.slice(0, max);
+  }
+
+  function compactValueText(item, fallback) {
+    return shortText(txt(item?.texte, item?.text, fallback), 220);
+  }
+
+  function isTerritorialExpertiseContext(readingLabel, organisationName, why, angle) {
+    const hay = norm([
+      readingLabel,
+      organisationName,
+      why?.organisation,
+      why?.person,
+      why?.position,
+      angle?.titreAngle,
+      angle?.questionPublique,
+      angle?.questionActivation,
+      angle?.ceQueCetteLecturePermetDeVoir,
+      angle?.angleRendVisible
+    ].join(" "));
+
+    return (
+      hay.includes("territorial") ||
+      hay.includes("territoire") ||
+      hay.includes("foncier") ||
+      hay.includes("friche") ||
+      hay.includes("depollution") ||
+      hay.includes("reconversion") ||
+      hay.includes("ancrage")
+    );
+  }
+
+  function buildTerritorialExpertiseValueCards(organisationName, personName, personRole, readingLabel) {
+    const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "Votre organisation";
+    const person = personName && personName !== "Intervenant pressenti" ? personName : "l’intervenant pressenti";
+    const role = personRole ? `, ${personRole},` : "";
+    const reading = readingDisplay(readingLabel || "territoriale").toLowerCase();
+
+    return [
+      {
+        label: `Pour ${org}`,
+        title: "Faire reconnaître le territoire comme condition industrielle",
+        text: "Montrer que foncier, friches, dépollution, réseaux et ancrage ne sont pas des sujets périphériques, mais des conditions concrètes de continuité, de transformation ou de réorientation industrielle.",
+        chips: ["Reconnaissance", "Crédibilité", "Conversation"],
+        details: [
+          { label: "Stature", text: "Installer une lecture territoriale au même niveau que les lectures stratégique, opérationnelle ou technologique." },
+          { label: "Différenciation", text: "Se distinguer sans discours promotionnel, par la capacité à rendre visible une condition souvent peu formulée de l’industrie." },
+          { label: "Institutionnel", text: "Produire un actif mobilisable auprès des industriels, collectivités, institutions, partenaires économiques et acteurs territoriaux." }
+        ]
+      },
+      {
+        label: "Pour votre expertise territoriale",
+        title: "Rendre lisible une compétence rarement visible",
+        text: "Faire apparaître la capacité à relier décisions industrielles, foncier, reconversion, infrastructures, acteurs publics et conditions collectives de décision.",
+        chips: ["Lecture située", "Décision", "Territoires"],
+        details: [
+          { label: "Expertise", text: "Formuler ce que l’expérience du terrain, du foncier et des friches permet de comprendre des trajectoires industrielles." },
+          { label: "Décision", text: "Montrer comment une trajectoire industrielle dépend aussi de conditions territoriales, réglementaires, infrastructurelles et collectives." },
+          { label: "Territoires", text: "Rendre lisible le rôle des écosystèmes locaux, des réseaux, de l’ancrage et des conditions de réinscription des sites." }
+        ]
+      },
+      {
+        label: "Pour l’intervenant",
+        title: "Laisser une trace professionnelle utile",
+        text: `${person}${role} peut porter une lecture crédible sur les conditions territoriales de l’industrie, sans exposer de projet sensible, de négociation locale ou de dossier confidentiel.`,
+        chips: ["Trace", "Crédibilité", "Usage durable"],
+        details: [
+          { label: "Trace", text: "Une parole préparée, publique et durable, attachée à une lecture précise plutôt qu’à une opération identifiable." },
+          { label: "Crédibilité", text: `Une contribution qui fait reconnaître une ${reading} sans survente ni prise de parole corporate classique.` },
+          { label: "Réutilisation", text: "Un contenu mobilisable ensuite en rendez-vous, relations institutionnelles, prospection qualifiée, événements ou communication dirigeante." }
+        ]
+      }
+    ];
+  }
+
+  function getValueCards(landingPage, reading, readingLabel, actorType, personRole, context = {}) {
+    const rtData     = getReadingType(readingLabel || reading?.code || reading?.label || "");
+    const groupe     = detectProfilGroupe(actorType);
+    const personaKey = detectPersonaType(personRole, actorType);
+    const gainsV2    = rtData?.gainsParProfilV2;
+
+    if (isTerritorialExpertiseContext(readingLabel, context.organisationName, context.why, context.angle)) {
+      return buildTerritorialExpertiseValueCards(
+        context.organisationName,
+        context.personName,
+        personRole,
+        readingLabel
+      );
+    }
+
+    if (gainsV2?.[groupe]) {
+      const groupData   = gainsV2[groupe];
+      const personaData = groupData[personaKey] || groupData["default"];
+      const items       = toArray(personaData?.gainsItems);
+
+      if (personaData) {
+        const orgItems = pickGainItems(items, [["stature"], ["institution"], ["different"]], 3);
+        const functionItems = pickGainItems(items, [["strateg"], ["interne"], ["arbitr"]], 3);
+        const personItems = pickGainItems(items, [["reutil"], ["relation"], ["dirigeant"]], 3);
+
+        const isEclaireur = groupe === "eclaireur";
+        const isAvocat = personaKey === "avocat";
+        const isIngenierie = personaKey === "ingenierie";
+        const orgName = context.organisationName && context.organisationName !== "Votre organisation" ? context.organisationName : "votre organisation";
+
+        return [
+          {
+            label: isEclaireur ? (isAvocat ? "Pour votre cabinet" : isIngenierie ? "Pour votre ingénierie" : "Pour votre cabinet") : `Pour ${orgName}`,
+            title: isEclaireur
+              ? "Installer une lecture propriétaire, sans discours promotionnel"
+              : "Faire reconnaître une capacité de lecture stratégique",
+            text: shortText(personaData.gain, 280),
+            chips: orgItems.map(item => gainTagLabel(item.type)),
+            details: orgItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) }))
+          },
+          {
+            label: isEclaireur ? (isAvocat ? "Pour votre doctrine juridique" : isIngenierie ? "Pour votre expertise projet" : "Pour votre doctrine") : "Pour votre fonction",
+            title: isEclaireur
+              ? "Rendre lisible ce que votre pratique sait formuler"
+              : "Rendre visible ce que votre fonction arbitre",
+            text: compactValueText(functionItems[0], "Faire apparaître ce que votre fonction voit, arbitre ou sécurise dans la transformation."),
+            chips: functionItems.map(item => gainTagLabel(item.type)),
+            details: functionItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) }))
+          },
+          {
+            label: isEclaireur ? (isAvocat ? "Pour vos clients décideurs" : "Pour vos relations dirigeants") : "Pour vous",
+            title: "Laisser une trace professionnelle utile",
+            text: compactValueText(personItems[0], "Créer un actif éditorial préparé, durable et mobilisable dans la durée."),
+            chips: personItems.map(item => gainTagLabel(item.type)),
+            details: personItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) }))
+          }
+        ];
+      }
+    }
+
+    const rtGains = toArray(rtData?.gainsParProfil).map(item => ({
+      label: item.profil, title: item.gain,
+      text: typeof item.detail === "string" ? item.detail : Array.isArray(item.detail) ? item.detail.join(" ") : ""
+    }));
+    if (rtGains.length >= 3) {
+      const selected = rtGains.slice(0, 3);
+      return [
+        { label: "Pour votre organisation", title: selected[0]?.title, text: selected[0]?.text, chips: ["Reconnaissance", "Crédibilité", "Conversation"] },
+        { label: "Pour votre fonction", title: selected[2]?.title || selected[1]?.title, text: selected[2]?.text || selected[1]?.text, chips: ["Point d’observation", "Arbitrage", "Lecture située"] },
+        { label: "Pour vous", title: selected[3]?.title || "Trace durable et réutilisable", text: selected[3]?.text || selected[1]?.text, chips: ["Trace", "Réutilisation", "Crédibilité"] }
+      ];
+    }
+
+    const pageCards = toArray(landingPage?.valueSection?.cards).map(item => ({
+      label: item.label || item.profil,
+      title: item.title || item.gain,
+      text:  item.text  || (Array.isArray(item.detail) ? item.detail.join(" ") : item.detail)
+    }));
+    if (pageCards.length >= 3) {
+      return [
+        { label: "Pour votre organisation", title: pageCards[0].title, text: pageCards[0].text, chips: ["Reconnaissance", "Crédibilité", "Conversation"] },
+        { label: "Pour votre fonction", title: pageCards[1].title, text: pageCards[1].text, chips: ["Point d’observation", "Arbitrage", "Lecture située"] },
+        { label: "Pour vous", title: pageCards[2].title, text: pageCards[2].text, chips: ["Trace", "Réutilisation", "Crédibilité"] }
+      ];
+    }
+
+    return [
+      {
+        label: "Pour votre organisation",
+        title: "Faire reconnaître une lecture utile",
+        text: actorType === "cabinet_conseil"
+          ? "Installer une parole d'autorité sans vendre directement une offre."
+          : "Valoriser une capacité à rendre lisibles les conditions réelles d'une trajectoire industrielle.",
+        chips: ["Reconnaissance", "Crédibilité", "Conversation"]
+      },
+      {
+        label: "Pour votre fonction",
+        title: "Rendre visible ce que votre fonction arbitre",
+        text: "Faire apparaître ce que votre fonction voit, arbitre ou sécurise.",
+        chips: ["Point d’observation", "Arbitrage", "Lecture située"]
+      },
+      {
+        label: "Pour vous",
+        title: "Laisser une trace professionnelle utile",
+        text: "Créer un actif éditorial préparé, durable et mobilisable dans la durée.",
+        chips: ["Trace", "Réutilisation", "Crédibilité"]
+      }
+    ];
+  }
+
+  function buildValueCard(item) {
+    const chips = toArray(item?.chips).filter(Boolean).slice(0, 4);
+    const details = toArray(item?.details).filter(d => d?.text).slice(0, 4);
+
+    return `
+      <article class="landing-card landing-value-card">
+        ${item?.label ? `<span class="landing-label">${safe(item.label)}</span>` : ""}
+        ${item?.title ? `<h3>${safe(soften(item.title))}</h3>` : ""}
+        ${item?.text ? `<p>${safe(shortText(item.text, 320))}</p>` : ""}
+        ${chips.length ? `<div class="value-chip-list">${chips.map(chip => `<span>${safe(chip)}</span>`).join("")}</div>` : ""}
+        ${details.length ? `
+          <details class="value-details">
+            <summary>Voir les effets possibles</summary>
+            <ul>
+              ${details.map(detail => `<li><strong>${safe(detail.label)}</strong><span>${safe(detail.text)}</span></li>`).join("")}
+            </ul>
+          </details>` : ""}
+      </article>`;
+  }
+
+
+  function buildQualificationCTASection(cta, organisationName, readingLabel) {
+    return `
+      <section class="landing-section landing-section--dark landing-qualification-cta landing-qualification-cta--final" id="qualifier-position">
+        <div class="landing-container">
+          <div class="qualification-cta-grid qualification-cta-grid--split">
+            <aside class="qualification-cta-signature" aria-label="En Plateau">
+              <div class="qualification-cta-mark">En Plateau</div>
+              <p>Une position éditoriale se vérifie dans un échange court. La suite reste une décision.</p>
+              <span>Saison inaugurale · Cycle Industrie</span>
+            </aside>
+
+            <div class="qualification-cta-main">
+              <p class="landing-kicker">Échange éditorial</p>
+              <h2>Certaines positions méritent simplement d’être discutées.</h2>
+              <p>L’échange permet de vérifier si la lecture envisagée mérite d’être structurée dans le cadre du cycle. Il ne demande aucune préparation particulière et peut associer, si nécessaire, les équipes communication, affaires publiques ou juridiques.</p>
+              <div class="landing-actions qualification-cta-actions">
+                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Programmer un échange éditorial — 15 min")}</a>
+              </div>
+              <p class="qualification-cta-microcopy">15 minutes · sans engagement · aucune suite automatique</p>
+
+              <details class="qualification-cta-more">
+                <summary>Voir le cadre de préparation et les questions fréquentes</summary>
+                <div class="qualification-cta-more-grid">
+                  <article>
+                    <h3>Ce qui est préparé avant production</h3>
+                    <p>Angle, tensions, points de bascule, trame média, éléments de langage possibles et coordination avec la production.</p>
+                  </article>
+                  <article>
+                    <h3>Ce qui peut être ajusté avant diffusion</h3>
+                    <p>Un échange après montage peut vérifier la justesse du propos et éviter toute exposition involontaire, sans transformer l’entretien en contenu contrôlé.</p>
+                  </article>
+                  <article>
+                    <h3>Ce que l’échange n’implique pas</h3>
+                    <p>Aucun accord de participation, aucune suite automatique, aucun dossier à préparer. La décision se prend à chaque étape.</p>
+                  </article>
+                  <article>
+                    <h3>Pourquoi l’agenda est direct</h3>
+                    <p>Les profils déjà convaincus peuvent programmer directement l’échange ; les profils prudents trouvent ici le cadre de préparation sans quitter la page.</p>
+                  </article>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>`;
+  }
+
+  function getCTA(deal, reading, landingPage) {
+    const pageCTA = landingPage?.cta || {};
+    const source  = txt(reading?.calSource, "lp-industrie-contribution");
+    return {
+      href: txt(
+        deal?.ctaUrl, deal?.cta_url, deal?.activation?.ctaUrl, deal?.activation?.cta_url,
+        deal?.landingPageUrl, deal?.landing_page_url,
+        `/demander-un-echange-editorial.html?source=${encodeURIComponent(source)}`
+      ),
+      label: txt(
+        deal?.ctaLabel, deal?.cta_label, deal?.activation?.ctaLabel, deal?.activation?.cta_label,
+        "Programmer un échange éditorial — 15 min"
+      ),
+      title:    "Qualifier cette lecture en échange éditorial",
+      text:     txt(pageCTA.text, "15 minutes, sans engagement, pour qualifier l'angle, le périmètre de parole et les conditions de préparation."),
+      deadline: txt(pageCTA.deadline, ""),
+      footnote: txt(pageCTA.footnote, "Page privée · Échange sans engagement")
+    };
+  }
+
+  function getGuarantees(publicAngle, landingPage, personaFit) {
+    const base = [
+      { title: "Aucune donnée interne attendue",
+        text:  "Aucun chiffre, marge, performance, site, client, fournisseur, incident ou décision confidentielle n'est demandé." },
+      { title: "Une lecture de mécanisme",
+        text:  "L'échange ne vise pas à commenter l'organisation invitée. Il sert à formuler une lecture utile sur les conditions de pilotage, de coordination et de montée en capacité." },
+      { title: "Un cadrage possible avec vos équipes",
+        text:  "Le périmètre peut être préparé avec les équipes communication, juridiques, affaires publiques ou corporate si nécessaire." }
+    ];
+    const extra = [];
+    if (publicAngle?.reassurance) extra.push({ title: "Une intervention non intrusive", text: publicAngle.reassurance });
+
+    const pageGuarantees = toArray(landingPage?.guarantees).slice(0, 1);
+    const required = toArray(personaFit?.internalValidationLayer?.requiredMessages)
+      .filter(m => !norm(m).includes("mise en regard")).slice(0, 1)
+      .map(m => ({ title: soften(m), text: "Ce point est intégré en amont dans le cadrage éditorial." }));
+
+    const all = [...base, ...extra, ...pageGuarantees, ...required];
+    const seen = new Set();
+    return all.filter(item => {
+      const key = norm(item.title);
+      if (!key || seen.has(key)) return false;
+      seen.add(key); return true;
+    }).slice(0, 4);
+  }
+
+  function getProcessSteps(landingPage) {
+    const fromData = toArray(landingPage?.copy?.process || landingPage?.process).map(item => ({
+      num: item.num,
+      title: item.title,
+      text: item.text,
+      deadline: item.deadline
+    }));
+
+    if (fromData.length) return fromData.slice(0, 5);
+
+    return [
+      {
+        num: "01",
+        title: "L'échange éditorial",
+        text: "15 minutes pour vérifier si votre lecture correspond à une position disponible. Aucun engagement, aucun dossier sensible à exposer."
+      },
+      {
+        num: "02",
+        title: "La note de positionnement",
+        text: "Si l'angle paraît pertinent, En Plateau formalise la position proposée : valeur éditoriale, mise en regard, garanties, modalités et conditions."
+      },
+      {
+        num: "03",
+        title: "La préparation six dimensions",
+        text: "La position est structurée autour du contexte, des acteurs concernés, des arbitrages, des défis, de la vision et de l'échelle."
+      },
+      {
+        num: "04",
+        title: "Le tournage et l'article associé",
+        text: "La position est portée dans un format préparé, cadré, non improvisé, avec une articulation possible entre vidéo et entretien écrit."
+      },
+      {
+        num: "05",
+        title: "L'activation éditoriale",
+        text: "Le contenu devient un actif réutilisable pendant 18 mois auprès de votre écosystème : clients, partenaires, institutions, talents, financeurs ou équipes internes."
+      }
+    ];
+  }
+
+  function getConversationLabel(conversation, deal) {
+    return stripConversationCode(txt(
+      conversation?.title,
+      deal?.editorialContext?.conversation,
+      "Cycle Industrie & transformation des territoires"
+    ));
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     BANDEAU — court, 1 ligne, "Page privée"
+  ───────────────────────────────────────────────────────── */
+  function buildTopMeta(conversationLabel) {
+    let label = "Cycle Industrie";
+    if (conversationLabel) {
+      const short = conversationLabel.split(/\s*[:]\s*/)[0].trim();
+      label = short.length > 2 ? short : "Cycle Industrie";
+    }
+    if (label.length > 28) label = label.slice(0, 26).trimEnd() + "…";
+    return `${safe(label)} · Page privée`;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     KICKER HERO — court, sans le titre d'angle
+  ───────────────────────────────────────────────────────── */
+  function buildHeroKicker(conversationLabel) {
+    let label = "Cycle Industrie";
+    if (conversationLabel) {
+      const short = conversationLabel.split(/\s*[:]\s*/)[0].trim();
+      label = short.length > 2 ? short : "Cycle Industrie";
+      if (label.length > 32) label = label.slice(0, 30).trimEnd() + "…";
+    }
+    return `<p class="landing-kicker">Saison inaugurale · ${safe(label)}</p>`;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     MAPPING MÉDIA → IMAGE
+     BFM Business → /images/emission-1.jpg
+     Le Figaro    → /images/emission-3.jpg
+     La Tribune   → /images/emission-4.jpg
+  ───────────────────────────────────────────────────────── */
+  function getEmissionImagePath(media) {
+    const m = norm(media);
+    if (m.includes("bfm"))     return "/images/emission-1.jpg";
+    if (m.includes("figaro"))  return "/images/emission-3.jpg";
+    if (m.includes("tribune")) return "/images/emission-4.jpg";
+    return null;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     BLOC FILM ÉMISSION — style home
+     Image unique B&W dans le cadre .landing-film
+     (reprend exactement le CSS .home-film mais en classe
+     .landing-film pour rester dans le namespace landing)
+     + légende journaliste / outlet sous l'image
+  ───────────────────────────────────────────────────────── */
+  function buildFilmBlock(angle) {
+    const journaliste = txt(angle?.journaliste, "");
+    const emission    = txt(angle?.emission, "");
+    const media       = txt(angle?.media, "");
+    const imgPath     = media ? getEmissionImagePath(media) : null;
+
+    if (!imgPath) return "";
+
+    // Les trois champs restent dynamiques : journaliste, émission et média.
+    // On affiche l’émission lorsque le référentiel la fournit, pour éviter tout effet de légende générique.
+    const outletParts = [emission, media].filter(Boolean);
+    const outletLabel = outletParts.length ? outletParts.join(" · ") : "format média";
+    const altLabel    = journaliste && outletParts.length
+      ? `Entretien économique avec ${journaliste} · ${outletParts.join(" · ")}`
+      : (outletParts.length ? outletParts.join(" · ") : "Format média");
+
+    return `
+      <div class="landing-film" aria-label="${safe(altLabel)}">
+        <div class="landing-film-track">
+          <div>
+            <img
+              src="${safe(imgPath)}"
+              alt="${safe(altLabel)}"
+              loading="eager"
+            >
+          </div>
+        </div>
+      </div>
+      <div class="landing-film-caption">
+        ${journaliste ? `<strong>${safe(journaliste)}</strong>` : ""}
+        <span>${safe(outletLabel)}</span>
+      </div>`;
+  }
+
+
+  /* ─────────────────────────────────────────────────────────
+     HERO ALLÉGÉ — 20260515-0710
+     Objectif : désirabilité + clarté + faible risque.
+     Le hero ne porte plus toute l'explication du dispositif :
+     la mise en regard, le cadre, la pertinence et les gains
+     sont traités dans les sections qui suivent.
+  ───────────────────────────────────────────────────────── */
+  function buildHeroMetricCard(label, title, text, modifier = "") {
+    if (!title && !text) return "";
+    const classes = ["landing-hero-metric", modifier].filter(Boolean).join(" ");
+    return `
+      <article class="${classes}">
+        <span>${safe(label)}</span>
+        ${title ? `<strong>${safe(title)}</strong>` : ""}
+        ${text ? `<em>${safe(text)}</em>` : ""}
+      </article>`;
+  }
+
+  function buildHeroVisual(angle) {
+    const journaliste = normalizeDisplayName(txt(angle?.journaliste, ""));
+    const media       = txt(angle?.media, "");
+    const imgPath     = media ? getEmissionImagePath(media) : null;
+    const altLabel    = [journaliste, media].filter(Boolean).join(" · ") || "Format média En Plateau";
+
+    if (!imgPath) {
+      return `<div class="landing-hero-visual landing-hero-visual--empty" aria-label="${safe(altLabel)}"></div>`;
+    }
+
+    return `
+      <div class="landing-hero-visual" aria-label="${safe(altLabel)}">
+        <img src="${safe(imgPath)}" alt="${safe(altLabel)}" loading="eager">
+      </div>`;
+  }
+
+  function buildHeroMediaCaption(angle) {
+    const journaliste = normalizeDisplayName(txt(angle?.journaliste, ""));
+    const media       = txt(angle?.media, "");
+    if (!journaliste && !media) return "";
+
+    return `
+      <div class="landing-hero-media-caption">
+        ${journaliste ? `<strong>${safe(journaliste)}</strong>` : ""}
+        ${media ? `<span>${safe(media)}</span>` : ""}
+      </div>`;
+  }
+
+  function readingKeyForHero(readingLabel) {
+    const key = norm(readingLabel).replace(/^lecture\s+/, "").trim();
+    if (key.includes("finance")) return "finance";
+    if (key.includes("jurid")) return "juridique";
+    if (key.includes("rh") || key.includes("competence")) return "rh";
+    if (key.includes("operation") || key.includes("production") || key.includes("supply")) return "operationnelle";
+    if (key.includes("energie") || key.includes("ressource") || key.includes("carbone") || key.includes("decarbon")) return "energie";
+    if (key.includes("territoire") || key.includes("territorial")) return "territoriale";
+    if (key.includes("techno") || key.includes("systeme") || key.includes("data") || key.includes("numerique")) return "technologique";
+    if (key.includes("strateg")) return "strategique";
+    return "default";
+  }
+
+  function buildHeroTitle(organisationName, readingLabel) {
+    const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "Votre organisation";
+    const key = readingKeyForHero(readingLabel);
+    const lines = {
+      finance:       `${org} peut rendre visibles les conditions économiques qui rendent une transformation industrielle tenable.`,
+      financiere:    `${org} peut rendre visibles les conditions économiques qui rendent une transformation industrielle tenable.`,
+      juridique:     `${org} peut montrer comment le droit sécurise les arbitrages industriels avant qu’ils ne deviennent des risques.`,
+      operationnelle:`${org} peut faire reconnaître l’exécution industrielle comme le lieu où la transformation se vérifie vraiment.`,
+      rh:            `${org} peut montrer que les compétences et les collectifs conditionnent réellement la transformation industrielle.`,
+      energie:       `${org} peut montrer comment l’énergie, les ressources, le carbone ou les matières deviennent des conditions de continuité industrielle.`,
+      territoriale:  `${org} peut faire reconnaître le territoire comme condition réelle de transformation industrielle.`,
+      technologique: `${org} peut montrer comment les systèmes, les données et les interfaces conditionnent la trajectoire industrielle.`,
+      strategique:   `${org} peut installer une lecture de direction sur les arbitrages qui changent une trajectoire industrielle.`,
+      default:       `${org} peut faire reconnaître une lecture utile dans une conversation stratégique à plusieurs voix.`
+    };
+    return lines[key] || lines.default;
+  }
+
+  function buildHeroLead(angle, readingLabel) {
+    const key = readingKeyForHero(readingLabel);
+    const custom = {
+      finance:       "Une lecture financière sur les choix d’investissement, les marges de manœuvre et les conditions économiques qui rendent une trajectoire industrielle soutenable.",
+      juridique:     "Une lecture juridique sur les cadres, responsabilités et risques qui sécurisent les arbitrages industriels.",
+      operationnelle:"Une lecture opérationnelle sur la qualité, les flux, les priorités et les interfaces métiers qui conditionnent la montée en capacité.",
+      rh:            "Une lecture RH / compétences sur les métiers, les collectifs et les savoir-faire qui rendent la transformation réellement possible.",
+      energie:       "Une lecture énergie / ressources sur l’eau, l’énergie, les matières, le carbone et les conditions de continuité industrielle.",
+      territoriale:  "Une lecture territoriale sur ce qui rend une trajectoire industrielle possible, soutenable ou réorientable : foncier, friches, infrastructures, ancrage et conditions de décision.",
+      technologique: "Une lecture technologique sur les systèmes, les données et les interfaces qui conditionnent la trajectoire industrielle.",
+      strategique:   "Une lecture stratégique sur les arbitrages qui font changer une trajectoire industrielle de nature."
+    };
+
+    return custom[key] || shortText(txt(angle?.anglePublic?.accrocheLanding, angle?.questionActivation, angle?.introMecanisme, angle?.texteProgramme), 240);
+  }
+
+  function buildHeroReadingLine(readingLabel) {
+    const key = readingKeyForHero(readingLabel);
+    const lines = {
+      finance:       "Rendre visibles les conditions économiques d’une trajectoire industrielle tenable.",
+      juridique:     "Sécuriser les arbitrages avant qu’ils ne deviennent des risques.",
+      operationnelle:"Faire reconnaître l’exécution comme lieu réel de transformation.",
+      rh:            "Montrer comment compétences et collectifs conditionnent la transformation.",
+      energie:       "Relier continuité industrielle, ressources, énergie et carbone.",
+      territoriale:  "Faire reconnaître le territoire comme condition réelle de trajectoire industrielle.",
+      technologique: "Rendre visibles les systèmes et interfaces qui conditionnent la trajectoire.",
+      strategique:   "Installer une lecture de direction sur les arbitrages structurants."
+    };
+    return lines[key] || "Faire reconnaître une lecture utile, située et préparée.";
+  }
+
+  function buildHeroAngleKeywords(readingLabel) {
+    const key = readingKeyForHero(readingLabel);
+    const lines = {
+      finance:       "Investissement · CAPEX · soutenabilité",
+      juridique:     "Droit · risques · responsabilités",
+      operationnelle:"Qualité · flux · priorités",
+      rh:            "Métiers · compétences · collectifs",
+      energie:       "Énergie · ressources · continuité",
+      territoriale:  "Foncier · friches · ancrage",
+      technologique: "Systèmes · données · interfaces",
+      strategique:   "Trajectoire · arbitrages · décision"
+    };
+    return lines[key] || "Angle · lecture · arbitrage";
+  }
+
+  function buildHeroAngleLine(angle, readingLabel) {
+    const key = readingKeyForHero(readingLabel);
+    const lines = {
+      finance:       "Les conditions économiques qui rendent une trajectoire industrielle soutenable.",
+      juridique:     "Les cadres qui rendent les décisions industrielles plus robustes.",
+      operationnelle:"Les conditions d’exécution qui rendent une montée en capacité pilotable.",
+      rh:            "Les conditions humaines qui rendent une transformation réellement tenable.",
+      energie:       "Les ressources qui deviennent des conditions de continuité industrielle.",
+      territoriale:  "Les conditions territoriales qui rendent une trajectoire industrielle possible, soutenable ou réorientable.",
+      technologique: "Les systèmes et interfaces qui conditionnent la trajectoire industrielle.",
+      strategique:   "Les arbitrages qui changent la nature d’une trajectoire industrielle."
+    };
+    return lines[key] || shortText(txt(angle?.anglePublic?.accrocheLanding, angle?.questionActivation, angle?.introMecanisme), 180);
+  }
+
+  function buildHeroMinimalSection(angle, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, cta) {
+    const readingShort = readingDisplay(readingLabel || "lecture éditoriale");
+    const mediaCaption = buildHeroMediaCaption(angle);
+    const conversationText = stripConversationCode(conversationLabel || "Conversation En Plateau");
+
+    return `
+      <section class="landing-hero landing-hero--bento-minimal landing-hero--simplified">
+        <div class="landing-container landing-hero-bento-container">
+          <div class="landing-hero-bento-grid">
+
+            <div class="landing-hero-bento-copy">
+              <p class="landing-hero-eyebrow">Saison inaugurale · Cycle Industrie · Composition jusqu’au 30 juin</p>
+              <p class="landing-hero-conversation"><span>Conversation</span><strong>${safe(soften(conversationText))}</strong></p>
+              <h1>${safe(buildHeroTitle(organisationName, readingLabel))}</h1>
+              <p class="landing-hero-bento-lead">${safe(buildHeroLead(angle, readingLabel))}</p>
+
+              <div class="landing-hero-bento-actions">
+                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Programmer un échange éditorial — 15 min")}</a>
+                <a class="landing-btn landing-btn--ghost" href="#mise-en-regard">Voir les 4 lectures de la conversation</a>
+              </div>
+
+              <p class="landing-hero-bento-proof">Position en cours de composition · Sans engagement · Périmètre préparé</p>
+            </div>
+
+            <aside class="landing-hero-bento-side">
+              ${buildHeroVisual(angle)}
+              ${mediaCaption}
+
+              <div class="landing-hero-metrics landing-hero-metrics--three" aria-label="Repères clés de la proposition éditoriale">
+                ${buildHeroMetricCard("Lecture proposée", readingShort, buildHeroReadingLine(readingLabel), "landing-hero-metric--accent")}
+                ${buildHeroMetricCard("Ce que cette position éclaire", buildHeroAngleKeywords(readingLabel), buildHeroAngleLine(angle, readingLabel))}
+                ${buildHeroMetricCard("Échange éditorial", "15 minutes", "Vérifier l’angle, le périmètre de parole et l’intérêt de poursuivre.")}
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </section>`;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     SIGNAL DE RARETÉ — texte corrigé
+  ───────────────────────────────────────────────────────── */
+  function buildRaritySignal(readingLabel) {
+    const reading = readingDisplay(readingLabel || "cette lecture").toLowerCase();
+    return `
+      <div class="landing-rarity">
+        <span class="landing-rarity__dot" aria-hidden="true"></span>
+        <p>Plusieurs acteurs peuvent être pressentis pour une même lecture.
+          <strong>Une seule position ${safe(reading)}</strong> sera retenue,
+          en cohérence avec les autres lectures mises en regard.</p>
+      </div>`;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     BLOC IDENTITÉ HERO (carte)
+     Ordre dans la carte :
+       1. Proposition adressée à (nom · rôle · org)
+       2. Lecture proposée
+       3. Signal de rareté
+     (L'émission est maintenant AU-DESSUS de la carte, pas dedans)
+  ───────────────────────────────────────────────────────── */
+  function buildIdentityLine(personName, personRole, organisationName, readingLabel) {
+    const hasRealName = personName && personName !== "Intervenant pressenti";
+    const hasRealOrg  = organisationName && organisationName !== "Votre organisation";
+
+    const parts = [
+      hasRealName ? safe(personName) : null,
+      personRole  ? safe(personRole)  : null,
+      hasRealOrg  ? safe(organisationName) : null
+    ].filter(Boolean);
+
+    return `
+      <div class="landing-identity landing-identity--single">
+        <span>Position pressentie pour</span>
+        <strong>${parts.join(" · ")}</strong>
+      </div>
+
+      <div class="landing-identity">
+        <span>Lecture pressentie</span>
+        <strong>${safe(soften(readingLabel)) || "Lecture éditoriale"}</strong>
+      </div>
+
+      ${buildRaritySignal(readingLabel)}`;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     INTRO HERO
+  ───────────────────────────────────────────────────────── */
+  function buildHeroIntro(personRole, organisationName, readingLabel) {
+    const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "votre organisation";
+    const role = personRole ? `votre fonction de <strong>${safe(personRole)}</strong>` : "votre fonction";
+    const reading = readingLabel || "cette lecture";
+
+    return `<p class="landing-lead">
+      Nous pensons que ${role} chez <strong>${safe(org)}</strong> peut contribuer à la pertinence éditoriale de cette conversation.
+      <strong>${safe(org)}</strong> pourrait y apporter une <strong>${safe(readingPhrase(reading))}</strong> sur les arbitrages que cette conversation cherche à rendre lisibles.
+    </p>
+    <p class="landing-lead landing-lead--compact">
+      Un échange éditorial de 15 minutes permettrait de vérifier l'intérêt commun de poursuivre, de préciser la position possible et de confirmer les conditions de préparation.
+    </p>`;
+  }
+
+  function buildHeroCardIntro(readingLabel) {
+    const reading = readingLabel || "lecture éditoriale";
+    return `Une seule position ${safe(readingDisplay(reading).toLowerCase())} sera retenue dans cette conversation, en cohérence avec les autres lectures mises en regard.`;
+  }
+
+  function buildPositionPathSection(readingLabel) {
+    const reading = readingLabel || "lecture éditoriale";
+    const intro = `En Plateau part de votre expérience, de vos convictions et de votre lecture du sujet. Le dispositif structure cette matière autour d'un angle qualifié, de plusieurs dimensions de décision et d'une mise en regard avec d'autres lectures complémentaires.`;
+    return `
+      <section class="landing-section landing-section--dark" id="experience-position">
+        <div class="landing-container">
+          <div class="landing-head">
+            <p class="landing-kicker">Lecture située</p>
+            <h2>De votre expérience à une contribution qui prend sa portée.</h2>
+            <p>${safe(intro)}</p>
+          </div>
+          <div class="landing-grid landing-grid--3">
+            ${card("Ce que vous apportez", "Une expérience située du sujet", "Votre expérience du sujet, votre responsabilité, vos convictions et votre compréhension des conditions réelles dans lesquelles se construisent les arbitrages industriels.")}
+            ${card("Ce qu'En Plateau structure", "Un angle, une lecture et des arbitrages", "Le contexte, les acteurs concernés, les arbitrages, les défis, la vision et l'échelle permettent de transformer une lecture en contribution préparée.")}
+            ${card("Ce que cela produit", "Une contribution reconnaissable par les bons interlocuteurs", `Une position claire, crédible et mobilisable dans la durée, depuis une ${safe(soften(reading))}, auprès des acteurs qui rencontrent les mêmes arbitrages.`, true)}
+          </div>
+        </div>
+      </section>`;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     NARRATION "POURQUOI VOUS" — version pertinence située
+     3 niveaux : organisation / position d'observation / lecture proposée.
+  ───────────────────────────────────────────────────────── */
+  function whyTagsForReading(readingLabel, slot, why = {}) {
+    const r = norm(readingLabel);
+    const source = norm([why.organisation, why.person, why.position].join(" "));
+
+    if (r.includes("territ") || source.includes("foncier") || source.includes("friche")) {
+      if (slot === "organisation") return ["Dépollution", "Recyclage foncier", "Friches industrielles"];
+      if (slot === "person") return ["Foncier", "Infrastructures", "Ancrage territorial"];
+      return ["Lecture territoriale", "Angle limité", "Mécanisme public"];
+    }
+
+    if (r.includes("financ")) {
+      if (slot === "organisation") return ["Soutenabilité", "Investissement", "Risque économique"];
+      if (slot === "person") return ["Arbitrages", "Marge de manœuvre", "Long terme"];
+      return ["Lecture financière", "Angle limité", "Mécanisme public"];
+    }
+
+    if (r.includes("jurid")) {
+      if (slot === "organisation") return ["Responsabilité", "Cadres", "Sécurisation"];
+      if (slot === "person") return ["Anticipation", "Risques", "Gouvernance"];
+      return ["Lecture juridique", "Angle limité", "Mécanisme public"];
+    }
+
+    if (r.includes("operation") || r.includes("production")) {
+      if (slot === "organisation") return ["Flux", "Qualité", "Continuité"];
+      if (slot === "person") return ["Pilotage", "Interfaces", "Exécution"];
+      return ["Lecture opérationnelle", "Angle limité", "Mécanisme public"];
+    }
+
+    if (r.includes("rh") || r.includes("competence")) {
+      if (slot === "organisation") return ["Compétences", "Collectifs", "Métiers"];
+      if (slot === "person") return ["Organisation", "Engagement", "Transmission"];
+      return ["Lecture RH", "Angle limité", "Mécanisme public"];
+    }
+
+    if (r.includes("techn") || r.includes("system")) {
+      if (slot === "organisation") return ["Systèmes", "Données", "Interfaces"];
+      if (slot === "person") return ["Architecture", "Lisibilité", "Continuité"];
+      return ["Lecture technologique", "Angle limité", "Mécanisme public"];
+    }
+
+    if (r.includes("energie") || r.includes("ressource")) {
+      if (slot === "organisation") return ["Énergie", "Ressources", "Continuité"];
+      if (slot === "person") return ["Arbitrages", "Contraintes", "Trajectoire"];
+      return ["Lecture ressources", "Angle limité", "Mécanisme public"];
+    }
+
+    if (r.includes("strateg")) {
+      if (slot === "organisation") return ["Trajectoire", "Arbitrage", "Gouvernance"];
+      if (slot === "person") return ["Décision", "Vision", "Priorités"];
+      return ["Lecture stratégique", "Angle limité", "Mécanisme public"];
+    }
+
+    if (slot === "organisation") return ["Expérience", "Légitimité", "Sujet partagé"];
+    if (slot === "person") return ["Point d’observation", "Fonction", "Lecture située"];
+    return ["Lecture proposée", "Angle limité", "Mécanisme public"];
+  }
+
+  function tagsHTML(tags) {
+    const clean = toArray(tags).slice(0, 4).filter(Boolean);
+    if (!clean.length) return "";
+    return `<div class="landing-why-tags">${clean.map(tag => `<span>${safe(tag)}</span>`).join("")}</div>`;
+  }
+
+  function whyOrganisationTitle(readingLabel, why = {}) {
+    const r = norm(readingLabel);
+    const source = norm(why.organisation || "");
+    if (r.includes("territ") || source.includes("foncier") || source.includes("friche")) return "Foncier, friches, reconversion";
+    if (r.includes("financ")) return "Soutenabilité, investissement, arbitrages";
+    if (r.includes("jurid")) return "Responsabilité, cadres, sécurisation";
+    if (r.includes("operation") || r.includes("production")) return "Pilotage, flux, continuité";
+    if (r.includes("rh") || r.includes("competence")) return "Compétences, métiers, collectifs";
+    if (r.includes("techn") || r.includes("system")) return "Systèmes, données, interfaces";
+    if (r.includes("energie") || r.includes("ressource")) return "Énergie, ressources, continuité";
+    if (r.includes("strateg")) return "Trajectoire, arbitrages, décision";
+    return "Une expérience utile à la conversation";
+  }
+
+  function whyPersonTitle(readingLabel) {
+    const r = norm(readingLabel);
+    if (r.includes("territ")) return "Relier décisions industrielles et conditions territoriales";
+    if (r.includes("financ")) return "Relier trajectoire industrielle et soutenabilité économique";
+    if (r.includes("jurid")) return "Relier décisions industrielles et cadres de responsabilité";
+    if (r.includes("operation") || r.includes("production")) return "Relier stratégie industrielle et réalité d’exécution";
+    if (r.includes("rh") || r.includes("competence")) return "Relier transformation industrielle et conditions humaines";
+    if (r.includes("techn") || r.includes("system")) return "Relier trajectoire industrielle et architectures techniques";
+    if (r.includes("energie") || r.includes("ressource")) return "Relier continuité industrielle et ressources critiques";
+    if (r.includes("strateg")) return "Relier trajectoire, gouvernance et arbitrages";
+    return "Porter une lecture située du sujet";
+  }
+
+  function whyPositionTitle(readingLabel, positionWhy) {
+    const r = norm(readingLabel);
+    if (r.includes("territ")) return "Éclairer ce qui rend une trajectoire industrielle possible, soutenable ou réorientable";
+    if (r.includes("financ")) return "Éclairer les conditions économiques qui rendent une transformation tenable";
+    if (r.includes("jurid")) return "Éclairer ce que le droit sécurise dans les arbitrages industriels";
+    if (r.includes("operation") || r.includes("production")) return "Éclairer ce qui rend l’exécution industrielle réellement pilotable";
+    if (r.includes("rh") || r.includes("competence")) return "Éclairer ce que les compétences rendent possible dans la transformation";
+    if (r.includes("techn") || r.includes("system")) return "Éclairer ce que les systèmes rendent lisible ou impossible";
+    if (r.includes("energie") || r.includes("ressource")) return "Éclairer les conditions de continuité liées aux ressources";
+    if (r.includes("strateg")) return "Éclairer le moment où une trajectoire oblige à arbitrer autrement";
+    return shortText(positionWhy, 110) || "Éclairer une question précise depuis une lecture située";
+  }
+
+  function whyOrganisationText(why, organisationName, readingLabel) {
+    const hasRealOrg = organisationName && organisationName !== "Votre organisation";
+    const r = norm(readingLabel);
+    const source = norm(why.organisation || "");
+
+    if (hasRealOrg && (r.includes("territ") || source.includes("foncier") || source.includes("friche"))) {
+      return `${organisationName} intervient précisément là où les trajectoires industrielles dépassent les murs de l’entreprise : dépollution, recyclage foncier, reconversion de friches et réinscription de sites dans un territoire.`;
+    }
+
+    if (why.organisation) return shortText(why.organisation, 360);
+
+    return hasRealOrg
+      ? `${organisationName} a été identifié pour la manière dont son expérience peut éclairer une question que de nombreux acteurs rencontrent sans toujours pouvoir la formuler.`
+      : "L’organisation identifiée apporte un point d’observation utile sur les conditions réelles d’une trajectoire industrielle.";
+  }
+
+  function whyPersonText(why, personName, personRole, readingLabel) {
+    const hasRealName = personName && personName !== "Intervenant pressenti";
+    const role = personRole ? `, ${personRole},` : "";
+    const r = norm(readingLabel);
+
+    if (hasRealName && r.includes("territ")) {
+      return `${personName}${role} peut porter une lecture située : comment les décisions industrielles rencontrent les conditions foncières, infrastructurelles et territoriales qui les rendent possibles — ou plus difficiles.`;
+    }
+
+    if (hasRealName && personRole && why.person) {
+      const cleaned = sanitizePersonFragment(why.person)
+        .replace(/^vous permet de\s+/i, "")
+        .replace(/^Vous pouvez\s+/i, "")
+        .trim();
+      return `${personName}${role} peut porter une lecture située : ${cleaned.charAt(0).toLowerCase() + cleaned.slice(1)}`;
+    }
+
+    if (hasRealName && personRole) {
+      return `${personName}${role} dispose d’un point d’observation directement relié à la lecture proposée.`;
+    }
+
+    return why.person ? shortText(sanitizePersonFragment(why.person), 340) : "La fonction pressentie donne accès à une lecture située du sujet.";
+  }
+
+  function whyPositionText(why, organisationName, readingLabel, positionWhy) {
+    const r = norm(readingLabel);
+    const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "l’organisation";
+
+    if (r.includes("territ")) {
+      return `La contribution ne porterait pas sur un dossier ${org}. Elle viserait à éclairer, depuis une lecture territoriale, les conditions qui permettent à un outil industriel de continuer, d’évoluer ou de se réorienter.`;
+    }
+
+    if (why.position) return shortText(why.position, 360);
+    if (positionWhy) return shortText(positionWhy, 360);
+    return "La contribution ne porterait pas sur un cas interne. Elle viserait à rendre lisible un mécanisme utile à l’ensemble de la conversation.";
+  }
+
+  function buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType, readingLabel) {
+    const orgTitle = whyOrganisationTitle(readingLabel, why);
+    const personTitle = whyPersonTitle(readingLabel);
+    const positionTitle = whyPositionTitle(readingLabel, positionWhy);
+
+    const orgFragment = whyOrganisationText(why, organisationName, readingLabel);
+    const personFragment = whyPersonText(why, personName, personRole, readingLabel);
+    const positionFragment = whyPositionText(why, organisationName, readingLabel, positionWhy);
+
+    return `
+      <div class="landing-why-narrative landing-why-narrative--keys landing-why-narrative--positioned">
+        <article class="landing-why-key">
+          <span>Votre organisation</span>
+          <h3>${safe(orgTitle)}</h3>
+          <p>${safe(orgFragment)}</p>
+          ${tagsHTML(whyTagsForReading(readingLabel, "organisation", why))}
+        </article>
+
+        <article class="landing-why-key">
+          <span>Votre position d’observation</span>
+          <h3>${safe(personTitle)}</h3>
+          <p>${safe(personFragment)}</p>
+          ${tagsHTML(whyTagsForReading(readingLabel, "person", why))}
+        </article>
+
+        <article class="landing-why-key landing-why-key--accent">
+          <span>La lecture proposée</span>
+          <h3>${safe(positionTitle)}</h3>
+          <p>${safe(positionFragment)}</p>
+          ${tagsHTML(whyTagsForReading(readingLabel, "position", why))}
+        </article>
+      </div>`;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     DG MESSAGE
+  ───────────────────────────────────────────────────────── */
+  function buildDGMessage(personaFit, reading, organisationName) {
+    const hasRealOrg = organisationName && organisationName !== "Votre organisation";
+    return txt(
+      personaFit?.organizationLayer?.dgReadableMessage,
+      reading?.motivationCentrale,
+      hasRealOrg
+        ? `La lecture portée depuis ${organisationName} rend visible ce que d'autres acteurs du cycle ne peuvent pas formuler depuis leur position. C'est précisément ce décalage de point de vue qui lui donne sa portée éditoriale.`
+        : "Cette position permet de donner forme à une contribution reconnaissable par les bons interlocuteurs."
+    );
+  }
+
+
+  /* ─────────────────────────────────────────────────────────
+     CADRE DE CONFIANCE — version éditoriale / minimale
+     Fond foncé, 4 clés de réassurance, contenu adapté à
+     l'organisation et à la lecture proposée.
+  ───────────────────────────────────────────────────────── */
+  function trustReadingMechanism(readingLabel) {
+    const r = norm(readingLabel);
+    if (r.includes("territ")) {
+      return "comment les conditions territoriales influencent les trajectoires industrielles.";
+    }
+    if (r.includes("financ")) {
+      return "comment les conditions économiques et financières rendent une transformation industrielle tenable.";
+    }
+    if (r.includes("jurid")) {
+      return "comment les cadres juridiques sécurisent les arbitrages industriels avant qu’ils ne deviennent des risques.";
+    }
+    if (r.includes("operation") || r.includes("production")) {
+      return "comment le pilotage opérationnel rend une trajectoire industrielle réellement tenable.";
+    }
+    if (r.includes("rh") || r.includes("competence")) {
+      return "comment les compétences, les collectifs et l’organisation du travail conditionnent la transformation industrielle.";
+    }
+    if (r.includes("energie") || r.includes("ressource") || r.includes("carbone")) {
+      return "comment les ressources, l’énergie, l’eau, les matières ou le carbone deviennent des conditions de continuité industrielle.";
+    }
+    if (r.includes("techno") || r.includes("systeme") || r.includes("data") || r.includes("numerique")) {
+      return "comment les systèmes, les données et les interfaces conditionnent la lisibilité et la continuité de la trajectoire.";
+    }
+    if (r.includes("strateg")) {
+      return "comment les arbitrages de gouvernance et de trajectoire changent la nature d’une décision industrielle.";
+    }
+    return "comment cette lecture permet de rendre lisibles des mécanismes industriels sans exposer de situation interne.";
+  }
+
+  function trustDetailList(items) {
+    return `<ul class="trust-key__deep-list">${items.map(item => `<li>${safe(item)}</li>`).join("")}</ul>`;
+  }
+
+  function buildTrustKeysSection(cta, organisationName, readingLabel) {
+    const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "l’organisation pressentie";
+    const reading = readingPhrase(readingLabel || "cette lecture");
+
+    const keys = [
+      {
+        num: "01",
+        title: "Hors champ",
+        visible: ["Chiffres internes", "Sites sensibles", "Clients / fournisseurs", "Décisions confidentielles"],
+        summary: "Ce qui ne sera pas exposé",
+        detail: [
+          "Pas de chiffres internes ou non publics.",
+          "Pas de client, fournisseur ou partenaire nommé sans accord.",
+          "Pas de site sensible, incident, contentieux ou dossier social identifiable.",
+          "Pas de décision confidentielle, négociation en cours ou arbitrage non annoncé."
+        ]
+      },
+      {
+        num: "02",
+        title: "Périmètre éditorial",
+        visible: ["Angle limité", "Lecture de mécanisme", "Point de bascule", "Niveau d’exposition"],
+        summary: "Ce qui est cadré",
+        detail: [
+          `L’angle reste limité à ce que ${reading} doit réellement éclairer.`,
+          "Les tensions et points de bascule sont préparés avant l’entretien.",
+          "Les formulations sensibles sont travaillées pour rester publiquement tenables.",
+          "Le niveau d’exposition est ajusté avec l’organisation."
+        ]
+      },
+      {
+        num: "03",
+        title: "Préparation média",
+        visible: ["Trame média", "Relances journaliste", "Pense-bête", "Production"],
+        summary: "Ce qui est préparé",
+        detail: [
+          "Une trame média sert de base à l’entretien et à la production.",
+          "Les questions sur les tensions, arbitrages et points de bascule sont anticipées.",
+          "Un pense-bête peut aider l’intervenant à garder le fil sans réciter une communication.",
+          "La coordination avec la production permet de préserver la cohérence éditoriale."
+        ]
+      },
+      {
+        num: "04",
+        title: "Validation organisationnelle",
+        visible: ["Communication", "Juridique", "Affaires publiques", "Direction"],
+        summary: "Qui peut sécuriser",
+        detail: [
+          "Les équipes communication, juridiques, affaires publiques ou direction peuvent être associées.",
+          "La trame peut être relue avant l’entretien pour sécuriser le périmètre.",
+          "Un échange peut avoir lieu après montage afin de vérifier la justesse du propos.",
+          "Des ajustements éditoriaux peuvent éviter une exposition involontaire, sans transformer l’entretien en contenu contrôlé."
+        ]
+      },
+      {
+        num: "05",
+        title: "Confidentialité",
+        visible: ["NDA", "Échanges protégés", "Documents non publics", "Périmètre sensible"],
+        summary: "Ce qui reste protégé",
+        detail: [
+          "Les échanges préparatoires peuvent être couverts par un accord de confidentialité.",
+          "Les documents de travail ne sont pas publics.",
+          "Le périmètre sensible est identifié en amont.",
+          "Aucun élément confidentiel n’est utilisé sans accord."
+        ]
+      },
+      {
+        num: "06",
+        title: "Engagement",
+        visible: ["15 minutes", "Aucune suite automatique", "Décision ensuite", "Note si pertinent"],
+        summary: "Ce que l’échange engage",
+        detail: [
+          "L’échange de 15 minutes ne vaut pas accord de participation.",
+          "La note de positionnement ne vaut pas engagement automatique.",
+          "La position reste soumise à composition éditoriale.",
+          "Une contribution financière n’intervient que si une poursuite est validée."
+        ]
+      }
+    ];
+
+    return `
+      <section class="landing-section landing-section--dark landing-trust-keys" id="cadre-confiance">
+        <div class="landing-container">
+          <div class="landing-head landing-head--keys">
+            <p class="landing-kicker">Cadre de confiance</p>
+            <h2>Une prise de parole visible, préparée et maîtrisée.</h2>
+            <p>L’échange permet de cadrer l’angle, les limites de parole, la préparation média, les validations utiles et le niveau d’exposition avant toute production.</p>
+          </div>
+
+          <div class="trust-keys-grid trust-keys-grid--six" aria-label="Les clés de sécurisation éditoriale de la contribution En Plateau">
+            ${keys.map(key => `
+              <article class="trust-key">
+                <span class="trust-key__num">${safe(key.num)}</span>
+                <h3>${safe(key.title)}</h3>
+                <p class="trust-key__summary">${safe(key.summary)}</p>
+                <ul>${key.visible.map(item => `<li>${safe(item)}</li>`).join("")}</ul>
+                <details class="trust-key__details">
+                  <summary>Voir le cadre</summary>
+                  ${trustDetailList(key.detail)}
+                </details>
+              </article>`).join("")}
+          </div>
+
+          <div class="trust-keys-cta">
+            <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
+            <p>Aucun dossier à préparer · Aucune donnée confidentielle attendue</p>
+          </div>
+        </div>
+      </section>`;
+  }
+
+
+  /* ─────────────────────────────────────────────────────────
+     POUR ALLER PLUS LOIN — bloc d'approfondissement structuré
+     Remplace les longues sections ouvertes par une intro, deux cartes
+     de cycles, des accordéons et un CTA final.
+  ───────────────────────────────────────────────────────── */
+
+  function buildMoreDetail(title, body, open = false) {
+    return `
+      <details class="more-accordion"${open ? " open" : ""}>
+        <summary>
+          <span>${safe(title)}</span>
+          <strong>+</strong>
+        </summary>
+        <div class="more-accordion__body">${body}</div>
+      </details>`;
+  }
+
+  function buildMoreStepsTimeline() {
+    const narrative = DATA?.landingNarrative || {};
+    const fallback = [
+      { level: "En Plateau", title: "Un dispositif de lecture des arbitrages", text: "En Plateau part d’une idée simple : les transformations ne se comprennent pas seulement par des opinions ou des témoignages, mais par les arbitrages qu’elles obligent à formuler." },
+      { level: "Cycle Industrie", title: "Une saison consacrée aux trajectoires industrielles", text: "Le cycle Industrie regarde ce qui fait tenir, rend moins lisible ou oblige à réarbitrer une trajectoire industrielle." },
+      { level: "Conversation", title: "Un phénomène industriel regardé depuis plusieurs lectures", text: "Chaque conversation met en regard des lectures complémentaires d’un même phénomène industriel." },
+      { level: "Contexte", title: "Le moment où la décision change de nature", text: "Le contexte indique la situation dans laquelle l’arbitrage devient plus difficile : croissance, adaptation ou réinvention." },
+      { level: "Angle", title: "Une position précise dans une conversation limitée", text: "L’angle proposé n’est pas une prise de parole générale. C’est une place éditoriale située, mise en regard avec trois autres lectures complémentaires." }
+    ];
+
+    const steps = toArray(narrative.steps).length ? toArray(narrative.steps) : fallback;
+
+    return `
+      <div class="more-timeline">
+        ${steps.slice(0, 5).map((step, index) => `
+          <article class="more-timeline__item">
+            <span>${String(index + 1).padStart(2, "0")}</span>
+            <div>
+              <p>${safe(txt(step.level, step.label, "Niveau"))}</p>
+              <h4>${safe(soften(txt(step.title, step.titre, "Étape éditoriale")))}</h4>
+              <p>${safe(shortText(txt(step.text, step.description, ""), 360))}</p>
+            </div>
+          </article>`).join("")}
+      </div>`;
+  }
+
+  function buildMoreProcess(processSteps) {
+    const fallback = [
+      { num: "01", title: "L’échange de qualification", text: "15 minutes pour vérifier si votre lecture correspond à une position disponible. Aucun dossier sensible à exposer." },
+      { num: "02", title: "Le dossier de positionnement", text: "Si l’angle est pertinent, un dossier complet est transmis : angle précis, logique de mise en regard, modalités d’intervention, format émission et article associé." },
+      { num: "03", title: "Le comité éditorial", text: "Le comité examine les dossiers de positionnement et valide la composition finale. Vous êtes informé avant tout engagement." },
+      { num: "04", title: "La préparation & la production", text: "En Plateau travaille avec vous pour transformer votre lecture en position claire, non intrusive et publiquement défendable." }
+    ];
+
+    const steps = toArray(processSteps).length ? toArray(processSteps).slice(0, 4) : fallback;
+
+    return `
+      <div class="more-process-grid">
+        ${steps.map((step, index) => `
+          <article>
+            <span>${safe(txt(step.num, String(index + 1).padStart(2, "0")))}</span>
+            <h4>${safe(soften(txt(step.title, "Étape")))}</h4>
+            <p>${safe(shortText(txt(step.text, ""), 360))}</p>
+          </article>`).join("")}
+      </div>
+      <p class="more-note">L’échange de départ ne vaut pas engagement.</p>`;
+  }
+
+  function buildMoreFAQ(faq) {
+    const fallback = [
+      { question: "L’échange de 15 minutes vaut-il engagement à participer ?", answer: "Non. Il sert uniquement à vérifier si la lecture correspond à une position disponible et pertinente." },
+      { question: "Faut-il préparer quelque chose avant l’échange ?", answer: "Non. Aucun dossier, aucune présentation, aucune position déjà construite n’est attendu." },
+      { question: "Les équipes communication, juridiques ou affaires publiques peuvent-elles être associées ?", answer: "Oui. Le périmètre de parole peut être travaillé avec les équipes utiles." },
+      { question: "Faut-il exposer un dossier sensible ?", answer: "Non. La contribution porte sur une lecture de mécanisme, pas sur un site, une négociation, un client ou une décision confidentielle." },
+      { question: "Est-ce une communication corporate ?", answer: "Non. La contribution est préparée comme une position éditoriale située, mise en regard avec d’autres lectures." }
+    ];
+
+    const seen = new Set();
+    const items = [...toArray(faq), ...fallback].filter(item => {
+      const key = norm(item?.question || "").slice(0, 42);
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    }).slice(0, 5);
+
+    return `
+      <div class="more-faq-grid">
+        ${items.map(item => `
+          <article>
+            <h4>${safe(soften(item.question))}</h4>
+            <p>${safe(shortText(item.answer, 360))}</p>
+          </article>`).join("")}
+      </div>`;
+  }
+
+  function buildMoreInfoSection({ cta, angle, publicAngle, formulation, conversation, conversationLabel, dgMessage, processSteps, faq, readingLabel, organisationName }) {
+    const narrative = DATA?.landingNarrative || {};
+    const introText = txt(
+      narrative?.intro,
+      "En Plateau ne propose pas des prises de parole isolées. Le dispositif compose des cycles de conversations stratégiques pour rendre visibles les arbitrages qui transforment les entreprises, les filières et les territoires."
+    );
+
+    const angleTitleText = txt(publicAngle?.titreLanding, formulation?.title, angle?.questionPublique, angle?.titreAngle, angle?.questionEditoriale);
+    const angleText = txt(publicAngle?.accrocheLanding, formulation?.accrocheLanding, angle?.questionActivation, angle?.texteProgramme, angle?.introMecanisme);
+
+    const angleDetail = `
+      <div class="more-angle-intro">
+        <h4>${safe(soften(angleTitleText))}</h4>
+        <p>${safe(shortText(angleText, 620))}</p>
+      </div>
+      <div class="more-mini-cards">
+        ${card("Conversation", conversationLabel, txt(conversation?.narrativeText, conversation?.description, "Une conversation construite pour mettre en regard des lectures complémentaires."))}
+        ${card("Votre lecture", "Ce qu’elle rend lisible", dgMessage)}
+        ${card("Préparation", "Un cadrage éditorial maîtrisé", "L’échange permet de préciser le sujet, la portée de la lecture et les conditions de préparation avec vos équipes si nécessaire.")}
+      </div>`;
+
+    const lectureSituee = `
+      <div class="more-reading-def">
+        <p>Une lecture située ne consiste pas à témoigner de manière générale. Elle part d’une fonction, d’une expérience et d’un point d’observation précis pour rendre lisible un mécanisme que d’autres acteurs ne voient pas de la même manière.</p>
+        <div class="more-mini-cards more-mini-cards--compact">
+          ${card("Pas une opinion générale", "Une position réelle", "Une lecture reliée à une fonction, une expérience et une responsabilité concrètes.")}
+          ${card("Pas un cas interne", "Une lecture de mécanisme", "Aucun dossier sensible n’est nécessaire pour formuler une contribution utile.")}
+          ${card("Pas une communication promotionnelle", "Une mise en regard", "La contribution prend sa portée aux côtés d’autres lectures complémentaires.")}
+        </div>
+      </div>`;
+
+    const finalTitle = organisationName && organisationName !== "Votre organisation"
+      ? `Prêt à vérifier si cette position mérite d’être formalisée pour ${organisationName} ?`
+      : "Prêt à vérifier si cette position mérite d’être formalisée ?";
+
+    return `
+      <section class="landing-section landing-section--light landing-more-structured" id="cadre-editorial">
+        <div class="landing-container">
+          <div class="more-hero-grid">
+            <div>
+              <p class="landing-kicker">Pour aller plus loin</p>
+              <h2>Comprendre le cadre éditorial En Plateau.</h2>
+            </div>
+            <div>
+              <p>${safe(shortText(introText, 420))}</p>
+              <p>Pour sa saison inaugurale, En Plateau lance deux cycles : <strong>Industrie & transformation des territoires</strong> et <strong>Logement & fabrique des territoires</strong>. Chaque cycle réunit plusieurs conversations, chacune structurée autour de lectures complémentaires.</p>
+              <div class="more-inline-actions">
+                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
+                <a class="more-text-link" href="#more-accordions">Lire le cadre éditorial ↓</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="more-cycle-grid">
+            <article>
+              <span>Cycle Industrie</span>
+              <h3>Industrie & transformation des territoires</h3>
+              <p>Produire davantage, tenir sous contrainte, transformer un outil ou réarbitrer une trajectoire : le cycle Industrie explore les moments où les arbitrages industriels changent de nature.</p>
+            </article>
+            <article>
+              <span>Cycle Logement</span>
+              <h3>Logement & fabrique des territoires</h3>
+              <p>Construire, financer, habiter, adapter ou transformer : le cycle Logement explore les tensions entre production, usages, foncier, modèles économiques, acteurs publics et trajectoires territoriales.</p>
+            </article>
+          </div>
+
+          <div class="more-accordions" id="more-accordions">
+            ${buildMoreDetail("Comprendre où se situe votre lecture", buildMoreStepsTimeline(), true)}
+            ${buildMoreDetail("Ce que cette position permettrait d’éclairer", angleDetail, false)}
+            ${buildMoreDetail("Comment se déroule la suite", buildMoreProcess(processSteps), false)}
+            ${buildMoreDetail("Questions fréquentes avant l’échange", buildMoreFAQ(faq), false)}
+            ${buildMoreDetail("Ce que signifie “lecture située”", lectureSituee, false)}
+          </div>
+
+          <div class="more-final-cta">
+            <h2>${safe(soften(finalTitle))}</h2>
+            <p>L’échange dure 15 minutes. Il ne vaut pas engagement et ne demande aucun dossier à préparer.</p>
+            <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
+            <p>Sans engagement · Aucun dossier sensible · Périmètre préparé si nécessaire</p>
+          </div>
+        </div>
+      </section>`;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     GESTION ERREURS
+  ───────────────────────────────────────────────────────── */
+  function renderError(title, body) {
+    root.innerHTML = `
+      <section class="landing-loading">
+        <div class="landing-loading__box">
+          <a class="landing-brand landing-brand--loading" href="/" aria-label="En Plateau — accueil">En Plateau</a>
+          <h1>${safe(title)}</h1>
+          <p>${body}</p>
+        </div>
+      </section>`;
+  }
+
+  function renderInactiveDeal(bundle) {
+    const deal = bundle.deal;
+    const organisation = Core.getOrganisation(deal);
+    const person       = Core.getPerson(deal);
+    root.innerHTML = `
+      <section class="landing-loading">
+        <div class="landing-loading__box">
+          <a class="landing-brand landing-brand--loading" href="/" aria-label="En Plateau — accueil">En Plateau</a>
+          <h1>Cette position n'est plus activable.</h1>
+          <p>
+            Le deal <strong>${safe(Core.getDealId(deal) || bundle.dealId)}</strong>
+            ${organisation.name ? `lié à <strong>${safe(organisation.name)}</strong>` : ""}
+            ${person.fullName  ? ` / <strong>${safe(person.fullName)}</strong>`       : ""}
+            est conservé comme trace CRM, mais ne doit pas être présenté comme landing prospect.
+            <br><br>Motif : ${safe(Core.getExclusionReason(deal))}
+          </p>
+        </div>
+      </section>`;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     RENDER PRINCIPAL
+  ───────────────────────────────────────────────────────── */
+  function render(bundle) {
+    const { deal, angle, reading, conversation, context, landingPage } = bundle;
+
+    if (!deal) {
+      renderError("Proposition introuvable",
+        `Aucun contenu personnalisé ne correspond à l'identifiant indiqué dans l'URL.<br><br>Identifiant reçu : <strong>${safe(bundle.dealId || "aucun")}</strong>.`);
+      return;
+    }
+    if (Core.isExcludedDeal(deal)) { renderInactiveDeal(bundle); return; }
+    if (!angle) {
+      renderError("Angle éditorial introuvable",
+        `Le deal est reconnu, mais son angle éditorial n'a pas été retrouvé.<br><br>Code angle détecté : <strong>${safe(Core.getAngleCodeFromDeal(deal) || "non renseigné")}</strong>.`);
+      return;
+    }
+
+    const person         = Core.getPerson(deal);
+    const organisation   = Core.getOrganisation(deal);
+    const actorType      = Core.getActorType(deal);
+    const why            = Core.getWhy(deal);
+    const personaFit     = Core.getPersonaFit(angle);
+    const publicAngle    = angle.anglePublic || angle.formulationVariants?.anglePublic || {};
+    const formulation    = Core.getFormulationLanding(angle);
+    const cta            = getCTA(deal, reading, landingPage);
+
+    const organisationName  = normalizeDisplayName(txt(organisation.name, "Votre organisation"));
+    const personName        = normalizeDisplayName(txt(person.fullName,   "Intervenant pressenti"));
+    const personRole        = cleanRole(person.role, organisationName);
+    const readingLabel      = displayReadingLabel(reading, angle, deal, personRole);
+    const contextLabel      = soften(txt(context?.label, deal?.editorialContext?.contexteTitre, "Contexte éditorial"));
+    const conversationLabel = getConversationLabel(conversation, deal);
+    const heroTitle = txt(
+      conversation?.title,
+      conversationLabel,
+      "Cycle Industrie & transformation des territoires"
+    );
+
+    const positionWhy = txt(publicAngle.promesseIntervenant, formulation.promesseIntervenant, why.position, "");
+
+    const speakerMotivation = txt(
+      personaFit?.speakerPersona?.motivation, reading?.motivationCentrale,
+      "Faire reconnaître une lecture claire, crédible et utile à votre écosystème."
+    );
+
+    const dgMessage    = buildDGMessage(personaFit, reading, organisationName);
+    const valueCards   = getValueCards(landingPage, reading, readingLabel, actorType, personRole, { organisationName, personName, why, angle });
+    const guarantees   = getGuarantees(publicAngle, landingPage, personaFit);
+    const processSteps = getProcessSteps(landingPage);
+    const faq          = getFAQ(readingLabel, actorType, personRole, landingPage);
+
+    const complementaryAngles = toArray(angle.complementaryCodes)
+      .map(code => Core.getAngleByCode(code))
+      .filter(other => other && norm(other.typeLecture) !== norm(angle.typeLecture))
+      .slice(0, 3);
+
+    /* ── COLONNE DROITE HERO ──────────────────────────────
+       1. Bloc film B&W (image émission + légende)
+       2. Carte hero (motivation + identité + rareté)
+    ────────────────────────────────────────────────────── */
+    const filmBlock = buildFilmBlock(angle);
+
+    root.innerHTML = `
+      <div class="landing-top">
+        <div class="landing-top__inner">
+          <a class="landing-brand" href="/" aria-label="En Plateau — accueil">En Plateau</a>
+          <div class="landing-top__meta">${buildTopMeta(conversationLabel)}</div>
+        </div>
+      </div>
+
+      ${buildHeroMinimalSection(angle, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, cta)}
+
+      ${buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles)}
+
+      ${buildTrustKeysSection(cta, organisationName, readingLabel)}
+
+      <section class="landing-section landing-section--light" id="pourquoi-vous">
+        <div class="landing-container">
+          <div class="landing-head">
+            <p class="landing-kicker">Pertinence</p>
+            <h2>Pourquoi ${safe(organisationName)} est bien placé pour porter cette lecture.</h2>
+            <p>Une position En Plateau ne désigne pas seulement une organisation ou une fonction. Elle identifie ce qu’une expérience permet de rendre lisible depuis un endroit précis.</p>
+          </div>
+          <div class="landing-why-box">
+            ${buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType, readingLabel)}
+          </div>
+        </div>
+      </section>
+
+      <section class="landing-section landing-section--dark" id="valeur-position">
+        <div class="landing-container">
+          <div class="landing-head">
+            <p class="landing-kicker">Portée de la position</p>
+            <h2>Ce qu’une lecture utile peut produire.</h2>
+            <p>Le point de départ n’est pas la visibilité. Une contribution solide rend visible une lecture utile ; la reconnaissance, la trace et les usages durables en sont les conséquences naturelles.</p>
+          </div>
+          <div class="landing-grid landing-grid--3 landing-grid--value">
+            ${valueCards.map((item) => buildValueCard(item)).join("")}
+          </div>
+        </div>
+      </section>
+
+      ${buildQualificationCTASection(cta, organisationName, readingLabel)}
+
+      ${buildMoreInfoSection({ cta, angle, publicAngle, formulation, conversation, conversationLabel, dgMessage, processSteps, faq, readingLabel, organisationName })}
+    `;
+  }
+
+  render(Core.getDealBundle());
+})();
