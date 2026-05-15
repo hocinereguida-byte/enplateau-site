@@ -2544,3 +2544,61 @@
     opacity: 1 !important;
   }
 }
+/* =========================================================
+CORRECTION CARROUSEL MOBILE
+Conserve 3 images avec défilement propre
+Desktop inchangé
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .home-film {
+    --film-window-height: 220px;
+    height: var(--film-window-height);
+    overflow: hidden;
+  }
+
+  .home-film-track {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    animation: homeScrollFilmMobile 18s infinite;
+    will-change: transform;
+  }
+
+  .home-film-track > div {
+    flex: 0 0 var(--film-window-height);
+    height: var(--film-window-height);
+    aspect-ratio: auto;
+    border: 0;
+    overflow: hidden;
+  }
+
+  .home-film-track img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    opacity: .82;
+  }
+
+  @keyframes homeScrollFilmMobile {
+
+    0%, 28% {
+      transform: translateY(0);
+    }
+
+    33%, 61% {
+      transform: translateY(calc(var(--film-window-height) * -1));
+    }
+
+    66%, 94% {
+      transform: translateY(calc(var(--film-window-height) * -2));
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
