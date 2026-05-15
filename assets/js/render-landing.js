@@ -135,7 +135,7 @@
     if (n.includes("organisation") || n.includes("entreprise") || n.includes("industrielle")) return "Pour votre organisation";
     if (n.includes("fonction") || n.includes("porteuse")) return "Pour votre fonction";
     if (n.includes("intervenant") || n.includes("personne") || n.includes("senior")) return "Pour vous";
-    if (n.includes("cabinet") || n.includes("conseil") || n.includes("expertise") || n.includes("avocat")) return "Pour votre expertise";
+    if (n.includes("cabinet") || n.includes("conseil") || n.includes("expertise") || n.includes("avocat")) return "Pour votre organisation";
     return label || "Portée";
   }
 
@@ -505,11 +505,55 @@
     return b.includes("intervenant") || b.includes("personne") || b.includes("senior");
   }
 
+  function gainTagLabel(type) {
+    const key = norm(type || "");
+    if (key.includes("institution")) return "Institutionnel";
+    if (key.includes("strateg")) return "Stratégique";
+    if (key.includes("interne")) return "Interne";
+    if (key.includes("different")) return "Différenciation";
+    if (key.includes("reutil")) return "Réutilisation";
+    if (key.includes("stature")) return "Stature";
+    return soften(type || "Gain");
+  }
+
+  function matchGainItem(item, words) {
+    const hay = norm([item?.type, item?.texte].join(" "));
+    return words.some(word => hay.includes(norm(word)));
+  }
+
+  function pickGainItems(items, groups, max = 3) {
+    const source = toArray(items);
+    const picked = [];
+    const seen = new Set();
+
+    groups.forEach(words => {
+      const found = source.find(item => matchGainItem(item, words));
+      if (found) {
+        const key = norm(found.type || found.texte);
+        if (key && !seen.has(key)) {
+          seen.add(key);
+          picked.push(found);
+        }
+      }
+    });
+
+    source.forEach(item => {
+      if (picked.length >= max) return;
+      const key = norm(item.type || item.texte);
+      if (key && !seen.has(key)) {
+        seen.add(key);
+        picked.push(item);
+      }
+    });
+
+    return picked.slice(0, max);
+  }
+
+  function compactValueText(item, fallback) {
+    return shortText(txt(item?.texte, item?.text, fallback), 220);
+  }
+
   function getValueCards(landingPage, reading, readingLabel, actorType, personRole) {
-    // Priorité 1 : gainsParProfilV2[groupe][persona] depuis data V67.
-    // Important : on part du libellé CRM/deal déjà normalisé par displayReadingLabel,
-    // pas uniquement de reading.label, car les libellés peuvent arriver sous la forme
-    // "Stratégique", "Lecture stratégique", "RH / compétences", etc.
     const rtData     = getReadingType(readingLabel || reading?.code || reading?.label || "");
     const groupe     = detectProfilGroupe(actorType);
     const personaKey = detectPersonaType(personRole, actorType);
@@ -518,81 +562,107 @@
     if (gainsV2?.[groupe]) {
       const groupData   = gainsV2[groupe];
       const personaData = groupData[personaKey] || groupData["default"];
-      const defaultData = groupData["default"] || personaData;
+      const items       = toArray(personaData?.gainsItems);
+
       if (personaData) {
-        const orgLabel  = groupe === "eclaireur" ? "Pour votre expertise" : "Pour votre organisation";
-        const funcLabel = groupe === "eclaireur" ? "Pour votre pratique"  : "Pour votre fonction";
+        const orgItems = pickGainItems(items, [["stature"], ["institution"], ["different"]], 3);
+        const functionItems = pickGainItems(items, [["strateg"], ["interne"], ["arbitr"]], 3);
+        const personItems = pickGainItems(items, [["reutil"], ["relation"], ["dirigeant"]], 3);
+
         return [
-          { label: orgLabel,  title: personaData.gain, text: personaData.detail },
-          { label: funcLabel, title: defaultData.gain,  text: defaultData.detail },
-          { label: "Pour vous",
-            title: "Construire une trace professionnelle crédible et réutilisable.",
-            text: "L'intervention devient un actif éditorial préparé, durable et mobilisable dans la durée auprès de votre écosystème professionnel." }
+          {
+            label: "Pour votre organisation",
+            title: "Stature · signal · différenciation",
+            text: shortText(personaData.gain, 260),
+            chips: orgItems.map(item => gainTagLabel(item.type)),
+            details: orgItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) }))
+          },
+          {
+            label: "Pour votre fonction",
+            title: "Rôle lisible dans l’arbitrage",
+            text: compactValueText(functionItems[0], "Faire apparaître ce que votre fonction voit, arbitre ou sécurise dans la transformation."),
+            chips: functionItems.map(item => gainTagLabel(item.type)),
+            details: functionItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) }))
+          },
+          {
+            label: "Pour vous",
+            title: "Trace durable et réutilisable",
+            text: compactValueText(personItems[0], "Créer un actif éditorial préparé, durable et mobilisable dans la durée."),
+            chips: personItems.map(item => gainTagLabel(item.type)),
+            details: personItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) }))
+          }
         ];
       }
     }
 
-    // Fallback 2 : gainsParProfil plat V66 depuis readingTypes
     const rtGains = toArray(rtData?.gainsParProfil).map(item => ({
       label: item.profil, title: item.gain,
       text: typeof item.detail === "string" ? item.detail : Array.isArray(item.detail) ? item.detail.join(" ") : ""
     }));
     if (rtGains.length >= 3) {
-      const filtered = rtGains.filter(item =>
-        actorType === "cabinet_conseil"
-          ? isCabinetCard(item) || isFunctionCard(item) || isPersonCard(item)
-          : !isCabinetCard(item) && (isOrgCard(item) || isFunctionCard(item) || isPersonCard(item))
-      );
-      if (filtered.length >= 3) return filtered.slice(0, 3).map(item => ({ ...item, label: valueLabel(item.label) }));
-      return rtGains.slice(0, 3).map(item => ({ ...item, label: valueLabel(item.label) }));
+      const selected = rtGains.slice(0, 3);
+      return [
+        { label: "Pour votre organisation", title: selected[0]?.title, text: selected[0]?.text, chips: ["Stature", "Signal", "Différenciation"] },
+        { label: "Pour votre fonction", title: selected[2]?.title || selected[1]?.title, text: selected[2]?.text || selected[1]?.text, chips: ["Rôle", "Arbitrage", "Interne"] },
+        { label: "Pour vous", title: selected[3]?.title || "Trace durable et réutilisable", text: selected[3]?.text || selected[1]?.text, chips: ["Trace", "Réutilisation", "Crédibilité"] }
+      ];
     }
 
-    // Fallback 3 : landingPage.valueSection.cards (votre fallback original)
     const pageCards = toArray(landingPage?.valueSection?.cards).map(item => ({
       label: item.label || item.profil,
       title: item.title || item.gain,
       text:  item.text  || (Array.isArray(item.detail) ? item.detail.join(" ") : item.detail)
     }));
-    let filtered = pageCards.filter(item =>
-      actorType === "cabinet_conseil"
-        ? isCabinetCard(item) || isFunctionCard(item) || isPersonCard(item)
-        : !isCabinetCard(item) && (isOrgCard(item) || isFunctionCard(item) || isPersonCard(item))
-    );
-    if (filtered.length >= 3) return filtered.slice(0, 3).map(item => ({ ...item, label: valueLabel(item.label) }));
+    if (pageCards.length >= 3) {
+      return [
+        { label: "Pour votre organisation", title: pageCards[0].title, text: pageCards[0].text, chips: ["Stature", "Signal", "Différenciation"] },
+        { label: "Pour votre fonction", title: pageCards[1].title, text: pageCards[1].text, chips: ["Rôle", "Arbitrage", "Interne"] },
+        { label: "Pour vous", title: pageCards[2].title, text: pageCards[2].text, chips: ["Trace", "Réutilisation", "Crédibilité"] }
+      ];
+    }
 
-    // Fallback 4 : reading.gainsParProfil (votre fallback original)
-    const gains = toArray(reading?.gainsParProfil).map(item => ({
-      label: item.profil, title: item.gain, text: item.detail
-    }));
-    filtered = gains.filter(item =>
-      actorType === "cabinet_conseil"
-        ? isCabinetCard(item) || isFunctionCard(item) || isPersonCard(item)
-        : !isCabinetCard(item) && (isOrgCard(item) || isFunctionCard(item) || isPersonCard(item))
-    );
-    if (filtered.length >= 3) return filtered.slice(0, 3).map(item => ({ ...item, label: valueLabel(item.label) }));
-
-    // Fallback 5 : statique (votre fallback original conservé à l'identique)
     return [
       {
-        label: actorType === "cabinet_conseil" ? "Pour votre expertise" : "Pour votre organisation",
-        title: actorType === "cabinet_conseil"
+        label: "Pour votre organisation",
+        title: "Stature · signal · différenciation",
+        text: actorType === "cabinet_conseil"
           ? "Installer une parole d'autorité sans vendre directement une offre."
           : "Valoriser une capacité à rendre lisibles les conditions réelles d'une trajectoire industrielle.",
-        text: actorType === "cabinet_conseil"
-          ? "La contribution permet de formuler une lecture utile aux décideurs sans présenter une mission, une méthode ou un cas client."
-          : "La contribution permet à l'organisation de montrer sa capacité de lecture sans exposer de chiffre, de site, de client ou de décision interne."
+        chips: ["Stature", "Signal", "Différenciation"]
       },
       {
         label: "Pour votre fonction",
-        title: "Faire reconnaître ce que votre fonction permet de voir.",
-        text: "La prise de parole rend visible une capacité de pilotage, de coordination ou d'arbitrage souvent difficile à expliquer dans un format institutionnel classique."
+        title: "Rôle lisible dans l’arbitrage",
+        text: "Faire apparaître ce que votre fonction voit, arbitre ou sécurise.",
+        chips: ["Rôle", "Arbitrage", "Interne"]
       },
       {
         label: "Pour vous",
-        title: "Construire une trace professionnelle crédible.",
-        text: "L'intervention devient un actif éditorial préparé, durable, réutilisable et aligné avec le niveau d'exposition souhaité."
+        title: "Trace durable et réutilisable",
+        text: "Créer un actif éditorial préparé, durable et mobilisable dans la durée.",
+        chips: ["Trace", "Réutilisation", "Crédibilité"]
       }
     ];
+  }
+
+  function buildValueCard(item) {
+    const chips = toArray(item?.chips).filter(Boolean).slice(0, 4);
+    const details = toArray(item?.details).filter(d => d?.text).slice(0, 4);
+
+    return `
+      <article class="landing-card landing-value-card">
+        ${item?.label ? `<span class="landing-label">${safe(item.label)}</span>` : ""}
+        ${item?.title ? `<h3>${safe(soften(item.title))}</h3>` : ""}
+        ${item?.text ? `<p>${safe(shortText(item.text, 320))}</p>` : ""}
+        ${chips.length ? `<div class="value-chip-list">${chips.map(chip => `<span>${safe(chip)}</span>`).join("")}</div>` : ""}
+        ${details.length ? `
+          <details class="value-details">
+            <summary>Voir les leviers</summary>
+            <ul>
+              ${details.map(detail => `<li><strong>${safe(detail.label)}</strong><span>${safe(detail.text)}</span></li>`).join("")}
+            </ul>
+          </details>` : ""}
+      </article>`;
   }
 
   function getCTA(deal, reading, landingPage) {
@@ -1207,7 +1277,7 @@
             <p>${safe(shortText(txt(landingPage?.valueSection?.intro, "Une contribution bien préparée ne cherche pas seulement à être vue. Elle permet d'installer une lecture, de rendre une trajectoire plus lisible et de créer une trace publique qui continue de travailler dans la durée."), 560))}</p>
           </div>
           <div class="landing-grid landing-grid--3 landing-grid--value">
-            ${valueCards.map((item) => card(item.label, item.title, item.text)).join("")}
+            ${valueCards.map((item) => buildValueCard(item)).join("")}
           </div>
           <div class="landing-inline-cta landing-inline-cta--dark">
             <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
