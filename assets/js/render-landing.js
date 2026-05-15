@@ -1,25 +1,25 @@
 /*
   En Plateau — render-landing.js
-  Version V65.9 conversation-cards
-  Modifications vs V65.5 :
-  - Suppression du bloc .landing-emission dans la carte hero (brouillon, image en couleur)
-  - Nouvelle colonne droite hero : bloc .landing-emission-film (style home, image B&W)
-    + légende journaliste/média sous l'image
-    + carte hero (.landing-hero__card) en dessous
-  - Restructuration du landing-hero__grid : 2 colonnes
-    gauche : titre + lead + CTA
-    droite  : film > légende > carte
-  - buildRaritySignal : texte corrigé
-  - buildIdentityLine : suppression de l'émission (maintenant au-dessus de la carte)
-  - V65.8 : alignement renforcé avec la grammaire du site public :
-    lecture située, approche directe, contribution qui prend sa portée,
-    trace publique durable, non-visibilité/prestation.
-  - V65.9 : hero allégé sur le titre canonique de conversation ; carte de position dans le hero ; définition de la conversation En Plateau et composition à 4 lectures immédiatement sous le hero.
-  Aucune modification de render-core.js ni du fichier maître.
+  BENTO BUILD — 20260515-0455
+
+  Objet : remplace la section post-hero "Conversation composée" par une section Bento
+  "Votre place dans la conversation".
+
+  Marqueurs de vérification :
+  - const BENTO_BUILD_20260515_0425 = true;
+  - buildConversationBentoSection(...)
+  - <section class="landing-bento-section" id="mise-en-regard">
+
+  Ne modifie pas :
+  - editorial-data-industrie-v67.js
+  - render-core.js
 */
 
 (function () {
   "use strict";
+
+  const BENTO_BUILD_20260515_0425 = true;
+  console.info("En Plateau — render-landing bento build 20260515-0425 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -240,6 +240,180 @@
         ${text ? `<p>${safe(shortText(text, 560))}</p>` : ""}
         <p class="landing-card-note"><strong>Intervenant pressenti</strong><br>${safe([personName, personRole].filter(Boolean).join(" · "))}</p>
       </article>`;
+  }
+
+
+  /* ─────────────────────────────────────────────────────────
+     SECTION POST-HERO — BENTO conversation / lectures
+     Objectif : rendre immédiatement lisibles la place proposée,
+     les autres lectures, les organisations approchées,
+     les acteurs approchés et le format média de chaque angle.
+  ───────────────────────────────────────────────────────── */
+
+  function readingLabelForAngle(angle) {
+    const cfg = readingTypeConfig(angle?.typeLecture);
+    return txt(cfg?.label, angle?.complementaryCard?.label, angle?.typeLecture, "Lecture complémentaire");
+  }
+
+  function shortReadingLabel(value) {
+    return readingDisplay(value || "Lecture");
+  }
+
+  function dealItemsForAngle(angleCode, limit = 4, excludeOrgName = "") {
+    const exclude = norm(excludeOrgName);
+    const seen = new Set();
+    return castingItems()
+      .filter(item => String(item?.angleCode || "") === String(angleCode || ""))
+      .map(item => {
+        const organisation = txt(item?.organisation?.name, item?.organisationName, item?.orgName);
+        const person = txt(item?.person?.fullName, item?.person?.name, item?.personName, item?.name);
+        const role = cleanRole(txt(item?.person?.role, item?.role, item?.personRole), organisation);
+        return { organisation, person, role };
+      })
+      .filter(item => {
+        const orgKey = norm(item.organisation);
+        const personKey = norm(item.person);
+        const key = [orgKey, personKey].filter(Boolean).join("|");
+        if (!key || (exclude && orgKey === exclude) || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      })
+      .slice(0, limit);
+  }
+
+  function listInline(items, fallback = "À qualifier") {
+    const clean = toArray(items).map(item => String(item || "").trim()).filter(Boolean);
+    if (!clean.length) return `<span class="lpb-muted">${safe(fallback)}</span>`;
+    return clean.map(item => `<span>${safe(item)}</span>`).join("");
+  }
+
+  function compactPeopleList(items) {
+    const rows = toArray(items).filter(Boolean).map(item => {
+      const who = [item.person, item.role].filter(Boolean).join(" · ");
+      return who || item.organisation;
+    }).filter(Boolean);
+    return listInline(rows, "Profils en qualification");
+  }
+
+  function compactOrgList(items) {
+    const seen = new Set();
+    const rows = toArray(items).map(item => item.organisation).filter(name => {
+      const key = norm(name);
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+    return listInline(rows, "Organisations en qualification");
+  }
+
+  function bentoDetail(title, body) {
+    if (!body) return "";
+    return `
+      <details class="lpb-details">
+        <summary>${safe(title)}</summary>
+        <div>${body}</div>
+      </details>`;
+  }
+
+  function buildBentoPrimaryCard(angle, publicAngle, formulation, personName, personRole, organisationName, readingLabel) {
+    const title = angleTitle(angle, publicAngle, formulation);
+    const desc = angleDescription(angle, publicAngle, formulation);
+    const media = mediaLineForAngle(angle);
+    const actors = actorLabelsForAngle(angle);
+    const details = `
+      ${desc ? `<p>${safe(shortText(desc, 620))}</p>` : ""}
+      ${actors.length ? `<div class="lpb-detail-block"><span>Acteurs pressentis</span><strong>${safe(actors.join(" · "))}</strong></div>` : ""}
+      ${media ? `<div class="lpb-detail-block"><span>Émission pressentie</span><strong>${safe(media)}</strong></div>` : ""}
+    `;
+    return `
+      <article class="lpb-card lpb-card--primary">
+        <div class="lpb-card-top">
+          <span class="lpb-label">Votre lecture</span>
+          <span class="lpb-status">Position proposée</span>
+        </div>
+        <h3>${safe(shortReadingLabel(readingLabel))}</h3>
+        ${title ? `<p class="lpb-angle">${safe(soften(title))}</p>` : ""}
+        <div class="lpb-meta-grid">
+          <div><span>Organisation</span><strong>${safe(organisationName)}</strong></div>
+          <div><span>Intervenant</span><strong>${safe([personName, personRole].filter(Boolean).join(" · "))}</strong></div>
+        </div>
+        <div class="lpb-tags"><span>Angle limité</span><span>Lecture située</span><span>À qualifier</span></div>
+        ${bentoDetail("Lire l’angle proposé", details)}
+      </article>`;
+  }
+
+  function buildBentoConversationCard(conversationLabel, contextLabel, complementaryAngles) {
+    const readings = complementaryAngles.length + 1;
+    return `
+      <article class="lpb-card lpb-card--conversation">
+        <span class="lpb-label">Conversation</span>
+        <h3>${safe(stripConversationCode(conversationLabel || "Conversation En Plateau"))}</h3>
+        <div class="lpb-counts">
+          <div><strong>1</strong><span>sujet</span></div>
+          <div><strong>${safe(readings)}</strong><span>lectures</span></div>
+          <div><strong>0</strong><span>débat forcé</span></div>
+        </div>
+        <p class="lpb-telegram">Chaque voix reste distincte. La valeur naît du contraste.</p>
+        ${contextLabel ? `<p class="lpb-context">${safe(contextLabel)}</p>` : ""}
+      </article>`;
+  }
+
+  function buildBentoComplementaryCard(other, index, excludeOrgName = "") {
+    const c = other.complementaryCard || {};
+    const publicAngle = other.anglePublic || other.formulationVariants?.anglePublic || {};
+    const formulation = Core.getFormulationLanding(other) || {};
+    const readingLabel = readingLabelForAngle(other);
+    const title = txt(c.title, publicAngle.titreLanding, formulation.title, other.questionCourte, other.titreAngle, other.questionPublique);
+    const text = txt(c.headline, publicAngle.accrocheLanding, formulation.accrocheLanding, other.ceQueCetteLecturePermetDeVoir, other.angleRendVisible);
+    const actors = actorLabelsForAngle(other);
+    const deals = dealItemsForAngle(other.code, 4, excludeOrgName);
+    const media = mediaLineForAngle(other);
+    const detail = `
+      ${text ? `<p>${safe(shortText(text, 620))}</p>` : ""}
+      ${actors.length ? `<div class="lpb-detail-block"><span>Acteurs pressentis</span><strong>${safe(actors.join(" · "))}</strong></div>` : ""}
+      ${media ? `<div class="lpb-detail-block"><span>Émission pressentie</span><strong>${safe(media)}</strong></div>` : ""}
+    `;
+    return `
+      <article class="lpb-card lpb-card--other">
+        <div class="lpb-card-top">
+          <span class="lpb-label">Lecture ${safe(index + 2)}</span>
+          <span class="lpb-status">Complémentaire</span>
+        </div>
+        <h3>${safe(shortReadingLabel(readingLabel))}</h3>
+        ${title ? `<p class="lpb-angle">${safe(shortText(title, 170))}</p>` : ""}
+        <div class="lpb-mini-section">
+          <span>Organisations approchées</span>
+          <div class="lpb-chip-list">${compactOrgList(deals)}</div>
+        </div>
+        <div class="lpb-mini-section">
+          <span>Acteurs approchés</span>
+          <div class="lpb-chip-list lpb-chip-list--people">${compactPeopleList(deals)}</div>
+        </div>
+        ${media ? `<div class="lpb-media"><span>Émission</span><strong>${safe(media)}</strong></div>` : ""}
+        ${bentoDetail("Détail de cette lecture", detail)}
+      </article>`;
+  }
+
+  function buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles) {
+    return `
+      <section class="landing-bento-section" id="mise-en-regard" data-bento-build="20260515-0425">
+        <div class="landing-container lpb-container">
+          <div class="lpb-head">
+            <p class="lpb-kicker">Votre place dans la conversation</p>
+            <h2>Une conversation à plusieurs voix. Une lecture proposée à votre organisation.</h2>
+            <p>Chaque intervenant participe séparément. La valeur naît ensuite de la mise en regard des lectures, des organisations et des angles pressentis.</p>
+          </div>
+          <div class="lpb-grid">
+            ${buildBentoPrimaryCard(angle, publicAngle, formulation, personName, personRole, organisationName, readingLabel)}
+            ${buildBentoConversationCard(conversationLabel, contextLabel, complementaryAngles)}
+            ${complementaryAngles.map((other, index) => buildBentoComplementaryCard(other, index, organisationName)).join("")}
+          </div>
+          <div class="lpb-summary-note">
+            <strong>Logique En Plateau</strong>
+            <span>Une position n’est pas isolée : elle prend sa portée dans la composition complète de la conversation.</span>
+          </div>
+        </div>
+      </section>`;
   }
 
   /* ─────────────────────────────────────────────────────────
@@ -902,23 +1076,7 @@
         </div>
       </section>
 
-      <section class="landing-section landing-section--light" id="mise-en-regard">
-        <div class="landing-container">
-          <div class="landing-head">
-            <p class="landing-kicker">Conversation composée</p>
-            <h2>Ce qu'En Plateau appelle une conversation.</h2>
-            <p>Une conversation En Plateau n'est pas une table ronde. Chaque intervenant porte individuellement une lecture située, préparée à partir de son expérience, de sa fonction et de l'angle proposé.</p>
-            <p>La valeur de chaque contribution tient à ce qu'elle éclaire. La valeur d'ensemble naît de leur mise en regard&nbsp;: plusieurs positions complémentaires qui permettent de comprendre un même enjeu industriel depuis différentes responsabilités.</p>
-          </div>
-          <div class="landing-conversation-transition">
-            <p>La position proposée à <strong>${safe(organisationName)}</strong> prendrait donc sa portée aux côtés d'autres lectures appelées à éclairer la même conversation.</p>
-          </div>
-          <div class="landing-grid landing-grid--4 landing-grid--complementary landing-composition-grid">
-            ${buildPrimaryConversationCard(angle, publicAngle, formulation, personName, personRole, organisationName, readingLabel)}
-            ${complementaryAngles.map(other => buildComplementaryCard(other, organisationName)).join("")}
-          </div>
-        </div>
-      </section>
+      ${buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles)}
 
       <section class="landing-section landing-section--light" id="cadre-confiance">
         <div class="landing-container">
