@@ -2404,3 +2404,203 @@ body.landing-page .landing-why-box .landing-why-narrative--keys p {
     border-top: 1px solid rgba(17,17,17,.14);
   }
 }
+
+/* ─────────────────────────────────────────────────────────
+   CORRECTION ALTERNANCE + VALEUR MINIMALE — 20260515-0638
+   Hero foncé / Conversation claire / Cadre foncé / Pourquoi clair.
+   La section valeur conserve le design sombre, avec gains dynamiques
+   en micro-copy : organisation / fonction / vous.
+───────────────────────────────────────────────────────── */
+
+body.landing-page .landing-bento-section {
+  background: var(--landing-paper, #f4efe6) !important;
+  color: var(--landing-ink, #151515) !important;
+}
+
+body.landing-page .landing-bento-section::before {
+  background-image:
+    linear-gradient(rgba(17,17,17,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17,17,17,.020) 1px, transparent 1px) !important;
+  opacity: .45 !important;
+}
+
+body.landing-page .landing-bento-section .lpb-kicker {
+  color: rgba(17,17,17,.48) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-head h2 {
+  color: var(--landing-ink, #151515) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-head p {
+  color: rgba(17,17,17,.68) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-card--primary {
+  background: #f3eee4 !important;
+  color: #171717 !important;
+  border-color: rgba(17,17,17,.20) !important;
+  box-shadow: none !important;
+}
+
+body.landing-page .landing-bento-section .lpb-card--other {
+  background: #111111 !important;
+  color: #fffaf0 !important;
+  border-color: rgba(17,17,17,.88) !important;
+  box-shadow: 0 24px 70px rgba(17,17,17,.18) !important;
+}
+
+body.landing-page .landing-trust-keys {
+  background: #111111 !important;
+  color: #fffaf0 !important;
+}
+
+body.landing-page .landing-trust-keys .landing-kicker,
+body.landing-page .landing-trust-keys .landing-head h2,
+body.landing-page .landing-trust-keys .landing-head p,
+body.landing-page .landing-trust-keys .trust-key h3 {
+  color: #fffaf0 !important;
+}
+
+body.landing-page .landing-trust-keys .trust-key li,
+body.landing-page .landing-trust-keys .trust-key__details p,
+body.landing-page .landing-trust-keys .trust-keys-cta p {
+  color: rgba(255,250,240,.72) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-keys-grid {
+  border-top-color: rgba(255,250,240,.18) !important;
+  border-bottom-color: rgba(255,250,240,.18) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-key,
+body.landing-page .landing-trust-keys .trust-key:first-child {
+  border-color: rgba(255,250,240,.18) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-key li,
+body.landing-page .landing-trust-keys .trust-key__details {
+  border-top-color: rgba(255,250,240,.14) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-key__num,
+body.landing-page .landing-trust-keys .trust-key__details summary {
+  color: rgba(255,250,240,.58) !important;
+}
+
+body.landing-page #pourquoi-vous {
+  background: var(--landing-paper, #f4efe6) !important;
+  color: var(--landing-ink, #151515) !important;
+}
+
+body.landing-page #valeur-position {
+  background: #111111 !important;
+  color: #fffaf0 !important;
+}
+
+body.landing-page #valeur-position .landing-head h2,
+body.landing-page #valeur-position .landing-kicker {
+  color: #fffaf0 !important;
+}
+
+body.landing-page #valeur-position .landing-head p {
+  color: rgba(255,250,240,.72) !important;
+}
+
+body.landing-page .landing-grid--value .landing-value-card {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 360px;
+  background: rgba(255,255,255,.035) !important;
+  border-color: rgba(255,250,240,.18) !important;
+}
+
+body.landing-page .landing-value-card .landing-label {
+  color: rgba(255,250,240,.58) !important;
+}
+
+body.landing-page .landing-value-card h3 {
+  min-height: 0 !important;
+  margin-bottom: 18px !important;
+  color: #fffaf0 !important;
+}
+
+body.landing-page .landing-value-card p {
+  color: rgba(255,250,240,.76) !important;
+}
+
+body.landing-page .value-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+body.landing-page .value-chip-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 6px 9px;
+  border: 1px solid rgba(255,250,240,.20);
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .62rem;
+  line-height: 1;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: rgba(255,250,240,.78);
+}
+
+body.landing-page .value-details {
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+body.landing-page .value-details summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .64rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: rgba(255,250,240,.62);
+}
+
+body.landing-page .value-details summary::-webkit-details-marker {
+  display: none;
+}
+
+body.landing-page .value-details summary::after {
+  content: " +";
+}
+
+body.landing-page .value-details[open] summary::after {
+  content: " –";
+}
+
+body.landing-page .value-details ul {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+body.landing-page .value-details li {
+  padding: 12px 0;
+  border-top: 1px solid rgba(255,250,240,.12);
+}
+
+body.landing-page .value-details li strong {
+  display: block;
+  margin-bottom: 5px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .62rem;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: rgba(255,250,240,.58);
+}
+
+body.landing-page .value-details li span {
+  display: block;
+  font-size: .88rem;
+  line-height: 1.55;
+  color: rgba(255,250,240,.72);
+}
