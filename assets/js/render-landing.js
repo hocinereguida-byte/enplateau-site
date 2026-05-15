@@ -19,7 +19,7 @@
   "use strict";
 
   const BENTO_BUILD_20260515_HERO_MINIMAL_4CARTES = true;
-  console.info("En Plateau — render-landing hero minimal + 4 cartes build 20260515 loaded");
+  console.info("En Plateau — render-landing hero aligned + 4 cartes build 20260515-0558 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -796,24 +796,12 @@
     const altLabel    = [journaliste, outlet].filter(Boolean).join(" · ") || "Format média En Plateau";
 
     if (!imgPath) {
-      return `
-        <div class="landing-hero-visual landing-hero-visual--empty">
-          <div class="landing-hero-media-tag">
-            <span>Format média</span>
-            <strong>${safe(outlet || "À préciser")}</strong>
-            ${journaliste ? `<em>${safe(journaliste)}</em>` : ""}
-          </div>
-        </div>`;
+      return `<div class="landing-hero-visual landing-hero-visual--empty" aria-label="${safe(altLabel)}"></div>`;
     }
 
     return `
       <div class="landing-hero-visual" aria-label="${safe(altLabel)}">
         <img src="${safe(imgPath)}" alt="${safe(altLabel)}" loading="eager">
-        <div class="landing-hero-media-tag">
-          <span>Format média</span>
-          ${journaliste ? `<strong>${safe(journaliste)}</strong>` : ""}
-          ${outlet ? `<em>${safe(outlet)}</em>` : ""}
-        </div>
       </div>`;
   }
 
@@ -845,13 +833,12 @@
             <aside class="landing-hero-bento-side">
               ${buildHeroVisual(angle)}
 
-              <div class="landing-hero-metrics" aria-label="Repères clés de la proposition éditoriale">
-                ${buildHeroMetricCard("Conversation", conversationShort, contextLabel || "")}
+              <div class="landing-hero-metrics landing-hero-metrics--six" aria-label="Repères clés de la proposition éditoriale">
                 ${buildHeroMetricCard("Lecture proposée", readingShort, `1 seule position ${readingLower} disponible`, "landing-hero-metric--accent")}
+                ${buildHeroMetricCard("Conversation", conversationShort, contextLabel || "")}
                 ${buildHeroMetricCard("Pressenti", organisationName, personLine)}
+                ${media ? buildHeroMetricCard("Format média", media, "") : buildHeroMetricCard("Format média", "À préciser", "")}
                 ${buildHeroMetricCard("Comité éditorial", "15 juin", "Soumission possible après échange")}
-                ${media ? buildHeroMetricCard("Média", media, "") : ""}
-                ${buildHeroMetricCard("Gains", "Crédibilité · Signal · Trace", "Actif éditorial réutilisable")}
                 ${buildHeroMetricCard("Cadre", "Aucune donnée interne", "Aucun engagement à ce stade")}
               </div>
             </aside>
