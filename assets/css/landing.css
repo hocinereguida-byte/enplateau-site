@@ -2279,3 +2279,128 @@ body.landing-page .trust-keys-cta p {
     flex-direction: column;
   }
 }
+
+
+/* ─────────────────────────────────────────────────────────
+   ALTERNANCE FOND CLAIR / FOND FONCÉ + DONNÉES DYNAMIQUES
+   - Cadre de confiance sur fond foncé
+   - Pourquoi cette lecture sur fond clair, en 3 clés dynamiques
+───────────────────────────────────────────────────────── */
+
+body.landing-page .landing-trust-keys {
+  background: var(--landing-bg) !important;
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-trust-keys .landing-kicker,
+body.landing-page .landing-trust-keys .landing-head h2,
+body.landing-page .landing-trust-keys .landing-head p {
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-trust-keys .landing-head p,
+body.landing-page .landing-trust-keys .trust-key li,
+body.landing-page .landing-trust-keys .trust-key__details p,
+body.landing-page .landing-trust-keys .trust-keys-cta p {
+  color: var(--landing-text-soft) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-keys-grid {
+  border-top-color: rgba(246,241,233,.18) !important;
+  border-bottom-color: rgba(246,241,233,.18) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-key,
+body.landing-page .landing-trust-keys .trust-key:first-child {
+  border-color: rgba(246,241,233,.18) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-key__num,
+body.landing-page .landing-trust-keys .trust-key__details summary {
+  color: rgba(246,241,233,.62) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-key h3 {
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-key li,
+body.landing-page .landing-trust-keys .trust-key__details {
+  border-top-color: rgba(246,241,233,.14) !important;
+}
+
+body.landing-page .landing-trust-keys .landing-btn {
+  background: var(--landing-paper) !important;
+  color: var(--landing-ink) !important;
+  border-color: var(--landing-paper) !important;
+}
+
+body.landing-page #pourquoi-vous {
+  background: var(--landing-paper) !important;
+  color: var(--landing-ink) !important;
+}
+
+body.landing-page #pourquoi-vous .landing-head p {
+  color: var(--landing-ink-soft) !important;
+}
+
+body.landing-page .landing-why-box {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  width: min(980px, 100%) !important;
+}
+
+body.landing-page .landing-why-narrative--keys {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid rgba(17,17,17,.14);
+  border-bottom: 1px solid rgba(17,17,17,.14);
+}
+
+body.landing-page .landing-why-key {
+  padding: clamp(24px, 3vw, 34px) clamp(18px, 2.4vw, 28px);
+  border-right: 1px solid rgba(17,17,17,.14);
+}
+
+body.landing-page .landing-why-key:first-child {
+  border-left: 1px solid rgba(17,17,17,.14);
+}
+
+body.landing-page .landing-why-key span {
+  display: block;
+  margin-bottom: 18px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem;
+  line-height: 1.1;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(17,17,17,.50);
+}
+
+body.landing-page .landing-why-key p,
+body.landing-page .landing-why-box .landing-why-narrative--keys p {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  font-size: .96rem;
+  line-height: 1.72;
+  color: rgba(17,17,17,.76) !important;
+}
+
+@media (max-width: 900px) {
+  body.landing-page .landing-why-narrative--keys {
+    grid-template-columns: 1fr;
+  }
+
+  body.landing-page .landing-why-key,
+  body.landing-page .landing-why-key:first-child {
+    border-left: 1px solid rgba(17,17,17,.14);
+    border-right: 1px solid rgba(17,17,17,.14);
+  }
+
+  body.landing-page .landing-why-key + .landing-why-key {
+    border-top: 1px solid rgba(17,17,17,.14);
+  }
+}
