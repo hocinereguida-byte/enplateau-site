@@ -624,11 +624,88 @@
     return shortText(txt(item?.texte, item?.text, fallback), 220);
   }
 
-  function getValueCards(landingPage, reading, readingLabel, actorType, personRole) {
+  function isTerritorialExpertiseContext(readingLabel, organisationName, why, angle) {
+    const hay = norm([
+      readingLabel,
+      organisationName,
+      why?.organisation,
+      why?.person,
+      why?.position,
+      angle?.titreAngle,
+      angle?.questionPublique,
+      angle?.questionActivation,
+      angle?.ceQueCetteLecturePermetDeVoir,
+      angle?.angleRendVisible
+    ].join(" "));
+
+    return (
+      hay.includes("territorial") ||
+      hay.includes("territoire") ||
+      hay.includes("foncier") ||
+      hay.includes("friche") ||
+      hay.includes("depollution") ||
+      hay.includes("reconversion") ||
+      hay.includes("ancrage")
+    );
+  }
+
+  function buildTerritorialExpertiseValueCards(organisationName, personName, personRole, readingLabel) {
+    const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "Votre organisation";
+    const person = personName && personName !== "Intervenant pressenti" ? personName : "l’intervenant pressenti";
+    const role = personRole ? `, ${personRole},` : "";
+    const reading = readingDisplay(readingLabel || "territoriale").toLowerCase();
+
+    return [
+      {
+        label: `Pour ${org}`,
+        title: "Faire reconnaître le territoire comme condition industrielle",
+        text: "Montrer que foncier, friches, dépollution, réseaux et ancrage ne sont pas des sujets périphériques, mais des conditions concrètes de continuité, de transformation ou de réorientation industrielle.",
+        chips: ["Stature", "Différenciation", "Institutionnel"],
+        details: [
+          { label: "Stature", text: "Installer une lecture territoriale au même niveau que les lectures stratégique, opérationnelle ou technologique." },
+          { label: "Différenciation", text: "Se distinguer sans discours promotionnel, par la capacité à rendre visible une condition souvent peu formulée de l’industrie." },
+          { label: "Institutionnel", text: "Produire un actif mobilisable auprès des industriels, collectivités, institutions, partenaires économiques et acteurs territoriaux." }
+        ]
+      },
+      {
+        label: "Pour votre expertise territoriale",
+        title: "Rendre lisible une compétence rarement visible",
+        text: "Faire apparaître la capacité à relier décisions industrielles, foncier, reconversion, infrastructures, acteurs publics et conditions collectives de décision.",
+        chips: ["Expertise", "Décision", "Territoires"],
+        details: [
+          { label: "Expertise", text: "Formuler ce que l’expérience du terrain, du foncier et des friches permet de comprendre des trajectoires industrielles." },
+          { label: "Décision", text: "Montrer comment une trajectoire industrielle dépend aussi de conditions territoriales, réglementaires, infrastructurelles et collectives." },
+          { label: "Territoires", text: "Rendre lisible le rôle des écosystèmes locaux, des réseaux, de l’ancrage et des conditions de réinscription des sites." }
+        ]
+      },
+      {
+        label: "Pour l’intervenant",
+        title: "Construire une trace professionnelle réutilisable",
+        text: `${person}${role} peut porter une lecture crédible sur les conditions territoriales de l’industrie, sans exposer de projet sensible, de négociation locale ou de dossier confidentiel.`,
+        chips: ["Trace", "Crédibilité", "Réutilisation"],
+        details: [
+          { label: "Trace", text: "Une parole préparée, publique et durable, attachée à une lecture précise plutôt qu’à une opération identifiable." },
+          { label: "Crédibilité", text: `Une contribution qui fait reconnaître une ${reading} sans survente ni prise de parole corporate classique.` },
+          { label: "Réutilisation", text: "Un contenu mobilisable ensuite en rendez-vous, relations institutionnelles, prospection qualifiée, événements ou communication dirigeante." }
+        ]
+      }
+    ];
+  }
+
+  function getValueCards(landingPage, reading, readingLabel, actorType, personRole, context = {}) {
     const rtData     = getReadingType(readingLabel || reading?.code || reading?.label || "");
     const groupe     = detectProfilGroupe(actorType);
     const personaKey = detectPersonaType(personRole, actorType);
     const gainsV2    = rtData?.gainsParProfilV2;
+
+    if (isTerritorialExpertiseContext(readingLabel, context.organisationName, context.why, context.angle)) {
+      return buildTerritorialExpertiseValueCards(
+        context.organisationName,
+        context.personName,
+        personRole,
+        readingLabel
+      );
+    }
 
     if (gainsV2?.[groupe]) {
       const groupData   = gainsV2[groupe];
@@ -640,24 +717,33 @@
         const functionItems = pickGainItems(items, [["strateg"], ["interne"], ["arbitr"]], 3);
         const personItems = pickGainItems(items, [["reutil"], ["relation"], ["dirigeant"]], 3);
 
+        const isEclaireur = groupe === "eclaireur";
+        const isAvocat = personaKey === "avocat";
+        const isIngenierie = personaKey === "ingenierie";
+        const orgName = context.organisationName && context.organisationName !== "Votre organisation" ? context.organisationName : "votre organisation";
+
         return [
           {
-            label: "Pour votre organisation",
-            title: "Stature · signal · différenciation",
-            text: shortText(personaData.gain, 260),
+            label: isEclaireur ? (isAvocat ? "Pour votre cabinet" : isIngenierie ? "Pour votre ingénierie" : "Pour votre cabinet") : `Pour ${orgName}`,
+            title: isEclaireur
+              ? "Installer une lecture propriétaire, sans discours promotionnel"
+              : "Faire reconnaître une capacité de lecture stratégique",
+            text: shortText(personaData.gain, 280),
             chips: orgItems.map(item => gainTagLabel(item.type)),
             details: orgItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) }))
           },
           {
-            label: "Pour votre fonction",
-            title: "Rôle lisible dans l’arbitrage",
+            label: isEclaireur ? (isAvocat ? "Pour votre doctrine juridique" : isIngenierie ? "Pour votre expertise projet" : "Pour votre doctrine") : "Pour votre fonction",
+            title: isEclaireur
+              ? "Rendre lisible ce que votre pratique sait formuler"
+              : "Rendre visible ce que votre fonction arbitre",
             text: compactValueText(functionItems[0], "Faire apparaître ce que votre fonction voit, arbitre ou sécurise dans la transformation."),
             chips: functionItems.map(item => gainTagLabel(item.type)),
             details: functionItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) }))
           },
           {
-            label: "Pour vous",
-            title: "Trace durable et réutilisable",
+            label: isEclaireur ? (isAvocat ? "Pour vos clients décideurs" : "Pour vos relations dirigeants") : "Pour vous",
+            title: "Construire une trace professionnelle réutilisable",
             text: compactValueText(personItems[0], "Créer un actif éditorial préparé, durable et mobilisable dans la durée."),
             chips: personItems.map(item => gainTagLabel(item.type)),
             details: personItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) }))
@@ -695,7 +781,7 @@
     return [
       {
         label: "Pour votre organisation",
-        title: "Stature · signal · différenciation",
+        title: "Faire reconnaître une lecture utile",
         text: actorType === "cabinet_conseil"
           ? "Installer une parole d'autorité sans vendre directement une offre."
           : "Valoriser une capacité à rendre lisibles les conditions réelles d'une trajectoire industrielle.",
@@ -703,13 +789,13 @@
       },
       {
         label: "Pour votre fonction",
-        title: "Rôle lisible dans l’arbitrage",
+        title: "Rendre visible ce que votre fonction arbitre",
         text: "Faire apparaître ce que votre fonction voit, arbitre ou sécurise.",
         chips: ["Rôle", "Arbitrage", "Interne"]
       },
       {
         label: "Pour vous",
-        title: "Trace durable et réutilisable",
+        title: "Construire une trace professionnelle réutilisable",
         text: "Créer un actif éditorial préparé, durable et mobilisable dans la durée.",
         chips: ["Trace", "Réutilisation", "Crédibilité"]
       }
@@ -734,6 +820,52 @@
             </ul>
           </details>` : ""}
       </article>`;
+  }
+
+
+  function buildQualificationCTASection(cta, organisationName, readingLabel) {
+    const reading = readingPhrase(readingLabel || "cette lecture");
+    const isTerritorial = norm(readingLabel).includes("territoire") || norm(readingLabel).includes("territorial");
+
+    const title = organisationName && organisationName !== "Votre organisation"
+      ? `Vérifier en 15 minutes si la ${reading.replace(/^lecture\s+/i, "lecture ")} de ${organisationName} mérite d’être formalisée.`
+      : "Vérifier en 15 minutes si cette position mérite d’être formalisée.";
+
+    const text = isTerritorial
+      ? "Cette position ne demande pas d’exposer un projet foncier, une négociation, une décision publique ou un site identifiable. L’échange sert à confirmer l’angle, le périmètre de parole et l’intérêt d’une note de positionnement."
+      : "L’échange ne vaut pas engagement. Il sert à confirmer l’angle, le périmètre de parole, les points à laisser hors champ et l’intérêt de soumettre une note de positionnement au comité éditorial.";
+
+    return `
+      <section class="landing-section landing-section--dark landing-qualification-cta" id="qualifier-position">
+        <div class="landing-container">
+          <div class="qualification-cta-grid">
+            <div class="qualification-cta-main">
+              <p class="landing-kicker">Échange de qualification</p>
+              <h2>${safe(soften(title))}</h2>
+              <p>${safe(text)}</p>
+              <div class="landing-actions qualification-cta-actions">
+                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
+              </div>
+              <p class="qualification-cta-microcopy">Aucun dossier à préparer · Aucun engagement · Aucune suite automatique</p>
+            </div>
+
+            <div class="qualification-cta-proofs" aria-label="Repères de l’échange de qualification">
+              <article>
+                <strong>15 min</strong>
+                <span>Échange court</span>
+              </article>
+              <article>
+                <strong>Sans engagement</strong>
+                <span>Décision ensuite</span>
+              </article>
+              <article>
+                <strong>Note si pertinent</strong>
+                <span>Position formalisée seulement si l’angle tient</span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>`;
   }
 
   function getCTA(deal, reading, landingPage) {
@@ -1180,50 +1312,195 @@
   }
 
   /* ─────────────────────────────────────────────────────────
-     NARRATION "POURQUOI VOUS"
+     NARRATION "POURQUOI VOUS" — version pertinence située
+     3 niveaux : organisation / position d'observation / lecture proposée.
   ───────────────────────────────────────────────────────── */
-  function buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType) {
-    const hasRealOrg  = organisationName && organisationName !== "Votre organisation";
+  function whyTagsForReading(readingLabel, slot, why = {}) {
+    const r = norm(readingLabel);
+    const source = norm([why.organisation, why.person, why.position].join(" "));
+
+    if (r.includes("territ") || source.includes("foncier") || source.includes("friche")) {
+      if (slot === "organisation") return ["Dépollution", "Recyclage foncier", "Friches industrielles"];
+      if (slot === "person") return ["Foncier", "Infrastructures", "Ancrage territorial"];
+      return ["Lecture territoriale", "Angle limité", "Mécanisme public"];
+    }
+
+    if (r.includes("financ")) {
+      if (slot === "organisation") return ["Soutenabilité", "Investissement", "Risque économique"];
+      if (slot === "person") return ["Arbitrages", "Marge de manœuvre", "Long terme"];
+      return ["Lecture financière", "Angle limité", "Mécanisme public"];
+    }
+
+    if (r.includes("jurid")) {
+      if (slot === "organisation") return ["Responsabilité", "Cadres", "Sécurisation"];
+      if (slot === "person") return ["Anticipation", "Risques", "Gouvernance"];
+      return ["Lecture juridique", "Angle limité", "Mécanisme public"];
+    }
+
+    if (r.includes("operation") || r.includes("production")) {
+      if (slot === "organisation") return ["Flux", "Qualité", "Continuité"];
+      if (slot === "person") return ["Pilotage", "Interfaces", "Exécution"];
+      return ["Lecture opérationnelle", "Angle limité", "Mécanisme public"];
+    }
+
+    if (r.includes("rh") || r.includes("competence")) {
+      if (slot === "organisation") return ["Compétences", "Collectifs", "Métiers"];
+      if (slot === "person") return ["Organisation", "Engagement", "Transmission"];
+      return ["Lecture RH", "Angle limité", "Mécanisme public"];
+    }
+
+    if (r.includes("techn") || r.includes("system")) {
+      if (slot === "organisation") return ["Systèmes", "Données", "Interfaces"];
+      if (slot === "person") return ["Architecture", "Lisibilité", "Continuité"];
+      return ["Lecture technologique", "Angle limité", "Mécanisme public"];
+    }
+
+    if (r.includes("energie") || r.includes("ressource")) {
+      if (slot === "organisation") return ["Énergie", "Ressources", "Continuité"];
+      if (slot === "person") return ["Arbitrages", "Contraintes", "Trajectoire"];
+      return ["Lecture ressources", "Angle limité", "Mécanisme public"];
+    }
+
+    if (r.includes("strateg")) {
+      if (slot === "organisation") return ["Trajectoire", "Arbitrage", "Gouvernance"];
+      if (slot === "person") return ["Décision", "Vision", "Priorités"];
+      return ["Lecture stratégique", "Angle limité", "Mécanisme public"];
+    }
+
+    if (slot === "organisation") return ["Expérience", "Légitimité", "Sujet partagé"];
+    if (slot === "person") return ["Point d’observation", "Fonction", "Lecture située"];
+    return ["Lecture proposée", "Angle limité", "Mécanisme public"];
+  }
+
+  function tagsHTML(tags) {
+    const clean = toArray(tags).slice(0, 4).filter(Boolean);
+    if (!clean.length) return "";
+    return `<div class="landing-why-tags">${clean.map(tag => `<span>${safe(tag)}</span>`).join("")}</div>`;
+  }
+
+  function whyOrganisationTitle(readingLabel, why = {}) {
+    const r = norm(readingLabel);
+    const source = norm(why.organisation || "");
+    if (r.includes("territ") || source.includes("foncier") || source.includes("friche")) return "Foncier, friches, reconversion";
+    if (r.includes("financ")) return "Soutenabilité, investissement, arbitrages";
+    if (r.includes("jurid")) return "Responsabilité, cadres, sécurisation";
+    if (r.includes("operation") || r.includes("production")) return "Pilotage, flux, continuité";
+    if (r.includes("rh") || r.includes("competence")) return "Compétences, métiers, collectifs";
+    if (r.includes("techn") || r.includes("system")) return "Systèmes, données, interfaces";
+    if (r.includes("energie") || r.includes("ressource")) return "Énergie, ressources, continuité";
+    if (r.includes("strateg")) return "Trajectoire, arbitrages, décision";
+    return "Une expérience utile à la conversation";
+  }
+
+  function whyPersonTitle(readingLabel) {
+    const r = norm(readingLabel);
+    if (r.includes("territ")) return "Relier décisions industrielles et conditions territoriales";
+    if (r.includes("financ")) return "Relier trajectoire industrielle et soutenabilité économique";
+    if (r.includes("jurid")) return "Relier décisions industrielles et cadres de responsabilité";
+    if (r.includes("operation") || r.includes("production")) return "Relier stratégie industrielle et réalité d’exécution";
+    if (r.includes("rh") || r.includes("competence")) return "Relier transformation industrielle et conditions humaines";
+    if (r.includes("techn") || r.includes("system")) return "Relier trajectoire industrielle et architectures techniques";
+    if (r.includes("energie") || r.includes("ressource")) return "Relier continuité industrielle et ressources critiques";
+    if (r.includes("strateg")) return "Relier trajectoire, gouvernance et arbitrages";
+    return "Porter une lecture située du sujet";
+  }
+
+  function whyPositionTitle(readingLabel, positionWhy) {
+    const r = norm(readingLabel);
+    if (r.includes("territ")) return "Éclairer ce qui rend une trajectoire industrielle possible, soutenable ou réorientable";
+    if (r.includes("financ")) return "Éclairer les conditions économiques qui rendent une transformation tenable";
+    if (r.includes("jurid")) return "Éclairer ce que le droit sécurise dans les arbitrages industriels";
+    if (r.includes("operation") || r.includes("production")) return "Éclairer ce qui rend l’exécution industrielle réellement pilotable";
+    if (r.includes("rh") || r.includes("competence")) return "Éclairer ce que les compétences rendent possible dans la transformation";
+    if (r.includes("techn") || r.includes("system")) return "Éclairer ce que les systèmes rendent lisible ou impossible";
+    if (r.includes("energie") || r.includes("ressource")) return "Éclairer les conditions de continuité liées aux ressources";
+    if (r.includes("strateg")) return "Éclairer le moment où une trajectoire oblige à arbitrer autrement";
+    return shortText(positionWhy, 110) || "Éclairer une question précise depuis une lecture située";
+  }
+
+  function whyOrganisationText(why, organisationName, readingLabel) {
+    const hasRealOrg = organisationName && organisationName !== "Votre organisation";
+    const r = norm(readingLabel);
+    const source = norm(why.organisation || "");
+
+    if (hasRealOrg && (r.includes("territ") || source.includes("foncier") || source.includes("friche"))) {
+      return `${organisationName} intervient précisément là où les trajectoires industrielles dépassent les murs de l’entreprise : dépollution, recyclage foncier, reconversion de friches et réinscription de sites dans un territoire.`;
+    }
+
+    if (why.organisation) return shortText(why.organisation, 360);
+
+    return hasRealOrg
+      ? `${organisationName} a été identifié pour la manière dont son expérience peut éclairer une question que de nombreux acteurs rencontrent sans toujours pouvoir la formuler.`
+      : "L’organisation identifiée apporte un point d’observation utile sur les conditions réelles d’une trajectoire industrielle.";
+  }
+
+  function whyPersonText(why, personName, personRole, readingLabel) {
     const hasRealName = personName && personName !== "Intervenant pressenti";
+    const role = personRole ? `, ${personRole},` : "";
+    const r = norm(readingLabel);
 
-    const orgFragment = why.organisation
-      ? shortText(why.organisation, 300)
-      : hasRealOrg
-        ? `${organisationName} a été identifié pour la manière dont son expérience permet d'éclairer une question que de nombreux acteurs du cycle partagent sans pouvoir toujours la formuler.`
-        : "L'organisation identifiée permet d'éclairer, depuis une position opérationnelle réelle, les conditions qui rendent une trajectoire industrielle lisible.";
+    if (hasRealName && r.includes("territ")) {
+      return `${personName}${role} peut porter une lecture située : comment les décisions industrielles rencontrent les conditions foncières, infrastructurelles et territoriales qui les rendent possibles — ou plus difficiles.`;
+    }
 
-    const personFragment = (() => {
-      if (why.person && hasRealName)
-        return shortText(sanitizePersonFragment(why.person), 300);
-      if (hasRealName && personRole)
-        return "Votre position donne accès à une lecture située : ce qu'elle permet de rendre lisible, de structurer, de sécuriser ou de mettre en perspective dans cette trajectoire.";
-      if (isOperationalRole(personRole) && hasRealName)
-        return "Votre position place cette lecture au niveau où certains arbitrages concrets se forment : flux, coordination, montée en capacité, stabilité d'exécution.";
-      return "";
-    })();
+    if (hasRealName && personRole && why.person) {
+      const cleaned = sanitizePersonFragment(why.person)
+        .replace(/^vous permet de\s+/i, "")
+        .replace(/^Vous pouvez\s+/i, "")
+        .trim();
+      return `${personName}${role} peut porter une lecture située : ${cleaned.charAt(0).toLowerCase() + cleaned.slice(1)}`;
+    }
 
-    const positionFragment = why.position
-      ? shortText(why.position, 300)
-      : positionWhy
-        ? shortText(positionWhy, 300)
-        : actorType === "cabinet_conseil"
-          ? "Cette position éditoriale permet de formuler une lecture utile aux décideurs sans présenter une mission, une méthode ou un cas client."
-          : "Cette position permettrait d'éclairer les conditions qui rendent une trajectoire industrielle réellement pilotable : arbitrer les priorités, coordonner les flux, préserver la lisibilité de la trajectoire.";
+    if (hasRealName && personRole) {
+      return `${personName}${role} dispose d’un point d’observation directement relié à la lecture proposée.`;
+    }
+
+    return why.person ? shortText(sanitizePersonFragment(why.person), 340) : "La fonction pressentie donne accès à une lecture située du sujet.";
+  }
+
+  function whyPositionText(why, organisationName, readingLabel, positionWhy) {
+    const r = norm(readingLabel);
+    const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "l’organisation";
+
+    if (r.includes("territ")) {
+      return `La contribution ne porterait pas sur un dossier ${org}. Elle viserait à éclairer, depuis une lecture territoriale, les conditions qui permettent à un outil industriel de continuer, d’évoluer ou de se réorienter.`;
+    }
+
+    if (why.position) return shortText(why.position, 360);
+    if (positionWhy) return shortText(positionWhy, 360);
+    return "La contribution ne porterait pas sur un cas interne. Elle viserait à rendre lisible un mécanisme utile à l’ensemble de la conversation.";
+  }
+
+  function buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType, readingLabel) {
+    const orgTitle = whyOrganisationTitle(readingLabel, why);
+    const personTitle = whyPersonTitle(readingLabel);
+    const positionTitle = whyPositionTitle(readingLabel, positionWhy);
+
+    const orgFragment = whyOrganisationText(why, organisationName, readingLabel);
+    const personFragment = whyPersonText(why, personName, personRole, readingLabel);
+    const positionFragment = whyPositionText(why, organisationName, readingLabel, positionWhy);
 
     return `
-      <div class="landing-why-narrative landing-why-narrative--keys">
+      <div class="landing-why-narrative landing-why-narrative--keys landing-why-narrative--positioned">
         <article class="landing-why-key">
-          <span>Organisation</span>
+          <span>Votre organisation</span>
+          <h3>${safe(orgTitle)}</h3>
           <p>${safe(orgFragment)}</p>
+          ${tagsHTML(whyTagsForReading(readingLabel, "organisation", why))}
         </article>
-        ${personFragment ? `
-          <article class="landing-why-key">
-            <span>Fonction</span>
-            <p>${safe(personFragment)}</p>
-          </article>` : ""}
+
         <article class="landing-why-key">
-          <span>Position proposée</span>
+          <span>Votre position d’observation</span>
+          <h3>${safe(personTitle)}</h3>
+          <p>${safe(personFragment)}</p>
+          ${tagsHTML(whyTagsForReading(readingLabel, "person", why))}
+        </article>
+
+        <article class="landing-why-key landing-why-key--accent">
+          <span>La lecture proposée</span>
+          <h3>${safe(positionTitle)}</h3>
           <p>${safe(positionFragment)}</p>
+          ${tagsHTML(whyTagsForReading(readingLabel, "position", why))}
         </article>
       </div>`;
   }
@@ -1240,6 +1517,306 @@
         ? `La lecture portée depuis ${organisationName} rend visible ce que d'autres acteurs du cycle ne peuvent pas formuler depuis leur position. C'est précisément ce décalage de point de vue qui lui donne sa portée éditoriale.`
         : "Cette position permet de donner forme à une contribution reconnaissable par les bons interlocuteurs."
     );
+  }
+
+
+  /* ─────────────────────────────────────────────────────────
+     CADRE DE CONFIANCE — version éditoriale / minimale
+     Fond foncé, 4 clés de réassurance, contenu adapté à
+     l'organisation et à la lecture proposée.
+  ───────────────────────────────────────────────────────── */
+  function trustReadingMechanism(readingLabel) {
+    const r = norm(readingLabel);
+    if (r.includes("territ")) {
+      return "comment les conditions territoriales influencent les trajectoires industrielles.";
+    }
+    if (r.includes("financ")) {
+      return "comment les conditions économiques et financières rendent une transformation industrielle tenable.";
+    }
+    if (r.includes("jurid")) {
+      return "comment les cadres juridiques sécurisent les arbitrages industriels avant qu’ils ne deviennent des risques.";
+    }
+    if (r.includes("operation") || r.includes("production")) {
+      return "comment le pilotage opérationnel rend une trajectoire industrielle réellement tenable.";
+    }
+    if (r.includes("rh") || r.includes("competence")) {
+      return "comment les compétences, les collectifs et l’organisation du travail conditionnent la transformation industrielle.";
+    }
+    if (r.includes("energie") || r.includes("ressource") || r.includes("carbone")) {
+      return "comment les ressources, l’énergie, l’eau, les matières ou le carbone deviennent des conditions de continuité industrielle.";
+    }
+    if (r.includes("techno") || r.includes("systeme") || r.includes("data") || r.includes("numerique")) {
+      return "comment les systèmes, les données et les interfaces conditionnent la lisibilité et la continuité de la trajectoire.";
+    }
+    if (r.includes("strateg")) {
+      return "comment les arbitrages de gouvernance et de trajectoire changent la nature d’une décision industrielle.";
+    }
+    return "comment cette lecture permet de rendre lisibles des mécanismes industriels sans exposer de situation interne.";
+  }
+
+  function buildTrustKeysSection(cta, organisationName, readingLabel) {
+    const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "l’organisation pressentie";
+    const reading = readingPhrase(readingLabel || "cette lecture");
+    const mechanism = trustReadingMechanism(readingLabel);
+
+    return `
+      <section class="landing-section landing-section--dark landing-trust-keys" id="cadre-confiance">
+        <div class="landing-container">
+          <div class="landing-head landing-head--keys">
+            <p class="landing-kicker">Cadre de confiance</p>
+            <h2>Une parole visible, mais un périmètre maîtrisé.</h2>
+            <p>L’échange de qualification sert à définir ce qui peut être dit, ce qui doit rester hors champ, et les validations utiles avant toute production.</p>
+          </div>
+
+          <div class="trust-keys-grid" aria-label="Les quatre clés de confiance de la contribution En Plateau">
+            <article class="trust-key">
+              <span class="trust-key__num">01</span>
+              <h3>Ce qui reste hors champ</h3>
+              <ul>
+                <li>Chiffres internes.</li>
+                <li>Sites ou projets sensibles.</li>
+                <li>Clients et partenaires.</li>
+                <li>Négociations en cours.</li>
+                <li>Décisions confidentielles.</li>
+              </ul>
+              <details class="trust-key__details">
+                <summary>Préciser</summary>
+                <p>La contribution ne repose pas sur un dossier ${safe(org)}, un site identifiable ou une opération en cours. Elle porte sur une lecture de mécanisme&nbsp;: ${safe(mechanism)}</p>
+              </details>
+            </article>
+
+            <article class="trust-key">
+              <span class="trust-key__num">02</span>
+              <h3>Ce qui est défini</h3>
+              <ul>
+                <li>Angle éditorial.</li>
+                <li>Messages clés.</li>
+                <li>Limites de parole.</li>
+                <li>Points sensibles.</li>
+                <li>Niveau d’exposition.</li>
+              </ul>
+              <details class="trust-key__details">
+                <summary>Définir</summary>
+                <p>L’échange sert à préciser ce que ${safe(reading)} doit éclairer, ce qu’elle ne doit pas traiter, et la manière de formuler publiquement l’angle sans exposer de situation sensible.</p>
+              </details>
+            </article>
+
+            <article class="trust-key">
+              <span class="trust-key__num">03</span>
+              <h3>Qui peut sécuriser</h3>
+              <ul>
+                <li>Communication.</li>
+                <li>Juridique.</li>
+                <li>Affaires publiques.</li>
+                <li>Direction.</li>
+                <li>Équipes concernées.</li>
+              </ul>
+              <details class="trust-key__details">
+                <summary>Sécuriser</summary>
+                <p>Les équipes utiles peuvent être associées à la préparation pour sécuriser le périmètre, les formulations et le niveau d’exposition avant toute prise de parole.</p>
+              </details>
+            </article>
+
+            <article class="trust-key">
+              <span class="trust-key__num">04</span>
+              <h3>Ce que l’échange engage</h3>
+              <ul>
+                <li>15 minutes.</li>
+                <li>Qualification.</li>
+                <li>Décision ensuite.</li>
+                <li>Aucune suite automatique.</li>
+                <li>Aucun dossier à préparer.</li>
+              </ul>
+              <details class="trust-key__details">
+                <summary>Clarifier</summary>
+                <p>L’échange ne vaut pas accord de participation. Il sert uniquement à vérifier si la position est pertinente, si le périmètre est acceptable et si une note de positionnement mérite d’être formalisée.</p>
+              </details>
+            </article>
+          </div>
+
+          <div class="trust-keys-cta">
+            <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
+            <p>Aucun dossier à préparer · Aucune donnée confidentielle attendue</p>
+          </div>
+        </div>
+      </section>`;
+  }
+
+
+  /* ─────────────────────────────────────────────────────────
+     POUR ALLER PLUS LOIN — bloc d'approfondissement structuré
+     Remplace les longues sections ouvertes par une intro, deux cartes
+     de cycles, des accordéons et un CTA final.
+  ───────────────────────────────────────────────────────── */
+
+  function buildMoreDetail(title, body, open = false) {
+    return `
+      <details class="more-accordion"${open ? " open" : ""}>
+        <summary>
+          <span>${safe(title)}</span>
+          <strong>+</strong>
+        </summary>
+        <div class="more-accordion__body">${body}</div>
+      </details>`;
+  }
+
+  function buildMoreStepsTimeline() {
+    const narrative = DATA?.landingNarrative || {};
+    const fallback = [
+      { level: "En Plateau", title: "Un dispositif de lecture des arbitrages", text: "En Plateau part d’une idée simple : les transformations ne se comprennent pas seulement par des opinions ou des témoignages, mais par les arbitrages qu’elles obligent à formuler." },
+      { level: "Cycle Industrie", title: "Une saison consacrée aux trajectoires industrielles", text: "Le cycle Industrie regarde ce qui fait tenir, rend moins lisible ou oblige à réarbitrer une trajectoire industrielle." },
+      { level: "Conversation", title: "Un phénomène industriel regardé depuis plusieurs lectures", text: "Chaque conversation met en regard des lectures complémentaires d’un même phénomène industriel." },
+      { level: "Contexte", title: "Le moment où la décision change de nature", text: "Le contexte indique la situation dans laquelle l’arbitrage devient plus difficile : croissance, adaptation ou réinvention." },
+      { level: "Angle", title: "Une position précise dans une conversation limitée", text: "L’angle proposé n’est pas une prise de parole générale. C’est une place éditoriale située, mise en regard avec trois autres lectures complémentaires." }
+    ];
+
+    const steps = toArray(narrative.steps).length ? toArray(narrative.steps) : fallback;
+
+    return `
+      <div class="more-timeline">
+        ${steps.slice(0, 5).map((step, index) => `
+          <article class="more-timeline__item">
+            <span>${String(index + 1).padStart(2, "0")}</span>
+            <div>
+              <p>${safe(txt(step.level, step.label, "Niveau"))}</p>
+              <h4>${safe(soften(txt(step.title, step.titre, "Étape éditoriale")))}</h4>
+              <p>${safe(shortText(txt(step.text, step.description, ""), 360))}</p>
+            </div>
+          </article>`).join("")}
+      </div>`;
+  }
+
+  function buildMoreProcess(processSteps) {
+    const fallback = [
+      { num: "01", title: "L’échange de qualification", text: "15 minutes pour vérifier si votre lecture correspond à une position disponible. Aucun dossier sensible à exposer." },
+      { num: "02", title: "Le dossier de positionnement", text: "Si l’angle est pertinent, un dossier complet est transmis : angle précis, logique de mise en regard, modalités d’intervention, format émission et article associé." },
+      { num: "03", title: "Le comité éditorial", text: "Le comité examine les dossiers de positionnement et valide la composition finale. Vous êtes informé avant tout engagement." },
+      { num: "04", title: "La préparation & la production", text: "En Plateau travaille avec vous pour transformer votre lecture en position claire, non intrusive et publiquement défendable." }
+    ];
+
+    const steps = toArray(processSteps).length ? toArray(processSteps).slice(0, 4) : fallback;
+
+    return `
+      <div class="more-process-grid">
+        ${steps.map((step, index) => `
+          <article>
+            <span>${safe(txt(step.num, String(index + 1).padStart(2, "0")))}</span>
+            <h4>${safe(soften(txt(step.title, "Étape")))}</h4>
+            <p>${safe(shortText(txt(step.text, ""), 360))}</p>
+          </article>`).join("")}
+      </div>
+      <p class="more-note">L’échange de départ ne vaut pas engagement.</p>`;
+  }
+
+  function buildMoreFAQ(faq) {
+    const fallback = [
+      { question: "L’échange de 15 minutes vaut-il engagement à participer ?", answer: "Non. Il sert uniquement à vérifier si la lecture correspond à une position disponible et pertinente." },
+      { question: "Faut-il préparer quelque chose avant l’échange ?", answer: "Non. Aucun dossier, aucune présentation, aucune position déjà construite n’est attendu." },
+      { question: "Les équipes communication, juridiques ou affaires publiques peuvent-elles être associées ?", answer: "Oui. Le périmètre de parole peut être travaillé avec les équipes utiles." },
+      { question: "Faut-il exposer un dossier sensible ?", answer: "Non. La contribution porte sur une lecture de mécanisme, pas sur un site, une négociation, un client ou une décision confidentielle." },
+      { question: "Est-ce une communication corporate ?", answer: "Non. La contribution est préparée comme une position éditoriale située, mise en regard avec d’autres lectures." }
+    ];
+
+    const seen = new Set();
+    const items = [...toArray(faq), ...fallback].filter(item => {
+      const key = norm(item?.question || "").slice(0, 42);
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    }).slice(0, 5);
+
+    return `
+      <div class="more-faq-grid">
+        ${items.map(item => `
+          <article>
+            <h4>${safe(soften(item.question))}</h4>
+            <p>${safe(shortText(item.answer, 360))}</p>
+          </article>`).join("")}
+      </div>`;
+  }
+
+  function buildMoreInfoSection({ cta, angle, publicAngle, formulation, conversation, conversationLabel, dgMessage, processSteps, faq, readingLabel, organisationName }) {
+    const narrative = DATA?.landingNarrative || {};
+    const introText = txt(
+      narrative?.intro,
+      "En Plateau ne propose pas des prises de parole isolées. Le dispositif compose des cycles de conversations stratégiques pour rendre visibles les arbitrages qui transforment les entreprises, les filières et les territoires."
+    );
+
+    const angleTitleText = txt(publicAngle?.titreLanding, formulation?.title, angle?.questionPublique, angle?.titreAngle, angle?.questionEditoriale);
+    const angleText = txt(publicAngle?.accrocheLanding, formulation?.accrocheLanding, angle?.questionActivation, angle?.texteProgramme, angle?.introMecanisme);
+
+    const angleDetail = `
+      <div class="more-angle-intro">
+        <h4>${safe(soften(angleTitleText))}</h4>
+        <p>${safe(shortText(angleText, 620))}</p>
+      </div>
+      <div class="more-mini-cards">
+        ${card("Conversation", conversationLabel, txt(conversation?.narrativeText, conversation?.description, "Une conversation construite pour mettre en regard des lectures complémentaires."))}
+        ${card("Votre lecture", "Ce qu’elle rend lisible", dgMessage)}
+        ${card("Préparation", "Un cadrage éditorial maîtrisé", "L’échange permet de préciser le sujet, la portée de la lecture et les conditions de préparation avec vos équipes si nécessaire.")}
+      </div>`;
+
+    const lectureSituee = `
+      <div class="more-reading-def">
+        <p>Une lecture située ne consiste pas à témoigner de manière générale. Elle part d’une fonction, d’une expérience et d’un point d’observation précis pour rendre lisible un mécanisme que d’autres acteurs ne voient pas de la même manière.</p>
+        <div class="more-mini-cards more-mini-cards--compact">
+          ${card("Pas une opinion générale", "Une position réelle", "Une lecture reliée à une fonction, une expérience et une responsabilité concrètes.")}
+          ${card("Pas un cas interne", "Une lecture de mécanisme", "Aucun dossier sensible n’est nécessaire pour formuler une contribution utile.")}
+          ${card("Pas une communication promotionnelle", "Une mise en regard", "La contribution prend sa portée aux côtés d’autres lectures complémentaires.")}
+        </div>
+      </div>`;
+
+    const finalTitle = organisationName && organisationName !== "Votre organisation"
+      ? `Prêt à vérifier si cette position mérite d’être formalisée pour ${organisationName} ?`
+      : "Prêt à vérifier si cette position mérite d’être formalisée ?";
+
+    return `
+      <section class="landing-section landing-section--light landing-more-structured" id="cadre-editorial">
+        <div class="landing-container">
+          <div class="more-hero-grid">
+            <div>
+              <p class="landing-kicker">Pour aller plus loin</p>
+              <h2>Comprendre le cadre éditorial En Plateau.</h2>
+            </div>
+            <div>
+              <p>${safe(shortText(introText, 420))}</p>
+              <p>Pour sa saison inaugurale, En Plateau lance deux cycles : <strong>Industrie & transformation des territoires</strong> et <strong>Logement & fabrique des territoires</strong>. Chaque cycle réunit plusieurs conversations, chacune structurée autour de lectures complémentaires.</p>
+              <div class="more-inline-actions">
+                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
+                <a class="more-text-link" href="#more-accordions">Lire le cadre éditorial ↓</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="more-cycle-grid">
+            <article>
+              <span>Cycle Industrie</span>
+              <h3>Industrie & transformation des territoires</h3>
+              <p>Produire davantage, tenir sous contrainte, transformer un outil ou réarbitrer une trajectoire : le cycle Industrie explore les moments où les arbitrages industriels changent de nature.</p>
+            </article>
+            <article>
+              <span>Cycle Logement</span>
+              <h3>Logement & fabrique des territoires</h3>
+              <p>Construire, financer, habiter, adapter ou transformer : le cycle Logement explore les tensions entre production, usages, foncier, modèles économiques, acteurs publics et trajectoires territoriales.</p>
+            </article>
+          </div>
+
+          <div class="more-accordions" id="more-accordions">
+            ${buildMoreDetail("Comprendre où se situe votre lecture", buildMoreStepsTimeline(), true)}
+            ${buildMoreDetail("Ce que cette position permettrait d’éclairer", angleDetail, false)}
+            ${buildMoreDetail("Comment se déroule la suite", buildMoreProcess(processSteps), false)}
+            ${buildMoreDetail("Questions fréquentes avant l’échange", buildMoreFAQ(faq), false)}
+            ${buildMoreDetail("Ce que signifie “lecture située”", lectureSituee, false)}
+          </div>
+
+          <div class="more-final-cta">
+            <h2>${safe(soften(finalTitle))}</h2>
+            <p>L’échange dure 15 minutes. Il ne vaut pas engagement et ne demande aucun dossier à préparer.</p>
+            <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
+            <p>Sans engagement · Aucun dossier sensible · Périmètre préparé si nécessaire</p>
+          </div>
+        </div>
+      </section>`;
   }
 
   /* ─────────────────────────────────────────────────────────
@@ -1323,7 +1900,7 @@
     );
 
     const dgMessage    = buildDGMessage(personaFit, reading, organisationName);
-    const valueCards   = getValueCards(landingPage, reading, readingLabel, actorType, personRole);
+    const valueCards   = getValueCards(landingPage, reading, readingLabel, actorType, personRole, { organisationName, personName, why, angle });
     const guarantees   = getGuarantees(publicAngle, landingPage, personaFit);
     const processSteps = getProcessSteps(landingPage);
     const faq          = getFAQ(readingLabel, actorType, personRole, landingPage);
@@ -1351,93 +1928,17 @@
 
       ${buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles)}
 
-      <section class="landing-section landing-section--dark landing-trust-keys" id="cadre-confiance">
-        <div class="landing-container">
-          <div class="landing-head landing-head--keys">
-            <p class="landing-kicker">Cadre de confiance</p>
-            <h2>Ce qui est cadré avant toute prise de parole.</h2>
-            <p>L’échange sert à fixer le périmètre : ce qui peut être dit, ce qui doit rester hors champ, et les validations utiles avant production.</p>
-          </div>
-
-          <div class="trust-keys-grid" aria-label="Les quatre clés de confiance de la contribution En Plateau">
-            <article class="trust-key">
-              <span class="trust-key__num">01</span>
-              <h3>Hors champ</h3>
-              <ul>
-                <li>Chiffres internes.</li>
-                <li>Sites sensibles.</li>
-                <li>Clients.</li>
-                <li>Fournisseurs.</li>
-                <li>Décisions confidentielles.</li>
-              </ul>
-              <details class="trust-key__details">
-                <summary>Préciser</summary>
-                <p>La contribution ne repose pas sur un cas interne. Elle porte sur une lecture de mécanisme, formulée à partir de votre expérience et de votre fonction.</p>
-              </details>
-            </article>
-
-            <article class="trust-key">
-              <span class="trust-key__num">02</span>
-              <h3>Périmètre</h3>
-              <ul>
-                <li>Angle.</li>
-                <li>Messages.</li>
-                <li>Limites.</li>
-                <li>Points sensibles.</li>
-              </ul>
-              <details class="trust-key__details">
-                <summary>Définir</summary>
-                <p>L’échange permet de préciser ce que la contribution doit éclairer, et ce qu’elle ne doit pas traiter.</p>
-              </details>
-            </article>
-
-            <article class="trust-key">
-              <span class="trust-key__num">03</span>
-              <h3>Validation</h3>
-              <ul>
-                <li>Communication.</li>
-                <li>Juridique.</li>
-                <li>Affaires publiques.</li>
-                <li>Direction.</li>
-              </ul>
-              <details class="trust-key__details">
-                <summary>Sécuriser</summary>
-                <p>Les équipes utiles peuvent être associées à la préparation pour sécuriser le niveau d’exposition et la formulation publique.</p>
-              </details>
-            </article>
-
-            <article class="trust-key">
-              <span class="trust-key__num">04</span>
-              <h3>Engagement</h3>
-              <ul>
-                <li>15 minutes.</li>
-                <li>Qualification.</li>
-                <li>Décision ensuite.</li>
-                <li>Aucune suite automatique.</li>
-              </ul>
-              <details class="trust-key__details">
-                <summary>Clarifier</summary>
-                <p>L’échange ne vaut pas accord de participation. Il sert uniquement à vérifier si la position mérite d’être formalisée.</p>
-              </details>
-            </article>
-          </div>
-
-          <div class="trust-keys-cta">
-            <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
-            <p>Aucun dossier à préparer · Aucune donnée confidentielle attendue</p>
-          </div>
-        </div>
-      </section>
+      ${buildTrustKeysSection(cta, organisationName, readingLabel)}
 
       <section class="landing-section landing-section--light" id="pourquoi-vous">
         <div class="landing-container">
           <div class="landing-head">
             <p class="landing-kicker">Pertinence</p>
-            <h2>Pourquoi cette lecture vous est proposée.</h2>
-            <p>Une position En Plateau ne désigne pas seulement une fonction ou un métier. Elle désigne ce qu'une expérience permet de rendre lisible depuis un endroit précis.</p>
+            <h2>Pourquoi ${safe(organisationName)} est bien placé pour porter cette lecture.</h2>
+            <p>Une position En Plateau ne désigne pas seulement une organisation ou une fonction. Elle identifie ce qu’une expérience permet de rendre lisible depuis un endroit précis.</p>
           </div>
           <div class="landing-why-box">
-            ${buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType)}
+            ${buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType, readingLabel)}
           </div>
         </div>
       </section>
@@ -1446,91 +1947,18 @@
         <div class="landing-container">
           <div class="landing-head">
             <p class="landing-kicker">Portée de la position</p>
-            <h2>Ce que produit une contribution En Plateau.</h2>
-            <p>${safe(shortText(txt(landingPage?.valueSection?.intro, "Une contribution bien préparée ne cherche pas seulement à être vue. Elle permet d'installer une lecture, de rendre une trajectoire plus lisible et de créer une trace publique qui continue de travailler dans la durée."), 560))}</p>
+            <h2>Ce que cette position peut produire pour ${safe(organisationName)}.</h2>
+            <p>Une contribution En Plateau ne se limite pas à une prise de parole. Elle transforme une lecture située en actif éditorial réutilisable auprès des bons interlocuteurs.</p>
           </div>
           <div class="landing-grid landing-grid--3 landing-grid--value">
             ${valueCards.map((item) => buildValueCard(item)).join("")}
           </div>
-          <div class="landing-inline-cta landing-inline-cta--dark">
-            <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
-            <p class="landing-reassurance">L'échange sert uniquement à qualifier la pertinence de la position.</p>
-          </div>
         </div>
       </section>
 
-      <section class="landing-section landing-section--light landing-more-intro" id="cadre-editorial">
-        <div class="landing-container">
-          <div class="landing-head">
-            <p class="landing-kicker">Pour aller plus loin</p>
-            <h2>Vous voulez mieux comprendre le cadre éditorial avant de programmer un échange éditorial&nbsp;?</h2>
-          </div>
-        </div>
-      </section>
+      ${buildQualificationCTASection(cta, organisationName, readingLabel)}
 
-      ${buildPositionPathSection(readingLabel)}
-
-      <section class="landing-section landing-section--light" id="angle-propose">
-        <div class="landing-container">
-          <div class="landing-head">
-            <p class="landing-kicker">Ce que cette position permettrait d'éclairer</p>
-            <h2>${safe(soften(txt(publicAngle.titreLanding, formulation.title, angle.questionPublique, angle.titreAngle, angle.questionEditoriale)))}</h2>
-            <p>${safe(shortText(txt(publicAngle.accrocheLanding, formulation.accrocheLanding, angle.questionActivation, angle.texteProgramme, angle.introMecanisme), 680))}</p>
-          </div>
-          <div class="landing-grid landing-grid--3">
-            ${card("Conversation", conversationLabel, txt(conversation?.narrativeText, conversation?.description, "Une conversation construite pour mettre en regard des lectures complémentaires."))}
-            ${card("Votre lecture", "Ce qu'elle rend lisible", dgMessage)}
-            ${card("Préparation", "Un cadrage éditorial maîtrisé", "L'échange permet de préciser le sujet, la portée de la lecture et les conditions de préparation avec vos équipes si nécessaire.")}
-          </div>
-        </div>
-      </section>
-
-      ${processSteps.length ? `
-        <section class="landing-section landing-section--dark landing-section--process">
-          <div class="landing-container">
-            <div class="landing-head">
-              <p class="landing-kicker">Comment cela va se passer</p>
-              <h2>Un parcours clair, sans engagement initial.</h2>
-              <p>L'échange de départ ne vaut pas engagement. Il permet de situer la lecture puis, si la pertinence est confirmée, d'articuler cadrage éditorial, production média et activation de la contribution.</p>
-            </div>
-            <div class="landing-grid landing-grid--4 landing-process-grid">
-              ${processSteps.map(item => `
-                <article class="landing-card landing-process-card">
-                  <span class="landing-label">${safe(item.num || "Étape")}</span>
-                  <h3>${safe(soften(item.title))}</h3>
-                  <p>${safe(shortText(item.text, 420))}</p>
-                  ${item.deadline ? `<p class="landing-process-deadline">${safe(item.deadline)}</p>` : ""}
-                </article>`).join("")}
-            </div>
-          </div>
-        </section>` : ""}
-
-      ${faq.length ? `
-        <section class="landing-section landing-section--dark">
-          <div class="landing-container">
-            <div class="landing-head">
-              <p class="landing-kicker">Questions fréquentes</p>
-              <h2>Les points à clarifier avant l'échange.</h2>
-            </div>
-            <div class="landing-grid landing-grid--2">
-              ${faq.map(item => card("", item.question, item.answer)).join("")}
-            </div>
-          </div>
-        </section>` : ""}
-
-      <section class="landing-section landing-final">
-        <div class="landing-container">
-          <h2>${safe(soften(cta.title))}</h2>
-          <p>${safe(shortText(cta.text, 460))}</p>
-          <div class="landing-actions">
-            <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
-          </div>
-          <p class="landing-reassurance">
-            ${safe(txt(cta.deadline, "15 minutes · sans engagement"))}
-            ${cta.footnote ? " · " + safe(cta.footnote) : ""}
-          </p>
-        </div>
-      </section>
+      ${buildMoreInfoSection({ cta, angle, publicAngle, formulation, conversation, conversationLabel, dgMessage, processSteps, faq, readingLabel, organisationName })}
     `;
   }
 
