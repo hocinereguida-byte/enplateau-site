@@ -968,10 +968,20 @@
           : "Cette position permettrait d'éclairer les conditions qui rendent une trajectoire industrielle réellement pilotable : arbitrer les priorités, coordonner les flux, préserver la lisibilité de la trajectoire.";
 
     return `
-      <div class="landing-why-narrative">
-        <p>${safe(orgFragment)}</p>
-        ${personFragment ? `<p>${safe(personFragment)}</p>` : ""}
-        <p>${safe(positionFragment)}</p>
+      <div class="landing-why-narrative landing-why-narrative--keys">
+        <article class="landing-why-key">
+          <span>Organisation</span>
+          <p>${safe(orgFragment)}</p>
+        </article>
+        ${personFragment ? `
+          <article class="landing-why-key">
+            <span>Fonction</span>
+            <p>${safe(personFragment)}</p>
+          </article>` : ""}
+        <article class="landing-why-key">
+          <span>Position proposée</span>
+          <p>${safe(positionFragment)}</p>
+        </article>
       </div>`;
   }
 
@@ -1098,7 +1108,7 @@
 
       ${buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles)}
 
-      <section class="landing-section landing-section--light landing-trust-keys" id="cadre-confiance">
+      <section class="landing-section landing-section--dark landing-trust-keys" id="cadre-confiance">
         <div class="landing-container">
           <div class="landing-head landing-head--keys">
             <p class="landing-kicker">Cadre de confiance</p>
