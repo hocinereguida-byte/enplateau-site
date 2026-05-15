@@ -1,6 +1,6 @@
 /*
   En Plateau — render-landing.js
-  BUILD — 20260516-REPRISE-SECTIONS-CTA
+  BUILD — 20260516-REPRISE-SECTIONS-CTA-V2
 
   Objet : remplace la section post-hero "Conversation composée" par une section Bento
   "Votre place dans la conversation".
@@ -19,7 +19,7 @@
   "use strict";
 
   const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
-  console.info("En Plateau — render-landing reprise sections CTA build 20260516-0025 loaded");
+  console.info("En Plateau — render-landing reprise sections CTA V2 build 20260516-0138 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -721,6 +721,57 @@
     return picked.slice(0, max);
   }
 
+  function pickGainItemsDistinct(items, groups, max = 3, globalSeen = new Set()) {
+    const source = toArray(items);
+    const picked = [];
+
+    function itemKey(item) {
+      return norm([item?.type, item?.texte, item?.text].join(" "));
+    }
+
+    groups.forEach(words => {
+      if (picked.length >= max) return;
+      const found = source.find(item => {
+        const key = itemKey(item);
+        return key && !globalSeen.has(key) && matchGainItem(item, words);
+      });
+      if (found) {
+        const key = itemKey(found);
+        globalSeen.add(key);
+        picked.push(found);
+      }
+    });
+
+    source.forEach(item => {
+      if (picked.length >= max) return;
+      const key = itemKey(item);
+      if (key && !globalSeen.has(key)) {
+        globalSeen.add(key);
+        picked.push(item);
+      }
+    });
+
+    return picked.slice(0, max);
+  }
+
+  function dedupeDetails(details, localFallbacks = []) {
+    const seen = new Set();
+    const out = [];
+    toArray(details).forEach(detail => {
+      const key = norm([detail?.label, detail?.text].join(" "));
+      if (!key || seen.has(key)) return;
+      seen.add(key);
+      out.push(detail);
+    });
+    toArray(localFallbacks).forEach(detail => {
+      const key = norm([detail?.label, detail?.text].join(" "));
+      if (!key || seen.has(key)) return;
+      seen.add(key);
+      out.push(detail);
+    });
+    return out.slice(0, 3);
+  }
+
   function compactValueText(item, fallback) {
     return shortText(txt(item?.texte, item?.text, fallback), 220);
   }
@@ -814,9 +865,10 @@
       const items       = toArray(personaData?.gainsItems);
 
       if (personaData) {
-        const orgItems = pickGainItems(items, [["stature"], ["institution"], ["different"]], 3);
-        const functionItems = pickGainItems(items, [["strateg"], ["interne"], ["arbitr"]], 3);
-        const personItems = pickGainItems(items, [["reutil"], ["relation"], ["dirigeant"]], 3);
+        const usedGainItems = new Set();
+        const orgItems = pickGainItemsDistinct(items, [["stature"], ["institution"], ["different"]], 3, usedGainItems);
+        const functionItems = pickGainItemsDistinct(items, [["strateg"], ["interne"], ["arbitr"], ["doctrine"], ["pratique"]], 3, usedGainItems);
+        const personItems = pickGainItemsDistinct(items, [["reutil"], ["trace"], ["relation"], ["dirigeant"]], 3, usedGainItems);
 
         const isEclaireur = groupe === "eclaireur";
         const isAvocat = personaKey === "avocat";
@@ -831,7 +883,14 @@
               : "Faire reconnaître une capacité de lecture stratégique",
             text: shortText(personaData.gain, 280),
             chips: orgItems.map(item => gainTagLabel(item.type)),
-            details: orgItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) }))
+            details: dedupeDetails(
+              orgItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) })),
+              [
+                { label: "Reconnaissance", text: "Faire reconnaître une lecture utile sans transformer la contribution en discours promotionnel." },
+                { label: "Crédibilité", text: "Inscrire l’organisation dans une conversation structurante avec d’autres lectures complémentaires." },
+                { label: "Conversation", text: "Créer un point d’appui éditorial mobilisable auprès d’interlocuteurs qualifiés." }
+              ]
+            )
           },
           {
             label: isEclaireur ? (isAvocat ? "Pour votre doctrine juridique" : isIngenierie ? "Pour votre expertise projet" : "Pour votre doctrine") : "Pour votre fonction",
@@ -840,14 +899,28 @@
               : "Rendre visible ce que votre fonction arbitre",
             text: compactValueText(functionItems[0], "Faire apparaître ce que votre fonction voit, arbitre ou sécurise dans la transformation."),
             chips: functionItems.map(item => gainTagLabel(item.type)),
-            details: functionItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) }))
+            details: dedupeDetails(
+              functionItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) })),
+              [
+                { label: "Point d’observation", text: "Rendre visible ce que la fonction permet de comprendre, de relier ou d’arbitrer." },
+                { label: "Lecture située", text: "Formuler une analyse depuis une responsabilité réelle, pas depuis une opinion générale." },
+                { label: "Arbitrage", text: "Montrer les décisions, tensions ou conditions qui rendent la trajectoire plus lisible." }
+              ]
+            )
           },
           {
             label: isEclaireur ? (isAvocat ? "Pour vos clients décideurs" : "Pour vos relations dirigeants") : "Pour vous",
             title: "Laisser une trace professionnelle utile",
             text: compactValueText(personItems[0], "Créer un actif éditorial préparé, durable et mobilisable dans la durée."),
             chips: personItems.map(item => gainTagLabel(item.type)),
-            details: personItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) }))
+            details: dedupeDetails(
+              personItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) })),
+              [
+                { label: "Trace", text: "Laisser une contribution préparée, durable et attachée à une lecture précise." },
+                { label: "Réutilisation", text: "Pouvoir réutiliser cette lecture dans des échanges dirigeants, institutionnels ou commerciaux qualifiés." },
+                { label: "Crédibilité personnelle", text: "Porter une parole utile sans exposition inutile ni posture promotionnelle." }
+              ]
+            )
           }
         ];
       }
@@ -1187,13 +1260,14 @@
 
   function buildHeroMediaCaption(angle) {
     const journaliste = normalizeDisplayName(txt(angle?.journaliste, ""));
-    const media       = txt(angle?.media, "");
-    if (!journaliste && !media) return "";
+    if (!journaliste) return "";
 
     return `
-      <div class="landing-hero-media-caption">
-        ${journaliste ? `<strong>${safe(journaliste)}</strong>` : ""}
-        ${media ? `<span>${safe(media)}</span>` : ""}
+      <div class="landing-hero-media-caption landing-hero-media-caption--production">
+        <strong>${safe(journaliste)}</strong>
+        <span>Formats : entretien filmé + article associé</span>
+        <span>Tournage : de juin à décembre 2026</span>
+        <span>Diffusion : à partir de septembre 2026 · replay permanent</span>
       </div>`;
   }
 
@@ -1317,9 +1391,9 @@
               ${mediaCaption}
 
               <div class="landing-hero-metrics landing-hero-metrics--three" aria-label="Repères clés de la proposition éditoriale">
-                ${buildHeroMetricCard("Lecture proposée", readingShort, buildHeroReadingLine(readingLabel), "landing-hero-metric--accent")}
+                ${buildHeroMetricCard("Lecture proposée", readingShort, buildHeroReadingLine(readingLabel))}
                 ${buildHeroMetricCard("Ce que cette position éclaire", buildHeroAngleKeywords(readingLabel), buildHeroAngleLine(angle, readingLabel))}
-                ${buildHeroMetricCard("Échange éditorial", "15 minutes", "Vérifier l’angle, le périmètre de parole et l’intérêt de poursuivre.")}
+                ${buildHeroMetricCard("Échange éditorial", "15 minutes", "Vérifier l’angle, le périmètre de parole et l’intérêt de poursuivre.", "landing-hero-metric--accent")}
               </div>
             </aside>
 
