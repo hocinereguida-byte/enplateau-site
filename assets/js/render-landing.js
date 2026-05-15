@@ -1,6 +1,6 @@
 /*
   En Plateau — render-landing.js
-  BENTO BUILD — 20260515-0455
+  BENTO BUILD — 20260515-4CARTES
 
   Objet : remplace la section post-hero "Conversation composée" par une section Bento
   "Votre place dans la conversation".
@@ -342,22 +342,6 @@
       </article>`;
   }
 
-  function buildBentoConversationCard(conversationLabel, contextLabel, complementaryAngles) {
-    const readings = complementaryAngles.length + 1;
-    return `
-      <article class="lpb-card lpb-card--conversation">
-        <span class="lpb-label">Conversation</span>
-        <h3>${safe(stripConversationCode(conversationLabel || "Conversation En Plateau"))}</h3>
-        <div class="lpb-counts">
-          <div><strong>1</strong><span>sujet</span></div>
-          <div><strong>${safe(readings)}</strong><span>lectures</span></div>
-          <div><strong>0</strong><span>débat forcé</span></div>
-        </div>
-        <p class="lpb-telegram">Chaque voix reste distincte. La valeur naît du contraste.</p>
-        ${contextLabel ? `<p class="lpb-context">${safe(contextLabel)}</p>` : ""}
-      </article>`;
-  }
-
   function buildBentoComplementaryCard(other, index, excludeOrgName = "") {
     const c = other.complementaryCard || {};
     const publicAngle = other.anglePublic || other.formulationVariants?.anglePublic || {};
@@ -396,21 +380,16 @@
 
   function buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles) {
     return `
-      <section class="landing-bento-section" id="mise-en-regard" data-bento-build="20260515-0425">
+      <section class="landing-bento-section" id="mise-en-regard" data-bento-build="20260515-4cartes">
         <div class="landing-container lpb-container">
           <div class="lpb-head">
             <p class="lpb-kicker">Votre place dans la conversation</p>
             <h2>Une conversation à plusieurs voix. Une lecture proposée à votre organisation.</h2>
             <p>Chaque intervenant participe séparément. La valeur naît ensuite de la mise en regard des lectures, des organisations et des angles pressentis.</p>
           </div>
-          <div class="lpb-grid">
+          <div class="lpb-grid lpb-grid--four-cards">
             ${buildBentoPrimaryCard(angle, publicAngle, formulation, personName, personRole, organisationName, readingLabel)}
-            ${buildBentoConversationCard(conversationLabel, contextLabel, complementaryAngles)}
             ${complementaryAngles.map((other, index) => buildBentoComplementaryCard(other, index, organisationName)).join("")}
-          </div>
-          <div class="lpb-summary-note">
-            <strong>Logique En Plateau</strong>
-            <span>Une position n’est pas isolée : elle prend sa portée dans la composition complète de la conversation.</span>
           </div>
         </div>
       </section>`;
