@@ -1,6 +1,6 @@
 /*
   En Plateau — render-landing.js
-  BUILD — 20260515-REPRISE-GLOBALE
+  BUILD — 20260515-HERO-LIBELLES
 
   Objet : remplace la section post-hero "Conversation composée" par une section Bento
   "Votre place dans la conversation".
@@ -19,7 +19,7 @@
   "use strict";
 
   const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
-  console.info("En Plateau — render-landing reprise globale build 20260515-0948 loaded");
+  console.info("En Plateau — render-landing hero/libellés build 20260515-2138 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -225,8 +225,26 @@
       .slice(0, limit);
   }
 
+  function normalizeReadingDisplay(value) {
+    const raw = soften(String(value || "").replace(/^Lecture\s+/i, "")).trim();
+    const key = norm(raw);
+
+    if (!key) return "";
+    if (key === "technologique / systemes" || key === "technologie / systemes" || key === "technologique systemes" || key === "technologie systemes") return "Technologique & systèmes";
+    if (key === "rh / competences" || key === "rh competences" || key === "ressources humaines / competences" || key === "ressources humaines competences") return "RH";
+    if (key === "de direction" || key === "direction" || key === "lecture stratégique") return "Stratégique";
+    if (key === "strategique") return "Stratégique";
+    if (key === "operationnelle" || key === "operations") return "Opérationnelle";
+    if (key === "financiere" || key === "finance") return "Financière";
+    if (key === "juridique" || key === "juridique / reglementaire") return "Juridique";
+    if (key === "territoriale" || key === "territorial") return "Territoriale";
+    if (key === "energie / ressources / decarbonation" || key === "energie / ressources") return "Énergie & ressources";
+
+    return raw;
+  }
+
   function readingDisplay(value) {
-    return soften(String(value || "").replace(/^Lecture\s+/i, "")).trim();
+    return normalizeReadingDisplay(value);
   }
 
   function readingPhrase(value) {
@@ -311,7 +329,7 @@
   function readingContributionLine(readingLabel, fallback = "") {
     const lines = {
       territoriale: "La lecture des conditions territoriales : foncier, friches, infrastructures, ancrage et décision locale.",
-      strategique: "La lecture de direction : trajectoire, gouvernance et décision industrielle.",
+      strategique: "La lecture stratégique : trajectoire, gouvernance et décision industrielle.",
       operationnelle: "La lecture du réel industriel : flux, qualité, maintenance, coordination et capacité de pilotage.",
       technologie: "La lecture des architectures techniques : systèmes, données, interfaces et lisibilité de l’action.",
       financiere: "La lecture économique : investissement, marges de manœuvre, risque et soutenabilité.",
@@ -1015,13 +1033,13 @@
      BANDEAU — court, 1 ligne, "Page privée"
   ───────────────────────────────────────────────────────── */
   function buildTopMeta(conversationLabel) {
-    let label = "Cycle Industrie";
-    if (conversationLabel) {
-      const short = conversationLabel.split(/\s*[:]\s*/)[0].trim();
-      label = short.length > 2 ? short : "Cycle Industrie";
-    }
-    if (label.length > 28) label = label.slice(0, 26).trimEnd() + "…";
-    return `${safe(label)} · Page privée`;
+    return "Saison inaugurale · Cycle Industrie · Composition jusqu’au 30 juin";
+  }
+
+  function heroConversationTitle(conversationLabel) {
+    return String(stripConversationCode(conversationLabel || "Conversation En Plateau"))
+      .replace(/^\s*(Croissance industrielle|Dépendances industrielles|Dependances industrielles|Adaptation industrielle|Réinvention industrielle|Reinvention industrielle)\s*:\s*/i, "")
+      .trim();
   }
 
   /* ─────────────────────────────────────────────────────────
@@ -1164,7 +1182,7 @@
       energie:       `${org} peut montrer comment l’énergie, les ressources, le carbone ou les matières deviennent des conditions de continuité industrielle.`,
       territoriale:  `${org} peut faire reconnaître le territoire comme condition réelle de transformation industrielle.`,
       technologique: `${org} peut montrer comment les systèmes, les données et les interfaces conditionnent la trajectoire industrielle.`,
-      strategique:   `${org} peut installer une lecture de direction sur les arbitrages qui changent une trajectoire industrielle.`,
+      strategique:   `${org} peut installer une lecture stratégique sur les arbitrages qui changent une trajectoire industrielle.`,
       default:       `${org} peut faire reconnaître une lecture utile dans une conversation stratégique à plusieurs voix.`
     };
     return lines[key] || lines.default;
@@ -1176,7 +1194,7 @@
       finance:       "Une lecture financière sur les choix d’investissement, les marges de manœuvre et les conditions économiques qui rendent une trajectoire industrielle soutenable.",
       juridique:     "Une lecture juridique sur les cadres, responsabilités et risques qui sécurisent les arbitrages industriels.",
       operationnelle:"Une lecture opérationnelle sur la qualité, les flux, les priorités et les interfaces métiers qui conditionnent la montée en capacité.",
-      rh:            "Une lecture RH / compétences sur les métiers, les collectifs et les savoir-faire qui rendent la transformation réellement possible.",
+      rh:            "Une lecture RH sur les métiers, les collectifs et les savoir-faire qui rendent la transformation réellement possible.",
       energie:       "Une lecture énergie / ressources sur l’eau, l’énergie, les matières, le carbone et les conditions de continuité industrielle.",
       territoriale:  "Une lecture territoriale sur ce qui rend une trajectoire industrielle possible, soutenable ou réorientable : foncier, friches, infrastructures, ancrage et conditions de décision.",
       technologique: "Une lecture technologique sur les systèmes, les données et les interfaces qui conditionnent la trajectoire industrielle.",
@@ -1196,7 +1214,7 @@
       energie:       "Relier continuité industrielle, ressources, énergie et carbone.",
       territoriale:  "Faire reconnaître le territoire comme condition réelle de trajectoire industrielle.",
       technologique: "Rendre visibles les systèmes et interfaces qui conditionnent la trajectoire.",
-      strategique:   "Installer une lecture de direction sur les arbitrages structurants."
+      strategique:   "Installer une lecture stratégique sur les arbitrages structurants."
     };
     return lines[key] || "Faire reconnaître une lecture utile, située et préparée.";
   }
@@ -1234,7 +1252,7 @@
   function buildHeroMinimalSection(angle, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, cta) {
     const readingShort = readingDisplay(readingLabel || "lecture éditoriale");
     const mediaCaption = buildHeroMediaCaption(angle);
-    const conversationText = stripConversationCode(conversationLabel || "Conversation En Plateau");
+    const conversationText = heroConversationTitle(conversationLabel || "Conversation En Plateau");
 
     return `
       <section class="landing-hero landing-hero--bento-minimal landing-hero--simplified">
@@ -1242,8 +1260,7 @@
           <div class="landing-hero-bento-grid">
 
             <div class="landing-hero-bento-copy">
-              <p class="landing-hero-eyebrow">Saison inaugurale · Cycle Industrie · Composition jusqu’au 30 juin</p>
-              <p class="landing-hero-conversation"><span>Conversation</span><strong>${safe(soften(conversationText))}</strong></p>
+              <p class="landing-hero-conversation landing-hero-conversation--kicker"><span>Conversation</span><strong>${safe(soften(conversationText))}</strong></p>
               <h1>${safe(buildHeroTitle(organisationName, readingLabel))}</h1>
               <p class="landing-hero-bento-lead">${safe(buildHeroLead(angle, readingLabel))}</p>
 
@@ -1400,7 +1417,7 @@
     if (r.includes("techn") || r.includes("system")) {
       if (slot === "organisation") return ["Systèmes", "Données", "Interfaces"];
       if (slot === "person") return ["Architecture", "Lisibilité", "Continuité"];
-      return ["Lecture technologique", "Angle limité", "Mécanisme public"];
+      return ["Technologique & systèmes", "Angle limité", "Mécanisme public"];
     }
 
     if (r.includes("energie") || r.includes("ressource")) {
