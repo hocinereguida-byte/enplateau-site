@@ -1,0 +1,2750 @@
+/*
+  En Plateau — landing.css
+  Version V65.6
+  Gabarit landing one-to-one — /lp/industrie/contribuer.html
+
+  Modifications V65.5 :
+  - .landing-hero__grid : la colonne droite devient .landing-hero-side
+    (align-self: start pour que le contenu s'empile vers le haut)
+  - .landing-film        : reprend exactement le rendu .home-film de la home
+                           (cadre cinématographique, B&W, ombre)
+  - .landing-film-track  : image unique, pas d'animation
+  - .landing-film-caption: légende journaliste + outlet sous l'image
+  - Suppression de .landing-emission (remplacé par .landing-film)
+  - .landing-rarity      : texte mis à jour, style conservé
+  - .landing-identity--single : conservé
+  - .landing-why-narrative    : conservé
+  Modifications V65.6 :
+  - Lisibilité renforcée sur toutes les sections sombres de la landing.
+  - Hero desktop resserré pour faire remonter les CTA.
+  - Ajout grille 4 colonnes pour la section processus.
+  - Image "Pourquoi vous" remplacée par une image abstraite moins anxiogène.
+  Aucune règle existante supprimée.
+*/
+
+:root {
+  --landing-bg: var(--ep-black, #111111);
+  --landing-bg-soft: var(--ep-black-soft, #171717);
+  --landing-paper: var(--ep-paper, #f4efe6);
+  --landing-white: var(--ep-white, #ffffff);
+  --landing-ink: var(--ep-ink, #151515);
+  --landing-ink-soft: rgba(17,17,17,.76);
+  --landing-ink-muted: rgba(17,17,17,.60);
+  --landing-text: var(--ep-dark-text, #f6f1e9);
+  --landing-text-soft: rgba(246,241,233,.86);
+  --landing-text-muted: rgba(246,241,233,.68);
+  --landing-line: var(--ep-line, rgba(17,17,17,.14));
+  --landing-line-dark: rgba(255,255,255,.18);
+  --landing-accent: var(--ep-accent, #6f7f8f);
+  --landing-accent-soft: #c8d2dc;
+  --landing-container: 1120px;
+}
+
+* { box-sizing: border-box; }
+
+body.landing-page {
+  margin: 0;
+  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
+  background: var(--landing-bg);
+  color: var(--landing-text);
+}
+
+.landing-root {
+  min-height: 100vh;
+  background: var(--landing-bg);
+}
+
+.landing-container {
+  width: min(calc(100% - 40px), var(--landing-container));
+  margin: 0 auto;
+}
+
+/* ── BANDEAU ──────────────────────────────────────────── */
+
+.landing-top {
+  position: absolute;
+  z-index: 10;
+  top: 0; left: 0; right: 0;
+  padding: 26px 0;
+  pointer-events: none;
+}
+
+.landing-top__inner {
+  width: min(calc(100% - 40px), var(--landing-container));
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landing-brand {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  color: var(--landing-text);
+  text-decoration: none;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(1.55rem, 2.5vw, 2.1rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.025em;
+}
+
+.landing-brand::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  margin-right: 12px;
+  background: currentColor;
+  opacity: .62;
+}
+
+.landing-top__meta {
+  pointer-events: none;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--landing-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 360px;
+}
+
+/* ── HERO ─────────────────────────────────────────────── */
+
+.landing-hero {
+  position: relative;
+  min-height: 96vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.96) 0%, rgba(17,17,17,.86) 52%, rgba(17,17,17,.65) 100%),
+    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
+  color: var(--landing-text);
+}
+
+.landing-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 76% 24%, rgba(255,255,255,.10), transparent 30%),
+    linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.30));
+  pointer-events: none;
+}
+
+.landing-hero__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+  gap: clamp(34px, 6vw, 72px);
+  align-items: start; /* MODIF V65.5 : start pour que la col droite s'empile vers le haut */
+  padding: 122px 0 82px;
+}
+
+/* ── COLONNE DROITE HERO : .landing-hero-side ──────────
+   Remplace la colonne aside précédente.
+   Empile verticalement : film > légende > carte.
+   align-self: start pour coller vers le haut de la grille.
+───────────────────────────────────────────────────────── */
+
+.landing-hero-side {
+  justify-self: end;
+  align-self: start;
+  width: 100%;
+  max-width: 430px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── BLOC FILM ÉMISSION ─────────────────────────────────
+   Reprend fidèlement .home-film / .home-film-track
+   en namespace .landing-film pour isolation CSS.
+   Image unique, pas d'animation de défilement.
+───────────────────────────────────────────────────────── */
+
+.landing-film {
+  position: relative;
+  width: 100%;
+  /* Hauteur proportionnelle 16/9 */
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.10);
+  background-color: #0d0d0d;
+  /* Cadre cinématographique identique à .home-film */
+  background-image:
+    linear-gradient(rgba(255,255,255,.07), rgba(255,255,255,.07)),
+    linear-gradient(rgba(255,255,255,.07), rgba(255,255,255,.07)),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,.06) 0 1px,
+      transparent 1px 34px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,.06) 0 1px,
+      transparent 1px 34px
+    ),
+    linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.01));
+  background-size:
+    1px calc(100% - 24px),
+    1px calc(100% - 24px),
+    5px calc(100% - 36px),
+    5px calc(100% - 36px),
+    100% 100%;
+  background-position:
+    18px 12px,
+    calc(100% - 18px) 12px,
+    9px 18px,
+    calc(100% - 14px) 18px,
+    0 0;
+  background-repeat: no-repeat;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.025),
+    inset 0 0 28px rgba(0,0,0,.78);
+  margin-bottom: 0;
+}
+
+/* Fondu haut / bas identiques à .home-film */
+.landing-film::before,
+.landing-film::after {
+  content: "";
+  position: absolute;
+  left: 26px; right: 26px;
+  height: 48px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.landing-film::before {
+  top: 0;
+  background: linear-gradient(180deg, rgba(8,8,8,.92), rgba(8,8,8,0));
+}
+
+.landing-film::after {
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(8,8,8,.92), rgba(8,8,8,0));
+}
+
+.landing-film-track {
+  width: 100%;
+  height: 100%;
+  padding: 12px 20px;
+}
+
+.landing-film-track > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.08);
+  background: #0a0a0a;
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,.62),
+    inset 0 0 18px rgba(0,0,0,.48);
+}
+
+.landing-film-track > div::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.32)),
+    linear-gradient(90deg, rgba(0,0,0,.22), transparent 20%, transparent 80%, rgba(0,0,0,.22));
+  pointer-events: none;
+}
+
+.landing-film-track img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  /* Filtre B&W identique à .home-film-track img */
+  opacity: .74;
+  filter: grayscale(100%) contrast(110%) brightness(.72);
+}
+
+/* ── LÉGENDE ÉMISSION ───────────────────────────────────
+   Sous le bloc film, avant la carte.
+   Sobre : journaliste en gras + outlet en mono.
+───────────────────────────────────────────────────────── */
+
+.landing-film-caption {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 2px 14px;
+  border-bottom: 1px solid var(--landing-line-dark);
+  margin-bottom: 0;
+}
+
+.landing-film-caption strong {
+  color: var(--landing-text);
+  font-size: .9rem;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.landing-film-caption span {
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .72rem;
+  letter-spacing: .07em;
+  color: var(--landing-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── CARTE HERO ───────────────────────────────────────── */
+
+.landing-hero__card {
+  width: 100%;
+  border: 1px solid var(--landing-line-dark);
+  border-top: 0; /* Fondu avec la légende au-dessus */
+  background: rgba(255,255,255,.055);
+  backdrop-filter: blur(10px);
+  padding: 22px 26px 26px;
+}
+
+.landing-hero__card h2 {
+  margin: 0 0 10px;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(1.1rem, 1.6vw, 1.38rem);
+  line-height: 1.25;
+  font-weight: 600;
+  color: var(--landing-text);
+}
+
+.landing-hero__card p {
+  margin: 0;
+  font-size: .88rem;
+  line-height: 1.7;
+  color: var(--landing-text-soft);
+}
+
+/* ── IDENTITÉ ─────────────────────────────────────────── */
+
+.landing-identity {
+  margin-top: 18px;
+  border-top: 1px solid var(--landing-line-dark);
+  padding-top: 15px;
+}
+
+.landing-identity span {
+  display: block;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--landing-text-muted);
+  margin-bottom: 6px;
+}
+
+.landing-identity strong {
+  display: block;
+  color: var(--landing-text);
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* Identité fusionnée nom · rôle · org */
+.landing-identity--single {
+  margin-top: 18px;
+  border-top: 1px solid var(--landing-line-dark);
+  padding-top: 15px;
+}
+
+.landing-identity--single span {
+  display: block;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--landing-text-muted);
+  margin-bottom: 6px;
+}
+
+.landing-identity--single strong {
+  display: block;
+  color: var(--landing-text);
+  font-weight: 500;
+  font-size: .86rem;
+  line-height: 1.5;
+}
+
+/* ── SIGNAL DE RARETÉ ────────────────────────────────── */
+
+.landing-rarity {
+  margin-top: 16px;
+  border-top: 1px solid var(--landing-line-dark);
+  padding-top: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.landing-rarity__dot {
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  margin-top: 5px;
+  border-radius: 50%;
+  background: var(--landing-accent-soft);
+  opacity: .7;
+}
+
+.landing-rarity p {
+  margin: 0;
+  font-size: .78rem;
+  line-height: 1.62;
+  color: var(--landing-text-muted);
+}
+
+.landing-rarity p strong {
+  color: var(--landing-text-soft);
+  font-weight: 500;
+}
+
+/* ── KICKER / LEAD / ACTIONS ──────────────────────────── */
+
+.landing-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem;
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--landing-accent-soft);
+}
+
+.landing-kicker::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  opacity: .75;
+}
+
+.landing-hero h1 {
+  max-width: 13.5ch;
+  margin: 0 0 20px;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(2.15rem, 4.4vw, 4.15rem);
+  line-height: 1.05;
+  letter-spacing: -.025em;
+  font-weight: 600;
+  color: var(--landing-text);
+}
+
+.landing-hero h1 em {
+  font-style: normal;
+  color: var(--landing-text);
+  white-space: nowrap;
+}
+
+.landing-lead {
+  max-width: 760px;
+  margin: 0 0 14px;
+  font-size: clamp(.98rem, 1.25vw, 1.08rem);
+  line-height: 1.76;
+  color: var(--landing-text-soft);
+}
+
+.landing-lead strong {
+  color: var(--landing-text);
+  font-weight: 500;
+}
+
+.landing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  align-items: center;
+  margin-top: 28px;
+}
+
+.landing-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 22px;
+  border: 1px solid var(--landing-text);
+  color: var(--landing-bg);
+  background: var(--landing-text);
+  text-decoration: none;
+  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
+  font-size: .84rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.landing-btn:hover { opacity: .84; }
+
+.landing-btn--ghost {
+  background: transparent;
+  color: var(--landing-text);
+  border-color: rgba(255,255,255,.32);
+}
+
+.landing-reassurance {
+  margin: 14px 0 0;
+  max-width: 600px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem;
+  line-height: 1.55;
+  color: var(--landing-text-muted);
+}
+
+/* ── SECTIONS ─────────────────────────────────────────── */
+
+.landing-section {
+  position: relative;
+  padding: clamp(58px, 8vw, 96px) 0;
+  overflow: hidden;
+}
+
+.landing-section--light {
+  background: var(--landing-paper);
+  color: var(--landing-ink);
+}
+
+.landing-section--dark {
+  background: var(--landing-bg);
+  color: var(--landing-text);
+}
+
+.landing-section--dark + .landing-section--dark {
+  border-top: 1px solid var(--landing-line-dark);
+}
+
+.landing-head {
+  max-width: 860px;
+  margin: 0 auto 38px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.landing-head--left { margin-left: 0; text-align: left; }
+
+.landing-head h2 {
+  margin: 0 0 14px;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(1.65rem, 3vw, 2.55rem);
+  line-height: 1.15;
+  letter-spacing: -.015em;
+  font-weight: 600;
+}
+
+.landing-head p {
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.landing-head--left p { margin-left: 0; }
+.landing-section--light .landing-head p { color: var(--landing-ink-soft); }
+.landing-section--dark .landing-head p  { color: var(--landing-text-soft); }
+
+/* ── SPLIT ────────────────────────────────────────────── */
+
+.landing-split {
+  display: grid;
+  grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
+  gap: 2px;
+  background: var(--landing-line);
+}
+
+.landing-split__visual {
+  min-height: 430px;
+  color: var(--landing-text);
+  padding: clamp(30px, 4vw, 44px);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.90) 0%, rgba(17,17,17,.76) 52%, rgba(17,17,17,.56) 100%),
+    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
+}
+
+.landing-split__visual h2 {
+  position: relative;
+  z-index: 2;
+  max-width: 11ch;
+  margin: 0;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(1.65rem, 3vw, 2.55rem);
+  line-height: 1.15;
+  letter-spacing: -.015em;
+  font-weight: 600;
+  color: var(--landing-text);
+}
+
+.landing-split__copy {
+  background: var(--landing-white);
+  padding: clamp(30px, 4vw, 42px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ── NARRATION "POURQUOI VOUS" ────────────────────────── */
+
+.landing-why-narrative {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-why-narrative p {
+  margin: 0;
+  padding: 20px 0 20px 18px;
+  border-left: 2px solid var(--landing-line);
+  font-size: .97rem;
+  line-height: 1.78;
+  color: var(--landing-ink-soft);
+}
+
+.landing-why-narrative p + p {
+  border-top: 1px solid var(--landing-line);
+}
+
+.landing-why-narrative p:first-child {
+  padding-top: 0;
+  border-left-color: var(--landing-accent);
+}
+
+.landing-why-narrative p:last-child {
+  padding-bottom: 0;
+}
+
+/* ── POINTS ───────────────────────────────────────────── */
+
+.landing-point {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--landing-line);
+}
+
+.landing-point:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.landing-point h3,
+.landing-card h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: 1.12rem;
+  line-height: 1.3;
+  letter-spacing: -.01em;
+  font-weight: 600;
+}
+
+.landing-point p,
+.landing-card p {
+  margin: 0;
+  font-size: .93rem;
+  line-height: 1.72;
+}
+
+.landing-section--light .landing-point p,
+.landing-section--light .landing-card p { color: var(--landing-ink-soft); }
+.landing-section--dark .landing-card p  { color: var(--landing-text-soft); }
+
+/* ── CARDS ────────────────────────────────────────────── */
+
+.landing-grid {
+  display: grid;
+  gap: 2px;
+  background: var(--landing-line);
+}
+
+.landing-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.landing-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.landing-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.landing-grid--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+.landing-section--dark .landing-grid { background: var(--landing-line-dark); }
+
+.landing-card {
+  background: var(--landing-white);
+  color: var(--landing-ink);
+  padding: clamp(24px, 3vw, 34px);
+  min-height: 100%;
+}
+
+.landing-section--dark .landing-card {
+  background: rgba(255,255,255,.055);
+  color: var(--landing-text);
+  border: 0;
+}
+
+.landing-label {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 14px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .67rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--landing-accent);
+}
+
+.landing-section--dark .landing-label { color: var(--landing-accent-soft); }
+
+.landing-card--accent {
+  background: var(--landing-bg);
+  color: var(--landing-text);
+}
+
+.landing-card--accent p { color: var(--landing-text-soft) !important; }
+
+/* ── DECISION ─────────────────────────────────────────── */
+
+.landing-decision {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  gap: 2px;
+  background: rgba(255,255,255,.06);
+}
+
+.landing-decision__visual {
+  min-height: 520px;
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.82), rgba(17,17,17,.54)),
+    url("../../images/allumette-flamme.jpg") center/cover no-repeat;
+  filter: grayscale(8%) contrast(116%) brightness(.72);
+}
+
+.landing-decision__copy {
+  background: var(--landing-bg);
+  padding: clamp(30px, 4vw, 42px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.landing-decision__copy h2 {
+  margin: 0 0 22px;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(1.65rem, 3vw, 2.55rem);
+  line-height: 1.15;
+  letter-spacing: -.015em;
+  font-weight: 600;
+  color: var(--landing-text);
+}
+
+/* ── PROCESSUS ────────────────────────────────────────── */
+
+.landing-section--process {
+  border-top: 1px solid var(--landing-line-dark);
+}
+
+.landing-process-grid {
+  align-items: stretch;
+}
+
+.landing-process-card {
+  position: relative;
+  min-height: 250px;
+}
+
+.landing-process-card .landing-label {
+  margin-bottom: 18px;
+}
+
+.landing-process-deadline {
+  margin-top: 18px !important;
+  padding-top: 14px;
+  border-top: 1px solid var(--landing-line-dark);
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem !important;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--landing-text-muted) !important;
+}
+
+/* ── FINAL CTA ────────────────────────────────────────── */
+
+.landing-final {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.94) 0%, rgba(17,17,17,.82) 55%, rgba(17,17,17,.68) 100%),
+    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
+  color: var(--landing-text);
+  text-align: center;
+}
+
+.landing-final h2 {
+  max-width: 820px;
+  margin: 0 auto 16px;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(1.9rem, 3.8vw, 3.25rem);
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  font-weight: 600;
+}
+
+.landing-final p {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.72;
+  color: var(--landing-text-soft);
+}
+
+.landing-final .landing-actions { justify-content: center; }
+
+/* ── LOADING / ERROR ──────────────────────────────────── */
+
+.landing-loading {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 40px 20px;
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.96), rgba(17,17,17,.78)),
+    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
+  color: var(--landing-text);
+}
+
+.landing-loading__box {
+  width: min(760px, 100%);
+  border: 1px solid var(--landing-line-dark);
+  background: rgba(255,255,255,.035);
+  padding: clamp(28px, 5vw, 52px);
+}
+
+.landing-brand--loading { margin-bottom: 24px; }
+
+.landing-loading h1 {
+  margin: 0 0 14px;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.12;
+  font-weight: 600;
+}
+
+.landing-loading p {
+  margin: 0;
+  color: var(--landing-text-soft);
+  line-height: 1.7;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────── */
+
+@media (max-width: 980px) {
+  .landing-hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Sur mobile, la colonne droite passe en pleine largeur */
+  .landing-hero-side {
+    justify-self: stretch;
+    max-width: none;
+  }
+
+  .landing-split,
+  .landing-decision,
+  .landing-grid--2,
+  .landing-grid--3,
+  .landing-grid--4,
+  .landing-grid--5 {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-hero h1 { max-width: 15ch; }
+
+  .landing-decision__visual,
+  .landing-split__visual { min-height: 320px; }
+
+  .landing-top__meta { display: none; }
+
+  /* Narration why */
+  .landing-why-narrative p { padding-left: 14px; }
+}
+
+@media (max-width: 620px) {
+  .landing-container,
+  .landing-top__inner {
+    width: min(calc(100% - 32px), var(--landing-container));
+  }
+
+  .landing-top  { padding: 20px 0; }
+  .landing-brand { font-size: 1.52rem; }
+  .landing-hero  { min-height: auto; }
+  .landing-hero__grid { padding: 104px 0 58px; }
+  .landing-hero h1 { font-size: clamp(2rem, 11vw, 3rem); }
+
+  .landing-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .landing-btn { width: 100%; }
+  .landing-section { padding: 52px 0; }
+
+  .landing-split__copy,
+  .landing-decision__copy,
+  .landing-card,
+  .landing-hero__card { padding: 24px; }
+
+  /* Film mobile : ratio préservé, cadre maintenu */
+  .landing-film-track { padding: 8px 12px; }
+
+  /* Légende mobile */
+  .landing-film-caption { flex-wrap: wrap; }
+
+  /* Narration why mobile */
+  .landing-why-narrative p {
+    padding-left: 12px;
+    font-size: .93rem;
+  }
+
+  /* Rareté mobile */
+  .landing-rarity p { font-size: .76rem; }
+}
+
+/* ─────────────────────────────────────────────
+   PATCH V65.6 — LISIBILITÉ + CONVERSION
+   À conserver en fin de fichier pour neutraliser
+   les éventuels héritages de layout.css.
+───────────────────────────────────────────── */
+
+body.landing-page .landing-section--dark,
+body.landing-page .landing-section--dark h2,
+body.landing-page .landing-section--dark h3,
+body.landing-page .landing-section--dark strong,
+body.landing-page .landing-section--dark .landing-head h2,
+body.landing-page .landing-section--dark .landing-card h3,
+body.landing-page .landing-section--dark .landing-point h3,
+body.landing-page .landing-decision__copy h2,
+body.landing-page .landing-final h2 {
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-section--dark p,
+body.landing-page .landing-section--dark .landing-head p,
+body.landing-page .landing-section--dark .landing-card p,
+body.landing-page .landing-section--dark .landing-point p,
+body.landing-page .landing-final p,
+body.landing-page .landing-final .landing-reassurance {
+  color: var(--landing-text-soft) !important;
+}
+
+body.landing-page .landing-section--dark .landing-label,
+body.landing-page .landing-section--dark .landing-kicker {
+  color: var(--landing-accent-soft) !important;
+}
+
+body.landing-page .landing-card--accent,
+body.landing-page .landing-card--accent h3,
+body.landing-page .landing-card--accent strong {
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-card--accent p {
+  color: var(--landing-text-soft) !important;
+}
+
+@media (min-width: 981px) {
+  body.landing-page .landing-hero h1 {
+    max-width: 16.5ch;
+    font-size: clamp(2.35rem, 3.8vw, 3.65rem);
+    line-height: 1.04;
+  }
+
+  body.landing-page .landing-hero__grid {
+    align-items: center;
+    padding-top: 112px;
+    padding-bottom: 72px;
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   PATCH FLOW COMPACT — 14/05
+   Objectif : hiérarchie conversion/conviction,
+   lisibilité dark sections, cartes alignées,
+   mise en regard plus tangible.
+───────────────────────────────────────────── */
+
+body.landing-page .landing-head {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.landing-page .landing-head .landing-kicker {
+  justify-content: center;
+}
+
+body.landing-page .landing-head--left {
+  text-align: center;
+  margin-left: auto;
+}
+
+body.landing-page .landing-head--left p {
+  margin-left: auto;
+}
+
+body.landing-page .landing-why-box {
+  width: min(920px, 100%);
+  margin: 0 auto;
+  background: var(--landing-white);
+  border: 1px solid var(--landing-line);
+  padding: clamp(22px, 3vw, 36px);
+}
+
+body.landing-page .landing-why-box .landing-why-narrative p {
+  border-left-color: rgba(17,17,17,.18);
+}
+
+body.landing-page .landing-why-box .landing-why-narrative p:first-child {
+  border-left-color: var(--landing-accent);
+}
+
+body.landing-page .landing-inline-cta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+body.landing-page .landing-inline-cta .landing-btn {
+  min-width: 250px;
+}
+
+body.landing-page .landing-inline-cta--dark {
+  justify-content: center;
+}
+
+body.landing-page .landing-reassurance--light {
+  color: var(--landing-ink-muted) !important;
+}
+
+body.landing-page .landing-card {
+  display: grid;
+  grid-template-rows: auto minmax(3.25em, auto) 1fr;
+  align-content: start;
+}
+
+body.landing-page .landing-card .landing-label {
+  align-self: start;
+}
+
+body.landing-page .landing-card h3 {
+  align-self: start;
+}
+
+body.landing-page .landing-card p {
+  align-self: start;
+}
+
+body.landing-page .landing-grid--value .landing-card h3,
+body.landing-page .landing-grid--3 .landing-card h3 {
+  min-height: 3.25em;
+}
+
+body.landing-page .landing-grid--complementary .landing-card {
+  grid-template-rows: auto auto minmax(3.25em, auto) 1fr;
+}
+
+body.landing-page .landing-actors {
+  margin: 0 0 18px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid var(--landing-line);
+}
+
+body.landing-page .landing-actors span {
+  display: block;
+  margin-bottom: 7px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .66rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--landing-accent);
+}
+
+body.landing-page .landing-actors strong {
+  display: block;
+  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
+  font-size: .93rem;
+  line-height: 1.55;
+  font-weight: 500;
+  color: var(--landing-ink);
+}
+
+body.landing-page .landing-section--dark .landing-actors {
+  border-bottom-color: var(--landing-line-dark);
+}
+
+body.landing-page .landing-section--dark .landing-actors span {
+  color: var(--landing-accent-soft);
+}
+
+body.landing-page .landing-section--dark .landing-actors strong {
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-section--dark .landing-card,
+body.landing-page .landing-section--dark .landing-card--accent,
+body.landing-page .landing-section--dark .landing-process-card {
+  background: rgba(255,255,255,.065);
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-section--dark .landing-card h3,
+body.landing-page .landing-section--dark .landing-card--accent h3,
+body.landing-page .landing-section--dark .landing-card strong {
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-section--dark .landing-card p,
+body.landing-page .landing-section--dark .landing-card--accent p {
+  color: var(--landing-text-soft) !important;
+}
+
+body.landing-page .landing-section--dark .landing-head h2,
+body.landing-page .landing-section--dark .landing-head p,
+body.landing-page .landing-section--dark .landing-kicker,
+body.landing-page .landing-final h2,
+body.landing-page .landing-final p {
+  opacity: 1 !important;
+}
+
+body.landing-page .landing-more-intro {
+  padding-bottom: 22px;
+}
+
+body.landing-page .landing-more-intro + .landing-section {
+  padding-top: 46px;
+}
+
+body.landing-page #cadre-confiance .landing-card--trust {
+  min-height: 245px;
+}
+
+body.landing-page #cadre-confiance .landing-card--trust::before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  margin-bottom: 18px;
+  border: 1px solid var(--landing-line);
+  display: block;
+  background: linear-gradient(135deg, rgba(17,17,17,.06), rgba(17,17,17,.015));
+}
+
+@media (max-width: 980px) {
+  body.landing-page .landing-card,
+  body.landing-page .landing-grid--complementary .landing-card {
+    display: block;
+  }
+
+  body.landing-page .landing-grid--value .landing-card h3,
+  body.landing-page .landing-grid--3 .landing-card h3 {
+    min-height: 0;
+  }
+
+  body.landing-page .landing-inline-cta {
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 620px) {
+  body.landing-page .landing-inline-cta .landing-btn {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   PATCH CONVERSATION CARDS — Hero allégé + composition
+   - Hero H1 = titre canonique de conversation
+   - Carte position dans le hero
+   - Section conversation immédiatement sous le hero
+   - Cartes composition : acteurs, organisations, média
+───────────────────────────────────────────── */
+
+body.landing-page .landing-hero {
+  min-height: auto;
+}
+
+@media (min-width: 981px) {
+  body.landing-page .landing-hero__grid {
+    grid-template-columns: minmax(0, 1.02fr) minmax(340px, .98fr);
+    align-items: center;
+    padding-top: 118px;
+    padding-bottom: 70px;
+  }
+
+  body.landing-page .landing-hero h1 {
+    max-width: 18.5ch;
+    font-size: clamp(2.12rem, 3.35vw, 3.45rem);
+    line-height: 1.05;
+  }
+}
+
+body.landing-page .landing-lead--compact {
+  margin-top: 10px;
+  max-width: 660px;
+}
+
+body.landing-page .landing-hero-position-card .landing-label {
+  margin-bottom: 12px;
+}
+
+body.landing-page .landing-hero-position-card h3 {
+  margin: 0 0 12px;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  line-height: 1.28;
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-hero-position-card p {
+  font-size: .88rem;
+  line-height: 1.65;
+}
+
+body.landing-page .landing-hero-position-card .landing-identity--single strong {
+  font-size: .86rem;
+}
+
+body.landing-page .landing-conversation-transition {
+  width: min(860px, 100%);
+  margin: -14px auto 30px;
+  padding: 18px 22px;
+  border-top: 1px solid var(--landing-line);
+  border-bottom: 1px solid var(--landing-line);
+  text-align: center;
+}
+
+body.landing-page .landing-conversation-transition p {
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.7;
+  color: var(--landing-ink-soft);
+}
+
+body.landing-page .landing-composition-grid .landing-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 100%;
+}
+
+body.landing-page .landing-card--primary-position {
+  background: var(--landing-bg);
+  color: var(--landing-text);
+}
+
+body.landing-page .landing-card--primary-position h3,
+body.landing-page .landing-card--primary-position strong {
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-card--primary-position p {
+  color: var(--landing-text-soft) !important;
+}
+
+body.landing-page .landing-card--primary-position .landing-label,
+body.landing-page .landing-card--primary-position .landing-actors span,
+body.landing-page .landing-card--primary-position .landing-organisations span,
+body.landing-page .landing-card--primary-position .landing-media-line span {
+  color: var(--landing-accent-soft) !important;
+}
+
+body.landing-page .landing-card--primary-position .landing-actors,
+body.landing-page .landing-card--primary-position .landing-organisations,
+body.landing-page .landing-card--primary-position .landing-media-line {
+  border-bottom-color: var(--landing-line-dark);
+}
+
+body.landing-page .landing-organisations,
+body.landing-page .landing-media-line {
+  margin: 0 0 18px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid var(--landing-line);
+}
+
+body.landing-page .landing-organisations span,
+body.landing-page .landing-media-line span {
+  display: block;
+  margin-bottom: 7px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .66rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--landing-accent);
+}
+
+body.landing-page .landing-organisations strong,
+body.landing-page .landing-media-line strong {
+  display: block;
+  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
+  font-size: .9rem;
+  line-height: 1.52;
+  font-weight: 500;
+  color: var(--landing-ink);
+}
+
+body.landing-page .landing-card-note {
+  margin-top: auto !important;
+  padding-top: 18px;
+  border-top: 1px solid var(--landing-line-dark);
+  font-size: .85rem !important;
+}
+
+body.landing-page .landing-card-note strong {
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .66rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--landing-accent-soft) !important;
+}
+
+body.landing-page .landing-section--dark .landing-organisations,
+body.landing-page .landing-section--dark .landing-media-line {
+  border-bottom-color: var(--landing-line-dark);
+}
+
+body.landing-page .landing-section--dark .landing-organisations span,
+body.landing-page .landing-section--dark .landing-media-line span {
+  color: var(--landing-accent-soft);
+}
+
+body.landing-page .landing-section--dark .landing-organisations strong,
+body.landing-page .landing-section--dark .landing-media-line strong {
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-composition-grid .landing-card h3 {
+  min-height: 0 !important;
+  margin-top: 0;
+}
+
+body.landing-page .landing-composition-grid .landing-label {
+  margin-top: 2px;
+}
+
+@media (max-width: 980px) {
+  body.landing-page .landing-composition-grid .landing-card {
+    display: block;
+  }
+
+  body.landing-page .landing-conversation-transition {
+    margin-top: 0;
+    text-align: left;
+  }
+  }
+/*
+  En Plateau — landing.css
+  Section post-hero Bento 4 cartes — version 20260515-4cartes.
+  Objectif : une seule ligne desktop : votre lecture en crème + 3 lectures complémentaires en noir.
+*/
+
+:root {
+  --lpb-black: #0f0f0f;
+  --lpb-black-2: #151515;
+  --lpb-black-3: #1b1b1b;
+  --lpb-cream: #f3eee4;
+  --lpb-cream-2: #fffaf0;
+  --lpb-ink: #171717;
+  --lpb-muted: rgba(23, 23, 23, .66);
+  --lpb-muted-dark: rgba(243, 238, 228, .70);
+  --lpb-muted-dark-2: rgba(243, 238, 228, .54);
+  --lpb-line: rgba(23, 23, 23, .16);
+  --lpb-line-dark: rgba(243, 238, 228, .22);
+  --lpb-mono: var(--font-mono, "IBM Plex Mono", monospace);
+  --lpb-sans: var(--font-body, "IBM Plex Sans", sans-serif);
+  --lpb-serif: var(--font-display, "Playfair Display", serif);
+}
+
+.landing-bento-section {
+  position: relative;
+  padding: clamp(84px, 9vw, 132px) 0;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(243,238,228,.10), transparent 30%),
+    linear-gradient(180deg, #0f0f0f 0%, #151515 100%);
+  color: var(--lpb-cream);
+  overflow: hidden;
+}
+
+.landing-bento-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(243,238,228,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243,238,228,.025) 1px, transparent 1px);
+  background-size: 34px 34px;
+  opacity: .28;
+  pointer-events: none;
+}
+
+.lpb-container {
+  position: relative;
+  z-index: 1;
+}
+
+.lpb-head {
+  max-width: 980px;
+  margin: 0 0 clamp(30px, 5vw, 56px);
+}
+
+.lpb-kicker,
+.lpb-label,
+.lpb-status,
+.lpb-meta-grid span,
+.lpb-mini-section > span,
+.lpb-media > span,
+.lpb-detail-block > span,
+.lpb-details summary {
+  font-family: var(--lpb-mono);
+  font-size: .68rem;
+  line-height: 1.25;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.lpb-kicker {
+  margin: 0 0 14px;
+  color: var(--lpb-muted-dark-2);
+}
+
+.lpb-head h2 {
+  margin: 0;
+  max-width: 920px;
+  font-family: var(--lpb-serif);
+  font-size: clamp(2.45rem, 5.6vw, 5rem);
+  line-height: .98;
+  letter-spacing: -.055em;
+  font-weight: 600;
+  color: var(--lpb-cream-2);
+}
+
+.lpb-head p:not(.lpb-kicker) {
+  margin: 22px 0 0;
+  max-width: 690px;
+  font-family: var(--lpb-sans);
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  line-height: 1.65;
+  color: var(--lpb-muted-dark);
+}
+
+.lpb-grid {
+  display: grid;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.lpb-grid--four-cards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.lpb-card {
+  position: relative;
+  min-height: 560px;
+  border: 1px solid var(--lpb-line-dark);
+  border-radius: 0;
+  padding: clamp(18px, 2vw, 26px);
+  background: rgba(255,255,255,.035);
+  box-shadow: 0 24px 80px rgba(0,0,0,.28);
+  overflow: hidden;
+}
+
+.lpb-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(243,238,228,.45), transparent);
+  opacity: .34;
+}
+
+/* Carte 1 : votre lecture — crème / ivoire */
+.lpb-card--primary {
+  background: var(--lpb-cream);
+  color: var(--lpb-ink);
+  border-color: rgba(0,0,0,.16);
+  box-shadow: 0 24px 80px rgba(0,0,0,.34);
+}
+
+/* Cartes 2 à 4 : autres lectures — noir */
+.lpb-card--other {
+  background:
+    linear-gradient(180deg, rgba(243,238,228,.055), rgba(243,238,228,.018)),
+    var(--lpb-black-2);
+  color: var(--lpb-cream);
+  border-color: var(--lpb-line-dark);
+}
+
+.lpb-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.lpb-label {
+  color: var(--lpb-muted-dark-2);
+}
+
+.lpb-card--primary .lpb-label,
+.lpb-card--primary .lpb-meta-grid span,
+.lpb-card--primary .lpb-details summary,
+.lpb-card--primary .lpb-detail-block > span {
+  color: rgba(23,23,23,.58);
+}
+
+.lpb-status {
+  display: inline-flex;
+  padding: 7px 9px;
+  border: 1px solid currentColor;
+  color: rgba(243,238,228,.68);
+  white-space: nowrap;
+}
+
+.lpb-card--primary .lpb-status {
+  color: rgba(23,23,23,.62);
+}
+
+.lpb-card h3 {
+  margin: 0;
+  font-family: var(--lpb-serif);
+  font-size: clamp(1.6rem, 2.3vw, 2.55rem);
+  line-height: 1;
+  letter-spacing: -.05em;
+  font-weight: 600;
+  color: inherit;
+}
+
+.lpb-card--primary h3 {
+  font-size: clamp(2rem, 3vw, 3.25rem);
+}
+
+.lpb-angle {
+  margin: 18px 0 0;
+  font-family: var(--lpb-sans);
+  font-size: clamp(.98rem, 1.18vw, 1.1rem);
+  line-height: 1.5;
+  color: var(--lpb-muted-dark);
+}
+
+.lpb-card--primary .lpb-angle {
+  color: rgba(23,23,23,.72);
+}
+
+.lpb-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  margin-top: 24px;
+  border: 1px solid var(--lpb-line);
+}
+
+.lpb-meta-grid > div {
+  padding: 13px 14px;
+  background: rgba(0,0,0,.035);
+}
+
+.lpb-meta-grid strong,
+.lpb-mini-section strong,
+.lpb-media strong,
+.lpb-detail-block strong {
+  display: block;
+  font-family: var(--lpb-sans);
+  font-size: .96rem;
+  line-height: 1.45;
+  font-weight: 600;
+  color: inherit;
+}
+
+.lpb-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 16px;
+}
+
+.lpb-tags span,
+.lpb-chip-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 25px;
+  padding: 5px 8px;
+  border: 1px solid currentColor;
+  font-family: var(--lpb-mono);
+  font-size: .68rem;
+  line-height: 1.15;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.lpb-tags span {
+  color: rgba(23,23,23,.68);
+}
+
+.lpb-card--other .lpb-chip-list span {
+  color: rgba(243,238,228,.82);
+  background: rgba(255,255,255,.035);
+}
+
+.lpb-mini-section,
+.lpb-media,
+.lpb-detail-block {
+  margin-top: 20px;
+  padding-top: 17px;
+  border-top: 1px solid var(--lpb-line-dark);
+}
+
+.lpb-card--primary .lpb-detail-block {
+  border-top-color: var(--lpb-line);
+}
+
+.lpb-mini-section > span,
+.lpb-media > span,
+.lpb-detail-block > span {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--lpb-muted-dark-2);
+}
+
+.lpb-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.lpb-chip-list--people span {
+  display: block;
+  width: 100%;
+  text-transform: none;
+  letter-spacing: .01em;
+  font-family: var(--lpb-sans);
+  font-size: .84rem;
+  line-height: 1.28;
+}
+
+.lpb-media strong {
+  font-size: .92rem;
+}
+
+.lpb-muted {
+  opacity: .68;
+}
+
+.lpb-details {
+  margin-top: 22px;
+  padding-top: 15px;
+  border-top: 1px solid currentColor;
+  color: inherit;
+}
+
+.lpb-details summary {
+  cursor: pointer;
+  color: inherit;
+  list-style: none;
+  opacity: .82;
+}
+
+.lpb-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.lpb-details summary::after {
+  content: "+";
+  float: right;
+  font-family: var(--lpb-mono);
+  font-size: 1rem;
+  line-height: .75;
+}
+
+.lpb-details[open] summary::after {
+  content: "−";
+}
+
+.lpb-details > div {
+  margin-top: 15px;
+  font-family: var(--lpb-sans);
+  font-size: .95rem;
+  line-height: 1.6;
+  color: inherit;
+  opacity: .82;
+}
+
+.lpb-details p {
+  margin: 0;
+}
+
+@media (max-width: 1180px) {
+  .lpb-grid--four-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lpb-card {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 760px) {
+  .landing-bento-section {
+    padding: 70px 0;
+  }
+
+  .lpb-head h2 {
+    font-size: clamp(2rem, 12vw, 3.2rem);
+  }
+
+  .lpb-grid--four-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .lpb-card {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .lpb-card-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   HERO MINIMAL BENTO — 20260515
+   Remplace visuellement le hero uniquement.
+   Le reste de la page, dont la section 4 cartes, reste inchangé.
+───────────────────────────────────────────── */
+
+body.landing-page .landing-hero--bento-minimal {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 72% 18%, rgba(255,255,255,.10), transparent 30%),
+    linear-gradient(90deg, rgba(10,10,10,.98) 0%, rgba(12,12,12,.94) 48%, rgba(12,12,12,.84) 100%),
+    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
+  color: var(--landing-text);
+  overflow: hidden;
+}
+
+body.landing-page .landing-hero--bento-minimal::after {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.42)),
+    radial-gradient(circle at 24% 76%, rgba(255,255,255,.045), transparent 34%);
+}
+
+body.landing-page .landing-hero-bento-container {
+  position: relative;
+  z-index: 2;
+  padding-top: clamp(112px, 13vh, 150px);
+  padding-bottom: clamp(58px, 9vh, 96px);
+}
+
+body.landing-page .landing-hero-bento-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .94fr) minmax(420px, .86fr);
+  gap: clamp(38px, 6vw, 78px);
+  align-items: center;
+}
+
+body.landing-page .landing-hero-bento-copy {
+  max-width: 760px;
+}
+
+body.landing-page .landing-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 24px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem;
+  line-height: 1.2;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(246,241,233,.64);
+}
+
+body.landing-page .landing-hero-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+  opacity: .74;
+}
+
+body.landing-page .landing-hero--bento-minimal h1 {
+  max-width: 980px !important;
+  margin: 0 0 22px;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(2.55rem, 5.6vw, 5.7rem) !important;
+  line-height: .98 !important;
+  letter-spacing: -.045em;
+  font-weight: 600;
+  color: #fffaf0;
+}
+
+body.landing-page .landing-hero-bento-lead {
+  max-width: 690px;
+  margin: 0 0 30px;
+  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
+  font-size: clamp(.98rem, 1.3vw, 1.12rem);
+  line-height: 1.68;
+  color: rgba(246,241,233,.74);
+}
+
+body.landing-page .landing-hero-bento-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin: 0 0 18px;
+}
+
+body.landing-page .landing-hero-bento-proof {
+  margin: 0;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(246,241,233,.58);
+}
+
+body.landing-page .landing-hero-bento-side {
+  position: relative;
+  min-width: 0;
+}
+
+body.landing-page .landing-hero-visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid rgba(246,241,233,.18);
+  background: rgba(255,255,255,.035);
+  box-shadow: 0 26px 70px rgba(0,0,0,.38);
+}
+
+body.landing-page .landing-hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.42)),
+    linear-gradient(90deg, rgba(0,0,0,.40), transparent 55%);
+  pointer-events: none;
+}
+
+body.landing-page .landing-hero-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.06) brightness(.72);
+  transform: scale(1.015);
+}
+
+body.landing-page .landing-hero-visual--empty {
+  display: flex;
+  align-items: flex-end;
+  min-height: 300px;
+}
+
+body.landing-page .landing-hero-media-tag {
+  position: absolute;
+  z-index: 3;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  padding: 14px 16px;
+  border: 1px solid rgba(246,241,233,.18);
+  background: rgba(10,10,10,.58);
+  backdrop-filter: blur(12px);
+  color: #fffaf0;
+}
+
+body.landing-page .landing-hero-media-tag span,
+body.landing-page .landing-hero-metric span {
+  display: block;
+  margin: 0 0 8px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .63rem;
+  line-height: 1.1;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(246,241,233,.55);
+}
+
+body.landing-page .landing-hero-media-tag strong,
+body.landing-page .landing-hero-metric strong {
+  display: block;
+  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
+  font-size: .92rem;
+  line-height: 1.35;
+  font-weight: 600;
+  color: #fffaf0;
+}
+
+body.landing-page .landing-hero-media-tag em,
+body.landing-page .landing-hero-metric em {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
+  font-size: .78rem;
+  line-height: 1.42;
+  font-style: normal;
+  color: rgba(246,241,233,.66);
+}
+
+body.landing-page .landing-hero-metrics {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: -28px;
+  padding: 0 16px;
+}
+
+body.landing-page .landing-hero-metric {
+  min-height: 108px;
+  padding: 15px 15px 14px;
+  border: 1px solid rgba(246,241,233,.18);
+  background: rgba(15,15,15,.82);
+  backdrop-filter: blur(14px);
+  color: #fffaf0;
+}
+
+body.landing-page .landing-hero-metric--accent {
+  background: #f3eee4;
+  color: #171717;
+  border-color: rgba(243,238,228,.72);
+}
+
+body.landing-page .landing-hero-metric--accent span,
+body.landing-page .landing-hero-metric--accent em {
+  color: rgba(23,23,23,.58);
+}
+
+body.landing-page .landing-hero-metric--accent strong {
+  color: #171717;
+}
+
+@media (max-width: 1080px) {
+  body.landing-page .landing-hero-bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.landing-page .landing-hero-bento-copy {
+    max-width: 900px;
+  }
+
+  body.landing-page .landing-hero-bento-side {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 680px) {
+  body.landing-page .landing-hero-bento-container {
+    padding-top: 104px;
+    padding-bottom: 52px;
+  }
+
+  body.landing-page .landing-hero--bento-minimal h1 {
+    font-size: clamp(2.15rem, 12vw, 3.45rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  body.landing-page .landing-hero-bento-lead {
+    font-size: .96rem;
+  }
+
+  body.landing-page .landing-hero-metrics {
+    grid-template-columns: 1fr;
+    margin-top: 10px;
+    padding: 0;
+  }
+
+  body.landing-page .landing-hero-metric {
+    min-height: auto;
+  }
+
+  body.landing-page .landing-hero-media-tag {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin: -1px 0 0;
+    background: rgba(10,10,10,.92);
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   CORRECTION HERO — 20260515-0558
+   Objectif : photo et bloc Bento strictement alignés à droite,
+   six boîtes seulement en 2 colonnes x 3 lignes,
+   titre hero réduit pour éviter l'effet trop massif.
+───────────────────────────────────────────────────────── */
+
+body.landing-page .landing-hero-bento-grid {
+  grid-template-columns: minmax(0, .98fr) minmax(390px, .68fr) !important;
+  gap: clamp(34px, 5.4vw, 70px) !important;
+  align-items: center !important;
+}
+
+body.landing-page .landing-hero-bento-side {
+  justify-self: end !important;
+  width: min(100%, 520px) !important;
+  max-width: 520px !important;
+}
+
+body.landing-page .landing-hero-visual {
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  box-shadow: 0 24px 64px rgba(0,0,0,.34) !important;
+}
+
+body.landing-page .landing-hero--bento-minimal h1 {
+  max-width: 800px !important;
+  font-size: clamp(2.35rem, 4.45vw, 4.55rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.04em !important;
+}
+
+body.landing-page .landing-hero-bento-lead {
+  max-width: 640px !important;
+}
+
+body.landing-page .landing-hero-metrics,
+body.landing-page .landing-hero-metrics--six {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  margin-top: 10px !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+body.landing-page .landing-hero-metric {
+  min-height: 92px !important;
+  padding: 13px 13px 12px !important;
+}
+
+body.landing-page .landing-hero-metric span {
+  margin-bottom: 7px !important;
+  font-size: .59rem !important;
+}
+
+body.landing-page .landing-hero-metric strong {
+  font-size: .84rem !important;
+  line-height: 1.3 !important;
+}
+
+body.landing-page .landing-hero-metric em {
+  font-size: .72rem !important;
+  line-height: 1.34 !important;
+}
+
+body.landing-page .landing-hero-media-tag {
+  display: none !important;
+}
+
+@media (max-width: 1080px) {
+  body.landing-page .landing-hero-bento-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.landing-page .landing-hero-bento-side {
+    justify-self: start !important;
+    width: min(100%, 720px) !important;
+    max-width: 720px !important;
+  }
+}
+
+@media (max-width: 680px) {
+  body.landing-page .landing-hero--bento-minimal h1 {
+    font-size: clamp(2.05rem, 10.5vw, 3.15rem) !important;
+    line-height: 1.04 !important;
+  }
+
+  body.landing-page .landing-hero-metrics,
+  body.landing-page .landing-hero-metrics--six {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   CADRE DE CONFIANCE — clés typographiques
+   Remplace la logique de cartes explicatives par 4 clés
+   courtes : hors champ / périmètre / validation / engagement.
+───────────────────────────────────────────────────────── */
+
+body.landing-page .landing-trust-keys {
+  background: var(--landing-paper);
+  color: var(--landing-ink);
+  padding-top: clamp(76px, 8vw, 118px);
+  padding-bottom: clamp(68px, 7vw, 104px);
+}
+
+body.landing-page .landing-head--keys {
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+body.landing-page .landing-head--keys h2 {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.landing-page .landing-head--keys p {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.landing-page .trust-keys-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin-top: clamp(42px, 5vw, 64px);
+  border-top: 1px solid rgba(17,17,17,.14);
+  border-bottom: 1px solid rgba(17,17,17,.14);
+}
+
+body.landing-page .trust-key {
+  min-height: 360px;
+  padding: clamp(26px, 3vw, 36px) clamp(20px, 2.4vw, 30px);
+  border-right: 1px solid rgba(17,17,17,.14);
+}
+
+body.landing-page .trust-key:first-child {
+  border-left: 1px solid rgba(17,17,17,.14);
+}
+
+body.landing-page .trust-key__num {
+  display: block;
+  margin-bottom: 18px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem;
+  line-height: 1;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(17,17,17,.52);
+}
+
+body.landing-page .trust-key h3 {
+  margin: 0 0 20px;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(1.5rem, 2.2vw, 2.25rem);
+  line-height: .98;
+  letter-spacing: -.045em;
+  color: var(--landing-ink);
+}
+
+body.landing-page .trust-key ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body.landing-page .trust-key li {
+  margin: 0;
+  padding: 8px 0;
+  border-top: 1px solid rgba(17,17,17,.10);
+  font-size: .94rem;
+  line-height: 1.35;
+  color: rgba(17,17,17,.78);
+}
+
+body.landing-page .trust-key li:first-child {
+  border-top: 0;
+}
+
+body.landing-page .trust-key__details {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(17,17,17,.18);
+}
+
+body.landing-page .trust-key__details summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .66rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,17,17,.72);
+}
+
+body.landing-page .trust-key__details summary::-webkit-details-marker {
+  display: none;
+}
+
+body.landing-page .trust-key__details summary::after {
+  content: " +";
+  letter-spacing: .04em;
+}
+
+body.landing-page .trust-key__details[open] summary::after {
+  content: " –";
+}
+
+body.landing-page .trust-key__details p {
+  margin: 14px 0 0;
+  font-size: .88rem;
+  line-height: 1.6;
+  color: rgba(17,17,17,.70);
+}
+
+body.landing-page .trust-keys-cta {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+body.landing-page .trust-keys-cta p {
+  margin: 0;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: rgba(17,17,17,.48);
+}
+
+@media (max-width: 1100px) {
+  body.landing-page .trust-keys-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.landing-page .trust-key,
+  body.landing-page .trust-key:first-child {
+    border-left: 1px solid rgba(17,17,17,.14);
+  }
+
+  body.landing-page .trust-key:nth-child(2n) {
+    border-right: 1px solid rgba(17,17,17,.14);
+  }
+
+  body.landing-page .trust-key:nth-child(n+3) {
+    border-top: 1px solid rgba(17,17,17,.14);
+  }
+}
+
+@media (max-width: 680px) {
+  body.landing-page .trust-keys-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.landing-page .trust-key {
+    min-height: 0;
+    border-left: 1px solid rgba(17,17,17,.14);
+    border-right: 1px solid rgba(17,17,17,.14);
+  }
+
+  body.landing-page .trust-key + .trust-key {
+    border-top: 1px solid rgba(17,17,17,.14);
+  }
+
+  body.landing-page .trust-keys-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   ALTERNANCE FOND CLAIR / FOND FONCÉ + DONNÉES DYNAMIQUES
+   - Cadre de confiance sur fond foncé
+   - Pourquoi cette lecture sur fond clair, en 3 clés dynamiques
+───────────────────────────────────────────────────────── */
+
+body.landing-page .landing-trust-keys {
+  background: var(--landing-bg) !important;
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-trust-keys .landing-kicker,
+body.landing-page .landing-trust-keys .landing-head h2,
+body.landing-page .landing-trust-keys .landing-head p {
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-trust-keys .landing-head p,
+body.landing-page .landing-trust-keys .trust-key li,
+body.landing-page .landing-trust-keys .trust-key__details p,
+body.landing-page .landing-trust-keys .trust-keys-cta p {
+  color: var(--landing-text-soft) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-keys-grid {
+  border-top-color: rgba(246,241,233,.18) !important;
+  border-bottom-color: rgba(246,241,233,.18) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-key,
+body.landing-page .landing-trust-keys .trust-key:first-child {
+  border-color: rgba(246,241,233,.18) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-key__num,
+body.landing-page .landing-trust-keys .trust-key__details summary {
+  color: rgba(246,241,233,.62) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-key h3 {
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-key li,
+body.landing-page .landing-trust-keys .trust-key__details {
+  border-top-color: rgba(246,241,233,.14) !important;
+}
+
+body.landing-page .landing-trust-keys .landing-btn {
+  background: var(--landing-paper) !important;
+  color: var(--landing-ink) !important;
+  border-color: var(--landing-paper) !important;
+}
+
+body.landing-page #pourquoi-vous {
+  background: var(--landing-paper) !important;
+  color: var(--landing-ink) !important;
+}
+
+body.landing-page #pourquoi-vous .landing-head p {
+  color: var(--landing-ink-soft) !important;
+}
+
+body.landing-page .landing-why-box {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  width: min(980px, 100%) !important;
+}
+
+body.landing-page .landing-why-narrative--keys {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid rgba(17,17,17,.14);
+  border-bottom: 1px solid rgba(17,17,17,.14);
+}
+
+body.landing-page .landing-why-key {
+  padding: clamp(24px, 3vw, 34px) clamp(18px, 2.4vw, 28px);
+  border-right: 1px solid rgba(17,17,17,.14);
+}
+
+body.landing-page .landing-why-key:first-child {
+  border-left: 1px solid rgba(17,17,17,.14);
+}
+
+body.landing-page .landing-why-key span {
+  display: block;
+  margin-bottom: 18px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem;
+  line-height: 1.1;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(17,17,17,.50);
+}
+
+body.landing-page .landing-why-key p,
+body.landing-page .landing-why-box .landing-why-narrative--keys p {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  font-size: .96rem;
+  line-height: 1.72;
+  color: rgba(17,17,17,.76) !important;
+}
+
+@media (max-width: 900px) {
+  body.landing-page .landing-why-narrative--keys {
+    grid-template-columns: 1fr;
+  }
+
+  body.landing-page .landing-why-key,
+  body.landing-page .landing-why-key:first-child {
+    border-left: 1px solid rgba(17,17,17,.14);
+    border-right: 1px solid rgba(17,17,17,.14);
+  }
+
+  body.landing-page .landing-why-key + .landing-why-key {
+    border-top: 1px solid rgba(17,17,17,.14);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
+   CORRECTION ALTERNANCE + VALEUR MINIMALE — 20260515-0638
+   Hero foncé / Conversation claire / Cadre foncé / Pourquoi clair.
+   La section valeur conserve le design sombre, avec gains dynamiques
+   en micro-copy : organisation / fonction / vous.
+───────────────────────────────────────────────────────── */
+
+body.landing-page .landing-bento-section {
+  background: var(--landing-paper, #f4efe6) !important;
+  color: var(--landing-ink, #151515) !important;
+}
+
+body.landing-page .landing-bento-section::before {
+  background-image:
+    linear-gradient(rgba(17,17,17,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17,17,17,.020) 1px, transparent 1px) !important;
+  opacity: .45 !important;
+}
+
+body.landing-page .landing-bento-section .lpb-kicker {
+  color: rgba(17,17,17,.48) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-head h2 {
+  color: var(--landing-ink, #151515) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-head p {
+  color: rgba(17,17,17,.68) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-card--primary {
+  background: #f3eee4 !important;
+  color: #171717 !important;
+  border-color: rgba(17,17,17,.20) !important;
+  box-shadow: none !important;
+}
+
+body.landing-page .landing-bento-section .lpb-card--other {
+  background: #111111 !important;
+  color: #fffaf0 !important;
+  border-color: rgba(17,17,17,.88) !important;
+  box-shadow: 0 24px 70px rgba(17,17,17,.18) !important;
+}
+
+body.landing-page .landing-trust-keys {
+  background: #111111 !important;
+  color: #fffaf0 !important;
+}
+
+body.landing-page .landing-trust-keys .landing-kicker,
+body.landing-page .landing-trust-keys .landing-head h2,
+body.landing-page .landing-trust-keys .landing-head p,
+body.landing-page .landing-trust-keys .trust-key h3 {
+  color: #fffaf0 !important;
+}
+
+body.landing-page .landing-trust-keys .trust-key li,
+body.landing-page .landing-trust-keys .trust-key__details p,
+body.landing-page .landing-trust-keys .trust-keys-cta p {
+  color: rgba(255,250,240,.72) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-keys-grid {
+  border-top-color: rgba(255,250,240,.18) !important;
+  border-bottom-color: rgba(255,250,240,.18) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-key,
+body.landing-page .landing-trust-keys .trust-key:first-child {
+  border-color: rgba(255,250,240,.18) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-key li,
+body.landing-page .landing-trust-keys .trust-key__details {
+  border-top-color: rgba(255,250,240,.14) !important;
+}
+
+body.landing-page .landing-trust-keys .trust-key__num,
+body.landing-page .landing-trust-keys .trust-key__details summary {
+  color: rgba(255,250,240,.58) !important;
+}
+
+body.landing-page #pourquoi-vous {
+  background: var(--landing-paper, #f4efe6) !important;
+  color: var(--landing-ink, #151515) !important;
+}
+
+body.landing-page #valeur-position {
+  background: #111111 !important;
+  color: #fffaf0 !important;
+}
+
+body.landing-page #valeur-position .landing-head h2,
+body.landing-page #valeur-position .landing-kicker {
+  color: #fffaf0 !important;
+}
+
+body.landing-page #valeur-position .landing-head p {
+  color: rgba(255,250,240,.72) !important;
+}
+
+body.landing-page .landing-grid--value .landing-value-card {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 360px;
+  background: rgba(255,255,255,.035) !important;
+  border-color: rgba(255,250,240,.18) !important;
+}
+
+body.landing-page .landing-value-card .landing-label {
+  color: rgba(255,250,240,.58) !important;
+}
+
+body.landing-page .landing-value-card h3 {
+  min-height: 0 !important;
+  margin-bottom: 18px !important;
+  color: #fffaf0 !important;
+}
+
+body.landing-page .landing-value-card p {
+  color: rgba(255,250,240,.76) !important;
+}
+
+body.landing-page .value-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+body.landing-page .value-chip-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 6px 9px;
+  border: 1px solid rgba(255,250,240,.20);
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .62rem;
+  line-height: 1;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: rgba(255,250,240,.78);
+}
+
+body.landing-page .value-details {
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+body.landing-page .value-details summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .64rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: rgba(255,250,240,.62);
+}
+
+body.landing-page .value-details summary::-webkit-details-marker {
+  display: none;
+}
+
+body.landing-page .value-details summary::after {
+  content: " +";
+}
+
+body.landing-page .value-details[open] summary::after {
+  content: " –";
+}
+
+body.landing-page .value-details ul {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+body.landing-page .value-details li {
+  padding: 12px 0;
+  border-top: 1px solid rgba(255,250,240,.12);
+}
+
+body.landing-page .value-details li strong {
+  display: block;
+  margin-bottom: 5px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .62rem;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: rgba(255,250,240,.58);
+}
+
+body.landing-page .value-details li span {
+  display: block;
+  font-size: .88rem;
+  line-height: 1.55;
+  color: rgba(255,250,240,.72);
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   HERO ALLÉGÉ — 20260515-0710
+   Désirabilité + clarté + faible risque.
+   Le hero ne détaille plus le comité, les garanties complètes
+   ni la mise en regard : ces éléments sont portés par les sections.
+───────────────────────────────────────────────────────── */
+
+body.landing-page .landing-hero--simplified .landing-hero-bento-grid {
+  grid-template-columns: minmax(0, .98fr) minmax(390px, .62fr) !important;
+  gap: clamp(36px, 5.8vw, 82px) !important;
+  align-items: center !important;
+}
+
+body.landing-page .landing-hero--simplified .landing-hero-bento-side {
+  justify-self: end !important;
+  width: min(100%, 500px) !important;
+  max-width: 500px !important;
+}
+
+body.landing-page .landing-hero--simplified h1 {
+  max-width: 780px !important;
+  margin-bottom: 22px !important;
+  font-size: clamp(2.25rem, 4.15vw, 4.15rem) !important;
+  line-height: 1.03 !important;
+  letter-spacing: -.04em !important;
+}
+
+body.landing-page .landing-hero--simplified .landing-hero-bento-lead {
+  max-width: 650px !important;
+  margin-bottom: 28px !important;
+  font-size: clamp(.98rem, 1.22vw, 1.08rem) !important;
+  line-height: 1.66 !important;
+  color: rgba(246,241,233,.76) !important;
+}
+
+body.landing-page .landing-hero--simplified .landing-hero-eyebrow {
+  margin-bottom: 22px !important;
+}
+
+body.landing-page .landing-hero--simplified .landing-hero-visual {
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  margin: 0 !important;
+}
+
+body.landing-page .landing-hero-media-caption {
+  width: 100%;
+  margin: 10px 0 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(246,241,233,.16);
+  border-top: 0;
+  background: rgba(12,12,12,.62);
+  color: #fffaf0;
+}
+
+body.landing-page .landing-hero-media-caption strong,
+body.landing-page .landing-hero-media-caption span {
+  display: block;
+}
+
+body.landing-page .landing-hero-media-caption strong {
+  margin: 0 0 3px;
+  font-family: var(--font-body, "IBM Plex Sans", sans-serif);
+  font-size: .86rem;
+  line-height: 1.28;
+  font-weight: 600;
+  color: #fffaf0;
+}
+
+body.landing-page .landing-hero-media-caption span {
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .62rem;
+  line-height: 1.3;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: rgba(246,241,233,.56);
+}
+
+body.landing-page .landing-hero--simplified .landing-hero-metrics,
+body.landing-page .landing-hero--simplified .landing-hero-metrics--three {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 10px !important;
+  width: 100% !important;
+  margin-top: 10px !important;
+  padding: 0 !important;
+}
+
+body.landing-page .landing-hero--simplified .landing-hero-metric {
+  min-height: auto !important;
+  padding: 16px 17px !important;
+}
+
+body.landing-page .landing-hero--simplified .landing-hero-metric span {
+  margin-bottom: 8px !important;
+  font-size: .60rem !important;
+  letter-spacing: .14em !important;
+}
+
+body.landing-page .landing-hero--simplified .landing-hero-metric strong {
+  font-size: clamp(.94rem, 1.08vw, 1.08rem) !important;
+  line-height: 1.25 !important;
+}
+
+body.landing-page .landing-hero--simplified .landing-hero-metric em {
+  margin-top: 7px !important;
+  font-size: .78rem !important;
+  line-height: 1.45 !important;
+}
+
+body.landing-page .landing-hero--simplified .landing-hero-metric--accent {
+  background: #f3eee4 !important;
+  color: #171717 !important;
+  border-color: rgba(243,238,228,.72) !important;
+}
+
+body.landing-page .landing-hero--simplified .landing-hero-bento-proof {
+  color: rgba(246,241,233,.60) !important;
+}
+
+@media (max-width: 1080px) {
+  body.landing-page .landing-hero--simplified .landing-hero-bento-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.landing-page .landing-hero--simplified .landing-hero-bento-side {
+    justify-self: start !important;
+    width: min(100%, 720px) !important;
+    max-width: 720px !important;
+  }
+}
+
+@media (max-width: 680px) {
+  body.landing-page .landing-hero--simplified h1 {
+    font-size: clamp(2.05rem, 10.5vw, 3.05rem) !important;
+    line-height: 1.04 !important;
+  }
+
+  body.landing-page .landing-hero-media-caption {
+    padding: 11px 12px;
+  }
+}
