@@ -4506,3 +4506,56 @@ body.landing-page .qualification-cta-more-link a:hover {
     aspect-ratio: 16 / 9 !important;
   }
 }
+
+
+/* =========================================================
+   REPRISE SECTIONS + CTA V2 — 20260516
+   Correctifs : hero méta non tronquée, légende format média,
+   carte échange éditorial accentuée, gains sans effet doublon.
+   ========================================================= */
+
+body.landing-page .landing-top__inner {
+  align-items: flex-start !important;
+  gap: 28px !important;
+}
+
+body.landing-page .landing-top__meta {
+  flex: 0 0 auto !important;
+  max-width: min(520px, 46vw) !important;
+  min-width: 0 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: initial !important;
+}
+
+body.landing-page .landing-top__meta span {
+  white-space: nowrap !important;
+}
+
+body.landing-page .landing-hero-media-caption--production span {
+  text-transform: none !important;
+  letter-spacing: .04em !important;
+  line-height: 1.45 !important;
+  color: rgba(246,241,233,.62) !important;
+}
+
+body.landing-page .landing-hero-media-caption--production strong {
+  margin-bottom: 6px !important;
+}
+
+body.landing-page .landing-hero--simplified .landing-hero-metric:not(.landing-hero-metric--accent) {
+  background: rgba(255,255,255,.045) !important;
+  color: #f4efe8 !important;
+}
+
+body.landing-page .landing-hero--simplified .landing-hero-metric:not(.landing-hero-metric--accent) strong,
+body.landing-page .landing-hero--simplified .landing-hero-metric:not(.landing-hero-metric--accent) span,
+body.landing-page .landing-hero--simplified .landing-hero-metric:not(.landing-hero-metric--accent) em {
+  color: inherit !important;
+}
+
+body.landing-page .landing-hero--simplified .landing-hero-metric--accent strong,
+body.landing-page .landing-hero--simplified .landing-hero-metric--accent span,
+body.landing-page .landing-hero--simplified .landing-hero-metric--accent em {
+  color: #171717 !important;
+}
