@@ -1,12 +1,12 @@
 /*
   En Plateau — render-landing.js
-  BENTO BUILD — 20260515-4CARTES
+  BENTO BUILD — 20260515-HERO-MINIMAL-4CARTES
 
   Objet : remplace la section post-hero "Conversation composée" par une section Bento
   "Votre place dans la conversation".
 
   Marqueurs de vérification :
-  - const BENTO_BUILD_20260515_0425 = true;
+  - const BENTO_BUILD_20260515_HERO_MINIMAL_4CARTES = true;
   - buildConversationBentoSection(...)
   - <section class="landing-bento-section" id="mise-en-regard">
 
@@ -18,8 +18,8 @@
 (function () {
   "use strict";
 
-  const BENTO_BUILD_20260515_0425 = true;
-  console.info("En Plateau — render-landing bento build 20260515-0425 loaded");
+  const BENTO_BUILD_20260515_HERO_MINIMAL_4CARTES = true;
+  console.info("En Plateau — render-landing hero minimal + 4 cartes build 20260515 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -769,6 +769,98 @@
       </div>`;
   }
 
+
+  /* ─────────────────────────────────────────────────────────
+     HERO MINIMAL — Bento éditorial
+     Objectif : faire comprendre en 10 secondes :
+     organisation identifiée, lecture proposée, conversation,
+     média/journaliste, comité, rareté, cadre et CTA.
+  ───────────────────────────────────────────────────────── */
+  function buildHeroMetricCard(label, title, text, modifier = "") {
+    if (!title && !text) return "";
+    const classes = ["landing-hero-metric", modifier].filter(Boolean).join(" ");
+    return `
+      <article class="${classes}">
+        <span>${safe(label)}</span>
+        ${title ? `<strong>${safe(title)}</strong>` : ""}
+        ${text ? `<em>${safe(text)}</em>` : ""}
+      </article>`;
+  }
+
+  function buildHeroVisual(angle) {
+    const journaliste = txt(angle?.journaliste, "");
+    const emission    = txt(angle?.emission, "");
+    const media       = txt(angle?.media, "");
+    const imgPath     = media ? getEmissionImagePath(media) : null;
+    const outlet      = [emission, media].filter(Boolean).join(" · ");
+    const altLabel    = [journaliste, outlet].filter(Boolean).join(" · ") || "Format média En Plateau";
+
+    if (!imgPath) {
+      return `
+        <div class="landing-hero-visual landing-hero-visual--empty">
+          <div class="landing-hero-media-tag">
+            <span>Format média</span>
+            <strong>${safe(outlet || "À préciser")}</strong>
+            ${journaliste ? `<em>${safe(journaliste)}</em>` : ""}
+          </div>
+        </div>`;
+    }
+
+    return `
+      <div class="landing-hero-visual" aria-label="${safe(altLabel)}">
+        <img src="${safe(imgPath)}" alt="${safe(altLabel)}" loading="eager">
+        <div class="landing-hero-media-tag">
+          <span>Format média</span>
+          ${journaliste ? `<strong>${safe(journaliste)}</strong>` : ""}
+          ${outlet ? `<em>${safe(outlet)}</em>` : ""}
+        </div>
+      </div>`;
+  }
+
+  function buildHeroMinimalSection(angle, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, cta) {
+    const readingShort = readingDisplay(readingLabel || "lecture éditoriale");
+    const readingLower = readingShort.toLowerCase();
+    const conversationShort = stripConversationCode(conversationLabel || "Conversation En Plateau");
+    const media = mediaLineForAngle(angle);
+    const personLine = [personName, personRole].filter(Boolean).join(" · ");
+
+    return `
+      <section class="landing-hero landing-hero--bento-minimal">
+        <div class="landing-container landing-hero-bento-container">
+          <div class="landing-hero-bento-grid">
+
+            <div class="landing-hero-bento-copy">
+              <p class="landing-hero-eyebrow">Contribution éditoriale personnalisée</p>
+              <h1>${safe(organisationName)} est pressentie pour occuper une lecture ${safe(readingLower)} dans une conversation stratégique à plusieurs voix.</h1>
+              <p class="landing-hero-bento-lead">Une position à qualifier avant comité éditorial. 15 minutes pour vérifier l’angle, le périmètre de parole et l’intérêt commun de poursuivre.</p>
+
+              <div class="landing-hero-bento-actions">
+                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Qualifier cette position — 15 min")}</a>
+                <a class="landing-btn landing-btn--ghost" href="#mise-en-regard">Voir les quatre lectures</a>
+              </div>
+
+              <p class="landing-hero-bento-proof">Sans engagement · Sans donnée interne · Périmètre préparé</p>
+            </div>
+
+            <aside class="landing-hero-bento-side">
+              ${buildHeroVisual(angle)}
+
+              <div class="landing-hero-metrics" aria-label="Repères clés de la proposition éditoriale">
+                ${buildHeroMetricCard("Conversation", conversationShort, contextLabel || "")}
+                ${buildHeroMetricCard("Lecture proposée", readingShort, `1 seule position ${readingLower} disponible`, "landing-hero-metric--accent")}
+                ${buildHeroMetricCard("Pressenti", organisationName, personLine)}
+                ${buildHeroMetricCard("Comité éditorial", "15 juin", "Soumission possible après échange")}
+                ${media ? buildHeroMetricCard("Média", media, "") : ""}
+                ${buildHeroMetricCard("Gains", "Crédibilité · Signal · Trace", "Actif éditorial réutilisable")}
+                ${buildHeroMetricCard("Cadre", "Aucune donnée interne", "Aucun engagement à ce stade")}
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </section>`;
+  }
+
   /* ─────────────────────────────────────────────────────────
      SIGNAL DE RARETÉ — texte corrigé
   ───────────────────────────────────────────────────────── */
@@ -1015,45 +1107,7 @@
         </div>
       </div>
 
-      <section class="landing-hero">
-        <div class="landing-container">
-          <div class="landing-hero__grid">
-
-            <!-- COLONNE GAUCHE : titre + lead + CTA -->
-            <div>
-              ${buildHeroKicker(conversationLabel)}
-              <h1>${safe(soften(heroTitle))}</h1>
-              ${buildHeroIntro(personRole, organisationName, readingLabel)}
-              <div class="landing-actions">
-                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
-                <a class="landing-btn landing-btn--ghost" href="#mise-en-regard">Voir la position proposée</a>
-              </div>
-              <p class="landing-reassurance">15 minutes · sans engagement · pour qualifier l'angle, le périmètre de parole et les conditions de préparation.</p>
-            </div>
-
-            <!-- COLONNE DROITE : film > carte -->
-            <aside class="landing-hero-side">
-              ${filmBlock}
-              <div class="landing-hero__card landing-hero-position-card">
-                <h2>Position pressentie</h2>
-                <span class="landing-label">${safe(soften(readingLabel))}</span>
-                <h3>${safe(soften(angleTitle(angle, publicAngle, formulation)))}</h3>
-                <p>${safe(shortText(angleDescription(angle, publicAngle, formulation), 380))}</p>
-                <div class="landing-identity landing-identity--single">
-                  <span>Intervenant pressenti</span>
-                  <strong>${safe([personName, personRole].filter(Boolean).join(" · "))}</strong>
-                </div>
-                <div class="landing-identity landing-identity--single">
-                  <span>Organisation</span>
-                  <strong>${safe(organisationName)}</strong>
-                </div>
-                ${buildRaritySignal(readingLabel)}
-              </div>
-            </aside>
-
-          </div>
-        </div>
-      </section>
+      ${buildHeroMinimalSection(angle, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, cta)}
 
       ${buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles)}
 
