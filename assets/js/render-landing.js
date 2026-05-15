@@ -1098,19 +1098,80 @@
 
       ${buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles)}
 
-      <section class="landing-section landing-section--light" id="cadre-confiance">
+      <section class="landing-section landing-section--light landing-trust-keys" id="cadre-confiance">
         <div class="landing-container">
-          <div class="landing-head">
+          <div class="landing-head landing-head--keys">
             <p class="landing-kicker">Cadre de confiance</p>
-            <h2>Une contribution cadrée, pas improvisée.</h2>
-            <p>Les points sensibles sont traités avant toute prise de parole : confidentialité, temps mobilisé, périmètre de l'échange et validation interne éventuelle.</p>
+            <h2>Ce qui est cadré avant toute prise de parole.</h2>
+            <p>L’échange sert à fixer le périmètre : ce qui peut être dit, ce qui doit rester hors champ, et les validations utiles avant production.</p>
           </div>
-          <div class="landing-grid landing-grid--4 landing-trust-grid">
-            ${guarantees.map(item => card("", item.title, item.text, false, "landing-card--trust")).join("")}
+
+          <div class="trust-keys-grid" aria-label="Les quatre clés de confiance de la contribution En Plateau">
+            <article class="trust-key">
+              <span class="trust-key__num">01</span>
+              <h3>Hors champ</h3>
+              <ul>
+                <li>Chiffres internes.</li>
+                <li>Sites sensibles.</li>
+                <li>Clients.</li>
+                <li>Fournisseurs.</li>
+                <li>Décisions confidentielles.</li>
+              </ul>
+              <details class="trust-key__details">
+                <summary>Préciser</summary>
+                <p>La contribution ne repose pas sur un cas interne. Elle porte sur une lecture de mécanisme, formulée à partir de votre expérience et de votre fonction.</p>
+              </details>
+            </article>
+
+            <article class="trust-key">
+              <span class="trust-key__num">02</span>
+              <h3>Périmètre</h3>
+              <ul>
+                <li>Angle.</li>
+                <li>Messages.</li>
+                <li>Limites.</li>
+                <li>Points sensibles.</li>
+              </ul>
+              <details class="trust-key__details">
+                <summary>Définir</summary>
+                <p>L’échange permet de préciser ce que la contribution doit éclairer, et ce qu’elle ne doit pas traiter.</p>
+              </details>
+            </article>
+
+            <article class="trust-key">
+              <span class="trust-key__num">03</span>
+              <h3>Validation</h3>
+              <ul>
+                <li>Communication.</li>
+                <li>Juridique.</li>
+                <li>Affaires publiques.</li>
+                <li>Direction.</li>
+              </ul>
+              <details class="trust-key__details">
+                <summary>Sécuriser</summary>
+                <p>Les équipes utiles peuvent être associées à la préparation pour sécuriser le niveau d’exposition et la formulation publique.</p>
+              </details>
+            </article>
+
+            <article class="trust-key">
+              <span class="trust-key__num">04</span>
+              <h3>Engagement</h3>
+              <ul>
+                <li>15 minutes.</li>
+                <li>Qualification.</li>
+                <li>Décision ensuite.</li>
+                <li>Aucune suite automatique.</li>
+              </ul>
+              <details class="trust-key__details">
+                <summary>Clarifier</summary>
+                <p>L’échange ne vaut pas accord de participation. Il sert uniquement à vérifier si la position mérite d’être formalisée.</p>
+              </details>
+            </article>
           </div>
-          <div class="landing-inline-cta">
+
+          <div class="trust-keys-cta">
             <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
-            <p class="landing-reassurance landing-reassurance--light">Aucun dossier à préparer · Aucune donnée confidentielle attendue</p>
+            <p>Aucun dossier à préparer · Aucune donnée confidentielle attendue</p>
           </div>
         </div>
       </section>
