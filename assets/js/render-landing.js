@@ -1,6 +1,6 @@
 /*
   En Plateau — render-landing.js
-  BUILD — 20260515-HERO-LIBELLES
+  BUILD — 20260516-REPRISE-SECTIONS-CTA
 
   Objet : remplace la section post-hero "Conversation composée" par une section Bento
   "Votre place dans la conversation".
@@ -19,7 +19,7 @@
   "use strict";
 
   const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
-  console.info("En Plateau — render-landing hero/libellés build 20260515-2138 loaded");
+  console.info("En Plateau — render-landing reprise sections CTA build 20260516-0025 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -247,9 +247,44 @@
     return normalizeReadingDisplay(value);
   }
 
+  function readingNoun(value) {
+    const key = readingKey(value);
+    const labels = {
+      territoriale: "Territoires",
+      strategique: "Stratégie",
+      operationnelle: "Opérations",
+      technologie: "Technologie",
+      financiere: "Finance",
+      juridique: "Droit",
+      rh: "RH",
+      energie: "Énergie"
+    };
+    return labels[key] || readingDisplay(value) || "Lecture";
+  }
+
+  function readingAdjective(value) {
+    const key = readingKey(value);
+    const labels = {
+      territoriale: "territoriale",
+      strategique: "stratégique",
+      operationnelle: "opérationnelle",
+      technologie: "technologique",
+      financiere: "financière",
+      juridique: "juridique",
+      rh: "RH",
+      energie: "énergie / ressources"
+    };
+    return labels[key] || String(readingDisplay(value) || "éditoriale").toLowerCase();
+  }
+
+  function readingPanelLabel(value) {
+    const adj = readingAdjective(value);
+    return adj === "RH" ? "Lecture RH" : `Lecture ${adj}`;
+  }
+
   function readingPhrase(value) {
-    const r = readingDisplay(value).toLowerCase();
-    return r ? `lecture ${r}` : "lecture éditoriale";
+    const label = readingPanelLabel(value);
+    return label ? label.toLowerCase().replace(/^lecture rh$/, "lecture RH") : "lecture éditoriale";
   }
 
   function angleTitle(angle, publicAngle = {}, formulation = {}) {
@@ -271,7 +306,7 @@
     return `
       <article class="landing-card landing-card--complementary">
         ${actors.length ? `<div class="landing-actors"><span>Acteurs pressentis</span><strong>${safe(actors.join(" · "))}</strong></div>` : ""}
-        ${orgs.length ? `<div class="landing-organisations"><span>Organisations approchées</span><strong>${safe(orgs.join(" · "))}</strong></div>` : ""}
+        ${orgs.length ? `<div class="landing-organisations"><span>Organisations positionnées</span><strong>${safe(orgs.join(" · "))}</strong></div>` : ""}
         ${media ? `<div class="landing-media-line"><span>Format média pressenti</span><strong>${safe(media)}</strong></div>` : ""}
         ${label ? `<span class="landing-label">${safe(label)}</span>` : ""}
         ${title ? `<h3>${safe(soften(title))}</h3>` : ""}
@@ -446,42 +481,42 @@
       <input class="lpb-tab-input" type="radio" name="lpb-reading-tabs" id="lpb-reading-${index}"${checked}>
       <label class="lpb-reading-tab ${isPrimary ? "lpb-reading-tab--primary" : ""}" for="lpb-reading-${index}">
         <span>${safe(isPrimary ? "Votre lecture" : "Lecture complémentaire")}</span>
-        <strong>${safe(shortReadingLabel(item.readingLabel))}</strong>
+        <strong>${safe(readingNoun(item.readingLabel))}</strong>
         <em>${safe(readingTags(item.readingLabel).slice(0, 3).join(" · "))}</em>
-        <small>${orgs.length ? safe(orgs.join(" · ")) : "Organisations en qualification"}</small>
+        <small>${orgs.length ? safe(orgs.join(" · ")) : "Organisations positionnées en qualification"}</small>
         ${item.media ? `<i>${safe(item.media)}</i>` : ""}
       </label>`;
   }
 
   function buildConversationPanel(item, index) {
     const orgs = item.orgs.slice(0, 3);
+    const panelLabel = readingPanelLabel(item.readingLabel);
+    const title = txt(item.title, item.primary ? primaryReadingValue(item.readingLabel, item.text) : readingContributionLine(item.readingLabel, item.text));
+    const description = item.primary
+      ? `Cette ${panelLabel.toLowerCase().replace("lecture rh", "lecture RH")} constitue la position proposée à votre organisation dans la composition éditoriale.`
+      : `Cette ${panelLabel.toLowerCase().replace("lecture rh", "lecture RH")} complète la composition éditoriale en apportant un autre point d’observation sur le même moment de transformation industrielle.`;
+    const value = item.text || (item.primary ? primaryReadingValue(item.readingLabel, item.text) : readingContributionLine(item.readingLabel, item.text));
+
     return `
       <article class="lpb-reading-panel lpb-reading-panel--${index} ${item.primary ? "lpb-reading-panel--primary" : ""}">
         <div class="lpb-panel-main">
-          <span class="lpb-label">${safe(item.primary ? "Position proposée" : "Lecture mise en regard")}</span>
-          <h3>${safe(shortReadingLabel(item.readingLabel))}</h3>
-          <p class="lpb-panel-value">${safe(item.primary ? primaryReadingValue(item.readingLabel, item.text) : readingContributionLine(item.readingLabel, item.text))}</p>
+          <span class="lpb-label">${safe(panelLabel)}</span>
+          <h3>${safe(shortText(title, 260))}</h3>
+          <p class="lpb-panel-value">${safe(shortText(value, 520))}</p>
+          <p class="lpb-panel-context">${safe(description)}</p>
         </div>
         <div class="lpb-panel-aside">
           <div class="lpb-panel-block">
-            <span>Organisations approchées</span>
+            <span>Organisations positionnées</span>
             <div class="lpb-chip-list">${listInline(orgs, "Organisations en qualification")}</div>
           </div>
           ${item.media ? `<div class="lpb-panel-block"><span>Journaliste / média</span><strong>${safe(item.media)}</strong></div>` : ""}
-          <details class="lpb-details lpb-details--panel">
-            <summary>Voir le détail de cette lecture</summary>
-            <div>
-              ${item.title ? `<div class="lpb-detail-block"><span>Angle</span><strong>${safe(shortText(item.title, 240))}</strong></div>` : ""}
-              ${item.text ? `<p>${safe(shortText(item.text, 620))}</p>` : ""}
-              <div class="lpb-detail-block"><span>Rôle dans la conversation</span><strong>${safe(item.primary ? "Lecture proposée à votre organisation" : "Lecture complémentaire dans la composition éditoriale")}</strong></div>
-            </div>
-          </details>
         </div>
       </article>`;
   }
 
   function buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles) {
-    const reading = shortReadingLabel(readingLabel).toLowerCase();
+    const reading = readingAdjective(readingLabel);
     const title = `Votre lecture ${reading} prend sa valeur dans une conversation composée.`;
     const sentence = readingsSentence(readingLabel, complementaryAngles);
 
@@ -880,7 +915,7 @@
         ${chips.length ? `<div class="value-chip-list">${chips.map(chip => `<span>${safe(chip)}</span>`).join("")}</div>` : ""}
         ${details.length ? `
           <details class="value-details">
-            <summary>Voir les effets possibles</summary>
+            <summary><span class="value-details-open">Voir les effets possibles</span><span class="value-details-close">Masquer les effets possibles</span></summary>
             <ul>
               ${details.map(detail => `<li><strong>${safe(detail.label)}</strong><span>${safe(detail.text)}</span></li>`).join("")}
             </ul>
@@ -895,9 +930,10 @@
         <div class="landing-container">
           <div class="qualification-cta-grid qualification-cta-grid--split">
             <aside class="qualification-cta-signature" aria-label="En Plateau">
-              <div class="qualification-cta-mark">En Plateau</div>
+              <figure class="qualification-cta-photo">
+                <img src="/images/a-propos/hocine-reguida.jpg" alt="Hocine Reguida, En Plateau" loading="lazy">
+              </figure>
               <p>Une position éditoriale se vérifie dans un échange court. La suite reste une décision.</p>
-              <span>Saison inaugurale · Cycle Industrie</span>
             </aside>
 
             <div class="qualification-cta-main">
@@ -905,32 +941,14 @@
               <h2>Certaines positions méritent simplement d’être discutées.</h2>
               <p>L’échange permet de vérifier si la lecture envisagée mérite d’être structurée dans le cadre du cycle. Il ne demande aucune préparation particulière et peut associer, si nécessaire, les équipes communication, affaires publiques ou juridiques.</p>
               <div class="landing-actions qualification-cta-actions">
-                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Programmer un échange éditorial — 15 min")}</a>
+                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Programmer un échange éditorial - 15 min")}</a>
               </div>
               <p class="qualification-cta-microcopy">15 minutes · sans engagement · aucune suite automatique</p>
-
-              <details class="qualification-cta-more">
-                <summary>Voir le cadre de préparation et les questions fréquentes</summary>
-                <div class="qualification-cta-more-grid">
-                  <article>
-                    <h3>Ce qui est préparé avant production</h3>
-                    <p>Angle, tensions, points de bascule, trame média, éléments de langage possibles et coordination avec la production.</p>
-                  </article>
-                  <article>
-                    <h3>Ce qui peut être ajusté avant diffusion</h3>
-                    <p>Un échange après montage peut vérifier la justesse du propos et éviter toute exposition involontaire, sans transformer l’entretien en contenu contrôlé.</p>
-                  </article>
-                  <article>
-                    <h3>Ce que l’échange n’implique pas</h3>
-                    <p>Aucun accord de participation, aucune suite automatique, aucun dossier à préparer. La décision se prend à chaque étape.</p>
-                  </article>
-                  <article>
-                    <h3>Pourquoi l’agenda est direct</h3>
-                    <p>Les profils déjà convaincus peuvent programmer directement l’échange ; les profils prudents trouvent ici le cadre de préparation sans quitter la page.</p>
-                  </article>
-                </div>
-              </details>
             </div>
+          </div>
+
+          <div class="qualification-cta-more-link">
+            <a href="#pour-aller-plus-loin">Vous souhaitez approfondir le cadre avant de réserver un échange éditorial ?</a>
           </div>
         </div>
       </section>`;
@@ -947,7 +965,7 @@
       ),
       label: txt(
         deal?.ctaLabel, deal?.cta_label, deal?.activation?.ctaLabel, deal?.activation?.cta_label,
-        "Programmer un échange éditorial — 15 min"
+        "Programmer un échange éditorial - 15 min"
       ),
       title:    "Qualifier cette lecture en échange éditorial",
       text:     txt(pageCTA.text, "15 minutes, sans engagement, pour qualifier l'angle, le périmètre de parole et les conditions de préparation."),
@@ -1033,13 +1051,35 @@
      BANDEAU — court, 1 ligne, "Page privée"
   ───────────────────────────────────────────────────────── */
   function buildTopMeta(conversationLabel) {
-    return "Saison inaugurale · Cycle Industrie · Composition jusqu’au 30 juin";
+    return `<span>Saison inaugurale · Cycle Industrie</span><span>Composition jusqu’au 30 juin</span>`;
   }
 
-  function heroConversationTitle(conversationLabel) {
-    return String(stripConversationCode(conversationLabel || "Conversation En Plateau"))
+  function sentenceCaseFirst(value) {
+    const v = String(value || "").trim();
+    if (!v) return "";
+    return v.charAt(0).toUpperCase() + v.slice(1);
+  }
+
+  function canonicalConversationTitleFromAngle(angle, conversationLabel) {
+    const code = String(angle?.code || angle?.codeAngle || angle?.id || "").toUpperCase();
+    if (/C1/.test(code)) return "À partir de quand produire davantage oblige-t-il à arbitrer autrement ?";
+    if (/C2/.test(code)) return "Où se situent les dépendances qui deviennent des points de bascule ?";
+    if (/C3/.test(code)) return "Jusqu’où un outil industriel peut-il évoluer sans se transformer en profondeur ?";
+    if (/C4/.test(code)) return "Qu’est-ce qui fait qu’une trajectoire industrielle tient, ou doit être réarbitrée ?";
+
+    const n = norm(conversationLabel);
+    if (n.includes("produire davantage") || n.includes("arbitrer autrement")) return "À partir de quand produire davantage oblige-t-il à arbitrer autrement ?";
+    if (n.includes("dependances") || n.includes("points de bascule")) return "Où se situent les dépendances qui deviennent des points de bascule ?";
+    if (n.includes("outil industriel") || n.includes("transformer en profondeur")) return "Jusqu’où un outil industriel peut-il évoluer sans se transformer en profondeur ?";
+    if (n.includes("trajectoire industrielle tient") || n.includes("rearbitree")) return "Qu’est-ce qui fait qu’une trajectoire industrielle tient, ou doit être réarbitrée ?";
+
+    return sentenceCaseFirst(String(stripConversationCode(conversationLabel || "Conversation En Plateau"))
       .replace(/^\s*(Croissance industrielle|Dépendances industrielles|Dependances industrielles|Adaptation industrielle|Réinvention industrielle|Reinvention industrielle)\s*:\s*/i, "")
-      .trim();
+      .trim());
+  }
+
+  function heroConversationTitle(conversationLabel, angle) {
+    return canonicalConversationTitleFromAngle(angle, conversationLabel);
   }
 
   /* ─────────────────────────────────────────────────────────
@@ -1178,7 +1218,7 @@
       financiere:    `${org} peut rendre visibles les conditions économiques qui rendent une transformation industrielle tenable.`,
       juridique:     `${org} peut montrer comment le droit sécurise les arbitrages industriels avant qu’ils ne deviennent des risques.`,
       operationnelle:`${org} peut faire reconnaître l’exécution industrielle comme le lieu où la transformation se vérifie vraiment.`,
-      rh:            `${org} peut montrer que les compétences et les collectifs conditionnent réellement la transformation industrielle.`,
+      rh:            `${org} peut éclairer le rôle des compétences, des métiers et des collectifs dans la transformation industrielle.`,
       energie:       `${org} peut montrer comment l’énergie, les ressources, le carbone ou les matières deviennent des conditions de continuité industrielle.`,
       territoriale:  `${org} peut faire reconnaître le territoire comme condition réelle de transformation industrielle.`,
       technologique: `${org} peut montrer comment les systèmes, les données et les interfaces conditionnent la trajectoire industrielle.`,
@@ -1194,7 +1234,7 @@
       finance:       "Une lecture financière sur les choix d’investissement, les marges de manœuvre et les conditions économiques qui rendent une trajectoire industrielle soutenable.",
       juridique:     "Une lecture juridique sur les cadres, responsabilités et risques qui sécurisent les arbitrages industriels.",
       operationnelle:"Une lecture opérationnelle sur la qualité, les flux, les priorités et les interfaces métiers qui conditionnent la montée en capacité.",
-      rh:            "Une lecture RH sur les métiers, les collectifs et les savoir-faire qui rendent la transformation réellement possible.",
+      rh:            "Une lecture RH sur les métiers, les compétences et les collectifs qui rendent une trajectoire industrielle possible, transmissible et pilotable.",
       energie:       "Une lecture énergie / ressources sur l’eau, l’énergie, les matières, le carbone et les conditions de continuité industrielle.",
       territoriale:  "Une lecture territoriale sur ce qui rend une trajectoire industrielle possible, soutenable ou réorientable : foncier, friches, infrastructures, ancrage et conditions de décision.",
       technologique: "Une lecture technologique sur les systèmes, les données et les interfaces qui conditionnent la trajectoire industrielle.",
@@ -1210,7 +1250,7 @@
       finance:       "Rendre visibles les conditions économiques d’une trajectoire industrielle tenable.",
       juridique:     "Sécuriser les arbitrages avant qu’ils ne deviennent des risques.",
       operationnelle:"Faire reconnaître l’exécution comme lieu réel de transformation.",
-      rh:            "Montrer comment compétences et collectifs conditionnent la transformation.",
+      rh:            "Éclairer le rôle des compétences, métiers et collectifs dans la transformation.",
       energie:       "Relier continuité industrielle, ressources, énergie et carbone.",
       territoriale:  "Faire reconnaître le territoire comme condition réelle de trajectoire industrielle.",
       technologique: "Rendre visibles les systèmes et interfaces qui conditionnent la trajectoire.",
@@ -1252,7 +1292,7 @@
   function buildHeroMinimalSection(angle, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, cta) {
     const readingShort = readingDisplay(readingLabel || "lecture éditoriale");
     const mediaCaption = buildHeroMediaCaption(angle);
-    const conversationText = heroConversationTitle(conversationLabel || "Conversation En Plateau");
+    const conversationText = heroConversationTitle(conversationLabel || "Conversation En Plateau", angle);
 
     return `
       <section class="landing-hero landing-hero--bento-minimal landing-hero--simplified">
@@ -1265,7 +1305,7 @@
               <p class="landing-hero-bento-lead">${safe(buildHeroLead(angle, readingLabel))}</p>
 
               <div class="landing-hero-bento-actions">
-                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Programmer un échange éditorial — 15 min")}</a>
+                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Programmer un échange éditorial - 15 min")}</a>
                 <a class="landing-btn landing-btn--ghost" href="#mise-en-regard">Voir les 4 lectures de la conversation</a>
               </div>
 
@@ -1505,7 +1545,7 @@
     const r = norm(readingLabel);
 
     if (hasRealName && r.includes("territ")) {
-      return `${personName}${role} peut porter une lecture située : comment les décisions industrielles rencontrent les conditions foncières, infrastructurelles et territoriales qui les rendent possibles — ou plus difficiles.`;
+      return `${personName}${role} peut porter une lecture située : comment les décisions industrielles rencontrent les conditions foncières, infrastructurelles et territoriales qui les rendent possibles, ou plus difficiles.`;
     }
 
     if (hasRealName && personRole && why.person) {
@@ -1715,7 +1755,7 @@
             ${keys.map(key => `
               <article class="trust-key">
                 <span class="trust-key__num">${safe(key.num)}</span>
-                <h3>${safe(key.title)}</h3>
+                <h3>${key.title === "Hors champ" ? "<span>Hors</span><span>champ</span>" : safe(key.title)}</h3>
                 <p class="trust-key__summary">${safe(key.summary)}</p>
                 <ul>${key.visible.map(item => `<li>${safe(item)}</li>`).join("")}</ul>
                 <details class="trust-key__details">
@@ -1862,7 +1902,7 @@
       : "Prêt à vérifier si cette position mérite d’être formalisée ?";
 
     return `
-      <section class="landing-section landing-section--light landing-more-structured" id="cadre-editorial">
+      <section class="landing-section landing-section--light landing-more-structured" id="pour-aller-plus-loin">
         <div class="landing-container">
           <div class="more-hero-grid">
             <div>
