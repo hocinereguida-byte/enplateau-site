@@ -2748,3 +2748,201 @@ body.landing-page .landing-hero--simplified .landing-hero-bento-proof {
     padding: 11px 12px;
   }
 }
+
+
+/* ─────────────────────────────────────────────────────────
+   MISE EN REGARD ÉDITORIALE — 20260515-0742
+   Section post-hero : 4 cartes, densité réduite.
+   Visible : type de lecture, phrase de valeur, organisations, média.
+   Accordéon : acteurs pressentis + détail.
+───────────────────────────────────────────────────────── */
+
+body.landing-page .landing-bento-section {
+  background: var(--landing-paper, #f4efe6) !important;
+  color: var(--landing-ink, #151515) !important;
+  padding: clamp(82px, 8vw, 124px) 0 !important;
+}
+
+body.landing-page .landing-bento-section::before {
+  background-image:
+    linear-gradient(rgba(17,17,17,.023) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17,17,17,.018) 1px, transparent 1px) !important;
+  background-size: 34px 34px !important;
+  opacity: .42 !important;
+}
+
+body.landing-page .landing-bento-section .lpb-head {
+  max-width: 1060px !important;
+  margin-bottom: clamp(28px, 4vw, 48px) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-kicker {
+  color: rgba(17,17,17,.48) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-head h2 {
+  max-width: 940px !important;
+  color: var(--landing-ink, #151515) !important;
+  font-size: clamp(2.1rem, 4.5vw, 4.2rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.05em !important;
+}
+
+body.landing-page .landing-bento-section .lpb-head p {
+  color: rgba(17,17,17,.70) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-subnote {
+  max-width: 760px !important;
+  margin-top: 14px !important;
+  padding-left: 18px !important;
+  border-left: 1px solid rgba(17,17,17,.22) !important;
+  font-size: .95rem !important;
+  line-height: 1.65 !important;
+  color: rgba(17,17,17,.58) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-grid--four-cards {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+}
+
+body.landing-page .landing-bento-section .lpb-card {
+  min-height: 500px !important;
+  padding: clamp(18px, 1.75vw, 24px) !important;
+  box-shadow: none !important;
+}
+
+body.landing-page .landing-bento-section .lpb-card--primary {
+  background: #f3eee4 !important;
+  color: #171717 !important;
+  border-color: rgba(17,17,17,.22) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-card--other {
+  background:
+    linear-gradient(180deg, rgba(255,250,240,.045), rgba(255,250,240,.014)),
+    #111111 !important;
+  color: #fffaf0 !important;
+  border-color: rgba(17,17,17,.88) !important;
+  box-shadow: 0 24px 70px rgba(17,17,17,.16) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-card h3 {
+  font-size: clamp(1.65rem, 2.15vw, 2.6rem) !important;
+  line-height: 1 !important;
+}
+
+body.landing-page .landing-bento-section .lpb-card--primary h3 {
+  font-size: clamp(2rem, 2.8vw, 3rem) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-angle {
+  margin-top: 18px !important;
+  font-size: .98rem !important;
+  line-height: 1.48 !important;
+}
+
+body.landing-page .landing-bento-section .lpb-angle--value,
+body.landing-page .landing-bento-section .lpb-card--primary .lpb-angle {
+  color: rgba(17,17,17,.74) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-angle--question {
+  min-height: 78px !important;
+  color: rgba(255,250,240,.72) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-contribution {
+  margin: 20px 0 0 !important;
+  padding-top: 16px !important;
+  border-top: 1px solid rgba(255,250,240,.15) !important;
+  font-size: .93rem !important;
+  line-height: 1.52 !important;
+  color: rgba(255,250,240,.74) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-contribution span {
+  display: block !important;
+  margin-bottom: 8px !important;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
+  font-size: .62rem !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,250,240,.48) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-meta-grid {
+  margin-top: 22px !important;
+}
+
+body.landing-page .landing-bento-section .lpb-mini-section,
+body.landing-page .landing-bento-section .lpb-media,
+body.landing-page .landing-bento-section .lpb-detail-block {
+  margin-top: 18px !important;
+  padding-top: 15px !important;
+}
+
+body.landing-page .landing-bento-section .lpb-chip-list {
+  gap: 7px !important;
+}
+
+body.landing-page .landing-bento-section .lpb-chip-list span {
+  font-size: .62rem !important;
+  min-height: 24px !important;
+  padding: 5px 7px !important;
+}
+
+body.landing-page .landing-bento-section .lpb-chip-list--people span {
+  display: block !important;
+  width: 100% !important;
+  font-size: .82rem !important;
+  line-height: 1.35 !important;
+  text-transform: none !important;
+  letter-spacing: .01em !important;
+}
+
+body.landing-page .landing-bento-section .lpb-details {
+  margin-top: 22px !important;
+  padding-top: 15px !important;
+}
+
+body.landing-page .landing-bento-section .lpb-details > div {
+  font-size: .92rem !important;
+  line-height: 1.58 !important;
+}
+
+body.landing-page .landing-bento-section .lpb-card--primary .lpb-details,
+body.landing-page .landing-bento-section .lpb-card--primary .lpb-detail-block {
+  border-color: rgba(17,17,17,.16) !important;
+}
+
+body.landing-page .landing-bento-section .lpb-card--primary .lpb-details summary,
+body.landing-page .landing-bento-section .lpb-card--primary .lpb-detail-block > span,
+body.landing-page .landing-bento-section .lpb-card--primary .lpb-meta-grid span {
+  color: rgba(17,17,17,.54) !important;
+}
+
+@media (max-width: 1180px) {
+  body.landing-page .landing-bento-section .lpb-grid--four-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  body.landing-page .landing-bento-section .lpb-card {
+    min-height: 430px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.landing-page .landing-bento-section .lpb-grid--four-cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.landing-page .landing-bento-section .lpb-card {
+    min-height: auto !important;
+  }
+
+  body.landing-page .landing-bento-section .lpb-head h2 {
+    font-size: clamp(2rem, 12vw, 3rem) !important;
+  }
+}
