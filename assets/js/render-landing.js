@@ -19,7 +19,7 @@
   "use strict";
 
   const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
-  console.info("En Plateau — render-landing lot corrections post-retours build 20260516-1325 loaded");
+  console.info("En Plateau — render-landing bugfix cleanRole build 20260516-1455 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -136,6 +136,7 @@
   function cleanRole(role, organisationName) {
     let cleaned = String(role || "").replace(/\s+/g, " ").trim();
     const org = String(organisationName || "").replace(/\s+/g, " ").trim();
+    const orgTokens = org ? org.toLowerCase().split(/\s+/).filter(t => t.length > 2) : [];
     if (!cleaned) return "";
 
     if (org) {
@@ -144,7 +145,6 @@
         .replace(new RegExp("\\s*[—–-]\\s*" + escapedOrg + "\\s*$", "i"), "")
         .replace(new RegExp("\\s+chez\\s+" + escapedOrg + "\\s*$", "i"), "");
 
-      const orgTokens = org.toLowerCase().split(/\s+/).filter(t => t.length > 2);
       const segments = cleaned.split(/\s*,\s*/).filter(Boolean);
       if (segments.length > 1 && orgTokens.length) {
         const kept = segments.filter((segment, index) => {
