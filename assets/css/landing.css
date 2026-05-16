@@ -5388,3 +5388,154 @@ body.landing-page .lpb-alt-reading i {
 
 
 /* PATCH FIX LECTURE PROPOSEE 20260516-1615 */
+
+/* ─────────────────────────────────────────────
+   PATCH 20260516 — Pour aller plus loin + pistes éditoriales
+   Objectif : alléger les pistes alternatives et renforcer la présentation En Plateau.
+───────────────────────────────────────────── */
+
+body.landing-page .lpb-alt-master > summary span {
+  max-width: 720px;
+}
+
+body.landing-page .lpb-alt-list {
+  display: grid;
+  gap: 10px;
+}
+
+body.landing-page .lpb-alt-item > summary {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px 22px;
+}
+
+body.landing-page .lpb-alt-item > summary span {
+  grid-column: 1 / 2;
+}
+
+body.landing-page .lpb-alt-item > summary strong {
+  grid-column: 1 / 2;
+  max-width: 920px;
+}
+
+body.landing-page .lpb-alt-item > summary em {
+  grid-column: 1 / 2;
+}
+
+body.landing-page .lpb-alt-item > summary::after {
+  grid-column: 2 / 3;
+  grid-row: 1 / span 3;
+  justify-self: end;
+  align-self: center;
+}
+
+body.landing-page .lpb-alt-item[open] > summary::after {
+  content: "−";
+}
+
+body.landing-page .lpb-alt-detail {
+  margin-top: 0;
+}
+
+body.landing-page .more-hero-grid--concept {
+  align-items: start;
+}
+
+body.landing-page .more-hero-grid--concept > div:last-child p + p {
+  margin-top: 12px;
+}
+
+body.landing-page .more-concept-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid rgba(17,17,17,.14);
+  border-bottom: 1px solid rgba(17,17,17,.14);
+  margin: 34px 0 0;
+}
+
+body.landing-page .more-concept-grid article {
+  padding: 28px 28px 30px;
+  border-right: 1px solid rgba(17,17,17,.14);
+}
+
+body.landing-page .more-concept-grid article:last-child {
+  border-right: 0;
+}
+
+body.landing-page .more-concept-grid span,
+body.landing-page .more-cycle-focus > span {
+  display: block;
+  margin-bottom: 12px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .66rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--landing-accent);
+}
+
+body.landing-page .more-concept-grid h3,
+body.landing-page .more-cycle-focus h3 {
+  margin: 0 0 12px;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(1.15rem, 1.6vw, 1.42rem);
+  line-height: 1.25;
+  font-weight: 600;
+  color: var(--landing-ink);
+}
+
+body.landing-page .more-concept-grid p,
+body.landing-page .more-cycle-focus p {
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.72;
+  color: var(--landing-ink-soft);
+}
+
+body.landing-page .more-cycle-focus {
+  margin-top: 34px;
+  padding: 34px 38px;
+  background: #fff;
+  border: 1px solid rgba(17,17,17,.14);
+}
+
+body.landing-page .more-cycle-focus p + p {
+  margin-top: 12px;
+}
+
+body.landing-page .more-cycle-focus .more-cycle-note {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(17,17,17,.14);
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .7rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--landing-ink-muted);
+}
+
+body.landing-page .landing-more-structured .more-accordions {
+  margin-top: 34px;
+}
+
+@media (max-width: 980px) {
+  body.landing-page .more-concept-grid {
+    grid-template-columns: 1fr;
+  }
+  body.landing-page .more-concept-grid article {
+    border-right: 0;
+    border-bottom: 1px solid rgba(17,17,17,.14);
+  }
+  body.landing-page .more-concept-grid article:last-child {
+    border-bottom: 0;
+  }
+  body.landing-page .lpb-alt-item > summary {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+}
+
+@media (max-width: 620px) {
+  body.landing-page .more-cycle-focus,
+  body.landing-page .more-concept-grid article {
+    padding: 24px;
+  }
+}
