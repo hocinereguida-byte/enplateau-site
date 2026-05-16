@@ -19,7 +19,7 @@
   "use strict";
 
   const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
-  console.info("En Plateau — render-landing alternatives repasse build 20260516-2205 loaded");
+  console.info("En Plateau — render-landing alternatives accordions one-open build 20260516-2220 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -995,6 +995,89 @@
     { question: "Les équipes communication ou juridiques peuvent-elles être associées à la préparation ?", answer: "Oui. Le périmètre de parole peut être travaillé en amont avec vos équipes communication, affaires publiques, juridiques ou corporate si nécessaire." }
   ];
 
+  function faqFallbackByReading(readingLabel, groupe, personaKey) {
+    const key = readingKey(readingLabel || "");
+    const isCabinet = groupe === "eclaireur";
+
+    const commonByReading = {
+      technologie: [
+        { question: "Peut-on parler de technologie sans dévoiler une feuille de route ou une architecture sensible ?", answer: "Oui. La lecture reste au niveau des mécanismes : systèmes, données, interfaces, conditions de modernisation et capacité de pilotage. Elle ne demande pas de détailler une architecture interne, un incident, un fournisseur ou une feuille de route confidentielle." },
+        { question: "Cette lecture intéresse-t-elle des décideurs non techniques ?", answer: "Oui. En Plateau traite la technologie comme une condition de trajectoire industrielle : ce qu'elle rend possible, ce qu'elle rend lisible, et les arbitrages qu'elle impose à l'organisation." }
+      ],
+      operationnelle: [
+        { question: "Peut-on parler du réel industriel sans exposer des fragilités internes ?", answer: "Oui. La contribution ne porte pas sur un site, un incident, une performance ou un indicateur interne. Elle éclaire les mécanismes d'exécution, de coordination, de qualité, de flux ou de pilotage." },
+        { question: "Une lecture opérationnelle a-t-elle assez de hauteur pour intéresser des dirigeants ?", answer: "Oui. En Plateau traite l'opérationnel comme le lieu où les transformations industrielles se vérifient réellement : priorités, interfaces, arbitrages, rythme d'exécution et capacité à tenir la trajectoire." }
+      ],
+      strategique: [
+        { question: "Cette prise de parole risque-t-elle de devenir une communication corporate ?", answer: "Non. La contribution ne présente pas une stratégie d'entreprise. Elle formule une lecture sur les arbitrages structurants qui transforment une trajectoire industrielle, sans exposer de décision interne non annoncée." },
+        { question: "Comment garder une lecture stratégique sans entrer dans les détails sensibles ?", answer: "L'angle, le niveau d'exposition et les limites de parole sont cadrés avant production. La contribution porte sur un mécanisme public et utile à la conversation, pas sur un dossier interne." }
+      ],
+      financiere: [
+        { question: "Faut-il exposer des chiffres, des marges ou des données financières confidentielles ?", answer: "Non. La lecture porte sur les mécanismes économiques : soutenabilité, investissement, marges de manœuvre, risque ou trajectoire. Elle ne nécessite pas de communiquer des chiffres internes." },
+        { question: "Cette lecture peut-elle intéresser au-delà des spécialistes financiers ?", answer: "Oui. Elle montre comment les arbitrages économiques conditionnent la trajectoire industrielle et deviennent lisibles pour des directions générales, industrielles, territoriales ou partenaires." }
+      ],
+      juridique: [
+        { question: "La contribution risque-t-elle d'être perçue comme une position juridique engageante ?", answer: "Non. Elle ne constitue ni une consultation ni un avis juridique. Elle éclaire la manière dont les cadres, responsabilités ou normes structurent des arbitrages industriels." },
+        { question: "Comment éviter d'exposer un dossier sensible ?", answer: "Le périmètre est défini en amont : pas de contentieux identifiable, pas de décision confidentielle, pas de client cité, pas de situation interne exposée." }
+      ],
+      rh: [
+        { question: "Cette lecture risque-t-elle de ressembler à un discours marque employeur ?", answer: "Non. La lecture RH porte sur les métiers, les compétences, les collectifs et la transmission comme conditions réelles de transformation industrielle. Elle ne vise pas à promouvoir une politique RH." },
+        { question: "Peut-on parler des compétences sans exposer des difficultés internes ?", answer: "Oui. La contribution ne porte pas sur un plan social, un site, un chiffre de recrutement ou une situation interne. Elle éclaire les mécanismes qui conditionnent l'adaptation des métiers et des collectifs." }
+      ],
+      territoriale: [
+        { question: "Faut-il parler d'un site, d'une négociation ou d'un projet territorial identifiable ?", answer: "Non. La lecture territoriale porte sur les mécanismes : foncier, infrastructures, ancrage, réseaux, acteurs publics et conditions collectives de décision." },
+        { question: "Cette lecture peut-elle être utile sans entrer dans un cas local ?", answer: "Oui. Elle permet de rendre visible le territoire comme condition de trajectoire industrielle, sans exposer une opération, une collectivité ou une décision particulière." }
+      ],
+      energie: [
+        { question: "Faut-il parler d'un plan carbone, d'un site ou d'une ressource sensible ?", answer: "Non. La lecture porte sur les conditions de continuité : énergie, eau, matières, carbone et arbitrages de soutenabilité, sans détailler un plan interne ou un actif sensible." },
+        { question: "Cette lecture intéresse-t-elle au-delà des experts énergie ou climat ?", answer: "Oui. Elle éclaire les ressources comme conditions de trajectoire industrielle, donc comme sujet de direction, d'investissement, de territoire et de continuité d'activité." }
+      ]
+    };
+
+    const cabinetByReading = {
+      technologie: [
+        { question: "Comment ne pas paraître vendre une solution ou une plateforme technologique ?", answer: "La contribution ne présente ni offre, ni mission, ni outil. Elle formule ce que votre position d'observation permet de comprendre sur les systèmes, données et interfaces dans les trajectoires industrielles." },
+        { question: "Cette lecture peut-elle ouvrir des conversations avec des décideurs non techniques ?", answer: "Oui. L'enjeu n'est pas la technologie pour elle-même, mais ce qu'elle change dans la décision, la lisibilité de l'action et la capacité de transformation." }
+      ],
+      operationnelle: [
+        { question: "Comment montrer une compréhension terrain sans exposer des cas clients ?", answer: "La contribution ne cite ni mission, ni client, ni situation confidentielle. Elle restitue des mécanismes observables à partir de plusieurs situations industrielles." },
+        { question: "Comment éviter de paraître vendre une méthode de conseil ?", answer: "La lecture est rattachée à une conversation éditoriale et à un angle limité. Elle ne présente pas une méthodologie propriétaire ; elle éclaire un arbitrage réel." }
+      ],
+      strategique: [
+        { question: "Comment ne pas donner l'impression de produire du thought leadership classique ?", answer: "En Plateau ne fabrique pas une posture. La contribution part d'un arbitrage réel, d'une conversation précise et d'une mise en regard avec d'autres lectures." },
+        { question: "Comment rester utile sans commenter un cas client ?", answer: "La lecture repose sur votre capacité comparative, pas sur un dossier. Elle permet de formuler des mécanismes récurrents sans exposer une mission ou une organisation." }
+      ],
+      financiere: [
+        { question: "Comment ne pas paraître vendre une mission de conseil financier ?", answer: "La contribution ne présente ni offre, ni cas client, ni recommandation commerciale. Elle éclaire les conditions économiques qui rendent une trajectoire industrielle tenable ou réarbitrable." },
+        { question: "Faut-il exposer des données financières ?", answer: "Non. La lecture reste au niveau des mécanismes : investissement, soutenabilité, risque, marges de manœuvre et arbitrages de trajectoire." }
+      ],
+      juridique: [
+        { question: "Comment ne pas transformer la contribution en avis juridique ?", answer: "La prise de parole ne constitue pas une consultation. Elle éclaire le rôle du droit, des cadres et des responsabilités dans les arbitrages industriels." },
+        { question: "Comment éviter de paraître commenter un dossier client ?", answer: "Aucun dossier identifiable n'est attendu. La contribution formule une lecture de mécanisme, préparée et limitée." }
+      ],
+      rh: [
+        { question: "Comment se distinguer d'un discours RH générique ?", answer: "La contribution relie les compétences, les métiers et les collectifs à une trajectoire industrielle concrète. Elle ne vend pas une offre RH ; elle éclaire une condition de transformation." },
+        { question: "Cette lecture peut-elle parler à des directions générales et industrielles ?", answer: "Oui. Elle montre comment les capacités humaines conditionnent la continuité, la montée en charge, l'adaptation ou la transformation de l'outil industriel." }
+      ],
+      territoriale: [
+        { question: "Comment ne pas paraître vendre une expertise territoriale ?", answer: "La contribution ne présente pas une offre. Elle formule une lecture sur le foncier, les infrastructures, l'ancrage ou les acteurs locaux comme conditions de trajectoire industrielle." },
+        { question: "Faut-il citer des projets ou des collectivités ?", answer: "Non. La lecture peut rester au niveau des mécanismes territoriaux sans exposer une opération, une négociation ou un partenaire." }
+      ],
+      energie: [
+        { question: "Comment éviter une prise de parole trop technique ou militante ?", answer: "La lecture porte sur les arbitrages industriels associés aux ressources, à l'énergie, au carbone ou aux matières. Elle reste située, utile et non promotionnelle." },
+        { question: "Faut-il parler d'un plan interne ou d'un client ?", answer: "Non. Aucun plan, client ou site identifiable n'est attendu. La contribution éclaire les conditions de continuité et de soutenabilité." }
+      ]
+    };
+
+    return (isCabinet ? cabinetByReading[key] : commonByReading[key]) || (isCabinet ? [
+      { question: "Comment ne pas paraître vendre une offre ?", answer: "La contribution ne présente ni mission, ni méthode, ni cas client. Elle formule une lecture issue de votre position d'observation et de votre capacité comparative." },
+      { question: "En quoi est-ce différent d'un contenu de thought leadership classique ?", answer: "La contribution est reliée à une conversation, à un angle limité et à d'autres lectures complémentaires. Elle n'est pas produite pour fabriquer une posture, mais pour éclairer un arbitrage réel." }
+    ] : [
+      { question: "Peut-on contribuer sans exposer un dossier interne ?", answer: "Oui. La contribution porte sur une lecture de mécanisme, pas sur un cas interne, un incident, un client ou une décision confidentielle." },
+      { question: "Cette lecture peut-elle être préparée avec les équipes utiles ?", answer: "Oui. Le périmètre, les formulations, la trame média et le niveau d'exposition peuvent être travaillés avant production." }
+    ]);
+  }
+
   function getFAQ(readingLabel, actorType, personRole, landingPage) {
     const rtData     = getReadingType(readingLabel);
     const groupe     = detectProfilGroupe(actorType);
@@ -1002,13 +1085,19 @@
     const universelles = toArray(
       rtData?.faqV2?.universelles?.length ? rtData.faqV2.universelles : FAQ_UNIVERSELLES_FALLBACK
     );
-    const parPersona = toArray(
+    const parPersonaFromData = toArray(
       rtData?.faqV2?.[groupe]?.[personaKey] || rtData?.faqV2?.[groupe]?.default || []
     );
-    const fromLP = toArray(landingPage?.copy?.faq || landingPage?.faq);
+    const parPersona = parPersonaFromData.length ? parPersonaFromData : faqFallbackByReading(readingLabel, groupe, personaKey);
+
+    // Important : ne pas reprendre les FAQ génériques des landing pages par type,
+    // car elles peuvent provenir d'un template de lecture différent et créer une
+    // incohérence visible (ex. question financière sur une landing technologique).
+    // Les FAQ publiques doivent être pilotées par le type de lecture effectivement affiché
+    // et par le profil : ETI/grand groupe ou cabinet de conseil.
     const seen = new Set();
-    return [...universelles, ...parPersona, ...fromLP].filter(item => {
-      const key = norm(item.question || "").slice(0, 25);
+    return [...universelles, ...parPersona].filter(item => {
+      const key = norm(item.question || "").slice(0, 46);
       if (!key || seen.has(key)) return false;
       seen.add(key); return true;
     }).slice(0, 6);
@@ -2513,6 +2602,25 @@
       </section>`;
   }
 
+
+
+  function initAlternativeAccordions(scope) {
+    const container = scope?.querySelector?.('.lpb-alt-list');
+    if (!container) return;
+
+    const items = Array.from(container.querySelectorAll(':scope > details.lpb-alt-item'));
+    if (!items.length) return;
+
+    items.forEach(item => {
+      item.addEventListener('toggle', () => {
+        if (!item.open) return;
+        items.forEach(other => {
+          if (other !== item && other.open) other.open = false;
+        });
+      });
+    });
+  }
+
   /* ─────────────────────────────────────────────────────────
      RENDER PRINCIPAL
   ───────────────────────────────────────────────────────── */
@@ -2620,6 +2728,8 @@
 
       ${buildMoreInfoSection({ cta, angle, publicAngle, formulation, conversation, conversationLabel, dgMessage, processSteps, faq, readingLabel, organisationName })}
     `;
+
+    initAlternativeAccordions(root);
   }
 
   render(Core.getDealBundle());
