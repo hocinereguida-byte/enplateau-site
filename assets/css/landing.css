@@ -4966,3 +4966,154 @@ body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-rea
 body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab strong {
   color: #111 !important;
 }
+
+/* ─────────────────────────────────────────────────────────
+   LOT AJUSTEMENTS 20260516 — conversation, hero, cadre, gains
+────────────────────────────────────────────────────────── */
+
+/* Hero : label intervenant et média */
+body.landing-page .landing-hero-person-card span {
+  font-size: .64rem !important;
+  letter-spacing: .17em !important;
+}
+
+body.landing-page .landing-hero-media-caption--production strong {
+  display: block !important;
+  margin-bottom: 8px !important;
+}
+
+/* Conversation : bandeau qui rattache les 4 lectures à une même conversation */
+body.landing-page .landing-bento-section--tabs .lpb-conversation-band {
+  margin: 34px 0 0 !important;
+  padding: 24px 28px !important;
+  border: 1px solid rgba(17,17,17,.14) !important;
+  border-bottom: 0 !important;
+  background: rgba(246,241,233,.68) !important;
+  text-align: center !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-conversation-band span {
+  display: block !important;
+  margin-bottom: 8px !important;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
+  font-size: .66rem !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+  color: rgba(17,17,17,.48) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-conversation-band strong {
+  display: block !important;
+  max-width: 860px !important;
+  margin: 0 auto !important;
+  font-family: var(--font-display, "Playfair Display", serif) !important;
+  font-size: clamp(1.45rem, 2.3vw, 2.2rem) !important;
+  line-height: 1.15 !important;
+  font-weight: 600 !important;
+  color: #111 !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-tabs {
+  margin-top: 0 !important;
+}
+
+/* Onglets : texte lisible quand l’onglet principal n’est plus sélectionné */
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab {
+  color: #f4efe8 !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab:not(:hover) strong {
+  color: #f4efe8 !important;
+}
+
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary strong,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary em,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary small,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary i {
+  color: rgba(244,239,232,.82) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary strong {
+  color: #f4efe8 !important;
+}
+
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab {
+  background: #f6f1e9 !important;
+  color: #111 !important;
+  border-bottom-color: #f6f1e9 !important;
+}
+
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab strong,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab strong,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab strong,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab strong {
+  color: #111 !important;
+}
+
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab span,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab span,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab span,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab span,
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab em,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab em,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab em,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab em,
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab small,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab small,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab small,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab small,
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab i,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab i,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab i,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab i {
+  color: rgba(17,17,17,.68) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-tab-panels {
+  margin-top: -1px !important;
+  border-top-color: rgba(17,17,17,.16) !important;
+}
+
+/* Cadre : hiérarchie sous-titre / items */
+body.landing-page #cadre-confiance .trust-key__summary {
+  font-size: .96rem !important;
+  line-height: 1.45 !important;
+  color: rgba(255,250,240,.76) !important;
+}
+
+body.landing-page #cadre-confiance .trust-key li {
+  font-size: .82rem !important;
+  line-height: 1.36 !important;
+  color: rgba(255,250,240,.64) !important;
+}
+
+/* Portée de la position : alignement optique des cartes */
+body.landing-page #valeur-position .landing-grid--value .landing-value-card {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .landing-value-card h3 {
+  min-height: 3.4em !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .landing-value-card > p {
+  min-height: 5.8em !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .value-chip-list {
+  margin-top: 18px !important;
+  min-height: 32px !important;
+}
+
+@media (max-width: 780px) {
+  body.landing-page #valeur-position .landing-grid--value .landing-value-card h3,
+  body.landing-page #valeur-position .landing-grid--value .landing-value-card > p,
+  body.landing-page #valeur-position .landing-grid--value .value-chip-list {
+    min-height: 0 !important;
+  }
+}
