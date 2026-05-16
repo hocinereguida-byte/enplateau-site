@@ -1,6 +1,6 @@
 /*
   En Plateau — render-landing.js
-  BUILD — 20260516-LOT-CORRECTIONS-POST-RETOURS
+  BUILD — 20260516-PISTES-COMPLEMENTAIRES
 
   Objet : remplace la section post-hero "Conversation composée" par une section Bento
   "Votre place dans la conversation".
@@ -19,7 +19,7 @@
   "use strict";
 
   const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
-  console.info("En Plateau — render-landing bugfix cleanRole build 20260516-1455 loaded");
+  console.info("En Plateau — render-landing pistes complémentaires v2 build 20260516-1535 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -610,7 +610,7 @@
       </article>`;
   }
 
-  function buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles) {
+  function buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles, currentDeal) {
     const reading = readingAdjective(readingLabel);
     const title = `Votre lecture ${reading} prend sa valeur dans une conversation composée.`;
     const sentence = readingsSentence(readingLabel, complementaryAngles);
@@ -663,9 +663,167 @@
               ${items.map((item, index) => buildConversationPanel(item, index)).join("")}
             </div>
           </div>
+
+          ${buildAlternativeEditorialTracksBlock(currentDeal, angle, organisationName)}
         </div>
       </section>`;
   }
+
+
+  /* ─────────────────────────────────────────────────────────
+     PISTES ÉDITORIALES COMPLÉMENTAIRES — même intervenant
+     Principe : le deal affiché reste la position prioritaire.
+     Les autres deals du même intervenant sont présentés comme
+     pistes à évoquer si la première lecture n’est pas la bonne.
+  ───────────────────────────────────────────────────────── */
+  function allPersonalizedDeals() {
+    const records = DATA?.dealPersonalization?.recordsByDealId || {};
+    return Object.values(records).filter(Boolean);
+  }
+
+  function personIdentityKeyFromDeal(deal) {
+    const person = deal?.person || {};
+    const organisation = deal?.organisation || deal?.organization || {};
+    return txt(
+      person.id,
+      person.linkedin,
+      person.linkedinUrl,
+      person.linkedin_url,
+      person.email,
+      person.mail,
+      [person.fullName || person.name, organisation.name].filter(Boolean).join("|")
+    );
+  }
+
+  function dealRankValue(deal) {
+    const raw = txt(
+      deal?.rang,
+      deal?.rank,
+      deal?.priorityRank,
+      deal?.priority,
+      deal?.activation?.rang,
+      deal?.activation?.rank,
+      deal?.activation?.priorityRank,
+      deal?.crm?.rang,
+      deal?.crm?.rank,
+      deal?.["rang"],
+      deal?.["Rang"],
+      deal?.["Affaire - rang"],
+      deal?.["Affaire – rang"]
+    );
+    const n = parseInt(String(raw || "").replace(/[^0-9]/g, ""), 10);
+    return Number.isFinite(n) ? n : 999;
+  }
+
+  function getAlternativeDealsForPerson(currentDeal, limit = 3) {
+    const currentId = Core.getDealId(currentDeal);
+    const currentKey = norm(personIdentityKeyFromDeal(currentDeal));
+    if (!currentKey) return [];
+
+    return allPersonalizedDeals()
+      .filter(deal => {
+        if (!deal || Core.getDealId(deal) === currentId) return false;
+        if (Core.isExcludedDeal(deal)) return false;
+        return norm(personIdentityKeyFromDeal(deal)) === currentKey;
+      })
+      .map(deal => ({ deal, angle: Core.getAngleByCode(Core.getAngleCodeFromDeal(deal)) }))
+      .filter(item => item.angle)
+      .sort((a, b) => {
+        const ra = dealRankValue(a.deal);
+        const rb = dealRankValue(b.deal);
+        if (ra !== rb) return ra - rb;
+        return String(Core.getDealId(a.deal) || "").localeCompare(String(Core.getDealId(b.deal) || ""), "fr", { numeric: true });
+      })
+      .slice(0, limit);
+  }
+
+  function buildAltReadingCard(item, isPrimary, organisationName) {
+    const label = isPrimary ? "Votre piste" : "Lecture associée";
+    const orgs = isPrimary
+      ? [organisationName].filter(Boolean)
+      : organisationsForAngle(item.code, 3, organisationName);
+    return `
+      <article class="lpb-alt-reading ${isPrimary ? "lpb-alt-reading--primary" : ""}">
+        <span>${safe(label)}</span>
+        <strong>${safe(readingNoun(readingLabelForAngle(item)))}</strong>
+        <em>${safe(readingTags(readingLabelForAngle(item)).slice(0, 3).join(" · "))}</em>
+        <small>${orgs.length ? safe(orgs.map(normalizeDisplayName).join(" · ")) : "Organisations en qualification"}</small>
+        ${mediaLineForAngle(item) ? `<i>${safe(mediaLineForAngle(item))}</i>` : ""}
+      </article>`;
+  }
+
+  function buildAlternativeTrackDetail(altDeal, altAngle) {
+    const altOrg = Core.getOrganisation(altDeal);
+    const organisationName = normalizeDisplayName(txt(altOrg.name, "Votre organisation"));
+    const altConversation = getConversationLabel(Core.getConversation(altAngle), altDeal);
+    const altReading = displayReadingLabel(Core.getReadingByCode(altDeal?.editorialContext?.typeLecture || altAngle?.typeLecture), altAngle, altDeal, Core.getPerson(altDeal)?.role);
+    const publicAngle = altAngle.anglePublic || altAngle.formulationVariants?.anglePublic || {};
+    const formulation = Core.getFormulationLanding(altAngle) || {};
+    const title = angleTitle(altAngle, publicAngle, formulation);
+    const complementary = toArray(altAngle.complementaryCodes)
+      .map(code => Core.getAngleByCode(code))
+      .filter(other => other && norm(other.typeLecture) !== norm(altAngle.typeLecture))
+      .slice(0, 3);
+    const items = [altAngle, ...complementary].slice(0, 4);
+
+    return `
+      <div class="lpb-alt-detail">
+        <div class="lpb-alt-conversation-band">
+          <span>Conversation stratégique</span>
+          <strong>${safe(heroConversationTitle(altConversation, altAngle))}</strong>
+        </div>
+        <div class="lpb-alt-detail-head">
+          <span>${safe(readingPanelLabel(altReading))}</span>
+          <h4>${safe(shortText(title, 260))}</h4>
+          <p>Cette piste peut être évoquée si la position prioritaire ne correspond pas à la priorité éditoriale du moment.</p>
+        </div>
+        <div class="lpb-alt-reading-grid">
+          ${items.map((item, index) => buildAltReadingCard(item, index === 0, organisationName)).join("")}
+        </div>
+      </div>`;
+  }
+
+  function buildAlternativeEditorialTracksBlock(currentDeal, currentAngle, organisationName) {
+    const alternatives = getAlternativeDealsForPerson(currentDeal, 3)
+      .filter(item => Core.getAngleCodeFromDeal(item.deal) !== Core.getAngleCodeFromDeal(currentDeal));
+
+    if (!alternatives.length) return "";
+
+    return `
+      <div class="lpb-alternatives" id="pistes-complementaires">
+        <details class="lpb-alt-master">
+          <summary>
+            <span>Autres pistes éditoriales identifiées</span>
+            <strong>Si cette première lecture n’est pas la plus juste, d’autres angles peuvent être évoqués.</strong>
+          </summary>
+          <div class="lpb-alt-intro">
+            <p>La position présentée ci-dessus reste la proposition prioritaire. D’autres angles ont néanmoins été identifiés pour le même profil et peuvent servir de pistes de discussion si cette première lecture ne correspond pas à votre priorité du moment.</p>
+          </div>
+          <div class="lpb-alt-list">
+            ${alternatives.map(({ deal, angle }, index) => {
+              const altConversation = getConversationLabel(Core.getConversation(angle), deal);
+              const altReading = displayReadingLabel(Core.getReadingByCode(deal?.editorialContext?.typeLecture || angle?.typeLecture), angle, deal, Core.getPerson(deal)?.role);
+              const publicAngle = angle.anglePublic || angle.formulationVariants?.anglePublic || {};
+              const formulation = Core.getFormulationLanding(angle) || {};
+              const title = angleTitle(angle, publicAngle, formulation);
+              const why = shortText(txt(Core.getWhy(deal).position, angleDescription(angle, publicAngle, formulation)), 260);
+              return `
+                <details class="lpb-alt-item" ${index === 0 ? "open" : ""}>
+                  <summary>
+                    <span>Piste complémentaire</span>
+                    <strong>${safe(heroConversationTitle(altConversation, angle))}</strong>
+                    <em>${safe(readingPanelLabel(altReading))}</em>
+                    <p>${safe(shortText(title, 180))}</p>
+                  </summary>
+                  ${why ? `<p class="lpb-alt-why">${safe(why)}</p>` : ""}
+                  ${buildAlternativeTrackDetail(deal, angle)}
+                </details>`;
+            }).join("")}
+          </div>
+        </details>
+      </div>`;
+  }
+
 
   /* ─────────────────────────────────────────────────────────
      BRANCHEMENT DATA V67 — gainsParProfilV2 + faqV2
@@ -1419,7 +1577,7 @@
       energie:       `${org} peut éclairer les ressources, l’énergie et le carbone comme conditions de continuité industrielle.`,
       territoriale:  `${org} peut éclairer le rôle du territoire dans les trajectoires industrielles.`,
       technologique: `${org} peut éclairer le rôle des systèmes, des données et des interfaces dans la trajectoire industrielle.`,
-      strategique:   `${org} peut éclairer les arbitrages de direction qui changent une trajectoire industrielle.`,
+      strategique:   `${org} peut éclairer les arbitrages structurants qui font évoluer une trajectoire industrielle.`,
       default:       `${org} peut éclairer une lecture utile dans une conversation stratégique à plusieurs voix.`
     };
     return lines[key] || lines.default;
@@ -1777,24 +1935,30 @@
     const r = norm(readingLabel);
     const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "l’organisation";
     const reading = readingPhrase(readingLabel || "cette lecture");
+    const readingWithArticle = /^une\s+/i.test(reading) ? reading : `une ${reading}`;
     const source = cleanListSeparators(why.position || positionWhy || "");
     const questionMatch = source.match(/«\s*([^»]+?)\s*»/);
 
     if (r.includes("territ")) {
-      return `La contribution ne porterait pas sur un dossier ${org}. Elle viserait à éclairer, depuis une lecture territoriale, les conditions qui permettent à un outil industriel de continuer, d’évoluer ou de se réorienter.`;
+      return `La contribution ne porte pas sur un dossier ${org}. Elle éclaire, depuis une lecture territoriale, les conditions qui permettent à un outil industriel de continuer, d’évoluer ou de se réorienter.`;
     }
 
     if (questionMatch && questionMatch[1]) {
-      return `Cette position chercherait à éclairer, depuis ${reading}, la question « ${questionMatch[1]} ». Elle ne vise pas un dossier interne, mais un mécanisme public utile à la composition éditoriale.`;
+      return `Cette position donne un cadre précis à ${readingWithArticle} : éclairer la question « ${questionMatch[1]} ». Elle ne porte pas sur un dossier interne ; elle rend lisible un mécanisme utile à l’ensemble de la composition éditoriale.`;
     }
 
     if (source) {
-      return shortText(source
-        .replace(/^La position proposée consiste à éclairer,?\s*/i, "Cette position chercherait à éclairer ")
-        .replace(/^La position proposée consiste à/i, "Cette position chercherait à"), 420);
+      const cleaned = source
+        .replace(/^La position proposée consiste à éclairer,?\s*/i, "Cette position donne un cadre précis à la contribution : éclairer ")
+        .replace(/^La position proposée consiste à/i, "Cette position donne un cadre précis à")
+        .replace(/\bdepuis\s+lecture\b/gi, "depuis une lecture")
+        .replace(/\bdepuis\s+votre\s+lecture\b/gi, "depuis une lecture")
+        .replace(/\bchercherait\b/gi, "cherche")
+        .replace(/\bviserait\b/gi, "vise");
+      return shortText(cleaned, 420);
     }
 
-    return "La contribution ne porterait pas sur un cas interne. Elle viserait à rendre lisible un mécanisme utile à l’ensemble de la conversation.";
+    return "La contribution ne porte pas sur un cas interne. Elle rend lisible un mécanisme utile à l’ensemble de la conversation.";
   }
 
   function buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType, readingLabel) {
@@ -1932,7 +2096,7 @@
         summary: "Qui peut sécuriser",
         detail: [
           "Les équipes communication, juridiques, affaires publiques ou direction peuvent être associées.",
-          "La trame peut être relue avant l’entretien pour sécuriser le périmètre.",
+          "La trame média sera relue et validée avant l’entretien pour sécuriser le périmètre.",
           "Un échange peut avoir lieu avant montage afin de vérifier la justesse du propos.",
           "Des ajustements éditoriaux peuvent éviter une exposition involontaire, sans transformer l’entretien en contenu contrôlé."
         ]
@@ -2278,7 +2442,7 @@
 
       ${buildHeroMinimalSection(angle, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, cta)}
 
-      ${buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles)}
+      ${buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles, deal)}
 
       ${buildTrustKeysSection(cta, organisationName, readingLabel)}
 
