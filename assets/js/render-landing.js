@@ -156,6 +156,26 @@
       }
     }
 
+    // Sécurité supplémentaire : certains postes CRM contiennent une entité
+    // après une virgule, par exemple "Directeur Industriel & Supply Chain, Safran Aircraft Engines".
+    // On retire ces segments lorsqu'ils ressemblent à une organisation ou reprennent
+    // une partie du nom de l'organisation, afin d'éviter le doublon avec la ligne entreprise.
+    const roleKeywords = /(directeur|directrice|responsable|chief|head|vp|vice|président|president|partner|associé|associe|manager|lead|officer|conseil|consultant|expert|ingénieur|ingenieur|industrial|supply|finance|juridique|rh|operations|opérations|marketing|communication|strategy|stratégie)/i;
+    const companyMarkers = /(sa|sas|sasu|groupe|group|holding|industries|systems|systèmes|engine|engines|aircraft|partners|consulting|conseil|cabinet|france|international|technologies|technology|aerospace|engineering|energy|énergie)$/i;
+    if (cleaned.includes(",")) {
+      const parts = cleaned.split(/\s*,\s*/).filter(Boolean);
+      const filtered = parts.filter((part, index) => {
+        if (index === 0) return true;
+        const lower = part.toLowerCase();
+        const repeatsOrg = org && norm(part).includes(norm(org));
+        const orgTokenHit = orgTokens?.some(token => lower.includes(token));
+        const looksLikeCompany = companyMarkers.test(part.trim()) || /\b(engine|engines|aircraft|group|groupe|partners|engineering|systems|technologies)\b/i.test(part);
+        const looksLikeRole = roleKeywords.test(part);
+        return looksLikeRole && !repeatsOrg && !orgTokenHit && !looksLikeCompany;
+      });
+      cleaned = filtered.join(", ");
+    }
+
     return cleaned.replace(/\s*,\s*$/, "").trim();
   }
 
@@ -630,6 +650,11 @@
             <h2>${safe(title)}</h2>
             <p>Chaque intervenant participe séparément. La valeur naît ensuite de la mise en regard&nbsp;: ${safe(sentence)} éclairent le même moment de transformation industrielle.</p>
             <p class="lpb-subnote">Il ne s’agit pas d’une table ronde ni d’un débat contradictoire. Chaque contribution est préparée individuellement, puis articulée aux autres lectures.</p>
+          </div>
+
+          <div class="lpb-conversation-band" aria-label="Conversation stratégique">
+            <span>Conversation stratégique</span>
+            <strong>${safe(soften(heroConversationTitle(conversationLabel, angle)))}</strong>
           </div>
 
           <div class="lpb-tabs" aria-label="Les quatre lectures de la conversation">
@@ -1321,7 +1346,7 @@
     const org  = organisationName && organisationName !== "Votre organisation" ? organisationName : "Organisation pressentie";
     return `
       <article class="landing-hero-person-card">
-        <span>Intervenant</span>
+        <span>Intervenant(e) pressenti(e)</span>
         <strong>${safe(name)}</strong>
         <em>${safe(role)}</em>
         <em>${safe(org)}</em>
@@ -1346,11 +1371,13 @@
 
   function buildHeroMediaCaption(angle) {
     const journaliste = normalizeDisplayName(txt(angle?.journaliste, ""));
-    if (!journaliste) return "";
+    const media = normalizeDisplayName(txt(angle?.media, ""));
+    const identity = [journaliste, media].filter(Boolean).join(" · ");
+    if (!identity) return "";
 
     return `
       <div class="landing-hero-media-caption landing-hero-media-caption--production">
-        <strong>${safe(journaliste)}</strong>
+        <strong>${safe(identity)}</strong>
         <span>Formats : entretien filmé + article associé</span>
         <span>Tournage : de juin à décembre 2026</span>
         <span>Diffusion : à partir de septembre 2026 · replay permanent</span>
@@ -1488,8 +1515,8 @@
               <div class="landing-hero-metrics landing-hero-metrics--three" aria-label="Repères clés de la proposition éditoriale">
                 ${buildHeroPersonCard(personName, personRole, organisationName)}
                 ${buildHeroMetricCard("Lecture proposée", readingShort, buildHeroReadingLine(readingLabel))}
-                ${buildHeroMetricCard("Échange éditorial", "15 minutes", "Vérifier l’angle, le périmètre de parole et l’intérêt de poursuivre.", "landing-hero-metric--accent")}
                 ${mediaCaption}
+                ${buildHeroMetricCard("Échange éditorial", "15 minutes", "Vérifier l’angle, le périmètre de parole et l’intérêt de poursuivre.", "landing-hero-metric--accent")}
               </div>
             </aside>
 
@@ -1697,16 +1724,20 @@
     const hasRealOrg = organisationName && organisationName !== "Votre organisation";
     const r = norm(readingLabel);
     const source = norm(why.organisation || "");
+    const org = hasRealOrg ? organisationName : "L’organisation pressentie";
 
     if (hasRealOrg && (r.includes("territ") || source.includes("foncier") || source.includes("friche"))) {
-      return `${organisationName} intervient précisément là où les trajectoires industrielles dépassent les murs de l’entreprise : dépollution, recyclage foncier, reconversion de friches et réinscription de sites dans un territoire.`;
+      return `${org} intervient là où les trajectoires industrielles dépassent les murs de l’entreprise : foncier, friches, infrastructures, ancrage local, acteurs publics et conditions territoriales de décision. Cette expérience peut éclairer le rôle du territoire dans la continuité, l’évolution ou la réorientation d’un outil industriel.`;
+    }
+
+    const scope = readingObservationScope(readingLabel);
+    if (hasRealOrg) {
+      return `${org} offre un point d’observation utile sur l’écosystème industriel dans lequel se jouent les trajectoires. Ses activités et ses responsabilités l’exposent aux transformations en cours, aux acteurs concernés, aux arbitrages à tenir, aux défis de mise en œuvre et aux effets d’échelle que cette conversation cherche à rendre lisibles.`;
     }
 
     if (why.organisation) return shortText(editorializeWhyOrganisation(why.organisation, organisationName, readingLabel), 460);
 
-    return hasRealOrg
-      ? `${organisationName} a été identifié pour la manière dont son expérience peut éclairer une question que de nombreux acteurs rencontrent sans toujours pouvoir la formuler.`
-      : "L’organisation identifiée apporte un point d’observation utile sur les conditions réelles d’une trajectoire industrielle.";
+    return `L’organisation identifiée apporte un point d’observation utile sur ${scope}, sans réduire l’analyse à un cas interne.`;
   }
 
   function readingObservationScope(readingLabel) {
@@ -1727,11 +1758,12 @@
   function whyPersonText(why, personName, personRole, readingLabel, organisationName = "") {
     const hasRealName = personName && personName !== "Intervenant pressenti";
     const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "son organisation";
-    const rolePart = personRole ? `, ${personRole},` : "";
+    const roleClean = personRole ? cleanRole(personRole, organisationName) : "";
+    const rolePart = roleClean ? `, ${roleClean},` : "";
     const scope = readingObservationScope(readingLabel);
 
     if (hasRealName) {
-      return `Au regard de sa position chez ${org}, ${personName}${rolePart} devrait pouvoir apporter une lecture pertinente du sujet : ${scope}. L’enjeu n’est pas de commenter un cas interne, mais d’éclairer un mécanisme plus large, depuis l’écosystème industriel dans lequel cette expérience s’inscrit.`;
+      return `Au regard de sa position chez ${org}, ${personName}${rolePart} devrait pouvoir apporter une lecture pertinente du sujet. Son expérience devrait permettre de relier les transformations en cours, les acteurs concernés, les arbitrages, les défis, les trajectoires possibles et les effets d’échelle. L’enjeu n’est pas de commenter un cas propre à ${org}, mais d’éclairer ${scope} depuis l’écosystème industriel dans lequel cette expérience s’inscrit.`;
     }
 
     if (why.person) {
@@ -1937,7 +1969,7 @@
           <div class="landing-head landing-head--keys">
             <p class="landing-kicker">Cadre de confiance</p>
             <h2>Une prise de parole visible, préparée et maîtrisée.</h2>
-            <p>L’échange permet de cadrer l’angle, les limites de parole, la préparation média, les validations utiles et le niveau d’exposition avant toute production.</p>
+            <p>Le cadre de préparation précise ce qui reste hors champ, ce qui sera travaillé, les validations utiles, la confidentialité et les conditions d’engagement avant toute production.</p>
           </div>
 
           <div class="trust-keys-grid trust-keys-grid--six" aria-label="Les clés de sécurisation éditoriale de la contribution En Plateau">
