@@ -1,6 +1,6 @@
 /*
   En Plateau — render-landing.js
-  BUILD — 20260516-LOT-CORRECTIONS-FIN-JOURNEE
+  BUILD — 20260516-LOT-CORRECTIONS-POST-RETOURS
 
   Objet : remplace la section post-hero "Conversation composée" par une section Bento
   "Votre place dans la conversation".
@@ -19,7 +19,7 @@
   "use strict";
 
   const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
-  console.info("En Plateau — render-landing lot corrections fin journee build 20260516-0415 loaded");
+  console.info("En Plateau — render-landing lot corrections post-retours build 20260516-1325 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -84,20 +84,49 @@
       .trim();
   }
 
-  function editorializeWhyOrganisation(value, organisationName) {
+  function humanizeCommaList(value) {
+    const parts = cleanListSeparators(value).split(/\s*,\s*/).map(x => x.trim()).filter(Boolean);
+    if (parts.length <= 1) return parts[0] || "";
+    if (parts.length === 2) return parts.join(" et ");
+    return parts.slice(0, -1).join(", ") + " et " + parts[parts.length - 1];
+  }
+
+  function extractWhyDomains(value) {
+    const match = String(value || "").match(/ses métiers\s*\(([^)]+)\)/i);
+    if (!match || !match[1]) return "";
+    return cleanListSeparators(match[1])
+      .replace(/,\s*\)/g, "")
+      .replace(/,\s*$/g, "")
+      .trim();
+  }
+
+  function extractWhyScale(value) {
+    const match = String(value || "").match(/périmètre[^()]*\(([^)]+)\)/i);
+    if (!match || !match[1]) return "";
+    return humanizeCommaList(match[1]).toLowerCase();
+  }
+
+  function editorializeWhyOrganisation(value, organisationName, readingLabel = "") {
     let v = cleanListSeparators(soften(value || ""));
     const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "L’organisation";
     if (!v) return "";
 
-    const domainsMatch = v.match(/ses métiers\s*\(([^)]+)\)/i);
-    const cabinetPattern = /\best\s+pertinent(?:e)?\s+comme\s+cabinet(?:\s+de\s+conseil)?\s+parce\s+que\b/i;
+    const domains = extractWhyDomains(v);
+    const scale = extractWhyScale(v);
+    const isCabinet = /\best\s+pertinent(?:e)?\s+comme\s+cabinet(?:\s+de\s+conseil)?\b/i.test(v);
+    const isGenericPertinence = /\best\s+pertinent(?:e)?\s+comme\b/i.test(v);
 
-    if (cabinetPattern.test(v)) {
-      if (domainsMatch && domainsMatch[1]) {
-        const domains = cleanListSeparators(domainsMatch[1]).replace(/^./, c => c.toLowerCase());
-        const multi = /multi[-\s]?échelles?|comparer les situations|comparer plusieurs/i.test(v);
-        return `${org} dispose d’un point d’observation utile : ses interventions en ${domains} lui permettent de comparer plusieurs trajectoires industrielles sans réduire l’analyse à un seul cas.${multi ? " Son échelle d’intervention renforce cette capacité de comparaison." : ""}`;
+    if (domains) {
+      const domainsText = humanizeCommaList(domains).replace(/^./, c => c.toLowerCase());
+      if (isCabinet) {
+        return `${org} dispose d’un point d’observation utile : ses interventions en ${domainsText} lui permettent de comparer plusieurs trajectoires industrielles sans réduire l’analyse à un seul cas.${scale ? ` Son échelle d’intervention ${scale} renforce cette capacité de comparaison.` : ""}`;
       }
+      if (isGenericPertinence) {
+        return `${org} offre un point d’observation utile sur l’écosystème industriel : ses activités en ${domainsText} l’exposent aux transformations en cours, aux acteurs concernés, aux arbitrages de trajectoire et aux effets d’échelle que cette conversation cherche à rendre lisibles.${scale ? ` Son périmètre ${scale} permet de relier cette lecture à plusieurs niveaux de décision.` : ""}`;
+      }
+    }
+
+    if (isCabinet) {
       v = v.replace(/^.*?\best\s+pertinent(?:e)?\s+comme\s+cabinet(?:\s+de\s+conseil)?\s+parce\s+que\s*/i, `${org} dispose d’un point d’observation utile : `);
     }
 
@@ -105,15 +134,29 @@
   }
 
   function cleanRole(role, organisationName) {
-    let cleaned = String(role || "").trim();
-    const org = String(organisationName || "").trim();
+    let cleaned = String(role || "").replace(/\s+/g, " ").trim();
+    const org = String(organisationName || "").replace(/\s+/g, " ").trim();
     if (!cleaned) return "";
+
     if (org) {
+      const escapedOrg = org.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       cleaned = cleaned
-        .replace(new RegExp("\\s*[—–-]\\s*" + org.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\s*$", "i"), "")
-        .replace(new RegExp("\\s+chez\\s+" + org.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\s*$", "i"), "");
+        .replace(new RegExp("\\s*[—–-]\\s*" + escapedOrg + "\\s*$", "i"), "")
+        .replace(new RegExp("\\s+chez\\s+" + escapedOrg + "\\s*$", "i"), "");
+
+      const orgTokens = org.toLowerCase().split(/\s+/).filter(t => t.length > 2);
+      const segments = cleaned.split(/\s*,\s*/).filter(Boolean);
+      if (segments.length > 1 && orgTokens.length) {
+        const kept = segments.filter((segment, index) => {
+          if (index === 0) return true;
+          const s = segment.toLowerCase();
+          return !orgTokens.some(token => s.includes(token));
+        });
+        cleaned = kept.join(", ");
+      }
     }
-    return cleaned.trim();
+
+    return cleaned.replace(/\s*,\s*$/, "").trim();
   }
 
   function stripConversationCode(value) {
@@ -507,7 +550,7 @@
   function buildConversationTab(item, index, activeIndex) {
     const checked = index === activeIndex ? " checked" : "";
     const isPrimary = item.primary;
-    const orgs = item.orgs.slice(0, 3);
+    const orgs = item.orgs.slice(0, 3).map(normalizeDisplayName);
     return `
       <input class="lpb-tab-input" type="radio" name="lpb-reading-tabs" id="lpb-reading-${index}"${checked}>
       <label class="lpb-reading-tab ${isPrimary ? "lpb-reading-tab--primary" : ""}" for="lpb-reading-${index}">
@@ -520,7 +563,7 @@
   }
 
   function buildConversationPanel(item, index) {
-    const orgs = item.orgs.slice(0, 3);
+    const orgs = item.orgs.slice(0, 3).map(normalizeDisplayName);
     const panelLabel = readingPanelLabel(item.readingLabel);
     const title = txt(item.title, item.primary ? primaryReadingValue(item.readingLabel, item.text) : readingContributionLine(item.readingLabel, item.text));
     const description = item.primary
@@ -580,7 +623,7 @@
     const items = [primaryItem, ...otherItems].slice(0, 4);
 
     return `
-      <section class="landing-bento-section landing-bento-section--tabs" id="mise-en-regard" data-bento-build="20260515-reprise-globale">
+      <section class="landing-bento-section landing-bento-section--tabs" id="mise-en-regard" data-bento-build="20260516-retours-hero-conversation-gains">
         <div class="landing-container lpb-container">
           <div class="lpb-head">
             <p class="lpb-kicker">Mise en regard éditoriale</p>
@@ -1009,7 +1052,12 @@
   }
 
   function buildValueCard(item) {
-    const chips = toArray(item?.chips).filter(Boolean).slice(0, 4);
+    const fallbackChips = norm(item?.label).includes("vous")
+      ? ["Trace", "Réutilisation", "Crédibilité"]
+      : norm(item?.label).includes("fonction") || norm(item?.label).includes("doctrine") || norm(item?.label).includes("expertise")
+        ? ["Point d’observation", "Arbitrage", "Lecture située"]
+        : ["Reconnaissance", "Crédibilité", "Conversation"];
+    const chips = (toArray(item?.chips).filter(Boolean).length ? toArray(item?.chips).filter(Boolean) : fallbackChips).slice(0, 4);
     const details = toArray(item?.details).filter(d => d?.text).slice(0, 4);
 
     return `
@@ -1436,13 +1484,12 @@
 
             <aside class="landing-hero-bento-side">
               ${buildHeroVisual(angle)}
-              ${mediaCaption}
 
               <div class="landing-hero-metrics landing-hero-metrics--three" aria-label="Repères clés de la proposition éditoriale">
-                ${buildHeroMetricCard("Lecture proposée", readingShort, buildHeroReadingLine(readingLabel))}
                 ${buildHeroPersonCard(personName, personRole, organisationName)}
-                ${buildHeroMetricCard("Ce que cette position éclaire", buildHeroAngleKeywords(readingLabel), buildHeroAngleLine(angle, readingLabel))}
+                ${buildHeroMetricCard("Lecture proposée", readingShort, buildHeroReadingLine(readingLabel))}
                 ${buildHeroMetricCard("Échange éditorial", "15 minutes", "Vérifier l’angle, le périmètre de parole et l’intérêt de poursuivre.", "landing-hero-metric--accent")}
+                ${mediaCaption}
               </div>
             </aside>
 
@@ -1655,47 +1702,66 @@
       return `${organisationName} intervient précisément là où les trajectoires industrielles dépassent les murs de l’entreprise : dépollution, recyclage foncier, reconversion de friches et réinscription de sites dans un territoire.`;
     }
 
-    if (why.organisation) return shortText(editorializeWhyOrganisation(why.organisation, organisationName), 360);
+    if (why.organisation) return shortText(editorializeWhyOrganisation(why.organisation, organisationName, readingLabel), 460);
 
     return hasRealOrg
       ? `${organisationName} a été identifié pour la manière dont son expérience peut éclairer une question que de nombreux acteurs rencontrent sans toujours pouvoir la formuler.`
       : "L’organisation identifiée apporte un point d’observation utile sur les conditions réelles d’une trajectoire industrielle.";
   }
 
-  function whyPersonText(why, personName, personRole, readingLabel) {
+  function readingObservationScope(readingLabel) {
+    const key = readingKeyForHero(readingLabel);
+    const scopes = {
+      finance: "les conditions économiques, les choix d’investissement, les marges de manœuvre et les effets d’échelle qui rendent une trajectoire industrielle tenable",
+      juridique: "les cadres juridiques, les responsabilités, les risques et les arbitrages qui sécurisent une trajectoire industrielle",
+      operationnelle: "les flux, la qualité, les priorités, les interfaces métiers et les conditions d’exécution qui rendent une trajectoire réellement pilotable",
+      rh: "les métiers, les compétences, les collectifs, les rythmes d’adaptation et les conditions humaines de la transformation industrielle",
+      energie: "les ressources, l’énergie, les matières, le carbone et les conditions de continuité qui pèsent sur les trajectoires industrielles",
+      territoriale: "le foncier, les infrastructures, l’ancrage local, les acteurs publics et les conditions territoriales qui rendent une trajectoire possible ou plus difficile",
+      technologique: "les systèmes, les données, les interfaces et les architectures techniques qui conditionnent la continuité et la lisibilité d’une trajectoire industrielle",
+      strategique: "les transformations en cours, les acteurs concernés, les arbitrages de trajectoire, les défis à arbitrer et les effets d’échelle qui structurent l’écosystème industriel"
+    };
+    return scopes[key] || "les transformations en cours, les acteurs concernés, les arbitrages, les défis, la vision et l’échelle auxquels cette conversation s’intéresse";
+  }
+
+  function whyPersonText(why, personName, personRole, readingLabel, organisationName = "") {
     const hasRealName = personName && personName !== "Intervenant pressenti";
-    const role = personRole ? `, ${personRole},` : "";
-    const r = norm(readingLabel);
+    const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "son organisation";
+    const rolePart = personRole ? `, ${personRole},` : "";
+    const scope = readingObservationScope(readingLabel);
 
-    if (hasRealName && r.includes("territ")) {
-      return `${personName}${role} peut porter une lecture située : comment les décisions industrielles rencontrent les conditions foncières, infrastructurelles et territoriales qui les rendent possibles, ou plus difficiles.`;
+    if (hasRealName) {
+      return `Au regard de sa position chez ${org}, ${personName}${rolePart} devrait pouvoir apporter une lecture pertinente du sujet : ${scope}. L’enjeu n’est pas de commenter un cas interne, mais d’éclairer un mécanisme plus large, depuis l’écosystème industriel dans lequel cette expérience s’inscrit.`;
     }
 
-    if (hasRealName && personRole && why.person) {
-      const cleaned = sanitizePersonFragment(why.person)
-        .replace(/^vous permet de\s+/i, "")
-        .replace(/^Vous pouvez\s+/i, "")
-        .trim();
-      return cleanListSeparators(`${personName}${role} peut porter une lecture située : ${cleaned.charAt(0).toLowerCase() + cleaned.slice(1)}`);
+    if (why.person) {
+      return shortText(sanitizePersonFragment(why.person), 420);
     }
 
-    if (hasRealName && personRole) {
-      return `${personName}${role} dispose d’un point d’observation directement relié à la lecture proposée.`;
-    }
-
-    return why.person ? shortText(sanitizePersonFragment(why.person), 340) : "La fonction pressentie donne accès à une lecture située du sujet.";
+    return `La fonction pressentie devrait permettre d’éclairer ${scope}, sans réduire l’analyse à un cas interne.`;
   }
 
   function whyPositionText(why, organisationName, readingLabel, positionWhy) {
     const r = norm(readingLabel);
     const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "l’organisation";
+    const reading = readingPhrase(readingLabel || "cette lecture");
+    const source = cleanListSeparators(why.position || positionWhy || "");
+    const questionMatch = source.match(/«\s*([^»]+?)\s*»/);
 
     if (r.includes("territ")) {
       return `La contribution ne porterait pas sur un dossier ${org}. Elle viserait à éclairer, depuis une lecture territoriale, les conditions qui permettent à un outil industriel de continuer, d’évoluer ou de se réorienter.`;
     }
 
-    if (why.position) return shortText(cleanListSeparators(why.position), 360);
-    if (positionWhy) return shortText(positionWhy, 360);
+    if (questionMatch && questionMatch[1]) {
+      return `Cette position chercherait à éclairer, depuis ${reading}, la question « ${questionMatch[1]} ». Elle ne vise pas un dossier interne, mais un mécanisme public utile à la composition éditoriale.`;
+    }
+
+    if (source) {
+      return shortText(source
+        .replace(/^La position proposée consiste à éclairer,?\s*/i, "Cette position chercherait à éclairer ")
+        .replace(/^La position proposée consiste à/i, "Cette position chercherait à"), 420);
+    }
+
     return "La contribution ne porterait pas sur un cas interne. Elle viserait à rendre lisible un mécanisme utile à l’ensemble de la conversation.";
   }
 
@@ -1705,7 +1771,7 @@
     const positionTitle = whyPositionTitle(readingLabel, positionWhy);
 
     const orgFragment = whyOrganisationText(why, organisationName, readingLabel);
-    const personFragment = whyPersonText(why, personName, personRole, readingLabel);
+    const personFragment = whyPersonText(why, personName, personRole, readingLabel, organisationName);
     const positionFragment = whyPositionText(why, organisationName, readingLabel, positionWhy);
 
     return `
