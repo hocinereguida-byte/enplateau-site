@@ -5582,3 +5582,56 @@ body.landing-page .more-cycle-focus--section {
 body.landing-page .landing-more-faq-section .more-accordions {
   margin-top: 28px;
 }
+
+
+/* ─────────────────────────────────────────────
+   REPASSE 2 — Cadre progressif + tags persona
+   - 3 cartes visibles par défaut dans le cadre de confiance
+   - 3 cartes complémentaires révélées via un lien visible
+───────────────────────────────────────────── */
+
+body.landing-page #cadre-confiance .trust-keys-grid--primary,
+body.landing-page #cadre-confiance .trust-keys-grid--extra {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 28px !important;
+}
+
+body.landing-page #cadre-confiance .trust-extra-details {
+  margin-top: 28px;
+}
+
+body.landing-page #cadre-confiance .trust-extra-details > summary {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 22px;
+  border: 1px solid rgba(255,255,255,.28);
+  color: var(--landing-text);
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,.035);
+}
+
+body.landing-page #cadre-confiance .trust-extra-details > summary::-webkit-details-marker { display: none; }
+body.landing-page #cadre-confiance .trust-extra-close { display: none; }
+body.landing-page #cadre-confiance .trust-extra-details[open] .trust-extra-open { display: none; }
+body.landing-page #cadre-confiance .trust-extra-details[open] .trust-extra-close { display: inline; }
+
+body.landing-page #cadre-confiance .trust-extra-details[open] > summary {
+  margin-bottom: 28px;
+}
+
+@media (max-width: 980px) {
+  body.landing-page #cadre-confiance .trust-keys-grid--primary,
+  body.landing-page #cadre-confiance .trust-keys-grid--extra {
+    grid-template-columns: 1fr !important;
+  }
+}
