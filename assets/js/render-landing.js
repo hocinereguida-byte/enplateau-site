@@ -1,6 +1,6 @@
 /*
   En Plateau — render-landing.js
-  BUILD — 20260516-REPRISE-SECTIONS-CTA-V2
+  BUILD — 20260516-LOT-CORRECTIONS-FIN-JOURNEE
 
   Objet : remplace la section post-hero "Conversation composée" par une section Bento
   "Votre place dans la conversation".
@@ -19,7 +19,7 @@
   "use strict";
 
   const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
-  console.info("En Plateau — render-landing reprise sections CTA V2 build 20260516-0138 loaded");
+  console.info("En Plateau — render-landing lot corrections fin journee build 20260516-0415 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -71,6 +71,37 @@
       .join(" ")
       .replace(/\bReguida\b/g, "Reguida")
       .trim();
+  }
+
+
+  function cleanListSeparators(value) {
+    return String(value || "")
+      .replace(/\s*[\/]\s*/g, ", ")
+      .replace(/\s*;\s*/g, ", ")
+      .replace(/\s*,\s*,\s*/g, ", ")
+      .replace(/\s+et\s+,\s+/gi, " et ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function editorializeWhyOrganisation(value, organisationName) {
+    let v = cleanListSeparators(soften(value || ""));
+    const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "L’organisation";
+    if (!v) return "";
+
+    const domainsMatch = v.match(/ses métiers\s*\(([^)]+)\)/i);
+    const cabinetPattern = /\best\s+pertinent(?:e)?\s+comme\s+cabinet(?:\s+de\s+conseil)?\s+parce\s+que\b/i;
+
+    if (cabinetPattern.test(v)) {
+      if (domainsMatch && domainsMatch[1]) {
+        const domains = cleanListSeparators(domainsMatch[1]).replace(/^./, c => c.toLowerCase());
+        const multi = /multi[-\s]?échelles?|comparer les situations|comparer plusieurs/i.test(v);
+        return `${org} dispose d’un point d’observation utile : ses interventions en ${domains} lui permettent de comparer plusieurs trajectoires industrielles sans réduire l’analyse à un seul cas.${multi ? " Son échelle d’intervention renforce cette capacité de comparaison." : ""}`;
+      }
+      v = v.replace(/^.*?\best\s+pertinent(?:e)?\s+comme\s+cabinet(?:\s+de\s+conseil)?\s+parce\s+que\s*/i, `${org} dispose d’un point d’observation utile : `);
+    }
+
+    return v;
   }
 
   function cleanRole(role, organisationName) {
@@ -496,6 +527,7 @@
       ? `Cette ${panelLabel.toLowerCase().replace("lecture rh", "lecture RH")} constitue la position proposée à votre organisation dans la composition éditoriale.`
       : `Cette ${panelLabel.toLowerCase().replace("lecture rh", "lecture RH")} complète la composition éditoriale en apportant un autre point d’observation sur le même moment de transformation industrielle.`;
     const value = item.text || (item.primary ? primaryReadingValue(item.readingLabel, item.text) : readingContributionLine(item.readingLabel, item.text));
+    const orgLabel = item.primary || orgs.length === 1 ? "Organisation positionnée" : "Organisations positionnées";
 
     return `
       <article class="lpb-reading-panel lpb-reading-panel--${index} ${item.primary ? "lpb-reading-panel--primary" : ""}">
@@ -507,10 +539,10 @@
         </div>
         <div class="lpb-panel-aside">
           <div class="lpb-panel-block">
-            <span>Organisations positionnées</span>
+            <span>${safe(orgLabel)}</span>
             <div class="lpb-chip-list">${listInline(orgs, "Organisations en qualification")}</div>
           </div>
-          ${item.media ? `<div class="lpb-panel-block"><span>Journaliste / média</span><strong>${safe(item.media)}</strong></div>` : ""}
+          ${item.media ? `<div class="lpb-panel-block lpb-panel-block--media"><span>Journaliste / média</span><strong>${safe(item.media)}</strong>${productionDetailsLines()}</div>` : ""}
         </div>
       </article>`;
   }
@@ -1029,17 +1061,9 @@
 
   function getCTA(deal, reading, landingPage) {
     const pageCTA = landingPage?.cta || {};
-    const source  = txt(reading?.calSource, "lp-industrie-contribution");
     return {
-      href: txt(
-        deal?.ctaUrl, deal?.cta_url, deal?.activation?.ctaUrl, deal?.activation?.cta_url,
-        deal?.landingPageUrl, deal?.landing_page_url,
-        `/demander-un-echange-editorial.html?source=${encodeURIComponent(source)}`
-      ),
-      label: txt(
-        deal?.ctaLabel, deal?.cta_label, deal?.activation?.ctaLabel, deal?.activation?.cta_label,
-        "Programmer un échange éditorial - 15 min"
-      ),
+      href: "https://cal.com/en-plateau/echange-editorial-15-min",
+      label: "Programmer un échange éditorial - 15 min",
       title:    "Qualifier cette lecture en échange éditorial",
       text:     txt(pageCTA.text, "15 minutes, sans engagement, pour qualifier l'angle, le périmètre de parole et les conditions de préparation."),
       deadline: txt(pageCTA.deadline, ""),
@@ -1124,7 +1148,7 @@
      BANDEAU — court, 1 ligne, "Page privée"
   ───────────────────────────────────────────────────────── */
   function buildTopMeta(conversationLabel) {
-    return `<span>Saison inaugurale · Cycle Industrie</span><span>Composition jusqu’au 30 juin</span>`;
+    return `<span>Saison inaugurale · Cycle Industrie</span><span>Positions en cours de composition jusqu’au 30 juin</span>`;
   }
 
   function sentenceCaseFirst(value) {
@@ -1242,6 +1266,20 @@
       </article>`;
   }
 
+
+  function buildHeroPersonCard(personName, personRole, organisationName) {
+    const name = personName && personName !== "Intervenant pressenti" ? personName : "Intervenant pressenti";
+    const role = personRole || "Fonction à préciser";
+    const org  = organisationName && organisationName !== "Votre organisation" ? organisationName : "Organisation pressentie";
+    return `
+      <article class="landing-hero-person-card">
+        <span>Intervenant</span>
+        <strong>${safe(name)}</strong>
+        <em>${safe(role)}</em>
+        <em>${safe(org)}</em>
+      </article>`;
+  }
+
   function buildHeroVisual(angle) {
     const journaliste = normalizeDisplayName(txt(angle?.journaliste, ""));
     const media       = txt(angle?.media, "");
@@ -1269,6 +1307,13 @@
         <span>Tournage : de juin à décembre 2026</span>
         <span>Diffusion : à partir de septembre 2026 · replay permanent</span>
       </div>`;
+  }
+
+  function productionDetailsLines() {
+    return `
+      <em>Formats : entretien filmé + article associé</em>
+      <em>Tournage : de juin à décembre 2026</em>
+      <em>Diffusion : à partir de septembre 2026 · replay permanent</em>`;
   }
 
   function readingKeyForHero(readingLabel) {
@@ -1377,13 +1422,13 @@
           <div class="landing-hero-bento-grid">
 
             <div class="landing-hero-bento-copy">
-              <p class="landing-hero-conversation landing-hero-conversation--kicker"><span>Conversation</span><strong>${safe(soften(conversationText))}</strong></p>
+              <p class="landing-hero-conversation landing-hero-conversation--kicker"><span>Conversation stratégique</span><strong>${safe(soften(conversationText))}</strong></p>
               <h1>${safe(buildHeroTitle(organisationName, readingLabel))}</h1>
               <p class="landing-hero-bento-lead">${safe(buildHeroLead(angle, readingLabel))}</p>
 
               <div class="landing-hero-bento-actions">
                 <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Programmer un échange éditorial - 15 min")}</a>
-                <a class="landing-btn landing-btn--ghost" href="#mise-en-regard">Voir les 4 lectures de la conversation</a>
+                <a class="landing-hero-secondary-link" href="#mise-en-regard">Voir les 4 lectures de la conversation</a>
               </div>
 
               <p class="landing-hero-bento-proof">Position en cours de composition · Sans engagement · Périmètre préparé</p>
@@ -1395,6 +1440,7 @@
 
               <div class="landing-hero-metrics landing-hero-metrics--three" aria-label="Repères clés de la proposition éditoriale">
                 ${buildHeroMetricCard("Lecture proposée", readingShort, buildHeroReadingLine(readingLabel))}
+                ${buildHeroPersonCard(personName, personRole, organisationName)}
                 ${buildHeroMetricCard("Ce que cette position éclaire", buildHeroAngleKeywords(readingLabel), buildHeroAngleLine(angle, readingLabel))}
                 ${buildHeroMetricCard("Échange éditorial", "15 minutes", "Vérifier l’angle, le périmètre de parole et l’intérêt de poursuivre.", "landing-hero-metric--accent")}
               </div>
@@ -1609,7 +1655,7 @@
       return `${organisationName} intervient précisément là où les trajectoires industrielles dépassent les murs de l’entreprise : dépollution, recyclage foncier, reconversion de friches et réinscription de sites dans un territoire.`;
     }
 
-    if (why.organisation) return shortText(why.organisation, 360);
+    if (why.organisation) return shortText(editorializeWhyOrganisation(why.organisation, organisationName), 360);
 
     return hasRealOrg
       ? `${organisationName} a été identifié pour la manière dont son expérience peut éclairer une question que de nombreux acteurs rencontrent sans toujours pouvoir la formuler.`
@@ -1630,7 +1676,7 @@
         .replace(/^vous permet de\s+/i, "")
         .replace(/^Vous pouvez\s+/i, "")
         .trim();
-      return `${personName}${role} peut porter une lecture située : ${cleaned.charAt(0).toLowerCase() + cleaned.slice(1)}`;
+      return cleanListSeparators(`${personName}${role} peut porter une lecture située : ${cleaned.charAt(0).toLowerCase() + cleaned.slice(1)}`);
     }
 
     if (hasRealName && personRole) {
@@ -1648,7 +1694,7 @@
       return `La contribution ne porterait pas sur un dossier ${org}. Elle viserait à éclairer, depuis une lecture territoriale, les conditions qui permettent à un outil industriel de continuer, d’évoluer ou de se réorienter.`;
     }
 
-    if (why.position) return shortText(why.position, 360);
+    if (why.position) return shortText(cleanListSeparators(why.position), 360);
     if (positionWhy) return shortText(positionWhy, 360);
     return "La contribution ne porterait pas sur un cas interne. Elle viserait à rendre lisible un mécanisme utile à l’ensemble de la conversation.";
   }
@@ -1763,8 +1809,8 @@
         visible: ["Angle limité", "Lecture de mécanisme", "Point de bascule", "Niveau d’exposition"],
         summary: "Ce qui est cadré",
         detail: [
-          `L’angle reste limité à ce que ${reading} doit réellement éclairer.`,
-          "Les tensions et points de bascule sont préparés avant l’entretien.",
+          `L’angle reste limité à ce que la ${reading} doit réellement éclairer.`,
+          "Toutes les dimensions du sujet sont préparées avant l’entretien.",
           "Les formulations sensibles sont travaillées pour rester publiquement tenables.",
           "Le niveau d’exposition est ajusté avec l’organisation."
         ]
@@ -1775,9 +1821,9 @@
         visible: ["Trame média", "Relances journaliste", "Pense-bête", "Production"],
         summary: "Ce qui est préparé",
         detail: [
-          "Une trame média sert de base à l’entretien et à la production.",
+          "La trame média sera utile avant l’entretien pour sécuriser le périmètre.",
           "Les questions sur les tensions, arbitrages et points de bascule sont anticipées.",
-          "Un pense-bête peut aider l’intervenant à garder le fil sans réciter une communication.",
+          "La trame média aidera l’intervenant à garder le fil sans réciter une communication.",
           "La coordination avec la production permet de préserver la cohérence éditoriale."
         ]
       },
@@ -1789,7 +1835,7 @@
         detail: [
           "Les équipes communication, juridiques, affaires publiques ou direction peuvent être associées.",
           "La trame peut être relue avant l’entretien pour sécuriser le périmètre.",
-          "Un échange peut avoir lieu après montage afin de vérifier la justesse du propos.",
+          "Un échange peut avoir lieu avant montage afin de vérifier la justesse du propos.",
           "Des ajustements éditoriaux peuvent éviter une exposition involontaire, sans transformer l’entretien en contenu contrôlé."
         ]
       },
@@ -1832,11 +1878,11 @@
             ${keys.map(key => `
               <article class="trust-key">
                 <span class="trust-key__num">${safe(key.num)}</span>
-                <h3>${key.title === "Hors champ" ? "<span>Hors</span><span>champ</span>" : safe(key.title)}</h3>
+                <h3>${safe(key.title)}</h3>
                 <p class="trust-key__summary">${safe(key.summary)}</p>
                 <ul>${key.visible.map(item => `<li>${safe(item)}</li>`).join("")}</ul>
                 <details class="trust-key__details">
-                  <summary>Voir le cadre</summary>
+                  <summary><span class="trust-key-open">Voir le cadre</span><span class="trust-key-close">Masquer le cadre</span></summary>
                   ${trustDetailList(key.detail)}
                 </details>
               </article>`).join("")}
