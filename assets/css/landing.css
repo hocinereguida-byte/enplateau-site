@@ -5539,3 +5539,46 @@ body.landing-page .landing-more-structured .more-accordions {
     padding: 24px;
   }
 }
+
+
+/* PATCH — corrections finales 16/05 */
+body.landing-page .qualification-cta-identity {
+  margin: 14px 0 8px !important;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .72rem !important;
+  line-height: 1.55 !important;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(246,241,233,.74) !important;
+}
+
+body.landing-page .value-details summary .value-details-open,
+body.landing-page .value-details summary .value-details-close,
+body.landing-page .trust-key__details summary .trust-key-open,
+body.landing-page .trust-key__details summary .trust-key-close {
+  white-space: normal;
+}
+
+body.landing-page .landing-more-concept-section,
+body.landing-page .landing-more-cycle-section,
+body.landing-page .landing-more-faq-section {
+  border-top: 1px solid rgba(17,17,17,.10);
+}
+
+body.landing-page .landing-more-concept-section {
+  padding-bottom: clamp(46px, 6vw, 72px);
+}
+
+body.landing-page .landing-more-cycle-section,
+body.landing-page .landing-more-faq-section {
+  padding-top: clamp(52px, 7vw, 82px);
+}
+
+body.landing-page .more-cycle-focus--section {
+  max-width: 920px;
+  margin: 30px auto 0;
+}
+
+body.landing-page .landing-more-faq-section .more-accordions {
+  margin-top: 28px;
+}
