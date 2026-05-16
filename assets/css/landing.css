@@ -4559,3 +4559,276 @@ body.landing-page .landing-hero--simplified .landing-hero-metric--accent span,
 body.landing-page .landing-hero--simplified .landing-hero-metric--accent em {
   color: #171717 !important;
 }
+
+
+/* =========================================================
+   Correctifs tabs mise en regard — 20260516-0335
+   Objectifs : navigation type onglets, onglet actif solidaire du panneau,
+   media aligné en bas, lecture de l'intervenant distinguée sans effet CRM.
+   ========================================================= */
+
+body.landing-page .landing-bento-section--tabs .lpb-tabs {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 0 14px !important;
+  align-items: stretch !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab {
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 224px !important;
+  margin: 0 !important;
+  padding: 24px 22px 22px !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-bottom-color: rgba(255,255,255,.12) !important;
+  background: #0c0c0c !important;
+  color: #f4efe8 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary {
+  animation: lpbPrimaryPulse 4.8s ease-in-out infinite !important;
+  border-color: rgba(236,231,223,.34) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary span {
+  font-size: .76rem !important;
+  font-weight: 700 !important;
+  letter-spacing: .15em !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab i {
+  margin-top: auto !important;
+  padding-top: 14px !important;
+  min-height: 42px !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-tab-panels {
+  grid-column: 1 / -1 !important;
+  margin-top: -1px !important;
+  border: 1px solid rgba(17,17,17,.16) !important;
+  background: #f6f1e9 !important;
+}
+
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab {
+  z-index: 3 !important;
+  background: #f6f1e9 !important;
+  color: #111 !important;
+  border-color: rgba(17,17,17,.16) !important;
+  border-bottom-color: #f6f1e9 !important;
+  outline: 0 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab span,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab span,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab span,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab span,
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab em,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab em,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab em,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab em,
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab small,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab small,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab small,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab small,
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab i,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab i,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab i,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab i {
+  color: rgba(17,17,17,.68) !important;
+  border-top-color: rgba(17,17,17,.16) !important;
+}
+
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab strong,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab strong,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab strong,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab strong {
+  color: #111 !important;
+}
+
+body.landing-page .lpb-panel-block--media strong {
+  display: block !important;
+  margin-bottom: 12px !important;
+}
+
+body.landing-page .lpb-panel-block--media em {
+  display: block !important;
+  margin-top: 6px !important;
+  font-style: normal !important;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
+  font-size: .68rem !important;
+  letter-spacing: .04em !important;
+  color: rgba(17,17,17,.58) !important;
+  line-height: 1.45 !important;
+}
+
+@keyframes lpbPrimaryPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(236,231,223,.0);
+    border-color: rgba(236,231,223,.28);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(236,231,223,.075);
+    border-color: rgba(236,231,223,.54);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  body.landing-page .landing-bento-section--tabs .lpb-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+
+  body.landing-page .landing-bento-section--tabs .lpb-tab-panels {
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 680px) {
+  body.landing-page .landing-bento-section--tabs .lpb-tabs {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* =========================================================
+   LOT CORRECTIONS FIN DE JOURNÉE — 20260516-0415
+   ========================================================= */
+
+body.landing-page .landing-top__meta {
+  max-width: min(560px, 48vw) !important;
+  font-size: .60rem !important;
+  letter-spacing: .12em !important;
+  line-height: 1.45 !important;
+}
+
+body.landing-page .landing-top__meta span {
+  white-space: normal !important;
+}
+
+body.landing-page .landing-hero-bento-proof,
+body.landing-page .qualification-cta-microcopy,
+body.landing-page #cadre-confiance .trust-keys-cta p,
+body.landing-page .trust-keys-cta p {
+  font-size: .60rem !important;
+  letter-spacing: .12em !important;
+  line-height: 1.55 !important;
+  text-transform: uppercase !important;
+}
+
+body.landing-page .landing-hero-bento-actions {
+  align-items: center !important;
+  gap: 18px !important;
+}
+
+body.landing-page .landing-hero-secondary-link {
+  display: inline-block !important;
+  color: rgba(246,241,233,.82) !important;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
+  font-size: .70rem !important;
+  line-height: 1.4 !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  text-decoration: underline !important;
+  text-underline-offset: 5px !important;
+  text-decoration-thickness: 1px !important;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+body.landing-page .landing-hero-secondary-link:hover {
+  color: #fffaf0 !important;
+}
+
+body.landing-page .landing-hero-person-card {
+  padding: 16px 17px !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  background: rgba(255,255,255,.045) !important;
+  color: #f4efe8 !important;
+}
+
+body.landing-page .landing-hero-person-card span {
+  display: block !important;
+  margin-bottom: 10px !important;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
+  font-size: .60rem !important;
+  letter-spacing: .14em !important;
+  line-height: 1.2 !important;
+  text-transform: uppercase !important;
+  color: rgba(246,241,233,.58) !important;
+}
+
+body.landing-page .landing-hero-person-card strong {
+  display: block !important;
+  margin-bottom: 8px !important;
+  font-family: var(--font-body, "IBM Plex Sans", sans-serif) !important;
+  font-size: .86rem !important;
+  line-height: 1.28 !important;
+  font-weight: 600 !important;
+  color: #fffaf0 !important;
+}
+
+body.landing-page .landing-hero-person-card em {
+  display: block !important;
+  font-style: normal !important;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
+  font-size: .62rem !important;
+  line-height: 1.42 !important;
+  letter-spacing: .04em !important;
+  color: rgba(246,241,233,.62) !important;
+}
+
+body.landing-page #cadre-confiance .trust-key h3 span {
+  display: inline !important;
+}
+
+body.landing-page #cadre-confiance .trust-key__summary,
+body.landing-page .trust-key__summary {
+  font-size: .86rem !important;
+  line-height: 1.45 !important;
+  color: rgba(255,250,240,.80) !important;
+}
+
+body.landing-page #cadre-confiance .trust-key__details .trust-key-close,
+body.landing-page .trust-key__details .trust-key-close {
+  display: none !important;
+}
+
+body.landing-page #cadre-confiance .trust-key__details[open] .trust-key-open,
+body.landing-page .trust-key__details[open] .trust-key-open {
+  display: none !important;
+}
+
+body.landing-page #cadre-confiance .trust-key__details[open] .trust-key-close,
+body.landing-page .trust-key__details[open] .trust-key-close {
+  display: inline !important;
+}
+
+body.landing-page .landing-why-narrative--positioned .landing-why-key p {
+  overflow-wrap: normal !important;
+}
+
+@media (max-width: 760px) {
+  body.landing-page .landing-hero-bento-actions {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+}
