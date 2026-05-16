@@ -544,6 +544,16 @@
     return listInline(rows, "Organisations en qualification");
   }
 
+
+  function primaryOrganisationDisplay(name) {
+    const clean = normalizeDisplayName(String(name || "").replace(/\s+/g, " ").trim());
+    if (!clean) return "";
+    // Certains champs CRM concatènent plusieurs organisations avec un slash.
+    // Dans la colonne "Votre lecture", on ne montre que l'organisation du deal affiché.
+    if (/\s+\/\s+/.test(clean)) return clean.split(/\s+\/\s+/)[0].trim();
+    return clean;
+  }
+
   function bentoDetail(title, body) {
     if (!body) return "";
     return `
@@ -620,7 +630,7 @@
       readingLabel,
       title: angleTitle(angle, publicAngle, formulation),
       text: angleDescription(angle, publicAngle, formulation),
-      orgs: [organisationName].filter(Boolean),
+      orgs: [primaryOrganisationDisplay(organisationName)].filter(Boolean),
       media: mediaLineForAngle(angle)
     };
 
@@ -740,7 +750,7 @@
   function buildAltReadingCard(item, isPrimary, organisationName) {
     const label = isPrimary ? "Votre lecture" : "Lecture associée";
     const orgs = isPrimary
-      ? [organisationName].filter(Boolean)
+      ? [primaryOrganisationDisplay(organisationName)].filter(Boolean)
       : organisationsForAngle(item.code, 3, organisationName);
     return `
       <article class="lpb-alt-reading ${isPrimary ? "lpb-alt-reading--primary" : ""}">
@@ -796,11 +806,11 @@
       <div class="lpb-alternatives" id="pistes-complementaires">
         <details class="lpb-alt-master">
           <summary>
-            <span>Autres pistes éditoriales pouvant également concerner ${safe(org)}</span>
+            <span>D’autres angles de ce cycle pourraient également correspondre à ${safe(org)}</span>
             <strong>La position présentée ci-dessus reste la proposition prioritaire.</strong>
           </summary>
           <div class="lpb-alt-intro">
-            <p>D’autres pistes sont encore en cours de composition et peuvent également se révéler pertinentes pour ${safe(org)}, selon la lecture que l’échange éditorial permettra de préciser.</p>
+            <p>D’autres angles sont encore en cours de composition. Ils pourront être évoqués lors de l’échange éditorial s’ils correspondent mieux à votre lecture, à votre fonction ou au niveau d’exposition souhaité.</p>
           </div>
           <div class="lpb-alt-list">
             ${alternatives.map(({ deal, angle }) => {
@@ -1249,7 +1259,7 @@
         ${chips.length ? `<div class="value-chip-list">${chips.map(chip => `<span>${safe(chip)}</span>`).join("")}</div>` : ""}
         ${details.length ? `
           <details class="value-details">
-            <summary><span class="value-details-open">Voir les effets possibles</span><span class="value-details-close">Masquer les effets possibles</span></summary>
+            <summary><span class="value-details-open">Ce que cela produit concrètement</span><span class="value-details-close">Masquer les effets concrets</span></summary>
             <ul>
               ${details.map(detail => `<li><strong>${safe(detail.label)}</strong><span>${safe(detail.text)}</span></li>`).join("")}
             </ul>
@@ -1267,6 +1277,7 @@
               <figure class="qualification-cta-photo">
                 <img src="/images/a-propos/hocine-reguida.jpg" alt="Hocine Reguida, En Plateau" loading="lazy">
               </figure>
+              <p class="qualification-cta-identity">Hocine Réguida · En Plateau · Conception et coordination éditoriale</p>
               <p>Une position éditoriale se vérifie dans un échange court. La suite reste une décision.</p>
             </aside>
 
@@ -1296,7 +1307,7 @@
       title:    "Qualifier cette lecture en échange éditorial",
       text:     txt(pageCTA.text, "15 minutes, sans engagement, pour qualifier l'angle, le périmètre de parole et les conditions de préparation."),
       deadline: txt(pageCTA.deadline, ""),
-      footnote: txt(pageCTA.footnote, "Page privée · Échange sans engagement")
+      footnote: txt(pageCTA.footnote, "Échange sans engagement")
     };
   }
 
@@ -1374,7 +1385,7 @@
   }
 
   /* ─────────────────────────────────────────────────────────
-     BANDEAU — court, 1 ligne, "Page privée"
+     BANDEAU — saison inaugurale et composition
   ───────────────────────────────────────────────────────── */
   function buildTopMeta(conversationLabel) {
     return `<span>Saison inaugurale · Cycle Industrie</span><span>Positions en cours de composition jusqu’au 30 juin</span>`;
@@ -1389,13 +1400,13 @@
   function canonicalConversationTitleFromAngle(angle, conversationLabel) {
     const code = String(angle?.code || angle?.codeAngle || angle?.id || "").toUpperCase();
     if (/C1/.test(code)) return "À partir de quand produire davantage oblige-t-il à arbitrer autrement ?";
-    if (/C2/.test(code)) return "Où se situent les dépendances qui deviennent des points de bascule ?";
+    if (/C2/.test(code)) return "Où se situent les dépendances qui deviennent des moments de décision ?";
     if (/C3/.test(code)) return "Jusqu’où un outil industriel peut-il évoluer sans se transformer en profondeur ?";
     if (/C4/.test(code)) return "Qu’est-ce qui fait qu’une trajectoire industrielle tient, ou doit être réarbitrée ?";
 
     const n = norm(conversationLabel);
     if (n.includes("produire davantage") || n.includes("arbitrer autrement")) return "À partir de quand produire davantage oblige-t-il à arbitrer autrement ?";
-    if (n.includes("dependances") || n.includes("points de bascule")) return "Où se situent les dépendances qui deviennent des points de bascule ?";
+    if (n.includes("dependances") || n.includes("moments de décision")) return "Où se situent les dépendances qui deviennent des moments de décision ?";
     if (n.includes("outil industriel") || n.includes("transformer en profondeur")) return "Jusqu’où un outil industriel peut-il évoluer sans se transformer en profondeur ?";
     if (n.includes("trajectoire industrielle tient") || n.includes("rearbitree")) return "Qu’est-ce qui fait qu’une trajectoire industrielle tient, ou doit être réarbitrée ?";
 
@@ -1911,22 +1922,35 @@
     return scopes[key] || "les transformations en cours, les acteurs concernés, les arbitrages, les défis, la vision et l’échelle auxquels cette conversation s’intéresse";
   }
 
-  function whyPersonText(why, personName, personRole, readingLabel, organisationName = "") {
+  function whyPersonText(why, personName, personRole, readingLabel, organisationName = "", actorType = "") {
     const hasRealName = personName && personName !== "Intervenant pressenti";
     const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "son organisation";
     const roleClean = personRole ? cleanRole(personRole, organisationName) : "";
     const rolePart = roleClean ? `, ${roleClean},` : "";
     const scope = readingObservationScope(readingLabel);
+    const persona = detectPersonaType(personRole, actorType || "organisation");
+
+    function openingByPersona() {
+      if (persona === "DG") return "est en mesure de porter une lecture d’ensemble du sujet";
+      if (persona === "DAF") return "peut éclairer les arbitrages économiques, les marges de manœuvre et les conditions de soutenabilité du sujet";
+      if (persona === "DRH") return "peut éclairer les effets du sujet sur les métiers, les compétences, les collectifs et les capacités de transformation";
+      if (persona === "DIR_JURIDIQUE") return "peut éclairer les conditions de sécurisation, de responsabilité et de lisibilité publique du sujet";
+      if (persona === "DIR_INDUSTRIEL") return "peut éclairer le sujet depuis une position directement exposée aux décisions industrielles, aux contraintes d’exécution et aux effets d’échelle";
+      if (persona === "conseil") return "peut formuler une lecture comparative du sujet à partir de plusieurs trajectoires observées";
+      if (persona === "avocat") return "peut formuler une lecture juridique du sujet sans la réduire à un dossier ou à une consultation";
+      if (persona === "ingenierie") return "peut éclairer le sujet depuis les conditions concrètes de faisabilité, d’infrastructures et de passage à l’échelle";
+      return "peut apporter une lecture pertinente du sujet";
+    }
 
     if (hasRealName) {
-      return `Au regard de sa position chez ${org}, ${personName}${rolePart} devrait pouvoir apporter une lecture pertinente du sujet. Son expérience devrait permettre de relier les transformations en cours, les acteurs concernés, les arbitrages, les défis, les trajectoires possibles et les effets d’échelle. L’enjeu n’est pas de commenter un cas propre à ${org}, mais d’éclairer ${scope} depuis l’écosystème industriel dans lequel cette expérience s’inscrit.`;
+      return `Au regard de sa position chez ${org}, ${personName}${rolePart} ${openingByPersona()}. Son expérience permet de relier les transformations en cours, les acteurs concernés, les arbitrages, les défis, les trajectoires possibles et les effets d’échelle. L’enjeu n’est pas de commenter un cas propre à ${org}, mais d’éclairer ${scope} depuis l’écosystème industriel dans lequel cette expérience s’inscrit.`;
     }
 
     if (why.person) {
       return shortText(sanitizePersonFragment(why.person), 420);
     }
 
-    return `La fonction pressentie devrait permettre d’éclairer ${scope}, sans réduire l’analyse à un cas interne.`;
+    return `La fonction pressentie peut éclairer ${scope}, sans réduire l’analyse à un cas interne.`;
   }
 
   function whyPositionText(why, organisationName, readingLabel, positionWhy) {
@@ -1965,7 +1989,7 @@
     const positionTitle = whyPositionTitle(readingLabel, positionWhy);
 
     const orgFragment = whyOrganisationText(why, organisationName, readingLabel);
-    const personFragment = whyPersonText(why, personName, personRole, readingLabel, organisationName);
+    const personFragment = whyPersonText(why, personName, personRole, readingLabel, organisationName, actorType);
     const positionFragment = whyPositionText(why, organisationName, readingLabel, positionWhy);
 
     return `
@@ -2066,7 +2090,7 @@
       {
         num: "02",
         title: "Périmètre éditorial",
-        visible: ["Angle limité", "Lecture de mécanisme", "Point de bascule", "Niveau d’exposition"],
+        visible: ["Angle limité", "Lecture de mécanisme", "Point de décision", "Niveau d’exposition"],
         summary: "Ce qui est cadré",
         detail: [
           `L’angle reste limité à ce que la ${reading} doit réellement éclairer.`,
@@ -2082,7 +2106,7 @@
         summary: "Ce qui est préparé",
         detail: [
           "La trame média sera utile avant l’entretien pour sécuriser le périmètre.",
-          "Les questions sur les tensions, arbitrages et points de bascule sont anticipées.",
+          "Les questions sur les tensions, arbitrages et moments de décision sont anticipées.",
           "La trame média aidera l’intervenant à garder le fil sans réciter une communication.",
           "La coordination avec la production permet de préserver la cohérence éditoriale."
         ]
@@ -2142,7 +2166,7 @@
                 <p class="trust-key__summary">${safe(key.summary)}</p>
                 <ul>${key.visible.map(item => `<li>${safe(item)}</li>`).join("")}</ul>
                 <details class="trust-key__details">
-                  <summary><span class="trust-key-open">Voir le cadre</span><span class="trust-key-close">Masquer le cadre</span></summary>
+                  <summary><span class="trust-key-open">En savoir plus</span><span class="trust-key-close">Masquer</span></summary>
                   ${trustDetailList(key.detail)}
                 </details>
               </article>`).join("")}
@@ -2222,6 +2246,25 @@
       <p class="more-note">L’échange de départ ne vaut pas engagement.</p>`;
   }
 
+
+  function moreConversationReadingsLine(angle, readingLabel) {
+    const complementary = toArray(angle?.complementaryCodes)
+      .map(code => Core.getAngleByCode(code))
+      .filter(Boolean)
+      .slice(0, 3);
+    const labels = [readingLabel, ...complementary.map(other => readingLabelForAngle(other))]
+      .map(label => readingNoun(label).toLowerCase())
+      .filter(Boolean);
+    const unique = [];
+    labels.forEach(label => {
+      if (!unique.some(existing => norm(existing) === norm(label))) unique.push(label);
+    });
+    if (!unique.length) return "plusieurs lectures complémentaires éclairent la même question industrielle";
+    if (unique.length === 1) return `la lecture ${unique[0]} éclaire la question industrielle`;
+    if (unique.length === 2) return `${unique[0]} et ${unique[1]} éclairent ensemble la même question industrielle`;
+    return `${unique.slice(0, -1).join(", ")} et ${unique[unique.length - 1]} éclairent ensemble la même question industrielle`;
+  }
+
   function buildMoreFAQ(faq) {
     const fallback = [
       { question: "L’échange de 15 minutes vaut-il engagement à participer ?", answer: "Non. Il sert uniquement à vérifier si la position proposée mérite d’être formalisée. Aucune suite n’est automatique." },
@@ -2253,9 +2296,10 @@
     const finalTitle = organisationName && organisationName !== "Votre organisation"
       ? `Prêt à vérifier si cette position mérite d’être formalisée pour ${organisationName} ?`
       : "Prêt à vérifier si cette position mérite d’être formalisée ?";
+    const readingsLine = moreConversationReadingsLine(angle, readingLabel);
 
     return `
-      <section class="landing-section landing-section--light landing-more-structured" id="pour-aller-plus-loin">
+      <section class="landing-section landing-section--light landing-more-structured landing-more-concept-section" id="pour-aller-plus-loin">
         <div class="landing-container">
           <div class="more-hero-grid more-hero-grid--concept">
             <div>
@@ -2278,7 +2322,7 @@
             <article>
               <span>Mise en regard</span>
               <h3>Une décision se comprend rarement depuis un seul point de vue</h3>
-              <p>Financement, production, droit, exécution, compétences, ressources ou territoire : chaque lecture éclaire une partie de la décision.</p>
+              <p>${safe(sentenceCaseFirst(readingsLine))}. Chaque lecture éclaire une partie de la décision et prend sa portée dans la composition d’ensemble.</p>
             </article>
             <article>
               <span>Formats média</span>
@@ -2286,19 +2330,33 @@
               <p>Le dispositif s’appuie sur des journalistes, des médias et des sociétés de production partenaires. L’enjeu n’est pas de juxtaposer des passages médias, mais de composer une conversation éditoriale cohérente.</p>
             </article>
           </div>
+        </div>
+      </section>
 
-          <div class="more-cycle-focus">
-            <span>Cycle Industrie</span>
-            <h3>Industrie & transformation des territoires</h3>
+      <section class="landing-section landing-section--light landing-more-cycle-section" id="cycle-industrie-detail">
+        <div class="landing-container">
+          <div class="landing-head">
+            <p class="landing-kicker">Cycle Industrie</p>
+            <h2>Industrie & transformation des territoires.</h2>
             <p>Pour sa saison inaugurale, En Plateau ouvre le cycle Industrie & transformation des territoires. Il observe les moments où produire davantage, tenir sous contrainte, transformer un outil ou réarbitrer une trajectoire oblige les organisations à formuler autrement leurs décisions.</p>
+          </div>
+          <div class="more-cycle-focus more-cycle-focus--section">
             <p>Chaque conversation part d’un phénomène industriel concret, puis le regarde depuis plusieurs lectures : stratégie, finance, droit, opérations, RH, technologie, territoires ou ressources.</p>
             <p class="more-cycle-note">Un second cycle, Logement & fabrique des territoires, suit la même logique éditoriale sur les transformations de l’habitat, du foncier et des territoires.</p>
           </div>
+        </div>
+      </section>
 
+      <section class="landing-section landing-section--light landing-more-faq-section" id="questions-avant-echange">
+        <div class="landing-container">
+          <div class="landing-head">
+            <p class="landing-kicker">Questions fréquentes</p>
+            <h2>Les points à clarifier avant de réserver un échange.</h2>
+            <p>Ces réponses reprennent les principaux freins rencontrés avant une prise de parole publique : engagement, préparation, confidentialité, exposition, équipes à associer et différence avec une communication promotionnelle.</p>
+          </div>
           <div class="more-accordions" id="more-accordions">
             ${buildMoreDetail("Questions fréquentes avant l’échange", buildMoreFAQ(faq), true)}
           </div>
-
           <div class="more-final-cta">
             <h2>${safe(soften(finalTitle))}</h2>
             <p>L’échange dure 15 minutes. Il ne vaut pas engagement et ne demande aucun dossier à préparer.</p>
