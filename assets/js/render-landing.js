@@ -1273,14 +1273,18 @@
 
   function readingKeyForHero(readingLabel) {
     const key = norm(readingLabel).replace(/^lecture\s+/, "").trim();
-    if (key.includes("finance")) return "finance";
-    if (key.includes("jurid")) return "juridique";
-    if (key.includes("rh") || key.includes("competence")) return "rh";
-    if (key.includes("operation") || key.includes("production") || key.includes("supply")) return "operationnelle";
-    if (key.includes("energie") || key.includes("ressource") || key.includes("carbone") || key.includes("decarbon")) return "energie";
-    if (key.includes("territoire") || key.includes("territorial")) return "territoriale";
-    if (key.includes("techno") || key.includes("systeme") || key.includes("data") || key.includes("numerique")) return "technologique";
-    if (key.includes("strateg")) return "strategique";
+
+    // Les libellés CRM peuvent arriver sous des formes différentes :
+    // "Financière", "Lecture financière", "RH / compétences", "Technologique / systèmes", etc.
+    // La détection doit donc rester large pour éviter le fallback générique dans le hero.
+    if (key.includes("financ") || key.includes("investissement") || key.includes("econom")) return "finance";
+    if (key.includes("jurid") || key.includes("droit") || key.includes("reglement")) return "juridique";
+    if (key.includes("rh") || key.includes("competence") || key.includes("metier") || key.includes("collectif")) return "rh";
+    if (key.includes("operation") || key.includes("production") || key.includes("supply") || key.includes("execution")) return "operationnelle";
+    if (key.includes("energie") || key.includes("ressource") || key.includes("carbone") || key.includes("decarbon") || key.includes("matiere")) return "energie";
+    if (key.includes("territoire") || key.includes("territorial") || key.includes("foncier") || key.includes("friche")) return "territoriale";
+    if (key.includes("techno") || key.includes("systeme") || key.includes("data") || key.includes("donnee") || key.includes("numerique") || key.includes("interface")) return "technologique";
+    if (key.includes("strateg") || key.includes("direction") || key.includes("gouvernance") || key.includes("trajectoire")) return "strategique";
     return "default";
   }
 
@@ -1288,16 +1292,15 @@
     const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "Votre organisation";
     const key = readingKeyForHero(readingLabel);
     const lines = {
-      finance:       `${org} peut rendre visibles les conditions économiques qui rendent une transformation industrielle tenable.`,
-      financiere:    `${org} peut rendre visibles les conditions économiques qui rendent une transformation industrielle tenable.`,
-      juridique:     `${org} peut montrer comment le droit sécurise les arbitrages industriels avant qu’ils ne deviennent des risques.`,
-      operationnelle:`${org} peut faire reconnaître l’exécution industrielle comme le lieu où la transformation se vérifie vraiment.`,
-      rh:            `${org} peut éclairer le rôle des compétences, des métiers et des collectifs dans la transformation industrielle.`,
-      energie:       `${org} peut montrer comment l’énergie, les ressources, le carbone ou les matières deviennent des conditions de continuité industrielle.`,
-      territoriale:  `${org} peut faire reconnaître le territoire comme condition réelle de transformation industrielle.`,
-      technologique: `${org} peut montrer comment les systèmes, les données et les interfaces conditionnent la trajectoire industrielle.`,
-      strategique:   `${org} peut installer une lecture stratégique sur les arbitrages qui changent une trajectoire industrielle.`,
-      default:       `${org} peut faire reconnaître une lecture utile dans une conversation stratégique à plusieurs voix.`
+      finance:       `${org} peut éclairer les choix d’investissement qui rendent une transformation industrielle tenable.`,
+      juridique:     `${org} peut éclairer les cadres juridiques qui sécurisent les arbitrages industriels.`,
+      operationnelle:`${org} peut éclairer les conditions d’exécution qui rendent la transformation industrielle réellement pilotable.`,
+      rh:            `${org} peut éclairer le rôle des métiers, des compétences et des collectifs dans la transformation industrielle.`,
+      energie:       `${org} peut éclairer les ressources, l’énergie et le carbone comme conditions de continuité industrielle.`,
+      territoriale:  `${org} peut éclairer le rôle du territoire dans les trajectoires industrielles.`,
+      technologique: `${org} peut éclairer le rôle des systèmes, des données et des interfaces dans la trajectoire industrielle.`,
+      strategique:   `${org} peut éclairer les arbitrages de direction qui changent une trajectoire industrielle.`,
+      default:       `${org} peut éclairer une lecture utile dans une conversation stratégique à plusieurs voix.`
     };
     return lines[key] || lines.default;
   }
