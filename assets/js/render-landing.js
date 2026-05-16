@@ -19,7 +19,7 @@
   "use strict";
 
   const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
-  console.info("En Plateau — render-landing plus loin + pistes build 20260516-1735 loaded");
+  console.info("En Plateau — render-landing alternatives repasse build 20260516-2205 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -783,11 +783,6 @@
           <span>Conversation stratégique</span>
           <strong>${safe(heroConversationTitle(altConversation, altAngle))}</strong>
         </div>
-        <div class="lpb-alt-detail-head">
-          <span>${safe(readingPanelLabel(altReading))}</span>
-          <h4>${safe(shortText(title, 260))}</h4>
-          <p>${safe(shortText(text || "Cette piste complète la composition éditoriale en apportant un autre point d’observation sur le même sujet.", 420))}</p>
-        </div>
         <div class="lpb-alt-reading-grid">
           ${items.map((item, index) => buildAltReadingCard(item, index === 0, organisationName)).join("")}
         </div>
@@ -810,6 +805,7 @@
             <strong>La position présentée ci-dessus reste la proposition prioritaire.</strong>
           </summary>
           <div class="lpb-alt-intro">
+            <h3>Angles alternatifs pertinents pour ${safe(org)}</h3>
             <p>D’autres angles sont encore en cours de composition. Ils pourront être évoqués lors de l’échange éditorial s’ils correspondent mieux à votre lecture, à votre fonction ou au niveau d’exposition souhaité.</p>
           </div>
           <div class="lpb-alt-list">
@@ -824,6 +820,8 @@
                     <span>Piste en cours de composition</span>
                     <strong>${safe(shortText(title, 190))}</strong>
                     <em>${safe(readingPanelLabel(altReading))}</em>
+                    <b class="lpb-alt-action lpb-alt-action--closed">Afficher détails +</b>
+                    <b class="lpb-alt-action lpb-alt-action--open">Masquer détails -</b>
                   </summary>
                   ${buildAlternativeTrackDetail(deal, angle)}
                 </details>`;
