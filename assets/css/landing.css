@@ -4832,3 +4832,137 @@ body.landing-page .landing-why-narrative--positioned .landing-why-key p {
     flex-direction: column !important;
   }
 }
+
+
+/* ─────────────────────────────────────────────────────────
+   LOT RETOURS 20260516 — hero, tabs, pertinence, gains
+────────────────────────────────────────────────────────── */
+
+/* Hero : ordre des cartes et lisibilité */
+body.landing-page .landing-hero--simplified .landing-hero-metrics,
+body.landing-page .landing-hero--simplified .landing-hero-metrics--three {
+  gap: 10px !important;
+}
+
+body.landing-page .landing-hero-person-card,
+body.landing-page .landing-hero-metric,
+body.landing-page .landing-hero-media-caption {
+  min-height: auto !important;
+}
+
+body.landing-page .landing-hero-person-card em {
+  background: transparent !important;
+}
+
+/* La carte média passe après le CTA hero : elle doit fonctionner comme une carte de repère */
+body.landing-page .landing-hero-metrics .landing-hero-media-caption {
+  margin-top: 0 !important;
+  border-top: 1px solid rgba(246,241,233,.16) !important;
+}
+
+/* Tabs : une vraie carte active, et un onglet principal lisible même lorsqu'il n'est pas sélectionné */
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary {
+  background: #0c0c0c !important;
+  color: #f4efe8 !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary span,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary em,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary small,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary i {
+  color: rgba(244,239,232,.72) !important;
+  border-top-color: rgba(255,255,255,.12) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary strong {
+  color: #f4efe8 !important;
+}
+
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab {
+  background: #f6f1e9 !important;
+  color: #111 !important;
+  border-color: rgba(17,17,17,.18) !important;
+  border-bottom-color: #f6f1e9 !important;
+}
+
+/* Détail conversation : éviter les ruptures de casse et les chips trop criardes */
+body.landing-page .lpb-chip-list span,
+body.landing-page .lpb-chip-list > * {
+  text-transform: none !important;
+}
+
+/* Pertinence : textes plus respirants */
+body.landing-page #pourquoi-vous .landing-why-key p {
+  line-height: 1.72 !important;
+}
+
+/* Portée de la position : centrage strict du bloc titre */
+body.landing-page #valeur-position .landing-head {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 920px !important;
+}
+
+body.landing-page #valeur-position .landing-head .landing-kicker,
+body.landing-page #valeur-position .landing-head h2,
+body.landing-page #valeur-position .landing-head p {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.landing-page .landing-grid--value .landing-value-card {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+body.landing-page .landing-grid--value .landing-value-card h3 {
+  min-height: 3.2em !important;
+}
+
+body.landing-page .landing-grid--value .landing-value-card > p {
+  min-height: 6em !important;
+}
+
+body.landing-page .landing-grid--value .value-chip-list {
+  margin-top: 18px !important;
+}
+
+@media (max-width: 780px) {
+  body.landing-page .landing-grid--value .landing-value-card h3,
+  body.landing-page .landing-grid--value .landing-value-card > p {
+    min-height: 0 !important;
+  }
+}
+
+
+/* Correctif actif tab : priorité finale aux couleurs lisibles */
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab span,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab span,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab span,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab span,
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab em,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab em,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab em,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab em,
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab small,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab small,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab small,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab small,
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab i,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab i,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab i,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab i {
+  color: rgba(17,17,17,.68) !important;
+  border-top-color: rgba(17,17,17,.16) !important;
+}
+body.landing-page .landing-bento-section--tabs #lpb-reading-0:checked + .lpb-reading-tab strong,
+body.landing-page .landing-bento-section--tabs #lpb-reading-1:checked + .lpb-reading-tab strong,
+body.landing-page .landing-bento-section--tabs #lpb-reading-2:checked + .lpb-reading-tab strong,
+body.landing-page .landing-bento-section--tabs #lpb-reading-3:checked + .lpb-reading-tab strong {
+  color: #111 !important;
+}
