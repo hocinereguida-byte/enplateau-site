@@ -2615,3 +2615,76 @@
     opacity: 1 !important;
   }
 }
+
+
+/* =========================================================
+   CORRECTIF FINAL — HERO PHOTO TRIO DESKTOP + MOBILE
+   Périmètre strict : visuel .home-film du hero uniquement.
+   Remplace définitivement le carrousel par une image statique,
+   cadrée sans rognage, avec un encadrement sobre et premium.
+========================================================= */
+
+.home-hero .home-film.home-film--trio {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 430px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin-left: auto !important;
+  margin-bottom: 14px !important;
+  padding: 10px !important;
+  overflow: visible !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.018)),
+    rgba(8,8,8,.42) !important;
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.018)) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.035),
+    0 22px 60px rgba(0,0,0,.28) !important;
+}
+
+.home-hero .home-film.home-film--trio::before,
+.home-hero .home-film.home-film--trio::after {
+  display: none !important;
+  content: none !important;
+}
+
+.home-hero .home-film.home-film--trio .home-film-track {
+  display: none !important;
+}
+
+.home-hero .home-film-trio,
+.home-hero .home-film-mobile-trio {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  filter: grayscale(100%) contrast(112%) brightness(.82) !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 1100px) {
+  .home-hero .home-film.home-film--trio {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 780px) {
+  .home-hero .home-film.home-film--trio {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 18px !important;
+    padding: 7px !important;
+    border-color: rgba(255,255,255,.14) !important;
+    box-shadow:
+      inset 0 0 0 1px rgba(255,255,255,.03),
+      0 16px 42px rgba(0,0,0,.22) !important;
+  }
+}
