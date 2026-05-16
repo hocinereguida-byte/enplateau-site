@@ -19,7 +19,7 @@
   "use strict";
 
   const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
-  console.info("En Plateau — render-landing pistes complémentaires v2 build 20260516-1535 loaded");
+  console.info("En Plateau — render-landing plus loin + pistes build 20260516-1735 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -738,7 +738,7 @@
   }
 
   function buildAltReadingCard(item, isPrimary, organisationName) {
-    const label = isPrimary ? "Votre piste" : "Lecture associée";
+    const label = isPrimary ? "Votre lecture" : "Lecture associée";
     const orgs = isPrimary
       ? [organisationName].filter(Boolean)
       : organisationsForAngle(item.code, 3, organisationName);
@@ -760,6 +760,7 @@
     const publicAngle = altAngle.anglePublic || altAngle.formulationVariants?.anglePublic || {};
     const formulation = Core.getFormulationLanding(altAngle) || {};
     const title = angleTitle(altAngle, publicAngle, formulation);
+    const text = angleDescription(altAngle, publicAngle, formulation);
     const complementary = toArray(altAngle.complementaryCodes)
       .map(code => Core.getAngleByCode(code))
       .filter(other => other && norm(other.typeLecture) !== norm(altAngle.typeLecture))
@@ -775,7 +776,7 @@
         <div class="lpb-alt-detail-head">
           <span>${safe(readingPanelLabel(altReading))}</span>
           <h4>${safe(shortText(title, 260))}</h4>
-          <p>Cette piste peut être évoquée si la position prioritaire ne correspond pas à la priorité éditoriale du moment.</p>
+          <p>${safe(shortText(text || "Cette piste complète la composition éditoriale en apportant un autre point d’observation sur le même sujet.", 420))}</p>
         </div>
         <div class="lpb-alt-reading-grid">
           ${items.map((item, index) => buildAltReadingCard(item, index === 0, organisationName)).join("")}
@@ -789,33 +790,31 @@
 
     if (!alternatives.length) return "";
 
+    const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "votre organisation";
+
     return `
       <div class="lpb-alternatives" id="pistes-complementaires">
         <details class="lpb-alt-master">
           <summary>
-            <span>Autres pistes éditoriales identifiées</span>
-            <strong>Si cette première lecture n’est pas la plus juste, d’autres angles peuvent être évoqués.</strong>
+            <span>Autres pistes éditoriales pouvant également concerner ${safe(org)}</span>
+            <strong>La position présentée ci-dessus reste la proposition prioritaire.</strong>
           </summary>
           <div class="lpb-alt-intro">
-            <p>La position présentée ci-dessus reste la proposition prioritaire. D’autres angles ont néanmoins été identifiés pour le même profil et peuvent servir de pistes de discussion si cette première lecture ne correspond pas à votre priorité du moment.</p>
+            <p>D’autres pistes sont encore en cours de composition et peuvent également se révéler pertinentes pour ${safe(org)}, selon la lecture que l’échange éditorial permettra de préciser.</p>
           </div>
           <div class="lpb-alt-list">
-            ${alternatives.map(({ deal, angle }, index) => {
-              const altConversation = getConversationLabel(Core.getConversation(angle), deal);
+            ${alternatives.map(({ deal, angle }) => {
               const altReading = displayReadingLabel(Core.getReadingByCode(deal?.editorialContext?.typeLecture || angle?.typeLecture), angle, deal, Core.getPerson(deal)?.role);
               const publicAngle = angle.anglePublic || angle.formulationVariants?.anglePublic || {};
               const formulation = Core.getFormulationLanding(angle) || {};
               const title = angleTitle(angle, publicAngle, formulation);
-              const why = shortText(txt(Core.getWhy(deal).position, angleDescription(angle, publicAngle, formulation)), 260);
               return `
-                <details class="lpb-alt-item" ${index === 0 ? "open" : ""}>
+                <details class="lpb-alt-item">
                   <summary>
-                    <span>Piste complémentaire</span>
-                    <strong>${safe(heroConversationTitle(altConversation, angle))}</strong>
+                    <span>Piste en cours de composition</span>
+                    <strong>${safe(shortText(title, 190))}</strong>
                     <em>${safe(readingPanelLabel(altReading))}</em>
-                    <p>${safe(shortText(title, 180))}</p>
                   </summary>
-                  ${why ? `<p class="lpb-alt-why">${safe(why)}</p>` : ""}
                   ${buildAlternativeTrackDetail(deal, angle)}
                 </details>`;
             }).join("")}
@@ -823,7 +822,6 @@
         </details>
       </div>`;
   }
-
 
   /* ─────────────────────────────────────────────────────────
      BRANCHEMENT DATA V67 — gainsParProfilV2 + faqV2
@@ -2226,62 +2224,32 @@
 
   function buildMoreFAQ(faq) {
     const fallback = [
-      { question: "L’échange de 15 minutes vaut-il engagement à participer ?", answer: "Non. Il sert uniquement à vérifier si la lecture correspond à une position disponible et pertinente." },
-      { question: "Faut-il préparer quelque chose avant l’échange ?", answer: "Non. Aucun dossier, aucune présentation, aucune position déjà construite n’est attendu." },
-      { question: "Les équipes communication, juridiques ou affaires publiques peuvent-elles être associées ?", answer: "Oui. Le périmètre de parole peut être travaillé avec les équipes utiles." },
-      { question: "Faut-il exposer un dossier sensible ?", answer: "Non. La contribution porte sur une lecture de mécanisme, pas sur un site, une négociation, un client ou une décision confidentielle." },
-      { question: "Est-ce une communication corporate ?", answer: "Non. La contribution est préparée comme une position éditoriale située, mise en regard avec d’autres lectures." }
+      { question: "L’échange de 15 minutes vaut-il engagement à participer ?", answer: "Non. Il sert uniquement à vérifier si la position proposée mérite d’être formalisée. Aucune suite n’est automatique." },
+      { question: "Faut-il préparer quelque chose avant l’échange ?", answer: "Non. Aucun dossier, aucune présentation et aucune position déjà construite ne sont attendus." },
+      { question: "Les équipes communication, juridiques ou affaires publiques peuvent-elles être associées ?", answer: "Oui. Le périmètre peut être préparé avec les équipes utiles avant toute prise de parole." },
+      { question: "En quoi En Plateau se distingue d’une prise de parole promotionnelle ?", answer: "Le point de départ n’est pas la visibilité. Une contribution est retenue parce qu’elle éclaire un mécanisme, une tension ou un arbitrage réel. Les effets d’autorité ou de reconnaissance sont une conséquence, pas l’objectif premier." },
+      { question: "Comment éviter un contenu trop générique ou trop risqué ?", answer: "L’angle, les limites de parole, la trame média, les points sensibles et le niveau d’exposition sont cadrés avant production." }
     ];
 
     const seen = new Set();
     const items = [...toArray(faq), ...fallback].filter(item => {
-      const key = norm(item?.question || "").slice(0, 42);
+      const key = norm(item?.question || "").slice(0, 46);
       if (!key || seen.has(key)) return false;
       seen.add(key);
       return true;
-    }).slice(0, 5);
+    }).slice(0, 6);
 
     return `
       <div class="more-faq-grid">
         ${items.map(item => `
           <article>
             <h4>${safe(soften(item.question))}</h4>
-            <p>${safe(shortText(item.answer, 360))}</p>
+            <p>${safe(shortText(item.answer, 420))}</p>
           </article>`).join("")}
       </div>`;
   }
 
   function buildMoreInfoSection({ cta, angle, publicAngle, formulation, conversation, conversationLabel, dgMessage, processSteps, faq, readingLabel, organisationName }) {
-    const narrative = DATA?.landingNarrative || {};
-    const introText = txt(
-      narrative?.intro,
-      "En Plateau ne propose pas des prises de parole isolées. Le dispositif compose des cycles de conversations stratégiques pour rendre visibles les arbitrages qui transforment les entreprises, les filières et les territoires."
-    );
-
-    const angleTitleText = txt(publicAngle?.titreLanding, formulation?.title, angle?.questionPublique, angle?.titreAngle, angle?.questionEditoriale);
-    const angleText = txt(publicAngle?.accrocheLanding, formulation?.accrocheLanding, angle?.questionActivation, angle?.texteProgramme, angle?.introMecanisme);
-
-    const angleDetail = `
-      <div class="more-angle-intro">
-        <h4>${safe(soften(angleTitleText))}</h4>
-        <p>${safe(shortText(angleText, 620))}</p>
-      </div>
-      <div class="more-mini-cards">
-        ${card("Conversation", conversationLabel, txt(conversation?.narrativeText, conversation?.description, "Une conversation construite pour mettre en regard des lectures complémentaires."))}
-        ${card("Votre lecture", "Ce qu’elle rend lisible", dgMessage)}
-        ${card("Préparation", "Un cadrage éditorial maîtrisé", "L’échange permet de préciser le sujet, la portée de la lecture et les conditions de préparation avec vos équipes si nécessaire.")}
-      </div>`;
-
-    const lectureSituee = `
-      <div class="more-reading-def">
-        <p>Une lecture située ne consiste pas à témoigner de manière générale. Elle part d’une fonction, d’une expérience et d’un point d’observation précis pour rendre lisible un mécanisme que d’autres acteurs ne voient pas de la même manière.</p>
-        <div class="more-mini-cards more-mini-cards--compact">
-          ${card("Pas une opinion générale", "Une position réelle", "Une lecture reliée à une fonction, une expérience et une responsabilité concrètes.")}
-          ${card("Pas un cas interne", "Une lecture de mécanisme", "Aucun dossier sensible n’est nécessaire pour formuler une contribution utile.")}
-          ${card("Pas une communication promotionnelle", "Une mise en regard", "La contribution prend sa portée aux côtés d’autres lectures complémentaires.")}
-        </div>
-      </div>`;
-
     const finalTitle = organisationName && organisationName !== "Votre organisation"
       ? `Prêt à vérifier si cette position mérite d’être formalisée pour ${organisationName} ?`
       : "Prêt à vérifier si cette position mérite d’être formalisée ?";
@@ -2289,40 +2257,46 @@
     return `
       <section class="landing-section landing-section--light landing-more-structured" id="pour-aller-plus-loin">
         <div class="landing-container">
-          <div class="more-hero-grid">
+          <div class="more-hero-grid more-hero-grid--concept">
             <div>
               <p class="landing-kicker">Pour aller plus loin</p>
               <h2>Comprendre le cadre éditorial En Plateau.</h2>
             </div>
             <div>
-              <p>${safe(shortText(introText, 420))}</p>
-              <p>Pour sa saison inaugurale, En Plateau lance deux cycles : <strong>Industrie & transformation des territoires</strong> et <strong>Logement & fabrique des territoires</strong>. Chaque cycle réunit plusieurs conversations, chacune structurée autour de lectures complémentaires.</p>
-              <div class="more-inline-actions">
-                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
-                <a class="more-text-link" href="#more-accordions">Lire le cadre éditorial ↓</a>
-              </div>
+              <p>En Plateau est une architecture éditoriale de conversations stratégiques conçue pour rendre lisibles les arbitrages réels qui traversent les transformations industrielles, économiques et territoriales.</p>
+              <p>Le dispositif réunit des acteurs occupant des positions différentes d’un même sujet afin de produire, par mise en regard, une lecture plus structurée des transformations en cours.</p>
+              <p>Chaque contribution est préparée individuellement, produite dans un format média, puis articulée à d’autres lectures complémentaires au sein d’un cycle éditorial.</p>
             </div>
           </div>
 
-          <div class="more-cycle-grid">
+          <div class="more-concept-grid">
             <article>
-              <span>Cycle Industrie</span>
-              <h3>Industrie & transformation des territoires</h3>
-              <p>Produire davantage, tenir sous contrainte, transformer un outil ou réarbitrer une trajectoire : le cycle Industrie explore les moments où les arbitrages industriels changent de nature.</p>
+              <span>Dispositif éditorial</span>
+              <h3>Des contributions situées, pas des prises de parole isolées</h3>
+              <p>En Plateau prépare des lectures produites depuis des fonctions, responsabilités et expériences réelles, puis les inscrit dans une conversation composée.</p>
             </article>
             <article>
-              <span>Cycle Logement</span>
-              <h3>Logement & fabrique des territoires</h3>
-              <p>Construire, financer, habiter, adapter ou transformer : le cycle Logement explore les tensions entre production, usages, foncier, modèles économiques, acteurs publics et trajectoires territoriales.</p>
+              <span>Mise en regard</span>
+              <h3>Une décision se comprend rarement depuis un seul point de vue</h3>
+              <p>Financement, production, droit, exécution, compétences, ressources ou territoire : chaque lecture éclaire une partie de la décision.</p>
+            </article>
+            <article>
+              <span>Formats média</span>
+              <h3>Des formats existants, une composition En Plateau</h3>
+              <p>Le dispositif s’appuie sur des journalistes, des médias et des sociétés de production partenaires. L’enjeu n’est pas de juxtaposer des passages médias, mais de composer une conversation éditoriale cohérente.</p>
             </article>
           </div>
 
+          <div class="more-cycle-focus">
+            <span>Cycle Industrie</span>
+            <h3>Industrie & transformation des territoires</h3>
+            <p>Pour sa saison inaugurale, En Plateau ouvre le cycle Industrie & transformation des territoires. Il observe les moments où produire davantage, tenir sous contrainte, transformer un outil ou réarbitrer une trajectoire oblige les organisations à formuler autrement leurs décisions.</p>
+            <p>Chaque conversation part d’un phénomène industriel concret, puis le regarde depuis plusieurs lectures : stratégie, finance, droit, opérations, RH, technologie, territoires ou ressources.</p>
+            <p class="more-cycle-note">Un second cycle, Logement & fabrique des territoires, suit la même logique éditoriale sur les transformations de l’habitat, du foncier et des territoires.</p>
+          </div>
+
           <div class="more-accordions" id="more-accordions">
-            ${buildMoreDetail("Comprendre où se situe votre lecture", buildMoreStepsTimeline(), true)}
-            ${buildMoreDetail("Ce que cette position permettrait d’éclairer", angleDetail, false)}
-            ${buildMoreDetail("Comment se déroule la suite", buildMoreProcess(processSteps), false)}
-            ${buildMoreDetail("Questions fréquentes avant l’échange", buildMoreFAQ(faq), false)}
-            ${buildMoreDetail("Ce que signifie “lecture située”", lectureSituee, false)}
+            ${buildMoreDetail("Questions fréquentes avant l’échange", buildMoreFAQ(faq), true)}
           </div>
 
           <div class="more-final-cta">
