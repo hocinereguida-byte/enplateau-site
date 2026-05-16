@@ -860,6 +860,100 @@
     return "default";
   }
 
+
+
+  function personaValueChips(personaKey, groupe, slot, readingLabel) {
+    const key = personaKey || "default";
+    const reading = readingKey(readingLabel || "");
+    const baseBySlot = {
+      organisation: ["Reconnaissance", "Crédibilité", "Conversation"],
+      fonction: ["Point d’observation", "Arbitrage", "Lecture située"],
+      personne: ["Trace", "Réutilisation", "Crédibilité"]
+    };
+    const industrial = {
+      DG: {
+        organisation: ["Trajectoire", "Arbitrage", "Vision"],
+        fonction: ["Direction", "Gouvernance", "Décision"],
+        personne: ["Trace", "Crédibilité", "Influence utile"]
+      },
+      DAF: {
+        organisation: ["Soutenabilité", "Investissement", "Risque"],
+        fonction: ["Arbitrage", "Financement", "Trajectoire"],
+        personne: ["Trace", "Crédibilité", "Lecture économique"]
+      },
+      DRH: {
+        organisation: ["Compétences", "Collectifs", "Transmission"],
+        fonction: ["Métiers", "Engagement", "Adaptation"],
+        personne: ["Trace", "Crédibilité", "Lecture RH"]
+      },
+      DIR_JURIDIQUE: {
+        organisation: ["Cadre", "Responsabilité", "Sécurisation"],
+        fonction: ["Risques", "Conformité", "Décision"],
+        personne: ["Trace", "Crédibilité", "Lecture juridique"]
+      },
+      DIR_INDUSTRIEL: {
+        organisation: ["Exécution", "Flux", "Pilotage"],
+        fonction: ["Opérations", "Qualité", "Coordination"],
+        personne: ["Trace", "Crédibilité", "Lecture terrain"]
+      },
+      default: {
+        organisation: ["Trajectoire", "Arbitrage", "Écosystème"],
+        fonction: ["Point d’observation", "Décision", "Échelle"],
+        personne: ["Trace", "Crédibilité", "Usage durable"]
+      }
+    };
+    const eclaireur = {
+      conseil: {
+        organisation: ["Comparaison", "Doctrine", "Décideurs"],
+        fonction: ["Méthode", "Marché", "Arbitrage"],
+        personne: ["Trace", "Crédibilité", "Relations dirigeants"]
+      },
+      avocat: {
+        organisation: ["Cadre", "Doctrine", "Sécurisation"],
+        fonction: ["Droit", "Responsabilité", "Risque"],
+        personne: ["Trace", "Crédibilité", "Clients décideurs"]
+      },
+      ingenierie: {
+        organisation: ["Faisabilité", "Projet", "Système"],
+        fonction: ["Technique", "Interfaces", "Conditions réelles"],
+        personne: ["Trace", "Crédibilité", "Donneurs d’ordre"]
+      },
+      default: {
+        organisation: ["Comparaison", "Expertise", "Décideurs"],
+        fonction: ["Pratique", "Doctrine", "Arbitrage"],
+        personne: ["Trace", "Crédibilité", "Relations qualifiées"]
+      }
+    };
+    const readingFallback = {
+      territoriale: {
+        organisation: ["Foncier", "Ancrage", "Acteurs publics"],
+        fonction: ["Territoires", "Conditions locales", "Décision"],
+        personne: ["Trace", "Crédibilité", "Lecture territoriale"]
+      },
+      technologie: {
+        organisation: ["Systèmes", "Données", "Interfaces"],
+        fonction: ["Architecture", "Lisibilité", "Continuité"],
+        personne: ["Trace", "Crédibilité", "Lecture technologique"]
+      },
+      energie: {
+        organisation: ["Énergie", "Ressources", "Continuité"],
+        fonction: ["Matières", "Carbone", "Arbitrage"],
+        personne: ["Trace", "Crédibilité", "Lecture ressources"]
+      }
+    };
+    const source = groupe === "eclaireur" ? (eclaireur[key] || eclaireur.default) : (industrial[key] || industrial.default);
+    return (source && source[slot]) || readingFallback[reading]?.[slot] || baseBySlot[slot] || [];
+  }
+
+  function cleanGainChips(chips, personaKey, groupe, slot, readingLabel) {
+    const personaChips = personaValueChips(personaKey, groupe, slot, readingLabel);
+    const current = toArray(chips).filter(Boolean);
+    const generic = ["stature", "institutionnel", "strategique", "stratégique", "interne", "reutilisation", "réutilisation"];
+    const looksGeneric = current.length < 3 || current.some(chip => generic.includes(norm(chip)));
+    if (looksGeneric) return personaChips.slice(0, 3);
+    return current.slice(0, 3);
+  }
+
   function getReadingType(readingLabel) {
     const rt = DATA?.readingTypes || {};
     if (!readingLabel) return null;
@@ -1148,7 +1242,7 @@
               ? "Installer une lecture propriétaire, sans discours promotionnel"
               : "Faire reconnaître une capacité de lecture stratégique",
             text: shortText(personaData.gain, 280),
-            chips: orgItems.map(item => gainTagLabel(item.type)),
+            chips: cleanGainChips(orgItems.map(item => gainTagLabel(item.type)), personaKey, groupe, "organisation", readingLabel),
             details: dedupeDetails(
               orgItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) })),
               [
@@ -1164,7 +1258,7 @@
               ? "Rendre lisible ce que votre pratique sait formuler"
               : "Rendre visible ce que votre fonction arbitre",
             text: compactValueText(functionItems[0], "Faire apparaître ce que votre fonction voit, arbitre ou sécurise dans la transformation."),
-            chips: functionItems.map(item => gainTagLabel(item.type)),
+            chips: cleanGainChips(functionItems.map(item => gainTagLabel(item.type)), personaKey, groupe, "fonction", readingLabel),
             details: dedupeDetails(
               functionItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) })),
               [
@@ -1178,7 +1272,7 @@
             label: isEclaireur ? (isAvocat ? "Pour vos clients décideurs" : "Pour vos relations dirigeants") : "Pour vous",
             title: "Laisser une trace professionnelle utile",
             text: compactValueText(personItems[0], "Créer un actif éditorial préparé, durable et mobilisable dans la durée."),
-            chips: personItems.map(item => gainTagLabel(item.type)),
+            chips: cleanGainChips(personItems.map(item => gainTagLabel(item.type)), personaKey, groupe, "personne", readingLabel),
             details: dedupeDetails(
               personItems.map(item => ({ label: gainTagLabel(item.type), text: compactValueText(item, personaData.detail) })),
               [
@@ -2158,8 +2252,8 @@
             <p>Le cadre de préparation précise ce qui reste hors champ, ce qui sera travaillé, les validations utiles, la confidentialité et les conditions d’engagement avant toute production.</p>
           </div>
 
-          <div class="trust-keys-grid trust-keys-grid--six" aria-label="Les clés de sécurisation éditoriale de la contribution En Plateau">
-            ${keys.map(key => `
+          <div class="trust-keys-grid trust-keys-grid--six trust-keys-grid--primary" aria-label="Les trois premiers points de sécurisation éditoriale de la contribution En Plateau">
+            ${keys.slice(0, 3).map(key => `
               <article class="trust-key">
                 <span class="trust-key__num">${safe(key.num)}</span>
                 <h3>${safe(key.title)}</h3>
@@ -2171,6 +2265,26 @@
                 </details>
               </article>`).join("")}
           </div>
+
+          <details class="trust-extra-details">
+            <summary>
+              <span class="trust-extra-open">Afficher les 3 autres points de cadrage</span>
+              <span class="trust-extra-close">Masquer les points de cadrage complémentaires</span>
+            </summary>
+            <div class="trust-keys-grid trust-keys-grid--six trust-keys-grid--extra" aria-label="Points de cadrage complémentaires">
+              ${keys.slice(3).map(key => `
+                <article class="trust-key">
+                  <span class="trust-key__num">${safe(key.num)}</span>
+                  <h3>${safe(key.title)}</h3>
+                  <p class="trust-key__summary">${safe(key.summary)}</p>
+                  <ul>${key.visible.map(item => `<li>${safe(item)}</li>`).join("")}</ul>
+                  <details class="trust-key__details">
+                    <summary><span class="trust-key-open">En savoir plus</span><span class="trust-key-close">Masquer</span></summary>
+                    ${trustDetailList(key.detail)}
+                  </details>
+                </article>`).join("")}
+            </div>
+          </details>
 
           <div class="trust-keys-cta">
             <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
@@ -2321,8 +2435,8 @@
             </article>
             <article>
               <span>Mise en regard</span>
-              <h3>Une décision se comprend rarement depuis un seul point de vue</h3>
-              <p>${safe(sentenceCaseFirst(readingsLine))}. Chaque lecture éclaire une partie de la décision et prend sa portée dans la composition d’ensemble.</p>
+              <h3>Les quatre lectures de cette conversation</h3>
+              <p>${safe(sentenceCaseFirst(readingsLine))}. Cette mise en regard donne à chaque contribution sa portée : aucune lecture ne résume seule la question, mais chacune révèle une partie de la décision.</p>
             </article>
             <article>
               <span>Formats média</span>
