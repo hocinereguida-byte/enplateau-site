@@ -2620,8 +2620,8 @@
 /* =========================================================
    CORRECTIF FINAL — HERO PHOTO TRIO DESKTOP + MOBILE
    Périmètre strict : visuel .home-film du hero uniquement.
-   Remplace définitivement le carrousel par une image statique,
-   cadrée sans rognage, avec un encadrement sobre et premium.
+   Remplace définitivement le carrousel par une image statique.
+   Encadrement volontairement fin, aligné sur la carte sous la photo.
 ========================================================= */
 
 .home-hero .home-film.home-film--trio {
@@ -2633,17 +2633,14 @@
   max-height: none !important;
   margin-left: auto !important;
   margin-bottom: 14px !important;
-  padding: 10px !important;
-  overflow: visible !important;
-  border: 1px solid rgba(255,255,255,.16) !important;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.018)),
-    rgba(8,8,8,.42) !important;
-  background-image:
-    linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.018)) !important;
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.035),
-    0 22px 60px rgba(0,0,0,.28) !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border-radius: 0 !important;
+  border: 1px solid var(--h3-line-dark) !important;
+  background: rgba(255,255,255,.03) !important;
+  background-image: none !important;
+  backdrop-filter: blur(10px);
+  box-shadow: none !important;
 }
 
 .home-hero .home-film.home-film--trio::before,
