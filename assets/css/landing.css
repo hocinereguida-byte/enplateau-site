@@ -5702,3 +5702,85 @@ body.landing-page #valeur-position .landing-grid--value .landing-value-card:not(
 body.landing-page #valeur-position .landing-grid--value .landing-value-card:not(:has(.value-details[open])) {
   min-height: 360px !important;
 }
+
+
+/* ─────────────────────────────────────────────
+   PATCH CTA FINAL + POUR ALLER PLUS LOIN FERMÉ — 17/05
+   - Les sections d'approfondissement restent fermées par défaut.
+   - Identité du porteur en overlay discret sur la photo.
+───────────────────────────────────────────── */
+body.landing-page .landing-more-reveal[hidden] {
+  display: none !important;
+}
+
+body.landing-page .landing-more-reveal {
+  display: block;
+}
+
+body.landing-page .qualification-cta-photo {
+  position: relative !important;
+}
+
+body.landing-page .qualification-cta-photo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 38%;
+  background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.82));
+  pointer-events: none;
+  z-index: 1;
+}
+
+body.landing-page .qualification-cta-photo-caption {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+  z-index: 2;
+  padding: 12px 14px;
+  background: rgba(0,0,0,.62);
+  border: 1px solid rgba(255,255,255,.14);
+  color: var(--landing-text, #f6f1e9);
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  line-height: 1.35;
+}
+
+body.landing-page .qualification-cta-photo-caption strong {
+  display: block;
+  margin: 0 0 4px;
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--landing-text, #f6f1e9);
+}
+
+body.landing-page .qualification-cta-photo-caption span {
+  display: block;
+  font-size: .58rem;
+  font-weight: 500;
+  color: rgba(246,241,233,.78);
+}
+
+body.landing-page .qualification-cta-identity {
+  display: none !important;
+}
+
+@media (max-width: 620px) {
+  body.landing-page .qualification-cta-photo-caption {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 10px 12px;
+  }
+
+  body.landing-page .qualification-cta-photo-caption strong {
+    font-size: .66rem;
+  }
+
+  body.landing-page .qualification-cta-photo-caption span {
+    font-size: .54rem;
+  }
+}
