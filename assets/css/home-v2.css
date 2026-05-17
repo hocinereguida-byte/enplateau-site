@@ -1,0 +1,677 @@
+/*
+  En Plateau — home-v2.css
+  Prototype home V2 inspiré de la landing one-to-one :
+  micro-copy, bullet journalism, bento grid, noir premium, cartes fines.
+  Périmètre : indexv2.html uniquement.
+*/
+
+:root {
+  --hv2-bg: #111111;
+  --hv2-bg-soft: #171717;
+  --hv2-paper: #f4efe6;
+  --hv2-white: #ffffff;
+  --hv2-ink: #151515;
+  --hv2-ink-soft: rgba(17,17,17,.76);
+  --hv2-ink-muted: rgba(17,17,17,.58);
+  --hv2-text: #f6f1e9;
+  --hv2-text-soft: rgba(246,241,233,.84);
+  --hv2-text-muted: rgba(246,241,233,.62);
+  --hv2-line: rgba(17,17,17,.14);
+  --hv2-line-dark: rgba(255,255,255,.18);
+  --hv2-accent: #8a7f74;
+  --hv2-accent-soft: #d8d0c7;
+  --hv2-container: 1120px;
+
+  --font-display: "Playfair Display", serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.homev2-page {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--hv2-bg);
+  color: var(--hv2-text);
+}
+
+body.homev2-page a {
+  color: inherit;
+}
+
+.hv2-container {
+  width: min(calc(100% - 40px), var(--hv2-container));
+  margin: 0 auto;
+}
+
+/* TOP */
+
+.hv2-top {
+  position: absolute;
+  z-index: 20;
+  inset: 0 0 auto;
+  padding: 26px 0;
+  color: var(--hv2-text);
+}
+
+.hv2-top__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.hv2-brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.4vw, 2.15rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.025em;
+  white-space: nowrap;
+}
+
+.hv2-brand::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  margin-right: 12px;
+  background: currentColor;
+  opacity: .62;
+}
+
+.hv2-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+}
+
+.hv2-nav a,
+.hv2-top-cta,
+.hv2-card-actions a {
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  line-height: 1;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--hv2-text-muted);
+}
+
+.hv2-nav a:hover,
+.hv2-top-cta:hover,
+.hv2-card-actions a:hover {
+  color: var(--hv2-text);
+}
+
+.hv2-top-cta {
+  color: var(--hv2-text);
+  border-bottom: 1px solid rgba(255,255,255,.42);
+  padding-bottom: 7px;
+}
+
+/* HERO */
+
+.hv2-hero {
+  position: relative;
+  min-height: 96vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 76% 22%, rgba(255,255,255,.105), transparent 28%),
+    linear-gradient(90deg, rgba(17,17,17,.98) 0%, rgba(17,17,17,.90) 55%, rgba(17,17,17,.74) 100%),
+    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
+}
+
+.hv2-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.32)),
+    linear-gradient(90deg, rgba(0,0,0,.18), transparent 42%, rgba(0,0,0,.20));
+}
+
+.hv2-hero__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(330px, .9fr);
+  gap: clamp(42px, 6vw, 76px);
+  align-items: center;
+  padding: 124px 0 84px;
+}
+
+.hv2-hero__copy {
+  max-width: 720px;
+}
+
+.hv2-kicker,
+.hv2-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--hv2-accent-soft);
+}
+
+.hv2-kicker::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  opacity: .75;
+}
+
+.hv2-label {
+  display: block;
+  color: var(--hv2-accent);
+}
+
+.hv2-section--dark .hv2-label {
+  color: var(--hv2-accent-soft);
+}
+
+.hv2-hero h1,
+.hv2-section h2,
+.hv2-access h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -.035em;
+}
+
+.hv2-hero h1 {
+  max-width: 13.8ch;
+  font-size: clamp(2.8rem, 5.25vw, 5.15rem);
+  line-height: .99;
+  color: var(--hv2-text);
+}
+
+.hv2-lead {
+  max-width: 58ch;
+  margin: 28px 0 0;
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.76;
+  color: var(--hv2-text-soft);
+}
+
+.hv2-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  margin-top: 30px;
+}
+
+.hv2-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 22px;
+  text-decoration: none;
+  border: 1px solid currentColor;
+  font-family: var(--font-body);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+.hv2-btn--primary {
+  background: var(--hv2-text);
+  color: var(--hv2-bg);
+  border-color: var(--hv2-text);
+}
+
+.hv2-btn--ghost {
+  background: transparent;
+  color: var(--hv2-text);
+  border-color: rgba(255,255,255,.34);
+}
+
+.hv2-btn:hover {
+  opacity: .84;
+}
+
+.hv2-reassurance {
+  max-width: 620px;
+  margin: 16px 0 0;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  line-height: 1.58;
+  color: var(--hv2-text-muted);
+}
+
+/* HERO PANEL */
+
+.hv2-hero-panel {
+  border: 1px solid var(--hv2-line-dark);
+  background: rgba(255,255,255,.052);
+  backdrop-filter: blur(12px);
+}
+
+.hv2-panel-row,
+.hv2-panel-grid > div {
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--hv2-line-dark);
+}
+
+.hv2-panel-row:last-child {
+  border-bottom: 0;
+}
+
+.hv2-panel-row span,
+.hv2-panel-grid span {
+  display: block;
+  margin: 0 0 10px;
+  font-family: var(--font-mono);
+  font-size: .66rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--hv2-text-muted);
+}
+
+.hv2-panel-row strong,
+.hv2-panel-grid strong {
+  display: block;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--hv2-text);
+}
+
+.hv2-panel-row p {
+  margin: 12px 0 0;
+  font-size: .9rem;
+  line-height: 1.7;
+  color: var(--hv2-text-soft);
+}
+
+.hv2-panel-row--large {
+  padding: 28px 28px;
+}
+
+.hv2-panel-row--large strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  line-height: 1.22;
+  letter-spacing: -.018em;
+}
+
+.hv2-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.hv2-panel-grid > div {
+  min-height: 124px;
+}
+
+.hv2-panel-grid > div:nth-child(odd) {
+  border-right: 1px solid var(--hv2-line-dark);
+}
+
+/* SECTIONS */
+
+.hv2-section {
+  position: relative;
+  padding: clamp(58px, 8vw, 96px) 0;
+  overflow: hidden;
+}
+
+.hv2-section--paper {
+  background: var(--hv2-paper);
+  color: var(--hv2-ink);
+}
+
+.hv2-section--dark {
+  background: var(--hv2-bg);
+  color: var(--hv2-text);
+  border-top: 1px solid var(--hv2-line-dark);
+}
+
+.hv2-section-head {
+  max-width: 860px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.hv2-section-head--left {
+  margin-left: 0;
+  text-align: left;
+}
+
+.hv2-section h2,
+.hv2-access h2 {
+  font-size: clamp(1.8rem, 3.4vw, 3.1rem);
+  line-height: 1.08;
+}
+
+.hv2-section-head p,
+.hv2-access p {
+  max-width: 760px;
+  margin: 16px auto 0;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.hv2-section-head--left p {
+  margin-left: 0;
+}
+
+.hv2-section--paper .hv2-section-head p,
+.hv2-section--paper .hv2-card p,
+.hv2-reading-grid p {
+  color: var(--hv2-ink-soft);
+}
+
+.hv2-section--dark .hv2-section-head p,
+.hv2-section--dark .hv2-card p,
+.hv2-access p {
+  color: var(--hv2-text-soft);
+}
+
+/* BENTO */
+
+.hv2-bento {
+  display: grid;
+  gap: 2px;
+}
+
+.hv2-bento--method {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: var(--hv2-line);
+}
+
+.hv2-bento--cycles {
+  grid-template-columns: 1.2fr 1fr .82fr;
+  background: var(--hv2-line-dark);
+}
+
+.hv2-card {
+  min-height: 100%;
+  padding: clamp(24px, 3vw, 34px);
+  background: var(--hv2-white);
+  color: var(--hv2-ink);
+}
+
+.hv2-section--dark .hv2-card {
+  background: rgba(255,255,255,.06);
+  color: var(--hv2-text);
+}
+
+.hv2-card--span-2 {
+  grid-column: span 2;
+}
+
+.hv2-card--dark {
+  background: var(--hv2-bg);
+  color: var(--hv2-text);
+}
+
+.hv2-card--accent {
+  background: var(--hv2-bg-soft);
+  color: var(--hv2-text);
+}
+
+.hv2-card h3 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.55vw, 1.45rem);
+  line-height: 1.24;
+  letter-spacing: -.018em;
+  font-weight: 600;
+}
+
+.hv2-card p {
+  margin: 0;
+  font-size: .94rem;
+  line-height: 1.74;
+}
+
+.hv2-card--dark p,
+.hv2-card--accent p {
+  color: var(--hv2-text-soft);
+}
+
+.hv2-card--cycle {
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hv2-card--cycle p {
+  margin-bottom: 24px;
+}
+
+.hv2-card--micro {
+  min-height: 290px;
+}
+
+.hv2-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--hv2-line-dark);
+}
+
+/* READINGS */
+
+.hv2-reading-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+  background: var(--hv2-line);
+}
+
+.hv2-reading-grid article {
+  background: var(--hv2-white);
+  padding: 26px 24px;
+}
+
+.hv2-reading-grid span {
+  display: block;
+  margin-bottom: 9px;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--hv2-accent);
+}
+
+.hv2-reading-grid p {
+  margin: 0;
+  font-size: .93rem;
+  line-height: 1.7;
+}
+
+/* ACCESS */
+
+.hv2-access {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(320px, .86fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+
+.hv2-access-card {
+  border: 1px solid var(--hv2-line-dark);
+  background: rgba(255,255,255,.055);
+  padding: clamp(24px, 3.2vw, 34px);
+}
+
+.hv2-access-card h3 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.7vw, 1.55rem);
+  line-height: 1.22;
+  letter-spacing: -.018em;
+}
+
+.hv2-access-card .hv2-btn {
+  margin-top: 24px;
+}
+
+/* FOOTER */
+
+.hv2-footer {
+  background: var(--hv2-bg);
+  border-top: 1px solid var(--hv2-line-dark);
+  color: var(--hv2-text);
+  padding: 34px 0;
+}
+
+.hv2-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.hv2-brand--footer {
+  font-size: 1.35rem;
+}
+
+.hv2-footer p {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: var(--hv2-text-muted);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 980px) {
+  .hv2-top {
+    position: relative;
+    background: var(--hv2-bg);
+    border-bottom: 1px solid var(--hv2-line-dark);
+  }
+
+  .hv2-top__inner {
+    flex-wrap: wrap;
+  }
+
+  .hv2-nav {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 18px 24px;
+  }
+
+  .hv2-hero {
+    min-height: auto;
+  }
+
+  .hv2-hero__grid,
+  .hv2-access {
+    grid-template-columns: 1fr;
+  }
+
+  .hv2-hero__grid {
+    padding: 70px 0 64px;
+  }
+
+  .hv2-hero h1 {
+    max-width: 14ch;
+  }
+
+  .hv2-bento--method,
+  .hv2-bento--cycles,
+  .hv2-reading-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hv2-card--span-2 {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .hv2-container {
+    width: min(calc(100% - 32px), var(--hv2-container));
+  }
+
+  .hv2-top-cta {
+    width: 100%;
+  }
+
+  .hv2-nav {
+    display: none;
+  }
+
+  .hv2-hero__grid {
+    padding: 52px 0 54px;
+  }
+
+  .hv2-hero h1 {
+    font-size: clamp(2.35rem, 12vw, 3.35rem);
+    line-height: 1.02;
+  }
+
+  .hv2-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hv2-btn {
+    width: 100%;
+  }
+
+  .hv2-panel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hv2-panel-grid > div:nth-child(odd) {
+    border-right: 0;
+  }
+
+  .hv2-panel-grid > div {
+    min-height: auto;
+  }
+
+  .hv2-section {
+    padding: 54px 0;
+  }
+
+  .hv2-section-head {
+    text-align: left;
+  }
+
+  .hv2-section-head p {
+    margin-left: 0;
+  }
+
+  .hv2-card,
+  .hv2-reading-grid article,
+  .hv2-access-card {
+    padding: 24px;
+  }
+
+  .hv2-footer__inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
