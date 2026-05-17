@@ -2621,6 +2621,24 @@
     });
   }
 
+
+  function initValueDetailsAccordions(scope) {
+    const container = scope?.querySelector?.('#valeur-position .landing-grid--value');
+    if (!container) return;
+
+    const items = Array.from(container.querySelectorAll('details.value-details'));
+    if (!items.length) return;
+
+    items.forEach(item => {
+      item.addEventListener('toggle', () => {
+        if (!item.open) return;
+        items.forEach(other => {
+          if (other !== item && other.open) other.open = false;
+        });
+      });
+    });
+  }
+
   /* ─────────────────────────────────────────────────────────
      RENDER PRINCIPAL
   ───────────────────────────────────────────────────────── */
@@ -2730,6 +2748,7 @@
     `;
 
     initAlternativeAccordions(root);
+    initValueDetailsAccordions(root);
   }
 
   render(Core.getDealBundle());
