@@ -1456,9 +1456,12 @@
           <div class="qualification-cta-grid qualification-cta-grid--split">
             <aside class="qualification-cta-signature" aria-label="En Plateau">
               <figure class="qualification-cta-photo">
-                <img src="/images/a-propos/hocine-reguida.jpg" alt="Hocine Reguida, En Plateau" loading="lazy">
+                <img src="/images/a-propos/hocine-reguida.jpg" alt="Hocine RÉGUIDA, conception et coordination éditoriale" loading="lazy">
+                <figcaption class="qualification-cta-photo-caption">
+                  <strong>Hocine RÉGUIDA</strong>
+                  <span>Conception et coordination éditoriale</span>
+                </figcaption>
               </figure>
-              <p class="qualification-cta-identity">Hocine Réguida · En Plateau · Conception et coordination éditoriale</p>
               <p>Une position éditoriale se vérifie dans un échange court. La suite reste une décision.</p>
             </aside>
 
@@ -1474,7 +1477,7 @@
           </div>
 
           <div class="qualification-cta-more-link">
-            <a href="#pour-aller-plus-loin">Vous souhaitez approfondir le cadre avant de réserver un échange éditorial ?</a>
+            <a href="#pour-aller-plus-loin" data-reveal-more="pour-aller-plus-loin" aria-expanded="false">Vous souhaitez approfondir le cadre avant de réserver un échange éditorial ?</a>
           </div>
         </div>
       </section>`;
@@ -2500,7 +2503,8 @@
     const readingsLine = moreConversationReadingsLine(angle, readingLabel);
 
     return `
-      <section class="landing-section landing-section--light landing-more-structured landing-more-concept-section" id="pour-aller-plus-loin">
+      <div class="landing-more-reveal" id="pour-aller-plus-loin" hidden>
+      <section class="landing-section landing-section--light landing-more-structured landing-more-concept-section" id="pour-aller-plus-loin-concept">
         <div class="landing-container">
           <div class="more-hero-grid more-hero-grid--concept">
             <div>
@@ -2565,7 +2569,8 @@
             <p>Sans engagement · Aucun dossier sensible · Périmètre préparé si nécessaire</p>
           </div>
         </div>
-      </section>`;
+      </section>
+      </div>`;
   }
 
   /* ─────────────────────────────────────────────────────────
@@ -2603,6 +2608,33 @@
   }
 
 
+
+
+  function initMoreInfoReveal(scope) {
+    const trigger = scope?.querySelector?.('[data-reveal-more="pour-aller-plus-loin"]');
+    const target = scope?.querySelector?.('#pour-aller-plus-loin');
+    if (!trigger || !target) return;
+
+    const reveal = (scroll = true) => {
+      target.hidden = false;
+      target.classList.add('landing-more-reveal--open');
+      trigger.setAttribute('aria-expanded', 'true');
+      if (scroll) {
+        window.requestAnimationFrame(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+    };
+
+    trigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      reveal(true);
+    });
+
+    if (window.location.hash === '#pour-aller-plus-loin') {
+      reveal(false);
+    }
+  }
 
   function initAlternativeAccordions(scope) {
     const container = scope?.querySelector?.('.lpb-alt-list');
@@ -2749,6 +2781,7 @@
 
     initAlternativeAccordions(root);
     initValueDetailsAccordions(root);
+    initMoreInfoReveal(root);
   }
 
   render(Core.getDealBundle());
