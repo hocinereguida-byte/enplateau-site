@@ -1,265 +1,1058 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+/*
+  En Plateau — home-v2.css
+  Prototype home V2 inspiré de la landing one-to-one :
+  micro-copy, bullet journalism, bento grid, noir premium, cartes fines.
+  Périmètre : indexv2.html uniquement.
+*/
 
-  <title>En Plateau — Conversations économiques situées</title>
-  <meta name="description" content="En Plateau construit des cycles de conversations économiques pour éclairer les arbitrages qui transforment les filières, les organisations et les territoires.">
-  <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#111111">
+:root {
+  --hv2-bg: #111111;
+  --hv2-bg-soft: #171717;
+  --hv2-paper: #f4efe6;
+  --hv2-white: #ffffff;
+  --hv2-ink: #151515;
+  --hv2-ink-soft: rgba(17,17,17,.76);
+  --hv2-ink-muted: rgba(17,17,17,.58);
+  --hv2-text: #f6f1e9;
+  --hv2-text-soft: rgba(246,241,233,.84);
+  --hv2-text-muted: rgba(246,241,233,.62);
+  --hv2-line: rgba(17,17,17,.14);
+  --hv2-line-dark: rgba(255,255,255,.18);
+  --hv2-accent: #8a7f74;
+  --hv2-accent-soft: #d8d0c7;
+  --hv2-container: 1120px;
 
-  <link rel="canonical" href="https://enplateau.fr/indexv2.html">
-  <link rel="icon" href="/images/favicon-en-plateau.svg" type="image/svg+xml">
-  <link rel="icon" href="/images/Favenplateau.png" type="image/png" sizes="96x96">
-  <link rel="apple-touch-icon" href="/images/Favenplateau.png">
+  --font-display: "Playfair Display", serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+* {
+  box-sizing: border-box;
+}
 
-  <link rel="stylesheet" href="assets/css/home-v2.css?v=home-v2-bento-01">
-</head>
+html {
+  scroll-behavior: smooth;
+}
 
-<body class="homev2-page">
-  <header class="hv2-top" aria-label="Navigation principale">
-    <div class="hv2-container hv2-top__inner">
-      <a class="hv2-brand" href="index.html" aria-label="En Plateau — accueil">En Plateau</a>
+body.homev2-page {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--hv2-bg);
+  color: var(--hv2-text);
+}
 
-      <nav class="hv2-nav" aria-label="Navigation">
-        <a href="dispositif.html">Dispositif</a>
-        <a href="conversations.html">Conversations</a>
-        <a href="positions/industrie.html">Positions</a>
-        <a href="a-propos.html">À propos</a>
-      </nav>
+body.homev2-page a {
+  color: inherit;
+}
 
-      <a class="hv2-top-cta" href="demander-un-echange-editorial.html">Demander un échange éditorial</a>
-    </div>
-  </header>
+.hv2-container {
+  width: min(calc(100% - 40px), var(--hv2-container));
+  margin: 0 auto;
+}
 
-  <main>
-    <section class="hv2-hero" id="accueil">
-      <div class="hv2-container hv2-hero__grid">
-        <div class="hv2-hero__copy">
-          <p class="hv2-kicker">Saison inaugurale · conversations économiques</p>
+/* TOP */
 
-          <h1>Faire apparaître les arbitrages qui transforment l’économie.</h1>
+.hv2-top {
+  position: absolute;
+  z-index: 20;
+  inset: 0 0 auto;
+  padding: 26px 0;
+  color: var(--hv2-text);
+}
 
-          <p class="hv2-lead">
-            En Plateau compose des cycles éditoriaux pour rendre lisibles les décisions,
-            tensions et points de bascule qui engagent les filières, les organisations
-            et les territoires.
-          </p>
+.hv2-top__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
 
-          <div class="hv2-actions">
-            <a class="hv2-btn hv2-btn--primary" href="demander-un-echange-editorial.html">Demander un échange</a>
-            <a class="hv2-btn hv2-btn--ghost" href="conversations.html">Explorer les conversations</a>
-          </div>
+.hv2-brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.4vw, 2.15rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.025em;
+  white-space: nowrap;
+}
 
-          <p class="hv2-reassurance">
-            Une contribution ne se résume pas à une prise de parole. Elle se prépare,
-            se cadre et s’inscrit dans une mise en regard éditoriale.
-          </p>
-        </div>
+.hv2-brand::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  margin-right: 12px;
+  background: currentColor;
+  opacity: .62;
+}
 
-        <aside class="hv2-hero-panel" aria-label="Logique En Plateau">
-          <div class="hv2-panel-row hv2-panel-row--large">
-            <span>Ce que nous organisons</span>
-            <strong>Des conversations asynchrones entre lectures complémentaires.</strong>
-            <p>Chaque intervenant parle depuis sa position. La valeur naît de la mise en regard.</p>
-          </div>
+.hv2-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+}
 
-          <div class="hv2-panel-grid">
-            <div>
-              <span>Format</span>
-              <strong>Émission + écrit</strong>
-            </div>
-            <div>
-              <span>Cadre</span>
-              <strong>Préparé</strong>
-            </div>
-            <div>
-              <span>Accès</span>
-              <strong>Sélectif</strong>
-            </div>
-            <div>
-              <span>Lecture</span>
-              <strong>Située</strong>
-            </div>
-          </div>
+.hv2-nav a,
+.hv2-top-cta,
+.hv2-card-actions a {
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  line-height: 1;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--hv2-text-muted);
+}
 
-          <div class="hv2-panel-row">
-            <span>Question centrale</span>
-            <strong>Qu’est-ce qu’une position permet de rendre lisible que les lectures générales ne montrent pas ?</strong>
-          </div>
-        </aside>
-      </div>
-    </section>
+.hv2-nav a:hover,
+.hv2-top-cta:hover,
+.hv2-card-actions a:hover {
+  color: var(--hv2-text);
+}
 
-    <section class="hv2-section hv2-section--paper" id="methode">
-      <div class="hv2-container">
-        <div class="hv2-section-head">
-          <p class="hv2-kicker">Méthode éditoriale</p>
-          <h2>Une page d’accueil pensée comme une grille de décision.</h2>
-          <p>
-            La home ne cherche plus à raconter tout En Plateau de façon linéaire.
-            Elle montre le dispositif comme une architecture : angles, positions,
-            lectures, cadrage et accès.
-          </p>
-        </div>
+.hv2-top-cta {
+  color: var(--hv2-text);
+  border-bottom: 1px solid rgba(255,255,255,.42);
+  padding-bottom: 7px;
+}
 
-        <div class="hv2-bento hv2-bento--method">
-          <article class="hv2-card hv2-card--span-2 hv2-card--dark">
-            <span class="hv2-label">01 · Conversation</span>
-            <h3>Un sujet n’est pas traité par une seule voix.</h3>
-            <p>
-              Une conversation En Plateau assemble plusieurs lectures : stratégique,
-              financière, juridique, opérationnelle, territoriale, RH, technologique
-              ou ressources. Chacune éclaire un angle différent du même mouvement.
-            </p>
-          </article>
+/* HERO */
 
-          <article class="hv2-card">
-            <span class="hv2-label">02 · Position</span>
-            <h3>Une position n’est pas un poste.</h3>
-            <p>
-              C’est une capacité à rendre lisible un mécanisme, une tension ou une
-              décision depuis un rôle concret.
-            </p>
-          </article>
+.hv2-hero {
+  position: relative;
+  min-height: 96vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 76% 22%, rgba(255,255,255,.105), transparent 28%),
+    linear-gradient(90deg, rgba(17,17,17,.98) 0%, rgba(17,17,17,.90) 55%, rgba(17,17,17,.74) 100%),
+    url("../../images/projo-lumiere.jpg") center/cover no-repeat;
+}
 
-          <article class="hv2-card">
-            <span class="hv2-label">03 · Cadrage</span>
-            <h3>La parole est préparée.</h3>
-            <p>
-              Les points sensibles, les limites publiques et les formulations utiles
-              sont travaillés avant production.
-            </p>
-          </article>
+.hv2-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.32)),
+    linear-gradient(90deg, rgba(0,0,0,.18), transparent 42%, rgba(0,0,0,.20));
+}
 
-          <article class="hv2-card hv2-card--accent">
-            <span class="hv2-label">04 · Mise en regard</span>
-            <h3>La valeur vient de l’ensemble.</h3>
-            <p>
-              Une émission donne une lecture. Le cycle donne une architecture de compréhension.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
+.hv2-hero__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(330px, .9fr);
+  gap: clamp(42px, 6vw, 76px);
+  align-items: center;
+  padding: 124px 0 84px;
+}
 
-    <section class="hv2-section hv2-section--dark" id="cycles">
-      <div class="hv2-container">
-        <div class="hv2-section-head hv2-section-head--left">
-          <p class="hv2-kicker">Saison inaugurale</p>
-          <h2>Deux cycles pour structurer les questions économiques réelles.</h2>
-          <p>
-            Chaque cycle rassemble des conversations limitées en positions.
-            L’objectif n’est pas l’exhaustivité, mais la composition des lectures qui comptent.
-          </p>
-        </div>
+.hv2-hero__copy {
+  max-width: 720px;
+}
 
-        <div class="hv2-bento hv2-bento--cycles">
-          <article class="hv2-card hv2-card--cycle hv2-card--span-2">
-            <span class="hv2-label">Cycle Industrie</span>
-            <h3>Industrie & transformation des territoires</h3>
-            <p>
-              Arbitrages de capacité, dépendances, outil productif, ressources,
-              compétences, financement, droit et trajectoires territoriales.
-            </p>
-            <div class="hv2-card-actions">
-              <a href="conversations/industrie.html">Conversations</a>
-              <a href="positions/industrie.html">Positions</a>
-            </div>
-          </article>
+.hv2-kicker,
+.hv2-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--hv2-accent-soft);
+}
 
-          <article class="hv2-card hv2-card--cycle">
-            <span class="hv2-label">Cycle Logement</span>
-            <h3>Logement & fabrique des territoires</h3>
-            <p>
-              Montage, foncier, droit, financement, faisabilité, exécution et production territoriale.
-            </p>
-            <div class="hv2-card-actions">
-              <a href="conversations/logement.html">Conversations</a>
-              <a href="positions/logement.html">Positions</a>
-            </div>
-          </article>
+.hv2-kicker::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  opacity: .75;
+}
 
-          <article class="hv2-card hv2-card--micro">
-            <span class="hv2-label">Principe</span>
-            <h3>Peu de positions. Plus de précision.</h3>
-            <p>Chaque lecture doit ajouter quelque chose que les autres ne portent pas déjà.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+.hv2-label {
+  display: block;
+  color: var(--hv2-accent);
+}
 
-    <section class="hv2-section hv2-section--paper" id="positions">
-      <div class="hv2-container">
-        <div class="hv2-section-head">
-          <p class="hv2-kicker">Positions éditoriales</p>
-          <h2>Ce que chaque acteur rend lisible depuis sa place.</h2>
-        </div>
+.hv2-section--dark .hv2-label {
+  color: var(--hv2-accent-soft);
+}
 
-        <div class="hv2-reading-grid">
-          <article>
-            <span>Stratégie</span>
-            <p>Trajectoire, gouvernance, arbitrage, seuil de décision.</p>
-          </article>
-          <article>
-            <span>Finance</span>
-            <p>Investissement, risque, marges de manœuvre, soutenabilité.</p>
-          </article>
-          <article>
-            <span>Droit</span>
-            <p>Cadre, responsabilité, conformité, sécurisation publique.</p>
-          </article>
-          <article>
-            <span>Opérations</span>
-            <p>Flux, qualité, capacité, interfaces métiers, exécution réelle.</p>
-          </article>
-          <article>
-            <span>Territoires</span>
-            <p>Foncier, infrastructures, ancrage, décision locale.</p>
-          </article>
-          <article>
-            <span>Compétences</span>
-            <p>Métiers, collectifs, transmission, capacité de transformation.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+.hv2-hero h1,
+.hv2-section h2,
+.hv2-access h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -.035em;
+}
 
-    <section class="hv2-section hv2-section--dark" id="acces">
-      <div class="hv2-container">
-        <div class="hv2-access">
-          <div>
-            <p class="hv2-kicker">Accès au dispositif</p>
-            <h2>Vous avez reçu une invitation&nbsp;?</h2>
-            <p>
-              Votre fonction, votre expertise ou votre expérience ont été identifiées
-              pour éclairer l’un des angles en cours de composition.
-            </p>
-          </div>
+.hv2-hero h1 {
+  max-width: 13.8ch;
+  font-size: clamp(2.8rem, 5.25vw, 5.15rem);
+  line-height: .99;
+  color: var(--hv2-text);
+}
 
-          <div class="hv2-access-card">
-            <span class="hv2-label">Échange éditorial</span>
-            <h3>Vérifier la bonne position avant toute proposition.</h3>
-            <p>
-              L’échange permet de qualifier la pertinence de votre lecture,
-              d’identifier l’angle le plus juste et de préciser les conditions
-              d’une éventuelle contribution.
-            </p>
-            <a class="hv2-btn hv2-btn--primary" href="demander-un-echange-editorial.html">Demander un échange éditorial</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+.hv2-lead {
+  max-width: 58ch;
+  margin: 28px 0 0;
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.76;
+  color: var(--hv2-text-soft);
+}
 
-  <footer class="hv2-footer">
-    <div class="hv2-container hv2-footer__inner">
-      <a class="hv2-brand hv2-brand--footer" href="index.html">En Plateau</a>
-      <p>Conversations économiques · positions situées · arbitrages réels.</p>
-    </div>
-  </footer>
-</body>
-</html>
+.hv2-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  margin-top: 30px;
+}
+
+.hv2-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 22px;
+  text-decoration: none;
+  border: 1px solid currentColor;
+  font-family: var(--font-body);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+.hv2-btn--primary {
+  background: var(--hv2-text);
+  color: var(--hv2-bg);
+  border-color: var(--hv2-text);
+}
+
+.hv2-btn--ghost {
+  background: transparent;
+  color: var(--hv2-text);
+  border-color: rgba(255,255,255,.34);
+}
+
+.hv2-btn:hover {
+  opacity: .84;
+}
+
+.hv2-reassurance {
+  max-width: 620px;
+  margin: 16px 0 0;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  line-height: 1.58;
+  color: var(--hv2-text-muted);
+}
+
+/* HERO PANEL */
+
+.hv2-hero-panel {
+  border: 1px solid var(--hv2-line-dark);
+  background: rgba(255,255,255,.052);
+  backdrop-filter: blur(12px);
+}
+
+.hv2-panel-row,
+.hv2-panel-grid > div {
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--hv2-line-dark);
+}
+
+.hv2-panel-row:last-child {
+  border-bottom: 0;
+}
+
+.hv2-panel-row span,
+.hv2-panel-grid span {
+  display: block;
+  margin: 0 0 10px;
+  font-family: var(--font-mono);
+  font-size: .66rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--hv2-text-muted);
+}
+
+.hv2-panel-row strong,
+.hv2-panel-grid strong {
+  display: block;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--hv2-text);
+}
+
+.hv2-panel-row p {
+  margin: 12px 0 0;
+  font-size: .9rem;
+  line-height: 1.7;
+  color: var(--hv2-text-soft);
+}
+
+.hv2-panel-row--large {
+  padding: 28px 28px;
+}
+
+.hv2-panel-row--large strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  line-height: 1.22;
+  letter-spacing: -.018em;
+}
+
+.hv2-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.hv2-panel-grid > div {
+  min-height: 124px;
+}
+
+.hv2-panel-grid > div:nth-child(odd) {
+  border-right: 1px solid var(--hv2-line-dark);
+}
+
+/* SECTIONS */
+
+.hv2-section {
+  position: relative;
+  padding: clamp(58px, 8vw, 96px) 0;
+  overflow: hidden;
+}
+
+.hv2-section--paper {
+  background: var(--hv2-paper);
+  color: var(--hv2-ink);
+}
+
+.hv2-section--dark {
+  background: var(--hv2-bg);
+  color: var(--hv2-text);
+  border-top: 1px solid var(--hv2-line-dark);
+}
+
+.hv2-section-head {
+  max-width: 860px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.hv2-section-head--left {
+  margin-left: 0;
+  text-align: left;
+}
+
+.hv2-section h2,
+.hv2-access h2 {
+  font-size: clamp(1.8rem, 3.4vw, 3.1rem);
+  line-height: 1.08;
+}
+
+.hv2-section-head p,
+.hv2-access p {
+  max-width: 760px;
+  margin: 16px auto 0;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.hv2-section-head--left p {
+  margin-left: 0;
+}
+
+.hv2-section--paper .hv2-section-head p,
+.hv2-section--paper .hv2-card p,
+.hv2-reading-grid p {
+  color: var(--hv2-ink-soft);
+}
+
+.hv2-section--dark .hv2-section-head p,
+.hv2-section--dark .hv2-card p,
+.hv2-access p {
+  color: var(--hv2-text-soft);
+}
+
+/* BENTO */
+
+.hv2-bento {
+  display: grid;
+  gap: 2px;
+}
+
+.hv2-bento--method {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: var(--hv2-line);
+}
+
+.hv2-bento--cycles {
+  grid-template-columns: 1.2fr 1fr .82fr;
+  background: var(--hv2-line-dark);
+}
+
+.hv2-card {
+  min-height: 100%;
+  padding: clamp(24px, 3vw, 34px);
+  background: var(--hv2-white);
+  color: var(--hv2-ink);
+}
+
+.hv2-section--dark .hv2-card {
+  background: rgba(255,255,255,.06);
+  color: var(--hv2-text);
+}
+
+.hv2-card--span-2 {
+  grid-column: span 2;
+}
+
+.hv2-card--dark {
+  background: var(--hv2-bg);
+  color: var(--hv2-text);
+}
+
+.hv2-card--accent {
+  background: var(--hv2-bg-soft);
+  color: var(--hv2-text);
+}
+
+.hv2-card h3 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.55vw, 1.45rem);
+  line-height: 1.24;
+  letter-spacing: -.018em;
+  font-weight: 600;
+}
+
+.hv2-card p {
+  margin: 0;
+  font-size: .94rem;
+  line-height: 1.74;
+}
+
+.hv2-card--dark p,
+.hv2-card--accent p {
+  color: var(--hv2-text-soft);
+}
+
+.hv2-card--cycle {
+  min-height: 290px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hv2-card--cycle p {
+  margin-bottom: 24px;
+}
+
+.hv2-card--micro {
+  min-height: 290px;
+}
+
+.hv2-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--hv2-line-dark);
+}
+
+/* READINGS */
+
+.hv2-reading-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+  background: var(--hv2-line);
+}
+
+.hv2-reading-grid article {
+  background: var(--hv2-white);
+  padding: 26px 24px;
+}
+
+.hv2-reading-grid span {
+  display: block;
+  margin-bottom: 9px;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--hv2-accent);
+}
+
+.hv2-reading-grid p {
+  margin: 0;
+  font-size: .93rem;
+  line-height: 1.7;
+}
+
+/* ACCESS */
+
+.hv2-access {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(320px, .86fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+
+.hv2-access-card {
+  border: 1px solid var(--hv2-line-dark);
+  background: rgba(255,255,255,.055);
+  padding: clamp(24px, 3.2vw, 34px);
+}
+
+.hv2-access-card h3 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.7vw, 1.55rem);
+  line-height: 1.22;
+  letter-spacing: -.018em;
+}
+
+.hv2-access-card .hv2-btn {
+  margin-top: 24px;
+}
+
+/* FOOTER */
+
+.hv2-footer {
+  background: var(--hv2-bg);
+  border-top: 1px solid var(--hv2-line-dark);
+  color: var(--hv2-text);
+  padding: 34px 0;
+}
+
+.hv2-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.hv2-brand--footer {
+  font-size: 1.35rem;
+}
+
+.hv2-footer p {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: var(--hv2-text-muted);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 980px) {
+  .hv2-top {
+    position: relative;
+    background: var(--hv2-bg);
+    border-bottom: 1px solid var(--hv2-line-dark);
+  }
+
+  .hv2-top__inner {
+    flex-wrap: wrap;
+  }
+
+  .hv2-nav {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 18px 24px;
+  }
+
+  .hv2-hero {
+    min-height: auto;
+  }
+
+  .hv2-hero__grid,
+  .hv2-access {
+    grid-template-columns: 1fr;
+  }
+
+  .hv2-hero__grid {
+    padding: 70px 0 64px;
+  }
+
+  .hv2-hero h1 {
+    max-width: 14ch;
+  }
+
+  .hv2-bento--method,
+  .hv2-bento--cycles,
+  .hv2-reading-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hv2-card--span-2 {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .hv2-container {
+    width: min(calc(100% - 32px), var(--hv2-container));
+  }
+
+  .hv2-top-cta {
+    width: 100%;
+  }
+
+  .hv2-nav {
+    display: none;
+  }
+
+  .hv2-hero__grid {
+    padding: 52px 0 54px;
+  }
+
+  .hv2-hero h1 {
+    font-size: clamp(2.35rem, 12vw, 3.35rem);
+    line-height: 1.02;
+  }
+
+  .hv2-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hv2-btn {
+    width: 100%;
+  }
+
+  .hv2-panel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hv2-panel-grid > div:nth-child(odd) {
+    border-right: 0;
+  }
+
+  .hv2-panel-grid > div {
+    min-height: auto;
+  }
+
+  .hv2-section {
+    padding: 54px 0;
+  }
+
+  .hv2-section-head {
+    text-align: left;
+  }
+
+  .hv2-section-head p {
+    margin-left: 0;
+  }
+
+  .hv2-card,
+  .hv2-reading-grid article,
+  .hv2-access-card {
+    padding: 24px;
+  }
+
+  .hv2-footer__inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   HOME V2 — VERSION BULLET COPY / DETAILS
+   Objectif : micro-copy visible + contenu long dépliable.
+   À conserver en fin de fichier.
+========================================================= */
+
+.hv2-lead--sharp {
+  max-width: 54ch;
+  font-size: clamp(1.02rem, 1.35vw, 1.16rem);
+  line-height: 1.7;
+}
+
+.hv2-keyline,
+.hv2-chipline,
+.hv2-bullets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hv2-keyline span,
+.hv2-chipline span,
+.hv2-bullets li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid rgba(255,255,255,.20);
+  font-family: var(--font-mono);
+  font-size: .64rem;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  color: var(--hv2-text-soft);
+  background: rgba(255,255,255,.035);
+}
+
+.hv2-section--paper .hv2-chipline span,
+.hv2-section--paper .hv2-bullets li {
+  border-color: rgba(17,17,17,.18);
+  color: var(--hv2-ink-soft);
+  background: rgba(17,17,17,.035);
+}
+
+.hv2-section-head--compact {
+  max-width: 780px;
+  margin-bottom: 30px;
+}
+
+.hv2-section-head--compact h2 {
+  max-width: 17ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hv2-section-head--left.hv2-section-head--compact h2 {
+  margin-left: 0;
+}
+
+.hv2-bullet-bento {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2px;
+  background: var(--hv2-line);
+}
+
+.hv2-bullet-bento .hv2-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 275px;
+}
+
+.hv2-bullet-bento .hv2-details {
+  margin-top: auto;
+}
+
+.hv2-details,
+.hv2-mini-details,
+.hv2-wide-details,
+.hv2-reading-grid--details details {
+  border-top: 1px solid rgba(17,17,17,.16);
+  margin-top: 22px;
+  padding-top: 14px;
+}
+
+.hv2-details--dark,
+.hv2-mini-details,
+.hv2-wide-details,
+.hv2-card--dark .hv2-details,
+.hv2-card--accent .hv2-details,
+.hv2-section--dark .hv2-details {
+  border-top-color: rgba(255,255,255,.18);
+}
+
+.hv2-details summary,
+.hv2-mini-details summary,
+.hv2-wide-details summary,
+.hv2-reading-grid--details summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  font-family: var(--font-mono);
+  font-size: .66rem;
+  line-height: 1.35;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--hv2-accent);
+}
+
+.hv2-details summary::-webkit-details-marker,
+.hv2-mini-details summary::-webkit-details-marker,
+.hv2-wide-details summary::-webkit-details-marker,
+.hv2-reading-grid--details summary::-webkit-details-marker {
+  display: none;
+}
+
+.hv2-details summary::after,
+.hv2-mini-details summary::after,
+.hv2-wide-details summary::after,
+.hv2-reading-grid--details summary::after {
+  content: "+";
+  flex: 0 0 auto;
+  font-size: .95rem;
+  line-height: 1;
+  color: currentColor;
+}
+
+.hv2-details[open] summary::after,
+.hv2-mini-details[open] summary::after,
+.hv2-wide-details[open] summary::after,
+.hv2-reading-grid--details details[open] summary::after {
+  content: "–";
+}
+
+.hv2-details p,
+.hv2-mini-details p,
+.hv2-wide-details p,
+.hv2-reading-grid--details p {
+  margin: 14px 0 0;
+  font-size: .92rem;
+  line-height: 1.72;
+}
+
+.hv2-card--dark .hv2-details summary,
+.hv2-card--accent .hv2-details summary,
+.hv2-mini-details summary,
+.hv2-wide-details summary,
+.hv2-section--dark .hv2-details summary {
+  color: var(--hv2-accent-soft);
+}
+
+.hv2-mini-details {
+  margin: 0;
+  padding: 18px 24px 22px;
+  border-top: 1px solid var(--hv2-line-dark);
+}
+
+.hv2-mini-details p {
+  color: var(--hv2-text-soft);
+}
+
+.hv2-cycle-board {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 2px;
+  background: var(--hv2-line-dark);
+}
+
+.hv2-cycle-card {
+  background: rgba(255,255,255,.06);
+  padding: clamp(24px, 3vw, 34px);
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hv2-cycle-card--main {
+  grid-row: span 2;
+  min-height: 100%;
+}
+
+.hv2-cycle-card h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.4vw, 2.25rem);
+  line-height: 1.08;
+  letter-spacing: -.028em;
+  font-weight: 600;
+}
+
+.hv2-cycle-card--micro h3 {
+  font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+}
+
+.hv2-cycle-card p {
+  color: var(--hv2-text-soft);
+}
+
+.hv2-cycle-card .hv2-card-actions {
+  margin-top: auto;
+}
+
+.hv2-reading-grid--details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+  background: var(--hv2-line);
+}
+
+.hv2-reading-grid--details details {
+  margin: 0;
+  padding: 24px;
+  background: var(--hv2-white);
+  border-top: 0;
+  min-height: 150px;
+}
+
+.hv2-reading-grid--details summary {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 12px;
+  color: var(--hv2-accent);
+}
+
+.hv2-reading-grid--details summary span,
+.hv2-reading-grid--details summary strong {
+  display: block;
+  grid-column: 1;
+}
+
+.hv2-reading-grid--details summary span {
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.hv2-reading-grid--details summary strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+  line-height: 1.25;
+  letter-spacing: -.014em;
+  color: var(--hv2-ink);
+}
+
+.hv2-reading-grid--details summary::after {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  padding-top: 2px;
+}
+
+.hv2-process {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2px;
+  background: var(--hv2-line-dark);
+}
+
+.hv2-process article {
+  padding: clamp(22px, 2.6vw, 30px);
+  background: rgba(255,255,255,.06);
+  min-height: 210px;
+}
+
+.hv2-process span {
+  display: block;
+  margin-bottom: 22px;
+  font-family: var(--font-mono);
+  font-size: .66rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--hv2-accent-soft);
+}
+
+.hv2-process strong {
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.35vw, 1.26rem);
+  line-height: 1.25;
+  letter-spacing: -.014em;
+}
+
+.hv2-process p {
+  margin: 0;
+  color: var(--hv2-text-soft);
+  font-size: .92rem;
+  line-height: 1.68;
+}
+
+.hv2-wide-details {
+  margin-top: 24px;
+  padding: 20px 24px 22px;
+  border: 1px solid var(--hv2-line-dark);
+  background: rgba(255,255,255,.045);
+}
+
+.hv2-access--paper {
+  color: var(--hv2-ink);
+}
+
+.hv2-access--paper p {
+  color: var(--hv2-ink-soft);
+}
+
+.hv2-access-stack {
+  display: grid;
+  gap: 2px;
+  background: var(--hv2-line);
+}
+
+.hv2-access-card--light {
+  background: var(--hv2-white);
+  border: 0;
+  color: var(--hv2-ink);
+}
+
+.hv2-access-card--light p {
+  color: var(--hv2-ink-soft);
+}
+
+.hv2-btn--dark {
+  background: var(--hv2-ink);
+  color: var(--hv2-white);
+  border-color: var(--hv2-ink);
+}
+
+.hv2-text-link {
+  display: inline-flex;
+  margin-top: 18px;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--hv2-accent);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 5px;
+}
+
+@media (max-width: 980px) {
+  .hv2-bullet-bento,
+  .hv2-cycle-board,
+  .hv2-reading-grid--details,
+  .hv2-process {
+    grid-template-columns: 1fr;
+  }
+
+  .hv2-cycle-card--main,
+  .hv2-card--span-2 {
+    grid-row: auto;
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .hv2-keyline span,
+  .hv2-chipline span,
+  .hv2-bullets li {
+    width: auto;
+  }
+
+  .hv2-section-head--compact h2,
+  .hv2-section-head--left.hv2-section-head--compact h2 {
+    max-width: 100%;
+  }
+
+  .hv2-mini-details,
+  .hv2-wide-details {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
