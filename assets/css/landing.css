@@ -5675,3 +5675,30 @@ body.landing-page #cadre-confiance .trust-extra-details[open] > summary {
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* ─────────────────────────────────────────────
+   PATCH GAINS ACCORDÉON — 17/05
+   Évite que les cartes fermées s'étirent en volets gris vides
+   lorsqu'une carte de gains est ouverte.
+───────────────────────────────────────────── */
+body.landing-page #valeur-position .landing-grid--value {
+  align-items: start !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .landing-value-card {
+  align-self: start !important;
+  height: auto !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .landing-value-card:has(.value-details[open]) {
+  min-height: 0 !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .landing-value-card:not(:has(.value-details[open])) .value-details {
+  margin-top: 22px !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .landing-value-card:not(:has(.value-details[open])) {
+  min-height: 360px !important;
+}
