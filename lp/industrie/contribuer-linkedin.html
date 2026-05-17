@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>En Plateau — Scripts LinkedIn</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --noir:    #111111;
+      --gris-1:  #1e1e1e;
+      --gris-2:  #2a2a2a;
+      --gris-3:  #3d3d3d;
+      --gris-4:  #6b6b6b;
+      --gris-5:  #a8a8a8;
+      --gris-6:  #e8e8e8;
+      --blanc:   #fafafa;
+      --accent:  #c8a96e;
+      --accent2: #7c9b8a;
+      --rouge:   #c0392b;
+      --bleu-li: #0a66c2;
+      --orange:  #e67e22;
+
+      --li-bg:      #e8f0f8;
+      --comm-bg:    #e8f0ec;
+      --dg-bg:      #f5f0e8;
+      --interv-bg:  #f0e8f0;
+
+      --radius: 6px;
+      --mono: 'IBM Plex Mono', monospace;
+      --sans: 'IBM Plex Sans', sans-serif;
+      --serif: 'Playfair Display', serif;
+    }
+
+    html { font-size: 15px; }
+    body {
+      font-family: var(--sans);
+      background: var(--noir);
+      color: var(--blanc);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    .ep-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2rem;
+      border-bottom: 1px solid var(--gris-2);
+      background: var(--gris-1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .ep-brand {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: .02em;
+    }
+    .ep-badge {
+      font-family: var(--mono);
+      font-size: .7rem;
+      color: var(--gris-4);
+      border: 1px solid var(--gris-3);
+      padding: .2rem .6rem;
+      border-radius: 20px;
+      letter-spacing: .05em;
+    }
+
+    /* ── LOADING / ERROR ── */
+    .ep-state {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      flex-direction: column;
+      gap: 1rem;
+      color: var(--gris-4);
+      font-family: var(--mono);
+      font-size: .85rem;
+    }
+    .ep-dot-spin {
+      width: 32px; height: 32px;
+      border: 2px solid var(--gris-3);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin .8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── LAYOUT ── */
+    .ep-main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* ── IDENTITY CARD ── */
+    .ep-identity {
+      background: var(--gris-1);
+      border: 1px solid var(--gris-2);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: start;
+    }
+    .ep-identity-name {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      color: var(--blanc);
+      margin-bottom: .2rem;
+    }
+    .ep-identity-role {
+      font-size: .85rem;
+      color: var(--gris-5);
+      margin-bottom: .8rem;
+    }
+    .ep-identity-org {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .ep-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-top: .8rem;
+    }
+    .ep-tag {
+      font-family: var(--mono);
+      font-size: .65rem;
+      padding: .2rem .55rem;
+      border-radius: 20px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      border: 1px solid;
+    }
+    .ep-tag--type-conseil { color: #a8d5a2; border-color: #a8d5a2; }
+    .ep-tag--type-indus   { color: #f0c987; border-color: #f0c987; }
+    .ep-tag--lecture      { color: #a8c4d5; border-color: #a8c4d5; }
+    .ep-tag--rang         { color: var(--gris-4); border-color: var(--gris-3); }
+    .ep-ref {
+      font-family: var(--mono);
+      font-size: .7rem;
+      color: var(--gris-4);
+      text-align: right;
+    }
+
+    /* ── ANGLE CARD ── */
+    .ep-angle-card {
+      background: var(--gris-2);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .ep-angle-label {
+      font-family: var(--mono);
+      font-size: .65rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .4rem;
+    }
+    .ep-angle-text {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--blanc);
+      line-height: 1.5;
+    }
+    .ep-angle-meta {
+      margin-top: .6rem;
+      font-size: .78rem;
+      color: var(--gris-5);
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .ep-angle-meta span { display: flex; align-items: center; gap: .3rem; }
+
+    /* ── SECTION TITLE ── */
+    .ep-section {
+      margin-bottom: 1.5rem;
+    }
+    .ep-section-title {
+      font-family: var(--mono);
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--gris-4);
+      border-bottom: 1px solid var(--gris-2);
+      padding-bottom: .5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── ACCORDION ── */
+    .ep-accordion { display: flex; flex-direction: column; gap: .5rem; }
+    .ep-item {
+      border: 1px solid var(--gris-2);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color .2s;
+    }
+    .ep-item:has(.ep-content[open]) { border-color: var(--gris-3); }
+
+    .ep-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .85rem 1rem;
+      background: var(--gris-1);
+      cursor: pointer;
+      border: none;
+      color: var(--blanc);
+      font-family: var(--sans);
+      font-size: .88rem;
+      font-weight: 500;
+      text-align: left;
+      gap: 1rem;
+      transition: background .15s;
+    }
+    .ep-toggle:hover { background: var(--gris-2); }
+    .ep-toggle-left { display: flex; align-items: center; gap: .7rem; }
+    .ep-toggle-icon {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .7rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .ep-toggle-icon--li   { background: var(--bleu-li); color: #fff; }
+    .ep-toggle-icon--mail { background: var(--orange);  color: #fff; }
+    .ep-toggle-icon--rep  { background: var(--accent2); color: #fff; }
+    .ep-toggle-icon--why  { background: var(--gris-3);  color: var(--gris-5); }
+    .ep-toggle-icon--moti { background: var(--accent);  color: var(--noir); }
+
+    .ep-chevron {
+      font-size: .7rem;
+      color: var(--gris-4);
+      transition: transform .2s;
+      flex-shrink: 0;
+    }
+    .ep-item.is-open .ep-chevron { transform: rotate(180deg); }
+
+    .ep-body {
+      background: var(--gris-1);
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease, padding .3s ease;
+    }
+    .ep-item.is-open .ep-body {
+      max-height: 2000px;
+      padding: 1rem;
+    }
+
+    /* ── MESSAGE BLOCK ── */
+    .ep-msg {
+      position: relative;
+      background: var(--noir);
+      border: 1px solid var(--gris-2);
+      border-radius: var(--radius);
+      padding: 1rem 1rem .8rem;
+      font-size: .85rem;
+      line-height: 1.7;
+      color: var(--gris-6);
+      white-space: pre-wrap;
+      font-family: var(--sans);
+    }
+    .ep-msg-header {
+      font-family: var(--mono);
+      font-size: .65rem;
+      color: var(--gris-4);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: .6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .ep-char-count {
+      font-family: var(--mono);
+      font-size: .65rem;
+      padding: .15rem .4rem;
+      border-radius: 4px;
+    }
+    .ep-char-count--ok   { color: var(--accent2); background: rgba(124,155,138,.12); }
+    .ep-char-count--warn { color: var(--accent);  background: rgba(200,169,110,.12); }
+    .ep-char-count--over { color: var(--rouge);   background: rgba(192,57,43,.12); }
+
+    .ep-copy-btn {
+      position: absolute;
+      top: .6rem; right: .6rem;
+      background: var(--gris-2);
+      border: 1px solid var(--gris-3);
+      color: var(--gris-5);
+      border-radius: 4px;
+      padding: .25rem .6rem;
+      font-family: var(--mono);
+      font-size: .65rem;
+      cursor: pointer;
+      transition: all .15s;
+      letter-spacing: .04em;
+    }
+    .ep-copy-btn:hover { background: var(--gris-3); color: var(--blanc); }
+    .ep-copy-btn.copied { color: var(--accent2); border-color: var(--accent2); }
+
+    .ep-msg-text {
+      margin-top: .5rem;
+    }
+
+    /* ── REPONSES RAPIDES ── */
+    .ep-responses { display: flex; flex-direction: column; gap: .8rem; }
+    .ep-response-item {
+      background: var(--noir);
+      border: 1px solid var(--gris-2);
+      border-radius: var(--radius);
+      padding: .8rem 1rem;
+    }
+    .ep-response-label {
+      font-family: var(--mono);
+      font-size: .62rem;
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: .4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ep-response-text {
+      font-size: .85rem;
+      color: var(--gris-6);
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    /* ── WHY / MOTIVATIONS ── */
+    .ep-why-block {
+      background: var(--noir);
+      border: 1px solid var(--gris-2);
+      border-radius: var(--radius);
+      padding: 1rem;
+      margin-bottom: .6rem;
+    }
+    .ep-why-label {
+      font-family: var(--mono);
+      font-size: .65rem;
+      color: var(--gris-4);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: .5rem;
+    }
+    .ep-why-text {
+      font-size: .85rem;
+      color: var(--gris-5);
+      line-height: 1.65;
+    }
+
+    .ep-moti-list { display: flex; flex-direction: column; gap: .5rem; }
+    .ep-moti-item {
+      display: flex;
+      gap: .7rem;
+      align-items: flex-start;
+      font-size: .85rem;
+      color: var(--gris-5);
+      line-height: 1.5;
+    }
+    .ep-moti-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: .45rem;
+      flex-shrink: 0;
+    }
+    .ep-moti-dot--frein { background: var(--rouge); }
+
+    /* ── MEDIA ── */
+    .ep-media-line {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      padding: .7rem .9rem;
+      background: var(--noir);
+      border: 1px solid var(--gris-2);
+      border-radius: var(--radius);
+      font-size: .85rem;
+    }
+    .ep-media-dot {
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .ep-media-name { font-weight: 600; color: var(--blanc); }
+    .ep-media-sep { color: var(--gris-3); }
+    .ep-media-journalist { color: var(--gris-5); }
+
+    /* ── ALTERNATIVES ── */
+    .ep-alt-list { display: flex; flex-direction: column; gap: .4rem; }
+    .ep-alt-item {
+      font-family: var(--mono);
+      font-size: .75rem;
+      color: var(--gris-4);
+      padding: .4rem .7rem;
+      background: var(--noir);
+      border: 1px solid var(--gris-2);
+      border-radius: var(--radius);
+    }
+    .ep-alt-code { color: var(--gris-5); }
+
+    /* ── APPUI BLOCK ── */
+    .ep-appui {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .6rem;
+      margin-bottom: .8rem;
+    }
+    .ep-appui-card {
+      background: var(--noir);
+      border: 1px solid var(--gris-2);
+      border-radius: var(--radius);
+      padding: .7rem .9rem;
+      font-size: .82rem;
+    }
+    .ep-appui-role {
+      font-family: var(--mono);
+      font-size: .6rem;
+      color: var(--gris-4);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: .3rem;
+    }
+    .ep-appui-name { color: var(--blanc); font-weight: 500; }
+    .ep-appui-li { color: var(--bleu-li); font-size: .75rem; margin-top: .2rem; }
+
+    @media (max-width: 600px) {
+      .ep-identity { grid-template-columns: 1fr; }
+      .ep-appui { grid-template-columns: 1fr; }
+      .ep-main { padding: 1.2rem 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="ep-header">
+  <a class="ep-brand" href="/">En Plateau</a>
+  <span class="ep-badge">OUTIL INTERNE · SCRIPTS LINKEDIN</span>
+</header>
+
+<div id="app">
+  <div class="ep-state">
+    <div class="ep-dot-spin"></div>
+    <span>Chargement du dossier…</span>
+  </div>
+</div>
+
+<!-- Charger les fichiers JS du moteur -->
+<script src="/assets/js/editorial-data-industrie-v67.js?v=moteur-v6-cast-publicrefs-20260517-0610"></script>
+<script src="/assets/js/render-core.js?v=moteur-v6-cast-publicrefs-20260517-0610"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  const Core = window.EnPlateauRenderCore;
+  const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
+  const app  = document.getElementById('app');
+
+  /* ── Utilitaires ── */
+  function s(v) { return String(v || '').trim(); }
+  function esc(v) { return String(v||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function prenom(nom) { return s(nom).split(' ')[0]; }
+  function isConseil(type) {
+    const t = s(type).toLowerCase();
+    return t.includes('conseil') || t.includes('cabinet') || t.includes('avocat') || t.includes('ingénierie');
+  }
+
+  const CAL = 'https://cal.com/en-plateau/echange-editorial-15-min?overlayCalendar=true';
+  const DATE_COMITE = 'mi-juillet 2026';
+
+  /* ── Récupérer le deal ── */
+  const params = new URLSearchParams(window.location.search);
+  const ref = params.get('cast') || params.get('ref') || params.get('deal') || '';
+
+  if (!ref) {
+    app.innerHTML = `<div class="ep-state"><span>⚠ Aucun identifiant de dossier dans l'URL.<br>Ajoutez <code>?cast=XXXXXXX</code></span></div>`;
+    return;
+  }
+
+  // Attendre que render-core soit prêt
+  function init() {
+    if (!Core) { setTimeout(init, 100); return; }
+
+    const deal = Core.getDealById(ref);
+    if (!deal) {
+      app.innerHTML = `<div class="ep-state"><span>Dossier <code>${esc(ref)}</code> introuvable.</span></div>`;
+      return;
+    }
+
+    const angle   = Core.getAngleByCode(Core.getAngleCodeFromDeal(deal));
+    const person  = Core.getPerson(deal);
+    const org     = Core.getOrganisation(deal);
+    const why     = Core.getWhy(deal);
+    const persona = Core.getPersonaFit(angle);
+    const reading = Core.getReadingByCode(s(deal?.editorialContext?.typeLecture));
+    const actorType = org.type; // cabinet_conseil ou entreprise
+    const conseil = actorType === 'cabinet_conseil';
+
+    /* Appuis depuis sourceCastingV6 */
+    const sc = deal?.sourceCastingV6 || {};
+    const hasDG   = s(sc.pdg_nom || sc.dg_nom);
+    const hasDGLI = s(sc.pdg_linkedin || sc.dg_linkedin);
+    const hasComm = s(sc.comm_nom);
+    const hasCommLI = s(sc.comm_linkedin);
+
+    /* Infos éditoriales */
+    const nomComplet    = s(person.fullName);
+    const prenomP       = prenom(nomComplet);
+    const roleP         = s(person.role);
+    const orgNom        = s(org.name);
+    const typeLecture   = s(deal?.editorialContext?.typeLecture);
+    const angleTexte    = s(deal?.editorialContext?.tensionCentrale || deal?.editorialContext?.angle);
+    const conversation  = s(deal?.editorialContext?.conversation);
+    const contexte      = s(deal?.editorialContext?.contexte);
+    const pubRef        = s(deal?.publicRef || ref);
+    const rang          = deal?.activation?.rang || '—';
+    const landingURL    = `https://enplateau.fr/lp/industrie/contribuer.html?cast=${pubRef}`;
+
+    /* Journaliste / média depuis l'angle */
+    const journaliste = s(angle?.journaliste || '');
+    const media       = s(angle?.media || '');
+    const mediaLine   = [journaliste, media].filter(Boolean).join(' · ');
+
+    /* Génération des scripts */
+    const angleCourtArr = angleTexte.replace(/^Comment\s+/i,'').replace(/\s*\?$/, '').split(/,|;/).slice(0,2).join(', ');
+    const angleCourt = angleCourtArr || angleTexte.substring(0,60) + '…';
+
+    /* ══════════════════════════════════════════
+       SCRIPTS — INTERVENANT
+    ══════════════════════════════════════════ */
+    const inv_interv = `Bonjour, En Plateau prépare une conversation Industrie sur ${angleCourt}. Votre fonction de ${roleP} nous semble pouvoir porter une lecture ${typeLecture.toLowerCase()} utile sur ce sujet.`;
+
+    const msg_interv = `Bonjour,
+
+Merci pour votre ajout.
+
+Nous préparons, dans le cycle Industrie & transformation des territoires d'En Plateau, une conversation sur la question suivante :
+« ${angleTexte} »
+
+Votre fonction de ${roleP} nous semble bien placée pour porter une lecture ${typeLecture.toLowerCase()} sur cet angle.
+
+À ce stade, une seule position ${typeLecture.toLowerCase()} est ouverte dans cette configuration — soumise au comité éditorial du ${DATE_COMITE}.${hasDG ? `\n\nNous avons informé en amont ${prenom(hasDG)} afin que cette sollicitation soit connue en interne.` : ''}
+
+La contribution vise une lecture de mécanisme, préparée et publiquement tenable — pas un commentaire sur une situation interne.
+
+Page de cadrage : ${landingURL}
+Échange de 15 min : ${CAL}`;
+
+    const rel_interv = `Bonjour, je me permets une relance courte.
+
+L'échange proposé dure 15 minutes — l'objectif est simplement de vérifier si votre lecture peut s'inscrire dans la conversation en cours de composition.
+
+Une seule position ${typeLecture.toLowerCase()} est ouverte dans cette configuration. La sélection sera examinée lors du comité éditorial du ${DATE_COMITE}.
+
+Page de cadrage : ${landingURL}
+Créneau possible ici : ${CAL}`;
+
+    /* ══════════════════════════════════════════
+       SCRIPTS — DG / PDG
+    ══════════════════════════════════════════ */
+    const inv_dg = `Bonjour, En Plateau prépare une conversation Industrie. Nous souhaiterions qualifier une possible lecture de ${orgNom}.`;
+
+    const msg_dg = `Bonjour,
+
+Merci pour votre ajout.
+
+Nous préparons, dans le cycle Industrie & transformation des territoires d'En Plateau, une conversation sur :
+« ${angleTexte} »
+
+${orgNom} nous semble pouvoir apporter une lecture utile sur ce sujet, en raison de sa position dans l'écosystème industriel.
+
+Nous avons notamment identifié ${prenomP}, ${roleP}, pour porter une lecture ${typeLecture.toLowerCase()} sur cet angle.
+
+À ce stade, une seule position ${typeLecture.toLowerCase()} est ouverte dans cette configuration — soumise au comité éditorial du ${DATE_COMITE}.
+
+Page de cadrage : ${landingURL}
+Échange de 15 min : ${CAL}`;
+
+    const rel_dg = `Bonjour, relance courte.
+
+Nous souhaitions simplement vérifier si ${prenomP} vous semble le bon porteur d'une lecture ${typeLecture.toLowerCase()} sur cet angle, ou si un autre interlocuteur serait plus pertinent chez ${orgNom}.
+
+Page de cadrage : ${landingURL}
+Créneau de 15 min : ${CAL}`;
+
+    /* ══════════════════════════════════════════
+       SCRIPTS — COMM
+    ══════════════════════════════════════════ */
+    const inv_comm = `Bonjour, En Plateau prépare une conversation Industrie. Nous souhaitons vérifier avec vous le cadrage d'une possible sollicitation de ${orgNom}.`;
+
+    const msg_comm = `Bonjour,
+
+Merci pour votre ajout.
+
+Nous préparons une conversation sur :
+« ${angleTexte} »
+
+${hasDG ? `Nous avons pris contact avec ${prenom(hasDG)} pour l'informer que nous envisagions de solliciter ${prenomP}, ${roleP}, sur une lecture ${typeLecture.toLowerCase()} liée à ce sujet.` : `Nous envisageons de solliciter ${prenomP}, ${roleP}, sur une lecture ${typeLecture.toLowerCase()} liée à ce sujet.`}
+
+La contribution ne suppose pas de commenter une situation interne — elle vise une lecture de mécanisme, préparée et publiquement tenable.${mediaLine ? `\n\nL'entretien serait conduit par ${mediaLine}.` : ''}
+
+Page de cadrage : ${landingURL}
+Échange de 15 min : ${CAL}`;
+
+    const rel_comm = `Bonjour, relance courte.
+
+Nous souhaitions vérifier si le cadrage de cette contribution vous semble maîtrisé : angle, périmètre de parole, interlocuteur pressenti.
+
+Page de cadrage : ${landingURL}
+Échange de 15 min : ${CAL}`;
+
+    /* ══════════════════════════════════════════
+       RÉPONSES RAPIDES
+    ══════════════════════════════════════════ */
+    const rep_courte = `Avec plaisir — quelques minutes suffiraient pour voir si la lecture est pertinente. Je vous propose de regarder la page de cadrage ici : ${landingURL}`;
+
+    const rep_moyenne = `Merci pour votre retour. Si cela vous convient, un échange de 15 minutes permettrait de vérifier si la lecture s'inscrit bien dans la composition éditoriale et de clarifier les conditions de préparation. Vous pouvez voir le détail ici : ${landingURL} — et réserver un créneau directement : ${CAL}`;
+
+    const rep_courte_neg = `Je comprends tout à fait. Si la situation évolue ou si un autre interlocuteur vous semble plus adapté chez ${orgNom}, n'hésitez pas à me le signaler.`;
+
+    /* ══════════════════════════════════════════
+       MOTIVATIONS / FREINS depuis persona
+    ══════════════════════════════════════════ */
+    const speakerPersona = persona?.speakerPersona || {};
+    const motivations = [];
+    const freins = [];
+
+    if (speakerPersona.motivation) motivations.push(s(speakerPersona.motivation));
+    if (reading?.motivationCentrale) motivations.push(s(reading.motivationCentrale));
+
+    const orgLayer = persona?.organizationLayer || {};
+    if (orgLayer.primaryGain) motivations.push(s(orgLayer.primaryGain));
+
+    const valCards = conseil
+      ? ['Installer une lecture propriétaire sur les mécanismes industriels', 'Se différencier par une expertise transversale reconnue', 'Créer un actif éditorial réutilisable dans les relations dirigeants']
+      : ['Faire reconnaître une capacité d\'arbitrage de direction', 'Installer une parole de direction crédible et préparée', 'Contribuer à un collectif qui rend lisibles les transformations industrielles'];
+
+    const freinsTypes = [
+      'Risque perçu d\'une communication corporate non maîtrisée',
+      'Incertitude sur le périmètre de parole et la confidentialité',
+      'Disponibilité et charge de préparation estimée excessive',
+      'Manque de lisibilité sur le format et l\'exposition finale'
+    ];
+
+    /* ══════════════════════════════════════════
+       RENDER
+    ══════════════════════════════════════════ */
+    function charCount(text) {
+      const n = text.length;
+      const cls = n <= 270 ? 'ok' : n <= 300 ? 'warn' : 'over';
+      return `<span class="ep-char-count ep-char-count--${cls}">${n} / 300</span>`;
+    }
+
+    function msgBlock(label, text, showChar = false) {
+      const id = 'msg_' + Math.random().toString(36).slice(2,8);
+      return `
+        <div class="ep-why-block" style="margin-bottom:.8rem">
+          <div class="ep-msg-header">
+            <span>${label}</span>
+            ${showChar ? charCount(text) : ''}
+          </div>
+          <div class="ep-msg" id="${id}">
+            <button class="ep-copy-btn" onclick="copyMsg('${id}', this)">Copier</button>
+            <div class="ep-msg-text">${esc(text)}</div>
+          </div>
+        </div>`;
+    }
+
+    function accordion(icon, iconClass, title, bodyHTML, startOpen = false) {
+      return `
+        <div class="ep-item${startOpen ? ' is-open' : ''}">
+          <button class="ep-toggle" onclick="toggleItem(this)">
+            <span class="ep-toggle-left">
+              <span class="ep-toggle-icon ${iconClass}">${icon}</span>
+              <span>${title}</span>
+            </span>
+            <span class="ep-chevron">▼</span>
+          </button>
+          <div class="ep-body">${bodyHTML}</div>
+        </div>`;
+    }
+
+    /* Bloc appuis */
+    let appuiHTML = '';
+    if (hasDG || hasComm) {
+      appuiHTML = `<div class="ep-appui">`;
+      if (hasDG) appuiHTML += `
+        <div class="ep-appui-card">
+          <div class="ep-appui-role">DG / PDG identifié</div>
+          <div class="ep-appui-name">${esc(hasDG)}</div>
+          ${hasDGLI ? `<div class="ep-appui-li"><a href="${esc(hasDGLI)}" target="_blank" style="color:var(--bleu-li);text-decoration:none;font-size:.75rem">Profil LinkedIn →</a></div>` : ''}
+        </div>`;
+      if (hasComm) appuiHTML += `
+        <div class="ep-appui-card">
+          <div class="ep-appui-role">DirCom identifié(e)</div>
+          <div class="ep-appui-name">${esc(hasComm)}</div>
+          ${hasCommLI ? `<div class="ep-appui-li"><a href="${esc(hasCommLI)}" target="_blank" style="color:var(--bleu-li);text-decoration:none;font-size:.75rem">Profil LinkedIn →</a></div>` : ''}
+        </div>`;
+      appuiHTML += `</div>`;
+    }
+
+    /* Alternatives */
+    const alts = (sc.codes_alternatifs || []);
+    let altsHTML = alts.length
+      ? `<div class="ep-alt-list">` + alts.map(c => `<div class="ep-alt-item"><span class="ep-alt-code">${esc(c)}</span> — lecture alternative disponible</div>`).join('') + `</div>`
+      : `<p style="color:var(--gris-4);font-size:.82rem">Aucune lecture alternative configurée.</p>`;
+
+    /* Motivations */
+    const motiAll = [...new Set([...motivations, ...valCards])].slice(0,4);
+    const motiHTML = `
+      <div style="margin-bottom:1rem">
+        <div class="ep-why-label">Leviers de motivation</div>
+        <div class="ep-moti-list">${motiAll.map(m => `<div class="ep-moti-item"><div class="ep-moti-dot"></div><span>${esc(m)}</span></div>`).join('')}</div>
+      </div>
+      <div>
+        <div class="ep-why-label">Freins fréquents</div>
+        <div class="ep-moti-list">${freinsTypes.map(f => `<div class="ep-moti-item"><div class="ep-moti-dot ep-moti-dot--frein"></div><span>${esc(f)}</span></div>`).join('')}</div>
+      </div>`;
+
+    /* Réponses rapides */
+    function repBlock(label, text) {
+      const id = 'rep_' + Math.random().toString(36).slice(2,8);
+      return `<div class="ep-response-item">
+        <div class="ep-response-label">
+          <span>${label}</span>
+          <button class="ep-copy-btn" style="position:static" onclick="copyRep('${id}',this)">Copier</button>
+        </div>
+        <div class="ep-response-text" id="${id}">${esc(text)}</div>
+      </div>`;
+    }
+
+    const repHTML = `
+      <div style="margin-bottom:.6rem;font-size:.8rem;color:var(--gris-4)">Si la personne répond positivement mais n'est pas prête à s'engager :</div>
+      <div class="ep-responses">
+        ${repBlock('Réponse courte — intérêt manifeste', rep_courte)}
+        ${repBlock('Réponse moyenne — proposition de RDV', rep_moyenne)}
+      </div>
+      <div style="margin:.8rem 0 .4rem;font-size:.8rem;color:var(--gris-4)">Si la personne décline :</div>
+      <div class="ep-responses">
+        ${repBlock('Réponse de clôture', rep_courte_neg)}
+      </div>`;
+
+    /* HTML final */
+    const html = `
+      <main class="ep-main">
+
+        <!-- Identité -->
+        <div class="ep-identity">
+          <div>
+            <div class="ep-identity-name">${esc(nomComplet)}</div>
+            <div class="ep-identity-role">${esc(roleP)}</div>
+            <div class="ep-identity-org">${esc(orgNom)}</div>
+            <div class="ep-tags">
+              <span class="ep-tag ${conseil ? 'ep-tag--type-conseil' : 'ep-tag--type-indus'}">${conseil ? 'Cabinet · Conseil' : 'Industrie'}</span>
+              <span class="ep-tag ep-tag--lecture">${esc(typeLecture)}</span>
+              <span class="ep-tag ep-tag--rang">Rang ${rang}</span>
+              ${hasDG ? '<span class="ep-tag" style="color:#f0c987;border-color:#f0c987">DG identifié</span>' : ''}
+              ${hasComm ? '<span class="ep-tag" style="color:#a8d5c2;border-color:#a8d5c2">Comm identifiée</span>' : ''}
+            </div>
+          </div>
+          <div class="ep-ref">
+            <div style="margin-bottom:.3rem">${esc(pubRef)}</div>
+            ${person.linkedin ? `<a href="${esc(person.linkedin)}" target="_blank" style="color:var(--bleu-li);font-size:.7rem;text-decoration:none">Profil LinkedIn →</a>` : ''}
+          </div>
+        </div>
+
+        <!-- Angle éditorial -->
+        <div class="ep-angle-card">
+          <div class="ep-angle-label">Angle éditorial</div>
+          <div class="ep-angle-text">${esc(angleTexte)}</div>
+          <div class="ep-angle-meta">
+            <span>📡 ${esc(conversation)}</span>
+            <span>⚡ ${esc(contexte)}</span>
+            ${mediaLine ? `<span>🎙 ${esc(mediaLine)}</span>` : ''}
+          </div>
+        </div>
+
+        ${appuiHTML ? `
+        <div class="ep-section">
+          <div class="ep-section-title">Appuis identifiés</div>
+          ${appuiHTML}
+        </div>` : ''}
+
+        <!-- Scripts LinkedIn -->
+        <div class="ep-section">
+          <div class="ep-section-title">Scripts LinkedIn — Intervenant</div>
+          <div class="ep-accordion">
+            ${accordion('in', 'ep-toggle-icon--li', 'Invitation LinkedIn <span style="color:var(--gris-4);font-size:.75rem;margin-left:.4rem">≤ 300 car.</span>',
+              msgBlock('Invitation — texte brut à copier', inv_interv, true), true)}
+            ${accordion('+', 'ep-toggle-icon--li', 'Message post-acceptation',
+              msgBlock('Message post-acceptation', msg_interv))}
+            ${accordion('↩', 'ep-toggle-icon--li', 'Relance (si pas de réponse)',
+              msgBlock('Relance LinkedIn', rel_interv))}
+          </div>
+        </div>
+
+        ${hasDG ? `
+        <div class="ep-section">
+          <div class="ep-section-title">Scripts LinkedIn — DG / PDG (${esc(prenom(hasDG))})</div>
+          <div class="ep-accordion">
+            ${accordion('in', 'ep-toggle-icon--li', 'Invitation LinkedIn DG',
+              msgBlock('Invitation DG', inv_dg, true))}
+            ${accordion('+', 'ep-toggle-icon--li', 'Message post-acceptation DG',
+              msgBlock('Message DG', msg_dg))}
+            ${accordion('↩', 'ep-toggle-icon--li', 'Relance DG',
+              msgBlock('Relance DG', rel_dg))}
+          </div>
+        </div>` : ''}
+
+        ${hasComm ? `
+        <div class="ep-section">
+          <div class="ep-section-title">Scripts LinkedIn — DirCom (${esc(prenom(hasComm))})</div>
+          <div class="ep-accordion">
+            ${accordion('in', 'ep-toggle-icon--li', 'Invitation LinkedIn Comm',
+              msgBlock('Invitation Comm', inv_comm, true))}
+            ${accordion('+', 'ep-toggle-icon--li', 'Message post-acceptation Comm',
+              msgBlock('Message Comm', msg_comm))}
+            ${accordion('↩', 'ep-toggle-icon--li', 'Relance Comm',
+              msgBlock('Relance Comm', rel_comm))}
+          </div>
+        </div>` : ''}
+
+        <!-- Réponses rapides -->
+        <div class="ep-section">
+          <div class="ep-section-title">Réponses rapides</div>
+          <div class="ep-accordion">
+            ${accordion('✓', 'ep-toggle-icon--rep', 'Réponses pré-rédigées', repHTML)}
+          </div>
+        </div>
+
+        <!-- Motivations / Freins -->
+        <div class="ep-section">
+          <div class="ep-section-title">Leviers de motivation & freins</div>
+          <div class="ep-accordion">
+            ${accordion('◈', 'ep-toggle-icon--moti', 'Profil persona — motivations et freins', motiHTML)}
+          </div>
+        </div>
+
+        <!-- Pourquoi cette personne / cette org -->
+        <div class="ep-section">
+          <div class="ep-section-title">Justification éditoriale</div>
+          <div class="ep-accordion">
+            ${accordion('?', 'ep-toggle-icon--why', 'Pourquoi cette organisation ?',
+              `<div class="ep-why-block"><div class="ep-why-text">${esc(why.organisation || 'Non renseigné.')}</div></div>`)}
+            ${accordion('?', 'ep-toggle-icon--why', 'Pourquoi cette personne ?',
+              `<div class="ep-why-block"><div class="ep-why-text">${esc(why.person || 'Non renseigné.')}</div></div>`)}
+            ${accordion('?', 'ep-toggle-icon--why', 'Pourquoi cette position ?',
+              `<div class="ep-why-block"><div class="ep-why-text">${esc(why.position || 'Non renseigné.')}</div></div>`)}
+          </div>
+        </div>
+
+        <!-- Lectures alternatives -->
+        <div class="ep-section">
+          <div class="ep-section-title">Lectures alternatives disponibles</div>
+          <div class="ep-accordion">
+            ${accordion('⇄', 'ep-toggle-icon--why', 'Angles alternatifs de cette personne', altsHTML)}
+          </div>
+        </div>
+
+      </main>`;
+
+    app.innerHTML = html;
+  }
+
+  setTimeout(init, 200);
+
+  /* ── Accordion toggle ── */
+  window.toggleItem = function(btn) {
+    const item = btn.closest('.ep-item');
+    item.classList.toggle('is-open');
+  };
+
+  /* ── Copy ── */
+  window.copyMsg = function(id, btn) {
+    const el = document.getElementById(id);
+    const textEl = el.querySelector('.ep-msg-text');
+    const text = textEl ? textEl.innerText : el.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = '✓ Copié';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copier'; btn.classList.remove('copied'); }, 1800);
+    });
+  };
+
+  window.copyRep = function(id, btn) {
+    const el = document.getElementById(id);
+    navigator.clipboard.writeText(el.innerText).then(() => {
+      btn.textContent = '✓ Copié';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copier'; btn.classList.remove('copied'); }, 1800);
+    });
+  };
+
+})();
+</script>
+</body>
+</html>
