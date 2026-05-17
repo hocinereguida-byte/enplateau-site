@@ -20,6 +20,18 @@
     return Core.getParams().get(name) || fallback;
   };
 
+  Core.getPublicReference = function () {
+    const params = Core.getParams();
+    return (
+      params.get("cast") ||
+      params.get("ref") ||
+      params.get("position") ||
+      params.get("p") ||
+      params.get("deal") ||
+      ""
+    ).trim();
+  };
+
   Core.normalize = function (value) {
     return String(value || "")
       .trim()
@@ -166,7 +178,7 @@
 
   Core.getRecordsByDealId = function () {
     const data = Core.getData();
-    return data?.dealPersonalization?.recordsByDealId || data?.dealPersonalization?.dealsById || data?.recordsByDealId || {};
+    return data?.dealPersonalization?.recordsByRef || data?.dealPersonalization?.recordsByDealId || data?.dealPersonalization?.dealsById || data?.recordsByDealId || {};
   };
 
   Core.getCastings = function () {
@@ -214,12 +226,16 @@
     const wanted = String(id || "").trim();
     if (!wanted) return null;
 
+    const data = Core.getData();
     const records = Core.getRecordsByDealId();
     if (records && records[wanted]) return records[wanted];
 
+    const recordsByRef = data?.dealPersonalization?.recordsByRef || {};
+    if (recordsByRef && recordsByRef[wanted]) return recordsByRef[wanted];
+
     const normalized = Core.normalize(wanted);
     return Core.getCastings().find(deal =>
-      [Core.getDealId(deal), deal?.key, deal?.slug, deal?.externalId, deal?.external_id]
+      [Core.getDealId(deal), deal?.publicRef, deal?.key, deal?.slug, deal?.externalId, deal?.external_id]
         .some(value => Core.normalize(value) === normalized)
     ) || null;
   };
@@ -350,7 +366,7 @@
   };
 
   Core.getDealBundle = function () {
-    const dealId = Core.getParam("deal");
+    const dealId = Core.getPublicReference();
     const deal = Core.getDealById(dealId);
 
     if (!deal) return { dealId, deal: null, angle: null, reading: null, conversation: null, context: null, landingPage: null };
