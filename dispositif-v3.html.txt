@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Le dispositif — En Plateau</title>
+  <meta name="description" content="Le dispositif En Plateau : un cadre éditorial pour donner une forme publique, utile et tenable à une lecture issue d’une expérience réelle.">
+
+  <link rel="canonical" href="https://enplateau.fr/dispositif.html">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#111111">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="En Plateau">
+  <meta property="og:title" content="Le dispositif — En Plateau">
+  <meta property="og:description" content="Un cadre éditorial pour transformer une expérience réelle en contribution publique utile, tenable et mise en regard.">
+  <meta property="og:url" content="https://enplateau.fr/dispositif.html">
+  <meta property="og:image" content="https://enplateau.fr/images/en-plateau-social.webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Le dispositif — En Plateau">
+  <meta name="twitter:description" content="Un cadre éditorial pour transformer une expérience réelle en contribution publique utile, tenable et mise en regard.">
+  <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-social.webp">
+
+  <link rel="icon" href="/images/favicon-en-plateau.svg" type="image/svg+xml">
+  <link rel="icon" href="/images/Favenplateau.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/images/Favenplateau.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/dispositif-v3.css">
+</head>
+
+<body class="page-dispositif-v3">
+  <div id="site-header"></div>
+  <div id="site-mobile-menu"></div>
+
+  <main>
+    <section class="dp-hero" id="hero-dispositif">
+      <div class="dp-container dp-hero__grid">
+        <div class="dp-hero__copy reveal">
+          <p class="dp-kicker">Dispositif éditorial</p>
+          <h1>Donner une forme publique à ce que le terrain vous a appris.</h1>
+          <p class="dp-hero__lead">
+            En Plateau n’invente pas une parole. Le dispositif aide à prendre du recul sur une expérience réelle, à en faire émerger une lecture utile, puis à l’inscrire dans une conversation économique composée.
+          </p>
+          <div class="dp-hero__signals" aria-label="Ce que permet le dispositif">
+            <span>Angle qualifié</span>
+            <span>Lecture située</span>
+            <span>Émission + article</span>
+            <span>Trace durable</span>
+          </div>
+          <div class="dp-actions">
+            <a class="dp-btn dp-btn--primary" href="/demander-un-echange-editorial.html">Demander un échange éditorial</a>
+            <a class="dp-btn dp-btn--ghost" href="#cadre-confiance">Voir le cadre de confiance</a>
+          </div>
+        </div>
+
+        <aside class="dp-hero__panel reveal" aria-label="Résumé du dispositif">
+          <div class="dp-panel__top">
+            <span>Le principe</span>
+            <strong>Une lecture vécue devient une contribution partageable.</strong>
+            <p>
+              L’intervenant parle depuis ce qu’il vit, pilote, sécurise ou rend possible au quotidien. En Plateau pose le cadre qui permet de transformer cette expérience en lecture publique, sans la réduire à un discours de communication.
+            </p>
+          </div>
+          <div class="dp-panel__list">
+            <div><span>01</span><strong>Repérer ce que votre position permet de voir</strong></div>
+            <div><span>02</span><strong>Clarifier ce qui peut être partagé publiquement</strong></div>
+            <div><span>03</span><strong>Produire une émission et un prolongement écrit</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="dp-section dp-section--paper" id="finalite-dispositif">
+      <div class="dp-container">
+        <div class="dp-section-head dp-section-head--center reveal">
+          <p class="dp-kicker">Finalité</p>
+          <h2>Faire apparaître ce qui fait tenir une trajectoire.</h2>
+          <p>
+            Les acteurs sollicités ne sont pas invités pour commenter un sujet de loin. Ils sont identifiés parce que leur fonction, leur organisation ou leur expérience leur donne accès à une partie du terrain que d’autres ne voient pas.
+          </p>
+        </div>
+
+        <div class="dp-feature-grid reveal">
+          <article class="dp-feature dp-feature--dark">
+            <span>Une expérience déjà vécue</span>
+            <h3>Ce n’est pas une opinion à produire. C’est une lecture à faire émerger.</h3>
+            <p>
+              Une trajectoire industrielle, immobilière ou territoriale se comprend mieux lorsque ceux qui la portent peuvent dire ce qu’ils ont dû tenir, ajuster, financer, sécuriser ou réorganiser.
+            </p>
+          </article>
+
+          <article class="dp-feature">
+            <span>Une forme publique</span>
+            <h3>Ce qui était implicite devient formulable.</h3>
+            <p>
+              Le travail éditorial aide à nommer la bonne question, à situer la lecture et à donner une forme claire à une expérience qui restait souvent dispersée dans le quotidien de décision.
+            </p>
+          </article>
+
+          <article class="dp-feature">
+            <span>Une portée maîtrisée</span>
+            <h3>Dire assez pour éclairer, sans exposer ce qui doit rester hors champ.</h3>
+            <p>
+              Le cadre précise les limites : pas de dossier sensible imposé, pas de donnée confidentielle, pas d’exposition inutile. La contribution porte sur un mécanisme, pas sur une mise en danger.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dp-section dp-section--dark" id="cadre-confiance">
+      <div class="dp-container dp-split">
+        <div class="dp-split__intro reveal">
+          <p class="dp-kicker">Cadre de confiance</p>
+          <h2>Avancer avec un cadre clair, sans faire porter tout le poids à l’intervenant.</h2>
+          <p>
+            L’échange éditorial n’est pas un entretien de performance. Il sert à comprendre ce que l’intervenant est réellement bien placé pour éclairer, puis à définir le bon niveau d’exposition.
+          </p>
+        </div>
+
+        <div class="dp-lines reveal" aria-label="Réassurances principales">
+          <details class="dp-line" open>
+            <summary><span>01</span><strong>Pas d’engagement au premier échange</strong></summary>
+            <p>Le premier échange sert à vérifier la justesse de la lecture, la pertinence de l’angle et les conditions possibles d’une contribution. Il ne vaut pas acceptation automatique.</p>
+          </details>
+          <details class="dp-line">
+            <summary><span>02</span><strong>Pas de dossier sensible à exposer</strong></summary>
+            <p>La contribution ne demande pas de révéler un client, un site, une négociation, un incident, un indicateur interne ou une décision confidentielle. Elle travaille le mécanisme que l’expérience permet de comprendre.</p>
+          </details>
+          <details class="dp-line">
+            <summary><span>03</span><strong>Équipes communication, juridique ou direction associables</strong></summary>
+            <p>Lorsque le sujet le nécessite, le cadrage peut être préparé avec les équipes utiles afin de sécuriser le périmètre, les formulations et les éléments laissés hors champ.</p>
+          </details>
+          <details class="dp-line">
+            <summary><span>04</span><strong>Une contribution utile, pas une communication promotionnelle</strong></summary>
+            <p>La valeur attendue n’est pas de présenter une organisation. Elle est de formuler une lecture que d’autres décideurs, partenaires ou institutions peuvent reconnaître comme utile.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="dp-section dp-section--paper" id="pour-qui">
+      <div class="dp-container">
+        <div class="dp-section-head reveal">
+          <p class="dp-kicker">Motivations</p>
+          <h2>Ce que le dispositif apporte à chaque niveau.</h2>
+          <p>
+            Une contribution En Plateau doit avoir du sens pour l’organisation, pour la fonction qui porte la lecture et pour la personne qui accepte de s’exposer publiquement.
+          </p>
+        </div>
+
+        <div class="dp-value-list reveal">
+          <article>
+            <span>Pour l’organisation</span>
+            <h3>Faire reconnaître une capacité de lecture sans discours promotionnel.</h3>
+            <p>Installer l’organisation dans une conversation structurante, au bon niveau : celui des conditions de décision, des points d’appui et de la trajectoire qu’elle contribue à faire tenir.</p>
+          </article>
+          <article>
+            <span>Pour la fonction</span>
+            <h3>Rendre visible ce que votre responsabilité permet de comprendre.</h3>
+            <p>Finance, droit, opérations, territoire, stratégie, compétences : chaque fonction voit une partie du réel. Le dispositif donne une forme partageable à ce point d’observation.</p>
+          </article>
+          <article>
+            <span>Pour l’intervenant</span>
+            <h3>Laisser une trace professionnelle utile, sans posture inutile.</h3>
+            <p>Une contribution préparée peut ensuite circuler dans les échanges dirigeants, institutionnels, commerciaux ou internes, parce qu’elle porte une lecture précise plutôt qu’un message générique.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dp-section dp-section--dark" id="deroule-dispositif">
+      <div class="dp-container">
+        <div class="dp-section-head dp-section-head--center reveal">
+          <p class="dp-kicker">Déroulé</p>
+          <h2>Un parcours resserré, conçu pour faire émerger la bonne lecture.</h2>
+          <p>
+            Le dispositif avance par étapes courtes. Chaque étape sert à vérifier une chose : la justesse de l’angle, la portée de la lecture, le niveau d’exposition et la forme la plus utile.
+          </p>
+        </div>
+
+        <div class="dp-steps reveal">
+          <article>
+            <span>01</span>
+            <h3>Échange éditorial</h3>
+            <p>Comprendre votre point d’observation, vérifier l’angle et identifier ce qui mérite d’être rendu public.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Note de positionnement</h3>
+            <p>Formuler la proposition : sujet, lecture, périmètre, contribution financière, livrables et calendrier.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Cadrage de la parole</h3>
+            <p>Préciser ce qui peut être dit, ce qui reste hors champ et les points à préparer avec les équipes utiles.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Production média</h3>
+            <p>Donner forme à la contribution : émission, entretien écrit et trace éditoriale durable.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dp-section dp-section--paper" id="architecture-dispositif">
+      <div class="dp-container dp-composition">
+        <div class="dp-composition__copy reveal">
+          <p class="dp-kicker">Composition</p>
+          <h2>Une contribution prend sa portée lorsqu’elle rejoint d’autres lectures.</h2>
+          <p>
+            En Plateau ne juxtapose pas des interventions. Chaque contribution est rattachée à un angle précis, puis mise en regard avec d’autres lectures pour faire apparaître le relief complet d’une question économique.
+          </p>
+        </div>
+
+        <div class="dp-composition__map reveal" aria-label="Architecture d’une conversation En Plateau">
+          <div class="dp-map__main">
+            <span>Conversation composée</span>
+            <strong>Une question économique lue depuis plusieurs points d’observation.</strong>
+          </div>
+          <div class="dp-map__item"><span>Angle</span><strong>La question à éclairer</strong></div>
+          <div class="dp-map__item"><span>Lecture</span><strong>Ce que votre position permet de voir</strong></div>
+          <div class="dp-map__item"><span>Format</span><strong>Émission + article</strong></div>
+          <div class="dp-map__item"><span>Trace</span><strong>Un actif réutilisable dans la durée</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dp-section dp-section--dark" id="ce-qui-reste-hors-champ">
+      <div class="dp-container dp-split dp-split--reverse">
+        <div class="dp-split__intro reveal">
+          <p class="dp-kicker">Ce qui se travaille</p>
+          <h2>La bonne contribution n’est pas celle qui dit tout. C’est celle qui éclaire juste.</h2>
+          <p>
+            Le cadrage ne sert pas à lisser le réel. Il sert à préserver la nuance, la technicité utile et la part de confidentialité nécessaire pour que la parole reste solide.
+          </p>
+        </div>
+
+        <div class="dp-contrast-list reveal">
+          <article>
+            <span>À faire apparaître</span>
+            <p>Le point d’observation, les conditions réelles de décision, ce qui fait tenir le cap, ce que l’expérience permet de comprendre.</p>
+          </article>
+          <article>
+            <span>À tenir hors champ</span>
+            <p>Les données sensibles, les dossiers identifiables, les informations internes, les éléments qui exposeraient inutilement l’organisation.</p>
+          </article>
+          <article>
+            <span>À rendre partageable</span>
+            <p>Une lecture claire, précise, reconnaissable par les bons interlocuteurs et suffisamment durable pour être réutilisée après la diffusion.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dp-section dp-section--paper" id="formats-dispositif">
+      <div class="dp-container">
+        <div class="dp-section-head dp-section-head--center reveal">
+          <p class="dp-kicker">Formats</p>
+          <h2>Une émission pour incarner. Un article pour structurer.</h2>
+          <p>
+            La contribution n’a pas vocation à tout dire dans un seul format. La vidéo installe une parole claire et incarnée. L’écrit permet de prolonger, préciser et rendre la lecture plus facilement partageable.
+          </p>
+        </div>
+
+        <div class="dp-format-band reveal">
+          <article>
+            <span>Émission</span>
+            <h3>Faire entendre la position.</h3>
+            <p>Un format court, préparé, animé par un journaliste économique, centré sur la lecture que l’intervenant est le mieux placé pour porter.</p>
+          </article>
+          <article>
+            <span>Article</span>
+            <h3>Donner du relief à la lecture.</h3>
+            <p>Un prolongement écrit pour structurer les dimensions qui méritent davantage de précision, de nuance ou de contexte.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dp-section dp-section--access" id="acces-dispositif">
+      <div class="dp-container dp-access reveal">
+        <div class="dp-access__intro">
+          <p class="dp-kicker">Accès</p>
+          <h2>Invitation reçue ? Lecture à proposer ?</h2>
+          <p>
+            Les cycles sont principalement composés par approche directe. Une contribution peut aussi être signalée lorsqu’elle apporte une lecture utile à une question déjà travaillée.
+          </p>
+        </div>
+
+        <div class="dp-access__cards">
+          <article>
+            <span>Vous avez été sollicité</span>
+            <h3>Demander un échange éditorial.</h3>
+            <p>Confirmer l’angle, préciser la lecture attendue et évaluer les conditions d’une contribution.</p>
+            <a class="dp-btn dp-btn--dark" href="/demander-un-echange-editorial.html">Demander un échange</a>
+          </article>
+          <article>
+            <span>Vous n’avez pas été contacté</span>
+            <h3>Signaler une contribution.</h3>
+            <p>Proposer une organisation, une personne ou une situation à examiner au regard des cycles en cours.</p>
+            <a class="dp-text-link" href="/proposer-une-contribution.html">Signaler une contribution</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="cookie-container"></div>
+
+  <script src="/assets/js/layout.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
