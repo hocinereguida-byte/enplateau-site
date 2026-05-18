@@ -677,7 +677,7 @@
   background:
     linear-gradient(90deg, rgba(17,17,17,.82), rgba(17,17,17,.54)),
     url("../../images/noeud-routier-finalite.jpg.jpg") center/cover no-repeat;
-  filter: grayscale(8%) contrast(116%) brightness(.72);
+  filter: grayscale(100%) contrast(112%) brightness(.74);
 }
 
 .home-decision-visual::after {
@@ -2662,8 +2662,8 @@
   aspect-ratio: 1 / 1 !important;
   object-fit: contain !important;
   object-position: center center !important;
-  filter: grayscale(100%) contrast(112%) brightness(.82) !important;
-  opacity: 1 !important;
+  filter: grayscale(100%) contrast(108%) brightness(.80) !important;
+  opacity: .92 !important;
 }
 
 @media (max-width: 1100px) {
@@ -2730,10 +2730,40 @@
   position: relative;
 }
 
-.home-principle-card--wide {
+ .home-principle-card--wide {
   grid-column: span 2;
   min-height: 220px;
   background: var(--h3-paper-soft);
+}
+
+.home-principle-card--cta {
+  grid-column: span 2;
+  min-height: 220px;
+  background: var(--ep-white);
+}
+
+.home-principle-card--cta a {
+  display: inline-flex;
+  margin-top: 18px;
+  color: var(--h3-accent-deep);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.home-principle-card--cta a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: currentColor;
+  opacity: .48;
 }
 
 .home-principle-card--dark {
@@ -3004,7 +3034,8 @@
 
   .home-principle-card,
   .home-principle-card--dark,
-  .home-principle-card--wide {
+  .home-principle-card--wide,
+  .home-principle-card--cta {
     grid-column: span 1;
     min-height: 0;
   }
