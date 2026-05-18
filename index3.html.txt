@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>En Plateau — Éclairer les arbitrages qui transforment l’économie</title>
+  <meta name="description" content="En Plateau s'appuie sur des émissions économiques pour composer des conversations éditoriales et croiser plusieurs lectures d’un même enjeu économique.">
+
+  <link rel="canonical" href="https://enplateau.fr/index3.html">
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#111111">
+
+  <link rel="icon" href="/images/favicon-en-plateau.svg" type="image/svg+xml">
+  <link rel="icon" href="/images/Favenplateau.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/images/Favenplateau.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/home3.css?v=hybride-01">
+</head>
+
+<body class="home-page">
+  <div id="site-header"></div>
+  <div id="site-mobile-menu"></div>
+
+  <main>
+
+    <section class="home-hero" id="hero-home">
+      <div class="home-container">
+        <div class="home-hero-grid">
+          <div class="home-hero-copy">
+            <div class="home-kicker">Saison inaugurale · Conversations économiques</div>
+
+            <h1>
+              Éclairer<br>
+              les arbitrages<br>
+              <span class="home-hero-title-nowrap">qui transforment</span><br>
+              l’économie
+            </h1>
+
+            <p class="home-hero-lead">
+              <strong>Les transformations profondes se comprennent mieux lorsqu’elles croisent plusieurs lectures.</strong>
+            </p>
+
+            <p class="home-hero-lead home-hero-text">
+              En Plateau s’appuie sur des émissions économiques pour composer des conversations éditoriales et croiser plusieurs lectures d’un même enjeu économique.
+            </p>
+
+            <p class="home-hero-lead home-hero-text">
+              Chaque contribution part d’un angle précis, d’une expérience réelle et d’une position identifiable : dirigeant, expert, acteur opérationnel, financier, juridique ou territorial. Leur mise en regard permet de faire apparaître les décisions, les tensions et les arbitrages qui structurent une trajectoire.
+            </p>
+          </div>
+
+          <aside class="home-hero-side" aria-label="Accès à l'échange éditorial">
+            <div class="home-film home-film--trio" aria-label="Émissions économiques de référence">
+              <img class="home-film-trio" src="images/trio-journalistes.jpg" alt="Christophe Pallée, Gilles Leclerc et Thierry Cabannes — émissions économiques de référence">
+            </div>
+
+            <div class="home-hero-card">
+              <h3>Vous avez reçu une invitation&nbsp;?</h3>
+              <p>
+                Votre fonction, votre expertise ou votre expérience ont été identifiées pour éclairer l’un des angles en cours de composition.
+              </p>
+              <a href="demander-un-echange-editorial.html">Demander un échange éditorial</a>
+            </div>
+
+            <p class="home-hero-small home-hero-small--right">
+              Sans engagement, cet échange permet de définir les contours et la portée de votre éventuelle contribution.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-light home-principles" id="comprendre">
+      <div class="home-container">
+        <div class="home-head home-head--left">
+          <div class="home-kicker home-kicker--light">Ce que fait En Plateau</div>
+          <h2>Donner du relief à ce qui se décide déjà sur le terrain.</h2>
+          <p>
+            Le dispositif ne cherche pas à fabriquer une parole. Il aide à mettre en forme une expérience déjà vécue, à identifier ce qu’elle permet de comprendre, puis à l’inscrire dans une conversation plus large.
+          </p>
+        </div>
+
+        <div class="home-principles-grid">
+          <article class="home-principle-card home-principle-card--dark">
+            <span>01 · Angle qualifié</span>
+            <h3>La bonne question avant la bonne personne.</h3>
+            <p>
+              Une contribution part d’un angle situé : un sujet assez précis pour éviter le discours général, assez ouvert pour éclairer une question que d’autres acteurs rencontrent aussi.
+            </p>
+          </article>
+
+          <article class="home-principle-card">
+            <span>02 · Lecture située</span>
+            <h3>Une parole depuis une position identifiable.</h3>
+            <p>
+              Une position n’est pas une fonction affichée. C’est le point d’observation qu’une personne peut porter parce qu’elle vit, arbitre, finance, sécurise ou accompagne le sujet.
+            </p>
+          </article>
+
+          <article class="home-principle-card">
+            <span>03 · Cadre éditorial</span>
+            <h3>Ce qui peut être rendu public. Ce qui doit rester hors champ.</h3>
+            <p>
+              Le périmètre se travaille avant toute production : sujet, limites, exemples possibles, équipes à associer, niveau de précision et forme finale.
+            </p>
+          </article>
+
+          <article class="home-principle-card home-principle-card--wide">
+            <span>04 · Mise en regard</span>
+            <h3>Plusieurs lectures pour comprendre un même enjeu.</h3>
+            <p>
+              Chaque contribution éclaire une partie du sujet. Leur rapprochement fait apparaître les décisions, les dépendances et les conditions qui structurent une trajectoire.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-dark" id="moment-decision">
+      <div class="home-container">
+        <div class="home-decision-grid">
+          <div class="home-decision-visual" aria-hidden="true"></div>
+
+          <div class="home-decision-copy">
+            <h2>Quand une décision change d’échelle.</h2>
+
+            <div>
+              <h3>Repérer le seuil de décision</h3>
+              <p>
+                Une activité croît, un projet avance, une transformation s’accélère. Ce qui tenait jusque-là demande à être mieux lu : ressources, financement, exécution, droit, compétences, marché ou territoire.
+              </p>
+            </div>
+
+            <div>
+              <h3>Identifier l’arbitrage à éclairer</h3>
+              <p>
+                L’enjeu n’est pas de commenter une transformation de plus. Il est de comprendre ce qui doit être priorisé, coordonné, financé, sécurisé ou rééquilibré pour continuer à avancer sans perdre la ligne.
+              </p>
+            </div>
+
+            <div>
+              <h3>Transformer l’expérience en lecture partageable</h3>
+              <p>
+                La contribution part d’une expérience réelle. Elle aide à formuler une parole utile, précise et publiquement tenable, sans exposer ce qui doit rester hors champ.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-light home-cycles-section" id="cycles-home">
+      <div class="home-container">
+        <div class="home-head">
+          <div class="home-kicker home-kicker--light">Saison inaugurale</div>
+          <h2>Deux cycles. Une même méthode.</h2>
+          <p>
+            Chaque cycle explore un champ économique large à partir de conversations ciblées. L’objectif n’est pas de tout couvrir, mais de faire apparaître les endroits où les décisions deviennent plus difficiles, plus structurantes, plus engageantes.
+          </p>
+        </div>
+
+        <div class="home-cycles home-cycles--hybrid">
+          <article>
+            <div class="home-cycle-img home-cycle-industrie"></div>
+            <div class="home-cycle-body">
+              <span>Cycle Industrie</span>
+              <h3>Industrie &amp; transformation des territoires</h3>
+              <div class="home-chipline" aria-label="Thématiques du cycle industrie">
+                <span>capacité</span><span>dépendances</span><span>outil productif</span><span>ressources</span><span>compétences</span><span>territoires</span>
+              </div>
+              <p>
+                Produire davantage, faire évoluer un outil, sécuriser des ressources, préserver un cap industriel : le cycle éclaire les conditions qui permettent à une trajectoire de tenir lorsqu’elle change d’échelle.
+              </p>
+              <div>
+                <a href="conversations/industrie.html">Explorer les conversations</a>
+                <a href="positions/industrie.html">Explorer les positions</a>
+              </div>
+            </div>
+          </article>
+
+          <article>
+            <div class="home-cycle-img home-cycle-logement"></div>
+            <div class="home-cycle-body">
+              <span>Cycle Logement</span>
+              <h3>Logement &amp; fabrique des territoires</h3>
+              <div class="home-chipline" aria-label="Thématiques du cycle logement">
+                <span>foncier</span><span>droit</span><span>financement</span><span>faisabilité</span><span>exécution</span>
+              </div>
+              <p>
+                Éclairer ce qui rend une opération possible, soutenable et partageable : foncier, droit, financement, faisabilité, exécution, acceptabilité et calendrier.
+              </p>
+              <div>
+                <a href="conversations/logement.html">Explorer les conversations</a>
+                <a href="positions/logement.html">Explorer les positions</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="home-cycle-rarety">
+          <span>Rareté éditoriale</span>
+          <h3>Une lecture par place.</h3>
+          <p>
+            Les positions sont limitées pour préserver la complémentarité. Une même conversation ne cherche pas l’accumulation : elle cherche le bon relief.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-dark home-positions" id="positions-home">
+      <div class="home-container">
+        <div class="home-head">
+          <div class="home-kicker">Positions éditoriales</div>
+          <h2>Ce que chaque position rend lisible.</h2>
+          <p>
+            Une position n’est pas seulement une fonction ou un métier. C’est une lecture située : ce qu’un intervenant permet de comprendre depuis sa place, son expérience et son niveau de responsabilité.
+          </p>
+        </div>
+
+        <div class="home-position-lines">
+          <details open>
+            <summary><span>Stratégie</span><strong>Ce qu’une trajectoire oblige à clarifier.</strong></summary>
+            <p>Préserver un cap, accélérer, stabiliser ou réorganiser lorsque l’environnement devient plus exigeant.</p>
+          </details>
+
+          <details>
+            <summary><span>Finance</span><strong>Ce qui rend une trajectoire soutenable.</strong></summary>
+            <p>Investissements, modèles économiques, contraintes de financement, arbitrages de ressources et conditions de passage à l’échelle.</p>
+          </details>
+
+          <details>
+            <summary><span>Droit</span><strong>Ce qui doit être sécurisé pour pouvoir avancer.</strong></summary>
+            <p>Cadre réglementaire, exposition publique, responsabilités, limites et conditions d’une parole tenable.</p>
+          </details>
+
+          <details>
+            <summary><span>Opérations</span><strong>Ce que l’exécution révèle concrètement.</strong></summary>
+            <p>Organisation, flux, interfaces métiers, outils, contraintes de terrain et conditions réelles de mise en œuvre.</p>
+          </details>
+
+          <details>
+            <summary><span>Territoires</span><strong>Ce que la transformation déplace localement.</strong></summary>
+            <p>Effets sur les acteurs, les ressources, les usages, les équilibres locaux et les conditions d’acceptabilité.</p>
+          </details>
+
+          <details>
+            <summary><span>Compétences</span><strong>Ce que les collectifs rendent possible.</strong></summary>
+            <p>Savoir-faire, transmission, adaptation, coordination et capacité humaine à tenir la trajectoire.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-light home-dispositif" id="dispositif-home">
+      <div class="home-container">
+        <div class="home-dispositif-grid">
+          <div>
+            <div class="home-kicker home-kicker--light">Cadre éditorial</div>
+            <h2>Donner une forme partageable à une expérience déjà vécue.</h2>
+            <p>
+              L’intervenant ne vient pas réciter un discours écrit par En Plateau. Il vient mettre en perspective un sujet qu’il connaît, depuis une responsabilité réelle. Le cadre éditorial sert à clarifier, protéger et rendre cette lecture utile à d’autres.
+            </p>
+          </div>
+
+          <div class="home-dispositif-cards">
+            <article>
+              <h3>Partir d’un angle qualifié</h3>
+              <p>
+                Chaque intervention part d’une question située, d’un arbitrage à éclairer et d’une lecture que l’intervenant est particulièrement bien placé pour porter.
+              </p>
+            </article>
+
+            <article>
+              <h3>Préparer une parole tenable</h3>
+              <p>
+                Le cadrage éditorial permet de clarifier ce qui peut être dit publiquement, d’anticiper les points sensibles et d’éviter une parole trop générale, artificielle ou surexposée.
+              </p>
+            </article>
+
+            <article>
+              <h3>Produire une contribution utile</h3>
+              <p>
+                L’émission et son prolongement écrit donnent une forme structurée à la lecture de l’intervenant, réutilisable dans la durée auprès de son écosystème professionnel.
+              </p>
+            </article>
+
+            <article>
+              <h3>Mettre les lectures en regard</h3>
+              <p>
+                Chaque contribution reste singulière, mais elle gagne en portée lorsqu’elle apparaît aux côtés d’autres lectures complémentaires engagées sur les mêmes questions.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <p class="home-center-link"><a href="dispositif.html">Découvrir le dispositif</a></p>
+      </div>
+    </section>
+
+    <section class="home-section home-dark home-impact" id="valeur-home">
+      <div class="home-container">
+        <div class="home-head">
+          <div class="home-kicker">Valeur produite</div>
+          <h2>Une trace publique qui continue de travailler.</h2>
+          <p>
+            Une contribution bien préparée ne cherche pas seulement à être vue. Elle installe une lecture, rend une trajectoire plus lisible et crée un point d’appui durable dans les échanges professionnels.
+          </p>
+        </div>
+
+        <div class="home-values">
+          <article>
+            <span>01</span>
+            <div>
+              <h3>Installer une lecture maîtrisée</h3>
+              <p>
+                Une position préparée permet de rendre visible ce qui change, ce qui doit être priorisé et la manière dont une organisation comprend sa trajectoire.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <span>02</span>
+            <div>
+              <h3>Rendre les arbitrages plus lisibles</h3>
+              <p>
+                Stratégie, finance, droit, opérations, compétences, technologie, territoire ou ressources : chaque lecture éclaire une part différente de la décision et la rend plus compréhensible pour les parties prenantes.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <span>03</span>
+            <div>
+              <h3>Faire reconnaître la question</h3>
+              <p>
+                Une lecture bien cadrée permet aux bons interlocuteurs d’y reconnaître un arbitrage, une condition de décision ou une trajectoire qu’ils rencontrent eux-mêmes.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <span>04</span>
+            <div>
+              <h3>Constituer un actif éditorial durable</h3>
+              <p>
+                L’émission et son prolongement écrit donnent à cette lecture une forme durable, mobilisable dans des échanges avec des actionnaires, partenaires, institutions, filières, clients stratégiques ou équipes internes.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-light home-access" id="acces-home">
+      <div class="home-container">
+        <div class="home-head">
+          <div class="home-kicker home-kicker--light">Accès au dispositif</div>
+          <h2>Invitation reçue&nbsp;? Une lecture à proposer&nbsp;?</h2>
+          <p>
+            Les cycles En Plateau sont principalement composés par approche directe, à partir d’organisations et d’intervenants identifiés pour la pertinence de leur lecture. Une contribution peut toutefois être signalée, puis étudiée au regard des conversations en cours.
+          </p>
+        </div>
+
+        <div class="home-access-grid">
+          <article>
+            <h3>Vous avez déjà été sollicité</h3>
+            <p>
+              Un échange éditorial permet de confirmer l’angle, préciser la lecture attendue et évaluer les conditions d’une contribution, sans engagement.
+            </p>
+            <a href="demander-un-echange-editorial.html">Demander un échange éditorial</a>
+            <p class="home-note-light">
+              L’échange sert à qualifier la pertinence de la lecture, le niveau d’exposition souhaité et les conditions de préparation d’une éventuelle contribution.
+            </p>
+          </article>
+
+          <article>
+            <h3>Vous n’avez pas été contacté</h3>
+            <p>
+              Vous pouvez signaler une organisation, une personne ou une situation susceptible d’éclairer utilement l’un des cycles en cours.
+            </p>
+            <a href="proposer-une-contribution.html">Signaler une contribution</a>
+          </article>
+        </div>
+
+        <p class="home-subnote">
+          Les positions visibles sur le site ne valent pas appel général à contribution. Elles donnent à comprendre les types de lectures, d’arbitrages et d’interventions que les cycles en cours cherchent à mettre en regard.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="cookie-container"></div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/layout.js"></script>
+</body>
+</html>
