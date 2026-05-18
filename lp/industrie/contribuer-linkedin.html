@@ -136,6 +136,9 @@ function init(){
   var dgMsg=s(angle&&angle.activationPersonaFit&&angle.activationPersonaFit.organizationLayer&&angle.activationPersonaFit.organizationLayer.dgReadableMessage||'');
 
   var dgNom=s(sc.pdg_nom||sc.dg_nom||'');
+  var dgPoste=s(sc.pdg_poste||sc.dg_poste||'');
+  var commPoste=s(sc.comm_poste||'');
+  var intervOrg=sc.intervenants_org||[];
   var dgLi=s(sc.pdg_linkedin||sc.dg_linkedin||'');
   var commNom=s(sc.comm_nom||'');
   var commLi=s(sc.comm_linkedin||'');
@@ -186,9 +189,23 @@ function init(){
   var appuiHTML='';
   if(hasDG||hasComm){
     appuiHTML='<div class="ep-appui">';
-    if(hasDG)appuiHTML+='<div class="ep-appui-card"><div class="ep-appui-role">DG / PDG</div><div class="ep-appui-name">'+esc(dgNom)+'</div>'+(dgLi?'<div style="margin-top:.3rem"><a href="'+esc(dgLi)+'" target="_blank" style="color:var(--bleu-li);font-size:.75rem;text-decoration:none">LinkedIn →</a></div>':'')+'</div>';
-    if(hasComm)appuiHTML+='<div class="ep-appui-card"><div class="ep-appui-role">DirCom</div><div class="ep-appui-name">'+esc(commNom)+'</div>'+(commLi?'<div style="margin-top:.3rem"><a href="'+esc(commLi)+'" target="_blank" style="color:var(--bleu-li);font-size:.75rem;text-decoration:none">LinkedIn →</a></div>':'')+'</div>';
+    if(hasDG)appuiHTML+='<div class="ep-appui-card">'+'<div class="ep-appui-role">DG / PDG — message envoyé à</div>'+'<div class="ep-appui-name">'+esc(dgNom)+'</div>'+(dgPoste?'<div style="font-size:.78rem;color:var(--gris-5);margin-top:.1rem">'+esc(dgPoste)+'</div>':'')+(dgLi?'<div style="margin-top:.3rem"><a href="'+esc(dgLi)+'" target="_blank" style="color:var(--bleu-li);font-size:.75rem;text-decoration:none">LinkedIn →</a></div>':'')+'</div>';
+    if(hasComm)appuiHTML+='<div class="ep-appui-card">'+'<div class="ep-appui-role">DirCom — message envoyé à</div>'+'<div class="ep-appui-name">'+esc(commNom)+'</div>'+(commPoste?'<div style="font-size:.78rem;color:var(--gris-5);margin-top:.1rem">'+esc(commPoste)+'</div>':'')+(commLi?'<div style="margin-top:.3rem"><a href="'+esc(commLi)+'" target="_blank" style="color:var(--bleu-li);font-size:.75rem;text-decoration:none">LinkedIn →</a></div>':'')+'</div>';
     appuiHTML+='</div>';
+  if(intervOrg.length>0){
+    appuiHTML+='<div style="margin-top:.8rem">';
+    appuiHTML+='<div class="ep-why-label" style="margin-bottom:.5rem">Intervenants positionnés chez '+esc(orgNom)+'</div>';
+    intervOrg.forEach(function(iv){
+      var isSelf=(iv.pub_ref===pubRef);
+      appuiHTML+='<div class="ep-appui-card" style="margin-bottom:.4rem;'+(isSelf?'border-color:var(--accent);':'')+'">'
+        +'<div class="ep-appui-role">'+esc(iv.lecture)+' · '+esc(iv.conversation)+'</div>'
+        +'<div class="ep-appui-name">'+esc(iv.nom)+(isSelf?' <span style="font-size:.65rem;color:var(--accent);margin-left:.3rem">(ce dossier)</span>':'')+'</div>'
+        +'<div style="font-size:.78rem;color:var(--gris-5);margin-top:.1rem">'+esc(iv.poste)+'</div>'
+        +(iv.linkedin?'<div style="margin-top:.3rem"><a href="'+esc(iv.linkedin)+'" target="_blank" style="color:var(--bleu-li);font-size:.75rem;text-decoration:none">LinkedIn →</a></div>':'')
+        +'</div>';
+    });
+    appuiHTML+='</div>';
+  }
   }
 
   var repHTML='<p class="ep-note">Si la personne marque de l\'intérêt sans s\'engager :</p><div class="ep-responses" style="margin-bottom:1rem">'+repBlock('Courte',rep_courte)+repBlock('Avec proposition de RDV',rep_moy)+'</div><p class="ep-note">Si la personne décline :</p><div class="ep-responses">'+repBlock('Clôture',rep_neg)+'</div>';
