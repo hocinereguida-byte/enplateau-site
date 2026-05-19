@@ -1664,10 +1664,11 @@
             >
           </div>
         </div>
-      </div>
-      <div class="landing-film-caption">
-        ${journaliste ? `<strong>${safe(journaliste)}</strong>` : ""}
-        <span>${safe(outletLabel)}</span>
+        ${(journaliste || media) ? `
+        <div class="landing-film-overlay">
+          ${journaliste ? `<span class="landing-film-overlay__journalist">${safe(journaliste)}</span>` : ""}
+          ${media ? `<strong class="landing-film-overlay__media">${safe(media)}</strong>` : ""}
+        </div>` : ""}
       </div>`;
   }
 
