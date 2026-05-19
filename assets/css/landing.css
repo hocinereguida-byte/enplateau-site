@@ -302,6 +302,51 @@ body.landing-page {
   text-overflow: ellipsis;
 }
 
+/* ── OVERLAY JOURNALISTE/MÉDIA — inscrit dans l'image ─────
+   Fond dégradé en bas de l'image, texte superposé.
+   Ligne 1 : nom journaliste (petit, régulier)
+   Ligne 2 : nom média (même taille, gras)
+───────────────────────────────────────────────────────── */
+
+.landing-film-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  padding: 28px 18px 14px;
+  background: linear-gradient(0deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,0) 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  pointer-events: none;
+}
+
+.landing-film-overlay__journalist {
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem;
+  font-weight: 400;
+  letter-spacing: .06em;
+  color: rgba(246,241,233,.72);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.landing-film-overlay__media {
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: rgba(246,241,233,.92);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+
 /* ── CARTE HERO ───────────────────────────────────────── */
 
 .landing-hero__card {
