@@ -1837,7 +1837,7 @@
     return lines[key] || shortText(txt(angle?.anglePublic?.accrocheLanding, angle?.questionActivation, angle?.introMecanisme), 180);
   }
 
-  function buildHeroMinimalSection(angle, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, cta) {
+  function buildHeroMinimalSection(angle, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, cta, filmBlock) {
     const readingShort = readingDisplay(readingLabel || "lecture éditoriale");
     const mediaCaption = buildHeroMediaCaption(angle);
     const conversationText = heroConversationTitle(conversationLabel || "Conversation En Plateau", angle);
@@ -1861,7 +1861,8 @@
             </div>
 
             <aside class="landing-hero-bento-side">
-              ${buildHeroVisual(angle)}
+              ${filmBlock || ""}
+              ${filmBlock ? "" : buildHeroVisual(angle)}
 
               <div class="landing-hero-metrics landing-hero-metrics--three" aria-label="Repères clés de la proposition éditoriale">
                 ${buildHeroPersonCard(personName, personRole, organisationName)}
@@ -2742,7 +2743,7 @@
         </div>
       </div>
 
-      ${buildHeroMinimalSection(angle, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, cta)}
+      ${buildHeroMinimalSection(angle, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, cta, filmBlock)}
 
       ${buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles, deal)}
 
