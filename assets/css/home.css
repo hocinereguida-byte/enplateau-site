@@ -676,7 +676,7 @@
   box-shadow: var(--h3-shadow-dark);
   background:
     linear-gradient(90deg, rgba(17,17,17,.82), rgba(17,17,17,.54)),
-    url("../../images/noeud-routier-finalite.jpg.jpg") center/cover no-repeat;
+    url("../../images/noeud-routier.jpg.jpg") center/cover no-repeat;
   filter: grayscale(100%) contrast(112%) brightness(.74);
 }
 
@@ -1286,7 +1286,7 @@
   line-height: 1.55;
   color: var(--h3-text-muted);
 }
-/* Ajustement hero home — remonter la carte de sollicitation */
+/* Ajustement hero home - remonter la carte de sollicitation */
 
 .home-hero-grid {
   align-items: center;
@@ -1312,7 +1312,7 @@
 }
 
 /* =========================================================
-   CORRECTIF COULEURS — FILTRE PHOTO N&B
+   CORRECTIF COULEURS - FILTRE PHOTO N&B
    Périmètre : uniquement rendu colorimétrique des images
 ========================================================= */
 
@@ -1354,7 +1354,7 @@
 
 
 /* =========================================================
-   AJUSTEMENTS TYPOGRAPHIQUES — HOME PREMIUM DESKTOP
+   AJUSTEMENTS TYPOGRAPHIQUES - HOME PREMIUM DESKTOP
    Périmètre : typographie, rythme de lecture, espacements,
    retours à la ligne éditoriaux et lisibilité des photos N&B.
    Aucun changement de structure HTML.
@@ -1916,7 +1916,7 @@
 }
 
 /* =========================================================
-   CORRECTIF PROPORTIONS TYPOGRAPHIQUES — HOME
+   CORRECTIF PROPORTIONS TYPOGRAPHIQUES - HOME
    Objectif : hiérarchie nette entre titre, chapeau, sous-titre
    et paragraphe, selon une échelle éditoriale plus lisible.
    Périmètre : typographie, largeurs de lecture, rythme vertical.
@@ -2283,7 +2283,7 @@
   }
 }
 /* =========================================================
-   CORRECTIF MOBILE — HOME
+   CORRECTIF MOBILE - HOME
    Corrige les débordements horizontaux et les grilles desktop
 ========================================================= */
 
@@ -2449,7 +2449,7 @@
   }
 }
 /* =========================================================
-   CORRECTIF MOBILE — CARROUSEL HERO
+   CORRECTIF MOBILE - CARROUSEL HERO
    Périmètre strict : uniquement .home-film dans le hero.
    Objectif : supprimer le conflit entre fondu absolu et scroll vertical.
 ========================================================= */
@@ -2558,7 +2558,7 @@
 }
 
 /* =========================================================
-   CORRECTIF FINAL MOBILE — HERO PHOTO TRIO
+   CORRECTIF FINAL MOBILE - HERO PHOTO TRIO
    Périmètre strict : uniquement le visuel .home-film du hero.
    Desktop : le carrousel existant reste affiché.
    Mobile <= 780px : le carrousel est masqué et remplacé par
@@ -2618,7 +2618,7 @@
 
 
 /* =========================================================
-   CORRECTIF FINAL — HERO PHOTO TRIO DESKTOP + MOBILE
+   CORRECTIF FINAL - HERO PHOTO TRIO DESKTOP + MOBILE
    Périmètre strict : visuel .home-film du hero uniquement.
    Remplace définitivement le carrousel par une image statique.
    Encadrement volontairement fin, aligné sur la carte sous la photo.
@@ -2700,7 +2700,7 @@
 }
 
 /* =========================================================
-   HOME HYBRIDE — VERSION FINALE PROPOSÉE
+   HOME HYBRIDE - VERSION FINALE PROPOSÉE
    Ajouts et corrections pour la home hybride :
    clarté de l'actuelle + doctrine éditoriale de la V2.
 ========================================================= */
@@ -2888,7 +2888,7 @@
   color: var(--h3-text-soft);
 }
 
-/* POSITIONS ÉDITORIALES — LIGNES ACCORDÉON */
+/* POSITIONS ÉDITORIALES - LIGNES ACCORDÉON */
 
 .home-positions {
   background:
@@ -3102,7 +3102,7 @@
 
 
 /* =========================================================
-   HERO TRIO — CORRECTIONS FINES V3
+   HERO TRIO - CORRECTIONS FINES V3
    - suppression du liseré clair à gauche par recadrage plus serré
    - légende micro-note plus premium
    - noms non gras / médias en gras
@@ -3200,7 +3200,7 @@
 
 
 /* =========================================================
-   HERO TRIO — MICRO-REPASSE V4
+   HERO TRIO - MICRO-REPASSE V4
    Périmètre : uniquement le bloc photo + légende + carte invitation.
    Objectif : finition premium, respiration, alignement et hiérarchie.
 ========================================================= */
@@ -3280,7 +3280,7 @@
 
 
 /* =========================================================
-   HOME V5 — Corrections section par section
+   HOME V5 - Corrections section par section
    - centrage section principes
    - image décision corrigée
    - accordéons décision / valeurs
@@ -3511,4 +3511,711 @@
   .home-position-lines summary strong {
     font-size: 1rem !important;
   }
+}
+
+
+/* =========================================================
+   V6 - HIÉRARCHIE TYPO + CADRES + ACCORDÉONS
+   Objectif : titres plus hiérarchisés, paragraphes plus petits,
+   cadres visibles, gros + lisibles, sections plus éditoriales.
+========================================================= */
+
+:root {
+  --h3-border-visible-light: rgba(17,17,17,.18);
+  --h3-border-visible-dark: rgba(255,255,255,.18);
+  --h3-body-small: .82rem;
+  --h3-body-compact: .86rem;
+  --h3-summary-title: .98rem;
+  --h3-summary-title-large: 1.04rem;
+}
+
+/* Règle générale : les paragraphes doivent être nettement sous les titres */
+.home-page p,
+.home-principle-card p,
+.home-decision-copy p,
+.home-dispositif-cards p,
+.home-position-lines p,
+.home-values p,
+.home-access-grid p,
+.home-cycle-body p {
+  font-size: var(--h3-body-compact) !important;
+  line-height: 1.68 !important;
+  font-weight: 400 !important;
+}
+
+.home-head p,
+.home-decision-intro,
+.home-access .home-head p {
+  font-size: .92rem !important;
+  line-height: 1.72 !important;
+}
+
+.home-note-light,
+.home-subnote,
+.home-hero-small,
+.home-hero-small--right {
+  font-size: .60rem !important;
+  line-height: 1.55 !important;
+}
+
+/* Bordures visibles sur les cadres */
+.home-principle-card,
+.home-dispositif-cards article,
+.home-dispositif-cards details,
+.home-position-lines details,
+.home-values details,
+.home-access-grid article,
+.home-cycle-body,
+.home-hero-card {
+  border: 1px solid var(--h3-border-visible-light) !important;
+}
+
+.home-dark .home-position-lines details,
+.home-dark .home-values details,
+.home-hero-card {
+  border-color: var(--h3-border-visible-dark) !important;
+}
+
+.home-principle-card--dark {
+  border-color: rgba(255,255,255,.20) !important;
+}
+
+/* Accordéons : supprimer le marqueur natif et créer un gros + */
+.home-principles-grid details summary,
+.home-decision-accordion details summary,
+.home-dispositif-cards details summary,
+.home-position-lines details summary,
+.home-values details summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  padding-right: 44px;
+}
+
+.home-principles-grid details summary::-webkit-details-marker,
+.home-decision-accordion details summary::-webkit-details-marker,
+.home-dispositif-cards details summary::-webkit-details-marker,
+.home-position-lines details summary::-webkit-details-marker,
+.home-values details summary::-webkit-details-marker {
+  display: none;
+}
+
+.home-principles-grid details summary::after,
+.home-decision-accordion details summary::after,
+.home-dispositif-cards details summary::after,
+.home-position-lines details summary::after,
+.home-values details summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-body);
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1;
+  color: currentColor;
+  opacity: .95;
+}
+
+.home-principles-grid details[open] summary::after,
+.home-decision-accordion details[open] summary::after,
+.home-dispositif-cards details[open] summary::after,
+.home-position-lines details[open] summary::after,
+.home-values details[open] summary::after {
+  content: "−";
+}
+
+/* Section CE QUE FAIT EN PLATEAU : titres seuls + ouverture */
+.home-principles .home-head {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.home-principles .home-head .home-kicker {
+  justify-content: center !important;
+}
+
+.home-principles .home-head h2,
+.home-principles .home-head p {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+.home-principles .home-head h2 {
+  max-width: 19ch !important;
+}
+
+.home-principles .home-head p {
+  max-width: 68ch !important;
+}
+
+.home-principles-grid {
+  background: var(--h3-line-light) !important;
+  gap: 2px !important;
+}
+
+.home-principle-card {
+  padding: 26px 26px 24px !important;
+  background: var(--ep-white) !important;
+}
+
+.home-principle-card--dark {
+  background: var(--ep-black) !important;
+}
+
+.home-principle-card summary span,
+.home-principle-card > span {
+  display: block;
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+  font-size: .56rem !important;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--h3-accent-deep);
+}
+
+.home-principle-card--dark summary span {
+  color: var(--h3-text-muted);
+}
+
+.home-principle-card summary h3,
+.home-principle-card h3 {
+  margin: 0 !important;
+  max-width: 30ch;
+  font-family: var(--font-display);
+  font-size: var(--h3-summary-title-large) !important;
+  line-height: 1.22 !important;
+  letter-spacing: -.014em;
+}
+
+.home-principle-card p {
+  margin-top: 16px !important;
+  max-width: 62ch !important;
+  font-size: var(--h3-body-small) !important;
+}
+
+/* Section changement d’échelle : fonction explicite + accordéon */
+.home-decision-visual {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.78), rgba(17,17,17,.50)),
+    url("../../images/noeud-routier.jpg.jpg") center/cover no-repeat !important;
+  filter: grayscale(100%) contrast(116%) brightness(.74) !important;
+}
+
+.home-decision-copy .home-kicker {
+  margin-bottom: 16px !important;
+  color: var(--h3-text-muted) !important;
+}
+
+.home-decision-copy h2 {
+  max-width: 17ch !important;
+}
+
+.home-decision-intro {
+  max-width: 64ch !important;
+  margin: 0 0 28px !important;
+  color: rgba(255,255,255,.76) !important;
+}
+
+.home-decision-accordion details {
+  border-top: 1px solid var(--h3-border-visible-dark);
+  padding: 18px 0;
+}
+
+.home-decision-accordion details:last-child {
+  border-bottom: 1px solid var(--h3-border-visible-dark);
+}
+
+.home-decision-accordion summary {
+  font-family: var(--font-display);
+  font-size: var(--h3-summary-title-large) !important;
+  line-height: 1.24;
+  color: var(--h3-text);
+}
+
+.home-decision-accordion p {
+  max-width: 58ch !important;
+  margin-top: 12px !important;
+  color: rgba(255,255,255,.72) !important;
+  font-size: var(--h3-body-small) !important;
+}
+
+/* Positions : plus compact, lisible, en deux colonnes desktop */
+.home-position-lines {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 2px !important;
+  max-width: 1080px !important;
+  margin: 0 auto !important;
+  background: rgba(255,255,255,.08) !important;
+}
+
+.home-position-lines details {
+  padding: 22px 22px 20px !important;
+  background: rgba(10,10,10,.72) !important;
+  backdrop-filter: blur(7px);
+}
+
+.home-position-lines details summary {
+  display: grid !important;
+  grid-template-columns: minmax(88px, .33fr) minmax(0, 1fr) 28px;
+  gap: 16px;
+  align-items: baseline;
+  padding-right: 0 !important;
+}
+
+.home-position-lines details summary::after {
+  position: static !important;
+  transform: none !important;
+  align-self: center;
+  justify-self: end;
+  color: rgba(255,255,255,.90);
+}
+
+.home-position-lines summary span {
+  font-family: var(--font-mono);
+  font-size: .58rem !important;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.58) !important;
+}
+
+.home-position-lines summary strong {
+  font-family: var(--font-display);
+  font-size: .94rem !important;
+  line-height: 1.22 !important;
+  letter-spacing: -.01em;
+  color: var(--h3-text);
+  font-weight: 600;
+}
+
+.home-position-lines p {
+  grid-column: 2 / 4;
+  margin: 12px 0 0 calc(88px + 16px) !important;
+  max-width: 56ch !important;
+  font-size: .78rem !important;
+  line-height: 1.64 !important;
+  color: rgba(255,255,255,.70) !important;
+}
+
+/* Cadre éditorial : titres seuls + gros + */
+.home-dispositif-link {
+  margin-top: 18px !important;
+}
+
+.home-dispositif-cards {
+  gap: 2px !important;
+  background: var(--h3-line-light) !important;
+}
+
+.home-dispositif-cards details {
+  position: relative;
+  padding: 24px 22px 22px !important;
+  background: var(--ep-white) !important;
+}
+
+.home-dispositif-cards details::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--h3-accent);
+}
+
+.home-dispositif-cards summary {
+  font-family: var(--font-display);
+  font-size: var(--h3-summary-title) !important;
+  line-height: 1.24 !important;
+  font-weight: 600;
+  color: var(--h3-ink);
+}
+
+.home-dispositif-cards p {
+  margin-top: 14px !important;
+  max-width: 48ch !important;
+  font-size: var(--h3-body-small) !important;
+}
+
+/* Valeur : titres visibles, paragraphes au clic sauf premier */
+.home-values details {
+  position: relative;
+  padding: 24px 26px !important;
+  background: rgba(255,255,255,.035) !important;
+  border-color: var(--h3-border-visible-dark) !important;
+}
+
+.home-values details::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--h3-accent);
+}
+
+.home-values summary {
+  display: grid !important;
+  grid-template-columns: 52px minmax(0, 1fr) 28px;
+  gap: 18px;
+  align-items: baseline;
+  padding-right: 0 !important;
+}
+
+.home-values summary::after {
+  position: static !important;
+  transform: none !important;
+  align-self: center;
+  justify-self: end;
+}
+
+.home-values summary span {
+  font-size: .58rem !important;
+}
+
+.home-values summary strong {
+  font-family: var(--font-display);
+  font-size: 1rem !important;
+  line-height: 1.24 !important;
+  color: var(--h3-text);
+}
+
+.home-values p {
+  margin: 12px 0 0 70px !important;
+  max-width: 70ch !important;
+  font-size: .80rem !important;
+  color: rgba(255,255,255,.72) !important;
+}
+
+/* Accès : passage à la ligne forcé + micro-note */
+.home-access .home-head h2 {
+  max-width: 18ch !important;
+  line-height: 1.06 !important;
+}
+
+.home-access-grid article {
+  border-color: var(--h3-border-visible-light) !important;
+}
+
+.home-note-light {
+  max-width: 58ch !important;
+  margin-top: 18px !important;
+  font-size: .58rem !important;
+  letter-spacing: .01em;
+  color: var(--h3-ink-muted) !important;
+}
+
+/* Mobile : une colonne et + toujours visible */
+@media (max-width: 900px) {
+  .home-position-lines {
+    grid-template-columns: 1fr !important;
+  }
+
+  .home-position-lines details summary {
+    grid-template-columns: 1fr 28px !important;
+    gap: 12px !important;
+  }
+
+  .home-position-lines summary span {
+    grid-column: 1 / -1;
+  }
+
+  .home-position-lines p {
+    margin-left: 0 !important;
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-principles .home-head,
+  .home-principles .home-head h2,
+  .home-principles .home-head p {
+    text-align: center !important;
+  }
+
+  .home-principle-card,
+  .home-dispositif-cards details,
+  .home-values details {
+    padding: 22px 20px !important;
+  }
+
+  .home-values summary {
+    grid-template-columns: 40px minmax(0, 1fr) 28px;
+    gap: 12px;
+  }
+
+  .home-values p {
+    margin-left: 0 !important;
+  }
+}
+
+
+/* =========================================================
+   V9 - lisibilité + calendrier cycle Industrie + + uniformes
+========================================================= */
+
+/* Tous les + : même taille, plus visibles */
+.home-principles-grid details summary::after,
+.home-decision-accordion details summary::after,
+.home-dispositif-cards details summary::after,
+.home-position-lines details summary::after,
+.home-values details summary::after {
+  width: 38px !important;
+  height: 38px !important;
+  font-size: 2.05rem !important;
+  font-weight: 300 !important;
+  line-height: 1 !important;
+  opacity: 1 !important;
+  color: currentColor !important;
+}
+
+/* Hero : photo plus petite + encart calendrier du cycle Industrie */
+.home-hero-side {
+  max-width: 560px !important;
+}
+
+.home-hero-media-row {
+  display: grid;
+  grid-template-columns: minmax(230px, .78fr) minmax(190px, .52fr);
+  gap: 14px;
+  align-items: stretch;
+  margin-bottom: 16px;
+}
+
+.home-hero-media-row .home-film {
+  width: 100%;
+  max-width: none !important;
+  margin: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.home-film--trio {
+  aspect-ratio: 1 / 1.05;
+}
+
+.home-film--trio img {
+  width: 100%;
+  height: calc(100% - 52px);
+  object-fit: cover;
+  filter: grayscale(100%) contrast(112%) brightness(.74);
+}
+
+.home-film-caption {
+  min-height: 52px;
+}
+
+.home-hero-cycle-note {
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.035);
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-hero-cycle-note span {
+  display: block;
+  margin-bottom: 14px;
+  font-family: var(--font-mono);
+  font-size: .58rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.62);
+}
+
+.home-hero-cycle-note p {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: .98rem !important;
+  line-height: 1.22 !important;
+  letter-spacing: -.01em;
+  color: var(--h3-text);
+}
+
+.home-hero-cycle-note ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.home-hero-cycle-note li {
+  margin: 0;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  font-size: .70rem;
+  line-height: 1.45;
+  color: rgba(255,255,255,.74);
+}
+
+/* Section décision : intro raccourcie mais visuellement plus lisible */
+.home-decision-intro {
+  max-width: 58ch !important;
+  font-size: .80rem !important;
+  line-height: 1.62 !important;
+  margin-bottom: 22px !important;
+}
+
+/* Cadre éditorial : cartes centrées verticalement */
+.home-dispositif-grid {
+  align-items: center !important;
+}
+
+.home-dispositif-cards {
+  align-self: center !important;
+}
+
+/* Micro-note accès : vraiment micro */
+.home-access-grid .home-note-light {
+  font-size: .54rem !important;
+  line-height: 1.45 !important;
+  letter-spacing: .015em !important;
+  max-width: 48ch !important;
+  opacity: .78;
+}
+
+/* Renforcement bordures cartes claires */
+.home-principle-card,
+.home-dispositif-cards details,
+.home-access-grid article {
+  border-color: rgba(17,17,17,.24) !important;
+}
+
+/* Mobile/tablette : encart calendrier sous la photo */
+@media (max-width: 1100px) {
+  .home-hero-media-row {
+    grid-template-columns: 1fr;
+  }
+
+  .home-film--trio {
+    aspect-ratio: 16 / 9;
+  }
+
+  .home-film--trio img {
+    height: calc(100% - 52px);
+  }
+}
+
+@media (max-width: 760px) {
+  .home-hero-cycle-note {
+    padding: 16px;
+  }
+
+  .home-hero-cycle-note p {
+    font-size: .94rem !important;
+  }
+
+  .home-hero-cycle-note li {
+    font-size: .68rem;
+  }
+}
+
+
+/* =========================================================
+   V10 - ajustement fin hero journalistes
+========================================================= */
+.home-hero-media-row .home-film.home-film--trio {
+  display: flex !important;
+  flex-direction: column !important;
+  align-self: stretch !important;
+  height: 100% !important;
+  aspect-ratio: auto !important;
+}
+
+.home-hero-media-row .home-film.home-film--trio img {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto !important;
+}
+
+.home-hero .home-film-caption,
+.home-film-caption {
+  min-height: 64px !important;
+  padding: 12px 16px 16px !important;
+}
+
+.home-hero .home-film-caption-item:nth-child(1) {
+  text-align: left !important;
+}
+
+.home-hero .home-film-caption-item:nth-child(2) {
+  text-align: center !important;
+}
+
+.home-hero .home-film-caption-item:nth-child(3) {
+  text-align: right !important;
+}
+
+.home-hero .home-film-caption-item strong,
+.home-hero .home-film-caption-item span {
+  width: 100%;
+}
+
+
+/* =========================================================
+   V11 - finition hero photo/journalistes
+========================================================= */
+
+/* Supprime le filet clair perçu en haut de la photo */
+.home-hero-media-row .home-film.home-film--trio,
+.home-hero .home-film.home-film--trio {
+  border-top-color: rgba(255,255,255,.10) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(0,0,0,.70),
+    inset 0 0 0 1px rgba(255,255,255,.025),
+    inset 0 0 28px rgba(0,0,0,.78) !important;
+}
+
+.home-hero-media-row .home-film.home-film--trio img {
+  display: block !important;
+  margin-top: 0 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Légende : une ligne pour le nom, respiration, médias sur la ligne suivante */
+.home-hero .home-film-caption {
+  min-height: 70px !important;
+  padding: 13px 16px 17px !important;
+  align-items: start !important;
+}
+
+.home-hero .home-film-caption-item strong {
+  white-space: nowrap !important;
+  margin-bottom: 8px !important;
+  font-size: .68rem !important;
+  line-height: 1.05 !important;
+}
+
+.home-hero .home-film-caption-item span {
+  white-space: nowrap !important;
+  font-size: .68rem !important;
+  line-height: 1.05 !important;
+}
+
+/* Rappel : alignements différenciés */
+.home-hero .home-film-caption-item:nth-child(1) {
+  text-align: left !important;
+}
+
+.home-hero .home-film-caption-item:nth-child(2) {
+  text-align: center !important;
+}
+
+.home-hero .home-film-caption-item:nth-child(3) {
+  text-align: right !important;
+}
+
+/* Bloc calendrier : éviter tout tiret long typographique et conserver une lecture nette */
+.home-hero-cycle-note li {
+  font-size: .70rem !important;
+  line-height: 1.45 !important;
 }
