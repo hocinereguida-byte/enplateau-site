@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Demander un échange éditorial - En Plateau</title>
+  <meta name="description" content="Vous avez reçu une invitation En Plateau ? Réservez un échange éditorial de 15 minutes pour situer votre lecture, préciser le cadre de préparation et vérifier les suites possibles.">
+
+  <link rel="canonical" href="https://enplateau.fr/demander-un-echange-editorial.html">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#111111">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="En Plateau">
+  <meta property="og:title" content="Demander un échange éditorial - En Plateau">
+  <meta property="og:description" content="Un échange court pour situer une lecture, préciser le cadre éditorial et vérifier les suites possibles.">
+  <meta property="og:url" content="https://enplateau.fr/demander-un-echange-editorial.html">
+  <meta property="og:image" content="https://enplateau.fr/images/en-plateau-social.webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Demander un échange éditorial - En Plateau">
+  <meta name="twitter:description" content="Un échange court pour situer une lecture, préciser le cadre éditorial et vérifier les suites possibles.">
+  <meta name="twitter:image" content="https://enplateau.fr/images/en-plateau-social.webp">
+
+  <link rel="icon" href="/images/favicon-en-plateau.svg" type="image/svg+xml">
+  <link rel="icon" href="/images/Favenplateau.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/images/Favenplateau.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/pages.css?v=echange-editorial-01">
+</head>
+
+<body class="page-interior page-interior-3 page-echange-editorial">
+  <div id="site-header"></div>
+  <div id="site-mobile-menu"></div>
+
+  <main>
+    <section class="echange-hero" id="hero-echange-editorial">
+      <div class="echange-container echange-hero-grid">
+        <div class="echange-hero-copy reveal">
+          <div class="echange-kicker">Échange éditorial</div>
+          <h1>Vous avez reçu une invitation&nbsp;? Situons la bonne lecture.</h1>
+          <p class="echange-hero-lead">
+            Un échange de 15 minutes pour comprendre le sujet, préciser le bon angle et vérifier si votre expérience peut contribuer utilement à une conversation en cours.
+          </p>
+          <p class="echange-hero-small">
+            Sans engagement. Aucun document à préparer. L’échange sert uniquement à qualifier la pertinence de la lecture et les conditions de préparation d’une éventuelle contribution.
+          </p>
+        </div>
+
+        <aside class="echange-hero-panel reveal" aria-label="Réserver un échange éditorial">
+          <div class="echange-panel-kicker">Accès direct</div>
+          <h2>Échange éditorial de 15 minutes</h2>
+          <ul>
+            <li>Point d’entrée à situer</li>
+            <li>Lecture possible à vérifier</li>
+            <li>Suite éventuelle à clarifier</li>
+          </ul>
+          <a
+            href="https://cal.com/en-plateau/echange-editorial-15-min"
+            class="echange-primary-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Réserver un créneau</a>
+          <p>Vous n’avez pas été contacté&nbsp;? <a href="/proposer-une-contribution.html">Signaler une contribution</a></p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="echange-section echange-section-light" id="echange-qualifier">
+      <div class="echange-container">
+        <header class="echange-head reveal">
+          <div class="echange-kicker">Avant réservation</div>
+          <h2>Ce que l’échange permet de qualifier</h2>
+          <p>
+            Il ne s’agit pas de préparer une intervention complète. L’objectif est de vérifier si une lecture peut trouver sa juste place dans un cycle de conversations déjà construit.
+          </p>
+        </header>
+
+        <div class="echange-bento reveal">
+          <details class="echange-card echange-card-dark" open>
+            <summary>
+              <span>01 · Point d’entrée</span>
+              <h3>Situer la bonne question.</h3>
+            </summary>
+            <p>
+              Identifier le cycle, la conversation ou l’angle qui correspond le mieux à votre fonction, à votre expérience et à ce que vous pouvez éclairer depuis votre position.
+            </p>
+          </details>
+
+          <details class="echange-card">
+            <summary>
+              <span>02 · Lecture située</span>
+              <h3>Vérifier la portée de votre lecture.</h3>
+            </summary>
+            <p>
+              Comprendre ce que votre contribution peut rendre plus lisible : une décision, une condition de réussite, un arbitrage ou une lecture complémentaire utile.
+            </p>
+          </details>
+
+          <details class="echange-card">
+            <summary>
+              <span>03 · Cadre</span>
+              <h3>Préciser ce qui peut être préparé.</h3>
+            </summary>
+            <p>
+              Définir le périmètre : sujets possibles, exemples mobilisables, équipes à associer, niveau de précision et forme éditoriale adaptée.
+            </p>
+          </details>
+
+          <details class="echange-card echange-card-wide">
+            <summary>
+              <span>04 · Suite possible</span>
+              <h3>Savoir si une note de positionnement doit être préparée.</h3>
+            </summary>
+            <p>
+              Si l’échange confirme la pertinence de la lecture, une note peut être transmise. Elle précise le cadre proposé, les supports envisagés, les conditions de préparation et les conditions de production.
+            </p>
+          </details>
+
+          <article class="echange-card echange-card-cta">
+            <span>Accès direct</span>
+            <h3>Réserver sans passer par un échange préalable supplémentaire.</h3>
+            <p>
+              Cette page est destinée aux personnes déjà contactées. Elle permet d’aller directement à l’agenda lorsque le premier signal a déjà été donné.
+            </p>
+            <a
+              href="https://cal.com/en-plateau/echange-editorial-15-min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Accéder à l’agenda</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="echange-section echange-section-dark" id="echange-process">
+      <div class="echange-container echange-split">
+        <div class="echange-visual echange-visual-editorial reveal" aria-hidden="true"></div>
+
+        <div class="echange-split-copy reveal">
+          <div class="echange-kicker">Parcours</div>
+          <h2>Un échange simple, avant toute proposition formalisée.</h2>
+          <p>
+            Le rendez-vous sert à situer la lecture possible. Il ne vaut ni validation, ni engagement. Il permet seulement de décider si un cadrage plus précis doit être préparé.
+          </p>
+
+          <div class="echange-steps">
+            <details open>
+              <summary>1. Vous réservez un créneau</summary>
+              <p>Vous choisissez directement dans l’agenda un échange éditorial de 15 minutes.</p>
+            </details>
+            <details>
+              <summary>2. La lecture possible est qualifiée</summary>
+              <p>Nous précisons l’angle, le niveau de préparation souhaité et les éventuels angles alternatifs.</p>
+            </details>
+            <details>
+              <summary>3. La suite est clarifiée</summary>
+              <p>Si la lecture semble pertinente, une note de positionnement peut être transmise.</p>
+            </details>
+            <details>
+              <summary>4. La position peut être soumise au comité</summary>
+              <p>La sélection reste fondée sur la pertinence éditoriale et la complémentarité avec les autres lectures du cycle.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="echange-section echange-section-light" id="echange-orientation">
+      <div class="echange-container">
+        <header class="echange-head reveal">
+          <div class="echange-kicker">Orientation</div>
+          <h2>Deux points d’entrée selon votre situation</h2>
+          <p>
+            La page de réservation est pensée pour les personnes déjà contactées. Les contributions non sollicitées passent par un autre point d’entrée.
+          </p>
+        </header>
+
+        <div class="echange-two-cards reveal">
+          <article>
+            <span>Vous avez reçu une invitation</span>
+            <h3>Réserver directement un échange éditorial.</h3>
+            <p>
+              Vous avez été contacté par message LinkedIn, e-mail, recommandation qualifiée ou approche directe. Vous pouvez réserver un créneau court pour situer votre lecture.
+            </p>
+            <a
+              href="https://cal.com/en-plateau/echange-editorial-15-min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Réserver un créneau</a>
+          </article>
+
+          <article>
+            <span>Vous n’avez pas été contacté</span>
+            <h3>Signaler une contribution possible.</h3>
+            <p>
+              Vous pouvez signaler une organisation, une personne ou une lecture susceptible d’éclairer utilement l’un des cycles en cours.
+            </p>
+            <a href="/proposer-une-contribution.html">Signaler une contribution</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="echange-section echange-section-dark" id="echange-faq">
+      <div class="echange-container">
+        <header class="echange-head reveal">
+          <div class="echange-kicker">Questions fréquentes</div>
+          <h2>Ce qu’il faut savoir avant de réserver</h2>
+        </header>
+
+        <div class="echange-faq-list reveal">
+          <details open>
+            <summary>Faut-il préparer quelque chose&nbsp;?</summary>
+            <p>Non. Aucun document n’est attendu pour ce premier échange. L’objectif est d’abord de qualifier la lecture possible.</p>
+          </details>
+
+          <details>
+            <summary>Est-ce que cet échange vaut validation&nbsp;?</summary>
+            <p>Non. L’échange permet uniquement de vérifier si une suite a du sens. Une note de positionnement pourra ensuite être transmise si les conditions sont réunies.</p>
+          </details>
+
+          <details>
+            <summary>Pourquoi un accès direct à l’agenda&nbsp;?</summary>
+            <p>Parce que la prise de contact a déjà eu lieu. Le parcours est volontairement court pour éviter les étapes inutiles.</p>
+          </details>
+
+          <details>
+            <summary>Je n’ai pas été contacté, que faire&nbsp;?</summary>
+            <p>Utilisez plutôt le formulaire de signalement. Il permet de faire connaître une contribution possible sans passer par cette page de réservation.</p>
+          </details>
+        </div>
+
+        <div class="echange-final-cta reveal">
+          <a
+            href="https://cal.com/en-plateau/echange-editorial-15-min"
+            class="echange-primary-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Réserver un créneau</a>
+          <p>L’échange sert à qualifier la pertinence de la lecture et les conditions de préparation d’une éventuelle contribution.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="cookie-container"></div>
+
+  <script src="/assets/js/layout.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
