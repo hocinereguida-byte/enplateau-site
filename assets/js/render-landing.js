@@ -2128,7 +2128,7 @@
     }
 
     if (hasRealName) {
-      return `Au regard de sa position chez ${org}, ${personName}${rolePart} ${openingByPersona()}. Son expérience permet de relier les transformations en cours, les acteurs concernés, les arbitrages, les défis, les trajectoires possibles et les effets d’échelle. L’enjeu n’est pas de commenter un cas propre à ${org}, mais d’éclairer ${scope} depuis l’écosystème industriel dans lequel cette expérience s’inscrit.`;
+      return `Au regard de sa position chez ${org}, ${personName} ${openingByPersona()}. Son expérience permet de relier les transformations en cours, les acteurs concernés, les arbitrages, les défis, les trajectoires possibles et les effets d’échelle. L’enjeu n’est pas de commenter un cas propre à ${org}, mais d’éclairer ${scope} depuis l’écosystème industriel dans lequel cette expérience s’inscrit.`;
     }
 
     if (why.person) {
