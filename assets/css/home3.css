@@ -4118,3 +4118,44 @@
     font-size: .68rem;
   }
 }
+
+
+/* =========================================================
+   V10 — ajustement fin hero journalistes
+========================================================= */
+.home-hero-media-row .home-film.home-film--trio {
+  display: flex !important;
+  flex-direction: column !important;
+  align-self: stretch !important;
+  height: 100% !important;
+  aspect-ratio: auto !important;
+}
+
+.home-hero-media-row .home-film.home-film--trio img {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto !important;
+}
+
+.home-hero .home-film-caption,
+.home-film-caption {
+  min-height: 64px !important;
+  padding: 12px 16px 16px !important;
+}
+
+.home-hero .home-film-caption-item:nth-child(1) {
+  text-align: left !important;
+}
+
+.home-hero .home-film-caption-item:nth-child(2) {
+  text-align: center !important;
+}
+
+.home-hero .home-film-caption-item:nth-child(3) {
+  text-align: right !important;
+}
+
+.home-hero .home-film-caption-item strong,
+.home-hero .home-film-caption-item span {
+  width: 100%;
+}
