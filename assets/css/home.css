@@ -4219,3 +4219,62 @@
   font-size: .70rem !important;
   line-height: 1.45 !important;
 }
+
+
+/* =========================================================
+   V12 - micro-ajustement légende journalistes
+========================================================= */
+
+.home-hero .home-film-caption {
+  grid-template-columns: 1fr .92fr 1fr !important;
+  gap: 8px !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.home-hero .home-film-caption-item:nth-child(2) {
+  transform: translateX(5px);
+}
+
+.home-hero .home-film-caption-item strong,
+.home-hero .home-film-caption-item span {
+  font-size: .62rem !important;
+  letter-spacing: .002em !important;
+}
+
+.home-hero .home-film-caption-item strong {
+  margin-bottom: 9px !important;
+}
+
+
+/* =========================================================
+   V13 - suppression filet clair interne photo hero
+========================================================= */
+
+/*
+  Le filet clair visible en haut venait de la combinaison :
+  - bordure/ombre interne du composant film,
+  - pseudo-élément de dégradé supérieur,
+  - photo calée trop près du bord haut.
+  On neutralise ces effets uniquement sur la photo trio du hero.
+*/
+
+.home-hero-media-row .home-film.home-film--trio::before,
+.home-hero .home-film.home-film--trio::before {
+  display: none !important;
+  content: none !important;
+}
+
+.home-hero-media-row .home-film.home-film--trio {
+  border-top-color: rgba(255,255,255,.08) !important;
+  background-image: none !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.018),
+    inset 0 0 26px rgba(0,0,0,.82) !important;
+}
+
+.home-hero-media-row .home-film.home-film--trio img {
+  object-position: center 52% !important;
+  transform: translateY(-3px) scale(1.015) !important;
+  transform-origin: center center !important;
+}
