@@ -13,53 +13,113 @@
   }
 
   .site-header__inner {
-    min-height: 94px;
+    min-height: 116px;
   }
 
   .site-header__left {
-    padding-left: 52px;
+    padding-left: 56px;
   }
 
   .site-brand--logo {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 316px;
+    height: 104px;
     line-height: 0;
+    overflow: hidden;
+    position: relative;
     text-decoration: none;
+    flex: 0 0 auto;
   }
 
   .site-brand__logo {
     display: block;
-    width: 262px;
-    max-width: 262px;
+    width: 608px;
+    max-width: none;
     height: auto;
+    position: absolute;
+    left: -131px;
+    top: -131px;
+  }
+
+  @media (max-width: 1200px) {
+    .site-header__inner {
+      min-height: 108px;
+    }
+
+    .site-header__left {
+      padding-left: 44px;
+    }
+
+    .site-brand--logo {
+      width: 292px;
+      height: 98px;
+    }
+
+    .site-brand__logo {
+      width: 563px;
+      left: -121px;
+      top: -124px;
+    }
   }
 
   @media (max-width: 1024px) {
+    .site-header__inner {
+      min-height: 98px;
+    }
+
+    .site-header__left {
+      padding-left: 36px;
+    }
+
+    .site-brand--logo {
+      width: 252px;
+      height: 86px;
+    }
+
     .site-brand__logo {
-      width: 226px;
-      max-width: 226px;
+      width: 486px;
+      left: -105px;
+      top: -107px;
     }
   }
 
   @media (max-width: 768px) {
     .site-header__inner {
-      min-height: 78px;
+      min-height: 84px;
     }
 
     .site-header__left {
       padding-left: 24px;
     }
 
+    .site-brand--logo {
+      width: 208px;
+      height: 70px;
+    }
+
     .site-brand__logo {
-      width: 166px;
-      max-width: 166px;
+      width: 401px;
+      left: -86px;
+      top: -88px;
     }
   }
 
   @media (max-width: 420px) {
+    .site-header__left {
+      padding-left: 18px;
+    }
+
+    .site-brand--logo {
+      width: 188px;
+      height: 64px;
+    }
+
     .site-brand__logo {
-      width: 152px;
-      max-width: 152px;
+      width: 363px;
+      left: -78px;
+      top: -80px;
     }
   }
 </style>
@@ -70,7 +130,7 @@
     <div class="site-header__left">
       <a href="/index.html" class="site-brand site-brand--logo" aria-label="Scènes d'Arbitrage — Accueil">
         <img
-          src="/images/logo-scenes-transparent-no-baseline-v2.png?v=6"
+          src="/images/logo-scenes-transparent-no-baseline-v2.png?v=7"
           alt="Scènes d'Arbitrage"
           class="site-brand__logo"
         >
