@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>En Plateau — Scripts LinkedIn</title>
+  <title>Scènes d'Arbitrage — Scripts LinkedIn</title>
   <meta name="robots" content="noindex,nofollow">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -83,7 +83,7 @@
 </head>
 <body>
 <header class="ep-header">
-  <a class="ep-brand" href="/">En Plateau</a>
+  <a class="ep-brand" href="/">Scènes d'Arbitrage</a>
   <span class="ep-badge">OUTIL INTERNE · SCRIPTS LINKEDIN</span>
 </header>
 <div id="app"><div class="ep-state"><div class="ep-dot-spin"></div><span>Chargement…</span></div></div>
@@ -129,7 +129,7 @@ function init(){
   var contexte=s(deal.editorialContext&&deal.editorialContext.contexte||'');
   var pubRef=s(deal.publicRef||ref);
   var rang=deal.activation&&deal.activation.rang||'—';
-  var landingURL='https://enplateau.fr/lp/industrie/contribuer.html?cast='+pubRef;
+  var landingURL='https://scenesdarbitrage.fr/lp/industrie/contribuer.html?cast='+pubRef;
   var journaliste=s(angle&&angle.journaliste||'');
   var media=s(angle&&angle.media||'');
   var whyShort=shortWhy(why.person);
@@ -160,19 +160,19 @@ function init(){
   var mediaLine=[journaliste,media].filter(Boolean).join(', ');
 
   // ── SCRIPTS ──
-  var inv_interv='Bonjour, je vous contacte pour En Plateau. Nous préparons une conversation du cycle Industrie sur la montée en capacité industrielle et votre fonction nous semble bien placée pour en porter la lecture '+lecLabel+'.';
+  var inv_interv='Bonjour, je vous contacte pour Scènes d'Arbitrage. Nous préparons une conversation du cycle Industrie sur la montée en capacité industrielle et votre fonction nous semble bien placée pour en porter la lecture '+lecLabel+'.';
 
   var msg_interv='Bonjour,\n\nNous composons une conversation sur les conditions concrètes de montée en capacité industrielle : flux, priorités, qualité, interfaces métiers et stabilité d\'exécution.\n\nQuatre lectures structurent cette composition — '+lecturesStr+' — portées par des directions de groupes industriels, d\'ETI et de cabinets spécialisés.\n\nLa lecture '+lecLabel+' est celle qui nous a conduit vers vous'+(whyShort?' — '+whyShort:'')+'.'+((hasDG||hasComm)?'\n\nNous avons informé en amont '+(hasDG?prenomDG:commNom.split(' ')[0])+' afin que la sollicitation soit correctement située.':'')+'\n\nLa contribution ne suppose pas de commenter une situation interne. Elle vise une lecture de mécanisme, préparée et publiquement tenable.\n\nNous serions ravis de vous associer à cette démarche, y compris lors de l\'échange éditorial.\n\nPage de cadrage : '+landingURL+'\nÉchange éditorial de 15 min : '+CAL;
 
   var rel_interv='Bonjour, je me permets une relance courte.\n\nLa lecture '+lecLabel+' reste ouverte dans cette composition. Seriez-vous disponible pour un échange de 15 minutes ?\n\nPage de cadrage : '+landingURL+'\nCréneau possible ici : '+CAL;
 
-  var inv_dg='Bonjour, je vous contacte pour En Plateau. Nous préparons une conversation du cycle Industrie sur la montée en capacité industrielle et souhaitons situer une possible lecture de '+orgNom+'.';
+  var inv_dg='Bonjour, je vous contacte pour Scènes d'Arbitrage. Nous préparons une conversation du cycle Industrie sur la montée en capacité industrielle et souhaitons situer une possible lecture de '+orgNom+'.';
 
   var msg_dg='Bonjour,\n\nNous composons une conversation sur les conditions concrètes de montée en capacité industrielle : flux, priorités, qualité, interfaces métiers et stabilité d\'exécution.\n\nQuatre lectures structurent cette composition — '+lecturesStr+' — portées par des directions de groupes industriels, d\'ETI et de cabinets spécialisés.\n\n'+orgNom+' nous semble pouvoir apporter une lecture '+lecLabel+' utile sur ce sujet. Nous avons identifié '+nomComplet+' pour la porter — '+(whyShort||'sa fonction lui permet d\'apporter une lecture utile sur cet angle')+'.\n\nPensez-vous que ce soit la personne la plus appropriée, ou souhaitez-vous nous orienter vers quelqu\'un de plus pertinent en interne ?\n\nLa contribution ne suppose pas de commenter une situation interne. Elle vise une lecture de mécanisme, préparée et publiquement tenable.\n\nNous serions ravis de vous associer à cette démarche, y compris lors de l\'échange éditorial.\n\nPage de cadrage : '+landingURL+'\n15 minutes si utile : '+CAL;
 
   var rel_dg='Bonjour, je me permets une relance courte.\n\n'+orgNom+' a-t-elle un intérêt à occuper cette position dans la composition ?\n\nPage de cadrage : '+landingURL+'\n15 min si utile : '+CAL;
 
-  var inv_comm='Bonjour, je vous contacte pour En Plateau. Nous préparons une conversation Industrie et souhaitons vérifier le cadrage d\'une possible sollicitation de '+orgNom+'.';
+  var inv_comm='Bonjour, je vous contacte pour Scènes d'Arbitrage. Nous préparons une conversation Industrie et souhaitons vérifier le cadrage d\'une possible sollicitation de '+orgNom+'.';
 
   var msg_comm='Bonjour,\n\nNous composons une conversation sur la montée en capacité industrielle — quatre lectures associées : '+lecturesStr+', portées par des directions de groupes, d\'ETI et de cabinets spécialisés.\n\n'+(hasDG?'Nous avons pris contact avec '+prenomDG+' pour situer la démarche. ':'')+' Nous avons identifié '+nomComplet+' pour porter la lecture '+lecLabel+' de '+orgNom+' — '+(whyShort||'sa fonction lui permet d\'apporter une lecture utile sur cet angle')+'.\n\nPensez-vous que ce soit la personne la plus appropriée, ou souhaitez-vous nous orienter vers quelqu\'un de plus pertinent en interne ?\n\nL\'objectif n\'est pas de commenter une situation interne, mais de préparer une lecture de mécanisme, publiquement tenable, avec un périmètre maîtrisé.\n\nNous serions ravis de vous associer à cette démarche, y compris lors de l\'échange éditorial.\n\nPage de cadrage : '+landingURL+'\n15 minutes si utile : '+CAL;
 
