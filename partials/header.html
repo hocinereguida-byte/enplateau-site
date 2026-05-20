@@ -3,6 +3,7 @@
     background: #000000 !important;
     box-shadow: 0 0 0 100vmax #000000 !important;
     clip-path: inset(0 -100vmax);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
   }
 
   .site-header__inner,
@@ -13,7 +14,7 @@
   }
 
   .site-header__inner {
-    min-height: 122px;
+    min-height: 116px;
   }
 
   .site-header__left {
@@ -23,76 +24,105 @@
   .site-brand--logo {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 335px;
+    height: 110px;
     line-height: 0;
+    overflow: hidden;
+    position: relative;
     text-decoration: none;
     flex: 0 0 auto;
+    transform: translateY(-2px);
   }
 
   .site-brand__logo {
     display: block;
-    width: 292px;
-    max-width: 292px;
+    width: 645px;
+    max-width: none;
     height: auto;
-    object-fit: contain;
+    position: absolute;
+    left: -139px;
+    top: -139px;
   }
 
   @media (max-width: 1200px) {
     .site-header__inner {
-      min-height: 114px;
+      min-height: 108px;
     }
 
     .site-header__left {
       padding-left: 44px;
     }
 
+    .site-brand--logo {
+      width: 310px;
+      height: 104px;
+    }
+
     .site-brand__logo {
-      width: 268px;
-      max-width: 268px;
+      width: 597px;
+      left: -128px;
+      top: -131px;
     }
   }
 
   @media (max-width: 1024px) {
     .site-header__inner {
-      min-height: 104px;
+      min-height: 98px;
     }
 
     .site-header__left {
       padding-left: 36px;
     }
 
+    .site-brand--logo {
+      width: 267px;
+      height: 91px;
+    }
+
     .site-brand__logo {
-      width: 238px;
-      max-width: 238px;
+      width: 515px;
+      left: -111px;
+      top: -113px;
     }
   }
 
   @media (max-width: 768px) {
     .site-header__inner {
-      min-height: 86px;
+      min-height: 84px;
     }
 
     .site-header__left {
       padding-left: 24px;
     }
 
+    .site-brand--logo {
+      width: 218px;
+      height: 74px;
+      transform: translateY(-1px);
+    }
+
     .site-brand__logo {
-      width: 176px;
-      max-width: 176px;
+      width: 421px;
+      left: -90px;
+      top: -92px;
     }
   }
 
   @media (max-width: 420px) {
-    .site-header__inner {
-      min-height: 80px;
-    }
-
     .site-header__left {
       padding-left: 18px;
     }
 
+    .site-brand--logo {
+      width: 196px;
+      height: 67px;
+    }
+
     .site-brand__logo {
-      width: 158px;
-      max-width: 158px;
+      width: 378px;
+      left: -81px;
+      top: -83px;
     }
   }
 </style>
@@ -103,7 +133,7 @@
     <div class="site-header__left">
       <a href="/index.html" class="site-brand site-brand--logo" aria-label="Scènes d'Arbitrage — Accueil">
         <img
-          src="/images/logo-scenes-transparent-no-baseline-v2.svg?v=9"
+          src="/images/logo-scenes-transparent-no-baseline-v2.png?v=10"
           alt="Scènes d'Arbitrage"
           class="site-brand__logo"
         >
