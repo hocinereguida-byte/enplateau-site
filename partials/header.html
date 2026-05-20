@@ -42,31 +42,26 @@
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    gap: 0.28em;
-    padding: 13px 22px !important;
-    background: #f4efe6 !important;
-    border: 1px solid #5f574d !important;
+    min-height: 38px;
+    padding: 0 28px;
+    background: #f1eadf !important;
+    border: 1px solid #6f685f !important;
     color: #111111 !important;
-    box-shadow: 3px 3px 0 rgba(95, 87, 77, 0.58);
+    box-shadow: 3px 3px 0 rgba(111, 104, 95, 0.58);
     text-decoration: none !important;
-    font-family: var(--font-ui, "IBM Plex Mono", monospace);
-    font-size: 12px !important;
-    font-weight: 700 !important;
-    line-height: 1.1 !important;
-    letter-spacing: 0.14em !important;
     text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    line-height: 1;
     white-space: nowrap;
   }
 
   .site-header__cta:hover,
   .site-header__cta:focus-visible {
-    background: #fff8ec !important;
-    border-color: #756a5d !important;
+    background: #fff7ea !important;
+    border-color: #81786c !important;
     color: #000000 !important;
-  }
-
-  .site-header__cta-line {
-    display: inline;
   }
 
   @media (max-width: 1200px) {
@@ -79,14 +74,8 @@
     }
 
     .site-brand__logo {
-      width: 250px;
-      max-width: 250px;
-    }
-
-    .site-header__cta {
-      padding: 12px 18px !important;
-      font-size: 11px !important;
-      letter-spacing: 0.13em !important;
+      width: 246px;
+      max-width: 246px;
     }
   }
 
@@ -100,31 +89,24 @@
     }
 
     .site-brand__logo {
-      width: 232px;
-      max-width: 232px;
-    }
-
-    .site-header__cta {
-      padding: 11px 16px !important;
-      font-size: 10.5px !important;
-      letter-spacing: 0.12em !important;
+      width: 224px;
+      max-width: 224px;
     }
   }
 
   @media (max-width: 768px) {
     .site-header__inner {
-      min-height: 102px;
-      display: grid !important;
-      grid-template-columns: auto minmax(0, 1fr) auto;
+      min-height: 106px;
+      padding: 0 24px !important;
+      display: flex;
       align-items: center;
-      column-gap: 12px;
-      padding-left: 20px !important;
-      padding-right: 14px !important;
+      justify-content: space-between;
+      gap: 18px;
     }
 
     .site-header__left {
       padding-left: 0 !important;
-      min-width: 0;
+      flex: 0 0 auto;
     }
 
     .site-brand--logo {
@@ -132,8 +114,8 @@
     }
 
     .site-brand__logo {
-      width: 156px;
-      max-width: 156px;
+      width: 190px;
+      max-width: 190px;
     }
 
     .desktop-editorial-nav {
@@ -141,88 +123,57 @@
     }
 
     .site-header__right {
-      display: grid !important;
-      grid-template-columns: minmax(0, 1fr) 42px;
+      display: flex !important;
       align-items: center;
-      justify-self: stretch;
-      column-gap: 10px;
-      min-width: 0;
+      justify-content: flex-end;
+      margin-left: auto;
+      flex: 0 0 auto;
     }
 
     .site-header__cta {
-      justify-self: end;
-      width: auto;
-      min-width: 0;
-      max-width: 176px;
-      padding: 10px 12px !important;
-      font-size: 10px !important;
-      line-height: 1.16 !important;
-      letter-spacing: 0.13em !important;
-      text-align: center;
-      white-space: normal !important;
-      box-shadow: 2px 2px 0 rgba(95, 87, 77, 0.58);
-    }
-
-    .site-header__cta-line {
-      display: block;
-      white-space: nowrap;
+      display: none !important;
     }
 
     .menu-toggle {
       display: inline-flex !important;
+      flex: 0 0 54px;
+      width: 54px;
+      height: 54px;
+      padding: 0;
       align-items: center;
       justify-content: center;
-      width: 42px;
-      height: 42px;
-      min-width: 42px;
-      justify-self: end;
-      position: relative;
-      z-index: 5;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent !important;
+      border: 1px solid rgba(255, 255, 255, 0.24) !important;
+      color: #f1eadf !important;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      margin: 0;
+      background: #f1eadf !important;
     }
   }
 
   @media (max-width: 420px) {
     .site-header__inner {
       min-height: 98px;
-      column-gap: 9px;
-      padding-left: 16px !important;
-      padding-right: 10px !important;
+      padding: 0 20px !important;
+      gap: 14px;
     }
 
     .site-brand__logo {
-      width: 142px;
-      max-width: 142px;
-    }
-
-    .site-header__right {
-      grid-template-columns: minmax(0, 1fr) 38px;
-      column-gap: 8px;
-    }
-
-    .site-header__cta {
-      max-width: 158px;
-      padding: 9px 9px !important;
-      font-size: 9px !important;
-      letter-spacing: 0.115em !important;
+      width: 176px;
+      max-width: 176px;
     }
 
     .menu-toggle {
-      width: 38px;
-      height: 38px;
-      min-width: 38px;
-    }
-  }
-
-  @media (max-width: 360px) {
-    .site-brand__logo {
-      width: 128px;
-      max-width: 128px;
-    }
-
-    .site-header__cta {
-      max-width: 148px;
-      font-size: 8.5px !important;
-      letter-spacing: 0.1em !important;
+      flex-basis: 50px;
+      width: 50px;
+      height: 50px;
     }
   }
 </style>
@@ -248,10 +199,7 @@
     </nav>
 
     <div class="site-header__right">
-      <a href="/demander-un-echange-editorial.html" class="site-header__cta">
-        <span class="site-header__cta-line">Vous avez reçu</span>
-        <span class="site-header__cta-line">une invitation ?</span>
-      </a>
+      <a href="/demander-un-echange-editorial.html" class="site-header__cta">Vous avez reçu une invitation ?</a>
 
       <button
         class="menu-toggle"
