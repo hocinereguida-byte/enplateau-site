@@ -32,10 +32,31 @@
 
   .site-brand__logo {
     display: block;
-    width: 176px;
-    max-width: 176px;
+    width: 266px;
+    max-width: 266px;
     height: auto;
     object-fit: contain;
+  }
+
+  .site-header__cta {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 12px 18px !important;
+    background: #f2eadf !important;
+    color: #111111 !important;
+    border: 1px solid #6f675d !important;
+    text-decoration: none !important;
+    line-height: 1 !important;
+    letter-spacing: 0.08em !important;
+    white-space: nowrap !important;
+  }
+
+  .site-header__cta:hover,
+  .site-header__cta:focus-visible {
+    background: #fff7ec !important;
+    border-color: #8a8175 !important;
+    color: #000000 !important;
   }
 
   @media (max-width: 1200px) {
@@ -48,8 +69,12 @@
     }
 
     .site-brand__logo {
-      width: 166px;
-      max-width: 166px;
+      width: 250px;
+      max-width: 250px;
+    }
+
+    .site-header__cta {
+      padding: 11px 16px !important;
     }
   }
 
@@ -63,8 +88,8 @@
     }
 
     .site-brand__logo {
-      width: 154px;
-      max-width: 154px;
+      width: 232px;
+      max-width: 232px;
     }
   }
 
@@ -109,7 +134,7 @@
     <div class="site-header__left">
       <a href="/index.html" class="site-brand site-brand--logo" aria-label="Scènes d'Arbitrage — Accueil">
         <img
-          src="/images/logo-scenes-transparent-no-baseline-v2.png?v=11"
+          src="/images/logo-scenes-transparent-no-baseline-v2.png?v=12"
           alt="Scènes d'Arbitrage"
           class="site-brand__logo"
         >
@@ -124,7 +149,7 @@
     </nav>
 
     <div class="site-header__right">
-      <a href="/demander-un-echange-editorial.html" class="site-header__cta">Demander un échange éditorial</a>
+      <a href="/demander-un-echange-editorial.html" class="site-header__cta">Vous avez reçu une invitation&nbsp;?</a>
 
       <button
         class="menu-toggle"
