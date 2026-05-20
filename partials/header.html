@@ -1,7 +1,5 @@
 <style>
   .site-header {
-    position: relative;
-    z-index: 50;
     background: #000000 !important;
     box-shadow: 0 0 0 100vmax #000000 !important;
     clip-path: inset(0 -100vmax);
@@ -15,12 +13,11 @@
   }
 
   .site-header__inner {
-    min-height: 88px;
+    min-height: 92px;
   }
 
   .site-header__left {
-    display: flex;
-    align-items: center;
+    padding-left: 30px;
   }
 
   .site-brand--logo {
@@ -28,20 +25,27 @@
     align-items: center;
     line-height: 0;
     text-decoration: none;
-    margin-left: clamp(4px, 0.8vw, 14px);
   }
 
   .site-brand__logo {
     display: block;
-    width: 192px;
-    max-width: 192px;
+    width: 238px;
+    max-width: 238px;
     height: auto;
   }
 
   @media (max-width: 1024px) {
+    .site-header__inner {
+      min-height: 86px;
+    }
+
+    .site-header__left {
+      padding-left: 22px;
+    }
+
     .site-brand__logo {
-      width: 174px;
-      max-width: 174px;
+      width: 210px;
+      max-width: 210px;
     }
   }
 
@@ -50,13 +54,13 @@
       min-height: 76px;
     }
 
-    .site-brand--logo {
-      margin-left: 0;
+    .site-header__left {
+      padding-left: 16px;
     }
 
     .site-brand__logo {
-      width: 146px;
-      max-width: 146px;
+      width: 164px;
+      max-width: 164px;
       height: auto;
     }
   }
