@@ -1,27 +1,60 @@
-<header class="site-header" style="background:#000000;">
-  <div class="site-header__inner" style="background:#000000;">
+<style>
+  .site-header {
+    background: #000000 !important;
+    box-shadow: 0 0 0 100vmax #000000 !important;
+    clip-path: inset(0 -100vmax);
+  }
 
-    <div class="site-header__left" style="background:#000000;">
-      <a href="/index.html" class="site-brand site-brand--logo" aria-label="Scènes d'Arbitrage — Accueil" style="display:inline-flex;align-items:center;background:#000000;">
+  .site-header__inner,
+  .site-header__left,
+  .site-header__right,
+  .desktop-editorial-nav {
+    background: #000000 !important;
+  }
+
+  .site-brand--logo {
+    display: flex;
+    align-items: center;
+    line-height: 0;
+    text-decoration: none;
+  }
+
+  .site-brand__logo {
+    display: block;
+    width: 154px;
+    max-width: 154px;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .site-brand__logo {
+      width: 132px;
+      max-width: 132px;
+    }
+  }
+</style>
+
+<header class="site-header">
+  <div class="site-header__inner">
+
+    <div class="site-header__left">
+      <a href="/index.html" class="site-brand site-brand--logo" aria-label="Scènes d'Arbitrage — Accueil">
         <img
           src="/images/logo-scenes-dark-no-baseline-v2.png"
           alt="Scènes d'Arbitrage"
           class="site-brand__logo"
-          width="154"
-          height="64"
-          style="display:block;width:154px;height:auto;background:#000000;"
         >
       </a>
     </div>
 
-    <nav class="desktop-editorial-nav" aria-label="Navigation principale" style="background:#000000;">
+    <nav class="desktop-editorial-nav" aria-label="Navigation principale">
       <a href="/dispositif.html" class="desktop-editorial-nav__link">Dispositif</a>
       <a href="/conversations.html" class="desktop-editorial-nav__link">Conversations</a>
       <a href="/positions.html" class="desktop-editorial-nav__link">Positions</a>
       <a href="/a-propos.html" class="desktop-editorial-nav__link">À propos</a>
     </nav>
 
-    <div class="site-header__right" style="background:#000000;">
+    <div class="site-header__right">
       <a href="/demander-un-echange-editorial.html" class="site-header__cta">Demander un échange éditorial</a>
 
       <button
