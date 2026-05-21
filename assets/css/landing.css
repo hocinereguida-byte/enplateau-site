@@ -86,18 +86,13 @@ body.landing-page {
 }
 
 .landing-brand-logo {
-  height: 32px;
+  height: 28px;
   width: auto;
   display: block;
-  filter: brightness(0) invert(1);
-  opacity: .9;
 }
 
-/* Sur fond clair, inverser le filtre */
-.landing-page:not(.landing-page--dark) .landing-brand-logo {
-  filter: brightness(0);
-  opacity: .85;
-}
+
+
 
 .landing-brand::before {
   content: "";
