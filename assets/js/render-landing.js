@@ -820,6 +820,7 @@
                     <span>Piste en cours de composition</span>
                     <strong>${safe(shortText(title, 190))}</strong>
                     <em>${safe(readingPanelLabel(altReading))}</em>
+                    ${deal.publicRef ? `<a class="lpb-alt-link" href="?cast=${safe(deal.publicRef)}">Voir cette proposition →</a>` : ""}
                     <b class="lpb-alt-action lpb-alt-action--closed">Afficher détails +</b>
                     <b class="lpb-alt-action lpb-alt-action--open">Masquer détails -</b>
                   </summary>
@@ -1002,11 +1003,11 @@
     const commonByReading = {
       technologie: [
         { question: "Peut-on parler de technologie sans dévoiler une feuille de route ou une architecture sensible ?", answer: "Oui. La lecture reste au niveau des mécanismes : systèmes, données, interfaces, conditions de modernisation et capacité de pilotage. Elle ne demande pas de détailler une architecture interne, un incident, un fournisseur ou une feuille de route confidentielle." },
-        { question: "Cette lecture intéresse-t-elle des décideurs non techniques ?", answer: "Oui. En Plateau traite la technologie comme une condition de trajectoire industrielle : ce qu'elle rend possible, ce qu'elle rend lisible, et les arbitrages qu'elle impose à l'organisation." }
+        { question: "Cette lecture intéresse-t-elle des décideurs non techniques ?", answer: "Oui. Scènes d'Arbitrage traite la technologie comme une condition de trajectoire industrielle : ce qu'elle rend possible, ce qu'elle rend lisible, et les arbitrages qu'elle impose à l'organisation." }
       ],
       operationnelle: [
         { question: "Peut-on parler du réel industriel sans exposer des fragilités internes ?", answer: "Oui. La contribution ne porte pas sur un site, un incident, une performance ou un indicateur interne. Elle éclaire les mécanismes d'exécution, de coordination, de qualité, de flux ou de pilotage." },
-        { question: "Une lecture opérationnelle a-t-elle assez de hauteur pour intéresser des dirigeants ?", answer: "Oui. En Plateau traite l'opérationnel comme le lieu où les transformations industrielles se vérifient réellement : priorités, interfaces, arbitrages, rythme d'exécution et capacité à tenir la trajectoire." }
+        { question: "Une lecture opérationnelle a-t-elle assez de hauteur pour intéresser des dirigeants ?", answer: "Oui. Scènes d'Arbitrage traite l'opérationnel comme le lieu où les transformations industrielles se vérifient réellement : priorités, interfaces, arbitrages, rythme d'exécution et capacité à tenir la trajectoire." }
       ],
       strategique: [
         { question: "Cette prise de parole risque-t-elle de devenir une communication corporate ?", answer: "Non. La contribution ne présente pas une stratégie d'entreprise. Elle formule une lecture sur les arbitrages structurants qui transforment une trajectoire industrielle, sans exposer de décision interne non annoncée." },
@@ -1044,7 +1045,7 @@
         { question: "Comment éviter de paraître vendre une méthode de conseil ?", answer: "La lecture est rattachée à une conversation éditoriale et à un angle limité. Elle ne présente pas une méthodologie propriétaire ; elle éclaire un arbitrage réel." }
       ],
       strategique: [
-        { question: "Comment ne pas donner l'impression de produire du thought leadership classique ?", answer: "En Plateau ne fabrique pas une posture. La contribution part d'un arbitrage réel, d'une conversation précise et d'une mise en regard avec d'autres lectures." },
+        { question: "Comment ne pas donner l'impression de produire du thought leadership classique ?", answer: "Scènes d'Arbitrage ne fabrique pas une posture. La contribution part d'un arbitrage réel, d'une conversation précise et d'une mise en regard avec d'autres lectures." },
         { question: "Comment rester utile sans commenter un cas client ?", answer: "La lecture repose sur votre capacité comparative, pas sur un dossier. Elle permet de formuler des mécanismes récurrents sans exposer une mission ou une organisation." }
       ],
       financiere: [
@@ -1454,7 +1455,7 @@
       <section class="landing-section landing-section--dark landing-qualification-cta landing-qualification-cta--final" id="qualifier-position">
         <div class="landing-container">
           <div class="qualification-cta-grid qualification-cta-grid--split">
-            <aside class="qualification-cta-signature" aria-label="En Plateau">
+            <aside class="qualification-cta-signature" aria-label="Scènes d'Arbitrage">
               <figure class="qualification-cta-photo">
                 <img src="/images/a-propos/hocine-reguida.jpg" alt="Hocine RÉGUIDA, conception et coordination éditoriale" loading="lazy">
                 <figcaption class="qualification-cta-photo-caption">
@@ -1486,7 +1487,7 @@
   function getCTA(deal, reading, landingPage) {
     const pageCTA = landingPage?.cta || {};
     return {
-      href: "https://cal.com/en-plateau/echange-editorial-15-min",
+      href: "https://cal.com/scenesdarbitrage/echange-editorial-15-min?user=scenesdarbitrage&overlayCalendar=true",
       label: "Programmer un échange éditorial - 15 min",
       title:    "Qualifier cette lecture en échange éditorial",
       text:     txt(pageCTA.text, "15 minutes, sans engagement, pour qualifier l'angle, le périmètre de parole et les conditions de préparation."),
@@ -1540,7 +1541,7 @@
       {
         num: "02",
         title: "La note de positionnement",
-        text: "Si l'angle paraît pertinent, En Plateau formalise la position proposée : valeur éditoriale, mise en regard, garanties, modalités et conditions."
+        text: "Si l'angle paraît pertinent, Scènes d'Arbitrage formalise la position proposée : valeur éditoriale, mise en regard, garanties, modalités et conditions."
       },
       {
         num: "03",
@@ -1594,7 +1595,7 @@
     if (n.includes("outil industriel") || n.includes("transformer en profondeur")) return "Jusqu’où un outil industriel peut-il évoluer sans se transformer en profondeur ?";
     if (n.includes("trajectoire industrielle tient") || n.includes("rearbitree")) return "Qu’est-ce qui fait qu’une trajectoire industrielle tient, ou doit être réarbitrée ?";
 
-    return sentenceCaseFirst(String(stripConversationCode(conversationLabel || "Conversation En Plateau"))
+    return sentenceCaseFirst(String(stripConversationCode(conversationLabel || "Conversation Scènes d'Arbitrage"))
       .replace(/^\s*(Croissance industrielle|Dépendances industrielles|Dependances industrielles|Adaptation industrielle|Réinvention industrielle|Reinvention industrielle)\s*:\s*/i, "")
       .trim());
   }
@@ -1709,7 +1710,7 @@
     const journaliste = normalizeDisplayName(txt(angle?.journaliste, ""));
     const media       = txt(angle?.media, "");
     const imgPath     = media ? getEmissionImagePath(media) : null;
-    const altLabel    = [journaliste, media].filter(Boolean).join(" · ") || "Format média En Plateau";
+    const altLabel    = [journaliste, media].filter(Boolean).join(" · ") || "Format média Scènes d'Arbitrage";
 
     if (!imgPath) {
       return `<div class="landing-hero-visual landing-hero-visual--empty" aria-label="${safe(altLabel)}"></div>`;
@@ -1841,7 +1842,7 @@
   function buildHeroMinimalSection(angle, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, cta, filmBlock) {
     const readingShort = readingDisplay(readingLabel || "lecture éditoriale");
     const mediaCaption = buildHeroMediaCaption(angle);
-    const conversationText = heroConversationTitle(conversationLabel || "Conversation En Plateau", angle);
+    const conversationText = heroConversationTitle(conversationLabel || "Conversation Scènes d'Arbitrage", angle);
 
     return `
       <section class="landing-hero landing-hero--bento-minimal landing-hero--simplified">
@@ -1948,7 +1949,7 @@
 
   function buildPositionPathSection(readingLabel) {
     const reading = readingLabel || "lecture éditoriale";
-    const intro = `En Plateau part de votre expérience, de vos convictions et de votre lecture du sujet. Le dispositif structure cette matière autour d'un angle qualifié, de plusieurs dimensions de décision et d'une mise en regard avec d'autres lectures complémentaires.`;
+    const intro = `Scènes d'Arbitrage part de votre expérience, de vos convictions et de votre lecture du sujet. Le dispositif structure cette matière autour d'un angle qualifié, de plusieurs dimensions de décision et d'une mise en regard avec d'autres lectures complémentaires.`;
     return `
       <section class="landing-section landing-section--dark" id="experience-position">
         <div class="landing-container">
@@ -1959,7 +1960,7 @@
           </div>
           <div class="landing-grid landing-grid--3">
             ${card("Ce que vous apportez", "Une expérience située du sujet", "Votre expérience du sujet, votre responsabilité, vos convictions et votre compréhension des conditions réelles dans lesquelles se construisent les arbitrages industriels.")}
-            ${card("Ce qu'En Plateau structure", "Un angle, une lecture et des arbitrages", "Le contexte, les acteurs concernés, les arbitrages, les défis, la vision et l'échelle permettent de transformer une lecture en contribution préparée.")}
+            ${card("Ce que Scènes d'Arbitrage structure", "Un angle, une lecture et des arbitrages", "Le contexte, les acteurs concernés, les arbitrages, les défis, la vision et l'échelle permettent de transformer une lecture en contribution préparée.")}
             ${card("Ce que cela produit", "Une contribution reconnaissable par les bons interlocuteurs", `Une position claire, crédible et mobilisable dans la durée, depuis une ${safe(soften(reading))}, auprès des acteurs qui rencontrent les mêmes arbitrages.`, true)}
           </div>
         </div>
@@ -2344,7 +2345,7 @@
             <p>Le cadre de préparation précise ce qui reste hors champ, ce qui sera travaillé, les validations utiles, la confidentialité et les conditions d’engagement avant toute production.</p>
           </div>
 
-          <div class="trust-keys-grid trust-keys-grid--six trust-keys-grid--primary" aria-label="Les trois premiers points de sécurisation éditoriale de la contribution En Plateau">
+          <div class="trust-keys-grid trust-keys-grid--six trust-keys-grid--primary" aria-label="Les trois premiers points de sécurisation éditoriale de la contribution Scènes d'Arbitrage">
             ${keys.slice(0, 3).map(key => `
               <article class="trust-key">
                 <span class="trust-key__num">${safe(key.num)}</span>
@@ -2407,7 +2408,7 @@
   function buildMoreStepsTimeline() {
     const narrative = DATA?.landingNarrative || {};
     const fallback = [
-      { level: "En Plateau", title: "Un dispositif de lecture des arbitrages", text: "En Plateau part d’une idée simple : les transformations ne se comprennent pas seulement par des opinions ou des témoignages, mais par les arbitrages qu’elles obligent à formuler." },
+      { level: "Scènes d'Arbitrage", title: "Un dispositif de lecture des arbitrages", text: "Scènes d'Arbitrage part d’une idée simple : les transformations ne se comprennent pas seulement par des opinions ou des témoignages, mais par les arbitrages qu’elles obligent à formuler." },
       { level: "Cycle Industrie", title: "Une saison consacrée aux trajectoires industrielles", text: "Le cycle Industrie regarde ce qui fait tenir, rend moins lisible ou oblige à réarbitrer une trajectoire industrielle." },
       { level: "Conversation", title: "Un phénomène industriel regardé depuis plusieurs lectures", text: "Chaque conversation met en regard des lectures complémentaires d’un même phénomène industriel." },
       { level: "Contexte", title: "Le moment où la décision change de nature", text: "Le contexte indique la situation dans laquelle l’arbitrage devient plus difficile : croissance, adaptation ou réinvention." },
@@ -2435,7 +2436,7 @@
       { num: "01", title: "L’échange de qualification", text: "15 minutes pour vérifier si votre lecture correspond à une position disponible. Aucun dossier sensible à exposer." },
       { num: "02", title: "Le dossier de positionnement", text: "Si l’angle est pertinent, un dossier complet est transmis : angle précis, logique de mise en regard, modalités d’intervention, format émission et article associé." },
       { num: "03", title: "Le comité éditorial", text: "Le comité examine les dossiers de positionnement et valide la composition finale. Vous êtes informé avant tout engagement." },
-      { num: "04", title: "La préparation & la production", text: "En Plateau travaille avec vous pour transformer votre lecture en position claire, non intrusive et publiquement défendable." }
+      { num: "04", title: "La préparation & la production", text: "Scènes d'Arbitrage travaille avec vous pour transformer votre lecture en position claire, non intrusive et publiquement défendable." }
     ];
 
     const steps = toArray(processSteps).length ? toArray(processSteps).slice(0, 4) : fallback;
@@ -2476,7 +2477,7 @@
       { question: "L’échange de 15 minutes vaut-il engagement à participer ?", answer: "Non. Il sert uniquement à vérifier si la position proposée mérite d’être formalisée. Aucune suite n’est automatique." },
       { question: "Faut-il préparer quelque chose avant l’échange ?", answer: "Non. Aucun dossier, aucune présentation et aucune position déjà construite ne sont attendus." },
       { question: "Les équipes communication, juridiques ou affaires publiques peuvent-elles être associées ?", answer: "Oui. Le périmètre peut être préparé avec les équipes utiles avant toute prise de parole." },
-      { question: "En quoi En Plateau se distingue d’une prise de parole promotionnelle ?", answer: "Le point de départ n’est pas la visibilité. Une contribution est retenue parce qu’elle éclaire un mécanisme, une tension ou un arbitrage réel. Les effets d’autorité ou de reconnaissance sont une conséquence, pas l’objectif premier." },
+      { question: "En quoi Scènes d'Arbitrage se distingue d’une prise de parole promotionnelle ?", answer: "Le point de départ n’est pas la visibilité. Une contribution est retenue parce qu’elle éclaire un mécanisme, une tension ou un arbitrage réel. Les effets d’autorité ou de reconnaissance sont une conséquence, pas l’objectif premier." },
       { question: "Comment éviter un contenu trop générique ou trop risqué ?", answer: "L’angle, les limites de parole, la trame média, les points sensibles et le niveau d’exposition sont cadrés avant production." }
     ];
 
@@ -2511,10 +2512,10 @@
           <div class="more-hero-grid more-hero-grid--concept">
             <div>
               <p class="landing-kicker">Pour aller plus loin</p>
-              <h2>Comprendre le cadre éditorial En Plateau.</h2>
+              <h2>Comprendre le cadre éditorial Scènes d'Arbitrage.</h2>
             </div>
             <div>
-              <p>En Plateau est une architecture éditoriale de conversations stratégiques conçue pour rendre lisibles les arbitrages réels qui traversent les transformations industrielles, économiques et territoriales.</p>
+              <p>Scènes d'Arbitrage est une architecture éditoriale de conversations stratégiques conçue pour rendre lisibles les arbitrages réels qui traversent les transformations industrielles, économiques et territoriales.</p>
               <p>Le dispositif réunit des acteurs occupant des positions différentes d’un même sujet afin de produire, par mise en regard, une lecture plus structurée des transformations en cours.</p>
               <p>Chaque contribution est préparée individuellement, produite dans un format média, puis articulée à d’autres lectures complémentaires au sein d’un cycle éditorial.</p>
             </div>
@@ -2524,7 +2525,7 @@
             <article>
               <span>Dispositif éditorial</span>
               <h3>Des contributions situées, pas des prises de parole isolées</h3>
-              <p>En Plateau prépare des lectures produites depuis des fonctions, responsabilités et expériences réelles, puis les inscrit dans une conversation composée.</p>
+              <p>Scènes d'Arbitrage prépare des lectures produites depuis des fonctions, responsabilités et expériences réelles, puis les inscrit dans une conversation composée.</p>
             </article>
             <article>
               <span>Mise en regard</span>
@@ -2533,7 +2534,7 @@
             </article>
             <article>
               <span>Formats média</span>
-              <h3>Des formats existants, une composition En Plateau</h3>
+              <h3>Des formats existants, une composition Scènes d'Arbitrage</h3>
               <p>Le dispositif s’appuie sur des journalistes, des médias et des sociétés de production partenaires. L’enjeu n’est pas de juxtaposer des passages médias, mais de composer une conversation éditoriale cohérente.</p>
             </article>
           </div>
@@ -2545,7 +2546,7 @@
           <div class="landing-head">
             <p class="landing-kicker">Cycle Industrie</p>
             <h2>Industrie & transformation des territoires.</h2>
-            <p>Pour sa saison inaugurale, En Plateau ouvre le cycle Industrie & transformation des territoires. Il observe les moments où produire davantage, tenir sous contrainte, transformer un outil ou réarbitrer une trajectoire oblige les organisations à formuler autrement leurs décisions.</p>
+            <p>Pour sa saison inaugurale, Scènes d'Arbitrage ouvre le cycle Industrie & transformation des territoires. Il observe les moments où produire davantage, tenir sous contrainte, transformer un outil ou réarbitrer une trajectoire oblige les organisations à formuler autrement leurs décisions.</p>
           </div>
           <div class="more-cycle-focus more-cycle-focus--section">
             <p>Chaque conversation part d’un phénomène industriel concret, puis le regarde depuis plusieurs lectures : stratégie, finance, droit, opérations, RH, technologie, territoires ou ressources.</p>
@@ -2582,7 +2583,7 @@
     root.innerHTML = `
       <section class="landing-loading">
         <div class="landing-loading__box">
-          <a class="landing-brand landing-brand--loading" href="/" aria-label="En Plateau — accueil">En Plateau</a>
+          <a class="landing-brand landing-brand--loading" href="/" aria-label="Scènes d'Arbitrage — accueil"><img src="/images/logo-scenes-transparent-no-baseline-v2.png" alt="Scènes d'Arbitrage" class="landing-brand-logo"></a>
           <h1>${safe(title)}</h1>
           <p>${body}</p>
         </div>
@@ -2596,7 +2597,7 @@
     root.innerHTML = `
       <section class="landing-loading">
         <div class="landing-loading__box">
-          <a class="landing-brand landing-brand--loading" href="/" aria-label="En Plateau — accueil">En Plateau</a>
+          <a class="landing-brand landing-brand--loading" href="/" aria-label="Scènes d'Arbitrage — accueil"><img src="/images/logo-scenes-transparent-no-baseline-v2.png" alt="Scènes d'Arbitrage" class="landing-brand-logo"></a>
           <h1>Cette position n'est plus activable.</h1>
           <p>
             Le deal <strong>${safe(Core.getDealId(deal) || bundle.dealId)}</strong>
@@ -2739,7 +2740,7 @@
     root.innerHTML = `
       <div class="landing-top">
         <div class="landing-top__inner">
-          <a class="landing-brand" href="/" aria-label="En Plateau — accueil">En Plateau</a>
+          <a class="landing-brand" href="/" aria-label="Scènes d'Arbitrage — accueil"><img src="/images/logo-scenes-transparent-no-baseline-v2.png" alt="Scènes d'Arbitrage" class="landing-brand-logo"></a>
           <div class="landing-top__meta">${buildTopMeta(conversationLabel)}</div>
         </div>
       </div>
@@ -2755,7 +2756,7 @@
           <div class="landing-head">
             <p class="landing-kicker">Pertinence</p>
             <h2>Pourquoi ${safe(organisationName)} est bien placé pour porter cette lecture.</h2>
-            <p>Une position En Plateau ne désigne pas seulement une organisation ou une fonction. Elle identifie ce qu’une expérience permet de rendre lisible depuis un endroit précis.</p>
+            <p>Une position Scènes d'Arbitrage ne désigne pas seulement une organisation ou une fonction. Elle identifie ce qu’une expérience permet de rendre lisible depuis un endroit précis.</p>
           </div>
           <div class="landing-why-box">
             ${buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType, readingLabel)}
