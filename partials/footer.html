@@ -2,7 +2,7 @@
   .site-footer {
     background: #000000;
     color: rgba(255,255,255,0.82);
-    padding: 76px 34px 38px;
+    padding: 84px 34px 40px;
   }
 
   .site-footer__inner {
@@ -12,40 +12,41 @@
 
   .site-footer__grid {
     display: grid;
-    grid-template-columns: 1.45fr 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
     gap: 56px;
     align-items: start;
   }
 
   .site-footer__brand {
-    max-width: 420px;
+    max-width: 430px;
   }
 
-  /* Le PNG contient beaucoup de marge transparente : ce cadre recadre visuellement le logo sans modifier le fichier image. */
+  /* Le PNG a beaucoup de marge transparente : on l'agrandit et on le recadre légèrement,
+     tout en laissant visibles le haut des crochets, le crochet droit complet et la baseline. */
   .site-footer__logo-frame {
     position: relative;
-    width: 300px;
-    height: 83px;
+    width: 354px;
+    height: 124px;
     max-width: 100%;
     overflow: hidden;
-    margin: 0 0 20px;
+    margin: 0 0 26px;
   }
 
   .site-footer__logo {
     display: block;
-    width: 523px;
+    width: 520px;
     max-width: none;
     height: auto;
     position: absolute;
-    left: -106px;
-    top: -116px;
+    left: -54px;
+    top: -74px;
   }
 
   .site-footer__brand-copy {
     margin: 0;
-    max-width: 410px;
+    max-width: 420px;
     font-size: 13.5px;
-    line-height: 1.55;
+    line-height: 1.6;
     color: rgba(255,255,255,0.62);
   }
 
@@ -90,7 +91,7 @@
 
   @media (max-width: 1100px) {
     .site-footer {
-      padding: 66px 28px 34px;
+      padding: 72px 28px 36px;
     }
 
     .site-footer__grid {
@@ -100,13 +101,13 @@
 
     .site-footer__brand {
       grid-column: 1 / -1;
-      max-width: 520px;
+      max-width: 560px;
     }
   }
 
   @media (max-width: 768px) {
     .site-footer {
-      padding: 58px 24px 30px;
+      padding: 60px 24px 30px;
     }
 
     .site-footer__grid {
@@ -115,21 +116,21 @@
     }
 
     .site-footer__logo-frame {
-      width: 270px;
-      height: 75px;
-      margin-bottom: 20px;
+      width: 300px;
+      height: 108px;
+      margin-bottom: 22px;
     }
 
     .site-footer__logo {
-      width: 471px;
-      left: -96px;
-      top: -105px;
+      width: 440px;
+      left: -44px;
+      top: -62px;
     }
 
     .site-footer__brand-copy {
       max-width: 100%;
       font-size: 13.5px;
-      line-height: 1.6;
+      line-height: 1.62;
     }
 
     .site-footer__bottom-line {
@@ -144,7 +145,7 @@
       <div class="site-footer__brand">
         <div class="site-footer__logo-frame" aria-hidden="true">
           <img
-            src="/images/logo-scenes-transparent-baseline-v2.png?v=2"
+            src="/images/logo-scenes-transparent-baseline-v2.png?v=3"
             alt=""
             class="site-footer__logo"
           >
