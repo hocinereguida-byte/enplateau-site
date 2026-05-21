@@ -18,33 +18,35 @@
   }
 
   .site-footer__brand {
-    max-width: 430px;
+    max-width: 440px;
   }
 
-  /* Le PNG contient beaucoup de marge transparente.
-     Ce cadrage laisse visibles : crochets complets, baseline, et bord droit du crochet. */
+  /* Cadrage du logo footer avec baseline :
+     - plus à gauche pour réafficher entièrement le crochet gauche
+     - plus haut pour aligner le haut visuel du logo avec les titres de colonnes
+     - plus haut en hauteur pour laisser réapparaître la baseline */
   .site-footer__logo-frame {
     position: relative;
-    width: 392px;
-    height: 178px;
+    width: 430px;
+    height: 198px;
     max-width: 100%;
     overflow: hidden;
-    margin: -20px 0 10px;
+    margin: -34px 0 10px 0;
   }
 
   .site-footer__logo {
     display: block;
-    width: 560px;
+    width: 600px;
     max-width: none;
     height: auto;
     position: absolute;
-    left: -150px;
-    top: -94px;
+    left: -122px;
+    top: -82px;
   }
 
   .site-footer__brand-copy {
     margin: 0;
-    max-width: 420px;
+    max-width: 410px;
     font-size: 13.5px;
     line-height: 1.55;
     color: rgba(255,255,255,0.62);
@@ -70,7 +72,7 @@
 
   .site-footer__link {
     display: inline-block;
-    color: rgba(255,255,255,0.64);
+    color: rgba(255,255,255,0.58);
     text-decoration: none;
     padding-bottom: 4px;
     border-bottom: 1px solid rgba(255,255,255,0.16);
@@ -79,7 +81,7 @@
 
   .site-footer__link:hover,
   .site-footer__link:focus-visible {
-    color: rgba(255,255,255,0.92);
+    color: rgba(255,255,255,0.9);
     border-bottom-color: rgba(255,255,255,0.42);
     outline: none;
   }
@@ -116,15 +118,15 @@
     }
 
     .site-footer__logo-frame {
-      width: 320px;
-      height: 150px;
-      margin: -14px 0 8px;
+      width: 340px;
+      height: 164px;
+      margin: -20px 0 8px 0;
     }
 
     .site-footer__logo {
-      width: 470px;
-      left: -128px;
-      top: -78px;
+      width: 480px;
+      left: -96px;
+      top: -62px;
     }
 
     .site-footer__brand-copy {
@@ -145,7 +147,7 @@
       <div class="site-footer__brand">
         <div class="site-footer__logo-frame" aria-hidden="true">
           <img
-            src="/images/logo-scenes-transparent-baseline-v2.png?v=4"
+            src="/images/logo-scenes-transparent-baseline-v2.png?v=5"
             alt=""
             class="site-footer__logo"
           >
