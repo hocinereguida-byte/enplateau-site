@@ -35,6 +35,27 @@
   function toArray(v) { return Core.toArray(v).filter(Boolean); }
   function norm(v) { return Core.normalize(v || ""); }
 
+  function publicRefFromDeal(deal) {
+    return txt(
+      deal?.publicRef,
+      deal?.cast,
+      deal?.referencePublique,
+      deal?.public_reference,
+      deal?.crm?.publicRef,
+      deal?.crm?.cast,
+      deal?.activation?.publicRef,
+      deal?.activation?.cast,
+      deal?.urlParams?.cast
+    );
+  }
+
+  function getPublicEnrichment(deal) {
+    const ref = norm(publicRefFromDeal(deal));
+    if (!ref) return null;
+    const rows = window.INDUSTRIE_ENRICHMENTS || DATA?.enrichments || DATA?.industrieEnrichments || [];
+    return toArray(rows).find(item => norm(item?.publicRef || item?.cast || item?.ref) === ref)?.enrichment || null;
+  }
+
 
   function normalizeDisplayName(value) {
     const raw = String(value || "").replace(/\s+/g, " ").trim();
@@ -1479,7 +1500,7 @@
               <h2>Certaines positions méritent simplement d’être discutées.</h2>
               <p>L’échange permet de vérifier si la lecture envisagée mérite d’être structurée dans le cadre du cycle. Il ne demande aucune préparation particulière et peut associer, si nécessaire, les équipes communication, affaires publiques ou juridiques.</p>
               <div class="landing-actions qualification-cta-actions">
-                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Programmer un échange éditorial - 15 min")}</a>
+                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Qualifier cette position — 15 min")}</a>
               </div>
               <p class="qualification-cta-microcopy">15 minutes · sans engagement · aucune suite automatique</p>
             </div>
@@ -1496,7 +1517,7 @@
     const pageCTA = landingPage?.cta || {};
     return {
       href: "https://cal.com/scenesdarbitrage/echange-editorial-15-min?user=scenesdarbitrage&overlayCalendar=true",
-      label: "Programmer un échange éditorial - 15 min",
+      label: "Qualifier cette position — 15 min",
       title:    "Qualifier cette lecture en échange éditorial",
       text:     txt(pageCTA.text, "15 minutes, sans engagement, pour qualifier l'angle, le périmètre de parole et les conditions de préparation."),
       deadline: txt(pageCTA.deadline, ""),
@@ -1509,7 +1530,7 @@
       { title: "Aucune donnée interne attendue",
         text:  "Aucun chiffre, marge, performance, site, client, fournisseur, incident ou décision confidentielle n'est demandé." },
       { title: "Une lecture de mécanisme",
-        text:  "L'échange ne vise pas à commenter l'organisation invitée. Il sert à formuler une lecture utile sur les conditions de pilotage, de coordination et de montée en capacité." },
+        text:  "L'échange ne vise pas à commenter l'organisation invitée. Il sert à formuler une lecture utile sur les conditions de décision, d’arbitrage, de coordination et de trajectoire." },
       { title: "Un cadrage possible avec vos équipes",
         text:  "Le périmètre peut être préparé avec les équipes communication, juridiques, affaires publiques ou corporate si nécessaire." }
     ];
@@ -1590,26 +1611,53 @@
     return v.charAt(0).toUpperCase() + v.slice(1);
   }
 
-  function canonicalConversationTitleFromAngle(angle, conversationLabel) {
-    const code = String(angle?.code || angle?.codeAngle || angle?.id || "").toUpperCase();
-    if (/C1/.test(code)) return "À partir de quand produire davantage oblige-t-il à arbitrer autrement ?";
-    if (/C2/.test(code)) return "Où se situent les dépendances qui deviennent des moments de décision ?";
-    if (/C3/.test(code)) return "Jusqu’où un outil industriel peut-il évoluer sans se transformer en profondeur ?";
-    if (/C4/.test(code)) return "Qu’est-ce qui fait qu’une trajectoire industrielle tient, ou doit être réarbitrée ?";
+  function conversationCodeFromAngle(angle, conversationLabel = "") {
+    const code = String(angle?.conversationCode || angle?.conversation || angle?.code || angle?.codeAngle || angle?.id || "").toUpperCase();
+    const label = norm(conversationLabel);
+    if (/C1/.test(code) || label.includes("croissance")) return "C1";
+    if (/C2/.test(code) || label.includes("dependance")) return "C2";
+    if (/C3/.test(code) || label.includes("outil industriel")) return "C3";
+    if (/C4/.test(code) || label.includes("trajectoire")) return "C4";
+    return "";
+  }
 
-    const n = norm(conversationLabel);
-    if (n.includes("produire davantage") || n.includes("arbitrer autrement")) return "À partir de quand produire davantage oblige-t-il à arbitrer autrement ?";
-    if (n.includes("dependances") || n.includes("moments de décision")) return "Où se situent les dépendances qui deviennent des moments de décision ?";
-    if (n.includes("outil industriel") || n.includes("transformer en profondeur")) return "Jusqu’où un outil industriel peut-il évoluer sans se transformer en profondeur ?";
-    if (n.includes("trajectoire industrielle tient") || n.includes("rearbitree")) return "Qu’est-ce qui fait qu’une trajectoire industrielle tient, ou doit être réarbitrée ?";
+  function conversationSubject(angle, conversationLabel = "") {
+    const code = conversationCodeFromAngle(angle, conversationLabel);
+    const context = String(angle?.contextCode || angle?.contexteCode || angle?.context || "").toUpperCase();
+    const cycle = Core.getCycle ? Core.getCycle(angle?.cycleCode || angle?.cycle || "IND") : null;
+    const conv = toArray(cycle?.conversations).find(item => String(item?.code || "").toUpperCase() === code);
+    const contextual = conv?.publicContextNarratives?.[context];
 
-    return sentenceCaseFirst(String(stripConversationCode(conversationLabel || "Conversation Scènes d'Arbitrage"))
-      .replace(/^\s*(Croissance industrielle|Dépendances industrielles|Dependances industrielles|Adaptation industrielle|Réinvention industrielle|Reinvention industrielle)\s*:\s*/i, "")
-      .trim());
+    // Sujet court d'activation : phrase nominale utilisable après "sur".
+    // Les formulations restent volontairement sobres et non anxiogènes.
+    const subjects = {
+      C1: "les conditions d’une croissance industrielle maîtrisée",
+      C2: "les interdépendances qui structurent les choix industriels",
+      C3: "l’évolution de l’outil industriel",
+      C4: "les conditions qui font tenir une trajectoire industrielle"
+    };
+
+    return txt(
+      angle?.heroSubject,
+      angle?.conversationSubject,
+      contextual?.heroSubject,
+      contextual?.publicSubject,
+      subjects[code],
+      contextual?.publicContextLabel,
+      contextual?.shortTitle,
+      conv?.landingTitle,
+      conv?.title,
+      stripConversationCode(conversationLabel || "une conversation industrielle")
+    );
   }
 
   function heroConversationTitle(conversationLabel, angle) {
-    return canonicalConversationTitleFromAngle(angle, conversationLabel);
+    const code = conversationCodeFromAngle(angle, conversationLabel);
+    const context = String(angle?.contextCode || angle?.contexteCode || angle?.context || "").toUpperCase();
+    const cycle = Core.getCycle ? Core.getCycle(angle?.cycleCode || angle?.cycle || "IND") : null;
+    const conv = toArray(cycle?.conversations).find(item => String(item?.code || "").toUpperCase() === code);
+    const contextual = conv?.publicContextNarratives?.[context];
+    return txt(contextual?.title, conv?.landingTitle, conv?.title, stripConversationCode(conversationLabel || "Conversation Scènes d'Arbitrage"));
   }
 
   /* ─────────────────────────────────────────────────────────
@@ -1648,15 +1696,13 @@
   ───────────────────────────────────────────────────────── */
   function buildFilmBlock(angle) {
     const journaliste = txt(angle?.journaliste, "");
-    const emission    = txt(angle?.emission, "");
     const media       = txt(angle?.media, "");
     const imgPath     = media ? getEmissionImagePath(media) : null;
 
     if (!imgPath) return "";
 
-    // Les trois champs restent dynamiques : journaliste, émission et média.
-    // On affiche l’émission lorsque le référentiel la fournit, pour éviter tout effet de légende générique.
-    const outletParts = [emission, media].filter(Boolean);
+    // Affichage public volontairement limité à journaliste + média.
+    const outletParts = [media].filter(Boolean);
     const outletLabel = outletParts.length ? outletParts.join(" · ") : "format média";
     const altLabel    = journaliste && outletParts.length
       ? `Entretien économique avec ${journaliste} · ${outletParts.join(" · ")}`
@@ -1769,37 +1815,15 @@
     return "default";
   }
 
-  function buildHeroTitle(organisationName, readingLabel) {
+  function buildHeroTitle(organisationName, readingLabel, angle, conversationLabel) {
     const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "Votre organisation";
-    const key = readingKeyForHero(readingLabel);
-    const lines = {
-      finance:       `${org} peut éclairer les choix d’investissement qui rendent une transformation industrielle tenable.`,
-      juridique:     `${org} peut éclairer les cadres juridiques qui sécurisent les arbitrages industriels.`,
-      operationnelle:`${org} peut éclairer les conditions d’exécution qui rendent la transformation industrielle réellement pilotable.`,
-      rh:            `${org} peut éclairer le rôle des métiers, des compétences et des collectifs dans la transformation industrielle.`,
-      energie:       `${org} peut éclairer les ressources, l’énergie et le carbone comme conditions de continuité industrielle.`,
-      territoriale:  `${org} peut éclairer le rôle du territoire dans les trajectoires industrielles.`,
-      technologique: `${org} peut éclairer le rôle des systèmes, des données et des interfaces dans la trajectoire industrielle.`,
-      strategique:   `${org} peut éclairer les arbitrages structurants qui font évoluer une trajectoire industrielle.`,
-      default:       `${org} peut éclairer une lecture utile dans une conversation stratégique à plusieurs voix.`
-    };
-    return lines[key] || lines.default;
+    const reading = readingAdjective(readingLabel || "éditoriale");
+    const subject = conversationSubject(angle, conversationLabel);
+    return `${org} pourrait apporter une lecture ${reading} sur ${subject}.`;
   }
 
   function buildHeroLead(angle, readingLabel) {
-    const key = readingKeyForHero(readingLabel);
-    const custom = {
-      finance:       "Une lecture financière sur les choix d’investissement, les marges de manœuvre et les conditions économiques qui rendent une trajectoire industrielle soutenable.",
-      juridique:     "Une lecture juridique sur les cadres, responsabilités et risques qui sécurisent les arbitrages industriels.",
-      operationnelle:"Une lecture opérationnelle sur la qualité, les flux, les priorités et les interfaces métiers qui conditionnent la montée en capacité.",
-      rh:            "Une lecture RH sur les métiers, les compétences et les collectifs qui rendent une trajectoire industrielle possible, transmissible et pilotable.",
-      energie:       "Une lecture énergie / ressources sur l’eau, l’énergie, les matières, le carbone et les conditions de continuité industrielle.",
-      territoriale:  "Une lecture territoriale sur ce qui rend une trajectoire industrielle possible, soutenable ou réorientable : foncier, friches, infrastructures, ancrage et conditions de décision.",
-      technologique: "Une lecture technologique sur les systèmes, les données et les interfaces qui conditionnent la trajectoire industrielle.",
-      strategique:   "Une lecture stratégique sur les arbitrages qui font changer une trajectoire industrielle de nature."
-    };
-
-    return custom[key] || shortText(txt(angle?.anglePublic?.accrocheLanding, angle?.questionActivation, angle?.introMecanisme, angle?.texteProgramme), 240);
+    return "Cette page privée vous est adressée dans le cadre d’une composition éditoriale en cours. Un échange éditorial de 15 minutes permettrait de vérifier l’intérêt commun de poursuivre et de préciser la position possible.";
   }
 
   function buildHeroReadingLine(readingLabel) {
@@ -1859,15 +1883,15 @@
 
             <div class="landing-hero-bento-copy">
               <p class="landing-hero-conversation landing-hero-conversation--kicker"><span>Conversation stratégique</span><strong>${safe(soften(conversationText))}</strong></p>
-              <h1>${safe(buildHeroTitle(organisationName, readingLabel))}</h1>
+              <h1>${safe(buildHeroTitle(organisationName, readingLabel, angle, conversationLabel))}</h1>
               <p class="landing-hero-bento-lead">${safe(buildHeroLead(angle, readingLabel))}</p>
 
               <div class="landing-hero-bento-actions">
-                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Programmer un échange éditorial - 15 min")}</a>
-                <a class="landing-hero-secondary-link" href="#mise-en-regard">Voir les 4 lectures de la conversation</a>
+                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Qualifier cette position — 15 min")}</a>
+                <a class="landing-hero-secondary-link" href="#mise-en-regard">Voir la position proposée</a>
               </div>
 
-              <p class="landing-hero-bento-proof">Position en cours de composition · Sans engagement · Périmètre préparé</p>
+              <p class="landing-hero-bento-proof">15 minutes · Sans engagement · Aucun dossier à préparer</p>
             </div>
 
             <aside class="landing-hero-bento-side">
@@ -2178,13 +2202,14 @@
     return "La contribution ne porte pas sur un cas interne. Elle rend lisible un mécanisme utile à l’ensemble de la conversation.";
   }
 
-  function buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType, readingLabel) {
+  function buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType, readingLabel, currentDeal = null) {
+    const enrichment = getPublicEnrichment(currentDeal) || {};
     const orgTitle = whyOrganisationTitle(readingLabel, why);
     const personTitle = whyPersonTitle(readingLabel);
     const positionTitle = whyPositionTitle(readingLabel, positionWhy);
 
-    const orgFragment = whyOrganisationText(why, organisationName, readingLabel);
-    const personFragment = whyPersonText(why, personName, personRole, readingLabel, organisationName, actorType);
+    const orgFragment = txt(enrichment.whyOrganisationPublic, whyOrganisationText(why, organisationName, readingLabel));
+    const personFragment = txt(enrichment.whyPersonPublic, whyPersonText(why, personName, personRole, readingLabel, organisationName, actorType));
     const positionFragment = whyPositionText(why, organisationName, readingLabel, positionWhy);
 
     return `
@@ -2748,7 +2773,7 @@
     root.innerHTML = `
       <div class="landing-top">
         <div class="landing-top__inner">
-          <a class="landing-brand" href="/" aria-label="Scènes d'Arbitrage — accueil"><img src="/images/logo-scenes-transparent-no-baseline-v2.png" alt="Scènes d'Arbitrage" class="landing-brand-logo"></a>
+          <a class="landing-brand" href="/" aria-label="Scènes d'Arbitrage — accueil"><img src="/images/logo-scenes-transparent-no-baseline-v2.png" alt="Scènes d'Arbitrage" class="landing-brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';"><span class="landing-brand-text" style="display:none">Scènes d’Arbitrage</span></a>
           <div class="landing-top__meta">${buildTopMeta(conversationLabel)}</div>
         </div>
       </div>
@@ -2767,7 +2792,7 @@
             <p>Une position Scènes d'Arbitrage ne désigne pas seulement une organisation ou une fonction. Elle identifie ce qu’une expérience permet de rendre lisible depuis un endroit précis.</p>
           </div>
           <div class="landing-why-box">
-            ${buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType, readingLabel)}
+            ${buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType, readingLabel, deal)}
           </div>
         </div>
       </section>
