@@ -81,13 +81,22 @@ body.landing-page {
   pointer-events: auto;
   display: inline-flex;
   align-items: center;
-  color: var(--landing-text);
   text-decoration: none;
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: clamp(1.55rem, 2.5vw, 2.1rem);
-  font-weight: 600;
   line-height: 1;
-  letter-spacing: -.025em;
+}
+
+.landing-brand-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+  opacity: .9;
+}
+
+/* Sur fond clair, inverser le filtre */
+.landing-page:not(.landing-page--dark) .landing-brand-logo {
+  filter: brightness(0);
+  opacity: .85;
 }
 
 .landing-brand::before {
