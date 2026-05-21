@@ -1,8 +1,8 @@
 <style>
   .site-footer {
     background: #000000;
-    color: rgba(255,255,255,0.86);
-    padding: 72px 34px 36px;
+    color: rgba(255,255,255,0.82);
+    padding: 76px 34px 38px;
   }
 
   .site-footer__inner {
@@ -18,22 +18,35 @@
   }
 
   .site-footer__brand {
-    max-width: 380px;
+    max-width: 420px;
+  }
+
+  /* Le PNG contient beaucoup de marge transparente : ce cadre recadre visuellement le logo sans modifier le fichier image. */
+  .site-footer__logo-frame {
+    position: relative;
+    width: 300px;
+    height: 83px;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0 0 20px;
   }
 
   .site-footer__logo {
     display: block;
-    width: 272px;
-    max-width: 100%;
+    width: 523px;
+    max-width: none;
     height: auto;
-    margin: 0 0 28px;
+    position: absolute;
+    left: -106px;
+    top: -116px;
   }
 
   .site-footer__brand-copy {
     margin: 0;
-    font-size: 15px;
-    line-height: 1.75;
-    color: rgba(255,255,255,0.72);
+    max-width: 410px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.62);
   }
 
   .site-footer__title {
@@ -43,7 +56,7 @@
     line-height: 1.2;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.88);
+    color: rgba(255,255,255,0.78);
   }
 
   .site-footer__nav,
@@ -56,28 +69,28 @@
 
   .site-footer__link {
     display: inline-block;
-    color: rgba(255,255,255,0.9);
+    color: rgba(255,255,255,0.64);
     text-decoration: none;
     padding-bottom: 4px;
-    border-bottom: 1px solid rgba(255,255,255,0.28);
+    border-bottom: 1px solid rgba(255,255,255,0.16);
     transition: border-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
   }
 
   .site-footer__link:hover,
   .site-footer__link:focus-visible {
-    color: #ffffff;
-    border-bottom-color: rgba(255,255,255,0.62);
+    color: rgba(255,255,255,0.92);
+    border-bottom-color: rgba(255,255,255,0.42);
     outline: none;
   }
 
   .site-footer__bottom-line {
     margin-top: 44px;
-    border-top: 1px solid rgba(255,255,255,0.14);
+    border-top: 1px solid rgba(255,255,255,0.12);
   }
 
   @media (max-width: 1100px) {
     .site-footer {
-      padding: 64px 28px 34px;
+      padding: 66px 28px 34px;
     }
 
     .site-footer__grid {
@@ -93,7 +106,7 @@
 
   @media (max-width: 768px) {
     .site-footer {
-      padding: 56px 24px 28px;
+      padding: 58px 24px 30px;
     }
 
     .site-footer__grid {
@@ -101,14 +114,22 @@
       gap: 34px;
     }
 
+    .site-footer__logo-frame {
+      width: 270px;
+      height: 75px;
+      margin-bottom: 20px;
+    }
+
     .site-footer__logo {
-      width: 240px;
-      margin-bottom: 24px;
+      width: 471px;
+      left: -96px;
+      top: -105px;
     }
 
     .site-footer__brand-copy {
-      font-size: 14px;
-      line-height: 1.7;
+      max-width: 100%;
+      font-size: 13.5px;
+      line-height: 1.6;
     }
 
     .site-footer__bottom-line {
@@ -121,11 +142,13 @@
   <div class="site-footer__inner">
     <div class="site-footer__grid">
       <div class="site-footer__brand">
-        <img
-          src="/images/logo-scenes-transparent-baseline-v2.png?v=2"
-          alt="Scènes d'Arbitrage"
-          class="site-footer__logo"
-        >
+        <div class="site-footer__logo-frame" aria-hidden="true">
+          <img
+            src="/images/logo-scenes-transparent-baseline-v2.png?v=2"
+            alt=""
+            class="site-footer__logo"
+          >
+        </div>
         <p class="site-footer__brand-copy">
           Scènes d'Arbitrage prépare, produit et active des prises de position à partir de conversations structurées, de positions situées et de sujets déjà à l’œuvre dans l’économie réelle.
         </p>
