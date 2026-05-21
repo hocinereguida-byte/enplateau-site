@@ -390,7 +390,7 @@
     return `
       <section class="landing-loading">
         <div class="landing-loading__box">
-          <a class="landing-brand landing-brand--loading" href="/" aria-label="En Plateau — accueil">En Plateau</a>
+          <a class="landing-brand landing-brand--loading" href="/" aria-label="Scènes d'Arbitrage — accueil"><img src="/images/logo-scenes-transparent-no-baseline-v2.png" alt="Scènes d'Arbitrage" class="landing-brand-logo"></a>
           <h1>${Core.escapeHTML(title)}</h1>
           <p>${message}</p>
         </div>
