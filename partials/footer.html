@@ -1,50 +1,165 @@
-<footer class="footer">
+<style>
+  .site-footer {
+    background: #000000;
+    color: rgba(255,255,255,0.86);
+    padding: 72px 34px 36px;
+  }
 
-  <div class="footer-grid footer-grid--simple">
+  .site-footer__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 
-    <div class="footer-col footer-col--brand">
-      <h4 class="footer-title">Scènes d'Arbitrage</h4>
-      <p class="footer-signature">Prises de position sur des arbitrages réels.</p>
-      <p>
-        Scènes d'Arbitrage prépare, produit et active des prises de position à partir de conversations structurées, de positions situées et de sujets déjà à l’œuvre dans l’économie réelle.
-      </p>
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .site-footer__brand {
+    max-width: 380px;
+  }
+
+  .site-footer__logo {
+    display: block;
+    width: 272px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 0 28px;
+  }
+
+  .site-footer__brand-copy {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.72);
+  }
+
+  .site-footer__title {
+    margin: 0 0 18px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.88);
+  }
+
+  .site-footer__nav,
+  .site-footer__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .site-footer__link {
+    display: inline-block;
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.28);
+    transition: border-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .site-footer__link:hover,
+  .site-footer__link:focus-visible {
+    color: #ffffff;
+    border-bottom-color: rgba(255,255,255,0.62);
+    outline: none;
+  }
+
+  .site-footer__bottom-line {
+    margin-top: 44px;
+    border-top: 1px solid rgba(255,255,255,0.14);
+  }
+
+  @media (max-width: 1100px) {
+    .site-footer {
+      padding: 64px 28px 34px;
+    }
+
+    .site-footer__grid {
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 44px;
+    }
+
+    .site-footer__brand {
+      grid-column: 1 / -1;
+      max-width: 520px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .site-footer {
+      padding: 56px 24px 28px;
+    }
+
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    .site-footer__logo {
+      width: 240px;
+      margin-bottom: 24px;
+    }
+
+    .site-footer__brand-copy {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .site-footer__bottom-line {
+      margin-top: 34px;
+    }
+  }
+</style>
+
+<footer class="site-footer" aria-label="Pied de page">
+  <div class="site-footer__inner">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <img
+          src="/images/logo-scenes-transparent-baseline-v2.png?v=1"
+          alt="Scènes d'Arbitrage"
+          class="site-footer__logo"
+        >
+        <p class="site-footer__brand-copy">
+          Scènes d'Arbitrage prépare, produit et active des prises de position à partir de conversations structurées, de positions situées et de sujets déjà à l’œuvre dans l’économie réelle.
+        </p>
+      </div>
+
+      <div class="site-footer__column">
+        <h2 class="site-footer__title">Parcours</h2>
+        <nav class="site-footer__nav" aria-label="Parcours">
+          <a href="/dispositif.html" class="site-footer__link">Dispositif</a>
+          <a href="/conversations.html" class="site-footer__link">Conversations</a>
+          <a href="/positions.html" class="site-footer__link">Positions</a>
+          <a href="/a-propos.html" class="site-footer__link">À propos</a>
+        </nav>
+      </div>
+
+      <div class="site-footer__column">
+        <h2 class="site-footer__title">Accès</h2>
+        <nav class="site-footer__nav" aria-label="Accès">
+          <a href="/demander-un-echange-editorial.html" class="site-footer__link">Demander un échange éditorial</a>
+          <a href="/proposer-une-contribution.html" class="site-footer__link">Signaler une contribution</a>
+          <a href="/principes.html" class="site-footer__link">Principes</a>
+        </nav>
+      </div>
+
+      <div class="site-footer__column">
+        <h2 class="site-footer__title">Informations</h2>
+        <nav class="site-footer__meta" aria-label="Informations légales">
+          <a href="/mentions-legales.html" class="site-footer__link">Mentions légales</a>
+          <a href="/politique-de-confidentialite.html" class="site-footer__link">Politique de confidentialité</a>
+          <a href="#" class="site-footer__link" data-open-cookie-settings>Gérer mes cookies</a>
+        </nav>
+      </div>
     </div>
 
-    <div class="footer-col">
-      <h4 class="footer-title">Parcours</h4>
-      <ul>
-        <li><a href="/dispositif.html">Dispositif</a></li>
-        <li><a href="/conversations.html">Conversations</a></li>
-        <li><a href="/positions.html">Positions</a></li>
-        <li><a href="/a-propos.html">À propos</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4 class="footer-title">Accès</h4>
-      <ul>
-        <li><a href="/demander-un-echange-editorial.html">Demander un échange éditorial</a></li>
-        <li><a href="/proposer-une-contribution.html">Signaler une contribution</a></li>
-        <li><a href="/principes.html">Principes</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4 class="footer-title">Informations</h4>
-      <ul>
-        <li><a href="/mentions-legales.html">Mentions légales</a></li>
-        <li><a href="/politique-de-confidentialite.html">Politique de confidentialité</a></li>
-        <li>
-          <button type="button" class="link-button" onclick="openCookiePreferences()">
-            Gérer mes cookies
-          </button>
-        </li>
-      </ul>
-    </div>
-
+    <div class="site-footer__bottom-line" aria-hidden="true"></div>
   </div>
-
-  <div class="footer-bottom">
-  </div>
-
 </footer>
