@@ -70,6 +70,7 @@
       .map((token, index) => token === "&" ? "&" : formatToken(token, index))
       .join(" ")
       .replace(/\bReguida\b/g, "Reguida")
+      .replace(/\bbanque\b/g, "Banque")
       .trim();
   }
 
@@ -687,7 +688,7 @@
      pistes à évoquer si la première lecture n’est pas la bonne.
   ───────────────────────────────────────────────────────── */
   function allPersonalizedDeals() {
-    const records = DATA?.dealPersonalization?.recordsByDealId || {};
+    const records = DATA?.dealPersonalization?.recordsByRef || DATA?.dealPersonalization?.recordsByDealId || {};
     return Object.values(records).filter(Boolean);
   }
 
