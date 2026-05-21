@@ -43,7 +43,7 @@
 
     const keepUpper = new Set([
       "BFM", "TV", "RH", "DG", "DAF", "DRH", "PDG", "CEO", "CFO", "COMEX",
-      "RSE", "ETI", "PME", "IA", "KEA", "EDF", "SNCF", "CEA", "CNRS", "BPI"
+      "RSE", "ETI", "PME", "IA", "KEA", "EDF", "SNCF", "CEA", "CNRS", "BPI", "SCET"
     ]);
     const smallWords = new Set(["de", "du", "des", "la", "le", "les", "et", "à", "au", "aux", "d", "l"]);
 
@@ -733,7 +733,9 @@
     return allPersonalizedDeals()
       .filter(deal => {
         if (!deal || Core.getDealId(deal) === currentId) return false;
-        if (Core.isExcludedDeal(deal)) return false;
+        const hasExclusion = !!Core.text(deal?.activation?.replacedBy, deal?.replacedBy,
+          deal?.activation?.exclusionReason, deal?.exclusionReason);
+        if (hasExclusion) return false;
         return norm(personIdentityKeyFromDeal(deal)) === currentKey;
       })
       .map(deal => ({ deal, angle: Core.getAngleByCode(Core.getAngleCodeFromDeal(deal)) }))
@@ -821,6 +823,7 @@
                     <strong>${safe(shortText(title, 190))}</strong>
                     <em>${safe(readingPanelLabel(altReading))}</em>
                     ${deal.publicRef ? `<a class="lpb-alt-link" href="?cast=${safe(deal.publicRef)}">Voir cette proposition →</a>` : ""}
+                    ${deal.publicRef ? `<a class="lpb-alt-link" href="?cast=${deal.publicRef}">Voir cette proposition →</a>` : ""}
                     <b class="lpb-alt-action lpb-alt-action--closed">Afficher détails +</b>
                     <b class="lpb-alt-action lpb-alt-action--open">Masquer détails -</b>
                   </summary>
@@ -1055,6 +1058,10 @@
       juridique: [
         { question: "Comment ne pas transformer la contribution en avis juridique ?", answer: "La prise de parole ne constitue pas une consultation. Elle éclaire le rôle du droit, des cadres et des responsabilités dans les arbitrages industriels." },
         { question: "Comment éviter de paraître commenter un dossier client ?", answer: "Aucun dossier identifiable n'est attendu. La contribution formule une lecture de mécanisme, préparée et limitée." }
+      ],
+      territorial: [
+        { question: "Cette lecture peut-elle ouvrir des conversations avec des directions industrielles et des DAF ?", answer: "Oui. En articulant territoire et trajectoire industrielle, la contribution parle directement aux DG, directions industrielles et DAF qui arbitrent les conditions territoriales de leur activité." },
+        { question: "Comment parler de territoire sans exposer une négociation ou un projet local sensible ?", answer: "La lecture porte sur les mécanismes : foncier, infrastructures, ancrage, réseaux, acteurs publics et conditions collectives de décision. Aucun projet identifiable n'est attendu." }
       ],
       rh: [
         { question: "Comment se distinguer d'un discours RH générique ?", answer: "La contribution relie les compétences, les métiers et les collectifs à une trajectoire industrielle concrète. Elle ne vend pas une offre RH ; elle éclaire une condition de transformation." },
