@@ -4278,3 +4278,56 @@
   transform: translateY(-3px) scale(1.015) !important;
   transform-origin: center center !important;
 }
+
+/* =========================================================
+   V14 - ajustements ciblés hero home
+   Périmètre strict : alignement de la colonne droite,
+   titre hero sur une ligne desktop, micro-note sous CTA.
+========================================================= */
+
+@media (min-width: 1101px) {
+  .home-hero .home-container {
+    width: min(calc(100% - 100px), 1268px) !important;
+    max-width: 1268px !important;
+  }
+
+  .home-hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(500px, 540px) !important;
+    gap: clamp(46px, 4.6vw, 58px) !important;
+    align-items: start !important;
+  }
+
+  .home-hero-copy {
+    max-width: 760px !important;
+    padding-left: clamp(56px, 5vw, 66px) !important;
+  }
+
+  .home-hero h1 {
+    max-width: none !important;
+    white-space: nowrap !important;
+    font-size: clamp(2.65rem, 3.5vw, 3.7rem) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -.04em !important;
+  }
+
+  .home-hero-side {
+    width: 100% !important;
+    max-width: 540px !important;
+    justify-self: end !important;
+  }
+
+  .home-hero-media-row,
+  .home-hero .home-hero-card,
+  .home-hero-small--right {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .home-hero-small--right {
+    max-width: 420px !important;
+    font-size: .54rem !important;
+    line-height: 1.48 !important;
+    letter-spacing: .012em !important;
+    opacity: .78;
+  }
+}
