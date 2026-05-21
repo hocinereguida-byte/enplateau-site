@@ -21,10 +21,6 @@
     max-width: 440px;
   }
 
-  /* Cadrage du logo footer avec baseline :
-     - plus à gauche pour réafficher entièrement le crochet gauche
-     - plus haut pour aligner le haut visuel du logo avec les titres de colonnes
-     - plus haut en hauteur pour laisser réapparaître la baseline */
   .site-footer__logo-frame {
     position: relative;
     width: 430px;
@@ -53,13 +49,13 @@
   }
 
   .site-footer__title {
-    margin: 0 0 18px;
+    margin: 0 0 28px;
     font-family: "IBM Plex Mono", monospace;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.2;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.78);
+    color: rgba(255,255,255,0.44);
   }
 
   .site-footer__nav,
@@ -67,12 +63,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 14px;
   }
 
   .site-footer__link {
     display: inline-block;
-    color: rgba(255,255,255,0.58);
+    color: rgba(255,255,255,0.60);
     text-decoration: none;
     padding-bottom: 4px;
     border-bottom: 1px solid rgba(255,255,255,0.16);
@@ -129,6 +125,11 @@
       top: -62px;
     }
 
+    .site-footer__title {
+      margin-bottom: 22px;
+      font-size: 12.5px;
+    }
+
     .site-footer__brand-copy {
       max-width: 100%;
       font-size: 13.5px;
@@ -163,7 +164,6 @@
           <a href="/dispositif.html" class="site-footer__link">Dispositif</a>
           <a href="/conversations.html" class="site-footer__link">Conversations</a>
           <a href="/positions.html" class="site-footer__link">Positions</a>
-          <a href="/a-propos.html" class="site-footer__link">À propos</a>
         </nav>
       </div>
 
@@ -179,6 +179,7 @@
       <div class="site-footer__column">
         <h2 class="site-footer__title">Informations</h2>
         <nav class="site-footer__meta" aria-label="Informations légales">
+          <a href="/a-propos.html" class="site-footer__link">À propos</a>
           <a href="/mentions-legales.html" class="site-footer__link">Mentions légales</a>
           <a href="/politique-de-confidentialite.html" class="site-footer__link">Politique de confidentialité</a>
           <a href="#" class="site-footer__link" data-open-cookie-settings>Gérer mes cookies</a>
