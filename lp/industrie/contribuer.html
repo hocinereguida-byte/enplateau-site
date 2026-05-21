@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/layout.css?v=moteur-v6-cast-publicrefs-20260517-0610">
-  <link rel="stylesheet" href="/assets/css/landing.css?v=moteur-v6-cast-publicrefs-20260517-0610">
+  <link rel="stylesheet" href="/assets/css/landing.css?v=20260522-trio-logo1">
 </head>
 
 <body class="landing-page" data-page="industrie-contribuer" data-cycle="industrie">
@@ -37,6 +37,60 @@
 <script src="/assets/js/editorial-data-industrie-enrichments.js?v=20260521-js1"></script>
 <script src="/assets/js/render-core.js?v=20260521-js1"></script>
 <script src="/assets/js/render-landing.js?v=20260521-js1"></script>
+
+  <script>
+    (function () {
+      var TRIO_IMAGE_SRC = "/images/trio-journalistes.jpg?v=20260522";
+      var TRIO_IMAGE_ALT = "Journalistes associés à Scènes d'Arbitrage";
+      var JOURNALISTS = [
+        { name: "C. Pallée", media: "BFM Business" },
+        { name: "G. Leclerc", media: "La Tribune" },
+        { name: "T. Cabannes", media: "Le Figaro" }
+      ];
+
+      function buildTrioMarkup() {
+        var items = JOURNALISTS.map(function (item) {
+          return '<span class="landing-film-trio__item">' +
+            '<strong>' + item.name + '</strong>' +
+            '<em>' + item.media + '</em>' +
+          '</span>';
+        }).join("");
+
+        return '' +
+          '<img src="' + TRIO_IMAGE_SRC + '" alt="' + TRIO_IMAGE_ALT + '" class="landing-film-trio__image">' +
+          '<div class="landing-film-trio" aria-label="Journalistes et médias">' + items + '</div>';
+      }
+
+      function applyStaticJournalistsTrio() {
+        var frame = document.querySelector(".landing-film-track > div");
+        if (!frame || frame.dataset.staticJournalistsTrio === "true") return false;
+
+        frame.innerHTML = buildTrioMarkup();
+        frame.dataset.staticJournalistsTrio = "true";
+
+        var caption = document.querySelector(".landing-film-caption");
+        if (caption) caption.remove();
+
+        return true;
+      }
+
+      var attempts = 0;
+      var timer = window.setInterval(function () {
+        attempts += 1;
+        if (applyStaticJournalistsTrio() || attempts >= 40) {
+          window.clearInterval(timer);
+        }
+      }, 150);
+
+      var root = document.getElementById("landing-root");
+      if (root && "MutationObserver" in window) {
+        var observer = new MutationObserver(function () {
+          applyStaticJournalistsTrio();
+        });
+        observer.observe(root, { childList: true, subtree: true });
+      }
+    })();
+  </script>
   
   <noscript>
     <section class="landing-loading">
