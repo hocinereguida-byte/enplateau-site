@@ -4490,3 +4490,35 @@
     max-width: 380px !important;
   }
 }
+
+/* =========================================================
+   V14 - bordure normale photo trio hero
+   Périmètre strict : uniquement la photo des journalistes du hero.
+   Objectif : le trait supérieur doit être une bordure du cadre,
+   pas une ligne placée ou perçue à l'intérieur de la photo.
+========================================================= */
+
+.home-hero-media-row .home-film.home-film--trio,
+.home-hero .home-film.home-film--trio {
+  border: 1px solid var(--h3-line-dark) !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+.home-hero-media-row .home-film.home-film--trio::before,
+.home-hero-media-row .home-film.home-film--trio::after,
+.home-hero .home-film.home-film--trio::before,
+.home-hero .home-film.home-film--trio::after {
+  display: none !important;
+  content: none !important;
+}
+
+.home-hero-media-row .home-film.home-film--trio img,
+.home-hero .home-film.home-film--trio img,
+.home-hero .home-film-trio,
+.home-hero .home-film-mobile-trio {
+  margin-top: 0 !important;
+  transform: none !important;
+  object-position: center center !important;
+}
+
