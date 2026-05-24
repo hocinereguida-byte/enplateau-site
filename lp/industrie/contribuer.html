@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/layout.css?v=moteur-v6-cast-publicrefs-20260517-0610">
-  <link rel="stylesheet" href="/assets/css/landing.css?v=20260522-trio-logo1">
+  <link rel="stylesheet" href="/assets/css/landing.css?v=20260523-consolidated">
 </head>
 
 <body class="landing-page" data-page="industrie-contribuer" data-cycle="industrie">
@@ -50,17 +50,23 @@
 
       function buildTrioMarkup() {
         var items = JOURNALISTS.map(function (item) {
-          return '<span class="landing-film-trio__item">' +
-            '<strong>' + item.name + '</strong>' +
-            '<em>' + item.media + '</em>' +
-          '</span>';
+          return '<span class="landing-film-trio__item">'
+            + '<strong>' + item.name + '</strong>'
+            + '<em>' + item.media + '</em>'
+            + '</span>';
         }).join("");
 
-        return '' +
-          '<img src="' + TRIO_IMAGE_SRC + '" alt="' + TRIO_IMAGE_ALT + '" class="landing-film-trio__image">' +
-          '<div class="landing-film-trio" aria-label="Journalistes et médias">' + items + '</div>';
+        return '<img src="' + TRIO_IMAGE_SRC + '" alt="' + TRIO_IMAGE_ALT + '" class="landing-film-trio__image">'
+          + '<div class="landing-film-trio" aria-label="Journalistes et médias">' + items + '</div>';
       }
 
+      /*
+        Injecte le trio dans .landing-film-track > div dès que le
+        moteur JS l'a créé. Retourne true si l'injection a eu lieu,
+        false si le conteneur n'existe pas encore ou est déjà traité.
+        Quand elle réussit, le setInterval et le MutationObserver
+        sont tous les deux arrêtés : il n'y a plus rien à surveiller.
+      */
       function applyStaticJournalistsTrio() {
         var frame = document.querySelector(".landing-film-track > div");
         if (!frame || frame.dataset.staticJournalistsTrio === "true") return false;
@@ -74,24 +80,33 @@
         return true;
       }
 
-      var attempts = 0;
-      var timer = window.setInterval(function () {
-        attempts += 1;
-        if (applyStaticJournalistsTrio() || attempts >= 40) {
-          window.clearInterval(timer);
-        }
+      var observer = null;
+      var timer = null;
+
+      function onApplied() {
+        if (timer)    { window.clearInterval(timer);  timer    = null; }
+        if (observer) { observer.disconnect();         observer = null; }
+      }
+
+      /* Polling toutes les 150 ms, 40 tentatives max (= 6 secondes) */
+      var attempts = 40;
+      timer = window.setInterval(function () {
+        if (applyStaticJournalistsTrio()) { onApplied(); return; }
+        /* Après 40 tentatives sans résultat on abandonne proprement */
+        if (--attempts <= 0) { onApplied(); }
       }, 150);
 
+      /* MutationObserver en filet de sécurité si le rendu JS est tardif */
       var root = document.getElementById("landing-root");
       if (root && "MutationObserver" in window) {
-        var observer = new MutationObserver(function () {
-          applyStaticJournalistsTrio();
+        observer = new MutationObserver(function () {
+          if (applyStaticJournalistsTrio()) { onApplied(); }
         });
         observer.observe(root, { childList: true, subtree: true });
       }
     })();
   </script>
-  
+
   <noscript>
     <section class="landing-loading">
       <div class="landing-loading__box">
