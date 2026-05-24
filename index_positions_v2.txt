@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Scènes d'Arbitrage - Éclairer les arbitrages qui transforment l’économie</title>
+  <meta name="description" content="Scènes d'Arbitrage compose des cycles de conversations économiques pour rendre lisibles les arbitrages réels derrière les transformations des organisations, des filières et des territoires.">
+  <link rel="canonical" href="https://scenesdarbitrage.fr/index.html">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#111111">
+
+  <link rel="icon" href="/images/favicon-en-plateau.svg" type="image/svg+xml">
+  <link rel="icon" href="/images/Favenplateau.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/images/Favenplateau.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/home.css?v=20260524-positions-v2">
+</head>
+
+<body class="home-page">
+  <div id="site-header"></div>
+  <div id="site-mobile-menu"></div>
+
+  <main>
+    <section class="home-hero" id="hero-home">
+      <div class="home-container">
+        <div class="home-hero-grid">
+          <div class="home-hero-copy">
+            <div class="home-kicker">Saison inaugurale · Conversations économiques</div>
+            <h1>Là où les décisions se jouent</h1>
+
+            <p class="home-hero-lead">
+              <strong>
+                <span class="home-hero-lead-line">Les transformations profondes se comprennent mieux</span>
+                <span class="home-hero-lead-line">lorsqu’elles croisent plusieurs lectures.</span>
+              </strong>
+            </p>
+
+            <p class="home-hero-lead home-hero-text">
+              Scènes d'Arbitrage ne juxtapose pas des prises de parole.<br class="home-hero-text-break">
+              Le dispositif compose des conversations éditoriales à partir d’émissions et d’articles pour rendre lisibles les arbitrages réels derrière les transformations économiques.
+            </p>
+
+            <p class="home-hero-lead home-hero-text">
+              Chaque contribution part d’un angle limité, contextualisé et porté depuis une lecture sélectionnée pour ce qu’elle permet de rendre visible. Leur mise en regard fait apparaître les décisions, les seuils et les conditions qui structurent une trajectoire.
+            </p>
+          </div>
+
+          <aside class="home-hero-side" aria-label="Accès à l'échange éditorial">
+            <div class="home-hero-media-row home-hero-media-row--cycle">
+              <figure class="home-film home-film--studio" aria-label="Studio vidéo du cycle Industrie 2026/2027">
+                <img src="images/studiovide.jpg" alt="Studio vidéo associé au cycle Industrie 2026/2027">
+              </figure>
+
+              <div class="home-hero-cycle-note home-hero-cycle-note--table" aria-label="Repères du cycle Industrie">
+                <span>Cycle Industrie 2026/2027</span>
+                <p>Positions éditoriales en cours de composition</p>
+                <dl class="home-cycle-meta">
+                  <div>
+                    <dt>Préparation, cadrage, tournage</dt>
+                    <dd>Jusqu’à décembre 2026</dd>
+                  </div>
+                  <div>
+                    <dt>Journalistes associés</dt>
+                    <dd>Christophe Pallée · Gilles Leclerc · Thierry Cabannes</dd>
+                  </div>
+                  <div>
+                    <dt>Diffusion progressive dès septembre 2026</dt>
+                    <dd>BFM Business · La Tribune · Le Figaro</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+
+            <div class="home-hero-card">
+              <h2>Vous avez reçu une invitation&nbsp;?</h2>
+              <p>
+                Votre fonction, votre expertise ou votre expérience ont été identifiées pour éclairer l’un des angles en cours de composition.
+              </p>
+              <a href="demander-un-echange-editorial.html">Demander un échange éditorial</a>
+            </div>
+
+            <p class="home-hero-small home-hero-small--right">
+              Un échange court permet de vérifier l’intérêt éditorial, les conditions de prise de parole et le bon niveau de cadrage.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-light home-principles" id="principes-home">
+      <div class="home-container">
+        <div class="home-head">
+          <div class="home-kicker home-kicker--light">Ce que fait Scènes d'Arbitrage</div>
+          <h2>Donner du relief à ce qui se décide déjà sur le terrain.</h2>
+          <p>
+            Le dispositif ne cherche pas à fabriquer une parole. Il aide à mettre en forme une expérience déjà vécue, à identifier ce qu’elle permet de comprendre, puis à l’inscrire dans une conversation plus large, aux côtés d’autres lectures complémentaires.
+          </p>
+        </div>
+
+        <div class="home-principles-grid" aria-label="Principes du dispositif Scènes d'Arbitrage">
+          <details class="home-principle-card home-principle-card--wide" open>
+            <summary><span>01 · Angle qualifié</span><h3>La bonne question avant la bonne personne.</h3></summary>
+            <p>Une contribution part d’un angle limité et contextualisé : assez précis pour éviter le discours général, assez ouvert pour éclairer une question que d’autres acteurs rencontrent aussi.</p>
+          </details>
+
+          <details class="home-principle-card">
+            <summary><span>02 · Lecture située</span><h3>Une parole depuis une position identifiable.</h3></summary>
+            <p>Une position n’est pas une fonction affichée. C’est le point d’observation qu’une personne peut porter parce qu’elle vit, arbitre, finance, sécurise, exécute ou accompagne le sujet.</p>
+          </details>
+
+          <details class="home-principle-card">
+            <summary><span>03 · Cadre éditorial</span><h3>Ce qui peut être rendu public. Ce qui doit rester hors champ.</h3></summary>
+            <p>Le périmètre se travaille avant toute production : sujet, limites, exemples possibles, équipes à associer, niveau de précision et forme finale.</p>
+          </details>
+
+          <details class="home-principle-card home-principle-card--dark">
+            <summary><span>04 · Mise en regard</span><h3>Plusieurs lectures pour comprendre un même enjeu.</h3></summary>
+            <p>Chaque contribution éclaire une partie du sujet. Leur rapprochement fait apparaître les arbitrages, les dépendances et les conditions qui donnent du relief à la trajectoire.</p>
+          </details>
+
+          <details class="home-principle-card home-principle-card--cta">
+            <summary><span>Passer du principe aux conversations</span><h3>Voir comment une même question se construit à travers plusieurs lectures.</h3></summary>
+            <p>
+              Chaque cycle décline ces principes dans des conversations, des contextes et des angles précis. Les positions y sont limitées, situées et mises en regard pour faire apparaître ce qu’un seul point de vue ne permet pas de voir.
+            </p>
+            <a href="conversations.html">Explorer les conversations</a>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-dark home-decision" id="role-editorial-home">
+      <div class="home-container">
+        <div class="home-decision-grid">
+          <div class="home-decision-visual" aria-hidden="true"></div>
+          <div class="home-decision-copy">
+            <h2>Transformer un moment d’arbitrage en lecture partageable.</h2>
+
+            <div class="home-decision-accordion" aria-label="Rôle éditorial du dispositif">
+              <details open>
+                <summary>Repérer le seuil de décision</summary>
+                <p>
+                  Une activité croît, un projet avance, une transformation s’accélère. Le même phénomène ne se lit plus de la même manière lorsque les ressources, le financement, l’exécution, le droit, les compétences, le marché ou le territoire changent de poids.
+                </p>
+              </details>
+
+              <details>
+                <summary>Clarifier l’arbitrage structurant</summary>
+                <p>
+                  L’enjeu est d’identifier ce qui doit être priorisé, coordonné, financé, sécurisé ou rééquilibré pour continuer à avancer sans perdre la ligne. La contribution ne commente pas une transformation ; elle rend lisible ce qu’elle oblige à arbitrer.
+                </p>
+              </details>
+
+              <details>
+                <summary>Construire une lecture transmissible</summary>
+                <p>
+                  À partir d’une expérience réelle, Scènes d'Arbitrage aide à formuler une parole utile, précise et publiquement tenable, sans exposer ce qui doit rester hors champ. Cette lecture peut ensuite circuler auprès des bons interlocuteurs.
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-light home-cycles-section" id="cycles-home">
+      <div class="home-container">
+        <div class="home-head">
+          <div class="home-kicker home-kicker--light">Saison inaugurale</div>
+          <h2>Deux premiers cycles. Une même méthode.</h2>
+          <p>
+            Chaque cycle couvre un champ économique large, mais par fragments maîtrisés : conversations, contextes, positions et lectures. L’objectif n’est pas de tout dire, mais de rendre visibles les endroits où les décisions prennent du poids.
+          </p>
+        </div>
+
+        <div class="home-cycles home-cycles--hybrid">
+          <article>
+            <div class="home-cycle-img home-cycle-industrie"></div>
+            <div class="home-cycle-body">
+              <span>Cycle Industrie</span>
+              <h3>Industrie &amp; transformation des territoires</h3>
+              <div class="home-chipline" aria-label="Thématiques du cycle industrie">
+                <span>capacité</span><span>dépendances</span><span>outil productif</span><span>ressources</span><span>compétences</span><span>territoires</span>
+              </div>
+              <p>
+                Produire davantage, tenir en conditions réelles ou se transformer : le cycle regarde ce qui se passe lorsque l’outil, les compétences, les ressources, les dépendances ou le territoire ne suivent plus au même rythme.
+              </p>
+              <div>
+                <a href="conversations/industrie.html">Explorer les conversations</a>
+                <a href="positions/industrie.html">Explorer les positions</a>
+              </div>
+            </div>
+          </article>
+
+          <article>
+            <div class="home-cycle-img home-cycle-logement"></div>
+            <div class="home-cycle-body">
+              <span>Cycle Logement</span>
+              <h3>Logement &amp; fabrique des territoires</h3>
+              <div class="home-chipline" aria-label="Thématiques du cycle logement">
+                <span>foncier</span><span>droit</span><span>financement</span><span>faisabilité</span><span>exécution</span>
+              </div>
+              <p>
+                Éclairer ce qui rend une opération possible, soutenable et partageable : foncier, droit, financement, faisabilité, exécution, acceptabilité, calendrier et production territoriale.
+              </p>
+              <div>
+                <a href="conversations/logement.html">Explorer les conversations</a>
+                <a href="positions/logement.html">Explorer les positions</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="home-cycle-rarety">
+          <span>Rareté éditoriale</span>
+          <h3>Des positions limitées pour préserver la complémentarité.</h3>
+          <p>
+            Le cycle ne juxtapose pas des prises de parole. Il compose des conversations où chaque angle est limité, contextualisé et mis en regard avec d’autres lectures pour faire apparaître ce qu’un seul point de vue ne permet pas de voir.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-dark home-positions" id="positions-home">
+      <div class="home-container">
+        <div class="home-head">
+          <div class="home-kicker">Positions éditoriales</div>
+          <h2>Des lectures situées pour faire apparaître ce qu’un seul point de vue ne montre pas.</h2>
+          <p>
+            Chaque position part d’un angle précis et d’un point d’observation identifiable. Cliquez sur une lecture pour ouvrir le niveau de détail : ce qu’elle éclaire, ce qu’elle rend discutable et ce qu’elle permet de partager.
+          </p>
+        </div>
+
+        <div class="home-position-cards-v2" aria-label="Lectures éditoriales possibles">
+          <details class="home-position-card-v2">
+            <summary>
+              <span class="home-position-card-v2__index">01</span>
+              <span class="home-position-card-v2__label">Stratégie</span>
+              <strong>Seuils de trajectoire</strong>
+              <em>Identifier le moment où une trajectoire industrielle change de nature.</em>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="home-position-card-v2__body">
+              <p>Cette lecture met en forme les arbitrages de direction : préserver un cap, produire davantage, réorganiser, investir ou renoncer. Elle rend visible le moment où le pilotage courant ne suffit plus.</p>
+            </div>
+          </details>
+
+          <details class="home-position-card-v2">
+            <summary>
+              <span class="home-position-card-v2__index">02</span>
+              <span class="home-position-card-v2__label">Finance</span>
+              <strong>Conditions économiques</strong>
+              <em>Rendre visibles les arbitrages qui ne peuvent plus être différés.</em>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="home-position-card-v2__body">
+              <p>La lecture financière éclaire la soutenabilité : investissement, exposition, cash-flow, marges de manœuvre, coût du retard ou coût de l’inaction. Elle montre comment une transformation devient tenable économiquement.</p>
+            </div>
+          </details>
+
+          <details class="home-position-card-v2">
+            <summary>
+              <span class="home-position-card-v2__index">03</span>
+              <span class="home-position-card-v2__label">Droit</span>
+              <strong>Cadre sécurisé</strong>
+              <em>Comprendre quand le droit devient une condition réelle de décision.</em>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="home-position-card-v2__body">
+              <p>Contrats, responsabilités, normes, conformité ou contentieux potentiels peuvent structurer le champ du possible. Cette lecture aide à cadrer une parole utile sans exposer de dossiers sensibles.</p>
+            </div>
+          </details>
+
+          <details class="home-position-card-v2">
+            <summary>
+              <span class="home-position-card-v2__index">04</span>
+              <span class="home-position-card-v2__label">Opérations</span>
+              <strong>Exécution réelle</strong>
+              <em>Lire la trajectoire depuis ce qui tient — ou ne tient plus — sur le terrain.</em>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="home-position-card-v2__body">
+              <p>Capacité, qualité, flux, maintenance, supply chain, délais et organisation révèlent les conditions concrètes de la transformation. Cette lecture évite le discours abstrait en partant de l’exécution.</p>
+            </div>
+          </details>
+
+          <details class="home-position-card-v2">
+            <summary>
+              <span class="home-position-card-v2__index">05</span>
+              <span class="home-position-card-v2__label">Compétences</span>
+              <strong>Collectifs et métiers</strong>
+              <em>Faire reconnaître les savoir-faire comme condition de transformation.</em>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="home-position-card-v2__body">
+              <p>Recrutement, transmission, organisation du travail, gestes professionnels, temps d’apprentissage et collectifs ne sont pas des variables d’ajustement. Ils conditionnent la trajectoire industrielle.</p>
+            </div>
+          </details>
+
+          <details class="home-position-card-v2">
+            <summary>
+              <span class="home-position-card-v2__index">06</span>
+              <span class="home-position-card-v2__label">Énergie &amp; ressources</span>
+              <strong>Continuité matérielle</strong>
+              <em>Faire apparaître ce qui rend l’activité possible dans la durée.</em>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="home-position-card-v2__body">
+              <p>Énergie, eau, matières, infrastructures techniques, carbone et utilités deviennent parfois des critères directs d’investissement, de continuité ou de réarbitrage industriel.</p>
+            </div>
+          </details>
+
+          <details class="home-position-card-v2">
+            <summary>
+              <span class="home-position-card-v2__index">07</span>
+              <span class="home-position-card-v2__label">Technologie &amp; systèmes</span>
+              <strong>Pilotage et interfaces</strong>
+              <em>Montrer quand les systèmes deviennent des conditions de passage à l’échelle.</em>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="home-position-card-v2__body">
+              <p>Données, automatismes, interfaces, architecture technique, OT/IT et outils numériques cessent d’être une couche ajoutée. Ils deviennent des conditions de coordination, de décision et de capacité.</p>
+            </div>
+          </details>
+
+          <details class="home-position-card-v2">
+            <summary>
+              <span class="home-position-card-v2__index">08</span>
+              <span class="home-position-card-v2__label">Territoires</span>
+              <strong>Ancrage local</strong>
+              <em>Mesurer ce que la transformation redistribue localement.</em>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="home-position-card-v2__body">
+              <p>Foncier, réseaux, logistique, acceptabilité, ressources locales, infrastructures et portage territorial peuvent conditionner la trajectoire. Le territoire n’est pas un décor : c’est un lieu d’arbitrage.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-light home-dispositif" id="dispositif-home">
+      <div class="home-container">
+        <div class="home-dispositif-grid">
+          <div>
+            <div class="home-kicker home-kicker--light">Cadre éditorial</div>
+            <h2>Donner une forme partageable à une expérience déjà vécue.</h2>
+            <p>
+              L’intervenant ne vient pas réciter un discours écrit par Scènes d'Arbitrage. Il vient mettre en perspective un sujet qu’il connaît, depuis une responsabilité réelle. Le cadre éditorial sert à clarifier, protéger et rendre cette lecture utile à d’autres, sans exposer ce qui doit rester hors champ.
+            </p>
+            <a href="dispositif.html">Découvrir le dispositif</a>
+          </div>
+
+          <div class="home-dispositif-cards" aria-label="Cadre éditorial du dispositif">
+            <details open>
+              <summary>Partir d’un angle qualifié</summary>
+              <p>Chaque intervention part d’une question située, d’un arbitrage à éclairer et d’une lecture que l’intervenant est particulièrement bien placé pour porter.</p>
+            </details>
+
+            <details>
+              <summary>Préparer une parole tenable</summary>
+              <p>Le cadrage éditorial permet de clarifier ce qui peut être dit publiquement, d’anticiper les points sensibles et d’éviter une parole trop générale, artificielle ou surexposée.</p>
+            </details>
+
+            <details>
+              <summary>Produire une contribution utile</summary>
+              <p>L’émission et son prolongement écrit donnent une forme structurée à la lecture de l’intervenant, réutilisable dans la durée auprès de son écosystème professionnel.</p>
+            </details>
+
+            <details>
+              <summary>Mettre les lectures en regard</summary>
+              <p>Chaque contribution reste singulière, mais elle gagne en portée lorsqu’elle apparaît aux côtés d’autres lectures complémentaires engagées sur les mêmes questions.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-dark home-impact" id="valeur-home">
+      <div class="home-container">
+        <div class="home-head">
+          <div class="home-kicker">Valeur produite</div>
+          <h2>Une trace publique qui continue de travailler.</h2>
+          <p>
+            Une contribution bien préparée ne se limite pas à une prise de parole. Elle produit un actif éditorial préparé, crédible et réutilisable, mobilisable dans la durée auprès des bons interlocuteurs.
+          </p>
+        </div>
+
+        <div class="home-values home-values-accordion">
+          <details open>
+            <summary><span>01</span><strong>Pour l’organisation : installer une lecture maîtrisée.</strong></summary>
+            <p>Une contribution préparée permet de rendre visible ce qui change, ce qui doit être priorisé et la manière dont l’organisation comprend sa trajectoire, sans réduire la contribution à une communication promotionnelle.</p>
+          </details>
+
+          <details>
+            <summary><span>02</span><strong>Pour les fonctions expertes : faire reconnaître leur rôle dans la décision.</strong></summary>
+            <p>Direction générale, finance, droit, opérations, compétences, énergie, systèmes ou territoire : chaque fonction peut rendre lisible une part précise de l’arbitrage, au-delà de son périmètre technique ou interne.</p>
+          </details>
+
+          <details>
+            <summary><span>03</span><strong>Pour les cabinets et experts : formuler une lecture sans vendre une offre.</strong></summary>
+            <p>La contribution montre ce qu’une expertise permet de comprendre des transformations en cours. Elle ouvre des conversations avec des décideurs qui reconnaissent leur propre sujet, sans passer par un discours de prestation.</p>
+          </details>
+
+          <details>
+            <summary><span>04</span><strong>Pour l’intervenant : construire une trace crédible et réutilisable.</strong></summary>
+            <p>L’émission et son prolongement écrit constituent un actif mobilisable dans la durée : rendez-vous dirigeants, relations institutionnelles, prospection qualifiée, LinkedIn, échanges internes ou discussions avec des partenaires stratégiques.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-light home-access" id="acces-home">
+      <div class="home-container">
+        <div class="home-head">
+          <div class="home-kicker home-kicker--light">Accès au dispositif</div>
+          <h2>Invitation reçue&nbsp;?<br>Une lecture à proposer&nbsp;?</h2>
+          <p>
+            Les cycles Scènes d'Arbitrage sont principalement composés par approche directe, à partir d’organisations et d’intervenants identifiés pour la pertinence de leur lecture. Une contribution peut toutefois être signalée, puis étudiée au regard des conversations en cours.
+          </p>
+        </div>
+
+        <div class="home-access-grid">
+          <article>
+            <h3>Vous avez déjà été sollicité</h3>
+            <p>
+              Un échange éditorial permet de confirmer l’angle, préciser la lecture attendue et évaluer les conditions d’une contribution, sans engagement. Si la position semble pertinente, une note de positionnement peut ensuite être transmise.
+            </p>
+            <a href="demander-un-echange-editorial.html">Demander un échange éditorial</a>
+            <p class="home-note-light">
+              L’échange sert à qualifier la pertinence de la lecture et les conditions de préparation d’une éventuelle contribution.
+            </p>
+          </article>
+
+          <article>
+            <h3>Vous n’avez pas été contacté</h3>
+            <p>
+              Vous pouvez signaler une organisation, une personne ou une situation susceptible d’éclairer utilement l’un des cycles en cours.
+            </p>
+            <a href="proposer-une-contribution.html">Signaler une contribution</a>
+          </article>
+        </div>
+
+        <p class="home-subnote">
+          Les positions visibles sur le site ne valent pas appel général à contribution. Elles donnent à comprendre les types de lectures, d’arbitrages et d’interventions que les cycles en cours cherchent à mettre en regard.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="cookie-container"></div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/layout.js"></script>
+</body>
+</html>
