@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>En Plateau — Contribution éditoriale personnalisée</title>
+  <title>Scènes d'Arbitrage — Contribution éditoriale personnalisée</title>
   <meta name="description" content="Une proposition de contribution éditoriale personnalisée dans le cycle Industrie & transformation des territoires.">
   <meta name="robots" content="noindex,nofollow">
   <meta name="theme-color" content="#111111">
@@ -15,35 +15,110 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/css/layout.css?v=en-savoir-plus-20260515-0938">
-  <link rel="stylesheet" href="/assets/css/landing.css?v=en-savoir-plus-20260515-0938">
+  <link rel="stylesheet" href="/assets/css/layout.css?v=moteur-v6-cast-publicrefs-20260517-0610">
+  <link rel="stylesheet" href="/assets/css/landing.css?v=20260524-logo-trio-v5">
 </head>
 
 <body class="landing-page" data-page="industrie-contribuer" data-cycle="industrie">
   <main id="landing-root" class="landing-root" aria-live="polite">
     <section class="landing-loading">
       <div class="landing-loading__box">
-        <a class="landing-brand landing-brand--loading" href="/" aria-label="En Plateau — accueil">En Plateau</a>
+        <a class="landing-brand landing-brand--loading" href="/" aria-label="Scènes d'Arbitrage — accueil">Scènes d'Arbitrage</a>
         <h1>Chargement de votre proposition éditoriale</h1>
         <p>
-          Si cette page reste affichée, vérifiez que l'URL contient un identifiant de deal valide,
-          par exemple <strong>/lp/industrie/contribuer.html?deal=3970</strong>.
+          Si cette page reste affichée, vérifiez que l'URL contient un identifiant de proposition valide,
+          par exemple une référence publique de type cast.
         </p>
       </div>
     </section>
   </main>
 
-  <script src="/assets/js/editorial-data-industrie-v67.js?v=en-savoir-plus-20260515-0938"></script>
-  <script src="/assets/js/render-core.js?v=en-savoir-plus-20260515-0938"></script>
-  <script src="/assets/js/render-landing.js?v=en-savoir-plus-20260515-0938"></script>
+<script src="/assets/js/editorial-data-industrie-v67.js?v=20260521-js1"></script>
+<script src="/assets/js/editorial-data-industrie-enrichments.js?v=20260524-argon-v1"></script>
+<script src="/assets/js/render-core.js?v=20260521-js1"></script>
+<script src="/assets/js/render-landing.js?v=20260524-angle-title-fix"></script>
+
+  <script>
+    (function () {
+
+      /* ── Configuration ─────────────────────────────────────────── */
+
+      var TRIO_IMAGE_SRC = "/images/trio-journalistes.jpg?v=20260522";
+      var TRIO_IMAGE_ALT = "Journalistes associés à Scènes d'Arbitrage";
+      var JOURNALISTS = [
+        { name: "C. Pallée",   media: "BFM Business" },
+        { name: "G. Leclerc",  media: "La Tribune"   },
+        { name: "T. Cabannes", media: "Le Figaro"    }
+      ];
+
+      /* ── Trio journalistes ─────────────────────────────────────── */
+
+      function buildTrioMarkup() {
+        var items = JOURNALISTS.map(function (item) {
+          return '<span class="landing-film-trio__item">'
+            + '<strong>' + item.name + '</strong>'
+            + '<em>' + item.media + '</em>'
+            + '</span>';
+        }).join("");
+        return '<img src="' + TRIO_IMAGE_SRC + '" alt="' + TRIO_IMAGE_ALT + '" class="landing-film-trio__image">'
+          + '<div class="landing-film-trio" aria-label="Journalistes et médias">' + items + '</div>';
+      }
+
+      function applyStaticJournalistsTrio() {
+        var frame = document.querySelector(".landing-film-track > div");
+        if (!frame) return false;
+        if (frame.dataset.staticJournalistsTrio === "true") return true;
+
+        frame.innerHTML = buildTrioMarkup();
+        frame.dataset.staticJournalistsTrio = "true";
+
+        [
+          ".landing-film-caption",
+          ".landing-film-overlay",
+          ".landing-hero-media-caption",
+          ".landing-hero-media-tag"
+        ].forEach(function (sel) {
+          var el = document.querySelector(sel);
+          if (el) el.remove();
+        });
+
+        return true;
+      }
+
+      /* ── Orchestration ─────────────────────────────────────────── */
+
+      var observer = null;
+      var timer    = null;
+
+      function onApplied() {
+        if (timer)    { window.clearInterval(timer); timer    = null; }
+        if (observer) { observer.disconnect();        observer = null; }
+      }
+
+      var attempts = 40;
+      timer = window.setInterval(function () {
+        if (applyStaticJournalistsTrio()) { onApplied(); return; }
+        if (--attempts <= 0) { onApplied(); }
+      }, 150);
+
+      var root = document.getElementById("landing-root");
+      if (root && "MutationObserver" in window) {
+        observer = new MutationObserver(function () {
+          if (applyStaticJournalistsTrio()) { onApplied(); }
+        });
+        observer.observe(root, { childList: true, subtree: true });
+      }
+
+    })();
+  </script>
 
   <noscript>
     <section class="landing-loading">
       <div class="landing-loading__box">
-        <a class="landing-brand landing-brand--loading" href="/" aria-label="En Plateau — accueil">En Plateau</a>
+        <a class="landing-brand landing-brand--loading" href="/" aria-label="Scènes d'Arbitrage — accueil">Scènes d'Arbitrage</a>
         <h1>JavaScript est nécessaire</h1>
         <p>
-          Cette page utilise le référentiel éditorial En Plateau pour afficher une proposition personnalisée.
+          Cette page utilise le référentiel éditorial Scènes d'Arbitrage pour afficher une proposition personnalisée.
           Activez JavaScript pour consulter le contenu.
         </p>
       </div>
