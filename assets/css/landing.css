@@ -5588,14 +5588,14 @@ body.landing-page .landing-brand--loading {
   }
 }
 
-/* ── Film trio journalistes ────────────────────────────── */
+/* ── Film trio journalistes statique ───────────────────── */
 
 /*
-  Conteneur injecté par le script inline de contribuer.html.
-  L'attribut data-static-journalists-trio="true" est posé
-  par le script dès l'injection : on s'en sert comme ancre
-  pour les règles spécifiques au trio, sans polluer les autres
-  états possibles du film-track.
+  Le contenu du trio est maintenant défini en HTML statique
+  dans <template id="landing-static-journalists-trio">.
+  render-landing.js ne fait que placer ce template dans le cadre film.
+  L'attribut data-static-journalists-trio="true" sert uniquement
+  d'ancre CSS stable pour le cadrage visuel.
 */
 body.landing-page .landing-film-track > div[data-static-journalists-trio="true"] {
   position: relative;
@@ -5708,3 +5708,51 @@ body.landing-page .landing-film-trio__item em {
 
 
 
+
+
+/* ══ Header statique landing — logo PNG indépendant du JS ══
+   Le logo est dans le HTML directement. Render-landing.js
+   injecte son propre .landing-brand : on le masque.
+   ══════════════════════════════════════════════════════════ */
+
+body.landing-page .landing-top .landing-brand {
+  display: none;
+}
+
+body.landing-page .landing-top--meta-only .landing-top__inner {
+  justify-content: flex-end;
+}
+
+.landing-static-header {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 max(20px, calc(50vw - 660px));
+  pointer-events: none;
+}
+
+.landing-static-header a {
+  pointer-events: auto;
+  display: block;
+  line-height: 0;
+}
+
+.landing-static-logo {
+  display: block;
+  width: 180px;
+  height: auto;
+}
+
+@media (max-width: 980px) {
+  .landing-static-logo { width: 150px; }
+}
+
+@media (max-width: 620px) {
+  .landing-static-header { height: 60px; padding: 0 16px; }
+  .landing-static-logo { width: 120px; }
+}
