@@ -5544,11 +5544,10 @@ body.landing-page .landing-brand {
 }
 
 body.landing-page .landing-brand-logo {
-  height: 54px;
-  width: auto;
-  max-width: min(280px, 42vw);
-  object-fit: contain;
   display: block;
+  width: 200px;
+  height: auto;
+  max-width: min(200px, 38vw);
 }
 
 body.landing-page .landing-brand--loading {
@@ -5569,8 +5568,8 @@ body.landing-page .landing-brand--loading {
   }
 
   body.landing-page .landing-brand-logo {
-    height: 64px;
-    max-width: 320px;
+    width: 240px;
+    max-width: min(240px, 38vw);
   }
 }
 
@@ -5584,8 +5583,8 @@ body.landing-page .landing-brand--loading {
   }
 
   body.landing-page .landing-brand-logo {
-    height: 44px;
-    max-width: min(220px, 58vw);
+    width: 160px;
+    max-width: min(160px, 52vw);
   }
 }
 
@@ -5709,37 +5708,3 @@ body.landing-page .landing-film-trio__item em {
 
 
 
-
-/* ══ Logo landing : texte typographié identique à la home ══════
-   render-landing.js injecte une img.landing-brand-logo (PNG 1.99MB
-   aux dimensions inadaptées) + un span.landing-brand-text en fallback.
-   On masque l'image et on affiche le span avec la même typographie
-   que .site-brand__wordmark défini dans layout.css.
-   ══════════════════════════════════════════════════════════════ */
-
-body.landing-page .landing-brand-logo {
-  display: none;
-}
-
-body.landing-page .landing-brand-text {
-  display: inline-flex !important;
-  font-family: var(--font-display, "Playfair Display", Georgia, serif);
-  font-size: 1.95rem;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: #fffaf6;
-  white-space: nowrap;
-}
-
-@media (max-width: 980px) {
-  body.landing-page .landing-brand-text {
-    font-size: 1.66rem;
-  }
-}
-
-@media (max-width: 620px) {
-  body.landing-page .landing-brand-text {
-    font-size: 1.38rem;
-  }
-}
