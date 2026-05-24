@@ -5614,11 +5614,13 @@ body.landing-page .landing-film-trio__image {
   display: block;
   width: 100%;
   height: calc(100% - 62px);
-  object-fit: cover;
-  object-position: center 10%;
-  opacity: .82;
-  filter: grayscale(100%) contrast(112%) brightness(.72);
+  object-fit: contain;
+  object-position: center center;
+  opacity: .84;
+  filter: grayscale(100%) contrast(108%) brightness(.78);
   background: #070707;
+  transform: none;
+  transform-origin: center center;
 }
 
 /* Bandeau noms/médias — absolument positionné en bas */
