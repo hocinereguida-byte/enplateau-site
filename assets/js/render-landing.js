@@ -19,7 +19,7 @@
   "use strict";
 
   const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
-  console.info("En Plateau — render-landing alternatives accordions one-open build 20260516-2220 loaded");
+  console.info("En Plateau — render-landing alternatives accordions one-open build 20260524-angle-title-fix loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -403,8 +403,63 @@
     return label ? label.toLowerCase().replace(/^lecture rh$/, "lecture RH") : "lecture éditoriale";
   }
 
-  function angleTitle(angle, publicAngle = {}, formulation = {}) {
-    return txt(publicAngle.titreLanding, formulation.title, angle?.questionPublique, angle?.titreAngle, angle?.questionEditoriale);
+  /*
+    Certains enrichissements complémentaires utilisaient c.title pour stocker
+    le nom de la lecture ("Technologie", "Opérations", "Finance", etc.).
+    Dans les panneaux de détail, cela faisait remonter le type de lecture à
+    la place du titre / de la question de l'angle. Les helpers ci-dessous
+    ignorent donc les intitulés qui ne sont que des noms de lecture et
+    reprennent le premier vrai titre d'angle disponible.
+  */
+  function isReadingOnlyTitle(value, readingLabel = "") {
+    const n = norm(value);
+    if (!n) return false;
+
+    const genericReadingNames = new Set([
+      "strategie", "strategique", "lecture strategique",
+      "operations", "operationnel", "operationnelle", "lecture operationnelle",
+      "technologie", "technologique", "technologique systemes", "technologie systemes",
+      "technologique et systemes", "technologie et systemes", "lecture technologique",
+      "finance", "financiere", "lecture financiere",
+      "juridique", "juridique reglementaire", "lecture juridique",
+      "rh", "rh competences", "lecture rh", "lecture rh competences",
+      "territoire", "territoriale", "lecture territoriale",
+      "energie", "energie ressources", "ressources", "lecture energie ressources"
+    ]);
+
+    const candidates = [
+      readingLabel,
+      readingDisplay(readingLabel),
+      readingNoun(readingLabel),
+      readingPanelLabel(readingLabel),
+      readingAdjective(readingLabel),
+      `Lecture ${readingAdjective(readingLabel)}`
+    ]
+      .map(norm)
+      .filter(Boolean);
+
+    return genericReadingNames.has(n) || candidates.includes(n);
+  }
+
+  function pickAngleDisplayTitle(readingLabel, ...values) {
+    for (const value of values) {
+      const candidate = txt(value);
+      if (candidate && !isReadingOnlyTitle(candidate, readingLabel)) return candidate;
+    }
+    return txt(...values);
+  }
+
+  function angleTitle(angle, publicAngle = {}, formulation = {}, readingLabel = "") {
+    const label = readingLabel || angle?.typeLecture || angle?.complementaryCard?.label || "";
+    return pickAngleDisplayTitle(
+      label,
+      publicAngle.titreLanding,
+      formulation.title,
+      angle?.questionCourte,
+      angle?.titreAngle,
+      angle?.questionPublique,
+      angle?.questionEditoriale
+    );
   }
 
   function angleDescription(angle, publicAngle = {}, formulation = {}) {
@@ -413,11 +468,13 @@
 
   function buildComplementaryCard(other, excludeOrgName = "") {
     const c = other.complementaryCard || {};
+    const publicAngle = other.anglePublic || other.formulationVariants?.anglePublic || {};
+    const formulation = Core.getFormulationLanding(other) || {};
     const actors = actorLabelsForAngle(other);
     const orgs = organisationsForAngle(other.code, 3, excludeOrgName);
     const media = mediaLineForAngle(other);
     const label = c.label || other.typeLecture || "Lecture complémentaire";
-    const title = c.title || other.questionCourte || other.titreAngle || other.questionPublique;
+    const title = pickAngleDisplayTitle(label, c.title, publicAngle.titreLanding, formulation.title, other.questionCourte, other.titreAngle, other.questionPublique, other.questionEditoriale);
     const text = c.headline || other.ceQueCetteLecturePermetDeVoir || other.angleRendVisible || "Une autre lecture du même contexte éditorial.";
     return `
       <article class="landing-card landing-card--complementary">
@@ -433,7 +490,7 @@
   function buildPrimaryConversationCard(angle, publicAngle, formulation, personName, personRole, organisationName, readingLabel) {
     const actors = actorLabelsForAngle(angle);
     const media = mediaLineForAngle(angle);
-    const title = angleTitle(angle, publicAngle, formulation);
+    const title = angleTitle(angle, publicAngle, formulation, readingLabel);
     const text = angleDescription(angle, publicAngle, formulation);
     return `
       <article class="landing-card landing-card--primary-position">
@@ -650,7 +707,7 @@
     const primaryItem = {
       primary: true,
       readingLabel,
-      title: angleTitle(angle, publicAngle, formulation),
+      title: angleTitle(angle, publicAngle, formulation, readingLabel),
       text: angleDescription(angle, publicAngle, formulation),
       orgs: [primaryOrganisationDisplay(organisationName)].filter(Boolean),
       media: mediaLineForAngle(angle)
@@ -665,7 +722,7 @@
       return {
         primary: false,
         readingLabel: otherReading,
-        title: txt(c.title, otherPublic.titreLanding, otherFormulation.title, other.questionCourte, other.titreAngle, other.questionPublique),
+        title: pickAngleDisplayTitle(otherReading, c.title, otherPublic.titreLanding, otherFormulation.title, other.questionCourte, other.titreAngle, other.questionPublique, other.questionEditoriale),
         text: txt(c.headline, otherPublic.accrocheLanding, otherFormulation.accrocheLanding, other.ceQueCetteLecturePermetDeVoir, other.angleRendVisible),
         orgs: toArray(deals).map(item => item.organisation).filter(Boolean).slice(0, 3),
         media: mediaLineForAngle(other)
@@ -793,7 +850,7 @@
     const altReading = displayReadingLabel(Core.getReadingByCode(altDeal?.editorialContext?.typeLecture || altAngle?.typeLecture), altAngle, altDeal, Core.getPerson(altDeal)?.role);
     const publicAngle = altAngle.anglePublic || altAngle.formulationVariants?.anglePublic || {};
     const formulation = Core.getFormulationLanding(altAngle) || {};
-    const title = angleTitle(altAngle, publicAngle, formulation);
+    const title = angleTitle(altAngle, publicAngle, formulation, altReading);
     const text = angleDescription(altAngle, publicAngle, formulation);
     const complementary = toArray(altAngle.complementaryCodes)
       .map(code => Core.getAngleByCode(code))
@@ -837,7 +894,7 @@
               const altReading = displayReadingLabel(Core.getReadingByCode(deal?.editorialContext?.typeLecture || angle?.typeLecture), angle, deal, Core.getPerson(deal)?.role);
               const publicAngle = angle.anglePublic || angle.formulationVariants?.anglePublic || {};
               const formulation = Core.getFormulationLanding(angle) || {};
-              const title = angleTitle(angle, publicAngle, formulation);
+              const title = angleTitle(angle, publicAngle, formulation, altReading);
               return `
                 <details class="lpb-alt-item">
                   <summary>
