@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/home.css?v=20260524-studiovide-cycle-v1">
+  <link rel="stylesheet" href="assets/css/home.css?v=20260524-studio-overlay-bento-accordions-v2">
 </head>
 
 <body class="home-page">
@@ -101,41 +101,34 @@
           </p>
         </div>
 
-        <div class="home-principle-grid">
-          <article>
-            <span>01 · Angle qualifié</span>
-            <h3>La bonne question avant la bonne personne.</h3>
+        <div class="home-principles-grid" aria-label="Principes du dispositif Scènes d'Arbitrage">
+          <details class="home-principle-card home-principle-card--wide" open>
+            <summary><span>01 · Angle qualifié</span><h3>La bonne question avant la bonne personne.</h3></summary>
             <p>Une contribution part d’un angle limité et contextualisé : assez précis pour éviter le discours général, assez ouvert pour éclairer une question que d’autres acteurs rencontrent aussi.</p>
-          </article>
+          </details>
 
-          <article>
-            <span>02 · Lecture située</span>
-            <h3>Une parole depuis une position identifiable.</h3>
+          <details class="home-principle-card">
+            <summary><span>02 · Lecture située</span><h3>Une parole depuis une position identifiable.</h3></summary>
             <p>Une position n’est pas une fonction affichée. C’est le point d’observation qu’une personne peut porter parce qu’elle vit, arbitre, finance, sécurise, exécute ou accompagne le sujet.</p>
-          </article>
+          </details>
 
-          <article>
-            <span>03 · Cadre éditorial</span>
-            <h3>Ce qui peut être rendu public. Ce qui doit rester hors champ.</h3>
+          <details class="home-principle-card">
+            <summary><span>03 · Cadre éditorial</span><h3>Ce qui peut être rendu public. Ce qui doit rester hors champ.</h3></summary>
             <p>Le périmètre se travaille avant toute production : sujet, limites, exemples possibles, équipes à associer, niveau de précision et forme finale.</p>
-          </article>
+          </details>
 
-          <article>
-            <span>04 · Mise en regard</span>
-            <h3>Plusieurs lectures pour comprendre un même enjeu.</h3>
+          <details class="home-principle-card home-principle-card--dark">
+            <summary><span>04 · Mise en regard</span><h3>Plusieurs lectures pour comprendre un même enjeu.</h3></summary>
             <p>Chaque contribution éclaire une partie du sujet. Leur rapprochement fait apparaître les arbitrages, les dépendances et les conditions qui donnent du relief à la trajectoire.</p>
-          </article>
-        </div>
+          </details>
 
-        <div class="home-inline-cta">
-          <div>
-            <span>Passer du principe aux conversations</span>
-            <h3>Voir comment une même question se construit à travers plusieurs lectures.</h3>
+          <details class="home-principle-card home-principle-card--cta">
+            <summary><span>Passer du principe aux conversations</span><h3>Voir comment une même question se construit à travers plusieurs lectures.</h3></summary>
             <p>
               Chaque cycle décline ces principes dans des conversations, des contextes et des angles précis. Les positions y sont limitées, situées et mises en regard pour faire apparaître ce qu’un seul point de vue ne permet pas de voir.
             </p>
-          </div>
-          <a href="conversations.html">Explorer les conversations</a>
+            <a href="conversations.html">Explorer les conversations</a>
+          </details>
         </div>
       </div>
     </section>
@@ -147,25 +140,27 @@
           <div class="home-decision-copy">
             <h2>Transformer un moment d’arbitrage en lecture partageable.</h2>
 
-            <div>
-              <h3>Repérer le seuil de décision</h3>
-              <p>
-                Une activité croît, un projet avance, une transformation s’accélère. Le même phénomène ne se lit plus de la même manière lorsque les ressources, le financement, l’exécution, le droit, les compétences, le marché ou le territoire changent de poids.
-              </p>
-            </div>
+            <div class="home-decision-accordion" aria-label="Rôle éditorial du dispositif">
+              <details open>
+                <summary>Repérer le seuil de décision</summary>
+                <p>
+                  Une activité croît, un projet avance, une transformation s’accélère. Le même phénomène ne se lit plus de la même manière lorsque les ressources, le financement, l’exécution, le droit, les compétences, le marché ou le territoire changent de poids.
+                </p>
+              </details>
 
-            <div>
-              <h3>Clarifier l’arbitrage structurant</h3>
-              <p>
-                L’enjeu est d’identifier ce qui doit être priorisé, coordonné, financé, sécurisé ou rééquilibré pour continuer à avancer sans perdre la ligne. La contribution ne commente pas une transformation ; elle rend lisible ce qu’elle oblige à arbitrer.
-              </p>
-            </div>
+              <details>
+                <summary>Clarifier l’arbitrage structurant</summary>
+                <p>
+                  L’enjeu est d’identifier ce qui doit être priorisé, coordonné, financé, sécurisé ou rééquilibré pour continuer à avancer sans perdre la ligne. La contribution ne commente pas une transformation ; elle rend lisible ce qu’elle oblige à arbitrer.
+                </p>
+              </details>
 
-            <div>
-              <h3>Construire une lecture transmissible</h3>
-              <p>
-                À partir d’une expérience réelle, Scènes d'Arbitrage aide à formuler une parole utile, précise et publiquement tenable, sans exposer ce qui doit rester hors champ. Cette lecture peut ensuite circuler auprès des bons interlocuteurs.
-              </p>
+              <details>
+                <summary>Construire une lecture transmissible</summary>
+                <p>
+                  À partir d’une expérience réelle, Scènes d'Arbitrage aide à formuler une parole utile, précise et publiquement tenable, sans exposer ce qui doit rester hors champ. Cette lecture peut ensuite circuler auprès des bons interlocuteurs.
+                </p>
+              </details>
             </div>
           </div>
         </div>
@@ -296,26 +291,26 @@
             <a href="dispositif.html">Découvrir le dispositif</a>
           </div>
 
-          <div class="home-dispositif-cards">
-            <article>
-              <h3>Partir d’un angle qualifié</h3>
+          <div class="home-dispositif-cards" aria-label="Cadre éditorial du dispositif">
+            <details open>
+              <summary>Partir d’un angle qualifié</summary>
               <p>Chaque intervention part d’une question située, d’un arbitrage à éclairer et d’une lecture que l’intervenant est particulièrement bien placé pour porter.</p>
-            </article>
+            </details>
 
-            <article>
-              <h3>Préparer une parole tenable</h3>
+            <details>
+              <summary>Préparer une parole tenable</summary>
               <p>Le cadrage éditorial permet de clarifier ce qui peut être dit publiquement, d’anticiper les points sensibles et d’éviter une parole trop générale, artificielle ou surexposée.</p>
-            </article>
+            </details>
 
-            <article>
-              <h3>Produire une contribution utile</h3>
+            <details>
+              <summary>Produire une contribution utile</summary>
               <p>L’émission et son prolongement écrit donnent une forme structurée à la lecture de l’intervenant, réutilisable dans la durée auprès de son écosystème professionnel.</p>
-            </article>
+            </details>
 
-            <article>
-              <h3>Mettre les lectures en regard</h3>
+            <details>
+              <summary>Mettre les lectures en regard</summary>
               <p>Chaque contribution reste singulière, mais elle gagne en portée lorsqu’elle apparaît aux côtés d’autres lectures complémentaires engagées sur les mêmes questions.</p>
-            </article>
+            </details>
           </div>
         </div>
       </div>
