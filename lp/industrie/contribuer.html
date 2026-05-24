@@ -16,45 +16,66 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/layout.css?v=moteur-v6-cast-publicrefs-20260517-0610">
-  <link rel="stylesheet" href="/assets/css/landing.css?v=20260524-logo-trio-v3">
+  <link rel="stylesheet" href="/assets/css/landing.css?v=20260524-logo-trio-v4">
 
-  <!--
-    Masquage préventif du .landing-brand injecté par render-landing.js.
-    Le logo est remplacé par #ep-logo-fixe, élément indépendant positionné
-    en fixed. Render-landing.js ne peut pas l'écraser.
-  -->
   <style>
-    /* Masquer le brand moteur quelle que soit sa position dans le DOM */
+    /* Masquer le .landing-brand injecté par render-landing.js */
     body.landing-page .landing-brand { display: none; }
 
-    /* Conteneur bandeau : pousser le meta à droite */
+    /* Pousser le meta à droite quand le brand est absent du flux */
     body.landing-page .landing-top__inner { justify-content: flex-end; }
 
+    /* ── Logo fixe : reproduit la typographie du site ── */
     #ep-logo-fixe {
       position: fixed;
       z-index: 9999;
-      top: 22px;
+      top: 0;
       left: max(20px, calc(50vw - 660px));
+      height: 78px; /* même hauteur que .site-header sur desktop */
+      display: flex;
+      align-items: center;
       pointer-events: auto;
-      line-height: 0;
+      text-decoration: none;
     }
 
-    #ep-logo-fixe img {
-      display: block;
-      height: 52px;
-      width: auto;
-      max-width: min(300px, 44vw);
-      object-fit: contain;
+    #ep-logo-fixe .ep-logo-wordmark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      gap: 3px;
     }
 
-    @media (min-width: 981px) {
-      #ep-logo-fixe { top: 28px; }
-      #ep-logo-fixe img { height: 60px; }
+    #ep-logo-fixe .ep-logo-line1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.95rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: #fffaf6;
+      white-space: nowrap;
+    }
+
+    #ep-logo-fixe .ep-logo-line2 {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: rgba(255, 250, 246, 0.62);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 980px) {
+      #ep-logo-fixe { height: 64px; }
+      #ep-logo-fixe .ep-logo-line1 { font-size: 1.66rem; }
     }
 
     @media (max-width: 620px) {
-      #ep-logo-fixe { top: 16px; left: 16px; }
-      #ep-logo-fixe img { height: 42px; max-width: min(210px, 58vw); }
+      #ep-logo-fixe {
+        left: 16px;
+        height: 56px;
+      }
+      #ep-logo-fixe .ep-logo-line1 { font-size: 1.38rem; }
+      #ep-logo-fixe .ep-logo-line2 { font-size: 0.46rem; }
     }
   </style>
 </head>
@@ -62,16 +83,15 @@
 <body class="landing-page" data-page="industrie-contribuer" data-cycle="industrie">
 
   <!--
-    Logo fixe indépendant du moteur render-landing.js.
-    Positionné en fixed pour rester visible quelle que soit
-    la structure que le moteur JS injecte dans landing-root.
+    Logo fixe indépendant de render-landing.js.
+    Reproduit la typographie du header principal du site.
+    Render-landing.js ne touche que #landing-root : cet élément est hors de portée.
   -->
   <a id="ep-logo-fixe" href="/" aria-label="Scènes d'Arbitrage — accueil">
-    <img
-      src="/images/logo-scenes-transparent-no-baseline-v2.png"
-      alt="Scènes d'Arbitrage"
-      height="52"
-    >
+    <span class="ep-logo-wordmark">
+      <span class="ep-logo-line1">[ Scènes ]</span>
+      <span class="ep-logo-line2">d'Arbitrage</span>
+    </span>
   </a>
 
   <main id="landing-root" class="landing-root" aria-live="polite">
@@ -114,7 +134,6 @@
             + '<em>' + item.media + '</em>'
             + '</span>';
         }).join("");
-
         return '<img src="' + TRIO_IMAGE_SRC + '" alt="' + TRIO_IMAGE_ALT + '" class="landing-film-trio__image">'
           + '<div class="landing-film-trio" aria-label="Journalistes et médias">' + items + '</div>';
       }
@@ -150,14 +169,12 @@
         if (observer) { observer.disconnect();        observer = null; }
       }
 
-      /* Polling toutes les 150 ms, 40 tentatives max (= 6 secondes) */
       var attempts = 40;
       timer = window.setInterval(function () {
         if (applyStaticJournalistsTrio()) { onApplied(); return; }
         if (--attempts <= 0) { onApplied(); }
       }, 150);
 
-      /* MutationObserver en filet de sécurité si le rendu JS est tardif */
       var root = document.getElementById("landing-root");
       if (root && "MutationObserver" in window) {
         observer = new MutationObserver(function () {
