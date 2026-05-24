@@ -1744,6 +1744,30 @@
     return null;
   }
 
+
+  /* ─────────────────────────────────────────────────────────
+     CONTENU STATIQUE — trio journalistes
+     La source éditable est dans contribuer.html :
+     <template id="landing-static-journalists-trio">...</template>
+     render-landing.js ne fabrique plus ce contenu : il ne fait
+     que placer le template statique dans le cadre film généré.
+  ───────────────────────────────────────────────────────── */
+  function getStaticJournalistsTrioMarkup() {
+    const template = document.getElementById("landing-static-journalists-trio");
+    if (template && template.innerHTML && template.innerHTML.trim()) {
+      return template.innerHTML.trim();
+    }
+
+    // Fallback de sécurité si le template statique est absent.
+    return `
+      <img src="/images/trio-journalistes.jpg?v=20260522" alt="Journalistes associés à Scènes d'Arbitrage" class="landing-film-trio__image">
+      <div class="landing-film-trio" aria-label="Journalistes et médias">
+        <span class="landing-film-trio__item"><strong>C. Pallée</strong><em>BFM Business</em></span>
+        <span class="landing-film-trio__item"><strong>G. Leclerc</strong><em>La Tribune</em></span>
+        <span class="landing-film-trio__item"><strong>T. Cabannes</strong><em>Le Figaro</em></span>
+      </div>`;
+  }
+
   /* ─────────────────────────────────────────────────────────
      BLOC FILM ÉMISSION — style home
      Image unique B&W dans le cadre .landing-film
@@ -1752,37 +1776,18 @@
      + légende journaliste / outlet sous l'image
   ───────────────────────────────────────────────────────── */
   function buildFilmBlock(angle) {
-    const journaliste = txt(angle?.journaliste, "");
-    const media       = txt(angle?.media, "");
-    const imgPath     = media ? getEmissionImagePath(media) : null;
-
-    if (!imgPath) return "";
-
-    // Affichage public volontairement limité à journaliste + média.
-    const outletParts = [media].filter(Boolean);
-    const outletLabel = outletParts.length ? outletParts.join(" · ") : "format média";
-    const altLabel    = journaliste && outletParts.length
-      ? `Entretien économique avec ${journaliste} · ${outletParts.join(" · ")}`
-      : (outletParts.length ? outletParts.join(" · ") : "Format média");
+    const altLabel = "Journalistes associés à Scènes d'Arbitrage";
 
     return `
-      <div class="landing-film" aria-label="${safe(altLabel)}">
+      <div class="landing-film landing-film--static-trio" aria-label="${safe(altLabel)}">
         <div class="landing-film-track">
-          <div>
-            <img
-              src="${safe(imgPath)}"
-              alt="${safe(altLabel)}"
-              loading="eager"
-            >
+          <div data-static-journalists-trio="true">
+            ${getStaticJournalistsTrioMarkup()}
           </div>
         </div>
-        ${(journaliste || media) ? `
-        <div class="landing-film-overlay">
-          ${journaliste ? `<span class="landing-film-overlay__journalist">${safe(journaliste)}</span>` : ""}
-          ${media ? `<strong class="landing-film-overlay__media">${safe(media)}</strong>` : ""}
-        </div>` : ""}
       </div>`;
   }
+
 
 
   /* ─────────────────────────────────────────────────────────
@@ -2828,9 +2833,8 @@
     const filmBlock = buildFilmBlock(angle);
 
     root.innerHTML = `
-      <div class="landing-top">
+      <div class="landing-top landing-top--meta-only">
         <div class="landing-top__inner">
-          <a class="landing-brand" href="/" aria-label="Scènes d'Arbitrage — accueil"><img src="/images/logo-scenes-transparent-no-baseline-v2.png" alt="Scènes d'Arbitrage" class="landing-brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';"><span class="landing-brand-text" style="display:none">Scènes d’Arbitrage</span></a>
           <div class="landing-top__meta">${buildTopMeta(conversationLabel)}</div>
         </div>
       </div>
