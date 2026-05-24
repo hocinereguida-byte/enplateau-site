@@ -1746,25 +1746,34 @@
 
 
   /* ─────────────────────────────────────────────────────────
-     CONTENU STATIQUE — trio journalistes
+     CONTENU STATIQUE — repères cycle + studio
      La source éditable est dans contribuer.html :
-     <template id="landing-static-journalists-trio">...</template>
+     <template id="landing-static-cycle-media">...</template>
      render-landing.js ne fabrique plus ce contenu : il ne fait
      que placer le template statique dans le cadre film généré.
   ───────────────────────────────────────────────────────── */
-  function getStaticJournalistsTrioMarkup() {
-    const template = document.getElementById("landing-static-journalists-trio");
+  function getStaticCycleMediaMarkup() {
+    const template = document.getElementById("landing-static-cycle-media");
     if (template && template.innerHTML && template.innerHTML.trim()) {
       return template.innerHTML.trim();
     }
 
     // Fallback de sécurité si le template statique est absent.
     return `
-      <img src="/images/trio-journalistes.jpg?v=20260522" alt="Journalistes associés à Scènes d'Arbitrage" class="landing-film-trio__image">
-      <div class="landing-film-trio" aria-label="Journalistes et médias">
-        <span class="landing-film-trio__item"><strong>C. Pallée</strong><em>BFM Business</em></span>
-        <span class="landing-film-trio__item"><strong>G. Leclerc</strong><em>La Tribune</em></span>
-        <span class="landing-film-trio__item"><strong>T. Cabannes</strong><em>Le Figaro</em></span>
+      <div class="landing-film-static-cycle" aria-label="Repères du cycle Industrie 2026/2027">
+        <figure class="landing-film-static-visual">
+          <img src="/images/studiovide.jpg" alt="Studio vidéo associé au cycle Industrie 2026/2027">
+        </figure>
+        <div class="landing-film-cycle-card" aria-label="Repères éditoriaux du cycle Industrie">
+          <p class="landing-film-cycle-card__kicker">Cycle Industrie 2026/2027</p>
+          <p class="landing-film-cycle-card__status">Positions éditoriales en cours de composition</p>
+          <dl class="landing-film-cycle-card__list">
+            <div><dt>Préparation, cadrage, tournage</dt><dd>Jusqu’à décembre 2026</dd></div>
+            <div><dt>Journalistes</dt><dd>Christophe Pallée · Gilles Leclerc · Thierry Cabannes</dd></div>
+            <div><dt>Diffusion à partir de septembre 2026</dt><dd>BFM Business · La Tribune · Le Figaro</dd></div>
+            <div class="landing-film-cycle-card__activation"><dt>Activation &amp; exploitation</dt><dd>Replay disponible et droits d’exploitation transférés pour une valorisation permanente de la prise de parole.</dd></div>
+          </dl>
+        </div>
       </div>`;
   }
 
@@ -1779,10 +1788,10 @@
     const altLabel = "Journalistes associés à Scènes d'Arbitrage";
 
     return `
-      <div class="landing-film landing-film--static-trio" aria-label="${safe(altLabel)}">
+      <div class="landing-film landing-film--static-cycle" aria-label="${safe(altLabel)}">
         <div class="landing-film-track">
-          <div data-static-journalists-trio="true">
-            ${getStaticJournalistsTrioMarkup()}
+          <div data-static-cycle-media="true">
+            ${getStaticCycleMediaMarkup()}
           </div>
         </div>
       </div>`;
