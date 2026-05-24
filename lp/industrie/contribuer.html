@@ -17,9 +17,59 @@
 
   <link rel="stylesheet" href="/assets/css/layout.css?v=moteur-v6-cast-publicrefs-20260517-0610">
   <link rel="stylesheet" href="/assets/css/landing.css?v=20260524-logo-trio-v2">
+
+  <!--
+    Masquage préventif du .landing-brand injecté par render-landing.js.
+    Le logo est remplacé par #ep-logo-fixe, élément indépendant positionné
+    en absolu sur le bandeau. Render-landing.js ne peut pas l'écraser.
+  -->
+  <style>
+    body.landing-page .landing-top .landing-brand { display: none !important; }
+
+    #ep-logo-fixe {
+      position: fixed;
+      z-index: 9999;
+      top: 22px;
+      left: max(20px, calc(50vw - 660px));
+      pointer-events: auto;
+      line-height: 0;
+    }
+
+    #ep-logo-fixe img {
+      display: block;
+      height: 52px;
+      width: auto;
+      max-width: min(300px, 44vw);
+      object-fit: contain;
+    }
+
+    @media (min-width: 981px) {
+      #ep-logo-fixe { top: 28px; }
+      #ep-logo-fixe img { height: 60px; }
+    }
+
+    @media (max-width: 620px) {
+      #ep-logo-fixe { top: 16px; left: 16px; }
+      #ep-logo-fixe img { height: 42px; max-width: min(210px, 58vw); }
+    }
+  </style>
 </head>
 
 <body class="landing-page" data-page="industrie-contribuer" data-cycle="industrie">
+
+  <!--
+    Logo fixe indépendant du moteur render-landing.js.
+    Positionné en fixed pour rester visible quelle que soit
+    la structure que le moteur JS injecte dans landing-root.
+  -->
+  <a id="ep-logo-fixe" href="/" aria-label="Scènes d'Arbitrage — accueil">
+    <img
+      src="/images/logo-scenes-transparent-no-baseline-v2.png"
+      alt="Scènes d'Arbitrage"
+      height="52"
+    >
+  </a>
+
   <main id="landing-root" class="landing-root" aria-live="polite">
     <section class="landing-loading">
       <div class="landing-loading__box">
@@ -43,10 +93,6 @@
 
       /* ── Configuration ─────────────────────────────────────────── */
 
-      var LOGO_SRC    = "/images/logo-scenes-transparent-no-baseline-v2.png";
-      var LOGO_ALT    = "Scènes d'Arbitrage";
-      var LOGO_HEIGHT = "56";   /* px — ajuster si le logo SVG a des proportions différentes */
-
       var TRIO_IMAGE_SRC = "/images/trio-journalistes.jpg?v=20260522";
       var TRIO_IMAGE_ALT = "Journalistes associés à Scènes d'Arbitrage";
       var JOURNALISTS = [
@@ -54,40 +100,6 @@
         { name: "G. Leclerc",  media: "La Tribune"   },
         { name: "T. Cabannes", media: "Le Figaro"    }
       ];
-
-      /* ── Logo ──────────────────────────────────────────────────── */
-
-      /*
-        render-landing.js injecte le bandeau avec un élément logo dont
-        la structure exacte (img, svg inline, span texte) n'est pas
-        connue ici. On remplace directement le contenu du .landing-brand
-        par une balise <img> avec les dimensions voulues, ce qui contourne
-        toute incertitude sur les classes ou l'élément généré.
-        On attend que le bandeau soit rendu avant d'intervenir.
-      */
-      function applyLogo() {
-        var brand = document.querySelector(".landing-top .landing-brand");
-        if (!brand) return false;
-        if (brand.dataset.logoApplied === "true") return true;
-
-        brand.innerHTML = "";
-
-        var img = document.createElement("img");
-        img.src    = LOGO_SRC;
-        img.alt    = LOGO_ALT;
-        img.height = LOGO_HEIGHT;
-        img.style.cssText = [
-          "display:block",
-          "height:" + LOGO_HEIGHT + "px",
-          "width:auto",
-          "max-width:min(320px,46vw)",
-          "object-fit:contain"
-        ].join(";");
-
-        brand.appendChild(img);
-        brand.dataset.logoApplied = "true";
-        return true;
-      }
 
       /* ── Trio journalistes ─────────────────────────────────────── */
 
@@ -103,11 +115,6 @@
           + '<div class="landing-film-trio" aria-label="Journalistes et médias">' + items + '</div>';
       }
 
-      /*
-        Injecte le trio statique dans .landing-film-track > div dès que
-        le moteur JS l'a créé, et supprime tous les éléments résiduels
-        de noms/médias que render-landing.js peut avoir injectés autour.
-      */
       function applyStaticJournalistsTrio() {
         var frame = document.querySelector(".landing-film-track > div");
         if (!frame) return false;
@@ -139,16 +146,10 @@
         if (observer) { observer.disconnect();        observer = null; }
       }
 
-      function applyAll() {
-        var logoOk = applyLogo();
-        var trioOk = applyStaticJournalistsTrio();
-        return logoOk && trioOk;
-      }
-
       /* Polling toutes les 150 ms, 40 tentatives max (= 6 secondes) */
       var attempts = 40;
       timer = window.setInterval(function () {
-        if (applyAll()) { onApplied(); return; }
+        if (applyStaticJournalistsTrio()) { onApplied(); return; }
         if (--attempts <= 0) { onApplied(); }
       }, 150);
 
@@ -156,7 +157,7 @@
       var root = document.getElementById("landing-root");
       if (root && "MutationObserver" in window) {
         observer = new MutationObserver(function () {
-          if (applyAll()) { onApplied(); }
+          if (applyStaticJournalistsTrio()) { onApplied(); }
         });
         observer.observe(root, { childList: true, subtree: true });
       }
