@@ -1944,7 +1944,7 @@
 
   function buildHeroMinimalSection(angle, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, cta, filmBlock) {
     const readingShort = readingDisplay(readingLabel || "lecture éditoriale");
-    const mediaCaption = buildHeroMediaCaption(angle);
+    // Bloc journaliste/média retiré du hero : la diffusion est déjà portée par le bloc cycle statique.
     const conversationText = heroConversationTitle(conversationLabel || "Conversation Scènes d'Arbitrage", angle);
 
     return `
@@ -1972,7 +1972,6 @@
               <div class="landing-hero-metrics landing-hero-metrics--three" aria-label="Repères clés de la proposition éditoriale">
                 ${buildHeroPersonCard(personName, personRole, organisationName)}
                 ${buildHeroMetricCard("Lecture proposée", readingShort, buildHeroReadingLine(readingLabel))}
-                ${mediaCaption}
                 ${buildHeroMetricCard("Échange éditorial", "15 minutes", "Vérifier l’angle, le périmètre de parole et l’intérêt de poursuivre.", "landing-hero-metric--accent")}
               </div>
             </aside>
