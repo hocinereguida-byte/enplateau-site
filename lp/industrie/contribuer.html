@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/layout.css?v=moteur-v6-cast-publicrefs-20260517-0610">
-  <link rel="stylesheet" href="/assets/css/landing.css?v=20260523-consolidated">
+  <link rel="stylesheet" href="/assets/css/landing.css?v=20260524-logo-trio-v2">
 </head>
 
 <body class="landing-page" data-page="industrie-contribuer" data-cycle="industrie">
@@ -40,13 +40,56 @@
 
   <script>
     (function () {
+
+      /* ── Configuration ─────────────────────────────────────────── */
+
+      var LOGO_SRC    = "/images/logo-scenes-transparent-no-baseline-v2.png";
+      var LOGO_ALT    = "Scènes d'Arbitrage";
+      var LOGO_HEIGHT = "56";   /* px — ajuster si le logo SVG a des proportions différentes */
+
       var TRIO_IMAGE_SRC = "/images/trio-journalistes.jpg?v=20260522";
       var TRIO_IMAGE_ALT = "Journalistes associés à Scènes d'Arbitrage";
       var JOURNALISTS = [
-        { name: "C. Pallée", media: "BFM Business" },
-        { name: "G. Leclerc", media: "La Tribune" },
-        { name: "T. Cabannes", media: "Le Figaro" }
+        { name: "C. Pallée",   media: "BFM Business" },
+        { name: "G. Leclerc",  media: "La Tribune"   },
+        { name: "T. Cabannes", media: "Le Figaro"    }
       ];
+
+      /* ── Logo ──────────────────────────────────────────────────── */
+
+      /*
+        render-landing.js injecte le bandeau avec un élément logo dont
+        la structure exacte (img, svg inline, span texte) n'est pas
+        connue ici. On remplace directement le contenu du .landing-brand
+        par une balise <img> avec les dimensions voulues, ce qui contourne
+        toute incertitude sur les classes ou l'élément généré.
+        On attend que le bandeau soit rendu avant d'intervenir.
+      */
+      function applyLogo() {
+        var brand = document.querySelector(".landing-top .landing-brand");
+        if (!brand) return false;
+        if (brand.dataset.logoApplied === "true") return true;
+
+        brand.innerHTML = "";
+
+        var img = document.createElement("img");
+        img.src    = LOGO_SRC;
+        img.alt    = LOGO_ALT;
+        img.height = LOGO_HEIGHT;
+        img.style.cssText = [
+          "display:block",
+          "height:" + LOGO_HEIGHT + "px",
+          "width:auto",
+          "max-width:min(320px,46vw)",
+          "object-fit:contain"
+        ].join(";");
+
+        brand.appendChild(img);
+        brand.dataset.logoApplied = "true";
+        return true;
+      }
+
+      /* ── Trio journalistes ─────────────────────────────────────── */
 
       function buildTrioMarkup() {
         var items = JOURNALISTS.map(function (item) {
@@ -61,21 +104,18 @@
       }
 
       /*
-        Injecte le trio dans .landing-film-track > div dès que le
-        moteur JS l'a créé. Retourne true si l'injection a eu lieu,
-        false si le conteneur n'existe pas encore ou est déjà traité.
-        Quand elle réussit, le setInterval et le MutationObserver
-        sont tous les deux arrêtés : il n'y a plus rien à surveiller.
+        Injecte le trio statique dans .landing-film-track > div dès que
+        le moteur JS l'a créé, et supprime tous les éléments résiduels
+        de noms/médias que render-landing.js peut avoir injectés autour.
       */
       function applyStaticJournalistsTrio() {
         var frame = document.querySelector(".landing-film-track > div");
-        if (!frame || frame.dataset.staticJournalistsTrio === "true") return false;
+        if (!frame) return false;
+        if (frame.dataset.staticJournalistsTrio === "true") return true;
 
         frame.innerHTML = buildTrioMarkup();
         frame.dataset.staticJournalistsTrio = "true";
 
-        /* Supprimer tous les éléments résiduels de noms/médias
-           que render-landing.js peut avoir injectés autour du film */
         [
           ".landing-film-caption",
           ".landing-film-overlay",
@@ -89,19 +129,26 @@
         return true;
       }
 
+      /* ── Orchestration ─────────────────────────────────────────── */
+
       var observer = null;
-      var timer = null;
+      var timer    = null;
 
       function onApplied() {
-        if (timer)    { window.clearInterval(timer);  timer    = null; }
-        if (observer) { observer.disconnect();         observer = null; }
+        if (timer)    { window.clearInterval(timer); timer    = null; }
+        if (observer) { observer.disconnect();        observer = null; }
+      }
+
+      function applyAll() {
+        var logoOk = applyLogo();
+        var trioOk = applyStaticJournalistsTrio();
+        return logoOk && trioOk;
       }
 
       /* Polling toutes les 150 ms, 40 tentatives max (= 6 secondes) */
       var attempts = 40;
       timer = window.setInterval(function () {
-        if (applyStaticJournalistsTrio()) { onApplied(); return; }
-        /* Après 40 tentatives sans résultat on abandonne proprement */
+        if (applyAll()) { onApplied(); return; }
         if (--attempts <= 0) { onApplied(); }
       }, 150);
 
@@ -109,10 +156,11 @@
       var root = document.getElementById("landing-root");
       if (root && "MutationObserver" in window) {
         observer = new MutationObserver(function () {
-          if (applyStaticJournalistsTrio()) { onApplied(); }
+          if (applyAll()) { onApplied(); }
         });
         observer.observe(root, { childList: true, subtree: true });
       }
+
     })();
   </script>
 
