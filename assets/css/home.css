@@ -4810,3 +4810,257 @@
 .home-dispositif-cards details summary {
   padding-right: 44px;
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   PATCH POSITIONS v2 — accordéons premium + hero statutaire
+   - s'applique uniquement à la home.
+   - conserve le mécanisme natif <details>/<summary>.
+   ═══════════════════════════════════════════════════════════ */
+
+.home-page .home-hero-cycle-note--table > span {
+  margin-bottom: 12px;
+  font-size: .58rem;
+  letter-spacing: .18em;
+  color: rgba(255,255,255,.60);
+}
+
+.home-page .home-hero-cycle-note--table > p {
+  max-width: 11.5ch;
+  margin-bottom: 22px;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.25vw, 1.9rem);
+  line-height: .98;
+  letter-spacing: -.035em;
+  color: #fffaf0;
+  text-wrap: balance;
+}
+
+.home-page .home-cycle-meta {
+  gap: 0;
+}
+
+.home-page .home-cycle-meta > div {
+  padding: 13px 0 12px;
+  border-top: 1px solid rgba(255,255,255,.16);
+}
+
+.home-page .home-cycle-meta dt {
+  margin-bottom: 6px;
+  font-size: .54rem;
+  letter-spacing: .145em;
+  color: rgba(255,255,255,.46);
+}
+
+.home-page .home-cycle-meta dd {
+  max-width: 29ch;
+  font-size: .76rem;
+  line-height: 1.42;
+  color: rgba(255,255,255,.82);
+}
+
+.home-page .home-positions {
+  background:
+    radial-gradient(circle at 78% 12%, rgba(255,255,255,.06), transparent 28%),
+    linear-gradient(180deg, rgba(10,10,10,.94), rgba(13,13,13,.98)),
+    url("../../images/positions-echequier.jpg") center/cover no-repeat;
+}
+
+.home-page .home-position-cards-v2 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.home-page .home-position-card-v2 {
+  position: relative;
+  min-height: 252px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.020)),
+    rgba(14,14,14,.90);
+  color: var(--h3-text);
+  overflow: hidden;
+}
+
+.home-page .home-position-card-v2:nth-child(1),
+.home-page .home-position-card-v2:nth-child(4),
+.home-page .home-position-card-v2:nth-child(7) {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.025)),
+    rgba(18,18,18,.95);
+}
+
+.home-page .home-position-card-v2[open] {
+  background: #f3eee4;
+  color: #171717;
+}
+
+.home-page .home-position-card-v2 summary {
+  position: relative;
+  min-height: 252px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0;
+  padding: clamp(22px, 2.1vw, 30px);
+  outline: none;
+}
+
+.home-page .home-position-card-v2 summary::-webkit-details-marker {
+  display: none;
+}
+
+.home-page .home-position-card-v2__index,
+.home-page .home-position-card-v2__label {
+  display: block;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+}
+
+.home-page .home-position-card-v2__index {
+  margin-bottom: 28px;
+  font-size: .58rem;
+  letter-spacing: .16em;
+  color: rgba(255,255,255,.42);
+}
+
+.home-page .home-position-card-v2__label {
+  margin-bottom: 10px;
+  font-size: .62rem;
+  line-height: 1.2;
+  letter-spacing: .16em;
+  color: var(--h3-accent-soft);
+}
+
+.home-page .home-position-card-v2 strong {
+  display: block;
+  max-width: 9.2ch;
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.2vw, 3.05rem);
+  line-height: .92;
+  letter-spacing: -.055em;
+  font-weight: 600;
+  color: inherit;
+  text-wrap: balance;
+}
+
+.home-page .home-position-card-v2 em {
+  display: block;
+  margin-top: auto;
+  max-width: 32ch;
+  font-family: var(--font-body);
+  font-size: .88rem;
+  line-height: 1.55;
+  font-style: normal;
+  color: rgba(255,255,255,.74);
+}
+
+.home-page .home-position-card-v2 i {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  opacity: .78;
+}
+
+.home-page .home-position-card-v2 i::before,
+.home-page .home-position-card-v2 i::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 13px;
+  height: 1px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+}
+
+.home-page .home-position-card-v2 i::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.home-page .home-position-card-v2[open] i::after {
+  opacity: 0;
+}
+
+.home-page .home-position-card-v2[open] .home-position-card-v2__index {
+  color: rgba(23,23,23,.42);
+}
+
+.home-page .home-position-card-v2[open] .home-position-card-v2__label {
+  color: var(--h3-accent-deep);
+}
+
+.home-page .home-position-card-v2[open] em {
+  color: rgba(23,23,23,.68);
+}
+
+.home-page .home-position-card-v2__body {
+  padding: 0 clamp(22px, 2.1vw, 30px) 30px;
+  margin-top: -10px;
+}
+
+.home-page .home-position-card-v2__body p {
+  max-width: 42ch;
+  margin: 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(23,23,23,.16);
+  font-size: .94rem;
+  line-height: 1.72;
+  color: rgba(23,23,23,.76);
+}
+
+@media (min-width: 981px) {
+  .home-page .home-position-card-v2:nth-child(1),
+  .home-page .home-position-card-v2:nth-child(8) {
+    grid-column: span 2;
+  }
+
+  .home-page .home-position-card-v2:nth-child(1) strong,
+  .home-page .home-position-card-v2:nth-child(8) strong {
+    max-width: 12ch;
+  }
+}
+
+@media (max-width: 1100px) {
+  .home-page .home-position-cards-v2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-page .home-position-card-v2:nth-child(1),
+  .home-page .home-position-card-v2:nth-child(8) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .home-page .home-position-cards-v2 {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .home-position-card-v2,
+  .home-page .home-position-card-v2 summary {
+    min-height: 220px;
+  }
+
+  .home-page .home-position-card-v2 strong {
+    max-width: 100%;
+    font-size: clamp(1.9rem, 11vw, 2.8rem);
+  }
+
+  .home-page .home-position-card-v2 em {
+    padding-right: 50px;
+  }
+
+  .home-page .home-cycle-meta dd {
+    max-width: none;
+  }
+}
