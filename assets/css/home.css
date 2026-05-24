@@ -4522,3 +4522,97 @@
   object-position: center center !important;
 }
 
+
+
+/* ═══════════════════════════════════════════════════════════
+   PATCH 20260524 — Home hero : studio vidéo + repères cycle
+   À utiliser avec le bloc .home-hero-media-row mis à jour.
+   ═══════════════════════════════════════════════════════════ */
+
+.home-page .home-hero-media-row--cycle {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+.home-page .home-film--studio {
+  min-height: 250px;
+  height: 100%;
+}
+
+.home-page .home-film--studio img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: grayscale(100%) contrast(112%) brightness(.68);
+  opacity: .86;
+  transform: none;
+}
+
+.home-page .home-hero-cycle-note--table {
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 20px 22px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.045);
+  color: rgba(255,255,255,.88);
+}
+
+.home-page .home-hero-cycle-note--table > span {
+  display: block;
+  margin: 0 0 10px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .62rem;
+  line-height: 1.25;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.56);
+}
+
+.home-page .home-hero-cycle-note--table > p {
+  margin: 0 0 16px;
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(1.02rem, 1.6vw, 1.25rem);
+  line-height: 1.2;
+  letter-spacing: -.018em;
+  color: #fffaf0;
+}
+
+.home-page .home-cycle-meta {
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.home-page .home-cycle-meta > div {
+  padding-top: 11px;
+  border-top: 1px solid rgba(255,255,255,.14);
+}
+
+.home-page .home-cycle-meta dt {
+  margin: 0 0 5px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .56rem;
+  line-height: 1.25;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.48);
+}
+
+.home-page .home-cycle-meta dd {
+  margin: 0;
+  font-size: .80rem;
+  line-height: 1.45;
+  color: rgba(255,255,255,.80);
+}
+
+@media (max-width: 980px) {
+  .home-page .home-hero-media-row--cycle {
+    grid-template-columns: 1fr;
+  }
+}
