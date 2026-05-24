@@ -5707,84 +5707,39 @@ body.landing-page .landing-film-trio__item em {
   }
 }
 
-/* ═══════════════════════════════════════════════════════════
-   CORRECTIFS VISUELS — 20260524
-   1. Logo : cibler img ET svg dans .landing-brand (SVG inline ou img)
-   2. Doublons noms journalistes : masquer les éléments résiduels
-      générés par render-landing.js quand le trio statique est actif
-   ═══════════════════════════════════════════════════════════ */
 
-/* 1 ── Logo : cible img et svg enfants directs du .landing-brand
-   layout.css impose img,svg { height: auto } avec spécificité 0,0,0,1
-   On utilise body.landing-page .landing-brand (0,1,1,0) pour gagner */
 
-body.landing-page .landing-top .landing-brand img,
-body.landing-page .landing-top .landing-brand svg,
-body.landing-page .landing-top .landing-brand .landing-brand-logo {
-  display: block;
-  height: 54px;
-  width: auto;
-  max-width: min(280px, 42vw);
-  object-fit: contain;
-  max-height: none;
+
+/* ══ Logo landing : texte typographié identique à la home ══════
+   render-landing.js injecte une img.landing-brand-logo (PNG 1.99MB
+   aux dimensions inadaptées) + un span.landing-brand-text en fallback.
+   On masque l'image et on affiche le span avec la même typographie
+   que .site-brand__wordmark défini dans layout.css.
+   ══════════════════════════════════════════════════════════════ */
+
+body.landing-page .landing-brand-logo {
+  display: none;
 }
 
-@media (min-width: 981px) {
-  body.landing-page .landing-top .landing-brand img,
-  body.landing-page .landing-top .landing-brand svg,
-  body.landing-page .landing-top .landing-brand .landing-brand-logo {
-    height: 64px;
-    max-width: 320px;
+body.landing-page .landing-brand-text {
+  display: inline-flex !important;
+  font-family: var(--font-display, "Playfair Display", Georgia, serif);
+  font-size: 1.95rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #fffaf6;
+  white-space: nowrap;
+}
+
+@media (max-width: 980px) {
+  body.landing-page .landing-brand-text {
+    font-size: 1.66rem;
   }
 }
 
 @media (max-width: 620px) {
-  body.landing-page .landing-top .landing-brand img,
-  body.landing-page .landing-top .landing-brand svg,
-  body.landing-page .landing-top .landing-brand .landing-brand-logo {
-    height: 44px;
-    max-width: min(220px, 58vw);
+  body.landing-page .landing-brand-text {
+    font-size: 1.38rem;
   }
-}
-
-/* 2 ── Masquer les éléments résiduels de noms/médias
-   quand le trio statique est actif (data-static-journalists-trio="true").
-   Le moteur JS peut laisser : .landing-film-caption, .landing-film-overlay,
-   .landing-hero-media-caption, .landing-hero-media-tag.
-   On les masque via le sélecteur du conteneur parent marqué. */
-
-/* landing-film-caption est un frère du landing-film-track :
-   on remonte au parent .landing-film pour cibler le caption suivant */
-body.landing-page .landing-film-track:has(> div[data-static-journalists-trio="true"]) ~ .landing-film-caption {
-  display: none;
-}
-
-/* Fallback si :has() non supporté : on masque toujours landing-film-caption
-   sur cette page car le trio statique la remplace systématiquement */
-body.landing-page .landing-film-caption {
-  display: none;
-}
-
-/* Masquer l'overlay résiduel si le div est déjà marqué trio
-   (ne devrait pas exister puisqu'on écrase innerHTML, mais par sécurité) */
-body.landing-page .landing-film-track > div[data-static-journalists-trio="true"] .landing-film-overlay {
-  display: none;
-}
-
-
-/* ══ Correctif logo fixe 20260524 ══════════════════════════
-   Le logo est injecté via #ep-logo-fixe (position:fixed).
-   Tout .landing-brand injecté par render-landing.js est masqué,
-   quelle que soit sa position dans le DOM.
-   .landing-top__inner est forcé à droite (margin-left:auto sur meta).
-   ══════════════════════════════════════════════════════════ */
-
-body.landing-page .landing-brand,
-body.landing-page .landing-top .landing-brand,
-body.landing-page .landing-top__inner .landing-brand {
-  display: none;
-}
-
-body.landing-page .landing-top__inner {
-  justify-content: flex-end;
 }
