@@ -16,15 +16,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/layout.css?v=moteur-v6-cast-publicrefs-20260517-0610">
-  <link rel="stylesheet" href="/assets/css/landing.css?v=20260524-logo-trio-v2">
+  <link rel="stylesheet" href="/assets/css/landing.css?v=20260524-logo-trio-v3">
 
   <!--
     Masquage préventif du .landing-brand injecté par render-landing.js.
     Le logo est remplacé par #ep-logo-fixe, élément indépendant positionné
-    en absolu sur le bandeau. Render-landing.js ne peut pas l'écraser.
+    en fixed. Render-landing.js ne peut pas l'écraser.
   -->
   <style>
-    body.landing-page .landing-top .landing-brand { display: none !important; }
+    /* Masquer le brand moteur quelle que soit sa position dans le DOM */
+    body.landing-page .landing-brand { display: none; }
+
+    /* Conteneur bandeau : pousser le meta à droite */
+    body.landing-page .landing-top__inner { justify-content: flex-end; }
 
     #ep-logo-fixe {
       position: fixed;
