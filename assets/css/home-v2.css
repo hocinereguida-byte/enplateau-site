@@ -4811,256 +4811,367 @@
   padding-right: 44px;
 }
 
+/* =========================================================
+   POSITIONS V2 — mots-clés éditoriaux + détail au survol/clic
+   Périmètre : section #positions-home uniquement.
+   Dépendance HTML : .home-position-matrix-v2 / .home-position-card-v2
+========================================================= */
 
-/* ═══════════════════════════════════════════════════════════
-   PATCH POSITIONS v2 — accordéons premium + hero statutaire
-   - s'applique uniquement à la home.
-   - conserve le mécanisme natif <details>/<summary>.
-   ═══════════════════════════════════════════════════════════ */
-
-.home-page .home-hero-cycle-note--table > span {
-  margin-bottom: 12px;
-  font-size: .58rem;
-  letter-spacing: .18em;
-  color: rgba(255,255,255,.60);
+:root {
+  --h3-position-keyword-font: "Cormorant Garamond", var(--font-display);
+  --h3-position-card-bg: rgba(255,255,255,.035);
+  --h3-position-card-bg-hover: rgba(255,255,255,.055);
+  --h3-position-card-line: rgba(255,255,255,.105);
+  --h3-position-card-line-strong: rgba(255,255,255,.20);
+  --h3-position-card-overlay: rgba(10,10,10,.92);
 }
 
-.home-page .home-hero-cycle-note--table > p {
-  max-width: 11.5ch;
-  margin-bottom: 22px;
-  font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2.25vw, 1.9rem);
-  line-height: .98;
-  letter-spacing: -.035em;
-  color: #fffaf0;
-  text-wrap: balance;
-}
-
-.home-page .home-cycle-meta {
-  gap: 0;
-}
-
-.home-page .home-cycle-meta > div {
-  padding: 13px 0 12px;
-  border-top: 1px solid rgba(255,255,255,.16);
-}
-
-.home-page .home-cycle-meta dt {
-  margin-bottom: 6px;
-  font-size: .54rem;
-  letter-spacing: .145em;
-  color: rgba(255,255,255,.46);
-}
-
-.home-page .home-cycle-meta dd {
-  max-width: 29ch;
-  font-size: .76rem;
-  line-height: 1.42;
-  color: rgba(255,255,255,.82);
-}
-
-.home-page .home-positions {
+.home-positions-v2 {
   background:
-    radial-gradient(circle at 78% 12%, rgba(255,255,255,.06), transparent 28%),
-    linear-gradient(180deg, rgba(10,10,10,.94), rgba(13,13,13,.98)),
-    url("../../images/positions-echequier.jpg") center/cover no-repeat;
+    radial-gradient(circle at 18% 10%, rgba(255,255,255,.075), transparent 28%),
+    radial-gradient(circle at 82% 82%, rgba(255,255,255,.045), transparent 30%),
+    linear-gradient(180deg, rgba(17,17,17,.94), rgba(17,17,17,.975)),
+    url("../../images/positions-echequier.jpg") center/cover no-repeat !important;
 }
 
-.home-page .home-position-cards-v2 {
+.home-positions-v2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255,255,255,.028) 1px, transparent 1px);
+  background-size: 25% 100%, 100% 50%;
+  opacity: .55;
+  pointer-events: none;
+}
+
+.home-positions-v2::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.36)),
+    radial-gradient(circle at center, transparent 0%, rgba(0,0,0,.28) 78%);
+  pointer-events: none;
+}
+
+.home-positions-v2 .home-container {
+  position: relative;
+  z-index: 2;
+}
+
+.home-positions-v2__head {
+  margin-bottom: clamp(34px, 4.4vw, 54px) !important;
+}
+
+.home-positions-v2 .home-head h2 {
+  max-width: 22ch !important;
+}
+
+.home-positions-v2 .home-head p {
+  max-width: 72ch !important;
+  padding: 18px 24px !important;
+  background: rgba(255,255,255,.035) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  color: rgba(255,255,255,.78) !important;
+  backdrop-filter: blur(8px);
+}
+
+.home-position-matrix-v2 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.12);
+  max-width: 1120px;
+  margin: 0 auto;
+  background: var(--h3-position-card-line);
+  border: 1px solid var(--h3-position-card-line);
 }
 
-.home-page .home-position-card-v2 {
+.home-position-card-v2 {
   position: relative;
-  min-height: 252px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.020)),
-    rgba(14,14,14,.90);
+  min-height: 286px;
+  margin: 0;
+  background: var(--h3-position-card-bg);
   color: var(--h3-text);
   overflow: hidden;
+  transition:
+    background-color .28s ease,
+    transform .28s ease,
+    box-shadow .28s ease;
+  isolation: isolate;
 }
 
-.home-page .home-position-card-v2:nth-child(1),
-.home-page .home-position-card-v2:nth-child(4),
-.home-page .home-position-card-v2:nth-child(7) {
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.025)),
-    rgba(18,18,18,.95);
+.home-position-card-v2::before {
+  content: attr(data-index);
+  position: absolute;
+  right: 18px;
+  bottom: 12px;
+  z-index: -1;
+  font-family: var(--font-mono);
+  font-size: clamp(3rem, 5vw, 5.8rem);
+  line-height: 1;
+  letter-spacing: -.08em;
+  color: rgba(255,255,255,.035);
+  pointer-events: none;
 }
 
-.home-page .home-position-card-v2[open] {
-  background: #f3eee4;
-  color: #171717;
+.home-position-card-v2:hover,
+.home-position-card-v2:focus-within,
+.home-position-card-v2[open] {
+  background: var(--h3-position-card-bg-hover);
+  box-shadow: inset 0 0 0 1px var(--h3-position-card-line-strong);
 }
 
-.home-page .home-position-card-v2 summary {
+.home-position-card-v2 summary {
   position: relative;
-  min-height: 252px;
-  cursor: pointer;
-  list-style: none;
+  min-height: 286px;
+  padding: clamp(22px, 2.4vw, 30px);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 0;
-  padding: clamp(22px, 2.1vw, 30px);
+  cursor: pointer;
+  list-style: none;
   outline: none;
 }
 
-.home-page .home-position-card-v2 summary::-webkit-details-marker {
+.home-position-card-v2 summary::-webkit-details-marker {
   display: none;
 }
 
-.home-page .home-position-card-v2__index,
-.home-page .home-position-card-v2__label {
-  display: block;
+.home-position-card-v2__label {
+  display: inline-flex;
+  max-width: calc(100% - 40px);
+  margin-bottom: 22px;
   font-family: var(--font-mono);
-  text-transform: uppercase;
-}
-
-.home-page .home-position-card-v2__index {
-  margin-bottom: 28px;
   font-size: .58rem;
+  line-height: 1.35;
   letter-spacing: .16em;
-  color: rgba(255,255,255,.42);
+  text-transform: uppercase;
+  color: rgba(255,255,255,.58);
 }
 
-.home-page .home-position-card-v2__label {
-  margin-bottom: 10px;
-  font-size: .62rem;
-  line-height: 1.2;
-  letter-spacing: .16em;
-  color: var(--h3-accent-soft);
-}
-
-.home-page .home-position-card-v2 strong {
+.home-position-card-v2__keyword {
   display: block;
-  max-width: 9.2ch;
-  margin: 0 0 16px;
-  font-family: var(--font-display);
-  font-size: clamp(1.9rem, 3.2vw, 3.05rem);
-  line-height: .92;
+  margin: auto 0 12px;
+  font-family: var(--h3-position-keyword-font);
+  font-size: clamp(2.65rem, 4.35vw, 4.95rem);
+  line-height: .82;
   letter-spacing: -.055em;
   font-weight: 600;
-  color: inherit;
+  color: rgba(255,255,255,.96);
   text-wrap: balance;
+  transform: translateX(-2px);
+  transition:
+    opacity .28s ease,
+    transform .28s ease,
+    filter .28s ease;
 }
 
-.home-page .home-position-card-v2 em {
+.home-position-card-v2--long .home-position-card-v2__keyword {
+  font-size: clamp(2.15rem, 3.45vw, 3.85rem);
+  letter-spacing: -.065em;
+}
+
+.home-position-card-v2__line {
   display: block;
-  margin-top: auto;
-  max-width: 32ch;
-  font-family: var(--font-body);
-  font-size: .88rem;
-  line-height: 1.55;
-  font-style: normal;
-  color: rgba(255,255,255,.74);
+  max-width: 24ch;
+  min-height: 3.4em;
+  font-family: var(--font-display);
+  font-size: clamp(.98rem, 1.1vw, 1.12rem);
+  line-height: 1.22;
+  letter-spacing: -.012em;
+  font-weight: 600;
+  color: rgba(255,255,255,.86);
+  text-wrap: balance;
+  transition:
+    opacity .28s ease,
+    transform .28s ease;
 }
 
-.home-page .home-position-card-v2 i {
+.home-position-card-v2__toggle {
   position: absolute;
-  right: 22px;
-  bottom: 22px;
-  width: 34px;
-  height: 34px;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-  opacity: .78;
+  top: 22px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,.88);
 }
 
-.home-page .home-position-card-v2 i::before,
-.home-page .home-position-card-v2 i::after {
+.home-position-card-v2__toggle::before {
+  content: "+";
+  font-family: var(--font-body);
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.home-position-card-v2[open] .home-position-card-v2__toggle::before {
+  content: "−";
+}
+
+.home-position-card-v2__hovertext {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(24px, 2.6vw, 32px);
+  font-family: var(--font-body);
+  font-size: .9rem;
+  line-height: 1.72;
+  color: rgba(255,255,255,.82);
+  background:
+    linear-gradient(180deg, rgba(10,10,10,.76), var(--h3-position-card-overlay)),
+    radial-gradient(circle at 18% 12%, rgba(255,255,255,.10), transparent 30%);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition:
+    opacity .28s ease,
+    transform .28s ease;
+}
+
+.home-position-card-v2__hovertext::before {
   content: "";
   position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 13px;
+  left: clamp(24px, 2.6vw, 32px);
+  right: clamp(24px, 2.6vw, 32px);
+  top: 24px;
   height: 1px;
-  background: currentColor;
-  transform: translate(-50%, -50%);
+  background: rgba(255,255,255,.18);
 }
 
-.home-page .home-position-card-v2 i::after {
-  transform: translate(-50%, -50%) rotate(90deg);
+.home-position-card-v2:hover .home-position-card-v2__hovertext,
+.home-position-card-v2:focus-within .home-position-card-v2__hovertext,
+.home-position-card-v2[open] .home-position-card-v2__hovertext {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.home-page .home-position-card-v2[open] i::after {
-  opacity: 0;
+.home-position-card-v2:hover .home-position-card-v2__keyword,
+.home-position-card-v2:focus-within .home-position-card-v2__keyword,
+.home-position-card-v2[open] .home-position-card-v2__keyword,
+.home-position-card-v2:hover .home-position-card-v2__line,
+.home-position-card-v2:focus-within .home-position-card-v2__line,
+.home-position-card-v2[open] .home-position-card-v2__line {
+  opacity: .24;
+  filter: blur(1px);
 }
 
-.home-page .home-position-card-v2[open] .home-position-card-v2__index {
-  color: rgba(23,23,23,.42);
+.home-position-card-v2__panel {
+  display: none;
 }
 
-.home-page .home-position-card-v2[open] .home-position-card-v2__label {
-  color: var(--h3-accent-deep);
+.home-position-v2-note {
+  max-width: 72ch;
+  margin: 26px auto 0;
+  font-family: var(--font-mono);
+  font-size: .66rem;
+  line-height: 1.68;
+  letter-spacing: .015em;
+  text-align: center;
+  color: rgba(255,255,255,.52);
 }
 
-.home-page .home-position-card-v2[open] em {
-  color: rgba(23,23,23,.68);
-}
-
-.home-page .home-position-card-v2__body {
-  padding: 0 clamp(22px, 2.1vw, 30px) 30px;
-  margin-top: -10px;
-}
-
-.home-page .home-position-card-v2__body p {
-  max-width: 42ch;
-  margin: 0;
-  padding-top: 18px;
-  border-top: 1px solid rgba(23,23,23,.16);
-  font-size: .94rem;
-  line-height: 1.72;
-  color: rgba(23,23,23,.76);
-}
-
-@media (min-width: 981px) {
-  .home-page .home-position-card-v2:nth-child(1),
-  .home-page .home-position-card-v2:nth-child(8) {
-    grid-column: span 2;
-  }
-
-  .home-page .home-position-card-v2:nth-child(1) strong,
-  .home-page .home-position-card-v2:nth-child(8) strong {
-    max-width: 12ch;
-  }
-}
-
-@media (max-width: 1100px) {
-  .home-page .home-position-cards-v2 {
+/* Desktop intermédiaire */
+@media (max-width: 1180px) {
+  .home-position-matrix-v2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .home-page .home-position-card-v2:nth-child(1),
-  .home-page .home-position-card-v2:nth-child(8) {
-    grid-column: auto;
+  .home-position-card-v2,
+  .home-position-card-v2 summary {
+    min-height: 250px;
+  }
+
+  .home-position-card-v2__keyword,
+  .home-position-card-v2--long .home-position-card-v2__keyword {
+    font-size: clamp(2.65rem, 7vw, 4.85rem);
   }
 }
 
-@media (max-width: 680px) {
-  .home-page .home-position-cards-v2 {
+/* Tablette / mobile : clic au lieu du survol */
+@media (max-width: 760px), (hover: none) {
+  .home-position-matrix-v2 {
     grid-template-columns: 1fr;
+    background: rgba(255,255,255,.10);
   }
 
-  .home-page .home-position-card-v2,
-  .home-page .home-position-card-v2 summary {
-    min-height: 220px;
+  .home-position-card-v2,
+  .home-position-card-v2 summary {
+    min-height: 0;
   }
 
-  .home-page .home-position-card-v2 strong {
-    max-width: 100%;
-    font-size: clamp(1.9rem, 11vw, 2.8rem);
+  .home-position-card-v2 summary {
+    padding: 24px 22px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 36px;
+    gap: 10px 16px;
   }
 
-  .home-page .home-position-card-v2 em {
-    padding-right: 50px;
+  .home-position-card-v2__label,
+  .home-position-card-v2__keyword,
+  .home-position-card-v2__line {
+    grid-column: 1 / 2;
   }
 
-  .home-page .home-cycle-meta dd {
-    max-width: none;
+  .home-position-card-v2__label {
+    margin-bottom: 6px;
+  }
+
+  .home-position-card-v2__keyword,
+  .home-position-card-v2--long .home-position-card-v2__keyword {
+    margin: 0;
+    font-size: clamp(2.65rem, 13vw, 4.15rem);
+    line-height: .88;
+  }
+
+  .home-position-card-v2__line {
+    max-width: 28ch;
+    min-height: 0;
+    font-size: 1rem;
+    line-height: 1.28;
+  }
+
+  .home-position-card-v2__toggle {
+    position: static;
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    align-self: center;
+    justify-self: end;
+  }
+
+  .home-position-card-v2__hovertext {
+    display: none;
+  }
+
+  .home-position-card-v2:hover .home-position-card-v2__keyword,
+  .home-position-card-v2:focus-within .home-position-card-v2__keyword,
+  .home-position-card-v2[open] .home-position-card-v2__keyword,
+  .home-position-card-v2:hover .home-position-card-v2__line,
+  .home-position-card-v2:focus-within .home-position-card-v2__line,
+  .home-position-card-v2[open] .home-position-card-v2__line {
+    opacity: 1;
+    filter: none;
+  }
+
+  .home-position-card-v2__panel {
+    display: block;
+    padding: 0 22px 24px;
+  }
+
+  .home-position-card-v2__panel p {
+    margin: 0;
+    max-width: 56ch;
+    font-size: .92rem;
+    line-height: 1.72;
+    color: rgba(255,255,255,.74);
+  }
+
+  .home-position-v2-note {
+    text-align: left;
   }
 }
