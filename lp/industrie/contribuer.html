@@ -16,83 +16,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/layout.css?v=moteur-v6-cast-publicrefs-20260517-0610">
-  <link rel="stylesheet" href="/assets/css/landing.css?v=20260524-logo-trio-v4">
-
-  <style>
-    /* Masquer le .landing-brand injecté par render-landing.js */
-    body.landing-page .landing-brand { display: none; }
-
-    /* Pousser le meta à droite quand le brand est absent du flux */
-    body.landing-page .landing-top__inner { justify-content: flex-end; }
-
-    /* ── Logo fixe : reproduit la typographie du site ── */
-    #ep-logo-fixe {
-      position: fixed;
-      z-index: 9999;
-      top: 0;
-      left: max(20px, calc(50vw - 660px));
-      height: 78px; /* même hauteur que .site-header sur desktop */
-      display: flex;
-      align-items: center;
-      pointer-events: auto;
-      text-decoration: none;
-    }
-
-    #ep-logo-fixe .ep-logo-wordmark {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-      gap: 3px;
-    }
-
-    #ep-logo-fixe .ep-logo-line1 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 1.95rem;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-      color: #fffaf6;
-      white-space: nowrap;
-    }
-
-    #ep-logo-fixe .ep-logo-line2 {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.52rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      color: rgba(255, 250, 246, 0.62);
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    @media (max-width: 980px) {
-      #ep-logo-fixe { height: 64px; }
-      #ep-logo-fixe .ep-logo-line1 { font-size: 1.66rem; }
-    }
-
-    @media (max-width: 620px) {
-      #ep-logo-fixe {
-        left: 16px;
-        height: 56px;
-      }
-      #ep-logo-fixe .ep-logo-line1 { font-size: 1.38rem; }
-      #ep-logo-fixe .ep-logo-line2 { font-size: 0.46rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/css/landing.css?v=20260524-static-template-v1">
 </head>
 
 <body class="landing-page" data-page="industrie-contribuer" data-cycle="industrie">
 
-  <!--
-    Logo fixe indépendant de render-landing.js.
-    Reproduit la typographie du header principal du site.
-    Render-landing.js ne touche que #landing-root : cet élément est hors de portée.
-  -->
-  <a id="ep-logo-fixe" href="/" aria-label="Scènes d'Arbitrage — accueil">
-    <span class="ep-logo-wordmark">
-      <span class="ep-logo-line1">[ Scènes ]</span>
-      <span class="ep-logo-line2">d'Arbitrage</span>
-    </span>
-  </a>
+  <header class="landing-static-header">
+    <a href="/" aria-label="Scènes d'Arbitrage — accueil">
+      <img src="/images/logo-scenes-transparent-no-baseline-v2.png" alt="Scènes d'Arbitrage" class="landing-static-logo">
+    </a>
+  </header>
+
+  <template id="landing-static-journalists-trio">
+    <img src="/images/trio-journalistes.jpg?v=20260522" alt="Journalistes associés à Scènes d'Arbitrage" class="landing-film-trio__image">
+    <div class="landing-film-trio" aria-label="Journalistes et médias">
+      <span class="landing-film-trio__item">
+        <strong>C. Pallée</strong>
+        <em>BFM Business</em>
+      </span>
+      <span class="landing-film-trio__item">
+        <strong>G. Leclerc</strong>
+        <em>La Tribune</em>
+      </span>
+      <span class="landing-film-trio__item">
+        <strong>T. Cabannes</strong>
+        <em>Le Figaro</em>
+      </span>
+    </div>
+  </template>
 
   <main id="landing-root" class="landing-root" aria-live="polite">
     <section class="landing-loading">
@@ -108,83 +59,9 @@
   </main>
 
 <script src="/assets/js/editorial-data-industrie-v67.js?v=20260521-js1"></script>
-<script src="/assets/js/editorial-data-industrie-enrichments.js?v=20260521-js1"></script>
+<script src="/assets/js/editorial-data-industrie-enrichments.js?v=20260524-argon-v1"></script>
 <script src="/assets/js/render-core.js?v=20260521-js1"></script>
-<script src="/assets/js/render-landing.js?v=20260521-js1"></script>
-
-  <script>
-    (function () {
-
-      /* ── Configuration ─────────────────────────────────────────── */
-
-      var TRIO_IMAGE_SRC = "/images/trio-journalistes.jpg?v=20260522";
-      var TRIO_IMAGE_ALT = "Journalistes associés à Scènes d'Arbitrage";
-      var JOURNALISTS = [
-        { name: "C. Pallée",   media: "BFM Business" },
-        { name: "G. Leclerc",  media: "La Tribune"   },
-        { name: "T. Cabannes", media: "Le Figaro"    }
-      ];
-
-      /* ── Trio journalistes ─────────────────────────────────────── */
-
-      function buildTrioMarkup() {
-        var items = JOURNALISTS.map(function (item) {
-          return '<span class="landing-film-trio__item">'
-            + '<strong>' + item.name + '</strong>'
-            + '<em>' + item.media + '</em>'
-            + '</span>';
-        }).join("");
-        return '<img src="' + TRIO_IMAGE_SRC + '" alt="' + TRIO_IMAGE_ALT + '" class="landing-film-trio__image">'
-          + '<div class="landing-film-trio" aria-label="Journalistes et médias">' + items + '</div>';
-      }
-
-      function applyStaticJournalistsTrio() {
-        var frame = document.querySelector(".landing-film-track > div");
-        if (!frame) return false;
-        if (frame.dataset.staticJournalistsTrio === "true") return true;
-
-        frame.innerHTML = buildTrioMarkup();
-        frame.dataset.staticJournalistsTrio = "true";
-
-        [
-          ".landing-film-caption",
-          ".landing-film-overlay",
-          ".landing-hero-media-caption",
-          ".landing-hero-media-tag"
-        ].forEach(function (sel) {
-          var el = document.querySelector(sel);
-          if (el) el.remove();
-        });
-
-        return true;
-      }
-
-      /* ── Orchestration ─────────────────────────────────────────── */
-
-      var observer = null;
-      var timer    = null;
-
-      function onApplied() {
-        if (timer)    { window.clearInterval(timer); timer    = null; }
-        if (observer) { observer.disconnect();        observer = null; }
-      }
-
-      var attempts = 40;
-      timer = window.setInterval(function () {
-        if (applyStaticJournalistsTrio()) { onApplied(); return; }
-        if (--attempts <= 0) { onApplied(); }
-      }, 150);
-
-      var root = document.getElementById("landing-root");
-      if (root && "MutationObserver" in window) {
-        observer = new MutationObserver(function () {
-          if (applyStaticJournalistsTrio()) { onApplied(); }
-        });
-        observer.observe(root, { childList: true, subtree: true });
-      }
-
-    })();
-  </script>
+<script src="/assets/js/render-landing.js?v=20260524-static-template-v1"></script>
 
   <noscript>
     <section class="landing-loading">
