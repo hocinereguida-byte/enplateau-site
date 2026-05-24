@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/home.css?v=20260524-studio-overlay-bento-v1">
+  <link rel="stylesheet" href="assets/css/home.css?v=20260524-hero-accordions-clean">
 </head>
 
 <body class="home-page">
@@ -64,11 +64,11 @@
                     <dd>Jusqu’à décembre 2026</dd>
                   </div>
                   <div>
-                    <dt>Journalistes</dt>
+                    <dt>Journalistes associés</dt>
                     <dd>Christophe Pallée · Gilles Leclerc · Thierry Cabannes</dd>
                   </div>
                   <div>
-                    <dt>Diffusion à partir de septembre 2026</dt>
+                    <dt>Diffusion progressive dès septembre 2026</dt>
                     <dd>BFM Business · La Tribune · Le Figaro</dd>
                   </div>
                 </dl>
@@ -84,7 +84,7 @@
             </div>
 
             <p class="home-hero-small home-hero-small--right">
-              Sans engagement, cet échange permet de définir les contours et la portée de votre éventuelle contribution.
+              Un échange court permet de vérifier l’intérêt éditorial, les conditions de prise de parole et le bon niveau de cadrage.
             </p>
           </aside>
         </div>
@@ -102,38 +102,33 @@
         </div>
 
         <div class="home-principles-grid" aria-label="Principes du dispositif Scènes d'Arbitrage">
-          <article class="home-principle-card home-principle-card--wide">
-            <span>01 · Angle qualifié</span>
-            <h3>La bonne question avant la bonne personne.</h3>
+          <details class="home-principle-card home-principle-card--wide" open>
+            <summary><span>01 · Angle qualifié</span><h3>La bonne question avant la bonne personne.</h3></summary>
             <p>Une contribution part d’un angle limité et contextualisé : assez précis pour éviter le discours général, assez ouvert pour éclairer une question que d’autres acteurs rencontrent aussi.</p>
-          </article>
+          </details>
 
-          <article class="home-principle-card">
-            <span>02 · Lecture située</span>
-            <h3>Une parole depuis une position identifiable.</h3>
+          <details class="home-principle-card">
+            <summary><span>02 · Lecture située</span><h3>Une parole depuis une position identifiable.</h3></summary>
             <p>Une position n’est pas une fonction affichée. C’est le point d’observation qu’une personne peut porter parce qu’elle vit, arbitre, finance, sécurise, exécute ou accompagne le sujet.</p>
-          </article>
+          </details>
 
-          <article class="home-principle-card">
-            <span>03 · Cadre éditorial</span>
-            <h3>Ce qui peut être rendu public. Ce qui doit rester hors champ.</h3>
+          <details class="home-principle-card">
+            <summary><span>03 · Cadre éditorial</span><h3>Ce qui peut être rendu public. Ce qui doit rester hors champ.</h3></summary>
             <p>Le périmètre se travaille avant toute production : sujet, limites, exemples possibles, équipes à associer, niveau de précision et forme finale.</p>
-          </article>
+          </details>
 
-          <article class="home-principle-card home-principle-card--dark">
-            <span>04 · Mise en regard</span>
-            <h3>Plusieurs lectures pour comprendre un même enjeu.</h3>
+          <details class="home-principle-card home-principle-card--dark">
+            <summary><span>04 · Mise en regard</span><h3>Plusieurs lectures pour comprendre un même enjeu.</h3></summary>
             <p>Chaque contribution éclaire une partie du sujet. Leur rapprochement fait apparaître les arbitrages, les dépendances et les conditions qui donnent du relief à la trajectoire.</p>
-          </article>
+          </details>
 
-          <article class="home-principle-card home-principle-card--cta">
-            <span>Passer du principe aux conversations</span>
-            <h3>Voir comment une même question se construit à travers plusieurs lectures.</h3>
+          <details class="home-principle-card home-principle-card--cta">
+            <summary><span>Passer du principe aux conversations</span><h3>Voir comment une même question se construit à travers plusieurs lectures.</h3></summary>
             <p>
               Chaque cycle décline ces principes dans des conversations, des contextes et des angles précis. Les positions y sont limitées, situées et mises en regard pour faire apparaître ce qu’un seul point de vue ne permet pas de voir.
             </p>
             <a href="conversations.html">Explorer les conversations</a>
-          </article>
+          </details>
         </div>
       </div>
     </section>
@@ -145,25 +140,27 @@
           <div class="home-decision-copy">
             <h2>Transformer un moment d’arbitrage en lecture partageable.</h2>
 
-            <div>
-              <h3>Repérer le seuil de décision</h3>
-              <p>
-                Une activité croît, un projet avance, une transformation s’accélère. Le même phénomène ne se lit plus de la même manière lorsque les ressources, le financement, l’exécution, le droit, les compétences, le marché ou le territoire changent de poids.
-              </p>
-            </div>
+            <div class="home-decision-accordion" aria-label="Rôle éditorial du dispositif">
+              <details open>
+                <summary>Repérer le seuil de décision</summary>
+                <p>
+                  Une activité croît, un projet avance, une transformation s’accélère. Le même phénomène ne se lit plus de la même manière lorsque les ressources, le financement, l’exécution, le droit, les compétences, le marché ou le territoire changent de poids.
+                </p>
+              </details>
 
-            <div>
-              <h3>Clarifier l’arbitrage structurant</h3>
-              <p>
-                L’enjeu est d’identifier ce qui doit être priorisé, coordonné, financé, sécurisé ou rééquilibré pour continuer à avancer sans perdre la ligne. La contribution ne commente pas une transformation ; elle rend lisible ce qu’elle oblige à arbitrer.
-              </p>
-            </div>
+              <details>
+                <summary>Clarifier l’arbitrage structurant</summary>
+                <p>
+                  L’enjeu est d’identifier ce qui doit être priorisé, coordonné, financé, sécurisé ou rééquilibré pour continuer à avancer sans perdre la ligne. La contribution ne commente pas une transformation ; elle rend lisible ce qu’elle oblige à arbitrer.
+                </p>
+              </details>
 
-            <div>
-              <h3>Construire une lecture transmissible</h3>
-              <p>
-                À partir d’une expérience réelle, Scènes d'Arbitrage aide à formuler une parole utile, précise et publiquement tenable, sans exposer ce qui doit rester hors champ. Cette lecture peut ensuite circuler auprès des bons interlocuteurs.
-              </p>
+              <details>
+                <summary>Construire une lecture transmissible</summary>
+                <p>
+                  À partir d’une expérience réelle, Scènes d'Arbitrage aide à formuler une parole utile, précise et publiquement tenable, sans exposer ce qui doit rester hors champ. Cette lecture peut ensuite circuler auprès des bons interlocuteurs.
+                </p>
+              </details>
             </div>
           </div>
         </div>
@@ -232,51 +229,115 @@
       <div class="home-container">
         <div class="home-head">
           <div class="home-kicker">Positions éditoriales</div>
-          <h2>Chaque position éclaire une part différente de la trajectoire.</h2>
+          <h2>Des lectures situées pour faire apparaître ce qu’un seul point de vue ne montre pas.</h2>
           <p>
-            Une position n’est pas seulement une fonction ou un métier. C’est une lecture située : ce qu’un intervenant permet de comprendre depuis sa place, son expérience et son niveau de responsabilité.
+            Chaque position part d’un angle précis et d’un point d’observation identifiable. Cliquez sur une lecture pour ouvrir le niveau de détail : ce qu’elle éclaire, ce qu’elle rend discutable et ce qu’elle permet de partager.
           </p>
         </div>
 
-        <div class="home-position-lines">
-          <details open>
-            <summary><span>Stratégie</span><strong>Identifier les seuils où une trajectoire industrielle change de nature.</strong></summary>
-            <p>Cette lecture aide à comprendre les moments où produire, investir, préserver un cap ou réorganiser ne relève plus seulement du pilotage courant. Elle rend lisibles les arbitrages de direction qui structurent la trajectoire industrielle.</p>
+        <div class="home-position-cards" aria-label="Lectures éditoriales possibles">
+          <details class="home-position-card">
+            <summary>
+              <span class="home-position-card__index">01</span>
+              <span class="home-position-card__label">Stratégie</span>
+              <strong>Seuils de trajectoire</strong>
+              <em>Identifier le moment où une trajectoire industrielle change de nature.</em>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="home-position-card__body">
+              <p>Cette lecture met en forme les arbitrages de direction : préserver un cap, produire davantage, réorganiser, investir ou renoncer. Elle rend visible le moment où le pilotage courant ne suffit plus.</p>
+            </div>
           </details>
 
-          <details>
-            <summary><span>Finance</span><strong>Rendre visibles les arbitrages économiques qui ne peuvent plus être différés.</strong></summary>
-            <p>La lecture financière éclaire les conditions de soutenabilité : investissement, niveau d’exposition, coût différé, financement, cash-flow, marges de manœuvre. Elle ne décrit pas des résultats ; elle montre comment une transformation devient économiquement tenable.</p>
+          <details class="home-position-card">
+            <summary>
+              <span class="home-position-card__index">02</span>
+              <span class="home-position-card__label">Finance</span>
+              <strong>Conditions économiques</strong>
+              <em>Rendre visibles les arbitrages qui ne peuvent plus être différés.</em>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="home-position-card__body">
+              <p>La lecture financière éclaire la soutenabilité : investissement, exposition, cash-flow, marges de manœuvre, coût du retard ou coût de l’inaction. Elle montre comment une transformation devient tenable économiquement.</p>
+            </div>
           </details>
 
-          <details>
-            <summary><span>Droit</span><strong>Sécuriser le cadre avant l’exposition publique.</strong></summary>
-            <p>Cette lecture montre quand le droit, la conformité, les responsabilités, les normes ou les contrats cessent d’être un arrière-plan pour devenir des conditions concrètes de décision. Elle permet de cadrer une parole utile sans exposer de dossiers sensibles.</p>
+          <details class="home-position-card">
+            <summary>
+              <span class="home-position-card__index">03</span>
+              <span class="home-position-card__label">Droit</span>
+              <strong>Cadre sécurisé</strong>
+              <em>Comprendre quand le droit devient une condition réelle de décision.</em>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="home-position-card__body">
+              <p>Contrats, responsabilités, normes, conformité ou contentieux potentiels peuvent structurer le champ du possible. Cette lecture aide à cadrer une parole utile sans exposer de dossiers sensibles.</p>
+            </div>
           </details>
 
-          <details>
-            <summary><span>Opérations</span><strong>Lire la trajectoire depuis l’exécution réelle.</strong></summary>
-            <p>La lecture opérationnelle rend visibles les arbitrages de capacité, qualité, flux, maintenance, supply chain et organisation. Elle montre ce qui permet à l’activité de tenir dans des conditions concrètes, sans réduire le sujet à un cas interne.</p>
+          <details class="home-position-card">
+            <summary>
+              <span class="home-position-card__index">04</span>
+              <span class="home-position-card__label">Opérations</span>
+              <strong>Exécution réelle</strong>
+              <em>Lire la trajectoire depuis ce qui tient — ou ne tient plus — sur le terrain.</em>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="home-position-card__body">
+              <p>Capacité, qualité, flux, maintenance, supply chain, délais et organisation révèlent les conditions concrètes de la transformation. Cette lecture évite le discours abstrait en partant de l’exécution.</p>
+            </div>
           </details>
 
-          <details>
-            <summary><span>Compétences</span><strong>Faire reconnaître les collectifs comme condition de transformation.</strong></summary>
-            <p>Cette lecture éclaire les conditions de recrutement, de savoir-faire, de transmission, d’organisation du travail et de temps d’adaptation. Elle montre que les compétences ne sont pas une variable d’ajustement, mais une condition industrielle.</p>
+          <details class="home-position-card">
+            <summary>
+              <span class="home-position-card__index">05</span>
+              <span class="home-position-card__label">Compétences</span>
+              <strong>Collectifs et métiers</strong>
+              <em>Faire reconnaître les savoir-faire comme condition de transformation.</em>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="home-position-card__body">
+              <p>Recrutement, transmission, organisation du travail, gestes professionnels, temps d’apprentissage et collectifs ne sont pas des variables d’ajustement. Ils conditionnent la trajectoire industrielle.</p>
+            </div>
           </details>
 
-          <details>
-            <summary><span>Énergie &amp; ressources</span><strong>Faire apparaître les conditions matérielles de la continuité industrielle.</strong></summary>
-            <p>Énergie, eau, matières, infrastructures techniques, carbone et utilités deviennent parfois des critères directs de décision. Cette lecture les aborde comme conditions de continuité, d’investissement ou d’évolution, et non comme un simple discours RSE.</p>
+          <details class="home-position-card">
+            <summary>
+              <span class="home-position-card__index">06</span>
+              <span class="home-position-card__label">Énergie &amp; ressources</span>
+              <strong>Continuité matérielle</strong>
+              <em>Faire apparaître ce qui rend l’activité possible dans la durée.</em>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="home-position-card__body">
+              <p>Énergie, eau, matières, infrastructures techniques, carbone et utilités deviennent parfois des critères directs d’investissement, de continuité ou de réarbitrage industriel.</p>
+            </div>
           </details>
 
-          <details>
-            <summary><span>Technologie &amp; systèmes</span><strong>Montrer quand les systèmes deviennent des conditions de pilotage.</strong></summary>
-            <p>Données, automatismes, interfaces, architecture technique, OT/IT ou outils numériques cessent parfois d’être une couche ajoutée. Ils deviennent des conditions de décision, de coordination, de capacité ou de passage à l’échelle.</p>
+          <details class="home-position-card">
+            <summary>
+              <span class="home-position-card__index">07</span>
+              <span class="home-position-card__label">Technologie &amp; systèmes</span>
+              <strong>Pilotage et interfaces</strong>
+              <em>Montrer quand les systèmes deviennent des conditions de passage à l’échelle.</em>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="home-position-card__body">
+              <p>Données, automatismes, interfaces, architecture technique, OT/IT et outils numériques cessent d’être une couche ajoutée. Ils deviennent des conditions de coordination, de décision et de capacité.</p>
+            </div>
           </details>
 
-          <details>
-            <summary><span>Territoires</span><strong>Mesurer ce que la transformation redistribue localement.</strong></summary>
-            <p>Foncier, réseaux, logistique, acceptabilité, ressources locales, infrastructures et portage territorial peuvent conditionner la trajectoire. Cette lecture montre que le territoire n’est pas un décor, mais un lieu réel d’arbitrage.</p>
+          <details class="home-position-card">
+            <summary>
+              <span class="home-position-card__index">08</span>
+              <span class="home-position-card__label">Territoires</span>
+              <strong>Ancrage local</strong>
+              <em>Mesurer ce que la transformation redistribue localement.</em>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="home-position-card__body">
+              <p>Foncier, réseaux, logistique, acceptabilité, ressources locales, infrastructures et portage territorial peuvent conditionner la trajectoire. Le territoire n’est pas un décor : c’est un lieu d’arbitrage.</p>
+            </div>
           </details>
         </div>
       </div>
@@ -294,26 +355,26 @@
             <a href="dispositif.html">Découvrir le dispositif</a>
           </div>
 
-          <div class="home-dispositif-cards">
-            <article>
-              <h3>Partir d’un angle qualifié</h3>
+          <div class="home-dispositif-cards" aria-label="Cadre éditorial du dispositif">
+            <details open>
+              <summary>Partir d’un angle qualifié</summary>
               <p>Chaque intervention part d’une question située, d’un arbitrage à éclairer et d’une lecture que l’intervenant est particulièrement bien placé pour porter.</p>
-            </article>
+            </details>
 
-            <article>
-              <h3>Préparer une parole tenable</h3>
+            <details>
+              <summary>Préparer une parole tenable</summary>
               <p>Le cadrage éditorial permet de clarifier ce qui peut être dit publiquement, d’anticiper les points sensibles et d’éviter une parole trop générale, artificielle ou surexposée.</p>
-            </article>
+            </details>
 
-            <article>
-              <h3>Produire une contribution utile</h3>
+            <details>
+              <summary>Produire une contribution utile</summary>
               <p>L’émission et son prolongement écrit donnent une forme structurée à la lecture de l’intervenant, réutilisable dans la durée auprès de son écosystème professionnel.</p>
-            </article>
+            </details>
 
-            <article>
-              <h3>Mettre les lectures en regard</h3>
+            <details>
+              <summary>Mettre les lectures en regard</summary>
               <p>Chaque contribution reste singulière, mais elle gagne en portée lorsqu’elle apparaît aux côtés d’autres lectures complémentaires engagées sur les mêmes questions.</p>
-            </article>
+            </details>
           </div>
         </div>
       </div>
