@@ -4170,10 +4170,17 @@ body.landing-page .landing-top__meta {
   text-overflow: initial;
   line-height: 1.45;
   text-align: right;
-  flex: 0 0 auto;
+  flex: 1 1 auto;
   min-width: 0;
   font-size: .60rem;
   letter-spacing: .12em;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+/* Masquer la seconde ligne du meta (positions en cours…) */
+body.landing-page .landing-top__meta span:nth-child(2) {
+  display: none;
 }
 
 body.landing-page .landing-top__meta span {
@@ -5762,4 +5769,22 @@ body.landing-page .landing-film-caption {
    (ne devrait pas exister puisqu'on écrase innerHTML, mais par sécurité) */
 body.landing-page .landing-film-track > div[data-static-journalists-trio="true"] .landing-film-overlay {
   display: none;
+}
+
+
+/* ══ Correctif logo fixe 20260524 ══════════════════════════
+   Le logo est injecté via #ep-logo-fixe (position:fixed).
+   Tout .landing-brand injecté par render-landing.js est masqué,
+   quelle que soit sa position dans le DOM.
+   .landing-top__inner est forcé à droite (margin-left:auto sur meta).
+   ══════════════════════════════════════════════════════════ */
+
+body.landing-page .landing-brand,
+body.landing-page .landing-top .landing-brand,
+body.landing-page .landing-top__inner .landing-brand {
+  display: none;
+}
+
+body.landing-page .landing-top__inner {
+  justify-content: flex-end;
 }
