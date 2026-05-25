@@ -6608,3 +6608,80 @@ body.landing-page .landing-film--static-cycle .landing-film-cycle-card__activati
     padding: 40px 28px !important;
   }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   PATCH 20260525 v5 — Landing : tableau cycle sans ligne journalistes
+   Objectif : réduire la hauteur utile du bloc, supprimer l'effet de texte
+   collé aux bordures et conserver un panneau plus respirant.
+   ═══════════════════════════════════════════════════════════ */
+
+body.landing-page .landing-hero-bento-side .landing-film--static-cycle {
+  height: clamp(410px, 31vw, 470px) !important;
+  min-height: 410px !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"],
+body.landing-page .landing-film--static-cycle .landing-film-static-cycle {
+  min-height: 410px !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+  width: min(54%, 390px) !important;
+  padding: clamp(38px, 3.8vw, 52px) clamp(34px, 3.5vw, 46px) !important;
+  justify-content: center !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__status {
+  margin-bottom: 18px !important;
+  max-width: 14.5ch !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list > div {
+  padding: 15px 0 16px !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list > div:last-child {
+  padding-bottom: 0 !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list dd {
+  font-size: .72rem !important;
+  line-height: 1.5 !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__activation dd {
+  font-size: .70rem !important;
+  line-height: 1.48 !important;
+}
+
+@media (max-width: 1080px) {
+  body.landing-page .landing-hero-bento-side .landing-film--static-cycle {
+    height: auto !important;
+    min-height: 470px !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"],
+  body.landing-page .landing-film--static-cycle .landing-film-static-cycle {
+    min-height: 470px !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+    width: min(62%, 420px) !important;
+    padding: 40px 34px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"],
+  body.landing-page .landing-film--static-cycle .landing-film-static-cycle {
+    min-height: 540px !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+    width: 100% !important;
+    min-height: 540px !important;
+    justify-content: flex-end !important;
+    padding: 38px 28px !important;
+  }
+}
