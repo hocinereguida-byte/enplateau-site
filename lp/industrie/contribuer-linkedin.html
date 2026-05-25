@@ -88,15 +88,15 @@
 </header>
 <div id="app"><div class="ep-state"><div class="ep-dot-spin"></div><span>Chargement…</span></div></div>
 <script src="/assets/js/editorial-data-industrie-v67.js?v=moteur-v6-cast-publicrefs-20260517-0610"></script>
-<script src="/assets/js/editorial-data-industrie-enrichments.js?v=20260525-linkedin-appuis-v1"></script>
+<script src="/assets/js/editorial-data-industrie-enrichments.js?v=20260525-linkedin-appuis-v2"></script>
 <script src="/assets/js/render-core.js?v=moteur-v6-cast-publicrefs-20260517-0610"></script>
 <script>
 (function(){
 'use strict';
 var CAL='https://cal.com/en-plateau/echange-editorial-15-min?overlayCalendar=true';
-var LECS={'FINANCIERE':'financière','OPERATIONNELLE':'opérationnelle','TECHNOLOGIQUE':'technologique','JURIDIQUE':'juridique','RH':'RH & compétences','RH_COMPETENCES':'RH & compétences','TERRITORIALE':'territoriale','ENERGIE_RESSOURCES':'énergie & ressources','STRATEGIQUE':'stratégique','Financière':'financière','Opérationnelle':'opérationnelle','Technologique / systèmes':'technologique','Juridique / réglementaire':'juridique','RH / compétences':'RH & compétences','Territoriale':'territoriale','Énergie / Ressources / décarbonation':'énergie & ressources','Stratégique':'stratégique'};
 var Core=null;
-var PRENOMS_FEMININS='agathe anne annabelle annabelle audrey aurélie aurelie béatrice beatrice camille caroline catherine céline celine charlotte christelle claire clarisse delphine elisabeth elise elsa emilie fawn hanane inge evelyne florence isabelle julie juliette laetitia laëtitia laura laure laurence lucie marie marion martine natasha nathalie noémie noemie sandrine sophie valérie valerie virginie'.split(' ');
+var LECS={'FINANCIERE':'financière','OPERATIONNELLE':'opérationnelle','TECHNOLOGIQUE':'technologique','JURIDIQUE':'juridique','RH_COMPETENCES':'RH & compétences','TERRITORIALE':'territoriale','ENERGIE_RESSOURCES':'énergie & ressources','STRATEGIQUE':'stratégique','Financière':'financière','Opérationnelle':'opérationnelle','Technologique / systèmes':'technologique','Juridique / réglementaire':'juridique','RH / compétences':'RH & compétences','Territoriale':'territoriale','Énergie / Ressources / décarbonation':'énergie & ressources','Stratégique':'stratégique'};
+var PRENOMS_FEMININS='anne annabelle annabelle audrey aurélie aurelie béatrice beatrice camille caroline catherine céline celine charlotte christelle claire clarisse delphine elisabeth elise elsa emilie evelyne florence isabelle julie juliette laetitia laëtitia laura laure laurence lucie marie marion martine nathalie noémie noemie sandrine sophie valérie valerie virginie'.split(' ');
 function s(v){return String(v||'').trim()}
 function esc(v){return String(v||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 function norm(v){return (window.EnPlateauRenderCore&&window.EnPlateauRenderCore.normalize?window.EnPlateauRenderCore.normalize(v):s(v).toLowerCase())}
@@ -107,7 +107,7 @@ function msgBlock(label,text,showChar){var id='m'+Math.random().toString(36).sli
 function repBlock(label,text){var id='r'+Math.random().toString(36).slice(2);return '<div class="ep-response-item" id="'+id+'"><div class="ep-response-label"><span>'+esc(label)+'</span><button class="ep-copy-btn ep-copy-btn--inline" onclick="epCopyEl(\''+id+'\',this)">Copier</button></div><div class="ep-response-text">'+esc(text)+'</div></div>'}
 function acc(icon,ic,label,body,open){return '<div class="ep-item '+(open?'is-open':'')+'"><button class="ep-toggle" onclick="epToggle(this)"><span class="ep-toggle-left"><span class="ep-toggle-icon '+icon+'">'+ic+'</span><span>'+label+'</span></span><span class="ep-chevron">▼</span></button><div class="ep-body">'+body+'</div></div>'}
 function truncateWords(v,max){var t=s(v).replace(/\s+/g,' ');if(t.length<=max)return t;var cut=t.slice(0,max-1);var p=cut.lastIndexOf(' ');if(p>45)cut=cut.slice(0,p);return cut.replace(/[\s,;:.!?-]+$/,'')+'…'}
-function formatNameToken(t){t=s(t).toLowerCase(); if(!t)return''; return t.split('-').map(function(part){return part?part.charAt(0).toUpperCase()+part.slice(1):part}).join('-')}
+function formatNameToken(t){t=s(t).toLowerCase(); if(!t)return''; if(t.length<=2)return t.toUpperCase(); return t.charAt(0).toUpperCase()+t.slice(1)}
 function surnameFromName(full){var parts=s(full).replace(/\s+/g,' ').split(' ').filter(Boolean);if(!parts.length)return'';if(parts.length===1)return formatNameToken(parts[0]);var last=parts.slice(1);var particles={'de':1,'du':1,'des':1,'d':1,'d’':1,"d'":1,'le':1,'la':1,'les':1,'van':1,'von':1};
   // conserve les particules placées juste avant le nom : Godéfroy De Colombe -> De Colombe.
   if(last.length>=2 && particles[last[0].toLowerCase()]) return last.map(formatNameToken).join(' ');
@@ -131,11 +131,17 @@ function makeObjetCourt(text){var t=s(text).replace(/[?]+$/,'').replace(/\s+/g,'
   if(t)t=t.charAt(0).toLowerCase()+t.slice(1);
   return truncateWords(t,92);
 }
-function firstUnder300(candidates){for(var i=0;i<candidates.length;i++){var c=s(candidates[i]);if(c.length<=300)return c}var last=s(candidates[candidates.length-1]||'');return truncateWords(last,297)}
-function activeDeal(d){if(!d)return false;if(Core.isExcludedDeal&&Core.isExcludedDeal(d))return false;var a=d.activation||{};var status=norm(a.activationStatus||d.activationStatus||d.dealTitle||'');if(status.includes('reserve')||status.includes('réserve')||status.includes('trace crm')||status.includes('non activable'))return false;if(a.isActiveCasting===true||d.isActiveCasting===true)return true;if(norm(a.typeDeal||d.typeDeal).includes('principal'))return true;if(norm(a.inclusionWaalaxy||a.inclusion_waalaxy).includes('oui'))return true;return false}
+function firstUnder300(candidates){for(var i=0;i<candidates.length;i++){var c=s(candidates[i]);if(c.length<=300)return c}var last=s(candidates[candidates.length-1]||'');return trimNoEllipsis(last,297)}
+function trimNoEllipsis(v,max){var t=s(v).replace(/…/g,'').replace(/\.\.\./g,'').replace(/\s+/g,' ');if(t.length<=max)return t;var cut=t.slice(0,max);var p=cut.lastIndexOf(' ');if(p>45)cut=cut.slice(0,p);return cut.replace(/[\s,;:.!?-]+$/,'')}
+function rangNum(d){var a=d&&d.activation||{};var r=parseInt(a.rang||d.rang||'',10);return isNaN(r)?999:r}
+function isReserveLike(d){var a=d&&d.activation||{};var status=norm(a.activationStatus||d.activationStatus||d.dealTitle||a.prioriteCandidat||a.fitLecture||'');var type=norm(a.typeDeal||d.typeDeal||'');var incl=norm(a.inclusionWaalaxy||a.inclusion_waalaxy||d.inclusionWaalaxy||'');var r=rangNum(d);return status.includes('reserve')||status.includes('réserve')||status.includes('trace crm')||status.includes('non activable')||type.includes('secondaire')||incl.includes('non')||r>=11}
+function visibleActiveDeal(d){if(!d)return false;if(Core.isExcludedDeal&&Core.isExcludedDeal(d))return false;var a=d.activation||{};var type=norm(a.typeDeal||d.typeDeal||'');var incl=norm(a.inclusionWaalaxy||a.inclusion_waalaxy||d.inclusionWaalaxy||'');var r=rangNum(d);if(type.includes('principal'))return true;if(incl.includes('oui'))return true;if(r>=1&&r<=10&&!isReserveLike(d))return true;return false}
+function optionDeal(d){if(!d)return false;if(Core.isExcludedDeal&&Core.isExcludedDeal(d))return false;if(visibleActiveDeal(d))return false;return isReserveLike(d)}
 function orgKey(d){var o=Core.getOrganisation(d)||{};return s(o.id)||norm(o.name)}
 function uniqueDealsByRef(deals){var seen={};return deals.filter(function(d){var r=s(d.publicRef||Core.getDealId(d));if(!r||seen[r])return false;seen[r]=true;return true})}
 function getEnrichment(pubRef){var rows=window.INDUSTRIE_ENRICHMENTS||[];var wanted=norm(pubRef);for(var i=0;i<rows.length;i++){if(norm(rows[i].publicRef||rows[i].cast||rows[i].ref)===wanted)return rows[i].enrichment||{}}return{}}
+function dealSummary(d){var p=Core.getPerson(d)||{};var ec=d.editorialContext||{};return{nom:p.fullName||p.name,poste:p.role,lecture:lec(ec.typeLecture||''),conversation:ec.conversation,pub_ref:d.publicRef||Core.getDealId(d),linkedin:p.linkedin,rang:rangNum(d),type:s(d.activation&&d.activation.typeDeal||''),option:optionDeal(d)}}
+function shortObjetMessage(text,conversation,lecture){var base=trimNoEllipsis(makeObjetCourt(text),90);var n=norm(base+' '+conversation+' '+lecture);if(base.length<=84)return base;if(n.includes('systeme')||n.includes('systemes'))return'l’évolution des systèmes industriels';if(n.includes('investissement'))return'les arbitrages d’investissement industriel';if(n.includes('metier')||n.includes('competence'))return'l’évolution des métiers et compétences industriels';if(n.includes('capacite')||n.includes('flux'))return'les arbitrages de capacité et de flux industriels';if(n.includes('interdependance')||n.includes('dependance'))return'les interdépendances industrielles critiques';if(n.includes('outil industriel'))return'l’évolution de l’outil industriel';if(n.includes('trajectoire'))return'la tenue d’une trajectoire industrielle';return trimNoEllipsis(base,76)}
 function roleKind(poste,nom,mainNom){var p=norm(poste);if(p.includes('affaires publiques')||p.includes('public affairs')||p.includes('relations institutionnelles'))return'affaires publiques';if(p.includes('communication')||p.includes('dircom')||p.includes('media')||p.includes('relations presse'))return'communication';if(p.includes('president')||p.includes('président')||p.includes('pdg')||p.includes('chief executive officer')||p==='ceo'||p.includes(' ceo'))return'pdg';if(p.includes('directeur general')||p.includes('directeur général')||p.includes('dg')||p.includes('managing director'))return'dg';if(p.includes('comex')||p.includes('executive committee')||p.includes('directeur')||p.includes('chief')||p.includes('vp '))return'comex';return''}
 function compactOrgName(name){return truncateWords(s(name),44)}
 function compactMedia(media){return truncateWords(s(media),46)}
@@ -150,15 +156,15 @@ function buildMultiPDG(civ,org,media){return firstUnder300([
   'Bonjour '+civ+', Scènes d’Arbitrage prépare plusieurs conversations Industrie où '+org+' pourrait contribuer, diffusées sur '+media+'. Preneur de votre orientation sur les profils les plus pertinents.',
   'Bonjour '+civ+', Scènes d’Arbitrage prépare plusieurs conversations Industrie où '+compactOrgName(org)+' pourrait contribuer, diffusées sur '+compactMedia(media)+'. Preneur de votre orientation sur les profils pertinents.'
 ])}
-function buildSingleAppui(civ,prealable,interv,lecture,objet,media,role){var assoc=role==='affaires publiques'?'associer les affaires publiques':(role==='communication'?'associer la communication':'vous associer');var intro=prealable?'j’ai sollicité '+prealable:'je vous informe d’une possible contribution';return firstUnder300([
-  'Bonjour '+civ+', '+intro+' au sujet d’une possible contribution de '+interv+' sur '+objet+', pour une lecture '+lecture+' diffusée sur '+media+'. Si le sujet avance, je souhaiterais '+assoc+' en amont.',
-  'Bonjour '+civ+', '+intro+' au sujet d’une contribution possible de '+interv+' sur '+truncateWords(objet,70)+', lecture '+lecture+' sur '+media+'. Si cela avance, je souhaiterais '+assoc+' en amont.',
-  'Bonjour '+civ+', '+intro+' au sujet d’une contribution de '+interv+' à Scènes d’Arbitrage, lecture '+lecture+' sur '+compactMedia(media)+'. Si cela avance, je souhaiterais '+assoc+' en amont.'
+function buildSingleAppui(civ,prealable,interv,lecture,objet,media,role){var service=role==='affaires publiques'?'les affaires publiques':(role==='communication'?'la communication':'vous');var intro=prealable?'j’ai sollicité '+prealable:'je vous informe d’une possible contribution';return firstUnder300([
+  'Bonjour '+civ+', '+intro+' au sujet d’une possible contribution de '+interv+' sur '+objet+', pour une lecture '+lecture+' diffusée sur '+media+'. Si le sujet avance, je souhaiterais associer '+service+' en amont.',
+  'Bonjour '+civ+', '+intro+' au sujet d’une contribution possible de '+interv+' sur '+truncateWords(objet,70)+', lecture '+lecture+' sur '+media+'. Si cela avance, je souhaiterais associer '+service+' en amont.',
+  'Bonjour '+civ+', '+intro+' au sujet d’une contribution de '+interv+' à Scènes d’Arbitrage, lecture '+lecture+' sur '+compactMedia(media)+'. Si cela avance, je souhaiterais associer '+service+' en amont.'
 ])}
-function buildMultiAppui(civ,prealable,org,media,role){var assoc=role==='affaires publiques'?'associer les affaires publiques':(role==='communication'?'associer la communication':'vous associer');var start=prealable?'après avoir informé '+prealable+', ':'';return firstUnder300([
-  'Bonjour '+civ+', '+start+'Scènes d’Arbitrage prépare plusieurs conversations Industrie où '+org+' pourrait contribuer, diffusées sur '+media+'. Si ces sollicitations avancent, je souhaiterais '+assoc+' en amont.',
-  'Bonjour '+civ+', '+start+'Scènes d’Arbitrage prépare plusieurs conversations Industrie avec '+org+', diffusées sur '+media+'. Si cela avance, je souhaiterais '+assoc+' en amont.',
-  'Bonjour '+civ+', '+start+'Scènes d’Arbitrage prépare plusieurs conversations Industrie avec '+compactOrgName(org)+', sur '+compactMedia(media)+'. Si cela avance, je souhaiterais '+assoc+' en amont.'
+function buildMultiAppui(civ,prealable,org,media,role){var service=role==='affaires publiques'?'les affaires publiques':(role==='communication'?'la communication':'vous');var start=prealable?'après avoir informé '+prealable+', ':' ';return firstUnder300([
+  'Bonjour '+civ+', '+start+'Scènes d’Arbitrage prépare plusieurs conversations Industrie où '+org+' pourrait contribuer, diffusées sur '+media+'. Si ces sollicitations avancent, je souhaiterais associer '+service+' en amont.',
+  'Bonjour '+civ+', '+start+'Scènes d’Arbitrage prépare plusieurs conversations Industrie avec '+org+', diffusées sur '+media+'. Si cela avance, je souhaiterais associer '+service+' en amont.',
+  'Bonjour '+civ+', '+start+'Scènes d’Arbitrage prépare plusieurs conversations Industrie avec '+compactOrgName(org)+', sur '+compactMedia(media)+'. Si cela avance, je souhaiterais associer '+service+' en amont.'
 ])}
 function buildInterv(civ,prealable,lecture,objet,media){var lead=prealable?'après avoir informé '+prealable+', ':'';return firstUnder300([
   'Bonjour '+civ+', '+lead+'Scènes d’Arbitrage prépare une conversation sur '+objet+'. Votre fonction nous semble pertinente pour porter une lecture '+lecture+' diffusée sur '+media+'. Puis-je vous transmettre la page de cadrage ?',
@@ -166,17 +172,15 @@ function buildInterv(civ,prealable,lecture,objet,media){var lead=prealable?'apr�
   'Bonjour '+civ+', '+lead+'Scènes d’Arbitrage prépare une conversation Industrie. Votre fonction semble pertinente pour une lecture '+lecture+' diffusée sur '+compactMedia(media)+'. Puis-je vous transmettre la page de cadrage ?'
 ])}
 function appuiCard(label,full,poste,li){return '<div class="ep-appui-card"><div class="ep-appui-role">'+esc(label)+'</div><div class="ep-appui-name">'+esc(civNom(full,poste)||full)+'</div>'+(poste?'<div style="font-size:.78rem;color:var(--gris-5);margin-top:.1rem">'+esc(poste)+'</div>':'')+(li?'<div style="margin-top:.3rem"><a href="'+esc(li)+'" target="_blank" style="color:var(--bleu-li);font-size:.75rem;text-decoration:none">LinkedIn →</a></div>':'')+'</div>'}
-function isPlaceholderName(v){var n=norm(v);return !n||n.includes('identifier')||n.includes('qualifier')||n.includes('a confirmer')||n.includes('à confirmer')||n.includes('activation dirigeant')||n==='non'||n==='oui'||n.includes('communication / affaires publiques')||n.includes('communiquer')||n==='communication'||n==='affaires publiques'||n==='public affairs';}
-function firstPersonName(v){return s(v).split('/')[0].split(',')[0].trim()}
-function getAppuiObjects(sc,person){var list=[];
-  var pdgNom=firstPersonName(sc.pdg_nom), dgNom=firstPersonName(sc.dg_nom), comexNom=firstPersonName(sc.comex_nom), commNom=firstPersonName(sc.comm_nom), apNom=firstPersonName(sc.affaires_publiques_nom);
-  if(!isPlaceholderName(pdgNom))list.push({kind:'pdg',label:'PDG / Président',name:pdgNom,poste:s(sc.pdg_poste||''),li:s(sc.pdg_linkedin||'')});
-  if(!isPlaceholderName(dgNom)&&!samePerson(dgNom,pdgNom))list.push({kind:'dg',label:'DG',name:dgNom,poste:s(sc.dg_poste||''),li:s(sc.dg_linkedin||'')});
-  if(!isPlaceholderName(comexNom))list.push({kind:'comex',label:'COMEX',name:comexNom,poste:s(sc.comex_poste||''),li:s(sc.comex_linkedin||'')});
-  if(!isPlaceholderName(commNom))list.push({kind:'communication',label:'Communication',name:commNom,poste:s(sc.comm_poste||''),li:s(sc.comm_linkedin||'')});
-  if(!isPlaceholderName(apNom))list.push({kind:'affaires publiques',label:'Affaires publiques',name:apNom,poste:s(sc.affaires_publiques_poste||''),li:s(sc.affaires_publiques_linkedin||'')});
-  return list.filter(function(a){return a.name&&!samePerson(a.name,person.fullName)})
+function addAppui(list,item,person){if(!item||!s(item.name))return;if(person&&samePerson(item.name,person.fullName||person.name))return;var key=item.kind+'|'+norm(item.name);if(list.some(function(x){return x.key===key}))return;item.key=key;list.push(item)}
+function appuiFromSc(sc,person,list){sc=sc||{};
+  addAppui(list,{kind:'pdg',label:'PDG / Président',name:s(sc.pdg_nom),poste:s(sc.pdg_poste||''),li:s(sc.pdg_linkedin||'')},person);
+  if(s(sc.dg_nom)&&!samePerson(sc.dg_nom,sc.pdg_nom))addAppui(list,{kind:'dg',label:'DG',name:s(sc.dg_nom),poste:s(sc.dg_poste||''),li:s(sc.dg_linkedin||'')},person);
+  addAppui(list,{kind:'comex',label:'COMEX',name:s(sc.comex_nom),poste:s(sc.comex_poste||''),li:s(sc.comex_linkedin||'')},person);
+  addAppui(list,{kind:'communication',label:'Communication',name:s(sc.comm_nom),poste:s(sc.comm_poste||''),li:s(sc.comm_linkedin||'')},person);
+  addAppui(list,{kind:'affaires publiques',label:'Affaires publiques',name:s(sc.affaires_publiques_nom||sc.affaires_publiques_name),poste:s(sc.affaires_publiques_poste||''),li:s(sc.affaires_publiques_linkedin||'')},person);
 }
+function getAppuiObjects(currentDeal,orgRelatedDeals,person){var list=[];appuiFromSc(currentDeal&&currentDeal.sourceCastingV6,person,list);(orgRelatedDeals||[]).forEach(function(d){appuiFromSc(d&&d.sourceCastingV6,person,list)});return list}
 function init(){
   Core=window.EnPlateauRenderCore;
   var app=document.getElementById('app');
@@ -203,6 +207,7 @@ function init(){
   var lecLabel=lec(typeLec);
   var angleTexte=s(deal.editorialContext&&(deal.editorialContext.tensionCentrale||deal.editorialContext.angle)||'');
   var objetCourt=makeObjetCourt(angleTexte);
+  var objetMsg=shortObjetMessage(angleTexte,conversation,lecLabel);
   var conversation=s(deal.editorialContext&&deal.editorialContext.conversation||'');
   var contexte=s(deal.editorialContext&&deal.editorialContext.contexte||'');
   var pubRef=s(deal.publicRef||ref);
@@ -212,13 +217,15 @@ function init(){
   var media=s(angle&&angle.media||'');
   var whyShort=shortWhy(enrichment.whyPersonPublic||why.person);
   var dgMsg=s(angle&&angle.activationPersonaFit&&angle.activationPersonaFit.organizationLayer&&angle.activationPersonaFit.organizationLayer.dgReadableMessage||'');
-  var allDeals=uniqueDealsByRef(Core.getCastings().filter(activeDeal));
   var key=orgKey(deal);
-  var orgDeals=uniqueDealsByRef(allDeals.filter(function(d){return orgKey(d)===key}));
-  if(!orgDeals.length)orgDeals=[deal];
-  var intervOrg=sc.intervenants_org||[];
-  var multiOrg=(orgDeals.length>1||intervOrg.length>1);
-  var orgMedia=mediaForDeals(orgDeals,media)||media||'le média partenaire';
+  var allCastings=uniqueDealsByRef(Core.getCastings());
+  var allOrgDeals=uniqueDealsByRef(allCastings.filter(function(d){return orgKey(d)===key}));
+  var orgDeals=uniqueDealsByRef(allOrgDeals.filter(visibleActiveDeal));
+  var orgOptionDeals=uniqueDealsByRef(allOrgDeals.filter(optionDeal));
+  if(visibleActiveDeal(deal)&&!orgDeals.some(function(d){return s(d.publicRef||Core.getDealId(d))===pubRef}))orgDeals.unshift(deal);
+  var intervOrg=(sc.intervenants_org||[]).filter(function(iv){return orgDeals.some(function(d){return s(d.publicRef||Core.getDealId(d))===s(iv.pub_ref)})});
+  var multiOrg=(orgDeals.length>1);
+  var orgMedia=mediaForDeals(orgDeals.length?orgDeals:[deal],media)||media||'le média partenaire';
   var mediaLine=[journaliste,media].filter(Boolean).join(', ');
   var mediasCount=orgMedia.indexOf('/')>=0?2:1;
 
@@ -230,7 +237,7 @@ function init(){
   var lecturesStr=toutesLectures.length>1?toutesLectures.slice(0,-1).join(', ')+' et '+toutesLectures[toutesLectures.length-1]:lecLabel;
 
   // Appuis distincts et ordre de contact.
-  var appuis=getAppuiObjects(sc,person);
+  var appuis=getAppuiObjects(deal,allOrgDeals,person);
   var pdg=appuis.find(function(a){return a.kind==='pdg'});
   var dg=appuis.find(function(a){return a.kind==='dg'});
   var comex=appuis.find(function(a){return a.kind==='comex'});
@@ -242,12 +249,12 @@ function init(){
   var prealableInterv=contactPrealableComm;
 
   // Invitations courtes.
-  var inv_interv=buildInterv(nomCourt,prealableInterv,lecLabel,objetCourt,media||orgMedia||'le média partenaire');
-  var inv_pdg=pdg?(multiOrg?buildMultiPDG(civNom(pdg.name,pdg.poste),orgNomCourt,orgMedia):buildSinglePDG(civNom(pdg.name,pdg.poste),nomCourt,lecLabel,objetCourt,media||orgMedia)):'';
-  var inv_dg=dg?(multiOrg?buildMultiAppui(civNom(dg.name,dg.poste),pdg?civNom(pdg.name,pdg.poste):'',orgNomCourt,orgMedia,'dg'):buildSingleAppui(civNom(dg.name,dg.poste),pdg?civNom(pdg.name,pdg.poste):nomCourt,nomCourt,lecLabel,objetCourt,media||orgMedia,'dg')):'';
-  var inv_comex=comex?(multiOrg?buildMultiAppui(civNom(comex.name,comex.poste),formatContactList([pdg&&civNom(pdg.name,pdg.poste),dg&&civNom(dg.name,dg.poste)]),orgNomCourt,orgMedia,'comex'):buildSingleAppui(civNom(comex.name,comex.poste),formatContactList([pdg&&civNom(pdg.name,pdg.poste),dg&&civNom(dg.name,dg.poste)])||nomCourt,nomCourt,lecLabel,objetCourt,media||orgMedia,'comex')):'';
-  var inv_comm=comm?(multiOrg?buildMultiAppui(civNom(comm.name,comm.poste),contactPrealableComm,orgNomCourt,orgMedia,'communication'):buildSingleAppui(civNom(comm.name,comm.poste),contactPrealableComm||nomCourt,nomCourt,lecLabel,objetCourt,media||orgMedia,'communication')):'';
-  var inv_ap=ap?(multiOrg?buildMultiAppui(civNom(ap.name,ap.poste),contactPrealableComm,orgNomCourt,orgMedia,'affaires publiques'):buildSingleAppui(civNom(ap.name,ap.poste),contactPrealableComm||nomCourt,nomCourt,lecLabel,objetCourt,media||orgMedia,'affaires publiques')):'';
+  var inv_interv=buildInterv(nomCourt,prealableInterv,lecLabel,objetMsg,media||orgMedia||'le média partenaire');
+  var inv_pdg=pdg?(multiOrg?buildMultiPDG(civNom(pdg.name,pdg.poste),orgNomCourt,orgMedia):buildSinglePDG(civNom(pdg.name,pdg.poste),nomCourt,lecLabel,objetMsg,media||orgMedia)):'';
+  var inv_dg=dg?(multiOrg?buildMultiAppui(civNom(dg.name,dg.poste),pdg?civNom(pdg.name,pdg.poste):'',orgNomCourt,orgMedia,'dg'):buildSingleAppui(civNom(dg.name,dg.poste),pdg?civNom(pdg.name,pdg.poste):nomCourt,nomCourt,lecLabel,objetMsg,media||orgMedia,'dg')):'';
+  var inv_comex=comex?(multiOrg?buildMultiAppui(civNom(comex.name,comex.poste),formatContactList([pdg&&civNom(pdg.name,pdg.poste),dg&&civNom(dg.name,dg.poste)]),orgNomCourt,orgMedia,'comex'):buildSingleAppui(civNom(comex.name,comex.poste),formatContactList([pdg&&civNom(pdg.name,pdg.poste),dg&&civNom(dg.name,dg.poste)])||nomCourt,nomCourt,lecLabel,objetMsg,media||orgMedia,'comex')):'';
+  var inv_comm=comm?(multiOrg?buildMultiAppui(civNom(comm.name,comm.poste),contactPrealableComm,orgNomCourt,orgMedia,'communication'):buildSingleAppui(civNom(comm.name,comm.poste),contactPrealableComm||nomCourt,nomCourt,lecLabel,objetMsg,media||orgMedia,'communication')):'';
+  var inv_ap=ap?(multiOrg?buildMultiAppui(civNom(ap.name,ap.poste),contactPrealableComm,orgNomCourt,orgMedia,'affaires publiques'):buildSingleAppui(civNom(ap.name,ap.poste),contactPrealableComm||nomCourt,nomCourt,lecLabel,objetMsg,media||orgMedia,'affaires publiques')):'';
 
   var msg_interv='Bonjour,\n\nScènes d’Arbitrage compose une conversation du cycle Industrie sur : « '+angleTexte+' ».\n\nLa lecture '+lecLabel+' est celle qui nous a conduit vers vous'+(whyShort?' — '+whyShort:'')+'.'+(prealableInterv?'\n\nNous avons informé en amont '+prealableInterv+' afin que la sollicitation soit correctement située.':'')+'\n\nLa contribution ne suppose pas de commenter une situation interne. Elle vise une lecture de mécanisme, préparée et publiquement tenable.\n\nPage de cadrage : '+landingURL+'\nÉchange éditorial de 15 min : '+CAL;
   var rel_interv='Bonjour, je me permets une relance courte.\n\nLa lecture '+lecLabel+' reste ouverte dans cette composition. Seriez-vous disponible pour un échange de 15 minutes ?\n\nPage de cadrage : '+landingURL+'\nCréneau possible ici : '+CAL;
@@ -262,17 +269,23 @@ function init(){
   var lecturesBadges=autresLectures.map(function(l){return'<span class="ep-lecture-badge">'+esc(l)+'</span>'}).join('')+'<span class="ep-lecture-badge ep-lecture-badge--main">'+esc(lecLabel)+' ←</span>';
 
   var appuiHTML='';
-  if(appuis.length||intervOrg.length>0||orgDeals.length>1){
-    appuiHTML='<div class="ep-appui">';
-    if(pdg)appuiHTML+=appuiCard('PDG / Président — à contacter en 1er',pdg.name,pdg.poste,pdg.li);
-    if(dg)appuiHTML+=appuiCard((pdg?'DG — après information du PDG':'DG — appui dirigeant'),dg.name,dg.poste,dg.li);
-    if(comex)appuiHTML+=appuiCard('COMEX — après appui dirigeant',comex.name,comex.poste,comex.li);
-    if(comm)appuiHTML+=appuiCard('Communication — à associer en amont',comm.name,comm.poste,comm.li);
-    if(ap)appuiHTML+=appuiCard('Affaires publiques — à associer en amont',ap.name,ap.poste,ap.li);
-    appuiHTML+='</div>';
-    if(multiOrg){appuiHTML+='<div class="ep-why-block"><div class="ep-why-label">Message unique organisation</div><div class="ep-why-text">'+esc(orgNom)+' apparaît sur '+orgDeals.length+' positions actives. Les relais internes ne doivent être contactés qu’une seule fois pour l’organisation, avec une note globale, sans lister tous les intervenants.</div></div>'}
-    var list=intervOrg.length?intervOrg:orgDeals.map(function(d){var p=Core.getPerson(d);return{nom:p.fullName||p.name,poste:p.role,lecture:lec(d.editorialContext&&d.editorialContext.typeLecture||''),conversation:d.editorialContext&&d.editorialContext.conversation,pub_ref:d.publicRef||Core.getDealId(d),linkedin:p.linkedin}});
-    if(list.length>0){appuiHTML+='<div style="margin-top:.8rem"><div class="ep-why-label" style="margin-bottom:.5rem">Intervenants positionnés chez '+esc(orgNom)+'</div>';list.forEach(function(iv){var isSelf=(iv.pub_ref===pubRef);appuiHTML+='<div class="ep-appui-card" style="margin-bottom:.4rem;'+(isSelf?'border-color:var(--accent);':'')+'"><div class="ep-appui-role">'+esc(iv.lecture||'Lecture')+' · '+esc(iv.conversation||'Conversation')+'</div><div class="ep-appui-name">'+esc(civNom(iv.nom,iv.poste)||iv.nom)+(isSelf?' <span style="font-size:.65rem;color:var(--accent);margin-left:.3rem">(ce dossier)</span>':'')+'</div><div style="font-size:.78rem;color:var(--gris-5);margin-top:.1rem">'+esc(iv.poste||'')+'</div>'+(iv.linkedin?'<div style="margin-top:.3rem"><a href="'+esc(iv.linkedin)+'" target="_blank" style="color:var(--bleu-li);font-size:.75rem;text-decoration:none">LinkedIn →</a></div>':'')+'</div>'});appuiHTML+='</div>'}
+  if(appuis.length||orgDeals.length>1||orgOptionDeals.length){
+    if(appuis.length){
+      appuiHTML='<div class="ep-appui">';
+      if(pdg)appuiHTML+=appuiCard('PDG / Président — à contacter en 1er',pdg.name,pdg.poste,pdg.li);
+      if(dg)appuiHTML+=appuiCard((pdg?'DG — après information du PDG':'DG — appui dirigeant'),dg.name,dg.poste,dg.li);
+      if(comex)appuiHTML+=appuiCard('COMEX — après appui dirigeant',comex.name,comex.poste,comex.li);
+      if(comm)appuiHTML+=appuiCard('Communication — à associer en amont',comm.name,comm.poste,comm.li);
+      if(ap)appuiHTML+=appuiCard('Affaires publiques — à associer en amont',ap.name,ap.poste,ap.li);
+      appuiHTML+='</div>';
+    }else{
+      appuiHTML='<div class="ep-why-block"><div class="ep-why-label">Appuis internes</div><div class="ep-why-text">Aucun relais dirigeant, communication ou affaires publiques n’est identifié dans les données disponibles pour ce dossier.</div></div>';
+    }
+    if(multiOrg){appuiHTML+='<div class="ep-why-block"><div class="ep-why-label">Message unique organisation</div><div class="ep-why-text">'+esc(orgNom)+' apparaît sur '+orgDeals.length+' positions actives visibles. Les relais internes ne doivent être contactés qu’une seule fois pour l’organisation, avec une note globale, sans lister tous les intervenants.</div></div>'}
+    var list=orgDeals.map(dealSummary);
+    if(list.length>0){appuiHTML+='<div style="margin-top:.8rem"><div class="ep-why-label" style="margin-bottom:.5rem">Positions actives visibles chez '+esc(orgNom)+'</div>';list.forEach(function(iv){var isSelf=(iv.pub_ref===pubRef);appuiHTML+='<div class="ep-appui-card" style="margin-bottom:.4rem;'+(isSelf?'border-color:var(--accent);':'')+'"><div class="ep-appui-role">'+esc(iv.lecture||'Lecture')+' · '+esc(iv.conversation||'Conversation')+'</div><div class="ep-appui-name">'+esc(civNom(iv.nom,iv.poste)||iv.nom)+(isSelf?' <span style="font-size:.65rem;color:var(--accent);margin-left:.3rem">(ce dossier)</span>':'')+'</div><div style="font-size:.78rem;color:var(--gris-5);margin-top:.1rem">'+esc(iv.poste||'')+'</div>'+(iv.linkedin?'<div style="margin-top:.3rem"><a href="'+esc(iv.linkedin)+'" target="_blank" style="color:var(--bleu-li);font-size:.75rem;text-decoration:none">LinkedIn →</a></div>':'')+'</div>'});appuiHTML+='</div>'}
+    var optionList=orgOptionDeals.map(dealSummary);
+    if(optionList.length>0){appuiHTML+='<details style="margin-top:.8rem"><summary class="ep-why-label" style="cursor:pointer">Positions en option / réserve éditoriale ('+optionList.length+')</summary><div style="margin-top:.6rem">';optionList.forEach(function(iv){appuiHTML+='<div class="ep-appui-card" style="margin-bottom:.4rem;opacity:.68"><div class="ep-appui-role">Option · Rang '+esc(iv.rang)+' · '+esc(iv.lecture||'Lecture')+'</div><div class="ep-appui-name">'+esc(civNom(iv.nom,iv.poste)||iv.nom)+'</div><div style="font-size:.78rem;color:var(--gris-5);margin-top:.1rem">'+esc(iv.conversation||'')+'</div></div>'});appuiHTML+='</div></details>'}
   }
 
   var relayAccordion='';
