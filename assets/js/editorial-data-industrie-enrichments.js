@@ -1,9 +1,25 @@
 /*
-  Scènes d'Arbitrage — enrichissements publics Industrie
-  Fichier généré / maintenu depuis les champs validés Pipedrive.
-  À charger après editorial-data-industrie-v67.js et avant render-landing.js / contribuer-linkedin.
-  Ne jamais ajouter ici de notes internes, rangs CRM, commentaires de remplacement ou vigilances sensibles.
+  Scènes d'Arbitrage — editorial-data-industrie-enrichments.js
+  Version 20260525-crm-secure-v1
+
+  Rôle :
+  - enrichissements publics, publiables cast par cast ;
+  - formulations "pourquoi cette personne / organisation" ;
+  - angle LinkedIn public.
+
+  Ce fichier ne porte pas la vérité CRM opérationnelle :
+  - les statuts actif / réserve / invitation envoyée sont contrôlés par activation-crm-industrie.js ;
+  - les appuis internes, liens de contrôle et règles de prospection restent hors de ce fichier public ;
+  - ne jamais ajouter ici de notes internes, rangs CRM, commentaires de remplacement ou vigilances sensibles.
+
+  Ordre de chargement recommandé :
+  1. editorial-data-industrie-v67.js
+  2. editorial-data-industrie-enrichments.js
+  3. activation-crm-industrie.js
+  4. render-core.js
+  5. render-landing.js
 */
+window.INDUSTRIE_ENRICHMENTS_VERSION = "20260525-crm-secure-v1";
 window.INDUSTRIE_ENRICHMENTS = [
   {
     publicRef: "CR2R38L",
@@ -114,3 +130,10 @@ window.INDUSTRIE_ENRICHMENTS = [
     }
   }
 ];
+
+
+window.INDUSTRIE_ENRICHMENTS_BY_REF = (window.INDUSTRIE_ENRICHMENTS || []).reduce(function(index, item) {
+  var ref = item && (item.publicRef || item.cast || item.ref);
+  if (ref) index[String(ref).trim()] = item.enrichment || {};
+  return index;
+}, {});
