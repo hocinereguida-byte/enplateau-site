@@ -136,6 +136,12 @@
     );
   }
 
+  function isAlternativePreviewMode() {
+    const params = Core.getParams ? Core.getParams() : new URLSearchParams(window.location.search || "");
+    const value = norm(params.get("preview") || params.get("mode") || params.get("source") || "");
+    return value === "alternative" || value === "alt" || value === "piste";
+  }
+
   function crmUnavailableReason(crmDeal, requestedRef) {
     if (!crmDeal) {
       return `La référence publique ${requestedRef || "demandée"} n'est pas présente dans le miroir CRM actuellement chargé.`;
@@ -157,13 +163,15 @@
     return { firstName: parts.slice(0, -1).join(" "), lastName: parts[parts.length - 1] };
   }
 
-  function mergeDealWithCrm(baseDeal, crmDeal, requestedRef) {
+  function mergeDealWithCrm(baseDeal, crmDeal, requestedRef, options = {}) {
     const original = baseDeal && typeof baseDeal === "object" ? baseDeal : {};
     const ref = txt(crmDeal?.ref, crmDeal?.publicRef, crmDeal?.cast, requestedRef, publicRefFromDeal(original));
     const personName = txt(crmDeal?.person, crmDeal?.personName, crmDeal?.personDisplay, original?.person?.name, original?.personName);
     const personParts = splitPersonName(personName);
     const organisationName = txt(crmDeal?.organisation, crmDeal?.organisationName, crmDeal?.organization, original?.organisation?.name, original?.organization?.name, original?.organisation);
-    const active = crmStageIsActive(crmDeal) && !crmStageIsReserve(crmDeal);
+    const reserve = crmStageIsReserve(crmDeal);
+    const alternativePreview = !!options.allowAlternativePreview && reserve;
+    const active = (crmStageIsActive(crmDeal) && !reserve) || alternativePreview;
     const exclusion = active ? "" : crmUnavailableReason(crmDeal, ref);
 
     const merged = {
@@ -221,7 +229,8 @@
         stage: txt(crmDeal?.stage, original?.crm?.stage),
         status: txt(crmDeal?.status, original?.crm?.status),
         isActiveVisible: active,
-        isReserve: crmStageIsReserve(crmDeal),
+        isReserve: reserve,
+        isAlternativePreview: alternativePreview,
         isToContact: crmDeal?.isToContact === true,
         isInvitationSent: crmDeal?.isInvitationSent === true,
         landingUrl: txt(crmDeal?.landingUrl, original?.crm?.landingUrl),
@@ -234,8 +243,9 @@
         publicRef: ref,
         cast: ref,
         isActiveCasting: active,
-        activationStatus: active ? "active" : "non activable",
-        exclusionReason: txt(exclusion, original?.activation?.exclusionReason)
+        activationStatus: alternativePreview ? "preview alternative" : (active ? "active" : "non activable"),
+        exclusionReason: txt(exclusion, original?.activation?.exclusionReason),
+        isAlternativePreview: alternativePreview
       }
     };
 
@@ -266,7 +276,9 @@
       return baseBundle;
     }
 
-    const deal = mergeDealWithCrm(baseBundle?.deal, crmDeal, requestedRef);
+    const deal = mergeDealWithCrm(baseBundle?.deal, crmDeal, requestedRef, {
+      allowAlternativePreview: isAlternativePreviewMode()
+    });
     const angleCode = txt(crmDeal?.code, Core.getAngleCodeFromDeal(deal));
     const angle = Core.getAngleByCode(angleCode) || baseBundle?.angle || null;
     const readingCode = txt(crmDeal?.lecture, deal?.typeLecture, angle?.typeLecture, angle?.type_lecture);
@@ -1075,9 +1087,10 @@
     if (crmStageIsReserve(crmDeal)) {
       return {
         show: true,
-        canLink: false,
+        canLink: !!publicRefFromDeal(deal),
+        previewLink: true,
         label: "Piste en réserve éditoriale",
-        action: "À évoquer lors de l’échange"
+        action: "Voir cette piste →"
       };
     }
 
@@ -1197,8 +1210,9 @@
               const formulation = Core.getFormulationLanding(angle) || {};
               const title = angleTitle(angle, publicAngle, formulation, altReading);
               const ref = publicRefFromDeal(deal);
+              const href = availability?.previewLink ? `?cast=${safe(ref)}&preview=alternative` : `?cast=${safe(ref)}`;
               const linkHtml = availability?.canLink && ref
-                ? `<a class="lpb-alt-link" href="?cast=${safe(ref)}">${safe(availability.action || "Voir cette proposition →")}</a>`
+                ? `<a class="lpb-alt-link" href="${href}">${safe(availability.action || "Voir cette proposition →")}</a>`
                 : `<span class="lpb-alt-link lpb-alt-link--inactive">${safe(availability?.action || "À évoquer lors de l’échange")}</span>`;
               return `
                 <details class="lpb-alt-item">
