@@ -6685,3 +6685,182 @@ body.landing-page .landing-film--static-cycle .landing-film-cycle-card__activati
     padding: 38px 28px !important;
   }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   PATCH 20260525 v6 — Landing : respiration réelle du tableau cycle
+   Objectif : empêcher le texte de coller aux bordures haut/bas,
+   même lorsque les règles anciennes du cadre film restent chargées.
+   Ciblage volontairement fort via [data-static-cycle-media].
+   ═══════════════════════════════════════════════════════════ */
+
+body.landing-page .landing-hero-bento-side .landing-film--static-cycle {
+  height: clamp(455px, 32vw, 505px) !important;
+  min-height: 455px !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-track,
+body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"],
+body.landing-page .landing-film--static-cycle .landing-film-static-cycle {
+  height: 100% !important;
+  min-height: 455px !important;
+  box-sizing: border-box !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"] {
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"]::before,
+body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"]::after,
+body.landing-page .landing-film--static-cycle .landing-film-static-visual::before,
+body.landing-page .landing-film--static-cycle .landing-film-static-visual::after {
+  display: none !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-static-cycle {
+  position: relative !important;
+  display: block !important;
+  background: #070707 !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-static-visual {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  border: 0 !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-static-visual img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  opacity: .72 !important;
+  filter: grayscale(100%) contrast(112%) brightness(.54) !important;
+  transform: none !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-static-cycle::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  background: linear-gradient(90deg,
+    rgba(0,0,0,.10) 0%,
+    rgba(0,0,0,.22) 42%,
+    rgba(0,0,0,.68) 68%,
+    rgba(0,0,0,.86) 100%) !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+  position: relative !important;
+  z-index: 4 !important;
+  box-sizing: border-box !important;
+  width: min(54%, 405px) !important;
+  min-height: 455px !important;
+  height: 100% !important;
+  margin-left: auto !important;
+  padding: 44px 40px 44px 40px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__kicker {
+  margin: 0 0 10px !important;
+  padding: 0 !important;
+  font-size: .52rem !important;
+  line-height: 1.25 !important;
+  letter-spacing: .15em !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__status {
+  margin: 0 0 18px !important;
+  padding: 0 0 2px !important;
+  max-width: 14.8ch !important;
+  font-size: clamp(1.05rem, 1.45vw, 1.24rem) !important;
+  line-height: 1.1 !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list {
+  display: grid !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list > div {
+  padding: 16px 0 16px !important;
+  border-top: 1px solid rgba(246,241,233,.16) !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list > div:last-child {
+  padding-bottom: 0 !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list dt {
+  margin: 0 0 7px !important;
+  padding: 0 !important;
+  font-size: .49rem !important;
+  line-height: 1.2 !important;
+  letter-spacing: .13em !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list dd {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: .70rem !important;
+  line-height: 1.48 !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__activation dd {
+  font-size: .68rem !important;
+  line-height: 1.46 !important;
+}
+
+@media (max-width: 1080px) {
+  body.landing-page .landing-hero-bento-side .landing-film--static-cycle,
+  body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"],
+  body.landing-page .landing-film--static-cycle .landing-film-static-cycle {
+    height: auto !important;
+    min-height: 500px !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+    width: min(62%, 420px) !important;
+    min-height: 500px !important;
+    padding: 46px 36px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"],
+  body.landing-page .landing-film--static-cycle .landing-film-static-cycle {
+    min-height: 560px !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-static-cycle::after {
+    background: linear-gradient(180deg,
+      rgba(0,0,0,.08) 0%,
+      rgba(0,0,0,.42) 34%,
+      rgba(0,0,0,.88) 100%) !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+    width: 100% !important;
+    min-height: 560px !important;
+    justify-content: flex-end !important;
+    padding: 44px 28px !important;
+  }
+}
