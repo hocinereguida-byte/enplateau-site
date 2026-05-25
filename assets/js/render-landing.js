@@ -13,13 +13,20 @@
   Ne modifie pas :
   - editorial-data-industrie-v67.js
   - render-core.js
+
+  Ajout 20260525-crm-secure-v1 :
+  - lecture optionnelle de window.SDA_CRM_INDUSTRIE ;
+  - priorité au CRM pour le statut d'activation, la personne, l'organisation,
+    le média et les URLs opérationnelles ;
+  - blocage des casts passés en réserve ou absents du miroir CRM lorsque celui-ci
+    est chargé sur la page.
 */
 
 (function () {
   "use strict";
 
   const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
-  console.info("En Plateau — render-landing alternatives accordions one-open build 20260524-angle-title-fix loaded");
+  console.info("Scènes d'Arbitrage — render-landing CRM secure build 20260525-v1 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -54,6 +61,220 @@
     if (!ref) return null;
     const rows = window.INDUSTRIE_ENRICHMENTS || DATA?.enrichments || DATA?.industrieEnrichments || [];
     return toArray(rows).find(item => norm(item?.publicRef || item?.cast || item?.ref) === ref)?.enrichment || null;
+  }
+
+
+  /* ─────────────────────────────────────────────────────────
+     SECURISATION CRM — landing publique personnalisée
+
+     Le référentiel éditorial reste dans editorial-data-industrie-v67.js.
+     Les enrichissements publics restent dans editorial-data-industrie-enrichments.js.
+     Le miroir CRM, lorsqu'il est chargé, sert uniquement à empêcher l'affichage
+     d'une proposition obsolète, passée en réserve ou absente des exports Pipedrive.
+  ───────────────────────────────────────────────────────── */
+
+  function getCrmData() {
+    return window.SDA_CRM_INDUSTRIE || window.SDA_ACTIVATION_CRM_INDUSTRIE || null;
+  }
+
+  function hasCrmMirror() {
+    const crm = getCrmData();
+    return !!(crm && (crm.dealsByRef || Array.isArray(crm.deals) || crm.dealsById || crm.groupByCast));
+  }
+
+  function getCrmDeals() {
+    const crm = getCrmData();
+    if (!crm) return [];
+    if (Array.isArray(crm.deals)) return crm.deals.filter(Boolean);
+    if (crm.dealsByRef && typeof crm.dealsByRef === "object") return Object.values(crm.dealsByRef).filter(Boolean);
+    if (crm.dealsById && typeof crm.dealsById === "object") return Object.values(crm.dealsById).filter(Boolean);
+    return [];
+  }
+
+  function getCrmDealByReference(reference) {
+    const wanted = String(reference || "").trim();
+    if (!wanted) return null;
+
+    const crm = getCrmData();
+    if (!crm) return null;
+
+    if (crm.dealsByRef && crm.dealsByRef[wanted]) return crm.dealsByRef[wanted];
+    if (crm.dealsById && crm.dealsById[wanted]) return crm.dealsById[wanted];
+
+    const wantedNorm = norm(wanted);
+    return getCrmDeals().find(item =>
+      [item?.ref, item?.publicRef, item?.cast, item?.dealId, item?.id, item?.pipedriveDealId]
+        .some(value => norm(value) === wantedNorm)
+    ) || null;
+  }
+
+  function crmStageIsActive(crmDeal) {
+    const stage = norm(crmDeal?.stage || crmDeal?.pipelineStage || "");
+    return !!(
+      crmDeal?.isActiveVisible === true ||
+      crmDeal?.isToContact === true ||
+      crmDeal?.isInvitationSent === true ||
+      stage === "a contacter" ||
+      stage === "invit linkedin envoyee" ||
+      stage === "invitation linkedin envoyee"
+    );
+  }
+
+  function crmStageIsReserve(crmDeal) {
+    const stage = norm(crmDeal?.stage || crmDeal?.pipelineStage || "");
+    return !!(
+      crmDeal?.isReserve === true ||
+      stage.includes("reserve editorial") ||
+      stage.includes("reserve editoriale")
+    );
+  }
+
+  function crmUnavailableReason(crmDeal, requestedRef) {
+    if (!crmDeal) {
+      return `La référence publique ${requestedRef || "demandée"} n'est pas présente dans le miroir CRM actuellement chargé.`;
+    }
+    if (crmStageIsReserve(crmDeal)) {
+      return "Cette proposition est passée en réserve éditoriale dans Pipedrive.";
+    }
+    if (!crmStageIsActive(crmDeal)) {
+      return `Cette proposition n'est pas active dans Pipedrive. Étape actuelle : ${crmDeal.stage || "non renseignée"}.`;
+    }
+    return "";
+  }
+
+  function splitPersonName(fullName) {
+    const clean = String(fullName || "").replace(/\s+/g, " ").trim();
+    if (!clean) return { firstName: "", lastName: "" };
+    const parts = clean.split(" ");
+    if (parts.length === 1) return { firstName: "", lastName: parts[0] };
+    return { firstName: parts.slice(0, -1).join(" "), lastName: parts[parts.length - 1] };
+  }
+
+  function mergeDealWithCrm(baseDeal, crmDeal, requestedRef) {
+    const original = baseDeal && typeof baseDeal === "object" ? baseDeal : {};
+    const ref = txt(crmDeal?.ref, crmDeal?.publicRef, crmDeal?.cast, requestedRef, publicRefFromDeal(original));
+    const personName = txt(crmDeal?.person, crmDeal?.personName, crmDeal?.personDisplay, original?.person?.name, original?.personName);
+    const personParts = splitPersonName(personName);
+    const organisationName = txt(crmDeal?.organisation, crmDeal?.organisationName, crmDeal?.organization, original?.organisation?.name, original?.organization?.name, original?.organisation);
+    const active = crmStageIsActive(crmDeal) && !crmStageIsReserve(crmDeal);
+    const exclusion = active ? "" : crmUnavailableReason(crmDeal, ref);
+
+    const merged = {
+      ...original,
+      publicRef: ref,
+      cast: ref,
+      referencePublique: ref,
+      dealId: txt(crmDeal?.dealId, original?.dealId, original?.id),
+      id: txt(original?.id, crmDeal?.dealId),
+      angleCode: txt(crmDeal?.code, original?.angleCode, original?.code_angle),
+      code_angle: txt(crmDeal?.code, original?.code_angle),
+      typeLecture: txt(crmDeal?.lecture, original?.typeLecture, original?.lecture),
+      lecture: txt(crmDeal?.lecture, original?.lecture, original?.typeLecture),
+      rang: txt(crmDeal?.rang, original?.rang, original?.rank),
+      rank: txt(crmDeal?.rang, original?.rank, original?.rang),
+      priority: txt(crmDeal?.priorite, original?.priority),
+      organisation: {
+        ...(original?.organisation && typeof original.organisation === "object" ? original.organisation : {}),
+        name: organisationName,
+        effectiveName: organisationName,
+        verifiedName: organisationName
+      },
+      organization: {
+        ...(original?.organization && typeof original.organization === "object" ? original.organization : {}),
+        name: organisationName,
+        effectiveName: organisationName,
+        verifiedName: organisationName
+      },
+      person: {
+        ...(original?.person && typeof original.person === "object" ? original.person : {}),
+        name: personName,
+        fullName: personName,
+        effectiveName: personName,
+        verifiedName: personName,
+        firstName: txt(original?.person?.firstName, personParts.firstName),
+        lastName: txt(original?.person?.lastName, personParts.lastName),
+        role: txt(crmDeal?.role, original?.person?.role, original?.role),
+        title: txt(crmDeal?.role, original?.person?.title, original?.role),
+        linkedin: txt(crmDeal?.linkedin, original?.person?.linkedin, original?.linkedin),
+        linkedinUrl: txt(crmDeal?.linkedin, original?.person?.linkedinUrl, original?.linkedinUrl),
+        email: txt(crmDeal?.email, original?.person?.email, original?.email)
+      },
+      editorialContext: {
+        ...(original?.editorialContext || {}),
+        angleCode: txt(crmDeal?.code, original?.editorialContext?.angleCode),
+        typeLecture: txt(crmDeal?.lecture, original?.editorialContext?.typeLecture),
+        conversationTitre: txt(crmDeal?.conversation, original?.editorialContext?.conversationTitre),
+        contexteTitre: txt(crmDeal?.contexte, original?.editorialContext?.contexteTitre)
+      },
+      crm: {
+        ...(original?.crm || {}),
+        publicRef: ref,
+        cast: ref,
+        dealId: txt(crmDeal?.dealId, original?.crm?.dealId),
+        stage: txt(crmDeal?.stage, original?.crm?.stage),
+        status: txt(crmDeal?.status, original?.crm?.status),
+        isActiveVisible: active,
+        isReserve: crmStageIsReserve(crmDeal),
+        isToContact: crmDeal?.isToContact === true,
+        isInvitationSent: crmDeal?.isInvitationSent === true,
+        landingUrl: txt(crmDeal?.landingUrl, original?.crm?.landingUrl),
+        linkedinUrl: txt(crmDeal?.linkedinUrl, original?.crm?.linkedinUrl),
+        linkedinMode: txt(crmDeal?.linkedinMode, original?.crm?.linkedinMode),
+        media: txt(crmDeal?.media, original?.crm?.media)
+      },
+      activation: {
+        ...(original?.activation || {}),
+        publicRef: ref,
+        cast: ref,
+        isActiveCasting: active,
+        activationStatus: active ? "active" : "non activable",
+        exclusionReason: txt(exclusion, original?.activation?.exclusionReason)
+      }
+    };
+
+    if (crmDeal?.media) merged.media = crmDeal.media;
+    if (crmDeal?.angle) merged.questionEditoriale = crmDeal.angle;
+
+    return merged;
+  }
+
+  function getCrmAwareDealBundle() {
+    const requestedRef = Core.getPublicReference();
+    const baseBundle = Core.getDealBundle();
+
+    if (!hasCrmMirror()) {
+      return baseBundle;
+    }
+
+    const crmDeal = getCrmDealByReference(requestedRef);
+
+    if (!crmDeal) {
+      if (baseBundle?.deal) {
+        return {
+          ...baseBundle,
+          crmUnavailable: true,
+          crmUnavailableReason: crmUnavailableReason(null, requestedRef)
+        };
+      }
+      return baseBundle;
+    }
+
+    const deal = mergeDealWithCrm(baseBundle?.deal, crmDeal, requestedRef);
+    const angleCode = txt(crmDeal?.code, Core.getAngleCodeFromDeal(deal));
+    const angle = Core.getAngleByCode(angleCode) || baseBundle?.angle || null;
+    const readingCode = txt(crmDeal?.lecture, deal?.typeLecture, angle?.typeLecture, angle?.type_lecture);
+    const reading = Core.getReadingByCode(readingCode) || baseBundle?.reading || null;
+
+    return {
+      dealId: requestedRef,
+      deal,
+      angle,
+      reading,
+      conversation: angle ? Core.getConversation(angle) : baseBundle?.conversation || null,
+      context: angle ? Core.getContext(angle) : baseBundle?.context || null,
+      landingPage: Core.getLandingPageByReading(reading, angle, deal) || baseBundle?.landingPage || null,
+      crmDeal
+    };
   }
 
 
@@ -2790,6 +3011,12 @@
   function render(bundle) {
     const { deal, angle, reading, conversation, context, landingPage } = bundle;
 
+    if (bundle?.crmUnavailable) {
+      renderError("Proposition non disponible",
+        `${safe(bundle.crmUnavailableReason || "Cette proposition n'est plus disponible dans les données CRM actuellement chargées.")}<br><br>Identifiant reçu : <strong>${safe(bundle.dealId || "aucun")}</strong>.`);
+      return;
+    }
+
     if (!deal) {
       renderError("Proposition introuvable",
         `Aucun contenu personnalisé ne correspond à l'identifiant indiqué dans l'URL.<br><br>Identifiant reçu : <strong>${safe(bundle.dealId || "aucun")}</strong>.`);
@@ -2896,5 +3123,5 @@
     initMoreInfoReveal(root);
   }
 
-  render(Core.getDealBundle());
+  render(getCrmAwareDealBundle());
 })();
