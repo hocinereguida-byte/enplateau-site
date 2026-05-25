@@ -20,13 +20,20 @@
     le média et les URLs opérationnelles ;
   - blocage des casts passés en réserve ou absents du miroir CRM lorsque celui-ci
     est chargé sur la page.
+
+  Correctif 20260525-crm-secure-v2 :
+  - les angles alternatifs restent strictement rattachés au même intervenant ;
+  - les pistes passées en réserve éditoriale peuvent être mentionnées, mais ne
+    proposent plus de lien vers une landing bloquée ;
+  - suppression du doublon de lien « Voir cette proposition » ;
+  - titre de section clarifié pour éviter la confusion avec une page organisation.
 */
 
 (function () {
   "use strict";
 
   const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
-  console.info("Scènes d'Arbitrage — render-landing CRM secure build 20260525-v1 loaded");
+  console.info("Scènes d'Arbitrage — render-landing CRM secure build 20260525-v2 alternatives-safe loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -1032,22 +1039,86 @@
     return Number.isFinite(n) ? n : 999;
   }
 
+  function getAlternativeCrmDealForDeal(deal) {
+    const ref = publicRefFromDeal(deal) || Core.getDealId(deal);
+    return ref ? getCrmDealByReference(ref) : null;
+  }
+
+  function getAlternativeAvailability(deal, crmDeal) {
+    if (!hasCrmMirror()) {
+      return {
+        show: true,
+        canLink: !!publicRefFromDeal(deal),
+        label: "Piste en cours de composition",
+        action: "Voir cette proposition →"
+      };
+    }
+
+    if (!crmDeal) {
+      return {
+        show: false,
+        canLink: false,
+        label: "Piste absente du CRM",
+        action: "Non affichée"
+      };
+    }
+
+    if (crmStageIsActive(crmDeal) && !crmStageIsReserve(crmDeal)) {
+      return {
+        show: true,
+        canLink: !!publicRefFromDeal(deal),
+        label: "Autre proposition active",
+        action: "Voir cette proposition →"
+      };
+    }
+
+    if (crmStageIsReserve(crmDeal)) {
+      return {
+        show: true,
+        canLink: false,
+        label: "Piste en réserve éditoriale",
+        action: "À évoquer lors de l’échange"
+      };
+    }
+
+    return {
+      show: false,
+      canLink: false,
+      label: "Piste non active",
+      action: "Non affichée"
+    };
+  }
+
   function getAlternativeDealsForPerson(currentDeal, limit = 3) {
     const currentId = Core.getDealId(currentDeal);
+    const currentRef = publicRefFromDeal(currentDeal);
     const currentKey = norm(personIdentityKeyFromDeal(currentDeal));
     if (!currentKey) return [];
 
     return allPersonalizedDeals()
       .filter(deal => {
-        if (!deal || Core.getDealId(deal) === currentId) return false;
+        if (!deal) return false;
+        if (Core.getDealId(deal) === currentId) return false;
+        if (publicRefFromDeal(deal) && publicRefFromDeal(deal) === currentRef) return false;
         const hasExclusion = !!Core.text(deal?.activation?.replacedBy, deal?.replacedBy,
           deal?.activation?.exclusionReason, deal?.exclusionReason);
         if (hasExclusion) return false;
         return norm(personIdentityKeyFromDeal(deal)) === currentKey;
       })
-      .map(deal => ({ deal, angle: Core.getAngleByCode(Core.getAngleCodeFromDeal(deal)) }))
-      .filter(item => item.angle)
+      .map(deal => {
+        const ref = publicRefFromDeal(deal) || Core.getDealId(deal);
+        const crmDeal = getAlternativeCrmDealForDeal(deal);
+        const mergedDeal = crmDeal ? mergeDealWithCrm(deal, crmDeal, ref) : deal;
+        const angleCode = txt(crmDeal?.code, Core.getAngleCodeFromDeal(mergedDeal));
+        const angle = Core.getAngleByCode(angleCode);
+        const availability = getAlternativeAvailability(mergedDeal, crmDeal);
+        return { deal: mergedDeal, crmDeal, angle, availability };
+      })
+      .filter(item => item.angle && item.availability?.show)
       .sort((a, b) => {
+        const aLinked = a.availability?.canLink ? 0 : 1;
+        const bLinked = b.availability?.canLink ? 0 : 1;
+        if (aLinked !== bLinked) return aLinked - bLinked;
         const ra = dealRankValue(a.deal);
         const rb = dealRankValue(b.deal);
         if (ra !== rb) return ra - rb;
@@ -1104,33 +1175,38 @@
 
     if (!alternatives.length) return "";
 
-    const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "votre organisation";
+    const person = Core.getPerson(currentDeal) || {};
+    const personDisplay = normalizeDisplayName(txt(person.lastName ? `${person.firstName || ""} ${person.lastName}` : "", person.fullName, person.name, person.effectiveName));
+    const titleTarget = personDisplay && personDisplay !== "Intervenant pressenti" ? personDisplay : "cet intervenant";
 
     return `
       <div class="lpb-alternatives" id="pistes-complementaires">
         <details class="lpb-alt-master">
           <summary>
-            <span>D’autres angles de ce cycle pourraient également correspondre à ${safe(org)}</span>
+            <span>D’autres angles de ce cycle pourraient également correspondre à ${safe(titleTarget)}</span>
             <strong>La position présentée ci-dessus reste la proposition prioritaire.</strong>
           </summary>
           <div class="lpb-alt-intro">
-            <h3>Angles alternatifs pertinents pour ${safe(org)}</h3>
-            <p>D’autres angles sont encore en cours de composition. Ils pourront être évoqués lors de l’échange éditorial s’ils correspondent mieux à votre lecture, à votre fonction ou au niveau d’exposition souhaité.</p>
+            <h3>Autres angles possibles pour ${safe(titleTarget)}</h3>
+            <p>D’autres angles associés à cette personne sont encore en cours de composition. Ils pourront être évoqués lors de l’échange éditorial s’ils correspondent mieux à sa lecture, à sa fonction ou au niveau d’exposition souhaité.</p>
           </div>
           <div class="lpb-alt-list">
-            ${alternatives.map(({ deal, angle }) => {
+            ${alternatives.map(({ deal, angle, availability }) => {
               const altReading = displayReadingLabel(Core.getReadingByCode(deal?.editorialContext?.typeLecture || angle?.typeLecture), angle, deal, Core.getPerson(deal)?.role);
               const publicAngle = angle.anglePublic || angle.formulationVariants?.anglePublic || {};
               const formulation = Core.getFormulationLanding(angle) || {};
               const title = angleTitle(angle, publicAngle, formulation, altReading);
+              const ref = publicRefFromDeal(deal);
+              const linkHtml = availability?.canLink && ref
+                ? `<a class="lpb-alt-link" href="?cast=${safe(ref)}">${safe(availability.action || "Voir cette proposition →")}</a>`
+                : `<span class="lpb-alt-link lpb-alt-link--inactive">${safe(availability?.action || "À évoquer lors de l’échange")}</span>`;
               return `
                 <details class="lpb-alt-item">
                   <summary>
-                    <span>Piste en cours de composition</span>
+                    <span>${safe(availability?.label || "Piste en cours de composition")}</span>
                     <strong>${safe(shortText(title, 190))}</strong>
                     <em>${safe(readingPanelLabel(altReading))}</em>
-                    ${deal.publicRef ? `<a class="lpb-alt-link" href="?cast=${safe(deal.publicRef)}">Voir cette proposition →</a>` : ""}
-                    ${deal.publicRef ? `<a class="lpb-alt-link" href="?cast=${deal.publicRef}">Voir cette proposition →</a>` : ""}
+                    ${linkHtml}
                     <b class="lpb-alt-action lpb-alt-action--closed">Afficher détails +</b>
                     <b class="lpb-alt-action lpb-alt-action--open">Masquer détails -</b>
                   </summary>
