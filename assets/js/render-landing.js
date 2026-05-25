@@ -737,7 +737,6 @@
           <div class="lpb-head">
             <p class="lpb-kicker">Mise en regard éditoriale</p>
             <h2>${safe(title)}</h2>
-            <p>Chaque intervenant participe séparément. La valeur naît ensuite de la mise en regard&nbsp;: ${safe(sentence)} éclairent le même moment de transformation industrielle.</p>
             <p class="lpb-subnote">Il ne s’agit pas d’une table ronde ni d’un débat contradictoire. Chaque contribution est préparée individuellement, puis articulée aux autres lectures.</p>
           </div>
 
@@ -746,12 +745,20 @@
             <strong>${safe(soften(heroConversationTitle(conversationLabel, angle)))}</strong>
           </div>
 
-          <div class="lpb-tabs" aria-label="Les quatre lectures de la conversation">
-            ${items.map((item, index) => buildConversationTab(item, index, 0)).join("")}
-            <div class="lpb-tab-panels">
+          <div class="lpb-tabs lpb-tabs--inline-panels" id="lectures-composees" aria-label="Les quatre lectures de la conversation">
+            ${items.map((item, index) => `
+              <div class="lpb-reading-slot lpb-reading-slot--${index}">
+                ${buildConversationTab(item, index, 0)}
+                <div class="lpb-mobile-panel lpb-mobile-panel--${index}">
+                  ${buildConversationPanel(item, index)}
+                </div>
+              </div>`).join("")}
+            <div class="lpb-tab-panels lpb-tab-panels--desktop">
               ${items.map((item, index) => buildConversationPanel(item, index)).join("")}
             </div>
           </div>
+
+          <p class="lpb-composed-note">Chaque intervenant participe séparément. La valeur naît ensuite de la mise en regard&nbsp;: ${safe(sentence)} éclairent le même moment de transformation industrielle.</p>
 
           ${buildAlternativeEditorialTracksBlock(currentDeal, angle, organisationName)}
         </div>
@@ -1959,7 +1966,7 @@
 
               <div class="landing-hero-bento-actions">
                 <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Qualifier cette position — 15 min")}</a>
-                <a class="landing-hero-secondary-link" href="#mise-en-regard">Voir la position proposée</a>
+                <a class="landing-hero-secondary-link" href="#lectures-composees">Voir la position proposée</a>
               </div>
 
               <p class="landing-hero-bento-proof">15 minutes · Sans engagement · Aucun dossier à préparer</p>
