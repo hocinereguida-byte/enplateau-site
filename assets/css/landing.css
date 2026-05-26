@@ -7327,3 +7327,232 @@ body.landing-page .lpb-alt-master > summary::after {
   font-size: 1.35rem !important;
   font-weight: 600 !important;
 }
+
+
+/* ─────────────────────────────────────────────
+   PATCH LANDING INDIVIDUELLE UX V4 — retours 26/05
+   Objectifs : alignements, contraste, hero compact, FAQ dynamique préservée,
+   suppression du lien superflu sous CTA.
+───────────────────────────────────────────── */
+
+/* 1) Pertinence : les paragraphes démarrent au même niveau, quel que soit le titre. */
+body.landing-page #pourquoi-vous .landing-why-narrative--positioned .landing-why-key {
+  display: grid !important;
+  grid-template-rows: auto minmax(5.1em, auto) auto auto auto !important;
+  align-content: start !important;
+}
+
+body.landing-page #pourquoi-vous .landing-why-narrative--positioned .landing-why-key h3 {
+  min-height: 5.1em !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  margin-bottom: 18px !important;
+}
+
+body.landing-page #pourquoi-vous .landing-why-narrative--positioned .landing-why-key > p {
+  align-self: start !important;
+}
+
+body.landing-page #pourquoi-vous .landing-why-narrative--positioned .landing-why-more {
+  align-self: start !important;
+}
+
+body.landing-page #pourquoi-vous .landing-why-narrative--positioned .landing-why-tags {
+  align-self: end !important;
+  margin-top: 24px !important;
+}
+
+/* 2) Hero : pavé visuel plus compact et texte centré dans la photo. */
+body.landing-page .landing-hero-bento-side .landing-film--static-cycle,
+body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"],
+body.landing-page .landing-film--static-cycle .landing-film-static-cycle {
+  height: clamp(300px, 25vw, 385px) !important;
+  min-height: 300px !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-static-cycle::after {
+  background: radial-gradient(circle at 50% 50%, rgba(0,0,0,.46) 0%, rgba(0,0,0,.72) 62%, rgba(0,0,0,.88) 100%) !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+  width: min(76%, 560px) !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 auto !important;
+  inset: auto !important;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  padding: 30px 34px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  overflow: visible !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__status {
+  max-width: 18ch !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list {
+  width: min(100%, 360px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__activation,
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list > div.landing-film-cycle-card__activation {
+  display: none !important;
+}
+
+/* 3) Cartes conversation : contraste statutaire selon fond. */
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab:not(.lpb-reading-tab--primary),
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab:not(.lpb-reading-tab--primary) small,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab:not(.lpb-reading-tab--primary) i {
+  color: #f3eee4 !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab:not(.lpb-reading-tab--primary) small b,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab:not(.lpb-reading-tab--primary) i b,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab:not(.lpb-reading-tab--primary) > span {
+  color: rgba(243,238,228,.58) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab:not(.lpb-reading-tab--primary) strong {
+  color: #fffaf0 !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary small,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary i {
+  color: #171717 !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary small b,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary i b,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary > span {
+  color: rgba(23,23,23,.66) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary strong {
+  color: #171717 !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab small b,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab i b {
+  opacity: 1 !important;
+}
+
+/* Les panneaux détaillés suivent la même logique de contraste. */
+body.landing-page .landing-bento-section--tabs .lpb-reading-panel:not(.lpb-reading-panel--primary) .lpb-panel-block > span,
+body.landing-page .landing-bento-section--tabs .lpb-reading-panel:not(.lpb-reading-panel--primary) .lpb-label {
+  color: rgba(243,238,228,.58) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-panel:not(.lpb-reading-panel--primary) .lpb-chip-list span,
+body.landing-page .landing-bento-section--tabs .lpb-reading-panel:not(.lpb-reading-panel--primary) .lpb-panel-block strong {
+  color: #fffaf0 !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-panel--primary .lpb-panel-block > span,
+body.landing-page .landing-bento-section--tabs .lpb-reading-panel--primary .lpb-label {
+  color: rgba(23,23,23,.66) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-panel--primary .lpb-chip-list span,
+body.landing-page .landing-bento-section--tabs .lpb-reading-panel--primary .lpb-panel-block strong {
+  color: #171717 !important;
+}
+
+/* 4) Cartes gains : alignement des boîtes de détail. */
+body.landing-page #valeur-position .landing-grid--value .landing-value-card {
+  display: grid !important;
+  grid-template-rows: auto minmax(3.8em, auto) minmax(9.2em, auto) auto auto !important;
+  align-content: stretch !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .landing-value-card h3 {
+  min-height: 3.8em !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .landing-value-card > p {
+  min-height: 9.2em !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .landing-value-card .landing-why-tags,
+body.landing-page #valeur-position .landing-grid--value .landing-value-card .landing-value-tags {
+  align-self: start !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .value-details.value-details--visible {
+  align-self: stretch !important;
+  margin-top: 22px !important;
+  background: #fffaf0 !important;
+  color: #171717 !important;
+  border: 1px solid rgba(23,23,23,.16) !important;
+  box-shadow: none !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .value-details.value-details--visible .value-details-title,
+body.landing-page #valeur-position .landing-grid--value .value-details.value-details--visible li strong {
+  color: rgba(23,23,23,.76) !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .value-details.value-details--visible li span {
+  color: rgba(23,23,23,.72) !important;
+}
+
+/* 5) Cycle Industrie : texte de la boîte centré, cohérent avec le titre. */
+body.landing-page .landing-more-cycle-section .more-cycle-focus--section,
+body.landing-page .landing-more-cycle-section .more-cycle-focus--section p {
+  text-align: center !important;
+}
+
+body.landing-page .landing-more-cycle-section .more-cycle-focus--section {
+  display: grid !important;
+  justify-items: center !important;
+}
+
+body.landing-page .landing-more-cycle-section .more-cycle-focus--section p {
+  max-width: 860px !important;
+}
+
+/* 6) CTA final : suppression du lien d'approfondissement résiduel. */
+body.landing-page .qualification-cta-more-link {
+  display: none !important;
+}
+
+/* 7) FAQ : garder une section de réassurance, pas une FAQ statique d'échange. */
+body.landing-page .landing-more-faq-section .landing-head h2 {
+  max-width: 900px !important;
+}
+
+/* 8) Mobile/tablette : les hauteurs forcées redeviennent naturelles. */
+@media (max-width: 980px) {
+  body.landing-page #pourquoi-vous .landing-why-narrative--positioned .landing-why-key,
+  body.landing-page #valeur-position .landing-grid--value .landing-value-card {
+    display: block !important;
+  }
+  body.landing-page #pourquoi-vous .landing-why-narrative--positioned .landing-why-key h3,
+  body.landing-page #valeur-position .landing-grid--value .landing-value-card h3,
+  body.landing-page #valeur-position .landing-grid--value .landing-value-card > p {
+    min-height: 0 !important;
+  }
+  body.landing-page .landing-hero-bento-side .landing-film--static-cycle,
+  body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"],
+  body.landing-page .landing-film--static-cycle .landing-film-static-cycle {
+    height: auto !important;
+    min-height: 340px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+    width: 100% !important;
+    min-height: 340px !important;
+    padding: 32px 24px !important;
+  }
+}
