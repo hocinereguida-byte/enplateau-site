@@ -8,13 +8,59 @@
 
   const root = document.getElementById("organisation-bridge-root");
   const CRM = window.SDA_CRM_INDUSTRIE || null;
+  function doctrineTool() { return window.SDAEditorialDoctrine || null; }
+  function applyDoctrine(value) {
+    const tool = doctrineTool();
+    const raw = String(value == null ? "" : value);
+    return tool && typeof tool.applyLexicon === "function" ? tool.applyLexicon(raw) : raw;
+  }
+  function contextLabelByDoctrine(value) {
+    const raw = String(value || "").trim();
+    const tool = doctrineTool();
+    const normalized = normalize(raw);
+    if (normalized.includes("croissance sous tension")) return "Croissance organisée";
+    if (normalized.includes("adaptation sous contrainte")) return "Adaptation coordonnée";
+    if (normalized.includes("reinvention sous crise")) return "Reconfiguration industrielle";
+    return tool && typeof tool.getContextLabel === "function" ? tool.getContextLabel(raw) : applyDoctrine(raw);
+  }
+  function sanitizeVisibleDOM(scope) {
+    const tool = doctrineTool();
+    if (!tool || typeof tool.applyLexicon !== "function" || !scope || !document.createTreeWalker) return;
+    const walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parent = node.parentElement;
+        if (!parent) return NodeFilter.FILTER_REJECT;
+        const tag = parent.tagName;
+        if (tag === "SCRIPT" || tag === "STYLE" || tag === "NOSCRIPT") return NodeFilter.FILTER_REJECT;
+        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node => {
+      const next = tool.applyLexicon(node.nodeValue);
+      if (next !== node.nodeValue) node.nodeValue = next;
+    });
+  }
+  if (root && window.MutationObserver) {
+    let pendingDoctrineSanitize = false;
+    new MutationObserver(() => {
+      if (pendingDoctrineSanitize) return;
+      pendingDoctrineSanitize = true;
+      window.requestAnimationFrame(() => {
+        pendingDoctrineSanitize = false;
+        sanitizeVisibleDOM(root);
+      });
+    }).observe(root, { childList: true, subtree: true, characterData: true });
+  }
 
   function escapeHTML(value) {
-    return String(value == null ? "" : value)
+    return applyDoctrine(value)
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
-      .replace(/\"/g, "&quot;")
+      .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
   }
 
@@ -107,6 +153,70 @@
       .sort(sortDeals);
   }
 
+  function conversationContextKey(deal) {
+    return normalize([deal?.conversation || "", contextLabelByDoctrine(deal?.contexteCode || deal?.contexte || "")].join(" | "));
+  }
+
+  function angleKey(deal) {
+    return normalize(deal?.code || deal?.angleCode || deal?.angle || "");
+  }
+
+  function applyOrganisationPositionRules(deals) {
+    const visible = [];
+    const conflicts = [];
+    const seenAngles = new Map();
+    const seenConversationContexts = new Map();
+    const hiddenRefs = new Set();
+
+    deals.slice().sort(sortDeals).forEach(deal => {
+      const ref = deal?.ref || deal?.publicRef || deal?.cast || deal?.dealId || "";
+      const aKey = angleKey(deal);
+      const ccKey = conversationContextKey(deal);
+      let reason = "";
+      let kept = null;
+
+      if (aKey && seenAngles.has(aKey)) {
+        kept = seenAngles.get(aKey);
+        reason = "Même organisation déjà positionnée sur le même angle.";
+      } else if (ccKey && seenConversationContexts.has(ccKey)) {
+        kept = seenConversationContexts.get(ccKey);
+        reason = "Même organisation déjà positionnée sur la même conversation contextualisée.";
+      }
+
+      if (reason) {
+        hiddenRefs.add(ref);
+        conflicts.push({ kept, hidden: deal, reason });
+        return;
+      }
+
+      visible.push(deal);
+      if (aKey) seenAngles.set(aKey, deal);
+      if (ccKey) seenConversationContexts.set(ccKey, deal);
+    });
+
+    return { visible, conflicts, hiddenRefs };
+  }
+
+  function renderConflictBlock(conflicts) {
+    if (!conflicts || !conflicts.length) return "";
+    const rows = conflicts.map(item => `
+      <li>
+        <strong>${escapeHTML(text(item.hidden?.personDisplay, item.hidden?.person, "Intervenant masqué"))}</strong>
+        masqué au profit de
+        <strong>${escapeHTML(text(item.kept?.personDisplay, item.kept?.person, "position prioritaire"))}</strong> —
+        ${escapeHTML(item.reason)}
+      </li>
+    `).join("");
+    return `
+      <section class="org-bridge-section">
+        <div class="org-bridge-panel org-bridge-panel--warning">
+          <p><strong>À vérifier dans le CRM.</strong> Une ou plusieurs positions actives de cette organisation entrent en conflit avec les règles éditoriales de casting. La page visible ne conserve que la position prioritaire, mais le CRM doit être arbitré.</p>
+          <ul class="org-bridge-alert-list">${rows}</ul>
+        </div>
+      </section>
+    `;
+  }
+
   function getOrganisationSupports(orgKey) {
     const orgs = CRM?.organisations || CRM?.organizations || {};
     const key = normalize(orgKey);
@@ -184,7 +294,7 @@
     const role = text(deal.role, deal.poste, "Fonction à préciser");
     const lecture = text(deal.lecture, "Lecture");
     const conversation = text(deal.conversation, "Conversation Industrie");
-    const contexte = text(deal.contexte, "Contexte à préciser");
+    const contexte = contextLabelByDoctrine(text(deal.contexteCode, deal.contexte, "Contexte à préciser"));
     const media = text(deal.media, "Média à confirmer");
     const angle = text(deal.angle, deal.question, "Angle éditorial à préciser");
     const url = landingUrl(deal);
@@ -225,7 +335,10 @@
       coordinationText = "La démarche peut inclure une prise de parole de direction ainsi que celle de certains collaborateurs, selon les sujets les plus pertinents à porter dans le cycle.";
     }
 
-    const cards = activeDeals.map(renderPositionCard).join("");
+    const positionControl = applyOrganisationPositionRules(activeDeals);
+    const visibleActiveDeals = positionControl.visible;
+    const cards = visibleActiveDeals.map(renderPositionCard).join("");
+    const conflictBlock = renderConflictBlock(positionControl.conflicts);
     const reserveCount = reserveDeals.length;
 
     root.innerHTML = `
@@ -266,7 +379,7 @@
 
             <div class="org-bridge-intro-grid">
               <div class="org-bridge-intro-card">
-                <h3>${activeDeals.length} positions actives</h3>
+                <h3>${visibleActiveDeals.length} positions actives</h3>
                 <p>Les positions listées ci-dessous sont les propositions détaillées actuellement actives dans le cycle Industrie.</p>
               </div>
               <div class="org-bridge-intro-card">
@@ -333,16 +446,18 @@
             </div>
           </section>
 
+          ${conflictBlock}
+
           <section class="org-bridge-section">
             <div class="org-bridge-panel">
               <p><strong>Cette page n’est pas une proposition collective unique.</strong> Elle permet de visualiser les positions actuellement pressenties pour ${escapeHTML(organisation)} et d’accéder aux pages individuelles correspondantes.</p>
               <p>Les propositions détaillées restent indépendantes : chaque intervenant, chaque angle et chaque média doivent être validés selon leur pertinence propre.</p>
             </div>
-            <p class="org-bridge-footnote">Référence d’entrée : ${escapeHTML(referenceDeal.ref)} · Données CRM : ${escapeHTML(CRM?.version || "version non précisée")}</p>
           </section>
         </div>
       </main>
     `;
+    sanitizeVisibleDOM(root);
   }
 
   function boot() {
