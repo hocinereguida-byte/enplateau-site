@@ -33,7 +33,7 @@
   "use strict";
 
   const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
-  console.info("Scènes d'Arbitrage — render-landing CRM secure build 20260525-v2 alternatives-safe loaded");
+  console.info("Scènes d'Arbitrage — render-landing doctrine build 20260526-v1 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -44,7 +44,54 @@
     return;
   }
 
-  function safe(v) { return Core.escapeHTML(v || ""); }
+  function getDoctrineTool() { return window.SDAEditorialDoctrine || null; }
+  function applyDoctrine(value) {
+    const tool = getDoctrineTool();
+    const raw = String(value || "");
+    return tool && typeof tool.applyLexicon === "function" ? tool.applyLexicon(raw) : raw;
+  }
+  function contextLabelByDoctrine(value) {
+    const tool = getDoctrineTool();
+    const raw = String(value || "");
+    if (!raw) return raw;
+    const normalized = norm(raw);
+    if (normalized.includes("croissance sous tension")) return "Croissance organisée";
+    if (normalized.includes("adaptation sous contrainte")) return "Adaptation coordonnée";
+    if (normalized.includes("reinvention sous crise")) return "Reconfiguration industrielle";
+    return tool && typeof tool.getContextLabel === "function" ? tool.getContextLabel(raw) : applyDoctrine(raw);
+  }
+  function safe(v) { return Core.escapeHTML(applyDoctrine(v || "")); }
+  function sanitizeVisibleDOM(scope) {
+    const tool = getDoctrineTool();
+    if (!tool || typeof tool.applyLexicon !== "function" || !scope || !document.createTreeWalker) return;
+    const walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parent = node.parentElement;
+        if (!parent) return NodeFilter.FILTER_REJECT;
+        const tag = parent.tagName;
+        if (tag === "SCRIPT" || tag === "STYLE" || tag === "NOSCRIPT") return NodeFilter.FILTER_REJECT;
+        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node => {
+      const next = tool.applyLexicon(node.nodeValue);
+      if (next !== node.nodeValue) node.nodeValue = next;
+    });
+  }
+  if (root && window.MutationObserver) {
+    let doctrineSanitizePending = false;
+    new MutationObserver(() => {
+      if (doctrineSanitizePending) return;
+      doctrineSanitizePending = true;
+      window.requestAnimationFrame(() => {
+        doctrineSanitizePending = false;
+        sanitizeVisibleDOM(root);
+      });
+    }).observe(root, { childList: true, subtree: true, characterData: true });
+  }
   function txt(...values) { return Core.text(...values); }
   function toArray(v) { return Core.toArray(v).filter(Boolean); }
   function norm(v) { return Core.normalize(v || ""); }
@@ -3132,7 +3179,7 @@
     const personName        = normalizeDisplayName(txt(person.fullName,   "Intervenant pressenti"));
     const personRole        = cleanRole(person.role, organisationName);
     const readingLabel      = displayReadingLabel(reading, angle, deal, personRole);
-    const contextLabel      = soften(txt(context?.label, deal?.editorialContext?.contexteTitre, "Contexte éditorial"));
+    const contextLabel      = contextLabelByDoctrine(txt(context?.code, context?.contextCode, angle?.contexteCode, angle?.contextCode, deal?.editorialContext?.contexteCode, context?.label, deal?.editorialContext?.contexteTitre, "Contexte éditorial"));
     const conversationLabel = getConversationLabel(conversation, deal);
     const heroTitle = txt(
       conversation?.title,
@@ -3211,6 +3258,7 @@
     initAlternativeAccordions(root);
     initValueDetailsAccordions(root);
     initMoreInfoReveal(root);
+    sanitizeVisibleDOM(root);
   }
 
   render(getCrmAwareDealBundle());
