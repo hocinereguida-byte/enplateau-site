@@ -552,3 +552,25 @@ body.organisation-bridge-page {
     padding: 20px;
   }
 }
+
+
+/* Patch doctrine visible V1 — alertes de contrôle CRM éditorial */
+.org-bridge-panel--warning {
+  border-left: 3px solid #9d6b3c;
+  background: rgba(157, 107, 60, .08);
+}
+
+.org-bridge-alert-list {
+  margin: 16px 0 0;
+  padding-left: 1.25rem;
+  color: var(--sda-muted);
+  line-height: 1.65;
+}
+
+.org-bridge-alert-list li + li {
+  margin-top: 8px;
+}
+
+.org-bridge-alert-list strong {
+  color: var(--sda-ink);
+}
