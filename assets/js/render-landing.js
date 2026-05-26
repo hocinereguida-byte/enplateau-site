@@ -946,15 +946,18 @@
   function buildConversationTab(item, index, activeIndex) {
     const checked = index === activeIndex ? " checked" : "";
     const isPrimary = item.primary;
-    const orgs = item.orgs.slice(0, 3).map(normalizeDisplayName);
+    const orgs = item.orgs.slice(0, 3).map(normalizeDisplayName).filter(Boolean);
+    const reading = readingNoun(item.readingLabel).replace(/^lecture\s+/i, "");
+    const orgBlock = orgs.length
+      ? `<small><b>Organisations positionnées</b>${safe(orgs.join(" · "))}</small>`
+      : `<small><b>Organisations positionnées</b>Organisations en qualification</small>`;
     return `
       <input class="lpb-tab-input" type="radio" name="lpb-reading-tabs" id="lpb-reading-${index}"${checked}>
       <label class="lpb-reading-tab ${isPrimary ? "lpb-reading-tab--primary" : ""}" for="lpb-reading-${index}">
         <span>${safe(isPrimary ? "Votre lecture" : "Lecture complémentaire")}</span>
-        <strong>${safe(readingNoun(item.readingLabel))}</strong>
-        <em>${safe(readingTags(item.readingLabel).slice(0, 3).join(" · "))}</em>
-        <small>${orgs.length ? safe(orgs.join(" · ")) : "Organisations positionnées en qualification"}</small>
-        ${item.media ? `<i>${safe(item.media)}</i>` : ""}
+        <strong>${safe(reading)}</strong>
+        ${orgBlock}
+        ${item.media ? `<i><b>Journaliste / média</b>${safe(item.media)}</i>` : ""}
       </label>`;
   }
 
@@ -1019,7 +1022,7 @@
     const items = [primaryItem, ...otherItems].slice(0, 4);
 
     return `
-      <section class="landing-bento-section landing-bento-section--tabs" id="mise-en-regard" data-bento-build="20260516-retours-hero-conversation-gains">
+      <section class="landing-bento-section landing-bento-section--tabs" id="mise-en-regard" data-bento-build="20260526-landing-ux-v3">
         <div class="landing-container lpb-container">
           <div class="lpb-head">
             <p class="lpb-kicker">Mise en regard éditoriale</p>
@@ -1263,8 +1266,8 @@
             <strong>La position présentée ci-dessus reste la proposition prioritaire.</strong>
           </summary>
           <div class="lpb-alt-intro">
-            <h3>Autres angles possibles pour ${safe(titleTarget)}</h3>
-            <p>D’autres angles associés à cette personne sont encore en cours de composition. Ils pourront être évoqués lors de l’échange éditorial s’ils correspondent mieux à sa lecture, à sa fonction ou au niveau d’exposition souhaité.</p>
+            <h3>D’autres angles de ce cycle pourraient également correspondre à ${safe(titleTarget)}</h3>
+            <p>La position présentée ci-dessus reste la proposition prioritaire. Ces pistes peuvent être évoquées si elles correspondent mieux à la lecture, à la fonction ou au niveau d’exposition souhaité.</p>
           </div>
           <div class="lpb-alt-list">
             ${alternatives.map(({ deal, angle, availability }) => {
@@ -1907,12 +1910,12 @@
         ${item?.text ? `<p>${safe(shortText(item.text, 320))}</p>` : ""}
         ${chips.length ? `<div class="value-chip-list">${chips.map(chip => `<span>${safe(chip)}</span>`).join("")}</div>` : ""}
         ${details.length ? `
-          <details class="value-details">
-            <summary><span class="value-details-open">Découvrir les usages et effets concrets</span><span class="value-details-close">Masquer les usages et effets concrets</span></summary>
+          <div class="value-details value-details--visible">
+            <p class="value-details-title">Usages et effets concrets</p>
             <ul>
               ${details.map(detail => `<li><strong>${safe(detail.label)}</strong><span>${safe(detail.text)}</span></li>`).join("")}
             </ul>
-          </details>` : ""}
+          </div>` : ""}
       </article>`;
   }
 
@@ -2152,7 +2155,6 @@
             <div><dt>Préparation, cadrage, tournage</dt><dd>Jusqu’à décembre 2026</dd></div>
             <div><dt>Journalistes</dt><dd>Christophe Pallée · Gilles Leclerc · Thierry Cabannes</dd></div>
             <div><dt>Diffusion à partir de septembre 2026</dt><dd>BFM Business · La Tribune · Le Figaro</dd></div>
-            <div class="landing-film-cycle-card__activation"><dt>Activation &amp; exploitation</dt><dd>Replay disponible et droits d’exploitation transférés pour une valorisation permanente de la prise de parole.</dd></div>
           </dl>
         </div>
       </div>`;
@@ -2564,7 +2566,7 @@
     const org = hasRealOrg ? organisationName : "L’organisation pressentie";
 
     if (hasRealOrg && (r.includes("territ") || source.includes("foncier") || source.includes("friche"))) {
-      return `${org} intervient là où les trajectoires industrielles dépassent les murs de l’entreprise : foncier, friches, infrastructures, ancrage local, acteurs publics et conditions territoriales de décision. Cette expérience peut éclairer le rôle du territoire dans la continuité, l’évolution ou la réorientation d’un outil industriel.`;
+      return `${org} intervient là où les trajectoires industrielles dépassent les murs de l’entreprise : foncier, friches, infrastructures, ancrage local, acteurs publics et conditions territoriales de décision. Cette expérience pourrait éclairer le rôle du territoire dans la continuité, l’évolution ou la réorientation d’un outil industriel.`;
     }
 
     const scope = readingObservationScope(readingLabel);
@@ -2585,7 +2587,7 @@
       operationnelle: "les flux, la qualité, les priorités, les interfaces métiers et les conditions d’exécution qui rendent une trajectoire réellement pilotable",
       rh: "les métiers, les compétences, les collectifs, les rythmes d’adaptation et les conditions humaines de la transformation industrielle",
       energie: "les ressources, l’énergie, les matières, le carbone et les conditions de continuité qui pèsent sur les trajectoires industrielles",
-      territoriale: "le foncier, les infrastructures, l’ancrage local, les acteurs publics et les conditions territoriales qui rendent une trajectoire possible ou plus difficile",
+      territoriale: "le foncier, les infrastructures, l’ancrage local, les acteurs publics et les conditions territoriales qui rendent une trajectoire industrielle possible, soutenable ou réorientable",
       technologique: "les systèmes, les données, les interfaces et les architectures techniques qui conditionnent la continuité et la lisibilité d’une trajectoire industrielle",
       strategique: "les transformations en cours, les acteurs concernés, les arbitrages de trajectoire, les défis à arbitrer et les effets d’échelle qui structurent l’écosystème industriel"
     };
@@ -2601,26 +2603,26 @@
     const persona = detectPersonaType(personRole, actorType || "organisation");
 
     function openingByPersona() {
-      if (persona === "DG") return "est en mesure de porter une lecture d’ensemble du sujet";
-      if (persona === "DAF") return "peut éclairer les arbitrages économiques, les marges de manœuvre et les conditions de soutenabilité du sujet";
-      if (persona === "DRH") return "peut éclairer les effets du sujet sur les métiers, les compétences, les collectifs et les capacités de transformation";
-      if (persona === "DIR_JURIDIQUE") return "peut éclairer les conditions de sécurisation, de responsabilité et de lisibilité publique du sujet";
-      if (persona === "DIR_INDUSTRIEL") return "peut éclairer le sujet depuis une position directement exposée aux décisions industrielles, aux contraintes d’exécution et aux effets d’échelle";
-      if (persona === "conseil") return "peut formuler une lecture comparative du sujet à partir de plusieurs trajectoires observées";
-      if (persona === "avocat") return "peut formuler une lecture juridique du sujet sans la réduire à un dossier ou à une consultation";
-      if (persona === "ingenierie") return "peut éclairer le sujet depuis les conditions concrètes de faisabilité, d’infrastructures et de passage à l’échelle";
-      return "peut apporter une lecture pertinente du sujet";
+      if (persona === "DG") return "semble pouvoir porter une lecture d’ensemble du sujet";
+      if (persona === "DAF") return "pourrait éclairer les arbitrages économiques, les marges de manœuvre et les conditions de soutenabilité du sujet";
+      if (persona === "DRH") return "pourrait éclairer les effets du sujet sur les métiers, les compétences, les collectifs et les capacités de transformation";
+      if (persona === "DIR_JURIDIQUE") return "pourrait éclairer les conditions de sécurisation, de responsabilité et de lisibilité publique du sujet";
+      if (persona === "DIR_INDUSTRIEL") return "pourrait éclairer le sujet depuis une position directement exposée aux décisions industrielles, aux conditions d’exécution et aux effets d’échelle";
+      if (persona === "conseil") return "pourrait formuler une lecture comparative du sujet à partir de plusieurs trajectoires observées";
+      if (persona === "avocat") return "pourrait formuler une lecture juridique du sujet sans la réduire à un dossier ou à une consultation";
+      if (persona === "ingenierie") return "pourrait éclairer le sujet depuis les conditions concrètes de faisabilité, d’infrastructures et de passage à l’échelle";
+      return "pourrait apporter une lecture pertinente du sujet";
     }
 
     if (hasRealName) {
-      return `Au regard de sa position chez ${org}, ${personName} ${openingByPersona()}. Son expérience permet de relier les transformations en cours, les acteurs concernés, les arbitrages, les défis, les trajectoires possibles et les effets d’échelle. L’enjeu n’est pas de commenter un cas propre à ${org}, mais d’éclairer ${scope} depuis l’écosystème industriel dans lequel cette expérience s’inscrit.`;
+      return `Au regard de sa position chez ${org}, ${personName} ${openingByPersona()}. Son expérience devrait permettre de relier les transformations en cours, les acteurs concernés, les arbitrages, les défis, les trajectoires possibles et les effets d’échelle. L’enjeu n’est pas de commenter un cas propre à ${org}, mais d’éclairer ${scope} depuis l’écosystème industriel dans lequel cette expérience s’inscrit.`;
     }
 
     if (why.person) {
       return shortText(sanitizePersonFragment(why.person), 420);
     }
 
-    return `La fonction pressentie peut éclairer ${scope}, sans réduire l’analyse à un cas interne.`;
+    return `La fonction pressentie pourrait éclairer ${scope}, sans réduire l’analyse à un cas interne.`;
   }
 
   function whyPositionText(why, organisationName, readingLabel, positionWhy) {
@@ -2632,7 +2634,7 @@
     const questionMatch = source.match(/«\s*([^»]+?)\s*»/);
 
     if (r.includes("territ")) {
-      return `La contribution ne porte pas sur un dossier ${org}. Elle éclaire, depuis une lecture territoriale, les conditions qui permettent à un outil industriel de continuer, d’évoluer ou de se réorienter.`;
+      return `La contribution ne porte pas sur un dossier ${org}. Elle pourrait éclairer, depuis une lecture territoriale, les conditions qui permettent à un outil industriel de continuer, d’évoluer ou de se réorienter.`;
     }
 
     if (questionMatch && questionMatch[1]) {
@@ -2653,6 +2655,22 @@
     return "La contribution ne porte pas sur un cas interne. Elle rend lisible un mécanisme utile à l’ensemble de la conversation.";
   }
 
+  function whyTextHTML(value) {
+    const text = String(value || "").trim();
+    if (!text) return "";
+    if (text.length <= 330) return `<p>${safe(text)}</p>`;
+    const sentences = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [text];
+    let intro = "";
+    const rest = [];
+    for (const sentence of sentences) {
+      const candidate = `${intro} ${sentence}`.trim();
+      if (!intro || candidate.length <= 250) intro = candidate;
+      else rest.push(sentence.trim());
+    }
+    const details = rest.join(" ").trim() || text.slice(intro.length).trim();
+    return `<p>${safe(intro || shortText(text, 240))}</p>${details ? `<details class="landing-why-more"><summary>Lire le détail +</summary><p>${safe(details)}</p></details>` : ""}`;
+  }
+
   function buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType, readingLabel, currentDeal = null) {
     const enrichment = getPublicEnrichment(currentDeal) || {};
     const orgTitle = whyOrganisationTitle(readingLabel, why);
@@ -2668,21 +2686,21 @@
         <article class="landing-why-key">
           <span>Votre organisation</span>
           <h3>${safe(orgTitle)}</h3>
-          <p>${safe(orgFragment)}</p>
+          ${whyTextHTML(orgFragment)}
           ${tagsHTML(whyTagsForReading(readingLabel, "organisation", why))}
         </article>
 
         <article class="landing-why-key">
           <span>Votre position d’observation</span>
           <h3>${safe(personTitle)}</h3>
-          <p>${safe(personFragment)}</p>
+          ${whyTextHTML(personFragment)}
           ${tagsHTML(whyTagsForReading(readingLabel, "person", why))}
         </article>
 
         <article class="landing-why-key landing-why-key--accent">
           <span>La lecture proposée</span>
           <h3>${safe(positionTitle)}</h3>
-          <p>${safe(positionFragment)}</p>
+          ${whyTextHTML(positionFragment)}
           ${tagsHTML(whyTagsForReading(readingLabel, "position", why))}
         </article>
       </div>`;
@@ -3030,10 +3048,10 @@
           <div class="landing-head">
             <p class="landing-kicker">Cycle Industrie</p>
             <h2>Industrie & transformation des territoires.</h2>
-            <p>Pour sa saison inaugurale, Scènes d'Arbitrage ouvre le cycle Industrie & transformation des territoires. Il observe les moments où produire davantage, coordonner des ressources sous conditions, transformer un outil ou réarbitrer une trajectoire oblige les organisations à formuler autrement leurs décisions.</p>
+            <p>Pour sa saison inaugurale, Scènes d'Arbitrage ouvre le cycle Industrie & transformation des territoires. Il observe les moments où produire davantage, coordonner des ressources, transformer un outil ou réarbitrer une trajectoire oblige les organisations à formuler autrement leurs décisions.</p>
           </div>
           <div class="more-cycle-focus more-cycle-focus--section">
-            <p>Chaque conversation part d’un phénomène industriel concret, puis le regarde depuis plusieurs lectures : stratégie, finance, droit, opérations, RH, technologie, territoires ou ressources.</p>
+            <p>Chaque conversation part d’une situation industrielle concrète et la met en regard depuis plusieurs positions complémentaires : stratégie, finance, droit, opérations, RH, technologie, territoires ou ressources.</p>
             <p class="more-cycle-note">Un second cycle, Logement & fabrique des territoires, suit la même logique éditoriale sur les transformations de l’habitat, du foncier et des territoires.</p>
           </div>
         </div>
@@ -3042,21 +3060,16 @@
       <section class="landing-section landing-section--light landing-more-faq-section" id="questions-avant-echange">
         <div class="landing-container">
           <div class="landing-head">
-            <p class="landing-kicker">Questions fréquentes</p>
-            <h2>Les points à clarifier avant de réserver un échange.</h2>
-            <p>Ces réponses reprennent les principaux freins rencontrés avant une prise de parole publique : engagement, préparation, confidentialité, exposition, équipes à associer et différence avec une communication promotionnelle.</p>
+            <p class="landing-kicker">Repères pratiques</p>
+            <h2>Comprendre le cadre Scènes d'Arbitrage avant de répondre.</h2>
+            <p>Ces repères présentent le fonctionnement du dispositif : cadre éditorial, préparation, confidentialité, engagement, contribution, formats média et usages possibles des contenus produits.</p>
           </div>
           <div class="more-accordions" id="more-accordions">
-            ${buildMoreDetail("Questions fréquentes avant l’échange", buildMoreFAQ(faq), true)}
-          </div>
-          <div class="more-final-cta">
-            <h2>${safe(soften(finalTitle))}</h2>
-            <p>L’échange dure 15 minutes. Il ne vaut pas engagement et ne demande aucun dossier à préparer.</p>
-            <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label)}</a>
-            <p>Sans engagement · Aucun dossier sensible · Périmètre préparé si nécessaire</p>
+            ${buildMoreFAQ(faq)}
           </div>
         </div>
       </section>
+      ${buildQualificationCTASection(cta, organisationName, readingLabel)}
       </div>`;
   }
 
