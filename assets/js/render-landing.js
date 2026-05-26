@@ -33,7 +33,7 @@
   "use strict";
 
   const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
-  console.info("Scènes d'Arbitrage — render-landing doctrine build 20260526-v1 loaded");
+  console.info("Scènes d'Arbitrage — render-landing UX V4 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
@@ -969,7 +969,7 @@
       ? `Cette ${panelLabel.toLowerCase().replace("lecture rh", "lecture RH")} constitue la position proposée à votre organisation dans la composition éditoriale.`
       : `Cette ${panelLabel.toLowerCase().replace("lecture rh", "lecture RH")} complète la composition éditoriale en apportant un autre point d’observation sur le même moment de transformation industrielle.`;
     const value = item.text || (item.primary ? primaryReadingValue(item.readingLabel, item.text) : readingContributionLine(item.readingLabel, item.text));
-    const orgLabel = item.primary || orgs.length === 1 ? "Organisation positionnée" : "Organisations positionnées";
+    const orgLabel = "Organisations positionnées";
 
     return `
       <article class="lpb-reading-panel lpb-reading-panel--${index} ${item.primary ? "lpb-reading-panel--primary" : ""}">
@@ -1945,10 +1945,6 @@
               </div>
               <p class="qualification-cta-microcopy">15 minutes · sans engagement · aucune suite automatique</p>
             </div>
-          </div>
-
-          <div class="qualification-cta-more-link">
-            <a href="#pour-aller-plus-loin" data-reveal-more="pour-aller-plus-loin" aria-expanded="false">Vous souhaitez approfondir le cadre avant de réserver un échange éditorial ?</a>
           </div>
         </div>
       </section>`;
