@@ -7101,3 +7101,229 @@ body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list > d
     padding: 24px !important;
   }
 }
+
+/* ─────────────────────────────────────────────
+   PATCH LANDING INDIVIDUELLE UX V3 — retours 26/05
+   Objectifs : cartes conversation clarifiées, gains visibles,
+   FAQ de réassurance, contact final avec photo, hero moins commercial.
+───────────────────────────────────────────── */
+
+/* Hero : le pavé média ne doit plus donner un effet de texte tassé à droite. */
+body.landing-page .landing-film--static-cycle .landing-film-static-cycle::after {
+  background: linear-gradient(90deg,
+    rgba(0,0,0,.78) 0%,
+    rgba(0,0,0,.62) 34%,
+    rgba(0,0,0,.34) 70%,
+    rgba(0,0,0,.20) 100%) !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+  left: 8% !important;
+  right: auto !important;
+  width: min(72%, 620px) !important;
+  min-height: 0 !important;
+  padding: 34px 42px !important;
+  text-align: left !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__status {
+  max-width: 34ch !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__activation {
+  display: none !important;
+}
+
+/* Cartes de mise en regard : structure plus statutaire, moins CRM. */
+body.landing-page .lpb-reading-tab em {
+  display: none !important;
+}
+
+body.landing-page .lpb-reading-tab small,
+body.landing-page .lpb-reading-tab i {
+  display: block;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(243,238,228,.20);
+  font-style: normal;
+  line-height: 1.5;
+}
+
+body.landing-page .lpb-reading-tab small b,
+body.landing-page .lpb-reading-tab i b {
+  display: block;
+  margin-bottom: 7px;
+  font-family: var(--lpb-mono);
+  font-size: .60rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: rgba(243,238,228,.52);
+}
+
+body.landing-page .lpb-reading-tab--primary small,
+body.landing-page .lpb-reading-tab--primary i {
+  border-top-color: rgba(23,23,23,.16);
+}
+
+body.landing-page .lpb-reading-tab--primary small b,
+body.landing-page .lpb-reading-tab--primary i b {
+  color: rgba(23,23,23,.58);
+}
+
+/* Pertinence : éviter qu’une colonne longue déséquilibre toute la section. */
+body.landing-page .landing-why-more {
+  margin-top: 18px;
+  border-top: 1px solid var(--landing-line);
+  padding-top: 14px;
+}
+
+body.landing-page .landing-why-more summary {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .66rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--landing-accent);
+}
+
+body.landing-page .landing-why-more summary::-webkit-details-marker {
+  display: none;
+}
+
+body.landing-page .landing-why-more p {
+  margin-top: 14px !important;
+}
+
+/* Gains : ne plus cacher les effets concrets derrière un + peu lisible. */
+body.landing-page .landing-grid--value .landing-value-card {
+  display: flex !important;
+  flex-direction: column;
+}
+
+body.landing-page .value-details.value-details--visible {
+  display: block;
+  margin-top: auto;
+  padding: 18px;
+  border: 1px solid rgba(243,238,228,.20);
+  background: rgba(255,250,240,.08);
+  color: var(--landing-text);
+}
+
+body.landing-page .value-details.value-details--visible .value-details-title {
+  margin: 0 0 14px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .62rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--landing-accent-soft);
+}
+
+body.landing-page .value-details.value-details--visible ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+body.landing-page .value-details.value-details--visible li {
+  padding: 0;
+  border: 0;
+}
+
+body.landing-page .value-details.value-details--visible li strong {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .62rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--landing-text);
+}
+
+body.landing-page .value-details.value-details--visible li span {
+  display: block;
+  color: var(--landing-text-soft);
+  font-size: .88rem;
+  line-height: 1.55;
+}
+
+/* Autres angles : titre personnalisé conservé, action rendue visible. */
+body.landing-page .lpb-alt-section summary,
+body.landing-page .lpb-alt-trigger,
+body.landing-page .lpb-alt-list > summary {
+  color: var(--landing-accent) !important;
+}
+
+body.landing-page .lpb-alt-section .lpb-alt-toggle,
+body.landing-page .lpb-alt-section > details > summary {
+  border-color: rgba(200,169,110,.46) !important;
+  background: rgba(200,169,110,.10) !important;
+}
+
+/* Cycle Industrie : contraste maintenu, texte plus lisible. */
+body.landing-page .landing-more-cycle-section .more-cycle-focus--section {
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* FAQ : section de réassurance sur le dispositif, pas injonction avant appel. */
+body.landing-page .landing-more-faq-section .landing-head h2 {
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.landing-page .landing-more-faq-section .landing-head p {
+  max-width: 840px;
+}
+
+body.landing-page .more-accordions .more-faq-grid {
+  margin-top: 0;
+}
+
+/* Contact final : retour à la version incarnée avec photo. */
+body.landing-page .landing-qualification-cta--final {
+  margin-top: 0;
+}
+
+@media (max-width: 980px) {
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+    left: 6% !important;
+    width: min(82%, 620px) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+    left: 0 !important;
+    width: 100% !important;
+    padding: 24px !important;
+  }
+
+  body.landing-page .lpb-reading-tab small,
+  body.landing-page .lpb-reading-tab i {
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+}
+
+/* Correctif visibilité CTA autres angles — classes réelles */
+body.landing-page .lpb-alt-master > summary {
+  background: rgba(200,169,110,.10) !important;
+  border-bottom: 1px solid rgba(200,169,110,.22) !important;
+}
+body.landing-page .lpb-alt-master > summary span,
+body.landing-page .lpb-alt-master > summary strong,
+body.landing-page .lpb-alt-master > summary::after {
+  color: #8f6f2e !important;
+}
+body.landing-page .lpb-alt-master > summary::after {
+  font-size: 1.35rem !important;
+  font-weight: 600 !important;
+}
