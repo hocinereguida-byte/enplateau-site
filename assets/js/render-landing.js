@@ -1022,7 +1022,7 @@
     const items = [primaryItem, ...otherItems].slice(0, 4);
 
     return `
-      <section class="landing-bento-section landing-bento-section--tabs" id="mise-en-regard" data-bento-build="20260526-landing-ux-v3">
+      <section class="landing-bento-section landing-bento-section--tabs" id="mise-en-regard" data-bento-build="20260526-landing-ux-v5">
         <div class="landing-container lpb-container">
           <div class="lpb-head">
             <p class="lpb-kicker">Mise en regard éditoriale</p>
@@ -1504,7 +1504,7 @@
     const cabinetByReading = {
       technologie: [
         { question: "Comment ne pas paraître vendre une solution ou une plateforme technologique ?", answer: "La contribution ne présente ni offre, ni mission, ni outil. Elle formule ce que votre position d'observation permet de comprendre sur les systèmes, données et interfaces dans les trajectoires industrielles." },
-        { question: "Cette lecture peut-elle ouvrir des conversations avec des décideurs non techniques ?", answer: "Oui. L'enjeu n'est pas la technologie pour elle-même, mais ce qu'elle change dans la décision, la lisibilité de l'action et la capacité de transformation." }
+        { question: "À quoi peut servir le contenu après sa diffusion ?", answer: "Le contenu produit devient un actif éditorial durable : une vidéo, un article ou une page média mobilisable dans le temps. Sa valeur tient à la lecture structurée qu’il formule sur un arbitrage durable, plus qu’à une actualité ponctuelle." }
       ],
       operationnelle: [
         { question: "Comment montrer une compréhension terrain sans exposer des cas clients ?", answer: "La contribution ne cite ni mission, ni client, ni situation confidentielle. Elle restitue des mécanismes observables à partir de plusieurs situations industrielles." },
@@ -1523,7 +1523,7 @@
         { question: "Comment éviter de paraître commenter un dossier client ?", answer: "Aucun dossier identifiable n'est attendu. La contribution formule une lecture de mécanisme, préparée et limitée." }
       ],
       territorial: [
-        { question: "Cette lecture peut-elle ouvrir des conversations avec des directions industrielles et des DAF ?", answer: "Oui. En articulant territoire et trajectoire industrielle, la contribution parle directement aux DG, directions industrielles et DAF qui arbitrent les conditions territoriales de leur activité." },
+        { question: "À quoi peut servir le contenu après sa diffusion ?", answer: "Le contenu produit est conçu comme une opération éditoriale pérenne. Il constitue un actif durable mobilisable dans le temps auprès de clients, partenaires, directions générales, directions financières ou interlocuteurs institutionnels, sans promettre un accès direct à une audience." },
         { question: "Comment parler de territoire sans exposer une négociation ou un projet local sensible ?", answer: "La lecture porte sur les mécanismes : foncier, infrastructures, ancrage, réseaux, acteurs publics et conditions collectives de décision. Aucun projet identifiable n'est attendu." }
       ],
       rh: [
@@ -1549,6 +1549,44 @@
     ]);
   }
 
+  function durableAssetFAQItem() {
+    return {
+      question: "À quoi peut servir le contenu après sa diffusion ?",
+      answer: "Le contenu produit est conçu comme une opération éditoriale pérenne, pas comme une opération commerciale immédiate ou jetable. Il constitue un actif durable : une vidéo, un article ou une page média mobilisable dans le temps auprès de clients, partenaires, directions générales, directions financières ou interlocuteurs institutionnels. Sa valeur tient au fait qu’il formule une lecture structurée sur un arbitrage durable, plutôt que de commenter une actualité ponctuelle. Sur plusieurs années, il peut ainsi nourrir des échanges qualifiés, être partagé dans un rendez-vous, accompagner une prise de contact ou rester accessible aux personnes qui recherchent une lecture sur ce sujet."
+    };
+  }
+
+  function normalizeFAQItemForDoctrine(item) {
+    if (!item) return item;
+    const question = String(item.question || "");
+    const answer = String(item.answer || "");
+    const combined = norm(`${question} ${answer}`);
+
+    // Ne jamais promettre un accès à une audience ou à des décideurs.
+    // Reformuler ces cas en actif éditorial durable, mobilisable dans le temps.
+    if (
+      combined.includes("ouvrir des conversations") ||
+      combined.includes("conversation avec des daf") ||
+      combined.includes("parle directement aux dg") ||
+      combined.includes("acceder aux daf") ||
+      combined.includes("acces aux daf")
+    ) {
+      return durableAssetFAQItem();
+    }
+
+    const cleanQuestion = question
+      .replace(/Cette intervention peut-elle ouvrir des conversations avec[^?]+\?/i, "À quoi peut servir le contenu après sa diffusion ?")
+      .replace(/Cette lecture peut-elle ouvrir des conversations avec[^?]+\?/i, "À quoi peut servir le contenu après sa diffusion ?");
+
+    const cleanAnswer = answer
+      .replace(/\bdéveloppement relationnel qualifié\b/gi, "développement relationnel qualifié")
+      .replace(/\bprospects\b/gi, "interlocuteurs qualifiés")
+      .replace(/\bforte visibilité\b/gi, "présence éditoriale durable")
+      .replace(/\bvisibilité immédiate\b/gi, "présence éditoriale durable");
+
+    return { ...item, question: cleanQuestion, answer: cleanAnswer };
+  }
+
   function getFAQ(readingLabel, actorType, personRole, landingPage) {
     const rtData     = getReadingType(readingLabel);
     const groupe     = detectProfilGroupe(actorType);
@@ -1567,11 +1605,14 @@
     // Les FAQ publiques doivent être pilotées par le type de lecture effectivement affiché
     // et par le profil : ETI/grand groupe ou cabinet de conseil.
     const seen = new Set();
-    return [...universelles, ...parPersona].filter(item => {
-      const key = norm(item.question || "").slice(0, 46);
-      if (!key || seen.has(key)) return false;
-      seen.add(key); return true;
-    }).slice(0, 6);
+    return [...universelles, ...parPersona]
+      .map(normalizeFAQItemForDoctrine)
+      .filter(item => {
+        const key = norm(item.question || "").slice(0, 46);
+        if (!key || seen.has(key)) return false;
+        seen.add(key); return true;
+      })
+      .slice(0, 6);
   }
 
   /* ─────────────────────────────────────────────────────────
@@ -2980,12 +3021,15 @@
     ];
 
     const seen = new Set();
-    const items = [...toArray(faq), ...fallback].filter(item => {
-      const key = norm(item?.question || "").slice(0, 46);
-      if (!key || seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    }).slice(0, 6);
+    const items = [...toArray(faq), ...fallback]
+      .map(normalizeFAQItemForDoctrine)
+      .filter(item => {
+        const key = norm(item?.question || "").slice(0, 46);
+        if (!key || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      })
+      .slice(0, 6);
 
     return `
       <div class="more-faq-grid">
@@ -3044,11 +3088,12 @@
           <div class="landing-head">
             <p class="landing-kicker">Cycle Industrie</p>
             <h2>Industrie & transformation des territoires.</h2>
-            <p>Pour sa saison inaugurale, Scènes d'Arbitrage ouvre le cycle Industrie & transformation des territoires. Il observe les moments où produire davantage, coordonner des ressources, transformer un outil ou réarbitrer une trajectoire oblige les organisations à formuler autrement leurs décisions.</p>
+            <p>Comprendre l’industrie par les arbitrages qui rendent une trajectoire possible.</p>
           </div>
           <div class="more-cycle-focus more-cycle-focus--section">
-            <p>Chaque conversation part d’une situation industrielle concrète et la met en regard depuis plusieurs positions complémentaires : stratégie, finance, droit, opérations, RH, technologie, territoires ou ressources.</p>
-            <p class="more-cycle-note">Un second cycle, Logement & fabrique des territoires, suit la même logique éditoriale sur les transformations de l’habitat, du foncier et des territoires.</p>
+            <p>Ce cycle met en regard plusieurs lectures — stratégie, finance, droit, opérations, RH, technologie, ressources et territoires — pour rendre lisibles les décisions qui font tenir, évoluer ou réorienter une trajectoire industrielle.</p>
+            <p>Chaque conversation part d’une situation concrète : produire davantage, transformer un outil, coordonner des ressources, préserver une continuité ou inscrire une activité dans un territoire.</p>
+            <p class="more-cycle-note">Le cycle <a href="https://scenesdarbitrage.fr/conversations/logement.html">Logement & fabrique des territoires</a> reprend la même méthode pour éclairer les arbitrages de l’habitat, du foncier et de la transformation des territoires.</p>
           </div>
         </div>
       </section>
