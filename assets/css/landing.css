@@ -7556,3 +7556,182 @@ body.landing-page .landing-more-faq-section .landing-head h2 {
     padding: 32px 24px !important;
   }
 }
+
+
+/* ─────────────────────────────────────────────
+   PATCH LANDING INDIVIDUELLE UX V5 — retours finaux 26/05
+   Objectifs : hero plus équilibré, états actifs lisibles, alignements
+   pertinence/portée, bandeau autres angles sombre, cycle + FAQ ajustés.
+───────────────────────────────────────────── */
+
+/* 1) Hero / pavé média : conserver le centrage horizontal, réduire la hauteur et équilibrer le padding vertical. */
+body.landing-page .landing-hero-bento-side .landing-film--static-cycle,
+body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"],
+body.landing-page .landing-film--static-cycle .landing-film-static-cycle {
+  height: clamp(260px, 21vw, 330px) !important;
+  min-height: 260px !important;
+}
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+  padding-top: 26px !important;
+  padding-bottom: 26px !important;
+  width: min(74%, 520px) !important;
+  text-align: center !important;
+  justify-content: center !important;
+}
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list {
+  gap: 14px !important;
+}
+
+/* 2) Pertinence : le texte visible commence au même niveau dans les trois cartes. */
+body.landing-page #pourquoi-vous .landing-why-narrative--positioned .landing-why-key {
+  grid-template-rows: auto minmax(7.2rem, 7.2rem) minmax(8.6rem, auto) auto auto !important;
+}
+body.landing-page #pourquoi-vous .landing-why-narrative--positioned .landing-why-key h3 {
+  min-height: 7.2rem !important;
+  margin-bottom: 16px !important;
+}
+body.landing-page #pourquoi-vous .landing-why-narrative--positioned .landing-why-key > p:first-of-type {
+  min-height: 8.6rem !important;
+}
+
+/* 3) Mise en regard : toute carte active/sélectionnée adopte le thème clair complet. */
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"],
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"],
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"],
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] {
+  background: #f6f1e9 !important;
+  color: #171717 !important;
+  border-color: rgba(17,17,17,.18) !important;
+  border-bottom-color: rgba(17,17,17,.18) !important;
+  animation: none !important;
+}
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] *,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] *,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] *,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] * {
+  color: #171717 !important;
+}
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] > span,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] small b,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] i b,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] > span,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] small b,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] i b,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] > span,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] small b,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] i b,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] > span,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] small b,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] i b {
+  color: rgba(23,23,23,.68) !important;
+}
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] i,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] i,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] i,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] i {
+  border-top-color: rgba(17,17,17,.18) !important;
+}
+
+/* 4) Mise en regard : le panneau inférieur actif adopte aussi le thème clair complet. */
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) .lpb-tab-panels--desktop .lpb-reading-panel--0,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) .lpb-tab-panels--desktop .lpb-reading-panel--1,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) .lpb-tab-panels--desktop .lpb-reading-panel--2,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) .lpb-tab-panels--desktop .lpb-reading-panel--3 {
+  background: #f6f1e9 !important;
+  color: #171717 !important;
+}
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) .lpb-tab-panels--desktop .lpb-reading-panel--0 *,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) .lpb-tab-panels--desktop .lpb-reading-panel--1 *,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) .lpb-tab-panels--desktop .lpb-reading-panel--2 *,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) .lpb-tab-panels--desktop .lpb-reading-panel--3 * {
+  color: #171717 !important;
+}
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) .lpb-tab-panels--desktop .lpb-reading-panel--0 .lpb-label,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) .lpb-tab-panels--desktop .lpb-reading-panel--0 .lpb-panel-block > span,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) .lpb-tab-panels--desktop .lpb-reading-panel--1 .lpb-label,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) .lpb-tab-panels--desktop .lpb-reading-panel--1 .lpb-panel-block > span,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) .lpb-tab-panels--desktop .lpb-reading-panel--2 .lpb-label,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) .lpb-tab-panels--desktop .lpb-reading-panel--2 .lpb-panel-block > span,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) .lpb-tab-panels--desktop .lpb-reading-panel--3 .lpb-label,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) .lpb-tab-panels--desktop .lpb-reading-panel--3 .lpb-panel-block > span {
+  color: rgba(23,23,23,.62) !important;
+}
+body.landing-page .landing-bento-section--tabs .lpb-chip-list span {
+  border-color: rgba(17,17,17,.28) !important;
+  background: transparent !important;
+}
+
+/* 5) Bandeau “autres angles” : bloc de transition sombre et lisible. */
+body.landing-page .lpb-alternatives,
+body.landing-page .lpb-alt-master {
+  background: #2f2f2f !important;
+  border-color: rgba(243,238,228,.22) !important;
+}
+body.landing-page .lpb-alt-master > summary {
+  background: #2f2f2f !important;
+  border-bottom-color: rgba(243,238,228,.18) !important;
+}
+body.landing-page .lpb-alt-master > summary span,
+body.landing-page .lpb-alt-master > summary strong,
+body.landing-page .lpb-alt-master > summary::after,
+body.landing-page .lpb-alt-intro h3 {
+  color: #fffaf0 !important;
+}
+body.landing-page .lpb-alt-intro p,
+body.landing-page .lpb-alt-master > summary em {
+  color: rgba(243,238,228,.74) !important;
+}
+body.landing-page .lpb-alt-master > summary::after {
+  color: #c8a96e !important;
+  font-size: 1.55rem !important;
+}
+
+/* 6) Portée/gains : les blocs crème sont alignés quelle que soit la hauteur des labels. */
+body.landing-page #valeur-position .landing-grid--value .landing-value-card {
+  grid-template-rows: auto minmax(4.7rem, 4.7rem) minmax(8.2rem, 8.2rem) minmax(4.8rem, 4.8rem) auto !important;
+}
+body.landing-page #valeur-position .landing-grid--value .value-chip-list {
+  min-height: 4.8rem !important;
+  align-content: start !important;
+  align-self: start !important;
+}
+body.landing-page #valeur-position .landing-grid--value .value-details.value-details--visible {
+  margin-top: 0 !important;
+}
+body.landing-page #valeur-position .landing-grid--value .value-details.value-details--visible {
+  background: #fffaf0 !important;
+  color: #171717 !important;
+}
+
+/* 7) Cycle Industrie : texte centré, lien Logement visible. */
+body.landing-page .landing-more-cycle-section .more-cycle-focus--section a {
+  color: #fffaf0 !important;
+  text-decoration: underline;
+  text-decoration-color: rgba(200,169,110,.65);
+  text-underline-offset: 4px;
+}
+body.landing-page .landing-more-cycle-section .more-cycle-focus--section a:hover {
+  color: #c8a96e !important;
+}
+
+/* 8) FAQ : conserver les contenus personnalisés, sans promesse d'accès à une audience. */
+body.landing-page .landing-more-faq-section .more-faq-grid article h4 {
+  color: #171717 !important;
+}
+body.landing-page .landing-more-faq-section .more-faq-grid article p {
+  color: rgba(23,23,23,.76) !important;
+}
+
+@media (max-width: 980px) {
+  body.landing-page #pourquoi-vous .landing-why-narrative--positioned .landing-why-key,
+  body.landing-page #valeur-position .landing-grid--value .landing-value-card {
+    display: block !important;
+  }
+  body.landing-page #pourquoi-vous .landing-why-narrative--positioned .landing-why-key h3,
+  body.landing-page #pourquoi-vous .landing-why-narrative--positioned .landing-why-key > p:first-of-type,
+  body.landing-page #valeur-position .landing-grid--value .landing-value-card h3,
+  body.landing-page #valeur-position .landing-grid--value .landing-value-card > p,
+  body.landing-page #valeur-position .landing-grid--value .value-chip-list {
+    min-height: 0 !important;
+  }
+}
