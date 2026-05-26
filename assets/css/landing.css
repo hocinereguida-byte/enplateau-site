@@ -6986,3 +6986,118 @@ body.landing-page .lpb-composed-note {
     font-size: .66rem;
   }
 }
+
+
+/* ─────────────────────────────────────────────
+   PATCH LANDING INDIVIDUELLE UX V2 — 2026-05-26
+   Objectif : hiérarchie narrative, gain visible, sections de réassurance ouvertes,
+   contraste du cycle Industrie, CTA éditoriaux et hero média mieux occupé.
+───────────────────────────────────────────── */
+
+body.landing-page .landing-more-reveal,
+body.landing-page .landing-more-reveal[hidden] {
+  display: block !important;
+}
+
+body.landing-page .landing-more-reveal--visible {
+  display: block !important;
+}
+
+body.landing-page .value-details summary {
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 18px;
+  padding: 8px 12px;
+  border: 1px solid rgba(246,241,233,.32);
+  background: rgba(255,255,255,.055);
+  color: var(--landing-text-soft);
+  letter-spacing: .09em;
+}
+
+body.landing-page .landing-card:not(.landing-card--primary-position) .value-details summary {
+  border-color: rgba(23,23,23,.22);
+  background: rgba(17,17,17,.035);
+  color: var(--landing-ink-soft);
+}
+
+body.landing-page .value-details summary::after {
+  margin-left: 10px;
+  font-size: .82rem;
+}
+
+body.landing-page .value-details summary .value-details-open,
+body.landing-page .value-details summary .value-details-close {
+  font-size: .66rem;
+}
+
+body.landing-page .landing-more-cycle-section {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(246,241,233,.10), transparent 32%),
+    linear-gradient(180deg, #111111 0%, #171717 100%) !important;
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-more-cycle-section .landing-head h2,
+body.landing-page .landing-more-cycle-section .landing-head p,
+body.landing-page .landing-more-cycle-section .landing-kicker,
+body.landing-page .landing-more-cycle-section .more-cycle-focus,
+body.landing-page .landing-more-cycle-section .more-cycle-focus p,
+body.landing-page .landing-more-cycle-section .more-cycle-note {
+  color: var(--landing-text) !important;
+}
+
+body.landing-page .landing-more-cycle-section .landing-head p,
+body.landing-page .landing-more-cycle-section .more-cycle-focus p {
+  color: var(--landing-text-soft) !important;
+}
+
+body.landing-page .landing-more-cycle-section .more-cycle-focus--section {
+  border-color: rgba(246,241,233,.24) !important;
+  background: rgba(255,255,255,.045) !important;
+}
+
+body.landing-page .more-final-cta {
+  border-top: 1px solid var(--landing-line);
+  margin-top: 48px;
+  padding-top: 44px;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-static-cycle::after {
+  background: linear-gradient(90deg,
+    rgba(0,0,0,.14) 0%,
+    rgba(0,0,0,.30) 36%,
+    rgba(0,0,0,.64) 70%,
+    rgba(0,0,0,.86) 100%) !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+  width: min(68%, 560px) !important;
+  min-height: 390px !important;
+  padding: 38px 44px !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__status {
+  max-width: 26ch !important;
+  font-size: clamp(1.08rem, 1.6vw, 1.34rem) !important;
+  line-height: 1.08 !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list > div {
+  padding: 13px 0 !important;
+}
+
+@media (max-width: 980px) {
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+    width: min(76%, 560px) !important;
+    min-height: 340px !important;
+    padding: 30px 32px !important;
+  }
+}
+
+@media (max-width: 620px) {
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+    width: 100% !important;
+    min-height: auto !important;
+    padding: 24px !important;
+  }
+}
