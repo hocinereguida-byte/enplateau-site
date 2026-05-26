@@ -3,14 +3,18 @@
 'use strict';
 const CRM=window.SDA_CRM_INDUSTRIE||{};
 const ROOT=document.getElementById('app');
+function doctrineTool(){return window.SDAEditorialDoctrine||null}
+function doctr(v){let raw=String(v||'');let tool=doctrineTool();return tool&&typeof tool.applyLexicon==='function'?tool.applyLexicon(raw):raw}
+function contextLabel(v){let raw=String(v||'');let tool=doctrineTool();let n=norm(raw);if(n.indexOf('croissance sous tension')>=0)return 'Croissance organisée';if(n.indexOf('adaptation sous contrainte')>=0)return 'Adaptation coordonnée';if(n.indexOf('reinvention sous crise')>=0)return 'Reconfiguration industrielle';return tool&&typeof tool.getContextLabel==='function'?tool.getContextLabel(raw):doctr(raw)}
 function s(v){return String(v||'').trim()}
-function esc(v){return s(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
-function compact(v,max){let t=s(v).replace(/\s+/g,' '); if(t.length<=max)return t; let cut=t.slice(0,max); let p=cut.lastIndexOf(' '); if(p>30)cut=cut.slice(0,p); return cut.replace(/[\s,;:.!?–—-]+$/,'')}
+function esc(v){return doctr(s(v)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function compact(v,max){let t=doctr(s(v)).replace(/\s+/g,' '); if(t.length<=max)return t; let cut=t.slice(0,max); let p=cut.lastIndexOf(' '); if(p>30)cut=cut.slice(0,p); return cut.replace(/[\s,;:.!?–—-]+$/,'')}
 function norm(v){return s(v).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[’']/g,"'").replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim()}
 function isValidSupport(a){let role=norm(a&&a.roleActivation); if(a&&a.isDirectionIntervenant)return true; if(role.startsWith('appui'))return true; if(role.indexOf('intervenant direction')>=0 && ['pdg','dg','direction'].includes(a.kind))return true; return false}
+function sanitizeVisibleDOM(scope){let tool=doctrineTool();if(!tool||typeof tool.applyLexicon!=='function'||!scope||!document.createTreeWalker)return;let walker=document.createTreeWalker(scope,NodeFilter.SHOW_TEXT,{acceptNode(node){let p=node.parentElement;if(!p)return NodeFilter.FILTER_REJECT;let tag=p.tagName;if(tag==='SCRIPT'||tag==='STYLE'||tag==='NOSCRIPT')return NodeFilter.FILTER_REJECT;if(!node.nodeValue||!node.nodeValue.trim())return NodeFilter.FILTER_REJECT;return NodeFilter.FILTER_ACCEPT;}});let nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);nodes.forEach(node=>{let next=tool.applyLexicon(node.nodeValue);if(next!==node.nodeValue)node.nodeValue=next;});}
 
 function charInfo(t){let n=s(t).length,cl=n<=260?'ok':n<=290?'warn':'over';return '<span class="ep-char-count '+cl+'">'+n+' / 300</span>'}
-function firstUnder300(list){for(let t of list){if(s(t).length<=300)return s(t)}return compact(list[list.length-1]||'',297)}
+function firstUnder300(list){for(let t of list){let x=doctr(t);if(s(x).length<=300)return s(x)}return compact(doctr(list[list.length-1]||''),297)}
 function msgBlock(label,text){let id='m'+Math.random().toString(36).slice(2);return '<div class="ep-msg" id="'+id+'"><button class="ep-copy-btn" onclick="epCopy(&quot;'+id+'&quot;,this)">Copier</button><div class="ep-msg-header"><span>'+esc(label)+'</span>'+charInfo(text)+'</div><div class="ep-msg-text">'+esc(text)+'</div></div>'}
 function acc(icon,ic,label,body,open){return '<div class="ep-item '+(open?'is-open':'')+'"><button class="ep-toggle" onclick="epToggle(this)"><span class="ep-toggle-left"><span class="ep-toggle-icon '+icon+'">'+ic+'</span><span>'+label+'</span></span><span class="ep-chevron">▼</span></button><div class="ep-body">'+body+'</div></div>'}
 function mediaLabelFromDeals(deals){let arr=[...new Set((deals||[]).map(d=>s(d.media)).filter(Boolean))];return arr.length?arr.join(' / '):'média partenaire'}
@@ -29,7 +33,8 @@ function buildIntervenant(d){let media=s(d.media)||'média partenaire', obj=comp
 function cardSupport(a){return '<div class="ep-card"><div class="ep-card-role">'+esc(a.label)+(a.alsoIntervenant?' · aussi intervenant':'')+'</div><div class="ep-card-name">'+esc(a.display||a.name)+'</div><div class="ep-card-meta">'+esc(a.poste||'Poste à compléter')+'</div><div class="ep-card-meta">Source : '+esc(a.source||'CRM')+'</div>'+(a.linkedin?'<a class="ep-card-link" target="_blank" href="'+esc(a.linkedin)+'">Profil LinkedIn appui →</a>':'<span class="ep-card-meta">LinkedIn appui à compléter</span>')+'</div>'}
 function cardDeal(d,selected){return '<div class="ep-card '+(selected?'ep-card--selected':'')+'"><div class="ep-card-role">'+esc(d.lecture)+' · '+esc(d.code)+' · rang '+esc(d.rang)+'</div><div class="ep-card-name">'+esc(d.personDisplay||d.person)+'</div><div class="ep-card-meta">'+esc(d.role||'Poste à compléter')+'</div><div class="ep-card-meta">'+esc(d.angle)+' · '+esc(d.media||'média à vérifier')+'</div>'+(d.linkedin?'<a class="ep-card-link" target="_blank" href="'+esc(d.linkedin)+'">Profil LinkedIn intervenant →</a>':'<span class="ep-card-meta">LinkedIn intervenant à compléter</span>')+(d.landingUrl?'<a class="ep-card-link" target="_blank" href="'+esc(d.landingUrl)+'">Landing →</a>':'')+'</div>'}
 function initAccordions(){window.epToggle=function(btn){btn.closest('.ep-item').classList.toggle('is-open')};window.epCopy=function(id,btn){let el=document.getElementById(id);let t=el.querySelector('.ep-msg-text');navigator.clipboard.writeText(t?t.innerText:el.innerText).then(()=>{btn.textContent='✓ Copié';btn.classList.add('copied');setTimeout(()=>{btn.textContent='Copier';btn.classList.remove('copied')},1500)})}}
-window.SDA_LinkedinTools={s,esc,compact,norm,isValidSupport,charInfo,firstUnder300,msgBlock,acc,mediaLabelFromDeals,hasDirectionSupport,buildSupportMessage,buildIntervenant,cardSupport,cardDeal,initAccordions,CRM,ROOT};
+if(ROOT&&window.MutationObserver){let pending=false;new MutationObserver(()=>{if(pending)return;pending=true;window.requestAnimationFrame(()=>{pending=false;sanitizeVisibleDOM(ROOT);});}).observe(ROOT,{childList:true,subtree:true,characterData:true});}
+window.SDA_LinkedinTools={s,esc,compact,norm,isValidSupport,charInfo,firstUnder300,msgBlock,acc,mediaLabelFromDeals,hasDirectionSupport,buildSupportMessage,buildIntervenant,cardSupport,cardDeal,initAccordions,doctr,contextLabel,sanitizeVisibleDOM,CRM,ROOT};
 })();
 
 (function(){
