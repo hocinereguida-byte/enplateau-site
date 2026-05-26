@@ -1103,6 +1103,21 @@
     return ref ? getCrmDealByReference(ref) : null;
   }
 
+
+  function canonicalAngleCode(value) {
+    const raw = String(value || "").trim();
+    if (!raw) return "";
+    if (/^IND-/i.test(raw)) return raw;
+    if (/^C[1-4]-/i.test(raw)) return `IND-${raw}`;
+    return raw;
+  }
+
+  function getAngleByAnyCode(value) {
+    const raw = String(value || "").trim();
+    if (!raw) return null;
+    return Core.getAngleByCode(raw) || Core.getAngleByCode(canonicalAngleCode(raw));
+  }
+
   function getAlternativeAvailability(deal, crmDeal) {
     if (!hasCrmMirror()) {
       return {
@@ -1170,7 +1185,7 @@
         const crmDeal = getAlternativeCrmDealForDeal(deal);
         const mergedDeal = crmDeal ? mergeDealWithCrm(deal, crmDeal, ref) : deal;
         const angleCode = txt(crmDeal?.code, Core.getAngleCodeFromDeal(mergedDeal));
-        const angle = Core.getAngleByCode(angleCode);
+        const angle = getAngleByAnyCode(angleCode);
         const availability = getAlternativeAvailability(mergedDeal, crmDeal);
         return { deal: mergedDeal, crmDeal, angle, availability };
       })
@@ -1230,8 +1245,9 @@
   }
 
   function buildAlternativeEditorialTracksBlock(currentDeal, currentAngle, organisationName) {
+    const currentCanonicalCode = canonicalAngleCode(Core.getAngleCodeFromDeal(currentDeal));
     const alternatives = getAlternativeDealsForPerson(currentDeal, 3)
-      .filter(item => Core.getAngleCodeFromDeal(item.deal) !== Core.getAngleCodeFromDeal(currentDeal));
+      .filter(item => canonicalAngleCode(Core.getAngleCodeFromDeal(item.deal)) !== currentCanonicalCode);
 
     if (!alternatives.length) return "";
 
@@ -1704,7 +1720,7 @@
     const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "Votre organisation";
     const person = personName && personName !== "Intervenant pressenti" ? personName : "l’intervenant pressenti";
     const role = personRole ? `, ${personRole},` : "";
-    const reading = readingDisplay(readingLabel || "territoriale").toLowerCase();
+    const reading = readingPhrase(readingLabel || "territoriale");
 
     return [
       {
@@ -1732,12 +1748,12 @@
       {
         label: "Pour l’intervenant",
         title: "Laisser une trace professionnelle utile",
-        text: `${person}${role} peut porter une lecture crédible sur les conditions territoriales de l’industrie, sans exposer de projet sensible, de négociation locale ou de dossier confidentiel.`,
+        text: `${person}${role} devrait pouvoir porter une lecture territoriale crédible sur les conditions territoriales de l’industrie, sans exposer de projet sensible, de négociation locale ou de dossier confidentiel.`,
         chips: ["Trace", "Crédibilité", "Usage durable"],
         details: [
           { label: "Trace", text: "Une parole préparée, publique et durable, attachée à une lecture précise plutôt qu’à une opération identifiable." },
-          { label: "Crédibilité", text: `Une contribution qui fait reconnaître une ${reading} sans survente ni prise de parole corporate classique.` },
-          { label: "Réutilisation", text: "Un contenu mobilisable ensuite en rendez-vous, relations institutionnelles, prospection qualifiée, événements ou communication dirigeante." }
+          { label: "Crédibilité", text: `Une contribution qui fait reconnaître ${reading} sans survente ni prise de parole corporate classique.` },
+          { label: "Réutilisation", text: "Un contenu mobilisable ensuite en rendez-vous, relations institutionnelles, développement relationnel qualifié, événements ou communication dirigeante." }
         ]
       }
     ];
@@ -1892,7 +1908,7 @@
         ${chips.length ? `<div class="value-chip-list">${chips.map(chip => `<span>${safe(chip)}</span>`).join("")}</div>` : ""}
         ${details.length ? `
           <details class="value-details">
-            <summary><span class="value-details-open">Ce que cela produit concrètement</span><span class="value-details-close">Masquer les effets concrets</span></summary>
+            <summary><span class="value-details-open">Découvrir les usages et effets concrets</span><span class="value-details-close">Masquer les usages et effets concrets</span></summary>
             <ul>
               ${details.map(detail => `<li><strong>${safe(detail.label)}</strong><span>${safe(detail.text)}</span></li>`).join("")}
             </ul>
@@ -2945,7 +2961,7 @@
       { question: "L’échange de 15 minutes vaut-il engagement à participer ?", answer: "Non. Il sert uniquement à vérifier si la position proposée mérite d’être formalisée. Aucune suite n’est automatique." },
       { question: "Faut-il préparer quelque chose avant l’échange ?", answer: "Non. Aucun dossier, aucune présentation et aucune position déjà construite ne sont attendus." },
       { question: "Les équipes communication, juridiques ou affaires publiques peuvent-elles être associées ?", answer: "Oui. Le périmètre peut être préparé avec les équipes utiles avant toute prise de parole." },
-      { question: "En quoi Scènes d'Arbitrage se distingue d’une prise de parole promotionnelle ?", answer: "Le point de départ n’est pas la visibilité. Une contribution est retenue parce qu’elle éclaire un mécanisme, une tension ou un arbitrage réel. Les effets d’autorité ou de reconnaissance sont une conséquence, pas l’objectif premier." },
+      { question: "En quoi Scènes d'Arbitrage se distingue d’une prise de parole promotionnelle ?", answer: "Le point de départ n’est pas la visibilité. Une contribution est retenue parce qu’elle éclaire un mécanisme, un point d’attention ou un arbitrage réel. La reconnaissance éventuelle vient de la qualité de cette lecture, pas d’une mise en avant promotionnelle." },
       { question: "Comment éviter un contenu trop générique ou trop risqué ?", answer: "L’angle, les limites de parole, la trame média, les points sensibles et le niveau d’exposition sont cadrés avant production." }
     ];
 
@@ -2974,7 +2990,7 @@
     const readingsLine = moreConversationReadingsLine(angle, readingLabel);
 
     return `
-      <div class="landing-more-reveal" id="pour-aller-plus-loin" hidden>
+      <div class="landing-more-reveal landing-more-reveal--visible" id="pour-aller-plus-loin">
       <section class="landing-section landing-section--light landing-more-structured landing-more-concept-section" id="pour-aller-plus-loin-concept">
         <div class="landing-container">
           <div class="more-hero-grid more-hero-grid--concept">
@@ -3014,7 +3030,7 @@
           <div class="landing-head">
             <p class="landing-kicker">Cycle Industrie</p>
             <h2>Industrie & transformation des territoires.</h2>
-            <p>Pour sa saison inaugurale, Scènes d'Arbitrage ouvre le cycle Industrie & transformation des territoires. Il observe les moments où produire davantage, tenir sous contrainte, transformer un outil ou réarbitrer une trajectoire oblige les organisations à formuler autrement leurs décisions.</p>
+            <p>Pour sa saison inaugurale, Scènes d'Arbitrage ouvre le cycle Industrie & transformation des territoires. Il observe les moments où produire davantage, coordonner des ressources sous conditions, transformer un outil ou réarbitrer une trajectoire oblige les organisations à formuler autrement leurs décisions.</p>
           </div>
           <div class="more-cycle-focus more-cycle-focus--section">
             <p>Chaque conversation part d’un phénomène industriel concret, puis le regarde depuis plusieurs lectures : stratégie, finance, droit, opérations, RH, technologie, territoires ou ressources.</p>
@@ -3220,22 +3236,20 @@
 
       ${buildHeroMinimalSection(angle, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, cta, filmBlock)}
 
-      ${buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles, deal)}
-
-      ${buildTrustKeysSection(cta, organisationName, readingLabel)}
-
       <section class="landing-section landing-section--light" id="pourquoi-vous">
         <div class="landing-container">
           <div class="landing-head">
             <p class="landing-kicker">Pertinence</p>
             <h2>Pourquoi ${safe(organisationName)} est bien placé pour porter cette lecture.</h2>
-            <p>Une position Scènes d'Arbitrage ne désigne pas seulement une organisation ou une fonction. Elle identifie ce qu’une expérience permet de rendre lisible depuis un endroit précis.</p>
+            <p>Une position Scènes d'Arbitrage ne désigne pas seulement une organisation ou une fonction. Elle identifie ce qu’une expérience devrait permettre de rendre lisible depuis un endroit précis.</p>
           </div>
           <div class="landing-why-box">
             ${buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType, readingLabel, deal)}
           </div>
         </div>
       </section>
+
+      ${buildConversationBentoSection(angle, publicAngle, formulation, conversationLabel, contextLabel, personName, personRole, organisationName, readingLabel, complementaryAngles, deal)}
 
       <section class="landing-section landing-section--dark" id="valeur-position">
         <div class="landing-container">
@@ -3250,7 +3264,7 @@
         </div>
       </section>
 
-      ${buildQualificationCTASection(cta, organisationName, readingLabel)}
+      ${buildTrustKeysSection(cta, organisationName, readingLabel)}
 
       ${buildMoreInfoSection({ cta, angle, publicAngle, formulation, conversation, conversationLabel, dgMessage, processSteps, faq, readingLabel, organisationName })}
     `;
