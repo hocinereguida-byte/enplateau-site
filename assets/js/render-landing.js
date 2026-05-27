@@ -1,6 +1,6 @@
 /*
-  En Plateau — render-landing.js
-  BUILD — 20260516-PISTES-COMPLEMENTAIRES
+  En Plateau - render-landing.js
+  BUILD - 20260516-PISTES-COMPLEMENTAIRES
 
   Objet : remplace la section post-hero "Conversation composée" par une section Bento
   "Votre place dans la conversation".
@@ -11,7 +11,7 @@
   - <section class="landing-bento-section" id="mise-en-regard">
 
   Ne modifie pas :
-  - editorial-data-industrie-v67.js
+  - editorial-data-industrie-v77.js
   - render-core.js
 
   Ajout 20260525-crm-secure-v1 :
@@ -33,14 +33,14 @@
   "use strict";
 
   const BENTO_BUILD_20260515_MISE_EN_REGARD_EDITORIALE = true;
-  console.info("Scènes d'Arbitrage — render-landing UX V4 loaded");
+  console.info("Scènes d'Arbitrage - render-landing UX V4 loaded");
 
   const Core = window.EnPlateauRenderCore;
   const DATA = window.EN_PLATEAU_EDITORIAL_DATA || {};
   const root = document.getElementById("landing-root");
 
   if (!Core || !root) {
-    console.error("En Plateau — render-core.js ou #landing-root introuvable.");
+    console.error("En Plateau - render-core.js ou #landing-root introuvable.");
     return;
   }
 
@@ -119,7 +119,7 @@
 
 
   /* ─────────────────────────────────────────────────────────
-     SECURISATION CRM — landing publique personnalisée
+     SECURISATION CRM - landing publique personnalisée
 
      Le référentiel éditorial reste dans editorial-data-industrie-v67.js.
      Les enrichissements publics restent dans editorial-data-industrie-enrichments.js.
@@ -451,7 +451,7 @@
     if (org) {
       const escapedOrg = org.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       cleaned = cleaned
-        .replace(new RegExp("\\s*[—–-]\\s*" + escapedOrg + "\\s*$", "i"), "")
+        .replace(new RegExp("\\s*[-–-]\\s*" + escapedOrg + "\\s*$", "i"), "")
         .replace(new RegExp("\\s+chez\\s+" + escapedOrg + "\\s*$", "i"), "");
 
       const segments = cleaned.split(/\s*,\s*/).filter(Boolean);
@@ -490,8 +490,8 @@
 
   function stripConversationCode(value) {
     return String(value || "")
-      .replace(/^\s*C\d+\s*[—–-]\s*/i, "")
-      .replace(/^\s*IND\s*-\s*C\d+\s*[—–-]\s*/i, "")
+      .replace(/^\s*C\d+\s*[-–-]\s*/i, "")
+      .replace(/^\s*IND\s*-\s*C\d+\s*[-–-]\s*/i, "")
       .trim();
   }
 
@@ -582,8 +582,8 @@
 
   function sanitizePersonFragment(value) {
     let v = soften(value || "");
-    v = v.replace(/^Votre fonction\s+[—-]\s*[^—-]+\s+[—-]\s+vous permet de\s+/i, "Vous pouvez ");
-    v = v.replace(/^Votre fonction\s+[—-]\s*[^—-]+\s+[—-]\s+/i, "");
+    v = v.replace(/^Votre fonction\s+[--]\s*[^--]+\s+[--]\s+vous permet de\s+/i, "Vous pouvez ");
+    v = v.replace(/^Votre fonction\s+[--]\s*[^--]+\s+[--]\s+/i, "");
     v = v.replace(/^Votre fonction vous permet de\s+/i, "Vous pouvez ");
     return v;
   }
@@ -793,7 +793,7 @@
 
 
   /* ─────────────────────────────────────────────────────────
-     SECTION POST-HERO — BENTO conversation / lectures
+     SECTION POST-HERO - BENTO conversation / lectures
      Objectif : rendre immédiatement lisibles la place proposée,
      les autres lectures, les organisations approchées,
      les acteurs approchés et le format média de chaque angle.
@@ -1057,7 +1057,7 @@
 
 
   /* ─────────────────────────────────────────────────────────
-     PISTES ÉDITORIALES COMPLÉMENTAIRES — même intervenant
+     PISTES ÉDITORIALES COMPLÉMENTAIRES - même intervenant
      Principe : le deal affiché reste la position prioritaire.
      Les autres deals du même intervenant sont présentés comme
      pistes à évoquer si la première lecture n’est pas la bonne.
@@ -1168,41 +1168,14 @@
   }
 
   function getAlternativeDealsForPerson(currentDeal, limit = 3) {
-    const currentId = Core.getDealId(currentDeal);
-    const currentRef = publicRefFromDeal(currentDeal);
-    const currentKey = norm(personIdentityKeyFromDeal(currentDeal));
-    if (!currentKey) return [];
-
-    return allPersonalizedDeals()
-      .filter(deal => {
-        if (!deal) return false;
-        if (Core.getDealId(deal) === currentId) return false;
-        if (publicRefFromDeal(deal) && publicRefFromDeal(deal) === currentRef) return false;
-        const hasExclusion = !!Core.text(deal?.activation?.replacedBy, deal?.replacedBy,
-          deal?.activation?.exclusionReason, deal?.exclusionReason);
-        if (hasExclusion) return false;
-        return norm(personIdentityKeyFromDeal(deal)) === currentKey;
-      })
-      .map(deal => {
-        const ref = publicRefFromDeal(deal) || Core.getDealId(deal);
-        const crmDeal = getAlternativeCrmDealForDeal(deal);
-        const mergedDeal = crmDeal ? mergeDealWithCrm(deal, crmDeal, ref) : deal;
-        const angleCode = txt(crmDeal?.code, Core.getAngleCodeFromDeal(mergedDeal));
-        const angle = getAngleByAnyCode(angleCode);
-        const availability = getAlternativeAvailability(mergedDeal, crmDeal);
-        return { deal: mergedDeal, crmDeal, angle, availability };
-      })
-      .filter(item => item.angle && item.availability?.show)
-      .sort((a, b) => {
-        const aLinked = a.availability?.canLink ? 0 : 1;
-        const bLinked = b.availability?.canLink ? 0 : 1;
-        if (aLinked !== bLinked) return aLinked - bLinked;
-        const ra = dealRankValue(a.deal);
-        const rb = dealRankValue(b.deal);
-        if (ra !== rb) return ra - rb;
-        return String(Core.getDealId(a.deal) || "").localeCompare(String(Core.getDealId(b.deal) || ""), "fr", { numeric: true });
-      })
-      .slice(0, limit);
+    /*
+      UX V7 - sécurité éditoriale.
+      Les pistes alternatives ne sont plus déduites automatiquement du seul nom de l'intervenant.
+      Tant que le CRM / JS ne porte pas explicitement le rattachement au deal principal
+      et les nouveaux angles validés, on ne les affiche pas pour éviter de montrer
+      d'anciens deals alternatifs devenus non pertinents.
+    */
+    return [];
   }
 
   function buildAltReadingCard(item, isPrimary, organisationName) {
@@ -1299,7 +1272,7 @@
   }
 
   /* ─────────────────────────────────────────────────────────
-     BRANCHEMENT DATA V67 — gainsParProfilV2 + faqV2
+     BRANCHEMENT DATA V67 - gainsParProfilV2 + faqV2
      Ces 4 fonctions sont les seules modifications apportées
      à V65.9 pour la compatibilité avec le data V67.
      Aucune autre fonction, aucune section HTML n'est modifiée.
@@ -1982,7 +1955,7 @@
               <h2>Certaines positions méritent simplement d’être discutées.</h2>
               <p>L’échange permet de vérifier si la lecture envisagée mérite d’être structurée dans le cadre du cycle. Il ne demande aucune préparation particulière et peut associer, si nécessaire, les équipes communication, affaires publiques ou juridiques.</p>
               <div class="landing-actions qualification-cta-actions">
-                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Qualifier cette position — 15 min")}</a>
+                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Qualifier cette position - 15 min")}</a>
               </div>
               <p class="qualification-cta-microcopy">15 minutes · sans engagement · aucune suite automatique</p>
             </div>
@@ -1995,7 +1968,7 @@
     const pageCTA = landingPage?.cta || {};
     return {
       href: "https://cal.com/scenesdarbitrage/echange-editorial-15-min?user=scenesdarbitrage&overlayCalendar=true",
-      label: "Qualifier cette position — 15 min",
+      label: "Qualifier cette position - 15 min",
       title:    "Qualifier cette lecture en échange éditorial",
       text:     txt(pageCTA.text, "15 minutes, sans engagement, pour qualifier l'angle, le périmètre de parole et les conditions de préparation."),
       deadline: txt(pageCTA.deadline, ""),
@@ -2077,7 +2050,7 @@
   }
 
   /* ─────────────────────────────────────────────────────────
-     BANDEAU — saison inaugurale et composition
+     BANDEAU - saison inaugurale et composition
   ───────────────────────────────────────────────────────── */
   function buildTopMeta(conversationLabel) {
     return `<span>Saison inaugurale · Cycle Industrie</span><span>Positions en cours de composition jusqu’au 30 juin</span>`;
@@ -2139,7 +2112,7 @@
   }
 
   /* ─────────────────────────────────────────────────────────
-     KICKER HERO — court, sans le titre d'angle
+     KICKER HERO - court, sans le titre d'angle
   ───────────────────────────────────────────────────────── */
   function buildHeroKicker(conversationLabel) {
     let label = "Cycle Industrie";
@@ -2167,7 +2140,7 @@
 
 
   /* ─────────────────────────────────────────────────────────
-     CONTENU STATIQUE — repères cycle + studio
+     CONTENU STATIQUE - repères cycle + studio
      La source éditable est dans contribuer.html :
      <template id="landing-static-cycle-media">...</template>
      render-landing.js ne fabrique plus ce contenu : il ne fait
@@ -2198,7 +2171,7 @@
   }
 
   /* ─────────────────────────────────────────────────────────
-     BLOC FILM ÉMISSION — style home
+     BLOC FILM ÉMISSION - style home
      Image unique B&W dans le cadre .landing-film
      (reprend exactement le CSS .home-film mais en classe
      .landing-film pour rester dans le namespace landing)
@@ -2220,7 +2193,7 @@
 
 
   /* ─────────────────────────────────────────────────────────
-     HERO ALLÉGÉ — 20260515-0710
+     HERO ALLÉGÉ - 20260515-0710
      Objectif : désirabilité + clarté + faible risque.
      Le hero ne porte plus toute l'explication du dispositif :
      la mise en regard, le cadre, la pertinence et les gains
@@ -2378,7 +2351,7 @@
               <p class="landing-hero-bento-lead">${safe(buildHeroLead(angle, readingLabel))}</p>
 
               <div class="landing-hero-bento-actions">
-                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Qualifier cette position — 15 min")}</a>
+                <a class="landing-btn" href="${safe(cta.href)}">${safe(cta.label || "Qualifier cette position - 15 min")}</a>
                 <a class="landing-hero-secondary-link" href="#lectures-composees">Voir la position proposée</a>
               </div>
 
@@ -2402,7 +2375,7 @@
   }
 
   /* ─────────────────────────────────────────────────────────
-     SIGNAL DE RARETÉ — texte corrigé
+     SIGNAL DE RARETÉ - texte corrigé
   ───────────────────────────────────────────────────────── */
   function buildRaritySignal(readingLabel) {
     const reading = readingDisplay(readingLabel || "cette lecture").toLowerCase();
@@ -2490,7 +2463,7 @@
   }
 
   /* ─────────────────────────────────────────────────────────
-     NARRATION "POURQUOI VOUS" — version pertinence située
+     NARRATION "POURQUOI VOUS" - version pertinence située
      3 niveaux : organisation / position d'observation / lecture proposée.
   ───────────────────────────────────────────────────────── */
   function whyTagsForReading(readingLabel, slot, why = {}) {
@@ -2603,17 +2576,17 @@
     const org = hasRealOrg ? organisationName : "L’organisation pressentie";
 
     if (hasRealOrg && (r.includes("territ") || source.includes("foncier") || source.includes("friche"))) {
-      return `${org} intervient là où les trajectoires industrielles dépassent les murs de l’entreprise : foncier, friches, infrastructures, ancrage local, acteurs publics et conditions territoriales de décision. Cette expérience pourrait éclairer le rôle du territoire dans la continuité, l’évolution ou la réorientation d’un outil industriel.`;
+      return `${org} occupe un point d’observation utile là où les trajectoires industrielles dépassent les murs de l’entreprise : foncier, friches, infrastructures, ancrage local, acteurs publics et conditions territoriales de décision. Cette expérience pourrait éclairer le rôle du territoire dans la continuité, l’évolution ou la réorientation d’un outil industriel.`;
     }
 
     const scope = readingObservationScope(readingLabel);
     if (hasRealOrg) {
-      return `${org} offre un point d’observation utile sur l’écosystème industriel dans lequel se jouent les trajectoires. Ses activités et ses responsabilités l’exposent aux transformations en cours, aux acteurs concernés, aux arbitrages à tenir, aux défis de mise en œuvre et aux effets d’échelle que cette conversation cherche à rendre lisibles.`;
+      return `${org} pourrait offrir un point d’observation utile sur l’écosystème industriel dans lequel se jouent les trajectoires. Ses activités et ses responsabilités l’exposent aux transformations en cours, aux acteurs concernés, aux arbitrages à tenir, aux défis de mise en œuvre et aux effets d’échelle que cette conversation cherche à rendre lisibles.`;
     }
 
     if (why.organisation) return shortText(editorializeWhyOrganisation(why.organisation, organisationName, readingLabel), 460);
 
-    return `L’organisation identifiée apporte un point d’observation utile sur ${scope}, sans réduire l’analyse à un cas interne.`;
+    return `L’organisation identifiée pourrait apporter un point d’observation utile sur ${scope}, sans réduire l’analyse à un cas interne.`;
   }
 
   function readingObservationScope(readingLabel) {
@@ -2675,13 +2648,13 @@
     }
 
     if (questionMatch && questionMatch[1]) {
-      return `Cette position donne un cadre précis à ${readingWithArticle} : éclairer la question « ${questionMatch[1]} ». Elle ne porte pas sur un dossier interne ; elle rend lisible un mécanisme utile à l’ensemble de la composition éditoriale.`;
+      return `Cette position pourrait donner un cadre précis à ${readingWithArticle} : éclairer la question « ${questionMatch[1]} ». Elle ne porterait pas sur un dossier interne ; elle rendrait lisible un mécanisme utile à l’ensemble de la composition éditoriale.`;
     }
 
     if (source) {
       const cleaned = source
-        .replace(/^La position proposée consiste à éclairer,?\s*/i, "Cette position donne un cadre précis à la contribution : éclairer ")
-        .replace(/^La position proposée consiste à/i, "Cette position donne un cadre précis à")
+        .replace(/^La position proposée consiste à éclairer,?\s*/i, "Cette position pourrait donner un cadre précis à la contribution : éclairer ")
+        .replace(/^La position proposée consiste à/i, "Cette position pourrait donner un cadre précis à")
         .replace(/\bdepuis\s+lecture\b/gi, "depuis une lecture")
         .replace(/\bdepuis\s+votre\s+lecture\b/gi, "depuis une lecture")
         .replace(/\bchercherait\b/gi, "cherche")
@@ -2689,7 +2662,7 @@
       return shortText(cleaned, 420);
     }
 
-    return "La contribution ne porte pas sur un cas interne. Elle rend lisible un mécanisme utile à l’ensemble de la conversation.";
+    return "La contribution ne porterait pas sur un cas interne. Elle pourrait rendre lisible un mécanisme utile à l’ensemble de la conversation.";
   }
 
   function whyTextHTML(value) {
@@ -2708,27 +2681,65 @@
     return `<p>${safe(intro || shortText(text, 240))}</p>${details ? `<details class="landing-why-more"><summary>Lire le détail +</summary><p>${safe(details)}</p></details>` : ""}`;
   }
 
+  function qualifyPertinenceFragment(value, personName, organisationName) {
+    const name = personName && personName !== "Intervenant pressenti" ? personName : "l’intervenant pressenti";
+    const org = organisationName && organisationName !== "Votre organisation" ? organisationName : "l’organisation pressentie";
+    return String(value || "")
+      // La section Pertinence doit rester une note éditoriale de qualification :
+      // pas d’adresse directe au prospect, pas de validation acquise avant échange.
+      .replace(/\b[Vv]otre position\b/g, `La position de ${name}`)
+      .replace(/\b[Vv]otre rôle\b/g, `Le rôle de ${name}`)
+      .replace(/\b[Vv]otre parcours\b/g, `Le parcours de ${name}`)
+      .replace(/\b[Vv]otre expérience\b/g, `L’expérience de ${name}`)
+      .replace(/\b[Vv]otre fonction\b/g, `La fonction de ${name}`)
+      .replace(/\b[Vv]otre organisation\b/g, org)
+      .replace(/\b[Vv]ous êtes\b/g, `${name} semble être`)
+      .replace(/\b[Vv]ous apportez\b/g, `${name} pourrait apporter`)
+      .replace(/\b[Vv]ous pouvez apporter\b/g, `${name} pourrait apporter`)
+      .replace(/\b[Vv]ous pouvez éclairer\b/g, `${name} pourrait éclairer`)
+      .replace(/\bpermet d’apporter\b/gi, "pourrait permettre d’apporter")
+      .replace(/\bpermet de relier\b/gi, "devrait permettre de relier")
+      .replace(/\bpermet de rendre\b/gi, "pourrait permettre de rendre")
+      .replace(/\bpermet d’éclairer\b/gi, "pourrait permettre d’éclairer")
+      .replace(/\bpermet d'identifier\b/gi, "pourrait permettre d’identifier")
+      .replace(/\bpermet\b/gi, "pourrait permettre")
+      .replace(/\bpeut apporter\b/gi, "pourrait apporter")
+      .replace(/\bpeut éclairer\b/gi, "pourrait éclairer")
+      .replace(/\bpeut rendre\b/gi, "pourrait rendre")
+      .replace(/\bapporte à cette conversation\b/gi, "pourrait apporter à cette conversation")
+      .replace(/\bapporte une lecture\b/gi, "pourrait apporter une lecture")
+      .replace(/\boffre un point d’observation\b/gi, "pourrait offrir un point d’observation")
+      .replace(/\bdonne un cadre précis\b/gi, "pourrait donner un cadre précis")
+      .replace(/\bdonne\b/gi, "pourrait donner")
+      .replace(/\bElle éclaire\b/g, "Elle pourrait éclairer")
+      .replace(/\bElle rend lisible\b/g, "Elle rendrait lisible")
+      .replace(/\bil rend lisible\b/gi, "il pourrait rendre lisible")
+      .replace(/\belle rend lisible\b/gi, "elle pourrait rendre lisible")
+      .replace(/\bcherche à rendre\b/gi, "chercherait à rendre")
+      .replace(/\bvise à rendre\b/gi, "viserait à rendre");
+  }
+
   function buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType, readingLabel, currentDeal = null) {
     const enrichment = getPublicEnrichment(currentDeal) || {};
     const orgTitle = whyOrganisationTitle(readingLabel, why);
     const personTitle = whyPersonTitle(readingLabel);
     const positionTitle = whyPositionTitle(readingLabel, positionWhy);
 
-    const orgFragment = txt(enrichment.whyOrganisationPublic, whyOrganisationText(why, organisationName, readingLabel));
-    const personFragment = txt(enrichment.whyPersonPublic, whyPersonText(why, personName, personRole, readingLabel, organisationName, actorType));
-    const positionFragment = whyPositionText(why, organisationName, readingLabel, positionWhy);
+    const orgFragment = qualifyPertinenceFragment(txt(enrichment.whyOrganisationPublic, whyOrganisationText(why, organisationName, readingLabel)), personName, organisationName);
+    const personFragment = qualifyPertinenceFragment(txt(enrichment.whyPersonPublic, whyPersonText(why, personName, personRole, readingLabel, organisationName, actorType)), personName, organisationName);
+    const positionFragment = qualifyPertinenceFragment(whyPositionText(why, organisationName, readingLabel, positionWhy), personName, organisationName);
 
     return `
       <div class="landing-why-narrative landing-why-narrative--keys landing-why-narrative--positioned">
         <article class="landing-why-key">
-          <span>Votre organisation</span>
+          <span>Organisation pressentie</span>
           <h3>${safe(orgTitle)}</h3>
           ${whyTextHTML(orgFragment)}
           ${tagsHTML(whyTagsForReading(readingLabel, "organisation", why))}
         </article>
 
         <article class="landing-why-key">
-          <span>Votre position d’observation</span>
+          <span>Position d’observation</span>
           <h3>${safe(personTitle)}</h3>
           ${whyTextHTML(personFragment)}
           ${tagsHTML(whyTagsForReading(readingLabel, "person", why))}
@@ -2759,7 +2770,7 @@
 
 
   /* ─────────────────────────────────────────────────────────
-     CADRE DE CONFIANCE — version éditoriale / minimale
+     CADRE DE CONFIANCE - version éditoriale / minimale
      Fond foncé, 4 clés de réassurance, contenu adapté à
      l'organisation et à la lecture proposée.
   ───────────────────────────────────────────────────────── */
@@ -2928,7 +2939,7 @@
 
 
   /* ─────────────────────────────────────────────────────────
-     POUR ALLER PLUS LOIN — bloc d'approfondissement structuré
+     POUR ALLER PLUS LOIN - bloc d'approfondissement structuré
      Remplace les longues sections ouvertes par une intro, deux cartes
      de cycles, des accordéons et un CTA final.
   ───────────────────────────────────────────────────────── */
@@ -3091,25 +3102,13 @@
             <p>Comprendre l’industrie par les arbitrages qui rendent une trajectoire possible.</p>
           </div>
           <div class="more-cycle-focus more-cycle-focus--section">
-            <p>Ce cycle met en regard plusieurs lectures — stratégie, finance, droit, opérations, RH, technologie, ressources et territoires — pour rendre lisibles les décisions qui font tenir, évoluer ou réorienter une trajectoire industrielle.</p>
+            <p>Ce cycle met en regard plusieurs lectures - stratégie, finance, droit, opérations, RH, technologie, ressources et territoires - pour rendre lisibles les décisions qui font tenir, évoluer ou réorienter une trajectoire industrielle.</p>
             <p>Chaque conversation part d’une situation concrète : produire davantage, transformer un outil, coordonner des ressources, préserver une continuité ou inscrire une activité dans un territoire.</p>
             <p class="more-cycle-note">Le cycle <a href="https://scenesdarbitrage.fr/conversations/logement.html">Logement & fabrique des territoires</a> reprend la même méthode pour éclairer les arbitrages de l’habitat, du foncier et de la transformation des territoires.</p>
           </div>
         </div>
       </section>
 
-      <section class="landing-section landing-section--light landing-more-faq-section" id="questions-avant-echange">
-        <div class="landing-container">
-          <div class="landing-head">
-            <p class="landing-kicker">Repères pratiques</p>
-            <h2>Comprendre le cadre Scènes d'Arbitrage avant de répondre.</h2>
-            <p>Ces repères présentent le fonctionnement du dispositif : cadre éditorial, préparation, confidentialité, engagement, contribution, formats média et usages possibles des contenus produits.</p>
-          </div>
-          <div class="more-accordions" id="more-accordions">
-            ${buildMoreFAQ(faq)}
-          </div>
-        </div>
-      </section>
       ${buildQualificationCTASection(cta, organisationName, readingLabel)}
       </div>`;
   }
@@ -3121,7 +3120,7 @@
     root.innerHTML = `
       <section class="landing-loading">
         <div class="landing-loading__box">
-          <a class="landing-brand landing-brand--loading" href="/" aria-label="Scènes d'Arbitrage — accueil"><img src="/images/logo-scenes-transparent-no-baseline-v2.png" alt="Scènes d'Arbitrage" class="landing-brand-logo"></a>
+          <a class="landing-brand landing-brand--loading" href="/" aria-label="Scènes d'Arbitrage - accueil"><img src="/images/logo-scenes-transparent-no-baseline-v2.png" alt="Scènes d'Arbitrage" class="landing-brand-logo"></a>
           <h1>${safe(title)}</h1>
           <p>${body}</p>
         </div>
@@ -3135,7 +3134,7 @@
     root.innerHTML = `
       <section class="landing-loading">
         <div class="landing-loading__box">
-          <a class="landing-brand landing-brand--loading" href="/" aria-label="Scènes d'Arbitrage — accueil"><img src="/images/logo-scenes-transparent-no-baseline-v2.png" alt="Scènes d'Arbitrage" class="landing-brand-logo"></a>
+          <a class="landing-brand landing-brand--loading" href="/" aria-label="Scènes d'Arbitrage - accueil"><img src="/images/logo-scenes-transparent-no-baseline-v2.png" alt="Scènes d'Arbitrage" class="landing-brand-logo"></a>
           <h1>Cette position n'est plus activable.</h1>
           <p>
             Le deal <strong>${safe(Core.getDealId(deal) || bundle.dealId)}</strong>
@@ -3294,8 +3293,8 @@
         <div class="landing-container">
           <div class="landing-head">
             <p class="landing-kicker">Pertinence</p>
-            <h2>Pourquoi ${safe(organisationName)} est bien placé pour porter cette lecture.</h2>
-            <p>Une position Scènes d'Arbitrage ne désigne pas seulement une organisation ou une fonction. Elle identifie ce qu’une expérience devrait permettre de rendre lisible depuis un endroit précis.</p>
+            <h2>Pourquoi ${safe(organisationName)} pourrait être pertinent pour cette lecture.</h2>
+            <p>Cette section ne valide pas une participation. Elle formule une hypothèse éditoriale : ce qu’une organisation, une fonction et une expérience pourraient permettre de rendre lisible depuis un endroit précis.</p>
           </div>
           <div class="landing-why-box">
             ${buildWhyNarrative(why, organisationName, personName, personRole, positionWhy, actorType, readingLabel, deal)}
