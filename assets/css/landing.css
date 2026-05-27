@@ -7735,3 +7735,115 @@ body.landing-page .landing-more-faq-section .more-faq-grid article p {
     min-height: 0 !important;
   }
 }
+
+
+/* ─────────────────────────────────────────────
+   PATCH LANDING INDIVIDUELLE UX V6 — stabilisation avant envoi
+   Corrections : hero compact, thèmes lecture, portée, FAQ masquée, tirets simples.
+───────────────────────────────────────────── */
+
+/* Hero : pavé média droit plus compact, padding vertical équilibré. */
+body.landing-page .landing-hero-bento-side .landing-film--static-cycle,
+body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"],
+body.landing-page .landing-film--static-cycle .landing-film-static-cycle {
+  height: clamp(215px, 17vw, 285px) !important;
+  min-height: 215px !important;
+}
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+  padding-top: 22px !important;
+  padding-bottom: 22px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list {
+  gap: 12px !important;
+}
+
+/* Mise en regard : état par défaut des cartes sombres = toujours lisible, y compris la carte Votre lecture non sélectionnée. */
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab {
+  background: #0f0f0f !important;
+  color: #fffaf0 !important;
+  border-color: rgba(243,238,228,.16) !important;
+}
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab strong,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab small,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab small:not(:has(b)),
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab i,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab i:not(:has(b)) {
+  color: #fffaf0 !important;
+}
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab > span,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab small b,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab i b {
+  color: rgba(243,238,228,.58) !important;
+}
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab small,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab i {
+  border-top-color: rgba(243,238,228,.18) !important;
+}
+
+/* Mise en regard : toute carte sélectionnée = thème clair complet, avec tous les contenus lisibles. */
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"],
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"],
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"],
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] {
+  background: #f6f1e9 !important;
+  color: #171717 !important;
+  border-color: rgba(17,17,17,.18) !important;
+}
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] strong,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] small,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] i,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] strong,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] small,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] i,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] strong,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] small,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] i,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] strong,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] small,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] i {
+  color: #171717 !important;
+}
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] > span,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] small b,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] i b,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] > span,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] small b,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] i b,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] > span,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] small b,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] i b,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] > span,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] small b,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] i b {
+  color: rgba(23,23,23,.62) !important;
+}
+
+/* Panneau de détail actif : aucune information claire sur fond clair. */
+body.landing-page .lpb-reading-panel,
+body.landing-page .lpb-reading-panel * {
+  color: #171717 !important;
+}
+body.landing-page .lpb-reading-panel .lpb-label,
+body.landing-page .lpb-reading-panel .lpb-panel-block > span,
+body.landing-page .lpb-reading-panel .lpb-panel-block b {
+  color: rgba(23,23,23,.62) !important;
+}
+
+/* Portée : laisser de l'air entre les labels et le bloc crème, même si les labels prennent deux lignes. */
+body.landing-page #valeur-position .landing-grid--value .value-chip-list {
+  min-height: 5.35rem !important;
+  margin-bottom: 18px !important;
+}
+body.landing-page #valeur-position .landing-grid--value .value-details.value-details--visible {
+  margin-top: 0 !important;
+  background: #fffaf0 !important;
+  color: #171717 !important;
+}
+
+/* FAQ retirée temporairement : à retravailler comme section personnalisée cabinet / entreprise / lecture. */
+body.landing-page .landing-more-faq-section {
+  display: none !important;
+}
