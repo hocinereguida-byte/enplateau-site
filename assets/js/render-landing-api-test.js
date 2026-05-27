@@ -1,18 +1,21 @@
 /*
-  Scènes d'Arbitrage — render-landing-api-test.js
-  Version : 2026-05-27-api-test-v1
+  Scènes d'Arbitrage — render-landing-api-test-v2.js
+  Version : 2026-05-27-api-test-v2
 
-  Objectif : tester une landing individuelle alimentée par l'API Cloudflare Worker
+  Objectif : tester une landing individuelle alimentée par l'API Worker V10.1
   sans remplacer la landing actuelle.
 
-  Source dynamique : /api/landing-data?cast=XXXX
-  Source visuelle : layout.css + landing.css existants
-  Données éditoriales lourdes non chargées : v67, activation-crm, enrichments
+  Sources dynamiques :
+  - /api/landing-data?cast=XXXX
+  - Pipedrive via Worker pour principal / personne / organisation / alternatives / pertinence
+  - KV éditorial via Worker pour composition[]
 
-  Limites volontairement visibles :
-  - si l'API ne renvoie pas alternatives[], la section alternatives est masquée ;
-  - si l'API ne renvoie pas composition[], la mise en regard reste simplifiée ;
-  - la section FAQ reste absente tant qu'elle n'est pas personnalisée proprement.
+  Fichiers volontairement non chargés :
+  - editorial-data-industrie-v67.js
+  - activation-crm-industrie.js
+  - editorial-data-industrie-enrichments.js
+  - render-core.js
+  - render-landing.js
 */
 (function () {
   "use strict";
@@ -30,8 +33,8 @@
     const tool = doctrineTool();
     if (tool && typeof tool.applyLexicon === "function") return tool.applyLexicon(raw);
     return raw
-      .replace(/croissance sous tension/gi, "croissance organisée")
-      .replace(/adaptation sous contrainte/gi, "adaptation coordonnée")
+      .replace(/croissance sous tension/gi, "croissance industrielle")
+      .replace(/adaptation sous contrainte/gi, "adaptation sous conditions")
       .replace(/réinvention sous crise/gi, "reconfiguration industrielle")
       .replace(/reinvention sous crise/gi, "reconfiguration industrielle")
       .replace(/sous tension/gi, "à piloter")
@@ -75,6 +78,14 @@
       .replace(/\s+/g, " ");
   }
 
+  function personName(data) {
+    return txt(data?.person?.nom_complet, data?.person?.name, data?.person_name, "Intervenant pressenti");
+  }
+
+  function organisationName(data) {
+    return txt(data?.organisation?.nom, data?.organisation?.name, data?.org_name, "Organisation pressentie");
+  }
+
   function readingLabel(value) {
     const raw = txt(value);
     if (!raw) return "Lecture éditoriale";
@@ -95,12 +106,10 @@
     return readingLabel(value).replace(/^Lecture\s+/i, "");
   }
 
-  function personName(data) {
-    return txt(data?.person?.nom_complet, data?.person?.name, data?.person_name, "Intervenant pressenti");
-  }
-
-  function organisationName(data) {
-    return txt(data?.organisation?.nom, data?.organisation?.name, data?.org_name, "Organisation pressentie");
+  function isCabinet(data) {
+    const orgType = normalize(txt(data?.organisation?.type, ""));
+    const org = normalize(organisationName(data));
+    return orgType.includes("cabinet") || orgType.includes("conseil") || org.includes("consult") || org.includes("advisory") || org.includes("pwc") || org.includes("argon");
   }
 
   function editorializePertinence(text, data) {
@@ -118,26 +127,30 @@
     out = out.replace(/\bvous semblez\b/gi, `${name} semble`);
     out = out.replace(/\bvous\b/gi, name);
 
-    // Passage au conditionnel sur les verbes d'affirmation les plus fréquents.
+    out = out.replace(/\best pertinent\b/gi, "pourrait être pertinent");
+    out = out.replace(/\best pertinente\b/gi, "pourrait être pertinente");
     out = out.replace(/\bpermet d’apporter\b/gi, "pourrait permettre d’apporter");
     out = out.replace(/\bpermet d'apporter\b/gi, "pourrait permettre d’apporter");
     out = out.replace(/\bpermet de\b/gi, "pourrait permettre de");
+    out = out.replace(/\bpermet d’\b/gi, "pourrait permettre d’");
     out = out.replace(/\bpeut éclairer\b/gi, "pourrait éclairer");
     out = out.replace(/\bpeut apporter\b/gi, "pourrait apporter");
     out = out.replace(/\bapporte à cette conversation\b/gi, "pourrait apporter à cette conversation");
-    out = out.replace(new RegExp(`${org.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")} apporte`, "gi"), `${org} pourrait apporter`);
+    if (org) {
+      out = out.replace(new RegExp(`${org.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")} apporte`, "gi"), `${org} pourrait apporter`);
+    }
     out = out.replace(/\bdonne un cadre\b/gi, "pourrait donner un cadre");
     out = out.replace(/\béclaire\b/gi, "pourrait éclairer");
 
     return out;
   }
 
-  function splitParagraphs(text) {
+  function splitSentences(text, limit) {
     return txt(text)
       .split(/\n{2,}|(?<=\.)\s+(?=[A-ZÉÈÀÂÎÔÛÇ])/)
       .map(s => s.trim())
       .filter(Boolean)
-      .slice(0, 4);
+      .slice(0, limit || 5);
   }
 
   function renderState(title, body, contact) {
@@ -155,14 +168,15 @@
   function buildHero(data) {
     const name = personName(data);
     const org = organisationName(data);
-    const role = txt(data?.person?.poste, data?.person?.title, data?.poste, "");
-    const angle = txt(data?.angle, data?.objet_court, "Proposition éditoriale personnalisée");
-    const conversation = txt(data?.conversation, "");
-    const contexte = txt(data?.contexte_titre, data?.contexte_code, "");
-    const cycle = txt(data?.cycle, "Industrie & transformation des territoires");
-    const lecture = readingLabel(data?.type_lecture);
-    const media = txt(data?.media, "");
-    const journaliste = txt(data?.journaliste, "");
+    const role = txt(data?.person?.poste, data?.person?.title, "");
+    const editorial = data?.editorial || {};
+    const angle = txt(editorial.angle, data?.angle, data?.objet_court, "Proposition éditoriale personnalisée");
+    const conversation = txt(editorial.conversation, data?.conversation, "");
+    const contexte = txt(editorial.contexte_titre, data?.contexte_titre, data?.contexte_code, "");
+    const cycle = txt(editorial.cycle, data?.cycle, "Industrie & transformation des territoires");
+    const lecture = readingLabel(txt(editorial.type_lecture_label, editorial.type_lecture, data?.type_lecture));
+    const media = txt(editorial.media, data?.media, "");
+    const journaliste = txt(editorial.journaliste, data?.journaliste, "");
 
     const template = document.getElementById("landing-static-cycle-media");
     const mediaBlock = template ? template.innerHTML : "";
@@ -174,9 +188,7 @@
             <div class="landing-hero-main">
               <p class="landing-kicker">${safe(cycle)}</p>
               <h1>${safe(angle)}</h1>
-              <p class="landing-lead landing-lead--compact">
-                Une proposition de ${safe(lecture.toLowerCase())} pour explorer, sans engagement, la place que cette expérience pourrait trouver dans le cycle.
-              </p>
+              <p class="landing-lead landing-lead--compact">Une proposition de ${safe(lecture.toLowerCase())} pour explorer, sans engagement, la place que cette expérience pourrait trouver dans le cycle.</p>
               ${conversation ? `<p class="landing-reassurance">${safe(conversation)}${contexte ? ` · ${safe(contexte)}` : ""}</p>` : ""}
               <div class="landing-actions">
                 <a class="landing-btn" href="${CAL_URL}" target="_blank" rel="noopener">Proposer un échange éditorial</a>
@@ -208,13 +220,10 @@
   function buildPertinence(data) {
     const name = personName(data);
     const org = organisationName(data);
-    const lecture = readingLabel(data?.type_lecture);
-    const pertinence = editorializePertinence(data?.pertinence_editoriale, data);
-    const paragraphs = splitParagraphs(pertinence);
-
-    const content = paragraphs.length
-      ? paragraphs.map(p => `<p>${safe(p)}</p>`).join("")
-      : `<p>${safe(org)} pourrait apporter une lecture utile à qualifier dans le cadre de cette conversation. L’échange éditorial permettrait de préciser le périmètre, la place de ${safe(name)} et la manière de rendre cette lecture publiquement tenable.</p>`;
+    const lecture = readingLabel(txt(data?.editorial?.type_lecture_label, data?.type_lecture));
+    const dealText = editorializePertinence(txt(data?.pertinence?.deal, data?.pertinence_editoriale), data);
+    const orgText = editorializePertinence(txt(data?.pertinence?.organisation, data?.organisation?.justification_entreprise), data);
+    const paragraphs = splitSentences(dealText, 4);
 
     return `
       <section class="landing-section landing-section--light" id="pourquoi-cette-position">
@@ -224,23 +233,66 @@
             <h2>Pourquoi cette position pourrait être pertinente.</h2>
             <p>Cette page ne valide pas une participation. Elle formule une hypothèse éditoriale à qualifier : ce que la position de ${safe(name)} chez ${safe(org)} pourrait rendre lisible depuis une ${safe(lecture.toLowerCase())}.</p>
           </div>
-          <div class="landing-why-box">
-            <div class="landing-why-narrative">
-              ${content}
-            </div>
+          <div class="landing-grid landing-grid--3 landing-head--keys">
+            <article class="landing-card">
+              <span class="landing-label">Organisation pressentie</span>
+              <h3>${safe(org)}</h3>
+              ${orgText ? `<p>${safe(orgText)}</p>` : `<p>${safe(org)} pourrait constituer un point d’observation utile pour cette conversation.</p>`}
+            </article>
+            <article class="landing-card">
+              <span class="landing-label">Position d’observation</span>
+              <h3>${safe(name)}</h3>
+              ${paragraphs.slice(0, 2).map(p => `<p>${safe(p)}</p>`).join("") || `<p>Cette position devrait permettre de qualifier une lecture située du sujet.</p>`}
+            </article>
+            <article class="landing-card">
+              <span class="landing-label">Lecture proposée</span>
+              <h3>${safe(lecture)}</h3>
+              ${paragraphs.slice(2, 4).map(p => `<p>${safe(p)}</p>`).join("") || `<p>La contribution ne porterait pas sur un cas interne ou client, mais sur une lecture utile et publiquement tenable.</p>`}
+            </article>
           </div>
         </div>
       </section>`;
   }
 
+  function compositionCardHtml(card, index) {
+    const role = txt(card.role, index === 0 ? "Votre lecture" : "Lecture complémentaire");
+    const type = txt(card.type_lecture, card.title, "Lecture");
+    const orgs = Array.isArray(card.organisations_positionnees) ? card.organisations_positionnees.filter(Boolean) : [];
+    const deals = Array.isArray(card.deals_positionnes) ? card.deals_positionnes : [];
+    const journalistMedia = [txt(card.journaliste), txt(card.media)].filter(Boolean).join(" · ");
+    const orgText = orgs.length ? orgs.join(" · ") : "Position en cours de composition";
+    const dark = index === 0 || index === 2 || index === 3;
+    return `
+      <article class="landing-card ${index === 0 ? "landing-card--primary-position" : ""}" data-card-tone="${dark ? "dark" : "light"}">
+        <span class="landing-label">${safe(role)}</span>
+        <h3>${safe(shortReading(type))}</h3>
+        <div class="landing-organisations">
+          <span>Organisations positionnées</span>
+          <strong>${safe(orgText)}</strong>
+        </div>
+        <div class="landing-media-line">
+          <span>Journaliste / média</span>
+          <strong>${safe(journalistMedia || "Média partenaire")}</strong>
+        </div>
+        ${txt(card.angle) ? `<p>${safe(card.angle)}</p>` : ""}
+        ${deals.length > 1 ? `<p class="landing-text-muted">${safe(deals.length)} positions CRM actives associées à cette lecture.</p>` : ""}
+      </article>`;
+  }
+
   function buildConversation(data) {
-    const conversation = txt(data?.conversation, "Conversation éditoriale");
-    const contexte = txt(data?.contexte_titre, data?.contexte_code, "");
-    const angle = txt(data?.angle, data?.objet_court, "Angle éditorial à qualifier");
-    const lecture = readingLabel(data?.type_lecture);
-    const org = organisationName(data);
-    const media = txt(data?.media, "");
-    const journaliste = txt(data?.journaliste, "");
+    const editorial = data?.editorial || {};
+    const conversation = txt(editorial.conversation, data?.conversation, "Conversation éditoriale");
+    const contexte = txt(editorial.contexte_titre, data?.contexte_titre, "");
+    const composition = Array.isArray(data?.composition) ? data.composition : [];
+    const fallback = [{
+      role: "Votre lecture",
+      type_lecture: txt(editorial.type_lecture_label, data?.type_lecture),
+      organisations_positionnees: [organisationName(data)],
+      journaliste: txt(editorial.journaliste, data?.journaliste),
+      media: txt(editorial.media, data?.media),
+      angle: txt(editorial.angle, data?.angle)
+    }];
+    const cards = (composition.length ? composition : fallback).slice(0, 4);
 
     return `
       <section class="landing-section landing-section--dark" id="mise-en-regard">
@@ -250,30 +302,8 @@
             <h2>${safe(conversation)}</h2>
             ${contexte ? `<p>${safe(contexte)}</p>` : ""}
           </div>
-          <div class="landing-grid landing-grid--3 landing-composition-grid">
-            <article class="landing-card landing-card--primary-position">
-              <span class="landing-label">Votre lecture</span>
-              <h3>${safe(shortReading(lecture))}</h3>
-              <div class="landing-organisations">
-                <span>Organisations positionnées</span>
-                <strong>${safe(org)}</strong>
-              </div>
-              <div class="landing-media-line">
-                <span>Journaliste / média</span>
-                <strong>${safe([journaliste, media].filter(Boolean).join(" · ") || "Média partenaire")}</strong>
-              </div>
-              <p>${safe(angle)}</p>
-            </article>
-            <article class="landing-card">
-              <span class="landing-label">Composition</span>
-              <h3>Mise en regard</h3>
-              <p>La valeur de la conversation vient de la confrontation de plusieurs positions complémentaires. Cette version de test affiche la position active issue du CRM ; la composition complète pourra ensuite être servie par le Worker depuis un référentiel éditorial nettoyé.</p>
-            </article>
-            <article class="landing-card">
-              <span class="landing-label">Cadre</span>
-              <h3>Lecture située</h3>
-              <p>La contribution ne porte pas sur un cas interne ou client. Elle vise à rendre lisible un mécanisme d’arbitrage utile à d’autres acteurs, dans un cadre préparé et publiquement tenable.</p>
-            </article>
+          <div class="landing-grid landing-grid--4 landing-composition-grid">
+            ${cards.map(compositionCardHtml).join("")}
           </div>
         </div>
       </section>`;
@@ -287,10 +317,10 @@
       const href = txt(alt.url_landing_page, alt.landingUrl, alt.url, "#");
       return `
         <article class="landing-card">
-          <span class="landing-label">${safe(txt(alt.rang_alternatif, alt.rang, "Option"))}</span>
-          <h3>${safe(readingLabel(alt.type_lecture))}</h3>
-          <p>${safe(txt(alt.angle, alt.objet_court, "Angle alternatif à qualifier"))}</p>
-          ${href !== "#" ? `<p style="margin-top:18px;"><a class="editorial-link" href="${esc(href)}">Voir cette proposition</a></p>` : ""}
+          <span class="landing-label">Piste en réserve éditoriale ${safe(txt(alt.rang_alternatif, ""))}</span>
+          <h3>${safe(txt(alt.angle, alt.objet_court, "Angle alternatif à qualifier"))}</h3>
+          <p><strong>${safe(readingLabel(alt.type_lecture))}</strong>${alt.conversation ? ` · ${safe(alt.conversation)}` : ""}</p>
+          ${href !== "#" ? `<p style="margin-top:18px;"><a class="editorial-link" href="${esc(href)}">Voir cette piste →</a></p>` : ""}
         </article>`;
     }).join("");
 
@@ -300,6 +330,7 @@
           <div class="landing-head">
             <p class="landing-kicker">Autres angles</p>
             <h2>D’autres angles de ce cycle pourraient également correspondre à ${safe(name)}.</h2>
+            <p>La position présentée ci-dessus reste la proposition prioritaire.</p>
           </div>
           <div class="landing-grid landing-grid--3">${cards}</div>
         </div>
@@ -307,10 +338,9 @@
   }
 
   function buildPortee(data) {
-    const actorType = normalize(txt(data?.organisation?.type, data?.actorType, ""));
-    const isCabinet = actorType.includes("cabinet") || normalize(organisationName(data)).includes("consult") || normalize(organisationName(data)).includes("advisory");
-    const first = isCabinet ? "Produire une position exploitable" : "Structurer une parole dirigeante";
-    const firstText = isCabinet
+    const cabinet = isCabinet(data);
+    const first = cabinet ? "Produire une position exploitable" : "Structurer une parole dirigeante";
+    const firstText = cabinet
       ? "Un contenu utile pour matérialiser une expertise sans transformer la prise de parole en présentation d’offre."
       : "Un contenu utile pour rendre lisible une expérience de décision sans exposer un dossier interne.";
 
@@ -323,21 +353,9 @@
             <p>Le contenu produit est conçu comme une opération éditoriale pérenne, pas comme une opération commerciale immédiate ou jetable.</p>
           </div>
           <div class="landing-grid landing-grid--3 landing-grid--value">
-            <article class="landing-card">
-              <span class="landing-label">Actif éditorial</span>
-              <h3>${safe(first)}</h3>
-              <p>${safe(firstText)}</p>
-            </article>
-            <article class="landing-card">
-              <span class="landing-label">Usage dans le temps</span>
-              <h3>Un contenu mobilisable durablement</h3>
-              <p>La vidéo, l’article ou la page média peuvent nourrir des échanges qualifiés, être partagés en rendez-vous ou rester accessibles aux personnes qui recherchent une lecture sur ce sujet.</p>
-            </article>
-            <article class="landing-card">
-              <span class="landing-label">Valeur éditoriale</span>
-              <h3>Une lecture plutôt qu’une actualité</h3>
-              <p>La valeur tient au fait de formuler une lecture structurée sur un arbitrage durable, plutôt que de commenter une actualité ponctuelle.</p>
-            </article>
+            <article class="landing-card"><span class="landing-label">Actif éditorial</span><h3>${safe(first)}</h3><p>${safe(firstText)}</p></article>
+            <article class="landing-card"><span class="landing-label">Usage dans le temps</span><h3>Un contenu mobilisable durablement</h3><p>La vidéo, l’article ou la page média peuvent nourrir des échanges qualifiés, être partagés en rendez-vous ou rester accessibles aux personnes qui recherchent une lecture sur ce sujet.</p></article>
+            <article class="landing-card"><span class="landing-label">Valeur éditoriale</span><h3>Une lecture plutôt qu’une actualité</h3><p>La valeur tient au fait de formuler une lecture structurée sur un arbitrage durable, plutôt que de commenter une actualité ponctuelle.</p></article>
           </div>
         </div>
       </section>`;
@@ -407,7 +425,7 @@
       }
       render(Object.assign({ cast }, json.data));
     } catch (error) {
-      console.error("render-landing-api-test — erreur API", error);
+      console.error("render-landing-api-test-v2 — erreur API", error);
       renderState("Erreur de chargement", "La page de test n’a pas pu interroger l’API Cloudflare Worker.", true);
     }
   }
