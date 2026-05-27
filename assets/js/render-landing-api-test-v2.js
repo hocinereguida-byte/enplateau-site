@@ -254,29 +254,112 @@
       </section>`;
   }
 
-  function compositionCardHtml(card, index) {
-    const role = txt(card.role, index === 0 ? "Votre lecture" : "Lecture complémentaire");
-    const type = txt(card.type_lecture, card.title, "Lecture");
-    const orgs = Array.isArray(card.organisations_positionnees) ? card.organisations_positionnees.filter(Boolean) : [];
-    const deals = Array.isArray(card.deals_positionnes) ? card.deals_positionnes : [];
-    const journalistMedia = [txt(card.journaliste), txt(card.media)].filter(Boolean).join(" · ");
-    const orgText = orgs.length ? orgs.join(" · ") : "Position en cours de composition";
-    const dark = index === 0 || index === 2 || index === 3;
+  function toArray(value) {
+    return Array.isArray(value) ? value : (value ? [value] : []);
+  }
+
+  function uniqueClean(items) {
+    const seen = new Set();
+    return toArray(items)
+      .map(item => String(item || "").trim())
+      .filter(Boolean)
+      .filter(item => {
+        const key = normalize(item);
+        if (!key || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+  }
+
+  function listInline(items, fallback) {
+    const clean = uniqueClean(items);
+    if (!clean.length) return `<span class="lpb-muted">${safe(fallback || "À qualifier")}</span>`;
+    return clean.map(item => `<span>${safe(item)}</span>`).join("");
+  }
+
+  function cleanReadingTitle(value) {
+    const label = shortReading(value || "Lecture");
+    return label
+      .replace(/territoires\s*&\s*ancrage/i, "Territoires")
+      .replace(/technologie\s*&\s*syst[eè]mes/i, "Technologie")
+      .replace(/technologique\s*\/\s*syst[eè]mes/i, "Technologie")
+      .replace(/opérationnelle/i, "Opérations")
+      .replace(/operationnelle/i, "Opérations")
+      .replace(/stratégique/i, "Stratégie")
+      .replace(/strategique/i, "Stratégie")
+      .replace(/financière/i, "Financière")
+      .replace(/financiere/i, "Financière")
+      .replace(/juridique/i, "Juridique")
+      .replace(/territoriale/i, "Territoires")
+      .trim();
+  }
+
+  function orgsForCompositionCard(card, data, index, limit) {
+    const currentOrg = organisationName(data);
+    if (index === 0) return [currentOrg].filter(Boolean);
+
+    const deals = toArray(card.deals_positionnes);
+    const principalDeals = deals.filter(deal => normalize(deal.statut_position).includes("principal"));
+    const rows = (principalDeals.length ? principalDeals : deals)
+      .map(deal => txt(deal.nom, deal.organisation, deal.org_name))
+      .filter(Boolean);
+
+    const fallback = toArray(card.organisations_positionnees);
+    return uniqueClean(rows.length ? rows : fallback).slice(0, limit || 3);
+  }
+
+  function mediaLineForCard(card) {
+    return [txt(card.journaliste), txt(card.media)].filter(Boolean).join(" · ");
+  }
+
+  function buildConversationTab(item, index, activeIndex) {
+    const checked = index === activeIndex ? " checked" : "";
+    const isPrimary = index === 0;
+    const orgs = item.orgs.slice(0, 3);
     return `
-      <article class="landing-card ${index === 0 ? "landing-card--primary-position" : ""}" data-card-tone="${dark ? "dark" : "light"}">
-        <span class="landing-label">${safe(role)}</span>
-        <h3>${safe(shortReading(type))}</h3>
-        <div class="landing-organisations">
-          <span>Organisations positionnées</span>
-          <strong>${safe(orgText)}</strong>
+      <input class="lpb-tab-input" type="radio" name="lpb-reading-tabs" id="lpb-reading-${index}"${checked}>
+      <label class="lpb-reading-tab ${isPrimary ? "lpb-reading-tab--primary" : ""}" for="lpb-reading-${index}">
+        <span>${safe(isPrimary ? "Votre lecture" : "Lecture complémentaire")}</span>
+        <strong>${safe(item.readingTitle)}</strong>
+        <small>${orgs.length ? safe(orgs.join(" · ")) : "Organisations positionnées en qualification"}</small>
+        ${item.media ? `<i>${safe(item.media)}</i>` : ""}
+      </label>`;
+  }
+
+  function buildConversationPanel(item, index) {
+    const orgLabel = item.orgs.length > 1 ? "Organisations positionnées" : "Organisation positionnée";
+    const title = txt(item.headline, item.angle, item.readingTitle);
+    const value = txt(item.intro, item.angle, item.headline, "Cette lecture complète la composition éditoriale en apportant un point d’observation situé.");
+    const panelLabel = readingLabel(item.type_lecture || item.readingTitle);
+    const description = index === 0
+      ? `Cette ${panelLabel.toLowerCase().replace("lecture rh", "lecture RH")} constitue la position proposée dans la composition éditoriale.`
+      : `Cette ${panelLabel.toLowerCase().replace("lecture rh", "lecture RH")} complète la composition éditoriale en apportant un autre point d’observation sur le même moment de transformation industrielle.`;
+
+    return `
+      <article class="lpb-reading-panel lpb-reading-panel--${index} ${index === 0 ? "lpb-reading-panel--primary" : ""}">
+        <div class="lpb-panel-main">
+          <span class="lpb-label">${safe(panelLabel)}</span>
+          <h3>${safe(title)}</h3>
+          <p class="lpb-panel-value">${safe(value)}</p>
+          <p class="lpb-panel-context">${safe(description)}</p>
         </div>
-        <div class="landing-media-line">
-          <span>Journaliste / média</span>
-          <strong>${safe(journalistMedia || "Média partenaire")}</strong>
+        <div class="lpb-panel-aside">
+          <div class="lpb-panel-block">
+            <span>${safe(orgLabel)}</span>
+            <div class="lpb-chip-list">${listInline(item.orgs, "Organisations en qualification")}</div>
+          </div>
+          ${item.media ? `<div class="lpb-panel-block lpb-panel-block--media"><span>Journaliste / média</span><strong>${safe(item.media)}</strong></div>` : ""}
         </div>
-        ${txt(card.angle) ? `<p>${safe(card.angle)}</p>` : ""}
-        ${deals.length > 1 ? `<p class="landing-text-muted">${safe(deals.length)} positions CRM actives associées à cette lecture.</p>` : ""}
       </article>`;
+  }
+
+  function readingsSentenceFromItems(items) {
+    const labels = items
+      .map(item => normalize(item.readingTitle) === "rh" ? "RH" : item.readingTitle.toLowerCase())
+      .filter(Boolean);
+    if (!labels.length) return "plusieurs lectures complémentaires";
+    if (labels.length === 1) return `une lecture ${labels[0]}`;
+    return labels.slice(0, -1).map(label => `une lecture ${label}`).join(", ") + ` et une lecture ${labels[labels.length - 1]}`;
   }
 
   function buildConversation(data) {
@@ -287,24 +370,61 @@
     const fallback = [{
       role: "Votre lecture",
       type_lecture: txt(editorial.type_lecture_label, data?.type_lecture),
+      title: cleanReadingTitle(txt(editorial.type_lecture_label, data?.type_lecture)),
+      headline: txt(editorial.angle, data?.angle),
+      intro: txt(editorial.editorial_reference?.intro, "Cette lecture constitue la position proposée dans la composition éditoriale."),
       organisations_positionnees: [organisationName(data)],
       journaliste: txt(editorial.journaliste, data?.journaliste),
       media: txt(editorial.media, data?.media),
-      angle: txt(editorial.angle, data?.angle)
+      angle: txt(editorial.angle, data?.angle),
+      deals_positionnes: []
     }];
-    const cards = (composition.length ? composition : fallback).slice(0, 4);
+
+    const cards = (composition.length ? composition : fallback).slice(0, 4).map((card, index) => ({
+      role: txt(card.role, index === 0 ? "Votre lecture" : "Lecture complémentaire"),
+      type_lecture: txt(card.type_lecture_label, card.type_lecture, card.title),
+      readingTitle: cleanReadingTitle(txt(card.title, card.type_lecture, card.type_lecture_label)),
+      headline: txt(card.headline, card.angle),
+      intro: txt(card.intro, card.narrativeText, card.description, card.angle),
+      angle: txt(card.angle, card.headline),
+      media: mediaLineForCard(card),
+      orgs: orgsForCompositionCard(card, data, index, 3),
+      deals: toArray(card.deals_positionnes)
+    }));
+
+    const primaryReading = cleanReadingTitle(txt(editorial.type_lecture_label, data?.type_lecture, cards[0]?.readingTitle));
+    const sectionTitle = `Votre lecture ${primaryReading.toLowerCase()} prend sa valeur dans une conversation composée.`;
+    const conversationTitle = txt(conversation).replace(/^C(\d+)\s+[—-]\s+/, "");
 
     return `
-      <section class="landing-section landing-section--dark" id="mise-en-regard">
-        <div class="landing-container">
-          <div class="landing-head">
-            <p class="landing-kicker">Place dans la conversation</p>
-            <h2>${safe(conversation)}</h2>
-            ${contexte ? `<p>${safe(contexte)}</p>` : ""}
+      <section class="landing-bento-section landing-bento-section--tabs" id="mise-en-regard" data-bento-build="api-test-v2-tabs-restored">
+        <div class="landing-container lpb-container">
+          <div class="lpb-head">
+            <p class="lpb-kicker">Mise en regard éditoriale</p>
+            <h2>${safe(sectionTitle)}</h2>
+            <p class="lpb-subnote">Il ne s’agit pas d’une table ronde ni d’un débat contradictoire. Chaque contribution est préparée individuellement, puis articulée aux autres lectures.</p>
           </div>
-          <div class="landing-grid landing-grid--4 landing-composition-grid">
-            ${cards.map(compositionCardHtml).join("")}
+
+          <div class="lpb-conversation-band" aria-label="Conversation stratégique">
+            <span>Conversation stratégique</span>
+            <strong>${safe(conversationTitle || conversation)}</strong>
+            ${contexte ? `<small>${safe(contexte)}</small>` : ""}
           </div>
+
+          <div class="lpb-tabs lpb-tabs--inline-panels" id="lectures-composees" aria-label="Les quatre lectures de la conversation">
+            ${cards.map((item, index) => `
+              <div class="lpb-reading-slot lpb-reading-slot--${index}">
+                ${buildConversationTab(item, index, 0)}
+                <div class="lpb-mobile-panel lpb-mobile-panel--${index}">
+                  ${buildConversationPanel(item, index)}
+                </div>
+              </div>`).join("")}
+            <div class="lpb-tab-panels lpb-tab-panels--desktop">
+              ${cards.map((item, index) => buildConversationPanel(item, index)).join("")}
+            </div>
+          </div>
+
+          <p class="lpb-composed-note">Chaque intervenant participe séparément. La valeur naît ensuite de la mise en regard&nbsp;: ${safe(readingsSentenceFromItems(cards))} éclairent le même moment de transformation industrielle.</p>
         </div>
       </section>`;
   }
