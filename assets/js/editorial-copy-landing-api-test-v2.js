@@ -13,7 +13,7 @@
   "use strict";
 
   window.SDALandingCopyTestV2 = {
-    version: "2026-05-31-pertinence-v1",
+    version: "2026-05-31-conversation-v9",
     items: {
       "CA24C4G": {
         cast: "CA24C4G",
@@ -60,6 +60,20 @@
             detail: ""
           }
         }
+      }
+    },
+    angleDetails: {
+      "IND-C2-CST-01": {
+        title: "Comment anticiper les interdépendances qui deviennent décisives dans une trajectoire de croissance industrielle ?",
+        intro: "Une trajectoire de croissance industrielle ne dépend pas seulement de la demande ou de la capacité interne. Elle repose aussi sur des partenaires, des flux, des fournisseurs, des infrastructures, des compétences, des systèmes et des écosystèmes qui rendent cette trajectoire possible.",
+        source: "anglePublic.accrocheLanding",
+        status: "validated_for_test"
+      },
+      "IND-C1-ASC-01": {
+        title: "Comment préserver la capacité d’avenir quand les arbitrages économiques deviennent plus décisifs ?",
+        intro: "La lecture financière permet de reconnaître ce qu’il faut préserver pour que l’organisation conserve sa capacité à investir, transformer et piloter sa trajectoire industrielle.",
+        source: "anglePublic.accrocheLanding",
+        status: "validated_for_test"
       }
     }
   };
