@@ -7958,3 +7958,156 @@ body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list > d
     padding: 24px !important;
   }
 }
+
+
+/* =========================================================
+   PATCH API V2 HERO V5 — 20260531
+   Corrections après contrôle desktop/mobile :
+   - texte du bloc média entièrement visible sur desktop ;
+   - suppression du vide noir sous l'image sur mobile ;
+   - formulation de conversation plus discrète sous le kicker.
+   ========================================================= */
+
+/* Formulation éditoriale de la conversation sous le kicker. */
+body.landing-page .landing-hero-conversation strong {
+  max-width: 56ch !important;
+  font-size: clamp(.84rem, .92vw, .90rem) !important;
+  line-height: 1.48 !important;
+  font-weight: 500 !important;
+}
+
+/* Desktop : hauteur compacte mais suffisante pour les quatre niveaux d'information. */
+@media (min-width: 621px) {
+  body.landing-page .landing-hero-bento-side .landing-film--static-cycle,
+  body.landing-page .landing-film--static-cycle .landing-film-track,
+  body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"],
+  body.landing-page .landing-film--static-cycle .landing-film-static-cycle {
+    height: clamp(264px, 21vw, 286px) !important;
+    min-height: 264px !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 16px 30px 17px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    overflow: hidden !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card__kicker {
+    margin: 0 0 7px !important;
+    font-size: .49rem !important;
+    line-height: 1.22 !important;
+    letter-spacing: .16em !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card__status {
+    max-width: 27ch !important;
+    margin: 0 auto 10px !important;
+    padding: 0 !important;
+    font-size: clamp(.95rem, 1.18vw, 1.08rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list {
+    display: grid !important;
+    width: min(100%, 330px) !important;
+    gap: 0 !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list > div {
+    padding: 8px 0 7px !important;
+    border-top: 1px solid rgba(246,241,233,.15) !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list dt {
+    margin: 0 0 3px !important;
+    font-size: .47rem !important;
+    line-height: 1.18 !important;
+    letter-spacing: .14em !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list dd {
+    margin: 0 !important;
+    font-size: .67rem !important;
+    line-height: 1.34 !important;
+  }
+}
+
+/* Mobile : neutraliser toutes les anciennes hauteurs minimum qui créent le bloc noir. */
+@media (max-width: 620px) {
+  body.landing-page .landing-hero-conversation strong {
+    font-size: .84rem !important;
+    line-height: 1.45 !important;
+  }
+
+  body.landing-page .landing-hero-bento-side .landing-film--static-cycle,
+  body.landing-page .landing-film--static-cycle .landing-film-track,
+  body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"],
+  body.landing-page .landing-film--static-cycle .landing-film-static-cycle {
+    box-sizing: border-box !important;
+    height: 288px !important;
+    min-height: 288px !important;
+    max-height: 288px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    height: 288px !important;
+    min-height: 0 !important;
+    max-height: 288px !important;
+    margin: 0 !important;
+    padding: 18px 22px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    overflow: hidden !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card__kicker {
+    margin: 0 0 7px !important;
+    font-size: .49rem !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card__status {
+    max-width: 25ch !important;
+    margin: 0 auto 10px !important;
+    font-size: .96rem !important;
+    line-height: 1.12 !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list {
+    display: grid !important;
+    width: min(100%, 280px) !important;
+    gap: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list > div {
+    padding: 8px 0 7px !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list dt {
+    margin: 0 0 3px !important;
+    font-size: .47rem !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list dd {
+    font-size: .65rem !important;
+    line-height: 1.32 !important;
+  }
+}
