@@ -1,6 +1,6 @@
 /*
   Scènes d'Arbitrage — render-landing-api-test-v2.js
-  Version : 2026-05-31-api-test-v2-enrichments-unique-v10
+  Version : 2026-05-31-api-test-v2-alternatives-v12
 
   Objectif : tester une landing individuelle alimentée par l'API Worker V10.1
   sans remplacer la landing actuelle.
@@ -443,6 +443,10 @@
       .trim();
   }
 
+  function cleanConversationShortTitle(value) {
+    return txt(value, "").replace(/^C\d+\s*[—-]\s*/, "").replace(/\s+/g, " ").trim();
+  }
+
   function orgsForCompositionCard(card, data, index, limit) {
     const currentOrg = organisationName(data);
     if (index === 0) return [currentOrg].filter(Boolean);
@@ -605,19 +609,53 @@
   }
 
   
+  function alternativeLandingHref(alt) {
+    /*
+      "Voir le cadrage" ouvre la landing personnalisée de l'angle alternatif.
+      Sur la page de test V2, on conserve le même gabarit de page afin de tester
+      la landing alternative dans la version en cours de correction.
+      Après bascule en ligne, window.location.pathname pointera naturellement
+      vers contribuer.html.
+    */
+    const alternativeCast = txt(alt?.cast, alt?.public_ref, alt?.publicRef, "");
+    if (alternativeCast) {
+      return `${window.location.pathname}?cast=${encodeURIComponent(alternativeCast)}`;
+    }
+    return txt(alt?.url_landing_page, alt?.landingUrl, alt?.url, "#");
+  }
+
 function buildAlternatives(data) {
     const alternatives = Array.isArray(data?.alternatives) ? data.alternatives : [];
     if (!alternatives.length) return "";
     const name = personName(data);
     const cards = alternatives.map((alt, index) => {
-      const href = txt(alt.url_landing_page, alt.landingUrl, alt.url, "#");
+      const href = alternativeLandingHref(alt);
       const rang = txt(alt.rang_alternatif, String(index + 1));
+      const conversationName = cleanConversationShortTitle(
+        txt(
+          alt.nom_conversation,
+          alt.conversation_nom,
+          alt.conversation_short_title,
+          alt.conversation
+        )
+      );
+      const contextName = txt(
+        alt.nom_contexte,
+        alt.contexte_titre,
+        alt.context_title,
+        alt.contexte,
+        ""
+      );
       return `
-        <article class="landing-card">
-          <span class="landing-label">Piste complémentaire ${safe(rang)}</span>
+        <article class="landing-card landing-card--alternative">
+          <span class="landing-label">Position alternative ${safe(rang)}</span>
           <h3>${safe(txt(alt.angle, alt.objet_court, "Angle alternatif à qualifier"))}</h3>
-          <p><strong>${safe(readingLabel(alt.type_lecture))}</strong>${alt.conversation ? ` · ${safe(alt.conversation)}` : ""}</p>
-          ${href !== "#" ? `<p style="margin-top:18px;"><a class="editorial-link" href="${esc(href)}">Voir le cadrage →</a></p>` : ""}
+          <p class="landing-alt-reading"><strong>${safe(readingLabel(alt.type_lecture))}</strong></p>
+          <div class="landing-alt-meta">
+            ${conversationName ? `<small>${safe(conversationName)}</small>` : ""}
+            ${contextName ? `<small>${safe(contextName)}</small>` : ""}
+          </div>
+          ${href !== "#" ? `<p class="landing-alt-link"><a class="editorial-link" href="${esc(href)}">Voir le cadrage →</a></p>` : ""}
         </article>`;
     }).join("");
 
@@ -625,8 +663,8 @@ function buildAlternatives(data) {
       <section class="landing-section landing-section--light" id="alternatives">
         <div class="landing-container">
           <div class="landing-head">
-            <p class="landing-kicker">Autres angles</p>
-            <h2>D’autres angles de ce cycle pourraient également correspondre à ${safe(name)}.</h2>
+            <p class="landing-kicker">Lectures alternatives</p>
+            <h2>D’autres positions dans le cycle Industrie & Transformation des Territoires ont été identifiées pour ${safe(name)}.</h2>
             <p>La position présentée ci-dessus reste la proposition prioritaire.</p>
           </div>
           <div class="landing-grid landing-grid--3">${cards}</div>
