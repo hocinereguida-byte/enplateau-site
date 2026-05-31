@@ -8548,3 +8548,72 @@ body.landing-page #alternatives .landing-alt-link {
     margin-bottom: 20px !important;
   }
 }
+
+
+/* =========================================================
+   PATCH API V2 ALTERNATIVES V14 — 20260601
+   - alignement vertical identique du bloc "Lecture attendue" ;
+   - valeurs Conversation / Contexte harmonisées avec Lecture ;
+   - libellé "Position alternative X" renforcé.
+   ========================================================= */
+
+body.landing-page #alternatives .landing-card--alternative {
+  display: grid !important;
+  grid-template-rows:
+    auto
+    minmax(172px, auto)
+    auto
+    auto
+    auto
+    1fr
+    auto !important;
+  align-content: start !important;
+}
+
+body.landing-page #alternatives .landing-alt-position-label {
+  font-weight: 700 !important;
+  color: var(--landing-ink) !important;
+}
+
+body.landing-page #alternatives .landing-alt-field--angle {
+  min-height: 172px !important;
+  align-self: start !important;
+}
+
+body.landing-page #alternatives .landing-alt-field--angle h3 {
+  margin: 0 !important;
+}
+
+body.landing-page #alternatives .landing-alt-field {
+  align-self: start !important;
+}
+
+body.landing-page #alternatives .landing-alt-value,
+body.landing-page #alternatives .landing-alt-reading {
+  font-family: var(--font-body, "IBM Plex Sans", sans-serif) !important;
+  font-size: .9rem !important;
+  line-height: 1.55 !important;
+  font-weight: 500 !important;
+  color: var(--landing-ink) !important;
+}
+
+body.landing-page #alternatives .landing-alt-link {
+  align-self: end !important;
+}
+
+@media (max-width: 1200px) {
+  body.landing-page #alternatives .landing-card--alternative,
+  body.landing-page #alternatives .landing-alt-field--angle {
+    grid-template-rows: none !important;
+    min-height: 0 !important;
+  }
+}
+
+@media (max-width: 980px) {
+  body.landing-page #alternatives .landing-card--alternative {
+    display: flex !important;
+  }
+  body.landing-page #alternatives .landing-alt-field--angle {
+    min-height: 0 !important;
+  }
+}
