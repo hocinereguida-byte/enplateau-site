@@ -1,6 +1,6 @@
 /*
   Scènes d'Arbitrage — render-landing-api-test-v2.js
-  Version : 2026-05-31-api-test-v2-pertinence-v7
+  Version : 2026-05-31-api-test-v2-conversation-v8
 
   Objectif : tester une landing individuelle alimentée par l'API Worker V10.1
   sans remplacer la landing actuelle.
@@ -468,21 +468,27 @@
     return `
       <input class="lpb-tab-input" type="radio" name="lpb-reading-tabs" id="lpb-reading-${index}"${checked}>
       <label class="lpb-reading-tab ${isPrimary ? "lpb-reading-tab--primary" : ""}" for="lpb-reading-${index}">
-        <span>${safe(isPrimary ? "Votre lecture" : "Lecture complémentaire")}</span>
+        <span class="lpb-tab-role">${safe(isPrimary ? "Votre lecture" : "Lecture complémentaire")}</span>
         <strong>${safe(item.readingTitle)}</strong>
-        <small>${orgs.length ? safe(orgs.join(" · ")) : "Organisations positionnées en qualification"}</small>
-        ${item.media ? `<i>${safe(item.media)}</i>` : ""}
+        <em class="lpb-tab-meta-label">Organisations positionnées</em>
+        <small class="lpb-tab-meta-value">${orgs.length ? safe(orgs.join(" · ")) : "Organisations en qualification"}</small>
+        ${item.media ? `
+          <em class="lpb-tab-meta-label lpb-tab-meta-label--media">Journaliste / média</em>
+          <i class="lpb-tab-meta-value lpb-tab-meta-value--media">${safe(item.media)}</i>` : ""}
       </label>`;
   }
 
   function buildConversationPanel(item, index) {
     const orgLabel = item.orgs.length > 1 ? "Organisations positionnées" : "Organisation positionnée";
-    const title = txt(item.headline, item.angle, item.readingTitle);
-    const value = txt(item.intro, item.angle, item.headline, "Cette lecture complète la composition éditoriale en apportant un point d’observation situé.");
+    /*
+      Les données visibles proviennent de la composition éditoriale :
+      - angle = titre public de la position ;
+      - intro = descriptif public associé à cet angle.
+      headline n'est utilisé qu'en repli si l'angle est absent.
+    */
+    const title = txt(item.angle, item.headline, item.readingTitle);
+    const value = txt(item.intro, "Cette lecture complète la composition éditoriale depuis un point d’observation situé.");
     const panelLabel = readingLabel(item.type_lecture || item.readingTitle);
-    const description = index === 0
-      ? `Cette ${panelLabel.toLowerCase().replace("lecture rh", "lecture RH")} constitue la position actuellement envisagée dans cette composition éditoriale.`
-      : `Cette ${panelLabel.toLowerCase().replace("lecture rh", "lecture RH")} complète la composition éditoriale en apportant un autre point d’observation sur le même moment de transformation industrielle.`;
 
     return `
       <article class="lpb-reading-panel lpb-reading-panel--${index} ${index === 0 ? "lpb-reading-panel--primary" : ""}">
@@ -490,14 +496,22 @@
           <span class="lpb-label">${safe(panelLabel)}</span>
           <h3>${safe(title)}</h3>
           <p class="lpb-panel-value">${safe(value)}</p>
-          <p class="lpb-panel-context">${safe(description)}</p>
         </div>
         <div class="lpb-panel-aside">
           <div class="lpb-panel-block">
             <span>${safe(orgLabel)}</span>
             <div class="lpb-chip-list">${listInline(item.orgs, "Organisations en qualification")}</div>
           </div>
-          ${item.media ? `<div class="lpb-panel-block lpb-panel-block--media"><span>Journaliste / média</span><strong>${safe(item.media)}</strong></div>` : ""}
+          ${item.media ? `
+            <div class="lpb-panel-block lpb-panel-block--media">
+              <span>Journaliste / média</span>
+              <strong>${safe(item.media)}</strong>
+              <p class="lpb-panel-production">
+                <span>Formats : entretien filmé + article associé</span>
+                <span>Tournage : jusqu’à décembre 2026</span>
+                <span>Diffusion : date à définir · replay permanent</span>
+              </p>
+            </div>` : ""}
         </div>
       </article>`;
   }
@@ -542,8 +556,8 @@
     }));
 
     const primaryReading = cleanReadingTitle(txt(editorial.type_lecture_label, data?.type_lecture, cards[0]?.readingTitle));
-    const sectionTitle = `La lecture ${readingAdjective(primaryReading)} proposée prend sa valeur dans une conversation composée.`;
-    const conversationTitle = txt(conversation).replace(/^C(\d+)\s+[—-]\s+/, "");
+    const sectionTitle = `Votre lecture ${readingAdjective(primaryReading)} prend sa valeur dans une conversation composée.`;
+    const publicConversation = publicConversationTitle(data);
 
     return `
       <section class="landing-bento-section landing-bento-section--tabs" id="mise-en-regard" data-bento-build="api-test-v2-tabs-restored">
@@ -554,11 +568,9 @@
             <p class="lpb-subnote">Il ne s’agit pas d’une table ronde ni d’un débat contradictoire. Chaque contribution est préparée individuellement, puis articulée aux autres lectures.</p>
           </div>
 
-          <div class="lpb-conversation-band" aria-label="Conversation stratégique">
-            <span>Conversation stratégique</span>
-            <strong>${safe(conversationTitle || conversation)}</strong>
-            ${contexte ? `<small>${safe(contexte)}</small>` : ""}
-            ${txt(editorial.angle, data?.angle) ? `<p>${safe(txt(editorial.angle, data?.angle))}</p>` : ""}
+          <div class="lpb-conversation-band" aria-label="Conversation éditoriale contextualisée">
+            ${contexte ? `<span>${safe(contexte)}</span>` : ""}
+            <strong>${safe(publicConversation)}</strong>
           </div>
 
           <div class="lpb-tabs lpb-tabs--inline-panels" id="lectures-composees" aria-label="Les quatre lectures de la conversation">
