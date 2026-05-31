@@ -8363,3 +8363,76 @@ body.landing-page .landing-bento-section--tabs .lpb-panel-production span {
     margin-bottom: 20px !important;
   }
 }
+
+
+/* =========================================================
+   PATCH API V2 MISE EN REGARD V9 — 20260531
+   Contraste des cartes selon l'état sélectionné.
+   La carte "Votre lecture" adopte le même thème sombre que
+   les lectures complémentaires lorsqu'elle n'est plus active.
+   ========================================================= */
+
+/* État par défaut : toute carte non sélectionnée est sombre, lisible. */
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab {
+  background: #0f0f0f !important;
+  color: #fffaf0 !important;
+  border-color: rgba(243,238,228,.16) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab strong,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab .lpb-tab-meta-value,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab .lpb-tab-meta-value--media {
+  color: #fffaf0 !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab .lpb-tab-role,
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab .lpb-tab-meta-label {
+  color: rgba(243,238,228,.58) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab .lpb-tab-meta-label--media {
+  border-top-color: rgba(243,238,228,.18) !important;
+}
+
+/* État actif : seule la carte sélectionnée devient claire. */
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"],
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"],
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"],
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] {
+  background: #f6f1e9 !important;
+  color: #171717 !important;
+  border-color: rgba(17,17,17,.18) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] strong,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] .lpb-tab-meta-value,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] .lpb-tab-meta-value--media,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] strong,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] .lpb-tab-meta-value,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] .lpb-tab-meta-value--media,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] strong,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] .lpb-tab-meta-value,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] .lpb-tab-meta-value--media,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] strong,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] .lpb-tab-meta-value,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] .lpb-tab-meta-value--media {
+  color: #171717 !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] .lpb-tab-role,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] .lpb-tab-meta-label,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] .lpb-tab-role,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] .lpb-tab-meta-label,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] .lpb-tab-role,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] .lpb-tab-meta-label,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] .lpb-tab-role,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] .lpb-tab-meta-label {
+  color: rgba(23,23,23,.58) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-0:checked) label[for="lpb-reading-0"] .lpb-tab-meta-label--media,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-1:checked) label[for="lpb-reading-1"] .lpb-tab-meta-label--media,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-2:checked) label[for="lpb-reading-2"] .lpb-tab-meta-label--media,
+body.landing-page .landing-bento-section--tabs .lpb-tabs--inline-panels:has(#lpb-reading-3:checked) label[for="lpb-reading-3"] .lpb-tab-meta-label--media {
+  border-top-color: rgba(17,17,17,.16) !important;
+}
