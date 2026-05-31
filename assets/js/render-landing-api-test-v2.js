@@ -1,6 +1,6 @@
 /*
   Scènes d'Arbitrage — render-landing-api-test-v2.js
-  Version : 2026-05-31-api-test-v2-alternatives-v13
+  Version : 2026-06-01-api-test-v2-alternatives-v14
 
   Objectif : tester une landing individuelle alimentée par l'API Worker V10.1
   sans remplacer la landing actuelle.
