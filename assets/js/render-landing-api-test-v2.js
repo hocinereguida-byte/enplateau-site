@@ -1,6 +1,6 @@
 /*
   Scènes d'Arbitrage — render-landing-api-test-v2.js
-  Version : 2026-05-31-api-test-v2-hero-v4
+  Version : 2026-05-31-api-test-v2-pertinence-v7
 
   Objectif : tester une landing individuelle alimentée par l'API Worker V10.1
   sans remplacer la landing actuelle.
@@ -350,40 +350,55 @@
       </section>`;
   }
 
-  
-function buildPertinence(data) {
-    const name = personName(data);
+  function validatedPertinenceCopy(data) {
+    const fromApi = data?.public_copy?.pertinence || data?.editorial?.public_copy?.pertinence || data?.landing_copy?.pertinence;
+    if (fromApi?.organisation && fromApi?.intervenant && fromApi?.lecture) return fromApi;
+
+    const cast = txt(data?.cast, data?.public_ref, data?.principal?.cast, "");
+    const store = window.SDALandingCopyTestV2;
+    return store?.items?.[cast]?.pertinence || null;
+  }
+
+  function buildPertinenceCard(label, card) {
+    if (!card) return "";
+    const detail = txt(card.detail, "");
+    return `
+      <article class="landing-card landing-pertinence-card">
+        <span class="landing-label">${safe(label)}</span>
+        <h3>${safe(card.title)}</h3>
+        <p class="landing-pertinence-card__summary">${safe(card.summary)}</p>
+        ${detail ? `
+          <details class="landing-pertinence-more">
+            <summary>Lire le détail <span aria-hidden="true">+</span></summary>
+            <div class="landing-pertinence-more__body">
+              <p>${safe(detail)}</p>
+            </div>
+          </details>` : ""}
+      </article>`;
+  }
+
+  function buildPertinence(data) {
     const org = organisationName(data);
     const lecture = readingLabel(txt(data?.editorial?.type_lecture_label, data?.type_lecture));
-    const dealText = editorializePertinence(txt(data?.pertinence?.deal, data?.pertinence_editoriale), data);
-    const orgText = editorializePertinence(txt(data?.pertinence?.organisation, data?.organisation?.justification_entreprise), data);
-    const paragraphs = splitSentences(dealText, 4);
+    const copy = validatedPertinenceCopy(data);
 
     return `
-      <section class="landing-section landing-section--light" id="pourquoi-cette-position">
+      <section class="landing-section landing-section--light landing-section--pertinence" id="pourquoi-cette-position">
         <div class="landing-container">
           <div class="landing-head">
             <p class="landing-kicker">Pertinence éditoriale</p>
             <h2>Pourquoi ${safe(org)} pourrait être bien placé pour cette lecture.</h2>
             <p>Cette page ne valide pas une participation. Elle formule une hypothèse éditoriale à qualifier : ce qu’une organisation, une fonction et une expérience pourraient permettre de rendre lisible depuis une ${safe(lecture.toLowerCase())}.</p>
           </div>
-          <div class="landing-grid landing-grid--3 landing-head--keys">
-            <article class="landing-card">
-              <span class="landing-label">Organisation pressentie</span>
-              <h3>${safe(org)}</h3>
-              ${orgText ? `<p>${safe(orgText)}</p>` : `<p>${safe(org)} pourrait constituer un point d’observation utile pour cette conversation.</p>`}
-            </article>
-            <article class="landing-card">
-              <span class="landing-label">Position d’observation</span>
-              <h3>${safe(name)}</h3>
-              ${paragraphs.slice(0, 2).map(p => `<p>${safe(p)}</p>`).join("") || `<p>Cette position devrait permettre de qualifier une lecture située du sujet.</p>`}
-            </article>
-            <article class="landing-card">
-              <span class="landing-label">Lecture proposée</span>
-              <h3>${safe(lecture)}</h3>
-              ${paragraphs.slice(2, 4).map(p => `<p>${safe(p)}</p>`).join("") || `<p>La contribution ne porterait pas sur un cas interne ou client, mais sur une lecture utile et publiquement tenable.</p>`}
-            </article>
-          </div>
+          ${copy ? `
+            <div class="landing-grid landing-grid--3 landing-pertinence-grid">
+              ${buildPertinenceCard("Organisation pressentie", copy.organisation)}
+              ${buildPertinenceCard("Position d’observation", copy.intervenant)}
+              ${buildPertinenceCard("La lecture proposée", copy.lecture)}
+            </div>` : `
+            <div class="landing-pertinence-pending">
+              <p>Le contenu personnalisé de cette section est en cours de validation éditoriale avant affichage.</p>
+            </div>`}
         </div>
       </section>`;
   }
