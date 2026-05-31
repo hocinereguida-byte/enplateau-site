@@ -1,6 +1,6 @@
 /*
   Scènes d'Arbitrage — render-landing-api-test-v2.js
-  Version : 2026-05-31-api-test-v2-conversation-v9
+  Version : 2026-05-31-api-test-v2-enrichments-unique-v10
 
   Objectif : tester une landing individuelle alimentée par l'API Worker V10.1
   sans remplacer la landing actuelle.
@@ -355,8 +355,8 @@
     if (fromApi?.organisation && fromApi?.intervenant && fromApi?.lecture) return fromApi;
 
     const cast = txt(data?.cast, data?.public_ref, data?.principal?.cast, "");
-    const store = window.SDALandingCopyTestV2;
-    return store?.items?.[cast]?.pertinence || null;
+    const enrichment = window.INDUSTRIE_ENRICHMENTS_BY_REF?.[cast] || {};
+    return enrichment?.landingV2?.pertinence || null;
   }
 
   function buildPertinenceCard(label, card) {
@@ -480,7 +480,7 @@
 
   function anglePublicDetail(item) {
     const apiCopy = item?.anglePublic || item?.angle_public || item?.public_copy || {};
-    const localCopy = window.SDALandingCopyTestV2?.angleDetails?.[item.code] || {};
+    const localCopy = window.INDUSTRIE_ANGLE_PUBLIC_TEST_V2?.[item.code] || {};
     return {
       title: txt(apiCopy.titreLanding, apiCopy.title, localCopy.title, item.angle, item.headline, item.readingTitle),
       intro: txt(apiCopy.accrocheLanding, apiCopy.intro, localCopy.intro, item.intro, "Cette lecture complète la composition éditoriale depuis un point d’observation situé.")
