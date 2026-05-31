@@ -1,6 +1,6 @@
 /*
   Scènes d'Arbitrage — render-landing-api-test-v2.js
-  Version : 2026-05-28-api-test-v2-correctif-v3
+  Version : 2026-05-31-api-test-v2-hero-v4
 
   Objectif : tester une landing individuelle alimentée par l'API Worker V10.1
   sans remplacer la landing actuelle.
@@ -259,13 +259,55 @@
   }
 
 
+  /*
+    Formulation éditoriale publique de la conversation.
+    Priorité : données servies par l’API / KV.
+    Fallback provisoire : uniquement les conversations déjà validées
+    pour sécuriser le test Aldric Vignon / Patrick Alves avant
+    l’enrichissement du Worker.
+  */
+  const PUBLIC_CONVERSATION_FALLBACKS = {
+    C1: "Quand chaque décision compte : comment piloter une trajectoire industrielle en conditions réelles ?",
+    C2: "Comment piloter les interdépendances qui rendent une trajectoire industrielle possible ?"
+  };
+
+  function conversationCode(data) {
+    const editorial = data?.editorial || {};
+    const reference = editorial?.editorial_reference || {};
+    const direct = txt(editorial.conversation_code, reference.conversation_code, data?.conversation_code, "");
+    if (direct) return direct.toUpperCase();
+
+    const codeAngle = txt(editorial.cle_position, data?.code_angle, data?.cle_position, "");
+    const match = codeAngle.match(/(?:IND-)?(C\d+)-/i);
+    return match ? match[1].toUpperCase() : "";
+  }
+
+  function publicConversationTitle(data) {
+    const editorial = data?.editorial || {};
+    const reference = editorial?.editorial_reference || {};
+    const code = conversationCode(data);
+    return txt(
+      editorial.conversation_formulation_editoriale,
+      editorial.conversation_titre_public,
+      editorial.formulation_conversation,
+      reference.conversation_formulation_editoriale,
+      reference.conversation_titre_public,
+      data?.conversation_formulation_editoriale,
+      data?.conversation_titre_public,
+      PUBLIC_CONVERSATION_FALLBACKS[code],
+      editorial.angle,
+      data?.angle,
+      "Conversation éditoriale en cours de composition"
+    );
+  }
+
   function buildHero(data) {
     const name = personName(data);
     const org = organisationName(data);
     const role = txt(data?.person?.poste, data?.person?.title, "");
     const editorial = data?.editorial || {};
     const angle = txt(editorial.angle, data?.angle, data?.objet_court, "Proposition éditoriale personnalisée");
-    const conversation = txt(editorial.conversation, data?.conversation, "");
+    const conversation = publicConversationTitle(data);
     const cycle = txt(editorial.cycle, data?.cycle, "Industrie & transformation des territoires");
     const lecture = readingLabel(txt(editorial.type_lecture_label, editorial.type_lecture, data?.type_lecture));
     const readingShort = shortReading(lecture);
@@ -274,13 +316,19 @@
 
     const template = document.getElementById("landing-static-cycle-media");
     const mediaBlock = template ? template.innerHTML : "";
+    const mediaFrame = mediaBlock ? `
+              <div class="landing-film landing-film--static-cycle" aria-label="Repères du cycle Industrie 2026/2027">
+                <div class="landing-film-track">
+                  <div data-static-cycle-media="true">${mediaBlock}</div>
+                </div>
+              </div>` : "";
 
     return `
       <section class="landing-hero landing-hero--bento-minimal landing-hero--simplified" id="hero">
         <div class="landing-container landing-hero-bento-container">
           <div class="landing-hero-bento-grid">
             <div class="landing-hero-bento-copy">
-              <p class="landing-hero-conversation landing-hero-conversation--kicker"><span>Conversation stratégique</span><strong>${safe(angle)}</strong></p>
+              <p class="landing-hero-conversation landing-hero-conversation--kicker"><span>Conversation stratégique</span><strong>${safe(conversation)}</strong></p>
               <h1>${safe(heroTitle)}</h1>
               <p class="landing-hero-bento-lead">Cette page privée est adressée dans le cadre d’une composition éditoriale en cours. Un échange éditorial de 15 minutes permettrait de vérifier l’intérêt commun de poursuivre et de préciser la position possible.</p>
               <div class="landing-hero-bento-actions">
@@ -290,7 +338,7 @@
               <p class="landing-hero-bento-proof">15 minutes · Sans engagement · Aucun dossier à préparer</p>
             </div>
             <aside class="landing-hero-bento-side" aria-label="Repères média et proposition éditoriale">
-              ${mediaBlock}
+              ${mediaFrame}
               <div class="landing-hero-metrics landing-hero-metrics--three" aria-label="Repères clés de la proposition éditoriale">
                 ${buildHeroPersonCard(name, role, org)}
                 ${buildHeroMetricCard("Lecture proposée", readingShort, buildHeroReadingLine(lecture))}
