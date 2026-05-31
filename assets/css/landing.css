@@ -8234,3 +8234,132 @@ body.landing-page #pourquoi-cette-position .landing-pertinence-pending p {
     margin-top: 18px !important;
   }
 }
+
+
+/* =========================================================
+   PATCH API V2 MISE EN REGARD V8 — 20260531
+   - titre de section : "Votre lecture..."
+   - contexte en kicker du bandeau conversation ;
+   - formulation publique seule dans le bandeau ;
+   - labels gris rétablis au-dessus des valeurs dans les quatre cartes ;
+   - détail fondé sur angle + intro de la composition API ;
+   - informations de production ajoutées sous journaliste / média.
+   ========================================================= */
+
+body.landing-page .landing-bento-section--tabs .lpb-conversation-band {
+  padding: clamp(25px, 3vw, 34px) clamp(26px, 4vw, 42px) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-conversation-band span {
+  margin-bottom: 12px !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-conversation-band strong {
+  max-width: 900px !important;
+  font-size: clamp(1.52rem, 2.5vw, 2.28rem) !important;
+  line-height: 1.16 !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab {
+  gap: 0 !important;
+  min-height: 246px !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab .lpb-tab-role {
+  display: block !important;
+  margin: 0 0 12px !important;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
+  font-size: .61rem !important;
+  line-height: 1.35 !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+  color: rgba(244,239,232,.55) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary .lpb-tab-role {
+  color: rgba(17,17,17,.48) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab strong {
+  margin-bottom: 26px !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab .lpb-tab-meta-label {
+  display: block !important;
+  margin: 0 0 7px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
+  font-size: .56rem !important;
+  line-height: 1.35 !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase !important;
+  color: rgba(244,239,232,.50) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary .lpb-tab-meta-label {
+  color: rgba(17,17,17,.42) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab .lpb-tab-meta-value {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  font-family: var(--font-body, "IBM Plex Sans", sans-serif) !important;
+  font-style: normal !important;
+  font-size: .71rem !important;
+  line-height: 1.48 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: rgba(244,239,232,.84) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary .lpb-tab-meta-value {
+  color: rgba(17,17,17,.76) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab .lpb-tab-meta-label--media {
+  margin-top: 15px !important;
+  padding-top: 13px !important;
+  border-top: 1px solid rgba(244,239,232,.18) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-reading-tab--primary .lpb-tab-meta-label--media {
+  border-top-color: rgba(17,17,17,.16) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-panel-main .lpb-panel-value {
+  margin: 0 !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-panel-production {
+  display: grid !important;
+  gap: 7px !important;
+  margin: 18px 0 0 !important;
+  padding-top: 16px !important;
+  border-top: 1px solid rgba(17,17,17,.12) !important;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
+  font-size: .63rem !important;
+  line-height: 1.55 !important;
+  letter-spacing: .04em !important;
+  color: rgba(17,17,17,.58) !important;
+}
+
+body.landing-page .landing-bento-section--tabs .lpb-panel-production span {
+  display: block !important;
+}
+
+@media (max-width: 680px) {
+  body.landing-page .landing-bento-section--tabs .lpb-conversation-band strong {
+    font-size: clamp(1.3rem, 7vw, 1.7rem) !important;
+  }
+
+  body.landing-page .landing-bento-section--tabs .lpb-reading-tab {
+    min-height: 0 !important;
+  }
+
+  body.landing-page .landing-bento-section--tabs .lpb-reading-tab strong {
+    margin-bottom: 20px !important;
+  }
+}
