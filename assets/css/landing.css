@@ -7847,3 +7847,114 @@ body.landing-page #valeur-position .landing-grid--value .value-details.value-det
 body.landing-page .landing-more-faq-section {
   display: none !important;
 }
+
+/* =========================================================
+   PATCH API V2 HERO V4 — 20260531
+   - repère saison inaugurale en haut à droite
+   - bloc média statique traité comme le visuel v1 plein cadre
+   - maintien du texte centré dans l’image, avec diffusion simplifiée
+   ========================================================= */
+
+body.landing-page .landing-static-header {
+  justify-content: space-between;
+  gap: 24px;
+}
+
+body.landing-page .landing-static-season {
+  pointer-events: none;
+  margin: 0;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: .60rem;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(246,241,233,.70);
+  white-space: nowrap;
+}
+
+/* Le wrapper est désormais injecté par render-landing-api-test-v2.js. */
+body.landing-page .landing-hero-bento-side .landing-film--static-cycle {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  aspect-ratio: auto !important;
+  height: clamp(215px, 17vw, 285px) !important;
+  min-height: 215px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(246,241,233,.16) !important;
+  background: #070707 !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-track {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"],
+body.landing-page .landing-film--static-cycle .landing-film-static-cycle {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 215px !important;
+  margin: 0 !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-static-cycle::after {
+  background: linear-gradient(180deg,
+    rgba(0,0,0,.40) 0%,
+    rgba(0,0,0,.54) 52%,
+    rgba(0,0,0,.72) 100%) !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 215px !important;
+  margin: 0 !important;
+  padding: 20px 32px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__status {
+  max-width: 28ch !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list {
+  width: min(100%, 330px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  gap: 0 !important;
+}
+
+body.landing-page .landing-film--static-cycle .landing-film-cycle-card__list > div {
+  padding: 10px 0 !important;
+}
+
+@media (max-width: 620px) {
+  body.landing-page .landing-static-season {
+    display: none;
+  }
+
+  body.landing-page .landing-hero-bento-side .landing-film--static-cycle,
+  body.landing-page .landing-film--static-cycle .landing-film-track > div[data-static-cycle-media="true"],
+  body.landing-page .landing-film--static-cycle .landing-film-static-cycle,
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+    height: auto !important;
+    min-height: 300px !important;
+  }
+
+  body.landing-page .landing-film--static-cycle .landing-film-cycle-card {
+    padding: 24px !important;
+  }
+}
