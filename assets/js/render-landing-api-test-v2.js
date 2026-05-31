@@ -1,6 +1,6 @@
 /*
   Scènes d'Arbitrage — render-landing-api-test-v2.js
-  Version : 2026-05-31-api-test-v2-alternatives-v12
+  Version : 2026-05-31-api-test-v2-alternatives-v13
 
   Objectif : tester une landing individuelle alimentée par l'API Worker V10.1
   sans remplacer la landing actuelle.
@@ -268,7 +268,9 @@
   */
   const PUBLIC_CONVERSATION_FALLBACKS = {
     C1: "Quand chaque décision compte : comment piloter une trajectoire industrielle en conditions réelles ?",
-    C2: "Comment piloter les interdépendances qui rendent une trajectoire industrielle possible ?"
+    C2: "Comment piloter les interdépendances qui rendent une trajectoire industrielle possible ?",
+    C3: "Jusqu’où un outil industriel peut-il évoluer sans se transformer en profondeur ?",
+    C4: "Qu’est-ce qui fait qu’une trajectoire industrielle tient, ou doit être réarbitrée ?"
   };
 
   function conversationCode(data) {
@@ -445,6 +447,41 @@
 
   function cleanConversationShortTitle(value) {
     return txt(value, "").replace(/^C\d+\s*[—-]\s*/, "").replace(/\s+/g, " ").trim();
+  }
+
+  function alternativeConversationCode(alt) {
+    const explicit = txt(alt?.conversation_code, alt?.conversationCode, "");
+    if (explicit) return explicit.toUpperCase();
+    const code = txt(alt?.code_angle, alt?.canonical_code, alt?.cle_position, "");
+    const match = code.match(/(?:IND-)?(C\d+)-/i);
+    return match ? match[1].toUpperCase() : "";
+  }
+
+  function alternativePublicConversationTitle(alt) {
+    const code = alternativeConversationCode(alt);
+    return txt(
+      alt?.conversation_formulation_editoriale,
+      alt?.conversation_titre_public,
+      alt?.public_conversation_title,
+      PUBLIC_CONVERSATION_FALLBACKS[code],
+      cleanConversationShortTitle(alt?.conversation),
+      ""
+    );
+  }
+
+  function alternativeContextTitle(alt) {
+    const direct = txt(
+      alt?.nom_contexte,
+      alt?.contexte_titre,
+      alt?.context_title,
+      alt?.contexte,
+      ""
+    );
+    if (direct) return direct;
+    const code = txt(alt?.code_angle, alt?.canonical_code, "").match(/-(CST|ASC|RSS|GS|AC|RC)-/i)?.[1] || "";
+    return code && window.SDAEditorialDoctrine?.getContextLabel
+      ? window.SDAEditorialDoctrine.getContextLabel(code)
+      : "";
   }
 
   function orgsForCompositionCard(card, data, index, limit) {
@@ -631,30 +668,34 @@ function buildAlternatives(data) {
     const cards = alternatives.map((alt, index) => {
       const href = alternativeLandingHref(alt);
       const rang = txt(alt.rang_alternatif, String(index + 1));
-      const conversationName = cleanConversationShortTitle(
-        txt(
-          alt.nom_conversation,
-          alt.conversation_nom,
-          alt.conversation_short_title,
-          alt.conversation
-        )
-      );
-      const contextName = txt(
-        alt.nom_contexte,
-        alt.contexte_titre,
-        alt.context_title,
-        alt.contexte,
-        ""
-      );
+      const conversationName = alternativePublicConversationTitle(alt);
+      const contextName = alternativeContextTitle(alt);
       return `
         <article class="landing-card landing-card--alternative">
-          <span class="landing-label">Position alternative ${safe(rang)}</span>
-          <h3>${safe(txt(alt.angle, alt.objet_court, "Angle alternatif à qualifier"))}</h3>
-          <p class="landing-alt-reading"><strong>${safe(readingLabel(alt.type_lecture))}</strong></p>
-          <div class="landing-alt-meta">
-            ${conversationName ? `<small>${safe(conversationName)}</small>` : ""}
-            ${contextName ? `<small>${safe(contextName)}</small>` : ""}
+          <span class="landing-label landing-alt-position-label">Position alternative ${safe(rang)}</span>
+
+          <div class="landing-alt-field landing-alt-field--angle">
+            <span class="landing-alt-field-label">Angle envisagé</span>
+            <h3>${safe(txt(alt.angle, alt.objet_court, "Angle alternatif à qualifier"))}</h3>
           </div>
+
+          <div class="landing-alt-field">
+            <span class="landing-alt-field-label">Lecture attendue</span>
+            <p class="landing-alt-value landing-alt-reading">${safe(readingLabel(alt.type_lecture))}</p>
+          </div>
+
+          ${conversationName ? `
+            <div class="landing-alt-field">
+              <span class="landing-alt-field-label">Conversation</span>
+              <p class="landing-alt-value">${safe(conversationName)}</p>
+            </div>` : ""}
+
+          ${contextName ? `
+            <div class="landing-alt-field">
+              <span class="landing-alt-field-label">Contexte</span>
+              <p class="landing-alt-value">${safe(contextName)}</p>
+            </div>` : ""}
+
           ${href !== "#" ? `<p class="landing-alt-link"><a class="editorial-link" href="${esc(href)}">Voir le cadrage →</a></p>` : ""}
         </article>`;
     }).join("");
