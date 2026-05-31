@@ -8111,3 +8111,126 @@ body.landing-page .landing-hero-conversation strong {
     line-height: 1.32 !important;
   }
 }
+
+
+/* =========================================================
+   PATCH API V2 PERTINENCE V7 — 20260531
+   - En-tête V2 conservé.
+   - Structure narrative des cartes rétablie.
+   - Lecture alignée à gauche.
+   - Titres et zones d'aperçu alignés sur desktop.
+   - Déploiement accessible du détail via <details>.
+   ========================================================= */
+
+body.landing-page #pourquoi-cette-position .landing-pertinence-grid {
+  align-items: stretch !important;
+  background: var(--landing-line) !important;
+}
+
+body.landing-page #pourquoi-cette-position .landing-pertinence-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  text-align: left !important;
+  background: var(--landing-white) !important;
+  color: var(--landing-ink) !important;
+  padding: clamp(28px, 3vw, 34px) !important;
+}
+
+body.landing-page #pourquoi-cette-position .landing-pertinence-card .landing-label {
+  display: block !important;
+  align-self: auto !important;
+  margin: 0 0 16px !important;
+  text-align: left !important;
+}
+
+body.landing-page #pourquoi-cette-position .landing-pertinence-card h3 {
+  margin: 0 0 24px !important;
+  min-height: 6.4rem !important;
+  font-family: var(--font-display, "Playfair Display", serif) !important;
+  font-size: clamp(1.08rem, 1.28vw, 1.18rem) !important;
+  line-height: 1.27 !important;
+  letter-spacing: -.012em !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+  color: var(--landing-ink) !important;
+}
+
+body.landing-page #pourquoi-cette-position .landing-pertinence-card__summary {
+  margin: 0 !important;
+  min-height: 8.7rem !important;
+  color: var(--landing-ink-soft) !important;
+  font-size: .91rem !important;
+  line-height: 1.68 !important;
+  text-align: left !important;
+}
+
+body.landing-page #pourquoi-cette-position .landing-pertinence-more {
+  margin: 20px 0 0 !important;
+  padding: 14px 0 0 !important;
+  border-top: 1px solid var(--landing-line) !important;
+  color: var(--landing-ink-soft) !important;
+}
+
+body.landing-page #pourquoi-cette-position .landing-pertinence-more summary {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  list-style: none !important;
+  cursor: pointer !important;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
+  font-size: .62rem !important;
+  line-height: 1.35 !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase !important;
+  color: var(--landing-accent) !important;
+}
+
+body.landing-page #pourquoi-cette-position .landing-pertinence-more summary::-webkit-details-marker {
+  display: none !important;
+}
+
+body.landing-page #pourquoi-cette-position .landing-pertinence-more summary span {
+  font-size: .82rem !important;
+  line-height: 1 !important;
+}
+
+body.landing-page #pourquoi-cette-position .landing-pertinence-more__body {
+  margin-top: 15px !important;
+}
+
+body.landing-page #pourquoi-cette-position .landing-pertinence-more__body p {
+  margin: 0 !important;
+  color: var(--landing-ink-soft) !important;
+  font-size: .89rem !important;
+  line-height: 1.68 !important;
+  text-align: left !important;
+}
+
+body.landing-page #pourquoi-cette-position .landing-pertinence-pending {
+  width: min(760px, 100%) !important;
+  margin: 0 auto !important;
+  padding: 24px 26px !important;
+  border: 1px solid var(--landing-line) !important;
+  text-align: center !important;
+  color: var(--landing-ink-soft) !important;
+}
+
+body.landing-page #pourquoi-cette-position .landing-pertinence-pending p {
+  margin: 0 !important;
+}
+
+@media (max-width: 980px) {
+  body.landing-page #pourquoi-cette-position .landing-pertinence-card h3,
+  body.landing-page #pourquoi-cette-position .landing-pertinence-card__summary {
+    min-height: 0 !important;
+  }
+
+  body.landing-page #pourquoi-cette-position .landing-pertinence-card h3 {
+    margin-bottom: 18px !important;
+  }
+
+  body.landing-page #pourquoi-cette-position .landing-pertinence-more {
+    margin-top: 18px !important;
+  }
+}
