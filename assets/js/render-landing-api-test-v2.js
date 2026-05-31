@@ -1,6 +1,6 @@
 /*
   Scènes d'Arbitrage — render-landing-api-test-v2.js
-  Version : 2026-05-31-api-test-v2-conversation-v8
+  Version : 2026-05-31-api-test-v2-conversation-v9
 
   Objectif : tester une landing individuelle alimentée par l'API Worker V10.1
   sans remplacer la landing actuelle.
@@ -478,16 +478,27 @@
       </label>`;
   }
 
+  function anglePublicDetail(item) {
+    const apiCopy = item?.anglePublic || item?.angle_public || item?.public_copy || {};
+    const localCopy = window.SDALandingCopyTestV2?.angleDetails?.[item.code] || {};
+    return {
+      title: txt(apiCopy.titreLanding, apiCopy.title, localCopy.title, item.angle, item.headline, item.readingTitle),
+      intro: txt(apiCopy.accrocheLanding, apiCopy.intro, localCopy.intro, item.intro, "Cette lecture complète la composition éditoriale depuis un point d’observation situé.")
+    };
+  }
+
   function buildConversationPanel(item, index) {
     const orgLabel = item.orgs.length > 1 ? "Organisations positionnées" : "Organisation positionnée";
     /*
-      Les données visibles proviennent de la composition éditoriale :
-      - angle = titre public de la position ;
-      - intro = descriptif public associé à cet angle.
-      headline n'est utilisé qu'en repli si l'angle est absent.
+      Le panneau affiche prioritairement les données publiques de l'angle :
+      - anglePublic.titreLanding pour le titre ;
+      - anglePublic.accrocheLanding pour le descriptif.
+      Tant que le Worker ne renvoie pas encore ces champs, le fichier editorial-copy
+      porte les valeurs relues pour les casts de test.
     */
-    const title = txt(item.angle, item.headline, item.readingTitle);
-    const value = txt(item.intro, "Cette lecture complète la composition éditoriale depuis un point d’observation situé.");
+    const detail = anglePublicDetail(item);
+    const title = detail.title;
+    const value = detail.intro;
     const panelLabel = readingLabel(item.type_lecture || item.readingTitle);
 
     return `
@@ -544,12 +555,14 @@
     }];
 
     const cards = (composition.length ? composition : fallback).slice(0, 4).map((card, index) => ({
+      code: txt(card.canonical_code, card.code_angle, index === 0 ? editorial.cle_position : ""),
       role: txt(card.role, index === 0 ? "Votre lecture" : "Lecture complémentaire"),
       type_lecture: txt(card.type_lecture_label, card.type_lecture, card.title),
       readingTitle: cleanReadingTitle(txt(card.title, card.type_lecture, card.type_lecture_label)),
       headline: txt(card.headline, card.angle),
       intro: txt(card.intro, card.narrativeText, card.description, card.angle),
       angle: txt(card.angle, card.headline),
+      anglePublic: card.anglePublic || card.angle_public || card.public_copy || null,
       media: mediaLineForCard(card),
       orgs: orgsForCompositionCard(card, data, index, 3),
       deals: toArray(card.deals_positionnes)
