@@ -1,6 +1,6 @@
 /*
   Scènes d'Arbitrage — editorial-data-industrie-enrichments.js
-  Version 20260525-crm-secure-v1
+  Version 20260531-api-v2-unique-v10
 
   Rôle :
   - enrichissements publics, publiables cast par cast ;
@@ -19,7 +19,7 @@
   4. render-core.js
   5. render-landing.js
 */
-window.INDUSTRIE_ENRICHMENTS_VERSION = "20260525-crm-secure-v1";
+window.INDUSTRIE_ENRICHMENTS_VERSION = "20260531-api-v2-unique-v10";
 window.INDUSTRIE_ENRICHMENTS = [
   {
     publicRef: "CR2R38L",
@@ -63,7 +63,27 @@ window.INDUSTRIE_ENRICHMENTS = [
       actorType: "cabinet",
       whyPersonPublic: "Votre position de Partner chez Argon & Co permet d’apporter une lecture stratégique des interdépendances qui conditionnent la tenue d’une trajectoire industrielle : fournisseurs critiques, choix de sourcing, coopérations, capacités disponibles et arbitrages de compétitivité.",
       whyOrganisationPublic: "Argon & Co apporte à cette conversation une lecture comparative nourrie par ses interventions en stratégie des opérations, supply chain, achats, performance industrielle et transformation des chaînes de valeur.",
-      linkedinAngle: "Votre parcours en operations strategy, procurement performance et transformation des relations fournisseurs nous semble particulièrement pertinent pour éclairer les interdépendances qui deviennent décisives dans une trajectoire industrielle."
+      linkedinAngle: "Votre parcours en operations strategy, procurement performance et transformation des relations fournisseurs nous semble particulièrement pertinent pour éclairer les interdépendances qui deviennent décisives dans une trajectoire industrielle.",
+      landingV2: {
+        copyStatus: "reviewed_for_test",
+        pertinence: {
+          organisation: {
+            title: "Opérations, supply chain et interdépendances industrielles",
+            summary: "Argon & Co pourrait apporter une lecture issue de son expérience des opérations, de la supply chain et de l’excellence opérationnelle.",
+            detail: "Dans cette conversation, cette expérience pourrait aider à éclairer les interdépendances industrielles qui accompagnent une trajectoire de croissance."
+          },
+          intervenant: {
+            title: "Interdépendances décisives d’une trajectoire de croissance",
+            summary: "Le profil d’Aldric Vignon pourrait permettre d’éclairer les interdépendances qui deviennent décisives dans une trajectoire de croissance industrielle.",
+            detail: "Son expérience en operations strategy, procurement performance, sourcing et transformation des relations fournisseurs devrait permettre d’aborder les coopérations, les capacités mobilisables et les arbitrages de compétitivité associés."
+          },
+          lecture: {
+            title: "Anticiper les interdépendances qui deviennent décisives dans une trajectoire de croissance industrielle",
+            summary: "La lecture proposée porterait sur la chaîne de valeur et les choix d’organisation associés, plutôt que sur une expertise achats isolée.",
+            detail: ""
+          }
+        }
+      }
     }
   },
   {
@@ -128,6 +148,35 @@ window.INDUSTRIE_ENRICHMENTS = [
       whyOrganisationPublic: "Argon & Co apporte une lecture comparative des trajectoires industrielles, nourrie par ses interventions sur les opérations, la supply chain et la transformation des processus.",
       linkedinAngle: "Votre expérience en opérations et supply chain permettrait d’éclairer les conditions concrètes qui rendent une trajectoire de croissance industrielle réellement pilotable."
     }
+  },
+  {
+    publicRef: "CKLJYPN",
+    enrichment: {
+      actorType: "cabinet",
+      whyPersonPublic: "Le profil de Patrick Alves pourrait permettre d’apporter une lecture financière des arbitrages qui conditionnent la capacité d’avenir d’une trajectoire industrielle, depuis son expérience de direction financière et d’accompagnement de transformations.",
+      whyOrganisationPublic: "AlixPartners pourrait apporter à cette conversation une lecture des arbitrages économiques et financiers qui orientent une trajectoire industrielle, nourrie par son expérience de la performance et de la transformation.",
+      linkedinAngle: "Votre expérience de direction financière et d’accompagnement de transformations pourrait être pertinente pour éclairer les arbitrages économiques qui conditionnent la capacité d’avenir d’une trajectoire industrielle.",
+      landingV2: {
+        copyStatus: "reviewed_for_test",
+        pertinence: {
+          organisation: {
+            title: "Trajectoires industrielles, performance et transformation",
+            summary: "AlixPartners pourrait apporter une lecture des arbitrages économiques et financiers qui orientent une trajectoire industrielle.",
+            detail: "Son expérience de la performance et de la transformation opérationnelle pourrait permettre d’éclairer la continuité, la transformation ou la réorientation d’une trajectoire."
+          },
+          intervenant: {
+            title: "Relier décisions financières et capacité d’avenir",
+            summary: "Le profil de Patrick Alves pourrait permettre d’éclairer les arbitrages économiques qui conditionnent la capacité d’avenir d’une trajectoire industrielle.",
+            detail: "Son expérience de direction financière et d’accompagnement de transformations devrait permettre d’aborder les choix de cash, d’investissement et de valeur à long terme."
+          },
+          lecture: {
+            title: "Préserver la capacité d’avenir quand les arbitrages économiques deviennent plus décisifs",
+            summary: "La lecture proposée porterait sur l’articulation entre décisions économiques immédiates et trajectoire future, sans exposer de situation confidentielle.",
+            detail: ""
+          }
+        }
+      }
+    }
   }
 ];
 
@@ -137,3 +186,25 @@ window.INDUSTRIE_ENRICHMENTS_BY_REF = (window.INDUSTRIE_ENRICHMENTS || []).reduc
   if (ref) index[String(ref).trim()] = item.enrichment || {};
   return index;
 }, {});
+
+/*
+  Fallback temporaire landing API V2 :
+  - descriptions publiques par angle utilisées tant que le Worker ne renvoie pas
+    directement anglePublic.titreLanding / anglePublic.accrocheLanding depuis KV ;
+  - à supprimer de ce fichier après exposition de ces champs par l’API.
+*/
+window.INDUSTRIE_ANGLE_PUBLIC_TEST_V2 = {
+  "IND-C2-CST-01": {
+    title: "Comment anticiper les interdépendances qui deviennent décisives dans une trajectoire de croissance industrielle ?",
+    intro: "Une trajectoire de croissance industrielle ne dépend pas seulement de la demande ou de la capacité interne. Elle repose aussi sur des partenaires, des flux, des fournisseurs, des infrastructures, des compétences, des systèmes et des écosystèmes qui rendent cette trajectoire possible.",
+    source: "anglePublic.accrocheLanding",
+    status: "validated_for_test"
+  },
+  "IND-C1-ASC-01": {
+    title: "Comment préserver la capacité d’avenir quand les arbitrages économiques deviennent plus décisifs ?",
+    intro: "La lecture financière permet de reconnaître ce qu’il faut préserver pour que l’organisation conserve sa capacité à investir, transformer et piloter sa trajectoire industrielle.",
+    source: "anglePublic.accrocheLanding",
+    status: "validated_for_test"
+  }
+};
+
