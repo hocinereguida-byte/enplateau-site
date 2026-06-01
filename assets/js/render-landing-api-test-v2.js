@@ -1,6 +1,6 @@
 /*
   Scènes d'Arbitrage — render-landing-api-test-v2.js
-  Version : 2026-06-01-api-test-v2-cadre-six-visible-v19
+  Version : 2026-06-02-api-test-v2-alternatives-hierarchie-v20
 
   Objectif : tester une landing individuelle alimentée par l'API Worker V10.1
   sans remplacer la landing actuelle.
@@ -677,27 +677,27 @@ function buildAlternatives(data) {
         <article class="landing-card landing-card--alternative">
           <span class="landing-label landing-alt-position-label">${safe(positionLabel)}</span>
 
-          <div class="landing-alt-field landing-alt-field--angle">
-            <span class="landing-alt-field-label">Angle envisagé</span>
-            <h3>${safe(txt(alt.angle, alt.objet_court, "Angle alternatif à qualifier"))}</h3>
-          </div>
+          ${conversationName ? `
+            <div class="landing-alt-field landing-alt-field--conversation">
+              <span class="landing-alt-field-label">Conversation</span>
+              <h3>${safe(conversationName)}</h3>
+            </div>` : ""}
 
-          <div class="landing-alt-field">
+          ${contextName ? `
+            <div class="landing-alt-field landing-alt-field--context">
+              <span class="landing-alt-field-label">Contexte</span>
+              <p class="landing-alt-value">${safe(contextName)}</p>
+            </div>` : ""}
+
+          <div class="landing-alt-field landing-alt-field--reading">
             <span class="landing-alt-field-label">Lecture attendue</span>
             <p class="landing-alt-value landing-alt-reading">${safe(readingLabel(alt.type_lecture))}</p>
           </div>
 
-          ${conversationName ? `
-            <div class="landing-alt-field">
-              <span class="landing-alt-field-label">Conversation</span>
-              <p class="landing-alt-value">${safe(conversationName)}</p>
-            </div>` : ""}
-
-          ${contextName ? `
-            <div class="landing-alt-field">
-              <span class="landing-alt-field-label">Contexte</span>
-              <p class="landing-alt-value">${safe(contextName)}</p>
-            </div>` : ""}
+          <div class="landing-alt-field landing-alt-field--angle">
+            <span class="landing-alt-field-label">Angle envisagé</span>
+            <p class="landing-alt-value landing-alt-angle">${safe(txt(alt.angle, alt.objet_court, "Angle alternatif à qualifier"))}</p>
+          </div>
 
           ${href !== "#" ? `<p class="landing-alt-link"><a class="editorial-link" href="${esc(href)}">Voir le cadrage →</a></p>` : ""}
         </article>`;
@@ -708,7 +708,11 @@ function buildAlternatives(data) {
         <div class="landing-container">
           <div class="landing-head">
             <p class="landing-kicker">Lectures alternatives</p>
-            <h2>D’autres positions dans le cycle Industrie & Transformation des Territoires ont été identifiées pour ${safe(name)}.</h2>
+            <h2 class="landing-alternatives-title">
+              <span>D’autres positions dans le</span>
+              <span>cycle Industrie &amp; Transformation des Territoires</span>
+              <span>ont été identifiées pour ${safe(name)}.</span>
+            </h2>
             <p>La position présentée ci-dessus reste la proposition prioritaire.</p>
           </div>
           <div class="landing-grid landing-grid--3">${cards}</div>
