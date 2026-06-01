@@ -1,6 +1,6 @@
 /*
   Scènes d'Arbitrage — render-landing-api-test-v2.js
-  Version : 2026-06-01-api-test-v2-portee-personas-v18
+  Version : 2026-06-01-api-test-v2-cadre-six-visible-v19
 
   Objectif : tester une landing individuelle alimentée par l'API Worker V10.1
   sans remplacer la landing actuelle.
@@ -884,17 +884,21 @@ function buildTrustKeys(data) {
       { num: "06", title: "Engagement", visible: ["15 minutes", "Aucune suite automatique", "Décision ensuite", "Note si pertinent"], summary: "Ce que l’échange engage", detail: ["L’échange de 15 minutes ne vaut pas accord de participation.", "La note de positionnement ne vaut pas engagement automatique.", "La position reste soumise à composition éditoriale.", "Une contribution financière n’intervient que si une poursuite est validée."] }
     ];
 
-    const card = key => `
-      <article class="trust-key">
-        <span class="trust-key__num">${safe(key.num)}</span>
-        <h3>${safe(key.title)}</h3>
-        <p class="trust-key__summary">${safe(key.summary)}</p>
-        <ul>${key.visible.map(item => `<li>${safe(item)}</li>`).join("")}</ul>
-        <details class="trust-key__details">
-          <summary><span class="trust-key-open">En savoir plus</span><span class="trust-key-close">Masquer</span></summary>
-          ${trustDetailList(key.detail)}
-        </details>
-      </article>`;
+    const card = (key, index) => {
+      const hasDetail = index === keys.length - 1;
+      return `
+        <article class="trust-key ${hasDetail ? "trust-key--expandable" : "trust-key--static"}">
+          <span class="trust-key__num">${safe(key.num)}</span>
+          <h3>${safe(key.title)}</h3>
+          <p class="trust-key__summary">${safe(key.summary)}</p>
+          <ul>${key.visible.map(item => `<li>${safe(item)}</li>`).join("")}</ul>
+          ${hasDetail ? `
+            <details class="trust-key__details">
+              <summary><span class="trust-key-open">En savoir plus</span><span class="trust-key-close">Masquer</span></summary>
+              ${trustDetailList(key.detail)}
+            </details>` : ""}
+        </article>`;
+    };
 
     return `
       <section class="landing-section landing-section--dark landing-trust-keys" id="cadre-confiance">
@@ -904,15 +908,9 @@ function buildTrustKeys(data) {
             <h2>Une prise de parole visible, préparée et maîtrisée.</h2>
             <p>Le cadre éditorial précise ce qui reste hors champ, ce qui peut être travaillé, les validations utiles et les conditions d’engagement avant toute production.</p>
           </div>
-          <div class="trust-keys-grid trust-keys-grid--six trust-keys-grid--primary" aria-label="Les trois premiers points de sécurisation éditoriale">
-            ${keys.slice(0, 3).map(card).join("")}
+          <div class="trust-keys-grid trust-keys-grid--six trust-keys-grid--all" aria-label="Les six points de sécurisation éditoriale">
+            ${keys.map(card).join("")}
           </div>
-          <details class="trust-extra-details">
-            <summary><span class="trust-extra-open">Afficher les 3 autres points de cadrage</span><span class="trust-extra-close">Masquer les points de cadrage complémentaires</span></summary>
-            <div class="trust-keys-grid trust-keys-grid--six trust-keys-grid--extra" aria-label="Points de cadrage complémentaires">
-              ${keys.slice(3).map(card).join("")}
-            </div>
-          </details>
         </div>
       </section>`;
   }
