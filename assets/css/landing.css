@@ -8907,3 +8907,153 @@ body.landing-page .landing-site-footer a {
 body.landing-page .landing-site-footer a:hover {
   color: #fffaf0 !important;
 }
+
+
+/* =========================================================
+   PATCH API V2 HERO + ORDRE + ALIGNEMENTS V22 — 20260602
+   - Header : saison centrée et lien éditorial premium à droite.
+   - Hero : conversation reportée dans un pavé sombre ; CTA unique.
+   - Mise en regard : métadonnées alignées malgré un titre sur 2 lignes.
+   - Portée : pavés crème de hauteur identique.
+   ========================================================= */
+
+/* Header */
+body.landing-page .landing-static-header {
+  justify-content: space-between !important;
+  pointer-events: auto !important;
+}
+
+body.landing-page .landing-static-brand-link {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+body.landing-page .landing-static-season {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
+  font-size: .61rem !important;
+  line-height: 1 !important;
+  letter-spacing: .17em !important;
+  text-transform: uppercase !important;
+  color: rgba(255, 250, 240, .62) !important;
+}
+
+body.landing-page .landing-static-exchange {
+  position: relative !important;
+  z-index: 2 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 8px 0 7px !important;
+  border-bottom: 1px solid rgba(255, 250, 240, .50) !important;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
+  font-size: .62rem !important;
+  font-weight: 500 !important;
+  letter-spacing: .13em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  color: rgba(255, 250, 240, .83) !important;
+  transition: border-color .2s ease, color .2s ease !important;
+}
+
+body.landing-page .landing-static-exchange:hover {
+  color: #fffaf0 !important;
+  border-color: #fffaf0 !important;
+}
+
+/* Hero */
+body.landing-page #hero .landing-hero-conversation--kicker {
+  margin-bottom: clamp(18px, 2.2vw, 25px) !important;
+}
+
+body.landing-page #hero .landing-hero-bento-actions--single {
+  display: block !important;
+  margin-top: clamp(30px, 3.4vw, 42px) !important;
+}
+
+body.landing-page #hero .landing-hero-secondary-link--single {
+  display: inline-flex !important;
+  padding: 0 0 9px !important;
+  font-size: .68rem !important;
+  letter-spacing: .15em !important;
+}
+
+body.landing-page #hero .landing-hero-metric--conversation {
+  background: transparent !important;
+  border-color: rgba(255, 250, 240, .17) !important;
+}
+
+body.landing-page #hero .landing-hero-metric--conversation strong {
+  font-family: var(--font-body, "IBM Plex Sans", sans-serif) !important;
+  font-size: clamp(.78rem, .86vw, .88rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.56 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: rgba(255, 250, 240, .87) !important;
+}
+
+/* Mise en regard : les métadonnées démarrent toutes au même niveau. */
+body.landing-page #mise-en-regard .lpb-reading-tab strong {
+  display: block !important;
+  min-height: 3.18rem !important;
+}
+
+body.landing-page #mise-en-regard .lpb-reading-tab .lpb-tab-meta-label:not(.lpb-tab-meta-label--media) {
+  margin-top: 17px !important;
+}
+
+/* Portée : même géométrie des blocs crème sur les trois colonnes. */
+body.landing-page #valeur-position .landing-grid--value {
+  align-items: stretch !important;
+  grid-auto-rows: 1fr !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .landing-value-card {
+  height: 100% !important;
+  grid-template-rows:
+    auto
+    minmax(5.6rem, auto)
+    minmax(7.3rem, auto)
+    minmax(5.9rem, auto)
+    1fr !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .value-details.value-details--visible {
+  height: 100% !important;
+  min-height: 20.2rem !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 980px) {
+  body.landing-page .landing-static-season {
+    display: none !important;
+  }
+
+  body.landing-page .landing-static-exchange {
+    font-size: .56rem !important;
+    letter-spacing: .10em !important;
+  }
+
+  body.landing-page #mise-en-regard .lpb-reading-tab strong {
+    min-height: 0 !important;
+  }
+
+  body.landing-page #valeur-position .landing-grid--value .landing-value-card {
+    height: auto !important;
+  }
+
+  body.landing-page #valeur-position .landing-grid--value .value-details.value-details--visible {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 620px) {
+  body.landing-page .landing-static-exchange {
+    display: none !important;
+  }
+}
