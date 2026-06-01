@@ -8869,3 +8869,41 @@ body.landing-page #alternatives .landing-alt-link {
     margin-bottom: 20px !important;
   }
 }
+
+
+/* =========================================================
+   PATCH API V2 STRUCTURE + HEADER + FOOTER V21 — 20260602
+   - header fixe sur fond noir opaque ;
+   - footer du site à la suite de l'échange éditorial.
+   ========================================================= */
+
+body.landing-page .landing-static-header {
+  background: #111111 !important;
+  border-bottom: 1px solid rgba(255, 250, 240, .10) !important;
+}
+
+body.landing-page .landing-static-header::after {
+  content: none !important;
+}
+
+body.landing-page .landing-site-footer {
+  margin-top: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+body.landing-page .landing-site-footer .footer-title {
+  color: rgba(255, 250, 246, .62) !important;
+}
+
+body.landing-page .landing-site-footer .footer-signature {
+  color: #fffaf0 !important;
+}
+
+body.landing-page .landing-site-footer a {
+  color: rgba(255, 250, 246, .86) !important;
+}
+
+body.landing-page .landing-site-footer a:hover {
+  color: #fffaf0 !important;
+}
