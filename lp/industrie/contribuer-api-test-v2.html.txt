@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Scènes d'Arbitrage — Proposition éditoriale API test</title>
+  <meta name="description" content="Page de test API V2 corrigée pour une proposition éditoriale personnalisée dans le cycle Industrie & transformation des territoires.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#111111">
+
+  <link rel="icon" href="/images/favicon-en-plateau.svg" type="image/svg+xml">
+  <link rel="icon" href="/images/Favenplateau.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/images/Favenplateau.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/layout.css?v=moteur-v6-cast-publicrefs-20260517-0610">
+  <link rel="stylesheet" href="/assets/css/landing.css?v=20260601-api-v2-alternatives-v14">
+</head>
+
+<body class="landing-page" data-page="industrie-contribuer-api-test-v2" data-cycle="industrie">
+
+  <header class="landing-static-header">
+    <a href="/" aria-label="Scènes d'Arbitrage — accueil">
+      <img src="/images/logo-scenes-transparent-no-baseline-v2.png" alt="Scènes d'Arbitrage" class="landing-static-logo">
+    </a>
+    <p class="landing-static-season">Saison inaugurale - cycle industrie</p>
+  </header>
+
+  <template id="landing-static-cycle-media">
+    <div class="landing-film-static-cycle" aria-label="Repères du cycle Industrie 2026/2027">
+      <figure class="landing-film-static-visual">
+        <img src="/images/studiovide.jpg" alt="Studio vidéo associé au cycle Industrie 2026/2027">
+      </figure>
+      <div class="landing-film-cycle-card" aria-label="Repères éditoriaux du cycle Industrie">
+        <p class="landing-film-cycle-card__kicker">Cycle Industrie</p>
+        <p class="landing-film-cycle-card__status">Positions éditoriales en cours de composition</p>
+        <dl class="landing-film-cycle-card__list">
+          <div>
+            <dt>Préparation, cadrage, tournage</dt>
+            <dd>Jusqu’à décembre 2026</dd>
+          </div>
+          <div>
+            <dt>Diffusion</dt>
+            <dd>BFM Business · La Tribune · Le Figaro</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </template>
+
+  <main id="landing-root" class="landing-root" aria-live="polite">
+    <section class="landing-loading">
+      <div class="landing-loading__box">
+        <a class="landing-brand landing-brand--loading" href="/" aria-label="Scènes d'Arbitrage — accueil">Scènes d'Arbitrage</a>
+        <h1>Chargement de votre proposition éditoriale</h1>
+        <p>Cette page de test interroge l’API Cloudflare Worker et affiche les données Pipedrive + KV éditorial disponibles.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/js/editorial-doctrine-scenes-arbitrage.js?v=20260526-v1"></script>
+  <script src="/assets/js/editorial-data-industrie-enrichments.js?v=20260531-api-v2-unique-v10"></script>
+  <script src="/assets/js/render-landing-api-test-v2.js?v=20260601-api-v2-alternatives-v15-1"></script>
+
+  <noscript>
+    <section class="landing-loading">
+      <div class="landing-loading__box">
+        <a class="landing-brand landing-brand--loading" href="/" aria-label="Scènes d'Arbitrage — accueil">Scènes d'Arbitrage</a>
+        <h1>JavaScript est nécessaire</h1>
+        <p>Activez JavaScript pour consulter cette proposition personnalisée.</p>
+      </div>
+    </section>
+  </noscript>
+</body>
+</html>
