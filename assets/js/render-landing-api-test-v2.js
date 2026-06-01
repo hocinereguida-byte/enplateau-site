@@ -1,6 +1,6 @@
 /*
   Scènes d'Arbitrage — render-landing-api-test-v2.js
-  Version : 2026-06-01-api-test-v2-alternatives-v15
+  Version : 2026-06-01-api-test-v2-portee-personas-v18
 
   Objectif : tester une landing individuelle alimentée par l'API Worker V10.1
   sans remplacer la landing actuelle.
@@ -717,20 +717,157 @@ function buildAlternatives(data) {
   }
 
   
-function buildPortee(data) {
+function valueReadingCode(data) {
+    const explicit = txt(data?.editorial?.portee?.reading_code, data?.editorial?.type_lecture_code, "");
+    return explicit.toUpperCase();
+  }
+
+  function valueTags(readingCode) {
+    const tags = {
+      FINANCIERE: [
+        ["Investissement", "Soutenabilité", "Décideurs"],
+        ["Cash", "CAPEX", "Arbitrage"],
+        ["Trace", "Crédibilité", "Relations dirigeants"]
+      ],
+      STRATEGIQUE: [
+        ["Trajectoire", "Gouvernance", "Décideurs"],
+        ["Méthode", "Lecture", "Arbitrage"],
+        ["Trace", "Crédibilité", "Relations dirigeants"]
+      ],
+      OPERATIONNELLE: [
+        ["Opérations", "Performance", "Décideurs"],
+        ["Méthode", "Continuité", "Arbitrage"],
+        ["Trace", "Crédibilité", "Relations dirigeants"]
+      ],
+      TECHNOLOGIQUE: [
+        ["Systèmes", "Architecture", "Décideurs"],
+        ["Méthode", "Données", "Arbitrage"],
+        ["Trace", "Crédibilité", "Relations dirigeants"]
+      ],
+      TERRITORIALE: [
+        ["Territoire", "Écosystème", "Décideurs"],
+        ["Méthode", "Conditions", "Arbitrage"],
+        ["Trace", "Crédibilité", "Relations dirigeants"]
+      ]
+    };
+    return tags[readingCode] || [
+      ["Position", "Expertise", "Décideurs"],
+      ["Méthode", "Lecture", "Arbitrage"],
+      ["Trace", "Crédibilité", "Relations dirigeants"]
+    ];
+  }
+
+  function valueDetailList(items, headings) {
+    return items.slice(0, 3).map((item, index) => `
+      <li>
+        <strong>${safe(headings[index] || `Effet ${index + 1}`)}</strong>
+        <span>${safe(item)}</span>
+      </li>`).join("");
+  }
+
+  function buildPortee(data) {
+    const source = data?.editorial?.portee || {};
+    const cabinet = isCabinet(data);
+    const reading = shortReading(txt(data?.editorial?.type_lecture_label, data?.editorial?.type_lecture, "éditoriale"));
+    const readingCode = valueReadingCode(data);
+    const actor = cabinet ? source.cabinet_conseil : source.organisation_industrielle;
+    const fonction = source.fonction || {};
+    const personne = source.personne || {};
+    const actorDetail = Array.isArray(actor?.detail) ? actor.detail : [];
+    const fonctionDetail = Array.isArray(fonction?.detail) ? fonction.detail : [];
+    const personDetail = Array.isArray(personne?.detail) ? personne.detail : [];
+    const tags = valueTags(readingCode);
+    const valueForSpeaker = txt(source.value_for_speaker, `Faire reconnaître une lecture ${reading.toLowerCase()} utile et située.`);
+    const contextVariation = txt(source.variation_contexte, "");
+    const actorShort = txt(actor?.court, `Installer une lecture ${reading.toLowerCase()} claire et réutilisable.`);
+    const functionShort = txt(fonction?.court, valueForSpeaker);
+    const personShort = txt(personne?.court, "Construire une trace professionnelle durable et crédible.");
+
+    const cards = cabinet
+      ? [
+          {
+            label: "Pour votre cabinet",
+            title: `Installer une lecture ${reading.toLowerCase()} propriétaire, sans discours promotionnel`,
+            intro: actorShort,
+            tags: tags[0],
+            headings: ["Statut", "Institutionnel", "Stratégique"],
+            details: actorDetail.length ? actorDetail : [actorShort, valueForSpeaker, contextVariation]
+          },
+          {
+            label: "Pour votre doctrine",
+            title: "Rendre lisible ce que votre pratique sait formuler",
+            intro: valueForSpeaker,
+            tags: tags[1],
+            headings: ["Interne", "Différenciation", "Réutilisation"],
+            details: fonctionDetail.length ? fonctionDetail : [functionShort, contextVariation, actorShort]
+          },
+          {
+            label: "Pour vos relations dirigeants",
+            title: "Laisser une trace professionnelle utile",
+            intro: personShort,
+            tags: tags[2],
+            headings: ["Trace", "Réutilisation", "Crédibilité personnelle"],
+            details: [
+              personShort,
+              valueForSpeaker,
+              txt(personDetail[0], contextVariation, actorShort)
+            ]
+          }
+        ]
+      : [
+          {
+            label: "Pour votre organisation",
+            title: `Rendre visible une lecture ${reading.toLowerCase()} de trajectoire`,
+            intro: actorShort,
+            tags: tags[0],
+            headings: ["Position", "Écosystème", "Stratégique"],
+            details: actorDetail.length ? actorDetail : [actorShort, valueForSpeaker, contextVariation]
+          },
+          {
+            label: "Pour votre fonction",
+            title: "Faire reconnaître ce que votre fonction permet d’arbitrer",
+            intro: functionShort,
+            tags: tags[1],
+            headings: ["Rôle", "Différenciation", "Décision"],
+            details: fonctionDetail.length ? fonctionDetail : [functionShort, contextVariation, actorShort]
+          },
+          {
+            label: "Pour vos relations clés",
+            title: "Laisser une trace professionnelle utile",
+            intro: personShort,
+            tags: tags[2],
+            headings: ["Trace", "Réutilisation", "Crédibilité personnelle"],
+            details: [
+              personShort,
+              valueForSpeaker,
+              txt(personDetail[0], contextVariation, actorShort)
+            ]
+          }
+        ];
+
+    const cardsHtml = cards.map(card => `
+      <article class="landing-card landing-value-card">
+        <span class="landing-label">${safe(card.label)}</span>
+        <h3>${safe(card.title)}</h3>
+        <p>${safe(card.intro)}</p>
+        <div class="value-chip-list">
+          ${card.tags.map(tag => `<span>${safe(tag)}</span>`).join("")}
+        </div>
+        <div class="value-details value-details--visible">
+          <p class="value-details-title">Usages et effets concrets</p>
+          <ul>${valueDetailList(card.details, card.headings)}</ul>
+        </div>
+      </article>`).join("");
+
     return `
-      <section class="landing-section landing-section--light" id="portee">
+      <section class="landing-section landing-section--dark" id="valeur-position">
         <div class="landing-container">
           <div class="landing-head">
-            <p class="landing-kicker">Portée</p>
+            <p class="landing-kicker">Portée de la position</p>
             <h2>Ce qu’une lecture utile peut produire.</h2>
-            <p>Le contenu produit est conçu comme une opération éditoriale pérenne, pas comme une opération commerciale immédiate ou jetable.</p>
+            <p>Le point de départ n’est pas la visibilité. Une contribution solide rend visible une lecture utile ; la reconnaissance, la trace et les usages durables en sont les conséquences naturelles.</p>
           </div>
-          <div class="landing-grid landing-grid--3 landing-grid--value">
-            <article class="landing-card"><span class="landing-label">Actif éditorial</span><h3>Produire une position utile et réutilisable</h3><p>Un contenu éditorial qui rend lisible une expertise, une expérience ou une lecture de terrain, sans posture promotionnelle.</p></article>
-            <article class="landing-card"><span class="landing-label">Usage dans le temps</span><h3>Un contenu mobilisable durablement</h3><p>La vidéo, l’article ou la page média peuvent nourrir des échanges qualifiés, être partagés en rendez-vous et rester accessibles aux personnes qui recherchent une lecture structurée sur ce sujet.</p></article>
-            <article class="landing-card"><span class="landing-label">Valeur éditoriale</span><h3>Une lecture plutôt qu’une actualité</h3><p>Sa valeur tient au fait de formuler une lecture structurée sur un arbitrage durable, plutôt que de commenter une actualité ponctuelle.</p></article>
-          </div>
+          <div class="landing-grid landing-grid--3 landing-grid--value">${cardsHtml}</div>
         </div>
       </section>`;
   }
