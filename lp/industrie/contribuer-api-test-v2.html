@@ -15,7 +15,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/layout.css?v=moteur-v6-cast-publicrefs-20260517-0610">
-  <link rel="stylesheet" href="/assets/css/landing.css?v=20260602-api-v2-hero-ordre-alignements-v22">
+  <link rel="stylesheet" href="/assets/css/landing.css?v=20260602-api-v2-footer-reel-site-v23">
 </head>
 
 <body class="landing-page" data-page="industrie-contribuer-api-test-v2" data-cycle="industrie">
@@ -60,40 +60,55 @@
     </section>
   </main>
 
-  <footer class="footer landing-site-footer" aria-label="Pied de page Scènes d'Arbitrage">
-    <div class="footer-grid footer-grid--simple">
-      <div class="footer-col">
-        <p class="footer-title">Scènes d’Arbitrage</p>
-        <p class="footer-signature">Là où les décisions se jouent.</p>
-        <p>Des conversations éditoriales pour rendre lisibles les arbitrages économiques, industriels et territoriaux.</p>
+  <footer class="site-footer" aria-label="Pied de page">
+    <div class="site-footer__inner">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <div class="site-footer__logo-frame" aria-hidden="true">
+            <img
+              src="/images/logo-scenes-transparent-baseline-v2.png?v=5"
+              alt=""
+              class="site-footer__logo"
+            >
+          </div>
+          <p class="site-footer__brand-copy">
+            Scènes d'Arbitrage prépare, produit et active des prises de position à partir de conversations structurées, de positions situées et de sujets déjà à l’œuvre dans l’économie réelle.
+          </p>
+        </div>
+  
+        <div class="site-footer__column">
+          <h2 class="site-footer__title">Parcours</h2>
+          <nav class="site-footer__nav" aria-label="Parcours">
+            <a href="/dispositif.html" class="site-footer__link">Dispositif</a>
+            <a href="/conversations.html" class="site-footer__link">Conversations</a>
+            <a href="/positions.html" class="site-footer__link">Positions</a>
+          </nav>
+        </div>
+  
+        <div class="site-footer__column">
+          <h2 class="site-footer__title">Accès</h2>
+          <nav class="site-footer__nav" aria-label="Accès">
+            <a href="/demander-un-echange-editorial.html" class="site-footer__link">Demander un échange éditorial</a>
+            <a href="/proposer-une-contribution.html" class="site-footer__link">Signaler une contribution</a>
+            <a href="/principes.html" class="site-footer__link">Principes</a>
+          </nav>
+        </div>
+  
+        <div class="site-footer__column">
+          <h2 class="site-footer__title">Informations</h2>
+          <nav class="site-footer__meta" aria-label="Informations légales">
+            <a href="/a-propos.html" class="site-footer__link">À propos</a>
+            <a href="/mentions-legales.html" class="site-footer__link">Mentions légales</a>
+            <a href="/politique-de-confidentialite.html" class="site-footer__link">Politique de confidentialité</a>
+            <a href="#" class="site-footer__link" data-open-cookie-settings>Gérer mes cookies</a>
+          </nav>
+        </div>
       </div>
-      <nav class="footer-col" aria-label="Explorer">
-        <p class="footer-title">Explorer</p>
-        <ul>
-          <li><a href="/conversations.html">Conversations</a></li>
-          <li><a href="/conversations/industrie.html">Cycle Industrie</a></li>
-          <li><a href="/positions/industrie.html">Positions Industrie</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-col" aria-label="Le dispositif">
-        <p class="footer-title">Le dispositif</p>
-        <ul>
-          <li><a href="/dispositif.html">Comprendre le dispositif</a></li>
-          <li><a href="/proposer-une-contribution.html">Signaler une contribution</a></li>
-        </ul>
-      </nav>
-      <div class="footer-col">
-        <p class="footer-title">Accès</p>
-        <ul>
-          <li><a href="https://cal.com/scenesdarbitrage/echange-editorial-15-min?user=scenesdarbitrage&amp;overlayCalendar=true" target="_blank" rel="noopener">Demander un échange éditorial</a></li>
-          <li><a href="/">Retour à l’accueil</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>Scènes d’Arbitrage · Saison inaugurale · Conversations économiques</p>
+  
+      <div class="site-footer__bottom-line" aria-hidden="true"></div>
     </div>
   </footer>
+
 
   <script src="/assets/js/editorial-doctrine-scenes-arbitrage.js?v=20260526-v1"></script>
   <script src="/assets/js/editorial-data-industrie-enrichments.js?v=20260531-api-v2-unique-v10"></script>
