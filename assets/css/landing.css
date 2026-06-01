@@ -8617,3 +8617,106 @@ body.landing-page #alternatives .landing-alt-link {
     min-height: 0 !important;
   }
 }
+
+
+/* =========================================================
+   PATCH API V2 PORTÉE PERSONAS V18 — 20260601
+   Réintégration de la section sombre v1, alimentée par les
+   gains éditoriaux du KV et adaptée au persona.
+   ========================================================= */
+
+body.landing-page #valeur-position {
+  margin-top: 0 !important;
+  background: #111111 !important;
+  color: #fffaf0 !important;
+}
+
+body.landing-page #valeur-position .landing-head {
+  max-width: 920px !important;
+  margin-bottom: clamp(36px, 4vw, 48px) !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value {
+  align-items: stretch !important;
+  background: rgba(255,250,240,.13) !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .landing-value-card {
+  display: grid !important;
+  grid-template-rows: auto minmax(4.9rem, auto) minmax(5.9rem, auto) minmax(5.7rem, auto) auto !important;
+  align-content: start !important;
+  min-height: 0 !important;
+  padding: clamp(24px, 3vw, 32px) !important;
+  background: rgba(255,255,255,.07) !important;
+  border: 0 !important;
+}
+
+body.landing-page #valeur-position .landing-value-card .landing-label {
+  margin-bottom: 16px !important;
+  font-weight: 500 !important;
+  color: rgba(255,250,240,.60) !important;
+}
+
+body.landing-page #valeur-position .landing-value-card h3 {
+  min-height: 0 !important;
+  margin-bottom: 18px !important;
+  color: #fffaf0 !important;
+}
+
+body.landing-page #valeur-position .landing-value-card > p {
+  min-height: 0 !important;
+  margin-bottom: 18px !important;
+  color: rgba(255,250,240,.72) !important;
+}
+
+/*
+  Le bloc des labels conserve une hauteur de respiration propre.
+  Si un label passe sur deux lignes, le pavé crème ne vient pas
+  se coller à lui.
+*/
+body.landing-page #valeur-position .landing-grid--value .value-chip-list {
+  align-content: start !important;
+  align-self: start !important;
+  min-height: 5.9rem !important;
+  margin: 0 0 26px !important;
+  padding-bottom: 4px !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .value-chip-list span {
+  min-height: 28px !important;
+  color: rgba(255,250,240,.78) !important;
+  border-color: rgba(255,250,240,.22) !important;
+}
+
+body.landing-page #valeur-position .landing-grid--value .value-details.value-details--visible {
+  align-self: stretch !important;
+  margin-top: 0 !important;
+  padding: 18px 17px !important;
+  background: #fffaf0 !important;
+  border: 1px solid rgba(23,23,23,.16) !important;
+  color: #171717 !important;
+}
+
+body.landing-page #valeur-position .value-details.value-details--visible .value-details-title {
+  margin-bottom: 14px !important;
+  color: rgba(23,23,23,.55) !important;
+}
+
+body.landing-page #valeur-position .value-details.value-details--visible li strong {
+  color: rgba(23,23,23,.70) !important;
+}
+
+body.landing-page #valeur-position .value-details.value-details--visible li span {
+  color: rgba(23,23,23,.74) !important;
+}
+
+@media (max-width: 980px) {
+  body.landing-page #valeur-position .landing-grid--value .landing-value-card {
+    display: block !important;
+  }
+
+  body.landing-page #valeur-position .landing-grid--value .value-chip-list {
+    min-height: 0 !important;
+    margin-bottom: 22px !important;
+  }
+}
