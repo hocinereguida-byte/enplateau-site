@@ -1,6 +1,6 @@
 /*
   Scènes d'Arbitrage — render-landing-api-test-v2.js
-  Version : 2026-06-02-api-test-v2-structure-header-footer-v21
+  Version : 2026-06-02-api-test-v2-hero-ordre-alignements-v22
 
   Objectif : tester une landing individuelle alimentée par l'API Worker V10.1
   sans remplacer la landing actuelle.
@@ -213,7 +213,7 @@
       <article class="landing-hero-metric ${modifier || ""}">
         <span>${safe(label)}</span>
         <strong>${safe(title)}</strong>
-        <em>${safe(text)}</em>
+        ${text ? `<em>${safe(text)}</em>` : ""}
       </article>`;
   }
 
@@ -330,21 +330,19 @@
         <div class="landing-container landing-hero-bento-container">
           <div class="landing-hero-bento-grid">
             <div class="landing-hero-bento-copy">
-              <p class="landing-hero-conversation landing-hero-conversation--kicker"><span>Conversation stratégique</span><strong>${safe(conversation)}</strong></p>
+              <p class="landing-hero-conversation landing-hero-conversation--kicker"><span>Votre contribution éditoriale</span></p>
               <h1>${safe(heroTitle)}</h1>
               <p class="landing-hero-bento-lead">Cette page privée est adressée dans le cadre d’une composition éditoriale en cours. Un échange éditorial de 15 minutes permettrait de vérifier l’intérêt commun de poursuivre et de préciser la position possible.</p>
-              <div class="landing-hero-bento-actions">
-                <a class="landing-btn" href="${CAL_URL}" target="_blank" rel="noopener">Qualifier cette position — 15 min</a>
-                <a class="landing-hero-secondary-link" href="#lectures-composees">Voir la position proposée</a>
+              <div class="landing-hero-bento-actions landing-hero-bento-actions--single">
+                <a class="landing-hero-secondary-link landing-hero-secondary-link--single" href="#lectures-composees">Voir la position proposée</a>
               </div>
-              <p class="landing-hero-bento-proof">15 minutes · Sans engagement · Aucun dossier à préparer</p>
             </div>
             <aside class="landing-hero-bento-side" aria-label="Repères média et proposition éditoriale">
               ${mediaFrame}
               <div class="landing-hero-metrics landing-hero-metrics--three" aria-label="Repères clés de la proposition éditoriale">
                 ${buildHeroPersonCard(name, role, org)}
                 ${buildHeroMetricCard("Lecture proposée", readingShort, buildHeroReadingLine(lecture))}
-                ${buildHeroMetricCard("Échange éditorial", "15 minutes", "Vérifier l’angle, le périmètre de parole et l’intérêt de poursuivre.", "landing-hero-metric--accent")}
+                ${buildHeroMetricCard("Conversation stratégique", conversation, "", "landing-hero-metric--conversation")}
               </div>
             </aside>
           </div>
@@ -800,10 +798,14 @@ function valueReadingCode(data) {
           {
             label: "Pour votre doctrine",
             title: "Rendre lisible ce que votre pratique sait formuler",
-            intro: valueForSpeaker,
+            intro: `Formaliser un cadre de lecture ${reading.toLowerCase()} que le cabinet peut porter dans ses échanges dirigeants.`,
             tags: tags[1],
-            headings: ["Interne", "Différenciation", "Réutilisation"],
-            details: fonctionDetail.length ? fonctionDetail : [functionShort, contextVariation, actorShort]
+            headings: ["Doctrine", "Différenciation", "Réutilisation"],
+            details: [
+              `Structurer une position de cabinet à partir d’une lecture ${reading.toLowerCase()} située, préparée et non promotionnelle.`,
+              "Rendre lisible ce que la pratique du cabinet sait éclairer dans des situations où les arbitrages deviennent décisifs.",
+              "Mobiliser ce cadre dans des échanges dirigeants, des présentations ou des contenus de référence."
+            ]
           },
           {
             label: "Pour vos relations dirigeants",
@@ -997,10 +999,10 @@ function buildContact() {
     ROOT.innerHTML = [
       buildHero(data),                 // 1. Hero
       buildConversation(data),         // 2. Mise en regard éditoriale
-      buildTrustKeys(data),            // 3. Cadre de confiance
-      buildAlternatives(data),         // 4. Lectures alternatives
-      buildCycle(),                    // 5. Cycle Industrie
-      buildPertinence(data),           // 6. Pertinence éditoriale
+      buildCycle(),                    // 3. Cycle Industrie
+      buildPertinence(data),           // 4. Pertinence éditoriale
+      buildTrustKeys(data),            // 5. Cadre de confiance
+      buildAlternatives(data),         // 6. Lectures alternatives
       buildPortee(data),               // 7. Portée de la position
       buildEditorialFrame(data),       // 8. Pour aller plus loin
       buildContact()                   // 9. Échange éditorial
