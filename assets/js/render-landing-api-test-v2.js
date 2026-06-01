@@ -1,6 +1,6 @@
 /*
   Scènes d'Arbitrage — render-landing-api-test-v2.js
-  Version : 2026-06-02-api-test-v2-alternatives-hierarchie-v20
+  Version : 2026-06-02-api-test-v2-structure-header-footer-v21
 
   Objectif : tester une landing individuelle alimentée par l'API Worker V10.1
   sans remplacer la landing actuelle.
@@ -995,15 +995,15 @@ function buildContact() {
   function render(data) {
     document.title = `Scènes d'Arbitrage — ${personName(data)}`;
     ROOT.innerHTML = [
-      buildHero(data),
-      buildPertinence(data),
-      buildConversation(data),
-      buildAlternatives(data),
-      buildPortee(data),
-      buildTrustKeys(data),
-      buildEditorialFrame(data),
-      buildCycle(),
-      buildContact()
+      buildHero(data),                 // 1. Hero
+      buildConversation(data),         // 2. Mise en regard éditoriale
+      buildTrustKeys(data),            // 3. Cadre de confiance
+      buildAlternatives(data),         // 4. Lectures alternatives
+      buildCycle(),                    // 5. Cycle Industrie
+      buildPertinence(data),           // 6. Pertinence éditoriale
+      buildPortee(data),               // 7. Portée de la position
+      buildEditorialFrame(data),       // 8. Pour aller plus loin
+      buildContact()                   // 9. Échange éditorial
     ].join("");
   }
 
