@@ -5311,70 +5311,230 @@
   }
 }
 
-
 /* =========================================================
-   HOME V2 — CLARIFICATION DE L'OFFRE — 20260602
-   Fichier de test associé à index-v2.html.
-   Modifications limitées aux nouveaux éléments de contenu V2.
+   HOME V2 — HERO + SÉQUENCE ÉDITORIALE — 20260602
+   Périmètre strict :
+   - recomposition du titre hero et reprise du pavé Cycle Industrie ;
+   - bento "Notre démarche" transformé en séquence publique à 6 temps ;
+   - suppression du signe + uniquement dans cette séquence.
 ========================================================= */
 
-.home-page .home-hero-copy--v2 {
-  max-width: 690px;
-}
-
-.home-page .home-hero-copy--v2 .home-hero-lead--v2 strong {
-  max-width: 62ch;
-  font-size: clamp(1rem, 1.18vw, 1.12rem);
-  line-height: 1.7;
-  font-weight: 500;
-  color: rgba(255,250,240,.96);
-}
-
-.home-page .home-hero-format {
-  margin: clamp(24px, 2.6vw, 30px) 0 0;
-  padding-top: 18px;
-  border-top: 1px solid rgba(255,250,240,.16);
-  font-family: var(--font-mono);
-  font-size: .62rem !important;
-  line-height: 1.65 !important;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(255,250,240,.64);
-}
-
-.home-page .home-actions--hero-v2 {
-  margin-top: clamp(25px, 3vw, 34px);
-  gap: 18px 26px;
-}
-
-.home-page .home-actions--hero-v2 a {
-  color: rgba(255,250,240,.9);
-  font-family: var(--font-mono);
-  font-size: .64rem;
-  letter-spacing: .14em;
-}
-
-.home-page .home-actions--hero-v2 a:first-child {
-  color: var(--h3-accent-soft);
-}
-
-.home-page .home-cycle-rarety--v2 h3 {
-  max-width: 38ch;
-}
-
-.home-page .home-decision-copy > .home-kicker {
-  margin-bottom: 20px;
-}
-
-@media (max-width: 760px) {
-  .home-page .home-hero-format {
-    margin-top: 22px;
+/* HERO — titre composé, sans chevauchement avec la colonne droite */
+@media (min-width: 1101px) {
+  .home-page .home-hero-copy--premium {
+    max-width: 600px !important;
+    padding-left: clamp(36px, 3vw, 48px) !important;
   }
 
-  .home-page .home-actions--hero-v2 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
+  .home-page .home-hero-title--composed {
+    max-width: none !important;
+    margin-bottom: 26px !important;
+    white-space: normal !important;
+    font-size: clamp(2.72rem, 3.55vw, 3.58rem) !important;
+    line-height: .98 !important;
+    letter-spacing: -.047em !important;
+  }
+
+  .home-page .home-hero-title--composed span {
+    display: block !important;
+    white-space: nowrap !important;
+  }
+
+  .home-page .home-hero-copy--premium .home-hero-lead-line {
+    white-space: normal !important;
   }
 }
+
+@media (max-width: 1100px) {
+  .home-page .home-hero-title--composed span {
+    display: inline;
+  }
+
+  .home-page .home-hero-title--composed span + span::before {
+    content: " ";
+  }
+}
+
+/* HERO — même contenu de cycle que la landing page : pas de ligne journalistes */
+.home-page .home-hero-media-row--cycle .home-hero-cycle-note--table > p {
+  max-width: 13ch !important;
+}
+
+.home-page .home-hero-media-row--cycle .home-cycle-meta dd {
+  max-width: 27ch !important;
+}
+
+/* SECTION 2 — séquence éditoriale, 3 colonnes x 2 lignes */
+.home-page .home-principles-grid--sequence {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 1px !important;
+  background: rgba(17,17,17,.18) !important;
+  border: 1px solid rgba(17,17,17,.18) !important;
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card--sequence {
+  min-height: 390px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: var(--ep-white) !important;
+  color: var(--h3-ink) !important;
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card--dark {
+  background: var(--ep-black) !important;
+  color: var(--h3-text) !important;
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card--sequence > summary {
+  min-height: 390px !important;
+  padding: clamp(28px, 2.6vw, 34px) clamp(24px, 2.4vw, 31px) 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  cursor: pointer !important;
+}
+
+/* Retirer l'ancienne icône circulaire + / − uniquement sur la séquence */
+.home-page .home-principles-grid--sequence .home-principle-card--sequence > summary::after,
+.home-page .home-principles-grid--sequence .home-principle-card--sequence[open] > summary::after {
+  display: none !important;
+  content: none !important;
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card__kicker {
+  display: block !important;
+  margin: 0 0 clamp(26px, 3vw, 38px) !important;
+  font-family: var(--font-mono) !important;
+  font-size: .56rem !important;
+  font-weight: 400 !important;
+  letter-spacing: .18em !important;
+  line-height: 1.45 !important;
+  text-transform: uppercase !important;
+  color: var(--h3-accent-deep) !important;
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card--dark .home-principle-card__kicker {
+  color: rgba(255,250,240,.54) !important;
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card--sequence h3 {
+  max-width: 12ch !important;
+  margin: 0 0 22px !important;
+  font-family: var(--font-display) !important;
+  font-size: clamp(1.72rem, 2.35vw, 2.26rem) !important;
+  font-weight: 600 !important;
+  line-height: .99 !important;
+  letter-spacing: -.048em !important;
+  color: inherit !important;
+  text-wrap: balance;
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card__intro {
+  display: block !important;
+  max-width: 34ch !important;
+  margin: 0 0 28px !important;
+  font-family: var(--font-body) !important;
+  font-size: .88rem !important;
+  font-weight: 400 !important;
+  line-height: 1.68 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: rgba(23,23,23,.70) !important;
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card--dark .home-principle-card__intro {
+  color: rgba(255,250,240,.72) !important;
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card__action {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  width: 100% !important;
+  margin: auto 0 0 !important;
+  padding: 16px 0 0 !important;
+  border-top: 1px solid rgba(23,23,23,.14) !important;
+  font-family: var(--font-mono) !important;
+  font-size: .57rem !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+  color: rgba(23,23,23,.58) !important;
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card__action b {
+  font-family: var(--font-body) !important;
+  font-size: .95rem !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+  transform: translateX(0);
+  transition: transform .2s ease;
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card--sequence:hover .home-principle-card__action b {
+  transform: translateX(4px);
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card--dark .home-principle-card__action {
+  border-top-color: rgba(255,250,240,.18) !important;
+  color: rgba(255,250,240,.62) !important;
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card__detail {
+  margin: 0 !important;
+  padding: 0 clamp(24px, 2.4vw, 31px) 30px !important;
+  border: 0 !important;
+  font-size: .88rem !important;
+  line-height: 1.68 !important;
+  color: rgba(23,23,23,.72) !important;
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card__detail::before {
+  content: "";
+  display: block;
+  padding-top: 22px;
+  border-top: 1px solid rgba(23,23,23,.12);
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card--dark .home-principle-card__detail {
+  color: rgba(255,250,240,.72) !important;
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card--dark .home-principle-card__detail::before {
+  border-top-color: rgba(255,250,240,.15);
+}
+
+.home-page .home-principles-grid--sequence .home-principle-card--sequence[open] > summary {
+  min-height: 344px !important;
+}
+
+/* Responsive de la séquence */
+@media (max-width: 980px) {
+  .home-page .home-principles-grid--sequence {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .home-page .home-principles-grid--sequence {
+    grid-template-columns: 1fr !important;
+  }
+
+  .home-page .home-principles-grid--sequence .home-principle-card--sequence,
+  .home-page .home-principles-grid--sequence .home-principle-card--sequence > summary {
+    min-height: 0 !important;
+  }
+
+  .home-page .home-principles-grid--sequence .home-principle-card--sequence > summary {
+    padding: 28px 24px !important;
+  }
+
+  .home-page .home-principles-grid--sequence .home-principle-card--sequence h3 {
+    max-width: none !important;
+    font-size: clamp(1.8rem, 9vw, 2.25rem) !important;
+  }
+}
+
