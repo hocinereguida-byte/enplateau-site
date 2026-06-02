@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Scènes d'Arbitrage — Contribution éditoriale personnalisée</title>
-  <meta name="description" content="Une proposition de contribution éditoriale personnalisée dans le cycle Industrie & transformation des territoires.">
+  <title>Scènes d'Arbitrage — Proposition éditoriale</title>
+  <meta name="description" content="Page privée adressée dans le cadre d’une composition éditoriale en cours du cycle Industrie & Transformation des Territoires.">
   <meta name="robots" content="noindex,nofollow">
   <meta name="theme-color" content="#111111">
 
@@ -14,17 +14,18 @@
   <link rel="apple-touch-icon" href="/images/Favenplateau.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="/assets/css/layout.css?v=moteur-v6-cast-publicrefs-20260517-0610">
-  <link rel="stylesheet" href="/assets/css/landing.css?v=20260526-landing-ux-v6">
+  <link rel="stylesheet" href="/assets/css/landing.css?v=20260602-production-v1">
 </head>
 
 <body class="landing-page" data-page="industrie-contribuer" data-cycle="industrie">
 
   <header class="landing-static-header">
-    <a href="/" aria-label="Scènes d'Arbitrage — accueil">
+    <a class="landing-static-brand-link" href="/" aria-label="Scènes d'Arbitrage — accueil">
       <img src="/images/logo-scenes-transparent-no-baseline-v2.png" alt="Scènes d'Arbitrage" class="landing-static-logo">
     </a>
+    <p class="landing-static-season">Saison inaugurale - cycle industrie</p>
+    <a class="landing-static-exchange" href="https://scenesdarbitrage.fr/demander-un-echange-editorial.html">Programmer un échange éditorial</a>
   </header>
 
   <template id="landing-static-cycle-media">
@@ -33,7 +34,7 @@
         <img src="/images/studiovide.jpg" alt="Studio vidéo associé au cycle Industrie 2026/2027">
       </figure>
       <div class="landing-film-cycle-card" aria-label="Repères éditoriaux du cycle Industrie">
-        <p class="landing-film-cycle-card__kicker">Cycle Industrie 2026/2027</p>
+        <p class="landing-film-cycle-card__kicker">Cycle Industrie</p>
         <p class="landing-film-cycle-card__status">Positions éditoriales en cours de composition</p>
         <dl class="landing-film-cycle-card__list">
           <div>
@@ -41,7 +42,7 @@
             <dd>Jusqu’à décembre 2026</dd>
           </div>
           <div>
-            <dt>Diffusion à partir de septembre 2026</dt>
+            <dt>Diffusion</dt>
             <dd>BFM Business · La Tribune · Le Figaro</dd>
           </div>
         </dl>
@@ -54,30 +55,71 @@
       <div class="landing-loading__box">
         <a class="landing-brand landing-brand--loading" href="/" aria-label="Scènes d'Arbitrage — accueil">Scènes d'Arbitrage</a>
         <h1>Chargement de votre proposition éditoriale</h1>
-        <p>
-          Si cette page reste affichée, vérifiez que l'URL contient un identifiant de proposition valide,
-          par exemple une référence publique de type cast.
-        </p>
+        <p>Cette page de test interroge l’API Cloudflare Worker et affiche les données Pipedrive + KV éditorial disponibles.</p>
       </div>
     </section>
   </main>
 
-<script src="/assets/js/editorial-data-industrie-v67.js?v=20260521-js1"></script>
-<script src="/assets/js/editorial-data-industrie-enrichments.js?v=20260525-crm-secure-v1"></script>
-<script src="/assets/js/activation-crm-industrie.js?v=20260525-roleactivation-v3"></script>
-<script src="/assets/js/editorial-doctrine-scenes-arbitrage.js?v=20260526-v1"></script>
-<script src="/assets/js/render-core.js?v=20260521-js1"></script>
-<script src="/assets/js/render-landing.js?v=20260526-landing-ux-v6"></script>
+  <footer class="site-footer" aria-label="Pied de page">
+    <div class="site-footer__inner">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <div class="site-footer__logo-frame" aria-hidden="true">
+            <img
+              src="/images/logo-scenes-transparent-baseline-v2.png?v=5"
+              alt=""
+              class="site-footer__logo"
+            >
+          </div>
+          <p class="site-footer__brand-copy">
+            Scènes d'Arbitrage prépare, produit et active des prises de position à partir de conversations structurées, de positions situées et de sujets déjà à l’œuvre dans l’économie réelle.
+          </p>
+        </div>
+  
+        <div class="site-footer__column">
+          <h2 class="site-footer__title">Parcours</h2>
+          <nav class="site-footer__nav" aria-label="Parcours">
+            <a href="/dispositif.html" class="site-footer__link">Dispositif</a>
+            <a href="/conversations.html" class="site-footer__link">Conversations</a>
+            <a href="/positions.html" class="site-footer__link">Positions</a>
+          </nav>
+        </div>
+  
+        <div class="site-footer__column">
+          <h2 class="site-footer__title">Accès</h2>
+          <nav class="site-footer__nav" aria-label="Accès">
+            <a href="/demander-un-echange-editorial.html" class="site-footer__link">Demander un échange éditorial</a>
+            <a href="/proposer-une-contribution.html" class="site-footer__link">Signaler une contribution</a>
+            <a href="/principes.html" class="site-footer__link">Principes</a>
+          </nav>
+        </div>
+  
+        <div class="site-footer__column">
+          <h2 class="site-footer__title">Informations</h2>
+          <nav class="site-footer__meta" aria-label="Informations légales">
+            <a href="/a-propos.html" class="site-footer__link">À propos</a>
+            <a href="/mentions-legales.html" class="site-footer__link">Mentions légales</a>
+            <a href="/politique-de-confidentialite.html" class="site-footer__link">Politique de confidentialité</a>
+            <a href="#" class="site-footer__link" data-open-cookie-settings>Gérer mes cookies</a>
+          </nav>
+        </div>
+      </div>
+  
+      <div class="site-footer__bottom-line" aria-hidden="true"></div>
+    </div>
+  </footer>
+
+
+  <script src="/assets/js/editorial-doctrine-scenes-arbitrage.js?v=20260526-v1"></script>
+  <script src="/assets/js/editorial-data-industrie-enrichments.js?v=20260531-api-v2-unique-v10"></script>
+  <script src="/assets/js/render-landing-api-test-v2.js?v=20260602-production-v1"></script>
 
   <noscript>
     <section class="landing-loading">
       <div class="landing-loading__box">
         <a class="landing-brand landing-brand--loading" href="/" aria-label="Scènes d'Arbitrage — accueil">Scènes d'Arbitrage</a>
         <h1>JavaScript est nécessaire</h1>
-        <p>
-          Cette page utilise le référentiel éditorial Scènes d'Arbitrage pour afficher une proposition personnalisée.
-          Activez JavaScript pour consulter le contenu.
-        </p>
+        <p>Activez JavaScript pour consulter cette proposition personnalisée.</p>
       </div>
     </section>
   </noscript>
