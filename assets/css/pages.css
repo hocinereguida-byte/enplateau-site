@@ -3263,3 +3263,16 @@ body:not(.home-page) .conv3-dark .programme-access__item {
     justify-content: flex-start !important;
   }
 }
+
+/* =========================================================
+   PAGE ÉCHANGE ÉDITORIAL — VISUEL PARCOURS / BOUSSOLE
+   Périmètre : uniquement la page demander-un-echange-editorial
+   Image : /images/echange-editorial.jpg
+========================================================= */
+
+body.page-echange-editorial .page3-visual-dispositif {
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.46), rgba(17,17,17,.22)),
+    url("../../images/echange-editorial.jpg") center center / cover no-repeat !important;
+}
+
