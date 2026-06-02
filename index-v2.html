@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/home-v2.css?v=20260603-bento-lisibilite-toggle-v5">
+  <link rel="stylesheet" href="assets/css/home-v2.css?v=20260603-portee-editoriale-accordion-v6">
 </head>
 
 <body class="home-page">
@@ -196,35 +196,61 @@
   </div>
 </section>
 
-    <section class="home-section home-dark home-decision" id="role-editorial-home">
+    <section class="home-section home-dark home-decision home-decision--portee" id="role-editorial-home">
   <div class="home-container">
     <div class="home-decision-grid">
       <div class="home-decision-visual" aria-hidden="true"></div>
       <div class="home-decision-copy">
-        <h2>Du sujet identifié à une lecture publiquement tenable.</h2>
+        <div class="home-kicker">Portée éditoriale</div>
+        <h2>Une lecture préparée<br>pour être claire, crédible<br>et durable.</h2>
 
-        <div class="home-decision-accordion" aria-label="Rôle éditorial du dispositif">
+        <div class="home-decision-accordion home-portee-accordion" aria-label="Portée d'une contribution éditoriale">
           <details open>
-            <summary>Qualifier la pertinence de la lecture</summary>
+            <summary>
+              <span class="home-portee-accordion__kicker">01 · Décision réelle</span>
+              <span class="home-portee-accordion__title">Une lecture ancrée dans les arbitrages qui comptent.</span>
+              <span class="home-portee-accordion__action">
+                <span class="home-portee-accordion__label home-portee-accordion__label--closed">Lire le détail</span>
+                <span class="home-portee-accordion__label home-portee-accordion__label--open">Masquer le détail</span>
+                <b aria-hidden="true">→</b>
+              </span>
+            </summary>
             <p>
-              Une intervention commence par l’examen du sujet, du rôle de l’intervenant
-              et de ce que son expérience permet réellement de rendre compréhensible.
+              La contribution ne part pas d’un message à diffuser, mais d’une décision à rendre compréhensible :
+              ses conditions, ses tensions et ce qu’elle engage pour une trajectoire.
             </p>
           </details>
 
           <details>
-            <summary>Définir un cadre d’intervention juste</summary>
+            <summary>
+              <span class="home-portee-accordion__kicker">02 · Expérience partagée</span>
+              <span class="home-portee-accordion__title">Une position qui rend l’expérience utile à d’autres.</span>
+              <span class="home-portee-accordion__action">
+                <span class="home-portee-accordion__label home-portee-accordion__label--closed">Lire le détail</span>
+                <span class="home-portee-accordion__label home-portee-accordion__label--open">Masquer le détail</span>
+                <b aria-hidden="true">→</b>
+              </span>
+            </summary>
             <p>
-              Nous préparons le périmètre de parole, les formulations utiles, les limites
-              nécessaires et les modalités de production, sans demander d’exposer ce qui doit rester protégé.
+              Le travail éditorial permet de formuler ce que l’expérience de l’intervenant éclaire réellement,
+              au-delà de son seul contexte, pour des dirigeants, partenaires ou organisations confrontés
+              à des arbitrages comparables.
             </p>
           </details>
 
           <details>
-            <summary>Produire une contribution durable</summary>
+            <summary>
+              <span class="home-portee-accordion__kicker">03 · Trace durable</span>
+              <span class="home-portee-accordion__title">Un contenu conçu pour rester mobilisable.</span>
+              <span class="home-portee-accordion__action">
+                <span class="home-portee-accordion__label home-portee-accordion__label--closed">Lire le détail</span>
+                <span class="home-portee-accordion__label home-portee-accordion__label--open">Masquer le détail</span>
+                <b aria-hidden="true">→</b>
+              </span>
+            </summary>
             <p>
-              La position peut ensuite être exprimée dans des formats éditoriaux préparés,
-              conçus pour être crédibles dans l’espace public et mobilisables dans un écosystème professionnel.
+              L’entretien filmé et l’article associé donnent à la lecture une forme éditoriale durable,
+              crédible et réutilisable dans des relations professionnelles, dirigeantes ou institutionnelles qualifiées.
             </p>
           </details>
         </div>
@@ -557,15 +583,21 @@
   <script src="assets/js/layout.js"></script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function(){
-  const cards = Array.from(document.querySelectorAll('.home-principles-bento .home-bento-card'));
-  cards.forEach(card => {
-    card.addEventListener('toggle', function(){
-      if (card.open) {
-        cards.forEach(other => { if (other !== card) other.open = false; });
-      }
+document.addEventListener('DOMContentLoaded', function () {
+  function limitToOneOpen(selector) {
+    const panels = Array.from(document.querySelectorAll(selector));
+    panels.forEach(function (panel) {
+      panel.addEventListener('toggle', function () {
+        if (!panel.open) return;
+        panels.forEach(function (other) {
+          if (other !== panel) other.open = false;
+        });
+      });
     });
-  });
+  }
+
+  limitToOneOpen('.home-principles-bento .home-bento-card');
+  limitToOneOpen('.home-portee-accordion details');
 });
 </script>
 </body>
