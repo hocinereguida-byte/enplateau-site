@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/home-v2.css?v=20260602-grammaire-btob-premium-v1">
+  <link rel="stylesheet" href="assets/css/home-v2.css?v=20260602-hero-sequence-editoriale-v2">
 </head>
 
 <body class="home-page">
@@ -28,9 +28,14 @@
     <section class="home-hero" id="hero-home">
   <div class="home-container">
     <div class="home-hero-grid">
-      <div class="home-hero-copy">
+      <div class="home-hero-copy home-hero-copy--premium">
         <div class="home-kicker">Scènes d’Arbitrage · Cycles éditoriaux</div>
-        <h1>Rendre lisibles les arbitrages qui transforment l’économie.</h1>
+        <h1 class="home-hero-title--composed">
+          <span>Rendre lisibles</span>
+          <span>les arbitrages</span>
+          <span>qui engagent</span>
+          <span>une trajectoire.</span>
+        </h1>
 
         <p class="home-hero-lead">
           <strong>
@@ -52,23 +57,19 @@
         </p>
       </div>
 
-      <aside class="home-hero-side" aria-label="Accès à l'échange éditorial">
-        <div class="home-hero-media-row home-hero-media-row--cycle">
-          <figure class="home-film home-film--studio" aria-label="Studio vidéo du cycle Industrie">
-            <img src="images/studiovide.jpg" alt="Studio vidéo associé au cycle Industrie">
+      <aside class="home-hero-side" aria-label="Repères du cycle et accès à l’échange éditorial">
+        <div class="home-hero-media-row home-hero-media-row--cycle" aria-label="Repères du cycle Industrie">
+          <figure class="home-film home-film--studio">
+            <img src="/images/studiovide.jpg" alt="Studio vidéo associé au cycle Industrie">
           </figure>
 
-          <div class="home-hero-cycle-note home-hero-cycle-note--table" aria-label="Repères du cycle Industrie">
+          <div class="home-hero-cycle-note home-hero-cycle-note--table">
             <span>Cycle Industrie</span>
             <p>Positions éditoriales en cours de composition</p>
             <dl class="home-cycle-meta">
               <div>
                 <dt>Préparation, cadrage, tournage</dt>
                 <dd>Jusqu’à décembre 2026</dd>
-              </div>
-              <div>
-                <dt>Journalistes</dt>
-                <dd>Christophe Pallée · Gilles Leclerc · Thierry Cabannes</dd>
               </div>
               <div>
                 <dt>Diffusion</dt>
@@ -100,54 +101,109 @@
   <div class="home-container">
     <div class="home-head">
       <div class="home-kicker home-kicker--light">Notre démarche</div>
-      <h2>Formuler une position utile sur une décision qui compte.</h2>
+      <h2>De l’arbitrage identifié<br>à la contribution éditoriale.</h2>
       <p>
-        Scènes d’Arbitrage ne met pas une organisation en scène. Le dispositif permet
-        à celles et ceux qui portent ou accompagnent des décisions de rendre lisible
-        un arbitrage, dans un cadre éditorial préparé et durablement exploitable.
+        Chaque intervention prend appui sur une décision réelle, une lecture légitime
+        et un cadre préparé. Elle se construit avec l’intervenant avant de prendre forme
+        dans une émission filmée et un article associé, puis de rejoindre les autres lectures du cycle.
       </p>
     </div>
 
-    <div class="home-principles-grid" aria-label="Principes du dispositif Scènes d'Arbitrage">
-      <details class="home-principle-card home-principle-card--wide" open>
-        <summary><span>01 · Sujet</span><h3>Identifier l’arbitrage qui mérite d’être éclairé.</h3></summary>
-        <p>
-          Chaque contribution part d’une question précise, reliée à une transformation réelle :
-          ce qui doit être décidé, préservé, coordonné ou réorienté pour qu’une trajectoire tienne.
+    <div class="home-principles-grid home-principles-grid--sequence" aria-label="Séquence éditoriale Scènes d'Arbitrage">
+      <details class="home-principle-card home-principle-card--sequence">
+        <summary>
+          <span class="home-principle-card__kicker">01 · Question structurante</span>
+          <h3>L’arbitrage<br>à éclairer</h3>
+          <span class="home-principle-card__intro">
+            Toute contribution part d’une décision réelle : investir, produire,
+            financer, sécuriser, transformer ou préserver une capacité d’avenir.
+          </span>
+          <span class="home-principle-card__action">Lire le détail <b aria-hidden="true">→</b></span>
+        </summary>
+        <p class="home-principle-card__detail">
+          Le sujet est formulé de manière suffisamment précise pour éviter le discours général,
+          tout en restant utile à d’autres organisations confrontées à des choix comparables.
         </p>
       </details>
 
-      <details class="home-principle-card">
-        <summary><span>02 · Position</span><h3>Associer la lecture la plus pertinente.</h3></summary>
-        <p>
-          Nous sollicitons des dirigeants, experts ou organisations dont l’expérience
-          permet d’éclairer le sujet depuis une responsabilité ou un point d’observation légitime.
+      <details class="home-principle-card home-principle-card--sequence">
+        <summary>
+          <span class="home-principle-card__kicker">02 · Lecture pertinente</span>
+          <h3>La lecture<br>pertinente</h3>
+          <span class="home-principle-card__intro">
+            Dirigeant, expert, organisation ou cabinet : l’intervenant est identifié
+            pour ce que son expérience permet de comprendre.
+          </span>
+          <span class="home-principle-card__action">Lire le détail <b aria-hidden="true">→</b></span>
+        </summary>
+        <p class="home-principle-card__detail">
+          La contribution ne vise pas à présenter une fonction ou une offre. Elle repose sur un point
+          d’observation légitime, susceptible de rendre un arbitrage compréhensible et partageable.
         </p>
       </details>
 
-      <details class="home-principle-card">
-        <summary><span>03 · Cadre</span><h3>Préparer une intervention maîtrisée.</h3></summary>
-        <p>
-          Le périmètre de parole, les points sensibles et les conditions d’intervention
-          sont précisés en amont, avec les équipes concernées lorsque cela est utile.
+      <details class="home-principle-card home-principle-card--sequence">
+        <summary>
+          <span class="home-principle-card__kicker">03 · Cadre d’expression</span>
+          <h3>Le cadre<br>maîtrisé</h3>
+          <span class="home-principle-card__intro">
+            Le périmètre de parole, les points sensibles et les conditions
+            d’intervention sont préparés en amont.
+          </span>
+          <span class="home-principle-card__action">Lire le détail <b aria-hidden="true">→</b></span>
+        </summary>
+        <p class="home-principle-card__detail">
+          Le cadrage permet de rendre la lecture utile sans exposer ce qui doit rester protégé.
+          Les équipes communication ou juridiques peuvent être associées lorsque le contexte l’exige.
         </p>
       </details>
 
-      <details class="home-principle-card home-principle-card--dark">
-        <summary><span>04 · Composition</span><h3>Mettre en regard des lectures complémentaires.</h3></summary>
-        <p>
-          Une position gagne en valeur lorsqu’elle éclaire, avec d’autres, les différentes
-          dimensions d’une même décision, sans confrontation artificielle ni discours promotionnel.
+      <details class="home-principle-card home-principle-card--sequence">
+        <summary>
+          <span class="home-principle-card__kicker">04 · Échange éditorial</span>
+          <h3>L’échange<br>éditorial</h3>
+          <span class="home-principle-card__intro">
+            Un premier échange permet de vérifier la pertinence du sujet,
+            la justesse de la position et l’intérêt de poursuivre.
+          </span>
+          <span class="home-principle-card__action">Lire le détail <b aria-hidden="true">→</b></span>
+        </summary>
+        <p class="home-principle-card__detail">
+          Cet échange ne vaut ni engagement ni validation d’une intervention. Si la lecture se confirme,
+          une note de positionnement peut ensuite préciser le cadre éditorial et le cadre d’intervention.
         </p>
       </details>
 
-      <details class="home-principle-card home-principle-card--cta">
-        <summary><span>Cycles en cours</span><h3>Découvrir les transformations actuellement explorées.</h3></summary>
-        <p>
-          Les cycles structurent des conversations autour de questions économiques,
-          industrielles et territoriales pour lesquelles plusieurs lectures peuvent utilement se répondre.
+      <details class="home-principle-card home-principle-card--sequence home-principle-card--dark">
+        <summary>
+          <span class="home-principle-card__kicker">05 · Expression média</span>
+          <h3>L’expression<br>média</h3>
+          <span class="home-principle-card__intro">
+            La contribution peut prendre la forme d’un entretien filmé
+            et d’un article associé, préparés dans un cadre média identifié.
+          </span>
+          <span class="home-principle-card__action">Lire le détail <b aria-hidden="true">→</b></span>
+        </summary>
+        <p class="home-principle-card__detail">
+          Les formats sont articulés pour permettre à l’intervenant de développer une lecture claire,
+          crédible et mobilisable auprès d’interlocuteurs professionnels qualifiés.
         </p>
-        <a href="conversations.html">Explorer les conversations</a>
+      </details>
+
+      <details class="home-principle-card home-principle-card--sequence">
+        <summary>
+          <span class="home-principle-card__kicker">06 · Composition éditoriale</span>
+          <h3>La mise<br>en regard</h3>
+          <span class="home-principle-card__intro">
+            Une contribution prend toute sa valeur lorsqu’elle est mise
+            en regard avec d’autres lectures complémentaires.
+          </span>
+          <span class="home-principle-card__action">Lire le détail <b aria-hidden="true">→</b></span>
+        </summary>
+        <p class="home-principle-card__detail">
+          Le cycle ne juxtapose pas des prises de parole. Il compose des positions distinctes
+          pour rendre visibles les différentes conditions d’une même transformation.
+        </p>
       </details>
     </div>
   </div>
