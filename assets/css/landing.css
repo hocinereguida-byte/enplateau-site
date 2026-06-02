@@ -9190,3 +9190,27 @@ body.landing-page #valeur-position .landing-grid--value .value-details.value-det
       margin-top: 34px;
     }
   }
+
+
+/* =========================================================
+   PATCH API V2 NAVIGATION + ÉCHANGE + CADRE V24 — 20260602
+   - navigation interne fiable après insertion du rendu API ;
+   - arrivée CTA au début de la mise en regard éditoriale ;
+   - alignement des résumés des cartes du cadre de confiance.
+   ========================================================= */
+
+body.landing-page #mise-en-regard {
+  scroll-margin-top: 74px !important;
+}
+
+@media (min-width: 981px) {
+  body.landing-page #cadre-confiance .trust-keys-grid--all .trust-key h3 {
+    min-height: 3.35rem !important;
+  }
+}
+
+@media (max-width: 980px) {
+  body.landing-page #mise-en-regard {
+    scroll-margin-top: 66px !important;
+  }
+}
