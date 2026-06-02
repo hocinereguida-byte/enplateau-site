@@ -5869,3 +5869,51 @@
     min-height: 0;
   }
 }
+
+/* === Correctif V5 : lisibilité cartes sombres + libellé ouvert/fermé === */
+.home-page .home-bento-card--dark {
+  border-color: rgba(246,241,233,.22) !important;
+  box-shadow: inset 0 0 0 1px rgba(246,241,233,.18);
+}
+
+.home-page .home-bento-card--dark h3 {
+  color: rgba(246,241,233,.98) !important;
+}
+
+.home-page .home-bento-card--dark .home-bento-card__kicker {
+  color: rgba(246,241,233,.60) !important;
+  opacity: 1 !important;
+}
+
+.home-page .home-bento-card--dark .home-bento-card__keywords li {
+  color: rgba(246,241,233,.90) !important;
+  border-color: rgba(246,241,233,.54) !important;
+}
+
+.home-page .home-bento-card--dark .home-bento-card__action {
+  color: rgba(246,241,233,.76) !important;
+  border-top-color: rgba(246,241,233,.24) !important;
+}
+
+.home-page .home-bento-card--dark .home-bento-card__detail p {
+  color: rgba(246,241,233,.82) !important;
+  border-top-color: rgba(246,241,233,.20) !important;
+  opacity: 1 !important;
+}
+
+.home-page .home-bento-card__action-label--open {
+  display: none;
+}
+
+.home-page .home-bento-card[open] .home-bento-card__action-label--closed {
+  display: none;
+}
+
+.home-page .home-bento-card[open] .home-bento-card__action-label--open {
+  display: inline;
+}
+
+.home-page .home-bento-card[open] .home-bento-card__action b {
+  transform: rotate(180deg);
+}
+
