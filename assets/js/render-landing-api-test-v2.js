@@ -1,6 +1,6 @@
 /*
   Scènes d'Arbitrage — render-landing-api-test-v2.js
-  Version : 2026-06-02-api-test-v2-hero-ordre-alignements-v22
+  Version : 2026-06-02-api-test-v2-navigation-echange-cadre-v24
 
   Objectif : tester une landing individuelle alimentée par l'API Worker V10.1
   sans remplacer la landing actuelle.
@@ -22,7 +22,7 @@
 
   const API_BASE = "/api/landing-data";
   const ROOT = document.getElementById("landing-root");
-  const CAL_URL = "https://cal.com/scenesdarbitrage/echange-editorial-15-min?user=scenesdarbitrage&overlayCalendar=true";
+  const ECHANGE_URL = "https://scenesdarbitrage.fr/demander-un-echange-editorial.html";
 
   function doctrineTool() {
     return window.SDAEditorialDoctrine || null;
@@ -334,7 +334,7 @@
               <h1>${safe(heroTitle)}</h1>
               <p class="landing-hero-bento-lead">Cette page privée est adressée dans le cadre d’une composition éditoriale en cours. Un échange éditorial de 15 minutes permettrait de vérifier l’intérêt commun de poursuivre et de préciser la position possible.</p>
               <div class="landing-hero-bento-actions landing-hero-bento-actions--single">
-                <a class="landing-hero-secondary-link landing-hero-secondary-link--single" href="#lectures-composees">Voir la position proposée</a>
+                <a class="landing-hero-secondary-link landing-hero-secondary-link--single" href="#mise-en-regard" data-scroll-target="mise-en-regard">Voir la position proposée</a>
               </div>
             </div>
             <aside class="landing-hero-bento-side" aria-label="Repères média et proposition éditoriale">
@@ -985,13 +985,40 @@ function buildContact() {
               <h2>Certaines positions méritent simplement d’être discutées.</h2>
               <p>L’échange permet de vérifier si la lecture envisagée mérite d’être structurée dans le cadre du cycle. Il ne demande aucune préparation particulière et peut associer, si nécessaire, les équipes communication, affaires publiques ou juridiques.</p>
               <div class="landing-actions qualification-cta-actions">
-                <a class="landing-btn" href="${CAL_URL}" target="_blank" rel="noopener">Qualifier cette position — 15 min</a>
+                <a class="landing-btn" href="${ECHANGE_URL}">Qualifier cette position — 15 min</a>
               </div>
               <p class="qualification-cta-microcopy">15 minutes · sans engagement · aucune suite automatique</p>
             </div>
           </div>
         </div>
       </section>`;
+  }
+
+
+  function scrollToRenderedSection(targetId, behavior) {
+    const target = document.getElementById(targetId);
+    if (!target) return false;
+    target.scrollIntoView({ behavior: behavior || "auto", block: "start" });
+    return true;
+  }
+
+  function activateRenderedSectionNavigation() {
+    ROOT.querySelectorAll("[data-scroll-target]").forEach(link => {
+      link.addEventListener("click", event => {
+        event.preventDefault();
+        const targetId = txt(link.getAttribute("data-scroll-target"));
+        if (!targetId) return;
+        window.history.pushState(null, "", `#${targetId}`);
+        scrollToRenderedSection(targetId, "smooth");
+      });
+    });
+
+    const requestedTarget = txt((window.location.hash || "").replace(/^#/, ""));
+    if (requestedTarget) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => scrollToRenderedSection(requestedTarget, "auto"));
+      });
+    }
   }
 
   function render(data) {
@@ -1007,6 +1034,7 @@ function buildContact() {
       buildEditorialFrame(data),       // 8. Pour aller plus loin
       buildContact()                   // 9. Échange éditorial
     ].join("");
+    activateRenderedSectionNavigation();
   }
 
   async function init() {
