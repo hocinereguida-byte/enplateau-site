@@ -6223,3 +6223,51 @@
 }
 
 /* PUBLISH CHECK — LECTURES GRID 3-2-3 V7 — 20260603 */
+
+
+/* =========================================================
+   HOME V2 — SUPPRESSION DES SECTIONS REDONDANTES V8 — 20260603
+   Le lien vers la page Dispositif est conservé sous la séquence éditoriale.
+========================================================= */
+
+.home-page .home-principles-followup {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(30px, 3.4vw, 44px);
+}
+
+.home-page .home-principles-followup a {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 0 10px;
+  border-bottom: 1px solid rgba(23,23,23,.28);
+  font-family: var(--font-mono);
+  font-size: .64rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  color: rgba(23,23,23,.74);
+  transition: border-color .2s ease, color .2s ease;
+}
+
+.home-page .home-principles-followup a span {
+  font-family: var(--font-body);
+  font-size: .95rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  transition: transform .2s ease;
+}
+
+.home-page .home-principles-followup a:hover {
+  border-color: rgba(23,23,23,.65);
+  color: #171717;
+}
+
+.home-page .home-principles-followup a:hover span {
+  transform: translateX(4px);
+}
+
+/* PUBLISH CHECK — SUPPRESSION DOUBLONS HOME V8 — 20260603 */
