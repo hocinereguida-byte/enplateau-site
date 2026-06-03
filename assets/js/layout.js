@@ -1,4 +1,38 @@
-async function loadPartial(selector, path) {
+const BRAND_ASSETS = {
+  headerLogo: "/images/logo-scenes-transparent-no-baseline-v2.png?v=13",
+  mobileLogo: "/images/logo-scenes-transparent-no-baseline-v2.png?v=12",
+  footerLogo: "/images/logo-scenes-transparent-baseline-v2.png?v=5"
+};
+
+function preloadImage(src) {
+  return new Promise((resolve) => {
+    const preloadKey = `preload:${src}`;
+
+    if (!document.head.querySelector(`link[data-brand-preload="${preloadKey}"]`)) {
+      const link = document.createElement("link");
+      link.rel = "preload";
+      link.as = "image";
+      link.href = src;
+      link.dataset.brandPreload = preloadKey;
+      document.head.appendChild(link);
+    }
+
+    const image = new Image();
+    image.decoding = "async";
+    image.onload = () => resolve(src);
+    image.onerror = () => {
+      console.warn(`Préchargement du logo impossible : ${src}`);
+      resolve(src);
+    };
+    image.src = src;
+
+    if (image.complete) {
+      resolve(src);
+    }
+  });
+}
+
+async function loadPartial(selector, path, readyBeforeMount = null) {
   const mountPoint = document.querySelector(selector);
   if (!mountPoint) return null;
 
@@ -9,6 +43,11 @@ async function loadPartial(selector, path) {
     }
 
     const html = await response.text();
+
+    if (readyBeforeMount) {
+      await readyBeforeMount;
+    }
+
     mountPoint.innerHTML = html;
     return mountPoint;
   } catch (error) {
@@ -119,7 +158,8 @@ function initCookies() {
   if (window.__cookiesInitialized) return;
   window.__cookiesInitialized = true;
 
-  const STORAGE_KEY = "enplateau_cookie_preferences_v1";
+  const STORAGE_KEY = "scenesdarbitrage_cookie_preferences_v1";
+  const LEGACY_STORAGE_KEYS = ["enplateau_cookie_preferences_v1"];
 
   const overlay = document.getElementById("cookie-overlay");
   const modal = document.getElementById("cookie-modal");
@@ -144,6 +184,11 @@ function initCookies() {
   function savePreferences(preferences) {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(preferences));
+
+      LEGACY_STORAGE_KEYS.forEach((key) => {
+        localStorage.removeItem(key);
+      });
+
       return true;
     } catch (error) {
       console.error("Impossible d’enregistrer les préférences cookies :", error);
@@ -153,7 +198,20 @@ function initCookies() {
 
   function getPreferences() {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
+      let raw = localStorage.getItem(STORAGE_KEY);
+
+      if (!raw) {
+        for (const legacyKey of LEGACY_STORAGE_KEYS) {
+          raw = localStorage.getItem(legacyKey);
+
+          if (raw) {
+            localStorage.setItem(STORAGE_KEY, raw);
+            localStorage.removeItem(legacyKey);
+            break;
+          }
+        }
+      }
+
       if (!raw) return null;
       return JSON.parse(raw);
     } catch (error) {
@@ -268,10 +326,14 @@ async function initLayout() {
   if (window.__layoutInitialized) return;
   window.__layoutInitialized = true;
 
+  const headerLogoReady = preloadImage(BRAND_ASSETS.headerLogo);
+  const mobileLogoReady = preloadImage(BRAND_ASSETS.mobileLogo);
+  const footerLogoReady = preloadImage(BRAND_ASSETS.footerLogo);
+
   await Promise.all([
-    loadPartial("#site-header", "/partials/header.html"),
-    loadPartial("#site-mobile-menu", "/partials/mobile-menu.html"),
-    loadPartial("#site-footer", "/partials/footer.html"),
+    loadPartial("#site-header", "/partials/header.html", headerLogoReady),
+    loadPartial("#site-mobile-menu", "/partials/mobile-menu.html", mobileLogoReady),
+    loadPartial("#site-footer", "/partials/footer.html", footerLogoReady),
     loadPartial("#cookie-container", "/partials/cookies.html")
   ]);
 
@@ -298,3 +360,5 @@ async function initLayout() {
 }
 
 document.addEventListener("DOMContentLoaded", initLayout);
+
+/* PUBLISH CHECK — LAYOUT PRELOAD LOGOS + COOKIE MIGRATION V1 — 20260603 */
