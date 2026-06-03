@@ -197,13 +197,13 @@
 
   function buildHeroReadingLine(readingLabel) {
     const key = normalize(readingLabel);
-    if (key.includes("financ")) return "Rendre visibles les conditions économiques d’une trajectoire industrielle tenable.";
+    if (key.includes("financ")) return "Rendre lisibles les conditions économiques d’une trajectoire industrielle tenable.";
     if (key.includes("jurid")) return "Sécuriser les arbitrages avant qu’ils ne deviennent des risques.";
     if (key.includes("operation")) return "Faire reconnaître l’exécution comme lieu réel de transformation.";
     if (key.includes("rh") || key.includes("compet")) return "Éclairer le rôle des compétences, métiers et collectifs dans la transformation.";
     if (key.includes("energie") || key.includes("ressource")) return "Relier continuité industrielle, ressources, énergie et carbone.";
     if (key.includes("territ")) return "Faire reconnaître le territoire comme condition réelle de trajectoire industrielle.";
-    if (key.includes("techno") || key.includes("system")) return "Rendre visibles les systèmes et interfaces qui conditionnent la trajectoire.";
+    if (key.includes("techno") || key.includes("system")) return "Rendre lisibles les systèmes et interfaces qui conditionnent la trajectoire.";
     if (key.includes("strateg")) return "Installer une lecture stratégique sur les arbitrages structurants.";
     return "Faire reconnaître une lecture utile, située et préparée.";
   }
@@ -557,7 +557,7 @@
               <span>Journaliste / média</span>
               <strong>${safe(item.media)}</strong>
               <p class="lpb-panel-production">
-                <span>Formats : entretien filmé + article associé</span>
+                <span>Format : entretien filmé et article associé, diffusés dans l’un des médias partenaires : La Tribune, Le Figaro ou BFM Business</span>
                 <span>Tournage : jusqu’à décembre 2026</span>
                 <span>Diffusion : date à définir · replay permanent</span>
               </p>
@@ -823,7 +823,7 @@ function valueReadingCode(data) {
       : [
           {
             label: "Pour votre organisation",
-            title: `Rendre visible une lecture ${reading.toLowerCase()} de trajectoire`,
+            title: `Rendre lisible une lecture ${reading.toLowerCase()} de trajectoire`,
             intro: actorShort,
             tags: tags[0],
             headings: ["Position", "Écosystème", "Stratégique"],
@@ -871,7 +871,7 @@ function valueReadingCode(data) {
           <div class="landing-head">
             <p class="landing-kicker">Portée de la position</p>
             <h2>Ce qu’une lecture utile peut produire.</h2>
-            <p>Le point de départ n’est pas la visibilité. Une contribution solide rend visible une lecture utile ; la reconnaissance, la trace et les usages durables en sont les conséquences naturelles.</p>
+            <p>Le point de départ n’est pas l’exposition. Une contribution solide rend lisible une lecture utile ; la reconnaissance, la trace et les usages durables en sont les conséquences naturelles.</p>
           </div>
           <div class="landing-grid landing-grid--3 landing-grid--value">${cardsHtml}</div>
         </div>
@@ -883,7 +883,7 @@ function buildTrustKeys(data) {
     const reading = readingLabel(txt(data?.editorial?.type_lecture_label, data?.type_lecture));
     const keys = [
       { num: "01", title: "Hors champ", visible: ["Chiffres internes", "Sites sensibles", "Clients / fournisseurs", "Décisions confidentielles"], summary: "Ce qui ne sera pas exposé", detail: ["Pas de chiffres internes ou non publics.", "Pas de client, fournisseur ou partenaire nommé sans accord.", "Pas de site sensible, incident, contentieux ou dossier social identifiable.", "Pas de décision confidentielle, négociation en cours ou arbitrage non annoncé."] },
-      { num: "02", title: "Périmètre éditorial", visible: ["Angle limité", "Lecture de mécanisme", "Point de décision", "Niveau d’exposition"], summary: "Ce qui est cadré", detail: [`L’angle reste limité à ce que la ${reading.toLowerCase()} doit réellement éclairer.`, "Toutes les dimensions du sujet sont préparées avant l’entretien.", "Les formulations sensibles sont travaillées pour rester publiquement tenables.", "Le niveau d’exposition est ajusté avec l’organisation."] },
+      { num: "02", title: "Périmètre éditorial", visible: ["Angle limité", "Lecture de mécanisme", "Point de décision", "Niveau d’exposition"], summary: "Ce qui est cadré", detail: [`L’angle reste limité à ce que la ${reading.toLowerCase()} doit réellement éclairer.`, "Toutes les dimensions du sujet sont préparées avant l’entretien.", "Les formulations sensibles sont préparées pour préserver la justesse de la contribution et le cadre convenu.", "Le niveau d’exposition est ajusté avec l’organisation."] },
       { num: "03", title: "Préparation média", visible: ["Trame média", "Relances journaliste", "Pense-bête", "Production"], summary: "Ce qui est préparé", detail: ["La trame média sera utile avant l’entretien pour sécuriser le périmètre.", "Les questions sur les tensions, arbitrages et moments de décision sont anticipées.", "La trame média aidera l’intervenant à garder le fil sans réciter une communication.", "La coordination avec la production permet de préserver la cohérence éditoriale."] },
       { num: "04", title: "Validation organisationnelle", visible: ["Communication", "Juridique", "Affaires publiques", "Direction"], summary: "Qui peut sécuriser", detail: ["Les équipes communication, juridiques, affaires publiques ou direction peuvent être associées.", "La trame média sera relue et validée avant l’entretien pour sécuriser le périmètre.", "Un échange peut avoir lieu avant montage afin de vérifier la justesse du propos.", "Des ajustements éditoriaux peuvent éviter une exposition involontaire, sans transformer l’entretien en contenu contrôlé."] },
       { num: "05", title: "Confidentialité", visible: ["NDA", "Échanges protégés", "Documents non publics", "Périmètre sensible"], summary: "Ce qui reste protégé", detail: ["Les échanges préparatoires peuvent être couverts par un accord de confidentialité.", "Les documents de travail ne sont pas publics.", "Le périmètre sensible est identifié en amont.", "Aucun élément confidentiel n’est utilisé sans accord."] },
@@ -911,7 +911,7 @@ function buildTrustKeys(data) {
         <div class="landing-container">
           <div class="landing-head landing-head--keys">
             <p class="landing-kicker">Cadre de confiance</p>
-            <h2>Une prise de parole visible, préparée et maîtrisée.</h2>
+            <h2>Une contribution préparée dans un cadre clair et maîtrisé.</h2>
             <p>Le cadre éditorial précise ce qui reste hors champ, ce qui peut être travaillé, les validations utiles et les conditions d’engagement avant toute production.</p>
           </div>
           <div class="trust-keys-grid trust-keys-grid--six trust-keys-grid--all" aria-label="Les six points de sécurisation éditoriale">
@@ -939,7 +939,7 @@ function buildTrustKeys(data) {
           <div class="more-concept-grid">
             <article><span>Dispositif éditorial</span><h3>Des contributions situées, pas des prises de parole isolées</h3><p>Scènes d’Arbitrage ne juxtapose pas des témoignages. Chaque contribution éclaire un arbitrage depuis une fonction, une responsabilité ou une expérience précise.</p></article>
             <article><span>Mise en regard</span><h3>Les quatre lectures de cette conversation</h3><p>${safe(readings.charAt(0).toUpperCase() + readings.slice(1))} éclairent le même sujet depuis des positions différentes. La valeur naît de leur articulation.</p></article>
-            <article><span>Formats média</span><h3>Des formats existants, une composition Scènes d’Arbitrage</h3><p>Le dispositif s’appuie sur des journalistes, des médias et des formats partenaires. L’enjeu n’est pas d’empiler des passages média, mais de composer une conversation éditoriale cohérente.</p></article>
+            <article><span>Formats média</span><h3>Un entretien filmé et un article associé</h3><p>La contribution est produite avec un journaliste économique et diffusée dans l’un des médias partenaires : La Tribune, Le Figaro ou BFM Business. Elle rejoint une conversation éditoriale cohérente plutôt qu’une succession de passages média.</p></article>
           </div>
         </div>
       </section>`;
