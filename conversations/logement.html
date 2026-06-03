@@ -4,28 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>Conversations — Logement &amp; fabrique des territoires | Scènes d'Arbitrage</title>
-<meta content="Cycle Logement &amp; fabrique des territoires : des conversations pour éclairer les conditions de décision qui rendent les opérations, la production du logement et la fabrique territoriale plus lisibles." name="description"/>
+<title>Conversations — Immobilier &amp; fabrique des territoires | Scènes d'Arbitrage</title>
+<meta content="Cycle Immobilier &amp; fabrique des territoires : des conversations pour éclairer les opérations résidentielles, tertiaires et industrielles, au croisement du foncier, du financement, de la conception, de la commercialisation et du territoire." name="description"/>
 <link href="https://scenesdarbitrage.fr/conversations/logement.html" rel="canonical"/>
 <meta content="index,follow" name="robots"/>
 <meta content="#111111" name="theme-color"/>
 <meta content="website" property="og:type"/>
 <meta content="fr_FR" property="og:locale"/>
 <meta content="Scènes d'Arbitrage" property="og:site_name"/>
-<meta content="Conversations — Logement &amp; fabrique des territoires | Scènes d'Arbitrage" property="og:title"/>
-<meta content="Des conversations pour éclairer les conditions de décision qui rendent les opérations, la production du logement et la fabrique territoriale plus lisibles." property="og:description"/>
+<meta content="Conversations — Immobilier &amp; fabrique des territoires | Scènes d'Arbitrage" property="og:title"/>
+<meta content="Des conversations pour rendre lisibles les opérations résidentielles, tertiaires et industrielles qui transforment les lieux où l’on habite, travaille et produit." property="og:description"/>
 <meta content="https://scenesdarbitrage.fr/conversations/logement.html" property="og:url"/>
 <meta content="https://scenesdarbitrage.fr/images/en-plateau-social.webp" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Conversations — Logement &amp; fabrique des territoires | Scènes d'Arbitrage" name="twitter:title"/>
-<meta content="Des conversations pour éclairer les conditions de décision qui rendent les opérations, la production du logement et la fabrique territoriale plus lisibles." name="twitter:description"/>
+<meta content="Conversations — Immobilier &amp; fabrique des territoires | Scènes d'Arbitrage" name="twitter:title"/>
+<meta content="Des conversations pour rendre lisibles les opérations résidentielles, tertiaires et industrielles qui transforment les lieux où l’on habite, travaille et produit." name="twitter:description"/>
 <meta content="https://scenesdarbitrage.fr/images/en-plateau-social.webp" name="twitter:image"/>
 <link href="/images/favicon-en-plateau.svg" rel="icon" type="image/svg+xml"/>
 <link href="/images/Favenplateau.png" rel="icon" sizes="96x96" type="image/png"/>
 <link href="/images/Favenplateau.png" rel="apple-touch-icon"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="/assets/css/layout.css" rel="stylesheet"/>
-<link href="/assets/css/pages.css" rel="stylesheet"/>
+<link href="/assets/css/pages.css?v=20260603-conversations-immobilier-v1" rel="stylesheet"/>
 <style>
     body.page-conversations-logement {
       background: var(--p3-paper, #faf8f5);
@@ -624,12 +624,12 @@
   
     /* Correctif accordéon : libellé à droite uniquement */
     .ci-conv__hint,
-    body.page-conversations-industrie .ci-conv__hint {
+    body.page-conversations-logement .ci-conv__hint {
       display: none !important;
     }
 
     .ci-conv__control,
-    body.page-conversations-industrie .ci-conv__control {
+    body.page-conversations-logement .ci-conv__control {
       display: inline-flex;
       flex-direction: column;
       align-items: center;
@@ -640,7 +640,7 @@
     }
 
     .ci-conv__control-label,
-    body.page-conversations-industrie .ci-conv__control-label {
+    body.page-conversations-logement .ci-conv__control-label {
       font-family: var(--font-mono, "IBM Plex Mono", monospace);
       font-size: .58rem;
       line-height: 1.2;
@@ -649,7 +649,39 @@
       white-space: nowrap;
       color: currentColor;
     }
-  </style>
+  
+    /* =========================================================
+       CONVERSATIONS IMMOBILIER — HARMONISATION PUBLIQUE V1 — 20260603
+    ========================================================= */
+    .ci-cycle-scope {
+      display:block; margin:0 0 18px;
+      font-family:var(--font-mono,"IBM Plex Mono",monospace);
+      font-size:.62rem; line-height:1.6; letter-spacing:.13em;
+      text-transform:uppercase; color:var(--p3-accent-soft,#b8d0ff);
+    }
+    .ci-conv__toggle { display:none !important; }
+    .ci-conv__control {
+      flex-direction:row !important; justify-content:center; min-width:auto !important;
+      padding:0 0 8px; border-bottom:1px solid currentColor;
+    }
+    .ci-conv__control-label { font-size:.6rem !important; letter-spacing:.14em !important; }
+    .ci-conv__control-label::after {
+      content:"  →"; margin-left:10px; font-family:var(--font-body,"IBM Plex Sans",sans-serif);
+      font-size:.86rem; font-weight:400; letter-spacing:0;
+    }
+    .ci-actions a, .ci-conv-cta a {
+      min-height:0 !important; padding:0 0 9px !important; background:transparent !important;
+      border:0 !important; border-bottom:1px solid currentColor !important; color:inherit !important;
+      font-family:var(--font-mono,"IBM Plex Mono",monospace) !important;
+      font-size:.62rem !important; font-weight:500 !important; letter-spacing:.15em !important;
+    }
+    .ci-actions a:first-child, .ci-conv-cta a:first-of-type {
+      background:transparent !important; border:0 !important;
+      border-bottom:1px solid currentColor !important; color:inherit !important;
+    }
+    .ci-section--dark .ci-actions a, .ci-conv-cta a { color:var(--p3-accent-soft,#b8d0ff) !important; }
+    /* PUBLISH CHECK — CONVERSATIONS IMMOBILIER ALIGNÉE V1 — 20260603 */
+</style>
 </head>
 <body class="page-interior page-interior-3 page-conversations-logement">
 <div id="site-header"></div>
@@ -659,31 +691,27 @@
 <div class="ci-container">
 <div class="ci-hero__grid">
 <div class="ci-hero__copy">
-<div class="ci-kicker">Conversations · Logement</div>
-<h1>Logement &amp; fabrique des territoires</h1>
-<p class="ci-hero__lead">
-              Un cycle pour éclairer les conditions de décision qui rendent les opérations, la production du logement et la fabrique territoriale plus lisibles.
-            </p>
-<p class="ci-hero__note">
-              Les conversations publiques donnent à voir les grandes questions du cycle. L’échange éditorial permet ensuite d’identifier la lecture, l’angle et le niveau de contribution les plus pertinents.
-            </p>
+<div class="ci-kicker">Conversations · Immobilier</div>
+<h1>Immobilier &amp; fabrique des territoires</h1>
+<span class="ci-cycle-scope">Logement · immobilier tertiaire · immobilier industriel</span><p class="ci-hero__lead">Un cycle pour rendre lisibles les décisions qui transforment les lieux où l’on habite, travaille et produit : montage, financement, conception, construction, transformation, commercialisation et inscription territoriale.</p>
+<p class="ci-hero__note">Les conversations publiques présentent les grandes questions du cycle. Lorsqu’une lecture semble pertinente, l’échange éditorial permet d’explorer le sujet et de vérifier l’intérêt de poursuivre ; une note de positionnement peut ensuite préciser le cadre éditorial et le cadre d’intervention.</p>
 </div>
-<aside aria-label="Conversations du cycle Logement" class="ci-hero__side">
+<aside aria-label="Conversations du cycle Immobilier et fabrique des territoires" class="ci-hero__side">
 <div class="ci-hero-card">
 <h3>Conversation 1</h3>
-<p>Comment préserver l’équilibre d’une opération ?</p>
+<p>Comment préserver l’équilibre d’une opération immobilière lorsque ses conditions évoluent ?</p>
 </div>
 <div class="ci-hero-card">
 <h3>Conversation 2</h3>
-<p>Comment produire dans des conditions plus exigeantes ?</p>
+<p>Comment développer les lieux où l’on habite, travaille et produit dans des conditions plus exigeantes ?</p>
 </div>
 <div class="ci-hero-card">
 <h3>Conversation 3</h3>
-<p>Comment arbitrer entre transformation, adaptation et reconstruction ?</p>
+<p>Comment arbitrer entre transformation, adaptation et développement neuf d’un actif ?</p>
 </div>
 <div class="ci-hero-card">
 <h3>Conversation 4</h3>
-<p>Qui rend une opération possible, lisible et durablement pilotable ?</p>
+<p>Comment coordonner les acteurs qui rendent une opération immobilière durablement pilotable ?</p>
 </div>
 </aside>
 </div>
@@ -695,38 +723,26 @@
 <div aria-hidden="true" class="ci-visual ci-visual--principle"></div>
 <div class="ci-copy">
 <div class="ci-kicker">Point de départ</div>
-<h2>Quatre conversations pour lire les conditions qui structurent la fabrique du logement.</h2>
-<p>
-              Le cycle Logement s’organise autour de quatre questions majeures :
-              l’équilibre de l’opération, la capacité à produire, l’arbitrage entre transformation
-              et reconstruction, et la coordination des acteurs qui rendent le projet possible.
-            </p>
-<p>
-              Chaque conversation donne à lire une situation où une opération doit être appréciée
-              à partir de plusieurs conditions de décision : financement, cadre juridique,
-              faisabilité technique, marché, exécution, usages et ancrage territorial.
-            </p>
+<h2>Quatre conversations pour éclairer les décisions immobilières qui façonnent les territoires.</h2>
+<p>Le cycle Immobilier &amp; fabrique des territoires couvre les opérations résidentielles, tertiaires et industrielles. Il aborde les lieux où l’on habite, travaille et produit depuis les conditions réelles qui permettent de les développer, les transformer ou les reconfigurer.</p>
+<p>Chaque conversation met en regard plusieurs dimensions de décision : foncier, cadre juridique, montage, financement, ingénierie, exécution, usages, commercialisation, investissement et inscription territoriale.</p>
 <div class="ci-panel">
-<p>
-                Le cadre public donne à voir une partie des angles déjà structurés.
-                Les autres lectures se travaillent dans le cadre d’un échange éditorial,
-                selon la position réellement occupée par l’intervenant.
-              </p>
+<p>Le cadre public présente une sélection d’angles déjà structurés. Les autres lectures peuvent être explorées dans le cadre d’un échange éditorial, selon la responsabilité et l’expérience de l’intervenant.</p>
 </div>
 </div>
 </div>
 <div class="ci-contexts">
 <article class="ci-context">
 <h3>Équilibre à qualifier</h3>
-<p>Lorsque l’opération doit être relue à partir de ses conditions économiques, juridiques, techniques et territoriales.</p>
+<p>Lorsque la faisabilité d’une opération résidentielle, tertiaire ou industrielle doit être relue à partir de ses conditions économiques, juridiques, commerciales et territoriales.</p>
 </article>
 <article class="ci-context">
-<h3>Production en conditions réelles</h3>
-<p>Lorsque produire, transformer ou exécuter demande de clarifier les conditions concrètes de faisabilité.</p>
+<h3>Réalisation en conditions réelles</h3>
+<p>Lorsque concevoir, construire, transformer ou commercialiser suppose de clarifier les conditions concrètes d’exécution et d’usage.</p>
 </article>
 <article class="ci-context">
-<h3>Trajectoire territoriale</h3>
-<p>Lorsque les conditions économiques, publiques, techniques ou territoriales redessinent la trajectoire de l’opération.</p>
+<h3>Transformation &amp; territoire</h3>
+<p>Lorsque l’arbitrage entre adaptation, transformation et développement neuf engage la valeur de l’actif et sa place dans le territoire.</p>
 </article>
 </div>
 </div>
@@ -736,215 +752,143 @@
 <div class="ci-head">
 <div class="ci-kicker">Conversations ouvertes</div>
 <h2>Des angles publics pour comprendre la logique des conversations.</h2>
-<p>
-            Chaque conversation présente quelques angles déjà formulés pour donner à lire
-            les questions abordées et les types de lectures attendues,
-            sans exposer l’ensemble du travail éditorial en cours.
-          </p>
+<p>Chaque conversation présente quelques angles déjà formulés pour rendre lisibles les questions abordées et les types de lectures attendues, sans exposer l’ensemble du travail éditorial en cours.</p>
 </div>
 <div aria-live="polite" class="ci-accordions">
 <article class="ci-conv">
 <button aria-expanded="false" class="ci-conv__header" type="button">
 <span>
 <span class="ci-conv__meta">Conversation 1 sur 4</span>
-<span class="ci-conv__title">Comment préserver l’équilibre d’une opération ?</span>
+<span class="ci-conv__title">Comment préserver l’équilibre d’une opération immobilière lorsque ses conditions évoluent ?</span>
 </span>
-<span class="ci-conv__control"><span aria-hidden="true" class="ci-conv__toggle">+</span><span class="ci-conv__control-label">Voir détail</span></span>
+<span class="ci-conv__control"><span class="ci-conv__control-label">Lire le détail</span></span>
 </button>
 <div class="ci-conv__body">
-<div class="ci-conv__intro">
-<p>
-                  Une opération peut continuer à avancer tout en appelant une lecture plus précise
-                  de ses équilibres économiques, juridiques, techniques, commerciaux
-                  ou territoriaux.
-                </p>
-<p><strong>Question travaillée :</strong> comprendre ce qui permet à l’opération de rester lisible, finançable, sécurisée et réalisable lorsque ses conditions d’équilibre évoluent.</p>
-</div>
+<div class="ci-conv__intro"><p>Une opération peut continuer à avancer tout en appelant une lecture plus précise de ses équilibres économiques, juridiques, commerciaux ou territoriaux, qu’elle concerne un logement, un immeuble tertiaire ou un actif industriel.</p><p><strong>Question travaillée :</strong> comprendre ce qui permet à une opération de rester finançable, sécurisée, commercialisable et réalisable lorsque ses conditions d’équilibre évoluent.</p></div>
 <div class="ci-conv-cta">
-<h3>Ici, nous ne vous présentons que 3 angles déjà structurés.</h3>
-<p>Cette conversation peut être approfondie en échange éditorial. L’échange éditorial permet de préciser les lectures encore attendues, les angles pertinents et les conditions d’une éventuelle contribution.</p>
+<h3>Trois angles publics déjà structurés sont présentés ici.</h3>
+<p>Cette conversation peut être approfondie en échange éditorial. Cet échange permet d’explorer les lectures encore attendues et de vérifier l’intérêt de poursuivre. Lorsque la lecture se confirme, une note de positionnement peut préciser le cadre éditorial et le cadre d’intervention.</p>
 <a href="/demander-un-echange-editorial.html">Demander un échange éditorial</a>
 <a href="/proposer-une-contribution.html">Signaler une contribution</a>
 </div><div class="ci-angle-grid">
 <article class="ci-angle">
 <div class="ci-angle__meta">Équilibre à qualifier · Lecture financière</div>
-<h3>Comment éclairer les choix financiers lorsque l’équilibre de l’opération devient décisif ?</h3>
-<p>
-                    Cet angle éclaire la manière dont prix de sortie, coût global, dette, fonds propres
-                    ou conditions de financement structurent la trajectoire réelle de l’opération.
-                  </p>
-<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme immobilier ou territorial à partir de votre expérience et de votre position d’observation.</div></article>
+<h3>Comment éclairer les choix financiers lorsque l’équilibre de l’opération devient décisif ?</h3>
+<p>Cet angle éclaire la manière dont coût global, dette, fonds propres, rendement attendu, prix ou valeur de sortie structurent la trajectoire réelle de l’opération.</p>
+<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il vise à éclairer un mécanisme immobilier ou territorial à partir d’une expérience et d’une position d’observation.</div></article>
 <article class="ci-angle">
 <div class="ci-angle__meta">Équilibre à qualifier · Lecture juridique / cadre</div>
-<h3>Comment sécuriser l’opération lorsque le cadre devient une condition centrale de décision ?</h3>
-<p>
-                    Cet angle rend lisible la manière dont droit des sols, autorisations, recours,
-                    obligations ou conditions de conformité orientent la trajectoire du projet.
-                  </p>
-<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme immobilier ou territorial à partir de votre expérience et de votre position d’observation.</div></article>
+<h3>Comment sécuriser l’opération lorsque le cadre devient une condition centrale de décision ?</h3>
+<p>Cet angle rend lisible la manière dont foncier, droit des sols, autorisations, obligations ou conditions de conformité orientent une opération résidentielle, tertiaire ou industrielle.</p>
+<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il vise à éclairer un mécanisme immobilier ou territorial à partir d’une expérience et d’une position d’observation.</div></article>
 <article class="ci-angle">
-<div class="ci-angle__meta">Équilibre à qualifier · Lecture opérationnelle</div>
-<h3>Comment l’exécution rend-elle visibles les conditions réelles de faisabilité du projet ?</h3>
-<p>
-                    Cet angle part de l’organisation concrète du projet : calendrier, coordination,
-                    aléas, capacité de production, arbitrages de chantier et conditions absorbées dans l’exécution.
-                  </p>
-<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme immobilier ou territorial à partir de votre expérience et de votre position d’observation.</div></article>
+<div class="ci-angle__meta">Équilibre à qualifier · Lecture marché / commercialisation</div>
+<h3>Comment la demande et les usages requalifient-ils l’équilibre d’un actif ?</h3>
+<p>Cet angle met en regard programmation, commercialisation, occupation, usages attendus et capacité du marché à soutenir l’opération.</p>
+<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il vise à éclairer un mécanisme immobilier ou territorial à partir d’une expérience et d’une position d’observation.</div></article>
 </div>
-
 </div>
 </article>
 <article class="ci-conv">
 <button aria-expanded="false" class="ci-conv__header" type="button">
 <span>
 <span class="ci-conv__meta">Conversation 2 sur 4</span>
-<span class="ci-conv__title">Comment produire dans des conditions plus exigeantes ?</span>
+<span class="ci-conv__title">Comment développer les lieux où l’on habite, travaille et produit dans des conditions plus exigeantes ?</span>
 </span>
-<span class="ci-conv__control"><span aria-hidden="true" class="ci-conv__toggle">+</span><span class="ci-conv__control-label">Voir détail</span></span>
+<span class="ci-conv__control"><span class="ci-conv__control-label">Lire le détail</span></span>
 </button>
 <div class="ci-conv__body">
-<div class="ci-conv__intro">
-<p>
-                  Produire reste possible dans des conditions très différentes selon les territoires,
-                  les marchés, les coûts, les usages, l’acceptabilité, l’organisation
-                  et les capacités de réalisation.
-                </p>
-<p><strong>Question travaillée :</strong> comprendre comment la production de logement reste possible lorsque ses conditions économiques, territoriales, techniques et d’usage deviennent plus exigeantes.</p>
-</div>
+<div class="ci-conv__intro"><p>Développer une opération reste possible dans des conditions différentes selon les marchés, les coûts, le foncier, les usages, les exigences techniques, l’acceptabilité et les capacités de réalisation.</p><p><strong>Question travaillée :</strong> comprendre comment des opérations résidentielles, tertiaires ou industrielles peuvent être développées lorsque leurs conditions économiques, techniques, commerciales et territoriales deviennent plus exigeantes.</p></div>
 <div class="ci-conv-cta">
-<h3>Ici, nous ne vous présentons que 3 angles déjà structurés.</h3>
-<p>Cette conversation peut être approfondie en échange éditorial. L’échange éditorial permet de préciser les lectures encore attendues, les angles pertinents et les conditions d’une éventuelle contribution.</p>
+<h3>Trois angles publics déjà structurés sont présentés ici.</h3>
+<p>Cette conversation peut être approfondie en échange éditorial. Cet échange permet d’explorer les lectures encore attendues et de vérifier l’intérêt de poursuivre. Lorsque la lecture se confirme, une note de positionnement peut préciser le cadre éditorial et le cadre d’intervention.</p>
 <a href="/demander-un-echange-editorial.html">Demander un échange éditorial</a>
 <a href="/proposer-une-contribution.html">Signaler une contribution</a>
 </div><div class="ci-angle-grid">
 <article class="ci-angle">
-<div class="ci-angle__meta">Production en conditions réelles · Lecture territoriale</div>
-<h3>Comment inscrire la production de logement dans des conditions territoriales durables ?</h3>
-<p>
-                    Cet angle éclaire les conditions de production liées au foncier, aux infrastructures,
-                    à l’acceptabilité, aux usages et aux temporalités territoriales.
-                  </p>
-<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme immobilier ou territorial à partir de votre expérience et de votre position d’observation.</div></article>
+<div class="ci-angle__meta">Réalisation en conditions réelles · Lecture montage / faisabilité</div>
+<h3>Comment structurer une opération lorsque foncier, coûts et programmation doivent être arbitrés ensemble ?</h3>
+<p>Cet angle fait apparaître les conditions de montage qui rendent possible un programme résidentiel, tertiaire ou industriel sans dissocier ses usages de son équilibre.</p>
+<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il vise à éclairer un mécanisme immobilier ou territorial à partir d’une expérience et d’une position d’observation.</div></article>
 <article class="ci-angle">
-<div class="ci-angle__meta">Production en conditions réelles · Lecture cadre / urbanisme</div>
-<h3>Comment articuler règles, coûts et faisabilité lorsque les conditions de production évoluent ?</h3>
-<p>
-                    Cet angle fait apparaître les articulations entre exigences réglementaires,
-                    équilibre économique, conditions foncières et capacité réelle de production.
-                  </p>
-<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme immobilier ou territorial à partir de votre expérience et de votre position d’observation.</div></article>
+<div class="ci-angle__meta">Réalisation en conditions réelles · Lecture ingénierie / exécution</div>
+<h3>Comment les choix techniques rendent-ils lisibles les conditions réelles de réalisation ?</h3>
+<p>Cet angle part de la conception, de la transformation, du calendrier, des interfaces techniques et des performances atteignables pour qualifier la faisabilité réelle.</p>
+<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il vise à éclairer un mécanisme immobilier ou territorial à partir d’une expérience et d’une position d’observation.</div></article>
 <article class="ci-angle">
-<div class="ci-angle__meta">Production en conditions réelles · Lecture marché / usages</div>
-<h3>Comment la demande réelle aide-t-elle à qualifier ce qui peut être produit ?</h3>
-<p>
-                    Cet angle relie commercialisation, usages, prix, capacité d’absorption
-                    et positionnement de l’offre dans les territoires.
-                  </p>
-<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme immobilier ou territorial à partir de votre expérience et de votre position d’observation.</div></article>
+<div class="ci-angle__meta">Réalisation en conditions réelles · Lecture territoriale</div>
+<h3>Comment inscrire une opération dans les conditions concrètes de son territoire ?</h3>
+<p>Cet angle éclaire les conditions liées au foncier, aux infrastructures, aux mobilités, à l’acceptabilité, aux usages et aux temporalités territoriales.</p>
+<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il vise à éclairer un mécanisme immobilier ou territorial à partir d’une expérience et d’une position d’observation.</div></article>
 </div>
-
 </div>
 </article>
 <article class="ci-conv">
 <button aria-expanded="false" class="ci-conv__header" type="button">
 <span>
 <span class="ci-conv__meta">Conversation 3 sur 4</span>
-<span class="ci-conv__title">Comment arbitrer entre transformation, adaptation et reconstruction ?</span>
+<span class="ci-conv__title">Comment arbitrer entre transformation, adaptation et développement neuf d’un actif ?</span>
 </span>
-<span class="ci-conv__control"><span aria-hidden="true" class="ci-conv__toggle">+</span><span class="ci-conv__control-label">Voir détail</span></span>
+<span class="ci-conv__control"><span class="ci-conv__control-label">Lire le détail</span></span>
 </button>
 <div class="ci-conv__body">
-<div class="ci-conv__intro">
-<p>
-                  Transformer est souvent présenté comme une évidence. Dans les faits,
-                  l’arbitrage entre transformation, adaptation lourde et reconstruction
-                  demande une lecture précise des usages, des coûts, des performances et du territoire.
-                </p>
-<p><strong>Question travaillée :</strong> dépasser le discours d’intention pour rendre lisibles les conditions techniques, économiques, d’usage et territoriales qui orientent la décision.</p>
-</div>
+<div class="ci-conv__intro"><p>Transformer est souvent présenté comme une évidence. Dans les faits, l’arbitrage entre maintien, transformation, adaptation lourde et développement neuf demande une lecture précise des usages, des coûts, des performances et de la valeur.</p><p><strong>Question travaillée :</strong> rendre lisibles les conditions techniques, économiques, commerciales et territoriales qui orientent la trajectoire d’un actif.</p></div>
 <div class="ci-conv-cta">
-<h3>Ici, nous ne vous présentons que 3 angles déjà structurés.</h3>
-<p>Cette conversation peut être approfondie en échange éditorial. L’échange éditorial permet de préciser les lectures encore attendues, les angles pertinents et les conditions d’une éventuelle contribution.</p>
+<h3>Trois angles publics déjà structurés sont présentés ici.</h3>
+<p>Cette conversation peut être approfondie en échange éditorial. Cet échange permet d’explorer les lectures encore attendues et de vérifier l’intérêt de poursuivre. Lorsque la lecture se confirme, une note de positionnement peut préciser le cadre éditorial et le cadre d’intervention.</p>
 <a href="/demander-un-echange-editorial.html">Demander un échange éditorial</a>
 <a href="/proposer-une-contribution.html">Signaler une contribution</a>
 </div><div class="ci-angle-grid">
 <article class="ci-angle">
-<div class="ci-angle__meta">Trajectoire territoriale · Lecture technique / ingénierie</div>
-<h3>Comment apprécier le bon arbitrage entre transformation, adaptation et reconstruction ?</h3>
-<p>
-                    Cet angle éclaire les conditions techniques, les coûts moins visibles,
-                    les performances atteignables et les paramètres matériels de la transformation.
-                  </p>
-<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme immobilier ou territorial à partir de votre expérience et de votre position d’observation.</div></article>
+<div class="ci-angle__meta">Transformation &amp; territoire · Lecture technique / ingénierie</div>
+<h3>Comment apprécier le bon arbitrage entre transformer, adapter ou développer un nouvel actif ?</h3>
+<p>Cet angle éclaire les conditions techniques, les coûts moins immédiats, les performances atteignables et les contraintes matérielles de la transformation.</p>
+<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il vise à éclairer un mécanisme immobilier ou territorial à partir d’une expérience et d’une position d’observation.</div></article>
 <article class="ci-angle">
-<div class="ci-angle__meta">Trajectoire territoriale · Lecture investissement / capital</div>
-<h3>Comment éclairer l’investissement lorsque transformation, adaptation et reconstruction ouvrent des trajectoires différentes ?</h3>
-<p>
-                    Cet angle rend lisible la manière dont coût de transformation, risque,
-                    valeur attendue, horizon de détention et conditions d’exécution orientent l’arbitrage d’investissement.
-                  </p>
-<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme immobilier ou territorial à partir de votre expérience et de votre position d’observation.</div></article>
+<div class="ci-angle__meta">Transformation &amp; territoire · Lecture investissement / capital</div>
+<h3>Comment investir lorsque transformation et développement neuf ouvrent des trajectoires différentes ?</h3>
+<p>Cet angle rend lisible la manière dont risque, valeur attendue, horizon de détention, coût de transformation et conditions d’exécution orientent l’arbitrage.</p>
+<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il vise à éclairer un mécanisme immobilier ou territorial à partir d’une expérience et d’une position d’observation.</div></article>
 <article class="ci-angle">
-<div class="ci-angle__meta">Trajectoire territoriale · Lecture usages / marché</div>
-<h3>Comment les usages attendus éclairent-ils le choix entre maintenir, transformer ou reconstruire ?</h3>
-<p>
-                    Cet angle met en regard la transformation d’un actif avec les usages réels,
-                    les attentes du marché et les conditions d’appropriation territoriale.
-                  </p>
-<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme immobilier ou territorial à partir de votre expérience et de votre position d’observation.</div></article>
+<div class="ci-angle__meta">Transformation &amp; territoire · Lecture usages / marché</div>
+<h3>Comment les usages attendus éclairent-ils la transformation d’un actif ?</h3>
+<p>Cet angle met en regard le devenir d’un bâtiment avec les besoins réels des habitants, des entreprises, des activités productives et des territoires.</p>
+<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il vise à éclairer un mécanisme immobilier ou territorial à partir d’une expérience et d’une position d’observation.</div></article>
 </div>
-
 </div>
 </article>
 <article class="ci-conv">
 <button aria-expanded="false" class="ci-conv__header" type="button">
 <span>
 <span class="ci-conv__meta">Conversation 4 sur 4</span>
-<span class="ci-conv__title">Qui rend une opération possible, lisible et durablement pilotable ?</span>
+<span class="ci-conv__title">Comment coordonner les acteurs qui rendent une opération immobilière durablement pilotable ?</span>
 </span>
-<span class="ci-conv__control"><span aria-hidden="true" class="ci-conv__toggle">+</span><span class="ci-conv__control-label">Voir détail</span></span>
+<span class="ci-conv__control"><span class="ci-conv__control-label">Lire le détail</span></span>
 </button>
 <div class="ci-conv__body">
-<div class="ci-conv__intro">
-<p>
-                  Ceux qui décident, financent, sécurisent, coordonnent ou exécutent ne lisent pas
-                  toujours le projet depuis le même endroit. C’est souvent cette pluralité
-                  de responsabilités qui rend l’opération réellement compréhensible.
-                </p>
-<p><strong>Question travaillée :</strong> comprendre comment les responsabilités, les financements, la coordination et l’action publique rendent une opération possible, lisible et durablement pilotable.</p>
-</div>
+<div class="ci-conv__intro"><p>Investisseurs, promoteurs, constructeurs, aménageurs, commercialisateurs, bureaux d’études, acteurs publics et utilisateurs ne lisent pas une opération depuis le même endroit. Cette pluralité rend sa trajectoire compréhensible.</p><p><strong>Question travaillée :</strong> comprendre comment les responsabilités, les financements, la coordination technique, la commercialisation et l’action publique rendent une opération possible et pilotable.</p></div>
 <div class="ci-conv-cta">
-<h3>Ici, nous ne vous présentons que 3 angles déjà structurés.</h3>
-<p>Cette conversation peut être approfondie en échange éditorial. L’échange éditorial permet de préciser les lectures encore attendues, les angles pertinents et les conditions d’une éventuelle contribution.</p>
+<h3>Trois angles publics déjà structurés sont présentés ici.</h3>
+<p>Cette conversation peut être approfondie en échange éditorial. Cet échange permet d’explorer les lectures encore attendues et de vérifier l’intérêt de poursuivre. Lorsque la lecture se confirme, une note de positionnement peut préciser le cadre éditorial et le cadre d’intervention.</p>
 <a href="/demander-un-echange-editorial.html">Demander un échange éditorial</a>
 <a href="/proposer-une-contribution.html">Signaler une contribution</a>
 </div><div class="ci-angle-grid">
 <article class="ci-angle">
-<div class="ci-angle__meta">Coordination du projet · Lecture gouvernance</div>
-<h3>Comment répartir les responsabilités lorsque l’opération avance dans un cadre partagé ?</h3>
-<p>
-                    Cet angle distingue pouvoir de décision, responsabilité opérationnelle,
-                    exposition financière, coordination et capacité réelle à faire avancer l’opération.
-                  </p>
-<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme immobilier ou territorial à partir de votre expérience et de votre position d’observation.</div></article>
+<div class="ci-angle__meta">Coordination de l’opération · Lecture gouvernance / montage</div>
+<h3>Comment répartir les responsabilités lorsque plusieurs acteurs engagent la trajectoire de l’opération ?</h3>
+<p>Cet angle distingue pouvoir de décision, structuration du montage, exposition financière, coordination et capacité à faire avancer une opération.</p>
+<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il vise à éclairer un mécanisme immobilier ou territorial à partir d’une expérience et d’une position d’observation.</div></article>
 <article class="ci-angle">
-<div class="ci-angle__meta">Coordination du projet · Lecture opérationnelle</div>
-<h3>Comment la coordination devient-elle un point d’appui décisif de l’opération ?</h3>
-<p>
-                    Cet angle part des interfaces entre maîtrise d’ouvrage, maîtrise d’œuvre,
-                    entreprises, collectivités, financeurs et usagers.
-                  </p>
-<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme immobilier ou territorial à partir de votre expérience et de votre position d’observation.</div></article>
+<div class="ci-angle__meta">Coordination de l’opération · Lecture construction / transformation</div>
+<h3>Comment la coordination technique devient-elle un point d’appui décisif de l’opération ?</h3>
+<p>Cet angle part des interfaces entre maîtrise d’ouvrage, maîtrise d’œuvre, entreprises, ingénieries, exploitants, utilisateurs et collectivités.</p>
+<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il vise à éclairer un mécanisme immobilier ou territorial à partir d’une expérience et d’une position d’observation.</div></article>
 <article class="ci-angle">
-<div class="ci-angle__meta">Coordination du projet · Lecture action publique / territoire</div>
-<h3>Comment l’action publique éclaire-t-elle les conditions de faisabilité et d’ancrage du projet ?</h3>
-<p>
-                    Cet angle éclaire le rôle de la décision publique, des collectivités,
-                    du foncier, des priorités territoriales et des conditions d’acceptabilité.
-                  </p>
-<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il s’agit d’éclairer un mécanisme immobilier ou territorial à partir de votre expérience et de votre position d’observation.</div></article>
+<div class="ci-angle__meta">Coordination de l’opération · Lecture action publique / territoire</div>
+<h3>Comment l’action publique éclaire-t-elle les conditions de faisabilité et d’ancrage d’une opération ?</h3>
+<p>Cet angle éclaire le rôle du foncier, des collectivités, des infrastructures, des priorités territoriales et des conditions d’acceptabilité.</p>
+<div class="ci-security">L’échange ne suppose pas de commenter une opération interne, un client, un mandat ou une décision confidentielle. Il vise à éclairer un mécanisme immobilier ou territorial à partir d’une expérience et d’une position d’observation.</div></article>
 </div>
-
 </div>
 </article>
 </div>
@@ -954,26 +898,22 @@
 <div class="ci-container">
 <div class="ci-head">
 <div class="ci-kicker">Lectures attendues</div>
-<h2>Les positions ne sont pas des métiers : elles rendent des lectures situées visibles.</h2>
-<p>
-            Chaque lecture éclaire une part différente de la trajectoire d’une opération :
-            cadre, montage, financement, exécution, ingénierie, marché, capital, action publique
-            ou territoire.
-          </p>
+<h2>Les lectures ne sont pas des métiers : elles éclairent une opération depuis plusieurs responsabilités.</h2>
+<p>Chaque lecture éclaire une part différente d’une opération résidentielle, tertiaire ou industrielle : cadre, montage, financement, construction, ingénierie, marché, capital, action publique ou territoire.</p>
 </div>
 <div class="ci-reading-grid">
 <article class="ci-reading"><h3>Cadre / droit des sols</h3><p>Lire les marges de manœuvre, les conditions de décision et les leviers de sécurisation.</p></article>
-<article class="ci-reading"><h3>Montage / faisabilité</h3><p>Identifier ce qui structure l’opération, ce qui doit être clarifié et ce qui oriente la trajectoire.</p></article>
+<article class="ci-reading"><h3>Montage / faisabilité</h3><p>Identifier ce qui structure l’opération, ce qui doit être clarifié et ce qui oriente sa trajectoire.</p></article>
 <article class="ci-reading"><h3>Financement / équilibre</h3><p>Comprendre les conditions dans lesquelles l’équilibre économique soutient durablement l’opération.</p></article>
-<article class="ci-reading"><h3>Exécution / coordination</h3><p>Lire ce que l’organisation concrète rend possible, coordonne ou doit clarifier.</p></article>
-<article class="ci-reading"><h3>Ingénierie / technique</h3><p>Objectiver les paramètres matériels, les performances atteignables et les conditions de production.</p></article>
-<article class="ci-reading"><h3>Marché / usages</h3><p>Relier commercialisation, demande réelle, usages et conditions de sortie.</p></article>
-<article class="ci-reading"><h3>Investissement / capital</h3><p>Lire les arbitrages entre rendement, exposition, tempo et conditions d’exécution.</p></article>
+<article class="ci-reading"><h3>Construction / transformation</h3><p>Lire ce que l’organisation concrète rend possible, coordonne ou doit arbitrer.</p></article>
+<article class="ci-reading"><h3>Ingénierie / technique</h3><p>Objectiver les paramètres matériels, les performances atteignables et les conditions de transformation.</p></article>
+<article class="ci-reading"><h3>Marché / usages</h3><p>Relier commercialisation, demande réelle, usages et capacité d’occupation.</p></article>
+<article class="ci-reading"><h3>Investissement / capital</h3><p>Lire les arbitrages entre rendement, exposition, temporalité et conditions d’exécution.</p></article>
 <article class="ci-reading"><h3>Action publique / territoire</h3><p>Comprendre ce que l’opération doit à ses conditions territoriales.</p></article>
 </div>
 <div class="ci-actions">
 <a href="/demander-un-echange-editorial.html">Demander un échange éditorial</a>
-<a href="/positions/logement.html">Explorer les positions — Logement</a>
+<a href="/positions/logement.html">Explorer les lectures — Immobilier</a>
 </div>
 </div>
 </section>
@@ -982,19 +922,10 @@
 <div class="ci-split ci-split--reverse">
 <div class="ci-copy">
 <div class="ci-kicker">Accès</div>
-<h2>Préciser un angle suppose un échange éditorial.</h2>
-<p>
-              Le cadre public ne donne pas à voir toute la profondeur du travail en cours.
-              Il préserve l’équilibre de la composition éditoriale et permet d’aborder les lectures
-              encore attendues dans un cadre qualifié.
-            </p>
+<h2>Explorer une lecture suppose un échange éditorial.</h2>
+<p>Le cadre public ne présente pas toute la profondeur du travail en cours. Il préserve l’équilibre de la composition éditoriale et permet d’aborder les lectures encore attendues dans un cadre qualifié.</p>
 <div class="ci-panel">
-<p>
-                Demander un échange éditorial permet de préciser la place possible d’une lecture,
-                d’identifier un angle pertinent et d’évaluer les conditions d’une éventuelle contribution.
-                Signaler une contribution permet de faire examiner une position ou une situation
-                susceptible d’éclairer le cycle.
-              </p>
+<p>Demander un échange éditorial permet d’explorer le sujet identifié, de vérifier la pertinence d’une lecture et de déterminer si une suite mérite d’être formalisée. Lorsque l’intérêt se confirme, une note de positionnement peut préciser le cadre éditorial et le cadre d’intervention.</p>
 </div>
 <div class="ci-actions" style="justify-content:flex-start;">
 <a href="/demander-un-echange-editorial.html">Demander un échange éditorial</a>
@@ -1025,7 +956,7 @@
             if (btn) {
               btn.setAttribute("aria-expanded", "false");
               var label = btn.querySelector(".ci-conv__control-label");
-              if (label) label.textContent = "Voir détail";
+              if (label) label.textContent = "Lire le détail";
             }
           });
 
@@ -1033,7 +964,7 @@
             block.classList.add("is-open");
             header.setAttribute("aria-expanded", "true");
               var currentLabel = header.querySelector(".ci-conv__control-label");
-              if (currentLabel) currentLabel.textContent = "Masquer détail";
+              if (currentLabel) currentLabel.textContent = "Masquer le détail";
             window.requestAnimationFrame(function() {
               block.scrollIntoView({ behavior: "smooth", block: "start" });
             });
