@@ -981,14 +981,14 @@ function buildContact() {
                   <span>Conception et coordination éditoriale</span>
                 </figcaption>
               </figure>
-              <p>Une position éditoriale se vérifie dans un échange court. La suite reste une décision.</p>
+              <p>Une lecture éditoriale s’explore dans un échange court. La suite reste une décision.</p>
             </aside>
             <div class="qualification-cta-main">
               <p class="landing-kicker">Échange éditorial</p>
-              <h2>Certaines positions méritent simplement d’être discutées.</h2>
-              <p>L’échange permet de vérifier si la lecture envisagée mérite d’être structurée dans le cadre du cycle. Il ne demande aucune préparation particulière et peut associer, si nécessaire, les équipes communication, affaires publiques ou juridiques.</p>
+              <h2>Certaines lectures méritent simplement d’être explorées.</h2>
+              <p>L’échange permet d’explorer le sujet identifié et de vérifier si la lecture envisagée mérite d’être structurée dans le cadre du cycle. Il ne demande aucune préparation particulière et peut associer, si nécessaire, les équipes communication, affaires publiques ou juridiques.</p>
               <div class="landing-actions qualification-cta-actions">
-                <a class="landing-btn" href="${ECHANGE_URL}">Qualifier cette position — 15 min</a>
+                <a class="landing-btn" href="${ECHANGE_URL}">Explorer cette lecture — 15 min</a>
               </div>
               <p class="qualification-cta-microcopy">15 minutes · sans engagement · aucune suite automatique</p>
             </div>
@@ -1003,6 +1003,36 @@ function buildContact() {
     if (!target) return false;
     target.scrollIntoView({ behavior: behavior || "auto", block: "start" });
     return true;
+  }
+
+  function activateMobileConversationTabs() {
+    const readingInputs = ROOT.querySelectorAll("#lectures-composees .lpb-tab-input");
+    if (!readingInputs.length) return;
+
+    readingInputs.forEach(input => {
+      input.addEventListener("change", () => {
+        if (!input.checked || !window.matchMedia("(max-width: 680px)").matches) return;
+
+        const slot = input.closest(".lpb-reading-slot");
+        const panel = slot ? slot.querySelector(".lpb-mobile-panel") : null;
+        if (!panel) return;
+
+        // Attendre la fermeture du précédent panneau et l'ouverture du nouveau.
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            const stickyHeader = document.getElementById("site-header");
+            const headerHeight = stickyHeader ? stickyHeader.getBoundingClientRect().height : 0;
+            const offset = headerHeight + 14;
+            const top = panel.getBoundingClientRect().top + window.scrollY - offset;
+
+            window.scrollTo({
+              top: Math.max(0, top),
+              behavior: "smooth"
+            });
+          });
+        });
+      });
+    });
   }
 
   function activateRenderedSectionNavigation() {
@@ -1038,6 +1068,7 @@ function buildContact() {
       buildContact()                   // 9. Échange éditorial
     ].join("");
     activateRenderedSectionNavigation();
+    activateMobileConversationTabs();
   }
 
   async function init() {
@@ -1067,3 +1098,7 @@ function buildContact() {
 })();
 
 /* PUBLISH CHECK — LANDING MEDIA SELECTIONNE CARTE DETAIL V1 — 20260603 */
+
+/* PUBLISH CHECK — LANDING MOBILE TABS AUTO SCROLL DETAIL V1 — 20260603 */
+
+/* PUBLISH CHECK — LANDING CONTACT VOCABULAIRE LECTURES V1 — 20260603 */
