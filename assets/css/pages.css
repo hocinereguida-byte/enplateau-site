@@ -3342,3 +3342,22 @@ body.page-conversations .page3-section-light .link--primary {
 }
 
 /* PUBLISH CHECK — CONVERSATIONS HARMONISATION DOCTRINE V1 — 20260603 */
+
+
+/* =========================================================
+   CONVERSATIONS — CYCLE IMMOBILIER & FABRIQUE DES TERRITOIRES — 20260603
+   Sous-libellé : logement / immobilier tertiaire / immobilier industriel.
+========================================================= */
+
+body.page-conversations .programme-cycle-scope {
+  margin: -4px 0 18px !important;
+  font-family: var(--font-mono);
+  font-size: .61rem !important;
+  font-weight: 500;
+  line-height: 1.55 !important;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--p3-accent-deep) !important;
+}
+
+/* PUBLISH CHECK — CYCLE IMMOBILIER & FABRIQUE DES TERRITOIRES V1 — 20260603 */
