@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/layout.css">
-  <link rel="stylesheet" href="/assets/css/pages.css">
+  <link rel="stylesheet" href="/assets/css/pages.css?v=20260603-conversations-industrie-api-v1">
 
   <style>
     body.page-conversations-industrie {
@@ -720,6 +720,65 @@
       white-space: nowrap;
       color: currentColor;
     }
+  
+
+    /* =========================================================
+       HARMONISATION 20260603 — LECTURES / DOCTRINE / CTA PREMIUM
+       ========================================================= */
+
+    body.page-conversations-industrie .ci-conv__toggle {
+      display: none !important;
+    }
+
+    body.page-conversations-industrie .ci-conv__control {
+      flex-direction: row !important;
+      min-width: auto !important;
+      padding: 0 0 8px;
+      border-bottom: 1px solid currentColor;
+    }
+
+    body.page-conversations-industrie .ci-conv__control-label {
+      font-size: .6rem !important;
+      letter-spacing: .14em !important;
+    }
+
+    body.page-conversations-industrie .ci-conv__control-label::after {
+      content: "  →";
+      font-family: var(--font-body, "IBM Plex Sans", sans-serif);
+      font-size: .86rem;
+      margin-left: 10px;
+      letter-spacing: 0;
+    }
+
+    body.page-conversations-industrie .ci-actions a,
+    body.page-conversations-industrie .ci-conv-cta a {
+      min-height: 0 !important;
+      padding: 0 0 9px !important;
+      background: transparent !important;
+      border: 0 !important;
+      border-bottom: 1px solid currentColor !important;
+      color: inherit !important;
+      font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
+      font-size: .62rem !important;
+      font-weight: 500 !important;
+      letter-spacing: .15em !important;
+    }
+
+    body.page-conversations-industrie .ci-actions a:first-child,
+    body.page-conversations-industrie .ci-conv-cta a:first-of-type {
+      background: transparent !important;
+      border: 0 !important;
+      border-bottom: 1px solid currentColor !important;
+      color: inherit !important;
+    }
+
+    body.page-conversations-industrie .ci-section--dark .ci-actions a,
+    body.page-conversations-industrie .ci-conv-cta a {
+      color: var(--p3-accent-soft, #b8d0ff) !important;
+    }
+
+    /* PUBLISH CHECK — CONVERSATIONS INDUSTRIE WORKER API V1 — 20260603 */
+
   </style>
 </head>
 
@@ -740,14 +799,14 @@
   activité, interdépendances, outil productif, ressources, compétences, financement et territoires.
 </p>
 <p class="ci-hero__note" id="ciHeroNote">
-  Les conversations publiques donnent à voir les grandes questions du cycle.
-  L’échange éditorial permet ensuite d’identifier la lecture, l’angle et le niveau de contribution les plus pertinents.
+  Les conversations publiques rendent lisibles les grandes questions du cycle.
+  Lorsqu’une lecture semble pertinente, l’échange éditorial permet d’explorer le sujet et de vérifier l’intérêt de poursuivre ; une note de positionnement peut ensuite préciser le cadre éditorial et le cadre d’intervention.
 </p>          </div>
 
           <aside class="ci-hero__side" id="ciHeroCards" aria-label="Conversations du cycle">
             <div class="ci-hero-card">
               <h2>Cycle Industrie</h2>
-              <p>Quatre conversations structurantes, douze angles potentiels par conversation, trois angles publics présentés ici.</p>
+              <p>Quatre conversations structurantes, plusieurs lectures mises en regard et une sélection d’angles publics présentés ici.</p>
             </div>
           </aside>
         </div>
@@ -761,7 +820,7 @@
 
           <div class="ci-copy">
             <div class="ci-kicker">Point de départ</div>
-            <h2>Quatre conversations pour lire les conditions qui structurent les trajectoires industrielles.</h2>
+            <h2>Quatre conversations pour rendre lisibles les conditions qui structurent une trajectoire industrielle.</h2>
 <p>
   Le cycle Industrie s’organise autour de quatre questions majeures :
   le pilotage de la croissance, les interdépendances qui structurent les décisions,
@@ -773,9 +832,9 @@
 </p>
 <div class="ci-panel">
   <p>
-    Le cadre public donne à voir une partie des angles déjà structurés.
-    Les autres lectures se travaillent dans le cadre d’un échange éditorial,
-    selon la position réellement occupée par l’intervenant.
+    Le cadre public présente une partie des angles déjà structurés.
+    Les autres lectures peuvent être explorées dans le cadre d’un échange éditorial,
+    selon la responsabilité et l’expérience de l’intervenant.
   </p>
 </div>
             </div>
@@ -792,7 +851,7 @@
           <div class="ci-kicker">Conversations ouvertes</div>
           <h2>Des angles publics pour comprendre la logique des conversations.</h2>
 <p>
-  Chaque conversation présente quelques angles déjà formulés pour donner à lire
+  Chaque conversation présente quelques angles déjà formulés pour rendre lisibles
   les questions abordées et les types de lectures attendues,
   sans exposer l’ensemble du travail éditorial en cours.
 </p>        </div>
@@ -806,7 +865,7 @@
       <div class="ci-container">
         <div class="ci-head">
           <div class="ci-kicker">Lectures attendues</div>
-          <h2>Les positions ne sont pas des métiers : elles rendent des lectures situées visibles.</h2>
+          <h2>Les lectures ne sont pas des métiers : elles éclairent une trajectoire depuis plusieurs responsabilités.</h2>
           <p>
   Chaque lecture éclaire une part différente de la trajectoire industrielle :
   stratégie, finance, droit, opérations, compétences, technologie, territoire
@@ -818,7 +877,7 @@
 
         <div class="ci-actions">
           <a href="/demander-un-echange-editorial.html">Demander un échange éditorial</a>
-          <a href="/positions/industrie.html">Explorer les positions — Industrie</a>
+          <a href="/positions/industrie.html">Explorer les lectures — Industrie</a>
         </div>
       </div>
     </section>
@@ -830,16 +889,13 @@
             <div class="ci-kicker">Accès</div>
             <h2>Préciser un angle suppose un échange éditorial.</h2>
 <p>
-  Le cadre public ne donne pas à voir toute la profondeur du travail en cours.
+  Le cadre public ne présente pas toute la profondeur du travail en cours.
   Il préserve l’équilibre de la composition éditoriale et permet d’aborder les lectures
   encore attendues dans un cadre qualifié.
 </p>
             <div class="ci-panel">
               <p>
-  Demander un échange éditorial permet de préciser la place possible d’une lecture,
-  d’identifier un angle pertinent et d’évaluer les conditions d’une éventuelle contribution.
-  Signaler une contribution permet de faire examiner une position ou une situation
-  susceptible d’éclairer le cycle.
+  Demander un échange éditorial permet d’explorer le sujet identifié, de vérifier la pertinence d’une lecture et de déterminer si une suite mérite d’être formalisée. Lorsque l’intérêt se confirme, une note de positionnement peut préciser le cadre éditorial et le cadre d’intervention. Signaler une contribution permet de faire connaître une expérience ou une lecture susceptible d’éclairer le cycle.
 </p>
             </div>
             <div class="ci-actions" style="justify-content:flex-start;">
@@ -857,13 +913,13 @@
   <div id="site-footer"></div>
   <div id="cookie-container"></div>
 
-  <script src="/assets/js/editorial-data-industrie-v65.js?v=67"></script>
   <script src="/assets/js/layout.js"></script>
   <script src="/assets/js/main.js"></script>
 
   <script>
     (function() {
-      var data = window.EN_PLATEAU_EDITORIAL_DATA;
+      var data = null;
+      var EDITORIAL_PUBLIC_API = "/api/editorial/public-cycle?code=IND";
 
       var PUBLIC_CONTEXT_LABELS = {
         "CST": "Croissance à piloter",
@@ -883,7 +939,7 @@
         "RSS": "Lorsque la trajectoire appelle une reconfiguration plus profonde de ses équilibres : outil, ressources, compétences, position et capacité d’avenir."
       };
 
-      var PUBLIC_CONVERSATIONS = [
+      var PUBLIC_CONVERSATIONS_FALLBACK = [
         {
           title: "Comment piloter la croissance industrielle lorsque chaque arbitrage compte davantage ?",
           description: "Cette conversation éclaire les moments où la croissance ne se résume plus à produire davantage : elle demande de qualifier les conditions réelles d’exécution, de financement, de compétences, de ressources et d’ancrage.",
@@ -911,8 +967,20 @@
         return document.getElementById(id);
       }
 
+      function applyDoctrine(value) {
+        return String(value == null ? "" : value)
+          .replace(/croissance sous tension/gi, "croissance à piloter")
+          .replace(/adaptation sous contrainte/gi, "pilotage en conditions réelles")
+          .replace(/réinvention sous crise/gi, "reconfiguration de trajectoire")
+          .replace(/reinvention sous crise/gi, "reconfiguration de trajectoire")
+          .replace(/rendre visibles/gi, "rendre lisibles")
+          .replace(/rend visibles/gi, "rend lisibles")
+          .replace(/donne à voir/gi, "présente")
+          .replace(/positions publiques/gi, "lectures publiques");
+      }
+
       function esc(value) {
-        return String(value || "")
+        return applyDoctrine(value)
           .replace(/&/g, "&amp;")
           .replace(/</g, "&lt;")
           .replace(/>/g, "&gt;")
@@ -955,10 +1023,11 @@
       }
 
       function getPublicConversation(conv, index) {
-        return PUBLIC_CONVERSATIONS[index] || {
-          title: conv.title || conv.landingTitle || "",
-          description: conv.description || "",
-          question: conv.tension || ""
+        var apiConversation = conv || {};
+        return {
+          title: applyDoctrine(apiConversation.publicTitle || apiConversation.title || apiConversation.label || (PUBLIC_CONVERSATIONS_FALLBACK[index] || {}).title || ""),
+          description: applyDoctrine(apiConversation.publicDescription || apiConversation.description || (PUBLIC_CONVERSATIONS_FALLBACK[index] || {}).description || ""),
+          question: applyDoctrine(apiConversation.publicQuestion || apiConversation.question || apiConversation.tension || (PUBLIC_CONVERSATIONS_FALLBACK[index] || {}).question || "")
         };
       }
 
@@ -1020,7 +1089,7 @@
           "Un cycle pour éclairer les trajectoires industrielles à partir de leurs conditions réelles : activité, interdépendances, outil productif, ressources, compétences, financement et territoires.";
 
         byId("ciHeroNote").textContent =
-          "Les conversations publiques donnent à voir les grandes questions du cycle. L’échange éditorial permet ensuite d’identifier la lecture, l’angle et le niveau de contribution les plus pertinents.";
+          "Les conversations publiques rendent lisibles les grandes questions du cycle. Lorsqu’une lecture semble pertinente, l’échange éditorial permet d’explorer le sujet et de vérifier l’intérêt de poursuivre ; une note de positionnement peut ensuite préciser le cadre éditorial et le cadre d’intervention.";
 
         byId("ciHeroCards").innerHTML = (cycle.conversations || []).map(function(conv, index) {
           var publicConv = getPublicConversation(conv, index);
@@ -1107,7 +1176,7 @@ function renderDimensions(angle) {
                 '<span class="ci-conv__title">' + esc(getPublicConversation(conv, index).title) + '</span>' +
                 '<span class="ci-conv__hint">Voir un exemple d’angles traités dans cette conversation</span>' +
               '</span>' +
-              '<span class="ci-conv__control"><span class="ci-conv__toggle" aria-hidden="true">+</span><span class="ci-conv__control-label">Voir détail</span></span>' +
+              '<span class="ci-conv__control"><span class="ci-conv__control-label">Lire le détail</span></span>' +
             '</button>' +
             '<div class="ci-conv__body">' +
               '<div class="ci-conv__intro">' +
@@ -1115,8 +1184,8 @@ function renderDimensions(angle) {
                 (getPublicConversation(conv, index).question ? '<p><strong>Question travaillée :</strong> ' + esc(getPublicConversation(conv, index).question) + '</p>' : '') +
               '</div>' +
               '<div class="ci-conv-cta">' +
-                '<h3>Ici, nous présentons trois angles publics déjà structurés.</h3>' +
-                '<p>Cette conversation peut être approfondie en échange éditorial. L’échange éditorial permet de préciser les lectures encore attendues, les angles pertinents et les conditions d’une éventuelle contribution.</p>' +
+                '<h3>Trois angles publics déjà structurés sont présentés ici.</h3>' +
+                '<p>Cette conversation peut être approfondie en échange éditorial. Cet échange permet d’explorer les lectures encore attendues et de vérifier l’intérêt de poursuivre. Lorsque la lecture se confirme, une note de positionnement peut préciser le cadre éditorial et le cadre d’intervention.</p>' +
                 '<a href="/demander-un-echange-editorial.html">Demander un échange éditorial</a> ' +
                 '<a href="/proposer-une-contribution.html">Signaler une contribution</a>' +
               '</div>' +
@@ -1139,7 +1208,7 @@ function renderDimensions(angle) {
               if (btn) {
               btn.setAttribute("aria-expanded", "false");
               var label = btn.querySelector(".ci-conv__control-label");
-              if (label) label.textContent = "Voir détail";
+              if (label) label.textContent = "Lire le détail";
             }
             });
 
@@ -1147,7 +1216,7 @@ function renderDimensions(angle) {
               block.classList.add("is-open");
               header.setAttribute("aria-expanded", "true");
               var currentLabel = header.querySelector(".ci-conv__control-label");
-              if (currentLabel) currentLabel.textContent = "Masquer détail";
+              if (currentLabel) currentLabel.textContent = "Masquer le détail";
               window.requestAnimationFrame(function() {
                 block.scrollIntoView({ behavior: "smooth", block: "start" });
               });
@@ -1156,17 +1225,25 @@ function renderDimensions(angle) {
         });
       }
 
-      function render() {
-        if (!data) {
+      async function render() {
+        try {
+          var response = await fetch(EDITORIAL_PUBLIC_API, { headers: { "Accept": "application/json" } });
+          var json = await response.json().catch(function() { return null; });
+          if (!response.ok || !json || !json.ok || !json.data) {
+            throw new Error((json && json.error) || "editorial_public_api_unavailable");
+          }
+          data = json.data;
+        } catch (error) {
+          console.error("conversations-industrie — erreur API éditoriale", error);
           byId("ciLoading").className = "ci-error";
-          byId("ciLoading").textContent = "Le fichier Industrie n’est pas chargé. Vérifiez le chemin /assets/js/editorial-data-industrie-v65.js.";
+          byId("ciLoading").textContent = "Les conversations ne peuvent pas être chargées pour le moment. Vérifiez l’endpoint /api/editorial/public-cycle et le référentiel éditorial KV.";
           return;
         }
 
         var cycle = getCycle();
         if (!cycle) {
           byId("ciLoading").className = "ci-error";
-          byId("ciLoading").textContent = "Aucun cycle Industrie n’a été trouvé.";
+          byId("ciLoading").textContent = "Aucun cycle Industrie n’a été trouvé dans le référentiel éditorial.";
           return;
         }
 
