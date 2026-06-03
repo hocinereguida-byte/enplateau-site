@@ -557,7 +557,8 @@
               <span>Journaliste / média</span>
               <strong>${safe(item.media)}</strong>
               <p class="lpb-panel-production">
-                <span>Format : entretien filmé et article associé, diffusés dans l’un des médias partenaires : La Tribune, Le Figaro ou BFM Business</span>
+                <span>Format : entretien filmé et article associé</span>
+                ${item.mediaName ? `<span>Média associé : ${safe(item.mediaName)}</span>` : ""}
                 <span>Tournage : jusqu’à décembre 2026</span>
                 <span>Diffusion : date à définir · replay permanent</span>
               </p>
@@ -603,6 +604,8 @@
       angle: txt(card.angle, card.headline),
       anglePublic: card.anglePublic || card.angle_public || card.public_copy || null,
       media: mediaLineForCard(card),
+      mediaName: txt(card.media),
+      journalistName: txt(card.journaliste),
       orgs: orgsForCompositionCard(card, data, index, 3),
       deals: toArray(card.deals_positionnes)
     }));
@@ -1062,3 +1065,5 @@ function buildContact() {
 
   init();
 })();
+
+/* PUBLISH CHECK — LANDING MEDIA SELECTIONNE CARTE DETAIL V1 — 20260603 */
