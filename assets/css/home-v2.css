@@ -6271,3 +6271,16 @@
 }
 
 /* PUBLISH CHECK — SUPPRESSION DOUBLONS HOME V8 — 20260603 */
+
+
+/* =========================================================
+   HOME PRODUCTION V2 — DERNIERS RÉGLAGES — 20260603
+   - Suppression du pavé d'invitation situé sous le visuel du hero.
+   - Le visuel cycle constitue désormais l'unique contenu de la colonne droite du hero.
+========================================================= */
+
+.home-page .home-hero-side {
+  align-self: center;
+}
+
+/* PUBLISH CHECK — HOME PRODUCTION V2 DERNIERS RÉGLAGES — 20260603 */
