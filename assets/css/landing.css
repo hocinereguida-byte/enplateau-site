@@ -5508,6 +5508,22 @@ body.landing-page .qualification-cta-photo-caption {
   }
 }
 
+/* =========================================================
+   LANDING — CORRECTIF PHOTO HOCINE MOBILE — 20260603
+   Évite le recadrage trop agressif du portrait dans le bloc
+   final d’échange éditorial sur smartphone.
+========================================================= */
+@media (max-width: 680px) {
+  body.landing-page .qualification-cta-photo {
+    aspect-ratio: 4 / 5;
+    min-height: 420px;
+  }
+
+  body.landing-page .qualification-cta-photo img {
+    object-position: center 18%;
+  }
+}
+
 
 /* ═══════════════════════════════════════════════════════════
    SCÈNES D'ARBITRAGE — CONTRIBUER — BLOC FINAL CONSOLIDÉ
