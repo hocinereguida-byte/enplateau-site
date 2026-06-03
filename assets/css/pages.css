@@ -3309,3 +3309,36 @@ body.page-dispositif .page3-section-light .link--primary {
 }
 
 /* PUBLISH CHECK — DISPOSITIF HARMONISATION DOCTRINE MEDIAS V1 — 20260603 */
+
+
+/* =========================================================
+   CONVERSATIONS — HARMONISATION CTA HOME / LANDINGS — 20260603
+   CTA principaux traités comme des liens éditoriaux premium.
+========================================================= */
+
+body.page-conversations .link--primary,
+body.page-conversations .page-hero .link--primary,
+body.page-conversations .page3-section-light .link--primary,
+body.page-conversations .page3-section-dark .link--primary {
+  min-height: 0 !important;
+  padding: 0 0 9px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid currentColor !important;
+  box-shadow: none !important;
+}
+
+body.page-conversations .link--primary::after {
+  display: none !important;
+}
+
+body.page-conversations .page-hero .link--primary,
+body.page-conversations .page3-section-dark .link--primary {
+  color: var(--p3-accent-soft) !important;
+}
+
+body.page-conversations .page3-section-light .link--primary {
+  color: var(--p3-ink) !important;
+}
+
+/* PUBLISH CHECK — CONVERSATIONS HARMONISATION DOCTRINE V1 — 20260603 */
