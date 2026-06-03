@@ -3405,3 +3405,80 @@ body.page-positions .page3-section-light .link--primary {
 }
 
 /* PUBLISH CHECK — PAGE PUBLIQUE LECTURES / URL POSITIONS V1 — 20260603 */
+
+
+/* =========================================================
+   LECTURES — PAGE ENFANT IMMOBILIER / URL POSITIONS-LOGEMENT — 20260603
+   URL et classe historiques conservées ; libellés publics harmonisés.
+========================================================= */
+
+body.page-positions-logement .programme-cycle-scope {
+  margin: 10px auto 20px !important;
+  font-family: var(--font-mono);
+  font-size: .62rem !important;
+  font-weight: 500;
+  line-height: 1.55 !important;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--p3-accent-soft) !important;
+}
+
+body.page-positions-logement .link--primary,
+body.page-positions-logement .page-hero .link--primary,
+body.page-positions-logement .page3-section-light .link--primary,
+body.page-positions-logement .page3-section-dark .link--primary {
+  min-height: 0 !important;
+  padding: 0 0 9px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid currentColor !important;
+  box-shadow: none !important;
+}
+
+body.page-positions-logement .link--primary::after {
+  display: none !important;
+}
+
+body.page-positions-logement .page-hero .link--primary,
+body.page-positions-logement .page3-section-dark .link--primary {
+  color: var(--p3-accent-soft) !important;
+}
+
+body.page-positions-logement .page3-section-light .link--primary {
+  color: var(--p3-ink) !important;
+}
+
+/* PUBLISH CHECK — LECTURES IMMOBILIER PAGE ENFANT V1 — 20260603 */
+
+
+/* =========================================================
+   LECTURES — PAGE ENFANT INDUSTRIE / URL POSITIONS-INDUSTRIE — 20260603
+   URL et classe historiques conservées ; libellés publics harmonisés.
+========================================================= */
+
+body.page-positions-industrie .link--primary,
+body.page-positions-industrie .page-hero .link--primary,
+body.page-positions-industrie .page3-section-light .link--primary,
+body.page-positions-industrie .page3-section-dark .link--primary {
+  min-height: 0 !important;
+  padding: 0 0 9px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid currentColor !important;
+  box-shadow: none !important;
+}
+
+body.page-positions-industrie .link--primary::after {
+  display: none !important;
+}
+
+body.page-positions-industrie .page-hero .link--primary,
+body.page-positions-industrie .page3-section-dark .link--primary {
+  color: var(--p3-accent-soft) !important;
+}
+
+body.page-positions-industrie .page3-section-light .link--primary {
+  color: var(--p3-ink) !important;
+}
+
+/* PUBLISH CHECK — LECTURES INDUSTRIE PAGE ENFANT V1 — 20260603 */
