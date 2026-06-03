@@ -3277,11 +3277,217 @@ body.page-echange-editorial .page3-visual-dispositif {
 }
 
 
+/* =========================================================
+   DISPOSITIF — HARMONISATION CTA HOME / LANDINGS — 20260603
+   Les CTA principaux deviennent des liens éditoriaux premium,
+   sans traitement de bouton plein.
+========================================================= */
+
+body.page-dispositif .link--primary,
+body.page-dispositif .page-hero .link--primary,
+body.page-dispositif .page3-section-light .link--primary,
+body.page-dispositif .page3-section-dark .link--primary {
+  min-height: 0 !important;
+  padding: 0 0 9px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid currentColor !important;
+  box-shadow: none !important;
+}
+
+body.page-dispositif .link--primary::after {
+  display: none !important;
+}
+
+body.page-dispositif .page-hero .link--primary,
+body.page-dispositif .page3-section-dark .link--primary {
+  color: var(--p3-accent-soft) !important;
+}
+
+body.page-dispositif .page3-section-light .link--primary {
+  color: var(--p3-ink) !important;
+}
+
+/* PUBLISH CHECK — DISPOSITIF HARMONISATION DOCTRINE MEDIAS V1 — 20260603 */
+
 
 /* =========================================================
-   CORRECTIF SECTIONS SPLIT — FOND CRÈME UNIFIÉ / PANELS ALLÉGÉS
-   Pages concernées : Conversations, Positions, Dispositif, À propos
-   2026-06-03
+   CONVERSATIONS — HARMONISATION CTA HOME / LANDINGS — 20260603
+   CTA principaux traités comme des liens éditoriaux premium.
+========================================================= */
+
+body.page-conversations .link--primary,
+body.page-conversations .page-hero .link--primary,
+body.page-conversations .page3-section-light .link--primary,
+body.page-conversations .page3-section-dark .link--primary {
+  min-height: 0 !important;
+  padding: 0 0 9px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid currentColor !important;
+  box-shadow: none !important;
+}
+
+body.page-conversations .link--primary::after {
+  display: none !important;
+}
+
+body.page-conversations .page-hero .link--primary,
+body.page-conversations .page3-section-dark .link--primary {
+  color: var(--p3-accent-soft) !important;
+}
+
+body.page-conversations .page3-section-light .link--primary {
+  color: var(--p3-ink) !important;
+}
+
+/* PUBLISH CHECK — CONVERSATIONS HARMONISATION DOCTRINE V1 — 20260603 */
+
+
+/* =========================================================
+   CONVERSATIONS — CYCLE IMMOBILIER & FABRIQUE DES TERRITOIRES — 20260603
+   Sous-libellé : logement / immobilier tertiaire / immobilier industriel.
+========================================================= */
+
+body.page-conversations .programme-cycle-scope {
+  margin: -4px 0 18px !important;
+  font-family: var(--font-mono);
+  font-size: .61rem !important;
+  font-weight: 500;
+  line-height: 1.55 !important;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--p3-accent-deep) !important;
+}
+
+/* PUBLISH CHECK — CYCLE IMMOBILIER & FABRIQUE DES TERRITOIRES V1 — 20260603 */
+
+
+/* =========================================================
+   LECTURES — HARMONISATION PUBLIQUE DES « POSITIONS » — 20260603
+   URL /positions.html conservée ; libellé public : Lectures.
+========================================================= */
+
+body.page-positions .programme-cycle-scope {
+  margin: -4px 0 18px !important;
+  font-family: var(--font-mono);
+  font-size: .61rem !important;
+  font-weight: 500;
+  line-height: 1.55 !important;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--p3-accent-soft) !important;
+}
+
+body.page-positions .link--primary,
+body.page-positions .page-hero .link--primary,
+body.page-positions .page3-section-light .link--primary,
+body.page-positions .page3-section-dark .link--primary {
+  min-height: 0 !important;
+  padding: 0 0 9px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid currentColor !important;
+  box-shadow: none !important;
+}
+
+body.page-positions .link--primary::after {
+  display: none !important;
+}
+
+body.page-positions .page-hero .link--primary,
+body.page-positions .page3-section-dark .link--primary {
+  color: var(--p3-accent-soft) !important;
+}
+
+body.page-positions .page3-section-light .link--primary {
+  color: var(--p3-ink) !important;
+}
+
+/* PUBLISH CHECK — PAGE PUBLIQUE LECTURES / URL POSITIONS V1 — 20260603 */
+
+
+/* =========================================================
+   LECTURES — PAGE ENFANT IMMOBILIER / URL POSITIONS-LOGEMENT — 20260603
+   URL et classe historiques conservées ; libellés publics harmonisés.
+========================================================= */
+
+body.page-positions-logement .programme-cycle-scope {
+  margin: 10px auto 20px !important;
+  font-family: var(--font-mono);
+  font-size: .62rem !important;
+  font-weight: 500;
+  line-height: 1.55 !important;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--p3-accent-soft) !important;
+}
+
+body.page-positions-logement .link--primary,
+body.page-positions-logement .page-hero .link--primary,
+body.page-positions-logement .page3-section-light .link--primary,
+body.page-positions-logement .page3-section-dark .link--primary {
+  min-height: 0 !important;
+  padding: 0 0 9px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid currentColor !important;
+  box-shadow: none !important;
+}
+
+body.page-positions-logement .link--primary::after {
+  display: none !important;
+}
+
+body.page-positions-logement .page-hero .link--primary,
+body.page-positions-logement .page3-section-dark .link--primary {
+  color: var(--p3-accent-soft) !important;
+}
+
+body.page-positions-logement .page3-section-light .link--primary {
+  color: var(--p3-ink) !important;
+}
+
+/* PUBLISH CHECK — LECTURES IMMOBILIER PAGE ENFANT V1 — 20260603 */
+
+
+/* =========================================================
+   LECTURES — PAGE ENFANT INDUSTRIE / URL POSITIONS-INDUSTRIE — 20260603
+   URL et classe historiques conservées ; libellés publics harmonisés.
+========================================================= */
+
+body.page-positions-industrie .link--primary,
+body.page-positions-industrie .page-hero .link--primary,
+body.page-positions-industrie .page3-section-light .link--primary,
+body.page-positions-industrie .page3-section-dark .link--primary {
+  min-height: 0 !important;
+  padding: 0 0 9px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid currentColor !important;
+  box-shadow: none !important;
+}
+
+body.page-positions-industrie .link--primary::after {
+  display: none !important;
+}
+
+body.page-positions-industrie .page-hero .link--primary,
+body.page-positions-industrie .page3-section-dark .link--primary {
+  color: var(--p3-accent-soft) !important;
+}
+
+body.page-positions-industrie .page3-section-light .link--primary {
+  color: var(--p3-ink) !important;
+}
+
+/* PUBLISH CHECK — LECTURES INDUSTRIE PAGE ENFANT V1 — 20260603 */
+
+
+/* =========================================================
+   SECTIONS SPLIT — FOND CRÈME UNIFIÉ / PANELS ALLÉGÉS
+   Pages : Conversations, Lectures, Dispositif, À propos
+   Version cumulative V2 — 20260603
 ========================================================= */
 
 body.page-conversations .page3-section-light,
@@ -3295,10 +3501,6 @@ body.page-conversations .page3-section-light .container,
 body.page-positions .page3-section-light .container,
 body.page-dispositif .page3-section-light .container,
 body.page-a-propos .page3-section-light .container,
-body.page-conversations .page3-section-light .page-width,
-body.page-positions .page3-section-light .page-width,
-body.page-dispositif .page3-section-light .page-width,
-body.page-a-propos .page3-section-light .page-width,
 body.page-conversations .page3-section-light .page3-split,
 body.page-positions .page3-section-light .page3-split,
 body.page-dispositif .page3-section-light .page3-split,
@@ -3317,8 +3519,8 @@ body.page-a-propos .page3-section-light .page3-split {
   gap: clamp(28px, 4vw, 52px) !important;
 }
 
-/* Supprime l’effet d’encadré dans les sections en split photo/texte,
-   tout en gardant une respiration généreuse dans le texte. */
+/* Les encadrés situés dans un split image/texte deviennent des respirations éditoriales,
+   sans contour parasite ni fond différent du fond crème de section. */
 body.page-conversations .page3-split-copy .editorial-panel,
 body.page-positions .page3-split-copy .editorial-panel,
 body.page-dispositif .page3-split-copy .editorial-panel,
@@ -3352,12 +3554,16 @@ body.page-a-propos .page3-split-copy .editorial-panel p:last-child {
   margin-bottom: 0 !important;
 }
 
-/* Conserve une assise visuelle homogène sur les sections dark en split. */
-body.page-conversations .page3-section-dark .page3-split-copy,
-body.page-positions .page3-section-dark .page3-split-copy,
-body.page-dispositif .page3-section-dark .page3-split-copy,
-body.page-a-propos .page3-section-dark .page3-split-copy {
-  box-shadow: none !important;
+body.page-a-propos .a-propos-cycle-scope {
+  display: block;
+  margin: 8px 0 10px;
+  font-family: var(--font-mono);
+  font-size: .63rem;
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--p3-accent-deep);
 }
 
-/* PUBLISH CHECK — SPLIT CREAM / PANEL CLEANUP V1 — 20260603 */
+/* PUBLISH CHECK — A PROPOS + SPLIT CREAM PANEL CLEANUP V2 — 20260603 */
