@@ -1,4 +1,11 @@
 <style>
+  #site-header {
+    position: sticky !important;
+    top: 0;
+    z-index: 1100;
+    display: block;
+  }
+
   .site-header {
     background: #000000 !important;
     box-shadow: 0 0 0 100vmax #000000 !important;
@@ -14,10 +21,10 @@
   }
 
   .site-header__inner {
-  min-height: 119px;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
+    min-height: 104px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
   
   .site-header__left {
     padding-left: 56px;
@@ -44,8 +51,8 @@
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    min-height: 38px;
-    padding: 0 28px;
+    min-height: 36px;
+    padding: 0 26px;
     background: #f1eadf !important;
     border: 1px solid #6f685f !important;
     color: #111111 !important;
@@ -67,11 +74,11 @@
   }
 
   @media (max-width: 1200px) {
-  .site-header__inner {
-    min-height: 112px;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
+    .site-header__inner {
+      min-height: 100px;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
 
     .site-header__left {
       padding-left: 44px;
@@ -84,11 +91,11 @@
   }
 
   @media (max-width: 1024px) {
-  .site-header__inner {
-    min-height: 104px;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
+    .site-header__inner {
+      min-height: 96px;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
     
     .site-header__left {
       padding-left: 36px;
@@ -184,6 +191,8 @@
       height: 44px;
     }
   }
+
+  /* PUBLISH CHECK — HEADER DESKTOP COMPACT STICKY V1 — 20260603 */
 </style>
 
 <header class="site-header">
