@@ -1,0 +1,47 @@
+name: Test Astro - Scènes d'Arbitrage
+
+on:
+  push:
+    branches:
+      - prototype-pages-cms
+    paths:
+      - 'media-prototype/**'
+      - 'content/articles/**'
+      - '.github/workflows/test-astro.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compiler:
+    name: Vérifier et compiler sans déployer
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Télécharger le dépôt (branche déclenchante)
+        uses: actions/checkout@v4
+
+      - name: Configurer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Installer Astro et les dépendances
+        working-directory: media-prototype
+        run: npm install --no-audit --no-fund
+
+      - name: Construire le prototype Astro
+        working-directory: media-prototype
+        run: npm run build
+
+      - name: Vérifier le dossier de sortie
+        run: test -f media-prototype/dist/media/index.html
+
+      - name: Conserver le site compilé comme artefact privé du workflow
+        uses: actions/upload-artifact@v4
+        with:
+          name: scenes-arbitrage-astro-test
+          path: media-prototype/dist/
+          if-no-files-found: error
+          retention-days: 7
