@@ -1,7 +1,49 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, readings, conversations, contexts } from '../../lib/editorial';
+import { isPublic, validClassification, urlOf, readings, conversations, publicationInstant } from '../../lib/editorial';
 import { articleStyle } from '../../lib/article-style';
-const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)).sort((a,b)=>Number(new Date(b.data.publication_date))-Number(new Date(a.data.publication_date)));
+const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
+const featured=items[0];
+const remaining=items.slice(1,7);
 ---
-<!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Publications — Scènes d’Arbitrage · Prototype</title><style is:inline set:html={articleStyle}/></head><body><div class="site-bar"><nav class="site-bar-inner"><a href="/media/" class="brand">SCÈNES D’ARBITRAGE</a><span class="site-label">PROTOTYPE — PRÉPRODUCTION</span></nav></div><main class="shell"><p class="kicker">SCÈNES D’ARBITRAGE · MÉDIA ÉCONOMIQUE</p><h1>Découvrir les arbitrages</h1><p class="lead">Entretiens, regards croisés et analyses des décisions économiques.</p><section class="panel"><p class="micro">EXPLORER PAR SECTEUR</p><div class="cards"><article class="card"><p class="kicker">CYCLE 01</p><h2><a href="/media/cycles/industrie/">Industrie et transformations industrielles</a></h2><p>Sept conversations et trois contextes pour comprendre les arbitrages industriels.</p></article><article class="card"><p class="kicker">CYCLE 02</p><h2><a href="/media/cycles/immobilier/">Logement & fabrique des territoires</a></h2><p>Sept conversations pour éclairer les décisions immobilières et territoriales.</p></article></div></section><section class="panel"><p class="micro">EXPLORER PAR EXPERTISE</p><div class="chips">{Object.entries(readings).map(([code,name])=><a class="chip" href={`/media/lectures/${code}/`}>{name}</a>)}</div></section><section class="panel"><h2>Dernières publications</h2>{items.length===0?<p>Aucune publication autorisée pour l’instant.</p>:<div class="cards">{items.map(a=><article class="card"><p class="kicker">{a.data.cycle} · {conversations[a.data.cycle]?.[a.data.conversation]} · {readings[a.data.lecture_principale]}</p><h2><a href={urlOf(a.id)}>{a.data.title}</a></h2><p>{a.data.summary}</p></article>)}</div>}</section></main></body></html>
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Scènes d’Arbitrage — Regards sur les décisions économiques</title><meta name="description" content="Comprendre les décisions qui façonnent l’économie, par les conversations, les situations concrètes et les regards professionnels."/><style is:inline set:html={articleStyle}/></head>
+<body class="media-home">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<div class="site-bar"><nav class="site-bar-inner media-nav" aria-label="Navigation principale">
+<a class="brand" href="/media/">SCÈNES D’ARBITRAGE</a>
+<div class="nav-links"><a aria-current="page" href="/media/">Accueil</a><a href="/media/cycles/industrie/">Industrie</a><a href="/media/cycles/immobilier/">Immobilier</a><a href="/media/#lectures">Lectures</a><a href="/media/#publications">Publications</a></div>
+</nav></div>
+<main id="contenu" class="home-shell">
+<section class="home-intro">
+<p class="micro">REGARDS SUR LES DÉCISIONS ÉCONOMIQUES</p>
+<h1>Les décisions ont plusieurs lectures.</h1>
+<p class="home-standfirst">Des conversations pour comprendre les choix, les équilibres et les trajectoires de l’économie réelle. À chaque arbitrage, plusieurs regards professionnels.</p>
+<div class="intro-links"><a href="#publications">Lire les publications</a><a href="#cycles">Explorer les cycles</a></div>
+</section>
+<section id="publications" class="home-section home-editorial" aria-labelledby="publications-heading">
+<div class="section-line"><div><p class="micro">À LA UNE</p><h2 id="publications-heading">Dernières publications</h2></div><span class="small">Entretiens · Regards croisés · Analyses</span></div>
+{featured ? <article class="featured-story">
+<div class="story-label">{featured.data.cycle} / {conversations[featured.data.cycle]?.[featured.data.conversation]} / {readings[featured.data.lecture_principale]}</div>
+<h3><a href={urlOf(featured.id)}>{featured.data.title}</a></h3>
+{featured.data.summary&&<p>{featured.data.summary}</p>}
+<a class="story-action" href={urlOf(featured.id)}>Lire l’article</a>
+</article> : <p class="small">Les publications paraîtront ici dès leur mise en ligne.</p>}
+{remaining.length>0&&<div class="home-story-list">{remaining.map(a=><article class="home-story"><p class="micro">{a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3><p>{a.data.summary}</p></article>)}</div>}
+</section>
+<section id="cycles" class="home-section" aria-labelledby="cycles-heading">
+<div class="section-line"><div><p class="micro">LES SECTEURS</p><h2 id="cycles-heading">Explorer les cycles</h2></div><span class="small">Deux premiers cycles · Sept conversations chacun</span></div>
+<div class="cycle-list">
+<a class="cycle-row" href="/media/cycles/industrie/"><span class="cycle-index">01 / INDUSTRIE</span><span class="cycle-title">Industrie et transformations industrielles</span><span class="cycle-description">Les décisions qui orientent la production, les investissements et les trajectoires industrielles.</span><span class="cycle-arrow" aria-hidden="true">↗</span></a>
+<a class="cycle-row" href="/media/cycles/immobilier/"><span class="cycle-index">02 / IMMOBILIER</span><span class="cycle-title">Logement & fabrique des territoires</span><span class="cycle-description">Les décisions qui façonnent le logement, les opérations et les territoires.</span><span class="cycle-arrow" aria-hidden="true">↗</span></a>
+</div>
+</section>
+<section id="lectures" class="home-section" aria-labelledby="lectures-heading">
+<div class="section-line"><div><p class="micro">LES REGARDS</p><h2 id="lectures-heading">Lire selon votre expertise</h2></div></div>
+<p class="home-section-intro">Une même question économique peut être abordée par la stratégie, la finance, le droit, les opérations ou d’autres disciplines. Retrouvez chaque lecture à travers les cycles.</p>
+<div class="expertise-grid">{Object.entries(readings).map(([code,name])=><a class="expertise-link" href={`/media/lectures/${code}/`}>{name}<span aria-hidden="true">↗</span></a>)}</div>
+</section>
+</main>
+<footer class="home-footer"><div><strong>SCÈNES D’ARBITRAGE</strong><span>Prototype de préproduction · Les contenus et la navigation continuent d’évoluer.</span></div></footer>
+</body></html>
