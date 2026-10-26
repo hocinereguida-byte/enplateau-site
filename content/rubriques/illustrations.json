@@ -1,0 +1,32 @@
+{
+  "cycles": {
+    "industrie": "",
+    "immobilier": ""
+  },
+  "conversations": {
+    "industrie_C1": "",
+    "industrie_C2": "",
+    "industrie_C3": "",
+    "industrie_C4": "",
+    "industrie_C5": "",
+    "industrie_C6": "",
+    "industrie_C7": "",
+    "immobilier_C1": "",
+    "immobilier_C2": "",
+    "immobilier_C3": "",
+    "immobilier_C4": "",
+    "immobilier_C5": "",
+    "immobilier_C6": "",
+    "immobilier_C7": ""
+  },
+  "lectures": {
+    "strategie-gouvernance": "",
+    "finance-investissement": "",
+    "droit-regulation": "",
+    "operations-organisation": "",
+    "technologie-innovation": "",
+    "ressources-humaines-competences": "",
+    "energie-ressources": "",
+    "territoires-politiques-publiques": ""
+  }
+}
