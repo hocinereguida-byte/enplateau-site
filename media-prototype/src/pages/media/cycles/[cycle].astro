@@ -3,7 +3,8 @@ import { getCollection } from 'astro:content';
 import { isPublic, validClassification, urlOf, conversations, contexts, readings } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
 import { photoCycle, photoConversation } from '../../../lib/photographies';
-import MediaFooter from '../../../components/MediaFooter.astro';
+import MediaFooter from '../../../components/MediaFooter.astro'
+import MediaHeader from '../../../components/MediaHeader.astro';;
 export function getStaticPaths(){return Object.keys(conversations).map(cycle=>({params:{cycle}}));}
 const {cycle}=Astro.params;
 const all=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data));
@@ -12,7 +13,7 @@ const cycleName=cycle==='industrie'?'Industrie et transformations industrielles'
 const conv=Object.entries(conversations[cycle]||{});
 ---
 <!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>{cycleName} — Scènes d’Arbitrage</title><style is:inline set:html={articleStyle}/></head><body>
-<div class="site-bar"><nav class="site-bar-inner"><a href="/media/" class="brand">SCÈNES D’ARBITRAGE</a><span class="site-label">PROTOTYPE — PRÉPRODUCTION</span></nav><nav class="section-nav" aria-label="Rubriques"><a href="/media/">Accueil</a><a href="/media/cycles/industrie/">Industrie</a><a href="/media/cycles/immobilier/">Immobilier</a><a href="/media/#lectures">Lectures</a><a href="/media/publications/">Publications</a><a href="/media/newsletter/">Newsletter</a></nav></div>
+<MediaHeader/>
 <main class="shell"><p class="kicker"><a href="/media/">Accueil</a> / Cycle</p><h1>{cycleName}</h1>{photoCycle(cycle)&&<img class="rubric-hero-photo" src={photoCycle(cycle)} alt={`Photographie du cycle ${cycleName}`} loading="eager"/>}<p class="lead">Sept conversations pour explorer les décisions, leurs conditions et leurs conséquences.</p>
 <section aria-labelledby="conversations-heading"><h2 id="conversations-heading">Les sept conversations</h2><div class="cycle-conversation-list">{conv.map(([code,name])=><a class="cycle-compact-row" href={`/media/cycles/${cycle}/conversations/${code}/`}>{photoConversation(cycle,code)&&<img class="rubric-thumb" src={photoConversation(cycle,code)} alt="" loading="lazy"/>}<span class="cycle-compact-number">{code}</span><span class="cycle-compact-title">{name}</span><span class="cycle-compact-aside">{items.filter(a=>a.data.conversation===code).length>0?`${items.filter(a=>a.data.conversation===code).length} publication(s)`:'À découvrir'}</span></a>)}</div></section>
 <section class="panel"><p class="micro">TROIS SITUATIONS</p><h2>Les contextes du cycle</h2><div class="cycle-context-list">{Object.entries(contexts[cycle]||{}).map(([code,name])=><a class="cycle-compact-row" href={`/media/cycles/${cycle}/contextes/${code}/`}><span class="cycle-compact-title">{name}</span><span class="cycle-compact-aside">{items.filter(a=>a.data.contexte===code).length>0?`${items.filter(a=>a.data.contexte===code).length} publication(s)`:'À découvrir'}</span></a>)}</div></section>
