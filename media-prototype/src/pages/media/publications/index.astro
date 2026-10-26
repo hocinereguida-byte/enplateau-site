@@ -1,0 +1,85 @@
+---
+import { getCollection } from 'astro:content';
+import { isPublic, validClassification, urlOf, readings, conversations, contexts, publicationInstant } from '../../../lib/editorial';
+import { articleStyle } from '../../../lib/article-style';
+const articles=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
+const entries=articles.map(a=>({
+  title:a.data.title,
+  summary:a.data.summary??'',
+  cycle:a.data.cycle,
+  conversation:a.data.conversation,
+  contexte:a.data.contexte,
+  lecture:a.data.lecture_principale,
+  tags:[a.data.tag_1,a.data.tag_2,a.data.tag_3,a.data.tag_4,a.data.tag_5].filter(Boolean).join(' '),
+  url:urlOf(a.id),
+  conversationLabel:conversations[a.data.cycle]?.[a.data.conversation]??a.data.conversation,
+  contextLabel:contexts[a.data.cycle]?.[a.data.contexte]??a.data.contexte,
+  lectureLabel:readings[a.data.lecture_principale]??a.data.lecture_principale
+}));
+---
+<!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Toutes les publications — Scènes d’Arbitrage</title><meta name="description" content="Recherchez et filtrez les publications par secteur, conversation, contexte et lecture professionnelle."/><style is:inline set:html={articleStyle}/></head><body>
+<a href="#catalogue" class="skip">Aller au catalogue</a>
+<div class="site-bar"><nav class="site-bar-inner"><a href="/media/" class="brand">SCÈNES D’ARBITRAGE</a><span class="site-label">PROTOTYPE — PRÉPRODUCTION</span></nav><nav class="section-nav" aria-label="Rubriques"><a href="/media/">Accueil</a><a href="/media/cycles/industrie/">Industrie</a><a href="/media/cycles/immobilier/">Immobilier</a><a href="/media/#lectures">Lectures</a><a href="/media/publications/" aria-current="page">Publications</a></nav></div>
+<main class="shell" id="catalogue"><p class="kicker"><a href="/media/">Accueil</a> / Publications</p><h1>Explorer les publications</h1><p class="lead">Recherchez un sujet et croisez les quatre dimensions éditoriales de Scènes d’Arbitrage.</p>
+<form class="catalogue-filters" id="filter-form" role="search">
+<div class="filter-search"><label for="search">Rechercher dans les publications</label><input type="search" id="search" name="q" autocomplete="off" placeholder="Titre, thème, mot-clé…"/></div>
+<div class="filter-grid">
+<div><label for="cycle">Cycle</label><select id="cycle" name="cycle"><option value="">Tous les cycles</option><option value="industrie">Industrie</option><option value="immobilier">Immobilier</option></select></div>
+<div><label for="conversation">Conversation</label><select id="conversation" name="conversation"><option value="">Toutes les conversations</option></select></div>
+<div><label for="contexte">Contexte</label><select id="contexte" name="contexte"><option value="">Tous les contextes</option></select></div>
+<div><label for="lecture">Lecture professionnelle</label><select id="lecture" name="lecture"><option value="">Toutes les lectures</option>{Object.entries(readings).map(([key,value])=><option value={key}>{value}</option>)}</select></div>
+</div><div class="filter-actions"><button type="reset">Effacer les filtres</button><p id="result-count" aria-live="polite">{entries.length} publication(s)</p></div>
+</form>
+<div id="catalogue-results" class="catalogue-results">
+{entries.map(a=><article class="catalogue-result" data-cycle={a.cycle} data-conversation={a.conversation} data-contexte={a.contexte} data-lecture={a.lecture} data-search={[a.title,a.summary,a.tags,a.conversationLabel,a.contextLabel,a.lectureLabel].join(' ').toLocaleLowerCase('fr-FR')}>
+<p class="micro">{a.cycle} / {a.conversationLabel} / {a.contextLabel} / {a.lectureLabel}</p>
+<h2><a href={a.url}>{a.title}</a></h2><p>{a.summary}</p></article>)}
+</div><p id="no-results" hidden>Aucune publication ne correspond à ces critères. Essayez d’élargir votre recherche.</p>
+</main>
+<script define:vars={{ conversationOptions:conversations, contextOptions:contexts }}>
+const form=document.querySelector('#filter-form');
+const search=document.querySelector('#search');
+const cycle=document.querySelector('#cycle');
+const conversation=document.querySelector('#conversation');
+const contexte=document.querySelector('#contexte');
+const lecture=document.querySelector('#lecture');
+const rows=[...document.querySelectorAll('.catalogue-result')];
+const count=document.querySelector('#result-count');
+const none=document.querySelector('#no-results');
+const normalize=(v)=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('fr-FR').trim();
+function fill(select,choices,prompt){
+ const previous=select.value;select.replaceChildren(new Option(prompt,''));
+ Object.entries(choices).forEach(([key,value])=>select.add(new Option(value,key)));
+ if([...select.options].some(o=>o.value===previous)) select.value=previous;
+}
+function redraw(){
+ const c=cycle.value;
+ const choiceConversations=c?(conversationOptions[c]??{}):Object.assign({},...Object.values(conversationOptions).map(x=>x));
+ const choiceContexts=c?(contextOptions[c]??{}):Object.fromEntries(Object.entries(contextOptions).flatMap(([key,values])=>Object.entries(values).map(([id,label])=>[key+':'+id,label+' ('+key+')'])));
+ fill(conversation,choiceConversations,'Toutes les conversations');
+ fill(contexte,choiceContexts,'Tous les contextes');
+ const term=normalize(search.value);
+ let shown=0;
+ rows.forEach(row=>{
+ const matchesConversation=!conversation.value||row.dataset.conversation===conversation.value;
+ const contextKey=c?contexte.value:contexte.value.split(':').slice(1).join(':');
+ const matchesContext=!contexte.value||row.dataset.contexte===contextKey&&(!contexte.value.includes(':')||row.dataset.cycle===contexte.value.split(':')[0]);
+ const matches=(!c||row.dataset.cycle===c)&&matchesConversation&&matchesContext&&(!lecture.value||row.dataset.lecture===lecture.value)&&(!term||normalize(row.dataset.search).includes(term));
+ row.hidden=!matches;if(matches)shown++;
+ });
+ count.textContent=shown+' publication(s)';none.hidden=shown!==0;
+ const params=new URLSearchParams();
+ for(const el of [search,cycle,conversation,contexte,lecture])if(el.value)params.set(el.name,el.value);
+ history.replaceState(null,'',location.pathname+(params.size?'?'+params:''));
+}
+const initial=new URLSearchParams(location.search);
+if(initial.get('cycle'))cycle.value=initial.get('cycle');
+const startingCycle=cycle.value;
+fill(conversation,startingCycle?(conversationOptions[startingCycle]??{}):Object.assign({},...Object.values(conversationOptions).map(x=>x)),'Toutes les conversations');
+fill(contexte,startingCycle?(contextOptions[startingCycle]??{}):Object.fromEntries(Object.entries(contextOptions).flatMap(([key,values])=>Object.entries(values).map(([id,label])=>[key+':'+id,label+' ('+key+')']))),'Tous les contextes');
+for(const el of [search,conversation,contexte,lecture])if(initial.has(el.name))el.value=initial.get(el.name);
+form.addEventListener('input',redraw);
+form.addEventListener('change',redraw);
+form.addEventListener('reset',()=>{requestAnimationFrame(redraw)});
+redraw();
+</script></body></html>
