@@ -1,0 +1,20 @@
+---
+import { getCollection, render } from 'astro:content';
+import { isPublic, validClassification, urlOf, conversations, contexts, readings, formattedDate } from '../../../lib/editorial';
+export async function getStaticPaths(){
+ const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data));
+ return items.map(article=>({params:{id:article.id},props:{article,items}}));
+}
+const {article,items}=Astro.props;
+const d=article.data;
+const {Content}=await render(article);
+const same=(ctx:string)=>items.filter(a=>a.id!==article.id && a.data.cycle===d.cycle && a.data.conversation===d.conversation && a.data.contexte===ctx).slice(0,4);
+const otherConversations=Object.entries(conversations[d.cycle]||{}).filter(([key])=>key!==d.conversation);
+const recentReading=items.filter(a=>a.id!==article.id && a.data.lecture_principale===d.lecture_principale).sort((a,b)=>+new Date(b.data.publication_date)-+new Date(a.data.publication_date)).slice(0,5);
+const tags=[d.tag_1,d.tag_2,d.tag_3,d.tag_4,d.tag_5].filter(Boolean);
+---
+<!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>{d.title} — Scènes d’Arbitrage</title><link rel="stylesheet" href="/media-prototype.css"/></head><body><main class="wrap"><a class="back" href="/media/">← Publications</a><header><p class="eyebrow">{d.cycle} / {conversations[d.cycle][d.conversation]} / {readings[d.lecture_principale]}</p><h1>{d.title}</h1><p class="lead">{d.summary}</p><p class="date">Publié le {formattedDate(new Date(d.publication_date))}{d.updated_date?' · Mis à jour le '+formattedDate(new Date(d.updated_date)):''}</p></header>
+{d.hero_image&&<img class="hero" src={d.hero_image} alt={d.seo?.image_alt||''}/>}<div class="article"><Content/></div>
+<section class="source"><h2>Notre interlocuteur</h2>{d.source_profile?.fonction&&<p><strong>{d.source_profile.fonction}</strong></p>}{d.source_notice&&<p>{d.source_notice}</p>}<h3>Notre méthode</h3><p>Les sources peuvent être anonymisées afin de favoriser une parole professionnelle libre. La rédaction vérifie leur identité, leur rôle et leur proximité avec les faits avant toute publication ; la protection des sources n'exonère pas du contrôle journalistique.</p>{d.methodology_specific&&<p>{d.methodology_specific}</p>}</section>
+{tags.length>0&&<p class="tags">{tags.map(t=><span>{t}</span>)}</p>}
+<section class="related"><h2>Explorer cette conversation</h2>{Object.entries(contexts[d.cycle]||{}).map(([ctx,label])=><div class="related-block"><h3>{label}</h3>{same(ctx).length?<ul>{same(ctx).map(a=><li><a href={urlOf(a.id)}>{a.data.title}</a></li>)}</ul>:<p>Aucun autre article publié dans ce contexte.</p>}</div>)}<h2>Autres conversations du cycle</h2><ul>{otherConversations.map(([code,name])=><li>{code} — {name}</li>)}</ul><p class="note">Pages des conversations : liens à créer lors de l’étape suivante.</p><h2>Poursuivre cette lecture professionnelle</h2>{recentReading.length?<ul>{recentReading.map(a=><li><a href={urlOf(a.id)}>{a.data.title}</a></li>)}</ul>:<p>Aucun autre article publié pour cette lecture.</p>}</section></main></body></html>
