@@ -2,10 +2,12 @@
 import { getCollection } from 'astro:content';
 import { isPublic, validClassification, urlOf, readings, conversations, publicationInstant } from '../../lib/editorial';
 import { articleStyle } from '../../lib/article-style';
+import { photoCycle, photoLecture, afficherPhotoListe } from '../../lib/photographies';
 import MediaFooter from '../../components/MediaFooter.astro';
 const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
-const featured=items[0];
-const remaining=items.slice(1,7);
+const ordered=[...items].sort((a,b)=>({une:0,secondaire:1,standard:2}[a.data.mise_en_avant||'standard']??2)-({une:0,secondaire:1,standard:2}[b.data.mise_en_avant||'standard']??2));
+const featured=ordered[0];
+const remaining=ordered.slice(1,7);
 ---
 <!doctype html>
 <html lang="fr">
@@ -27,17 +29,17 @@ const remaining=items.slice(1,7);
 <div class="section-line"><div><p class="micro">À LA UNE</p><h2 id="publications-heading">Dernières publications</h2></div><a class="story-action" href="/media/publications/">Explorer le catalogue</a></div>
 {featured ? <article class="featured-story">
 <div class="story-label">{featured.data.cycle} / {conversations[featured.data.cycle]?.[featured.data.conversation]} / {readings[featured.data.lecture_principale]}</div>
-<h3><a href={urlOf(featured.id)}>{featured.data.title}</a></h3>
+{featured.data.hero_image&&afficherPhotoListe(featured.data,"accueil",0)&&<img class="article-list-photo featured-photo" src={featured.data.hero_image} alt={featured.data.seo?.image_alt||""} loading="eager"/>}<h3><a href={urlOf(featured.id)}>{featured.data.title}</a></h3>
 {featured.data.summary&&<p>{featured.data.summary}</p>}
 <a class="story-action" href={urlOf(featured.id)}>Lire l’article</a>
 </article> : <p class="small">Les publications paraîtront ici dès leur mise en ligne.</p>}
-{remaining.length>0&&<div class="home-story-list">{remaining.map(a=><article class="home-story"><p class="micro">{a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3><p>{a.data.summary}</p></article>)}</div>}
+{remaining.length>0&&<div class="home-story-list">{remaining.map((a,i)=><article class="home-story">{a.data.hero_image&&afficherPhotoListe(a.data,"accueil",i+1)&&<img class="article-list-photo" src={a.data.hero_image} alt={a.data.seo?.image_alt||""} loading="lazy"/>}<p class="micro">{a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3><p>{a.data.summary}</p></article>)}</div>}
 </section>
 <section id="cycles" class="home-section" aria-labelledby="cycles-heading">
 <div class="section-line"><div><p class="micro">LES SECTEURS</p><h2 id="cycles-heading">Explorer les cycles</h2></div><span class="small">Deux premiers cycles · Sept conversations chacun</span></div>
 <div class="cycle-list">
-<a class="cycle-row" href="/media/cycles/industrie/"><span class="cycle-index">01 / INDUSTRIE</span><span class="cycle-title">Industrie et transformations industrielles</span><span class="cycle-description">Les décisions qui orientent la production, les investissements et les trajectoires industrielles.</span><span class="cycle-arrow" aria-hidden="true">↗</span></a>
-<a class="cycle-row" href="/media/cycles/immobilier/"><span class="cycle-index">02 / IMMOBILIER</span><span class="cycle-title">Logement & fabrique des territoires</span><span class="cycle-description">Les décisions qui façonnent le logement, les opérations et les territoires.</span><span class="cycle-arrow" aria-hidden="true">↗</span></a>
+<a class="cycle-row" href="/media/cycles/industrie/">{photoCycle("industrie")&&<img class="rubric-thumb" src={photoCycle("industrie")} alt="" loading="lazy"/>}<span class="cycle-index">01 / INDUSTRIE</span><span class="cycle-title">Industrie et transformations industrielles</span><span class="cycle-description">Les décisions qui orientent la production, les investissements et les trajectoires industrielles.</span><span class="cycle-arrow" aria-hidden="true">↗</span></a>
+<a class="cycle-row" href="/media/cycles/immobilier/">{photoCycle("immobilier")&&<img class="rubric-thumb" src={photoCycle("immobilier")} alt="" loading="lazy"/>}<span class="cycle-index">02 / IMMOBILIER</span><span class="cycle-title">Logement & fabrique des territoires</span><span class="cycle-description">Les décisions qui façonnent le logement, les opérations et les territoires.</span><span class="cycle-arrow" aria-hidden="true">↗</span></a>
 </div>
 </section>
 <section id="lectures" class="home-section" aria-labelledby="lectures-heading">
