@@ -13,17 +13,17 @@ const remaining=items.slice(1,7);
 <a class="skip" href="#contenu">Aller au contenu</a>
 <div class="site-bar"><nav class="site-bar-inner media-nav" aria-label="Navigation principale">
 <a class="brand" href="/media/">SCÈNES D’ARBITRAGE</a>
-<div class="nav-links"><a aria-current="page" href="/media/">Accueil</a><a href="/media/cycles/industrie/">Industrie</a><a href="/media/cycles/immobilier/">Immobilier</a><a href="/media/#lectures">Lectures</a><a href="/media/#publications">Publications</a></div>
+<div class="nav-links"><a aria-current="page" href="/media/">Accueil</a><a href="/media/cycles/industrie/">Industrie</a><a href="/media/cycles/immobilier/">Immobilier</a><a href="/media/#lectures">Lectures</a><a href="/media/publications/">Publications</a></div>
 </nav></div>
 <main id="contenu" class="home-shell">
 <section class="home-intro">
 <p class="micro">REGARDS SUR LES DÉCISIONS ÉCONOMIQUES</p>
 <h1>Les décisions ont plusieurs lectures.</h1>
 <p class="home-standfirst">Des conversations pour comprendre les choix, les équilibres et les trajectoires de l’économie réelle. À chaque arbitrage, plusieurs regards professionnels.</p>
-<div class="intro-links"><a href="#publications">Lire les publications</a><a href="#cycles">Explorer les cycles</a></div>
+<div class="intro-links"><a href="/media/publications/">Explorer toutes les publications</a><a href="#cycles">Explorer les cycles</a></div>
 </section>
 <section id="publications" class="home-section home-editorial" aria-labelledby="publications-heading">
-<div class="section-line"><div><p class="micro">À LA UNE</p><h2 id="publications-heading">Dernières publications</h2></div><span class="small">Entretiens · Regards croisés · Analyses</span></div>
+<div class="section-line"><div><p class="micro">À LA UNE</p><h2 id="publications-heading">Dernières publications</h2></div><a class="story-action" href="/media/publications/">Explorer le catalogue</a></div>
 {featured ? <article class="featured-story">
 <div class="story-label">{featured.data.cycle} / {conversations[featured.data.cycle]?.[featured.data.conversation]} / {readings[featured.data.lecture_principale]}</div>
 <h3><a href={urlOf(featured.id)}>{featured.data.title}</a></h3>
