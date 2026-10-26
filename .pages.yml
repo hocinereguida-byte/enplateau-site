@@ -197,6 +197,42 @@ content:
     type: image
     description: Privilégier WebP optimisé ou JPEG. Le CMS ne valide pas automatiquement dimensions, cadrage
       et poids.
+  - name: mise_en_avant
+    label: Priorité éditoriale dans les listes
+    type: select
+    default: standard
+    options:
+      values:
+      - name: une
+        label: À la une
+      - name: secondaire
+        label: Sujet mis en avant
+      - name: standard
+        label: Article standard
+  - name: affichage_accueil
+    label: Photographie dans la liste d'accueil
+    type: select
+    default: automatique
+    options:
+      values:
+      - name: automatique
+        label: Automatique selon position
+      - name: photo
+        label: Afficher la photographie
+      - name: titre
+        label: Titre seul
+  - name: affichage_rubrique
+    label: Photographie dans les listes de cycle, conversation et lecture
+    type: select
+    default: automatique
+    options:
+      values:
+      - name: automatique
+        label: Automatique selon position
+      - name: photo
+        label: Afficher la photographie
+      - name: titre
+        label: Titre seul
   - &id012
     name: source_profile
     label: Profil professionnel anonymisé (données publiables seulement)
@@ -367,6 +403,42 @@ content:
   - *id009
   - *id010
   - *id011
+  - name: mise_en_avant
+    label: Priorité éditoriale dans les listes
+    type: select
+    default: standard
+    options:
+      values:
+      - name: une
+        label: À la une
+      - name: secondaire
+        label: Sujet mis en avant
+      - name: standard
+        label: Article standard
+  - name: affichage_accueil
+    label: Photographie dans la liste d'accueil
+    type: select
+    default: automatique
+    options:
+      values:
+      - name: automatique
+        label: Automatique selon position
+      - name: photo
+        label: Afficher la photographie
+      - name: titre
+        label: Titre seul
+  - name: affichage_rubrique
+    label: Photographie dans les listes de cycle, conversation et lecture
+    type: select
+    default: automatique
+    options:
+      values:
+      - name: automatique
+        label: Automatique selon position
+      - name: photo
+        label: Afficher la photographie
+      - name: titre
+        label: Titre seul
   - *id012
   - *id013
   - *id014
