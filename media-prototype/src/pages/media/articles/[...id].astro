@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import { isPublic, validClassification, urlOf, conversations, contexts, readings, formattedDate, publicationInstant } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
+import { absolutePageUrl, robotsDirective } from '../../../lib/seo';
 export async function getStaticPaths(){
  const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data));
  return items.map(article=>({params:{id:article.id},props:{article,items}}));
@@ -41,14 +42,15 @@ const seoTitle=typeof d.seo?.seo_title==='string'&&d.seo.seo_title.trim()?d.seo.
 const seoDescription=typeof d.seo?.seo_description==='string'&&d.seo.seo_description.trim()?d.seo.seo_description:(d.summary??'');
 const imageAlt=typeof d.seo?.image_alt==='string'?d.seo.image_alt:'';
 const imageSocial=typeof d.seo?.social_image==='string'?d.seo.social_image:d.hero_image;
-const canonical='https://enplateau-site.pages.dev'+urlOf(article.id);
+const canonical=absolutePageUrl(urlOf(article.id));
+const articleStructuredData={ '@context':'https://schema.org', '@type':'Article', headline:d.title, description:seoDescription, datePublished:pubDate?.toISOString(), dateModified:(updated??pubDate)?.toISOString(), inLanguage:'fr-FR', mainEntityOfPage:canonical, publisher:{'@type':'Organization',name:'Scènes d’Arbitrage'}, ...(d.hero_image?{image:[absolutePageUrl(d.hero_image)]}:{}) };
 const shareBase=canonical;
 const sourceMethod='Scènes d’Arbitrage privilégie les prises de contact à l’initiative de sa rédaction. Pour les entretiens réels, la rédaction vérifie l’identité et les responsabilités de ses sources ainsi que leur proximité avec les arbitrages décrits. Certaines caractéristiques peuvent être généralisées pour protéger les personnes interrogées. Cette notice générale ne constitue pas une attestation des vérifications propres à chaque article.';
 ---
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="robots" content="noindex,nofollow"/><title>{seoTitle} — Scènes d’Arbitrage</title><meta name="description" content={seoDescription}/>
-<meta property="og:title" content={seoTitle}/><meta property="og:description" content={seoDescription}/><meta property="og:type" content="article"/><meta property="og:url" content={canonical}/>
+<meta name="robots" content={robotsDirective}/><link rel="canonical" href={canonical}/><title>{seoTitle} — Scènes d’Arbitrage</title><meta name="description" content={seoDescription}/>
+<script type="application/ld+json" set:html={JSON.stringify(articleStructuredData).replace(/</g,"\\u003c")}/><meta property="og:title" content={seoTitle}/><meta property="og:description" content={seoDescription}/><meta property="og:type" content="article"/><meta property="og:url" content={canonical}/>
 {imageSocial&&<meta property="og:image" content={imageSocial}/>}<meta name="twitter:card" content={imageSocial?'summary_large_image':'summary'}/>
 {pubDate&&<meta property="article:published_time" content={pubDate.toISOString()}/>} {updated&&<meta property="article:modified_time" content={updated.toISOString()}/>}<style is:inline set:html={articleStyle}/>
 </head><body><a class="skip" href="#contenu">Aller au contenu</a><div class="site-bar"><nav class="site-bar-inner"><a class="brand" href="/media/">SCÈNES D’ARBITRAGE</a><span class="site-label">PROTOTYPE — PRÉPRODUCTION</span></nav><nav class="section-nav" aria-label="Rubriques"><a href="/media/">Accueil</a><a href="/media/cycles/industrie/">Industrie</a><a href="/media/cycles/immobilier/">Immobilier</a><a href="/media/#lectures">Lectures</a><a href="/media/publications/">Publications</a><a href="/media/newsletter/">Newsletter</a></nav></div><main class="shell" id="contenu"><div class="reading">
