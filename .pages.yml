@@ -1,0 +1,50 @@
+# Configuration pilote Pages CMS — Scènes d'Arbitrage
+# À placer uniquement sur une branche de test ; ne modifie pas la production.
+media:
+  input: media/articles
+  output: /media/articles
+  rename: safe
+  extensions: [jpg, jpeg, png, webp]
+content:
+  - name: articles
+    label: Articles — pilote
+    type: collection
+    path: content/articles
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    fields:
+      - name: title
+        label: Titre
+        type: string
+        required: true
+      - name: summary
+        label: Chapô
+        type: text
+        required: true
+      - name: cycle
+        label: Cycle (code interne provisoire)
+        type: string
+        required: true
+      - name: conversation
+        label: Conversation (code interne provisoire)
+        type: string
+        required: true
+      - name: lecture_principale
+        label: Lecture professionnelle principale
+        type: string
+        required: true
+      - name: publication_date
+        label: Date de publication souhaitée
+        type: date
+      - name: published
+        label: Autorisé pour publication (contrôle éditorial)
+        type: boolean
+      - name: hero_image
+        label: Illustration
+        type: image
+      - name: source_notice
+        label: Notice de présentation anonymisée (publique uniquement)
+        type: text
+      - name: body
+        label: Article
+        type: rich-text
