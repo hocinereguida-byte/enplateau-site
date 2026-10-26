@@ -1,5 +1,6 @@
 ---
 import { articleStyle } from '../../../lib/article-style';
+import MediaFooter from '../../../components/MediaFooter.astro';
 const pages={
  'qui-sommes-nous':{
   nav:'Qui sommes-nous ?', eyebrow:'LE MÉDIA',title:'Comprendre les décisions qui façonnent l’économie.',
@@ -42,5 +43,5 @@ const data=pages[Astro.params.page as keyof typeof pages];
 <main class="shell" id="contenu"><div class="reading institution-page"><p class="kicker"><a href="/media/">Accueil</a> / {data.nav}</p><p class="micro">{data.eyebrow}</p><h1>{data.title}</h1><p class="lead">{data.intro}</p>
 {data.sections.map(s=><section class="institution-section"><h2>{s.title}</h2>{s.paragraphs.map(p=><p>{p}</p>)}</section>)}
 <section class="institution-next"><p class="micro">POURSUIVRE</p><h2>Explorer Scènes d’Arbitrage</h2><div class="institution-links"><a href="/media/institution/qui-sommes-nous/">Qui sommes-nous ?</a><a href="/media/institution/ligne-editoriale/">Notre ligne éditoriale</a><a href="/media/institution/notre-methode/">Notre méthode</a><a href="/media/publications/">Toutes les publications</a></div></section></div></main>
-<footer class="institution-footer"><a href="/media/">Scènes d’Arbitrage</a><span>Préproduction · Contenus institutionnels en cours de validation</span></footer>
+<MediaFooter/>
 </body></html>
