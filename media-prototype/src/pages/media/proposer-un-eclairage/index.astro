@@ -1,5 +1,6 @@
 ---
 import { articleStyle } from '../../../lib/article-style';
+import MediaFooter from '../../../components/MediaFooter.astro';
 ---
 <!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Proposer un éclairage — Scènes d’Arbitrage</title><meta name="description" content="Faites connaître une expérience ou une décision susceptible d’éclairer une conversation de Scènes d’Arbitrage."/><style is:inline set:html={articleStyle}/></head><body>
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -12,4 +13,4 @@ import { articleStyle } from '../../../lib/article-style';
 <section class="institution-section"><h2>Et ensuite ?</h2><p>La rédaction examine les propositions au regard des conversations déjà ouvertes et des lectures recherchées. Si un échange paraît utile, elle reprend contact. L’absence de réponse n’équivaut pas à une appréciation de votre expérience.</p><p><a href="/media/institution/notre-methode/">Comprendre notre méthode éditoriale</a></p></section></div></main>
 <script is:inline>
 (function(){const f=document.getElementById('signal-form');if(!f)return;const q=new URLSearchParams(location.search);if(q.get('cycle')||q.get('conversation')){f.elements.subject.value=[q.get('cycle'),q.get('conversation')].filter(Boolean).join(' — ');}f.addEventListener('submit',e=>{e.preventDefault();if(!f.reportValidity())return;const d=new FormData(f);const subject='Proposition d’éclairage — '+String(d.get('subject')||'').trim();const body=['Nom : '+d.get('name'),'Fonction / organisation : '+(d.get('role')||'Non précisé'),'Adresse de réponse : '+d.get('email'),'Sujet : '+d.get('subject'),'','Éclairage proposé :',d.get('message'),'','Accord pour être recontacté : oui'].join('\n');document.getElementById('signal-status').textContent='Votre messagerie va s’ouvrir. Vérifiez le brouillon puis envoyez-le.';location.href='mailto:contact@scenesdarbitrage.fr?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);});})();
-</script></body></html>
+</script><MediaFooter/></body></html>
