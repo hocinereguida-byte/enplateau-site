@@ -1,10 +1,11 @@
 ---
 import { articleStyle } from '../../../lib/article-style';
-import MediaFooter from '../../../components/MediaFooter.astro';
+import MediaFooter from '../../../components/MediaFooter.astro'
+import MediaHeader from '../../../components/MediaHeader.astro';;
 import { brevoFormUrl, newsletterReady } from '../../../lib/newsletter';
 ---
 <!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Newsletter — Scènes d’Arbitrage</title><meta name="description" content="Recevez les publications et les nouvelles conversations de Scènes d’Arbitrage."/><style is:inline set:html={articleStyle}/></head><body>
-<a class="skip" href="#contenu">Aller au contenu</a><div class="site-bar"><nav class="site-bar-inner"><a class="brand" href="/media/">SCÈNES D’ARBITRAGE</a><span class="site-label">PROTOTYPE — PRÉPRODUCTION</span></nav><nav class="section-nav" aria-label="Rubriques"><a href="/media/">Accueil</a><a href="/media/cycles/industrie/">Industrie</a><a href="/media/cycles/immobilier/">Immobilier</a><a href="/media/#lectures">Lectures</a><a href="/media/publications/">Publications</a><a href="/media/newsletter/" aria-current="page">Newsletter</a></nav></div>
+<a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/>
 <main class="shell" id="contenu"><div class="reading"><p class="kicker"><a href="/media/">Accueil</a> / Newsletter</p><h1>Des décisions à découvrir, des regards à croiser.</h1><p class="lead">Recevez une sélection des nouvelles conversations et des analyses de Scènes d’Arbitrage, sans perdre le fil des arbitrages économiques.</p>
 <section class="newsletter-box" aria-labelledby="newsletter-title"><p class="micro">LA LETTRE DE SCÈNES D’ARBITRAGE</p><h2 id="newsletter-title">S’inscrire à la newsletter</h2>
 {newsletterReady?<><p>Renseignez votre adresse directement dans notre formulaire d’inscription sécurisé, géré par Brevo.</p><iframe class="newsletter-iframe" title="Formulaire d’inscription à la newsletter Scènes d’Arbitrage" src={brevoFormUrl} loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe><p class="small">L’inscription nécessite une confirmation par e-mail. Vous pouvez vous désabonner depuis chaque message.</p></>:<><p><strong>Inscription prochainement disponible.</strong></p><p>Le formulaire d’inscription sera activé dès que le compte d’envoi et le double consentement par e-mail seront configurés. Aucune adresse e-mail n’est collectée sur cette page pour le moment.</p></>}
