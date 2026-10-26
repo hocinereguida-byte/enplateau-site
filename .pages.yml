@@ -676,3 +676,94 @@ content:
   operations:
     create: false
     delete: false
+
+- name: illustrations_rubriques
+  label: Photographies des rubriques
+  type: file
+  path: content/rubriques/illustrations.json
+  format: json
+  fields:
+  - name: cycles
+    label: Cycles
+    type: object
+    fields:
+    - name: industrie
+      label: "Industrie"
+      type: image
+    - name: immobilier
+      label: "Immobilier"
+      type: image
+  - name: conversations
+    label: Conversations
+    type: object
+    fields:
+    - name: industrie_C1
+      label: "Industrie — conversation C1"
+      type: image
+    - name: industrie_C2
+      label: "Industrie — conversation C2"
+      type: image
+    - name: industrie_C3
+      label: "Industrie — conversation C3"
+      type: image
+    - name: industrie_C4
+      label: "Industrie — conversation C4"
+      type: image
+    - name: industrie_C5
+      label: "Industrie — conversation C5"
+      type: image
+    - name: industrie_C6
+      label: "Industrie — conversation C6"
+      type: image
+    - name: industrie_C7
+      label: "Industrie — conversation C7"
+      type: image
+    - name: immobilier_C1
+      label: "Immobilier — conversation C1"
+      type: image
+    - name: immobilier_C2
+      label: "Immobilier — conversation C2"
+      type: image
+    - name: immobilier_C3
+      label: "Immobilier — conversation C3"
+      type: image
+    - name: immobilier_C4
+      label: "Immobilier — conversation C4"
+      type: image
+    - name: immobilier_C5
+      label: "Immobilier — conversation C5"
+      type: image
+    - name: immobilier_C6
+      label: "Immobilier — conversation C6"
+      type: image
+    - name: immobilier_C7
+      label: "Immobilier — conversation C7"
+      type: image
+  - name: lectures
+    label: Lectures professionnelles
+    type: object
+    fields:
+    - name: strategie-gouvernance
+      label: "Stratégie & gouvernance"
+      type: image
+    - name: finance-investissement
+      label: "Finance & investissement"
+      type: image
+    - name: droit-regulation
+      label: "Droit & régulation"
+      type: image
+    - name: operations-organisation
+      label: "Opérations & organisation"
+      type: image
+    - name: technologie-innovation
+      label: "Technologie & innovation"
+      type: image
+    - name: ressources-humaines-competences
+      label: "Ressources humaines & compétences"
+      type: image
+    - name: energie-ressources
+      label: "Énergie & ressources"
+      type: image
+    - name: territoires-politiques-publiques
+      label: "Territoires & politiques publiques"
+      type: image
