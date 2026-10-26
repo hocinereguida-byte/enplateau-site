@@ -4,6 +4,7 @@ summary: Article fictif destiné à vérifier le fonctionnement du CMS de Scène
   d'Arbitrage.
 cycle: industrie
 conversation: C1
+contexte: CST
 lecture_principale: strategie-gouvernance
 publication_date: 2026-10-26T03:56
 published: false
