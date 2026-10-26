@@ -1,0 +1,9 @@
+---
+import { conversations, readings } from '../../../lib/editorial';
+import { photoCycle, photoLecture } from '../../../lib/photographies';
+import { articleStyle } from '../../../lib/article-style';
+import MediaHeader from '../../../components/MediaHeader.astro';
+import MediaFooter from '../../../components/MediaFooter.astro';
+const entries=Object.entries(readings).map(([code,label])=>({code,label,url:'/media/lectures/'+code+'/',photo:photoLecture(code)}));
+---
+<!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Toutes les lectures — Scènes d’Arbitrage</title><style is:inline set:html={articleStyle}/></head><body><a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/><main id="contenu" class="shell"><p class="micro">EXPLORER LE MÉDIA</p><h1>Toutes les lectures professionnelles</h1><p class="lead">Huit regards complémentaires pour éclairer les décisions économiques à travers les cycles.</p><div class="directory-grid">{entries.map(item=><a class="directory-tile" href={item.url}>{item.photo&&<img src={item.photo} alt="" loading="lazy"/>}<span class="micro">LECTURE PROFESSIONNELLE</span><h2>{item.label}</h2><span aria-hidden="true">Découvrir ↗</span></a>)}</div></main><MediaFooter/></body></html>
