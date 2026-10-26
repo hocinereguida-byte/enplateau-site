@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import { isPublic, validClassification, urlOf, conversations, contexts, readings, formattedDate, publicationInstant } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
+import MediaFooter from '../../../components/MediaFooter.astro';
 import { absolutePageUrl, robotsDirective } from '../../../lib/seo';
 export async function getStaticPaths(){
  const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data));
@@ -94,4 +95,4 @@ const sourceMethod='Scènes d’Arbitrage privilégie les prises de contact à l
  buttons('idle');
 })();
 </script><section class="contribute-callout"><p class="micro">PARTAGER UNE EXPÉRIENCE</p><h2>Vous avez un éclairage sur ce sujet ?</h2><p>Votre expérience professionnelle peut contribuer à une conversation. La rédaction examine les propositions et prend contact si un échange est pertinent.</p><a href={`/media/proposer-un-eclairage/?cycle=${encodeURIComponent(d.cycle)}&conversation=${encodeURIComponent(d.conversation)}`}>Proposer un éclairage</a></section>
-</body></html>
+<MediaFooter/></body></html>
