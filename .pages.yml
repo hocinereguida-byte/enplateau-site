@@ -1,0 +1,613 @@
+# Scènes d’Arbitrage — Pages CMS V4 (prototype-pages-cms uniquement)
+# Brouillon rapide : titre, chapô, corps en tête et seuls champs nécessaires à la publication contrôlés par le futur moteur.
+# Motif commun de protection des sources : affichage dans le site, non répété dans chaque article.
+media:
+  input: media/articles
+  output: /media/articles
+  rename: safe
+  extensions:
+  - jpg
+  - jpeg
+  - png
+  - webp
+content:
+- name: articles_industrie
+  label: Articles — Industrie
+  type: collection
+  path: content/articles/industrie
+  format: yaml-frontmatter
+  filename: '{primary}.md'
+  view:
+    fields:
+    - title
+    - conversation
+    - contexte
+    - lecture_principale
+    - statut_editorial
+    - publication_date
+    primary: title
+    sort:
+    - publication_date
+    - title
+    search:
+    - title
+    - summary
+    default:
+      sort: publication_date
+      order: desc
+  fields:
+  - &id001
+    name: title
+    label: Titre
+    type: string
+    required: true
+  - &id002
+    name: summary
+    label: Chapô
+    type: text
+    description: Facultatif au stade du premier brouillon ; à compléter avant publication.
+  - &id003
+    name: body
+    label: Article
+    type: rich-text
+    description: Rédigez ou collez votre article ; vous pourrez revenir compléter les autres informations ultérieurement.
+  - &id004
+    name: format
+    label: Format journalistique
+    type: select
+    options:
+      values:
+      - name: entretien
+        label: Grand entretien
+      - name: regard-croise
+        label: Regard croisé
+      - name: analyse-sectorielle
+        label: Analyse sectorielle
+      - name: decouverte
+        label: Article de découverte
+  - name: cycle
+    label: Cycle
+    type: select
+    default: industrie
+    options:
+      values:
+      - name: industrie
+        label: Industrie & transformation des territoires
+  - name: conversation
+    label: Conversation — code et intitulé
+    type: select
+    options:
+      values:
+      - name: C1
+        label: C1 — Croissance industrielle
+      - name: C2
+        label: C2 — Dépendances industrielles
+      - name: C3
+        label: C3 — Outil industriel
+      - name: C4
+        label: C4 — Trajectoire industrielle
+      - name: C5
+        label: C5 — Besoins et proposition de valeur
+      - name: C6
+        label: C6 — Marchés et débouchés
+      - name: C7
+        label: C7 — Implantation industrielle
+  - name: contexte
+    label: Contexte du cycle
+    type: select
+    options:
+      values:
+      - name: CST
+        label: Croissance sous tension
+      - name: ASC
+        label: Adaptation sous contrainte
+      - name: RSS
+        label: Réinvention sous crise
+  - &id005
+    name: lecture_principale
+    label: Lecture professionnelle principale
+    type: select
+    options:
+      values:
+      - name: strategie-gouvernance
+        label: Stratégie & gouvernance
+      - name: finance-investissement
+        label: Finance & investissement
+      - name: droit-regulation
+        label: Droit & régulation
+      - name: operations-organisation
+        label: Opérations & organisation
+      - name: technologie-innovation
+        label: Technologie & innovation
+      - name: ressources-humaines-competences
+        label: Ressources humaines & compétences
+      - name: energie-ressources
+        label: Énergie & ressources
+      - name: territoires-politiques-publiques
+        label: Territoires & politiques publiques
+  - name: tag_1
+    label: Tag 1 — libre
+    type: string
+    description: Notion économique ou décisionnelle, éviter les doublons avec cycle, conversation et lecture.
+  - name: tag_2
+    label: Tag 2 — libre
+    type: string
+    description: Facultatif
+  - name: tag_3
+    label: Tag 3 — libre
+    type: string
+    description: Facultatif
+  - name: tag_4
+    label: Tag 4 — libre
+    type: string
+    description: Facultatif
+  - name: tag_5
+    label: Tag 5 — libre
+    type: string
+    description: Facultatif
+  - &id006
+    name: statut_editorial
+    label: Étape éditoriale
+    type: select
+    options:
+      values:
+      - name: brouillon
+        label: Brouillon
+      - name: verification
+        label: Vérification / anonymisation
+      - name: pret
+        label: Prêt pour publication
+      - name: publie
+        label: Publié
+    default: brouillon
+  - &id007
+    name: interview_date
+    label: Date de réalisation de l’entretien
+    type: date
+    default: ''
+    options:
+      format: yyyy-MM-dd
+    description: Facultatif et publiable uniquement si cette précision ne met pas la source en danger.
+  - &id008
+    name: publication_date
+    label: Date de publication (réelle ou programmée)
+    type: date
+    options:
+      time: true
+      format: yyyy-MM-dd'T'HH:mm
+    default: ''
+    description: Facultatif au stade brouillon. À compléter pour diffusion ; la date réelle de première publication
+      ne doit pas être falsifiée. Programmation automatique à développer.
+  - &id009
+    name: updated_date
+    label: Date de mise à jour substantielle
+    type: date
+    default: ''
+    options:
+      format: yyyy-MM-dd
+    description: Laisser vide tant que l’article n’a pas été substantiellement actualisé.
+  - &id010
+    name: published
+    label: Autorisation de publication (contrôle final)
+    type: boolean
+    description: 'Ce seul commutateur ne publie pas l''article : le futur moteur appliquera les règles d''autorisation
+      et de date.'
+    default: false
+  - &id011
+    name: hero_image
+    label: Image principale (16:9 recommandé, 1600 × 900 px)
+    type: image
+    description: Privilégier WebP optimisé ou JPEG. Le CMS ne valide pas automatiquement dimensions, cadrage et
+      poids.
+  - &id012
+    name: source_profile
+    label: Profil professionnel anonymisé (données publiables seulement)
+    type: object
+    description: Uniquement des caractéristiques professionnelles publiables, sans identité réelle ni indice de
+      réidentification. Le motif général d’anonymisation relève d’une notice commune affichée par le site.
+    fields:
+    - name: fonction
+      label: Fonction anonymisée
+      type: string
+    - name: organisation_type
+      label: Type d’organisation
+      type: select
+      options:
+        values:
+        - PME / ETI
+        - Grand groupe
+        - Association
+        - Collectivité territoriale
+        - Établissement public
+        - Administration
+        - Cabinet d’avocats
+        - Cabinet de conseil
+        - Prestataire / fournisseur
+        - Organisation professionnelle
+        - Autre / non précisé
+    - name: domaine
+      label: Domaine d’activité
+      type: string
+    - name: responsabilites_perimetre
+      label: Responsabilités et périmètre d’expérience
+      type: text
+      description: Synthèse publiable de la nature des missions, du niveau de responsabilité et du périmètre d’expérience
+        ; éviter tout détail réidentifiant.
+    - name: responsabilites_perimetre
+      label: Responsabilités et périmètre d’expérience
+      type: text
+      description: Synthèse publiable de la nature des missions, du niveau de responsabilité et du périmètre d’expérience
+        ; éviter tout détail réidentifiant.
+    - name: role_arbitrage
+      label: Position dans l’arbitrage
+      type: select
+      options:
+        values:
+        - Décideur
+        - Participant à la décision
+        - Témoin direct
+        - Observateur qualifié
+        - Autre / non précisé
+    - name: experience
+      label: Expérience professionnelle (présentation publiable)
+      type: text
+  - &id013
+    name: source_notice
+    label: Présentation journalistique anonymisée (texte facultatif de synthèse)
+    type: text
+    description: Saisir ici un texte de présentation si nécessaire ; les champs structurés ci-dessus servent de
+      base. Aucune identité réelle.
+  - &id014
+    name: methodology_specific
+    label: Vérifications ou précisions méthodologiques propres à cet article (facultatif)
+    type: text
+    description: La méthode commune sera affichée automatiquement par le futur site. Indiquer ici uniquement les
+      vérifications spécifiques réellement effectuées.
+  - &id015
+    name: seo
+    label: Référencement et partage social
+    type: object
+    fields:
+    - name: seo_title
+      label: Titre SEO
+      type: string
+    - name: seo_description
+      label: Description SEO
+      type: text
+    - name: social_image
+      label: Image de partage
+      type: image
+    - name: image_alt
+      label: Texte alternatif de l’image principale
+      type: text
+- name: articles_immobilier
+  label: Articles — Immobilier
+  type: collection
+  path: content/articles/immobilier
+  format: yaml-frontmatter
+  filename: '{primary}.md'
+  view:
+    fields:
+    - title
+    - conversation
+    - contexte
+    - lecture_principale
+    - statut_editorial
+    - publication_date
+    primary: title
+    sort:
+    - publication_date
+    - title
+    search:
+    - title
+    - summary
+    default:
+      sort: publication_date
+      order: desc
+  fields:
+  - *id001
+  - *id002
+  - *id003
+  - *id004
+  - name: cycle
+    label: Cycle
+    type: select
+    default: immobilier
+    options:
+      values:
+      - name: immobilier
+        label: Immobilier & fabrique des territoires
+  - name: conversation
+    label: Conversation — code et intitulé
+    type: select
+    options:
+      values:
+      - name: C1
+        label: C1 — À quel moment une opération ne tient plus ?
+      - name: C2
+        label: C2 — Jusqu’où peut-on produire ?
+      - name: C3
+        label: C3 — Transformer ou reconstruire ?
+      - name: C4
+        label: C4 — Qui fait réellement avancer — ou basculer — un projet ?
+      - name: C5
+        label: C5 — À quels besoins l’immobilier doit-il encore répondre ?
+      - name: C6
+        label: C6 — Comment préserver la valeur et l’utilité du patrimoine existant ?
+      - name: C7
+        label: C7 — À quelles conditions accéder aux espaces nécessaires ?
+  - name: contexte
+    label: Contexte du cycle
+    type: select
+    options:
+      values:
+      - name: zone-tendue
+        label: Zone tendue
+      - name: zone-croissance
+        label: Zone en croissance
+      - name: territoire-reconversion
+        label: Territoire en reconversion
+  - *id005
+  - name: tag_1
+    label: Tag 1 — libre
+    type: string
+    description: Notion économique ou décisionnelle, éviter les doublons avec cycle, conversation et lecture.
+  - name: tag_2
+    label: Tag 2 — libre
+    type: string
+    description: Facultatif
+  - name: tag_3
+    label: Tag 3 — libre
+    type: string
+    description: Facultatif
+  - name: tag_4
+    label: Tag 4 — libre
+    type: string
+    description: Facultatif
+  - name: tag_5
+    label: Tag 5 — libre
+    type: string
+    description: Facultatif
+  - *id006
+  - *id007
+  - *id008
+  - *id009
+  - *id010
+  - *id011
+  - *id012
+  - *id013
+  - *id014
+  - *id015
+- name: articles_pilote_v1
+  label: Archive du pilote V1 (ne pas publier)
+  type: collection
+  path: content/articles
+  format: yaml-frontmatter
+  filename: '{primary}.md'
+  view:
+    fields:
+    - title
+    - cycle
+    - conversation
+    - publication_date
+    primary: title
+    sort:
+    - publication_date
+    - title
+    search:
+    - title
+    - summary
+    default:
+      sort: publication_date
+      order: desc
+  fields:
+  - name: title
+    label: Titre
+    type: string
+    required: true
+  - name: summary
+    label: Chapô
+    type: text
+    required: true
+  - name: format
+    label: Format journalistique
+    type: select
+    options:
+      values:
+      - name: entretien
+        label: Grand entretien
+      - name: regard-croise
+        label: Regard croisé
+      - name: analyse-sectorielle
+        label: Analyse sectorielle
+      - name: decouverte
+        label: Article de découverte
+  - name: cycle
+    label: Cycle sectoriel
+    type: select
+    required: true
+    options:
+      values:
+      - name: industrie
+        label: Industrie & transformation des territoires
+      - name: immobilier
+        label: Immobilier & fabrique des territoires
+  - name: conversation
+    label: Conversation (C1 à C7 dans le cycle choisi)
+    type: select
+    required: true
+    description: Le code C1 à C7 désigne une conversation différente selon le cycle ; vérifier la correspondance
+      avec le cycle.
+    options:
+      values:
+      - C1
+      - C2
+      - C3
+      - C4
+      - C5
+      - C6
+      - C7
+  - name: contexte
+    label: Contexte de la conversation
+    type: select
+    description: Sélectionner uniquement un contexte appartenant au cycle choisi ; champ absent de l'article test
+      V1.
+    options:
+      values:
+      - name: CST
+        label: Industrie — Croissance sous tension
+      - name: ASC
+        label: Industrie — Adaptation sous contrainte
+      - name: RSS
+        label: Industrie — Réinvention sous crise
+      - name: zone-tendue
+        label: Immobilier — Zone tendue
+      - name: zone-croissance
+        label: Immobilier — Zone en croissance
+      - name: territoire-reconversion
+        label: Immobilier — Territoire en reconversion
+  - name: lecture_principale
+    label: Lecture professionnelle principale
+    type: select
+    required: true
+    options:
+      values:
+      - name: strategie-gouvernance
+        label: Stratégie & gouvernance
+      - name: finance-investissement
+        label: Finance & investissement
+      - name: droit-regulation
+        label: Droit & régulation
+      - name: operations-organisation
+        label: Opérations & organisation
+      - name: technologie-innovation
+        label: Technologie & innovation
+      - name: ressources-humaines-competences
+        label: Ressources humaines & compétences
+      - name: energie-ressources
+        label: Énergie & ressources
+      - name: territoires-politiques-publiques
+        label: Territoires & politiques publiques
+  - name: lectures_secondaires
+    label: Lectures professionnelles secondaires
+    type: select
+    options:
+      multiple: true
+      values:
+      - name: strategie-gouvernance
+        label: Stratégie & gouvernance
+      - name: finance-investissement
+        label: Finance & investissement
+      - name: droit-regulation
+        label: Droit & régulation
+      - name: operations-organisation
+        label: Opérations & organisation
+      - name: technologie-innovation
+        label: Technologie & innovation
+      - name: ressources-humaines-competences
+        label: Ressources humaines & compétences
+      - name: energie-ressources
+        label: Énergie & ressources
+      - name: territoires-politiques-publiques
+        label: Territoires & politiques publiques
+  - name: tags
+    label: Tags — premiers thèmes proposés (à valider)
+    type: select
+    options:
+      multiple: true
+      max: 6
+      values:
+      - name: financement
+        label: Financement
+      - name: investissement
+        label: Investissement
+      - name: rentabilite
+        label: Rentabilité
+      - name: capacite-production
+        label: Capacité de production
+      - name: maintenance
+        label: Maintenance
+      - name: approvisionnement
+        label: Approvisionnement
+      - name: debouches
+        label: Débouchés
+      - name: demande
+        label: Demande
+      - name: commercialisation
+        label: Commercialisation
+      - name: gouvernance
+        label: Gouvernance
+      - name: competences
+        label: Compétences
+      - name: energie
+        label: Énergie
+      - name: foncier
+        label: Foncier
+      - name: reglementation
+        label: Réglementation
+      - name: transformation
+        label: Transformation
+      - name: negociation
+        label: Négociation
+  - name: statut_editorial
+    label: Étape éditoriale
+    type: select
+    options:
+      values:
+      - name: brouillon
+        label: Brouillon
+      - name: verification
+        label: Vérification / anonymisation
+      - name: pret
+        label: Prêt pour publication
+      - name: publie
+        label: Publié
+  - name: publication_date
+    label: Publication souhaitée — date et heure
+    type: date
+    options:
+      time: true
+      format: yyyy-MM-dd'T'HH:mm
+  - name: published
+    label: Autorisé pour publication (contrôle éditorial)
+    type: boolean
+    description: 'Ce seul commutateur ne publie pas l''article : le futur moteur appliquera les règles d''autorisation
+      et de date.'
+  - name: hero_image
+    label: Illustration
+    type: image
+  - name: source_notice
+    label: Présentation anonymisée de la source (publique uniquement)
+    type: text
+    description: Ne pas saisir d'identités, de noms d'entreprises confidentiels, de données de contact ou d'indices
+      de réidentification.
+  - name: methodology_notice
+    label: Comment cet article a été réalisé (public)
+    type: text
+  - name: seo
+    label: Référencement et partage social
+    type: object
+    fields:
+    - name: seo_title
+      label: Titre SEO
+      type: string
+    - name: seo_description
+      label: Description SEO
+      type: text
+    - name: social_image
+      label: Image de partage
+      type: image
+  - name: recommandations_manuelles
+    label: Recommandations éditoriales manuelles (facultatif)
+    type: reference
+    description: Exception aux cinq blocs automatiques ; sélectionner des articles déjà présents dans la collection.
+    options:
+      collection: articles
+      multiple: true
+      max: 5
+  - name: body
+    label: Article
+    type: rich-text
+  operations:
+    create: false
+    delete: false
