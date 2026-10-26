@@ -4,20 +4,20 @@ import { isPublic, validClassification, urlOf, readings, conversations, publicat
 import { articleStyle } from '../../lib/article-style';
 import { photoCycle, photoLecture, afficherPhotoListe } from '../../lib/photographies';
 import MediaFooter from '../../components/MediaFooter.astro';
+import MediaHeader from '../../components/MediaHeader.astro';
 const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
 const ordered=[...items].sort((a,b)=>({une:0,secondaire:1,standard:2}[a.data.mise_en_avant||'standard']??2)-({une:0,secondaire:1,standard:2}[b.data.mise_en_avant||'standard']??2));
 const featured=ordered[0];
-const remaining=ordered.slice(1,7);
+const remaining=ordered.slice(1,10);
+const visual=remaining.filter((a,i)=>a.data.hero_image&&afficherPhotoListe(a.data,"accueil",i+1));
+const headlines=remaining.filter((a,i)=>!a.data.hero_image||!afficherPhotoListe(a.data,"accueil",i+1));
 ---
 <!doctype html>
 <html lang="fr">
 <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Scènes d’Arbitrage — Regards sur les décisions économiques</title><meta name="description" content="Comprendre les décisions qui façonnent l’économie, par les conversations, les situations concrètes et les regards professionnels."/><style is:inline set:html={articleStyle}/></head>
 <body class="media-home">
 <a class="skip" href="#contenu">Aller au contenu</a>
-<div class="site-bar"><nav class="site-bar-inner media-nav" aria-label="Navigation principale">
-<a class="brand" href="/media/">SCÈNES D’ARBITRAGE</a>
-<div class="nav-links"><a aria-current="page" href="/media/">Accueil</a><a href="/media/cycles/industrie/">Industrie</a><a href="/media/cycles/immobilier/">Immobilier</a><a href="/media/#lectures">Lectures</a><a href="/media/publications/">Publications</a><a href="/media/newsletter/">Newsletter</a><a href="/media/institution/qui-sommes-nous/">À propos</a></div>
-</nav></div>
+<MediaHeader active="accueil"/>
 <main id="contenu" class="home-shell">
 <section class="home-intro">
 <p class="micro">REGARDS SUR LES DÉCISIONS ÉCONOMIQUES</p>
@@ -27,13 +27,20 @@ const remaining=ordered.slice(1,7);
 </section>
 <section id="publications" class="home-section home-editorial" aria-labelledby="publications-heading">
 <div class="section-line"><div><p class="micro">À LA UNE</p><h2 id="publications-heading">Dernières publications</h2></div><a class="story-action" href="/media/publications/">Explorer le catalogue</a></div>
-{featured ? <article class="featured-story">
-<div class="story-label">{featured.data.cycle} / {conversations[featured.data.cycle]?.[featured.data.conversation]} / {readings[featured.data.lecture_principale]}</div>
-{featured.data.hero_image&&afficherPhotoListe(featured.data,"accueil",0)&&<img class="article-list-photo featured-photo" src={featured.data.hero_image} alt={featured.data.seo?.image_alt||""} loading="eager"/>}<h3><a href={urlOf(featured.id)}>{featured.data.title}</a></h3>
+<div class="press-front-grid">
+<div class="press-lead-column">
+{featured ? <article class="featured-story press-lead-story">
+<p class="story-label">{featured.data.cycle} / {conversations[featured.data.cycle]?.[featured.data.conversation]} / {readings[featured.data.lecture_principale]}</p>
+{featured.data.hero_image&&afficherPhotoListe(featured.data,"accueil",0)&&<img class="article-list-photo featured-photo" src={featured.data.hero_image} alt={featured.data.seo?.image_alt||""} loading="eager"/>}
+<h3><a href={urlOf(featured.id)}>{featured.data.title}</a></h3>
 {featured.data.summary&&<p>{featured.data.summary}</p>}
-<a class="story-action" href={urlOf(featured.id)}>Lire l’article</a>
-</article> : <p class="small">Les publications paraîtront ici dès leur mise en ligne.</p>}
-{remaining.length>0&&<div class="home-story-list">{remaining.map((a,i)=><article class="home-story">{a.data.hero_image&&afficherPhotoListe(a.data,"accueil",i+1)&&<img class="article-list-photo" src={a.data.hero_image} alt={a.data.seo?.image_alt||""} loading="lazy"/>}<p class="micro">{a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3><p>{a.data.summary}</p></article>)}</div>}
+<a class="story-action" href={urlOf(featured.id)}>Lire l’article</a></article> : <p class="small">Les publications paraîtront ici dès leur mise en ligne.</p>}
+<div class="press-secondary-grid">{visual.slice(0,4).map(a=><article class="press-visual-story">{a.data.hero_image&&<img src={a.data.hero_image} alt={a.data.seo?.image_alt||""} loading="lazy"/>}<p class="micro">{a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}</div>
+</div>
+<aside class="press-headlines" aria-label="Autres sujets"><p class="micro">À LIRE ÉGALEMENT</p>
+{[...headlines,...visual.slice(4)].map(a=><article class="press-headline"><p class="micro">{a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}
+<a class="press-more" href="/media/publications/">Toutes les publications</a></aside>
+</div>
 </section>
 <section id="cycles" class="home-section" aria-labelledby="cycles-heading">
 <div class="section-line"><div><p class="micro">LES SECTEURS</p><h2 id="cycles-heading">Explorer les cycles</h2></div><span class="small">Deux premiers cycles · Sept conversations chacun</span></div>
