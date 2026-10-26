@@ -38,6 +38,10 @@ jobs:
       - name: Vérifier le dossier de sortie
         run: test -f media-prototype/dist/media/index.html
 
+      - name: Vérifier les routes et les garde-fous SEO de préproduction
+        working-directory: media-prototype
+        run: node scripts/check-preview.mjs
+
       - name: Conserver le site compilé comme artefact privé du workflow
         uses: actions/upload-artifact@v4
         with:
