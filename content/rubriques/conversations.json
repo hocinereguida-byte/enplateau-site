@@ -1,0 +1,88 @@
+{
+  "conversations": {
+    "industrie_C1": {
+      "titre": "Croissance industrielle",
+      "presentation": "",
+      "questions": "",
+      "mots_cles": ""
+    },
+    "industrie_C2": {
+      "titre": "Dépendances industrielles",
+      "presentation": "",
+      "questions": "",
+      "mots_cles": ""
+    },
+    "industrie_C3": {
+      "titre": "Outil industriel",
+      "presentation": "",
+      "questions": "",
+      "mots_cles": ""
+    },
+    "industrie_C4": {
+      "titre": "Trajectoire industrielle",
+      "presentation": "",
+      "questions": "",
+      "mots_cles": ""
+    },
+    "industrie_C5": {
+      "titre": "Besoins et proposition de valeur",
+      "presentation": "",
+      "questions": "",
+      "mots_cles": ""
+    },
+    "industrie_C6": {
+      "titre": "Marchés et débouchés",
+      "presentation": "",
+      "questions": "",
+      "mots_cles": ""
+    },
+    "industrie_C7": {
+      "titre": "Implantation industrielle",
+      "presentation": "",
+      "questions": "",
+      "mots_cles": ""
+    },
+    "immobilier_C1": {
+      "titre": "À quel moment une opération ne tient plus ?",
+      "presentation": "",
+      "questions": "",
+      "mots_cles": ""
+    },
+    "immobilier_C2": {
+      "titre": "Jusqu’où peut-on produire ?",
+      "presentation": "",
+      "questions": "",
+      "mots_cles": ""
+    },
+    "immobilier_C3": {
+      "titre": "Transformer ou reconstruire ?",
+      "presentation": "",
+      "questions": "",
+      "mots_cles": ""
+    },
+    "immobilier_C4": {
+      "titre": "Qui fait réellement avancer — ou basculer — un projet ?",
+      "presentation": "",
+      "questions": "",
+      "mots_cles": ""
+    },
+    "immobilier_C5": {
+      "titre": "À quels besoins l’immobilier doit-il encore répondre ?",
+      "presentation": "",
+      "questions": "",
+      "mots_cles": ""
+    },
+    "immobilier_C6": {
+      "titre": "Comment préserver la valeur et l’utilité du patrimoine existant ?",
+      "presentation": "",
+      "questions": "",
+      "mots_cles": ""
+    },
+    "immobilier_C7": {
+      "titre": "À quelles conditions accéder aux espaces nécessaires ?",
+      "presentation": "",
+      "questions": "",
+      "mots_cles": ""
+    }
+  }
+}
