@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import { isPublic, validClassification, urlOf, readings, conversations, contexts, publicationInstant } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
+import MediaFooter from '../../../components/MediaFooter.astro';
 const articles=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
 const entries=articles.map(a=>({
   title:a.data.title,
@@ -82,4 +83,4 @@ form.addEventListener('input',redraw);
 form.addEventListener('change',redraw);
 form.addEventListener('reset',()=>{requestAnimationFrame(redraw)});
 redraw();
-</script></body></html>
+</script><MediaFooter/></body></html>
