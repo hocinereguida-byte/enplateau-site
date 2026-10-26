@@ -22,7 +22,7 @@ const headlines=remaining.filter((a,i)=>!afficherPhotoListe(a.data,"accueil",i+1
 <section class="home-intro">
 <p class="micro">REGARDS SUR LES DÉCISIONS ÉCONOMIQUES</p>
 <h1>Les décisions ont plusieurs lectures.</h1>
-<p class="home-standfirst">Comprendre les choix qui façonnent l’économie réelle, à travers des conversations et plusieurs regards professionnels.</p>
+<p class="home-standfirst">Investir ou attendre. Transformer ou préserver. Croître ou consolider. Des expériences réelles et plusieurs regards professionnels pour comprendre l’intelligence derrière les décisions économiques.</p>
 <div class="intro-links"><a href="/media/publications/">Explorer toutes les publications</a><a href="#cycles">Explorer les cycles</a></div>
 </section>
 <section id="publications" class="home-section home-editorial" aria-labelledby="publications-heading">
@@ -51,7 +51,7 @@ const headlines=remaining.filter((a,i)=>!afficherPhotoListe(a.data,"accueil",i+1
 </section>
 <section id="lectures" class="home-section" aria-labelledby="lectures-heading">
 <div class="section-line"><div><p class="micro">LES REGARDS</p><h2 id="lectures-heading">Lire selon votre expertise</h2></div></div>
-<p class="home-section-intro">Une même question économique peut être abordée par la stratégie, la finance, le droit, les opérations ou d’autres disciplines. Retrouvez chaque lecture à travers les cycles.</p>
+<p class="home-section-intro">Une décision engage souvent plusieurs savoirs et responsabilités. Découvrez ce que la stratégie, la finance, le droit, les opérations et les autres lectures professionnelles permettent d’en comprendre.</p>
 <div class="expertise-grid">{Object.entries(readings).map(([code,name])=><a class="expertise-link" href={`/media/lectures/${code}/`}>{photoLecture(code)?<img class="reading-tiny-photo" src={photoLecture(code)} alt="" loading="lazy"/>:<span class="reading-photo-placeholder" aria-hidden="true">PHOTO</span>}{name}<span aria-hidden="true">↗</span></a>)}</div>
 </section>
 <section class="home-section"><p class="micro">PARTAGER UNE EXPÉRIENCE</p><h2>Votre regard peut éclairer une conversation.</h2><p class="home-section-intro">Vous avez pris part à une décision ou observé un arbitrage utile à comprendre ? Signalez votre expérience à la rédaction, qui reste seule à l’initiative des entretiens.</p><a class="story-action" href="/media/proposer-un-eclairage/">Proposer un éclairage</a></section>
