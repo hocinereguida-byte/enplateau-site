@@ -10,3 +10,17 @@
  </div>
  <p class="media-footer-bottom">Scènes d’Arbitrage · Prototype de préproduction · Les contenus et les modalités de contact sont en cours de validation.</p>
 </footer>
+<style is:global>
+.media-global-footer{background:#080f17!important;color:#d7e2ed!important;padding:38px 24px 20px;margin-top:40px;border-top:1px solid #245479;font-family:'IBM Plex Sans',Arial,sans-serif}
+.media-global-footer-inner{width:min(100%,1140px);margin:0 auto;display:grid;grid-template-columns:1.6fr repeat(3,minmax(0,1fr));gap:30px;align-items:start}
+.media-global-footer-inner>div,.media-global-footer nav{min-width:0}
+.media-global-footer nav{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:9px!important;white-space:normal!important;font:14px/1.5 'IBM Plex Sans',Arial,sans-serif!important}
+.media-global-footer nav strong{display:block;color:#a8bfd3;font:600 11px/1.5 'IBM Plex Mono',monospace;letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px}
+.media-global-footer a{color:#e1eaf3!important;text-decoration:none!important;display:block;overflow-wrap:anywhere}
+.media-global-footer a:hover,.media-global-footer a:focus-visible{text-decoration:underline!important}
+.media-global-footer .media-footer-brand{font:600 16px/1.5 'IBM Plex Mono',monospace;letter-spacing:.04em}
+.media-global-footer-inner p{font:13px/1.65 'IBM Plex Sans',Arial,sans-serif;color:#b1c0cd;margin:10px 0}
+.media-global-footer-bottom{max-width:1140px;margin:28px auto 0;padding-top:16px;border-top:1px solid #24384b;color:#a6b6c5;font:11px/1.6 'IBM Plex Mono',monospace}
+@media(max-width:800px){.media-global-footer-inner{grid-template-columns:repeat(2,minmax(0,1fr))}.media-global-footer-inner>div{grid-column:1/-1}}
+@media(max-width:480px){.media-global-footer{padding:30px 23px 18px}.media-global-footer-inner{grid-template-columns:1fr 1fr;column-gap:20px;row-gap:26px}.media-global-footer nav{font-size:13px!important}}
+</style>
