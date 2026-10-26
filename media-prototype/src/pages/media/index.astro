@@ -13,7 +13,7 @@ const remaining=items.slice(1,7);
 <a class="skip" href="#contenu">Aller au contenu</a>
 <div class="site-bar"><nav class="site-bar-inner media-nav" aria-label="Navigation principale">
 <a class="brand" href="/media/">SCÈNES D’ARBITRAGE</a>
-<div class="nav-links"><a aria-current="page" href="/media/">Accueil</a><a href="/media/cycles/industrie/">Industrie</a><a href="/media/cycles/immobilier/">Immobilier</a><a href="/media/#lectures">Lectures</a><a href="/media/publications/">Publications</a></div>
+<div class="nav-links"><a aria-current="page" href="/media/">Accueil</a><a href="/media/cycles/industrie/">Industrie</a><a href="/media/cycles/immobilier/">Immobilier</a><a href="/media/#lectures">Lectures</a><a href="/media/publications/">Publications</a><a href="/media/newsletter/">Newsletter</a></div>
 </nav></div>
 <main id="contenu" class="home-shell">
 <section class="home-intro">
@@ -44,6 +44,7 @@ const remaining=items.slice(1,7);
 <p class="home-section-intro">Une même question économique peut être abordée par la stratégie, la finance, le droit, les opérations ou d’autres disciplines. Retrouvez chaque lecture à travers les cycles.</p>
 <div class="expertise-grid">{Object.entries(readings).map(([code,name])=><a class="expertise-link" href={`/media/lectures/${code}/`}>{name}<span aria-hidden="true">↗</span></a>)}</div>
 </section>
+<section class="home-section newsletter-home"><p class="micro">GARDER LE FIL</p><h2>La lettre de Scènes d’Arbitrage</h2><p class="home-section-intro">Retrouvez les nouvelles conversations et les regards professionnels sur les décisions économiques.</p><a class="story-action" href="/media/newsletter/">Découvrir la newsletter</a></section>
 </main>
 <footer class="home-footer"><div><strong>SCÈNES D’ARBITRAGE</strong><span>Prototype de préproduction · Les contenus et la navigation continuent d’évoluer.</span></div></footer>
 </body></html>
