@@ -767,3 +767,238 @@ content:
     - name: territoires-politiques-publiques
       label: "Territoires & politiques publiques"
       type: image
+
+- name: fiches_conversations
+  label: Fiches éditoriales — conversations
+  type: file
+  path: content/rubriques/conversations.json
+  format: json
+  fields:
+  - name: conversations
+    label: Conversations des cycles
+    type: object
+    fields:
+    - name: industrie_C1
+      label: "Industrie C1"
+      type: object
+      fields:
+      - name: titre
+        label: Titre de référence
+        type: string
+      - name: presentation
+        label: Présentation de la conversation
+        type: text
+      - name: questions
+        label: Grandes questions (texte)
+        type: text
+      - name: mots_cles
+        label: Mots-clés séparés par virgules
+        type: text
+    - name: industrie_C2
+      label: "Industrie C2"
+      type: object
+      fields:
+      - name: titre
+        label: Titre de référence
+        type: string
+      - name: presentation
+        label: Présentation de la conversation
+        type: text
+      - name: questions
+        label: Grandes questions (texte)
+        type: text
+      - name: mots_cles
+        label: Mots-clés séparés par virgules
+        type: text
+    - name: industrie_C3
+      label: "Industrie C3"
+      type: object
+      fields:
+      - name: titre
+        label: Titre de référence
+        type: string
+      - name: presentation
+        label: Présentation de la conversation
+        type: text
+      - name: questions
+        label: Grandes questions (texte)
+        type: text
+      - name: mots_cles
+        label: Mots-clés séparés par virgules
+        type: text
+    - name: industrie_C4
+      label: "Industrie C4"
+      type: object
+      fields:
+      - name: titre
+        label: Titre de référence
+        type: string
+      - name: presentation
+        label: Présentation de la conversation
+        type: text
+      - name: questions
+        label: Grandes questions (texte)
+        type: text
+      - name: mots_cles
+        label: Mots-clés séparés par virgules
+        type: text
+    - name: industrie_C5
+      label: "Industrie C5"
+      type: object
+      fields:
+      - name: titre
+        label: Titre de référence
+        type: string
+      - name: presentation
+        label: Présentation de la conversation
+        type: text
+      - name: questions
+        label: Grandes questions (texte)
+        type: text
+      - name: mots_cles
+        label: Mots-clés séparés par virgules
+        type: text
+    - name: industrie_C6
+      label: "Industrie C6"
+      type: object
+      fields:
+      - name: titre
+        label: Titre de référence
+        type: string
+      - name: presentation
+        label: Présentation de la conversation
+        type: text
+      - name: questions
+        label: Grandes questions (texte)
+        type: text
+      - name: mots_cles
+        label: Mots-clés séparés par virgules
+        type: text
+    - name: industrie_C7
+      label: "Industrie C7"
+      type: object
+      fields:
+      - name: titre
+        label: Titre de référence
+        type: string
+      - name: presentation
+        label: Présentation de la conversation
+        type: text
+      - name: questions
+        label: Grandes questions (texte)
+        type: text
+      - name: mots_cles
+        label: Mots-clés séparés par virgules
+        type: text
+    - name: immobilier_C1
+      label: "Immobilier C1"
+      type: object
+      fields:
+      - name: titre
+        label: Titre de référence
+        type: string
+      - name: presentation
+        label: Présentation de la conversation
+        type: text
+      - name: questions
+        label: Grandes questions (texte)
+        type: text
+      - name: mots_cles
+        label: Mots-clés séparés par virgules
+        type: text
+    - name: immobilier_C2
+      label: "Immobilier C2"
+      type: object
+      fields:
+      - name: titre
+        label: Titre de référence
+        type: string
+      - name: presentation
+        label: Présentation de la conversation
+        type: text
+      - name: questions
+        label: Grandes questions (texte)
+        type: text
+      - name: mots_cles
+        label: Mots-clés séparés par virgules
+        type: text
+    - name: immobilier_C3
+      label: "Immobilier C3"
+      type: object
+      fields:
+      - name: titre
+        label: Titre de référence
+        type: string
+      - name: presentation
+        label: Présentation de la conversation
+        type: text
+      - name: questions
+        label: Grandes questions (texte)
+        type: text
+      - name: mots_cles
+        label: Mots-clés séparés par virgules
+        type: text
+    - name: immobilier_C4
+      label: "Immobilier C4"
+      type: object
+      fields:
+      - name: titre
+        label: Titre de référence
+        type: string
+      - name: presentation
+        label: Présentation de la conversation
+        type: text
+      - name: questions
+        label: Grandes questions (texte)
+        type: text
+      - name: mots_cles
+        label: Mots-clés séparés par virgules
+        type: text
+    - name: immobilier_C5
+      label: "Immobilier C5"
+      type: object
+      fields:
+      - name: titre
+        label: Titre de référence
+        type: string
+      - name: presentation
+        label: Présentation de la conversation
+        type: text
+      - name: questions
+        label: Grandes questions (texte)
+        type: text
+      - name: mots_cles
+        label: Mots-clés séparés par virgules
+        type: text
+    - name: immobilier_C6
+      label: "Immobilier C6"
+      type: object
+      fields:
+      - name: titre
+        label: Titre de référence
+        type: string
+      - name: presentation
+        label: Présentation de la conversation
+        type: text
+      - name: questions
+        label: Grandes questions (texte)
+        type: text
+      - name: mots_cles
+        label: Mots-clés séparés par virgules
+        type: text
+    - name: immobilier_C7
+      label: "Immobilier C7"
+      type: object
+      fields:
+      - name: titre
+        label: Titre de référence
+        type: string
+      - name: presentation
+        label: Présentation de la conversation
+        type: text
+      - name: questions
+        label: Grandes questions (texte)
+        type: text
+      - name: mots_cles
+        label: Mots-clés séparés par virgules
+        type: text
