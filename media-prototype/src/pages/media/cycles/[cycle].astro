@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import { isPublic, validClassification, urlOf, conversations, contexts, readings } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
+import MediaFooter from '../../../components/MediaFooter.astro';
 export function getStaticPaths(){return Object.keys(conversations).map(cycle=>({params:{cycle}}));}
 const {cycle}=Astro.params;
 const all=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data));
@@ -14,4 +15,4 @@ const conv=Object.entries(conversations[cycle]||{});
 <main class="shell"><p class="kicker"><a href="/media/">Accueil</a> / Cycle</p><h1>{cycleName}</h1><p class="lead">Sept conversations pour explorer les décisions, leurs conditions et leurs conséquences.</p>
 <section aria-labelledby="conversations-heading"><h2 id="conversations-heading">Les sept conversations</h2><div class="cycle-conversation-list">{conv.map(([code,name])=><a class="cycle-compact-row" href={`/media/cycles/${cycle}/conversations/${code}/`}><span class="cycle-compact-number">{code}</span><span class="cycle-compact-title">{name}</span><span class="cycle-compact-aside">{items.filter(a=>a.data.conversation===code).length>0?`${items.filter(a=>a.data.conversation===code).length} publication(s)`:'À découvrir'}</span></a>)}</div></section>
 <section class="panel"><p class="micro">TROIS SITUATIONS</p><h2>Les contextes du cycle</h2><div class="cycle-context-list">{Object.entries(contexts[cycle]||{}).map(([code,name])=><a class="cycle-compact-row" href={`/media/cycles/${cycle}/contextes/${code}/`}><span class="cycle-compact-title">{name}</span><span class="cycle-compact-aside">{items.filter(a=>a.data.contexte===code).length>0?`${items.filter(a=>a.data.contexte===code).length} publication(s)`:'À découvrir'}</span></a>)}</div></section>
-</main></body></html>
+</main><MediaFooter/></body></html>
