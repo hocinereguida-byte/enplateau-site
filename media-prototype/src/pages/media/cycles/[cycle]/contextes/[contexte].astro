@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+import { isPublic,validClassification,urlOf,conversations,contexts,readings } from '../../../../../lib/editorial';
+import { articleStyle } from '../../../../../lib/article-style';
+export function getStaticPaths(){return Object.entries(contexts).flatMap(([cycle,group])=>Object.keys(group).map(contexte=>({params:{cycle,contexte}})));}
+const {cycle,contexte}=Astro.params;
+const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)&&a.data.cycle===cycle&&a.data.contexte===contexte);
+const name=contexts[cycle]?.[contexte];
+---
+<!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>{name} — Scènes d’Arbitrage</title><style is:inline set:html={articleStyle}/></head><body><div class="site-bar"><nav class="site-bar-inner"><a href="/media/" class="brand">SCÈNES D’ARBITRAGE</a><span class="site-label">PROTOTYPE — PRÉPRODUCTION</span></nav></div><main class="shell"><p class="kicker"><a href="/media/">Accueil</a> / <a href={`/media/cycles/${cycle}/`}>{cycle}</a> / Contexte</p><h1>{name}</h1><p class="lead">Articles de ce contexte, réunis à travers les conversations du cycle.</p>
+{items.length===0?<p>Aucun article publié pour le moment.</p>:<div class="cards">{items.map(a=><article class="card"><p class="kicker">{conversations[cycle]?.[a.data.conversation]} · {readings[a.data.lecture_principale]}</p><h2><a href={urlOf(a.id)}>{a.data.title}</a></h2><p>{a.data.summary}</p></article>)}</div>}</main></body></html>
