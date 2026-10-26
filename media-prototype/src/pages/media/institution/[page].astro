@@ -32,7 +32,7 @@ const pages={
    {title:'Une relation sans obligation de participation',paragraphs:['Une proposition de contribution, une invitation à échanger ou un entretien préparatoire ne garantissent ni la réalisation ni la publication d’un article. La rédaction apprécie la pertinence d’une contribution au regard de l’ensemble éditorial.']}
   ]}
 } as const;
-export function getStaticPaths(){return Object.keys(pages).map(page=>({params:{page}}));}
+export function getStaticPaths(){return ['qui-sommes-nous','ligne-editoriale','notre-methode'].map(page=>({params:{page}}));}
 const data=pages[Astro.params.page as keyof typeof pages];
 ---
 <!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>{data.nav} — Scènes d’Arbitrage</title><meta name="description" content={data.intro}/><style is:inline set:html={articleStyle}/></head><body>
