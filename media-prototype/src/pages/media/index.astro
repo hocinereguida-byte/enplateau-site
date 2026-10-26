@@ -9,8 +9,8 @@ const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validC
 const ordered=[...items].sort((a,b)=>({une:0,secondaire:1,standard:2}[a.data.mise_en_avant||'standard']??2)-({une:0,secondaire:1,standard:2}[b.data.mise_en_avant||'standard']??2));
 const featured=ordered[0];
 const remaining=ordered.slice(1,10);
-const visual=remaining.filter((a,i)=>a.data.hero_image&&afficherPhotoListe(a.data,"accueil",i+1));
-const headlines=remaining.filter((a,i)=>!a.data.hero_image||!afficherPhotoListe(a.data,"accueil",i+1));
+const visual=remaining.filter((a,i)=>afficherPhotoListe(a.data,"accueil",i+1));
+const headlines=remaining.filter((a,i)=>!afficherPhotoListe(a.data,"accueil",i+1));
 ---
 <!doctype html>
 <html lang="fr">
@@ -22,7 +22,7 @@ const headlines=remaining.filter((a,i)=>!a.data.hero_image||!afficherPhotoListe(
 <section class="home-intro">
 <p class="micro">REGARDS SUR LES DÉCISIONS ÉCONOMIQUES</p>
 <h1>Les décisions ont plusieurs lectures.</h1>
-<p class="home-standfirst">Des conversations pour comprendre les choix, les équilibres et les trajectoires de l’économie réelle. À chaque arbitrage, plusieurs regards professionnels.</p>
+<p class="home-standfirst">Comprendre les choix qui façonnent l’économie réelle, à travers des conversations et plusieurs regards professionnels.</p>
 <div class="intro-links"><a href="/media/publications/">Explorer toutes les publications</a><a href="#cycles">Explorer les cycles</a></div>
 </section>
 <section id="publications" class="home-section home-editorial" aria-labelledby="publications-heading">
