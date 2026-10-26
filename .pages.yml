@@ -1,0 +1,166 @@
+# Scènes d'Arbitrage — Pages CMS V2 (prototype)
+# À déposer à la racine de prototype-pages-cms uniquement.
+# Compatibilité maintenue avec content/articles/test-cms-arbitrage-industriel.md.
+media:
+  input: media/articles
+  output: /media/articles
+  rename: safe
+  extensions: [jpg, jpeg, png, webp]
+content:
+  - name: articles
+    label: Articles — rédaction
+    type: collection
+    path: content/articles
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      fields: [title, cycle, conversation, contexte, lecture_principale, statut_editorial, publication_date]
+      primary: title
+      sort: [publication_date, title]
+      search: [title, summary]
+      default:
+        sort: publication_date
+        order: desc
+    fields:
+      - name: title
+        label: Titre
+        type: string
+        required: true
+      - name: summary
+        label: Chapô
+        type: text
+        required: true
+      - name: format
+        label: Format journalistique
+        type: select
+        options:
+          values:
+            - { name: entretien, label: Grand entretien }
+            - { name: regard-croise, label: Regard croisé }
+            - { name: analyse-sectorielle, label: Analyse sectorielle }
+            - { name: decouverte, label: Article de découverte }
+      - name: cycle
+        label: Cycle sectoriel
+        type: select
+        required: true
+        options:
+          values:
+            - { name: industrie, label: Industrie & transformation des territoires }
+            - { name: immobilier, label: Immobilier & fabrique des territoires }
+      - name: conversation
+        label: Conversation (C1 à C7 dans le cycle choisi)
+        type: select
+        required: true
+        description: "Le code C1 à C7 désigne une conversation différente selon le cycle ; vérifier la correspondance avec le cycle."
+        options:
+          values: [C1, C2, C3, C4, C5, C6, C7]
+      - name: contexte
+        label: Contexte de la conversation
+        type: select
+        description: "Sélectionner uniquement un contexte appartenant au cycle choisi ; champ absent de l'article test V1."
+        options:
+          values:
+            - { name: CST, label: "Industrie — Croissance sous tension" }
+            - { name: ASC, label: "Industrie — Adaptation sous contrainte" }
+            - { name: RSS, label: "Industrie — Réinvention sous crise" }
+            - { name: zone-tendue, label: "Immobilier — Zone tendue" }
+            - { name: zone-croissance, label: "Immobilier — Zone en croissance" }
+            - { name: territoire-reconversion, label: "Immobilier — Territoire en reconversion" }
+      - name: lecture_principale
+        label: Lecture professionnelle principale
+        type: select
+        required: true
+        options:
+          values:
+            - { name: strategie-gouvernance, label: Stratégie & gouvernance }
+            - { name: finance-investissement, label: Finance & investissement }
+            - { name: droit-regulation, label: Droit & régulation }
+            - { name: operations-organisation, label: Opérations & organisation }
+            - { name: technologie-innovation, label: Technologie & innovation }
+            - { name: ressources-humaines-competences, label: Ressources humaines & compétences }
+            - { name: energie-ressources, label: Énergie & ressources }
+            - { name: territoires-politiques-publiques, label: Territoires & politiques publiques }
+      - name: lectures_secondaires
+        label: Lectures professionnelles secondaires
+        type: select
+        options:
+          multiple: true
+          values:
+            - { name: strategie-gouvernance, label: Stratégie & gouvernance }
+            - { name: finance-investissement, label: Finance & investissement }
+            - { name: droit-regulation, label: Droit & régulation }
+            - { name: operations-organisation, label: Opérations & organisation }
+            - { name: technologie-innovation, label: Technologie & innovation }
+            - { name: ressources-humaines-competences, label: Ressources humaines & compétences }
+            - { name: energie-ressources, label: Énergie & ressources }
+            - { name: territoires-politiques-publiques, label: Territoires & politiques publiques }
+      - name: tags
+        label: Tags — premiers thèmes proposés (à valider)
+        type: select
+        options:
+          multiple: true
+          max: 6
+          values:
+            - { name: financement, label: Financement }
+            - { name: investissement, label: Investissement }
+            - { name: rentabilite, label: Rentabilité }
+            - { name: capacite-production, label: Capacité de production }
+            - { name: maintenance, label: Maintenance }
+            - { name: approvisionnement, label: Approvisionnement }
+            - { name: debouches, label: Débouchés }
+            - { name: demande, label: Demande }
+            - { name: commercialisation, label: Commercialisation }
+            - { name: gouvernance, label: Gouvernance }
+            - { name: competences, label: Compétences }
+            - { name: energie, label: Énergie }
+            - { name: foncier, label: Foncier }
+            - { name: reglementation, label: Réglementation }
+            - { name: transformation, label: Transformation }
+            - { name: negociation, label: Négociation }
+      - name: statut_editorial
+        label: Étape éditoriale
+        type: select
+        options:
+          values:
+            - { name: brouillon, label: Brouillon }
+            - { name: verification, label: Vérification / anonymisation }
+            - { name: pret, label: Prêt pour publication }
+            - { name: publie, label: Publié }
+      - name: publication_date
+        label: Publication souhaitée — date et heure
+        type: date
+        options:
+          time: true
+          format: "yyyy-MM-dd'T'HH:mm"
+      - name: published
+        label: Autorisé pour publication (contrôle éditorial)
+        type: boolean
+        description: "Ce seul commutateur ne publie pas l'article : le futur moteur appliquera les règles d'autorisation et de date."
+      - name: hero_image
+        label: Illustration
+        type: image
+      - name: source_notice
+        label: Présentation anonymisée de la source (publique uniquement)
+        type: text
+        description: "Ne pas saisir d'identités, de noms d'entreprises confidentiels, de données de contact ou d'indices de réidentification."
+      - name: methodology_notice
+        label: Comment cet article a été réalisé (public)
+        type: text
+      - name: seo
+        label: Référencement et partage social
+        type: object
+        fields:
+          - { name: seo_title, label: Titre SEO, type: string }
+          - { name: seo_description, label: Description SEO, type: text }
+          - { name: social_image, label: Image de partage, type: image }
+      - name: recommandations_manuelles
+        label: Recommandations éditoriales manuelles (facultatif)
+        type: reference
+        description: "Exception aux cinq blocs automatiques ; sélectionner des articles déjà présents dans la collection."
+        options:
+          collection: articles
+          multiple: true
+          max: 5
+      - name: body
+        label: Article
+        type: rich-text
