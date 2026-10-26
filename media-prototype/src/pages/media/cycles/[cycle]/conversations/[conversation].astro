@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import { isPublic,validClassification,urlOf,conversations,contexts,readings } from '../../../../../lib/editorial';
 import { articleStyle } from '../../../../../lib/article-style';
+import MediaFooter from '../../../../../components/MediaFooter.astro';
 export function getStaticPaths(){return Object.entries(conversations).flatMap(([cycle,group])=>Object.keys(group).map(conversation=>({params:{cycle,conversation}})));}
 const {cycle,conversation}=Astro.params;
 const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)&&a.data.cycle===cycle&&a.data.conversation===conversation);
@@ -10,4 +11,4 @@ const name=conversations[cycle]?.[conversation];
 <!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>{name} — Scènes d’Arbitrage</title><style is:inline set:html={articleStyle}/></head><body><div class="site-bar"><nav class="site-bar-inner"><a class="brand" href="/media/">SCÈNES D’ARBITRAGE</a><span class="site-label">PROTOTYPE — PRÉPRODUCTION</span></nav><nav class="section-nav" aria-label="Rubriques"><a href="/media/">Accueil</a><a href="/media/cycles/industrie/">Industrie</a><a href="/media/cycles/immobilier/">Immobilier</a><a href="/media/#lectures">Lectures</a><a href="/media/publications/">Publications</a><a href="/media/newsletter/">Newsletter</a></nav></div><main class="shell"><p class="kicker"><a href="/media/">Accueil</a> / <a href={`/media/cycles/${cycle}/`}>{cycle}</a> / {conversation}</p><h1>{name}</h1><p class="lead">Les décisions éclairées par les différents contextes du cycle.</p>
 {Object.entries(contexts[cycle]||{}).map(([key,label])=><section class="panel"><h2>{label}</h2>{items.filter(a=>a.data.contexte===key).length===0?<p class="small">Aucun article publié pour le moment.</p>:<div class="cards">{items.filter(a=>a.data.contexte===key).map(a=><article class="card"><p class="kicker">{readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3><p>{a.data.summary}</p></article>)}</div>}</section>)}
 <section class="contribute-callout"><p class="micro">VOTRE EXPÉRIENCE</p><h2>Un éclairage sur cette conversation ?</h2><p>Signalez une décision ou une situation que votre expérience pourrait aider à comprendre. La rédaction examine les propositions sans engagement de publication.</p><a href={`/media/proposer-un-eclairage/?cycle=${encodeURIComponent(cycle)}&conversation=${encodeURIComponent(conversation)}`}>Proposer un éclairage</a></section>
-</main></body></html>
+</main><MediaFooter/></body></html>
