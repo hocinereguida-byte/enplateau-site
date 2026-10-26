@@ -3,10 +3,11 @@ import { readings } from '../lib/editorial';
 const {active=''}=Astro.props;
 const cycleLinks=[{title:'Industrie',href:'/media/cycles/industrie/'},{title:'Logement & fabrique des territoires',href:'/media/cycles/immobilier/'}];
 ---
-<header class="press-header">
+<header class="press-header" id="press-site-header">
  <div class="press-utility"><span>REGARDS SUR LES DÉCISIONS ÉCONOMIQUES</span><div><a href="/media/institution/qui-sommes-nous/">Le média</a><a href="/media/newsletter/">Newsletter</a><a href="/media/proposer-un-eclairage/">Contribuer</a></div></div>
  <div class="press-masthead"><a class="press-logo" href="/media/" aria-label="Scènes d’Arbitrage, accueil">Scènes d’Arbitrage</a><p>Comprendre les décisions. Croiser les regards.</p></div>
- <nav class="press-nav" aria-label="Navigation principale">
+ <div class="press-mobile-bar"><a class="press-mobile-brand" href="/media/" aria-label="Scènes d’Arbitrage — accueil">Scènes d’Arbitrage</a><div class="press-mobile-actions"><a class="press-mobile-search" href="/media/publications/" aria-label="Rechercher des publications">⌕</a><button class="press-menu-toggle" type="button" aria-controls="press-main-navigation" aria-expanded="false"><span class="press-toggle-icon" aria-hidden="true">☰</span><span class="press-toggle-label">Menu</span></button></div></div>
+ <nav class="press-nav" id="press-main-navigation" aria-label="Navigation principale">
   <a class="press-home-link" href="/media/" aria-current={active==='accueil'?'page':undefined}>Accueil</a>
   <details class="press-dropdown"><summary>Explorer <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Parcours de découverte</strong><a href="/media/cycles/">Tous les cycles</a><a href="/media/conversations/">Toutes les conversations</a><a href="/media/lectures/">Toutes les lectures</a></div></details>
   <details class="press-dropdown"><summary>Cycles <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Cycles disponibles</strong>{cycleLinks.map(item=><a href={item.href}>{item.title}</a>)}<a class="press-dropdown-more" href="/media/cycles/">Explorer tous les cycles</a></div></details>
@@ -17,14 +18,38 @@ const cycleLinks=[{title:'Industrie',href:'/media/cycles/industrie/'},{title:'Lo
  </nav>
 </header>
 <style is:global>
-.press-header{position:relative;z-index:10;background:#0a1119;color:#eaf1f6;border-bottom:3px solid #1d6aa3;font-family:'IBM Plex Sans',Arial,sans-serif}
+.press-header{position:sticky;top:0;z-index:100;background:#0a1119;color:#eaf1f6;border-bottom:3px solid #1d6aa3;font-family:'IBM Plex Sans',Arial,sans-serif}
 .press-utility{max-width:1200px;margin:auto;padding:10px 24px;display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #314053;font:500 10px/1.5 'IBM Plex Mono',monospace;letter-spacing:.07em;color:#a7bace}
 .press-utility>div{display:flex;gap:18px}.press-header a{color:inherit;text-decoration:none}.press-header a:hover,.press-header a:focus-visible{color:#90c6f0;text-decoration:underline}
 .press-masthead{text-align:center;padding:28px 20px 24px}.press-logo{display:inline-block;font:600 clamp(28px,4vw,54px)/1.12 'Playfair Display',Georgia,serif;letter-spacing:-.025em}.press-masthead p{margin:10px 0 0;font:400 11px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#b5c7d4}
 .press-nav{border-top:1px solid #344251;max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:stretch;gap:0}.press-home-link,.press-dropdown>summary,.press-search{padding:16px 15px;display:flex;align-items:center;gap:7px;color:#eaf1f6;white-space:nowrap;font:600 13px 'IBM Plex Sans',Arial,sans-serif;cursor:pointer}.press-home-link[aria-current=page]{color:#9bcaf0}.press-dropdown{position:relative}.press-dropdown>summary{list-style:none}.press-dropdown>summary::-webkit-details-marker{display:none}.press-dropdown[open]>summary{background:#183247;color:#a7d6f4}.press-dropdown-content{position:absolute;top:100%;left:0;z-index:12;background:#112438;border:1px solid #36516b;box-shadow:0 12px 24px #0006;min-width:240px;max-width:min(370px,90vw);padding:16px;display:flex;flex-direction:column;gap:1px}.press-dropdown-wide{min-width:330px;display:grid;grid-template-columns:1fr 1fr;gap:4px 15px}.press-dropdown-content strong{grid-column:1/-1;font:600 10px 'IBM Plex Mono',monospace;color:#a8bed0;letter-spacing:.07em;text-transform:uppercase;margin:0 0 8px}.press-dropdown-content a{display:block;padding:9px 7px;white-space:normal;font:13px/1.35 'IBM Plex Sans',Arial,sans-serif}.press-dropdown-more{border-top:1px solid #3b5063;margin-top:8px;grid-column:1/-1}.press-search{margin-left:auto}
-@media(max-width:760px){.press-utility{padding:8px 15px}.press-utility>span{display:none}.press-utility>div{width:100%;justify-content:space-between}.press-masthead{padding:20px 14px}.press-logo{font-size:31px}.press-masthead p{font-size:9px}.press-nav{padding:0 14px 12px;flex-direction:column;align-items:stretch}.press-home-link,.press-dropdown>summary,.press-search{padding:13px 4px;border-bottom:1px solid #2e4356;justify-content:space-between;font-size:14px}.press-dropdown-content,.press-dropdown-wide{position:static;display:flex;box-shadow:none;border:0;border-left:2px solid #317cb5;max-width:none;min-width:0;width:100%;padding:8px 12px;margin:0 0 8px}.press-dropdown-content a{padding:9px 7px}.press-search{margin-left:0}}
+.press-mobile-bar{display:none}
+@media(max-width:760px){
+.press-header{position:sticky;top:0;z-index:100;border-bottom:2px solid #1d6aa3}
+.press-utility,.press-masthead{display:none!important}
+.press-mobile-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;padding:0 16px}
+.press-mobile-brand{font:600 clamp(19px,5.6vw,27px)/1.1 'Playfair Display',Georgia,serif;letter-spacing:-.02em;white-space:nowrap}
+.press-mobile-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.press-mobile-search{font:30px/1 'IBM Plex Sans',Arial,sans-serif;padding:10px 9px}
+.press-menu-toggle{appearance:none;display:flex;align-items:center;gap:7px;padding:10px 0 10px 8px;border:0;background:transparent;color:#eaf1f6;font:600 13px 'IBM Plex Sans',Arial,sans-serif;cursor:pointer}
+.press-toggle-icon{font-size:21px;line-height:1}
+.press-nav{display:none!important;position:absolute;top:100%;left:0;right:0;max-width:none;width:100%;max-height:calc(100dvh - 58px);overflow-y:auto;overscroll-behavior:contain;background:#0a1119;border-top:1px solid #354a5e;box-shadow:0 18px 30px #0008;padding:7px 16px 18px;flex-direction:column;align-items:stretch}
+.press-header.press-menu-open .press-nav{display:flex!important}
+.press-home-link,.press-dropdown>summary,.press-search{padding:14px 4px;border-bottom:1px solid #2e4356;justify-content:space-between;font-size:15px}
+.press-dropdown-content,.press-dropdown-wide{position:static;display:flex;box-shadow:none;border:0;border-left:2px solid #317cb5;max-width:none;min-width:0;width:100%;padding:8px 12px;margin:0 0 8px}
+.press-dropdown-content a{padding:10px 7px}.press-search{margin-left:0}
+}
+@media(prefers-reduced-motion:no-preference){.press-mobile-bar{transition:background-color .15s}}
 </style>
 <script is:inline>
+const pressHeader=document.getElementById('press-site-header');
+const pressToggle=pressHeader?.querySelector('.press-menu-toggle');
+const pressNav=pressHeader?.querySelector('.press-nav');
+const closeMobileMenu=()=>{pressHeader?.classList.remove('press-menu-open');pressToggle?.setAttribute('aria-expanded','false');const icon=pressToggle?.querySelector('.press-toggle-icon');const label=pressToggle?.querySelector('.press-toggle-label');if(icon)icon.textContent='☰';if(label)label.textContent='Menu';};
+pressToggle?.addEventListener('click',()=>{const open=!pressHeader.classList.contains('press-menu-open');if(open){pressHeader.classList.add('press-menu-open');pressToggle.setAttribute('aria-expanded','true');pressToggle.querySelector('.press-toggle-icon').textContent='×';pressToggle.querySelector('.press-toggle-label').textContent='Fermer';}else closeMobileMenu();});
+window.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMobileMenu();pressHeader?.querySelectorAll('details').forEach(d=>d.open=false);pressToggle?.focus();}});
+window.matchMedia('(min-width:761px)').addEventListener('change',e=>{if(e.matches)closeMobileMenu();});
+pressNav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMobileMenu));
 document.querySelectorAll('.press-nav details').forEach(detail=>{
  detail.addEventListener('toggle',()=>{if(detail.open)document.querySelectorAll('.press-nav details').forEach(other=>{if(other!==detail)other.open=false})});
 });
