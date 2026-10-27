@@ -47,7 +47,7 @@ const imageSocial=typeof d.seo?.social_image==='string'?d.seo.social_image:d.her
 const canonical=absolutePageUrl(urlOf(article.id));
 const articleStructuredData={ '@context':'https://schema.org', '@type':'Article', headline:d.title, description:seoDescription, datePublished:pubDate?.toISOString(), dateModified:(updated??pubDate)?.toISOString(), inLanguage:'fr-FR', mainEntityOfPage:canonical, publisher:{'@type':'Organization',name:'Scènes d’Arbitrage'}, ...(d.hero_image?{image:[absolutePageUrl(d.hero_image)]}:{}) };
 const shareBase=canonical;
-const sourceMethod='Les Scènes sont des fictions économiques documentées : personnages, entreprises, dialogues et événements particuliers sont imaginaires. Les mécanismes économiques présentés doivent faire l’objet de vérifications documentaires distinctes. Les Regards croisés constituent des analyses et ne présentent pas les dialogues fictifs comme des témoignages réels.';
+const sourceMethod=d.format==='entretien' ? 'Cet entretien est entièrement fictif : personnages, organisations, dialogues et événements particuliers sont imaginaires. Les mécanismes économiques explorés s’appuient sur une documentation distincte ; aucune scène ne constitue un témoignage réel.' : 'Ce Regard croisé est une analyse journalistique autonome. Ses arguments doivent reposer sur des sources réelles, vérifiables et interprétées dans leur contexte. Les Scènes fictives ne constituent pas des preuves de ses conclusions.';
 ---
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
