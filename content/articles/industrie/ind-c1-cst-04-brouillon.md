@@ -6,18 +6,19 @@ cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "ressources-humaines-competences"
-statut_editorial: "pret"
-published: false
+statut_editorial: "publie"
+published: true
+publication_date: "2026-10-27T15:00:00+01:00"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
 affichage_rubrique: "automatique"
 source_notice: "Entretien fictif · Fiction économique documentée. Personnages, situations et dialogues imaginaires."
-methodology_specific: "Fiction économique documentée : validation documentaire et autorisation de publication en attente."
+methodology_specific: "Fiction économique documentée ; validation éditoriale et documentaire acquises."
 source_document_url: "https://docs.google.com/document/d/1AMhcTRq6pfX6W-E1W8JXXd04rOnOUNUp1MPXeRbZ2tc/edit"
 source_document_version: "IND-C1-CST-04_V2_Integrale"
 validation_narrative: "validee"
 validation_documentaire: "validee_selon_matrice_c1"
-autorisation_publication: "non"
+autorisation_publication: "oui_2026_10_27"
 ---
 
 *Entretien fictif · Fiction économique documentée. Les personnages, situations et dialogues sont imaginaires.*
