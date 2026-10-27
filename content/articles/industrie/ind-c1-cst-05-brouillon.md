@@ -22,7 +22,6 @@ autorisation_publication: "non"
 
 *Entretien fictif · Fiction économique documentée. Les personnages, situations et dialogues sont imaginaires.*
 
-Un fabricant de composants industriels vient de remporter un contrat majeur. Les commerciaux fêtent la nouvelle, les ateliers préparent la montée en cadence. Le directeur financier, lui, demande une réunion d'urgence. Non parce que le contrat est déficitaire, mais parce que l'entreprise pourrait manquer d'argent avant d'avoir livré sa première pièce.
 
 — Bonjour. Pour commencer, pourriez-vous vous présenter brièvement ?  
 — Bonjour. Je m'appelle Laurent, je suis directeur financier d'une entreprise qui fabrique des composants pour des équipements industriels. J'y travaille depuis neuf ans. Avant cela, j'étais contrôleur de gestion dans un groupe beaucoup plus grand.  
