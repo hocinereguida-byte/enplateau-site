@@ -14,35 +14,35 @@ const headlines=remaining.filter((a,i)=>!afficherPhotoListe(a.data,"accueil",i+1
 ---
 <!doctype html>
 <html lang="fr">
-<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Scènes d’Arbitrage — Regards sur les décisions économiques</title><meta name="description" content="Comprendre les décisions qui façonnent l’économie, par les conversations, les situations concrètes et les regards professionnels."/><style is:inline set:html={articleStyle}/></head>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Scènes d’Arbitrage — L’intelligence derrière les décisions</title><meta name="description" content="La fiction économique documentée pour explorer les décisions. Des Regards croisés fondés sur des sources réelles pour comprendre les mécanismes économiques."/><style is:inline set:html={articleStyle}/></head>
 <body class="media-home">
 <a class="skip" href="#contenu">Aller au contenu</a>
 <MediaHeader active="accueil"/>
 <main id="contenu" class="home-shell">
 <section class="home-intro">
-<p class="micro">REGARDS SUR LES DÉCISIONS ÉCONOMIQUES</p>
-<h1>Les décisions ont plusieurs lectures.</h1>
-<p class="home-standfirst">Investir ou attendre. Transformer ou préserver. Croître ou consolider. Des expériences réelles et plusieurs regards professionnels pour comprendre l’intelligence derrière les décisions économiques.</p>
-<div class="intro-links"><a href="/media/publications/">Explorer toutes les publications</a><a href="#cycles">Explorer les cycles</a></div>
+<p class="micro">L’INTELLIGENCE DERRIÈRE LES DÉCISIONS</p>
+<h1>L’économie se joue dans les décisions.</h1>
+<p class="home-standfirst">Investir ou attendre. Produire davantage ou ralentir. Recruter ou réorganiser. Derrière chaque décision se croisent des contraintes, des intérêts et des possibilités rarement évidentes. Scènes d’Arbitrage explore ces choix à travers des fictions économiques documentées et des analyses fondées sur des sources vérifiables. La fiction pour explorer. L’analyse pour comprendre.</p>
+<div class="intro-links"><a href="/media/scenes/">Lire les Scènes</a><a href="/media/regards-croises/">Lire les Regards croisés</a><a href="#cycles">Explorer les cycles</a></div>
 </section>
 <section id="publications" class="home-section home-editorial" aria-labelledby="publications-heading">
 <div class="section-line"><div><p class="micro">À LA UNE</p><h2 id="publications-heading">Dernières publications</h2></div><a class="story-action" href="/media/publications/">Explorer le catalogue</a></div>
 <div class="press-front-grid">
 <div class="press-lead-column">
 {featured ? <article class="featured-story press-lead-story">
-<p class="story-label">{featured.data.cycle} / {conversations[featured.data.cycle]?.[featured.data.conversation]} / {readings[featured.data.lecture_principale]}</p>
+<p class="story-label">{featured.data.format==='regard-croise'?'REGARD CROISÉ — ANALYSE DOCUMENTÉE':'SCÈNE — FICTION ÉCONOMIQUE DOCUMENTÉE'} · {featured.data.cycle} / {conversations[featured.data.cycle]?.[featured.data.conversation]} / {readings[featured.data.lecture_principale]}</p>
 {afficherPhotoListe(featured.data,"accueil",0)&&(featured.data.hero_image?<img class="article-list-photo featured-photo" src={featured.data.hero_image} alt={featured.data.seo?.image_alt||""} loading="eager"/>:<div class="photo-placeholder photo-placeholder-feature" role="img" aria-label="Photographie de l’article à venir"><span>PHOTOGRAPHIE DE L’ARTICLE</span></div>)}
 <h3><a href={urlOf(featured.id)}>{featured.data.title}</a></h3>
 {featured.data.summary&&<p>{featured.data.summary}</p>}
 <a class="story-action" href={urlOf(featured.id)}>Lire l’article</a></article> : <p class="small">Les publications paraîtront ici dès leur mise en ligne.</p>}
-<div class="press-secondary-grid">{visual.slice(0,4).map(a=><article class="press-visual-story">{a.data.hero_image?<img src={a.data.hero_image} alt={a.data.seo?.image_alt||""} loading="lazy"/>:<div class="photo-placeholder" role="img" aria-label="Photographie de l’article à venir"><span>PHOTOGRAPHIE DE L’ARTICLE</span></div>}<p class="micro">{a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}</div>
+<div class="press-secondary-grid">{visual.slice(0,4).map(a=><article class="press-visual-story">{a.data.hero_image?<img src={a.data.hero_image} alt={a.data.seo?.image_alt||""} loading="lazy"/>:<div class="photo-placeholder" role="img" aria-label="Photographie de l’article à venir"><span>PHOTOGRAPHIE DE L’ARTICLE</span></div>}<p class="micro">{a.data.format==='regard-croise'?'REGARD CROISÉ':'SCÈNE FICTIVE'} · {a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}</div>
 </div>
 <aside class="press-headlines" aria-label="Autres sujets"><p class="micro">À LIRE ÉGALEMENT</p>
 {[...headlines,...visual.slice(4)].map(a=><article class="press-headline"><p class="micro">{a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}
 <a class="press-more" href="/media/publications/">Toutes les publications</a></aside>
 </div>
 </section>
-<section class="home-section"><p class="micro">EXPLORER LES QUESTIONS</p><h2>Toutes les conversations</h2><p class="home-section-intro">Explorez les grandes questions économiques qui structurent les cycles, puis découvrez les expériences et les arbitrages qui les éclairent.</p><a class="story-action" href="/media/conversations/">Rechercher une conversation</a></section><section id="cycles" class="home-section" aria-labelledby="cycles-heading">
+<section class="home-section"><p class="micro">EXPLORER LES QUESTIONS</p><h2>Toutes les conversations</h2><p class="home-section-intro">Explorez les questions économiques de chaque cycle à travers des situations fictives documentées et des analyses indépendantes.</p><a class="story-action" href="/media/conversations/">Rechercher une conversation</a></section><section id="cycles" class="home-section" aria-labelledby="cycles-heading">
 <div class="section-line"><div><p class="micro">LES SECTEURS</p><h2 id="cycles-heading">Explorer les cycles</h2></div><span class="small">Deux cycles inauguraux · Conversations adaptées à chaque secteur</span></div>
 <div class="cycle-list">
 <a class="cycle-row" href="/media/cycles/industrie/">{photoCycle("industrie")?<img class="rubric-thumb" src={photoCycle("industrie")} alt="" loading="lazy"/>:<span class="photo-placeholder photo-placeholder-thumb">PHOTO DU CYCLE</span>}<span class="cycle-index">01 / INDUSTRIE</span><span class="cycle-title">Industrie et transformations industrielles</span><span class="cycle-description">Les décisions qui orientent la production, les investissements et les trajectoires industrielles.</span><span class="cycle-arrow" aria-hidden="true">↗</span></a>
@@ -54,8 +54,8 @@ const headlines=remaining.filter((a,i)=>!afficherPhotoListe(a.data,"accueil",i+1
 <p class="home-section-intro">Une décision engage souvent plusieurs savoirs et responsabilités. Découvrez ce que la stratégie, la finance, le droit, les opérations et les autres lectures professionnelles permettent d’en comprendre.</p>
 <div class="expertise-grid">{Object.entries(readings).map(([code,name])=><a class="expertise-link" href={`/media/lectures/${code}/`}>{photoLecture(code)?<img class="reading-tiny-photo" src={photoLecture(code)} alt="" loading="lazy"/>:<span class="reading-photo-placeholder" aria-hidden="true">PHOTO</span>}{name}<span aria-hidden="true">↗</span></a>)}</div>
 </section>
-<section class="home-section"><p class="micro">PARTAGER UNE EXPÉRIENCE</p><h2>Votre regard peut éclairer une conversation.</h2><p class="home-section-intro">Vous avez participé à un choix économique, accompagné une décision ou observé ses effets ? Votre expérience peut éclairer une conversation. La rédaction sélectionne et vérifie les contributions en toute indépendance.</p><a class="story-action" href="/media/proposer-un-eclairage/">Proposer un éclairage</a></section>
-<section class="home-section newsletter-home"><p class="micro">GARDER LE FIL</p><h2>La lettre de Scènes d’Arbitrage</h2><p class="home-section-intro">Retrouvez les nouvelles conversations et les regards professionnels sur les décisions économiques.</p><a class="story-action" href="/media/newsletter/">Découvrir la newsletter</a></section>
+<section class="home-section"><p class="micro">NOTRE DÉMARCHE</p><h2>La fiction pour explorer. L’analyse pour comprendre.</h2><p class="home-section-intro">Les Scènes sont des entretiens entièrement imaginaires : personnages, situations et dialogues sont fictifs. Les Regards croisés examinent les mécanismes économiques à partir de données et de références réelles, indépendamment des récits imaginaires.</p><a class="story-action" href="/media/institution/notre-methode/">Découvrir notre méthode</a></section>
+<section class="home-section newsletter-home"><p class="micro">GARDER LE FIL</p><h2>La lettre de Scènes d’Arbitrage</h2><p class="home-section-intro">Recevez les nouvelles Scènes de fiction économique documentée et les Regards croisés d’analyse.</p><a class="story-action" href="/media/newsletter/">Découvrir la newsletter</a></section>
 </main>
 <MediaFooter/>
 </body></html>
