@@ -11,7 +11,6 @@ const cycleLinks=[{title:'Industrie',href:'/media/cycles/industrie/'},{title:'Lo
   <a class="press-home-link" href="/media/" aria-current={active==='accueil'?'page':undefined}>À la une</a>
   <a class="press-home-link" href="/media/scenes/">Les Scènes</a>
   <a class="press-home-link" href="/media/regards-croises/">Regards croisés</a>
-  <details class="press-dropdown"><summary>Explorer <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Parcours de découverte</strong><a href="/media/cycles/">Tous les cycles</a><a href="/media/conversations/">Toutes les conversations</a><a href="/media/lectures/">Toutes les lectures</a></div></details>
   <details class="press-dropdown"><summary>Cycles <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Cycles disponibles</strong>{cycleLinks.map(item=><a href={item.href}>{item.title}</a>)}<a class="press-dropdown-more" href="/media/cycles/">Explorer tous les cycles</a></div></details>
 
   <details class="press-dropdown"><summary>Lectures <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content press-dropdown-wide"><strong>Lectures professionnelles</strong>{Object.entries(readings).map(([key,label])=><a href={`/media/lectures/${key}/`}>{label}</a>)}<a class="press-dropdown-more" href="/media/lectures/">Toutes les lectures</a></div></details>
