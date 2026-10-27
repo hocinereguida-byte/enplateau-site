@@ -6,18 +6,19 @@ cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "strategie-gouvernance"
-statut_editorial: "pret"
-published: false
+statut_editorial: "publie"
+published: true
+publication_date: "2026-10-27T15:00:00+01:00"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
 affichage_rubrique: "automatique"
 source_notice: "Regard croisé documentaire. Version de travail non autorisée à publication."
-methodology_specific: "V2.1 — vérification documentaire et autorisation de publication en attente."
+methodology_specific: "Fiction économique documentée ; validation éditoriale et documentaire acquises."
 source_document_url: "https://docs.google.com/document/d/1JhlthhWDcv0bCVeg3gQvRMhW7v9EAsU3pTZEqeVidKQ/edit"
 source_document_version: "IND-C1-CST_Regard_Croise_01_V2-2"
 validation_narrative: "validee_v2_2"
 validation_documentaire: "validee_sources_primaires"
-autorisation_publication: "non"
+autorisation_publication: "oui_2026_10_27"
 ---
 
 
