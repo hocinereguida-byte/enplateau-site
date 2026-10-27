@@ -22,7 +22,6 @@ autorisation_publication: "non"
 
 *Entretien fictif · Fiction économique documentée. Les personnages, situations et dialogues sont imaginaires.*
 
-Le carnet de commandes déborde. Pourtant, le directeur d’une entreprise industrielle refuse plusieurs contrats. Produire davantage peut-il coûter plus cher que ne rien vendre ?
 
 — Bonjour. Pour commencer, pourriez-vous vous présenter brièvement ?  
 — Bonjour. Je suis Marc, directeur industriel dans une entreprise qui fabrique des composants pour plusieurs secteurs. J’y travaille depuis douze ans. Avant, j’étais responsable de production.  
