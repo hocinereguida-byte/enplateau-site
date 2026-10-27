@@ -100,8 +100,7 @@ const sourceMethod='Les Scènes sont des fictions économiques documentées : pe
 {d.format==='entretien'&&<script is:inline>
 (function(){
  const root=document.querySelector('article.article');if(!root)return;
- const source=root.querySelector('p');
- const intro=(source?.textContent||'').match(/(?:Je m.appelle|Moi, c.est|Je suis)\s+([A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ-]+)/i);
+ const intro=(root.textContent||'').match(/(?:Je m.appelle|Moi, c.est|Je suis)\s+([A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ-]+)/i);
  const name=intro?.[1]||'Interlocuteur';
  let turn=0;
  root.querySelectorAll('p').forEach(p=>{
