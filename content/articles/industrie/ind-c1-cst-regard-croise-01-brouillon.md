@@ -6,7 +6,7 @@ cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "strategie-gouvernance"
-statut_editorial: "brouillon"
+statut_editorial: "pret"
 published: false
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
@@ -16,12 +16,12 @@ methodology_specific: "V2.1 — vérification documentaire et autorisation de pu
 source_document_url: "https://docs.google.com/document/d/1JhlthhWDcv0bCVeg3gQvRMhW7v9EAsU3pTZEqeVidKQ/edit"
 source_document_version: "IND-C1-CST_Regard_Croise_01_V2-2"
 validation_narrative: "validee_v2_2"
-validation_documentaire: "en_attente"
+validation_documentaire: "validee_sources_primaires"
 autorisation_publication: "non"
 ---
 
 
-*Regard croisé — fiction économique documentée. Vérification des deux sources primaires encore requise avant publication.*
+*Regard croisé — fiction économique documentée. Sources primaires vérifiées ; publication soumise à autorisation finale.*
 
 1. Une capacité disponible sur le papier ne l'est pas nécessairement dans l'atelier
 
