@@ -1,6 +1,6 @@
 ---
 title: "Notre plus gros contrat était signé. Il nous manquait l'argent pour le fabriquer."
-summary: ""
+summary: "Un fabricant de composants industriels vient de remporter un contrat majeur. Les commerciaux fêtent la nouvelle, les ateliers préparent la montée en cadence. Le directeur financier, lui, demande une réunion d'urgence. Non parce que le contrat est déficitaire, mais parce que l'entreprise pourrait manquer d'argent avant d'avoir livré sa première pièce."
 format: "entretien"
 cycle: "industrie"
 conversation: "C1"
