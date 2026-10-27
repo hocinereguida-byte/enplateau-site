@@ -96,4 +96,29 @@ const sourceMethod='Les Scènes sont des fictions économiques documentées : pe
  buttons('idle');
 })();
 </script><section class="contribute-callout"><p class="micro">PARTAGER UNE EXPÉRIENCE</p><h2>Vous avez un éclairage sur ce sujet ?</h2><p>Votre expérience professionnelle peut contribuer à une conversation. La rédaction examine les propositions et prend contact si un échange est pertinent.</p><a href={`/media/proposer-un-eclairage/?cycle=${encodeURIComponent(d.cycle)}&conversation=${encodeURIComponent(d.conversation)}`}>Proposer un éclairage</a></section>
-<MediaFooter/></body></html>
+<MediaFooter/>
+{d.format==='entretien'&&<script is:inline>
+(function(){
+ const root=document.querySelector('article.article');if(!root)return;
+ const source=root.querySelector('p');
+ const intro=(source?.textContent||'').match(/(?:Je m.appelle|Moi, c.est|Je suis)\s+([A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ-]+)/i);
+ const name=intro?.[1]||'Interlocuteur';
+ let turn=0;
+ root.querySelectorAll('p').forEach(p=>{
+  const html=p.innerHTML;
+  if(!/^\s*[—–-]\s/.test(p.textContent||''))return;
+  const pieces=html.split(/<br\s*\/?\s*>/i).map(x=>x.trim()).filter(Boolean);
+  if(!pieces.length||!pieces.every(x=>/^\s*[—–-]\s/.test(x.replace(/<[^>]*>/g,''))))return;
+  const fragment=document.createDocumentFragment();
+  pieces.forEach(part=>{
+   const speaker=turn%2===0?'Journaliste':name;
+   const div=document.createElement('div');div.className='interview-turn '+(turn%2===0?'interview-question':'interview-answer');
+   const label=document.createElement('span');label.className='interview-speaker';label.textContent=speaker;
+   const body=document.createElement('div');body.className='interview-words';body.innerHTML=part.replace(/^\s*[—–-]\s*/, '');
+   div.append(label,body);fragment.append(div);turn++;
+  });
+  p.replaceWith(fragment);
+ });
+})();
+</script>}
+</body></html>
