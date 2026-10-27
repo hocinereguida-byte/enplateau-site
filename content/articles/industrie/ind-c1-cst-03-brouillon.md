@@ -6,18 +6,19 @@ cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "technologie-innovation"
-statut_editorial: "pret"
-published: false
+statut_editorial: "publie"
+published: true
+publication_date: "2026-10-27T15:00:00+01:00"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
 affichage_rubrique: "automatique"
 source_notice: "Entretien fictif · Fiction économique documentée. Personnages, situations et dialogues imaginaires."
-methodology_specific: "Fiction économique documentée : validation documentaire et autorisation de publication en attente."
+methodology_specific: "Fiction économique documentée ; validation éditoriale et documentaire acquises."
 source_document_url: "https://docs.google.com/document/d/1w_a4FyR4oM8jd6qHPIacl_Tr2sA1c3XFPdfvPkBMeB8/edit"
 source_document_version: "IND-C1-CST-03_Robot_3M_Table_Scene_V2_Consolidation"
 validation_narrative: "validee"
 validation_documentaire: "validee_selon_matrice_c1"
-autorisation_publication: "non"
+autorisation_publication: "oui_2026_10_27"
 ---
 
 *Entretien fictif · Fiction économique documentée. Les personnages, situations et dialogues sont imaginaires.*
