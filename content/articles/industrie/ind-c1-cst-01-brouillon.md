@@ -1,6 +1,6 @@
 ---
 title: "On a refusé deux millions d’euros de commandes. Et j’ai demandé aux commerciaux de se taire."
-summary: ""
+summary: "Le carnet de commandes déborde. Pourtant, le directeur d’une entreprise industrielle refuse plusieurs contrats. Produire davantage peut-il coûter plus cher que ne rien vendre ?"
 format: "entretien"
 cycle: "industrie"
 conversation: "C1"
