@@ -6,7 +6,7 @@ cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "technologie-innovation"
-statut_editorial: "brouillon"
+statut_editorial: "pret"
 published: false
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
@@ -15,8 +15,8 @@ source_notice: "Entretien fictif · Fiction économique documentée. Personnages
 methodology_specific: "Fiction économique documentée : validation documentaire et autorisation de publication en attente."
 source_document_url: "https://docs.google.com/document/d/1w_a4FyR4oM8jd6qHPIacl_Tr2sA1c3XFPdfvPkBMeB8/edit"
 source_document_version: "IND-C1-CST-03_Robot_3M_Table_Scene_V2_Consolidation"
-validation_narrative: "a_confirmer"
-validation_documentaire: "en_attente"
+validation_narrative: "validee"
+validation_documentaire: "validee_selon_matrice_c1"
 autorisation_publication: "non"
 ---
 
