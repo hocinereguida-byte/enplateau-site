@@ -14,13 +14,14 @@ affichage_rubrique: "automatique"
 source_notice: "Regard croisé documentaire. Version de travail non autorisée à publication."
 methodology_specific: "V2.1 — vérification documentaire et autorisation de publication en attente."
 source_document_url: "https://docs.google.com/document/d/1JhlthhWDcv0bCVeg3gQvRMhW7v9EAsU3pTZEqeVidKQ/edit"
-source_document_version: "IND-C1-CST_Regard_Croise_01_V2-1_Finition_narrative"
-validation_narrative: "finition_v2_1_a_confirmer"
+source_document_version: "IND-C1-CST_Regard_Croise_01_V2-2"
+validation_narrative: "validee_v2_2"
 validation_documentaire: "en_attente"
 autorisation_publication: "non"
 ---
 
-*Regard croisé — analyse documentaire en cours de validation.*
+
+*Regard croisé — fiction économique documentée. Vérification des deux sources primaires encore requise avant publication.*
 
 1. Une capacité disponible sur le papier ne l'est pas nécessairement dans l'atelier
 
@@ -44,9 +45,9 @@ Il est possible d'augmenter certaines heures de machine presque immédiatement, 
 
 La capacité réelle est ainsi une propriété de l'ensemble du processus, pas une somme de moyens isolés.
 
-Les travaux de gestion des opérations éclairent une autre conséquence : lorsque les arrivées et les temps de traitement sont variables, les files d'attente peuvent s'allonger fortement à mesure qu'une ressource approche de sa pleine utilisation. Le mécanisme est étudié dans la littérature sur les files d'attente, notamment à travers l'approximation de Kingman. Celle-ci concerne un modèle de file à serveur unique, sous certaines hypothèses de stabilité et de variabilité ; elle ne saurait être appliquée directement à une usine entière sans examiner la configuration des postes, les flux et les règles de priorité. [Référence primaire et application industrielle à vérifier : voir fiche documentaire.]
+Les travaux de gestion des opérations éclairent une autre conséquence : lorsque les arrivées et les temps de traitement sont variables, les files d'attente peuvent s'allonger fortement à mesure qu'une ressource approche de sa pleine utilisation. Ce mécanisme est notamment éclairé par les travaux de J. F. C. Kingman sur les files d'attente à serveur unique en régime de forte utilisation. Il ne suffit toutefois pas à prédire les délais d'une usine entière : ceux-ci dépendent aussi de la configuration des postes, des flux et des règles de priorité.
 
-Mais elle aide à comprendre une situation contre-intuitive : une usine peut paraître particulièrement performante parce que ses équipements tournent presque sans interruption, tout en devenant moins capable d'absorber un incident ou une commande imprévue.
+Mais ce mécanisme aide à comprendre une situation contre-intuitive : une usine peut paraître particulièrement performante parce que ses équipements tournent presque sans interruption, tout en devenant moins capable d'absorber un incident ou une commande imprévue.
 
 La hausse des volumes ne rencontre donc pas seulement une limite quantitative. Elle rencontre des limites de calendrier et d'articulation entre ressources.
 
@@ -92,7 +93,7 @@ Le financement ajoute une autre dimension à ce renoncement.
 
 Pour fabriquer davantage, l'entreprise doit souvent acheter les matières, payer les salaires et financer les stocks avant d'encaisser les ventes.
 
-Le rapport 2025 de l'Observatoire du financement des entreprises indique qu'en 2024, le besoin en fonds de roulement représentait 38 jours de chiffre d'affaires pour les microentreprises manufacturières et 64 jours pour les autres PME manufacturières. Ces données, attribuées à FIBEN, illustreraient les besoins structurels de financement du cycle d'exploitation ; elles ne mesurent ni le coût marginal d'une nouvelle commande ni une tension propre à chaque entreprise. [Chiffres et périmètre à confirmer dans la source primaire avant publication : voir fiche documentaire.]
+Le rapport annuel 2025 de l'Observatoire du financement des entreprises indique qu'en 2024, le besoin en fonds de roulement atteignait 38 jours de chiffre d'affaires pour les microentreprises de l'industrie manufacturière et 64 jours pour les autres PME du même secteur (Banque de France, base FIBEN). Ces moyennes sectorielles illustrent le financement nécessaire au cycle d'exploitation ; elles ne mesurent ni le coût marginal d'une commande supplémentaire ni la tension de trésorerie d'une entreprise particulière.
 
 Une entreprise peut donc devoir immobiliser davantage d'argent précisément au moment où ses perspectives commerciales s'améliorent.
 
@@ -179,3 +180,4 @@ Ils dépendent des délais, des contraintes réellement actives et du prix des p
 L'entreprise ne manque pas toujours de capacité. Elle peut manquer de capacité disponible au moment où sa croissance l'exige — sans pouvoir la mobiliser ailleurs sans conséquence.
 
 C'est dans cet écart que se joue une partie de la croissance industrielle sous tension.
+.
