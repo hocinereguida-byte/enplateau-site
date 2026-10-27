@@ -6,18 +6,19 @@ cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "operations-organisation"
-statut_editorial: "pret"
-published: false
+statut_editorial: "publie"
+published: true
+publication_date: "2026-10-27T15:00:00+01:00"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
 affichage_rubrique: "automatique"
 source_notice: "Entretien fictif · Fiction économique documentée. Personnages, situations et dialogues imaginaires."
-methodology_specific: "Fiction économique documentée : validation documentaire et autorisation de publication en attente."
+methodology_specific: "Fiction économique documentée ; validation éditoriale et documentaire acquises."
 source_document_url: "https://docs.google.com/document/d/1ZcLCz5vG394tAFx5_ug6SzPbYxUdoqNdaE00Ed1_yRA/edit"
 source_document_version: "IND-C1-CST-02_Machines_arretees_Scene_V3_Finition"
 validation_narrative: "validee"
 validation_documentaire: "validee_selon_matrice_c1"
-autorisation_publication: "non"
+autorisation_publication: "oui_2026_10_27"
 ---
 
 *Entretien fictif · Fiction économique documentée. Les personnages, situations et dialogues sont imaginaires.*
