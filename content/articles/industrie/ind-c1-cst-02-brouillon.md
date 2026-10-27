@@ -6,7 +6,7 @@ cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "operations-organisation"
-statut_editorial: "brouillon"
+statut_editorial: "pret"
 published: false
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
@@ -15,8 +15,8 @@ source_notice: "Entretien fictif · Fiction économique documentée. Personnages
 methodology_specific: "Fiction économique documentée : validation documentaire et autorisation de publication en attente."
 source_document_url: "https://docs.google.com/document/d/1ZcLCz5vG394tAFx5_ug6SzPbYxUdoqNdaE00Ed1_yRA/edit"
 source_document_version: "IND-C1-CST-02_Machines_arretees_Scene_V3_Finition"
-validation_narrative: "a_confirmer"
-validation_documentaire: "en_attente"
+validation_narrative: "validee"
+validation_documentaire: "validee_selon_matrice_c1"
 autorisation_publication: "non"
 ---
 
