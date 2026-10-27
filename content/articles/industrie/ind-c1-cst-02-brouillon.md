@@ -22,7 +22,6 @@ autorisation_publication: "non"
 
 *Entretien fictif · Fiction économique documentée. Les personnages, situations et dialogues sont imaginaires.*
 
-Certaines commandes accusent jusqu’à six mois de retard. Les clients menacent et la direction réclame des cadences records. Au pire moment, une responsable de production décide d’arrêter une ligne. Sabotage industriel ou dernier moyen d’éviter la catastrophe ?
 
 — Bonjour. Pour commencer, pourriez-vous vous présenter brièvement ?  
 — Bonjour. Je m’appelle Sophie. Je dirige la production d’une usine de pièces techniques. Ça fait dix-huit ans que je travaille en atelier, dont six à ce poste.  
