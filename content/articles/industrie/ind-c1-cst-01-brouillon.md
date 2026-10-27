@@ -6,7 +6,7 @@ cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "strategie-gouvernance"
-statut_editorial: "brouillon"
+statut_editorial: "pret"
 published: false
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
@@ -15,8 +15,8 @@ source_notice: "Entretien fictif · Fiction économique documentée. Personnages
 methodology_specific: "Fiction économique documentée : validation documentaire et autorisation de publication en attente."
 source_document_url: "https://docs.google.com/document/d/1jTFflOZUS1w7aDKAO07V-WBbkPROWVw4tciOMAV3qD4/edit"
 source_document_version: "IND-C1-CST-01_Refus_2M_commandes_Scene_Pilote_V3-1"
-validation_narrative: "revision_narrative_validee"
-validation_documentaire: "en_attente"
+validation_narrative: "validee"
+validation_documentaire: "validee_selon_matrice_c1"
 autorisation_publication: "non"
 ---
 
