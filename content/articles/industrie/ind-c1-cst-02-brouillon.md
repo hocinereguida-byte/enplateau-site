@@ -1,6 +1,6 @@
 ---
 title: "On avait six mois de commandes en retard. J’ai arrêté les machines."
-summary: ""
+summary: "Certaines commandes accusent jusqu’à six mois de retard. Les clients menacent et la direction réclame des cadences records. Au pire moment, une responsable de production décide d’arrêter une ligne. Sabotage industriel ou dernier moyen d’éviter la catastrophe ?"
 format: "entretien"
 cycle: "industrie"
 conversation: "C1"
