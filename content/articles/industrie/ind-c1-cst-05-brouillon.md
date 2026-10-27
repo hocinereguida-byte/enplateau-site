@@ -6,7 +6,7 @@ cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "finance-investissement"
-statut_editorial: "brouillon"
+statut_editorial: "pret"
 published: false
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
@@ -15,8 +15,8 @@ source_notice: "Entretien fictif · Fiction économique documentée. Personnages
 methodology_specific: "Fiction économique documentée : validation documentaire et autorisation de publication en attente."
 source_document_url: "https://docs.google.com/document/d/1MkJdNiyoWhdR4z8L4APYzZ88L6CK5oAR0uwdU7364bg/edit"
 source_document_version: "IND-C1-CST-05_Financer_le_contrat_Scene_V2"
-validation_narrative: "a_confirmer"
-validation_documentaire: "en_attente"
+validation_narrative: "validee"
+validation_documentaire: "validee_selon_matrice_c1"
 autorisation_publication: "non"
 ---
 
