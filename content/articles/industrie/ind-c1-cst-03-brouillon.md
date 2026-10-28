@@ -6,8 +6,8 @@ cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "technologie-innovation"
-statut_editorial: "publie"
-published: true
+statut_editorial: "brouillon"
+published: false
 publication_date: "2026-10-27T15:00:00+01:00"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
@@ -18,7 +18,7 @@ source_document_url: "https://docs.google.com/document/d/1w_a4FyR4oM8jd6qHPIacl_
 source_document_version: "IND-C1-CST-03_Robot_3M_Table_Scene_V2_Consolidation"
 validation_narrative: "validee"
 validation_documentaire: "validee_selon_matrice_c1"
-autorisation_publication: "oui_2026_10_27"
+autorisation_publication: "non_delivree_controle_cms"
 ---
 
 *Entretien fictif · Fiction économique documentée. Les personnages, situations et dialogues sont imaginaires.*
