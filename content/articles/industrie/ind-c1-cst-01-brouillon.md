@@ -6,8 +6,8 @@ cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "strategie-gouvernance"
-statut_editorial: "publie"
-published: true
+statut_editorial: "brouillon"
+published: false
 publication_date: "2026-10-27T15:00:00+01:00"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
@@ -18,7 +18,7 @@ source_document_url: "https://docs.google.com/document/d/1jTFflOZUS1w7aDKAO07V-W
 source_document_version: "IND-C1-CST-01_Refus_2M_commandes_Scene_Pilote_V3-1"
 validation_narrative: "validee"
 validation_documentaire: "validee_selon_matrice_c1"
-autorisation_publication: "oui_2026_10_27"
+autorisation_publication: "non_delivree_controle_cms"
 ---
 
 *Entretien fictif · Fiction économique documentée. Les personnages, situations et dialogues sont imaginaires.*
