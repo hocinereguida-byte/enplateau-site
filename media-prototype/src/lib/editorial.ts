@@ -1,6 +1,6 @@
 export const conversations: Record<string, Record<string, string>> = {
   industrie: {
-    C1: 'Croissance industrielle',
+    C1: 'Croissance industrielle : à partir de quand produire davantage oblige-t-il à arbitrer autrement ?',
     C2: 'Dépendances industrielles',
     C3: 'Outil industriel',
     C4: 'Trajectoire industrielle',
