@@ -6,8 +6,9 @@ cycle: "immobilier"
 conversation: "C1"
 contexte: "territoire-reconversion"
 lecture_principale: "operations-organisation"
-statut_editorial: "brouillon"
-published: false
+statut_editorial: "publie"
+published: true
+publication_date: "2026-10-28T14:00:00+01:00"
 mise_en_avant: "standard"
 source_notice: "Entretien fictif · Fiction économique documentée. Personnages, opérations et dialogues imaginaires."
 methodology_specific: "Texte validé selon le dossier éditorial ; copie CMS en attente de bon à publier." 
