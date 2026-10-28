@@ -6,8 +6,8 @@ cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "strategie-gouvernance"
-statut_editorial: "brouillon"
-published: false
+statut_editorial: "publie"
+published: true
 publication_date: "2026-10-27T15:00:00+01:00"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
@@ -23,7 +23,7 @@ source_document_url: "https://docs.google.com/document/d/16WhrPQVozZRk9OBNTeUF6D
 source_document_version: "V3.1"
 validation_narrative: "validee_v3_1"
 validation_documentaire: "concordance_d1_d2_favorable"
-autorisation_publication: "non_delivree_controle_cms"
+autorisation_publication: "preproduction_uniquement"
 ---
 
 À Toulouse, Airbus a inauguré en juin 2026 une deuxième ligne d'assemblage final pour la famille A320 dans l'ancien bâtiment de l'A380. Dix lignes d'assemblage sont désormais réparties entre quatre sites mondiaux. Pourtant, ouvrir une ligne ne suffit pas à tenir une cadence. Quelques mois auparavant, l'avionneur expliquait que les difficultés d'approvisionnement en moteurs Pratt & Whitney pesaient sur sa trajectoire de production. Son objectif annoncé était alors d'atteindre entre 70 et 75 appareils A320 par mois à la fin de 2027, avant de stabiliser la cadence à 75.
