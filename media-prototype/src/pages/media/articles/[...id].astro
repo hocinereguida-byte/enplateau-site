@@ -106,7 +106,7 @@ const sourceMethod=d.format==='entretien' ? 'Cet entretien est entièrement fict
  // Some approved manuscripts use unprefixed alternating dialogue rather than em dashes.
  // Begin only at an explicit journalist introduction; leave narrative paragraphs untouched.
  const paragraphs=Array.from(root.querySelectorAll('p'));
- const plainStart=paragraphs.findIndex(p=>/^\\s*Scènes d.Arbitrage\\s*[—–-]\\s*/i.test(p.textContent||''));
+ const plainStart=paragraphs.findIndex(p=>/^\s*Scènes d.Arbitrage\s*[—–-]\s*/i.test(p.textContent||''));
  if(plainStart>=0){
   paragraphs.slice(plainStart).forEach((p,i)=>{
    if(p.closest('section,aside,blockquote')||p.querySelector('a, img, code'))return;
@@ -118,7 +118,7 @@ const sourceMethod=d.format==='entretien' ? 'Cet entretien est entièrement fict
    label.textContent=isQuestion?'Journaliste':name;
    const words=document.createElement('div');
    words.className='interview-words';
-   words.innerHTML=p.innerHTML.replace(/^\\s*Scènes d.Arbitrage\\s*[—–-]\\s*/i,'').replace(/^\\s*${name}\\s*[—–-]\\s*/i,'');
+   words.innerHTML=p.innerHTML.replace(/^\s*Scènes d.Arbitrage\s*[—–-]\s*/i,'').replace(new RegExp('^\\s*'+name+'\\s*[—–-]\\s*','i'),'');
    div.append(label,words);
    p.replaceWith(div);
   });
