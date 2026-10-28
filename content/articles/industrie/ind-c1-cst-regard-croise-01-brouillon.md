@@ -1,6 +1,6 @@
 ---
 title: "L'usine peut produire plus. Mais que doit-elle arrêter pour y parvenir ?"
-summary: "Une commande supplémentaire peut être rentable, les machines disponibles et les recrutements engagés. Pourtant, la production ne suit pas toujours. Pour accélérer, une entreprise industrielle doit parfois retirer des moyens à son activité présente, immobiliser de la trésorerie ou accepter de nouvelles fragilités. La croissance ne dépend donc pas seulement des ressources dont elle dispose, mais de celles qu'elle peut réellement mobiliser ensemble — et de ce qu'elle doit abandonner pour y parvenir."
+summary: "À Toulouse, Airbus a inauguré en juin 2026 une deuxième ligne d'assemblage final pour la famille A320 dans l'ancien bâtiment de l'A380. Dix lignes d'assemblage sont désormais réparties entre quatre sites mondiaux. Pourtant, ouvrir une ligne ne suffit pas à tenir une cadence. Quelques mois auparavant, l'avionneur expliquait que les difficultés d'approvisionnement en moteurs Pratt & Whitney pesaient sur sa trajectoire de production. Son objectif annoncé était alors d'atteindre entre 70 et 75 appareils A320 par mois à la fin de 2027, avant de stabiliser la cadence à 75. Le contraste dit quelque chose d'essentiel de la croissance industrielle. On peut agrandir une usine, investir dans des équipements et disposer d'un carnet de commandes considérable sans maîtriser le calendrier auquel l'ensemble des pièces, des personnes et des opérations seront disponibles. Produire davantage exige parfois de suspendre une machine, de réserver du temps à la formation, de renoncer à une commande ou d'immobiliser de l'argent avant d'encaisser le premier euro. Le coût de la croissance ne se trouve pas seulement dans les nouveaux moyens qu'il faut acheter. Il réside aussi dans ce que l'entreprise doit retirer à son activité présente pour rendre sa production future possible."
 format: "regard-croise"
 cycle: "industrie"
 conversation: "C1"
@@ -13,172 +13,80 @@ mise_en_avant: "standard"
 affichage_accueil: "automatique"
 affichage_rubrique: "automatique"
 source_notice: "Regard croisé · Analyse journalistique fondée sur des sources réelles et vérifiées."
-methodology_specific: "Analyse autonome ; sources primaires vérifiées, validation éditoriale et documentaire acquises."
-source_document_url: "https://docs.google.com/document/d/1JhlthhWDcv0bCVeg3gQvRMhW7v9EAsU3pTZEqeVidKQ/edit"
-source_document_version: "IND-C1-CST_Regard_Croise_01_V2-2"
-validation_narrative: "validee_v2_2"
-validation_documentaire: "validee_sources_primaires"
+methodology_specific: "Concordance D1/D2 favorable selon le dossier de référence ; contrôle de fabrication CMS en attente."
+source_document_url: "https://docs.google.com/document/d/16WhrPQVozZRk9OBNTeUF6DC9zQ5ebCoGULxc25DLTfQ/edit"
+source_document_version: "V3.1"
+validation_narrative: "validee_v3_1"
+validation_documentaire: "concordance_d1_d2_favorable"
 autorisation_publication: "non_delivree_controle_cms"
 ---
 
-
-*Regard croisé · Analyse journalistique. Sources primaires vérifiées ; publication autorisée.*
-
-1. Une capacité disponible sur le papier ne l'est pas nécessairement dans l'atelier
-
-Une usine peut avoir de la place dans son planning et manquer de capacité pour honorer une nouvelle commande.
-
-Le paradoxe tient à une confusion entre deux réalités : les moyens dont dispose l'entreprise et la production qu'elle peut effectivement livrer avec ces moyens.
-
-Une machine libre ne suffit pas si la matière n'est pas arrivée. La matière disponible ne sert à rien si le poste de contrôle ne peut pas absorber les pièces fabriquées. Et un salarié recruté n'est pas nécessairement capable, dès son arrivée, d'exécuter seul une opération exigeant une qualification particulière.
-
-Ces contraintes ne s'additionnent pas. Elles se combinent.
-
-Supposons qu'une entreprise puisse usiner cent pièces supplémentaires par jour, mais que son contrôle final ne puisse en examiner que soixante. Les quarante pièces restantes ne constituent pas encore une production livrable. Elles attendent. L'atelier a accru son activité sans augmenter d'autant sa capacité à satisfaire le client.
-
-L'entreprise aura produit plus tôt des pièces qu'elle ne pourra pas livrer plus tôt.
-
-Cette distinction prend une importance particulière lorsque les commandes augmentent rapidement. La direction commerciale raisonne à partir d'engagements de livraison ; les responsables industriels doivent les traduire en séquences d'opérations, avec des ressources disponibles à des dates précises.
-
-Or ces disponibilités n'évoluent pas au même rythme.
-
-Il est possible d'augmenter certaines heures de machine presque immédiatement, mais pas de raccourcir dans les mêmes proportions l'apprentissage d'un opérateur. Un fournisseur peut accepter un volume supplémentaire sans pouvoir avancer sa date d'expédition. Un investissement peut être financé aujourd'hui et n'être opérationnel que plusieurs mois plus tard.
-
-La capacité réelle est ainsi une propriété de l'ensemble du processus, pas une somme de moyens isolés.
-
-Les travaux de gestion des opérations éclairent une autre conséquence : lorsque les arrivées et les temps de traitement sont variables, les files d'attente peuvent s'allonger fortement à mesure qu'une ressource approche de sa pleine utilisation. Ce mécanisme est notamment éclairé par les travaux de J. F. C. Kingman sur les files d'attente à serveur unique en régime de forte utilisation. Il ne suffit toutefois pas à prédire les délais d'une usine entière : ceux-ci dépendent aussi de la configuration des postes, des flux et des règles de priorité.
-
-Mais ce mécanisme aide à comprendre une situation contre-intuitive : une usine peut paraître particulièrement performante parce que ses équipements tournent presque sans interruption, tout en devenant moins capable d'absorber un incident ou une commande imprévue.
-
-La hausse des volumes ne rencontre donc pas seulement une limite quantitative. Elle rencontre des limites de calendrier et d'articulation entre ressources.
-
-C'est là que commence le véritable arbitrage.
-
-2. Pour créer de la capacité, il faut parfois en retirer à la production
-
-La croissance industrielle possède une caractéristique moins visible : une partie des moyens nécessaires pour produire davantage demain doit être prélevée sur ceux qui permettent de produire aujourd'hui.
-
-Former, réparer, réorganiser ou préparer une nouvelle série sont des activités indispensables à l'augmentation de capacité. Mais elles ne sont pas gratuites en temps productif.
-
-Un salarié expérimenté qui accompagne un nouvel arrivant ne peut pas toujours produire simultanément au même rythme. Une machine immobilisée pour maintenance ne fabrique pas les commandes en attente. Une opération de contrôle renforcée peut mobiliser du personnel jusque-là affecté à d'autres tâches.
-
-Le coût de ces décisions ne se mesure donc pas seulement en dépenses supplémentaires. Il comprend aussi la production à laquelle l'entreprise renonce temporairement.
-
-Ce coût d'opportunité est particulièrement délicat lorsque les ressources concernées sont déjà saturées.
-
-Prenons une entreprise qui doit recruter rapidement pour répondre à une commande importante. Elle peut embaucher trente personnes. Mais si leur autonomie dépend de cinq opérateurs expérimentés, la montée en compétences entre en concurrence avec les livraisons immédiates.
-
-Retirer ces cinq salariés de leurs postes ralentit potentiellement la production courante. Les laisser constamment en production ralentit la formation.
-
-Dans les deux cas, la capacité future a un prix dans le présent.
-
-Le même raisonnement vaut pour la qualité. Lorsqu'une ligne accumule les défauts, maintenir sa cadence peut préserver le nombre de pièces produites à court terme. Mais si ces pièces doivent être reprises, contrôlées plusieurs fois ou écartées, le gain apparent peut se transformer en charge supplémentaire.
-
-Un arrêt limité peut alors permettre de récupérer davantage de production conforme par la suite.
-
-Il n'est pourtant pas sans coût : une livraison manquée peut désorganiser l'activité d'un client qui attend les pièces pour intervenir à son tour.
-
-Le choix ne se résume donc pas à opposer une bonne décision technique à une mauvaise décision commerciale. Il consiste à comparer des pertes et des risques qui ne se produisent ni au même moment ni au même endroit.
-
-Cette tension peut même conduire à reconsidérer une commande apparemment profitable.
-
-Lorsqu'une machine, un spécialiste ou un créneau d'expédition est rare, affecter cette ressource à un client signifie parfois qu'un autre ne pourra pas être servi dans les mêmes délais.
-
-Une commande peut couvrir ses coûts directs et rester économiquement discutable si elle mobilise une capacité qui aurait permis de réaliser une activité plus contributive.
-
-À l'inverse, une commande à faible marge apparente peut contribuer utilement à couvrir des charges fixes lorsque la capacité correspondante serait autrement inutilisée.
-
-Ce n'est donc pas le seul montant de la commande qui détermine son intérêt. C'est aussi l'utilisation qu'elle impose des ressources réellement contraintes.
-
-Le financement ajoute une autre dimension à ce renoncement.
-
-Pour fabriquer davantage, l'entreprise doit souvent acheter les matières, payer les salaires et financer les stocks avant d'encaisser les ventes.
-
-Le rapport annuel 2025 de l'Observatoire du financement des entreprises indique qu'en 2024, le besoin en fonds de roulement atteignait 38 jours de chiffre d'affaires pour les microentreprises de l'industrie manufacturière et 64 jours pour les autres PME du même secteur (Banque de France, base FIBEN). Ces moyennes sectorielles illustrent le financement nécessaire au cycle d'exploitation ; elles ne mesurent ni le coût marginal d'une commande supplémentaire ni la tension de trésorerie d'une entreprise particulière.
-
-Une entreprise peut donc devoir immobiliser davantage d'argent précisément au moment où ses perspectives commerciales s'améliorent.
-
-Cette trésorerie engagée n'est plus disponible, dans les mêmes proportions, pour une réparation imprévue, un achat urgent ou un autre investissement.
-
-La croissance peut ainsi consommer trois formes de réserve à la fois : du temps de machine, de l'expérience humaine et de la liquidité.
-
-Mais ce constat ne signifie pas qu'il faudrait toujours préserver ces réserves. Ne pas les utiliser peut aussi coûter cher : perdre un créneau fournisseur, différer une livraison stratégique ou renoncer à un contrat réalisable.
-
-Le choix économique porte sur la capacité à laquelle on renonce aujourd'hui, mais aussi sur celle qu'on risque de ne jamais obtenir en attendant.
-
-3. Une décision prise ici peut produire son coût ailleurs
-
-C'est en suivant les conséquences d'une commande supplémentaire que les cinq lectures professionnelles deviennent véritablement interdépendantes.
-
-Imaginons une entreprise qui accepte une accélération importante des livraisons. L'exemple est hypothétique : il ne décrit pas un événement observé dans les Scènes ni une entreprise réelle.
-
-Pour tenir le nouveau calendrier, l'atelier augmente l'utilisation d'une machine déjà très sollicitée.
-
-Cette accélération réduit la marge de temps disponible pour absorber les aléas. Elle ne provoque pas, à elle seule, davantage de défauts. Mais si les réglages deviennent moins stables, si les changements de séries se multiplient ou si les contrôles disponibles ne suivent pas, les reprises et les vérifications peuvent augmenter.
-
-Pour éviter d'expédier des pièces non conformes, l'entreprise renforce temporairement les contrôles. Elle sollicite les opérateurs les plus expérimentés.
-
-Or ces mêmes salariés devaient former les nouveaux recrutés, indispensables à la montée en cadence des semaines suivantes.
-
-La formation ralentit.
-
-Les nouveaux salariés deviennent autonomes plus tard que prévu. Une partie des commandes reste en cours de fabrication plus longtemps. Les stocks intermédiaires augmentent, certaines facturations sont différées et les dépenses déjà engagées continuent de peser sur la trésorerie.
-
-Une décision commerciale initialement justifiée peut ainsi provoquer une succession de contraintes productives, humaines et financières.
-
-Chaque étape de cette chaîne est conditionnelle. Elle dépend de l'organisation de l'usine, de la stabilité des procédés, des possibilités de remplacement des salariés et des modalités de facturation. L'enchaînement n'a rien d'inévitable.
-
-Il révèle néanmoins un mécanisme essentiel : une contrainte locale peut modifier les décisions possibles dans plusieurs autres fonctions.
-
-Le directeur commercial n'a pas nécessairement commis d'erreur en acceptant la commande. Le responsable de production peut avoir eu raison d'accélérer. Le contrôle qualité peut être fondé à exiger des vérifications supplémentaires. La DRH peut avoir besoin de préserver du temps de formation. Et le directeur financier peut constater une tension de trésorerie bien réelle.
-
-Le problème apparaît lorsque les conséquences de ces décisions ne sont pas supportées par ceux qui en mesurent immédiatement les résultats.
-
-Un volume vendu est enregistré par les commerciaux. Une cadence est suivie par la production. Les heures de formation relèvent des ressources humaines. Le financement est examiné par la direction financière.
-
-Mais les ressources nécessaires à ces résultats circulent entre les fonctions.
-
-Une autre chaîne peut partir d'une décision financière.
-
-Pour préserver sa liquidité, une entreprise reporte un achat d'équipement. Cette décision peut être raisonnable au regard de ses échéances bancaires. Pourtant, si l'équipement devait alléger des contrôles manuels, le report maintient une charge de travail supplémentaire pour l'équipe qualité.
-
-Le risque financier a diminué ; la contrainte opérationnelle demeure, voire s'accroît.
-
-L'inverse est également possible.
-
-Un directeur financier peut accepter de réduire temporairement sa marge de sécurité pour préserver une réservation de matière ou un créneau de machine. Il augmente son exposition à un imprévu financier, mais évite un décalage de production dont le coût pourrait être supérieur.
-
-Dans les deux situations, l'arbitrage ne fait pas simplement disparaître un risque. Il en modifie la localisation, la date ou les personnes qui le supportent.
-
-Ce déplacement peut concerner des acteurs extérieurs à l'entreprise.
-
-Une ligne arrêtée pour traiter un défaut protège potentiellement le client contre une livraison non conforme. Mais elle peut aussi retarder son intervention. Une commande refusée peut préserver la rentabilité du fabricant tout en obligeant un client à rechercher un autre fournisseur. Une négociation de délais de paiement peut soulager l'acheteur et fragiliser son fournisseur.
-
-Ces effets ne rendent pas nécessairement les décisions illégitimes. Ils rappellent que leurs conséquences dépassent souvent les indicateurs sur lesquels elles ont été initialement évaluées.
-
-La confrontation des lectures fait alors apparaître une question plus précise que celle de la coordination entre métiers : où se matérialise le coût d'une décision, et qui dispose des informations nécessaires pour l'anticiper ?
-
-Ce raisonnement n'implique pas que toute hausse d'activité provoque une réaction en chaîne. Lorsque les capacités sont largement disponibles, les compétences interchangeables et les réserves financières suffisantes, une entreprise peut absorber des commandes supplémentaires sans arbitrages majeurs.
-
-Mais lorsque plusieurs ressources critiques sont engagées, une décision peut transformer les possibilités, les coûts ou les risques des autres.
-
-La croissance ne bute pas toujours sur ce qui manque
-
-Une hausse rapide des commandes pose une question apparemment simple : l'entreprise a-t-elle les moyens de produire davantage ?
-
-Les cinq lectures de « Croissance sous tension » montrent pourquoi la réponse ne peut pas se limiter à un inventaire des machines, des effectifs et de la trésorerie.
-
-Une ressource peut exister sans être disponible au moment voulu. Elle peut être disponible, mais nécessaire à une autre activité. Et son affectation à une commande peut déplacer un coût ou un risque vers une fonction qui n'a pas pris la décision initiale.
-
-La difficulté n'est donc pas seulement de disposer de davantage de moyens. Elle consiste à comprendre ce que leur mobilisation rend possible — et ce qu'elle rend simultanément impossible.
-
-Cette distinction explique pourquoi ralentir une ligne peut parfois préserver les livraisons futures, pourquoi recruter peut temporairement réduire la production, et pourquoi engager de la trésorerie avant d'obtenir toutes les garanties peut, dans certaines circonstances, protéger une opportunité industrielle.
-
-Ces choix ne relèvent ni d'une prudence universellement souhaitable ni d'une audace nécessairement récompensée.
-
-Ils dépendent des délais, des contraintes réellement actives et du prix des possibilités abandonnées.
-
-L'entreprise ne manque pas toujours de capacité. Elle peut manquer de capacité disponible au moment où sa croissance l'exige — sans pouvoir la mobiliser ailleurs sans conséquence.
-
-C'est dans cet écart que se joue une partie de la croissance industrielle sous tension.
-.
+À Toulouse, Airbus a inauguré en juin 2026 une deuxième ligne d'assemblage final pour la famille A320 dans l'ancien bâtiment de l'A380. Dix lignes d'assemblage sont désormais réparties entre quatre sites mondiaux. Pourtant, ouvrir une ligne ne suffit pas à tenir une cadence. Quelques mois auparavant, l'avionneur expliquait que les difficultés d'approvisionnement en moteurs Pratt & Whitney pesaient sur sa trajectoire de production. Son objectif annoncé était alors d'atteindre entre 70 et 75 appareils A320 par mois à la fin de 2027, avant de stabiliser la cadence à 75.
+Le contraste dit quelque chose d'essentiel de la croissance industrielle. On peut agrandir une usine, investir dans des équipements et disposer d'un carnet de commandes considérable sans maîtriser le calendrier auquel l'ensemble des pièces, des personnes et des opérations seront disponibles.
+Produire davantage exige parfois de suspendre une machine, de réserver du temps à la formation, de renoncer à une commande ou d'immobiliser de l'argent avant d'encaisser le premier euro. Le coût de la croissance ne se trouve pas seulement dans les nouveaux moyens qu'il faut acheter. Il réside aussi dans ce que l'entreprise doit retirer à son activité présente pour rendre sa production future possible.
+## 1. AIRBUS : UNE NOUVELLE LIGNE N'EST PAS ENCORE UN AVION LIVRÉ
+Le 15 juin 2026, Airbus annonce l'inauguration d'une nouvelle ligne d'assemblage final à Toulouse, dans le bâtiment Jean-Luc Lagardère. Cette ouverture porte à dix le nombre de lignes dédiées à la famille A320 à l'échelle mondiale, réparties entre Hambourg, Toulouse, Mobile et Tianjin. L'industriel décrit des dispositifs de logistique automatisée, de contrôle numérique et de robotique destinés à fluidifier le travail.
+C'est un investissement réel dans la capacité d'assemblage. Mais l'avionneur avait indiqué, dans ses résultats annuels publiés en février 2026, que les livraisons de moteurs attendues de Pratt & Whitney ne permettaient pas de garantir le rythme initialement envisagé. Le constructeur a alors formulé un objectif de 70 à 75 A320 par mois fin 2027, puis de 75 en régime stabilisé.
+La différence entre la capacité annoncée et la production effectivement livrée est décisive. Une ligne supplémentaire peut augmenter le potentiel de l'assemblage final sans supprimer les contraintes situées chez un motoriste ou un fournisseur de composants.
+La situation ne démontre pas que l'investissement toulousain était excessif. Elle ne démontre pas davantage qu'il fallait attendre. Les nouvelles lignes peuvent être nécessaires pour absorber la demande future. Elle montre seulement que l'investissement dans un maillon ne synchronise pas automatiquement les autres.
+Le véritable objet de la décision industrielle n'est donc pas une machine prise isolément. C'est la capacité de l'ensemble de la chaîne à livrer un produit conforme à une date donnée.
+## 2. SAFRAN : QUAND LA DEMANDE NE SE TRANSFORME PAS EN LIVRAISONS
+Le phénomène apparaît aussi chez les motoristes. Dans son document d'enregistrement universel 2024, Safran indique que 1 407 moteurs LEAP ont été livrés cette année-là, contre 1 570 en 2023, soit une baisse de 10 %. Le groupe attribue cette évolution à des difficultés dans la chaîne d'approvisionnement.
+Ce résultat est instructif parce qu'il ne se confond ni avec une disparition de la demande ni avec un jugement global sur la performance de Safran. Il concerne un programme, une période et un indicateur précis : les livraisons de moteurs LEAP.
+En décembre 2024, lors de sa journée investisseurs, Safran présentait encore la montée en cadence du LEAP comme un objectif, tout en identifiant des goulets d'étranglement chez certains fournisseurs et une forte demande de maintenance et réparation.
+Deux enseignements se dégagent. D'abord, un carnet de commandes ou une demande élevée ne garantit pas la conversion immédiate en produits livrés. Ensuite, l'entreprise doit arbitrer entre plusieurs usages de ressources industrielles parfois communes : fabriquer du neuf, réparer l'existant, sécuriser des approvisionnements et augmenter ses capacités.
+Il serait abusif d'en déduire, à partir de ces seuls documents, quel arbitrage aurait maximisé le résultat de Safran. Pour le savoir, il faudrait connaître les coûts marginaux, les capacités réellement interchangeables, les délais fournisseurs et les engagements contractuels. Les données publiques montrent la contrainte ; elles ne permettent pas de reconstruire intégralement la décision optimale.
+## 3. LES COMPÉTENCES NE SE COMMANDENT PAS COMME DES MACHINES
+Le décalage entre commande et capacité ne concerne pas seulement les équipements. Il touche aussi les compétences nécessaires pour faire fonctionner l'usine.
+Une mission conjointe de l'Inspection générale des finances et d'autres inspections, publiée en 2023, soulignait le poids des tensions sur les effectifs et les compétences industrielles. Elle évaluait à 966 000 les départs de fin de carrière anticipés dans les métiers industriels d'ici 2030. Il s'agit d'une estimation prospective, pas du nombre d'embauches effectivement réalisées.
+En février 2026, la Dares constatait que les tensions de recrutement avaient diminué en 2024 après leur sommet de 2023. Mais elle relevait qu'elles restaient particulièrement élevées dans la mécanique, le travail des métaux et la maintenance. Le diagnostic n'est donc ni celui d'une pénurie uniforme ni celui d'un problème résolu.
+Cette hétérogénéité change l'analyse d'un projet de croissance. Une entreprise peut recruter des salariés sans disposer immédiatement de toutes les compétences opérationnelles nécessaires. L'apprentissage, la qualification, la transmission des savoir-faire et les habilitations éventuelles prennent du temps.
+Or ce temps doit souvent être fourni par ceux qui savent déjà produire. Un technicien expérimenté affecté au tutorat n'est pas nécessairement disponible, aux mêmes heures, pour résoudre une panne ou tenir une cadence.
+La formation crée une capacité future en consommant une partie de la capacité présente. Ce n'est pas un argument pour former moins. C'est une raison pour intégrer le temps d'apprentissage dans les engagements commerciaux et les plans de charge, plutôt que de le traiter comme une activité réalisable entre deux urgences.
+Une entreprise qui promet de livrer plus tôt parce qu'elle vient d'embaucher confondrait alors deux dates : celle du recrutement et celle de l'autonomie productive.
+## 4. LE PIÈGE DES CADENCES : PRODUIRE PLUS N'EST PAS LIVRER PLUS
+L'écart entre production et livraison peut se creuser à l'intérieur même d'un atelier. Une machine qui fabrique davantage de pièces n'améliore pas le service au client si le contrôle, les opérations suivantes ou l'expédition ne suivent pas.
+Les travaux de J. F. C. Kingman sur les files d'attente montrent que, sous certaines hypothèses, des variations d'arrivées ou de temps de traitement peuvent entraîner une forte augmentation de l'attente lorsqu'une ressource approche de la saturation. Mais les résultats des modèles de files d'attente ne se transposent pas mécaniquement à toutes les usines. Les configurations industrielles, les stocks tampons et les priorités de fabrication modifient fortement les effets observés.
+Boeing : ralentir une chaîne pour reprendre la maîtrise de la qualité
+En janvier 2024, après l'incident survenu en vol sur un 737-9 d'Alaska Airlines, Boeing a engagé une révision de ses procédures industrielles. Le 25 janvier, quelque 10 000 salariés du programme 737 ont interrompu les activités de fabrication et de livraison pendant une journée pour travailler sur les pratiques de qualité et de sécurité. Cette interruption n'était pas une simple baisse subie de la demande : l'entreprise l'a décidée pour consacrer du temps à l'examen des processus.
+Le 4 février, Boeing a annoncé de nouvelles journées consacrées aux inspections et aux corrections dans son usine de Renton. Un fournisseur avait signalé une non-conformité potentielle concernant des perçages de fuselage. Selon Boeing, environ 50 appareils non encore livrés pourraient nécessiter des reprises. Le constructeur a aussi demandé à un fournisseur important de retenir certaines expéditions jusqu'à l'achèvement des travaux prévus, en acceptant un effet sur le calendrier de production.
+L'arbitrage est ici documenté : préserver le flux de fabrication et les livraisons immédiates, ou consacrer du temps aux contrôles, aux corrections et à la remise en ordre des opérations. Boeing a choisi de ralentir. Dans ses résultats du premier trimestre 2024, le groupe indique que la production de 737 est passée sous 38 appareils par mois afin de renforcer son système qualité et de réduire les tâches laissées inachevées d'un poste de travail à l'autre. Son rapport annuel confirme le report de hausses de cadence initialement envisagées.
+Ce choix ne démontre pas que la nouvelle cadence était optimale, ni que les mesures prises suffisaient à résoudre les défaillances. Le cas est exceptionnel par la gravité de l'incident, le contrôle du régulateur et l'ampleur de la crise. Les résultats financiers de Boeing en 2024 ont également subi les effets d'autres événements, notamment une grève à l'automne et des retards de certification. Il serait erroné d'imputer toutes les pertes au seul ralentissement volontaire.
+Mais cette séquence montre une décision observable, avec son coût immédiat : retirer du temps à la fabrication pour tenter de rétablir la conformité, la stabilité et la confiance. Elle donne un contenu concret à une distinction trop souvent oubliée : produire à la cadence prévue et produire dans des conditions maîtrisées ne sont pas toujours la même chose.
+L'arbitrage peut alors paraître paradoxal. Pour obtenir davantage de pièces bonnes, il peut être nécessaire de ralentir, de réaliser une maintenance ou d'immobiliser temporairement une ligne afin de corriger une dérive. L'arrêt a un coût immédiat. Continuer peut avoir un coût différé : rebuts, reprises, contrôles supplémentaires, retards ou livraisons non conformes.
+Aucune des deux options n'est universellement supérieure. La décision dépend de la gravité du défaut, de la traçabilité des lots, de la disponibilité d'autres capacités, des délais clients et du coût probable d'une poursuite.
+L'enjeu est d'éviter de confondre les indicateurs. Le nombre de pièces sorties d'une machine n'est pas le nombre de pièces conformes ; le nombre de pièces conformes n'est pas nécessairement le nombre de pièces livrées à temps.
+## 5. LE BESOIN DE TRÉSORERIE : LA CROISSANCE PEUT ASSÉCHER SA PROPRE RÉSERVE
+Une usine peut aussi disposer de commandes rentables et manquer des liquidités nécessaires pour les exécuter.
+Le rapport 2025 de l'Observatoire du financement des entreprises, publié par la Banque de France, chiffre pour 2024 le besoin en fonds de roulement de l'industrie manufacturière à 38 jours de chiffre d'affaires pour les microentreprises et 64 jours pour les autres PME. Ces valeurs sectorielles sont des moyennes, non des besoins de trésorerie applicables à toute commande.
+Elles rappellent cependant un mécanisme concret : matières, stocks et charges de production doivent souvent être financés avant l'encaissement des ventes. Une accélération des volumes peut donc mobiliser davantage de trésorerie précisément lorsque les perspectives commerciales s'améliorent.
+Les solutions sont connues : acompte client, négociation des échéanciers, ligne de financement de court terme, mobilisation de créances éligibles ou étalement de certains achats. Mais chacune suppose des conditions. Un contrat signé n'est pas un paiement encaissé ; une créance future non encore facturée ne se mobilise pas automatiquement comme une facture existante ; un crédit demandé n'est pas un crédit accordé.
+L'entreprise peut aussi choisir de préserver sa réserve financière et d'accepter un démarrage plus lent. Elle risque alors de perdre un créneau fournisseur ou de retarder une livraison. À l'inverse, engager cette réserve protège parfois une opportunité industrielle tout en augmentant l'exposition à un incident.
+La décision ne consiste pas seulement à savoir si le contrat dégage une marge. Elle consiste à vérifier si l'entreprise peut financer le chemin qui conduit à cette marge sans fragiliser le reste de son activité.
+## 6. QUI PAIE LE TEMPS GAGNÉ PAR LES AUTRES ?
+Les cas d'Airbus, de Safran et de Boeing, les tensions sur les métiers industriels et les données de financement ne décrivent pas une même entreprise. Ils mettent en évidence des contraintes différentes qui peuvent se rencontrer dans une chaîne productive.
+Une accélération commerciale peut transférer une urgence à la production. Une maintenance différée peut transférer un coût vers la qualité. Une formation repoussée peut préserver les livraisons immédiates et compromettre l'autonomie des nouvelles équipes. Une décision financière peut éviter une rupture de liquidité tout en reportant l'achat d'un équipement attendu par les opérateurs.
+Ces transferts ne sont pas toujours des erreurs. Une entreprise peut rationnellement privilégier un client stratégique, préserver sa trésorerie ou décaler un investissement. Le problème apparaît lorsqu'elle mesure le gain à l'endroit où la décision est prise sans mesurer la charge créée ailleurs.
+La réponse n'est pas nécessairement une coordination générale et permanente. Elle peut être plus exigeante et plus simple : avant d'accepter une accélération, identifier la ressource réellement contraignante, son calendrier, les activités qui la mobilisent déjà et les conséquences pour ceux qui en dépendent.
+Il faut alors comparer plusieurs trajectoires : augmenter les moyens, réorganiser le flux, former, sous-traiter une partie des opérations, négocier les délais ou renoncer à certains volumes. Chaque option a un coût, des incertitudes et des effets sur des acteurs différents.
+Les faits disponibles n'autorisent pas à désigner une solution universelle. Ils invitent à changer la question posée aux directions industrielles.
+## CONCLUSION — LA CAPACITÉ N'EST PAS CE QU'ON POSSÈDE, MAIS CE QU'ON PEUT MOBILISER
+L'ouverture d'une ligne d'assemblage chez Airbus n'efface pas les contraintes d'approvisionnement en moteurs. Le recul des livraisons de LEAP chez Safran en 2024 ne se comprend pas à partir de la seule demande. Chez Boeing, l'arrêt ponctuel des activités et le ralentissement de la cadence en 2024 ont constitué des décisions déclarées de renforcement des contrôles et de la qualité. Les difficultés de recrutement persistent dans certains métiers alors même que les tensions globales ont reculé. Et la croissance des commandes peut accroître le besoin de trésorerie avant de produire le moindre encaissement.
+Ces faits ne racontent pas une crise industrielle unique. Ils documentent plusieurs façons dont une capacité théorique peut ne pas être disponible au moment voulu.
+L'enjeu n'est pas de choisir systématiquement entre accélérer et ralentir. Il est de savoir ce que l'accélération consomme, à qui elle impose son calendrier et quelles possibilités elle rend indisponibles.
+Une usine peut avoir davantage de machines, davantage de salariés et davantage de commandes sans disposer, au même instant, de la combinaison de moyens nécessaire pour livrer davantage.
+Produire plus n'est pas seulement ajouter des ressources. C'est décider lesquelles doivent cesser, temporairement, de servir à autre chose.
+
+## Sources et références
+
+- S1 — [Airbus, communiqué du 15 juin 2026, inauguration de la deuxième ligne A320 de Toulouse, réseau de dix lignes, objectif de cadence ](https://www.airbus.com/en/newsroom/press-releases/2026-06-airbus-inaugurates-new-a320-family-final-assembly-line-in-toulouse)
+- S2 — [Airbus, résultats annuels 2025 publiés le 19 février 2026, contraintes de moteurs Pratt & Whitney, objectif 70–75 A320/mois fin 2027 ](https://www.airbus.com/en/newsroom/press-releases/2026-02-airbus-reports-full-year-fy-2025-results)
+- S3 — [Safran, résultats annuels 2024, livraisons LEAP ](https://www.safran-group.com/pressroom/safran-reports-full-year-2024-results-2025-02-14)
+- S4 — [Safran, Capital Markets Day, 5 décembre 2024, contraintes de chaîne d'approvisionnement et montée en cadence LEAP ](https://www.safran-group.com/download/media/447183)
+- S5 — [Inspection générale des finances, rapport sur les tensions sur les effectifs et compétences dans l'industrie, 27 novembre 2023 ](https://www.igf.finances.gouv.fr/igf/accueil/nos-activites/rapports-de-missions/liste-de-tous-les-rapports-de-mi/tensions-sur-les-effectifs-et-co.html)
+- S6 — [Dares, Les tensions sur le marché du travail en 2024, 4 février 2026 ](https://dares.travail-emploi.gouv.fr/publication/les-tensions-sur-le-marche-du-travail-en-2024)
+- S7 — [Banque de France, Observatoire du financement des entreprises, rapport annuel 2025, données 2024, industrie manufacturière ](https://www.banque-france.fr/system/files/2025-10/OFE_2025_WEB.pdf)
+- S8 — [Boeing, chronologie officielle 737-9, décisions des 25 janvier, 4 février et 30 mai 2024 ](https://www.boeing.com/737-9-updates)
+- S9 — [Boeing, résultats du premier trimestre 2024, ralentissement sous 38 appareils/mois ](https://investors.boeing.com/investors/news/press-release-details/2024/Boeing-Reports-First-Quarter-Results/default.aspx)
+- S10 — [Boeing, rapport annuel 2024 / Form 10-K, production, qualité et autres facteurs financiers (dépôt SEC) ](https://www.sec.gov/Archives/edgar/data/12927/000001292725000015/ba-20241231.htm)
+- S11 — [Kingman, J. F. C. (1962), On Queues in Heavy Traffic, Journal of the Royal Statistical Society, Series B, 24(2), p. 383–392. Référence méthodologique sur les files d'attente ](https://academic.oup.com/jrsssb/article/24/2/383/7035157)
