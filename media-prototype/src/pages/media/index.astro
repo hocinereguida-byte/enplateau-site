@@ -2,7 +2,8 @@
 import { getCollection } from 'astro:content';
 import { isPublic, validClassification, urlOf, readings, conversations, publicationInstant } from '../../lib/editorial';
 import { articleStyle } from '../../lib/article-style';
-import { photoCycle, photoLecture, afficherPhotoListe } from '../../lib/photographies';
+import { photoCycle, photoLecture, photoConversation, afficherPhotoListe } from '../../lib/photographies';
+import registry from '../../../../content/rubriques/conversations.json';
 import MediaFooter from '../../components/MediaFooter.astro';
 import MediaHeader from '../../components/MediaHeader.astro';
 const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
@@ -11,6 +12,14 @@ const featured=ordered[0];
 const remaining=ordered.slice(1,10);
 const visual=remaining.filter((a,i)=>afficherPhotoListe(a.data,"accueil",i+1));
 const headlines=remaining.filter((a,i)=>!afficherPhotoListe(a.data,"accueil",i+1));
+const recentConversations=Object.entries(conversations).flatMap(([cycle,group])=>
+  Object.entries(group).map(([code,title])=>{
+    const articles=items.filter(a=>a.data.cycle===cycle&&a.data.conversation===code);
+    const latest=articles.length ? (publicationInstant(articles[0].data.publication_date)?.getTime()??0) : 0;
+    const meta=(registry.conversations as Record<string,{titre:string;presentation:string}>)[cycle+'_'+code];
+    return {cycle,code,title,description:meta?.presentation||'',count:articles.length,latest,photo:photoConversation(cycle,code),url:`/media/cycles/${cycle}/conversations/${code}/`};
+  })
+).filter(item=>item.count>0).sort((a,b)=>b.latest-a.latest||a.cycle.localeCompare(b.cycle)||a.code.localeCompare(b.code)).slice(0,4);
 ---
 <!doctype html>
 <html lang="fr">
@@ -42,7 +51,11 @@ const headlines=remaining.filter((a,i)=>!afficherPhotoListe(a.data,"accueil",i+1
 <a class="press-more" href="/media/publications/">Toutes les publications</a></aside>
 </div>
 </section>
-<section class="home-section"><p class="micro">EXPLORER LES QUESTIONS</p><h2>Toutes les conversations</h2><p class="home-section-intro">Explorez les questions économiques de chaque cycle à travers des situations fictives documentées et des analyses indépendantes.</p><a class="story-action" href="/media/conversations/">Rechercher une conversation</a></section><section id="cycles" class="home-section" aria-labelledby="cycles-heading">
+<section class="home-section" aria-labelledby="recent-conversations-heading">
+<div class="section-line"><div><p class="micro">EXPLORER LES QUESTIONS</p><h2 id="recent-conversations-heading">Les conversations récemment alimentées</h2></div><a class="story-action" href="/media/conversations/">Explorer toutes les conversations</a></div>
+<p class="home-section-intro">Quatre conversations au maximum, classées selon la date de leur publication la plus récente. Chaque conversation rassemble des Scènes fictives documentées et, lorsqu'ils existent, des Regards croisés.</p>
+{recentConversations.length ? <div class="conversation-results">{recentConversations.map(item=><article class="conversation-result"><a class="conversation-result-link" href={item.url}>{item.photo?<img class="conversation-result-photo" src={item.photo} alt="" loading="lazy"/>:<span class="photo-placeholder photo-placeholder-thumb">PHOTO CONVERSATION</span>}<div><p class="micro">{item.cycle==='industrie'?'INDUSTRIE':'LOGEMENT & TERRITOIRES'} · {item.code}</p><h3>{item.title}</h3>{item.description&&<p>{item.description}</p>}<span class="conversation-result-count">{item.count} publication{item.count>1?'s':''}</span></div><span class="conversation-result-arrow" aria-hidden="true">↗</span></a></article>)}</div> : <p class="small">Les conversations apparaîtront ici dès leurs premières publications.</p>}
+</section><section id="cycles" class="home-section" aria-labelledby="cycles-heading">
 <div class="section-line"><div><p class="micro">LES SECTEURS</p><h2 id="cycles-heading">Explorer les cycles</h2></div><span class="small">Deux cycles inauguraux · Conversations adaptées à chaque secteur</span></div>
 <div class="cycle-list">
 <a class="cycle-row" href="/media/cycles/industrie/">{photoCycle("industrie")?<img class="rubric-thumb" src={photoCycle("industrie")} alt="" loading="lazy"/>:<span class="photo-placeholder photo-placeholder-thumb">PHOTO DU CYCLE</span>}<span class="cycle-index">01 / INDUSTRIE</span><span class="cycle-title">Industrie et transformations industrielles</span><span class="cycle-description">Les décisions qui orientent la production, les investissements et les trajectoires industrielles.</span><span class="cycle-arrow" aria-hidden="true">↗</span></a>
