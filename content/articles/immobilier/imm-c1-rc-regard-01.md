@@ -6,8 +6,9 @@ cycle: "immobilier"
 conversation: "C1"
 contexte: "territoire-reconversion"
 lecture_principale: "strategie-gouvernance"
-statut_editorial: "brouillon"
-published: false
+statut_editorial: "publie"
+published: true
+publication_date: "2026-10-28T14:00:00+01:00"
 mise_en_avant: "standard"
 source_notice: "Regard croisé · Analyse journalistique fondée sur des opérations et des sources réelles."
 methodology_specific: "Analyse autonome ; copie CMS préparée à partir du manuscrit V2.4 validé." 
