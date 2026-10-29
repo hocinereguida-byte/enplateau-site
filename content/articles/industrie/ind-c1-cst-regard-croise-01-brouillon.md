@@ -6,8 +6,8 @@ cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "strategie-gouvernance"
-statut_editorial: "brouillon"
-published: false
+statut_editorial: "publie"
+published: true
 publication_date: "2026-10-27T15:00:00+01:00"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
@@ -23,7 +23,7 @@ source_document_url: "https://docs.google.com/document/d/1AaOMQiBBN4Cagr7b_cUtST
 source_document_version: "V2.3 satirique"
 validation_narrative: "adoption_definitive_a_confirmer"
 validation_documentaire: "d1_d2_favorable_sous_reserves_fabrication"
-autorisation_publication: "non_delivree_copie_cms"
+autorisation_publication: "preproduction_uniquement"
 ---
 
 En juin 2026, Airbus inaugure à Toulouse une deuxième ligne d’assemblage final pour la famille A320. L’avionneur dispose désormais de dix lignes réparties entre quatre sites dans le monde. Une nouvelle ligne, c’est une capacité supplémentaire. On pourrait presque croire qu’il suffit d’en ouvrir une pour fabriquer davantage d’avions.
