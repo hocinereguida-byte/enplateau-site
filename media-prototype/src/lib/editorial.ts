@@ -43,6 +43,18 @@ export const readings: Record<string, string> = {
   'territoires-politiques-publiques': 'Territoires & politiques publiques',
 };
 
+// V6 : Perspectives éditoriales. Conserver les identifiants historiques pour la stabilité des URL.
+export const perspectives = readings;
+export const narrativeGenres: Record<string, string> = {
+  'grand-entretien': 'Grand Entretien',
+  recit: 'Récit',
+  chronique: 'Chronique',
+};
+export const perspectiveOf = (data: any): string =>
+  data.perspective_principale || data.lecture_principale || '';
+export const genreOf = (data: any): string | null =>
+  data.format === 'regard-croise' ? null : (data.genre_narratif || (data.format === 'entretien' ? 'grand-entretien' : null));
+
 export const urlOf = (id: string) => '/media/articles/' + id + '/';
 
 const PARIS_TIMEZONE = 'Europe/Paris';
@@ -101,7 +113,7 @@ export const isPublic = (data: any, now = new Date()): boolean => {
 export const validClassification = (d: any): boolean => Boolean(
   conversations[d.cycle]?.[d.conversation]
   && contexts[d.cycle]?.[d.contexte]
-  && readings[d.lecture_principale]
+  && readings[perspectiveOf(d)]
 );
 
 export const formattedDate = (date: Date): string =>
