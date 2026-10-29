@@ -9,7 +9,7 @@ const cycleLinks=[{title:'Industrie',href:'/media/cycles/industrie/'},{title:'Lo
  <div class="press-mobile-bar"><a class="press-mobile-brand" href="/media/" aria-label="Scènes d’Arbitrage — accueil">Scènes d’Arbitrage</a><div class="press-mobile-actions"><a class="press-mobile-search" href="/media/publications/" aria-label="Rechercher des publications">⌕</a><button class="press-menu-toggle" type="button" aria-controls="press-main-navigation" aria-expanded="false"><span class="press-toggle-icon" aria-hidden="true">☰</span><span class="press-toggle-label">Menu</span></button></div></div>
  <nav class="press-nav" id="press-main-navigation" aria-label="Navigation principale">
   <a class="press-home-link" href="/media/" aria-current={active==='accueil'?'page':undefined}>À la une</a>
-  <a class="press-home-link" href="/media/scenes/">Les Scènes</a>
+  <details class="press-dropdown"><summary>Genres <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Fictions économiques</strong><a href="/media/scenes/#grand-entretien">Grands Entretiens</a><a href="/media/scenes/#recit">Récits</a><a href="/media/scenes/#chronique">Chroniques</a><a class="press-dropdown-more" href="/media/scenes/">Toutes les Scènes</a></div></details>
   <a class="press-home-link" href="/media/regards-croises/">Regards croisés</a>
   <details class="press-dropdown"><summary>Cycles <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Cycles disponibles</strong>{cycleLinks.map(item=><a href={item.href}>{item.title}</a>)}<a class="press-dropdown-more" href="/media/cycles/">Explorer tous les cycles</a></div></details>
 
