@@ -1,3 +1,126 @@
+export const cycleCatalogue = [
+  {
+    "code": "immobilier",
+    "label": "Immobilier & fabrique des territoires",
+    "number": 1,
+    "programmed": true
+  },
+  {
+    "code": "industrie",
+    "label": "Industrie & transformation des territoires",
+    "number": 2,
+    "programmed": true
+  },
+  {
+    "code": "agriculture",
+    "label": "Agriculture, alimentation & filières agricoles",
+    "number": 3,
+    "programmed": false
+  },
+  {
+    "code": "energie",
+    "label": "Énergie, production & réseaux",
+    "number": 4,
+    "programmed": false
+  },
+  {
+    "code": "eau-ressources",
+    "label": "Eau, ressources, déchets & économie circulaire",
+    "number": 5,
+    "programmed": false
+  },
+  {
+    "code": "mobilites",
+    "label": "Mobilités, transports & logistique",
+    "number": 6,
+    "programmed": false
+  },
+  {
+    "code": "commerce",
+    "label": "Commerce, distribution & économie de proximité",
+    "number": 7,
+    "programmed": false
+  },
+  {
+    "code": "tourisme",
+    "label": "Tourisme, hôtellerie & restauration",
+    "number": 8,
+    "programmed": false
+  },
+  {
+    "code": "services-entreprises",
+    "label": "Services aux entreprises & fonctions externalisées",
+    "number": 9,
+    "programmed": false
+  },
+  {
+    "code": "banque-financement",
+    "label": "Banque, financement, investissement & assurance",
+    "number": 10,
+    "programmed": false
+  },
+  {
+    "code": "sante",
+    "label": "Santé, soins & systèmes de santé",
+    "number": 11,
+    "programmed": false
+  },
+  {
+    "code": "social-medicosocial",
+    "label": "Social, médico-social & solidarités",
+    "number": 12,
+    "programmed": false
+  },
+  {
+    "code": "education-formation",
+    "label": "Éducation, enseignement & formation",
+    "number": 13,
+    "programmed": false
+  },
+  {
+    "code": "emploi-travail",
+    "label": "Emploi, travail & compétences",
+    "number": 14,
+    "programmed": false
+  },
+  {
+    "code": "ess",
+    "label": "Économie sociale et solidaire & modèles coopératifs",
+    "number": 15,
+    "programmed": false
+  },
+  {
+    "code": "action-publique",
+    "label": "Action publique, collectivités & services publics",
+    "number": 16,
+    "programmed": false
+  },
+  {
+    "code": "culture-medias",
+    "label": "Culture, médias, création & sport",
+    "number": 17,
+    "programmed": false
+  },
+  {
+    "code": "numerique",
+    "label": "Numérique, télécommunications & données",
+    "number": 18,
+    "programmed": false
+  },
+  {
+    "code": "recherche-innovation",
+    "label": "Recherche, innovation & entrepreneuriat",
+    "number": 19,
+    "programmed": false
+  },
+  {
+    "code": "internationalisation",
+    "label": "Internationalisation, commerce extérieur & chaînes de valeur mondiales",
+    "number": 20,
+    "programmed": false
+  }
+] as const;
+
 export const conversations: Record<string, Record<string, string>> = {
   industrie: {
     C1: 'Croissance industrielle : à partir de quand produire davantage oblige-t-il à arbitrer autrement ?',
