@@ -63,9 +63,9 @@ const recentConversations=Object.entries(conversations).flatMap(([cycle,group])=
 <a class="cycle-row" href="/media/cycles/immobilier/">{photoCycle("immobilier")?<img class="rubric-thumb" src={photoCycle("immobilier")} alt="" loading="lazy"/>:<span class="photo-placeholder photo-placeholder-thumb">PHOTO DU CYCLE</span>}<span class="cycle-index">02 / IMMOBILIER</span><span class="cycle-title">Logement & fabrique des territoires</span><span class="cycle-description">Les décisions qui façonnent le logement, les opérations et les territoires.</span><span class="cycle-arrow" aria-hidden="true">↗</span></a>
 </div>
 </section>
-<section id="lectures" class="home-section" aria-labelledby="lectures-heading">
-<div class="section-line"><div><p class="micro">LES REGARDS</p><h2 id="lectures-heading">Lire selon votre expertise</h2></div></div>
-<p class="home-section-intro">Une décision engage souvent plusieurs savoirs et responsabilités. Découvrez ce que la stratégie, la finance, le droit, les opérations et les autres lectures professionnelles permettent d’en comprendre.</p>
+<section id="perspectives" class="home-section" aria-labelledby="perspectives-heading">
+<div class="section-line"><div><p class="micro">LES REGARDS</p><h2 id="perspectives-heading">Les huit Perspectives</h2></div></div>
+<p class="home-section-intro">Une décision engage souvent plusieurs savoirs et responsabilités. Découvrez ce que la stratégie, la finance, le droit, les opérations et les autres perspectives éditoriales permettent d’en comprendre.</p>
 <div class="expertise-grid">{Object.entries(readings).map(([code,name])=><a class="expertise-link" href={`/media/lectures/${code}/`}>{photoLecture(code)?<img class="reading-tiny-photo" src={photoLecture(code)} alt="" loading="lazy"/>:<span class="reading-photo-placeholder" aria-hidden="true">PHOTO</span>}{name}<span aria-hidden="true">↗</span></a>)}</div>
 </section>
 <section class="home-section"><p class="micro">NOTRE DÉMARCHE</p><h2>La fiction pour explorer. L’analyse pour comprendre.</h2><p class="home-section-intro">Les Scènes sont des entretiens entièrement imaginaires : personnages, situations et dialogues sont fictifs. Les Regards croisés examinent les mécanismes économiques à partir de données et de références réelles, indépendamment des récits imaginaires.</p><a class="story-action" href="/media/institution/notre-methode/">Découvrir notre méthode</a></section>
