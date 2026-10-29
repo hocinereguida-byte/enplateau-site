@@ -1,6 +1,6 @@
 ---
 title: "J'ai refusé deux millions d'euros de commandes. Apparemment, la rentabilité est devenue un comportement antisocial."
-summary: "Marc dirige la production d'une entreprise industrielle depuis douze ans. Ancien responsable de production, il possède cette qualité rare chez les dirigeants : il sait approximativement combien coûte ce dont il parle. Il a également un défaut. Il mesure tout. Les rebuts, les temps de cycle, les heures supplémentaires, les promesses commerciales et, depuis peu, la fréquence des réunions inutiles. Cette dernière initiative n'a pas été accueillie favorablement par le comité de direction. Après avoir refusé deux millions d'euros de commandes, il a amélioré le résultat opérationnel de son entreprise. Il a aussi contrarié ses commerciaux, affecté les revenus de salariés dépendant des heures supplémentaires et perdu un client fidèle depuis quinze ans. Nous avons rencontré cet homme qui a appris à compter les pertes, mais qui semble encore chercher dans quelle colonne inscrire les regrets."
+summary: "Marc dirige la production depuis douze ans et mesure tout, jusqu'aux réunions inutiles. En refusant deux millions d'euros de commandes, il améliore le résultat opérationnel, mais contrarie les commerciaux, affecte les heures supplémentaires et perd un client fidèle. Une comédie économique sur ce que les chiffres savent compter — et ce qu'ils oublient."
 format: "entretien"
 cycle: "industrie"
 conversation: "C1"
