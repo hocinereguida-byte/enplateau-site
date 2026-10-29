@@ -1,6 +1,6 @@
 ---
 title: "On m'a demandé de recruter trente personnes. J'ai demandé qui allait leur apprendre le métier."
-summary: ""
+summary: "Trente recrutements en quatre mois : la DRH Claire demande qui formera les nouveaux salariés pendant que l'usine doit continuer à produire. Une comédie sociale sur les compétences, les tuteurs et les calendriers qui ne tiennent pas tout seuls."
 format: "entretien"
 cycle: "industrie"
 conversation: "C1"
