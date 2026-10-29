@@ -1,6 +1,6 @@
 ---
 title: "Notre plus gros contrat était signé. Il nous manquait l'argent pour le fabriquer."
-summary: ""
+summary: "Un gros contrat est signé, mais le directeur financier doit engager des achats avant d'encaisser. Entre le calendrier commercial, la production et la trésorerie, la croissance ressemble à une course contre la montre."
 format: "entretien"
 cycle: "industrie"
 conversation: "C1"
