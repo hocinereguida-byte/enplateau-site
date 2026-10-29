@@ -13,7 +13,7 @@ const cycleLinks=[{title:'Industrie',href:'/media/cycles/industrie/'},{title:'Lo
   <a class="press-home-link" href="/media/regards-croises/">Regards croisés</a>
   <details class="press-dropdown"><summary>Cycles <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Cycles disponibles</strong>{cycleLinks.map(item=><a href={item.href}>{item.title}</a>)}<a class="press-dropdown-more" href="/media/cycles/">Explorer tous les cycles</a></div></details>
 
-  <details class="press-dropdown"><summary>Lectures <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content press-dropdown-wide"><strong>Lectures professionnelles</strong>{Object.entries(readings).map(([key,label])=><a href={`/media/lectures/${key}/`}>{label}</a>)}<a class="press-dropdown-more" href="/media/lectures/">Toutes les lectures</a></div></details>
+  <details class="press-dropdown"><summary>Perspectives <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content press-dropdown-wide"><strong>Perspectives éditoriales</strong>{Object.entries(readings).map(([key,label])=><a href={`/media/lectures/${key}/`}>{label}</a>)}<a class="press-dropdown-more" href="/media/lectures/">Toutes les perspectives</a></div></details>
   <a class="press-home-link" href="/media/institution/qui-sommes-nous/">Le média</a>
   <a class="press-search" href="/media/publications/" aria-label="Rechercher des publications"><span aria-hidden="true">⌕</span> Rechercher</a>
  </nav>
