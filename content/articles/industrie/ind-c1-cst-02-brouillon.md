@@ -6,8 +6,8 @@ cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "operations-organisation"
-statut_editorial: "brouillon"
-published: false
+statut_editorial: "publie"
+published: true
 publication_date: "2026-10-27T15:00:00+01:00"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
@@ -23,7 +23,7 @@ source_document_url: "https://docs.google.com/document/d/1uBJJ38h3Me78HUqZG5czZu
 source_document_version: "V3.4"
 validation_narrative: "validee"
 validation_documentaire: "validee_selon_matrice_c1"
-autorisation_publication: "non_delivree_copie_cms"
+autorisation_publication: "preproduction_uniquement"
 ---
 
 *Entretien fictif · Fiction économique documentée. Personnages, situations et dialogues imaginaires.*
