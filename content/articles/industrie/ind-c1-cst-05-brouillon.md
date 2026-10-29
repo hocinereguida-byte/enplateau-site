@@ -6,8 +6,8 @@ cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "finance-investissement"
-statut_editorial: "brouillon"
-published: false
+statut_editorial: "publie"
+published: true
 publication_date: "2026-10-27T15:00:00+01:00"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
@@ -23,7 +23,7 @@ source_document_url: "https://docs.google.com/document/d/1-IiE4iC2gt2_9nDo7X1GDi
 source_document_version: "V1.3"
 validation_narrative: "validee"
 validation_documentaire: "validee_selon_matrice_c1"
-autorisation_publication: "non_delivree_copie_cms"
+autorisation_publication: "preproduction_uniquement"
 ---
 
 *Entretien fictif · Fiction économique documentée. Personnages, situations et dialogues imaginaires.*
