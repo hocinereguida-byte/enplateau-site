@@ -6,8 +6,8 @@ cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "technologie-innovation"
-statut_editorial: "publie"
-published: true
+statut_editorial: "brouillon"
+published: false
 publication_date: "2026-10-27T15:00:00+01:00"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
@@ -18,12 +18,12 @@ tag_3: "Ergonomie"
 tag_4: "Amélioration continue"
 tag_5: "Industrialisation"
 source_notice: "Entretien fictif · Fiction économique documentée. Personnages, situations et dialogues imaginaires."
-methodology_specific: "Copie CMS alignée sur le manuscrit de référence ; contrôle de fabrication en attente."
-source_document_url: "https://docs.google.com/document/d/1ipxr3V4tB-q54op98lUTHlUbfShhJbJGXJTqhsoPwJg/edit"
-source_document_version: "V2.2"
+methodology_specific: "Copie CMS satirique de référence ; contrôle de fabrication en attente."
+source_document_url: "https://docs.google.com/document/d/1VYqcP60RcR01C729ndJ-rWv8ECNuOSBvTVltboYihyA/edit"
+source_document_version: "V2.3"
 validation_narrative: "validee"
 validation_documentaire: "validee_selon_matrice_c1"
-autorisation_publication: "preproduction_uniquement"
+autorisation_publication: "non_delivree_copie_cms"
 ---
 
 *Entretien fictif · Fiction économique documentée. Personnages, situations et dialogues imaginaires.*
@@ -160,7 +160,7 @@ autorisation_publication: "preproduction_uniquement"
 
 — Il avait signalé un risque lié à la répétition des gestes. Ce n’était pas une prédiction d’accident, et nous ne pouvions pas attribuer cette blessure à la seule réorganisation sans analyse.
 
-— Mais vous avez écourté l’essai.
+— Vous aviez exigé qu’on vérifie les hypothèses du robot avant de décider. Mais pour votre propre réorganisation, vous avez écourté l’observation ?
 
 — Oui. Nous avions fixé une période d’observation plus longue avec l’ergonome. Devant les premiers gains de débit et la pression sur les livraisons, j’ai proposé de passer plus tôt au fonctionnement courant. La production a accepté.
 
