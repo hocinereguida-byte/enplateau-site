@@ -197,6 +197,24 @@ content:
     type: image
     description: Privilégier WebP optimisé ou JPEG. Le CMS ne valide pas automatiquement dimensions, cadrage
       et poids.
+  - &image_layout
+    name: taille_image_liste
+    label: Format visuel de l'article dans les listes
+    type: select
+    default: automatique
+    description: Choisissez indépendamment pour chaque article son importance visuelle. Sans image, le titre reste affiché.
+    options:
+      values:
+      - name: automatique
+        label: Automatique (mise en page actuelle)
+      - name: grande
+        label: Grande image (article dominant)
+      - name: moyenne
+        label: Image moyenne (carte)
+      - name: vignette
+        label: Vignette (à côté du titre)
+      - name: sans
+        label: Sans image
   - name: mise_en_avant
     label: Priorité éditoriale dans les listes
     type: select
@@ -403,6 +421,7 @@ content:
   - *id009
   - *id010
   - *id011
+  - *image_layout
   - name: mise_en_avant
     label: Priorité éditoriale dans les listes
     type: select
