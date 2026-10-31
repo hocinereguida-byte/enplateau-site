@@ -23,7 +23,15 @@ const recentConversations=Object.entries(conversations).flatMap(([cycle,group])=
 ---
 <!doctype html>
 <html lang="fr">
-<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Scènes d’Arbitrage — L’intelligence derrière les décisions</title><meta name="description" content="La fiction économique documentée pour explorer les décisions. Des Regards croisés fondés sur des sources réelles pour comprendre les mécanismes économiques."/><style is:inline set:html={articleStyle}/></head>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Scènes d’Arbitrage — L’intelligence derrière les décisions</title><meta name="description" content="La fiction économique documentée pour explorer les décisions. Des Regards croisés fondés sur des sources réelles pour comprendre les mécanismes économiques."/><style is:inline set:html={articleStyle}/><style is:global>
+.editorial-image-large .article-list-photo,.editorial-image-large .photo-placeholder{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.editorial-image-medium .article-list-photo,.editorial-image-medium .photo-placeholder{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.editorial-image-thumb{display:grid!important;grid-template-columns:minmax(0,1fr) 112px;gap:12px 20px;align-items:start}
+.editorial-image-thumb .article-list-photo,.editorial-image-thumb .photo-placeholder{grid-column:2;grid-row:1/5;width:112px;height:84px;object-fit:cover;min-height:0;margin:0}
+.editorial-image-thumb > :not(.article-list-photo):not(.photo-placeholder){grid-column:1}
+.editorial-image-none .article-list-photo,.editorial-image-none .photo-placeholder{display:none}
+@media(max-width:600px){.editorial-image-thumb{grid-template-columns:minmax(0,1fr) 86px;gap:7px 12px}.editorial-image-thumb .article-list-photo,.editorial-image-thumb .photo-placeholder{width:86px;height:68px}}
+</style></head>
 <body class="media-home">
 <a class="skip" href="#contenu">Aller au contenu</a>
 <MediaHeader active="accueil"/>
@@ -44,10 +52,10 @@ const recentConversations=Object.entries(conversations).flatMap(([cycle,group])=
 <h3><a href={urlOf(featured.id)}>{featured.data.title}</a></h3>
 {featured.data.summary&&<p>{featured.data.summary}</p>}
 <a class="story-action" href={urlOf(featured.id)}>Lire l’article</a></article> : <p class="small">Les publications paraîtront ici dès leur mise en ligne.</p>}
-<div class="press-secondary-grid">{visual.slice(0,4).map(a=><article class="press-visual-story">{a.data.hero_image?<img src={a.data.hero_image} alt={a.data.seo?.image_alt||""} loading="lazy"/>:<div class="photo-placeholder" role="img" aria-label="Photographie de l’article à venir"><span>PHOTOGRAPHIE DE L’ARTICLE</span></div>}<p class="micro">{a.data.format==='regard-croise'?'REGARD CROISÉ':'SCÈNE FICTIVE'} · {a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}</div>
+<div class="press-secondary-grid">{visual.slice(0,4).map(a=><article class={`press-visual-story editorial-image-${a.data.taille_image_liste==="grande"?"large":a.data.taille_image_liste==="vignette"?"thumb":a.data.taille_image_liste==="sans"?"none":"medium"}`}>{a.data.hero_image?<img src={a.data.hero_image} alt={a.data.seo?.image_alt||""} loading="lazy"/>:<div class="photo-placeholder" role="img" aria-label="Photographie de l’article à venir"><span>PHOTOGRAPHIE DE L’ARTICLE</span></div>}<p class="micro">{a.data.format==='regard-croise'?'REGARD CROISÉ':'SCÈNE FICTIVE'} · {a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}</div>
 </div>
 <aside class="press-headlines" aria-label="Autres sujets"><p class="micro">À LIRE ÉGALEMENT</p>
-{[...headlines,...visual.slice(4)].map(a=><article class="press-headline"><p class="micro">{a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}
+{[...headlines,...visual.slice(4)].map(a=><article class={`press-headline editorial-image-${a.data.taille_image_liste==="grande"?"large":a.data.taille_image_liste==="moyenne"?"medium":a.data.taille_image_liste==="vignette"?"thumb":"none"}`}><p class="micro">{a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}
 <a class="press-more" href="/media/publications/">Toutes les publications</a></aside>
 </div>
 </section>
