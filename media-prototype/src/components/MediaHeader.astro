@@ -11,7 +11,7 @@ const groupedCycles=cycleFamilies.map(f=>({label:f.label,items:f.codes.map(code=
   <a class="press-home-link" href="/media/" aria-current={active==='accueil'?'page':undefined}>À la une</a>
   <details class="press-dropdown"><summary>Genres <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Fictions économiques</strong><a href="/media/scenes/#grand-entretien">Grands Entretiens</a><a href="/media/scenes/#recit">Récits</a><a href="/media/scenes/#chronique">Chroniques</a><a class="press-dropdown-more" href="/media/scenes/">Toutes les Scènes</a></div></details>
   <a class="press-home-link" href="/media/regards-croises/">Regards croisés</a>
-  <details class="press-dropdown"><summary>Cycles <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Explorer par grande famille</strong><div class="press-cycle-groups">{groupedCycles.map(f=><details class="press-cycle-family"><summary>{f.label} <span aria-hidden="true">›</span></summary><div>{f.items.map(item=><a href={`/media/cycles/${item.code}/`}>{item.label}</a>)}</div></details>)}</div><a class="press-dropdown-more" href="/media/cycles/">Voir les 20 cycles</a></div></details>
+  <details class="press-dropdown"><summary>Cycles <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content press-cycle-dropdown"><strong>Explorer par grande famille</strong><div class="press-cycle-groups">{groupedCycles.map(f=><details class="press-cycle-family"><summary>{f.label} <span aria-hidden="true">›</span></summary><div>{f.items.map(item=><a href={`/media/cycles/${item.code}/`}>{item.label}</a>)}</div></details>)}</div><a class="press-dropdown-more" href="/media/cycles/">Voir les 20 cycles</a></div></details>
 
   <details class="press-dropdown"><summary>Perspectives <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content press-dropdown-wide"><strong>Perspectives éditoriales</strong>{Object.entries(readings).map(([key,label])=><a href={`/media/lectures/${key}/`}>{label}</a>)}<a class="press-dropdown-more" href="/media/lectures/">Toutes les perspectives</a></div></details>
   <a class="press-home-link" href="/media/institution/qui-sommes-nous/">Le média</a>
@@ -67,6 +67,26 @@ const groupedCycles=cycleFamilies.map(f=>({label:f.label,items:f.codes.map(code=
 .press-dropdown-content a{padding:10px 7px}.press-search{margin-left:0}
 }
 @media(prefers-reduced-motion:no-preference){.press-mobile-bar{transition:background-color .15s}}
+
+/* V7 correctifs masthead et navigation, appliqués après les règles historiques */
+.press-logo-image,.press-mobile-logo{filter:brightness(0) saturate(100%)!important}
+.press-masthead{padding:12px 20px 13px!important}
+.press-logo-image{height:88px!important;max-height:88px!important;max-width:min(600px,85vw)!important;width:auto!important}
+.press-mobile-logo{height:43px!important;max-height:43px!important;max-width:min(250px,60vw)!important;width:auto!important}
+.press-nav{position:relative!important}
+@media(min-width:761px){
+.press-nav>.press-dropdown:has(.press-cycle-dropdown){position:static!important}
+.press-nav .press-dropdown-content.press-cycle-dropdown{display:block!important;box-sizing:border-box!important;width:min(980px,calc(100vw - 64px))!important;min-width:min(980px,calc(100vw - 64px))!important;max-width:none!important;left:50%!important;right:auto!important;top:100%!important;transform:translateX(-50%)!important;padding:24px 30px!important;overflow-y:auto!important}
+.press-nav .press-cycle-groups{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;column-gap:28px!important;row-gap:15px!important}
+.press-nav .press-cycle-family{min-width:0!important}
+.press-nav .press-cycle-family summary{overflow-wrap:normal!important;word-break:normal!important;hyphens:none!important;white-space:normal!important;font-size:14px!important;line-height:1.45!important}
+.press-nav .press-cycle-family>div a{overflow-wrap:normal!important;word-break:normal!important;hyphens:none!important;white-space:normal!important;font-size:13px!important}
+}
+@media(max-width:760px){
+.press-nav .press-dropdown-content.press-cycle-dropdown{display:block!important;width:100%!important;min-width:0!important;max-width:none!important;transform:none!important;left:auto!important;padding:12px!important}
+.press-nav .press-cycle-groups{display:block!important}
+.press-nav .press-cycle-family summary{overflow-wrap:normal!important;word-break:normal!important;hyphens:none!important}
+}
 </style>
 <script is:inline>
 const pressHeader=document.getElementById('press-site-header');
