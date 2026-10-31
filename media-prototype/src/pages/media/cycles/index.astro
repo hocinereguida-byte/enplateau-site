@@ -1,5 +1,5 @@
 ---
-import { cycleCatalogue } from '../../../lib/editorial';
+import { cycleCatalogue, cycleFamilies, cycleBriefs } from '../../../lib/editorial';
 import { photoCycle } from '../../../lib/photographies';
 import { articleStyle } from '../../../lib/article-style';
 import MediaHeader from '../../../components/MediaHeader.astro';
@@ -10,17 +10,7 @@ import MediaFooter from '../../../components/MediaFooter.astro';
 <body><a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/>
 <main id="contenu" class="shell">
 <p class="micro">EXPLORER LE MÉDIA</p><h1>Les 20 cycles économiques</h1>
-<p class="lead">Vingt champs pour explorer l’économie réelle. Industrie et Immobilier disposent déjà de publications ; les dix-huit autres cycles sont présentés comme des perspectives éditoriales en préparation. Leurs intitulés et périmètres pourront évoluer.</p>
-<div class="directory-grid">
-{cycleCatalogue.map(item=>item.programmed?
-<a class="directory-tile" href={`/media/cycles/${item.code}/`}>
-{photoCycle(item.code)?<img src={photoCycle(item.code)} alt="" loading="lazy"/>:<div class="photo-placeholder"><span>CYCLE ÉCONOMIQUE</span></div>}
-<span class="micro">CYCLE {String(item.number).padStart(2,'0')} · EXPLORER</span><h2>{item.label}</h2><span>Voir les publications ↗</span>
-</a>:
-<div class="directory-tile" style="cursor:default">
-<div class="photo-placeholder" aria-hidden="true"><span>SCÈNES D’ARBITRAGE</span></div>
-<span class="micro">CYCLE {String(item.number).padStart(2,'0')} · EN PRÉPARATION</span><h2>{item.label}</h2><span>Programmation éditoriale à venir</span>
-</div>)}
-</div>
+<p class="lead">Vingt cycles réunis en six grandes familles pour explorer les décisions économiques. Chaque cycle présente son ambition et les arbitrages qu'il souhaite rendre intelligibles, même avant ses premières publications.</p>
+{cycleFamilies.map(family=><section class="cycle-family-directory"><h2>{family.label}</h2><div class="directory-grid">{family.codes.map(code=>{const item=cycleCatalogue.find(c=>c.code===code)!;return <a class="directory-tile" href={`/media/cycles/${item.code}/`}>{photoCycle(item.code)?<img src={photoCycle(item.code)} alt="" loading="lazy"/>:<div class="photo-placeholder"><span>CYCLE ÉCONOMIQUE</span></div>}<span class="micro">CYCLE {String(item.number).padStart(2,'0')}</span><h3>{item.label}</h3><p>{cycleBriefs[item.code]?.ambition}</p><span>Découvrir le cycle ↗</span></a>})}</div></section>)}
 <p><a href="/media/publications/">Explorer les publications disponibles</a></p>
 </main><MediaFooter/></body></html>
