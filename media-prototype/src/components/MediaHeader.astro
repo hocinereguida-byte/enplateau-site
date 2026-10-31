@@ -1,7 +1,7 @@
 ---
-import { readings, cycleCatalogue } from '../lib/editorial';
+import { readings, cycleCatalogue, cycleFamilies } from '../lib/editorial';
 const {active=''}=Astro.props;
-const cycleLinks=cycleCatalogue.filter(c=>c.programmed).map(c=>({title:c.label,href:'/media/cycles/'+c.code+'/'}));
+const groupedCycles=cycleFamilies.map(f=>({label:f.label,items:f.codes.map(code=>cycleCatalogue.find(c=>c.code===code)).filter(Boolean)}));
 ---
 <header class="press-header" id="press-site-header">
  <div class="press-utility"><span>L’INTELLIGENCE DERRIÈRE LES DÉCISIONS</span><div><a href="/media/institution/qui-sommes-nous/">Le média</a><a href="/media/newsletter/">Newsletter</a><a href="/media/proposer-un-eclairage/">Contribuer</a></div></div>
@@ -11,7 +11,7 @@ const cycleLinks=cycleCatalogue.filter(c=>c.programmed).map(c=>({title:c.label,h
   <a class="press-home-link" href="/media/" aria-current={active==='accueil'?'page':undefined}>À la une</a>
   <details class="press-dropdown"><summary>Genres <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Fictions économiques</strong><a href="/media/scenes/#grand-entretien">Grands Entretiens</a><a href="/media/scenes/#recit">Récits</a><a href="/media/scenes/#chronique">Chroniques</a><a class="press-dropdown-more" href="/media/scenes/">Toutes les Scènes</a></div></details>
   <a class="press-home-link" href="/media/regards-croises/">Regards croisés</a>
-  <details class="press-dropdown"><summary>Cycles <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Cycles avec publications</strong>{cycleLinks.map(item=><a href={item.href}>{item.title}</a>)}<a class="press-dropdown-more" href="/media/cycles/">Voir les 20 cycles</a></div></details>
+  <details class="press-dropdown"><summary>Cycles <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Explorer par grande famille</strong><div class="press-cycle-groups">{groupedCycles.map(f=><details class="press-cycle-family"><summary>{f.label} <span aria-hidden="true">›</span></summary><div>{f.items.map(item=><a href={`/media/cycles/${item.code}/`}>{item.label}</a>)}</div></details>)}</div><a class="press-dropdown-more" href="/media/cycles/">Voir les 20 cycles</a></div></details>
 
   <details class="press-dropdown"><summary>Perspectives <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content press-dropdown-wide"><strong>Perspectives éditoriales</strong>{Object.entries(readings).map(([key,label])=><a href={`/media/lectures/${key}/`}>{label}</a>)}<a class="press-dropdown-more" href="/media/lectures/">Toutes les perspectives</a></div></details>
   <a class="press-home-link" href="/media/institution/qui-sommes-nous/">Le média</a>
@@ -19,6 +19,8 @@ const cycleLinks=cycleCatalogue.filter(c=>c.programmed).map(c=>({title:c.label,h
  </nav>
 </header>
 <style is:global>
+.press-cycle-dropdown{min-width:min(610px,90vw);max-width:min(750px,95vw)}.press-cycle-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 14px}.press-cycle-family{border-bottom:1px solid #36516b}.press-cycle-family summary{cursor:pointer;list-style:none;font:600 12px/1.5 "IBM Plex Sans",sans-serif;padding:10px 4px;color:#eaf1f6}.press-cycle-family summary::-webkit-details-marker{display:none}.press-cycle-family summary span{float:right}.press-cycle-family[open] summary{color:#9bcaf0}.press-cycle-family>div{padding:0 0 6px 9px;border-left:2px solid #317cb5}.press-cycle-family>div a{font-size:12px}.press-cycle-dropdown>.press-dropdown-more{grid-column:1/-1}@media(max-width:760px){.press-cycle-dropdown{min-width:0;max-width:none}.press-cycle-groups{display:block}.press-cycle-family summary{font-size:14px;padding:13px 4px}}
+
 .press-header{position:sticky;top:0;z-index:100;background:#0a1119;color:#eaf1f6;border-bottom:3px solid #1d6aa3;font-family:'IBM Plex Sans',Arial,sans-serif}
 .press-utility{max-width:1200px;margin:auto;padding:10px 24px;display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #314053;font:500 10px/1.5 'IBM Plex Mono',monospace;letter-spacing:.07em;color:#a7bace}
 .press-utility>div{display:flex;gap:18px}.press-header a{color:inherit;text-decoration:none}.press-header a:hover,.press-header a:focus-visible{color:#90c6f0;text-decoration:underline}
