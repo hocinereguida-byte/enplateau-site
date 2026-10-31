@@ -31,6 +31,7 @@ const articles = defineCollection({
     interview_date: z.coerce.date().optional().nullable(),
     format: z.string().optional(),
     hero_image: z.string().optional().nullable(),
+    taille_image_liste: z.enum(['automatique','grande','moyenne','vignette','sans']).optional().default('automatique'),
     mise_en_avant: z.enum(['une','secondaire','standard']).optional().default('standard'),
     affichage_accueil: z.enum(['automatique','photo','titre']).optional().default('automatique'),
     affichage_rubrique: z.enum(['automatique','photo','titre']).optional().default('automatique'),
