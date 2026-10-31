@@ -1,7 +1,9 @@
 {
   "cycles": {
-    "industrie": "",
-    "immobilier": ""
+    "industrie": "/images/cycles/scenes_darbitrage_cycle_05_industrie_minimal_v2.webp",
+    "immobilier": "/images/cycles/scenes_darbitrage_cycle_01_immobilier.webp",
+    "agriculture": "/images/cycles/scenes_darbitrage_cycle_06_agriculture.webp",
+    "commerce": "/images/cycles/scenes_darbitrage_cycle_07_commerce_distribution.webp"
   },
   "conversations": {
     "industrie_C1": "",
