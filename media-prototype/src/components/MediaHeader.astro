@@ -53,8 +53,8 @@ pressToggle?.addEventListener('click',()=>{const open=!pressHeader.classList.con
 window.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMobileMenu();pressHeader?.querySelectorAll('details').forEach(d=>d.open=false);pressToggle?.focus();}});
 window.matchMedia('(min-width:761px)').addEventListener('change',e=>{if(e.matches)closeMobileMenu();});
 pressNav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMobileMenu));
-document.querySelectorAll('.press-nav details').forEach(detail=>{
- detail.addEventListener('toggle',()=>{if(detail.open)document.querySelectorAll('.press-nav details').forEach(other=>{if(other!==detail)other.open=false})});
+document.querySelectorAll('.press-nav > details').forEach(detail=>{
+ detail.addEventListener('toggle',()=>{if(detail.open)document.querySelectorAll('.press-nav > details').forEach(other=>{if(other!==detail)other.open=false})});
 });
 document.addEventListener('click',event=>{if(!event.target.closest('.press-nav'))document.querySelectorAll('.press-nav details').forEach(d=>d.open=false)});
 </script>
