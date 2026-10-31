@@ -87,6 +87,11 @@ const groupedCycles=cycleFamilies.map(f=>({label:f.label,items:f.codes.map(code=
 .press-nav .press-cycle-groups{display:block!important}
 .press-nav .press-cycle-family summary{overflow-wrap:normal!important;word-break:normal!important;hyphens:none!important}
 }
+
+/* Header FT V7.2 : logo volontairement agrandi et stable */
+.press-logo-image{height:150px!important;max-height:150px!important;width:auto!important;max-width:min(780px,90vw)!important;object-fit:contain!important}
+.press-masthead{padding:7px 20px 12px!important}.press-masthead p{margin-top:0!important}
+@media(max-width:760px){.press-mobile-logo{height:54px!important;max-height:54px!important;max-width:70vw!important}}
 </style>
 <script is:inline>
 const pressHeader=document.getElementById('press-site-header');
