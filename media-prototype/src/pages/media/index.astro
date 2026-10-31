@@ -32,7 +32,18 @@ const recentConversations=Object.entries(conversations).flatMap(([cycle,group])=
 .editorial-image-thumb > :not(.article-list-photo):not(.photo-placeholder){grid-column:1}
 .editorial-image-none .article-list-photo,.editorial-image-none .photo-placeholder{display:none}
 @media(max-width:600px){.editorial-image-thumb{grid-template-columns:minmax(0,1fr) 86px;gap:7px 12px}.editorial-image-thumb .article-list-photo,.editorial-image-thumb .photo-placeholder{width:86px;height:68px}}
-</style><style>.ft-intro{padding:32px 0 38px!important;max-width:1100px!important}.ft-intro h1{font-size:clamp(32px,4vw,54px)!important;margin:6px 0 8px!important}.ft-intro .home-standfirst{font-size:16px!important;max-width:870px!important}.ft-intro .intro-links{margin-top:15px!important}.home-editorial{padding-top:22px!important}</style></head>
+</style><style>.ft-intro{padding:32px 0 38px!important;max-width:1100px!important}.ft-intro h1{font-size:clamp(32px,4vw,54px)!important;margin:6px 0 8px!important}.ft-intro .home-standfirst{font-size:16px!important;max-width:870px!important}.ft-intro .intro-links{margin-top:15px!important}.home-editorial{padding-top:22px!important}</style><style is:global>
+body.media-home,body.media-home main,body.media-home .home-shell{background:#fff1e5!important}
+body.media-home .home-intro{background:transparent!important}
+.ft-front{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.65fr) minmax(0,.75fr);gap:22px;border-top:2px solid #a99789;padding:22px 0 26px}
+.ft-front-left,.ft-front-right{min-width:0}.ft-front-left{border-right:1px solid #d7c3b5;padding-right:18px}.ft-front-right{border-left:1px solid #d7c3b5;padding-left:18px}
+.ft-lead-text h3{font:600 clamp(24px,2.4vw,36px)/1.15 'Playfair Display',Georgia,serif;margin:10px 0}.ft-lead-text h3 a,.ft-small-headline h3 a,.ft-front-right h3 a,.ft-top-card h4 a{color:#262a33;text-decoration:none}.ft-lead-text p:not(.micro){font-size:14px;line-height:1.55;color:#61564e}
+.ft-small-headline,.ft-front-right article{border-top:1px solid #d4c1b4;padding-top:12px;margin-top:14px}.ft-small-headline h3,.ft-front-right h3{font:600 17px/1.32 'Playfair Display',Georgia,serif;margin:4px 0 9px}
+.ft-main-photo{display:block;text-decoration:none;color:#262a33;background:#eedccd}.ft-main-photo img,.ft-main-photo .photo-placeholder{width:100%;aspect-ratio:16/10;object-fit:cover;margin:0}.ft-main-photo strong{display:block;padding:17px;font:600 clamp(21px,2vw,28px)/1.3 'Playfair Display',Georgia,serif}
+.ft-top-stories{border-top:3px double #96877a;margin-top:14px;padding-top:18px}.ft-top-stories>h3{text-align:center;font:600 12px/1.4 'IBM Plex Sans',sans-serif;text-transform:uppercase;letter-spacing:.08em;margin:0 0 22px}.ft-top-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.ft-top-card{min-width:0;border-right:1px solid #dbc7b8;padding-right:12px}.ft-top-card img,.ft-top-card .photo-placeholder{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;margin:0 0 10px}.ft-top-card h4{font:600 18px/1.3 'Playfair Display',Georgia,serif;margin:8px 0}
+@media(max-width:900px){.ft-front{grid-template-columns:1fr 1.4fr}.ft-front-right{grid-column:1/-1;border-left:0;border-top:1px solid #d7c3b5;padding:16px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.ft-front-right>p{grid-column:1/-1}.ft-top-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.ft-front{grid-template-columns:1fr}.ft-front-left{border-right:0;padding:0}.ft-front-center{grid-row:1}.ft-front-right{display:block}.ft-top-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.ft-top-card h4{font-size:16px}}
+</style></head>
 <body class="media-home">
 <a class="skip" href="#contenu">Aller au contenu</a>
 <MediaHeader active="accueil"/>
@@ -40,20 +51,15 @@ const recentConversations=Object.entries(conversations).flatMap(([cycle,group])=
 <section class="home-intro ft-intro"><p class="micro">SCÈNES D'ARBITRAGE · LA FICTION POUR EXPLORER, L'ANALYSE POUR COMPRENDRE</p><h1>Les décisions qui font l'économie.</h1><p class="home-standfirst">Décisions, contraintes et conséquences : la fiction économique documentée met les arbitrages en scène. Les Regards croisés éclairent les mécanismes à partir de sources vérifiables.</p><div class="intro-links"><a href="/media/scenes/">Les Scènes</a><a href="/media/regards-croises/">Les Regards croisés</a><a href="/media/cycles/">Les 20 cycles</a></div></section>
 <section id="publications" class="home-section home-editorial" aria-labelledby="publications-heading">
 <div class="section-line"><div><p class="micro">À LA UNE</p><h2 id="publications-heading">Dernières publications</h2></div><a class="story-action" href="/media/publications/">Explorer le catalogue</a></div>
-<div class="press-front-grid">
-<div class="press-lead-column">
-{featured ? <article class="featured-story press-lead-story">
-<p class="story-label">{featured.data.format==='regard-croise'?'REGARD CROISÉ — ANALYSE DOCUMENTÉE':'SCÈNE — FICTION ÉCONOMIQUE DOCUMENTÉE'} · {featured.data.cycle} / {conversations[featured.data.cycle]?.[featured.data.conversation]} / {readings[featured.data.lecture_principale]}</p>
-{afficherPhotoListe(featured.data,"accueil",0)&&(featured.data.hero_image?<img class="article-list-photo featured-photo" src={featured.data.hero_image} alt={featured.data.seo?.image_alt||""} loading="eager"/>:<div class="photo-placeholder photo-placeholder-feature" role="img" aria-label="Photographie de l’article à venir"><span>PHOTOGRAPHIE DE L’ARTICLE</span></div>)}
-<h3><a href={urlOf(featured.id)}>{featured.data.title}</a></h3>
-{featured.data.summary&&<p>{featured.data.summary}</p>}
-<a class="story-action" href={urlOf(featured.id)}>Lire l’article</a></article> : <p class="small">Les publications paraîtront ici dès leur mise en ligne.</p>}
-<div class="editorial-mosaic">{visual.slice(0,4).map((a,i)=><article class={`editorial-card editorial-card--${displaySize(a,i)}`}>{displaySize(a,i)!=="none"&&(a.data.hero_image?<img class="editorial-card-image" src={a.data.hero_image} alt={a.data.seo?.image_alt||""} loading="lazy"/>:<div class="photo-placeholder" role="img" aria-label="Photographie de l’article à venir"><span>PHOTOGRAPHIE DE L’ARTICLE</span></div>)}<p class="micro">{a.data.format==='regard-croise'?'REGARD CROISÉ':'SCÈNE FICTIVE'} · {a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}</div>
+<div class="ft-front">
+<div class="ft-front-left">
+{featured&&<article class="ft-lead-text"><p class="micro">{featured.data.cycle} · {readings[featured.data.lecture_principale]}</p><h3><a href={urlOf(featured.id)}>{featured.data.title}</a></h3>{featured.data.summary&&<p>{featured.data.summary}</p>}<a class="story-action" href={urlOf(featured.id)}>Lire l'article</a></article>}
+{ordered.slice(1,3).map(a=><article class="ft-small-headline"><p class="micro">{a.data.cycle}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}
 </div>
-<aside class="press-headlines" aria-label="Autres sujets"><p class="micro">À LIRE ÉGALEMENT</p>
-{[...headlines,...visual.slice(4)].map(a=><article class={`press-headline editorial-image-${a.data.taille_image_liste==="grande"?"large":a.data.taille_image_liste==="moyenne"?"medium":a.data.taille_image_liste==="vignette"?"thumb":"none"}`}><p class="micro">{a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}
-<a class="press-more" href="/media/publications/">Toutes les publications</a></aside>
+<div class="ft-front-center">{featured&&<a href={urlOf(featured.id)} class="ft-main-photo">{featured.data.hero_image?<img src={featured.data.hero_image} alt={featured.data.seo?.image_alt||""} loading="eager"/>:<div class="photo-placeholder"><span>PHOTOGRAPHIE DE L’ARTICLE</span></div>}<strong>{featured.data.title}</strong></a>}</div>
+<aside class="ft-front-right"><p class="micro">LE CHOIX DE LA RÉDACTION</p>{ordered.slice(3,6).map(a=><article><p class="micro">{a.data.cycle}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}</aside>
 </div>
+{ordered.length>1&&<section class="ft-top-stories" aria-labelledby="topstories"><h3 id="topstories">À découvrir également</h3><div class="ft-top-grid">{ordered.slice(1,9).map((a,i)=><article class="ft-top-card">{a.data.hero_image?<img src={a.data.hero_image} alt="" loading="lazy"/>:<div class="photo-placeholder"><span>IMAGE DE L'ARTICLE</span></div>}<p class="micro">{a.data.cycle} · {a.data.format==='regard-croise'?'REGARD CROISÉ':'SCÈNE'}</p><h4><a href={urlOf(a.id)}>{a.data.title}</a></h4></article>)}</div></section>}
 </section>
 <section class="home-section" aria-labelledby="recent-conversations-heading">
 <div class="section-line"><div><p class="micro">EXPLORER LES QUESTIONS</p><h2 id="recent-conversations-heading">Les conversations</h2></div></div>
