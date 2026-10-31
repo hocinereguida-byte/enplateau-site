@@ -10,8 +10,9 @@ const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validC
 const ordered=[...items].sort((a,b)=>({une:0,secondaire:1,standard:2}[a.data.mise_en_avant||'standard']??2)-({une:0,secondaire:1,standard:2}[b.data.mise_en_avant||'standard']??2));
 const featured=ordered[0];
 const remaining=ordered.slice(1,10);
-const visual=remaining.filter((a,i)=>afficherPhotoListe(a.data,"accueil",i+1));
-const headlines=remaining.filter((a,i)=>!afficherPhotoListe(a.data,"accueil",i+1));
+const visual=remaining.filter((a,i)=>a.data.taille_image_liste==="sans"?false:a.data.taille_image_liste&&a.data.taille_image_liste!=="automatique"?true:afficherPhotoListe(a.data,"accueil",i+1));
+const headlines=remaining.filter((a,i)=>a.data.taille_image_liste==="sans"?true:a.data.taille_image_liste&&a.data.taille_image_liste!=="automatique"?false:!afficherPhotoListe(a.data,"accueil",i+1));
+const displaySize=(a:any,i:number)=>a.data.taille_image_liste==="grande"?"large":a.data.taille_image_liste==="moyenne"?"medium":a.data.taille_image_liste==="vignette"?"thumb":a.data.taille_image_liste==="sans"?"none":i%3===0?"medium":i%3===1?"thumb":"none";
 const recentConversations=Object.entries(conversations).flatMap(([cycle,group])=>
   Object.entries(group).map(([code,title])=>{
     const articles=items.filter(a=>a.data.cycle===cycle&&a.data.conversation===code);
@@ -52,7 +53,7 @@ const recentConversations=Object.entries(conversations).flatMap(([cycle,group])=
 <h3><a href={urlOf(featured.id)}>{featured.data.title}</a></h3>
 {featured.data.summary&&<p>{featured.data.summary}</p>}
 <a class="story-action" href={urlOf(featured.id)}>Lire l’article</a></article> : <p class="small">Les publications paraîtront ici dès leur mise en ligne.</p>}
-<div class="press-secondary-grid">{visual.slice(0,4).map(a=><article class={`press-visual-story editorial-image-${a.data.taille_image_liste==="grande"?"large":a.data.taille_image_liste==="vignette"?"thumb":a.data.taille_image_liste==="sans"?"none":"medium"}`}>{a.data.hero_image?<img src={a.data.hero_image} alt={a.data.seo?.image_alt||""} loading="lazy"/>:<div class="photo-placeholder" role="img" aria-label="Photographie de l’article à venir"><span>PHOTOGRAPHIE DE L’ARTICLE</span></div>}<p class="micro">{a.data.format==='regard-croise'?'REGARD CROISÉ':'SCÈNE FICTIVE'} · {a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}</div>
+<div class="editorial-mosaic">{visual.slice(0,4).map((a,i)=><article class={`editorial-card editorial-card--${displaySize(a,i)}`}>{displaySize(a,0)!=="none"&&(a.data.hero_image?<img class="editorial-card-image" src={a.data.hero_image} alt={a.data.seo?.image_alt||""} loading="lazy"/>:<div class="photo-placeholder" role="img" aria-label="Photographie de l’article à venir"><span>PHOTOGRAPHIE DE L’ARTICLE</span></div>)}<p class="micro">{a.data.format==='regard-croise'?'REGARD CROISÉ':'SCÈNE FICTIVE'} · {a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}</div>
 </div>
 <aside class="press-headlines" aria-label="Autres sujets"><p class="micro">À LIRE ÉGALEMENT</p>
 {[...headlines,...visual.slice(4)].map(a=><article class={`press-headline editorial-image-${a.data.taille_image_liste==="grande"?"large":a.data.taille_image_liste==="moyenne"?"medium":a.data.taille_image_liste==="vignette"?"thumb":"none"}`}><p class="micro">{a.data.cycle} · {readings[a.data.lecture_principale]}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}
