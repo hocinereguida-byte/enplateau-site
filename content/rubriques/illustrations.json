@@ -38,13 +38,13 @@
     "immobilier_C7": ""
   },
   "lectures": {
-    "strategie-gouvernance": "",
-    "finance-investissement": "",
-    "droit-regulation": "",
-    "operations-organisation": "",
-    "technologie-innovation": "",
-    "ressources-humaines-competences": "",
-    "energie-ressources": "",
-    "territoires-politiques-publiques": ""
+    "strategie-gouvernance": "/images/perspectives/scenes_darbitrage_perspective_01_strategie_gouvernance.webp",
+    "finance-investissement": "/images/perspectives/scenes_darbitrage_perspective_02_finance_investissement.webp",
+    "droit-regulation": "/images/perspectives/scenes_darbitrage_perspective_03_droit_regulation.webp",
+    "operations-organisation": "/images/perspectives/scenes_darbitrage_perspective_04_operations_organisation.webp",
+    "technologie-innovation": "/images/perspectives/scenes_darbitrage_perspective_05_technologie_innovation.webp",
+    "ressources-humaines-competences": "/images/perspectives/scenes_darbitrage_perspective_06_ressources_humaines_competences.webp",
+    "energie-ressources": "/images/perspectives/scenes_darbitrage_perspective_07_energie_ressources.webp",
+    "territoires-politiques-publiques": "/images/perspectives/scenes_darbitrage_perspective_08_territoires_politiques_publiques.webp"
   }
 }
