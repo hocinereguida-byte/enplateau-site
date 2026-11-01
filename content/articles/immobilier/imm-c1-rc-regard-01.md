@@ -10,6 +10,7 @@ statut_editorial: "publie"
 published: true
 publication_date: "2026-10-28T14:00:00+01:00"
 mise_en_avant: "standard"
+hero_image: "/images/articles/scenes_darbitrage_article_batiment_pouvait_encore_etre_sauve_mais_a_quel_prix.webp"
 source_notice: "Regard croisé · Analyse journalistique fondée sur des opérations et des sources réelles."
 methodology_specific: "Analyse autonome ; copie CMS préparée à partir du manuscrit V2.4 validé." 
 source_document_url: "https://docs.google.com/document/d/1R1L4TWX5XasFxNfIh0yLAHuNKchMEy5Sh39_g0EDOjo/edit"
