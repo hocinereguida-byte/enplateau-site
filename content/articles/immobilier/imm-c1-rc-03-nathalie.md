@@ -10,6 +10,7 @@ statut_editorial: "publie"
 published: true
 publication_date: "2026-10-28T14:00:00+01:00"
 mise_en_avant: "standard"
+hero_image: "/images/articles/scenes_darbitrage_article_le_marche_disait_oui_locataires_ne_signaient_pas.webp"
 source_notice: "Entretien fictif · Fiction économique documentée. Personnages, opérations et dialogues imaginaires."
 methodology_specific: "Texte validé selon le dossier éditorial ; copie CMS en attente de bon à publier." 
 source_document_url: "https://docs.google.com/document/d/1xTxBYv_0BBELyNe65xvYYqO_F_hPXWv2fQLOm1M1MRs/edit"

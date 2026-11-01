@@ -2,8 +2,24 @@
   "cycles": {
     "industrie": "/images/cycles/scenes_darbitrage_cycle_05_industrie_minimal_v2.webp",
     "immobilier": "/images/cycles/scenes_darbitrage_cycle_01_immobilier.webp",
-    "agriculture": "/images/cycles/scenes_darbitrage_cycle_06_agriculture.webp",
-    "commerce": "/images/cycles/scenes_darbitrage_cycle_07_commerce_distribution.webp"
+    "agriculture": "/images/cycles/scenes_darbitrage_cycle_06_agriculture_contemporaine.webp",
+    "commerce": "/images/cycles/scenes_darbitrage_cycle_07_commerce_distribution.webp",
+    "energie": "/images/cycles/scenes_darbitrage_cycle_02_energie_production_reseaux.webp",
+    "eau-ressources": "/images/cycles/scenes_darbitrage_cycle_03_eau_ressources_dechets_economie_circulaire.webp",
+    "mobilites": "/images/cycles/scenes_darbitrage_cycle_04_mobilites_transports_logistique.webp",
+    "tourisme": "/images/cycles/scenes_darbitrage_tourisme_collage.webp",
+    "services-entreprises": "/images/cycles/scenes_darbitrage_cycle_09_services_aux_entreprises_collage.webp",
+    "banque-financement": "/images/cycles/scenes_darbitrage_cycle_10_banque_financement_investissement_assurance.webp",
+    "ess": "/images/cycles/scenes_darbitrage_cycle_11_ess_modeles_cooperatifs.webp",
+    "internationalisation": "/images/cycles/scenes_darbitrage_cycle_12_internationalisation_commerce_exterieur_chaines_de_valeur.webp",
+    "sante": "/images/cycles/scenes_darbitrage_cycle_13_sante_soins_systemes_de_sante.webp",
+    "social-medicosocial": "/images/cycles/scenes_darbitrage_cycle_14_social_medicosocial_solidarites.webp",
+    "education-formation": "/images/cycles/scenes_darbitrage_cycle_15_education_enseignement_formation.webp",
+    "emploi-travail": "/images/cycles/scenes_darbitrage_cycle_16_emploi_travail_competences.webp",
+    "action-publique": "/images/cycles/scenes_darbitrage_cycle_17_action_publique_collectivites_services_publics.webp",
+    "culture-medias": "/images/cycles/scenes_darbitrage_cycle_18_culture_medias_creation_sport.webp",
+    "numerique": "/images/cycles/scenes_darbitrage_cycle_19_numerique_telecommunications_donnees.webp",
+    "recherche-innovation": "/images/cycles/scenes_darbitrage_cycle_20_recherche_innovation_entrepreneuriat.webp"
   },
   "conversations": {
     "industrie_C1": "",
