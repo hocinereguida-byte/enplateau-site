@@ -284,6 +284,9 @@ export const cycleBriefs: Record<string, { ambition: string; enjeux_et_arbitrage
 };
 
 export const conversations: Record<string, Record<string, string>> = {
+  agriculture: {
+    C1: 'Décider ce que l’on produit',
+  },
   industrie: {
     C1: 'Croissance industrielle : à partir de quand produire davantage oblige-t-il à arbitrer autrement ?',
     C2: 'Dépendances industrielles',
@@ -305,6 +308,9 @@ export const conversations: Record<string, Record<string, string>> = {
 };
 
 export const contexts: Record<string, Record<string, string>> = {
+  agriculture: {
+    'engagement-productif-longue-duree': 'Engagement productif de longue durée',
+  },
   industrie: {
     CST: 'Croissance sous tension',
     ASC: 'Adaptation sous contrainte',
@@ -388,7 +394,7 @@ export function publicationInstant(value: unknown): Date | null {
 export const isPublic = (data: any, now = new Date()): boolean => {
   const date = publicationInstant(data.publication_date);
   return data.published === true
-    && data.statut_editorial === 'publie'
+    && (data.statut_editorial === 'publie' || data.statut_editorial === 'prepublication')
     && date !== null
     && date.getTime() <= now.getTime()
     && typeof data.summary === 'string'
