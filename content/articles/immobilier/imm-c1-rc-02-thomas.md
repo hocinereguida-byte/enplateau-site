@@ -1,241 +1,321 @@
 ---
-title: "Plus on connaissait le bâtiment, moins on pouvait le rénover."
-summary: "Thomas, 43 ans, dirige les opérations techniques d'un opérateur immobilier dans le Grand Est. Son entreprise a acquis un ancien bâtiment industriel dans le bassin de Saint-Dié-des-Vosges pour le transformer en locaux destinés à des PME. Mais à mesure que les études avançaient, les travaux nécessaires devenaient plus lourds et l'équilibre économique de l'opération plus incertain."
-format: "entretien"
+title: "Les huit ateliers de Thomas"
+summary: "Thomas, directeur technique d’un opérateur immobilier, découvre que la reconversion d’un ancien bâtiment industriel en huit ateliers repose sur des hypothèses fragiles. Entre Lucie, sa direction et Élise, il apprend à suspendre un projet sans renoncer à décider."
+format: "recit"
+genre_narratif: "recit"
 cycle: "immobilier"
 conversation: "C1"
 contexte: "territoire-reconversion"
 lecture_principale: "operations-organisation"
-statut_editorial: "publie"
+statut_editorial: "prepublication"
 published: true
-publication_date: "2026-10-28T14:00:00+01:00"
+publication_date: "2026-11-03T18:30:00+01:00"
 mise_en_avant: "standard"
 hero_image: "/images/articles/scenes_darbitrage_article_thomas_plus_on_connaissait_le_batiment_moins_on_pouvait_le_renover.webp"
-source_notice: "Entretien fictif · Fiction économique documentée. Personnages, opérations et dialogues imaginaires."
-methodology_specific: "V1.3 validée éditorialement ; audit D1/D2 favorable avec réserves ; contrôle de fabrication CMS en attente. Publication non autorisée."
-source_document_version: "V1.3"
-source_document_url: "https://docs.google.com/document/d/1jhxYVbklIdRu8F2OEvvsC43ciRQqt-JKIWag3aH2ez8/edit"
+source_notice: "Fiction économique — personnages, entreprise, dialogues et situations inventés. Version littéraire V3.1 disponible uniquement en préproduction pour consultation. Non publiable : vérifications documentaires D1/D2 et validation éditoriale définitive en attente."
+methodology_specific: "V3.1 consolidée, recommandée pour comité de lecteurs. D1/D2 et visa éditorial encore nécessaires. Registre interne exclu du texte public."
+source_document_version: "V3.1"
+source_document_url: "https://docs.google.com/document/d/1mRu-E2J0i7Kkrdn4DrDYuxVF3OrJYb4IRXFegcAhGP0/edit"
 tag_1: "Réhabilitation"
-tag_2: "Surcoûts"
+tag_2: "Décision sous incertitude"
 tag_3: "Bâtiment industriel"
-tag_4: "Études techniques"
-tag_5: "Arbitrage opérationnel"
+tag_4: "Engagements financiers"
+tag_5: "Suspension de projet"
 ---
 
-*Entretien fictif — fiction économique documentée. Thomas, son entreprise, le bâtiment et les événements relatés sont inventés.*
+*Fiction économique — personnages, entreprise, dialogues et situations inventés.*
 
-— Vous aviez trouvé un bâtiment industriel de 2 400 mètres carrés, avec un projet de reconversion en huit ateliers. Qu'est-ce qui vous plaisait dans cette opération ?
+**Version de consultation en préproduction — validation documentaire et éditoriale en attente.**
 
-— Les volumes, d'abord. Une structure en béton armé, des accès qu'on pouvait adapter, des surfaces intéressantes pour de petites entreprises. On pouvait imaginer huit cellules indépendantes. Dans le secteur, ce genre de locaux peut répondre à un besoin.
+Le dimanche matin, Thomas découvrit que sa femme avait déplacé l’étagère.
 
-— Et qu'est-ce qui vous inquiétait ?
+Elle était maintenant près de la fenêtre. Trois planches de chêne, quatre montants métalliques et une collection de romans policiers occupaient l’emplacement réservé à une lampe.
 
-— Le bâtiment avait été modifié plusieurs fois. Certains plans ne correspondaient pas exactement à ce qu'on voyait. Il y avait des reprises de structure dont on ne connaissait pas toute l'histoire.
+— Tu l’as déplacée.
+Élise posa sa tasse.
+— Bonjour, Thomas.
+— Elle était contre le mur nord.
+— Elle est contre le mur est. Tu vois, nous sommes d’accord.
 
-— Vous le saviez avant de l'acheter ?
+Il posa la main sur le montant supérieur.
 
-— On savait qu'il y avait des incertitudes. Pas ce qu'elles allaient représenter en travaux.
+— Elle n’est pas fixée.
+— Elle ne l’était pas hier non plus.
+— Hier, elle était contre un mur porteur.
+— Tu ne vas pas me faire une étude de structure pour trois étagères.
+— Il suffit d’une fixation correcte.
+— Alors fixe-la. Mais laisse-moi finir mon café.
 
-— Pourtant, plus vous étudiiez le bâtiment, moins votre projet semblait réalisable.
+Élise restaurait des meubles anciens. Elle savait reconnaître un assemblage fragile et n’avait jamais demandé à son mari de renoncer à la prudence. Seulement de lui laisser une place raisonnable dans le salon.
 
-— Moins il semblait réalisable dans les conditions prévues. C'est important.
+— Tu sais, ajouta-t-elle, cette lampe attend depuis trois semaines que tu te décides.
+— Je voulais être sûr de son emplacement.
+— Elle, elle voulait seulement éclairer.
 
-— Quelles conditions ?
+À quarante-trois ans, Thomas dirigeait les opérations techniques d’un opérateur immobilier du Grand Est. Chez lui, les notices survivaient aux meubles. Au bureau, il ne parlait jamais de contrôle : il souhaitait simplement « disposer d’informations suffisantes ». La formule inquiétait moins ses collègues, sans modifier ses habitudes.
 
-— Nous voulions créer huit cellules pour des artisans, des petites entreprises de production, des activités techniques. Environ 2 200 mètres carrés commercialisables. Il fallait acheter, rénover, vendre et dégager suffisamment de marge pour rémunérer le risque.
+Son téléphone vibra. L’ingénieur chargé des investigations sur un ancien bâtiment industriel près de Saint-Dié-des-Vosges demandait une réunion le lendemain.
 
-— Combien aviez-vous prévu ?
+— Le fameux bâtiment ? demanda Élise.
+— Il reste des points à vérifier.
+— Tu m’en avais parlé.
+— Les investigations avancent.
+Elle le regarda remettre l’étagère exactement dans l’axe de la fenêtre.
+— Je vois ça.
 
-— Une enveloppe prévisionnelle globale de 2,4 millions d'euros. Elle comprenait l'acquisition, les travaux envisagés, les études et les autres frais d'opération estimés à ce stade. En face, nous avions retenu 2,85 millions de recettes de vente.
+---
 
-— Soit 450 000 euros de marge.
+Le bâtiment faisait 2 400 mètres carrés. Ses volumes généreux, ses accès et sa structure en béton armé avaient séduit l’équipe. Le projet prévoyait huit ateliers pour artisans et petites entreprises, représentant environ 2 200 mètres carrés commercialisables.
 
-— D'écart prévisionnel entre recettes et dépenses, dans notre scénario de départ. Pas 450 000 euros garantis sur un compte bancaire. Les coûts pouvaient évoluer, les ventes aussi. Et il restait des risques à qualifier.
+Le dossier présentait 2,4 millions d’euros de dépenses prévisionnelles — acquisition, travaux envisagés, études et frais estimés — pour 2,85 millions d’euros de recettes de vente anticipées. L’écart, 450 000 euros, était un excédent prévisionnel, pas une marge acquise. Thomas tenait à cette nuance. Dans les réunions, elle avait parfois tendance à disparaître derrière la satisfaction d’un tableau bien rempli.
 
-— Le bâtiment était en mauvais état ?
+Les plans du bâtiment étaient anciens, incomplets et parfois contradictoires. Des modifications avaient été réalisées au fil des décennies. Avant l’achat, certaines vérifications avaient été conduites, mais des sondages plus poussés exigeaient des accès ou des ouvertures difficiles à obtenir sans être propriétaire.
 
-— Il n'était pas en bon état. Sinon on ne parlait pas de réhabilitation. Mais nous pensions pouvoir conserver l'essentiel de la structure avec des interventions limitées. Les premières études allaient plutôt dans ce sens, sous réserve d'investigations complémentaires.
+L’opérateur avait donc acquis le bien en connaissant ces incertitudes. Après l’achat, Thomas avait proposé de poursuivre certaines consultations d’entreprises sur la base des hypothèses disponibles, avec des réserves explicites. Il espérait préciser les solutions et les prix sans immobiliser le calendrier. La direction avait accepté.
 
-— Sous réserve. Deux mots qui peuvent coûter cher.
+Rien, dans les premiers résultats, ne signalait un problème majeur. Cela ne signifiait pas que les résultats suivants confirmeraient le programme. Les réserves figuraient bien dans les documents. À mesure que les réunions avançaient, elles occupaient pourtant de moins en moins de place dans les conversations.
 
-— Vous pouvez mettre « sous réserve » sur la moitié des bâtiments anciens de France. La question, c'est ce que vous faites de cette réserve.
+---
 
-— Qu'avez-vous fait de celle-ci ?
+Le lundi, dans l’ancien hall de production, l’ingénieur structure étala trois plans sur une table. Lucie, responsable de programme, suivait du doigt une ligne de poteaux.
 
-— Avant l'achat, nous avons fait réaliser les premières études et examiné les documents disponibles. Mais certains sondages étaient difficiles à engager tant que nous n'étions pas propriétaires. Il fallait obtenir les accès, les autorisations, parfois ouvrir des éléments de structure. Nous avons donc acquis le bâtiment en sachant que des vérifications restaient nécessaires.
+— Nous avons repris les hypothèses de charges, expliqua l’ingénieur. Certaines ouvertures et plusieurs zones de plancher exigent d’autres solutions.
+— Le bâtiment est dangereux ? demanda Lucie.
+— Ce n’est pas ce que disent les calculs. Il tient debout. Mais les nouveaux usages imposent des contraintes que le projet initial ne couvrait pas suffisamment.
 
-— Et une fois propriétaires ?
+Thomas demanda quelles parties de la structure étaient concernées. L’ingénieur les lui montra. Les adaptations restaient techniquement possibles, mais certaines nécessitaient des renforcements et une autre organisation du chantier.
 
-— Nous avons engagé les études opérationnelles, travaillé sur le découpage des cellules, les ouvertures, les accès, les charges d'exploitation. Des sondages complémentaires étaient programmés. En parallèle, nous avons commencé à consulter les entreprises.
+— Et financièrement ?
+— Nous avons plusieurs variantes à étudier. Pour un renforcement complet, notre estimation est d’environ 650 000 euros supplémentaires.
+— Un devis ferme ?
+— Non. Un ordre de grandeur pour ce scénario. Il faudra préciser les solutions.
 
-— Pourquoi ne pas avoir attendu les résultats des sondages ?
+Lucie retira sa main du plan.
 
-— Parce qu'on avait aussi besoin de prix et de retours techniques pour avancer. Les entreprises pouvaient nous aider à préciser les solutions, les délais, les contraintes d'exécution.
+— Six cent cinquante mille de plus.
+— Pour cette variante, rappela Thomas.
+— Oui, Thomas. Je t’ai entendu.
 
-— Mais vous pouviez attendre celles qui concernaient la structure.
+Il leva les yeux vers les poutres. Le bâtiment avait exactement la même apparence qu’une heure plus tôt. Les mauvaises nouvelles immobilières avaient cette délicatesse : elles laissaient le paysage intact.
 
-— Oui. Pour certaines consultations, on aurait pu.
+— Il nous faut les autres variantes, dit-il.
+— Vous les aurez, répondit l’ingénieur. Mais je préfère vous prévenir : nous ne reviendrons pas simplement au schéma initial avec quelques ajustements.
 
-— Vous avez décidé de ne pas le faire ?
+Sur le chemin du retour, Lucie conduisit sans mettre la radio. Thomas ouvrit deux fois le dossier, puis le referma.
 
-— J'ai proposé de maintenir la consultation sur la base des hypothèses disponibles, en signalant les points encore ouverts. La direction a accepté ce calendrier. Je pensais qu'on pourrait ajuster les prestations après les sondages, sans reprendre tout le projet.
+— Tu peux me dire ce que tu penses, finit-elle par dire.
+— Il faut distinguer ce qui est confirmé de ce qui reste à chiffrer.
+— D’accord. Et après ?
+Il regarda la route.
+— Après, il faut regarder si le projet tient encore.
+— Voilà. C’est ce que je voulais t’entendre dire.
 
-— Vous aviez une raison technique de le penser ?
+---
 
-— Les premiers résultats n'étaient pas alarmants. Nous envisagions quelques renforcements localisés. Et les entreprises consultées n'avaient pas identifié, à ce stade, d'impossibilité générale.
+Au bureau, Lucie écrivit au tableau :
 
-— Elles avaient tout de même signalé des problèmes.
+Recettes anticipées : 2 850 000 €
+Dépenses prévisionnelles initiales : 2 400 000 €
+Excédent prévisionnel initial : 450 000 €
 
-— Des incertitudes. Ce n'est pas la même chose que nous annoncer six cent cinquante mille euros de travaux supplémentaires.
+Puis elle ajouta :
 
-— Vous attendiez qu'elles vous donnent le montant de la catastrophe ?
+Surcoût estimé du renforcement complet : 650 000 €
+Écart hypothétique à recettes inchangées : −200 000 €
 
-— Non. Je pensais qu'on avait suffisamment cadré les risques pour avancer sur les consultations. Manifestement, pas assez.
+— Ce n’est pas une perte réalisée, précisa Thomas.
+— Je sais. C’est un scénario, pas notre bilan.
+— Et le surcoût reste à confirmer.
+— C’est pour ça que j’ai écrit « estimé ».
 
-— Donc le problème n'était plus l'impossibilité de faire des sondages avant l'achat.
+Elle lui tendit le feutre.
 
-— Non. Après l'acquisition, nous pouvions organiser ces investigations. La question était de savoir ce qu'on attendait de leurs résultats avant de poursuivre le reste. Et sur ce point, nous avons avancé trop vite.
+— Qu’est-ce qu’on teste en premier ?
+— Six cellules au lieu de huit.
+— Moins de surfaces vendables, alors. Et il faudra voir ce que ça change réellement aux travaux.
+— Nous pourrions aussi revoir les prix.
+— Avec quels acheteurs ?
+— Nous avons des marques d’intérêt.
+— Pas à ces prix-là.
 
-— Qu'ont révélé les sondages complémentaires ?
+Elle posa sur la table la liste des contacts commerciaux. Des artisans avaient demandé des renseignements ; certains avaient discuté de surfaces ou d’équipements. Aucun engagement ne permettait de considérer les huit ateliers comme vendus, encore moins d’affirmer que les acquéreurs accepteraient un renchérissement.
 
-— Ils ont surtout changé les hypothèses de calcul. Nous voulions créer des ouvertures et accueillir des activités avec des charges au sol définies. Pour certaines parties de la structure, les capacités nécessaires n'étaient pas démontrées. Les reprises anciennes compliquaient encore les choses.
+— Il faut réinterroger le marché, admit Thomas.
+— Oui. Et arrêter de dessiner des portes tant qu’on ne sait pas combien il y aura d’ateliers.
 
-— Le bâtiment menaçait de s'effondrer ?
+Elle désigna les huit rectangles du plan mural.
 
-— Non. Et je tiens à ce qu'on ne raconte pas ça. Un bâtiment peut rester debout depuis cinquante ans et ne pas être adapté à ce que vous voulez lui demander demain. Ce n'est pas parce qu'il tient aujourd'hui qu'on peut y faire n'importe quoi.
+— C’est ça qui me gêne. Au début, huit cellules, c’était une hypothèse. Depuis un mois, on travaille comme si c’était une décision.
+— Les réserves étaient mentionnées.
+— Naturellement. C’est une excellente manière de les oublier ensuite avec la conscience tranquille.
 
-— Il était donc utilisable, mais pas forcément pour vos huit ateliers.
+Thomas se raidit. Lucie ne sourit pas.
 
-— Voilà. Pour le programme envisagé, il fallait justifier certaines capacités. Et les calculs ne permettaient plus de retenir nos solutions initiales sans travaux supplémentaires.
+— Tu sais très bien que nous ne les avons pas cachées.
+— Je n’ai pas dit ça. Mais on a consulté sur les accès, les lots, les équipements. Tout le monde s’est mis à avancer. Moi comprise.
 
-— Vous pouviez quand même le transformer ?
+Il parcourut le calendrier des consultations.
 
-— Techniquement, nous avions des solutions. Mais elles changeaient le chantier. Plus de renforcement, des interventions plus lourdes, des délais différents. Et des contraintes sur les aménagements que nous voulions vendre.
+— Tu aurais pu demander qu’on attende.
+— Oui. Toi aussi.
 
-— Vous avez reçu un nouveau devis ?
+Cette fois, Thomas ne répondit pas.
 
-— Plusieurs estimations et variantes, pas un prix définitif d'entreprise pour un chantier entièrement redessiné. L'ordre de grandeur du renforcement complet représentait environ 650 000 euros de plus que ce que nous avions prévu.
+— Je ne veux pas refaire le procès de l’achat, reprit-elle. Je veux savoir ce qu’on suspend, ce qu’on vérifie et qui on prévient.
 
-— Sur une opération dont l'excédent prévisionnel était de 450 000 euros.
+Il prit une feuille blanche et traça trois colonnes.
 
-— Oui. Si vous gardiez les mêmes recettes et ajoutiez intégralement ce surcoût à notre enveloppe initiale, vous arriviez à un solde négatif d'environ 200 000 euros.
+---
 
-— Vous aviez donc perdu 200 000 euros ?
+Le soir, Élise travaillait sur un buffet ancien. Une porte reposait entre deux tréteaux.
 
-— Non. C'était une projection, pas une perte réalisée. Et les 650 000 euros restaient une estimation. Mais même avec cette incertitude, l'ordre de grandeur obligeait à reprendre le projet.
+— Tu as déposé les charnières ? demanda Thomas.
+— Oui.
+— Tu as relevé les jeux ?
+— Oui. Et avant que tu demandes, non, je n’ai pas rédigé de procès-verbal.
 
-— Vous avez essayé de réduire le programme ? Six cellules au lieu de huit, par exemple.
+Il s’approcha, remarqua une légère torsion du bois.
 
-— On l'a étudié. Mais quand vous réduisez les surfaces vendables, vous réduisez aussi les recettes. Vous ne faites pas disparaître l'acquisition, les études, les réseaux, les accès. Et certains renforcements restent nécessaires même si vous ne créez pas toutes les cellules.
+— Il faudra peut-être reprendre l’assemblage.
+— Peut-être. Je vais ouvrir l’autre côté pour voir.
+— Tu aurais pu le faire avant de commencer.
+— J’aurais pu attendre de tout savoir avant d’accepter le meuble. Le client aurait adoré.
 
-— Donc vous aviez trois solutions : perdre de l'argent, perdre moins d'argent ou ne rien faire.
+Thomas se tut. Elle le regarda.
 
-— Vous avez oublié la quatrième : vendre plus cher.
+— Quoi ?
+— Rien. Je pensais à mon chantier.
+— Ah. Mon buffet n’a pas de comité d’investissement, tu sais.
 
-— Et pourquoi ne pas l'avoir fait ?
+Elle lui demanda de tenir la porte pendant qu’elle vérifiait une fixation.
 
-— Parce qu'il faut trouver quelqu'un pour acheter. Vous pouvez décider en réunion que vos ateliers valent 20 % de plus. Le marché n'est pas obligé de venir à la réunion.
+— Un peu plus haut.
+Il la leva.
+— Doucement.
+— Comme ça ?
+— Oui. Ne bouge plus.
 
-— Il y avait des acheteurs ?
+Au bout d’une minute, il changea discrètement de main.
 
-— Des marques d'intérêt, des échanges sur les surfaces et les équipements. Pas huit ventes signées qui nous auraient permis de répercuter les surcoûts. Et même avec des réservations, vous devez regarder si les prix restent soutenables pour les entreprises.
+— Tu as mal ?
+— Non.
+— Alors pourquoi tu grimaces ?
+— Je réfléchis.
 
-— Votre bâtiment était devenu trop cher pour les PME auxquelles vous vouliez le vendre.
+Élise continua son examen. Thomas, pour une fois, ne pouvait rien faire d’autre qu’attendre qu’une autre personne décide.
 
-— Peut-être dans cette configuration. Mais nous n'avons pas démontré qu'aucune transformation n'était viable. Nous avons démontré que celle que nous avions préparée ne tenait plus dans les conditions envisagées.
+— Il faudra reprendre une partie du travail, dit-elle. Pas tout.
+— C’est ce qu’on cherche à déterminer au bureau.
+— Alors vous avez déjà un point commun avec mon buffet.
 
-— Belle nuance. Elle vaut combien ?
+Il lui parla des sondages, des 650 000 euros estimés et des huit ateliers désormais incertains. Elle l’écouta en rangeant ses outils.
 
-— Parce qu'un mauvais programme ne fait pas forcément un mauvais bâtiment. Si on mélange les deux, on risque de le revendre pour de mauvaises raisons.
+— Et tu as fait quoi ?
+— Nous reprenons les scénarios. Il faut prévenir les entreprises.
+— Ça ne doit pas être agréable.
+— Non.
 
-— Qu'avez-vous recommandé ?
+Elle lui tendit un chiffon.
 
-— De ne pas lancer les travaux principaux. De reprendre le programme, les solutions techniques et les hypothèses de commercialisation avant de décider si on transformait autrement ou si on revendait le site.
+— Tu peux m’aider à déplacer le buffet ?
+Thomas regarda les pieds du meuble.
+— Il faudrait vérifier le plancher.
+— C’est un atelier au rez-de-chaussée.
+— Je plaisantais.
+— C’est inquiétant. Je n’ai pas reconnu la différence.
 
-— Et votre direction ?
+---
 
-— Elle a décidé de suspendre. Ce n'était pas à moi seul de prendre cette décision.
+Le mercredi, les entreprises consultées furent informées du réexamen du programme. Certaines avaient mobilisé des collaborateurs pour chiffrer les lots et réservé des créneaux de travail. Les réserves figuraient dans les dossiers ; leur ampleur future, elle, n’était pas connue.
 
-— Les entreprises ont apprécié ?
+Un entrepreneur appela Thomas.
 
-— Vous voulez la version polie ?
+— Vous suspendez la consultation ?
+— Nous devons revoir le programme et les solutions techniques.
+— Donc oui.
+— Pour l’instant, oui.
+— Nous avons travaillé sur votre dossier.
+— Je le sais.
+— Les réserves tenaient sur deux pages. Notre chiffrage, sur quarante-six.
 
-— De préférence pas.
+Thomas laissa passer un silence.
 
-— Certaines avaient passé du temps à étudier le chantier, mobilisé leurs équipes de chiffrage, organisé leur planning. Quand vous leur dites que l'opération est suspendue, elles ne vous remercient pas d'avoir fait preuve de prudence. Elles vous demandent pourquoi vous les avez consultées si tôt.
+— Je comprends votre réaction.
+— Ce n’est pas seulement une réaction. La prochaine fois, il faudra nous dire quelles hypothèses sont stabilisées. Sinon, nous réfléchirons à deux fois avant de mobiliser une équipe.
 
-— Elles n'avaient pas tort.
+Il ne cherchait pas à être drôle. Il voulait que le temps passé par ses salariés compte dans les décisions de son client.
 
-— Non. Et là, je ne pouvais pas simplement leur répondre que les sondages avaient révélé un problème. J'avais participé au choix de les consulter avant d'avoir tous les résultats.
+— Vous avez raison sur ce point, dit Thomas. Nous aurions dû mieux conditionner certaines demandes aux résultats des sondages.
+— Bien. Prévenez-nous quand vous aurez un programme à chiffrer.
 
-— Vous leur aviez demandé de travailler sur des hypothèses qui pouvaient changer.
+Après l’appel, Thomas ajouta une condition aux prochaines consultations. L’incertitude avait un coût pour des gens qui ne possédaient pas le bâtiment.
 
-— Oui. Elles le savaient, c'était indiqué. Mais entre savoir qu'un point reste à vérifier et apprendre qu'il remet en cause une partie importante du chiffrage, il y a une différence.
+---
 
-— Qui a payé ce travail ?
+Le vendredi, Thomas présenta les variantes à la direction. Lucie avait préparé les éléments commerciaux. Aucun scénario n’était suffisamment documenté pour être retenu.
 
-— Chaque entreprise a supporté le coût de préparation de son offre selon les conditions de la consultation. De notre côté, nous avions payé les études engagées et nous continuions à supporter les frais de détention du bâtiment. Il n'y avait pas de solution gratuite.
+— Huit ateliers ? demanda le directeur général.
+— Il faut reprendre le programme et les coûts.
+— Six ?
+— Cela réduit la surface vendable. Pas nécessairement les dépenses structurelles dans la même proportion.
+— Un autre usage ?
+— Possible, mais à étudier.
+— Et la revente ?
+— À comparer également.
 
-— Et le propriétaire ?
+Le directeur général tourna une page.
 
-— C'était notre société. Elle se retrouvait avec un bâtiment acheté, des études payées, des frais de portage qui continuaient et un programme commercial à reprendre.
+— Vous avez une préférence ?
+— Oui, répondit Thomas. Mais pas les éléments pour vous la recommander.
 
-— Vous lui avez évité une mauvaise opération.
+Lucie leva brièvement les yeux de ses notes.
 
-— J'ai recommandé de ne pas aggraver une opération devenue beaucoup plus risquée. Je ne vais pas m'attribuer le mérite d'avoir sauvé une marge qui n'existait peut-être déjà plus.
+— Nous avons déjà engagé des frais, reprit le directeur général.
+— L’acquisition et les études, oui. Les frais de détention continuent. Mais engager davantage de dépenses ne les fera pas disparaître.
+— Vous nous demandez de suspendre un projet que nous avons acheté pour le réaliser ?
+— Je vous demande de ne pas confondre la raison pour laquelle nous l’avons acheté avec une raison de continuer.
 
-— Vous revenez toujours à cette idée : le problème était caché dans le bâtiment.
+Le directeur général regarda le plan des huit ateliers.
 
-— Non. Une partie était cachée dans le bâtiment. Une autre était dans notre manière d'organiser les études.
+— C’est une distinction coûteuse.
+— Elle pourrait l’être davantage si nous refusions de la faire.
 
-— Ah.
+Un silence suivit. Cette fois, personne ne chercha à le remplir.
 
-— Ne faites pas cette tête. Vous attendiez que je le dise depuis vingt minutes.
+— Pourquoi les consultations ont-elles été lancées avant les sondages complémentaires ?
+— Je l’ai proposé pour avancer sur les prix et les solutions, répondit Thomas. Les premiers résultats ne semblaient pas alarmants et les réserves étaient explicites. La direction a accepté. Mais certaines consultations auraient dû attendre des informations plus solides.
 
-— Je commençais à perdre espoir.
+Le directeur général referma le dossier.
 
-— Nous aurions pu demander certaines investigations plus tôt. Elles auraient coûté de l'argent, et elles n'auraient pas nécessairement tout révélé. Mais elles auraient peut-être évité de développer aussi loin un programme sur des hypothèses structurelles trop fragiles.
+— Très bien. On suspend les travaux principaux. Je veux un comparatif des scénarios techniques et commerciaux, avec les dépenses engagées d’un côté, les estimations et les recettes hypothétiques de l’autre. Nous déciderons sur cette base.
 
-— Pourquoi ne l'avez-vous pas fait ?
+Thomas acquiesça. Le projet n’était ni sauvé ni abandonné. Le bâtiment restait acquis, les frais continuaient et aucune option n’avait encore démontré sa viabilité. Pour la première fois depuis plusieurs semaines, ne pas avancer constituait une décision explicite.
 
-— Parce qu'à ce moment-là, nous pensions que les réserves étaient maîtrisables. Parce que les premiers résultats n'étaient pas alarmants. Et parce qu'on avait déjà commencé à dessiner une opération qui semblait fonctionner. Quand tout le monde travaille depuis des semaines sur huit cellules, il devient difficile de revenir demander si le bâtiment peut réellement en accueillir huit.
+---
 
-— Vous avez voulu croire à votre projet.
+Le dimanche suivant, l’étagère était fixée près de la fenêtre.
 
-— Je voulais qu'on puisse le réaliser. Ce n'est pas exactement pareil. Mais je reconnais que ça peut produire les mêmes erreurs.
+Thomas avait installé deux équerres discrètes. Élise avait déplacé les romans et mis la lampe à l’ancien emplacement de l’étagère.
 
-— Qu'est-ce qui vous dérange le plus aujourd'hui : les 650 000 euros de surcoût ou les réserves que vous aviez déjà sous les yeux ?
+— Tu as encore changé la disposition.
+— Oui.
 
-— Les réserves. Les 650 000 euros, on peut les recalculer, les discuter, chercher d'autres solutions. Les réserves, elles me rappellent qu'on avait une question à laquelle on a répondu un peu trop vite.
+Il observa le salon. La lumière tombait mieux sur le fauteuil. La fenêtre était dégagée.
 
-— Et maintenant, que devient le bâtiment ?
+— Ce n’est pas mal.
+— Attends, dit Élise. Je vais noter la date.
 
-— Il est toujours là. Le programme des huit ateliers est suspendu. Nous reprenons les scénarios : moins de cellules, des usages moins exigeants pour la structure, ou une revente. Aucun n'a encore démontré qu'il pouvait payer les travaux.
+Il sourit. Son téléphone vibra : Lucie annonçait les premières comparaisons de scénarios pour la semaine suivante. Aucune option ne pouvait encore être retenue.
 
-— Et personne, sur le territoire, n'a intérêt à ce qu'il retrouve une activité ?
+— Alors, demanda Élise, vous allez garder le bâtiment ?
+— Je ne sais pas.
+— Et tu sais quand tu le sauras ?
+— Non.
 
-— Si. Après l'annonce de la suspension, des interlocuteurs de l'intercommunalité nous ont demandé si nous accepterions d'étudier un autre découpage, pour des activités qui cherchent de petites surfaces. C'est un intérêt exprimé, pas une décision d'achat ni une aide accordée.
+Elle lui tendit une tasse, puis désigna un carton dans l’entrée.
 
-— Une collectivité arrive, et vos 650 000 euros de surcoût disparaissent ?
+— Tu peux m’aider à monter le nouveau meuble ?
+— Tu as la notice ?
+— Non.
 
-— Certainement pas. Le bâtiment n'a pas changé de structure parce qu'un élu souhaite le réutiliser. Il faudrait définir les usages, vérifier les charges admissibles, reprendre les études et savoir qui finance quoi. Un programme d'intérêt territorial peut avoir une logique différente de notre opération de vente, mais il ne rend pas les travaux gratuits.
-
-— Vous avez donc trouvé un moyen de sauver votre projet.
-
-— Non. Notre projet, c'était huit ateliers vendus à un prix permettant de couvrir l'investissement et le risque. Ce programme-là ne tient plus dans nos hypothèses. Peut-être qu'un autre projet pourra tenir, avec d'autres utilisateurs, un autre calendrier et d'autres engagements. Nous n'en sommes pas là.
-
-— Et vous, qu'avez-vous décidé ?
-
-— De ne pas relancer les travaux sur une marque d'intérêt. Nous pouvons communiquer nos diagnostics, étudier une variante avec les acteurs concernés et chiffrer les conséquences. La direction décidera ensuite si elle conserve le bâtiment, négocie une cession ou renonce. La collectivité, de son côté, devra décider si ce dossier relève vraiment de ses priorités et de ses moyens.
-
-— Vous aviez pourtant prévu huit locaux pour des PME.
-
-— Prévu, oui. Il n'y avait pas huit PME qui attendaient devant le portail. Aujourd'hui non plus, une discussion avec l'intercommunalité ne vaut pas huit occupants. Il faut arrêter de prendre une intention pour un marché.
-
-— Vous avez donc encore un bâtiment, mais plus vraiment de projet.
-
-— Nous avons un bâtiment, un projet arrêté et une possibilité nouvelle à vérifier. Ce n'est pas une réussite. Ce n'est pas non plus la preuve qu'il ne servira plus jamais à rien.
-
-— Et ça, pour un directeur technique, c'est difficile à accepter ?
-
-— Moins difficile que de construire pour ne pas reconnaître qu'on s'est trompé. Et moins difficile, aussi, que de promettre une seconde vie au bâtiment avant d'avoir vérifié qu'elle est possible.
+Thomas posa lentement sa tasse.
