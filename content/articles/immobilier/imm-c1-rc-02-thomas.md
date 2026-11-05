@@ -1,5 +1,5 @@
 ---
-title: "Plus on connaissait le bâtiment, moins on pouvait le rénover."
+title: "Nous avions un excellent projet. Le bâtiment n'était pas d'accord."
 summary: "Thomas, directeur technique, revient sur une reconversion en huit ateliers dont les hypothèses structurelles et commerciales ont progressivement fragilisé la viabilité."
 format: "entretien"
 genre_narratif: "grand-entretien"
