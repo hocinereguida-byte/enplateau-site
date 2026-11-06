@@ -2,6 +2,13 @@
   "name": "scenesdarbitrage-media-prototype",
   "private": true,
   "type": "module",
-  "scripts": {"dev": "astro dev", "build": "astro build", "preview": "astro preview"},
-  "dependencies": {"astro": "^5.0.0"}
+  "scripts": {
+    "dev": "astro dev",
+    "build": "npm run check:classification && astro build",
+    "preview": "astro preview",
+    "check:classification": "node scripts/check-classification.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
 }
