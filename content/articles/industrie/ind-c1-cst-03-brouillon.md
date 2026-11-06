@@ -1,12 +1,12 @@
 ---
-title: "Le patron voulait un robot à trois millions d’euros. Je lui ai demandé de déplacer une table."
-summary: "Pour absorber les commandes, la direction prépare un investissement de trois millions d’euros dans une cellule robotisée. La directrice de l’industrialisation bloque le projet après avoir passé deux jours dans l’atelier. Son alternative paraît dérisoire. Elle ne l’est pas tout à fait."
-format: "entretien"
+title: "Le progrès avait trois millions d’euros d’avance sur le bon sens."
+summary: "Une direction industrielle projette trois millions d'euros de robotisation alors que l'observation des gestes et des déplacements révèle d'autres leviers."
+format: "chronique"
 cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "technologie-innovation"
-statut_editorial: "publie"
+statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-27T15:00:00+01:00"
 mise_en_avant: "standard"
@@ -17,197 +17,73 @@ tag_2: "Investissement industriel"
 tag_3: "Ergonomie"
 tag_4: "Amélioration continue"
 tag_5: "Industrialisation"
-source_notice: "Entretien fictif · Fiction économique documentée. Personnages, situations et dialogues imaginaires."
-methodology_specific: "Copie CMS satirique de référence ; contrôle de fabrication en attente."
-source_document_url: "https://docs.google.com/document/d/1VYqcP60RcR01C729ndJ-rWv8ECNuOSBvTVltboYihyA/edit"
-source_document_version: "V2.3"
+source_notice: "Chronique satirique fictive. Personnages, chiffres et événements imaginaires."
+methodology_specific: "Version V3.2 pour contrôle en préproduction ; visa de publication publique non délivré."
+source_document_url: "https://docs.google.com/document/d/1p_2PybmOCRR1Ow9-gG8ri0YNwQ3-A8WeXMmTKRcSDNw/edit"
+source_document_version: "V3.2"
 validation_narrative: "validee"
 validation_documentaire: "validee_selon_matrice_c1"
 autorisation_publication: "preproduction_uniquement"
+genre_narratif: "chronique"
 ---
 
-*Entretien fictif · Fiction économique documentée. Personnages, situations et dialogues imaginaires.*
+*Chronique satirique · Fiction économique documentée.*
 
-— Bonjour. Pour commencer, pourriez-vous vous présenter brièvement ?
+L’entreprise avait un problème de production. La direction disposait d’une solution à trois millions d’euros. Il ne restait qu’à vérifier si les deux avaient un rapport.
 
-— Bonjour. Je m’appelle Nathalie, je suis directrice de l’industrialisation dans une entreprise spécialisée dans la transformation du cuivre. J’y travaille depuis vingt-sept ans. J’ai commencé comme technicienne méthodes.
+La solution était une cellule robotisée. Le problème, lui, se déplaçait librement dans l’atelier, sans badge visiteur ni responsable clairement identifié. Depuis plusieurs mois, des pièces passaient d’un poste à l’autre, attendaient leur contrôle et repartaient parfois dans la direction d’où elles venaient. La direction avait décidé de traiter cette situation avec les moyens du XXIe siècle. Les pièces, qui n’avaient pas été consultées, continuaient à circuler selon un modèle plus ancien, fondé sur les chariots.
 
-— Vingt-sept ans dans la même entreprise ?
+Le dossier d’investissement avait tout prévu. Un gain de vingt secondes par pièce, un retour sur investissement annoncé à quatre ans, des hypothèses de volumes ambitieuses et une diapositive sur la « transformation de la performance industrielle ». Le taux d’utilisation projeté restait à confirmer, mais le dégradé de couleur ne souffrait aucune contestation.
 
-— Oui. J’ai vu passer quatre directeurs généraux, trois réorganisations et beaucoup de machines censées révolutionner notre production.
+On avait également prévu une photographie du robot. Il était blanc, brillant, parfaitement propre et ne gênait absolument personne, ce qui constituait déjà une différence sensible avec l’atelier.
 
-— Vous n’avez pas l’air très impressionnée par les machines.
+La perspective des trois millions d’euros avait donné naissance à un comité, deux sous-comités et plusieurs réunions de préparation. Le compte rendu de l’une d’elles concluait qu’il fallait « accélérer la décision pour ne pas retarder le gain de temps ». Après trois semaines de travail, les participants avaient trouvé l’expression satisfaisante. Le robot, pour sa part, promettait toujours de gagner vingt secondes.
 
-— Au contraire. Je les aime beaucoup. Quand elles servent à quelque chose.
+C’est alors que Nathalie, directrice de l’industrialisation, demanda où se perdaient les autres secondes.
 
-— Trois millions d’euros d’automatisation. Vous avez répondu : « Déplacez la table » ?
+Cette question ne figurait pas à l’ordre du jour.
 
-— J’ai demandé qu’on déplace la table. Ce n’est pas pareil.
+Nathalie travaillait dans l’entreprise depuis vingt-sept ans. Ancienne technicienne méthodes, elle avait participé à l’installation de vingt-sept robots. On ne pouvait donc pas raisonnablement la décrire comme hostile à l’innovation. Un membre du comité proposa néanmoins de la qualifier de « réservée quant au rythme de la transformation », formule beaucoup plus polie pour dire qu’elle avait demandé à voir l’atelier.
 
-— Vous tenez à cette nuance ?
+Elle y descendit.
 
-— Elle coûte trois millions d’euros de moins, dans votre formulation.
+Une opératrice posait une pièce sur un chariot, faisait quelques pas, attendait un contrôle, puis revenait chercher la suivante. La table appartenait à la production, le chariot à la logistique et le contrôle à la qualité. Chacun possédait un périmètre. La pièce, sans doute par manque de formation aux responsabilités transversales, franchissait les trois.
 
-— Vous êtes contre les robots ?
+Nathalie observa qu’une cellule capable de gagner vingt secondes sur l’usinage ne supprimerait ni l’attente devant le contrôle ni les promenades du chariot. L’entreprise pouvait acquérir une machine extraordinairement rapide pour travailler sur des pièces qui n’étaient pas encore devant elle.
 
-— Non. J’en ai installé vingt-sept. Je suis contre les robots qu’on achète pour éviter de regarder ce qui se passe à deux mètres.
+Elle recommanda de suspendre la décision d’achat, de tester un flux plus court sur une seule famille de pièces, de rapprocher le contrôle, de modifier deux chariots et de déplacer une table.
 
-— Et qu’est-ce qui se passait à deux mètres ?
+Un silence suivit le mot « table ».
 
-— Une opératrice posait une pièce sur un chariot, faisait six pas, attendait un contrôle, revenait chercher la suivante. Le robot devait accélérer l’usinage. L’usinage n’était pas ce qui nous ralentissait.
+Trois millions d’euros permettaient de parler de souveraineté industrielle, de compétitivité et de saut technologique. Une table déplacée permettait de moins marcher. Aucun cabinet de conseil ne s’était encore proposé pour accompagner le changement d’emplacement du mobilier.
 
-— Vous avez découvert ça en deux jours ?
+Le directeur général, à l’issue du comité d’investissement, accepta de reporter le projet afin de vérifier les hypothèses. Nathalie n’avait ni décidé seule de l’annulation ni conclu que l’automatisation était inutile. Elle avait simplement suggéré de découvrir ce que l’on voulait automatiser avant de passer commande. L’entreprise classa cette initiative parmi les « démarches de rupture ».
 
-— En deux jours, j’ai vu le problème. Pour comprendre pourquoi personne ne l’avait réglé, il m’a fallu trois semaines.
+L’essai sur une première famille de pièces fonctionna : moins d’attente entre opérations, davantage de débit, sans accélération de l’usinage. L’équipe avait amélioré le flux en rapprochant des choses qui travaillaient déjà ensemble. Le service communication fut informé qu’il serait difficile de photographier le gain de productivité, celui-ci ne possédant ni bras articulé ni écran tactile.
 
-— Pourquoi personne ne l’avait réglé ?
+Il fut brièvement envisagé de présenter l’opération comme une « optimisation agile des interfaces physiques ». Les opérateurs continuèrent à dire qu’ils avaient bougé la table.
 
-— Parce que le chariot appartenait à la logistique, la table à la production et le contrôle à la qualité. Trois responsables. Une pièce. Beaucoup de réunions.
+Il serait toutefois faux d’annoncer que l’entreprise venait d’économiser trois millions d’euros. Elle avait reporté un investissement envisagé, non annulé une dépense déjà engagée. Les essais, les modifications des postes et les études avaient un coût. Une autre famille de pièces, plus lourdes, soumise à des contrôles plus longs et à davantage de changements de série, ne bénéficiait pas des mêmes gains. La table ne venait pas de résoudre l’ensemble de l’industrie française. Elle n’avait même pas résolu l’ensemble de l’atelier.
 
-— Vous caricaturez.
+Cette nuance suscita une certaine déception. La direction commençait à s’habituer à l’idée qu’une table puisse avoir un retour sur investissement exceptionnel.
 
-— Un peu. Il y avait aussi quatre fichiers Excel.
+Puis une difficulté moins drôle apparut.
 
-— Votre patron avait tout de même une étude d’investissement.
+En réduisant les déplacements, la nouvelle organisation avait concentré davantage de manipulations sur certains postes. L’ergonome avait signalé un risque de répétition des gestes et demandé une période d’observation plus longue. Les premières mesures de débit étaient bonnes, les livraisons pressaient, et Nathalie proposa de passer plus tôt au fonctionnement courant. La production accepta.
 
-— Très belle. Des courbes, des simulations, un retour sur investissement annoncé à quatre ans, fondé sur des hypothèses de volumes et d’utilisation que nous devions encore éprouver. La cellule devait gagner vingt secondes par pièce.
+Six semaines après la réorganisation, une opératrice se blessa au poignet et fut arrêtée. Rien ne permettait d’attribuer cette blessure à la seule réorganisation sans analyse. Le risque signalé par l’ergonome n’en était pas moins réel, et la période d’observation prévue avait été écourtée.
 
-— Ce n’est pas rien.
+Nathalie, qui avait exigé que le comité mette à l’épreuve les hypothèses du robot, n’avait pas maintenu la même exigence pour sa propre solution. Elle avait dénoncé l’empressement d’une direction séduite par les premières projections. Puis elle s’était laissée convaincre par ses premiers résultats. Le mécanisme était identique ; seul le prix du mobilier avait changé.
 
-— Si la pièce arrive à la machine, non. Sinon, vous gagnez vingt secondes sur une machine qui attend.
+L’entreprise suspendit le nouveau geste, reprit l’étude ergonomique et modifia la préhension des pièces. Ces mesures ne démontraient ni la cause médicale de la blessure ni la conformité passée de l’organisation. Elles traduisaient la nécessité de reprendre une évaluation qui n’avait pas été conduite assez longtemps.
 
-— Vous lui avez expliqué ?
+Un projet de cellule robotisée plus ciblée fut ensuite recommandé pour certaines opérations répétitives, après réévaluation des risques. Le robot n’avait finalement pas disparu. Il avait seulement cessé d’être une réponse à une question que personne n’avait encore posée clairement.
 
-— J’ai apporté un chronomètre.
+Le directeur général salua une « sécurisation de la trajectoire d’automatisation ». L’expression avait le mérite de donner l’impression que tout s’était déroulé conformément à une méthode pensée dès le départ, y compris l’étape où l’on avait envisagé de dépenser trois millions d’euros pour gagner vingt secondes au mauvais endroit.
 
-— Vous êtes toujours aussi agréable en comité d’investissement ?
+Nathalie recommença à visiter les postes. Elle demanda d’abord aux personnes qui manipulaient les pièces ce qu’elles pensaient des gestes et des déplacements. Elle regarda ensuite les chronomètres et les courbes.
 
-— On ne m’invite pas pour l’ambiance.
+La table fut encore déplacée.
 
-— Qu’avez-vous proposé exactement ?
-
-— De rapprocher le poste de contrôle, de revoir l’approvisionnement et de tester un flux plus court. La table était le début de la discussion, pas le plan industriel.
-
-— Pourtant, vous avez annoncé que trois millions d’euros étaient inutiles.
-
-— Non. J’ai dit que nous ne savions pas encore s’ils étaient utiles.
-
-— Vous jouez sur les mots.
-
-— Non. Eux jouaient avec trois millions d’euros.
-
-— Vous avez lancé votre expérimentation ?
-
-— Sur une seule famille de pièces. Avec des marquages au sol, deux chariots modifiés et une table déplacée. Rien qu’on puisse inaugurer avec un ruban.
-
-— Et le résultat ?
-
-— Les attentes entre opérations ont diminué. Le débit de cette famille a progressé sans accélérer la machine. On a gagné du temps là où personne ne le mesurait.
-
-— Donc vous aviez raison.
-
-— Sur cette famille de pièces.
-
-— Vous pourriez répondre simplement, une fois ?
-
-— Je viens de le faire.
-
-— Qu’est-ce qui vous empêchait de généraliser ?
-
-— La deuxième famille était plus lourde, les contrôles plus longs et les changements de série plus fréquents. Déplacer la table ne résolvait pas tout. C’est rarement le cas avec une table.
-
-— Votre patron anticipait peut-être les commandes de demain. Vous, vous avez regardé les problèmes d’aujourd’hui.
-
-— C’est possible.
-
-— Alors votre table déplacée ne prouve pas que son robot était inutile.
-
-— Non. Elle prouve qu’on ne savait pas encore à quoi il devait servir.
-
-— Il avait peut-être aussi raison de vouloir sécuriser la qualité et réduire les gestes répétitifs.
-
-— Sur ces objectifs, oui. Pas forcément avec cette cellule-là.
-
-— Qui a décidé de reporter les trois millions d’euros ?
-
-— Le directeur général, après le comité d’investissement. J’avais recommandé de suspendre la décision d’achat le temps de tester le flux et de réexaminer les hypothèses. Je ne pouvais pas annuler seule un investissement de cette taille.
-
-— Il a accepté votre conclusion ?
-
-— Il a surtout été ravi d’annoncer qu’on pouvait repousser l’investissement.
-
-— Vous n’étiez pas ravie ?
-
-— Repousser n’est pas renoncer. Une expérimentation n’est pas une capacité garantie. Nous avions encore besoin d’automatiser certaines opérations.
-
-— Vous avez donc combattu un robot avant d’en réclamer un ?
-
-— J’ai combattu une mauvaise question. « Quel robot acheter ? » venait avant « Qu’est-ce qui nous empêche de produire ? »
-
-— C’est une formule commode quand on a gagné.
-
-— Attendez la suite.
-
-— Je vous écoute.
-
-— Six semaines après notre réorganisation, une opératrice s’est blessée au poignet. Pas gravement, mais suffisamment pour être arrêtée. Nous avions réduit les déplacements. Nous avions aussi concentré davantage de manipulations au même poste.
-
-— Votre solution déplaçait le problème.
-
-— Nous avions réduit les déplacements. Pas prévu cette concentration des gestes.
-
-— L’ergonome vous avait pourtant demandé un essai plus long.
-
-— Il avait signalé un risque lié à la répétition des gestes. Ce n’était pas une prédiction d’accident, et nous ne pouvions pas attribuer cette blessure à la seule réorganisation sans analyse.
-
-— Vous aviez exigé qu’on vérifie les hypothèses du robot avant de décider. Mais pour votre propre réorganisation, vous avez écourté l’observation ?
-
-— Oui. Nous avions fixé une période d’observation plus longue avec l’ergonome. Devant les premiers gains de débit et la pression sur les livraisons, j’ai proposé de passer plus tôt au fonctionnement courant. La production a accepté.
-
-— Malgré son alerte ?
-
-— Oui. Je pensais qu’on pouvait corriger en avançant.
-
-— Vous qui reprochiez aux autres de vouloir aller vite ?
-
-— Ce n’est pas la même chose.
-
-— Pour l’opératrice ?
-
-— … Non.
-
-— Vous n’avez pas de chronomètre pour mesurer l’ironie ?
-
-— Si. Il est dans mon bureau. Je m’en sers un peu moins.
-
-— Vous avez remis l’ancienne organisation ?
-
-— Nous avons suspendu le nouveau geste, repris l’étude ergonomique et modifié la préhension. Ça a coûté du temps. Et la salariée n’aurait pas dû en payer le prix.
-
-— Et le robot ?
-
-— Nous avons finalement recommandé une cellule plus ciblée, pour les opérations répétitives les plus contraignantes. Moins ambitieuse que le projet initial. Pas gratuite pour autant.
-
-— Vous avez donc fini par acheter une machine.
-
-— Oui. Après avoir appris ce qu’elle devait faire et fait réévaluer les risques des postes concernés.
-
-— Combien avez-vous économisé ?
-
-— Je pourrais vous donner la différence entre les deux devis. Ce serait flatteur et trompeur. Nous avons aussi payé des études, modifié des postes et retardé une partie de la montée en cadence. Le bilan se juge sur les pièces conformes, les conditions de travail et la capacité réellement tenue, pas sur une soustraction entre deux étiquettes de prix.
-
-— Votre patron a reconnu que son premier projet était mal conçu ?
-
-— Il a dit que notre démarche avait permis de « sécuriser la trajectoire d’automatisation ».
-
-— Traduction ?
-
-— Il n’avait plus envie d’acheter le gros robot.
-
-— Et la table ?
-
-— On l’a encore déplacée.
-
-— Vous n’arrêtez jamais ?
-
-— Maintenant, je demande d’abord à celle qui travaille dessus.
+Le comité n’en fut pas informé immédiatement. On voulait d’abord vérifier que cela servait à quelque chose.
+.
