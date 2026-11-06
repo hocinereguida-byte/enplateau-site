@@ -1,12 +1,12 @@
 ---
-title: "On m'a demandé de recruter trente personnes. J'ai demandé qui allait leur apprendre le métier."
-summary: "Trente recrutements en quatre mois : la DRH Claire demande qui formera les nouveaux salariés pendant que l'usine doit continuer à produire. Une comédie sociale sur les compétences, les tuteurs et les calendriers qui ne tiennent pas tout seuls."
-format: "entretien"
+title: "Tout le monde était recruté. Il ne restait qu’à apprendre le métier."
+summary: "Claire rappelle que recruter trente personnes et les rendre opérationnelles sont deux décisions différentes. Une chronique sur la formation, le tutorat et les objectifs irréalistes."
+format: "chronique"
 cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "ressources-humaines-competences"
-statut_editorial: "publie"
+statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-27T15:00:00+01:00"
 mise_en_avant: "standard"
@@ -17,457 +17,172 @@ tag_2: "Formation professionnelle"
 tag_3: "Compétences industrielles"
 tag_4: "Montée en cadence"
 tag_5: "Transmission des savoir-faire"
-source_notice: "Entretien fictif · Fiction économique documentée. Personnages, situations et dialogues imaginaires."
-methodology_specific: "Copie CMS satirique de référence ; contrôle de fabrication en attente."
-source_document_url: "https://docs.google.com/document/d/19ypaSsiihzj85ZPrC2AZY7rYc6o3rt09WbCttqmLsFM/edit"
-source_document_version: "V1.3"
+source_notice: "Chronique satirique fictive. Personnages, chiffres et événements imaginaires."
+methodology_specific: "Version V3.1 pour contrôle en préproduction ; visa de publication publique non délivré."
+source_document_url: "https://docs.google.com/document/d/11QAB8AKkV8-n18k8sF4XhU0JlCp9d2Nmizqze_qCdzg/edit"
+source_document_version: "V3.1"
 validation_narrative: "validee"
 validation_documentaire: "validee_selon_matrice_c1"
 autorisation_publication: "preproduction_uniquement"
+genre_narratif: "chronique"
 ---
 
-*Entretien fictif · Fiction économique documentée. Personnages, situations et dialogues imaginaires.*
+*Chronique satirique · Fiction économique documentée.*
 
-## I. TRENTE PERSONNES, POUR QUAND ?
+L’entreprise avait trouvé trente salariés sur PowerPoint. Il ne restait plus qu’à les recruter.
 
-— Bonjour Claire. Pourriez-vous vous présenter ?
+Le directeur général annonça fièrement que l’usine disposerait, quatre mois plus tard, de trente personnes supplémentaires et donc, selon les règles élémentaires de la multiplication, d’une capacité industrielle considérablement accrue. La présentation montrait trente silhouettes bleues, toutes debout, toutes souriantes et toutes parfaitement interchangeables. Aucune n’avait encore signé de contrat. Ce qui prouvait au moins qu’elles ne poseraient aucun problème d’absentéisme.
 
-— Claire. Directrice des ressources humaines dans une entreprise qui fabrique des pièces techniques. Huit ans dans l'entreprise.
+Claire, directrice des ressources humaines depuis huit ans, commit une imprudence regrettable.
 
-— Vous recrutez des gens.
+— Et à quelle date seront-elles capables de tenir les postes seules ?
 
-— Entre autres.
+L’assemblée la regarda avec cette indulgence qu’on réserve aux personnes qui compliquent les choses simples.
 
-— Vous les formez.
+— À leur arrivée, répondit le directeur général.
 
-— Nous organisons leur formation.
+Claire fit remarquer que certaines opérations s’apprenaient en quelques semaines, d’autres en plusieurs mois ; qu’il fallait savoir reconnaître des défauts discrets, maîtriser des gestes, vérifier des pièces. Le directeur commercial proposa d’inscrire « compétence acquise à la prise de poste » dans le planning. Il ne voyait pas pourquoi les nouvelles recrues refuseraient de respecter un engagement déjà pris par leur futur employeur.
 
-— Vous les rendez compétents.
+Le logiciel RH confirma que trente contrats de travail pouvaient être saisis. Il ne prévoyait en revanche aucune case permettant de cocher « dix ans d’expérience installés avec succès ». Le fournisseur fut contacté. Il promit d’étudier la demande dans sa prochaine feuille de route.
 
-— Si seulement il suffisait de l'écrire dans ma fiche de poste.
+La direction accepta donc une période de formation, à condition qu’elle ne retarde pas la production et ne mobilise pas les salariés qui produisaient déjà. L’accord faisait l’unanimité. Il ne restait qu’à trouver des personnes capables de former sans interrompre leur travail.
 
-— Votre directeur général vous demande trente recrutements en quatre mois. Vous avez refusé ?
+Claire annonça qu’elle en avait identifié cinq.
 
-— J'ai demandé à partir de quand ces trente personnes devaient être opérationnelles.
+— Cinq formateurs ? demanda le directeur général, soulagé.
 
-— Il voulait qu'elles travaillent.
+— Cinq opérateurs expérimentés qui accompagnent déjà les nouveaux.
 
-— C'est ce qu'il m'a répondu.
+— Parfait. Ils n’auront qu’à continuer.
 
-— Vous vous comprenez bien, tous les deux.
+— Ils produisent aussi.
 
-— Nous employons souvent les mêmes mots. C'est parfois le problème.
+— C’est encore mieux. Ils connaissent le terrain.
 
-— Trente personnes recrutées, cela fait bien trente personnes supplémentaires dans l'usine ?
+On décida que la transmission des compétences serait intégrée à l’activité courante. Le service financier apprécia particulièrement cette formulation, qui présentait l’avantage de ne pas préciser combien d’heures supplémentaires pouvait durer une journée normale.
 
-— Sur les effectifs, oui.
+Le plus expérimenté s’appelait Kevin. Depuis deux ans, il accompagnait des nouveaux en plus de son propre travail. Il tenait un carnet à spirale où figuraient des prénoms, des dates et des cases parfois vides. Le logiciel RH enregistrait les formations programmées et réalisées. Le carnet, lui, avait la mauvaise habitude de préciser lorsqu’une séance avait commencé, puis avait été interrompue, ou lorsqu’un nouveau salarié n’était pas encore prêt.
 
-— Où est la difficulté ?
+La distinction constituait un véritable obstacle au progrès statistique.
 
-— Certaines opérations s'apprennent en quelques semaines. D'autres demandent plusieurs mois. Reconnaître un défaut discret sur une pièce, ce n'est pas seulement connaître une consigne.
+— Pourquoi cette case est-elle vide ? demanda Claire.
 
-— Vous voulez dire qu'un contrat de travail ne suffit pas ?
+— Parce qu’il n’a pas terminé.
 
-— Il permet d'embaucher quelqu'un. Il ne lui transmet pas instantanément dix ans d'expérience.
+— Pourtant, il a suivi la formation.
 
-— Votre directeur général avait pourtant besoin de trente personnes.
+— Il a suivi la première moitié. Après, on m’a rappelé sur une machine.
 
-— Il avait besoin d'une capacité de production supplémentaire.
+— Dans le logiciel, ça apparaît comme une séance.
 
-— C'est différent ?
+— Dans son poste, ça apparaît comme un gars qui ne sait pas encore faire.
 
-— Il l'a découvert au cours de notre troisième réunion.
+Kevin avait ainsi inventé une méthode de reporting extrêmement controversée : ne pas déclarer terminées les choses qui ne l’étaient pas.
 
-— Trois réunions pour comprendre qu'il faut former les salariés ?
+Une réunion fut envisagée pour étudier les conséquences de cette pratique. Puis une seconde, pour préciser si la première relevait des ressources humaines ou de l’amélioration continue. Kevin demanda si l’une des deux pourrait se tenir pendant qu’il formait quelqu’un. Sa remarque ne fut pas retenue dans le compte rendu.
 
-— Non. Trois réunions pour accepter de l'inscrire dans le calendrier.
+Le plan révisé prévoyait trois vagues de recrutement, des postes d’entrée identifiés, deux nouveaux à accompagner simultanément pour Kevin plutôt que six, deux tuteurs supplémentaires à former, et quelques opérations non sensibles confiées provisoirement à un sous-traitant dont on vérifierait les capacités et les contrôles qualité. Le prestataire facturait davantage à la pièce. On constata qu’il était donc plus coûteux de lui demander ce qu’il savait fabriquer que de supposer gratuitement que l’usine saurait tout faire elle-même.
 
-— Vous aviez des formateurs ?
+Le directeur commercial voulut immédiatement annoncer la montée en capacité. Claire lui fit remarquer que le calendrier comportait désormais des périodes de tutorat.
 
-— Cinq opérateurs expérimentés capables de transmettre les gestes les plus délicats.
+— Elles sont obligatoires ?
 
-— Cinq formateurs pour trente recrues.
+— Elles sont nécessaires.
 
-— Aucun n'était officiellement formateur.
+— C’est la même chose ?
 
-— Vous aviez donc cinq formateurs qui n'existaient pas.
+— Non. C’est justement pour ça qu’il faut les protéger.
 
-— Administrativement, ils existaient parfaitement. Simplement, leur travail de transmission n'était pas identifié comme tel.
+Les responsables de production approuvèrent des créneaux. Les RH les saisirent dans le logiciel. Les achats, le commerce et la direction générale furent informés. Personne ne pouvait plus contester la disponibilité du temps : elle avait fait l’objet de quatre validations et se trouvait inscrite en bleu.
 
-— Vous aviez oublié de le compter ?
+Kevin demanda qui pourrait lui retirer ces heures en cas d’urgence.
 
-— Nous comptions les heures de formation déclarées. Pas tout ce qui se transmettait entre deux opérations.
+— Elles sont validées, répondit Claire.
 
-— Et vous étiez directrice des ressources humaines.
+— C’est ce que je demandais.
 
-— Oui.
+Elle lui expliqua que, cette fois, l’organisation avait été pensée sérieusement. Kevin regarda son carnet, regarda le planning, puis choisit de ne pas offrir une troisième réponse au problème.
 
-— Vous devriez peut-être commencer par les ressources humaines.
+Ce silence fut interprété comme un signe encourageant d’appropriation.
 
-— C'est précisément ce que j'ai fait.
+Les deux premières vagues se passèrent plutôt bien. Des personnes furent embauchées, accompagnées, évaluées. Certaines devinrent progressivement autonomes sur les postes correspondant à leurs acquis. Dans l’atelier, on appelait cela apprendre un métier. Au comité de direction, on préféra « déploiement opérationnel progressif des talents ».
 
-## II. LE CARNET QUI CONNAISSAIT MIEUX L'USINE
+Puis les machines se mirent à tomber en panne avec un sens du calendrier franchement antisocial.
 
-— Comment avez-vous identifié ces cinq salariés ?
+Un lundi, Kevin fut appelé pour un réglage que peu de collègues savaient effectuer. Le lendemain, une série urgente imposa son aide au contrôle. Le mercredi, la production le réclama encore. Chaque interruption était justifiée. Chaque responsable, interrogé séparément, avait pris la bonne décision. L’entreprise était donc parvenue à produire un échec collectif composé exclusivement de décisions individuelles raisonnables.
 
-— J'ai interrogé les responsables d'atelier. Puis j'ai rencontré les opérateurs concernés.
+Les heures de tutorat restaient au planning. Elles avaient simplement perdu la mauvaise habitude d’exister dans la réalité.
 
-— Vous avez découvert quelque chose ?
+Claire demanda pourquoi elles n’avaient pas été réalisées.
 
-— Kevin m'a montré son carnet.
+— Elles ont été décalées, lui répondit-on.
 
-— Un carnet ?
+— À quand ?
 
-— Un petit carnet à spirale. Des prénoms, des dates, des croix, parfois une remarque.
+— Aux prochains créneaux.
 
-— Il préparait un roman ?
+— Ceux qui sont déjà occupés ?
 
-— Il suivait les personnes qu'il accompagnait.
+— Le planning va être actualisé.
 
-— Votre entreprise n'avait pas de logiciel pour cela ?
+La mise à jour déplaça les séances de deux colonnes vers la droite. Ce fut le seul déplacement de personnel dont personne ne contesta la faisabilité.
 
-— Si. Il organisait les formations et enregistrait celles qui étaient réalisées.
+Dans le logiciel, certaines formations figuraient comme commencées ou réalisées selon leur saisie. Kevin continuait d’entourer, dans son carnet, les séances dont il restait des gestes à reprendre. On lui proposa de déclarer un « taux d’avancement pédagogique ». Il suggéra de commencer par lui rendre les heures disparues.
 
-— Et Kevin préférait son carnet ?
+Le directeur commercial, lui, regardait toujours les trente silhouettes bleues. Elles avaient été rejointes par une courbe de montée en puissance, devenue si belle qu’il aurait été dommage de la compromettre avec des données d’atelier.
 
-— Il y notait les apprentissages interrompus, repris, prolongés. Des choses qui n'apparaissaient pas toujours clairement dans notre suivi.
+Un nouveau salarié attendit sa validation avant de pouvoir intervenir seul sur une opération. La validation n’avait pas été faite ; Kevin avait été mobilisé sur une commande urgente. Claire refusa que l’intéressé soit déclaré autonome à titre provisoire. On lui répondit que cela retardait une livraison.
 
-— Il décidait lui-même qui était compétent ?
+— Oui, dit-elle. C’est la définition d’une compétence qu’on n’a pas encore.
 
-— Non. Les validations requises suivaient nos procédures. Son carnet était un aide-mémoire personnel, pas une habilitation.
+Quelqu’un demanda s’il était possible de distinguer « autonomie complète » et « autonomie commercialement nécessaire ». La proposition ne fut pas retenue. Elle méritait pourtant une place dans l’histoire du management.
 
-— Et quand quelqu'un n'était pas prêt ?
+Le client accepta seulement une partie du calendrier de livraison révisé. Il confia certains volumes prévisionnels de montée en charge — qui n’étaient pas encore des commandes fermes — à un autre fournisseur. Le contrat n’avait pas disparu ; l’entreprise perdait néanmoins une partie de la croissance qu’elle s’était déjà félicitée d’avoir acquise.
 
-— Il laissait la case vide.
+Le directeur commercial parla d’un « ajustement du potentiel capté ». Sur les graphiques, les silhouettes restèrent au nombre de trente. Elles n’avaient jamais été aussi performantes que sur cette page.
 
-— Pourquoi ?
+La direction demanda des explications. Claire prépara une présentation de vingt-deux diapositives pour démontrer que l’entreprise avait confondu trois choses : une embauche, une compétence acquise et une capacité réellement disponible.
 
-— Je lui ai demandé. Il m'a répondu : « Une case vide, ça se voit. Un gars qu'on envoie seul trop tôt, ça se voit après. »
+Elle découvrit, au moment de passer à la douzième diapositive, que la démonstration tenait sur un Post-it.
 
-— Vous connaissiez ce carnet avant de rencontrer Kevin ?
+Kevin n’avait pas besoin de cette présentation. Il avait noté « Encore appelé sur la machine » à côté de plusieurs séances interrompues. C’était moins graphique, mais l’information possédait une qualité gênante : elle correspondait à un événement.
 
-— Non.
+Claire dut reconnaître sa propre part. Elle avait trouvé les tuteurs, réservé des heures, obtenu des signatures, fait accepter trois vagues de recrutement. Puis elle avait considéré que tout ce qui portait le mot « validé » était garanti. Elle avait passé huit ans aux ressources humaines sans encore parvenir à distinguer une case colorée d’une journée de travail.
 
-— Pourtant, vous suiviez les formations.
+— Je vous avais dit qu’on allait vous protéger du planning, confia-t-elle à Kevin.
 
-— Je suivais ce que nous avions prévu et enregistré. Pas toujours ce qu'il avait fallu recommencer.
+— Non. Vous m’aviez dit que le planning allait me protéger.
 
-— Vous avez présenté le carnet au directeur général ?
+— C’est une différence ?
 
-— Je lui ai présenté un calendrier de montée en compétences.
+— Pour vous, c’était une phrase. Pour moi, c’était mardi.
 
-— Vous avez donc transformé le carnet en tableau.
+Claire proposa de revoir les arbitrages. Les interruptions répétées du tutorat devaient désormais déclencher une décision identifiable : fallait-il dégager une autre personne, modifier la priorité de production, ou assumer un délai de formation et ses conséquences ? Il ne s’agissait plus de s’abriter derrière une ligne de calendrier en espérant qu’elle résiste à une machine en panne.
 
-— Oui.
+Les trente recrutements furent finalement réalisés sur une période plus longue. Tout le monde n’était pas autonome sur tous les postes, ce qui n’avait jamais été l’objectif réel. L’usine avait encore des départs à remplacer, une activité existante à tenir et des compétences à développer. Elle n’avait pas transformé trente êtres humains en trente unités de production instantanées ; elle s’en était simplement aperçue après avoir promis le résultat.
 
-— Kevin était au courant ?
+Un nouveau tableau de suivi distingua mieux les séances effectivement terminées de celles qu’il fallait reprendre. Le mot « réalisé » fut réservé, au prix d’un long débat, aux choses réellement réalisées. Ce changement fut considéré comme suffisamment innovant pour justifier une communication interne.
 
-— Il m'a demandé si, cette fois, le tableau allait lui donner du temps.
+Kevin conserva son carnet. Personne ne lui en voulut officiellement. Plusieurs cadres continuèrent toutefois à préférer le logiciel, dont les cases avaient le bon goût de ne jamais lever les yeux au ciel.
 
-— Vous lui avez répondu ?
+Un vendredi, Kevin demanda à Claire de préparer un collègue pour prendre le relais comme tuteur sur son poste.
 
-— Que c'était justement l'objectif.
+— On va regarder le planning, répondit-elle.
 
-— Il vous a crue ?
+Elle ferma les yeux. Elle venait encore de dire la phrase.
 
-— Il a refermé son carnet.
+Kevin ouvrit son carnet, inscrivit le prénom du collègue et laissa une case vide pour la date.
 
-## III. DEUX JOURNÉES DANS LA MÊME JOURNÉE
+— Vous pourriez la remplir tout de suite, dit Claire. Ce serait plus encourageant.
 
-— Quel plan avez-vous proposé ?
+— C’est prévu ou c’est fait ?
 
-— Trois vagues de recrutement, des postes d'entrée clairement définis, du tutorat avec des plages réservées et le recours temporaire à un sous-traitant pour certaines opérations non sensibles.
+Claire regarda longtemps la case. Puis elle sourit.
 
-— Vous avez donc proposé d'embaucher moins vite.
+— Vous savez quoi ? Je vais peut-être demander qu’on embauche quelqu’un pour m’apprendre la différence.
 
-— De recruter progressivement, en tenant compte de la capacité de formation.
+— Il faudra trouver qui le forme.
 
-— Et de sous-traiter.
+Le lundi suivant, la direction annonça avoir créé un nouvel indicateur : le nombre de cases laissées volontairement vides afin de ne pas confondre les intentions avec les résultats.
 
-— Une partie seulement. Il fallait vérifier les capacités du sous-traitant et ses contrôles qualité. Les opérations sensibles restaient chez nous.
-
-— C'était plus cher ?
-
-— À la pièce, oui. Mais cela permettait d'éviter de promettre une production que nous ne savions pas encore assurer.
-
-— Vous êtes DRH ou directrice financière ?
-
-— Je sais qu'un retard de livraison coûte aussi de l'argent.
-
-— Le commercial voulait annoncer que tout serait prêt en septembre.
-
-— Oui.
-
-— La production voulait garder ses opérateurs expérimentés sur les machines.
-
-— Oui.
-
-— Et Kevin ?
-
-— Il ne voulait pas devenir formateur.
-
-— Pourtant, il formait déjà les nouveaux.
-
-— Justement. Il m'a expliqué qu'il aimait produire. Et que, lorsqu'il accompagnait quelqu'un, on continuait à lui demander le même volume de production.
-
-— Il aurait pu faire un effort.
-
-— Il en faisait depuis deux ans.
-
-— Vous lui avez proposé une prime ?
-
-— Je lui ai demandé ce qui devrait changer.
-
-— Il a répondu ?
-
-— « Qu'on arrête de me donner deux journées à faire dans la même journée. »
-
-— Vous avez calculé le coût de cette demande ?
-
-— J'ai surtout compris qu'une prime ne rallongeait pas les journées.
-
-— C'est dommage. Cela aurait simplifié les négociations salariales.
-
-— Nous avons prévu deux nouveaux salariés à accompagner simultanément pour Kevin, pas six. Et nous avons commencé à former deux autres tuteurs.
-
-— Vous avez inscrit des heures au planning ?
-
-— Oui. Nous avions défini les créneaux avec les responsables de production et ajusté les objectifs de fabrication pour dégager du temps de tutorat.
-
-— Vous aviez donc obtenu leur accord ?
-
-— Oui. Les responsables d'atelier, la production et les RH avaient validé le dispositif.
-
-— Pour vous, le problème était réglé ?
-
-— Les conditions me semblaient réunies. Nous avions réduit le nombre de nouveaux accompagnés simultanément, identifié les tuteurs et prévu leur disponibilité.
-
-— Kevin était satisfait ?
-
-— Il a regardé le planning.
-
-— Et ?
-
-— Il m'a demandé qui pouvait supprimer les cases.
-
-— Vous avez répondu ?
-
-— Que les créneaux avaient été validés par les responsables concernés.
-
-— Cela l'a rassuré ?
-
-— Il m'a demandé : « Et quand une machine s'arrête ? »
-
-— Vous avez répondu quoi ?
-
-— Que les urgences seraient traitées par la production et que nous avions précisément organisé le planning pour éviter les interruptions systématiques.
-
-— Il vous a crue ?
-
-— Il a regardé une deuxième fois le planning.
-
-— C'était bon signe ?
-
-— Je l'ai cru.
-
-— Et lui ?
-
-— Il a refermé son carnet.
-
-## IV. LE PLANNING ÉTAIT PARFAITEMENT RESPECTÉ SUR LE PLANNING
-
-— Les recrutements ont commencé ?
-
-— Oui. Les deux premières vagues ont plutôt bien fonctionné.
-
-— Et la troisième ?
-
-— Les changements de série se sont multipliés. Au début, chaque rappel de tuteur paraissait exceptionnel. Puis les séances interrompues ont commencé à se reporter sur les semaines suivantes.
-
-— Pourquoi ?
-
-— Une première fois, Kevin a dû intervenir sur une machine arrêtée. Il connaissait le réglage et la production attendait pour reprendre.
-
-— Vous auriez préféré qu'il reste avec son stagiaire ?
-
-— Non. À ce moment-là, son intervention était justifiée.
-
-— Et ensuite ?
-
-— Une série urgente présentait une difficulté de contrôle. Il faisait partie des personnes capables de la résoudre rapidement.
-
-— Encore une urgence légitime ?
-
-— Oui.
-
-— Il était donc indispensable partout.
-
-— Pas partout. Mais sur plusieurs opérations où son expérience faisait la différence.
-
-— Et la formation ?
-
-— La première interruption a décalé une séance. La suivante a empêché de reprendre ce qui avait été commencé.
-
-— Vous aviez pourtant réservé ses heures.
-
-— Elles figuraient toujours au planning.
-
-— La machine avait redémarré, la série avait été contrôlée. Et le nouveau salarié ?
-
-— Il attendait toujours de terminer son apprentissage.
-
-— Kevin vous l'a signalé ?
-
-— Il est venu avec son carnet. Plusieurs séances étaient entourées. Certaines avaient commencé, puis été interrompues.
-
-— Elles figuraient comment dans votre logiciel ?
-
-— Certaines comme commencées ou réalisées, selon ce qui avait été enregistré. Mais le suivi ne faisait pas suffisamment ressortir les apprentissages qui restaient à reprendre.
-
-— Et dans le carnet ?
-
-— Les cases correspondantes étaient vides.
-
-— Qui avait décidé de rappeler Kevin ?
-
-— Le responsable de production, à chaque fois pour une raison concrète.
-
-— Vous contestiez ces décisions ?
-
-— Pas nécessairement, prises séparément.
-
-— Mais ?
-
-— Nous n'avions pas défini à partir de quel point la répétition de ces interruptions devait conduire à revoir les priorités de production ou à dégager un autre tuteur.
-
-— Vous aviez organisé les heures.
-
-— Pas suffisamment les arbitrages lorsqu'elles entraient en concurrence avec une urgence.
-
-— Vous aviez obtenu l'accord de tout le monde.
-
-— Oui. Et j'avais considéré cet accord comme une garantie de disponibilité.
-
-— C'était une erreur ?
-
-— Oui. Nous avions donné une place au tutorat dans le planning, sans lui donner suffisamment de poids dans les décisions quotidiennes.
-
-— Un nouveau salarié a attendu sa validation ?
-
-— Oui. Kevin avait été mobilisé sur une commande urgente.
-
-— Vous auriez dû le laisser seul sur le poste ?
-
-— Certainement pas. La validation devait être réalisée avant qu'il puisse intervenir de manière autonome sur cette opération.
-
-— Le client a donc attendu ?
-
-— Nous avons proposé un calendrier de livraisons plus progressif. Il n'en a accepté qu'une partie.
-
-— Vous avez perdu le contrat ?
-
-— Non. Mais certains volumes envisagés pour la montée en charge ont été confiés à un autre fournisseur. Ce n'étaient pas des commandes fermes : le client a conservé ce que nous pouvions livrer.
-
-— Vous aviez identifié ce risque avant tout le monde. Comment avez-vous laissé le client chercher ailleurs la capacité que vous promettiez de construire ?
-
-— J'avais obtenu des heures au planning et l'accord des responsables. J'ai cru que cela suffirait à protéger le tutorat. Chaque rappel de Kevin se justifiait isolément ; leur répétition ne déclenchait aucun arbitrage.
-
-— Vous aviez donc contesté la promesse de votre directeur général. Mais la vôtre n'a pas résisté aux urgences de l'atelier.
-
-— Oui. Nous avons formé des salariés et sécurisé plusieurs postes. Cela n'efface pas la part de croissance que nous n'avons pas pu prendre.
-
-— Qu'avez-vous dit au directeur général ?
-
-— Que notre dispositif était cohérent sur le papier, mais que nous n'avions pas organisé les décisions nécessaires pour le faire tenir dans l'atelier.
-
-— Kevin avait une formule ?
-
-— Dans son carnet, il avait simplement écrit : « Encore appelé sur la machine. »
-
-— Plus court que votre compte rendu.
-
-— Et plus facile à vérifier.
-
-## V. LA CASE VIDE
-
-— Avez-vous finalement recruté les trente personnes ?
-
-— Oui. Sur une période plus longue que prévu.
-
-— Elles étaient toutes autonomes ?
-
-— Pas sur tous les postes. Certaines ont progressé plus vite, d'autres ont eu besoin de davantage d'accompagnement.
-
-— Vous avez maintenu ces recrutements alors que le client avait confié certains volumes à un concurrent ?
-
-— Nous avions encore notre activité existante, des départs à remplacer et des compétences à renforcer. Nous avions perdu une partie de la croissance supplémentaire envisagée, pas tous nos besoins.
-
-— Votre directeur général vous a félicitée ?
-
-— Nous avons surtout revu notre calendrier de montée en charge.
-
-— Une nouvelle version ?
-
-— Oui.
-
-— Vous aimez décidément les calendriers.
-
-— J'essaie surtout qu'ils décrivent ce qui est possible.
-
-— Qu'avez-vous changé ?
-
-— Nous avons prévu qu'une interruption répétée du tutorat déclenche un arbitrage explicite entre la production et la formation.
-
-— Une réunion supplémentaire ?
-
-— Pas systématiquement. Une décision identifiable, avec quelqu'un qui en assume les conséquences.
-
-— Vous avez aussi modifié votre logiciel ?
-
-— Le suivi distingue mieux les séances réalisées de celles qu'il faut reprendre.
-
-— Kevin a abandonné son carnet ?
-
-— Non.
-
-— Votre transformation numérique est un succès relatif.
-
-— Il ne l'utilise plus tout à fait de la même manière.
-
-— Comment ?
-
-— Il accompagne moins de personnes à la fois. Et il signale plus tôt lorsqu'une formation ne pourra pas être tenue.
-
-— Il a appris à dire non ?
-
-— Oui.
-
-— C'est donc votre plus belle réussite.
-
-— Je ne sais pas si je présenterais les choses ainsi.
-
-— La semaine dernière, Kevin m'a demandé si un collègue pouvait être formé pour prendre le relais comme tuteur sur son poste.
-
-— Vous avez accepté ?
-
-— J'ai dit que nous allions regarder le planning.
-
-— Encore le planning.
-
-— Je sais.
-
-— Kevin vous a crue ?
-
-— Il a ouvert son carnet.
-
-— Il a écrit quoi ?
-
-— Le nom du collègue.
-
-— Et une petite croix ?
-
-— Non.
-
-— Pourquoi ?
-
-— Il m'a laissé la place pour la date.
+Elle fixa un objectif ambitieux de réduction de cet indicateur à zéro avant la fin du trimestre.
