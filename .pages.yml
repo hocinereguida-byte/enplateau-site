@@ -21,6 +21,9 @@ content:
     - conversation
     - contexte
     - perspective_principale
+    - genre_narratif
+    - unite_programmation
+    - source_document_version
     - statut_editorial
     - publication_date
     primary: title
@@ -107,7 +110,7 @@ content:
         label: Réinvention sous crise
   - &id005
     name: lecture_principale
-    label: Lecture professionnelle principale
+    label: Lecture historique (compatibilité — préférer la perspective V6)
     type: select
     options:
       values:
@@ -150,6 +153,19 @@ content:
         label: Énergie & ressources
       - name: territoires-politiques-publiques
         label: Territoires & politiques publiques
+  - &v6genre
+    name: genre_narratif
+    label: Genre de la Scène V6
+    type: select
+    description: Laisser vide pour un Regard croisé ; la satire est un ton, pas un genre.
+    options:
+      values:
+      - name: grand-entretien
+        label: Grand Entretien
+      - name: recit
+        label: Récit / comédie
+      - name: chronique
+        label: Chronique
   - &v6code
     name: code_editorial
     label: Identifiant éditorial stable (ne pas changer)
@@ -392,6 +408,9 @@ content:
     - conversation
     - contexte
     - perspective_principale
+    - genre_narratif
+    - unite_programmation
+    - source_document_version
     - statut_editorial
     - publication_date
     primary: title
@@ -449,6 +468,7 @@ content:
         label: Territoire en reconversion
   - *id005
   - *v6perspective
+  - *v6genre
   - *v6code
   - *v6unite
   - *v6famille
