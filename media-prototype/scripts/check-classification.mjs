@@ -27,11 +27,11 @@ const records = [
 const errors = [];
 const perspectives = new Set(['strategie-gouvernance','finance-investissement','droit-regulation','operations-organisation','technologie-innovation','ressources-humaines-competences','energie-ressources','territoires-politiques-publiques']);
 const parse = source => {
-  const match = source.match(/^---\\n([\\s\\S]*?)\\n---\\n/);
+  const match = source.match(/^---\n([\s\S]*?)\n---\n/);
   if (!match) return null;
   const result = {};
-  for (const line of match[1].split('\\n')) {
-    const m = line.match(/^([a-z_0-9]+):\\s*(.*)$/);
+  for (const line of match[1].split('\n')) {
+    const m = line.match(/^([a-z_0-9]+):\s*(.*)$/);
     if (!m) continue;
     const value = m[2].trim();
     try { result[m[1]] = JSON.parse(value); } catch { result[m[1]] = value; }
@@ -63,5 +63,5 @@ for (const r of records) {
   } else if (d.genre_narratif || d.perspective_principale) errors.push(r.code+' : un Regard croisé est transversal, sans genre de Scène ni perspective principale');
   if (source.includes('FICHE DE CLASSEMENT CMS — HORS TEXTE PUBLIC') || source.includes('REGISTRE ÉDITORIAL INTERNE — HORS PUBLICATION')) errors.push(r.code+' : note interne importée dans le texte');
 }
-if (errors.length) { process.stderr.write('Échec classement éditorial V6 :\\n'+errors.map(e=>' - '+e).join('\\n')+'\\n'); process.exit(1); }
+if (errors.length) { process.stderr.write('Échec classement éditorial V6 :\n'+errors.map(e=>' - '+e).join('\n')+'\n'); process.exit(1); }
 console.log('Classement V6 vérifié : '+records.length+' contenus, versions Drive verrouillées, genres, perspectives et unités sans doublon.');
