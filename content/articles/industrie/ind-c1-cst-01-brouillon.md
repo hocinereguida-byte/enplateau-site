@@ -1,12 +1,12 @@
 ---
-title: "J'ai refusé deux millions d'euros de commandes. Apparemment, la rentabilité est devenue un comportement antisocial."
-summary: "Marc dirige la production depuis douze ans et mesure tout, jusqu'aux réunions inutiles. En refusant deux millions d'euros de commandes, il améliore le résultat opérationnel, mais contrarie les commerciaux, affecte les heures supplémentaires et perd un client fidèle. Une comédie économique sur ce que les chiffres savent compter — et ce qu'ils oublient."
+title: "Les affaires marchaient si bien qu’il a fallu y mettre un terme."
+summary: "Jean Toksic reçoit Marc, directeur industriel. Il a refusé près de deux millions d’euros de commandes et amélioré le résultat opérationnel, au prix de tensions sociales et de la perte d’un client de quinze ans. Un Grand Entretien fictif sur la face cachée de la croissance."
 format: "entretien"
 cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "strategie-gouvernance"
-statut_editorial: "publie"
+statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-27T15:00:00+01:00"
 mise_en_avant: "standard"
@@ -17,423 +17,407 @@ tag_2: "Carnet de commandes"
 tag_3: "Capacité de production"
 tag_4: "Arbitrage commercial"
 tag_5: "Rentabilité"
-source_notice: "Entretien fictif · Fiction économique documentée. Personnages, situations et dialogues imaginaires."
-methodology_specific: "Copie CMS satirique de référence ; contrôle de fabrication en attente."
-source_document_url: "https://docs.google.com/document/d/1hmQ7GrLqTcDmOGiiZQotItvQUO8-zmJi5MTQGnWxKbg/edit"
-source_document_version: "V3.4"
-validation_narrative: "validee"
-validation_documentaire: "validee_selon_matrice_c1"
+source_notice: "Grand Entretien fictif · Fiction économique documentée. Marc, son entreprise, les dialogues et les chiffres sont inventés ; ils illustrent des mécanismes économiques plausibles."
+methodology_specific: "Marc V4.2 — concordance narrative, économique, chronologique et comptable ciblée favorable le 6 novembre 2026. Intégration en préproduction autorisée ; rendu CMS à contrôler. Aucune autorisation de publication publique."
+source_document_url: "https://docs.google.com/document/d/1uS6Vi0k9sanYp43WT280iKpJzJ3H8N1YTSlTGrkNyDM/edit"
+source_document_version: "V4.2"
+validation_narrative: "concordance_v4_2_favorable"
+validation_documentaire: "concordance_ciblee_v4_2_favorable"
 autorisation_publication: "preproduction_uniquement"
+genre_narratif: "grand-entretien"
+signature_auteur: "Jean Toksic"
 ---
 
-*Entretien fictif · Fiction économique documentée. Personnages, situations et dialogues imaginaires.*
+*Grand Entretien fictif · Fiction économique documentée. Les personnes, dialogues, situations et chiffres du cas sont inventés.*
 
-## I. UN HOMME QUI AVAIT TORT AVEC UNE PRÉCISION REMARQUABLE
+**Version V4.2 de consultation en préproduction — publication publique non autorisée.**
 
-— Bonjour Marc. Pourriez-vous vous présenter ? Pas sous forme de tableau, si possible.
+Jean Toksic reçoit Marc, directeur industriel. L’homme a refusé près de deux millions d’euros de commandes dans une usine débordée de travail. Depuis, le résultat opérationnel va mieux. Certains salariés et un client de quinze ans, beaucoup moins. Marc a apporté ses chiffres. Toksic lui a réservé quelques questions auxquelles aucun tableur ne répond.
 
-— Marc. Directeur industriel. Douze ans dans l'entreprise. Ancien responsable de production. Je dirige les opérations de fabrication de composants pour plusieurs secteurs.
+Entretien fictif — fiction économique documentée. Le personnage, l’entreprise, les échanges et les chiffres du cas sont inventés. Ils illustrent des mécanismes économiques plausibles et ne constituent pas le témoignage d’une entreprise réelle.
 
-— Vous avez hésité à me donner votre taux de disponibilité.
+## I — LE CONFORT D'UNE SÉANCE À RISQUES
 
-— Je pourrais.
+Jean Toksic — Vous avez trouvé facilement ?
 
-— Je n'en doute pas. Vous avez refusé deux millions d'euros de commandes. C'est une somme importante pour un homme qui prétend travailler dans une entreprise commerciale.
+Marc — Très. Votre assistante m'a même proposé un café.
 
-— Ce n'est pas parce qu'on vend quelque chose qu'on gagne de l'argent.
+— C'est une excellente assistante. Elle veille à ce que nos invités arrivent détendus.
 
-— Voilà une phrase qui devrait vous fermer définitivement les portes des conventions commerciales.
+— J'avais imaginé un accueil moins chaleureux.
 
-— J'ai déjà été retiré de deux listes de diffusion.
+— Vous connaissez ma réputation ?
 
-— Vous avez tenu le compte ?
+— Je me suis renseigné.
 
-— Je tiens le compte de tout.
+— Et vous êtes venu quand même.
 
-— Même de vos ennemis ?
+— J'avais envie de vérifier par moi-même.
 
-— Seulement de ceux qui dépassent le seuil de nuisance.
+— C'est un motif curieux pour accepter un entretien dont les gens disent sortir en morceaux.
 
-— Vous avez défini un seuil ?
+— Vous exagérez certainement votre taux de sinistralité.
 
-— Évidemment.
+— Vous êtes venu mesurer la qualité de votre propre humiliation ?
 
-— Je commence à comprendre pourquoi vous vivez seul dans votre bureau.
+— J'ai prévu quelques critères.
 
-— Mon bureau est très fréquenté.
+— Vous avez préparé une grille ?
 
-— Par des êtres humains ?
+— Je dirige une usine, monsieur Toksic. Je n'entre pas dans une expérience sans méthode.
 
-— Principalement par des problèmes.
+— Charmant. Certains viennent me voir comme on entre dans un club de sadomasochisme intellectuel. Vous êtes le premier à réclamer un audit qualité.
 
-— Revenons à votre entreprise. Le carnet de commandes débordait, les ateliers travaillaient le samedi, le chiffre d'affaires progressait. Vous aviez donc tous les symptômes de la réussite. Pourquoi avoir appelé les secours ?
+— Un audit contradictoire.
 
-— Parce que notre trésorerie se tendait et que certaines commandes nous coûtaient plus cher à exécuter qu'elles ne rapportaient. Nous produisions davantage, mais dans de mauvaises conditions.
+— Bien sûr. Vous pourrez contester les résultats. Vous voulez un autre café ?
 
-— Une sorte de suicide économique par excès de vitalité.
+— Non, merci. Celui-ci est très bon.
 
-— Si vous voulez. Les équipes couraient, les machines tournaient, les clients étaient livrés. Nous étions tellement occupés à produire que personne ne trouvait le temps de vérifier si cela avait encore un sens.
+— Tant mieux. J'aimerais que vous gardiez un excellent souvenir du début.
 
-— Vos commerciaux, pourtant, avaient calculé les marges.
+Marc rit. Il pose son stylo sur la table et cesse de regarder la porte.
 
-— Certains devis affichaient 18 %.
+— J'ai lu votre dossier, dit Toksic. Douze ans à diriger la production, une expérience d'atelier, des indicateurs que vous connaissez dans le détail. Vous avez cette qualité que j'apprécie : vous ne confondez pas le bruit des machines et la création de richesse.
 
-— Dix-huit pour cent ! C'est presque indécent.
+— Voilà qui me rassure.
 
-— Sur le papier. Les temps de fabrication étaient sous-estimés, les prix des matières avaient changé, les taux de rebut étaient obsolètes.
+— C'est mon intention. Parlons de ce que vous avez réussi. Vous avez refusé près de deux millions d'euros de commandes et le résultat opérationnel s'est redressé.
 
-— Vous aviez donc des prévisions optimistes.
+— Oui.
 
-— Non. L'optimisme suppose qu'on connaisse la réalité et qu'on espère mieux. Nous avions simplement cessé de la consulter.
+— C'est une décision que beaucoup n'auraient pas osé prendre.
 
-— Vous n'aimez pas beaucoup vos collègues.
+— Il fallait regarder les coûts réels.
 
-— Je les aime énormément. C'est leurs hypothèses que je voudrais faire euthanasier.
+— Vous avez donc eu du courage, une bonne méthode et, finalement, raison.
 
-— Avec humanité, j'espère.
+— Il y a des nuances, mais—
 
-— Je leur laisserais quinze jours de préavis.
+— Nous y viendrons. Pour l'instant, vous pouvez profiter du compliment.
 
-— Comment avez-vous découvert que les commandes vous appauvrissaient ?
+Marc se redresse légèrement. Toksic attend, souriant.
 
-— Nous avons reconstitué le coût réel d'une livraison. Pour tenir le délai, nous avions déplacé deux séries, payé des heures supplémentaires, organisé une expédition urgente et retardé un client plus rentable.
+— Une dernière chose, dit le journaliste. Vous avez expliqué que chaque service disposait de ses indicateurs. Qui avait défini les objectifs et les primes qui ont rendu ces mauvaises commandes si séduisantes ?
 
-— Le client livré était satisfait ?
+— J'y ai participé.
 
-— Absolument.
+— Ah. Voilà un début plus intéressant. Racontez-moi comment vous avez dû protéger votre usine contre les décisions que vous aviez contribué à encourager.
 
-— Et l'autre ?
+## II — LA CROISSANCE, CETTE EXCELLENTE MAUVAISE NOUVELLE
 
-— Beaucoup moins.
+Jean Toksic — Revenons à cette entreprise qui ne manquait de rien, sauf de rentabilité. Vous êtes directeur industriel depuis douze ans. Vous avez refusé deux millions d’euros de commandes. Vous vouliez faire plaisir à la concurrence ?
 
-— Votre entreprise avait donc inventé un dispositif remarquable : faire payer indirectement la satisfaction d'un client par un autre client.
+Marc — Non. Éviter que notre entreprise s’appauvrisse en travaillant davantage.
 
-— Ce n'était pas volontaire.
+— C’est une façon assez personnelle d’exercer une activité commerciale.
 
-— La plupart des grandes absurdités humaines ne le sont pas. C'est ce qui leur permet de durer.
+— Ce n’est pas parce qu’une commande augmente le chiffre d’affaires qu’elle améliore le résultat.
 
-— Nous avons surtout compris que nous connaissions chaque coût séparément, sans voir leur accumulation sur une même commande.
+— Je comprends. Vos équipes vendaient trop. Vous avez décidé de les soigner.
 
-— Vous aviez des indicateurs ?
+— Certaines commandes détruisaient de la valeur. Les ateliers étaient saturés, les équipes travaillaient le samedi, les expéditions urgentes se multipliaient. Le carnet se remplissait plus vite que notre capacité à produire correctement.
+
+— Une entreprise qui a des clients, des machines occupées et des salariés au travail : de quoi alerter immédiatement la direction.
+
+— C’est précisément ce qui nous a trompés. Chacun regardait une partie de la situation. Les ventes progressaient. Les achats négociaient. La production livrait. Et la trésorerie se tendait.
+
+— Vous avez donc découvert un défaut assez rare : la croissance.
+
+— J’ai découvert que notre manière de la gérer nous coûtait trop cher.
+
+— Vous étiez pourtant entouré d’indicateurs.
 
 — Des dizaines.
 
-— Et aucun ne vous disait que vous perdiez de l'argent ?
+— Aucun ne servait à quelque chose ?
 
-— Chacun disait quelque chose de vrai.
+— Ils servaient. Mais pas toujours ensemble.
 
-— Voilà qui est fascinant. Vous aviez donc réussi à fabriquer un mensonge collectif avec des vérités individuelles.
+— Vous avez construit une entreprise où chaque service disait la vérité et où le résultat était faux.
 
-— Les commerciaux vendaient. Les achats négociaient. La production livrait. Chaque service atteignait ses objectifs.
+— C’est une formulation injuste.
 
-— Sauf l'entreprise.
+— Inexacte ?
 
-— Sauf l'entreprise.
+— Non. Injuste.
 
-— Qui avait conçu ce système ?
+— Il faudra vous habituer. Vous avez accepté de venir.
 
-— Plusieurs personnes.
+Marc sourit avec l’expression d’un homme qui vient de comprendre qu’il aurait dû demander l’ordre du jour.
 
-— Des noms ?
+— Prenons un devis, reprend Toksic. Certains affichaient dix-huit pour cent de marge. Voilà qui devrait être rassurant.
 
-— Je ne vais pas transformer cet entretien en tribunal.
+— Sauf quand le devis a été établi avec des temps de fabrication sous-estimés, des prix matières qui ont changé et des taux de rebut dépassés.
 
-— C'est dommage. J'avais précisément apporté une robe.
+— Vous étiez optimistes.
 
-— J'ai participé à la fixation des objectifs.
+— L’optimisme aurait supposé que nous connaissions la situation. Nous continuions à utiliser des hypothèses qui avaient cessé d’être bonnes.
 
-— Ah. Vous êtes donc l'un des architectes de ce magnifique effondrement.
+— C’est moins sympathique. « Nous avions cessé de consulter la réalité » : je vous propose de l’inscrire au prochain rapport annuel.
 
-— J'ai contribué à certains choix.
+— Vous pouvez aussi écrire que nous l’avons corrigé.
 
-— Ne soyez pas modeste. Vous avez récompensé des comportements que vous reprochez aujourd'hui à vos équipes.
+— Plus tard. Pour le moment, j’essaie de comprendre comment on s’y prend pour gagner de l’argent sur un devis et en perdre sur une livraison.
 
-— Les indicateurs n'étaient pas suffisamment coordonnés.
+— Sur une commande, nous avons dû déplacer deux séries, engager des heures supplémentaires, reprendre des pièces et organiser une expédition urgente. Nous avons tenu la promesse faite à ce client, tout en retardant une autre livraison mieux contributive.
 
-— Marc, vous venez de transformer votre propre responsabilité en problème de coordination.
+— Le premier client était ravi ?
 
-— C'était aussi un problème de coordination.
+— Oui.
 
-— Bien sûr. Et Napoléon a connu quelques difficultés logistiques à Waterloo.
+— Le second ?
 
-— Vous préférez que je dise que je me suis trompé ?
+— Beaucoup moins.
 
-— Ce serait une innovation managériale majeure.
+— Votre entreprise avait donc mis au point un service premium : satisfaire un client aux frais d’un autre.
 
-— Je me suis trompé.
+— Personne ne l’avait décidé ainsi.
 
-— Vous voyez ? Aucun système informatique n'a explosé.
+— C’est l’avantage des dysfonctionnements collectifs. Ils peuvent rester très longtemps sans responsable.
 
-— Pas encore.
+## III — QUINZE JOURS SANS PROMETTRE L’AVENIR
 
-— Et les primes ? Quand vous avez récompensé chaque service pour atteindre son propre objectif, vous avez aussi contribué à fabriquer les commandes que vous refusez aujourd'hui.
+— Qu’avez-vous fait ?
 
-— Oui. Les indicateurs et les primes ont encouragé chacun à réussir séparément. J'ai participé à ce système. Je ne pouvais pas ensuite en faire porter toute la responsabilité aux équipes.
-
-## II. QUINZE JOURS DE SILENCE DANS UN MONDE QUI PROMETTAIT TROP
-
-— Qu'avez-vous fait après cette découverte ?
-
-— Avec l'accord de la direction générale, nous avons suspendu pendant quinze jours les nouvelles promesses de prix et de délais non vérifiées.
+— Avec l’accord de la direction générale, nous avons suspendu pendant quinze jours les nouvelles promesses de prix et de délais qui n’avaient pas été vérifiées avec les ateliers.
 
 — Vous avez interdit aux commerciaux de promettre ?
 
-— De promettre sans vérification.
+— Sans vérification.
 
-— Vous avez donc retiré aux commerciaux leur principal instrument de travail : l'avenir.
+— Vous leur avez confisqué l’avenir. C’était leur principal outil.
 
-— Je leur ai laissé le présent.
+— Je leur ai rendu le calendrier.
 
-— Cruauté raffinée. Comment ont-ils réagi ?
+— Ils ont dû très mal le prendre.
 
-— Assez mal.
+— Ils n’étaient pas ravis.
 
 — Vous avez mesuré leur mécontentement ?
 
 — Non.
 
-— Je suis déçu.
+— Voilà une première rupture avec vos habitudes.
 
-— J'ai comptabilisé les engagements non vérifiés que nous devions reprendre.
+— Nous avons reconstitué la contribution réelle des commandes. Ce n’était pas seulement une question de marge affichée : il fallait intégrer les coûts supplémentaires, les rebuts, les reprises, les contraintes de capacité et les effets sur les autres clients.
 
-— Ah ! Vous voyez, vous ne pouvez pas vous en empêcher. Même votre réconciliation avec le réel nécessite un fichier Excel.
+— Vous avez donc refusé toutes les commandes dont le calcul devenait négatif ?
 
-— Un tableur est un outil. Ce n'est pas une religion.
+— Non. Certaines semblaient déficitaires parce qu’on leur imputait des frais fixes que nous aurions supportés même en les refusant. Si elles contribuaient à couvrir ces frais sans dégrader d’autres commandes, elles pouvaient rester intéressantes.
 
-— Vous en parlez comme un homme qui vient de quitter une secte, mais qui conserve précieusement les reliques.
+— Vous me dites donc qu’une commande affichée rentable peut être mauvaise, et qu’une commande affichée déficitaire peut être utile.
 
-— Je n'ai jamais adoré les indicateurs.
+— Selon les coûts réellement évitables et la capacité disponible, oui.
 
-— Combien en avez-vous dans votre tableau de bord personnel ?
+— Je vous déconseille d’expliquer cela au cours d’un dîner. On risque de vous reprendre le dessert.
 
-— Ça dépend de la version.
+— Je n’ai pas beaucoup de dîners.
 
-— Vous avez plusieurs versions ?
+— J’imagine. Combien de commandes avez-vous finalement refusées ?
 
-— Je ne vois pas ce qu'il y a de drôle.
+— Près de deux millions d’euros.
 
-— C'est précisément le problème, Marc.
+— Et combien auraient pu être sauvées en augmentant les prix ?
 
-— Ce qui était drôle, c'était de voir des délais promis sans consulter l'atelier. Nous avons passé quinze jours à remettre les choses en cohérence.
+— Nous avons tenté de renégocier. Certains clients ont accepté. D’autres avaient des alternatives. L’un nous a proposé davantage de volume contre une remise.
 
-— Et les contrats affichant 18 % de marge ?
+— Un homme généreux. Il voulait que vous perdiez davantage d’argent pour chaque euro gagné.
 
-— Certains étaient déficitaires après intégration des rebuts, reprises, heures supplémentaires et transports urgents.
+— Nous avons décliné.
 
-— Vous les avez tous supprimés ?
+— Et une machine supplémentaire ?
 
-— Non. Certains paraissaient déficitaires parce qu'on leur imputait des frais fixes, mais ils contribuaient à les couvrir. Nous les avons conservés.
+— Nous l’avons envisagée. Mais augmenter la capacité sans revoir les devis, les rebuts et les délais aurait pu multiplier les problèmes au lieu de les résoudre.
 
-— Vous êtes donc capable de défendre une commande déficitaire et d'en refuser une prétendument rentable.
+— Vous savez qu’à ce stade vous passez pour l’homme qui a refusé des commandes, des clients et des machines ?
 
-— Oui. Parce qu'il faut distinguer les coûts réellement induits par une commande des frais que l'entreprise supporte de toute façon.
+— J’ai accepté de regarder les conséquences.
 
-— Vous êtes un homme profondément dangereux. Vous obligez les chiffres à signifier quelque chose.
+— Avec une légère préférence pour les conséquences chiffrables, semble-t-il.
 
-— C'est leur fonction.
+Marc s’immobilise. Toksic saisit l’occasion.
 
-— Vous avez conscience que cette idée pourrait déstabiliser plusieurs secteurs de l'économie ?
+— Tout à l'heure, vous m'avez confié avoir participé à la définition de ces objectifs. Quelle part vous revient exactement ?
 
-— J'en ai une intuition.
+— Plusieurs directions étaient concernées : la production, le commerce et la finance. Et moi aussi.
 
-— Mais vous n'êtes pas certain d'avoir eu raison sur toutes les commandes refusées ?
+— Bien. Je préfère cette réponse à la version où tout le monde est responsable, donc personne.
 
-— Non. Quelques-unes auraient peut-être contribué positivement. Nous ne pouvions pas connaître parfaitement les conséquences de chaque refus.
+— Certains indicateurs et certaines primes relevaient de mes choix. Ils encourageaient des performances séparées.
 
-— Vous reconnaissez donc que votre tableau de bord n'était pas omniscient.
+— Vous récompensiez donc le système que vous critiquez aujourd'hui ?
 
-— Aucun tableau de bord ne l'est.
+— Oui.
 
-— C'est une déclaration courageuse de la part d'un homme qui semble en posséder davantage que de chemises.
+— Ah. Vous étiez aussi l’un des architectes de ce système que vous venez brillamment de dénoncer.
 
-— Mes chemises ne servent pas à piloter une usine.
+— Les objectifs n'étaient pas suffisamment coordonnés.
 
-— Non. Mais elles semblent au moins vous survivre.
+— Marc, vous venez de transformer votre erreur en problème de coordination. C’est un tour de prestidigitation assez élégant.
 
-— Pourquoi ne pas avoir augmenté les prix ?
+— J’ai contribué à récompenser des réussites séparées sans regarder suffisamment leur effet d’ensemble. Je me suis trompé.
 
-— Nous avons essayé. Certains clients ont accepté. D'autres ont invoqué la concurrence. Un acheteur nous a proposé davantage de volume contre une remise.
+— Vous voyez ? Une phrase de cinq mots, et aucun logiciel ne s’est arrêté.
 
-— Un philanthrope. Il voulait vous aider à perdre de l'argent en plus grande quantité.
+— Nous ne savons pas encore si toutes les commandes refusées auraient effectivement détruit de la valeur. Nos estimations restaient imparfaites.
 
-— J'ai décliné son offre.
+— Voilà qui est presque rassurant. Vous n’êtes pas infaillible.
 
-— Et investir dans une machine supplémentaire ?
+— Je ne l’ai jamais prétendu.
 
-— Nous l'avons envisagé. Mais une machine ne corrige pas des devis erronés ni des rebuts excessifs. Il fallait d'abord distinguer les commandes à conserver, celles à renégocier et celles à refuser.
+— Vous entretenez pourtant une relation très suivie avec vos tableaux.
 
-— Et si la demande avait continué à augmenter ?
+— Ils ne me demandent pas de simplifier mes réponses.
 
-— Nous aurions peut-être regretté de ne pas avoir investi plus tôt.
+## IV — LES ÉCONOMIES QUI SORTENT DU TABLEAU
 
-— Voilà qui doit vous empêcher de dormir.
+— Le chiffre d’affaires a ensuite baissé d’environ huit pour cent sur le semestre suivant. Vous en étiez fier ?
 
-— Pas autant que les commandes mal chiffrées.
+— Ce n’était pas l’objectif. Le résultat opérationnel s’est redressé. Nous avons réduit les rebuts, les expéditions urgentes et une partie des samedis travaillés. Nous avons pu affecter de la capacité à des séries mieux maîtrisées.
 
-— Vous avez établi un classement de vos insomnies ?
+— Vous avez amélioré le résultat en faisant travailler les équipes moins souvent le samedi. Les salariés vous ont envoyé des fleurs ?
 
-— Non.
+— Certains étaient soulagés. D’autres comptaient sur les heures supplémentaires pour équilibrer leur budget.
 
-— Vous hésitez.
+— Cela figurait dans vos calculs ?
 
-— J'y ai pensé.
+— Pas suffisamment.
 
-## III. LE COÛT STANDARD D'UN ÊTRE HUMAIN
+— Pourtant, vous connaissiez exactement ce que ces samedis coûtaient à l’entreprise.
 
-— Vous avez reconnu votre rôle dans les objectifs et les primes. Mais quand vous avez corrigé le système, qui a supporté les conséquences ? Les salariés ont-ils été consultés avant votre décision ?
+— Oui.
 
-— J'ai informé les responsables d'atelier.
+— Mais pas ce qu’ils rapportaient aux gens qui venaient les faire.
 
-— Je vous parle des salariés.
+— Nous savions que c’était un complément de revenu. Je n’avais pas mesuré à quel point certains en dépendaient.
 
-— Ils l'ont appris ensuite.
+— Qui les a prévenus ?
+
+— Les responsables d’atelier ont été informés avant la décision. Les salariés concernés l’ont appris ensuite.
 
 — Pourquoi ?
 
-— Nous devions agir rapidement.
+— Nous devions corriger rapidement la situation.
 
-— Quinze jours pour analyser les commandes, mais pas une heure pour parler à ceux qui les fabriquaient ?
+— Vous avez organisé la vérification des commandes pendant quinze jours. Pourquoi l'information des salariés concernés n'a-t-elle pas été organisée aussi soigneusement ?
 
-— Ce n'est pas aussi simple.
+— Vous présentez une décision compliquée comme une faute de politesse.
 
-— Naturellement. Les hommes sont toujours beaucoup plus compliqués que les pièces qu'ils fabriquent. C'est un défaut de conception assez répandu dans l'espèce.
+— Non. Comme une décision dont vous avez soigneusement évalué les conséquences pour les machines et moins bien celles pour les personnes.
 
-— Certains salariés avaient besoin des heures supplémentaires. Réduire une partie des samedis signifiait réduire leurs revenus. Je ne l'avais pas suffisamment anticipé.
+— C’est vrai.
 
-— Vous aviez calculé le coût des samedis pour l'entreprise. Et ce que ces samedis rapportaient aux salariés ?
+La réponse déçoit presque Toksic. Il espérait une résistance supplémentaire.
 
-— Je savais que c'était un complément de rémunération. Je n'avais pas suffisamment évalué les conséquences de sa disparition.
+— Qu’avez-vous fait après ?
 
-— Vous avez donc découvert qu'une économie pour l'entreprise pouvait être une perte pour quelqu'un d'autre.
+— Nous avons rencontré les équipes, réorganisé certaines plages de travail, proposé des formations sur des périodes libérées. Et nous avons mis du temps à rétablir la confiance.
 
-— Je n'ai pas découvert cela. Je le savais.
+— Combien ?
 
-— Alors pourquoi ne l'avez-vous pas intégré à votre décision ?
+— Environ trois mois pour traiter les principales conséquences sociales de notre décision et de sa communication.
 
-— Parce que je pensais d'abord résoudre un problème industriel.
+— Quinze jours pour examiner les commandes ; trois mois pour réparer la manière de l’annoncer.
 
-— Vous dirigez une usine avec des gens dedans, Marc. Pas seulement des machines.
+— Ce ne sont pas deux processus comparables.
 
-— Vous prenez un plaisir excessif à simplifier les choses.
+— Je sais. Je souhaitais seulement vérifier que vous saviez aussi compter sans trouver la comparaison très pertinente.
 
-— Et vous, un plaisir excessif à les quantifier. Nous avons chacun nos petites perversions.
+— Les salariés avaient compris pourquoi nous ne pouvions pas continuer ainsi. Cela ne compensait pas automatiquement la perte de revenus.
 
-— Nous avons réorganisé les équipes et proposé des formations sur certaines plages libérées.
+— Je vous crois. Et je reconnais que vous avez évité une situation qui pouvait devenir encore plus difficile pour l'entreprise.
 
-— Une mesure utile, sans doute. Mais les formations ne remplissent pas immédiatement un réfrigérateur.
+— Merci.
 
-— Je sais.
-
-— Vous avez parlé directement aux salariés après l'annonce ?
+— Cela a dû vous coûter de prendre une décision impopulaire.
 
 — Oui.
 
-— Et qu'avez-vous découvert ?
+— Et pourtant, pendant les quinze jours où vous vérifiiez les nouveaux engagements, vous n'avez pas pris le même soin à entendre ceux dont les revenus allaient changer.
 
-— Qu'ils avaient compris les raisons économiques. Cela ne les rendait pas nécessairement heureux.
+— Je vois où vous voulez en venir.
 
-— Vous aviez pourtant espéré qu'une démonstration juste suffirait à les convaincre.
+— Je crois le deviner. Mais je préfère vous entendre le formuler.
 
-— Peut-être.
+— L’entreprise allait mieux. Pas nécessairement tous ceux qui y travaillaient.
 
-— Vous avez mesuré les dégâts ?
+— C’est une contradiction réelle. Il aurait fallu la prendre plus tôt en compte, sans pour autant continuer à accepter des commandes destructrices.
 
-— Pas de manière satisfaisante.
+— Vous refusez encore de choisir entre le bon calcul et le mauvais effet humain.
 
-— C'est la première fois depuis le début de cet entretien que vous prononcez cette phrase.
+— Parce qu’une décision industrielle peut être économiquement nécessaire et humainement mal préparée.
 
-— Il y a des choses qu'on ne peut pas mesurer correctement.
+— C’est moins confortable qu’un tableau de bord.
 
-— Voilà. Nous approchons du sujet.
+— Oui.
 
-— Vous êtes très content de vous.
+## V — LE PRIX D’AVOIR RAISON
 
-— C'est un défaut que je ne cherche pas à corriger.
+— Et les clients ?
 
-## IV. LES CHIFFRES ONT GAGNÉ. LES RELATIONS ONT PERDU.
+— Certains ont accepté des prix ou des délais plus réalistes. D’autres sont partis. Nous avons aussi dû gérer des contrats déjà engagés.
 
-— Les salariés ont compris votre calcul sans nécessairement accepter la perte de revenus. Et les clients : ont-ils accepté cette nouvelle discipline ?
+— C’est là que vous arrivez à cette somme de cent quatre-vingt mille euros ?
 
-— Certains sont partis. D'autres sont revenus avec des prix ou des délais plus raisonnables. Nous avons estimé à près de 180 000 euros les pénalités probables liées à des contrats déjà engagés et les coûts de sorties négociées.
+— Nous avons estimé à près de 180 000 euros l’ensemble des pénalités probables liées à certains contrats déjà engagés et des coûts de sorties négociées.
 
-— Vous avez provisionné 180 000 euros ?
+— Cent quatre-vingt mille euros de pertes ?
 
-— Non. Cette somme était une estimation globale. Nous n'avons provisionné que les obligations répondant aux critères comptables.
+— Non. Une estimation globale de risques et de coûts de sortie, pas une perte intégralement constatée.
 
-— Vous avez donc trouvé le moyen de rendre vos regrets conformes au Plan comptable général.
+— Une provision ?
 
-— Mes regrets ne sont pas des provisions.
+— Pas davantage. Nous n’avons provisionné que les obligations répondant aux critères comptables. Je n’ai pas de montant global de provision à vous donner.
 
-— C'est dommage. Vous auriez peut-être pu les amortir.
+— Il faut reconnaître une chose à votre profession : même une mauvaise nouvelle exige son propre dictionnaire.
 
-— Ce serait commode.
+— Les termes comptent. Une commande nouvelle que nous refusons n’est pas un contrat déjà engagé que nous devons modifier ou dénouer.
 
-— Et le chiffre d'affaires ?
+— Je vous l’accorde. Vous aviez donc moins de chiffre d’affaires, des coûts de sortie possibles, des commerciaux contrariés, des salariés mécontents. Et vous affirmez que le résultat s’est redressé.
 
-— Il a baissé d'environ 8 % sur le semestre suivant.
+— Oui.
 
-— Vous avez réussi à faire diminuer les ventes. Félicitations.
+— Alors vous aviez raison.
 
-— Nous avons réduit les rebuts, les expéditions urgentes et une partie du travail le samedi. Nous avons aussi utilisé les capacités libérées pour des séries mieux maîtrisées. Le résultat opérationnel s'est redressé.
+— Nous avons eu raison d’interrompre un fonctionnement que nous ne maîtrisions plus. Cela ne veut pas dire que chaque refus, chaque délai et chaque décision sociale était optimal.
 
-— Vous avez donc eu raison.
+— Vous pourriez accepter une victoire sans lui annexer quatre réserves.
 
-— J'ai eu raison de ne pas poursuivre le fonctionnement précédent.
+— Vous pourriez reconnaître qu’un résultat favorable ne prouve pas qu’on a tout bien fait.
 
-— Vous êtes incapable d'accepter un compliment sans y ajouter une note méthodologique.
+— Nous sommes donc deux hommes incapables de profiter d’une bonne nouvelle.
 
-— Un résultat favorable ne prouve pas que toutes les décisions étaient optimales.
+Marc baisse les yeux vers le verre d’eau posé devant lui.
 
-— Vous auriez fait un mari épouvantable au moment d'ouvrir les cadeaux de mariage.
+— Il y a un client qui est parti après quinze ans, dit-il. Celui-là, je ne le mets pas dans la colonne des réussites.
 
-— Vous avez une conception assez approximative de la preuve.
+— Vous aviez renégocié ses conditions ?
 
-— Et vous une conception très administrative de la joie. Combien de temps vous a-t-il fallu pour comprendre vos commandes ?
-
-— Quinze jours.
-
-— Et pour réparer les conséquences de votre manière de l'annoncer ?
-
-— Trois mois.
-
-— Soit six fois plus longtemps, approximativement.
-
-— Ce n'est pas une comparaison très pertinente.
-
-— Pourquoi ? Parce qu'elle concerne votre comportement plutôt que celui de vos équipes ?
-
-— Parce qu'on ne compare pas des processus industriels et des relations humaines comme deux temps de cycle.
-
-— Vous voyez, Marc ? Vous le savez. Mais seulement lorsque quelqu'un vous oblige à regarder.
-
-— Vous êtes devenu particulièrement désagréable.
-
-— C'est mon seul indicateur en progression constante.
-
-— Vous avez récupéré tous vos clients ?
-
-— Non.
-
-— Il y en a un que vous regrettez ?
-
-— Oui. Un client avec lequel nous travaillions depuis quinze ans.
-
-— Vous avez calculé ce que vous coûtait cette relation ?
-
-— Nous avons réexaminé les conditions économiques des commandes.
-
-— Ce n'est pas ma question.
-
-— Je sais très bien ce que vous me demandez.
-
-— Alors répondez.
-
-— Nous ne pouvions plus continuer dans les mêmes conditions.
+— Oui. Nous ne pouvions plus travailler aux anciens prix et aux anciens délais.
 
 — Vous lui avez expliqué ?
 
-— Oui.
+— Longuement.
 
 — Il a compris ?
 
-— Il a compris. Il est parti quand même.
+— Oui.
+
+— Il est revenu ?
+
+— Non.
+
+Un silence. Pour la première fois, Jean Toksic ne cherche pas à le combler.
+
+— Vous avez calculé ce que vous coûtait cette relation ? demande-t-il enfin.
+
+— J’ai calculé les commandes. Pas quinze ans de confiance.
+
+— Ce serait pourtant un magnifique indicateur.
+
+— Il serait faux.
+
+— Vous en avez déjà eu beaucoup.
+
+— Oui. Mais celui-là, je préfère ne pas l’inventer.
