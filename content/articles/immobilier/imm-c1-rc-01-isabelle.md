@@ -1,6 +1,6 @@
 ---
 genre_narratif: "grand-entretien"
-title: "Nos prévisions étaient excellentes. C'est la réalité qui a dérapé."
+title: "Le prêt était sécurisé. Les locataires ne l'étaient pas."
 summary: "Isabelle, directrice des engagements immobiliers, revient avec ironie sur un financement dont les prévisions locatives ont dérapé, sans qu'un défaut de paiement soit établi."
 format: "entretien"
 cycle: "immobilier"
@@ -11,10 +11,10 @@ statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-28T14:00:00+01:00"
 mise_en_avant: "standard"
-source_notice: "Fiction économique documentée : personnages, dialogues et situations inventés. Version de consultation préproduction, non autorisée à la publication définitive."
-methodology_specific: "Version V5 expérimentale livrée pour contrôle technique en préproduction le 6 novembre 2026. Visa définitif non délivré. D1/D2 à confirmer pour le texte exactement livré. Ne pas transférer vers la production."
-source_document_version: "V5 expérimentale"
-source_document_url: "https://docs.google.com/document/d/1q2tILrR9Skj4uqtA82qYqueer1zKLQmzicJaXv4eb9c/edit"
+source_notice: "Grand Entretien fictif · personnages et opération inventés."
+methodology_specific: "Manuscrit maître V4.1 ; D1/D2 avec réserves ; visa de production non délivré."
+source_document_version: "V4.1 maître"
+source_document_url: "https://docs.google.com/document/d/1IWUudlhhy8IWte1QIRbNTuBgzmTctkhIROGtu_xz-OY/edit"
 tag_1: "Financement immobilier"
 tag_2: "Risque locatif"
 tag_3: "Reconversion"
@@ -22,186 +22,152 @@ tag_4: "Crédit bancaire"
 tag_5: "Commercialisation"
 ---
 
-*Fiction économique documentée — personnages, dialogues et situations imaginaires.*
+*Grand Entretien fictif · Fiction économique documentée.*
 
-**Version de consultation en préproduction — non publiable sans visa éditorial et documentaire.**
-
-Jean Toksic reçoit Isabelle, 49 ans, directrice des engagements immobiliers d’une banque régionale dans les Hauts-de-France. Elle a recommandé le financement d’une reconversion immobilière dont les perspectives locatives se sont révélées beaucoup moins solides qu’espéré. Dix-huit mois plus tard, elle vient expliquer pourquoi elle ne regrette pas nécessairement sa décision. Et, accessoirement, pouvoir raconter qu’elle a survécu à cet entretien.
-
-Entretien fictif — reconstitution narrative. Isabelle, ses propos, l’opération immobilière et les chiffres présentés sont inventés.
-
-Jean Toksic : Pourquoi avez-vous accepté mon invitation ?
-Isabelle : Pour expliquer une décision bancaire que vous auriez probablement caricaturée sans moi.
-Jean Toksic : Vous auriez pu publier une tribune.
-Isabelle : Personne ne lit les tribunes des banquiers.
-Jean Toksic : Et mes entretiens ?
-Isabelle : Tout le monde les lit. Surtout quand ça se passe mal.
-Jean Toksic : Vous espérez donc que ça se passe mal ?
-Isabelle : Suffisamment pour que ce soit intéressant. Pas au point de devoir changer de banque.
-Jean Toksic : Vous voulez pouvoir raconter dans les dîners que vous m’avez tenu tête.
-Isabelle : Évidemment. Vous croyez que je suis venue pour parler de ratios de couverture de dette ?
-Jean Toksic : C’est pourtant ce que nous allons faire.
-Isabelle : Je savais que vous aviez un côté pervers. Je ne pensais pas que vous commenceriez aussi tôt.
-Jean Toksic : Présentez-nous votre métier.
-Isabelle : Je dirige les engagements immobiliers d’une banque régionale. Vingt-trois ans dans le crédit. Mon travail consiste à déterminer si nous pouvons prêter de l’argent à quelqu’un qui nous explique pourquoi il va pouvoir nous le rendre.
-Jean Toksic : Et vous le croyez ?
-Isabelle : Rarement sur parole.
-Jean Toksic : Vous êtes donc méfiante.
-Isabelle : Professionnellement.
-Jean Toksic : Pourtant, vous avez recommandé près de deux millions d’euros de crédit pour un immeuble dont une partie des locaux ne trouvait pas preneur.
-Isabelle : Vous venez de passer de « présentez-nous votre métier » à « expliquez votre faute » en moins de trente secondes.
-Jean Toksic : Vous préférez que je vous demande où vous avez fait vos études ?
-Isabelle : Non. Continuez. Je commence à comprendre votre réputation.
-
-UN IMMEUBLE, HUIT CENTS MÈTRES CARRÉS ET BEAUCOUP D’OPTIMISME
-
-Jean Toksic : Reprenons. Quel était ce projet ?
-Isabelle : Un immeuble mixte de 2 400 mètres carrés dans le Valenciennois. Des logements à réhabiliter, huit cents mètres carrés de locaux professionnels, et un budget total de 3,09 millions d’euros. L’investisseur demandait 2,2 millions de crédit.
-Jean Toksic : Vous financiez une reconversion économique.
-Isabelle : Nous financions une opération immobilière qui pouvait contribuer à la reconversion d’un bâtiment et à sa remise en usage.
-Jean Toksic : Quelle différence ?
-Isabelle : Une banque finance un projet. Elle ne signe pas un contrat avec l’avenir économique d’un territoire.
-Jean Toksic : C’est pourtant pratique, l’avenir. Il n’est jamais là pour contester les prévisions.
-Isabelle : Vous devriez essayer les comités de crédit. On y rencontre des gens très attachés à l’avenir, mais qui exigent qu’il soit correctement documenté.
-Jean Toksic : Vous aviez des locataires ?
-Isabelle : Des perspectives locatives.
-Jean Toksic : Ce n’est pas la même chose.
-Isabelle : Je vous félicite. Vous venez de découvrir le sujet de notre entretien.
-Jean Toksic : Un prospect envisageait presque toute la surface professionnelle.
-Isabelle : Initialement, oui.
-Jean Toksic : Puis il est passé à quatre cents mètres carrés.
-Isabelle : Environ.
-Jean Toksic : Et il ne voulait plus s’engager sur une date.
-Isabelle : Exact.
-Jean Toksic : Vous aviez donc un candidat qui voulait deux fois moins de surface, à une date indéterminée, sans bail signé.
-Isabelle : Présenté comme ça…
-Jean Toksic : Vous préférez « manifestation d’intérêt dynamique dans un environnement évolutif » ?
-Isabelle : Vous avez déjà travaillé dans une banque ?
-Jean Toksic : Non.
-Isabelle : C’est étonnant. Vous avez parfaitement le vocabulaire.
-Jean Toksic : Pourquoi ne pas avoir arrêté le dossier ?
-Isabelle : Parce que les logements présentaient des perspectives différentes, que d’autres contacts existaient et que la réhabilitation pouvait rendre les locaux plus attractifs. Nous avions une étude locative, un budget, plusieurs scénarios. Il ne s’agissait pas de financer une idée griffonnée sur une serviette.
-Jean Toksic : Vous avez tout de même accordé beaucoup de poids à un locataire qui n’en était pas un.
-Isabelle : Oui. C’est ce que j’ai fini par reconnaître.
-Jean Toksic : Vous avez mis combien de temps ?
-Isabelle : Moins que vous pour arriver à cette question.
-Jean Toksic : Vous aimez vraiment ça.
-Isabelle : J’ai attendu trois semaines pour obtenir ce rendez-vous. Ne me décevez pas.
-
-DEUX CENT CINQUANTE MILLE EUROS DE PRUDENCE
-
-Jean Toksic : Vous avez recommandé de réduire le crédit de 2,2 millions à 1,95 million d’euros.
-Isabelle : Oui. Le scénario dégradé faisait apparaître une couverture de la dette d’environ 1,12 avec le financement initialement demandé. La marge de sécurité était insuffisante à nos yeux.
-Jean Toksic : Vous avez donc demandé 250 000 euros supplémentaires à l’investisseur.
-Isabelle : En fonds propres, oui. Le budget total ne changeait pas.
-Jean Toksic : Vous avez trouvé 250 000 euros de prudence dans la poche du client.
-Isabelle : C’est une formulation spectaculaire d’une réduction de l’endettement.
-Jean Toksic : Je vais la garder.
-Isabelle : Je m’en doutais.
-Jean Toksic : Il avait déjà 890 000 euros à engager. Vous lui avez demandé de passer à 1,14 million.
-Isabelle : Oui.
-Jean Toksic : Et pour réunir cette somme, il a dû reporter une autre acquisition.
-Isabelle : Provisoirement. C’était son choix, dans les conditions de financement que nous pouvions accepter.
-Jean Toksic : Vous avez donc sauvé un projet en en sacrifiant un autre.
-Isabelle : Nous avons proposé une structure financière. L’investisseur a choisi de poursuivre l’opération.
-Jean Toksic : Votre métier consiste à transférer le risque vers celui qui souhaite emprunter.
-Isabelle : Son métier consiste à investir. Le nôtre à prêter. Ce sont deux activités qui comportent des risques différents.
-Jean Toksic : Vous ne trouvez pas que vous avez un métier formidable ? Quand les prévisions se dégradent, vous demandez au client d’apporter davantage d’argent.
-Isabelle : Et quand nous ne le faisons pas, vous nous reprochez de prêter imprudemment.
-Jean Toksic : Vous pourriez refuser.
-Isabelle : Nous pourrions. Et vous pourriez ensuite consacrer votre prochain entretien aux banques qui refusent de financer la reconversion des territoires.
-Jean Toksic : Vous avez préparé cette réponse.
-Isabelle : Depuis le moment où votre assistante m’a envoyé la confirmation.
-Jean Toksic : Vous avez un dossier sur moi ?
-Isabelle : Trois pages. Avec un scénario dégradé.
-Jean Toksic : Et vous avez décidé de venir quand même ?
-Isabelle : Le comité a donné un accord conditionnel.
-
-LA BANQUE A SÉCURISÉ LE CRÉDIT. LE MARCHÉ N’A PAS REÇU LA NOTE.
-
-Jean Toksic : Dix-huit mois plus tard, les logements se louent, mais une partie des surfaces professionnelles reste vide.
-Isabelle : Oui. La commercialisation a été plus lente qu’anticipé.
-Jean Toksic : Le revenu net annualisé atteint environ 165 000 euros, contre 260 000 envisagés à stabilisation.
-Isabelle : Exact.
-Jean Toksic : Et votre scénario pessimiste prévoyait 195 000 euros.
-Isabelle : Oui.
-Jean Toksic : Vous avez été trop optimiste même dans le pessimisme.
-Isabelle : Celle-là, je la connaissais. Elle figurait dans votre message de préparation.
-Jean Toksic : Je n’envoie pas mes questions à l’avance.
-Isabelle : Non. Mais vous aviez écrit : « Nous reviendrons sur la qualité de votre scénario dégradé. » J’ai fait le calcul. Je ne suis pas venue complètement désarmée.
-Jean Toksic : Vous auriez dû faire ces calculs avant de recommander le prêt.
-Isabelle : Nous les avons faits. Avec des hypothèses qui se sont révélées insuffisantes.
-Jean Toksic : C’est une façon très professionnelle de dire que vous vous êtes trompée.
-Isabelle : C’est surtout une façon plus exacte. Nous avons sous-estimé la durée possible de la vacance locative. Et peut-être le niveau de loyer que le marché pouvait réellement supporter.
-Jean Toksic : Votre banque a donc découvert qu’un local vide pouvait rester vide.
-Isabelle : Non. Elle a découvert que, dans ce dossier, la durée de vacance pouvait dépasser celle que nous avions suffisamment prise en compte.
-Jean Toksic : Vous êtes une femme difficile à caricaturer.
-Isabelle : Vous êtes un homme qui ne manque pas de persévérance.
-Jean Toksic : Avec ce revenu annualisé, la couverture théorique de la dette était tombée autour de 1,07.
-Isabelle : Sur la base de l’annuité après travaux, oui. Je précise que ce ratio n’est pas le relevé de trésorerie des dix-huit mois et qu’aucun défaut de paiement n’était établi à cette date.
-Jean Toksic : Vous êtes venue avec vos précautions juridiques.
-Isabelle : Je suis venue avec les distinctions nécessaires. Vous pouvez vous moquer d’un dossier sans inventer ce qui lui est arrivé.
-Jean Toksic : Vous marquez un point.
-Isabelle : Vous voyez ? Ça commence à devenir agréable.
-Jean Toksic : Vous avez pourtant dû renforcer le suivi de l’investisseur.
-Isabelle : Oui. Des informations plus fréquentes sur les loyers, les dépenses, la trésorerie et les négociations commerciales.
-Jean Toksic : Vous avez demandé davantage de tableaux.
-Isabelle : Davantage d’informations utiles.
-Jean Toksic : Les tableaux n’ont toujours pas signé de bail.
-Isabelle : Non. Mais ils permettent de savoir quand l’absence de bail devient un problème de trésorerie.
-Jean Toksic : C’est une consolation ?
-Isabelle : C’est une responsabilité bancaire. Une banque n’est pas censée créer artificiellement la demande locative.
-Jean Toksic : Pourtant, elle peut financer un projet qui repose sur cette demande.
-Isabelle : Voilà. Vous venez enfin de poser une vraie question.
-Jean Toksic : Je commençais à craindre que vous vous ennuyiez.
-Isabelle : Un peu. Mais vous vous reprenez.
-
-LE BÂTIMENT AVAIT UNE DEUXIÈME VIE. IL LUI MANQUAIT UN EMPLOI DU TEMPS.
-
-Jean Toksic : Pourquoi continuer à croire à une reconversion lorsque le marché tarde à répondre ?
-Isabelle : Parce qu’un délai de commercialisation ne suffit pas à prouver qu’un projet est inutile. Il faut distinguer plusieurs hypothèses : une demande insuffisante, des surfaces inadaptées, des loyers trop élevés ou un calendrier défavorable.
-Jean Toksic : Vous pouvez aussi reconnaître que le territoire n’avait peut-être pas besoin de huit cents mètres carrés de locaux professionnels supplémentaires.
-Isabelle : C’est possible. Mais ce n’est pas établi par le seul fait qu’ils n’étaient pas tous occupés à dix-huit mois.
-Jean Toksic : Combien de temps faut-il attendre avant de reconnaître qu’un marché n’existe pas ?
-Isabelle : C’est précisément ce que nous devons réévaluer.
-Jean Toksic : Un an ? Trois ans ? Jusqu’à ce que l’immeuble soit suffisamment ancien pour bénéficier d’un nouveau programme de réhabilitation ?
-Isabelle : Vous venez d’inventer un modèle économique très inquiétant.
-Jean Toksic : On pourrait appeler ça l’économie circulaire immobilière. On rénove, on attend, on rénove.
-Isabelle : Il manquerait encore les locataires.
-Jean Toksic : Vous êtes obsédée.
-Isabelle : Depuis le début de cet entretien, vous me reprochez de ne pas l’avoir été assez.
-Jean Toksic : Est-ce que vous regrettez votre recommandation ?
-Isabelle : Je regrette d’avoir accordé trop de poids à des expériences antérieures. Pour la décision de financement, c’est plus compliqué. La réduction de dette a limité la charge financière. Elle n’a pas créé de demande locative.
-Jean Toksic : En somme, vous avez protégé la banque d’un problème que vous n’avez pas résolu.
-Isabelle : Oui. Et c’est une distinction importante. Une décision de crédit ne peut pas garantir le succès économique d’une opération.
-Jean Toksic : Mais elle peut contribuer à la rendre possible.
-Isabelle : Absolument.
-Jean Toksic : Vous acceptez donc une part de responsabilité dans ce qui s’est passé ?
-Isabelle : Dans l’appréciation du risque et la recommandation bancaire, oui. Pas dans chacune des décisions commerciales de l’investisseur, ni dans la totalité de la demande économique du Valenciennois.
-Jean Toksic : Vous êtes très douée pour délimiter votre responsabilité.
-Isabelle : C’est assez utile dans mon métier.
-Jean Toksic : Et dans les dîners ?
-Isabelle : Également. Surtout quand on me demande de partager l’addition.
-
-LE TROPHÉE
-
-Jean Toksic : Vous êtes satisfaite de cet entretien ?
-Isabelle : Plutôt.
-Jean Toksic : Vous avez reconnu avoir surestimé certaines perspectives commerciales, sous-estimé la durée de vacance et recommandé un financement dont la marge de couverture s’est révélée étroite.
-Isabelle : Oui. Mais je n’ai jamais prétendu que les prévisions étaient des certitudes, ni que nous avions constaté un défaut de paiement.
-Jean Toksic : Vous pensez m’avoir tenu tête ?
-Isabelle : Je pense que vous avez dû travailler un peu plus que prévu.
-Jean Toksic : C’est donc cela que vous allez raconter dans les salons ?
-Isabelle : Non. Dans les salons, je raconterai que vous avez essayé de me faire avouer une faillite bancaire et que je vous ai expliqué la différence entre un risque de crédit et une difficulté de commercialisation.
-Jean Toksic : Ce sera un dîner passionnant.
-Isabelle : Beaucoup plus que si je racontais les ratios.
-Jean Toksic : Une dernière question. Si vous deviez recommencer, financeriez-vous le même immeuble ?
-Isabelle : Avec les mêmes informations qu’aujourd’hui, je ne présenterais pas le dossier de la même manière. Je demanderais une analyse plus approfondie de la demande professionnelle, de sa durée de commercialisation et de la trésorerie nécessaire pour supporter une vacance prolongée.
-Jean Toksic : Vous ne répondez pas.
-Isabelle : Parce que vous me demandez de décider aujourd’hui avec un dossier qui devrait être entièrement réexaminé.
-Jean Toksic : Vous ne pouvez vraiment pas dire oui ou non ?
-Isabelle : Je pourrais. Mais vous m’avez invitée pour parler de la qualité des décisions, pas pour me faire prendre une mauvaise décision à la dernière minute.
-Jean Toksic : Vous avez le dernier mot.
-Isabelle : C’est inclus dans l’entretien ?
-Jean Toksic : Exceptionnellement.
-Isabelle : Alors je vais devoir revenir. Personne ne me croira.
+Pour commencer, pouvez-vous vous présenter ?
+Isabelle. Quarante-neuf ans. Je dirige les engagements immobiliers d'une banque régionale dans les Hauts-de-France. Je travaille dans le crédit depuis vingt-trois ans. C'est assez long pour avoir appris qu'un dossier peut être très bien présenté et assez mal compris.
+Vous dites ça pour celui dont nous allons parler ?
+Vous n'avez pas encore posé la question et vous cherchez déjà l'aveu ?
+Je prends de l'avance. C'est une qualité dans votre métier, non ?
+Dans mon métier, ça dépend de ce sur quoi on prend de l'avance.
+Vous avez recommandé près de deux millions d'euros de crédit pour un immeuble dont les locaux professionnels ne trouvaient pas preneur. Vous financez des bâtiments ou des paris ?
+Les deux, parfois. Sauf qu'un pari peut être plus ou moins réfléchi. Nous, notre travail, c'est de savoir ce qu'on risque — même si on n'y arrive pas toujours.
+Et quand le calcul est mauvais ?
+On espère au moins avoir été assez prudents pour ne pas payer toute l'erreur.
+Voilà qui rassurera les déposants.
+Vous préférez que je vous promette de ne jamais me tromper ? Là, vous auriez une raison de vous inquiéter.
+Revenons à cet immeuble.
+Un ensemble de 2 400 mètres carrés dans le Valenciennois. Des logements, huit cents mètres carrés de locaux professionnels, une réhabilitation. Coût prévu : 3,09 millions d'euros. L'investisseur demandait 2,2 millions à la banque.
+Ce n'était pas une opération spectaculaire. Un bâtiment ancien, dans un secteur qui avait perdu une partie de ses activités, avec des logements à remettre en état et des surfaces professionnelles auxquelles il fallait retrouver une utilité.
+Le genre de projet que les élus aiment montrer une fois terminé.
+Oui. Avant, c'est moins photogénique. Il faut financer les travaux, trouver les entreprises et convaincre tout le monde que le bâtiment aura une deuxième vie.
+Vous aviez déjà financé des reconversions semblables ?
+Plusieurs. Pas nécessairement dans la même ville, mais dans des bassins où l'on retrouvait des bâtiments anciens, des entreprises qui cherchaient des surfaces plus petites et des propriétaires qui devaient réhabiliter avant de louer.
+J'avais vu des programmes commencer avec peu de baux signés et se remplir après les travaux. Les entreprises attendaient de voir les locaux, les accès, les aménagements possibles.
+Et vous avez considéré que l'histoire allait se répéter.
+Je n'ai pas considéré que c'était certain. J'ai considéré que c'était possible, et que nous avions des raisons de le penser.
+Lesquelles ?
+Une étude locative, plusieurs contacts commerciaux, des échanges sur les surfaces et les loyers. Et surtout un prospect qui envisageait de prendre une grande partie des huit cents mètres carrés professionnels.
+Combien ?
+Presque la totalité au départ.
+Un prospect pour remplir pratiquement tout le programme professionnel. C'était rassurant.
+C'était intéressant. Rassurant aurait été un bail signé.
+Pourtant, ce prospect a changé d'avis.
+Oui.
+Comment l'avez-vous appris ?
+Lors d'un point de préparation du comité. Nous avions demandé une actualisation des discussions commerciales. Le responsable du dossier est arrivé avec un tableau révisé.
+Je me souviens d'avoir cherché la ligne du principal prospect. Elle était toujours là, mais la surface avait changé.
+De combien ?
+Il ne parlait plus de près de huit cents mètres carrés. Il en envisageait environ quatre cents.
+La moitié.
+Oui. Et il ne voulait plus s'engager sur une date de prise à bail.
+Vous avez demandé pourquoi ?
+Bien sûr. Il réorganisait son activité, hésitait sur ses besoins et voulait conserver la possibilité d'ajuster sa surface.
+Ce n'était pas absurde de son point de vue.
+Du vôtre, ça divisait pourtant par deux la principale perspective locative.
+Exactement. J'ai demandé si nous avions une proposition écrite, un calendrier, quelque chose qui permette de distinguer une négociation réelle d'une intention encore très ouverte.
+La réponse était moins solide que je ne l'espérais.
+Qu'avez-vous dit ?
+Que nous devions refaire le scénario dégradé avant le comité.
+Pas que le dossier devait être arrêté ?
+Non. Pourquoi l'aurais-je dit à ce moment-là ?
+Parce que votre principal locataire potentiel venait de reculer.
+Et il restait quatre cents mètres carrés envisagés, d'autres contacts et une partie résidentielle dont les perspectives étaient différentes. Je n'allais pas transformer une mauvaise nouvelle en verdict définitif.
+Vous reconnaissez quand même avoir surestimé ces contacts.
+Oui. Je crois que j'avais reconnu trop vite une situation que j'avais déjà rencontrée. Sur d'autres réhabilitations, les entreprises avaient attendu la fin des travaux avant de signer.
+Avec le recul, je ne suis même plus certaine que ces opérations étaient aussi comparables que je le pensais. Dans certaines, les entreprises attendaient surtout la fin des travaux. Ici, nous ne savions peut-être pas encore si elles voulaient vraiment venir.
+Vous aviez confondu expérience et preuve.
+Non. Je savais que ça avait marché ailleurs. J'ai peut-être été un peu trop pressée de reconnaître le même scénario.
+Elle vous a coûté combien, cette nuance ?
+Attendez. Vous allez un peu vite. Nous avions une étude locative, un budget, des scénarios. Je ne suis pas entrée en comité avec trois cartes de visite et une intuition. Mais j'ai accepté que des intentions commerciales pèsent trop lourd dans notre appréciation.
+Et les nouveaux calculs ?
+Avec 2,2 millions de crédit, notre scénario dégradé ne donnait plus assez de marge. Sur 195 000 euros de revenu net annuel hypothétique, la couverture de la dette tombait autour de 1,12.
+Cela ne signifiait pas que l'immeuble serait incapable de rembourser. Cela signifiait que, dans un scénario moins favorable, nous n'avions plus beaucoup de place pour absorber un nouvel écart.
+Vous pouviez refuser le prêt.
+Oui.
+Vous pouviez aussi reporter la décision jusqu'à la signature des baux.
+Oui. Et nous risquions alors de reporter les travaux qui auraient précisément permis aux entreprises de se décider.
+Vous avez choisi une troisième solution.
+J'ai recommandé de ramener le prêt à 1,95 million d'euros et de demander 250 000 euros de fonds propres supplémentaires, avec des conditions sur l'expertise, le budget des travaux, la trésorerie et le suivi commercial.
+Le comité vous a suivie immédiatement ?
+Non. Nous avons discuté.
+De quoi ?
+Du sens de cette réduction. Certains estimaient qu'en l'absence d'engagement locatif ferme, nous devions attendre. D'autres considéraient que le projet pouvait avancer, à condition de limiter notre exposition.
+Il y avait aussi une question assez désagréable : si nous pensions que le risque justifiait de retirer 250 000 euros de crédit, pourquoi pensions-nous encore que le dossier méritait d'être financé ?
+C'est une bonne question.
+Elle l'était au comité aussi.
+Et votre réponse ?
+Parce que nous ne financions pas uniquement les huit cents mètres carrés professionnels. Il y avait des logements, un actif existant, un programme de réhabilitation et plusieurs scénarios possibles.
+La question n'était pas de savoir si tout se passerait comme prévu. C'était de déterminer quelle structure financière permettait de supporter une commercialisation plus lente.
+En demandant à l'investisseur de mettre davantage d'argent.
+Oui. Et ce n'était pas une formalité.
+Vous avez donc trouvé 250 000 euros de prudence dans la poche du client.
+Formulé comme ça, c'est presque élégant.
+Je vous en prie.
+Sauf que le client pouvait refuser. Et qu'une banque n'est pas censée mettre autant d'argent que possible dans un dossier pour prouver qu'elle y croit. L'investisseur doit aussi avoir quelque chose à perdre.
+Il avait déjà 890 000 euros à engager.
+Oui. Nous lui demandions de passer à 1,14 million.
+Il les avait ?
+Il pouvait les mobiliser, mais pas sans conséquence. Il étudiait une autre petite acquisition. Il l'a mise de côté pour réunir l'apport complémentaire.
+Vous lui avez demandé de sacrifier un projet pour en sauver un autre.
+De choisir lequel il voulait poursuivre dans les conditions que nous pouvions accepter.
+Je ne vais pas prétendre que c'était agréable. Dans une note de crédit, on écrit « apport complémentaire : 250 000 euros ». Pour l'investisseur, c'était un autre dossier qu'il fallait refermer, au moins provisoirement.
+Et le comité ?
+Il a retenu un accord conditionnel. Ce n'était pas mon chéquier personnel, ni ma décision seule.
+Vous aviez donc sécurisé votre banque en faisant porter davantage de risque à l'investisseur.
+Nous avions réduit l'endettement du projet. Mais l'investisseur conservait le risque économique de son opération, oui.
+Sans créer un seul locataire supplémentaire.
+Non. Vous pouvez garder cette phrase, elle est juste. Simplement, vous en tirez une conclusion trop facile.
+Si nous avions prêté les 2,2 millions, le marché n'aurait pas créé plus de locataires non plus. Nous aurions eu davantage de dette à rembourser avec les mêmes loyers incertains.
+Pourquoi ne pas avoir exigé que les locaux professionnels soient loués avant de débloquer le crédit ?
+Parce qu'une partie des travaux devait précisément rendre ces locaux commercialisables. Nous avons cherché à encadrer les décaissements et à vérifier que le programme avançait, sans imposer une condition qui aurait pu rendre le financement inutilisable.
+Vous avez demandé une expertise indépendante. Elle pouvait vous dire ce que valait vraiment l'immeuble ?
+Elle pouvait nous donner une appréciation indépendante, pas une vérité éternelle.
+La valeur d'un immeuble loué et celle d'un immeuble qui cherche ses locataires ne sont pas les mêmes. C'est précisément pour ça que je ne vous donnerai pas un chiffre de valeur comme s'il réglait la discussion.
+Vous aviez tout de même une garantie immobilière.
+Une garantie ne remplace pas des revenus. On peut avoir un actif qui conserve une valeur et un emprunteur qui rencontre des difficultés de trésorerie. Ce sont deux questions différentes.
+Dix-huit mois plus tard, où en êtes-vous ?
+Les logements se sont remplis plus vite que les locaux professionnels. Une partie de ces derniers est restée vide.
+L'investisseur a revu certains aménagements et différé des dépenses. Chez nous, le dossier est passé en suivi renforcé.
+Qu'est-ce que cela signifie concrètement ?
+Que nous demandions des informations plus fréquentes sur les loyers encaissés, les dépenses, les disponibilités de trésorerie et les négociations commerciales.
+Avant, nous suivions un calendrier de travaux et de commercialisation. Ensuite, nous avons commencé à suivre les écarts entre ce calendrier et la réalité.
+Vous appeliez l'investisseur pour lui demander pourquoi ses locaux étaient toujours vides ?
+Pas exactement comme ça. Mais il nous arrivait de reprendre les mêmes questions plusieurs fois : où en est ce prospect, quel aménagement demande-t-il, quel loyer accepterait-il, combien coûterait l'adaptation ?
+Et je voyais bien que certaines réponses devenaient plus difficiles à donner.
+L'investisseur devait apprécier.
+Il appréciait surtout de ne pas avoir à nous annoncer un problème supplémentaire.
+Vous lui avez demandé de remettre de l'argent ?
+Pas à ce stade. Nous avons renforcé le suivi et examiné sa capacité à tenir les échéances. Il a aussi différé certaines dépenses non indispensables.
+Le revenu net annualisé ?
+Environ 165 000 euros à dix-huit mois, contre 260 000 envisagés à stabilisation.
+Et votre scénario dégradé ?
+195 000 euros.
+Vous étiez donc trente mille euros en dessous de votre scénario pessimiste.
+Oui.
+Avec quelle conséquence pour le crédit ?
+Avec l'annuité théorique après travaux, la couverture était autour de 1,07. La marge devenait très étroite.
+Je précise que nous parlons d'un revenu annualisé à dix-huit mois, pas du relevé de trésorerie de toute la période. Et aucun défaut de paiement n'était établi à cette date.
+Vous tenez à ce dernier point.
+Oui. Parce que je sais quelle phrase vous pourriez écrire autrement : « La banque a prêté à un immeuble qui ne rembourse pas. » Ce serait faux. Et la situation réelle était déjà suffisamment préoccupante.
+Mais votre décision de réduire le prêt n'avait pas empêché cette situation.
+Elle avait limité le poids de la dette. Elle n'avait pas raccourci la vacance locative.
+Vous avez été trop optimiste même dans le pessimisme.
+C'est une façon agaçante de le dire.
+Mais ?
+Mais oui. Nous avons sous-estimé le temps nécessaire pour commercialiser les locaux professionnels. Et peut-être le niveau de loyer que le marché pouvait accepter. Je ne sais pas encore lequel des deux a pesé le plus.
+Vous n'aviez pas testé une vacance prolongée ?
+Nous avions testé une perte de revenu. Pas assez sa durée.
+On peut faire tenir une mauvaise année dans une cellule de tableur. Trois années, c'est une autre conversation.
+Est-ce que vous regrettez votre recommandation ?
+Je regrette d'avoir accordé autant de poids à l'expérience de dossiers précédents. Pour le crédit lui-même, c'est moins simple.
+Vous cherchez une porte de sortie.
+Et vous, une coupable. On n'est pas obligés de se faciliter le travail.
+Alors faisons mieux. L'investisseur a immobilisé davantage de capital. La banque surveille un dossier plus fragile qu'annoncé. Les locaux d'activité restent partiellement vides. Qui a gagné ?
+Les habitants des logements remis en état, peut-être. Mais vous avez raison de demander ce qui se passe de l'autre côté du bâtiment.
+On a rénové des mètres carrés. A-t-on recréé une activité ?
+Pas autant qu'espéré.
+Et si la demande n'existait tout simplement pas ? Si vous aviez financé le prolongement d'un immeuble dont le territoire n'avait plus vraiment l'usage ?
+C'est la question qui me dérange le plus. Parce qu'on peut répondre « les entreprises viendront » pendant longtemps. Au début, c'est une hypothèse. Après un certain temps, cela peut devenir une manière de ne pas regarder ce qui se passe.
+Vous savez à partir de quand ?
+Non. Et je préférerais le savoir avant que vous me le demandiez.
