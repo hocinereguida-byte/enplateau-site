@@ -3,7 +3,7 @@ title: "Il avait tout prévu. Sauf une aussi bonne récolte."
 summary: "Gérard obtient une récolte record de maïs grain. Encore faut-il pouvoir stocker, vendre et financer ce succès inattendu : une comédie familiale sur les écarts entre rendement et revenu."
 cycle: "agriculture"
 conversation: "C1"
-contexte: "engagement-productif-longue-duree"
+contexte: "cereales-recolte-excedentaire"
 lecture_principale: "finance-investissement"
 format: "recit"
 genre_narratif: "recit"
@@ -20,6 +20,9 @@ tag_1: "Céréales"
 tag_2: "Rendement"
 tag_3: "Stockage"
 tag_4: "Prix de vente"
+perspective_principale: "operations-organisation"
+unite_programmation: "AGR-C1-B"
+famille_decisionnelle: "debouches-variables"
 ---
 
 *Fiction économique — récit-comédie. Les personnages, chiffres et événements sont inventés.*
