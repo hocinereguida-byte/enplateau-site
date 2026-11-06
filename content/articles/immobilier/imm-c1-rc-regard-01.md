@@ -1,5 +1,5 @@
 ---
-title: "On savait comment le transformer. On cherchait encore pourquoi."
+title: "Le site avait encore un avenir. Le projet, beaucoup moins."
 summary: "À travers Volx, Grasse, Fives Cail et Vierzon, une analyse des reconversions immobilières et des arbitrages économiques, techniques, juridiques et territoriaux qui conditionnent leur poursuite."
 format: "regard-croise"
 cycle: "immobilier"
