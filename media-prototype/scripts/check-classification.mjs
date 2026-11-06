@@ -51,6 +51,7 @@ for (const r of records) {
   if (r.perspective) { tests.perspective_principale=r.perspective; tests.genre_narratif=r.genre; }
   if (r.family) tests.famille_decisionnelle=r.family;
   for (const [key,value] of Object.entries(tests)) if (d[key] !== value) errors.push(r.code+' : '+key+' attendu '+JSON.stringify(value)+', trouvé '+JSON.stringify(d[key]));
+  if (r.code === 'IMM-C1-RC-04' && d.title !== "Il avait empêché la signature. Il n'avait pas su arrêter la négociation.") errors.push('Titre de Karim V2 différent du titre validé');
   if (d.published !== true) errors.push(r.code+' : consultation préproduction désactivée');
   if (!d.source_document_url?.includes('/document/d/'+r.driveId+'/')) errors.push(r.code+' : URL Drive ne correspond pas à la version verrouillée');
   if (usedCodes.has(r.code)) errors.push('Identifiant dupliqué : '+r.code); else usedCodes.add(r.code);
