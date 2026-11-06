@@ -5,7 +5,6 @@ format: "regard-croise"
 cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
-lecture_principale: "strategie-gouvernance"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-27T15:00:00+01:00"
