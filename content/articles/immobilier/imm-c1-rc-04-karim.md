@@ -1,6 +1,6 @@
 ---
 genre_narratif: "recit"
-title: "Nous avons négocié pendant des semaines pour éviter de signer."
+title: "Il avait empêché la signature. Il n'avait pas su arrêter la négociation."
 summary: "Karim, directeur juridique, découvre à travers trois réunions qu’une négociation immobilière peut rester juridiquement possible alors que sa poursuite devient économiquement injustifiable."
 format: "recit"
 cycle: "immobilier"
