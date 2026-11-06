@@ -310,6 +310,9 @@ export const conversations: Record<string, Record<string, string>> = {
 export const contexts: Record<string, Record<string, string>> = {
   agriculture: {
     'engagement-productif-longue-duree': 'Engagement productif de longue durée',
+    'arboriculture-sous-revue-strategique': 'Arboriculture — exploitation rentable sous revue stratégique',
+    'maraichage-debouches-concurrents': 'Maraîchage — débouchés concurrents',
+    'cereales-recolte-excedentaire': 'Céréales — récolte exceptionnelle',
   },
   industrie: {
     CST: 'Croissance sous tension',
@@ -342,7 +345,7 @@ export const narrativeGenres: Record<string, string> = {
   chronique: 'Chronique',
 };
 export const perspectiveOf = (data: any): string =>
-  data.perspective_principale || data.lecture_principale || '';
+  data.format === 'regard-croise' ? '' : (data.perspective_principale || data.lecture_principale || '');
 export const genreOf = (data: any): string | null =>
   data.format === 'regard-croise' ? null : (data.genre_narratif || (data.format === 'entretien' ? 'grand-entretien' : null));
 
