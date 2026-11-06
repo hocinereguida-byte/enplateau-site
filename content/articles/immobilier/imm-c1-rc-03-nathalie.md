@@ -21,6 +21,9 @@ tag_2: "Bureaux"
 tag_3: "Demande immobilière"
 tag_4: "Programmation"
 tag_5: "Coût de l’attente"
+code_editorial: "IMM-C1-RC-03"
+unite_programmation: "IMM-C1-RC"
+perspective_principale: "strategie-gouvernance"
 ---
 
 *Entretien fictif · Fiction économique documentée.*
