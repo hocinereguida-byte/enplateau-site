@@ -20,7 +20,7 @@ content:
     - title
     - conversation
     - contexte
-    - lecture_principale
+    - perspective_principale
     - statut_editorial
     - publication_date
     primary: title
@@ -57,6 +57,10 @@ content:
       values:
       - name: entretien
         label: Grand entretien
+      - name: recit
+        label: Récit / comédie
+      - name: chronique
+        label: Chronique satirique
       - name: regard-croise
         label: Regard croisé
       - name: analyse-sectorielle
@@ -77,7 +81,7 @@ content:
     options:
       values:
       - name: C1
-        label: C1 — Croissance industrielle
+        label: C1 — Quand l’usine grandit plus vite que ses moyens
       - name: C2
         label: C2 — Dépendances industrielles
       - name: C3
@@ -123,6 +127,53 @@ content:
         label: Énergie & ressources
       - name: territoires-politiques-publiques
         label: Territoires & politiques publiques
+  - &v6perspective
+    name: perspective_principale
+    label: Perspective principale V6 — obligatoire pour une Scène
+    type: select
+    description: Une seule Scène par perspective dans une même unité de programmation. Regard croisé : laisser vide.
+    options:
+      values:
+      - name: strategie-gouvernance
+        label: Stratégie & gouvernance
+      - name: finance-investissement
+        label: Finance & investissement
+      - name: droit-regulation
+        label: Droit & régulation
+      - name: operations-organisation
+        label: Opérations & organisation
+      - name: technologie-innovation
+        label: Technologie & innovation
+      - name: ressources-humaines-competences
+        label: Ressources humaines & compétences
+      - name: energie-ressources
+        label: Énergie & ressources
+      - name: territoires-politiques-publiques
+        label: Territoires & politiques publiques
+  - &v6code
+    name: code_editorial
+    label: Identifiant éditorial stable (ne pas changer)
+    type: string
+  - &v6unite
+    name: unite_programmation
+    label: Unité de programmation — code stable
+    type: string
+  - &v6famille
+    name: famille_decisionnelle
+    label: Famille décisionnelle (Agriculture)
+    type: string
+  - &v6version
+    name: source_document_version
+    label: Version exacte affichée en préproduction
+    type: string
+  - &v6url
+    name: source_document_url
+    label: Lien du manuscrit Drive de cette version
+    type: string
+  - &v6reserve
+    name: classification_reserve
+    label: Réserves de classement (internes)
+    type: text
   - name: tag_1
     label: Tag 1 — libre
     type: string
@@ -155,6 +206,8 @@ content:
         label: Vérification / anonymisation
       - name: pret
         label: Prêt pour publication
+      - name: prepublication
+        label: Consultation en préproduction uniquement
       - name: publie
         label: Publié
     default: brouillon
@@ -338,7 +391,7 @@ content:
     - title
     - conversation
     - contexte
-    - lecture_principale
+    - perspective_principale
     - statut_editorial
     - publication_date
     primary: title
@@ -370,7 +423,7 @@ content:
     options:
       values:
       - name: C1
-        label: C1 — À quel moment une opération ne tient plus ?
+        label: C1 — Une seconde vie pour les bâtiments. Mais à quel prix ?
       - name: C2
         label: C2 — Jusqu’où peut-on produire ?
       - name: C3
@@ -395,6 +448,13 @@ content:
       - name: territoire-reconversion
         label: Territoire en reconversion
   - *id005
+  - *v6perspective
+  - *v6code
+  - *v6unite
+  - *v6famille
+  - *v6version
+  - *v6url
+  - *v6reserve
   - name: tag_1
     label: Tag 1 — libre
     type: string
@@ -462,6 +522,81 @@ content:
   - *id013
   - *id014
   - *id015
+- name: articles_agriculture
+  label: Articles — Agriculture (préproduction)
+  type: collection
+  path: content/articles/agriculture
+  format: yaml-frontmatter
+  filename: '{primary}.md'
+  view:
+    fields:
+    - title
+    - conversation
+    - unite_programmation
+    - perspective_principale
+    - genre_narratif
+    - source_document_version
+    - statut_editorial
+    primary: title
+    search:
+    - title
+    - summary
+  fields:
+  - *id001
+  - *id002
+  - *id003
+  - *id004
+  - name: cycle
+    label: Cycle
+    type: select
+    default: agriculture
+    options:
+      values:
+      - name: agriculture
+        label: Agriculture, alimentation & filières agricoles
+  - name: conversation
+    label: Conversation
+    type: select
+    options:
+      values:
+      - name: C1
+        label: C1 — Que faut-il encore cultiver ?
+  - name: contexte
+    label: Contexte décisionnel précis
+    type: select
+    options:
+      values:
+      - name: arboriculture-sous-revue-strategique
+        label: Verger rentable sous revue stratégique
+      - name: maraichage-debouches-concurrents
+        label: Maraîchage — débouchés concurrents
+      - name: cereales-recolte-excedentaire
+        label: Céréales — récolte exceptionnelle
+  - *v6perspective
+  - *v6code
+  - *v6unite
+  - *v6famille
+  - *v6version
+  - *v6url
+  - *v6reserve
+  - name: genre_narratif
+    label: Genre narratif V6
+    type: select
+    options:
+      values:
+      - name: grand-entretien
+        label: Grand Entretien
+      - name: recit
+        label: Récit
+      - name: chronique
+        label: Chronique
+  - *id006
+  - *id008
+  - *id010
+  - *id011
+  - *id013
+  - *id014
+
 - name: articles_pilote_v1
   label: Archive du pilote V1 (ne pas publier)
   type: collection
@@ -500,6 +635,10 @@ content:
       values:
       - name: entretien
         label: Grand entretien
+      - name: recit
+        label: Récit / comédie
+      - name: chronique
+        label: Chronique satirique
       - name: regard-croise
         label: Regard croisé
       - name: analyse-sectorielle
@@ -644,6 +783,8 @@ content:
         label: Vérification / anonymisation
       - name: pret
         label: Prêt pour publication
+      - name: prepublication
+        label: Consultation en préproduction uniquement
       - name: publie
         label: Publié
   - name: publication_date
