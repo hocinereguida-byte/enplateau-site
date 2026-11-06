@@ -11,7 +11,7 @@ statut_editorial: "prepublication"
 published: true
 publication_date: "2026-11-03T18:30:00+01:00"
 mise_en_avant: "standard"
-hero_image: "/images/articles/scenes_darbitrage_article_thomas_plus_on_connaissait_le_batiment_moins_on_pouvait_le_renover.webp"
+hero_image: "/images/articles/scenes_darbitrage_article_imm_c1_rc_02_thomas_nous_avions_un_excellent_projet_photo.webp"
 source_notice: "Fiction économique documentée : personnages, dialogues et situations inventés. Version de consultation préproduction, non autorisée à la publication définitive."
 methodology_specific: "Version V1.3 maître livrée pour contrôle technique en préproduction le 6 novembre 2026. Visa définitif non délivré. D1/D2 à confirmer pour le texte exactement livré. Ne pas transférer vers la production."
 source_document_version: "V1.3 maître"
