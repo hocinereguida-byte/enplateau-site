@@ -12,6 +12,7 @@ published: true
 publication_date: "2026-11-02T21:00:00+01:00"
 mise_en_avant: "standard"
 affichage_accueil: "titre"
+hero_image: "/images/articles/scenes_darbitrage_article_arboriculture_a02_consultant_pommiers.webp"
 source_notice: "Fiction économique satirique. Exploitation, personnages, propos et événements inventés."
 methodology_specific: "Arboriculture AGR-C1-A02 V4.1 ; contrôle CMS préproduction en attente ; publication publique non autorisée."
 source_document_url: "https://docs.google.com/document/d/1_iE1-2nxZIhWeKOEH_tASaFa6Cal8tC5ZOxLAkrNRY8/edit"
