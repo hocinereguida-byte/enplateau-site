@@ -4,7 +4,7 @@ summary: "Gérard obtient une récolte record de maïs grain. Encore faut-il pou
 cycle: "agriculture"
 conversation: "C1"
 contexte: "cereales-recolte-excedentaire"
-lecture_principale: "finance-investissement"
+lecture_principale: "operations-organisation"
 format: "recit"
 genre_narratif: "recit"
 statut_editorial: "prepublication"
