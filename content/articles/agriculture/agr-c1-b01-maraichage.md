@@ -3,7 +3,7 @@ title: "Trois marchés, trois promesses : qui va payer les hectares ?"
 summary: "Une dirigeante de production légumière doit arbitrer trois promesses commerciales qui mobilisent les mêmes surfaces."
 cycle: "agriculture"
 conversation: "C1"
-contexte: "engagement-productif-longue-duree"
+contexte: "maraichage-debouches-concurrents"
 lecture_principale: "strategie-gouvernance"
 format: "entretien"
 genre_narratif: "grand-entretien"
@@ -14,6 +14,9 @@ source_notice: "Grand Entretien fictif avec Léa Morel. Personnages, entreprise 
 source_document_version: "V2.2 corrigée"
 source_document_url: "https://docs.google.com/document/d/16Jh2lgYwHM0VHTXvnB3ZrfGv9jwrZDwcJkod03469DA/edit"
 code_editorial: "AGR-C1-B01"
+perspective_principale: "strategie-gouvernance"
+unite_programmation: "AGR-C1-B"
+famille_decisionnelle: "debouches-variables"
 ---
 
 *Grand Entretien fictif · Fiction économique documentée.*
