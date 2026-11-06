@@ -25,7 +25,7 @@ source_document_version: "V4.1"
 perspective_principale: "strategie-gouvernance"
 unite_programmation: "AGR-C1-A"
 famille_decisionnelle: "engagement-productif-longue-duree"
-classification_reserve: "Identifiant de programmation A02 historique préservé ; écart éditorial entre satire du conseil stratégique V4.1 et angle de renouvellement de production pérenne : arbitrage documentaire requis avant publication."
+classification_reserve: "Clôturée sur le plan du classement : arbitrage de renouvellement partiel du verger (deux hectares plutôt que six) maintenu dans la famille AGR-C1-A. La satire des consultants relève du traitement narratif. Visa documentaire/public distinct."
 ---
 
 *Fiction économique satirique — personnages, exploitation et événements inventés.*
