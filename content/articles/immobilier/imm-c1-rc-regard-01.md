@@ -20,6 +20,8 @@ tag_2: "Friche industrielle"
 tag_3: "Viabilité économique"
 tag_4: "Financement public"
 tag_5: "Coûts irrécupérables"
+code_editorial: "IMM-C1-RC-REGARD-01"
+unite_programmation: "IMM-C1-RC"
 ---
 
 *Regard croisé — analyse d'opérations réelles. Version de consultation, sans visa D2 global.*
