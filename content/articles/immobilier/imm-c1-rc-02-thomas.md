@@ -21,6 +21,9 @@ tag_2: "Décision sous incertitude"
 tag_3: "Bâtiment industriel"
 tag_4: "Engagements financiers"
 tag_5: "Suspension de projet"
+code_editorial: "IMM-C1-RC-02"
+unite_programmation: "IMM-C1-RC"
+perspective_principale: "operations-organisation"
 ---
 
 *Fiction économique documentée — personnages, dialogues et situations imaginaires.*
