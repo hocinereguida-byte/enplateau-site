@@ -5,7 +5,6 @@ format: "regard-croise"
 cycle: "immobilier"
 conversation: "C1"
 contexte: "territoire-reconversion"
-lecture_principale: "strategie-gouvernance"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-28T14:00:00+01:00"
