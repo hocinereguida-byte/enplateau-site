@@ -26,6 +26,9 @@ validation_documentaire: "v2_0_a_controler"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "grand-entretien"
 signature_auteur: "Jean Toksik"
+code_editorial: "IND-C1-CST-05"
+unite_programmation: "IND-C1-CST"
+perspective_principale: "finance-investissement"
 ---
 
 *Grand Entretien fictif · Fiction économique documentée.*
