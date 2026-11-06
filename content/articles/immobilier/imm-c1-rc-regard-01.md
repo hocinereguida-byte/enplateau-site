@@ -1,5 +1,5 @@
 ---
-title: "Le bâtiment pouvait encore être sauvé. Mais à quel prix fallait-il continuer ?"
+title: "On savait comment le transformer. On cherchait encore pourquoi."
 summary: "À travers Volx, Grasse, Fives Cail et Vierzon, une analyse des reconversions immobilières et des arbitrages économiques, techniques, juridiques et territoriaux qui conditionnent leur poursuite."
 format: "regard-croise"
 cycle: "immobilier"
