@@ -21,6 +21,9 @@ tag_2: "Risque juridique"
 tag_3: "Négociation"
 tag_4: "Autorisations"
 tag_5: "Reconversion"
+code_editorial: "IMM-C1-RC-04"
+unite_programmation: "IMM-C1-RC"
+perspective_principale: "droit-regulation"
 ---
 
 *Comédie de bureau en trois réunions · Fiction économique documentée. Les personnages, dialogues et événements sont imaginaires.*
