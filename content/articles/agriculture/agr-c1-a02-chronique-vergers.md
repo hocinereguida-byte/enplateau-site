@@ -5,7 +5,7 @@ format: "chronique"
 genre_narratif: "chronique"
 cycle: "agriculture"
 conversation: "C1"
-contexte: "engagement-productif-longue-duree"
+contexte: "arboriculture-sous-revue-strategique"
 lecture_principale: "strategie-gouvernance"
 statut_editorial: "prepublication"
 published: true
@@ -22,6 +22,10 @@ tag_3: "Trésorerie"
 tag_4: "Stratégie"
 tag_5: "Conseil"
 source_document_version: "V4.1"
+perspective_principale: "strategie-gouvernance"
+unite_programmation: "AGR-C1-A"
+famille_decisionnelle: "engagement-productif-longue-duree"
+classification_reserve: "Identifiant de programmation A02 historique préservé ; écart éditorial entre satire du conseil stratégique V4.1 et angle de renouvellement de production pérenne : arbitrage documentaire requis avant publication."
 ---
 
 *Fiction économique satirique — personnages, exploitation et événements inventés.*
