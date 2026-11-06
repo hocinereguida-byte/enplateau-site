@@ -25,6 +25,9 @@ validation_narrative: "validee"
 validation_documentaire: "validee_selon_matrice_c1"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "recit"
+code_editorial: "IND-C1-CST-02"
+perspective_principale: "operations-organisation"
+unite_programmation: "IND-C1-CST"
 ---
 
 *Récit-comédie · Fiction économique documentée.*
