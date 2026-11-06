@@ -26,6 +26,9 @@ validation_documentaire: "concordance_ciblee_v4_2_favorable"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "grand-entretien"
 signature_auteur: "Jean Toksic"
+code_editorial: "IND-C1-CST-01"
+perspective_principale: "strategie-gouvernance"
+unite_programmation: "IND-C1-CST"
 ---
 
 *Grand Entretien fictif · Fiction économique documentée. Les personnes, dialogues, situations et chiffres du cas sont inventés.*
