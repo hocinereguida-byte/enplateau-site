@@ -407,7 +407,8 @@ export const isPublic = (data: any, now = new Date()): boolean => {
 export const validClassification = (d: any): boolean => Boolean(
   conversations[d.cycle]?.[d.conversation]
   && contexts[d.cycle]?.[d.contexte]
-  && readings[perspectiveOf(d)]
+  // Un Regard croisé est une analyse autonome, sans perspective principale obligatoire.
+  && (d.format === 'regard-croise' || readings[perspectiveOf(d)])
 );
 
 export const formattedDate = (date: Date): string =>
