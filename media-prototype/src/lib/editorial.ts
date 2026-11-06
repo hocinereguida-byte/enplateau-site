@@ -285,10 +285,10 @@ export const cycleBriefs: Record<string, { ambition: string; enjeux_et_arbitrage
 
 export const conversations: Record<string, Record<string, string>> = {
   agriculture: {
-    C1: 'Décider ce que l’on produit',
+    C1: 'Que faut-il encore cultiver ?',
   },
   industrie: {
-    C1: 'Croissance industrielle : à partir de quand produire davantage oblige-t-il à arbitrer autrement ?',
+    C1: 'Quand l’usine grandit plus vite que ses moyens',
     C2: 'Dépendances industrielles',
     C3: 'Outil industriel',
     C4: 'Trajectoire industrielle',
@@ -297,7 +297,7 @@ export const conversations: Record<string, Record<string, string>> = {
     C7: 'Implantation industrielle',
   },
   immobilier: {
-    C1: 'À quel moment une opération ne tient plus ?',
+    C1: 'Une seconde vie pour les bâtiments. Mais à quel prix ?',
     C2: 'Jusqu’où peut-on produire ?',
     C3: 'Transformer ou reconstruire ?',
     C4: 'Qui fait réellement avancer — ou basculer — un projet ?',
