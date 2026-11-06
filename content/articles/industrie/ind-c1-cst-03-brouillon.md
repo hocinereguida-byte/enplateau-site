@@ -86,4 +86,3 @@ Nathalie recommença à visiter les postes. Elle demanda d’abord aux personnes
 La table fut encore déplacée.
 
 Le comité n’en fut pas informé immédiatement. On voulait d’abord vérifier que cela servait à quelque chose.
-.
