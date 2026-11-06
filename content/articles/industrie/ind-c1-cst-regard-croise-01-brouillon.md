@@ -24,6 +24,8 @@ source_document_version: "V3.2"
 validation_narrative: "adoption_definitive_a_confirmer"
 validation_documentaire: "d1_d2_favorable_sous_reserves_fabrication"
 autorisation_publication: "preproduction_uniquement"
+code_editorial: "IND-C1-CST-RC-01"
+unite_programmation: "IND-C1-CST"
 ---
 
 *Regard croisé — analyse documentée de situations réelles.*
