@@ -25,6 +25,9 @@ validation_narrative: "validee"
 validation_documentaire: "validee_selon_matrice_c1"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "chronique"
+code_editorial: "IND-C1-CST-03"
+unite_programmation: "IND-C1-CST"
+perspective_principale: "technologie-innovation"
 ---
 
 *Chronique satirique · Fiction économique documentée.*
