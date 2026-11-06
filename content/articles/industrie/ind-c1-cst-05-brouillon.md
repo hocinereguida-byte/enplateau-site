@@ -1,12 +1,12 @@
 ---
-title: "Notre plus gros contrat était signé. Il nous manquait l'argent pour le fabriquer."
-summary: "Un gros contrat est signé, mais le directeur financier doit engager des achats avant d'encaisser. Entre le calendrier commercial, la production et la trésorerie, la croissance ressemble à une course contre la montre."
+title: "Le contrat était magnifique. La trésorerie avait quelques réserves."
+summary: "Jean Toksik interroge Laurent, directeur financier, sur le plus gros contrat de son entreprise : avant de produire, il faut payer les matières, négocier des délais et protéger la trésorerie."
 format: "entretien"
 cycle: "industrie"
 conversation: "C1"
 contexte: "CST"
 lecture_principale: "finance-investissement"
-statut_editorial: "publie"
+statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-27T15:00:00+01:00"
 mise_en_avant: "standard"
@@ -17,459 +17,401 @@ tag_2: "Besoin en fonds de roulement"
 tag_3: "Financement industriel"
 tag_4: "Contrats commerciaux"
 tag_5: "Croissance industrielle"
-source_notice: "Entretien fictif · Fiction économique documentée. Personnages, situations et dialogues imaginaires."
-methodology_specific: "Copie CMS satirique de référence ; contrôle de fabrication en attente."
-source_document_url: "https://docs.google.com/document/d/1-IiE4iC2gt2_9nDo7X1GDiCFMWXajZWuWQdhSNuC-5E/edit"
-source_document_version: "V1.3"
+source_notice: "Grand Entretien fictif · Fiction économique documentée. Les personnages, dialogues et chiffres du cas sont inventés."
+methodology_specific: "Version expérimentale V2.0. Concordance documentaire spécifique restant à réaliser ; aucun visa de publication publique."
+source_document_url: "https://docs.google.com/document/d/1QAw6QJcWO7FW_rNnPWY2IeQ0pi1Gd_FV8HpfPUjA0yM/edit"
+source_document_version: "V2.0 expérimentale"
 validation_narrative: "validee"
-validation_documentaire: "validee_selon_matrice_c1"
+validation_documentaire: "v2_0_a_controler"
 autorisation_publication: "preproduction_uniquement"
+genre_narratif: "grand-entretien"
+signature_auteur: "Jean Toksik"
 ---
 
-*Entretien fictif · Fiction économique documentée. Personnages, situations et dialogues imaginaires.*
+*Grand Entretien fictif · Fiction économique documentée.*
 
-## I. DEMAIN MIDI, LA MATIÈRE NE NOUS ATTEND PLUS
+**Version V2.0 de consultation en préproduction — concordance documentaire spécifique en attente.**
 
-— Avant de parler de vos tableaux, j’aimerais comprendre pourquoi vous aviez jusqu’au lendemain midi pour décider.
+L’entreprise venait de signer le plus gros contrat de son histoire. Les commerciaux célébraient la victoire. Laurent, directeur financier, cherchait comment payer les matières nécessaires pour l’exécuter. Jean Toksik lui a proposé de partager l’enthousiasme général. L’entretien a mal tourné pour leurs certitudes respectives.
 
-— Parce que le fournisseur réservait un lot de matière jusqu’à cette heure-là. Après, il pouvait le proposer à un autre acheteur.
+## I — À LA SANTÉ DES VAINQUEURS
 
-— Vous aviez donc moins d’une journée pour trouver plusieurs centaines de milliers d’euros ?
+— Je vous ai fait servir quelque chose, Laurent. Vous voulez du champagne ?
 
-— Pour décider d’engager ou non une partie des achats, pas pour obtenir magiquement toute la somme. Et le créneau de machine était déjà réservé ; les semaines suivantes étaient occupées.
+— Il est onze heures du matin.
 
-— Vous pouviez attendre la réponse de la banque.
+— Vous êtes directeur financier, pas médecin. Il paraît que votre entreprise a signé le plus gros contrat de son histoire. Je tenais à participer à la liesse.
 
-— Oui. En risquant de perdre la matière disponible au délai prévu, puis le créneau industriel.
+— De l’eau suffira.
 
-— Et si vous commandiez ?
+— Vous voyez ? C’est exactement ce que vos commerciaux disent de vous. Ils ouvrent une bouteille, vous demandez le prix du bouchon.
 
-— Nous engagions une dépense avant d’avoir confirmation du financement ou de l’acompte client.
+— Le prix ne m’intéresse pas autant que la date du paiement.
 
-— Voilà un contrat qui commence bien. Revenons au début.
+— Laurent, neuf ans dans cette entreprise, auparavant contrôleur de gestion dans un grand groupe. Vous avez volontairement choisi une entreprise plus petite ?
 
-RETOUR AU DÉBUT — LE CONTRAT QUI METTAIT LA TRÉSORERIE EN DANGER
+— Oui. Je voulais comprendre ce que les chiffres représentaient concrètement.
 
-— Laurent, pourriez-vous vous présenter brièvement ?
+— Et vous avez rencontré des gens derrière les chiffres. Quelle déception.
 
-— Laurent. Directeur financier d'un fabricant de composants industriels. Neuf ans dans l'entreprise. Avant, j'étais contrôleur de gestion dans un grand groupe.
+— Je connais personnellement ceux qui provoquent mes écarts de trésorerie.
 
-— Vous avez quitté un grand groupe pour une entreprise plus petite. Vous recherchiez moins de chiffres ?
+— C’est d’une tendresse assez rare. Alors, dites-moi ce qu’on fête.
 
-— Non. Je voulais savoir à quoi ils correspondaient.
+— Un contrat important, rentable dans nos prévisions, avec un client sérieux et des perspectives de développement.
 
-— Et vous avez trouvé ?
+— Magnifique. Je propose qu’on arrête ici. Un dirigeant heureux, une entreprise conquérante : cela nous changera des entretiens où quelqu’un passe une heure à expliquer pourquoi tout va mal.
 
-— Oui. Aujourd'hui, je connais personnellement les gens qui provoquent mes écarts de trésorerie.
+— Je doute que vous ayez réellement l’intention d’arrêter.
 
-— Cela facilite les relations ?
+— Vous voyez, je suis beaucoup plus prévisible que ma réputation. Une seule question : pourquoi avoir demandé de suspendre certains achats pendant quarante-huit heures, juste après la signature ?
 
-— Cela rend les réunions plus tendues.
+— Parce que la marge d’un contrat ne paie pas immédiatement ses matières premières. J’ai demandé une pause de quarante-huit heures sur certains achats afin de revoir le calendrier et les options de financement. Cela ne voulait pas dire que nous pouvions laisser passer l'échéance du lot réservé au lendemain midi.
 
-— Votre entreprise signe son plus gros contrat. Les commerciaux ouvrent le champagne. Vous convoquez une réunion d'urgence. Vous êtes toujours invité aux fêtes ?
+— Et pourtant, votre signature était bien réelle.
 
-— De moins en moins.
+— L’argent du client ne l’était pas encore sur notre compte.
 
-— Vous aviez pourtant validé la rentabilité du contrat.
+— Vous voulez dire qu’un contrat rentable peut vous mettre en difficulté ?
 
-— Oui. Une marge prévisionnelle correcte, un client sérieux, des perspectives de développement.
+— Si les matières, les stocks et les charges de fabrication sont payés avant les encaissements, oui. Nous devions avancer plusieurs centaines de milliers d’euros supplémentaires.
 
-— Alors pourquoi avoir demandé de suspendre certains achats pendant quarante-huit heures ?
+— Les fournisseurs auraient pu faire un geste. Votre directeur commercial était si enthousiaste.
 
-— Parce qu'un contrat rentable peut vous mettre en difficulté si vous devez tout payer avant d'encaisser.
+— Nous avons essayé. L’enthousiasme de notre commercial n’a pas été accepté comme mode de règlement.
 
-— Vous voulez dire que gagner de l'argent peut faire manquer d'argent ?
+— Voilà une profession qui manque cruellement de poésie.
 
-— Exactement.
+— Elle a ses propres échéances.
 
-— La finance a décidément beaucoup progressé depuis l'invention de l'arithmétique.
+— Vous parlez comme si les fournisseurs avaient aussi une trésorerie. N’exagérons rien.
 
-— Nous devions avancer plusieurs centaines de milliers d'euros supplémentaires en matières, stocks et charges de production. Le client payait après livraison. Les fournisseurs, eux, préféraient être payés selon leurs échéances.
+— C’est justement le problème. Nous sommes plusieurs entreprises à avoir besoin de liquidités, parfois aux mêmes dates.
 
-— Une exigence assez mesquine de leur part.
+— Alors vous étiez au bord de la faillite ?
 
-— J'ai essayé de leur expliquer que notre directeur commercial était enthousiaste. Ils n'ont pas considéré cela comme une garantie.
+— Non. Nous avions identifié une tension prévisionnelle de trésorerie et plusieurs solutions possibles. Ce n’est pas, à lui seul, une situation de cessation des paiements.
 
-— Vous étiez au bord de la faillite ?
+— Dommage. J’avais préparé un titre beaucoup plus spectaculaire.
 
-— Non. Nous avions une tension prévisionnelle de trésorerie, pas nécessairement une cessation des paiements. Nous avions des solutions. Il fallait les mettre en place à temps.
+— Vous pouvez garder le titre sur les réserves.
 
-— Pourquoi ne pas appeler la banque ?
+— Vous avez raison. C’est plus élégant. Le champagne attendra.
 
-— Nous l'avons fait.
+## II — LES TROIS CALENDRIERS ET LE QUATRIÈME
 
-— Vous aviez un contrat signé.
+— J’aimerais comprendre quelque chose. Vous aviez validé un contrat rentable. Vos commerciaux l’avaient négocié. Votre usine savait produire. Et vous avez découvert qu’il fallait payer pour fabriquer. C’est une découverte récente dans la finance industrielle ?
 
-— La banque l'avait remarqué.
+— Non. Le problème venait du calendrier des décaissements et des encaissements, pas de l’existence des dépenses.
 
-— Et elle n'a pas sorti son chéquier ?
+— Votre entreprise possédait pourtant un calendrier.
 
-— Elle voulait connaître les échéances, les risques, les besoins réels, les garanties.
+— Plusieurs. Celui des livraisons promises, celui de la production, celui des achats. Et une prévision financière.
 
-— Vous êtes directeur financier. Vous aviez forcément ces informations.
+— Quatre calendriers. Il ne manquait plus qu’un astrologue pour les faire coïncider.
 
-— J'avais plusieurs versions.
-
-— Combien ?
-
-— Une version commerciale, une version industrielle et une version achats.
-
-— Et votre version financière ?
-
-— Elle avait le mérite d'être cohérente.
-
-— Avec les trois autres ?
-
-— Pas encore.
-
-## II. LA BEAUTÉ TROMPEUSE D'UNE COURBE
-
-— Comment une entreprise peut-elle signer son plus gros contrat sans disposer d'un calendrier commun ?
-
-— Nous avions un calendrier financier. Il était actualisé régulièrement.
+— Nos prévisions étaient mises à jour régulièrement.
 
 — Vous aviez donc fait votre travail.
 
-— Sur les informations qui figuraient dans notre prévision, oui.
+— Sur la base des hypothèses retenues, oui.
 
-— Votre prévision était fausse ?
+— Je vous entends. Cela ressemble à une réserve.
 
-— Elle était cohérente avec les hypothèses retenues.
+— Le client avait demandé, pendant la négociation finale et avant la signature, de concentrer davantage de volumes sur les premières livraisons.
 
-— Ce n'était pas ma question.
+— Et vous en aviez connaissance ?
 
-— Les hypothèses avaient changé.
+— J’en connaissais le principe.
 
-— Quand ?
+— Voilà qui change la scène. Pendant une minute, je vous voyais victime d’une bande de commerciaux déchaînés.
 
-— Pendant la négociation finale, avant la signature. Le client avait demandé de concentrer davantage de volumes sur les premières livraisons.
-
-— Et votre prévision ?
-
-— Elle avait été actualisée sur plusieurs paramètres. Mais pas suffisamment sur les conséquences de cette accélération.
+— Les conséquences financières de cette accélération n’ont pas été suffisamment intégrées à la prévision de démarrage.
 
 — Pourquoi ?
 
-— Parce que notre procédure prévoyait des actualisations régulières, mais n'imposait pas une nouvelle validation financière lorsqu'on modifiait substantiellement le calendrier des premières livraisons.
+— Notre procédure prévoyait une actualisation régulière, mais pas de validation financière nouvelle et obligatoire à chaque modification substantielle du calendrier initial.
 
-— Qui avait organisé cette procédure ?
+— Qui avait mis en place cette procédure ?
 
 — Moi, notamment.
 
-— Vous aviez donc un calendrier parfaitement tenu.
+— Je retire ce que j’ai dit sur la bande de commerciaux. Ils méritent leurs félicitations, finalement. Vous avez construit un système qui vérifiait régulièrement une hypothèse dépassée.
+
+— C’est moins caricatural que cela.
+
+— Je vous en prie, défendez-le. J’adore les procédures qui se portent très bien alors que l’entreprise est inquiète.
+
+— Nous avions mis à jour plusieurs paramètres. Mais nous n’avions pas suffisamment rapproché les nouvelles premières livraisons des achats nécessaires et des dates de règlement.
+
+— Vous saviez que le contrat changeait, mais vous faisiez confiance au processus de validation.
 
 — Oui.
 
-— Celui d'un contrat qui n'existait plus tout à fait.
-
-— C'est une formulation désagréablement exacte.
-
-— Vous n'aviez pas été informé de l'accélération ?
-
-— J'en connaissais le principe. Je n'avais pas suffisamment rapproché ses conséquences des besoins de trésorerie au démarrage.
-
-— Vous auriez pu demander une nouvelle simulation avant la signature.
+— À votre processus.
 
 — Oui.
 
-— Pourquoi ne l'avez-vous pas fait ?
+— Il doit être terrible de se faire trahir par sa propre création.
 
-— Parce que je faisais confiance au processus de validation que nous avions mis en place.
+— Vous me croirez ou non, j’ai surtout été déçu par mon propre jugement.
 
-— Vous faisiez donc confiance à votre propre procédure.
+Toksik reste silencieux un instant.
 
-— C'est généralement pour cela qu'on en construit une.
+— Ça, je vous crois, dit-il. Et je vais vous faire une proposition surprenante : cessons de chercher un coupable. Que pouviez-vous encore faire une fois le décalage identifié ?
 
-— Jusqu'au jour où elle vous rassure sur une situation qu'elle ne décrit plus.
+— Solliciter un financement court terme, négocier un acompte avec le client, échelonner certains achats, proposer des premières livraisons plus progressives. Nous pouvions aussi chercher à mobiliser des factures déjà émises sur d’autres activités.
 
-— Oui.
+— Pas les factures de ce magnifique contrat ?
 
-— Vous avez dû être très déçu par son manque de professionnalisme.
+— Aucune livraison, aucune facture émise sur ce contrat. Nous n’allions pas mobiliser une créance qui n’existait pas encore.
 
-— J'ai surtout été déçu par le mien.
+— Vous êtes sûr ? Les commerciaux pourraient produire une présentation avec une courbe montrant qu’elle existera bientôt.
 
-— Qu'avez-vous proposé ?
+— La banque souhaite généralement autre chose qu’une courbe.
 
-— Un acompte client, un étalement de certains achats, une révision du calendrier des premières livraisons et une ligne de financement court terme.
+— Vous avez donc contacté la banque.
 
-— Et la mobilisation des créances ?
-
-— Nous l'avons étudiée pour des factures déjà émises sur notre activité habituelle. Pas pour ce nouveau contrat : nous n'avions encore ni livré ni facturé.
-
-— Vous ne pouviez donc pas vendre une facture qui n'existait pas.
-
-— Vous seriez surpris du nombre de personnes qui ont proposé cette idée.
-
-— Le client a accepté l'acompte ?
-
-— Pas immédiatement. Son directeur des achats nous a expliqué que les autres fournisseurs n'en demandaient pas.
-
-— Vous lui avez répondu quoi ?
-
-— Que je serais ravi de connaître leurs conditions de financement.
-
-— Il vous les a communiquées ?
-
-— Non.
-
-— Et vos fournisseurs ?
-
-— Certains pouvaient discuter des échéances. D'autres non.
-
-— Vous auriez pu les payer plus tard.
-
-— À court terme, cela aurait soulagé notre trésorerie. Mais nous avions besoin de leurs composants pour produire. Les fragiliser aurait été une manière coûteuse de prétendre résoudre notre problème.
-
-— Vous voilà préoccupé par le sort des autres entreprises.
-
-— Je suis préoccupé par les dépendances industrielles.
-
-— Vous avez une expression financière pour chaque sentiment humain.
-
-— Pas pour tous.
-
-— Lesquels vous échappent ?
-
-— Nous y viendrons aussi.
-
-## III. LA MATIÈRE RÉSERVÉE JUSQU'À MIDI
-
-— Revenons à ce délai que vous avez évoqué au début. Quand avez-vous compris que le lendemain midi n’était pas une échéance théorique ?
-
-— Quand la directrice de production est arrivée en fin d’après-midi avec la réservation de matière et le planning machine. Nous n’avions plus le temps d’attendre que toutes les réponses arrivent dans l’ordre souhaité.
-
-— Vous pouviez donc acheter et prendre un risque financier, ou attendre et prendre un risque industriel.
-
-— Oui. Nous pouvions aussi renégocier immédiatement les premières livraisons ou réduire davantage le premier lot. Aucune option ne supprimait le risque.
-
-— Votre métier consiste donc à choisir où placer le problème.
-
-— Souvent.
-
-— L’heure tournait. Qu’avez-vous décidé avant midi ?
-
-— Avec l'accord du directeur général, j'ai autorisé l'achat d'une partie des matières. Juste assez pour préserver la possibilité de démarrer sur le créneau prévu.
-
-— Vous avez donc commandé sans confirmation de la banque ni accord écrit du client sur l'acompte. Et si les deux refusaient ?
-
-— Nous aurions dû renégocier les premières livraisons, ralentir la montée en charge ou y renoncer en partie. L'achat était partiel : il préservait une possibilité de démarrage, pas le financement des lots suivants.
-
-— Vous appelez cela une décision prudente ?
-
-— Un risque limité et assumé avec le directeur général. Pas une garantie de réussite.
-
-— Vous avez aussi accepté de passer sous votre plancher de trésorerie ?
-
-— Notre prévision pouvait temporairement passer sous ce seuil si les financements tardaient. C'était un seuil interne de prudence, pas une obligation bancaire. Avec le directeur général, nous avons accepté de réduire notre marge de sécurité : un autre imprévu aurait été plus difficile à absorber.
-
-— Mais la banque a finalement accordé un financement.
-
-— Vous le savez maintenant. Moi, à ce moment-là, je ne le savais pas.
-
-— Vous refusez que je juge votre décision à son résultat ?
-
-— Je vous demande de ne pas confondre un risque qui s'est finalement résorbé avec un risque qui n'existait pas.
-
-— Vous avez réponse à tout.
-
-— Pas à ce qu'aurait coûté un refus simultané de la banque et du client.
-
-— Cette décision a-t-elle aussi eu un prix ailleurs que sur votre compte bancaire ?
-
-— Le remplacement d'un équipement de contrôle non critique, pendant six semaines. La qualité avait confirmé que l'ancien permettait toujours d'effectuer les contrôles requis.
-
-— Donc aucune conséquence.
-
-— Pas exactement.
-
-— Vous commencez à être agaçant avec ces nuances.
-
-— L'ancien équipement demandait davantage de manipulations. La nouvelle installation devait faciliter le travail.
-
-— Et vous l'avez reportée.
-
-— Oui.
-
-— Vous aviez consulté la responsable qualité ?
-
-— Sur la possibilité de maintenir les contrôles, oui.
-
-— Sur les six semaines supplémentaires de manipulations ?
-
-— Pas assez.
-
-— Vous aviez pourtant étudié les conséquences financières.
-
-— Précisément. Je connaissais le montant différé ; pas assez ce que ce délai demanderait à l'équipe qualité.
-
-## IV. SIX SEMAINES DANS UNE CELLULE EXCEL
-
-— Vous êtes donc allé voir ce que votre décision changeait concrètement dans l'atelier ?
-
-— Le lendemain. La directrice de production m'y a accompagné.
-
-— Avec votre tableau de trésorerie ?
-
-— Non. Avec le planning des machines et la réservation de matière. La responsable qualité nous attendait au poste de contrôle.
-
-— Elle était contente de vous voir ?
-
-— Elle m'a demandé si j'étais venu effectuer les manipulations.
-
-— Vous avez accepté ?
-
-— Je lui ai d'abord expliqué pourquoi nous avions dû reporter le remplacement de l'équipement.
-
-— Elle vous a écouté ?
-
-— Oui. Puis elle m'a montré son travail.
-
-— Qu'avez-vous découvert ?
-
-— Que l'ancien équipement permettait toujours de réaliser les contrôles requis, mais qu'il imposait davantage de manipulations. Il fallait reprendre les pièces, les positionner, effectuer les contrôles, les retirer, préparer les suivantes.
-
-— Rien que vous ne sachiez déjà ?
-
-— Je connaissais les opérations. Je n'avais pas observé leur enchaînement pendant une série.
-
-— Qu'est-ce que cela changeait ?
-
-— Elle m'a montré les gestes répétés, les interruptions lorsqu'une autre vérification était demandée, le temps nécessaire pour reprendre le fil. Le nouvel équipement devait simplifier une partie de ces manipulations.
-
-— Vous aviez pourtant vérifié que l'ancien fonctionnait.
-
-— Oui.
-
-— Elle vous l'a reproché ?
-
-— Non. Elle m'a dit : « Je ne vous demande pas si nous pouvons encore contrôler les pièces. Je vous demande si vous savez comment nous allons le faire pendant six semaines. »
-
-— Et vous saviez ?
-
-— Pas suffisamment.
-
-— Vous avez reconnu votre erreur ?
-
-— Je lui ai expliqué que j'avais traité le report comme une dépense différée, sans mesurer correctement ses conséquences sur l'organisation du poste.
-
-— Elle vous a pardonné ?
-
-— Elle m'a demandé quand le nouvel équipement arriverait.
-
-— Vous avez avancé la date ?
-
-— Non.
-
-— Vous lui avez proposé une solution immédiate ?
-
-— Nous avons examiné avec elle les possibilités d'organiser les contrôles pendant cette période. Mais le remplacement restait reporté de six semaines.
-
-— Votre visite n'a donc pas supprimé les manipulations.
-
-— Non.
-
-— Elle n'a pas supprimé le délai.
-
-— Non.
-
-— Qu'a-t-elle changé, alors ?
-
-— Elle m'a empêché de continuer à appeler cela simplement six semaines de dépenses différées.
-
-— C'est assez peu pour elle.
-
-— Oui.
-
-— Vous aviez mis combien de temps à préparer votre réunion financière ?
-
-— Deux jours à demander un tableau de synthèse.
-
-— Et pour comprendre ce qui se passait dans l'atelier ?
-
-— Elle m'a montré trois feuilles et son poste de travail.
-
-— Vous auriez pu venir plus tôt.
-
-— C'est exactement ce qu'elle m'a dit.
-
-— Vous avez une réponse ?
-
-— Pas une qui lui rende ces six semaines.
-
-## V. LA DEUXIÈME COURBE
-
-— La banque a fini par répondre ?
-
-— Après notre commande. Elle a accordé un financement complémentaire, moins élevé que demandé.
+— Oui. Elle a demandé les échéances, les besoins réels et les garanties. Sa réponse n’était pas immédiate.
 
 — Et le client ?
 
-— Il a accepté un acompte limité et un calendrier de livraisons plus progressif.
+— Son acheteur n’était pas disposé, dans un premier temps, à verser l’acompte demandé. Il invoquait les habitudes des autres fournisseurs.
 
-— Vous avez donc obtenu ce que vous vouliez.
+— Vous vous êtes renseigné sur les habitudes des autres fournisseurs ?
 
-— Partiellement. Le financement coûtait davantage que prévu. Nous avons préservé le créneau industriel, mais les premières livraisons ont été ajustées.
+— J’ai surtout demandé s’il connaissait leurs modalités de financement.
 
-— Le contrat était rentable ?
+— Il a apprécié ?
 
-— Il a dégagé une marge positive, inférieure à la prévision initiale une fois intégrés les coûts de financement et certaines adaptations industrielles.
+— Il ne me les a pas communiquées.
 
-— Vous aviez donc raison de le signer.
+— Vous faites décidément un travail admirable pour gâcher les conversations agréables.
 
-— C'était une bonne opportunité.
+## III — LE LENDEMAIN MIDI
 
-— Et raison de préserver le démarrage.
+— À quel moment l’histoire devient-elle urgente ?
 
-— C'était un choix défendable au regard des options disponibles.
+— En fin d’après-midi, la directrice de production est venue avec la réservation d’un lot de matière disponible jusqu’au lendemain midi. Un créneau machine était déjà prévu. Après, les semaines suivantes étaient chargées.
 
-— Vous pourriez dire oui, pour une fois.
+— Elle vous a apporté deux choses très simples : de la matière qui ne vous attendrait pas et du temps qui ne se rachète pas.
 
-— Je pourrais. Mais cela ne ferait pas disparaître les coûts que nous avons déplacés.
+— Oui.
 
-— Vous avez regretté le contrat ?
+— Vous pouviez attendre la réponse de la banque.
 
-— Non. J'ai regretté la manière dont nous avions organisé les décisions autour de lui.
+— Et risquer de perdre la disponibilité de la matière à la bonne date, puis le créneau de production.
 
-— À quel moment avez-vous été rassuré ?
+— Vous pouviez acheter.
 
-— Quand le client a payé sa première facture importante. Notre prévision de trésorerie a enfin cessé de descendre semaine après semaine.
+— Et engager une dépense avant confirmation du financement ou d’un acompte.
 
-— Vous avez fêté ça ?
+— Vous pouviez aussi annoncer au client que les premières livraisons attendraient.
 
-— J'ai vérifié le solde deux fois.
+— Nous cherchions à négocier un calendrier plus progressif, mais nous n’avions pas encore son accord.
 
-— Votre conception du champagne.
+— Donc le risque industriel, le risque commercial et le risque de trésorerie se présentaient ensemble. Vous êtes tombé sur la réunion idéale.
 
-— J'ai ensuite prévenu les autres.
+— Il fallait choisir une exposition au risque, pas l’éliminer.
 
-— Vous referiez la même chose ?
+— Vous avez finalement autorisé l’achat.
 
-— Je referais le contrat. Pas le calendrier de décision.
+— Avec l’accord du directeur général, seulement une partie des matières nécessaires au démarrage. Pas la totalité du contrat. Cette commande préservait une possibilité de lancement ; elle ne finançait pas les lots suivants.
 
-— Vous avez créé une nouvelle procédure ?
+— Et la banque pouvait toujours dire non.
 
-— Un calendrier commun, avant de prendre des engagements importants.
+— Oui.
 
-— Une réunion supplémentaire.
+— Le client aussi.
 
-— Malheureusement.
+— Oui.
 
-— Qui participe ?
+— Votre prévision pouvait passer sous le seuil de trésorerie que vous vous étiez fixé.
 
-— Les commerciaux, la production, les achats et la finance.
+— Temporairement, si les financements tardaient. C’était notre plancher interne de prudence, pas une obligation imposée par la banque. Le directeur général et moi avons accepté de réduire cette marge de sécurité.
 
-— Chacun avec son tableau ?
+— Voilà qui est magnifique. Vous avez d’abord reproché aux autres de prendre des risques, puis vous avez pris le vôtre.
 
-— La directrice de production vient avec son planning machine. Les achats avec leurs échéances fournisseurs. Moi avec les dates auxquelles l'argent doit réellement sortir.
+— Je n’ai jamais soutenu qu’il ne fallait prendre aucun risque. Je voulais qu’il soit identifié, limité et décidé par les personnes habilitées.
 
-— Et les commerciaux ?
+— Combien auriez-vous pu perdre si la banque et le client avaient tous deux refusé ?
 
-— Leur courbe qui monte.
+— Il aurait fallu renégocier les premières livraisons, ralentir ou réduire la montée en charge, peut-être renoncer à une partie du démarrage. Je ne peux pas transformer cette incertitude en chiffre certain.
 
-— Vous avez fini par l'aimer ?
+— Vous n’êtes pas très vendeur.
 
-— Je leur ai demandé d'ajouter une deuxième courbe.
+— Je suis directeur financier.
 
-— Laquelle ?
+— J’aurais dû m’en souvenir.
 
-— Celle du compte bancaire.
+— Vous me posez depuis une heure des questions dont vous connaissez déjà les réponses.
+
+— Pas toutes. Et parfois la réponse que j’attends n’est pas celle que vous me donnez.
+
+— C’est plutôt mon impression, oui.
+
+— Prenez donc l’initiative, Laurent. Quelle question aurais-je dû vous poser ?
+
+— À qui avons-nous demandé d’absorber le coût de la prudence ?
+
+Pour une fois, Toksik ne répond pas immédiatement.
+
+## IV — CE QUE LES SIX SEMAINES COÛTAIENT À D’AUTRES
+
+— J’allais justement y venir, prétend Toksik.
+
+— Non. Vous alliez me demander si la banque avait finalement accepté.
+
+— Vous êtes détestablement perspicace. Je vous écoute.
+
+— Pour limiter la tension de trésorerie, nous avons reporté de six semaines le remplacement d’un équipement de contrôle non critique.
+
+— Vous avez différé une dépense. Félicitations, c’est une compétence fondamentale dans votre métier.
+
+— Le service qualité avait confirmé que l’ancien équipement permettait toujours de réaliser les contrôles requis.
+
+— Donc le report ne compromettait pas le contrôle des pièces.
+
+— Pas selon l’évaluation faite. Mais ce n’était pas toute l’histoire.
+
+— Je sens que vous avez choisi ce moment pour gâcher ma bonne opinion de vous.
+
+— L’ancien équipement demandait davantage de manipulations. Le nouveau devait faciliter certaines opérations. J’avais vérifié que les contrôles restaient possibles ; je n’avais pas suffisamment examiné ce que six semaines supplémentaires représenteraient pour l’équipe.
+
+— Vous avez découvert que reporter un achat ne reporte pas automatiquement le travail qu’il devait éviter.
+
+— Oui.
+
+— Et vous êtes allé voir ?
+
+— Le lendemain, accompagné de la directrice de production. La responsable qualité nous attendait au poste.
+
+— Vous avez présenté votre arbitrage avec des graphiques ?
+
+— J’ai commencé par expliquer pourquoi l’achat était reporté.
+
+— Erreur de débutant.
+
+— Elle m’a demandé si j’étais venu faire les manipulations moi-même.
+
+— Voilà une proposition remarquablement concrète. Vous avez accepté ?
+
+— Elle m’a montré l’enchaînement des contrôles : saisir les pièces, les positionner, effectuer la vérification, les retirer, recommencer, parfois interrompre la série pour une autre demande. L’équipement ancien restait utilisable, mais l’organisation du travail était plus lourde que je ne l’avais évalué.
+
+— Vous saviez pourtant que les contrôles étaient réalisables.
+
+— C’est ce que j’avais demandé. Ce n’était pas exactement la bonne question.
+
+— Qu’a dit la responsable qualité ?
+
+— Elle ne me demandait pas si la machine fonctionnait encore. Elle voulait savoir comment son équipe allait tenir ces six semaines supplémentaires.
+
+— Et vous lui avez promis d’avancer l’installation ?
+
+— Non. Nous avons examiné ensemble comment organiser les contrôles pendant la période. Mais le remplacement est resté reporté.
+
+— Vous êtes donc allé constater un problème auquel vous n’apportiez pas de solution complète.
+
+— Oui.
+
+— C’est une visite qui a dû beaucoup lui apporter.
+
+— Pas assez. Mais elle a changé ma manière de présenter l’arbitrage. Ce n’était pas seulement une somme différée ; c’était du travail supplémentaire pour d’autres personnes.
+
+— En somme, la trésorerie s’améliorait à une date donnée, et le temps de travail de quelqu’un d’autre devenait plus difficile dès le lendemain.
+
+— C’est une conséquence que nous aurions dû faire apparaître plus tôt.
+
+— J’aimerais vous contredire, Laurent. C’est très frustrant : vous avez décidé de ne plus m’aider.
+
+— Vous pourriez essayer une question qui ne contient pas déjà sa réponse.
+
+— Très bien. Regrettez-vous d’avoir conservé le créneau industriel ?
+
+— Non. Je regrette de ne pas avoir correctement décrit tous les coûts de ce choix.
+
+— Voilà. C’est beaucoup moins confortable, et infiniment plus intéressant.
+
+## V — LA BANQUE A FINI PAR RÉPONDRE
+
+— Alors, cette banque ? Ne me laissez pas seul avec le suspense.
+
+— Elle a finalement accordé un financement complémentaire, après notre achat partiel, mais inférieur à ce que nous demandions.
+
+— Et le client ?
+
+— Il a accepté un acompte limité et un calendrier de premières livraisons plus progressif.
+
+— Avec son accord, donc. Vous ne vous êtes pas contenté d’imprimer un nouveau planning.
+
+— Évidemment.
+
+— Vous avez réussi à démarrer ?
+
+— Nous avons préservé le créneau de production. Les premières livraisons ont été ajustées. Le financement a coûté plus cher que prévu, et les adaptations industrielles ont réduit la marge finale.
+
+— Mais elle est restée positive ?
+
+— Oui, inférieure à la marge initialement prévue.
+
+— Nous pouvons donc rouvrir le champagne.
+
+— Vous pouvez. Ce n’est pas la conclusion que j’en tire.
+
+— Vous avez ce talent de transformer une réussite en réserve méthodologique.
+
+— Le contrat était intéressant. Notre procédure de décision ne l’était pas assez.
+
+— Vous l’avez changée ?
+
+— Nous rapprochons maintenant les engagements commerciaux, les plannings de production, les achats et les sorties de trésorerie avant de valider des modifications importantes.
+
+— Une réunion de plus. Les mauvaises expériences ont décidément un avenir institutionnel radieux.
+
+— Nous essayons surtout de partager un calendrier commun.
+
+— Les commerciaux sont invités ?
+
+— Oui.
+
+— Ils doivent venir avec leur courbe qui monte ?
+
+— Ils viennent avec les commandes et les dates promises. Moi avec les échéances de décaissement. La production avec ses capacités, les achats avec leurs règlements.
+
+— Et le service qualité avec le temps que vos économies font porter sur ses épaules ?
+
+— Désormais, nous voulons aussi rendre visibles ces conséquences lorsqu’un arbitrage touche les équipements ou l’organisation du travail.
+
+— Vous avez fini par apprendre beaucoup de choses à cause d’un contrat très rentable.
+
+— Et vous, vous avez commencé cet entretien en prenant la défense des commerciaux.
+
+— J’y tiens toujours. Grâce à eux, vous avez du travail.
+
+— Et grâce à moi, ils ont appris qu’un contrat signé ne suffisait pas à acheter les matières.
+
+— Je vous trouve injuste. Vous me volez mon rôle de mauvaise foi.
+
+— Vous me l’avez prêté pendant une heure.
+
+— Une dernière question. Quand avez-vous vraiment été rassuré ?
+
+— Quand une première facture importante du client a été payée. J’ai vérifié le solde deux fois avant de prévenir les autres.
+
+— Une célébration très sobre.
+
+— Vous avez remarqué. 
+
+Toksik regarde la bouteille intacte, puis la montre du doigt.
+
+— Le champagne est toujours là. Vous confirmez que nous pouvons le boire ?
+
+— Je confirme que vous pouvez l’ouvrir.
+
+— Vous n’en prendrez toujours pas ?
+
+— Je vous ai déjà dit qu’il était trop tôt.
+
+— Onze heures, c’était trop tôt. Il est midi passé.
+
+— Justement. Vous avez perdu le créneau.
