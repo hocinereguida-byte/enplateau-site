@@ -20,6 +20,9 @@ tag_2: "Risque locatif"
 tag_3: "Reconversion"
 tag_4: "Crédit bancaire"
 tag_5: "Commercialisation"
+code_editorial: "IMM-C1-RC-01"
+unite_programmation: "IMM-C1-RC"
+perspective_principale: "finance-investissement"
 ---
 
 *Grand Entretien fictif · Fiction économique documentée.*
