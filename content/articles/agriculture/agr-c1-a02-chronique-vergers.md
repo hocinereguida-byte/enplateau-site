@@ -1,5 +1,5 @@
 ---
-title: "Une exploitation agricole encore rentable sommée de présenter un plan de redressement"
+title: "Ses pommiers rapportaient de l'argent. Un cabinet de conseil lui a recommandé de les arracher."
 summary: "Une exploitation arboricole rentable doit-elle transformer ses vergers pour prévenir une dégradation future ? Une chronique satirique sur les scénarios, la trésorerie et les conseils stratégiques."
 format: "chronique"
 genre_narratif: "chronique"
@@ -13,212 +13,265 @@ publication_date: "2026-11-02T21:00:00+01:00"
 mise_en_avant: "standard"
 affichage_accueil: "titre"
 hero_image: "/images/articles/scenes_darbitrage_article_arboriculture_a02_consultant_pommiers.webp"
-source_notice: "Fiction économique satirique. Exploitation, personnages, propos et événements inventés."
-methodology_specific: "Arboriculture AGR-C1-A02 V4.1 ; contrôle CMS préproduction en attente ; publication publique non autorisée."
-source_document_url: "https://docs.google.com/document/d/1_iE1-2nxZIhWeKOEH_tASaFa6Cal8tC5ZOxLAkrNRY8/edit"
+source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
+methodology_specific: "Version V4.5 du manuscrit Drive. Préproduction uniquement, visa de publication publique non délivré."
+source_document_url: "https://docs.google.com/document/d/1l75XgAOrlllaRdH_BRrv-xtV2w0WDsPQ_cT628wJsSw/edit"
 code_editorial: "AGR-C1-A02"
 tag_1: "Arboriculture"
 tag_2: "Renouvellement des vergers"
 tag_3: "Trésorerie"
 tag_4: "Stratégie"
 tag_5: "Conseil"
-source_document_version: "V4.1"
+source_document_version: "V4.5"
 perspective_principale: "strategie-gouvernance"
 unite_programmation: "AGR-C1-A"
 famille_decisionnelle: "engagement-productif-longue-duree"
 classification_reserve: "Clôturée sur le plan du classement : arbitrage de renouvellement partiel du verger (deux hectares plutôt que six) maintenu dans la famille AGR-C1-A. La satire des consultants relève du traitement narratif. Visa documentaire/public distinct."
+autorisation_publication: "preproduction_uniquement"
 ---
 
-*Fiction économique satirique — personnages, exploitation et événements inventés.*
+*Texte de consultation en préproduction — publication publique non autorisée.*
 
-Une exploitation arboricole de la vallée du Rhône a été placée sous surveillance stratégique après avoir dégagé, pour la troisième année consécutive, un résultat positif. L’exploitant n’avait pourtant annoncé ni plan de transformation, ni pivot, ni réinvention de son modèle. Il avait continué à produire des pommes, à les vendre et, dans un geste qui a profondément troublé les experts, à payer ses fournisseurs.
+Dans la vallée du Rhône, un agriculteur vivait depuis plusieurs années dans une situation préoccupante : son exploitation gagnait de l'argent.
 
-L’alerte a été déclenchée par le cabinet chargé d’étudier son avenir. Après six semaines de mission, onze entretiens, trois ateliers participatifs et une dégustation de pommes qualifiée de « diagnostic terrain », les consultants ont identifié une anomalie majeure : l’entreprise semblait fonctionner sans avoir formalisé la raison pour laquelle elle fonctionnait.
+Ses dix-huit hectares de pommiers produisaient des pommes. Les clients les achetaient. Les salariés étaient payés. Les arbres, qui n'avaient jamais suivi de formation en management, semblaient parfaitement satisfaits de leur carrière.
 
-« Ce n’est pas la rentabilité qui nous dérange, explique le directeur de mission. C’est qu’elle n’ait pas été précédée d’une feuille de route. Une entreprise qui va bien sans transformation représente un risque considérable pour sa capacité à démontrer qu’elle s’est transformée. »
+Tout cela aurait pu continuer longtemps si un cabinet de conseil n'avait pas été chargé de préparer l'avenir de l'exploitation.
 
-Le rapport parle d’une « exposition excessive à la continuité ». Un graphique montre une ligne presque horizontale correspondant aux dix-huit hectares de vergers. Elle est rouge. Le cabinet précise que la couleur ne signifie rien de particulier, mais qu’en général les clients comprennent mieux les risques en rouge.
+Le cabinet dépêcha trois consultants.
 
-L’exploitant, qui travaille sur ces parcelles depuis vingt-deux ans, a demandé ce qui lui était concrètement reproché.
+Le premier était spécialiste des transformations. Le deuxième, de l'accompagnement au changement. Le troisième était stagiaire et portait l'ordinateur.
 
-« Nous ne sommes pas ici pour chercher des coupables », a répondu le consultant avant de lui demander pourquoi il s’obstinait à conserver des pommiers qui produisaient encore.
+Après six semaines d'étude, onze entretiens et une dégustation de pommes dont le stagiaire avait été chargé de conserver les pépins comme éléments de preuve, le diagnostic tomba.
 
-La question de l’agriculteur — « Parce qu’ils produisent encore ? » — a été inscrite au registre des résistances culturelles. Sa seconde question — « Vous avez goûté les pommes ? » — a été classée comme tentative de déplacer le débat vers l’opérationnel.
+L'exploitation souffrait d'un grave manque de transformation.
 
-### Un bénéfice jugé insuffisamment alarmant
+« Pourtant, je gagne de l'argent, observa l'agriculteur.
 
-Pour autant, le diagnostic n’est pas entièrement absurde, ce qui le rend plus difficile à combattre. Un acheteur historique a réduit ses engagements. Certaines parcelles coûtent davantage à entretenir. Une variété concurrente gagne du terrain. Les épisodes de chaleur créent une incertitude sur les rendements et la qualité futurs. Surtout, la marge de sécurité financière s’est réduite au fil des campagnes.
+— C'est justement ce qui nous inquiète.
 
-L’agriculteur le sait. Il suit ses charges par parcelle et n’a aucune envie de découvrir trop tard que ses arbres ont continué de produire des fruits qu’il ne peut plus vendre à un prix satisfaisant.
+— Pourquoi ?
 
-Les consultants ont accueilli cette lucidité avec prudence.
+— Parce que vous pourriez croire que tout va bien.
 
-« Vous reconnaissez donc la nécessité d’un changement. »
+— Et ce n'est pas le cas ?
 
-« Je reconnais qu’il faut regarder les chiffres. »
+— Pas tant que nous n'avons pas terminé la présentation. »
 
-« C’est précisément notre approche. »
+Le consultant alluma le vidéoprojecteur.
 
-« Je les regardais avant votre arrivée. »
+Sur la première diapositive figurait une photographie de pommier accompagnée du mot « DEMAIN ».
 
-Un silence a suivi. Le responsable de mission a proposé une pause, afin de distinguer la connaissance empirique des chiffres de leur appropriation stratégique.
+Sur la deuxième, le même pommier, avec une flèche.
 
-À la reprise, l’équipe a présenté trois scénarios de marché : la demande augmente, la demande stagne, la demande diminue.
+Sur la troisième, une flèche plus grosse.
 
-L’exploitant a demandé si un quatrième scénario était envisagé.
+Le stagiaire expliqua que la quatrième diapositive n'était pas prête parce qu'il n'avait pas trouvé de flèche suffisamment ambitieuse.
 
-« Lequel ? »
+Le directeur de mission prit la parole.
 
-« Qu’elle augmente pour une variété et diminue pour l’autre. »
+« Votre problème, c'est que vous continuez à produire des pommes.
 
-Le consultant a pris des notes, visiblement intéressé par cette découverte d’une possibilité commerciale supplémentaire. Il a promis de la soumettre au département des scénarios complexes.
+— Je suis arboriculteur.
 
-Le cabinet a finalement attribué au client la note de 4 sur 5 en « capacité de résilience intuitive », mais seulement 1 sur 5 en « maturité de transformation déclarative ». L’exploitant a demandé s’il existait une note pour la vente effective des pommes. On lui a répondu que cet indicateur relevait du tableau de bord historique et ne traduisait pas suffisamment sa projection dans l’avenir.
+— Justement. Vous restez enfermé dans votre métier. »
 
-### Pour sauver les arbres, le cabinet propose d’en arracher six hectares
+L'agriculteur demanda s'il devait envisager de produire des boulons.
 
-Le plan de transformation concerne six hectares sur les dix-huit de l’exploitation. Les arbres produisent encore, mais leur renouvellement pourrait permettre de choisir des variétés mieux adaptées aux débouchés futurs, sous réserve que ces débouchés existent toujours lorsque les jeunes plantations entreront réellement en production.
+Le consultant nota cette proposition dans la rubrique « diversification spontanée ».
 
-L’opération exigerait d’arracher les anciens arbres, de préparer les sols, d’acquérir les plants et les équipements nécessaires, puis de financer plusieurs campagnes avant de retrouver le niveau de recettes des parcelles actuelles.
+Il existait pourtant de véritables problèmes. Un gros client achetait moins. Certaines parcelles vieillissaient. Les étés devenaient plus chauds et de nouvelles variétés de pommes plaisaient davantage aux consommateurs.
 
-Le consultant a qualifié cette période sans production équivalente de « fenêtre de création de valeur différée ».
+L'agriculteur le savait. Depuis trois ans, il repoussait le renouvellement d'une parcelle.
 
-L’exploitant a proposé le terme « années où il faut quand même payer les factures ».
+Chaque hiver, il promettait de s'en occuper au printemps. Chaque printemps, il expliquait qu'il aurait fallu commencer en hiver.
 
-Cette formulation a été écartée pour son caractère anxiogène.
+Sa femme avait fini par appeler cette parcelle « l'année prochaine ».
 
-Le cabinet a indiqué que l’investissement pouvait renforcer la compétitivité à terme. L’agriculteur en a convenu. Il a seulement demandé qui financerait les années où les anciens arbres ne seraient plus là et où les nouveaux n’auraient pas encore pris leur place.
+Les consultants découvrirent ce détail avec enthousiasme.
 
-« C’est précisément pour cela qu’il faut un accompagnement », a répondu le directeur de mission.
+« Voilà ! Vous avez peur du changement !
 
-« Vous financez ? »
+— Non, j'ai peur de payer.
 
-« Nous accompagnons. »
+— C'est souvent lié. »
 
-« Vous garantissez le prix des pommes ? »
+Leur solution était simple : arracher six hectares de pommiers sur dix-huit et planter de nouvelles variétés.
 
-« Ce serait contraire à notre indépendance. »
+L'agriculteur demanda ce qu'avaient fait les arbres pour mériter cela.
 
-« Vous partagez les pertes ? »
+« Rien, répondit le consultant. Ils produisent correctement.
 
-« Notre contrat de conseil ne prévoit pas cette modalité. »
+— Alors pourquoi les arracher ?
 
-L’exploitant a souhaité savoir quelle différence il y avait entre un accompagnement et une personne qui regarde quelqu’un traverser une rivière en lui expliquant l’importance de ne pas se mouiller.
+— Parce qu'ils produisent correctement depuis trop longtemps. Ils ne démontrent plus de potentiel de rupture. »
 
-Le consultant a demandé que cette comparaison ne soit pas reprise dans le compte rendu officiel. Elle risquait de dévaloriser la démarche collaborative.
+L'agriculteur proposa de commencer par menacer les arbres d'un licenciement.
 
-### La banque accepte de financer l’avenir, sous réserve qu’il ressemble au passé
+Le stagiaire trouva l'idée intéressante et demanda s'il existait un syndicat des pommiers.
 
-Le banquier a été invité à présenter une solution de financement. Il s’est d’abord félicité de la démarche de transformation, puis a précisé qu’il lui faudrait des apports suffisants, des perspectives commerciales sérieuses et un calendrier de remboursement cohérent avec la montée en production des nouveaux arbres.
+Personne ne lui répondit.
 
-« Nous croyons énormément à l’avenir agricole », a-t-il déclaré. « Surtout quand il est garanti par des flux financiers déjà existants. »
+Restait un petit problème : les nouveaux arbres mettraient plusieurs années à produire suffisamment.
 
-L’exploitant a fait observer que la vocation d’une nouvelle plantation était précisément de remplacer, à terme, une partie des anciens flux.
+Pendant ce temps, il faudrait continuer à payer les salariés, les fournisseurs et les emprunts.
 
-« C’est là tout l’intérêt du dossier », a répondu le banquier. « Il faut réussir à financer le changement sans modifier le profil de risque. »
+« Avec quel argent ? demanda l'agriculteur.
 
-Une aide publique éventuelle à la rénovation des vergers a été évoquée. Le consultant y voyait la preuve que le projet pouvait intéresser les institutions. Le banquier a rappelé qu’une aide dépendait des critères d’éligibilité, des échéances de dépôt et des crédits disponibles, et qu’une subvention espérée ne constituait pas une somme encaissée.
+— Il faut avoir une vision à long terme.
 
-Le directeur de mission a alors proposé d’inscrire l’aide en « ressource potentiellement mobilisable ». Le banquier a demandé qu’on ne l’inscrive pas dans le plan de trésorerie comme si elle était acquise.
+— Vous pouvez en parler à mon fournisseur de tracteurs ?
 
-« Vous êtes très prudent », lui a fait remarquer le consultant.
+— Bien sûr.
 
-« C’est mon métier. »
+— Parce que lui a une vision très précise du 15 de chaque mois. »
 
-« Moi aussi. »
+Le cabinet proposa de réunir toutes les parties prenantes.
 
-« La différence, c’est que votre facture sera payée avant que les arbres produisent. »
+Le banquier arriva avec une calculatrice.
 
-Un silence, de nouveau. Le consultant a remercié le banquier pour cette intervention « stimulante dans sa franchise ».
+Les consultants avaient apporté quarante-sept diapositives.
 
-La réunion a conclu à une convergence stratégique : le consultant recommandait d’investir, le banquier recommandait de ne pas prendre trop de risques, et l’agriculteur était chargé de rendre les deux recommandations compatibles avec son compte bancaire.
+L'agriculteur avait apporté des pommes.
 
-### Trois options, dont une jugée contraire à l’esprit du programme
+Le banquier fut le premier à poser une question.
 
-Le cabinet a présenté les trajectoires possibles.
+« Combien coûte l'opération ?
 
-La première consistait à conserver les vergers actuels en surveillant leurs coûts, leurs rendements et leurs débouchés. Elle risquait de laisser se dégrader la compétitivité de certaines parcelles. Elle a reçu le nom peu flatteur de « scénario d’inaction active ».
+— C'est un investissement dans l'avenir, répondit le consultant.
 
-La deuxième prévoyait le renouvellement rapide des six hectares. Elle exposait davantage la trésorerie, mais donnait à l’entreprise un récit de transformation particulièrement lisible. Elle a été baptisée « scénario de leadership ».
+— Combien ?
 
-La troisième consistait à commencer par deux hectares, à maintenir les parcelles les plus performantes et à décider des étapes suivantes à partir des premiers résultats agronomiques, de l’évolution des acheteurs et des financements effectivement disponibles.
+— Il faut dépasser la seule dimension financière.
 
-Le consultant a reconnu qu’elle réduisait l’exposition financière, avant de relever qu’elle manquait d’ambition dans son intitulé.
+— Combien ?
 
-« On pourrait l’appeler leadership prudent », a suggéré le banquier.
+— Nous pouvons passer à la diapositive suivante. »
 
-« Ou prudence ambitieuse », a répondu le consultant.
+Le banquier refusa.
 
-« Ou deux hectares », a proposé l’exploitant.
+Il fallut finalement afficher les dépenses, les pertes provisoires de production et les remboursements à venir.
 
-La réunion a été suspendue. Un groupe de travail a été constitué pour déterminer si « deux hectares » relevait d’une vision stratégique ou d’une simple unité de surface.
+Le consultant expliqua que des aides publiques pourraient être mobilisées.
 
-À la reprise, le cabinet avait trouvé : « Accélération graduelle d’une trajectoire de rupture maîtrisée ».
+« Elles sont accordées ? demanda le banquier.
 
-L’agriculteur a demandé si les arbres pousseraient plus vite sous cette appellation.
+— Pas encore.
 
-« Ce n’est pas l’objet de la démarche. »
+— Vous avez déposé les dossiers ?
 
-« C’est pourtant le mien. »
+— Pas encore.
 
-Pour sortir de l’impasse, le consultant a expliqué qu’une exploitation trop prudente risquait de ne pas changer assez vite. L’agriculteur a répondu qu’une exploitation trop pressée risquait de ne plus avoir les moyens de continuer à changer.
+— Vous savez combien vous toucherez ?
 
-Chacun a reconnu la pertinence du propos de l’autre. Cette avancée a été considérée comme la preuve que la médiation avait produit un résultat tangible.
+— Pas encore.
 
-### L’exploitant finit par accepter son propre projet
+— Formidable. Vous avez donc trois fois rien. »
 
-La décision finale a été prise par l’agriculteur : engager une première tranche de deux hectares, conserver seize hectares en production et réexaminer la suite en fonction des marges par parcelle, des coûts d’entretien, des débouchés et du comportement réel des nouvelles plantations.
+Le consultant jugea la remarque excessivement comptable.
 
-Il a tenu à préciser que cette solution n’était pas une victoire de l’immobilisme. Il sait qu’une variété peut perdre sa valeur commerciale, qu’un verger vieillit, qu’une année de chaleur ou un acheteur qui se retire peuvent fragiliser un équilibre déjà serré.
+Le banquier lui proposa alors de payer ses honoraires dans quatre ans, avec les premières récoltes.
 
-« Je n’ai rien contre l’avenir », a-t-il déclaré. « J’aimerais seulement éviter de devoir vendre le présent pour payer la conférence de lancement. »
+Le consultant répondit qu'il ne fallait pas confondre accompagnement stratégique et activité agricole.
 
-Il a également reconnu sa propre part de responsabilité : depuis deux campagnes, il repoussait le renouvellement d’une parcelle dont les coûts dérivaient. Il avait appelé cela « attendre d’y voir plus clair ». Ses enfants, qui connaissent l’exploitation, appelaient cela « encore une année ». Le consultant l’a félicité pour cet aveu, immédiatement requalifié en « libération de la parole dirigeante ».
+L'agriculteur demanda si cela signifiait que les consultants avaient besoin d'argent plus rapidement que les pommiers.
 
-« Vous voyez, vous aviez besoin d’un regard extérieur. »
+La réunion fut suspendue dix minutes.
 
-« Peut-être. Je pourrais vous facturer le mien sur votre manière de vendre vos prestations. »
+À la reprise, trois possibilités furent examinées.
 
-Le consultant a ri, avant de demander si cette proposition était sérieuse.
+Ne rien arracher immédiatement et surveiller les résultats. Remplacer six hectares d'un coup. Ou commencer par les deux hectares les plus vieillissants et décider ensuite.
 
-L’exploitant a répondu qu’il faudrait d’abord mener une étude de faisabilité.
+Le cabinet baptisa ces trois options :
 
-Pour mettre fin au désaccord sur les mots, le cabinet a accepté le choix des deux hectares, à condition qu’il soit présenté comme une première étape d’un plan susceptible d’être révisé. Une note a été ajoutée : le passage éventuel aux quatre hectares restants ne serait décidé qu’à partir d’hypothèses commerciales et financières actualisées.
+« Refus du progrès ».
 
-Le consultant a qualifié l’accord de « renoncement audacieux à l’immobilisme ».
+« Révolution agricole ».
 
-L’agriculteur a dit merci. Il avait calculé qu’une minute de discussion supplémentaire lui coûterait probablement le prix d’un jeune arbre.
+« Petit bras ».
 
-### Le cabinet démontre que la stratégie était la sienne depuis le début
+L'agriculteur demanda si les intitulés avaient été choisis avant l'étude.
 
-Quarante-huit heures plus tard, le rapport intitulé « Accélérer la transformation » avait disparu de l’espace partagé. Il avait été remplacé par « Réussir une transition maîtrisée ». Les six hectares figuraient toujours dans le document, mais désormais sous la rubrique « horizon stratégique de référence non prescriptif ». Les deux hectares choisis par l’exploitant étaient devenus un « pilote fondateur issu d’une démarche de coconstruction ».
+Le consultant répondit que la question relevait de la méthodologie interne.
 
-Le cabinet diffusa une note de succès à ses équipes : « Nous avons permis à une exploitation traditionnellement rentable de dépasser ses réticences et d’entrer dans une dynamique de changement. »
+Le banquier, lui, regardait les chiffres.
 
-Un jeune consultant demanda s’il fallait mentionner que le client avait proposé les deux hectares dès le début de la réunion.
+Remplacer six hectares immédiatement pouvait fragiliser l'exploitation pendant plusieurs années. Les aides n'étaient pas garanties. Aucun acheteur ne s'était engagé sur les volumes futurs.
 
-« Bien sûr », répondit le directeur de mission. « C’est précisément la preuve que nous avons su faire émerger sa solution. »
+L'agriculteur comprit qu'il avait eu tort d'attendre si longtemps pour renouveler certaines parcelles. Mais il ne voyait pas pourquoi il faudrait maintenant réparer trois années d'hésitation par dix années de remboursements.
 
-La banque conserva un client dont la trésorerie pouvait encore supporter le projet, sous réserve de conditions de financement à finaliser. Les acheteurs saluèrent l’ambition de la démarche sans prendre d’engagement commercial supplémentaire. Le cabinet obtint une mission de suivi.
+Il décida de commencer par deux hectares.
 
-Quant à l’exploitation, elle devra réellement financer les deux hectares, faire vivre les seize autres et attendre plusieurs campagnes avant de juger pleinement les résultats des nouveaux arbres. Ceux-ci n’ont pas reçu la présentation. Ils ne connaissent ni le calendrier du comité ni la date de clôture de la mission.
+Le consultant pâlit.
 
-Une réunion de bilan a été programmée dans trois ans. Le directeur de mission a exprimé sa préoccupation : laisser une entreprise prendre du recul pendant trois ans sans suivi rapproché risquerait d’encourager une rechute dans la gestion quotidienne.
+« Seulement deux ?
 
-Il a donc proposé une visite trimestrielle, avec option de revue mensuelle en cas de rentabilité anormalement persistante.
+— Oui.
 
-L’exploitant a demandé combien coûterait ce dispositif.
+— Sur dix-huit ?
 
-« Cela dépendra des résultats », a répondu le consultant.
+— Oui.
 
-« Des résultats du verger ? »
+— Vous comprenez que cela représente une transformation de seulement 11 % ?
 
-« Non, naturellement. Du nombre de réunions nécessaires pour les analyser. »
+— Vous préférez que je fasse faillite à 33 % ? »
 
-Une nouvelle date a été inscrite au calendrier.
+Le directeur de mission demanda une suspension de séance.
 
-Les arbres, consultés sur la pertinence de ce calendrier, n’ont pas répondu.
+À son retour, il annonça qu'une solution avait été trouvée.
 
-Le cabinet a immédiatement ouvert une réflexion sur leur déficit d’adhésion au changement.
+Les deux hectares deviendraient « la phase pilote d'une transformation ambitieuse ».
 
-Ses honoraires, eux, seront récoltés dès la première année.
+Les quatre autres hectares seraient inscrits dans un « programme d'accélération conditionnelle ».
+
+Les seize hectares conservés seraient désormais qualifiés de « socle de stabilité stratégique ».
+
+Le stagiaire demanda ce qu'il fallait écrire sur les arbres.
+
+On lui expliqua qu'il s'agissait d'une transformation conceptuelle.
+
+Il parut soulagé.
+
+Deux jours plus tard, le cabinet publia sur LinkedIn :
+
+« Fiers d'avoir accompagné un acteur majeur de l'agriculture dans une transformation profonde de son modèle, conciliant audace, résilience et création de valeur durable. »
+
+Le message reçut 183 mentions « J'aime ».
+
+L'agriculteur en mit une aussi. Il avait reconnu son tracteur sur la photo.
+
+Quelques semaines plus tard, les deux hectares avaient été arrachés et les jeunes pommiers plantés.
+
+Le banquier attendait toujours les garanties nécessaires au financement de la suite. Les acheteurs n'avaient toujours rien promis. Et l'agriculteur se demandait encore s'il avait choisi les bonnes variétés.
+
+Le cabinet proposa une réunion de suivi.
+
+« Pour quoi faire ? demanda l'agriculteur.
+
+— Vérifier que vous ne retombez pas dans vos anciennes habitudes.
+
+— Lesquelles ?
+
+— Vous concentrer excessivement sur la production de pommes. »
+
+L'agriculteur expliqua qu'il devait arroser ses jeunes arbres.
+
+Le consultant proposa de transformer cette contrainte en opportunité collective.
+
+« On pourrait organiser un atelier participatif autour de l'eau.
+
+— Très bien, répondit l'agriculteur. Venez demain à six heures. »
+
+Le consultant consulta son agenda.
+
+« Six heures du matin ?
+
+— Oui.
+
+— Ce serait compliqué. Nous avons notre réunion de préparation de l'atelier. »
+
+Le lendemain, à six heures, l'agriculteur arrosait ses pommiers.
+
+À neuf heures, il reçut un courriel du cabinet.
+
+Objet : Urgent — Votre exploitation manque encore de fluidité.
