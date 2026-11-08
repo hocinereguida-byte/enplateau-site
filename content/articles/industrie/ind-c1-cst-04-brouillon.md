@@ -1,5 +1,5 @@
 ---
-title: "Tout le monde était recruté. Il ne restait qu’à apprendre le métier."
+title: "L'usine avait recruté trente personnes. Il ne restait qu'à leur apprendre à travailler."
 summary: "Claire rappelle que recruter trente personnes et les rendre opérationnelles sont deux décisions différentes. Une chronique sur la formation, le tutorat et les objectifs irréalistes."
 format: "chronique"
 cycle: "industrie"
@@ -17,10 +17,10 @@ tag_2: "Formation professionnelle"
 tag_3: "Compétences industrielles"
 tag_4: "Montée en cadence"
 tag_5: "Transmission des savoir-faire"
-source_notice: "Chronique satirique fictive. Personnages, chiffres et événements imaginaires."
-methodology_specific: "Version V3.1 pour contrôle en préproduction ; visa de publication publique non délivré."
-source_document_url: "https://docs.google.com/document/d/11QAB8AKkV8-n18k8sF4XhU0JlCp9d2Nmizqze_qCdzg/edit"
-source_document_version: "V3.1"
+source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
+methodology_specific: "Version V3.4 du manuscrit Drive. Préproduction uniquement, visa de publication publique non délivré."
+source_document_url: "https://docs.google.com/document/d/1l_wbYNe8ANu8WB4t8oj5tFIZmMZZSlQy-fOosOkaH1c/edit"
+source_document_version: "V3.4"
 validation_narrative: "validee"
 validation_documentaire: "validee_selon_matrice_c1"
 autorisation_publication: "preproduction_uniquement"
@@ -30,162 +30,296 @@ unite_programmation: "IND-C1-CST"
 perspective_principale: "ressources-humaines-competences"
 ---
 
-*Chronique satirique · Fiction économique documentée.*
+*Texte de consultation en préproduction — publication publique non autorisée.*
 
-L’entreprise avait trouvé trente salariés sur PowerPoint. Il ne restait plus qu’à les recruter.
+Après des mois de difficultés, la direction annonçait l'arrivée de trente nouveaux salariés. Ils n'étaient pas encore tous embauchés, mais leurs silhouettes figuraient déjà sur une présentation PowerPoint.
 
-Le directeur général annonça fièrement que l’usine disposerait, quatre mois plus tard, de trente personnes supplémentaires et donc, selon les règles élémentaires de la multiplication, d’une capacité industrielle considérablement accrue. La présentation montrait trente silhouettes bleues, toutes debout, toutes souriantes et toutes parfaitement interchangeables. Aucune n’avait encore signé de contrat. Ce qui prouvait au moins qu’elles ne poseraient aucun problème d’absentéisme.
+Trente petits personnages bleus, souriants, parfaitement alignés.
 
-Claire, directrice des ressources humaines depuis huit ans, commit une imprudence regrettable.
+Le directeur général était particulièrement fier de celui du milieu.
 
-— Et à quelle date seront-elles capables de tenir les postes seules ?
+« Dans quatre mois, annonça-t-il, nous aurons trente personnes supplémentaires. Nous allons pouvoir produire beaucoup plus. »
 
-L’assemblée la regarda avec cette indulgence qu’on réserve aux personnes qui compliquent les choses simples.
+Le directeur commercial applaudit et téléphona aussitôt à trois clients.
 
-— À leur arrivée, répondit le directeur général.
+Claire, la directrice des ressources humaines, commit alors une imprudence.
 
-Claire fit remarquer que certaines opérations s’apprenaient en quelques semaines, d’autres en plusieurs mois ; qu’il fallait savoir reconnaître des défauts discrets, maîtriser des gestes, vérifier des pièces. Le directeur commercial proposa d’inscrire « compétence acquise à la prise de poste » dans le planning. Il ne voyait pas pourquoi les nouvelles recrues refuseraient de respecter un engagement déjà pris par leur futur employeur.
+« Et qui va leur apprendre le métier ?
 
-Le logiciel RH confirma que trente contrats de travail pouvaient être saisis. Il ne prévoyait en revanche aucune case permettant de cocher « dix ans d’expérience installés avec succès ». Le fournisseur fut contacté. Il promit d’étudier la demande dans sa prochaine feuille de route.
+— Nous avons prévu une formation.
 
-La direction accepta donc une période de formation, à condition qu’elle ne retarde pas la production et ne mobilise pas les salariés qui produisaient déjà. L’accord faisait l’unanimité. Il ne restait qu’à trouver des personnes capables de former sans interrompre leur travail.
+— Avec qui ?
 
-Claire annonça qu’elle en avait identifié cinq.
+— Avec les salariés expérimentés.
 
-— Cinq formateurs ? demanda le directeur général, soulagé.
+— Et pendant ce temps, qui fera leur travail ?
 
-— Cinq opérateurs expérimentés qui accompagnent déjà les nouveaux.
+— Les salariés expérimentés. »
 
-— Parfait. Ils n’auront qu’à continuer.
+Claire demanda si la direction avait récemment découvert un moyen de faire travailler une personne à deux endroits simultanément.
 
-— Ils produisent aussi.
+Le directeur général répondit que l'entreprise devait apprendre à sortir de ses habitudes.
 
-— C’est encore mieux. Ils connaissent le terrain.
+Il fut donc décidé que les nouveaux seraient formés sans ralentir la production.
 
-On décida que la transmission des compétences serait intégrée à l’activité courante. Le service financier apprécia particulièrement cette formulation, qui présentait l’avantage de ne pas préciser combien d’heures supplémentaires pouvait durer une journée normale.
+Cette solution présentait un avantage considérable : elle ne coûtait rien, ne retardait rien et n'obligeait personne à renoncer à quoi que ce soit.
 
-Le plus expérimenté s’appelait Kevin. Depuis deux ans, il accompagnait des nouveaux en plus de son propre travail. Il tenait un carnet à spirale où figuraient des prénoms, des dates et des cases parfois vides. Le logiciel RH enregistrait les formations programmées et réalisées. Le carnet, lui, avait la mauvaise habitude de préciser lorsqu’une séance avait commencé, puis avait été interrompue, ou lorsqu’un nouveau salarié n’était pas encore prêt.
+Elle fut adoptée à l'unanimité.
 
-La distinction constituait un véritable obstacle au progrès statistique.
+On oublia simplement de demander l'avis de Kevin.
 
-— Pourquoi cette case est-elle vide ? demanda Claire.
+Kevin travaillait dans l'usine depuis douze ans. Il connaissait les machines, leurs réglages, leurs pannes et les bruits qu'elles faisaient juste avant de tomber en panne.
 
-— Parce qu’il n’a pas terminé.
+Depuis deux ans, il formait également les nouveaux.
 
-— Pourtant, il a suivi la formation.
+Il avait commencé par montrer les gestes à un collègue. Puis à deux. Puis à cinq. Désormais, chaque fois que quelqu'un ne savait pas faire quelque chose, la réponse était devenue : « Demande à Kevin. »
 
-— Il a suivi la première moitié. Après, on m’a rappelé sur une machine.
+Un jour, Kevin avait demandé à qui il devait s'adresser lorsqu'il ne savait pas faire quelque chose.
 
-— Dans le logiciel, ça apparaît comme une séance.
+Personne n'avait su lui répondre.
 
-— Dans son poste, ça apparaît comme un gars qui ne sait pas encore faire.
+La direction lui annonça qu'il allait participer à l'intégration des trente nouvelles recrues.
 
-Kevin avait ainsi inventé une méthode de reporting extrêmement controversée : ne pas déclarer terminées les choses qui ne l’étaient pas.
+« Trente ?
 
-Une réunion fut envisagée pour étudier les conséquences de cette pratique. Puis une seconde, pour préciser si la première relevait des ressources humaines ou de l’amélioration continue. Kevin demanda si l’une des deux pourrait se tenir pendant qu’il formait quelqu’un. Sa remarque ne fut pas retenue dans le compte rendu.
+— Pas toutes en même temps, rassurez-vous.
 
-Le plan révisé prévoyait trois vagues de recrutement, des postes d’entrée identifiés, deux nouveaux à accompagner simultanément pour Kevin plutôt que six, deux tuteurs supplémentaires à former, et quelques opérations non sensibles confiées provisoirement à un sous-traitant dont on vérifierait les capacités et les contrôles qualité. Le prestataire facturait davantage à la pièce. On constata qu’il était donc plus coûteux de lui demander ce qu’il savait fabriquer que de supposer gratuitement que l’usine saurait tout faire elle-même.
+— Combien ?
 
-Le directeur commercial voulut immédiatement annoncer la montée en capacité. Claire lui fit remarquer que le calendrier comportait désormais des périodes de tutorat.
+— Nous allons étudier cela.
 
-— Elles sont obligatoires ?
+— Et je continue à faire tourner les machines ?
 
-— Elles sont nécessaires.
+— Évidemment. Nous ne pouvons pas arrêter la production pour former les gens qui doivent produire. »
 
-— C’est la même chose ?
+Kevin resta silencieux.
 
-— Non. C’est justement pour ça qu’il faut les protéger.
+Il venait de découvrir que la direction envisageait de résoudre un manque de personnel en supprimant le temps nécessaire pour en former davantage.
 
-Les responsables de production approuvèrent des créneaux. Les RH les saisirent dans le logiciel. Les achats, le commerce et la direction générale furent informés. Personne ne pouvait plus contester la disponibilité du temps : elle avait fait l’objet de quatre validations et se trouvait inscrite en bleu.
+Le responsable des ressources humaines présenta alors le programme de formation.
 
-Kevin demanda qui pourrait lui retirer ces heures en cas d’urgence.
+Il comportait douze modules, six objectifs pédagogiques et un tableau de suivi.
 
-— Elles sont validées, répondit Claire.
+Le tableau était magnifique.
 
-— C’est ce que je demandais.
+Chaque formation prévue apparaissait en bleu. Chaque formation commencée en orange. Chaque formation terminée en vert.
 
-Elle lui expliqua que, cette fois, l’organisation avait été pensée sérieusement. Kevin regarda son carnet, regarda le planning, puis choisit de ne pas offrir une troisième réponse au problème.
+Au bout de trois semaines, le directeur général annonça fièrement que 82 % du programme était réalisé.
 
-Ce silence fut interprété comme un signe encourageant d’appropriation.
+Claire demanda à voir le détail.
 
-Les deux premières vagues se passèrent plutôt bien. Des personnes furent embauchées, accompagnées, évaluées. Certaines devinrent progressivement autonomes sur les postes correspondant à leurs acquis. Dans l’atelier, on appelait cela apprendre un métier. Au comité de direction, on préféra « déploiement opérationnel progressif des talents ».
+« Kevin, tu as terminé le module de réglage ?
 
-Puis les machines se mirent à tomber en panne avec un sens du calendrier franchement antisocial.
+— Non.
 
-Un lundi, Kevin fut appelé pour un réglage que peu de collègues savaient effectuer. Le lendemain, une série urgente imposa son aide au contrôle. Le mercredi, la production le réclama encore. Chaque interruption était justifiée. Chaque responsable, interrogé séparément, avait pris la bonne décision. L’entreprise était donc parvenue à produire un échec collectif composé exclusivement de décisions individuelles raisonnables.
+— Pourtant, il est en vert.
 
-Les heures de tutorat restaient au planning. Elles avaient simplement perdu la mauvaise habitude d’exister dans la réalité.
+— J'ai été appelé pour réparer une machine.
 
-Claire demanda pourquoi elles n’avaient pas été réalisées.
+— Et celui sur le contrôle qualité ?
 
-— Elles ont été décalées, lui répondit-on.
+— Annulé. On avait une commande urgente.
 
-— À quand ?
+— Et celui sur les défauts de fabrication ?
 
-— Aux prochains créneaux.
+— Reporté. La machine était encore en panne. »
 
-— Ceux qui sont déjà occupés ?
+Le directeur général regarda le tableau.
 
-— Le planning va être actualisé.
+« Mais pourquoi tout est vert ?
 
-La mise à jour déplaça les séances de deux colonnes vers la droite. Ce fut le seul déplacement de personnel dont personne ne contesta la faisabilité.
+— Parce que les formations étaient programmées, expliqua le responsable.
 
-Dans le logiciel, certaines formations figuraient comme commencées ou réalisées selon leur saisie. Kevin continuait d’entourer, dans son carnet, les séances dont il restait des gestes à reprendre. On lui proposa de déclarer un « taux d’avancement pédagogique ». Il suggéra de commencer par lui rendre les heures disparues.
+— Donc elles ont eu lieu ?
 
-Le directeur commercial, lui, regardait toujours les trente silhouettes bleues. Elles avaient été rejointes par une courbe de montée en puissance, devenue si belle qu’il aurait été dommage de la compromettre avec des données d’atelier.
+— Administrativement, oui. »
 
-Un nouveau salarié attendit sa validation avant de pouvoir intervenir seul sur une opération. La validation n’avait pas été faite ; Kevin avait été mobilisé sur une commande urgente. Claire refusa que l’intéressé soit déclaré autonome à titre provisoire. On lui répondit que cela retardait une livraison.
+Kevin demanda si les machines pouvaient, elles aussi, être réparées administrativement.
 
-— Oui, dit-elle. C’est la définition d’une compétence qu’on n’a pas encore.
+Le directeur financier trouva la suggestion intéressante.
 
-Quelqu’un demanda s’il était possible de distinguer « autonomie complète » et « autonomie commercialement nécessaire ». La proposition ne fut pas retenue. Elle méritait pourtant une place dans l’histoire du management.
+Claire imposa une nouvelle organisation.
 
-Le client accepta seulement une partie du calendrier de livraison révisé. Il confia certains volumes prévisionnels de montée en charge — qui n’étaient pas encore des commandes fermes — à un autre fournisseur. Le contrat n’avait pas disparu ; l’entreprise perdait néanmoins une partie de la croissance qu’elle s’était déjà félicitée d’avoir acquise.
+Les trente recrues arriveraient en trois vagues. Kevin formerait deux personnes à la fois. Deux autres salariés expérimentés seraient préparés pour devenir tuteurs.
 
-Le directeur commercial parla d’un « ajustement du potentiel capté ». Sur les graphiques, les silhouettes restèrent au nombre de trente. Elles n’avaient jamais été aussi performantes que sur cette page.
+Les heures de formation seraient inscrites dans le planning et protégées contre les interruptions.
 
-La direction demanda des explications. Claire prépara une présentation de vingt-deux diapositives pour démontrer que l’entreprise avait confondu trois choses : une embauche, une compétence acquise et une capacité réellement disponible.
+Le document fut signé par trois directeurs.
 
-Elle découvrit, au moment de passer à la douzième diapositive, que la démonstration tenait sur un Post-it.
+Kevin reçut une copie plastifiée.
 
-Kevin n’avait pas besoin de cette présentation. Il avait noté « Encore appelé sur la machine » à côté de plusieurs séances interrompues. C’était moins graphique, mais l’information possédait une qualité gênante : elle correspondait à un événement.
+« Comme ça, lui expliqua-t-on, personne ne pourra te déranger. »
 
-Claire dut reconnaître sa propre part. Elle avait trouvé les tuteurs, réservé des heures, obtenu des signatures, fait accepter trois vagues de recrutement. Puis elle avait considéré que tout ce qui portait le mot « validé » était garanti. Elle avait passé huit ans aux ressources humaines sans encore parvenir à distinguer une case colorée d’une journée de travail.
+Le lundi, le chef d'atelier vint le chercher.
 
-— Je vous avais dit qu’on allait vous protéger du planning, confia-t-elle à Kevin.
+« Kevin, il y a une machine à régler.
 
-— Non. Vous m’aviez dit que le planning allait me protéger.
+— Je suis en formation.
 
-— C’est une différence ?
+— C'est urgent. »
 
-— Pour vous, c’était une phrase. Pour moi, c’était mardi.
+Le mardi, le responsable qualité l'appela.
 
-Claire proposa de revoir les arbitrages. Les interruptions répétées du tutorat devaient désormais déclencher une décision identifiable : fallait-il dégager une autre personne, modifier la priorité de production, ou assumer un délai de formation et ses conséquences ? Il ne s’agissait plus de s’abriter derrière une ligne de calendrier en espérant qu’elle résiste à une machine en panne.
+« Kevin, on a un problème sur une série.
 
-Les trente recrutements furent finalement réalisés sur une période plus longue. Tout le monde n’était pas autonome sur tous les postes, ce qui n’avait jamais été l’objectif réel. L’usine avait encore des départs à remplacer, une activité existante à tenir et des compétences à développer. Elle n’avait pas transformé trente êtres humains en trente unités de production instantanées ; elle s’en était simplement aperçue après avoir promis le résultat.
+— Je suis en formation.
 
-Un nouveau tableau de suivi distingua mieux les séances effectivement terminées de celles qu’il fallait reprendre. Le mot « réalisé » fut réservé, au prix d’un long débat, aux choses réellement réalisées. Ce changement fut considéré comme suffisamment innovant pour justifier une communication interne.
+— Justement, on a besoin de quelqu'un qui sait faire. »
 
-Kevin conserva son carnet. Personne ne lui en voulut officiellement. Plusieurs cadres continuèrent toutefois à préférer le logiciel, dont les cases avaient le bon goût de ne jamais lever les yeux au ciel.
+Le mercredi, le directeur commercial passa personnellement.
 
-Un vendredi, Kevin demanda à Claire de préparer un collègue pour prendre le relais comme tuteur sur son poste.
+« Kevin, le client attend sa commande.
 
-— On va regarder le planning, répondit-elle.
+— Je suis en formation.
 
-Elle ferma les yeux. Elle venait encore de dire la phrase.
+— On formera les nouveaux après. »
 
-Kevin ouvrit son carnet, inscrivit le prénom du collègue et laissa une case vide pour la date.
+Le jeudi, Claire lui demanda où en étaient les formations.
 
-— Vous pourriez la remplir tout de suite, dit Claire. Ce serait plus encourageant.
+« Très bien, répondit Kevin. J'ai passé quatre jours à expliquer pourquoi je ne pouvais pas les faire. »
 
-— C’est prévu ou c’est fait ?
+Le vendredi, le logiciel affichait toujours 82 %.
 
-Claire regarda longtemps la case. Puis elle sourit.
+La direction jugea le résultat encourageant.
 
-— Vous savez quoi ? Je vais peut-être demander qu’on embauche quelqu’un pour m’apprendre la différence.
+Quelques semaines plus tard, un nouveau salarié devait prendre seul un poste de production.
 
-— Il faudra trouver qui le forme.
+Il avait assisté à plusieurs séances, observé Kevin travailler et réussi quelques opérations sous surveillance.
 
-Le lundi suivant, la direction annonça avoir créé un nouvel indicateur : le nombre de cases laissées volontairement vides afin de ne pas confondre les intentions avec les résultats.
+Il lui manquait encore des gestes essentiels à maîtriser.
 
-Elle fixa un objectif ambitieux de réduction de cet indicateur à zéro avant la fin du trimestre.
+Mais une livraison urgente approchait.
+
+Le directeur commercial convoqua une réunion.
+
+« Il faut qu'il travaille seul dès lundi.
+
+— Il n'est pas encore autonome, répondit Claire.
+
+— Il a pourtant suivi sa formation.
+
+— Une partie.
+
+— Il connaît la machine ?
+
+— Il sait à quoi elle sert.
+
+— C'est déjà beaucoup.
+
+— Pour un visiteur, oui. »
+
+Le directeur commercial proposa une solution.
+
+« On pourrait le déclarer autonome provisoirement. »
+
+Claire demanda ce que cela signifiait.
+
+« Qu'il soit autonome jusqu'à ce qu'on ait le temps de vérifier qu'il l'est vraiment. »
+
+Le directeur général trouva l'idée audacieuse.
+
+Le responsable qualité demanda si l'on pouvait également déclarer les pièces conformes provisoirement, en attendant de les contrôler.
+
+La réunion devint soudain moins enthousiaste.
+
+Claire refusa de signer la validation.
+
+Il faudrait terminer la formation et vérifier les compétences avant de laisser le salarié travailler seul.
+
+Le directeur commercial annonça que cette décision mettait en péril une livraison.
+
+« Vous comprenez, Claire, nous avons promis au client que nous aurions les moyens de produire.
+
+— Mais nous ne les avons pas encore.
+
+— C'est justement pour cela qu'il faut faire un effort.
+
+— Lequel ?
+
+— Que les moyens arrivent plus vite. »
+
+Claire demanda s'il avait envisagé d'appeler les machines pour leur demander de se montrer compréhensives.
+
+Le client accepta un calendrier partiellement révisé, mais confia une partie des volumes futurs envisagés à un autre fournisseur.
+
+La direction organisa immédiatement une réunion de crise.
+
+Le directeur commercial arriva avec le PowerPoint des trente personnages bleus.
+
+« Je ne comprends pas. Nous avons recruté tout le monde.
+
+— Oui, répondit Claire. Mais nous avons confondu recruter, former et rendre opérationnel.
+
+— Pourquoi ne nous l'avez-vous pas dit ?
+
+— Je vous l'ai dit à la première réunion.
+
+— Vous auriez dû insister.
+
+— J'ai insisté.
+
+— Avec davantage de conviction. »
+
+Claire faillit répondre, puis se ravisa.
+
+Elle aussi avait commis une erreur.
+
+Elle avait cru qu'un planning signé par trois directeurs empêcherait trois directeurs de le modifier.
+
+Elle avait prévu des heures de formation sans prévoir qui aurait le pouvoir de les protéger.
+
+Kevin, lui, n'avait jamais cru au document plastifié.
+
+Il l'utilisait depuis deux semaines pour caler une armoire.
+
+La direction finit par prendre de véritables décisions.
+
+Les formations auraient du temps réservé. Les tuteurs seraient réellement disponibles. Toute urgence nécessitant d'interrompre une formation devrait désormais préciser quelle autre activité serait retardée.
+
+Certaines productions furent décalées. Quelques opérations simples furent confiées temporairement à un prestataire capable de les réaliser. Les recrutements continuèrent par vagues, au rythme des capacités réelles d'intégration.
+
+Les nouveaux salariés apprirent progressivement leur métier.
+
+L'usine retrouva un fonctionnement plus cohérent.
+
+Pour éviter que le problème ne se reproduise, Claire fit modifier le logiciel.
+
+Désormais, une formation ne passerait au vert qu'une fois réellement terminée.
+
+Le directeur général approuva cette innovation.
+
+« Excellent. Et combien de formations sont encore en rouge ?
+
+— Dix-huit.
+
+— Dix-huit ? C'est beaucoup trop.
+
+— Ce sont celles qui ne sont pas terminées.
+
+— Je comprends. Mais ce rouge donne une mauvaise image de notre progression. »
+
+Il demanda au responsable informatique s'il était possible de choisir une couleur moins alarmante.
+
+Le responsable proposa le bleu.
+
+« Parfait, répondit le directeur général. C'est la couleur de nos trente nouveaux salariés. »
+
+Kevin, qui passait devant la salle, aperçut le nouveau tableau.
+
+Tout était bleu.
+
+Il sourit.
+
+Pour la première fois depuis des mois, le logiciel était parfaitement à jour.
+
+Il ne disait plus que les formations étaient terminées.
+
+Il disait seulement que l'entreprise avait choisi une très jolie couleur.
+
+Le lundi suivant, la direction lança un nouveau projet : former tous les salariés à la conduite du changement.
+
+Kevin reçut une invitation pour animer la première séance.
+
+Il répondit qu'il n'était pas disponible.
+
+Le logiciel indiqua immédiatement que la formation avait commencé.
