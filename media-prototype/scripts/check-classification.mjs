@@ -1,25 +1,25 @@
 // Verrou de classement éditorial V6 des manuscrits en préproduction.
-// Modifier ce registre uniquement après mise à jour des matrices maîtres Google Drive.
+// Registre des versions actuellement retenues sur Google Drive pour la consultation de préproduction.
 import { readFileSync, readdirSync } from 'node:fs';
 import { resolve, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../../content/articles');
 const records = [
-  "industrie/ind-c1-cst-01-brouillon.md|IND-C1-CST-01|industrie|V4.2|strategie-gouvernance|IND-C1-CST||CST|entretien|grand-entretien|1uS6Vi0k9sanYp43WT280iKpJzJ3H8N1YTSlTGrkNyDM",
-  "industrie/ind-c1-cst-02-brouillon.md|IND-C1-CST-02|industrie|V2.1|operations-organisation|IND-C1-CST||CST|recit|recit|1FXsuyw0O4fPvZFxEVuzRvwdAYUz_c_f1nGjXcF6WhPY",
-  "industrie/ind-c1-cst-03-brouillon.md|IND-C1-CST-03|industrie|V3.2|technologie-innovation|IND-C1-CST||CST|chronique|chronique|1p_2PybmOCRR1Ow9-gG8ri0YNwQ3-A8WeXMmTKRcSDNw",
-  "industrie/ind-c1-cst-04-brouillon.md|IND-C1-CST-04|industrie|V3.1|ressources-humaines-competences|IND-C1-CST||CST|chronique|chronique|11QAB8AKkV8-n18k8sF4XhU0JlCp9d2Nmizqze_qCdzg",
-  "industrie/ind-c1-cst-05-brouillon.md|IND-C1-CST-05|industrie|V2.0 expérimentale|finance-investissement|IND-C1-CST||CST|entretien|grand-entretien|1QAw6QJcWO7FW_rNnPWY2IeQ0pi1Gd_FV8HpfPUjA0yM",
+  "industrie/ind-c1-cst-01-brouillon.md|IND-C1-CST-01|industrie|V5.1|strategie-gouvernance|IND-C1-CST||CST|entretien|grand-entretien|1uEQ1QYskssxyfxF45wfKM3s5veT0_cXyuGqh-96ENys",
+  "industrie/ind-c1-cst-02-brouillon.md|IND-C1-CST-02|industrie|V3|operations-organisation|IND-C1-CST||CST|chronique|chronique|1Z9aEobtTrnGX9rgINBYLGr25GTV8CtQkZS0u5qOPaok",
+  "industrie/ind-c1-cst-03-brouillon.md|IND-C1-CST-03|industrie|V3.7|technologie-innovation|IND-C1-CST||CST|chronique|chronique|1juzTDNGcjDjpvfuLpGA9lmjUAOMGUkray1QI8bfHDSo",
+  "industrie/ind-c1-cst-04-brouillon.md|IND-C1-CST-04|industrie|V3.4|ressources-humaines-competences|IND-C1-CST||CST|chronique|chronique|1l_wbYNe8ANu8WB4t8oj5tFIZmMZZSlQy-fOosOkaH1c",
+  "industrie/ind-c1-cst-05-brouillon.md|IND-C1-CST-05|industrie|V3.0|finance-investissement|IND-C1-CST||CST|entretien|grand-entretien|1OOMtpevWBn3l5cgquZhAme_pCBXp-KrjARbDPr5tEmw",
   "industrie/ind-c1-cst-regard-croise-01-brouillon.md|IND-C1-CST-RC-01|industrie|V3.2||IND-C1-CST||CST|regard-croise||1VNTWk4QeKWnF4QD55vMR9JQ7hxAuOm4eFDk3wSelHjY",
-  "immobilier/imm-c1-rc-01-isabelle.md|IMM-C1-RC-01|immobilier|V4.1 maître|finance-investissement|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1IWUudlhhy8IWte1QIRbNTuBgzmTctkhIROGtu_xz-OY",
-  "immobilier/imm-c1-rc-02-thomas.md|IMM-C1-RC-02|immobilier|V1.3 maître|operations-organisation|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1jhxYVbklIdRu8F2OEvvsC43ciRQqt-JKIWag3aH2ez8",
-  "immobilier/imm-c1-rc-03-nathalie.md|IMM-C1-RC-03|immobilier|V1.2 maître|strategie-gouvernance|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1xTxBYv_0BBELyNe65xvYYqO_F_hPXWv2fQLOm1M1MRs",
-  "immobilier/imm-c1-rc-04-karim.md|IMM-C1-RC-04|immobilier|V2 expérimentale|droit-regulation|IMM-C1-RC||territoire-reconversion|recit|recit|1vsLB3DjzAkQjYZHm4pieHgRk9hW8lbPRL5Ei9T5zANs",
-  "immobilier/imm-c1-rc-regard-01.md|IMM-C1-RC-REGARD-01|immobilier|V2.4 — D2 global ouvert||IMM-C1-RC||territoire-reconversion|regard-croise||1R1L4TWX5XasFxNfIh0yLAHuNKchMEy5Sh39_g0EDOjo",
-  "agriculture/agr-c1-a02-chronique-vergers.md|AGR-C1-A02|agriculture|V4.1|strategie-gouvernance|AGR-C1-A|engagement-productif-longue-duree|arboriculture-sous-revue-strategique|chronique|chronique|1_iE1-2nxZIhWeKOEH_tASaFa6Cal8tC5ZOxLAkrNRY8",
-  "agriculture/agr-c1-b01-maraichage.md|AGR-C1-B01|agriculture|V2.2 corrigée|strategie-gouvernance|AGR-C1-B|debouches-variables|maraichage-debouches-concurrents|entretien|grand-entretien|16Jh2lgYwHM0VHTXvnB3ZrfGv9jwrZDwcJkod03469DA",
-  "agriculture/agr-c1-b04-cereales.md|AGR-C1-B04|agriculture|V1.1 corrigée|operations-organisation|AGR-C1-B|debouches-variables|cereales-recolte-excedentaire|recit|recit|1ceYt332bOyDvLGTTxPZhRT-2Ka8AQCFBce_97S3eTos"
+  "immobilier/imm-c1-rc-01-isabelle.md|IMM-C1-RC-01|immobilier|V6|finance-investissement|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1ohTdf2SRkE2Uy6C34u97ZskCefKgS_hy9IYK72s-oQQ",
+  "immobilier/imm-c1-rc-02-thomas.md|IMM-C1-RC-02|immobilier|V3|operations-organisation|IMM-C1-RC||territoire-reconversion|chronique|chronique|1eoYOI9tvNWgGuOIy423FyiXQcLCm1qEIkFl1nPIXj4U",
+  "immobilier/imm-c1-rc-03-nathalie.md|IMM-C1-RC-03|immobilier|V2|strategie-gouvernance|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1qNrr9sxnoNV5ZDVT5xCVn8xzp2NPnc_zKyOmKXgscEM",
+  "immobilier/imm-c1-rc-04-karim.md|IMM-C1-RC-04|immobilier|V3|droit-regulation|IMM-C1-RC||territoire-reconversion|chronique|chronique|1jfBl26WV6qeDzF7UUsCu_dFW2x95-OZblpat5n83W5M",
+  "immobilier/imm-c1-rc-regard-01.md|IMM-C1-RC-REGARD-01|immobilier|V2.4||IMM-C1-RC||territoire-reconversion|regard-croise||1R1L4TWX5XasFxNfIh0yLAHuNKchMEy5Sh39_g0EDOjo",
+  "agriculture/agr-c1-a02-chronique-vergers.md|AGR-C1-A02|agriculture|V4.5|strategie-gouvernance|AGR-C1-A|engagement-productif-longue-duree|arboriculture-sous-revue-strategique|chronique|chronique|1l75XgAOrlllaRdH_BRrv-xtV2w0WDsPQ_cT628wJsSw",
+  "agriculture/agr-c1-b01-maraichage.md|AGR-C1-B01|agriculture|V3|strategie-gouvernance|AGR-C1-B|debouches-variables|maraichage-debouches-concurrents|entretien|grand-entretien|1NRJHKCKFijkOKC4KDpYtbTFI4RdxB9fNpUbzi6vFdpg",
+  "agriculture/agr-c1-b04-cereales.md|AGR-C1-B04|agriculture|V2|finance-investissement|AGR-C1-B|debouches-variables|cereales-recolte-excedentaire|chronique|chronique|1pJuYG60CbJjXpdoc-zViUmkwDyxXw-kUhlEcKKzwTKY"
 ].map(line => {
   const [path, code, cycle, version, perspective, unit, family, context, format, genre, driveId] = line.split('|');
   return { path, code, cycle, version, perspective, unit, family, context, format, genre, driveId };
@@ -51,7 +51,7 @@ for (const r of records) {
   if (r.perspective) { tests.perspective_principale=r.perspective; tests.genre_narratif=r.genre; }
   if (r.family) tests.famille_decisionnelle=r.family;
   for (const [key,value] of Object.entries(tests)) if (d[key] !== value) errors.push(r.code+' : '+key+' attendu '+JSON.stringify(value)+', trouvé '+JSON.stringify(d[key]));
-  if (r.code === 'IMM-C1-RC-04' && d.title !== "Il avait empêché la signature. Il n'avait pas su arrêter la négociation.") errors.push('Titre de Karim V2 différent du titre validé');
+  if (r.code === 'IMM-C1-RC-04' && d.title !== "L'entreprise avait évité de signer un mauvais contrat. Elle a dépensé 35 000 euros pour continuer à ne pas le signer.") errors.push('Titre de Karim V3 différent du titre validé');
   if (d.published !== true) errors.push(r.code+' : consultation préproduction désactivée');
   if (!d.source_document_url?.includes('/document/d/'+r.driveId+'/')) errors.push(r.code+' : URL Drive ne correspond pas à la version verrouillée');
   if (usedCodes.has(r.code)) errors.push('Identifiant dupliqué : '+r.code); else usedCodes.add(r.code);
