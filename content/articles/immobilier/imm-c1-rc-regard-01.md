@@ -10,10 +10,10 @@ published: true
 publication_date: "2026-10-28T14:00:00+01:00"
 mise_en_avant: "standard"
 hero_image: "/images/articles/scenes_darbitrage_article_batiment_pouvait_encore_etre_sauve_mais_a_quel_prix.webp"
-source_notice: "Regard croisé : analyse d'opérations réelles. Version de consultation préproduction ; visa documentaire D2 global non délivré."
-methodology_specific: "Version V2.4 — D2 global ouvert livrée pour contrôle technique en préproduction le 6 novembre 2026. Visa définitif non délivré. D1/D2 à confirmer pour le texte exactement livré. Ne pas transférer vers la production."
+source_notice: "Regard croisé sur des situations réelles. Vérification des sources et visa documentaire requis avant publication publique."
+methodology_specific: "Texte Drive V2.4 pour consultation uniquement. Visa D2 et validation publique à confirmer."
 source_document_url: "https://docs.google.com/document/d/1R1L4TWX5XasFxNfIh0yLAHuNKchMEy5Sh39_g0EDOjo/edit"
-source_document_version: "V2.4 — D2 global ouvert"
+source_document_version: "V2.4"
 tag_1: "Reconversion immobilière"
 tag_2: "Friche industrielle"
 tag_3: "Viabilité économique"
@@ -21,15 +21,14 @@ tag_4: "Financement public"
 tag_5: "Coûts irrécupérables"
 code_editorial: "IMM-C1-RC-REGARD-01"
 unite_programmation: "IMM-C1-RC"
+autorisation_publication: "preproduction_uniquement"
 ---
 
-*Regard croisé — analyse d'opérations réelles. Version de consultation, sans visa D2 global.*
-
-**Version de consultation en préproduction — non publiable sans visa éditorial et documentaire.**
+**Version de consultation en préproduction — vérification documentaire et visa de publication en attente.**
 
 Une ancienne cave coopérative privée de son futur commerce, un quartier grassois plusieurs fois reprogrammé, une usine de Vierzon dont la réhabilitation mobilise des financements publics : les reconversions immobilières se heurtent à une même question. À partir de quand la transformation d'un bâtiment cesse-t-elle de justifier les ressources qu'elle exige ?
 
-## 1. Un bâtiment disponible ne constitue pas encore un marché
+1. Un bâtiment disponible ne constitue pas encore un marché
 
 À Volx, dans les Alpes-de-Haute-Provence, l'ancienne cave coopérative devait retrouver une fonction au sein d'un programme immobilier mixte. Mais en septembre 2022, une enseigne commerciale pressentie se retire. Les recettes attendues deviennent moins certaines, alors même que les coûts de construction et d'aménagement se tendent.
 
@@ -51,7 +50,7 @@ Si le marché demande des surfaces plus petites, il peut être pertinent de revo
 
 La vacance révèle un décalage entre un patrimoine existant et ses usages possibles. Elle ne démontre pas, à elle seule, que sa transformation sera économiquement justifiée.
 
-## 2. Le paradoxe économique : transformer peut détruire la valeur espérée
+2. Le paradoxe économique : transformer peut détruire la valeur espérée
 
 Réutiliser l'existant peut limiter l'artificialisation, préserver des matériaux et redonner une fonction à un site déjà urbanisé.
 
@@ -101,7 +100,7 @@ La densification peut améliorer les recettes. Elle peut aussi rencontrer des li
 
 La faisabilité d'une reconversion ne dépend pas uniquement de ce que le bâtiment permet. Elle dépend de ce que le territoire est prêt à accueillir et de ce que les acteurs peuvent financer.
 
-## 3. Le moment où continuer devient une décision à part entière
+3. Le moment où continuer devient une décision à part entière
 
 Une opération immobilière n'est pas décidée une seule fois.
 
@@ -157,7 +156,7 @@ Cela ne garantit pas une bonne décision.
 
 Cela réduit le risque de poursuivre uniquement parce qu'il est devenu difficile de reconnaître que le projet initial ne fonctionne plus.
 
-## 4. Pourquoi aucun acteur ne peut sécuriser seul une reconversion
+4. Pourquoi aucun acteur ne peut sécuriser seul une reconversion
 
 Une reconversion réunit des acteurs dont les objectifs se complètent sans toujours coïncider.
 
@@ -197,7 +196,7 @@ Un équipement public peut ne pas générer de recettes immobilières directes t
 
 La question devient alors celle de la répartition des coûts, des responsabilités et des bénéfices.
 
-## 5. Qui doit supporter le coût d'un bâtiment que le marché ne veut plus ?
+5. Qui doit supporter le coût d'un bâtiment que le marché ne veut plus ?
 
 À Vierzon, l'ancienne usine de la Société Française pose cette question sous une autre forme.
 
@@ -253,7 +252,7 @@ Or la bonne question n'est pas de savoir si la reconversion est souhaitable en p
 
 Elle est de déterminer si cette reconversion, avec ses coûts, ses usages et ses effets attendus, constitue une meilleure allocation des ressources que les autres possibilités.
 
-## Conclusion — La décision la plus difficile n'est pas toujours de transformer
+Conclusion — La décision la plus difficile n'est pas toujours de transformer
 
 La France dispose d'un patrimoine immobilier et foncier dont une partie ne correspond plus aux usages économiques qui l'ont fait naître.
 
@@ -270,3 +269,5 @@ Il faut parfois investir pour lever une incertitude. Parfois modifier le program
 Un bâtiment peut encore être transformable sans que le projet conçu pour lui mérite d'être poursuivi.
 
 C'est dans cet écart entre possibilité technique, valeur économique et intérêt territorial que se joue une part essentielle des décisions de reconversion.
+
+FIN DU TEXTE PUBLIC — NE PAS PUBLIER SANS VISA D1/D2.
