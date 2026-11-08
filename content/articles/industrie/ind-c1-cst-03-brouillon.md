@@ -1,5 +1,5 @@
 ---
-title: "Le progrès avait trois millions d’euros d’avance sur le bon sens."
+title: "L'usine voulait acheter un robot à trois millions d'euros. Une salariée a proposé de déplacer une table."
 summary: "Une direction industrielle projette trois millions d'euros de robotisation alors que l'observation des gestes et des déplacements révèle d'autres leviers."
 format: "chronique"
 cycle: "industrie"
@@ -17,10 +17,10 @@ tag_2: "Investissement industriel"
 tag_3: "Ergonomie"
 tag_4: "Amélioration continue"
 tag_5: "Industrialisation"
-source_notice: "Chronique satirique fictive. Personnages, chiffres et événements imaginaires."
-methodology_specific: "Version V3.2 pour contrôle en préproduction ; visa de publication publique non délivré."
-source_document_url: "https://docs.google.com/document/d/1p_2PybmOCRR1Ow9-gG8ri0YNwQ3-A8WeXMmTKRcSDNw/edit"
-source_document_version: "V3.2"
+source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
+methodology_specific: "Version V3.7 du manuscrit Drive. Préproduction uniquement, visa de publication publique non délivré."
+source_document_url: "https://docs.google.com/document/d/1juzTDNGcjDjpvfuLpGA9lmjUAOMGUkray1QI8bfHDSo/edit"
+source_document_version: "V3.7"
 validation_narrative: "validee"
 validation_documentaire: "validee_selon_matrice_c1"
 autorisation_publication: "preproduction_uniquement"
@@ -30,62 +30,318 @@ unite_programmation: "IND-C1-CST"
 perspective_principale: "technologie-innovation"
 ---
 
-*Chronique satirique · Fiction économique documentée.*
+*Texte de consultation en préproduction — publication publique non autorisée.*
 
-L’entreprise avait un problème de production. La direction disposait d’une solution à trois millions d’euros. Il ne restait qu’à vérifier si les deux avaient un rapport.
+La direction venait de trouver une solution à trois millions d'euros.
 
-La solution était une cellule robotisée. Le problème, lui, se déplaçait librement dans l’atelier, sans badge visiteur ni responsable clairement identifié. Depuis plusieurs mois, des pièces passaient d’un poste à l’autre, attendaient leur contrôle et repartaient parfois dans la direction d’où elles venaient. La direction avait décidé de traiter cette situation avec les moyens du XXIe siècle. Les pièces, qui n’avaient pas été consultées, continuaient à circuler selon un modèle plus ancien, fondé sur les chariots.
+Tout le monde était soulagé, même si personne ne savait encore très bien comment la seconde information allait résoudre la première.
 
-Le dossier d’investissement avait tout prévu. Un gain de vingt secondes par pièce, un retour sur investissement annoncé à quatre ans, des hypothèses de volumes ambitieuses et une diapositive sur la « transformation de la performance industrielle ». Le taux d’utilisation projeté restait à confirmer, mais le dégradé de couleur ne souffrait aucune contestation.
+La solution était un robot.
 
-On avait également prévu une photographie du robot. Il était blanc, brillant, parfaitement propre et ne gênait absolument personne, ce qui constituait déjà une différence sensible avec l’atelier.
+Un magnifique robot blanc, avec un bras articulé, un écran tactile et une petite lumière verte qui clignotait pour montrer qu'il était moderne.
 
-La perspective des trois millions d’euros avait donné naissance à un comité, deux sous-comités et plusieurs réunions de préparation. Le compte rendu de l’une d’elles concluait qu’il fallait « accélérer la décision pour ne pas retarder le gain de temps ». Après trois semaines de travail, les participants avaient trouvé l’expression satisfaisante. Le robot, pour sa part, promettait toujours de gagner vingt secondes.
+Selon son fabricant, il permettrait de gagner vingt secondes par pièce.
 
-C’est alors que Nathalie, directrice de l’industrialisation, demanda où se perdaient les autres secondes.
+Le directeur général était conquis.
 
-Cette question ne figurait pas à l’ordre du jour.
+« Vingt secondes ! Vous vous rendez compte ?
 
-Nathalie travaillait dans l’entreprise depuis vingt-sept ans. Ancienne technicienne méthodes, elle avait participé à l’installation de vingt-sept robots. On ne pouvait donc pas raisonnablement la décrire comme hostile à l’innovation. Un membre du comité proposa néanmoins de la qualifier de « réservée quant au rythme de la transformation », formule beaucoup plus polie pour dire qu’elle avait demandé à voir l’atelier.
+— Sur combien de pièces ? demanda Nathalie.
 
-Elle y descendit.
+— Sur chaque pièce !
 
-Une opératrice posait une pièce sur un chariot, faisait quelques pas, attendait un contrôle, puis revenait chercher la suivante. La table appartenait à la production, le chariot à la logistique et le contrôle à la qualité. Chacun possédait un périmètre. La pièce, sans doute par manque de formation aux responsabilités transversales, franchissait les trois.
+— Et combien de pièces supplémentaires pourrons-nous livrer ?
 
-Nathalie observa qu’une cellule capable de gagner vingt secondes sur l’usinage ne supprimerait ni l’attente devant le contrôle ni les promenades du chariot. L’entreprise pouvait acquérir une machine extraordinairement rapide pour travailler sur des pièces qui n’étaient pas encore devant elle.
+— Nathalie, ne gâchez pas vingt secondes de progrès avec des questions. »
 
-Elle recommanda de suspendre la décision d’achat, de tester un flux plus court sur une seule famille de pièces, de rapprocher le contrôle, de modifier deux chariots et de déplacer une table.
+Nathalie travaillait dans l'usine depuis vingt-sept ans.
 
-Un silence suivit le mot « table ».
+Elle avait connu quatre directeurs généraux, trois réorganisations majeures et un logiciel censé supprimer le papier, qui avait nécessité l'achat de deux imprimantes supplémentaires.
 
-Trois millions d’euros permettaient de parler de souveraineté industrielle, de compétitivité et de saut technologique. Une table déplacée permettait de moins marcher. Aucun cabinet de conseil ne s’était encore proposé pour accompagner le changement d’emplacement du mobilier.
+Elle n'était pas opposée aux robots. Elle avait même participé à l'installation de plusieurs d'entre eux.
 
-Le directeur général, à l’issue du comité d’investissement, accepta de reporter le projet afin de vérifier les hypothèses. Nathalie n’avait ni décidé seule de l’annulation ni conclu que l’automatisation était inutile. Elle avait simplement suggéré de découvrir ce que l’on voulait automatiser avant de passer commande. L’entreprise classa cette initiative parmi les « démarches de rupture ».
+Mais depuis qu'elle avait demandé si celui-ci servirait à quelque chose, la direction la soupçonnait de vouloir ramener l'industrie à l'âge de pierre.
 
-L’essai sur une première famille de pièces fonctionna : moins d’attente entre opérations, davantage de débit, sans accélération de l’usinage. L’équipe avait amélioré le flux en rapprochant des choses qui travaillaient déjà ensemble. Le service communication fut informé qu’il serait difficile de photographier le gain de productivité, celui-ci ne possédant ni bras articulé ni écran tactile.
+Le consultant chargé du projet présenta son étude.
 
-Il fut brièvement envisagé de présenter l’opération comme une « optimisation agile des interfaces physiques ». Les opérateurs continuèrent à dire qu’ils avaient bougé la table.
+Quarante-deux diapositives.
 
-Il serait toutefois faux d’annoncer que l’entreprise venait d’économiser trois millions d’euros. Elle avait reporté un investissement envisagé, non annulé une dépense déjà engagée. Les essais, les modifications des postes et les études avaient un coût. Une autre famille de pièces, plus lourdes, soumise à des contrôles plus longs et à davantage de changements de série, ne bénéficiait pas des mêmes gains. La table ne venait pas de résoudre l’ensemble de l’industrie française. Elle n’avait même pas résolu l’ensemble de l’atelier.
+Sur la première, le robot.
 
-Cette nuance suscita une certaine déception. La direction commençait à s’habituer à l’idée qu’une table puisse avoir un retour sur investissement exceptionnel.
+Sur la deuxième, le robot vu de profil.
 
-Puis une difficulté moins drôle apparut.
+Sur la troisième, le robot avec une flèche.
 
-En réduisant les déplacements, la nouvelle organisation avait concentré davantage de manipulations sur certains postes. L’ergonome avait signalé un risque de répétition des gestes et demandé une période d’observation plus longue. Les premières mesures de débit étaient bonnes, les livraisons pressaient, et Nathalie proposa de passer plus tôt au fonctionnement courant. La production accepta.
+Sur la quatrième, le mot « PERFORMANCE ».
 
-Six semaines après la réorganisation, une opératrice se blessa au poignet et fut arrêtée. Rien ne permettait d’attribuer cette blessure à la seule réorganisation sans analyse. Le risque signalé par l’ergonome n’en était pas moins réel, et la période d’observation prévue avait été écourtée.
+Nathalie demanda à quelle diapositive figurait le problème à résoudre.
 
-Nathalie, qui avait exigé que le comité mette à l’épreuve les hypothèses du robot, n’avait pas maintenu la même exigence pour sa propre solution. Elle avait dénoncé l’empressement d’une direction séduite par les premières projections. Puis elle s’était laissée convaincre par ses premiers résultats. Le mécanisme était identique ; seul le prix du mobilier avait changé.
+Le consultant répondit qu'il avait prévu de l'aborder dans une phase ultérieure.
 
-L’entreprise suspendit le nouveau geste, reprit l’étude ergonomique et modifia la préhension des pièces. Ces mesures ne démontraient ni la cause médicale de la blessure ni la conformité passée de l’organisation. Elles traduisaient la nécessité de reprendre une évaluation qui n’avait pas été conduite assez longtemps.
+« Vous voulez donc acheter le robot avant de savoir ce qui ne fonctionne pas ?
 
-Un projet de cellule robotisée plus ciblée fut ensuite recommandé pour certaines opérations répétitives, après réévaluation des risques. Le robot n’avait finalement pas disparu. Il avait seulement cessé d’être une réponse à une question que personne n’avait encore posée clairement.
+— Pas exactement. Nous voulons éviter que l'identification des problèmes retarde la mise en œuvre des solutions. »
 
-Le directeur général salua une « sécurisation de la trajectoire d’automatisation ». L’expression avait le mérite de donner l’impression que tout s’était déroulé conformément à une méthode pensée dès le départ, y compris l’étape où l’on avait envisagé de dépenser trois millions d’euros pour gagner vingt secondes au mauvais endroit.
+Le directeur général trouva la formule excellente.
 
-Nathalie recommença à visiter les postes. Elle demanda d’abord aux personnes qui manipulaient les pièces ce qu’elles pensaient des gestes et des déplacements. Elle regarda ensuite les chronomètres et les courbes.
+Il demanda qu'on la mette en gras.
 
-La table fut encore déplacée.
+Le lendemain, Nathalie descendit dans l'atelier.
 
-Le comité n’en fut pas informé immédiatement. On voulait d’abord vérifier que cela servait à quelque chose.
+Les machines fonctionnaient. Les salariés travaillaient. Les pièces, elles, semblaient avoir adopté un rythme de vie beaucoup plus détendu.
+
+Certaines attendaient sur des chariots.
+
+D'autres attendaient le contrôle.
+
+D'autres encore faisaient plusieurs allers-retours entre deux postes, comme si elles cherchaient leurs clés.
+
+Nathalie suivit une pièce pendant vingt minutes.
+
+La machine mit moins d'une minute à la travailler.
+
+Le reste du temps, la pièce voyagea, attendit, changea de chariot et attendit encore.
+
+À ce rythme, elle aurait bientôt accumulé suffisamment de kilomètres pour demander le remboursement de ses frais de déplacement.
+
+Nathalie remarqua une table placée loin du poste de contrôle.
+
+« Pourquoi cette table est-elle ici ?
+
+— Elle a toujours été là, répondit un opérateur.
+
+— Et si on la rapprochait ?
+
+— Il faudrait demander l'autorisation.
+
+— À qui ?
+
+— Au responsable de la logistique.
+
+— Il est où ?
+
+— Derrière la table. »
+
+Le responsable de la logistique confirma qu'il gérait les déplacements des pièces, mais pas ceux du mobilier.
+
+« Et qui gère le mobilier ?
+
+— Les services généraux.
+
+— Et ils sont où ?
+
+— À l'autre bout de l'usine.
+
+— Pourquoi ?
+
+— C'est historique. »
+
+Nathalie demanda si quelqu'un avait déjà essayé de déplacer la table.
+
+Personne.
+
+Elle proposa donc de le faire.
+
+Le responsable logistique demanda qu'une demande officielle soit déposée, afin de vérifier que le déplacement de la table ne perturberait pas le plan de circulation.
+
+Nathalie fit remarquer que le plan de circulation était précisément ce qui posait problème.
+
+« Dans ce cas, répondit-il, il faudra d'abord mettre le plan à jour. »
+
+Au comité de direction, Nathalie présenta ses observations.
+
+« Le robot ferait gagner vingt secondes sur une opération. Mais nos pièces perdent beaucoup plus de temps à attendre et à circuler. Nous devrions commencer par rapprocher le contrôle et déplacer une table.
+
+— Une table ? répéta le directeur commercial.
+
+— Oui.
+
+— Une table avec un écran ?
+
+— Non.
+
+— Un logiciel ?
+
+— Non.
+
+— Une table intelligente ?
+
+— Une table avec quatre pieds. »
+
+Le directeur commercial parut déçu.
+
+« Vous comprenez, Nathalie, que nous ne pouvons pas annoncer à nos clients un grand plan de modernisation reposant sur une table ?
+
+— Nous pouvons leur annoncer que leurs commandes arriveront plus vite.
+
+— Oui, mais où est l'innovation ? »
+
+Le consultant intervint.
+
+« Peut-être pourrions-nous parler de plateforme horizontale de fluidification industrielle. »
+
+Le directeur général retrouva le sourire.
+
+« Voilà ! Là, nous commençons à avoir un projet. »
+
+Le consultant demanda si la table était connectée.
+
+Nathalie répondit que non.
+
+Il proposa d'étudier la possibilité de la connecter.
+
+« À quoi ?
+
+— À notre stratégie de transformation. »
+
+Nathalie présenta alors les relevés.
+
+Sur la série étudiée, le robot ne supprimerait pas l'attente qui limitait les livraisons. Il permettrait surtout de fabriquer plus rapidement des pièces qui continueraient à attendre.
+
+Trois millions d'euros pour organiser une file d'attente plus performante.
+
+Le directeur financier, jusque-là discret, demanda si l'entreprise envisageait également d'acheter des fauteuils pour les pièces.
+
+Le directeur général lui demanda de rester constructif.
+
+Finalement, la direction accepta un essai.
+
+Le robot serait mis en attente.
+
+On rapprocherait certains postes, on modifierait deux chariots et on déplacerait la table.
+
+Le consultant proposa un nom officiel : « Programme d'optimisation dynamique des flux et des interfaces productives ».
+
+Les ouvriers continuèrent à l'appeler « déplacer la table ».
+
+Une note interne leur demanda d'éviter cette expression pendant les visites de la direction.
+
+L'opération prit deux jours.
+
+La table changea de place.
+
+Les chariots firent moins de trajets.
+
+Les pièces attendirent moins longtemps.
+
+Sur la série testée, davantage de commandes purent être terminées.
+
+L'usine venait de découvrir qu'un objet de quatre pieds pouvait, dans certaines circonstances, être plus utile qu'un robot de trois millions d'euros.
+
+Le directeur commercial exulta.
+
+« Nous avons économisé trois millions !
+
+— Non, répondit Nathalie. Nous avons reporté un investissement.
+
+— C'est pareil !
+
+— Nous n'avons pas récupéré de l'argent. Nous avons évité d'en dépenser pour l'instant.
+
+— Vous avez vraiment du mal avec les bonnes nouvelles. »
+
+Le service communication publia un communiqué.
+
+« Notre groupe accélère sa transformation industrielle grâce à une innovation organisationnelle majeure. »
+
+Une photographie montrait le directeur général devant le nouvel agencement.
+
+La table avait été discrètement sortie du cadre.
+
+Le cabinet de conseil proposa de déposer une candidature à un prix de l'innovation.
+
+Il fallut toutefois renoncer à la catégorie « Robotique avancée ».
+
+L'histoire aurait pu s'arrêter là.
+
+Mais Nathalie, ravie de ses premiers résultats, commença à se comporter comme les gens qu'elle venait de contredire.
+
+Elle voulait aller vite.
+
+Les premières améliorations étaient encourageantes. Elle proposa donc de raccourcir la période d'observation du nouvel agencement.
+
+L'ergonome demanda davantage de temps.
+
+« Nous devons vérifier l'effet sur les gestes répétés.
+
+— Nous avons déjà de bons résultats.
+
+— Sur les flux, oui. Pas encore sur les conditions de travail.
+
+— On ne va pas passer six mois à observer une table. »
+
+L'ergonome nota cette phrase.
+
+Elle ressemblait beaucoup à celles prononcées par le directeur général lorsqu'il défendait son robot.
+
+Quelques semaines plus tard, une opératrice fut arrêtée après une blessure au poignet.
+
+Personne ne pouvait affirmer que la nouvelle organisation en était la cause. Mais l'ergonome avait signalé un risque lié à la répétition de certains gestes, et l'essai avait été écourté avant que ce point soit suffisamment évalué.
+
+Le directeur général convoqua Nathalie.
+
+Il avait l'air particulièrement satisfait.
+
+« Vous nous avez reproché de vouloir installer un robot trop vite.
+
+— Oui.
+
+— Et vous avez voulu déplacer votre table trop vite.
+
+— Oui.
+
+— Donc nous sommes d'accord sur une chose.
+
+— Laquelle ?
+
+— Vous aussi, vous êtes capable de prendre une décision avant d'avoir terminé les vérifications. »
+
+Nathalie dut reconnaître qu'il avait raison.
+
+C'était désagréable.
+
+Elle avait espéré finir sa carrière sans jamais prononcer cette phrase devant lui.
+
+L'organisation fut réexaminée avec les opérateurs et l'ergonome. Certains gestes furent adaptés. L'essai reprit avec des observations plus longues.
+
+Un robot plus ciblé restait envisageable pour certaines tâches répétitives, si les besoins réels le justifiaient.
+
+Le directeur général annonça alors une grande réforme.
+
+« Désormais, avant de choisir une solution, nous commencerons par identifier le problème. »
+
+Un silence respectueux accueillit cette déclaration.
+
+Le consultant fut le premier à applaudir.
+
+« C'est un changement culturel majeur. »
+
+Le directeur général demanda combien de temps prendrait sa mise en œuvre.
+
+« Nous proposons un accompagnement en quatre phases.
+
+— Pour quoi faire ?
+
+— Pour apprendre à identifier les problèmes avant de choisir les solutions. »
+
+Nathalie demanda si cette méthode avait déjà été testée.
+
+Le consultant répondit que non, mais qu'il avait toute confiance dans son potentiel.
+
+Le directeur général voulut connaître le prix.
+
+Le consultant annonça 180 000 euros.
+
+« C'est beaucoup pour apprendre à poser des questions.
+
+— Vous avez raison, répondit le consultant. Nous devrions commencer par identifier pourquoi cela vous paraît cher. »
+
+Il proposa une première réunion de cadrage.
+
+Nathalie regarda la table.
+
+Pour la première fois de son existence, elle se demanda si elle ne serait pas mieux ailleurs.
+
+Le directeur général demanda qu'on ne la déplace surtout pas.
+
+Il fallait d'abord commander une étude.
