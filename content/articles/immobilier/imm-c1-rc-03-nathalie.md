@@ -1,5 +1,5 @@
 ---
-source_document_version: "V1.2 maître"
+source_document_version: "V2"
 genre_narratif: "grand-entretien"
 title: "Le marché disait oui. Les locataires ne signaient pas."
 summary: "Une directrice de programmes raconte avec ironie comment six mois d'efforts commerciaux et une enveloppe fictive de 120 000 euros n'ont pas transformé l'intérêt des prospects en baux signés."
@@ -13,9 +13,9 @@ published: true
 publication_date: "2026-10-28T14:00:00+01:00"
 mise_en_avant: "standard"
 hero_image: "/images/articles/scenes_darbitrage_article_le_marche_disait_oui_locataires_ne_signaient_pas.webp"
-source_notice: "Entretien fictif : personnages, opérations et dialogues inventés."
-methodology_specific: "V1.2 maître D1/D2 validés avec réserves ; visa de production non délivré."
-source_document_url: "https://docs.google.com/document/d/1xTxBYv_0BBELyNe65xvYYqO_F_hPXWv2fQLOm1M1MRs/edit"
+source_notice: "Grand Entretien fictif. Personnages, entreprise, dialogues et chiffres inventés."
+methodology_specific: "Version V2 du manuscrit Drive. Préproduction uniquement, visa de publication publique non délivré."
+source_document_url: "https://docs.google.com/document/d/1qNrr9sxnoNV5ZDVT5xCVn8xzp2NPnc_zKyOmKXgscEM/edit"
 tag_1: "Commercialisation"
 tag_2: "Bureaux"
 tag_3: "Demande immobilière"
@@ -24,76 +24,98 @@ tag_5: "Coût de l’attente"
 code_editorial: "IMM-C1-RC-03"
 unite_programmation: "IMM-C1-RC"
 perspective_principale: "strategie-gouvernance"
+autorisation_publication: "preproduction_uniquement"
 ---
 
-*Entretien fictif · Fiction économique documentée.*
+*Texte de consultation en préproduction — publication publique non autorisée.*
 
-Elle avait défendu la reconversion d'un ancien ensemble administratif en bureaux et locaux de services. Quand les entreprises ont commencé à demander moins de surface et davantage de souplesse, Nathalie a obtenu six mois et 120 000 euros pour tester une autre version de son programme. Elle n'a pas atteint l'objectif fixé. Reste une question : fallait-il tenter cette dernière vérification ?
-Scènes d'Arbitrage — Pour commencer, pourriez-vous vous présenter ?
-Nathalie — Je m'appelle Nathalie, j'ai quarante-six ans. Je suis directrice des programmes chez un opérateur immobilier régional. J'ai commencé dans la commercialisation il y a un peu plus de vingt ans, avant de passer au montage d'opérations.
-Vous êtes passée de celle qui promet des bureaux à celle qui doit les faire construire ?
-(Rires.) C'est à peu près ça. Et je peux vous assurer que les deux métiers se renvoient régulièrement la responsabilité des problèmes.
-Vous avez conservé quelques réflexes de commerciale ?
-Oui. Je regarde les gens quand ils visitent un bâtiment. Celui qui demande où installer ses équipes ne se comporte pas comme celui qui trouve tout magnifique mais ne pose aucune question pratique.
-Vous aviez repéré cette différence sur votre opération ?
-Pas assez tôt.
-Qu'achetiez-vous exactement ?
-Un ancien ensemble administratif, dans une ville moyenne des Hauts-de-France. Un bâtiment bien situé, accessible, avec des plateaux que nous pensions pouvoir diviser. Nous voulions le transformer en bureaux et locaux de services pour les entreprises du territoire. Le programme représentait 4 800 mètres carrés commercialisables et 8,4 millions d'euros d'investissement prévisionnel.
-Pourquoi pensiez-vous qu'il trouverait des occupants ?
-Des entreprises industrielles se réorganisaient, des prestataires se développaient autour d'elles, plusieurs employeurs évoquaient de nouvelles implantations. Nous ne pensions pas faire venir miraculeusement des sièges sociaux. Nous voulions répondre à une économie locale qui évoluait.
-Avec quel objectif de loyers ?
-720 000 euros annuels à pleine occupation. Nous visions 85 % d'occupation à stabilisation, soit environ 612 000 euros de loyers bruts annuels.
-Quand comprenez-vous que le marché ne répond pas comme prévu ?
-Progressivement. Les entreprises continuaient à nous contacter, mais elles demandaient moins de surface, des engagements plus souples, parfois des espaces partagés. Je me souviens d'une visite avec un dirigeant qui cherchait initialement environ 600 mètres carrés. Nous parcourons un plateau. Je lui montre où pourraient se trouver les bureaux, les salles de réunion. Il pose des questions, prend des mesures. Puis, près des fenêtres, il me demande : « Vous pourriez aussi me montrer ce que ça donne avec 250 mètres carrés ? »
-Vous perdez plus de la moitié de la surface pendant la visite.
-C'est une manière de le dire. Il m'explique qu'il prévoit toujours de développer son entreprise, mais qu'il ne sait plus combien de personnes seront présentes quotidiennement. Il préfère garder une possibilité d'extension plutôt que payer immédiatement pour des bureaux vides.
-Qu'est-ce que vous vous dites à ce moment-là ?
-Que nous devons revoir la manière de diviser les surfaces. Pas encore que tout le programme est trop grand.
-Vous vous accrochez à la nuance.
-Parce qu'elle compte. Un prospect qui passe de 600 à 250 mètres carrés ne signifie pas qu'il n'y a plus de demande. Mais nous avons probablement accordé trop de poids au nombre d'entreprises intéressées, et pas assez à ce qu'elles étaient réellement prêtes à louer.
-Au douzième mois, un investisseur vous demande de revoir les perspectives locatives. Vous défendez pourtant le maintien du programme.
-Oui. Nous avions encore des prospects et un bâtiment adaptable. Je pensais que nous pouvions commercialiser progressivement.
-Vous aviez aussi déjà convaincu votre comité d'investissement.
-C'est vrai. J'avais défendu cette acquisition. J'y croyais. Et je connaissais suffisamment bien le dossier pour trouver une raison valable de continuer.
-Au dix-huitième mois, l'occupation prévisionnelle à trois ans passe de 85 à 60 %. Que se passe-t-il ?
-Nous reconnaissons que le programme initial n'est plus défendable sur les mêmes bases. Nous avons déjà engagé 3,1 millions d'euros. Il reste 5,3 millions à investir pour l'achever. À 60 % d'occupation, les revenus attendus ne justifient plus cet engagement. Nous comparons alors trois possibilités : maintenir, repositionner une partie des surfaces ou céder.
-Vous défendez un programme réduit à 3 600 mètres carrés.
-Oui, avec davantage de modularité. Il nécessiterait 3,4 millions d'euros de dépenses futures. En parallèle, nous avons une proposition indicative de cession à 1,9 million d'euros, mais elle est conditionnelle. Le comité estime que nous n'avons pas assez d'éléments pour engager les travaux. Je propose de tester la nouvelle programmation pendant six mois.
-Avec 120 000 euros supplémentaires.
-C'est l'enveloppe maximale autorisée pour les études complémentaires et la commercialisation. Aucun lancement de travaux. Et une condition : obtenir 1 800 mètres carrés d'engagements locatifs suffisamment fermes avant de revenir devant le comité.
-Vous pensiez y arriver ?
-Oui.
-Vous étiez toujours optimiste.
-Je suis directrice des programmes immobiliers. Si je n'avais jamais été optimiste, j'aurais probablement choisi un autre métier. Mais cette fois, l'optimisme avait une date d'expiration.
-Qu'est-ce que ces six mois changent dans votre compréhension du marché ?
-Nous découvrons une demande plus fragmentée : des entreprises qui veulent 150 à 400 mètres carrés, des espaces modulables, parfois des services partagés. Et nous constatons que cette souplesse a un coût. Notre nouvelle offre répond mieux aux besoins exprimés, mais elle n'est pas automatiquement plus rentable. Au vingt-troisième mois, un prospect qui envisageait environ 700 mètres carrés reporte son implantation. Nous avions travaillé sur ses besoins pendant plusieurs mois. Son propre projet d'investissement change.
-C'est le moment où vous comprenez que le seuil ne sera pas atteint ?
-C'est le moment où il devient très difficile à atteindre. Nous avions d'autres négociations, mais pas de quoi remplacer rapidement cette surface.
-Au bout des six mois, vous revenez avec 1 150 mètres carrés, contre 1 800 exigés.
-Oui. Nous n'avons pas atteint la condition fixée. Je ne demande pas de prolongation.
-Le comité suspend le repositionnement.
-Il refuse d'engager les travaux et demande de réexaminer les possibilités de cession. Le bâtiment reste dans notre patrimoine, avec ses charges et ses incertitudes.
-Vous auriez pu vous arrêter six mois plus tôt et économiser 120 000 euros.
-Oui.
-Cela ne vous gêne pas de le reconnaître ?
-Bien sûr que si.
-Alors qu'est-ce qui vous fait penser que ces six mois étaient justifiés ?
-Nous avons pu mesurer la demande pour un programme différent, préciser les coûts et comprendre les conditions auxquelles les entreprises accepteraient réellement de s'engager. Je ne vais pas prétendre que le résultat est satisfaisant. Mais au dix-huitième mois, nous n'avions pas ces informations.
-Vous aviez aussi un intérêt personnel à voir le projet aboutir.
-Évidemment. J'avais porté l'acquisition, défendu le programme, mobilisé les équipes. J'aurais préféré revenir avec des baux et un calendrier de travaux.
-Avec le recul, n'auriez-vous pas dû arrêter plus tôt ?
-J'aurais dû mettre plus tôt plusieurs scénarios sur la table, y compris une réduction du programme. Mais je ne peux pas affirmer que j'aurais arrêté au douzième mois. Les informations étaient encore contradictoires. Si le marché était reparti et que nous avions loué les 4 800 mètres carrés, vous seriez probablement en train de me demander comment j'ai eu le courage de tenir bon.
-Vous pensez que le résultat change notre jugement sur la décision ?
-Énormément. Quand on connaît la fin, tout paraît beaucoup plus évident.
-Et aujourd'hui, le bâtiment ?
-Il est toujours là. Nous travaillons sur les possibilités de cession. Rien n'est conclu.
-Vous y retournez parfois ?
-Oui. Moins souvent, forcément.
-Vous regardez encore comment on pourrait découper les plateaux ?
-(Sourire.) C'est un défaut professionnel.
-Vous imaginez toujours des bureaux ?
-Parfois. Et puis je repense à ce dirigeant qui voulait 250 mètres carrés au lieu de 600.
-Vous lui en voulez ?
-Pas du tout. Il savait très bien ce qu'il était prêt à payer.
-Mieux que vous ?
-Sur ce point-là, oui.
+Nathalie, directrice des programmes immobiliers, a défendu la transformation d'un ancien bâtiment administratif en bureaux. Dix-huit mois plus tard, elle a obtenu six mois et 120 000 euros pour vérifier si le projet pouvait encore être sauvé. Les locataires n'ont pas signé. Jean Toksik a décidé d'organiser la vente aux enchères de ses certitudes.
+
+Jean Toksik — Bienvenue, Nathalie. Aujourd'hui, nous allons procéder à une vente aux enchères.
+Nathalie — Je croyais venir pour un entretien.
+— C'est le cas. Je vais mettre aux enchères vos prévisions. Nous commencerons à 720 000 euros de loyers annuels. Qui dit mieux ?
+— C'était le revenu brut théorique à pleine occupation, pas notre prévision d'encaissement immédiat.
+— Première déception. Personne n'achète.
+— Vous êtes toujours comme ça ?
+— Seulement avec les personnes qui construisent 4 800 mètres carrés de bureaux avant de découvrir que leurs clients en veulent moins.
+— Nous avions identifié une demande économique réelle.
+— Bien sûr. Et les entreprises étaient enthousiastes ?
+— Plusieurs étaient intéressées.
+— Intéressées comme on l'est par une maison avec piscine qu'on n'a aucune intention d'acheter ?
+— Un dirigeant cherchait initialement 600 mètres carrés. Pendant la visite, il m'a demandé ce que nous pouvions proposer sur 250.
+— Il avait perdu 350 mètres carrés dans l'escalier ?
+— Il avait réévalué ses besoins.
+— Votre immeuble faisait 4 800 mètres carrés. Si tous vos prospects se mettaient à réévaluer leurs besoins à cette vitesse, il aurait bientôt tenu dans une boîte à chaussures.
+— Vous avez terminé ?
+— Pas encore. Le programme représentait 8,4 millions d'euros d'investissement prévisionnel. Dix-huit mois plus tard, vous aviez déjà engagé 3,1 millions et il restait 5,3 millions à investir.
+— Oui.
+— L'occupation prévisionnelle à trois ans était passée de 85 à 60 %. Vous aviez donc un immeuble qui coûtait toujours aussi cher, mais dont les locataires avaient commencé à disparaître avant même d'emménager.
+— Nous avons justement décidé de revoir le programme.
+— Et là, vous avez demandé 120 000 euros supplémentaires.
+— Pour tester pendant six mois une programmation réduite à 3 600 mètres carrés. Sans lancer les travaux.
+— Donc votre solution à un projet qui coûtait trop cher consistait à dépenser encore de l'argent pour savoir s'il fallait arrêter d'en dépenser.
+— Présenté ainsi, c'est évidemment ridicule.
+— Merci. J'avais peur que nous ne soyons jamais d'accord.
+— Le comité avait fixé une condition précise : obtenir 1 800 mètres carrés d'engagements locatifs suffisamment fermes. Sans cela, pas de travaux.
+— Vous aviez donc acheté six mois d'espoir avec une date de péremption.
+— Six mois pour vérifier une hypothèse.
+— L'espoir est beaucoup plus vendeur. Je vous recommande de changer de service marketing.
+— Je suis justement passée par la commercialisation.
+— Voilà qui explique beaucoup de choses.
+
+Nathalie croise les bras. Toksik prend une voix de commissaire-priseur.
+
+— Six mois d'études et de négociations ! Cent vingt mille euros ! Qui dit 1 800 mètres carrés de baux ?
+— Nous en avons obtenu 1 150.
+— Mille cent cinquante une fois ! Mille cent cinquante deux fois ! Adjugé à personne. Vous avez perdu.
+— Nous n'avons pas atteint le seuil, oui. Et je n'ai pas demandé de prolongation.
+— Vous auriez pu. Six mois supplémentaires, 120 000 euros de plus, et peut-être un très joli rapport sur les raisons de votre nouvel échec.
+— C'est précisément pour éviter cela que nous avions fixé une limite.
+— Et vous avez respecté la limite ?
+— Oui.
+— Vous me décevez. Je vous imaginais capable de défendre ce bâtiment jusqu'à ce qu'il soit classé monument historique.
+— J'y avais déjà consacré suffisamment d'énergie.
+— Et d'argent.
+— L'argent de l'entreprise. C'est justement pour cela qu'il fallait pouvoir arrêter.
+— Mais pourquoi ne pas avoir arrêté six mois plus tôt ?
+— Parce que nous ne savions pas encore si une offre plus petite et plus modulable pouvait trouver suffisamment de preneurs.
+— Et maintenant vous le savez ?
+— Nous savons que les engagements obtenus ne justifiaient pas de lancer les travaux dans les conditions prévues.
+— Vous avez donc payé 120 000 euros pour découvrir que les gens qui disaient vouloir louer des bureaux n'étaient pas suffisamment nombreux à vouloir signer.
+— Nous avons aussi appris quelles surfaces ils recherchaient, quels services ils demandaient et ce que leur souplesse coûtait à produire.
+— C'est cher, une leçon.
+— Moins cher que d'engager 3,4 millions d'euros de travaux supplémentaires sans avoir vérifié la demande.
+— Vous êtes en train de défendre votre échec comme une économie.
+— Je défends le fait d'avoir fixé un seuil, de l'avoir testé et d'avoir accepté le résultat.
+— C'est très déplaisant. J'avais prévu de vous accuser de vous être obstinée.
+— Je me suis obstinée pendant un temps. Mais pas indéfiniment.
+— Voilà une nuance qui ne fait vendre aucun journal.
+— C'est peut-être pour cela que vous m'avez invitée.
+— Aujourd'hui, le bâtiment est vendu ?
+— Non. Nous réexaminons les possibilités de cession. Rien n'est conclu.
+— Vous aviez une proposition indicative de 1,9 million d'euros. Elle était conditionnelle, naturellement. Dans votre métier, même les acheteurs qui veulent acheter prennent des précautions pour ne pas acheter.
+— C'est assez fréquent.
+— Vous retournez parfois dans ce bâtiment ?
+— Oui.
+— Vous regardez encore les plateaux en imaginant où installer les bureaux ?
+— Parfois.
+— C'est touchant. Vous êtes comme ces gens qui retournent voir leur ex en espérant qu'il ait changé.
+— À la différence près qu'un immeuble peut effectivement être transformé.
+— Et qu'il continue à vous envoyer ses charges.
+— Également.
+— Dernière question. Si vous aviez réussi à louer les 1 800 mètres carrés, seriez-vous aujourd'hui une visionnaire ?
+— Vous m'auriez probablement invitée pour célébrer ma persévérance.
+— Absolument. J'aurais parlé d'intuition, de courage et de confiance dans les territoires.
+— Alors vous voyez le problème.
+— Lequel ?
+— Vous jugez les décisions à partir de la fin de l'histoire. Moi, je dois les prendre avant de la connaître.
+— Vous venez de gâcher une très belle humiliation.
+— Vous pouvez toujours mettre mes prévisions aux enchères.
+— Mise à prix : un euro.
+— Je vous déconseille d'acheter.
+— Pourquoi ?
+— Vous n'avez pas vérifié la demande.
+
+Jean Toksik range son marteau imaginaire. La vente est annulée faute d'acquéreur.
+
+Fiction économique satirique — Personnages, opération et chiffres fictifs.
