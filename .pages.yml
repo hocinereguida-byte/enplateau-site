@@ -617,6 +617,70 @@ content:
   - *id013
   - *id014
 
+- name: articles_eau_ressources
+  label: Articles — Eau & ressources (préproduction)
+  type: collection
+  path: content/articles/eau-ressources
+  format: yaml-frontmatter
+  filename: '{primary}.md'
+  view:
+    fields:
+    - title
+    - conversation
+    - contexte
+    - perspective_principale
+    - genre_narratif
+    - source_document_version
+    - statut_editorial
+    primary: title
+    search:
+    - title
+    - summary
+  fields:
+  - *id001
+  - *id002
+  - *id003
+  - *id004
+  - name: cycle
+    label: Cycle
+    type: select
+    default: eau-ressources
+    options:
+      values:
+      - name: eau-ressources
+        label: Eau, ressources, déchets & économie circulaire
+  - name: conversation
+    label: Conversation
+    type: select
+    options:
+      values:
+      - name: C1
+        label: C1 — Partager l'eau entre usages concurrents
+  - name: contexte
+    label: Contexte
+    type: select
+    options:
+      values:
+      - name: C1-U1
+        label: C1-U1 — Bassin agricole sous restrictions
+      - name: C1-U2
+        label: C1-U2 — Ville touristique en haute saison
+  - *id005
+  - *v6perspective
+  - *v6genre
+  - *v6code
+  - *v6unite
+  - *v6famille
+  - *v6version
+  - *v6url
+  - *v6reserve
+  - *id006
+  - *id008
+  - *id010
+  - *id011
+  - *id013
+  - *id014
+
 - name: articles_pilote_v1
   label: Archive du pilote V1 (ne pas publier)
   type: collection
