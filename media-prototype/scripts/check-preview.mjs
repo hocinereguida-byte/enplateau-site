@@ -43,3 +43,5 @@ visit(articlesRoot);
 if(!articleCount)console.log('Aucun article public : les six contenus C1 restent en fabrication.');
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
 console.log('Recette préproduction réussie : '+required.length+' chemins clés et '+articleCount+' articles ; indexation désactivée.');
+
+// Déclencheur technique Cloudflare Pages — nouvelle tentative après suppression du déploiement bloqué du 9 novembre 2026.
