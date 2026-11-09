@@ -1,17 +1,32 @@
 ---
 title: "« Nous avons trouvé un deuxième fournisseur. Il ne nous reste plus qu'à pouvoir utiliser ses pièces. »"
 summary: "Pour ne plus dépendre d'un seul fabricant étranger, une entreprise française a diversifié ses approvisionnements. Les premières pièces sont arrivées. Les machines, elles, attendent toujours. Rencontre avec une directrice qui découvre les limites de la sécurité industrielle."
-cycle: internationalisation
-conversation: C3
-contexte: C3-U1
-perspective_principale: operations-organisation
-genre_narratif: grand-entretien
-signature_auteur: "Jean Toksik"
-statut_editorial: prepublication
+cycle: "internationalisation"
+conversation: "C3"
+contexte: "C3-U1"
+unite_programmation: "INT-C3-U1"
+code_editorial: "CMD-NAF-09"
+lecture_principale: "operations-organisation"
+perspective_principale: "operations-organisation"
+format: "entretien"
+genre_narratif: "grand-entretien"
+statut_editorial: "prepublication"
 published: true
-publication_date: 2026-11-09T19:00:00
-format: "Grand Entretien · Fiction économique documentée"
+publication_date: "2026-11-09T19:00:00+01:00"
+mise_en_avant: "standard"
+source_document_url: "https://docs.google.com/document/d/1PRUVU3cZGNBA190yus-wKqVOs01xjJQIUYSl9n-mcDw/edit"
+source_document_version: "V2"
+autorisation_publication: "preproduction_uniquement"
+signature_auteur: "Jean Toksik"
+source_notice: "Fiction satirique. Les personnages, l'entreprise, les chiffres et la situation sont imaginaires."
+methodology_specific: "CMD-NAF-09 — V2 visée. Contexte C3-U1 : fournisseur critique dans une seule région. Perspective exclusive Opérations & organisation : qualification et essais des composants de source alternative avant emploi dans les machines. Version Google Docs contrôlée sur 6 780 caractères après normalisation des lignes vides et saut final."
+tag_1: "Internationalisation"
+tag_2: "Approvisionnements"
+tag_3: "Fournisseur critique"
+tag_4: "Qualification de composants"
+tag_5: "Continuité industrielle"
 ---
+
 Jean Toksik — Vous fabriquez des machines qui emballent des produits alimentaires. Vous venez d'annoncer que vous disposiez de deux fournisseurs pour une pièce essentielle. Pourquoi cette bonne nouvelle a-t-elle provoqué une réunion de crise ?
 
 Claire Vignal — Parce que notre deuxième fournisseur nous a livré les pièces.
