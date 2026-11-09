@@ -287,6 +287,9 @@ export const conversations: Record<string, Record<string, string>> = {
   agriculture: {
     C1: 'Que faut-il encore cultiver ?',
   },
+  'eau-ressources': {
+    C1: 'Partager l’eau entre usages concurrents',
+  },
   industrie: {
     C1: 'Quand l’usine grandit plus vite que ses moyens',
     C2: 'Dépendances industrielles',
@@ -308,6 +311,10 @@ export const conversations: Record<string, Record<string, string>> = {
 };
 
 export const contexts: Record<string, Record<string, string>> = {
+  'eau-ressources': {
+    'C1-U1': 'Bassin agricole soumis à des restrictions d’eau',
+    'C1-U2': 'Ville touristique en haute saison',
+  },
   agriculture: {
     'engagement-productif-longue-duree': 'Engagement productif de longue durée',
     'arboriculture-sous-revue-strategique': 'Arboriculture — exploitation rentable sous revue stratégique',
