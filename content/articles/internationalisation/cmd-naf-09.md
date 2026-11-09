@@ -2,13 +2,14 @@
 title: "« Nous avons trouvé un deuxième fournisseur. Il ne nous reste plus qu'à pouvoir utiliser ses pièces. »"
 summary: "Pour ne plus dépendre d'un seul fabricant étranger, une entreprise française a diversifié ses approvisionnements. Les premières pièces sont arrivées. Les machines, elles, attendent toujours. Rencontre avec une directrice qui découvre les limites de la sécurité industrielle."
 cycle: internationalisation
-conversation: "C3 — Sécuriser les fournisseurs et les flux"
-contexte: "C3-U1 — Fournisseur critique dans une seule région"
-perspective_principale: "Opérations & organisation"
+conversation: C3
+contexte: C3-U1
+perspective_principale: operations-organisation
 genre_narratif: grand-entretien
 signature_auteur: "Jean Toksik"
-statut_editorial: "VISA PUBLICATION — V2 validée ; préproduction privée"
+statut_editorial: prepublication
 published: true
+publication_date: 2026-11-09T19:00:00
 format: "Grand Entretien · Fiction économique documentée"
 ---
 Jean Toksik — Vous fabriquez des machines qui emballent des produits alimentaires. Vous venez d'annoncer que vous disposiez de deux fournisseurs pour une pièce essentielle. Pourquoi cette bonne nouvelle a-t-elle provoqué une réunion de crise ?
