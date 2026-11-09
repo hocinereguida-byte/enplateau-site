@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../../content/articles');
 const records = [
+  "sante/cmd-naf-10.md|CMD-NAF-10|sante|V3|operations-organisation|SAN-C5-U1||C5-U1|chronique|chronique|1eQATanyDutSrlncbRZSRyCpdZ-vVdE3yEXgWl1RS1J4",
   "internationalisation/cmd-naf-09.md|CMD-NAF-09|internationalisation|V2|operations-organisation|INT-C3-U1||C3-U1|entretien|grand-entretien|1PRUVU3cZGNBA190yus-wKqVOs01xjJQIUYSl9n-mcDw",
   "ess/cmd-naf-08-ess-c2-u1-blanchisserie.md|CMD-NAF-08|ess|V3|strategie-gouvernance|ESS-C2-U1||C2-U1|chronique|chronique|1rgOoCasw9ZSpjVVjmeNJ4vaEZd3-Z3jqBcji0cU1WXA",
   "banque-financement/ban-c2-u1-fin-01-etienne-valbrun.md|BAN-C2-U1-FIN-01|banque-financement|Visa documentaire 09-11-2026|finance-investissement|BAN-C2-U1||C2-U1|entretien|grand-entretien|1fkbL5b_z8vbo-wAp23WIRaS88O9d273dijF1eXivOis",
@@ -53,7 +54,7 @@ for (const r of records) {
   try { source = readFileSync(join(root,r.path),'utf8'); } catch { errors.push('Fichier manquant : '+r.path); continue; }
   const d = parse(source);
   if (!d) { errors.push('Frontmatter absent : '+r.path); continue; }
-  const tests = {code_editorial:r.code,cycle:r.cycle,conversation:r.code==='CMD-NAF-09'?'C3':['tourisme','banque-financement','ess'].includes(r.cycle)?'C2':r.cycle==='commerce'?'C3':'C1',source_document_version:r.version,unite_programmation:r.unit,contexte:r.context,format:r.format,statut_editorial:'prepublication'};
+  const tests = {code_editorial:r.code,cycle:r.cycle,conversation:r.code==='CMD-NAF-09'?'C3':r.code==='CMD-NAF-10'?'C5':['tourisme','banque-financement','ess'].includes(r.cycle)?'C2':r.cycle==='commerce'?'C3':'C1',source_document_version:r.version,unite_programmation:r.unit,contexte:r.context,format:r.format,statut_editorial:'prepublication'};
   if (r.perspective) { tests.perspective_principale=r.perspective; tests.genre_narratif=r.genre; }
   if (r.family) tests.famille_decisionnelle=r.family;
   for (const [key,value] of Object.entries(tests)) if (d[key] !== value) errors.push(r.code+' : '+key+' attendu '+JSON.stringify(value)+', trouvé '+JSON.stringify(d[key]));
