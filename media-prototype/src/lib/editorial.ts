@@ -311,6 +311,9 @@ export const conversations: Record<string, Record<string, string>> = {
     C6: 'Marchés et débouchés',
     C7: 'Implantation industrielle',
   },
+  internationalisation: {
+    C3: 'Sécuriser les fournisseurs et les flux',
+  },
   immobilier: {
     C1: 'Une seconde vie pour les bâtiments. Mais à quel prix ?',
     C2: 'Jusqu’où peut-on produire ?',
@@ -344,6 +347,9 @@ export const contexts: Record<string, Record<string, string>> = {
     'arboriculture-sous-revue-strategique': 'Arboriculture — exploitation rentable sous revue stratégique',
     'maraichage-debouches-concurrents': 'Maraîchage — débouchés concurrents',
     'cereales-recolte-excedentaire': 'Céréales — récolte exceptionnelle',
+  },
+  internationalisation: {
+    'C3-U1': 'Fournisseur critique dans une seule région',
   },
   industrie: {
     'C3-U1': 'Fournisseur critique — qualification d’une seconde source',
