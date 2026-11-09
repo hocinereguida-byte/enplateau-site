@@ -299,6 +299,9 @@ export const conversations: Record<string, Record<string, string>> = {
   'banque-financement': {
     C2: 'Accorder et restructurer les crédits',
   },
+  ess: {
+    C2: 'Concilier utilité sociale et viabilité économique',
+  },
   industrie: {
     C1: 'Quand l’usine grandit plus vite que ses moyens',
     C2: 'Dépendances industrielles',
@@ -320,6 +323,9 @@ export const conversations: Record<string, Record<string, string>> = {
 };
 
 export const contexts: Record<string, Record<string, string>> = {
+  ess: {
+    'C2-U1': 'Activité socialement utile mais déficitaire',
+  },
   'banque-financement': {
     'C2-U1': 'Entreprise rentable mais en tension de trésorerie',
   },
