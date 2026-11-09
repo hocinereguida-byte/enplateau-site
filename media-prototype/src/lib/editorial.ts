@@ -305,7 +305,7 @@ export const conversations: Record<string, Record<string, string>> = {
   industrie: {
     C1: 'Quand l’usine grandit plus vite que ses moyens',
     C2: 'Dépendances industrielles',
-    C3: 'Outil industriel',
+    C3: 'Sécuriser les fournisseurs et les flux',
     C4: 'Trajectoire industrielle',
     C5: 'Besoins et proposition de valeur',
     C6: 'Marchés et débouchés',
@@ -346,6 +346,7 @@ export const contexts: Record<string, Record<string, string>> = {
     'cereales-recolte-excedentaire': 'Céréales — récolte exceptionnelle',
   },
   industrie: {
+    'C3-U1': 'Fournisseur critique — qualification d’une seconde source',
     CST: 'Croissance sous tension',
     ASC: 'Adaptation sous contrainte',
     RSS: 'Réinvention sous crise',
