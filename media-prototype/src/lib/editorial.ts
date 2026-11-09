@@ -290,6 +290,9 @@ export const conversations: Record<string, Record<string, string>> = {
   'eau-ressources': {
     C1: 'Partager l’eau entre usages concurrents',
   },
+  commerce: {
+    C3: 'Organiser les approvisionnements',
+  },
   industrie: {
     C1: 'Quand l’usine grandit plus vite que ses moyens',
     C2: 'Dépendances industrielles',
@@ -311,6 +314,9 @@ export const conversations: Record<string, Record<string, string>> = {
 };
 
 export const contexts: Record<string, Record<string, string>> = {
+  commerce: {
+    'C3-U2': 'Boutique de vêtements — stocks invendus et financement de la nouvelle collection',
+  },
   'eau-ressources': {
     'C1-U1': 'Bassin agricole soumis à des restrictions d’eau',
     'C1-U2': 'Ville touristique en haute saison',
