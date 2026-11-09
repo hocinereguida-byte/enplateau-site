@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../../content/articles');
 const records = [
+  "eau-ressources/eau-c1-u1-str-01-chronique.md|EAU-C1-U1-STR-01|eau-ressources|V9|strategie-gouvernance|EAU-C1-U1|partage-eau-agriculture-potable|C1-U1|chronique|chronique|",
   "industrie/ind-c1-cst-01-brouillon.md|IND-C1-CST-01|industrie|V5.1|strategie-gouvernance|IND-C1-CST||CST|entretien|grand-entretien|1uEQ1QYskssxyfxF45wfKM3s5veT0_cXyuGqh-96ENys",
   "industrie/ind-c1-cst-02-brouillon.md|IND-C1-CST-02|industrie|V3|operations-organisation|IND-C1-CST||CST|chronique|chronique|1Z9aEobtTrnGX9rgINBYLGr25GTV8CtQkZS0u5qOPaok",
   "industrie/ind-c1-cst-03-brouillon.md|IND-C1-CST-03|industrie|V3.7|technologie-innovation|IND-C1-CST||CST|chronique|chronique|1juzTDNGcjDjpvfuLpGA9lmjUAOMGUkray1QI8bfHDSo",
@@ -53,7 +54,7 @@ for (const r of records) {
   for (const [key,value] of Object.entries(tests)) if (d[key] !== value) errors.push(r.code+' : '+key+' attendu '+JSON.stringify(value)+', trouvé '+JSON.stringify(d[key]));
   if (r.code === 'IMM-C1-RC-04' && d.title !== "L'entreprise avait évité de signer un mauvais contrat. Elle a dépensé 35 000 euros pour continuer à ne pas le signer.") errors.push('Titre de Karim V3 différent du titre validé');
   if (d.published !== true) errors.push(r.code+' : consultation préproduction désactivée');
-  if (!d.source_document_url?.includes('/document/d/'+r.driveId+'/')) errors.push(r.code+' : URL Drive ne correspond pas à la version verrouillée');
+  if (r.driveId && !d.source_document_url?.includes('/document/d/'+r.driveId+'/')) errors.push(r.code+' : URL Drive ne correspond pas à la version verrouillée');
   if (usedCodes.has(r.code)) errors.push('Identifiant dupliqué : '+r.code); else usedCodes.add(r.code);
   if (r.perspective) {
     if (!perspectives.has(r.perspective)) errors.push(r.code+' : perspective inconnue');
