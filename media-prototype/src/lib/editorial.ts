@@ -293,6 +293,9 @@ export const conversations: Record<string, Record<string, string>> = {
   commerce: {
     C3: 'Organiser les approvisionnements',
   },
+  tourisme: {
+    C2: 'Dimensionner la capacité et la saisonnalité',
+  },
   industrie: {
     C1: 'Quand l’usine grandit plus vite que ses moyens',
     C2: 'Dépendances industrielles',
@@ -314,6 +317,9 @@ export const conversations: Record<string, Record<string, string>> = {
 };
 
 export const contexts: Record<string, Record<string, string>> = {
+  tourisme: {
+    'C2-U1': 'Saison très courte — hôtel indépendant',
+  },
   commerce: {
     'C3-U2': 'Boutique de vêtements — stocks invendus et financement de la nouvelle collection',
   },
