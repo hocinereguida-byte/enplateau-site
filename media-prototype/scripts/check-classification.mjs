@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../../content/articles');
 const records = [
-  "industrie/cmd-naf-09-c3-u1-claire-vignal.md|CMD-NAF-09|industrie|V2|operations-organisation|IND-C3-U1||C3-U1|entretien|grand-entretien|1PRUVU3cZGNBA190yus-wKqVOs01xjJQIUYSl9n-mcDw",
+  "internationalisation/cmd-naf-09.md|CMD-NAF-09|internationalisation|V2|operations-organisation|INT-C3-U1||C3-U1|entretien|grand-entretien|1PRUVU3cZGNBA190yus-wKqVOs01xjJQIUYSl9n-mcDw",
   "ess/cmd-naf-08-ess-c2-u1-blanchisserie.md|CMD-NAF-08|ess|V3|strategie-gouvernance|ESS-C2-U1||C2-U1|chronique|chronique|1rgOoCasw9ZSpjVVjmeNJ4vaEZd3-Z3jqBcji0cU1WXA",
   "banque-financement/ban-c2-u1-fin-01-etienne-valbrun.md|BAN-C2-U1-FIN-01|banque-financement|Visa documentaire 09-11-2026|finance-investissement|BAN-C2-U1||C2-U1|entretien|grand-entretien|1fkbL5b_z8vbo-wAp23WIRaS88O9d273dijF1eXivOis",
   "tourisme/tou-c2-u1-fin-01-marianne-delmas.md|TOU-C2-U1-FIN-01|tourisme|Visa final — préproduction|finance-investissement|TOU-C2-U1||C2-U1|entretien|grand-entretien|15zkXSEbHToJNC0EMUj5j-hEETCxtOCz7aKjqiXVdsYg",
