@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../../content/articles');
 const records = [
+  "commerce/com-c3-u2-fin-01-chronique.md|COM-C3-U2-FIN-01|commerce|V5|finance-investissement|COM-C3-U2||C3-U2|chronique|chronique|",
   "eau-ressources/eau-c1-u1-str-01-chronique.md|EAU-C1-U1-STR-01|eau-ressources|V9|strategie-gouvernance|EAU-C1-U1|partage-eau-agriculture-potable|C1-U1|chronique|chronique|",
   "industrie/ind-c1-cst-01-brouillon.md|IND-C1-CST-01|industrie|V5.1|strategie-gouvernance|IND-C1-CST||CST|entretien|grand-entretien|1uEQ1QYskssxyfxF45wfKM3s5veT0_cXyuGqh-96ENys",
   "industrie/ind-c1-cst-02-brouillon.md|IND-C1-CST-02|industrie|V3|operations-organisation|IND-C1-CST||CST|chronique|chronique|1Z9aEobtTrnGX9rgINBYLGr25GTV8CtQkZS0u5qOPaok",
@@ -48,7 +49,7 @@ for (const r of records) {
   try { source = readFileSync(join(root,r.path),'utf8'); } catch { errors.push('Fichier manquant : '+r.path); continue; }
   const d = parse(source);
   if (!d) { errors.push('Frontmatter absent : '+r.path); continue; }
-  const tests = {code_editorial:r.code,cycle:r.cycle,conversation:'C1',source_document_version:r.version,unite_programmation:r.unit,contexte:r.context,format:r.format,statut_editorial:'prepublication'};
+  const tests = {code_editorial:r.code,cycle:r.cycle,conversation:r.code==='COM-C3-U2-FIN-01'?'C3':'C1',source_document_version:r.version,unite_programmation:r.unit,contexte:r.context,format:r.format,statut_editorial:'prepublication'};
   if (r.perspective) { tests.perspective_principale=r.perspective; tests.genre_narratif=r.genre; }
   if (r.family) tests.famille_decisionnelle=r.family;
   for (const [key,value] of Object.entries(tests)) if (d[key] !== value) errors.push(r.code+' : '+key+' attendu '+JSON.stringify(value)+', trouvé '+JSON.stringify(d[key]));
