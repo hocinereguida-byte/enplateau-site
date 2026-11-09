@@ -9,7 +9,7 @@ const articles = defineCollection({
   schema: z.object({
     title: z.string(),
     summary: z.string().optional().nullable(),
-    cycle: z.enum(['industrie', 'immobilier', 'agriculture', 'eau-ressources', 'commerce', 'tourisme', 'banque-financement', 'ess', 'internationalisation']),
+    cycle: z.enum(['industrie', 'immobilier', 'agriculture', 'eau-ressources', 'commerce', 'tourisme', 'banque-financement', 'ess', 'internationalisation', 'sante']),
     conversation: z.string(),
     contexte: z.string(),
     // V6 : le champ historique reste accepté pour préserver les articles existants.
