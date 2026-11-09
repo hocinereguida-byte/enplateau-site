@@ -302,6 +302,9 @@ export const conversations: Record<string, Record<string, string>> = {
   ess: {
     C2: 'Concilier utilité sociale et viabilité économique',
   },
+  'social-medicosocial': {
+    C2: 'Dimensionner les places et les services',
+  },
   sante: {
     C5: 'Coordonner les parcours et les établissements',
   },
@@ -350,6 +353,9 @@ export const contexts: Record<string, Record<string, string>> = {
     'arboriculture-sous-revue-strategique': 'Arboriculture — exploitation rentable sous revue stratégique',
     'maraichage-debouches-concurrents': 'Maraîchage — débouchés concurrents',
     'cereales-recolte-excedentaire': 'Céréales — récolte exceptionnelle',
+  },
+  'social-medicosocial': {
+    'C2-U1': 'Liste d’attente d’un établissement',
   },
   sante: {
     'C5-U1': 'Sortie d’hospitalisation',
