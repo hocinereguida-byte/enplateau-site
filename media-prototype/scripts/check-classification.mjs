@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../../content/articles');
 const records = [
+  "numerique-telecom/cmd-naf-16.md|CMD-NAF-16|numerique-telecom|V4|operations-organisation|NUM-C4-U1||C4-U1|chronique|chronique|1sAOsLD-C5gETL4dioMMU42t1Aex-fCSiuPH1_by6ERQ",
   "culture-medias/cmd-naf-15.md|CMD-NAF-15|culture-medias|V4|finance-investissement|CUL-C5-U1||C5-U1|entretien|grand-entretien|1HZjxYjPIU9k88h1q_q91y4vMNmcM-nGi5dhB_CorjA8",
   "action-publique/cmd-naf-14.md|CMD-NAF-14|action-publique|V4|droit-regulation|ACT-C7-U1||C7-U1|chronique|chronique|1hBoIuH0EpzdCKn_Ux3W-qs3Uw2n-bP9_r1I3WjQP8N0",
   "emploi-travail/cmd-naf-13.md|CMD-NAF-13|emploi-travail|V3|finance-investissement|EMP-C4-U1||C4-U1|entretien|grand-entretien|1iQP_5UgcqYPgvJGRqm1Fv3g_8qjPDp7P3acXx9NLMBk",
@@ -59,7 +60,7 @@ for (const r of records) {
   try { source = readFileSync(join(root,r.path),'utf8'); } catch { errors.push('Fichier manquant : '+r.path); continue; }
   const d = parse(source);
   if (!d) { errors.push('Frontmatter absent : '+r.path); continue; }
-  const tests = {code_editorial:r.code,cycle:r.cycle,conversation:r.code==='CMD-NAF-09'?'C3':r.code==='CMD-NAF-10'?'C5':r.code==='CMD-NAF-11'?'C2':r.code==='CMD-NAF-12'?'C5':r.code==='CMD-NAF-13'?'C4':r.code==='CMD-NAF-14'?'C7':r.code==='CMD-NAF-15'?'C5':['tourisme','banque-financement','ess'].includes(r.cycle)?'C2':r.cycle==='commerce'?'C3':'C1',source_document_version:r.version,unite_programmation:r.unit,contexte:r.context,format:r.format,statut_editorial:'prepublication'};
+  const tests = {code_editorial:r.code,cycle:r.cycle,conversation:r.code==='CMD-NAF-09'?'C3':r.code==='CMD-NAF-10'?'C5':r.code==='CMD-NAF-11'?'C2':r.code==='CMD-NAF-12'?'C5':r.code==='CMD-NAF-13'?'C4':r.code==='CMD-NAF-14'?'C7':r.code==='CMD-NAF-15'?'C5':r.code==='CMD-NAF-16'?'C4':['tourisme','banque-financement','ess'].includes(r.cycle)?'C2':r.cycle==='commerce'?'C3':'C1',source_document_version:r.version,unite_programmation:r.unit,contexte:r.context,format:r.format,statut_editorial:'prepublication'};
   if (r.perspective) { tests.perspective_principale=r.perspective; tests.genre_narratif=r.genre; }
   if (r.family) tests.famille_decisionnelle=r.family;
   for (const [key,value] of Object.entries(tests)) if (d[key] !== value) errors.push(r.code+' : '+key+' attendu '+JSON.stringify(value)+', trouvé '+JSON.stringify(d[key]));
