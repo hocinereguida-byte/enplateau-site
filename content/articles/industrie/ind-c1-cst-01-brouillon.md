@@ -18,9 +18,9 @@ tag_3: "Capacité de production"
 tag_4: "Arbitrage commercial"
 tag_5: "Rentabilité"
 source_notice: "Grand Entretien fictif. Personnages, entreprise, dialogues et chiffres inventés."
-methodology_specific: "Version V5.1 du manuscrit Drive. Préproduction uniquement, visa de publication publique non délivré."
-source_document_url: "https://docs.google.com/document/d/1uEQ1QYskssxyfxF45wfKM3s5veT0_cXyuGqh-96ENys/edit"
-source_document_version: "V5.1"
+methodology_specific: "Version V6.2 resserrée du manuscrit Drive. Préproduction uniquement, visa de publication publique non délivré."
+source_document_url: "https://docs.google.com/document/d/1jxUvDGDY1Uhz_fk_pvcCr9i_7xfnm1XsJNBkaDN6Xvg/edit"
+source_document_version: "V6.2"
 validation_narrative: "concordance_v4_2_favorable"
 validation_documentaire: "concordance_ciblee_v4_2_favorable"
 autorisation_publication: "preproduction_uniquement"
@@ -33,106 +33,122 @@ unite_programmation: "IND-C1-CST"
 
 *Texte de consultation en préproduction — publication publique non autorisée.*
 
-Marc dirige une usine depuis douze ans. Après avoir refusé près de deux millions d'euros de commandes, il a réussi l'exploit d'améliorer les résultats de son entreprise. Jean Toksik a souhaité rencontrer cet homme qui a découvert qu'on pouvait gagner davantage d'argent en travaillant moins. Marc a accepté. Il avait pourtant été prévenu.
+Marc dirige depuis douze ans une usine de deux cents salariés qui fabrique des pièces métalliques pour machines industrielles. Chiffre d'affaires annuel : environ 24 millions d'euros. Les commandes affluaient, les ateliers débordaient, les bénéfices fondaient. Il a fini par refuser près de deux millions d'euros de nouvelles commandes potentielles. Depuis, l'entreprise va mieux.
 
-Jean Toksik — Vous avez trouvé facilement ?
-Marc — Très. Votre assistante m'a proposé un café.
-— Elle est formidable. Elle sait qu'un invité qui a bu quelque chose hésite davantage à partir. Vous connaissez ma réputation ?
+
+Jean Toksik a voulu rencontrer cet homme dont la stratégie commerciale ressemble à une grève. Marc a accepté. Il avait pourtant été prévenu.
+
+
+**Jean Toksik —** Vous avez trouvé facilement ?
+**Marc —** Oui. Votre assistante m'a offert un café.
+— Elle est formidable. Un invité qui a bu quelque chose hésite davantage à partir. Vous connaissez ma réputation ?
 — On m'a parlé de vos méthodes.
 — Et vous êtes venu volontairement ?
-— Je dirige une usine de deux cents personnes. Je pense pouvoir supporter un journaliste.
-— Vous dirigez aussi une usine qui a dû refuser deux millions d'euros de commandes pour redevenir rentable. Je me méfierais de vos capacités d'évaluation.
-— Vous commencez fort.
-— Pas du tout. Je vous admire. Vous avez fait baisser le chiffre d'affaires et augmenter le résultat. Vous êtes le premier dirigeant que je rencontre dont la stratégie commerciale ressemble à une grève.
-— Nous avons cessé d'accepter des commandes qui détruisaient de la valeur.
-— Quelle découverte bouleversante ! Vous avez songé à déposer un brevet ?
-— Vous plaisantez, mais beaucoup d'entreprises confondent chiffre d'affaires et rentabilité.
-— Naturellement. Chez vous, la confusion avait simplement été industrialisée.
-— Nos devis affichaient parfois 18 % de marge. Mais les coûts réels étaient plus élevés : reprises, rebuts, urgences, heures supplémentaires…
-— Donc vous vendiez des pièces à des clients qui vous rémunéraient pour avoir le privilège de perdre de l'argent.
-— C'est une présentation caricaturale.
-— Vous préférez « modèle économique innovant » ?
-— Je préfère une présentation exacte.
-— Parfait. Qui avait défini les indicateurs et les objectifs qui encourageaient vos équipes à prendre ces commandes ?
-— Plusieurs directions. J'y ai participé.
-— Ah ! Voilà qui change tout. Vous êtes à la fois le pompier et l'incendiaire. Vous facturez les deux prestations ?
-— Les objectifs étaient cohérents pris séparément.
-— Merveilleux. Chaque service réussissait sa mission et l'entreprise échouait à la sienne. Vous aviez créé une organisation où tout le monde pouvait toucher sa prime pendant que la trésorerie appelait les secours.
-— Vous exagérez.
-— C'est vrai. La trésorerie n'a probablement pas appelé les secours. Elle n'avait plus de crédit téléphonique.
-— Nous avons justement corrigé le problème.
-— Avec quinze jours d'interdiction de promettre des prix et des délais sans consulter les ateliers. Vous avez placé vos commerciaux sous contrôle judiciaire ?
-— Nous leur avons demandé de vérifier ce qu'ils vendaient.
-— Une mesure d'une brutalité inouïe. Ils ont pu continuer à parler aux clients ?
-— Bien sûr.
-— Même sans inventer de date de livraison ?
-— Oui, monsieur Toksik.
-— Vous avez détruit tout le romantisme du métier.
-— Nous avons aussi renégocié certaines commandes et refusé celles qui auraient dégradé davantage notre situation.
-— Pourquoi ne pas avoir acheté une machine supplémentaire ?
-— Parce qu'une machine ne corrige ni un devis mal calculé ni une mauvaise organisation.
-— Vous êtes très négatif. Vous refusez les commandes, les investissements, les promesses commerciales. Vous avez envisagé de fermer l'usine pour atteindre la rentabilité absolue ?
-— Non. Les coûts fixes continueraient de courir.
-— Même vos mauvaises idées ont des objections techniques. C'est épuisant.
+— Je dirige deux cents personnes. Je pense pouvoir supporter un journaliste.
+— Vous avez refusé deux millions de commandes pour retrouver des bénéfices. Je me méfierais de vos capacités d'évaluation.
+— On a cessé d'accepter des commandes qui coûtaient plus cher qu'elles ne rapportaient. Certains devis prévoyaient 18 % de marge. Puis arrivaient les pièces à refaire, les heures supplémentaires, les camions en urgence…
+— Et les 18 % ?
+— Ils disparaissaient.
+— Vous aviez inventé le bénéfice biodégradable.
+Marc sourit.
+— Le pire, c'est que chacun atteignait ses objectifs. Les commerciaux vendaient, les ateliers produisaient, les responsables couraient après les délais…
+— Merveilleux. Chaque service réussissait sa mission et l'entreprise échouait à la sienne. Un naufrage avec primes individuelles.
+— Ce n'était pas aussi simple.
+— Les commerciaux touchaient des primes sur les volumes ?
+— Principalement.
+— Qui avait décidé ça ?
+— La direction. J'y ai participé.
+— Ah ! Le pompier et l'incendiaire. Vous facturez les deux prestations ?
+— On voulait remplir les machines. Certaines tournaient peu, d'autres étaient saturées. On pensait pouvoir mieux répartir le travail.
+— Qu'est-ce qui vous a réveillé ?
+— Mon responsable d'atelier : « Marc, tu veux qu'on fabrique les commandes ou qu'on passe nos journées à expliquer pourquoi on ne peut pas les fabriquer ? »
+— Il vous a fallu douze ans pour qu'un ouvrier vous explique votre métier ?
+— Ce n'était pas un ouvrier, c'était le responsable…
+Marc s'arrête.
+— Non, laissez tomber.
+— Il avait donc un titre suffisamment élevé pour que vous puissiez l'écouter.
 
-Marc sourit. Il commence à prendre confiance. Jean Toksik consulte une feuille.
 
-— Le chiffre d'affaires a ensuite baissé d'environ 8 % sur le semestre. Mais le résultat opérationnel s'est redressé.
-— Exactement.
-— Moins de rebuts, moins de transports urgents, moins de samedis travaillés. Les salariés ont dû vous adorer.
-— Certains étaient soulagés. D'autres perdaient des heures supplémentaires dont ils avaient besoin.
-— Vous avez donc amélioré la rentabilité de l'usine en réduisant aussi le revenu de certains ouvriers. C'est élégant. Ils ont reçu une carte de remerciement ?
-— Nous n'avions pas suffisamment anticipé cette conséquence.
-— Pourtant, vous connaissiez le coût de chaque heure supplémentaire.
+***
+
+
+— Vous avez fait quoi ?
+— J'ai réuni les responsables commercial et production. Comme directeur du site, je pouvais suspendre les engagements de prix et de délais pris au nom de l'usine. Pendant quinze jours, plus de promesse sensible sans accord de l'atelier.
+— Vous avez placé les commerciaux sous contrôle judiciaire ?
+— On leur a demandé de vérifier ce qu'ils vendaient.
+— Même les dates de livraison ? Vous avez détruit tout le romantisme du métier.
+— Ils m'ont cru fou. On a écarté près de deux millions d'euros de commandes envisagées sur plusieurs mois. Pas des contrats déjà signés, je précise.
+— Sur 24 millions de ventes annuelles, ce n'est pas rien. Votre direction générale était d'accord ?
+— Je l'avais prévenue. Elle a soutenu la décision. Ensuite, on a revu les prix et les primes : vendre plus ne suffisait plus, il fallait vendre rentable.
+— Avant, on récompensait les commerciaux pour remplir l'usine. Maintenant, vous vérifiez qu'il reste de l'argent à la fin.
+— Vous voyez, quand vous voulez, vous comprenez vite.
+
+
+***
+
+
+— Et ça a marché ?
+— Sur les six mois suivants, les ventes ont baissé d'environ 8 % par rapport au semestre comparable. Mais le résultat s'est amélioré : moins de rebuts, de camions urgents, de samedis travaillés.
+— Les salariés ont dû vous porter en triomphe.
+— Pas tous. Certains comptaient sur les heures supplémentaires pour finir le mois. On l'avait sous-estimé. On a revu des horaires, proposé des formations, cherché des compensations. Pas assez pour tout le monde.
+— Vous connaissiez le coût de leurs heures, pas leur importance dans leur budget. Après les machines, vous découvriez que les ouvriers avaient des factures.
+Marc cesse de sourire.
+— Vous avez déjà dirigé une usine, monsieur Toksik ?
+— Non. J'ai visité une chocolaterie, une fois. Excellent souvenir.
+— Alors écoutez. Quand vous vous trompez dans une usine, vous pouvez mettre deux cents personnes au chômage. Quand vous refusez des commandes, vous ne savez pas si vous sauvez l'entreprise ou si vous signez son arrêt de mort.
+— Vous dramatisez…
+— Non. Vous faites de l'humour. Moi, j'ai dû regarder mes salariés dans les yeux. Expliquer à certains qu'ils gagneraient moins. Dire à un client de quinze ans qu'on ne pouvait plus continuer. Et rentrer chez moi sans savoir si j'avais pris la bonne décision.
+Toksik entrouvre la bouche.
+— Laissez-moi finir. Vous savez ce qui est formidable dans votre métier ? Vous pouvez avoir raison tous les jours. Il suffit d'attendre que les autres se trompent.
+Un silence.
+Toksik regarde son carnet. Son stylo ne bouge plus.
+Marc reprend sa tasse.
+— Vous voyez ? Moi aussi, je peux faire des phrases.
+Le journaliste ne répond pas.
+— Et je referais la même chose, ajoute Marc. Continuer aurait fini par mettre tout le monde en danger. Riez de mes erreurs, mais ne faites pas comme si la solution était facile.
+
+
+***
+
+
+Toksik tourne une page.
+— Ce client de quinze ans. Il est parti fâché ?
+— Non. Il m'a dit : « Marc, je ne peux pas demander à mes clients de payer plus cher parce que vous vous êtes trompés pendant quinze ans. »
+— Vous lui avez appris que vos prix étaient possibles. Le jour où il vous a cru, vous lui avez annoncé qu'il se trompait.
+Marc baisse les yeux.
+— Et les contrats déjà signés ? Vous parliez de 180 000 euros.
+— Environ 80 000 euros de surcoûts constatés. Jusqu'à 100 000 euros de pénalités et frais possibles, selon les négociations. Ce n'est pas un chèque de 180 000 euros déjà signé.
+— Vous avez payé une partie de vos erreurs et vous espérez une remise sur les autres.
+— C'est une façon de le dire.
+— Laquelle vous convient ?
+— Celle qui distingue une dépense d'un risque.
+— Les chiffres vous protègent. Ils vous ont pourtant causé des ennuis.
+— Les chiffres, non. Ce qu'on leur faisait dire.
+Toksik marque un temps.
+— Je reconnais que celle-là est meilleure que la mienne.
+
+
+***
+
+
+— Une chose me frappe. Vous avez pris une décision courageuse, mais vous aviez contribué à rendre cette décision nécessaire.
+— Je l'ai dit dès le début.
+— Avec la discrétion d'un homme qui espère qu'on retiendra surtout son courage. Vous attendez une médaille ?
+— Pas de vous.
+— Dommage. J'avais invité les commerciaux, les salariés du samedi, le client qui est parti… Une belle réunion de famille.
+— Vous oubliez quelqu'un.
+— Qui ?
+— Vous, pour remettre la médaille. Vous adorez distribuer les bons points avant de rentrer tranquillement dans votre rédaction.
+Toksik referme son carnet.
+— Vous avez changé les primes, les prix, les règles de l'atelier. Vous avez corrigé la manière dont on évalue le travail des autres.
 — Oui.
-— Mais pas son importance dans le budget des salariés.
-— Pas suffisamment.
-— Vous avez passé quinze jours à vérifier les commandes et environ trois mois à traiter les conséquences sociales. À ce rythme, combien de temps vous faudrait-il pour découvrir que les ouvriers mangent aussi le dimanche ?
-— Je vous trouve injuste.
-— Je fais des efforts. J'avais préparé une question sur leur éventuelle consommation d'électricité.
-— La décision restait nécessaire. Continuer aurait fragilisé l'entreprise et, à terme, les emplois.
-— C'est exact.
-— Vous êtes d'accord avec moi ?
-— Absolument. Je ne suis pas venu défendre les mauvaises commandes. Je suis venu comprendre pourquoi vous aviez été assez brillant pour les arrêter et pas assez prévoyant pour éviter de les encourager.
-— J'ai contribué à cette erreur.
-— Dites-le encore.
-— J'ai contribué à cette erreur.
-— C'est magnifique. Vous venez de prononcer une phrase de responsabilité personnelle sans utiliser les mots « transversalité », « gouvernance » ou « alignement stratégique ». Vous pourriez donner des conférences.
-— Vous vous moquez de moi.
-— Oui. Mais avec une profonde estime.
-— Nous avons ensuite rencontré les équipes, réorganisé le travail et proposé des formations.
-— Vous avez donc découvert les salariés après avoir découvert les coûts. C'est une progression. Il ne vous reste plus qu'à découvrir les clients.
-— Certains ont accepté de renégocier. D'autres sont partis. Nous avons estimé à près de 180 000 euros les pénalités probables sur certains contrats déjà engagés et les coûts de sorties négociées.
-— Cent quatre-vingt mille euros pour apprendre à dire non. Les formations de management sont devenues hors de prix.
-— Ce montant n'est pas une perte entièrement constatée ni une provision globale. Il rassemble des risques et des coûts estimés.
-— Pardonnez-moi. Cent quatre-vingt mille euros d'angoisse comptable potentielle. C'est beaucoup plus rassurant.
-— Les distinctions sont importantes.
-— Surtout quand on explique à ses actionnaires qu'on a sauvé l'entreprise en refusant deux millions d'euros de commandes, en réduisant le chiffre d'affaires et en perdant un client historique.
-— Ce client travaillait avec nous depuis quinze ans.
-— Il est parti fâché ?
-— Pas vraiment. Il a compris notre situation, mais nos nouvelles conditions ne lui convenaient plus.
-— Quinze ans de fidélité. Vous lui avez offert quelque chose pour son départ ?
-— Nous lui avons expliqué les raisons de notre décision.
-— Un cadeau merveilleux. Quinze ans de commandes, et pour souvenir une explication sur les coûts de revient.
-— Nous ne pouvions plus travailler aux anciennes conditions.
-— Je vous crois. Vous aviez raison de changer. Mais reconnaissez que votre entreprise a mis douze ans à apprendre à compter et quinze ans à perdre un client.
-— Vous savez, monsieur Toksik, je pourrais aussi vous poser une question.
-— Je vous en prie. J'adore les invités qui résistent.
-— Si vous aviez été à ma place, vous auriez fait quoi ?
-— Probablement la même chose.
-— Alors vous reconnaissez que ma décision était bonne.
-— Certainement.
-— Voilà. Nous aurions pu commencer par là.
-— Nous avons commencé par là. Je vous ai félicité. Vous étiez tellement heureux que j'ai presque regretté de poursuivre.
-— Et maintenant ?
-— Maintenant, je me demande pourquoi vous êtes venu.
-— Pour expliquer une décision difficile.
-— Non. Pour qu'on vous dise que vous avez eu raison. Ce qui est vrai. Vous avez eu raison.
-— Merci.
-— Mais vous avez aussi participé à créer les conditions qui ont rendu cette décision indispensable.
-— Nous l'avons déjà établi.
-— Alors une dernière question. Vous avez corrigé les indicateurs des commerciaux, les méthodes de calcul et l'organisation des ateliers. Qui a corrigé votre système d'évaluation à vous ?
-— …
+— Qui a corrigé votre système d'évaluation à vous ?
+Marc entrouvre la bouche. Regarde Toksik, puis sa tasse.
+Il ne répond pas.
+Cette fois, le journaliste attend.
+Quelques secondes passent.
 — Votre café est froid, Marc. C'est dommage. C'était la seule chose ici dont nous connaissions le coût avant de la servir.
 
-Fiction économique satirique — Personnages, entreprise, dialogues et chiffres du cas inventés.
+
+
+*Fiction économique satirique. Personnages, entreprise et données chiffrées fictifs.*
