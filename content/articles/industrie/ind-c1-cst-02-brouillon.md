@@ -1,6 +1,6 @@
 ---
 title: "L'usine avait six mois de retard. La direction a demandé de produire davantage de défauts."
-summary: "Après avoir arrêté une ligne pendant trente-six heures, Sophie rentre chez elle avec un carton et une décision à expliquer. Un récit-comédie sur les retards, la qualité et le coût des urgences industrielles."
+summary: "Sophie, responsable d’atelier, tente de faire réparer une perceuse défectueuse alors que la direction veut accélérer la production. Entre retards, pièces à contrôler et promesses commerciales, elle doit faire reconnaître le coût des défauts."
 format: "chronique"
 cycle: "industrie"
 conversation: "C1"
@@ -18,11 +18,11 @@ tag_3: "Maintenance"
 tag_4: "Qualité industrielle"
 tag_5: "Organisation des opérations"
 source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "Version V3 du manuscrit Drive. Préproduction uniquement, visa de publication publique non délivré."
-source_document_url: "https://docs.google.com/document/d/1Z9aEobtTrnGX9rgINBYLGr25GTV8CtQkZS0u5qOPaok/edit"
-source_document_version: "V3"
-validation_narrative: "validee"
-validation_documentaire: "validee_selon_matrice_c1"
+methodology_specific: "V4.1 — réécriture éditoriale de travail, sans visa narratif, documentaire ni autorisation de publication publique. Consultation en préproduction uniquement."
+source_document_url: "https://docs.google.com/document/d/1EwtZQuhw0PwVbQdlMUJdUySNMr8fVgPQ8ByKejwetWA/edit"
+source_document_version: "V4.1"
+validation_narrative: "a_revalider_v4_1"
+validation_documentaire: "a_revalider_v4_1"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "chronique"
 code_editorial: "IND-C1-CST-02"
@@ -32,113 +32,148 @@ unite_programmation: "IND-C1-CST"
 
 *Texte de consultation en préproduction — publication publique non autorisée.*
 
-L'usine avait six mois de retard sur certaines commandes. La direction avait donc pris une décision courageuse : produire davantage.
+L'usine fabriquait des pièces métalliques destinées à des machines agricoles. Certaines commandes avaient six mois de retard. La direction avait donc pris une décision courageuse : produire davantage.
 
-Le problème, c'est qu'une partie des pièces fabriquées présentait des défauts. Plus les machines tournaient, plus les équipes devaient contrôler, reprendre ou écarter leur production.
+Il y avait juste un problème. Sur une perceuse industrielle, les trous n'étaient plus toujours au bon endroit. Un défaut de quelques millimètres suffisait pour empêcher le montage chez le client. Le dispositif qui maintenait les pièces pendant le perçage avait pris du jeu : certaines passaient, d'autres bougeaient imperceptiblement. Plus la machine tournait, plus il fallait vérifier les pièces, en reprendre certaines et en jeter d'autres.
 
-Mais pour le directeur commercial, le raisonnement était simple : si l'usine fabriquait trop de mauvaises pièces, elle devait en fabriquer davantage pour augmenter ses chances d'en obtenir de bonnes.
+Sophie, responsable de l'atelier, avait demandé qu'on la répare.
 
-Sophie, responsable de l'atelier, avait tenté une autre approche : réparer les machines.
+« Vous voulez arrêter la production alors qu'on a six mois de retard ?
 
-La proposition avait été accueillie avec prudence.
+— Je voudrais surtout arrêter de fabriquer des pièces qu'on ne peut pas livrer.
 
-« Vous voulez arrêter la production alors que nous avons six mois de retard ?
-— Je voudrais éviter de fabriquer des pièces inutilisables.
-— Mais si nous arrêtons de produire, nous ne fabriquerons plus rien !
-— C'est effectivement le principe d'un arrêt. »
+— Mais si on arrête, on ne produit plus rien.
 
-La direction décida de reporter la maintenance. Une première fois, puis une seconde. Les machines continuaient de tourner, les commandes continuaient de s'accumuler et les défauts continuaient de bénéficier d'une remarquable stabilité.
+— C'est le risque, oui. Pendant qu'on répare. »
 
-Un consultant fut appelé pour améliorer la productivité.
+L'intervention fut repoussée une première fois, puis une seconde. Chaque journée « gagnée » sur la réparation ajoutait du travail à ceux qui devaient contrôler les pièces. Les ouvriers ne savaient plus s'ils fabriquaient pour les clients ou pour leurs collègues chargés de vérifier ce qu'ils avaient fabriqué.
 
-Après trois réunions, il recommanda de « transformer les contraintes techniques en opportunités de performance ».
+Sophie avait accepté de faire trier les pièces après chaque série. « Encore quelques jours », s'était-elle dit. Elle le disait depuis trois semaines.
 
-Sophie demanda si cette transformation nécessitait une clé à molette.
+Le lundi suivant, neuf caisses rouges occupaient le passage entre deux postes. Elles contenaient des pièces suspectes. Pas toutes mauvaises : simplement, personne ne pouvait garantir lesquelles étaient bonnes.
 
-Le consultant nota une résistance au changement.
+Sophie avait collé une étiquette sur chaque caisse : « À VÉRIFIER ».
 
-Neuf caisses et un problème de couleur
+Le directeur commercial arriva avec son téléphone à la main.
 
-Un lundi, un défaut critique fut détecté. Les contrôles ne permettaient plus de garantir la conformité de certains lots.
+« Le client attend ses pièces jeudi. Si on rate encore la livraison, il peut nous réclamer de l'argent. Et franchement, je le comprendrais.
 
-Sophie fit isoler les pièces suspectes et ordonna l'arrêt des équipements concernés.
+— Je le comprends aussi, répondit Sophie.
 
-Durée : trente-six heures.
+— Alors pourquoi ces caisses sont-elles là ?
 
-Le directeur général demanda si les machines pouvaient être réparées pendant qu'elles fonctionnaient. Le responsable maintenance expliqua que non.
+— Parce qu'on ne sait pas si les pièces rentrent dans ses machines.
 
-« C'est tout de même regrettable, observa le directeur. Nous sommes en 2026. »
+— Et pourquoi elles sont rouges ?
 
-Neuf caisses de pièces écartées ou à vérifier furent présentées lors de la réunion de crise.
+— Parce que ce sont les caisses qu'on utilise pour les pièces à vérifier.
 
-Le directeur commercial s'inquiéta immédiatement de leur couleur rouge.
+— On pourrait prendre des vertes ? Au moins, quand le client visitera l'usine…
 
-« Cela donne une mauvaise image de l'entreprise.
-— Ce sont des pièces potentiellement défectueuses, répondit Sophie.
-— Justement. Pourquoi ne pas utiliser des caisses vertes ? »
+— Elles ne rentreront pas mieux dans ses machines. »
 
-Le consultant approuva. Le vert inspirait confiance.
+Le responsable maintenance, Malik, posa une pièce sur la table. Il passa une tige métallique dans le premier trou. Dans le second, elle coinça.
 
-Sophie fit remarquer que les pièces ne deviendraient pas conformes pour autant.
+« Voilà. Le système qui maintient la pièce bouge légèrement. Il faut remplacer les éléments usés, refaire le réglage et contrôler le perçage.
 
-On lui demanda de ne pas confondre problèmes techniques et communication positive.
+— Ça prend combien de temps ? demanda le commercial.
 
-Trente-six heures pour arrêter de perdre du temps
+— La réparation, moins d'une journée si tout va bien. Après, il faut régler, faire des essais et vérifier les pièces en attente.
 
-Pendant l'arrêt, les équipes de maintenance intervinrent et les lots concernés furent contrôlés. Certaines pièces purent être libérées, d'autres nécessitèrent une reprise ou restèrent écartées.
+— Donc ?
 
-Les machines redémarrèrent après vérification.
+— Trente-six heures d'immobilisation prévues. Peut-être moins. Pas de promesse. »
 
-L'opération avait coûté trente-six heures de production, des interventions et des contrôles supplémentaires. Elle n'avait pas effacé les retards. Mais elle avait permis de reprendre sans continuer à fabriquer des pièces dont la conformité était incertaine.
+Le commercial regarda les neuf caisses.
 
-Le directeur commercial présenta néanmoins l'arrêt comme une catastrophe.
+« Et si on continue jusqu'à jeudi ?
 
-« Nous avons perdu trente-six heures !
-— Nous évitons surtout d'aggraver le problème, répondit Sophie.
-— Vous ne pouvez pas nier que les machines n'ont rien produit pendant trente-six heures.
-— Je confirme.
-— C'est bien ce que je dis : notre productivité s'est effondrée. »
+— On aura probablement davantage de caisses », répondit Malik.
 
-Le directeur général demanda pourquoi la maintenance n'avait pas été anticipée.
+Sophie arrêta l'équipement. Sa délégation de responsable d'atelier l'y autorisait lorsqu'un défaut pouvait conduire à livrer des pièces non conformes. Elle prévint aussitôt la direction et le commercial.
 
-Sophie lui présenta les deux demandes d'intervention reportées.
+Le directeur général arriva une heure plus tard.
 
-« Vous auriez dû insister davantage », conclut-il.
+« Vous avez arrêté la machine sans attendre mon accord ?
 
-Sophie reconnut néanmoins sa propre erreur : elle avait trop longtemps accepté de compenser les défauts par des contrôles et des reprises, en espérant que le prochain créneau de maintenance serait enfin disponible.
+— Oui. On ne pouvait plus garantir les pièces.
 
-À force de gérer une situation provisoire, elle avait contribué à la rendre permanente.
+— Vous auriez pu m'appeler avant.
 
-La direction décida donc qu'aucune intervention critique ne pourrait désormais être reportée sans arbitrage explicite entre production, maintenance et qualité.
+— Je vous ai appelé après. La machine s'était arrêtée entre les deux.
 
-Pour accompagner cette réforme, le consultant proposa une mission de vingt-sept pages.
+— Ce n'est pas tout à fait la même chose.
 
-Elle fut immédiatement acceptée.
+— Pour les pièces, si.
 
-La disparition miraculeuse des arrêts
+— Vous comprenez que je dois répondre des retards ?
 
-Une semaine plus tard, le directeur général annonça une excellente nouvelle.
+— Moi aussi. Et des pièces qu'on livre.
 
-L'entreprise avait trouvé le moyen de supprimer les arrêts exceptionnels de ses tableaux de bord.
+— Il faudra donc produire plus vite après la réparation.
 
-Les trente-six heures avaient été reclassées en « temps d'amélioration productive ».
+— Si elles sont bonnes, ce sera déjà plus rapide que maintenant. »
 
-Le consultant salua une avancée historique.
+Le directeur général resta devant la machine immobile, comme s'il attendait qu'elle reconnaisse sa faute.
 
-Le directeur commercial se félicita de cette nouvelle dynamique.
+Malik ouvrit le capot. Sophie fit remonter les caisses une par une vers la zone de contrôle. Le commercial téléphona au client. Il annonça un nouveau retard, sans chercher à le rebaptiser.
 
-Sophie observa que les six mois de retard figuraient toujours dans les chiffres.
+Le soir, Sophie retrouva son fils devant des pâtes trop cuites.
 
-« Ne soyez pas négative, Sophie, répondit le directeur général. Nous avons déjà réussi à faire disparaître trente-six heures d'arrêt. »
+« Tu rentres tard.
 
-Elle demanda s'il serait possible d'appliquer la même méthode aux commandes en retard.
+— On a arrêté une machine.
 
-Le directeur réfléchit quelques secondes.
+— Ça t'a pris toute la journée de l'arrêter ?
 
-« Excellente idée. Nous pourrions les appeler des livraisons anticipées sur l'exercice suivant. »
+— Non. Trois semaines pour se décider. »
 
-Le consultant sortit immédiatement son ordinateur.
+Son fils regarda les pâtes.
 
-Il venait de trouver le titre de sa prochaine mission.
+« Tu aurais dû venir plus tôt. Moi aussi, j'ai attendu avant d'éteindre. »
 
-Fiction économique satirique — Personnages et événements inventés.
+Sophie sourit malgré elle. Elle avait demandé la réparation deux fois, mais accepté pendant des semaines de faire travailler les équipes autour du problème. À force d'attendre le bon moment, elle avait aidé à le faire disparaître.
+
+Le lendemain, les équipes trièrent les pièces déjà fabriquées. Une partie put être utilisée. D'autres furent reprises. Certaines partirent à la ferraille. Personne ne trouva de caisse assez flatteuse pour changer leur sort.
+
+Après trente-six heures d'immobilisation, comprenant réparation, réglages et essais, Malik lança une série test. Il contrôla les premières pièces, puis celles produites après plusieurs cycles. Le maintien était stable ; les trous retrouvaient leur position. Sophie exigea un contrôle supplémentaire avant de relancer la fabrication normale.
+
+Le commercial revint.
+
+« On a perdu un jour et demi.
+
+— Oui.
+
+— Et le client attend toujours.
+
+— Oui.
+
+— Alors qu'est-ce qu'on a gagné ?
+
+— On a arrêté d'ajouter des pièces inutilisables à celles qu'on lui doit. »
+
+Il ne sourit pas. La pénalité restait possible, et les neuf caisses n'avaient pas disparu.
+
+La direction accepta qu'une réparation indispensable ne puisse plus être repoussée sans examen commun de ses conséquences par l'atelier, la maintenance et les ventes. Sophie, elle, ne demanda pas qu'on imprime la décision : elle avait encore des pièces à contrôler.
+
+En fin de journée, une pièce conforme arriva sur sa table. Sophie retira l'étiquette « À VÉRIFIER ».
+
+Le commercial passa la tête par la porte.
+
+« Celle-là, on peut l'envoyer ?
+
+— Oui.
+
+— Et les autres ?
+
+— On les vérifie.
+
+— Vous n'avez pas une étiquette qui dit “Livré jeudi” ?
+
+— Si. Mais elle ne fait pas avancer les camions. »
+
+Il repartit appeler le client.
+
+Sophie déposa la pièce dans une caisse verte. Elle n'y colla aucune nouvelle étiquette.
+
+Fiction satirique. Personnages, entreprise et événements inventés. Les durées et situations techniques sont des hypothèses de récit, non un cas industriel documenté.
