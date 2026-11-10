@@ -16,7 +16,7 @@ published: true
 publication_date: "2026-11-09T13:00:00+01:00"
 mise_en_avant: "standard"
 source_document_version: "V9"
-source_document_url: ""
+source_document_url: "https://docs.google.com/document/d/1pPZXXZnqcHT5MfwasPrgixCXw8O0_q0xmlZgTpFiSJU/edit"
 source_notice: "Fiction économique satirique : commune, personnages, projections et événements imaginaires. Vérifier les mesures réglementaires du bassin avant toute publication."
 methodology_specific: "V9 : visa éditorial et formel accordé selon journal de contrôle. Validation de programmation distincte, toujours à confirmer. Contexte C1-U1 : concurrence entre irrigation agricole et alimentation en eau potable ; frontière narrative avec C1-U2 tourisme."
 autorisation_publication: "preproduction_uniquement"
