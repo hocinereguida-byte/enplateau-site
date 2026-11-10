@@ -302,6 +302,9 @@ export const conversations: Record<string, Record<string, string>> = {
   ess: {
     C2: 'Concilier utilité sociale et viabilité économique',
   },
+  'recherche-innovation': {
+    C2: 'Financer les projets et les incertitudes',
+  },
   'numerique-telecom': {
     C4: 'Automatiser et déployer l’intelligence artificielle',
   },
@@ -368,6 +371,9 @@ export const contexts: Record<string, Record<string, string>> = {
     'arboriculture-sous-revue-strategique': 'Arboriculture — exploitation rentable sous revue stratégique',
     'maraichage-debouches-concurrents': 'Maraîchage — débouchés concurrents',
     'cereales-recolte-excedentaire': 'Céréales — récolte exceptionnelle',
+  },
+  'recherche-innovation': {
+    'C2-U1': 'Prototype prometteur sans marché établi',
   },
   'numerique-telecom': {
     'C4-U1': 'Assistant IA dans un service client',
