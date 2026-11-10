@@ -15,7 +15,7 @@ published: true
 publication_date: "2026-11-09T13:00:00+01:00"
 mise_en_avant: "standard"
 source_document_version: "V5"
-source_document_url: ""
+source_document_url: "https://docs.google.com/document/d/1e8bOjaqJdv60CtoGuO6KQRhHb0lrPHIXAgdR8ska5jY/edit"
 source_notice: "Fiction économique satirique : personnages, entreprise et chiffres imaginaires."
 methodology_specific: "Version V5, 6 304 caractères selon fichier source. Visa éditorial, juridique et de programmation déclaré acquis pour l'angle Commerce C3-U2 Finance & investissement ; consultation préproduction uniquement. Contrôler la conformité des promotions au cadre légal avant diffusion effective."
 autorisation_publication: "preproduction_uniquement"
