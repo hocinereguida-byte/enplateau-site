@@ -111,5 +111,3 @@ Ce mercredi-là, une première pièce contrôlée et conforme fut placée dans u
 Le commercial demanda si l'on pouvait photographier la caisse pour le client.
 
 « Vous pouvez surtout lui envoyer la pièce », répondit Sophie.
-
-Fiction satirique. Personnages, entreprise, quantités, délais et événements inventés. L'échéance lundi 9 h → jeudi 9 h est une hypothèse de récit (72 heures), et l'immobilisation de 36 heures concerne une machine, non toute l'usine. L'arrêt ne garantit pas la livraison intégrale des huit cents pièces. Les hypothèses de production, de conformité et de réparation demandent un contrôle documentaire avant toute publication.
