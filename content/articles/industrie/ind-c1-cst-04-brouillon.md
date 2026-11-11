@@ -30,8 +30,6 @@ unite_programmation: "IND-C1-CST"
 perspective_principale: "ressources-humaines-competences"
 ---
 
-*Texte de consultation en préproduction — publication publique non autorisée.*
-
 Dans une usine de pièces pour machines d’emballage installée dans le sud de la France, la direction venait de résoudre le problème du personnel. L'entreprise, qui comptait un peu plus d'une centaine de salariés, fabriquait des pièces en petites séries pour des clients industriels. Trente personnes allaient être embauchées. Elles n’avaient pas encore franchi la porte, mais figuraient déjà sur une présentation : trente petits bonshommes bleus, souriants et parfaitement alignés.
 
 Le directeur général était particulièrement fier de celui du milieu.
