@@ -18,11 +18,11 @@ tag_3: "Maintenance"
 tag_4: "Qualité industrielle"
 tag_5: "Organisation des opérations"
 source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "V4.1 — réécriture éditoriale de travail, sans visa narratif, documentaire ni autorisation de publication publique. Consultation en préproduction uniquement."
-source_document_url: "https://docs.google.com/document/d/1EwtZQuhw0PwVbQdlMUJdUySNMr8fVgPQ8ByKejwetWA/edit"
-source_document_version: "V4.1"
-validation_narrative: "a_revalider_v4_1"
-validation_documentaire: "a_revalider_v4_1"
+methodology_specific: "V4.3 — visa éditorial et visa documentaire validés pour cette fiction sous hypothèses. Consultation en préproduction uniquement ; publication publique non autorisée."
+source_document_url: "https://docs.google.com/document/d/1NvJfyOVpGjdDJ41VczjG8jMMb0NFx7AtvhbIuS_93D0/edit"
+source_document_version: "V4.3"
+validation_narrative: "visa_editorial_v4_3_valide"
+validation_documentaire: "visa_documentaire_v4_3_valide_sous_hypotheses"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "chronique"
 code_editorial: "IND-C1-CST-02"
@@ -52,7 +52,7 @@ Sophie avait accepté de faire trier les pièces après chaque série. « Encore
 
 Le lundi suivant, neuf caisses rouges occupaient le passage entre deux postes. Elles contenaient des pièces suspectes. Pas toutes mauvaises : simplement, personne ne pouvait garantir lesquelles étaient bonnes.
 
-Sophie avait collé une étiquette sur chaque caisse : « À VÉRIFIER ».
+Sophie avait collé une étiquette sur chaque caisse : « À VÉRIFIER ». Elle les avait écrites assez gros pour qu'on ne puisse pas les confondre avec des pièces prêtes à partir.
 
 Le directeur commercial arriva avec son téléphone à la main.
 
@@ -88,7 +88,11 @@ Le commercial regarda les neuf caisses.
 
 « Et si on continue jusqu'à jeudi ?
 
-— On aura probablement davantage de caisses », répondit Malik.
+— On aura probablement davantage de caisses, répondit Malik. Et davantage de pièces à trier. Chaque heure qu'on croit gagner sur la réparation, on la passe ensuite à vérifier ce qu'on vient de fabriquer.
+
+— Et trente-six heures sans produire ?
+
+— Au moins, pendant ce temps, on n'ajoutera pas de nouvelles pièces à trier. »
 
 Sophie arrêta l'équipement. Sa délégation de responsable d'atelier l'y autorisait lorsqu'un défaut pouvait conduire à livrer des pièces non conformes. Elle prévint aussitôt la direction et le commercial.
 
@@ -110,13 +114,13 @@ Le directeur général arriva une heure plus tard.
 
 — Moi aussi. Et des pièces qu'on livre.
 
-— Il faudra donc produire plus vite après la réparation.
+— Et après la réparation, vous comptez rattraper les trente-six heures perdues ?
 
-— Si elles sont bonnes, ce sera déjà plus rapide que maintenant. »
+— Je vais déjà essayer de ne pas perdre les trente-six suivantes. »
 
 Le directeur général resta devant la machine immobile, comme s'il attendait qu'elle reconnaisse sa faute.
 
-Malik ouvrit le capot. Sophie fit remonter les caisses une par une vers la zone de contrôle. Le commercial téléphona au client. Il annonça un nouveau retard, sans chercher à le rebaptiser.
+Après avoir coupé et sécurisé l'alimentation de la machine, Malik ouvrit le capot. Sophie fit remonter les caisses une par une vers la zone de contrôle. Le commercial téléphona au client. Il annonça un nouveau retard, sans chercher à le rebaptiser.
 
 Le soir, Sophie retrouva son fils devant des pâtes trop cuites.
 
@@ -132,7 +136,7 @@ Son fils regarda les pâtes.
 
 « Tu aurais dû venir plus tôt. Moi aussi, j'ai attendu avant d'éteindre. »
 
-Sophie sourit malgré elle. Elle avait demandé la réparation deux fois, mais accepté pendant des semaines de faire travailler les équipes autour du problème. À force d'attendre le bon moment, elle avait aidé à le faire disparaître.
+Sophie sourit malgré elle. Elle avait demandé la réparation deux fois, mais accepté pendant des semaines de faire travailler les équipes autour du problème. À force d'attendre le bon moment pour arrêter la machine, elle avait laissé le problème grossir.
 
 Le lendemain, les équipes trièrent les pièces déjà fabriquées. Une partie put être utilisée. D'autres furent reprises. Certaines partirent à la ferraille. Personne ne trouva de caisse assez flatteuse pour changer leur sort.
 
@@ -154,7 +158,7 @@ Le commercial revint.
 
 Il ne sourit pas. La pénalité restait possible, et les neuf caisses n'avaient pas disparu.
 
-La direction accepta qu'une réparation indispensable ne puisse plus être repoussée sans examen commun de ses conséquences par l'atelier, la maintenance et les ventes. Sophie, elle, ne demanda pas qu'on imprime la décision : elle avait encore des pièces à contrôler.
+La direction accepta qu'une réparation indispensable ne puisse plus être repoussée sans examen commun de ses conséquences par l'atelier, la maintenance et les ventes. Pendant que la machine reprenait son travail, les équipes continuaient à vérifier les pièces des neuf caisses : réparer n'avait pas rendu bonnes celles déjà fabriquées.
 
 En fin de journée, une pièce conforme arriva sur sa table. Sophie retira l'étiquette « À VÉRIFIER ».
 
@@ -162,18 +166,12 @@ Le commercial passa la tête par la porte.
 
 « Celle-là, on peut l'envoyer ?
 
-— Oui.
+— Oui. Celle-là.
 
 — Et les autres ?
 
-— On les vérifie.
+— On les vérifie. »
 
-— Vous n'avez pas une étiquette qui dit “Livré jeudi” ?
-
-— Si. Mais elle ne fait pas avancer les camions. »
-
-Il repartit appeler le client.
-
-Sophie déposa la pièce dans une caisse verte. Elle n'y colla aucune nouvelle étiquette.
+Il repartit appeler le client. Sophie déposa la pièce dans une caisse verte. Elle n'y colla aucune nouvelle étiquette.
 
 Fiction satirique. Personnages, entreprise et événements inventés. Les durées et situations techniques sont des hypothèses de récit, non un cas industriel documenté.
