@@ -161,12 +161,18 @@ const shareBase=canonical;
  .reading .recommendation-card{padding:14px 0 16px}
  .reading .recommendation-card strong{font-size:21px;line-height:1.34}
 }
+
+/* Limited typographic trial: dialogue vs narration, Claire/Kevin only. */
+.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue{margin:1.03em 0 1.12em;padding-left:clamp(11px,3vw,20px);border-left:1px solid rgba(34,52,59,.22)}
+.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue-line{margin:0 0 .34em;font:inherit;line-height:inherit}
+.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue-line:last-child{margin-bottom:0}
+@media(max-width:740px){.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue{padding-left:12px;margin:.9em 0 1em}}
 </style></head><body><a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/><main class="shell" id="contenu"><div class="reading">
 
 <header><p class="kicker"><a href={`/media/cycles/${d.cycle}/`}>{d.cycle}</a> / <a href={`/media/cycles/${d.cycle}/conversations/${d.conversation}/`}>{classification}</a> / <a href={`/media/cycles/${d.cycle}/contextes/${d.contexte}/`}>{context}</a></p><h1>{d.title}</h1>{d.summary&&<p class="lead">{d.summary}</p>}
 <div class="meta">{format&&<span>{format}</span>}{genreLabel&&<span>{genreLabel}</span>}<a href={`/media/lectures/${perspectiveCode}/`}>Perspective : {reading}</a>{pubDate&&<span>Publié le {formattedDate(pubDate)}</span>}{updated&&<span>Mis à jour le {formattedDate(updated)}</span>}</div></header>
 {d.hero_image&&<img class="hero" src={d.hero_image} alt={imageAlt} loading="eager"/>}
-<div class="reader-toolbar" aria-label="Outils de lecture"><details class="reader-tool" id="audio-reader"><summary aria-label="Ouvrir la lecture audio"><span aria-hidden="true">♫</span> Écouter</summary><div class="tool-panel"><p class="audio-description">Lecture vocale avec la voix française disponible sur votre appareil.</p><div class="audio-controls"><button type="button" id="audio-play">Écouter</button><button type="button" id="audio-pause" disabled>Pause</button><button type="button" id="audio-resume" disabled>Reprendre</button><button type="button" id="audio-stop" disabled>Arrêter</button></div><p class="audio-status" id="audio-status" role="status" aria-live="polite">Prêt à écouter.</p></div></details><details class="reader-tool share-tool"><summary aria-label="Afficher les options de partage"><span aria-hidden="true">↗</span> Partager</summary><div class="tool-panel"><div class="share-links" aria-label="Options de partage"><a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareBase)}`} target="_blank" rel="noopener noreferrer">LinkedIn</a><a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareBase)}`} target="_blank" rel="noopener noreferrer">Facebook</a><a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareBase)}&text=${encodeURIComponent(d.title)}`} target="_blank" rel="noopener noreferrer">X</a><a href={`mailto:?subject=${encodeURIComponent(d.title)}&body=${encodeURIComponent(shareBase)}`}>E-mail</a><button id="copy-article-link" type="button">Copier le lien</button></div></div></details></div><article class:list={['article', { 'article-literary': d.format!=='regard-croise' }]} aria-label="Texte intégral"><Content/></article>
+<div class="reader-toolbar" aria-label="Outils de lecture"><details class="reader-tool" id="audio-reader"><summary aria-label="Ouvrir la lecture audio"><span aria-hidden="true">♫</span> Écouter</summary><div class="tool-panel"><p class="audio-description">Lecture vocale avec la voix française disponible sur votre appareil.</p><div class="audio-controls"><button type="button" id="audio-play">Écouter</button><button type="button" id="audio-pause" disabled>Pause</button><button type="button" id="audio-resume" disabled>Reprendre</button><button type="button" id="audio-stop" disabled>Arrêter</button></div><p class="audio-status" id="audio-status" role="status" aria-live="polite">Prêt à écouter.</p></div></details><details class="reader-tool share-tool"><summary aria-label="Afficher les options de partage"><span aria-hidden="true">↗</span> Partager</summary><div class="tool-panel"><div class="share-links" aria-label="Options de partage"><a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareBase)}`} target="_blank" rel="noopener noreferrer">LinkedIn</a><a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareBase)}`} target="_blank" rel="noopener noreferrer">Facebook</a><a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareBase)}&text=${encodeURIComponent(d.title)}`} target="_blank" rel="noopener noreferrer">X</a><a href={`mailto:?subject=${encodeURIComponent(d.title)}&body=${encodeURIComponent(shareBase)}`}>E-mail</a><button id="copy-article-link" type="button">Copier le lien</button></div></div></details></div><article class:list={['article', { 'article-literary': d.format!=='regard-croise' }]} data-article-id={article.id} aria-label="Texte intégral"><Content/></article>
 
 {authorSignature&&<section class="panel" aria-label="Signature de l’auteur"><p class="micro">SIGNATURE</p>{d.signature_portrait&&<img src={d.signature_portrait} alt="" loading="lazy" style="max-width:96px;border-radius:50%"/>}<h2>{authorSignature}</h2>{d.signature_biographie&&<p>{d.signature_biographie}</p>}{d.signature_tonalite&&<p class="small">Tonalité : {d.signature_tonalite}</p>}</section>}
 {(summaryProfile||profileRows.length>0)&&<section class="panel" aria-labelledby="source-title"><p class="micro">{d.format==='regard-croise'?'NOTICE DOCUMENTAIRE':'FICTION ÉCONOMIQUE'}</p><h2 id="source-title">{d.format==='regard-croise'?'À propos de cette analyse':'À propos de cette Scène'}</h2>{summaryProfile&&<p>{summaryProfile}</p>}{profileRows.length>0&&<dl class="source-facts">{profileRows.map(([label,value])=><><dt>{label}</dt><dd>{value}</dd></>)}</dl>}</section>}
@@ -249,4 +255,20 @@ const shareBase=canonical;
  });
 })();
 </script>}
+<script is:inline>
+/* Presentation-only dialogue grouping for the Claire/Kevin preproduction test.
+   Source Markdown remains untouched; avoid affecting any other article. */
+(function(){
+ const root=document.querySelector('.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"]');
+ if(!root)return;
+ for(const p of root.querySelectorAll(':scope > p')){
+  if(p.children.length || !/^\s*«/.test(p.textContent||''))continue;
+  const lines=(p.textContent||'').split(/\n+/).map(v=>v.trim()).filter(Boolean);
+  if(!lines.length || !lines.every((line,i)=>i===0?line.startsWith('«'):line.startsWith('—')))continue;
+  const group=document.createElement('div');group.className='fiction-dialogue';group.setAttribute('role','group');group.setAttribute('aria-label','Dialogue');
+  for(const line of lines){const el=document.createElement('p');el.className='fiction-dialogue-line';el.textContent=line;group.append(el)}
+  p.replaceWith(group);
+ }
+})();
+</script>
 </body></html>
