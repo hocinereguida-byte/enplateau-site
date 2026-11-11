@@ -164,7 +164,9 @@ const shareBase=canonical;
 
 /* Limited typographic trial: dialogue vs narration, Claire/Kevin only. */
 .article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue{margin:1.03em 0 1.12em;padding-left:clamp(11px,3vw,20px);border-left:1px solid rgba(34,52,59,.22)}
-.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue-line{margin:0 0 .34em;font:inherit;line-height:inherit}
+.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue-line{margin:0;font:inherit;line-height:inherit}
+.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue-turn{margin:0 0 .8em}
+.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue-speaker{display:block;margin:0 0 .15em;font:600 11px/1.4 'IBM Plex Sans',Arial,sans-serif;letter-spacing:.025em;color:var(--blue)}
 .article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue-line:last-child{margin-bottom:0}
 @media(max-width:740px){.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue{padding-left:12px;margin:.9em 0 1em}}
 </style></head><body><a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/><main class="shell" id="contenu"><div class="reading">
@@ -256,18 +258,49 @@ const shareBase=canonical;
 })();
 </script>}
 <script is:inline>
-/* Presentation-only dialogue grouping for the Claire/Kevin preproduction test.
-   Source Markdown remains untouched; avoid affecting any other article. */
+/* Reader-only dialogue layout for the Claire/Kevin test.
+   The speaker sequence is reviewed against the approved manuscript, not guessed from alternation. */
 (function(){
  const root=document.querySelector('.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"]');
  if(!root)return;
- for(const p of root.querySelectorAll(':scope > p')){
-  if(p.children.length || !/^\s*«/.test(p.textContent||''))continue;
-  const lines=(p.textContent||'').split(/\n+/).map(v=>v.trim()).filter(Boolean);
-  if(!lines.length || !lines.every((line,i)=>i===0?line.startsWith('«'):line.startsWith('—')))continue;
+ const cast=[
+  ['Dans quatre mois',['Le directeur général']],
+  ['Et qui va leur apprendre',['Claire','Le directeur général','Claire','Le directeur général']],
+  ['Tu t’occupes des six',['Le chef de Kevin','Kevin','Le chef de Kevin','Kevin']],
+  ['Kevin, viens voir',['Le chef de Kevin','Kevin','Le chef de Kevin']],
+  ['Kevin, tu peux venir',['Le chef de Kevin','Kevin','Le chef de Kevin','Kevin','Le chef de Kevin']],
+  ['Pourtant, ces heures',['Claire','Kevin']],
+  ['Mais il sait démarrer',['Le directeur commercial','Kevin']],
+  ['Nous avons le choix',['Claire','Le directeur général','Claire','Le directeur général','Claire']],
+  ['Kevin, j’aurais besoin',['Le chef de Kevin','Kevin']],
+  ['Très bien, dit le directeur commercial',['Le directeur commercial']],
+  ['Quand ils sauront faire',['Claire']],
+  ['D’accord. Mais vous avez une date',['Le directeur commercial']]
+ ];
+ const normalized=v=>v.replace(/^[«—\s]+/,'').replace(/[»\s]+$/,'').trim();
+ const paragraphs=Array.from(root.querySelectorAll(':scope > p'));
+ for(let i=0;i<paragraphs.length;i++){
+  const first=paragraphs[i];
+  if(!first.isConnected||!/^\s*«/.test(first.textContent||''))continue;
+  const text=normalized(first.textContent||'');
+  const entry=cast.find(([prefix])=>text.startsWith(prefix));
+  if(!entry)continue;
+  const [prefix,speakers]=entry;
   const group=document.createElement('div');group.className='fiction-dialogue';group.setAttribute('role','group');group.setAttribute('aria-label','Dialogue');
-  for(const line of lines){const el=document.createElement('p');el.className='fiction-dialogue-line';el.textContent=line;group.append(el)}
-  p.replaceWith(group);
+  const nodes=[first];let cursor=i+1;
+  while(cursor<paragraphs.length&&/^\s*—/.test(paragraphs[cursor].textContent||'')){
+   nodes.push(paragraphs[cursor]);cursor++;
+  }
+  const parts=nodes.flatMap(p=>(p.textContent||'').split(/\n(?=\s*—)/).map(v=>v.trim()).filter(Boolean));
+  if(parts.length!==speakers.length)continue;
+  parts.forEach((part,index)=>{
+   const line=document.createElement('div');line.className='fiction-dialogue-turn';
+   const who=document.createElement('span');who.className='fiction-dialogue-speaker';who.textContent=speakers[index];
+   const words=document.createElement('p');words.className='fiction-dialogue-line';
+   words.textContent=part.replace(/^\s*[«—]\s*/,'').replace(/\s*»\s*$/,'').replace(/,?\s*(?:lui dit son chef|dit son chef|dit-elle|répondit Kevin|répondit-elle|protesta le commercial|dit le directeur commercial)\s*([.!?])?$/i,(_m,punctuation)=>punctuation||'').trim();
+   line.append(who,words);group.append(line);
+  });
+  first.before(group);nodes.forEach(p=>p.remove());
  }
 })();
 </script>
