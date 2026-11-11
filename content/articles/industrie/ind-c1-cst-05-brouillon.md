@@ -238,5 +238,3 @@ Jean Toksik regarde sa bouteille de champagne. Il semble envisager de l'ouvrir s
 — Nous avons donc mis en place une procédure.
 
 Jean Toksik regarde la bouteille, puis la porte. Pour la première fois depuis longtemps, il se demande si ses invités ne commencent pas à prendre goût aux séances.
-
-Fiction économique satirique — Personnages, entreprise, localisation générale, dialogues et chiffres du scénario inventés.
