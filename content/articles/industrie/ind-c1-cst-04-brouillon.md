@@ -18,11 +18,11 @@ tag_3: "Compétences industrielles"
 tag_4: "Montée en cadence"
 tag_5: "Transmission des savoir-faire"
 source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "Claire M. et Kevin R. V3.9 — titre retenu, texte littéraire issu de V3.8. Préproduction uniquement ; visas éditorial et documentaire non délivrés, publication publique non autorisée."
-source_document_url: "https://docs.google.com/document/d/1K9hVRmLR9-2X50VgBgSZN1y-YwMWUvOxexD6LkjQvNk/edit"
-source_document_version: "V3.9"
-validation_narrative: "titre_retenu_v3_9_sans_visa"
-validation_documentaire: "a_confirmer_v3_9"
+methodology_specific: "Claire M. et Kevin R. V4.0 — version expérimentale privilégiée, recontrôle 53 items : 40 conformes, 6 partiels, 2 non vérifiés, 5 hors périmètre. Aucun nouveau visa ; préproduction uniquement."
+source_document_url: "https://docs.google.com/document/d/19UKgq9tK9EfJzOw6UkqGpsNtKy9_d8ErKYCqIU1IFCQ/edit"
+source_document_version: "V4.0"
+validation_narrative: "v4_0_experimentale_recontrole_sans_nouveau_visa"
+validation_documentaire: "v4_0_controle_documentaire_requis"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "chronique"
 code_editorial: "IND-C1-CST-04"
@@ -98,11 +98,7 @@ Puis arriva la commande qu’il fallait absolument terminer avant le soir. Un no
 
 « Mais il sait démarrer la machine, protesta le commercial.
 
-— Mon neveu de huit ans sait démarrer ma voiture, répondit Kevin. Je ne lui confie pas le trajet jusqu’à Lyon.
-
-— Ce n’est pas comparable.
-
-— C’est vrai. Avec ma voiture, on voit tout de suite quand il se trompe de vitesse. »
+— Le problème, répondit Kevin, c’est qu’il ne sait pas encore quand l’arrêter. »
 
 Quelqu’un suggéra de déclarer le nouveau « capable de travailler seul, mais seulement aujourd’hui ». Claire demanda si cette capacité disparaîtrait à dix-huit heures. Personne ne répondit. Le commercial regarda sa montre : il aurait préféré une capacité qui dure au moins jusqu’à dix-neuf heures.
 
@@ -118,9 +114,9 @@ Claire refusa de laisser le nouveau travailler seul. Puis elle alla voir le dire
 
 — C'est pourtant ce que montre mon planning. »
 
-Le directeur prit son téléphone. Il vérifia ce qu’il avait réellement promis et ce qu’il espérait seulement vendre. Les commandes déjà acceptées seraient livrées aux dates convenues, notamment grâce à quelques ajustements dans l'atelier. Pour les pièces supplémentaires que le client envisageait de commander, il fallut annoncer un délai plus long. Le client accepta d'attendre une partie de ces pièces, mais confia le reste à une usine concurrente. Il n'y eut ni catastrophe ni triomphe : simplement des commandes que l'on aurait aimé recevoir et qui partirent ailleurs.
+Le directeur prit son téléphone. Il vérifia ce qu’il avait réellement promis et ce qu’il espérait seulement vendre. Pour la commande à terminer ce soir-là, le chef d’atelier réaffecta un opérateur expérimenté à la machine en difficulté ; Kevin resta avec les deux nouveaux. Les autres commandes déjà acceptées seraient livrées aux dates convenues, grâce à des ajustements dans l’atelier et à un renfort temporaire. Pour les pièces supplémentaires que le client envisageait de commander, il fallut annoncer un délai plus long. Le client accepta d’attendre une partie de ces pièces, mais confia le reste à une usine concurrente.
 
-Pour tenir les livraisons, on demanda aussi à une autre entreprise de fabriquer temporairement quelques pièces simples, après avoir vérifié qu’elle pouvait le faire correctement. Cela revenait plus cher. Le directeur le fit noter. Cette fois, la dépense ne pouvait pas être déplacée sur une feuille de papier : quelqu’un allait devoir la payer.
+Pour tenir les livraisons, on demanda aussi à une autre entreprise de fabriquer temporairement quelques pièces simples, après avoir vérifié qu’elle pouvait le faire correctement. Cela revenait plus cher. Le directeur le fit noter.
 
 Il prit ensuite une décision étrange. Désormais, chaque fois qu’on voudrait retirer Kevin d’une formation, il faudrait d’abord dire quelle fabrication attendrait à sa place. On pouvait toujours demander. Il devenait simplement plus difficile de faire comme si personne ne perdait de temps.
 
@@ -147,5 +143,3 @@ Le directeur regarda Claire.
 Le commercial nota soigneusement la réponse.
 
 « D’accord. Mais vous avez une date ? »
-
-Fiction économique satirique — Personnages, entreprise, événements et chiffres inventés.
