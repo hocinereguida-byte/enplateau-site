@@ -139,5 +139,3 @@ Au comité suivant, Nathalie présenta des résultats provisoires. Elle avait la
 — Je vous le dirai quand on aura écouté ce que les opératrices nous ont dit. »
 
 Elle posa son chronomètre sur la table.
-
-Fiction satirique. Personnages, entreprise, coûts, durées et événements inventés. Les observations et résultats sont des hypothèses narratives, non une étude industrielle ou ergonomique documentée.
