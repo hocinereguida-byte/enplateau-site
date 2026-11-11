@@ -1,6 +1,6 @@
 ---
 title: "Comment former trente ouvriers sans arrêter une seule machine ?"
-summary: "Trente recrutements annoncés, mais aucun temps disponible pour former les nouveaux : Claire et Kevin doivent arbitrer entre production immédiate et compétences réelles."
+summary: "Claire M. a organisé l'arrivée de trente recrues. Kevin R. doit leur apprendre le métier. L'usine a signé le programme de formation ; il reste à trouver qui fera le travail pendant les heures réservées."
 format: "chronique"
 cycle: "industrie"
 conversation: "C1"
@@ -18,11 +18,11 @@ tag_3: "Compétences industrielles"
 tag_4: "Montée en cadence"
 tag_5: "Transmission des savoir-faire"
 source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "Claire M. et Kevin R. V4.0 — version expérimentale privilégiée, recontrôle 53 items : 40 conformes, 6 partiels, 2 non vérifiés, 5 hors périmètre. Aucun nouveau visa ; préproduction uniquement."
-source_document_url: "https://docs.google.com/document/d/19UKgq9tK9EfJzOw6UkqGpsNtKy9_d8ErKYCqIU1IFCQ/edit"
-source_document_version: "V4.0"
-validation_narrative: "v4_0_experimentale_recontrole_sans_nouveau_visa"
-validation_documentaire: "v4_0_controle_documentaire_requis"
+methodology_specific: "Claire M. et Kevin R. V4.3 — contrôles de plausibilité et concordance encore ouverts ; accord de consultation en préproduction uniquement, aucun bon à publier."
+source_document_url: "https://docs.google.com/document/d/1a46GCcQRGF4s37GoWOQ5TCXz2qj2YZspyrD-WpmP9Hc/edit"
+source_document_version: "V4.3"
+validation_narrative: "v4_3_stabilisation_editoriale_preproduction"
+validation_documentaire: "v4_3_plausibilite_sous_reserves_sans_visa_final"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "chronique"
 code_editorial: "IND-C1-CST-04"
@@ -58,7 +58,7 @@ Cinq ouvriers expérimentés furent désignés. Parmi eux, Kevin R., opérateur 
 
 — Oui. En deux ans. Pas jeudi prochain. »
 
-Claire répartit les arrivées en trois groupes et fit préparer deux autres collègues à donner un coup de main. Puis elle bloqua des heures pour apprendre le métier aux nouveaux. Sur le papier, tout était réglé. Le directeur signa le programme. Il avait un très beau stylo, offert par un client dont les commandes étaient en retard.
+Claire répartit les arrivées en trois groupes successifs, sur les quatre mois annoncés, et fit préparer deux autres collègues à assurer eux aussi du tutorat. Kevin n'était chargé que de deux débutants à la fois ; les autres seraient répartis entre les tuteurs selon les postes. Puis elle bloqua des heures pour apprendre le métier aux nouveaux. Elle avait obtenu cinq signatures et préparé trois copies du programme. Sur le papier, tout était réglé. Le directeur signa le programme. Il avait un très beau stylo, offert par un client dont les commandes étaient en retard.
 
 Le premier lundi, Kevin montrait à deux débutants comment repérer une pièce mal réglée. Son chef entra.
 
@@ -78,7 +78,7 @@ Le lendemain, il fallut vérifier des pièces pour un client impatient.
 
 — On reprendra demain.
 
-— Demain, c’est le groupe suivant.
+— Demain, j'ai les deux autres nouveaux.
 
 — Tu vois, on ne perd pas de temps. »
 
@@ -90,7 +90,7 @@ Claire finit par descendre dans l’atelier. Elle découvrit que les heures insc
 
 — Oui, répondit Kevin. Vous avez réservé mon mercredi. Mon chef a réservé mon mercredi aussi. C’est un mercredi très demandé. »
 
-Claire regarda son planning. Elle avait pris les signatures des chefs d'atelier pour une garantie : Kevin serait disponible aux heures prévues. Elle n'avait demandé à personne qui tiendrait les machines pendant ce temps. Elle avait obtenu toutes les signatures. Aucun remplaçant.
+Claire regarda son planning. Elle avait pris les signatures des chefs d'atelier pour une garantie : Kevin serait disponible aux heures prévues. Elle n'avait demandé à personne qui tiendrait les machines pendant ce temps. Elle avait obtenu toutes les signatures. Aucun remplaçant. Elle chercha dans le dossier la case prévue pour indiquer qui remplacerait Kevin. Il n'y en avait pas.
 
 Puis arriva la commande qu’il fallait absolument terminer avant le soir. Un nouveau salarié savait mettre la machine en marche. On proposa donc de le laisser seul. Kevin n’avait pas encore eu le temps de vérifier s’il saurait reconnaître un mauvais réglage avant que toute une série de pièces soit bonne à jeter.
 
@@ -112,9 +112,9 @@ Claire refusa de laisser le nouveau travailler seul. Puis elle alla voir le dire
 
 — C'est pourtant ce que montre mon planning. »
 
-Le directeur prit son téléphone. Il vérifia ce qu’il avait réellement promis et ce qu’il espérait seulement vendre. Pour la commande à terminer ce soir-là, le chef d’atelier réaffecta un opérateur expérimenté à la machine en difficulté ; Kevin resta avec les deux nouveaux. Les autres commandes déjà acceptées seraient livrées aux dates convenues, grâce à des ajustements dans l’atelier et à un renfort temporaire. Pour les pièces supplémentaires que le client envisageait de commander, il fallut annoncer un délai plus long. Le client accepta d’attendre une partie de ces pièces, mais confia le reste à une usine concurrente.
+Le directeur prit son téléphone. Il vérifia ce qu’il avait réellement promis et ce qu’il espérait seulement vendre. Pour la commande à terminer ce soir-là, le chef d’atelier réaffecta à la machine en difficulté un opérateur expérimenté qui connaissait déjà ses réglages ; Kevin resta avec les deux nouveaux. La machine que cet opérateur devait normalement alimenter attendit. Le directeur accepta que cette série prenne du retard : elle n'était pas destinée à la livraison du soir.
 
-Pour tenir les livraisons, on demanda aussi à une autre entreprise de fabriquer temporairement quelques pièces simples, après avoir vérifié qu’elle pouvait le faire correctement. Cela revenait plus cher. Le directeur le fit noter.
+Pour les commandes déjà acceptées, l'atelier réorganisa les fabrications des jours suivants. Quelques pièces simples, dont les plans et les exigences étaient connus, furent confiées temporairement à une autre entreprise déjà capable de les fabriquer, après vérification de sa disponibilité et des contrôles nécessaires. La facture serait plus élevée, et la marge sur ces pièces plus faible. Quant aux pièces supplémentaires qu'un client envisageait seulement de commander, on annonça un délai plus long. Le client accepta d'en attendre une partie, mais confia le reste de ces volumes encore non commandés à un concurrent. Le directeur ne put plus présenter les trente recrutements comme trente ouvriers immédiatement disponibles.
 
 Il prit ensuite une décision étrange. Désormais, chaque fois qu’on voudrait retirer Kevin d’une formation, il faudrait d’abord dire quelle fabrication attendrait à sa place. On pouvait toujours demander. Il devenait simplement plus difficile de faire comme si personne ne perdait de temps.
 
@@ -128,9 +128,9 @@ Cette fois, le chef ne répondit pas « personne ». Il regarda la liste des mac
 
 Kevin eut l’air déçu. Il avait préparé une réponse.
 
-Les deux nouveaux terminèrent leurs essais. Kevin nota dans son carnet ce qu’ils savaient faire et ce qu’ils devaient encore apprendre. La formation avait duré toute la durée prévue. Cela ne s’était pas produit depuis si longtemps que Claire demanda s’il fallait le signaler comme un incident.
+Les deux nouveaux terminèrent leurs essais. Kevin nota dans son carnet ce qu’ils savaient faire et ce qu’ils devaient encore apprendre. Pour une fois, la formation avait duré le temps prévu.
 
-À la réunion suivante, le directeur annonça une excellente nouvelle : l’usine avait enfin trouvé le temps de former ses salariés.
+À la réunion suivante, le directeur annonça que Kevin avait enfin pu terminer une séance de formation.
 
 « Très bien, dit le directeur commercial. Et à partir de quand je peux annoncer aux clients qu’on produira davantage ? »
 
