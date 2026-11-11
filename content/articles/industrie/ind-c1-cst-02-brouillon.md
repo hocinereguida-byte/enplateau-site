@@ -30,10 +30,6 @@ perspective_principale: "operations-organisation"
 unite_programmation: "IND-C1-CST"
 ---
 
-*Texte de consultation en préproduction — publication publique non autorisée.*
-
-ENTRETIEN NON RÉEL · CHRONIQUE DE FICTION ÉCONOMIQUE SATIRIQUE — Personnages, entreprise et données inventés.
-
 Lundi, neuf heures. Le client attendait jeudi, à neuf heures précises, huit cents pièces métalliques pour assembler ses machines agricoles. Il restait exactement soixante-douze heures. Certaines commandes avaient déjà accumulé jusqu'à six mois de retard. Après plusieurs reports, le client menaçait de réclamer des pénalités et de confier ses prochaines commandes ailleurs.
 
 Dans cette usine d'environ cent cinquante salariés, installée dans le sud de la France et spécialisée dans les pièces métalliques pour équipements agricoles, la direction avait réuni Sophie M., responsable de l'atelier de fabrication, Malik R., responsable de la maintenance des équipements, et le directeur commercial. Celui-ci avait préparé une présentation intitulée « Sécurisation de la livraison ». Il préférait « sécurisation » à « retard ». Un retard avait des conséquences ; une sécurisation avait un responsable de projet.
