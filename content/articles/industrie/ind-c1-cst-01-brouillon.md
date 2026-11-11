@@ -226,5 +226,3 @@ Cette fois, le journaliste attend.
 Quelques secondes passent.
 
 — Votre café est froid, Marc D. C'est dommage. C'était la seule chose ici dont nous connaissions le coût avant de la servir.
-
-Fiction économique satirique. Personnages, entreprise et données chiffrées fictifs.
