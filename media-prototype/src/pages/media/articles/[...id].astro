@@ -61,18 +61,31 @@ const shareBase=canonical;
 {pubDate&&<meta property="article:published_time" content={pubDate.toISOString()}/>} {updated&&<meta property="article:modified_time" content={updated.toISOString()}/>}<style is:inline set:html={articleStyle}/>
 
 <style is:inline>
-/* Sharing is secondary to reading: compact, wrap-friendly, and placed after the article. */
-.compact-share{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem;padding:.75rem 0;margin:1rem 0 1.5rem;border-top:1px solid var(--line,#d7cfc5);border-bottom:1px solid var(--line,#d7cfc5)}
-.compact-share .share-label{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted,#666);margin-right:.3rem}
-.compact-share a,.compact-share button{display:inline-flex;align-items:center;justify-content:center;min-height:2.1rem;padding:.25rem .55rem;margin:0;font-size:.82rem;line-height:1.2;white-space:nowrap}
-@media(max-width:480px){.compact-share{gap:.35rem}.compact-share a,.compact-share button{font-size:.78rem;padding:.25rem .45rem}}
+/* Minimal editorial reading tools: no panels until explicitly opened. */
+.reader-toolbar{display:flex;align-items:flex-start;gap:1.25rem;margin:1rem 0 .6rem;padding:.55rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font:500 13px/1.4 'IBM Plex Sans',Arial,sans-serif}
+.reader-tool{position:relative;min-width:0}
+.reader-tool>summary{display:inline-flex;align-items:center;gap:.45rem;cursor:pointer;list-style:none;color:var(--ink);padding:.45rem .15rem;min-height:2.25rem}
+.reader-tool>summary::-webkit-details-marker{display:none}
+.reader-tool>summary span{font-size:18px;color:var(--blue);line-height:1}
+.reader-tool>summary:hover,.reader-tool[open]>summary{color:var(--blue)}
+.reader-tool>summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.reader-tool .tool-panel{position:absolute;top:100%;left:0;z-index:5;width:min(355px,calc(100vw - 44px));padding:15px;background:#fff;border:1px solid var(--line);box-shadow:0 6px 18px rgba(10,25,40,.11)}
+.reader-tool.share-tool .tool-panel{width:min(330px,calc(100vw - 44px))}
+.reader-tool .audio-description{margin:0 0 10px;font-size:12px;line-height:1.5}
+.reader-tool .audio-controls{gap:5px}
+.reader-tool .audio-controls button{font-size:12px;padding:7px 9px;min-height:34px}
+.reader-tool .audio-status{margin:9px 0 0;font-size:11px}
+.share-links{display:flex;flex-wrap:wrap;gap:6px}
+.share-links a,.share-links button{border:1px solid var(--line);background:#fff;color:var(--blue);font:500 12px/1.3 'IBM Plex Sans',Arial,sans-serif;padding:8px 10px;cursor:pointer;text-decoration:none}
+.share-links a:hover,.share-links button:hover{background:#f3f7fb}
+@media(max-width:480px){.reader-toolbar{gap:1rem}.reader-tool.share-tool .tool-panel{left:auto;right:0}}
 </style></head><body><a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/><main class="shell" id="contenu"><div class="reading">
 
 <header><p class="kicker"><a href={`/media/cycles/${d.cycle}/`}>{d.cycle}</a> / <a href={`/media/cycles/${d.cycle}/conversations/${d.conversation}/`}>{classification}</a> / <a href={`/media/cycles/${d.cycle}/contextes/${d.contexte}/`}>{context}</a></p><h1>{d.title}</h1>{d.summary&&<p class="lead">{d.summary}</p>}
 <div class="meta">{format&&<span>{format}</span>}{genreLabel&&<span>{genreLabel}</span>}<a href={`/media/lectures/${perspectiveCode}/`}>Perspective : {reading}</a>{pubDate&&<span>Publié le {formattedDate(pubDate)}</span>}{updated&&<span>Mis à jour le {formattedDate(updated)}</span>}</div></header>
 {d.hero_image&&<img class="hero" src={d.hero_image} alt={imageAlt} loading="eager"/>}
-<section class="audio-reader" id="audio-reader" aria-label="Lecture vocale de l’article"><div><p class="micro">ÉCOUTER L’ARTICLE</p><p class="audio-description">Lecture vocale en français avec la voix disponible sur votre appareil.</p></div><div class="audio-controls"><button type="button" id="audio-play">Écouter</button><button type="button" id="audio-pause" disabled>Pause</button><button type="button" id="audio-resume" disabled>Reprendre</button><button type="button" id="audio-stop" disabled>Arrêter</button></div><p class="audio-status" id="audio-status" role="status" aria-live="polite">Prêt à écouter.</p></section><article class="article" aria-label="Texte intégral"><Content/></article>
-<nav class="action-bar compact-share" aria-label="Partager l’article"><span class="share-label">Partager</span><a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareBase)}`} target="_blank" rel="noopener noreferrer">LinkedIn</a><a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareBase)}`} target="_blank" rel="noopener noreferrer">Facebook</a><a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareBase)}&text=${encodeURIComponent(d.title)}`} target="_blank" rel="noopener noreferrer">X</a><a href={`mailto:?subject=${encodeURIComponent(d.title)}&body=${encodeURIComponent(shareBase)}`}>E-mail</a><button id="copy-article-link" type="button">Copier le lien</button></nav>
+<div class="reader-toolbar" aria-label="Outils de lecture"><details class="reader-tool" id="audio-reader"><summary aria-label="Ouvrir la lecture audio"><span aria-hidden="true">♫</span> Écouter</summary><div class="tool-panel"><p class="audio-description">Lecture vocale avec la voix française disponible sur votre appareil.</p><div class="audio-controls"><button type="button" id="audio-play">Écouter</button><button type="button" id="audio-pause" disabled>Pause</button><button type="button" id="audio-resume" disabled>Reprendre</button><button type="button" id="audio-stop" disabled>Arrêter</button></div><p class="audio-status" id="audio-status" role="status" aria-live="polite">Prêt à écouter.</p></div></details><details class="reader-tool share-tool"><summary aria-label="Afficher les options de partage"><span aria-hidden="true">↗</span> Partager</summary><div class="tool-panel"><div class="share-links" aria-label="Options de partage"><a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareBase)}`} target="_blank" rel="noopener noreferrer">LinkedIn</a><a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareBase)}`} target="_blank" rel="noopener noreferrer">Facebook</a><a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareBase)}&text=${encodeURIComponent(d.title)}`} target="_blank" rel="noopener noreferrer">X</a><a href={`mailto:?subject=${encodeURIComponent(d.title)}&body=${encodeURIComponent(shareBase)}`}>E-mail</a><button id="copy-article-link" type="button">Copier le lien</button></div></div></details></div><article class="article" aria-label="Texte intégral"><Content/></article>
+
 {authorSignature&&<section class="panel" aria-label="Signature de l’auteur"><p class="micro">SIGNATURE</p>{d.signature_portrait&&<img src={d.signature_portrait} alt="" loading="lazy" style="max-width:96px;border-radius:50%"/>}<h2>{authorSignature}</h2>{d.signature_biographie&&<p>{d.signature_biographie}</p>}{d.signature_tonalite&&<p class="small">Tonalité : {d.signature_tonalite}</p>}</section>}
 {(summaryProfile||profileRows.length>0)&&<section class="panel" aria-labelledby="source-title"><p class="micro">{d.format==='regard-croise'?'NOTICE DOCUMENTAIRE':'FICTION ÉCONOMIQUE'}</p><h2 id="source-title">{d.format==='regard-croise'?'À propos de cette analyse':'À propos de cette Scène'}</h2>{summaryProfile&&<p>{summaryProfile}</p>}{profileRows.length>0&&<dl class="source-facts">{profileRows.map(([label,value])=><><dt>{label}</dt><dd>{value}</dd></>)}</dl>}</section>}
 
