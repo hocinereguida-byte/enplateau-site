@@ -23,7 +23,7 @@ const records = [
   "industrie/ind-c1-cst-01-brouillon.md|IND-C1-CST-01|industrie|V6.4|strategie-gouvernance|IND-C1-CST||CST|entretien|grand-entretien|1HCidSrVrFsHkzv_DFc9uuHSn35vhwo3XN4rQzh7qYdY",
   "industrie/ind-c1-cst-02-brouillon.md|IND-C1-CST-02|industrie|V4.6|operations-organisation|IND-C1-CST||CST|chronique|chronique|17_DCxnLeXe4u6VmmORx0kFDWMdHHBP8YqJRo-u3USvs",
   "industrie/ind-c1-cst-03-brouillon.md|IND-C1-CST-03|industrie|V4.3|technologie-innovation|IND-C1-CST||CST|chronique|chronique|1_8TIcIxzpmeAEklYYHTOBu_kbX8JXwDQ3qeKnois5LY",
-  "industrie/ind-c1-cst-04-brouillon.md|IND-C1-CST-04|industrie|V3.6|ressources-humaines-competences|IND-C1-CST||CST|chronique|chronique|1lKbr_Y8FKZtPzq4tOtkPncJncdHGmjETeXh5dHMcsL0",
+  "industrie/ind-c1-cst-04-brouillon.md|IND-C1-CST-04|industrie|V3.9|ressources-humaines-competences|IND-C1-CST||CST|chronique|chronique|1K9hVRmLR9-2X50VgBgSZN1y-YwMWUvOxexD6LkjQvNk",
   "industrie/ind-c1-cst-05-brouillon.md|IND-C1-CST-05|industrie|V3.2|finance-investissement|IND-C1-CST||CST|entretien|grand-entretien|17mCgHDhILE7Z-1F_kBN9IWjic7vE9Uwy8O2pmgHYsmI",
   "industrie/ind-c1-cst-regard-croise-01-brouillon.md|IND-C1-CST-RC-01|industrie|V3.2||IND-C1-CST||CST|regard-croise||1VNTWk4QeKWnF4QD55vMR9JQ7hxAuOm4eFDk3wSelHjY",
   "immobilier/imm-c1-rc-01-isabelle.md|IMM-C1-RC-01|immobilier|V6|finance-investissement|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1ohTdf2SRkE2Uy6C34u97ZskCefKgS_hy9IYK72s-oQQ",
