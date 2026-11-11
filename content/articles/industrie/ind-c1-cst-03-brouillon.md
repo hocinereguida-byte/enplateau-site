@@ -1,5 +1,5 @@
 ---
-title: "L'usine voulait acheter un robot à trois millions d'euros. Une salariée a proposé de déplacer une table."
+title: "Trois millions d'euros pour un robot, alors que l'usine n'a pas encore essayé de déplacer une table"
 summary: "Un robot à trois millions d'euros promet vingt secondes gagnées par pièce ; Nathalie défend un diagnostic des flux, puis découvre les limites ergonomiques de sa propre solution."
 format: "chronique"
 cycle: "industrie"
@@ -18,11 +18,11 @@ tag_3: "Ergonomie"
 tag_4: "Amélioration continue"
 tag_5: "Industrialisation"
 source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "Nathalie B. V4.4 — finition littéraire retenue ; visa éditorial et contrôle documentaire antérieurs V4.3 à réévaluer pour V4.4. Préproduction uniquement ; aucun bon à publier."
+methodology_specific: "Nathalie B. V4.5 — corrections ciblées validées (consultant, flux observé, agencement provisoire). Nouvelle référence éditoriale Drive ; contrôles documentaire et transversal ouverts, sans nouveau visa. Préproduction uniquement ; aucun bon à publier."
 source_document_url: "https://docs.google.com/document/d/1WS5rawWSF6Sg9G8AW1AZL9kBqoALBBgeIwDsZPkR5Mk/edit"
-source_document_version: "V4.4"
-validation_narrative: "v4_4_finition_litteraire_sans_nouveau_visa"
-validation_documentaire: "v4_4_controle_documentaire_a_confirmer"
+source_document_version: "V4.5"
+validation_narrative: "v4_5_corrections_ciblees_sans_nouveau_visa"
+validation_documentaire: "v4_5_controles_documentaire_et_transversal_ouverts"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "chronique"
 code_editorial: "IND-C1-CST-03"
@@ -54,7 +54,7 @@ Le consultant présenta quarante-deux diapositives : le robot, le robot de profi
 
 Le directeur général fit mettre cette phrase en gras. Il aimait les formulations qui n'exigeaient aucune vérification.
 
-Dans l'atelier, Nathalie suivit une pièce. Moins d'une minute d'usinage, puis près de vingt minutes à attendre et à voyager entre des chariots. La pièce aurait bientôt pu demander le remboursement de ses frais de déplacement. Vingt minutes perdues, c'était beaucoup. Encore fallait-il savoir si les récupérer permettrait de livrer une commande de plus.
+Dans l'atelier, Nathalie suivit une pièce. Moins d'une minute pour l'opération observée, puis près de vingt minutes à attendre et à circuler entre les postes, sur le trajet suivi ce jour-là. La pièce aurait bientôt pu demander le remboursement de ses frais de déplacement. Vingt minutes perdues, c'était beaucoup. Encore fallait-il savoir si les récupérer permettrait de livrer une commande de plus.
 
 « Pourquoi la table de contrôle est-elle si loin ? demanda-t-elle.
 
@@ -80,11 +80,11 @@ Au comité de direction, Nathalie présenta les temps relevés.
 
 — Nous n'allons pas annoncer une modernisation à quatre pieds à nos clients. »
 
-Le consultant proposa de présenter la table comme une « plateforme horizontale de fluidification ». Le directeur général retrouva le sourire. Nathalie vérifia qu'on parlait toujours du même meuble.
+Le directeur général proposa de présenter la table comme une « plateforme horizontale de fluidification ». Nathalie vérifia qu'on parlait toujours du même meuble.
 
 Nathalie demanda un essai limité, avec les opérateurs, la logistique et la production. On différerait le robot sans l'écarter définitivement. Il fallait mesurer les livraisons réellement accélérées, pas seulement les secondes économisées devant une machine.
 
-Deux jours suffirent à modifier l'agencement. Pendant l'essai, les équipes réorganisèrent leurs postes et certaines commandes avancèrent moins vite. Sur les premières séries, les trajets diminuèrent et les pièces arrivèrent plus régulièrement au contrôle. C'était encourageant, mais personne n'avait encore démontré que l'usine livrerait davantage de commandes dans la semaine.
+Deux jours suffirent à mettre en place un agencement provisoire, sans le généraliser. Pendant l'essai, les équipes réorganisèrent leurs postes et certaines commandes avancèrent moins vite. Sur les premières séries, les trajets diminuèrent et les pièces arrivèrent plus régulièrement au contrôle. C'était encourageant, mais personne n'avait encore démontré que l'usine livrerait davantage de commandes dans la semaine.
 
 « Nous avons économisé trois millions ! s'exclama le commercial.
 
