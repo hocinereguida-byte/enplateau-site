@@ -1,5 +1,5 @@
 ---
-title: "Tout le monde était recruté. Il ne restait qu’à apprendre le métier."
+title: "Comment former trente ouvriers sans arrêter une seule machine ?"
 summary: "Trente recrutements annoncés, mais aucun temps disponible pour former les nouveaux : Claire et Kevin doivent arbitrer entre production immédiate et compétences réelles."
 format: "chronique"
 cycle: "industrie"
@@ -18,11 +18,11 @@ tag_3: "Compétences industrielles"
 tag_4: "Montée en cadence"
 tag_5: "Transmission des savoir-faire"
 source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "Claire et Kevin V3.6 — proposition éditoriale à relire, sans nouveau visa éditorial ni documentaire. Préproduction uniquement ; publication publique non autorisée."
-source_document_url: "https://docs.google.com/document/d/1lKbr_Y8FKZtPzq4tOtkPncJncdHGmjETeXh5dHMcsL0/edit"
-source_document_version: "V3.6"
-validation_narrative: "proposition_v3_6_sans_visa"
-validation_documentaire: "a_confirmer_v3_6"
+methodology_specific: "Claire M. et Kevin R. V3.9 — titre retenu, texte littéraire issu de V3.8. Préproduction uniquement ; visas éditorial et documentaire non délivrés, publication publique non autorisée."
+source_document_url: "https://docs.google.com/document/d/1K9hVRmLR9-2X50VgBgSZN1y-YwMWUvOxexD6LkjQvNk/edit"
+source_document_version: "V3.9"
+validation_narrative: "titre_retenu_v3_9_sans_visa"
+validation_documentaire: "a_confirmer_v3_9"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "chronique"
 code_editorial: "IND-C1-CST-04"
@@ -32,13 +32,13 @@ perspective_principale: "ressources-humaines-competences"
 
 *Texte de consultation en préproduction — publication publique non autorisée.*
 
-Dans une usine de pièces pour machines d’emballage, la direction venait de résoudre le problème du personnel. Trente personnes allaient être embauchées. Elles n’avaient pas encore franchi la porte, mais figuraient déjà sur une présentation : trente petits bonshommes bleus, souriants et parfaitement alignés.
+Dans une usine de pièces pour machines d’emballage installée dans le sud de la France, la direction venait de résoudre le problème du personnel. L'entreprise, qui comptait un peu plus d'une centaine de salariés, fabriquait des pièces en petites séries pour des clients industriels. Trente personnes allaient être embauchées. Elles n’avaient pas encore franchi la porte, mais figuraient déjà sur une présentation : trente petits bonshommes bleus, souriants et parfaitement alignés.
 
 Le directeur général était particulièrement fier de celui du milieu.
 
 « Dans quatre mois, nous serons trente de plus. Nous pourrons fabriquer beaucoup plus de pièces ! »
 
-Le directeur commercial applaudit et appela aussitôt un client. Claire, qui s’occupait du personnel, leva timidement la main.
+Le directeur commercial applaudit et appela aussitôt un client. Claire M., responsable des ressources humaines chargée des recrutements et de l'organisation des formations, leva timidement la main.
 
 « Et qui va leur apprendre le métier ?
 
@@ -50,7 +50,7 @@ Le directeur commercial applaudit et appela aussitôt un client. Claire, qui s�
 
 L’idée plut beaucoup. On venait de trouver des formateurs qui n’avaient pas besoin de quitter leur travail pour travailler.
 
-Cinq ouvriers expérimentés furent désignés. Parmi eux, Kevin, que tout le monde allait chercher dès qu’une machine faisait un bruit nouveau. Il gardait dans sa poche un petit carnet où il notait ce que les nouveaux savaient vraiment faire. En deux ans, il avait déjà accompagné onze collègues. Il connaissait la différence entre quelqu’un qui savait appuyer sur un bouton et quelqu’un qui savait quoi faire quand le bouton ne produisait pas le résultat espéré.
+Cinq ouvriers expérimentés furent désignés. Parmi eux, Kevin R., opérateur chargé des réglages et tuteur des nouveaux arrivants, que tout le monde allait chercher dès qu’une machine faisait un bruit nouveau. Il gardait dans sa poche un petit carnet où il notait ce que les nouveaux savaient vraiment faire. En deux ans, il avait déjà accompagné onze collègues. Il connaissait la différence entre quelqu’un qui savait appuyer sur un bouton et quelqu’un qui savait quoi faire quand le bouton ne produisait pas le résultat espéré.
 
 « Tu t’occupes des six premiers, lui dit son chef.
 
@@ -92,6 +92,8 @@ Claire finit par descendre dans l’atelier. Elle découvrit que les heures insc
 
 — Oui, répondit Kevin. Vous avez réservé mon mercredi. Mon chef a réservé mon mercredi aussi. C’est un mercredi très demandé. »
 
+Claire regarda son planning. Elle avait pris les signatures des chefs d'atelier pour une garantie : Kevin serait disponible aux heures prévues. Elle n'avait demandé à personne qui tiendrait les machines pendant ce temps. Elle avait obtenu toutes les signatures. Aucun remplaçant.
+
 Puis arriva la commande qu’il fallait absolument terminer avant le soir. Un nouveau salarié savait mettre la machine en marche. On proposa donc de le laisser seul. Kevin n’avait pas encore eu le temps de vérifier s’il saurait reconnaître un mauvais réglage avant que toute une série de pièces soit bonne à jeter.
 
 « Mais il sait démarrer la machine, protesta le commercial.
@@ -100,7 +102,7 @@ Puis arriva la commande qu’il fallait absolument terminer avant le soir. Un no
 
 — Ce n’est pas comparable.
 
-— C’est vrai. Ma voiture est assurée. »
+— C’est vrai. Avec ma voiture, on voit tout de suite quand il se trompe de vitesse. »
 
 Quelqu’un suggéra de déclarer le nouveau « capable de travailler seul, mais seulement aujourd’hui ». Claire demanda si cette capacité disparaîtrait à dix-huit heures. Personne ne répondit. Le commercial regarda sa montre : il aurait préféré une capacité qui dure au moins jusqu’à dix-neuf heures.
 
@@ -110,9 +112,13 @@ Claire refusa de laisser le nouveau travailler seul. Puis elle alla voir le dire
 
 — Mais nous avons promis d’en produire davantage.
 
-— Oui. Avant d’avoir appris aux gens à les fabriquer. »
+— Oui. Et moi, j'ai fait signer des heures de formation sans prévoir qui ferait tourner les machines pendant ce temps. J'ai réussi à réserver Kevin deux fois.
 
-Le directeur prit son téléphone. Il vérifia ce qu’il avait réellement promis et ce qu’il espérait seulement vendre. Les commandes déjà acceptées seraient livrées. Pour le surplus, il fallut demander du temps. Le client accepta d’attendre certaines pièces, mais en confia d’autres à une usine concurrente. Il n’y eut ni catastrophe ni triomphe : simplement des commandes que l’on aurait aimé recevoir et qui partirent ailleurs.
+— Ce n'est pas possible.
+
+— C'est pourtant ce que montre mon planning. »
+
+Le directeur prit son téléphone. Il vérifia ce qu’il avait réellement promis et ce qu’il espérait seulement vendre. Les commandes déjà acceptées seraient livrées aux dates convenues, notamment grâce à quelques ajustements dans l'atelier. Pour les pièces supplémentaires que le client envisageait de commander, il fallut annoncer un délai plus long. Le client accepta d'attendre une partie de ces pièces, mais confia le reste à une usine concurrente. Il n'y eut ni catastrophe ni triomphe : simplement des commandes que l'on aurait aimé recevoir et qui partirent ailleurs.
 
 Pour tenir les livraisons, on demanda aussi à une autre entreprise de fabriquer temporairement quelques pièces simples, après avoir vérifié qu’elle pouvait le faire correctement. Cela revenait plus cher. Le directeur le fit noter. Cette fois, la dépense ne pouvait pas être déplacée sur une feuille de papier : quelqu’un allait devoir la payer.
 
@@ -141,3 +147,5 @@ Le directeur regarda Claire.
 Le commercial nota soigneusement la réponse.
 
 « D’accord. Mais vous avez une date ? »
+
+Fiction économique satirique — Personnages, entreprise, événements et chiffres inventés.
