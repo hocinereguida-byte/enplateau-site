@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run check:classification && astro build",
+    "build": "npm run check:classification && node scripts/write-deployment-manifest.mjs && astro build",
     "preview": "astro preview",
     "check:classification": "node scripts/check-classification.mjs"
   },
