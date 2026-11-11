@@ -67,7 +67,12 @@ for (const r of records) {
   for (const [key,value] of Object.entries(tests)) if (d[key] !== value) errors.push(r.code+' : '+key+' attendu '+JSON.stringify(value)+', trouvé '+JSON.stringify(d[key]));
   if (r.code === 'IMM-C1-RC-04' && d.title !== "L'entreprise avait évité de signer un mauvais contrat. Elle a dépensé 35 000 euros pour continuer à ne pas le signer.") errors.push('Titre de Karim V3 différent du titre validé');
   if (d.published !== true) errors.push(r.code+' : consultation préproduction désactivée');
-  if (r.driveId && !d.source_document_url?.includes('/document/d/'+r.driveId+'/')) errors.push(r.code+' : URL Drive ne correspond pas à la version verrouillée');
+  if (r.driveId && !d.source_document_url?.includes('/document/d/'+r.driveId+'/')) {
+    const actualDriveId = d.source_document_url?.match(/\/document\/d\/([^/]+)/)?.[1] ?? '(absent ou URL invalide)';
+    errors.push(r.code+' : URL Drive ne correspond pas à la version verrouillée'
+      +'\\n   Version : '+r.version+' ; registre Drive ID : '+r.driveId+' ; Markdown Drive ID : '+actualDriveId
+      +'\\n   Action : vérifier la version de référence puis synchroniser source_document_version, source_document_url ET le registre check-classification.mjs avant le commit.');
+  }
   if (usedCodes.has(r.code)) errors.push('Identifiant dupliqué : '+r.code); else usedCodes.add(r.code);
   if (r.perspective) {
     if (!perspectives.has(r.perspective)) errors.push(r.code+' : perspective inconnue');
