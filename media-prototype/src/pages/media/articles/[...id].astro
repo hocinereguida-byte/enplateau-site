@@ -39,11 +39,11 @@ const take=(predicate:(a:typeof ordered[number])=>boolean,limit=3)=>{
  return selection;
 };
 const recommendations=[
- {key:'contextes',eyebrow:'COMPARER LES SITUATIONS',title:'Cette conversation dans d’autres contextes',description:'Retrouvez les décisions éclairées par d’autres situations.',entries:take(a=>a.data.cycle===d.cycle&&a.data.conversation===d.conversation&&a.data.contexte!==d.contexte)},
- {key:'lectures',eyebrow:'CROISER LES REGARDS',title:'Cette conversation sous d’autres perspectives',description:'Une même conversation, d’autres perspectives éditoriales.',entries:take(a=>a.data.cycle===d.cycle&&a.data.conversation===d.conversation&&perspectiveOf(a.data)!==perspectiveCode)},
- {key:'cycle',eyebrow:'ÉLARGIR LE SUJET',title:'D’autres conversations de ce cycle',description:'Explorez les autres arbitrages du secteur.',entries:take(a=>a.data.cycle===d.cycle&&a.data.conversation!==d.conversation)},
- {key:'transversal',eyebrow:'TRAVERSER LES SECTEURS',title:'Cette perspective dans d’autres cycles',description:'La même perspective appliquée à d’autres activités économiques.',entries:take(a=>a.data.cycle!==d.cycle&&perspectiveOf(a.data)===perspectiveCode)},
- {key:'recent',eyebrow:'POURSUIVRE LA LECTURE',title:'Autres publications récentes',description:'D’autres analyses sélectionnées parmi les dernières publications.',entries:take(()=>true,4)},
+ {key:'lectures',title:'Dans cette conversation',entries:take(a=>a.data.cycle===d.cycle&&a.data.conversation===d.conversation&&a.data.contexte===d.contexte&&perspectiveOf(a.data)!==perspectiveCode,4)},
+ {key:'contextes',title:'La conversation dans d’autres contextes',entries:take(a=>a.data.cycle===d.cycle&&a.data.conversation===d.conversation&&a.data.contexte!==d.contexte)},
+ {key:'cycle',title:'Dans la même rubrique',entries:take(a=>a.data.cycle===d.cycle&&a.data.conversation!==d.conversation)},
+ {key:'transversal',title:'Sur le même sujet',entries:take(a=>a.data.cycle!==d.cycle&&perspectiveOf(a.data)===perspectiveCode)},
+ {key:'recent',title:'À lire aussi',entries:take(()=>true,3)},
 ].filter(group=>group.entries.length>0);
 const seoTitle=typeof d.seo?.seo_title==='string'&&d.seo.seo_title.trim()?d.seo.seo_title:d.title;
 const seoDescription=typeof d.seo?.seo_description==='string'&&d.seo.seo_description.trim()?d.seo.seo_description:(d.summary??'');
@@ -89,9 +89,9 @@ const shareBase=canonical;
 {authorSignature&&<section class="panel" aria-label="Signature de l’auteur"><p class="micro">SIGNATURE</p>{d.signature_portrait&&<img src={d.signature_portrait} alt="" loading="lazy" style="max-width:96px;border-radius:50%"/>}<h2>{authorSignature}</h2>{d.signature_biographie&&<p>{d.signature_biographie}</p>}{d.signature_tonalite&&<p class="small">Tonalité : {d.signature_tonalite}</p>}</section>}
 {(summaryProfile||profileRows.length>0)&&<section class="panel" aria-labelledby="source-title"><p class="micro">{d.format==='regard-croise'?'NOTICE DOCUMENTAIRE':'FICTION ÉCONOMIQUE'}</p><h2 id="source-title">{d.format==='regard-croise'?'À propos de cette analyse':'À propos de cette Scène'}</h2>{summaryProfile&&<p>{summaryProfile}</p>}{profileRows.length>0&&<dl class="source-facts">{profileRows.map(([label,value])=><><dt>{label}</dt><dd>{value}</dd></>)}</dl>}</section>}
 
-{tags.length>0&&<section class="panel" aria-labelledby="tags-title"><h2 id="tags-title">Mots-clés</h2><div class="chips">{tags.map(t=><span class="chip">{t}</span>)}</div></section>}
-{recommendations.length>0&&<aside class="recommendations" aria-label="Pour poursuivre votre lecture"><p class="micro">POUR ALLER PLUS LOIN</p><h2>Continuer à explorer</h2>{recommendations.map(group=><section class="recommendation-group" aria-labelledby={`rec-${group.key}`}><p class="micro">{group.eyebrow}</p><h3 id={`rec-${group.key}`}>{group.title}</h3><p class="small">{group.description}</p><div class="recommendation-links">{group.entries.map(a=><a href={urlOf(a.id)} class="recommendation-card"><span class="micro">{a.data.cycle} · {conversations[a.data.cycle]?.[a.data.conversation]} · {readings[a.data.lecture_principale]}</span><strong>{a.data.title}</strong></a>)}</div></section>)}</aside>}
-<section class="panel" aria-labelledby="conversations-title"><h2 id="conversations-title">Explorer le cycle {d.cycle==='industrie'?'Industrie':'Immobilier'}</h2><p><a href={`/media/cycles/${d.cycle}/`}>Voir les sept conversations et les trois contextes</a></p><p><a href="/media/publications/">Rechercher dans toutes les publications</a></p></section>
+{tags.length>0&&<section class="panel article-topics" aria-labelledby="tags-title"><p class="micro" id="tags-title">SUJETS ASSOCIÉS</p><div class="chips">{tags.map(t=><span class="chip">{t}</span>)}</div></section>}
+{recommendations.length>0&&<aside class="recommendations" aria-label="À lire également">{recommendations.map(group=><section class="recommendation-group" aria-labelledby={`rec-${group.key}`}><h2 id={`rec-${group.key}`}>{group.title}</h2><div class="recommendation-links">{group.entries.map(a=><a href={urlOf(a.id)} class="recommendation-card"><span class="micro">{a.data.cycle} · {readings[a.data.lecture_principale]}</span><strong>{a.data.title}</strong></a>)}</div></section>)}</aside>}
+<section class="panel" aria-labelledby="conversations-title"><h2 id="conversations-title">Toute la rubrique {d.cycle==='industrie'?'Industrie':'Immobilier'}</h2><p><a href={`/media/cycles/${d.cycle}/`}>Découvrir les conversations et les contextes</a></p></section>
 </div></main><script is:inline>document.getElementById('copy-article-link')?.addEventListener('click',async function(){try{await navigator.clipboard.writeText(location.href);this.textContent='Lien copié';}catch{this.textContent='Copiez l’adresse du navigateur';}});</script><script is:inline>
 (function(){
  const root=document.getElementById('audio-reader');
