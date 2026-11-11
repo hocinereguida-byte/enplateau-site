@@ -30,8 +30,6 @@ unite_programmation: "IND-C1-CST"
 perspective_principale: "technologie-innovation"
 ---
 
-*Texte de consultation en préproduction — publication publique non autorisée.*
-
 Dans le sud de la France, une usine d'environ deux cents salariés fabriquait, dans plusieurs ateliers, des pièces métalliques pour des constructeurs de machines agricoles. Les commandes accusaient six mois de retard. Un fournisseur venait de proposer un robot à trois millions d'euros, sans que l'usine ait encore établi combien de livraisons supplémentaires il permettrait réellement. C'était rassurant : un problème aussi cher méritait forcément une réponse importante.
 
 La solution était un robot blanc, articulé, avec écran tactile et lumière verte. Le fabricant promettait vingt secondes gagnées par pièce.
