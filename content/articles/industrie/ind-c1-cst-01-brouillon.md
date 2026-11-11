@@ -31,10 +31,6 @@ perspective_principale: "strategie-gouvernance"
 unite_programmation: "IND-C1-CST"
 ---
 
-*Texte de consultation en préproduction — publication publique non autorisée.*
-
-*ENTRETIEN FICTIF · FICTION ÉCONOMIQUE SATIRIQUE DOCUMENTÉE — Personnages, entreprise et chiffres inventés.*
-
 Marc D. dirige depuis douze ans une usine de deux cents salariés qui fabrique des arbres de transmission et des supports métalliques pour machines industrielles. Chiffre d'affaires annuel : environ 24 millions d'euros. Les commandes affluaient, les ateliers débordaient, les bénéfices fondaient. Il a fini par refuser près de deux millions d'euros de nouvelles commandes potentielles. Depuis, l'entreprise va mieux.
 
 Jean Toksik a voulu rencontrer cet homme dont la stratégie commerciale ressemble à une grève. Marc D. a accepté. Il avait pourtant été prévenu.
