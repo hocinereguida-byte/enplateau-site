@@ -1,6 +1,6 @@
 ---
 title: "Peut-on décrocher le contrat du siècle sans avoir les moyens de l’honorer ?"
-summary: "Jean Toksik interroge Laurent, directeur financier, sur le plus gros contrat de son entreprise : avant de produire, il faut payer les matières, négocier des délais et protéger la trésorerie."
+summary: "Dans le sud de la France, une entreprise industrielle d'environ deux cents salariés fabrique des pièces métalliques destinées aux constructeurs de machines. Son plus gros contrat vient d'être signé. Les commerciaux sabrent le champagne, la direction se félicite et Laurent B., directeur administratif et financier depuis neuf ans, cherche avec quel argent acheter les matières premières. À lui de trouver les financements ; à la production de commander sans attendre. Jean Toksik reçoit cet homme manifestement incapable de partager le bonheur collectif."
 format: "entretien"
 cycle: "industrie"
 conversation: "C1"
@@ -18,11 +18,11 @@ tag_3: "Financement industriel"
 tag_4: "Contrats commerciaux"
 tag_5: "Croissance industrielle"
 source_notice: "Grand Entretien fictif. Personnages, entreprise, dialogues et chiffres inventés."
-methodology_specific: "Laurent B. V3.3 retenue en préproduction avec nouveau titre interrogatif. Visa littéraire individuel favorable ; audit transversal et contrôle documentaire final en attente. Aucun bon à publier public."
-source_document_url: "https://docs.google.com/document/d/1_8G2rIILGfL9RhShUNIrISyBxxRabBpUrLQgjSGgucI/edit"
-source_document_version: "V3.3"
-validation_narrative: "visa_litteraire_individuel_favorable_v3_3_audit_transversal_requis"
-validation_documentaire: "v3_3_controle_final_requis"
+methodology_specific: "Laurent B. V3.4 — accord de consultation en préproduction ; contrôles de proportionnalité financière, concordance individuelle et test lecteur encore ouverts. Aucun bon à publier public."
+source_document_url: "https://docs.google.com/document/d/19qFZ8MAp65lv0pszDk-qu76N2XEUW664ZAvG1LhMjKA/edit"
+source_document_version: "V3.4"
+validation_narrative: "v3_4_accord_preproduction_sans_visa_final"
+validation_documentaire: "v3_4_plausibilite_sous_hypotheses_controles_ouverts"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "grand-entretien"
 signature_auteur: "Jean Toksik"
@@ -30,8 +30,6 @@ code_editorial: "IND-C1-CST-05"
 unite_programmation: "IND-C1-CST"
 perspective_principale: "finance-investissement"
 ---
-
-Dans le sud de la France, une entreprise industrielle d'environ deux cents salariés fabrique des pièces métalliques destinées aux constructeurs de machines. Son plus gros contrat vient d'être signé. Les commerciaux sabrent le champagne, la direction se félicite et Laurent B., directeur administratif et financier depuis neuf ans, cherche avec quel argent acheter les matières premières. À lui de trouver les financements ; à la production de commander sans attendre. Jean Toksik reçoit cet homme manifestement incapable de partager le bonheur collectif.
 
 Jean Toksik — Laurent, félicitations ! Le plus gros contrat de votre histoire ! J'ai fait apporter du champagne.
 
@@ -49,7 +47,7 @@ Laurent — De l'eau suffira.
 
 — Le contrat était intéressant. Mais il fallait avancer plusieurs centaines de milliers d'euros pour les premières matières et la fabrication.
 
-— Vous avez signé un contrat qui rapporte de l'argent et vous vous plaignez de devoir en dépenser. Vous avez déjà envisagé une carrière dans la joie ?
+— Vous avez signé un contrat qui rapporte de l'argent et vous vous plaignez de devoir en dépenser. Vous avez envisagé de porter plainte contre le client ?
 
 — L'argent du client n'arrive pas au moment où l'on signe.
 
@@ -76,8 +74,6 @@ Laurent — De l'eau suffira.
 — Magnifique. Vous aviez donc installé un système de sécurité qui ne vous protégeait pas de vous-même.
 
 — C'est une manière de le dire.
-
-— La seule qui me procure encore un peu de plaisir.
 
 — Notre procédure était insuffisante. Nous l'avons corrigée.
 
@@ -135,8 +131,6 @@ Jean Toksik ouvre une bouteille d'eau avec une violence inutile.
 
 — J'ai accepté un risque limité, pas signé un chèque en espérant un miracle.
 
-— C'est exactement ce que disent les gens qui espèrent un miracle avec un tableau Excel.
-
 — Nous avions assez de trésorerie pour le premier lot, pas pour lancer toute la fabrication sans risquer de manquer d'argent pour les autres échéances. Le directeur général a autorisé ce premier achat, pas les suivants.
 
 — Vous avez donc décidé de vivre dangereusement, mais avec une autorisation écrite.
@@ -167,35 +161,29 @@ Jean Toksik marque un temps. Il n'avait pas prévu que Laurent puisse être drô
 
 — Quelle déception. J'imaginais déjà le directeur financier en blouse, condamné à contrôler des pièces jusqu'à l'extinction de sa dette morale.
 
-— Le report était nécessaire, mais j'avais sous-estimé le travail supplémentaire imposé à l'équipe.
+— J'avais sous-estimé le travail que ce report imposait à l'équipe. Nous avons adapté l'organisation, sans pouvoir acheter l'équipement plus tôt.
 
-— Donc votre économie consistait à laisser d'autres personnes travailler davantage ?
+— Donc vous économisez de l'argent en faisant travailler les autres davantage ?
 
-— En partie. Nous avons adapté l'organisation, sans pouvoir annuler le report.
+— C'est ce que m'a dit la responsable qualité. Avec moins de politesse.
 
-— Vous voyez, c'est ce qui me fascine dans la finance. Quand vous déplacez une dépense, elle ne disparaît pas toujours. Parfois, elle se transforme en quelqu'un de fatigué.
-
-— Laurent, cessez immédiatement d'être raisonnable. Vous rendez cet entretien impossible.
+— Je vous avais invité pour vous mettre mal à l'aise, Laurent. Vous pourriez au moins attendre que je trouve les accusations moi-même.
 
 — Je peux vous aider.
 
 — Pardon ?
 
-— Vous n'avez pas posé la question essentielle.
+— Vous m'avez demandé combien de manipulations l'ancien équipement imposait. Pas combien d'heures cela coûtait à l'équipe.
 
-— C'est moi qui pose les questions.
+— Je comptais y venir.
 
-— Depuis le début, vous cherchez à savoir si nous avons eu raison de signer. La vraie question est : qui a supporté le coût de notre décision pendant que nous attendions l'argent ?
+— Vous aviez déjà changé de sujet.
 
-— Je…
-
-— L'équipe qualité. J'avais oublié de compter ses heures dans mon économie.
+Jean Toksik consulte ses notes. Il n'y trouve aucune question sur les heures de l'équipe qualité.
 
 — Vous venez de me voler mon indignation.
 
 — Vous aviez du mal à vous en servir.
-
-— C'est inadmissible. Je vous avais invité pour vous mettre mal à l'aise.
 
 — Vous auriez dû me demander un acompte.
 
