@@ -25,10 +25,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
-          cache-dependency-path: media-prototype/package-lock.json
       - name: Install dependencies
-        run: npm ci
+        run: npm install --no-audit --no-fund
       - name: Classification and static build
         run: npm run build
       - name: Assert deployment manifest and article generated
