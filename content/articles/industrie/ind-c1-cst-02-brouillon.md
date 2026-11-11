@@ -1,6 +1,6 @@
 ---
-title: "L'usine avait six mois de retard. Pour tenir jeudi, elle devait décider quand s'arrêter."
-summary: "Sophie doit choisir entre arrêter une machine défectueuse et assumer un retard ou poursuivre sans garantie de pièces conformes."
+title: "Pour livrer dans 72 heures, il faut arrêter la machine pendant 36 heures."
+summary: "Lundi 9 h, Sophie M. doit décider si elle immobilise une machine défectueuse pendant 36 heures pour retrouver une production fiable avant l’échéance de jeudi 9 h, sans promettre les 800 pièces."
 format: "chronique"
 cycle: "industrie"
 conversation: "C1"
@@ -18,11 +18,11 @@ tag_3: "Maintenance"
 tag_4: "Qualité industrielle"
 tag_5: "Organisation des opérations"
 source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "V4.6 — proposition éditoriale sans nouveau visa éditorial ni documentaire. Préproduction uniquement ; publication publique non autorisée."
-source_document_url: "https://docs.google.com/document/d/17_DCxnLeXe4u6VmmORx0kFDWMdHHBP8YqJRo-u3USvs/edit"
-source_document_version: "V4.6"
-validation_narrative: "proposition_v4_6_a_relire_sans_nouveau_visa"
-validation_documentaire: "a_confirmer_v4_6"
+methodology_specific: "Sophie M. V4.7 retenue comme version littéraire en préproduction ; contrôle documentaire des durées, volumes et remise en service requis. Aucun nouveau visa ni bon à publier public."
+source_document_url: "https://docs.google.com/document/d/1vmpA81IITXHAGV69-s9fmdUGqIOXdjc1k4x-euP6YMk/edit"
+source_document_version: "V4.7"
+validation_narrative: "version_litteraire_v4_7_retenue_sans_nouveau_visa"
+validation_documentaire: "controle_final_v4_7_requis"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "chronique"
 code_editorial: "IND-C1-CST-02"
@@ -32,9 +32,9 @@ unite_programmation: "IND-C1-CST"
 
 *Texte de consultation en préproduction — publication publique non autorisée.*
 
-Le client avait fixé jeudi comme dernière date acceptable. Il attendait des pièces métalliques pour assembler ses machines agricoles. Après plusieurs reports, il menaçait de réclamer des pénalités et de confier ses prochaines commandes ailleurs.
+Lundi, neuf heures. Le client attendait jeudi, à neuf heures précises, huit cents pièces métalliques pour assembler ses machines agricoles. Il restait exactement soixante-douze heures. Certaines commandes avaient déjà accumulé jusqu'à six mois de retard. Après plusieurs reports, le client menaçait de réclamer des pénalités et de confier ses prochaines commandes ailleurs.
 
-À l'usine, la direction avait réuni Sophie, responsable d'atelier, Malik, responsable maintenance, et le directeur commercial. Celui-ci avait préparé une présentation intitulée « Sécurisation de la livraison ». Il préférait « sécurisation » à « retard ». Un retard avait des conséquences ; une sécurisation avait un responsable de projet.
+Dans cette usine d'environ cent cinquante salariés, installée dans le sud de la France et spécialisée dans les pièces métalliques pour équipements agricoles, la direction avait réuni Sophie M., responsable de l'atelier de fabrication, Malik R., responsable de la maintenance des équipements, et le directeur commercial. Celui-ci avait préparé une présentation intitulée « Sécurisation de la livraison ». Il préférait « sécurisation » à « retard ». Un retard avait des conséquences ; une sécurisation avait un responsable de projet.
 
 « Il nous faut huit cents pièces jeudi, annonça-t-il.
 
@@ -66,7 +66,7 @@ Le commercial demanda si la maintenance ne pouvait pas « garantir un peu ».
 
 — Les trous aussi, quand ils sont au mauvais endroit. »
 
-La direction voulut connaître le coût de l'arrêt. Le commercial parla d'une pénalité possible, d'un client excédé et de commandes futures menacées. Sophie évoqua les heures de tri, les rebuts et les livraisons déjà bloquées. Malik ajouta qu'une réparation repoussée pouvait devenir plus longue si l'usure s'aggravait. Personne ne disposait d'un chiffre unique capable de départager ces risques. Le directeur général demanda tout de même qu'on lui prépare un chiffre unique pour la réunion de seize heures.
+La direction voulut connaître le coût de l'arrêt. Le commercial parla d'une pénalité possible, d'un client excédé et de commandes futures menacées. Sophie évoqua les heures de tri, les rebuts et les livraisons déjà bloquées. Malik ajouta qu'une réparation repoussée pouvait devenir plus longue si l'usure s'aggravait. Personne ne disposait d'un chiffre unique capable de départager ces risques. Le directeur général demanda tout de même qu'on lui prépare un chiffre unique pour la réunion de seize heures. Sophie fit remarquer qu'à seize heures, il ne resterait plus que soixante-cinq heures avant jeudi matin.
 
 « Donc, résuma le directeur général, soit on s'arrête et on est en retard, soit on continue et on risque d'être en retard ?
 
@@ -120,4 +120,4 @@ Le commercial demanda si l'on pouvait photographier la caisse pour le client.
 
 « Vous pouvez surtout lui envoyer la pièce », répondit Sophie.
 
-Fiction satirique. Personnages, entreprise, quantités, délais et événements inventés. Les hypothèses de production, de conformité et de réparation demandent un contrôle documentaire avant toute publication.
+Fiction satirique. Personnages, entreprise, quantités, délais et événements inventés. L'échéance lundi 9 h → jeudi 9 h est une hypothèse de récit (72 heures), et l'immobilisation de 36 heures concerne une machine, non toute l'usine. L'arrêt ne garantit pas la livraison intégrale des huit cents pièces. Les hypothèses de production, de conformité et de réparation demandent un contrôle documentaire avant toute publication.
