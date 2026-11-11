@@ -18,11 +18,11 @@ tag_3: "Ergonomie"
 tag_4: "Amélioration continue"
 tag_5: "Industrialisation"
 source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "Nathalie V4.3 — visa éditorial favorable ; contrôle documentaire ciblé favorable sous réserves (dimensionnement, débit et ergonomie). Préproduction uniquement ; aucun bon à publier."
-source_document_url: "https://docs.google.com/document/d/1_8TIcIxzpmeAEklYYHTOBu_kbX8JXwDQ3qeKnois5LY/edit"
-source_document_version: "V4.3"
-validation_narrative: "visa_editorial_v4_3_favorable"
-validation_documentaire: "controle_cible_v4_3_favorable_sous_reserves"
+methodology_specific: "Nathalie B. V4.4 — finition littéraire retenue ; visa éditorial et contrôle documentaire antérieurs V4.3 à réévaluer pour V4.4. Préproduction uniquement ; aucun bon à publier."
+source_document_url: "https://docs.google.com/document/d/1WS5rawWSF6Sg9G8AW1AZL9kBqoALBBgeIwDsZPkR5Mk/edit"
+source_document_version: "V4.4"
+validation_narrative: "v4_4_finition_litteraire_sans_nouveau_visa"
+validation_documentaire: "v4_4_controle_documentaire_a_confirmer"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "chronique"
 code_editorial: "IND-C1-CST-03"
@@ -32,7 +32,7 @@ perspective_principale: "technologie-innovation"
 
 *Texte de consultation en préproduction — publication publique non autorisée.*
 
-Répartie entre plusieurs ateliers, l'usine fabriquait des pièces métalliques pour des constructeurs de machines agricoles. Les commandes accusaient six mois de retard. Un fournisseur venait de proposer un robot à trois millions d'euros, sans que l'usine ait encore établi combien de livraisons supplémentaires il permettrait réellement. C'était rassurant : un problème aussi cher méritait forcément une réponse importante.
+Dans le sud de la France, une usine d'environ deux cents salariés fabriquait, dans plusieurs ateliers, des pièces métalliques pour des constructeurs de machines agricoles. Les commandes accusaient six mois de retard. Un fournisseur venait de proposer un robot à trois millions d'euros, sans que l'usine ait encore établi combien de livraisons supplémentaires il permettrait réellement. C'était rassurant : un problème aussi cher méritait forcément une réponse importante.
 
 La solution était un robot blanc, articulé, avec écran tactile et lumière verte. Le fabricant promettait vingt secondes gagnées par pièce.
 
@@ -42,7 +42,7 @@ La solution était un robot blanc, articulé, avec écran tactile et lumière ve
 
 — Vous êtes obligée de transformer chaque bonne nouvelle en question ? »
 
-Nathalie dirigeait l'amélioration des méthodes. Vingt-sept ans d'usine lui avaient appris à se méfier des secondes gagnées lorsqu'on ignorait où partaient les heures. Elle les comptait pourtant sans cesse, à voix basse, jusque dans les couloirs. Quand un collègue disait « cinq minutes », elle demandait si c'était une estimation ou une mesure. Elle n'était pas contre les robots. Elle voulait savoir ce que celui-ci allait améliorer.
+Nathalie B. dirigeait l'amélioration des méthodes. Vingt-sept ans d'usine lui avaient appris à se méfier des secondes gagnées lorsqu'on ignorait où partaient les heures. Elle les comptait pourtant sans cesse, à voix basse, jusque dans les couloirs. Quand un collègue disait « cinq minutes », elle demandait si c'était une estimation ou une mesure. Elle n'était pas contre les robots. Elle voulait savoir ce que celui-ci allait améliorer.
 
 Le consultant présenta quarante-deux diapositives : le robot, le robot de profil, le robot avec une flèche. Nathalie demanda à laquelle figurait le diagnostic des retards.
 
@@ -54,7 +54,7 @@ Le consultant présenta quarante-deux diapositives : le robot, le robot de profi
 
 Le directeur général fit mettre cette phrase en gras. Il aimait les formulations qui n'exigeaient aucune vérification.
 
-Dans l'atelier, Nathalie suivit une pièce. Moins d'une minute d'usinage, puis près de vingt minutes à attendre et à voyager entre des chariots. La pièce aurait bientôt pu demander le remboursement de ses frais de déplacement.
+Dans l'atelier, Nathalie suivit une pièce. Moins d'une minute d'usinage, puis près de vingt minutes à attendre et à voyager entre des chariots. La pièce aurait bientôt pu demander le remboursement de ses frais de déplacement. Vingt minutes perdues, c'était beaucoup. Encore fallait-il savoir si les récupérer permettrait de livrer une commande de plus.
 
 « Pourquoi la table de contrôle est-elle si loin ? demanda-t-elle.
 
@@ -64,7 +64,7 @@ Dans l'atelier, Nathalie suivit une pièce. Moins d'une minute d'usinage, puis p
 
 — Il faut voir avec la logistique. »
 
-Le responsable logistique accepta d'étudier le trajet des chariots. Pour déplacer la table, en revanche, il renvoya Nathalie aux services généraux : les pièces étaient de son ressort, pas le mobilier.
+Le responsable logistique accepta d'étudier le trajet des chariots. Pour déplacer la table, en revanche, il renvoya Nathalie aux services généraux : les pièces étaient de son ressort, pas le mobilier. L'essai demanderait aussi de dégager un poste, de mobiliser deux opératrices et de vérifier que les déplacements ne créeraient pas une nouvelle gêne ailleurs.
 
 Au comité de direction, Nathalie présenta les temps relevés.
 
@@ -84,15 +84,13 @@ Le consultant proposa de présenter la table comme une « plateforme horizontale
 
 Nathalie demanda un essai limité, avec les opérateurs, la logistique et la production. On différerait le robot sans l'écarter définitivement. Il fallait mesurer les livraisons réellement accélérées, pas seulement les secondes économisées devant une machine.
 
-Deux jours suffirent à modifier l'agencement. Sur les premières séries, les trajets diminuèrent et davantage de pièces atteignirent le contrôle. C'était encourageant, pas encore une validation complète.
+Deux jours suffirent à modifier l'agencement. Pendant l'essai, les équipes réorganisèrent leurs postes et certaines commandes avancèrent moins vite. Sur les premières séries, les trajets diminuèrent et les pièces arrivèrent plus régulièrement au contrôle. C'était encourageant, mais personne n'avait encore démontré que l'usine livrerait davantage de commandes dans la semaine.
 
 « Nous avons économisé trois millions ! s'exclama le commercial.
 
 — Nous avons reporté une dépense, corrigea Nathalie.
 
 — Vous savez gâcher les bonnes nouvelles avec une précision admirable. »
-
-La communication photographia le directeur général devant l'atelier. La table fut sortie du cadre : elle améliorait les flux, mais nuisait à l'image de l'innovation.
 
 Nathalie, elle, s'éprit de ses chiffres. Elle comptait les pas économisés, chronométrait les trajets, corrigeait les estimations de ses collègues. « À peu près dix mètres » devenait « neuf mètres quarante » ; « c'est plus pratique » devait désormais être démontré. Elle qui avait refusé les vingt secondes du robot ne parlait plus que des quatorze pas de sa table.
 
@@ -130,7 +128,7 @@ Nathalie allait lui opposer ses relevés. Elle chercha la ligne consacrée aux g
 
 Elle prolongea l'essai avec les opératrices, l'ergonome et la production. Ils modifièrent la position de la table, observèrent les gestes et reprirent les mesures. Les trajets restaient plus courts ; il fallait encore vérifier à quel prix pour les poignets.
 
-Le robot resta en attente. Un équipement ciblé pourrait se justifier plus tard, sur la base de besoins établis. Pour l'instant, la décision était de ne pas investir trois millions dans une opération qui n'était pas le principal goulot d'étranglement.
+Le robot resta en attente. Un équipement ciblé pourrait se justifier plus tard, sur la base de besoins établis. Pour l'instant, la direction refusait d'engager trois millions d'euros sur la seule promesse de vingt secondes gagnées à un poste : rien ne démontrait encore que ce poste limitait les livraisons de l'usine.
 
 Au comité suivant, Nathalie présenta des résultats provisoires. Elle avait laissé une case vide à côté des quatorze pas : « Avis des opératrices ».
 
@@ -142,6 +140,6 @@ Au comité suivant, Nathalie présenta des résultats provisoires. Elle avait la
 
 — Je vous le dirai quand on aura écouté ce que les opératrices nous ont dit. »
 
-Elle posa son chronomètre sur la table. Personne ne lui demanda combien de temps durerait la réunion.
+Elle posa son chronomètre sur la table.
 
 Fiction satirique. Personnages, entreprise, coûts, durées et événements inventés. Les observations et résultats sont des hypothèses narratives, non une étude industrielle ou ergonomique documentée.
