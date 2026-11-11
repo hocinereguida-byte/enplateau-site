@@ -1,7 +1,7 @@
 ---
 genre_narratif: "chronique"
-title: "L'entreprise avait évité de signer un mauvais contrat. Elle a dépensé 35 000 euros pour continuer à ne pas le signer."
-summary: "Karim, directeur juridique, découvre à travers trois réunions qu’une négociation immobilière peut rester juridiquement possible alors que sa poursuite devient économiquement injustifiable."
+title: "Immobilier : dix-sept pages pour rendre possible un quartier qui n’existait plus."
+summary: "Karim, avocat d’un projet de reconversion, tente de sécuriser juridiquement un quartier dont le programme et les perspectives commerciales se défont."
 format: "chronique"
 cycle: "immobilier"
 conversation: "C1"
@@ -13,229 +13,166 @@ publication_date: "2026-10-28T14:00:00+01:00"
 mise_en_avant: "standard"
 hero_image: "/images/articles/scenes_darbitrage_article_karim_empeche_signature_negociation_continue_pop_street.webp"
 source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "Version V3 du manuscrit Drive. Préproduction uniquement, visa de publication publique non délivré."
-source_document_version: "V3"
-source_document_url: "https://docs.google.com/document/d/1jfBl26WV6qeDzF7UUsCu_dFW2x95-OZblpat5n83W5M/edit"
-tag_1: "Contrats immobiliers"
-tag_2: "Risque juridique"
-tag_3: "Négociation"
-tag_4: "Autorisations"
-tag_5: "Reconversion"
+methodology_specific: "Manuscrit Karim V6.2 de référence. Préproduction uniquement ; réserves documentaires et intercycles à clôturer avant visa public."
+source_document_version: "V6.2"
+source_document_url: "https://docs.google.com/document/d/1oLB9VVh-iLdV5O19zTNCOO-vSFAgwp-nnnl28qb9fck/edit"
+tag_1: "Reconversion industrielle"
+tag_2: "Droit immobilier"
+tag_3: "Pollution des sols"
+tag_4: "Faisabilité"
+tag_5: "Économie de projet"
 code_editorial: "IMM-C1-RC-04"
 unite_programmation: "IMM-C1-RC"
 perspective_principale: "droit-regulation"
 autorisation_publication: "preproduction_uniquement"
 ---
 
-*Texte de consultation en préproduction — publication publique non autorisée.*
+Dans une commune du bassin minier du Pas-de-Calais, l'ancienne usine de traitement de métaux allait devenir Les Jardins de l'Évidence : quarante logements, une crèche, des ateliers et une promenade arborée. Sur la plaquette, des enfants sortaient déjà de la crèche. Personne ne semblait avoir remarqué que celle-ci n'existait pas.
 
-L'entreprise avait trouvé un locataire pour son futur immeuble de 3 200 mètres carrés.
+Philippe M., dirigeant du projet, avait réservé le traiteur pour le 18 septembre de l'année suivante. Le maire avait accepté de couper le ruban. Il restait à déterminer ce qu'il inaugurerait.
 
-Enfin, presque.
+Karim B., avocat spécialiste des projets immobiliers et de l'environnement, fut chargé de trouver comment rendre cette reconversion juridiquement possible, sans changer le programme, le budget ni la date. Il connaissait les terrains compliqués. Il aimait surtout les phrases qui permettaient de les rendre un peu moins compliqués.
 
-Le locataire n'avait rien signé, ne s'était engagé sur aucun loyer et souhaitait modifier une bonne partie du bâtiment.
+PHILIPPE M. — Vous pouvez nous confirmer que c'est possible ?
 
-Mais il avait dit qu'il était « très intéressé ».
+KARIM B. — Juridiquement, c'est envisageable.
 
-Dans l'immobilier, cette expression est à peu près aussi engageante qu'un « il faudra qu'on déjeune ensemble » prononcé par quelqu'un qui ne vous donnera jamais son numéro.
+PHILIPPE M. — Parfait. « Faisabilité confirmée », alors.
 
-Sophie, la directrice commerciale, était néanmoins enthousiaste.
+KARIM B. — Non. « Faisabilité à étudier ».
 
-« Il veut 1 400 mètres carrés ! À 120 euros le mètre carré par an, cela représente potentiellement 168 000 euros de loyers annuels !
-— Il a signé ? demanda Marc, le directeur financier.
-— Pas encore.
-— Il a accepté le prix ?
-— Nous n'en sommes pas là.
-— Il veut au moins le bâtiment ?
-— Oui. Avec quelques modifications. »
+PHILIPPE M. — C'est moins vendeur.
 
-Les modifications concernaient les circulations, les aménagements et certaines conditions d'accueil.
+KARIM B. — C'est plus exact.
 
-Claire, directrice des opérations, examina les demandes.
+Karim obtint la correction sur la présentation. Il regarda disparaître le mot « confirmée » avec la satisfaction discrète d'un chirurgien ayant réussi une opération délicate. Il avait sauvé un adjectif. Le reste suivrait.
 
-« Sophie, ce n'est plus vraiment notre bâtiment.
-— Bien sûr que si ! Il est au même endroit.
-— C'est également le cas du terrain vague d'à côté. »
+Le terrain de l'ancienne usine était pollué. Élise R., ingénieure spécialisée, devait étudier à quelles conditions le terrain pourrait accueillir les usages prévus, notamment la crèche et les logements.
 
-Le directeur général demanda à Karim, responsable juridique, de sécuriser l'opération.
+Elle présenta une carte. Les endroits où les travaux seraient les plus compliqués étaient en rouge.
 
-Karim rédigea une lettre précisant que l'entreprise ne garantissait ni les travaux, ni leur coût, ni les délais, ni les autorisations nécessaires.
+PHILIPPE M. — Vous pouvez mettre le rouge en gris ? Il va inquiéter les investisseurs.
 
-« Parfait ! s'exclama le directeur général. Nous avons donc un accord.
-— Non. Nous avons précisément écrit que nous n'en avions pas.
-— C'est une excellente base pour avancer. »
+ÉLISE R. — La couleur ne change pas les résultats.
 
-Un locataire à 168 000 euros. Quelques frais supplémentaires.
+PHILIPPE M. — Je sais. C'est précisément pour ça que je vous demande seulement la couleur.
 
-Quelques semaines plus tard, Claire présenta les premières estimations.
+Élise conserva le rouge.
 
-Adapter le bâtiment pourrait coûter 410 000 euros supplémentaires, sous réserve d'études complémentaires.
+Les études ne condamnaient pas la crèche. Pour la conserver à cet endroit, il faudrait toutefois étudier des travaux et des protections supplémentaires. On pouvait aussi la déplacer, mais elle prendrait alors la place de bâtiments que Philippe espérait louer ou vendre.
 
-Sophie annonça immédiatement une bonne nouvelle : le prospect pourrait éventuellement contribuer à hauteur de 150 000 euros.
+Conserver le programme annoncé coûterait, selon une première estimation, 2,1 millions d'euros de travaux et de protections en plus. Philippe demanda si l'on pouvait garder la crèche en supprimant la dépense.
 
-« Il l'a proposé ? demanda Marc.
-— Pas directement.
-— Indirectement ?
-— Nous pensons qu'il pourrait être sensible à l'idée.
-— Donc nous avons imaginé qu'il nous donnerait 150 000 euros ?
-— Marc, vous avez vraiment un problème avec l'optimisme. »
+Karim proposa de supprimer la crèche, de réduire les logements et de réserver davantage de place à des bureaux et ateliers. Rien ne garantissait encore que ce nouveau projet serait autorisé ni qu'il trouverait des clients.
 
-Même dans cette hypothèse favorable, l'entreprise supporterait environ 260 000 euros de surcoût estimé, sans compter les éventuels retards.
+Il y avait passé deux soirées. Sa note tenait en dix-sept pages, dont une phrase particulièrement réussie à la page seize. Karim la trouvait presque belle.
 
-Le programme immobilier représentait déjà un budget initial de 4,6 millions d'euros.
+KARIM B. — Nous avons une solution juridiquement plus simple à examiner.
 
-Le directeur général demanda s'il était possible de rendre les adaptations moins coûteuses.
+PHILIPPE M. — La crèche est sauvée ?
 
-Claire proposa d'en supprimer certaines.
+KARIM B. — Elle est retirée.
 
-Sophie répondit qu'il ne fallait surtout pas contrarier le prospect.
+PHILIPPE M. — Excellent. Nous avons donc sécurisé la partie la plus sensible.
 
-« Mais c'est lui qui veut tout changer ! protesta Claire.
-— Justement. Il faut lui montrer que nous sommes à son écoute.
-— À ce rythme, nous allons finir par lui construire un immeuble gratuitement.
-— Vous voyez toujours le verre à moitié vide.
-— Non, Sophie. Je vois surtout qu'on est en train de lui offrir le verre. »
+KARIM B. — En la supprimant.
 
-Karim intervint.
+PHILIPPE M. — Vous voyez : on progresse.
 
-« Juridiquement, nous ne devons prendre aucun engagement ferme avant d'avoir sécurisé les conditions techniques et financières.
-— Donc nous ne signons pas ? demanda le directeur général.
-— Pas maintenant.
-— Mais nous pouvons continuer à négocier ?
-— Sous certaines conditions, oui.
-— Excellent. Continuons sans signer. »
+Philippe demanda au service communication de remplacer « crèche » par « vocation intergénérationnelle ». Les enfants restèrent sur l'image. Il jugeait prématuré de les prévenir.
 
-La direction venait de découvrir une activité merveilleuse : négocier un contrat qui ne pouvait pas encore être conclu.
+Karim rappela à Philippe qu'on ne pouvait pas continuer à promettre une crèche disparue du projet, même avec une petite mention en bas de la brochure. Philippe promit de revoir la couverture. Puis il soumit à Karim une question sur ce qu'on pourrait autoriser sur le terrain. L'avocat passa vingt minutes à trouver la formulation exacte ; Philippe, lui, conserva les enfants.
 
-Elle décida d'y consacrer toute son énergie.
+Le nouveau plan prévoyait moins de logements et davantage de bureaux. Claire D., chargée de trouver des acheteurs et des locataires, voulut savoir qui occuperait ces bureaux.
 
-Plus personne ne voulait signer. Tout le monde voulait continuer.
+CLAIRE D. — Qui les louera ?
 
-Les réunions s'enchaînèrent.
+PHILIPPE M. — Les entreprises qui veulent participer à la renaissance du territoire.
 
-Le prospect demandait des précisions.
+CLAIRE D. — Vous en connaissez ?
 
-L'entreprise commandait des études.
+PHILIPPE M. — Nous les rencontrerons à l'inauguration.
 
-Le directeur commercial annonçait chaque vendredi que la signature était imminente.
+Philippe venait de commander un ruban plus long. Le programme avait rétréci, mais il voulait que la cérémonie conserve son ampleur.
 
-Le lundi suivant, elle était généralement reportée de trois semaines.
+Karim reprit sa note. Chaque usage avait sa réserve, chaque réserve son paragraphe. Il avait même prévu une note de bas de page pour expliquer pourquoi une autre note de bas de page n'était pas nécessaire. Il vérifia ensuite le plan.
 
-Au bout de deux mois, la signature était devenue si imminente que les salariés avaient cessé de demander quand elle aurait lieu.
+Claire arriva avec trois colonnes de chiffres. Philippe avait fait imprimer le chiffre des économies en caractères si gros qu'il ne restait plus de place pour le résultat de l'opération.
 
-Marc présenta un nouveau tableau.
+PHILIPPE M. — Un million quatre d'économies sur les travaux et protections qu'on évite. C'est notre meilleure réunion depuis le début.
 
-L'entreprise avait engagé environ 35 000 euros en études et discussions spécifiques, dont 8 000 pendant la dernière phase.
+CLAIRE D. — Notre bénéfice prévu n'est plus que de quatre cent mille euros. Et encore, à une condition.
 
-Certaines analyses pourraient être réutilisées sur d'autres opérations. Mais le prospect n'avait toujours rien signé.
+PHILIPPE M. — C'est positif.
 
-« Nous avons dépensé 35 000 euros pour un contrat qui n'existe pas.
-— Pas encore, corrigea Sophie.
-— Il n'existe pas encore.
-— Exactement.
-— Et combien sommes-nous prêts à dépenser pour qu'il continue à ne pas exister ?
-— Cela dépend de son potentiel. »
+CLAIRE D. — Il faut trouver des entreprises prêtes à nous verser sept cent mille euros de plus. Nous n'avons aucun engagement.
 
-Le directeur général intervint.
+PHILIPPE M. — Et si on ne les trouve pas ?
 
-« Attention, Marc. Nous avons déjà investi beaucoup d'argent. Ce serait dommage d'arrêter maintenant.
-— Mais c'est précisément parce que nous avons dépensé beaucoup qu'il faut vérifier si cela vaut la peine de continuer !
-— Vous proposez donc de perdre les 35 000 euros ?
-— Je propose d'éviter d'en dépenser 35 000 autres.
-— Voilà une mentalité qui explique pourquoi certains ne deviennent jamais entrepreneurs. »
+CLAIRE D. — On perd trois cent mille euros.
 
-Marc contempla son ordinateur.
+PHILIPPE M. — Dans ce cas, mettez le million quatre sur la première diapositive. Et le reste en annexe.
 
-Il se demanda s'il existait un logiciel capable de transformer les décisions absurdes en charges fiscalement déductibles.
+CLAIRE D. — C'est déjà en annexe.
 
-Karim avait sécurisé le contrat. Il avait oublié de sécuriser les dirigeants.
+PHILIPPE M. — Alors retirez l'annexe.
 
-Karim commençait à comprendre.
+Claire retourna la feuille. Le projet promettait au départ 2,6 millions d'euros de bénéfice. Avec les travaux supplémentaires, il n'en aurait laissé qu'environ 500 000. Le nouveau plan annonçait 400 000 euros, mais seulement si des locataires encore introuvables apportaient les 700 000 euros espérés.
 
-Il avait empêché toute signature prématurée.
+Karim se pencha sur le tableau. Sa note de dix-sept pages était ouverte devant lui.
 
-Il avait rédigé des réserves, précisé les conditions, encadré les engagements et évité que l'entreprise promette des travaux qu'elle ne savait pas encore réaliser.
+KARIM B. — Les travaux qu'on supprime, on peut les chiffrer. Ce n'est pas une économie inventée pour la présentation.
 
-Sur le plan juridique, son travail était impeccable.
+CLAIRE D. — Je ne conteste pas les économies. Je cherche les locataires.
 
-Sur le plan économique, l'entreprise continuait de payer pour avoir le droit de ne rien signer.
+KARIM B. — Ce sont deux questions distinctes.
 
-Le directeur général le convoqua.
+CLAIRE D. — Oui. Et pour l'instant, nous n'avons de réponse qu'à la vôtre.
 
-« Karim, pourquoi n'avez-vous pas arrêté cette affaire ?
-— Parce que j'étais chargé de sécuriser le contrat.
-— Et vous l'avez sécurisé ?
-— Oui. Il n'y a aucun engagement ferme.
-— Alors pourquoi avons-nous dépensé 35 000 euros ?
-— Parce que nous avons continué à négocier.
-— Mais pourquoi ?
-— Parce que vous m'avez demandé de continuer.
-— Vous auriez dû comprendre que je ne voulais pas forcément dire ce que je disais. »
+Karim ouvrit sa note à la page seize. C'était là qu'il avait démontré, avec une précision qui l'émouvait encore, que le projet pouvait changer de nature sans changer de dossier.
 
-Karim comprit qu'il lui faudrait désormais ajouter une clause de protection contre les instructions du directeur général.
+Claire cherchait toujours les locataires.
 
-Il proposa une réforme simple : toute négociation importante aurait un budget maximal d'instruction, un calendrier, des conditions de poursuite et une date à laquelle décider d'arrêter ou de continuer.
+Personne ne contestait son raisonnement. C'était ce qu'il y avait de plus vexant.
 
-Sophie fut scandalisée.
+Claire lui tendit la couverture de la plaquette. Il y avait toujours la crèche, les enfants et la promenade.
 
-« Vous voulez limiter la négociation ?
-— Oui.
-— Mais si le client finit par accepter le lendemain de la date limite ?
-— Nous pourrons réexaminer la situation.
-— Donc votre limite n'est pas vraiment une limite ?
-— Sophie, vous venez de comprendre pourquoi je suis fatigué. »
+CLAIRE D. — Maître Karim, qu'est-ce qu'il reste de ce projet ?
 
-Trois réunions pour supprimer les réunions inutiles
+KARIM B. — Le terrain. Et plusieurs façons de l'utiliser que la loi pourrait permettre.
 
-Le directeur général trouva la proposition intéressante.
+CLAIRE D. — Et les clients ?
 
-« Nous devons absolument mettre en place cette procédure.
-— Très bien, répondit Karim.
-— Commençons par créer un comité de pilotage.
-— Pourquoi ?
-— Pour déterminer les critères qui permettront de décider quand arrêter les discussions.
-— Nous pourrions les définir maintenant.
-— Karim, ne confondons pas vitesse et précipitation. »
+KARIM B. — Ce n'est pas une catégorie juridique.
 
-Une première réunion fut programmée pour préparer la réunion de lancement.
+Élise posa côte à côte le plan d'origine et celui que Karim venait de défendre. Le premier représentait un quartier habité. Le second montrait surtout des bureaux sans locataires. Même les chemins et les espaces extérieurs restaient à définir.
 
-Une deuxième pour valider son ordre du jour.
+ÉLISE R. — Vous êtes peut-être en train d'étudier une reconversion possible. Mais ce n'est plus le même programme.
 
-Une troisième pour identifier les participants à la réunion qui déterminerait les conditions d'arrêt des négociations.
+KARIM B. — Juridiquement, ce sont deux projets distincts.
 
-Marc demanda combien coûterait le dispositif.
+ÉLISE R. — Je ne vous demandais pas de les distinguer. Je vous demandais de les regarder.
 
-Le directeur général répondit qu'il était prématuré de parler d'argent avant d'avoir défini la méthode.
+Karim regarda les plans. Sur son ordinateur, le fichier « Solution consolidée » attendait son envoi. Il en connaissait presque chaque phrase, surtout celle de la page seize. Il ferma le fichier sans l'envoyer.
 
-Un consultant fut sollicité.
+Dans son avis final, Karim recommanda d'abandonner le quartier annoncé et d'étudier un projet plus modeste, tourné vers les entreprises. Il faudrait encore étudier les risques sanitaires, vérifier les autorisations nécessaires et s'assurer que l'opération tient financièrement. Philippe prit la décision de ne pas poursuivre le programme annoncé.
 
-Il proposa une mission intitulée « Savoir renoncer pour mieux réussir ».
+Il conserva néanmoins le 18 septembre.
 
-Karim demanda si la mission avait un budget maximal.
+KARIM B. — Qu'allez-vous inaugurer ?
 
-« Naturellement, répondit le consultant. Nous le définirons ensemble à l'issue de la phase de cadrage. »
+PHILIPPE M. — Une nouvelle étape de la reconversion.
 
-« Et combien coûte cette phase ?
-— Cela dépendra du nombre de réunions nécessaires. »
+KARIM B. — Aucun nouveau projet n'a encore été approuvé.
 
-Karim ferma les yeux.
+PHILIPPE M. — Justement. Une étape pleine d'avenir.
 
-Le directeur général se tourna vers lui.
+Le service communication conserva la couverture de la plaquette. Les enfants sortaient toujours de la crèche disparue. La mère promenait toujours son bébé dans une allée abandonnée. Philippe demanda à Karim de sécuriser cette image.
 
-« Vous voyez, Karim ? Nous avançons enfin vers une organisation capable de mettre fin aux discussions inutiles. »
+Karim regarda la couverture qu'il avait déjà demandé de corriger. Il écrivit au crayon sous l'image : « Visuel non contractuel ».
 
-Le lendemain, le consultant envoya une proposition commerciale.
+PHILIPPE M. — Et ça, au moins, vous êtes sûr que ça a une valeur juridique ?
 
-Elle comprenait six ateliers, deux séminaires et une réunion de restitution.
+KARIM B. — Je peux vous faire une note. Elle tiendra en dix-sept pages.
 
-Le document se terminait par une recommandation en caractères gras :
-
-« Apprendre à dire non est un investissement. »
-
-La direction trouva la formule excellente.
-
-Elle accepta immédiatement.
-
-Sans négocier.
-
-Fiction économique satirique — Personnages et événements inventés.
+Fiction économique satirique. Personnages, programme et situation inventés.
