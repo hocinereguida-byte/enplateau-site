@@ -1,6 +1,6 @@
 ---
 title: "L'usine voulait acheter un robot à trois millions d'euros. Une salariée a proposé de déplacer une table."
-summary: "Une direction industrielle projette trois millions d'euros de robotisation alors que l'observation des gestes et des déplacements révèle d'autres leviers."
+summary: "Un robot à trois millions d'euros promet vingt secondes gagnées par pièce ; Nathalie défend un diagnostic des flux, puis découvre les limites ergonomiques de sa propre solution."
 format: "chronique"
 cycle: "industrie"
 conversation: "C1"
@@ -18,11 +18,11 @@ tag_3: "Ergonomie"
 tag_4: "Amélioration continue"
 tag_5: "Industrialisation"
 source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "V4.1 — visa éditorial interne favorable ; contrôle documentaire ciblé favorable sous limites de dimensionnement et rentabilité. Préproduction uniquement, bon à publier non délivré."
-source_document_url: "https://docs.google.com/document/d/1ITxXZeRyAT9eys3B5cFBhnJUdX5eoRRiWciPU-TqlTY/edit"
-source_document_version: "V4.1"
-validation_narrative: "visa_editorial_interne_v4_1_favorable"
-validation_documentaire: "controle_documentaire_cible_v4_1_favorable_sous_reserves"
+methodology_specific: "Nathalie V4.3 — visa éditorial favorable ; contrôle documentaire ciblé favorable sous réserves (dimensionnement, débit et ergonomie). Préproduction uniquement ; aucun bon à publier."
+source_document_url: "https://docs.google.com/document/d/1_8TIcIxzpmeAEklYYHTOBu_kbX8JXwDQ3qeKnois5LY/edit"
+source_document_version: "V4.3"
+validation_narrative: "visa_editorial_v4_3_favorable"
+validation_documentaire: "controle_cible_v4_3_favorable_sous_reserves"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "chronique"
 code_editorial: "IND-C1-CST-03"
@@ -32,7 +32,7 @@ perspective_principale: "technologie-innovation"
 
 *Texte de consultation en préproduction — publication publique non autorisée.*
 
-L'usine fabriquait des pièces pour machines agricoles. Ses plusieurs ateliers alimentaient des constructeurs agricoles, et elle avait six mois de commandes en retard. Un fournisseur venait de proposer un robot à trois millions d'euros, sans que l'usine ait encore établi combien de livraisons supplémentaires il permettrait réellement. C'était rassurant : un problème aussi cher méritait forcément une réponse importante.
+Répartie entre plusieurs ateliers, l'usine fabriquait des pièces métalliques pour des constructeurs de machines agricoles. Les commandes accusaient six mois de retard. Un fournisseur venait de proposer un robot à trois millions d'euros, sans que l'usine ait encore établi combien de livraisons supplémentaires il permettrait réellement. C'était rassurant : un problème aussi cher méritait forcément une réponse importante.
 
 La solution était un robot blanc, articulé, avec écran tactile et lumière verte. Le fabricant promettait vingt secondes gagnées par pièce.
 
@@ -42,7 +42,7 @@ La solution était un robot blanc, articulé, avec écran tactile et lumière ve
 
 — Vous êtes obligée de transformer chaque bonne nouvelle en question ? »
 
-Nathalie dirigeait l'amélioration des méthodes. Vingt-sept ans d'usine lui avaient appris à se méfier des secondes gagnées lorsqu'on ignorait où partaient les heures. Elle les comptait pourtant sans cesse, à voix basse, jusque dans les couloirs. Elle n'était pas contre les robots. Elle voulait savoir ce que celui-ci allait améliorer.
+Nathalie dirigeait l'amélioration des méthodes. Vingt-sept ans d'usine lui avaient appris à se méfier des secondes gagnées lorsqu'on ignorait où partaient les heures. Elle les comptait pourtant sans cesse, à voix basse, jusque dans les couloirs. Quand un collègue disait « cinq minutes », elle demandait si c'était une estimation ou une mesure. Elle n'était pas contre les robots. Elle voulait savoir ce que celui-ci allait améliorer.
 
 Le consultant présenta quarante-deux diapositives : le robot, le robot de profil, le robot avec une flèche. Nathalie demanda à laquelle figurait le diagnostic des retards.
 
@@ -64,11 +64,7 @@ Dans l'atelier, Nathalie suivit une pièce. Moins d'une minute d'usinage, puis p
 
 — Il faut voir avec la logistique. »
 
-Le responsable logistique gérait les déplacements des pièces, pas ceux du mobilier. Pour le mobilier, il fallait consulter les services généraux. Il proposa d'abord une étude du plan de circulation.
-
-« C'est justement le plan qui pose problème, dit Nathalie.
-
-— Alors il faut le mettre à jour avant de toucher à la table. »
+Le responsable logistique accepta d'étudier le trajet des chariots. Pour déplacer la table, en revanche, il renvoya Nathalie aux services généraux : les pièces étaient de son ressort, pas le mobilier.
 
 Au comité de direction, Nathalie présenta les temps relevés.
 
@@ -84,17 +80,7 @@ Au comité de direction, Nathalie présenta les temps relevés.
 
 — Nous n'allons pas annoncer une modernisation à quatre pieds à nos clients. »
 
-Le consultant proposa « plateforme horizontale de fluidification ». Le directeur général retrouva le sourire.
-
-« Est-elle connectée ? demanda le consultant.
-
-— Non, répondit Nathalie.
-
-— Nous pourrions la connecter.
-
-— À quoi ?
-
-— À notre stratégie de transformation. »
+Le consultant proposa de présenter la table comme une « plateforme horizontale de fluidification ». Le directeur général retrouva le sourire. Nathalie vérifia qu'on parlait toujours du même meuble.
 
 Nathalie demanda un essai limité, avec les opérateurs, la logistique et la production. On différerait le robot sans l'écarter définitivement. Il fallait mesurer les livraisons réellement accélérées, pas seulement les secondes économisées devant une machine.
 
@@ -108,7 +94,7 @@ Deux jours suffirent à modifier l'agencement. Sur les premières séries, les t
 
 La communication photographia le directeur général devant l'atelier. La table fut sortie du cadre : elle améliorait les flux, mais nuisait à l'image de l'innovation.
 
-Nathalie, elle, s'éprit de ses chiffres. Elle comptait les pas économisés, chronométrait les trajets, montrait ses relevés à ceux qui ne les demandaient pas.
+Nathalie, elle, s'éprit de ses chiffres. Elle comptait les pas économisés, chronométrait les trajets, corrigeait les estimations de ses collègues. « À peu près dix mètres » devenait « neuf mètres quarante » ; « c'est plus pratique » devait désormais être démontré. Elle qui avait refusé les vingt secondes du robot ne parlait plus que des quatorze pas de sa table.
 
 « Quatorze pas de moins ! annonça-t-elle à une opératrice.
 
@@ -118,19 +104,19 @@ Nathalie, elle, s'éprit de ses chiffres. Elle comptait les pas économisés, ch
 
 — Pour mon poignet aussi. »
 
-Nathalie nota les quatorze pas. Elle se promit de revenir au poignet.
+Nathalie nota les quatorze pas. Pour le poignet, elle écrivit « à revoir » dans la marge. Elle ne lui consacra pas de colonne.
 
 Le lendemain, elle voulut écourter l'essai.
 
 « Les flux sont meilleurs. Pourquoi attendre ?
 
-— Parce qu'on n'a pas encore suffisamment étudié les gestes répétés, répondit l'ergonome.
+— Les trajets ont diminué, répondit l'ergonome. Les rotations du poignet, elles, ont augmenté. Il nous faut observer les gestes avec les opératrices.
 
 — On ne va pas passer six mois à observer une table.
 
-— C'est curieux. Vous reprochiez au directeur général de choisir une solution avant d'avoir fini le diagnostic. »
+— Non. Mais on peut prendre le temps de regarder ce qu'on fait autour. »
 
-Quelques semaines plus tard, une opératrice fut arrêtée pour une blessure au poignet. Rien ne permettait de l'attribuer au nouvel agencement. Mais l'alerte ergonomique, elle, avait été formulée avant que Nathalie demande de conclure.
+À la réunion suivante, l'opératrice répéta que son poignet tirait depuis le changement d'agencement. L'ergonome demanda de suspendre toute généralisation avant d'avoir évalué les gestes. Nathalie avait prévu de présenter les quatorze pas gagnés ; elle n'avait pas prévu cette seconde intervention.
 
 Le directeur général la convoqua.
 
@@ -140,30 +126,22 @@ Le directeur général la convoqua.
 
 — Nous avons donc quelque chose en commun. »
 
-Nathalie aurait préféré leur goût pour le café.
+Nathalie allait lui opposer ses relevés. Elle chercha la ligne consacrée aux gestes répétés. Il n'y en avait pas.
 
-Elle reprit l'essai avec les opérateurs et l'ergonome. Avec la production, ils réévaluèrent les risques du nouvel agencement avant d'envisager de l'étendre. On adapta certains gestes et prolongea les observations. Les premiers gains n'étaient pas annulés ; ils devaient être confirmés sans déplacer le coût de la performance sur les salariés.
+Elle prolongea l'essai avec les opératrices, l'ergonome et la production. Ils modifièrent la position de la table, observèrent les gestes et reprirent les mesures. Les trajets restaient plus courts ; il fallait encore vérifier à quel prix pour les poignets.
 
 Le robot resta en attente. Un équipement ciblé pourrait se justifier plus tard, sur la base de besoins établis. Pour l'instant, la décision était de ne pas investir trois millions dans une opération qui n'était pas le principal goulot d'étranglement.
 
-Au comité suivant, le directeur général annonça :
+Au comité suivant, Nathalie présenta des résultats provisoires. Elle avait laissé une case vide à côté des quatorze pas : « Avis des opératrices ».
 
-« Désormais, nous identifierons le problème avant de choisir la solution. »
+« Alors, combien de pas gagnés ? demanda le directeur général.
 
-Le consultant applaudit. Il proposa un programme d'accompagnement en quatre phases.
+— Quatorze, répondit Nathalie.
 
-« Combien ?
+— Et c'est une bonne nouvelle ?
 
-— Cent quatre-vingt mille euros.
+— Je vous le dirai quand on aura écouté ce que les opératrices nous ont dit. »
 
-— C'est cher pour apprendre à poser des questions.
-
-— Vous avez raison. Nous devrions commencer par identifier pourquoi cela vous paraît cher. »
-
-Il demanda une réunion de cadrage.
-
-Nathalie regarda son chronomètre, puis le rangea. Elle aurait volontiers compté les secondes nécessaires pour refuser. Mais cette fois, elle préféra poser une question :
-
-« Et si nous commencions sans vous ? »
+Elle posa son chronomètre sur la table. Personne ne lui demanda combien de temps durerait la réunion.
 
 Fiction satirique. Personnages, entreprise, coûts, durées et événements inventés. Les observations et résultats sont des hypothèses narratives, non une étude industrielle ou ergonomique documentée.
