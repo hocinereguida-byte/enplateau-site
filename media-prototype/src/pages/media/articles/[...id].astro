@@ -163,10 +163,10 @@ const shareBase=canonical;
 }
 
 /* Limited typographic trial: dialogue vs narration, Claire/Kevin only. */
-.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue{margin:1.03em 0 1.12em;padding-left:clamp(11px,3vw,20px);border-left:1px solid rgba(34,52,59,.22)}
-.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue-line{margin:0;font:inherit;line-height:inherit}
-.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue-turn{margin:0 0 .8em}
-.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue-speaker{display:block;margin:0 0 .15em;font:600 11px/1.4 'IBM Plex Sans',Arial,sans-serif;letter-spacing:.025em;color:var(--blue)}
+.article-literary[data-chronique-dialogues] .fiction-dialogue{margin:1.03em 0 1.12em;padding-left:clamp(11px,3vw,20px);border-left:1px solid rgba(34,52,59,.22)}
+.article-literary[data-chronique-dialogues] .fiction-dialogue-line{margin:0;font:inherit;line-height:inherit}
+.article-literary[data-chronique-dialogues] .fiction-dialogue-turn{margin:0 0 .8em}
+.article-literary[data-chronique-dialogues] .fiction-dialogue-speaker{display:block;margin:0 0 .15em;font:600 11px/1.4 'IBM Plex Sans',Arial,sans-serif;letter-spacing:.025em;color:var(--blue)}
 .article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue-line:last-child{margin-bottom:0}
 @media(max-width:740px){.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue{padding-left:12px;margin:.9em 0 1em}}
 </style></head><body><a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/><main class="shell" id="contenu"><div class="reading">
@@ -174,7 +174,7 @@ const shareBase=canonical;
 <header><p class="kicker"><a href={`/media/cycles/${d.cycle}/`}>{d.cycle}</a> / <a href={`/media/cycles/${d.cycle}/conversations/${d.conversation}/`}>{classification}</a> / <a href={`/media/cycles/${d.cycle}/contextes/${d.contexte}/`}>{context}</a></p><h1>{d.title}</h1>{d.summary&&<p class="lead">{d.summary}</p>}
 <div class="meta">{format&&<span>{format}</span>}{genreLabel&&<span>{genreLabel}</span>}<a href={`/media/lectures/${perspectiveCode}/`}>Perspective : {reading}</a>{pubDate&&<span>Publié le {formattedDate(pubDate)}</span>}{updated&&<span>Mis à jour le {formattedDate(updated)}</span>}</div></header>
 {d.hero_image&&<img class="hero" src={d.hero_image} alt={imageAlt} loading="eager"/>}
-<div class="reader-toolbar" aria-label="Outils de lecture"><details class="reader-tool" id="audio-reader"><summary aria-label="Ouvrir la lecture audio"><span aria-hidden="true">♫</span> Écouter</summary><div class="tool-panel"><p class="audio-description">Lecture vocale avec la voix française disponible sur votre appareil.</p><div class="audio-controls"><button type="button" id="audio-play">Écouter</button><button type="button" id="audio-pause" disabled>Pause</button><button type="button" id="audio-resume" disabled>Reprendre</button><button type="button" id="audio-stop" disabled>Arrêter</button></div><p class="audio-status" id="audio-status" role="status" aria-live="polite">Prêt à écouter.</p></div></details><details class="reader-tool share-tool"><summary aria-label="Afficher les options de partage"><span aria-hidden="true">↗</span> Partager</summary><div class="tool-panel"><div class="share-links" aria-label="Options de partage"><a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareBase)}`} target="_blank" rel="noopener noreferrer">LinkedIn</a><a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareBase)}`} target="_blank" rel="noopener noreferrer">Facebook</a><a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareBase)}&text=${encodeURIComponent(d.title)}`} target="_blank" rel="noopener noreferrer">X</a><a href={`mailto:?subject=${encodeURIComponent(d.title)}&body=${encodeURIComponent(shareBase)}`}>E-mail</a><button id="copy-article-link" type="button">Copier le lien</button></div></div></details></div><article class:list={['article', { 'article-literary': d.format!=='regard-croise' }]} data-article-id={article.id} aria-label="Texte intégral"><Content/></article>
+<div class="reader-toolbar" aria-label="Outils de lecture"><details class="reader-tool" id="audio-reader"><summary aria-label="Ouvrir la lecture audio"><span aria-hidden="true">♫</span> Écouter</summary><div class="tool-panel"><p class="audio-description">Lecture vocale avec la voix française disponible sur votre appareil.</p><div class="audio-controls"><button type="button" id="audio-play">Écouter</button><button type="button" id="audio-pause" disabled>Pause</button><button type="button" id="audio-resume" disabled>Reprendre</button><button type="button" id="audio-stop" disabled>Arrêter</button></div><p class="audio-status" id="audio-status" role="status" aria-live="polite">Prêt à écouter.</p></div></details><details class="reader-tool share-tool"><summary aria-label="Afficher les options de partage"><span aria-hidden="true">↗</span> Partager</summary><div class="tool-panel"><div class="share-links" aria-label="Options de partage"><a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareBase)}`} target="_blank" rel="noopener noreferrer">LinkedIn</a><a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareBase)}`} target="_blank" rel="noopener noreferrer">Facebook</a><a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareBase)}&text=${encodeURIComponent(d.title)}`} target="_blank" rel="noopener noreferrer">X</a><a href={`mailto:?subject=${encodeURIComponent(d.title)}&body=${encodeURIComponent(shareBase)}`}>E-mail</a><button id="copy-article-link" type="button">Copier le lien</button></div></div></details></div><article class:list={['article', { 'article-literary': d.format!=='regard-croise' }]} data-article-id={article.id} data-chronique-dialogues={genre==='chronique' ? '' : undefined} aria-label="Texte intégral"><Content/></article>
 
 {authorSignature&&<section class="panel" aria-label="Signature de l’auteur"><p class="micro">SIGNATURE</p>{d.signature_portrait&&<img src={d.signature_portrait} alt="" loading="lazy" style="max-width:96px;border-radius:50%"/>}<h2>{authorSignature}</h2>{d.signature_biographie&&<p>{d.signature_biographie}</p>}{d.signature_tonalite&&<p class="small">Tonalité : {d.signature_tonalite}</p>}</section>}
 {(summaryProfile||profileRows.length>0)&&<section class="panel" aria-labelledby="source-title"><p class="micro">{d.format==='regard-croise'?'NOTICE DOCUMENTAIRE':'FICTION ÉCONOMIQUE'}</p><h2 id="source-title">{d.format==='regard-croise'?'À propos de cette analyse':'À propos de cette Scène'}</h2>{summaryProfile&&<p>{summaryProfile}</p>}{profileRows.length>0&&<dl class="source-facts">{profileRows.map(([label,value])=><><dt>{label}</dt><dd>{value}</dd></>)}</dl>}</section>}
@@ -258,12 +258,14 @@ const shareBase=canonical;
 })();
 </script>}
 <script is:inline>
-/* Reader-only dialogue layout for the Claire/Kevin test.
+/* Reader-only dialogue layout for validated Chroniques.
    The speaker sequence is reviewed against the approved manuscript, not guessed from alternation. */
 (function(){
- const root=document.querySelector('.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"]');
+ const root=document.querySelector('.article-literary[data-article-id]');
  if(!root)return;
- const cast=[
+ const articleId=root.getAttribute('data-article-id');
+ const casts={
+ 'industrie/ind-c1-cst-04-brouillon': [
   ['Dans quatre mois',['Le directeur général']],
   ['Et qui va leur apprendre',['Claire','Le directeur général','Claire','Le directeur général']],
   ['Tu t’occupes des six',['Le chef de Kevin','Kevin','Le chef de Kevin','Kevin']],
@@ -276,7 +278,32 @@ const shareBase=canonical;
   ['Très bien, dit le directeur commercial',['Le directeur commercial']],
   ['Quand ils sauront faire',['Claire']],
   ['D’accord. Mais vous avez une date',['Le directeur commercial']]
- ];
+ ],
+ 'industrie/ind-c1-cst-02-brouillon': [
+ ['Il nous faut huit cents',['Le directeur commercial','Sophie','Le directeur commercial']],
+ ['La deuxième solution',['Le directeur commercial','Malik','Le directeur commercial','Malik']],
+ ['Sur huit cents pièces',['Le directeur commercial','Malik','Le directeur commercial','Malik']],
+ ['Donc, résuma',['Le directeur général','Sophie','Le directeur général','Sophie']],
+ ['Vous les valorisez comment',['Sophie','Le directeur commercial']],
+ ['On arrête la machine',['Sophie']],
+ ['Je ne le sais pas encore',['Sophie']],
+ ['Pour le client',['Le directeur commercial','Le directeur général','Sophie']],
+ ['Vous pouvez surtout lui envoyer la pièce',['Sophie']]
+ ],
+ 'industrie/ind-c1-cst-03-brouillon': [
+ ['Vingt secondes',['Le directeur général','Nathalie','Le directeur général']],
+ ['Il est prévu dans la phase suivante',['Le consultant','Nathalie','Le consultant']],
+ ['Pourquoi la table',['Nathalie','Une opératrice','Nathalie','Une opératrice']],
+ ['Le robot ferait gagner',['Nathalie','Le directeur commercial','Nathalie','Le directeur commercial','Nathalie','Le directeur commercial']],
+ ['Nous avons économisé',['Le directeur commercial','Nathalie','Le directeur commercial']],
+ ['Quatorze pas de moins',['Nathalie','Une opératrice','Nathalie','Une opératrice']],
+ ['Les flux sont meilleurs',['Nathalie',"L’ergonome",'Nathalie',"L’ergonome"]],
+ ['Vous avez voulu valider',['Le directeur général','Nathalie','Le directeur général']],
+ ['Alors, combien de pas gagnés',['Le directeur général','Nathalie','Le directeur général','Nathalie']]
+ ]
+ };
+ const cast=casts[articleId];
+ if(!cast)return;
  const normalized=v=>v.replace(/^[«—\s]+/,'').replace(/[»\s]+$/,'').trim();
  const paragraphs=Array.from(root.querySelectorAll(':scope > p'));
  for(let i=0;i<paragraphs.length;i++){
