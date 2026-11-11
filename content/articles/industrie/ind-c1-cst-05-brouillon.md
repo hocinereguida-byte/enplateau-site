@@ -1,5 +1,5 @@
 ---
-title: "Le contrat était magnifique. La trésorerie avait quelques réserves."
+title: "Peut-on décrocher le contrat du siècle sans avoir les moyens de l’honorer ?"
 summary: "Jean Toksik interroge Laurent, directeur financier, sur le plus gros contrat de son entreprise : avant de produire, il faut payer les matières, négocier des délais et protéger la trésorerie."
 format: "entretien"
 cycle: "industrie"
@@ -18,11 +18,11 @@ tag_3: "Financement industriel"
 tag_4: "Contrats commerciaux"
 tag_5: "Croissance industrielle"
 source_notice: "Grand Entretien fictif. Personnages, entreprise, dialogues et chiffres inventés."
-methodology_specific: "Laurent B. V3.2 retenue comme version littéraire de référence. Préproduction uniquement ; contrôle documentaire final et bon à publier public non délivrés."
-source_document_url: "https://docs.google.com/document/d/17mCgHDhILE7Z-1F_kBN9IWjic7vE9Uwy8O2pmgHYsmI/edit"
-source_document_version: "V3.2"
-validation_narrative: "validee"
-validation_documentaire: "v3_2_controle_final_requis"
+methodology_specific: "Laurent B. V3.3 retenue en préproduction avec nouveau titre interrogatif. Visa littéraire individuel favorable ; audit transversal et contrôle documentaire final en attente. Aucun bon à publier public."
+source_document_url: "https://docs.google.com/document/d/1_8G2rIILGfL9RhShUNIrISyBxxRabBpUrLQgjSGgucI/edit"
+source_document_version: "V3.3"
+validation_narrative: "visa_litteraire_individuel_favorable_v3_3_audit_transversal_requis"
+validation_documentaire: "v3_3_controle_final_requis"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "grand-entretien"
 signature_auteur: "Jean Toksik"
@@ -107,8 +107,6 @@ Jean Toksik ouvre une bouteille d'eau avec une violence inutile.
 
 — Nous avons préféré les prévisions de trésorerie.
 
-— Vous ne savez décidément pas vendre du rêve.
-
 — La banque étudiait la possibilité de nous avancer une partie de l'argent attendu du client. Mais elle n'avait encore rien accordé, et les matières devaient être payées avant les premières livraisons.
 
 — Vous aviez donc signé le plus gros contrat de votre histoire sans avoir les moyens de le lancer entièrement ?
@@ -179,8 +177,6 @@ Jean Toksik marque un temps. Il n'avait pas prévu que Laurent puisse être drô
 
 — Vous voyez, c'est ce qui me fascine dans la finance. Quand vous déplacez une dépense, elle ne disparaît pas toujours. Parfois, elle se transforme en quelqu'un de fatigué.
 
-— Je l'avais inscrit comme un report de dépense. Elle l'avait inscrit comme des heures de travail en plus.
-
 — Laurent, cessez immédiatement d'être raisonnable. Vous rendez cet entretien impossible.
 
 — Je peux vous aider.
@@ -195,7 +191,7 @@ Jean Toksik marque un temps. Il n'avait pas prévu que Laurent puisse être drô
 
 — Je…
 
-— Les fournisseurs attendaient leur argent, la production ses matières, et l'équipe qualité héritait de mon économie. Je n'avais pas mis cette dernière ligne dans le bon tableau.
+— L'équipe qualité. J'avais oublié de compter ses heures dans mon économie.
 
 — Vous venez de me voler mon indignation.
 
