@@ -31,8 +31,6 @@ unite_programmation: "IND-C1-CST"
 perspective_principale: "finance-investissement"
 ---
 
-*Texte de consultation en préproduction — publication publique non autorisée.*
-
 Dans le sud de la France, une entreprise industrielle d'environ deux cents salariés fabrique des pièces métalliques destinées aux constructeurs de machines. Son plus gros contrat vient d'être signé. Les commerciaux sabrent le champagne, la direction se félicite et Laurent B., directeur administratif et financier depuis neuf ans, cherche avec quel argent acheter les matières premières. À lui de trouver les financements ; à la production de commander sans attendre. Jean Toksik reçoit cet homme manifestement incapable de partager le bonheur collectif.
 
 Jean Toksik — Laurent, félicitations ! Le plus gros contrat de votre histoire ! J'ai fait apporter du champagne.
