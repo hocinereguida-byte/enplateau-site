@@ -70,7 +70,7 @@ for (const r of records) {
   if (r.driveId && !d.source_document_url?.includes('/document/d/'+r.driveId+'/')) {
     const actualDriveId = d.source_document_url?.match(/\/document\/d\/([^/]+)/)?.[1] ?? '(absent ou URL invalide)';
     errors.push(r.code+' : URL Drive ne correspond pas à la version verrouillée'
-      +'\\n   Version : '+r.version+' ; registre Drive ID : '+r.driveId+' ; Markdown Drive ID : '+actualDriveId
+      +'\n   Version : '+r.version+' ; registre Drive ID : '+r.driveId+' ; Markdown Drive ID : '+actualDriveId
       +'\\n   Action : vérifier la version de référence puis synchroniser source_document_version, source_document_url ET le registre check-classification.mjs avant le commit.');
   }
   if (usedCodes.has(r.code)) errors.push('Identifiant dupliqué : '+r.code); else usedCodes.add(r.code);
