@@ -91,6 +91,50 @@ const groupedCycles=cycleFamilies.map(f=>({label:f.label,items:f.codes.map(code=
 .press-logo-image{height:150px!important;max-height:150px!important;width:auto!important;max-width:min(780px,90vw)!important;object-fit:contain!important}
 .press-masthead{padding:7px 20px 12px!important}.press-masthead p{margin-top:0!important}
 @media(max-width:760px){.press-mobile-logo{height:54px!important;max-height:54px!important;max-width:70vw!important}}
+
+/* UX V5 — nouvelle identité de navigation : sobre, sombre, mobile-first */
+#press-site-header.press-header{background:#1b1b19!important;color:#f7f4ee!important;border-bottom:1px solid #35342f!important;box-shadow:none!important;display:grid;grid-template-columns:minmax(200px,1fr) auto;align-items:center;min-height:78px;padding:0 max(22px,calc((100vw - 1120px)/2))!important;position:sticky;top:0}
+#press-site-header .press-utility{display:none!important}
+#press-site-header .press-masthead{display:flex!important;align-items:center;gap:18px;min-width:0;text-align:left!important;padding:8px 0!important}
+#press-site-header .press-masthead p{display:block;font:500 9px/1.5 'IBM Plex Mono',monospace!important;letter-spacing:.12em!important;max-width:150px;margin:0!important;color:#c2beb7!important}
+#press-site-header .press-logo{flex-shrink:0}
+#press-site-header .press-logo-image{filter:brightness(0) invert(1)!important;height:50px!important;max-height:50px!important;max-width:200px!important;width:auto!important}
+#press-site-header .press-nav{position:relative!important;background:transparent!important;border:0!important;max-width:none!important;padding:0!important;margin:0!important;display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:0!important}
+#press-site-header .press-home-link,#press-site-header .press-dropdown>summary,#press-site-header .press-search{color:#f2efe8!important;font:600 12px/1.4 'IBM Plex Sans',Arial,sans-serif!important;padding:20px 10px!important;border:0!important}
+#press-site-header .press-home-link:hover,#press-site-header .press-dropdown>summary:hover,#press-site-header .press-search:hover{color:#e49b87!important;text-decoration:none!important}
+#press-site-header .press-home-link[aria-current=page]{color:#e49b87!important}
+#press-site-header .press-dropdown[open]>summary{background:#34332f!important;color:#fff!important}
+#press-site-header .press-dropdown-content{background:#262622!important;color:#eee!important;border:1px solid #45443e!important;box-shadow:0 12px 25px #0007!important}
+#press-site-header .press-dropdown-content strong{color:#c98570!important}
+#press-site-header .press-dropdown-content a,#press-site-header .press-cycle-family summary{color:#eee!important;font-size:12px!important}
+#press-site-header .press-dropdown-content a:hover{color:#eaa391!important;background:#373630!important}
+#press-site-header .press-cycle-family{border-bottom-color:#47453d!important}
+#press-site-header .press-cycle-family summary{border-bottom-color:#47453d!important}
+#press-site-header .press-cycle-family>div{border-left-color:#b95e45!important}
+#press-site-header .press-cycle-dropdown{background:#262622!important}
+#press-site-header .press-mobile-bar{display:none!important}
+@media(max-width:760px){
+#press-site-header.press-header{display:block!important;min-height:60px!important;padding:0!important}
+#press-site-header .press-masthead{display:none!important}
+#press-site-header .press-mobile-bar{display:flex!important;min-height:60px!important;background:#1b1b19!important;padding:0 15px!important}
+#press-site-header .press-mobile-logo{filter:brightness(0) invert(1)!important;height:43px!important;max-height:43px!important;max-width:175px!important}
+#press-site-header .press-menu-toggle,#press-site-header .press-mobile-search{color:#eee!important}
+#press-site-header .press-nav{display:none!important;position:absolute!important;top:100%!important;left:0!important;right:0!important;max-height:calc(100dvh - 60px)!important;overflow-y:auto!important;background:#1b1b19!important;padding:10px 17px 22px!important;flex-direction:column!important;align-items:stretch!important;box-shadow:0 18px 30px #0008!important;border-top:1px solid #3a3833!important}
+#press-site-header.press-menu-open .press-nav{display:flex!important}
+#press-site-header .press-home-link,#press-site-header .press-dropdown>summary,#press-site-header .press-search{font-size:15px!important;padding:16px 4px!important;border-bottom:1px solid #3e3d39!important}
+#press-site-header .press-dropdown[open]>summary{background:#34322e!important;padding-left:10px!important}
+#press-site-header .press-dropdown-content{background:#242420!important;border:0!important;border-left:2px solid #b85d44!important;box-shadow:none!important}
+#press-site-header .press-cycle-dropdown{background:#242420!important;padding:12px!important}
+#press-site-header .press-cycle-family summary{padding:13px 4px!important;font-size:14px!important}
+#press-site-header .press-dropdown-content a{font-size:14px!important}
+}
+@media(min-width:761px) and (max-width:980px){
+#press-site-header.press-header{grid-template-columns:185px auto!important;padding:0 14px!important}
+#press-site-header .press-masthead p{display:none!important}
+#press-site-header .press-logo-image{max-width:172px!important;height:46px!important}
+#press-site-header .press-home-link,#press-site-header .press-dropdown>summary,#press-site-header .press-search{padding:18px 7px!important;font-size:11px!important}
+}
+
 </style>
 <script is:inline>
 const pressHeader=document.getElementById('press-site-header');
