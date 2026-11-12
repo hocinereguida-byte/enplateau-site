@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
-import { isPublic, validClassification, urlOf, conversations, contexts, readings, publicPerspectiveLabel, publicGenreLabel, formattedDate, publicationInstant, perspectiveOf, genreOf, narrativeGenres, cycleCatalogue, canonicalCycleCode, publicCycleLabel } from '../../../lib/editorial';
+import { isPublic, validClassification, urlOf, conversations, contexts, publicContextLabel, readings, publicPerspectiveLabel, publicGenreLabel, formattedDate, publicationInstant, perspectiveOf, genreOf, narrativeGenres, cycleCatalogue, canonicalCycleCode, publicCycleLabel } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
 import MediaFooter from '../../../components/MediaFooter.astro'
 import MediaHeader from '../../../components/MediaHeader.astro';;
@@ -13,7 +13,7 @@ const {article,items}=Astro.props;
 const d=article.data;
 const {Content}=await render(article);
 const classification=conversations[d.cycle]?.[d.conversation] ?? d.conversation;
-const context=contexts[d.cycle]?.[d.contexte] ?? d.contexte;
+const context=publicContextLabel(d.cycle,d.contexte);
 const perspectiveCode=perspectiveOf(d);
 const reading=perspectiveCode ? publicPerspectiveLabel(perspectiveCode) : '';
 const genre=genreOf(d);
@@ -41,7 +41,7 @@ const take=(predicate:(a:typeof ordered[number])=>boolean,limit=3)=>{
 };
 const recommendations=[
  {key:'lectures',title:'Autour de ce sujet',entries:take(a=>a.data.cycle===d.cycle&&a.data.conversation===d.conversation&&a.data.contexte===d.contexte&&perspectiveOf(a.data)!==perspectiveCode,4)},
- {key:'contextes',title:'Ce sujet, dans d’autres situations',entries:take(a=>a.data.cycle===d.cycle&&a.data.conversation===d.conversation&&a.data.contexte!==d.contexte)},
+ {key:'contextes',title:'Ce sujet, dans d’autres cas de figure',entries:take(a=>a.data.cycle===d.cycle&&a.data.conversation===d.conversation&&a.data.contexte!==d.contexte)},
  {key:'cycle',title:'Dans ce secteur',entries:take(a=>a.data.cycle===d.cycle&&a.data.conversation!==d.conversation)},
  {key:'transversal',title:'Autres secteurs, même angle mort',entries:take(a=>d.format!=='regard-croise'&&a.data.format!=='regard-croise'&&a.data.cycle!==d.cycle&&perspectiveOf(a.data)===perspectiveCode)},
  {key:'recent',title:'À lire aussi',entries:take(()=>true,3)},
