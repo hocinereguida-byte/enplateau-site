@@ -302,6 +302,32 @@ const shareBase=canonical;
  ['Alors, combien de pas gagnés',['Le directeur général','Nathalie','Le directeur général','Nathalie']]
  ]
  };
+ // All Chroniques: format explicitly attributed manuscript dialogue without changing source text.
+ // Never infer a speaker from alternating turns or unlabelled em dashes.
+ if(root.hasAttribute('data-chronique-dialogues')){
+  const paragraphs=Array.from(root.querySelectorAll(':scope > p'));
+  let group=null;
+  for(const p of paragraphs){
+   const raw=(p.textContent||'').trim();
+   const match=raw.match(/^([A-ZÀ-ÖØ-Ý][A-ZÀ-ÖØ-Ý0-9 .’'\\-]{1,65}?)\\s*[—–]\\s*(\\S[\\s\\S]*)$/u);
+   if(!match){group=null;continue;}
+   const speaker=match[1].trim().replace(/\\s+/g,' ');
+   if(!/[A-ZÀ-ÖØ-Ý]/u.test(speaker)||speaker.length>65){group=null;continue;}
+   if(!group){
+    group=document.createElement('div');
+    group.className='fiction-dialogue';
+    group.setAttribute('role','group');
+    group.setAttribute('aria-label','Dialogue');
+    p.before(group);
+   }
+   const turn=document.createElement('div');turn.className='fiction-dialogue-turn';
+   const label=document.createElement('span');label.className='fiction-dialogue-speaker';
+   label.textContent=speaker.toLocaleLowerCase('fr-FR').replace(/(^|[\\s’'\\-])([a-zà-öø-ÿ])/gu,(_m,sep,letter)=>sep+letter.toLocaleUpperCase('fr-FR'));
+   const words=document.createElement('p');words.className='fiction-dialogue-line';
+   words.textContent=match[2].trim();
+   turn.append(label,words);group.append(turn);p.remove();
+  }
+ }
  const cast=casts[articleId];
  if(!cast)return;
  const normalized=v=>v.replace(/^[«—\s]+/,'').replace(/[»\s]+$/,'').trim();
