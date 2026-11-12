@@ -1,5 +1,7 @@
 ---
 title: "L'intelligence artificielle devait remplacer les tâches inutiles. Elle a commencé par créer un nouveau poste."
+hero_image: "/images/edu-c5-cmd-naf-12-visuel-v1.webp"
+image_alt: "Ordinateur coiffé d’un bonnet d’âne dans une salle de formation vide, sans texte ni chiffres."
 summary: "Dans un petit organisme de formation, une directrice a décidé de moderniser les cours grâce à l'intelligence artificielle. Les douze formateurs, déjà débordés, devaient enfin gagner du temps. Trois mois plus tard, ils passent leurs soirées à vérifier les réponses de la machine, et le seul salarié qui maîtrise vraiment le logiciel vient de demander une augmentation."
 cycle: "education-formation"
 conversation: "C5"
