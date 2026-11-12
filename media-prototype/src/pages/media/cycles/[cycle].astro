@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, conversations, publicPerspectiveLabel, publicGenreLabel, publicationInstant, cycleCatalogue, cycleBriefs, publicCycleLabel, publicCycleTechnicalLabel, cycleFamilies, publicFamilyLabel } from '../../../lib/editorial';
+import { isPublic, validClassification, urlOf, conversations, publicPerspectiveLabel, publicGenreLabel, publicationInstant, cycleCatalogue, cycleBriefs, publicCycleLabel, publicCycleScope, cycleFamilies, publicFamilyLabel } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
 import MediaFooter from '../../../components/MediaFooter.astro';
 import MediaHeader from '../../../components/MediaHeader.astro';
@@ -9,7 +9,7 @@ const {cycle}=Astro.params;
 const sourceCycle=cycle==='numerique'?'numerique-telecom':cycle;
 const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)&&(a.data.cycle===cycle||a.data.cycle===sourceCycle)).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
 const cycleName=publicCycleLabel(cycle);
-const technicalSector=publicCycleTechnicalLabel(cycle);
+const cycleScope=publicCycleScope(cycle);
 const family=cycleFamilies.find(f=>f.codes.some(code=>code===cycle));
 const familyLabel=family?publicFamilyLabel(family.id):null;
 const brief=cycleBriefs[cycle];
@@ -19,7 +19,7 @@ const labelGenre=(a:any)=>publicGenreLabel(a.data).toLocaleUpperCase('fr-FR')+(a
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/>
 <title>{cycleName} — Scènes d’Arbitrage</title>
-<meta name="description" content={technicalSector+' — '+(brief?.ambition??'Explorer les décisions et les arbitrages économiques')}/>
+<meta name="description" content={cycleScope+' — '+(brief?.ambition??'Explorer les décisions et les arbitrages économiques')}/>
 <style is:inline set:html={articleStyle}/>
 <style is:global>
 .sda-v5-cycle-intro{padding:35px 0 37px;border-bottom:1px solid #ddd8ce;display:grid;grid-template-columns:1.3fr .7fr;gap:44px;align-items:end}
@@ -53,7 +53,7 @@ const labelGenre=(a:any)=>publicGenreLabel(a.data).toLocaleUpperCase('fr-FR')+(a
 <nav class="kicker" aria-label="Fil d’Ariane"><a href="/media/">Accueil</a> / <a href="/media/cycles/">Là où ça se joue</a> / {familyLabel&&<>{familyLabel} / </>}{cycleName}</nav>
 <header class="sda-v5-cycle-intro">
 <div><p class="sda-v5-cycle-kicker">{familyLabel??'LÀ OÙ ÇA SE JOUE'}</p>
-<h1>{cycleName}</h1><p class="sda-v5-cycle-technical">{technicalSector}</p><p class="lead">{brief?.ambition}</p>
+<h1>{cycleName}</h1><p class="sda-v5-cycle-technical">{cycleScope}</p><p class="lead">{brief?.ambition}</p>
 <p class="sda-v5-cycle-kicker">{items.length ? items.length+' PUBLICATION'+(items.length>1?'S':'')+' DISPONIBLE'+(items.length>1?'S':'') : 'EN PRÉPARATION'}</p></div>
 <div class="sda-v5-cycle-overview"><p class="sda-v5-cycle-kicker">LES ARBITRAGES</p><p>{brief?.enjeux_et_arbitrages}</p></div>
 </header>
@@ -65,12 +65,12 @@ const labelGenre=(a:any)=>publicGenreLabel(a.data).toLocaleUpperCase('fr-FR')+(a
 <footer><span>{c.items.length} publication{c.items.length>1?'s':''}</span><a href={'/media/cycles/'+sourceCycle+'/conversations/'+c.code+'/'}>Explorer ↗</a></footer>
 </article>)}</div></section>}
 <section class="sda-v5-cycle-group" aria-labelledby="cycle-published">
-<p class="sda-v5-cycle-kicker">À DÉCOUVRIR</p><h2 id="cycle-published">À lire dans ce secteur</h2>
+<p class="sda-v5-cycle-kicker">À DÉCOUVRIR</p><h2 id="cycle-published">À lire sur ce terrain</h2>
 {items.length ? <div class="sda-v5-cycle-grid">{items.map(a=><article class="sda-v5-cycle-article">
 <p class="sda-v5-cycle-kicker">{labelGenre(a)}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3>
 {a.data.summary&&<p>{a.data.summary}</p>}
 <footer><span>{publicPerspectiveLabel(a.data.perspective_principale || a.data.lecture_principale || '') || 'Analyse documentée'}</span><a href={urlOf(a.id)}>Lire ↗</a></footer>
-</article>)}</div> : <div class="sda-v5-cycle-empty"><p>Les premières publications de ce cycle sont en préparation.</p><a class="sda-v5-cycle-link" href="/media/publications/">Découvrir les publications disponibles ↗</a></div>}
+</article>)}</div> : <div class="sda-v5-cycle-empty"><p>Les premières publications de ce terrain sont en préparation.</p><a class="sda-v5-cycle-link" href="/media/publications/">Découvrir les publications disponibles ↗</a></div>}
 </section>
 <section class="sda-v5-cycle-group" aria-label="Méthode"><p class="sda-v5-cycle-kicker">NOTRE MÉTHODE</p><h2>La fiction pour explorer. L’analyse pour comprendre.</h2><p class="lead">{brief?.approche_narrative}</p></section>
 </main><MediaFooter/></body></html>

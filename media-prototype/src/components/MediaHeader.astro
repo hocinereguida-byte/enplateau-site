@@ -1,5 +1,5 @@
 ---
-import { publicPerspectives, cycleCatalogue, cycleFamilies, publicCycleLabel, publicFamilyLabel } from '../lib/editorial';
+import { publicPerspectives, cycleCatalogue, cycleFamilies, publicCycleLabel, publicFamilyLabel, publicCycleScope } from '../lib/editorial';
 const {active=''}=Astro.props;
 const groupedCycles=cycleFamilies.map(f=>({label:publicFamilyLabel(f.id),technical:f.label,items:f.codes.map(code=>cycleCatalogue.find(c=>c.code===code)).filter(Boolean)}));
 ---
@@ -9,7 +9,7 @@ const groupedCycles=cycleFamilies.map(f=>({label:publicFamilyLabel(f.id),technic
  <div class="press-mobile-bar"><a class="press-mobile-brand" href="/media/" aria-label="Scènes d’Arbitrage — accueil"><span class="press-wordmark press-wordmark-mobile" aria-hidden="true">Scènes d’Arbitrage</span></a><div class="press-mobile-actions"><a class="press-mobile-search" href="/media/publications/" aria-label="Rechercher des publications">⌕</a><button class="press-menu-toggle" type="button" aria-controls="press-main-navigation" aria-expanded="false"><span class="press-toggle-icon" aria-hidden="true">☰</span><span class="press-toggle-label">Menu</span></button></div></div>
  <nav class="press-nav" id="press-main-navigation" aria-label="Navigation principale">
   <a class="press-home-link" href="/media/" aria-current={active==='accueil'?'page':undefined}>À la une</a>
-  <details class="press-dropdown"><summary>Là où ça se joue <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content press-cycle-dropdown"><strong>Six grands univers · vingt rubriques</strong><div class="press-cycle-groups">{groupedCycles.map(f=><details class="press-cycle-family"><summary><span class="press-family-title">{f.label}<small class="press-family-technical">{f.technical}</small></span><span aria-hidden="true">›</span></summary><div>{f.items.map(item=><a href={`/media/cycles/${item.code}/`}><span class="press-editorial-cycle-name">{publicCycleLabel(item.code)}</span><small class="press-editorial-cycle-sector">{item.label}</small></a>)}</div></details>)}</div><a class="press-dropdown-more" href="/media/cycles/">Explorer les vingt rubriques</a></div></details>
+  <details class="press-dropdown"><summary>Là où ça se joue <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content press-cycle-dropdown"><strong>Six grands univers · vingt rubriques</strong><div class="press-cycle-groups">{groupedCycles.map(f=><details class="press-cycle-family"><summary><span class="press-family-title">{f.label}<small class="press-family-technical">{f.technical}</small></span><span aria-hidden="true">›</span></summary><div>{f.items.map(item=><a href={`/media/cycles/${item.code}/`}><span class="press-editorial-cycle-name">{publicCycleLabel(item.code)}</span><small class="press-editorial-cycle-scope">{publicCycleScope(item.code)}</small></a>)}</div></details>)}</div><a class="press-dropdown-more" href="/media/cycles/">Explorer les vingt rubriques</a></div></details>
   <a class="press-home-link" href="/media/conversations/">Les sujets qui fâchent</a>
   <details class="press-dropdown"><summary>Les angles morts <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Huit points de vue sur les décisions</strong>{Object.entries(publicPerspectives).map(([code,entry])=><a href={`/media/lectures/${code}/`}>{entry.label}</a>)}<a class="press-dropdown-more" href="/media/lectures/">Tous les angles morts</a></div></details>
   <details class="press-dropdown"><summary>Les formats <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Satire & analyse</strong><a href="/media/scenes/#chronique">Raisons et déraisons</a><a href="/media/scenes/#grand-entretien">Les interrogatoires</a><a href="/media/regards-croises/">Le fond du problème</a><a class="press-dropdown-more" href="/media/publications/">Toutes les publications</a></div></details>
@@ -162,8 +162,8 @@ const groupedCycles=cycleFamilies.map(f=>({label:publicFamilyLabel(f.id),technic
 
 /* Cycle editorial titles, with a subordinate technical sector for orientation. */
 #press-site-header .press-editorial-cycle-name{display:block;font-weight:600}
-#press-site-header .press-editorial-cycle-sector{display:block;font:400 11px/1.35 'IBM Plex Sans',Arial,sans-serif;color:#b5b0a8;white-space:normal;margin-top:3px}
-@media(max-width:760px){#press-site-header .press-editorial-cycle-name{font-size:15px;line-height:1.4}#press-site-header .press-editorial-cycle-sector{font-size:12px;line-height:1.4}}
+#press-site-header .press-editorial-cycle-scope{display:block;font:400 11px/1.35 'IBM Plex Sans',Arial,sans-serif;color:#b5b0a8;white-space:normal;margin-top:3px}
+@media(max-width:760px){#press-site-header .press-editorial-cycle-name{font-size:15px;line-height:1.4}#press-site-header .press-editorial-cycle-scope{font-size:12px;line-height:1.4}}
 
 /* V9 : grands univers publics, sous-titres sectoriels conservés. */
 #press-site-header .press-family-title{display:block;min-width:0;flex:1;float:none;text-align:left;font-weight:600}

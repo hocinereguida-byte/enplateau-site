@@ -20,7 +20,7 @@ const cycleLabel=publicCycleLabel;
 <!doctype html>
 <html lang="fr"><head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/>
-<meta name="sda-preproduction-revision" content="univers-cas-de-figure-v9-20261112"/>
+<meta name="sda-preproduction-revision" content="terrains-arbitrage-v10-20261112"/>
 <title>Scènes d’Arbitrage — Les décisions qui font l’économie</title>
 <meta name="description" content="La fiction pour explorer. L’analyse pour comprendre. Découvrez les arbitrages économiques à travers Raisons et déraisons, Les interrogatoires et Le fond du problème."/>
 <style is:inline set:html={articleStyle}/><style is:global>.sda-v9-family-technical{font:400 12px/1.45 'IBM Plex Sans',Arial,sans-serif!important;color:#c0b8a9!important;opacity:.86;margin:0 0 17px!important}
@@ -41,7 +41,7 @@ const cycleLabel=publicCycleLabel;
 <a class="sda-v5-link sda-v5-dark-cta" href={urlOf(featured.id)}>Découvrir l’article <span aria-hidden="true">↗</span></a>
 </> : <>
 <h2>Les décisions derrière les apparences.</h2><p>Les premières publications seront proposées ici dès leur mise à disposition.</p>
-<a class="sda-v5-link sda-v5-dark-cta" href="/media/cycles/">Explorer les secteurs <span aria-hidden="true">↗</span></a>
+<a class="sda-v5-link sda-v5-dark-cta" href="/media/cycles/">Explorer les terrains <span aria-hidden="true">↗</span></a>
 </>}
 </div>
 <aside class="sda-v5-hero-aside"><p class="sda-v5-label">POUR PROLONGER LA LECTURE</p>
@@ -51,7 +51,7 @@ const cycleLabel=publicCycleLabel;
 <a class="sda-v5-link" href={heroConversation.url}>Explorer le sujet <span aria-hidden="true">↗</span></a>
 </> : <>
 <h3>Explorer par grande question</h3><p>Les grandes questions apparaissent dès leur première publication.</p>
-<a class="sda-v5-link" href="/media/cycles/">Découvrir les secteurs <span aria-hidden="true">↗</span></a>
+<a class="sda-v5-link" href="/media/cycles/">Découvrir les terrains <span aria-hidden="true">↗</span></a>
 </>}
 </aside></section>
 <section class="sda-v5-section" aria-labelledby="home-latest">
@@ -63,9 +63,9 @@ const cycleLabel=publicCycleLabel;
 </article>)}</div> : <p>Les premières publications apparaîtront ici dès leur mise en ligne.</p>}
 </section>
 <section class="sda-v5-explore" aria-labelledby="home-cycles">
-<div class="sda-v5-section-head"><div><p class="sda-v5-label">SIX GRANDS UNIVERS · VINGT RUBRIQUES</p><h2 id="home-cycles">Explorer l’économie, secteur par secteur</h2></div><a class="sda-v5-link" style="color:#eee!important" href="/media/cycles/">Voir tous les secteurs ↗</a></div>
+<div class="sda-v5-section-head"><div><p class="sda-v5-label">SIX GRANDS UNIVERS · VINGT TERRAINS D’ARBITRAGE</p><h2 id="home-cycles">Explorer l’économie, terrain par terrain</h2></div><a class="sda-v5-link" style="color:#eee!important" href="/media/cycles/">Voir les vingt terrains ↗</a></div>
 <div class="sda-v5-families">{cycleFamilies.map((family,i)=><section class="sda-v5-family" aria-label={publicFamilyLabel(family.id)}>
-<small>{String(i+1).padStart(2,'0')} · {family.codes.length} SECTEURS</small>
+<small>{String(i+1).padStart(2,'0')} · {family.codes.length} TERRAINS</small>
 <h3>{publicFamilyLabel(family.id)}</h3><p class="sda-v9-family-technical">{family.label}</p>
 {family.codes.map(code=><a href={'/media/cycles/'+code+'/'}>{cycleLabel(code)}</a>)}
 </section>)}</div>
@@ -85,5 +85,5 @@ const cycleLabel=publicCycleLabel;
 <span class="sda-v5-label">{entry.label}</span><span>{entry.description}</span><span class="sda-v6-perspective-arrow" aria-hidden="true">↗</span>
 </a>)}</div>
 </section>
-<aside class="sda-v5-bottom"><div><h2>Un média qui s’enrichit chaque semaine.</h2><p>Retrouvez les nouvelles publications et parcourez les secteurs sans changer vos repères.</p></div><a class="sda-v5-link" href="/media/publications/">Explorer le catalogue ↗</a></aside>
+<aside class="sda-v5-bottom"><div><h2>Un média qui s’enrichit chaque semaine.</h2><p>Retrouvez les nouvelles publications et parcourez les terrains d’arbitrage sans changer vos repères.</p></div><a class="sda-v5-link" href="/media/publications/">Explorer le catalogue ↗</a></aside>
 </main><MediaFooter/></body></html>

@@ -42,8 +42,8 @@ const take=(predicate:(a:typeof ordered[number])=>boolean,limit=3)=>{
 const recommendations=[
  {key:'lectures',title:'Autour de ce sujet',entries:take(a=>a.data.cycle===d.cycle&&a.data.conversation===d.conversation&&a.data.contexte===d.contexte&&perspectiveOf(a.data)!==perspectiveCode,4)},
  {key:'contextes',title:'Ce sujet, dans d’autres cas de figure',entries:take(a=>a.data.cycle===d.cycle&&a.data.conversation===d.conversation&&a.data.contexte!==d.contexte)},
- {key:'cycle',title:'Dans ce secteur',entries:take(a=>a.data.cycle===d.cycle&&a.data.conversation!==d.conversation)},
- {key:'transversal',title:'Autres secteurs, même angle mort',entries:take(a=>d.format!=='regard-croise'&&a.data.format!=='regard-croise'&&a.data.cycle!==d.cycle&&perspectiveOf(a.data)===perspectiveCode)},
+ {key:'cycle',title:'Sur ce terrain',entries:take(a=>a.data.cycle===d.cycle&&a.data.conversation!==d.conversation)},
+ {key:'transversal',title:'Autres terrains, même angle mort',entries:take(a=>d.format!=='regard-croise'&&a.data.format!=='regard-croise'&&a.data.cycle!==d.cycle&&perspectiveOf(a.data)===perspectiveCode)},
  {key:'recent',title:'À lire aussi',entries:take(()=>true,3)},
 ].filter(group=>group.entries.length>0);
 const seoTitle=typeof d.seo?.seo_title==='string'&&d.seo.seo_title.trim()?d.seo.seo_title:d.title;
