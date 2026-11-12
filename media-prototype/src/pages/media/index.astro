@@ -1,123 +1,81 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, readings, conversations, publicationInstant, cycleCatalogue, cycleFamilies } from '../../lib/editorial';
+import { isPublic, validClassification, urlOf, conversations, publicationInstant, cycleCatalogue, cycleFamilies, readings, perspectiveOf, genreOf, narrativeGenres } from '../../lib/editorial';
 import { articleStyle } from '../../lib/article-style';
-import { photoCycle, photoLecture, photoConversation, afficherPhotoListe } from '../../lib/photographies';
-import registry from '../../../../content/rubriques/conversations.json';
 import MediaFooter from '../../components/MediaFooter.astro';
 import MediaHeader from '../../components/MediaHeader.astro';
-const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
-const ordered=[...items].sort((a,b)=>({une:0,secondaire:1,standard:2}[a.data.mise_en_avant||'standard']??2)-({une:0,secondaire:1,standard:2}[b.data.mise_en_avant||'standard']??2));
+const articles=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
+const ordered=[...articles].sort((a,b)=>({une:0,secondaire:1,standard:2}[a.data.mise_en_avant||'standard']??2)-({une:0,secondaire:1,standard:2}[b.data.mise_en_avant||'standard']??2));
 const featured=ordered[0];
-const visualLead=ordered.find(a=>a.id!==featured?.id && a.data.hero_image) ?? ordered.find(a=>a.id!==featured?.id);
-const remaining=ordered.slice(1,10);
-const visual=remaining.filter((a,i)=>a.data.taille_image_liste==="sans"?false:a.data.taille_image_liste&&a.data.taille_image_liste!=="automatique"?true:afficherPhotoListe(a.data,"accueil",i+1));
-const headlines=remaining.filter((a,i)=>a.data.taille_image_liste==="sans"?true:a.data.taille_image_liste&&a.data.taille_image_liste!=="automatique"?false:!afficherPhotoListe(a.data,"accueil",i+1));
-const displaySize=(a:any,i:number)=>a.data.taille_image_liste==="grande"?"large":a.data.taille_image_liste==="moyenne"?"medium":a.data.taille_image_liste==="vignette"?"thumb":a.data.taille_image_liste==="sans"?"none":i%3===0?"medium":i%3===1?"thumb":"none";
-const recentConversations=Object.entries(conversations).flatMap(([cycle,group])=>
-  Object.entries(group).map(([code,title])=>{
-    const articles=items.filter(a=>a.data.cycle===cycle&&a.data.conversation===code);
-    const latest=articles.length ? (publicationInstant(articles[0].data.publication_date)?.getTime()??0) : 0;
-    const meta=(registry.conversations as Record<string,{titre:string;presentation:string}>)[cycle+'_'+code];
-    return {cycle,code,title,description:meta?.presentation||'',count:articles.length,latest,photo:photoConversation(cycle,code),url:`/media/cycles/${cycle}/conversations/${code}/`};
-  })
-).filter(item=>item.count>0).sort((a,b)=>b.latest-a.latest||a.cycle.localeCompare(b.cycle)||a.code.localeCompare(b.code)).slice(0,4);
+const latest=articles.filter(a=>a.id!==featured?.id).slice(0,6);
+const groups=Object.entries(conversations).flatMap(([cycle,entries])=>Object.entries(entries).map(([code,title])=>{
+ const matching=articles.filter(a=>a.data.cycle===cycle&&a.data.conversation===code);
+ return {cycle,code,title,count:matching.length,updated:matching.length ? (publicationInstant(matching[0].data.publication_date)?.getTime()??0) : 0,url:'/media/cycles/'+cycle+'/conversations/'+code+'/'};
+})).filter(g=>g.count>0).sort((a,b)=>b.updated-a.updated);
+const heroConversation=groups.find(g=>g.cycle===featured?.data.cycle&&g.code===featured?.data.conversation)??groups[0];
+const genreLabel=(a:any)=>a.data.format==='regard-croise'?'REGARD CROISÉ · ANALYSE DOCUMENTÉE':(narrativeGenres[genreOf(a.data)??'']??'SCÈNE')+' · FICTION ÉCONOMIQUE';
+const perspectiveLabel=(a:any)=>readings[perspectiveOf(a.data)]??'';
+const cycleLabel=(code:string)=>cycleCatalogue.find(c=>c.code===code)?.label??code;
 ---
 <!doctype html>
-<html lang="fr">
-<head><meta charset="utf-8"/><meta name="sda-preproduction-revision" content="ux-v4-20261112-redeploy-1"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Scènes d’Arbitrage — L’intelligence derrière les décisions</title><meta name="description" content="La fiction économique documentée pour explorer les décisions. Des Regards croisés fondés sur des sources réelles pour comprendre les mécanismes économiques."/><style is:inline set:html={articleStyle}/><style is:global>
-.editorial-image-large .article-list-photo,.editorial-image-large .photo-placeholder{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
-.editorial-image-medium .article-list-photo,.editorial-image-medium .photo-placeholder{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
-.editorial-image-thumb{display:grid!important;grid-template-columns:minmax(0,1fr) 112px;gap:12px 20px;align-items:start}
-.editorial-image-thumb .article-list-photo,.editorial-image-thumb .photo-placeholder{grid-column:2;grid-row:1/5;width:112px;height:84px;object-fit:cover;min-height:0;margin:0}
-.editorial-image-thumb > :not(.article-list-photo):not(.photo-placeholder){grid-column:1}
-.editorial-image-none .article-list-photo,.editorial-image-none .photo-placeholder{display:none}
-@media(max-width:600px){.editorial-image-thumb{grid-template-columns:minmax(0,1fr) 86px;gap:7px 12px}.editorial-image-thumb .article-list-photo,.editorial-image-thumb .photo-placeholder{width:86px;height:68px}}
-</style><style>.ft-intro{padding:32px 0 38px!important;max-width:1100px!important}.ft-intro h1{font-size:clamp(32px,4vw,54px)!important;margin:6px 0 8px!important}.ft-intro .home-standfirst{font-size:16px!important;max-width:870px!important}.ft-intro .intro-links{margin-top:15px!important}.home-editorial{padding-top:22px!important}</style><style is:global>
-body.media-home,body.media-home main,body.media-home .home-shell{background:#fff1e5!important}
-body.media-home .home-intro{background:transparent!important}
-.ft-front{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.65fr) minmax(0,.75fr);gap:22px;border-top:2px solid #a99789;padding:22px 0 26px}
-.ft-front-left,.ft-front-right{min-width:0}.ft-front-left{border-right:1px solid #d7c3b5;padding-right:18px}.ft-front-right{border-left:1px solid #d7c3b5;padding-left:18px}
-.ft-lead-text h3{font:600 clamp(24px,2.4vw,36px)/1.15 'Playfair Display',Georgia,serif;margin:10px 0}.ft-lead-text h3 a,.ft-small-headline h3 a,.ft-front-right h3 a,.ft-top-card h4 a{color:#262a33;text-decoration:none}.ft-lead-text p:not(.micro){font-size:14px;line-height:1.55;color:#61564e}
-.ft-small-headline,.ft-front-right article{border-top:1px solid #d4c1b4;padding-top:12px;margin-top:14px}.ft-small-headline h3,.ft-front-right h3{font:600 17px/1.32 'Playfair Display',Georgia,serif;margin:4px 0 9px}
-.ft-main-photo{display:block;text-decoration:none;color:#262a33;background:#eedccd}.ft-main-photo img,.ft-main-photo .photo-placeholder{width:100%;aspect-ratio:16/10;object-fit:cover;margin:0}.ft-main-photo strong{display:block;padding:17px;font:600 clamp(21px,2vw,28px)/1.3 'Playfair Display',Georgia,serif}
-.ft-top-stories{border-top:3px double #96877a;margin-top:14px;padding-top:18px}.ft-top-stories>h3{text-align:center;font:600 12px/1.4 'IBM Plex Sans',sans-serif;text-transform:uppercase;letter-spacing:.08em;margin:0 0 22px}.ft-top-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.ft-top-card{min-width:0;border-right:1px solid #dbc7b8;padding-right:12px}.ft-top-card img,.ft-top-card .photo-placeholder{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;margin:0 0 10px}.ft-top-card h4{font:600 18px/1.3 'Playfair Display',Georgia,serif;margin:8px 0}
-@media(max-width:900px){.ft-front{grid-template-columns:1fr 1.4fr}.ft-front-right{grid-column:1/-1;border-left:0;border-top:1px solid #d7c3b5;padding:16px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.ft-front-right>p{grid-column:1/-1}.ft-top-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.ft-front{grid-template-columns:1fr}.ft-front-left{border-right:0;padding:0}.ft-front-center{grid-row:1}.ft-front-right{display:block}.ft-top-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.ft-top-card h4{font-size:16px}}
-</style><style is:global>
-body.media-home,body.media-home .home-shell,body.media-home .home-section,body.media-home .ft-intro{background:#fff1e5!important}
-body.media-home .home-shell{box-shadow:none!important}
-.ft-section-access{text-align:right;margin-bottom:12px}
-.ft-conversation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin:22px 0}
-.ft-conversation-card{min-width:0;border-top:1px solid #c9b4a5;padding-top:14px}
-.ft-conversation-card>a{text-decoration:none;color:#262a33;display:block}
-.ft-conversation-card img,.ft-conversation-card .photo-placeholder{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;margin-bottom:12px}
-.ft-conversation-card h3{font-size:clamp(22px,2.3vw,30px);line-height:1.25;margin:8px 0}
-.ft-conversation-card>p{color:#766657;font-size:13px}
-.ft-genre-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:18px}
-.ft-genre-card{display:block;min-width:0;color:#262a33;text-decoration:none;border-top:1px solid #c9b4a5;padding-top:13px}
-.ft-genre-visual{background:#ead8c9;width:100%;aspect-ratio:16/10;overflow:hidden}
-.ft-genre-visual img{width:100%;height:100%;object-fit:cover;display:block}
-.ft-genre-card h3{margin:10px 0 5px;font-size:clamp(21px,2vw,29px);color:#262a33}.ft-genre-card p{font-size:14px;line-height:1.55;color:#63574e;margin:0}
-@media(max-width:700px){.ft-conversation-grid{grid-template-columns:1fr}.ft-genre-grid{grid-template-columns:1fr;gap:24px}}
-</style></head>
+<html lang="fr"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/>
+<meta name="sda-preproduction-revision" content="ux-visuel-v5-20261112"/>
+<title>Scènes d’Arbitrage — Les décisions qui font l’économie</title>
+<meta name="description" content="La fiction pour explorer. L’analyse pour comprendre. Découvrez les arbitrages économiques à travers les Chroniques, Grands Entretiens et Regards croisés."/>
+<style is:inline set:html={articleStyle}/></head>
 <body class="media-home">
-<a class="skip" href="#contenu">Aller au contenu</a>
-<MediaHeader active="accueil"/>
-<main id="contenu" class="home-shell">
-<section class="home-intro ft-intro"><p class="micro">SCÈNES D'ARBITRAGE · LA FICTION POUR EXPLORER, L'ANALYSE POUR COMPRENDRE</p><h1>Les décisions qui font l'économie.</h1><p class="home-standfirst">Décisions, contraintes et conséquences : la fiction économique documentée met les arbitrages en scène. Les Regards croisés éclairent les mécanismes à partir de sources vérifiables.</p><div class="intro-links"><a href="/media/scenes/">Les Scènes</a><a href="/media/regards-croises/">Les Regards croisés</a><a href="/media/cycles/">Les 20 cycles</a></div></section>
-<section id="publications" class="home-section home-editorial" aria-label="À la une">
-<div class="ft-section-access"><a class="story-action" href="/media/publications/">Explorer le catalogue des publications</a></div>
-<div class="ft-front">
-<div class="ft-front-left">
-{featured&&<article class="ft-lead-text"><p class="micro">{featured.data.cycle} · {readings[featured.data.lecture_principale]}</p><h3><a href={urlOf(featured.id)}>{featured.data.title}</a></h3>{featured.data.summary&&<p>{featured.data.summary}</p>}<a class="story-action" href={urlOf(featured.id)}>Lire l'article</a></article>}
-
-</div>
-<div class="ft-front-center">{visualLead&&<a href={urlOf(visualLead.id)} class="ft-main-photo">{visualLead.data.hero_image?<img src={visualLead.data.hero_image} alt={visualLead.data.seo?.image_alt||""} loading="eager"/>:<div class="photo-placeholder"><span>PHOTOGRAPHIE DE L’ARTICLE</span></div>}<strong>{visualLead.data.title}</strong></a>}</div>
-<aside class="ft-front-right"><p class="micro">LE CHOIX DE LA RÉDACTION</p>{ordered.slice(3,6).map(a=><article><p class="micro">{a.data.cycle}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}</aside>
-</div>
-{ordered.length>1&&<section class="ft-top-stories" aria-labelledby="topstories"><h3 id="topstories">À découvrir également</h3><div class="ft-top-grid">{ordered.slice(1,9).map((a,i)=><article class="ft-top-card">{a.data.hero_image?<img src={a.data.hero_image} alt="" loading="lazy"/>:<div class="photo-placeholder"><span>IMAGE DE L'ARTICLE</span></div>}<p class="micro">{a.data.cycle} · {a.data.format==='regard-croise'?'REGARD CROISÉ':'SCÈNE'}</p><h4><a href={urlOf(a.id)}>{a.data.title}</a></h4></article>)}</div></section>}
+<a class="skip" href="#contenu">Aller au contenu</a><MediaHeader active="accueil"/>
+<main class="sda-v5-home" id="contenu">
+<section class="sda-v5-intro" aria-labelledby="home-title">
+<p class="sda-v5-eyebrow">LE MÉDIA DES DÉCISIONS ÉCONOMIQUES</p>
+<h1 id="home-title">Des histoires pour comprendre ce que choisir veut dire.</h1>
+<p>La fiction pour explorer. L’analyse pour comprendre.</p>
 </section>
-<section class="home-section ft-genres" aria-labelledby="genres-home-title"><div class="section-line"><div><p class="micro">LES FORMATS</p><h2 id="genres-home-title">Choisir sa lecture</h2></div></div>
-<div class="ft-genre-grid">
-{[
-{name:'Chroniques',href:'/media/scenes/#chronique',description:'Des contradictions économiques racontées avec humour et précision.',photo:'/images/genres/scenes_darbitrage_genre_01_chronique.webp'},
-{name:'Grands Entretiens',href:'/media/scenes/#grand-entretien',description:'Des échanges fictifs et documentés où les décisions sont mises à l’épreuve.',photo:'/images/genres/scenes_darbitrage_genre_03_grand_entretien.webp'},
-{name:'Regards croisés',href:'/media/regards-croises/',description:'Des analyses documentées pour confronter les mécanismes aux faits.',photo:null}
-].map(g=><a class="ft-genre-card" href={g.href}><div class="ft-genre-visual">{g.photo?<img src={g.photo} alt="" loading="lazy"/>:<div class="photo-placeholder" aria-hidden="true"><span>ANALYSE DOCUMENTÉE</span></div>}</div><h3>{g.name}</h3><p>{g.description}</p></a>)}
-</div></section>
-<section class="home-section" aria-labelledby="recent-conversations-heading">
-<div class="section-line"><div><p class="micro">EXPLORER LES QUESTIONS</p><h2 id="recent-conversations-heading">Les conversations</h2></div></div>
-<p class="home-section-intro">Des questions économiques explorées sous plusieurs angles, à travers des Scènes fictives documentées et des Regards croisés.</p>
-{recentConversations.length ? <div class="ft-conversation-grid">{recentConversations.slice(0,2).map(item=><article class="ft-conversation-card"><a href={item.url}>{item.photo?<img src={item.photo} alt="" loading="lazy"/>:<span class="photo-placeholder"><span>PHOTOGRAPHIE DE LA CONVERSATION</span></span>}<p class="micro">{item.cycle==='industrie'?'INDUSTRIE':'LOGEMENT & TERRITOIRES'} · {item.code}</p><h3>{item.title}</h3></a><p>{item.count} publication{item.count>1?'s':''}</p></article>)}</div> : <p class="small">Les conversations apparaîtront ici dès leurs premières publications.</p>}
-<a class="story-action" href="/media/conversations/">Explorer toutes les conversations</a>
-</section><style is:global>
-.ux-cycle-families{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.ux-cycle-family{min-width:0;border:1px solid #d6c1b0;background:#fffaf6;padding:20px}
-.ux-cycle-family h3{font:600 21px/1.3 'Playfair Display',Georgia,serif;margin:0 0 12px;color:#262a33}
-.ux-cycle-entry{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid #e4d6cb;color:#262a33;text-decoration:none}
-.ux-cycle-entry:hover,.ux-cycle-entry:focus-visible{color:#176b78;text-decoration:underline}
-.ux-cycle-entry span{font-size:13px;line-height:1.4}
-.ux-cycle-entry small{font-size:10px;color:#665b50;white-space:nowrap}
-@media(max-width:950px){.ux-cycle-families{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:640px){.ux-cycle-families{grid-template-columns:1fr}.ux-cycle-family{padding:16px}}
-</style>
-<section id="cycles" class="home-section" aria-labelledby="cycles-heading">
-<div class="section-line"><div><p class="micro">LES SECTEURS</p><h2 id="cycles-heading">Explorer les 20 cycles</h2></div><a class="story-action" href="/media/cycles/">Tous les cycles</a></div>
-<p class="home-section-intro">Six grandes familles pour explorer l’économie réelle. Les vingt cycles sont accessibles dès le lancement ; seules les publications effectivement disponibles sont proposées à la lecture.</p>
-<div class="ux-cycle-families">
-{cycleFamilies.map(family=><section class="ux-cycle-family" aria-label={family.label}><h3>{family.label}</h3>
-{family.codes.map(code=>{const cycle=cycleCatalogue.find(item=>item.code===code)!;const count=items.filter(a=>a.data.cycle===code).length;return <a class="ux-cycle-entry" href={`/media/cycles/${code}/`}><span>{cycle.label}</span><small>{count?count+' publication'+(count>1?'s':''):'En préparation'}</small></a>})}
-</section>)}
+<section class="sda-v5-hero" aria-label="Sélection de la rédaction">
+<div class="sda-v5-feature"><p class="sda-v5-label">À LA UNE · SÉLECTION ÉDITORIALE</p>
+{featured ? <>
+<h2><a href={urlOf(featured.id)}>{featured.data.title}</a></h2>
+{featured.data.summary&&<p>{featured.data.summary}</p>}
+<a class="sda-v5-link sda-v5-dark-cta" href={urlOf(featured.id)}>Découvrir l’article <span aria-hidden="true">↗</span></a>
+</> : <>
+<h2>Les décisions derrière les apparences.</h2><p>Les premières publications seront proposées ici dès leur mise à disposition.</p>
+<a class="sda-v5-link sda-v5-dark-cta" href="/media/cycles/">Explorer les cycles <span aria-hidden="true">↗</span></a>
+</>}
 </div>
+<aside class="sda-v5-hero-aside"><p class="sda-v5-label">POUR PROLONGER LA LECTURE</p>
+{heroConversation ? <>
+<h3>{heroConversation.title}</h3>
+<p>{cycleLabel(heroConversation.cycle)} · {heroConversation.count} publication{heroConversation.count>1?'s':''} disponible{heroConversation.count>1?'s':''}</p>
+<a class="sda-v5-link" href={heroConversation.url}>Explorer la conversation <span aria-hidden="true">↗</span></a>
+</> : <>
+<h3>Explorer par conversation</h3><p>Les conversations apparaissent dès leur première publication.</p>
+<a class="sda-v5-link" href="/media/cycles/">Découvrir les cycles <span aria-hidden="true">↗</span></a>
+</>}
+</aside></section>
+<section class="sda-v5-section" aria-labelledby="home-latest">
+<div class="sda-v5-section-head"><div><p class="sda-v5-label">LES PUBLICATIONS DISPONIBLES</p><h2 id="home-latest">Des lectures pour commencer</h2></div><a class="sda-v5-link" href="/media/publications/">Toutes les publications <span aria-hidden="true">↗</span></a></div>
+{latest.length ? <div class="sda-v5-articles">{latest.map(a=><article class="sda-v5-article-card">
+<p class="sda-v5-label">{genreLabel(a)}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3>
+{a.data.summary&&<p>{a.data.summary}</p>}
+<div class="sda-v5-card-footer"><span>{perspectiveLabel(a)||cycleLabel(a.data.cycle)}</span><a href={urlOf(a.id)}>Lire ↗</a></div>
+</article>)}</div> : <p>Les premières publications apparaîtront ici dès leur mise en ligne.</p>}
 </section>
-<section id="perspectives" class="home-section" aria-labelledby="perspectives-heading">
-<div class="section-line"><div><p class="micro">LES REGARDS</p><h2 id="perspectives-heading">Les huit Perspectives</h2></div></div>
-<p class="home-section-intro">Une décision engage souvent plusieurs savoirs et responsabilités. Découvrez ce que la stratégie, la finance, le droit, les opérations et les autres perspectives éditoriales permettent d’en comprendre.</p>
-<div class="expertise-grid">{Object.entries(readings).map(([code,name])=><a class="expertise-link" href={`/media/lectures/${code}/`}>{photoLecture(code)?<img class="reading-tiny-photo" src={photoLecture(code)} alt="" loading="lazy"/>:<span class="reading-photo-placeholder" aria-hidden="true">PHOTO</span>}{name}<span aria-hidden="true">↗</span></a>)}</div>
+<section class="sda-v5-explore" aria-labelledby="home-cycles">
+<div class="sda-v5-section-head"><div><p class="sda-v5-label">SIX FAMILLES · VINGT CYCLES</p><h2 id="home-cycles">Explorer l’économie, secteur par secteur</h2></div><a class="sda-v5-link" style="color:#eee!important" href="/media/cycles/">Voir tous les cycles ↗</a></div>
+<div class="sda-v5-families">{cycleFamilies.map((family,i)=><section class="sda-v5-family" aria-label={family.label}>
+<small>{String(i+1).padStart(2,'0')} · {family.codes.length} CYCLES</small>
+<h3>{family.label}</h3>
+{family.codes.map(code=><a href={'/media/cycles/'+code+'/'}>{cycleLabel(code)}</a>)}
+</section>)}</div>
 </section>
-<section class="home-section"><p class="micro">NOTRE DÉMARCHE</p><h2>La fiction pour explorer. L’analyse pour comprendre.</h2><p class="home-section-intro">Les Scènes sont des entretiens entièrement imaginaires : personnages, situations et dialogues sont fictifs. Les Regards croisés examinent les mécanismes économiques à partir de données et de références réelles, indépendamment des récits imaginaires.</p><a class="story-action" href="/media/institution/notre-methode/">Découvrir notre méthode</a></section>
-<section class="home-section newsletter-home"><p class="micro">GARDER LE FIL</p><h2>La lettre de Scènes d’Arbitrage</h2><p class="home-section-intro">Recevez les nouvelles Scènes de fiction économique documentée et les Regards croisés d’analyse.</p><a class="story-action" href="/media/newsletter/">Découvrir la newsletter</a></section>
-</main>
-<MediaFooter/>
-</body></html>
+<section class="sda-v5-section" aria-labelledby="home-conversations">
+<div class="sda-v5-section-head"><div><p class="sda-v5-label">UNE AUTRE PORTE D’ENTRÉE</p><h2 id="home-conversations">Les conversations déjà documentées</h2></div><a class="sda-v5-link" href="/media/conversations/">Parcourir ↗</a></div>
+{groups.length ? <div class="sda-v5-conversations">{groups.slice(0,6).map(g=><article class="sda-v5-conversation-card">
+<p class="sda-v5-label">{cycleLabel(g.cycle)} · CONVERSATION {g.code}</p>
+<h3><a href={g.url}>{g.title}</a></h3><p>Une question économique explorée à travers différents arbitrages.</p>
+<footer>{g.count} publication{g.count>1?'s':''} disponible{g.count>1?'s':''} · <a class="sda-v5-link" href={g.url}>Explorer ↗</a></footer>
+</article>)}</div> : <p>Les conversations seront accessibles à partir de leur première publication.</p>}
+</section>
+<aside class="sda-v5-bottom"><div><h2>Un média qui s’enrichit chaque semaine.</h2><p>Retrouvez les nouvelles publications et parcourez les secteurs sans changer vos repères.</p></div><a class="sda-v5-link" href="/media/publications/">Explorer le catalogue ↗</a></aside>
+</main><MediaFooter/></body></html>
