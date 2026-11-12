@@ -1,5 +1,7 @@
 ---
 title: "« Nous avons trouvé un deuxième fournisseur. Il ne nous reste plus qu'à pouvoir utiliser ses pièces. »"
+hero_image: "/images/int-c3-cmd-naf-09-visuel-v2.webp"
+image_alt: "Deux composants mécaniques, l’un installé dans une machine, l’autre exposé sous une vitrine transparente avec un ruban doré."
 summary: "Pour ne plus dépendre d'un seul fabricant étranger, une entreprise française a diversifié ses approvisionnements. Les premières pièces sont arrivées. Les machines, elles, attendent toujours. Rencontre avec une directrice qui découvre les limites de la sécurité industrielle."
 cycle: "internationalisation"
 conversation: "C3"
