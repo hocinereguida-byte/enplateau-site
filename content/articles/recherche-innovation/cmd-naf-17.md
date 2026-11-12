@@ -1,6 +1,8 @@
 ---
 
 title: "Notre molécule est une merveille. Malheureusement, elle n'a pas de business plan."
+hero_image: "/images/rec-c2-cmd-naf-17-visuel-v1.webp"
+image_alt: "Petite peluche représentant une molécule, seule dans une salle de réunion."
 
 summary: "Antoine Delmas a consacré six ans de sa vie à BM-417, une molécule prometteuse contre certaines maladies inflammatoires. Les résultats en laboratoire sont encourageants, ses quatorze salariés sont enthousiastes et ses investisseurs commencent à regarder leur montre. Jean Toksik reçoit un entrepreneur amoureux de sa découverte, dont le conseil d'administration vient de lui demander de choisir entre poursuivre, trouver un partenaire ou arrêter."
 
