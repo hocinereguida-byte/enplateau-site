@@ -1,6 +1,6 @@
 ---
 title: "Huit ateliers, cinq plans et un mur qui refusait de négocier"
-summary: "Thomas, directeur technique, revient sur une reconversion en huit ateliers dont les hypothèses structurelles et commerciales ont progressivement fragilisé la viabilité."
+summary: "Thomas L., directeur technique, revient sur une reconversion en huit ateliers dont les hypothèses structurelles et commerciales ont progressivement fragilisé la viabilité."
 format: "chronique"
 genre_narratif: "chronique"
 cycle: "immobilier"
