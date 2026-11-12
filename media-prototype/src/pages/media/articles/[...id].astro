@@ -163,10 +163,10 @@ const shareBase=canonical;
 }
 
 /* Limited typographic trial: dialogue vs narration, Claire/Kevin only. */
-.article-literary[data-chronique-dialogues] .fiction-dialogue{margin:1.03em 0 1.12em;padding-left:clamp(11px,3vw,20px);border-left:1px solid rgba(34,52,59,.22)}
-.article-literary[data-chronique-dialogues] .fiction-dialogue-line{margin:0;font:inherit;line-height:inherit}
-.article-literary[data-chronique-dialogues] .fiction-dialogue-turn{margin:0 0 .8em}
-.article-literary[data-chronique-dialogues] .fiction-dialogue-speaker{display:block;margin:0 0 .15em;font:600 11px/1.4 'IBM Plex Sans',Arial,sans-serif;letter-spacing:.025em;color:var(--blue)}
+.article-literary .fiction-dialogue{margin:1.03em 0 1.12em;padding-left:clamp(11px,3vw,20px);border-left:1px solid rgba(34,52,59,.22)}
+.article-literary .fiction-dialogue-line{margin:0;font:inherit;line-height:inherit}
+.article-literary .fiction-dialogue-turn{margin:0 0 .8em}
+.article-literary .fiction-dialogue-speaker{display:block;margin:0 0 .15em;font:600 11px/1.4 'IBM Plex Sans',Arial,sans-serif;letter-spacing:.025em;color:var(--blue)}
 .article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue-line:last-child{margin-bottom:0}
 @media(max-width:740px){.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue{padding-left:12px;margin:.9em 0 1em}}
 </style></head><body><a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/><main class="shell" id="contenu"><div class="reading">
@@ -304,7 +304,7 @@ const shareBase=canonical;
  };
  // All Chroniques: format explicitly attributed manuscript dialogue without changing source text.
  // Never infer a speaker from alternating turns or unlabelled em dashes.
- if(root.hasAttribute('data-chronique-dialogues')){
+ if(root.hasAttribute('data-chronique-dialogues') || !root.hasAttribute('data-article-id') || !root.getAttribute('data-article-id')?.startsWith('industrie/')){
   const paragraphs=Array.from(root.querySelectorAll(':scope > p'));
   let group=null;
   for(const p of paragraphs){
