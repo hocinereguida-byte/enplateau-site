@@ -135,6 +135,10 @@ const shareBase=canonical;
  .recommendation-card{padding:16px 17px}
 }
 
+/* Magazine front matter: lead image immediately after headline, before long standfirst. */
+.reading>header .hero-editorial{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border:0;margin:20px 0 23px}
+@media(max-width:740px){.reading>header .hero-editorial{margin:17px 0 21px}}
+
 /* Final mobile editorial polish: actual reading-header selectors. */
 .reading>header .meta{border-bottom:0;padding:0;margin:17px 0 10px;gap:3px 14px;opacity:.82}
 .reading>header .lead{margin-bottom:12px}
@@ -172,9 +176,10 @@ const shareBase=canonical;
 @media(max-width:740px){.article-literary[data-article-id="industrie/ind-c1-cst-04-brouillon"] .fiction-dialogue{padding-left:12px;margin:.9em 0 1em}}
 </style></head><body><a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/><main class="shell" id="contenu"><div class="reading">
 
-<header><p class="kicker"><a href={`/media/cycles/${canonicalCycleCode(d.cycle)}/`}>{publicCycleLabel(d.cycle)}</a> / <a href={`/media/cycles/${d.cycle}/conversations/${d.conversation}/`}>{classification}</a> / <a href={`/media/cycles/${d.cycle}/contextes/${d.contexte}/`}>{context}</a></p><h1>{d.title}</h1>{d.summary&&<p class="lead">{d.summary}</p>}
+<header><p class="kicker"><a href={`/media/cycles/${canonicalCycleCode(d.cycle)}/`}>{publicCycleLabel(d.cycle)}</a> / <a href={`/media/cycles/${d.cycle}/conversations/${d.conversation}/`}>{classification}</a> / <a href={`/media/cycles/${d.cycle}/contextes/${d.contexte}/`}>{context}</a></p><h1>{d.title}</h1>
+{d.hero_image&&<img class="hero hero-editorial" src={d.hero_image} alt={imageAlt} loading="eager" decoding="async" fetchpriority="high"/>}
+{d.summary&&<p class="lead">{d.summary}</p>}
 <div class="meta">{format&&<span>{format}</span>}{genreLabel&&<span>{genreLabel}</span>}{modeDescription&&<span>{modeDescription}</span>}{perspectiveCode&&d.format!=='regard-croise'&&<a href={`/media/lectures/${perspectiveCode}/`}>Les angles morts : {reading}</a>}{pubDate&&<span>Publié le {formattedDate(pubDate)}</span>}{updated&&<span>Mis à jour le {formattedDate(updated)}</span>}</div></header>
-{d.hero_image&&<img class="hero" src={d.hero_image} alt={imageAlt} loading="eager"/>}
 <div class="reader-toolbar" aria-label="Outils de lecture"><details class="reader-tool" id="audio-reader"><summary aria-label="Ouvrir la lecture audio"><span aria-hidden="true">♫</span> Écouter</summary><div class="tool-panel"><p class="audio-description">Lecture vocale avec la voix française disponible sur votre appareil.</p><div class="audio-controls"><button type="button" id="audio-play">Écouter</button><button type="button" id="audio-pause" disabled>Pause</button><button type="button" id="audio-resume" disabled>Reprendre</button><button type="button" id="audio-stop" disabled>Arrêter</button></div><p class="audio-status" id="audio-status" role="status" aria-live="polite">Prêt à écouter.</p></div></details><details class="reader-tool share-tool"><summary aria-label="Afficher les options de partage"><span aria-hidden="true">↗</span> Partager</summary><div class="tool-panel"><div class="share-links" aria-label="Options de partage"><a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareBase)}`} target="_blank" rel="noopener noreferrer">LinkedIn</a><a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareBase)}`} target="_blank" rel="noopener noreferrer">Facebook</a><a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareBase)}&text=${encodeURIComponent(d.title)}`} target="_blank" rel="noopener noreferrer">X</a><a href={`mailto:?subject=${encodeURIComponent(d.title)}&body=${encodeURIComponent(shareBase)}`}>E-mail</a><button id="copy-article-link" type="button">Copier le lien</button></div></div></details></div><article class:list={['article', { 'article-literary': d.format!=='regard-croise' }]} data-article-id={article.id} data-chronique-dialogues={genre==='chronique' ? '' : undefined} aria-label="Texte intégral"><Content/></article>
 
 {authorSignature&&<section class="panel" aria-label="Signature de l’auteur"><p class="micro">SIGNATURE</p>{d.signature_portrait&&<img src={d.signature_portrait} alt="" loading="lazy" style="max-width:96px;border-radius:50%"/>}<h2>{authorSignature}</h2>{d.signature_biographie&&<p>{d.signature_biographie}</p>}{d.signature_tonalite&&<p class="small">Tonalité : {d.signature_tonalite}</p>}</section>}
