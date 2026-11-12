@@ -29,7 +29,7 @@ const records = [
   "immobilier/imm-c1-rc-01-isabelle.md|IMM-C1-RC-01|immobilier|V6|finance-investissement|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1ohTdf2SRkE2Uy6C34u97ZskCefKgS_hy9IYK72s-oQQ",
   "immobilier/imm-c1-rc-02-thomas.md|IMM-C1-RC-02|immobilier|V3|operations-organisation|IMM-C1-RC||territoire-reconversion|chronique|chronique|1eoYOI9tvNWgGuOIy423FyiXQcLCm1qEIkFl1nPIXj4U",
   "immobilier/imm-c1-rc-03-nathalie.md|IMM-C1-RC-03|immobilier|V2|strategie-gouvernance|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1qNrr9sxnoNV5ZDVT5xCVn8xzp2NPnc_zKyOmKXgscEM",
-  "immobilier/imm-c1-rc-04-karim.md|IMM-C1-RC-04|immobilier|V3|droit-regulation|IMM-C1-RC||territoire-reconversion|chronique|chronique|1jfBl26WV6qeDzF7UUsCu_dFW2x95-OZblpat5n83W5M",
+  "immobilier/imm-c1-rc-04-karim.md|IMM-C1-RC-04|immobilier|V6.2|droit-regulation|IMM-C1-RC||territoire-reconversion|chronique|chronique|1oLB9VVh-iLdV5O19zTNCOO-vSFAgwp-nnnl28qb9fck",
   "immobilier/imm-c1-rc-regard-01.md|IMM-C1-RC-REGARD-01|immobilier|V2.4||IMM-C1-RC||territoire-reconversion|regard-croise||1R1L4TWX5XasFxNfIh0yLAHuNKchMEy5Sh39_g0EDOjo",
   "agriculture/agr-c1-a02-chronique-vergers.md|AGR-C1-A02|agriculture|V4.5|strategie-gouvernance|AGR-C1-A|engagement-productif-longue-duree|arboriculture-sous-revue-strategique|chronique|chronique|1l75XgAOrlllaRdH_BRrv-xtV2w0WDsPQ_cT628wJsSw",
   "agriculture/agr-c1-b01-maraichage.md|AGR-C1-B01|agriculture|V3|strategie-gouvernance|AGR-C1-B|debouches-variables|maraichage-debouches-concurrents|entretien|grand-entretien|1NRJHKCKFijkOKC4KDpYtbTFI4RdxB9fNpUbzi6vFdpg",
@@ -65,7 +65,7 @@ for (const r of records) {
   if (r.perspective) { tests.perspective_principale=r.perspective; tests.genre_narratif=r.genre; }
   if (r.family) tests.famille_decisionnelle=r.family;
   for (const [key,value] of Object.entries(tests)) if (d[key] !== value) errors.push(r.code+' : '+key+' attendu '+JSON.stringify(value)+', trouvé '+JSON.stringify(d[key]));
-  if (r.code === 'IMM-C1-RC-04' && d.title !== "L'entreprise avait évité de signer un mauvais contrat. Elle a dépensé 35 000 euros pour continuer à ne pas le signer.") errors.push('Titre de Karim V3 différent du titre validé');
+  if (r.code === 'IMM-C1-RC-04' && d.title !== 'Immobilier : dix-sept pages pour rendre possible un quartier qui n’existait plus.') errors.push('Titre de Karim V6.2 différent du titre validé');
   if (d.published !== true) errors.push(r.code+' : consultation préproduction désactivée');
   if (r.driveId && !d.source_document_url?.includes('/document/d/'+r.driveId+'/')) {
     const actualDriveId = d.source_document_url?.match(/\/document\/d\/([^/]+)/)?.[1] ?? '(absent ou URL invalide)';
