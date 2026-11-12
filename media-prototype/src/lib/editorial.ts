@@ -434,6 +434,11 @@ export const publicPerspectives: Record<string, { label: string; description: st
   'energie-ressources': { label: 'On a de la marge', description: 'Énergie, matières, dépendances et limites physiques.' },
   'territoires-politiques-publiques': { label: 'Tout le monde a été consulté', description: 'Territoires, collectivités, politiques publiques et conséquences locales.' },
 };
+/** Compatibilité des anciens articles Numérique sans déplacer leurs URLs. */
+export const canonicalCycleCode = (code: string): string => code === 'numerique-telecom' ? 'numerique' : code;
+export const publicCycleLabel = (code: string): string =>
+  cycleCatalogue.find(item => item.code === canonicalCycleCode(code))?.label ?? code;
+
 export const publicPerspectiveLabel = (code: string): string => publicPerspectives[code]?.label ?? readings[code] ?? code;
 export const publicGenreLabel = (data: any): string =>
   data.format === 'regard-croise' ? 'Le fond du problème'
