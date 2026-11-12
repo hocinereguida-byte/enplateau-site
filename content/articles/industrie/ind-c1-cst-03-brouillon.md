@@ -1,5 +1,7 @@
 ---
 title: "Trois millions d'euros pour un robot, alors que l'usine n'a pas encore essayé de déplacer une table"
+hero_image: "/images/ind-c1-cst-03-nathalie-visuel-v1.webp"
+image_alt: "Un bras robotisé industriel sophistiqué manipule un simple pied de table en bois, sans visage ni texte ajouté."
 summary: "Nathalie B. défend un diagnostic des flux face à un projet de robot à trois millions d'euros, avant de découvrir les limites ergonomiques de sa propre solution."
 format: "chronique"
 cycle: "industrie"
