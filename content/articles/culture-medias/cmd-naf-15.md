@@ -1,5 +1,7 @@
 ---
 title: "Nous avions promis 80 % pour la musique. Nous avions oublié de payer la plateforme."
+hero_image: "/images/cul-c5-cmd-naf-15-visuel-v2-anonyme.webp"
+image_alt: "Photographie éditoriale consacrée à une plateforme musicale, avec symbole musical sans nom de marque."
 summary: "Bernard Lemoine a créé Mélodie Libre pour mieux rémunérer les musiciens. Trois ans plus tard, les abonnés affluent, les comptes plongent et sa nouvelle directrice financière réclame des explications. Jean Toksik rencontre un entrepreneur qui voulait révolutionner le partage de la valeur et découvre que les factures se règlent rarement avec des convictions."
 cycle: "culture-medias"
 conversation: "C5"
