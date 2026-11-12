@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, conversations, publicationInstant, cycleCatalogue, cycleFamilies, publicPerspectives, publicPerspectiveLabel, publicGenreLabel, perspectiveOf } from '../../lib/editorial';
+import { isPublic, validClassification, urlOf, conversations, publicationInstant, cycleCatalogue, cycleFamilies, publicPerspectives, publicPerspectiveLabel, publicGenreLabel, perspectiveOf, publicCycleLabel } from '../../lib/editorial';
 import { articleStyle } from '../../lib/article-style';
 import MediaFooter from '../../components/MediaFooter.astro';
 import MediaHeader from '../../components/MediaHeader.astro';
@@ -15,7 +15,7 @@ const groups=Object.entries(conversations).flatMap(([cycle,entries])=>Object.ent
 const heroConversation=groups.find(g=>g.cycle===featured?.data.cycle&&g.code===featured?.data.conversation)??groups[0];
 const genreLabel=(a:any)=>publicGenreLabel(a.data).toLocaleUpperCase('fr-FR')+(a.data.format==='regard-croise'?' · ANALYSE JOURNALISTIQUE':' · FICTION SATIRIQUE');
 const perspectiveLabel=(a:any)=>publicPerspectiveLabel(perspectiveOf(a.data));
-const cycleLabel=(code:string)=>cycleCatalogue.find(c=>c.code===code)?.label??code;
+const cycleLabel=publicCycleLabel;
 ---
 <!doctype html>
 <html lang="fr"><head>
