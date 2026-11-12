@@ -1,5 +1,7 @@
 ---
 title: "Comment former trente ouvriers sans arrêter une seule machine ?"
+hero_image: "/images/ind-c1-cst-04-claire-kevin-visuel-v2.webp"
+image_alt: "Kevin, vu de dos, possède deux têtes orientées en sens opposés ; quatre ouvriers prennent des notes autour d’un poste de travail industriel."
 summary: "Claire M. a organisé l'arrivée de trente recrues. Kevin R. doit leur apprendre le métier. L'usine a signé le programme de formation ; il reste à trouver qui fera le travail pendant les heures réservées."
 format: "chronique"
 cycle: "industrie"
