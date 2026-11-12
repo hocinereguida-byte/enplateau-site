@@ -1,10 +1,10 @@
 ---
 
-title: "Notre molécule est une merveille. Malheureusement, elle n'a pas de business plan."
+title: "Quarante-huit diapositives pour ne pas dire stop"
 hero_image: "/images/rec-c2-cmd-naf-17-visuel-v1.webp"
 image_alt: "Petite peluche représentant une molécule, seule dans une salle de réunion."
 
-summary: "Antoine Delmas a consacré six ans de sa vie à BM-417, une molécule prometteuse contre certaines maladies inflammatoires. Les résultats en laboratoire sont encourageants, ses quatorze salariés sont enthousiastes et ses investisseurs commencent à regarder leur montre. Jean Toksik reçoit un entrepreneur amoureux de sa découverte, dont le conseil d'administration vient de lui demander de choisir entre poursuivre, trouver un partenaire ou arrêter."
+summary: "Antoine D. a consacré six ans à BM-417, une molécule prometteuse contre certaines maladies inflammatoires. Ses quatorze salariés y croient. Ses investisseurs attendent des preuves. Avec neuf mois de trésorerie, son conseil d'administration lui demande ce que quatre millions d'euros et dix-huit mois de recherche permettraient réellement de décider. Antoine redoutait les questions de Toksik, mais était fier d'être invité. Le journaliste, lui, veut vendre immédiatement la découverte."
 
 cycle: "recherche-innovation"
 
@@ -32,15 +32,15 @@ published: true
 
 publication_date: "2026-11-10T13:00:00+01:00"
 
-source_document_url: "https://docs.google.com/document/d/1odY4BqKHda4B1SlL8eC2V3HE0WHdla66dsVhVkuFXzs/edit"
+source_document_url: "https://docs.google.com/document/d/1QqmgXh1NwfvRZu5Gs98oZmd2QzjYYfaU5sCPn1Abi4M/edit"
 
-source_document_version: "V3"
+source_document_version: "V4.6"
 
 autorisation_publication: "preproduction_uniquement"
 
 source_notice: "Fiction satirique. Entreprise, personnages, chiffres et résultats scientifiques imaginaires."
 
-methodology_specific: "CMD-NAF-17 — V3 visa documentaire et éditorial favorable, longueur 6452 caractères ; critères de décision et d’arrêt explicites."
+methodology_specific: "CMD-NAF-17 — V4.6, visa documentaire interne de plausibilité favorable à la préproduction (12 novembre 2026). Phase de 4 mois / 400 000 € : scénario fictif et conditionnel, non certifié. Visa collectif et bon à publier non délivrés."
 
 tag_1: "Recherche et innovation"
 
@@ -50,123 +50,173 @@ tag_3: "Financement de la recherche"
 
 ---
 
+**Jean Toksik —** Bonne nouvelle, Antoine : j'ai trouvé un client pour votre molécule.
 
+**Antoine D. —** Impossible. Elle est encore expérimentale.
 
-**Jean Toksik —** Vous parlez de BM-417 comme de votre enfant.
+— Le client, c'est moi. Vous voyez ? Je vous apporte un client et vous refusez de lui vendre.
 
-**Antoine Delmas —** C'est beaucoup plus compliqué qu'un enfant. Elle ne dort jamais, coûte une fortune et personne ne sait si elle réussira dans la vie. Mais elle est magnifique. Regardez cette image !
+— Nous avons des résultats de laboratoire, pas un médicament. Il faut encore établir sa sécurité et son intérêt thérapeutique.
 
-— C'est une courbe.
+— Six ans pour quelque chose qui n'existe pas ?
 
-— Une courbe exceptionnelle ! Nous avons observé une activité reproductible sur une cible biologique impliquée dans certaines maladies inflammatoires. Six ans de travail. Quand j'ai vu les résultats, j'ai embrassé notre centrifugeuse.
+— Qui pourrait devenir un médicament. C'est le principe de la recherche.
 
-— Elle a apprécié ?
+— Mauvais slogan. Essayons une émission d'investisseurs. Vous avez quatre-vingt-dix secondes pour convaincre.
 
-— Elle a continué de tourner. Aucune considération financière. C'est ce que j'aime chez elle.
+— Pour résumer six ans ?
 
-— Votre molécule soigne donc des patients ?
+— Il vous en reste soixante-dix-huit.
 
-— Pas encore ! Nous avons des résultats expérimentaux, pas un médicament. Il reste à établir sa sécurité, à confirmer son potentiel thérapeutique et, si les preuves le permettent, à préparer les essais chez l'humain. Mais vous devriez voir notre équipe devant les résultats. Certains pleurent devant les courbes.
+— BM-417 agit de manière reproductible sur une cible biologique impliquée dans certaines maladies inflammatoires. Nous devons encore établir ce qui la distingue des autres approches.
 
-— Vous aussi ?
+— Vous avez dit « encore ». Les investisseurs sont déjà partis.
 
-— Moi, je leur donne des prénoms.
+— Ils auraient raison de demander des preuves.
 
-— Vous disposez de neuf mois de trésorerie.
+— Vous êtes votre propre obstacle. Pourtant, vous avez demandé quatre millions d'euros pour dix-huit mois supplémentaires.
 
-— Je préfère dire que nous avons neuf mois pour convaincre le monde.
+— Avec quarante-huit diapositives. La dernière montrait notre molécule sur fond de lever de soleil.
 
-— Et plusieurs années de développement devant vous.
+— Et le conseil a applaudi ?
 
-— Vous avez une manière de juxtaposer les chiffres qui manque singulièrement de romantisme.
+— Sa présidente a demandé quelle décision les expériences permettraient de prendre.
 
-— Vous avez demandé quatre millions d'euros pour dix-huit mois de recherche supplémentaire.
+— Vous lui montriez l'aube de la médecine, elle demandait l'heure.
 
-— Avec quarante-sept diapositives, dont une photographie de BM-417 sur fond de lever de soleil.
+— J'ai expliqué que nous avions déjà investi six ans et plusieurs millions.
 
-— Votre conseil d'administration a refusé ?
+— Donc, pour ne pas perdre l'argent déjà dépensé, vous proposiez d'en dépenser davantage.
 
-— Sa présidente a demandé quelle décision ces expériences permettraient de prendre. Une question d'une violence inouïe. On ne demande pas à un chercheur amoureux de sa molécule de prévoir les conditions de leur séparation.
+— Les résultats étaient prometteurs !
 
-— Vous dirigez pourtant une entreprise.
+— Les résultats, oui. Votre raisonnement, beaucoup moins.
 
-— Je le sais. C'est le principal défaut de mon métier.
+— Nous étions enfin proches de quelque chose.
 
-— Les industriels ne sont pas intéressés ?
+— Vous ne saviez pas encore de quoi. C'est fascinant. Vous parlez de BM-417 comme de votre enfant.
 
-— Trois nous ont reçus. Le premier voulait davantage de données de sécurité. Le deuxième demandait ce qui nous distinguait des autres traitements en développement. Le troisième a trouvé notre technologie fascinante.
+— C'est plus compliqué qu'un enfant. Elle ne dort jamais, coûte une fortune et personne ne sait si elle réussira dans la vie.
 
-— Une bonne nouvelle.
+— Elle a au moins une photo d'identité ?
 
-— Il nous a conseillé de recontacter le premier.
+— Une courbe exceptionnelle. Quand nous l'avons obtenue, j'ai embrassé notre centrifugeuse.
 
-— Vous avez donc une piste scientifique, mais pas encore de partenaire prêt à financer la suite.
+— Elle a demandé des parts ?
 
-— Exactement. Vous voyez, je peux être raisonnable.
+— Elle a continué de tourner. Aucune considération financière.
 
-— Pendant combien de temps ?
+— Vous embrassez souvent le matériel ?
 
-— Généralement jusqu'à ce qu'on parle de BM-417.
+— Seulement lors des grandes découvertes.
 
-— Votre conseil a étudié d'autres options ?
+— Et les autres programmes de recherche ?
 
-— Poursuivre seuls, chercher un accord de licence, réorienter le programme ou l'arrêter. Avant, les administrateurs admiraient mes diapositives. Maintenant, ils lisent les chiffres en bas. Je ne sais pas ce qui leur est arrivé.
+— Nous avons dû leur demander quelques efforts.
 
-— Vous vouliez continuer ?
+— Lesquels ?
 
-— Évidemment ! Six ans, plusieurs millions investis et enfin des résultats encourageants. On n'abandonne pas sa molécule au moment où elle commence à nous comprendre.
+— Reporter certains achats d'équipement.
 
-— L'argent déjà dépensé ne justifie pas forcément d'en dépenser davantage.
+— Pour financer BM-417 ?
 
-— C'est exactement ce qu'a dit notre présidente. Vous vous connaissez ?
+— Pour préserver nos priorités.
 
-— Qu'est-ce qui vous a fait changer d'avis ?
+— Qui décidait des priorités ?
 
-— Claire, notre directrice scientifique. Elle aime BM-417 autant que moi. Mais elle a montré que notre programme de dix-huit mois ne répondrait pas suffisamment aux deux questions qui bloquaient les partenaires : notre avantage par rapport aux autres approches et la faisabilité de la prochaine étape de développement.
+— Moi.
 
-— Votre propre scientifique vous a déconseillé de poursuivre ?
+— Votre entreprise est alignée sur vos convictions.
 
-— Elle a déconseillé ce programme. Elle a dit : « Antoine, une belle expérience n'est pas nécessairement une bonne décision d'investissement. » J'ai trouvé cela cruel, surtout de la part d'une personne à qui j'avais offert une tasse avec notre molécule dessus.
+— Je reconnais que j'avais tendance à confondre les deux.
 
-— Et les quatre millions ?
+— Qui vous a fait changer d'avis ?
 
-— Nous avons renoncé à les rechercher pour ce programme. Le conseil a autorisé une phase courte, avec un budget plafonné, pour vérifier deux points décisifs et présenter les résultats à des industriels susceptibles de prendre le relais.
+— Claire, notre directrice scientifique. Elle aime cette molécule autant que moi.
 
-— Si les résultats restent insuffisants ?
+— Elle vous a conseillé de la vendre ?
 
-— Nous arrêterons de financer BM-417 chez BioMiracle. Nous examinerons les possibilités de licence ou de valorisation des travaux, sans prétendre qu'un partenaire existe déjà.
+— Non. Elle a examiné nos dix-huit mois d'expériences. Puis elle a demandé si elles répondraient aux deux questions qui bloquaient les partenaires industriels : quel avantage BM-417 pouvait réellement présenter, et si la prochaine étape de développement était envisageable.
 
-— Vous avez accepté facilement ?
+— Et alors ?
 
-— J'ai proposé d'appeler cela « une accélération stratégique par réduction du périmètre ». Le conseil a accepté « réduction du périmètre ». Il a refusé « accélération ».
+— Notre programme produisait beaucoup de données intéressantes, mais pas assez de réponses à ces deux questions.
 
-— Pourquoi avoir finalement accepté ?
+— Quatre millions pour des expériences intéressantes. C'est une offre premium.
 
-— Claire m'a demandé : « Tu veux donner une chance à cette découverte ou continuer à travailler dessus jusqu'à ce qu'on ne puisse plus payer l'équipe ? » J'ai compris que ma passion pouvait finir par détruire ce qu'elle voulait protéger.
+— J'ai protesté. La recherche réserve des surprises. On ne peut pas la réduire à deux cases.
 
-— Vos salariés connaissent les risques ?
+— C'est vrai.
 
-— Oui. Ils connaissent les échéances, les critères de décision et les conséquences possibles. Pour la première fois, notre calendrier comporte une date à laquelle quelque chose pourrait vraiment s'arrêter.
+— J'ai dit qu'arrêter risquait de démoraliser l'équipe.
 
-— Vous le vivez comment ?
+— Celle à qui vous aviez demandé de reporter ses équipements ?
 
-— Très mal. Hier, j'ai félicité un microscope. Claire m'a demandé s'il avait franchi un jalon de financement.
+— Claire me l'a fait remarquer aussi.
 
-— Vous découvrez la discipline budgétaire.
+— Elle manque de délicatesse.
 
-— J'ai surtout découvert qu'elle pouvait servir la science. C'est déjà beaucoup pour un mardi.
+— Elle m'a demandé : « Tu défends BM-417 ou le fait d'avoir eu raison ? »
 
-— Et si BM-417 doit s'arrêter ?
+— Vous avez répondu ?
 
-— Je serai dévasté. Mais les résultats resteront valables. Ce qui serait absurde, ce serait de sacrifier quatorze personnes et nos autres recherches pour refuser d'admettre que nous n'avons pas les moyens de poursuivre.
+— Avec cinq diapositives supplémentaires.
 
-— Vous avez conservé sa photographie ?
+— Une contre-attaque redoutable.
 
-— Bien sûr. Et sa tasse. Et une petite peluche en forme de molécule.
+— Elle m'a laissé terminer. Puis elle a dit : « Tu veux donner une chance à cette découverte ou travailler dessus jusqu'à ce qu'on ne puisse plus payer l'équipe ? »
+
+— Et là, vous avez cédé ?
+
+— J'ai résisté deux jours. J'acceptais toutes les incertitudes scientifiques, sauf celle qui concernait ma propre décision.
+
+— Et finalement, qu'a décidé votre conseil ?
+
+— Il a abandonné le programme de dix-huit mois. Nous avons obtenu quatre mois pour vérifier les deux points décisifs, avec un plafond de 400 000 euros.
+
+— Quatre millions pour dix-huit mois, puis quatre cent mille pour quatre mois. Vous lancez une gamme économique ?
+
+— Ce n'est pas le même programme.
+
+— Naturellement. Dans les promotions, il manque toujours quelque chose.
+
+— Nous avons retiré les expériences non décisives.
+
+— Vous aviez donc prévu de facturer les autres au tarif normal ?
+
+— Elles pouvaient être utiles scientifiquement. Mais pas forcément pour décider maintenant.
+
+— Votre découverte devient sélective depuis que vous n'avez plus quatre millions.
+
+— Depuis que Claire m'a obligé à distinguer curiosité scientifique et responsabilité de dirigeant.
+
+— Les 400 000 euros sont une dépense entièrement nouvelle ?
+
+— En partie. Le plafond inclut des salaires déjà prévus et de nouvelles prestations. Le conseil a exigé de préserver les autres recherches et le fonctionnement de l'entreprise.
+
+— Et au bout de quatre mois ?
+
+— Nous examinerons les résultats comparatifs et la faisabilité de l'étape suivante. Si les preuves suffisent, nous poursuivrons les discussions industrielles engagées en parallèle. Sinon, notre biotech cessera de financer BM-417.
+
+— Vous ne promettez donc ni médicament, ni client, ni suite.
+
+— Je promets une décision fondée sur de meilleures preuves.
+
+— Vous êtes devenu impossible à inviter dans une émission commerciale.
+
+— C'est Claire qui m'a appris qu'une découverte peut mériter qu'on s'y intéresse sans justifier toutes les dépenses qu'on imagine pour elle.
+
+— Et si vous devez arrêter ?
+
+— Je serai dévasté. Mais je ne sacrifierai pas quatorze personnes et nos autres recherches pour éviter de reconnaître une erreur.
+
+— Vous avez conservé un souvenir de BM-417 ?
+
+— Sa photographie, une tasse et une petite peluche en forme de molécule.
 
 — Vous avez fait fabriquer une peluche ?
 
-— Cent cinquante. Nous pensions les offrir à nos futurs partenaires.
+— Cent cinquante. Pour nos futurs partenaires.
 
 — Combien en avez-vous distribuées ?
 
@@ -177,4 +227,3 @@ tag_3: "Financement de la recherche"
 — Claire les a classées dans les actifs à valoriser.
 
 Fiction satirique. Entreprise, personnages, chiffres et résultats scientifiques imaginaires.
-
