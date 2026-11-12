@@ -1,5 +1,7 @@
 ---
 title: "L'hôpital avait trouvé comment faire sortir ses patients. Il ne lui restait plus qu'à trouver où les envoyer."
+hero_image: "/images/san-c5-cmd-naf-10-visuel-v2.webp"
+image_alt: "Fauteuil roulant préparé pour les vacances, avec valise, chapeau et bouée."
 
 summary: "Dans un centre hospitalier, une nouvelle cellule de coordination devait permettre de libérer plus rapidement les lits. Son directeur adjoint a mobilisé les équipes, créé des indicateurs et obtenu des résultats encourageants. Les patients, eux, sont toujours là. Mais ils sont désormais beaucoup mieux répertoriés."
 
