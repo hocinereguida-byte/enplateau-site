@@ -547,6 +547,32 @@ export const publicCycleTechnicalLabel = (code: string): string =>
 export const publicCycleLabel = (code: string): string =>
   editorialCycleNames[canonicalCycleCode(code)] ?? publicCycleTechnicalLabel(code);
 
+/** V10 — périmètres transversaux indicatifs : fonctions et acteurs d’un terrain d’arbitrage. */
+export const editorialCycleScopes: Record<string,string> = {
+  "immobilier": "Foncier · Urbanisme · Architecture · Droit · Construction · Financement · Collectivités",
+  "industrie": "Conception · Production · Sous-traitance · Fournisseurs · Logistique · Investissement",
+  "agriculture": "Exploitations · Transformation · Distribution · Financement · Ressources · Régulation",
+  "energie": "Production · Réseaux · Fourniture · Usages · Régulation · Investissement",
+  "eau-ressources": "Gestion de l’eau · Matières · Traitement · Réemploi · Collectivités · Usages",
+  "mobilites": "Infrastructures · Transport · Logistique · Aménagement · Usagers · Collectivités",
+  "commerce": "Approvisionnement · Distribution · Plateformes · Proximité · Consommateurs",
+  "tourisme": "Hébergement · Restauration · Mobilités · Loisirs · Territoires · Clientèles",
+  "services-entreprises": "Conseil · Prestations · Sous-traitance · Fonctions support · Entreprises clientes",
+  "banque-financement": "Épargne · Crédit · Assurance · Investissement · Régulation · Entreprises",
+  "sante": "Patients · Soignants · Établissements · Financement · Prévention · Institutions",
+  "social-medicosocial": "Personnes accompagnées · Professionnels · Structures · Familles · Financements",
+  "education-formation": "Apprenants · Enseignants · Établissements · Employeurs · Formation continue",
+  "emploi-travail": "Travailleurs · Employeurs · Recrutement · Formation · Protection sociale",
+  "ess": "Associations · Coopératives · Bénéficiaires · Financement · Gouvernance",
+  "action-publique": "État · Collectivités · Administration · Opérateurs · Citoyens · Financement",
+  "culture-medias": "Création · Production · Diffusion · Médias · Sport · Publics · Financement",
+  "numerique": "Infrastructures · Données · Plateformes · Usages · Entreprises · Régulation",
+  "recherche-innovation": "Laboratoires · Financement · Entrepreneuriat · Transfert · Marchés",
+  "internationalisation": "Exportateurs · Fournisseurs · Logistique · Douanes · Financement · Marchés"
+};
+export const publicCycleScope = (code: string): string =>
+  editorialCycleScopes[canonicalCycleCode(code)] ?? publicCycleTechnicalLabel(code);
+
 export const publicPerspectiveLabel = (code: string): string => publicPerspectives[code]?.label ?? readings[code] ?? code;
 export const publicGenreLabel = (data: any): string =>
   data.format === 'regard-croise' ? 'Le fond du problème'
