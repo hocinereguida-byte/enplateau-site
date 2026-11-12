@@ -5,8 +5,8 @@ const groupedCycles=cycleFamilies.map(f=>({label:f.label,items:f.codes.map(code=
 ---
 <header class="press-header" id="press-site-header">
  <div class="press-utility"><span>L’INTELLIGENCE DERRIÈRE LES DÉCISIONS</span><div><a href="/media/institution/qui-sommes-nous/">Le média</a><a href="/media/newsletter/">Newsletter</a><a href="/media/proposer-un-eclairage/">Contribuer</a></div></div>
- <div class="press-masthead"><a class="press-logo" href="/media/" aria-label="Scènes d’Arbitrage, accueil"><img src="/images/logo-scenes-transparent-no-baseline-v2.png" alt="Scènes d’Arbitrage" class="press-logo-image"/></a><p>La fiction pour explorer. L’analyse pour comprendre.</p></div>
- <div class="press-mobile-bar"><a class="press-mobile-brand" href="/media/" aria-label="Scènes d’Arbitrage — accueil"><img src="/images/logo-scenes-transparent-no-baseline-v2.png" alt="Scènes d’Arbitrage" class="press-mobile-logo"/></a><div class="press-mobile-actions"><a class="press-mobile-search" href="/media/publications/" aria-label="Rechercher des publications">⌕</a><button class="press-menu-toggle" type="button" aria-controls="press-main-navigation" aria-expanded="false"><span class="press-toggle-icon" aria-hidden="true">☰</span><span class="press-toggle-label">Menu</span></button></div></div>
+ <div class="press-masthead"><a class="press-logo" href="/media/" aria-label="Scènes d’Arbitrage, accueil"><span class="press-wordmark" aria-hidden="true">Scènes d’Arbitrage</span></a><p>La fiction pour explorer. L’analyse pour comprendre.</p></div>
+ <div class="press-mobile-bar"><a class="press-mobile-brand" href="/media/" aria-label="Scènes d’Arbitrage — accueil"><span class="press-wordmark press-wordmark-mobile" aria-hidden="true">Scènes d’Arbitrage</span></a><div class="press-mobile-actions"><a class="press-mobile-search" href="/media/publications/" aria-label="Rechercher des publications">⌕</a><button class="press-menu-toggle" type="button" aria-controls="press-main-navigation" aria-expanded="false"><span class="press-toggle-icon" aria-hidden="true">☰</span><span class="press-toggle-label">Menu</span></button></div></div>
  <nav class="press-nav" id="press-main-navigation" aria-label="Navigation principale">
   <a class="press-home-link" href="/media/" aria-current={active==='accueil'?'page':undefined}>À la une</a>
   <details class="press-dropdown"><summary>Cycles <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content press-cycle-dropdown"><strong>Explorer par grande famille</strong><div class="press-cycle-groups">{groupedCycles.map(f=><details class="press-cycle-family"><summary>{f.label} <span aria-hidden="true">›</span></summary><div>{f.items.map(item=><a href={`/media/cycles/${item.code}/`}>{item.label}</a>)}</div></details>)}</div><a class="press-dropdown-more" href="/media/cycles/">Voir les 20 cycles</a></div></details>
@@ -135,6 +135,11 @@ const groupedCycles=cycleFamilies.map(f=>({label:f.label,items:f.codes.map(code=
 #press-site-header .press-home-link,#press-site-header .press-dropdown>summary,#press-site-header .press-search{padding:18px 7px!important;font-size:11px!important}
 }
 
+
+/* UX V5 ajustement du logotype typographique */
+#press-site-header .press-wordmark{color:#f7f4ee!important;font:600 24px/1 Georgia,'Times New Roman',serif!important;letter-spacing:-.05em!important;white-space:nowrap}
+#press-site-header .press-wordmark-mobile{font-size:21px!important}
+@media(max-width:380px){#press-site-header .press-wordmark-mobile{font-size:19px!important}}
 </style>
 <script is:inline>
 const pressHeader=document.getElementById('press-site-header');
