@@ -442,16 +442,16 @@ export const publicCycleLabel = (code: string): string =>
 export const publicPerspectiveLabel = (code: string): string => publicPerspectives[code]?.label ?? readings[code] ?? code;
 export const publicGenreLabel = (data: any): string =>
   data.format === 'regard-croise' ? 'Le fond du problème'
-    : genreOf(data) === 'chronique' ? 'Comédies économiques'
-    : genreOf(data) === 'grand-entretien' ? 'Grands Entretiens'
+    : genreOf(data) === 'chronique' ? 'Raisons et déraisons'
+    : genreOf(data) === 'grand-entretien' ? 'Les interrogatoires'
     : narrativeGenres[genreOf(data) || ''] || 'Fiction économique';
 
 // V6 : Perspectives éditoriales. Conserver les identifiants historiques pour la stabilité des URL.
 export const perspectives = readings;
 export const narrativeGenres: Record<string, string> = {
-  'grand-entretien': 'Grand Entretien',
-  recit: 'Comédies économiques',
-  chronique: 'Comédies économiques',
+  'grand-entretien': 'Les interrogatoires',
+  recit: 'Raisons et déraisons',
+  chronique: 'Raisons et déraisons',
 };
 export const perspectiveOf = (data: any): string =>
   data.format === 'regard-croise' ? '' : (data.perspective_principale || data.lecture_principale || '');
