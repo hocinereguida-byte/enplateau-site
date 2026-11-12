@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, conversations, readings, publicPerspectives, publicPerspectiveLabel, publicGenreLabel, perspectiveOf, publicationInstant, cycleCatalogue } from '../../../lib/editorial';
+import { isPublic, validClassification, urlOf, conversations, readings, publicPerspectives, publicPerspectiveLabel, publicGenreLabel, perspectiveOf, publicationInstant, cycleCatalogue, publicCycleLabel } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
 import { photoLecture, afficherPhotoListe } from '../../../lib/photographies';
 import MediaFooter from '../../../components/MediaFooter.astro';
@@ -42,7 +42,7 @@ const original=readings[lecture];
 {items.length===0 ? <p class="sda-v6-angles-summary">Aucune fiction publiée pour cet angle pour le moment.</p> :
 <div class="sda-v6-angles-grid">{items.map((a,i)=><article class="sda-v6-angles-card">
 {a.data.hero_image&&afficherPhotoListe(a.data,'rubrique',i)&&<img class="article-list-photo" src={a.data.hero_image} alt={a.data.seo?.image_alt||''} loading="lazy"/>}
-<p class="micro">{publicGenreLabel(a.data)} · {cycleCatalogue.find(c=>c.code===a.data.cycle)?.label??a.data.cycle}</p>
+<p class="micro">{publicGenreLabel(a.data)} · {publicCycleLabel(a.data.cycle)}</p>
 <h2><a href={urlOf(a.id)}>{a.data.title}</a></h2>
 {a.data.summary&&<p>{a.data.summary}</p>}
 </article>)}</div>}
