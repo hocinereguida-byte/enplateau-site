@@ -1,16 +1,54 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic,validClassification,urlOf,conversations,readings,perspectiveOf } from '../../../lib/editorial';
+import { isPublic, validClassification, urlOf, conversations, readings, publicPerspectives, publicPerspectiveLabel, publicGenreLabel, perspectiveOf, publicationInstant, cycleCatalogue } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
 import { photoLecture, afficherPhotoListe } from '../../../lib/photographies';
-import MediaFooter from '../../../components/MediaFooter.astro'
-import MediaHeader from '../../../components/MediaHeader.astro';;
+import MediaFooter from '../../../components/MediaFooter.astro';
+import MediaHeader from '../../../components/MediaHeader.astro';
 export function getStaticPaths(){return Object.keys(readings).map(lecture=>({params:{lecture}}));}
 const {lecture}=Astro.params;
 const published=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data));
-const items=published.filter(a=>a.data.format==='entretien'&&perspectiveOf(a.data)===lecture);
-const complementary=published.filter(a=>a.data.format==='regard-croise');
+const items=published.filter(a=>a.data.format!=='regard-croise'&&perspectiveOf(a.data)===lecture)
+  .sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
+const name=publicPerspectiveLabel(lecture);
+const descriptor=publicPerspectives[lecture]?.description??'Un autre regard sur les décisions économiques.';
+const original=readings[lecture];
 ---
-<!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>{readings[lecture]} — Scènes d’Arbitrage</title><style is:inline set:html={articleStyle}/></head><body><MediaHeader/><main class="shell"><p class="kicker"><a href="/media/">Accueil</a> / Perspective éditoriale</p><h1>{readings[lecture]}</h1>{photoLecture(lecture)?<img class="rubric-hero-photo" src={photoLecture(lecture)} alt={`Photographie de la perspective ${readings[lecture]}`} loading="eager"/>:<div class="photo-placeholder photo-placeholder-rubric"><span>PHOTOGRAPHIE DE LA PERSPECTIVE</span></div>}<p class="lead">Cette perspective oriente les questions, les contraintes et les alternatives examinées dans les Scènes. Les Regards croisés apportent séparément une analyse fondée sur des sources réelles.</p>
-{items.length===0?<p>Aucun article publié pour le moment.</p>:<div class="cards">{items.map((a,i)=><article class="card">{a.data.hero_image&&afficherPhotoListe(a.data,"rubrique",i)&&<img class="article-list-photo" src={a.data.hero_image} alt={a.data.seo?.image_alt||""} loading="lazy"/>}<p class="kicker">{a.data.format==='regard-croise'?'REGARD CROISÉ — ANALYSE':'SCÈNE — FICTION DOCUMENTÉE'} · {a.data.cycle} · {conversations[a.data.cycle]?.[a.data.conversation]}</p><h2><a href={urlOf(a.id)}>{a.data.title}</a></h2><p>{a.data.summary}</p></article>)}</div>}
-{complementary.length>0&&<section class="recommendations" aria-labelledby="complementary-heading"><p class="kicker">POUR PROLONGER LA RÉFLEXION</p><h2 id="complementary-heading">Regards croisés · Analyses complémentaires</h2><p class="lead">Ces analyses documentaires éclairent les décisions économiques au-delà d'une seule lecture professionnelle. Elles sont proposées séparément des Scènes.</p><div class="recommendation-links">{complementary.map(a=><a class="recommendation-card" href={urlOf(a.id)}><span class="micro">REGARD CROISÉ · {a.data.cycle}</span><strong>{a.data.title}</strong></a>)}</div></section>}</main><MediaFooter/></body></html>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>{name} — Les angles morts — Scènes d’Arbitrage</title>
+<meta name="description" content={descriptor}/>
+<style is:inline set:html={articleStyle}/>
+<style is:global>
+.sda-v6-angles-intro{padding:22px 0 35px;border-bottom:1px solid #ddd8ce}
+.sda-v6-angles-intro h1{font-size:clamp(39px,5vw,62px)!important;margin:12px 0 15px!important}
+.sda-v6-angles-summary{font:15px/1.6 'IBM Plex Sans',sans-serif;color:#615c55}
+.sda-v6-angles-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:28px 0 45px}
+.sda-v6-angles-card{padding:21px;background:#fffefa;border:1px solid #ddd8ce}
+.sda-v6-angles-card h2{font:400 clamp(23px,2.5vw,30px)/1.25 Georgia,serif;margin:13px 0}
+.sda-v6-angles-card h2 a{text-decoration:none}
+.sda-v6-angles-card p:last-child{font:14px/1.5 'IBM Plex Sans',sans-serif;color:#615c55}
+.sda-v6-angles-next{padding:24px;background:#eae5dc;border-left:3px solid #b94e39;margin-bottom:42px}
+@media(max-width:700px){.sda-v6-angles-grid{grid-template-columns:1fr}}
+</style></head>
+<body><a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/>
+<main class="shell" id="contenu">
+<nav class="kicker" aria-label="Fil d’Ariane"><a href="/media/">Accueil</a> / <a href="/media/lectures/">Les angles morts</a> / {name}</nav>
+<header class="sda-v6-angles-intro">
+<p class="micro">LES ANGLES MORTS · {original}</p>
+<h1>{name}</h1><p class="lead">{descriptor}</p>
+<p class="sda-v6-angles-summary">Une même logique de décision, à travers plusieurs secteurs économiques et des fictions satiriques différentes.</p>
+</header>
+{items.length===0 ? <p class="sda-v6-angles-summary">Aucune fiction publiée pour cet angle pour le moment.</p> :
+<div class="sda-v6-angles-grid">{items.map((a,i)=><article class="sda-v6-angles-card">
+{a.data.hero_image&&afficherPhotoListe(a.data,'rubrique',i)&&<img class="article-list-photo" src={a.data.hero_image} alt={a.data.seo?.image_alt||''} loading="lazy"/>}
+<p class="micro">{publicGenreLabel(a.data)} · {cycleCatalogue.find(c=>c.code===a.data.cycle)?.label??a.data.cycle}</p>
+<h2><a href={urlOf(a.id)}>{a.data.title}</a></h2>
+{a.data.summary&&<p>{a.data.summary}</p>}
+</article>)}</div>}
+<section class="sda-v6-angles-next" aria-labelledby="angle-analysis">
+<p class="micro">AUTRE REGISTRE</p><h2 id="angle-analysis">Le fond du problème</h2>
+<p>Des analyses journalistiques autonomes, fondées sur des faits et des sources réelles. Elles éclairent les grandes questions économiques sans être des fictions satiriques et sans se limiter à cet angle.</p>
+<a href="/media/regards-croises/">Découvrir les analyses ↗</a>
+</section>
+</main><MediaFooter/></body></html>
