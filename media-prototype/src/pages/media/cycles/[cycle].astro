@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, conversations, publicPerspectiveLabel, publicGenreLabel, publicationInstant, cycleCatalogue, cycleBriefs } from '../../../lib/editorial';
+import { isPublic, validClassification, urlOf, conversations, publicPerspectiveLabel, publicGenreLabel, publicationInstant, cycleCatalogue, cycleBriefs, publicCycleLabel, publicCycleTechnicalLabel } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
 import MediaFooter from '../../../components/MediaFooter.astro';
 import MediaHeader from '../../../components/MediaHeader.astro';
@@ -8,7 +8,8 @@ export function getStaticPaths(){return cycleCatalogue.map(({code:cycle})=>({par
 const {cycle}=Astro.params;
 const sourceCycle=cycle==='numerique'?'numerique-telecom':cycle;
 const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)&&(a.data.cycle===cycle||a.data.cycle===sourceCycle)).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
-const cycleName=cycleCatalogue.find(c=>c.code===cycle)?.label??cycle;
+const cycleName=publicCycleLabel(cycle);
+const technicalSector=publicCycleTechnicalLabel(cycle);
 const brief=cycleBriefs[cycle];
 const conv=Object.entries(conversations[sourceCycle]||{}).map(([code,title])=>({code,title,items:items.filter(a=>a.data.conversation===code)})).filter(x=>x.items.length>0);
 const labelGenre=(a:any)=>publicGenreLabel(a.data).toLocaleUpperCase('fr-FR')+(a.data.format==='regard-croise'?' · ANALYSE JOURNALISTIQUE':' · FICTION SATIRIQUE');
@@ -16,7 +17,7 @@ const labelGenre=(a:any)=>publicGenreLabel(a.data).toLocaleUpperCase('fr-FR')+(a
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/>
 <title>{cycleName} — Scènes d’Arbitrage</title>
-<meta name="description" content={brief?.ambition??'Explorer les décisions économiques du cycle '+cycleName}/>
+<meta name="description" content={technicalSector+' — '+(brief?.ambition??'Explorer les décisions et les arbitrages économiques')}/>
 <style is:inline set:html={articleStyle}/>
 <style is:global>
 .sda-v5-cycle-intro{padding:35px 0 37px;border-bottom:1px solid #ddd8ce;display:grid;grid-template-columns:1.3fr .7fr;gap:44px;align-items:end}
@@ -42,14 +43,15 @@ const labelGenre=(a:any)=>publicGenreLabel(a.data).toLocaleUpperCase('fr-FR')+(a
 .sda-v5-cycle-link{font-size:13px;text-underline-offset:4px}
 @media(max-width:950px){.sda-v5-cycle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sda-v5-cycle-intro{grid-template-columns:1fr;gap:15px}}
 @media(max-width:650px){.sda-v5-cycle-intro{padding:18px 0 27px}.sda-v5-cycle-intro h1{font-size:clamp(39px,10vw,51px)!important}.sda-v5-cycle-conversations,.sda-v5-cycle-grid{grid-template-columns:1fr}.sda-v5-cycle-article{min-height:0}.sda-v5-cycle-conv{min-height:0}}
+.sda-v5-cycle-technical{font:500 13px/1.45 'IBM Plex Sans',Arial,sans-serif;color:#777168;margin:0 0 15px}
 </style></head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/>
 <main class="shell" id="contenu">
-<nav class="kicker" aria-label="Fil d’Ariane"><a href="/media/">Accueil</a> / <a href="/media/cycles/">Cycles</a> / {cycleName}</nav>
+<nav class="kicker" aria-label="Fil d’Ariane"><a href="/media/">Accueil</a> / <a href="/media/cycles/">Là où ça se joue</a> / {cycleName}</nav>
 <header class="sda-v5-cycle-intro">
 <div><p class="sda-v5-cycle-kicker">LÀ OÙ ÇA SE JOUE</p>
-<h1>{cycleName}</h1><p class="lead">{brief?.ambition}</p>
+<h1>{cycleName}</h1><p class="sda-v5-cycle-technical">{technicalSector}</p><p class="lead">{brief?.ambition}</p>
 <p class="sda-v5-cycle-kicker">{items.length ? items.length+' PUBLICATION'+(items.length>1?'S':'')+' DISPONIBLE'+(items.length>1?'S':'') : 'EN PRÉPARATION'}</p></div>
 <div class="sda-v5-cycle-overview"><p class="sda-v5-cycle-kicker">LES ARBITRAGES</p><p>{brief?.enjeux_et_arbitrages}</p></div>
 </header>
