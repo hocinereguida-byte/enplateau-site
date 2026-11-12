@@ -1,7 +1,7 @@
 ---
 source_document_version: "V2.4"
 genre_narratif: "grand-entretien"
-title: "Le marché disait oui. Les locataires ne signaient pas."
+title: "À vendre : 4 800 m² de convictions"
 summary: "Audrey D. confronte ses prévisions de commercialisation à des engagements conditionnels, tandis que Jean Toksik met ses certitudes aux enchères."
 format: "entretien"
 cycle: "immobilier"
