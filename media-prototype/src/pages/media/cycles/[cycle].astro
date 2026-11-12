@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, conversations, publicPerspectiveLabel, publicGenreLabel, publicationInstant, cycleCatalogue, cycleBriefs, publicCycleLabel, publicCycleTechnicalLabel } from '../../../lib/editorial';
+import { isPublic, validClassification, urlOf, conversations, publicPerspectiveLabel, publicGenreLabel, publicationInstant, cycleCatalogue, cycleBriefs, publicCycleLabel, publicCycleTechnicalLabel, cycleFamilies, publicFamilyLabel } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
 import MediaFooter from '../../../components/MediaFooter.astro';
 import MediaHeader from '../../../components/MediaHeader.astro';
@@ -10,6 +10,8 @@ const sourceCycle=cycle==='numerique'?'numerique-telecom':cycle;
 const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)&&(a.data.cycle===cycle||a.data.cycle===sourceCycle)).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
 const cycleName=publicCycleLabel(cycle);
 const technicalSector=publicCycleTechnicalLabel(cycle);
+const family=cycleFamilies.find(f=>f.codes.some(code=>code===cycle));
+const familyLabel=family?publicFamilyLabel(family.id):null;
 const brief=cycleBriefs[cycle];
 const conv=Object.entries(conversations[sourceCycle]||{}).map(([code,title])=>({code,title,items:items.filter(a=>a.data.conversation===code)})).filter(x=>x.items.length>0);
 const labelGenre=(a:any)=>publicGenreLabel(a.data).toLocaleUpperCase('fr-FR')+(a.data.format==='regard-croise'?' · ANALYSE JOURNALISTIQUE':' · FICTION SATIRIQUE');
@@ -48,9 +50,9 @@ const labelGenre=(a:any)=>publicGenreLabel(a.data).toLocaleUpperCase('fr-FR')+(a
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/>
 <main class="shell" id="contenu">
-<nav class="kicker" aria-label="Fil d’Ariane"><a href="/media/">Accueil</a> / <a href="/media/cycles/">Là où ça se joue</a> / {cycleName}</nav>
+<nav class="kicker" aria-label="Fil d’Ariane"><a href="/media/">Accueil</a> / <a href="/media/cycles/">Là où ça se joue</a> / {familyLabel&&<>{familyLabel} / </>}{cycleName}</nav>
 <header class="sda-v5-cycle-intro">
-<div><p class="sda-v5-cycle-kicker">LÀ OÙ ÇA SE JOUE</p>
+<div><p class="sda-v5-cycle-kicker">{familyLabel??'LÀ OÙ ÇA SE JOUE'}</p>
 <h1>{cycleName}</h1><p class="sda-v5-cycle-technical">{technicalSector}</p><p class="lead">{brief?.ambition}</p>
 <p class="sda-v5-cycle-kicker">{items.length ? items.length+' PUBLICATION'+(items.length>1?'S':'')+' DISPONIBLE'+(items.length>1?'S':'') : 'EN PRÉPARATION'}</p></div>
 <div class="sda-v5-cycle-overview"><p class="sda-v5-cycle-kicker">LES ARBITRAGES</p><p>{brief?.enjeux_et_arbitrages}</p></div>

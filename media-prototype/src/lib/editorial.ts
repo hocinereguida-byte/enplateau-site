@@ -180,6 +180,18 @@ export const cycleFamilies = [
   }
 ] as const;
 
+/** V9 — six grands univers éditoriaux ; familles et regroupements CMS inchangés. */
+export const publicFamilyNames: Record<number,string> = {
+  "1": "Chacun son terrain",
+  "2": "Faire tourner la boutique",
+  "3": "Les affaires sont les affaires",
+  "4": "La vie, mode d'emploi",
+  "5": "Au nom de tous",
+  "6": "Demain, c'est promis"
+};
+export const publicFamilyLabel = (id: number): string =>
+  publicFamilyNames[id] ?? cycleFamilies.find(family=>family.id===id)?.label ?? String(id);
+
 export const cycleBriefs: Record<string, { ambition: string; enjeux_et_arbitrages: string; approche_narrative: string }> = {
   "immobilier": {
     "ambition": "Construire, habiter et transformer les territoires. Un projet immobilier oblige à concilier besoins d'habitat, équilibre économique, qualité du cadre de vie, réglementation et sobriété foncière.",
@@ -411,6 +423,77 @@ export const contexts: Record<string, Record<string, string>> = {
     'territoire-reconversion': 'Territoire en reconversion',
   },
 };
+
+/** V9 — titres publics des 26 cas de figure ; contextes techniques préservés. */
+export const editorialContextNames: Record<string, Record<string,string>> = {
+  "ess": {
+    "C2-U1": "Utile, mais à perte"
+  },
+  "banque-financement": {
+    "C2-U1": "Rentable, mais à court de trésorerie"
+  },
+  "tourisme": {
+    "C2-U1": "Toute une année en une saison"
+  },
+  "commerce": {
+    "C3-U2": "Des invendus pour financer la suite"
+  },
+  "eau-ressources": {
+    "C1-U1": "Quand l'eau se rationne",
+    "C1-U2": "L'été sous pression"
+  },
+  "agriculture": {
+    "engagement-productif-longue-duree": "Parier sur les prochaines années",
+    "arboriculture-sous-revue-strategique": "Rentable, et alors ?",
+    "maraichage-debouches-concurrents": "À qui vendre la récolte ?",
+    "cereales-recolte-excedentaire": "La récolte de trop ?"
+  },
+  "recherche-innovation": {
+    "C2-U1": "Un prototype, mais pour qui ?"
+  },
+  "numerique-telecom": {
+    "C4-U1": "L'IA au bout du fil"
+  },
+  "culture-medias": {
+    "C5-U1": "La musique cherche son modèle"
+  },
+  "action-publique": {
+    "C7-U1": "Tous les voyants au vert, et alors ?"
+  },
+  "emploi-travail": {
+    "C4-U1": "Revenir à l'emploi, mais comment ?"
+  },
+  "education-formation": {
+    "C5-U1": "L'IA entre en classe"
+  },
+  "social-medicosocial": {
+    "C2-U1": "La place qu'on attend"
+  },
+  "sante": {
+    "C5-U1": "La sortie, et après ?"
+  },
+  "internationalisation": {
+    "C3-U1": "Quand tout dépend d'une région"
+  },
+  "industrie": {
+    "C3-U1": "Le fournisseur qu'on ne peut pas remplacer",
+    "CST": "La croissance déborde",
+    "ASC": "Changer sans avoir le choix",
+    "RSS": "Tout revoir pour continuer"
+  },
+  "immobilier": {
+    "zone-tendue": "Quand les mètres carrés manquent",
+    "zone-croissance": "Quand la ville grandit",
+    "territoire-reconversion": "Faire du neuf avec l'ancien"
+  }
+};
+export const publicContextLabel = (cycle: string, code: string): string =>
+  editorialContextNames[cycle]?.[code] ?? contexts[cycle]?.[code] ?? code;
+export const publicContexts: Record<string, Record<string,string>> = Object.fromEntries(
+  Object.entries(contexts).map(([cycle,entries]) => [
+    cycle, Object.fromEntries(Object.keys(entries).map(code => [code, publicContextLabel(cycle,code)]))
+  ])
+);
 
 export const readings: Record<string, string> = {
   'strategie-gouvernance': 'Stratégie & gouvernance',

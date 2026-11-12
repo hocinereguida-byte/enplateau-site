@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, conversations, publicationInstant, cycleCatalogue, cycleFamilies, publicPerspectives, publicPerspectiveLabel, publicGenreLabel, perspectiveOf, publicCycleLabel } from '../../lib/editorial';
+import { isPublic, validClassification, urlOf, conversations, publicationInstant, cycleCatalogue, cycleFamilies, publicFamilyLabel, publicPerspectives, publicPerspectiveLabel, publicGenreLabel, perspectiveOf, publicCycleLabel } from '../../lib/editorial';
 import { articleStyle } from '../../lib/article-style';
 import MediaFooter from '../../components/MediaFooter.astro';
 import MediaHeader from '../../components/MediaHeader.astro';
@@ -20,10 +20,11 @@ const cycleLabel=publicCycleLabel;
 <!doctype html>
 <html lang="fr"><head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/>
-<meta name="sda-preproduction-revision" content="formats-cartes-cycle-v7-1-20261112"/>
+<meta name="sda-preproduction-revision" content="univers-cas-de-figure-v9-20261112"/>
 <title>Scènes d’Arbitrage — Les décisions qui font l’économie</title>
 <meta name="description" content="La fiction pour explorer. L’analyse pour comprendre. Découvrez les arbitrages économiques à travers Raisons et déraisons, Les interrogatoires et Le fond du problème."/>
-<style is:inline set:html={articleStyle}/></head>
+<style is:inline set:html={articleStyle}/><style is:global>.sda-v9-family-technical{font:400 12px/1.45 'IBM Plex Sans',Arial,sans-serif!important;color:#c0b8a9!important;opacity:.86;margin:0 0 17px!important}
+</style></head>
 <body class="media-home">
 <a class="skip" href="#contenu">Aller au contenu</a><MediaHeader active="accueil"/>
 <main class="sda-v5-home" id="contenu">
@@ -62,10 +63,10 @@ const cycleLabel=publicCycleLabel;
 </article>)}</div> : <p>Les premières publications apparaîtront ici dès leur mise en ligne.</p>}
 </section>
 <section class="sda-v5-explore" aria-labelledby="home-cycles">
-<div class="sda-v5-section-head"><div><p class="sda-v5-label">SIX FAMILLES · VINGT SECTEURS</p><h2 id="home-cycles">Explorer l’économie, secteur par secteur</h2></div><a class="sda-v5-link" style="color:#eee!important" href="/media/cycles/">Voir tous les secteurs ↗</a></div>
-<div class="sda-v5-families">{cycleFamilies.map((family,i)=><section class="sda-v5-family" aria-label={family.label}>
+<div class="sda-v5-section-head"><div><p class="sda-v5-label">SIX GRANDS UNIVERS · VINGT RUBRIQUES</p><h2 id="home-cycles">Explorer l’économie, secteur par secteur</h2></div><a class="sda-v5-link" style="color:#eee!important" href="/media/cycles/">Voir tous les secteurs ↗</a></div>
+<div class="sda-v5-families">{cycleFamilies.map((family,i)=><section class="sda-v5-family" aria-label={publicFamilyLabel(family.id)}>
 <small>{String(i+1).padStart(2,'0')} · {family.codes.length} SECTEURS</small>
-<h3>{family.label}</h3>
+<h3>{publicFamilyLabel(family.id)}</h3><p class="sda-v9-family-technical">{family.label}</p>
 {family.codes.map(code=><a href={'/media/cycles/'+code+'/'}>{cycleLabel(code)}</a>)}
 </section>)}</div>
 </section>
