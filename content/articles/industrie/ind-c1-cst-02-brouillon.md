@@ -1,6 +1,8 @@
 ---
 title: "Pour livrer dans 72 heures, il faut arrêter la machine pendant 36 heures."
 summary: "L'usine avait six mois de retard. Pour tenir jeudi, elle devait décider quand s'arrêter."
+hero_image: "/images/ind-c1-sophie-operations-v3.webp"
+image_alt: "Photographie minimaliste d’un espace industriel consacré à la maintenance."
 format: "chronique"
 cycle: "industrie"
 conversation: "C1"
