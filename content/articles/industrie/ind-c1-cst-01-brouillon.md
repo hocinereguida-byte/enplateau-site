@@ -1,5 +1,7 @@
 ---
 title: "Les affaires marchaient si bien qu'il a fallu y mettre un terme."
+hero_image: "/images/ind-c1-cst-01-marc-visuel-v1.webp"
+image_alt: "Gros plan sur les mains d’un dirigeant en costume fermant un cadenas à l’entrée d’une usine en pleine activité, sans visage ni texte ajouté."
 summary: "Jean Toksik reçoit Marc D., directeur industriel. Il écarte près de deux millions d’euros de commandes potentielles non rentables sans annuler les contrats signés, tout en assumant les conséquences sociales de sa décision. Entretien fictif."
 format: "entretien"
 cycle: "industrie"
