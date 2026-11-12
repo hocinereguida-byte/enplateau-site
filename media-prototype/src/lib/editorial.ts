@@ -423,12 +423,30 @@ export const readings: Record<string, string> = {
   'territoires-politiques-publiques': 'Territoires & politiques publiques',
 };
 
+/** Noms publics des huit angles éditoriaux ; les identifiants restent inchangés dans le CMS. */
+export const publicPerspectives: Record<string, { label: string; description: string }> = {
+  'strategie-gouvernance': { label: 'Tout est sous contrôle', description: 'Qui décide, qui dirige et qui assume les choix stratégiques ?' },
+  'finance-investissement': { label: 'Les comptes sont bons', description: 'Financements, investissements et risques : ce que les chiffres ne racontent pas toujours.' },
+  'droit-regulation': { label: 'Dans les clous', description: 'Contrats, règles, obligations et marges de manœuvre.' },
+  'operations-organisation': { label: 'Sur le papier, ça marche', description: 'Entre les décisions et leur exécution, tout ce que la réalité complique.' },
+  'technologie-innovation': { label: 'La solution cherche son problème', description: 'Innovations, promesses techniques et usages réels.' },
+  'ressources-humaines-competences': { label: 'L’humain, bien entendu', description: 'Travail, compétences, management et décisions qui concernent les personnes.' },
+  'energie-ressources': { label: 'On a de la marge', description: 'Énergie, matières, dépendances et limites physiques.' },
+  'territoires-politiques-publiques': { label: 'Tout le monde a été consulté', description: 'Territoires, collectivités, politiques publiques et conséquences locales.' },
+};
+export const publicPerspectiveLabel = (code: string): string => publicPerspectives[code]?.label ?? readings[code] ?? code;
+export const publicGenreLabel = (data: any): string =>
+  data.format === 'regard-croise' ? 'Le fond du problème'
+    : genreOf(data) === 'chronique' ? 'Comédies économiques'
+    : genreOf(data) === 'grand-entretien' ? 'Grands Entretiens'
+    : narrativeGenres[genreOf(data) || ''] || 'Fiction économique';
+
 // V6 : Perspectives éditoriales. Conserver les identifiants historiques pour la stabilité des URL.
 export const perspectives = readings;
 export const narrativeGenres: Record<string, string> = {
   'grand-entretien': 'Grand Entretien',
   recit: 'Récit',
-  chronique: 'Chronique',
+  chronique: 'Comédies économiques',
 };
 export const perspectiveOf = (data: any): string =>
   data.format === 'regard-croise' ? '' : (data.perspective_principale || data.lecture_principale || '');
