@@ -328,6 +328,28 @@ const shareBase=canonical;
    turn.append(label,words);group.append(turn);p.remove();
   }
  }
+
+ // Distribution contrôlée des répliques de Thomas L., indépendante du texte du manuscrit.
+ if(articleId==='immobilier/imm-c1-rc-02-thomas'){
+  const groups=[["Quel mur est réel","Thomas|L’architecte|Thomas|L’architecte"],["C’est notre marge","Le directeur général|Thomas|Le directeur général|Thomas|Le directeur général"],["Pourtant, il tient","Le directeur général|Thomas|Le directeur général|Thomas"],["Nous avions 450 000","Le directeur général|Thomas|Le directeur général|Thomas|Le directeur général"],["Les salariés en font","Le directeur général|Thomas|Le directeur général"],["Vous avez obtenu des offres","Thomas|Le directeur commercial|Thomas|Le directeur commercial|Thomas"],["Bonne nouvelle : votre futur atelier","Le directeur commercial|L’artisan|Le directeur commercial|L’artisan|Le directeur commercial|L’artisan|Le directeur commercial|L’artisan"],["Sur le dessin, ou dans l’usine","Thomas|Le consultant|Thomas|Le directeur général|Thomas|Le directeur général|Thomas"],["Non, répondit Thomas. Nous avons déjà payé","Thomas|Le directeur général|Thomas|Le directeur général"],["J’aurais dû demander l’arrêt","Thomas|Le directeur général|Thomas|Le directeur général|Thomas|Le directeur général"],["Vous avez trouvé comment sauver","Le directeur général|Thomas|Le directeur général|Thomas|Le directeur général|Thomas"]];
+  const ps=Array.from(root.querySelectorAll(':scope > p'));
+  for(let i=0;i<ps.length;i++){
+   const first=ps[i];if(!first.isConnected||!/^\\s*—/.test(first.textContent||''))continue;
+   const opening=(first.textContent||'').replace(/^\\s*—\\s*/,'');
+   const entry=groups.find(([prefix])=>opening.startsWith(prefix));if(!entry)continue;
+   const speakers=entry[1].split('|'),nodes=[first];let j=i+1;
+   while(j<ps.length&&/^\\s*—/.test(ps[j].textContent||'')){nodes.push(ps[j]);j++;}
+   if(nodes.length!==speakers.length)continue;
+   const block=document.createElement('div');block.className='fiction-dialogue';block.setAttribute('role','group');block.setAttribute('aria-label','Dialogue');
+   nodes.forEach((node,k)=>{
+    const turn=document.createElement('div'),label=document.createElement('span'),words=document.createElement('p');
+    turn.className='fiction-dialogue-turn';label.className='fiction-dialogue-speaker';label.textContent=speakers[k];words.className='fiction-dialogue-line';
+    words.textContent=(node.textContent||'').replace(/^\\s*—\\s*/,'').replace(/,?\\s*(?:demanda Thomas|répondit l’architecte|répondit Thomas|objecta le directeur général|dit Thomas|dit le directeur général|poursuivit le directeur général|répondit le directeur général|dit-il au directeur général)([.!?]?)\\s*$/u,(_m,p)=>p||'').trim();
+    turn.append(label,words);block.append(turn);
+   });
+   first.before(block);nodes.forEach(n=>n.remove());
+  }
+ }
  const cast=casts[articleId];
  if(!cast)return;
  const normalized=v=>v.replace(/^[«—\s]+/,'').replace(/[»\s]+$/,'').trim();
