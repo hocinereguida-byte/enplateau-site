@@ -6,10 +6,11 @@ import MediaFooter from '../../../components/MediaFooter.astro';
 import MediaHeader from '../../../components/MediaHeader.astro';
 export function getStaticPaths(){return cycleCatalogue.map(({code:cycle})=>({params:{cycle}}));}
 const {cycle}=Astro.params;
-const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)&&a.data.cycle===cycle).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
+const sourceCycle=cycle==='numerique'?'numerique-telecom':cycle;
+const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)&&(a.data.cycle===cycle||a.data.cycle===sourceCycle)).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
 const cycleName=cycleCatalogue.find(c=>c.code===cycle)?.label??cycle;
 const brief=cycleBriefs[cycle];
-const conv=Object.entries(conversations[cycle]||{}).map(([code,title])=>({code,title,items:items.filter(a=>a.data.conversation===code)})).filter(x=>x.items.length>0);
+const conv=Object.entries(conversations[sourceCycle]||{}).map(([code,title])=>({code,title,items:items.filter(a=>a.data.conversation===code)})).filter(x=>x.items.length>0);
 const labelGenre=(a:any)=>publicGenreLabel(a.data).toLocaleUpperCase('fr-FR')+(a.data.format==='regard-croise'?' · ANALYSE JOURNALISTIQUE':' · FICTION SATIRIQUE');
 ---
 <!doctype html>
@@ -56,8 +57,8 @@ const labelGenre=(a:any)=>publicGenreLabel(a.data).toLocaleUpperCase('fr-FR')+(a
 <p class="sda-v5-cycle-kicker">LES QUESTIONS</p><h2 id="cycle-conversations">Les sujets qui fâchent</h2>
 <div class="sda-v5-cycle-conversations">{conv.map(c=><article class="sda-v5-cycle-conv">
 <p class="sda-v5-cycle-kicker">SUJET {c.code}</p>
-<h3><a href={'/media/cycles/'+cycle+'/conversations/'+c.code+'/'}>{c.title}</a></h3>
-<footer><span>{c.items.length} publication{c.items.length>1?'s':''}</span><a href={'/media/cycles/'+cycle+'/conversations/'+c.code+'/'}>Explorer ↗</a></footer>
+<h3><a href={'/media/cycles/'+sourceCycle+'/conversations/'+c.code+'/'}>{c.title}</a></h3>
+<footer><span>{c.items.length} publication{c.items.length>1?'s':''}</span><a href={'/media/cycles/'+sourceCycle+'/conversations/'+c.code+'/'}>Explorer ↗</a></footer>
 </article>)}</div></section>}
 <section class="sda-v5-cycle-group" aria-labelledby="cycle-published">
 <p class="sda-v5-cycle-kicker">À DÉCOUVRIR</p><h2 id="cycle-published">À lire dans ce secteur</h2>
