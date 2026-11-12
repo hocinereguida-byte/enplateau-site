@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, conversations, contexts, publicPerspectiveLabel, publicGenreLabel, publicationInstant, perspectiveOf, cycleCatalogue } from '../../../../../lib/editorial';
+import { isPublic, validClassification, urlOf, conversations, contexts, publicPerspectiveLabel, publicGenreLabel, publicationInstant, perspectiveOf, cycleCatalogue, canonicalCycleCode, publicCycleLabel } from '../../../../../lib/editorial';
 import { articleStyle } from '../../../../../lib/article-style';
 import MediaFooter from '../../../../../components/MediaFooter.astro';
 import MediaHeader from '../../../../../components/MediaHeader.astro';
@@ -15,7 +15,7 @@ const items=(await getCollection('articles'))
   .filter(a=>isPublic(a.data)&&validClassification(a.data)&&a.data.cycle===cycle&&a.data.conversation===conversation)
   .sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
 const name=conversations[cycle]?.[conversation]??conversation;
-const cycleName=cycleCatalogue.find(x=>x.code===cycle)?.label??cycle;
+const cycleName=publicCycleLabel(cycle);
 const contextGroups=Object.entries(contexts[cycle]||{}).map(([code,label])=>({code,label,articles:items.filter(a=>a.data.contexte===code)})).filter(group=>group.articles.length>0);
 const genreName=(a:any)=>publicGenreLabel(a.data);
 ---
@@ -45,7 +45,7 @@ const genreName=(a:any)=>publicGenreLabel(a.data);
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/>
 <main class="shell" id="contenu">
-<nav class="kicker" aria-label="Fil d’Ariane"><a href="/media/">Accueil</a> / <a href="/media/cycles/">Là où ça se joue</a> / <a href={'/media/cycles/'+cycle+'/'}>{cycleName}</a> / {name}</nav>
+<nav class="kicker" aria-label="Fil d’Ariane"><a href="/media/">Accueil</a> / <a href="/media/cycles/">Là où ça se joue</a> / <a href={'/media/cycles/'+canonicalCycleCode(cycle)+'/'}>{cycleName}</a> / {name}</nav>
 <header class="sda-v5-conv-intro">
 <p class="sda-v5-conv-kicker">SUJET {conversation} · {cycleName.toUpperCase()}</p>
 <h1>{name}</h1>
@@ -61,7 +61,7 @@ const genreName=(a:any)=>publicGenreLabel(a.data);
 <footer><span>{publicPerspectiveLabel(perspectiveOf(a.data)) || 'Analyse documentée'}</span><a href={urlOf(a.id)}>Lire ↗</a></footer>
 </article>)}</div></section>)}
 <nav class="sda-v5-conv-back" aria-label="Continuer à explorer">
-<a href={'/media/cycles/'+cycle+'/'}>← Explorer le secteur {cycleName}</a>
+<a href={'/media/cycles/'+canonicalCycleCode(cycle)+'/'}>← Explorer le secteur {cycleName}</a>
 <a href="/media/publications/">Toutes les publications ↗</a>
 </nav>
 </main><MediaFooter/>
