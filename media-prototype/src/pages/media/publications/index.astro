@@ -14,7 +14,7 @@ const entries=articles.map(a=>({
   conversation:a.data.conversation,
   contexte:a.data.contexte,
   lecture:perspectiveOf(a.data),
-  genre:genreOf(a.data) || (a.data.format==='regard-croise'?'regard-croise':''),
+  genre:genreOf(a.data)==='recit' ? 'chronique' : (genreOf(a.data) || (a.data.format==='regard-croise'?'regard-croise':'')),
   tags:[a.data.tag_1,a.data.tag_2,a.data.tag_3,a.data.tag_4,a.data.tag_5].filter(Boolean).join(' '),
   url:urlOf(a.id),
   conversationLabel:conversations[a.data.cycle]?.[a.data.conversation]??a.data.conversation,
