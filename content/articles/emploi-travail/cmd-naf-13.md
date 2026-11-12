@@ -1,5 +1,7 @@
 ---
 title: "Pour améliorer nos résultats, on nous a conseillé de ne plus prendre les gens qui ont besoin de nous."
+hero_image: "/images/emp-c4-cmd-naf-13-visuel-v1.webp"
+image_alt: "Chaussures de sécurité neuves posées sur un coussin de velours dans un atelier d’insertion."
 summary: "Gérard Pichon dirige une association d'insertion. Pour améliorer ses résultats, on lui conseille de recruter ceux qui ont le moins besoin d'aide. Jean Toksik l'interroge sur cette étrange stratégie."
 cycle: "emploi-travail"
 conversation: "C4"
