@@ -1,5 +1,5 @@
 ---
-import { cycleCatalogue, cycleFamilies, cycleBriefs } from '../../../lib/editorial';
+import { cycleCatalogue, cycleFamilies, cycleBriefs, publicCycleLabel } from '../../../lib/editorial';
 import { photoCycle } from '../../../lib/photographies';
 import { articleStyle } from '../../../lib/article-style';
 import MediaHeader from '../../../components/MediaHeader.astro';
@@ -11,6 +11,6 @@ import MediaFooter from '../../../components/MediaFooter.astro';
 <main id="contenu" class="shell">
 <p class="micro">EXPLORER LE MÉDIA</p><h1>Là où ça se joue</h1>
 <p class="lead">Vingt secteurs économiques, six grandes familles : autant de terrains où se croisent les décisions, les contraintes et les intérêts. Découvrez chaque univers, même avant ses premières publications.</p>
-{cycleFamilies.map(family=><section class="cycle-family-directory"><h2>{family.label}</h2><div class="directory-grid">{family.codes.map(code=>{const item=cycleCatalogue.find(c=>c.code===code)!;return <a class="directory-tile" href={`/media/cycles/${item.code}/`}>{photoCycle(item.code)?<img src={photoCycle(item.code)} alt="" loading="lazy"/>:<div class="photo-placeholder"><span>SECTEUR ÉCONOMIQUE</span></div>}<span class="micro">SECTEUR {String(item.number).padStart(2,'0')}</span><h3>{item.label}</h3><p>{cycleBriefs[item.code]?.ambition}</p><span>Découvrir le secteur ↗</span></a>})}</div></section>)}
+{cycleFamilies.map(family=><section class="cycle-family-directory"><h2>{family.label}</h2><div class="directory-grid">{family.codes.map(code=>{const item=cycleCatalogue.find(c=>c.code===code)!;return <a class="directory-tile" href={`/media/cycles/${item.code}/`}>{photoCycle(item.code)?<img src={photoCycle(item.code)} alt="" loading="lazy"/>:<div class="photo-placeholder"><span>SECTEUR ÉCONOMIQUE</span></div>}<span class="micro">SECTEUR {String(item.number).padStart(2,'0')}</span><h3>{publicCycleLabel(item.code)}</h3><p class="micro">{item.label}</p><p>{cycleBriefs[item.code]?.ambition}</p><span>Découvrir le secteur ↗</span></a>})}</div></section>)}
 <p><a href="/media/publications/">Explorer les publications disponibles</a></p>
 </main><MediaFooter/></body></html>
