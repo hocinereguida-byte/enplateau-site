@@ -1,5 +1,7 @@
 ---
 title: "J'ai dix places à ouvrir, cinq salariés à trouver et trois élus qui veulent couper le ruban."
+hero_image: "/images/soc-c2-cmd-naf-11-visuel-v2.webp"
+image_alt: "Ruban tricolore devant une chambre vide, ciseaux posés sur une chaise."
 summary: "Martine Vautrin dirige une association qui gère un foyer de vie accueillant trente adultes en situation de handicap. Elle vient d'obtenir l'autorisation de créer dix places supplémentaires, à condition de réunir les moyens nécessaires pour les ouvrir. Une excellente nouvelle, sauf qu'elle manque déjà de personnel. Le maire souhaite inaugurer les nouvelles places. La directrice a décidé de lui réserver une surprise."
 cycle: "social-medicosocial"
 conversation: "C2"
