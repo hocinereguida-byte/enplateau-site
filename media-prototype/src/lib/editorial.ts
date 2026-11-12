@@ -445,7 +445,7 @@ export const publicGenreLabel = (data: any): string =>
 export const perspectives = readings;
 export const narrativeGenres: Record<string, string> = {
   'grand-entretien': 'Grand Entretien',
-  recit: 'Récit',
+  recit: 'Comédies économiques',
   chronique: 'Comédies économiques',
 };
 export const perspectiveOf = (data: any): string =>
