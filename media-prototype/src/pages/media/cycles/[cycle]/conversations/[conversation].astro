@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, conversations, contexts, readings, publicationInstant, perspectiveOf, genreOf, narrativeGenres, cycleCatalogue } from '../../../../../lib/editorial';
+import { isPublic, validClassification, urlOf, conversations, contexts, publicPerspectiveLabel, publicGenreLabel, publicationInstant, perspectiveOf, cycleCatalogue } from '../../../../../lib/editorial';
 import { articleStyle } from '../../../../../lib/article-style';
 import MediaFooter from '../../../../../components/MediaFooter.astro';
 import MediaHeader from '../../../../../components/MediaHeader.astro';
@@ -17,7 +17,7 @@ const items=(await getCollection('articles'))
 const name=conversations[cycle]?.[conversation]??conversation;
 const cycleName=cycleCatalogue.find(x=>x.code===cycle)?.label??cycle;
 const contextGroups=Object.entries(contexts[cycle]||{}).map(([code,label])=>({code,label,articles:items.filter(a=>a.data.contexte===code)})).filter(group=>group.articles.length>0);
-const genreName=(a:any)=>a.data.format==='regard-croise'?'Regard croisé':(narrativeGenres[genreOf(a.data)??'']??'Scène');
+const genreName=(a:any)=>publicGenreLabel(a.data);
 ---
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -45,9 +45,9 @@ const genreName=(a:any)=>a.data.format==='regard-croise'?'Regard croisé':(narra
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/>
 <main class="shell" id="contenu">
-<nav class="kicker" aria-label="Fil d’Ariane"><a href="/media/">Accueil</a> / <a href="/media/cycles/">Cycles</a> / <a href={'/media/cycles/'+cycle+'/'}>{cycleName}</a> / {name}</nav>
+<nav class="kicker" aria-label="Fil d’Ariane"><a href="/media/">Accueil</a> / <a href="/media/cycles/">Là où ça se joue</a> / <a href={'/media/cycles/'+cycle+'/'}>{cycleName}</a> / {name}</nav>
 <header class="sda-v5-conv-intro">
-<p class="sda-v5-conv-kicker">CONVERSATION {conversation} · {cycleName.toUpperCase()}</p>
+<p class="sda-v5-conv-kicker">SUJET {conversation} · {cycleName.toUpperCase()}</p>
 <h1>{name}</h1>
 <p class="lead">Une grande question économique explorée à travers des décisions, des contraintes et des perspectives différentes.</p>
 <p class="sda-v5-conv-kicker">{items.length} PUBLICATION{items.length>1?'S':''} DISPONIBLE{items.length>1?'S':''}</p>
@@ -55,13 +55,13 @@ const genreName=(a:any)=>a.data.format==='regard-croise'?'Regard croisé':(narra
 {contextGroups.map(group=><section class="sda-v5-conv-context" aria-labelledby={'ctx-'+group.code}>
 <p class="sda-v5-conv-kicker">SITUATION ÉCONOMIQUE</p><h2 id={'ctx-'+group.code}>{group.label}</h2>
 <div class="sda-v5-conv-grid">{group.articles.map(a=><article class="sda-v5-conv-card">
-<p class="sda-v5-conv-kicker">{genreName(a)} · {readings[perspectiveOf(a.data)]??cycleName}</p>
+<p class="sda-v5-conv-kicker">{genreName(a)} · {publicPerspectiveLabel(perspectiveOf(a.data)) || cycleName}</p>
 <h3><a href={urlOf(a.id)}>{a.data.title}</a></h3>
 {a.data.summary&&<p>{a.data.summary}</p>}
-<footer><span>{readings[perspectiveOf(a.data)]??'Analyse documentée'}</span><a href={urlOf(a.id)}>Lire ↗</a></footer>
+<footer><span>{publicPerspectiveLabel(perspectiveOf(a.data)) || 'Analyse documentée'}</span><a href={urlOf(a.id)}>Lire ↗</a></footer>
 </article>)}</div></section>)}
 <nav class="sda-v5-conv-back" aria-label="Continuer à explorer">
-<a href={'/media/cycles/'+cycle+'/'}>← Explorer le cycle {cycleName}</a>
+<a href={'/media/cycles/'+cycle+'/'}>← Explorer le secteur {cycleName}</a>
 <a href="/media/publications/">Toutes les publications ↗</a>
 </nav>
 </main><MediaFooter/>
