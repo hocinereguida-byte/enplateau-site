@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, readings, conversations, contexts, publicationInstant, perspectiveOf, genreOf, narrativeGenres } from '../../../lib/editorial';
+import { isPublic, validClassification, urlOf, readings, conversations, contexts, publicationInstant, perspectiveOf, genreOf, narrativeGenres, cycleCatalogue } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
 import MediaFooter from '../../../components/MediaFooter.astro'
 import MediaHeader from '../../../components/MediaHeader.astro';;
@@ -37,10 +37,10 @@ const entries=articles.map(a=>({
 <form class="catalogue-filters" id="filter-form" role="search">
 <div class="filter-search"><label for="search">Rechercher dans les publications</label><input type="search" id="search" name="q" autocomplete="off" placeholder="Titre, thème, mot-clé…"/></div>
 <div class="filter-grid">
-<div><label for="cycle">Cycle</label><select id="cycle" name="cycle"><option value="">Tous les cycles</option><option value="industrie">Industrie</option><option value="immobilier">Immobilier</option></select></div>
+<div><label for="cycle">Cycle</label><select id="cycle" name="cycle"><option value="">Tous les cycles</option>{cycleCatalogue.map(item=><option value={item.code}>{item.label}</option>)}</select></div>
 <div><label for="conversation">Conversation</label><select id="conversation" name="conversation"><option value="">Toutes les conversations</option></select></div>
 <div><label for="contexte">Contexte</label><select id="contexte" name="contexte"><option value="">Tous les contextes</option></select></div>
-<div><label for="genre">Genre</label><select id="genre" name="genre"><option value="">Tous les genres</option><option value="grand-entretien">Grand Entretien</option><option value="recit">Récit</option><option value="chronique">Chronique</option><option value="regard-croise">Regard croisé</option></select></div>
+<div><label for="genre">Genre</label><select id="genre" name="genre"><option value="">Tous les genres</option><option value="grand-entretien">Grand Entretien</option><option value="chronique">Chronique</option><option value="regard-croise">Regard croisé</option></select></div>
 <div><label for="lecture">Perspective éditoriale</label><select id="lecture" name="lecture"><option value="">Toutes les perspectives</option>{Object.entries(readings).map(([key,value])=><option value={key}>{value}</option>)}</select></div>
 </div><div class="filter-actions"><button type="reset">Effacer les filtres</button><p id="result-count" aria-live="polite">{entries.length} publication(s)</p></div>
 </form>

@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, readings, conversations, publicationInstant } from '../../lib/editorial';
+import { isPublic, validClassification, urlOf, readings, conversations, publicationInstant, cycleCatalogue, cycleFamilies } from '../../lib/editorial';
 import { articleStyle } from '../../lib/article-style';
 import { photoCycle, photoLecture, photoConversation, afficherPhotoListe } from '../../lib/photographies';
 import registry from '../../../../content/rubriques/conversations.json';
@@ -78,17 +78,37 @@ body.media-home .home-shell{box-shadow:none!important}
 </div>
 {ordered.length>1&&<section class="ft-top-stories" aria-labelledby="topstories"><h3 id="topstories">À découvrir également</h3><div class="ft-top-grid">{ordered.slice(1,9).map((a,i)=><article class="ft-top-card">{a.data.hero_image?<img src={a.data.hero_image} alt="" loading="lazy"/>:<div class="photo-placeholder"><span>IMAGE DE L'ARTICLE</span></div>}<p class="micro">{a.data.cycle} · {a.data.format==='regard-croise'?'REGARD CROISÉ':'SCÈNE'}</p><h4><a href={urlOf(a.id)}>{a.data.title}</a></h4></article>)}</div></section>}
 </section>
-<section class="home-section ft-genres" aria-labelledby="genres-home-title"><div class="section-line"><div><p class="micro">LES FORMATS</p><h2 id="genres-home-title">Les genres</h2></div></div><div class="ft-genre-grid">{[{name:'Chronique',slug:'chronique',description:'Une lecture singulière des décisions et de leurs contradictions.',photo:'/images/genres/scenes_darbitrage_genre_01_chronique.webp'},{name:'Récit',slug:'recit',description:'Des histoires incarnées où les arbitrages se révèlent au fil de l’action.',photo:'/images/genres/scenes_darbitrage_genre_02_recit.webp'},{name:'Grand Entretien',slug:'grand-entretien',description:'Des échanges fictifs et documentés pour comprendre les choix économiques.',photo:'/images/genres/scenes_darbitrage_genre_03_grand_entretien.webp'}].map(g=><a class="ft-genre-card" href={`/media/scenes/#${g.slug}`}><div class="ft-genre-visual"><img src={g.photo} alt="" loading="lazy"/></div><h3>{g.name}</h3><p>{g.description}</p></a>)}</div></section>
+<section class="home-section ft-genres" aria-labelledby="genres-home-title"><div class="section-line"><div><p class="micro">LES FORMATS</p><h2 id="genres-home-title">Choisir sa lecture</h2></div></div>
+<div class="ft-genre-grid">
+{[
+{name:'Chroniques',href:'/media/scenes/#chronique',description:'Des contradictions économiques racontées avec humour et précision.',photo:'/images/genres/scenes_darbitrage_genre_01_chronique.webp'},
+{name:'Grands Entretiens',href:'/media/scenes/#grand-entretien',description:'Des échanges fictifs et documentés où les décisions sont mises à l’épreuve.',photo:'/images/genres/scenes_darbitrage_genre_03_grand_entretien.webp'},
+{name:'Regards croisés',href:'/media/regards-croises/',description:'Des analyses documentées pour confronter les mécanismes aux faits.',photo:null}
+].map(g=><a class="ft-genre-card" href={g.href}><div class="ft-genre-visual">{g.photo?<img src={g.photo} alt="" loading="lazy"/>:<div class="photo-placeholder" aria-hidden="true"><span>ANALYSE DOCUMENTÉE</span></div>}</div><h3>{g.name}</h3><p>{g.description}</p></a>)}
+</div></section>
 <section class="home-section" aria-labelledby="recent-conversations-heading">
 <div class="section-line"><div><p class="micro">EXPLORER LES QUESTIONS</p><h2 id="recent-conversations-heading">Les conversations</h2></div></div>
 <p class="home-section-intro">Des questions économiques explorées sous plusieurs angles, à travers des Scènes fictives documentées et des Regards croisés.</p>
 {recentConversations.length ? <div class="ft-conversation-grid">{recentConversations.slice(0,2).map(item=><article class="ft-conversation-card"><a href={item.url}>{item.photo?<img src={item.photo} alt="" loading="lazy"/>:<span class="photo-placeholder"><span>PHOTOGRAPHIE DE LA CONVERSATION</span></span>}<p class="micro">{item.cycle==='industrie'?'INDUSTRIE':'LOGEMENT & TERRITOIRES'} · {item.code}</p><h3>{item.title}</h3></a><p>{item.count} publication{item.count>1?'s':''}</p></article>)}</div> : <p class="small">Les conversations apparaîtront ici dès leurs premières publications.</p>}
 <a class="story-action" href="/media/conversations/">Explorer toutes les conversations</a>
-</section><section id="cycles" class="home-section" aria-labelledby="cycles-heading">
-<div class="section-line"><div><p class="micro">LES SECTEURS</p><h2 id="cycles-heading">Explorer les cycles</h2></div><span class="small">Deux cycles inauguraux · Conversations adaptées à chaque secteur</span></div>
-<div class="cycle-list">
-<a class="cycle-row" href="/media/cycles/industrie/">{photoCycle("industrie")?<img class="rubric-thumb" src={photoCycle("industrie")} alt="" loading="lazy"/>:<span class="photo-placeholder photo-placeholder-thumb">PHOTO DU CYCLE</span>}<span class="cycle-index">01 / INDUSTRIE</span><span class="cycle-title">Industrie et transformations industrielles</span><span class="cycle-description">Les décisions qui orientent la production, les investissements et les trajectoires industrielles.</span><span class="cycle-arrow" aria-hidden="true">↗</span></a>
-<a class="cycle-row" href="/media/cycles/immobilier/">{photoCycle("immobilier")?<img class="rubric-thumb" src={photoCycle("immobilier")} alt="" loading="lazy"/>:<span class="photo-placeholder photo-placeholder-thumb">PHOTO DU CYCLE</span>}<span class="cycle-index">02 / IMMOBILIER</span><span class="cycle-title">Logement & fabrique des territoires</span><span class="cycle-description">Les décisions qui façonnent le logement, les opérations et les territoires.</span><span class="cycle-arrow" aria-hidden="true">↗</span></a>
+</section><style is:global>
+.ux-cycle-families{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ux-cycle-family{min-width:0;border:1px solid #d6c1b0;background:#fffaf6;padding:20px}
+.ux-cycle-family h3{font:600 21px/1.3 'Playfair Display',Georgia,serif;margin:0 0 12px;color:#262a33}
+.ux-cycle-entry{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid #e4d6cb;color:#262a33;text-decoration:none}
+.ux-cycle-entry:hover,.ux-cycle-entry:focus-visible{color:#176b78;text-decoration:underline}
+.ux-cycle-entry span{font-size:13px;line-height:1.4}
+.ux-cycle-entry small{font-size:10px;color:#665b50;white-space:nowrap}
+@media(max-width:950px){.ux-cycle-families{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.ux-cycle-families{grid-template-columns:1fr}.ux-cycle-family{padding:16px}}
+</style>
+<section id="cycles" class="home-section" aria-labelledby="cycles-heading">
+<div class="section-line"><div><p class="micro">LES SECTEURS</p><h2 id="cycles-heading">Explorer les 20 cycles</h2></div><a class="story-action" href="/media/cycles/">Tous les cycles</a></div>
+<p class="home-section-intro">Six grandes familles pour explorer l’économie réelle. Les vingt cycles sont accessibles dès le lancement ; seules les publications effectivement disponibles sont proposées à la lecture.</p>
+<div class="ux-cycle-families">
+{cycleFamilies.map(family=><section class="ux-cycle-family" aria-label={family.label}><h3>{family.label}</h3>
+{family.codes.map(code=>{const cycle=cycleCatalogue.find(item=>item.code===code)!;const count=items.filter(a=>a.data.cycle===code).length;return <a class="ux-cycle-entry" href={`/media/cycles/${code}/`}><span>{cycle.label}</span><small>{count?count+' publication'+(count>1?'s':''):'En préparation'}</small></a>})}
+</section>)}
 </div>
 </section>
 <section id="perspectives" class="home-section" aria-labelledby="perspectives-heading">
