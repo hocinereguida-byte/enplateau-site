@@ -1,6 +1,8 @@
 ---
 genre_narratif: "grand-entretien"
 title: "La banque avait réduit le prêt. Pas le risque de locaux vides."
+hero_image: "/images/imm-c1-rc-01-isabelle-visuel-v3.webp"
+image_alt: "Isabelle examine une maquette immobilière avec une loupe et une pince et installe un minuscule transat devant des locaux vides."
 summary: "Isabelle M., directrice des engagements immobiliers, revient face à Jean Toksik sur un financement immobilier confronté à un risque locatif persistant, sans défaut de paiement établi."
 format: "entretien"
 cycle: "immobilier"
