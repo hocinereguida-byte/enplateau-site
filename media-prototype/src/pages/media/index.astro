@@ -13,14 +13,14 @@ const groups=Object.entries(conversations).flatMap(([cycle,entries])=>Object.ent
  return {cycle,code,title,count:matching.length,updated:matching.length ? (publicationInstant(matching[0].data.publication_date)?.getTime()??0) : 0,url:'/media/cycles/'+cycle+'/conversations/'+code+'/'};
 })).filter(g=>g.count>0).sort((a,b)=>b.updated-a.updated);
 const heroConversation=groups.find(g=>g.cycle===featured?.data.cycle&&g.code===featured?.data.conversation)??groups[0];
-const genreLabel=(a:any)=>publicGenreLabel(a.data).toLocaleUpperCase('fr-FR')+(a.data.format==='regard-croise'?' · ANALYSE JOURNALISTIQUE':' · FICTION SATIRIQUE');
+const genreLabel=(a:any)=>`${publicGenreLabel(a.data)} · ${publicCycleLabel(a.data.cycle)}`.toLocaleUpperCase('fr-FR');
 const perspectiveLabel=(a:any)=>publicPerspectiveLabel(perspectiveOf(a.data));
 const cycleLabel=publicCycleLabel;
 ---
 <!doctype html>
 <html lang="fr"><head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/>
-<meta name="sda-preproduction-revision" content="formats-raisons-interrogatoires-v7-20261112"/>
+<meta name="sda-preproduction-revision" content="formats-cartes-cycle-v7-1-20261112"/>
 <title>Scènes d’Arbitrage — Les décisions qui font l’économie</title>
 <meta name="description" content="La fiction pour explorer. L’analyse pour comprendre. Découvrez les arbitrages économiques à travers Raisons et déraisons, Les interrogatoires et Le fond du problème."/>
 <style is:inline set:html={articleStyle}/></head>
