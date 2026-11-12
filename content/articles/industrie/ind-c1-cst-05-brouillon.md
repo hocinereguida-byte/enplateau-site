@@ -1,5 +1,7 @@
 ---
 title: "Peut-on décrocher le contrat du siècle sans avoir les moyens de l’honorer ?"
+hero_image: "/images/ind-c1-cst-05-laurent-visuel-v1.webp"
+image_alt: "Une clé industrielle démesurée, une petite tirelire et une coupe de champagne symbolisent le contraste entre l’ambition commerciale et les moyens financiers."
 summary: "Dans le sud de la France, une entreprise industrielle d'environ deux cents salariés fabrique des pièces métalliques destinées aux constructeurs de machines. Son plus gros contrat vient d'être signé. Les commerciaux sabrent le champagne, la direction se félicite et Laurent B., directeur administratif et financier depuis neuf ans, cherche avec quel argent acheter les matières premières. À lui de trouver les financements ; à la production de commander sans attendre. Jean Toksik reçoit cet homme manifestement incapable de partager le bonheur collectif."
 format: "entretien"
 cycle: "industrie"
