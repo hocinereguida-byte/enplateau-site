@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, conversations, cycleCatalogue } from '../../../lib/editorial';
+import { isPublic, validClassification, conversations, cycleCatalogue, canonicalCycleCode } from '../../../lib/editorial';
 import { photoConversation } from '../../../lib/photographies';
 import registry from '../../../../../content/rubriques/conversations.json';
 import { articleStyle } from '../../../lib/article-style';
@@ -9,7 +9,7 @@ import MediaFooter from '../../../components/MediaFooter.astro';
 const publicArticles=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data));
 const catalogue=Object.entries(conversations).flatMap(([cycle,group])=>Object.entries(group).map(([code,title])=>{
  const metadata=(registry.conversations as Record<string,{titre:string;presentation:string;questions:string;mots_cles:string}>)[cycle+'_'+code];
- return {cycle,code,title,description:metadata?.presentation||'',questions:metadata?.questions||'',keywords:metadata?.mots_cles||'',photo:photoConversation(cycle,code),count:publicArticles.filter(a=>a.data.cycle===cycle&&a.data.conversation===code).length,url:`/media/cycles/${cycle}/conversations/${code}/`};
+ return {cycle:canonicalCycleCode(cycle),code,title,description:metadata?.presentation||'',questions:metadata?.questions||'',keywords:metadata?.mots_cles||'',photo:photoConversation(cycle,code),count:publicArticles.filter(a=>a.data.cycle===cycle&&a.data.conversation===code).length,url:`/media/cycles/${cycle}/conversations/${code}/`};
 })).filter(item=>item.count>0);
 const cyclesAvecConversations=cycleCatalogue.filter(c=>catalogue.some(item=>item.cycle===c.code));
 ---
