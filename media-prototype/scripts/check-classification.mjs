@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../../content/articles');
 const records = [
-  "recherche-innovation/cmd-naf-17.md|CMD-NAF-17|recherche-innovation|V3|strategie-gouvernance|REC-C2-U1||C2-U1|entretien|grand-entretien|1odY4BqKHda4B1SlL8eC2V3HE0WHdla66dsVhVkuFXzs",
+  "recherche-innovation/cmd-naf-17.md|CMD-NAF-17|recherche-innovation|V4.6|strategie-gouvernance|REC-C2-U1||C2-U1|entretien|grand-entretien|1QqmgXh1NwfvRZu5Gs98oZmd2QzjYYfaU5sCPn1Abi4M",
   "numerique-telecom/cmd-naf-16.md|CMD-NAF-16|numerique-telecom|V4|operations-organisation|NUM-C4-U1||C4-U1|chronique|chronique|1sAOsLD-C5gETL4dioMMU42t1Aex-fCSiuPH1_by6ERQ",
   "culture-medias/cmd-naf-15.md|CMD-NAF-15|culture-medias|V4|finance-investissement|CUL-C5-U1||C5-U1|entretien|grand-entretien|1HZjxYjPIU9k88h1q_q91y4vMNmcM-nGi5dhB_CorjA8",
   "action-publique/cmd-naf-14.md|CMD-NAF-14|action-publique|V4|droit-regulation|ACT-C7-U1||C7-U1|chronique|chronique|1hBoIuH0EpzdCKn_Ux3W-qs3Uw2n-bP9_r1I3WjQP8N0",
