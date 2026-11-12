@@ -153,16 +153,43 @@ const groupedCycles=cycleFamilies.map(f=>({label:f.label,items:f.codes.map(code=
  #press-site-header .press-wordmark{font-size:18px!important}
  #press-site-header .press-home-link,#press-site-header .press-dropdown>summary,#press-site-header .press-search{font-size:10px!important;padding:18px 4px!important}
 }
+
+/* Correctif mobile : les familles ouvertes restent visibles sous l'en-tête. */
+@media(max-width:760px){
+ #press-site-header .press-nav{scroll-padding-top:16px!important;overflow-anchor:none!important;overscroll-behavior:contain!important}
+ #press-site-header .press-cycle-family>summary{scroll-margin-top:16px}
+}
 </style>
 <script is:inline>
 const pressHeader=document.getElementById('press-site-header');
 const pressToggle=pressHeader?.querySelector('.press-menu-toggle');
 const pressNav=pressHeader?.querySelector('.press-nav');
 const closeMobileMenu=()=>{pressHeader?.classList.remove('press-menu-open');pressToggle?.setAttribute('aria-expanded','false');const icon=pressToggle?.querySelector('.press-toggle-icon');const label=pressToggle?.querySelector('.press-toggle-label');if(icon)icon.textContent='☰';if(label)label.textContent='Menu';};
-pressToggle?.addEventListener('click',()=>{const open=!pressHeader.classList.contains('press-menu-open');if(open){pressHeader.classList.add('press-menu-open');pressToggle.setAttribute('aria-expanded','true');pressToggle.querySelector('.press-toggle-icon').textContent='×';pressToggle.querySelector('.press-toggle-label').textContent='Fermer';}else closeMobileMenu();});
+pressToggle?.addEventListener('click',()=>{const open=!pressHeader.classList.contains('press-menu-open');if(open){pressHeader.classList.add('press-menu-open');pressToggle.setAttribute('aria-expanded','true');pressToggle.querySelector('.press-toggle-icon').textContent='×';pressToggle.querySelector('.press-toggle-label').textContent='Fermer';if(pressNav)pressNav.scrollTop=0;}else closeMobileMenu();});
 window.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMobileMenu();pressHeader?.querySelectorAll('details').forEach(d=>d.open=false);pressToggle?.focus();}});
 window.matchMedia('(min-width:761px)').addEventListener('change',e=>{if(e.matches)closeMobileMenu();});
 pressNav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMobileMenu));
+
+/* Les <details> imbriqués se déplient dans une zone scrollable sous le bandeau fixe.
+ * Sur Android, la remise en page peut conserver une ancienne position de scroll et
+ * dissimuler le premier lien. Un seul groupe est ouvert à la fois ; on replace son
+ * en-tête en haut de la zone de navigation, puis le premier cycle reste visible. */
+const pressCycleFamilies=Array.from(pressNav?.querySelectorAll('.press-cycle-family')??[]);
+const isPressMobile=()=>window.matchMedia('(max-width:760px)').matches;
+pressCycleFamilies.forEach(family=>{
+  family.addEventListener('toggle',()=>{
+    if(!family.open||!isPressMobile()||!pressNav?.classList.contains('press-nav'))return;
+    pressCycleFamilies.forEach(other=>{if(other!==family&&other.open)other.open=false;});
+    requestAnimationFrame(()=>{
+      if(!family.open||!isPressMobile()||!pressHeader?.classList.contains('press-menu-open'))return;
+      const summary=family.querySelector(':scope > summary');
+      if(!summary)return;
+      const target=pressNav.scrollTop+summary.getBoundingClientRect().top-pressNav.getBoundingClientRect().top-12;
+      pressNav.scrollTo({top:Math.max(0,target),behavior:'auto'});
+    });
+  });
+});
+
 document.querySelectorAll('.press-nav > details').forEach(detail=>{
  detail.addEventListener('toggle',()=>{if(detail.open)document.querySelectorAll('.press-nav > details').forEach(other=>{if(other!==detail)other.open=false})});
 });
