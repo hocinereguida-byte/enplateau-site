@@ -436,8 +436,33 @@ export const publicPerspectives: Record<string, { label: string; description: st
 };
 /** Compatibilité des anciens articles Numérique sans déplacer leurs URLs. */
 export const canonicalCycleCode = (code: string): string => code === 'numerique-telecom' ? 'numerique' : code;
-export const publicCycleLabel = (code: string): string =>
+/** V8 — signatures publiques des vingt univers, sans migration des secteurs CMS. */
+export const editorialCycleNames: Record<string, string> = {
+  "immobilier": "La pierre et les promesses",
+  "industrie": "La machine et les hommes",
+  "agriculture": "La terre et les comptes",
+  "energie": "Sous haute tension",
+  "eau-ressources": "Rien ne se perd",
+  "mobilites": "Ça doit circuler",
+  "commerce": "Tout doit partir",
+  "tourisme": "Le prix du dépaysement",
+  "services-entreprises": "On s’occupe de tout",
+  "banque-financement": "L’argent des autres",
+  "sante": "Soigner les comptes",
+  "social-medicosocial": "La solidarité sous conditions",
+  "education-formation": "Tout est à apprendre",
+  "emploi-travail": "Travail en cours",
+  "ess": "La solidarité fait ses comptes",
+  "action-publique": "Les affaires publiques",
+  "culture-medias": "La culture a un prix",
+  "numerique": "Derrière les écrans",
+  "recherche-innovation": "L’avenir en chantier",
+  "internationalisation": "Sans frontières, ou presque"
+};
+export const publicCycleTechnicalLabel = (code: string): string =>
   cycleCatalogue.find(item => item.code === canonicalCycleCode(code))?.label ?? code;
+export const publicCycleLabel = (code: string): string =>
+  editorialCycleNames[canonicalCycleCode(code)] ?? publicCycleTechnicalLabel(code);
 
 export const publicPerspectiveLabel = (code: string): string => publicPerspectives[code]?.label ?? readings[code] ?? code;
 export const publicGenreLabel = (data: any): string =>
