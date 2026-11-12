@@ -135,6 +135,11 @@ const shareBase=canonical;
  .recommendation-card{padding:16px 17px}
 }
 
+/* Fil d’Ariane : typographie légère, liens identifiables au survol et au clavier. */
+.reading>header .kicker a{text-decoration:none;text-underline-offset:3px}
+.reading>header .kicker a:hover{text-decoration:underline}
+.reading>header .kicker a:focus-visible{text-decoration:underline;outline:2px solid currentColor;outline-offset:3px}
+
 /* Magazine front matter: lead image immediately after headline, before long standfirst. */
 .reading>header .hero-editorial{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border:0;margin:20px 0 23px}
 @media(max-width:740px){.reading>header .hero-editorial{margin:17px 0 21px}}
