@@ -1,67 +1,71 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, conversations, contexts, readings, publicationInstant, cycleCatalogue, cycleBriefs } from '../../../lib/editorial';
+import { isPublic, validClassification, urlOf, conversations, readings, perspectiveOf, genreOf, narrativeGenres, publicationInstant, cycleCatalogue, cycleBriefs } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
-import { photoCycle, photoConversation, afficherPhotoListe } from '../../../lib/photographies';
-import MediaFooter from '../../../components/MediaFooter.astro'
-import MediaHeader from '../../../components/MediaHeader.astro';;
+import MediaFooter from '../../../components/MediaFooter.astro';
+import MediaHeader from '../../../components/MediaHeader.astro';
 export function getStaticPaths(){return cycleCatalogue.map(({code:cycle})=>({params:{cycle}}));}
 const {cycle}=Astro.params;
-const all=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data));
-const items=all.filter(a=>a.data.cycle===cycle);
-const cycleName=cycleCatalogue.find(c=>c.code===cycle)?.label ?? cycle;
+const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)&&a.data.cycle===cycle).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
+const cycleName=cycleCatalogue.find(c=>c.code===cycle)?.label??cycle;
 const brief=cycleBriefs[cycle];
-const conv=Object.entries(conversations[cycle]||{}).filter(([code])=>items.some(a=>a.data.conversation===code));
-const latest=[...items].sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
-const featured=latest.find(a=>a.data.mise_en_avant==='une')??latest[0];
-const otherLead=latest.find(a=>a.id!==featured?.id);
-const remainingStories=latest.filter(a=>a.id!==featured?.id&&a.id!==otherLead?.id);
-const editorPicks=remainingStories.slice(0,3);
-const moreStories=remainingStories.slice(3);
-const cardSize=(a:any,i:number)=>a.data.taille_image_liste==="grande"?"large":a.data.taille_image_liste==="moyenne"?"medium":a.data.taille_image_liste==="vignette"?"thumb":a.data.taille_image_liste==="sans"?"none":i%4===0?"medium":i%4===1?"thumb":i%4===2?"none":"medium";
+const conv=Object.entries(conversations[cycle]||{}).map(([code,title])=>({code,title,items:items.filter(a=>a.data.conversation===code)})).filter(x=>x.items.length>0);
+const labelGenre=(a:any)=>a.data.format==='regard-croise'?'REGARD CROISÉ · ANALYSE DOCUMENTÉE':(narrativeGenres[genreOf(a.data)??'']??'SCÈNE')+' · FICTION ÉCONOMIQUE';
 ---
-<!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>{cycleName} — Scènes d’Arbitrage</title><style is:inline set:html={articleStyle}/><style>.cycle-intro{max-width:780px;margin:30px 0 48px}.cycle-intro h2{margin:28px 0 10px}.cycle-intro p{font-size:17px;line-height:1.7;margin:0 0 18px}</style><style is:global>
-.editorial-image-large .article-list-photo,.editorial-image-large .photo-placeholder{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
-.editorial-image-medium .article-list-photo,.editorial-image-medium .photo-placeholder{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
-.editorial-image-thumb{display:grid!important;grid-template-columns:minmax(0,1fr) 112px;gap:12px 20px;align-items:start}
-.editorial-image-thumb .article-list-photo,.editorial-image-thumb .photo-placeholder{grid-column:2;grid-row:1/5;width:112px;height:84px;object-fit:cover;min-height:0;margin:0}
-.editorial-image-thumb > :not(.article-list-photo):not(.photo-placeholder){grid-column:1}
-.editorial-image-none .article-list-photo,.editorial-image-none .photo-placeholder{display:none}
-@media(max-width:600px){.editorial-image-thumb{grid-template-columns:minmax(0,1fr) 86px;gap:7px 12px}.editorial-image-thumb .article-list-photo,.editorial-image-thumb .photo-placeholder{width:86px;height:68px}}
-</style><style>.cycle-editorial-selection .editorial-card-summary{font-size:14px;line-height:1.55;color:#526073;margin:3px 0 0;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}</style><style is:global>
-/* Présentation éditoriale commune aux pages de cycle, inspirée de la une. */
-.ft-cycle-selection{margin-top:45px}
-.ft-cycle-selection .ft-front{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.65fr) minmax(0,.75fr);gap:22px;border-top:2px solid #a99789;padding:22px 0 26px}
-.ft-cycle-selection .ft-front-left,.ft-cycle-selection .ft-front-right{min-width:0}
-.ft-cycle-selection .ft-front-left{border-right:1px solid #d7c3b5;padding-right:18px}
-.ft-cycle-selection .ft-front-right{border-left:1px solid #d7c3b5;padding-left:18px}
-.ft-cycle-selection .ft-lead-text h3{font:600 clamp(24px,2.4vw,36px)/1.15 'Playfair Display',Georgia,serif;margin:10px 0}
-.ft-cycle-selection .ft-lead-text a,.ft-cycle-selection .ft-front-right a,.ft-cycle-selection .ft-top-card a{color:#262a33;text-decoration:none}
-.ft-cycle-selection .ft-lead-text p:not(.micro){font-size:14px;line-height:1.55;color:#61564e}
-.ft-cycle-selection .ft-front-right article{border-top:1px solid #d4c1b4;padding-top:12px;margin-top:14px}
-.ft-cycle-selection .ft-front-right h3{font:600 17px/1.32 'Playfair Display',Georgia,serif;margin:4px 0 9px}
-.ft-cycle-selection .ft-main-photo{display:block;text-decoration:none;color:#262a33;background:#eedccd}
-.ft-cycle-selection .ft-main-photo img,.ft-cycle-selection .ft-main-photo .photo-placeholder{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;margin:0}
-.ft-cycle-selection .ft-main-photo strong{display:block;padding:17px;font:600 clamp(21px,2vw,28px)/1.3 'Playfair Display',Georgia,serif}
-.ft-cycle-selection .ft-top-stories{border-top:3px double #96877a;margin-top:14px;padding-top:18px}
-.ft-cycle-selection .ft-top-stories>h3{text-align:center;font:600 12px/1.4 'IBM Plex Sans',sans-serif;text-transform:uppercase;letter-spacing:.08em;margin:0 0 22px}
-.ft-cycle-selection .ft-top-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-.ft-cycle-selection .ft-top-card{min-width:0;border-right:1px solid #dbc7b8;padding-right:12px}
-.ft-cycle-selection .ft-top-card img,.ft-cycle-selection .ft-top-card .photo-placeholder{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;margin:0 0 10px}
-.ft-cycle-selection .ft-top-card h4{font:600 18px/1.3 'Playfair Display',Georgia,serif;margin:8px 0}
-@media(max-width:900px){.ft-cycle-selection .ft-front{grid-template-columns:1fr 1.4fr}.ft-cycle-selection .ft-front-right{grid-column:1/-1;border-left:0;border-top:1px solid #d7c3b5;padding:16px 0 0}.ft-cycle-selection .ft-top-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.ft-cycle-selection .ft-front{grid-template-columns:1fr}.ft-cycle-selection .ft-front-left{border-right:0;padding:0}.ft-cycle-selection .ft-front-center{grid-row:1}.ft-cycle-selection .ft-top-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}}
-</style></head><body>
-<MediaHeader/>
-<main class="shell"><p class="kicker"><a href="/media/">Accueil</a> / Cycle</p><h1>{cycleName}</h1>{photoCycle(cycle)?<img class="rubric-hero-photo" src={photoCycle(cycle)} alt={`Photographie du cycle ${cycleName}`} loading="eager"/>:<div class="photo-placeholder photo-placeholder-rubric"><span>PHOTOGRAPHIE DU CYCLE</span></div>}<section class="cycle-intro" aria-label="Présentation éditoriale"><h2>Ce que nous voulons comprendre</h2><p>{brief?.ambition}</p><h2>Pourquoi explorer ces décisions ?</h2><p>{brief?.enjeux_et_arbitrages}</p><h2>Pourquoi des Scènes et des Regards croisés ?</h2><p>{brief?.approche_narrative}</p></section>
-{conv.length>=2&&<section aria-labelledby="conversations-heading"><h2 id="conversations-heading">Les conversations du cycle</h2><div class="cycle-conversation-list">{conv.map(([code,name])=><a class="cycle-compact-row" href={`/media/cycles/${cycle}/conversations/${code}/`}>{photoConversation(cycle,code)?<img class="rubric-thumb" src={photoConversation(cycle,code)} alt="" loading="lazy"/>:<span class="photo-placeholder photo-placeholder-thumb">PHOTO CONVERSATION</span>}<span class="cycle-compact-number">{code}</span><span class="cycle-compact-title">{name}</span><span class="cycle-compact-aside">{items.filter(a=>a.data.conversation===code).length>0?`${items.filter(a=>a.data.conversation===code).length} publication(s)`:'À découvrir'}</span></a>)}</div><a class="cycle-index-action" href="/media/conversations/">Rechercher dans toutes les conversations</a></section>}
-{featured&&<section class="cycle-editorial-selection ft-cycle-selection" aria-labelledby="cycle-editorial-heading"><p class="micro">LA SÉLECTION DU CYCLE</p><h2 id="cycle-editorial-heading">À lire dans ce cycle</h2>
-<div class="ft-front">
-<article class="ft-front-left ft-lead-text"><p class="micro">{featured.data.format==='regard-croise'?'REGARD CROISÉ':'SCÈNE'} · {readings[featured.data.lecture_principale]}</p><h3><a href={urlOf(featured.id)}>{featured.data.title}</a></h3>{featured.data.summary&&<p>{featured.data.summary}</p>}<a class="story-action" href={urlOf(featured.id)}>Lire l'article</a></article>
-<div class="ft-front-center">{otherLead&&<a href={urlOf(otherLead.id)} class="ft-main-photo">{otherLead.data.hero_image?<img src={otherLead.data.hero_image} alt={otherLead.data.seo?.image_alt||""} loading="lazy"/>:<div class="photo-placeholder"><span>PHOTOGRAPHIE DE L’ARTICLE</span></div>}<strong>{otherLead.data.title}</strong></a>}</div>
-<aside class="ft-front-right"><p class="micro">AUTRES ARTICLES</p>{editorPicks.map(a=><article><p class="micro">{a.data.format==='regard-croise'?'REGARD CROISÉ':'SCÈNE'}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3></article>)}</aside>
-</div>
-{moreStories.length>0&&<div class="ft-top-stories"><h3>À découvrir également</h3><div class="ft-top-grid">{moreStories.map(a=><article class="ft-top-card">{a.data.hero_image?<img src={a.data.hero_image} alt="" loading="lazy"/>:<div class="photo-placeholder"><span>IMAGE DE L'ARTICLE</span></div>}<p class="micro">{a.data.format==='regard-croise'?'REGARD CROISÉ':'SCÈNE'}</p><h4><a href={urlOf(a.id)}>{a.data.title}</a></h4></article>)}</div></div>}
-</section>}
-{items.length>0&&Object.entries(contexts[cycle]||{}).some(([code])=>items.some(a=>a.data.contexte===code))&&<section class="panel"><p class="micro">SITUATIONS ÉCONOMIQUES</p><h2>Explorer les contextes</h2><div class="cycle-context-list">{Object.entries(contexts[cycle]||{}).filter(([code])=>items.some(a=>a.data.contexte===code)).map(([code,name])=><a class="cycle-compact-row" href={`/media/cycles/${cycle}/contextes/${code}/`}><span class="cycle-compact-title">{name}</span><span class="cycle-compact-aside">{items.filter(a=>a.data.contexte===code).length>0?`${items.filter(a=>a.data.contexte===code).length} publication(s)`:'À découvrir'}</span></a>)}</div></section>}
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/>
+<title>{cycleName} — Scènes d’Arbitrage</title>
+<meta name="description" content={brief?.ambition??'Explorer les décisions économiques du cycle '+cycleName}/>
+<style is:inline set:html={articleStyle}/>
+<style is:global>
+.sda-v5-cycle-intro{padding:35px 0 37px;border-bottom:1px solid #ddd8ce;display:grid;grid-template-columns:1.3fr .7fr;gap:44px;align-items:end}
+.sda-v5-cycle-intro h1{font-size:clamp(44px,5.4vw,69px)!important;line-height:1.1!important;letter-spacing:-.05em!important;margin:10px 0 17px!important}
+.sda-v5-cycle-intro .lead{font-size:17px!important;line-height:1.6!important;max-width:690px}
+.sda-v5-cycle-overview{background:#e9e4da;padding:22px;border-left:3px solid #b94e39;font:15px/1.6 'IBM Plex Sans',sans-serif;color:#5d5951}
+.sda-v5-cycle-overview p{margin:7px 0 0}
+.sda-v5-cycle-group{margin-top:42px}
+.sda-v5-cycle-group h2{font-size:clamp(29px,3vw,40px)!important;margin:9px 0 18px!important}
+.sda-v5-cycle-kicker{font:700 10px/1.5 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#b94e39}
+.sda-v5-cycle-conversations{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.sda-v5-cycle-conv{background:#fffefa;border:1px solid #ded8ce;padding:25px;display:flex;flex-direction:column;min-height:188px}
+.sda-v5-cycle-conv h3{font-size:clamp(24px,2.5vw,32px)!important;line-height:1.2;margin:10px 0 12px!important}
+.sda-v5-cycle-conv h3 a{text-decoration:none}
+.sda-v5-cycle-conv footer{margin-top:auto;color:#625e55;font-size:12px;display:flex;justify-content:space-between;padding-top:15px;border-top:1px solid #ddd8ce}
+.sda-v5-cycle-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.sda-v5-cycle-article{background:#fffefa;border:1px solid #ded8ce;padding:22px;display:flex;flex-direction:column;min-height:250px}
+.sda-v5-cycle-article h3{font-size:clamp(22px,2.2vw,29px)!important;line-height:1.19!important;margin:13px 0!important}
+.sda-v5-cycle-article h3 a{text-decoration:none}
+.sda-v5-cycle-article p:not(.sda-v5-cycle-kicker){font:13px/1.55 'IBM Plex Sans',sans-serif;color:#68645d}
+.sda-v5-cycle-article footer{margin-top:auto;padding-top:12px;border-top:1px solid #ddd8ce;display:flex;justify-content:space-between;gap:8px;font:12px/1.4 'IBM Plex Sans',sans-serif}
+.sda-v5-cycle-empty{background:#fffefa;border:1px solid #ded8ce;padding:28px;color:#666159}
+.sda-v5-cycle-link{font-size:13px;text-underline-offset:4px}
+@media(max-width:950px){.sda-v5-cycle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sda-v5-cycle-intro{grid-template-columns:1fr;gap:15px}}
+@media(max-width:650px){.sda-v5-cycle-intro{padding:18px 0 27px}.sda-v5-cycle-intro h1{font-size:clamp(39px,10vw,51px)!important}.sda-v5-cycle-conversations,.sda-v5-cycle-grid{grid-template-columns:1fr}.sda-v5-cycle-article{min-height:0}.sda-v5-cycle-conv{min-height:0}}
+</style></head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/>
+<main class="shell" id="contenu">
+<nav class="kicker" aria-label="Fil d’Ariane"><a href="/media/">Accueil</a> / <a href="/media/cycles/">Cycles</a> / {cycleName}</nav>
+<header class="sda-v5-cycle-intro">
+<div><p class="sda-v5-cycle-kicker">EXPLORER LE CYCLE</p>
+<h1>{cycleName}</h1><p class="lead">{brief?.ambition}</p>
+<p class="sda-v5-cycle-kicker">{items.length ? items.length+' PUBLICATION'+(items.length>1?'S':'')+' DISPONIBLE'+(items.length>1?'S':'') : 'EN PRÉPARATION'}</p></div>
+<div class="sda-v5-cycle-overview"><p class="sda-v5-cycle-kicker">LES ARBITRAGES</p><p>{brief?.enjeux_et_arbitrages}</p></div>
+</header>
+{conv.length>0&&<section class="sda-v5-cycle-group" aria-labelledby="cycle-conversations">
+<p class="sda-v5-cycle-kicker">LES QUESTIONS</p><h2 id="cycle-conversations">Les conversations du cycle</h2>
+<div class="sda-v5-cycle-conversations">{conv.map(c=><article class="sda-v5-cycle-conv">
+<p class="sda-v5-cycle-kicker">CONVERSATION {c.code}</p>
+<h3><a href={'/media/cycles/'+cycle+'/conversations/'+c.code+'/'}>{c.title}</a></h3>
+<footer><span>{c.items.length} publication{c.items.length>1?'s':''}</span><a href={'/media/cycles/'+cycle+'/conversations/'+c.code+'/'}>Explorer ↗</a></footer>
+</article>)}</div></section>}
+<section class="sda-v5-cycle-group" aria-labelledby="cycle-published">
+<p class="sda-v5-cycle-kicker">À DÉCOUVRIR</p><h2 id="cycle-published">Lire dans ce cycle</h2>
+{items.length ? <div class="sda-v5-cycle-grid">{items.map(a=><article class="sda-v5-cycle-article">
+<p class="sda-v5-cycle-kicker">{labelGenre(a)}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3>
+{a.data.summary&&<p>{a.data.summary}</p>}
+<footer><span>{readings[perspectiveOf(a.data)]??'Analyse documentée'}</span><a href={urlOf(a.id)}>Lire ↗</a></footer>
+</article>)}</div> : <div class="sda-v5-cycle-empty"><p>Les premières publications de ce cycle sont en préparation.</p><a class="sda-v5-cycle-link" href="/media/publications/">Découvrir les publications disponibles ↗</a></div>}
+</section>
+<section class="sda-v5-cycle-group" aria-label="Méthode"><p class="sda-v5-cycle-kicker">NOTRE MÉTHODE</p><h2>La fiction pour explorer. L’analyse pour comprendre.</h2><p class="lead">{brief?.approche_narrative}</p></section>
 </main><MediaFooter/></body></html>
