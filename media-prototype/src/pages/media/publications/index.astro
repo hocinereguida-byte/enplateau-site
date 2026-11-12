@@ -6,6 +6,7 @@ import MediaFooter from '../../../components/MediaFooter.astro'
 import MediaHeader from '../../../components/MediaHeader.astro';;
 const articles=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
 const conversationFilterOptions={...conversations,numerique:conversations['numerique-telecom']||{}};
+const contextFilterOptions={...contexts,numerique:contexts['numerique-telecom']||{}};
 const entries=articles.map(a=>({
   title:a.data.title,
   summary:a.data.summary??'',
@@ -53,7 +54,7 @@ const entries=articles.map(a=>({
 <h2><a href={a.url}>{a.title}</a></h2><p>{a.summary}</p></article>)}
 </div><p id="no-results" hidden>Aucune publication ne correspond à ces critères. Essayez d’élargir votre recherche.</p>
 </main>
-<script define:vars={{ conversationOptions:conversationFilterOptions, contextOptions:contexts }}>
+<script define:vars={{ conversationOptions:conversationFilterOptions, contextOptions:contextFilterOptions }}>
 const form=document.querySelector('#filter-form');
 const search=document.querySelector('#search');
 const cycle=document.querySelector('#cycle');
