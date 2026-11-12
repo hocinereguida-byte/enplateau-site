@@ -6,11 +6,11 @@ import MediaHeader from '../../../components/MediaHeader.astro';
 import MediaFooter from '../../../components/MediaFooter.astro';
 ---
 <!doctype html>
-<html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Les 20 cycles — Scènes d’Arbitrage</title><style is:inline set:html={articleStyle}/></head>
+<html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Là où ça se joue — Scènes d’Arbitrage</title><style is:inline set:html={articleStyle}/></head>
 <body><a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/>
 <main id="contenu" class="shell">
-<p class="micro">EXPLORER LE MÉDIA</p><h1>Les 20 cycles économiques</h1>
-<p class="lead">Vingt cycles réunis en six grandes familles pour explorer les décisions économiques. Chaque cycle présente son ambition et les arbitrages qu'il souhaite rendre intelligibles, même avant ses premières publications.</p>
-{cycleFamilies.map(family=><section class="cycle-family-directory"><h2>{family.label}</h2><div class="directory-grid">{family.codes.map(code=>{const item=cycleCatalogue.find(c=>c.code===code)!;return <a class="directory-tile" href={`/media/cycles/${item.code}/`}>{photoCycle(item.code)?<img src={photoCycle(item.code)} alt="" loading="lazy"/>:<div class="photo-placeholder"><span>CYCLE ÉCONOMIQUE</span></div>}<span class="micro">CYCLE {String(item.number).padStart(2,'0')}</span><h3>{item.label}</h3><p>{cycleBriefs[item.code]?.ambition}</p><span>Découvrir le cycle ↗</span></a>})}</div></section>)}
+<p class="micro">EXPLORER LE MÉDIA</p><h1>Là où ça se joue</h1>
+<p class="lead">Vingt secteurs économiques, six grandes familles : autant de terrains où se croisent les décisions, les contraintes et les intérêts. Découvrez chaque univers, même avant ses premières publications.</p>
+{cycleFamilies.map(family=><section class="cycle-family-directory"><h2>{family.label}</h2><div class="directory-grid">{family.codes.map(code=>{const item=cycleCatalogue.find(c=>c.code===code)!;return <a class="directory-tile" href={`/media/cycles/${item.code}/`}>{photoCycle(item.code)?<img src={photoCycle(item.code)} alt="" loading="lazy"/>:<div class="photo-placeholder"><span>SECTEUR ÉCONOMIQUE</span></div>}<span class="micro">SECTEUR {String(item.number).padStart(2,'0')}</span><h3>{item.label}</h3><p>{cycleBriefs[item.code]?.ambition}</p><span>Découvrir le secteur ↗</span></a>})}</div></section>)}
 <p><a href="/media/publications/">Explorer les publications disponibles</a></p>
 </main><MediaFooter/></body></html>

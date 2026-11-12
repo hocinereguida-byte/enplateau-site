@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, conversations, publicationInstant, cycleCatalogue, cycleFamilies, readings, perspectiveOf, genreOf, narrativeGenres } from '../../lib/editorial';
+import { isPublic, validClassification, urlOf, conversations, publicationInstant, cycleCatalogue, cycleFamilies, publicPerspectives, publicPerspectiveLabel, publicGenreLabel, perspectiveOf, publicCycleLabel } from '../../lib/editorial';
 import { articleStyle } from '../../lib/article-style';
 import MediaFooter from '../../components/MediaFooter.astro';
 import MediaHeader from '../../components/MediaHeader.astro';
@@ -13,16 +13,16 @@ const groups=Object.entries(conversations).flatMap(([cycle,entries])=>Object.ent
  return {cycle,code,title,count:matching.length,updated:matching.length ? (publicationInstant(matching[0].data.publication_date)?.getTime()??0) : 0,url:'/media/cycles/'+cycle+'/conversations/'+code+'/'};
 })).filter(g=>g.count>0).sort((a,b)=>b.updated-a.updated);
 const heroConversation=groups.find(g=>g.cycle===featured?.data.cycle&&g.code===featured?.data.conversation)??groups[0];
-const genreLabel=(a:any)=>a.data.format==='regard-croise'?'REGARD CROISÉ · ANALYSE DOCUMENTÉE':(narrativeGenres[genreOf(a.data)??'']??'SCÈNE')+' · FICTION ÉCONOMIQUE';
-const perspectiveLabel=(a:any)=>readings[perspectiveOf(a.data)]??'';
-const cycleLabel=(code:string)=>cycleCatalogue.find(c=>c.code===code)?.label??code;
+const genreLabel=(a:any)=>publicGenreLabel(a.data).toLocaleUpperCase('fr-FR')+(a.data.format==='regard-croise'?' · ANALYSE JOURNALISTIQUE':' · FICTION SATIRIQUE');
+const perspectiveLabel=(a:any)=>publicPerspectiveLabel(perspectiveOf(a.data));
+const cycleLabel=publicCycleLabel;
 ---
 <!doctype html>
 <html lang="fr"><head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/>
-<meta name="sda-preproduction-revision" content="ux-visuel-v5-20261112"/>
+<meta name="sda-preproduction-revision" content="ux-nomenclature-v6-20261112"/>
 <title>Scènes d’Arbitrage — Les décisions qui font l’économie</title>
-<meta name="description" content="La fiction pour explorer. L’analyse pour comprendre. Découvrez les arbitrages économiques à travers les Chroniques, Grands Entretiens et Regards croisés."/>
+<meta name="description" content="La fiction pour explorer. L’analyse pour comprendre. Découvrez les arbitrages économiques à travers les Comédies économiques, les Grands Entretiens et Le fond du problème."/>
 <style is:inline set:html={articleStyle}/></head>
 <body class="media-home">
 <a class="skip" href="#contenu">Aller au contenu</a><MediaHeader active="accueil"/>
@@ -40,17 +40,17 @@ const cycleLabel=(code:string)=>cycleCatalogue.find(c=>c.code===code)?.label??co
 <a class="sda-v5-link sda-v5-dark-cta" href={urlOf(featured.id)}>Découvrir l’article <span aria-hidden="true">↗</span></a>
 </> : <>
 <h2>Les décisions derrière les apparences.</h2><p>Les premières publications seront proposées ici dès leur mise à disposition.</p>
-<a class="sda-v5-link sda-v5-dark-cta" href="/media/cycles/">Explorer les cycles <span aria-hidden="true">↗</span></a>
+<a class="sda-v5-link sda-v5-dark-cta" href="/media/cycles/">Explorer les secteurs <span aria-hidden="true">↗</span></a>
 </>}
 </div>
 <aside class="sda-v5-hero-aside"><p class="sda-v5-label">POUR PROLONGER LA LECTURE</p>
 {heroConversation ? <>
 <h3>{heroConversation.title}</h3>
 <p>{cycleLabel(heroConversation.cycle)} · {heroConversation.count} publication{heroConversation.count>1?'s':''} disponible{heroConversation.count>1?'s':''}</p>
-<a class="sda-v5-link" href={heroConversation.url}>Explorer la conversation <span aria-hidden="true">↗</span></a>
+<a class="sda-v5-link" href={heroConversation.url}>Explorer le sujet <span aria-hidden="true">↗</span></a>
 </> : <>
-<h3>Explorer par conversation</h3><p>Les conversations apparaissent dès leur première publication.</p>
-<a class="sda-v5-link" href="/media/cycles/">Découvrir les cycles <span aria-hidden="true">↗</span></a>
+<h3>Explorer par grande question</h3><p>Les grandes questions apparaissent dès leur première publication.</p>
+<a class="sda-v5-link" href="/media/cycles/">Découvrir les secteurs <span aria-hidden="true">↗</span></a>
 </>}
 </aside></section>
 <section class="sda-v5-section" aria-labelledby="home-latest">
@@ -62,20 +62,27 @@ const cycleLabel=(code:string)=>cycleCatalogue.find(c=>c.code===code)?.label??co
 </article>)}</div> : <p>Les premières publications apparaîtront ici dès leur mise en ligne.</p>}
 </section>
 <section class="sda-v5-explore" aria-labelledby="home-cycles">
-<div class="sda-v5-section-head"><div><p class="sda-v5-label">SIX FAMILLES · VINGT CYCLES</p><h2 id="home-cycles">Explorer l’économie, secteur par secteur</h2></div><a class="sda-v5-link" style="color:#eee!important" href="/media/cycles/">Voir tous les cycles ↗</a></div>
+<div class="sda-v5-section-head"><div><p class="sda-v5-label">SIX FAMILLES · VINGT SECTEURS</p><h2 id="home-cycles">Explorer l’économie, secteur par secteur</h2></div><a class="sda-v5-link" style="color:#eee!important" href="/media/cycles/">Voir tous les secteurs ↗</a></div>
 <div class="sda-v5-families">{cycleFamilies.map((family,i)=><section class="sda-v5-family" aria-label={family.label}>
-<small>{String(i+1).padStart(2,'0')} · {family.codes.length} CYCLES</small>
+<small>{String(i+1).padStart(2,'0')} · {family.codes.length} SECTEURS</small>
 <h3>{family.label}</h3>
 {family.codes.map(code=><a href={'/media/cycles/'+code+'/'}>{cycleLabel(code)}</a>)}
 </section>)}</div>
 </section>
 <section class="sda-v5-section" aria-labelledby="home-conversations">
-<div class="sda-v5-section-head"><div><p class="sda-v5-label">UNE AUTRE PORTE D’ENTRÉE</p><h2 id="home-conversations">Les conversations déjà documentées</h2></div><a class="sda-v5-link" href="/media/conversations/">Parcourir ↗</a></div>
+<div class="sda-v5-section-head"><div><p class="sda-v5-label">LES GRANDES QUESTIONS</p><h2 id="home-conversations">Les sujets qui fâchent</h2></div><a class="sda-v5-link" href="/media/conversations/">Parcourir ↗</a></div>
 {groups.length ? <div class="sda-v5-conversations">{groups.slice(0,6).map(g=><article class="sda-v5-conversation-card">
-<p class="sda-v5-label">{cycleLabel(g.cycle)} · CONVERSATION {g.code}</p>
+<p class="sda-v5-label">{cycleLabel(g.cycle)} · SUJET {g.code}</p>
 <h3><a href={g.url}>{g.title}</a></h3><p>Une question économique explorée à travers différents arbitrages.</p>
 <footer>{g.count} publication{g.count>1?'s':''} disponible{g.count>1?'s':''} · <a class="sda-v5-link" href={g.url}>Explorer ↗</a></footer>
-</article>)}</div> : <p>Les conversations seront accessibles à partir de leur première publication.</p>}
+</article>)}</div> : <p>Les sujets seront accessibles à partir de leur première publication.</p>}
+</section>
+<section class="sda-v5-section" aria-labelledby="home-angles">
+<div class="sda-v5-section-head"><div><p class="sda-v5-label">HUIT POINTS DE VUE</p><h2 id="home-angles">Les angles morts</h2></div><a class="sda-v5-link" href="/media/lectures/">Explorer les huit regards ↗</a></div>
+<p class="sda-v6-perspective-intro">Stratégie, finance, droit, opérations, technologie, ressources humaines, énergie et territoires : huit manières de comprendre ce qu’une décision laisse dans l’ombre.</p>
+<div class="sda-v6-perspective-grid">{Object.entries(publicPerspectives).map(([code,entry])=><a class="sda-v6-perspective-card" href={'/media/lectures/'+code+'/'}>
+<span class="sda-v5-label">{entry.label}</span><span>{entry.description}</span><span class="sda-v6-perspective-arrow" aria-hidden="true">↗</span>
+</a>)}</div>
 </section>
 <aside class="sda-v5-bottom"><div><h2>Un média qui s’enrichit chaque semaine.</h2><p>Retrouvez les nouvelles publications et parcourez les secteurs sans changer vos repères.</p></div><a class="sda-v5-link" href="/media/publications/">Explorer le catalogue ↗</a></aside>
 </main><MediaFooter/></body></html>

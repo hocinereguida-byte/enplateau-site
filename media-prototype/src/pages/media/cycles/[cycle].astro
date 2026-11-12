@@ -1,16 +1,17 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, conversations, readings, perspectiveOf, genreOf, narrativeGenres, publicationInstant, cycleCatalogue, cycleBriefs } from '../../../lib/editorial';
+import { isPublic, validClassification, urlOf, conversations, publicPerspectiveLabel, publicGenreLabel, publicationInstant, cycleCatalogue, cycleBriefs } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
 import MediaFooter from '../../../components/MediaFooter.astro';
 import MediaHeader from '../../../components/MediaHeader.astro';
 export function getStaticPaths(){return cycleCatalogue.map(({code:cycle})=>({params:{cycle}}));}
 const {cycle}=Astro.params;
-const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)&&a.data.cycle===cycle).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
+const sourceCycle=cycle==='numerique'?'numerique-telecom':cycle;
+const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)&&(a.data.cycle===cycle||a.data.cycle===sourceCycle)).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
 const cycleName=cycleCatalogue.find(c=>c.code===cycle)?.label??cycle;
 const brief=cycleBriefs[cycle];
-const conv=Object.entries(conversations[cycle]||{}).map(([code,title])=>({code,title,items:items.filter(a=>a.data.conversation===code)})).filter(x=>x.items.length>0);
-const labelGenre=(a:any)=>a.data.format==='regard-croise'?'REGARD CROISÉ · ANALYSE DOCUMENTÉE':(narrativeGenres[genreOf(a.data)??'']??'SCÈNE')+' · FICTION ÉCONOMIQUE';
+const conv=Object.entries(conversations[sourceCycle]||{}).map(([code,title])=>({code,title,items:items.filter(a=>a.data.conversation===code)})).filter(x=>x.items.length>0);
+const labelGenre=(a:any)=>publicGenreLabel(a.data).toLocaleUpperCase('fr-FR')+(a.data.format==='regard-croise'?' · ANALYSE JOURNALISTIQUE':' · FICTION SATIRIQUE');
 ---
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/>
@@ -47,24 +48,24 @@ const labelGenre=(a:any)=>a.data.format==='regard-croise'?'REGARD CROISÉ · ANA
 <main class="shell" id="contenu">
 <nav class="kicker" aria-label="Fil d’Ariane"><a href="/media/">Accueil</a> / <a href="/media/cycles/">Cycles</a> / {cycleName}</nav>
 <header class="sda-v5-cycle-intro">
-<div><p class="sda-v5-cycle-kicker">EXPLORER LE CYCLE</p>
+<div><p class="sda-v5-cycle-kicker">LÀ OÙ ÇA SE JOUE</p>
 <h1>{cycleName}</h1><p class="lead">{brief?.ambition}</p>
 <p class="sda-v5-cycle-kicker">{items.length ? items.length+' PUBLICATION'+(items.length>1?'S':'')+' DISPONIBLE'+(items.length>1?'S':'') : 'EN PRÉPARATION'}</p></div>
 <div class="sda-v5-cycle-overview"><p class="sda-v5-cycle-kicker">LES ARBITRAGES</p><p>{brief?.enjeux_et_arbitrages}</p></div>
 </header>
 {conv.length>0&&<section class="sda-v5-cycle-group" aria-labelledby="cycle-conversations">
-<p class="sda-v5-cycle-kicker">LES QUESTIONS</p><h2 id="cycle-conversations">Les conversations du cycle</h2>
+<p class="sda-v5-cycle-kicker">LES QUESTIONS</p><h2 id="cycle-conversations">Les sujets qui fâchent</h2>
 <div class="sda-v5-cycle-conversations">{conv.map(c=><article class="sda-v5-cycle-conv">
-<p class="sda-v5-cycle-kicker">CONVERSATION {c.code}</p>
-<h3><a href={'/media/cycles/'+cycle+'/conversations/'+c.code+'/'}>{c.title}</a></h3>
-<footer><span>{c.items.length} publication{c.items.length>1?'s':''}</span><a href={'/media/cycles/'+cycle+'/conversations/'+c.code+'/'}>Explorer ↗</a></footer>
+<p class="sda-v5-cycle-kicker">SUJET {c.code}</p>
+<h3><a href={'/media/cycles/'+sourceCycle+'/conversations/'+c.code+'/'}>{c.title}</a></h3>
+<footer><span>{c.items.length} publication{c.items.length>1?'s':''}</span><a href={'/media/cycles/'+sourceCycle+'/conversations/'+c.code+'/'}>Explorer ↗</a></footer>
 </article>)}</div></section>}
 <section class="sda-v5-cycle-group" aria-labelledby="cycle-published">
-<p class="sda-v5-cycle-kicker">À DÉCOUVRIR</p><h2 id="cycle-published">Lire dans ce cycle</h2>
+<p class="sda-v5-cycle-kicker">À DÉCOUVRIR</p><h2 id="cycle-published">À lire dans ce secteur</h2>
 {items.length ? <div class="sda-v5-cycle-grid">{items.map(a=><article class="sda-v5-cycle-article">
 <p class="sda-v5-cycle-kicker">{labelGenre(a)}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3>
 {a.data.summary&&<p>{a.data.summary}</p>}
-<footer><span>{readings[perspectiveOf(a.data)]??'Analyse documentée'}</span><a href={urlOf(a.id)}>Lire ↗</a></footer>
+<footer><span>{publicPerspectiveLabel(a.data.perspective_principale || a.data.lecture_principale || '') || 'Analyse documentée'}</span><a href={urlOf(a.id)}>Lire ↗</a></footer>
 </article>)}</div> : <div class="sda-v5-cycle-empty"><p>Les premières publications de ce cycle sont en préparation.</p><a class="sda-v5-cycle-link" href="/media/publications/">Découvrir les publications disponibles ↗</a></div>}
 </section>
 <section class="sda-v5-cycle-group" aria-label="Méthode"><p class="sda-v5-cycle-kicker">NOTRE MÉTHODE</p><h2>La fiction pour explorer. L’analyse pour comprendre.</h2><p class="lead">{brief?.approche_narrative}</p></section>

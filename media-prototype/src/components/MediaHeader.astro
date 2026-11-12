@@ -1,5 +1,5 @@
 ---
-import { readings, cycleCatalogue, cycleFamilies } from '../lib/editorial';
+import { publicPerspectives, cycleCatalogue, cycleFamilies } from '../lib/editorial';
 const {active=''}=Astro.props;
 const groupedCycles=cycleFamilies.map(f=>({label:f.label,items:f.codes.map(code=>cycleCatalogue.find(c=>c.code===code)).filter(Boolean)}));
 ---
@@ -9,10 +9,10 @@ const groupedCycles=cycleFamilies.map(f=>({label:f.label,items:f.codes.map(code=
  <div class="press-mobile-bar"><a class="press-mobile-brand" href="/media/" aria-label="Scènes d’Arbitrage — accueil"><span class="press-wordmark press-wordmark-mobile" aria-hidden="true">Scènes d’Arbitrage</span></a><div class="press-mobile-actions"><a class="press-mobile-search" href="/media/publications/" aria-label="Rechercher des publications">⌕</a><button class="press-menu-toggle" type="button" aria-controls="press-main-navigation" aria-expanded="false"><span class="press-toggle-icon" aria-hidden="true">☰</span><span class="press-toggle-label">Menu</span></button></div></div>
  <nav class="press-nav" id="press-main-navigation" aria-label="Navigation principale">
   <a class="press-home-link" href="/media/" aria-current={active==='accueil'?'page':undefined}>À la une</a>
-  <details class="press-dropdown"><summary>Cycles <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content press-cycle-dropdown"><strong>Explorer par grande famille</strong><div class="press-cycle-groups">{groupedCycles.map(f=><details class="press-cycle-family"><summary>{f.label} <span aria-hidden="true">›</span></summary><div>{f.items.map(item=><a href={`/media/cycles/${item.code}/`}>{item.label}</a>)}</div></details>)}</div><a class="press-dropdown-more" href="/media/cycles/">Voir les 20 cycles</a></div></details>
-
-  <a class="press-home-link" href="/media/conversations/">Conversations</a>
-  <details class="press-dropdown"><summary>Genres <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Choisir sa lecture</strong><a href="/media/scenes/#chronique">Chroniques</a><a href="/media/scenes/#grand-entretien">Grands Entretiens</a><a href="/media/regards-croises/">Regards croisés</a><a class="press-dropdown-more" href="/media/lectures/">Explorer par perspective</a><a href="/media/publications/">Toutes les publications</a></div></details>
+  <details class="press-dropdown"><summary>Là où ça se joue <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content press-cycle-dropdown"><strong>Les 20 secteurs de l’économie</strong><div class="press-cycle-groups">{groupedCycles.map(f=><details class="press-cycle-family"><summary>{f.label} <span aria-hidden="true">›</span></summary><div>{f.items.map(item=><a href={`/media/cycles/${item.code}/`}>{item.label}</a>)}</div></details>)}</div><a class="press-dropdown-more" href="/media/cycles/">Explorer tous les secteurs</a></div></details>
+  <a class="press-home-link" href="/media/conversations/">Les sujets qui fâchent</a>
+  <details class="press-dropdown"><summary>Les angles morts <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Huit points de vue sur les décisions</strong>{Object.entries(publicPerspectives).map(([code,entry])=><a href={`/media/lectures/${code}/`}>{entry.label}</a>)}<a class="press-dropdown-more" href="/media/lectures/">Tous les angles morts</a></div></details>
+  <details class="press-dropdown"><summary>Les formats <span aria-hidden="true">⌄</span></summary><div class="press-dropdown-content"><strong>Satire & analyse</strong><a href="/media/scenes/#chronique">Comédies économiques</a><a href="/media/scenes/#grand-entretien">Grands Entretiens</a><a href="/media/regards-croises/">Le fond du problème</a><a class="press-dropdown-more" href="/media/publications/">Toutes les publications</a></div></details>
   <a class="press-home-link" href="/media/institution/qui-sommes-nous/">Le média</a>
   <a class="press-search" href="/media/publications/" aria-label="Rechercher des publications"><span aria-hidden="true">⌕</span> Rechercher</a>
  </nav>
@@ -140,6 +140,19 @@ const groupedCycles=cycleFamilies.map(f=>({label:f.label,items:f.codes.map(code=
 #press-site-header .press-wordmark{color:#f7f4ee!important;font:600 24px/1 Georgia,'Times New Roman',serif!important;letter-spacing:-.05em!important;white-space:nowrap}
 #press-site-header .press-wordmark-mobile{font-size:21px!important}
 @media(max-width:380px){#press-site-header .press-wordmark-mobile{font-size:19px!important}}
+
+/* UX V6 : libellés éditoriaux plus longs, sans débordement de navigation */
+@media(min-width:761px) and (max-width:1150px){
+ #press-site-header.press-header{grid-template-columns:minmax(130px,190px) minmax(0,1fr)!important;padding:0 12px!important}
+ #press-site-header .press-masthead p{display:none!important}
+ #press-site-header .press-wordmark{font-size:20px!important}
+ #press-site-header .press-home-link,#press-site-header .press-dropdown>summary,#press-site-header .press-search{font-size:11px!important;padding:19px 6px!important}
+}
+@media(min-width:761px) and (max-width:900px){
+ #press-site-header.press-header{grid-template-columns:minmax(120px,160px) minmax(0,1fr)!important}
+ #press-site-header .press-wordmark{font-size:18px!important}
+ #press-site-header .press-home-link,#press-site-header .press-dropdown>summary,#press-site-header .press-search{font-size:10px!important;padding:18px 4px!important}
+}
 </style>
 <script is:inline>
 const pressHeader=document.getElementById('press-site-header');
