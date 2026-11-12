@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, readings, publicPerspectiveLabel, publicGenreLabel, publicPerspectives, conversations, contexts, publicationInstant, perspectiveOf, genreOf, narrativeGenres, cycleCatalogue, canonicalCycleCode } from '../../../lib/editorial';
+import { isPublic, validClassification, urlOf, readings, publicPerspectiveLabel, publicGenreLabel, publicPerspectives, conversations, contexts, publicationInstant, perspectiveOf, genreOf, narrativeGenres, cycleCatalogue, canonicalCycleCode, publicCycleLabel, publicCycleTechnicalLabel } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
 import MediaFooter from '../../../components/MediaFooter.astro'
 import MediaHeader from '../../../components/MediaHeader.astro';;
@@ -13,6 +13,8 @@ const entries=articles.map(a=>({
   hero_image:a.data.hero_image??'',
   taille_image_liste:a.data.taille_image_liste??'automatique',
   cycle:canonicalCycleCode(a.data.cycle),
+  sectorLabel:publicCycleLabel(a.data.cycle),
+  sectorTechnicalLabel:publicCycleTechnicalLabel(a.data.cycle),
   conversation:a.data.conversation,
   contexte:a.data.contexte,
   lecture:perspectiveOf(a.data),
@@ -41,7 +43,7 @@ const entries=articles.map(a=>({
 <form class="catalogue-filters" id="filter-form" role="search">
 <div class="filter-search"><label for="search">Rechercher dans les publications</label><input type="search" id="search" name="q" autocomplete="off" placeholder="Titre, thème, mot-clé…"/></div>
 <div class="filter-grid">
-<div><label for="cycle">Là où ça se joue</label><select id="cycle" name="cycle"><option value="">Tous les secteurs</option>{cycleCatalogue.map(item=><option value={item.code}>{item.label}</option>)}</select></div>
+<div><label for="cycle">Là où ça se joue</label><select id="cycle" name="cycle"><option value="">Tous les secteurs</option>{cycleCatalogue.map(item=><option value={item.code}>{publicCycleLabel(item.code)} — {item.label}</option>)}</select></div>
 <div><label for="conversation">Les sujets qui fâchent</label><select id="conversation" name="conversation"><option value="">Tous les sujets</option></select></div>
 <div><label for="contexte">Contexte</label><select id="contexte" name="contexte"><option value="">Tous les contextes</option></select></div>
 <div><label for="genre">Les formats</label><select id="genre" name="genre"><option value="">Tous les formats</option><option value="grand-entretien">Les interrogatoires</option><option value="chronique">Raisons et déraisons</option><option value="regard-croise">Le fond du problème</option></select></div>
@@ -49,7 +51,7 @@ const entries=articles.map(a=>({
 </div><div class="filter-actions"><button type="reset">Effacer les filtres</button><p id="result-count" aria-live="polite">{entries.length} publication(s)</p></div>
 </form>
 <div id="catalogue-results" class="catalogue-results">
-{entries.map(a=><article class={`catalogue-result editorial-image-${a.taille_image_liste==="grande"?"large":a.taille_image_liste==="moyenne"?"medium":a.taille_image_liste==="vignette"?"thumb":"none"}`} data-cycle={a.cycle} data-conversation={a.conversation} data-contexte={a.contexte} data-lecture={a.lecture} data-genre={a.genre} data-search={[a.title,a.summary,a.tags,a.conversationLabel,a.contextLabel,a.lectureLabel,a.lectureTechnical,a.formatLabel].join(' ').toLocaleLowerCase('fr-FR')}>
+{entries.map(a=><article class={`catalogue-result editorial-image-${a.taille_image_liste==="grande"?"large":a.taille_image_liste==="moyenne"?"medium":a.taille_image_liste==="vignette"?"thumb":"none"}`} data-cycle={a.cycle} data-conversation={a.conversation} data-contexte={a.contexte} data-lecture={a.lecture} data-genre={a.genre} data-search={[a.title,a.summary,a.tags,a.sectorLabel,a.sectorTechnicalLabel,a.conversationLabel,a.contextLabel,a.lectureLabel,a.lectureTechnical,a.formatLabel].join(' ').toLocaleLowerCase('fr-FR')}>
 {a.hero_image&&a.taille_image_liste!=="sans"&&a.taille_image_liste!=="automatique"&&<img class="article-list-photo" src={a.hero_image} alt="" loading="lazy"/>}<p class="micro">{a.formatLabel} · {a.conversationLabel} · {a.lectureLabel || 'Analyse journalistique'}</p>
 <h2><a href={a.url}>{a.title}</a></h2><p>{a.summary}</p></article>)}
 </div><p id="no-results" hidden>Aucune publication ne correspond à ces critères. Essayez d’élargir votre recherche.</p>
