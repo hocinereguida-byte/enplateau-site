@@ -1,5 +1,7 @@
 ---
 title: "Le programme avait atteint 100 % de ses objectifs. Personne ne devait lire le rapport."
+hero_image: "/images/act-c7-cmd-naf-14-visuel-v3.webp"
+image_alt: "Photographie satirique minimaliste illustrant un programme public et son rapport d’évaluation."
 summary: "Après trois ans et 18 millions d'euros, François Delorme s'apprête à célébrer le succès de son programme national. Tous les indicateurs sont au vert. Mais une association demande à consulter les rapports d'évaluation. Au ministère, on découvre avec effroi que le droit à l'information concerne aussi les informations qu'on préférerait garder pour soi."
 cycle: "action-publique"
 conversation: "C7"
