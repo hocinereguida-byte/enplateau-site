@@ -1,5 +1,7 @@
 ---
 title: "L'IA avait supprimé 80 % des problèmes. Elle avait confié les autres aux survivants."
+hero_image: "/images/num-ia-service-client-v3.webp"
+image_alt: "Centre d’appels presque désert, bureau avec téléphone, casque, tasse et veste sur une chaise."
 summary: "Chez ServiPlus, prestataire de relation client, l'intelligence artificielle a fait disparaître les demandes simples et les postes jugés inutiles. Tout va bien, sauf pour les clients qui ont un problème, les salariés chargés de le résoudre et la directrice qui doit présenter ce succès devant son principal donneur d'ordre."
 cycle: "numerique-telecom"
 conversation: "C4"
