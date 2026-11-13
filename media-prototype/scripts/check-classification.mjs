@@ -22,7 +22,7 @@ const records = [
   "eau-ressources/eau-c1-u1-str-01-chronique.md|EAU-C1-U1-STR-01|eau-ressources|V9|strategie-gouvernance|EAU-C1-U1|partage-eau-agriculture-potable|C1-U1|chronique|chronique|",
   "industrie/ind-c1-cst-01-brouillon.md|IND-C1-CST-01|industrie|V6.5|strategie-gouvernance|IND-C1-CST||CST|entretien|grand-entretien|1TigShKuNMtDNPFdxK-6BWxITN9EVic2TaceDyxV4V5g",
   "industrie/ind-c1-cst-02-brouillon.md|IND-C1-CST-02|industrie|V5.10|operations-organisation|IND-C1-CST||CST|chronique|chronique|1Bdj1Jm5sJa2xECYrayFUHSm9M3DismvVPPpk2Vjd8y0",
-  "industrie/ind-c1-cst-03-brouillon.md|IND-C1-CST-03|industrie|V4.6|technologie-innovation|IND-C1-CST||CST|chronique|chronique|1WS5rawWSF6Sg9G8AW1AZL9kBqoALBBgeIwDsZPkR5Mk",
+  "industrie/ind-c1-cst-03-brouillon.md|IND-C1-CST-03|industrie|V4.12|technologie-innovation|IND-C1-CST||CST|chronique|chronique|16iAEBhP1MtkaQG__j8Bcg8pHTjIs1z2tqIi6Upi3-4g",
   "industrie/ind-c1-cst-04-brouillon.md|IND-C1-CST-04|industrie|V4.3|ressources-humaines-competences|IND-C1-CST||CST|chronique|chronique|1a46GCcQRGF4s37GoWOQ5TCXz2qj2YZspyrD-WpmP9Hc",
   "industrie/ind-c1-cst-05-brouillon.md|IND-C1-CST-05|industrie|V3.4|finance-investissement|IND-C1-CST||CST|entretien|grand-entretien|19qFZ8MAp65lv0pszDk-qu76N2XEUW664ZAvG1LhMjKA",
   "industrie/ind-c1-cst-regard-croise-01-brouillon.md|IND-C1-CST-RC-01|industrie|V3.2||IND-C1-CST||CST|regard-croise||1VNTWk4QeKWnF4QD55vMR9JQ7hxAuOm4eFDk3wSelHjY",

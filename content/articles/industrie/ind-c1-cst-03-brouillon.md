@@ -1,8 +1,8 @@
 ---
-title: "Trois millions d'euros pour un robot, alors que l'usine n'a pas encore essayé de déplacer une table"
+title: "Une usine reporte l'achat d'un robot à trois millions d'euros pour déplacer une table"
 hero_image: "/images/ind-c1-cst-03-nathalie-visuel-v1.webp"
 image_alt: "Un bras robotisé industriel sophistiqué manipule un simple pied de table en bois, sans visage ni texte ajouté."
-summary: "Nathalie B. défend un diagnostic des flux face à un projet de robot à trois millions d'euros, avant de découvrir les limites ergonomiques de sa propre solution."
+summary: "Un robot à trois millions d'euros promettait vingt secondes gagnées par pièce. Nathalie B., responsable des méthodes, lui préfère une table déplacée de quelques mètres. L'usine tient enfin un résultat incontestable. Reste à savoir s'il sert à quelque chose."
 format: "chronique"
 cycle: "industrie"
 conversation: "C1"
@@ -11,6 +11,7 @@ lecture_principale: "technologie-innovation"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-27T15:00:00+01:00"
+updated_date: "2026-11-13"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
 affichage_rubrique: "automatique"
@@ -20,11 +21,11 @@ tag_3: "Ergonomie"
 tag_4: "Amélioration continue"
 tag_5: "Industrialisation"
 source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "Nathalie B. V4.6 — harmonisation de l’identité dans le chapô et le manuscrit, sans modification narrative. Contrôles documentaire et transversal ouverts, sans nouveau visa. Préproduction uniquement ; aucun bon à publier."
-source_document_url: "https://docs.google.com/document/d/1WS5rawWSF6Sg9G8AW1AZL9kBqoALBBgeIwDsZPkR5Mk/edit"
-source_document_version: "V4.6"
-validation_narrative: "v4_6_harmonisation_identite_sans_nouveau_visa"
-validation_documentaire: "v4_6_controles_documentaire_et_transversal_ouverts"
+methodology_specific: "Nathalie B. V4.12 (13/11/2026) : validation littéraire finale et passage en préproduction autorisés par GO explicite de la direction, sans bon à publier public. D1 favorable ; D2 favorable sous limites explicites, PV : https://docs.google.com/document/d/1mGAyTJ3lEqNilNJBlmswySh1T4mGwjRVg02kftcGmJA/edit . R1 : offre fictive à 3 M€, devis non détaillé et coût non représentatif d'un bras isolé. R2 : consigne ergonomique écrite, pouvoir individuel d'Élise non certifié, responsabilité employeur maintenue. R3 : formalités après accident et DUERP non décrits exhaustivement ; aucune certification de conformité. Corps littéraire V4.12 inchangé, concordance avec Drive contrôlée ; autorisation_publication = preproduction_uniquement, jamais main/production."
+source_document_url: "https://docs.google.com/document/d/16iAEBhP1MtkaQG__j8Bcg8pHTjIs1z2tqIi6Upi3-4g/edit"
+source_document_version: "V4.12"
+validation_narrative: "v4_12_validation_litteraire_finale_go_direction_2026_11_13"
+validation_documentaire: "v4_12_D1_favorable_D2_favorable_sous_limites_R1_R2_R3_clos_preproduction"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "chronique"
 code_editorial: "IND-C1-CST-03"
@@ -32,112 +33,117 @@ unite_programmation: "IND-C1-CST"
 perspective_principale: "technologie-innovation"
 ---
 
-Dans le sud de la France, une usine d'environ deux cents salariés fabriquait, dans plusieurs ateliers, des pièces métalliques pour des constructeurs de machines agricoles. Les commandes accusaient six mois de retard. Un fournisseur venait de proposer un robot à trois millions d'euros, sans que l'usine ait encore établi combien de livraisons supplémentaires il permettrait réellement. C'était rassurant : un problème aussi cher méritait forcément une réponse importante.
 
-La solution était un robot blanc, articulé, avec écran tactile et lumière verte. Le fabricant promettait vingt secondes gagnées par pièce.
+Dans une usine du Centre-Val de Loire, certaines commandes de pièces métalliques avaient six mois de retard. Un fournisseur proposait un robot à trois millions d’euros : vingt secondes gagnées par pièce. Il était blanc, articulé, lumineux. Surtout, on le remarquait.
 
-« Vingt secondes ! annonça le directeur général.
+Vincent P., directeur général, y voyait un moyen possible de produire davantage malgré les difficultés de recrutement. Il imaginait aussi le jour où un client lui dirait, devant la machine : « Vous avez changé de dimension. »
 
-— Et combien de commandes supplémentaires livrerons-nous ? demanda Nathalie.
+Il avait déjà choisi l’emplacement.
 
-— Vous êtes obligée de transformer chaque bonne nouvelle en question ? »
+« Près de l’allée principale, ce serait mieux.  
+— Pour les pièces ? demanda Nathalie.  
+— Pour les clients.  
+— Eux aussi ont six mois de retard ? »
 
-Nathalie B. dirigeait l'amélioration des méthodes. Vingt-sept ans d'usine lui avaient appris à se méfier des secondes gagnées lorsqu'on ignorait où partaient les heures. Elle les comptait pourtant sans cesse, à voix basse, jusque dans les couloirs. Quand un collègue disait « cinq minutes », elle demandait si c'était une estimation ou une mesure. Elle n'était pas contre les robots. Elle voulait savoir ce que celui-ci allait améliorer.
+Nathalie B. dirigeait l’amélioration des méthodes. Vingt-sept ans d’usine lui avaient appris à se méfier des secondes gagnées lorsqu’on ignorait où partaient les heures. Quand un collègue disait « cinq minutes », elle demandait : « Mesurées ou ressenties ? » Elle était indispensable aux réunions et rarement invitée à les prolonger.
 
-Le consultant présenta quarante-deux diapositives : le robot, le robot de profil, le robot avec une flèche. Nathalie demanda à laquelle figurait le diagnostic des retards.
+« Vingt secondes par pièce ! insista Vincent.  
+— Combien de commandes supplémentaires livrerons-nous ?  
+— Vous gâchez toujours une belle réponse avec une autre question. »
 
-« Il est prévu dans la phase suivante.
+## LE JOUR OÙ UNE TABLE DEVINT UNE INNOVATION
 
-— La phase suivante de quoi ?
+Nathalie suivit une pièce dans l’atelier. L’opération que le robot devait accélérer durait moins d’une minute. Ensuite, la pièce attendait près de vingt minutes avant le contrôle.
 
-— De la mise en œuvre de la solution. »
+Le robot fabriquerait plus vite des pièces qui continueraient d’attendre.
 
-Le directeur général fit mettre cette phrase en gras. Il aimait les formulations qui n'exigeaient aucune vérification.
+« Et si on rapprochait cette table ? »
 
-Dans l'atelier, Nathalie suivit une pièce. Moins d'une minute pour l'opération observée, puis près de vingt minutes à attendre et à circuler entre les postes, sur le trajet suivi ce jour-là. La pièce aurait bientôt pu demander le remboursement de ses frais de déplacement. Vingt minutes perdues, c'était beaucoup. Encore fallait-il savoir si les récupérer permettrait de livrer une commande de plus.
+Le responsable logistique examina le trajet des chariots. Vincent demanda ce qu’on montrerait aux visiteurs.
 
-« Pourquoi la table de contrôle est-elle si loin ? demanda-t-elle.
+« Une table, mais plus près.  
+— Elle aurait au moins un écran ?  
+— Elle a quatre pieds.  
+— Nous en avions déjà quatre avant. »
 
-— Elle a toujours été là, répondit une opératrice.
+En moins d’une journée, la table avait acquis trois statuts. Pour Nathalie, une hypothèse à vérifier. Pour Vincent, un investissement regrettablement dépourvu d’écran. Pour Pascal T., le commercial, une innovation suffisamment avancée pour être annoncée avant d’avoir été essayée. La table attendait toujours son déplacement.
 
-— Et si on la rapprochait ?
+Pascal, qui obtenait des reports de livraison en promettant des améliorations inconnues des ateliers, demanda s’il pouvait au moins annoncer l’essai.
 
-— Il faut voir avec la logistique. »
+« Vous pouvez attendre les résultats, dit Nathalie.  
+— Vous voulez que j’appelle les clients pour leur annoncer qu’on attend ? »
 
-Le responsable logistique accepta d'étudier le trajet des chariots. Pour déplacer la table, en revanche, il renvoya Nathalie aux services généraux : les pièces étaient de son ressort, pas le mobilier. L'essai demanderait aussi de dégager un poste, de mobiliser deux opératrices et de vérifier que les déplacements ne créeraient pas une nouvelle gêne ailleurs.
+Vincent autorisa un essai limité, soumis aux consignes de sécurité. Le robot serait différé, pas abandonné : encore fallait-il démontrer quelle solution permettrait de livrer davantage. Déplacer la table mobilisait des équipes et ralentissait provisoirement certains postes.
 
-Au comité de direction, Nathalie présenta les temps relevés.
+Élise V., ergonome, examina l’agencement avec Mina R., opératrice. Les déplacements diminueraient, mais certaines pièces devraient être retournées plusieurs fois.
 
-« Le robot ferait gagner vingt secondes sur une opération. Mais les pièces attendent presque vingt minutes entre les postes. Nous fabriquerions plus vite des pièces qui attendraient toujours.
+« Pas de pièces lourdes sans dispositif de retournement, prévint Élise. Sinon, ce sont les poignets qui feront le travail. »
 
-— Vous proposez quoi ? demanda le commercial.
+La consigne fut confirmée par écrit. Nathalie pouvait organiser les mesures de l’essai, pas déroger aux règles de sécurité. Le dispositif n’étant pas prêt, elle commença avec les petites pièces.
 
-— Rapprocher le contrôle, déplacer une table et modifier le trajet de deux chariots.
+## QUATORZE PAS : L’USINE TIENT SON EXPLOIT
 
-— Une table intelligente ?
+Deux jours plus tard, les petites pièces arrivaient plus régulièrement au contrôle. Rien ne prouvait encore que les commandes partiraient plus tôt. Nathalie tenait néanmoins son chiffre : quatorze pas gagnés par passage.
 
-— Une table avec quatre pieds.
+Elle les recompta, demanda à Mina de refaire le trajet, puis recommença elle-même, au cas où un pas aurait été gagné deux fois.
 
-— Nous n'allons pas annoncer une modernisation à quatre pieds à nos clients. »
+Vincent voulut photographier la réussite. On voyait la table, beaucoup moins les pas disparus. Nathalie traça les deux parcours au sol. Vincent demanda des flèches plus visibles.
 
-Le directeur général proposa de présenter la table comme une « plateforme horizontale de fluidification ». Nathalie vérifia qu'on parlait toujours du même meuble.
+Pascal prépara une annonce : « Une avancée majeure dans notre modernisation ». Nathalie corrigea : « Réduction mesurée des déplacements sur les petites pièces ». Il conserva les deux versions : l’une pour les clients, l’autre pour ceux qui risquaient de vérifier.
 
-Nathalie demanda un essai limité, avec les opérateurs, la logistique et la production. On différerait le robot sans l'écarter définitivement. Il fallait mesurer les livraisons réellement accélérées, pas seulement les secondes économisées devant une machine.
+Mina, pendant ce temps, retournait les pièces.
 
-Deux jours suffirent à mettre en place un agencement provisoire, sans le généraliser. Pendant l'essai, les équipes réorganisèrent leurs postes et certaines commandes avancèrent moins vite. Sur les premières séries, les trajets diminuèrent et les pièces arrivèrent plus régulièrement au contrôle. C'était encourageant, mais personne n'avait encore démontré que l'usine livrerait davantage de commandes dans la semaine.
+« Je marche moins, mais je tourne la pièce trois fois.  
+— Quatorze pas supprimés, répondit Nathalie.  
+— Mes jambes vous remercient. Mon poignet attend encore. »
 
-« Nous avons économisé trois millions ! s'exclama le commercial.
+Nathalie nota les trois rotations dans la marge. Elle n’ouvrit pas de colonne.
 
-— Nous avons reporté une dépense, corrigea Nathalie.
+Les vingt secondes du fabricant n’avaient jamais bénéficié d’une telle indulgence.
 
-— Vous savez gâcher les bonnes nouvelles avec une précision admirable. »
+## L’EXCEPTION QUI CONFIRMAIT SES CHIFFRES
 
-Nathalie, elle, s'éprit de ses chiffres. Elle comptait les pas économisés, chronométrait les trajets, corrigeait les estimations de ses collègues. « À peu près dix mètres » devenait « neuf mètres quarante » ; « c'est plus pratique » devait désormais être démontré. Elle qui avait refusé les vingt secondes du robot ne parlait plus que des quatorze pas de sa table.
+Le jeudi, des pièces plus lourdes attendaient le contrôle. C’étaient précisément celles dont dépendaient plusieurs commandes en retard. Nathalie savait depuis le début que ses quatorze pas ne concernaient que les petites pièces. Elle supportait de moins en moins que son succès s’arrête là où commençaient les commandes les plus urgentes.
 
-« Quatorze pas de moins ! annonça-t-elle à une opératrice.
+Le dispositif de retournement manquait toujours. Élise avait interdit la manipulation des pièces lourdes sur ce poste sans équipement adapté.
 
-— Oui, mais maintenant je tourne la pièce trois fois. Mon poignet tire.
+Nathalie se promit de ne faire qu’une observation. Pas une production. Une pièce, hors cadence, quelques minutes. Elle qui exigeait du fabricant les conditions exactes de ses vingt secondes venait de trouver celles de ses propres quatorze pas.
 
-— Quatorze pas, répéta Nathalie. Sur une journée, c'est considérable.
+« Élise a dit non pour les grandes pièces, rappela Mina.  
+— Je dirige cet essai. Une seule observation, et on arrête. »
 
-— Pour mon poignet aussi. »
+Mina hésita, puis tenta de faire pivoter la pièce. Celle-ci glissa de son appui. En voulant la retenir, Mina se tordit brusquement le poignet. Le métal heurta le plateau. Elle lâcha prise et ramena son bras contre elle.
 
-Nathalie nota les quatorze pas. Pour le poignet, elle écrivit « à revoir » dans la marge. Elle ne lui consacra pas de colonne.
+L’essai fut immédiatement interrompu. Mina fut prise en charge ; la gravité de sa blessure restait à établir. Elle demanda qu’aucune autre opératrice ne travaille sur ce poste sans l’équipement prescrit.
 
-Le lendemain, elle voulut écourter l'essai.
+Élise ressortit sa consigne écrite. Nathalie la reconnut. Elle ne l’avait ni oubliée ni mal comprise.
 
-« Les flux sont meilleurs. Pourquoi attendre ?
+Vincent demanda d’abord des nouvelles de Mina, puis qui avait autorisé la manipulation.
 
-— Les trajets ont diminué, répondit l'ergonome. Les rotations du poignet, elles, ont augmenté. Il nous faut observer les gestes avec les opératrices.
+« Moi », répondit Nathalie.
 
-— On ne va pas passer six mois à observer une table.
+Pascal referma le calendrier de la visite qu’il préparait pour les clients.
 
-— Non. Mais on peut prendre le temps de regarder ce qu'on fait autour. »
+## LE PROGRÈS, REPORTÉ À UNE DATE CONVENABLE
 
-À la réunion suivante, l'opératrice répéta que son poignet tirait depuis le changement d'agencement. L'ergonome demanda de suspendre toute généralisation avant d'avoir évalué les gestes. Nathalie avait prévu de présenter les quatorze pas gagnés ; elle n'avait pas prévu cette seconde intervention.
+Vincent suspendit l’essai, fit rétablir les méthodes précédentes pour les opérations concernées et demanda un examen des circonstances de l’accident. Élise et les opératrices devraient réévaluer les gestes et les équipements avant toute reprise.
 
-Le directeur général la convoqua.
+Pascal rappela l’acheteur auquel il avait promis un bilan. Il expliqua l’accident et l’incertitude des délais. Le client demanda quand les livraisons reprendraient. Pascal faillit proposer une visite, se ravisa et obtint un rendez-vous de suivi sans promettre la moindre contrepartie. Il en sortit épuisé.
 
-« Vous avez voulu valider votre table avant d'en connaître toutes les conséquences.
+Au comité suivant, trois possibilités restaient ouvertes : revoir l’agencement avec les équipements adaptés, automatiser certains gestes ou réexaminer le robot. Vincent rappela qu’une machine bien choisie pouvait soulager des tâches pénibles et stabiliser la production. Il restait à comparer les coûts, les risques et surtout les commandes réellement livrables. Les trois millions n’étaient pas économisés : ils n’avaient pas été engagés.
 
-— Oui.
+« Nous pourrions au moins préparer le parcours des visiteurs, suggéra Vincent.  
+— Commençons par celui des pièces, répondit Nathalie. »
 
-— Nous avons donc quelque chose en commun. »
+Pascal proposa de ne plus annoncer de date sans la vérifier. Vincent approuva et demanda quand cette nouvelle règle pourrait être présentée aux clients.
 
-Nathalie allait lui opposer ses relevés. Elle chercha la ligne consacrée aux gestes répétés. Il n'y en avait pas.
+Nathalie reconnut devant le comité avoir demandé la manipulation malgré l’interdiction. Mina était absente ; ses observations figuraient au dossier, sans qu’on lui demande de cautionner la méthode.
 
-Elle prolongea l'essai avec les opératrices, l'ergonome et la production. Ils modifièrent la position de la table, observèrent les gestes et reprirent les mesures. Les trajets restaient plus courts ; il fallait encore vérifier à quel prix pour les poignets.
+Vincent revint aux résultats.
 
-Le robot resta en attente. Un équipement ciblé pourrait se justifier plus tard, sur la base de besoins établis. Pour l'instant, la direction refusait d'engager trois millions d'euros sur la seule promesse de vingt secondes gagnées à un poste : rien ne démontrait encore que ce poste limitait les livraisons de l'usine.
-
-Au comité suivant, Nathalie présenta des résultats provisoires. Elle avait laissé une case vide à côté des quatorze pas : « Avis des opératrices ».
-
-« Alors, combien de pas gagnés ? demanda le directeur général.
-
-— Quatorze, répondit Nathalie.
-
-— Et c'est une bonne nouvelle ?
-
-— Je vous le dirai quand on aura écouté ce que les opératrices nous ont dit. »
-
-Elle posa son chronomètre sur la table.
+« Et nos quatorze pas ?  
+— Nous avons remis l’ancien poste.  
+— Donc ils sont perdus ?  
+— Nous les avons gagnés pendant l’essai.  
+— Et aujourd’hui ?  
+— Aujourd’hui, ils sont dans mon rapport. »
