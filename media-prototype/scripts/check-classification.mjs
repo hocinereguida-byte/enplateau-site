@@ -24,7 +24,7 @@ const records = [
   "industrie/ind-c1-cst-02-brouillon.md|IND-C1-CST-02|industrie|V5.10|operations-organisation|IND-C1-CST||CST|chronique|chronique|1Bdj1Jm5sJa2xECYrayFUHSm9M3DismvVPPpk2Vjd8y0",
   "industrie/ind-c1-cst-03-brouillon.md|IND-C1-CST-03|industrie|V4.12|technologie-innovation|IND-C1-CST||CST|chronique|chronique|16iAEBhP1MtkaQG__j8Bcg8pHTjIs1z2tqIi6Upi3-4g",
   "industrie/ind-c1-cst-04-brouillon.md|IND-C1-CST-04|industrie|V4.7a|ressources-humaines-competences|IND-C1-CST||CST|chronique|chronique|1cXbhX3laCXVoeewDHVWmLVnP_2lo9NFY8PR_muj6gq4",
-  "industrie/ind-c1-cst-05-brouillon.md|IND-C1-CST-05|industrie|V3.4|finance-investissement|IND-C1-CST||CST|entretien|grand-entretien|19qFZ8MAp65lv0pszDk-qu76N2XEUW664ZAvG1LhMjKA",
+  "industrie/ind-c1-cst-05-brouillon.md|IND-C1-CST-05|industrie|V3.6|finance-investissement|IND-C1-CST||CST|entretien|grand-entretien|1lSkQxEZI-pgWeOzAg0uz9qb3Qn8EatUhP9e3QuM2b94",
   "industrie/ind-c1-cst-regard-croise-01-brouillon.md|IND-C1-CST-RC-01|industrie|V3.2||IND-C1-CST||CST|regard-croise||1VNTWk4QeKWnF4QD55vMR9JQ7hxAuOm4eFDk3wSelHjY",
   "immobilier/imm-c1-rc-01-isabelle.md|IMM-C1-RC-01|immobilier|V7.5|finance-investissement|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1K7eqLxylPO3bvrbnFrPUKkgLXio4pRdCnWCi3pHc2R0",
   "immobilier/imm-c1-rc-02-thomas.md|IMM-C1-RC-02|immobilier|V4.2|operations-organisation|IMM-C1-RC||territoire-reconversion|chronique|chronique|1zsA7AZjDMb52U2JzkQZeTMk0FDhXY7nkMcjTukmpV8I",
