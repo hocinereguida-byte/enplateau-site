@@ -2,7 +2,7 @@
 title: "Les affaires marchaient si bien qu'il a fallu y mettre un terme."
 hero_image: "/images/ind-c1-cst-01-marc-visuel-v1.webp"
 image_alt: "Gros plan sur les mains d’un dirigeant en costume fermant un cadenas à l’entrée d’une usine en pleine activité, sans visage ni texte ajouté."
-summary: "Jean Toksik reçoit Marc D., directeur industriel. Il écarte près de deux millions d’euros de commandes potentielles non rentables sans annuler les contrats signés, tout en assumant les conséquences sociales de sa décision. Entretien fictif."
+summary: "Marc D. dirige depuis douze ans une usine de deux cents salariés. Il accueille désormais les bonnes nouvelles de ses commerciaux avec méfiance. Jean Toksic a voulu rencontrer ce patron qui semble redouter ce que les autres espèrent : de nouvelles commandes."
 format: "entretien"
 cycle: "industrie"
 conversation: "C1"
@@ -11,6 +11,7 @@ lecture_principale: "strategie-gouvernance"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-27T15:00:00+01:00"
+updated_date: "2026-11-14"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
 affichage_rubrique: "automatique"
@@ -19,25 +20,22 @@ tag_2: "Carnet de commandes"
 tag_3: "Capacité de production"
 tag_4: "Arbitrage commercial"
 tag_5: "Rentabilité"
-source_notice: "Grand Entretien fictif. Personnages, entreprise, dialogues et chiffres inventés."
-methodology_specific: "Manuscrit Drive V6.5 ; concordance documentaire différentielle favorable, validation formelle et visa documentaire V6.5 à confirmer. Branche de contrôle hors déploiement public ; publication publique non autorisée."
-source_document_url: "https://docs.google.com/document/d/1TigShKuNMtDNPFdxK-6BWxITN9EVic2TaceDyxV4V5g/edit"
-source_document_version: "V6.5"
-validation_narrative: "stabilisation_litteraire_v6_5_favorable_validation_formelle_en_cours"
-validation_documentaire: "concordance_differentielle_v6_5_favorable_visa_global_non_accorde"
+source_notice: "Personnages, entreprise, localisation, dialogues, situations et données chiffrées inventés."
+methodology_specific: "Marc D. V6.8 — visa littéraire interne favorable, D1 favorable ; D2 différentiel favorable sous limites historiques du dossier V6.4/V6.6, sans nouvelle vérification documentaire exhaustive. PV : https://docs.google.com/document/d/1hfMJM_9dPJfXlbjjN6E9qLckxn8yLXeeWidX8f9EJAw/edit . Réserve stylistique mineure non bloquante sur l'antécédent « certaines ». Coûts, marges, pénalités, commandes envisagées et résultats sont hypothétiques et non certifiés ; distinctions coûts constatés/risques futurs et contrats signés/commandes envisagées conservées. Manuscrit source épuré : titre, chapô, 96 mouvements de récit et quatre séparateurs Markdown ; étiquettes de genre et de fiction gérées par le CMS, notice méthodologique distincte. Autorisation préproduction uniquement ; pas de bon à publier public."
+source_document_url: "https://docs.google.com/document/d/1idYd9QGpqETDm4d-1pfJMHwbs65anUBK51QdicPA2zo/edit"
+source_document_version: "V6.8"
+validation_narrative: "marc_v6_8_visa_litteraire_interne_favorable_2026_11_14"
+validation_documentaire: "marc_v6_8_D1_favorable_D2_differentiel_favorable_sous_limites"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "grand-entretien"
-signature_auteur: "Jean Toksik"
+signature_auteur: "Jean Toksic"
 code_editorial: "IND-C1-CST-01"
 perspective_principale: "strategie-gouvernance"
 unite_programmation: "IND-C1-CST"
 ---
 
-Marc D. dirige depuis douze ans une usine de deux cents salariés qui fabrique des arbres de transmission et des supports métalliques pour machines industrielles. Chiffre d'affaires annuel : environ 24 millions d'euros. Les commandes affluaient, les ateliers débordaient, les bénéfices fondaient. Il a fini par refuser près de deux millions d'euros de nouvelles commandes potentielles. Depuis, l'entreprise va mieux.
 
-Jean Toksik a voulu rencontrer cet homme dont la stratégie commerciale ressemble à une grève. Marc D. a accepté. Il avait pourtant été prévenu.
-
-Jean Toksik — Vous avez trouvé facilement ?
+Jean Toksic — Vous avez trouvé facilement ?
 
 Marc D. — Oui. Votre assistante m'a offert un café.
 
@@ -81,11 +79,11 @@ Marc D. sourit.
 
 — Ah ! Vous avez conçu l'incendie, puis présidé la commission de sécurité.
 
-— On voulait remplir les machines. Certaines tournaient peu, d'autres étaient saturées. On pensait pouvoir mieux répartir le travail.
+— On voulait remplir les machines. Entre les arbres de transmission et les supports métalliques, certaines tournaient peu, d'autres étaient saturées. On pensait pouvoir mieux répartir le travail.
 
 — Qu'est-ce qui vous a réveillé ?
 
-— Mon responsable d'atelier : « Marc D., tu veux qu'on fabrique les commandes ou qu'on passe nos journées à expliquer pourquoi on ne peut pas les fabriquer ? »
+— Mon responsable d'atelier : « Marc, tu veux qu'on fabrique les commandes ou qu'on passe nos journées à expliquer pourquoi on ne peut pas les fabriquer ? »
 
 — Il vous a fallu douze ans pour qu'un ouvrier vous explique votre métier ?
 
@@ -135,7 +133,7 @@ Marc D. — Ils m'ont cru fou. On a écarté près de deux millions d'euros de c
 
 Marc D. cesse de sourire.
 
-— Vous avez déjà dirigé une usine, monsieur Toksik ?
+— Vous avez déjà dirigé une usine, monsieur Toksic ?
 
 — Non. J'ai visité une chocolaterie, une fois. Excellent souvenir.
 
@@ -145,13 +143,13 @@ Marc D. cesse de sourire.
 
 — Non. Vous faites de l'humour. Moi, j'ai dû regarder mes salariés dans les yeux. Expliquer à certains qu'ils gagneraient moins. Dire à un client de quinze ans qu'on ne pouvait plus continuer. Et rentrer chez moi sans savoir si j'avais pris la bonne décision.
 
-Toksik entrouvre la bouche.
+Toksic entrouvre la bouche.
 
 — Laissez-moi finir. Vous savez ce qui est formidable dans votre métier ? Vous pouvez avoir raison tous les jours. Il suffit d'attendre que les autres se trompent.
 
 Un silence.
 
-Toksik regarde son carnet. Son stylo ne bouge plus.
+Toksic regarde son carnet. Son stylo ne bouge plus.
 
 Marc D. reprend sa tasse.
 
@@ -163,11 +161,11 @@ Le journaliste ne répond pas.
 
 ***
 
-Toksik tourne une page.
+Toksic tourne une page.
 
 — Ce client de quinze ans. Il est parti fâché ?
 
-— Non. Il m'a dit : « Marc D., je ne peux pas demander à mes clients de payer plus cher parce que vous vous êtes trompés pendant quinze ans. »
+— Non. Il m'a dit : « Marc, je ne peux pas demander à mes clients de payer plus cher parce que vous vous êtes trompés pendant quinze ans. »
 
 — Vous lui avez appris que vos prix étaient possibles. Le jour où il vous a cru, vous lui avez annoncé qu'il se trompait.
 
@@ -189,7 +187,7 @@ Marc D. baisse les yeux.
 
 — Les chiffres, non. Ce qu'on leur faisait dire.
 
-Toksik marque un temps.
+Toksic marque un temps.
 
 — Je reconnais que celle-là est meilleure que la mienne.
 
@@ -211,7 +209,7 @@ Toksik marque un temps.
 
 — Vous, pour remettre la médaille. Vous adorez distribuer les bons points avant de rentrer tranquillement dans votre rédaction.
 
-Toksik referme son carnet.
+Toksic referme son carnet.
 
 — Vous avez changé les primes, les prix, les règles de l'atelier. Vous avez corrigé la manière dont on évalue le travail des autres.
 
@@ -219,7 +217,7 @@ Toksik referme son carnet.
 
 — Qui a corrigé votre système d'évaluation à vous ?
 
-Marc D. entrouvre la bouche. Regarde Toksik, puis sa tasse.
+Marc D. entrouvre la bouche. Regarde Toksic, puis sa tasse.
 
 Il ne répond pas.
 

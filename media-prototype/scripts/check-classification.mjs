@@ -20,7 +20,7 @@ const records = [
   "tourisme/tou-c2-u1-fin-01-marianne-delmas.md|TOU-C2-U1-FIN-01|tourisme|Visa final — préproduction|finance-investissement|TOU-C2-U1||C2-U1|entretien|grand-entretien|15zkXSEbHToJNC0EMUj5j-hEETCxtOCz7aKjqiXVdsYg",
   "commerce/com-c3-u2-fin-01-chronique.md|COM-C3-U2-FIN-01|commerce|V5|finance-investissement|COM-C3-U2||C3-U2|chronique|chronique|",
   "eau-ressources/eau-c1-u1-str-01-chronique.md|EAU-C1-U1-STR-01|eau-ressources|V9|strategie-gouvernance|EAU-C1-U1|partage-eau-agriculture-potable|C1-U1|chronique|chronique|",
-  "industrie/ind-c1-cst-01-brouillon.md|IND-C1-CST-01|industrie|V6.5|strategie-gouvernance|IND-C1-CST||CST|entretien|grand-entretien|1TigShKuNMtDNPFdxK-6BWxITN9EVic2TaceDyxV4V5g",
+  "industrie/ind-c1-cst-01-brouillon.md|IND-C1-CST-01|industrie|V6.8|strategie-gouvernance|IND-C1-CST||CST|entretien|grand-entretien|1idYd9QGpqETDm4d-1pfJMHwbs65anUBK51QdicPA2zo",
   "industrie/ind-c1-cst-02-brouillon.md|IND-C1-CST-02|industrie|V5.10|operations-organisation|IND-C1-CST||CST|chronique|chronique|1Bdj1Jm5sJa2xECYrayFUHSm9M3DismvVPPpk2Vjd8y0",
   "industrie/ind-c1-cst-03-brouillon.md|IND-C1-CST-03|industrie|V4.12|technologie-innovation|IND-C1-CST||CST|chronique|chronique|16iAEBhP1MtkaQG__j8Bcg8pHTjIs1z2tqIi6Upi3-4g",
   "industrie/ind-c1-cst-04-brouillon.md|IND-C1-CST-04|industrie|V4.7a|ressources-humaines-competences|IND-C1-CST||CST|chronique|chronique|1cXbhX3laCXVoeewDHVWmLVnP_2lo9NFY8PR_muj6gq4",
