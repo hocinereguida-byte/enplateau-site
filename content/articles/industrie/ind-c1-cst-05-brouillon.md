@@ -1,8 +1,8 @@
 ---
-title: "Peut-on décrocher le contrat du siècle sans avoir les moyens de l’honorer ?"
+title: "Le contrat était magnifique. La trésorerie avait quelques réserves."
 hero_image: "/images/ind-c1-cst-05-laurent-visuel-v1.webp"
 image_alt: "Une clé industrielle démesurée, une petite tirelire et une coupe de champagne symbolisent le contraste entre l’ambition commerciale et les moyens financiers."
-summary: "Dans le sud de la France, une entreprise industrielle d'environ deux cents salariés fabrique des pièces métalliques destinées aux constructeurs de machines. Son plus gros contrat vient d'être signé. Les commerciaux sabrent le champagne, la direction se félicite et Laurent B., directeur administratif et financier depuis neuf ans, cherche avec quel argent acheter les matières premières. À lui de trouver les financements ; à la production de commander sans attendre. Jean Toksik reçoit cet homme manifestement incapable de partager le bonheur collectif."
+summary: "Dans le sud de la France, une entreprise industrielle d'environ deux cents salariés fabrique des pièces métalliques destinées aux constructeurs de machines. Son plus gros contrat vient d'être signé. Les commerciaux sabrent le champagne, la direction se félicite et Laurent B., directeur administratif et financier depuis neuf ans, cherche avec quel argent acheter les matières premières. À lui de trouver les financements ; à la production de commander sans attendre. Jean Toksic reçoit cet homme manifestement incapable de partager le bonheur collectif."
 format: "entretien"
 cycle: "industrie"
 conversation: "C1"
@@ -11,6 +11,7 @@ lecture_principale: "finance-investissement"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-27T15:00:00+01:00"
+updated_date: "2026-11-14"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
 affichage_rubrique: "automatique"
@@ -19,21 +20,22 @@ tag_2: "Besoin en fonds de roulement"
 tag_3: "Financement industriel"
 tag_4: "Contrats commerciaux"
 tag_5: "Croissance industrielle"
-source_notice: "Grand Entretien fictif. Personnages, entreprise, dialogues et chiffres inventés."
-methodology_specific: "Laurent B. V3.4 — accord de consultation en préproduction ; contrôles de proportionnalité financière, concordance individuelle et test lecteur encore ouverts. Aucun bon à publier public."
-source_document_url: "https://docs.google.com/document/d/19qFZ8MAp65lv0pszDk-qu76N2XEUW664ZAvG1LhMjKA/edit"
-source_document_version: "V3.4"
-validation_narrative: "v3_4_accord_preproduction_sans_visa_final"
-validation_documentaire: "v3_4_plausibilite_sous_hypotheses_controles_ouverts"
+source_notice: "Personnages, entreprise, localisation générale, dialogues et chiffres du scénario inventés."
+methodology_specific: "Laurent B. V3.6 (14 novembre 2026) : visa littéraire interne favorable, D1 favorable, D2 favorable sous limites explicites, clos pour la préproduction. PV : https://docs.google.com/document/d/13KFuHFuKuTGns30QZE6k2rUFRK6jcXlAGI7UoZTt1B0/edit . R1 : données de contrat, financement, coûts et échéances fictives ; R2 : couverture du premier lot par la trésorerie posée dans le récit, non audit réel ; R3 : coûts humains de la qualité non chiffrés ; R4 : test lecteur et contrôle intercycles exhaustif non réalisés. R5 : mention de fiction publique unique, note méthodologique conservée sans répétition du genre ; R6 : répétitions de dialogue admises. Aucune modification des 94 paragraphes du récit. Préproduction autorisée uniquement ; aucun bon à publier public."
+source_document_url: "https://docs.google.com/document/d/1lSkQxEZI-pgWeOzAg0uz9qb3Qn8EatUhP9e3QuM2b94/edit"
+source_document_version: "V3.6"
+validation_narrative: "v3_6_visa_litteraire_interne_favorable_2026_11_14"
+validation_documentaire: "v3_6_D1_favorable_D2_favorable_sous_limites_2026_11_14"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "grand-entretien"
-signature_auteur: "Jean Toksik"
+signature_auteur: "Jean Toksic"
 code_editorial: "IND-C1-CST-05"
 unite_programmation: "IND-C1-CST"
 perspective_principale: "finance-investissement"
 ---
 
-Jean Toksik — Laurent, félicitations ! Le plus gros contrat de votre histoire ! J'ai fait apporter du champagne.
+
+Jean Toksic — Laurent, félicitations ! Le plus gros contrat de votre histoire ! J'ai fait apporter du champagne.
 
 Laurent — De l'eau suffira.
 
@@ -53,13 +55,9 @@ Laurent — De l'eau suffira.
 
 — L'argent du client n'arrive pas au moment où l'on signe.
 
-— Il aurait pu faire un effort.
+— Et pendant que le commercial célèbre la signature, c'est vous qui annoncez qu'il manque l'argent pour commencer ?
 
-— Il n'est pas encore sur notre compte.
-
-— Vous avez regardé ?
-
-— Plusieurs fois.
+— Il ne manque pas pour commencer. Il manque pour tout lancer en même temps. C'est moins spectaculaire, mais plus gênant.
 
 — Et vous avez immédiatement demandé de suspendre certains achats pendant quarante-huit heures. Vos commerciaux vous ont-ils dénoncé à la police ?
 
@@ -85,7 +83,7 @@ Laurent — De l'eau suffira.
 
 — Non, mais pourriez-vous au moins hésiter ? J'ai une réputation à défendre.
 
-Jean Toksik ouvre une bouteille d'eau avec une violence inutile.
+Jean Toksic ouvre une bouteille d'eau avec une violence inutile.
 
 — Pourquoi ne pas demander un acompte au client ?
 
@@ -95,13 +93,13 @@ Jean Toksik ouvre une bouteille d'eau avec une violence inutile.
 
 — Elle examinait notre demande de financement.
 
-— Vous auriez pu lui présenter le contrat.
+— Votre banque doit être ravie : vous lui apportez un contrat record et lui demandez de financer votre propre impréparation.
 
-— C'est précisément ce que nous avons fait.
+— Nous lui avons apporté le contrat et les prévisions de trésorerie. Elle avait raison de regarder les deux.
 
-— Avec le sourire du directeur commercial ?
+— Vous lui avez aussi montré que votre procédure avait laissé passer le changement de calendrier ?
 
-— Nous avons préféré les prévisions de trésorerie.
+— Oui. Nous lui avons présenté le calendrier révisé et les prévisions. Sa décision était encore en cours d'examen.
 
 — La banque étudiait la possibilité de nous avancer une partie de l'argent attendu du client. Mais elle n'avait encore rien accordé, et les matières devaient être payées avant les premières livraisons.
 
@@ -143,7 +141,7 @@ Jean Toksik ouvre une bouteille d'eau avec une violence inutile.
 
 — Sans le chapeau. Il aurait fallu le passer en frais.
 
-Jean Toksik marque un temps. Il n'avait pas prévu que Laurent puisse être drôle.
+Jean Toksic marque un temps. Il n'avait pas prévu que Laurent puisse être drôle.
 
 — Pour protéger la trésorerie, vous avez aussi reporté de six semaines l'achat d'un équipement de contrôle.
 
@@ -165,9 +163,9 @@ Jean Toksik marque un temps. Il n'avait pas prévu que Laurent puisse être drô
 
 — J'avais sous-estimé le travail que ce report imposait à l'équipe. Nous avons adapté l'organisation, sans pouvoir acheter l'équipement plus tôt.
 
-— Donc vous économisez de l'argent en faisant travailler les autres davantage ?
+— Vous appelez cela protéger la trésorerie. L'équipe qualité, elle, protège quoi pendant ses manipulations supplémentaires ?
 
-— C'est ce que m'a dit la responsable qualité. Avec moins de politesse.
+— La conformité des pièces. Et elle y passe plus de temps à cause de ma décision.
 
 — Je vous avais invité pour vous mettre mal à l'aise, Laurent. Vous pourriez au moins attendre que je trouve les accusations moi-même.
 
@@ -177,11 +175,7 @@ Jean Toksik marque un temps. Il n'avait pas prévu que Laurent puisse être drô
 
 — Vous m'avez demandé combien de manipulations l'ancien équipement imposait. Pas combien d'heures cela coûtait à l'équipe.
 
-— Je comptais y venir.
-
-— Vous aviez déjà changé de sujet.
-
-Jean Toksik consulte ses notes. Il n'y trouve aucune question sur les heures de l'équipe qualité.
+Jean Toksic consulte ses notes. Il n'y trouve aucune question sur les heures de l'équipe qualité.
 
 — Vous venez de me voler mon indignation.
 
@@ -189,7 +183,7 @@ Jean Toksik consulte ses notes. Il n'y trouve aucune question sur les heures de 
 
 — Vous auriez dû me demander un acompte.
 
-Jean Toksik regarde sa bouteille de champagne. Il semble envisager de l'ouvrir seul.
+Jean Toksic regarde sa bouteille de champagne. Il semble envisager de l'ouvrir seul.
 
 — Finalement, la banque vous a financés ?
 
@@ -227,4 +221,4 @@ Jean Toksik regarde sa bouteille de champagne. Il semble envisager de l'ouvrir s
 
 — Nous avons donc mis en place une procédure.
 
-Jean Toksik regarde la bouteille, puis la porte. Pour la première fois depuis longtemps, il se demande si ses invités ne commencent pas à prendre goût aux séances.
+Jean Toksic regarde la bouteille, puis la porte. Pour la première fois depuis longtemps, il se demande si ses invités ne commencent pas à prendre goût aux séances.
