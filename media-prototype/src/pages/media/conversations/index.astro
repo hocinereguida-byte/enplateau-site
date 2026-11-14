@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { isPublic, validClassification, conversations, cycleCatalogue, canonicalCycleCode, publicCycleLabel, publicCycleScope } from '../../../lib/editorial';
-import { photoConversation } from '../../../lib/photographies';
+import { photoConversation, photoCycle } from '../../../lib/photographies';
 import registry from '../../../../../content/rubriques/conversations.json';
 import { articleStyle } from '../../../lib/article-style';
 import MediaHeader from '../../../components/MediaHeader.astro';
@@ -9,13 +9,90 @@ import MediaFooter from '../../../components/MediaFooter.astro';
 const publicArticles=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data));
 const catalogue=Object.entries(conversations).flatMap(([cycle,group])=>Object.entries(group).map(([code,title])=>{
  const metadata=(registry.conversations as Record<string,{titre:string;presentation:string;questions:string;mots_cles:string}>)[cycle+'_'+code];
- return {cycle:canonicalCycleCode(cycle),code,title,description:metadata?.presentation||'',questions:metadata?.questions||'',keywords:metadata?.mots_cles||'',photo:photoConversation(cycle,code),count:publicArticles.filter(a=>a.data.cycle===cycle&&a.data.conversation===code).length,url:`/media/cycles/${cycle}/conversations/${code}/`};
+ return {cycle:canonicalCycleCode(cycle),code,title,description:metadata?.presentation||'',questions:metadata?.questions||'',keywords:metadata?.mots_cles||'',photo:photoConversation(cycle,code)||photoCycle(canonicalCycleCode(cycle)),count:publicArticles.filter(a=>a.data.cycle===cycle&&a.data.conversation===code).length,url:`/media/cycles/${cycle}/conversations/${code}/`};
 })).filter(item=>item.count>0);
 const cyclesAvecConversations=cycleCatalogue.filter(c=>catalogue.some(item=>item.cycle===c.code));
 ---
-<!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Les sujets qui fâchent — Scènes d’Arbitrage</title><meta name="description" content="Explorer les grandes questions économiques et les contributions qui confrontent des décisions, des intérêts et des contraintes."/><style is:inline set:html={articleStyle}/></head><body><a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/><main id="contenu" class="shell conversation-directory"><p class="micro">LES GRANDES QUESTIONS ÉCONOMIQUES</p><h1>Les sujets qui fâchent</h1><p class="lead">Chaque sujet réunit plusieurs contributions et points de vue autour d’une grande question économique. Recherchez une tension, un arbitrage ou une situation, sans devoir connaître le secteur à l’avance.</p>
-<div class="conversation-filters"><label for="conversation-search">Rechercher un sujet</label><input type="search" id="conversation-search" placeholder="Question, sujet, arbitrage, mot-clé…" autocomplete="off"/><label for="conversation-cycle">Terrain d’arbitrage</label><select id="conversation-cycle"><option value="">Tous les terrains</option>{cyclesAvecConversations.map(item=><option value={item.code}>{publicCycleLabel(item.code)} — {publicCycleScope(item.code)}</option>)}</select><div class="conversation-controls"><button type="button" id="conversation-reset">Effacer les filtres</button><span id="conversation-count" role="status" aria-live="polite">{catalogue.length} sujets</span></div></div>
-<div class="conversation-results" id="conversation-results">{catalogue.map(item=><article class="conversation-result" data-cycle={item.cycle} data-search={[item.cycle,publicCycleLabel(item.cycle),cycleCatalogue.find(c=>c.code===item.cycle)?.label,item.code,item.title,item.description,item.questions,item.keywords].join(' ').toLocaleLowerCase('fr-FR')}><a class="conversation-result-link" href={item.url}>{item.photo?<img class="conversation-result-photo" src={item.photo} alt="" loading="lazy"/>:<span class="photo-placeholder photo-placeholder-thumb">VISUEL DU SUJET</span>}<div><p class="micro">{publicCycleLabel(item.cycle)} · {item.code}</p><h2>{item.title}</h2>{item.description&&<p>{item.description}</p>}<span class="conversation-result-count">{item.count} publication(s)</span></div><span class="conversation-result-arrow" aria-hidden="true">↗</span></a></article>)}</div><p id="conversation-empty" hidden>Aucun sujet publié ne correspond à cette recherche. Explorez les secteurs pour découvrir d’autres questions.</p></main><MediaFooter/>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Les sujets qui fâchent — Scènes d’Arbitrage</title><meta name="description" content="Explorer les grandes questions économiques et les contributions qui confrontent des décisions, des intérêts et des contraintes."/><style is:inline set:html={articleStyle}/><style is:global>
+/* Les sujets qui fâchent — recherche journalistique et cartes illustrées.
+   Style local à cet annuaire : ne touche ni aux gabarits articles ni aux menus. */
+html body .conversation-directory{max-width:1100px}
+html body .conversation-directory .conversation-filters{margin:36px 0 29px!important;padding:0!important;background:transparent!important;border:0!important}
+.conversation-filter-fields{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(250px,.9fr);gap:20px;align-items:end}
+html body .conversation-directory .conversation-filters label{display:block;color:#5a534a!important;font:600 12px/1.5 'IBM Plex Sans',Arial,sans-serif!important;letter-spacing:.025em;margin:0 0 10px!important}
+.conversation-search-shell{display:flex;align-items:center;gap:11px;min-height:60px;border:1px solid #c9c1b6;background:#fffdf9;padding:0 16px;transition:border-color .16s,box-shadow .16s}
+.conversation-search-shell:focus-within{border-color:#b85d44;box-shadow:0 0 0 2px #b85d4430}
+.conversation-search-icon{color:#615d57;width:21px;height:21px;flex:0 0 21px}
+html body .conversation-directory .conversation-search-shell input{flex:1;min-width:0;width:100%;border:0!important;outline:0!important;box-shadow:none!important;background:transparent!important;padding:15px 0!important;font:400 17px/1.45 'IBM Plex Sans',Arial,sans-serif!important;color:#242622!important}
+html body .conversation-directory .conversation-search-shell input::placeholder{color:#807c76;opacity:1}
+html body .conversation-directory #conversation-cycle{display:block;width:100%;min-height:60px;border:1px solid #c9c1b6!important;border-radius:0!important;background-color:#fffdf9!important;padding:14px 36px 14px 16px!important;font:500 15px/1.4 'IBM Plex Sans',Arial,sans-serif!important;color:#242622!important;text-overflow:ellipsis;cursor:pointer}
+html body .conversation-directory #conversation-cycle:focus-visible{outline:2px solid #b85d44;outline-offset:2px}
+html body .conversation-directory .conversation-controls{margin-top:17px!important;padding:12px 0 0;border-top:1px solid #ddd6cb;display:flex;align-items:center;justify-content:space-between;gap:15px}
+html body .conversation-directory #conversation-count{font:500 12px/1.5 'IBM Plex Mono',monospace!important;color:#666058!important}
+html body .conversation-directory #conversation-reset{border:0!important;background:none!important;color:#8a4f40!important;font:600 12px/1.5 'IBM Plex Sans',Arial,sans-serif!important;padding:7px 0!important;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+html body .conversation-directory #conversation-reset:hover{color:#412c26!important}
+html body .conversation-directory #conversation-reset:focus-visible{outline:2px solid #b85d44;outline-offset:4px}
+html body .conversation-directory .conversation-results{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:0!important;max-width:1000px}
+html body .conversation-directory .conversation-result{margin:0!important;padding:23px 0!important;background:transparent!important;border:0!important;border-top:1px solid #d8d2c8!important}
+html body .conversation-directory .conversation-result:last-child{border-bottom:1px solid #d8d2c8!important}
+html body .conversation-directory .conversation-result[hidden]{display:none!important}
+html body .conversation-directory .conversation-result-link{display:grid!important;grid-template-columns:minmax(230px,33%) minmax(0,1fr) 24px!important;align-items:center!important;gap:clamp(18px,3vw,30px)!important;color:#242622!important;text-decoration:none!important}
+html body .conversation-directory .conversation-result-media{width:100%;min-width:0;overflow:hidden;background:#e8e2d8}
+html body .conversation-directory .conversation-result-photo{display:block!important;width:100%!important;height:auto!important;aspect-ratio:5/4!important;object-fit:cover!important;object-position:center!important;transition:transform .22s ease}
+html body .conversation-directory .conversation-result-no-photo{display:block;aspect-ratio:5/4;background:#e8e2d8}
+html body .conversation-directory .conversation-result-link:hover .conversation-result-photo{transform:scale(1.025)}
+html body .conversation-directory .conversation-result-copy{min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+html body .conversation-directory .conversation-result .micro{font:700 11px/1.5 'IBM Plex Mono',monospace!important;letter-spacing:.085em!important;color:#a85c48!important;margin:0 0 12px!important}
+html body .conversation-directory .conversation-result h2{font:600 clamp(27px,3.2vw,39px)/1.13 Georgia,'Times New Roman',serif!important;letter-spacing:-.027em!important;margin:0 0 17px!important;color:#1e2a30!important;overflow-wrap:normal}
+html body .conversation-directory .conversation-result-description{font:400 14px/1.55 'IBM Plex Sans',Arial,sans-serif!important;color:#666058!important;margin:0 0 12px!important}
+html body .conversation-directory .conversation-result-count{display:block;margin-top:auto;font:500 12px/1.5 'IBM Plex Mono',monospace!important;color:#6b6660!important}
+html body .conversation-directory .conversation-result-arrow{align-self:start;margin-top:6px;font:400 23px/1 'IBM Plex Sans',Arial,sans-serif;color:#416075!important}
+html body .conversation-directory .conversation-result-link:hover h2{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+#conversation-empty{padding:30px 0;color:#666058}
+@media(max-width:700px){
+ .conversation-filter-fields{grid-template-columns:1fr;gap:18px}
+ html body .conversation-directory .conversation-filters{margin:30px 0 27px!important}
+ .conversation-search-shell,html body .conversation-directory #conversation-cycle{min-height:55px}
+ html body .conversation-directory .conversation-result{padding:19px 0!important}
+ html body .conversation-directory .conversation-result-link{grid-template-columns:minmax(118px,41%) minmax(0,1fr)!important;gap:15px!important;position:relative;align-items:start!important}
+ html body .conversation-directory .conversation-result h2{font-size:clamp(23px,5.7vw,30px)!important;line-height:1.17!important;margin:0 0 13px!important}
+ html body .conversation-directory .conversation-result .micro{font-size:10px!important;margin-bottom:9px!important}
+ html body .conversation-directory .conversation-result-photo{aspect-ratio:4/5!important;min-height:142px!important}
+ html body .conversation-directory .conversation-result-arrow{position:absolute;right:0;top:0;font-size:18px}
+ html body .conversation-directory .conversation-result-copy{padding-right:11px}
+ html body .conversation-directory .conversation-result-count{font-size:11px!important}
+ html body .conversation-directory .conversation-controls{margin-top:13px!important}
+}
+@media(max-width:380px){
+ html body .conversation-directory .conversation-result-link{grid-template-columns:minmax(112px,39%) minmax(0,1fr)!important;gap:12px!important}
+ html body .conversation-directory .conversation-result h2{font-size:22px!important}
+}
+@media(prefers-reduced-motion:reduce){html body .conversation-directory .conversation-result-photo{transition:none}}
+</style></head><body><a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/><main id="contenu" class="shell conversation-directory"><p class="micro">LES GRANDES QUESTIONS ÉCONOMIQUES</p><h1>Les sujets qui fâchent</h1><p class="lead">Chaque sujet réunit plusieurs contributions et points de vue autour d’une grande question économique. Recherchez une tension, un arbitrage ou une situation, sans devoir connaître le secteur à l’avance.</p>
+<div class="conversation-filters" role="search" aria-label="Rechercher et filtrer les sujets">
+ <div class="conversation-filter-fields">
+  <div class="conversation-search-field">
+   <label for="conversation-search">Une question en tête ?</label>
+   <div class="conversation-search-shell">
+    <svg aria-hidden="true" class="conversation-search-icon" viewBox="0 0 24 24" fill="none"><circle cx="10.7" cy="10.7" r="6.7" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <input type="search" id="conversation-search" placeholder="Rechercher un sujet, un enjeu…" autocomplete="off" aria-label="Rechercher dans les sujets"/>
+   </div>
+  </div>
+  <div class="conversation-terrain-field">
+   <label for="conversation-cycle">Explorer par terrain</label>
+   <select id="conversation-cycle" aria-label="Filtrer par terrain d’arbitrage"><option value="">Tous les terrains</option>{cyclesAvecConversations.map(item=><option value={item.code}>{publicCycleLabel(item.code)} — {publicCycleScope(item.code)}</option>)}</select>
+  </div>
+ </div>
+ <div class="conversation-controls">
+  <span id="conversation-count" role="status" aria-live="polite">{catalogue.length} sujets à explorer</span>
+  <button type="button" id="conversation-reset">Réinitialiser les filtres <span aria-hidden="true">↺</span></button>
+ </div>
+</div>
+<div class="conversation-results" id="conversation-results">{catalogue.map(item=><article class="conversation-result" data-cycle={item.cycle} data-search={[item.cycle,publicCycleLabel(item.cycle),cycleCatalogue.find(c=>c.code===item.cycle)?.label,item.code,item.title,item.description,item.questions,item.keywords].join(' ').toLocaleLowerCase('fr-FR')}><a class="conversation-result-link" href={item.url}>
+ <div class="conversation-result-media">{item.photo?<img class="conversation-result-photo" src={item.photo} alt="" loading="lazy" decoding="async" width="640" height="480"/>:<span class="conversation-result-no-photo" aria-hidden="true"></span>}</div>
+ <div class="conversation-result-copy"><p class="micro">{publicCycleLabel(item.cycle)} · SUJET {item.code}</p><h2>{item.title}</h2>{item.description&&<p class="conversation-result-description">{item.description}</p>}<span class="conversation-result-count">{item.count} publication{item.count>1?'s':''} à découvrir</span></div>
+ <span class="conversation-result-arrow" aria-hidden="true">↗</span>
+ </a></article>)}</div><p id="conversation-empty" hidden>Aucun sujet publié ne correspond à cette recherche. Essayez un autre terme ou réinitialisez les filtres.</p></main><MediaFooter/>
 <script is:inline>
-(function(){const query=document.getElementById('conversation-search'),cycle=document.getElementById('conversation-cycle'),count=document.getElementById('conversation-count'),empty=document.getElementById('conversation-empty');const rows=[...document.querySelectorAll('.conversation-result')];const normalize=s=>(s||'').toLocaleLowerCase('fr-FR').normalize('NFD').replace(/[\u0300-\u036f]/g,'');const apply=()=>{let n=0;const term=normalize(query.value.trim());rows.forEach(el=>{const show=(!cycle.value||el.dataset.cycle===cycle.value)&&normalize(el.dataset.search).includes(term);el.hidden=!show;if(show)n++});count.textContent=n+' sujet(s)';empty.hidden=n!==0;};query.addEventListener('input',apply);cycle.addEventListener('change',apply);document.getElementById('conversation-reset').addEventListener('click',()=>{query.value='';cycle.value='';apply();query.focus()});apply();})();
+(function(){const query=document.getElementById('conversation-search'),cycle=document.getElementById('conversation-cycle'),count=document.getElementById('conversation-count'),empty=document.getElementById('conversation-empty');const rows=[...document.querySelectorAll('.conversation-result')];const normalize=s=>(s||'').toLocaleLowerCase('fr-FR').normalize('NFD').replace(/[\u0300-\u036f]/g,'');const apply=()=>{let n=0;const term=normalize(query.value.trim());rows.forEach(el=>{const show=(!cycle.value||el.dataset.cycle===cycle.value)&&normalize(el.dataset.search).includes(term);el.hidden=!show;if(show)n++});count.textContent=n+' sujet'+(n>1?'s':'')+' à explorer';empty.hidden=n!==0;};query.addEventListener('input',apply);cycle.addEventListener('change',apply);document.getElementById('conversation-reset').addEventListener('click',()=>{query.value='';cycle.value='';apply();query.focus()});apply();})();
 </script></body></html>
