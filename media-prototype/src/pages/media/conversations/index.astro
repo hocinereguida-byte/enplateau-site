@@ -1,16 +1,45 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, conversations, cycleCatalogue, canonicalCycleCode, publicCycleLabel, publicCycleScope } from '../../../lib/editorial';
+import { isPublic, validClassification, publicationInstant, conversations, cycleCatalogue, canonicalCycleCode, publicCycleLabel, publicCycleScope } from '../../../lib/editorial';
 import { photoConversation, photoCycle } from '../../../lib/photographies';
 import registry from '../../../../../content/rubriques/conversations.json';
 import { articleStyle } from '../../../lib/article-style';
 import MediaHeader from '../../../components/MediaHeader.astro';
 import MediaFooter from '../../../components/MediaFooter.astro';
 const publicArticles=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data));
-const catalogue=Object.entries(conversations).flatMap(([cycle,group])=>Object.entries(group).map(([code,title])=>{
+const sujetsAvecPublications=Object.entries(conversations).flatMap(([cycle,group])=>Object.entries(group).map(([code,title])=>{
  const metadata=(registry.conversations as Record<string,{titre:string;presentation:string;questions:string;mots_cles:string}>)[cycle+'_'+code];
- return {cycle:canonicalCycleCode(cycle),code,title,description:metadata?.presentation||'',questions:metadata?.questions||'',keywords:metadata?.mots_cles||'',photo:photoConversation(cycle,code)||photoCycle(canonicalCycleCode(cycle)),count:publicArticles.filter(a=>a.data.cycle===cycle&&a.data.conversation===code).length,url:`/media/cycles/${cycle}/conversations/${code}/`};
+ const publications=publicArticles.filter(a=>a.data.cycle===cycle&&a.data.conversation===code);
+ // La récence concerne la date de publication des articles, pas leur date de correction technique.
+ const dernierePublication=publications.reduce((max,a)=>Math.max(max,publicationInstant(a.data.publication_date)?.getTime()??0),0);
+ return {cycle:canonicalCycleCode(cycle),code,title,description:metadata?.presentation||'',questions:metadata?.questions||'',keywords:metadata?.mots_cles||'',photo:photoConversation(cycle,code)||photoCycle(canonicalCycleCode(cycle)),count:publications.length,dernierePublication,url:`/media/cycles/${cycle}/conversations/${code}/`};
 })).filter(item=>item.count>0);
+
+/* Priorité absolue au nombre de publications, puis à la publication la plus récente.
+   Si ces deux critères sont égaux, intercaler les terrains distincts autant que possible
+   pour éviter deux illustrations de terrain identiques à la suite.
+   Le classement est déterministe même lorsque plusieurs sujets sont ex æquo. */
+const sujetsClasses=sujetsAvecPublications.sort((a,b)=>
+ b.count-a.count
+ || b.dernierePublication-a.dernierePublication
+ || a.cycle.localeCompare(b.cycle,'fr')
+ || a.code.localeCompare(b.code,'fr')
+);
+const catalogue: typeof sujetsClasses = [];
+for(let debut=0;debut<sujetsClasses.length;){
+ let fin=debut+1;
+ while(fin<sujetsClasses.length
+       && sujetsClasses[fin].count===sujetsClasses[debut].count
+       && sujetsClasses[fin].dernierePublication===sujetsClasses[debut].dernierePublication)fin++;
+ const candidats=sujetsClasses.slice(debut,fin);
+ while(candidats.length){
+  const precedent=catalogue[catalogue.length-1]?.cycle;
+  const autreTerrain=candidats.findIndex(item=>item.cycle!==precedent);
+  const [suivant]=candidats.splice(autreTerrain>=0?autreTerrain:0,1);
+  catalogue.push(suivant);
+ }
+ debut=fin;
+}
 const cyclesAvecConversations=cycleCatalogue.filter(c=>catalogue.some(item=>item.cycle===c.code));
 ---
 <!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Les sujets qui fâchent — Scènes d’Arbitrage</title><meta name="description" content="Explorer les grandes questions économiques et les contributions qui confrontent des décisions, des intérêts et des contraintes."/><style is:inline set:html={articleStyle}/><style is:global>
@@ -43,7 +72,7 @@ html body .conversation-directory .conversation-result-no-photo{display:block;as
 html body .conversation-directory .conversation-result-link:hover .conversation-result-photo{transform:scale(1.025)}
 html body .conversation-directory .conversation-result-copy{min-width:0;display:flex;flex-direction:column;align-items:flex-start}
 html body .conversation-directory .conversation-result .micro{font:700 11px/1.5 'IBM Plex Mono',monospace!important;letter-spacing:.085em!important;color:#a85c48!important;margin:0 0 12px!important}
-html body .conversation-directory .conversation-result h2{font:600 clamp(27px,3.2vw,39px)/1.13 Georgia,'Times New Roman',serif!important;letter-spacing:-.027em!important;margin:0 0 17px!important;color:#1e2a30!important;overflow-wrap:normal}
+html body .conversation-directory .conversation-result h2{font:600 clamp(27px,3.2vw,39px)/1.13 Georgia,'Times New Roman',serif!important;letter-spacing:-.027em!important;margin:0 0 17px!important;color:#1e2a30!important;overflow-wrap:anywhere!important;hyphens:auto}
 html body .conversation-directory .conversation-result-description{font:400 14px/1.55 'IBM Plex Sans',Arial,sans-serif!important;color:#666058!important;margin:0 0 12px!important}
 html body .conversation-directory .conversation-result-count{display:block;margin-top:auto;font:500 12px/1.5 'IBM Plex Mono',monospace!important;color:#6b6660!important}
 html body .conversation-directory .conversation-result-arrow{align-self:start;margin-top:6px;font:400 23px/1 'IBM Plex Sans',Arial,sans-serif;color:#416075!important}
