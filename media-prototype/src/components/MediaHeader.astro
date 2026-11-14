@@ -180,28 +180,59 @@ window.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMobileMenu();pre
 window.matchMedia('(min-width:761px)').addEventListener('change',e=>{if(e.matches)closeMobileMenu();});
 pressNav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMobileMenu));
 
-/* Les <details> imbriqués se déplient dans une zone scrollable sous le bandeau fixe.
- * Sur Android, la remise en page peut conserver une ancienne position de scroll et
- * dissimuler le premier lien. Un seul groupe est ouvert à la fois ; on replace son
- * en-tête en haut de la zone de navigation, puis le premier cycle reste visible. */
-const pressCycleFamilies=Array.from(pressNav?.querySelectorAll('.press-cycle-family')??[]);
+/* La navigation mobile défile à l'intérieur du panneau sous le bandeau fixe.
+ * Sur Android, l'ouverture d'un <details> peut préserver l'ancien scrollTop.
+ * Replacer d'abord l'intitulé de la rubrique ouverte sous le bandeau
+ * pour que son sous-menu commence toujours par sa première entrée. */
 const isPressMobile=()=>window.matchMedia('(max-width:760px)').matches;
-pressCycleFamilies.forEach(family=>{
-  family.addEventListener('toggle',()=>{
-    if(!family.open||!isPressMobile()||!pressNav?.classList.contains('press-nav'))return;
-    pressCycleFamilies.forEach(other=>{if(other!==family&&other.open)other.open=false;});
+const pressMenuSections=Array.from(pressNav?.querySelectorAll(':scope > details')??[]);
+const pressCycleFamilies=Array.from(pressNav?.querySelectorAll('.press-cycle-family')??[]);
+const pressMenuIsVisible=()=>isPressMobile()&&pressHeader?.classList.contains('press-menu-open');
+
+pressMenuSections.forEach(section=>{
+  section.addEventListener('toggle',()=>{
+    if(!section.open)return;
+    pressMenuSections.forEach(other=>{if(other!==section&&other.open)other.open=false;});
+    if(!pressMenuIsVisible())return;
     requestAnimationFrame(()=>{
-      if(!family.open||!isPressMobile()||!pressHeader?.classList.contains('press-menu-open'))return;
-      const summary=family.querySelector(':scope > summary');
+      if(!section.open||!pressMenuIsVisible())return;
+      const summary=section.querySelector(':scope > summary');
       if(!summary)return;
-      const target=pressNav.scrollTop+summary.getBoundingClientRect().top-pressNav.getBoundingClientRect().top-12;
-      pressNav.scrollTo({top:Math.max(0,target),behavior:'auto'});
+      // C'est le panneau .press-nav qui défile, jamais la page entière.
+      const menuTop=pressNav.getBoundingClientRect().top;
+      const target=pressNav.scrollTop+summary.getBoundingClientRect().top-menuTop-12;
+      pressNav.scrollTop=Math.max(0,target);
     });
   });
 });
 
-document.querySelectorAll('.press-nav > details').forEach(detail=>{
- detail.addEventListener('toggle',()=>{if(detail.open)document.querySelectorAll('.press-nav > details').forEach(other=>{if(other!==detail)other.open=false})});
+/* Ne jamais pousser systématiquement le titre d'une famille tout en haut :
+ * l'ancien scrollTo masquait les premières familles/cycles à chaque ouverture.
+ * N'ajuster que si l'intitulé ou son premier cycle serait réellement masqué. */
+pressCycleFamilies.forEach(family=>{
+  family.addEventListener('toggle',()=>{
+    if(!family.open||!pressMenuIsVisible())return;
+    pressCycleFamilies.forEach(other=>{if(other!==family&&other.open)other.open=false;});
+    requestAnimationFrame(()=>{
+      if(!family.open||!pressMenuIsVisible())return;
+      const summary=family.querySelector(':scope > summary');
+      const firstCycle=family.querySelector(':scope > div > a');
+      if(!summary||!firstCycle)return;
+      const menuRect=pressNav.getBoundingClientRect();
+      const summaryRect=summary.getBoundingClientRect();
+      const firstRect=firstCycle.getBoundingClientRect();
+      const visibleTop=menuRect.top+12;
+      const visibleBottom=menuRect.bottom-12;
+      if(summaryRect.top<visibleTop){
+        pressNav.scrollTop=Math.max(0,pressNav.scrollTop+summaryRect.top-visibleTop);
+      }else if(firstRect.bottom>visibleBottom){
+        const availableShift=Math.max(0,summaryRect.top-visibleTop);
+        const neededShift=firstRect.bottom-visibleBottom;
+        pressNav.scrollTop+=Math.min(neededShift,availableShift);
+      }
+    });
+  });
 });
+
 document.addEventListener('click',event=>{if(!event.target.closest('.press-nav'))document.querySelectorAll('.press-nav details').forEach(d=>d.open=false)});
 </script>
