@@ -16,7 +16,7 @@ const items=(await getCollection('articles'))
   .sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
 const name=conversations[cycle]?.[conversation]??conversation;
 const cycleName=publicCycleLabel(cycle);
-const contextGroups=Object.entries(contexts[cycle]||{}).map(([code,label])=>({code,label:publicContextLabel(cycle,code),technicalLabel:label,articles:items.filter(a=>a.data.contexte===code)})).filter(group=>group.articles.length>0);
+const contextGroups=Object.keys(contexts[cycle]||{}).map(code=>({code,label:publicContextLabel(cycle,code),articles:items.filter(a=>a.data.contexte===code)})).filter(group=>group.articles.length>0);
 const genreName=(a:any)=>publicGenreLabel(a.data);
 ---
 <!doctype html>
@@ -32,7 +32,6 @@ const genreName=(a:any)=>publicGenreLabel(a.data);
 .sda-v5-conv-intro .lead{max-width:760px;margin:0!important}
 .sda-v5-conv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .sda-v5-conv-context{margin:0 0 44px}
-.sda-v9-context-technical{font:400 13px/1.5 'IBM Plex Sans',Arial,sans-serif;color:#777168;margin:-12px 0 21px}
 .sda-v5-conv-context h2{font-size:clamp(27px,3vw,36px)!important;margin:10px 0 22px!important}
 .sda-v5-conv-card{background:#fffefa;border:1px solid #ddd7cb;padding:22px;display:flex;flex-direction:column;min-height:235px}
 .sda-v5-conv-card h3{font-size:clamp(24px,2.7vw,32px)!important;line-height:1.2;margin:12px 0!important}
@@ -48,13 +47,13 @@ const genreName=(a:any)=>publicGenreLabel(a.data);
 <main class="shell" id="contenu">
 <nav class="kicker" aria-label="Fil d’Ariane"><a href="/media/">Accueil</a> / <a href="/media/cycles/">Là où ça se joue</a> / <a href={'/media/cycles/'+canonicalCycleCode(cycle)+'/'}>{cycleName}</a> / {name}</nav>
 <header class="sda-v5-conv-intro">
-<p class="sda-v5-conv-kicker">SUJET {conversation} · {cycleName.toUpperCase()}</p>
+<p class="sda-v5-conv-kicker">{cycleName.toUpperCase()}</p>
 <h1>{name}</h1>
 <p class="lead">Une grande question économique explorée à travers des décisions, des contraintes et des perspectives différentes.</p>
 <p class="sda-v5-conv-kicker">{items.length} PUBLICATION{items.length>1?'S':''} DISPONIBLE{items.length>1?'S':''}</p>
 </header>
 {contextGroups.map(group=><section class="sda-v5-conv-context" aria-labelledby={'ctx-'+group.code}>
-<p class="sda-v5-conv-kicker">LES CAS DE FIGURE</p><h2 id={'ctx-'+group.code}>{group.label}</h2><p class="sda-v9-context-technical">{group.technicalLabel}</p>
+<p class="sda-v5-conv-kicker">LES CAS DE FIGURE</p><h2 id={'ctx-'+group.code}>{group.label}</h2>
 <div class="sda-v5-conv-grid">{group.articles.map(a=><article class="sda-v5-conv-card">
 <p class="sda-v5-conv-kicker">{genreName(a)} · {publicPerspectiveLabel(perspectiveOf(a.data)) || cycleName}</p>
 <h3><a href={urlOf(a.id)}>{a.data.title}</a></h3>

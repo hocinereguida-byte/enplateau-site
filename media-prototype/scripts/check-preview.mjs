@@ -38,6 +38,34 @@ const visit=(dir)=>{
  }
 };
 visit(articlesRoot);
+
+// Non-régression des libellés visibles : aucun identifiant CMS ni consigne
+// de classement ne doit être exposé dans les pages de navigation du média.
+// Les attributs HTML, URLs, scripts et styles gardent leurs clés techniques.
+const editorialPages=[
+ 'media/index.html',
+ 'media/cycles/index.html',
+ 'media/conversations/index.html',
+ 'media/cycles/industrie/index.html',
+ 'media/cycles/immobilier/index.html',
+ 'media/cycles/industrie/conversations/C1/index.html',
+ 'media/cycles/immobilier/conversations/C1/index.html',
+ 'media/cycles/industrie/contextes/CST/index.html',
+];
+for(const page of editorialPages){
+ const html=read(page);
+ if(!html)continue;
+ const visibleText=html
+  .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ')
+  .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,' ')
+  .replace(/<[^>]*>/g,' ')
+  .replace(/\s+/g,' ');
+ if(/\b(?:sujet|terrain|cycle|conversation)\s+(?:C[1-9]\d*|0\d+|\d{1,2})(?=\s|[·•.,:;]|$)/i.test(visibleText)
+    ||/\b(?:contexte|cas de figure)\s+(?:C\d+(?:-U\d+)?|CST|ASC|RSS)\b/i.test(visibleText)
+    ||/\b(?:du plus fourni au moins fourni|priorité à la publication la plus récente)\b/i.test(visibleText)){
+  errors.push('Étiquette ou consigne interne visible : '+page);
+ }
+}
 // Les brouillons restent volontairement absents des routes publiques.
 // L'absence d'articles publiés est un état valide en préproduction.
 if(!articleCount)console.log('Aucun article public : les six contenus C1 restent en fabrication.');

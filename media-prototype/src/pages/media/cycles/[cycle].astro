@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, urlOf, conversations, publicPerspectiveLabel, publicGenreLabel, publicationInstant, cycleCatalogue, cycleBriefs, publicCycleLabel, publicCycleScope, cycleFamilies, publicFamilyLabel } from '../../../lib/editorial';
+import { isPublic, validClassification, urlOf, conversations, publicPerspectiveLabel, publicGenreLabel, publicationInstant, cycleCatalogue, cycleBriefs, publicCycleLabel, publicCycleScope, cycleFamilies, publicFamilyLabel, publicConversationContextLabels } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
 import MediaFooter from '../../../components/MediaFooter.astro';
 import MediaHeader from '../../../components/MediaHeader.astro';
@@ -13,7 +13,10 @@ const cycleScope=publicCycleScope(cycle);
 const family=cycleFamilies.find(f=>f.codes.some(code=>code===cycle));
 const familyLabel=family?publicFamilyLabel(family.id):null;
 const brief=cycleBriefs[cycle];
-const conv=Object.entries(conversations[sourceCycle]||{}).map(([code,title])=>({code,title,items:items.filter(a=>a.data.conversation===code)})).filter(x=>x.items.length>0);
+const conv=Object.entries(conversations[sourceCycle]||{}).map(([code,title])=>{
+ const matching=items.filter(a=>a.data.conversation===code);
+ return {code,title,items:matching,contextLabels:publicConversationContextLabels(sourceCycle,matching)};
+}).filter(x=>x.items.length>0);
 const labelGenre=(a:any)=>publicGenreLabel(a.data).toLocaleUpperCase('fr-FR')+(a.data.format==='regard-croise'?' · ANALYSE JOURNALISTIQUE':' · FICTION SATIRIQUE');
 ---
 <!doctype html>
@@ -60,7 +63,7 @@ const labelGenre=(a:any)=>publicGenreLabel(a.data).toLocaleUpperCase('fr-FR')+(a
 {conv.length>0&&<section class="sda-v5-cycle-group" aria-labelledby="cycle-conversations">
 <p class="sda-v5-cycle-kicker">LES QUESTIONS</p><h2 id="cycle-conversations">Les sujets qui fâchent</h2>
 <div class="sda-v5-cycle-conversations">{conv.map(c=><article class="sda-v5-cycle-conv">
-<p class="sda-v5-cycle-kicker">SUJET {c.code}</p>
+<p class="sda-v5-cycle-kicker">{c.contextLabels[0]??'À DÉCOUVRIR'}{c.contextLabels.length>1&&' · Autres cas de figure'}</p>
 <h3><a href={'/media/cycles/'+sourceCycle+'/conversations/'+c.code+'/'}>{c.title}</a></h3>
 <footer><span>{c.items.length} publication{c.items.length>1?'s':''}</span><a href={'/media/cycles/'+sourceCycle+'/conversations/'+c.code+'/'}>Explorer ↗</a></footer>
 </article>)}</div></section>}

@@ -23,9 +23,8 @@ const rankedCycles=cycleCatalogue.map(item=>{
 <p class="micro">EXPLORER LE MÉDIA</p><h1>Là où ça se joue</h1>
 <p class="lead">Six grands univers, vingt terrains d’arbitrage. Chacun réunit des acteurs, des métiers et des institutions dont les décisions interdépendantes façonnent la création et le partage de la valeur. Les périmètres indiqués sont des repères, non des frontières.</p>
 <section class="cycle-family-directory" aria-labelledby="cycle-ranking-title">
-<h2 id="cycle-ranking-title">Les terrains, par nombre de publications</h2>
-<p class="micro">Du plus fourni au moins fourni · à égalité, priorité à la publication la plus récente</p>
-<div class="directory-grid">{rankedCycles.map(item=><a class="directory-tile" href={`/media/cycles/${item.code}/`}>{photoCycle(item.code)?<img src={photoCycle(item.code)} alt="" loading="lazy"/>:<div class="photo-placeholder"><span>TERRAIN D’ARBITRAGE</span></div>}<span class="micro">TERRAIN {String(item.number).padStart(2,'0')} · {item.count ? item.count+' publication'+(item.count>1?'s':'') : 'En préparation'}</span><h3>{publicCycleLabel(item.code)}</h3><p class="micro">{publicFamilyLabel(item.familyId)} · {publicCycleScope(item.code)}</p><p>{cycleBriefs[item.code]?.ambition}</p><span>Explorer le terrain ↗</span></a>)}</div>
+<h2 id="cycle-ranking-title">Les terrains à explorer</h2>
+<div class="directory-grid">{rankedCycles.map(item=><a class="directory-tile" href={`/media/cycles/${item.code}/`}>{photoCycle(item.code)?<img src={photoCycle(item.code)} alt="" loading="lazy"/>:<div class="photo-placeholder"><span>TERRAIN D’ARBITRAGE</span></div>}<span class="micro">{item.count ? item.count+' publication'+(item.count>1?'s':'') : 'En préparation'}</span><h3>{publicCycleLabel(item.code)}</h3><p class="micro">{publicFamilyLabel(item.familyId)} · {publicCycleScope(item.code)}</p><p>{cycleBriefs[item.code]?.ambition}</p><span>Explorer le terrain ↗</span></a>)}</div>
 </section>
 <p><a href="/media/publications/">Explorer les publications disponibles</a></p>
 </main><MediaFooter/></body></html>
