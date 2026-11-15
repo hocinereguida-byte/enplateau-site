@@ -637,6 +637,26 @@ export function publicationInstant(value: unknown): Date | null {
   return new Date(instant);
 }
 
+/** Contextes de lecture des sujets, classés par volume puis récence, sans codes CMS affichés. */
+export function publicConversationContextLabels(
+  cycle: string,
+  articles: ReadonlyArray<{data: {contexte: string; publication_date?: unknown}}>
+): string[] {
+  const byContext=new Map<string,{count:number;latest:number}>();
+  for(const article of articles){
+    const code=article.data.contexte;
+    if(!code) continue;
+    const previous=byContext.get(code)??{count:0,latest:0};
+    byContext.set(code,{
+      count:previous.count+1,
+      latest:Math.max(previous.latest,publicationInstant(article.data.publication_date)?.getTime()??0)
+    });
+  }
+  return [...byContext.entries()]
+    .sort((a,b)=>b[1].count-a[1].count||b[1].latest-a[1].latest||a[0].localeCompare(b[0],'fr'))
+    .map(([code])=>publicContextLabel(cycle,code));
+}
+
 export const isPublic = (data: any, now = new Date()): boolean => {
   const date = publicationInstant(data.publication_date);
   return data.published === true
