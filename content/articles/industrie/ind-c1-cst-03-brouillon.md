@@ -1,8 +1,8 @@
 ---
-title: "Une usine reporte l'achat d'un robot à trois millions d'euros pour déplacer une table"
+title: "Une usine reporte l'achat d'un robot à trois millions d'euros pour déplacer une table."
 hero_image: "/images/ind-c1-cst-03-nathalie-visuel-v1.webp"
 image_alt: "Un bras robotisé industriel sophistiqué manipule un simple pied de table en bois, sans visage ni texte ajouté."
-summary: "Un robot à trois millions d'euros promettait vingt secondes gagnées par pièce. Nathalie B., responsable des méthodes, lui préfère une table déplacée de quelques mètres. L'usine tient enfin un résultat incontestable. Reste à savoir s'il sert à quelque chose."
+summary: "Nathalie B. se méfie des progrès qu'on annonce avant de les mesurer. Vincent P., son directeur, aimerait une innovation que les clients puissent admirer. Dans leur usine, la question n'est bientôt plus seulement de produire plus vite, mais de savoir ce qui mérite d'être compté."
 format: "chronique"
 cycle: "industrie"
 conversation: "C1"
@@ -11,7 +11,7 @@ lecture_principale: "technologie-innovation"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-27T15:00:00+01:00"
-updated_date: "2026-11-13"
+updated_date: "2026-11-15"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
 affichage_rubrique: "automatique"
@@ -21,11 +21,11 @@ tag_3: "Ergonomie"
 tag_4: "Amélioration continue"
 tag_5: "Industrialisation"
 source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "Nathalie B. V4.12 (13/11/2026) : validation littéraire finale et passage en préproduction autorisés par GO explicite de la direction, sans bon à publier public. D1 favorable ; D2 favorable sous limites explicites, PV : https://docs.google.com/document/d/1mGAyTJ3lEqNilNJBlmswySh1T4mGwjRVg02kftcGmJA/edit . R1 : offre fictive à 3 M€, devis non détaillé et coût non représentatif d'un bras isolé. R2 : consigne ergonomique écrite, pouvoir individuel d'Élise non certifié, responsabilité employeur maintenue. R3 : formalités après accident et DUERP non décrits exhaustivement ; aucune certification de conformité. Corps littéraire V4.12 inchangé, concordance avec Drive contrôlée ; autorisation_publication = preproduction_uniquement, jamais main/production."
-source_document_url: "https://docs.google.com/document/d/16iAEBhP1MtkaQG__j8Bcg8pHTjIs1z2tqIi6Upi3-4g/edit"
-source_document_version: "V4.12"
-validation_narrative: "v4_12_validation_litteraire_finale_go_direction_2026_11_13"
-validation_documentaire: "v4_12_D1_favorable_D2_favorable_sous_limites_R1_R2_R3_clos_preproduction"
+methodology_specific: "Nathalie B. V4.14 — manuscrit épuré Google Drive transmis et vérifié le 15/11/2026, intégration en préproduction éditoriale uniquement. Version V4.12 précédemment validée : contrôle D1 favorable, D2 favorable sous limites R1/R2/R3 (https://docs.google.com/document/d/1mGAyTJ3lEqNilNJBlmswySh1T4mGwjRVg02kftcGmJA/edit). Les réserves demeurent : devis fictif de 3 M€ non représentatif d'un bras isolé ; consignes d'ergonomie et responsabilité employeur ; formalités après accident non décrites exhaustivement. La V4.14 comporte des changements littéraires, sans nouvelle certification technique exhaustive. Aucun bon à publier public ; uniquement domaine de préproduction."
+source_document_url: "https://docs.google.com/document/d/1_8uuN41YbMyuc_nRhVeVEhKlnsI_BX3OItwlzjjIM_E/edit"
+source_document_version: "V4.14"
+validation_narrative: "v4_14_manuscrit_drive_verifie_go_preproduction_2026_11_15"
+validation_documentaire: "v4_14_reserves_D1_D2_v4_12_maintenues_sans_visa_exhaustif_nouveau"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "chronique"
 code_editorial: "IND-C1-CST-03"
@@ -33,10 +33,9 @@ unite_programmation: "IND-C1-CST"
 perspective_principale: "technologie-innovation"
 ---
 
+Dans une usine du Centre-Val de Loire, certaines commandes de pièces métalliques avaient six mois de retard. Un fournisseur promettait vingt secondes gagnées sur une opération grâce à un robot blanc, articulé et lumineux. Le devis atteignait trois millions d'euros. Personne ne savait encore combien de commandes supplémentaires cela permettrait de livrer.
 
-Dans une usine du Centre-Val de Loire, certaines commandes de pièces métalliques avaient six mois de retard. Un fournisseur proposait un robot à trois millions d’euros : vingt secondes gagnées par pièce. Il était blanc, articulé, lumineux. Surtout, on le remarquait.
-
-Vincent P., directeur général, y voyait un moyen possible de produire davantage malgré les difficultés de recrutement. Il imaginait aussi le jour où un client lui dirait, devant la machine : « Vous avez changé de dimension. »
+Vincent espérait produire davantage malgré les difficultés de recrutement. Il imaginait aussi le jour où un client lui dirait, devant la machine : « Vous avez changé de dimension. »
 
 Il avait déjà choisi l’emplacement.
 
@@ -45,7 +44,7 @@ Il avait déjà choisi l’emplacement.
 — Pour les clients.  
 — Eux aussi ont six mois de retard ? »
 
-Nathalie B. dirigeait l’amélioration des méthodes. Vingt-sept ans d’usine lui avaient appris à se méfier des secondes gagnées lorsqu’on ignorait où partaient les heures. Quand un collègue disait « cinq minutes », elle demandait : « Mesurées ou ressenties ? » Elle était indispensable aux réunions et rarement invitée à les prolonger.
+Nathalie B. dirigeait l’amélioration des méthodes. En vingt-sept ans d’usine, elle avait vu assez d'améliorations locales pour savoir qu'un problème pouvait simplement se déplacer d'un poste à l'autre. Quand un collègue disait « cinq minutes », elle demandait : « Mesurées ou ressenties ? » Elle était indispensable aux réunions et rarement invitée à les prolonger.
 
 « Vingt secondes par pièce ! insista Vincent.  
 — Combien de commandes supplémentaires livrerons-nous ?  
