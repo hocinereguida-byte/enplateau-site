@@ -1,9 +1,20 @@
 ---
-import { cycleCatalogue, cycleFamilies, cycleBriefs, publicCycleLabel, publicFamilyLabel, publicCycleScope } from '../../../lib/editorial';
+import { cycleCatalogue, cycleFamilies, cycleBriefs, publicCycleLabel, publicFamilyLabel, publicCycleScope, canonicalCycleCode, publicationInstant, isPublic, validClassification } from '../../../lib/editorial';
+import { getCollection } from 'astro:content';
 import { photoCycle } from '../../../lib/photographies';
 import { articleStyle } from '../../../lib/article-style';
 import MediaHeader from '../../../components/MediaHeader.astro';
 import MediaFooter from '../../../components/MediaFooter.astro';
+
+// Classement global des vingt terrains selon les publications réellement accessibles.
+// La date de publication (et non celle de correction du manuscrit) départage les ex aequo.
+const articles=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data));
+const rankedCycles=cycleCatalogue.map(item=>{
+ const matching=articles.filter(a=>canonicalCycleCode(a.data.cycle)===item.code);
+ const lastPublication=matching.reduce((latest,a)=>Math.max(latest,publicationInstant(a.data.publication_date)?.getTime()??0),0);
+ const family=cycleFamilies.find(f=>f.codes.some(code=>code===item.code));
+ return {...item,count:matching.length,lastPublication,familyId:family?.id??0};
+}).sort((a,b)=>b.count-a.count||b.lastPublication-a.lastPublication||a.number-b.number);
 ---
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Là où ça se joue — Scènes d’Arbitrage</title><style is:inline set:html={articleStyle}/></head>
@@ -11,6 +22,10 @@ import MediaFooter from '../../../components/MediaFooter.astro';
 <main id="contenu" class="shell">
 <p class="micro">EXPLORER LE MÉDIA</p><h1>Là où ça se joue</h1>
 <p class="lead">Six grands univers, vingt terrains d’arbitrage. Chacun réunit des acteurs, des métiers et des institutions dont les décisions interdépendantes façonnent la création et le partage de la valeur. Les périmètres indiqués sont des repères, non des frontières.</p>
-{cycleFamilies.map(family=><section class="cycle-family-directory"><h2>{publicFamilyLabel(family.id)}</h2><p class="micro">{family.label}</p><div class="directory-grid">{family.codes.map(code=>{const item=cycleCatalogue.find(c=>c.code===code)!;return <a class="directory-tile" href={`/media/cycles/${item.code}/`}>{photoCycle(item.code)?<img src={photoCycle(item.code)} alt="" loading="lazy"/>:<div class="photo-placeholder"><span>TERRAIN D’ARBITRAGE</span></div>}<span class="micro">TERRAIN {String(item.number).padStart(2,'0')}</span><h3>{publicCycleLabel(item.code)}</h3><p class="micro">{publicCycleScope(item.code)}</p><p>{cycleBriefs[item.code]?.ambition}</p><span>Explorer le terrain ↗</span></a>})}</div></section>)}
+<section class="cycle-family-directory" aria-labelledby="cycle-ranking-title">
+<h2 id="cycle-ranking-title">Les terrains, par nombre de publications</h2>
+<p class="micro">Du plus fourni au moins fourni · à égalité, priorité à la publication la plus récente</p>
+<div class="directory-grid">{rankedCycles.map(item=><a class="directory-tile" href={`/media/cycles/${item.code}/`}>{photoCycle(item.code)?<img src={photoCycle(item.code)} alt="" loading="lazy"/>:<div class="photo-placeholder"><span>TERRAIN D’ARBITRAGE</span></div>}<span class="micro">TERRAIN {String(item.number).padStart(2,'0')} · {item.count ? item.count+' publication'+(item.count>1?'s':'') : 'En préparation'}</span><h3>{publicCycleLabel(item.code)}</h3><p class="micro">{publicFamilyLabel(item.familyId)} · {publicCycleScope(item.code)}</p><p>{cycleBriefs[item.code]?.ambition}</p><span>Explorer le terrain ↗</span></a>)}</div>
+</section>
 <p><a href="/media/publications/">Explorer les publications disponibles</a></p>
 </main><MediaFooter/></body></html>
