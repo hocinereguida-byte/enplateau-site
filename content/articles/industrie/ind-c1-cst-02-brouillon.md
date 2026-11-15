@@ -1,6 +1,6 @@
 ---
-title: "Dans la vallée du Rhône, une usine organise si bien sa panne qu'elle oublie de la réparer"
-summary: "Une responsable d'atelier adore les solutions provisoires, son directeur ne décide qu'avec toutes les garanties et son commercial refuse les mauvaises nouvelles. Ensemble, ils tentent de livrer un client sans arrêter une machine défectueuse."
+title: "Une machine défectueuse, trois semaines de solutions provisoires et toujours pas de réparation."
+summary: "Dans un atelier de la vallée du Rhône, Sophie M. ne laisse jamais un problème sans tableau de suivi. Le directeur réclame des garanties, le commercial cultive les bonnes nouvelles et le responsable maintenance voudrait simplement sortir ses outils. Tout le monde travaille. La panne aussi."
 hero_image: "/images/ind-c1-sophie-operations-v3.webp"
 image_alt: "Photographie minimaliste d’un espace industriel consacré à la maintenance."
 format: "chronique"
@@ -11,7 +11,7 @@ lecture_principale: "operations-organisation"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-27T15:00:00+01:00"
-updated_date: "2026-11-13"
+updated_date: "2026-11-15"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
 affichage_rubrique: "automatique"
@@ -21,11 +21,11 @@ tag_3: "Maintenance"
 tag_4: "Qualité industrielle"
 tag_5: "Organisation des opérations"
 source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "Sophie M. V5.10 — validation littéraire acquise ; concordance D2 du 13/11/2026 favorable sous limites par reprise du contrôle V5.3a. Réserve R-Q : le taux de rebut proche de 50 % sur le dernier lot ne démontre pas seul la capacité de livraison ; stocks et cadence fictifs non chiffrés. Durée d’arrêt de 36 h hypothétique. Autorisation de préproduction du 13/11/2026 uniquement ; aucun bon à publier public. PV D2 : https://docs.google.com/document/d/1HeN6PEiWgFHp_2gpbhkeGS7jlOY_TS_c7JCRZusJhOo/edit"
-source_document_url: "https://docs.google.com/document/d/1Bdj1Jm5sJa2xECYrayFUHSm9M3DismvVPPpk2Vjd8y0/edit"
-source_document_version: "V5.10"
-validation_narrative: "v5_10_validation_litteraire_acquise"
-validation_documentaire: "v5_10_concordance_D2_favorable_sous_limites"
+methodology_specific: "Sophie M. V5.11 — manuscrit épuré Google Drive intégré en préproduction pour revue sur instruction du 15/11/2026, sans bon à publier public. Audit littéraire D1/D2 du 14/11/2026 : orientation favorable et double accroche favorable ; D1 favorable sous clarification de chronologie narrative (compromis déjà en vigueur avant le lundi puis à nouveau présenté lundi) ; D2 ciblé favorable sous limites (rebuts et capacité de livraison non quantifiés, sûreté machine non attestée). Visa littéraire final V5.11 ajourné à microcorrection temporelle : https://docs.google.com/document/d/1MPvRmo0uM21ZE__stwuHqov8vwxF2WgNpLqE03OnxQk/edit. Aucune validation publique ni conformité technique exhaustive revendiquée."
+source_document_url: "https://docs.google.com/document/d/1LMUq28DkmcZGz02Yg_JzL61-JvOUmXBYlYDrqJdavGU/edit"
+source_document_version: "V5.11"
+validation_narrative: "v5_11_preproduction_pour_revue_visa_litteraire_final_ajourne_chronologie"
+validation_documentaire: "v5_11_D1_favorable_sous_clarification_D2_cible_favorable_sous_limites"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "chronique"
 code_editorial: "IND-C1-CST-02"
@@ -33,24 +33,23 @@ perspective_principale: "operations-organisation"
 unite_programmation: "IND-C1-CST"
 ---
 
+Ce matin-là, la machine figurait dans la colonne « opérationnelle sous surveillance ». La semaine précédente, elle était « en attente d'intervention » ; avant cela, « à traiter en priorité ». Sophie M. avait soigneusement daté chaque changement. La machine, elle, n'avait pas changé.
 
-Dans une usine de la vallée du Rhône, Sophie M. est une femme qui ne laisse jamais un problème sans réponse. Elle a un tableau pour les urgences, un autre pour les urgences reportées et une colonne spéciale pour les urgences qui, à force d'être reportées, commencent à devenir urgentes.
+Sur le tableau de l'atelier, les couleurs indiquaient qui devait contrôler les pièces, à quelle heure et sur quel poste. Malik B., responsable maintenance, n'y trouvait toujours pas la date à laquelle il pourrait ouvrir la machine.
 
-Pour elle, un problème suivi est à moitié résolu. La machine a ainsi changé trois fois de statut sans être réparée.
-
-La machine, elle, fabrique parfois des pièces inutilisables. Pour la réparer, il faudrait l'arrêter trente-six heures. Mais un client attend une commande jeudi et menace de changer de fournisseur. Arrêter maintenant, c'est risquer de livrer en retard. Continuer, c'est espérer livrer à temps, à condition de ne pas produire trop de déchets. Sophie préfère une troisième voie : continuer, vérifier davantage et réparer plus tard.
+La machine fabriquait encore des pièces, dont certaines inutilisables. Il fallait trente-six heures d'arrêt pour la réparer. Or un client attendait sa commande jeudi et menaçait de changer de fournisseur. Sophie avait donc choisi de continuer à produire, de multiplier les contrôles et de réserver la réparation à une fenêtre qui ne compromettrait pas la livraison. Cette fenêtre n'avait pas encore été trouvée.
 
 ## Une virtuose du provisoire
 
-La première semaine, elle a renforcé les contrôles. La deuxième, elle a réorganisé les postes. La troisième, l'atelier excellait dans l'art de vérifier ce qu'il aurait préféré ne pas fabriquer.
+La première semaine, Sophie avait renforcé les contrôles. La deuxième, elle avait réorganisé les postes. La troisième, l'atelier excellait dans l'art de vérifier ce qu'il aurait préféré ne pas fabriquer. Elle avait créé une colonne pour les urgences, une pour les urgences reportées et une troisième pour celles qui, à force d'être reportées, redevenaient urgentes.
 
-Chaque matin, elle annonce que « la situation est sous contrôle ». Chaque soir, son tableau démontre le contraire.
+Chaque matin, Sophie annonçait que « la situation est sous contrôle ». Chaque soir, elle actualisait le tableau qui permettait de mesurer jusqu'à quel point elle ne l'était pas. Pour Sophie, au moins, le problème ne manquait pas de suivi.
 
-Malik B., responsable maintenance, supporte mal les tableaux. Il leur reproche de ne pas disposer d'une clé de douze. Quand Sophie lui explique que la machine est toujours « opérationnelle », il répond qu'elle tourne, ce qui n'est pas exactement la même chose. Elle trouve la nuance inutilement négative.
+Malik supportait mal les tableaux. Il leur reprochait de ne pas disposer d'une clé de douze. Quand Sophie lui expliquait que la machine était toujours « opérationnelle », il répondait qu'elle tournait, ce qui n'était pas exactement la même chose. Elle trouvait la nuance inutilement négative.
 
-Le directeur général, Philippe D., adore les nuances. Homme prudent, il ne prend jamais une décision sans en mesurer les conséquences. Son ambition est de ne commettre aucune erreur, ce qui l'oblige parfois à repousser la possibilité de réussir. Il apprécie les graphiques de Sophie et réclame parfois un tableau récapitulatif des tableaux.
+Le directeur général, Philippe D., adorait les nuances. Homme prudent, il ne prenait jamais une décision sans en mesurer les conséquences. Il savait qu'un arrêt de trente-six heures pouvait faire perdre un client ; il voulait donc connaître précisément ce qu'il risquait en l'ordonnant. Il appréciait les graphiques de Sophie et réclamait parfois un tableau récapitulatif des tableaux.
 
-Le commercial, Laurent V., complète ce dispositif. Il ne ment jamais au client : il répond aux mauvaises questions par de bonnes nouvelles. « La machine est-elle réparée ? » devient « les équipes sont pleinement mobilisées ».
+Le commercial, Laurent V., complétait ce dispositif. Il connaissait les précédents retards du client et redoutait qu'une annonce brutale ne lui fasse perdre confiance. Il ne mentait jamais : il répondait aux mauvaises questions par de bonnes nouvelles. « La machine est-elle réparée ? » devenait « les équipes sont pleinement mobilisées ».
 
 ## Trois mauvaises idées, dont une très séduisante
 
@@ -94,4 +93,4 @@ Trente-six heures plus tard, la machine est réparée. Les pièces déjà défec
 
 Au bilan, Philippe reconnaît que Sophie a eu raison d'arrêter, même s'il aurait préféré qu'elle ait raison sans arrêter. Il demande aussi qu'une nouvelle procédure permette de signaler plus tôt les pannes importantes. Malik rappelle qu'il l'a fait trois semaines auparavant. Le directeur convient qu'il faut donc améliorer la circulation de l'information.
 
-Sophie inscrit la nouvelle procédure dans son tableau. Rubrique : « urgent à reprogrammer ». 
+Sophie inscrit la nouvelle procédure dans son tableau. Rubrique : « urgent à reprogrammer ».
