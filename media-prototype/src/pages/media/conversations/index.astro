@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { isPublic, validClassification, publicationInstant, conversations, cycleCatalogue, canonicalCycleCode, publicCycleLabel, publicCycleScope } from '../../../lib/editorial';
+import { isPublic, validClassification, publicationInstant, conversations, cycleCatalogue, canonicalCycleCode, publicCycleLabel, publicCycleScope, publicContextLabel } from '../../../lib/editorial';
 import { photoConversation, photoCycle } from '../../../lib/photographies';
 import registry from '../../../../../content/rubriques/conversations.json';
 import { articleStyle } from '../../../lib/article-style';
@@ -12,7 +12,18 @@ const sujetsAvecPublications=Object.entries(conversations).flatMap(([cycle,group
  const publications=publicArticles.filter(a=>a.data.cycle===cycle&&a.data.conversation===code);
  // La récence concerne la date de publication des articles, pas leur date de correction technique.
  const dernierePublication=publications.reduce((max,a)=>Math.max(max,publicationInstant(a.data.publication_date)?.getTime()??0),0);
- return {cycle:canonicalCycleCode(cycle),code,title,description:metadata?.presentation||'',questions:metadata?.questions||'',keywords:metadata?.mots_cles||'',photo:photoConversation(cycle,code)||photoCycle(canonicalCycleCode(cycle)),count:publications.length,dernierePublication,url:`/media/cycles/${cycle}/conversations/${code}/`};
+ // Un sujet peut couvrir plusieurs contextes : préserver cette information.
+ // Afficher le contexte le plus documenté, puis le plus récent, sans inventer de libellé.
+ const contextStats=new Map<string,{count:number;lastPublication:number}>();
+ for(const a of publications){
+  const key=a.data.contexte;
+  const previous=contextStats.get(key)??{count:0,lastPublication:0};
+  contextStats.set(key,{count:previous.count+1,lastPublication:Math.max(previous.lastPublication,publicationInstant(a.data.publication_date)?.getTime()??0)});
+ }
+ const contextLabels=[...contextStats.entries()]
+  .sort((a,b)=>b[1].count-a[1].count||b[1].lastPublication-a[1].lastPublication||a[0].localeCompare(b[0],'fr'))
+  .map(([key])=>publicContextLabel(cycle,key));
+ return {cycle:canonicalCycleCode(cycle),code,title,description:metadata?.presentation||'',questions:metadata?.questions||'',keywords:metadata?.mots_cles||'',photo:photoConversation(cycle,code)||photoCycle(canonicalCycleCode(cycle)),count:publications.length,dernierePublication,contextLabels,contextLabel:contextLabels[0]??'',additionalContexts:Math.max(0,contextLabels.length-1),url:`/media/cycles/${cycle}/conversations/${code}/`};
 })).filter(item=>item.count>0);
 
 /* Priorité absolue au nombre de publications, puis à la publication la plus récente.
@@ -117,9 +128,9 @@ html body .conversation-directory .conversation-result-link:hover h2{text-decora
   <button type="button" id="conversation-reset">Réinitialiser les filtres <span aria-hidden="true">↺</span></button>
  </div>
 </div>
-<div class="conversation-results" id="conversation-results">{catalogue.map(item=><article class="conversation-result" data-cycle={item.cycle} data-search={[item.cycle,publicCycleLabel(item.cycle),cycleCatalogue.find(c=>c.code===item.cycle)?.label,item.code,item.title,item.description,item.questions,item.keywords].join(' ').toLocaleLowerCase('fr-FR')}><a class="conversation-result-link" href={item.url}>
+<div class="conversation-results" id="conversation-results">{catalogue.map(item=><article class="conversation-result" data-cycle={item.cycle} data-search={[item.cycle,publicCycleLabel(item.cycle),cycleCatalogue.find(c=>c.code===item.cycle)?.label,item.code,item.title,item.description,item.questions,item.keywords,...item.contextLabels].join(' ').toLocaleLowerCase('fr-FR')}><a class="conversation-result-link" href={item.url}>
  <div class="conversation-result-media">{item.photo?<img class="conversation-result-photo" src={item.photo} alt="" loading="lazy" decoding="async" width="640" height="480"/>:<span class="conversation-result-no-photo" aria-hidden="true"></span>}</div>
- <div class="conversation-result-copy"><p class="micro">{publicCycleLabel(item.cycle)} · SUJET {item.code}</p><h2>{item.title}</h2>{item.description&&<p class="conversation-result-description">{item.description}</p>}<span class="conversation-result-count">{item.count} publication{item.count>1?'s':''} à découvrir</span></div>
+ <div class="conversation-result-copy"><p class="micro" title={item.contextLabels.join(' · ')}>{publicCycleLabel(item.cycle)} · {item.contextLabel}{item.additionalContexts>0&&` (+${item.additionalContexts} autres cas de figure)`}</p><h2>{item.title}</h2>{item.description&&<p class="conversation-result-description">{item.description}</p>}<span class="conversation-result-count">{item.count} publication{item.count>1?'s':''} à découvrir</span></div>
  <span class="conversation-result-arrow" aria-hidden="true">↗</span>
  </a></article>)}</div><p id="conversation-empty" hidden>Aucun sujet publié ne correspond à cette recherche. Essayez un autre terme ou réinitialisez les filtres.</p></main><MediaFooter/>
 <script is:inline>
