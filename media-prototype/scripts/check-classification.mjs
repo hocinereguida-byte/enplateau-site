@@ -21,7 +21,7 @@ const records = [
   "commerce/com-c3-u2-fin-01-chronique.md|COM-C3-U2-FIN-01|commerce|V5|finance-investissement|COM-C3-U2||C3-U2|chronique|chronique|",
   "eau-ressources/eau-c1-u1-str-01-chronique.md|EAU-C1-U1-STR-01|eau-ressources|V9|strategie-gouvernance|EAU-C1-U1|partage-eau-agriculture-potable|C1-U1|chronique|chronique|",
   "industrie/ind-c1-cst-01-brouillon.md|IND-C1-CST-01|industrie|V6.8|strategie-gouvernance|IND-C1-CST||CST|entretien|grand-entretien|1idYd9QGpqETDm4d-1pfJMHwbs65anUBK51QdicPA2zo",
-  "industrie/ind-c1-cst-02-brouillon.md|IND-C1-CST-02|industrie|Pilote littéraire stabilisé — 16-11-2026|operations-organisation|IND-C1-CST||CST|chronique|chronique|15Z4BMNfwgFpc73YvKCsnRJNhO1r18LnGq3pRt1L0aMo",
+  "industrie/ind-c1-cst-02-brouillon.md|IND-C1-CST-02|industrie|V8.7 expérimentale — Accessibilité populaire — 16-11-2026|operations-organisation|IND-C1-CST||CST|chronique|chronique|1omxtg-JjGSKUy41BhkPSCQTG7tOSAEjQ8MdQJ1c6qK8",
   "industrie/ind-c1-cst-03-brouillon.md|IND-C1-CST-03|industrie|V4.14|technologie-innovation|IND-C1-CST||CST|chronique|chronique|1_8uuN41YbMyuc_nRhVeVEhKlnsI_BX3OItwlzjjIM_E",
   "industrie/ind-c1-cst-04-brouillon.md|IND-C1-CST-04|industrie|V4.7a|ressources-humaines-competences|IND-C1-CST||CST|chronique|chronique|1cXbhX3laCXVoeewDHVWmLVnP_2lo9NFY8PR_muj6gq4",
   "industrie/ind-c1-cst-05-brouillon.md|IND-C1-CST-05|industrie|V3.8|finance-investissement|IND-C1-CST||CST|entretien|grand-entretien|1BpA8sxVcNzYIoojtr1gUmlC0ARr9IpkVkpOnyd_Hw3o",
