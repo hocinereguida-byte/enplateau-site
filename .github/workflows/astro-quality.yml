@@ -29,6 +29,8 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Classification and static build
         run: npm run build
+      - name: Verify unlisted reading trial and preproduction route guards
+        run: node scripts/check-preview.mjs
       - name: Assert deployment manifest and article generated
         run: |
           test -s dist/deployment.json

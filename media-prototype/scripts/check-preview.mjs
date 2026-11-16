@@ -39,6 +39,28 @@ const visit=(dir)=>{
 };
 visit(articlesRoot);
 
+// Page d'essai indépendante : une seule version V8.7, sans création d'article CMS.
+// Aucune référence depuis les catalogues ni les pages de navigation.
+const trialRoute='media/essais/sophie-v8-7/index.html';
+const trial=read(trialRoute);
+if(trial){
+ if(!/<meta name="robots" content="noindex,nofollow,noarchive,noimageindex"\s*\/?>/.test(trial))
+  errors.push('Essai Sophie indexable : '+trialRoute);
+ const narrative=trial.match(/<article\b[^>]*class="article article-literary"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const bodyCount=(narrative.match(/<p(?:\s|>)/g)||[]).length;
+ const breaks=(narrative.match(/<hr\b/g)||[]).length;
+ if(bodyCount!==155||breaks!==5)errors.push('Essai Sophie incomplet : '+bodyCount+' paragraphes, '+breaks+' séparateurs.');
+ if(!trial.includes("Une usine autorise la réparation")
+    ||!narrative.includes("Puis tend le document à Sophie"))
+  errors.push('Titre ou chute du manuscrit Sophie V8.7 manquants.');
+ if(trial.includes('Statut : Sophie M.')||trial.includes('V8.7 expérimentale'))
+  errors.push('Mentions de fabrication visibles dans le manuscrit Sophie V8.7.');
+ for(const rootPage of ['media/index.html','media/publications/index.html','media/conversations/index.html','media/cycles/index.html']){
+  if(read(rootPage).includes('/media/essais/sophie-v8-7/'))
+   errors.push('Lien non autorisé vers la page d’essai depuis '+rootPage);
+ }
+}
+
 // Non-régression des libellés visibles : aucun identifiant CMS ni consigne
 // de classement ne doit être exposé dans les pages de navigation du média.
 // Les attributs HTML, URLs, scripts et styles gardent leurs clés techniques.
