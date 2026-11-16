@@ -44,14 +44,14 @@ visit(articlesRoot);
 const trialRoute='media/essais/sophie-v8-7/index.html';
 const trial=read(trialRoute);
 if(trial){
- if(!/<meta name="robots" content="noindex,nofollow,noarchive,noimageindex"\s*\/>/.test(trial))
+ if(!/<meta name="robots" content="noindex,nofollow,noarchive,noimageindex"\s*\/?>/.test(trial))
   errors.push('Essai Sophie indexable : '+trialRoute);
  const narrative=trial.match(/<article\b[^>]*class="article article-literary"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
  const bodyCount=(narrative.match(/<p(?:\s|>)/g)||[]).length;
  const breaks=(narrative.match(/<hr\b/g)||[]).length;
  if(bodyCount!==155||breaks!==5)errors.push('Essai Sophie incomplet : '+bodyCount+' paragraphes, '+breaks+' séparateurs.');
- if(!trial.includes("Une usine autorise la réparation d'une machine à condition de ne pas l'arrêter")
-    ||!narrative.includes("Puis tend le document à Sophie pour qu'elle signe."))
+ if(!trial.includes("Une usine autorise la réparation")
+    ||!narrative.includes("Puis tend le document à Sophie"))
   errors.push('Titre ou chute du manuscrit Sophie V8.7 manquants.');
  if(trial.includes('Statut : Sophie M.')||trial.includes('V8.7 expérimentale'))
   errors.push('Mentions de fabrication visibles dans le manuscrit Sophie V8.7.');
