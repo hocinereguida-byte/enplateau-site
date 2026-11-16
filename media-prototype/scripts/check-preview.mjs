@@ -61,6 +61,26 @@ if(trial){
  }
 }
 
+// Sophie V8.7 doit être à l'adresse historique, et non uniquement dans la page d'essai.
+// Ce contrôle vérifie le HTML réellement compilé par le gabarit ordinaire.
+const sophieCanonicalRoute='media/articles/industrie/ind-c1-cst-02-brouillon/index.html';
+const sophieCanonical=read(sophieCanonicalRoute);
+if(sophieCanonical){
+ const articleHtml=sophieCanonical.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-02-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const paragraphs=(articleHtml.match(/<p(?:\s|>)/g)||[]).length;
+ const dividers=(articleHtml.match(/<hr\b/g)||[]).length;
+ if(paragraphs!==155||dividers!==5)
+  errors.push('Sophie V8.7 canonique incomplète : '+paragraphs+' paragraphes, '+dividers+' séparateurs');
+ if(!sophieCanonical.includes('Une usine autorise la réparation')
+   ||!articleHtml.includes('Malik connaît cette introduction')
+   ||!articleHtml.includes('Puis tend le document à Sophie'))
+  errors.push('Sophie V8.7 : titre, ouverture ou chute absents de la page canonique');
+ if(articleHtml.includes('Statut : Sophie M.')||articleHtml.includes('V8.7 expérimentale'))
+  errors.push('Note interne V8.7 visible sur la page canonique');
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(sophieCanonical))
+  errors.push('Sophie canonique indexable en préproduction');
+}
+
 // Non-régression des libellés visibles : aucun identifiant CMS ni consigne
 // de classement ne doit être exposé dans les pages de navigation du média.
 // Les attributs HTML, URLs, scripts et styles gardent leurs clés techniques.
