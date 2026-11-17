@@ -81,6 +81,25 @@ if(sophieCanonical){
   errors.push('Sophie canonique indexable en préproduction');
 }
 
+// Thomas : la variante F doit être servie à l'adresse historique, hors changement d'URL.
+const thomasRoute='media/articles/immobilier/imm-c1-rc-02-thomas/index.html';
+const thomas=read(thomasRoute);
+if(thomas){
+ const story=thomas.match(/<article\b[^>]*data-article-id="immobilier\/imm-c1-rc-02-thomas"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const paragraphCount=(story.match(/<p(?:\s|>)/g)||[]).length;
+ const headingCount=(story.match(/<h2(?:\s|>)/g)||[]).length;
+ if(paragraphCount!==132||headingCount!==6)
+  errors.push('Thomas variante F : intégrité des 132 paragraphes et 6 intertitres non conforme ('+paragraphCount+'/'+headingCount+')');
+ if(!thomas.includes('Dans les Vosges, huit ateliers étaient à vendre')
+   ||!story.includes('Sur le premier plan')
+   ||!story.includes('Une vraie.'))
+  errors.push('Thomas F : titre, ouverture ou chute manquants');
+ if(story.includes('Variante F')||story.includes('Non validée'))
+  errors.push('Mention interne de variante visible dans le récit Thomas');
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(thomas))
+  errors.push('Thomas indexable en préproduction');
+}
+
 // Non-régression des libellés visibles : aucun identifiant CMS ni consigne
 // de classement ne doit être exposé dans les pages de navigation du média.
 // Les attributs HTML, URLs, scripts et styles gardent leurs clés techniques.
