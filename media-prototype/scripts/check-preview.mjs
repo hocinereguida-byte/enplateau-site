@@ -61,22 +61,22 @@ if(trial){
  }
 }
 
-// Sophie V8.7 doit être à l'adresse historique, et non uniquement dans la page d'essai.
-// Ce contrôle vérifie le HTML réellement compilé par le gabarit ordinaire.
+// Sophie V8.8 doit remplacer V8.7 à l'adresse historique, sans exposer de
+// métadonnées internes et sans changer l'article d'essai V8.7 hors catalogue.
 const sophieCanonicalRoute='media/articles/industrie/ind-c1-cst-02-brouillon/index.html';
 const sophieCanonical=read(sophieCanonicalRoute);
 if(sophieCanonical){
  const articleHtml=sophieCanonical.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-02-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
  const paragraphs=(articleHtml.match(/<p(?:\s|>)/g)||[]).length;
  const dividers=(articleHtml.match(/<hr\b/g)||[]).length;
- if(paragraphs!==155||dividers!==5)
-  errors.push('Sophie V8.7 canonique incomplète : '+paragraphs+' paragraphes, '+dividers+' séparateurs');
+ if(paragraphs!==147||dividers!==5)
+  errors.push('Sophie V8.8 canonique incomplète : '+paragraphs+' paragraphes, '+dividers+' séparateurs');
  if(!sophieCanonical.includes('Une usine autorise la réparation')
-   ||!articleHtml.includes('Malik connaît cette introduction')
+   ||!articleHtml.includes('Un client attend sa livraison jeudi')
    ||!articleHtml.includes('Puis tend le document à Sophie'))
-  errors.push('Sophie V8.7 : titre, ouverture ou chute absents de la page canonique');
- if(articleHtml.includes('Statut : Sophie M.')||articleHtml.includes('V8.7 expérimentale'))
-  errors.push('Note interne V8.7 visible sur la page canonique');
+  errors.push('Sophie V8.8 : titre, ouverture ou chute absents de la page canonique');
+ if(articleHtml.includes('Statut : Sophie M.')||articleHtml.includes('V8.8 expérimentale'))
+  errors.push('Note interne V8.8 visible sur la page canonique');
  if(!/name="robots"\s+content="noindex,nofollow"/.test(sophieCanonical))
   errors.push('Sophie canonique indexable en préproduction');
 }
