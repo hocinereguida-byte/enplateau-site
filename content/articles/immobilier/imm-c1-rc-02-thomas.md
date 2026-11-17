@@ -1,6 +1,6 @@
 ---
-title: "Huit ateliers, cinq plans et un mur qui refusait de négocier"
-summary: "Thomas L., directeur technique, revient sur une reconversion en huit ateliers dont les hypothèses structurelles et commerciales ont progressivement fragilisé la viabilité."
+title: "Dans les Vosges, huit ateliers étaient à vendre avant qu'on sache où mettre les portes"
+summary: "Dans une ancienne usine des Vosges, huit ateliers attendent leurs futurs propriétaires. Sur la brochure, les artisans travaillent déjà. Dans le bâtiment, Thomas L. cherche encore où faire passer leurs machines."
 format: "chronique"
 genre_narratif: "chronique"
 cycle: "immobilier"
@@ -14,9 +14,9 @@ mise_en_avant: "standard"
 hero_image: "/images/imm-c1-rc-02-thomas-visuel-v3.webp"
 image_alt: "Gros plan sur les mains d’un homme en costume fixant une roulette à un pilier porteur, sans visage ni inscription."
 source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "Manuscrit Thomas V4.2 clôturé sur le plan éditorial. Préproduction interne uniquement ; publication publique en attente."
-source_document_version: "V4.2"
-source_document_url: "https://docs.google.com/document/d/1zsA7AZjDMb52U2JzkQZeTMk0FDhXY7nkMcjTukmpV8I/edit"
+methodology_specific: "Thomas L. — Variante F, finition resserrée, manuscrit Google Drive du 17 novembre 2026. Texte expérimental non validé, intégré à la préproduction pour revue uniquement. Le titre, le chapô et les six parties du récit sont repris sans réécriture. Les variantes précédentes demeurent archivées sur Drive. Aucun bon à publier public, aucune validation technique ou documentaire définitive revendiquée."
+source_document_version: "Variante F — Finition resserrée — 17-11-2026 — Non validée"
+source_document_url: "https://docs.google.com/document/d/179OfdW2MK_1zrBYi91s_hkeqhpjrSY9cvU2JKL00XTw/edit"
 tag_1: "Réhabilitation"
 tag_2: "Décision sous incertitude"
 tag_3: "Bâtiment industriel"
@@ -26,161 +26,280 @@ code_editorial: "IMM-C1-RC-02"
 unite_programmation: "IMM-C1-RC"
 perspective_principale: "operations-organisation"
 autorisation_publication: "preproduction_uniquement"
+updated_date: "2026-11-17"
 ---
 
-L’ancienne usine des Vosges avait deux qualités : elle tenait debout et elle était disponible. La direction immobilière jugea qu’il serait dommage de s’arrêter à si peu. Elle lui attribua une troisième qualité : accueillir huit ateliers d’artisans.
+Sur le premier plan, un mur séparait deux ateliers. Sur le troisième, il avait disparu. Sur le cinquième, une porte avait pris sa place.
 
-La plaquette était prête avant les derniers relevés. Huit artisans y travaillaient dans une lumière de fin d’après-midi. Le menuisier n’avait pas de poussière, la couturière pas de rallonge électrique et le mécanicien pas une tache d’huile. Le bâtiment, lui, n’avait pas été consulté.
+Thomas L., responsable des travaux, visita l'usine avec l'architecte.
 
-Thomas L., directeur des opérations techniques, reçut cinq plans. Sur le premier, une cloison séparait deux ateliers ; sur le troisième, elle était devenue un escalier ; sur le cinquième, l’escalier débouchait sur une réserve qui n’existait pas.
-
-— Quel mur est réel ? demanda Thomas.
-
-— Vous parlez de quelle version ? répondit l’architecte.
-
-— De celle qui est construite.
-
-— Ah. Celle-là, il faut aller sur place.
-
-Thomas aurait aimé protester. Mais il avait accepté, trois mois plus tôt, que les études de conception avancent pendant les investigations structurelles. « Pour ne pas bloquer la dynamique », avait-il écrit. La formule lui revenait chaque fois qu’un nouveau plan arrivait.
-
-Le projet couvrait 2 400 mètres carrés. Les dépenses prévues atteignaient 2,4 millions d’euros ; les recettes commerciales espérées, 2,85 millions. Le directeur général avait souligné l’écart de 450 000 euros en vert.
-
-— C’est notre marge ?
-
-— C’est la différence entre deux prévisions, répondit Thomas.
-
-— Une différence positive.
-
-— À condition que les dépenses restent à ce niveau et que les ventes se réalisent.
-
-— Vous pourriez dire « oui » de temps en temps. C’est un mot très court.
-
-Le commercial avait déjà pris des contacts. Aucun atelier n’était vendu. Mais les prospects trouvaient la plaquette magnifique, ce qui, au comité de direction, constituait une forme de validation immobilière.
-
-Quelques semaines plus tard, l’ingénieur structure demanda une réunion. Il avait vérifié les zones concernées par les percements, les nouvelles charges d’exploitation et les adaptations des planchers. Le bâtiment pouvait continuer à tenir debout dans son état actuel. Il ne pouvait pas, sans travaux importants, accueillir le programme dessiné.
-
-— Pourtant, il tient depuis soixante ans, objecta le directeur général.
-
-— Oui, dit Thomas.
-
-— C’est une bonne référence.
-
-— Pour continuer à tenir comme il tient. Pas pour porter ce qu’on vient d’ajouter sur les plans.
-
-Le consultant, invité à la réunion, suggéra « une robustesse historique à potentiel évolutif ». Thomas lui demanda si cette expression augmentait la résistance d’une poutre. Le consultant reconnut qu’il n’avait pas apporté sa calculatrice.
-
-Le chiffrage arriva : 650 000 euros de renforcements supplémentaires.
-
-Thomas posa les chiffres sur la table. Les dépenses passaient de 2,4 à 3,05 millions, avant d’éventuels autres aléas. Les recettes espérées restaient à 2,85 millions. L’écart théorique devenait négatif de 200 000 euros, sans même garantir que tous les ateliers trouveraient preneur.
-
-— Nous avions 450 000 euros d’avance, dit le directeur général.
-
-— Sur le papier.
-
-— Et maintenant ?
-
-— Nous avons 200 000 euros de retard. Toujours sur le papier.
-
-— On ne peut pas demander au bâtiment de faire un effort ?
-
-Thomas attendit un sourire. Il n’en vint pas.
-
-— Les salariés en font, poursuivit le directeur général. Les fournisseurs aussi. Pourquoi l’immeuble serait-il dispensé ?
-
-— Parce qu’il n’a pas signé d’accord d’entreprise.
-
-— Vous voyez, Thomas, c’est ce genre de rigidité qui nous empêche d’avancer.
-
-Le directeur financier proposa de retirer deux ateliers. Le commercial fit remarquer qu’on perdrait des recettes. Il proposa donc de vendre les six restants plus cher. En deux minutes, le tableur redevint vert.
-
-— Vous avez obtenu des offres à ces prix ? demanda Thomas.
-
-— Non, mais le modèle est redevenu rentable.
-
-— Vous avez changé le modèle ou les clients ?
-
-— Les cellules.
-
-— Je vois.
-
-Le lendemain, le commercial appela un artisan qui avait demandé une estimation.
-
-— Bonne nouvelle : votre futur atelier a pris de la valeur.
-
-— Il est terminé ?
-
-— Non. Son prix a augmenté.
-
-— Il est plus grand ?
-
-— Non. Nous avons découvert des travaux.
-
-— Chez vous ?
+— C'est ici, la porte ?
 
 — Oui.
 
-— Alors pourquoi c’est moi qui paie la découverte ?
+— Mais il y a un mur.
 
-L’artisan demanda à être recontacté lorsque l’immeuble aurait fini de prendre de la valeur.
+— C'est pour ça qu'on prévoit une porte.
 
-La direction se retrouva devant les plans. On envisagea quatre ateliers, puis des espaces « modulables ». Le consultant proposa de supprimer les murs sur la représentation commerciale.
+Thomas sortit son mètre et dessina deux autres emplacements.
 
-— Sur le dessin, ou dans l’usine ? demanda Thomas.
+L'architecte rappela qu'il fallait d'abord vérifier si le mur pouvait être ouvert sans affaiblir le bâtiment.
 
-— Il faut sortir de cette opposition.
+Thomas n'avait rien contre les vérifications. Il préférait simplement avoir trouvé la solution avant d'en connaître le résultat.
 
-— Je veux surtout savoir ce qu’on démolit.
+C'était sa réputation. Donnez-lui un problème, il le contournait. Donnez-lui deux problèmes, il en trouvait un troisième qu'il savait mieux résoudre.
 
-— Les obstacles, répondit le directeur général.
+La brochure commerciale, elle, était terminée.
 
-— Lesquels ?
+Huit artisans y travaillaient dans des ateliers lumineux. Le menuisier ne produisait aucune sciure, le mécanicien aucune tache d'huile et les machines ne gênaient jamais la circulation.
 
-— Ceux qui empêchent le projet.
+Aucun atelier n'était vendu.
 
-— Certains empêchent surtout le toit de descendre.
+Sur les images, cette question semblait réglée.
 
-Pour la première fois, personne ne trouva de synonyme rassurant.
+## Quatre cent cinquante mille euros en vert
 
-Thomas recommanda de suspendre le lancement des travaux principaux. Un programme réduit pouvait être étudié, mais ni son coût ni ses débouchés n’étaient encore établis. Une cession restait possible, sans acquéreur identifié. Le directeur général demanda si cette décision signifiait qu’on avait travaillé pour rien.
+Transformer l'ancienne usine en 2 400 mètres carrés d'ateliers devait coûter 2,4 millions d'euros. La vente des huit ateliers devait rapporter 2,85 millions.
 
-— Non, répondit Thomas. Nous avons déjà payé des études et engagé des consultations. Au moins, nous avons découvert le problème avant de lancer les travaux principaux.
+Sur le papier, les recettes dépassaient donc les dépenses prévues de 450 000 euros.
 
-— Et le programme révisé, il aurait coûté combien ?
+Le directeur général avait entouré ce montant en vert.
 
-— Trois millions cinquante mille euros au total, à ce stade. Pas une somme déjà dépensée.
+— Voilà notre marge !
 
-— Vous voyez : même les mauvaises nouvelles ont besoin d’être précisées.
+— Pas encore, répondit Thomas.
 
-Une entreprise consultée demanda pourquoi les investigations n’avaient pas été achevées plus tôt. Thomas ouvrit la bouche, puis la referma.
+— Qu'est-ce qui manque ?
 
-Il avait alerté sur les incertitudes. Il avait aussi laissé les plans et les consultations progresser, persuadé qu’on trouverait des solutions raisonnables. Il avait appelé cela gagner du temps. Il venait de découvrir ce que ce temps pouvait coûter.
+— Les travaux. Et les ventes.
 
-— J’aurais dû demander l’arrêt des études tant que nous ne savions pas ce que les planchers pouvaient porter, dit-il au directeur général.
+— Oui, Thomas. C'est généralement comme ça qu'on fait de l'immobilier.
 
-— Vous ne l’avez pas fait.
+Le projet avait pourtant du sens. Des artisans cherchaient des locaux, l'usine était vide et des partenaires s'intéressaient à sa reconversion.
 
-— Non.
+Le directeur l'avait présenté à tant de monde que renoncer lui aurait coûté personnellement.
 
-— Alors nous avons tous été optimistes.
+— Si nous attendons d'être certains de tout, nous ne ferons jamais rien.
 
-— Pas exactement sur les mêmes choses.
+Thomas partageait cet avis : trois mois plus tôt, il avait laissé les plans avancer pendant les vérifications.
 
-— C’est déjà une forme de consensus.
+Couloir trop étroit ? Il le déplaçait. Atelier trop petit ? Il gagnait quelques mètres carrés. Porte impossible ? Il cherchait un autre mur.
 
-Le service communication annonça une « nouvelle phase d’exploration des usages ». Les travaux principaux étaient suspendus. La plaquette resta en ligne quelques jours : les huit artisans y poursuivaient leur activité, sans connaître la décision.
+Son carnet débordait de solutions.
 
-Le vendredi, Thomas retourna dans l’usine avec un mètre et le plan du dernier scénario. Dans l’angle nord, il vérifia une largeur de passage, barra deux rectangles et dessina une seule zone de stockage provisoire, sous réserve des vérifications nécessaires.
+Il attendait encore de connaître tous les problèmes.
+
+## La visite du troisième atelier
+
+Le commercial faisait visiter. Les visiteurs trouvaient les images magnifiques. Il y voyait un bon début.
+
+Un matin, il accueillit une céramiste qui cherchait un local pour son four.
+
+— Votre atelier sera ici.
+
+Il désigna un mur sur lequel quatre morceaux de ruban adhésif dessinaient une porte.
+
+— Derrière le mur ?
+
+— Exactement.
+
+— Et l'entrée fera quelle largeur ? Mon four mesure un mètre quarante.
+
+Le commercial appela Thomas.
+
+Thomas mesura. Une ouverture plus large était envisageable, si le mur le permettait.
+
+Le commercial l'écouta, décolla un morceau de scotch et le replaça vingt centimètres plus loin.
+
+— Là, ça vous irait ?
+
+— Vous venez d'agrandir la porte ?
+
+— Nous adaptons le projet à vos besoins.
+
+— Avec du scotch ?
+
+Le commercial photographia le nouvel emplacement. Thomas rappela que rien n'était validé.
+
+— Je sais. C'est pour garder une trace.
+
+Il prit une deuxième photo, de plus loin.
+
+— Moi, j'ai un vrai four, précisa la céramiste.
+
+Elle demanda le prix, les dimensions et la date d'installation. Rien n'était fixé. Elle accepta d'être rappelée.
+
+Dans son compte rendu, le commercial écrivit :
+
+« Visite positive. Adaptation de l'accès réalisée en présence de la cliente. »
+
+Thomas nota : « Vérifier si ouverture possible. »
+
+## Le prix des murs
+
+Quelques semaines plus tard, l'ingénieur rendit son rapport sur la solidité de l'usine.
+
+L'usine tenait depuis soixante ans. C'était sa transformation qui posait problème.
+
+Les nouvelles portes, le poids des machines et certains planchers nécessitaient d'importants renforcements.
+
+Thomas déplaça un passage au crayon. L'ingénieur lui montra les limites de poids des planchers.
+
+Thomas essaya un autre passage.
+
+L'ingénieur lui montra les mêmes chiffres.
+
+Thomas rangea son crayon.
+
+Le supplément de travaux atteignait 650 000 euros. Le projet passerait de 2,4 à 3,05 millions, avant d'éventuels autres imprévus.
+
+Les ventes espérées restaient à 2,85 millions.
+
+Les 450 000 euros entourés en vert avaient disparu. Même si tous les ateliers se vendaient aux prix prévus, il manquerait 200 000 euros.
+
+Le directeur demanda au financier de revérifier.
+
+Il revérifia.
+
+Le résultat ne changea pas.
+
+Le directeur fixa les chiffres projetés au mur. L'image penchait légèrement.
+
+— Il n'y a vraiment aucun moyen de redresser ça ?
+
+Thomas se leva et glissa une cale sous le vidéoprojecteur. L'image redevint parfaitement droite.
+
+— Voilà.
+
+— Je parlais du budget.
+
+Thomas retira sa main du projecteur.
+
+Le directeur demanda si l'on pouvait négocier les renforcements. Thomas répondit qu'on pouvait chercher moins cher, pas renoncer à la solidité du bâtiment.
+
+— Les fournisseurs font des efforts. Les salariés aussi. Pourquoi le bâtiment serait-il dispensé ?
+
+— Parce qu'il n'a pas signé d'accord d'entreprise.
+
+## Six ateliers, des prix plus élevés
+
+Le financier proposa six ateliers au lieu de huit, avec peut-être moins de travaux.
+
+Le commercial approuva.
+
+— On pourrait en faire six, plus grands, et les vendre plus cher.
+
+— Vous avez des acheteurs à ces prix ? demanda Thomas.
+
+— Nous avons des contacts intéressés.
+
+— Pour les huit premiers.
+
+— C'est le même bâtiment.
+
+Sur son ordinateur, le financier réduisit certaines dépenses et augmenta les prix de vente espérés.
+
+Au bout de deux minutes, sur son écran, le projet rapportait de nouveau plus qu'il ne coûtait.
+
+Personne n'avait accepté ces nouveaux prix.
+
+Mais les cellules du tableau, elles, avaient donné leur accord.
+
+Le commercial rappela la céramiste.
+
+— Ah, monsieur la porte en scotch !
+
+Il lui annonça six ateliers plus grands.
+
+— Plus chers ?
+
+— Les prix ne sont pas encore fixés.
+
+— Et la porte ?
+
+— Toujours à l'étude.
+
+— Rappelez-moi quand vous aurez l'un des deux.
+
+Elle raccrocha.
+
+En réunion, le commercial confirma qu'elle restait intéressée.
+
+— À quel prix ? demanda le directeur.
+
+— Je n'ai pas voulu la brusquer.
+
+## Le problème des solutions
+
+Thomas demanda de suspendre les grands travaux : il fallait d'abord vérifier les coûts et trouver six artisans prêts à payer les nouveaux prix.
+
+Le directeur général protesta.
+
+— On a déjà payé des études. Les entreprises ont préparé leurs devis. On ne peut pas jeter tout ça.
+
+Thomas comprenait. Il connaissait ces murs presque au centimètre.
+
+Une entreprise consultée posa une question :
+
+— Pourquoi avoir fait autant de plans avant de vérifier la structure ?
+
+Le directeur se tourna vers Thomas.
+
+— Pourquoi a-t-on continué ?
+
+— Sur le premier plan, le couloir était trop étroit. Sur le deuxième…
+
+— Thomas. Je ne vous demande pas comment.
+
+Thomas se tut.
+
+— Et les huit ateliers ? On peut encore les sauver ?
+
+Thomas ouvrit son carnet.
+
+— En déplaçant le couloir central…
+
+Il regarda le chiffre des travaux.
+
+— Je peux encore vous dessiner huit ateliers.
+
+— Très bien.
+
+— Mais je ne peux plus vous dire combien ils coûteront.
+
+Il referma son carnet.
+
+Les grands travaux furent suspendus. Les études payées ne seraient pas récupérées, mais les dépenses les plus lourdes n'avaient pas été engagées.
+
+Dans la brochure, huit artisans continuaient pourtant de travailler dans une lumière parfaite.
+
+Aucun d'eux n'avait reçu la facture des renforcements.
+
+## Le dernier plan
+
+Le vendredi, Thomas revint dans l'usine avec son mètre.
+
+Près de l'entrée, Thomas mesura un espace dégagé, puis dessina un petit rectangle sur son plan.
 
 Le directeur général le rejoignit.
 
-— Vous avez trouvé comment sauver les huit ateliers ?
+— Alors, Thomas ? Vous avez trouvé comment sauver les huit ateliers ?
 
 — Non.
 
-— Combien alors ?
+— Combien on pourrait en faire, finalement ?
 
-— Aujourd’hui, j’ai trouvé où poser une palette.
+— Je ne sais pas encore.
+
+Le directeur regarda le plan.
+
+— Mais vous avez dessiné quelque chose.
+
+— Oui.
+
+— Quoi ?
+
+— Un endroit où poser une palette.
 
 — Une seule ?
 
