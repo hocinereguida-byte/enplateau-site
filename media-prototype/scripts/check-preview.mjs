@@ -71,6 +71,16 @@ if(sophieCanonical){
  const dividers=(articleHtml.match(/<hr\b/g)||[]).length;
  if(paragraphs!==147||dividers!==5)
   errors.push('Sophie V8.8 canonique incomplète : '+paragraphs+' paragraphes, '+dividers+' séparateurs');
+ // Vérifier la présentation COMPOSÉE dans le HTML servi par Astro, pas seulement
+ // l'existence du texte source ou d'un script facultatif côté navigateur.
+ const attributedGroups=(articleHtml.match(/data-dialogue-verified="sophie-v8-8"/g)||[]).length;
+ const attributedTurns=(articleHtml.match(/class="fiction-dialogue-turn"/g)||[]).length;
+ const speakerLabels=(articleHtml.match(/class="fiction-dialogue-speaker"/g)||[]).length;
+ const rawDialogue=(articleHtml.match(/<p(?:\\s[^>]*)?>\\s*—/g)||[]).length;
+ if(attributedGroups!==17||attributedTurns!==54||speakerLabels!==54||rawDialogue!==0)
+  errors.push('Sophie V8.8 : présentation des dialogues non conforme (groupes '+attributedGroups+', répliques '+attributedTurns+', noms '+speakerLabels+', répliques brutes '+rawDialogue+').');
+ if(!articleHtml.includes('fiction-dialogue-speaker">Philippe')||!articleHtml.includes('fiction-dialogue-speaker">Malik')||!articleHtml.includes('fiction-dialogue-speaker">Sophie')||!articleHtml.includes('fiction-dialogue-speaker">Le client')||!articleHtml.includes('fiction-dialogue-speaker">Le commercial'))
+  errors.push('Sophie V8.8 : étiquettes de locuteurs incomplètes.');
  if(!sophieCanonical.includes('Une usine autorise la réparation')
    ||!articleHtml.includes('Un client attend sa livraison jeudi')
    ||!articleHtml.includes('Puis tend le document à Sophie'))
