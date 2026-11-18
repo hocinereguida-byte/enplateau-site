@@ -105,7 +105,10 @@ if(nathalieHtml){
  const rawTurns=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
  if(paragraphs!==91||headings!==4||groups!==16||turns!==46||speakers!==46||rawTurns!==0)
   errors.push('Nathalie : mise en page non conforme ('+paragraphs+' paragraphes, '+headings+' intertitres, '+groups+' dialogues, '+turns+' prises de parole, '+speakers+' locuteurs, '+rawTurns+' répliques non composées).');
- if(!nathalieHtml.includes('Un robot à trois millions pour réduire')
+ if(!nathalieHtml.includes('Une usine veut réduire les')
+   ||!nathalieHtml.includes("L'IA arrive aussi dans les bureaux")
+   ||!nathalieHtml.includes('Dans une usine confrontée aux retards de livraison')
+   ||!nathalieHtml.includes("L'arrivée d'un prestataire en intelligence artificielle")
    ||!story.includes('Coût du projet complet')
    ||!story.includes('opérations humaines et robotisées')
    ||!story.includes('Nathalie lui demanda laquelle elle devait signer'))
