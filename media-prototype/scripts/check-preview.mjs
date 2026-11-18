@@ -91,6 +91,36 @@ if(sophieCanonical){
   errors.push('Sophie canonique indexable en préproduction');
 }
 
+// Nathalie 18-11-2026 : présence du nouveau récit ET des dialogues déjà composés.
+// Le HTML statique doit être lisible sans dépendre d'un script navigateur.
+const nathalieRoute='media/articles/industrie/ind-c1-cst-03-brouillon/index.html';
+const nathalieHtml=read(nathalieRoute);
+if(nathalieHtml){
+ const story=nathalieHtml.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-03-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const paragraphs=(story.match(/<p(?:\s|>)/g)||[]).length;
+ const headings=(story.match(/<h2(?:\s|>)/g)||[]).length;
+ const groups=(story.match(/data-dialogue-verified="nathalie-2026-11-18"/g)||[]).length;
+ const turns=(story.match(/class="fiction-dialogue-turn"/g)||[]).length;
+ const speakers=(story.match(/class="fiction-dialogue-speaker"/g)||[]).length;
+ const rawTurns=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
+ if(paragraphs!==91||headings!==4||groups!==16||turns!==46||speakers!==46||rawTurns!==0)
+  errors.push('Nathalie : mise en page non conforme ('+paragraphs+' paragraphes, '+headings+' intertitres, '+groups+' dialogues, '+turns+' prises de parole, '+speakers+' locuteurs, '+rawTurns+' répliques non composées).');
+ if(!nathalieHtml.includes('Un robot à trois millions pour réduire')
+   ||!story.includes('Coût du projet complet')
+   ||!story.includes('opérations humaines et robotisées')
+   ||!story.includes('Nathalie lui demanda laquelle elle devait signer'))
+  errors.push('Nathalie : titre, périmètre de ligne ou chute absents.');
+ if(!story.includes('fiction-dialogue-speaker">Mina')||
+    !story.includes('fiction-dialogue-speaker">Vincent')||
+    !story.includes('fiction-dialogue-speaker">Nathalie')||
+    !story.includes('fiction-dialogue-speaker">Le consultant'))
+  errors.push('Nathalie : attribution nominative des dialogues incomplète.');
+ if(story.includes('Version expérimentale resserrée · Non validée'))
+  errors.push('Nathalie : consigne interne exposée au lecteur.');
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(nathalieHtml))
+  errors.push('Nathalie : article indexable en préproduction.');
+}
+
 // Thomas : la variante F doit être servie à l'adresse historique, hors changement d'URL.
 const thomasRoute='media/articles/immobilier/imm-c1-rc-02-thomas/index.html';
 const thomas=read(thomasRoute);

@@ -82,3 +82,69 @@ export function renderSophieV88Dialogue(markdownBody: string): string {
  }
  return output.join('\n');
 }
+
+/** Nathalie B., manuscrit expérimental du 18 novembre 2026 : 16 groupes, 46 prises de parole. */
+const nathalieNov18: readonly DialogueGroup[] = [
+ {opening:'Combien de commandes en plus',speakers:['Vincent','Nathalie','Vincent','Nathalie']},
+ {opening:'Elle attend quoi',speakers:['Vincent','Nathalie','Vincent','Nathalie']},
+ {opening:'Qui organise les passages au contrôle',speakers:['Vincent','Nathalie']},
+ {opening:'Montrez-lui tout',speakers:['Nathalie']},
+ {opening:'Et quand le robot saura faire ça',speakers:['Mina','Nathalie','Mina','Nathalie','Mina']},
+ {opening:'Ça dépend',speakers:['Nathalie','Le consultant','Nathalie','Le consultant','Nathalie']},
+ {opening:'Nous allons essayer de les identifier',speakers:['Le consultant']},
+ {opening:'Mina vous a détaillé son travail',speakers:['Vincent']},
+ {opening:'Je veux que toutes les recommandations',speakers:['Nathalie']},
+ {opening:'Pouvons-nous enfin rencontrer les équipes',speakers:['Le consultant','Nathalie','Le consultant','Nathalie']},
+ {opening:'Qui a demandé ces changements',speakers:['Vincent','Nathalie','Vincent','Nathalie','Vincent','Nathalie']},
+ {opening:'Cinq versions, et toujours aucune hypothèse',speakers:['Vincent','Nathalie']},
+ {opening:'Nous avons au moins stabilisé quelque chose',speakers:['Vincent']},
+ {opening:'Les grosses ne passent pas toujours au même poste',speakers:['Mina','Vincent','Mina']},
+ {opening:"C'est dans votre rapport",speakers:['Vincent','Nathalie','Vincent','Nathalie']},
+ {opening:'Ne tirons pas de conclusions',speakers:['Nathalie','Le consultant']}
+];
+
+/**
+ * Composer le récit sans interprétation automatique des locuteurs.
+ * Toute divergence entre une nouvelle version et la distribution approuvée
+ * bloque le build et demande une nouvelle vérification humaine.
+ */
+export function renderNathalieNov18Dialogue(markdownBody:string):string {
+ if(typeof markdownBody!=='string'||!markdownBody.includes('Nathalie B. avait vingt-sept ans')){
+  throw new Error('Nathalie 18-11 : manuscrit inattendu, impossible de vérifier la présentation.');
+ }
+ const blocks=markdownBody.replace(/\r\n/g,'\n').trim().split(/\n[ \t]*\n+/).map(s=>s.trim()).filter(Boolean);
+ const isTurn=(s:string)=>/^—[ \t]+/.test(s);
+ const output:string[]=[],used=new Set<string>();
+ let turns=0,paragraphs=0,headings=0;
+ for(let i=0;i<blocks.length;){
+  const line=blocks[i];
+  if(/^## /.test(line)){
+   output.push('<h2>'+escapeHtml(line.slice(3))+'</h2>');
+   headings++;i++;continue;
+  }
+  if(/^#{1,6} /.test(line)||line==='---')throw new Error('Nathalie 18-11 : structure modifiée, à vérifier.');
+  if(!isTurn(line)){
+   output.push('<p>'+escapeHtml(line)+'</p>');
+   paragraphs++;i++;continue;
+  }
+  const group:string[]=[];
+  while(i<blocks.length&&isTurn(blocks[i])){group.push(blocks[i]);i++;}
+  const opening=group[0].replace(/^—[ \t]*/,'');
+  const candidates=nathalieNov18.filter(x=>opening.startsWith(x.opening));
+  if(candidates.length!==1||used.has(candidates[0]?.opening))throw new Error('Nathalie 18-11 : locuteur inconnu « '+opening.slice(0,70)+' ».');
+  const spec=candidates[0];
+  if(group.length!==spec.speakers.length)throw new Error('Nathalie 18-11 : nombre de répliques modifié pour « '+spec.opening+' ».');
+  used.add(spec.opening);
+  output.push('<div class="fiction-dialogue" role="group" aria-label="Dialogue" data-dialogue-verified="nathalie-2026-11-18">');
+  group.forEach((p,j)=>{
+   const words=p.replace(/^—[ \t]*/,'');
+   output.push('<div class="fiction-dialogue-turn"><span class="fiction-dialogue-speaker">'+escapeHtml(spec.speakers[j])+'</span><p class="fiction-dialogue-line">'+escapeHtml(words)+'</p></div>');
+   turns++;
+  });
+  output.push('</div>');
+ }
+ if(used.size!==16||turns!==46||paragraphs!==45||headings!==4){
+  throw new Error('Nathalie 18-11 : structure non conforme ('+used.size+' groupes, '+turns+' répliques, '+paragraphs+' paragraphes, '+headings+' intertitres).');
+ }
+ return output.join('\n');
+}
