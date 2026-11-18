@@ -1,8 +1,8 @@
 ---
-title: "Un robot à trois millions pour réduire les « facteurs humains ». Nathalie n'avait pas pensé à elle."
+title: "Une usine veut réduire les « facteurs humains » avec des robots. L'IA arrive aussi dans les bureaux."
 hero_image: "/images/ind-c1-cst-03-nathalie-visuel-v1.webp"
 image_alt: "Un bras robotisé industriel sophistiqué manipule un simple pied de table en bois, sans visage ni texte ajouté."
-summary: "Pour Nathalie B., le collègue idéal ne tombe jamais malade, ne prend pas de congés et ne bouleverse aucun planning. Un fournisseur semble avoir trouvé son bonheur. Reste à convaincre le directeur de l'usine que cet employé modèle vaut son prix."
+summary: "Dans une usine confrontée aux retards de livraison et aux difficultés de recrutement, une responsable des méthodes défend un projet de robotisation à trois millions d'euros. Son directeur veut d'abord comprendre pourquoi les pièces attendent au contrôle. L'arrivée d'un prestataire en intelligence artificielle va singulièrement modifier les convictions de la responsable sur les vertus de l'automatisation."
 format: "chronique"
 cycle: "industrie"
 conversation: "C1"
