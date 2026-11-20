@@ -148,3 +148,260 @@ export function renderNathalieNov18Dialogue(markdownBody:string):string {
  }
  return output.join('\n');
 }
+
+/**
+ * Claire M. / Kevin R., V7.5 validée éditorialement le 20 novembre 2026.
+ * Attribution relue sur le manuscrit intégral : 27 échanges, 74 répliques.
+ * Quand la source ne permet pas de savoir laquelle des deux recrues parle,
+ * l'étiquette reste volontairement « Une recrue » (aucune attribution inventée).
+ */
+const claireKevinV75: readonly DialogueGroup[] = [
+  {
+    "opening": "Celle-là est bonne. L'autre a un défaut. Vous voyez la différence ?",
+    "speakers": [
+      "Kevin"
+    ]
+  },
+  {
+    "opening": "Je reviens dans cinq minutes.",
+    "speakers": [
+      "Kevin"
+    ]
+  },
+  {
+    "opening": "C'est exactement pour ça que je vous ai réunis, lui expliqua Claire.",
+    "speakers": [
+      "Claire"
+    ]
+  },
+  {
+    "opening": "Il faut absolument qu'on vous laisse tranquilles pendant les formations.",
+    "speakers": [
+      "Claire",
+      "Kevin",
+      "Claire",
+      "Kevin"
+    ]
+  },
+  {
+    "opening": "Elles peuvent attendre encore un peu ? Ce que vous nous racontez est vraiment important.",
+    "speakers": [
+      "Claire"
+    ]
+  },
+  {
+    "opening": "Bien sûr ! Merci, Kevin. Franchement, on a bien avancé grâce à vous.",
+    "speakers": [
+      "Claire"
+    ]
+  },
+  {
+    "opening": "Alors, qu'est-ce que vous savez faire maintenant ? demanda le directeur.",
+    "speakers": [
+      "Le directeur",
+      "La première recrue"
+    ]
+  },
+  {
+    "opening": "Très bien ! Et comment vous le voyez ?",
+    "speakers": [
+      "Le directeur",
+      "La première recrue"
+    ]
+  },
+  {
+    "opening": "Elles exagèrent.",
+    "speakers": [
+      "Kevin",
+      "La seconde recrue"
+    ]
+  },
+  {
+    "opening": "Et si une pièce sort avec un défaut ?",
+    "speakers": [
+      "Le directeur",
+      "Une recrue",
+      "Le directeur",
+      "Une recrue",
+      "Le directeur",
+      "Une recrue"
+    ]
+  },
+  {
+    "opening": "Ça, c'est bien. Surtout, elles ne touchent pas aux réglages si elles ne savent pas faire.",
+    "speakers": [
+      "Kevin"
+    ]
+  },
+  {
+    "opening": "Vous arrivez à reconnaître les défauts toutes seules ?",
+    "speakers": [
+      "Le directeur"
+    ]
+  },
+  {
+    "opening": "Il devait nous montrer, dit la première.",
+    "speakers": [
+      "La première recrue",
+      "La seconde recrue"
+    ]
+  },
+  {
+    "opening": "Vous leur avez montré des dépannages ?",
+    "speakers": [
+      "Le directeur",
+      "Kevin",
+      "Le directeur",
+      "Kevin"
+    ]
+  },
+  {
+    "opening": "Et quand les autres recrues vont arriver, on fait comment ?",
+    "speakers": [
+      "Le directeur"
+    ]
+  },
+  {
+    "opening": "Juste deux heures.",
+    "speakers": [
+      "Le chef d’atelier"
+    ]
+  },
+  {
+    "opening": "Je vous le rends après, promit le chef.",
+    "speakers": [
+      "Le chef d’atelier"
+    ]
+  },
+  {
+    "opening": "Bon. Si Kevin reste avec les deux nouvelles, qui termine la commande de ce soir ?",
+    "speakers": [
+      "Le directeur",
+      "Le responsable de production",
+      "Le directeur",
+      "Le responsable de production",
+      "Le directeur"
+    ]
+  },
+  {
+    "opening": "Ça va coincer pour les prochaines livraisons.",
+    "speakers": [
+      "Le chef d’atelier"
+    ]
+  },
+  {
+    "opening": "Sinon, j'y vais. Franchement, en deux heures, c'est réglé.",
+    "speakers": [
+      "Kevin",
+      "Claire",
+      "Kevin",
+      "Claire"
+    ]
+  },
+  {
+    "opening": "On peut faire fabriquer certaines pièces ailleurs ?",
+    "speakers": [
+      "Le directeur",
+      "Le responsable de production",
+      "Le directeur",
+      "Le responsable de production",
+      "Le directeur",
+      "Le responsable de production",
+      "Le directeur",
+      "Le responsable de production"
+    ]
+  },
+  {
+    "opening": "Vous êtes sûre que c'est bon ?",
+    "speakers": [
+      "Le directeur",
+      "Claire",
+      "Le directeur"
+    ]
+  },
+  {
+    "opening": "Je vais faire un tour.",
+    "speakers": [
+      "Kevin",
+      "Une recrue",
+      "Kevin",
+      "Une recrue",
+      "Kevin"
+    ]
+  },
+  {
+    "opening": "Ça va ?",
+    "speakers": [
+      "Kevin",
+      "Un collègue",
+      "Kevin",
+      "Un collègue",
+      "Kevin",
+      "Un collègue"
+    ]
+  },
+  {
+    "opening": "Tu sais que tu peux m'appeler si t'as un doute ?",
+    "speakers": [
+      "Kevin",
+      "Un collègue",
+      "Kevin",
+      "Un collègue"
+    ]
+  },
+  {
+    "opening": "Oui ?",
+    "speakers": [
+      "Kevin"
+    ]
+  },
+  {
+    "opening": "Kevin ? Vous êtes où ?",
+    "speakers": [
+      "Une recrue",
+      "Kevin",
+      "Une recrue",
+      "Kevin",
+      "Une recrue"
+    ]
+  }
+];
+
+/**
+ * Composer statiquement les prises de parole selon le même contrat visuel que
+ * Sophie et Nathalie. Le texte littéraire (y compris les incises) reste intact,
+ * seul le tiret de réplique devient une indication de mise en page.
+ * Toute modification de la distribution ou du nombre de dialogues bloque le build.
+ */
+export function renderClaireKevinV75Dialogue(markdownBody: string):string {
+ if(typeof markdownBody!=='string'||!markdownBody.includes("Kevin R. avait huit heures dans sa journée."))throw new Error('Claire/Kevin V7.5 : source inattendue');
+ const blocks=markdownBody.replace(/\r\n/g,'\n').trim().split(/\n[ \t]*\n+/).map(s=>s.trim()).filter(Boolean);
+ const isTurn=(s:string)=>/^—[ \t]+/.test(s);
+ const output:string[]=[],used=new Set<string>();
+ let turns=0,paragraphs=0,headings=0;
+ for(let i=0;i<blocks.length;){
+  const b=blocks[i];
+  if(/^## /.test(b)){output.push('<h2>'+escapeHtml(b.slice(3))+'</h2>');headings++;i++;continue;}
+  if(/^#{1,6} /.test(b)||b==='---')throw new Error('Claire/Kevin V7.5 : structure non reconnue');
+  if(!isTurn(b)){output.push('<p>'+escapeHtml(b)+'</p>');paragraphs++;i++;continue;}
+  const group:string[]=[];
+  while(i<blocks.length&&isTurn(blocks[i]))group.push(blocks[i++]);
+  const opening=group[0].replace(/^—[ \t]*/,'');
+  const candidates=claireKevinV75.filter(x=>opening===x.opening);
+  if(candidates.length!==1||used.has(candidates[0]?.opening))throw new Error('Claire/Kevin V7.5 : dialogue non attribué « '+opening.slice(0,80)+' ».');
+  const spec=candidates[0];
+  if(group.length!==spec.speakers.length)throw new Error('Claire/Kevin V7.5 : nombre de répliques modifié pour « '+spec.opening+' »');
+  used.add(spec.opening);
+  output.push('<div class="fiction-dialogue" role="group" aria-label="Dialogue" data-dialogue-verified="claire-kevin-v7-5">');
+  group.forEach((line,j)=>{
+   const words=line.replace(/^—[ \t]*/,'');
+   output.push('<div class="fiction-dialogue-turn"><span class="fiction-dialogue-speaker">'+escapeHtml(spec.speakers[j])+'</span><p class="fiction-dialogue-line">'+escapeHtml(words)+'</p></div>');
+   turns++;
+  });
+  output.push('</div>');
+ }
+ if(used.size!==27||turns!==74||paragraphs!==141||headings!==4){
+  throw new Error('Claire/Kevin V7.5 : récit modifié ('+used.size+' groupes, '+turns+' répliques, '+paragraphs+' paragraphes, '+headings+' intertitres).');
+ }
+ return output.join('\n');
+}
