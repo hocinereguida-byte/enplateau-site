@@ -2,7 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import { isPublic, validClassification, urlOf, conversations, contexts, publicContextLabel, readings, publicPerspectiveLabel, publicGenreLabel, formattedDate, publicationInstant, perspectiveOf, genreOf, narrativeGenres, cycleCatalogue, canonicalCycleCode, publicCycleLabel } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
-import { renderSophieV88Dialogue, renderNathalieNov18Dialogue } from '../../../lib/chronicle-dialogue';
+import { renderSophieV88Dialogue, renderNathalieNov18Dialogue, renderClaireKevinV75Dialogue } from '../../../lib/chronicle-dialogue';
 import MediaFooter from '../../../components/MediaFooter.astro'
 import MediaHeader from '../../../components/MediaHeader.astro';;
 import { absolutePageUrl, robotsDirective } from '../../../lib/seo';
@@ -13,11 +13,12 @@ export async function getStaticPaths(){
 const {article,items}=Astro.props;
 const d=article.data;
 const {Content}=await render(article);
-// Version de lecture vérifiée : précomposer les répliques de Sophie en HTML statique.
+// Version de lecture vérifiée : précomposer les dialogues approuvés en HTML statique.
 // Une variation non contrôlée du manuscrit fait échouer le build plutôt que le rendu.
 const verifiedDialogueHtml=article.id==='industrie/ind-c1-cst-02-brouillon'
  ? renderSophieV88Dialogue(article.body)
- : article.id==='industrie/ind-c1-cst-03-brouillon' ? renderNathalieNov18Dialogue(article.body) : null;
+ : article.id==='industrie/ind-c1-cst-03-brouillon' ? renderNathalieNov18Dialogue(article.body)
+ : article.id==='industrie/ind-c1-cst-04-brouillon' ? renderClaireKevinV75Dialogue(article.body) : null;
 const classification=conversations[d.cycle]?.[d.conversation] ?? d.conversation;
 const context=publicContextLabel(d.cycle,d.contexte);
 const perspectiveCode=perspectiveOf(d);
@@ -285,23 +286,7 @@ const shareBase=canonical;
  const root=document.querySelector('.article-literary[data-article-id]');
  if(!root)return;
  const articleId=root.getAttribute('data-article-id');
- const casts={
- 'industrie/ind-c1-cst-04-brouillon': [
-  ['Dans quatre mois',['Le directeur général']],
-  ['Et qui va leur apprendre',['Claire','Le directeur général','Claire','Le directeur général']],
-  ['Tu t’occupes des six',['Le chef de Kevin','Kevin','Le chef de Kevin','Kevin']],
-  ['Kevin, viens voir',['Le chef de Kevin','Kevin','Le chef de Kevin']],
-  ['Kevin, tu peux venir',['Le chef de Kevin','Kevin','Le chef de Kevin','Kevin','Le chef de Kevin']],
-  ['Pourtant, ces heures',['Claire','Kevin']],
-  ['Mais il sait démarrer',['Le directeur commercial','Kevin']],
-  ['Nous avons le choix',['Claire','Le directeur général','Claire','Le directeur général','Claire']],
-  ['Kevin, j’aurais besoin',['Le chef de Kevin','Kevin']],
-  ['Très bien, dit le directeur commercial',['Le directeur commercial']],
-  ['Quand ils sauront faire',['Claire']],
-  ['D’accord. Mais vous avez une date',['Le directeur commercial']]
- ]
-
- };
+ const casts={}; // Registre ancien désactivé ; composition statique validée pour Claire/Kevin.
  // All Chroniques: format explicitly attributed manuscript dialogue without changing source text.
  // Never infer a speaker from alternating turns or unlabelled em dashes.
  if(root.hasAttribute('data-chronique-dialogues') || !root.hasAttribute('data-article-id') || !root.getAttribute('data-article-id')?.startsWith('industrie/')){
