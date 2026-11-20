@@ -124,6 +124,37 @@ if(nathalieHtml){
   errors.push('Nathalie : article indexable en préproduction.');
 }
 
+// Claire et Kevin V7.5 validée : le HTML doit contenir le texte intégral
+// et les 74 répliques déjà composées, sans script navigateur requis.
+const claireRoute='media/articles/industrie/ind-c1-cst-04-brouillon/index.html';
+const claireHtml=read(claireRoute);
+if(claireHtml){
+ const story=claireHtml.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-04-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const paragraphs=(story.match(/<p(?:\s|>)/g)||[]).length;
+ const headings=(story.match(/<h2(?:\s|>)/g)||[]).length;
+ const groups=(story.match(/data-dialogue-verified="claire-kevin-v7-5"/g)||[]).length;
+ const turns=(story.match(/class="fiction-dialogue-turn"/g)||[]).length;
+ const labels=(story.match(/class="fiction-dialogue-speaker"/g)||[]).length;
+ const raw=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
+ if(paragraphs!==215||headings!==4||groups!==27||turns!==74||labels!==74||raw!==0)
+  errors.push('Claire et Kevin V7.5 : structure non conforme ('+paragraphs+' paragraphes, '+headings+' intertitres, '+groups+' échanges, '+turns+' répliques, '+labels+' locuteurs, '+raw+' dialogues bruts).');
+ if(!claireHtml.includes("Une usine veut recruter trente ouvriers.")
+  ||!claireHtml.includes("Tout le monde continue d")
+  ||!claireHtml.includes("Claire aime les plannings impeccables.")
+  ||!story.includes("Kevin R. avait huit heures dans sa journée.")
+  ||!story.includes("Dans cinq minutes ?"))
+  errors.push('Claire/Kevin V7.5 : titre, chapô, début ou chute absents.');
+ if(!story.includes('fiction-dialogue-speaker">Kevin')
+  ||!story.includes('fiction-dialogue-speaker">Claire')
+  ||!story.includes('fiction-dialogue-speaker">Une recrue')
+  ||!story.includes('fiction-dialogue-speaker">Le directeur'))
+  errors.push('Claire/Kevin V7.5 : attributions de dialogues manquantes.');
+ if(story.includes('VALIDÉE ÉDITORIALEMENT LE 20-11-2026')||story.includes('BON À PUBLIER NON DÉLIVRÉ'))
+  errors.push('Claire/Kevin V7.5 : métadonnées internes du manuscrit visibles.');
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(claireHtml))
+  errors.push('Claire/Kevin V7.5 : article indexable en préproduction.');
+}
+
 // Thomas : la variante F doit être servie à l'adresse historique, hors changement d'URL.
 const thomasRoute='media/articles/immobilier/imm-c1-rc-02-thomas/index.html';
 const thomas=read(thomasRoute);
