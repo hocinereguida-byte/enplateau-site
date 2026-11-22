@@ -155,6 +155,37 @@ if(claireHtml){
   errors.push('Claire/Kevin V7.5 : article indexable en préproduction.');
 }
 
+// Marc D. et Jean Toksic : manuscrit Drive intégral du 22 novembre,
+// dialogues attribués statiquement. Aucune alternance automatique en navigateur.
+const marcRoute='media/articles/industrie/ind-c1-cst-01-brouillon/index.html';
+const marcHtml=read(marcRoute);
+if(marcHtml){
+ const story=marcHtml.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-01-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const paragraphs=(story.match(/<p(?:\s|>)/g)||[]).length;
+ const dividers=(story.match(/<hr\b/g)||[]).length;
+ const groups=(story.match(/data-interview-verified="marc-2026-11-22"/g)||[]).length;
+ const turns=(story.match(/class="interview-turn interview-(?:question|answer)"/g)||[]).length;
+ const speakers=(story.match(/class="interview-speaker"/g)||[]).length;
+ const jean=(story.match(/class="interview-turn interview-question"/g)||[]).length;
+ const marc=(story.match(/class="interview-turn interview-answer"/g)||[]).length;
+ const raw=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
+ if(paragraphs!==43||dividers!==6||groups!==39||turns!==246||speakers!==246||jean!==122||marc!==124||raw!==0)
+  errors.push('Marc 22-11 : structure non conforme ('+paragraphs+' paragraphes, '+dividers+' séparateurs, '+groups+' échanges, '+turns+' répliques, '+speakers+' locuteurs, '+jean+'/'+marc+' rôles, '+raw+' dialogue brut).');
+ if(!marcHtml.includes("Les affaires marchaient si bien qu")
+  ||!marcHtml.includes('Dans une usine de deux cents salariés')
+  ||!story.includes('On a revu les prix pour les nouvelles affaires')
+  ||!story.includes('On leur proposait un nouveau calcul des primes pour les prochaines affaires')
+  ||!story.includes('Vingt-deux')
+  ||!story.includes('Il reste du café ?')
+  ||!story.includes('interview-speaker">Jean Toksic')
+  ||!story.includes('interview-speaker">Marc D.'))
+  errors.push('Marc 22-11 : titre, chapô, corrections des primes, diapositives, interlocuteurs ou chute manquants.');
+ if(story.includes('D1-D2 à confirmer')||story.includes('Candidate littéraire prioritaire'))
+  errors.push('Marc 22-11 : statut interne affiché dans le récit.');
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(marcHtml))
+  errors.push('Marc 22-11 : article indexable en préproduction.');
+}
+
 // Thomas : la variante F doit être servie à l'adresse historique, hors changement d'URL.
 const thomasRoute='media/articles/immobilier/imm-c1-rc-02-thomas/index.html';
 const thomas=read(thomasRoute);
