@@ -315,6 +315,27 @@ for(const [route,title] of industrieTitres){
  if(decTitre(h1.replace(/<[^>]*>/g,'')).replace(/\s+/g,' ').trim()!==title)errors.push('Titre Industrie non conforme : '+route);
 }
 
+// Alain V4.3 : concordance intégrale du corps et retrait de l'ancien entretien.
+{
+ const slug='imm-c1-rc-06-alain', href='/media/articles/immobilier/'+slug+'/', oldHref='/media/articles/immobilier/imm-c1-rc-01-isabelle/';
+ const html=read('media/articles/immobilier/'+slug+'/index.html');
+ const source=fs.readFileSync(path.resolve('../content/articles/immobilier/'+slug+'.md'),'utf8');
+ const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
+ const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
+ const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+ const story=html.match(/<article\b[^>]*data-article-id="immobilier\/imm-c1-rc-06-alain"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const rendered=[...story.matchAll(/<(p|h2)\b([^>]*)>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':m[2].includes('alain-dialogue-line')?'— ':'')+decode(m[3].replace(/<[^>]*>/g,'')));
+ const expected=front[2].trim().split(/\n\n/);
+ if(JSON.stringify(rendered)!==JSON.stringify(expected))errors.push('Alain V4.3 : texte intégral non concordant.');
+ const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'';
+ const lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Les interrogatoires')||!html.includes('/media/lectures/finance-investissement/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/'))errors.push('Alain V4.3 : titre, chapô, mention de fiction ou classement non conforme.');
+ for(const page of ['media/publications/index.html','media/cycles/immobilier/index.html','media/cycles/immobilier/conversations/C1/index.html','media/scenes/index.html','media/lectures/finance-investissement/index.html']){
+  const pageHtml=read(page);if(!pageHtml.includes(href)||pageHtml.includes(oldHref))errors.push('Alain/Isabelle : navigation incorrecte : '+page);
+ }
+ if(fs.existsSync(path.join(root,'media/articles/immobilier/imm-c1-rc-01-isabelle/index.html')))errors.push('Isabelle : ancienne route encore générée.');
+}
+
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
 console.log('Recette préproduction réussie : '+required.length+' chemins clés et '+articleCount+' articles ; indexation désactivée.');
 

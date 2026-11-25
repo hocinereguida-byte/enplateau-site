@@ -26,7 +26,7 @@ const records = [
   "industrie/ind-c1-cst-04-brouillon.md|IND-C1-CST-04|industrie|V8.1 corrigée — 25-11-2026 — Visa littéraire et D1 favorables ; D2 favorable sous limites|ressources-humaines-competences|IND-C1-CST||CST|chronique|chronique|111zUwMrwFEbKW-RqA3sEKxa88Uj77U9W5RCJ7RO6284",
   "industrie/ind-c1-cst-05-brouillon.md|IND-C1-CST-05|industrie|Version finale corrigée — Registre populaire — 25-11-2026 — Visa littéraire et D1 favorables ; D2 favorable sous limites|finance-investissement|IND-C1-CST||CST|entretien|grand-entretien|1TcYcj0VluLVqaMZ2QfxO8MCfTXGcBpgMM2ob0oj9FvM",
   "industrie/ind-c1-cst-regard-croise-01-brouillon.md|IND-C1-CST-RC-01|industrie|V3.2||IND-C1-CST||CST|regard-croise||1VNTWk4QeKWnF4QD55vMR9JQ7hxAuOm4eFDk3wSelHjY",
-  "immobilier/imm-c1-rc-01-isabelle.md|IMM-C1-RC-01|immobilier|V7.5|finance-investissement|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1K7eqLxylPO3bvrbnFrPUKkgLXio4pRdCnWCi3pHc2R0",
+  "immobilier/imm-c1-rc-06-alain.md|IMM-C1-RC-06|immobilier|V4.3|finance-investissement|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1LNGR5WNM6Y6-eZJUdkBCQEyScm_gkUfDIWbq_EH1yDI",
   "immobilier/imm-c1-rc-02-thomas.md|IMM-C1-RC-02|immobilier|Variante F — Finition resserrée — 17-11-2026 — Non validée|operations-organisation|IMM-C1-RC||territoire-reconversion|chronique|chronique|179OfdW2MK_1zrBYi91s_hkeqhpjrSY9cvU2JKL00XTw",
   "immobilier/imm-c1-rc-03-nathalie.md|IMM-C1-RC-03|immobilier|V2.4|strategie-gouvernance|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1-sYvlfBLLCkPZXi45aoaA6eRNXtKPrlscR6ugf0KI9M",
   "immobilier/imm-c1-rc-04-karim.md|IMM-C1-RC-04|immobilier|V6.2|droit-regulation|IMM-C1-RC||territoire-reconversion|chronique|chronique|1oLB9VVh-iLdV5O19zTNCOO-vSFAgwp-nnnl28qb9fck",
