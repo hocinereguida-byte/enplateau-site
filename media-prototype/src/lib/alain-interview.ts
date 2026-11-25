@@ -37,18 +37,18 @@ const groups: Record<number,string> = {
   "197": "AJA",
   "201": "AJ"
 };
-const names: Record<string,string> = {J:'Jean Toksic',A:'Alain V.',S:'Le serveur'};
+const names: Record<string,string> = {J:'Emma Santhune',A:'Alain V.',S:'Le serveur'};
 const escapeText=(s:string)=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 export function renderAlainV43Interview(body:string):string {
  const blocks=body.replace(/\r\n/g,'\n').trim().split(/\n[ \t]*\n+/).map(s=>s.trim()).filter(Boolean);
  const exact=blocks.join('\n\n');let h=2166136261>>>0;
  for(let i=0;i<exact.length;i++)h=Math.imul(h^exact.charCodeAt(i),16777619)>>>0;
- if(h.toString(16).padStart(8,'0')!=='3a2d5762')throw new Error('Alain V4.3 : empreinte du manuscrit différente de Drive');
+ if(h.toString(16).padStart(8,'0')!=='0a8bbe2f')throw new Error('Alain V4.3 Emma : empreinte différente de l’adaptation autorisée');
  const result:string[]=[];let turns=0,headings=0,seen=0;
  for(let i=0;i<blocks.length;){
   const b=blocks[i];
   if(b.startsWith('## ')){result.push('<h2>'+escapeText(b.slice(3))+'</h2>');headings++;i++;continue;}
-  if(!b.startsWith('— ')){result.push('<p'+(b==='Par Jean Toksic'?' class="interview-byline"':'')+'>'+escapeText(b)+'</p>');i++;continue;}
+  if(!b.startsWith('— ')){result.push('<p'+(b==='Par Emma Santhune'?' class="interview-byline"':'')+'>'+escapeText(b)+'</p>');i++;continue;}
   const spec=groups[i+3];if(!spec)throw new Error('Alain V4.3 : groupe sans attribution');
   result.push('<div class="interview-dialogue" data-interview-verified="alain-v4-3">');seen++;
   for(const voice of spec){

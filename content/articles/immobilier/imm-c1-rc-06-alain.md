@@ -1,7 +1,7 @@
 ---
 genre_narratif: "grand-entretien"
 title: "Un millionnaire hésite à abandonner un projet d'hôtel parce qu'il est en promotion"
-summary: "Alain V., 67 ans, possède une trentaine de biens immobiliers. Il envisage de transformer un ancien centre de formation en hôtel dans une ville industrielle en reconversion. Il a accepté de conseiller Jean Toksic, dont la situation patrimoniale semble beaucoup l'inquiéter."
+summary: "Alain V., 67 ans, possède une trentaine de biens immobiliers. Il envisage de transformer un ancien centre de formation en hôtel dans une ville industrielle en reconversion. Il a accepté de conseiller Emma Santhune, dont la situation patrimoniale semble beaucoup l'inquiéter."
 format: "entretien"
 cycle: "immobilier"
 conversation: "C1"
@@ -12,9 +12,9 @@ statut_editorial: "prepublication"
 published: true
 publication_date: "2026-11-25"
 mise_en_avant: "standard"
-signature_auteur: "Jean Toksic"
+signature_auteur: "Emma Santhune"
 source_notice: "Fiction satirique : personnages, propos, opération et chiffres fictifs."
-methodology_specific: "Alain V. V4.3, visa littéraire et D1 favorables, D2 favorable sous réserves, singularité favorable sur corpus comparé. Matrice V2 : 107 C, 16 PC, 2 NV, 5 NA, 0 NC. GO conditionnel de préproduction uniquement ; aucun bon à publier. Retrait de la consultation de l'entretien Isabelle M. selon décision utilisateur ; manuscrit et visuel historiques préservés."
+methodology_specific: "Alain V. V4.3, visa littéraire et D1 favorables, D2 favorable sous réserves, singularité favorable sur corpus comparé. Matrice V2 : 107 C, 16 PC, 2 NV, 5 NA, 0 NC. GO conditionnel de préproduction uniquement ; aucun bon à publier. Retrait de la consultation de l'entretien Isabelle M. selon décision utilisateur ; manuscrit et visuel historiques préservés. Adaptation de préproduction autorisée par l’utilisateur : Emma Santhune remplace Jean Toksic dans le chapô, la signature, les apostrophes et les accords grammaticaux nécessaires ; texte Drive V4.3 conservé comme témoin, arbitrages, chiffres, scènes et chute inchangés."
 source_document_version: "V4.3"
 source_document_url: "https://docs.google.com/document/d/1LNGR5WNM6Y6-eZJUdkBCQEyScm_gkUfDIWbq_EH1yDI/edit"
 validation_document_url: "https://docs.google.com/document/d/1SO3RHZkDa5yyJeDB3XNx6NT9znESRdz6Y2vZqMqQF10/edit"
@@ -28,7 +28,7 @@ tag_4: "Aide à l'investissement"
 tag_5: "Rentabilité"
 ---
 
-Par Jean Toksic
+Par Emma Santhune
 
 — Vous avez déjà commandé ?
 
@@ -44,11 +44,11 @@ Par Jean Toksic
 
 Alain prend mon croissant, l'enveloppe dans une serviette et le range dans sa sacoche.
 
-— Vous avez les tartines, Jean.
+— Vous avez les tartines, Emma.
 
 — C'est lequel, mon petit-déjeuner ?
 
-— Vous êtes mon invité. Ne commencez pas à faire des comptes.
+— Vous êtes mon invitée. Ne commencez pas à faire des comptes.
 
 Alain me demande si je suis propriétaire.
 
@@ -62,9 +62,9 @@ Alain me demande si je suis propriétaire.
 
 — On va peut-être faire le bilan de votre hôtel avant de faire celui de ma vie.
 
-— Vous savez, Jean, je ne porte aucun jugement. J'ai beaucoup de respect pour les gens qui n'ont pas réussi.
+— Vous savez, Emma, je ne porte aucun jugement. J'ai beaucoup de respect pour les gens qui n'ont pas réussi.
 
-C'est gentil. Ça fait cinq minutes que je suis là et il me prend déjà pour un raté.
+C'est gentil. Ça fait cinq minutes que je suis là et il me prend déjà pour une ratée.
 
 ## Les pauvres n'ont pas les bonnes applications
 
@@ -96,7 +96,7 @@ Le magasin est à dix-huit kilomètres.
 
 — Trente-six bornes pour quarante centimes ?
 
-— Mais on en prend dix, Jean !
+— Mais on en prend dix, Emma !
 
 — Ah, quatre euros. Vous comptez l'essence ?
 
@@ -134,7 +134,7 @@ Alain fronce les sourcils.
 
 Alain regarde les tables voisines.
 
-— Jean, je vous en prie.
+— Emma, je vous en prie.
 
 — Pardon. Quatre millions, quand même.
 
@@ -148,7 +148,7 @@ Pour attirer de nouvelles activités, la région propose des aides à la créati
 
 — Attendez. On vous file cent vingt mille balles ?
 
-— On ne me « file » rien, Jean. Il s'agit d'une aide à l'investissement. Encore faut-il que la région considère que notre société en a besoin.
+— On ne me « file » rien, Emma. Il s'agit d'une aide à l'investissement. Encore faut-il que la région considère que notre société en a besoin.
 
 — Et faut être riche pour avoir ça ?
 
@@ -182,7 +182,7 @@ Une fois les charges de l'immeuble payées, il resterait à Alain deux cent quat
 
 — Ah. Moi, 7 %, c'est plutôt ce que la banque me prend quand il me manque du pognon.
 
-— De l'argent, Jean. De l'argent. Vous êtes journaliste, tout de même.
+— De l'argent, Emma. De l'argent. Vous êtes journaliste, tout de même.
 
 — Oui, mais c'est pas payé pareil que dans l'immobilier.
 
@@ -200,7 +200,7 @@ Une fois les charges de l'immeuble payées, il resterait à Alain deux cent quat
 
 — Avec le petit-déjeuner ?
 
-— Jean, s'il vous plaît.
+— Emma, s'il vous plaît.
 
 L'hôtelier pense pouvoir louer ses chambres quatre-vingts euros en moyenne et les remplir un peu plus d'une nuit sur deux.
 
@@ -216,7 +216,7 @@ Dans ces conditions, il ne propose plus que cent soixante mille euros de loyer p
 
 — Vous croyez ?
 
-— Non, Jean.
+— Non, Emma.
 
 L'hôtelier doit payer ses salariés, ses fournisseurs.
 
@@ -236,7 +236,7 @@ Alain pose sa tasse.
 
 — Non. Vous êtes dans une situation de merde.
 
-— Je suis en train d'évaluer mes options, Jean. C'est une nuance qui vous échappe peut-être parce que vous n'avez pas l'habitude de prendre ce genre de décisions.
+— Je suis en train d'évaluer mes options, Emma. C'est une nuance qui vous échappe peut-être parce que vous n'avez pas l'habitude de prendre ce genre de décisions.
 
 C'est vrai. Quand j'hésite entre le poulet et le bœuf au rayon surgelés, j'appelle pas ça évaluer mes options.
 
@@ -248,7 +248,7 @@ C'est vrai. Quand j'hésite entre le poulet et le bœuf au rayon surgelés, j'ap
 
 — Dix mille euros par mois ! Vous allez pas pleurer, quand même ?
 
-— Il y a la banque, Jean.
+— Il y a la banque, Emma.
 
 — Ah. Vous aussi, vous faites des crédits ?
 
@@ -296,7 +296,7 @@ Il ne relève même plus.
 
 — Et vous, vous allez vous faire chier à construire un hôtel pour en toucher cinq mille ?
 
-— Jean, vous oubliez une partie du problème. Vous avez déjà remboursé un emprunt ?
+— Emma, vous oubliez une partie du problème. Vous avez déjà remboursé un emprunt ?
 
 — Oui, pour une machine à laver.
 
@@ -306,7 +306,7 @@ Il ne relève même plus.
 
 Alain ferme les yeux quelques secondes.
 
-— Admettons qu'elle ait fonctionné, Jean.
+— Admettons qu'elle ait fonctionné, Emma.
 
 — D'accord.
 
@@ -344,7 +344,7 @@ Il me laisse quelques secondes pour digérer l'information.
 
 — Encore votre salle de bains ?
 
-— J'ai acheté un robinet hors de prix. Le jour où je déménage, je suis pas sûr que le propriétaire me rembourse la différence.
+— J'ai acheté un robinet hors de prix. Le jour où je déménage, je suis pas sûre que le propriétaire me rembourse la différence.
 
 — Voilà. Vous voyez que vous êtes capable de comprendre.
 
@@ -402,7 +402,7 @@ Alain referme son dossier.
 
 — Ça me fait mal pour vous.
 
-— C'est gentil, Jean. Mais je pense pouvoir m'en remettre.
+— C'est gentil, Emma. Mais je pense pouvoir m'en remettre.
 
 Alain chausse ses lunettes à l'arrivée de l'addition.
 
@@ -420,7 +420,7 @@ Alain se tourne vers moi.
 
 — Oui. Pour les tartines. J'avais plus de croissant.
 
-— Jean, cinquante centimes, ce n'est pas le montant. C'est une question de principe.
+— Emma, cinquante centimes, ce n'est pas le montant. C'est une question de principe.
 
 Le serveur montre le beurre entamé.
 

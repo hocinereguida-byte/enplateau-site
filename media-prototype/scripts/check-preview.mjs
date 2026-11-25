@@ -326,7 +326,7 @@ for(const [route,title] of industrieTitres){
  const story=html.match(/<article\b[^>]*data-article-id="immobilier\/imm-c1-rc-06-alain"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
  const rendered=[...story.matchAll(/<(p|h2)\b([^>]*)>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':m[2].includes('alain-dialogue-line')?'— ':'')+decode(m[3].replace(/<[^>]*>/g,'')));
  const expected=front[2].trim().split(/\n\n/);
- if(JSON.stringify(rendered)!==JSON.stringify(expected))errors.push('Alain V4.3 : texte intégral non concordant.');
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||!story.includes('Par Emma Santhune')||!story.includes('interview-speaker">Emma Santhune')||/\bJean\b/.test(decode(story)))errors.push('Alain V4.3 Emma : texte intégral, signature ou attribution non concordants.');
  const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'';
  const lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
  if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Les interrogatoires')||!html.includes('/media/lectures/finance-investissement/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/'))errors.push('Alain V4.3 : titre, chapô, mention de fiction ou classement non conforme.');
@@ -378,7 +378,7 @@ for(const [route,title] of industrieTitres){
 }
 
 // Signatures éditoriales validées, distinctes du corps des manuscrits.
-for(const [route,author] of [["industrie/ind-c1-cst-02-brouillon","Oscar Sansfroid"],["industrie/ind-c1-cst-04-brouillon","Oscar Sansfroid"],["immobilier/imm-c1-rc-07-patrick","Lola Genzed"],["industrie/ind-c1-cst-01-brouillon","Jean Toksic"],["industrie/ind-c1-cst-05-brouillon","Jean Toksik"]]){
+for(const [route,author] of [["industrie/ind-c1-cst-02-brouillon","Oscar Sansfroid"],["industrie/ind-c1-cst-04-brouillon","Oscar Sansfroid"],["immobilier/imm-c1-rc-07-patrick","Lola Genzed"],["industrie/ind-c1-cst-01-brouillon","Jean Toksic"],["industrie/ind-c1-cst-05-brouillon","Jean Toksic"],["immobilier/imm-c1-rc-06-alain","Emma Santhune"]]){
  const html=read('media/articles/'+route+'/index.html');
  const signature=html.match(/<section\b[^>]*aria-label="Signature de l’auteur"[^>]*>([\s\S]*?)<\/section>/)?.[1]??'';
  if(!signature.includes('<h2>'+author+'</h2>'))errors.push('Signature éditoriale incorrecte : '+route);
