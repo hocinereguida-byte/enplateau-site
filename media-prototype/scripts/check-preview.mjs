@@ -279,6 +279,30 @@ for(const page of editorialPages){
 // Les brouillons restent volontairement absents des routes publiques.
 // L'absence d'articles publiés est un état valide en préproduction.
 if(!articleCount)console.log('Aucun article public : les six contenus C1 restent en fabrication.');
+// Caserne V6.2 : contrôle du texte intégral, de la classification et des liens de préproduction.
+{
+ const route='media/articles/immobilier/imm-c1-rc-05-caserne/index.html';
+ const href='/media/articles/immobilier/imm-c1-rc-05-caserne/';
+ const html=read(route);
+ const source=fs.readFileSync(path.resolve('../content/articles/immobilier/imm-c1-rc-05-caserne.md'),'utf8');
+ const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
+ const field=(key)=>JSON.parse(front[1].split('\n').find(line=>line.startsWith(key+': ')).slice(key.length+2));
+ const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&nbsp;/g,' ').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+ const strip=s=>decode(s.replace(/<[^>]*>/g,'')).trim();
+ const normalize=s=>s.replace(/\s+/g,' ').trim();
+ const expected=front[2].trim().split(/\n\n/).map(p=>({tag:p.startsWith('## ')?'h2':'p',text:normalize(p.replace(/^## /,''))}));
+ const story=html.match(/<article\b[^>]*data-article-id="immobilier\/imm-c1-rc-05-caserne"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const rendered=[...story.matchAll(/<(p|h2)\b[^>]*>([\s\S]*?)<\/\1>/g)].map(m=>({tag:m[1],text:normalize(strip(m[2]))}));
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||expected.filter(p=>p.tag==='h2').length!==5||expected.filter(p=>p.text.startsWith('—')).length!==67)
+  errors.push('Caserne V6.2 : écart de texte, d’intertitres ou de répliques.');
+ if(!normalize(strip(html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'')).includes(field('title'))||!normalize(strip(html)).includes(field('summary')))
+  errors.push('Caserne V6.2 : titre ou chapô absent.');
+ if(!html.includes('Fiction satirique · Raisons et déraisons')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/')||!html.includes('/media/lectures/territoires-politiques-publiques/')||field('autorisation_publication')!=='preproduction_uniquement')
+  errors.push('Caserne V6.2 : mention de fiction, classification ou autorisation non conforme.');
+ for(const page of ['media/publications/index.html','media/cycles/immobilier/index.html','media/cycles/immobilier/conversations/C1/index.html','media/scenes/index.html','media/lectures/territoires-politiques-publiques/index.html'])
+  if(!read(page).includes(href))errors.push('Caserne V6.2 : article absent de '+page);
+}
+
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
 console.log('Recette préproduction réussie : '+required.length+' chemins clés et '+articleCount+' articles ; indexation désactivée.');
 
