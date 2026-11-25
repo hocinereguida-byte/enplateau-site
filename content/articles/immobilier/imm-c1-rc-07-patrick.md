@@ -26,6 +26,7 @@ tag_2: "Galerie commerciale"
 tag_3: "Stratégie immobilière"
 tag_4: "Charges locatives"
 tag_5: "Coopération"
+signature_auteur: "Lola Genzed"
 ---
 
 Patrick Delaplace, 56 ans, avait demandé à chacun d'apporter quelque chose.

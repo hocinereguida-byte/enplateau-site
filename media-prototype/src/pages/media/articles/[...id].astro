@@ -41,7 +41,7 @@ const editorialFormat = d.format === 'regard-croise'
   : ({'analyse-sectorielle':'Analyse sectorielle','decouverte':'Article de découverte'} as Record<string,string>)[d.format??''] ?? d.format;
 const editorialLabel = [editorialStatus, editorialFormat].filter(Boolean).join(' · ');
 // V6 : signatures exclusives par genre ; les Chroniques restent attribuées au cas par cas.
-const authorSignature = d.format === 'regard-croise' ? d.signature_auteur : genre === 'grand-entretien' ? 'Jean Toksic' : genre === 'recit' ? 'Oscar Sauvage' : (genre === 'chronique' ? d.signature_auteur : null);
+const authorSignature = d.format === 'regard-croise' ? d.signature_auteur : genre === 'grand-entretien' ? (d.signature_auteur || 'Jean Toksic') : genre === 'recit' ? 'Oscar Sauvage' : (genre === 'chronique' ? d.signature_auteur : null);
 const pubDate=publicationInstant(d.publication_date);
 const updated=d.updated_date ? publicationInstant(d.updated_date) : null;
 const interview=d.interview_date ? publicationInstant(d.interview_date) : null;

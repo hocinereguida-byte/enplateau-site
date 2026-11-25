@@ -31,6 +31,7 @@ code_editorial: "IND-C1-CST-04"
 unite_programmation: "IND-C1-CST"
 perspective_principale: "ressources-humaines-competences"
 updated_date: "2026-11-25"
+signature_auteur: "Oscar Sansfroid"
 ---
 
 Kevin R. avait huit heures dans sa journée.

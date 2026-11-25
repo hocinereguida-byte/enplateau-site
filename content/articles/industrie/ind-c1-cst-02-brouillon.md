@@ -31,6 +31,7 @@ genre_narratif: "chronique"
 code_editorial: "IND-C1-CST-02"
 perspective_principale: "operations-organisation"
 unite_programmation: "IND-C1-CST"
+signature_auteur: "Oscar Sansfroid"
 ---
 
 Lundi matin, Philippe D., directeur de l'usine, a réuni Sophie M., sa responsable de production, et Malik B., son responsable maintenance.
