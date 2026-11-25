@@ -4,7 +4,7 @@ import { isPublic, validClassification, urlOf, conversations, contexts, publicCo
 import { articleStyle } from '../../../lib/article-style';
 import { renderMarcNov25Interview } from '../../../lib/marc-interview';
 import { renderLaurentNov25Interview } from '../../../lib/laurent-interview';
-import { renderSophieV91aDialogue, renderNathalieNov18Dialogue, renderClaireKevinV81Dialogue } from '../../../lib/chronicle-dialogue';
+import { renderSophieV91aDialogue, renderNathalieNov25Dialogue, renderClaireKevinV81Dialogue } from '../../../lib/chronicle-dialogue';
 import MediaFooter from '../../../components/MediaFooter.astro'
 import MediaHeader from '../../../components/MediaHeader.astro';;
 import { absolutePageUrl, robotsDirective } from '../../../lib/seo';
@@ -21,7 +21,7 @@ const verifiedDialogueHtml=article.id==='industrie/ind-c1-cst-01-brouillon'
  ? renderMarcNov25Interview(article.body)
  : article.id==='industrie/ind-c1-cst-02-brouillon'
  ? renderSophieV91aDialogue(article.body)
- : article.id==='industrie/ind-c1-cst-03-brouillon' ? renderNathalieNov18Dialogue(article.body)
+ : article.id==='industrie/ind-c1-cst-03-brouillon' ? renderNathalieNov25Dialogue(article.body)
  : article.id==='industrie/ind-c1-cst-04-brouillon' ? renderClaireKevinV81Dialogue(article.body)
  : article.id==='industrie/ind-c1-cst-05-brouillon' ? renderLaurentNov25Interview(article.body) : null;
 const classification=conversations[d.cycle]?.[d.conversation] ?? d.conversation;
