@@ -1,8 +1,8 @@
 ---
-title: "Une usine célèbre son plus gros contrat. Son directeur financier cherche comment payer tout le métal."
+title: "L'usine signe le contrat du siècle. Son directeur financier demande qui va payer le métal."
 hero_image: "/images/ind-c1-cst-05-laurent-visuel-v1.webp"
 image_alt: "Une clé industrielle démesurée, une petite tirelire et une coupe de champagne symbolisent le contraste entre l’ambition commerciale et les moyens financiers."
-summary: "Laurent B. dirige les finances d'une usine de deux cents salariés qui fournit des pièces métalliques aux constructeurs de machines. Depuis neuf ans, il pose des questions qui gâchent régulièrement les bonnes nouvelles. Jean Toksic l'a invité pour célébrer un contrat historique. Le journaliste compte bien lui apprendre à se réjouir."
+summary: "Deux cents salariés, trois cents tonnes de métal et des commerciaux qui débouchent le champagne. Laurent B., directeur financier de l'usine, a accueilli le plus gros contrat de son entreprise en demandant comment ils allaient payer tout ça. Jean Toksic a voulu comprendre ce qui pouvait rendre un homme aussi chiant."
 format: "entretien"
 cycle: "industrie"
 conversation: "C1"
@@ -11,7 +11,7 @@ lecture_principale: "finance-investissement"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-27T15:00:00+01:00"
-updated_date: "2026-11-15"
+updated_date: "2026-11-25"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
 affichage_rubrique: "automatique"
@@ -21,11 +21,11 @@ tag_3: "Financement industriel"
 tag_4: "Contrats commerciaux"
 tag_5: "Croissance industrielle"
 source_notice: "Personnages, entreprise, localisation générale, dialogues et chiffres du scénario inventés."
-methodology_specific: "Laurent B. V3.8 — manuscrit épuré Google Drive prêt pour préproduction (15 novembre 2026). Les 94 paragraphes de l'entretien sont identiques à la V3.6, dont le visa littéraire interne est favorable ; D1 favorable et D2 favorable sous limites explicites (PV : https://docs.google.com/document/d/13KFuHFuKuTGns30QZE6k2rUFRK6jcXlAGI7UoZTt1B0/edit). La V3.7 a reçu un audit différentiel favorable avec deux microcorrections proposées pour le titre et le chapô (https://docs.google.com/document/d/1UiEkj7PXoLVRtDNDkTEv8F95krWNqlzB__rJundXUzA/edit). Ces deux microcorrections sont présentes dans la V3.8 ; aucune nouvelle certification technique exhaustive n'est revendiquée. R1 : données financières et industrielles fictives ; R2 : financement, coûts et échéances hypothétiques ; R3 : conséquences humaines non chiffrées ; R4 : contrôle intercycles exhaustif non réalisé. Préproduction uniquement, aucun bon à publier public."
-source_document_url: "https://docs.google.com/document/d/1BpA8sxVcNzYIoojtr1gUmlC0ARr9IpkVkpOnyd_Hw3o/edit"
-source_document_version: "V3.8"
-validation_narrative: "v3_8_manuscrit_epure_pret_preproduction_2026_11_15_dialogue_inchange_visa_v3_6"
-validation_documentaire: "v3_8_d1_d2_differentiel_sous_limites_v3_6_dialogue_inchange"
+methodology_specific: "Laurent B. et Jean Toksic — source unique du récit : Google Drive 1TcYcj0VluLVqaMZ2QfxO8MCfTXGcBpgMM2ob0oj9FvM, version finale corrigée du 25 novembre 2026. Procès-verbal des visas littéraire/D1/D2 et singularité : https://docs.google.com/document/d/1XJNU1f9M8vTa1Y2Gx85j4w9ERKoIt1iBVsU_3ajZn9s/edit. Visa littéraire favorable ; D1 favorable ; D2 favorable sous limites documentaires, sans certification de contrats, de données comptables ni de conditions industrielles réelles ; singularité Industrie C1 favorable. 207 répliques attribuées dans 42 groupes de dialogue ; 61 paragraphes narratifs et 5 intertitres, texte source préservé sans réécriture. Trésorerie du premier lot, réservation de métal, réorganisation des contrôles, travail supplémentaire de l'équipe qualité, marge finale seulement prévisionnelle. La caméra et le champagne sont des accessoires fictifs de la comédie. Contrôles des tests du site et de lecture réelle indépendants du visa littéraire, jamais supposés réalisés. Aucune autorisation de publication publique : préproduction exclusivement."
+source_document_url: "https://docs.google.com/document/d/1TcYcj0VluLVqaMZ2QfxO8MCfTXGcBpgMM2ob0oj9FvM/edit"
+source_document_version: "Version finale corrigée — Registre populaire — 25-11-2026 — Visa littéraire et D1 favorables ; D2 favorable sous limites"
+validation_narrative: "laurent_2026_11_25_visa_litteraire_interne_favorable"
+validation_documentaire: "laurent_2026_11_25_d1_favorable_d2_favorable_sous_limites_pv_1XJNU1f9M8vTa1Y2Gx85j4w9ERKoIt1iBVsU_3ajZn9s"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "grand-entretien"
 signature_auteur: "Jean Toksic"
@@ -34,191 +34,548 @@ unite_programmation: "IND-C1-CST"
 perspective_principale: "finance-investissement"
 ---
 
+Jean Toksic avait posé deux flûtes et une bouteille de champagne sur la table. Une caméra enregistrait l'entretien.
 
-Jean Toksic — Laurent, félicitations ! Le plus gros contrat de votre histoire ! J'ai fait apporter du champagne.
+— Laurent, pour fêter le contrat du siècle, je vous propose une ligne de cocaïne.
 
-Laurent — De l'eau suffira.
+— Vous en avez ?
 
-— Vous êtes directeur financier jusque dans votre vie privée ?
+Jean se redressa.
 
-— Je ne bois pas à onze heures du matin.
+— Ah ! Ça vous intéresse ?
 
-— Voilà neuf ans que vous travaillez dans cette entreprise. Neuf ans à empêcher les gens d'être heureux ?
+— Non. Je voulais savoir si vous étiez sérieux.
 
-— Neuf ans à essayer de faire en sorte qu'ils puissent continuer à être payés.
+— Du champagne, alors ?
 
-— C'est une obsession assez vulgaire. Parlons plutôt de cette magnifique signature.
+— De l'eau.
 
-— Le contrat était intéressant. Mais il fallait avancer plusieurs centaines de milliers d'euros pour les premières matières et la fabrication.
+— Putain, vous êtes déprimant. Je vous propose de la coke, vous me demandez de l'eau !
 
-— Vous avez signé un contrat qui rapporte de l'argent et vous vous plaignez de devoir en dépenser. Vous avez envisagé de porter plainte contre le client ?
+— Vous m'avez invité pour parler du contrat.
 
-— L'argent du client n'arrive pas au moment où l'on signe.
+— Justement ! Le plus gros contrat de votre histoire ! Vous pourriez au moins faire semblant d'être heureux.
 
-— Et pendant que le commercial célèbre la signature, c'est vous qui annoncez qu'il manque l'argent pour commencer ?
+— Nous étions très heureux.
 
-— Il ne manque pas pour commencer. Il manque pour tout lancer en même temps. C'est moins spectaculaire, mais plus gênant.
+— Jusqu'à ce que vous arriviez ?
 
-— Et vous avez immédiatement demandé de suspendre certains achats pendant quarante-huit heures. Vos commerciaux vous ont-ils dénoncé à la police ?
+— Jusqu'à ce qu'il faille payer le métal.
 
-— Nous devions réexaminer les échéances. Les premières livraisons avaient été avancées pendant la négociation.
+Jean repoussa la flûte de Laurent.
 
-— Et vous l'ignoriez ?
+— Bon. On va se faire chier.
 
-— J'en connaissais le principe, mais les conséquences financières n'avaient pas été suffisamment intégrées.
+— Vous voulez quand même faire l'entretien ?
 
-— Qui avait conçu votre procédure de validation ?
+— Oui, j'ai loué la caméra.
 
-— Moi, notamment.
+---
 
-— Magnifique. Vous aviez donc installé un système de sécurité qui ne vous protégeait pas de vous-même.
+## Le client va payer. En attendant, démerdez-vous.
 
-— C'est une manière de le dire.
+— Donc, vos commerciaux décrochent le contrat du siècle. Tout le monde est content. Vous faites quoi ?
 
-— Notre procédure était insuffisante. Nous l'avons corrigée.
+— Je demande combien il faut dépenser avant que le client commence à nous payer.
 
-— Vous êtes vraiment un invité pénible. Vous reconnaissez vos erreurs avant que je puisse vous les reprocher.
+— Vous pouviez pas commencer par féliciter les commerciaux ?
 
-— Vous voulez que je mente ?
+— Je l'ai fait.
 
-— Non, mais pourriez-vous au moins hésiter ? J'ai une réputation à défendre.
+— Et après ?
 
-Jean Toksic ouvre une bouteille d'eau avec une violence inutile.
+— J'ai posé la question.
 
-— Pourquoi ne pas demander un acompte au client ?
+— Vous avez des amis, Laurent ?
 
-— Nous l'avons fait. Il n'était pas disposé à accepter immédiatement.
+— Quelques-uns.
 
-— Et la banque ?
+— Ils vous invitent encore ?
 
-— Elle examinait notre demande de financement.
+— De moins en moins.
 
-— Votre banque doit être ravie : vous lui apportez un contrat record et lui demandez de financer votre propre impréparation.
+Laurent était directeur financier de l'usine depuis neuf ans. Pour fabriquer les pièces commandées, l'entreprise allait devoir acheter du métal, faire tourner ses machines et payer ses salariés.
 
-— Nous lui avons apporté le contrat et les prévisions de trésorerie. Elle avait raison de regarder les deux.
+Le client, lui, ne paierait que plus tard.
 
-— Vous lui avez aussi montré que votre procédure avait laissé passer le changement de calendrier ?
+— Mais le contrat était bon ?
 
-— Oui. Nous lui avons présenté le calendrier révisé et les prévisions. Sa décision était encore en cours d'examen.
+— On prévoyait de gagner de l'argent, oui.
 
-— La banque étudiait la possibilité de nous avancer une partie de l'argent attendu du client. Mais elle n'avait encore rien accordé, et les matières devaient être payées avant les premières livraisons.
+— Et vous aviez pas de pognon ?
 
-— Vous aviez donc signé le plus gros contrat de votre histoire sans avoir les moyens de le lancer entièrement ?
+— On en avait. Pas assez pour financer tous les achats d'un coup.
 
-— Voilà. Une signature n'alimente pas une machine.
+— Attendez. Vous allez gagner du fric, mais vous pouvez pas bosser parce que vous avez pas assez de fric ?
 
-— Et là, votre directrice de production débarque.
+— Voilà.
 
-— Avec un lot de matières réservé jusqu'au lendemain midi. Si nous ne le commandions pas, nous risquions de perdre notre créneau de fabrication.
+— Putain, c'est compliqué, votre truc.
 
-— Vous aviez donc quarante-huit heures pour réfléchir et seulement jusqu'au lendemain midi pour agir. C'est votre définition d'une procédure apaisante ?
-
-— La suspension concernait certains achats. Pour ce lot, il fallait décider plus vite.
-
-— Vous avez finalement commandé ?
-
-— Avec l'accord du directeur général, uniquement les matières nécessaires au premier démarrage.
-
-— Sans réponse définitive de la banque ?
+— Vous avez déjà attendu qu'on vous rembourse une dépense professionnelle ?
 
 — Oui.
 
-— Sans acompte confirmé ?
+— Vous avez dû sortir l'argent avant ?
 
 — Oui.
 
-— Vous avez passé neuf ans à expliquer aux autres qu'il ne fallait pas prendre de risques, puis vous avez acheté des matières avec de l'argent que vous espériez obtenir.
+— C'est le même problème.
 
-— J'ai accepté un risque limité, pas signé un chèque en espérant un miracle.
+— Ah ! Sauf que moi, c'était un sandwich.
 
-— Nous avions assez de trésorerie pour le premier lot, pas pour lancer toute la fabrication sans risquer de manquer d'argent pour les autres échéances. Le directeur général a autorisé ce premier achat, pas les suivants.
+— Nous, c'était trois cents tonnes de métal.
 
-— Vous avez donc décidé de vivre dangereusement, mais avec une autorisation écrite.
+— C'est effectivement un peu plus emmerdant.
 
-— C'est assez proche de mon métier. J'ai même fixé l'heure à laquelle nous devions refaire le point.
+Jean reprit son carnet.
 
-— Vous êtes un aventurier de bureau, Laurent. Un Indiana Jones du découvert prévisionnel.
+— Et le fournisseur, vous lui avez montré le contrat ?
 
-— Sans le chapeau. Il aurait fallu le passer en frais.
+— Oui.
 
-Jean Toksic marque un temps. Il n'avait pas prévu que Laurent puisse être drôle.
+— Il était content pour vous ?
 
-— Pour protéger la trésorerie, vous avez aussi reporté de six semaines l'achat d'un équipement de contrôle.
+— Très content.
 
-— Un équipement non critique. Les contrôles pouvaient toujours être réalisés avec l'ancien.
+— Et ?
 
-— Voilà ! Une économie. Enfin une bonne nouvelle.
+— Il voulait être payé.
 
-— Sauf que l'ancien équipement exigeait davantage de manipulations pour l'équipe qualité.
+— Quel enfoiré.
 
-— Combien ?
+Laurent sourit.
 
-— Assez pour que la responsable qualité me propose de venir faire les contrôles moi-même.
+— C'est exactement ce qu'on demande à nos propres clients.
 
-— Vous avez accepté ?
+— Ah oui. J'avais pas pensé à ça.
 
-— Je suis allé voir le poste de travail.
+---
 
-— Quelle déception. J'imaginais déjà le directeur financier en blouse, condamné à contrôler des pièces jusqu'à l'extinction de sa dette morale.
+## Le mec chargé de prévoir les problèmes n'avait pas prévu le problème
 
-— J'avais sous-estimé le travail que ce report imposait à l'équipe. Nous avons adapté l'organisation, sans pouvoir acheter l'équipement plus tôt.
+— Vous aviez pourtant mis en place une procédure pour vérifier qu'un contrat ne risquait pas de foutre la boîte dans la merde ?
 
-— Vous appelez cela protéger la trésorerie. L'équipe qualité, elle, protège quoi pendant ses manipulations supplémentaires ?
+— Oui.
 
-— La conformité des pièces. Et elle y passe plus de temps à cause de ma décision.
+— Et elle a merdé ?
 
-— Je vous avais invité pour vous mettre mal à l'aise, Laurent. Vous pourriez au moins attendre que je trouve les accusations moi-même.
+— Les premières livraisons ont été avancées pendant la négociation. On le savait, mais on n'a pas correctement recalculé l'argent dont on aurait besoin pour démarrer.
 
-— Je peux vous aider.
+— Qui avait mis au point cette procédure ?
 
-— Pardon ?
+— Plusieurs services. J'y ai participé.
 
-— Vous m'avez demandé combien de manipulations l'ancien équipement imposait. Pas combien d'heures cela coûtait à l'équipe.
+Jean posa son stylo.
 
-Jean Toksic consulte ses notes. Il n'y trouve aucune question sur les heures de l'équipe qualité.
+— Attendez. Vous avez participé à la création d'un système censé éviter les mauvaises surprises financières. Et votre plus gros contrat vous en fait une ?
 
-— Vous venez de me voler mon indignation.
+— Oui.
 
-— Vous aviez du mal à vous en servir.
+— Mais vous êtes nul !
 
-— Vous auriez dû me demander un acompte.
+Laurent se redressa.
 
-Jean Toksic regarde sa bouteille de champagne. Il semble envisager de l'ouvrir seul.
+— J'ai commis une erreur. Ça ne fait pas de moi un incapable.
 
-— Finalement, la banque vous a financés ?
+— Ah ! Enfin un peu de vie !
 
-— Oui, mais pour un montant inférieur à notre demande. Le client a accepté un acompte limité et un calendrier de premières livraisons plus progressif.
+— J'aurais dû demander qu'on refasse les calculs avant de confirmer les nouvelles dates. C'est aussi ma responsabilité.
 
-— Et le contrat ?
+Jean attendit.
 
-— Les premières livraisons ont commencé. Nous prévoyons toujours une marge positive, mais plus faible qu'à la signature, à cause du financement et des adaptations nécessaires.
+Laurent but une gorgée d'eau.
 
-— Vous avez donc réussi. Je vais enfin pouvoir vous féliciter.
+— C'est tout ?
 
-— Vous pouvez.
+— Quoi ?
 
-— Champagne ?
+— Vous allez pas rejeter la faute sur les commerciaux ?
 
-— Toujours pas.
+— Non.
 
-— Pourquoi ? La banque a débloqué une partie des fonds, le client a versé un acompte, les premières pièces sont parties. Que vous faut-il de plus ?
+— Sur la direction ?
 
-— Rien. Mais vous avez commencé cet entretien à onze heures. Il est maintenant midi passé.
+— Non.
 
-— Et alors ?
+Jean feuilleta son carnet.
 
-— Le champagne était réservé pour onze heures trente. J'ai demandé à votre assistante de le remettre au frais et de libérer le service.
+— Putain, Laurent, vous faites chier. J'ai préparé douze questions pour vous faire avouer que vous vous êtes planté.
 
-— Vous avez fait quoi ?
+— Vous pouvez passer à la treizième.
 
-— Vous m'avez appris à respecter les créneaux.
+Jean éclata de rire.
 
-— Vous avez donné des instructions à mon assistante ?
+Puis il regarda la caméra.
 
-— Avec son accord. Elle m'a dit que vous aviez tendance à promettre des horaires sans consulter les personnes concernées.
+— Attendez, vous pouvez la refaire ?
 
-— Laurent…
+— Quoi ?
 
-— Nous avons donc mis en place une procédure.
+— « Vous pouvez passer à la treizième. » Mais en regardant la caméra.
 
-Jean Toksic regarde la bouteille, puis la porte. Pour la première fois depuis longtemps, il se demande si ses invités ne commencent pas à prendre goût aux séances.
+— Pourquoi ?
+
+— Pour mon extrait vidéo.
+
+Laurent regarda la caméra.
+
+Puis Jean.
+
+— Vous allez remettre les questions qui précèdent ?
+
+— Non. L'idée, c'est de faire un truc assez court.
+
+— Mais personne ne saura pourquoi je vous dis ça.
+
+— Si, les gens vont comprendre.
+
+— Vous venez de passer dix minutes à essayer de comprendre mon métier. Et maintenant, vous voulez que les gens comprennent en quinze secondes ?
+
+Jean baissa son téléphone.
+
+— Vous êtes vraiment directeur financier jusqu'au bout des couilles, vous.
+
+— On peut continuer ?
+
+— Oui.
+
+Jean avait trouvé un excellent extrait vidéo.
+
+Il avait également trouvé le seul invité qui refusait de l'aider à le fabriquer.
+
+---
+
+## Quarante-huit heures pour réfléchir. Même pas vingt-quatre pour se décider.
+
+— Vous avez décidé de suspendre certains achats pendant quarante-huit heures ?
+
+— Oui. Pour savoir exactement ce qu'on pouvait financer.
+
+— Sauf que votre fournisseur ne vous réservait le métal que jusqu'au lendemain midi.
+
+— Exact.
+
+— Ah, les cons.
+
+— Qui ?
+
+— Je sais pas encore.
+
+Laurent attendit.
+
+— Et vous avez appelé la banque ?
+
+— Oui.
+
+— Ils vous ont filé du pognon ?
+
+— Ils étudiaient notre demande.
+
+— Vous avez appelé le client ?
+
+— Oui.
+
+— Il vous a filé du pognon ?
+
+— Il n'avait pas encore accepté de nous verser un acompte.
+
+— Donc vous aviez un super contrat, un fournisseur qui voulait son fric, un banquier qui réfléchissait et un client qui attendait ses pièces.
+
+— C'est ça.
+
+— Vous dormiez bien ?
+
+— Pas particulièrement.
+
+— Vous m'étonnez.
+
+Laurent expliqua ce qui se passerait si l'usine n'achetait pas le métal à temps. Elle risquait de perdre la réservation et de ne plus pouvoir fabriquer les premières pièces aux dates promises.
+
+Mais acheter tout le métal aurait mobilisé trop d'argent, alors que l'entreprise avait d'autres dépenses à régler.
+
+— Donc si vous achetiez, vous étiez dans la merde. Et si vous achetiez pas, vous étiez aussi dans la merde.
+
+— Si on achetait tout ou si on n'achetait rien.
+
+— Ah. Vous aviez une troisième solution ?
+
+— Oui.
+
+Le fournisseur accepta une commande limitée au métal nécessaire pour commencer la fabrication. Le premier achat ne couvrait qu'une partie des trois cents tonnes nécessaires au contrat. La direction donna son accord. L'entreprise avait assez d'argent pour payer ce premier achat sans attendre le prêt de la banque.
+
+Pour le reste, il fallait encore trouver une solution.
+
+— Et votre pause de quarante-huit heures ?
+
+— Elle concernait les autres achats. Pour le premier lot, on a décidé avant le lendemain midi.
+
+— Attendez. Vous aviez de l'argent ?
+
+— Pour le premier lot.
+
+— Ça fait une demi-heure que vous me racontez que vous avez pas de pognon !
+
+Laurent posa son verre.
+
+— Jean, vous pouvez payer votre loyer ce mois-ci ?
+
+— Oui.
+
+— Vous pouvez acheter votre immeuble ?
+
+— Non.
+
+— Voilà.
+
+Jean resta immobile.
+
+— Vous venez de me traiter de pauvre ?
+
+— Non. Je vous explique qu'on peut avoir assez d'argent pour payer quelque chose sans avoir assez d'argent pour tout payer.
+
+Jean se tourna vers la caméra.
+
+— C'est formidable. J'invite un mec pour parler de son entreprise et je me retrouve à justifier ma situation financière.
+
+— Vous avez compris ?
+
+— Oui. Mais je suis vexé.
+
+— Ça n'empêche pas de comprendre.
+
+Jean nota quelque chose.
+
+— Donc vous avez commencé à fabriquer sans savoir comment vous alliez payer le reste ?
+
+— Oui.
+
+— C'était quand même risqué.
+
+— Bien sûr.
+
+— Vous, prendre un risque ?!
+
+— Qu'est-ce que vous croyez que je fais toute la journée ?
+
+— Je pensais que vous empêchiez les autres d'en prendre.
+
+— Non. J'essaie de faire en sorte qu'on puisse s'en sortir quand ça tourne mal.
+
+Jean ne trouva rien à répondre.
+
+Pour une fois, Laurent n'avait pas besoin d'un exemple avec son loyer.
+
+---
+
+## Laurent garde son pognon. L'équipe qualité se tape le boulot.
+
+— Vous avez aussi repoussé de six semaines l'achat d'une machine destinée à contrôler les pièces.
+
+— Oui.
+
+— Pour garder du pognon ?
+
+— Oui.
+
+— Et les pièces, qui les contrôlait ?
+
+— La même équipe, avec l'ancien équipement.
+
+— Ça marchait ?
+
+— Oui, mais il fallait davantage de manipulations.
+
+— Donc vous avez économisé de l'argent en leur rajoutant du boulot ?
+
+— On a repoussé une dépense. C'est différent.
+
+— Pour eux aussi ?
+
+Laurent réfléchit.
+
+— Non.
+
+— Vous connaissiez le prix de la nouvelle machine ?
+
+— Évidemment.
+
+— Et vous saviez combien de temps les salariés allaient perdre en continuant avec l'ancienne ?
+
+— Pas assez précisément.
+
+— Ah. Vous avez fait vos calculs avec votre portefeuille, pas avec leurs bras.
+
+— On pensait qu'ils pourraient faire face au travail supplémentaire.
+
+— Vous leur aviez demandé ?
+
+— Pas suffisamment.
+
+— C'est-à-dire ?
+
+— On aurait dû passer plus de temps avec eux avant de prendre cette décision.
+
+— Vous êtes allé les voir après ?
+
+— Oui. La responsable qualité nous avait signalé le problème.
+
+— Et vous l'avez aidée ?
+
+— Je ne suis pas formé pour faire les contrôles.
+
+— Ah. Comme moi, finalement.
+
+— Si vous voulez.
+
+— Donc vous êtes allé faire quoi ?
+
+— Lui expliquer pourquoi on devait attendre avant d'acheter le nouvel équipement.
+
+— Elle connaissait déjà la raison ?
+
+— Oui.
+
+Jean le regarda.
+
+— Vous êtes allé voir une femme qui avait trop de boulot pour lui prendre du temps en lui expliquant pourquoi elle avait trop de boulot ?
+
+Laurent eut un léger sourire.
+
+— Présenté comme ça...
+
+— Non, mais racontez-moi la scène.
+
+Laurent était arrivé dans l'atelier avec les chiffres de l'entreprise. La responsable qualité lui avait montré les pièces qui attendaient d'être contrôlées.
+
+Il lui avait expliqué qu'il fallait conserver suffisamment d'argent pour assurer le démarrage du contrat.
+
+Elle lui avait montré une deuxième caisse.
+
+Il avait poursuivi ses explications.
+
+Elle lui avait montré une troisième caisse.
+
+— Et là, elle vous dit quoi ? demanda Jean.
+
+— Elle m'a demandé si j'étais venu l'aider ou lui expliquer ce qu'elle savait déjà.
+
+Jean éclata de rire.
+
+— Oh, putain ! Et vous lui avez répondu quoi ?
+
+— Que je comprenais sa situation.
+
+— Alors que vous étiez en train de lui faire perdre du temps ?
+
+— Oui.
+
+Laurent regarda son verre.
+
+— Le plus con, c'est que j'étais venu pour lui montrer qu'on prenait son problème au sérieux.
+
+Jean cessa de rire.
+
+— Et depuis, vous l'avez achetée, sa machine ?
+
+— Pas encore. On a modifié l'organisation des contrôles pour leur éviter certaines manipulations. Mais il leur reste du boulot en plus.
+
+— Vous lui avez présenté vos excuses ?
+
+— On en a reparlé.
+
+— C'est pas vraiment la même chose.
+
+— Non.
+
+Jean consulta son carnet.
+
+— Vous vous rendez compte que vous avez réussi à économiser de l'argent sans même savoir ce que votre décision allait coûter en travail à ces gens-là ?
+
+Laurent releva brusquement la tête.
+
+— Mais qu'est-ce que vous voulez que je vous dise, Jean ? Je vous dis que je me suis planté ! Je suis allé expliquer son boulot à une femme qui le connaît mieux que moi. Vous voulez quoi ? Que j'y retourne pour lui casser les couilles une deuxième fois ?
+
+Jean se tourna vers la caméra.
+
+— Ah, putain ! Attendez. Vous pouvez refaire ça ?
+
+Laurent le fixa.
+
+— Vous avez compris quelque chose à mon histoire ?
+
+Jean ne répondit pas.
+
+---
+
+## Le contrat a démarré. Il devrait rapporter moins que prévu.
+
+Jean reprit son carnet.
+
+— Finalement, la banque vous a prêté de l'argent ?
+
+— Pour une partie de ce dont on avait besoin.
+
+— Et le client ?
+
+— Il a accepté de nous verser un acompte limité et de revoir les premières dates de livraison.
+
+— Vous avez commencé à lui livrer ses pièces ?
+
+— Oui.
+
+— Et vous allez gagner de l'argent ?
+
+— C'est toujours ce qu'on prévoit. Mais moins qu'au départ.
+
+— Pourquoi ?
+
+— Parce que les solutions qu'on a trouvées ont aussi un coût.
+
+— Donc vous avez sauvé votre contrat ?
+
+— On a réussi à le démarrer et à effectuer les premières livraisons. Il reste encore du travail.
+
+— Vous pouvez pas juste être content cinq minutes ?
+
+— Je serai content quand on aura terminé et qu'on aura été payés.
+
+Jean referma son carnet.
+
+— Vous devez être insupportable à Noël.
+
+— Pourquoi ?
+
+— On doit vous offrir un cadeau et attendre le remboursement de la TVA pour savoir si ça vous plaît.
+
+Laurent sourit.
+
+Jean saisit la bouteille de champagne.
+
+— Bon. J'ai votre procédure qui a merdé, votre histoire de métal, la responsable qualité et le moment où vous vous êtes énervé. J'ai mon entretien.
+
+Le bouchon sauta.
+
+Jean remplit sa flûte.
+
+— Vous en voulez toujours pas ?
+
+— Non.
+
+Jean leva son verre.
+
+— À votre franchise, Laurent ! Et à cette magnifique histoire de l'équipe qualité !
+
+Laurent ne leva pas le sien.
+
+— Vous avez interrogé la responsable qualité ?
+
+— Non. Mais j'ai votre témoignage.
+
+— Quand nos commerciaux ont signé le contrat, ils ont débouché le champagne avant de savoir ce qu'il allait coûter.
+
+Laurent désigna la bouteille.
+
+— Vous, vous l'avez ouverte avant même d'avoir interrogé la responsable qualité.
+
+Jean baissa lentement son verre.
