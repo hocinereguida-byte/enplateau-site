@@ -196,11 +196,12 @@ export function renderLaurentNov25Interview(markdownBody:string):string {
   throw new Error('Laurent 25-11 : empreinte intégrale du manuscrit divergente ; revoir la source et les rôles avant mise en ligne');
  const isTurn=(s:string)=>/^—[ \t]+/.test(s);
  const html:string[]=[],used=new Set<string>();
- let paragraphs=0,headings=0,turns=0;
+ let paragraphs=0,headings=0,dividers=0,turns=0;
  for(let i=0;i<blocks.length;){
   const b=blocks[i];
   if(/^## /.test(b)){html.push('<h2>'+escapeLaurentHtml(b.slice(3))+'</h2>');headings++;i++;continue;}
-  if(/^#{1,6} /.test(b)||b==='---'||b==='***')throw new Error('Laurent 25-11 : intertitre/séparateur inattendu');
+  if(b==='---'){html.push('<hr aria-hidden="true"/>');dividers++;i++;continue;}
+  if(/^#{1,6} /.test(b)||b==='***')throw new Error('Laurent 25-11 : intertitre/séparateur inattendu');
   if(!isTurn(b)){html.push('<p>'+escapeLaurentHtml(b)+'</p>');paragraphs++;i++;continue;}
   const group:string[]=[];
   while(i<blocks.length&&isTurn(blocks[i]))group.push(blocks[i++]);
@@ -220,7 +221,7 @@ export function renderLaurentNov25Interview(markdownBody:string):string {
   }
   html.push('</div>');
  }
- if(used.size!==42||turns!==207||paragraphs!==61||headings!==5)
-  throw new Error('Laurent 25-11 : structure inattendue ('+used.size+' groupes, '+turns+' prises de parole, '+paragraphs+' narratifs, '+headings+' intertitres)');
+ if(used.size!==42||turns!==207||paragraphs!==56||headings!==5||dividers!==5)
+  throw new Error('Laurent 25-11 : structure inattendue ('+used.size+' groupes, '+turns+' prises de parole, '+paragraphs+' narratifs, '+headings+' intertitres, '+dividers+' séparateurs)');
  return html.join('\n');
 }
