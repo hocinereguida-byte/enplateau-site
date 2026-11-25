@@ -126,35 +126,36 @@ if(nathalieHtml){
   errors.push('Nathalie : article indexable en préproduction.');
 }
 
-// Claire et Kevin V7.5 validée : le HTML doit contenir le texte intégral
-// et les 74 répliques déjà composées, sans script navigateur requis.
+// Claire et Kevin V8.1, texte du 25 novembre : contrôles du HTML réellement composé.
+// Le gabarit doit conserver les cinq scènes, cinq intertitres et 105 répliques attribuées.
 const claireRoute='media/articles/industrie/ind-c1-cst-04-brouillon/index.html';
 const claireHtml=read(claireRoute);
 if(claireHtml){
  const story=claireHtml.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-04-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
  const paragraphs=(story.match(/<p(?:\s|>)/g)||[]).length;
  const headings=(story.match(/<h2(?:\s|>)/g)||[]).length;
- const groups=(story.match(/data-dialogue-verified="claire-kevin-v7-5"/g)||[]).length;
+ const dividers=(story.match(/<hr\b/g)||[]).length;
+ const groups=(story.match(/data-dialogue-verified="claire-kevin-v8-1"/g)||[]).length;
  const turns=(story.match(/class="fiction-dialogue-turn"/g)||[]).length;
  const labels=(story.match(/class="fiction-dialogue-speaker"/g)||[]).length;
  const raw=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
- if(paragraphs!==215||headings!==4||groups!==27||turns!==74||labels!==74||raw!==0)
-  errors.push('Claire et Kevin V7.5 : structure non conforme ('+paragraphs+' paragraphes, '+headings+' intertitres, '+groups+' échanges, '+turns+' répliques, '+labels+' locuteurs, '+raw+' dialogues bruts).');
+ if(paragraphs!==258||headings!==5||dividers!==5||groups!==47||turns!==105||labels!==105||raw!==0)
+  errors.push('Claire et Kevin V8.1 : structure non conforme ('+paragraphs+' paragraphes, '+headings+' intertitres, '+dividers+' scènes, '+groups+' groupes, '+turns+' répliques, '+labels+' locuteurs, '+raw+' dialogues bruts).');
  if(!claireHtml.includes("Une usine veut recruter trente ouvriers.")
-  ||!claireHtml.includes("Tout le monde continue d")
-  ||!claireHtml.includes("Claire aime les plannings impeccables.")
-  ||!story.includes("Kevin R. avait huit heures dans sa journée.")
-  ||!story.includes("Dans cinq minutes ?"))
-  errors.push('Claire/Kevin V7.5 : titre, chapô, début ou chute absents.');
- if(!story.includes('fiction-dialogue-speaker">Kevin')
-  ||!story.includes('fiction-dialogue-speaker">Claire')
-  ||!story.includes('fiction-dialogue-speaker">Une recrue')
-  ||!story.includes('fiction-dialogue-speaker">Le directeur'))
-  errors.push('Claire/Kevin V7.5 : attributions de dialogues manquantes.');
- if(story.includes('VALIDÉE ÉDITORIALEMENT LE 20-11-2026')||story.includes('BON À PUBLIER NON DÉLIVRÉ'))
-  errors.push('Claire/Kevin V7.5 : métadonnées internes du manuscrit visibles.');
+   ||!claireHtml.includes("Claire M. aime quand tout est bien organisé.")
+   ||!story.includes("Kevin R. avait huit heures dans sa journée.")
+   ||!story.includes("Ils sont déjà avec leurs recrues")
+   ||!story.includes("Un autre ouvrier, qui connaissait lui aussi cette machine")
+   ||!story.includes("Elles savent que je sais")
+   ||!story.includes("Dans cinq minutes ?"))
+  errors.push('Claire/Kevin V8.1 : titre, chapô, corrections D1/D2 ou chute non concordants.');
+ for(const who of ['Kevin','Claire','Le directeur',"Le chef d&#39;atelier",'Le responsable de production','Une recrue'])
+  if(!story.includes('fiction-dialogue-speaker">'+who))
+   errors.push('Claire/Kevin V8.1 : attribution manquante « '+who+' ».');
+ if(story.includes('MANUSCRIT VALIDÉ')||story.includes('GO préproduction')||story.includes('V8.1 corrigée'))
+  errors.push('Claire/Kevin V8.1 : métadonnées internes affichées.');
  if(!/name="robots"\s+content="noindex,nofollow"/.test(claireHtml))
-  errors.push('Claire/Kevin V7.5 : article indexable en préproduction.');
+  errors.push('Claire/Kevin V8.1 : article indexable en préproduction.');
 }
 
 // Marc D. / Jean Toksic : variante populaire du 25-11-2026, source Drive
