@@ -3,7 +3,7 @@ import { getCollection, render } from 'astro:content';
 import { isPublic, validClassification, urlOf, conversations, contexts, publicContextLabel, readings, publicPerspectiveLabel, publicGenreLabel, formattedDate, publicationInstant, perspectiveOf, genreOf, narrativeGenres, cycleCatalogue, canonicalCycleCode, publicCycleLabel } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
 import { renderMarcNov25Interview } from '../../../lib/marc-interview';
-import { renderSophieV88Dialogue, renderNathalieNov18Dialogue, renderClaireKevinV75Dialogue } from '../../../lib/chronicle-dialogue';
+import { renderSophieV91aDialogue, renderNathalieNov18Dialogue, renderClaireKevinV75Dialogue } from '../../../lib/chronicle-dialogue';
 import MediaFooter from '../../../components/MediaFooter.astro'
 import MediaHeader from '../../../components/MediaHeader.astro';;
 import { absolutePageUrl, robotsDirective } from '../../../lib/seo';
@@ -19,7 +19,7 @@ const {Content}=await render(article);
 const verifiedDialogueHtml=article.id==='industrie/ind-c1-cst-01-brouillon'
  ? renderMarcNov25Interview(article.body)
  : article.id==='industrie/ind-c1-cst-02-brouillon'
- ? renderSophieV88Dialogue(article.body)
+ ? renderSophieV91aDialogue(article.body)
  : article.id==='industrie/ind-c1-cst-03-brouillon' ? renderNathalieNov18Dialogue(article.body)
  : article.id==='industrie/ind-c1-cst-04-brouillon' ? renderClaireKevinV75Dialogue(article.body) : null;
 const classification=conversations[d.cycle]?.[d.conversation] ?? d.conversation;
