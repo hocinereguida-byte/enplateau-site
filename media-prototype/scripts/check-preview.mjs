@@ -155,35 +155,39 @@ if(claireHtml){
   errors.push('Claire/Kevin V7.5 : article indexable en préproduction.');
 }
 
-// Marc D. et Jean Toksic : manuscrit Drive intégral du 22 novembre,
-// dialogues attribués statiquement. Aucune alternance automatique en navigateur.
+// Marc D. / Jean Toksic : variante populaire du 25-11-2026, source Drive
+// exacte et récits précomposés, sans attribution par alternance automatique.
 const marcRoute='media/articles/industrie/ind-c1-cst-01-brouillon/index.html';
 const marcHtml=read(marcRoute);
 if(marcHtml){
  const story=marcHtml.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-01-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
  const paragraphs=(story.match(/<p(?:\s|>)/g)||[]).length;
  const dividers=(story.match(/<hr\b/g)||[]).length;
- const groups=(story.match(/data-interview-verified="marc-2026-11-22"/g)||[]).length;
+ const groups=(story.match(/data-interview-verified="marc-2026-11-25"/g)||[]).length;
  const turns=(story.match(/class="interview-turn interview-(?:question|answer)"/g)||[]).length;
  const speakers=(story.match(/class="interview-speaker"/g)||[]).length;
  const jean=(story.match(/class="interview-turn interview-question"/g)||[]).length;
  const marc=(story.match(/class="interview-turn interview-answer"/g)||[]).length;
  const raw=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
- if(paragraphs!==43||dividers!==6||groups!==39||turns!==246||speakers!==246||jean!==122||marc!==124||raw!==0)
-  errors.push('Marc 22-11 : structure non conforme ('+paragraphs+' paragraphes, '+dividers+' séparateurs, '+groups+' échanges, '+turns+' répliques, '+speakers+' locuteurs, '+jean+'/'+marc+' rôles, '+raw+' dialogue brut).');
+ const bylines=(story.match(/class="interview-byline"/g)||[]).length;
+ if(paragraphs!==35||dividers!==8||groups!==28||turns!==274||speakers!==274||jean!==136||marc!==138||raw!==0||bylines!==1)
+  errors.push('Marc 25-11 : structure non conforme ('+paragraphs+' paragraphes, '+dividers+' séparateurs, '+groups+' groupes, '+turns+' répliques, '+speakers+' locuteurs, '+jean+'/'+marc+' rôles, '+raw+' dialogues bruts, '+bylines+' signature).');
  if(!marcHtml.includes("Les affaires marchaient si bien qu")
-  ||!marcHtml.includes('Dans une usine de deux cents salariés')
-  ||!story.includes('On a revu les prix pour les nouvelles affaires')
-  ||!story.includes('On leur proposait un nouveau calcul des primes pour les prochaines affaires')
-  ||!story.includes('Vingt-deux')
+  ||!marcHtml.includes('Marc D. distribuait des trophées aux commerciaux')
+  ||!story.includes('Par Jean Toksic')
+  ||!story.includes('Je vous passe les détails techniques')
+  ||!story.includes('Pour les nouvelles affaires, on a revu les prix')
+  ||!story.includes('les commerciaux avaient fini par trouver un accord sur le nouveau calcul des primes')
+  ||!story.includes('80 000 euros de surcoûts constatés')
+  ||!story.includes('100 000 euros de pénalités et de frais possibles')
   ||!story.includes('Il reste du café ?')
   ||!story.includes('interview-speaker">Jean Toksic')
   ||!story.includes('interview-speaker">Marc D.'))
-  errors.push('Marc 22-11 : titre, chapô, corrections des primes, diapositives, interlocuteurs ou chute manquants.');
- if(story.includes('D1-D2 à confirmer')||story.includes('Candidate littéraire prioritaire'))
-  errors.push('Marc 22-11 : statut interne affiché dans le récit.');
+  errors.push('Marc 25-11 : titre, chapô, signature, tournants narratifs, valeurs économiques ou chute absents.');
+ if(story.includes('D1/D2 à confirmer')||story.includes('Candidate littéraire prioritaire')||story.includes('BON À PUBLIER'))
+  errors.push('Marc 25-11 : mentions internes visibles dans le récit.');
  if(!/name="robots"\s+content="noindex,nofollow"/.test(marcHtml))
-  errors.push('Marc 22-11 : article indexable en préproduction.');
+  errors.push('Marc 25-11 : article indexable en préproduction.');
 }
 
 // Thomas : la variante F doit être servie à l'adresse historique, hors changement d'URL.

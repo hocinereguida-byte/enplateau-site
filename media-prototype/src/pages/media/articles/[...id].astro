@@ -2,7 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import { isPublic, validClassification, urlOf, conversations, contexts, publicContextLabel, readings, publicPerspectiveLabel, publicGenreLabel, formattedDate, publicationInstant, perspectiveOf, genreOf, narrativeGenres, cycleCatalogue, canonicalCycleCode, publicCycleLabel } from '../../../lib/editorial';
 import { articleStyle } from '../../../lib/article-style';
-import { renderMarcNov22Interview } from '../../../lib/marc-interview';
+import { renderMarcNov25Interview } from '../../../lib/marc-interview';
 import { renderSophieV88Dialogue, renderNathalieNov18Dialogue, renderClaireKevinV75Dialogue } from '../../../lib/chronicle-dialogue';
 import MediaFooter from '../../../components/MediaFooter.astro'
 import MediaHeader from '../../../components/MediaHeader.astro';;
@@ -17,7 +17,7 @@ const {Content}=await render(article);
 // Version de lecture vérifiée : précomposer les dialogues et les entretiens approuvés en HTML statique.
 // Une variation non contrôlée du manuscrit fait échouer le build plutôt que le rendu.
 const verifiedDialogueHtml=article.id==='industrie/ind-c1-cst-01-brouillon'
- ? renderMarcNov22Interview(article.body)
+ ? renderMarcNov25Interview(article.body)
  : article.id==='industrie/ind-c1-cst-02-brouillon'
  ? renderSophieV88Dialogue(article.body)
  : article.id==='industrie/ind-c1-cst-03-brouillon' ? renderNathalieNov18Dialogue(article.body)
@@ -187,6 +187,8 @@ const shareBase=canonical;
 }
 
 /* Composition commune des dialogues : attribution contrôlée, aucun automatisme d'alternance. */
+.article-literary .interview-byline{font:600 13px/1.5 'IBM Plex Sans',Arial,sans-serif;color:var(--blue);margin:0 0 1.45em}
+
 .article-literary .fiction-dialogue{margin:1.03em 0 1.12em;padding-left:clamp(11px,3vw,20px);border-left:1px solid rgba(34,52,59,.22)}
 .article-literary .fiction-dialogue-line{margin:0;font:inherit;line-height:inherit}
 .article-literary .fiction-dialogue-turn{margin:0 0 .8em}
