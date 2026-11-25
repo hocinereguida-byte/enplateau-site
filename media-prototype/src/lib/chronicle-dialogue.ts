@@ -1207,3 +1207,376 @@ export function renderClaireKevinV81Dialogue(markdownBody:string):string {
   throw new Error('Claire/Kevin V8.1 : structure non conforme ('+seen.size+' groupes, '+turns+' répliques, '+narrative+' narratifs, '+headings+' intertitres, '+breaks+' scènes)');
  return result.join('\n');
 }
+
+/**
+ * Nathalie B. — manuscrit populaire corrigé validé le 25 novembre 2026.
+ * Source exclusive : Google Drive 1RSd9Wyfm16g7u1LakU0wYuv7tX6L7_n-YcAcD1ml_Zc.
+ * 118 prises de parole dans 41 groupes, attribution relue sur le récit ;
+ * aucune alternance automatique. Si les locuteurs ne sont pas identifiables,
+ * conserver l'étiquette collective indiquée dans la fiction.
+ */
+const nathalieNov25:readonly DialogueGroup[]=[
+  {
+    "opening": "Il faut réduire notre dépendance aux facteurs humains, explique-t-elle régulièrement.",
+    "speakers": [
+      "Nathalie",
+      "Une ouvrière",
+      "Nathalie",
+      "Une ouvrière"
+    ]
+  },
+  {
+    "opening": "On économise combien ?",
+    "speakers": [
+      "Vincent",
+      "Nathalie"
+    ]
+  },
+  {
+    "opening": "Et on pourra livrer combien de commandes en plus ?",
+    "speakers": [
+      "Vincent",
+      "Nathalie"
+    ]
+  },
+  {
+    "opening": "Mais les trois millions, c'est sûr ?",
+    "speakers": [
+      "Vincent",
+      "Nathalie",
+      "Vincent"
+    ]
+  },
+  {
+    "opening": "Pourquoi il la pose là ?",
+    "speakers": [
+      "Vincent",
+      "Nathalie",
+      "Vincent",
+      "Nathalie"
+    ]
+  },
+  {
+    "opening": "Ça fait combien de temps qu'elles sont là ?",
+    "speakers": [
+      "Vincent",
+      "Nathalie",
+      "Vincent",
+      "Nathalie",
+      "Vincent",
+      "Nathalie",
+      "Vincent",
+      "Nathalie"
+    ]
+  },
+  {
+    "opening": "Donc on va payer trois millions pour qu'elles arrivent vingt secondes plus tôt dans la queue ?",
+    "speakers": [
+      "Vincent",
+      "Nathalie",
+      "Vincent"
+    ]
+  },
+  {
+    "opening": "Il faudrait aussi moins de monde pour faire certaines opérations. Et on éviterait des gestes pénibles aux ouvriers.",
+    "speakers": [
+      "Nathalie",
+      "Vincent",
+      "Nathalie",
+      "Vincent"
+    ]
+  },
+  {
+    "opening": "Et le robot, il va faire tout ça ?",
+    "speakers": [
+      "Mina",
+      "Nathalie",
+      "Mina",
+      "Nathalie"
+    ]
+  },
+  {
+    "opening": "Et vous avez besoin que je lui apprenne autre chose ou je peux commencer à chercher du boulot ?",
+    "speakers": [
+      "Mina",
+      "Nathalie",
+      "Mina",
+      "Nathalie",
+      "Mina",
+      "Nathalie",
+      "Mina"
+    ]
+  },
+  {
+    "opening": "Ça, par contre, si votre robot peut le faire à ma place, je veux bien.",
+    "speakers": [
+      "Mina",
+      "L'ingénieur",
+      "Mina"
+    ]
+  },
+  {
+    "opening": "Aucun problème, répond Nathalie.",
+    "speakers": [
+      "Nathalie",
+      "Mina",
+      "Nathalie",
+      "Mina"
+    ]
+  },
+  {
+    "opening": "Comment vous décidez quelle commande doit passer en premier ?",
+    "speakers": [
+      "Le consultant",
+      "Nathalie",
+      "Le consultant"
+    ]
+  },
+  {
+    "opening": "Sauf quand on a un client important qui nous demande de faire passer une autre commande.",
+    "speakers": [
+      "Nathalie"
+    ]
+  },
+  {
+    "opening": "Mais attention, tous les clients importants ne sont pas prioritaires en permanence.",
+    "speakers": [
+      "Nathalie"
+    ]
+  },
+  {
+    "opening": "Vous avez une liste de ces clients ?",
+    "speakers": [
+      "Le consultant",
+      "Nathalie"
+    ]
+  },
+  {
+    "opening": "Et quand vous avez deux commandes urgentes de deux clients importants ?",
+    "speakers": [
+      "Le consultant",
+      "Nathalie",
+      "Le consultant",
+      "Nathalie",
+      "Le consultant"
+    ]
+  },
+  {
+    "opening": "Vous savez, vingt-sept ans d'expérience, ça ne se résume pas à quelques lignes dans un ordinateur.",
+    "speakers": [
+      "Nathalie",
+      "Le consultant"
+    ]
+  },
+  {
+    "opening": "Mina a bien expliqué son travail à l'ingénieur.",
+    "speakers": [
+      "Vincent",
+      "Nathalie",
+      "Vincent",
+      "Nathalie",
+      "Vincent",
+      "Nathalie",
+      "Vincent"
+    ]
+  },
+  {
+    "opening": "On peut continuer ? J'ai encore du boulot, moi.",
+    "speakers": [
+      "Nathalie"
+    ]
+  },
+  {
+    "opening": "Vous verrez, avec l'expérience, ça devient assez naturel.",
+    "speakers": [
+      "Nathalie"
+    ]
+  },
+  {
+    "opening": "Je veux que toutes les propositions de l'intelligence artificielle soient vérifiées par un humain.",
+    "speakers": [
+      "Nathalie",
+      "Le consultant",
+      "Nathalie",
+      "Le consultant",
+      "Nathalie"
+    ]
+  },
+  {
+    "opening": "On y est presque, répond Nathalie.",
+    "speakers": [
+      "Nathalie"
+    ]
+  },
+  {
+    "opening": "On peut aller voir les ouvriers, maintenant ?",
+    "speakers": [
+      "Le consultant",
+      "Nathalie",
+      "Le consultant",
+      "Nathalie"
+    ]
+  },
+  {
+    "opening": "Nathalie ?",
+    "speakers": [
+      "Vincent",
+      "Nathalie",
+      "Vincent",
+      "Nathalie",
+      "Vincent"
+    ]
+  },
+  {
+    "opening": "Vous avez été payé pour faire les cinq ?",
+    "speakers": [
+      "Vincent"
+    ]
+  },
+  {
+    "opening": "Vincent, il y a plein d'autres améliorations.",
+    "speakers": [
+      "Nathalie",
+      "Vincent",
+      "Nathalie",
+      "Vincent",
+      "Nathalie",
+      "Vincent",
+      "Nathalie"
+    ]
+  },
+  {
+    "opening": "Bon. Si personne n'a d'objection, j'aimerais bien qu'on aille voir les putains de pièces.",
+    "speakers": [
+      "Vincent"
+    ]
+  },
+  {
+    "opening": "C'est quoi ?",
+    "speakers": [
+      "Mina",
+      "Le consultant"
+    ]
+  },
+  {
+    "opening": "Elles passent pas toutes par là.",
+    "speakers": [
+      "Mina"
+    ]
+  },
+  {
+    "opening": "Lesquelles ?",
+    "speakers": [
+      "Le consultant",
+      "Mina"
+    ]
+  },
+  {
+    "opening": "Celles-là, par exemple, elles devaient passer après, explique Mina.",
+    "speakers": [
+      "Mina",
+      "Le consultant",
+      "Mina",
+      "Le consultant"
+    ]
+  },
+  {
+    "opening": "Et celles-là ?",
+    "speakers": [
+      "Le consultant"
+    ]
+  },
+  {
+    "opening": "Lui aussi, il voulait passer avant.",
+    "speakers": [
+      "Mina"
+    ]
+  },
+  {
+    "opening": "Vous vous êtes parlé ?",
+    "speakers": [
+      "Vincent",
+      "Un responsable",
+      "Vincent"
+    ]
+  },
+  {
+    "opening": "Moi, du moment que vous me dites dans quel ordre je dois bosser...",
+    "speakers": [
+      "Mina"
+    ]
+  },
+  {
+    "opening": "Et si on fabrique les pièces vingt secondes plus vite, ça change quoi ?",
+    "speakers": [
+      "Vincent",
+      "Mina"
+    ]
+  },
+  {
+    "opening": "Attention, Vincent. On ne peut pas prendre une décision à trois millions d'euros sur le témoignage d'une seule opératrice.",
+    "speakers": [
+      "Nathalie",
+      "Le consultant"
+    ]
+  },
+  {
+    "opening": "C'est pour ça que je demande depuis cinq versions qu'on rencontre les autres.",
+    "speakers": [
+      "Le consultant"
+    ]
+  },
+  {
+    "opening": "Vous pourriez nous aider ?",
+    "speakers": [
+      "Le consultant",
+      "Mina"
+    ]
+  },
+  {
+    "opening": "Faudra juste quelqu'un pour me remplacer.",
+    "speakers": [
+      "Mina"
+    ]
+  }
+];
+function nathalieNov25Fingerprint(s:string):string {
+ let h=2166136261>>>0;
+ for(let i=0;i<s.length;i++)h=Math.imul(h^s.charCodeAt(i),16777619)>>>0;
+ return h.toString(16).padStart(8,'0');
+}
+const NATHALIE_NOV25_FINGERPRINT="b6d2db6f";
+export function renderNathalieNov25Dialogue(markdownBody:string):string {
+ if(typeof markdownBody!=='string'||!markdownBody.includes("Nathalie B. travaille dans l'industrie depuis vingt-sept ans.")||
+ !markdownBody.includes("Nathalie lui demande laquelle elle doit signer."))throw new Error('Nathalie 25-11 : manuscrit inconnu');
+ const blocks=markdownBody.replace(/\r\n/g,'\n').trim().split(/\n[ \t]*\n+/).map(x=>x.trim()).filter(Boolean);
+ if(nathalieNov25Fingerprint(blocks.join('\n\n'))!==NATHALIE_NOV25_FINGERPRINT)
+  throw new Error('Nathalie 25-11 : empreinte intégrale du manuscrit Drive divergente ; relire et revalider les voix');
+ const result:string[]=[],seen=new Set<string>(),isTurn=(s:string)=>/^—[ \t]+/.test(s);
+ let headings=0,breaks=0,narrative=0,turns=0;
+ for(let i=0;i<blocks.length;){
+  const b=blocks[i];
+  if(/^## /.test(b)){result.push('<h2>'+escapeHtml(b.slice(3))+'</h2>');headings++;i++;continue;}
+  if(b==='***'){result.push('<hr aria-hidden="true"/>');breaks++;i++;continue;}
+  if(/^#{1,6} /.test(b)||b==='---')throw new Error('Nathalie 25-11 : séparateur inattendu');
+  if(!isTurn(b)){result.push('<p>'+escapeHtml(b)+'</p>');narrative++;i++;continue;}
+  const lines:string[]=[];
+  while(i<blocks.length&&isTurn(blocks[i]))lines.push(blocks[i++]);
+  const first=lines[0].replace(/^—[ \t]*/,'');
+  const matches=nathalieNov25.filter(x=>x.opening===first);
+  if(matches.length!==1||seen.has(first))throw new Error('Nathalie 25-11 : groupe non attribué « '+first.slice(0,70)+' »');
+  const spec=matches[0];
+  if(lines.length!==spec.speakers.length)throw new Error('Nathalie 25-11 : nombre de répliques modifié dans « '+first.slice(0,70)+' »');
+  seen.add(first);
+  result.push('<div class="fiction-dialogue" role="group" aria-label="Dialogue" data-dialogue-verified="nathalie-2026-11-25">');
+  lines.forEach((line,j)=>{
+   const words=line.replace(/^—[ \t]*/,'');
+   result.push('<div class="fiction-dialogue-turn"><span class="fiction-dialogue-speaker">'+escapeHtml(spec.speakers[j])+'</span><p class="fiction-dialogue-line">'+escapeHtml(words)+'</p></div>');
+   turns++;
+  });
+  result.push('</div>');
+ }
+ if(seen.size!==41||turns!==118||narrative!==128||headings!==6||breaks!==6)
+  throw new Error('Nathalie 25-11 : structure non conforme ('+seen.size+' groupes, '+turns+' répliques, '+narrative+' narratifs, '+headings+' intertitres, '+breaks+' séparateurs)');
+ return result.join('\n');
+}
