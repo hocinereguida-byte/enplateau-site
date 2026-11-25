@@ -2,7 +2,7 @@
 title: "Les affaires marchaient si bien qu'il a fallu y mettre un terme"
 hero_image: "/images/ind-c1-cst-01-marc-visuel-v1.webp"
 image_alt: "Gros plan sur les mains d’un dirigeant en costume fermant un cadenas à l’entrée d’une usine en pleine activité, sans visage ni texte ajouté."
-summary: "Dans une usine de deux cents salariés, Marc D. a longtemps récompensé ses commerciaux pour leurs records de ventes. Puis il a découvert que certaines commandes faisaient perdre de l'argent à l'entreprise. Jean Toksic a rencontré ce patron très fier d'avoir réparé le problème. Un peu moins pressé de raconter comment il l'avait créé."
+summary: "Dans une usine de deux cents salariés, Marc D. distribuait des trophées aux commerciaux qui vendaient le plus. Jusqu'au jour où il a découvert que certaines de leurs commandes lui faisaient perdre du pognon. Il a changé les prix, les primes et les habitudes de travail. Les résultats se sont améliorés. Jean Toksic a rencontré un patron très fier d'avoir réglé un problème qu'il avait lui-même largement contribué à créer."
 format: "entretien"
 cycle: "industrie"
 conversation: "C1"
@@ -11,7 +11,7 @@ lecture_principale: "strategie-gouvernance"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-27T15:00:00+01:00"
-updated_date: "2026-11-22"
+updated_date: "2026-11-25"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
 affichage_rubrique: "automatique"
@@ -21,11 +21,11 @@ tag_3: "Capacité de production"
 tag_4: "Arbitrage commercial"
 tag_5: "Rentabilité"
 source_notice: "Personnages, entreprise, localisation, dialogues, situations et données chiffrées inventés."
-methodology_specific: "Marc D. et Jean Toksic — manuscrit Google Drive du 22 novembre 2026 : candidate littéraire prioritaire, humour noir burlesque. Deux formulations relatives aux primes corrigées dans le manuscrit : prix des nouvelles affaires et accord avec les commerciaux ; nouveau calcul des primes pour les prochaines affaires sans rétroactivité sur les primes déjà gagnées. Les événements, dialogues, les scènes du trophée, des vingt-deux diapositives, des samedis et la chute sont reproduits à l’identique du document source, à l’exclusion de la présentation interne des séparateurs. Le contrôle documentaire D1/D2 de cette nouvelle version reste à confirmer : les visas de la V6.8 ne sont pas transférés automatiquement. Article fictif, intégration en préproduction uniquement, sans bon à publier public."
-source_document_url: "https://docs.google.com/document/d/1KACf-ve3On4q5eoALzjP67J6tnu1Gz4RtPo1or8nISQ/edit"
-source_document_version: "Candidate littéraire prioritaire — Humour noir burlesque — 22-11-2026 — D1/D2 à confirmer"
-validation_narrative: "marc_candidat_litteraire_prioritaire_2026_11_22_visa_documentaire_pendant"
-validation_documentaire: "marc_22_11_2026_d1_d2_a_confirmer_apres_deux_retouches_primes"
+methodology_specific: "Marc D. / Jean Toksic, Grand Entretien fictif. Source exclusive : variante populaire resserrée du 25 novembre 2026 (Google Drive 1f31gy-I1RrmFjBR_FHa0qKciv3wXvkBOPGzcmfh_hus). Procès-verbal littéraire, D1 et D2 : https://docs.google.com/document/d/1QdRxnBg5zAsX1tOjOBSH5I-tOzMzuRiVFXqbW_cLsu0/edit. Visa littéraire interne favorable ; D1 cohérence favorable ; D2 plausibilité économique et sociale favorable sous limites, sans certification contractuelle, comptable, juridique ou test de lecture externe. Les primes des nouvelles affaires ont été proposées puis validées par un accord quelques semaines plus tard, sans rétroactivité des primes acquises ; l'exigence juridique du consentement selon le contrat demeure sous hypothèse. Deux millions = commandes envisagées, 18 % = marge prévue, 80 000 euros = surcoûts constatés, jusqu'à 100 000 euros = pénalités ou frais possibles. Huit séparateurs éditoriaux composés en filets ; 274 répliques attribuées à Marc ou Jean ; 35 paragraphes non-dialogués, dont la signature Par Jean Toksic, reproduits fidèlement. Aucun bon à publier public ; autorisation de préproduction uniquement."
+source_document_url: "https://docs.google.com/document/d/1f31gy-I1RrmFjBR_FHa0qKciv3wXvkBOPGzcmfh_hus/edit"
+source_document_version: "Variante populaire resserrée — Référence littéraire du 25-11-2026 — Visa favorable ; D1 favorable ; D2 favorable sous limites"
+validation_narrative: "marc_2026_11_25_visa_litteraire_favorable"
+validation_documentaire: "marc_2026_11_25_d1_favorable_d2_favorable_sous_limites_pv_1QdRxnBg5zAsX1tOjOBSH5I-tOzMzuRiVFXqbW_cLsu0"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "grand-entretien"
 signature_auteur: "Jean Toksic"
@@ -34,59 +34,71 @@ perspective_principale: "strategie-gouvernance"
 unite_programmation: "IND-C1-CST"
 ---
 
+Par Jean Toksic
+
 — Vous avez trouvé facilement ?
 
 — Oui. Votre assistante m'a offert un café.
 
 — Elle est bien, hein ? Je lui ai dit : « Fais boire les invités. Après, ils osent plus partir. »
 
-— Ça marche ?
+— Moi, tant que c'est gratuit, je peux rester des heures. J'ai déjà assisté à un mariage où je connaissais personne.
 
-— On va voir. Vous connaissez ma réputation ?
+— Vous êtes spécial, vous.
+
+— On me le dit souvent.
+
+— Vous connaissez ma réputation ?
 
 — On m'a prévenu.
 
 — Et vous êtes venu quand même ?
 
-— Je dirige deux cents salariés depuis douze ans. Je pense pouvoir supporter un journaliste.
+— Il me fallait un article.
 
-— Ah. On va bien s'entendre, tous les deux.
+— Vous allez pas me faire de cadeau, j'imagine.
 
-***
+— Marc, je comprends rien à votre métier. Vous partez avec un avantage énorme.
 
-— Bon. Vos commerciaux trouvent des clients, les clients commandent, l'usine fabrique. Et vous, vous décidez d'arrêter de vendre. Vous avez pris un coup sur la tête ?
+— Ça tombe bien. J'ai horreur des journalistes qui connaissent mon métier mieux que moi.
 
-— On n'a pas arrêté de vendre. On a refusé certaines commandes.
+— Vous devez pas en rencontrer beaucoup.
 
-— Près de deux millions d'euros.
+— Des journalistes ou des gens qui connaissent mon métier ?
 
-— De commandes envisagées. Aucun contrat signé n'a été annulé.
-
-— Oui, ça va. Pourquoi vous en vouliez plus ?
-
-— Parce que certaines nous coûtaient plus cher qu'elles ne rapportaient.
-
-— Comment vous avez réussi ça ?
-
-— On prévoyait parfois 18 % de marge. Après, il fallait refaire des pièces, travailler le samedi, envoyer des camions en urgence...
-
-— Et les 18 % ?
-
-— Ils disparaissaient. On perdait même de l'argent sur certaines affaires.
-
-— Donc vous bossiez pour perdre du pognon.
-
-— Sur certaines commandes, oui.
-
-— Vous auriez dû ouvrir une association.
+— On va commencer ?
 
 Marc sourit.
 
-— Le pire, c'est que chacun faisait ce qu'on lui demandait. Les commerciaux vendaient, les ateliers produisaient...
+***
 
-— Et les commerciaux avaient des primes ?
+— Bon. Vous avez une usine, des machines, des ouvriers, des commerciaux qui vous trouvent des clients. Jusque-là, même moi, j'arrive à suivre. Et un jour, vous décidez de refuser des commandes. Pourquoi ?
 
-— Principalement liées aux volumes.
+— Parce que certaines nous coûtaient plus cher à fabriquer qu'elles ne nous rapportaient.
+
+— Vous le saviez quand vous acceptiez les commandes ?
+
+— Non. On prévoyait parfois 18 % de marge.
+
+— Et finalement ?
+
+— Il fallait refaire des pièces, faire travailler les équipes le samedi, payer des transports en urgence... À la fin, on perdait de l'argent.
+
+— Ah, mais je connais, ça ! Je suis parti quatre jours à Barcelone avec un billet à 29 euros. Je suis rentré avec 600 euros de découvert.
+
+— Et vous êtes reparti l'année suivante ?
+
+— Oui.
+
+— Bon. Ben nous, on a mis un peu plus de temps à comprendre.
+
+Marc reprit son café.
+
+— Le problème, c'est que chacun faisait ce qu'on lui demandait. Les commerciaux vendaient, les ateliers produisaient...
+
+— Et vous donniez des primes aux commerciaux ?
+
+— Oui. Elles étaient principalement liées aux volumes de ventes.
 
 — Qui avait décidé ça ?
 
@@ -100,11 +112,23 @@ Marc sourit.
 
 — Oui.
 
-— Et vous étiez content.
+— Vous leur filiez du pognon.
 
-— Évidemment.
+— Oui.
 
-Jean posa son stylo.
+— Et derrière, vous en perdiez.
+
+— Sur certaines commandes.
+
+— Putain, vous aviez monté une sacrée affaire.
+
+— Vous savez, quand on a des machines à payer et deux cents personnes à faire bosser, on est plutôt content quand le téléphone sonne.
+
+— Je veux bien vous croire.
+
+— Le problème, c'est qu'on aurait dû être un peu moins contents à certains moments.
+
+***
 
 — Vous aviez un commercial de l'année ?
 
@@ -112,11 +136,11 @@ Jean posa son stylo.
 
 — Pour quoi ?
 
-— Notre plus grosse commande.
+— Il avait décroché notre plus grosse commande.
 
-— Celle qui a fini par vous faire perdre de l'argent ?
+— Celle qui vous a fait perdre de l'argent ?
 
-— On ne le savait pas à l'époque.
+— On ne le savait pas encore.
 
 — Vous lui avez remis vous-même ?
 
@@ -126,51 +150,49 @@ Jean posa son stylo.
 
 — Bien sûr.
 
-— Montrez-moi.
+— Vous lui avez dit quoi ?
 
-— Quoi ?
+— Je sais plus exactement.
 
-— Comment vous l'avez félicité.
+— Allez, levez-vous.
 
-Marc hésita, puis se leva.
+— Pourquoi ?
 
-Jean se leva aussi.
+— Faites comme si c'était moi. J'ai jamais gagné de trophée de ma vie. Ça me fera un truc à raconter à ma mère.
 
-Marc lui attrapa la main, la serra vigoureusement et lui donna deux tapes sur l'épaule.
+Marc se leva, me serra vigoureusement la main et me donna deux grandes tapes sur l'épaule.
 
 — Bravo ! Voilà un bel exemple pour toute l'équipe ! Continuez comme ça !
 
-— Vous pouvez me lâcher, Marc ?
+— Merci, Marc. Je vais vous ruiner.
 
-— Ah, pardon.
+Il me lâcha la main.
 
-Ils se rassirent.
+Nous nous rassîmes.
 
-— Et quand vous avez découvert que sa commande était déficitaire ?
+— Et quand vous avez découvert que sa commande vous faisait perdre du fric ?
 
 — J'ai organisé une réunion pour expliquer les erreurs de notre ancienne politique commerciale.
 
-— Vous avez parlé de sa commande ?
+— Vous avez parlé de lui ?
 
-— Oui. Sans le nommer. Je fais attention à ne pas humilier mes collaborateurs.
+— De sa commande. Sans le nommer. Je fais très attention à ne pas humilier mes collaborateurs.
 
-— Il était là ?
+— Il était dans la salle ?
 
 — Oui.
 
-— Il a compris ?
+— Il a compris que c'était lui ?
 
-— Très vite.
+— Tout de suite.
 
 — Comment ?
 
-Marc hésita.
-
 — J'avais projeté une photo de la remise du trophée.
 
-Jean resta immobile.
+Je reposai ma tasse.
 
-— Sa photo ?
+— Une photo de lui ?
 
 — Une photo d'équipe.
 
@@ -186,43 +208,39 @@ Jean resta immobile.
 
 — Oui.
 
-Jean resta bouche bée.
-
-— Vous l'avez anonymisé comment ?
+— Et vous l'avez anonymisé comment ?
 
 — J'avais enlevé son nom.
 
-— Mais on voyait sa gueule !
+— Mais on voyait sa gueule, Marc !
 
 — Tout le monde le connaissait, de toute façon.
 
-— Et vous aviez écrit quoi au-dessus de la photo ?
+J'ai eu besoin de quelques secondes.
+
+— Vous aviez écrit quoi au-dessus de la photo ?
 
 — « Sortir de nos anciennes habitudes. »
 
-Jean se plia en deux.
+Je me suis plié en deux.
 
-Marc croisa les bras.
-
-— C'était une réunion sérieuse.
+Marc attendit.
 
 — Et le commercial ? Il a dit quoi ?
 
 — Il m'a demandé s'il devait rendre son trophée.
 
-Jean essuya ses yeux.
+— Et vous ?
 
-— Et vous avez répondu ?
+— Je lui ai dit que c'était pas le moment de faire le malin.
 
-— Que c'était pas le moment de faire le malin.
+Marc but une gorgée de café.
 
-Marc reprit son café.
-
-Jean n'arrivait plus à parler.
+— Vous rigolez, mais il l'a toujours, son trophée.
 
 ***
 
-— Qui vous a finalement expliqué que votre système marchait à l'envers ?
+— Qui a fini par vous expliquer que votre système marchait à l'envers ?
 
 — Notre responsable d'atelier.
 
@@ -230,95 +248,91 @@ Jean n'arrivait plus à parler.
 
 — « Marc, tu veux qu'on fabrique les commandes ou qu'on passe nos journées à expliquer pourquoi on peut pas les fabriquer ? »
 
-— Je l'aime déjà.
+— Et vous lui avez répondu ?
 
-— C'est quelqu'un de très compétent.
+— Que j'avais besoin d'une étude avec des chiffres précis.
 
-— Vous lui avez demandé quoi ?
+— Il l'a faite ?
 
-— Une étude. J'avais besoin de chiffres.
+— Non. Il m'a dit qu'il avait pas le temps. Il devait faire tourner l'atelier.
 
-— Et lui ?
+L'usine fabriquait notamment des arbres de transmission et des supports métalliques. Certaines machines avaient du boulot par-dessus la tête, d'autres beaucoup moins.
 
-— Il m'a dit qu'il avait pas le temps. Il devait faire tourner l'atelier.
+Marc voulait faire rentrer davantage de commandes pour occuper les machines qui tournaient peu. Malheureusement, ces commandes avaient aussi besoin de celles qui étaient déjà débordées.
 
-L'usine fabriquait notamment des arbres de transmission et des supports métalliques. Certaines machines étaient peu chargées, d'autres saturées. Marc avait voulu remplir le carnet de commandes pour mieux utiliser les équipements.
+Je vous passe les détails techniques. J'ai demandé deux fois à Marc de m'expliquer ce qu'était un arbre de transmission. À la deuxième, j'ai fait semblant d'avoir compris.
 
-— Vous avez fini par faire quoi ?
+— Et vous avez fait quoi ?
 
-— Pendant quinze jours, plus de nouvel engagement sensible sur les prix ou les délais sans validation de la production.
+— Pendant quinze jours, les commerciaux ne pouvaient plus prendre certains engagements sur les prix ou les délais sans l'accord de la production.
 
-— Les commerciaux étaient ravis.
+— Vous avez demandé aux gens qui fabriquaient les trucs s'ils pouvaient fabriquer les trucs ?
 
-— Pas vraiment.
+— Oui.
 
-— Vous avez refusé combien ?
+— D'accord.
 
-— Près de deux millions d'euros de nouvelles commandes envisagées sur plusieurs mois. Sur vingt-quatre millions de ventes annuelles, c'était une vraie décision. La direction générale nous a soutenus.
+— Et contrairement à ce que vous avez l'air de penser, c'était pas une décision facile. Quand un commercial est chez un client et qu'il doit lui dire qu'il va rappeler l'usine avant de lui répondre, il peut aussi perdre la commande.
 
-— Et les contrats déjà signés ?
+— Ah oui.
 
-— On les a maintenus.
+— On a refusé près de deux millions d'euros de commandes envisagées sur plusieurs mois. Sur vingt-quatre millions de ventes annuelles, c'est pas rien.
 
-— Les commerciaux ont dû vous détester.
+— Deux millions...
 
-— On a revu les prix pour les nouvelles affaires. Pour les primes, on a fini par se mettre d'accord avec les commerciaux. Fini de vendre n'importe quoi.
+— Vous les auriez refusés, vous ?
 
-— Comme votre champion avec son trophée ?
+— Marc, j'ai du mal à refuser un deuxième dessert quand il est offert.
 
-Marc soupira.
+— Voilà.
 
-— Vous allez me le ressortir toute la journée ?
+— Et les commandes déjà signées ?
 
-— Non. Maintenant, je veux savoir comment vous avez annoncé les primes.
+— On les a maintenues. On avait donné notre parole. C'était pas aux clients de payer pour nos erreurs.
 
-***
+— D'accord.
+
+— Pour les nouvelles affaires, on a revu les prix. Et il fallait aussi revoir le système de primes des commerciaux.
+
+— Comment vous leur avez annoncé ça ?
 
 — J'ai fait une présentation.
+
+***
 
 — Combien de diapositives ?
 
 — Vingt-deux.
 
-— Vingt-deux ?! Vous leur annonciez une réforme ou une condamnation ?
+— Putain, Marc...
 
-— Je voulais être pédagogique.
+— Quoi ?
 
-— Vous leur avez montré combien ils allaient toucher ?
+— Rien. Je pense aux commerciaux.
 
-— Pas tout de suite. Je voulais expliquer le principe.
+— Je voulais leur expliquer pourquoi on devait changer le calcul des primes pour les prochaines affaires. Ce qu'ils avaient déjà gagné, on n'y touchait pas.
 
-— Vous aviez les simulations ?
+— Vous saviez combien ils allaient toucher avec le nouveau système ?
 
-— Pas toutes.
-
-— Ah.
-
-— On leur proposait un nouveau calcul des primes pour les prochaines affaires. Et ce qu'ils avaient déjà gagné, on n'y touchait pas.
+— On n'avait pas encore toutes les simulations. C'était une proposition.
 
 — Et vous avez commencé par quoi ?
 
-— J'ai demandé qui pensait qu'on devait améliorer la rentabilité.
+— J'ai demandé qui pensait qu'on devait améliorer la rentabilité de l'entreprise.
 
 — Ils ont levé la main ?
 
 — Tous.
 
-— Ben oui, Marc. Personne allait voter pour couler la boîte.
+— Ben oui. Personne allait proposer qu'on fasse faillite avant Noël.
 
-— C'était important de voir qu'on était d'accord.
+— C'était important de voir qu'on partageait le même objectif.
 
-— Vous avez considéré que la réforme était approuvée ?
+— Vous l'avez mis dans le compte rendu ?
 
-— Non. Mais il y avait une bonne adhésion au principe.
+— Oui. Il y avait une bonne adhésion au principe.
 
-— Vous l'avez écrit dans le compte rendu ?
-
-— Oui.
-
-Jean le dévisagea un instant.
-
-— Et après ?
+— Ah.
 
 — À la dix-huitième diapositive, un commercial m'a interrompu.
 
@@ -326,29 +340,25 @@ Jean le dévisagea un instant.
 
 — « Marc, c'est bien beau votre création de valeur, mais moi, à la fin du mois, je touche combien ? »
 
-— Vous lui avez montré les chiffres ?
-
-— Je viens de vous dire que les simulations n'étaient pas toutes prêtes.
-
-— Ah oui. Et vous avez répondu quoi ?
+— Et vous lui avez répondu ?
 
 — Qu'il fallait arrêter de ramener systématiquement la discussion à l'argent.
 
-Jean le regarda.
+Je regardai Marc.
 
-— Vous avez dit ça pendant une réunion sur les primes ?
+— On est toujours dans la réunion sur les primes, là ?
+
+— Oui.
+
+— D'accord. J'ai cru que j'avais raté un épisode.
 
 — Je voulais qu'on parle de la qualité des ventes.
 
-— Et eux ?
+— Et le commercial ?
 
-Marc baissa les yeux.
+— Il m'a répondu : « Et ma banque, elle accepte la création de valeur ? »
 
-— Il m'a demandé : « Et ma banque, elle accepte la création de valeur ? »
-
-Jean resta un instant interdit, puis partit d'un grand rire.
-
-Marc attendit qu'il se calme.
+J'éclatai de rire.
 
 — Moi, ça m'a pas fait rire.
 
@@ -360,8 +370,6 @@ Marc attendit qu'il se calme.
 
 — Oui. J'avais passé du temps à préparer cette réunion.
 
-Jean reprit son souffle.
-
 — Il vous restait quatre diapositives ?
 
 — Oui.
@@ -370,39 +378,53 @@ Jean reprit son souffle.
 
 — Toutes.
 
-— Mais pourquoi ?
+— Après ça ?
 
-— Parce que j'avais passé du temps à les préparer !
+— Écoutez, c'était déjà assez compliqué de faire venir tout le monde. J'allais pas leur demander de revenir le lendemain pour quatre diapositives.
+
+Marc avait une réponse à tout.
+
+Quelques semaines plus tard, la direction et les commerciaux avaient fini par trouver un accord sur le nouveau calcul des primes.
 
 ***
 
 — Et ça a marché, finalement ?
 
-— Oui. Sur les six mois suivants, les ventes ont baissé d'environ 8 % par rapport au semestre comparable. Mais le résultat s'est amélioré. Moins de pièces à refaire, moins de transports urgents, moins de samedis travaillés.
+— Oui. Sur les six mois suivants, les ventes ont baissé d'environ 8 % par rapport au semestre comparable. Mais le résultat s'est amélioré.
+
+— Vous avez vendu moins et vous vous en êtes mieux sorti ?
+
+— Exactement. Moins de pièces à refaire, moins de transports urgents, moins de samedis travaillés.
 
 — Ah ! Vous avez rendu leurs week-ends aux ouvriers.
 
 — Exactement.
 
-— Vous leur avez annoncé comment ?
+— Comment vous leur avez annoncé ?
 
 — Lors d'une réunion d'atelier.
 
 — Sans PowerPoint ?
 
-— Non. J'avais compris.
+— Sans PowerPoint. J'avais compris.
 
 — Bravo.
 
-— J'avais fait préparer une petite affiche. « Enfin vos samedis ! »
+— J'avais fait préparer une petite affiche.
 
-Jean s'arrêta.
+— Ah.
 
-— Une affiche ?
+— « Enfin vos samedis ! »
 
-— Oui. Avec une famille qui se promène. Pour montrer qu'on retrouvait une vie normale.
+— Avec quoi dessus ?
 
-— Et ils ont aimé ?
+— Une famille qui se promène. Pour montrer qu'on retrouvait une vie normale.
+
+— Des gens qui sourient parce qu'ils travaillent pas chez vous.
+
+— C'était une illustration, monsieur Toksic.
+
+— Et les ouvriers étaient contents ?
 
 — Pas tous.
 
@@ -410,51 +432,49 @@ Jean s'arrêta.
 
 — Certains comptaient sur les heures supplémentaires du samedi pour compléter leur paie.
 
-— Et vous leur avez dit quoi ?
+— Ah, merde.
 
-— Qu'ils pourraient passer davantage de temps avec leurs enfants.
+— Je leur ai expliqué qu'ils allaient pouvoir passer davantage de temps avec leurs enfants.
 
-— Et eux ?
+— Et alors ?
 
 — Un ouvrier m'a répondu que c'était justement ses heures supplémentaires qui lui permettaient de payer certaines dépenses de ses enfants.
 
-Jean baissa les yeux.
+Je n'ai rien trouvé de drôle à répondre.
 
-— Ah.
+Marc poursuivit.
 
-— Je lui ai expliqué qu'on pouvait pas continuer à désorganiser l'usine pour maintenir des compléments de salaire.
+— Mais qu'est-ce que vous vouliez que je fasse ? Que je continue à accepter des commandes qui nous faisaient perdre de l'argent pour que certains salariés puissent gagner davantage le samedi ?
 
-— Il a répondu quoi ?
+— Non.
 
-— Que je pouvais aller expliquer ça à son banquier.
+— Vous imaginez si je dois supprimer des postes dans six mois ? Je leur explique quoi, aux familles ?
 
-— Et vous ?
+Je baissai les yeux vers mon carnet.
+
+Pour le coup, j'avais pas de solution.
+
+— Et l'ouvrier, vous lui avez répondu quoi ?
 
 — Qu'il fallait aussi penser à l'intérêt collectif.
 
-Jean releva la tête.
+— Ah, Marc...
 
-— Vous lui avez vraiment sorti ça ?
+— Quoi ?
 
-— Oui.
-
-— Et il a dit quoi ?
+— Rien. Continuez.
 
 — Il voulait savoir si l'argent qu'il ne toucherait plus figurait dans les économies que j'allais présenter à la direction générale.
 
-Jean ne dit rien.
+— Et c'était le cas ?
 
-— Alors ?
-
-— La réduction des heures supplémentaires faisait partie de la baisse des coûts. Avec les rebuts, les transports...
+— La réduction des heures supplémentaires faisait partie de la baisse des coûts. Avec les pièces ratées, les transports...
 
 — Donc oui.
 
 — Oui.
 
-Jean tourna une page.
-
-— Votre direction générale était contente des résultats ?
+— Votre direction générale était contente ?
 
 — Très contente.
 
@@ -466,11 +486,11 @@ Jean tourna une page.
 
 — Quoi, l'ouvrier ?
 
-— Il a été félicité, lui, pour avoir contribué aux économies ?
+— Il a été félicité pour avoir contribué aux économies ?
 
 — Il n'avait rien décidé.
 
-Jean resta immobile.
+Un silence.
 
 Marc reprit sa tasse.
 
@@ -478,9 +498,9 @@ Marc reprit sa tasse.
 
 — Oui.
 
-Un silence passa.
+***
 
-— Et l'ouvrier, il est revenu vous voir ?
+— Et cet ouvrier, vous l'avez revu ?
 
 — Quelques jours après.
 
@@ -488,13 +508,15 @@ Un silence passa.
 
 — Non. Il voulait savoir si ma rémunération avait changé, à moi aussi.
 
-— Et vous avez répondu ?
+— Et vous lui avez répondu ?
 
 — Que mon salaire personnel ne le regardait pas.
 
-Jean se pencha.
+— Vous connaissiez le sien ?
 
-— Ah bon ?
+— Évidemment.
+
+— Ah. C'est pratique.
 
 — Ma rémunération relève de la direction générale.
 
@@ -506,57 +528,69 @@ Jean se pencha.
 
 — Oui.
 
-Jean attendit.
+Marc posa sa tasse.
 
 — Vous avez déjà dirigé une entreprise, monsieur Toksic ?
 
-— Non. J'ai visité une chocolaterie, une fois. Excellent souvenir.
+— Non. Une fois, j'ai organisé un barbecue. On était huit, j'avais oublié le charbon. Depuis, je me méfie des responsabilités.
 
-— Vous savez pas ce que ça représente, deux cents emplois. On prend une décision, ça peut déplaire. On la corrige, ça déplaît encore. On peut pas contenter tout le monde.
+— Bon. Imaginez maintenant que les huit personnes aient des enfants et un crédit immobilier. Et que vous ayez oublié autre chose que le charbon.
 
-— Ça, j'ai remarqué.
+Je souris.
 
-— On a cherché des compensations, revu certains horaires, proposé des formations. Ça n'a pas suffi pour tous les salariés.
+L'enfoiré venait de retourner mon barbecue contre moi.
 
-— Et vous, vous avez gardé vos samedis ?
+— On a cherché des compensations, revu certains horaires, proposé des formations. Ça n'a pas suffi pour tous les salariés. Je le sais.
 
-Marc le regarda.
+— Vous êtes allé revoir cet ouvrier pour savoir comment il s'en sortait ?
 
-— Quel rapport ?
+— Pas personnellement.
 
-— Aucun. Je demandais.
+— Pourquoi ?
 
-Marc posa sa tasse.
+— J'ai aussi une usine à faire tourner.
+
+Je notai sa réponse.
 
 ***
 
-— Votre client historique, celui qui travaillait avec vous depuis quinze ans. Comment il a pris vos nouveaux prix ?
+— Et votre client historique ? Celui qui travaillait avec vous depuis quinze ans ? Comment il a pris les nouveaux prix ?
 
 — Mal. Il m'a dit : « Marc, je peux pas demander à mes clients de payer plus cher parce que vous vous êtes trompés pendant quinze ans. »
 
 — Il avait tort ?
 
-— Pas complètement. Mais les anciennes conditions tenaient plus. On avait mal évalué certains coûts.
+— Non. Mais moi, je pouvais plus continuer comme avant.
 
-— Et les engagements déjà signés ?
+— Vous lui avez dit ça ?
 
-— On les a maintenus. Ça nous a coûté environ 80 000 euros de surcoûts constatés. Et on avait jusqu'à 100 000 euros de pénalités et frais possibles, selon les négociations.
+— Oui. Et il m'a répondu qu'il allait consulter d'autres fournisseurs.
 
-— Donc les 100 000, vous les avez pas forcément payés.
+— Vous avez eu peur de le perdre ?
+
+— Bien sûr. Quinze ans qu'on travaillait ensemble.
+
+— Vous pouviez pas faire un petit effort ?
+
+— C'est exactement ce qu'on faisait depuis des années. Des petits efforts. À la fin, ça faisait beaucoup de pognon.
+
+— Et les commandes déjà signées ?
+
+— On les a maintenues. Ça nous a coûté environ 80 000 euros de surcoûts constatés. Et on avait jusqu'à 100 000 euros de pénalités et de frais possibles, selon les négociations.
+
+— Attendez. Les 100 000 euros, vous les avez pas forcément payés ?
 
 — Non.
 
-— Et les deux millions refusés, c'étaient pas des contrats signés.
+— Et les deux millions de commandes refusées, c'étaient pas des contrats déjà signés ?
 
 — Exactement.
 
-Jean referma son carnet.
+— Bon. J'ai compris.
 
-— Quand vous parlez des chiffres, Marc, je vous comprends.
+— Vous voyez ! Il suffit d'écouter.
 
-Marc sourit.
-
-— Vous voyez. Il suffit d'écouter.
+— Doucement, Marc. Ça fait une heure que je suis là. Me filez pas un trophée.
 
 ***
 
@@ -572,11 +606,15 @@ Marc sourit.
 
 — Oui.
 
-— Après, vous avez changé les règles, les primes, les prix, l'organisation des ateliers...
+— Après, vous avez découvert que c'était une connerie.
+
+— Disons que le système avait ses limites.
+
+— Vous avez changé les prix, les primes, les horaires, les objectifs des commerciaux...
 
 — Oui.
 
-— Et maintenant, les résultats sont meilleurs.
+— Et les résultats sont meilleurs.
 
 — Exactement.
 
@@ -588,29 +626,35 @@ Marc sourit.
 
 — Évidemment. On a redressé l'entreprise.
 
+— Tant mieux.
+
+Marc sourit.
+
 — Vous avez changé les objectifs de tout le monde.
 
 — On les a adaptés.
-
-Jean regarda Marc.
 
 — Et les vôtres ?
 
 — Quoi, les miens ?
 
-— Vos objectifs. Ceux sur lesquels votre direction juge votre travail.
+— Vos objectifs. Les trucs sur lesquels votre patron décide si vous avez bien bossé.
 
 — Je suis responsable des résultats du site.
 
 — Ça, j'ai compris.
 
-Marc se redressa.
-
 — C'est pas comparable avec les primes des commerciaux.
 
-— Je vous ai pas demandé si c'était comparable.
+— Je vous demande pas de comparer.
 
-Jean attendit.
+Marc se redressa.
+
+— Je vois pas où vous voulez en venir.
+
+— Moi non plus, parfois. Mais là, pour une fois, c'est assez clair.
+
+Je posai mon stylo.
 
 — Qui a changé la manière dont on vous évaluait, vous ?
 
