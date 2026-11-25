@@ -83,7 +83,7 @@ if(sophieCanonical){
   ||!articleHtml.includes("Lundi matin, Philippe D., directeur de l")
   ||!articleHtml.includes("une pièce sur deux n")
   ||!articleHtml.includes('Un euro cinquante.')
-  ||!articleHtml.includes("Puis tend le document à Sophie pour qu'elle signe.")
+  ||!articleHtml.includes("Puis tend le document à Sophie pour qu&#39;elle signe.")
   ||!articleHtml.includes("Responsable des décisions : Philippe D.")
   ||!articleHtml.includes("L&#39;équipe."))
   errors.push('Sophie V9.1a : titre, chapô, faits économiques, responsabilités ou chute absents.');
