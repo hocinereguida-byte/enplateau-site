@@ -1172,7 +1172,7 @@ function claireKevinV81Fingerprint(s:string):string {
  for(let i=0;i<s.length;i++)h=Math.imul(h^s.charCodeAt(i),16777619)>>>0;
  return h.toString(16).padStart(8,'0');
 }
-const CLAIRE_KEVIN_V81_MANUSCRIPT_FINGERPRINT="58d22a01";
+const CLAIRE_KEVIN_V81_MANUSCRIPT_FINGERPRINT="376506e6";
 export function renderClaireKevinV81Dialogue(markdownBody:string):string {
  if(typeof markdownBody!=='string'||!markdownBody.includes("Kevin R. avait huit heures dans sa journée.")||
  !markdownBody.includes("Dans cinq minutes ?"))throw new Error('Claire/Kevin V8.1 : manuscrit inconnu');

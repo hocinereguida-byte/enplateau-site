@@ -1,5 +1,5 @@
 ---
-title: "L'usine signe le contrat du siècle. Son directeur financier demande qui va payer le métal."
+title: "Ils ont signé le contrat du siècle. Reste à payer le métal."
 hero_image: "/images/ind-c1-cst-05-laurent-visuel-v1.webp"
 image_alt: "Une clé industrielle démesurée, une petite tirelire et une coupe de champagne symbolisent le contraste entre l’ambition commerciale et les moyens financiers."
 summary: "Deux cents salariés, trois cents tonnes de métal et des commerciaux qui débouchent le champagne. Laurent B., directeur financier de l'usine, a accueilli le plus gros contrat de son entreprise en demandant comment ils allaient payer tout ça. Jean Toksic a voulu comprendre ce qui pouvait rendre un homme aussi chiant."
@@ -21,7 +21,7 @@ tag_3: "Financement industriel"
 tag_4: "Contrats commerciaux"
 tag_5: "Croissance industrielle"
 source_notice: "Personnages, entreprise, localisation générale, dialogues et chiffres du scénario inventés."
-methodology_specific: "Laurent B. et Jean Toksic — source unique du récit : Google Drive 1TcYcj0VluLVqaMZ2QfxO8MCfTXGcBpgMM2ob0oj9FvM, version finale corrigée du 25 novembre 2026. Procès-verbal des visas littéraire/D1/D2 et singularité : https://docs.google.com/document/d/1XJNU1f9M8vTa1Y2Gx85j4w9ERKoIt1iBVsU_3ajZn9s/edit. Visa littéraire favorable ; D1 favorable ; D2 favorable sous limites documentaires, sans certification de contrats, de données comptables ni de conditions industrielles réelles ; singularité Industrie C1 favorable. 207 répliques attribuées dans 42 groupes de dialogue ; 56 paragraphes narratifs, 5 séparateurs de scène et 5 intertitres, texte source préservé sans réécriture. Trésorerie du premier lot, réservation de métal, réorganisation des contrôles, travail supplémentaire de l'équipe qualité, marge finale seulement prévisionnelle. La caméra et le champagne sont des accessoires fictifs de la comédie. Contrôles des tests du site et de lecture réelle indépendants du visa littéraire, jamais supposés réalisés. Aucune autorisation de publication publique : préproduction exclusivement."
+methodology_specific: "Laurent B. et Jean Toksic — source unique du récit : Google Drive 1TcYcj0VluLVqaMZ2QfxO8MCfTXGcBpgMM2ob0oj9FvM, version finale corrigée du 25 novembre 2026. Procès-verbal des visas littéraire/D1/D2 et singularité : https://docs.google.com/document/d/1XJNU1f9M8vTa1Y2Gx85j4w9ERKoIt1iBVsU_3ajZn9s/edit. Visa littéraire favorable ; D1 favorable ; D2 favorable sous limites documentaires, sans certification de contrats, de données comptables ni de conditions industrielles réelles ; singularité Industrie C1 favorable. 207 répliques attribuées dans 42 groupes de dialogue ; 56 paragraphes narratifs, 5 séparateurs de scène et 5 intertitres, texte source préservé sans réécriture. Trésorerie du premier lot, réservation de métal, réorganisation des contrôles, travail supplémentaire de l'équipe qualité, marge finale seulement prévisionnelle. La caméra et le champagne sont des accessoires fictifs de la comédie. Contrôles des tests du site et de lecture réelle indépendants du visa littéraire, jamais supposés réalisés. Aucune autorisation de publication publique : préproduction exclusivement. Ajustement éditorial de préproduction du 25-11-2026, selon la passation utilisateur : Nouveau titre et identification de Laurent B. à l'ouverture. Le document Drive reste la référence littéraire antérieure à cet ajustement."
 source_document_url: "https://docs.google.com/document/d/1TcYcj0VluLVqaMZ2QfxO8MCfTXGcBpgMM2ob0oj9FvM/edit"
 source_document_version: "Version finale corrigée — Registre populaire — 25-11-2026 — Visa littéraire et D1 favorables ; D2 favorable sous limites"
 validation_narrative: "laurent_2026_11_25_visa_litteraire_interne_favorable"
@@ -34,7 +34,7 @@ unite_programmation: "IND-C1-CST"
 perspective_principale: "finance-investissement"
 ---
 
-Jean Toksic avait posé deux flûtes et une bouteille de champagne sur la table. Une caméra enregistrait l'entretien.
+Jean Toksic avait posé deux flûtes et une bouteille de champagne sur la table de Laurent B., le directeur financier. Une caméra enregistrait l'entretien.
 
 — Laurent, pour fêter le contrat du siècle, je vous propose une ligne de cocaïne.
 

@@ -78,7 +78,7 @@ if(sophieCanonical){
  for(const who of ['Philippe','Malik','Sophie','Un ouvrier','La comptable','Le commercial','Le client'])
   if(!articleHtml.includes('fiction-dialogue-speaker">'+who))
    errors.push('Sophie V9.1a : locuteur manquant « '+who+' ».');
- if(!sophieCanonical.includes("Une usine autorise la réparation d")
+ if(!sophieCanonical.includes("répare la machine. À condition de ne pas l")
   ||!sophieCanonical.includes("Depuis trois semaines, une usine de pièces métalliques")
   ||!articleHtml.includes("Lundi matin, Philippe D., directeur de l")
   ||!articleHtml.includes("une pièce sur deux n")
@@ -108,7 +108,7 @@ if(nathalieHtml){
  const raw=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
  if(paragraphs!==246||headings!==6||dividers!==6||groups!==41||turns!==118||labels!==118||raw!==0)
   errors.push('Nathalie 25-11 : rendu non conforme ('+paragraphs+' paragraphes, '+headings+' intertitres, '+dividers+' scènes, '+groups+' dialogues, '+turns+' prises de parole, '+labels+' locuteurs, '+raw+' répliques brutes).');
- if(!nathalieHtml.includes('Une usine veut réduire les')
+ if(!nathalieHtml.includes('grâce aux robots. Puis l')
   ||!nathalieHtml.includes('Dans une usine où certaines commandes ont jusqu')
   ||!story.includes('Nathalie B. travaille dans')
   ||!story.includes("Trois millions d&#39;euros pour arriver plus tôt dans la queue")
@@ -144,8 +144,10 @@ if(claireHtml){
  const raw=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
  if(paragraphs!==258||headings!==5||dividers!==5||groups!==47||turns!==105||labels!==105||raw!==0)
   errors.push('Claire et Kevin V8.1 : structure non conforme ('+paragraphs+' paragraphes, '+headings+' intertitres, '+dividers+' scènes, '+groups+' groupes, '+turns+' répliques, '+labels+' locuteurs, '+raw+' dialogues bruts).');
- if(!claireHtml.includes("Une usine veut recruter trente ouvriers.")
+ if(!claireHtml.includes("Ils veulent embaucher trente ouvriers. Personne n")
    ||!claireHtml.includes("Claire M. aime quand tout est bien organisé.")
+   ||!claireHtml.includes("Kevin R. adore")
+   ||!story.includes("Claire M., la responsable des ressources humaines")
    ||!story.includes("Kevin R. avait huit heures dans sa journée.")
    ||!story.includes("Ils sont déjà avec leurs recrues")
    ||!story.includes("Un autre ouvrier, qui connaissait lui aussi cette machine")
@@ -176,11 +178,12 @@ if(marcHtml){
  const marc=(story.match(/class="interview-turn interview-answer"/g)||[]).length;
  const raw=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
  const bylines=(story.match(/class="interview-byline"/g)||[]).length;
- if(paragraphs!==35||dividers!==8||groups!==28||turns!==274||speakers!==274||jean!==136||marc!==138||raw!==0||bylines!==1)
+ if(paragraphs!==36||dividers!==8||groups!==28||turns!==274||speakers!==274||jean!==136||marc!==138||raw!==0||bylines!==1)
   errors.push('Marc 25-11 : structure non conforme ('+paragraphs+' paragraphes, '+dividers+' séparateurs, '+groups+' groupes, '+turns+' répliques, '+speakers+' locuteurs, '+jean+'/'+marc+' rôles, '+raw+' dialogues bruts, '+bylines+' signature).');
  if(!marcHtml.includes("Les affaires marchaient si bien qu")
   ||!marcHtml.includes('Marc D. distribuait des trophées aux commerciaux')
   ||!story.includes('Par Jean Toksic')
+  ||!story.includes('Entretien avec Marc D., directeur d&#39;une usine de deux cents salariés.')
   ||!story.includes('Je vous passe les détails techniques')
   ||!story.includes('Pour les nouvelles affaires, on a revu les prix')
   ||!story.includes('les commerciaux avaient fini par trouver un accord sur le nouveau calcul des primes')
@@ -213,9 +216,9 @@ if(laurentHtml){
  const raw=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
  if(paragraphs!==56||headings!==5||dividers!==5||groups!==42||turns!==207||labels!==207||jean!==107||laurent!==100||raw!==0)
   errors.push('Laurent 25-11 : structure non conforme ('+paragraphs+' narratifs, '+headings+' intertitres, '+dividers+' séparateurs, '+groups+' groupes, '+turns+' répliques, '+labels+' labels, '+jean+'/'+laurent+' voix, '+raw+' dialogues bruts).');
- if(!laurentHtml.includes('contrat du siècle. Son directeur financier demande qui va payer le métal.')
+ if(!laurentHtml.includes('Ils ont signé le contrat du siècle. Reste à payer le métal.')
   ||!laurentHtml.includes('Deux cents salariés, trois cents tonnes de métal')
-  ||!story.includes('Une caméra enregistrait')
+  ||!story.includes('la table de Laurent B., le directeur financier. Une caméra enregistrait')
   ||!story.includes('Le client va payer. En attendant,')
   ||!story.includes('Quarante-huit heures pour réfléchir.')
   ||!story.includes('Le contrat a démarré. Il devrait rapporter moins que prévu.')
@@ -279,6 +282,39 @@ for(const page of editorialPages){
 // Les brouillons restent volontairement absents des routes publiques.
 // L'absence d'articles publiés est un état valide en préproduction.
 if(!articleCount)console.log('Aucun article public : les six contenus C1 restent en fabrication.');
+// Titres validés le 25 novembre : contrôler chaque H1, indépendamment des autres textes de la page.
+const industrieTitres=[
+  [
+    "media/articles/industrie/ind-c1-cst-01-brouillon/index.html",
+    "Les affaires marchaient si bien qu'il a fallu y mettre un terme"
+  ],
+  [
+    "media/articles/industrie/ind-c1-cst-02-brouillon/index.html",
+    "Le directeur accepte qu'on répare la machine. À condition de ne pas l'arrêter."
+  ],
+  [
+    "media/articles/industrie/ind-c1-cst-03-brouillon/index.html",
+    "Elle veut réduire les « facteurs humains » grâce aux robots. Puis l'IA débarque dans son bureau."
+  ],
+  [
+    "media/articles/industrie/ind-c1-cst-04-brouillon/index.html",
+    "Ils veulent embaucher trente ouvriers. Personne n'a le temps de les former."
+  ],
+  [
+    "media/articles/industrie/ind-c1-cst-05-brouillon/index.html",
+    "Ils ont signé le contrat du siècle. Reste à payer le métal."
+  ],
+  [
+    "media/articles/industrie/ind-c1-cst-regard-croise-01-brouillon/index.html",
+    "Pour produire davantage, il faut parfois commencer par faire moins."
+  ]
+];
+const decTitre=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&nbsp;/g,' ').replace(/&amp;/g,'&');
+for(const [route,title] of industrieTitres){
+ const h1=read(route).match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1]??'';
+ if(decTitre(h1.replace(/<[^>]*>/g,'')).replace(/\s+/g,' ').trim()!==title)errors.push('Titre Industrie non conforme : '+route);
+}
+
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
 console.log('Recette préproduction réussie : '+required.length+' chemins clés et '+articleCount+' articles ; indexation désactivée.');
 

@@ -21,7 +21,7 @@ tag_3: "Capacité de production"
 tag_4: "Arbitrage commercial"
 tag_5: "Rentabilité"
 source_notice: "Personnages, entreprise, localisation, dialogues, situations et données chiffrées inventés."
-methodology_specific: "Marc D. / Jean Toksic, Grand Entretien fictif. Source exclusive : variante populaire resserrée du 25 novembre 2026 (Google Drive 1f31gy-I1RrmFjBR_FHa0qKciv3wXvkBOPGzcmfh_hus). Procès-verbal littéraire, D1 et D2 : https://docs.google.com/document/d/1QdRxnBg5zAsX1tOjOBSH5I-tOzMzuRiVFXqbW_cLsu0/edit. Visa littéraire interne favorable ; D1 cohérence favorable ; D2 plausibilité économique et sociale favorable sous limites, sans certification contractuelle, comptable, juridique ou test de lecture externe. Les primes des nouvelles affaires ont été proposées puis validées par un accord quelques semaines plus tard, sans rétroactivité des primes acquises ; l'exigence juridique du consentement selon le contrat demeure sous hypothèse. Deux millions = commandes envisagées, 18 % = marge prévue, 80 000 euros = surcoûts constatés, jusqu'à 100 000 euros = pénalités ou frais possibles. Huit séparateurs éditoriaux composés en filets ; 274 répliques attribuées à Marc ou Jean ; 35 paragraphes non-dialogués, dont la signature Par Jean Toksic, reproduits fidèlement. Aucun bon à publier public ; autorisation de préproduction uniquement."
+methodology_specific: "Marc D. / Jean Toksic, Grand Entretien fictif. Source exclusive : variante populaire resserrée du 25 novembre 2026 (Google Drive 1f31gy-I1RrmFjBR_FHa0qKciv3wXvkBOPGzcmfh_hus). Procès-verbal littéraire, D1 et D2 : https://docs.google.com/document/d/1QdRxnBg5zAsX1tOjOBSH5I-tOzMzuRiVFXqbW_cLsu0/edit. Visa littéraire interne favorable ; D1 cohérence favorable ; D2 plausibilité économique et sociale favorable sous limites, sans certification contractuelle, comptable, juridique ou test de lecture externe. Les primes des nouvelles affaires ont été proposées puis validées par un accord quelques semaines plus tard, sans rétroactivité des primes acquises ; l'exigence juridique du consentement selon le contrat demeure sous hypothèse. Deux millions = commandes envisagées, 18 % = marge prévue, 80 000 euros = surcoûts constatés, jusqu'à 100 000 euros = pénalités ou frais possibles. Huit séparateurs éditoriaux composés en filets ; 274 répliques attribuées à Marc ou Jean ; 36 paragraphes non-dialogués, dont la signature Par Jean Toksic, reproduits fidèlement. Aucun bon à publier public ; autorisation de préproduction uniquement. Ajustement éditorial de préproduction du 25-11-2026, selon la passation utilisateur : Ajout de la présentation de Marc D. après la signature. Le document Drive reste la référence littéraire antérieure à cet ajustement."
 source_document_url: "https://docs.google.com/document/d/1f31gy-I1RrmFjBR_FHa0qKciv3wXvkBOPGzcmfh_hus/edit"
 source_document_version: "Variante populaire resserrée — Référence littéraire du 25-11-2026 — Visa favorable ; D1 favorable ; D2 favorable sous limites"
 validation_narrative: "marc_2026_11_25_visa_litteraire_favorable"
@@ -35,6 +35,8 @@ unite_programmation: "IND-C1-CST"
 ---
 
 Par Jean Toksic
+
+Entretien avec Marc D., directeur d'une usine de deux cents salariés.
 
 — Vous avez trouvé facilement ?
 

@@ -182,7 +182,7 @@ function laurentV25Fingerprint(text:string):string {
  for(let i=0;i<text.length;i++)h=Math.imul(h^text.charCodeAt(i),16777619)>>>0;
  return h.toString(16).padStart(8,'0');
 }
-const LAURENT_V25_MANUSCRIPT_FINGERPRINT="b93c1d47";
+const LAURENT_V25_MANUSCRIPT_FINGERPRINT="ebb70554";
 /**
  * Rendu statique complet. Toute modification, y compris une incise, un
  * changement de ponctuation ou une réplique, bloque le build jusqu'à

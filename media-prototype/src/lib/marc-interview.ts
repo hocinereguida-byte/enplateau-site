@@ -125,7 +125,7 @@ function marcV25Fingerprint(text:string):string {
  for(let i=0;i<text.length;i++)h=Math.imul(h^text.charCodeAt(i),16777619)>>>0;
  return h.toString(16).padStart(8,'0');
 }
-const MARC_V25_MANUSCRIPT_FINGERPRINT="a3ac0460";
+const MARC_V25_MANUSCRIPT_FINGERPRINT="eefb7014";
 /** Composition strictement visuelle, contrôlée sur l'intégralité du manuscrit.
  * Toute modification ultérieure, même d'une réplique intérieure ou d'une incise,
  * bloque le build jusqu'à relecture du texte et de sa distribution.
@@ -167,7 +167,7 @@ export function renderMarcNov25Interview(markdownBody:string):string {
   });
   html.push('</div>');
  }
- if(used.size!==28||turns!==274||paragraphs!==35||dividers!==8||bylines!==1){
+ if(used.size!==28||turns!==274||paragraphs!==36||dividers!==8||bylines!==1){
   throw new Error('Marc 25-11 : structure non conforme ('+used.size+' groupes, '+turns+' répliques, '+paragraphs+' paragraphes, '+dividers+' séparateurs, '+bylines+' signature)');
  }
  return html.join('\n');

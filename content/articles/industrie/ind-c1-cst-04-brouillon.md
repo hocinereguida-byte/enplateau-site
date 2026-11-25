@@ -1,8 +1,8 @@
 ---
-title: "Une usine veut recruter trente ouvriers. Tout le monde continue d'appeler Kevin."
+title: "Ils veulent embaucher trente ouvriers. Personne n'a le temps de les former."
 hero_image: "/images/ind-c1-cst-04-claire-kevin-visuel-v2.webp"
 image_alt: "Kevin, vu de dos, possède deux têtes orientées en sens opposés ; quatre ouvriers prennent des notes autour d’un poste de travail industriel."
-summary: "Claire M. aime quand tout est bien organisé. Kevin adore qu'on ait besoin de lui. Dans une usine qui cherche à embaucher trente ouvriers, les deux nouvelles que Kevin doit former vont découvrir à quel point ces qualités peuvent leur pourrir la vie."
+summary: "Claire M. aime quand tout est bien organisé. Kevin R. adore qu'on ait besoin de lui. Dans une usine qui cherche à embaucher trente ouvriers, les deux nouvelles que Kevin doit former vont découvrir à quel point ces qualités peuvent leur pourrir la vie."
 format: "chronique"
 cycle: "industrie"
 conversation: "C1"
@@ -20,7 +20,7 @@ tag_3: "Compétences industrielles"
 tag_4: "Montée en cadence"
 tag_5: "Transmission des savoir-faire"
 source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "Claire M. et Kevin R. V8.1 corrigée, manuscrit Google Drive validé le 25 novembre 2026 : https://docs.google.com/document/d/111zUwMrwFEbKW-RqA3sEKxa88Uj77U9W5RCJ7RO6284/edit. PV littéraire, D1, D2, singularité et matrice V2 : https://docs.google.com/document/d/1ynoytAtAz4KjZHLGr9g_lym2u-Hj-UyLNs8oZgQeZ9I/edit. Visa littéraire favorable, D1 favorable, D2 favorable sous limites et singularité Industrie C1 favorable. Matrice V2 : 97 conformes, 4 partiels, 5 non vérifiés, 6 non applicables ; évaluation littéraire interne 93/100. La V8.1 précise Claire M. dans le chapô, les quatre autres formateurs déjà affectés, et l'ouvrier compétent chargé du vendredi. 105 prises de parole dans 47 groupes, 153 paragraphes narratifs, cinq intertitres et cinq séparateurs de scène. Contrôle de concordance strict et attribution des personnages en HTML statique. L'intégration est limitée à la préproduction, aucune autorisation de publication publique. Les tests de lecteurs externes sont encore à réaliser."
+methodology_specific: "Claire M. et Kevin R. V8.1 corrigée, manuscrit Google Drive validé le 25 novembre 2026 : https://docs.google.com/document/d/111zUwMrwFEbKW-RqA3sEKxa88Uj77U9W5RCJ7RO6284/edit. PV littéraire, D1, D2, singularité et matrice V2 : https://docs.google.com/document/d/1ynoytAtAz4KjZHLGr9g_lym2u-Hj-UyLNs8oZgQeZ9I/edit. Visa littéraire favorable, D1 favorable, D2 favorable sous limites et singularité Industrie C1 favorable. Matrice V2 : 97 conformes, 4 partiels, 5 non vérifiés, 6 non applicables ; évaluation littéraire interne 93/100. La V8.1 précise Claire M. dans le chapô, les quatre autres formateurs déjà affectés, et l'ouvrier compétent chargé du vendredi. 105 prises de parole dans 47 groupes, 153 paragraphes narratifs, cinq intertitres et cinq séparateurs de scène. Contrôle de concordance strict et attribution des personnages en HTML statique. L'intégration est limitée à la préproduction, aucune autorisation de publication publique. Les tests de lecteurs externes sont encore à réaliser. Ajustement éditorial de préproduction du 25-11-2026, selon la passation utilisateur : Nouveau titre et première mention Kevin R. dans le chapô, Claire M. dans le corps. Le document Drive reste la référence littéraire antérieure à cet ajustement."
 source_document_url: "https://docs.google.com/document/d/111zUwMrwFEbKW-RqA3sEKxa88Uj77U9W5RCJ7RO6284/edit"
 source_document_version: "V8.1 corrigée — 25-11-2026 — Visa littéraire et D1 favorables ; D2 favorable sous limites"
 validation_narrative: "claire_kevin_v8_1_visa_litteraire_favorable_2026_11_25"
@@ -39,7 +39,7 @@ Kevin R. avait huit heures dans sa journée.
 
 Huit pour s'occuper des machines, huit pour former les nouveaux.
 
-Claire, la responsable des ressources humaines, avait fait son planning. Le chef d'atelier avait fait le sien. Les deux avaient été validés.
+Claire M., la responsable des ressources humaines, avait fait son planning. Le chef d'atelier avait fait le sien. Les deux avaient été validés.
 
 Personne n'avait remarqué qu'on avait réservé le même mec deux fois.
 
