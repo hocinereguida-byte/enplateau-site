@@ -61,34 +61,36 @@ if(trial){
  }
 }
 
-// Sophie V8.8 doit remplacer V8.7 à l'adresse historique, sans exposer de
-// métadonnées internes et sans changer l'article d'essai V8.7 hors catalogue.
+// Sophie V9.1a corrigée : manuscrit du 25 novembre, préproduction uniquement.
+// Vérifier le texte intégral, l'attribution statique des 136 répliques, et les 8 scènes.
 const sophieCanonicalRoute='media/articles/industrie/ind-c1-cst-02-brouillon/index.html';
 const sophieCanonical=read(sophieCanonicalRoute);
 if(sophieCanonical){
  const articleHtml=sophieCanonical.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-02-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
  const paragraphs=(articleHtml.match(/<p(?:\s|>)/g)||[]).length;
  const dividers=(articleHtml.match(/<hr\b/g)||[]).length;
- if(paragraphs!==147||dividers!==5)
-  errors.push('Sophie V8.8 canonique incomplète : '+paragraphs+' paragraphes, '+dividers+' séparateurs');
- // Vérifier la présentation COMPOSÉE dans le HTML servi par Astro, pas seulement
- // l'existence du texte source ou d'un script facultatif côté navigateur.
- const attributedGroups=(articleHtml.match(/data-dialogue-verified="sophie-v8-8"/g)||[]).length;
+ const attributedGroups=(articleHtml.match(/data-dialogue-verified="sophie-v9-1a"/g)||[]).length;
  const attributedTurns=(articleHtml.match(/class="fiction-dialogue-turn"/g)||[]).length;
  const speakerLabels=(articleHtml.match(/class="fiction-dialogue-speaker"/g)||[]).length;
- const rawDialogue=(articleHtml.match(/<p(?:\\s[^>]*)?>\\s*—/g)||[]).length;
- if(attributedGroups!==17||attributedTurns!==54||speakerLabels!==54||rawDialogue!==0)
-  errors.push('Sophie V8.8 : présentation des dialogues non conforme (groupes '+attributedGroups+', répliques '+attributedTurns+', noms '+speakerLabels+', répliques brutes '+rawDialogue+').');
- if(!articleHtml.includes('fiction-dialogue-speaker">Philippe')||!articleHtml.includes('fiction-dialogue-speaker">Malik')||!articleHtml.includes('fiction-dialogue-speaker">Sophie')||!articleHtml.includes('fiction-dialogue-speaker">Le client')||!articleHtml.includes('fiction-dialogue-speaker">Le commercial'))
-  errors.push('Sophie V8.8 : étiquettes de locuteurs incomplètes.');
- if(!sophieCanonical.includes('Une usine autorise la réparation')
-   ||!articleHtml.includes('Un client attend sa livraison jeudi')
-   ||!articleHtml.includes('Puis tend le document à Sophie'))
-  errors.push('Sophie V8.8 : titre, ouverture ou chute absents de la page canonique');
- if(articleHtml.includes('Statut : Sophie M.')||articleHtml.includes('V8.8 expérimentale'))
-  errors.push('Note interne V8.8 visible sur la page canonique');
+ const rawDialogue=(articleHtml.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
+ if(paragraphs!==269||dividers!==8||attributedGroups!==46||attributedTurns!==136||speakerLabels!==136||rawDialogue!==0)
+  errors.push('Sophie V9.1a : structure/rendu non conforme ('+paragraphs+' paragraphes, '+dividers+' séparateurs, '+attributedGroups+' groupes, '+attributedTurns+' répliques, '+speakerLabels+' attributions, '+rawDialogue+' dialogues bruts).');
+ for(const who of ['Philippe','Malik','Sophie','Un ouvrier','La comptable','Le commercial','Le client'])
+  if(!articleHtml.includes('fiction-dialogue-speaker">'+who))
+   errors.push('Sophie V9.1a : locuteur manquant « '+who+' ».');
+ if(!sophieCanonical.includes("Une usine autorise la réparation d")
+  ||!sophieCanonical.includes("Depuis trois semaines, une usine de pièces métalliques")
+  ||!articleHtml.includes("Lundi matin, Philippe D., directeur de l")
+  ||!articleHtml.includes("une pièce sur deux n")
+  ||!articleHtml.includes('Un euro cinquante.')
+  ||!articleHtml.includes("Puis tend le document à Sophie pour qu&#39;elle signe.")
+  ||!articleHtml.includes("Responsable des décisions : Philippe D.")
+  ||!articleHtml.includes("L&#39;équipe."))
+  errors.push('Sophie V9.1a : titre, chapô, faits économiques, responsabilités ou chute absents.');
+ if(articleHtml.includes('Statut : Sophie M.')||articleHtml.includes('V9.1a corrigée')||articleHtml.includes('GO préproduction'))
+  errors.push('Sophie V9.1a : note interne visible dans le récit.');
  if(!/name="robots"\s+content="noindex,nofollow"/.test(sophieCanonical))
-  errors.push('Sophie canonique indexable en préproduction');
+  errors.push('Sophie canonique indexable en préproduction.');
 }
 
 // Nathalie 18-11-2026 : présence du nouveau récit ET des dialogues déjà composés.

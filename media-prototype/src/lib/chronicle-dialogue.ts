@@ -405,3 +405,415 @@ export function renderClaireKevinV75Dialogue(markdownBody: string):string {
  }
  return output.join('\n');
 }
+
+/**
+ * Sophie M., V9.1a validée le 25 novembre 2026.
+ * Attribution manuelle de 136 répliques en 46 groupes. Aucun automatisme
+ * d'alternance : chacun conserve son personnage même après une incise.
+ * Empreinte calculée sur les 277 paragraphes/séparateurs exacts du manuscrit.
+ */
+const sophieV91a: readonly DialogueGroup[] = [
+  {
+    "opening": "Malik, vous pouvez réparer la machine sans l'arrêter ?",
+    "speakers": [
+      "Philippe",
+      "Malik",
+      "Philippe",
+      "Malik"
+    ]
+  },
+  {
+    "opening": "Il vous faut combien de temps, exactement ?",
+    "speakers": [
+      "Philippe",
+      "Malik",
+      "Philippe",
+      "Malik"
+    ]
+  },
+  {
+    "opening": "Six interventions de six heures, ça ferait trente-six heures.",
+    "speakers": [
+      "Philippe",
+      "Malik",
+      "Philippe",
+      "Malik"
+    ]
+  },
+  {
+    "opening": "Et trois fois douze heures ?",
+    "speakers": [
+      "Philippe"
+    ]
+  },
+  {
+    "opening": "Il va tous nous les faire ?",
+    "speakers": [
+      "Malik"
+    ]
+  },
+  {
+    "opening": "Si on démarre la réparation jeudi après le départ du camion ?",
+    "speakers": [
+      "Sophie",
+      "Malik",
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Prévenez-moi quand vous aurez choisi votre jeudi.",
+    "speakers": [
+      "Malik"
+    ]
+  },
+  {
+    "opening": "Pourquoi vous en faites moins ?",
+    "speakers": [
+      "Sophie",
+      "Un ouvrier",
+      "Sophie",
+      "Un ouvrier",
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Vous en êtes à combien ?",
+    "speakers": [
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Celles-là, elles sont bonnes ?",
+    "speakers": [
+      "Sophie",
+      "Un ouvrier",
+      "Sophie",
+      "Un ouvrier",
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Vous avez gagné du temps ?",
+    "speakers": [
+      "Philippe",
+      "Sophie",
+      "Philippe",
+      "Sophie",
+      "Philippe"
+    ]
+  },
+  {
+    "opening": "Attendez, on voit toutes les pièces ratées.",
+    "speakers": [
+      "Philippe",
+      "Sophie",
+      "Philippe"
+    ]
+  },
+  {
+    "opening": "Vous voulez que je vous installe une deuxième benne ? On pourrait doubler les résultats.",
+    "speakers": [
+      "Malik",
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "T'en as combien de bonnes ?",
+    "speakers": [
+      "Sophie",
+      "Un ouvrier",
+      "Sophie",
+      "Un ouvrier",
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Tu veux que je réponde ?",
+    "speakers": [
+      "Un ouvrier",
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Il ne faudrait pas que les problèmes de qualité nous empêchent de voir les résultats de production, explique Philippe.",
+    "speakers": [
+      "Philippe",
+      "Sophie",
+      "Philippe",
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Il faut d'abord qu'on mesure les conséquences de l'arrêt, répond Philippe.",
+    "speakers": [
+      "Philippe",
+      "Malik",
+      "Philippe"
+    ]
+  },
+  {
+    "opening": "Attendez jeudi. Après, je vous la laisse.",
+    "speakers": [
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Tu me la laisses dans quel état ?",
+    "speakers": [
+      "Malik"
+    ]
+  },
+  {
+    "opening": "C'est pas possible. Refaites les contrôles.",
+    "speakers": [
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Vous avez utilisé le même appareil ?",
+    "speakers": [
+      "Sophie",
+      "Un ouvrier",
+      "Sophie",
+      "Un ouvrier"
+    ]
+  },
+  {
+    "opening": "Vous pensez pouvoir en sortir combien d'ici jeudi ?",
+    "speakers": [
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Même en tournant sans arrêt ?",
+    "speakers": [
+      "Sophie",
+      "Un ouvrier",
+      "Sophie",
+      "Un ouvrier"
+    ]
+  },
+  {
+    "opening": "Tu veux qu'on continue ?",
+    "speakers": [
+      "Un ouvrier"
+    ]
+  },
+  {
+    "opening": "Attends.",
+    "speakers": [
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Tu peux toujours la réparer en trente-six heures ?",
+    "speakers": [
+      "Sophie",
+      "Malik",
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Maintenant ?",
+    "speakers": [
+      "Malik",
+      "Sophie",
+      "Malik",
+      "Sophie",
+      "Malik",
+      "Sophie",
+      "Malik",
+      "Sophie",
+      "Malik"
+    ]
+  },
+  {
+    "opening": "Ça fait trois semaines que tu me casses les couilles pour réparer cette machine.",
+    "speakers": [
+      "Sophie",
+      "Malik"
+    ]
+  },
+  {
+    "opening": "C'est bon ? demande Sophie.",
+    "speakers": [
+      "Sophie",
+      "Malik",
+      "Sophie",
+      "Malik"
+    ]
+  },
+  {
+    "opening": "Qui a décidé ça ?",
+    "speakers": [
+      "Philippe",
+      "Sophie",
+      "Philippe",
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "J'avais coupé la sonnerie.",
+    "speakers": [
+      "Philippe",
+      "Sophie",
+      "Philippe"
+    ]
+  },
+  {
+    "opening": "Philippe, ça va me prendre un temps fou de ressortir tout ça.",
+    "speakers": [
+      "La comptable",
+      "Philippe",
+      "La comptable",
+      "Philippe"
+    ]
+  },
+  {
+    "opening": "Vous avez récupéré combien ? demande Sophie.",
+    "speakers": [
+      "Sophie",
+      "Philippe",
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Vous savez ce que représente ce client pour nous ?",
+    "speakers": [
+      "Philippe",
+      "Sophie",
+      "Philippe",
+      "Sophie",
+      "Philippe"
+    ]
+  },
+  {
+    "opening": "On ne pourra pas livrer jeudi ?",
+    "speakers": [
+      "Philippe",
+      "Sophie",
+      "Philippe",
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Putain...",
+    "speakers": [
+      "Philippe"
+    ]
+  },
+  {
+    "opening": "Sur le fond, je comprends votre décision.",
+    "speakers": [
+      "Philippe",
+      "Sophie",
+      "Philippe"
+    ]
+  },
+  {
+    "opening": "Lui aussi. Il est en train de le régler.",
+    "speakers": [
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Nous avons décidé de prendre des mesures exceptionnelles pour sécuriser la qualité de votre commande.",
+    "speakers": [
+      "Le commercial",
+      "Le client",
+      "Le commercial",
+      "Le client",
+      "Le commercial",
+      "Le client"
+    ]
+  },
+  {
+    "opening": "Ce que je peux vous assurer, c'est que nos équipes sont pleinement mobilisées.",
+    "speakers": [
+      "Le commercial",
+      "Le client"
+    ]
+  },
+  {
+    "opening": "Je pourrai avoir le reste de ma commande quand ?",
+    "speakers": [
+      "Le client",
+      "Le commercial",
+      "Le client",
+      "Le commercial",
+      "Le client"
+    ]
+  },
+  {
+    "opening": "C'est bon ?",
+    "speakers": [
+      "Sophie",
+      "Malik",
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Attends, je vais refaire les contrôles.",
+    "speakers": [
+      "Malik",
+      "Sophie"
+    ]
+  },
+  {
+    "opening": "Je crois qu'on a tous démontré notre capacité à prendre des décisions difficiles.",
+    "speakers": [
+      "Philippe"
+    ]
+  },
+  {
+    "opening": "Moi, ça fait trois semaines que je demandais qu'on l'arrête.",
+    "speakers": [
+      "Malik",
+      "Philippe"
+    ]
+  },
+  {
+    "opening": "Qu'est-ce qu'il y a ? lui demande Philippe.",
+    "speakers": [
+      "Philippe",
+      "Sophie"
+    ]
+  }
+];
+function sophieV91aFingerprint(s:string):string {
+ let h=2166136261>>>0;
+ for(let i=0;i<s.length;i++)h=Math.imul(h^s.charCodeAt(i),16777619)>>>0;
+ return h.toString(16).padStart(8,'0');
+}
+const SOPHIE_V91A_FINGERPRINT="97f70b30";
+export function renderSophieV91aDialogue(markdownBody:string):string {
+ if(typeof markdownBody!=='string'||!markdownBody.includes('Lundi matin, Philippe D.')||!markdownBody.includes("Puis tend le document à Sophie pour qu'elle signe."))throw new Error('Sophie V9.1a : manuscrit inattendu');
+ const blocks=markdownBody.replace(/\r\n/g,'\n').trim().split(/\n[ \t]*\n+/).map(x=>x.trim()).filter(Boolean);
+ if(sophieV91aFingerprint(blocks.join('\n\n'))!==SOPHIE_V91A_FINGERPRINT)throw new Error('Sophie V9.1a : intégrité du manuscrit non concordante avec Drive — contrôle manuel requis');
+ const isTurn=(x:string)=>/^—[ \t]+/.test(x);
+ const result:string[]=[],used=new Set<string>();
+ let turns=0,narrative=0,dividers=0;
+ for(let i=0;i<blocks.length;){
+  const line=blocks[i];
+  if(line==='***'){result.push('<hr aria-hidden="true"/>');dividers++;i++;continue;}
+  if(/^#{1,6} /.test(line)||line==='---')throw new Error('Sophie V9.1a : séparateur inattendu');
+  if(!isTurn(line)){result.push('<p>'+escapeHtml(line)+'</p>');narrative++;i++;continue;}
+  const group:string[]=[];
+  while(i<blocks.length&&isTurn(blocks[i]))group.push(blocks[i++]);
+  const first=group[0].replace(/^—[ \t]*/,'');
+  const candidates=sophieV91a.filter(x=>x.opening===first);
+  if(candidates.length!==1||used.has(candidates[0]?.opening))throw new Error('Sophie V9.1a : groupe non attribué « '+first.slice(0,72)+' »');
+  const spec=candidates[0];
+  if(group.length!==spec.speakers.length)throw new Error('Sophie V9.1a : taille de groupe modifiée « '+first.slice(0,72)+' »');
+  used.add(spec.opening);
+  result.push('<div class="fiction-dialogue" role="group" aria-label="Dialogue" data-dialogue-verified="sophie-v9-1a">');
+  group.forEach((p,j)=>{
+   const words=p.replace(/^—[ \t]*/,'');
+   result.push('<div class="fiction-dialogue-turn"><span class="fiction-dialogue-speaker">'+escapeHtml(spec.speakers[j])+'</span><p class="fiction-dialogue-line">'+escapeHtml(words)+'</p></div>');
+   turns++;
+  });
+  result.push('</div>');
+ }
+ if(used.size!==46||turns!==136||narrative!==133||dividers!==8)throw new Error('Sophie V9.1a : structure modifiée ('+used.size+' groupes, '+turns+' répliques, '+narrative+' narratifs, '+dividers+' séparateurs)');
+ return result.join('\n');
+}
