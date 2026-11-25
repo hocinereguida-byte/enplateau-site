@@ -177,7 +177,7 @@ if(marcHtml){
   ||!story.includes('Par Jean Toksic')
   ||!story.includes('Je vous passe les détails techniques')
   ||!story.includes('Pour les nouvelles affaires, on a revu les prix')
-  ||!story.includes('on avait fini par trouver un accord sur le nouveau calcul des primes')
+  ||!story.includes('les commerciaux avaient fini par trouver un accord sur le nouveau calcul des primes')
   ||!story.includes('80 000 euros de surcoûts constatés')
   ||!story.includes('100 000 euros de pénalités et de frais possibles')
   ||!story.includes('Il reste du café ?')
