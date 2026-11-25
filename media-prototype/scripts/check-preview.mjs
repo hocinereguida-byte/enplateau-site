@@ -357,6 +357,26 @@ for(const [route,title] of industrieTitres){
  if(fs.existsSync(path.join(root,'media/articles/immobilier/imm-c1-rc-03-nathalie/index.html')))errors.push('Audrey : ancienne route encore générée.');
 }
 
+// Caserne V6.2 : concordance intégrale, dialogue statique et navigation.
+{
+ const slug='imm-c1-rc-05-caserne',href='/media/articles/immobilier/'+slug+'/';
+ const html=read('media/articles/immobilier/'+slug+'/index.html');
+ const source=fs.readFileSync(path.resolve('../content/articles/immobilier/'+slug+'.md'),'utf8');
+ const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
+ const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
+ const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+ const story=html.match(/<article\b[^>]*data-article-id="immobilier\/imm-c1-rc-05-caserne"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const rendered=[...story.matchAll(/<(p|h2)\b([^>]*)>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':'')+decode(m[3].replace(/<[^>]*>/g,'')));
+ const expected=front[2].trim().split(/\n\n/);
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||expected.length!==150||expected.filter(s=>s.startsWith('## ')).length!==5||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==67)errors.push('Caserne V6.2 : texte intégral ou dialogues non concordants.');
+ const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'';
+ const lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!html.includes('/media/lectures/territoires-politiques-publiques/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/'))errors.push('Caserne V6.2 : titre, chapô, fiction ou classement non conforme.');
+ for(const page of ['media/publications/index.html','media/cycles/immobilier/index.html','media/cycles/immobilier/conversations/C1/index.html','media/scenes/index.html','media/lectures/territoires-politiques-publiques/index.html']){
+  if(!read(page).includes(href))errors.push('Caserne V6.2 : navigation incorrecte : '+page);
+ }
+}
+
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
 console.log('Recette préproduction réussie : '+required.length+' chemins clés et '+articleCount+' articles ; indexation désactivée.');
 

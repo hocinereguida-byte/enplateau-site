@@ -6,6 +6,7 @@ import { renderMarcNov25Interview } from '../../../lib/marc-interview';
 import { renderLaurentNov25Interview } from '../../../lib/laurent-interview';
 import { renderAlainV43Interview } from '../../../lib/alain-interview';
 import { renderPatrickV64Chronique } from '../../../lib/patrick-chronique';
+import { renderCaserneV62Chronique } from '../../../lib/caserne-chronique';
 import { renderSophieV91aDialogue, renderNathalieNov25Dialogue, renderClaireKevinV81Dialogue } from '../../../lib/chronicle-dialogue';
 import MediaFooter from '../../../components/MediaFooter.astro'
 import MediaHeader from '../../../components/MediaHeader.astro';;
@@ -25,7 +26,7 @@ const verifiedDialogueHtml=article.id==='industrie/ind-c1-cst-01-brouillon'
  ? renderSophieV91aDialogue(article.body)
  : article.id==='industrie/ind-c1-cst-03-brouillon' ? renderNathalieNov25Dialogue(article.body)
  : article.id==='industrie/ind-c1-cst-04-brouillon' ? renderClaireKevinV81Dialogue(article.body)
- : article.id==='industrie/ind-c1-cst-05-brouillon' ? renderLaurentNov25Interview(article.body) : article.id==='immobilier/imm-c1-rc-06-alain' ? renderAlainV43Interview(article.body) : article.id==='immobilier/imm-c1-rc-07-patrick' ? renderPatrickV64Chronique(article.body) : null;
+ : article.id==='industrie/ind-c1-cst-05-brouillon' ? renderLaurentNov25Interview(article.body) : article.id==='immobilier/imm-c1-rc-06-alain' ? renderAlainV43Interview(article.body) : article.id==='immobilier/imm-c1-rc-07-patrick' ? renderPatrickV64Chronique(article.body) : article.id==='immobilier/imm-c1-rc-05-caserne' ? renderCaserneV62Chronique(article.body) : null;
 const classification=conversations[d.cycle]?.[d.conversation] ?? d.conversation;
 const context=publicContextLabel(d.cycle,d.contexte);
 const perspectiveCode=perspectiveOf(d);

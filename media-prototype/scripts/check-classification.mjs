@@ -30,6 +30,7 @@ const records = [
   "immobilier/imm-c1-rc-02-thomas.md|IMM-C1-RC-02|immobilier|Variante F — Finition resserrée — 17-11-2026 — Non validée|operations-organisation|IMM-C1-RC||territoire-reconversion|chronique|chronique|179OfdW2MK_1zrBYi91s_hkeqhpjrSY9cvU2JKL00XTw",
   "immobilier/imm-c1-rc-07-patrick.md|IMM-C1-RC-07|immobilier|V6.4|strategie-gouvernance|IMM-C1-RC||territoire-reconversion|chronique|chronique|1mQPiKvabRRjA9fGexNcGroa_LDHck_4REjK_ooqh2kc",
   "immobilier/imm-c1-rc-04-karim.md|IMM-C1-RC-04|immobilier|V6.2|droit-regulation|IMM-C1-RC||territoire-reconversion|chronique|chronique|1oLB9VVh-iLdV5O19zTNCOO-vSFAgwp-nnnl28qb9fck",
+  "immobilier/imm-c1-rc-05-caserne.md|IMM-C1-RC-05|immobilier|V6.2|territoires-politiques-publiques|IMM-C1-RC||territoire-reconversion|chronique|chronique|1RERqM4ntLHH_lMSZarDzR_eqr2LwGDea",
   "immobilier/imm-c1-rc-regard-01.md|IMM-C1-RC-REGARD-01|immobilier|V2.4||IMM-C1-RC||territoire-reconversion|regard-croise||1R1L4TWX5XasFxNfIh0yLAHuNKchMEy5Sh39_g0EDOjo",
   "agriculture/agr-c1-a02-chronique-vergers.md|AGR-C1-A02|agriculture|V4.5|strategie-gouvernance|AGR-C1-A|engagement-productif-longue-duree|arboriculture-sous-revue-strategique|chronique|chronique|1l75XgAOrlllaRdH_BRrv-xtV2w0WDsPQ_cT628wJsSw",
   "agriculture/agr-c1-b01-maraichage.md|AGR-C1-B01|agriculture|V3|strategie-gouvernance|AGR-C1-B|debouches-variables|maraichage-debouches-concurrents|entretien|grand-entretien|1NRJHKCKFijkOKC4KDpYtbTFI4RdxB9fNpUbzi6vFdpg",
@@ -67,8 +68,8 @@ for (const r of records) {
   for (const [key,value] of Object.entries(tests)) if (d[key] !== value) errors.push(r.code+' : '+key+' attendu '+JSON.stringify(value)+', trouvé '+JSON.stringify(d[key]));
   if (r.code === 'IMM-C1-RC-04' && d.title !== 'Immobilier : dix-sept pages pour rendre possible un quartier qui n’existait plus.') errors.push('Titre de Karim V6.2 différent du titre validé');
   if (d.published !== true) errors.push(r.code+' : consultation préproduction désactivée');
-  if (r.driveId && !d.source_document_url?.includes('/document/d/'+r.driveId+'/')) {
-    const actualDriveId = d.source_document_url?.match(/\/document\/d\/([^/]+)/)?.[1] ?? '(absent ou URL invalide)';
+  const actualDriveId = d.source_document_url?.match(/^https:\/\/(?:docs\.google\.com\/document|drive\.google\.com\/file)\/d\/([A-Za-z0-9_-]+)(?:\/|$)/)?.[1] ?? '(absent ou URL invalide)';
+  if (r.driveId && actualDriveId !== r.driveId) {
     errors.push(r.code+' : URL Drive ne correspond pas à la version verrouillée'
       +'\n   Version : '+r.version+' ; registre Drive ID : '+r.driveId+' ; Markdown Drive ID : '+actualDriveId
       +'\n   Action : vérifier la version de référence puis synchroniser source_document_version, source_document_url ET le registre check-classification.mjs avant le commit.');
