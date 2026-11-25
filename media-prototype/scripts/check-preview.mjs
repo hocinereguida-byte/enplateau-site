@@ -192,6 +192,40 @@ if(marcHtml){
   errors.push('Marc 25-11 : article indexable en préproduction.');
 }
 
+// Laurent B. / Jean Toksic : Grand Entretien du 25 novembre 2026.
+// Vérifier le texte versionné, le HTML précomposé et les 207 répliques attribuées.
+const laurentRoute='media/articles/industrie/ind-c1-cst-05-brouillon/index.html';
+const laurentHtml=read(laurentRoute);
+if(laurentHtml){
+ const story=laurentHtml.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-05-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const paragraphs=(story.match(/<p(?:\s|>)/g)||[]).length;
+ const headings=(story.match(/<h2(?:\s|>)/g)||[]).length;
+ const dividers=(story.match(/<hr\b/g)||[]).length;
+ const groups=(story.match(/data-interview-verified="laurent-2026-11-25"/g)||[]).length;
+ const turns=(story.match(/class="interview-turn interview-(?:question|answer)"/g)||[]).length;
+ const labels=(story.match(/class="interview-speaker"/g)||[]).length;
+ const jean=(story.match(/class="interview-turn interview-question"/g)||[]).length;
+ const laurent=(story.match(/class="interview-turn interview-answer"/g)||[]).length;
+ const raw=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
+ if(paragraphs!==56||headings!==5||dividers!==5||groups!==42||turns!==207||labels!==207||jean!==107||laurent!==100||raw!==0)
+  errors.push('Laurent 25-11 : structure non conforme ('+paragraphs+' narratifs, '+headings+' intertitres, '+dividers+' séparateurs, '+groups+' groupes, '+turns+' répliques, '+labels+' labels, '+jean+'/'+laurent+' voix, '+raw+' dialogues bruts).');
+ if(!laurentHtml.includes('contrat du siècle. Son directeur financier demande qui va payer le métal.')
+  ||!laurentHtml.includes('Deux cents salariés, trois cents tonnes de métal')
+  ||!story.includes('Une caméra enregistrait')
+  ||!story.includes('Le client va payer. En attendant,')
+  ||!story.includes('Quarante-huit heures pour réfléchir.')
+  ||!story.includes('Le contrat a démarré. Il devrait rapporter moins que prévu.')
+  ||!story.includes('Vous avez compris quelque chose')
+  ||!story.includes('Jean baissa lentement son verre.')
+  ||!story.includes('interview-speaker">Jean Toksic')
+  ||!story.includes('interview-speaker">Laurent B.'))
+  errors.push('Laurent 25-11 : titre, chapô, interviews filmées, arbitrage, dialogue et chute non concordants.');
+ if(story.includes('V finale corrigée')||story.includes('GO préproduction')||story.includes('D2 favorable sous limites'))
+  errors.push('Laurent 25-11 : métadonnées internes affichées dans le récit.');
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(laurentHtml))
+  errors.push('Laurent 25-11 : article indexable en préproduction.');
+}
+
 // Thomas : la variante F doit être servie à l'adresse historique, hors changement d'URL.
 const thomasRoute='media/articles/immobilier/imm-c1-rc-02-thomas/index.html';
 const thomas=read(thomasRoute);
