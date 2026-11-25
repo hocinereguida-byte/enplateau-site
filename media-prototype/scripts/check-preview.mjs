@@ -93,37 +93,40 @@ if(sophieCanonical){
   errors.push('Sophie canonique indexable en préproduction.');
 }
 
-// Nathalie 18-11-2026 : présence du nouveau récit ET des dialogues déjà composés.
-// Le HTML statique doit être lisible sans dépendre d'un script navigateur.
+// Nathalie B. : manuscrit corrigé du 25 novembre, composition statique des dialogues.
+// Le contrôle porte sur les 128 paragraphes narratifs, 118 répliques, 6 scènes et 6 intertitres.
 const nathalieRoute='media/articles/industrie/ind-c1-cst-03-brouillon/index.html';
 const nathalieHtml=read(nathalieRoute);
 if(nathalieHtml){
  const story=nathalieHtml.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-03-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
  const paragraphs=(story.match(/<p(?:\s|>)/g)||[]).length;
  const headings=(story.match(/<h2(?:\s|>)/g)||[]).length;
- const groups=(story.match(/data-dialogue-verified="nathalie-2026-11-18"/g)||[]).length;
+ const dividers=(story.match(/<hr\b/g)||[]).length;
+ const groups=(story.match(/data-dialogue-verified="nathalie-2026-11-25"/g)||[]).length;
  const turns=(story.match(/class="fiction-dialogue-turn"/g)||[]).length;
- const speakers=(story.match(/class="fiction-dialogue-speaker"/g)||[]).length;
- const rawTurns=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
- if(paragraphs!==91||headings!==4||groups!==16||turns!==46||speakers!==46||rawTurns!==0)
-  errors.push('Nathalie : mise en page non conforme ('+paragraphs+' paragraphes, '+headings+' intertitres, '+groups+' dialogues, '+turns+' prises de parole, '+speakers+' locuteurs, '+rawTurns+' répliques non composées).');
+ const labels=(story.match(/class="fiction-dialogue-speaker"/g)||[]).length;
+ const raw=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
+ if(paragraphs!==246||headings!==6||dividers!==6||groups!==41||turns!==118||labels!==118||raw!==0)
+  errors.push('Nathalie 25-11 : rendu non conforme ('+paragraphs+' paragraphes, '+headings+' intertitres, '+dividers+' scènes, '+groups+' dialogues, '+turns+' prises de parole, '+labels+' locuteurs, '+raw+' répliques brutes).');
  if(!nathalieHtml.includes('Une usine veut réduire les')
-   ||!nathalieHtml.includes("L'IA arrive aussi dans les bureaux")
-   ||!nathalieHtml.includes('Dans une usine confrontée aux retards de livraison')
-   ||!nathalieHtml.includes("L'arrivée d'un prestataire en intelligence artificielle")
-   ||!story.includes('Coût du projet complet')
-   ||!story.includes('opérations humaines et robotisées')
-   ||!story.includes('Nathalie lui demanda laquelle elle devait signer'))
-  errors.push('Nathalie : titre, périmètre de ligne ou chute absents.');
- if(!story.includes('fiction-dialogue-speaker">Mina')||
-    !story.includes('fiction-dialogue-speaker">Vincent')||
-    !story.includes('fiction-dialogue-speaker">Nathalie')||
-    !story.includes('fiction-dialogue-speaker">Le consultant'))
-  errors.push('Nathalie : attribution nominative des dialogues incomplète.');
- if(story.includes('Version expérimentale resserrée · Non validée'))
-  errors.push('Nathalie : consigne interne exposée au lecteur.');
+  ||!nathalieHtml.includes('Dans une usine où certaines commandes ont jusqu')
+  ||!story.includes('Nathalie B. travaille dans')
+  ||!story.includes("Trois millions d&#39;euros pour arriver plus tôt dans la queue")
+  ||!story.includes("Mina apprend son boulot au robot qui pourrait lui prendre sa place")
+  ||!story.includes("À la rédaction, on a compris assez vite le problème.")
+  ||!story.includes("sans noms, chiffres ni informations confidentielles de l&#39;entreprise")
+  ||!story.includes("Vingt secondes par pièce.")
+  ||!story.includes("Une vingtaine de minutes.")
+  ||!story.includes("ChatGPT lui propose trois versions.")
+  ||!story.includes("Nathalie lui demande laquelle elle doit signer."))
+  errors.push('Nathalie 25-11 : titre, chapô, corrections, vingt secondes/minutes ou chute absents.');
+ for(const who of ['Nathalie','Vincent','Mina','Le consultant','Une ouvrière',"L&#39;ingénieur",'Un responsable'])
+  if(!story.includes('fiction-dialogue-speaker">'+who))
+   errors.push('Nathalie 25-11 : interlocuteur manquant « '+who+' ».');
+ if(story.includes('GO préproduction')||story.includes('Version populaire corrigée')||story.includes('D1 favorable'))
+  errors.push('Nathalie 25-11 : mentions internes visibles.');
  if(!/name="robots"\s+content="noindex,nofollow"/.test(nathalieHtml))
-  errors.push('Nathalie : article indexable en préproduction.');
+  errors.push('Nathalie 25-11 : article indexable en préproduction.');
 }
 
 // Claire et Kevin V8.1, texte du 25 novembre : contrôles du HTML réellement composé.
