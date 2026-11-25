@@ -200,14 +200,15 @@ if(laurentHtml){
  const story=laurentHtml.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-05-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
  const paragraphs=(story.match(/<p(?:\s|>)/g)||[]).length;
  const headings=(story.match(/<h2(?:\s|>)/g)||[]).length;
+ const dividers=(story.match(/<hr\b/g)||[]).length;
  const groups=(story.match(/data-interview-verified="laurent-2026-11-25"/g)||[]).length;
  const turns=(story.match(/class="interview-turn interview-(?:question|answer)"/g)||[]).length;
  const labels=(story.match(/class="interview-speaker"/g)||[]).length;
  const jean=(story.match(/class="interview-turn interview-question"/g)||[]).length;
  const laurent=(story.match(/class="interview-turn interview-answer"/g)||[]).length;
  const raw=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
- if(paragraphs!==61||headings!==5||groups!==42||turns!==207||labels!==207||jean!==107||laurent!==100||raw!==0)
-  errors.push('Laurent 25-11 : structure non conforme ('+paragraphs+' narratifs, '+headings+' intertitres, '+groups+' groupes, '+turns+' répliques, '+labels+' labels, '+jean+'/'+laurent+' voix, '+raw+' dialogues bruts).');
+ if(paragraphs!==56||headings!==5||dividers!==5||groups!==42||turns!==207||labels!==207||jean!==107||laurent!==100||raw!==0)
+  errors.push('Laurent 25-11 : structure non conforme ('+paragraphs+' narratifs, '+headings+' intertitres, '+dividers+' séparateurs, '+groups+' groupes, '+turns+' répliques, '+labels+' labels, '+jean+'/'+laurent+' voix, '+raw+' dialogues bruts).');
  if(!laurentHtml.includes('contrat du siècle. Son directeur financier demande qui va payer le métal.')
   ||!laurentHtml.includes('Deux cents salariés, trois cents tonnes de métal')
   ||!story.includes('Une caméra enregistrait')
