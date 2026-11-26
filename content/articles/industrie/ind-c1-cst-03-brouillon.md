@@ -33,6 +33,8 @@ unite_programmation: "IND-C1-CST"
 perspective_principale: "technologie-innovation"
 signature_auteur: "Lola Genzed"
 validation_document_url: "https://docs.google.com/document/d/1fWC694dMaIc2y80OQgR0kUmPPuak6d2o7fNpcDW4v3c/edit"
+seo:
+  image_alt: "Un bras robotisé industriel sophistiqué manipule un simple pied de table en bois, sans visage ni texte ajouté."
 ---
 
 Par Lola Genzed

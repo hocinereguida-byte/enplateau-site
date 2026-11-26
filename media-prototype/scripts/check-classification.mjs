@@ -28,7 +28,7 @@ const records = [
   "industrie/ind-c1-cst-regard-croise-01-brouillon.md|IND-C1-CST-RC-01|industrie|V3.2||IND-C1-CST||CST|regard-croise||1VNTWk4QeKWnF4QD55vMR9JQ7hxAuOm4eFDk3wSelHjY",
   "immobilier/imm-c1-rc-06-alain.md|IMM-C1-RC-06|immobilier|V4.3|finance-investissement|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1LNGR5WNM6Y6-eZJUdkBCQEyScm_gkUfDIWbq_EH1yDI",
   "immobilier/imm-c1-rc-02-thomas.md|IMM-C1-RC-02|immobilier|Variante F — Finition resserrée — 17-11-2026 — Non validée|operations-organisation|IMM-C1-RC||territoire-reconversion|chronique|chronique|179OfdW2MK_1zrBYi91s_hkeqhpjrSY9cvU2JKL00XTw",
-  "immobilier/imm-c1-rc-07-patrick.md|IMM-C1-RC-07|immobilier|V6.4|strategie-gouvernance|IMM-C1-RC||territoire-reconversion|chronique|chronique|1mQPiKvabRRjA9fGexNcGroa_LDHck_4REjK_ooqh2kc",
+  "immobilier/imm-c1-rc-07-patrick.md|IMM-C1-RC-07|immobilier|V9.1|strategie-gouvernance|IMM-C1-RC||territoire-reconversion|chronique|chronique|11JN-x7psy9LTuKZRHH8bweGrBpBSywf_z-ldGa-5BwQ",
   "immobilier/imm-c1-rc-04-karim.md|IMM-C1-RC-04|immobilier|V6.2|droit-regulation|IMM-C1-RC||territoire-reconversion|chronique|chronique|1oLB9VVh-iLdV5O19zTNCOO-vSFAgwp-nnnl28qb9fck",
   "immobilier/imm-c1-rc-05-caserne.md|IMM-C1-RC-05|immobilier|V6.2|territoires-politiques-publiques|IMM-C1-RC||territoire-reconversion|chronique|chronique|1RERqM4ntLHH_lMSZarDzR_eqr2LwGDea",
   "immobilier/imm-c1-rc-regard-01.md|IMM-C1-RC-REGARD-01|immobilier|V2.4||IMM-C1-RC||territoire-reconversion|regard-croise||1R1L4TWX5XasFxNfIh0yLAHuNKchMEy5Sh39_g0EDOjo",

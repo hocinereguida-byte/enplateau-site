@@ -321,7 +321,7 @@ for(const [route,title] of industrieTitres){
  if(fs.existsSync(path.join(root,'media/articles/immobilier/imm-c1-rc-01-isabelle/index.html')))errors.push('Isabelle : ancienne route encore générée.');
 }
 
-// Patrick V6.4 : concordance intégrale et retrait de l'ancien article de stratégie.
+// Patrick Lola V9.1 : concordance intégrale et retrait de l'ancien article de stratégie.
 {
  const slug='imm-c1-rc-07-patrick',href='/media/articles/immobilier/'+slug+'/',oldHref='/media/articles/immobilier/imm-c1-rc-03-nathalie/';
  const html=read('media/articles/immobilier/'+slug+'/index.html');
@@ -332,10 +332,11 @@ for(const [route,title] of industrieTitres){
  const story=html.match(/<article\b[^>]*data-article-id="immobilier\/imm-c1-rc-07-patrick"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
  const rendered=[...story.matchAll(/<(p|h2)\b[^>]*>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':'')+decode(m[2].replace(/<[^>]*>/g,'')));
  const expected=front[2].trim().split(/\n\n/);
- if(JSON.stringify(rendered)!==JSON.stringify(expected)||expected.filter(s=>s.startsWith('## ')).length!==4||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==11)errors.push('Patrick V6.4 : texte intégral ou dialogues non concordants.');
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||expected.filter(s=>s.startsWith('## ')).length!==4||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==12||field('title').length+field('summary').length+expected.filter(s=>s!=='Par Lola Genzed').map(s=>s.replace(/^## /,'')).join('').length!==11608||expected.at(-1)!=='— Eh ben, Patrick. Vous avez réussi à les faire travailler ensemble.'||!story.includes('Par Lola Genzed'))errors.push('Patrick Lola V9.1 : texte intégral ou dialogues non concordants.');
  const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'';
  const lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
- if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!html.includes('/media/lectures/strategie-gouvernance/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/'))errors.push('Patrick V6.4 : titre, chapô, fiction ou classement non conforme.');
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!html.includes('/media/lectures/strategie-gouvernance/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/'))errors.push('Patrick Lola V9.1 : titre, chapô, fiction ou classement non conforme.');
+ for(const name of ["Patrick Delaplace","Céline Lafrite","François Chouze","Sandrine Belmèche","Rachid El Snoub","Émilie Carré"])if(!decode(html).includes(name))errors.push('Patrick Lola V9.1 : personnage manquant '+name);
  for(const page of ['media/publications/index.html','media/cycles/immobilier/index.html','media/cycles/immobilier/conversations/C1/index.html','media/scenes/index.html','media/lectures/strategie-gouvernance/index.html']){
   const pageHtml=read(page);if(!pageHtml.includes(href)||pageHtml.includes(oldHref))errors.push('Patrick/Audrey : navigation incorrecte : '+page);
  }
