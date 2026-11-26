@@ -1,6 +1,6 @@
 ---
-title: "Dans les Vosges, huit ateliers étaient à vendre avant qu'on sache où mettre les portes"
-summary: "Dans une ancienne usine des Vosges, huit ateliers attendent leurs futurs propriétaires. Sur la brochure, les artisans travaillent déjà. Dans le bâtiment, Thomas L. cherche encore où faire passer leurs machines."
+title: "Un promoteur veut construire vingt logements. Il commence à négocier avec le bâtiment."
+summary: "Bernard Daiterre a trouvé 1 200 mètres carrés de bureaux pour 350 000 euros. Son architecte ne veut pas perdre un mètre carré. Son directeur de travaux ne veut pas perdre un euro. Franchement, au début, j'ai cru que ces trois-là étaient faits pour s'entendre."
 format: "chronique"
 genre_narratif: "chronique"
 cycle: "immobilier"
@@ -11,296 +11,289 @@ statut_editorial: "prepublication"
 published: true
 publication_date: "2026-11-03T18:30:00+01:00"
 mise_en_avant: "standard"
-hero_image: "/images/imm-c1-rc-02-thomas-visuel-v3.webp"
-image_alt: "Gros plan sur les mains d’un homme en costume fixant une roulette à un pilier porteur, sans visage ni inscription."
-source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "Thomas L. — Variante F, finition resserrée, manuscrit Google Drive du 17 novembre 2026. Texte expérimental non validé, intégré à la préproduction pour revue uniquement. Le titre, le chapô et les six parties du récit sont repris sans réécriture. Les variantes précédentes demeurent archivées sur Drive. Aucun bon à publier public, aucune validation technique ou documentaire définitive revendiquée."
-source_document_version: "Variante F — Finition resserrée — 17-11-2026 — Non validée"
-source_document_url: "https://docs.google.com/document/d/179OfdW2MK_1zrBYi91s_hkeqhpjrSY9cvU2JKL00XTw/edit"
-tag_1: "Réhabilitation"
-tag_2: "Décision sous incertitude"
-tag_3: "Bâtiment industriel"
-tag_4: "Engagements financiers"
-tag_5: "Suspension de projet"
+source_notice: "Les personnages, les propos, l'opération immobilière et les chiffres sont fictifs."
+methodology_specific: "Bernard Daiterre — Thierry Chmonfils V1.6 figée le 26 novembre 2026. Source https://docs.google.com/document/d/1oOFQaKq9qozoDF_wERWTGyiSJ4Zi7TO7-uXNZuXdDeA/edit. PV https://docs.google.com/document/d/1eKMxBdOTRjsHtXneETzzxkq3HCjwO-u-sTXQZUx_Q-s/edit. Matrice 144 critères : 116 C, 18 PC, 0 NC, 4 NV, 6 NA. Littéraire et identité narrative favorables ; D1 favorable sous hypothèses ; D2 favorable sous limites documentaires ; singularité favorable sous réserve de remplacement de Thomas et traitement ultérieur du motif de brochure chez Karim. Dérogation de longueur : 12 666 caractères hors séparateurs, titre, chapô, signature, signalétique et notice inclus. GO utilisateur pour remplacement en préproduction uniquement. Code et URL historiques préservés ; Thomas archivé dans Git et sur Drive, son image non réutilisée. Nouveau visuel à valider avant attribution ; aucun bon à publier."
+source_document_version: "V1.6"
+source_document_url: "https://docs.google.com/document/d/1oOFQaKq9qozoDF_wERWTGyiSJ4Zi7TO7-uXNZuXdDeA/edit"
+tag_1: "Reconversion de bureaux"
+tag_2: "Organisation des travaux"
+tag_3: "Coordination des métiers"
+tag_4: "Arbitrage coût et surface"
+tag_5: "Études de faisabilité"
 code_editorial: "IMM-C1-RC-02"
 unite_programmation: "IMM-C1-RC"
 perspective_principale: "operations-organisation"
 autorisation_publication: "preproduction_uniquement"
-updated_date: "2026-11-17"
+updated_date: "2026-11-26"
+signature_auteur: "Thierry Chmonfils"
+validation_document_url: "https://docs.google.com/document/d/1eKMxBdOTRjsHtXneETzzxkq3HCjwO-u-sTXQZUx_Q-s/edit"
+reference_angle: "IMM-C1-REC-02"
 ---
 
-Sur le premier plan, un mur séparait deux ateliers. Sur le troisième, il avait disparu. Sur le cinquième, une porte avait pris sa place.
+Par Thierry Chmonfils
 
-Thomas L., responsable des travaux, visita l'usine avec l'architecte.
+Alors celle-là, il faut que je vous la raconte !
 
-— C'est ici, la porte ?
+Bernard Daiterre, un promoteur immobilier que je connais, m'appelle un matin pour me parler d'une affaire en Picardie. Il a trouvé un immeuble de mille deux cents mètres carrés pour 350 000 euros.
 
-— Oui.
+Tout l'immeuble, hein ! Pas un étage !
 
-— Mais il y a un mur.
+Aïe aïe aïe ! Bernard, bouge pas, j'arrive !
 
-— C'est pour ça qu'on prévoit une porte.
+Il m'avait proposé de venir déjeuner. J'ai pris ma voiture à Paris et, sur la route, j'ai commencé à réfléchir aux gens que je connaissais qui pourraient investir dans l'immobilier.
 
-Thomas sortit son mètre et dessina deux autres emplacements.
+À mon arrivée au restaurant, j'avais déjà trois investisseurs. Enfin, trois mecs que je connaissais et qui avaient peut-être un peu d'argent. Mais laissez-moi travailler !
 
-L'architecte rappela qu'il fallait d'abord vérifier si le mur pouvait être ouvert sans affaiblir le bâtiment.
+Bernard voulait transformer ces anciens bureaux, situés dans une ville industrielle en pleine reconversion, en vingt appartements.
 
-Thomas n'avait rien contre les vérifications. Il préférait simplement avoir trouvé la solution avant d'en connaître le résultat.
+Il avait même fait imprimer une brochure. Magnifique ! Des cuisines américaines, des grandes baies vitrées, des familles avec des enfants qui sourient.
 
-C'était sa réputation. Donnez-lui un problème, il le contournait. Donnez-lui deux problèmes, il en trouvait un troisième qu'il savait mieux résoudre.
+Et là, mes amis, il sort sa brochure devant Michel Negaut, son directeur de travaux.
 
-La brochure commerciale, elle, était terminée.
+Fallait voir la gueule de Michel !
 
-Huit artisans y travaillaient dans des ateliers lumineux. Le menuisier ne produisait aucune sciure, le mécanicien aucune tache d'huile et les machines ne gênaient jamais la circulation.
+Le pauvre, il était encore en train d'essayer de savoir ce qu'on pouvait faire du bâtiment. Son patron avait déjà choisi les cuisines !
 
-Aucun atelier n'était vendu.
+Bernard lui explique que tout ça, c'est provisoire. Michel tourne les pages et découvre qu'il y a même une date de livraison.
 
-Sur les images, cette question semblait réglée.
+Mais provisoire de quoi, Bernard ? Il manque plus que les noms sur les boîtes aux lettres !
 
-## Quatre cent cinquante mille euros en vert
+Et là, Bernard me montre un salon avec une magnifique baie vitrée.
 
-Transformer l'ancienne usine en 2 400 mètres carrés d'ateliers devait coûter 2,4 millions d'euros. La vente des huit ateliers devait rapporter 2,85 millions.
+Michel regarde la photo.
 
-Sur le papier, les recettes dépassaient donc les dépenses prévues de 450 000 euros.
+— Bernard, là, t'as un mur porteur.
 
-Le directeur général avait entouré ce montant en vert.
+— Sur la photo ?
 
-— Voilà notre marge !
+— Non, dans le bâtiment, Bernard !
 
-— Pas encore, répondit Thomas.
+Je vous jure, j'ai rarement été aussi content qu'on m'invite à déjeuner.
 
-— Qu'est-ce qui manque ?
+Et je connaissais pas encore l'architecte !
 
-— Les travaux. Et les ventes.
+## Antoine avait trouvé une solution. Michel aurait préféré un problème.
 
-— Oui, Thomas. C'est généralement comme ça qu'on fait de l'immobilier.
+Antoine Crevard. Retenez bien ce nom. Si un jour vous héritez d'une ruine et que vous avez beaucoup, beaucoup d'argent, je vous donne son numéro.
 
-Le projet avait pourtant du sens. Des artisans cherchaient des locaux, l'usine était vide et des partenaires s'intéressaient à sa reconversion.
+Quelques jours après notre déjeuner, j'ai repris la route pour la Picardie. Bernard m'avait invité à visiter l'immeuble avec Michel et Antoine, son architecte.
 
-Le directeur l'avait présenté à tant de monde que renoncer lui aurait coûté personnellement.
+On arrive au milieu du bâtiment. Il est quatorze heures, il fait beau dehors et Michel est obligé d'allumer la lampe de son téléphone pour qu'on voie où on met les pieds.
 
-— Si nous attendons d'être certains de tout, nous ne ferons jamais rien.
+Les premiers plans prévoyaient 960 mètres carrés habitables, mais certaines pièces se retrouvaient beaucoup trop loin des fenêtres. Et pour installer toutes les cuisines et les salles de bains, il fallait revoir une bonne partie des évacuations.
 
-Thomas partageait cet avis : trois mois plus tôt, il avait laissé les plans avancer pendant les vérifications.
+Bernard faisait la gueule. Michel faisait la gueule.
 
-Couloir trop étroit ? Il le déplaçait. Atelier trop petit ? Il gagnait quelques mètres carrés. Porte impossible ? Il cherchait un autre mur.
+Antoine était heureux comme un gamin à Disneyland.
 
-Son carnet débordait de solutions.
+Le mec avait trouvé une solution. Un patio ! Il suffisait d'ouvrir les planchers sur trois niveaux pour faire descendre la lumière jusqu'au rez-de-chaussée.
 
-Il attendait encore de connaître tous les problèmes.
+Michel a éteint la lampe de son téléphone.
 
-## La visite du troisième atelier
+— Putain...
 
-Le commercial faisait visiter. Les visiteurs trouvaient les images magnifiques. Il y voyait un bon début.
+Moi, j'avais jamais vu quelqu'un annoncer qu'il fallait découper trois planchers avec autant de joie.
 
-Un matin, il accueillit une céramiste qui cherchait un local pour son four.
+Antoine nous faisait la visite du bâtiment qu'il avait dans sa tête. Là, des plantes. Ici, des appartements magnifiques. À cet endroit, les habitants pourraient prendre le café ensemble.
 
-— Votre atelier sera ici.
+Franchement, il m'avait convaincu. J'ai même demandé à Bernard combien il comptait vendre les appartements.
 
-Il désigna un mur sur lequel quatre morceaux de ruban adhésif dessinaient une porte.
+Michel m'a regardé.
 
-— Derrière le mur ?
+D'accord, Michel, pardon. On va d'abord essayer de les construire.
 
-— Exactement.
+Au deuxième étage, Antoine nous annonce qu'on va passer par le futur couloir. Il ouvre une porte et nous invite à le suivre.
 
-— Et l'entrée fera quelle largeur ? Mon four mesure un mètre quarante.
+Un placard.
 
-Le commercial appela Thomas.
+Vous croyez que ça l'a gêné ? Pas du tout ! Il nous explique tranquillement que le placard va disparaître.
 
-Thomas mesura. Une ouverture plus large était envisageable, si le mur le permettait.
+Michel lui a refermé la porte devant le nez.
 
-Le commercial l'écouta, décolla un morceau de scotch et le replaça vingt centimètres plus loin.
+Ah, ces deux-là ! Il aurait fallu les emmener en vacances ensemble. J'aurais payé pour les accompagner.
 
-— Là, ça vous irait ?
+## Michel a réussi à faire augmenter le prix d'une économie
 
-— Vous venez d'agrandir la porte ?
+Michel Negaut, vingt-sept ans de bâtiment. Alors lui, je vais vous dire un truc : si un jour vous devez acheter une voiture, emmenez Michel.
 
-— Nous adaptons le projet à vos besoins.
+En repartant de l'immeuble, Michel était monté dans ma voiture. Il connaissait une station-service où l'essence coûtait deux centimes de moins au litre.
 
-— Avec du scotch ?
+On a fait un détour pour aller faire le plein.
 
-Le commercial photographia le nouvel emplacement. Thomas rappela que rien n'était validé.
+Sur cinquante litres, j'avais économisé un euro !
 
-— Je sais. C'est pour garder une trace.
+J'ai demandé à Michel combien d'essence on avait consommé pour aller à la station.
 
-Il prit une deuxième photo, de plus loin.
+Il m'a expliqué que je comprenais rien aux économies.
 
-— Moi, j'ai un vrai four, précisa la céramiste.
+Ah, Michel ! Je t'adore !
 
-Elle demanda le prix, les dimensions et la date d'installation. Rien n'était fixé. Elle accepta d'être rappelée.
+Quand Bernard a commencé à s'inquiéter du prix des travaux, Michel a demandé aux entreprises de revoir leurs propositions.
 
-Dans son compte rendu, le commercial écrivit :
+Le plombier lui a trouvé une solution pour économiser vingt mille euros en regroupant plusieurs évacuations.
 
-« Visite positive. Adaptation de l'accès réalisée en présence de la cliente. »
+Vingt mille euros ! Michel lui a demandé s'il pouvait pas pousser jusqu'à vingt-cinq.
 
-Thomas nota : « Vérifier si ouverture possible. »
+Mazel tov ! Je vous présente Michel Negaut !
 
-## Le prix des murs
+Il était tellement content de son affaire qu'il avait déjà annoncé l'économie à Bernard avant de réunir les autres professionnels. J'avais fait le déplacement pour assister à la réunion.
 
-Quelques semaines plus tard, l'ingénieur rendit son rapport sur la solidité de l'usine.
+Seulement, voilà. L'électricien découvre le nouveau plan et constate que les tuyaux du plombier passent désormais dans son local technique. Il faut donc déplacer une partie de ses installations. Antoine annonce qu'il faudra également intervenir sur le plancher.
 
-L'usine tenait depuis soixante ans. C'était sa transformation qui posait problème.
+Michel sort sa calculatrice.
 
-Les nouvelles portes, le poids des machines et certains planchers nécessitaient d'importants renforcements.
+Ah non !
 
-Thomas déplaça un passage au crayon. L'ingénieur lui montra les limites de poids des planchers.
+Les modifications allaient coûter plus cher que les vingt mille euros qu'il croyait avoir économisés.
 
-Thomas essaya un autre passage.
+Il demande alors au plombier de remettre ses tuyaux là où ils étaient.
 
-L'ingénieur lui montra les mêmes chiffres.
+— Mais c'est vous qui m'avez demandé de les déplacer !
 
-Thomas rangea son crayon.
+Et pendant que les deux s'expliquent, devinez qui se penche sur le plan pour proposer d'agrandir une salle de bains ?
 
-Le supplément de travaux atteignait 650 000 euros. Le projet passerait de 2,4 à 3,05 millions, avant d'éventuels autres imprévus.
+Antoine !
 
-Les ventes espérées restaient à 2,85 millions.
+Michel lui a carrément retiré le plan des mains.
 
-Les 450 000 euros entourés en vert avaient disparu. Même si tous les ateliers se vendaient aux prix prévus, il manquerait 200 000 euros.
+Je vous jure, on aurait dit un père qui confisque sa console à son fils.
 
-Le directeur demanda au financier de revérifier.
+Sauf qu'il y avait maintenant trois versions du plan. Le plombier avait la première, l'électricien la deuxième et Antoine avait déjà commencé à modifier la troisième.
 
-Il revérifia.
+Ils ont tout étalé sur la table. Pendant un quart d'heure, ces mecs ont cherché un local technique.
 
-Le résultat ne changea pas.
+Leur local technique ! C'est eux qui l'avaient déplacé !
 
-Le directeur fixa les chiffres projetés au mur. L'image penchait légèrement.
+Moi, j'avais proposé qu'on mange ensemble. Je connaissais un petit jeune qui venait d'ouvrir une pizzeria et qui avait besoin de travailler.
 
-— Il n'y a vraiment aucun moyen de redresser ça ?
+Michel m'a demandé s'il pouvait nous faire un prix sur les pizzas.
 
-Thomas se leva et glissa une cale sous le vidéoprojecteur. L'image redevint parfaitement droite.
+Mais Michel, laisse-le vivre, le petit !
 
-— Voilà.
+Quand je suis revenu avec les pizzas, Michel était au téléphone. Il demandait à quelqu'un d'annuler le déplacement des tuyaux. Son interlocuteur ne comprenait rien : il n'avait pas encore reçu la demande de déplacement.
 
-— Je parlais du budget.
+Le pauvre, c'était le seul qui avait encore rien touché dans cette histoire. Et c'est sur lui qu'on gueulait !
 
-Thomas retira sa main du projecteur.
+## Dix-neuf, dix-huit, dix-sept...
 
-Le directeur demanda si l'on pouvait négocier les renforcements. Thomas répondit qu'on pouvait chercher moins cher, pas renoncer à la solidité du bâtiment.
+Au départ, Bernard avait prévu de dépenser 2,86 millions d'euros. Avec ça, il achetait l'immeuble, payait les travaux, les études, les honoraires, le financement et prévoyait même de l'argent pour les mauvaises surprises.
 
-— Les fournisseurs font des efforts. Les salariés aussi. Pourquoi le bâtiment serait-il dispensé ?
+Eh ben, les mauvaises surprises, elles étaient venues en famille.
 
-— Parce qu'il n'a pas signé d'accord d'entreprise.
+La nouvelle estimation atteignait 3,42 millions d'euros.
 
-## Six ateliers, des prix plus élevés
+Cinq cent soixante mille euros de plus !
 
-Le financier proposa six ateliers au lieu de huit, avec peut-être moins de travaux.
+Bernard a demandé à Michel de vérifier ses calculs. Puis de vérifier avec Antoine. Puis de regarder s'ils avaient pas compté quelque chose deux fois.
 
-Le commercial approuva.
+Il était prêt à pardonner une erreur de 560 000 euros à n'importe qui. Il aurait même embrassé le mec qui lui aurait annoncé qu'il s'était trompé.
 
-— On pourrait en faire six, plus grands, et les vendre plus cher.
+Malheureusement, personne voulait bien s'être trompé.
 
-— Vous avez des acheteurs à ces prix ? demanda Thomas.
+Michel et Antoine sont donc revenus avec un autre projet. En réorganisant les appartements autour des façades, ils pouvaient éviter une bonne partie des gros travaux.
 
-— Nous avons des contacts intéressés.
+Il n'y aurait plus que seize logements.
 
-— Pour les huit premiers.
+Bernard les a comptés sur le plan. Puis il les a recomptés.
 
-— C'est le même bâtiment.
+Il en voulait dix-neuf.
 
-Sur son ordinateur, le financier réduisit certaines dépenses et augmenta les prix de vente espérés.
+Antoine lui a expliqué qu'il faudrait refaire des études pour savoir ce qu'impliquaient trois logements supplémentaires.
 
-Au bout de deux minutes, sur son écran, le projet rapportait de nouveau plus qu'il ne coûtait.
+Bernard est descendu à dix-huit. Puis à dix-sept.
 
-Personne n'avait accepté ces nouveaux prix.
+Ah, Bernard, mon ami ! Je te reconnais bien, là !
 
-Mais les cellules du tableau, elles, avaient donné leur accord.
+J'avais un oncle qui négociait comme ça. Il discutait tellement longtemps avec les commerçants qu'à la fin, ils lui offraient des trucs pour qu'il s'en aille.
 
-Le commercial rappela la céramiste.
+Mais là, qu'est-ce que vous voulez qu'on lui offre, à Bernard ? Une fenêtre dans un mur porteur ?
 
-— Ah, monsieur la porte en scotch !
+Michel lui a demandé s'il voulait dix-sept logements ou dix-sept portes avec des numéros dessus.
 
-Il lui annonça six ateliers plus grands.
+Bernard lui a répondu qu'il commençait sérieusement à lui casser les couilles.
 
-— Plus chers ?
+Et là, il s'est passé un truc magnifique.
 
-— Les prix ne sont pas encore fixés.
+Antoine, qui voulait récupérer jusqu'au dernier mètre carré du bâtiment, était tombé amoureux du projet de seize logements. Il nous parlait de la qualité de vie, des grands appartements, de la lumière naturelle.
 
-— Et la porte ?
+Michel, lui, avait repéré un petit espace près de l'escalier qu'on pourrait récupérer pour agrandir un appartement.
 
-— Toujours à l'étude.
+Antoine lui a expliqué qu'il fallait arrêter de vouloir exploiter le moindre recoin.
 
-— Rappelez-moi quand vous aurez l'un des deux.
+Michel trouvait dommage de perdre de la surface.
 
-Elle raccrocha.
+Ça faisait deux semaines qu'ils s'engueulaient. Ils avaient échangé leurs arguments et ils continuaient de s'engueuler !
 
-En réunion, le commercial confirma qu'elle restait intéressée.
+J'ai regardé Bernard. Il m'a regardé.
 
-— À quel prix ? demanda le directeur.
+Pour une fois qu'on était tous les deux d'accord, on savait même pas avec lequel des deux.
 
-— Je n'ai pas voulu la brusquer.
+## Quatre appartements de plus pour huit cent mille balles
 
-## Le problème des solutions
+Michel avait préparé deux budgets.
 
-Thomas demanda de suspendre les grands travaux : il fallait d'abord vérifier les coûts et trouver six artisans prêts à payer les nouveaux prix.
+Pour les vingt appartements, avec 960 mètres carrés habitables, il fallait prévoir 3,42 millions d'euros. Pour les seize appartements et leurs 840 mètres carrés habitables, 2,62 millions.
 
-Le directeur général protesta.
+Bernard s'était fixé une limite de 3 200 euros de dépenses par mètre carré habitable, compte tenu de ce qu'il espérait tirer de son opération.
 
-— On a déjà payé des études. Les entreprises ont préparé leurs devis. On ne peut pas jeter tout ça.
+Avec vingt appartements, il était largement au-dessus. Avec seize, légèrement en dessous.
 
-Thomas comprenait. Il connaissait ces murs presque au centimètre.
+Et pour conserver ses quatre appartements supplémentaires, il fallait donc engager 800 000 euros de plus dans l'ensemble du bâtiment.
 
-Une entreprise consultée posa une question :
+Bernard a regardé Michel.
 
-— Pourquoi avoir fait autant de plans avant de vérifier la structure ?
+— Mais pour huit cent mille euros, je peux acheter deux immeubles comme celui-là !
 
-Le directeur se tourna vers Thomas.
+Ah ! Là, tu me parles, Bernard !
 
-— Pourquoi a-t-on continué ?
+Je lui ai proposé qu'on déjeune ensemble la semaine suivante. J'avais un copain qui connaissait très bien le marché immobilier du coin et un autre qui cherchait à investir. On pouvait monter quelque chose tous les quatre.
 
-— Sur le premier plan, le couloir était trop étroit. Sur le deuxième…
+Oui, je m'étais compté dedans. Vous auriez fait quoi, vous ?
 
-— Thomas. Je ne vous demande pas comment.
+Michel nous a rappelé qu'il faudrait également payer les travaux des deux autres immeubles.
 
-Thomas se tut.
+Aïe aïe aïe... Michel ! On était bien, là, tous les deux ! Pourquoi tu nous fais ça ?
 
-— Et les huit ateliers ? On peut encore les sauver ?
+Bernard est revenu à ses budgets. Il voulait au moins que Michel lui garantisse les 2,62 millions pour les seize appartements.
 
-Thomas ouvrit son carnet.
+Même ça, Michel voulait pas lui donner.
 
-— En déplaçant le couloir central…
+Les études n'étaient pas terminées et, en plus des provisions déjà prévues, il ne restait que 68 000 euros avant d'atteindre le plafond fixé par l'entreprise.
 
-Il regarda le chiffre des travaux.
+Bernard pouvait également laisser tomber toute l'affaire. Il avait déjà dépensé 50 000 euros en études, mais il n'avait pas encore acheté le bâtiment.
 
-— Je peux encore vous dessiner huit ateliers.
+Cinquante mille euros pour savoir si on va acheter un immeuble à 350 000 euros !
 
-— Très bien.
+Moi, je trouvais ça cher. Michel m'a expliqué que ces études avaient surtout permis à Bernard de découvrir dans quoi il risquait de s'embarquer en achetant l'immeuble.
 
-— Mais je ne peux plus vous dire combien ils coûteront.
+Ah oui. Vu comme ça...
 
-Il referma son carnet.
+Bernard a finalement décidé de poursuivre les études sur les seize logements. Il lui restait à confirmer les coûts, les perspectives commerciales et les autorisations nécessaires avant de s'engager dans l'achat du bâtiment.
 
-Les grands travaux furent suspendus. Les études payées ne seraient pas récupérées, mais les dépenses les plus lourdes n'avaient pas été engagées.
+Quant à moi, j'ai annulé le déjeuner avec mes deux futurs associés.
 
-Dans la brochure, huit artisans continuaient pourtant de travailler dans une lumière parfaite.
+Je les avais pas encore invités. Ça s'est très bien passé.
 
-Aucun d'eux n'avait reçu la facture des renforcements.
+## Il restait deux cents brochures
 
-## Le dernier plan
+Quelques jours plus tard, je retourne en Picardie voir Bernard. Vous savez ce qu'il m'annonce ?
 
-Le vendredi, Thomas revint dans l'usine avec son mètre.
+Que de toute façon, il a toujours préféré les petites opérations immobilières.
 
-Près de l'entrée, Thomas mesura un espace dégagé, puis dessina un petit rectangle sur son plan.
+Seize logements, c'est plus convivial. Les habitants peuvent mieux se connaître. Ça conserve une dimension humaine.
 
-Le directeur général le rejoignit.
+Mais bien sûr, Bernard ! Je lui ai même dit que c'était exactement ce que j'avais pensé dès le début.
 
-— Alors, Thomas ? Vous avez trouvé comment sauver les huit ateliers ?
+Baruch Hachem ! On allait enfin pouvoir parler d'autre chose.
 
-— Non.
+Bernard a demandé à son assistante de faire refaire la brochure.
 
-— Combien on pourrait en faire, finalement ?
+Michel a voulu savoir combien d'exemplaires avaient été imprimés. Deux cents.
 
-— Je ne sais pas encore.
+Il trouvait scandaleux de jeter deux cents brochures pour quatre appartements. Surtout après tous les efforts qu'il avait fournis pour réduire les dépenses.
 
-Le directeur regarda le plan.
+Antoine a repris le plan du deuxième étage.
 
-— Mais vous avez dessiné quelque chose.
+— Remarque, si on récupérait cette partie-là...
 
-— Oui.
-
-— Quoi ?
-
-— Un endroit où poser une palette.
-
-— Une seule ?
-
-— Une vraie.
+Bernard leur a demandé de sortir de son bureau.

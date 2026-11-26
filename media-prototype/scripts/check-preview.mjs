@@ -206,23 +206,26 @@ if(marcHtml){
  if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Laurent Winnie V1.8 : article indexable en préproduction.');
 }
 
-// Thomas : la variante F doit être servie à l'adresse historique, hors changement d'URL.
-const thomasRoute='media/articles/immobilier/imm-c1-rc-02-thomas/index.html';
-const thomas=read(thomasRoute);
-if(thomas){
- const story=thomas.match(/<article\b[^>]*data-article-id="immobilier\/imm-c1-rc-02-thomas"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
- const paragraphCount=(story.match(/<p(?:\s|>)/g)||[]).length;
- const headingCount=(story.match(/<h2(?:\s|>)/g)||[]).length;
- if(paragraphCount!==132||headingCount!==6)
-  errors.push('Thomas variante F : intégrité des 132 paragraphes et 6 intertitres non conforme ('+paragraphCount+'/'+headingCount+')');
- if(!thomas.includes('Dans les Vosges, huit ateliers étaient à vendre')
-   ||!story.includes('Sur le premier plan')
-   ||!story.includes('Une vraie.'))
-  errors.push('Thomas F : titre, ouverture ou chute manquants');
- if(story.includes('Variante F')||story.includes('Non validée'))
-  errors.push('Mention interne de variante visible dans le récit Thomas');
- if(!/name="robots"\s+content="noindex,nofollow"/.test(thomas))
-  errors.push('Thomas indexable en préproduction');
+// Bernard Daiterre / Thierry Chmonfils V1.6 : remplacement de Thomas à l'adresse historique.
+{
+ const slug='imm-c1-rc-02-thomas',href='/media/articles/immobilier/'+slug+'/';
+ const html=read('media/articles/immobilier/'+slug+'/index.html');
+ const source=fs.readFileSync(path.resolve('../content/articles/immobilier/'+slug+'.md'),'utf8');
+ const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
+ const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
+ const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+ const story=html.match(/<article\b[^>]*data-article-id="immobilier\/imm-c1-rc-02-thomas"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const rendered=[...story.matchAll(/<(p|h2)\b[^>]*>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':'')+decode(m[2].replace(/<[^>]*>/g,'')));
+ const expected=front[2].trim().split(/\n\n/);
+ const count=[field('title'),field('summary'),'Fiction satirique · Raisons et déraisons',...expected.map(s=>s.replace(/^## /,'')),field('source_notice')].join('').length;
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||count!==12666||expected.length!==134||expected.filter(s=>s.startsWith('## ')).length!==5||expected.at(-1)!=='Bernard leur a demandé de sortir de son bureau.'||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==7)errors.push('Bernard Thierry V1.6 : texte, longueur, intertitres ou répliques non concordants.');
+ const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'';
+ const lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!html.includes('/media/lectures/operations-organisation/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/')||!html.includes('<h2>Thierry Chmonfils</h2>')||!story.includes('Par Thierry Chmonfils'))errors.push('Bernard Thierry V1.6 : titre, chapô, fiction, signature ou classement non conforme.');
+ if(html.includes('/images/imm-c1-rc-02-thomas-visuel-v3.webp')||decode(story).includes('Thomas L.')||decode(story).includes('Variante F'))errors.push('Bernard Thierry V1.6 : ancien contenu ou visuel de Thomas visible.');
+ for(const name of ['Bernard Daiterre','Michel Negaut','Antoine Crevard'])if(!decode(story).includes(name))errors.push('Bernard Thierry V1.6 : personnage manquant '+name);
+ for(const page of ['media/publications/index.html','media/cycles/immobilier/index.html','media/cycles/immobilier/conversations/C1/index.html','media/scenes/index.html','media/lectures/operations-organisation/index.html'])if(!read(page).includes(href))errors.push('Bernard Thierry V1.6 : navigation incorrecte '+page);
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Bernard Thierry V1.6 : article indexable en préproduction.');
 }
 
 // Non-régression des libellés visibles : aucun identifiant CMS ni consigne
