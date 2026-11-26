@@ -93,40 +93,25 @@ if(sophieCanonical){
   errors.push('Sophie canonique indexable en préproduction.');
 }
 
-// Nathalie B. : manuscrit corrigé du 25 novembre, composition statique des dialogues.
-// Le contrôle porte sur les 128 paragraphes narratifs, 118 répliques, 6 scènes et 6 intertitres.
-const nathalieRoute='media/articles/industrie/ind-c1-cst-03-brouillon/index.html';
-const nathalieHtml=read(nathalieRoute);
-if(nathalieHtml){
- const story=nathalieHtml.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-03-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
- const paragraphs=(story.match(/<p(?:\s|>)/g)||[]).length;
- const headings=(story.match(/<h2(?:\s|>)/g)||[]).length;
- const dividers=(story.match(/<hr\b/g)||[]).length;
- const groups=(story.match(/data-dialogue-verified="nathalie-2026-11-25"/g)||[]).length;
- const turns=(story.match(/class="fiction-dialogue-turn"/g)||[]).length;
- const labels=(story.match(/class="fiction-dialogue-speaker"/g)||[]).length;
- const raw=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
- if(paragraphs!==246||headings!==6||dividers!==6||groups!==41||turns!==118||labels!==118||raw!==0)
-  errors.push('Nathalie 25-11 : rendu non conforme ('+paragraphs+' paragraphes, '+headings+' intertitres, '+dividers+' scènes, '+groups+' dialogues, '+turns+' prises de parole, '+labels+' locuteurs, '+raw+' répliques brutes).');
- if(!nathalieHtml.includes('grâce aux robots. Puis l')
-  ||!nathalieHtml.includes('Dans une usine où certaines commandes ont jusqu')
-  ||!story.includes('Nathalie B. travaille dans')
-  ||!story.includes("Trois millions d&#39;euros pour arriver plus tôt dans la queue")
-  ||!story.includes("Mina apprend son boulot au robot qui pourrait lui prendre sa place")
-  ||!story.includes("À la rédaction, on a compris assez vite le problème.")
-  ||!story.includes("sans noms, chiffres ni informations confidentielles de l&#39;entreprise")
-  ||!story.includes("Vingt secondes par pièce.")
-  ||!story.includes("Une vingtaine de minutes.")
-  ||!story.includes("ChatGPT lui propose trois versions.")
-  ||!story.includes("Nathalie lui demande laquelle elle doit signer."))
-  errors.push('Nathalie 25-11 : titre, chapô, corrections, vingt secondes/minutes ou chute absents.');
- for(const who of ['Nathalie','Vincent','Mina','Le consultant','Une ouvrière',"L&#39;ingénieur",'Un responsable'])
-  if(!story.includes('fiction-dialogue-speaker">'+who))
-   errors.push('Nathalie 25-11 : interlocuteur manquant « '+who+' ».');
- if(story.includes('GO préproduction')||story.includes('Version populaire corrigée')||story.includes('D1 favorable'))
-  errors.push('Nathalie 25-11 : mentions internes visibles.');
- if(!/name="robots"\s+content="noindex,nofollow"/.test(nathalieHtml))
-  errors.push('Nathalie 25-11 : article indexable en préproduction.');
+// Nathalie Solo / Lola Genzed V4.1 : comparaison intégrale du texte rendu.
+{
+ const slug='ind-c1-cst-03-brouillon',href='/media/articles/industrie/'+slug+'/';
+ const html=read('media/articles/industrie/'+slug+'/index.html');
+ const source=fs.readFileSync(path.resolve('../content/articles/industrie/'+slug+'.md'),'utf8');
+ const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
+ const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
+ const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+ const story=html.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-03-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const rendered=[...story.matchAll(/<(p|h2)\b[^>]*>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':'')+decode(m[2].replace(/<[^>]*>/g,'')));
+ const expected=front[2].trim().split(/\n\n/);
+ const count=field('title').length+field('summary').length+expected.filter(s=>s!=='Par Lola Genzed').map(s=>s.replace(/^## /,'')).join('').length;
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||count!==10802||expected.filter(s=>s.startsWith('## ')).length!==5||expected.at(-1)!=='Nathalie lui demande laquelle elle doit signer.'||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==18)errors.push('Nathalie Lola V4.1 : texte, longueur, intertitres ou répliques non concordants.');
+ const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'';
+ const lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!html.includes('/media/lectures/technologie-innovation/')||!html.includes('/media/cycles/industrie/conversations/C1/')||!html.includes('/media/cycles/industrie/contextes/CST/')||!html.includes(field('hero_image'))||!decode(html).includes(field('image_alt'))||!html.includes('<h2>Lola Genzed</h2>')||!story.includes('Par Lola Genzed'))errors.push('Nathalie Lola V4.1 : titre, chapô, signature, fiction, illustration ou classement non conforme.');
+ for(const name of ['Nathalie Solo','Sonia Praude','Vincent Tracker','Karim Samarche','Benoît Time','Hugo Matricks','Mina Mano','Samuel Killer','Laurent Champion','Bruno Toudou'])if(!decode(html).includes(name))errors.push('Nathalie Lola V4.1 : identité manquante '+name);
+ for(const page of ['media/publications/index.html','media/cycles/industrie/index.html','media/cycles/industrie/conversations/C1/index.html','media/scenes/index.html','media/lectures/technologie-innovation/index.html'])if(!read(page).includes(href))errors.push('Nathalie Lola V4.1 : navigation incorrecte '+page);
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Nathalie Lola V4.1 : article indexable en préproduction.');
 }
 
 // Claire et Kevin V8.1, texte du 25 novembre : contrôles du HTML réellement composé.
