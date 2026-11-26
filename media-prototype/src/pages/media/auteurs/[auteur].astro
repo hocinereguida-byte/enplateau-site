@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import { isPublic, validClassification, urlOf, publicGenreLabel, publicCycleLabel, publicationInstant } from '../../../lib/editorial';
+import { authorGroups, authorStyle } from '../../../lib/authors';
+import { articleStyle } from '../../../lib/article-style';
+import MediaHeader from '../../../components/MediaHeader.astro';
+import MediaFooter from '../../../components/MediaFooter.astro';
+export async function getStaticPaths(){
+ const items=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data));
+ return authorGroups(items).map(group=>({params:{auteur:group.slug},props:{group}}));
+}
+const {group}=Astro.props;
+const profile=authorStyle[group.slug];
+const entries=[...group.articles].sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0)||a.data.title.localeCompare(b.data.title,'fr'));
+---
+<!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>{group.name} — Scènes d’Arbitrage</title><meta name="description" content={`Retrouvez toutes les publications de ${group.name} sur Scènes d’Arbitrage.`}/><style is:inline set:html={articleStyle}/><style is:global>
+.author-intro{padding:24px 0 30px;border-bottom:1px solid #ddd8ce}
+.author-intro h1{font-size:clamp(36px,6vw,58px)!important;overflow-wrap:anywhere}
+.author-count{font:14px/1.5 'IBM Plex Sans',Arial,sans-serif;color:#615c55}
+.author-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0 45px}
+.author-card{padding:21px;background:#fffefa;border:1px solid #ddd8ce;min-width:0;overflow-wrap:anywhere}
+.author-card h3{font:400 clamp(22px,2.5vw,29px)/1.28 Georgia,serif;margin:12px 0}
+.author-card h3 a{text-decoration:none}
+.author-card h3 a:hover{text-decoration:underline}
+.author-card .author-summary{font:15px/1.6 'IBM Plex Sans',Arial,sans-serif;color:#615c55}
+.author-photo{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;margin-bottom:14px}
+@media(max-width:700px){.author-list{grid-template-columns:minmax(0,1fr)}.author-card{padding:16px}}
+</style></head><body><a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/>
+<main class="shell" id="contenu">
+<nav class="kicker" aria-label="Fil d’Ariane"><a href="/media/">Accueil</a> / <a href="/media/auteurs/">Les auteurs</a> / {group.name}</nav>
+<header class="author-intro"><p class="micro">PERSONNALITÉ ÉDITORIALE FICTIVE{profile?' · '+profile.genre:''}</p><h1>{group.name}</h1>{profile&&<p class="lead">{profile.description}</p>}<p class="author-count">{entries.length} {entries.length===1?'publication':'publications'} · Tous les cycles</p></header>
+<section aria-labelledby="author-publications" data-author-profile={group.slug}><h2 id="author-publications">Tous les articles de {group.name}</h2>
+<div class="author-list">{entries.map(a=><article class="author-card" data-author-article={a.id}>{a.data.hero_image&&<img class="author-photo" src={a.data.hero_image} alt="" loading="lazy"/>}<p class="micro">{publicGenreLabel(a.data)} · {publicCycleLabel(a.data.cycle)}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3><p class="author-summary">{a.data.summary}</p></article>)}</div></section>
+<p><a href="/media/auteurs/">Découvrir les autres auteurs</a> · <a href="/media/publications/">Toutes les publications</a></p>
+</main><MediaFooter/></body></html>

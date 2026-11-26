@@ -66,7 +66,7 @@ for (const r of records) {
   if (r.perspective) { tests.perspective_principale=r.perspective; tests.genre_narratif=r.genre; }
   if (r.family) tests.famille_decisionnelle=r.family;
   for (const [key,value] of Object.entries(tests)) if (d[key] !== value) errors.push(r.code+' : '+key+' attendu '+JSON.stringify(value)+', trouvé '+JSON.stringify(d[key]));
-  if (r.code === 'IMM-C1-RC-04' && d.title !== 'Immobilier : dix-sept pages pour rendre possible un quartier qui n’existait plus.') errors.push('Titre de Karim V6.2 différent du titre validé');
+  if (r.code === 'IMM-C1-RC-04' && d.title !== "Un promoteur veut acheter des murs. Il aurait préféré qu'ils soient vides.") errors.push('Titre Édouard V1.2 bis différent du titre validé');
   if (d.published !== true) errors.push(r.code+' : consultation préproduction désactivée');
   const actualDriveId = d.source_document_url?.match(/^https:\/\/(?:docs\.google\.com\/document|drive\.google\.com\/file)\/d\/([A-Za-z0-9_-]+)(?:\/|$)/)?.[1] ?? '(absent ou URL invalide)';
   if (r.driveId && actualDriveId !== r.driveId) {

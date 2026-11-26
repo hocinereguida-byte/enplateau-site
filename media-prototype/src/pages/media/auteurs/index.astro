@@ -1,0 +1,12 @@
+---
+import {getCollection} from 'astro:content';
+import {isPublic,validClassification} from '../../../lib/editorial';
+import {authorGroups,authorUrl,authorStyle} from '../../../lib/authors';
+import {articleStyle} from '../../../lib/article-style';
+import MediaHeader from '../../../components/MediaHeader.astro';
+import MediaFooter from '../../../components/MediaFooter.astro';
+const groups=authorGroups((await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)));
+---
+<!doctype html><html lang="fr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>Les auteurs — Scènes d’Arbitrage</title><style is:inline set:html={articleStyle}/><style is:global>
+.author-directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:30px 0}.author-directory article{padding:20px;border:1px solid #ddd8ce;background:#fffefa;min-width:0}.author-directory h2{overflow-wrap:anywhere}.author-directory h2 a{text-decoration:none}.author-directory h2 a:hover{text-decoration:underline}@media(max-width:700px){.author-directory{grid-template-columns:minmax(0,1fr)}}
+</style></head><body><a class="skip" href="#contenu">Aller au contenu</a><MediaHeader/><main class="shell" id="contenu"><p class="kicker"><a href="/media/">Accueil</a> / Les auteurs</p><h1>Les auteurs</h1><p class="lead">Découvrez les personnalités éditoriales fictives de Scènes d’Arbitrage et retrouvez leurs publications.</p><div class="author-directory">{groups.map(group=><article><p class="micro">{authorStyle[group.slug]?.genre??'Auteur'}</p><h2><a href={authorUrl(group.name)}>{group.name}</a></h2>{authorStyle[group.slug]&&<p>{authorStyle[group.slug].description}</p>}<p>{group.articles.length} {group.articles.length===1?'publication':'publications'}</p></article>)}</div><p><a href="/media/publications/">Toutes les publications</a></p></main><MediaFooter/></body></html>

@@ -387,6 +387,46 @@ for(const [route,author] of [["industrie/ind-c1-cst-02-brouillon","Oscar Sansfro
  if(!signature.includes('<h2>'+author+'</h2>'))errors.push('Signature éditoriale incorrecte : '+route);
 }
 
+
+// Fiches d'auteurs : bijection entre les articles effectivement rendus et leurs listes.
+{
+ const byAuthor=new Map();
+ const directory=read('media/auteurs/index.html');
+ const walk=dir=>{
+  for(const entry of fs.readdirSync(dir,{withFileTypes:true})){
+   const full=path.join(dir,entry.name);
+   if(entry.isDirectory())walk(full);
+   else if(entry.name==='index.html'){
+    const html=fs.readFileSync(full,'utf8');
+    const article=html.match(/<article\b[^>]*data-article-id="([^"]+)"[^>]*>/)?.[0]??'';
+    const id=article.match(/data-article-id="([^"]+)"/)?.[1];
+    const slug=article.match(/data-author-slug="([^"]+)"/)?.[1];
+    if(!id||!slug)returnIfUnsigned();
+    else{
+     const href='/media/auteurs/'+slug+'/';
+     if(!html.includes('href="'+href+'"'))errors.push('Signature non cliquable : '+id);
+     if(!byAuthor.has(slug))byAuthor.set(slug,[]);
+     byAuthor.get(slug).push(id);
+    }
+   }
+  }
+ };
+ function returnIfUnsigned(){}
+ walk(articlesRoot);
+ for(const [slug,ids] of byAuthor){
+  const profile=read('media/auteurs/'+slug+'/index.html');
+  if(!directory.includes('href="/media/auteurs/'+slug+'/"'))errors.push('Auteur absent de l’annuaire : '+slug);
+  if(!/name="robots"\s+content="noindex,nofollow"/.test(profile))errors.push('Fiche auteur indexable : '+slug);
+  const listed=[...profile.matchAll(/data-author-article="([^"]+)"/g)].map(m=>m[1]);
+  if(JSON.stringify([...listed].sort())!==JSON.stringify([...ids].sort()))errors.push('Fiche auteur incomplète ou dupliquée : '+slug);
+  for(const id of ids)if(!profile.includes('href="/media/articles/'+id+'/"'))errors.push('Lien article absent de la fiche : '+id);
+ }
+ for(const slug of ['oscar-sansfroid','lola-genzed','thierry-chmonfils','jean-toksik','emma-santhune','winnie-bouba'])if(!byAuthor.has(slug))errors.push('Auteur attendu manquant : '+slug);
+ if(byAuthor.has('jean-toksic'))errors.push('Doublon historique Jean Toksic.');
+ if(!byAuthor.get('jean-toksik')?.includes('industrie/ind-c1-cst-01-brouillon')||!byAuthor.get('jean-toksik')?.includes('immobilier/imm-c1-rc-04-karim'))errors.push('Jean : regroupement des signatures historiques incorrect.');
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(directory))errors.push('Annuaire auteur indexable.');
+}
+
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
 console.log('Recette préproduction réussie : '+required.length+' chemins clés et '+articleCount+' articles ; indexation désactivée.');
 
