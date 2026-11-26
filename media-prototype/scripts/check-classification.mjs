@@ -29,7 +29,7 @@ const records = [
   "immobilier/imm-c1-rc-06-alain.md|IMM-C1-RC-06|immobilier|V4.3|finance-investissement|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1LNGR5WNM6Y6-eZJUdkBCQEyScm_gkUfDIWbq_EH1yDI",
   "immobilier/imm-c1-rc-02-thomas.md|IMM-C1-RC-02|immobilier|V1.6|operations-organisation|IMM-C1-RC||territoire-reconversion|chronique|chronique|1oOFQaKq9qozoDF_wERWTGyiSJ4Zi7TO7-uXNZuXdDeA",
   "immobilier/imm-c1-rc-07-patrick.md|IMM-C1-RC-07|immobilier|V9.1|strategie-gouvernance|IMM-C1-RC||territoire-reconversion|chronique|chronique|11JN-x7psy9LTuKZRHH8bweGrBpBSywf_z-ldGa-5BwQ",
-  "immobilier/imm-c1-rc-04-karim.md|IMM-C1-RC-04|immobilier|V6.2|droit-regulation|IMM-C1-RC||territoire-reconversion|chronique|chronique|1oLB9VVh-iLdV5O19zTNCOO-vSFAgwp-nnnl28qb9fck",
+  "immobilier/imm-c1-rc-04-karim.md|IMM-C1-RC-04|immobilier|V1.2 bis|droit-regulation|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1SENVk2P4whU-N2O9ejK_Z3pay5h_qSV47_XdPNawCCc",
   "immobilier/imm-c1-rc-05-caserne.md|IMM-C1-RC-05|immobilier|V6.4|territoires-politiques-publiques|IMM-C1-RC||territoire-reconversion|chronique|chronique|18N0uGhe5ZKKU-sWEzFlvU3ddbz_gXOABp9oCEIGS-J4",
   "immobilier/imm-c1-rc-regard-01.md|IMM-C1-RC-REGARD-01|immobilier|V2.4||IMM-C1-RC||territoire-reconversion|regard-croise||1R1L4TWX5XasFxNfIh0yLAHuNKchMEy5Sh39_g0EDOjo",
   "agriculture/agr-c1-a02-chronique-vergers.md|AGR-C1-A02|agriculture|V4.5|strategie-gouvernance|AGR-C1-A|engagement-productif-longue-duree|arboriculture-sous-revue-strategique|chronique|chronique|1l75XgAOrlllaRdH_BRrv-xtV2w0WDsPQ_cT628wJsSw",

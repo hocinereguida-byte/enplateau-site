@@ -8,6 +8,7 @@ import { renderAlainV43Interview } from '../../../lib/alain-interview';
 import { renderPatrickLolaV91 } from '../../../lib/patrick-lola-v91';
 import { renderCaserneOscarV64 } from '../../../lib/caserne-oscar-v64';
 import { renderBernardThierryV16 } from '../../../lib/bernard-thierry-v16';
+import { renderEdouardJeanV12bis } from '../../../lib/edouard-jean-v12bis';
 import { renderSophieV91aDialogue, renderClaireKevinV81Dialogue } from '../../../lib/chronicle-dialogue';
 import { renderNathalieLolaV41 } from '../../../lib/nathalie-lola-v41';
 import MediaFooter from '../../../components/MediaFooter.astro'
@@ -28,7 +29,7 @@ const verifiedDialogueHtml=article.id==='industrie/ind-c1-cst-01-brouillon'
  ? renderSophieV91aDialogue(article.body)
  : article.id==='industrie/ind-c1-cst-03-brouillon' ? renderNathalieLolaV41(article.body)
  : article.id==='industrie/ind-c1-cst-04-brouillon' ? renderClaireKevinV81Dialogue(article.body)
- : article.id==='industrie/ind-c1-cst-05-brouillon' ? renderLaurentWinnieV18(article.body) : article.id==='immobilier/imm-c1-rc-06-alain' ? renderAlainV43Interview(article.body) : article.id==='immobilier/imm-c1-rc-07-patrick' ? renderPatrickLolaV91(article.body) : article.id==='immobilier/imm-c1-rc-05-caserne' ? renderCaserneOscarV64(article.body) : article.id==='immobilier/imm-c1-rc-02-thomas' ? renderBernardThierryV16(article.body) : null;
+ : article.id==='industrie/ind-c1-cst-05-brouillon' ? renderLaurentWinnieV18(article.body) : article.id==='immobilier/imm-c1-rc-06-alain' ? renderAlainV43Interview(article.body) : article.id==='immobilier/imm-c1-rc-07-patrick' ? renderPatrickLolaV91(article.body) : article.id==='immobilier/imm-c1-rc-05-caserne' ? renderCaserneOscarV64(article.body) : article.id==='immobilier/imm-c1-rc-02-thomas' ? renderBernardThierryV16(article.body) : article.id==='immobilier/imm-c1-rc-04-karim' ? renderEdouardJeanV12bis(article.body) : null;
 const classification=conversations[d.cycle]?.[d.conversation] ?? d.conversation;
 const context=publicContextLabel(d.cycle,d.contexte);
 const perspectiveCode=perspectiveOf(d);
@@ -247,7 +248,7 @@ const shareBase=canonical;
 })();
 </script><section class="contribute-callout"><p class="micro">SUGGÉRER UNE PISTE ÉDITORIALE</p><h2>Une question ou une source à nous signaler ?</h2><p>Proposez une question économique, une référence documentaire ou un mécanisme à explorer. Les Scènes demeurent des fictions ; les Regards croisés reposent sur des sources réelles.</p><a href={`/media/proposer-un-eclairage/?cycle=${encodeURIComponent(d.cycle)}&conversation=${encodeURIComponent(d.conversation)}`}>Contribuer</a></section>
 <MediaFooter/>
-{d.format==='entretien'&&article.id!=='immobilier/imm-c1-rc-06-alain'&&article.id!=='industrie/ind-c1-cst-05-brouillon'&&<script is:inline>
+{d.format==='entretien'&&article.id!=='immobilier/imm-c1-rc-06-alain'&&article.id!=='industrie/ind-c1-cst-05-brouillon'&&article.id!=='immobilier/imm-c1-rc-04-karim'&&<script is:inline>
 (function(){
  const root=document.querySelector('article.article');if(!root)return;
  const intro=(root.textContent||'').match(/(?:Je m.appelle|Moi, c.est|Je suis)\s+([A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ-]+)/i);

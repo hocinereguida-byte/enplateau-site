@@ -357,8 +357,31 @@ for(const [route,title] of industrieTitres){
  }
 }
 
+// Édouard Antigueux / Jean Toksik V1.2 bis : concordance intégrale et remplacement de Karim.
+{
+ const slug='imm-c1-rc-04-karim',href='/media/articles/immobilier/'+slug+'/';
+ const html=read('media/articles/immobilier/'+slug+'/index.html');
+ const source=fs.readFileSync(path.resolve('../content/articles/immobilier/'+slug+'.md'),'utf8');
+ const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
+ const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
+ const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+ const story=html.match(/<article\b[^>]*data-article-id="immobilier\/imm-c1-rc-04-karim"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const rendered=[...story.matchAll(/<(p|h2)\b([^>]*)>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':m[2].includes('edouard-dialogue-line')?'— ':'')+decode(m[3].replace(/<[^>]*>/g,'')));
+ const expected=front[2].trim().split(/\n\n/);
+ const bodyCount=expected.slice(1).map(s=>s.replace(/^## /,'')).join('').length;
+ const totalCount=[field('title'),field('summary'),'Fiction satirique · Les interrogatoires',...expected.map(s=>s.replace(/^## /,'')),field('source_notice')].join('').length;
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||bodyCount!==11870||totalCount!==12357||expected.filter(s=>s.startsWith('## ')).length!==6||expected.at(-1)!=='— Monsieur Cargasse.'||(story.match(/class="edouard-dialogue-line"/g)||[]).length!==249||(story.match(/class="edouard-stage"><em>/g)||[]).length!==14)errors.push('Édouard V1.2 bis : texte, longueur, intertitres, didascalies ou dialogues non concordants.');
+ const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'';
+ const lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Les interrogatoires')||!html.includes('/media/lectures/droit-regulation/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/')||!html.includes('<h2>Jean Toksik</h2>')||!story.includes('Par Jean Toksik')||!story.includes('interview-speaker">Édouard Antigueux')||!story.includes('interview-speaker">Jean Toksik'))errors.push('Édouard V1.2 bis : titre, chapô, signature, fiction ou classement non conforme.');
+ if(html.includes('/images/imm-c1-rc-04-karim-visuel-v1.webp')||decode(html).includes('dix-sept pages pour rendre possible un quartier'))errors.push('Édouard V1.2 bis : ancien contenu ou visuel de Karim visible.');
+ if(!fs.existsSync(path.resolve('../content/archives/immobilier/imm-c1-rc-04-karim.md')))errors.push('Karim : archive historique manquante.');
+ for(const page of ['media/publications/index.html','media/cycles/immobilier/index.html','media/cycles/immobilier/conversations/C1/index.html','media/scenes/index.html','media/lectures/droit-regulation/index.html'])if(!read(page).includes(href))errors.push('Édouard V1.2 bis : navigation incorrecte '+page);
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Édouard V1.2 bis : article indexable en préproduction.');
+}
+
 // Signatures éditoriales validées, distinctes du corps des manuscrits.
-for(const [route,author] of [["industrie/ind-c1-cst-02-brouillon","Oscar Sansfroid"],["industrie/ind-c1-cst-04-brouillon","Oscar Sansfroid"],["immobilier/imm-c1-rc-07-patrick","Lola Genzed"],["industrie/ind-c1-cst-01-brouillon","Jean Toksic"],["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"],["immobilier/imm-c1-rc-06-alain","Emma Santhune"]]){
+for(const [route,author] of [["industrie/ind-c1-cst-02-brouillon","Oscar Sansfroid"],["industrie/ind-c1-cst-04-brouillon","Oscar Sansfroid"],["immobilier/imm-c1-rc-07-patrick","Lola Genzed"],["industrie/ind-c1-cst-01-brouillon","Jean Toksic"],["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"],["immobilier/imm-c1-rc-06-alain","Emma Santhune"],["immobilier/imm-c1-rc-04-karim","Jean Toksik"]]){
  const html=read('media/articles/'+route+'/index.html');
  const signature=html.match(/<section\b[^>]*aria-label="Signature de l’auteur"[^>]*>([\s\S]*?)<\/section>/)?.[1]??'';
  if(!signature.includes('<h2>'+author+'</h2>'))errors.push('Signature éditoriale incorrecte : '+route);

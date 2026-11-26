@@ -1,8 +1,8 @@
 ---
-genre_narratif: "chronique"
-title: "Immobilier : dix-sept pages pour rendre possible un quartier qui n’existait plus."
-summary: "Karim, avocat d’un projet de reconversion, tente de sécuriser juridiquement un quartier dont le programme et les perspectives commerciales se défont."
-format: "chronique"
+genre_narratif: "grand-entretien"
+title: "Un promoteur veut acheter des murs. Il aurait préféré qu'ils soient vides."
+summary: "Philippe De Spi a trouvé une ancienne imprimerie à transformer en centre de formation. Marcel Cargasse, qui y répare du matériel professionnel, n'a aucune envie de déménager. Édouard Antigueux, l'avocat du promoteur, ne s'était jamais autant intéressé à une entreprise de huit salariés."
+format: "entretien"
 cycle: "immobilier"
 conversation: "C1"
 contexte: "territoire-reconversion"
@@ -11,169 +11,562 @@ statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-28T14:00:00+01:00"
 mise_en_avant: "standard"
-hero_image: "/images/imm-c1-rc-04-karim-visuel-v1.webp"
-image_alt: "Gros plan sur les mains d’un avocat en costume appliquant un tampon sur une parcelle vide d’une maquette immobilière, sans visage ni inscription."
-source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "Manuscrit Karim V6.2 de référence. Préproduction uniquement ; réserves documentaires et intercycles à clôturer avant visa public."
-source_document_version: "V6.2"
-source_document_url: "https://docs.google.com/document/d/1oLB9VVh-iLdV5O19zTNCOO-vSFAgwp-nnnl28qb9fck/edit"
-tag_1: "Reconversion industrielle"
-tag_2: "Droit immobilier"
-tag_3: "Pollution des sols"
-tag_4: "Faisabilité"
-tag_5: "Économie de projet"
+source_notice: "Les personnages, les propos, les événements et les chiffres sont fictifs."
+methodology_specific: "Édouard Antigueux et Marcel Cargasse — Jean Toksik V1.2 bis, manuscrit stabilisé le 26 novembre 2026. Source https://docs.google.com/document/d/1SENVk2P4whU-N2O9ejK_Z3pay5h_qSV47_XdPNawCCc/edit. PV https://docs.google.com/document/d/15Hx7icdxcSgWvjtrgExGR-WVhp_Bukuu8ZlfgFg3wTg/edit. Avenant de cadrage autorise remplacement de Karim en préproduction uniquement. Matrice 144 critères après avenant : 112 C, 15 PC, 0 NC, 8 NV, 9 NA. Littéraire et D1 favorables ; D2 favorable sous hypothèses et réserves, singularité favorable sur périmètre comparé. 11 870 caractères corps/intertitres, 12 357 tous éléments inclus hors séparateurs, six intertitres, 249 répliques, 14 didascalies. Code et URL historiques conservés ; ancien Karim archivé à l'identique, ancien visuel retiré de l'article. Nouveau visuel à réaliser. Aucun bon à publier. Matrice V12 : https://docs.google.com/spreadsheets/d/10H_K9JMDCvklO6-qhrXotOpn5RM_p0kV/edit."
+source_document_version: "V1.2 bis"
+source_document_url: "https://docs.google.com/document/d/1SENVk2P4whU-N2O9ejK_Z3pay5h_qSV47_XdPNawCCc/edit"
+tag_1: "Bail commercial"
+tag_2: "Indemnité d'éviction"
+tag_3: "Acquisition immobilière"
+tag_4: "Négociation"
+tag_5: "Marge prévisionnelle"
 code_editorial: "IMM-C1-RC-04"
 unite_programmation: "IMM-C1-RC"
 perspective_principale: "droit-regulation"
 autorisation_publication: "preproduction_uniquement"
+signature_auteur: "Jean Toksik"
+updated_date: "2026-11-26"
+validation_document_url: "https://docs.google.com/document/d/15Hx7icdxcSgWvjtrgExGR-WVhp_Bukuu8ZlfgFg3wTg/edit"
+reference_angle: "IMM-C1-REC-05"
+perspectives_secondaires: ["finance-investissement"]
 ---
 
-Dans une commune du bassin minier du Pas-de-Calais, l'ancienne usine de traitement de métaux allait devenir Les Jardins de l'Évidence : quarante logements, une crèche, des ateliers et une promenade arborée. Sur la plaquette, des enfants sortaient déjà de la crèche. Personne ne semblait avoir remarqué que celle-ci n'existait pas.
+Par Jean Toksik
 
-Philippe M., dirigeant du projet, avait réservé le traiteur pour le 18 septembre de l'année suivante. Le maire avait accepté de couper le ruban. Il restait à déterminer ce qu'il inaugurerait.
+— C'est vous sur la photo avec le ministre ?
 
-Karim B., avocat spécialiste des projets immobiliers et de l'environnement, fut chargé de trouver comment rendre cette reconversion juridiquement possible, sans changer le programme, le budget ni la date. Il connaissait les terrains compliqués. Il aimait surtout les phrases qui permettaient de les rendre un peu moins compliqués.
+— Oui. Lors d'une réception au Sénat.
 
-PHILIPPE M. — Vous pouvez nous confirmer que c'est possible ?
+— C'est un ami ?
 
-KARIM B. — Juridiquement, c'est envisageable.
+— Nous nous connaissons.
 
-PHILIPPE M. — Parfait. « Faisabilité confirmée », alors.
+— Il connaît votre prénom ?
 
-KARIM B. — Non. « Faisabilité à étudier ».
+— Je pense, oui.
 
-PHILIPPE M. — C'est moins vendeur.
+— Vous pensez ?
 
-KARIM B. — C'est plus exact.
+— Jean, nous allons vraiment commencer comme ça ?
 
-Karim obtint la correction sur la présentation. Il regarda disparaître le mot « confirmée » avec la satisfaction discrète d'un chirurgien ayant réussi une opération délicate. Il avait sauvé un adjectif. Le reste suivrait.
+— Attendez, je fais le tour de vos connaissances.
 
-Le terrain de l'ancienne usine était pollué. Élise R., ingénieure spécialisée, devait étudier à quelles conditions le terrain pourrait accueillir les usages prévus, notamment la crèche et les logements.
+(Jean désigne une autre photographie.)
 
-Elle présenta une carte. Les endroits où les travaux seraient les plus compliqués étaient en rouge.
+— Et lui, il est milliardaire ?
 
-PHILIPPE M. — Vous pouvez mettre le rouge en gris ? Il va inquiéter les investisseurs.
+— Je ne communique pas sur le patrimoine de mes clients.
 
-ÉLISE R. — La couleur ne change pas les résultats.
+— Vous avez quand même une sacrée brochette de riches au-dessus de votre imprimante.
 
-PHILIPPE M. — Je sais. C'est précisément pour ça que je vous demande seulement la couleur.
+— Certains sont également des amis.
 
-Élise conserva le rouge.
+— Marcel Cargasse, c'est un ami ?
 
-Les études ne condamnaient pas la crèche. Pour la conserver à cet endroit, il faudrait toutefois étudier des travaux et des protections supplémentaires. On pouvait aussi la déplacer, mais elle prendrait alors la place de bâtiments que Philippe espérait louer ou vendre.
+— C'est quelqu'un que j'apprécie beaucoup.
 
-Conserver le programme annoncé coûterait, selon une première estimation, 2,1 millions d'euros de travaux et de protections en plus. Philippe demanda si l'on pouvait garder la crèche en supprimant la dépense.
+— Elle est où, sa photo ?
 
-Karim proposa de supprimer la crèche, de réduire les logements et de réserver davantage de place à des bureaux et ateliers. Rien ne garantissait encore que ce nouveau projet serait autorisé ni qu'il trouverait des clients.
+— Je n'en ai pas.
 
-Il y avait passé deux soirées. Sa note tenait en dix-sept pages, dont une phrase particulièrement réussie à la page seize. Karim la trouvait presque belle.
+— Ah, merde. On aurait pu la mettre entre deux de vos milliardaires.
 
-KARIM B. — Nous avons une solution juridiquement plus simple à examiner.
+— Rien ne vous permet de dire qu'ils le sont.
 
-PHILIPPE M. — La crèche est sauvée ?
+— Vous êtes venu parler d'immobilier ou me faire chier ?
 
-KARIM B. — Elle est retirée.
+— Ah ! Vous parlez normalement !
 
-PHILIPPE M. — Excellent. Nous avons donc sécurisé la partie la plus sensible.
+(Jean désigne un cadre posé sur le bureau.)
 
-KARIM B. — En la supprimant.
+— Et là, c'est votre femme ?
 
-PHILIPPE M. — Vous voyez : on progresse.
+— Oui.
 
-Philippe demanda au service communication de remplacer « crèche » par « vocation intergénérationnelle ». Les enfants restèrent sur l'image. Il jugeait prématuré de les prévenir.
+— Elle aussi, elle a de l'argent ?
 
-Karim rappela à Philippe qu'on ne pouvait pas continuer à promettre une crèche disparue du projet, même avec une petite mention en bas de la brochure. Philippe promit de revoir la couverture. Puis il soumit à Karim une question sur ce qu'on pourrait autoriser sur le terrain. L'avocat passa vingt minutes à trouver la formulation exacte ; Philippe, lui, conserva les enfants.
+(Édouard retourne le cadre.)
 
-Le nouveau plan prévoyait moins de logements et davantage de bureaux. Claire D., chargée de trouver des acheteurs et des locataires, voulut savoir qui occuperait ces bureaux.
+## Il venait pas réparer la climatisation
 
-CLAIRE D. — Qui les louera ?
+— Philippe De Spi, vous le connaissez depuis longtemps ?
 
-PHILIPPE M. — Les entreprises qui veulent participer à la renaissance du territoire.
+— Douze ans. C'est un promoteur qui intervient régulièrement sur des opérations de reconversion.
 
-CLAIRE D. — Vous en connaissez ?
+— Un bon client ?
 
-PHILIPPE M. — Nous les rencontrerons à l'inauguration.
+— Excellent.
 
-Philippe venait de commander un ruban plus long. Le programme avait rétréci, mais il voulait que la cérémonie conserve son ampleur.
+— Il vous rapporte combien ?
 
-Karim reprit sa note. Chaque usage avait sa réserve, chaque réserve son paragraphe. Il avait même prévu une note de bas de page pour expliquer pourquoi une autre note de bas de page n'était pas nécessaire. Il vérifia ensuite le plan.
+— Question suivante.
 
-Claire arriva avec trois colonnes de chiffres. Philippe avait fait imprimer le chiffre des économies en caractères si gros qu'il ne restait plus de place pour le résultat de l'opération.
+— D'accord. Donc beaucoup.
 
-PHILIPPE M. — Un million quatre d'économies sur les travaux et protections qu'on évite. C'est notre meilleure réunion depuis le début.
+— Non. Donc question suivante.
 
-CLAIRE D. — Notre bénéfice prévu n'est plus que de quatre cent mille euros. Et encore, à une condition.
+— Il avait trouvé cette ancienne imprimerie pour six cent cinquante mille euros ?
 
-PHILIPPE M. — C'est positif.
+— Exactement. Mille quatre cents mètres carrés. Un organisme de formation était intéressé par le bâtiment une fois les travaux réalisés.
 
-CLAIRE D. — Il faut trouver des entreprises prêtes à nous verser sept cent mille euros de plus. Nous n'avons aucun engagement.
+— Sauf que Marcel était dedans.
 
-PHILIPPE M. — Et si on ne les trouve pas ?
+— Monsieur Cargasse occupait trois cents mètres carrés.
 
-CLAIRE D. — On perd trois cent mille euros.
+— Alors, Marcel m'a raconté votre première rencontre. Il m'a même demandé d'en parler avec vous.
 
-PHILIPPE M. — Dans ce cas, mettez le million quatre sur la première diapositive. Et le reste en annexe.
+— Oui, les personnes concernées ont accepté que j'évoque cette affaire.
 
-CLAIRE D. — C'est déjà en annexe.
+— Ça tombe bien. Vous lui avez demandé de réparer votre climatisation ?
 
-PHILIPPE M. — Alors retirez l'annexe.
+— Il est arrivé en tenue de travail.
 
-Claire retourna la feuille. Le projet promettait au départ 2,6 millions d'euros de bénéfice. Avec les travaux supplémentaires, il n'en aurait laissé qu'environ 500 000. Le nouveau plan annonçait 400 000 euros, mais seulement si des locataires encore introuvables apportaient les 700 000 euros espérés.
+— Et donc ?
 
-Karim se pencha sur le tableau. Sa note de dix-sept pages était ouverte devant lui.
+— Nous avions effectivement un problème de climatisation.
 
-KARIM B. — Les travaux qu'on supprime, on peut les chiffrer. Ce n'est pas une économie inventée pour la présentation.
+— Vous lui avez montré où elle était ?
 
-CLAIRE D. — Je ne conteste pas les économies. Je cherche les locataires.
+— Je lui ai indiqué le bureau.
 
-KARIM B. — Ce sont deux questions distinctes.
+— Il y est allé ?
 
-CLAIRE D. — Oui. Et pour l'instant, nous n'avons de réponse qu'à la vôtre.
+— Oui.
 
-Karim ouvrit sa note à la page seize. C'était là qu'il avait démontré, avec une précision qui l'émouvait encore, que le projet pouvait changer de nature sans changer de dossier.
+— Il vous a dit quoi ?
 
-Claire cherchait toujours les locataires.
+— Qu'effectivement, elle ne fonctionnait pas.
 
-Personne ne contestait son raisonnement. C'était ce qu'il y avait de plus vexant.
+(Jean éclate de rire.)
 
-Claire lui tendit la couverture de la plaquette. Il y avait toujours la crèche, les enfants et la promenade.
+— Ah, le bâtard ! Et après ?
 
-CLAIRE D. — Maître Karim, qu'est-ce qu'il reste de ce projet ?
+— Il m'a demandé si on pouvait parler de son bail.
 
-KARIM B. — Le terrain. Et plusieurs façons de l'utiliser que la loi pourrait permettre.
+— Vous avez dû avoir envie de mourir.
 
-CLAIRE D. — Et les clients ?
+— J'ai présenté mes excuses.
 
-KARIM B. — Ce n'est pas une catégorie juridique.
+— Mais vous saviez qu'il avait rendez-vous avec vous ?
 
-Élise posa côte à côte le plan d'origine et celui que Karim venait de défendre. Le premier représentait un quartier habité. Le second montrait surtout des bureaux sans locataires. Même les chemins et les espaces extérieurs restaient à définir.
+— Mon assistante m'avait prévenu.
 
-ÉLISE R. — Vous êtes peut-être en train d'étudier une reconversion possible. Mais ce n'est plus le même programme.
+— Vous attendiez qui ? Le prince de Monaco ?
 
-KARIM B. — Juridiquement, ce sont deux projets distincts.
+— J'ai l'habitude de recevoir des chefs d'entreprise dans ce cabinet.
 
-ÉLISE R. — Je ne vous demandais pas de les distinguer. Je vous demandais de les regarder.
+— Marcel, il dirige quoi ? Une chorale ?
 
-Karim regarda les plans. Sur son ordinateur, le fichier « Solution consolidée » attendait son envoi. Il en connaissait presque chaque phrase, surtout celle de la page seize. Il ferma le fichier sans l'envoyer.
+— Une entreprise de huit salariés.
 
-Dans son avis final, Karim recommanda d'abandonner le quartier annoncé et d'étudier un projet plus modeste, tourné vers les entreprises. Il faudrait encore étudier les risques sanitaires, vérifier les autorisations nécessaires et s'assurer que l'opération tient financièrement. Philippe prit la décision de ne pas poursuivre le programme annoncé.
+— Ah, pardon.
 
-Il conserva néanmoins le 18 septembre.
+(Jean regarde de nouveau les photographies.)
 
-KARIM B. — Qu'allez-vous inaugurer ?
+— Effectivement, huit salariés, ça fait un peu petit pour le mur.
 
-PHILIPPE M. — Une nouvelle étape de la reconversion.
+## Vous achetez les murs. Pas Marcel.
 
-KARIM B. — Aucun nouveau projet n'a encore été approuvé.
+— Vous lui vouliez quoi ?
 
-PHILIPPE M. — Justement. Une étape pleine d'avenir.
+— Philippe souhaitait disposer de l'intégralité du bâtiment pour réaliser son opération. Nous avons proposé à Marcel de poursuivre son activité ailleurs.
 
-Le service communication conserva la couverture de la plaquette. Les enfants sortaient toujours de la crèche disparue. La mère promenait toujours son bébé dans une allée abandonnée. Philippe demanda à Karim de sécuriser cette image.
+— Vous l'appeliez déjà Marcel ?
 
-Karim regarda la couverture qu'il avait déjà demandé de corriger. Il écrivit au crayon sous l'image : « Visuel non contractuel ».
+— Oui.
 
-PHILIPPE M. — Et ça, au moins, vous êtes sûr que ça a une valeur juridique ?
+— D'accord. Continuez.
 
-KARIM B. — Je peux vous faire une note. Elle tiendra en dix-sept pages.
+— Il nous a expliqué qu'il préférait rester.
 
-Fiction économique satirique. Personnages, programme et situation inventés.
+— Et vous pouviez le virer ?
+
+— Non.
+
+— Même en achetant tout l'immeuble ?
+
+— Son bail était valable et s'imposait à l'acquéreur. Le changement de propriétaire ne changeait rien à ses droits.
+
+— Attendez, Maître. J'achète un immeuble et il y a un mec dedans qui me dit ce que je peux en faire ?
+
+— Ce mec, comme vous dites, paie un loyer pour y exercer son activité.
+
+— Il lui restait combien de temps ?
+
+— Dix-huit mois avant l'échéance de son bail.
+
+— Bon, ben dans dix-huit mois, dehors !
+
+— Non plus.
+
+— Ah, putain !
+
+— Le propriétaire peut refuser de renouveler son bail, mais dans cette affaire, il devra indemniser le locataire. Et tant que cette indemnité ne lui aura pas été versée, Marcel pourra en principe rester dans les lieux.
+
+— Même après les dix-huit mois ?
+
+— Oui.
+
+— Il est bien, Marcel !
+
+— Il bénéficie simplement des droits que lui reconnaît la loi.
+
+— Et vous, quand votre client vous a annoncé qu'il voulait acheter cet immeuble, vous saviez tout ça ?
+
+— Évidemment.
+
+— Donc vous l'avez laissé rêver ?
+
+— Jean, quand un client vient me voir avec un projet, je lui explique à quelles conditions il peut le réaliser.
+
+— Et quand il peut pas ?
+
+— Je lui explique pourquoi.
+
+— Et vous le facturez quand même ?
+
+— Vous êtes rémunéré quand vous faites une mauvaise interview ?
+
+— On va éviter de parler de moi.
+
+— Avec plaisir.
+
+## Marcel devient Monsieur Cargasse
+
+— Combien il voulait pour partir ?
+
+— Deux cent trente mille euros.
+
+— Putain ! Il avait retrouvé du pétrole sous l'atelier ?
+
+— Il nous a présenté une estimation des coûts de transfert de son entreprise.
+
+— Vous lui avez dit que c'était pas possible ?
+
+— Nous avons commencé à négocier.
+
+— Vous l'avez invité au restaurant.
+
+— Oui.
+
+— Vous invitez souvent les gens que vous prenez pour des réparateurs ?
+
+— Quand nous avons des intérêts communs à discuter.
+
+— Dans votre restaurant habituel ?
+
+— Exactement.
+
+— Celui où vous emmenez Philippe ?
+
+— Entre autres.
+
+— Et Marcel est venu en bleu de travail ?
+
+— Il sortait de son atelier.
+
+— Vous lui avez proposé une veste.
+
+— C'était une suggestion.
+
+— Vous aviez peur que le serveur lui demande de déboucher les chiottes ?
+
+— Non !
+
+— Pourquoi une veste, alors ?
+
+— C'est un établissement assez élégant.
+
+— Il est pas assez élégant, Marcel ?
+
+— Jean, je vous en prie.
+
+— Non, mais moi, j'adore cette histoire.
+
+— Nous avons très bien déjeuné.
+
+— Il paraît qu'il s'est même servi dans votre assiette.
+
+— Il souhaitait goûter mon poisson.
+
+— Avec sa fourchette ?
+
+— Oui.
+
+— Vous avez mangé le reste ?
+
+— Évidemment !
+
+— Ah ouais ! Deux cent trente mille balles et le mec peut bouffer dans votre assiette !
+
+(Édouard se redresse.)
+
+— Vous vous rendez compte de la stupidité de ce que vous racontez ?
+
+— Attendez, on n'a pas fini.
+
+(Jean consulte ses notes.)
+
+— Au début de l'affaire, vous l'appeliez Marcel. Après sa demande de deux cent trente mille euros, vous lui écriviez « Cher Monsieur Cargasse ».
+
+— C'est une formule de politesse parfaitement ordinaire.
+
+— Vous étiez moins poli quand il valait moins cher ?
+
+— Il ne valait pas moins cher !
+
+— Ah ! Nous y sommes.
+
+— Nous sommes nulle part, Jean.
+
+— Vous avez changé d'avis sur le bonhomme ?
+
+— J'ai appris à le connaître.
+
+— Grâce à une facture ?
+
+— Ce n'est pas une facture !
+
+— Pardon. Grâce à une estimation.
+
+## Deux cent trente mille euros pour avoir la paix
+
+— Sérieusement, vous trouvez pas ça abusé, deux cent trente mille euros pour déménager ?
+
+— Il ne s'agit pas de déménager un canapé. Il faut trouver des locaux adaptés, réinstaller des équipements, préserver la clientèle et continuer à faire travailler huit personnes.
+
+— Ah, maintenant, ils comptent, les huit salariés !
+
+— Ils ont toujours compté.
+
+— Pour Marcel, certainement.
+
+(Édouard pose sa tasse.)
+
+— Vous voulez comprendre cette affaire ou simplement me faire passer pour un connard ?
+
+— Les deux sont compatibles.
+
+— Très bien. Alors écoutez au moins les réponses.
+
+— Allez-y.
+
+— Les deux cent trente mille euros correspondent à sa demande dans le cadre d'un départ négocié. Ce n'est pas une indemnité fixée par un tribunal.
+
+— Il pourrait accepter cinquante mille euros ?
+
+— Certainement.
+
+— Alors pourquoi il les prend pas ?
+
+— Vous accepteriez qu'on réduise votre salaire de moitié pour faciliter les affaires de votre employeur ?
+
+— Rien à voir.
+
+— Pourquoi ?
+
+— Parce que c'est mon salaire.
+
+— Et lui, c'est son entreprise.
+
+— Je vais finir par croire que vous défendez Marcel.
+
+— Je défends les intérêts de mon client en lui expliquant ceux des autres.
+
+— Putain, vous avez une belle phrase pour chaque saloperie.
+
+— C'est gratuit, celle-là.
+
+(Jean prend une feuille.)
+
+— Votre promoteur comptait gagner combien ?
+
+— Quatre cent mille euros. Six cent cinquante mille pour l'achat, un million quatre cent cinquante mille pour les travaux et trois cent mille pour les études, les honoraires, le financement et les autres dépenses prévues.
+
+— Deux millions quatre.
+
+— Pour une revente estimée à deux millions huit.
+
+— Et là, vous rajoutez les deux cent trente mille euros de Marcel.
+
+— Plus environ quarante mille euros de frais supplémentaires liés notamment au retard.
+
+— Il lui reste cent trente mille euros !
+
+— Si tout se passe comme prévu.
+
+— Vous voulez que je lance une cagnotte pour Philippe ?
+
+— Il lui faut une marge prévisionnelle d'au moins deux cent quatre-vingt mille euros pour accepter les risques de cette opération.
+
+— Ah, pardon. Il est exigeant, le pauvre.
+
+— Vous disposez de deux millions six cent soixante-dix mille euros pour réaliser une opération immobilière ?
+
+— Pas actuellement.
+
+— Actuellement ?
+
+— Oui.
+
+— Vous attendez un virement ?
+
+(Jean repose son stylo.)
+
+— On peut revenir sur Philippe ?
+
+— Avec plaisir.
+
+## Maintenant, c'est le propriétaire qui pose problème
+
+— Vous pouviez attendre la fin du bail et laisser un juge décider du montant de l'indemnité ?
+
+— C'était envisageable. Mais Philippe ne maîtriserait ni le montant définitif ni la date de libération des locaux.
+
+— Et ?
+
+— L'organisme de formation a besoin de salles et d'ateliers. Il ne va pas attendre indéfiniment.
+
+— Vous lui vendez les mille cent mètres carrés qui restent et puis voilà !
+
+— Il en veut mille quatre cents.
+
+— Il peut pas faire des classes moins grandes ?
+
+— Vous avez une autre idée de métier que vous souhaitez exercer cet après-midi ?
+
+— Non, mais on essaie de trouver des solutions, Maître !
+
+— Moi aussi, Jean. Depuis plusieurs mois.
+
+— Et vous avez trouvé quoi ?
+
+— Philippe m'a demandé à quelles conditions l'opération pouvait retrouver son intérêt économique. Avec les dépenses supplémentaires envisagées, il ne fallait pas acheter l'immeuble plus de cinq cent mille euros.
+
+— Au lieu de six cent cinquante mille ?
+
+— Oui.
+
+— Attendez. Marcel réclame deux cent trente mille euros et vous allez retirer cent cinquante mille euros au propriétaire ?
+
+— Nous lui proposons un autre prix.
+
+— Il a dû vous adorer.
+
+— Il m'a demandé si je travaillais désormais pour Monsieur Cargasse.
+
+(Jean se met à rire.)
+
+— Ah ! Lui aussi !
+
+— Je lui ai simplement expliqué que son immeuble était vendu avec un locataire qui disposait de droits. Mon client était prêt à acheter un bâtiment libre à certaines conditions. Pas un bâtiment occupé au même prix.
+
+— En fait, personne veut payer Marcel.
+
+— Chacun défend ses intérêts.
+
+— Et Marcel, pendant que vous vous engueulez sur le prix de l'immeuble, il fait quoi ?
+
+— Il travaille.
+
+— Tranquillement ?
+
+— Je suppose.
+
+— Ah, je l'aime bien, ce mec.
+
+— Vous le connaissez à peine.
+
+— J'ai pas dit que j'allais passer mes vacances avec lui.
+
+— Philippe a acheté ?
+
+— Non. Il ne s'engagera que si le vendeur accepte un prix compatible avec sa marge et qu'un accord avec le locataire permet de sécuriser le calendrier. Il reste également d'autres conditions à vérifier pour réaliser le projet.
+
+— Et si le vendeur refuse ?
+
+— Philippe cherchera un autre bâtiment.
+
+— Et Marcel ?
+
+— Il continuera à réparer ses machines.
+
+— Dans son atelier ?
+
+— Dans son atelier.
+
+— Magnifique.
+
+## Vous avez son numéro ?
+
+— Vous vous voyez encore avec Marcel ?
+
+— Nous avons gardé d'excellentes relations.
+
+— Vous êtes allé visiter son atelier ?
+
+— Oui.
+
+— Vous avez pris des photos ?
+
+— Non, Jean.
+
+— Vous vous tutoyez maintenant ?
+
+— Ça nous arrive.
+
+— Attendez. Vous êtes passé de Marcel à Monsieur Cargasse, puis de Monsieur Cargasse à Marcel ?
+
+— Nous avons appris à nous connaître.
+
+— Il vous a invité à déjeuner, à son tour ?
+
+— Oui.
+
+— Où ça ?
+
+— Dans un petit restaurant à proximité de son entreprise.
+
+— Vous aviez mis une veste ?
+
+— Je mets généralement une veste.
+
+— Il vous a pas proposé un bleu de travail ?
+
+(Édouard regarde sa montre.)
+
+— Vous avez encore beaucoup de questions ?
+
+— Une dernière. Elle fonctionne bien, votre climatisation, maintenant ?
+
+— Très bien.
+
+— Vous avez trouvé quelqu'un pour la réparer ?
+
+— Marcel m'a recommandé une entreprise.
+
+— Ah ouais ?
+
+— Il connaît beaucoup de professionnels dans la région.
+
+(Jean sort son téléphone.)
+
+— Vous avez son numéro ?
+
+— Celui de Marcel ?
+
+— Ouais. J'ai un problème avec ma clim, chez moi.
+
+— Marcel ne fait pas de climatisation, Jean.
+
+— Oui, je sais.
+
+— Alors pourquoi vous voulez son numéro ?
+
+— Ben, il connaît du monde, apparemment.
+
+(Édouard sourit.)
+
+— Vous l'appellerez comment ?
+
+— Monsieur Cargasse.
