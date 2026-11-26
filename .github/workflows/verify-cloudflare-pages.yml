@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - name: Wait for deployed commit and verify Marc D. V6.5
+      - name: Wait for deployed commit and verify Marc Voitou — version finale
         env:
           EXPECTED_SHA: ${{ github.sha }}
           BASE_URL: https://enplateau-site.pages.dev
@@ -28,14 +28,14 @@ jobs:
             if [[ "$deployed" == "$EXPECTED_SHA" ]]; then
               page=$(mktemp)
               if curl --fail --silent --show-error --location --max-time 20 --header 'Cache-Control: no-cache' "${BASE_URL}${ARTICLE}?check=${EXPECTED_SHA}" -o "$page"; then
-                if grep -Fq 'Marc D.' "$page" && grep -Fq 'Les affaires marchaient' "$page"; then
-                  echo "SUCCESS: Cloudflare serves expected commit and Marc D. V6.5"
+                if grep -Fq 'Marc Voitou' "$page" && grep -Fq 'Les affaires marchaient' "$page"; then
+                  echo "SUCCESS: Cloudflare serves expected commit and Marc Voitou — version finale"
                   echo "### Cloudflare Pages verified" >> "$GITHUB_STEP_SUMMARY"
                   echo "Commit: \`${EXPECTED_SHA}\`" >> "$GITHUB_STEP_SUMMARY"
                   echo "Article: ${BASE_URL}${ARTICLE}" >> "$GITHUB_STEP_SUMMARY"
                   exit 0
                 fi
-                echo "Expected Marc D. V6.5 marker not found in served HTML"
+                echo "Expected Marc Voitou — version finale marker not found in served HTML"
               fi
               rm -f "$page"
             fi

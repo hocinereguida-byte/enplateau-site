@@ -36,7 +36,7 @@ jobs:
           test -s dist/deployment.json
           node -e "const fs=require('fs');const d=JSON.parse(fs.readFileSync('dist/deployment.json'));if(d.commit!==process.env.GITHUB_SHA)process.exit(1)"
           test -s dist/media/articles/industrie/ind-c1-cst-01-brouillon/index.html
-          grep -Fq 'Marc D.' dist/media/articles/industrie/ind-c1-cst-01-brouillon/index.html
+          grep -Fq 'Marc Voitou' dist/media/articles/industrie/ind-c1-cst-01-brouillon/index.html
       - name: Upload compiled site for inspection
         uses: actions/upload-artifact@v4
         with:
