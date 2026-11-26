@@ -189,7 +189,7 @@ for(const [route,title] of industrieTitres){
  if(decTitre(h1.replace(/<[^>]*>/g,'')).replace(/\s+/g,' ').trim()!==title)errors.push('Titre Industrie non conforme : '+route);
 }
 
-// Alain V4.3 : concordance intégrale du corps et retrait de l'ancien entretien.
+// Alain V4.4 : concordance intégrale du corps et retrait de l'ancien entretien.
 {
  const slug='imm-c1-rc-06-alain', href='/media/articles/immobilier/'+slug+'/', oldHref='/media/articles/immobilier/imm-c1-rc-01-isabelle/';
  const html=read('media/articles/immobilier/'+slug+'/index.html');
@@ -200,13 +200,14 @@ for(const [route,title] of industrieTitres){
  const story=html.match(/<article\b[^>]*data-article-id="immobilier\/imm-c1-rc-06-alain"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
  const rendered=[...story.matchAll(/<(p|h2)\b([^>]*)>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':m[2].includes('alain-dialogue-line')?'— ':'')+decode(m[3].replace(/<[^>]*>/g,'')));
  const expected=front[2].trim().split(/\n\n/);
- if(JSON.stringify(rendered)!==JSON.stringify(expected)||!story.includes('Par Emma Santhune')||!story.includes('interview-speaker">Emma Santhune')||/\bJean\b/.test(decode(story)))errors.push('Alain V4.3 Emma : texte intégral, signature ou attribution non concordants.');
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||!story.includes('Par Emma Santhune')||!story.includes('interview-speaker">Emma Santhune')||!story.includes('interview-speaker">Alain Ristourne')||!story.includes('interview-speaker">Le serveur')||/interview-speaker">Jean/.test(story)||!decode(story).includes('mon collègue Jean Toksik')||!decode(story).includes('Benoît Time, mon rédacteur en chef')||(decode(story).match(/\bJean\b/g)||[]).length!==1||!story.includes('href="/media/auteurs/emma-santhune/"')||html.includes('aria-label="Signature de l’auteur"')||(story.match(/Par Emma Santhune/g)||[]).length!==1||expected.length!==202||expected.slice(1).map(x=>x.replace(/^## /,'')).join('').length!==11679||expected.filter(x=>x.startsWith('## ')).length!==5||(story.match(/class="alain-dialogue-line"/g)||[]).length!==158||expected.at(-1)!=='— Attendez, Alain. Il en reste un peu sur mon couteau.')errors.push('Alain V4.4 Emma : texte intégral, signature ou attribution non concordants.');
  const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'';
  const lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
- if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Les interrogatoires')||!html.includes('/media/lectures/finance-investissement/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/'))errors.push('Alain V4.3 : titre, chapô, mention de fiction ou classement non conforme.');
- for(const page of ['media/publications/index.html','media/cycles/immobilier/index.html','media/cycles/immobilier/conversations/C1/index.html','media/scenes/index.html','media/lectures/finance-investissement/index.html']){
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Les interrogatoires')||!html.includes('/media/lectures/finance-investissement/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/'))errors.push('Alain V4.4 : titre, chapô, mention de fiction ou classement non conforme.');
+ for(const page of ['media/publications/index.html','media/cycles/immobilier/index.html','media/cycles/immobilier/conversations/C1/index.html','media/scenes/index.html','media/lectures/finance-investissement/index.html','media/auteurs/emma-santhune/index.html']){
   const pageHtml=read(page);if(!pageHtml.includes(href)||pageHtml.includes(oldHref))errors.push('Alain/Isabelle : navigation incorrecte : '+page);
  }
+ if(!fs.existsSync(path.resolve('../content/archives/immobilier/imm-c1-rc-01-isabelle.md')))errors.push('Archive Isabelle manquante.');
  if(fs.existsSync(path.join(root,'media/articles/immobilier/imm-c1-rc-01-isabelle/index.html')))errors.push('Isabelle : ancienne route encore générée.');
 }
 
@@ -258,7 +259,7 @@ for(const spec of [{"route":"industrie/ind-c1-cst-01-brouillon","version":"Varia
 if(!fs.existsSync(path.resolve('../content/archives/immobilier/imm-c1-rc-04-karim.md')))errors.push('Karim : archive historique manquante.');
 
 // Signatures éditoriales validées, distinctes du corps des manuscrits.
-for(const [route,author] of [["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"],["immobilier/imm-c1-rc-06-alain","Emma Santhune"]]){
+for(const [route,author] of [["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"]]){
  const html=read('media/articles/'+route+'/index.html');
  const signature=html.match(/<section\b[^>]*aria-label="Signature de l’auteur"[^>]*>([\s\S]*?)<\/section>/)?.[1]??'';
  if(!signature.includes('<h2>'+author+'</h2>'))errors.push('Signature éditoriale incorrecte : '+route);

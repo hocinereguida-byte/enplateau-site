@@ -1,7 +1,7 @@
 ---
 genre_narratif: "grand-entretien"
 title: "Un millionnaire hésite à abandonner un projet d'hôtel parce qu'il est en promotion"
-summary: "Alain V., 67 ans, possède une trentaine de biens immobiliers. Il envisage de transformer un ancien centre de formation en hôtel dans une ville industrielle en reconversion. Il a accepté de conseiller Emma Santhune, dont la situation patrimoniale semble beaucoup l'inquiéter."
+summary: "Alain Ristourne, 67 ans, possède une trentaine de biens immobiliers. Il envisage de transformer un ancien centre de formation en hôtel dans une ville industrielle en reconversion. Il a accepté de conseiller Emma Santhune, dont la situation patrimoniale semble beaucoup l'inquiéter."
 format: "entretien"
 cycle: "immobilier"
 conversation: "C1"
@@ -14,10 +14,10 @@ publication_date: "2026-11-25"
 mise_en_avant: "standard"
 signature_auteur: "Emma Santhune"
 source_notice: "Fiction satirique : personnages, propos, opération et chiffres fictifs."
-methodology_specific: "Alain V. V4.3, visa littéraire et D1 favorables, D2 favorable sous réserves, singularité favorable sur corpus comparé. Matrice V2 : 107 C, 16 PC, 2 NV, 5 NA, 0 NC. GO conditionnel de préproduction uniquement ; aucun bon à publier. Retrait de la consultation de l'entretien Isabelle M. selon décision utilisateur ; manuscrit et visuel historiques préservés. Adaptation de préproduction autorisée par l’utilisateur : Emma Santhune remplace Jean Toksic dans le chapô, la signature, les apostrophes et les accords grammaticaux nécessaires ; texte Drive V4.3 conservé comme témoin, arbitrages, chiffres, scènes et chute inchangés."
-source_document_version: "V4.3"
-source_document_url: "https://docs.google.com/document/d/1LNGR5WNM6Y6-eZJUdkBCQEyScm_gkUfDIWbq_EH1yDI/edit"
-validation_document_url: "https://docs.google.com/document/d/1SO3RHZkDa5yyJeDB3XNx6NT9znESRdz6Y2vZqMqQF10/edit"
+methodology_specific: "Alain Ristourne / Emma Santhune V4.4 finale figée, source exclusive https://docs.google.com/document/d/1kzj6pqe8jXXBTK-Iu1lb9wXreJ5IhuPdmccPNNry_IY/edit ; PV 144 critères https://docs.google.com/document/d/1wDXnZyNen_F7WyOcldTJ2mt3XeabwGxCuekbOfTqqWg/edit (avenant §8), 123 C / 10 PC / 0 NC / 5 NV / 6 NA. 205 paragraphes, 158 répliques, 5 intertitres, 11 679 caractères du corps/intertitres hors titre, chapô, signature, signalétique, notice et sauts. Dérogation spécifique de 2 679 caractères accordée. Visas littéraire et singularité favorables sur corpus comparé, D1 sous hypothèses, D2 sous réserves historiques, sans nouvelle consultation externe. Convention CH transposée historique, harmonisation méthodologique ouverte. Versions antérieures et archive Isabelle préservées. GO utilisateur préproduction uniquement, tests humains et rendu restent ouverts. Aucun bon à publier."
+source_document_version: "V4.4"
+source_document_url: "https://docs.google.com/document/d/1kzj6pqe8jXXBTK-Iu1lb9wXreJ5IhuPdmccPNNry_IY/edit"
+validation_document_url: "https://docs.google.com/document/d/1wDXnZyNen_F7WyOcldTJ2mt3XeabwGxCuekbOfTqqWg/edit"
 code_editorial: "IMM-C1-RC-06"
 unite_programmation: "IMM-C1-RC"
 autorisation_publication: "preproduction_uniquement"
@@ -26,6 +26,7 @@ tag_2: "Reconversion"
 tag_3: "Hôtellerie"
 tag_4: "Aide à l'investissement"
 tag_5: "Rentabilité"
+updated_date: "2026-11-26"
 ---
 
 Par Emma Santhune
@@ -60,9 +61,9 @@ Alain me demande si je suis propriétaire.
 
 — Vous avez quel âge, sans indiscrétion ?
 
-— On va peut-être faire le bilan de votre hôtel avant de faire celui de ma vie.
+— Vingt-neuf ans. Avec mon copain, on aimerait bien acheter à Paris. Vous pensez qu'il faut gagner combien ?
 
-— Vous savez, Emma, je ne porte aucun jugement. J'ai beaucoup de respect pour les gens qui n'ont pas réussi.
+— Vous gagnez combien actuellement ? Vous savez, Emma, je ne porte aucun jugement. J'ai beaucoup de respect pour les gens qui n'ont pas réussi.
 
 C'est gentil. Ça fait cinq minutes que je suis là et il me prend déjà pour une ratée.
 
@@ -184,9 +185,11 @@ Une fois les charges de l'immeuble payées, il resterait à Alain deux cent quat
 
 — De l'argent, Emma. De l'argent. Vous êtes journaliste, tout de même.
 
-— Oui, mais c'est pas payé pareil que dans l'immobilier.
+— Oui, mais c'est pas payé pareil que dans l'immobilier. Enfin, j'en sais rien. Ça fait six mois que j'essaie de savoir combien gagne mon collègue Jean Toksik. Il veut pas me le dire.
 
-— Ça, je veux bien le croire.
+— C'est probablement qu'il gagne plus que vous.
+
+— Ah, le salaud !
 
 ## L'hôtelier aussi aimerait gagner de l'argent
 
@@ -234,7 +237,7 @@ Alain pose sa tasse.
 
 — Est-ce vraiment nécessaire de parler comme ça ?
 
-— Non. Vous êtes dans une situation de merde.
+— Pardon. Mais financièrement, vous êtes quand même dans la merde, non ?
 
 — Je suis en train d'évaluer mes options, Emma. C'est une nuance qui vous échappe peut-être parce que vous n'avez pas l'habitude de prendre ce genre de décisions.
 
@@ -316,7 +319,7 @@ Alain ferme les yeux quelques secondes.
 
 — Vous avez quand même un peu d'argent de côté ?
 
-— Vous voulez pas qu'on fasse venir une assistante sociale pendant qu'on y est ?
+— Oui. Enfin, ça dépend à quel moment du mois vous me posez la question.
 
 — Je cherche simplement à vous aider.
 
@@ -378,7 +381,7 @@ Je repose ma tartine.
 
 Pour le coup, je comprends Alain.
 
-À la rédaction, on a déjà acheté deux imprimantes parce que la deuxième était à moitié prix.
+J'avais réussi à convaincre Benoît Time, mon rédacteur en chef, d'acheter deux imprimantes parce que la deuxième était à moitié prix.
 
 On n'avait pas besoin de la première.
 

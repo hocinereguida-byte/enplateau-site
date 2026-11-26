@@ -26,7 +26,7 @@ const records = [
   "industrie/ind-c1-cst-04-brouillon.md|IND-C1-CST-04|industrie|V8.2|ressources-humaines-competences|IND-C1-CST||CST|chronique|chronique|1QsesnXTveqmM5EzFTlHhpVTitNf8A8czLalWJyOx73o",
   "industrie/ind-c1-cst-05-brouillon.md|IND-C1-CST-05|industrie|V1.8|finance-investissement|IND-C1-CST||CST|entretien|grand-entretien|1h9ATIaISyMK-104IVxfgSHHDyE_UFUHO8cJWVZVCMbM",
   "industrie/ind-c1-cst-regard-croise-01-brouillon.md|IND-C1-CST-RC-01|industrie|V3.2||IND-C1-CST||CST|regard-croise||1VNTWk4QeKWnF4QD55vMR9JQ7hxAuOm4eFDk3wSelHjY",
-  "immobilier/imm-c1-rc-06-alain.md|IMM-C1-RC-06|immobilier|V4.3|finance-investissement|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1LNGR5WNM6Y6-eZJUdkBCQEyScm_gkUfDIWbq_EH1yDI",
+  "immobilier/imm-c1-rc-06-alain.md|IMM-C1-RC-06|immobilier|V4.4|finance-investissement|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1kzj6pqe8jXXBTK-Iu1lb9wXreJ5IhuPdmccPNNry_IY",
   "immobilier/imm-c1-rc-02-thomas.md|IMM-C1-RC-02|immobilier|V1.6|operations-organisation|IMM-C1-RC||territoire-reconversion|chronique|chronique|1oOFQaKq9qozoDF_wERWTGyiSJ4Zi7TO7-uXNZuXdDeA",
   "immobilier/imm-c1-rc-07-patrick.md|IMM-C1-RC-07|immobilier|V9.2|strategie-gouvernance|IMM-C1-RC||territoire-reconversion|chronique|chronique|1Vfen50QhVHC-1wEZniKACQEIMrv4ugN7wsAYUv_Lp3M",
   "immobilier/imm-c1-rc-04-karim.md|IMM-C1-RC-04|immobilier|V1.3|droit-regulation|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1cqzdHlJtcaKzj7SiSgbsuDhKEmPGLr8iBdNOIcSdbiE",
