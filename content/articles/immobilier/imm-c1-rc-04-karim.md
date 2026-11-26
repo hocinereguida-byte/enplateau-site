@@ -12,9 +12,9 @@ published: true
 publication_date: "2026-10-28T14:00:00+01:00"
 mise_en_avant: "standard"
 source_notice: "Les personnages, les propos, les événements et les chiffres sont fictifs."
-methodology_specific: "Édouard Antigueux et Marcel Cargasse — Jean Toksik V1.2 bis, manuscrit stabilisé le 26 novembre 2026. Source https://docs.google.com/document/d/1SENVk2P4whU-N2O9ejK_Z3pay5h_qSV47_XdPNawCCc/edit. PV https://docs.google.com/document/d/15Hx7icdxcSgWvjtrgExGR-WVhp_Bukuu8ZlfgFg3wTg/edit. Avenant de cadrage autorise remplacement de Karim en préproduction uniquement. Matrice 144 critères après avenant : 112 C, 15 PC, 0 NC, 8 NV, 9 NA. Littéraire et D1 favorables ; D2 favorable sous hypothèses et réserves, singularité favorable sur périmètre comparé. 11 870 caractères corps/intertitres, 12 357 tous éléments inclus hors séparateurs, six intertitres, 249 répliques, 14 didascalies. Code et URL historiques conservés ; ancien Karim archivé à l'identique, ancien visuel retiré de l'article. Nouveau visuel à réaliser. Aucun bon à publier. Matrice V12 : https://docs.google.com/spreadsheets/d/10H_K9JMDCvklO6-qhrXotOpn5RM_p0kV/edit."
-source_document_version: "V1.2 bis"
-source_document_url: "https://docs.google.com/document/d/1SENVk2P4whU-N2O9ejK_Z3pay5h_qSV47_XdPNawCCc/edit"
+methodology_specific: "V1.3 — manuscrit figé et GO utilisateur pour préproduction uniquement. Source https://docs.google.com/document/d/1cqzdHlJtcaKzj7SiSgbsuDhKEmPGLr8iBdNOIcSdbiE/edit ; PV https://docs.google.com/document/d/1YXux2K7C4NTPe7vbn7yeDV5zX-L5FXLt-bbbTZohb94/edit ; avenant de figeage. Matrice 144 critères : 121 C / 7 PC / 0 NC / 8 NV / 8 NA. 250 prises de parole, 6 intertitres, 0 séparateurs. 12080 caractères du corps hors séparateurs et signature. Visas littéraire, D1 et singularité sur périmètre comparé favorables ; D2 favorable sous hypothèses et limites. Tests externes, intercycles exhaustifs et rendu visuel à contrôler. Aucun bon à publier ; historique préservé."
+source_document_version: "V1.3"
+source_document_url: "https://docs.google.com/document/d/1cqzdHlJtcaKzj7SiSgbsuDhKEmPGLr8iBdNOIcSdbiE/edit"
 tag_1: "Bail commercial"
 tag_2: "Indemnité d'éviction"
 tag_3: "Acquisition immobilière"
@@ -26,9 +26,11 @@ perspective_principale: "droit-regulation"
 autorisation_publication: "preproduction_uniquement"
 signature_auteur: "Jean Toksik"
 updated_date: "2026-11-26"
-validation_document_url: "https://docs.google.com/document/d/15Hx7icdxcSgWvjtrgExGR-WVhp_Bukuu8ZlfgFg3wTg/edit"
+validation_document_url: "https://docs.google.com/document/d/1YXux2K7C4NTPe7vbn7yeDV5zX-L5FXLt-bbbTZohb94/edit"
 reference_angle: "IMM-C1-REC-05"
 perspectives_secondaires: ["finance-investissement"]
+validation_narrative: "Visa littéraire interne favorable — 26-11-2026"
+validation_documentaire: "D1 favorable ; D2 favorable sous hypothèses et limites — https://docs.google.com/document/d/1YXux2K7C4NTPe7vbn7yeDV5zX-L5FXLt-bbbTZohb94/edit"
 ---
 
 Par Jean Toksik
@@ -71,9 +73,7 @@ Par Jean Toksik
 
 — Ah, merde. On aurait pu la mettre entre deux de vos milliardaires.
 
-— Rien ne vous permet de dire qu'ils le sont.
-
-— Vous êtes venu parler d'immobilier ou me faire chier ?
+— Rien ne vous permet de dire qu'ils le sont. Vous êtes venu parler d'immobilier ou me faire chier ?
 
 — Ah ! Vous parlez normalement !
 
@@ -105,7 +105,11 @@ Par Jean Toksik
 
 — Non. Donc question suivante.
 
-— Il avait trouvé cette ancienne imprimerie pour six cent cinquante mille euros ?
+— J'ai une collègue, Emma Santhune, qui m'a demandé de vous poser la question.
+
+— Et pourquoi elle ne me la pose pas elle-même ?
+
+— Parce qu'elle m'a rien demandé. C'est moi qui veux savoir. Bon, il avait trouvé cette ancienne imprimerie pour six cent cinquante mille euros ?
 
 — Exactement. Mille quatre cents mètres carrés. Un organisme de formation était intéressé par le bâtiment une fois les travaux réalisés.
 
@@ -555,7 +559,7 @@ Par Jean Toksik
 
 — Celui de Marcel ?
 
-— Ouais. J'ai un problème avec ma clim, chez moi.
+— Ouais. J'ai un problème avec la clim de mon appart, dans le dixième.
 
 — Marcel ne fait pas de climatisation, Jean.
 

@@ -1,6 +1,6 @@
 ---
 title: "Le directeur accepte qu'on répare la machine. À condition de ne pas l'arrêter."
-summary: "Depuis trois semaines, une usine de pièces métalliques fabrique des pièces dont une partie finit directement à la benne. Malik B., le responsable de la maintenance, réclame trente-six heures pour réparer la machine. Le directeur est d'accord. Il aimerait simplement que la réparation ne l'empêche pas de produire."
+summary: "Depuis trois semaines, une usine de pièces métalliques fabrique des pièces dont une partie finit directement à la benne. Malik Agasse, le responsable de la maintenance, réclame trente-six heures pour réparer la machine. Le directeur est d'accord. Il aimerait simplement que la réparation ne l'empêche pas de produire."
 hero_image: "/images/ind-c1-sophie-operations-v3.webp"
 image_alt: "Photographie minimaliste d’un espace industriel consacré à la maintenance."
 format: "chronique"
@@ -11,7 +11,7 @@ lecture_principale: "operations-organisation"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-27T15:00:00+01:00"
-updated_date: "2026-11-25"
+updated_date: "2026-11-26"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
 affichage_rubrique: "automatique"
@@ -20,21 +20,26 @@ tag_2: "Retards de livraison"
 tag_3: "Maintenance"
 tag_4: "Qualité industrielle"
 tag_5: "Organisation des opérations"
-source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "Sophie M. V9.1a corrigée, source exclusive Google Drive du 25 novembre 2026 : https://docs.google.com/document/d/1dRQVXWBi8wyJ4HxcRZvryBYrP9Vf1XEwa1aj7agNQNo/edit. Procès-verbal détaillé des contrôles et 112 codes de la matrice V2 : https://docs.google.com/document/d/1AFNlTngGplvako_Vr_8FSnD0bk-UTaQyxXwPpwJXG14/edit. Visa littéraire favorable ; D1 chronologie et causalité favorable ; D2 plausibilité maintenance et sécurité favorable sous hypothèses, sans validation d'une procédure réelle. Singularité Industrie C1 favorable. Points non vérifiés : test externe de lecture et interprétation observée par de vrais lecteurs, et rendu visuel à vérifier dans la préproduction. Le manuscrit comporte 133 paragraphes de narration, 136 prises de parole en 46 groupes et 8 séparateurs de scène ; les deux premiers paragraphes Google Docs sont le titre et le chapô servis par le CMS. Aucune réécriture littéraire. L'ancien visuel, les identifiants, la signalétique de fiction et le statut sont conservés. Aucun bon à publier public. Ajustement éditorial de préproduction du 25-11-2026, selon la passation utilisateur : Nouveau titre validé. Le document Drive reste la référence littéraire antérieure à cet ajustement."
-source_document_url: "https://docs.google.com/document/d/1dRQVXWBi8wyJ4HxcRZvryBYrP9Vf1XEwa1aj7agNQNo/edit"
-source_document_version: "V9.1a corrigée — 25-11-2026 — Visa littéraire favorable ; D1 favorable ; D2 favorable sous hypothèses"
-validation_narrative: "sophie_v9_1a_visa_litteraire_favorable_2026_11_25"
-validation_documentaire: "sophie_v9_1a_d1_favorable_d2_favorable_sous_hypotheses_pv_1AFNlTngGplvako_Vr_8FSnD0bk-UTaQyxXwPpwJXG14"
+source_notice: "Les personnages, les propos, les événements et les chiffres sont fictifs."
+methodology_specific: "V9.2 — manuscrit figé et GO utilisateur pour préproduction uniquement. Source https://docs.google.com/document/d/1-ekpGzW9BFNRFKCE6XUzc_LZRwGQ6o99BLVYsn1k4zs/edit ; PV https://docs.google.com/document/d/1fPhOXEeT4M0if7BqsC5LkYNyKblSqqNsC8dqJ6FC-kc/edit ; avenant de figeage. Matrice 144 critères : 115 C / 14 PC / 0 NC / 6 NV / 9 NA. 136 prises de parole, 0 intertitres, 8 séparateurs. 12648 caractères du corps hors séparateurs et signature. Dérogation de longueur spécifique accordée, réserves de densité maintenues. Visas littéraire, D1 et singularité sur périmètre comparé favorables ; D2 favorable sous hypothèses et limites. Tests externes, intercycles exhaustifs et rendu visuel à contrôler. Aucun bon à publier ; historique préservé."
+source_document_url: "https://docs.google.com/document/d/1-ekpGzW9BFNRFKCE6XUzc_LZRwGQ6o99BLVYsn1k4zs/edit"
+source_document_version: "V9.2"
+validation_narrative: "Visa littéraire interne favorable — 26-11-2026"
+validation_documentaire: "D1 favorable ; D2 favorable sous hypothèses et limites — https://docs.google.com/document/d/1fPhOXEeT4M0if7BqsC5LkYNyKblSqqNsC8dqJ6FC-kc/edit"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "chronique"
 code_editorial: "IND-C1-CST-02"
 perspective_principale: "operations-organisation"
 unite_programmation: "IND-C1-CST"
 signature_auteur: "Oscar Sansfroid"
+validation_document_url: "https://docs.google.com/document/d/1fPhOXEeT4M0if7BqsC5LkYNyKblSqqNsC8dqJ6FC-kc/edit"
+seo:
+  image_alt: "Photographie minimaliste d’un espace industriel consacré à la maintenance."
 ---
 
-Lundi matin, Philippe D., directeur de l'usine, a réuni Sophie M., sa responsable de production, et Malik B., son responsable maintenance.
+Par Oscar Sansfroid
+
+Lundi matin, Philippe Lâche, directeur de l'usine, a réuni Sophie Bornée, sa responsable de production, et Malik Agasse, son responsable maintenance.
 
 Un client attend sa livraison jeudi. Philippe aimerait que tout le monde fasse un petit effort.
 
@@ -88,11 +93,11 @@ Malik se lève.
 
 Philippe lui demande de se rasseoir. La réunion n'est pas terminée.
 
-***
+---
 
 Depuis trois semaines, la machine fabrique des pièces dont une partie est inutilisable.
 
-Nous avons demandé à Malik de nous expliquer précisément ce qui déconne. Au bout de quatre minutes, nous avons compris pourquoi nous étions journalistes et lui responsable maintenance.
+J'ai demandé à Malik de m'expliquer précisément ce qui déconne. J'ai pris des notes pendant quatre minutes. En les relisant, j'ai compris pourquoi j'étais journaliste et lui responsable maintenance.
 
 En gros, la machine ne fabrique plus les pièces aux bonnes dimensions. Pour régler le problème, Malik doit en démonter une bonne partie.
 
@@ -162,7 +167,7 @@ Malik découvre la photo.
 
 — Malik, s'il te plaît...
 
-***
+---
 
 Sophie connaît pourtant son boulot. Et si elle s'obstine à faire tourner cette machine, c'est qu'elle croit encore pouvoir sauver sa livraison de jeudi.
 
@@ -222,7 +227,7 @@ Malik se tourne vers elle.
 
 — Tu me la laisses dans quel état ?
 
-***
+---
 
 Mardi matin, Sophie reçoit les résultats du dernier lot.
 
@@ -248,7 +253,7 @@ Elle compte les bonnes pièces qu'elle a en stock, celles qui manquent et les he
 
 Elle recommence.
 
-À la rédaction, nous connaissons assez bien ce moment. C'est celui où l'on consulte son compte bancaire une deuxième fois, au cas où le découvert serait apparu à la suite d'un problème technique.
+Je connais assez bien ce réflexe. C'est comme quand on consulte son compte bancaire une deuxième fois, au cas où le découvert serait apparu à la suite d'un problème technique.
 
 Malheureusement pour Sophie, sa calculatrice fonctionne parfaitement.
 
@@ -280,7 +285,7 @@ Cette fois, il faut bien se rendre à l'évidence : même en faisant tourner la 
 
 En gros, si Sophie arrête la machine, elle ne livre pas toute la commande jeudi. Si elle continue, elle ne livre pas toute la commande jeudi non plus, mais elle remplit encore quelques bennes.
 
-Même à la rédaction, on commence à voir ce qu'il faudrait faire.
+Même moi, je commence à voir ce qu'il faudrait faire.
 
 Sophie aussi.
 
@@ -288,7 +293,7 @@ Sophie aussi.
 
 Elle va maintenant devoir leur expliquer qu'il faut absolument arrêter.
 
-***
+---
 
 Dans cette usine, Sophie peut arrêter la production si elle ne peut plus garantir la qualité des pièces.
 
@@ -362,7 +367,7 @@ Puis il ouvre le capot.
 
 Pour la première fois depuis trois semaines, il peut enfin faire son boulot.
 
-***
+---
 
 Philippe apprend l'arrêt par un ouvrier.
 
@@ -405,6 +410,10 @@ Il a demandé à voir la note de frais, puis le règlement, puis les précédent
 La comptable a repris ses recherches.
 
 Vingt-trois minutes plus tard, Philippe avait obtenu gain de cause.
+
+J'ai calculé que ça lui faisait trois euros quatre-vingt-onze de l'heure.
+
+J'étais assez fier de mon calcul. Personne ne m'avait demandé de le faire.
 
 — Vous avez récupéré combien ? demande Sophie.
 
@@ -458,7 +467,7 @@ Philippe remonte dans son bureau.
 
 Il rédige un compte rendu dans lequel il félicite ses équipes pour avoir réagi rapidement et précise que l'arrêt a été décidé sans son accord.
 
-***
+---
 
 Pendant ce temps, le commercial doit annoncer au client qu'il ne recevra pas toute sa commande jeudi.
 
@@ -512,7 +521,7 @@ Le commercial rédige son compte rendu :
 
 Il classe le dossier dans les relations à consolider.
 
-***
+---
 
 Trente-six heures plus tard, la machine est réparée.
 
@@ -542,7 +551,7 @@ Malgré la reprise de la production, l'usine ne pourra pas livrer toute la comma
 
 Et personne ne sait encore si le client passera la suivante.
 
-***
+---
 
 Quelques jours plus tard, Philippe réunit ses équipes pour faire le bilan.
 
@@ -576,7 +585,7 @@ Il le parcourt attentivement.
 
 Tout lui paraît satisfaisant jusqu'à une ligne.
 
-Responsable des décisions : Philippe D.
+Responsable des décisions : Philippe Lâche
 
 Le directeur prend son stylo.
 

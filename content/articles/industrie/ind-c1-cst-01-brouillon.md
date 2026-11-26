@@ -2,7 +2,7 @@
 title: "Les affaires marchaient si bien qu'il a fallu y mettre un terme"
 hero_image: "/images/ind-c1-cst-01-marc-visuel-v1.webp"
 image_alt: "Gros plan sur les mains d’un dirigeant en costume fermant un cadenas à l’entrée d’une usine en pleine activité, sans visage ni texte ajouté."
-summary: "Dans une usine de deux cents salariés, Marc D. distribuait des trophées aux commerciaux qui vendaient le plus. Jusqu'au jour où il a découvert que certaines de leurs commandes lui faisaient perdre du pognon. Il a changé les prix, les primes et les habitudes de travail. Les résultats se sont améliorés. Jean Toksic a rencontré un patron très fier d'avoir réglé un problème qu'il avait lui-même largement contribué à créer."
+summary: "Dans une usine de deux cents salariés, Marc Voitou distribuait des trophées aux commerciaux qui vendaient le plus. Jusqu'au jour où il a découvert que certaines de leurs commandes lui faisaient perdre du pognon. Il a changé les prix, les primes et les habitudes de travail. Les résultats se sont améliorés. Jean Toksik a rencontré un patron très fier d'avoir réglé un problème qu'il avait lui-même largement contribué à créer."
 format: "entretien"
 cycle: "industrie"
 conversation: "C1"
@@ -11,7 +11,7 @@ lecture_principale: "strategie-gouvernance"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-27T15:00:00+01:00"
-updated_date: "2026-11-25"
+updated_date: "2026-11-26"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
 affichage_rubrique: "automatique"
@@ -20,23 +20,26 @@ tag_2: "Carnet de commandes"
 tag_3: "Capacité de production"
 tag_4: "Arbitrage commercial"
 tag_5: "Rentabilité"
-source_notice: "Personnages, entreprise, localisation, dialogues, situations et données chiffrées inventés."
-methodology_specific: "Marc D. / Jean Toksic, Grand Entretien fictif. Source exclusive : variante populaire resserrée du 25 novembre 2026 (Google Drive 1f31gy-I1RrmFjBR_FHa0qKciv3wXvkBOPGzcmfh_hus). Procès-verbal littéraire, D1 et D2 : https://docs.google.com/document/d/1QdRxnBg5zAsX1tOjOBSH5I-tOzMzuRiVFXqbW_cLsu0/edit. Visa littéraire interne favorable ; D1 cohérence favorable ; D2 plausibilité économique et sociale favorable sous limites, sans certification contractuelle, comptable, juridique ou test de lecture externe. Les primes des nouvelles affaires ont été proposées puis validées par un accord quelques semaines plus tard, sans rétroactivité des primes acquises ; l'exigence juridique du consentement selon le contrat demeure sous hypothèse. Deux millions = commandes envisagées, 18 % = marge prévue, 80 000 euros = surcoûts constatés, jusqu'à 100 000 euros = pénalités ou frais possibles. Huit séparateurs éditoriaux composés en filets ; 274 répliques attribuées à Marc ou Jean ; 36 paragraphes non-dialogués, dont la signature Par Jean Toksic, reproduits fidèlement. Aucun bon à publier public ; autorisation de préproduction uniquement. Ajustement éditorial de préproduction du 25-11-2026, selon la passation utilisateur : Ajout de la présentation de Marc D. après la signature. Le document Drive reste la référence littéraire antérieure à cet ajustement."
-source_document_url: "https://docs.google.com/document/d/1f31gy-I1RrmFjBR_FHa0qKciv3wXvkBOPGzcmfh_hus/edit"
-source_document_version: "Variante populaire resserrée — Référence littéraire du 25-11-2026 — Visa favorable ; D1 favorable ; D2 favorable sous limites"
-validation_narrative: "marc_2026_11_25_visa_litteraire_favorable"
-validation_documentaire: "marc_2026_11_25_d1_favorable_d2_favorable_sous_limites_pv_1QdRxnBg5zAsX1tOjOBSH5I-tOzMzuRiVFXqbW_cLsu0"
+source_notice: "Les personnages, l’entreprise, les dialogues, les situations et les données chiffrées sont fictifs."
+methodology_specific: "Variante populaire harmonisée finale — manuscrit figé et GO utilisateur pour préproduction uniquement. Source https://docs.google.com/document/d/15vOdDh067Uiv-vooxH-WnKLQNEqc9dDD-tcliHxxDMg/edit ; PV https://docs.google.com/document/d/1YXux2K7C4NTPe7vbn7yeDV5zX-L5FXLt-bbbTZohb94/edit ; avenant de figeage. Matrice 144 critères : 118 C / 11 PC / 0 NC / 7 NV / 8 NA. 281 prises de parole, 0 intertitres, 8 séparateurs. 14376 caractères du corps hors séparateurs et signature. Visas littéraire, D1 et singularité sur périmètre comparé favorables ; D2 favorable sous hypothèses et limites. Tests externes, intercycles exhaustifs et rendu visuel à contrôler. Aucun bon à publier ; historique préservé."
+source_document_url: "https://docs.google.com/document/d/15vOdDh067Uiv-vooxH-WnKLQNEqc9dDD-tcliHxxDMg/edit"
+source_document_version: "Variante populaire harmonisée finale"
+validation_narrative: "Visa littéraire interne favorable — 26-11-2026"
+validation_documentaire: "D1 favorable ; D2 favorable sous hypothèses et limites — https://docs.google.com/document/d/1YXux2K7C4NTPe7vbn7yeDV5zX-L5FXLt-bbbTZohb94/edit"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "grand-entretien"
-signature_auteur: "Jean Toksic"
+signature_auteur: "Jean Toksik"
 code_editorial: "IND-C1-CST-01"
 perspective_principale: "strategie-gouvernance"
 unite_programmation: "IND-C1-CST"
+validation_document_url: "https://docs.google.com/document/d/1YXux2K7C4NTPe7vbn7yeDV5zX-L5FXLt-bbbTZohb94/edit"
+seo:
+  image_alt: "Gros plan sur les mains d’un dirigeant en costume fermant un cadenas à l’entrée d’une usine en pleine activité, sans visage ni texte ajouté."
 ---
 
-Par Jean Toksic
+Par Jean Toksik
 
-Entretien avec Marc D., directeur d'une usine de deux cents salariés.
+Entretien avec Marc Voitou, directeur d'une usine de deux cents salariés.
 
 — Vous avez trouvé facilement ?
 
@@ -70,9 +73,9 @@ Entretien avec Marc D., directeur d'une usine de deux cents salariés.
 
 — On va commencer ?
 
-Marc sourit.
+Marc a souri.
 
-***
+*
 
 — Bon. Vous avez une usine, des machines, des ouvriers, des commerciaux qui vous trouvent des clients. Jusque-là, même moi, j'arrive à suivre. Et un jour, vous décidez de refuser des commandes. Pourquoi ?
 
@@ -94,7 +97,7 @@ Marc sourit.
 
 — Bon. Ben nous, on a mis un peu plus de temps à comprendre.
 
-Marc reprit son café.
+Marc a repris son café.
 
 — Le problème, c'est que chacun faisait ce qu'on lui demandait. Les commerciaux vendaient, les ateliers produisaient...
 
@@ -130,7 +133,7 @@ Marc reprit son café.
 
 — Le problème, c'est qu'on aurait dû être un peu moins contents à certains moments.
 
-***
+*
 
 — Vous aviez un commercial de l'année ?
 
@@ -160,17 +163,17 @@ Marc reprit son café.
 
 — Pourquoi ?
 
-— Faites comme si c'était moi. J'ai jamais gagné de trophée de ma vie. Ça me fera un truc à raconter à ma mère.
+— Faites comme si c'était moi. À la rédaction, Winnie Bouba nous casse les couilles depuis qu'il a reçu un trophée. J'aimerais bien voir ce que ça fait.
 
-Marc se leva, me serra vigoureusement la main et me donna deux grandes tapes sur l'épaule.
+Marc s'est levé, m'a serré vigoureusement la main et m'a donné deux grandes tapes sur l'épaule.
 
 — Bravo ! Voilà un bel exemple pour toute l'équipe ! Continuez comme ça !
 
 — Merci, Marc. Je vais vous ruiner.
 
-Il me lâcha la main.
+Il m'a lâché la main.
 
-Nous nous rassîmes.
+On s'est rassis.
 
 — Et quand vous avez découvert que sa commande vous faisait perdre du fric ?
 
@@ -192,7 +195,7 @@ Nous nous rassîmes.
 
 — J'avais projeté une photo de la remise du trophée.
 
-Je reposai ma tasse.
+J'ai reposé ma tasse.
 
 — Une photo de lui ?
 
@@ -226,7 +229,7 @@ J'ai eu besoin de quelques secondes.
 
 Je me suis plié en deux.
 
-Marc attendit.
+Marc a attendu.
 
 — Et le commercial ? Il a dit quoi ?
 
@@ -236,11 +239,21 @@ Marc attendit.
 
 — Je lui ai dit que c'était pas le moment de faire le malin.
 
-Marc but une gorgée de café.
+Marc a bu une gorgée de café.
 
 — Vous rigolez, mais il l'a toujours, son trophée.
 
-***
+— Vous l'avez encore, cette photo ?
+
+— Probablement.
+
+— Vous pouvez me l'envoyer ?
+
+— Certainement pas.
+
+— Putain, Marc, vous pensez jamais aux journalistes.
+
+*
 
 — Qui a fini par vous expliquer que votre système marchait à l'envers ?
 
@@ -272,7 +285,11 @@ Je vous passe les détails techniques. J'ai demandé deux fois à Marc de m'expl
 
 — Oui.
 
-— D'accord.
+— Et ça, c'est vous qui avez eu l'idée ?
+
+— Pourquoi ?
+
+— Non, rien. Je suis impressionné.
 
 — Et contrairement à ce que vous avez l'air de penser, c'était pas une décision facile. Quand un commercial est chez un client et qu'il doit lui dire qu'il va rappeler l'usine avant de lui répondre, il peut aussi perdre la commande.
 
@@ -300,7 +317,7 @@ Je vous passe les détails techniques. J'ai demandé deux fois à Marc de m'expl
 
 — J'ai fait une présentation.
 
-***
+*
 
 — Combien de diapositives ?
 
@@ -346,7 +363,7 @@ Je vous passe les détails techniques. J'ai demandé deux fois à Marc de m'expl
 
 — Qu'il fallait arrêter de ramener systématiquement la discussion à l'argent.
 
-Je regardai Marc.
+J'ai regardé Marc.
 
 — On est toujours dans la réunion sur les primes, là ?
 
@@ -360,7 +377,7 @@ Je regardai Marc.
 
 — Il m'a répondu : « Et ma banque, elle accepte la création de valeur ? »
 
-J'éclatai de rire.
+J'ai éclaté de rire.
 
 — Moi, ça m'a pas fait rire.
 
@@ -388,7 +405,7 @@ Marc avait une réponse à tout.
 
 Quelques semaines plus tard, la direction et les commerciaux avaient fini par trouver un accord sur le nouveau calcul des primes.
 
-***
+*
 
 — Et ça a marché, finalement ?
 
@@ -424,7 +441,7 @@ Quelques semaines plus tard, la direction et les commerciaux avaient fini par tr
 
 — Des gens qui sourient parce qu'ils travaillent pas chez vous.
 
-— C'était une illustration, monsieur Toksic.
+— C'était une illustration, monsieur Toksik.
 
 — Et les ouvriers étaient contents ?
 
@@ -444,7 +461,7 @@ Quelques semaines plus tard, la direction et les commerciaux avaient fini par tr
 
 Je n'ai rien trouvé de drôle à répondre.
 
-Marc poursuivit.
+Marc a poursuivi.
 
 — Mais qu'est-ce que vous vouliez que je fasse ? Que je continue à accepter des commandes qui nous faisaient perdre de l'argent pour que certains salariés puissent gagner davantage le samedi ?
 
@@ -452,7 +469,7 @@ Marc poursuivit.
 
 — Vous imaginez si je dois supprimer des postes dans six mois ? Je leur explique quoi, aux familles ?
 
-Je baissai les yeux vers mon carnet.
+J'ai baissé les yeux vers mon carnet.
 
 Pour le coup, j'avais pas de solution.
 
@@ -494,13 +511,13 @@ Pour le coup, j'avais pas de solution.
 
 Un silence.
 
-Marc reprit sa tasse.
+Marc a repris sa tasse.
 
 — Enfin... vous voyez ce que je veux dire.
 
 — Oui.
 
-***
+*
 
 — Et cet ouvrier, vous l'avez revu ?
 
@@ -530,15 +547,15 @@ Marc reprit sa tasse.
 
 — Oui.
 
-Marc posa sa tasse.
+Marc a posé sa tasse.
 
-— Vous avez déjà dirigé une entreprise, monsieur Toksic ?
+— Vous avez déjà dirigé une entreprise, monsieur Toksik ?
 
 — Non. Une fois, j'ai organisé un barbecue. On était huit, j'avais oublié le charbon. Depuis, je me méfie des responsabilités.
 
 — Bon. Imaginez maintenant que les huit personnes aient des enfants et un crédit immobilier. Et que vous ayez oublié autre chose que le charbon.
 
-Je souris.
+J'ai souri.
 
 L'enfoiré venait de retourner mon barbecue contre moi.
 
@@ -552,9 +569,9 @@ L'enfoiré venait de retourner mon barbecue contre moi.
 
 — J'ai aussi une usine à faire tourner.
 
-Je notai sa réponse.
+J'ai noté sa réponse.
 
-***
+*
 
 — Et votre client historique ? Celui qui travaillait avec vous depuis quinze ans ? Comment il a pris les nouveaux prix ?
 
@@ -594,7 +611,7 @@ Je notai sa réponse.
 
 — Doucement, Marc. Ça fait une heure que je suis là. Me filez pas un trophée.
 
-***
+*
 
 — Une dernière question.
 
@@ -630,7 +647,7 @@ Je notai sa réponse.
 
 — Tant mieux.
 
-Marc sourit.
+Marc a souri.
 
 — Vous avez changé les objectifs de tout le monde.
 
@@ -650,21 +667,21 @@ Marc sourit.
 
 — Je vous demande pas de comparer.
 
-Marc se redressa.
+Marc s'est redressé.
 
 — Je vois pas où vous voulez en venir.
 
 — Moi non plus, parfois. Mais là, pour une fois, c'est assez clair.
 
-Je posai mon stylo.
+J'ai posé mon stylo.
 
 — Qui a changé la manière dont on vous évaluait, vous ?
 
-Marc ouvrit la bouche.
+Marc a ouvert la bouche.
 
-Puis la referma.
+Puis l'a refermée.
 
-Il regarda sa tasse.
+Il a regardé sa tasse.
 
 Elle était vide.
 

@@ -13,10 +13,10 @@ published: true
 publication_date: "2026-11-25"
 mise_en_avant: "standard"
 source_notice: "Les personnages, les propos, les événements et les chiffres sont fictifs."
-methodology_specific: "Caserne — Oscar Sansfroid V6.4 figée le 26 novembre 2026. Source https://docs.google.com/document/d/18N0uGhe5ZKKU-sWEzFlvU3ddbz_gXOABp9oCEIGS-J4/edit. PV https://docs.google.com/document/d/1Nz-nRwKmYI6Ml5p3NrLWi7LN8Gn_QhxmbMD1SbaSI0c/edit. Matrice 144 critères : 127 C, 8 PC, 0 NC, 4 NV, 5 NA. Littéraire, identité narrative, D1 et singularité sur corpus comparé favorables ; D2 favorable sous limites. 8 846 caractères corps et intertitres, 9 334 tous éléments inclus hors séparateurs ; cinq intertitres, 60 répliques, six personnages nommés. GO utilisateur pour remplacement en préproduction uniquement. Réserves intercycles, tests lecteurs et contrôles techniques maintenues. V6.2 préservée sur Drive et dans Git. Aucun bon à publier."
-source_document_version: "V6.4"
-source_document_url: "https://docs.google.com/document/d/18N0uGhe5ZKKU-sWEzFlvU3ddbz_gXOABp9oCEIGS-J4/edit"
-validation_document_url: "https://docs.google.com/document/d/1Nz-nRwKmYI6Ml5p3NrLWi7LN8Gn_QhxmbMD1SbaSI0c/edit"
+methodology_specific: "V6.5 — manuscrit figé et GO utilisateur pour préproduction uniquement. Source https://docs.google.com/document/d/1Q_o_ugtXNoL--Z9zTFKdyNi6G03eylvh8DVZSMTYgLI/edit ; PV https://docs.google.com/document/d/1fPhOXEeT4M0if7BqsC5LkYNyKblSqqNsC8dqJ6FC-kc/edit ; avenant de figeage. Matrice 144 critères : 122 C / 11 PC / 0 NC / 6 NV / 5 NA. 60 prises de parole, 5 intertitres, 0 séparateurs. 8990 caractères du corps hors séparateurs et signature. Visas littéraire, D1 et singularité sur périmètre comparé favorables ; D2 favorable sous hypothèses et limites. Tests externes, intercycles exhaustifs et rendu visuel à contrôler. Aucun bon à publier ; historique préservé."
+source_document_version: "V6.5"
+source_document_url: "https://docs.google.com/document/d/1Q_o_ugtXNoL--Z9zTFKdyNi6G03eylvh8DVZSMTYgLI/edit"
+validation_document_url: "https://docs.google.com/document/d/1fPhOXEeT4M0if7BqsC5LkYNyKblSqqNsC8dqJ6FC-kc/edit"
 code_editorial: "IMM-C1-RC-05"
 unite_programmation: "IMM-C1-RC"
 autorisation_publication: "preproduction_uniquement"
@@ -27,6 +27,8 @@ tag_4: "Culture"
 tag_5: "Coût d’opportunité"
 signature_auteur: "Oscar Sansfroid"
 updated_date: "2026-11-26"
+validation_narrative: "Visa littéraire interne favorable — 26-11-2026"
+validation_documentaire: "D1 favorable ; D2 favorable sous hypothèses et limites — https://docs.google.com/document/d/1fPhOXEeT4M0if7BqsC5LkYNyKblSqqNsC8dqJ6FC-kc/edit"
 ---
 
 Par Oscar Sansfroid
@@ -38,6 +40,8 @@ C'est magnifique. Il y a du bois, du verre, des arbres et des gens qui se balade
 Ça fait vingt minutes que je suis dans la commune. J'ai pas croisé un seul de ces mecs.
 
 Véronique m'explique qu'il faut rendre la culture accessible à tous et sortir les habitants de leurs habitudes.
+
+Ma fille a quinze ans. Quand je lui annonce qu'on va faire un truc qui va lui plaire, elle me demande généralement si elle est obligée de venir.
 
 — Ils font quoi de leurs week-ends ?
 

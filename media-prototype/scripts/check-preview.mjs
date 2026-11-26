@@ -61,38 +61,6 @@ if(trial){
  }
 }
 
-// Sophie V9.1a corrigée : manuscrit du 25 novembre, préproduction uniquement.
-// Vérifier le texte intégral, l'attribution statique des 136 répliques, et les 8 scènes.
-const sophieCanonicalRoute='media/articles/industrie/ind-c1-cst-02-brouillon/index.html';
-const sophieCanonical=read(sophieCanonicalRoute);
-if(sophieCanonical){
- const articleHtml=sophieCanonical.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-02-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
- const paragraphs=(articleHtml.match(/<p(?:\s|>)/g)||[]).length;
- const dividers=(articleHtml.match(/<hr\b/g)||[]).length;
- const attributedGroups=(articleHtml.match(/data-dialogue-verified="sophie-v9-1a"/g)||[]).length;
- const attributedTurns=(articleHtml.match(/class="fiction-dialogue-turn"/g)||[]).length;
- const speakerLabels=(articleHtml.match(/class="fiction-dialogue-speaker"/g)||[]).length;
- const rawDialogue=(articleHtml.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
- if(paragraphs!==269||dividers!==8||attributedGroups!==46||attributedTurns!==136||speakerLabels!==136||rawDialogue!==0)
-  errors.push('Sophie V9.1a : structure/rendu non conforme ('+paragraphs+' paragraphes, '+dividers+' séparateurs, '+attributedGroups+' groupes, '+attributedTurns+' répliques, '+speakerLabels+' attributions, '+rawDialogue+' dialogues bruts).');
- for(const who of ['Philippe','Malik','Sophie','Un ouvrier','La comptable','Le commercial','Le client'])
-  if(!articleHtml.includes('fiction-dialogue-speaker">'+who))
-   errors.push('Sophie V9.1a : locuteur manquant « '+who+' ».');
- if(!sophieCanonical.includes("répare la machine. À condition de ne pas l")
-  ||!sophieCanonical.includes("Depuis trois semaines, une usine de pièces métalliques")
-  ||!articleHtml.includes("Lundi matin, Philippe D., directeur de l")
-  ||!articleHtml.includes("une pièce sur deux n")
-  ||!articleHtml.includes('Un euro cinquante.')
-  ||!articleHtml.includes("Puis tend le document à Sophie pour qu&#39;elle signe.")
-  ||!articleHtml.includes("Responsable des décisions : Philippe D.")
-  ||!articleHtml.includes("L&#39;équipe."))
-  errors.push('Sophie V9.1a : titre, chapô, faits économiques, responsabilités ou chute absents.');
- if(articleHtml.includes('Statut : Sophie M.')||articleHtml.includes('V9.1a corrigée')||articleHtml.includes('GO préproduction'))
-  errors.push('Sophie V9.1a : note interne visible dans le récit.');
- if(!/name="robots"\s+content="noindex,nofollow"/.test(sophieCanonical))
-  errors.push('Sophie canonique indexable en préproduction.');
-}
-
 // Nathalie Solo / Lola Genzed V4.1 : comparaison intégrale du texte rendu.
 {
  const slug='ind-c1-cst-03-brouillon',href='/media/articles/industrie/'+slug+'/';
@@ -112,76 +80,6 @@ if(sophieCanonical){
  for(const name of ['Nathalie Solo','Sonia Praude','Vincent Tracker','Karim Samarche','Benoît Time','Hugo Matricks','Mina Mano','Samuel Killer','Laurent Champion','Bruno Toudou'])if(!decode(html).includes(name))errors.push('Nathalie Lola V4.1 : identité manquante '+name);
  for(const page of ['media/publications/index.html','media/cycles/industrie/index.html','media/cycles/industrie/conversations/C1/index.html','media/scenes/index.html','media/lectures/technologie-innovation/index.html'])if(!read(page).includes(href))errors.push('Nathalie Lola V4.1 : navigation incorrecte '+page);
  if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Nathalie Lola V4.1 : article indexable en préproduction.');
-}
-
-// Claire et Kevin V8.1, texte du 25 novembre : contrôles du HTML réellement composé.
-// Le gabarit doit conserver les cinq scènes, cinq intertitres et 105 répliques attribuées.
-const claireRoute='media/articles/industrie/ind-c1-cst-04-brouillon/index.html';
-const claireHtml=read(claireRoute);
-if(claireHtml){
- const story=claireHtml.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-04-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
- const paragraphs=(story.match(/<p(?:\s|>)/g)||[]).length;
- const headings=(story.match(/<h2(?:\s|>)/g)||[]).length;
- const dividers=(story.match(/<hr\b/g)||[]).length;
- const groups=(story.match(/data-dialogue-verified="claire-kevin-v8-1"/g)||[]).length;
- const turns=(story.match(/class="fiction-dialogue-turn"/g)||[]).length;
- const labels=(story.match(/class="fiction-dialogue-speaker"/g)||[]).length;
- const raw=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
- if(paragraphs!==258||headings!==5||dividers!==5||groups!==47||turns!==105||labels!==105||raw!==0)
-  errors.push('Claire et Kevin V8.1 : structure non conforme ('+paragraphs+' paragraphes, '+headings+' intertitres, '+dividers+' scènes, '+groups+' groupes, '+turns+' répliques, '+labels+' locuteurs, '+raw+' dialogues bruts).');
- if(!claireHtml.includes("Ils veulent embaucher trente ouvriers. Personne n")
-   ||!claireHtml.includes("Claire M. aime quand tout est bien organisé.")
-   ||!claireHtml.includes("Kevin R. adore")
-   ||!story.includes("Claire M., la responsable des ressources humaines")
-   ||!story.includes("Kevin R. avait huit heures dans sa journée.")
-   ||!story.includes("Ils sont déjà avec leurs recrues")
-   ||!story.includes("Un autre ouvrier, qui connaissait lui aussi cette machine")
-   ||!story.includes("Elles savent que je sais")
-   ||!story.includes("Dans cinq minutes ?"))
-  errors.push('Claire/Kevin V8.1 : titre, chapô, corrections D1/D2 ou chute non concordants.');
- for(const who of ['Kevin','Claire','Le directeur',"Le chef d&#39;atelier",'Le responsable de production','Une recrue'])
-  if(!story.includes('fiction-dialogue-speaker">'+who))
-   errors.push('Claire/Kevin V8.1 : attribution manquante « '+who+' ».');
- if(story.includes('MANUSCRIT VALIDÉ')||story.includes('GO préproduction')||story.includes('V8.1 corrigée'))
-  errors.push('Claire/Kevin V8.1 : métadonnées internes affichées.');
- if(!/name="robots"\s+content="noindex,nofollow"/.test(claireHtml))
-  errors.push('Claire/Kevin V8.1 : article indexable en préproduction.');
-}
-
-// Marc D. / Jean Toksic : variante populaire du 25-11-2026, source Drive
-// exacte et récits précomposés, sans attribution par alternance automatique.
-const marcRoute='media/articles/industrie/ind-c1-cst-01-brouillon/index.html';
-const marcHtml=read(marcRoute);
-if(marcHtml){
- const story=marcHtml.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-01-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
- const paragraphs=(story.match(/<p(?:\s|>)/g)||[]).length;
- const dividers=(story.match(/<hr\b/g)||[]).length;
- const groups=(story.match(/data-interview-verified="marc-2026-11-25"/g)||[]).length;
- const turns=(story.match(/class="interview-turn interview-(?:question|answer)"/g)||[]).length;
- const speakers=(story.match(/class="interview-speaker"/g)||[]).length;
- const jean=(story.match(/class="interview-turn interview-question"/g)||[]).length;
- const marc=(story.match(/class="interview-turn interview-answer"/g)||[]).length;
- const raw=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
- const bylines=(story.match(/class="interview-byline"/g)||[]).length;
- if(paragraphs!==36||dividers!==8||groups!==28||turns!==274||speakers!==274||jean!==136||marc!==138||raw!==0||bylines!==1)
-  errors.push('Marc 25-11 : structure non conforme ('+paragraphs+' paragraphes, '+dividers+' séparateurs, '+groups+' groupes, '+turns+' répliques, '+speakers+' locuteurs, '+jean+'/'+marc+' rôles, '+raw+' dialogues bruts, '+bylines+' signature).');
- if(!marcHtml.includes("Les affaires marchaient si bien qu")
-  ||!marcHtml.includes('Marc D. distribuait des trophées aux commerciaux')
-  ||!story.includes('Par Jean Toksic')
-  ||!story.includes('Entretien avec Marc D., directeur d&#39;une usine de deux cents salariés.')
-  ||!story.includes('Je vous passe les détails techniques')
-  ||!story.includes('Pour les nouvelles affaires, on a revu les prix')
-  ||!story.includes('les commerciaux avaient fini par trouver un accord sur le nouveau calcul des primes')
-  ||!story.includes('80 000 euros de surcoûts constatés')
-  ||!story.includes('100 000 euros de pénalités et de frais possibles')
-  ||!story.includes('Il reste du café ?')
-  ||!story.includes('interview-speaker">Jean Toksic')
-  ||!story.includes('interview-speaker">Marc D.'))
-  errors.push('Marc 25-11 : titre, chapô, signature, tournants narratifs, valeurs économiques ou chute absents.');
- if(story.includes('D1/D2 à confirmer')||story.includes('Candidate littéraire prioritaire')||story.includes('BON À PUBLIER'))
-  errors.push('Marc 25-11 : mentions internes visibles dans le récit.');
- if(!/name="robots"\s+content="noindex,nofollow"/.test(marcHtml))
-  errors.push('Marc 25-11 : article indexable en préproduction.');
 }
 
 // Laurent Dafdaf / Winnie Bouba V1.8 : contrôle intégral de la version figée.
@@ -334,54 +232,33 @@ for(const [route,title] of industrieTitres){
  if(fs.existsSync(path.join(root,'media/articles/immobilier/imm-c1-rc-03-nathalie/index.html')))errors.push('Audrey : ancienne route encore générée.');
 }
 
-// Caserne Oscar V6.4 : concordance intégrale, dialogue statique et navigation.
-{
- const slug='imm-c1-rc-05-caserne',href='/media/articles/immobilier/'+slug+'/';
- const html=read('media/articles/immobilier/'+slug+'/index.html');
- const source=fs.readFileSync(path.resolve('../content/articles/immobilier/'+slug+'.md'),'utf8');
+// Cinq sources finales : comparer tous les paragraphes et séparateurs rendus.
+for(const spec of [{"route":"industrie/ind-c1-cst-01-brouillon","version":"Variante populaire harmonisée finale","author":"Jean Toksik","bodyCount":14376,"total":281,"headings":0,"separators":8},{"route":"immobilier/imm-c1-rc-04-karim","version":"V1.3","author":"Jean Toksik","bodyCount":12080,"total":250,"headings":6,"separators":0},{"route":"industrie/ind-c1-cst-02-brouillon","version":"V9.2","author":"Oscar Sansfroid","bodyCount":12648,"total":136,"headings":0,"separators":8},{"route":"industrie/ind-c1-cst-04-brouillon","version":"V8.2","author":"Oscar Sansfroid","bodyCount":13269,"total":105,"headings":5,"separators":5},{"route":"immobilier/imm-c1-rc-05-caserne","version":"V6.5","author":"Oscar Sansfroid","bodyCount":8990,"total":60,"headings":5,"separators":0}]){
+ const route=spec.route,href='/media/articles/'+route+'/';
+ const html=read('media/articles/'+route+'/index.html');
+ const source=fs.readFileSync(path.resolve('../content/articles/'+route+'.md'),'utf8');
  const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
  const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
  const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
- const story=html.match(/<article\b[^>]*data-article-id="immobilier\/imm-c1-rc-05-caserne"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
- const rendered=[...story.matchAll(/<(p|h2)\b([^>]*)>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':'')+decode(m[3].replace(/<[^>]*>/g,'')));
+ const story=html.match(/<article\b[^>]*data-article-id="[^"]+"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
  const expected=front[2].trim().split(/\n\n/);
- if(JSON.stringify(rendered)!==JSON.stringify(expected)||expected.length!==151||expected.filter(s=>s.startsWith('## ')).length!==5||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==60||expected.slice(1).map(s=>s.replace(/^## /,'')).join('').length!==8846||expected.at(-1)!=="C'est un madison."||!expected.includes("J'avais réussi la soustraction. Je croyais avoir terminé."))errors.push('Caserne Oscar V6.4 : texte intégral ou dialogues non concordants.');
- const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'';
- const lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
- if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!html.includes('/media/lectures/territoires-politiques-publiques/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/'))errors.push('Caserne Oscar V6.4 : titre, chapô, fiction ou classement non conforme.');
- if(field('signature_auteur')!=='Oscar Sansfroid'||(story.match(/Par Oscar Sansfroid/g)||[]).length!==1||html.includes('aria-label="Signature de l’auteur"'))errors.push('Caserne Oscar V6.4 : signature manquante ou dupliquée.');
- for(const name of ['Véronique Delasalle','Gérard Fêtier','Jacqueline Roussel','Monique Fêtier','Michel Duroy','Samira Bilan'])if(!decode(story).includes(name))errors.push('Caserne Oscar V6.4 : personnage manquant '+name);
- if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Caserne Oscar V6.4 : article indexable en préproduction.');
- for(const page of ['media/publications/index.html','media/cycles/immobilier/index.html','media/cycles/immobilier/conversations/C1/index.html','media/scenes/index.html','media/lectures/territoires-politiques-publiques/index.html']){
-  if(!read(page).includes(href))errors.push('Caserne Oscar V6.4 : navigation incorrecte : '+page);
- }
+ const rendered=[...story.matchAll(/<(p|h2)\b([^>]*)>([\s\S]*?)<\/\1>|<hr\b[^>]*data-source-separator="([^"]+)"[^>]*>/g)].map(m=>m[4]??((m[1]==='h2'?'## ':m[2].includes('final-dialogue-line')?'— ':'')+decode(m[3].replace(/<[^>]*>/g,''))));
+ const count=expected.slice(1).filter(x=>x!=='*'&&x!=='---').map(x=>x.replace(/^## /,'')).join('').length;
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||count!==spec.bodyCount||expected.filter(x=>x.startsWith('— ')).length!==spec.total||expected.filter(x=>x.startsWith('## ')).length!==spec.headings||expected.filter(x=>x==='*'||x==='---').length!==spec.separators||(story.match(/class="[^"]*final-dialogue-line"/g)||[]).length!==spec.total)errors.push('Manuscrit final non concordant : '+route);
+ const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'',lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
+ const label=spec.author==='Jean Toksik'?'Fiction satirique · Les interrogatoires':'Fiction satirique · Raisons et déraisons';
+ const slug=spec.author==='Jean Toksik'?'jean-toksik':'oscar-sansfroid';
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes(label)||field('source_document_version')!==spec.version||field('signature_auteur')!==spec.author||!story.includes('href="/media/auteurs/'+slug+'/"')||!story.includes('Par '+spec.author)||html.includes('aria-label="Signature de l’auteur"'))errors.push('Signature, titre, chapô ou signalétique finale incorrecte : '+route);
+ if(/Jean Toksic|Marc D\.|Sophie M\.|Philippe D\.|Malik B\.|Claire M\.|Kevin R\./.test(decode(story)))errors.push('Ancienne identité dans le manuscrit final : '+route);
+ const cycle=route.split('/')[0],lecture=field('perspective_principale');
+ for(const page of ['media/publications/index.html','media/cycles/'+cycle+'/index.html','media/cycles/'+cycle+'/conversations/C1/index.html','media/scenes/index.html','media/lectures/'+lecture+'/index.html','media/auteurs/'+slug+'/index.html'])if(!read(page).includes(href))errors.push('Navigation finale incorrecte : '+route+' / '+page);
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Article final indexable : '+route);
+ if(front[1].includes('\nhero_image: ')){if(!html.includes(field('hero_image'))||!decode(html).includes(field('image_alt')))errors.push('Visuel final ou alt absent : '+route);}
 }
-
-// Édouard Antigueux / Jean Toksik V1.2 bis : concordance intégrale et remplacement de Karim.
-{
- const slug='imm-c1-rc-04-karim',href='/media/articles/immobilier/'+slug+'/';
- const html=read('media/articles/immobilier/'+slug+'/index.html');
- const source=fs.readFileSync(path.resolve('../content/articles/immobilier/'+slug+'.md'),'utf8');
- const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
- const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
- const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
- const story=html.match(/<article\b[^>]*data-article-id="immobilier\/imm-c1-rc-04-karim"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
- const rendered=[...story.matchAll(/<(p|h2)\b([^>]*)>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':m[2].includes('edouard-dialogue-line')?'— ':'')+decode(m[3].replace(/<[^>]*>/g,'')));
- const expected=front[2].trim().split(/\n\n/);
- const bodyCount=expected.slice(1).map(s=>s.replace(/^## /,'')).join('').length;
- const totalCount=[field('title'),field('summary'),'Fiction satirique · Les interrogatoires',...expected.map(s=>s.replace(/^## /,'')),field('source_notice')].join('').length;
- if(JSON.stringify(rendered)!==JSON.stringify(expected)||bodyCount!==11870||totalCount!==12357||expected.filter(s=>s.startsWith('## ')).length!==6||expected.at(-1)!=='— Monsieur Cargasse.'||(story.match(/class="edouard-dialogue-line"/g)||[]).length!==249||(story.match(/class="edouard-stage"><em>/g)||[]).length!==14)errors.push('Édouard V1.2 bis : texte, longueur, intertitres, didascalies ou dialogues non concordants.');
- const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'';
- const lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
- if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Les interrogatoires')||!html.includes('/media/lectures/droit-regulation/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/')||!html.includes('<h2>Jean Toksik</h2>')||!story.includes('Par Jean Toksik')||!story.includes('interview-speaker">Édouard Antigueux')||!story.includes('interview-speaker">Jean Toksik'))errors.push('Édouard V1.2 bis : titre, chapô, signature, fiction ou classement non conforme.');
- if(html.includes('/images/imm-c1-rc-04-karim-visuel-v1.webp')||decode(html).includes('dix-sept pages pour rendre possible un quartier'))errors.push('Édouard V1.2 bis : ancien contenu ou visuel de Karim visible.');
- if(!fs.existsSync(path.resolve('../content/archives/immobilier/imm-c1-rc-04-karim.md')))errors.push('Karim : archive historique manquante.');
- for(const page of ['media/publications/index.html','media/cycles/immobilier/index.html','media/cycles/immobilier/conversations/C1/index.html','media/scenes/index.html','media/lectures/droit-regulation/index.html'])if(!read(page).includes(href))errors.push('Édouard V1.2 bis : navigation incorrecte '+page);
- if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Édouard V1.2 bis : article indexable en préproduction.');
-}
+if(!fs.existsSync(path.resolve('../content/archives/immobilier/imm-c1-rc-04-karim.md')))errors.push('Karim : archive historique manquante.');
 
 // Signatures éditoriales validées, distinctes du corps des manuscrits.
-for(const [route,author] of [["industrie/ind-c1-cst-02-brouillon","Oscar Sansfroid"],["industrie/ind-c1-cst-04-brouillon","Oscar Sansfroid"],["immobilier/imm-c1-rc-07-patrick","Lola Genzed"],["industrie/ind-c1-cst-01-brouillon","Jean Toksic"],["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"],["immobilier/imm-c1-rc-06-alain","Emma Santhune"],["immobilier/imm-c1-rc-04-karim","Jean Toksik"]]){
+for(const [route,author] of [["immobilier/imm-c1-rc-07-patrick","Lola Genzed"],["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"],["immobilier/imm-c1-rc-06-alain","Emma Santhune"]]){
  const html=read('media/articles/'+route+'/index.html');
  const signature=html.match(/<section\b[^>]*aria-label="Signature de l’auteur"[^>]*>([\s\S]*?)<\/section>/)?.[1]??'';
  if(!signature.includes('<h2>'+author+'</h2>'))errors.push('Signature éditoriale incorrecte : '+route);
