@@ -61,7 +61,7 @@ if(trial){
  }
 }
 
-// Nathalie Solo / Lola Genzed V4.1 : comparaison intégrale du texte rendu.
+// Nathalie Solo / Lola Genzed V4.2 : comparaison intégrale du texte rendu.
 {
  const slug='ind-c1-cst-03-brouillon',href='/media/articles/industrie/'+slug+'/';
  const html=read('media/articles/industrie/'+slug+'/index.html');
@@ -72,14 +72,14 @@ if(trial){
  const story=html.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-03-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
  const rendered=[...story.matchAll(/<(p|h2)\b[^>]*>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':'')+decode(m[2].replace(/<[^>]*>/g,'')));
  const expected=front[2].trim().split(/\n\n/);
- const count=field('title').length+field('summary').length+expected.filter(s=>s!=='Par Lola Genzed').map(s=>s.replace(/^## /,'')).join('').length;
- if(JSON.stringify(rendered)!==JSON.stringify(expected)||count!==10802||expected.filter(s=>s.startsWith('## ')).length!==5||expected.at(-1)!=='Nathalie lui demande laquelle elle doit signer.'||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==18)errors.push('Nathalie Lola V4.1 : texte, longueur, intertitres ou répliques non concordants.');
+ const count=expected.filter(s=>s!=='Par Lola Genzed').map(s=>s.replace(/^## /,'')).join('').length;
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||count!==10435||expected.filter(s=>s.startsWith('## ')).length!==5||expected.at(-1)!=='Nathalie lui demande laquelle elle doit signer.'||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==18)errors.push('Nathalie Lola V4.2 : texte, longueur, intertitres ou répliques non concordants.');
  const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'';
  const lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
- if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!html.includes('/media/lectures/technologie-innovation/')||!html.includes('/media/cycles/industrie/conversations/C1/')||!html.includes('/media/cycles/industrie/contextes/CST/')||!html.includes(field('hero_image'))||!decode(html).includes(field('image_alt'))||!html.includes('<h2>Lola Genzed</h2>')||!story.includes('Par Lola Genzed'))errors.push('Nathalie Lola V4.1 : titre, chapô, signature, fiction, illustration ou classement non conforme.');
- for(const name of ['Nathalie Solo','Sonia Praude','Vincent Tracker','Karim Samarche','Benoît Time','Hugo Matricks','Mina Mano','Samuel Killer','Laurent Champion','Bruno Toudou'])if(!decode(html).includes(name))errors.push('Nathalie Lola V4.1 : identité manquante '+name);
- for(const page of ['media/publications/index.html','media/cycles/industrie/index.html','media/cycles/industrie/conversations/C1/index.html','media/scenes/index.html','media/lectures/technologie-innovation/index.html'])if(!read(page).includes(href))errors.push('Nathalie Lola V4.1 : navigation incorrecte '+page);
- if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Nathalie Lola V4.1 : article indexable en préproduction.');
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!html.includes('/media/lectures/technologie-innovation/')||!html.includes('/media/cycles/industrie/conversations/C1/')||!html.includes('/media/cycles/industrie/contextes/CST/')||!html.includes(field('hero_image'))||!decode(html).includes(field('image_alt'))||!story.includes('href="/media/auteurs/lola-genzed/"')||html.includes('aria-label="Signature de l’auteur"')||(story.match(/Par Lola Genzed/g)||[]).length!==1||!story.includes('Par Lola Genzed'))errors.push('Nathalie Lola V4.2 : titre, chapô, signature, fiction, illustration ou classement non conforme.');
+ for(const name of ['Nathalie Solo','Sonia Praude','Vincent Tracker','Karim Samarche','Benoît Time','Hugo Matricks','Mina Mano','Samuel Killer','Laurent Champion','Bruno Toudou'])if(!decode(html).includes(name))errors.push('Nathalie Lola V4.2 : identité manquante '+name);
+ for(const page of ['media/publications/index.html','media/cycles/industrie/index.html','media/cycles/industrie/conversations/C1/index.html','media/scenes/index.html','media/lectures/technologie-innovation/index.html','media/auteurs/lola-genzed/index.html'])if(!read(page).includes(href))errors.push('Nathalie Lola V4.2 : navigation incorrecte '+page);
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Nathalie Lola V4.2 : article indexable en préproduction.');
 }
 
 // Laurent Dafdaf / Winnie Bouba V1.8 : contrôle intégral de la version figée.
@@ -210,7 +210,7 @@ for(const [route,title] of industrieTitres){
  if(fs.existsSync(path.join(root,'media/articles/immobilier/imm-c1-rc-01-isabelle/index.html')))errors.push('Isabelle : ancienne route encore générée.');
 }
 
-// Patrick Lola V9.1 : concordance intégrale et retrait de l'ancien article de stratégie.
+// Patrick Lola V9.2 : concordance intégrale et retrait de l'ancien article de stratégie.
 {
  const slug='imm-c1-rc-07-patrick',href='/media/articles/immobilier/'+slug+'/',oldHref='/media/articles/immobilier/imm-c1-rc-03-nathalie/';
  const html=read('media/articles/immobilier/'+slug+'/index.html');
@@ -221,12 +221,12 @@ for(const [route,title] of industrieTitres){
  const story=html.match(/<article\b[^>]*data-article-id="immobilier\/imm-c1-rc-07-patrick"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
  const rendered=[...story.matchAll(/<(p|h2)\b[^>]*>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':'')+decode(m[2].replace(/<[^>]*>/g,'')));
  const expected=front[2].trim().split(/\n\n/);
- if(JSON.stringify(rendered)!==JSON.stringify(expected)||expected.filter(s=>s.startsWith('## ')).length!==4||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==12||field('title').length+field('summary').length+expected.filter(s=>s!=='Par Lola Genzed').map(s=>s.replace(/^## /,'')).join('').length!==11608||expected.at(-1)!=='— Eh ben, Patrick. Vous avez réussi à les faire travailler ensemble.'||!story.includes('Par Lola Genzed'))errors.push('Patrick Lola V9.1 : texte intégral ou dialogues non concordants.');
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||expected.filter(s=>s.startsWith('## ')).length!==4||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==12||expected.filter(s=>s!=='Par Lola Genzed').map(s=>s.replace(/^## /,'')).join('').length!==11238||expected.at(-1)!=='— Eh ben, Patrick. Vous avez réussi à les faire travailler ensemble.'||!story.includes('Par Lola Genzed')||!story.includes('href="/media/auteurs/lola-genzed/"')||html.includes('aria-label="Signature de l’auteur"')||(story.match(/Par Lola Genzed/g)||[]).length!==1)errors.push('Patrick Lola V9.2 : texte intégral ou dialogues non concordants.');
  const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'';
  const lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
- if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!html.includes('/media/lectures/strategie-gouvernance/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/'))errors.push('Patrick Lola V9.1 : titre, chapô, fiction ou classement non conforme.');
- for(const name of ["Patrick Delaplace","Céline Lafrite","François Chouze","Sandrine Belmèche","Rachid El Snoub","Émilie Carré"])if(!decode(html).includes(name))errors.push('Patrick Lola V9.1 : personnage manquant '+name);
- for(const page of ['media/publications/index.html','media/cycles/immobilier/index.html','media/cycles/immobilier/conversations/C1/index.html','media/scenes/index.html','media/lectures/strategie-gouvernance/index.html']){
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!html.includes('/media/lectures/strategie-gouvernance/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/'))errors.push('Patrick Lola V9.2 : titre, chapô, fiction ou classement non conforme.');
+ for(const name of ["Patrick Delaplace","Céline Lafrite","François Chouze","Sandrine Belmèche","Rachid El Snoub","Émilie Carré"])if(!decode(html).includes(name))errors.push('Patrick Lola V9.2 : personnage manquant '+name);
+ for(const page of ['media/publications/index.html','media/cycles/immobilier/index.html','media/cycles/immobilier/conversations/C1/index.html','media/scenes/index.html','media/lectures/strategie-gouvernance/index.html','media/auteurs/lola-genzed/index.html']){
   const pageHtml=read(page);if(!pageHtml.includes(href)||pageHtml.includes(oldHref))errors.push('Patrick/Audrey : navigation incorrecte : '+page);
  }
  if(fs.existsSync(path.join(root,'media/articles/immobilier/imm-c1-rc-03-nathalie/index.html')))errors.push('Audrey : ancienne route encore générée.');
@@ -258,7 +258,7 @@ for(const spec of [{"route":"industrie/ind-c1-cst-01-brouillon","version":"Varia
 if(!fs.existsSync(path.resolve('../content/archives/immobilier/imm-c1-rc-04-karim.md')))errors.push('Karim : archive historique manquante.');
 
 // Signatures éditoriales validées, distinctes du corps des manuscrits.
-for(const [route,author] of [["immobilier/imm-c1-rc-07-patrick","Lola Genzed"],["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"],["immobilier/imm-c1-rc-06-alain","Emma Santhune"]]){
+for(const [route,author] of [["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"],["immobilier/imm-c1-rc-06-alain","Emma Santhune"]]){
  const html=read('media/articles/'+route+'/index.html');
  const signature=html.match(/<section\b[^>]*aria-label="Signature de l’auteur"[^>]*>([\s\S]*?)<\/section>/)?.[1]??'';
  if(!signature.includes('<h2>'+author+'</h2>'))errors.push('Signature éditoriale incorrecte : '+route);

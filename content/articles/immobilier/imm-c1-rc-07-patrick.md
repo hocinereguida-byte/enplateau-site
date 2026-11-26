@@ -13,10 +13,10 @@ published: true
 publication_date: "2026-11-26"
 mise_en_avant: "standard"
 source_notice: "Les personnages, les propos, l'opération immobilière et les chiffres sont fictifs."
-methodology_specific: "Patrick Delaplace — Lola Genzed V9.1, manuscrit figé du 26 novembre 2026. GO éditorial explicite de remplacement en préproduction. 11 608 caractères (titre, chapô, corps et intertitres, hors sauts, signature, signalétique et notice), quatre intertitres et six personnages. Dernière correction : consignes explicites des deux colonnes. PV V6.4 conservé comme historique, non présenté comme visa différentiel V9.1. Aucun nouveau PV V9.1 fourni. Publication publique non autorisée ; version antérieure conservée dans l'historique Git et sur Drive."
-source_document_version: "V9.1"
-source_document_url: "https://docs.google.com/document/d/11JN-x7psy9LTuKZRHH8bweGrBpBSywf_z-ldGa-5BwQ/edit"
-validation_document_url: "https://docs.google.com/document/d/1t3idTkJvYsJOc9BOAjXmvbUMqhys9Z4YVJ581zpnihc/edit"
+methodology_specific: "Des commerçants veulent faire revivre une galerie commerciale. Avec l'argent du propriétaire. — Lola Genzed V9.2, manuscrit final figé le 26 novembre 2026. Source exclusive https://docs.google.com/document/d/1Vfen50QhVHC-1wEZniKACQEIMrv4ugN7wsAYUv_Lp3M/edit ; PV actuel https://docs.google.com/document/d/1BMLsylK4_8tFkue77o8j_hsYE2M_H1VFk4xVKoSeLuY/edit, avenant §7. Matrice 144 critères : 116 C, 17 PC, 0 NC, 6 NV, 5 NA. Visas littéraire interne et D1 favorables ; D2 favorable sous hypothèses et limites ; singularité favorable sur corpus comparé. 11238 caractères corps et intertitres hors titre, chapô, signature, signalétique et notice ; 4 intertitres, 12 répliques. Dérogation exceptionnelle accordée pour cette version. GO technique utilisateur pour préproduction uniquement. Réserves de densité, accessibilité de JPP, tests lecteurs et documentation maintenues. Versions et PV antérieurs préservés dans Git et sur Drive ; aucun bon à publier."
+source_document_version: "V9.2"
+source_document_url: "https://docs.google.com/document/d/1Vfen50QhVHC-1wEZniKACQEIMrv4ugN7wsAYUv_Lp3M/edit"
+validation_document_url: "https://docs.google.com/document/d/1BMLsylK4_8tFkue77o8j_hsYE2M_H1VFk4xVKoSeLuY/edit"
 code_editorial: "IMM-C1-RC-07"
 unite_programmation: "IMM-C1-RC"
 reference_angle: "IMM-C1-REC-04"
@@ -92,6 +92,8 @@ Patrick lui rappelle que c'était son idée.
 
 — Oui, une aire de jeux. Pas une aire de jeux chez moi.
 
+Le culot.
+
 Après avoir fait le tour de la galerie, l'aire de jeux finit derrière les chiottes. Le marchand de chaussures trouve ça dangereux parce que les parents ne pourront pas surveiller leurs enfants.
 
 Patrick lui montre de nouveau l'emplacement de sa boutique.
@@ -142,7 +144,7 @@ J'ai rempli la mienne avec beaucoup d'enthousiasme : parking gratuit, Wi-Fi grat
 
 Patrick m'a demandé de remplir également la colonne de droite.
 
-J'avais pas compris que ça me concernait.
+En vrai, j'avais pas compris que ça me concernait.
 
 ## Ils adorent la galerie. Ils veulent pas y louer de magasin.
 
@@ -170,7 +172,7 @@ Avec les loyers réduits et les deux tiers loués, il en resterait 21 000.
 
 Je trouvais ça plutôt sympa, 21 000 euros par an. Émilie m'a demandé si j'étais prête à investir les 2,4 millions nécessaires pour les toucher.
 
-Ah non. J'étais surtout intéressée par les 21 000 euros.
+Ah non. J'avoue, j'étais surtout intéressée par les 21 000 euros.
 
 Même avec des loyers moins chers, Émilie continue d'entendre parler des concerts. Plusieurs commerçants ne veulent toujours pas les financer. Il y en a même un qui aimerait bien installer sa boutique à la place.
 

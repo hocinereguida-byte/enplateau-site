@@ -21,18 +21,18 @@ tag_3: "Ergonomie"
 tag_4: "Amélioration continue"
 tag_5: "Industrialisation"
 source_notice: "Les personnages, les propos, l'entreprise et les chiffres sont fictifs."
-methodology_specific: "Nathalie Solo — Lola Genzed V4.1, manuscrit figé du 26 novembre 2026. Source unique https://docs.google.com/document/d/1gqpcofTrGe9oAGmmNq35s0uB78I0EuBiC7E8qbEdJNE/edit. PV final https://docs.google.com/document/d/1fWC694dMaIc2y80OQgR0kUmPPuak6d2o7fNpcDW4v3c/edit. Visas littéraire, D1 et singularité Industrie C1 favorables ; D2 favorable sous hypothèses. Matrice V2 : 108 C, 10 PC, 5 NV, 7 NA, 0 NC bloquant. 10 802 caractères (titre, chapô, corps et intertitres ; hors sauts, signature, signalétique et notice). Cinq intertitres, dix identités, dérogation de longueur acceptée. Version précédente conservée dans l'historique Git et sur Drive. GO technique de remplacement en préproduction uniquement ; aucun bon à publier public."
-source_document_url: "https://docs.google.com/document/d/1gqpcofTrGe9oAGmmNq35s0uB78I0EuBiC7E8qbEdJNE/edit"
-source_document_version: "V4.1"
-validation_narrative: "nathalie_lola_genzed_v41_visa_litteraire_favorable"
-validation_documentaire: "nathalie_lola_genzed_v41_d1_favorable_d2_sous_hypotheses_pv_26_11_2026"
+methodology_specific: "Elle veut réduire les « facteurs humains » grâce aux robots. Puis l'IA débarque dans son bureau. — Lola Genzed V4.2, manuscrit final figé le 26 novembre 2026. Source exclusive https://docs.google.com/document/d/1IdRy7bjsqSVxCbvz7G67H6GwAeMEQff6v7rCjN2ngcs/edit ; PV actuel https://docs.google.com/document/d/1BMLsylK4_8tFkue77o8j_hsYE2M_H1VFk4xVKoSeLuY/edit, avenant §7. Matrice 144 critères : 112 C, 18 PC, 0 NC, 6 NV, 8 NA. Visas littéraire interne et D1 favorables ; D2 favorable sous hypothèses et limites ; singularité favorable sur corpus comparé. 10435 caractères corps et intertitres hors titre, chapô, signature, signalétique et notice ; 5 intertitres, 18 répliques. Dérogation exceptionnelle accordée pour cette version. GO technique utilisateur pour préproduction uniquement. Réserves de densité, accessibilité de JPP, tests lecteurs et documentation maintenues. Versions et PV antérieurs préservés dans Git et sur Drive ; aucun bon à publier."
+source_document_url: "https://docs.google.com/document/d/1IdRy7bjsqSVxCbvz7G67H6GwAeMEQff6v7rCjN2ngcs/edit"
+source_document_version: "V4.2"
+validation_narrative: "nathalie_lola_genzed_v42_visa_litteraire_favorable"
+validation_documentaire: "nathalie_lola_genzed_v42_d1_favorable_d2_sous_hypotheses_pv_26_11_2026"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "chronique"
 code_editorial: "IND-C1-CST-03"
 unite_programmation: "IND-C1-CST"
 perspective_principale: "technologie-innovation"
 signature_auteur: "Lola Genzed"
-validation_document_url: "https://docs.google.com/document/d/1fWC694dMaIc2y80OQgR0kUmPPuak6d2o7fNpcDW4v3c/edit"
+validation_document_url: "https://docs.google.com/document/d/1BMLsylK4_8tFkue77o8j_hsYE2M_H1VFk4xVKoSeLuY/edit"
 seo:
   image_alt: "Un bras robotisé industriel sophistiqué manipule un simple pied de table en bois, sans visage ni texte ajouté."
 ---
@@ -68,6 +68,8 @@ Nathalie présente son projet à Vincent Tracker, le directeur général.
 Nathalie lui demande de la laisser finir.
 
 À la quarante-deuxième, elle annonce qu'il reste quelques calculs à faire.
+
+Masterclass.
 
 — Mais les trois millions, c'est sûr ?
 
@@ -137,7 +139,7 @@ Nathalie n'a personne.
 
 Nathalie ouvre son planning.
 
-Son robot n'est même pas encore arrivé qu'il lui manque déjà du personnel.
+Son robot n'est même pas encore arrivé qu'il lui manque déjà du personnel. JPP.
 
 ## Le facteur humain retrouve sa dignité
 
@@ -203,7 +205,7 @@ On y est presque.
 
 J'aimerais beaucoup me foutre de sa gueule.
 
-Malheureusement, ChatGPT m'a déjà proposé de remettre une phrase qu'il m'avait fait enlever.
+Mais j'avoue, ChatGPT m'a déjà proposé de remettre une phrase qu'il m'avait fait enlever.
 
 Et je l'ai remise.
 
