@@ -2,7 +2,7 @@
 title: "Ils ont signé le contrat du siècle. Reste à payer le métal."
 hero_image: "/images/ind-c1-cst-05-laurent-visuel-v1.webp"
 image_alt: "Une clé industrielle démesurée, une petite tirelire et une coupe de champagne symbolisent le contraste entre l’ambition commerciale et les moyens financiers."
-summary: "Deux cents salariés, trois cents tonnes de métal et des commerciaux qui débouchent le champagne. Laurent B., directeur financier de l'usine, a accueilli le plus gros contrat de son entreprise en demandant comment ils allaient payer tout ça. Jean Toksic a voulu comprendre ce qui pouvait rendre un homme aussi chiant."
+summary: "Deux cents salariés, trois cents tonnes de métal, le plus gros contrat de l'histoire de l'usine. Wouah ! Moi, à leur place, je serais déjà en train de regarder les villas à Dubaï. Laurent Dafdaf, le directeur financier, lui, se demandait comment ils allaient payer le métal. Fallait que je rencontre ce mec."
 format: "entretien"
 cycle: "industrie"
 conversation: "C1"
@@ -11,7 +11,7 @@ lecture_principale: "finance-investissement"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-27T15:00:00+01:00"
-updated_date: "2026-11-25"
+updated_date: "2026-11-26"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
 affichage_rubrique: "automatique"
@@ -21,561 +21,802 @@ tag_3: "Financement industriel"
 tag_4: "Contrats commerciaux"
 tag_5: "Croissance industrielle"
 source_notice: "Personnages, entreprise, localisation générale, dialogues et chiffres du scénario inventés."
-methodology_specific: "Laurent B. et Jean Toksic — source unique du récit : Google Drive 1TcYcj0VluLVqaMZ2QfxO8MCfTXGcBpgMM2ob0oj9FvM, version finale corrigée du 25 novembre 2026. Procès-verbal des visas littéraire/D1/D2 et singularité : https://docs.google.com/document/d/1XJNU1f9M8vTa1Y2Gx85j4w9ERKoIt1iBVsU_3ajZn9s/edit. Visa littéraire favorable ; D1 favorable ; D2 favorable sous limites documentaires, sans certification de contrats, de données comptables ni de conditions industrielles réelles ; singularité Industrie C1 favorable. 207 répliques attribuées dans 42 groupes de dialogue ; 56 paragraphes narratifs, 5 séparateurs de scène et 5 intertitres, texte source préservé sans réécriture. Trésorerie du premier lot, réservation de métal, réorganisation des contrôles, travail supplémentaire de l'équipe qualité, marge finale seulement prévisionnelle. La caméra et le champagne sont des accessoires fictifs de la comédie. Contrôles des tests du site et de lecture réelle indépendants du visa littéraire, jamais supposés réalisés. Aucune autorisation de publication publique : préproduction exclusivement. Ajustement éditorial de préproduction du 25-11-2026, selon la passation utilisateur : Nouveau titre et identification de Laurent B. à l'ouverture. Le document Drive reste la référence littéraire antérieure à cet ajustement."
-source_document_url: "https://docs.google.com/document/d/1TcYcj0VluLVqaMZ2QfxO8MCfTXGcBpgMM2ob0oj9FvM/edit"
-source_document_version: "Version finale corrigée — Registre populaire — 25-11-2026 — Visa littéraire et D1 favorables ; D2 favorable sous limites"
-validation_narrative: "laurent_2026_11_25_visa_litteraire_interne_favorable"
-validation_documentaire: "laurent_2026_11_25_d1_favorable_d2_favorable_sous_limites_pv_1XJNU1f9M8vTa1Y2Gx85j4w9ERKoIt1iBVsU_3ajZn9s"
+methodology_specific: "Laurent Dafdaf et Winnie Bouba — V1.8 figée le 26 novembre 2026. Source https://docs.google.com/document/d/1h9ATIaISyMK-104IVxfgSHHDyE_UFUHO8cJWVZVCMbM/edit. PV https://docs.google.com/document/d/1BBTTU9_mVtnICMjUJpLtzXrSIunDufpH6p2EqnHuESk/edit. Matrice 144 critères : 112 C, 7 PC, 0 NC, 4 NV, 21 NA. Littéraire et singularité Industrie C1 favorables ; D1 favorable avec réserve mineure sur ancienneté ; D2 favorable sous limites. 19 386 caractères selon le décompte du PV avec sauts de ligne, six intertitres, 335 répliques, 50 didascalies. GO préproduction de contrôle sous réserves ; aucun bon à publier. Version antérieure préservée dans Git et sur Drive."
+source_document_url: "https://docs.google.com/document/d/1h9ATIaISyMK-104IVxfgSHHDyE_UFUHO8cJWVZVCMbM/edit"
+source_document_version: "V1.8"
+validation_narrative: "laurent_winnie_v18_visa_litteraire_favorable"
+validation_documentaire: "laurent_winnie_v18_d1_reserve_mineure_d2_sous_limites_pv_26_11_2026"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "grand-entretien"
-signature_auteur: "Jean Toksic"
+signature_auteur: "Winnie Bouba"
 code_editorial: "IND-C1-CST-05"
 unite_programmation: "IND-C1-CST"
 perspective_principale: "finance-investissement"
+validation_document_url: "https://docs.google.com/document/d/1BBTTU9_mVtnICMjUJpLtzXrSIunDufpH6p2EqnHuESk/edit"
+seo:
+  image_alt: "Une clé industrielle démesurée, une petite tirelire et une coupe de champagne symbolisent le contraste entre l’ambition commerciale et les moyens financiers."
 ---
 
-Jean Toksic avait posé deux flûtes et une bouteille de champagne sur la table de Laurent B., le directeur financier. Une caméra enregistrait l'entretien.
+Par Winnie Bouba
 
-— Laurent, pour fêter le contrat du siècle, je vous propose une ligne de cocaïne.
+— Wesh Laurent ! Bien ou quoi ?
 
-— Vous en avez ?
+— Très bien, merci.
 
-Jean se redressa.
+— Tranquille. Ici, on parle vrai, hein. Pas de langue de bois, pas de cinéma.
 
-— Ah ! Ça vous intéresse ?
+(Laurent regarde les deux caméras.)
 
-— Non. Je voulais savoir si vous étiez sérieux.
+— Vous en avez pourtant installé beaucoup.
 
-— Du champagne, alors ?
+— Ah ! Il commence déjà !
 
-— De l'eau.
+(Winnie se tourne vers Dylan Raccord, son cameraman.)
 
-— Putain, vous êtes déprimant. Je vous propose de la coke, vous me demandez de l'eau !
+— Dylan, cadre un peu plus large. On voit pas ma montre.
 
-— Vous m'avez invité pour parler du contrat.
+(Dylan recule légèrement.)
 
-— Justement ! Le plus gros contrat de votre histoire ! Vous pourriez au moins faire semblant d'être heureux.
+— Voilà. Bon, Laurent. Directeur financier d'une boîte de deux cents personnes. Ça gagne combien, ça ?
 
-— Nous étions très heureux.
+— Vous voulez connaître mon salaire ?
 
-— Jusqu'à ce que vous arriviez ?
+— Bah ouais ! On est entre nous !
 
-— Jusqu'à ce qu'il faille payer le métal.
+— Je préfère ne pas vous le dire.
 
-Jean repoussa la flûte de Laurent.
+— Ah, t'es comme ça ! T'inquiète, je gagne sûrement plus que toi.
 
-— Bon. On va se faire chier.
+— C'est possible.
 
-— Vous voulez quand même faire l'entretien ?
+— Comment ça, « c'est possible » ?
 
-— Oui, j'ai loué la caméra.
+— Je ne connais pas vos revenus.
 
----
+— Mais tu sais qui je suis, quand même ?
 
-## Le client va payer. En attendant, démerdez-vous.
+— Oui. Votre assistante m'a envoyé votre biographie.
 
-— Donc, vos commerciaux décrochent le contrat du siècle. Tout le monde est content. Vous faites quoi ?
-
-— Je demande combien il faut dépenser avant que le client commence à nous payer.
-
-— Vous pouviez pas commencer par féliciter les commerciaux ?
-
-— Je l'ai fait.
-
-— Et après ?
-
-— J'ai posé la question.
-
-— Vous avez des amis, Laurent ?
-
-— Quelques-uns.
-
-— Ils vous invitent encore ?
-
-— De moins en moins.
-
-Laurent était directeur financier de l'usine depuis neuf ans. Pour fabriquer les pièces commandées, l'entreprise allait devoir acheter du métal, faire tourner ses machines et payer ses salariés.
-
-Le client, lui, ne paierait que plus tard.
-
-— Mais le contrat était bon ?
-
-— On prévoyait de gagner de l'argent, oui.
-
-— Et vous aviez pas de pognon ?
-
-— On en avait. Pas assez pour financer tous les achats d'un coup.
-
-— Attendez. Vous allez gagner du fric, mais vous pouvez pas bosser parce que vous avez pas assez de fric ?
-
-— Voilà.
-
-— Putain, c'est compliqué, votre truc.
-
-— Vous avez déjà attendu qu'on vous rembourse une dépense professionnelle ?
+— Ah ! Tu l'as lue ?
 
 — Oui.
 
-— Vous avez dû sortir l'argent avant ?
+— Et alors ?
 
-— Oui.
+— C'était très complet.
 
-— C'est le même problème.
+— Merci, frère !
 
-— Ah ! Sauf que moi, c'était un sandwich.
+— Il y avait notamment six pages de photographies.
 
-— Nous, c'était trois cents tonnes de métal.
+(Winnie regarde la caméra.)
 
-— C'est effectivement un peu plus emmerdant.
+— Bon. Lui, ça va être compliqué.
 
-Jean reprit son carnet.
+## Le contrat du siècle. Laurent demande qui va payer.
 
-— Et le fournisseur, vous lui avez montré le contrat ?
+— Neuf ans que t'es dans cette boîte. Et là, boum ! Le contrat du siècle !
 
-— Oui.
+— C'est effectivement le plus important que nous ayons obtenu.
 
-— Il était content pour vous ?
+— Vous avez sorti le champagne ?
 
-— Très content.
+— Les commerciaux, oui.
 
-— Et ?
+— Et toi ?
 
-— Il voulait être payé.
+— J'ai demandé combien il fallait dépenser avant que le client commence à nous payer.
 
-— Quel enfoiré.
-
-Laurent sourit.
-
-— C'est exactement ce qu'on demande à nos propres clients.
-
-— Ah oui. J'avais pas pensé à ça.
-
----
-
-## Le mec chargé de prévoir les problèmes n'avait pas prévu le problème
-
-— Vous aviez pourtant mis en place une procédure pour vérifier qu'un contrat ne risquait pas de foutre la boîte dans la merde ?
-
-— Oui.
-
-— Et elle a merdé ?
-
-— Les premières livraisons ont été avancées pendant la négociation. On le savait, mais on n'a pas correctement recalculé l'argent dont on aurait besoin pour démarrer.
-
-— Qui avait mis au point cette procédure ?
-
-— Plusieurs services. J'y ai participé.
-
-Jean posa son stylo.
-
-— Attendez. Vous avez participé à la création d'un système censé éviter les mauvaises surprises financières. Et votre plus gros contrat vous en fait une ?
-
-— Oui.
-
-— Mais vous êtes nul !
-
-Laurent se redressa.
-
-— J'ai commis une erreur. Ça ne fait pas de moi un incapable.
-
-— Ah ! Enfin un peu de vie !
-
-— J'aurais dû demander qu'on refasse les calculs avant de confirmer les nouvelles dates. C'est aussi ma responsabilité.
-
-Jean attendit.
-
-Laurent but une gorgée d'eau.
-
-— C'est tout ?
-
-— Quoi ?
-
-— Vous allez pas rejeter la faute sur les commerciaux ?
-
-— Non.
-
-— Sur la direction ?
-
-— Non.
-
-Jean feuilleta son carnet.
-
-— Putain, Laurent, vous faites chier. J'ai préparé douze questions pour vous faire avouer que vous vous êtes planté.
-
-— Vous pouvez passer à la treizième.
-
-Jean éclata de rire.
-
-Puis il regarda la caméra.
-
-— Attendez, vous pouvez la refaire ?
-
-— Quoi ?
-
-— « Vous pouvez passer à la treizième. » Mais en regardant la caméra.
+— Oh nan ! Laurent ! Mais t'es un enfer, toi !
 
 — Pourquoi ?
 
-— Pour mon extrait vidéo.
+— Imagine, je fais un concert à l'Olympia. Salle pleine, tout le monde crie mon nom, et toi tu débarques : « Excusez-moi, monsieur Bouba, mais qui rembourse les éclairages ? »
 
-Laurent regarda la caméra.
+— Vous devez pourtant les payer.
 
-Puis Jean.
+— Mais... Laisse-moi profiter du concert !
 
-— Vous allez remettre les questions qui précèdent ?
+(Laurent attend.)
 
-— Non. L'idée, c'est de faire un truc assez court.
+— Bon. Votre contrat, il était rentable ?
 
-— Mais personne ne saura pourquoi je vous dis ça.
+— Nous prévoyions une marge positive.
 
-— Si, les gens vont comprendre.
+— Bah voilà ! C'est magnifique !
 
-— Vous venez de passer dix minutes à essayer de comprendre mon métier. Et maintenant, vous voulez que les gens comprennent en quinze secondes ?
-
-Jean baissa son téléphone.
-
-— Vous êtes vraiment directeur financier jusqu'au bout des couilles, vous.
-
-— On peut continuer ?
-
-— Oui.
-
-Jean avait trouvé un excellent extrait vidéo.
-
-Il avait également trouvé le seul invité qui refusait de l'aider à le fabriquer.
-
----
-
-## Quarante-huit heures pour réfléchir. Même pas vingt-quatre pour se décider.
-
-— Vous avez décidé de suspendre certains achats pendant quarante-huit heures ?
-
-— Oui. Pour savoir exactement ce qu'on pouvait financer.
-
-— Sauf que votre fournisseur ne vous réservait le métal que jusqu'au lendemain midi.
-
-— Exact.
-
-— Ah, les cons.
-
-— Qui ?
-
-— Je sais pas encore.
-
-Laurent attendit.
-
-— Et vous avez appelé la banque ?
-
-— Oui.
-
-— Ils vous ont filé du pognon ?
-
-— Ils étudiaient notre demande.
-
-— Vous avez appelé le client ?
-
-— Oui.
-
-— Il vous a filé du pognon ?
-
-— Il n'avait pas encore accepté de nous verser un acompte.
-
-— Donc vous aviez un super contrat, un fournisseur qui voulait son fric, un banquier qui réfléchissait et un client qui attendait ses pièces.
-
-— C'est ça.
-
-— Vous dormiez bien ?
-
-— Pas particulièrement.
-
-— Vous m'étonnez.
-
-Laurent expliqua ce qui se passerait si l'usine n'achetait pas le métal à temps. Elle risquait de perdre la réservation et de ne plus pouvoir fabriquer les premières pièces aux dates promises.
-
-Mais acheter tout le métal aurait mobilisé trop d'argent, alors que l'entreprise avait d'autres dépenses à régler.
-
-— Donc si vous achetiez, vous étiez dans la merde. Et si vous achetiez pas, vous étiez aussi dans la merde.
-
-— Si on achetait tout ou si on n'achetait rien.
-
-— Ah. Vous aviez une troisième solution ?
-
-— Oui.
-
-Le fournisseur accepta une commande limitée au métal nécessaire pour commencer la fabrication. Le premier achat ne couvrait qu'une partie des trois cents tonnes nécessaires au contrat. La direction donna son accord. L'entreprise avait assez d'argent pour payer ce premier achat sans attendre le prêt de la banque.
-
-Pour le reste, il fallait encore trouver une solution.
-
-— Et votre pause de quarante-huit heures ?
-
-— Elle concernait les autres achats. Pour le premier lot, on a décidé avant le lendemain midi.
-
-— Attendez. Vous aviez de l'argent ?
-
-— Pour le premier lot.
-
-— Ça fait une demi-heure que vous me racontez que vous avez pas de pognon !
-
-Laurent posa son verre.
-
-— Jean, vous pouvez payer votre loyer ce mois-ci ?
-
-— Oui.
-
-— Vous pouvez acheter votre immeuble ?
-
-— Non.
-
-— Voilà.
-
-Jean resta immobile.
-
-— Vous venez de me traiter de pauvre ?
-
-— Non. Je vous explique qu'on peut avoir assez d'argent pour payer quelque chose sans avoir assez d'argent pour tout payer.
-
-Jean se tourna vers la caméra.
-
-— C'est formidable. J'invite un mec pour parler de son entreprise et je me retrouve à justifier ma situation financière.
-
-— Vous avez compris ?
-
-— Oui. Mais je suis vexé.
-
-— Ça n'empêche pas de comprendre.
-
-Jean nota quelque chose.
-
-— Donc vous avez commencé à fabriquer sans savoir comment vous alliez payer le reste ?
-
-— Oui.
-
-— C'était quand même risqué.
-
-— Bien sûr.
-
-— Vous, prendre un risque ?!
-
-— Qu'est-ce que vous croyez que je fais toute la journée ?
-
-— Je pensais que vous empêchiez les autres d'en prendre.
-
-— Non. J'essaie de faire en sorte qu'on puisse s'en sortir quand ça tourne mal.
-
-Jean ne trouva rien à répondre.
-
-Pour une fois, Laurent n'avait pas besoin d'un exemple avec son loyer.
-
----
-
-## Laurent garde son pognon. L'équipe qualité se tape le boulot.
-
-— Vous avez aussi repoussé de six semaines l'achat d'une machine destinée à contrôler les pièces.
-
-— Oui.
-
-— Pour garder du pognon ?
-
-— Oui.
-
-— Et les pièces, qui les contrôlait ?
-
-— La même équipe, avec l'ancien équipement.
-
-— Ça marchait ?
-
-— Oui, mais il fallait davantage de manipulations.
-
-— Donc vous avez économisé de l'argent en leur rajoutant du boulot ?
-
-— On a repoussé une dépense. C'est différent.
-
-— Pour eux aussi ?
-
-Laurent réfléchit.
-
-— Non.
-
-— Vous connaissiez le prix de la nouvelle machine ?
-
-— Évidemment.
-
-— Et vous saviez combien de temps les salariés allaient perdre en continuant avec l'ancienne ?
-
-— Pas assez précisément.
-
-— Ah. Vous avez fait vos calculs avec votre portefeuille, pas avec leurs bras.
-
-— On pensait qu'ils pourraient faire face au travail supplémentaire.
-
-— Vous leur aviez demandé ?
-
-— Pas suffisamment.
+— Encore fallait-il financer la fabrication.
 
 — C'est-à-dire ?
 
-— On aurait dû passer plus de temps avec eux avant de prendre cette décision.
+— Acheter le métal, faire tourner les machines, payer les salariés. Le client nous réglerait plus tard.
 
-— Vous êtes allé les voir après ?
+— Bah tu prends l'argent de la boîte.
 
-— Oui. La responsable qualité nous avait signalé le problème.
+— Nous n'en avions pas suffisamment.
 
-— Et vous l'avez aidée ?
-
-— Je ne suis pas formé pour faire les contrôles.
-
-— Ah. Comme moi, finalement.
-
-— Si vous voulez.
-
-— Donc vous êtes allé faire quoi ?
-
-— Lui expliquer pourquoi on devait attendre avant d'acheter le nouvel équipement.
-
-— Elle connaissait déjà la raison ?
+— Attends. T'es directeur financier...
 
 — Oui.
 
-Jean le regarda.
+— Et t'as pas les finances ?
 
-— Vous êtes allé voir une femme qui avait trop de boulot pour lui prendre du temps en lui expliquant pourquoi elle avait trop de boulot ?
+— Nous en avions. Pas assez pour payer toutes les dépenses au moment où elles arrivaient.
 
-Laurent eut un léger sourire.
+(Winnie se gratte la tête.)
 
-— Présenté comme ça...
+— Ah ouais... Mais là, je vois très bien. Moi, quand je tourne un clip, je paie le réal, les figurants, les locations, les voitures... Après, le clip sort, ça fait des vues, et je récupère mon argent.
 
-— Non, mais racontez-moi la scène.
+— Vous le récupérez systématiquement ?
 
-Laurent était arrivé dans l'atelier avec les chiffres de l'entreprise. La responsable qualité lui avait montré les pièces qui attendaient d'être contrôlées.
+— Bon, Laurent, commence pas.
 
-Il lui avait expliqué qu'il fallait conserver suffisamment d'argent pour assurer le démarrage du contrat.
+— Je vous pose la question.
 
-Elle lui avait montré une deuxième caisse.
+— Ça dépend des clips ! Des fois ça explose, des fois... Bon. C'est le métier.
 
-Il avait poursuivi ses explications.
+— Et comment financez-vous le tournage ?
 
-Elle lui avait montré une troisième caisse.
+— Avec mes cachets, les avances, les partenariats...
 
-— Et là, elle vous dit quoi ? demanda Jean.
+— Donc vous devez aussi disposer de l'argent avant de connaître les recettes.
+
+(Winnie s'interrompt.)
+
+— Ouais. Mais moi, c'est de la musique. Vous, c'est du métal.
+
+— La difficulté de trésorerie peut être comparable.
+
+— Eh ben voilà ! Tu vois qu'on se comprend !
+
+(Winnie se redresse.)
+
+— Moi, une fois, j'avais un partenariat avec une marque de boissons. Un showcase privé. J'avais déjà réservé un rooftop, fait venir un DJ, commandé une énorme pancarte avec mon blaze.
+
+— Le partenariat était signé ?
+
+— Pas encore, mais c'était quasiment fait.
+
+— Et alors ?
+
+— Ils ont choisi un autre rappeur.
+
+— Vous avez dû payer la réservation ?
+
+— Ouais. Mais ça m'a fait de la visibilité.
+
+— Sans showcase ?
+
+(Silence.)
+
+— Bon. On va revenir à ton usine, Laurent.
+
+— Très bien.
+
+— Qui a merdé avec les chiffres ?
+
+— Pendant la négociation, les premières livraisons ont été avancées. Nous n'avons pas correctement recalculé le besoin de trésorerie.
+
+— Mais tu savais que les dates avaient bougé ?
+
+— Oui.
+
+— Et t'as pas refait les calculs ?
+
+— Pas correctement.
+
+— Mais attends ! C'est pas ton boulot, les calculs ?
+
+— Entre autres.
+
+— Et vous aviez pas une procédure pour éviter ça ?
+
+— Si. J'avais d'ailleurs participé à sa mise en place.
+
+— Mais nan !
+
+— Si.
+
+— Oh le délire ! Le mec, il fait une procédure pour empêcher les problèmes. Après, le problème arrive, et...
+
+— Je reconnais que nous avons mal appliqué cette procédure.
+
+— Laurent ! Attends, je suis en train de raconter !
+
+— Pardon.
+
+— Donc là, tu rejettes la faute sur qui ? Les commerciaux ? Le directeur ?
+
+— Sur personne. J'aurais dû demander une nouvelle estimation avant de confirmer les délais. J'ai ma part de responsabilité.
+
+(Winnie baisse le ton.)
+
+— Ah. Respect.
+
+— Merci.
+
+— Nan, sérieux. Un mec qui reconnaît qu'il a fait une connerie, moi j'aime ça. C'est rare. Très rare.
+
+— Je ne sais pas si c'est si rare.
+
+— Eh ! Tu vas pas me contredire quand je te fais un compliment !
+
+## Trois cents tonnes de métal. Et personne veut attendre.
+
+— Bon ! Trois cents tonnes de métal, c'est ça ?
+
+— Pour l'ensemble du contrat.
+
+— Wouah ! Vous construisez quoi avec ça, un pays ?
+
+— Des pièces industrielles.
+
+— Ouais, j'avais compris ! Et le fournisseur, il pouvait pas attendre un peu pour être payé ?
+
+— Il acceptait de réserver le métal, mais seulement jusqu'au lendemain midi.
+
+— Comment ça ? Il te laisse même pas deux jours ?
+
+— Pour confirmer l'achat, non.
+
+— Et toi ?
+
+— Je voulais suspendre certains achats pendant quarante-huit heures, pour vérifier ce que nous pouvions financer.
+
+— Mais ça tombe pas du tout bien, ton truc !
+
+— Non.
+
+— Et la banque ?
+
+— Elle étudiait notre demande.
+
+— Elle étudiait quoi ? T'as un contrat énorme, deux cents salariés, des machines partout !
+
+— Elle voulait savoir si nous pourrions la rembourser.
+
+— Mais évidemment ! Vous avez le contrat !
+
+— Un contrat n'est pas de l'argent disponible.
+
+(Winnie grimace.)
+
+— Vous les financiers, c'est quand même particulier. T'as gagné le contrat, mais t'as pas gagné l'argent.
+
+— Exactement.
+
+— Ça, chez nous, ça arrive aussi avec les maisons de disques. On t'annonce un gros projet, on te promet une avance, tout le monde te félicite... Et après, t'appelles ton producteur pour savoir quand l'argent tombe.
+
+— Et que vous répond-il ?
+
+— « On finalise. »
+
+— Je vois.
+
+— Ah, tu vois ! Donc pourquoi ton fournisseur, il pouvait pas finaliser, lui aussi ?
+
+— Parce qu'il devait payer ses propres fournisseurs.
+
+— Et ton client, frère ? Il pouvait pas te lâcher un peu de thunes avant ?
+
+— Nous lui avions demandé un acompte.
+
+— Et ?
+
+— Il n'avait pas encore accepté.
+
+— Aïe aïe aïe... Mais tout le monde veut son pognon dans ton histoire !
+
+— Nous aussi.
+
+Dylan — Winnie, en parlant de ça...
+
+Winnie — Quoi ?
+
+Dylan — La location du matériel.
+
+Winnie — Dylan...
+
+Dylan — J'ai avancé les frais. Tu devais me rembourser hier.
+
+Winnie — Mais oui, ça arrive !
+
+Dylan — Ça fait deux jours que tu me dis ça.
+
+Winnie — Et ça fait deux jours que je te dis que ça arrive !
+
+(Laurent regarde les caméras.)
+
+— C'est assez proche de notre problème.
+
+— Ah nan ! Mélange pas tout !
+
+— Dylan a engagé une dépense en attendant votre paiement.
+
+— Mais Dylan, c'est mon gars !
+
+— Cela ne change pas sa dépense.
+
+(Winnie fixe Laurent.)
+
+— Toi, faut vraiment pas t'emmener en studio. Tu vas demander au beatmaker un plan de trésorerie avant qu'il lance l'instru.
+
+— Ce ne serait pas forcément inutile.
+
+— Mais nan, Laurent ! C'était une vanne !
+
+(Laurent boit une gorgée d'eau.)
+
+— Bon. Si tu prends pas ton métal, il se passe quoi ?
+
+— Nous risquons de perdre la réservation et de manquer les premières livraisons.
+
+— Et si tu prends les trois cents tonnes ?
+
+— Nous risquons de ne plus avoir assez d'argent pour régler les autres dépenses.
+
+— Wouah ! Tu commandes, t'es dans la merde. Tu commandes pas, t'es dans la merde !
+
+— Si nous achetons tout ou si nous n'achetons rien, oui.
+
+— Pourquoi tu précises ça ?
+
+— Parce que nous pouvions aussi acheter seulement une partie.
+
+(Winnie s'interrompt.)
+
+— Ah !
+
+(Il regarde Laurent.)
+
+— Attends... C'est pas con !
+
+— Nous avons commandé uniquement le métal nécessaire au premier lot de fabrication.
+
+— Le fournisseur était d'accord ?
+
+— Oui. Et la direction aussi.
+
+— Et t'as payé comment ?
+
+— Avec notre trésorerie. Nous avions de quoi financer ce premier lot.
+
+— Attends, attends... T'avais de l'argent, en fait ?
+
+— Pour le premier lot.
+
+— Mais frère ! Depuis tout à l'heure, tu me racontes que t'as pas de thunes !
+
+— Pas suffisamment pour financer l'ensemble du contrat.
+
+— Bah fallait le dire !
+
+— C'est ce que je vous explique depuis le début.
+
+(Winnie regarde la caméra.)
+
+— Il me fatigue.
+
+## Tu peux payer un clip. Pas forcément cinquante.
+
+Laurent — Vous avez déjà financé un clip avec votre propre argent ?
+
+— Bien sûr !
+
+— Et pourriez-vous en financer cinquante le même jour ?
+
+— Cinquante clips ?! Mais ça va pas, Laurent !
+
+— Pourquoi ?
+
+— Déjà, faut cinquante réalisateurs. Cinquante équipes. Les studios, les locations, les figurants... Sans compter les morceaux ! Je vais pas sortir cinquante clips comme ça !
+
+— Vous auriez surtout besoin de beaucoup plus d'argent.
+
+— Bah évidemment !
+
+(Laurent attend. Winnie s'interrompt.)
+
+— Ah.
+
+(Silence.)
+
+— Bon, OK. T'avais de quoi commencer, pas de quoi tout payer.
+
+— Exactement.
+
+— Fallait prendre un exemple avec les clips dès le début, aussi !
+
+— Vous m'avez dit que vous connaissiez le principe.
+
+— Laurent. Tu veux qu'on se dispute ?
+
+— Pas du tout.
+
+— Bon. Et les quarante-huit heures, là ?
+
+— Elles concernaient les autres achats. Pour le premier lot, nous avons décidé avant l'expiration de la réservation.
+
+— Mais t'avais toujours pas l'argent pour tout le reste !
+
+— Non. Les discussions continuaient avec la banque et le client.
+
+— Ah ouais, quand même ! Donc t'as commencé à fabriquer sans savoir exactement comment t'allais financer toute la suite ?
+
+— Oui. En limitant notre engagement initial à ce que nous pouvions payer.
+
+— Mais je croyais que ton métier, c'était d'empêcher les risques !
+
+— Non. C'est d'aider l'entreprise à prendre des risques qu'elle peut supporter.
+
+(Winnie le regarde.)
+
+— Wouah.
+
+— Quoi ?
+
+— C'est beau, ce que tu viens de dire.
+
+— Merci.
+
+— Tu peux le refaire face caméra ?
+
+— Pourquoi ?
+
+— Pour mes réseaux ! Ça fait très grand patron. Je peux mettre une petite instru derrière, des images de voitures, Dubaï...
+
+— Je ne suis pas le grand patron.
+
+— Mais c'est ça qui est fort ! L'humilité !
+
+— Nous pouvons poursuivre ?
+
+— Ouais, ouais. Garde ta phrase, hein. Elle est lourde.
+
+## Trois caisses. Laurent arrive avec son tableau.
+
+— Bon, pour garder ton argent, t'as repoussé d'autres achats ?
+
+— Oui. Notamment une machine de contrôle que nous devions acheter.
+
+— De combien ?
+
+— Six semaines.
+
+— Six semaines sans contrôler les pièces ?
+
+— Non. L'ancien équipement restait utilisable, mais il demandait davantage de manipulations.
+
+— Donc toi, tu gardes ta trésorerie et les autres se tapent plus de boulot.
+
+— Nous avions sous-estimé cet effet.
+
+— Vous leur aviez demandé leur avis ?
+
+— Pas suffisamment.
+
+(Winnie se redresse.)
+
+— Ah non. Là, Laurent, c'est pas bon.
+
+— Je sais.
+
+— Les gens, c'est la base. Moi, tu vois, mon équipe, c'est sacré. Les musiciens, les techniciens, les mecs qui sont avec moi depuis mes premiers showcases... Personne touche à ces gens-là.
+
+— C'est une conviction importante.
+
+— Exactement. Tu peux me prendre mes voitures, ma montre, mon studio... Mais mon équipe, jamais !
+
+(Laurent acquiesce.)
+
+— Et vous avez fait quoi pour les ouvriers ?
+
+— La responsable qualité nous avait signalé les difficultés. Je suis allé la voir.
+
+— Elle s'appelle comment ?
+
+— Véronique Patience.
+
+— Véronique Patience ?! Oh là là... Avec toi, elle va en avoir besoin !
+
+— Elle m'a montré une caisse de pièces en attente de contrôle.
+
+— Et toi ?
+
+— Je lui ai expliqué pourquoi nous devions préserver notre trésorerie.
+
+(Winnie se lève brusquement.)
+
+— Attends ! Faut que je voie le truc.
+
+(Il prend trois gobelets et les aligne devant Laurent.)
+
+— Ça, c'est les caisses. Moi, je fais Véronique. Toi, tu fais toi. Vas-y !
+
+— Je lui ai présenté les difficultés de financement...
+
+(Winnie pousse le premier gobelet vers lui.)
+
+— Première caisse !
+
+— Puis j'ai expliqué pourquoi il fallait attendre pour acheter l'équipement.
+
+(Winnie pousse le deuxième.)
+
+— Deuxième caisse !
+
+— J'ai poursuivi mes explications. Elle m'a montré une troisième caisse.
+
+(Winnie pousse le dernier gobelet.)
+
+— TROIS CAISSES !
+
+(Il reste debout.)
+
+— Et toi, tu continues à parler ?
+
+— Oui.
+
+— Mais Laurent ! Trois putains de caisses ! À quel moment tu regardes les caisses ?
+
+— Trop tard.
+
+— Elle a dit quoi, Véronique ?
 
 — Elle m'a demandé si j'étais venu l'aider ou lui expliquer ce qu'elle savait déjà.
 
-Jean éclata de rire.
+(Winnie se rassoit.)
 
-— Oh, putain ! Et vous lui avez répondu quoi ?
+— Wouah... Elle t'a terminé.
 
-— Que je comprenais sa situation.
+— Elle avait surtout raison.
 
-— Alors que vous étiez en train de lui faire perdre du temps ?
+— Mais toi, sur ton tableau, tu voyais quoi ? Le prix de la machine ?
 
-— Oui.
+— Le coût de l'équipement et notre trésorerie.
 
-Laurent regarda son verre.
-
-— Le plus con, c'est que j'étais venu pour lui montrer qu'on prenait son problème au sérieux.
-
-Jean cessa de rire.
-
-— Et depuis, vous l'avez achetée, sa machine ?
-
-— Pas encore. On a modifié l'organisation des contrôles pour leur éviter certaines manipulations. Mais il leur reste du boulot en plus.
-
-— Vous lui avez présenté vos excuses ?
-
-— On en a reparlé.
-
-— C'est pas vraiment la même chose.
-
-— Non.
-
-Jean consulta son carnet.
-
-— Vous vous rendez compte que vous avez réussi à économiser de l'argent sans même savoir ce que votre décision allait coûter en travail à ces gens-là ?
-
-Laurent releva brusquement la tête.
-
-— Mais qu'est-ce que vous voulez que je vous dise, Jean ? Je vous dis que je me suis planté ! Je suis allé expliquer son boulot à une femme qui le connaît mieux que moi. Vous voulez quoi ? Que j'y retourne pour lui casser les couilles une deuxième fois ?
-
-Jean se tourna vers la caméra.
-
-— Ah, putain ! Attendez. Vous pouvez refaire ça ?
-
-Laurent le fixa.
-
-— Vous avez compris quelque chose à mon histoire ?
-
-Jean ne répondit pas.
-
----
-
-## Le contrat a démarré. Il devrait rapporter moins que prévu.
-
-Jean reprit son carnet.
-
-— Finalement, la banque vous a prêté de l'argent ?
-
-— Pour une partie de ce dont on avait besoin.
-
-— Et le client ?
-
-— Il a accepté de nous verser un acompte limité et de revoir les premières dates de livraison.
-
-— Vous avez commencé à lui livrer ses pièces ?
+— Bah elle, elle voyait trois putains de caisses !
 
 — Oui.
 
-— Et vous allez gagner de l'argent ?
+(Winnie regarde les gobelets.)
 
-— C'est toujours ce qu'on prévoit. Mais moins qu'au départ.
+— Et elle l'a eue, sa machine ?
+
+— Pas encore. Nous avons réorganisé les contrôles pour limiter certaines manipulations. Mais il reste du travail supplémentaire.
+
+— Donc c'est toujours pas réglé.
+
+— Pas complètement.
+
+— Ah ouais...
+
+(Silence.)
+
+— Tu sais quoi ? Moi, à ta place, je lui aurais fait un truc. Une réunion avec toute l'équipe, tu reconnais ton erreur. Un geste, quoi. Avec un petit buffet, de la musique, des cadeaux...
+
+— Cela aurait aussi représenté une dépense.
+
+— Oh Laurent ! Même des petits fours, on peut pas acheter avec toi !
+
+— Je n'ai pas dit cela.
+
+— Nan mais t'as compris !
+
+(Dylan regarde sa montre.)
+
+Dylan — Winnie, on devait avoir terminé il y a vingt minutes.
+
+Winnie — Deux minutes.
+
+Dylan — J'ai une autre prestation après.
+
+Winnie — Mais tu peux pas rester un peu ? Là, on parle des conditions de travail !
+
+Dylan — Ça fait vingt minutes que tu dis « deux minutes ».
+
+(Winnie regarde Laurent.)
+
+— Tu vois ? Les gens, aujourd'hui, ils veulent plus prendre le temps de parler.
+
+— Dylan vous avait indiqué ses horaires ?
+
+— Oui, mais...
+
+(Laurent attend.)
+
+— Oh là là. Bon. On avance.
+
+## Même quand tu trouves de l'argent, ça coûte de l'argent.
+
+— La banque, finalement ?
+
+— Elle a accepté de financer une partie de nos besoins.
+
+— Ah ! Enfin !
+
+— Le client a aussi accepté un acompte limité et un calendrier de premières livraisons plus progressif.
+
+— Et vous avez livré ?
+
+— Les premières pièces, oui.
+
+— Bah voilà ! C'est gagné !
+
+— Le contrat a démarré. Il reste à le terminer, à financer la suite et à percevoir les règlements prévus.
+
+— Mais avec toi, y a jamais moyen de fêter un truc !
+
+— Nous pouvons être satisfaits d'avoir trouvé une solution.
+
+— Ah ! Merci !
+
+— Sans considérer que tous les problèmes sont réglés.
+
+— Laurent... T'es vraiment incapable de laisser quelqu'un être heureux, hein.
+
+(Laurent sourit.)
+
+— Et la marge ? Vous allez gagner combien ?
+
+— Nous prévoyons toujours un résultat positif, mais inférieur à la prévision initiale.
 
 — Pourquoi ?
 
-— Parce que les solutions qu'on a trouvées ont aussi un coût.
+— Les financements et les aménagements négociés ont un coût.
 
-— Donc vous avez sauvé votre contrat ?
+— Attends... Même quand tu trouves de l'argent, ça te coûte de l'argent ?
 
-— On a réussi à le démarrer et à effectuer les premières livraisons. Il reste encore du travail.
+— Parfois, oui.
 
-— Vous pouvez pas juste être content cinq minutes ?
+— C'est vraiment un métier de malade.
 
-— Je serai content quand on aura terminé et qu'on aura été payés.
+(Winnie se redresse.)
 
-Jean referma son carnet.
+— Mais tu sais quoi ? Moi, c'est pareil. Tu crois que je touche mon cachet et que tout va dans ma poche ? Faut payer le studio, les musiciens, le mix, le manager, les déplacements... T'as fait un beau concert, tu rentres chez toi, tu fais les comptes...
 
-— Vous devez être insupportable à Noël.
+— Vous faites vos comptes vous-même ?
 
-— Pourquoi ?
+— Bah ouais ! Tu me prends pour qui ?
 
-— On doit vous offrir un cadeau et attendre le remboursement de la TVA pour savoir si ça vous plaît.
+— Vous les établissez avant de vous engager ?
 
-Laurent sourit.
+— Évidemment !
 
-Jean saisit la bouteille de champagne.
+— Comme pour votre showcase sur le rooftop ?
 
-— Bon. J'ai votre procédure qui a merdé, votre histoire de métal, la responsable qualité et le moment où vous vous êtes énervé. J'ai mon entretien.
+(Winnie lève un doigt.)
 
-Le bouchon sauta.
+— Alors. Le rooftop, c'était particulier.
 
-Jean remplit sa flûte.
+— Vous aviez engagé les dépenses avant d'avoir un contrat signé.
 
-— Vous en voulez toujours pas ?
+— Oui, mais c'était quasiment sûr !
 
-— Non.
+— Vous aviez donc engagé des dépenses en comptant sur de l'argent qui n'était pas encore disponible.
 
-Jean leva son verre.
+(Winnie s'interrompt.)
 
-— À votre franchise, Laurent ! Et à cette magnifique histoire de l'équipe qualité !
+— Ah ouais...
 
-Laurent ne leva pas le sien.
+(Silence.)
 
-— Vous avez interrogé la responsable qualité ?
+— Mais Laurent ! C'est pas pareil ! Moi, j'avais même pas signé !
 
-— Non. Mais j'ai votre témoignage.
+— Justement. Vous avez engagé les dépenses avant d'obtenir le contrat. Nous avons signé sans recalculer correctement les besoins de financement.
 
-— Quand nos commerciaux ont signé le contrat, ils ont débouché le champagne avant de savoir ce qu'il allait coûter.
+— Ah ouais... Bon, on a tous les deux fait une connerie, quoi.
 
-Laurent désigna la bouteille.
+— Pas exactement la même.
 
-— Vous, vous l'avez ouverte avant même d'avoir interrogé la responsable qualité.
+— Oh là là ! Même quand je reconnais mes erreurs, faut que tu corriges !
 
-Jean baissa lentement son verre.
+(Winnie regarde la caméra.)
+
+— Coupez ça au montage.
+
+## Winnie veut lancer un business. Laurent veut lire le contrat.
+
+(Dylan consulte son téléphone.)
+
+Dylan — Winnie, le remboursement du matériel n'est toujours pas arrivé.
+
+Winnie — Oh putain...
+
+(Winnie sort son téléphone.)
+
+Winnie — Vas-y, redonne-moi le montant.
+
+(Dylan le lui indique. Winnie effectue le virement.)
+
+Winnie — Voilà ! C'est bon ?
+
+Dylan — Oui. Merci.
+
+Winnie — Tu vois, Laurent ? Chez moi, les gens sont payés.
+
+— Après plusieurs rappels.
+
+— Eh ! Tu peux pas t'empêcher de rajouter un truc, toi !
+
+— Je constate simplement.
+
+— Ouais, ben constate dans ta tête !
+
+(Winnie range son téléphone.)
+
+— Bon, franchement, Laurent, je vais te dire un truc. Au début, je te trouvais chiant.
+
+— Je l'avais compris.
+
+— Non, mais vraiment chiant. Tu peux pas raconter une bonne nouvelle sans que le mec te sorte une facture.
+
+— C'est parfois mon travail.
+
+— Ouais, mais maintenant, j'ai compris. T'es un vrai. Tu connais ton boulot, tu reconnais quand tu t'es planté, tu te défiles pas...
+
+— Merci.
+
+— Et moi, tu vois, j'aime les gens vrais. On devrait monter un truc ensemble.
+
+— Quel genre de chose ?
+
+— Du lourd ! Une série de vidéos. Le rap, l'argent, les contrats, les maisons de disques, les arnaques... Tu sais combien de jeunes artistes signent des trucs sans rien lire ?
+
+— Je suppose que cela arrive.
+
+— Mais grave ! Y en a, ils touchent une avance, ils pensent qu'ils sont millionnaires. Ils louent des grosses caisses, ils font péter le champagne, ils partent à Dubaï...
+
+— Bon. Tu vois le projet ? Toi, tu expliques les contrats. Moi, je rends ça vivant. On fait des millions de vues !
+
+— Vous avez déjà prévu un budget ?
+
+— Mais Laurent ! On n'a même pas commencé !
+
+— Il serait utile de savoir ce que nous voulons faire.
+
+— On va le construire ensemble !
+
+(Winnie se tourne vers Dylan.)
+
+Winnie — Eh ! Viens, on tourne une petite annonce. Laurent et Winnie, bientôt ensemble. Les secrets du business. Trente secondes, ça va être énorme !
+
+(Dylan reste derrière la caméra.)
+
+Winnie — Dylan ?
+
+Dylan — Oui ?
+
+Winnie — Bah vas-y !
+
+Dylan — On avait prévu de filmer seulement l'entretien.
+
+Winnie — Et alors ?
+
+Dylan — Cette vidéo, c'est une prestation supplémentaire.
+
+Winnie — Mais c'est trente secondes !
+
+Dylan — On avait convenu d'un tarif pour l'interview.
+
+(Winnie écarte les bras.)
+
+— Wesh ! Tu vas pas me facturer trente secondes, frère !
+
+(Laurent repose son verre.)
+
+— Vous êtes en train de modifier les conditions du contrat.
+
+(Winnie se tourne lentement vers lui.)
+
+— Laurent...
+
+— Et Dylan vous demande simplement d'en tenir compte.
+
+— Laurent.
+
+— Il serait préférable de vous mettre d'accord avant de commencer.
+
+(Winnie le regarde longuement.)
+
+— Oh Laurent... Ferme ta gueule, frère.

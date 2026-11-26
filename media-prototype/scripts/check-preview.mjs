@@ -184,38 +184,26 @@ if(marcHtml){
   errors.push('Marc 25-11 : article indexable en préproduction.');
 }
 
-// Laurent B. / Jean Toksic : Grand Entretien du 25 novembre 2026.
-// Vérifier le texte versionné, le HTML précomposé et les 207 répliques attribuées.
-const laurentRoute='media/articles/industrie/ind-c1-cst-05-brouillon/index.html';
-const laurentHtml=read(laurentRoute);
-if(laurentHtml){
- const story=laurentHtml.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-05-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
- const paragraphs=(story.match(/<p(?:\s|>)/g)||[]).length;
- const headings=(story.match(/<h2(?:\s|>)/g)||[]).length;
- const dividers=(story.match(/<hr\b/g)||[]).length;
- const groups=(story.match(/data-interview-verified="laurent-2026-11-25"/g)||[]).length;
- const turns=(story.match(/class="interview-turn interview-(?:question|answer)"/g)||[]).length;
- const labels=(story.match(/class="interview-speaker"/g)||[]).length;
- const jean=(story.match(/class="interview-turn interview-question"/g)||[]).length;
- const laurent=(story.match(/class="interview-turn interview-answer"/g)||[]).length;
- const raw=(story.match(/<p(?:\s[^>]*)?>\s*—/g)||[]).length;
- if(paragraphs!==56||headings!==5||dividers!==5||groups!==42||turns!==207||labels!==207||jean!==107||laurent!==100||raw!==0)
-  errors.push('Laurent 25-11 : structure non conforme ('+paragraphs+' narratifs, '+headings+' intertitres, '+dividers+' séparateurs, '+groups+' groupes, '+turns+' répliques, '+labels+' labels, '+jean+'/'+laurent+' voix, '+raw+' dialogues bruts).');
- if(!laurentHtml.includes('Ils ont signé le contrat du siècle. Reste à payer le métal.')
-  ||!laurentHtml.includes('Deux cents salariés, trois cents tonnes de métal')
-  ||!story.includes('la table de Laurent B., le directeur financier. Une caméra enregistrait')
-  ||!story.includes('Le client va payer. En attendant,')
-  ||!story.includes('Quarante-huit heures pour réfléchir.')
-  ||!story.includes('Le contrat a démarré. Il devrait rapporter moins que prévu.')
-  ||!story.includes('Vous avez compris quelque chose')
-  ||!story.includes('Jean baissa lentement son verre.')
-  ||!story.includes('interview-speaker">Jean Toksic')
-  ||!story.includes('interview-speaker">Laurent B.'))
-  errors.push('Laurent 25-11 : titre, chapô, interviews filmées, arbitrage, dialogue et chute non concordants.');
- if(story.includes('V finale corrigée')||story.includes('GO préproduction')||story.includes('D2 favorable sous limites'))
-  errors.push('Laurent 25-11 : métadonnées internes affichées dans le récit.');
- if(!/name="robots"\s+content="noindex,nofollow"/.test(laurentHtml))
-  errors.push('Laurent 25-11 : article indexable en préproduction.');
+// Laurent Dafdaf / Winnie Bouba V1.8 : contrôle intégral de la version figée.
+{
+ const slug='ind-c1-cst-05-brouillon',href='/media/articles/industrie/'+slug+'/';
+ const html=read('media/articles/industrie/'+slug+'/index.html');
+ const source=fs.readFileSync(path.resolve('../content/articles/industrie/'+slug+'.md'),'utf8');
+ const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
+ const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
+ const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+ const story=html.match(/<article\b[^>]*data-article-id="industrie\/ind-c1-cst-05-brouillon"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const rendered=[...story.matchAll(/<(p|h2)\b([^>]*)>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':decode(m[2].match(/data-source-prefix="([^"]*)"/)?.[1]??''))+decode(m[3].replace(/<[^>]*>/g,'')));
+ const expected=front[2].trim().split(/\n\n/);
+ const sourceLength=[field('title'),field('summary'),'Par Winnie Bouba','Fiction satirique · Les interrogatoires',...expected.slice(1).map(s=>s.replace(/^## /,''))].join('\n\n').length+2;
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||sourceLength!==19386||expected.filter(s=>s.startsWith('## ')).length!==6||expected.at(-1)!=='— Oh Laurent... Ferme ta gueule, frère.'||(story.match(/class="winnie-dialogue-line"/g)||[]).length!==335||(story.match(/class="winnie-stage"><em>/g)||[]).length!==50)errors.push('Laurent Winnie V1.8 : texte intégral, longueur, intertitres, didascalies ou répliques non concordants.');
+ const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'';
+ const lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Les interrogatoires')||!html.includes('/media/lectures/finance-investissement/')||!html.includes('/media/cycles/industrie/conversations/C1/')||!html.includes('/media/cycles/industrie/contextes/CST/')||!html.includes(field('hero_image'))||!decode(html).includes(field('image_alt'))||!html.includes('<h2>Winnie Bouba</h2>')||!story.includes('Par Winnie Bouba'))errors.push('Laurent Winnie V1.8 : titre, chapô, signature, fiction, image ou classement non conforme.');
+ for(const who of ['Winnie Bouba','Laurent Dafdaf','Dylan Raccord'])if(!story.includes('interview-speaker">'+who))errors.push('Laurent Winnie V1.8 : attribution manquante '+who);
+ if(/Jean Toksic|Laurent B\./.test(decode(story))||/GO préproduction|D2 favorable sous limites/.test(decode(story)))errors.push('Laurent Winnie V1.8 : ancien nom ou métadonnées visibles.');
+ for(const page of ['media/publications/index.html','media/cycles/industrie/index.html','media/cycles/industrie/conversations/C1/index.html','media/scenes/index.html','media/lectures/finance-investissement/index.html'])if(!read(page).includes(href))errors.push('Laurent Winnie V1.8 : navigation incorrecte '+page);
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Laurent Winnie V1.8 : article indexable en préproduction.');
 }
 
 // Thomas : la variante F doit être servie à l'adresse historique, hors changement d'URL.
@@ -364,7 +352,7 @@ for(const [route,title] of industrieTitres){
 }
 
 // Signatures éditoriales validées, distinctes du corps des manuscrits.
-for(const [route,author] of [["industrie/ind-c1-cst-02-brouillon","Oscar Sansfroid"],["industrie/ind-c1-cst-04-brouillon","Oscar Sansfroid"],["immobilier/imm-c1-rc-07-patrick","Lola Genzed"],["industrie/ind-c1-cst-01-brouillon","Jean Toksic"],["industrie/ind-c1-cst-05-brouillon","Jean Toksic"],["immobilier/imm-c1-rc-06-alain","Emma Santhune"]]){
+for(const [route,author] of [["industrie/ind-c1-cst-02-brouillon","Oscar Sansfroid"],["industrie/ind-c1-cst-04-brouillon","Oscar Sansfroid"],["immobilier/imm-c1-rc-07-patrick","Lola Genzed"],["industrie/ind-c1-cst-01-brouillon","Jean Toksic"],["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"],["immobilier/imm-c1-rc-06-alain","Emma Santhune"]]){
  const html=read('media/articles/'+route+'/index.html');
  const signature=html.match(/<section\b[^>]*aria-label="Signature de l’auteur"[^>]*>([\s\S]*?)<\/section>/)?.[1]??'';
  if(!signature.includes('<h2>'+author+'</h2>'))errors.push('Signature éditoriale incorrecte : '+route);
