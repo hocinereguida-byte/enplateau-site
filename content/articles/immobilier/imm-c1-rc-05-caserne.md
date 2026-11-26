@@ -12,11 +12,11 @@ statut_editorial: "prepublication"
 published: true
 publication_date: "2026-11-25"
 mise_en_avant: "standard"
-source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-methodology_specific: "V6.2 — visa littéraire, D1 et D2 favorables sous limites ; singularité C1 favorable. GO conditionnel pour préproduction de contrôle uniquement ; réserves de la matrice V2 et audit intercycles à clôturer avant tout bon à publier."
-source_document_version: "V6.2"
-source_document_url: "https://drive.google.com/file/d/1RERqM4ntLHH_lMSZarDzR_eqr2LwGDea/view"
-validation_document_url: "https://drive.google.com/file/d/1X7lmZGOdm69o7mR6WSxAZ6XH0slRDt_0/view"
+source_notice: "Les personnages, les propos, les événements et les chiffres sont fictifs."
+methodology_specific: "Caserne — Oscar Sansfroid V6.4 figée le 26 novembre 2026. Source https://docs.google.com/document/d/18N0uGhe5ZKKU-sWEzFlvU3ddbz_gXOABp9oCEIGS-J4/edit. PV https://docs.google.com/document/d/1Nz-nRwKmYI6Ml5p3NrLWi7LN8Gn_QhxmbMD1SbaSI0c/edit. Matrice 144 critères : 127 C, 8 PC, 0 NC, 4 NV, 5 NA. Littéraire, identité narrative, D1 et singularité sur corpus comparé favorables ; D2 favorable sous limites. 8 846 caractères corps et intertitres, 9 334 tous éléments inclus hors séparateurs ; cinq intertitres, 60 répliques, six personnages nommés. GO utilisateur pour remplacement en préproduction uniquement. Réserves intercycles, tests lecteurs et contrôles techniques maintenues. V6.2 préservée sur Drive et dans Git. Aucun bon à publier."
+source_document_version: "V6.4"
+source_document_url: "https://docs.google.com/document/d/18N0uGhe5ZKKU-sWEzFlvU3ddbz_gXOABp9oCEIGS-J4/edit"
+validation_document_url: "https://docs.google.com/document/d/1Nz-nRwKmYI6Ml5p3NrLWi7LN8Gn_QhxmbMD1SbaSI0c/edit"
 code_editorial: "IMM-C1-RC-05"
 unite_programmation: "IMM-C1-RC"
 autorisation_publication: "preproduction_uniquement"
@@ -25,35 +25,37 @@ tag_2: "Investissement public"
 tag_3: "Utilité collective"
 tag_4: "Culture"
 tag_5: "Coût d’opportunité"
+signature_auteur: "Oscar Sansfroid"
+updated_date: "2026-11-26"
 ---
 
-Devant la caserne, Véronique D., 57 ans, adjointe à la culture, nous montre les images des architectes.
+Par Oscar Sansfroid
+
+Devant la caserne, Véronique Delasalle, 57 ans, adjointe à la culture, me montre les images des architectes.
 
 C'est magnifique. Il y a du bois, du verre, des arbres et des gens qui se baladent avec des bouquins sous le bras.
 
-Ça fait vingt minutes qu'on est dans la commune. On n'a pas croisé un seul de ces mecs.
+Ça fait vingt minutes que je suis dans la commune. J'ai pas croisé un seul de ces mecs.
 
-— Il faut rendre la culture accessible à tous. Sortir les habitants de leurs habitudes.
+Véronique m'explique qu'il faut rendre la culture accessible à tous et sortir les habitants de leurs habitudes.
 
 — Ils font quoi de leurs week-ends ?
 
 — Oh là là…
 
-Véronique nous invite à découvrir la future programmation un samedi.
+Elle m'invite à découvrir la future programmation un samedi.
 
 ## Il y a du monde, mais c'est pas les bons
 
 Au programme : une exposition d'art contemporain et, en face, un bal associatif.
 
-Gérard F., 62 ans, ancien ouvrier et président de l'association, masse les épaules de Jacqueline R., sa belle-mère de 81 ans.
+Gérard Fêtier, 62 ans, ancien ouvrier et président de l'association, masse les épaules de Jacqueline Roussel, sa belle-mère de 81 ans.
 
 — Ça va mieux, ma beauté ?
 
 — Un peu plus bas.
 
-Monique F., son épouse, arrive avec une caisse de bouteilles.
-
-— Tu pourrais venir m'aider ?
+Monique Fêtier, son épouse, arrive avec une caisse de bouteilles. Elle demande à Gérard de venir l'aider.
 
 — Attends, tu vois bien que je suis occupé.
 
@@ -77,9 +79,9 @@ Véronique arrive avec un jeune homme.
 
 — Je suis adjointe au maire, Gérard.
 
-— Et vous, vous en pensez quoi ? nous demande Gérard.
+Gérard se tourne vers moi pour me demander mon avis.
 
-On tient le plan à l'envers. Mais on est des mecs, alors visiblement ça compense.
+Je tiens le plan à l'envers. Mais je suis un mec, alors visiblement ça compense.
 
 Jacqueline lui fout un coup de sac à main derrière la tête.
 
@@ -91,7 +93,7 @@ Jacqueline lui fout un coup de sac à main derrière la tête.
 
 Au bal, il faut ressortir des chaises. Une centaine de personnes dansent.
 
-— C'est une réussite, non ? demandons-nous à Véronique.
+Je demande à Véronique si elle considère que c'est une réussite.
 
 — Oui, enfin… C'est pas tout à fait le public qu'on cherche à attirer.
 
@@ -101,7 +103,9 @@ Au bal, il faut ressortir des chaises. Une centaine de personnes dansent.
 
 — Alors ?
 
-— Leur bal, très bien. Mais pour certains spectacles, il faut aller dans une autre ville. Ceux qui n'en ont pas les moyens font comment ?
+Véronique m'explique que pour assister à certains spectacles, les habitants doivent se rendre dans une autre ville.
+
+— Ceux qui n'en ont pas les moyens font comment ?
 
 Bonne question.
 
@@ -109,13 +113,11 @@ Le photographe vient recruter du monde au bal. Gérard arrive avec Jacqueline, d
 
 Véronique fait retirer le saucisson. Puis les verres. Puis Gérard.
 
-On place Jacqueline devant une sculpture.
-
-— Rapprochez-vous, madame.
+Le photographe place Jacqueline devant une sculpture et lui demande de se rapprocher.
 
 Jacqueline accroche son sac à l'une des branches.
 
-L'artiste hurle. Michel D., 60 ans, le maire, déjà en place pour la photo, rattrape la sculpture.
+L'artiste hurle. Michel Duroy, 60 ans, le maire, déjà en place pour la photo, rattrape la sculpture.
 
 Véronique essaie de décrocher le sac. Jacqueline tire dessus.
 
@@ -131,7 +133,7 @@ Le maire, rouge écarlate, est cramponné à une barre de fer.
 
 Fort de ses cent danseurs, Gérard réclame trois cents mètres carrés dans la caserne.
 
-— Vous utiliseriez cette salle combien de fois par semaine ? demande Véronique.
+Véronique lui demande combien de fois par semaine il utiliserait cette salle.
 
 — Deux fois.
 
@@ -161,21 +163,21 @@ Jacqueline lui conseille de demander des toilettes privées.
 
 Gérard sort son téléphone.
 
-On était plutôt favorables à sa conception de la culture populaire. On commence à se demander si on a le droit d'aller pisser.
+J'étais plutôt favorable à sa conception de la culture populaire. Je commence à me demander si j'aurai le droit d'aller pisser.
 
 Michel promet d'étudier la demande. Les comédiens veulent leur salle aussi. La mairie se retrouve à dessiner des salles vides plusieurs jours par semaine.
 
-À force de se disputer les salles, on oublie ceux qui auront du mal à y venir.
+À force de se disputer les salles, tout le monde oublie ceux qui auront du mal à y venir.
 
 À la sortie d'un bal, Jacqueline attend avec deux dames de l'autre bout de la ville. Il n'y a plus de bus.
 
-— Et quand la caserne sera ouverte, vous pourrez y aller ?
+Je lui demande comment elle compte se rendre à la caserne quand le centre culturel sera ouvert.
 
 — Ça dépend de Gérard.
 
 Gérard arrive en voiture. Jacqueline monte devant. Monique derrière.
 
-Nous en parlons à Véronique.
+J'en parle à Véronique.
 
 — Mais le centre culturel sera ouvert à tous !
 
@@ -187,11 +189,11 @@ Les habitants, eux, ont eu le tort de ne pas se découper en délégations.
 
 ## Huit millions d'euros et une bassine
 
-On demande à Samira B., 43 ans, directrice des finances, le prix d'un bus le samedi soir.
+Je demande à Samira Bilan, 43 ans, directrice des finances, le prix d'un bus le samedi soir.
 
-Elle nous emmène dans une école. D'autres habitants attendent quelque chose de la mairie.
+Elle m'emmène dans une école. D'autres habitants attendent quelque chose de la mairie.
 
-La directrice nous montre une bassine sous une fuite.
+La directrice me montre une bassine sous une fuite.
 
 Michel la déplace pour la photo.
 
@@ -199,9 +201,9 @@ Une goutte lui tombe sur le crâne.
 
 Il remet la bassine.
 
-De retour en mairie, Samira nous sort les chiffres. La caserne devait coûter cinq millions. Maintenant, huit. Avec les aides espérées, six millions à trouver.
+De retour en mairie, Samira me sort les chiffres. La caserne devait coûter cinq millions. Maintenant, huit. Avec les aides espérées, six millions à trouver.
 
-— Après, c'est fini ? demandons-nous.
+— Après, c'est fini ?
 
 — Après, il faut faire fonctionner le centre.
 
@@ -209,11 +211,13 @@ De retour en mairie, Samira nous sort les chiffres. La caserne devait coûter ci
 
 Les salaires, le chauffage, l'entretien, les activités : 850 000 euros par an. Les recettes espérées ? 250 000 euros.
 
-On sort notre calculatrice.
+Je sors ma calculatrice. J'aime bien vérifier les chiffres.
 
 — Six cent mille euros !
 
 — Bravo, dit Samira. Et j'ai même pas compté ce que coûteraient les emprunts.
+
+J'avais réussi la soustraction. Je croyais avoir terminé.
 
 — On ne peut pas tout ramener à l'argent ! proteste Véronique.
 
@@ -233,13 +237,13 @@ Michel s'intéresse subitement à un pigeon.
 
 Michel fait revoir les plans : qu'est-ce qu'on peut enlever sans priver les habitants de ce dont ils ont besoin ?
 
-On retrouve les comédiens. Pour faire le noir, ils collent des sacs-poubelle aux fenêtres de la salle. L'estrade n'a pas de rampe.
+Je retrouve les comédiens. Pour faire le noir, ils collent des sacs-poubelle aux fenêtres de la salle. L'estrade n'a pas de rampe.
 
 — Et les acteurs en fauteuil ?
 
 — On joue tous en bas.
 
-On garderait une salle de spectacle partagée, des ateliers, des rangements fermés à clé et une petite galerie. Le reste serait fermé et sécurisé.
+Le nouveau projet conserverait une salle de spectacle partagée, des ateliers, des rangements fermés à clé et une petite galerie. Le reste serait fermé et sécurisé.
 
 Cinq millions et demi de travaux. Quatre pour la mairie si les aides sont confirmées. Et 350 000 euros par an, recettes déduites, entretien de la partie fermée compris.
 
@@ -267,7 +271,7 @@ Trois millions et demi de travaux, sans subventions dans ce calcul. Et 290 000 e
 
 Samira a compté les salles conservées dans les trois projets.
 
-— Ben faites ça ! lui disons-nous.
+— Ben faites ça !
 
 — Pourquoi ?
 
@@ -277,7 +281,7 @@ Samira a compté les salles conservées dans les trois projets.
 
 — Ah.
 
-Voilà pourquoi on ne nous confie pas le budget d'une commune.
+Voilà pourquoi on ne me confie pas le budget d'une commune.
 
 Pas de salle de spectacle accessible et équipée pour les professionnels. Et toujours cette putain de caserne vide.
 

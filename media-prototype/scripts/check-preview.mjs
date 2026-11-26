@@ -334,7 +334,7 @@ for(const [route,title] of industrieTitres){
  if(fs.existsSync(path.join(root,'media/articles/immobilier/imm-c1-rc-03-nathalie/index.html')))errors.push('Audrey : ancienne route encore générée.');
 }
 
-// Caserne V6.2 : concordance intégrale, dialogue statique et navigation.
+// Caserne Oscar V6.4 : concordance intégrale, dialogue statique et navigation.
 {
  const slug='imm-c1-rc-05-caserne',href='/media/articles/immobilier/'+slug+'/';
  const html=read('media/articles/immobilier/'+slug+'/index.html');
@@ -345,12 +345,15 @@ for(const [route,title] of industrieTitres){
  const story=html.match(/<article\b[^>]*data-article-id="immobilier\/imm-c1-rc-05-caserne"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
  const rendered=[...story.matchAll(/<(p|h2)\b([^>]*)>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':'')+decode(m[3].replace(/<[^>]*>/g,'')));
  const expected=front[2].trim().split(/\n\n/);
- if(JSON.stringify(rendered)!==JSON.stringify(expected)||expected.length!==150||expected.filter(s=>s.startsWith('## ')).length!==5||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==67)errors.push('Caserne V6.2 : texte intégral ou dialogues non concordants.');
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||expected.length!==151||expected.filter(s=>s.startsWith('## ')).length!==5||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==60||expected.slice(1).map(s=>s.replace(/^## /,'')).join('').length!==8846||expected.at(-1)!=="C'est un madison."||!expected.includes("J'avais réussi la soustraction. Je croyais avoir terminé."))errors.push('Caserne Oscar V6.4 : texte intégral ou dialogues non concordants.');
  const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'';
  const lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
- if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!html.includes('/media/lectures/territoires-politiques-publiques/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/'))errors.push('Caserne V6.2 : titre, chapô, fiction ou classement non conforme.');
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!html.includes('/media/lectures/territoires-politiques-publiques/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/'))errors.push('Caserne Oscar V6.4 : titre, chapô, fiction ou classement non conforme.');
+ if(field('signature_auteur')!=='Oscar Sansfroid'||(story.match(/Par Oscar Sansfroid/g)||[]).length!==1||html.includes('aria-label="Signature de l’auteur"'))errors.push('Caserne Oscar V6.4 : signature manquante ou dupliquée.');
+ for(const name of ['Véronique Delasalle','Gérard Fêtier','Jacqueline Roussel','Monique Fêtier','Michel Duroy','Samira Bilan'])if(!decode(story).includes(name))errors.push('Caserne Oscar V6.4 : personnage manquant '+name);
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Caserne Oscar V6.4 : article indexable en préproduction.');
  for(const page of ['media/publications/index.html','media/cycles/immobilier/index.html','media/cycles/immobilier/conversations/C1/index.html','media/scenes/index.html','media/lectures/territoires-politiques-publiques/index.html']){
-  if(!read(page).includes(href))errors.push('Caserne V6.2 : navigation incorrecte : '+page);
+  if(!read(page).includes(href))errors.push('Caserne Oscar V6.4 : navigation incorrecte : '+page);
  }
 }
 
