@@ -2,6 +2,14 @@
 // Modifier uniquement à réception d'un figeage et après vérification Drive/Markdown. Pas de comparaison numérique de versions.
 export const finalManuscripts = [
   {
+    "id": "tourisme/tou-c2-u1-fin-01-marianne-delmas",
+    "version": "V1.1",
+    "source": "1nuJFpKT6onviW08bmAv9B5lV8FzH4-3rFanZDe64it0",
+    "date": "2026-11-27",
+    "fingerprint": "0917ed99",
+    "status": "integrated"
+  },
+  {
     "id": "numerique-telecom/cmd-naf-16",
     "version": "V2.0",
     "source": "15pWJlH0lKrJkEscSQS-aMVye2h3CiNFW6uL_UyYJ2jo",

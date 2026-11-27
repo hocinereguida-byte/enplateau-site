@@ -17,7 +17,7 @@ const records = [
   "internationalisation/cmd-naf-09.md|CMD-NAF-09|internationalisation|V2|operations-organisation|INT-C3-U1||C3-U1|entretien|grand-entretien|1PRUVU3cZGNBA190yus-wKqVOs01xjJQIUYSl9n-mcDw",
   "ess/cmd-naf-08-ess-c2-u1-blanchisserie.md|CMD-NAF-08|ess|V3|strategie-gouvernance|ESS-C2-U1||C2-U1|chronique|chronique|1rgOoCasw9ZSpjVVjmeNJ4vaEZd3-Z3jqBcji0cU1WXA",
   "banque-financement/ban-c2-u1-fin-01-etienne-valbrun.md|BAN-C2-U1-FIN-01|banque-financement|Visa documentaire 09-11-2026|finance-investissement|BAN-C2-U1||C2-U1|entretien|grand-entretien|1fkbL5b_z8vbo-wAp23WIRaS88O9d273dijF1eXivOis",
-  "tourisme/tou-c2-u1-fin-01-marianne-delmas.md|TOU-C2-U1-FIN-01|tourisme|Visa final — préproduction|finance-investissement|TOU-C2-U1||C2-U1|entretien|grand-entretien|15zkXSEbHToJNC0EMUj5j-hEETCxtOCz7aKjqiXVdsYg",
+  "tourisme/tou-c2-u1-fin-01-marianne-delmas.md|TOU-C2-U1-FIN-01|tourisme|V1.1|finance-investissement|TOU-C2-U1||C2-U1|entretien|grand-entretien|1nuJFpKT6onviW08bmAv9B5lV8FzH4-3rFanZDe64it0",
   "commerce/com-c3-u2-fin-01-chronique.md|COM-C3-U2-FIN-01|commerce|V2.0|finance-investissement|COM-C3-U2||C3-U2|chronique|chronique|1LLRhaXRMJkNlqslr4V-2tsWevWA4zyyukufG7izuyek",
   "eau-ressources/eau-c1-u1-str-01-chronique.md|EAU-C1-U1-STR-01|eau-ressources|V2.0|strategie-gouvernance|EAU-C1-U1|partage-eau-agriculture-potable|C1-U1|chronique|chronique|1Nbp0-kbA5oPlXvWh28LrMdtNCiHslo3FHjfskMUzYIc",
   "industrie/ind-c1-cst-01-brouillon.md|IND-C1-CST-01|industrie|Variante populaire harmonisée finale|strategie-gouvernance|IND-C1-CST||CST|entretien|grand-entretien|15vOdDh067Uiv-vooxH-WnKLQNEqc9dDD-tcliHxxDMg",

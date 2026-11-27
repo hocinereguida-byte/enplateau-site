@@ -368,13 +368,38 @@ for(const [route,author] of [["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"
  const signature=html.match(/<section\b[^>]*aria-label="Signature de l’auteur"[^>]*>([\s\S]*?)<\/section>/)?.[1]??'';
  if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!signature.includes('<h2>Lola Genzed</h2>')||!signature.includes('href="/media/auteurs/lola-genzed/"')||field('source_document_version')!=='V2.0'||field('signature_auteur')!=='Lola Genzed'||!html.includes(field('hero_image'))||!decode(html).includes(field('image_alt')))errors.push('Sophie Touclic V2.0 : titre, chapô, signature, notice ou visuel non conformes.');
  for(const name of ['Sophie Touclic','Nadia Burnoute','Philippe Narcisso','Stéphane Areac','Jules Rapia'])if(!decode(story).includes(name))errors.push('Sophie Touclic V2.0 : personnage manquant '+name);
- for(const page of ['media/publications/index.html','media/cycles/numerique-telecom/index.html','media/cycles/numerique-telecom/conversations/C4/index.html','media/scenes/index.html','media/lectures/operations-organisation/index.html','media/auteurs/lola-genzed/index.html'])if(!read(page).includes(href))errors.push('Sophie Touclic : navigation incorrecte '+page);
- for(const page of ['media/index.html','media/publications/index.html','media/cycles/numerique-telecom/index.html','media/cycles/numerique-telecom/conversations/C4/index.html','media/scenes/index.html','media/lectures/operations-organisation/index.html','media/auteurs/lola-genzed/index.html']){
+ for(const page of ['media/publications/index.html','media/cycles/numerique/index.html','media/cycles/numerique-telecom/conversations/C4/index.html','media/scenes/index.html','media/lectures/operations-organisation/index.html','media/auteurs/lola-genzed/index.html'])if(!read(page).includes(href))errors.push('Sophie Touclic : navigation incorrecte '+page);
+ for(const page of ['media/index.html','media/publications/index.html','media/cycles/numerique/index.html','media/cycles/numerique-telecom/conversations/C4/index.html','media/scenes/index.html','media/lectures/operations-organisation/index.html','media/auteurs/lola-genzed/index.html']){
   const pageHtml=decode(read(page));if(pageHtml.includes("L'IA avait supprimé 80 % des problèmes. Elle avait confié les autres aux survivants."))errors.push('Sophie Touclic : ancien titre V4 encore présent '+page);
  }
  if(/ServiPlus|Grandval/i.test(decode(html)))errors.push('Sophie Touclic : ancienne dénomination dans la page article');
- for(const page of ['media/index.html','media/publications/index.html','media/cycles/numerique-telecom/index.html','media/cycles/numerique-telecom/conversations/C4/index.html','media/scenes/index.html','media/lectures/operations-organisation/index.html','media/auteurs/lola-genzed/index.html'])if(/ServiPlus|Grandval/i.test(decode(read(page))))errors.push('Sophie Touclic : ancienne dénomination '+page);
+ for(const page of ['media/index.html','media/publications/index.html','media/cycles/numerique/index.html','media/cycles/numerique-telecom/conversations/C4/index.html','media/scenes/index.html','media/lectures/operations-organisation/index.html','media/auteurs/lola-genzed/index.html'])if(/ServiPlus|Grandval/i.test(decode(read(page))))errors.push('Sophie Touclic : ancienne dénomination '+page);
  if(!/name="robots"\s+content="noindex,nofollow"/.test(html)||/CMD-NAF-16|AR01|SD17|D12|117 C, 13 PC/.test(story))errors.push('Sophie Touclic : indexation ou métadonnées internes visibles.');
+}
+
+// Marianne Dorpeu V1.1 : texte, distribution, signature et classement.
+{
+ const slug='tourisme/tou-c2-u1-fin-01-marianne-delmas',href='/media/articles/'+slug+'/',html=read('media/articles/'+slug+'/index.html');
+ const source=fs.readFileSync(path.resolve('../content/articles/'+slug+'.md'),'utf8');
+ const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
+ const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
+ const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+ const story=html.match(/<article\b[^>]*data-article-id="tourisme\/tou-c2-u1-fin-01-marianne-delmas"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const rendered=[...story.matchAll(/<(p|h2)\b[^>]*>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':m[0].includes('class="marianne-dialogue-line"')?'— ':'')+decode(m[2].replace(/<[^>]*>/g,'')));
+ const expected=front[2].trim().split(/\n\n/);
+ const full=[field('title'),field('summary'),field('signature_auteur'),'Fiction satirique · Les interrogatoires',...expected.map(x=>x.replace(/^## /,'')),field('source_notice')];
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||full.length!==1046||full.join('\n').length!==9447||expected.filter(x=>x.startsWith('## ')).length!==5||expected.filter(x=>x.startsWith('— ')).length!==104||(story.match(/class="marianne-dialogue-line"/g)||[]).length!==104||expected.at(-1)!=="— Avant de prévenir les autres, si possible.")errors.push('Marianne Dorpeu V1.1 : texte ou structure non concordants.');
+ const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'',lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
+ const signature=html.match(/<section\b[^>]*aria-label="Signature de l’auteur"[^>]*>([\s\S]*?)<\/section>/)?.[1]??'';
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Les interrogatoires')||!signature.includes('<h2>Emma Santhune</h2>')||!signature.includes('href="/media/auteurs/emma-santhune/"')||field('source_document_version')!=='V1.1'||field('signature_auteur')!=='Emma Santhune'||front[1].split('\n').some(l=>l.startsWith('hero_image: ')))errors.push('Marianne Dorpeu V1.1 : titre, chapô, signature, notice ou visuel non conformes.');
+ for(const name of ['Marianne Dorpeu','Emma Santhune'])if(!decode(story).includes(name))errors.push('Marianne Dorpeu V1.1 : personnage manquant '+name);
+ for(const page of ['media/publications/index.html','media/cycles/tourisme/index.html','media/cycles/tourisme/conversations/C2/index.html','media/scenes/index.html','media/lectures/finance-investissement/index.html','media/auteurs/emma-santhune/index.html'])if(!read(page).includes(href))errors.push('Marianne Dorpeu : navigation incorrecte '+page);
+ for(const page of ['media/index.html','media/publications/index.html','media/cycles/tourisme/index.html','media/cycles/tourisme/conversations/C2/index.html','media/scenes/index.html','media/lectures/finance-investissement/index.html','media/auteurs/emma-santhune/index.html']){
+  const pageHtml=decode(read(page));if(pageHtml.includes("J'ai fermé des chambres pour sauver mon hôtel. On m'a demandé si j'avais pensé à accueillir des clients."))errors.push('Marianne Dorpeu : ancien titre historique encore présent '+page);
+ }
+ if(/Marianne Delmas|Dortpeu|Jean Toksik|Jean Toksic/.test(decode(story+' '+h1+' '+lead+' '+signature)))errors.push('Marianne Dorpeu : ancienne identité visible');
+ if(read('media/auteurs/jean-toksik/index.html').includes(href))errors.push('Marianne Dorpeu : ancienne attribution à Jean Toksik');
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html)||/TOU-C2-U1-FIN-01|AR01|SD14|D01|105 C, 11 PC/.test(story))errors.push('Marianne Dorpeu : indexation ou métadonnées internes visibles.');
 }
 
 // Fiches d'auteurs : bijection entre les articles effectivement rendus et leurs listes.

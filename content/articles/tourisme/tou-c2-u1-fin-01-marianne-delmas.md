@@ -1,6 +1,6 @@
 ---
-title: "« J'ai fermé des chambres pour sauver mon hôtel. On m'a demandé si j'avais pensé à accueillir des clients. »"
-summary: "Marianne Delmas dirige un hôtel indépendant de 28 chambres. Après un bel été, elle a fermé une partie des chambres alors qu'elle cherchait des clients. Elle assure que l'hôtel s'en porte mieux. Jean Toksik a voulu comprendre. Elle a accepté, malgré les mises en garde de confrères déjà passés entre ses mains."
+title: "« J'ai refusé des clients parce que j'avais besoin d'argent. »"
+summary: "Marianne Dorpeu dirige un hôtel indépendant de 28 chambres. Après un bel été, elle a fermé une partie de son établissement alors qu'elle cherchait encore des clients. Venue passer une nuit sur place, Emma Santhune avait justement une préférence pour les chambres qui n'étaient plus disponibles."
 cycle: "tourisme"
 conversation: "C2"
 contexte: "C2-U1"
@@ -14,91 +14,259 @@ statut_editorial: "prepublication"
 published: true
 publication_date: "2026-11-09T14:00:00+01:00"
 mise_en_avant: "standard"
-source_document_url: "https://docs.google.com/document/d/15zkXSEbHToJNC0EMUj5j-hEETCxtOCz7aKjqiXVdsYg/edit"
-source_document_version: "Visa final — préproduction"
+source_document_url: "https://docs.google.com/document/d/1nuJFpKT6onviW08bmAv9B5lV8FzH4-3rFanZDe64it0/edit"
+source_document_version: "V1.1"
 autorisation_publication: "preproduction_uniquement"
-source_notice: "Fiction économique satirique. Personnages, établissement, propos et chiffres imaginaires."
-methodology_specific: "Grand Entretien fictif Jean Toksik / Marianne Delmas. Document source approuvé pour préproduction, visa éditorial et documentaire enregistré. Arbitre la fermeture d'une partie des chambres en basse saison et ses effets financiers ; exemple de 560 € TTC."
-signature_auteur: "Jean Toksik"
+source_notice: "Les personnages, l'établissement, les dialogues et les données chiffrées sont fictifs."
+methodology_specific: "Marianne Dorpeu / Emma Santhune V1.1 définitive figée le 27 novembre 2026. Source exclusive https://docs.google.com/document/d/1nuJFpKT6onviW08bmAv9B5lV8FzH4-3rFanZDe64it0/edit ; PV https://docs.google.com/document/d/17wP43z1QvaPyJI-lcIDXvlFclNQehrXdgx2CY6A4lsA/edit ; passation https://docs.google.com/document/d/1tsS1XrKDAr0cTPDWh2SJVhEHl3ytmgnbngn5W3M3jj4/edit. Transformation B ; AR01 / SD14 / D01 internes. Avis littéraire simulé 93/100 maintenu, conformité commande 5/5, D1 favorable sous réserves, D2 favorable sous hypothèses, singularité favorable sur périmètre ciblé. Matrice 144 : 105 C, 11 PC, 0 NC, 5 NV, 23 NA. 9 447 caractères (126 paragraphes complets joints par un saut simple), 5 intertitres, 104 répliques. 560 euros TTC, 509,09 HT sous hypothèse TVA 10 %, 690 euros coûts supplémentaires nets de TVA récupérable, contribution négative conditionnée aux coûts évitables et non reportés. Résultat sur six semaines, non extrapolable. Hôtel non nommé. Aucun visuel. GO technique utilisateur pour préproduction exclusivement ; aucun bon à publier. Hypothèses économiques et réglementaires, devis réels, lecture externe et recette visuelle restent ouverts."
+signature_auteur: "Emma Santhune"
 tag_1: "Hôtellerie"
 tag_2: "Saisonnalité"
 tag_3: "Fermeture de chambres"
 tag_4: "Charges d'exploitation"
 tag_5: "Rentabilité"
+validation_document_url: "https://docs.google.com/document/d/17wP43z1QvaPyJI-lcIDXvlFclNQehrXdgx2CY6A4lsA/edit"
+updated_date: "2026-11-27"
 ---
 
-Jean Toksik — Vous avez hésité avant d'accepter cet entretien ?  
-Marianne Delmas — Trois semaines. Mon associé m'a dit qu'on ne refusait pas Jean Toksik.  
-Jean Toksik — Un homme raisonnable.  
-Marianne Delmas — C'est aussi lui qui m'a conseillé de prendre un avocat.
+Marianne Dorpeu m'attend à la réception. Elle a posé la clé de ma chambre sur le dossier qu'elle a préparé pour notre entretien.
 
-Jean Toksik — Vous avez fermé des chambres parce que vous manquiez de clients. Vous avez envisagé d'en chercher ?  
-Marianne Delmas — Ah non, tiens ! Ça ne m'était pas venu à l'idée.  
-Jean Toksik — Je pose simplement la question.  
-Marianne Delmas — En juillet et août, on était quasiment complets. Puis septembre arrive : six ou sept chambres occupées certaines nuits. Et les clients éparpillés sur trois étages. On chauffait, on éclairait tout ça pour une poignée de personnes.  
-Jean Toksik — Vous auriez pu les regrouper.  
-Marianne Delmas — Bien sûr ! « Votre chambre avec balcon ? Finalement, ce sera celle qui donne sur le parking. » Vous imaginez l'accueil ?
+— Vous m'avez mise à quel étage ?
 
-Jean Toksik — Vous avez baissé vos prix.  
-Marianne Delmas — Oui. On s'est dit que les promotions feraient venir du monde.  
-Jean Toksik — Une stratégie commerciale audacieuse.  
-Marianne Delmas — Moquez-vous. On a gagné deux réservations. Deux ! J'ai presque sorti le champagne. Puis on a regardé les frais pour faire tourner les étages. On a rangé les verres.  
-Jean Toksik — Vous aviez oublié de facturer le chauffage ?  
-Marianne Delmas — Non, monsieur Toksik. Mais maintenir un étage en service pour deux chambres, ça coûte. Le chauffage, les interventions... Faut arrêter de faire comme si c'était gratuit.
+— Au deuxième.
 
-Jean Toksik — Et votre personnel ?  
-Marianne Delmas — Une salariée m'a demandé si elle devait vraiment préparer un étage pour une seule chambre. « À ce rythme, je vais donner un prénom à chaque ampoule. »  
-Jean Toksik — Une excellente manière de renforcer la cohésion d'équipe.  
-Marianne Delmas — Elle m'a surtout demandé si on tenait un hôtel ou un musée de la chambre vide.
+— Y a pas une meilleure vue au troisième ?
 
-Jean Toksik — Quand avez-vous changé de méthode ?  
-Marianne Delmas — Un mardi. Un groupe appelle : quatre chambres, deux nuits. Normalement, je saute de joie. Sauf qu'il fallait remettre un étage en service.  
-Jean Toksik — Huit nuitées supplémentaires. Vous auriez dû être ravie.  
-Marianne Delmas — Jusqu'aux comptes. À 70 euros la nuit, ça faisait 560 euros TTC. Et on estimait à près de 690 euros les frais supplémentaires pour rouvrir cet étage pendant deux nuits.  
-Jean Toksik — Vous avez refusé 560 euros ?  
-Marianne Delmas — J'ai refusé d'en dépenser 690 pour les encaisser. C'est pas pareil.  
-Jean Toksik — Une façon particulière de faire du commerce.  
-Marianne Delmas — Ça m'a fait drôle aussi. Vingt ans à me battre pour remplir des chambres, et voilà que j'espère que le téléphone ne sonne pas.
+— Si.
 
-Jean Toksik — Vous auriez pu fermer tout l'hôtel. Les économies auraient été considérables.  
-Marianne Delmas — Et vous, arrêter de publier votre journal. Ça éviterait des dépenses.  
-Jean Toksik — Nous sommes surtout numériques.  
-Marianne Delmas — Eh bien, même vos économies sont compliquées.
+— Et vous avez du monde au troisième ?
 
-Jean Toksik — Qu'avez-vous fait, concrètement ?  
-Marianne Delmas — Quand c'est calme, on concentre les réservations dans une partie de l'hôtel. Le reste, on le garde fermé. Si la demande repart et couvre les frais, on rouvre.  
-Jean Toksik — Vous organisez la pénurie.  
-Marianne Delmas — Quelle pénurie ? Les chambres sont là ! Je ne vais pas chauffer tout le bâtiment pour trois personnes et un couple de pigeons.  
-Jean Toksik — Et si un client veut une chambre fermée ?  
-Marianne Delmas — On lui en propose une autre si ça lui convient. Sinon, tant pis. Mais on ne touche pas aux réservations confirmées pour nous arranger.  
-Jean Toksik — Vous avez appris à dire non.  
-Marianne Delmas — Pendant vingt ans, j'ai appris à mes équipes à ne jamais dire non. Maintenant, je leur explique que parfois, c'est la meilleure réponse. Elles me regardent comme si j'avais pris un coup de chaud.
+— Non.
 
-Jean Toksik — Et les salariés ?  
-Marianne Delmas — On a revu les plannings, le ménage, les petites réparations. Sans toucher aux contrats. Les chambres fermées, on ne les prépare pas tous les matins pour le plaisir. Mais les autres doivent être impeccables. On ne fait pas des économies en laissant des cheveux dans les salles de bains.  
-Jean Toksik — Les résultats vous donnent raison ?  
-Marianne Delmas — Sur six semaines, on a vendu moins de nuits que l'année précédente, mais on a dépensé nettement moins. Au final, on s'en est mieux sortis.  
-Jean Toksik — Vous avez amélioré vos résultats en accueillant moins de clients.  
-Marianne Delmas — Voilà. Mais ne dites pas ça comme ça, je vais encore passer pour une folle.
+— Ah, génial !
 
-Jean Toksik — Vous en avez parlé à vos confrères ?  
-Marianne Delmas — Un m'a conseillé de supprimer les petits-déjeuners. Un autre, de fermer la réception.  
-Jean Toksik — Des pistes intéressantes.  
-Marianne Delmas — À ce rythme-là, on loue des chambres dans un hôtel fermé. Je veux bien économiser, mais garder quelques clients aussi.  
-Jean Toksik — Votre établissement compte toujours 28 chambres ?  
-Marianne Delmas — Aux dernières nouvelles, oui. Personne ne les a emportées.  
-Jean Toksik — Pourtant, vous n'en proposez qu'une partie.  
-Marianne Delmas — C'est ça.  
-Jean Toksik — Cela ne vous frustre pas ?  
-Marianne Delmas — Si ! Mais entre une chambre vide qui ne me coûte presque rien de plus et une chambre occupée qui m'oblige à rouvrir un étage, j'ai une préférence.
+Marianne me regarde.
 
-Jean Toksik — Vous avez trouvé comment gagner davantage ?  
-Marianne Delmas — Disons que j'ai appris à perdre moins.  
-Jean Toksik — En attirant moins de clients ?  
-Marianne Delmas — Non. En arrêtant de dépenser de l'argent pour ceux que je n'avais pas.  
-Jean Toksik — Une conception personnelle de l'hospitalité.  
-Marianne Delmas — Peut-être. Mais elle a un avantage.  
-Jean Toksik — Lequel ?  
-Marianne Delmas — L'année prochaine, on sera encore là pour ouvrir la porte.
+— Il est fermé, Emma.
 
-Fiction économique satirique. Personnages, établissement, propos et chiffres imaginaires.
+— Ah. Mais les chambres sont toujours là ?
+
+— Oui. J'ai même gardé les lits.
+
+— Et pour une seule nuit, vous pourriez pas en ouvrir une ?
+
+— C'est un peu le sujet pour lequel vous êtes venue me voir.
+
+Je lui propose qu'on en parle avant de monter mes affaires.
+
+## Les chambres vides, c'est sympa quand on est client
+
+— Vous avez quand même passé un bon été ?
+
+— En juillet et août, on était quasiment complets. En septembre, certaines nuits, on tombait à six ou sept chambres occupées. Les clients étaient répartis sur trois étages.
+
+— Ça doit être agréable, pour eux.
+
+— Ah oui. Pour eux.
+
+— Ça vous plaît pas de recevoir des clients quand y a pas trop de monde ? Vous avez plus de temps pour discuter.
+
+— Emma, j'ai vingt-huit chambres. Quand j'en vends six, il me reste un crédit à rembourser, des salariés à payer, des assurances...
+
+— Vous avez encore un crédit ?
+
+— Oui.
+
+— Non, mais je vous voyais plutôt à l'abri financièrement.
+
+— Parce que j'ai vingt-huit chambres ?
+
+— Ben oui. Chez moi, y en a qu'une.
+
+Marianne m'explique que même quand ses chambres sont vides, elle continue à payer une bonne partie de ses charges. Maintenir un étage prêt à recevoir des clients lui coûte davantage.
+
+— Une salariée m'a demandé si elle devait vraiment préparer un étage entier pour une seule chambre. Elle m'a dit : « À ce rythme, je vais donner un prénom à chaque ampoule. »
+
+— Vous avez pas essayé de baisser vos prix ?
+
+— Si. On a gagné deux réservations. J'avais presque sorti le champagne. Puis on a regardé ce qu'on dépensait pour faire tourner les étages.
+
+— Vous avez rangé le champagne ?
+
+— Oui.
+
+— Vous auriez pu le boire quand même. Vous l'aviez déjà payé.
+
+— C'est vrai. J'aurais dû vous appeler.
+
+## Cinq cent soixante euros qui lui auraient coûté de l'argent
+
+— C'est quand que vous avez commencé à refuser des réservations ?
+
+— Un mardi. Un groupe voulait quatre chambres pour deux nuits. À ces dates-là, on n'avait plus assez de chambres disponibles dans la partie ouverte. Il fallait remettre un étage en service.
+
+— Ils pouvaient pas venir un autre jour ?
+
+— Je leur ai proposé. Ils avaient besoin de ces dates-là.
+
+— Et ils auraient payé combien ?
+
+— Soixante-dix euros par nuit et par chambre. Cinq cent soixante euros au total, TVA comprise.
+
+— Et vous avez refusé cinq cent soixante euros ?
+
+— J'ai refusé d'en dépenser 690 pour les encaisser. C'est pas pareil.
+
+— J'ai du mal à comprendre. Vous avez déjà les chambres. Vous allez pas racheter quatre lits.
+
+Marianne ouvre son dossier. Elle avait demandé des devis pour remettre l'étage en service à bref délai.
+
+— Deux cent quarante euros pour une intervention technique supplémentaire. L'étage était en veille, il fallait notamment vérifier le circuit d'eau chaude et remettre les équipements en service. Deux cent vingt euros pour un renfort de ménage extérieur, chambres et parties communes.
+
+— Vous avez pas déjà du personnel pour ça ?
+
+— Si. Il était occupé ailleurs. Je n'allais pas laisser les autres chambres sales. Sans cette réservation, pas d'intervention urgente ni de renfort.
+
+— Ça fait quatre cent soixante euros.
+
+— On avait aussi estimé à cent trente euros le chauffage et la ventilation supplémentaires pour la remise en température et les deux nuits. Et cent euros pour le linge et les produits utilisés par le groupe.
+
+— Vous avez compté les salaires ?
+
+— Non. Je les verse de toute façon. L'entretien courant prévu, je le paie aussi. Là, je comptais ce que j'allais dépenser en plus pour rouvrir cet étage exprès pour eux.
+
+— Donc les gens voulaient vous donner cinq cent soixante euros et vous avez dit non ?
+
+— Oui.
+
+— Vous êtes à ce point-là à l'aise financièrement ?
+
+— C'est justement parce que je le suis pas. J'ai refusé des clients parce que j'avais besoin d'argent.
+
+Marianne me fait remarquer que sur les cinq cent soixante euros, elle ne garde même pas tout. Avec la TVA à 10 %, la recette hors taxes est de cinq cent neuf euros et neuf centimes. Les six cent quatre-vingt-dix euros de frais sont estimés après déduction de la TVA récupérable.
+
+— Ah oui. Y a même une partie de l'argent que vous refusez de gagner qui n'était pas pour vous.
+
+— Voilà.
+
+— Ça vous aurait fait perdre cent quatre-vingts euros, à peu près ?
+
+— Cent quatre-vingt-un euros.
+
+— Et si vous leur aviez demandé plus cher ?
+
+— Ça aurait pu marcher. Mais il fallait qu'ils acceptent.
+
+— Vous auriez pu leur proposer des trucs en supplément. Le petit-déjeuner, par exemple.
+
+— Vous le prendriez à combien, le petit-déjeuner ?
+
+— Ça dépend de ce qu'il y a dedans.
+
+— Voilà.
+
+## Emma aimerait bien que les clients se regroupent ailleurs
+
+Marianne aurait pu maintenir tout l'hôtel ouvert ou chercher à remplir les étages avec des promotions. Elle a préféré concentrer les réservations dans une partie du bâtiment. Si la demande repart suffisamment pour couvrir les frais de réouverture et de séjour, elle remet d'autres chambres en service.
+
+— Et si j'ai réservé une chambre avec balcon ?
+
+— Si on vous l'a confirmée, on vous la donne. On ne déplace pas les gens pour nous arranger.
+
+— Mais si je téléphone et qu'il vous reste des chambres avec balcon ?
+
+— Si elles sont dans la partie fermée, je vous propose ce que j'ai dans la partie ouverte.
+
+— Sans balcon ?
+
+— Si c'est ce qu'il reste, oui.
+
+— Et au même prix ?
+
+— Ça dépend de la chambre que je vous propose.
+
+— C'est quand même dommage de pas profiter du balcon.
+
+— Vous voulez une deuxième chambre ?
+
+— Ah non, j'en ai pas besoin.
+
+— Ben moi non plus.
+
+Je lui explique que quand je pars en week-end avec mon copain, j'aime bien pouvoir choisir la chambre. Je regarde la vue, la taille du lit, la baignoire. J'aime savoir aussi où se trouve l'ascenseur.
+
+— Vous en avez besoin ?
+
+— Non, justement. Je veux pas dormir à côté.
+
+— Ah.
+
+— Et ce que j'aime bien, dans les hôtels, c'est quand il y a personne dans les chambres à côté.
+
+— Donc vous aimeriez que je remplisse mon hôtel, sauf votre étage ?
+
+J'essaie de lui expliquer que je préfère avoir des voisins dans la journée. Ça donne de la vie à l'hôtel. Le soir, c'est plus compliqué.
+
+— Vous savez, quand je dors à l'hôtel, j'ai pas envie de connaître les habitudes de la personne derrière la cloison.
+
+— Moi non plus. Sauf que je préfère qu'elle soit là et qu'elle paie.
+
+## Marianne a appris un mot qui lui faisait peur
+
+— C'était difficile d'expliquer ça à vos équipes ?
+
+— J'ai passé vingt ans à leur apprendre à ne jamais dire non. Maintenant, quand un étage est fermé, je leur demande d'arrêter de chercher des solutions pour y mettre quelqu'un à tout prix.
+
+— Elles doivent être contentes d'avoir moins de chambres à faire ?
+
+— Elles sont surtout contentes d'arrêter de monter et descendre avec le chariot pour une chambre par étage. On a revu les plannings, regroupé le ménage. Et on continue d'entretenir les chambres fermées.
+
+— Vous avez pu réduire les contrats ?
+
+— On n'y a pas touché. J'aurai besoin de mes salariés quand l'activité repartira. Et les gens qui viennent ici ont droit à des chambres impeccables. On ne fait pas des économies en laissant des cheveux dans les salles de bains.
+
+Je lui demande si je pourrais jeter un œil à ma chambre avant qu'on termine.
+
+— Vous allez vérifier les cheveux ?
+
+— Non, non. C'est juste que j'avais vu sur les photos une chambre avec une baignoire.
+
+— Celle que vous avez réservée a une douche.
+
+— Oui, mais elle avait l'air grande, la baignoire.
+
+Marianne repose son stylo.
+
+## Moins de nuitées, de meilleurs comptes
+
+— Financièrement, ça donne quoi ?
+
+— Sur six semaines, on a vendu moins de nuits que l'année précédente, mais les dépenses ont baissé davantage que les recettes. On s'en est mieux sortis sur la période.
+
+— Vous avez trouvé comment gagner davantage ?
+
+— Disons que j'ai appris à perdre moins.
+
+— Et le reste de l'année, vous pensez que vous allez vous en sortir ?
+
+— On verra. Les six semaines sont encourageantes. Je n'ai pas encore les comptes de toute l'année. Si j'ai assez de demandes, j'ouvre.
+
+— Vous avez des confrères qui font pareil ?
+
+— Un m'a conseillé de supprimer les petits-déjeuners. Un autre, de fermer la réception. À ce rythme-là, on loue des chambres dans un hôtel fermé. Je veux bien économiser, mais je veux aussi continuer à recevoir les gens.
+
+— Vous vous en sortez donc mieux en accueillant moins de clients ?
+
+— En arrêtant de dépenser de l'argent pour ceux que je n'avais pas.
+
+— Vous vous sentez toujours hôtelière quand vous dites non à des réservations ?
+
+— Oui. Et j'espère que l'année prochaine, on sera encore là pour ouvrir la porte.
+
+Je récupère ma clé. Marianne me propose de prendre l'ascenseur avec elle pour me montrer ma chambre.
+
+— Vous me préviendrez quand vous rouvrirez le troisième ?
+
+— Bien sûr.
+
+— Avant de prévenir les autres, si possible.
