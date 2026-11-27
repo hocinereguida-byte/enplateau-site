@@ -286,6 +286,26 @@ for(const [route,author] of [["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"
  if(!/name="robots"\s+content="noindex,nofollow"/.test(html)||/AGR-C1-A02|AR08|SD11|D06|119 C, 14 PC/.test(story))errors.push('Luc Sapousse : indexation ou métadonnées internes visibles.');
 }
 
+// Gérard Messie V2.0 : texte, distribution, signature et classement.
+{
+ const slug='eau-ressources/eau-c1-u1-str-01-chronique',href='/media/articles/'+slug+'/',html=read('media/articles/'+slug+'/index.html');
+ const source=fs.readFileSync(path.resolve('../content/articles/'+slug+'.md'),'utf8');
+ const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
+ const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
+ const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+ const story=html.match(/<article\b[^>]*data-article-id="eau-ressources\/eau-c1-u1-str-01-chronique"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const rendered=[...story.matchAll(/<(p|h2)\b[^>]*>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':'')+decode(m[2].replace(/<[^>]*>/g,'')));
+ const expected=front[2].trim().split(/\n\n/);
+ const full=[field('title'),field('summary'),field('signature_auteur'),'Fiction satirique · Raisons et déraisons',...expected.map(x=>x.replace(/^## /,'')),field('source_notice')];
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||full.length!==88||full.join('\n').length!==8529||expected.filter(x=>x.startsWith('## ')).length!==5||expected.filter(x=>x.startsWith('— ')).length!==19||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==19||expected.at(-1)!=="Bien sûr ! Gérard avait déjà fait imprimer les affiches.")errors.push('Gérard Messie V2.0 : texte ou structure non concordants.');
+ const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'',lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
+ const signature=html.match(/<section\b[^>]*aria-label="Signature de l’auteur"[^>]*>([\s\S]*?)<\/section>/)?.[1]??'';
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!signature.includes('<h2>Thierry Chmonfils</h2>')||!signature.includes('href="/media/auteurs/thierry-chmonfils/"')||field('source_document_version')!=='V2.0'||field('signature_auteur')!=='Thierry Chmonfils'||front[1].split('\n').some(l=>l.startsWith('hero_image: ')))errors.push('Gérard Messie V2.0 : titre, chapô, signature, notice ou visuel non conformes.');
+ for(const name of ['Gérard Messie','Karine Cash','Patrick Lacourge','Alain Concret','Bruno Spiaggia','Éric Fovert'])if(!decode(story).includes(name))errors.push('Gérard Messie V2.0 : personnage manquant '+name);
+ for(const page of ['media/publications/index.html','media/cycles/eau-ressources/index.html','media/cycles/eau-ressources/conversations/C1/index.html','media/scenes/index.html','media/lectures/strategie-gouvernance/index.html','media/auteurs/thierry-chmonfils/index.html'])if(!read(page).includes(href))errors.push('Gérard Messie : navigation incorrecte '+page);
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html)||/EAU-C1-U1-STR-01|AR04|SD17|D12|121 C, 10 PC/.test(story))errors.push('Gérard Messie : indexation ou métadonnées internes visibles.');
+}
+
 // Fiches d'auteurs : bijection entre les articles effectivement rendus et leurs listes.
 {
  const byAuthor=new Map();

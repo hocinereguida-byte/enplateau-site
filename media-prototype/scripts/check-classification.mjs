@@ -19,7 +19,7 @@ const records = [
   "banque-financement/ban-c2-u1-fin-01-etienne-valbrun.md|BAN-C2-U1-FIN-01|banque-financement|Visa documentaire 09-11-2026|finance-investissement|BAN-C2-U1||C2-U1|entretien|grand-entretien|1fkbL5b_z8vbo-wAp23WIRaS88O9d273dijF1eXivOis",
   "tourisme/tou-c2-u1-fin-01-marianne-delmas.md|TOU-C2-U1-FIN-01|tourisme|Visa final — préproduction|finance-investissement|TOU-C2-U1||C2-U1|entretien|grand-entretien|15zkXSEbHToJNC0EMUj5j-hEETCxtOCz7aKjqiXVdsYg",
   "commerce/com-c3-u2-fin-01-chronique.md|COM-C3-U2-FIN-01|commerce|V5|finance-investissement|COM-C3-U2||C3-U2|chronique|chronique|",
-  "eau-ressources/eau-c1-u1-str-01-chronique.md|EAU-C1-U1-STR-01|eau-ressources|V9|strategie-gouvernance|EAU-C1-U1|partage-eau-agriculture-potable|C1-U1|chronique|chronique|",
+  "eau-ressources/eau-c1-u1-str-01-chronique.md|EAU-C1-U1-STR-01|eau-ressources|V2.0|strategie-gouvernance|EAU-C1-U1|partage-eau-agriculture-potable|C1-U1|chronique|chronique|1Nbp0-kbA5oPlXvWh28LrMdtNCiHslo3FHjfskMUzYIc",
   "industrie/ind-c1-cst-01-brouillon.md|IND-C1-CST-01|industrie|Variante populaire harmonisée finale|strategie-gouvernance|IND-C1-CST||CST|entretien|grand-entretien|15vOdDh067Uiv-vooxH-WnKLQNEqc9dDD-tcliHxxDMg",
   "industrie/ind-c1-cst-02-brouillon.md|IND-C1-CST-02|industrie|V9.2|operations-organisation|IND-C1-CST||CST|chronique|chronique|1-ekpGzW9BFNRFKCE6XUzc_LZRwGQ6o99BLVYsn1k4zs",
   "industrie/ind-c1-cst-03-brouillon.md|IND-C1-CST-03|industrie|V4.2|technologie-innovation|IND-C1-CST||CST|chronique|chronique|1IdRy7bjsqSVxCbvz7G67H6GwAeMEQff6v7rCjN2ngcs",
