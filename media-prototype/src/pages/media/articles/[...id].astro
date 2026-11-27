@@ -8,6 +8,7 @@ import { renderMarcNov25Interview } from '../../../lib/marc-interview';
 import { renderLaurentWinnieV18 } from '../../../lib/laurent-winnie-v18';
 import { renderAlainV44Interview } from '../../../lib/alain-emma-v44';
 import { renderMarianneV11Interview } from '../../../lib/marianne-emma-v11';
+import { renderMartineV20Interview } from '../../../lib/martine-emma-v20';
 import { renderPatrickLolaV92 } from '../../../lib/patrick-lola-v92';
 import { renderCaserneOscarV64 } from '../../../lib/caserne-oscar-v64';
 import { renderBernardThierryV16 } from '../../../lib/bernard-thierry-v16';
@@ -31,7 +32,7 @@ const d=article.data;
 const {Content}=await render(article);
 // Version de lecture vérifiée : précomposer les dialogues et les entretiens approuvés en HTML statique.
 // Une variation non contrôlée du manuscrit fait échouer le build plutôt que le rendu.
-const verifiedDialogueHtml=article.id==='tourisme/tou-c2-u1-fin-01-marianne-delmas' ? renderMarianneV11Interview(article.body) : article.id==='numerique-telecom/cmd-naf-16' ? renderSophieTouclicV20(article.body) : article.id==='education-formation/cmd-naf-12' ? renderSandrineChillV21(article.body) : article.id==='commerce/com-c3-u2-fin-01-chronique' ? renderClairePleinpotV20(article.body) : article.id==='eau-ressources/eau-c1-u1-str-01-chronique' ? renderGerardMessieV20(article.body) : article.id==='agriculture/agr-c1-a02-chronique-vergers' ? renderLucSapousseV23(article.body) : hasHarmonisedFinal(article.id) ? renderHarmonisedFinal(article.id,article.body) : article.id==='industrie/ind-c1-cst-01-brouillon'
+const verifiedDialogueHtml=article.id==='social-medicosocial/cmd-naf-11' ? renderMartineV20Interview(article.body) : article.id==='tourisme/tou-c2-u1-fin-01-marianne-delmas' ? renderMarianneV11Interview(article.body) : article.id==='numerique-telecom/cmd-naf-16' ? renderSophieTouclicV20(article.body) : article.id==='education-formation/cmd-naf-12' ? renderSandrineChillV21(article.body) : article.id==='commerce/com-c3-u2-fin-01-chronique' ? renderClairePleinpotV20(article.body) : article.id==='eau-ressources/eau-c1-u1-str-01-chronique' ? renderGerardMessieV20(article.body) : article.id==='agriculture/agr-c1-a02-chronique-vergers' ? renderLucSapousseV23(article.body) : hasHarmonisedFinal(article.id) ? renderHarmonisedFinal(article.id,article.body) : article.id==='industrie/ind-c1-cst-01-brouillon'
  ? renderMarcNov25Interview(article.body)
  : article.id==='industrie/ind-c1-cst-02-brouillon'
  ? renderSophieV91aDialogue(article.body)

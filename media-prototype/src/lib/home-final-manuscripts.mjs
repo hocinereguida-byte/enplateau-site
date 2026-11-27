@@ -2,6 +2,14 @@
 // Modifier uniquement à réception d'un figeage et après vérification Drive/Markdown. Pas de comparaison numérique de versions.
 export const finalManuscripts = [
   {
+    "id": "social-medicosocial/cmd-naf-11",
+    "version": "V2.0",
+    "source": "1XjkBU8Znsj_wR8BQAPxvSwiOvc3TiK-7HXX9eizDJkw",
+    "date": "2026-11-27",
+    "fingerprint": "709f9f7e",
+    "status": "integrated"
+  },
+  {
     "id": "tourisme/tou-c2-u1-fin-01-marianne-delmas",
     "version": "V1.1",
     "source": "1nuJFpKT6onviW08bmAv9B5lV8FzH4-3rFanZDe64it0",

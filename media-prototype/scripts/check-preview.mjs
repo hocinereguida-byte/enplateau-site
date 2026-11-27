@@ -402,6 +402,32 @@ for(const [route,author] of [["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"
  if(!/name="robots"\s+content="noindex,nofollow"/.test(html)||/TOU-C2-U1-FIN-01|AR01|SD14|D01|105 C, 11 PC/.test(story))errors.push('Marianne Dorpeu : indexation ou métadonnées internes visibles.');
 }
 
+// Martine Jipépé V2.0 : texte, distribution, signature et classement.
+{
+ const slug='social-medicosocial/cmd-naf-11',href='/media/articles/'+slug+'/',html=read('media/articles/'+slug+'/index.html');
+ const source=fs.readFileSync(path.resolve('../content/articles/'+slug+'.md'),'utf8');
+ const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
+ const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
+ const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+ const story=html.match(/<article\b[^>]*data-article-id="social-medicosocial\/cmd-naf-11"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const rendered=[...story.matchAll(/<(p|h2)\b[^>]*>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':m[0].includes('class="martine-dialogue-line"')?'— ':'')+decode(m[2].replace(/<[^>]*>/g,'')));
+ const expected=front[2].trim().split(/\n\n/);
+ const full=[field('title'),field('summary'),field('signature_auteur'),'Fiction satirique · Les interrogatoires',...expected.map(x=>x.replace(/^## /,'')),field('source_notice')];
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||full.length!==127||full.join('\n').length!==9523||expected.filter(x=>x.startsWith('## ')).length!==5||expected.filter(x=>x.startsWith('— ')).length!==102||(story.match(/class="martine-dialogue-line"/g)||[]).length!==102||expected.at(-1)!=="— Quand vous serez venue.")errors.push('Martine Jipépé V2.0 : texte ou structure non concordants.');
+ const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'',lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
+ const signature=html.match(/<section\b[^>]*aria-label="Signature de l’auteur"[^>]*>([\s\S]*?)<\/section>/)?.[1]??'';
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Les interrogatoires')||!signature.includes('<h2>Emma Santhune</h2>')||!signature.includes('href="/media/auteurs/emma-santhune/"')||field('source_document_version')!=='V2.0'||field('signature_auteur')!=='Emma Santhune'||!html.includes(field('hero_image'))||!decode(html).includes(field('image_alt')))errors.push('Martine Jipépé V2.0 : titre, chapô, signature, notice ou visuel non conformes.');
+ for(const name of ['Martine Jipépé','Gérard Chocaze','Emma Santhune'])if(!decode(story).includes(name))errors.push('Martine Jipépé V2.0 : personnage manquant '+name);
+ for(const page of ['media/publications/index.html','media/cycles/social-medicosocial/index.html','media/cycles/social-medicosocial/conversations/C2/index.html','media/scenes/index.html','media/lectures/strategie-gouvernance/index.html','media/auteurs/emma-santhune/index.html'])if(!read(page).includes(href))errors.push('Martine Jipépé : navigation incorrecte '+page);
+ for(const page of ['media/index.html','media/publications/index.html','media/cycles/social-medicosocial/index.html','media/cycles/social-medicosocial/conversations/C2/index.html','media/scenes/index.html','media/lectures/strategie-gouvernance/index.html','media/auteurs/emma-santhune/index.html']){
+  const pageHtml=decode(read(page));if(pageHtml.includes("J'ai dix places à ouvrir, cinq salariés à trouver et trois élus qui veulent couper le ruban."))errors.push('Martine Jipépé : ancien titre historique encore présent '+page);
+ }
+ if(/Martine Vautrin|Jean Toksik|Jean Toksic/.test(decode(story+' '+h1+' '+lead+' '+signature)))errors.push('Martine Jipépé : ancienne identité visible');
+ if(read('media/auteurs/jean-toksik/index.html').includes(href))errors.push('Martine Jipépé : ancienne attribution à Jean Toksik');
+ if(!decode(story).includes('Le conseil n\'a pas encore tranché.')||!decode(story).includes('cinq salariés rien que pour les trente résidents actuels'))errors.push('Martine Jipépé : distinction entre recommandation et décision, ou effectif actuel, manquante');
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html)||/CMD-NAF-11|AR04|SD09|D08|103 C, 12 PC/.test(story))errors.push('Martine Jipépé : indexation ou métadonnées internes visibles.');
+}
+
 // Fiches d'auteurs : bijection entre les articles effectivement rendus et leurs listes.
 {
  const byAuthor=new Map();

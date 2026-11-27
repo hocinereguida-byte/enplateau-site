@@ -1,8 +1,8 @@
 ---
-title: "J'ai dix places à ouvrir, cinq salariés à trouver et trois élus qui veulent couper le ruban."
+title: "« J'ai une date d'inauguration. J'attends toujours une date d'ouverture. »"
 hero_image: "/images/soc-c2-cmd-naf-11-visuel-v2.webp"
 image_alt: "Ruban tricolore devant une chambre vide, ciseaux posés sur une chaise."
-summary: "Martine Vautrin dirige une association qui gère un foyer de vie accueillant trente adultes en situation de handicap. Elle vient d'obtenir l'autorisation de créer dix places supplémentaires, à condition de réunir les moyens nécessaires pour les ouvrir. Une excellente nouvelle, sauf qu'elle manque déjà de personnel. Le maire souhaite inaugurer les nouvelles places. La directrice a décidé de lui réserver une surprise."
+summary: "Martine Jipépé dirige une association dont le foyer de vie accueille trente adultes en situation de handicap. Elle a obtenu l'autorisation de créer dix places supplémentaires, mais il lui manque déjà cinq salariés. Le maire, Gérard Chocaze, a réservé sa matinée du 14 juin. Emma Santhune est venue voir si elle pouvait se rendre utile."
 cycle: "social-medicosocial"
 conversation: "C2"
 contexte: "C2-U1"
@@ -12,89 +12,264 @@ lecture_principale: "strategie-gouvernance"
 perspective_principale: "strategie-gouvernance"
 format: "entretien"
 genre_narratif: "grand-entretien"
-signature_auteur: "Jean Toksik"
+signature_auteur: "Emma Santhune"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-11-10T00:00:00+01:00"
-source_document_url: "https://docs.google.com/document/d/1udVIsrOm1Eb3GQLBZykGxG3D6NSokOoUcemFoexxMpA/edit"
-source_document_version: "V finale"
+source_document_url: "https://docs.google.com/document/d/1XjkBU8Znsj_wR8BQAPxvSwiOvc3TiK-7HXX9eizDJkw/edit"
+source_document_version: "V2.0"
 autorisation_publication: "preproduction_uniquement"
-source_notice: "Fiction satirique. Les personnages, les propos et les situations décrites sont imaginaires."
-methodology_specific: "CMD-NAF-11 — visa documentaire et éditorial favorable pour préproduction."
+source_notice: "Les personnages, l'association, les dialogues et les situations décrites sont fictifs."
+methodology_specific: "Martine Jipépé / Emma Santhune V2.0 définitive figée le 27 novembre 2026. Source exclusive https://docs.google.com/document/d/1XjkBU8Znsj_wR8BQAPxvSwiOvc3TiK-7HXX9eizDJkw/edit ; PV https://docs.google.com/document/d/1av8QndiixVz7RZgu6Q6dBZ_k-Yhc-NdeP02Cf8BAcxs/edit ; passation https://docs.google.com/document/d/1661a5laSZ6eZrAV9H8xZ-9iGyjTEFoy038FV8fHxwm0/edit. Transformation B ; AR04 / SD09 / D08 internes. Avis littéraire simulé 94/100, D1 favorable sous réserves, D2 favorable sous hypothèses, singularité favorable sur périmètre ciblé. Matrice 144 : 103 C, 12 PC, 0 NC, 5 NV, 24 NA. 9 523 caractères (127 paragraphes complets joints par un saut simple), 5 intertitres, 102 répliques. Cinq salariés manquants pour trente résidents actuels, non cinq ETP établis ; dix places supplémentaires autorisées mais moyens non acquis. Report recommandé par Martine, CA non décidé. Projet domicile conditionnel, choix des personnes et moyens à respecter. Association et commune anonymisées. Visuel historique inspecté dans GitHub : ruban tricolore devant chambre vide et ciseaux sur chaise, sans personne ni identification apparente ; maintenu, alt conforme. GO technique utilisateur pour préproduction exclusivement ; aucun bon à publier. Réserves documentaires, lecture externe et recette visuelle du site restent ouvertes."
 tag_1: "Social et médico-social"
 tag_2: "Ouverture de places"
 tag_3: "Recrutement"
+validation_document_url: "https://docs.google.com/document/d/1av8QndiixVz7RZgu6Q6dBZ_k-Yhc-NdeP02Cf8BAcxs/edit"
+updated_date: "2026-11-27"
+seo:
+  image_alt: "Ruban tricolore devant une chambre vide, ciseaux posés sur une chaise."
 ---
 
-Jean Toksik — Madame Vautrin, vous allez accueillir dix personnes supplémentaires. Vous devez être heureuse ?
-Martine Vautrin — Folle de joie. J'ai même acheté du champagne. Enfin, du mousseux. Enfin, du jus de pomme. On a des restrictions budgétaires.
-Pourquoi ces restrictions ?
-Il nous manque cinq salariés. Et on me demande maintenant de préparer dix places de plus. J'ai l'autorisation, pas encore les moyens de les ouvrir. Je cherche des éducateurs partout. J'ai mis des annonces à la boulangerie, à la pharmacie et chez le vétérinaire.
-Chez le vétérinaire ?
-Il connaît peut-être quelqu'un. Je ne suis pas difficile.
-Vous avez eu des réponses ?
-Un monsieur qui cherchait un stage de troisième et une dame qui voulait adopter un labrador. J'ai gardé leurs coordonnées.
-Pour le labrador ?
-Pour la dame. Le chien, je vais attendre de voir s'il a le diplôme.
-Mais que font exactement vos salariés ?
-Ils aident les résidents à vivre au quotidien : se préparer le matin, aller travailler pour certains, faire les courses, sortir, voir leurs proches. On ne peut pas les remplacer par un distributeur automatique de café.
-Vous avez essayé ?
-Non. Mais si vous connaissez un distributeur qui sait organiser un rendez-vous médical et calmer une dispute sur la télécommande, je prends.
-Une inauguration avant les premiers recrutements
-Vous avez déjà une date d'ouverture ?
-Non. En revanche, j'ai une date d'inauguration. Le maire est libre le 14 juin.
-Et vos futurs salariés ?
-Toujours pas. Mais on a un maire, deux adjoints et un photographe. C'est presque une équipe complète.
-Qu'allez-vous inaugurer ?
-Dix chambres vides. J'ai proposé de les faire visiter aux élus. Ils pourront essayer les lits.
-Ils ont accepté ?
-Le maire a demandé si la visite comprenait un déjeuner.
-Vous lui avez répondu ?
-Que oui, à condition qu'il aide à mettre la table et à débarrasser. Chez nous, on encourage l'autonomie.
-Il a réagi comment ?
-Il a demandé si le préfet serait présent. Je crois qu'il a mal compris le principe.
-Vous pourriez quand même ouvrir quelques chambres ?
-Avec qui ? Je ne vais pas laisser des gens seuls toute la journée pour pouvoir dire que les chambres sont occupées. Ce n'est pas une location saisonnière.
-Vous avez essayé de recruter chez vos concurrents ?
-Bien sûr. La semaine dernière, j'ai récupéré un éducateur d'un foyer voisin. Le lendemain, ils m'ont pris une infirmière. Maintenant, on envisage un échange de prisonniers.
-« On peut aussi aider les gens sans leur donner une chambre »
-Vous avez une autre idée que d'ouvrir des chambres ?
-Oui. Certaines personnes qui attendent une place pourraient continuer à vivre chez elles si elles recevaient davantage d'aide. Notre association gère aussi un service qui accompagne des adultes handicapés à domicile.
-Quel genre d'aide ?
-Quelqu'un pour les courses, les papiers, les déplacements, les rendez-vous. Pas forcément quelqu'un qui habite avec elles. Nous avons déjà des salariés qui font ce travail, mais ils sont trop peu nombreux.
-Vous pourriez donc aider davantage de personnes ?
-Peut-être. À condition d'obtenir les moyens nécessaires, de recruter et d'organiser le service pour accueillir de nouvelles personnes. Parce que, contrairement à ce que certains semblent croire, un éducateur ne peut pas être à la fois dans trois appartements et dans un minibus.
-Vous avez essayé la visioconférence ?
-Pour accompagner quelqu'un chez le dentiste ? Non. Mais je peux demander au dentiste de faire une consultation sur WhatsApp, ça l'amusera.
-Pourquoi ne pas simplement déplacer des salariés du foyer vers les personnes qui vivent chez elles ?
-Parce qu'il faudrait alors expliquer aux trente résidents pourquoi les gens qui les aidaient hier ne sont plus là aujourd'hui.
-C'est un problème.
-C'est même deux problèmes. Mais avec un joli communiqué, ça peut passer pour une réforme.
-Vous êtes contre l'ouverture des dix places ?
-Pas du tout ! Certaines personnes ont vraiment besoin de vivre au foyer. D'autres préfèrent rester chez elles et peuvent le faire avec une aide adaptée. Je veux juste qu'on arrête de compter les chambres avant de compter les gens qui vont s'en occuper.
-Les élus vont devoir passer un entretien
-Vous avez expliqué tout cela à ceux qui financent votre foyer ?
-Oui. Ils m'ont demandé un nouveau dossier.
-Pour obtenir du personnel ?
-Pour expliquer pourquoi je n'arrivais pas à en trouver.
-Vous l'avez rempli ?
-Dix-huit pages. J'ai mis une photo de notre salle de repos. Personne dedans. Je trouvais que ça résumait assez bien la situation.
-Et leur réponse ?
-Ils souhaitent une réunion pour étudier les difficultés de recrutement.
-C'est encourageant.
-Absolument. Six personnes sont disponibles pour parler des cinq salariés que je n'arrive pas à trouver. J'ai demandé si l'une d'elles voulait changer de métier.
-Vous avez eu une réponse ?
-On m'a dit que ma remarque n'était pas constructive.
-Et l'inauguration du 14 juin ?
-Maintenue. J'ai préparé dix badges.
-Pour les futurs résidents ?
-Non. Pour les élus.
-Pourquoi des badges ?
-« Candidat éducateur ». Je compte leur faire passer un entretien d'embauche pendant le cocktail.
-Vous pensez qu'ils vont accepter ?
-Je ne sais pas. Mais le maire a déjà confirmé sa présence et il paraît qu'il adore rencontrer les habitants.
-Et s'il refuse le poste ?
-Je lui proposerai de devenir bénévole.
-Vous n'avez pas peur qu'il annule l'inauguration ?
-Si. C'est pour ça que je n'ai pas encore dit qu'il serait de service pour la vaisselle.
-Fiction satirique. Les personnages, les propos et les situations décrites sont imaginaires.
+Martine Jipépé est au téléphone quand j'entre dans son bureau. Elle demande à son interlocutrice si elle peut passer dans la semaine récupérer quelque chose. Elle raccroche.
+
+— Vous avez trouvé quelqu'un ?
+
+— Non, c'est le vétérinaire. Il n'y a plus de place sur son panneau d'affichage. Il voudrait que je récupère mon annonce.
+
+— Vous recrutez des éducateurs chez le vétérinaire ?
+
+— À la boulangerie aussi. Et à la pharmacie.
+
+— Et vous avez eu des réponses ?
+
+— Un monsieur qui cherchait un stage de troisième pour son fils. Et une dame qui voulait adopter un labrador.
+
+— Vous avez gardé les coordonnées ?
+
+— De la dame, oui. On sait jamais, elle connaît peut-être quelqu'un.
+
+## Martine a trouvé du monde pour le 14 juin
+
+— Vous avez quand même dû être contente quand vous avez appris que vous aviez l'autorisation de créer dix places supplémentaires ?
+
+— Folle de joie. J'avais acheté du mousseux. Il est encore au frigo.
+
+— Vous attendez l'ouverture ?
+
+— Je crois que je vais surveiller la date de péremption.
+
+Martine m'explique qu'il lui manque cinq salariés rien que pour les trente résidents actuels. Ses équipes tiennent grâce aux changements de planning et aux remplaçants. Pour les dix nouvelles places, il faudra encore du personnel.
+
+— Et vous allez accueillir dix personnes de plus avec les mêmes équipes ?
+
+— Non.
+
+— Vous avez annoncé une date ?
+
+— J'ai une date d'inauguration. J'attends toujours une date d'ouverture.
+
+— Ah. C'est qui qui a choisi le jour ?
+
+— Gérard Chocaze, le maire. Il est libre le 14 juin. Ses deux adjoints aussi. Et son photographe.
+
+— Vous avez déjà un photographe ?
+
+— On a même le ruban.
+
+Elle me montre le projet d'invitation que lui a envoyé la mairie. Je lui demande ce que les élus comptent visiter.
+
+— Les dix chambres vides. On pourrait même leur faire essayer les lits.
+
+— Vous avez accepté ?
+
+— J'ai dit que j'étais d'accord pour leur présenter les locaux. À condition qu'on ne dise pas que les places sont ouvertes.
+
+— Ils vous ont répondu quoi ?
+
+— Le maire voulait savoir si la visite comprenait un déjeuner.
+
+— Et vous lui avez dit oui ?
+
+— S'il aide à mettre la table et à débarrasser. Chez nous, on encourage l'autonomie.
+
+## Emma a très envie de donner un coup de main
+
+— C'est quoi, une journée de travail pour vos salariés ?
+
+— Ça dépend des personnes. On les aide à se préparer, à sortir, à organiser leurs rendez-vous. Certaines veulent apprendre à prendre le bus seules, d'autres aimeraient travailler.
+
+— Et il vous faut des gens diplômés pour tout ça ?
+
+— Pour certains postes, oui. Et pour tous, il faut recruter, former et encadrer. Venir boire un café avec quelqu'un et assurer son accompagnement tous les jours, c'est pas la même responsabilité.
+
+— Mais moi, je veux bien venir vous aider bénévolement.
+
+Martine me demande ce que j'aimerais faire.
+
+— Des sorties, par exemple. J'adore me balader.
+
+— Certains résidents en demandent davantage. On peut en discuter avec eux et avec l'équipe.
+
+— Ah ben super !
+
+Martine ouvre son agenda.
+
+— Vous êtes disponible quand ?
+
+— La semaine, ça dépend. J'ai des reportages. Le week-end, c'est plus facile.
+
+— Un samedi sur deux, par exemple ?
+
+— Pas tous les mois.
+
+— Quel samedi vous conviendrait ?
+
+— Je peux pas vous dire comme ça. Mon copain travaille aussi le samedi, et quand il est libre, on essaie de faire des trucs ensemble.
+
+Martine attend, le stylo en l'air.
+
+— Vous avez des bénévoles qui viennent de temps en temps ?
+
+— Oui. Mais si quelqu'un a prévu une sortie avec vous, j'aimerais éviter de lui expliquer au dernier moment que votre copain ne travaille finalement pas.
+
+— Ah oui. Non, mais ça, je suis d'accord.
+
+Elle referme son agenda. Je lui dis qu'on va trouver un créneau.
+
+— Au fait, ça vous permettrait d'ouvrir des chambres ?
+
+— Non, Emma. Une balade avec vous, c'est une balade avec vous. C'est pas un poste d'éducateur.
+
+## Il manque des salariés dans le foyer d'à côté aussi
+
+— Vous les payez correctement, vos éducateurs ?
+
+— Je voudrais les payer davantage. Mais entre la convention collective et le budget, je peux pas promettre n'importe quel salaire.
+
+— Mais si vous avez de l'argent prévu pour les postes vacants ?
+
+— Il faut pouvoir les payer dans la durée. Et avoir de l'argent ne règle ni les horaires ni le manque de candidats.
+
+— Vous pourriez en prendre chez eux ?
+
+— La semaine dernière, un éducateur est venu travailler chez nous après avoir quitté un foyer voisin. Le lendemain, ils m'ont recruté une infirmière de l'association. Maintenant, on envisage un échange de prisonniers.
+
+— Mais vous pourriez vous mettre d'accord pour arrêter de vous piquer les salariés ?
+
+— Faudrait surtout améliorer leurs conditions de travail. Si je remplis mes plannings en vidant ceux du voisin, dans le département, il ne manque pas un éducateur de moins.
+
+— Et les salariés que vous avez déjà, ils veulent bien faire un peu plus d'heures ?
+
+Martine me montre les remplacements de la semaine précédente.
+
+— Il y en a qui ont accepté. Mais j'aimerais bien qu'ils soient encore là l'année prochaine.
+
+— Vous avez beaucoup de gens qui partent ?
+
+— Il y a surtout beaucoup de gens à qui on demande de rester. Après leur journée, après un départ, après un arrêt maladie... À un moment donné, il faut aussi leur permettre de rentrer chez eux.
+
+Je lui demande si elle-même a prévu de prendre des vacances.
+
+— Oui.
+
+— Où ?
+
+— Là, pour l'instant, j'en suis à « oui ».
+
+## Tout le monde n'a pas besoin d'une chambre
+
+— Vous pourriez ouvrir une ou deux places en attendant ?
+
+— Quand on aura les équipes nécessaires, oui. Je ne vais pas choisir quelqu'un parce qu'il est plus facile à accueillir que son voisin.
+
+— Il y a pas des gens qui pourraient rester chez eux ?
+
+— Si. On a aussi un service à domicile. Un homme qui attend une place m'a demandé s'il pourrait continuer son atelier de théâtre le jeudi. Sa mère ne pourra bientôt plus l'accompagner. Avec une aide adaptée, il aimerait rester chez lui.
+
+— C'est moins cher que le foyer ?
+
+— Ça dépend des besoins, des horaires et des trajets. Et puis il faut que la personne le souhaite. Pour certaines, vivre seules n'est pas une solution adaptée.
+
+— Et vous pourriez prendre des salariés d'ici pour aller les voir ?
+
+— Et je dis quoi aux trente personnes qui vivent ici ?
+
+— Que c'est provisoire ?
+
+— Ah oui. Les gens qui les accompagnent aujourd'hui seront provisoirement ailleurs. Ceux qui attendent une place auront provisoirement quelqu'un. Et moi, j'aurai provisoirement deux services en difficulté.
+
+— Vous pouvez pas demander plus d'argent pour les deux ?
+
+— C'est ce que j'essaie de faire. Mais je ne vais pas embaucher trois éducateurs imaginaires pour accompagner des personnes bien réelles.
+
+— Alors, concrètement, vous allez faire quoi ?
+
+Martine recommande à son conseil d'administration de reporter l'ouverture, de pourvoir les postes vacants du foyer et d'étudier ensuite une ouverture progressive. Le conseil n'a pas encore tranché.
+
+— Et le service à domicile ?
+
+— Je veux étudier les besoins avec les personnes intéressées, leurs proches si elles le souhaitent et les équipes. On soumettra un projet aux autorités compétentes. Il faudra des moyens, des recrutements et les accords nécessaires. Je ne peux pas transformer dix places au foyer en dix accompagnements à domicile toute seule.
+
+— Et en attendant ?
+
+— Les gens attendent. C'est ça qui me fait chier.
+
+Elle compte demander au conseil et aux autorités concernées que l'inauguration reste une visite des locaux, pas une annonce d'ouverture.
+
+## Six personnes pour parler des cinq qui manquent
+
+— Vous avez déjà demandé de l'aide à vos financeurs ?
+
+— Oui. Ils m'ont demandé un dossier pour expliquer mes difficultés de recrutement.
+
+— Vous avez répondu ?
+
+— Dix-huit pages. J'ai mis une photo de notre salle de repos. Personne dedans.
+
+— Et ils vous ont proposé quoi ?
+
+— Une réunion.
+
+— C'est déjà ça.
+
+— Six personnes sont disponibles pour parler des cinq salariés que je n'arrive pas à trouver. J'ai demandé si l'une d'elles voulait changer de métier.
+
+— Et ?
+
+— Ma remarque n'était pas constructive.
+
+— Et chez vous, pour améliorer le recrutement, vous avez fait quoi ?
+
+— J'ai créé un groupe de travail.
+
+Martine me regarde.
+
+— Ah merde. Je deviens comme eux.
+
+Sur le bureau, à côté du projet d'invitation, je remarque des porte-badges en plastique.
+
+— Vous en avez commandé pour l'inauguration ?
+
+— Dix. J'ai prévu de faire passer des entretiens d'embauche pendant le cocktail.
+
+Elle m'en tend un. Il y a écrit « Candidat éducateur ».
+
+— Vous pensez que le maire va apprécier ?
+
+— Il m'a dit qu'il avait toujours beaucoup aimé le contact humain. C'est déjà une qualité.
+
+— Mais il a pas le diplôme !
+
+— Je sais. Je vais quand même lui demander s'il connaît des gens qui l'ont. Et s'il veut venir bénévolement, on pourra en parler.
+
+— Vous devriez faire une photo avec les badges. Je pourrais la mettre dans l'article.
+
+Martine en retourne un autre. Elle y a glissé un carton sur lequel elle a écrit « Candidate bénévole ».
+
+— Je peux le mettre pour la photo ?
+
+— Bien sûr.
+
+— Vous pourriez enlever « candidate » ?
+
+— Quand vous serez venue.
