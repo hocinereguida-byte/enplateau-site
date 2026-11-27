@@ -2,6 +2,14 @@
 // Modifier uniquement à réception d'un figeage et après vérification Drive/Markdown. Pas de comparaison numérique de versions.
 export const finalManuscripts = [
   {
+    "id": "agriculture/agr-c1-b01-maraichage",
+    "version": "V2.1",
+    "source": "1uNJRbq0DN20NxWjuHPYy-svkM61a1_w2dbOgR96wSBU",
+    "date": "2026-11-27",
+    "fingerprint": "757877f7",
+    "status": "integrated"
+  },
+  {
     "id": "recherche-innovation/cmd-naf-17",
     "version": "V1.1",
     "source": "1V4oP-WmjZF5DhhGP9j_9y0mn9g6tmZn4NmayAKjDgKc",

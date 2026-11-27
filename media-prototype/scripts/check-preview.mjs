@@ -506,6 +506,30 @@ for(const [route,author] of [["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"
  if(!/name="robots"\s+content="noindex,nofollow"/.test(html)||/CMD-NAF-17|AR08|SD01|SD16|D08|102 C, 13 PC/.test(story))errors.push('Kevin Obstin : indexation ou métadonnées internes visibles.');
 }
 
+
+ // Léa Chicon V2.1 : concordance complète, attribution et classification.
+ {
+ const slug='agriculture/agr-c1-b01-maraichage',href='/media/articles/'+slug+'/',html=read('media/articles/'+slug+'/index.html');
+ const source=fs.readFileSync(path.resolve('../content/articles/'+slug+'.md'),'utf8');
+ const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
+ const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
+ const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+ const story=html.match(/<article\b[^>]*data-article-id="agriculture\/agr-c1-b01-maraichage"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const rendered=[...story.matchAll(/<(p|h2)\b[^>]*>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':m[0].includes('class="chicon-dialogue-line"')?'— ':'')+decode(m[2].replace(/<[^>]*>/g,'')));
+ const expected=front[2].trim().split(/\n\n/);
+ const full=[field('title'),field('summary'),field('signature_auteur'),'Fiction satirique · Les interrogatoires',...expected.map(x=>x.replace(/^## /,'')),field('source_notice')];
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||full.length!==144||full.join('\n').length!==10049||expected.filter(x=>x.startsWith('## ')).length!==5||(story.match(/class="chicon-dialogue-line"/g)||[]).length!==102||expected.at(-1)!=='— Une.')errors.push('Léa Chicon : texte ou structure non concordants.');
+ const speakers=[...story.matchAll(/class="interview-speaker">([^<]+)<\/span>/g)].map(m=>decode(m[1]));
+ const expectedSpeakers=["Léa Chicon","Winnie Bouba","Léa Chicon","Léa Chicon","Winnie Bouba","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Winnie Bouba","Léa Chicon","Winnie Bouba","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Winnie Bouba","Léa Chicon","Winnie Bouba","Winnie Bouba","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Romain Skyzovitch","Winnie Bouba","Romain Skyzovitch","Winnie Bouba","Romain Skyzovitch","Winnie Bouba","Romain Skyzovitch","Winnie Bouba","Romain Skyzovitch","Winnie Bouba","Léa Chicon","Winnie Bouba","Winnie Bouba","Romain Skyzovitch","Winnie Bouba","Winnie Bouba","Romain Skyzovitch","Winnie Bouba","Romain Skyzovitch","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Winnie Bouba","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba","Léa Chicon","Winnie Bouba"];
+ if(JSON.stringify(speakers)!==JSON.stringify(expectedSpeakers))errors.push('Léa Chicon : attribution des répliques non concordante.');
+ const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'',lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
+ const signature=html.match(/<section\b[^>]*aria-label="Signature de l’auteur"[^>]*>([\s\S]*?)<\/section>/)?.[1]??'';
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Les interrogatoires')||!signature.includes('<h2>Winnie Bouba</h2>')||!signature.includes('href="/media/auteurs/winnie-bouba/"')||field('source_document_version')!=='V2.1'||field('signature_auteur')!=='Winnie Bouba'||field('publication_date')!=='2026-11-06T12:00:00+01:00'||/<img\b[^>]*class="hero hero-editorial"/.test(html))errors.push('Léa Chicon : métadonnées ou visuel incorrects.');
+ for(const page of ['media/publications/index.html','media/cycles/agriculture/index.html','media/cycles/agriculture/conversations/C1/index.html','media/scenes/index.html','media/lectures/strategie-gouvernance/index.html','media/auteurs/winnie-bouba/index.html'])if(!read(page).includes(href))errors.push('Léa Chicon : navigation incorrecte '+page);
+ if(read('media/auteurs/jean-toksik/index.html').includes(href)||/Léa Morel|Jean Toksik|Jean Toksic/.test(decode(story+' '+h1+' '+lead+' '+signature)))errors.push('Léa Chicon : ancienne identité visible.');
+ if(!decode(story).includes("Ça dépend du contrat et de ce qui s'est passé. Un aléa climatique exceptionnel, c'est autre chose.")||!decode(story).includes('Romain Skyzovitch')||! /name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Léa Chicon : invariant ou indexation incorrects.');
+ }
+
 // Fiches d'auteurs : bijection entre les articles effectivement rendus et leurs listes.
 {
  const byAuthor=new Map();

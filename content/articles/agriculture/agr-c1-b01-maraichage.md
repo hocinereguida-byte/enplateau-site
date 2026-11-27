@@ -1,6 +1,6 @@
 ---
-title: "Six cents hectares, trois clients et un journaliste de trop"
-summary: "Une dirigeante de production légumière doit arbitrer trois promesses commerciales qui mobilisent les mêmes surfaces."
+title: "« On pouvait livrer chacun de nos clients. Pas les trois. »"
+summary: "Léa Chicon dirige une entreprise maraîchère de 600 hectares. Trois clients lui ont demandé davantage de légumes. Elle a refusé une partie des commandes qu'ils envisageaient de lui passer. Winnie Bouba, qui attend rarement qu'on lui propose du travail pour annoncer qu'il en a beaucoup, est allé lui demander des explications."
 cycle: "agriculture"
 conversation: "C1"
 contexte: "maraichage-debouches-concurrents"
@@ -10,124 +10,294 @@ genre_narratif: "grand-entretien"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-11-06T12:00:00+01:00"
-source_notice: "Grand Entretien fictif. Personnages, entreprise, dialogues et chiffres inventés."
-source_document_version: "V3"
-source_document_url: "https://docs.google.com/document/d/1NRJHKCKFijkOKC4KDpYtbTFI4RdxB9fNpUbzi6vFdpg/edit"
+source_notice: "Les personnages, l'entreprise, les dialogues et les données chiffrées sont fictifs."
+source_document_version: "V2.1"
+source_document_url: "https://docs.google.com/document/d/1uNJRbq0DN20NxWjuHPYy-svkM61a1_w2dbOgR96wSBU/edit"
 code_editorial: "AGR-C1-B01"
 perspective_principale: "strategie-gouvernance"
 unite_programmation: "AGR-C1-B"
 famille_decisionnelle: "debouches-variables"
 autorisation_publication: "preproduction_uniquement"
-methodology_specific: "Version V3 du manuscrit Drive. Préproduction uniquement, visa de publication publique non délivré."
+methodology_specific: "Léa Chicon / Winnie Bouba V2.1 définitive. Source https://docs.google.com/document/d/1uNJRbq0DN20NxWjuHPYy-svkM61a1_w2dbOgR96wSBU/edit ; PV https://docs.google.com/document/d/1cSW1MsDt8Ejgy_PgR68cKeK_P7qN8Usj2jnk9zxArtY/edit ; passation https://docs.google.com/document/d/1sbWpmVWZy5vlbi8yGzbh05p9pWqhC0slSDK8hNurlEI/edit. Matrice 144 : 105 C, 12 PC, 0 NC, 3 NV, 24 NA. Transformation B, AR04 / SD17 / D06 internes ; visa littéraire simulé 95/100, D1 favorable sous réserves, D2 favorable sous hypothèses, singularité sur périmètre comparé. 600 ha, 125 h pour 100 h, allocation 45/30/15 h et réserve 10 h ; prévisions non toutes signées, résultat inconnu, aucun optimum démontré. Précision documentaire pénalités V2.1, seule réplique changée ; 10049 caractères, 144 paragraphes, 5 intertitres, dérogation +49. Aucun visuel déclaré. GO technique préproduction uniquement ; aucun bon à publier. Réserves du PV et recette visuelle restent applicables."
+signature_auteur: "Winnie Bouba"
+validation_document_url: "https://docs.google.com/document/d/1cSW1MsDt8Ejgy_PgR68cKeK_P7qN8Usj2jnk9zxArtY/edit"
+updated_date: "2026-11-27"
 ---
 
-*Texte de consultation en préproduction — publication publique non autorisée.*
+Léa Chicon m'attendait devant la station de préparation. Elle me propose de mettre des bottes pour visiter les installations.
 
-Léa Morel dirige une entreprise de production légumière de 600 hectares. Trois catégories d'acheteurs réclament davantage de légumes, mais aucune ne souhaite vraiment assumer les risques de la récolte. Jean Toksik, qui n'a jamais cultivé autre chose que son mépris, a décidé de lui expliquer son métier.
+Je lui dis que pour les photos, j'aurais préféré garder mes baskets.
 
-Jean Toksik — Six cents hectares, trois marchés, des clients qui vous réclament des légumes. Vous êtes riche ?
-Léa Morel — Non.
-— Vous êtes mauvaise gestionnaire ?
-— Pas encore. Mais je sens que vous allez me proposer quelque chose.
-— Exactement ! Vous avez trois débouchés. Il suffit de planter pour les trois.
-— Et avec quelles terres ?
-— Les vôtres, madame. Vous en avez six cents hectares. C'est écrit dans mon dossier.
-— Dont une partie doit rester consacrée à d'autres cultures pour respecter les rotations.
-— Ah. Vos légumes exigent des congés ?
-— Nos sols exigent qu'on ne les épuise pas.
-— C'est le problème avec la nature. Aucun sens de l'entreprise. Vous lui avez expliqué les objectifs annuels ?
-— Elle ne participe pas aux réunions commerciales.
-— Voilà votre première erreur.
+— Elles coûtent cher ?
 
-Toksik sort trois feuilles de papier et les dispose sur la table.
+— Deux cent trente balles.
 
-— Voici ma stratégie. La grande distribution veut du volume, l'industrie veut de la régularité, les grossistes promettent de meilleurs prix. Trois marchés, trois tiers. C'est magnifique.
-— C'est surtout impossible.
-— Vous êtes contre les mathématiques ?
-— Non. Contre leur utilisation par des gens qui ignorent ce qu'ils additionnent.
-— Vous pourriez être plus aimable. Je suis venu sauver votre entreprise.
-— Vous avez déjà travaillé dans l'agriculture ?
-— J'ai fait pousser du basilic sur un balcon.
-— Il a survécu ?
-— Ce n'est pas le sujet.
-— Je m'en doutais.
-— Revenons aux clients. Le distributeur veut davantage de légumes. Pourquoi lui refuser ce plaisir ?
-— Parce qu'il exige des volumes réguliers, des prix serrés et des produits conformes à ses critères. Tout ce qui est récolté n'est pas nécessairement acheté.
-— Il est donc favorable à l'agriculture, à condition qu'elle produise exactement ce qu'il veut, quand il veut, au prix qu'il veut.
-— Vous commencez à comprendre.
-— L'industriel, lui, propose des contrats.
-— Avec des dates de livraison, des spécifications et parfois des pénalités.
-— Quelle délicatesse. Il vous demande de maîtriser la météo sous peine d'amende.
-— Nous devons surtout maîtriser ce que nous promettons.
-— Et les grossistes ?
-— Ils peuvent mieux payer, mais ne garantissent pas les volumes longtemps à l'avance.
-— Formidable. Le premier veut commander votre exploitation, le deuxième votre calendrier et le troisième préfère garder la possibilité de ne rien commander. Vous avez songé à changer de clientèle ?
-— Pour vendre à qui ?
-— Aux particuliers. Ils ont tous besoin de manger.
-— Vous comptez distribuer plusieurs milliers de tonnes de légumes en porte-à-porte ?
-— Vous voyez toujours les difficultés.
-— Vous voyez toujours des clients imaginaires.
+— Alors mettez les bottes.
 
-Jean Toksik déplie un graphique. Il l'a dessiné lui-même. Trois flèches montent vers un soleil.
+J'ai laissé mes baskets dans son bureau. J'avais quand même pris soin de les poser sur une chaise.
 
-— Voici ma projection de croissance.
-— Pourquoi y a-t-il un soleil ?
-— Pour symboliser les perspectives favorables.
-— Vous avez prévu l'irrigation ?
-— Elle n'entrait pas dans la présentation.
-— Les rotations ?
+En traversant la station, j'ai reçu une troisième demande de prestation pour le 12 juin.
+
+— Vous voulez répondre ? me demande Léa.
+
+— Non, tranquille. Je vais les laisser patienter un peu.
+
+Un mec qui répond trop vite donne l'impression qu'il attendait l'appel.
+
+## Léa avait des clients que Winnie aurait bien aimé avoir
+
+— Six cents hectares ! Et t'as des clients qui te courent après ?
+
+— On travaille avec la grande distribution, des industriels et des grossistes. Les trois nous ont demandé si nous pouvions augmenter nos volumes.
+
+— Mais c'est génial, ça ! Franchement, j'aimerais trop avoir tes problèmes.
+
+— Vous voulez aussi mes six cents hectares ?
+
+— Non, juste les clients.
+
+Avant de diriger l'entreprise, Léa avait travaillé dans la production. Elle aimait accompagner ses commerciaux chez les acheteurs et revenir avec des demandes supplémentaires.
+
+— Tu vois ! Ça fait plaisir, non ?
+
+— Bien sûr. Après, je devais revenir voir les gens qui allaient produire ce que j'avais promis.
+
+— Ah. C'est là que l'ambiance changeait.
+
+Elle m'explique qu'une partie des terres est consacrée à d'autres cultures pour respecter les rotations.
+
+— Mais sur tes six cents hectares, tu peux pas mettre que les légumes qui se vendent bien ?
+
+— Pas tous les ans sur les mêmes parcelles. On risque d'épuiser les sols et de favoriser certaines maladies.
+
+— Même la terre, elle fait des pauses ?
+
+— Elle ne demande pas de congés. Elle s'épuise.
+
+— Ah ouais. Même les carottes doivent changer de poste.
+
+Louer davantage de terres ? Encore faudrait-il pouvoir irriguer, récolter et préparer les légumes.
+
+— Ah ouais, c'est pas juste un problème de jardin, quoi.
+
 — Non.
-— La station de préparation ?
-— Non plus.
-— Les salariés saisonniers ?
-— Vous êtes terriblement attachée aux détails.
-— C'est vrai. Notamment aux détails qui récoltent, trient et expédient les légumes.
-— Vous aviez pourtant des prévisions commerciales cohérentes.
-— Séparément. Quand nous avons superposé les calendriers, les mêmes équipes et la même station étaient sollicitées plusieurs fois aux mêmes dates.
-— Vous aviez donc vendu trois fois le mois de septembre.
-— Nous envisagions de le faire. Heureusement, nous avons arrêté avant de signer tous les engagements.
-— Pourquoi ne pas embaucher trois fois plus de monde ?
-— Pour trois semaines de surcharge ?
-— Il faut savoir investir.
-— Et les payer le reste de l'année avec vos flèches et votre soleil ?
-— Je vous trouve hostile à l'innovation.
-— Je vous trouve dangereux avec une imprimante.
 
-Toksik, piqué au vif, lui tend son graphique.
+## Trois clients, trois bonnes raisons de ne pas leur dire oui
 
-— Très bien. Puisque vous êtes si compétente, quelle décision avez-vous prise ?
-— Nous avons sécurisé une base de contrats industriels, limité les volumes supplémentaires promis à la grande distribution et réservé une capacité mesurée aux marchés mieux rémunérés, mais moins prévisibles.
-— Vous avez donc déçu tout le monde.
-— Un peu, oui.
-— C'est votre définition de la réussite ?
-— Quand trois clients réclament la même capacité de production, les satisfaire tous sur le papier peut conduire à les décevoir tous dans la réalité.
-— Vous auriez pu choisir le marché qui payait le plus.
-— À condition qu'il achète réellement les volumes et que nous puissions les livrer sans faire exploser les coûts.
-— Encore cette manie de vérifier si l'argent existe.
-— C'est une habitude que j'ai prise en payant les salaires.
-— Vous manquez de romantisme, Léa.
-— Et vous, de terres cultivables.
-— Dernière question. Vous avez donc refusé des opportunités commerciales sans savoir si elles reviendraient ?
+Dans son bureau, Léa me détaille les demandes. Le distributeur veut des volumes réguliers, à prix serré, avec des critères de présentation précis.
+
+— Et ceux qui sont pas beaux ?
+
+— Si le client ne les accepte pas, il faut leur trouver un autre débouché, quand c'est possible.
+
+— Même si le goût est le même ?
+
+— Ça ne change pas les critères de son contrat.
+
+— Je connais des mecs qui feraient même pas une semaine dans ton rayon.
+
+L'industriel propose des contrats avant la campagne, avec des dates, des spécifications et parfois des pénalités.
+
+— Ça veut dire que si t'as un problème avec la récolte, tu risques de lui devoir de l'argent ?
+
+— Ça dépend du contrat et de ce qui s'est passé. Un aléa climatique exceptionnel, c'est autre chose.
+
+— Sympa, le mec. Il te commande des légumes et il te laisse la météo.
+
+Ces contrats lui donnent aussi une visibilité sur une partie de ses recettes.
+
+— Ah, ben là, je comprends. Lui, au moins, il s'engage.
+
+Les grossistes peuvent mieux payer, mais sans garantir longtemps à l'avance les quantités qu'ils achèteront.
+
+— Mais t'as vu les prix qu'ils proposent ?
+
+— Oui. Quand ils achètent.
+
+— Ouais, bon. J'ai un organisateur qui m'a proposé une soirée à trois mille euros.
+
+— Vous avez signé ?
+
+— Non.
+
+— Il vous a confirmé la date ?
+
+— Je viens de recevoir son message.
+
+— Vous avez convenu de trois mille euros ?
+
+— C'est le tarif que je vais lui proposer.
+
+Léa me demande de lui montrer le message. Je lui fais remarquer qu'on était venus parler de ses clients, pas des miens.
+
+— On pouvait livrer chacun de nos clients. Pas les trois.
+
+— Et pourquoi ?
+
+— Les commerciaux avaient tous fait leurs prévisions avec la même station.
+
+## Romain avait trois semaines très chargées dans la même semaine
+
+Léa appelle Romain Skyzovitch, son responsable de production. Il arrive avec une photo du planning demandé par les commerciaux.
+
+Il me montre trois couleurs qui se chevauchent. Je lui dis que j'ai bossé avec des graphistes qui auraient pu lui arranger ça.
+
+— C'est pas la présentation qui me pose problème.
+
+— Ah bon ?
+
+— C'est qu'il va falloir faire tout ce qui est écrit dessus.
+
+Pour cette semaine de pointe, nettoyages et arrêts déduits, Romain dispose de cent heures sur la ligne commune de préparation. Les équipes sont déjà prévues.
+
+Il note les besoins estimés : quarante-cinq heures pour l'industrie, quarante-cinq pour la distribution, trente-cinq pour les grossistes.
+
+— Attends. Ça fait cent vingt-cinq.
+
 — Oui.
-— Vous n'avez aucun regret ?
-— Si. Mais une récolte ratée, des pénalités contractuelles et des équipes épuisées m'en auraient probablement donné davantage.
-— J'aimerais quand même vous aider. Confiez-moi une petite parcelle. Je pourrais tester mes méthodes.
-— Combien ?
-— Dix hectares.
-— Avec quel budget ?
-— Vous êtes obsédée.
-— Quels débouchés ?
-— Nous verrons.
-— Quels équipements ?
-— Il faut laisser une place à l'audace.
-— Parfait. Je vous propose de commencer avec votre balcon.
-— Vous plaisantez ?
-— Pas du tout. Vous avez déjà une expérience agricole, une surface disponible et aucun client à décevoir.
-— Et qu'est-ce que je plante ?
-— Du basilic.
-— Il est mort, Léa.
-— Voilà. Nous avons enfin une donnée vérifiée.
 
-Jean Toksik range son graphique. Pour la première fois, les trois flèches pointent vers la poubelle.
+— Et pourquoi ils avaient pas fait le calcul ?
 
-Fiction économique satirique — Personnages, entreprise, dialogues et données du scénario inventés.
+— Chaque commercial l'avait fait pour ses propres prévisions.
+
+— Et ils avaient chacun combien d'heures ?
+
+— Ils avaient tous les mêmes cent heures à leur disposition.
+
+— Ah ouais ! Les mecs, ils ont réussi à vendre trois fois des gens qui touchent qu'un salaire.
+
+Je demande à Léa où ils ont appris à dire oui à tout le monde.
+
+— Avec moi, probablement.
+
+— Ah putain. T'as formé les gens qui t'ont foutue dans la merde.
+
+Heureusement, Romain avait réuni les calendriers avant la signature de tous les volumes supplémentaires.
+
+On lui demandait déjà de décaler des expéditions au jeudi. Le jeudi était plein.
+
+— Tu leur réponds quoi ?
+
+— Je leur demande quel autre camion ils veulent qu'on fasse attendre.
+
+— Ah merde.
+
+— Et si t'embauches plus de monde ?
+
+— Pour récolter, ça peut aider. Mais on a une seule ligne commune. Il faut des équipes pour ouvrir des heures de plus, ou faire préparer une partie ailleurs.
+
+— Et t'as demandé combien ça coûterait ?
+
+— Oui. Et s'ils pouvaient nous prendre les produits aux dates voulues. C'est pas parce qu'un prestataire a une ligne qu'elle m'attend vide au mois de septembre.
+
+Selon Léa, certaines commandes ne rapporteraient plus assez après les frais de préparation et de transport. Et certains créneaux n'étaient pas confirmés.
+
+— Et une deuxième ligne ?
+
+— Pour quelques semaines de pointe ? Qu'est-ce que j'en fais le reste du temps ?
+
+— Tu la loues à d'autres agriculteurs.
+
+— Vous en connaissez ?
+
+— Je peux me renseigner.
+
+## Léa a commencé à négocier avec les gens qui voulaient lui donner de l'argent
+
+— Bon, alors, t'as fait quoi ?
+
+— Les commerciaux ont repris leurs prévisions avec Romain, en fonction des terres disponibles et des récoltes possibles.
+
+Sur le nouveau planning, Léa conserve quarante-cinq heures pour les contrats industriels, limite la distribution à trente et réserve quinze heures aux grossistes.
+
+— Attends. Ça fait quatre-vingt-dix.
+
+— Oui.
+
+— Et les dix dernières ?
+
+— On les garde pour les imprévus. Un retard de récolte, un lot plus difficile à préparer, un camion décalé…
+
+— Mais si t'as aucun imprévu ?
+
+— On pourra éventuellement utiliser les heures qui restent. Je ne les promets pas aujourd'hui.
+
+— Putain ! Tu gardes même des heures en réserve pour des clients que t'as pas encore ?
+
+— Je garde de la capacité pour les clients à qui j'ai déjà promis des légumes.
+
+Le distributeur, à qui elle avait proposé moins de légumes que demandé, lui avait annoncé qu'il allait consulter d'autres fournisseurs.
+
+— Et t'as pas peur qu'il trouve quelqu'un ?
+
+— Si.
+
+— Et tu lui as quand même dit non ?
+
+— Je lui ai dit combien nous pouvions lui livrer dans de bonnes conditions.
+
+— Franchement, moi, quand on me dit qu'on va appeler quelqu'un d'autre, j'ai tendance à revoir mes disponibilités.
+
+— Et vous les trouvez où, vos disponibilités ?
+
+— Ça dépend de qui appelle.
+
+Romain rigole. Si les prix montent, Léa regrettera peut-être de n'avoir réservé que quinze heures aux grossistes.
+
+— Pourquoi trente heures pour la distribution ?
+
+— C'est ce qu'on a négocié pour rester un fournisseur régulier. L'industrie, c'est notre base de ventes contractualisées. Les grossistes peuvent ne rien acheter.
+
+— Ah ouais. Tu bloques pas trente-cinq heures pour des mecs qui t'ont même pas confirmé qu'ils venaient ?
+
+— C'est ça.
+
+— Frère, faudrait que tu parles à mon manager.
+
+— Donc t'as refusé des commandes pour garder tes clients ?
+
+— J'ai limité ce que je leur promettais pour pouvoir les livrer.
+
+— Putain, heureusement que je suis venu. Dit comme ça, j'aurais jamais compris ton business.
+
+Je lui demande si elle va gagner autant qu'elle avait prévu au départ.
+
+— Je ne sais pas. Le premier chiffre d'affaires prévu supposait de livrer plus qu'on ne pouvait préparer. Il aurait fallu engager plus de dépenses ou manquer des engagements.
+
+— Ah ouais. T'avais un chiffre d'affaires qui avait besoin d'un miracle pour devenir vrai.
+
+Léa a gardé les trois débouchés, renoncé à certaines ventes possibles. Romain a un planning qu'il accepte de donner à ses équipes. La campagne reste à venir.
+
+## Winnie avait un problème de disponibilité
+
+J'ai récupéré mes baskets et rappelé le premier organisateur pour son showcase du 12 juin.
+
+— Ça dépend. Vous avez quel budget ?
+
+Il m'explique les conditions de la soirée. Je lui dis que j'ai d'autres demandes et que je vais regarder ce que je peux faire.
+
+Les deux autres soirées avaient lieu dans des villes différentes, à des horaires incompatibles. Je montre les messages à Léa.
+
+— Tu vois un peu le problème que j'ai ?
+
+— Oui. Vous ne pourrez en faire qu'un.
+
+— Après, les mecs, ils ont peut-être les moyens de changer de date.
+
+— Demandez-leur.
+
+Aucun des deux ne pouvait déplacer sa soirée. Je conviens du tarif avec le premier et lui confirme la date.
+
+Léa me demande si je suis content.
+
+— Ouais. Le prix est bien. Et franchement, les conditions sont meilleures.
+
+J'envoie un message aux deux autres.
+
+— Et les deux autres organisateurs ? me demande Léa.
+
+— Je leur ai dit que ma tournée était complète.
+
+— Vous avez combien de dates ?
+
+— Une.
