@@ -2,6 +2,38 @@
 // Modifier uniquement à réception d'un figeage et après vérification Drive/Markdown. Pas de comparaison numérique de versions.
 export const finalManuscripts = [
   {
+    "id": "recherche-innovation/cmd-naf-17",
+    "version": "V1.1",
+    "source": "1V4oP-WmjZF5DhhGP9j_9y0mn9g6tmZn4NmayAKjDgKc",
+    "date": "2026-11-27",
+    "fingerprint": "478db0c2",
+    "status": "integrated"
+  },
+  {
+    "id": "culture-medias/cmd-naf-15",
+    "version": "V1.0",
+    "source": "1v2s-obgiGP70_l44QP6w4gEXXGVdWd20kGIeik6nBV4",
+    "date": "2026-11-27",
+    "fingerprint": "2cbc2193",
+    "status": "integrated"
+  },
+  {
+    "id": "industrie/ind-c1-cst-05-brouillon",
+    "version": "V1.9",
+    "source": "1r5ydPbdkyUOf4iT58_T-ZtMRlE5fznqWrEETuEKzR50",
+    "date": "2026-11-27",
+    "fingerprint": "2b3a4da8",
+    "status": "integrated"
+  },
+  {
+    "id": "immobilier/imm-c1-rc-02-thomas",
+    "version": "V1.7",
+    "source": "1nfw5jh7_47jsEcyuS2vCQ3kdK9e7WOeY6t65V07DdPY",
+    "date": "2026-11-27",
+    "fingerprint": "948fab3f",
+    "status": "integrated"
+  },
+  {
     "id": "internationalisation/cmd-naf-09",
     "version": "V2.0",
     "source": "1UOuBFVy2ZJWKcyWmuTAlJ3gEcX0_FBIHXOgQeGTeBtc",
@@ -128,17 +160,5 @@ export const finalManuscripts = [
     "date": "2026-11-26",
     "fingerprint": "6794d25a",
     "status": "integrated"
-  },
-  {
-    "id": "immobilier/imm-c1-rc-02-thomas",
-    "version": "V1.7",
-    "source": "1nfw5jh7_47jsEcyuS2vCQ3kdK9e7WOeY6t65V07DdPY",
-    "status": "pending"
-  },
-  {
-    "id": "industrie/ind-c1-cst-05-brouillon",
-    "version": "V1.9",
-    "source": "1r5ydPbdkyUOf4iT58_T-ZtMRlE5fznqWrEETuEKzR50",
-    "status": "pending"
   }
 ];

@@ -6,9 +6,9 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../../content/articles');
 const records = [
-  "recherche-innovation/cmd-naf-17.md|CMD-NAF-17|recherche-innovation|V4.6|strategie-gouvernance|REC-C2-U1||C2-U1|entretien|grand-entretien|1QqmgXh1NwfvRZu5Gs98oZmd2QzjYYfaU5sCPn1Abi4M",
+  "recherche-innovation/cmd-naf-17.md|CMD-NAF-17|recherche-innovation|V1.1|strategie-gouvernance|REC-C2-U1||C2-U1|entretien|grand-entretien|1V4oP-WmjZF5DhhGP9j_9y0mn9g6tmZn4NmayAKjDgKc",
   "numerique-telecom/cmd-naf-16.md|CMD-NAF-16|numerique-telecom|V2.0|operations-organisation|NUM-C4-U1||C4-U1|chronique|chronique|15pWJlH0lKrJkEscSQS-aMVye2h3CiNFW6uL_UyYJ2jo",
-  "culture-medias/cmd-naf-15.md|CMD-NAF-15|culture-medias|V4|finance-investissement|CUL-C5-U1||C5-U1|entretien|grand-entretien|1HZjxYjPIU9k88h1q_q91y4vMNmcM-nGi5dhB_CorjA8",
+  "culture-medias/cmd-naf-15.md|CMD-NAF-15|culture-medias|V1.0|finance-investissement|CUL-C5-U1||C5-U1|entretien|grand-entretien|1v2s-obgiGP70_l44QP6w4gEXXGVdWd20kGIeik6nBV4",
   "action-publique/cmd-naf-14.md|CMD-NAF-14|action-publique|V4|droit-regulation|ACT-C7-U1||C7-U1|chronique|chronique|1hBoIuH0EpzdCKn_Ux3W-qs3Uw2n-bP9_r1I3WjQP8N0",
   "emploi-travail/cmd-naf-13.md|CMD-NAF-13|emploi-travail|V3|finance-investissement|EMP-C4-U1||C4-U1|entretien|grand-entretien|1iQP_5UgcqYPgvJGRqm1Fv3g_8qjPDp7P3acXx9NLMBk",
   "education-formation/cmd-naf-12.md|CMD-NAF-12|education-formation|V2.1|strategie-gouvernance|EDU-C5-U1||C5-U1|chronique|chronique|1WCeKO93VF3PmCLOofcxyL322Ls9yQV1YOK9sWYpUuxE",
@@ -24,10 +24,10 @@ const records = [
   "industrie/ind-c1-cst-02-brouillon.md|IND-C1-CST-02|industrie|V9.2|operations-organisation|IND-C1-CST||CST|chronique|chronique|1-ekpGzW9BFNRFKCE6XUzc_LZRwGQ6o99BLVYsn1k4zs",
   "industrie/ind-c1-cst-03-brouillon.md|IND-C1-CST-03|industrie|V4.2|technologie-innovation|IND-C1-CST||CST|chronique|chronique|1IdRy7bjsqSVxCbvz7G67H6GwAeMEQff6v7rCjN2ngcs",
   "industrie/ind-c1-cst-04-brouillon.md|IND-C1-CST-04|industrie|V8.2|ressources-humaines-competences|IND-C1-CST||CST|chronique|chronique|1QsesnXTveqmM5EzFTlHhpVTitNf8A8czLalWJyOx73o",
-  "industrie/ind-c1-cst-05-brouillon.md|IND-C1-CST-05|industrie|V1.8|finance-investissement|IND-C1-CST||CST|entretien|grand-entretien|1h9ATIaISyMK-104IVxfgSHHDyE_UFUHO8cJWVZVCMbM",
+  "industrie/ind-c1-cst-05-brouillon.md|IND-C1-CST-05|industrie|V1.9|finance-investissement|IND-C1-CST||CST|entretien|grand-entretien|1r5ydPbdkyUOf4iT58_T-ZtMRlE5fznqWrEETuEKzR50",
   "industrie/ind-c1-cst-regard-croise-01-brouillon.md|IND-C1-CST-RC-01|industrie|V3.2||IND-C1-CST||CST|regard-croise||1VNTWk4QeKWnF4QD55vMR9JQ7hxAuOm4eFDk3wSelHjY",
   "immobilier/imm-c1-rc-06-alain.md|IMM-C1-RC-06|immobilier|V4.4|finance-investissement|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1kzj6pqe8jXXBTK-Iu1lb9wXreJ5IhuPdmccPNNry_IY",
-  "immobilier/imm-c1-rc-02-thomas.md|IMM-C1-RC-02|immobilier|V1.6|operations-organisation|IMM-C1-RC||territoire-reconversion|chronique|chronique|1oOFQaKq9qozoDF_wERWTGyiSJ4Zi7TO7-uXNZuXdDeA",
+  "immobilier/imm-c1-rc-02-thomas.md|IMM-C1-RC-02|immobilier|V1.7|operations-organisation|IMM-C1-RC||territoire-reconversion|chronique|chronique|1nfw5jh7_47jsEcyuS2vCQ3kdK9e7WOeY6t65V07DdPY",
   "immobilier/imm-c1-rc-07-patrick.md|IMM-C1-RC-07|immobilier|V9.2|strategie-gouvernance|IMM-C1-RC||territoire-reconversion|chronique|chronique|1Vfen50QhVHC-1wEZniKACQEIMrv4ugN7wsAYUv_Lp3M",
   "immobilier/imm-c1-rc-04-karim.md|IMM-C1-RC-04|immobilier|V1.3|droit-regulation|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1cqzdHlJtcaKzj7SiSgbsuDhKEmPGLr8iBdNOIcSdbiE",
   "immobilier/imm-c1-rc-05-caserne.md|IMM-C1-RC-05|immobilier|V6.5|territoires-politiques-publiques|IMM-C1-RC||territoire-reconversion|chronique|chronique|1Q_o_ugtXNoL--Z9zTFKdyNi6G03eylvh8DVZSMTYgLI",

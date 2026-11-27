@@ -82,7 +82,7 @@ if(trial){
  if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Nathalie Lola V4.2 : article indexable en préproduction.');
 }
 
-// Laurent Dafdaf / Winnie Bouba V1.8 : contrôle intégral de la version figée.
+// Laurent Dafdaf / Winnie Bouba V1.9 : contrôle intégral de la version figée.
 {
  const slug='ind-c1-cst-05-brouillon',href='/media/articles/industrie/'+slug+'/';
  const html=read('media/articles/industrie/'+slug+'/index.html');
@@ -94,17 +94,17 @@ if(trial){
  const rendered=[...story.matchAll(/<(p|h2)\b([^>]*)>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':decode(m[2].match(/data-source-prefix="([^"]*)"/)?.[1]??''))+decode(m[3].replace(/<[^>]*>/g,'')));
  const expected=front[2].trim().split(/\n\n/);
  const sourceLength=[field('title'),field('summary'),'Par Winnie Bouba','Fiction satirique · Les interrogatoires',...expected.slice(1).map(s=>s.replace(/^## /,''))].join('\n\n').length+2;
- if(JSON.stringify(rendered)!==JSON.stringify(expected)||sourceLength!==19386||expected.filter(s=>s.startsWith('## ')).length!==6||expected.at(-1)!=='— Oh Laurent... Ferme ta gueule, frère.'||(story.match(/class="winnie-dialogue-line"/g)||[]).length!==335||(story.match(/class="winnie-stage"><em>/g)||[]).length!==50)errors.push('Laurent Winnie V1.8 : texte intégral, longueur, intertitres, didascalies ou répliques non concordants.');
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||sourceLength!==19468||expected.filter(s=>s.startsWith('## ')).length!==6||expected.at(-1)!=='— Oh Laurent... Ferme ta gueule, frère.'||(story.match(/class="winnie-dialogue-line"/g)||[]).length!==335||(story.match(/class="winnie-stage"><em>/g)||[]).length!==50)errors.push('Laurent Winnie V1.9 : texte intégral, longueur, intertitres, didascalies ou répliques non concordants.');
  const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'';
  const lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
- if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Les interrogatoires')||!html.includes('/media/lectures/finance-investissement/')||!html.includes('/media/cycles/industrie/conversations/C1/')||!html.includes('/media/cycles/industrie/contextes/CST/')||!html.includes(field('hero_image'))||!decode(html).includes(field('image_alt'))||!html.includes('<h2>Winnie Bouba</h2>')||!story.includes('Par Winnie Bouba'))errors.push('Laurent Winnie V1.8 : titre, chapô, signature, fiction, image ou classement non conforme.');
- for(const who of ['Winnie Bouba','Laurent Dafdaf','Dylan Raccord'])if(!story.includes('interview-speaker">'+who))errors.push('Laurent Winnie V1.8 : attribution manquante '+who);
- if(/Jean Toksic|Laurent B\./.test(decode(story))||/GO préproduction|D2 favorable sous limites/.test(decode(story)))errors.push('Laurent Winnie V1.8 : ancien nom ou métadonnées visibles.');
- for(const page of ['media/publications/index.html','media/cycles/industrie/index.html','media/cycles/industrie/conversations/C1/index.html','media/scenes/index.html','media/lectures/finance-investissement/index.html'])if(!read(page).includes(href))errors.push('Laurent Winnie V1.8 : navigation incorrecte '+page);
- if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Laurent Winnie V1.8 : article indexable en préproduction.');
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Les interrogatoires')||!html.includes('/media/lectures/finance-investissement/')||!html.includes('/media/cycles/industrie/conversations/C1/')||!html.includes('/media/cycles/industrie/contextes/CST/')||!html.includes(field('hero_image'))||!decode(html).includes(field('image_alt'))||!html.includes('<h2>Winnie Bouba</h2>')||!story.includes('Par Winnie Bouba'))errors.push('Laurent Winnie V1.9 : titre, chapô, signature, fiction, image ou classement non conforme.');
+ for(const who of ['Winnie Bouba','Laurent Dafdaf','Dylan Raccord'])if(!story.includes('interview-speaker">'+who))errors.push('Laurent Winnie V1.9 : attribution manquante '+who);
+ if(/Jean Toksic|Laurent B\./.test(decode(story))||/GO préproduction|D2 favorable sous limites/.test(decode(story)))errors.push('Laurent Winnie V1.9 : ancien nom ou métadonnées visibles.');
+ for(const page of ['media/publications/index.html','media/cycles/industrie/index.html','media/cycles/industrie/conversations/C1/index.html','media/scenes/index.html','media/lectures/finance-investissement/index.html'])if(!read(page).includes(href))errors.push('Laurent Winnie V1.9 : navigation incorrecte '+page);
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Laurent Winnie V1.9 : article indexable en préproduction.');
 }
 
-// Bernard Daiterre / Thierry Chmonfils V1.6 : remplacement de Thomas à l'adresse historique.
+// Bernard Daiterre / Thierry Chmonfils V1.7 : remplacement de Thomas à l'adresse historique.
 {
  const slug='imm-c1-rc-02-thomas',href='/media/articles/immobilier/'+slug+'/';
  const html=read('media/articles/immobilier/'+slug+'/index.html');
@@ -116,14 +116,14 @@ if(trial){
  const rendered=[...story.matchAll(/<(p|h2)\b[^>]*>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':'')+decode(m[2].replace(/<[^>]*>/g,'')));
  const expected=front[2].trim().split(/\n\n/);
  const count=[field('title'),field('summary'),'Fiction satirique · Raisons et déraisons',...expected.map(s=>s.replace(/^## /,'')),field('source_notice')].join('').length;
- if(JSON.stringify(rendered)!==JSON.stringify(expected)||count!==12666||expected.length!==134||expected.filter(s=>s.startsWith('## ')).length!==5||expected.at(-1)!=='Bernard leur a demandé de sortir de son bureau.'||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==7)errors.push('Bernard Thierry V1.6 : texte, longueur, intertitres ou répliques non concordants.');
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||count!==12776||expected.length!==134||expected.filter(s=>s.startsWith('## ')).length!==5||expected.at(-1)!=='Bernard leur a demandé de sortir de son bureau.'||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==7)errors.push('Bernard Thierry V1.7 : texte, longueur, intertitres ou répliques non concordants.');
  const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'';
  const lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
- if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!html.includes('/media/lectures/operations-organisation/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/')||!html.includes('<h2>Thierry Chmonfils</h2>')||!story.includes('Par Thierry Chmonfils'))errors.push('Bernard Thierry V1.6 : titre, chapô, fiction, signature ou classement non conforme.');
- if(html.includes('/images/imm-c1-rc-02-thomas-visuel-v3.webp')||decode(story).includes('Thomas L.')||decode(story).includes('Variante F'))errors.push('Bernard Thierry V1.6 : ancien contenu ou visuel de Thomas visible.');
- for(const name of ['Bernard Daiterre','Michel Negaut','Antoine Crevard'])if(!decode(story).includes(name))errors.push('Bernard Thierry V1.6 : personnage manquant '+name);
- for(const page of ['media/publications/index.html','media/cycles/immobilier/index.html','media/cycles/immobilier/conversations/C1/index.html','media/scenes/index.html','media/lectures/operations-organisation/index.html'])if(!read(page).includes(href))errors.push('Bernard Thierry V1.6 : navigation incorrecte '+page);
- if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Bernard Thierry V1.6 : article indexable en préproduction.');
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!html.includes('/media/lectures/operations-organisation/')||!html.includes('/media/cycles/immobilier/conversations/C1/')||!html.includes('/media/cycles/immobilier/contextes/territoire-reconversion/')||!html.includes('<h2>Thierry Chmonfils</h2>')||!story.includes('Par Thierry Chmonfils'))errors.push('Bernard Thierry V1.7 : titre, chapô, fiction, signature ou classement non conforme.');
+ if(html.includes('/images/imm-c1-rc-02-thomas-visuel-v3.webp')||decode(story).includes('Thomas L.')||decode(story).includes('Variante F'))errors.push('Bernard Thierry V1.7 : ancien contenu ou visuel de Thomas visible.');
+ for(const name of ['Bernard Daiterre','Michel Negaut','Antoine Crevard'])if(!decode(story).includes(name))errors.push('Bernard Thierry V1.7 : personnage manquant '+name);
+ for(const page of ['media/publications/index.html','media/cycles/immobilier/index.html','media/cycles/immobilier/conversations/C1/index.html','media/scenes/index.html','media/lectures/operations-organisation/index.html'])if(!read(page).includes(href))errors.push('Bernard Thierry V1.7 : navigation incorrecte '+page);
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html))errors.push('Bernard Thierry V1.7 : article indexable en préproduction.');
 }
 
 // Non-régression des libellés visibles : aucun identifiant CMS ni consigne
@@ -453,6 +453,57 @@ for(const [route,author] of [["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"
  if(!decode(story).includes('On lance la qualification. Si les essais sont bons')||!decode(story).includes('Trente-huit mille quatre cents euros de marge si les ventes sont perdues.')||!decode(story).includes('dix-neuf mille deux cents euros immobilisés')||!decode(story).includes('Pas tous les ans.'))errors.push('David Monogane : hypothèses économiques ou décision conditionnelle manquantes');
  if((decode(story).match(/Jean Toksik/g)||[]).length!==2||/interview-speaker">Jean/.test(story))errors.push('David Monogane : mentions Jean Toksik ou attribution incorrectes');
  if(!/name="robots"\s+content="noindex,nofollow"/.test(html)||/CMD-NAF-09|AR04|SD16|D12|103 C, 12 PC/.test(story))errors.push('David Monogane : indexation ou métadonnées internes visibles.');
+}
+
+// David Doudou V1.0 : texte, distribution, signature et classement.
+{
+ const slug='culture-medias/cmd-naf-15',href='/media/articles/'+slug+'/',html=read('media/articles/'+slug+'/index.html');
+ const source=fs.readFileSync(path.resolve('../content/articles/'+slug+'.md'),'utf8');
+ const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
+ const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
+ const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+ const story=html.match(/<article\b[^>]*data-article-id="culture-medias\/cmd-naf-15"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const rendered=[...story.matchAll(/<(p|h2)\b[^>]*>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':m[0].includes('class="doudou-dialogue-line"')?'— ':'')+decode(m[2].replace(/<[^>]*>/g,'')));
+ const expected=front[2].trim().split(/\n\n/);
+ const full=[field('title'),field('summary'),field('signature_auteur'),'Fiction satirique · Les interrogatoires',...expected.map(x=>x.replace(/^## /,'')),field('source_notice')];
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||full.length!==129||full.join('\n').length!==9547||expected.filter(x=>x.startsWith('## ')).length!==5||expected.filter(x=>x.startsWith('— ')).length!==99||(story.match(/class="doudou-dialogue-line"/g)||[]).length!==99||expected.at(-1)!=="— Je vais leur mettre le lien normal.")errors.push('David Doudou V1.0 : texte ou structure non concordants.');
+ const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'',lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
+ const signature=html.match(/<section\b[^>]*aria-label="Signature de l’auteur"[^>]*>([\s\S]*?)<\/section>/)?.[1]??'';
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Les interrogatoires')||!signature.includes('<h2>Winnie Bouba</h2>')||!signature.includes('href="/media/auteurs/winnie-bouba/"')||field('source_document_version')!=="V1.0"||field('signature_auteur')!=='Winnie Bouba'||!html.includes(field('hero_image'))||!decode(html).includes(field('image_alt')))errors.push('David Doudou V1.0 : titre, chapô, signature, notice ou visuel non conformes.');
+ for(const name of ["David Doudou","Isabelle Serré","Jérôme Rabais","Winnie Bouba"])if(!decode(story).includes(name))errors.push('David Doudou V1.0 : personnage manquant '+name);
+ for(const page of ['media/publications/index.html','media/cycles/culture-medias/index.html','media/cycles/culture-medias/conversations/C5/index.html','media/scenes/index.html','media/lectures/finance-investissement/index.html','media/auteurs/winnie-bouba/index.html'])if(!read(page).includes(href))errors.push('David Doudou : navigation incorrecte '+page);
+ for(const page of ['media/index.html','media/publications/index.html','media/cycles/culture-medias/index.html','media/cycles/culture-medias/conversations/C5/index.html','media/scenes/index.html','media/lectures/finance-investissement/index.html','media/auteurs/winnie-bouba/index.html']){
+  const pageHtml=decode(read(page));if(pageHtml.includes("Nous avions promis 80 % pour la musique. Nous avions oublié de payer la plateforme."))errors.push('David Doudou : ancien titre historique encore présent '+page);
+ }
+ if(/Bernard Lemoine|Bernard Boncoeur|Mélodie Libre|Jean Toksik/.test(decode(story+' '+h1+' '+lead+' '+signature)))errors.push('David Doudou : ancienne identité visible');
+ if(read('media/auteurs/jean-toksik/index.html').includes(href))errors.push('David Doudou : ancienne attribution à Jean Toksik');
+ for(const phrase of ["Les contrats en cours doivent être respectés.","Pour les détenteurs des droits.","Je vais leur mettre le lien normal."])if(!decode(story).includes(phrase))errors.push("David Doudou : invariant manquant "+phrase);
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html)||/CMD-NAF-15|AR04|SD08|D06|105 C, 12 PC/.test(story))errors.push('David Doudou : indexation ou métadonnées internes visibles.');
+}
+
+// Kevin Obstin V1.1 : texte, distribution, signature et classement.
+{
+ const slug='recherche-innovation/cmd-naf-17',href='/media/articles/'+slug+'/',html=read('media/articles/'+slug+'/index.html');
+ const source=fs.readFileSync(path.resolve('../content/articles/'+slug+'.md'),'utf8');
+ const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
+ const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
+ const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+ const story=html.match(/<article\b[^>]*data-article-id="recherche-innovation\/cmd-naf-17"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const rendered=[...story.matchAll(/<(p|h2)\b[^>]*>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':m[0].includes('class="obstin-dialogue-line"')?'— ':'')+decode(m[2].replace(/<[^>]*>/g,'')));
+ const expected=front[2].trim().split(/\n\n/);
+ const full=[field('title'),field('summary'),field('signature_auteur'),'Fiction satirique · Les interrogatoires',...expected.map(x=>x.replace(/^## /,'')),field('source_notice')];
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||full.length!==137||full.join('\n').length!==9798||expected.filter(x=>x.startsWith('## ')).length!==5||expected.filter(x=>x.startsWith('— ')).length!==106||(story.match(/class="obstin-dialogue-line"/g)||[]).length!==106||expected.at(-1)!=="— Ouais. Les tee-shirts, eux, ils sont prêts.")errors.push('Kevin Obstin V1.1 : texte ou structure non concordants.');
+ const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'',lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
+ const signature=html.match(/<section\b[^>]*aria-label="Signature de l’auteur"[^>]*>([\s\S]*?)<\/section>/)?.[1]??'';
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Les interrogatoires')||!signature.includes('<h2>Winnie Bouba</h2>')||!signature.includes('href="/media/auteurs/winnie-bouba/"')||field('source_document_version')!=="V1.1"||field('signature_auteur')!=='Winnie Bouba'||!html.includes(field('hero_image'))||!decode(html).includes(field('image_alt')))errors.push('Kevin Obstin V1.1 : titre, chapô, signature, notice ou visuel non conformes.');
+ for(const name of ["Kevin Obstin","Claire Cassedrime","Winnie Bouba"])if(!decode(story).includes(name))errors.push('Kevin Obstin V1.1 : personnage manquant '+name);
+ for(const page of ['media/publications/index.html','media/cycles/recherche-innovation/index.html','media/cycles/recherche-innovation/conversations/C2/index.html','media/scenes/index.html','media/lectures/strategie-gouvernance/index.html','media/auteurs/winnie-bouba/index.html'])if(!read(page).includes(href))errors.push('Kevin Obstin : navigation incorrecte '+page);
+ for(const page of ['media/index.html','media/publications/index.html','media/cycles/recherche-innovation/index.html','media/cycles/recherche-innovation/conversations/C2/index.html','media/scenes/index.html','media/lectures/strategie-gouvernance/index.html','media/auteurs/winnie-bouba/index.html']){
+ }
+ if(/Antoine D\.|BioMiracle|Jean Toksik/.test(decode(story+' '+h1+' '+lead+' '+signature)))errors.push('Kevin Obstin : ancienne identité visible');
+ if(read('media/auteurs/jean-toksik/index.html').includes(href))errors.push('Kevin Obstin : ancienne attribution à Jean Toksik');
+ for(const phrase of ["Il a refusé les dix-huit mois.","On n'a démontré ni son efficacité chez des patients ni sa sécurité.","On n'a aucune garantie qu'ils s'engageront."])if(!decode(story).includes(phrase))errors.push("Kevin Obstin : invariant manquant "+phrase);
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html)||/CMD-NAF-17|AR08|SD01|SD16|D08|102 C, 13 PC/.test(story))errors.push('Kevin Obstin : indexation ou métadonnées internes visibles.');
 }
 
 // Fiches d'auteurs : bijection entre les articles effectivement rendus et leurs listes.

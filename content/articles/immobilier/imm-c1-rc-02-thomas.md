@@ -12,9 +12,9 @@ published: true
 publication_date: "2026-11-03T18:30:00+01:00"
 mise_en_avant: "standard"
 source_notice: "Les personnages, les propos, l'opération immobilière et les chiffres sont fictifs."
-methodology_specific: "Bernard Daiterre — Thierry Chmonfils V1.6 figée le 26 novembre 2026. Source https://docs.google.com/document/d/1oOFQaKq9qozoDF_wERWTGyiSJ4Zi7TO7-uXNZuXdDeA/edit. PV https://docs.google.com/document/d/1eKMxBdOTRjsHtXneETzzxkq3HCjwO-u-sTXQZUx_Q-s/edit. Matrice 144 critères : 116 C, 18 PC, 0 NC, 4 NV, 6 NA. Littéraire et identité narrative favorables ; D1 favorable sous hypothèses ; D2 favorable sous limites documentaires ; singularité favorable sous réserve de remplacement de Thomas et traitement ultérieur du motif de brochure chez Karim. Dérogation de longueur : 12 666 caractères hors séparateurs, titre, chapô, signature, signalétique et notice inclus. GO utilisateur pour remplacement en préproduction uniquement. Code et URL historiques préservés ; Thomas archivé dans Git et sur Drive, son image non réutilisée. Nouveau visuel à valider avant attribution ; aucun bon à publier."
-source_document_version: "V1.6"
-source_document_url: "https://docs.google.com/document/d/1oOFQaKq9qozoDF_wERWTGyiSJ4Zi7TO7-uXNZuXdDeA/edit"
+methodology_specific: "Bernard Daiterre / Thierry Chmonfils V1.7 définitive. Source https://docs.google.com/document/d/1nfw5jh7_47jsEcyuS2vCQ3kdK9e7WOeY6t65V07DdPY/edit ; PV https://docs.google.com/document/d/1zaWKteTFi2JVnbZrpt0qZaJAKF7OCMx6_acU3ORsChs/edit ; passation https://docs.google.com/document/d/1lVXA26cPaLDJ3RWofgxpO4vXUUhNVD-XZ6dn_KQI-yA/edit. Matrice 144 : 120 C, 13 PC, 0 NC, 5 NV, 6 NA. Deux retouches différentielles uniquement ; D1 favorable sous hypothèses, D2 favorable sous limites, singularité sur périmètre comparé. Corps/intertitres 12 288 caractères hors signature et séparateurs ; dérogation +3 288. Sept répliques inchangées, aucun visuel. 12913 caractères, 138 paragraphes du document Drive (sauts simples). GO technique groupé pour préproduction uniquement ; aucun bon à publier. Réserves du PV et recette visuelle restent applicables."
+source_document_version: "V1.7"
+source_document_url: "https://docs.google.com/document/d/1nfw5jh7_47jsEcyuS2vCQ3kdK9e7WOeY6t65V07DdPY/edit"
 tag_1: "Reconversion de bureaux"
 tag_2: "Organisation des travaux"
 tag_3: "Coordination des métiers"
@@ -24,9 +24,9 @@ code_editorial: "IMM-C1-RC-02"
 unite_programmation: "IMM-C1-RC"
 perspective_principale: "operations-organisation"
 autorisation_publication: "preproduction_uniquement"
-updated_date: "2026-11-26"
+updated_date: "2026-11-27"
 signature_auteur: "Thierry Chmonfils"
-validation_document_url: "https://docs.google.com/document/d/1eKMxBdOTRjsHtXneETzzxkq3HCjwO-u-sTXQZUx_Q-s/edit"
+validation_document_url: "https://docs.google.com/document/d/1zaWKteTFi2JVnbZrpt0qZaJAKF7OCMx6_acU3ORsChs/edit"
 reference_angle: "IMM-C1-REC-02"
 ---
 
@@ -168,7 +168,7 @@ Moi, j'avais proposé qu'on mange ensemble. Je connaissais un petit jeune qui ve
 
 Michel m'a demandé s'il pouvait nous faire un prix sur les pizzas.
 
-Mais Michel, laisse-le vivre, le petit !
+Mais Michel, laisse-le vivre, le petit ! Pour une fois que je pouvais lui ramener des clients, j'allais pas commencer par lui faire baisser ses prix.
 
 Quand je suis revenu avec les pizzas, Michel était au téléphone. Il demandait à quelqu'un d'annuler le déplacement des tuyaux. Son interlocuteur ne comprenait rien : il n'avait pas encore reçu la demande de déplacement.
 
@@ -252,7 +252,7 @@ Oui, je m'étais compté dedans. Vous auriez fait quoi, vous ?
 
 Michel nous a rappelé qu'il faudrait également payer les travaux des deux autres immeubles.
 
-Aïe aïe aïe... Michel ! On était bien, là, tous les deux ! Pourquoi tu nous fais ça ?
+Aïe aïe aïe... Michel ! Bernard et moi, on était bien, là ! Pourquoi tu nous fais ça ?
 
 Bernard est revenu à ses budgets. Il voulait au moins que Michel lui garantisse les 2,62 millions pour les seize appartements.
 

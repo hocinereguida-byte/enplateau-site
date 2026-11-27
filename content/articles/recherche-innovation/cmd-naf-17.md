@@ -4,7 +4,7 @@ title: "Quarante-huit diapositives pour ne pas dire stop"
 hero_image: "/images/rec-c2-cmd-naf-17-visuel-v1.webp"
 image_alt: "Petite peluche représentant une molécule, seule dans une salle de réunion."
 
-summary: "Antoine D. a consacré six ans à BM-417, une molécule prometteuse contre certaines maladies inflammatoires. Ses quatorze salariés y croient. Ses investisseurs attendent des preuves. Avec neuf mois de trésorerie, son conseil d'administration lui demande ce que quatre millions d'euros et dix-huit mois de recherche permettraient réellement de décider. Antoine redoutait les questions de Toksik, mais était fier d'être invité. Le journaliste, lui, veut vendre immédiatement la découverte."
+summary: "Kevin Obstin dirige une entreprise de biotechnologie qui travaille depuis six ans sur une molécule expérimentale. Avec quatorze salariés et neuf mois de trésorerie, il a demandé quatre millions d'euros pour poursuivre ses recherches. Winnie Bouba, qui travaille depuis quatre ans sur un morceau, a tenu à rencontrer ce mec à qui on demandait d'envisager d'arrêter."
 
 cycle: "recherche-innovation"
 
@@ -24,7 +24,7 @@ format: "entretien"
 
 genre_narratif: "grand-entretien"
 
-signature_auteur: "Jean Toksik"
+signature_auteur: "Winnie Bouba"
 
 statut_editorial: "prepublication"
 
@@ -32,198 +32,287 @@ published: true
 
 publication_date: "2026-11-10T13:00:00+01:00"
 
-source_document_url: "https://docs.google.com/document/d/1QqmgXh1NwfvRZu5Gs98oZmd2QzjYYfaU5sCPn1Abi4M/edit"
+source_document_url: "https://docs.google.com/document/d/1V4oP-WmjZF5DhhGP9j_9y0mn9g6tmZn4NmayAKjDgKc/edit"
 
-source_document_version: "V4.6"
+source_document_version: "V1.1"
 
 autorisation_publication: "preproduction_uniquement"
 
-source_notice: "Fiction satirique. Entreprise, personnages, chiffres et résultats scientifiques imaginaires."
+source_notice: "Les personnages, l'entreprise, les dialogues, les chiffres et les résultats scientifiques sont fictifs."
 
-methodology_specific: "CMD-NAF-17 — V4.6, visa documentaire interne de plausibilité favorable à la préproduction (12 novembre 2026). Phase de 4 mois / 400 000 € : scénario fictif et conditionnel, non certifié. Visa collectif et bon à publier non délivrés."
+methodology_specific: "Kevin Obstin / Winnie Bouba V1.1 définitive. Source https://docs.google.com/document/d/1V4oP-WmjZF5DhhGP9j_9y0mn9g6tmZn4NmayAKjDgKc/edit ; PV https://docs.google.com/document/d/1IHaKuWHmFmhIJY7tvObLYWyLForDbqFztqsdIzFDhRU/edit ; passation https://docs.google.com/document/d/1_IV-7WTeXaVkvZXSmC4Bqaf6NuEchY9VeJwPHBtEaDs/edit. Matrice 144 : 102 C, 13 PC, 0 NC, 5 NV, 24 NA. Transformation B ; AR08 / SD01 / SD16 / D08 internes. Visa littéraire simulé 94/100 ; D1 favorable sous réserves, D2 favorable sous hypothèses, singularité sur périmètre comparé. Conseil refuse 18 mois/4 M€ et accorde phase ciblée 4 mois/400 000 €, salaires déjà prévus inclus ; périmètres distincts, ni efficacité clinique ni sécurité démontrées, partenariat non acquis. Entreprise anonyme, BM-417 fictif. Visuel peluche inspecté et conservé. 9798 caractères, 137 paragraphes du document Drive (sauts simples). GO technique groupé pour préproduction uniquement ; aucun bon à publier. Réserves du PV et recette visuelle restent applicables."
 
 tag_1: "Recherche et innovation"
 
 tag_2: "Biotechnologies"
 
 tag_3: "Financement de la recherche"
-
+validation_document_url: "https://docs.google.com/document/d/1IHaKuWHmFmhIJY7tvObLYWyLForDbqFztqsdIzFDhRU/edit"
+updated_date: "2026-11-27"
+seo:
+  image_alt: "Petite peluche représentant une molécule, seule dans une salle de réunion."
 ---
 
-**Jean Toksik —** Bonne nouvelle, Antoine : j'ai trouvé un client pour votre molécule.
+Kevin Obstin me montre une photo sur son ordinateur. On dirait la Tour Eiffel démontée.
 
-**Antoine D. —** Impossible. Elle est encore expérimentale.
+— C'est quoi, ça ?
 
-— Le client, c'est moi. Vous voyez ? Je vous apporte un client et vous refusez de lui vendre.
+— BM-417.
 
-— Nous avons des résultats de laboratoire, pas un médicament. Il faut encore établir sa sécurité et son intérêt thérapeutique.
+— Ah ouais. C'est elle ?
 
-— Six ans pour quelque chose qui n'existe pas ?
+— Notre molécule.
 
-— Qui pourrait devenir un médicament. C'est le principe de la recherche.
+— Et ça soigne quoi ?
 
-— Mauvais slogan. Essayons une émission d'investisseurs. Vous avez quatre-vingt-dix secondes pour convaincre.
+— Pour l'instant, on ne soigne personne. On a des résultats de laboratoire.
 
-— Pour résumer six ans ?
+Je lui montre le visuel de mon prochain single. J'avais fait appel à un photographe qui bossait avec de gros artistes américains.
 
-— Il vous en reste soixante-dix-huit.
+— Il est sorti, votre morceau ?
 
-— BM-417 agit de manière reproductible sur une cible biologique impliquée dans certaines maladies inflammatoires. Nous devons encore établir ce qui la distingue des autres approches.
+— Non. Le visuel, ça fait un moment qu'il est prêt.
 
-— Vous avez dit « encore ». Les investisseurs sont déjà partis.
+Kevin trouve la photo très réussie. Ça me fait plaisir. J'ai beaucoup moins de compliments sur le morceau.
 
-— Ils auraient raison de demander des preuves.
+## Kevin avait prévu de faire lever le soleil
 
-— Vous êtes votre propre obstacle. Pourtant, vous avez demandé quatre millions d'euros pour dix-huit mois supplémentaires.
+— Ça fait combien de temps que t'es sur ta molécule ?
 
-— Avec quarante-huit diapositives. La dernière montrait notre molécule sur fond de lever de soleil.
+— Six ans. Nous travaillons sur certaines maladies inflammatoires. Nous avons obtenu une activité reproductible sur une cible biologique.
 
-— Et le conseil a applaudi ?
+— Ça veut dire quoi, reproductible ?
 
-— Sa présidente a demandé quelle décision les expériences permettraient de prendre.
+— Qu'on a retrouvé l'effet observé en répétant les expériences.
 
-— Vous lui montriez l'aube de la médecine, elle demandait l'heure.
+— Ah, ben c'est bon, alors ?
 
-— J'ai expliqué que nous avions déjà investi six ans et plusieurs millions.
+— Non. Il faut encore établir son intérêt par rapport aux autres approches et savoir si la suite du développement est envisageable. On n'a démontré ni son efficacité chez des patients ni sa sécurité.
 
-— Donc, pour ne pas perdre l'argent déjà dépensé, vous proposiez d'en dépenser davantage.
+Kevin avait préparé quarante-huit diapositives pour présenter à son conseil d'administration un programme de recherche de dix-huit mois. Il demandait quatre millions d'euros.
 
-— Les résultats étaient prometteurs !
+— Et la dernière, c'était quoi ?
 
-— Les résultats, oui. Votre raisonnement, beaucoup moins.
+Il me la montre. La molécule est au premier plan, sur fond de lever de soleil.
 
-— Nous étions enfin proches de quelque chose.
+— Wouah. Frère, c'est toi qui as fait ça ?
 
-— Vous ne saviez pas encore de quoi. C'est fascinant. Vous parlez de BM-417 comme de votre enfant.
+— J'ai passé un dimanche dessus.
 
-— C'est plus compliqué qu'un enfant. Elle ne dort jamais, coûte une fortune et personne ne sait si elle réussira dans la vie.
+— Ça rend bien ! Ils ont applaudi ?
 
-— Elle a au moins une photo d'identité ?
+— La présidente du conseil m'a demandé ce que les expériences nous permettraient de décider.
 
-— Une courbe exceptionnelle. Quand nous l'avons obtenue, j'ai embrassé notre centrifugeuse.
+— Elle t'a parlé du visuel ?
 
-— Elle a demandé des parts ?
+— Pas du tout.
 
-— Elle a continué de tourner. Aucune considération financière.
+Je lui dis que j'ai eu un problème assez proche avec mon distributeur. Je lui avais envoyé la pochette de mon single. Il m'avait demandé si je comptais lui envoyer le son.
 
-— Vous embrassez souvent le matériel ?
+— Et vous le lui avez envoyé ?
 
-— Seulement lors des grandes découvertes.
+— Ouais. Mais il était beaucoup moins enthousiaste après.
 
-— Et les autres programmes de recherche ?
+Kevin me raconte qu'il a embrassé sa centrifugeuse le jour où il a obtenu une courbe particulièrement prometteuse.
 
-— Nous avons dû leur demander quelques efforts.
+— T'as vraiment embrassé ta machine ?
 
-— Lesquels ?
+— Oui.
 
-— Reporter certains achats d'équipement.
+— Frère, moi, quand j'ai une bonne instru, j'embrasse le beatmaker.
 
-— Pour financer BM-417 ?
+— Il apprécie ?
 
-— Pour préserver nos priorités.
+— Il préfère quand je lui paie le mix.
 
-— Qui décidait des priorités ?
+## Claire voulait savoir si Kevin avait raison
+
+— Et pourquoi tu leur as demandé dix-huit mois ?
+
+— Nous avions encore beaucoup d'expériences à mener. Six ans de recherche, plusieurs millions déjà dépensés. Nous étions enfin proches de quelque chose.
+
+— Mais grave ! C'est pas maintenant que tu vas tout lâcher !
+
+— C'est aussi ce que je pensais.
+
+— Moi, j'ai un morceau, ça fait quatre ans que je le retravaille.
+
+— Qu'est-ce qui ne vous convient pas ?
+
+— Moi, tout me convient. C'est les gens.
+
+J'explique à Kevin que j'ai changé trois fois le mix, refait le refrain et même rappelé un musicien qui ne travaillait plus avec moi. Le problème, c'est que j'ai des potes qui préfèrent la première version.
+
+— Et vous avez gardé la première ?
+
+— Oui, mais frère, imagine l'argent que j'aurais dépensé pour rien depuis !
+
+Kevin rigole. Il me raconte que Claire Cassedrime, sa directrice scientifique, a repris le programme de recherche avec lui. Elle lui a demandé quelles expériences répondraient aux deux questions des partenaires industriels : ce que BM-417 pourrait apporter par rapport aux autres approches et la faisabilité de la prochaine étape de développement.
+
+— Elle y croit pas, à ta molécule ?
+
+— Si. Elle travaille dessus depuis des années. Elle veut savoir si on a raison d'y croire.
+
+— Putain, elle doit être fatigante dans la vie.
+
+Claire avait regardé les expériences prévues. Beaucoup pouvaient produire des résultats scientifiquement intéressants. Mais elles ne permettaient pas forcément de répondre aux questions qui bloquaient la suite du projet.
+
+Kevin avait protesté : six ans de travail, des expériences prometteuses, des surprises encore possibles. Claire lui avait répondu : « Tu défends BM-417 ou le fait d'avoir eu raison ? »
+
+— Ah la vache.
+
+— J'ai répondu avec cinq diapositives supplémentaires.
+
+— Ah ouais. T'as sorti la version deluxe.
+
+## Toute la boîte était en featuring sur le projet de Kevin
+
+— Vous êtes combien à bosser ici ?
+
+— Quatorze salariés.
+
+— Tous sur ta molécule ?
+
+— Non. Nous avons d'autres recherches en cours.
+
+— Et eux, ils étaient contents que tu demandes quatre millions ?
+
+— Nous avions déjà reporté certains achats d'équipement pour préserver nos priorités.
+
+— Qui décide des priorités ?
 
 — Moi.
 
-— Votre entreprise est alignée sur vos convictions.
+— Ah. Les leurs aussi, du coup.
 
-— Je reconnais que j'avais tendance à confondre les deux.
+Kevin me raconte qu'une autre équipe avait besoin de renouveler du matériel. Il avait expliqué aux chercheurs que BM-417 était à un moment décisif de son développement.
 
-— Qui vous a fait changer d'avis ?
+— Et eux, ils étaient à quel moment de leurs recherches ?
 
-— Claire, notre directrice scientifique. Elle aime cette molécule autant que moi.
+— Ils auraient aussi eu besoin d'avancer.
 
-— Elle vous a conseillé de la vendre ?
+— Ah ouais. Toute la boîte était en featuring sur ton projet.
 
-— Non. Elle a examiné nos dix-huit mois d'expériences. Puis elle a demandé si elles répondraient aux deux questions qui bloquaient les partenaires industriels : quel avantage BM-417 pouvait réellement présenter, et si la prochaine étape de développement était envisageable.
+— Et toi, tu pouvais les payer combien de temps, tes salariés ?
 
-— Et alors ?
+— Au rythme de dépenses courant, nous avions neuf mois de trésorerie.
 
-— Notre programme produisait beaucoup de données intéressantes, mais pas assez de réponses à ces deux questions.
+— Et tu demandais dix-huit mois de recherche ?
 
-— Quatre millions pour des expériences intéressantes. C'est une offre premium.
+— Il fallait obtenir de nouveaux financements. On ne les avait pas.
 
-— J'ai protesté. La recherche réserve des surprises. On ne peut pas la réduire à deux cases.
+Kevin pensait que l'abandon du programme démoraliserait son équipe. Claire lui avait demandé s'il s'inquiétait aussi du moral des chercheurs dont il repoussait les achats.
 
-— C'est vrai.
+— Elle m'a dit : « Tu veux donner une chance à cette découverte ou travailler dessus jusqu'à ce qu'on ne puisse plus payer l'équipe ? »
 
-— J'ai dit qu'arrêter risquait de démoraliser l'équipe.
+Kevin me dit qu'il lui a fallu deux jours pour accepter de revoir sa demande.
 
-— Celle à qui vous aviez demandé de reporter ses équipements ?
+— J'acceptais toutes les incertitudes scientifiques, sauf celle qui concernait ma propre décision.
 
-— Claire me l'a fait remarquer aussi.
+— Moi, quand j'ai dépensé beaucoup d'argent dans un morceau, j'ai encore plus envie qu'il marche.
 
-— Elle manque de délicatesse.
+— Ça augmente ses chances ?
 
-— Elle m'a demandé : « Tu défends BM-417 ou le fait d'avoir eu raison ? »
+— Non, mais ça augmente mon envie.
 
-— Vous avez répondu ?
+## Kevin n'a pas obtenu quatre millions. Il a obtenu quatre mois.
 
-— Avec cinq diapositives supplémentaires.
+— Bon. Le conseil, il a décidé quoi ?
 
-— Une contre-attaque redoutable.
+— Il a refusé les dix-huit mois. Claire et moi avons proposé une phase de quatre mois. Le conseil nous l'a accordée, avec un plafond de quatre cent mille euros.
 
-— Elle m'a laissé terminer. Puis elle a dit : « Tu veux donner une chance à cette découverte ou travailler dessus jusqu'à ce qu'on ne puisse plus payer l'équipe ? »
+— Attends. Quatre millions, quatre cent mille ? Vous avez trouvé un labo moins cher ?
 
-— Et là, vous avez cédé ?
+— Non. Ce n'est pas le même programme. Nous avons retiré les expériences qui n'étaient pas décisives maintenant.
 
-— J'ai résisté deux jours. J'acceptais toutes les incertitudes scientifiques, sauf celle qui concernait ma propre décision.
+— Mais elles étaient utiles, les autres ?
 
-— Et finalement, qu'a décidé votre conseil ?
+— Potentiellement. On n'a pas démontré qu'elles étaient inutiles. Simplement, on n'a pas besoin de toutes les faire avant de décider de la suite.
 
-— Il a abandonné le programme de dix-huit mois. Nous avons obtenu quatre mois pour vérifier les deux points décisifs, avec un plafond de 400 000 euros.
+— Ah. T'as arrêté de commander l'album entier.
 
-— Quatre millions pour dix-huit mois, puis quatre cent mille pour quatre mois. Vous lancez une gamme économique ?
+— Si vous voulez.
 
-— Ce n'est pas le même programme.
+— Et tu les as, les quatre cent mille ?
 
-— Naturellement. Dans les promotions, il manque toujours quelque chose.
+— Une partie correspond aux salaires qu'on avait déjà prévu de payer. Le reste, ce sont de nouvelles prestations et d'autres dépenses. Le conseil a exigé qu'on préserve les moyens nécessaires aux autres recherches et au fonctionnement de la boîte.
 
-— Nous avons retiré les expériences non décisives.
+Je lui demande ce qu'il aurait fait si le conseil avait décidé d'arrêter tout de suite.
 
-— Vous aviez donc prévu de facturer les autres au tarif normal ?
+— J'aurais compris la volonté de préserver les ressources, mais j'aurais regretté qu'on n'ait pas essayé de lever ces deux incertitudes.
 
-— Elles pouvaient être utiles scientifiquement. Mais pas forcément pour décider maintenant.
+— Et avec les quatre millions ?
 
-— Votre découverte devient sélective depuis que vous n'avez plus quatre millions.
+— On risquait d'avoir beaucoup plus de données, sans savoir s'il fallait continuer.
 
-— Depuis que Claire m'a obligé à distinguer curiosité scientifique et responsabilité de dirigeant.
+— Quatre millions pour que Claire te repose la même question.
 
-— Les 400 000 euros sont une dépense entièrement nouvelle ?
+— Et dans quatre mois, si les résultats sont bons, t'as ton médicament ?
 
-— En partie. Le plafond inclut des salaires déjà prévus et de nouvelles prestations. Le conseil a exigé de préserver les autres recherches et le fonctionnement de l'entreprise.
+— Non. On aura des éléments pour décider si la prochaine étape mérite d'être préparée. Il reste des incertitudes scientifiques, réglementaires et financières.
 
-— Et au bout de quatre mois ?
+— Et les industriels vont signer ?
 
-— Nous examinerons les résultats comparatifs et la faisabilité de l'étape suivante. Si les preuves suffisent, nous poursuivrons les discussions industrielles engagées en parallèle. Sinon, notre biotech cessera de financer BM-417.
+— On discute avec eux en parallèle. On n'a aucune garantie qu'ils s'engageront.
 
-— Vous ne promettez donc ni médicament, ni client, ni suite.
+— Et si les résultats sont pas bons ?
 
-— Je promets une décision fondée sur de meilleures preuves.
+— On arrêtera de financer BM-417 dans l'entreprise.
 
-— Vous êtes devenu impossible à inviter dans une émission commerciale.
+— Même si t'as encore des idées ?
 
-— C'est Claire qui m'a appris qu'une découverte peut mériter qu'on s'y intéresse sans justifier toutes les dépenses qu'on imagine pour elle.
+— Oui.
 
-— Et si vous devez arrêter ?
+— Ah putain. Ça, ça va te faire mal.
 
-— Je serai dévasté. Mais je ne sacrifierai pas quatorze personnes et nos autres recherches pour éviter de reconnaître une erreur.
+— Bien sûr. Mais je ne vais pas sacrifier quatorze personnes et les autres recherches pour éviter d'avoir tort.
 
-— Vous avez conservé un souvenir de BM-417 ?
+## Winnie avait déjà prévu la sortie de son morceau
 
-— Sa photographie, une tasse et une petite peluche en forme de molécule.
+Je demande à Kevin comment il fait pour accepter qu'une expérience puisse lui donner une réponse qu'il n'a pas envie d'entendre.
 
-— Vous avez fait fabriquer une peluche ?
+— On essaie de définir avant les essais ce qui justifierait de poursuivre. Pas une fois qu'on a les résultats sous les yeux.
 
-— Cent cinquante. Pour nos futurs partenaires.
+— Et si t'es déçu ?
 
-— Combien en avez-vous distribuées ?
+— Ça ne change pas les résultats.
 
-— Trois.
+Je lui explique que j'ai fait écouter mon morceau à six personnes le mois dernier. Trois m'ont conseillé de changer le refrain. Deux préféraient le morceau d'avant.
 
-— Et les autres ?
+— Et la sixième ?
 
-— Claire les a classées dans les actifs à valoriser.
+— Elle a kiffé.
 
-Fiction satirique. Entreprise, personnages, chiffres et résultats scientifiques imaginaires.
+— Vous avez fait quoi ?
+
+— Je l'ai fait écouter à ses potes. Ils aiment bien ce genre de son.
+
+Kevin rigole.
+
+— Vous n'avez pas quatorze salariés à payer, vous.
+
+— Non, mais mon ingé son commence à me bloquer.
+
+Je lui dis que je vais peut-être fixer une date à laquelle j'arrêterai de retoucher le morceau. Kevin me demande si je compte le sortir à cette date.
+
+— Ça dépend si je trouve le bon refrain.
+
+Il ouvre un placard pour me montrer ce qu'il avait préparé pour ses futurs partenaires. Des petites peluches en forme de molécule. Il en sort une qui porte une étiquette BM-417.
+
+— Wesh ! T'en as fait fabriquer combien ?
+
+— Cent cinquante.
+
+— Et t'en as distribué combien ?
+
+— Trois. Claire a classé les autres dans les actifs à valoriser.
+
+— Je peux en prendre une ?
+
+— Bien sûr.
+
+Je lui promets de lui envoyer un tee-shirt de mon prochain single.
+
+— Celui sur lequel vous travaillez depuis quatre ans ?
+
+— Ouais. Les tee-shirts, eux, ils sont prêts.

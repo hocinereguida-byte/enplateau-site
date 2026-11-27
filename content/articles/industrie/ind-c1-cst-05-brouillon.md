@@ -11,7 +11,7 @@ lecture_principale: "finance-investissement"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-10-27T15:00:00+01:00"
-updated_date: "2026-11-26"
+updated_date: "2026-11-27"
 mise_en_avant: "standard"
 affichage_accueil: "automatique"
 affichage_rubrique: "automatique"
@@ -21,18 +21,18 @@ tag_3: "Financement industriel"
 tag_4: "Contrats commerciaux"
 tag_5: "Croissance industrielle"
 source_notice: "Personnages, entreprise, localisation générale, dialogues et chiffres du scénario inventés."
-methodology_specific: "Laurent Dafdaf et Winnie Bouba — V1.8 figée le 26 novembre 2026. Source https://docs.google.com/document/d/1h9ATIaISyMK-104IVxfgSHHDyE_UFUHO8cJWVZVCMbM/edit. PV https://docs.google.com/document/d/1BBTTU9_mVtnICMjUJpLtzXrSIunDufpH6p2EqnHuESk/edit. Matrice 144 critères : 112 C, 7 PC, 0 NC, 4 NV, 21 NA. Littéraire et singularité Industrie C1 favorables ; D1 favorable avec réserve mineure sur ancienneté ; D2 favorable sous limites. 19 386 caractères selon le décompte du PV avec sauts de ligne, six intertitres, 335 répliques, 50 didascalies. GO préproduction de contrôle sous réserves ; aucun bon à publier. Version antérieure préservée dans Git et sur Drive."
-source_document_url: "https://docs.google.com/document/d/1h9ATIaISyMK-104IVxfgSHHDyE_UFUHO8cJWVZVCMbM/edit"
-source_document_version: "V1.8"
-validation_narrative: "laurent_winnie_v18_visa_litteraire_favorable"
-validation_documentaire: "laurent_winnie_v18_d1_reserve_mineure_d2_sous_limites_pv_26_11_2026"
+methodology_specific: "Laurent Dafdaf / Winnie Bouba V1.9 définitive. Source https://docs.google.com/document/d/1r5ydPbdkyUOf4iT58_T-ZtMRlE5fznqWrEETuEKzR50/edit ; PV https://docs.google.com/document/d/1924RbWe3y4qQos4xYybwCdTek5qhbxPs4oRqeFD5vGY/edit ; passation https://docs.google.com/document/d/1N71q94wSCHaM8NUTVI53affvow05Y7MDJM0YA8Csngc/edit. Matrice 144 : 111 C, 7 PC, 0 NC, 5 NV, 21 NA. Une seule réplique modifiée, contrats des jeunes artistes ; D1 favorable avec réserve historique sur ancienneté, D2 favorable sous limites, singularité sur périmètre comparé. Corps/intertitres 18 257 caractères hors signature et séparateurs ; dérogation +9 257. 335 répliques (dont préfixes explicites), 50 didascalies, 6 intertitres ; visuel historique conservé. 19072 caractères, 395 paragraphes du document Drive (sauts simples). GO technique groupé pour préproduction uniquement ; aucun bon à publier. Réserves du PV et recette visuelle restent applicables."
+source_document_url: "https://docs.google.com/document/d/1r5ydPbdkyUOf4iT58_T-ZtMRlE5fznqWrEETuEKzR50/edit"
+source_document_version: "V1.9"
+validation_narrative: "laurent_winnie_v19_visa_litteraire_favorable"
+validation_documentaire: "laurent_winnie_v19_d1_reserve_mineure_d2_sous_limites_pv_26_11_2026"
 autorisation_publication: "preproduction_uniquement"
 genre_narratif: "grand-entretien"
 signature_auteur: "Winnie Bouba"
 code_editorial: "IND-C1-CST-05"
 unite_programmation: "IND-C1-CST"
 perspective_principale: "finance-investissement"
-validation_document_url: "https://docs.google.com/document/d/1BBTTU9_mVtnICMjUJpLtzXrSIunDufpH6p2EqnHuESk/edit"
+validation_document_url: "https://docs.google.com/document/d/1924RbWe3y4qQos4xYybwCdTek5qhbxPs4oRqeFD5vGY/edit"
 seo:
   image_alt: "Une clé industrielle démesurée, une petite tirelire et une coupe de champagne symbolisent le contraste entre l’ambition commerciale et les moyens financiers."
 ---
@@ -761,7 +761,7 @@ Winnie — Tu vois, Laurent ? Chez moi, les gens sont payés.
 
 — Quel genre de chose ?
 
-— Du lourd ! Une série de vidéos. Le rap, l'argent, les contrats, les maisons de disques, les arnaques... Tu sais combien de jeunes artistes signent des trucs sans rien lire ?
+— Du lourd ! Une série de vidéos. Le rap, l'argent, les contrats, les maisons de disques, les arnaques... Tu sais combien de petits jeunes viennent me montrer leurs contrats parce qu'ils ont peur de se faire niquer ? Des fois, je comprends pas plus qu'eux !
 
 — Je suppose que cela arrive.
 
