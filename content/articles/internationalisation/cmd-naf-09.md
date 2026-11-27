@@ -1,8 +1,6 @@
 ---
-title: "« Nous avons trouvé un deuxième fournisseur. Il ne nous reste plus qu'à pouvoir utiliser ses pièces. »"
-hero_image: "/images/int-c3-cmd-naf-09-visuel-v2.webp"
-image_alt: "Deux composants mécaniques, l’un installé dans une machine, l’autre exposé sous une vitrine transparente avec un ruban doré."
-summary: "Pour ne plus dépendre d'un seul fabricant étranger, une entreprise française a diversifié ses approvisionnements. Les premières pièces sont arrivées. Les machines, elles, attendent toujours. Rencontre avec une directrice qui découvre les limites de la sécurité industrielle."
+title: "« Mon fournisseur me reproche de voir quelqu'un d'autre. »"
+summary: "David Monogane dirige une entreprise qui fabrique des équipements pour les cuisines professionnelles. Après quinze ans de fidélité à son principal fournisseur de composants électroniques, il envisage de confier une partie de ses commandes à un concurrent. Winnie Bouba trouve cette décision parfaitement raisonnable, tant qu'elle concerne David."
 cycle: "internationalisation"
 conversation: "C3"
 contexte: "C3-U1"
@@ -16,177 +14,301 @@ statut_editorial: "prepublication"
 published: true
 publication_date: "2026-11-09T19:00:00+01:00"
 mise_en_avant: "standard"
-source_document_url: "https://docs.google.com/document/d/1PRUVU3cZGNBA190yus-wKqVOs01xjJQIUYSl9n-mcDw/edit"
-source_document_version: "V2"
+source_document_url: "https://docs.google.com/document/d/1UOuBFVy2ZJWKcyWmuTAlJ3gEcX0_FBIHXOgQeGTeBtc/edit"
+source_document_version: "V2.0"
 autorisation_publication: "preproduction_uniquement"
-signature_auteur: "Jean Toksik"
-source_notice: "Fiction satirique. Les personnages, l'entreprise, les chiffres et la situation sont imaginaires."
-methodology_specific: "CMD-NAF-09 — V2 visée. Contexte C3-U1 : fournisseur critique dans une seule région. Perspective exclusive Opérations & organisation : qualification et essais des composants de source alternative avant emploi dans les machines. Version Google Docs contrôlée sur 6 780 caractères après normalisation des lignes vides et saut final."
+signature_auteur: "Winnie Bouba"
+source_notice: "Les personnages, les entreprises, les dialogues et les données chiffrées sont fictifs."
+methodology_specific: "David Monogane / Winnie Bouba V2.0 définitive figée le 27 novembre 2026. Source exclusive https://docs.google.com/document/d/1UOuBFVy2ZJWKcyWmuTAlJ3gEcX0_FBIHXOgQeGTeBtc/edit ; PV https://docs.google.com/document/d/1jJe5tj9Yf2qA3nAwzapOsVVKt44JwYi9zaiOOBVxEQs/edit ; passation https://docs.google.com/document/d/18q0xPftHIFnvbjw-NhcST50GCvvQj0lS2jjTwpDmIbo/edit. Création A ; AR04 / SD16 / D12 internes. Avis littéraire simulé 94/100, D1 favorable sous réserves, D2 favorable sous hypothèses, singularité favorable sur périmètre ciblé. Matrice 144 : 103 C, 12 PC, 0 NC, 5 NV, 24 NA. 9 901 caractères (147 paragraphes complets joints par un saut simple), 5 intertitres, 115 répliques. Objectif conditionnel 25 % après essais ; qualification 18 000 euros, surcoût annuel 12 000 euros, stock additionnel 19 200 euros immobilisés. Rupture de huit semaines : pertes brutes de marge 115 200 / 48 000 / 38 400 euros sous hypothèses, pas optimisation universelle. Entreprises et fournisseurs non nommés. Visuel mécanique historique inspecté et jugé inadapté, référence retirée sur GO utilisateur ; fichier image conservé, nouvelle illustration non générée. GO technique utilisateur pour préproduction exclusivement ; aucun bon à publier. Réserves documentaires, lecture externe et recette visuelle restent ouvertes."
 tag_1: "Internationalisation"
 tag_2: "Approvisionnements"
 tag_3: "Fournisseur critique"
 tag_4: "Qualification de composants"
 tag_5: "Continuité industrielle"
+validation_document_url: "https://docs.google.com/document/d/1jJe5tj9Yf2qA3nAwzapOsVVKt44JwYi9zaiOOBVxEQs/edit"
+updated_date: "2026-11-27"
 ---
 
-Jean Toksik — Vous fabriquez des machines qui emballent des produits alimentaires. Vous venez d'annoncer que vous disposiez de deux fournisseurs pour une pièce essentielle. Pourquoi cette bonne nouvelle a-t-elle provoqué une réunion de crise ?
+David Monogane me tend son téléphone. Il a reçu un message vendredi soir.
 
-Claire Vignal — Parce que notre deuxième fournisseur nous a livré les pièces.
+« Après quinze ans de collaboration, j'aurais apprécié que vous m'en parliez avant d'aller voir ailleurs. »
 
-C'est plutôt ce qu'on attend d'un fournisseur.
+— C'est qui ?
 
-Absolument. Nous avons salué sa ponctualité. Mais nous ne pouvons pas encore utiliser ses pièces dans les machines de nos clients.
+— Mon fournisseur.
 
-Il vous a livré les mauvaises ?
+— Ah putain ! J'allais te demander ce que t'avais fait à ta femme.
 
-Non, celles que nous lui avions commandées pour les essais. Seulement, une pièce qui ressemble à celle que nous utilisons depuis quinze ans ne fonctionne pas forcément de la même manière. Il faut la tester dans nos machines, faire des réglages et vérifier que l'ensemble reste fiable.
+— Mon fournisseur me reproche de voir quelqu'un d'autre.
 
-Vous avez acheté des pièces sans savoir si elles fonctionnaient ?
+— T'as signé un contrat d'exclusivité avec lui ?
 
-Nous savons qu'elles fonctionnent chez leur fabricant. Nous devons vérifier qu'elles fonctionnent chez nous. C'est la différence entre avoir trouvé un fournisseur et pouvoir s'approvisionner auprès de lui.
+— Non.
 
-Vous avez donc résolu le problème des pièces qui n'arrivent pas en faisant arriver des pièces que vous ne pouvez pas monter.
+David me montre sa réponse du samedi. Il s'est excusé. Son fournisseur lui a dit qu'il avait besoin de réfléchir.
 
-C'est une formulation sévère. Mais exacte.
+— Il a besoin de réfléchir à quoi ? Tu lui as acheté un truc ailleurs ?
 
-Pourquoi chercher un autre fournisseur ?
+— Même pas. On a demandé un devis.
 
-Nous achetions un composant essentiel à un seul fabricant asiatique. Il était fiable, compétitif et ponctuel. Jusqu'au jour où il nous a annoncé des délais beaucoup plus longs.
+— Et pourquoi maintenant ?
 
-Vous avez décidé de ne plus mettre tous vos œufs dans le même panier ?
+— Toutes nos cartes arrivent de la même région à l'étranger. Il y a quelques mois, un retard de livraison nous a obligés à taper dans nos réserves. On a failli devoir arrêter les livraisons de machines.
 
-Oui. Puis nous avons découvert qu'il fallait vérifier si le deuxième panier pouvait contenir des œufs.
+— Et ton fournisseur t'avait prévenu ?
 
-Combien de temps faut-il ?
+— Oui. Il était même désolé.
 
-Plusieurs semaines. Il faut installer les pièces sur une machine d'essai, vérifier les mouvements, la fiabilité et les réglages. Une machine qui emballe huit mille produits à l'heure ne peut pas s'arrêter au milieu d'une commande parce qu'un composant a décidé de prendre sa pause.
+— Il vous a envoyé quoi pour se faire pardonner ?
 
-Votre nouveau fournisseur a pourtant livré en quatre semaines.
+— Un nouveau délai de livraison.
 
-C'est même ce qui nous a séduits.
+## David est fidèle à un fournisseur qui ne lui est pas fidèle
 
-Mais les essais durent plus longtemps ?
+David dirige cette boîte depuis vingt ans. Quand il avait du mal à payer ses factures, son fournisseur lui avait accordé des délais de paiement et continué à le livrer.
 
-Oui.
+— Sans lui, je sais pas si on serait encore là.
 
-Vous avez donc choisi un fournisseur rapide pour recevoir des pièces qu'il faudra attendre avant d'utiliser.
+— Ah ouais. Quand même.
 
-Nous préférons dire que nous avons anticipé leur disponibilité future.
+— C'est pour ça que ça m'embête.
 
-Que se passe-t-il dans l'usine ?
+— Et depuis, tu le paies dans les temps ?
 
-Nous continuons avec les pièces de notre fournisseur historique. Il nous reste du stock, mais pas assez pour toutes les commandes. Il faut choisir quelles machines terminer en priorité.
+— Ça fait des années, oui.
 
-Et les autres ?
+— Et tu lui achètes pour combien ?
 
-Elles attendent.
+— Deux cent quarante mille euros de composants par an.
 
-Les clients aussi ?
+— Frère, je pense qu'il sait que t'es reconnaissant.
 
-Nous parlons d'une adaptation concertée du calendrier de livraison.
+David me montre une carte électronique. Il en faut une par appareil, sinon impossible de livrer la machine.
 
-C'est-à-dire ?
+— T'en fabriques combien, de machines ?
 
-Nous leur annonçons un retard.
+— Douze mille par an. On commande toutes les cartes chez lui.
 
-Votre service commercial apprécie cette concertation ?
+— Il bosse qu'avec toi ?
 
-Il apprécie surtout qu'on l'avertisse avant les clients. Ce qui n'a pas toujours été possible : il avait déjà promis certaines dates en tenant compte de l'arrivée du deuxième fournisseur.
+— Non.
 
-Il avait oublié que les pièces n'étaient pas utilisables ?
+— Avec tes concurrents aussi ?
 
-Il avait retenu leur date d'arrivée. Le service qualité avait retenu la date à laquelle elles pourraient éventuellement être utilisées. Les deux figuraient dans le même tableau, mais pas dans la même colonne.
+— Certains.
 
-Vous avez réuni les services ?
+— Et quand il signe avec un de tes concurrents, il t'appelle pour savoir si tu vas bien ?
 
-Plusieurs fois. Nous avons compris pourquoi les achats étaient satisfaits, pourquoi la qualité ne l'était pas et pourquoi la production n'avait toujours pas ses composants.
+— Non, Winnie.
 
-Qu'a décidé la direction ?
+— Mais vous êtes ensemble ou c'est juste toi ?
 
-De réunir tout le monde chaque matin.
+David rigole. Il tient pourtant à cette relation : son fournisseur connaît ses produits et réagit vite en cas de problème de qualité. Il a peur de perdre ces avantages.
 
-Cela a accéléré les essais ?
+## Nathalie avait trouvé deux fournisseurs qui dépendaient du même mec
 
-Non. Mais chacun sait désormais précisément pourquoi ils ne sont pas terminés.
+Nathalie Planbé, responsable des achats, avait déjà trouvé un premier fournisseur de secours.
 
-Pourquoi ne pas mobiliser davantage de techniciens ?
+— Ils étaient dans le même pays ?
 
-Parce que ceux qui savent conduire les essais sont aussi ceux dont nous avons besoin pour terminer les machines en retard.
+— Non. C'est pour ça qu'on était contents.
 
-Vous devez choisir entre fabriquer les machines promises et vérifier les pièces qui permettront de fabriquer les suivantes ?
+— Sauf que Nathalie a découvert que les deux achetaient une pièce critique au même fabricant.
 
-Exactement. Si nous privilégions les essais, nous retardons les livraisons actuelles. Si nous privilégions les livraisons, nous retardons la qualification du fournisseur censé éviter les prochains retards.
+— T'aurais eu deux fournisseurs ?
 
-Vous choisissez donc quels retards vous préférez.
+— Oui.
 
-Nous appelons cela une planification des priorités.
+— Et derrière, combien de fabricants pour cette pièce ?
 
-Qu'avez-vous décidé ?
+— Un.
 
-Nous avons réservé des créneaux fixes pour les essais, affecté nos dernières pièces aux machines les plus urgentes et annoncé des reports aux autres clients. Nous avons également réservé une livraison partielle auprès de notre fournisseur historique.
+— Ah ouais. T'as deux numéros de téléphone pour appeler le même problème.
 
-Celui dont vous vouliez devenir moins dépendants ?
+Nathalie a repris ses recherches et trouvé un autre fabricant dont les approvisionnements semblent indépendants de ceux du premier.
 
-Oui. Il connaît très bien nos contraintes.
+— Et il est bon, lui ?
 
-Il peut livrer davantage ?
+— Il faut tester ses cartes sur nos appareils. Je préfère vérifier avant d'en mettre douze mille dans des cuisines.
 
-Peut-être, si nous confirmons vite les quantités. Mais nous ne savons pas encore combien de pièces du nouveau fournisseur seront validées à temps. Trop commander à l'ancien risque de nous laisser des stocks inutiles ; trop peu, de nous mettre à l'arrêt.
+Il annonce quatre semaines de délai, contre huit pour le premier. Nathalie doit vérifier aussi l'origine des pièces de ses cartes.
 
-Vous avez donc besoin du deuxième fournisseur pour savoir combien commander au premier, et du premier pour tenir jusqu'à ce que le deuxième fonctionne.
+— Si le premier a un problème, l'autre peut bosser normalement ?
 
-C'est une difficulté de coordination que nous travaillons à résoudre.
+— C'est l'objectif. Mais les deux peuvent avoir des problèmes en même temps.
 
-Le deuxième fournisseur est-il informé ?
+## Philippe a calculé combien coûtait une infidélité
 
-Bien sûr. Il nous demande quand nous passerons une commande de série.
+Philippe Conte, le directeur financier, a sorti ses chiffres. La carte coûte vingt euros chez le premier, vingt-quatre chez l'autre.
 
-Que répondez-vous ?
+— Mais pourquoi tu vas payer un mec plus cher pour faire le même boulot ?
 
-Que nous attendons de pouvoir utiliser son premier lot.
+— Pour ne plus dépendre entièrement du premier.
 
-Et vos clients ?
+— Ah ouais. Tu le paies pour que l'autre soit moins important.
 
-Ils veulent connaître la date de livraison de leurs machines.
+— C'est pas comme ça que j'aurais présenté le projet.
 
-Vous pouvez la leur donner ?
+En confiant un quart des douze mille cartes à l'autre, David dépenserait douze mille euros de plus par an. Les essais et la qualification coûteraient dix-huit mille euros.
 
-Une date prévisionnelle.
+— Trente mille balles la première année ?
 
-Fiable ?
+— Sur la base d'une année complète avec cette répartition, oui.
 
-Nous travaillons à la fiabiliser.
+— Et si tu prends la moitié chez chacun ?
 
-Votre entreprise est-elle aujourd'hui moins dépendante de son fournisseur historique ?
+— Vingt-quatre mille euros de plus par an, hors qualification. Encore faut-il qu'il puisse les livrer.
 
-Pour l'avenir, nous avons progressé : une alternative existe, les essais sont engagés et une deuxième source se prépare.
+David m'emmène voir les quatre cent quatre-vingts cartes de réserve : deux semaines de production à deux cent quarante appareils par semaine, sur cinquante semaines par an.
 
-Et aujourd'hui, concrètement ?
+— Et tu peux pas en garder davantage ?
 
-Nous dépendons toujours du premier pour produire, et du second pour réussir à ne plus dépendre uniquement du premier.
+— Si. Quatre semaines de plus, c'est neuf cent soixante cartes, soit dix-neuf mille deux cents euros immobilisés. C'est pas une dépense à refaire chaque année. Mais il faut financer le stock, le ranger et éviter qu'il devienne obsolète.
 
-C'est une amélioration ?
+— Mais au moins, pendant un mois, tu dors tranquille.
 
-C'est une étape. Nous sommes passés d'un fournisseur indispensable à deux fournisseurs dont nous ne pouvons pas encore nous passer.
+— Avec six semaines de réserve, on tiendrait six semaines. Mais après ?
 
-Cela doit être difficile à expliquer au comité de direction.
+Philippe a simulé huit semaines sans aucune livraison du premier fournisseur, à partir du stock actuel : il manquerait mille quatre cent quarante cartes.
 
-Pas du tout. Nous avons créé un indicateur.
+— Et une machine que tu vends pas, tu perds combien ?
 
-Lequel ?
+— Quatre-vingts euros de marge sur coûts variables par appareil. Plus de cent quinze mille euros si toutes ces ventes sont perdues. Si on livre plus tard, c'est différent.
 
-Le nombre de fournisseurs disponibles.
+— Et avec l'autre ?
 
-Combien indique-t-il ?
+— Il propose soixante cartes par semaine, puis cent vingt à partir de la troisième semaine de rupture. Il faut vérifier et contractualiser cette capacité.
 
-Deux.
+— Cent vingt ? T'en utilises deux cent quarante !
 
-Combien pouvez-vous utiliser ?
+— Oui. Stock compris, avec les huit cent quarante cartes de l'autre, il en manquerait encore six cents.
 
-Un.
+— Quarante-huit mille euros de marge si tu perds les ventes.
 
-Le comité est satisfait ?
+— À peu près, avant les frais supplémentaires, oui.
 
-Il a demandé qu'on ajoute une colonne.
+J'ai mis ma calculatrice devant lui. J'étais fier de mon résultat.
 
-Fiction satirique. Les personnages, l'entreprise, les chiffres et la situation sont imaginaires.
+— Ça fait soixante-sept mille euros de marge que tu pourrais préserver ?
+
+— Dans ce scénario, oui, avant les surcoûts d'achat et les autres frais. Pas tous les ans.
+
+— Et avec six semaines de stock ?
+
+— Il manquerait quatre cent quatre-vingts cartes. Trente-huit mille quatre cents euros de marge si les ventes sont perdues.
+
+— Mais attends, avec tes six semaines de stock, tu perds moins de pognon ?
+
+— Sur ces huit semaines, oui.
+
+— Alors pourquoi tu vas chercher un autre fournisseur ?
+
+— Parce que je sais pas combien de temps durera la prochaine rupture. Avec l'autre, je peux continuer à recevoir des cartes.
+
+— Ah ouais. Tu sais même pas combien de temps tu dois te protéger.
+
+— Exactement.
+
+— Et t'as de quoi payer cette sécurité ?
+
+— Philippe a vérifié. On peut dégager le budget pour les essais et le surcoût prévu. Pour davantage de commandes chez l'autre, on refera les comptes.
+
+— Et tes clients vont pas forcément attendre que ton fournisseur soit de nouveau disponible.
+
+— C'est surtout ça qui me fait peur.
+
+## Winnie trouve qu'il y a déjà trop de journalistes dans sa rédaction
+
+De retour au bureau, David me dit qu'il redoute de perdre ses délais de paiement actuels.
+
+— Bah négocie. Tu vas continuer à lui acheter neuf mille cartes par an. Il va pas crever.
+
+— Non, mais il pourrait raccourcir nos délais de paiement ou nous faire passer après un autre client. Il ne l'a pas annoncé, mais ça fait partie des risques.
+
+— Tu peux pas gérer ta boîte en fonction de la susceptibilité d'un mec.
+
+David acquiesce.
+
+— Vous êtes combien de journalistes dans votre rédaction ?
+
+— Six, pour l'instant.
+
+— Vous vous entendez bien ?
+
+— Ouais, dans l'ensemble. Y a mon collègue Jean Toksik qui me saoule.
+
+— Pourquoi ?
+
+— Il croit que c'est lui la star du journal.
+
+— Et c'est qui ?
+
+— Frère, pose des questions sérieuses.
+
+David me demande si un autre journaliste peut conduire un entretien quand je ne suis pas disponible.
+
+— Ça dépend de l'entretien.
+
+— Mais c'est possible ?
+
+— Techniquement, oui. Après, c'est pas forcément ce que les gens veulent lire.
+
+— Donc le journal peut publier des entretiens en votre absence.
+
+— Mais pourquoi vous voulez que je sois absent ?
+
+— Je dis juste que c'est une sécurité pour votre rédacteur en chef.
+
+Il parle de Benoît Time, notre rédacteur en chef.
+
+— Benoît, il a pas besoin d'être sécurisé contre moi, David.
+
+J'ai remis la feuille de Philippe au milieu du bureau.
+
+## David aimerait rester en bons termes avec les deux
+
+— Bon. Tu vas faire quoi, finalement ?
+
+— On lance la qualification. Si les essais sont bons et qu'on a des garanties sur les livraisons, je confierai progressivement un quart des achats au deuxième. On garde le stock de sécurité.
+
+— Et le premier, tu lui as dit ?
+
+— Je l'appelle demain. Je voudrais qu'il comprenne que je peux continuer à lui faire confiance sans tout lui acheter.
+
+— Tu vas pas lui demander la permission, cette fois ?
+
+— Non. Je vais lui expliquer ma décision. Et on discutera de nos prochaines conditions commerciales.
+
+— Normal.
+
+— Si votre rédacteur en chef confiait un quart de vos entretiens à Jean Toksik, vous le comprendriez ?
+
+— Un quart des siens, oui.
+
+— Non, des vôtres.
+
+— Mais pourquoi ? J'ai fait quoi ?
+
+David me regarde. Je lui dis que j'ai compris sa question.
+
+— T'as aussi des responsabilités envers les gens que t'emploies. Et ça t'empêche pas de rester en bons termes avec lui.
+
+— J'espère.
+
+David note les points à aborder lors de son appel. Je lui conseille de rappeler à son fournisseur qu'il compte sur lui. Il me demande si c'est important de dire ça aux gens avec qui on travaille.
+
+— Grave. Même quand tout va bien. Ça fait du bien de l'entendre.
+
+David plie sa feuille.
+
+— Dans une entreprise, personne ne devrait être indispensable.
+
+— Même pas le patron ?
+
+— Même pas le patron.
+
+— Tu veux vraiment que je mette ça dans l'article ?
+
+— Pourquoi pas ?
+
+— Benoît lit mes articles, frère.

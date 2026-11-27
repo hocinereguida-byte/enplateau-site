@@ -14,7 +14,7 @@ const records = [
   "education-formation/cmd-naf-12.md|CMD-NAF-12|education-formation|V2.1|strategie-gouvernance|EDU-C5-U1||C5-U1|chronique|chronique|1WCeKO93VF3PmCLOofcxyL322Ls9yQV1YOK9sWYpUuxE",
   "social-medicosocial/cmd-naf-11.md|CMD-NAF-11|social-medicosocial|V2.0|strategie-gouvernance|SOC-C2-U1||C2-U1|entretien|grand-entretien|1XjkBU8Znsj_wR8BQAPxvSwiOvc3TiK-7HXX9eizDJkw",
   "sante/cmd-naf-10.md|CMD-NAF-10|sante|V3|operations-organisation|SAN-C5-U1||C5-U1|chronique|chronique|1eQATanyDutSrlncbRZSRyCpdZ-vVdE3yEXgWl1RS1J4",
-  "internationalisation/cmd-naf-09.md|CMD-NAF-09|internationalisation|V2|operations-organisation|INT-C3-U1||C3-U1|entretien|grand-entretien|1PRUVU3cZGNBA190yus-wKqVOs01xjJQIUYSl9n-mcDw",
+  "internationalisation/cmd-naf-09.md|CMD-NAF-09|internationalisation|V2.0|operations-organisation|INT-C3-U1||C3-U1|entretien|grand-entretien|1UOuBFVy2ZJWKcyWmuTAlJ3gEcX0_FBIHXOgQeGTeBtc",
   "ess/cmd-naf-08-ess-c2-u1-blanchisserie.md|CMD-NAF-08|ess|V3|strategie-gouvernance|ESS-C2-U1||C2-U1|chronique|chronique|1rgOoCasw9ZSpjVVjmeNJ4vaEZd3-Z3jqBcji0cU1WXA",
   "banque-financement/ban-c2-u1-fin-01-etienne-valbrun.md|BAN-C2-U1-FIN-01|banque-financement|Visa documentaire 09-11-2026|finance-investissement|BAN-C2-U1||C2-U1|entretien|grand-entretien|1fkbL5b_z8vbo-wAp23WIRaS88O9d273dijF1eXivOis",
   "tourisme/tou-c2-u1-fin-01-marianne-delmas.md|TOU-C2-U1-FIN-01|tourisme|V1.1|finance-investissement|TOU-C2-U1||C2-U1|entretien|grand-entretien|1nuJFpKT6onviW08bmAv9B5lV8FzH4-3rFanZDe64it0",

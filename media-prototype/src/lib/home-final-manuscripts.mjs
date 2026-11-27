@@ -2,6 +2,14 @@
 // Modifier uniquement à réception d'un figeage et après vérification Drive/Markdown. Pas de comparaison numérique de versions.
 export const finalManuscripts = [
   {
+    "id": "internationalisation/cmd-naf-09",
+    "version": "V2.0",
+    "source": "1UOuBFVy2ZJWKcyWmuTAlJ3gEcX0_FBIHXOgQeGTeBtc",
+    "date": "2026-11-27",
+    "fingerprint": "e8be7bbc",
+    "status": "integrated"
+  },
+  {
     "id": "social-medicosocial/cmd-naf-11",
     "version": "V2.0",
     "source": "1XjkBU8Znsj_wR8BQAPxvSwiOvc3TiK-7HXX9eizDJkw",

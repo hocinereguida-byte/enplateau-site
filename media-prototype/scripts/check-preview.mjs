@@ -428,6 +428,33 @@ for(const [route,author] of [["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"
  if(!/name="robots"\s+content="noindex,nofollow"/.test(html)||/CMD-NAF-11|AR04|SD09|D08|103 C, 12 PC/.test(story))errors.push('Martine Jipépé : indexation ou métadonnées internes visibles.');
 }
 
+// David Monogane V2.0 : texte, distribution, signature et classement.
+{
+ const slug='internationalisation/cmd-naf-09',href='/media/articles/'+slug+'/',html=read('media/articles/'+slug+'/index.html');
+ const source=fs.readFileSync(path.resolve('../content/articles/'+slug+'.md'),'utf8');
+ const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
+ const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
+ const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+ const story=html.match(/<article\b[^>]*data-article-id="internationalisation\/cmd-naf-09"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const rendered=[...story.matchAll(/<(p|h2)\b[^>]*>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':m[0].includes('class="david-dialogue-line"')?'— ':'')+decode(m[2].replace(/<[^>]*>/g,'')));
+ const expected=front[2].trim().split(/\n\n/);
+ const full=[field('title'),field('summary'),field('signature_auteur'),'Fiction satirique · Les interrogatoires',...expected.map(x=>x.replace(/^## /,'')),field('source_notice')];
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||full.length!==147||full.join('\n').length!==9901||expected.filter(x=>x.startsWith('## ')).length!==5||expected.filter(x=>x.startsWith('— ')).length!==115||(story.match(/class="david-dialogue-line"/g)||[]).length!==115||expected.at(-1)!=="— Benoît lit mes articles, frère.")errors.push('David Monogane V2.0 : texte ou structure non concordants.');
+ const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'',lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
+ const signature=html.match(/<section\b[^>]*aria-label="Signature de l’auteur"[^>]*>([\s\S]*?)<\/section>/)?.[1]??'';
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Les interrogatoires')||!signature.includes('<h2>Winnie Bouba</h2>')||!signature.includes('href="/media/auteurs/winnie-bouba/"')||field('source_document_version')!=='V2.0'||field('signature_auteur')!=='Winnie Bouba'||front[1].split('\n').some(l=>l.startsWith('hero_image: '))||html.includes('/images/int-c3-cmd-naf-09-visuel-v2.webp'))errors.push('David Monogane V2.0 : titre, chapô, signature, notice ou visuel non conformes.');
+ for(const name of ['David Monogane','Nathalie Planbé','Philippe Conte','Winnie Bouba','Jean Toksik','Benoît Time'])if(!decode(story).includes(name))errors.push('David Monogane V2.0 : personnage manquant '+name);
+ for(const page of ['media/publications/index.html','media/cycles/internationalisation/index.html','media/cycles/internationalisation/conversations/C3/index.html','media/scenes/index.html','media/lectures/operations-organisation/index.html','media/auteurs/winnie-bouba/index.html'])if(!read(page).includes(href))errors.push('David Monogane : navigation incorrecte '+page);
+ for(const page of ['media/index.html','media/publications/index.html','media/cycles/internationalisation/index.html','media/cycles/internationalisation/conversations/C3/index.html','media/scenes/index.html','media/lectures/operations-organisation/index.html','media/auteurs/winnie-bouba/index.html']){
+  const pageHtml=decode(read(page));if(pageHtml.includes("Nous avons trouvé un deuxième fournisseur. Il ne nous reste plus qu'à pouvoir utiliser ses pièces."))errors.push('David Monogane : ancien titre historique encore présent '+page);
+ }
+ if(/Claire Vignal/.test(decode(story+' '+h1+' '+lead+' '+signature)))errors.push('David Monogane : ancienne identité visible');
+ if(read('media/auteurs/jean-toksik/index.html').includes(href))errors.push('David Monogane : ancienne attribution à Jean Toksik');
+ if(!decode(story).includes('On lance la qualification. Si les essais sont bons')||!decode(story).includes('Trente-huit mille quatre cents euros de marge si les ventes sont perdues.')||!decode(story).includes('dix-neuf mille deux cents euros immobilisés')||!decode(story).includes('Pas tous les ans.'))errors.push('David Monogane : hypothèses économiques ou décision conditionnelle manquantes');
+ if((decode(story).match(/Jean Toksik/g)||[]).length!==2||/interview-speaker">Jean/.test(story))errors.push('David Monogane : mentions Jean Toksik ou attribution incorrectes');
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html)||/CMD-NAF-09|AR04|SD16|D12|103 C, 12 PC/.test(story))errors.push('David Monogane : indexation ou métadonnées internes visibles.');
+}
+
 // Fiches d'auteurs : bijection entre les articles effectivement rendus et leurs listes.
 {
  const byAuthor=new Map();
