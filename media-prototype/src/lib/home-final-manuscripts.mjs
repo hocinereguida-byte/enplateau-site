@@ -2,6 +2,14 @@
 // Modifier uniquement à réception d'un figeage et après vérification Drive/Markdown. Pas de comparaison numérique de versions.
 export const finalManuscripts = [
   {
+    "id": "numerique-telecom/cmd-naf-16",
+    "version": "V2.0",
+    "source": "15pWJlH0lKrJkEscSQS-aMVye2h3CiNFW6uL_UyYJ2jo",
+    "date": "2026-11-27",
+    "fingerprint": "2c16138f",
+    "status": "integrated"
+  },
+  {
     "id": "education-formation/cmd-naf-12",
     "version": "V2.1",
     "source": "1WCeKO93VF3PmCLOofcxyL322Ls9yQV1YOK9sWYpUuxE",

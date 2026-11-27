@@ -1,8 +1,8 @@
 ---
-title: "L'IA avait supprimé 80 % des problèmes. Elle avait confié les autres aux survivants."
+title: "Une entreprise économise douze postes grâce à l'IA. Son principal client aimerait parler à quelqu'un."
 hero_image: "/images/num-ia-service-client-v3.webp"
 image_alt: "Centre d’appels presque désert, bureau avec téléphone, casque, tasse et veste sur une chaise."
-summary: "Chez ServiPlus, prestataire de relation client, l'intelligence artificielle a fait disparaître les demandes simples et les postes jugés inutiles. Tout va bien, sauf pour les clients qui ont un problème, les salariés chargés de le résoudre et la directrice qui doit présenter ce succès devant son principal donneur d'ordre."
+summary: "Sophie Touclic, directrice des opérations d'un prestataire de relation client, a invité deux cents dirigeants à découvrir les performances de son assistant virtuel. Philippe Narcisso, patron de son principal client, devait témoigner. Il avait aussi une facture de 46 000 euros à faire annuler."
 cycle: "numerique-telecom"
 conversation: "C4"
 contexte: "C4-U1"
@@ -15,142 +15,153 @@ genre_narratif: "chronique"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-11-10T11:00:00+01:00"
-source_document_url: "https://docs.google.com/document/d/1sAOsLD-C5gETL4dioMMU42t1Aex-fCSiuPH1_by6ERQ/edit"
-source_document_version: "V4"
+source_document_url: "https://docs.google.com/document/d/15pWJlH0lKrJkEscSQS-aMVye2h3CiNFW6uL_UyYJ2jo/edit"
+source_document_version: "V2.0"
 autorisation_publication: "preproduction_uniquement"
-source_notice: "Fiction satirique. Entreprise, personnages et chiffres imaginaires."
-methodology_specific: "CMD-NAF-16 — V4 visa éditorial et documentaire favorable, longueur 6288 caractères ; classification Numérique C4-U1, Opérations & organisation."
+source_notice: "Les entreprises, les personnages, les dialogues et les données chiffrées sont fictifs."
+methodology_specific: "Sophie Touclic / Nadia Burnoute, Lola Genzed V2.0 définitive figée le 27 novembre 2026. Source exclusive https://docs.google.com/document/d/15pWJlH0lKrJkEscSQS-aMVye2h3CiNFW6uL_UyYJ2jo/edit ; PV https://docs.google.com/document/d/1770eZbLu8vVoEN9IEoiVmFV-AAdEOti78uA7aAIBqR0/edit ; passation https://docs.google.com/document/d/1u7R06pJmMbUjwaNTdzIiOsuf7yJNvthC12y_bSsfMFQ/edit. Transformation B ; AR01 / SD17 / D12 internes. Avis littéraire simulé 94/100, conformité commande 5/5, D1 favorable sous réserves, D2 favorable sous hypothèses, singularité favorable sur périmètre comparé. Matrice 144 : 117 C, 13 PC, 0 NC, 5 NV, 9 NA. 8 795 caractères (73 paragraphes complets joints par un saut simple hors retour final), 5 intertitres, 11 répliques, aucune dérogation. 80 % conversations closes sans conseiller, abandons compris ; 90 % objectif ; 12 postes annoncés, pas nécessairement licenciements ; 46 000 euros facture erronée, pas marge. Rentabilité globale non établie, coûts complets et obligations à vérifier. Entreprises non nommées. Visuel historique conservé sous réserve d'inspection visuelle ; description compatible avec la thématique. GO technique utilisateur pour préproduction exclusivement ; aucun bon à publier. Lecture externe et rapport de visa historique non disponibles."
 tag_1: "Numérique et télécoms"
 tag_2: "Intelligence artificielle"
 tag_3: "Service client"
+signature_auteur: "Lola Genzed"
+validation_document_url: "https://docs.google.com/document/d/1770eZbLu8vVoEN9IEoiVmFV-AAdEOti78uA7aAIBqR0/edit"
+updated_date: "2026-11-27"
+seo:
+  image_alt: "Centre d’appels presque désert, bureau avec téléphone, casque, tasse et veste sur une chaise."
 ---
 
-## Le bonheur avait un pourcentage
+Sophie Touclic m'avait expliqué, quelques jours avant sa conférence, que son entreprise arrivait désormais à traiter 80 % des demandes de ses clients sans intervention humaine.
 
-Sophie Martin, directrice des opérations, avait enfin modernisé ServiPlus. Son assistant virtuel traitait 80 % des demandes sans intervention humaine.
+Stéphane Areac, son directeur informatique, lui avait préparé un graphique avec une grosse flèche verte. Jules Rapia, le directeur administratif et financier, avait préféré une photo du service client. Il y avait beaucoup de bureaux vides.
 
-Le directeur informatique parlait d'« expérience client augmentée ». Le directeur financier préférait « douze postes économisés ». Sophie avait retenu les deux pour sa conférence : « Réconcilier technologie et humanité ».
+Douze postes économisés au service client, m'a-t-il précisé.
 
-Nadia, responsable du service client, avait une objection.
+Nadia Burnoute, la responsable du service client, leur a demandé s'ils comptaient montrer des photos des bureaux où il restait du personnel.
 
-« Les conseillers n'ont plus que des dossiers impossibles. »
+Sophie lui a proposé d'en prendre.
 
-« C'est excellent. Ils montent en compétence. »
+— Attendez au moins qu'ils aient fini de bouffer.
 
-« Hier, l'un d'eux a pleuré devant une facture. »
+Il était quinze heures.
 
-« Vous voyez. Il s'implique. »
+## Les conseillers regrettaient les gens qui avaient oublié leur mot de passe
 
-## Les clients avaient été simplifiés
+Avant l'arrivée de l'assistant virtuel, les conseillers de Nadia alternaient problèmes de connexion et litiges. La machine avait récupéré la plupart des demandes simples.
 
-Avant, les conseillers alternaient mots de passe oubliés et litiges. Désormais, ils ne recevaient que les clients que l'IA n'avait pas réussi à décourager.
+— De temps en temps, on avait quelqu'un qui voulait juste changer son mot de passe. Ça nous faisait du bien.
 
-Une dame voulait annuler un prélèvement effectué après son décès administratif. Un commerçant payait pour trois boutiques, dont deux imaginaires. Un retraité cherchait un compte que l'assistant avait fermé en lui souhaitant une excellente continuation.
+Elle m'a montré des dossiers anonymisés. Une dame contestait un prélèvement alors qu'elle était déclarée morte par erreur. Un commerçant payait pour trois boutiques alors qu'il n'en avait qu'une. Un retraité cherchait un compte que l'assistant avait fermé en lui souhaitant une excellente continuation.
 
-Chaque transfert arrivait avec un résumé : « Le client semble contrarié. » Sans cette précision, les conseillers auraient pris les hurlements pour une manifestation de joie.
+L'IA joignait un résumé à chaque dossier transféré. Un conseiller venait de lire que son interlocuteur semblait contrarié.
 
-Les appels duraient trois fois plus longtemps. Les dossiers s'empilaient. Le taux d'automatisation, lui, progressait.
+Le client était en train de hurler dans son casque.
 
-Sophie demanda comment était mesurée la satisfaction.
+Les appels duraient trois fois plus longtemps. Il fallait parfois deux ou trois services pour régler un problème. Faute de nouvelles, les clients rappelaient.
 
-« L'assistant interroge le client à la fin de l'échange », expliqua l'intégrateur.
+Stéphane avait bien prévu de mesurer leur satisfaction. À la fin de l'échange, l'assistant leur demandait si leur demande avait été résolue.
 
-« Et s'il répond non ? »
+Nadia lui a demandé ce qui se passait quand ils répondaient non.
 
-« Il lui demande s'il est certain. »
+— Il leur demande s'ils en sont certains.
 
-## Un client particulièrement stratégique
+J'ai demandé comment ils comptaient les clients qui avaient abandonné. Les 80 % de Stéphane, c'étaient les conversations terminées sans conseiller. Même si le client avait quitté la discussion de lui-même.
 
-À quinze jours de la conférence, ServiPlus devait renouveler son contrat avec les établissements Grandval, son principal donneur d'ordre. Leur directeur, Philippe Grandval, avait accepté de témoigner des bienfaits de l'IA.
+Pour savoir combien de problèmes avaient été réglés, il faudrait rappeler les gens. Jules n'avait pas économisé douze postes pour qu'on se remette à appeler les clients.
 
-Puis son entreprise reçut une facture de 46 000 euros pour une prestation jamais commandée.
+## Philippe avait un problème de quarante-six mille euros
 
-Philippe appela. L'IA lui expliqua ce qu'était une facture. Il demanda son annulation. Elle proposa de la télécharger. Il réclama un conseiller. Elle le félicita pour son intérêt envers les services numériques.
+À quinze jours de la conférence, le prestataire négociait le renouvellement de son principal contrat. Philippe Narcisso, le dirigeant de l'entreprise cliente, avait accepté de témoigner sur scène.
 
-Après six échanges, un conseiller récupéra trois références contradictoires et une note : « Client potentiellement sensible ».
+C'est à cette période que son entreprise a reçu une facture de 46 000 euros pour une prestation qu'elle n'avait jamais commandée.
 
-« Potentiellement ? » demanda Philippe.
+Philippe avait demandé l'annulation de la facture. L'assistant lui avait proposé de la télécharger. Après six échanges, un conseiller avait reçu trois références contradictoires et la mention « Client potentiellement sensible ».
 
-Le conseiller préféra ne pas se prononcer.
+— Potentiellement ?
 
-Nadia alerta Sophie : il fallait réunir la comptabilité, le service contrats et l'équipe client. Or personne n'avait la responsabilité de coordonner le dossier.
+Philippe était surtout vexé de devoir se présenter à chaque fois. Il avait donné son nom à un conseiller en lui précisant qu'il pouvait aller voir sur Internet.
 
-« Traitez-le en priorité », ordonna Sophie.
+Le conseiller lui avait demandé son numéro de client. Philippe lui a rappelé qu'il était leur plus gros client. Le conseiller lui a redemandé son numéro.
 
-« Avec quels moyens ? »
+Il fallait vérifier la facture avec la comptabilité et l'absence de commande avec le service contrats. Aucun interlocuteur n'était chargé de coordonner le dossier.
 
-« Ceux que nous avons optimisés. »
+Sophie a demandé de traiter le dossier en priorité. Nadia en avait déjà plusieurs. Ses conseillers ne savaient plus dans quel ordre traiter les urgences.
 
-## La démonstration
+— Ben, celui de Philippe, d'abord.
 
-Le jour de la conférence, Sophie monta sur scène devant deux cents dirigeants. Derrière elle brillait : « 80 % DE DEMANDES TRAITÉES SANS HUMAIN ».
+Nadia est retournée dans son service avec un nouveau classement des mêmes dossiers.
 
-« Notre IA ne laisse aucun client sans réponse. »
+## Sophie avait invité Philippe à venir parler de son expérience client
 
-Philippe Grandval leva la main.
+Le jour de la conférence, Philippe était au premier rang. Sophie a présenté les douze postes économisés. Derrière elle, les 80 % occupaient presque tout l'écran.
 
-« C'est vrai. Elle m'en a donné quatorze. Aucune ne répondait à ma question. »
+Elle a assuré à la salle que son assistant ne laissait aucun client sans réponse.
 
-Sophie sourit comme une femme découvrant l'utilité des sorties de secours.
+Philippe a levé la main.
 
-Le directeur informatique proposa une démonstration en direct.
+— Ça, c'est vrai. J'en ai eu quatorze. Y en a pas une qui répond à ma question.
 
-« Comment résoudre une facturation erronée ? »
+Sophie l'a remercié pour son retour d'expérience. Elle lui a proposé de régler ça autour d'un café après la conférence.
 
-L'écran répondit : « Je comprends votre frustration. Avez-vous consulté notre foire aux questions ? »
+Philippe lui a rappelé qu'elle l'avait invité à témoigner devant deux cents dirigeants. Il comptait bien profiter des deux cents.
 
-« Voilà exactement ce qu'elle me dit depuis onze jours », précisa Philippe.
+J'avais prévu de prendre quelques notes et de repartir avant le déjeuner. J'ai désactivé le mode économie d'énergie de mon téléphone.
 
-La salle applaudit. Plusieurs participants pensaient assister à un spectacle d'humour artificiel.
+J'ai demandé à Sophie si elle ne préférait pas régler ça en direct. En vrai, j'espérais surtout que ça ne marche pas.
 
-Sophie comprit qu'elle risquait de perdre son principal contrat devant deux cents témoins.
+Stéphane a lancé la démonstration. Comment annuler une facture erronée ? Après un message très chaleureux, l'assistant l'a renvoyé vers les questions fréquentes.
 
-## Le problème avait enfin un propriétaire
+Philippe s'est penché vers son micro.
 
-Le lendemain, l'intégrateur proposa une mise à jour : 90 % d'automatisation.
+— Voilà. Ça fait onze jours.
 
-« Et les 10 % restants ? » demanda Nadia.
+Les gens ont rigolé. Sophie a également rigolé, avec un peu de retard. Elle a demandé à Stéphane de passer à la diapositive suivante. C'était celle où figuraient les avantages de l'outil en matière de fidélisation.
 
-« Les cas les plus complexes. »
+J'ai envoyé un message à la rédaction pour leur dire que j'avais probablement de quoi faire un très bon article. Philippe avait l'air furieux. J'étais ravie.
 
-« Magnifique. Nous allons supprimer les derniers dossiers faciles pour laisser les catastrophes aux trois conseillers qui n'ont pas démissionné. »
+## Il restait encore des demandes faciles à supprimer
 
-Le directeur financier rappela qu'embaucher annulerait les économies promises.
+Le lendemain, le prestataire informatique a proposé une mise à jour qui permettrait, selon lui, de porter le taux d'automatisation à 90 %.
 
-Nadia posa le dossier Grandval sur la table. Il tenait désormais dans deux classeurs.
+Nadia lui a demandé quels seraient les dix pour cent de dossiers confiés à ses équipes.
 
-« Nous avons économisé douze postes. Nous avons failli perdre notre principal client. Et personne ne sait combien coûtent les dossiers qui tournent en rond. »
+Les plus complexes, bien sûr.
 
-Sophie fit comparer trois options : automatiser davantage, revenir largement au traitement humain ou réorganiser les transferts. Les chiffres révélèrent surtout que les reprises successives absorbaient une bonne partie des économies. Automatiser davantage risquait d'aggraver le problème ; revenir en arrière coûtait trop cher. Réorganiser les transferts exigeait des moyens, mais pouvait réduire les délais sans abandonner l'outil.
+— Ah super. On va enlever les derniers trucs faciles aux trois personnes qui ont pas encore démissionné.
 
-Elle choisit cette troisième voie.
+Jules avait construit son budget sur les économies promises. Pas question de retrouver les effectifs d'avant. Nadia lui a demandé combien leur coûtait le traitement de la facture de Philippe, tous services confondus.
 
-Les dossiers sensibles seraient orientés plus tôt vers les conseillers, avec les pièces et l'historique utiles. Une équipe spécialisée pourrait solliciter directement les autres services. Les effectifs seraient ajustés à la charge réelle, et non au nombre de conversations fermées par la machine.
+Nadia avait apporté deux classeurs. Jules y a découvert des mails entre deux services qui s'étaient renvoyé le dossier pendant trois jours. Aucun ne pouvait annuler seul la facture. Leurs heures ne figuraient pas dans son bilan des économies du service client.
 
-« Notre taux d'automatisation risque de baisser », avertit l'intégrateur.
+Sophie a demandé à Jules et Nadia de comparer trois possibilités.
 
-« Je prends le risque que nos clients soient servis. »
+Automatiser davantage réduirait le nombre de demandes humaines mais concentrerait les dossiers les plus lourds sur les conseillers. Revenir à l'ancienne organisation permettrait de mieux répartir les appels, mais augmenterait les coûts de personnel.
 
-## Une victoire moins spectaculaire
+Restait à garder l'assistant pour les cas simples et à revoir les transferts. Selon les premières estimations de Jules, les reprises absorbaient une bonne partie des économies. Il fallait comparer le coût de cette réorganisation au risque de perdre la marge sur le contrat de Philippe. Le bilan restait à établir.
 
-Deux mois plus tard, les dossiers complexes avançaient mieux. Les conseillers passaient moins de temps à reconstituer les conversations de l'IA. Grandval avait renouvelé son contrat après régularisation de sa facture.
+Nadia a proposé une équipe spécialisée : un interlocuteur par dossier complexe, habilité à solliciter directement les autres services jusqu'à la résolution. Dès le transfert, il disposerait des pièces utiles. Les clients en difficulté seraient orientés plus tôt vers les conseillers.
 
-Le taux d'automatisation avait légèrement reculé.
+Sophie a retenu cette solution. Elle ajusterait les effectifs à la charge réelle, reprises et rappels compris. Elle voulait compter les problèmes réglés, pas les conversations terminées.
 
-« Faut-il vraiment l'afficher ? » demanda le directeur informatique.
+Stéphane l'a prévenue que sa grosse flèche risquait de changer de sens. Il lui a demandé s'il pouvait au moins garder le vert.
 
-« Oui. Sauf si notre objectif est d'éviter les clients. »
+— Tant pis.
 
-Sophie annonça une nouvelle conférence : « Remettre l'humain au cœur de la transformation numérique ».
+## Ils avaient réussi à me gâcher mon article
 
-Nadia demanda si les conseillers pourraient y assister.
+Deux mois plus tard, les conseillers recevaient plus tôt les dossiers sensibles, avec davantage de pièces utiles. Les dossiers avançaient mieux. Le taux d'automatisation avait légèrement baissé. Je suis retournée voir Nadia.
 
-« Naturellement. »
+Jules n'avait pas encore le bilan financier complet. Sophie suivait désormais les délais de résolution, les dossiers rouverts et les coûts de tous les services concernés.
 
-« Sur leur temps de travail ? »
+J'ai demandé à Nadia où ils en étaient avec Philippe.
 
-Sophie hésita.
+— Il a renouvelé son contrat.
 
-Elle proposa de demander à l'IA.
+— Ah merde.
 
-Fiction satirique. Entreprise, personnages et chiffres imaginaires.
+Elle m'a regardée. J'ai prétendu avoir mal compris.
+
+Sa facture avait été régularisée. Sophie avait même pu lui donner le nom de la personne à contacter en cas de nouveau litige.
+
+J'ai appelé Philippe pour lui demander comment ça se passait avec son prestataire. Il m'a répondu qu'il était satisfait.
+
+Je lui ai demandé s'il en était bien certain.

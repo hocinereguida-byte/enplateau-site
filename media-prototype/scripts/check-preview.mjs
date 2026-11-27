@@ -352,6 +352,31 @@ for(const [route,author] of [["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"
  if(!/name="robots"\s+content="noindex,nofollow"/.test(html)||/CMD-NAF-12|AR08|SD07|D10|118 C, 12 PC/.test(story))errors.push('Sandrine Chill : indexation ou métadonnées internes visibles.');
 }
 
+// Sophie Touclic V2.0 : texte, distribution, signature et classement.
+{
+ const slug='numerique-telecom/cmd-naf-16',href='/media/articles/'+slug+'/',html=read('media/articles/'+slug+'/index.html');
+ const source=fs.readFileSync(path.resolve('../content/articles/'+slug+'.md'),'utf8');
+ const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
+ const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
+ const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+ const story=html.match(/<article\b[^>]*data-article-id="numerique-telecom\/cmd-naf-16"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const rendered=[...story.matchAll(/<(p|h2)\b[^>]*>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':'')+decode(m[2].replace(/<[^>]*>/g,'')));
+ const expected=front[2].trim().split(/\n\n/);
+ const full=[field('title'),field('summary'),field('signature_auteur'),'Fiction satirique · Raisons et déraisons',...expected.map(x=>x.replace(/^## /,'')),field('source_notice')];
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||full.length!==73||full.join('\n').length!==8795||expected.filter(x=>x.startsWith('## ')).length!==5||expected.filter(x=>x.startsWith('— ')).length!==11||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==11||expected.at(-1)!=="Je lui ai demandé s'il en était bien certain.")errors.push('Sophie Touclic V2.0 : texte ou structure non concordants.');
+ const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'',lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
+ const signature=html.match(/<section\b[^>]*aria-label="Signature de l’auteur"[^>]*>([\s\S]*?)<\/section>/)?.[1]??'';
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!signature.includes('<h2>Lola Genzed</h2>')||!signature.includes('href="/media/auteurs/lola-genzed/"')||field('source_document_version')!=='V2.0'||field('signature_auteur')!=='Lola Genzed'||!html.includes(field('hero_image'))||!decode(html).includes(field('image_alt')))errors.push('Sophie Touclic V2.0 : titre, chapô, signature, notice ou visuel non conformes.');
+ for(const name of ['Sophie Touclic','Nadia Burnoute','Philippe Narcisso','Stéphane Areac','Jules Rapia'])if(!decode(story).includes(name))errors.push('Sophie Touclic V2.0 : personnage manquant '+name);
+ for(const page of ['media/publications/index.html','media/cycles/numerique-telecom/index.html','media/cycles/numerique-telecom/conversations/C4/index.html','media/scenes/index.html','media/lectures/operations-organisation/index.html','media/auteurs/lola-genzed/index.html'])if(!read(page).includes(href))errors.push('Sophie Touclic : navigation incorrecte '+page);
+ for(const page of ['media/index.html','media/publications/index.html','media/cycles/numerique-telecom/index.html','media/cycles/numerique-telecom/conversations/C4/index.html','media/scenes/index.html','media/lectures/operations-organisation/index.html','media/auteurs/lola-genzed/index.html']){
+  const pageHtml=decode(read(page));if(pageHtml.includes("L'IA avait supprimé 80 % des problèmes. Elle avait confié les autres aux survivants."))errors.push('Sophie Touclic : ancien titre V4 encore présent '+page);
+ }
+ if(/ServiPlus|Grandval/i.test(decode(html)))errors.push('Sophie Touclic : ancienne dénomination dans la page article');
+ for(const page of ['media/index.html','media/publications/index.html','media/cycles/numerique-telecom/index.html','media/cycles/numerique-telecom/conversations/C4/index.html','media/scenes/index.html','media/lectures/operations-organisation/index.html','media/auteurs/lola-genzed/index.html'])if(/ServiPlus|Grandval/i.test(decode(read(page))))errors.push('Sophie Touclic : ancienne dénomination '+page);
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html)||/CMD-NAF-16|AR01|SD17|D12|117 C, 13 PC/.test(story))errors.push('Sophie Touclic : indexation ou métadonnées internes visibles.');
+}
+
 // Fiches d'auteurs : bijection entre les articles effectivement rendus et leurs listes.
 {
  const byAuthor=new Map();
