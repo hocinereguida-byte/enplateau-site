@@ -2,12 +2,11 @@
 import { getCollection } from 'astro:content';
 import { isPublic, validClassification, urlOf, conversations, publicationInstant, cycleCatalogue, cycleFamilies, publicFamilyLabel, publicConversationContextLabels, publicPerspectives, publicPerspectiveLabel, publicGenreLabel, perspectiveOf, publicCycleLabel } from '../../lib/editorial';
 import { articleStyle } from '../../lib/article-style';
+import { selectHomeArticles, homeRevision } from '../../lib/home-selection.mjs';
 import MediaFooter from '../../components/MediaFooter.astro';
 import MediaHeader from '../../components/MediaHeader.astro';
 const articles=(await getCollection('articles')).filter(a=>isPublic(a.data)&&validClassification(a.data)).sort((a,b)=>(publicationInstant(b.data.publication_date)?.getTime()??0)-(publicationInstant(a.data.publication_date)?.getTime()??0));
-const ordered=[...articles].sort((a,b)=>({une:0,secondaire:1,standard:2}[a.data.mise_en_avant||'standard']??2)-({une:0,secondaire:1,standard:2}[b.data.mise_en_avant||'standard']??2));
-const featured=ordered[0];
-const latest=articles.filter(a=>a.id!==featured?.id).slice(0,6);
+const {featured,latest}=selectHomeArticles(articles);
 const groups=Object.entries(conversations).flatMap(([cycle,entries])=>Object.entries(entries).map(([code,title])=>{
  const matching=articles.filter(a=>a.data.cycle===cycle&&a.data.conversation===code);
  return {cycle,code,title,count:matching.length,contextLabels:publicConversationContextLabels(cycle,matching),updated:matching.length ? (publicationInstant(matching[0].data.publication_date)?.getTime()??0) : 0,url:'/media/cycles/'+cycle+'/conversations/'+code+'/'};
@@ -21,6 +20,7 @@ const cycleLabel=publicCycleLabel;
 <html lang="fr"><head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/>
 <meta name="sda-preproduction-revision" content="terrains-arbitrage-v10-20261112"/>
+<meta name="sda-home-selection" content={homeRevision}/>
 <title>Scènes d’Arbitrage — Les décisions qui font l’économie</title>
 <meta name="description" content="La fiction pour explorer. L’analyse pour comprendre. Découvrez les arbitrages économiques à travers Raisons et déraisons, Les interrogatoires et Le fond du problème."/>
 <style is:inline set:html={articleStyle}/></head>
@@ -35,7 +35,7 @@ const cycleLabel=publicCycleLabel;
 <section class="sda-v5-hero" aria-label="Sélection de la rédaction">
 <div class="sda-v5-feature"><p class="sda-v5-label">À LA UNE · SÉLECTION ÉDITORIALE</p>
 {featured ? <>
-<h2><a href={urlOf(featured.id)}>{featured.data.title}</a></h2>
+<h2><a data-home-selection="featured" href={urlOf(featured.id)}>{featured.data.title}</a></h2>
 {featured.data.summary&&<p>{featured.data.summary}</p>}
 <a class="sda-v5-link sda-v5-dark-cta" href={urlOf(featured.id)}>Découvrir l’article <span aria-hidden="true">↗</span></a>
 </> : <>
@@ -54,9 +54,9 @@ const cycleLabel=publicCycleLabel;
 </>}
 </aside></section>
 <section class="sda-v5-section" aria-labelledby="home-latest">
-<div class="sda-v5-section-head"><div><p class="sda-v5-label">LES PUBLICATIONS DISPONIBLES</p><h2 id="home-latest">Des lectures pour commencer</h2></div><a class="sda-v5-link" href="/media/publications/">Toutes les publications <span aria-hidden="true">↗</span></a></div>
+<div class="sda-v5-section-head"><div><p class="sda-v5-label">SÉLECTION DE LA RÉDACTION</p><h2 id="home-latest">Des lectures pour commencer</h2></div><a class="sda-v5-link" href="/media/publications/">Toutes les publications <span aria-hidden="true">↗</span></a></div>
 {latest.length ? <div class="sda-v5-articles">{latest.map(a=><article class="sda-v5-article-card">
-<p class="sda-v5-label">{genreLabel(a)}</p><h3><a href={urlOf(a.id)}>{a.data.title}</a></h3>
+<p class="sda-v5-label">{genreLabel(a)}</p><h3><a data-home-selection="latest" href={urlOf(a.id)}>{a.data.title}</a></h3>
 {a.data.summary&&<p>{a.data.summary}</p>}
 <div class="sda-v5-card-footer"><span>{perspectiveLabel(a)||cycleLabel(a.data.cycle)}</span><a href={urlOf(a.id)}>Lire ↗</a></div>
 </article>)}</div> : <p>Les premières publications apparaîtront ici dès leur mise en ligne.</p>}
