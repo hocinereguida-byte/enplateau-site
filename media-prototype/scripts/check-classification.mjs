@@ -32,7 +32,7 @@ const records = [
   "immobilier/imm-c1-rc-04-karim.md|IMM-C1-RC-04|immobilier|V1.3|droit-regulation|IMM-C1-RC||territoire-reconversion|entretien|grand-entretien|1cqzdHlJtcaKzj7SiSgbsuDhKEmPGLr8iBdNOIcSdbiE",
   "immobilier/imm-c1-rc-05-caserne.md|IMM-C1-RC-05|immobilier|V6.5|territoires-politiques-publiques|IMM-C1-RC||territoire-reconversion|chronique|chronique|1Q_o_ugtXNoL--Z9zTFKdyNi6G03eylvh8DVZSMTYgLI",
   "immobilier/imm-c1-rc-regard-01.md|IMM-C1-RC-REGARD-01|immobilier|V2.4||IMM-C1-RC||territoire-reconversion|regard-croise||1R1L4TWX5XasFxNfIh0yLAHuNKchMEy5Sh39_g0EDOjo",
-  "agriculture/agr-c1-a02-chronique-vergers.md|AGR-C1-A02|agriculture|V4.5|strategie-gouvernance|AGR-C1-A|engagement-productif-longue-duree|arboriculture-sous-revue-strategique|chronique|chronique|1l75XgAOrlllaRdH_BRrv-xtV2w0WDsPQ_cT628wJsSw",
+  "agriculture/agr-c1-a02-chronique-vergers.md|AGR-C1-A02|agriculture|V2.3|strategie-gouvernance|AGR-C1-A|engagement-productif-longue-duree|arboriculture-sous-revue-strategique|chronique|chronique|1Nw62IijZs-rUCqlCqCpcXCz-4AbbKL7LSzwBcQ943yE",
   "agriculture/agr-c1-b01-maraichage.md|AGR-C1-B01|agriculture|V3|strategie-gouvernance|AGR-C1-B|debouches-variables|maraichage-debouches-concurrents|entretien|grand-entretien|1NRJHKCKFijkOKC4KDpYtbTFI4RdxB9fNpUbzi6vFdpg",
   "agriculture/agr-c1-b04-cereales.md|AGR-C1-B04|agriculture|V2|finance-investissement|AGR-C1-B|debouches-variables|cereales-recolte-excedentaire|chronique|chronique|1pJuYG60CbJjXpdoc-zViUmkwDyxXw-kUhlEcKKzwTKY"
 ].map(line => {
