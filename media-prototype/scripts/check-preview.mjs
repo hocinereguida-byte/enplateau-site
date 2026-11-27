@@ -306,6 +306,29 @@ for(const [route,author] of [["industrie/ind-c1-cst-05-brouillon","Winnie Bouba"
  if(!/name="robots"\s+content="noindex,nofollow"/.test(html)||/EAU-C1-U1-STR-01|AR04|SD17|D12|121 C, 10 PC/.test(story))errors.push('Gérard Messie : indexation ou métadonnées internes visibles.');
 }
 
+// Claire Pleinpot V2.0 : texte, distribution, signature et classement.
+{
+ const slug='commerce/com-c3-u2-fin-01-chronique',href='/media/articles/'+slug+'/',html=read('media/articles/'+slug+'/index.html');
+ const source=fs.readFileSync(path.resolve('../content/articles/'+slug+'.md'),'utf8');
+ const front=source.match(/^---\n([\s\S]*?)\n---\n\n([\s\S]*)$/);
+ const field=k=>JSON.parse(front[1].split('\n').find(l=>l.startsWith(k+': ')).slice(k.length+2));
+ const decode=s=>s.replace(/&#(x[0-9a-f]+|\d+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+ const story=html.match(/<article\b[^>]*data-article-id="commerce\/com-c3-u2-fin-01-chronique"[^>]*>([\s\S]*?)<\/article>/i)?.[1]??'';
+ const rendered=[...story.matchAll(/<(p|h2)\b[^>]*>([\s\S]*?)<\/\1>/g)].map(m=>(m[1]==='h2'?'## ':'')+decode(m[2].replace(/<[^>]*>/g,'')));
+ const expected=front[2].trim().split(/\n\n/);
+ const full=[field('title'),field('summary'),field('signature_auteur'),'Fiction satirique · Raisons et déraisons',...expected.map(x=>x.replace(/^## /,'')),field('source_notice')];
+ if(JSON.stringify(rendered)!==JSON.stringify(expected)||full.length!==94||full.join('\n').length!==8714||expected.filter(x=>x.startsWith('## ')).length!==5||expected.filter(x=>x.startsWith('— ')).length!==17||(story.match(/class="fiction-dialogue-turn"/g)||[]).length!==17||expected.at(-1)!=="Je lui ai conseillé d'attendre mon prochain article.")errors.push('Claire Pleinpot V2.0 : texte ou structure non concordants.');
+ const h1=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]??'',lead=html.match(/<p class="lead">([\s\S]*?)<\/p>/)?.[1]??'';
+ const signature=html.match(/<section\b[^>]*aria-label="Signature de l’auteur"[^>]*>([\s\S]*?)<\/section>/)?.[1]??'';
+ if(decode(h1)!==field('title')||decode(lead)!==field('summary')||!decode(html).includes(field('source_notice'))||!html.includes('Fiction satirique · Raisons et déraisons')||!signature.includes('<h2>Lola Genzed</h2>')||!signature.includes('href="/media/auteurs/lola-genzed/"')||field('source_document_version')!=='V2.0'||field('signature_auteur')!=='Lola Genzed'||front[1].split('\n').some(l=>l.startsWith('hero_image: ')))errors.push('Claire Pleinpot V2.0 : titre, chapô, signature, notice ou visuel non conformes.');
+ for(const name of ['Claire Pleinpot','Léa Démarque','Alain Liquid','Jessica Bonplan'])if(!decode(story).includes(name))errors.push('Claire Pleinpot V2.0 : personnage manquant '+name);
+ for(const page of ['media/publications/index.html','media/cycles/commerce/index.html','media/cycles/commerce/conversations/C3/index.html','media/scenes/index.html','media/lectures/finance-investissement/index.html','media/auteurs/lola-genzed/index.html'])if(!read(page).includes(href))errors.push('Claire Pleinpot : navigation incorrecte '+page);
+ for(const page of ['media/index.html','media/publications/index.html','media/cycles/commerce/index.html','media/cycles/commerce/conversations/C3/index.html','media/scenes/index.html','media/lectures/finance-investissement/index.html','media/auteurs/lola-genzed/index.html']){
+  const pageHtml=decode(read(page));if(pageHtml.includes("Elle avait réussi sa saison. Il ne lui restait plus qu'à vendre ce qu'elle n'avait pas vendu."))errors.push('Claire Pleinpot : ancien titre V5 encore présent '+page);
+ }
+ if(!/name="robots"\s+content="noindex,nofollow"/.test(html)||/COM-C3-U2-FIN-01|AR01|SD04|D04|119 C, 13 PC/.test(story))errors.push('Claire Pleinpot : indexation ou métadonnées internes visibles.');
+}
+
 // Fiches d'auteurs : bijection entre les articles effectivement rendus et leurs listes.
 {
  const byAuthor=new Map();

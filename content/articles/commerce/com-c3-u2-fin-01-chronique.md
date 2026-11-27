@@ -1,6 +1,6 @@
 ---
-title: "Elle avait réussi sa saison. Il ne lui restait plus qu'à vendre ce qu'elle n'avait pas vendu."
-summary: "Dans une boutique de vêtements, les ventes ont augmenté, les clientes sont contentes et la patronne se félicite de sa réussite. Un seul problème : les vêtements qui n'ont pas trouvé preneur remplissent désormais la réserve. Et pour acheter la nouvelle collection, il va falloir commencer par se débarrasser de l'ancienne."
+title: "Une commerçante réussit à fidéliser ses clientes. Elles attendent désormais qu'elle baisse ses prix."
+summary: "Dans une boutique de vêtements à Angers, les ventes de l'été ont progressé de 12 %. Claire Pleinpot, la patronne, doit pourtant trouver de l'argent pour acheter sa nouvelle collection. Lola Genzed est allée voir ce qu'il restait de l'ancienne."
 format: "chronique"
 genre_narratif: "chronique"
 cycle: "commerce"
@@ -14,204 +14,195 @@ statut_editorial: "prepublication"
 published: true
 publication_date: "2026-11-09T13:00:00+01:00"
 mise_en_avant: "standard"
-source_document_version: "V5"
-source_document_url: "https://docs.google.com/document/d/1e8bOjaqJdv60CtoGuO6KQRhHb0lrPHIXAgdR8ska5jY/edit"
-source_notice: "Fiction économique satirique : personnages, entreprise et chiffres imaginaires."
-methodology_specific: "Version V5, 6 304 caractères selon fichier source. Visa éditorial, juridique et de programmation déclaré acquis pour l'angle Commerce C3-U2 Finance & investissement ; consultation préproduction uniquement. Contrôler la conformité des promotions au cadre légal avant diffusion effective."
+source_document_version: "V2.0"
+source_document_url: "https://docs.google.com/document/d/1LLRhaXRMJkNlqslr4V-2tsWevWA4zyyukufG7izuyek/edit"
+source_notice: "Les personnages, l'entreprise, les dialogues et les données chiffrées sont fictifs."
+methodology_specific: "Claire Pleinpot, Lola Genzed V2.0 définitive figée le 27 novembre 2026. Source exclusive https://docs.google.com/document/d/1LLRhaXRMJkNlqslr4V-2tsWevWA4zyyukufG7izuyek/edit ; PV https://docs.google.com/document/d/1kPRAsFCvSyKI6HSYfehPcqSSxpgepDlDBUG_PCm2WFM/edit ; passation https://docs.google.com/document/d/1ak6QPZtOybZNELQg132usyWp06Ga0L5WIdz4J5oZDsU/edit. AR01 / SD04 / D04 internes. Avis littéraire simulé 94/100, conformité commande favorable, D1 favorable, D2 favorable sous hypothèses documentées, singularité favorable sur périmètre ciblé. Matrice 144 : 119 C, 13 PC, 0 NC, 7 NV, 5 NA. 8 714 caractères (94 paragraphes complets joints par un saut simple hors retour final), 5 intertitres, 17 répliques, aucune dérogation. Aucun visuel. GO technique utilisateur pour préproduction exclusivement ; aucun bon à publier. Hypothèses comptables et réglementaires, tests lecteurs externes, comparaison non exhaustive et recette visuelle restent ouverts."
 autorisation_publication: "preproduction_uniquement"
 tag_1: "Invendus"
 tag_2: "Promotions"
 tag_3: "Trésorerie"
 tag_4: "Prix de référence"
 tag_5: "Marge commerciale"
+signature_auteur: "Lola Genzed"
+validation_document_url: "https://docs.google.com/document/d/1kPRAsFCvSyKI6HSYfehPcqSSxpgepDlDBUG_PCm2WFM/edit"
+updated_date: "2026-11-27"
 ---
 
-## Une excellente saison, à quelques cartons près
+Claire Pleinpot, propriétaire d'une boutique de prêt-à-porter, tenait absolument à me montrer sa réserve. Léa Démarque, sa vendeuse, lui a demandé de patienter le temps de dégager l'accès aux toilettes.
 
-À la fin de l'été, Claire était une commerçante heureuse.
+Apparemment, la saison avait été excellente.
 
-Sa boutique avait vendu 12 % de plus que l'année précédente. Son comptable avait même prononcé le mot « remarquable ». Claire avait envisagé de l'encadrer.
+Claire m'a montré sur son ordinateur le chiffre d'affaires de l'été, en hausse de 12 % par rapport à l'année précédente. Elle avait même fait une capture d'écran pour l'envoyer à son mari.
 
-Il restait bien quelques vêtements invendus.
+Dans la réserve, il y avait des cartons de chemisiers, de pantalons et surtout de robes jaunes. Léa avait collé sur certains cartons des étiquettes indiquant ce qu'ils contenaient. Sur les derniers, elle avait juste écrit « jaune ».
 
-Quelques centaines, pour être précis.
+Claire m'a sorti une robe. Elle m'a expliqué qu'elle avait beaucoup plu.
 
-Robes, chemisiers, pantalons : la réserve débordait jusque devant les toilettes.
+— Vous en avez vendu combien ?
 
-« C'est une bonne chose, expliquait Claire. Nous avons du choix.
+— Non, mais regardez le tissu.
 
-— Surtout dans les robes jaunes, répondit Léa, sa salariée.
+J'ai regardé le tissu.
 
-— Elles sont magnifiques.
+## Les robes avaient trouvé leur public. Il manquait les achats.
 
-— C'est ce que disent toutes les clientes avant de ne pas les acheter. »
+Jessica Bonplan, une cliente régulière, est entrée pendant notre discussion. Claire lui a présenté la robe qu'elle tenait encore à la main.
 
-Claire ne s'inquiétait pas. L'été prochain reviendrait. Les robes jaunes aussi.
+— Oh, je l'adore, celle-là !
 
-En attendant, les clientes demandaient des manteaux.
+Léa m'a expliqué que Jessica l'avait essayée trois fois depuis juin. À chaque fois, elle l'avait adorée. À chaque fois, elle était repartie sans.
 
-## Les robes avaient conservé leur prix. Pas leur succès.
+Claire m'a dit que Jessica était une cliente très fidèle. J'ai demandé à Léa si elle achetait souvent des vêtements. Elle m'a répondu que Jessica passait souvent.
 
-Claire avait acheté ses robes 40 euros pièce, hors taxes. Elle comptait les vendre 95 euros, toutes taxes comprises.
+Nuance.
 
-Léa suggéra de baisser les prix.
+Claire avait acheté ces robes quarante euros pièce hors taxes, livraison comprise. Elle les proposait à quatre-vingt-quinze euros TTC. Léa pensait les écouler à quarante-neuf.
 
-« À 49 euros, on pourrait peut-être les écouler.
+— Mais elles valent quatre-vingt-quinze euros !
 
-— Mais elles valent 95 euros !
+Jessica a demandé si elle pouvait déjà en réserver une à quarante-neuf.
 
-— Les clientes ne semblent pas au courant.
+Claire lui a rappelé qu'elles étaient à quatre-vingt-quinze.
 
-— On ne peut pas brader des vêtements de qualité simplement parce que personne n'en veut. »
+— C'est pour vous éviter de garder du stock, Claire.
 
-Claire avait un principe : ce qui ne se vendait pas aujourd'hui se vendrait demain.
+Jessica a proposé de revenir quand elle pourrait lui rendre service.
 
-Son comptable trouvait ce raisonnement plus adapté aux conserves qu'à la mode.
+Claire comptait garder les robes jusqu'au printemps. Elle m'a montré au passage les baskets qu'elle portait, payées moitié prix sur Internet après deux mois d'attente.
 
-Elle décida donc de conserver les vêtements jusqu'au printemps suivant.
+— Je suis pas folle, hein. À cent vingt balles, je les prenais pas.
 
-Léa demanda où.
+J'ai regardé les robes.
 
-Claire lui conseilla de voir les contraintes comme des opportunités.
+Léa lui a proposé de stocker une partie des cartons chez elle.
 
-Léa proposa d'installer les opportunités dans le garage de Claire.
+Claire a dit qu'elle n'avait pas la place.
 
-La discussion s'arrêta là.
+Ça faisait trois semaines que Léa enjambait les robes pour aller pisser.
 
-Dix-huit mille euros de vêtements, et pas de quoi en acheter d'autres
+## Il lui manquait trois mille euros. Elle en avait dix-huit mille en robes et pantalons.
 
-Quelques jours plus tard, Claire reçut une bonne et une mauvaise nouvelle.
+Quelques jours plus tard, Alain Liquid, l'expert-comptable de la boutique, est venu faire le point. Claire devait verser douze mille euros, TVA comprise, sous dix jours pour confirmer la livraison d'automne.
 
-Le comptable confirma la hausse des ventes. Mais son fournisseur exigeait 12 000 euros sous dix jours pour confirmer une collection réservée plusieurs mois plus tôt.
+Il restait neuf mille euros sur son compte. Elle avait aussi des factures à payer.
 
-Claire consulta son compte bancaire.
+Claire avait dix-huit mille euros de marchandises en réserve, à leur coût d'achat hors TVA, pas au prix auquel elle espérait les vendre.
 
-Il restait 9 000 euros.
+— Vous êtes en train de me dire que je n'ai pas d'argent alors que je vous montre dix-huit mille euros ?
 
-« Il manque donc 3 000 euros, constata son comptable. Et vous avez encore d'autres factures à régler.
+— Je vois bien les marchandises, Claire.
 
-— Impossible. J'ai encore 18 000 euros de marchandises dans la réserve.
+— Donc ?
 
-— Justement.
+— Votre fournisseur veut un virement.
 
-— Vous voulez dire que je suis riche ?
+Claire a refermé la porte de la réserve. Elle avait l'air assez vexée que toute cette richesse ne soit pas acceptée par la banque.
 
-— Je veux dire que vous avez beaucoup de vêtements. »
+Alain lui a expliqué que les vêtements invendus avaient absorbé une partie du pognon qu'elle avait encaissé. Pour acheter des manteaux, il fallait soit faire rentrer de l'argent, soit revoir la commande, soit trouver un financement.
 
-Claire insista : ces articles avaient forcément une valeur.
+Elle lui a montré sa capture d'écran des douze pour cent.
 
-« Bien sûr, répondit le comptable. Mais vous ne pouvez pas régler votre fournisseur avec des robes jaunes.
+Il l'avait déjà vue. C'était lui qui lui avait envoyé les chiffres.
 
-— Vous lui avez demandé ? »
+J'ai demandé à Claire si elle avait prévu un budget pour l'opération de déstockage dont parlait Léa.
 
-Il se doutait de la réponse.
+— Quelle opération de déstockage ?
 
-Claire proposa d'attendre les prochaines ventes.
+Ah. Pardon.
 
-« Lesquelles ? »
+## Claire allait devoir choisir combien elle voulait gagner
 
-Elle évoqua les robes jaunes.
+Alain a pris une étiquette. Sur les quatre-vingt-quinze euros payés par une cliente, il en restait un peu plus de soixante-dix-neuf hors TVA. Moins les quarante euros d'achat : près de trente-neuf euros de marge commerciale, avant le loyer, les salaires et le reste.
 
-Le comptable ferma son dossier.
+À quarante-neuf euros, il lui resterait quatre-vingt-trois centimes.
 
-Pour gagner de l'argent, il allait falloir accepter d'en gagner moins
+J'ai demandé si c'était par robe.
 
-Claire avait trois possibilités.
+— Oui.
 
-Elle pouvait attendre l'année suivante, mais devrait emprunter ou réduire sa nouvelle commande.
+J'avoue que j'aurais préféré une erreur de virgule.
 
-Elle pouvait presque tout brader et récupérer de l'argent, mais gagner très peu sur chaque vente.
+Claire a demandé à Alain comment elle était censée vivre avec quatre-vingt-trois centimes.
 
-Ou trier : conserver les articles prometteurs et réduire le prix des autres.
+Il lui a demandé combien lui avait rapporté la robe qu'elle tenait à la main depuis dix minutes.
 
-Claire choisit cette dernière solution.
+Elle l'a reposée.
 
-« Donc je vais vendre des vêtements en gagnant presque rien dessus ?
+Claire pouvait garder son stock, négocier un délai ou chercher un crédit, quitte à réduire la nouvelle commande. Rien ne garantissait qu'elle vendrait les robes l'année suivante.
 
-— Sur certains, oui.
+Elle pouvait brader presque toute la collection d'été : du pognon rapidement si les clientes suivaient, mais moins de marge, même sur les articles encore demandés.
 
-— Et c'est une bonne décision ?
+Léa voulait trier : maintenir les prix des articles qui se vendaient encore et réduire ceux des invendus difficiles à écouler, sans passer sous leur coût d'achat effectif. Elle avait aussi un intérêt dans l'affaire.
 
-— C'est peut-être moins mauvais que de les garder indéfiniment. »
+— Mon salaire d'octobre, vous allez me le payer en robes jaunes ?
 
-Claire réfléchit.
+Claire a accepté.
 
-Tout l'été, ses robes valaient 95 euros. Désormais, elle devait vanter leur prix réduit.
+Elle a quand même demandé à Léa si elle comptait mettre toutes les robes jaunes en promotion.
 
-Elle confia l'affiche à Léa. Les prix de référence, inchangés depuis plus d'un mois, étaient réels.
+Léa lui a demandé lesquelles elle souhaitait conserver.
 
-« On pourrait écrire : Enfin au prix que vous attendiez.
+Claire en a choisi une. La sienne.
 
-— Certainement pas. »
+## Les clientes avaient changé d'avis sur le jaune
 
-Elles retinrent : « Offre exceptionnelle de fin de saison ».
+Léa a préparé les étiquettes : chaque prix barré correspondait au prix le plus bas pratiqué sur l'article au cours des trente jours précédents. Pour les robes jaunes, c'était bien quatre-vingt-quinze euros.
 
-C'était plus élégant.
+Claire voulait une communication positive. Elle a proposé « Des prix irrésistibles ».
 
-## Le succès fut immédiat. Ce qui était assez vexant.
+Léa a rappelé que les clientes avaient plutôt bien résisté aux prix précédents.
 
-L'opération commença un jeudi de septembre.
+Elles ont retenu « Offre exceptionnelle de fin de saison ».
 
-Dès le lendemain, les clientes affluèrent.
+Le jeudi suivant, Jessica est revenue. Elle a pris deux robes jaunes, dont une pour sa sœur, et un pantalon.
 
-Des clientes jusque-là indifférentes aux robes jaunes en achetèrent trois. L'une demanda si elles existaient en bleu.
+Claire était ravie. Elle lui a demandé ce qui l'avait finalement décidée.
 
-« Vous les trouvez jolies, maintenant ? demanda Claire.
+— Le prix.
 
-— À ce prix-là, oui. »
+Claire a voulu lui parler du tissu.
 
-En quelques jours, la boutique encaissa 6 500 euros de ventes supplémentaires, sur plusieurs modèles proposés à prix réduit.
+Jessica connaissait le tissu. Elle l'avait essayé trois fois.
 
-Après l'acompte, son compte affichait 3 500 euros, avant factures et TVA à reverser. Sa livraison était sauvée, pas sa trésorerie.
+J'ai demandé si les réductions s'appliquaient aussi aux journalistes. Léa m'a dit qu'elles s'appliquaient à tout le monde.
 
-Elle était soulagée.
+Je suis repartie avec un chemisier dont j'avais absolument pas besoin. J'avais bien compris le problème de Claire. J'allais pas le résoudre avec mon salaire.
 
-Jusqu'à ce que son comptable lui rappelle que vendre beaucoup n'était pas nécessairement gagner beaucoup.
+Claire m'a remerciée de soutenir les petits commerces.
 
-Les réductions avaient rogné ses gains. Sur certaines robes, il ne restait presque rien après le prix d'achat, avant même le loyer et les salaires.
+C'était la première fois qu'on me félicitait d'avoir dépensé moins d'argent que prévu.
 
-« Mais l'opération a été un immense succès !
+En quelques jours, les réductions sur différents modèles ont rapporté six mille cinq cents euros d'encaissements supplémentaires, TVA comprise. L'argent est arrivé sur le compte avant l'échéance. Claire a versé les douze mille euros au fournisseur. Il restait trois mille cinq cents euros, avant les autres factures et la TVA nette due.
 
-— Pour les clientes, incontestablement. »
+Elle a envoyé une nouvelle capture d'écran à Alain. Il lui a rappelé que les six mille cinq cents euros n'étaient pas du bénéfice : il y avait la TVA et le coût des vêtements.
 
-Claire demanda si cette précision devait absolument figurer dans le bilan.
+Claire avait sauvé sa livraison. Elle n'avait pas sauvé toutes ses marges.
 
-## Une collection pleine d'avenir
+## Claire avait enfin trouvé ce que ses clientes voulaient
 
-La nouvelle collection arriva à temps.
+La nouvelle collection est arrivée. Léa a retrouvé l'accès aux toilettes. Claire voulait désormais commander moins et écouter davantage ses clientes.
 
-Les cartons ne bloquaient plus les toilettes. Léa retrouvait son bureau.
+Jessica est entrée, a essayé un manteau et demandé son prix.
 
-Claire annonça qu'elle avait tiré les leçons de cette expérience.
+— Cent vingt euros, lui a dit Claire.
 
-Désormais, elle commanderait moins et écouterait davantage ses clientes.
+Jessica l'a adoré.
 
-« C'est une excellente idée », approuva Léa.
+Elle a demandé à Léa si elle pouvait lui envoyer un message dès qu'il passerait en promotion.
 
-Claire fit installer une grande affiche dans la vitrine :
+Claire lui a expliqué qu'elle comptait justement faire moins de promotions. Jessica a répondu qu'elle pouvait attendre : elle avait encore son manteau de l'année dernière.
 
-« Notre opération exceptionnelle a dépassé toutes nos attentes ! »
+En vrai, je la comprenais. Depuis que j'avais acheté mon chemisier, j'avais moi aussi pris l'habitude de regarder les stories de la boutique pour voir si Claire avait de nouveaux problèmes de trésorerie.
 
-Une cliente entra.
+Le lendemain, Claire a demandé à Léa de mettre quelques manteaux de côté pour une opération réservée aux clientes fidèles.
 
-« C'était formidable, vos réductions. Vous recommencez quand ?
+— On les a reçus avant-hier, Claire.
 
-— J'espère bien que non.
+— Oui, mais les clientes nous demandent des promotions.
 
-— Ah bon ? Pourquoi ?
+Léa lui a demandé si elle voulait toujours commander moins d'invendus ou si elle préférait en prévoir.
 
-— Parce que cette fois, j'aimerais vendre mes vêtements quand ils sont encore à leur prix normal. »
+J'ai reçu un message de Jessica en rentrant à Paris. Elle m'a demandé si je savais à combien allaient passer les manteaux.
 
-La cliente repartit, déçue.
-
-Le lendemain, Claire demanda à Léa de mettre quelques articles de côté pour les prochaines promotions.
-
-« Mais vous aviez dit qu'on ne voulait plus d'invendus !
-
-— Je sais. Seulement, maintenant, les clientes les réclament. »
-
-Léa regarda les nouveaux cartons qui venaient d'arriver.
-
-Elle se demanda combien de temps il faudrait avant qu'ils deviennent, eux aussi, une excellente affaire.
-
-Fiction économique satirique. Personnages, entreprise et chiffres imaginaires.
+Je lui ai conseillé d'attendre mon prochain article.
