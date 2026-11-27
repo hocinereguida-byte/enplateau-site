@@ -11,7 +11,7 @@ const records = [
   "culture-medias/cmd-naf-15.md|CMD-NAF-15|culture-medias|V4|finance-investissement|CUL-C5-U1||C5-U1|entretien|grand-entretien|1HZjxYjPIU9k88h1q_q91y4vMNmcM-nGi5dhB_CorjA8",
   "action-publique/cmd-naf-14.md|CMD-NAF-14|action-publique|V4|droit-regulation|ACT-C7-U1||C7-U1|chronique|chronique|1hBoIuH0EpzdCKn_Ux3W-qs3Uw2n-bP9_r1I3WjQP8N0",
   "emploi-travail/cmd-naf-13.md|CMD-NAF-13|emploi-travail|V3|finance-investissement|EMP-C4-U1||C4-U1|entretien|grand-entretien|1iQP_5UgcqYPgvJGRqm1Fv3g_8qjPDp7P3acXx9NLMBk",
-  "education-formation/cmd-naf-12.md|CMD-NAF-12|education-formation|V2|strategie-gouvernance|EDU-C5-U1||C5-U1|chronique|chronique|1U14DYMFbtU6fsxRM9yH-ua3cTejt2bytyLURV13sO5Q",
+  "education-formation/cmd-naf-12.md|CMD-NAF-12|education-formation|V2.1|strategie-gouvernance|EDU-C5-U1||C5-U1|chronique|chronique|1WCeKO93VF3PmCLOofcxyL322Ls9yQV1YOK9sWYpUuxE",
   "social-medicosocial/cmd-naf-11.md|CMD-NAF-11|social-medicosocial|V finale|strategie-gouvernance|SOC-C2-U1||C2-U1|entretien|grand-entretien|1udVIsrOm1Eb3GQLBZykGxG3D6NSokOoUcemFoexxMpA",
   "sante/cmd-naf-10.md|CMD-NAF-10|sante|V3|operations-organisation|SAN-C5-U1||C5-U1|chronique|chronique|1eQATanyDutSrlncbRZSRyCpdZ-vVdE3yEXgWl1RS1J4",
   "internationalisation/cmd-naf-09.md|CMD-NAF-09|internationalisation|V2|operations-organisation|INT-C3-U1||C3-U1|entretien|grand-entretien|1PRUVU3cZGNBA190yus-wKqVOs01xjJQIUYSl9n-mcDw",
