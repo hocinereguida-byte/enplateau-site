@@ -1,187 +1,174 @@
 ---
-title: "Il avait fait la meilleure récolte de sa vie. Son comptable lui a conseillé de ne pas recommencer."
-summary: "Gérard obtient une récolte record de maïs grain. Encore faut-il pouvoir stocker, vendre et financer ce succès inattendu : une comédie familiale sur les écarts entre rendement et revenu."
+title: "Un agriculteur fait une récolte exceptionnelle. Sa fille lui demande de ne pas sortir le champagne."
+summary: "Sur ses 48 hectares de maïs, Stéphane Bledur s'attend à battre tous ses records. Le centre de collecte est déjà plein et ses enfants cherchent où livrer le reste. Thierry Chmonfils est allé féliciter Stéphane. Il avait même apporté le champagne. Lui, au moins, il avait prévu le coup."
 cycle: "agriculture"
 conversation: "C1"
 contexte: "cereales-recolte-excedentaire"
-lecture_principale: "finance-investissement"
+lecture_principale: "operations-organisation"
 format: "chronique"
 genre_narratif: "chronique"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-11-06T12:00:00+01:00"
 mise_en_avant: "standard"
-source_notice: "Chronique satirique fictive. Personnages, événements et chiffres inventés."
-source_document_version: "V2"
-source_document_url: "https://docs.google.com/document/d/1pJuYG60CbJjXpdoc-zViUmkwDyxXw-kUhlEcKKzwTKY/edit"
-methodology_specific: "Version V2 du manuscrit Drive. Préproduction uniquement, visa de publication publique non délivré."
+source_notice: "Les personnages, l'exploitation, les dialogues, les situations et les données chiffrées sont fictifs."
+source_document_version: "V2.1"
+source_document_url: "https://docs.google.com/document/d/1erRRTWdAG3qJ2cFD43XZOgAbC5EyzCLjT4JIx-46SSQ/edit"
+methodology_specific: "Stéphane Bledur / Thierry Chmonfils V2.1 définitive B7, méthode B. Source Drive verrouillée ; PV https://docs.google.com/document/d/1xfhNQuoAut4I-2gJak2ZpSrYbITgmCvmk_RbkeWi6Gw/edit ; passation https://docs.google.com/document/d/1XJn91QGRTJfiQLZkH_vkOn4fEGbclyggqcwUZUtK5wI/edit. 8972 caractères, 77 paragraphes, 5 intertitres. Visa littéraire simulé 94/100 maintenu ; D1 réserve rédactionnelle levée, D1/D2 favorables sous hypothèses, singularité ciblée ; 144 critères : 122 C, 13 PC, 4 NV, 5 NA, 0 NC. AR10/SD04/D08 internes ; perspective opérations et organisation validée au B4. 48 ha, volumes projetés, frais fictifs, 6,5 t équivalence brute, aucun seuil net ni bénéfice démontré. GO technique préproduction uniquement ; aucun bon à publier."
 code_editorial: "AGR-C1-B04"
 tag_1: "Céréales"
 tag_2: "Rendement"
 tag_3: "Stockage"
 tag_4: "Prix de vente"
-perspective_principale: "finance-investissement"
+perspective_principale: "operations-organisation"
 unite_programmation: "AGR-C1-B"
 famille_decisionnelle: "debouches-variables"
 autorisation_publication: "preproduction_uniquement"
+signature_auteur: "Thierry Chmonfils"
+validation_document_url: "https://docs.google.com/document/d/1xfhNQuoAut4I-2gJak2ZpSrYbITgmCvmk_RbkeWi6Gw/edit"
+updated_date: "2026-11-28"
 ---
 
-*Texte de consultation en préproduction — publication publique non autorisée.*
+Stéphane Bledur m'attendait devant sa moissonneuse, dans une plaine du Sud-Ouest. Il m'a sorti son téléphone avant même de me serrer la main.
 
-Gérard, 59 ans, agriculteur, venait de réaliser la meilleure récolte de ses trente-cinq années de carrière.
+— Regarde-moi ça !
 
-Sur ses 48 hectares de maïs, les rendements dépassaient toutes les prévisions.
+C'était une photo de l'écran de sa machine. Il avait même pris la peine de l'agrandir pour que je voie bien le chiffre.
 
-La moissonneuse affichait des chiffres magnifiques.
+— Douze tonnes à l'hectare !
 
-Gérard avait photographié son écran pour immortaliser ce moment historique.
+— Mabrouk, mon ami ! Et vous aviez prévu combien ?
 
-Il ignorait encore qu'il venait de prendre en photo le début de ses ennuis.
+— Neuf.
 
-« C'est exceptionnel ! annonça-t-il à sa famille.
-— Et tu vas gagner combien ? demanda sa fille Élise.
-— Je viens de te dire que c'est exceptionnel.
-— Oui, mais combien ?
-— Tu pourrais au moins être contente. »
+Je lui ai demandé de remonter dans sa machine. Je voulais le prendre en photo avec son record. Il a remis sa casquette, a descendu deux marches et m'a demandé de la reprendre. On voyait pas assez la moissonneuse.
 
-Élise était effectivement contente.
+Sa fille Manon, qui s'occupe de la gestion de l'exploitation, est arrivée avec un carnet. Elle avait pas du tout la tête d'une femme dont le père venait de battre un record.
 
-Elle aurait simplement préféré savoir si son père était devenu plus riche ou s'il possédait désormais davantage de maïs.
+— Mais alors, pourquoi vous faites cette tête ?
 
-La nuance allait rapidement prendre une importance considérable.
+— Parce qu'on avait prévu d'en livrer neuf.
 
-Une récolte trop abondante pour être rentable
+J'ai regardé Stéphane. Il a secoué la tête. On venait de lui gâcher la photo.
 
-Le problème était simple : Gérard avait produit plus de maïs que prévu.
+## Son fils avait commencé à chercher des problèmes
 
-Malheureusement, les installations de collecte et de séchage n'avaient pas été informées de cet exploit.
+Ça faisait trente-cinq ans que Stéphane cultivait la terre. Il avait hâte de montrer son record à son père, qui lui parlait encore du sien. Et là, pour une fois que la nature lui faisait un cadeau, sa fille lui demandait de ne pas sortir le champagne.
 
-Elles continuaient de fonctionner avec leurs capacités habituelles, manifestant un manque évident d'esprit d'équipe.
+Maxime, son fils, qui organise les travaux agricoles, était au téléphone. Stéphane lui a fait signe de venir sur la photo. Il lui a répondu qu'il cherchait un camion.
 
-Le maïs récolté était encore humide. Il fallait le sécher dans des conditions adaptées avant de pouvoir le conserver et le commercialiser.
+Manon m'a expliqué qu'ils avaient prévu 432 tonnes de maïs sur les 48 hectares. Des tonnes ramenées à 15 % d'humidité, pour pouvoir comparer les rendements et calculer ce qu'ils allaient vendre. Si les parcelles restantes donnaient autant que les premières, ils allaient en avoir 576.
 
-Les créneaux disponibles étaient insuffisants pour absorber immédiatement tous les volumes.
+— Cent quarante-quatre tonnes de plus ! ai-je dit à Stéphane.
 
-Une partie du maïs était encore sur pied. Elle pouvait éventuellement attendre, mais pas indéfiniment : la météo n'avait signé aucun engagement.
+Il m'a tapé dans la main. Maxime, qui venait de raccrocher, nous a demandé de baisser d'un ton. On l'avait enfin rappelé.
 
-Gérard appela Alain, son interlocuteur à la collecte.
+Je ne savais pas que le maïs que je voyais sortir de la moissonneuse pesait plus lourd que le maïs qu'on allait payer à Stéphane. C'est Manon qui me l'a expliqué. À la récolte, le grain contient encore pas mal d'eau. Il faut le sécher pour le conserver. L'eau qu'on lui retire, personne ne vous l'achète.
 
-« J'ai une récolte record !
-— Félicitations.
-— Je peux vous livrer davantage ?
-— Pas sur les créneaux déjà réservés.
-— Mais c'est une récolte exceptionnelle !
-— Je comprends.
-— Vous ne pourriez pas faire une exception ?
-— À la capacité du séchoir ? »
+Avec les créneaux qu'ils avaient réservés, ils pouvaient livrer environ 500 tonnes de grain humide sur la période. Si le reste sortait autour de 26 % d'humidité, ils en auraient de l'ordre de 660 à acheminer.
 
-Gérard raccrocha.
+— Ah oui, mais vous avez de la place dans vos hangars, non ?
 
-Pour la première fois, il regrettait que son maïs n'ait pas consulté le planning avant de pousser.
+Maxime m'a expliqué qu'on pouvait pas entreposer comme ça du maïs humide en attendant que quelqu'un se manifeste. Ça chauffe, ça peut moisir. Ils n'avaient pas d'installation adaptée pour le conserver dans cet état.
 
-Le maïs refusait de participer à l'effort collectif
+## Arthur Recelle n'était pas très content pour lui
 
-La famille se réunit autour de la table.
+Stéphane a appelé Arthur Recelle, son interlocuteur au centre de collecte. Il a mis le haut-parleur. J'avais la chance d'assister à l'annonce d'une bonne nouvelle à quelqu'un qui n'était pas de la famille.
 
-Thomas, le fils de Gérard, proposa de rechercher d'autres capacités de séchage et de collecte.
+— Arthur, tu peux pas me rajouter un créneau ?
 
-Élise demanda les coûts de transport, les tarifs de séchage, les conditions commerciales et les quantités réellement vendables après prise en compte de l'humidité.
+— Je suis complet, Stéphane.
 
-Gérard trouva cette manière de célébrer une récolte particulièrement déprimante.
+— C'est la meilleure récolte de ma vie !
 
-« On dirait que vous cherchez à me prouver que j'aurais mieux fait de ne rien cultiver !
-— Non, papa. On cherche à savoir combien te rapporte ce que tu as cultivé.
-— C'est pareil ! »
+— T'es le quatrième à me le dire ce matin.
 
-Son épouse Marianne intervint.
+Stéphane m'a regardé. J'ai eu de la peine pour lui. Le mec avait attendu trente-cinq ans pour battre son record et il avait même pas réussi à être le premier de la journée à l'annoncer à Arthur.
 
-« Gérard, tu as passé six mois à espérer qu'il pousse bien.
-— Exactement !
-— Maintenant qu'il a poussé, tu pourrais peut-être accepter qu'on regarde comment le vendre. »
+Arthur lui a confirmé les créneaux déjà prévus. Il pouvait le rappeler si une place se libérait, mais il ne voulait pas lui promettre une livraison supplémentaire. Il avait des camions qui arrivaient, des fosses de réception à vider et un séchoir qui tournait déjà à plein régime.
 
-Gérard contempla son tableau de rendement.
+— Tu peux pas le faire tourner la nuit ?
 
-Il aurait aimé que les chiffres suffisent.
+— Il tourne la nuit.
 
-Mais la moissonneuse ne connaissait ni les frais de séchage, ni les kilomètres supplémentaires, ni les conditions de vente.
+— Même le dimanche ?
 
-Elle était visiblement programmée pour annoncer de bonnes nouvelles, pas pour les financer.
+— Stéphane, je t'ai dit qu'il tournait.
 
-Un conseiller suggéra d'optimiser les débouchés.
+## On avait pourtant sorti les beaux verres
 
-Gérard demanda si cela signifiait vendre le maïs.
+Nathalie, l'épouse de Stéphane, avait préparé à manger. J'avais apporté une bouteille de champagne. Elle m'a dit que ça tombait bien, son mari en parlait depuis le matin.
 
-« Pas seulement. Il faut raisonner en création de valeur nette.
-— Donc vendre le maïs en gagnant de l'argent ?
-— Vous simplifiez beaucoup. »
+Manon est arrivée avec ses feuilles et a déplacé les verres. Stéphane lui a demandé si elle pouvait pas attendre demain pour nous annoncer combien ça coûtait.
 
-La famille prit une décision scandaleuse : faire des calculs
+— Le camion part demain, papa.
 
-Élise établit un tableau par lot.
+Je comprenais Stéphane. Quand mes enfants font les comptes de mes bonnes nouvelles, je préfère que ce soit le lendemain. Moi, j'ai dit qu'on pouvait au moins boire un coup.
 
-Pour chacun : quantité, humidité, créneau disponible, coût de séchage, transport éventuel et recette nette estimée.
+Manon m'a demandé si j'avais un séchoir.
 
-Le résultat fut moins spectaculaire que l'écran de la moissonneuse.
+J'en avais pas. Mais j'avais apporté une bouteille.
 
-Un premier lot pouvait être acheminé et séché à un coût supplémentaire acceptable.
+Maxime avait trouvé un autre acheteur, à une soixantaine de kilomètres de la ferme. Il pouvait prendre trois camions de 24 tonnes, à condition qu'ils confirment rapidement. Le prix proposé pour le grain sec était le même que chez Arthur : 190 euros la tonne, sous réserve de conformité du lot.
 
-Pour certaines parcelles encore sur pied, attendre un créneau pouvait être envisageable, à condition de surveiller la météo et l'état de la culture.
+Le maïs de la parcelle qu'ils envisageaient de récolter était à 28 % d'humidité. Sur les 72 tonnes qu'on chargerait, Manon comptait environ 61 tonnes payées à 15 %.
 
-Pour un autre lot, il fallait obtenir une proposition commerciale suffisamment précise avant d'engager de nouveaux frais.
+— Ah ouais, onze tonnes de flotte !
 
-Gérard découvrit qu'une tonne supplémentaire n'était pas automatiquement une tonne de bénéfice supplémentaire.
+Stéphane m'a expliqué que ces onze tonnes de flotte, il fallait quand même payer quelqu'un pour les transporter.
 
-« Donc plus je récolte, plus je dois réfléchir ?
-— Oui, répondit Élise.
-— C'est tout de même une drôle de récompense. »
+Chez Arthur, les conditions pour ce lot revenaient à 24 euros de séchage et 8 euros de transport par tonne humide. L'autre acheteur proposait 30 euros de séchage et le transporteur demandait 19 euros.
 
-Il avait lui-même commis une erreur : il avait préparé les semis, les travaux et la récolte avec une grande rigueur, mais sans prévoir suffisamment de solutions de repli si les volumes dépassaient fortement les prévisions.
+— Dix-sept euros de plus ! a dit Stéphane.
 
-Il avait pensé à la possibilité d'une mauvaise récolte.
+— Par tonne, papa.
 
-Pas à celle d'une récolte tellement bonne qu'il faudrait négocier avec elle.
+Ah, Manon ! Elle vous laissait même pas le temps d'être déçu d'un petit montant.
 
-La famille valida les premières livraisons, demanda des devis pour les solutions alternatives et conserva des options pour les parcelles encore sur pied.
+Pour les trois camions, 1 224 euros de frais en plus. Grain vendu, séchage et transport déduits, il resterait environ 8 060 euros. Chez Arthur, aux conditions du jour : 9 280 euros. Sauf qu'Arthur n'avait pas de place supplémentaire.
 
-Aucun miracle : les solutions rapides pouvaient coûter davantage, les solutions moins coûteuses exposaient à d'autres risques.
+— Donc il gagne huit mille euros ?
 
-Le résultat final de la campagne restait incertain.
+— Non, Thierry. Il reste les semences, l'engrais, l'irrigation, le matériel…
 
-Une innovation révolutionnaire : ne pas confondre quantité et argent
+J'ai évité de lui parler de mes revenus. Elle allait m'annoncer que j'étais pauvre.
 
-Quelques jours plus tard, Gérard retrouva son père André devant la moissonneuse.
+## Il fallait choisir quel maïs laisser tranquille
 
-Il lui montra fièrement la photographie du rendement record.
+Stéphane voulait attendre qu'Arthur ait de la place. Tant qu'une partie du maïs était sur pied, il n'avait pas besoin de la transporter ni de la stocker. Et si les grains perdaient un peu d'humidité au champ, il économiserait même sur le séchage.
 
-André observa l'écran.
+Maxime était d'accord pour certaines parcelles. Pas pour celle des trois camions. Les tiges commençaient à fatiguer et du vent était annoncé. Sur d'autres terres, ils craignaient surtout que la pluie empêche les engins de rentrer.
 
-« Magnifique. Et ça t'a rapporté combien ?
-— On est encore en train de calculer.
-— Ah. »
+— Si on attend, a dit Manon, six tonnes et demie de grain vendable, ça représente à peu près les 1 224 euros. Après, faut voir ce qu'on économise en séchage et transport, et ce qu'on risque sur la qualité. Je sais pas ce qu'on va perdre, justement.
 
-Il réfléchit.
+Stéphane a regardé Maxime. Il lui a demandé s'il pensait vraiment que la parcelle pouvait verser. Maxime lui a proposé d'aller la voir ensemble après le repas.
 
-« Donc tu as acheté une machine qui sait te dire combien tu as récolté, mais pas combien tu as gagné ?
-— C'est une moissonneuse, papa.
-— Je vois. Elle est optimiste. Comme toi. »
+Nathalie leur a demandé de se mettre d'accord avant de repartir. Elle avait déjà réchauffé le plat deux fois. Maxime lui a expliqué qu'il attendait une confirmation de l'acheteur.
 
-Gérard décida qu'à la prochaine campagne, il préparerait également un plan pour les récoltes exceptionnelles.
+— Eh ben appelle-le. Lui aussi, il a le droit de manger chaud.
 
-Il envisagea même de demander à son fournisseur de matériel une fonction permettant d'afficher les coûts et les recettes estimées à côté des rendements.
+Stéphane a finalement confirmé les livraisons réservées chez Arthur. Il a donné son accord pour les trois camions chez l'autre acheteur, après réception des conditions écrites et des créneaux. Le reste, de l'ordre de 90 tonnes humides si leurs prévisions se confirmaient, resterait sur pied pour le moment. Maxime ferait le tour des parcelles tous les jours et demanderait d'autres devis. Si la météo ou l'état des plantes changeait, ils reverraient la décision.
 
-Le commercial lui répondit qu'une telle option pourrait être développée.
+Stéphane m'a avoué qu'il avait toujours prévu ce qu'il ferait si sa récolte était mauvaise. Pour une récolte exceptionnelle, il avait seulement prévu ce qu'il ferait avec l'argent.
 
-Elle nécessiterait toutefois un abonnement supplémentaire.
+## Michel voulait voir la photo
 
-« Combien ?
-— Cela dépend de la formule choisie.
-— Et ça va me rapporter combien ?
-— Nous ne pouvons pas vous le garantir. »
+Quelques jours plus tard, les trois camions étaient partis. Une partie du maïs restait à récolter et Manon n'avait toujours pas de résultat définitif. Stéphane avait fait venir son père Michel, 82 ans, qui avait travaillé ces terres avant lui.
 
-Gérard raccrocha.
+Michel m'a demandé si son fils avait vraiment fait douze tonnes à l'hectare. J'ai répondu que c'était ce qu'on estimait d'après les premières parcelles. J'étais devenu très prudent depuis que je fréquentais cette famille.
 
-Il venait de trouver une activité économique encore plus imprévisible que l'agriculture.
+Stéphane lui a tendu son téléphone.
 
-Vendre aux agriculteurs des logiciels censés leur apprendre à calculer ce qu'ils gagnent.
+— Regarde, papa.
 
-Fiction économique satirique — Personnages et événements inventés.
+Michel a enlevé ses lunettes, les a essuyées et les a remises.
+
+— Et moi, j'avais fait combien, la dernière année ?
+
+Stéphane s'en souvenait. Onze tonnes et quelques.
+
+Michel a rendu le téléphone à son fils.
+
+— Avec mon matériel de l'époque, hein.
+
+Stéphane a demandé à Manon d'aller chercher le champagne. Cette fois, elle a sorti les verres.
