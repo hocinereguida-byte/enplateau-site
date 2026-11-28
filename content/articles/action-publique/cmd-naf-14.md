@@ -1,8 +1,8 @@
 ---
-title: "Le programme avait atteint 100 % de ses objectifs. Personne ne devait lire le rapport."
+title: "Un ministère annonce que son programme a atteint 100 % de ses objectifs. Il espère que personne ne lira le rapport."
 hero_image: "/images/act-c7-cmd-naf-14-visuel-v3.webp"
 image_alt: "Photographie satirique minimaliste illustrant un programme public et son rapport d’évaluation."
-summary: "Après trois ans et 18 millions d'euros, François Delorme s'apprête à célébrer le succès de son programme national. Tous les indicateurs sont au vert. Mais une association demande à consulter les rapports d'évaluation. Au ministère, on découvre avec effroi que le droit à l'information concerne aussi les informations qu'on préférerait garder pour soi."
+summary: "Après trois ans et 18 millions d'euros, un ministère s'apprête à fêter les résultats d'un programme censé améliorer l'accès aux services publics. Une association a demandé les rapports d'évaluation. Thierry Chmonfils a reçu une invitation officielle. Lui, au moins, avait déjà une bonne raison d'être content."
 cycle: "action-publique"
 conversation: "C7"
 contexte: "C7-U1"
@@ -15,188 +15,185 @@ genre_narratif: "chronique"
 statut_editorial: "prepublication"
 published: true
 publication_date: "2026-11-10T01:00:00+01:00"
-source_document_url: "https://docs.google.com/document/d/1hBoIuH0EpzdCKn_Ux3W-qs3Uw2n-bP9_r1I3WjQP8N0/edit"
-source_document_version: "V4"
+source_document_url: "https://docs.google.com/document/d/1YW5LWEYRs1EC4uwocz_xcnfrgTQGkZzsw5C_Hg4lBK0/edit"
+source_document_version: "V2.0"
 autorisation_publication: "preproduction_uniquement"
-source_notice: "Fiction satirique. Le ministère, les personnages et le programme sont imaginaires."
-methodology_specific: "CMD-NAF-14 — V4 visa documentaire et éditorial favorable pour préproduction."
+source_notice: "Le ministère, les personnages, le programme, les dialogues et les données chiffrées sont fictifs."
+methodology_specific: "Romain Duvent / Thierry Chmonfils V2.0 définitive B7, méthode B. PV https://docs.google.com/document/d/1nTFB37WomGChAi_9SVoSEKKflnr2ypzK-k1Ectf1--g/edit ; passation https://docs.google.com/document/d/14d5ABw7oyVdVxr2FsNlKMN2W1m7q8haYVcPRtOGC4AM/edit. 8952 caractères, 90 paragraphes, 5 intertitres. Visa littéraire simulé 94/100 ; D1/D2 favorables sous hypothèses ; singularité ciblée ; 144 critères : 119 C, 12 PC, 5 NV, 8 NA, 0 NC. AR10/SD10/D12 internes. 100 % objectifs d'activité, effets non établis ; accès aux documents et modification du communiqué distincts. Préproduction uniquement, aucun bon à publier."
 tag_1: "Action publique"
 tag_2: "Transparence"
 tag_3: "Évaluation des politiques publiques"
+signature_auteur: "Thierry Chmonfils"
+validation_document_url: "https://docs.google.com/document/d/1nTFB37WomGChAi_9SVoSEKKflnr2ypzK-k1Ectf1--g/edit"
+updated_date: "2026-11-28"
 ---
 
-## Un succès parfaitement maîtrisé
+À l'entrée du ministère, le monsieur de la sécurité m'a demandé mon nom.
 
-François Delorme contemplait son tableau de bord avec émotion.
+— Thierry Chmonfils, de Scènes d'Arbitrage.
 
-120 collectivités accompagnées. 400 ateliers organisés. 6 000 participations enregistrées. 18 millions d'euros dépensés.
+Il m'a demandé si c'était avec un S.
 
-100 % des objectifs atteints.
+J'ai envoyé une photo de mon badge à ma femme. Elle m'a demandé si je rentrais dîner.
 
-Le ministère de la Cohésion et des Initiatives Utiles préparait une conférence de presse. Le communiqué annonçait une « transformation historique de l'accès aux services publics ».
+Inès Flatte, la chargée de communication, m'a dit que j'étais en avance. Je lui ai répondu que dans ces endroits-là, je prévoyais toujours du temps pour la sécurité.
 
-François avait même commandé une banderole.
+En fait, j'avais peur qu'on me demande de repartir.
 
-C'est alors que son assistante entra.
+Inès m'avait invité pour un reportage sur un programme national destiné à améliorer l'accès aux services publics. La conférence était prévue la semaine suivante. Inès me présentait au directeur du programme, Romain Duvent, lors d'un premier point presse.
 
-« Une association demande les documents d'évaluation du programme. »
+— Monsieur le directeur ! Enchanté !
 
-« Excellente nouvelle ! Envoyez-leur le communiqué. »
+Il m'a dit de l'appeler Romain. Ça m'a fait plaisir. J'ai appelé Benoît Time, mon rédacteur en chef, pour lui dire que j'étais avec Romain.
 
-« Ils demandent aussi les rapports internes. »
+— Romain qui ?
 
-François leva les yeux.
+Ah, Benoît ! Fallait toujours tout lui expliquer.
 
-« Pourquoi ? Ils ne nous croient pas ? »
+## Il y avait même une banderole
 
-## Le droit de savoir, quelle drôle d'idée
+Romain avait de quoi être fier. En trois ans, ses équipes avaient accompagné 120 collectivités, organisé 400 ateliers et enregistré 6 000 participations. Dix-huit millions d'euros avaient été dépensés. Sur son tableau de bord, les objectifs d'activité étaient tous atteints.
 
-Claire Masson, responsable juridique, fut convoquée.
+— Cent pour cent, Thierry !
 
-« Dites-moi que ces documents sont confidentiels. »
+Avec six mille participations, dix-huit millions d'euros et mon invitation, j'avais presque fini mon article. Il me manquait juste les résultats.
 
-« Pas forcément. La loi permet aux citoyens de demander certains documents détenus par l'administration. Il faut vérifier lesquels peuvent être transmis. »
+J'ai demandé à Inès si je pouvais prendre Romain en photo devant le tableau. Elle m'a conseillé d'attendre la conférence. Ils avaient fait imprimer une banderole pour l'occasion.
 
-« Même ceux qui ne nous arrangent pas ? »
+« Une transformation historique de l'accès aux services publics. »
 
-« Le fait qu'un rapport soit embarrassant ne suffit pas à le rendre secret. »
+J'ai demandé s'il y aurait un ministre. Romain m'a répondu que son cabinet n'avait pas encore confirmé. Je lui ai demandé si on pouvait quand même faire la photo maintenant, au cas où il aurait moins de temps pour moi la semaine suivante.
 
-François parut bouleversé.
+C'est à ce moment-là qu'Inès a sorti un mail. Une association d'usagers avait demandé les rapports d'évaluation et les tableaux détaillés sur lesquels reposaient les annonces du ministère.
 
-« Mais alors, à quoi sert notre service communication ? »
+— Ils ont pas reçu le communiqué ? a demandé Romain.
 
-Claire lui expliqua que l'administration pouvait présenter ses résultats sous un jour favorable. Mais cela ne lui donnait pas le droit de refuser l'accès à des documents simplement parce qu'ils racontaient une histoire moins flatteuse.
+— Si.
 
-« Donc les citoyens peuvent demander ce que nous avons réellement fait ? »
+— Et alors ?
 
-« Oui. »
+— Ils demandent sur quoi il repose.
 
-« Sans passer par notre service communication ? »
+Romain a demandé à Inès de retrouver la personne qui avait invité l'association. C'était lui. Il avait tenu à ce que les usagers soient représentés au point presse.
 
-« Oui. »
+## On avait quand même fait six réunions
 
-« Mais qui a autorisé ça ? »
+Nora El Chaab, la présidente de l'association, était arrivée quelques minutes après. Inès l'a installée à côté de moi. Romain a commencé par la remercier de son implication dans le programme.
 
-« Le législateur. »
+— Vous savez ce qui a changé chez nous, Thierry ? m'a demandé Nora.
 
-François demanda s'il était encore en poste.
+— Non, mais on m'a dit que vous aviez fait six réunions.
 
-## Un rapport manifestement hostile
+— Oui. Et pour aller faire nos papiers, on fait toujours vingt kilomètres.
 
-Le premier document examiné était une évaluation interne achevée.
+— Ah. Mais vous avez été consultés.
 
-Elle confirmait les 400 ateliers, mais ne permettait pas de démontrer une amélioration générale de l'accès aux services publics.
+— Sur les vingt kilomètres, Thierry.
 
-Dans une commune, six réunions avaient été consacrées à un problème bien connu : les habitants devaient parcourir vingt kilomètres pour effectuer certaines démarches.
+Elle avait apporté un compte rendu de vingt-sept pages et une carte des villages éloignés des services publics. La carte était très bien faite. Nora connaissait les villages. Elle habitait là.
 
-Après trois ans de programme, ils parcouraient toujours vingt kilomètres.
+Romain lui a rappelé que les équipes avaient aidé de petites communes à identifier des besoins qu'elles n'avaient pas les moyens de traiter seules.
 
-Mais ils disposaient désormais d'un diagnostic partagé, d'une carte des difficultés et d'un compte rendu de vingt-sept pages.
+— Ça, personne le conteste, lui a répondu Nora. Mais c'est pas ce que vous avez écrit dans votre communiqué.
 
-François referma le dossier.
+— Vous avez quand même eu des retours positifs des ateliers ?
 
-« Ce rapport est manifestement à charge. »
+— Sur le fait qu'il fallait faire quelque chose, oui.
 
-« Il a été rédigé par nos propres services », rappela Claire.
+Romain a rappelé qu'ils avaient enregistré 6 000 participations.
 
-« C'est encore plus grave. »
+— Moi, j'ai participé aux six réunions, a dit Nora. Vous m'avez comptée combien de fois ?
 
-Il demanda si l'on pouvait retirer la phrase sur les vingt kilomètres.
+— Six.
 
-« Pas simplement parce qu'elle vous déplaît. »
+— Ben voilà. Ça fait toujours une seule personne qui habite à vingt kilomètres.
 
-« Et si nous écrivions plutôt : “La mobilité des usagers demeure dynamique” ? »
+Inès a posé devant Romain le rapport d'évaluation achevé. Les chiffres d'activité étaient confirmés. Mais les informations recueillies ne permettaient pas d'établir que l'accès aux services s'était généralement amélioré. Romain a parcouru les pages. Il s'est arrêté sur le passage consacré à la commune de Nora.
 
-Claire prit une profonde inspiration.
+— Ils ont pas mis le nombre de réunions dans ce paragraphe ?
 
-## Une confidentialité à géométrie variable
+— Si, Romain. Six.
 
-François décida de reprendre le contrôle.
+## Romain avait trouvé un tiroir
 
-Première idée : apposer la mention « strictement confidentiel ».
+Après le point presse, Inès m'a proposé de rester pour un entretien avec Romain et Sarah Legal, la responsable juridique. Nora était repartie. Elle avait déposé une demande écrite une semaine plus tôt et attendait toujours une réponse.
 
-Claire lui expliqua qu'une étiquette ne suffisait pas à rendre un document secret.
+Romain a demandé à Sarah si le ministère pouvait considérer l'évaluation comme confidentielle.
 
-Deuxième idée : transmettre uniquement les pages positives.
+— Elle est terminée ?
 
-« Certaines informations doivent parfois être masquées pour protéger la vie privée ou d'autres secrets prévus par la loi. Pas pour protéger votre conférence de presse. »
+— Oui.
 
-Troisième idée : répondre que les documents n'existaient plus.
+— Elle ne prépare pas une décision qui est encore en attente ?
 
-« Ils existent. Vous les avez sur votre bureau. »
+— Non, c'est le bilan du programme.
 
-François les rangea immédiatement dans un tiroir.
+Sarah lui a expliqué que, lorsqu'un document administratif était communicable, le ministère devait le transmettre à la personne qui le demandait. Il fallait examiner le contenu, pas seulement regarder ce qui était écrit sur la couverture.
 
-« Et maintenant ? »
+— Mais c'est un document interne !
 
-« Ils existent toujours. »
+— Et ?
 
-Le directeur commençait à comprendre pourquoi le service juridique n'était jamais invité aux séminaires de créativité.
+Romain a rangé le rapport dans son tiroir.
 
-## Le courrier qui change tout
+— Là, il est interne.
 
-Une semaine plus tard, l'association relança le ministère.
+— Il l'était déjà, Romain.
 
-Elle voulait toujours les rapports, les chiffres détaillés et les documents ayant permis de parler d'une amélioration historique.
+J'aurais bien aimé avoir un tiroir comme le sien. Benoît, qui cherche mes dossiers depuis que je suis journaliste, aussi.
 
-François convoqua son équipe.
+Sarah a demandé à Inès de récupérer également les annexes. Il fallait regarder si elles contenaient des informations protégées par la loi, sur la vie privée notamment. On pourrait masquer les mentions qui devaient l'être, lorsque c'était possible, et communiquer le reste.
 
-« Peut-on attendre qu'ils se lassent ? »
+— La page sur les vingt kilomètres, on peut la masquer ?
 
-Claire lui rappela la règle générale : l'administration dispose d'un mois pour répondre à une demande de documents. Passé ce délai, son silence vaut refus.
+— Elle contient quoi de protégé ?
 
-« Parfait ! Il suffit donc de ne pas répondre. »
+Romain lui a montré la phrase. Sarah l'a lue deux fois. Elle a rendu la feuille à Romain.
 
-« Non. L'association pourra alors saisir la Commission d'accès aux documents administratifs, la CADA. Elle peut aussi la saisir si nous refusons expressément. »
+— C'est une distance, Romain.
 
-« Et cette commission peut nous obliger à tout transmettre ? »
+## L'association n'avait même pas besoin de se déplacer
 
-« Elle donne un avis. Même favorable à l'association, cet avis ne nous contraint pas directement à communiquer. Mais si nous maintenons notre refus, l'affaire peut ensuite aller devant le tribunal administratif. »
+Romain a demandé ce qui se passerait s'ils ne répondaient pas. Il avait une conférence à préparer.
 
-« Et le juge ? »
+Sarah lui a expliqué qu'en principe, au bout d'un mois sans réponse, l'association pouvait considérer que sa demande avait été refusée. Elle pourrait alors saisir la CADA, la Commission d'accès aux documents administratifs. Elle pourrait aussi la saisir en cas de refus explicite.
 
-« Lui peut nous ordonner de transmettre les documents qui doivent l'être. »
+— Et il faut aller les voir, ces gens-là ? ai-je demandé.
 
-François resta silencieux.
+— Non. Elle peut les saisir à distance.
 
-Pour la première fois depuis trois ans, un indicateur venait de passer au rouge.
+Ah ! Pour une fois, Nora n'aurait pas besoin de faire ses vingt kilomètres.
 
-Il ne figurait dans aucun tableau de bord.
+La commission rendrait un avis. Si celui-ci était favorable à l'association et que le ministère maintenait son refus, elle pourrait ensuite saisir le tribunal administratif. Un juge pourrait leur ordonner de transmettre les documents auxquels elle avait droit.
 
-## La transparence, mais avec modération
+J'ai compris pourquoi Sarah avait pas été chargée de préparer la fête.
 
-Le ministère décida finalement de transmettre les documents accessibles, après avoir vérifié si certaines informations devaient être protégées.
+Romain a regardé le calendrier. Il ne voulait pas qu'une association puisse annoncer, le jour de sa conférence, qu'elle n'arrivait pas à obtenir le bilan du programme.
 
-Il revit également son communiqué.
+— On peut leur envoyer le communiqué en attendant ?
 
-La nouvelle version annonçait :
+— Ils l'ont déjà, lui a répondu Inès.
 
-« Le programme a atteint ses objectifs d'activité. Ses effets sur l'amélioration des services restent à établir. »
+— Ils ont lu le communiqué ?
 
-François relut la phrase.
+— Oui. C'est pour ça qu'ils demandent le rapport.
 
-« On dirait que nous reconnaissons ne pas savoir si notre programme a servi à quelque chose. »
+Romain a fini par demander à Sarah d'organiser, avec les services compétents, la transmission des documents accessibles. Il a également demandé à Inès de revoir le communiqué. Sarah lui a dit que la loi sur l'accès aux documents ne lui imposait pas de changer le texte de sa conférence. Mais il fallait pouvoir justifier ce qu'il annonçait.
 
-« C'est ce que montrent nos évaluations », répondit Claire.
+J'ai demandé si on maintenait la conférence. C'était pour mon costume.
 
-« Mais sommes-nous obligés de le dire aussi clairement ? »
+## Une nouvelle réussite pour le ministère
 
-« La loi ne vous impose pas de transformer un communiqué en rapport d'évaluation. En revanche, annoncer une amélioration historique que vos propres documents ne démontrent pas serait pour le moins imprudent. »
+La semaine suivante, l'association avait reçu le rapport et les annexes communicables. Inès avait préparé un nouveau communiqué. Le programme avait atteint ses objectifs d'activité. Ses effets sur l'amélioration des services restaient à établir.
 
-François accepta.
+Romain a demandé si on pouvait mettre la deuxième phrase plus bas. Inès lui a répondu qu'il n'y avait que deux phrases dans ce paragraphe.
 
-À une condition : que le ministère puisse présenter cette publication comme une avancée majeure en matière de transparence.
+Ils avaient retiré la banderole. La conférence s'est bien passée. Romain a remercié les équipes et annoncé une nouvelle initiative en faveur de la transparence. Il a même cité l'association de Nora parmi les acteurs qui avaient permis cette avancée.
 
-Le lendemain, la direction annonça fièrement un nouveau programme : « Transparence en action ».
+Nora m'a dit qu'elle était contente d'avoir reçu les rapports. Elle comptait s'en servir pour demander des mesures concrètes dans sa commune.
 
-François proposa immédiatement un indicateur de réussite.
+À la fin, Romain est venu nous saluer. Il a proposé à Inès un indicateur pour leur nouvelle initiative : le nombre de documents publiés.
 
-« Le nombre de documents publiés. »
+Sarah lui a demandé comment ils sauraient si les citoyens étaient mieux informés.
 
-Claire demanda comment il comptait mesurer si les citoyens étaient mieux informés.
-
-François la regarda, consterné.
-
-« Claire, nous venons à peine de commencer. Vous n'allez pas déjà nous demander si ça sert à quelque chose. »
-
-Fiction satirique. Le ministère, les personnages et le programme sont imaginaires.
+— Sarah, on vient de commencer. Vous allez pas déjà nous demander si ça sert à quelque chose.

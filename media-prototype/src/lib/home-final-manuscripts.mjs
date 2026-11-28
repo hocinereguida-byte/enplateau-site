@@ -2,6 +2,14 @@
 // Modifier uniquement à réception d'un figeage et après vérification Drive/Markdown. Pas de comparaison numérique de versions.
 export const finalManuscripts = [
   {
+    "id": "action-publique/cmd-naf-14",
+    "version": "V2.0",
+    "source": "1YW5LWEYRs1EC4uwocz_xcnfrgTQGkZzsw5C_Hg4lBK0",
+    "date": "2026-11-28",
+    "fingerprint": "74d973c1",
+    "status": "integrated"
+  },
+  {
     "id": "agriculture/agr-c1-b04-cereales",
     "version": "V2.1",
     "source": "1erRRTWdAG3qJ2cFD43XZOgAbC5EyzCLjT4JIx-46SSQ",

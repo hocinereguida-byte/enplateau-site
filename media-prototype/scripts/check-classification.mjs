@@ -9,7 +9,7 @@ const records = [
   "recherche-innovation/cmd-naf-17.md|CMD-NAF-17|recherche-innovation|V1.1|strategie-gouvernance|REC-C2-U1||C2-U1|entretien|grand-entretien|1V4oP-WmjZF5DhhGP9j_9y0mn9g6tmZn4NmayAKjDgKc",
   "numerique-telecom/cmd-naf-16.md|CMD-NAF-16|numerique-telecom|V2.0|operations-organisation|NUM-C4-U1||C4-U1|chronique|chronique|15pWJlH0lKrJkEscSQS-aMVye2h3CiNFW6uL_UyYJ2jo",
   "culture-medias/cmd-naf-15.md|CMD-NAF-15|culture-medias|V1.0|finance-investissement|CUL-C5-U1||C5-U1|entretien|grand-entretien|1v2s-obgiGP70_l44QP6w4gEXXGVdWd20kGIeik6nBV4",
-  "action-publique/cmd-naf-14.md|CMD-NAF-14|action-publique|V4|droit-regulation|ACT-C7-U1||C7-U1|chronique|chronique|1hBoIuH0EpzdCKn_Ux3W-qs3Uw2n-bP9_r1I3WjQP8N0",
+  "action-publique/cmd-naf-14.md|CMD-NAF-14|action-publique|V2.0|droit-regulation|ACT-C7-U1||C7-U1|chronique|chronique|1YW5LWEYRs1EC4uwocz_xcnfrgTQGkZzsw5C_Hg4lBK0",
   "emploi-travail/cmd-naf-13.md|CMD-NAF-13|emploi-travail|V3|finance-investissement|EMP-C4-U1||C4-U1|entretien|grand-entretien|1iQP_5UgcqYPgvJGRqm1Fv3g_8qjPDp7P3acXx9NLMBk",
   "education-formation/cmd-naf-12.md|CMD-NAF-12|education-formation|V2.1|strategie-gouvernance|EDU-C5-U1||C5-U1|chronique|chronique|1WCeKO93VF3PmCLOofcxyL322Ls9yQV1YOK9sWYpUuxE",
   "social-medicosocial/cmd-naf-11.md|CMD-NAF-11|social-medicosocial|V2.0|strategie-gouvernance|SOC-C2-U1||C2-U1|entretien|grand-entretien|1XjkBU8Znsj_wR8BQAPxvSwiOvc3TiK-7HXX9eizDJkw",
